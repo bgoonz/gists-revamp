@@ -1,10 +1,6 @@
 # My Gists:
 
 ```
-
-
-
-
 .
 ├── ./README.md
 ├── ./__CONTAINER
