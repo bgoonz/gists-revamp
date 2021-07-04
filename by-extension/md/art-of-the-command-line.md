@@ -1,6 +1,5 @@
 # The Art of Command Line
 
-
 - [Meta](#meta)
 - [Basics](#basics)
 - [Everyday use](#everyday-use)

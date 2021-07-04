@@ -470,7 +470,6 @@ Here's a real-life example: file upload with progress indication:
 
 `XMLHttpRequest` can make cross-origin requests, using the same CORS policy as [fetch](info:fetch-crossorigin).
 
-
 ```js
 let xhr = new XMLHttpRequest();
 *!*

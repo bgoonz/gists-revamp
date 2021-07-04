@@ -87,10 +87,10 @@ Created with a view to connecting people to information, this list below contain
 
 ### Open Courses for Algorithms and Data Structures
 
-| ☆   | Name                                                                                                                                                                      | Description                                                                                                                                                                                                                                                                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ★★★ | [prakhar1989/awesome-courses#algorithms](https://github.com/prakhar1989/awesome-courses#algorithms)                                                                       | A fantastic list of open courses offered by notable institutions (MIT, Stanford, UC Berkeley ... etc.).                                                                                                                                                                                |
-| ★★☆ | [UIUC Algorithm Course](http://jeffe.cs.illinois.edu/teaching/algorithms/)                                                                                                | lecture notes, homeworks, exams, and discussion problems covering a broad range of algorithmic topics                                                                                                                                                                                  |
+| ☆   | Name                                                                                                | Description                                                                                             |
+| --- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| ★★★ | [prakhar1989/awesome-courses#algorithms](https://github.com/prakhar1989/awesome-courses#algorithms) | A fantastic list of open courses offered by notable institutions (MIT, Stanford, UC Berkeley ... etc.). |
+| ★★☆ | [UIUC Algorithm Course](http://jeffe.cs.illinois.edu/teaching/algorithms/)                          | lecture notes, homeworks, exams, and discussion problems covering a broad range of algorithmic topics   |
 
 ## Books
 

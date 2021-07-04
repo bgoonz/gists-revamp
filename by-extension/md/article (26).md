@@ -1,7 +1,8 @@
 # Ninja code
 
 Learning without thought is labor lost; thought without learning is perilous.
-```
+
+````
 
 Programmer ninjas of the past used these tricks to sharpen the mind of code maintainers.
 
@@ -13,7 +14,7 @@ Read them carefully and find out who you are -- a ninja, a novice, or maybe a co
 
 ```warn header="Irony detected"
 Many try to follow ninja paths. Few succeed.
-```
+````
 
 ## Brevity is the soul of wit
 
@@ -36,6 +37,7 @@ Tell them that shorter is always better. Initiate them into the paths of ninja.
 
 The Dao hides in wordlessness. Only the Dao is well begun and well
 completed.
+
 ```
 
 Another way to code shorter is to use single-letter variable names everywhere. Like `a`, `b` or `c`.
@@ -98,6 +100,7 @@ A quick read of such code becomes impossible. And when there's a typo... Ummm...
 ## Smart synonyms
 
 The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name.
+
 ```
 
 Using _similar_ names for _same_ things makes life more interesting and shows your creativity to the public.
@@ -166,7 +169,8 @@ Indeed, from one hand, something is written: `super..`, `mega..`, `nice..` But f
 
 When in the light, can't see anything in the darkness.<br>
 When in the darkness, can see everything in the light.
-```
+
+````
 
 Use same names for variables inside and outside a function. As simple. No efforts to invent new names.
 
@@ -181,7 +185,7 @@ function render() {
   ... // <-- a programmer wants to work with user here and...
   ...
 }
-```
+````
 
 A programmer who jumps inside the `render` will probably fail to notice that there's a local `user` shadowing the outer one.
 
@@ -205,6 +209,7 @@ Those developers who try to write `if (checkPermission(..))`, will wonder why it
 
 The great Tao flows everywhere,<br>
 both to the left and to the right.
+
 ```
 
 Don't limit the function by what's written in its name. Be broader.
@@ -224,3 +229,4 @@ All "pieces of advice" above are from the real code... Sometimes, written by exp
 - Follow some of them, and your code will become full of surprises.
 - Follow many of them, and your code will become truly yours, no one would want to change it.
 - Follow all, and your code will become a valuable lesson for young developers looking for enlightenment.
+```

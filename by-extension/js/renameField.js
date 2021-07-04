@@ -19,9 +19,7 @@ import client from "part:@sanity/base/client";
 // Fetching documents that matches the precondition for the migration.
 // NOTE: This query should eventually return an empty set of documents to mark the migration
 // as complete
-const fetchDocuments = () =>
-  client.fetch(
-  );
+const fetchDocuments = () => client.fetch();
 
 const buildPatches = (docs) =>
   docs.map((doc) => ({

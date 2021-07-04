@@ -1,5 +1,5 @@
-import {readdirSync, readFileSync} from "fs";
-import {join, parse} from "path";
+import { readdirSync, readFileSync } from "fs";
+import { join, parse } from "path";
 import ts from "typescript";
 
 const fileToParse = join(__dirname, "../", "src", "index.ts");

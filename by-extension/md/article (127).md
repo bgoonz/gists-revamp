@@ -51,7 +51,6 @@ The full demo of the attack:
 
 Here we have a half-transparent `<iframe src="facebook.html">`, and in the example we can see it hovering over the button. A click on the button actually clicks on the iframe, but that's not visible to the user, because the iframe is transparent.
 
-
 Here's the same example, but closer to reality, with `opacity:0` for `<iframe>`:
 
 [codetabs src="clickjacking" height=160]
@@ -196,6 +195,7 @@ A cookie with such attribute is only sent to a website if it's opened directly, 
 If the site, such as Facebook, had `samesite` attribute on its authentication cookie, like this:
 
 ```
+
 ```
 
 ...Then such cookie wouldn't be sent when Facebook is open in iframe from another site. So the attack would fail.

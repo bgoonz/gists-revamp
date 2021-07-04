@@ -4,7 +4,7 @@ import _ from "lodash";
 export const LIST_UPSERT = "@@list/LIST_UPSERT";
 export const LIST_DELETE = "@@list/LIST_DELETE";
 
-const ids = (state = [], {type, at, id}) => {
+const ids = (state = [], { type, at, id }) => {
   switch (type) {
     case LIST_UPSERT: {
       const hasAt = typeof at !== "undefined";
@@ -32,13 +32,12 @@ const ids = (state = [], {type, at, id}) => {
 };
 
 function byIdReducerGenerator(itemReducer, initialState = {}) {
-  return (state = {}, {type, id, innerAction}) => {
+  return (state = {}, { type, id, innerAction }) => {
     switch (type) {
       case LIST_UPSERT: {
         const newItem = itemReducer(state[id], innerAction);
 
-        if (state[id] && shallowequal(state[id], newItem))
-          return state;
+        if (state[id] && shallowequal(state[id], newItem)) return state;
 
         return {
           ...state,

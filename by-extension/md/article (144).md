@@ -391,7 +391,6 @@ This topic is not related to JavaScript at all, just something to keep in mind w
 
 There's a legislation in Europe called GDPR, that enforces a set of rules for websites to respect the users' privacy. One of these rules is to require an explicit permission for tracking cookies from the user.
 
-
 So, if we set a cookie that just saves some information, but neither tracks nor identifies the user, then we are free to do it.
 
 But if we are going to set a cookie with an authentication session or a tracking id, then a user must allow that.

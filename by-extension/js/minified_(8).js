@@ -496,31 +496,27 @@
     ),
     n.define(
       "/node_modules/voxel-engine/lib/stats.js",
-      Function(
-        [
-          "require",
-          "module",
-          "exports",
-          "__dirname",
-          "__filename",
-          "process",
-          "global",
-        ],
-      )
+      Function([
+        "require",
+        "module",
+        "exports",
+        "__dirname",
+        "__filename",
+        "process",
+        "global",
+      ])
     ),
     n.define(
       "/node_modules/voxel-engine/lib/detector.js",
-      Function(
-        [
-          "require",
-          "module",
-          "exports",
-          "__dirname",
-          "__filename",
-          "process",
-          "global",
-        ],
-      )
+      Function([
+        "require",
+        "module",
+        "exports",
+        "__dirname",
+        "__filename",
+        "process",
+        "global",
+      ])
     ),
     n.define(
       "/node_modules/voxel-engine/node_modules/inherits/package.json",
@@ -944,17 +940,15 @@
     ),
     n.define(
       "/node_modules/voxel-engine/node_modules/aabb-3d/node_modules/gl-matrix/dist/gl-matrix.js",
-      Function(
-        [
-          "require",
-          "module",
-          "exports",
-          "__dirname",
-          "__filename",
-          "process",
-          "global",
-        ],
-      )
+      Function([
+        "require",
+        "module",
+        "exports",
+        "__dirname",
+        "__filename",
+        "process",
+        "global",
+      ])
     ),
     n.define(
       "/node_modules/voxel-engine/node_modules/spatial-events/package.json",
@@ -1078,17 +1072,15 @@
     ),
     n.define(
       "/node_modules/voxel-region-change/node_modules/aabb-3d/node_modules/gl-matrix/dist/gl-matrix.js",
-      Function(
-        [
-          "require",
-          "module",
-          "exports",
-          "__dirname",
-          "__filename",
-          "process",
-          "global",
-        ],
-      )
+      Function([
+        "require",
+        "module",
+        "exports",
+        "__dirname",
+        "__filename",
+        "process",
+        "global",
+      ])
     ),
     n.define(
       "/node_modules/voxel-texture/package.json",

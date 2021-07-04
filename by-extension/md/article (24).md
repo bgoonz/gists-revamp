@@ -304,7 +304,6 @@ Here are some well-known linting tools:
 - [JSHint](http://www.jshint.com/) -- more settings than JSLint.
 - [ESLint](http://eslint.org/) -- probably the newest one.
 
-
 Most linters are integrated with many popular editors: just enable the plugin in the editor and configure the style.
 
 For instance, for ESLint you should do the following:

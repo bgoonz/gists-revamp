@@ -85,8 +85,7 @@ Or, the same without `await`, using pure promises syntax:
 ```js run
 fetch(
   "https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits"
-)
-  .then((response) => response.json())
+).then((response) => response.json());
 ```
 
 To get the response text, `await response.text()` instead of `.json()`:

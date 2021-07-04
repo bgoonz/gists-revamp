@@ -14,7 +14,6 @@ Popups exist from really ancient times. The initial idea was to show another con
 
 Also, popups are tricky on mobile devices, that don't show multiple windows simultaneously.
 
-
 1. A popup is a separate window which has its own independent JavaScript environment. So opening a popup from a third-party, non-trusted site is safe.
 2. It's very easy to open a popup.
 3. A popup can navigate (change URL) and send messages to the opener window.

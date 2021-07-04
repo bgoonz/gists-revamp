@@ -1,7 +1,8 @@
 # Class basic syntax
 
-In object-oriented programming, a *class* is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).
-```
+In object-oriented programming, a _class_ is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).
+
+````
 
 In practice, we often need to create many objects of the same kind, like users, or goods or whatever.
 
@@ -22,7 +23,7 @@ class MyClass {
   method3() { ... }
   ...
 }
-```
+````
 
 Then use `new MyClass()` to create a new object with all the listed methods.
 
