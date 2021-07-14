@@ -14,7 +14,6 @@ Wipe your hard drive clean and install your apps quickly.
 
 ## Preparation
 
-
 ### 1. Back Up
 
 A fresh install of OS X will wipe any files, programs, and documents from your hard drive. Whether you use Time Machine, the Cloud, or an external hard drive, be sure to have a back up of anything you will need on your phresh machine. If you are using the cloud, make sure all files are finished syncing as well.
@@ -24,8 +23,6 @@ A fresh install of OS X will wipe any files, programs, and documents from your h
 > [How To Clean Install MacOS High Sierra](http://osxdaily.com/2017/10/02/clean-install-macos-high-sierra/)  
 > Information from [OSXDaily](http://osxdaily.com/2017/10/02/clean-install-macos-high-sierra/)
 
-
-
 > ###### Resources
 >
 > [Make Your Mac Feel Like New Again With a Fresh Install of OSX](https://fieldguide.gizmodo.com/make-your-mac-feel-like-new-again-with-a-fresh-install-1697926482)  
@@ -34,7 +31,6 @@ A fresh install of OS X will wipe any files, programs, and documents from your h
 ---
 
 ## Wipe + Reinstall
-
 
 ### 1. Wipe
 

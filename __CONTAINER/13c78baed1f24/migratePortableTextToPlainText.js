@@ -29,9 +29,7 @@ function blocksToText(blocks) {
     .join("\n\n");
 }
 
-const fetchDocuments = () =>
-  client.fetch(
-  );
+const fetchDocuments = () => client.fetch();
 
 const buildPatches = (docs) =>
   docs.map((doc) => ({
