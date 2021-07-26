@@ -1,17 +1,20 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-html, body {
+html,
+body {
   font-size: 62.5%;
-  
+
   @media (max-width: 768px) {
     font-size: 50%;
   }
 }
 body {
-  background: #EDEFF2;
+  background: #edeff2;
 }
 
 $demoW: 36.6rem;
@@ -29,21 +32,21 @@ $planeAnimTime: 3.5s;
   margin-top: $demoH/-2;
   width: $demoW;
   height: $demoH;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 1.2rem;
-  box-shadow: 0 2rem 2rem rgba(0,0,0,0.15);
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  
+
   &__top {
     position: relative;
     height: $topH;
-    background: linear-gradient(#7BCECA, #82D3CB);
+    background: linear-gradient(#7bceca, #82d3cb);
     overflow: hidden;
   }
-  
+
   &__body {
     position: relative;
-    min-height: $bodyH*2;
+    min-height: $bodyH * 2;
     padding-top: 5rem;
     will-change: transform;
   }
@@ -56,10 +59,10 @@ $planeAnimTime: 3.5s;
   width: 100%;
   font-size: 2rem;
   text-align: center;
-  color: rgba(#545C67, 0.6);
+  color: rgba(#545c67, 0.6);
   user-select: none;
   pointer-events: none;
-  
+
   &:before,
   &:after {
     content: "";
@@ -67,13 +70,13 @@ $planeAnimTime: 3.5s;
     top: 0;
     width: 1rem;
     height: 1rem;
-    border: 1px solid rgba(#545C67, 0.6);
+    border: 1px solid rgba(#545c67, 0.6);
     border-left: none;
     border-top: none;
     transform: rotate(45deg);
     animation: arrowAnim 1.5s infinite;
   }
-  
+
   &:before {
     left: 11rem;
   }
@@ -91,7 +94,7 @@ $planeAnimTime: 3.5s;
 
 .items {
   position: relative;
-  
+
   &.padded {
     transition: padding 0.3s;
     padding-top: 8rem;
@@ -103,17 +106,17 @@ $planeAnimTime: 3.5s;
   padding: 2rem 2.5rem;
   user-select: none;
   transition: opacity 0.3s;
-  
+
   &.absPos {
     position: absolute;
     left: 0;
     top: 0;
   }
-  
+
   &.hidden {
     opacity: 0;
   }
-  
+
   &__icon {
     display: inline-block;
     vertical-align: top;
@@ -121,23 +124,22 @@ $planeAnimTime: 3.5s;
     height: 4rem;
     margin-right: 2rem;
     border-radius: 50%;
-    
+
     &.animated {
       animation: animateIcon 0.6s forwards;
     }
-    
+
     &.m--img {
-      
       img {
         width: 100%;
       }
     }
   }
-  
+
   &__name {
     font-size: 2rem;
     line-height: 4rem;
-    color: #545C67;
+    color: #545c67;
   }
 }
 
@@ -165,9 +167,9 @@ $planeAnimTime: 3.5s;
   top: -2.8rem;
   width: 5.6rem;
   height: 5.6rem;
-  background: #5DB2DF;
+  background: #5db2df;
   border-radius: 50%;
-  box-shadow: 0 0.3rem 0.3rem rgba(0,0,0,0.3);
+  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
 }
 
 .plane-rotater {
@@ -181,7 +183,6 @@ $planeAnimTime: 3.5s;
 }
 
 .plane {
-  
   &.fly {
     animation: planeFly $planeAnimTime forwards;
   }
@@ -206,58 +207,56 @@ $planeAnimTime: 3.5s;
 }
 
 .svgBg {
-  
   &__bg {
     transform-origin: 183px 256px;
   }
-  
+
   &__tree {
-    
     &-trunk {
-      fill: #1E5E65;
+      fill: #1e5e65;
     }
-    
+
     &-part {
       transform-origin: inherit;
     }
-    
+
     &-1 {
       transform-origin: 54px 147px;
       opacity: 0.7;
-      
+
       .svgBg__tree-part {
         transform: scale(0.35, 0.44);
       }
     }
-    
+
     &-2 {
       transform-origin: 67px 144px;
       opacity: 0.7;
-      
+
       .svgBg__tree-part {
         transform: scale(0.56, 0.65);
       }
     }
-    
+
     &-3 {
       transform-origin: 264px 149px;
-      
+
       .svgBg__tree-part {
         transform: scale(0.58, 0.65);
       }
     }
-    
+
     &-4 {
       transform-origin: 287px 148px;
-      
+
       .svgBg__tree-part {
         transform: scale(0.8, 1);
       }
     }
-    
+
     &-5 {
       transform-origin: 313px 148px;
-      
+
       .svgBg__tree-part {
         transform: scale(0.5, 0.61);
       }
@@ -289,7 +288,7 @@ $sliceX: $xDiff + (1 - $degCoef) / 2 * $xDiff + 0.1rem;
   font-size: 0;
   text-decoration: none;
   border-radius: 50%;
-  
+
   &:before {
     content: "";
     position: absolute;
@@ -302,11 +301,11 @@ $sliceX: $xDiff + (1 - $degCoef) / 2 * $xDiff + 0.1rem;
     transition: transform $animTime;
     transform: rotate($deg * -1) translate($sliceX, -1rem);
   }
-  
+
   &:hover:before {
     animation: slice $animTime;
   }
-  
+
   &__inner {
     position: relative;
     display: inline-block;
@@ -317,13 +316,13 @@ $sliceX: $xDiff + (1 - $degCoef) / 2 * $xDiff + 0.1rem;
     transform: rotate($deg * -1);
     font-size: $fontSize;
     color: #fff;
-    
+
     .fa {
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%) rotate($deg);
     }
-    
+
     &.m--left {
       transform-origin: 100% 50%;
 
@@ -335,9 +334,9 @@ $sliceX: $xDiff + (1 - $degCoef) / 2 * $xDiff + 0.1rem;
     &.m--right {
       transform-origin: 0 50%;
       transition: transform $animTime;
-      
+
       .icon-box:hover & {
-        transition: transform $animTime $animTime*0.2;
+        transition: transform $animTime $animTime * 0.2;
         transform: rotate($deg * -1) translate($xDiff, $yDiff);
       }
 
@@ -350,6 +349,6 @@ $sliceX: $xDiff + (1 - $degCoef) / 2 * $xDiff + 0.1rem;
 
 @keyframes slice {
   to {
-    transform: rotate(-$deg) translate($sliceX, $boxSize*1.5 + 1rem);
+    transform: rotate(-$deg) translate($sliceX, $boxSize * 1.5 + 1rem);
   }
 }

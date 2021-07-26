@@ -1,5 +1,5 @@
-Pull Down to Refresh (Paper Plane)
-----------------------------------
+## Pull Down to Refresh (Paper Plane)
+
 Based on Zee Young dribbble - https://dribbble.com/shots/2067564-Replace
 
 No animation libraries. Not working in IE. Right now tested only in last Chrome and FF. Totally not optimized for mobile.

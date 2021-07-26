@@ -5,7 +5,8 @@
 ![](https://cdn-images-1.medium.com/max/864/0*aWKygEnTVdHuulB4.gif)
 
 ### 1.) Sanitize Directory:
-```shsh
+
+````shsh
 sanitize() {\
   shopt -s extglob;
 
@@ -31,41 +32,52 @@ sanitize_dir '/path/to/somewhere'
 ### 2.)Recursively Delete Node Modules:
 ```sh
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
-```
+````
+
 ### 3.)Remove trailing whitespace from filenames:
+
 ```
 rename  's/ *$//' *
 ```
+
 ### 4.)Remove string from file name:
-```
+
+````
 for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; done
 ```sh
 ### 5.)Remove whitespace from filenames:
 ```sh
 for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done
-```
+````
 
 ### 6.) Remove `<script>` tags from html and the content in-between them.
-
 
 ```sh
 sed -n -e '/<script>/,/<\/script>/p' example.html >out.js
 ```
+
 ### 7.) Remove Invalid characters from file:
+
 ```sh
 for f in */; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; done
 ```
+
 ### 8.) Remember Git Credentials For Future Login:
+
 ```sh
 git config --global credential.helper store
 ```
+
 ### 9.)Recursive npm install:
+
 ```sh
 npm i -g recursive-install
 
 npm-recursive-install
 ```
+
 ### 10.)Generate Numbered Folders:
+
 ```sh
 n=1;\
 max=50;\
@@ -74,18 +86,25 @@ while [ "$n" -le "$max" ]; do\
   n=`expr "$n" + 1`;\
 done
 ```
+
 ### 11.) Traverse Directories recursivley and delete files who's name match a specified string:
+
 ```sh
 find . -type f -exec sed -i '/badFolder/d' ./* {} \;
 ```
+
 ### 12.) recursivley remove empty files:
+
 ```sh
 find . -empty -type f -print -delete
 ```
+
 ### 13.)recursively remove empty folders
+
 ```sh
 find . -empty -type d -print -delete
 ```
+
 ### 14.) Remove a string from files of a certain extension or group of extensions:
 
 ```sh
@@ -119,10 +138,13 @@ for x in "./"/*/; do  (cd "$x"   files=(*)   printf '%s\n' "${files[@]}" > delet
 # PANDOC
 
 ### 19.) Convert from Markdown==⇒ HTML
+
 ```sh
 find ./ -iname "*.md" -type f -exec sh -c 'pandoc --- standalone "${0}" -o "${0%.md}.html"' {} \;
 ```
+
 ### 20.) Convert from HTML ==⇒ Markdown
+
 ```sh
 find ./ -iname "*.html" -type f -exec sh -c 'pandoc --- wrap=none --- from html --- to markdown_strict "${0}" -o "${0%.html}.md"' {} \;
 ```
