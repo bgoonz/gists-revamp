@@ -1,9 +1,5 @@
 # Deploy React and Express to Heroku
 
-MAY 18, 2018
-
-_Updated May 18, 2018_
-
 You've got a React app, and an API server written in Express or something else. Now -- how do you deploy them both to a server?
 
 There are a few ways to do this:
