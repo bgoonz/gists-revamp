@@ -1,1 +1,0 @@
-IndexedDB Part 7 - Using Indexes and KeyRanges

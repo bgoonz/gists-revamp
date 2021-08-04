@@ -1,1 +1,0 @@
-Emmet customizations. Sample snippets.json file.

@@ -1,1 +1,0 @@
-IndexedDB part 4 - add, put, and delete
