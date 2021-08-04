@@ -1,7 +1,5 @@
 ReactDOM.render(
+  component, // The react component to render
 
-component, // The react component to render
-
-target // the browser DOM node to render it to
-
+  target // the browser DOM node to render it to
 );
