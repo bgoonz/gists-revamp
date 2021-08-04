@@ -7,7 +7,6 @@ python3 get_gists.py user
 """
 
 
-
 import sys
 import os
 import re
@@ -16,23 +15,23 @@ import json
 from urllib.request import urlopen
 
 
-comments_url = 'https://api.github.com/gists/c0bdc9511c18ebd45d719609d2f71fc8/comments'
+comments_url = "https://api.github.com/gists/c0bdc9511c18ebd45d719609d2f71fc8/comments"
 
 
-def get_json(url):    
+def get_json(url):
     return json.load(urlopen(url))
 
 
-def make_url(user: str)-> str:
+def make_url(user: str) -> str:
     """Make URL for gist *user*."""
-    return f'https://api.github.com/users/{user}/gists'
+    return f"https://api.github.com/users/{user}/gists"
 
 
-def make_comments_url(gist_id: str)-> str:
+def make_comments_url(gist_id: str) -> str:
     pass
 
 
-def user_json(user: str)-> dict:
+def user_json(user: str) -> dict:
     """Retrieve information about *user* gists."""
     url = make_url(user)
     return get_json(url)
@@ -48,20 +47,20 @@ def get_valid_filename(s: str):
     'johns_portrait_in_2004.jpg'
     Based on https://github.com/django/django/blob/83b04d4f88dd65ae630a45385de34e275899dc41/django/utils/text.py#L218-L229
     """
-    s = str(s).strip().replace(' ', '_')
-    return re.sub(r'(?u)[^-\w.]', '', s)
+    s = str(s).strip().replace(" ", "_")
+    return re.sub(r"(?u)[^-\w.]", "", s)
 
 
-def clone(link: str, folder: str=''):
+def clone(link: str, folder: str = ""):
     """Call git to clone *link* repo in *folder*."""
-    subprocess.call(['git', 'clone', link, folder])
+    subprocess.call(["git", "clone", link, folder])
 
 
 def main(user: str):
     items = user_json(user)
     for item in items:
-        link = item['git_pull_url']
-        folder = get_valid_filename(item['description'])
+        link = item["git_pull_url"]
+        folder = get_valid_filename(item["description"])
         print("Creating", folder)
         clone(link, folder)
 
