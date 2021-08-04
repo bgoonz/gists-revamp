@@ -1,10 +1,12 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: 'Avenir Next', Avenir, sans-serif;
+  font-family: "Avenir Next", Avenir, sans-serif;
   font-weight: 500;
   font-size: 20px;
   color: #555;
@@ -40,12 +42,12 @@ canvas {
 }
 
 .button {
-  font-family: 'Avenir Next', Avenir, sans-serif;
+  font-family: "Avenir Next", Avenir, sans-serif;
   font-weight: 500;
   font-size: 20px;
   padding: 5px 15px;
   margin: 10px;
-  background: #BBB;
+  background: #bbb;
   color: white;
   border-radius: 5px;
   border: none;
@@ -53,7 +55,7 @@ canvas {
 }
 
 .button:hover {
-  background: #09F;
+  background: #09f;
 }
 
 .top-bar {
@@ -73,7 +75,7 @@ canvas {
   -webkit-transform: translateX(-110px) scale(0.5);
   transform: translateX(-110px) scale(0.5);
   opacity: 0;
-  background: #09F;
+  background: #09f;
   width: 200px;
   height: 80px;
   pointer-events: none;
@@ -82,7 +84,7 @@ canvas {
 }
 
 .next-level-button:hover {
-  background: #2BF;
+  background: #2bf;
 }
 
 .next-level-button.is-open {
@@ -97,7 +99,7 @@ canvas {
 
 .level-list {
   position: absolute;
-  background: #EEE;
+  background: #eee;
   width: 100%;
   min-height: 100%;
   left: 0;
@@ -116,7 +118,7 @@ canvas {
 
 .level-list__item {
   display: inline-block;
-  background: #DDD;
+  background: #ddd;
   margin: 5px;
   padding: 10px;
   width: 80px;
@@ -127,13 +129,13 @@ canvas {
 }
 
 .level-list__item:hover {
-  color: #09F;
+  color: #09f;
   cursor: pointer;
   background: white;
 }
 
 .level-list__item.is-playing {
-  background: #09F;
+  background: #09f;
   color: white;
 }
 
@@ -166,4 +168,6 @@ canvas {
 
 /* ---- level pres ---- */
 
-.levels { display: none; }
+.levels {
+  display: none;
+}
