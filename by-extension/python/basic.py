@@ -5,6 +5,7 @@ from fpdf import FPDF
 
 pdf = FPDF()
 # Set Author Name of the PDF
+pdf.set_author("@NavonilDas")
 # Set Subject of The PDF
 pdf.set_subject("python")
 # Set the Title of the PDF
