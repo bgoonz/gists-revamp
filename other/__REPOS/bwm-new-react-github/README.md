@@ -6,9 +6,9 @@ Create `dev.js` file in `server/config/dev.js` with content of:
 
 ```javascript
 module.exports = {
-  DB_URI: 'your_mongo_connection_string', // Get it here: https://www.mongodb.com/cloud/atlas
-  JWT_SECRET: 'some_unique_value' // e.g: 'asdasd87sd89asd7!'
-}
+  DB_URI: "your_mongo_connection_string", // Get it here: https://www.mongodb.com/cloud/atlas
+  JWT_SECRET: "some_unique_value", // e.g: 'asdasd87sd89asd7!'
+};
 ```
 
 In base folder of project run `npm install` and then `npm start` to startup dev server.

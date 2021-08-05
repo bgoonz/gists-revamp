@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -16,12 +15,15 @@ import { ModalComponent } from '../shared/modal/modal.component';
 import { SettingsModalComponent } from './settings-modal/settings-modal.component';
 
 const routes: Routes = [
-  { path: 'resources', component: ResourceOutletComponent,
+  {
+    path: 'resources',
+    component: ResourceOutletComponent,
     children: [
       { path: '', component: ResourceComponent },
       { path: 'new', component: ResourceNewComponent },
-      { path: ':id', component: ResourceDetailComponent }
-  ]}
+      { path: ':id', component: ResourceDetailComponent },
+    ],
+  },
 ];
 
 @NgModule({
@@ -35,16 +37,14 @@ const routes: Routes = [
     ResourceOutletComponent,
     ResourceDetailComponent,
     ModalComponent,
-    SettingsModalComponent
+    SettingsModalComponent,
   ],
-  exports: [
-    ResourceComponent
-  ],
+  exports: [ResourceComponent],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forChild(routes)
-  ]
+    RouterModule.forChild(routes),
+  ],
 })
-export class ResourceModule { }
+export class ResourceModule {}

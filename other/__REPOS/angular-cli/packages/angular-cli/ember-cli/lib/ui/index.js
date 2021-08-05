@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-var ora              = require('ora');
-var Promise          = require('../ext/promise');
-var EOL              = require('os').EOL;
-var chalk            = require('chalk');
-var writeError       = require('./write-error');
+var ora = require("ora");
+var Promise = require("../ext/promise");
+var EOL = require("os").EOL;
+var chalk = require("chalk");
+var writeError = require("./write-error");
 
-var DEFAULT_WRITE_LEVEL = 'INFO';
+var DEFAULT_WRITE_LEVEL = "INFO";
 
 // Note: You should use `ui.outputStream`, `ui.inputStream` and `ui.write()`
 //       instead of `process.stdout` and `console.log`.
@@ -32,16 +32,16 @@ module.exports = UI;
 **/
 
 function UI(options) {
-  var spinner = this.spinner = ora({ color: 'green' });
+  var spinner = (this.spinner = ora({ color: "green" }));
 
-  this.through  = require('through');
-  this.readline = require('readline2');
+  this.through = require("through");
+  this.readline = require("readline2");
 
   // Output stream
   this.actualOutputStream = options.outputStream;
-  this.outputStream = this.through(function(data) {
+  this.outputStream = this.through(function (data) {
     spinner.stop();
-    this.emit('data', data);
+    this.emit("data", data);
   });
 
   this.outputStream.setMaxListeners(0);
@@ -64,8 +64,8 @@ function UI(options) {
   @param {String} data
   @param {Number} writeLevel
 */
-UI.prototype.write = function(data, writeLevel) {
-  if (writeLevel === 'ERROR') {
+UI.prototype.write = function (data, writeLevel) {
+  if (writeLevel === "ERROR") {
     this.errorStream.write(data);
   } else if (this.writeLevelVisible(writeLevel)) {
     this.outputStream.write(data);
@@ -80,7 +80,7 @@ UI.prototype.write = function(data, writeLevel) {
   @param {String} data
   @param {Number} writeLevel
 */
-UI.prototype.writeLine = function(data, writeLevel) {
+UI.prototype.writeLine = function (data, writeLevel) {
   this.write(data + EOL, writeLevel);
 };
 
@@ -89,8 +89,8 @@ UI.prototype.writeLine = function(data, writeLevel) {
   @method writeDebugLine
   @param {String} data
 */
-UI.prototype.writeDebugLine = function(data) {
-  this.writeLine(chalk.gray(data), 'DEBUG');
+UI.prototype.writeDebugLine = function (data) {
+  this.writeLine(chalk.gray(data), "DEBUG");
 };
 
 /**
@@ -98,8 +98,8 @@ UI.prototype.writeDebugLine = function(data) {
   @method writeInfoLine
   @param {String} data
 */
-UI.prototype.writeInfoLine = function(data) {
-  this.writeLine(chalk.cyan(data), 'INFO');
+UI.prototype.writeInfoLine = function (data) {
+  this.writeLine(chalk.cyan(data), "INFO");
 };
 
 /**
@@ -111,11 +111,13 @@ UI.prototype.writeInfoLine = function(data) {
   @param {Boolean} test
   @param {Boolean} prepend
 */
-UI.prototype.writeWarnLine = function(data, test, prepend) {
-  if (test) { return; }
+UI.prototype.writeWarnLine = function (data, test, prepend) {
+  if (test) {
+    return;
+  }
 
-  data = this.prependLine('WARNING', data, prepend);
-  this.writeLine(chalk.yellow(data), 'WARNING', test);
+  data = this.prependLine("WARNING", data, prepend);
+  this.writeLine(chalk.yellow(data), "WARNING", test);
 };
 
 /**
@@ -127,8 +129,8 @@ UI.prototype.writeWarnLine = function(data, test, prepend) {
   @param {Boolean} test
   @param {Boolean} prepend
 */
-UI.prototype.writeDeprecateLine = function(data, test, prepend) {
-  data = this.prependLine('DEPRECATION', data, prepend);
+UI.prototype.writeDeprecateLine = function (data, test, prepend) {
+  data = this.prependLine("DEPRECATION", data, prepend);
   this.writeWarnLine(data, test, false);
 };
 
@@ -139,9 +141,9 @@ UI.prototype.writeDeprecateLine = function(data, test, prepend) {
   @param {String} data
   @param {Boolean} prepend
 */
-UI.prototype.prependLine = function(prependData, data, prepend) {
-  if (typeof prepend === 'undefined' || prepend) {
-    data = prependData + ': ' + data;
+UI.prototype.prependLine = function (prependData, data, prepend) {
+  if (typeof prepend === "undefined" || prepend) {
+    data = prependData + ": " + data;
   }
 
   return data;
@@ -154,7 +156,7 @@ UI.prototype.prependLine = function(prependData, data, prepend) {
   @method writeError
   @param {Error} error
 */
-UI.prototype.writeError = function(error) {
+UI.prototype.writeError = function (error) {
   writeError(this, error);
 };
 
@@ -165,16 +167,18 @@ UI.prototype.writeError = function(error) {
   @method setWriteLevel
   @param {String} level
 */
-UI.prototype.setWriteLevel = function(level) {
+UI.prototype.setWriteLevel = function (level) {
   if (Object.keys(this.WRITE_LEVELS).indexOf(level) === -1) {
-    throw new Error('Unknown write level. Valid values are \'DEBUG\', \'INFO\', \'WARNING\', and \'ERROR\'.');
+    throw new Error(
+      "Unknown write level. Valid values are 'DEBUG', 'INFO', 'WARNING', and 'ERROR'."
+    );
   }
 
   this.writeLevel = level;
 };
 
-UI.prototype.startProgress = function(message/*, stepString*/) {
-  if (this.writeLevelVisible('INFO')) {
+UI.prototype.startProgress = function (message /*, stepString*/) {
+  if (this.writeLevelVisible("INFO")) {
     if (this.ci) {
       this.writeLine(message);
     } else {
@@ -184,20 +188,20 @@ UI.prototype.startProgress = function(message/*, stepString*/) {
   }
 };
 
-UI.prototype.stopProgress = function() {
-  if (this.writeLevelVisible('INFO') && !this.ci) {
+UI.prototype.stopProgress = function () {
+  if (this.writeLevelVisible("INFO") && !this.ci) {
     this.spinner.stop();
   }
 };
 
-UI.prototype.prompt = function(questions, callback) {
-  var inquirer = require('inquirer');
+UI.prototype.prompt = function (questions, callback) {
+  var inquirer = require("inquirer");
 
   // If no callback was provided, automatically return a promise
   if (callback) {
     inquirer.prompt(questions, callback);
   } else {
-    return new Promise(function(resolve) {
+    return new Promise(function (resolve) {
       inquirer.prompt(questions, resolve);
     });
   }
@@ -209,10 +213,10 @@ UI.prototype.prompt = function(questions, callback) {
   @type Object
 */
 UI.prototype.WRITE_LEVELS = {
-  'DEBUG': 1,
-  'INFO': 2,
-  'WARNING': 3,
-  'ERROR': 4
+  DEBUG: 1,
+  INFO: 2,
+  WARNING: 3,
+  ERROR: 4,
 };
 
 /**
@@ -223,7 +227,7 @@ UI.prototype.WRITE_LEVELS = {
   @param {String} writeLevel
   @return {Boolean}
 */
-UI.prototype.writeLevelVisible = function(writeLevel) {
+UI.prototype.writeLevelVisible = function (writeLevel) {
   var levels = this.WRITE_LEVELS;
   writeLevel = writeLevel || DEFAULT_WRITE_LEVEL;
 

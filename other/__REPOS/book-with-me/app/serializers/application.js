@@ -1,11 +1,11 @@
-import DS from 'ember-data';
-import { underscore } from '@ember/string'
+import DS from "ember-data";
+import { underscore } from "@ember/string";
 
 export default DS.JSONAPISerializer.extend({
-  keyForAttribute: function(attr) {
+  keyForAttribute: function (attr) {
     return underscore(attr);
   },
-  keyForRelationship: function(key) {
+  keyForRelationship: function (key) {
     return underscore(key);
-  }
+  },
 });

@@ -1,11 +1,14 @@
 <div class="modal-header">
-  <h4 class="modal-title">Confirm Booking <p>2020/01/01 to 2020/01/10</p></h4>
+  <h4 class="modal-title">
+    Confirm Booking
+    <p>2020/01/01 to 2020/01/10</p>
+  </h4>
   <button
     type="button"
     class="close"
     aria-label="Close"
-    (click)="confirmationModal.close()">
-  </button>
+    (click)="confirmationModal.close()"
+  ></button>
 </div>
 <div class="modal-body">
   <em>5</em> nights /
@@ -23,10 +26,8 @@
   </p>
 </div> -->
 <div class="modal-footer">
-  <button  type="button" class="btn bwm-btn-main">Confirm</button>
-  <button
-    type="button"
-    class="btn"
-    (click)="confirmationModal.close()">Close
+  <button type="button" class="btn bwm-btn-main">Confirm</button>
+  <button type="button" class="btn" (click)="confirmationModal.close()">
+    Close
   </button>
 </div>

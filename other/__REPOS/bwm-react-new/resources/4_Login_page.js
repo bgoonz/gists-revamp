@@ -8,10 +8,7 @@
       <form>
         <div className="form-group">
           <label htmlFor="email">Email</label>
-          <input 
-            type="email"
-            className="form-control"
-            id="email" />
+          <input type="email" className="form-control" id="email" />
           {/* <div className="alert alert-danger">
             <div>
               Email is required.
@@ -23,14 +20,11 @@
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input 
-            type="password"
-            className="form-control"
-            id="password" />
+          <input type="password" className="form-control" id="password" />
         </div>
-        <button 
-          type="submit" 
-          className="btn btn-bwm-main">Submit</button>
+        <button type="submit" className="btn btn-bwm-main">
+          Submit
+        </button>
       </form>
       {/* <div className="alert alert-danger">
         <p>
@@ -40,9 +34,11 @@
     </div>
     <div className="col-md-6 ml-auto">
       <div className="image-container">
-        <h2 className="catchphrase">Hundreds of awesome places in reach of few clicks.</h2>
+        <h2 className="catchphrase">
+          Hundreds of awesome places in reach of few clicks.
+        </h2>
         <img src="/images/login-image.jpg" alt="Login an user" />
       </div>
     </div>
   </div>
-</div> 
+</div>;

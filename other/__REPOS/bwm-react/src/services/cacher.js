@@ -1,9 +1,8 @@
-import camelCase from 'camel-case';
+import camelCase from "camel-case";
 
 let instance = null;
 
 export class Cacher {
-
   cache = {};
 
   constructor() {
@@ -25,5 +24,4 @@ export class Cacher {
   getCachedValue(key) {
     return this.cache[camelCase(key)];
   }
-
 }

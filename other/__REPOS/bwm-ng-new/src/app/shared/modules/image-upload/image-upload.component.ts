@@ -1,30 +1,35 @@
-import { Component, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';
-import { ImageUploadService } from './image-upload.service';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  EventEmitter,
+  Output,
+} from "@angular/core";
+import { ImageUploadService } from "./image-upload.service";
+import { ImageCroppedEvent } from "ngx-image-cropper";
 
 export class ImageSnippet {
   src: string;
-  status = 'INIT';
+  status = "INIT";
 
   constructor(public name: string, public type: string) {}
 }
 
 @Component({
-  selector: 'bwm-image-upload',
-  templateUrl: './image-upload.component.html',
-  styleUrls: ['./image-upload.component.scss']
+  selector: "bwm-image-upload",
+  templateUrl: "./image-upload.component.html",
+  styleUrls: ["./image-upload.component.scss"],
 })
 export class ImageUploadComponent implements OnInit, OnDestroy {
-
   @Output() imageUploaded = new EventEmitter();
   @Output() imageLoaded = new EventEmitter();
   @Output() imageCanceled = new EventEmitter();
   selectedImage: ImageSnippet;
-  imageChangedEvent: any = '';
+  imageChangedEvent: any = "";
 
   private fileReader = new FileReader();
 
-  constructor(private imageService: ImageUploadService) { }
+  constructor(private imageService: ImageUploadService) {}
 
   ngOnInit() {
     this.listenToFileLoading();
@@ -39,18 +44,19 @@ export class ImageUploadComponent implements OnInit, OnDestroy {
   }
 
   uploadImage() {
-    this.selectedImage.status = 'PENDING';
+    this.selectedImage.status = "PENDING";
 
-    this.imageService
-      .uploadImage(this.selectedImage)
-      .subscribe((uploadedImage: any) => {
+    this.imageService.uploadImage(this.selectedImage).subscribe(
+      (uploadedImage: any) => {
         this.imageUploaded.emit(uploadedImage._id);
-        this.selectedImage.status = 'UPLOADED';
+        this.selectedImage.status = "UPLOADED";
         this.imageChangedEvent = null;
-      }, () => {
-        this.selectedImage.status = 'ERROR';
+      },
+      () => {
+        this.selectedImage.status = "ERROR";
         this.imageChangedEvent = null;
-      });
+      }
+    );
   }
 
   cancelImage(fileInput: any) {
@@ -73,14 +79,14 @@ export class ImageUploadComponent implements OnInit, OnDestroy {
   private handleImageLoad = (event: any) => {
     const { result } = event.target;
     this.selectedImage.src = result;
-    this.selectedImage.status = 'LOADED';
-  }
+    this.selectedImage.status = "LOADED";
+  };
 
   private listenToFileLoading() {
-    this.fileReader.addEventListener('load', this.handleImageLoad);
+    this.fileReader.addEventListener("load", this.handleImageLoad);
   }
 
   private removeFileLoadListener() {
-    this.fileReader.removeEventListener('load', this.handleImageLoad);
+    this.fileReader.removeEventListener("load", this.handleImageLoad);
   }
 }

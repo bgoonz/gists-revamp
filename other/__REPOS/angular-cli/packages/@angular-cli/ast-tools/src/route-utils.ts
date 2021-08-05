@@ -1,10 +1,10 @@
-import * as ts from 'typescript';
-import * as fs from 'fs';
-import * as path from 'path';
-import {Change, InsertChange, NoopChange} from './change';
-import {findNodes} from './node';
-import {insertAfterLastOccurrence} from './ast-utils';
-import {NodeHost, Host} from './change';
+import * as ts from "typescript";
+import * as fs from "fs";
+import * as path from "path";
+import { Change, InsertChange, NoopChange } from "./change";
+import { findNodes } from "./node";
+import { insertAfterLastOccurrence } from "./ast-utils";
+import { NodeHost, Host } from "./change";
 
 /**
  * Adds imports to mainFile and adds toBootstrap to the array of providers
@@ -15,11 +15,12 @@ import {NodeHost, Host} from './change';
  */
 export function bootstrapItem(
   mainFile: string,
-  imports: {[key: string]: (string | boolean)[]},
+  imports: { [key: string]: (string | boolean)[] },
   toBootstrap: string
 ) {
-  let changes = Object.keys(imports).map(importedClass => {
-    let defaultStyleImport = imports[importedClass].length === 2 && !!imports[importedClass][1];
+  let changes = Object.keys(imports).map((importedClass) => {
+    let defaultStyleImport =
+      imports[importedClass].length === 2 && !!imports[importedClass][1];
     return insertImport(
       mainFile,
       importedClass,
@@ -29,20 +30,30 @@ export function bootstrapItem(
   });
   let rootNode = getRootNode(mainFile);
   // get ExpressionStatements from the top level syntaxList of the sourceFile
-  let bootstrapNodes = rootNode.getChildAt(0).getChildren().filter(node => {
-    // get bootstrap expressions
-    return node.kind === ts.SyntaxKind.ExpressionStatement &&
-        (node.getChildAt(0).getChildAt(0) as ts.Identifier).text.toLowerCase() === 'bootstrap';
-  });
+  let bootstrapNodes = rootNode
+    .getChildAt(0)
+    .getChildren()
+    .filter((node) => {
+      // get bootstrap expressions
+      return (
+        node.kind === ts.SyntaxKind.ExpressionStatement &&
+        (
+          node.getChildAt(0).getChildAt(0) as ts.Identifier
+        ).text.toLowerCase() === "bootstrap"
+      );
+    });
   if (bootstrapNodes.length !== 1) {
-    throw new Error(`Did not bootstrap provideRouter in ${mainFile}` +
-                                    ' because of multiple or no bootstrap calls');
+    throw new Error(
+      `Did not bootstrap provideRouter in ${mainFile}` +
+        " because of multiple or no bootstrap calls"
+    );
   }
   let bootstrapNode = bootstrapNodes[0].getChildAt(0);
-  let isBootstraped = findNodes(bootstrapNode, ts.SyntaxKind.SyntaxList) // get bootstrapped items
-                      .reduce((a, b) => a.concat(b.getChildren().map(n => n.getText())), [])
-                      .filter(n => n !== ',')
-                      .indexOf(toBootstrap) !== -1;
+  let isBootstraped =
+    findNodes(bootstrapNode, ts.SyntaxKind.SyntaxList) // get bootstrapped items
+      .reduce((a, b) => a.concat(b.getChildren().map((n) => n.getText())), [])
+      .filter((n) => n !== ",")
+      .indexOf(toBootstrap) !== -1;
   if (isBootstraped) {
     return changes;
   }
@@ -52,10 +63,10 @@ export function bootstrapItem(
   let syntaxListNodes: any;
   let bootstrapProviders = bootstrapNode.getChildAt(2).getChildAt(2); // array of providers
 
-  if ( bootstrapProviders ) {
+  if (bootstrapProviders) {
     syntaxListNodes = bootstrapProviders.getChildAt(1).getChildren();
     fallBackPos = bootstrapProviders.getChildAt(2).pos; // closeBracketLiteral
-    separator = syntaxListNodes.length === 0 ? '' : ', ';
+    separator = syntaxListNodes.length === 0 ? "" : ", ";
     configurePathsTemplate = `${separator}${toBootstrap}`;
   } else {
     fallBackPos = bootstrapNode.getChildAt(3).pos; // closeParenLiteral
@@ -63,44 +74,58 @@ export function bootstrapItem(
     configurePathsTemplate = `, [ ${toBootstrap} ]`;
   }
 
-  changes.push(insertAfterLastOccurrence(syntaxListNodes, configurePathsTemplate,
-    mainFile, fallBackPos));
+  changes.push(
+    insertAfterLastOccurrence(
+      syntaxListNodes,
+      configurePathsTemplate,
+      mainFile,
+      fallBackPos
+    )
+  );
   return changes;
 }
 
 /**
-* Add Import `import { symbolName } from fileName` if the import doesn't exit
-* already. Assumes fileToEdit can be resolved and accessed.
-* @param fileToEdit (file we want to add import to)
-* @param symbolName (item to import)
-* @param fileName (path to the file)
-* @param isDefault (if true, import follows style for importing default exports)
-* @return Change
-*/
+ * Add Import `import { symbolName } from fileName` if the import doesn't exit
+ * already. Assumes fileToEdit can be resolved and accessed.
+ * @param fileToEdit (file we want to add import to)
+ * @param symbolName (item to import)
+ * @param fileName (path to the file)
+ * @param isDefault (if true, import follows style for importing default exports)
+ * @return Change
+ */
 
-export function insertImport(fileToEdit: string, symbolName: string,
-                                  fileName: string, isDefault = false): Change {
-  if (process.platform.startsWith('win')) {
-    fileName = fileName.replace(/\\/g, '/'); // correction in windows
+export function insertImport(
+  fileToEdit: string,
+  symbolName: string,
+  fileName: string,
+  isDefault = false
+): Change {
+  if (process.platform.startsWith("win")) {
+    fileName = fileName.replace(/\\/g, "/"); // correction in windows
   }
   let rootNode = getRootNode(fileToEdit);
   let allImports = findNodes(rootNode, ts.SyntaxKind.ImportDeclaration);
 
   // get nodes that map to import statements from the file fileName
-  let relevantImports = allImports.filter(node => {
+  let relevantImports = allImports.filter((node) => {
     // StringLiteral of the ImportDeclaration is the import file (fileName in this case).
-    let importFiles = node.getChildren().filter(child => child.kind === ts.SyntaxKind.StringLiteral)
-                      .map(n => (<ts.StringLiteral>n).text);
-    return importFiles.filter(file => file === fileName).length === 1;
+    let importFiles = node
+      .getChildren()
+      .filter((child) => child.kind === ts.SyntaxKind.StringLiteral)
+      .map((n) => (<ts.StringLiteral>n).text);
+    return importFiles.filter((file) => file === fileName).length === 1;
   });
 
   if (relevantImports.length > 0) {
-
     let importsAsterisk = false;
     // imports from import file
     let imports: ts.Node[] = [];
-    relevantImports.forEach(n => {
-      Array.prototype.push.apply(imports, findNodes(n, ts.SyntaxKind.Identifier));
+    relevantImports.forEach((n) => {
+      Array.prototype.push.apply(
+        imports,
+        findNodes(n, ts.SyntaxKind.Identifier)
+      );
       if (findNodes(n, ts.SyntaxKind.AsteriskToken).length > 0) {
         importsAsterisk = true;
       }
@@ -111,31 +136,41 @@ export function insertImport(fileToEdit: string, symbolName: string,
       return;
     }
 
-    let importTextNodes = imports.filter(n => (<ts.Identifier>n).text === symbolName);
+    let importTextNodes = imports.filter(
+      (n) => (<ts.Identifier>n).text === symbolName
+    );
 
     // insert import if it's not there
     if (importTextNodes.length === 0) {
-      let fallbackPos = findNodes(relevantImports[0], ts.SyntaxKind.CloseBraceToken)[0].pos ||
-                        findNodes(relevantImports[0], ts.SyntaxKind.FromKeyword)[0].pos;
-      return insertAfterLastOccurrence(imports, `, ${symbolName}`, fileToEdit, fallbackPos);
+      let fallbackPos =
+        findNodes(relevantImports[0], ts.SyntaxKind.CloseBraceToken)[0].pos ||
+        findNodes(relevantImports[0], ts.SyntaxKind.FromKeyword)[0].pos;
+      return insertAfterLastOccurrence(
+        imports,
+        `, ${symbolName}`,
+        fileToEdit,
+        fallbackPos
+      );
     }
     return new NoopChange();
   }
 
   // no such import declaration exists
-  let useStrict = findNodes(rootNode, ts.SyntaxKind.StringLiteral)
-                  .filter((n: ts.StringLiteral) => n.text === 'use strict');
+  let useStrict = findNodes(rootNode, ts.SyntaxKind.StringLiteral).filter(
+    (n: ts.StringLiteral) => n.text === "use strict"
+  );
   let fallbackPos = 0;
   if (useStrict.length > 0) {
     fallbackPos = useStrict[0].end;
   }
-  let open = isDefault ? '' : '{ ';
-  let close = isDefault ? '' : ' }';
+  let open = isDefault ? "" : "{ ";
+  let close = isDefault ? "" : " }";
   // if there are no imports or 'use strict' statement, insert import at beginning of file
   let insertAtBeginning = allImports.length === 0 && useStrict.length === 0;
-  let separator = insertAtBeginning ? '' : ';\n';
-  let toInsert = `${separator}import ${open}${symbolName}${close}` +
-    ` from '${fileName}'${insertAtBeginning ? ';\n' : ''}`;
+  let separator = insertAtBeginning ? "" : ";\n";
+  let toInsert =
+    `${separator}import ${open}${symbolName}${close}` +
+    ` from '${fileName}'${insertAtBeginning ? ";\n" : ""}`;
   return insertAfterLastOccurrence(
     allImports,
     toInsert,
@@ -143,7 +178,7 @@ export function insertImport(fileToEdit: string, symbolName: string,
     fallbackPos,
     ts.SyntaxKind.StringLiteral
   );
-};
+}
 
 /**
  * Inserts a path to the new route into src/routes.ts if it doesn't exist
@@ -152,15 +187,20 @@ export function insertImport(fileToEdit: string, symbolName: string,
  * @return Change[]
  * @throws Error if routesFile has multiple export default or none.
  */
-export function addPathToRoutes(routesFile: string, pathOptions: any): Change[] {
-  let route = pathOptions.route.split('/')
-              .filter((n: string) => n !== '').join('/'); // change say `/about/:id/` to `about/:id`
-  let isDefault = pathOptions.isDefault ? ', useAsDefault: true' : '';
-  let outlet = pathOptions.outlet ? `, outlet: '${pathOptions.outlet}'` : '';
+export function addPathToRoutes(
+  routesFile: string,
+  pathOptions: any
+): Change[] {
+  let route = pathOptions.route
+    .split("/")
+    .filter((n: string) => n !== "")
+    .join("/"); // change say `/about/:id/` to `about/:id`
+  let isDefault = pathOptions.isDefault ? ", useAsDefault: true" : "";
+  let outlet = pathOptions.outlet ? `, outlet: '${pathOptions.outlet}'` : "";
 
   // create route path and resolve component import
   let positionalRoutes = /\/:[^/]*/g;
-  let routePath = route.replace(positionalRoutes, '');
+  let routePath = route.replace(positionalRoutes, "");
   routePath = `./app/${routePath}/${pathOptions.dasherizedName}.component`;
   let originalComponent = pathOptions.component;
   pathOptions.component = resolveImportName(
@@ -171,24 +211,33 @@ export function addPathToRoutes(routesFile: string, pathOptions: any): Change[] 
 
   let content = `{ path: '${route}', component: ${pathOptions.component}${isDefault}${outlet} }`;
   let rootNode = getRootNode(routesFile);
-  let routesNode = rootNode.getChildAt(0).getChildren().filter(n => {
-    // get export statement
-    return n.kind === ts.SyntaxKind.ExportAssignment &&
-           n.getFullText().indexOf('export default') !== -1;
-  });
+  let routesNode = rootNode
+    .getChildAt(0)
+    .getChildren()
+    .filter((n) => {
+      // get export statement
+      return (
+        n.kind === ts.SyntaxKind.ExportAssignment &&
+        n.getFullText().indexOf("export default") !== -1
+      );
+    });
   if (routesNode.length !== 1) {
-    throw new Error('Did not insert path in routes.ts because ' +
-                          `there were multiple or no 'export default' statements`);
+    throw new Error(
+      "Did not insert path in routes.ts because " +
+        `there were multiple or no 'export default' statements`
+    );
   }
   let pos = routesNode[0].getChildAt(2).getChildAt(0).end; // openBracketLiteral
   // all routes in export route array
-  let routesArray = routesNode[0].getChildAt(2).getChildAt(1)
-                    .getChildren()
-                    .filter(n => n.kind === ts.SyntaxKind.ObjectLiteralExpression);
+  let routesArray = routesNode[0]
+    .getChildAt(2)
+    .getChildAt(1)
+    .getChildren()
+    .filter((n) => n.kind === ts.SyntaxKind.ObjectLiteralExpression);
 
   if (pathExists(routesArray, route, pathOptions.component)) {
     // don't duplicate routes
-    throw new Error('Route was not added since it is a duplicate');
+    throw new Error("Route was not added since it is a duplicate");
   }
   let isChild = false;
   // get parent to insert under
@@ -212,7 +261,7 @@ export function addPathToRoutes(routesFile: string, pathOptions: any): Change[] 
     let childrenInfo = addChildPath(parent, pathOptions, route);
     if (!childrenInfo) {
       // path exists already
-      throw new Error('Route was not added since it is a duplicate');
+      throw new Error("Route was not added since it is a duplicate");
     }
     content = childrenInfo.newContent;
     pos = childrenInfo.pos;
@@ -221,37 +270,50 @@ export function addPathToRoutes(routesFile: string, pathOptions: any): Change[] 
 
   let isFirstElement = routesArray.length === 0;
   if (!isChild) {
-    let separator = isFirstElement ? '\n' : ',';
+    let separator = isFirstElement ? "\n" : ",";
     content = `\n  ${content}${separator}`;
   }
   let changes: Change[] = [new InsertChange(routesFile, pos, content)];
-  let component = originalComponent === pathOptions.component ? originalComponent :
-                  `${originalComponent} as ${pathOptions.component}`;
-  routePath = routePath.replace(/\\/, '/'); // correction in windows
+  let component =
+    originalComponent === pathOptions.component
+      ? originalComponent
+      : `${originalComponent} as ${pathOptions.component}`;
+  routePath = routePath.replace(/\\/, "/"); // correction in windows
   changes.push(insertImport(routesFile, component, routePath));
   return changes;
 }
-
 
 /**
  * Add more properties to the route object in routes.ts
  * @param routesFile routes.ts
  * @param routes Object {route: [key, value]}
  */
-export function addItemsToRouteProperties(routesFile: string, routes: {[key: string]: string[]}) {
+export function addItemsToRouteProperties(
+  routesFile: string,
+  routes: { [key: string]: string[] }
+) {
   let rootNode = getRootNode(routesFile);
-  let routesNode = rootNode.getChildAt(0).getChildren().filter(n => {
-    // get export statement
-    return n.kind === ts.SyntaxKind.ExportAssignment &&
-           n.getFullText().indexOf('export default') !== -1;
-  });
+  let routesNode = rootNode
+    .getChildAt(0)
+    .getChildren()
+    .filter((n) => {
+      // get export statement
+      return (
+        n.kind === ts.SyntaxKind.ExportAssignment &&
+        n.getFullText().indexOf("export default") !== -1
+      );
+    });
   if (routesNode.length !== 1) {
-    throw new Error('Did not insert path in routes.ts because ' +
-                          `there were multiple or no 'export default' statements`);
+    throw new Error(
+      "Did not insert path in routes.ts because " +
+        `there were multiple or no 'export default' statements`
+    );
   }
-  let routesArray = routesNode[0].getChildAt(2).getChildAt(1)
-                  .getChildren()
-                  .filter(n => n.kind === ts.SyntaxKind.ObjectLiteralExpression);
+  let routesArray = routesNode[0]
+    .getChildAt(2)
+    .getChildAt(1)
+    .getChildren()
+    .filter((n) => n.kind === ts.SyntaxKind.ObjectLiteralExpression);
   let changes: Change[] = Object.keys(routes).reduce((result, route) => {
     // let route = routes[guardName][0];
     let itemKey = routes[route][0];
@@ -260,11 +322,22 @@ export function addItemsToRouteProperties(routesFile: string, routes: {[key: str
     if (!currRouteNode) {
       throw new Error(`Could not find '${route}' in routes.ts`);
     }
-    let fallBackPos = findNodes(currRouteNode, ts.SyntaxKind.CloseBraceToken).pop().pos;
-    let pathPropertiesNodes = currRouteNode.getChildAt(1).getChildren()
-                              .filter(n => n.kind === ts.SyntaxKind.PropertyAssignment);
-    return result.concat([insertAfterLastOccurrence(pathPropertiesNodes,
-      `, ${itemKey}: ${itemValue}`, routesFile, fallBackPos)]);
+    let fallBackPos = findNodes(
+      currRouteNode,
+      ts.SyntaxKind.CloseBraceToken
+    ).pop().pos;
+    let pathPropertiesNodes = currRouteNode
+      .getChildAt(1)
+      .getChildren()
+      .filter((n) => n.kind === ts.SyntaxKind.PropertyAssignment);
+    return result.concat([
+      insertAfterLastOccurrence(
+        pathPropertiesNodes,
+        `, ${itemKey}: ${itemValue}`,
+        routesFile,
+        fallBackPos
+      ),
+    ]);
   }, []);
   return changes;
 }
@@ -275,12 +348,21 @@ export function addItemsToRouteProperties(routesFile: string, routes: {[key: str
  * @param componentName
  * @return whether file exports componentName
  */
-export function confirmComponentExport (file: string, componentName: string): boolean {
+export function confirmComponentExport(
+  file: string,
+  componentName: string
+): boolean {
   const rootNode = getRootNode(file);
-  let exportNodes  = rootNode.getChildAt(0).getChildren().filter(n => {
-    return n.kind === ts.SyntaxKind.ClassDeclaration &&
-    (n.getChildren().filter((p: ts.Identifier) => p.text === componentName).length !== 0);
-  });
+  let exportNodes = rootNode
+    .getChildAt(0)
+    .getChildren()
+    .filter((n) => {
+      return (
+        n.kind === ts.SyntaxKind.ClassDeclaration &&
+        n.getChildren().filter((p: ts.Identifier) => p.text === componentName)
+          .length !== 0
+      );
+    });
   return exportNodes.length > 0;
 }
 
@@ -292,11 +374,17 @@ export function confirmComponentExport (file: string, componentName: string): bo
  * @param fileName (file to add import to)
  * @return resolved importName
  */
-function resolveImportName (importName: string, importPath: string, fileName: string): string {
+function resolveImportName(
+  importName: string,
+  importPath: string,
+  fileName: string
+): string {
   const rootNode = getRootNode(fileName);
   // get all the import names
-  let importNodes = rootNode.getChildAt(0).getChildren()
-                        .filter(n => n.kind === ts.SyntaxKind.ImportDeclaration);
+  let importNodes = rootNode
+    .getChildAt(0)
+    .getChildren()
+    .filter((n) => n.kind === ts.SyntaxKind.ImportDeclaration);
   // check if imported file is same as current one before updating component name
   let importNames = importNodes
     .reduce((a, b) => {
@@ -309,13 +397,13 @@ function resolveImportName (importName: string, importPath: string, fileName: st
       }
       return a;
     }, [])
-    .map(n => n.text);
+    .map((n) => n.text);
 
   const index = importNames.indexOf(importName);
   if (index === -1) {
     return importName;
   }
-  const baseName = importNames[index].split('_')[0];
+  const baseName = importNames[index].split("_")[0];
   let newName = baseName;
   let resolutionNumber = 1;
   while (importNames.indexOf(newName) !== -1) {
@@ -334,30 +422,36 @@ function resolveImportName (importName: string, importPath: string, fileName: st
  * @return component file name
  * @throw Error if component file referenced by path is not found
  */
-export function resolveComponentPath(projectRoot: string, currentDir: string, filePath: string) {
-
+export function resolveComponentPath(
+  projectRoot: string,
+  currentDir: string,
+  filePath: string
+) {
   let parsedPath = path.parse(filePath);
-  let componentName = parsedPath.base.split('.')[0];
+  let componentName = parsedPath.base.split(".")[0];
   let componentDir = path.parse(parsedPath.dir).base;
 
   // correction for a case where path is /**/componentName/componentName(.component.ts)
-  if ( componentName === componentDir) {
+  if (componentName === componentDir) {
     filePath = parsedPath.dir;
   }
-  if (parsedPath.dir === '') {
+  if (parsedPath.dir === "") {
     // only component file name is given
     filePath = componentName;
   }
-  let directory = filePath[0] === path.sep ?
-    path.resolve(path.join(projectRoot, 'src', 'app', filePath)) :
-    path.resolve(currentDir, filePath);
+  let directory =
+    filePath[0] === path.sep
+      ? path.resolve(path.join(projectRoot, "src", "app", filePath))
+      : path.resolve(currentDir, filePath);
 
   if (!fs.existsSync(directory)) {
-    throw new Error(`path '${filePath}' must be relative to current directory` +
-                    ` or absolute from project root`);
+    throw new Error(
+      `path '${filePath}' must be relative to current directory` +
+        ` or absolute from project root`
+    );
   }
-  if (directory.indexOf('src' + path.sep + 'app') === -1) {
-    throw new Error('Route must be within app');
+  if (directory.indexOf("src" + path.sep + "app") === -1) {
+    throw new Error("Route must be within app");
   }
   let componentFile = path.join(directory, `${componentName}.component.ts`);
   if (!fs.existsSync(componentFile)) {
@@ -372,17 +466,23 @@ export function resolveComponentPath(projectRoot: string, currentDir: string, fi
  * @param host
  * @return Promise
  */
-export function applyChanges(changes: Change[], host: Host = NodeHost): Promise<void> {
+export function applyChanges(
+  changes: Change[],
+  host: Host = NodeHost
+): Promise<void> {
   return changes
-    .filter(change => !!change)
+    .filter((change) => !!change)
     .sort((curr, next) => next.order - curr.order)
-    .reduce((newChange, change) => newChange.then(() => change.apply(host)), Promise.resolve());
+    .reduce(
+      (newChange, change) => newChange.then(() => change.apply(host)),
+      Promise.resolve()
+    );
 }
 /**
  * Helper for addPathToRoutes. Adds child array to the appropriate position in the routes.ts file
  * @return Object (pos, newContent)
  */
-function addChildPath (parentObject: ts.Node, pathOptions: any, route: string) {
+function addChildPath(parentObject: ts.Node, pathOptions: any, route: string) {
   if (!parentObject) {
     return;
   }
@@ -390,30 +490,41 @@ function addChildPath (parentObject: ts.Node, pathOptions: any, route: string) {
   let newContent: string;
 
   // get object with 'children' property
-  let childrenNode = parentObject.getChildAt(1).getChildren()
-                    .filter(n =>
-                      n.kind === ts.SyntaxKind.PropertyAssignment
-                      && ((n as ts.PropertyAssignment).name as ts.Identifier).text === 'children');
+  let childrenNode = parentObject
+    .getChildAt(1)
+    .getChildren()
+    .filter(
+      (n) =>
+        n.kind === ts.SyntaxKind.PropertyAssignment &&
+        ((n as ts.PropertyAssignment).name as ts.Identifier).text === "children"
+    );
   // find number of spaces to pad nested paths
   let nestingLevel = 1; // for indenting route object in the `children` array
   let n = parentObject;
   while (n.parent) {
-    if (n.kind === ts.SyntaxKind.ObjectLiteralExpression
-        || n.kind === ts.SyntaxKind.ArrayLiteralExpression) {
-      nestingLevel ++;
+    if (
+      n.kind === ts.SyntaxKind.ObjectLiteralExpression ||
+      n.kind === ts.SyntaxKind.ArrayLiteralExpression
+    ) {
+      nestingLevel++;
     }
     n = n.parent;
   }
 
   // strip parent route
-  let parentRoute = (parentObject.getChildAt(1).getChildAt(0).getChildAt(2) as ts.Identifier).text;
-  let childRoute = route.substring(route.indexOf(parentRoute) + parentRoute.length + 1);
+  let parentRoute = (
+    parentObject.getChildAt(1).getChildAt(0).getChildAt(2) as ts.Identifier
+  ).text;
+  let childRoute = route.substring(
+    route.indexOf(parentRoute) + parentRoute.length + 1
+  );
 
-  let isDefault = pathOptions.isDefault ? ', useAsDefault: true' : '';
-  let outlet = pathOptions.outlet ? `, outlet: '${pathOptions.outlet}'` : '';
-  let content = `{ path: '${childRoute}', component: ${pathOptions.component}` +
-                `${isDefault}${outlet} }`;
-  let spaces = Array(2 * nestingLevel + 1).join(' ');
+  let isDefault = pathOptions.isDefault ? ", useAsDefault: true" : "";
+  let outlet = pathOptions.outlet ? `, outlet: '${pathOptions.outlet}'` : "";
+  let content =
+    `{ path: '${childRoute}', component: ${pathOptions.component}` +
+    `${isDefault}${outlet} }`;
+  let spaces = Array(2 * nestingLevel + 1).join(" ");
 
   if (childrenNode.length !== 0) {
     // add to beginning of children array
@@ -422,10 +533,11 @@ function addChildPath (parentObject: ts.Node, pathOptions: any, route: string) {
   } else {
     // no children array, add one
     pos = parentObject.getChildAt(2).pos; // close brace
-    newContent = `,\n${spaces.substring(2)}children: [\n${spaces}${content}` +
-                 `\n${spaces.substring(2)}]\n${spaces.substring(5)}`;
+    newContent =
+      `,\n${spaces.substring(2)}children: [\n${spaces}${content}` +
+      `\n${spaces.substring(2)}]\n${spaces.substring(5)}`;
   }
-  return {newContent: newContent, pos: pos};
+  return { newContent: newContent, pos: pos };
 }
 
 /**
@@ -433,24 +545,28 @@ function addChildPath (parentObject: ts.Node, pathOptions: any, route: string) {
  * @return parentNode which contains the children array to add a new path to or
  *         undefined if none or the entire route was matched.
  */
-function getParent(routesArray: ts.Node[], route: string, parent?: ts.Node): ts.Node {
+function getParent(
+  routesArray: ts.Node[],
+  route: string,
+  parent?: ts.Node
+): ts.Node {
   if (routesArray.length === 0 && !parent) {
     return; // no children array and no parent found
   }
   if (route.length === 0) {
     return; // route has been completely matched
   }
-  let splitRoute = route.split('/');
+  let splitRoute = route.split("/");
   // don't treat positional parameters separately
-  if (splitRoute.length > 1 && splitRoute[1].indexOf(':') !== -1) {
+  if (splitRoute.length > 1 && splitRoute[1].indexOf(":") !== -1) {
     let actualRoute = splitRoute.shift();
     splitRoute[0] = `${actualRoute}/${splitRoute[0]}`;
   }
   let potentialParents: ts.Node[] = routesArray // route nodes with same path as current route
-                                    .filter(n => getValueForKey(n, 'path') === splitRoute[0]);
+    .filter((n) => getValueForKey(n, "path") === splitRoute[0]);
   if (potentialParents.length !== 0) {
     splitRoute.shift(); // matched current parent, move on
-    route = splitRoute.join('/');
+    route = splitRoute.join("/");
   }
   // get all children paths
   let newRouteArray = getChildrenArray(routesArray);
@@ -476,15 +592,15 @@ function pathExists(
   }
   fullRoute = fullRoute ? fullRoute : route;
   let sameRoute = false;
-  let splitRoute = route.split('/');
+  let splitRoute = route.split("/");
   // don't treat positional parameters separately
-  if (splitRoute.length > 1 && splitRoute[1].indexOf(':') !== -1) {
+  if (splitRoute.length > 1 && splitRoute[1].indexOf(":") !== -1) {
     let actualRoute = splitRoute.shift();
     splitRoute[0] = `${actualRoute}/${splitRoute[0]}`;
   }
-  let repeatedRoutes: ts.Node[] = routesArray.filter(n => {
-    let currentRoute = getValueForKey(n, 'path');
-    let sameComponent = getValueForKey(n, 'component') === component;
+  let repeatedRoutes: ts.Node[] = routesArray.filter((n) => {
+    let currentRoute = getValueForKey(n, "path");
+    let sameComponent = getValueForKey(n, "component") === component;
 
     sameRoute = currentRoute === splitRoute[0];
     // Confirm that it's parents are the same
@@ -493,7 +609,7 @@ function pathExists(
       let objExp = n.parent;
       while (objExp) {
         if (objExp.kind === ts.SyntaxKind.ObjectLiteralExpression) {
-          let currentParentPath = getValueForKey(objExp, 'path');
+          let currentParentPath = getValueForKey(objExp, "path");
           path = currentParentPath ? `${currentParentPath}/${path}` : path;
         }
         objExp = objExp.parent;
@@ -505,7 +621,7 @@ function pathExists(
 
   if (sameRoute) {
     splitRoute.shift(); // matched current parent, move on
-    route = splitRoute.join('/');
+    route = splitRoute.join("/");
   }
   if (repeatedRoutes.length !== 0) {
     return true; // new path will be repeating if inserted. report that path already exists
@@ -522,15 +638,33 @@ function pathExists(
  *         in routesArray
  */
 function getChildrenArray(routesArray: ts.Node[]): ts.Node[] {
-  return routesArray.reduce((allRoutes, currRoute) => allRoutes.concat(
-    currRoute.getChildAt(1).getChildren()
-      .filter(n => n.kind === ts.SyntaxKind.PropertyAssignment
-                && ((n as ts.PropertyAssignment).name as ts.Identifier).text === 'children')
-      .map(n => n.getChildAt(2).getChildAt(1)) // syntaxList containing chilren paths
-      .reduce((childrenArray, currChild) => childrenArray.concat(currChild.getChildren()
-        .filter(p => p.kind === ts.SyntaxKind.ObjectLiteralExpression)
-      ), [])
-  ), []);
+  return routesArray.reduce(
+    (allRoutes, currRoute) =>
+      allRoutes.concat(
+        currRoute
+          .getChildAt(1)
+          .getChildren()
+          .filter(
+            (n) =>
+              n.kind === ts.SyntaxKind.PropertyAssignment &&
+              ((n as ts.PropertyAssignment).name as ts.Identifier).text ===
+                "children"
+          )
+          .map((n) => n.getChildAt(2).getChildAt(1)) // syntaxList containing chilren paths
+          .reduce(
+            (childrenArray, currChild) =>
+              childrenArray.concat(
+                currChild
+                  .getChildren()
+                  .filter(
+                    (p) => p.kind === ts.SyntaxKind.ObjectLiteralExpression
+                  )
+              ),
+            []
+          )
+      ),
+    []
+  );
 }
 
 /**
@@ -539,13 +673,17 @@ function getChildrenArray(routesArray: ts.Node[]): ts.Node[] {
  * @param key 'path' or 'component'
  */
 function getValueForKey(objectLiteralNode: ts.Node, key: string) {
-  let currentNode = key === 'component' ? objectLiteralNode.getChildAt(1).getChildAt(2) :
-                                    objectLiteralNode.getChildAt(1).getChildAt(0);
-  return currentNode
-    && currentNode.getChildAt(0)
-    && (currentNode.getChildAt(0) as ts.Identifier).text === key
-    && currentNode.getChildAt(2)
-    && (currentNode.getChildAt(2) as ts.Identifier).text;
+  let currentNode =
+    key === "component"
+      ? objectLiteralNode.getChildAt(1).getChildAt(2)
+      : objectLiteralNode.getChildAt(1).getChildAt(0);
+  return (
+    currentNode &&
+    currentNode.getChildAt(0) &&
+    (currentNode.getChildAt(0) as ts.Identifier).text === key &&
+    currentNode.getChildAt(2) &&
+    (currentNode.getChildAt(2) as ts.Identifier).text
+  );
 }
 
 /**
@@ -553,5 +691,10 @@ function getValueForKey(objectLiteralNode: ts.Node, key: string) {
  * @param file
  */
 function getRootNode(file: string) {
-  return ts.createSourceFile(file, fs.readFileSync(file).toString(), ts.ScriptTarget.Latest, true);
+  return ts.createSourceFile(
+    file,
+    fs.readFileSync(file).toString(),
+    ts.ScriptTarget.Latest,
+    true
+  );
 }

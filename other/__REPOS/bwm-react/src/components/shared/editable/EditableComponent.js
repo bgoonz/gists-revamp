@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 
 export class EditableComponent extends React.Component {
-
   constructor() {
     super();
 
     this.state = {
       isActive: false,
       value: undefined,
-      originValue: undefined
-    }
+      originValue: undefined,
+    };
   }
 
   componentDidMount() {
@@ -17,7 +16,7 @@ export class EditableComponent extends React.Component {
   }
 
   componentDidUpdate() {
-    const {errors, entityField, resetErrors } = this.props;
+    const { errors, entityField, resetErrors } = this.props;
 
     if (errors && errors.length > 0 && errors[0].title === entityField) {
       this.setOriginValue();
@@ -29,18 +28,18 @@ export class EditableComponent extends React.Component {
     const { entity, entityField } = this.props;
 
     this.setState({
-        value: entity[entityField],
-        originValue: entity[entityField],
-        isActive: false
+      value: entity[entityField],
+      originValue: entity[entityField],
+      isActive: false,
     });
   }
 
   disableEdit() {
-    this.setState({isActive: false});
+    this.setState({ isActive: false });
   }
 
   enableEdit() {
-    this.setState({isActive: true});
+    this.setState({ isActive: true });
   }
 
   update() {
@@ -48,13 +47,13 @@ export class EditableComponent extends React.Component {
     const { updateEntity, entityField } = this.props;
 
     if (value !== originValue) {
-      updateEntity({[entityField]: value});
+      updateEntity({ [entityField]: value });
 
-      this.setState({isActive: false, originValue: value});
+      this.setState({ isActive: false, originValue: value });
     }
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value})
+    this.setState({ value: event.target.value });
   }
 }

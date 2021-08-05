@@ -14,7 +14,7 @@ coverImage: https://cdn.sanity.io/images/55mm68d3/production/75b7a4b0f15c0f32c35
 
 ![TODO: provide alt](https://cdn.sanity.io/images/55mm68d3/production/75b7a4b0f15c0f32c3555c749df6d4b86cd9d79f-1000x666.jpg?h=600&fm=jpg&q=70)</div>
 
-* * *
+---
 
 All of these frameworks abstract a code and make it simpler for us. So it is good to go back to start, it will help us understand the code better and improve our thinking.
 
@@ -119,4 +119,3 @@ What do you think ? Can you see a difference ? Now we do not need prefix our mod
 That’s it for today. Hope you like my explanations. If something is not clear just contact me. You can also check more blogs on [https://eincode.com](https://eincode.com)
 
 Filip
-

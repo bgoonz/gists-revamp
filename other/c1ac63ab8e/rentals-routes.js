@@ -16,13 +16,11 @@ router.get("/:id", (req, res) => {
     .populate("bookings", "startAt endAt -_id")
     .exec(function (err, foundRental) {
       if (err || !foundRental) {
-        return res
-          .status(422)
-          .send({
-            errors: [
-              { title: "Rental Error!", detail: "Could not find Rental!" },
-            ],
-          });
+        return res.status(422).send({
+          errors: [
+            { title: "Rental Error!", detail: "Could not find Rental!" },
+          ],
+        });
       }
 
       return res.json(foundRental);
@@ -87,16 +85,14 @@ router.get("", (req, res) => {
         }
 
         if (filterRental.length === 0) {
-          return res
-            .status(422)
-            .send({
-              errors: [
-                {
-                  title: "Rental Search Error!",
-                  detail: `There are no rental for this city: ${city}`,
-                },
-              ],
-            });
+          return res.status(422).send({
+            errors: [
+              {
+                title: "Rental Search Error!",
+                detail: `There are no rental for this city: ${city}`,
+              },
+            ],
+          });
         }
 
         return res.json(filterRental);
@@ -107,29 +103,25 @@ router.get("", (req, res) => {
       .select("-bookings")
       .exec((err, rentals) => {
         if (err) {
-          return res
-            .status(422)
-            .send({
-              errors: [
-                {
-                  title: "Rentals Error",
-                  detail: "Could find/get any rentals data from the db" + err,
-                },
-              ],
-            });
+          return res.status(422).send({
+            errors: [
+              {
+                title: "Rentals Error",
+                detail: "Could find/get any rentals data from the db" + err,
+              },
+            ],
+          });
         }
 
         if (rentals.length === 0) {
-          return res
-            .status(422)
-            .send({
-              errors: [
-                {
-                  title: "Rentals Error!",
-                  detail: `There where no rentals found`,
-                },
-              ],
-            });
+          return res.status(422).send({
+            errors: [
+              {
+                title: "Rentals Error!",
+                detail: `There where no rentals found`,
+              },
+            ],
+          });
         }
 
         return res.json(rentals);
@@ -155,26 +147,22 @@ router.delete("/:id", userCtrl.authMiddleware, function (req, res) {
       }
 
       if (user.id !== foundRental.user.id) {
-        return res
-          .status(422)
-          .send({
-            errors: [
-              { title: "Invalid User!", detail: "You are not rental owner!" },
-            ],
-          });
+        return res.status(422).send({
+          errors: [
+            { title: "Invalid User!", detail: "You are not rental owner!" },
+          ],
+        });
       }
 
       if (foundRental.bookings.length > 0) {
-        return res
-          .status(422)
-          .send({
-            errors: [
-              {
-                title: "Active Bookings!",
-                detail: "Cannot delete rental with active bookings!",
-              },
-            ],
-          });
+        return res.status(422).send({
+          errors: [
+            {
+              title: "Active Bookings!",
+              detail: "Cannot delete rental with active bookings!",
+            },
+          ],
+        });
       }
 
       foundRental.remove(function (err) {

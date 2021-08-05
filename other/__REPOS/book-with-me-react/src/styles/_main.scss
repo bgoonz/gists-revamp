@@ -1,9 +1,11 @@
-@import 'variables.scss';
-@import 'header/header.scss';
-@import 'rental/rental.scss';
-@import 'booking/booking.scss';
+@import "variables.scss";
+@import "header/header.scss";
+@import "rental/rental.scss";
+@import "booking/booking.scss";
 
-html, body, p {
+html,
+body,
+p {
   color: $main-text-color-gray;
 }
 
@@ -26,7 +28,9 @@ html, body, p {
   padding: 15px 30px;
   font-size: 20px;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     border-color: $main-color !important;
     background-color: $main-color !important;
   }
@@ -70,7 +74,7 @@ html, body, p {
     position: absolute;
     color: #f1f1f1;
     padding: 40px;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     margin-top: 50px;
     letter-spacing: 1px;
   }

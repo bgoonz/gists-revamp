@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import {Router, Route, IndexRoute, browserHistory} from "react-router";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { Router, Route, IndexRoute, browserHistory } from "react-router";
 
-import App from './src/components/app';
+import App from "./src/components/app";
 import OffersPage from "./src/components/offers/OffersPage";
 
 import * as actions from "./src/actions/index";
@@ -15,12 +15,12 @@ import Signup from "./src/components/auth/signup";
 
 //Styles
 
-import './src/style/vendors/css/Grid.css'
-import './src/style/vendors/css/normalize.css';
+import "./src/style/vendors/css/Grid.css";
+import "./src/style/vendors/css/normalize.css";
 import "./src/style/vendors/css/ionicons.min.css";
-import './src/style/app.scss';
+import "./src/style/app.scss";
 
-var store = require('./src/reducers/index').configure();
+var store = require("./src/reducers/index").configure();
 
 store.dispatch(actions.fetchOffers()); //load initial data
 
@@ -32,10 +32,11 @@ store.dispatch(actions.fetchOffers()); //load initial data
 
 ReactDOM.render(
   <Provider store={store}>
-  <Router history={browserHistory}>
-    <Route path="/" component = {App}>
-      <IndexRoute component = {OffersPage} />
-    </Route>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={OffersPage} />
+      </Route>
     </Router>
-  </Provider>
-  , document.querySelector('.container'));
+  </Provider>,
+  document.querySelector(".container")
+);

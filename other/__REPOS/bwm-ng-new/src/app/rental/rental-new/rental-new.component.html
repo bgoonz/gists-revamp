@@ -1,4 +1,3 @@
-
 <section id="newRental">
   <div class="bwm-form">
     <div class="row">
@@ -7,79 +6,85 @@
         <form #rentalForm="ngForm">
           <div class="form-group">
             <label for="title">Title</label>
-            <input 
+            <input
               [(ngModel)]="newRental.title"
               name="title"
               required
               type="text"
               class="form-control"
-              id="title">
+              id="title"
+            />
           </div>
 
           <div class="form-group">
             <label for="city">City</label>
-            <input 
+            <input
               [(ngModel)]="newRental.city"
               name="city"
               required
               type="text"
               class="form-control"
-              id="city">
+              id="city"
+            />
           </div>
 
           <div class="form-group">
             <label for="street">Street</label>
-            <input 
+            <input
               [(ngModel)]="newRental.street"
               name="street"
               required
               type="text"
               class="form-control"
-              id="street">
+              id="street"
+            />
           </div>
 
           <div class="form-group">
             <label for="category">Category</label>
 
-            <select 
+            <select
               [(ngModel)]="newRental.category"
               name="category"
               required
               class="form-control"
-              id="category">
-              <option *ngFor="let category of rentalCategories"> {{category}} </option>
-
+              id="category"
+            >
+              <option *ngFor="let category of rentalCategories">
+                {{ category }}
+              </option>
             </select>
           </div>
 
           <div class="form-group">
             <label>Image</label>
-            <bwm-image-upload 
-              (imageUploaded)="attachImageToRental($event)">
+            <bwm-image-upload (imageUploaded)="attachImageToRental($event)">
             </bwm-image-upload>
           </div>
 
           <div class="form-group">
             <label for="bedrooms">Rooms</label>
-            <input 
+            <input
               [(ngModel)]="newRental.numOfRooms"
               name="numOfRooms"
               required
               type="number"
               class="form-control"
-              id="numOfRooms">
+              id="numOfRooms"
+            />
           </div>
 
           <div class="form-group">
             <label for="description">Description</label>
-            <textarea 
+            <textarea
               [(ngModel)]="newRental.description"
               name="description"
               required
               rows="5"
               type="text"
               class="form-control"
-              id="description">
+              id="description"
+            >
             </textarea>
           </div>
 
@@ -89,42 +94,49 @@
               <div class="input-group-prepend">
                 <div class="input-group-text">$</div>
               </div>
-              <input 
+              <input
                 [(ngModel)]="newRental.dailyPrice"
                 name="dailyPrice"
                 required
                 type="number"
                 class="form-control"
-                id="dailyPrice">
+                id="dailyPrice"
+              />
             </div>
           </div>
           <div class="form-group">
             <label for="shared">Shared</label>
-            <input 
+            <input
               [(ngModel)]="newRental.shared"
               name="shared"
               type="checkbox"
               class="form-control"
-              id="shared">
+              id="shared"
+            />
           </div>
-          <button type="button"
-                  [disabled]="!hasImageId"
-                  (click)="createRental(rentalForm)"
-                  class="btn bwm-btn-main">Create
+          <button
+            type="button"
+            [disabled]="!hasImageId"
+            (click)="createRental(rentalForm)"
+            class="btn bwm-btn-main"
+          >
+            Create
           </button>
         </form>
         <div *ngIf="errors.length > 0" class="alert alert-danger">
           <p *ngFor="let error of errors">
-            {{error.detail}}
+            {{ error.detail }}
           </p>
         </div>
       </div>
       <div class="col-md-6 ml-auto">
         <div class="image-container">
-          <h2 class="catchphrase">Hundreds of awesome places in reach of few clicks.</h2>
-          <img src="assets/images/create-rental.jpg" alt="">
+          <h2 class="catchphrase">
+            Hundreds of awesome places in reach of few clicks.
+          </h2>
+          <img src="assets/images/create-rental.jpg" alt="" />
         </div>
       </div>
     </div>
   </div>
-</section> 
+</section>

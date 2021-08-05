@@ -1,6 +1,5 @@
 .main-view {
-
-  .offer{
+  .offer {
     table {
       background: $contentColor;
       border-collapse: separate;
@@ -22,7 +21,7 @@
     }
 
     th:after {
-      content: '';
+      content: "";
       display: block;
       height: 25%;
       left: 0;
@@ -31,7 +30,6 @@
       top: 25%;
       width: 100%;
     }
-
 
     td {
       border: 1px solid #1d1d1d;

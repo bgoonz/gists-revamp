@@ -1,21 +1,26 @@
 # Angular CLI
 
 ### Overview
-The Angular CLI is a tool to initialize, develop, scaffold  and maintain [Angular](https://angular.io) applications
+
+The Angular CLI is a tool to initialize, develop, scaffold and maintain [Angular](https://angular.io) applications
 
 ### Getting Started
+
 To install the angular-cli:
+
 ```
 npm install -g angular-cli
 ```
 
 Generating and serving an Angular project via a development server
 [Create](new) and [run](serve) a new project:
+
 ```
 ng new my-project
 cd new-project
 ng serve
 ```
+
 Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ### Build Targets and Environment Files
@@ -39,7 +44,7 @@ it will default to `dev` for `development` and `prod` for `production`.
 
 ### Bundling
 
-All builds make use of bundling, and using the `--prod` flag in  `ng build --prod`
+All builds make use of bundling, and using the `--prod` flag in `ng build --prod`
 or `ng serve --prod` will also make use of uglifying and tree-shaking functionality.
 
 ### Running unit tests
@@ -95,6 +100,7 @@ Then add the needed script files to `apps[0].scripts`:
 ```
 
 Finally add the Bootstrap CSS to the `apps[0].styles` array:
+
 ```json
 "styles": [
   "../node_modules/bootstrap/dist/css/bootstrap.css",
@@ -106,20 +112,22 @@ Restart `ng serve` if you're running it, and Bootstrap 4 should be working on
 your app.
 
 ### Additional Commands
-* [ng new](new)
-* [ng init](init)
-* [ng serve](serve)
-* [ng generate](generate)
-* [ng test](test)
-* [ng e2e](e2e)
-* [ng build](build)
-* [ng get/ng set](config)
-* [ng docs](docs)
+
+- [ng new](new)
+- [ng init](init)
+- [ng serve](serve)
+- [ng generate](generate)
+- [ng test](test)
+- [ng e2e](e2e)
+- [ng build](build)
+- [ng get/ng set](config)
+- [ng docs](docs)
 
 ### How to Guides
-* Setup AngularFire _(coming soon)_
-* Include bootstrap (CSS) _(coming soon)_
-* Include Font Awesome _(coming soon)_
-* Setup of global styles _(coming soon)_
-* Setup bootstrap with SASS _(coming soon)_
-* Setup Angular Material 2 _(coming soon)_
+
+- Setup AngularFire _(coming soon)_
+- Include bootstrap (CSS) _(coming soon)_
+- Include Font Awesome _(coming soon)_
+- Setup of global styles _(coming soon)_
+- Setup bootstrap with SASS _(coming soon)_
+- Setup Angular Material 2 _(coming soon)_

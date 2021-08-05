@@ -13,12 +13,7 @@
     "sourceRoot": "/",
     "target": "es5",
     "lib": ["es6"],
-    "typeRoots": [
-      "../../node_modules/@types"
-    ],
-    "types": [
-      "jasmine",
-      "node"
-    ]
+    "typeRoots": ["../../node_modules/@types"],
+    "types": ["jasmine", "node"]
   }
 }

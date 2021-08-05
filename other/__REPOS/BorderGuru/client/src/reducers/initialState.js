@@ -1,7 +1,7 @@
 export default {
-    auth: {},
-    offers: [],
-    filterType: "",
-    searchText: "",
-    activeOffer: {}
-}
+  auth: {},
+  offers: [],
+  filterType: "",
+  searchText: "",
+  activeOffer: {},
+};

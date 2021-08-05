@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, throwError, of as observableOf } from 'rxjs';
-import { map as pipeMap, catchError } from 'rxjs/operators';
-import tt from '@tomtom-international/web-sdk-maps';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable, throwError, of as observableOf } from "rxjs";
+import { map as pipeMap, catchError } from "rxjs/operators";
+import tt from "@tomtom-international/web-sdk-maps";
 
 interface TomResponse {
-  summary: {[key: string]: any};
-  results: {[key: string]: any}[];
+  summary: { [key: string]: any };
+  results: { [key: string]: any }[];
 }
 
 interface GeoPosition {
@@ -15,25 +15,29 @@ interface GeoPosition {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class MapService {
+  private locationCache: { [key: string]: GeoPosition } = {};
 
-  private locationCache: {[key: string]: GeoPosition} = {};
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getGeoPosition(location: string, apiKey: string): Observable<GeoPosition> {
     const cachedLocation = this.getCachedLocation(location);
 
-    return cachedLocation ?
-      observableOf(cachedLocation) :
-      this.requestGeoLocation(location, apiKey);
+    return cachedLocation
+      ? observableOf(cachedLocation)
+      : this.requestGeoLocation(location, apiKey);
   }
 
-  private requestGeoLocation(location: string, apiKey: string): Observable<GeoPosition> {
+  private requestGeoLocation(
+    location: string,
+    apiKey: string
+  ): Observable<GeoPosition> {
     return this.http
-      .get(`https://api.tomtom.com/search/2/geocode/${location}.JSON?key=${apiKey}`)
+      .get(
+        `https://api.tomtom.com/search/2/geocode/${location}.JSON?key=${apiKey}`
+      )
       .pipe(
         pipeMap((tomRes: TomResponse) => {
           const results = tomRes.results;
@@ -44,16 +48,18 @@ export class MapService {
           }
 
           throw this.locationError;
-      }), catchError(_ => throwError(this.locationError)));
+        }),
+        catchError((_) => throwError(this.locationError))
+      );
   }
 
   createMap(options) {
     return tt.map({
       key: options.apiKey,
-      container: 'bwm-map',
-      style: 'tomtom://vector/1/basic-main',
+      container: "bwm-map",
+      style: "tomtom://vector/1/basic-main",
       zoom: 15,
-      scrollZoom: false
+      scrollZoom: false,
     });
   }
 
@@ -68,11 +74,11 @@ export class MapService {
 
   addMarkerToMap(map: any, position: GeoPosition) {
     this.removePreviousMarkers();
-    const markerDiv = document.createElement('div');
-    markerDiv.className = 'bwm-marker';
+    const markerDiv = document.createElement("div");
+    markerDiv.className = "bwm-marker";
 
     new tt.Marker({
-      element: markerDiv
+      element: markerDiv,
     })
       .setLngLat([position.lon, position.lat])
       .addTo(map);
@@ -80,7 +86,11 @@ export class MapService {
 
   addPopupToMap(map: any, message: string) {
     this.removePreviousPopups();
-    new tt.Popup({className: 'bwm-popup', closeButton: false, closeOnClick: false})
+    new tt.Popup({
+      className: "bwm-popup",
+      closeButton: false,
+      closeOnClick: false,
+    })
       .setLngLat(new tt.LngLat(0, 0))
       .setHTML(`<p>${message}</p>`)
       .addTo(map);
@@ -97,19 +107,19 @@ export class MapService {
   }
 
   private normalizeLocation(location: string) {
-    return location.replace(/\s/g, '').toLowerCase();
+    return location.replace(/\s/g, "").toLowerCase();
   }
 
   private get locationError() {
-    return new Error('Location not found!');
+    return new Error("Location not found!");
   }
 
   private removePreviousPopups() {
-    this.removeElementByClass('bwm-popup');
+    this.removeElementByClass("bwm-popup");
   }
 
   private removePreviousMarkers() {
-    this.removeElementByClass('bwm-marker');
+    this.removeElementByClass("bwm-marker");
   }
 
   private removeElementByClass(className) {
@@ -120,9 +130,3 @@ export class MapService {
     }
   }
 }
-
-
-
-
-
-

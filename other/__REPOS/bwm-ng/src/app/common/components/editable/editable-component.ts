@@ -1,14 +1,18 @@
-import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnChanges,
+  Input,
+  Output,
+  EventEmitter,
+} from "@angular/core";
 
 export class EditableComponent implements OnChanges {
-
   @Input() entity: any;
 
   @Input() set field(entityField: string) {
-
     this.entityField = entityField;
     this.setOriginValue();
-  };
+  }
 
   @Input() className: string;
 
@@ -22,7 +26,7 @@ export class EditableComponent implements OnChanges {
 
   public originEntityValue: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnChanges() {
     this.setOriginValue();
@@ -33,7 +37,9 @@ export class EditableComponent implements OnChanges {
     const entityValue = this.entity[this.entityField];
 
     if (entityValue !== this.originEntityValue) {
-      this.entityUpdated.emit({[this.entityField]: this.entity[this.entityField]});
+      this.entityUpdated.emit({
+        [this.entityField]: this.entity[this.entityField],
+      });
       this.setOriginValue();
     }
 

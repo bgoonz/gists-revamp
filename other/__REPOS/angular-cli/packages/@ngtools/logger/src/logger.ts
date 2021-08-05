@@ -1,9 +1,8 @@
-import {Observable} from 'rxjs/Observable';
-import {Operator} from 'rxjs/Operator';
-import {PartialObserver} from 'rxjs/Observer';
-import {Subject} from 'rxjs/Subject';
-import {Subscription} from 'rxjs/Subscription';
-
+import { Observable } from "rxjs/Observable";
+import { Operator } from "rxjs/Operator";
+import { PartialObserver } from "rxjs/Observer";
+import { Subject } from "rxjs/Subject";
+import { Subscription } from "rxjs/Subscription";
 
 export type JsonValue = boolean | number | string | JsonObject | JsonArray;
 export interface JsonObject {
@@ -21,8 +20,7 @@ export interface LogEntry extends LoggerMetadata {
   timestamp: number;
 }
 
-export type LogLevel = 'debug' | 'info' | 'warn' | 'error' | 'fatal';
-
+export type LogLevel = "debug" | "info" | "warn" | "error" | "fatal";
 
 export class Logger extends Observable<LogEntry> {
   protected readonly _subject: Subject<LogEntry> = new Subject<LogEntry>();
@@ -31,25 +29,34 @@ export class Logger extends Observable<LogEntry> {
   private _obs: Observable<LogEntry>;
   private _subscription: Subscription;
 
-  protected get _observable() { return this._obs; }
+  protected get _observable() {
+    return this._obs;
+  }
   protected set _observable(v: Observable<LogEntry>) {
     if (this._subscription) {
       this._subscription.unsubscribe();
     }
     this._obs = v;
     if (this.parent) {
-      this._subscription = this.subscribe((value: LogEntry) => {
-        this.parent._subject.next(value);
-      }, (error: any) => {
-        this.parent._subject.error(error);
-      }, () => {
-        this._subscription.unsubscribe();
-        this._subscription = null;
-      });
+      this._subscription = this.subscribe(
+        (value: LogEntry) => {
+          this.parent._subject.next(value);
+        },
+        (error: any) => {
+          this.parent._subject.error(error);
+        },
+        () => {
+          this._subscription.unsubscribe();
+          this._subscription = null;
+        }
+      );
     }
   }
 
-  constructor(public readonly name: string, public readonly parent: Logger | null = null) {
+  constructor(
+    public readonly name: string,
+    public readonly parent: Logger | null = null
+  ) {
     super();
 
     let path: string[] = [];
@@ -72,25 +79,27 @@ export class Logger extends Observable<LogEntry> {
 
   log(level: LogLevel, message: string, metadata: JsonObject = {}): void {
     const entry: LogEntry = Object.assign({}, this._metadata, metadata, {
-      level, message, timestamp: +Date.now()
+      level,
+      message,
+      timestamp: +Date.now(),
     });
     this._subject.next(entry);
   }
 
   debug(message: string, metadata: JsonObject = {}) {
-    return this.log('debug', message, metadata);
+    return this.log("debug", message, metadata);
   }
   info(message: string, metadata: JsonObject = {}) {
-    return this.log('info', message, metadata);
+    return this.log("info", message, metadata);
   }
   warn(message: string, metadata: JsonObject = {}) {
-    return this.log('warn', message, metadata);
+    return this.log("warn", message, metadata);
   }
   error(message: string, metadata: JsonObject = {}) {
-    return this.log('error', message, metadata);
+    return this.log("error", message, metadata);
   }
   fatal(message: string, metadata: JsonObject = {}) {
-    return this.log('fatal', message, metadata);
+    return this.log("fatal", message, metadata);
   }
 
   toString() {
@@ -103,14 +112,22 @@ export class Logger extends Observable<LogEntry> {
 
   subscribe(): Subscription;
   subscribe(observer: PartialObserver<LogEntry>): Subscription;
-  subscribe(next?: (value: LogEntry) => void, error?: (error: any) => void,
-            complete?: () => void): Subscription;
-  subscribe(observerOrNext?: PartialObserver<LogEntry> | ((value: LogEntry) => void),
-            error?: (error: any) => void,
-            complete?: () => void): Subscription {
+  subscribe(
+    next?: (value: LogEntry) => void,
+    error?: (error: any) => void,
+    complete?: () => void
+  ): Subscription;
+  subscribe(
+    observerOrNext?: PartialObserver<LogEntry> | ((value: LogEntry) => void),
+    error?: (error: any) => void,
+    complete?: () => void
+  ): Subscription {
     return this._observable.subscribe.apply(this._observable, arguments);
   }
-  forEach(next: (value: LogEntry) => void, PromiseCtor?: typeof Promise): Promise<void> {
+  forEach(
+    next: (value: LogEntry) => void,
+    PromiseCtor?: typeof Promise
+  ): Promise<void> {
     return this._observable.forEach(next, PromiseCtor);
   }
 }

@@ -1,9 +1,7 @@
-
-const readline = require('readline-sync');
-const Car = require('./Car');
+const readline = require("readline-sync");
+const Car = require("./Car");
 
 class CarManager {
-
   askQuestion(question) {
     let answer = readline.question(question);
 
@@ -15,11 +13,11 @@ class CarManager {
   }
 
   createCar() {
-    const brand = this.askQuestion('Brand of the car: \n');
-    const type = this.askQuestion('Type of the car: \n');
-    const year = this.askQuestion('Year of the car: \n');
+    const brand = this.askQuestion("Brand of the car: \n");
+    const type = this.askQuestion("Type of the car: \n");
+    const year = this.askQuestion("Year of the car: \n");
 
-    return new Car({brand, type, year: parseInt(year, 10)});
+    return new Car({ brand, type, year: parseInt(year, 10) });
   }
 }
 

@@ -1,9 +1,9 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { moduleForComponent, test } from "ember-qunit";
 
-moduleForComponent('register-form', 'Integration | Component | register form', {
-  integration: true
+moduleForComponent("register-form", "Integration | Component | register form", {
+  integration: true,
 });
 
-test('it renders -PASS-', function(assert) {
+test("it renders -PASS-", function (assert) {
   assert.ok(true);
 });

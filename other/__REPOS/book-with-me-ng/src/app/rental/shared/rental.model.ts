@@ -1,8 +1,8 @@
-import { Booking } from '../../booking/shared/booking.model';
-import { User } from '../../user/shared/user.model';
+import { Booking } from "../../booking/shared/booking.model";
+import { User } from "../../user/shared/user.model";
 
 export class Rental {
-  public static readonly CATEGORIES = ['apartment', 'house', 'condo']
+  public static readonly CATEGORIES = ["apartment", "house", "condo"];
 
   _id: string;
   title: string;
@@ -14,7 +14,7 @@ export class Rental {
   description: string;
   dailyRate: number;
   createdAt: string;
-  shared:boolean;
+  shared: boolean;
   bookings: Booking[];
   user: User;
 }

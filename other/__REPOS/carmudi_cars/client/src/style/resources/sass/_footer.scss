@@ -7,21 +7,21 @@
   text-align: center;
   margin-top: 50px;
 
-  &__container{
+  &__container {
     max-width: 1140px;
     margin: 0 auto;
   }
 
-  &__logo{
+  &__logo {
     height: 70px;
     width: 200px;
     padding-left: 150px;
-    @media (max-width: 540px){
+    @media (max-width: 540px) {
       padding: 0;
       margin: 0 auto;
     }
 
-    & img{
+    & img {
       height: 100%;
     }
   }

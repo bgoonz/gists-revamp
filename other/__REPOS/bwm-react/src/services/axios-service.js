@@ -1,8 +1,7 @@
-import axios from 'axios';
-import authService from './auth-service';
+import axios from "axios";
+import authService from "./auth-service";
 
 class AxiosService {
-
   axiosInstance = {};
 
   constructor() {
@@ -11,20 +10,19 @@ class AxiosService {
 
   initInstance() {
     this.axiosInstance = axios.create({
-      baseURL: '/api/v1',
-      timeout: 5000
+      baseURL: "/api/v1",
+      timeout: 5000,
     });
 
-    this.axiosInstance.interceptors.request.use(
-      (config) => {
-        const token = authService.getToken();
+    this.axiosInstance.interceptors.request.use((config) => {
+      const token = authService.getToken();
 
-        if (token) {
-          config.headers.Authorization = `Bearer ${token}`;
-        }
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
 
-        return config;
-      });
+      return config;
+    });
 
     return this.axiosInstance;
   }

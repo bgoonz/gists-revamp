@@ -5,7 +5,7 @@ import { SettingsService } from '../../shared/settings.service';
 @Component({
   selector: 'app-resource-detail-card',
   templateUrl: './resource-detail.component.html',
-  styleUrls: ['./resource-detail.component.scss']
+  styleUrls: ['./resource-detail.component.scss'],
 })
 export class ResourceDetailCardComponent {
   @Input() resource: Resource;

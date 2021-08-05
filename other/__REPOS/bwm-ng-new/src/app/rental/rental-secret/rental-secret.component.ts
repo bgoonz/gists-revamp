@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'bwm-rental-secret',
-  templateUrl: './rental-secret.component.html',
-  styleUrls: ['./rental-secret.component.scss']
+  selector: "bwm-rental-secret",
+  templateUrl: "./rental-secret.component.html",
+  styleUrls: ["./rental-secret.component.scss"],
 })
 export class RentalSecretComponent implements OnInit {
+  greeting = "Hello World!";
 
-  greeting = 'Hello World!';
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

@@ -1,10 +1,10 @@
-import { moduleForModel, test } from 'ember-qunit';
+import { moduleForModel, test } from "ember-qunit";
 
-moduleForModel('user', 'Unit | Model | user', {
+moduleForModel("user", "Unit | Model | user", {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: [],
 });
 
-test('it exists', function(assert) {
+test("it exists", function (assert) {
   assert.ok(true);
 });

@@ -7,5 +7,5 @@ export {
   addItemsToRouteProperties,
   confirmComponentExport,
   resolveComponentPath,
-  applyChanges
-} from '@angular-cli/ast-tools';
+  applyChanges,
+} from "@angular-cli/ast-tools";

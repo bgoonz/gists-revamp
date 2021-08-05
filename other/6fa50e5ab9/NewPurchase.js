@@ -155,11 +155,6 @@ class Purchase extends Component {
       .catch((err) => console.log(err));
   };
 
-
-
-  
-  
-
   // componentDidMount() {
   //   // fetch('http://localhost:8090/users')
   //   // fetch('http://localhost:8080/adminproduct')

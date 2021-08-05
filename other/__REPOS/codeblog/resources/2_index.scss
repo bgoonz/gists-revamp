@@ -1,5 +1,5 @@
-
-html, body {
+html,
+body {
   height: 100%;
   font-family: Nunito, sans-serif;
   font-style: normal;
@@ -21,16 +21,15 @@ html, body {
 }
 
 .page-wrapper {
-  padding-top: 20px;;
+  padding-top: 20px;
 }
-
 
 .card.fj-card {
   // padding-top: 50px;
   .card-body-wrapper {
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 2px 5px 25px rgba(0, 0, 0, .15);
+    box-shadow: 2px 5px 25px rgba(0, 0, 0, 0.15);
     min-height: 280px;
     position: relative;
     z-index: 2;
@@ -68,7 +67,7 @@ html, body {
       // position: absolute;
       top: calc(-1 * (var(--size) / 2));
       width: var(--size);
-      height: var(--size);;
+      height: var(--size);
     }
   }
 
@@ -79,25 +78,25 @@ html, body {
     font-family: var(--font-family-primary);
     font-weight: bold;
     font-size: 14px;
-    letter-spacing: .15rem;
+    letter-spacing: 0.15rem;
     padding-top: 1.5rem !important /* @TODO temp !!!*/;
-    padding: .75rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     background-color: hsl(210, 5%, 41%);
     border-color: hsl(210, 5%, 36%);
     box-shadow: 0 5px 0 hsl(210, 5%, 20%);
     bottom: -45px;
     position: absolute;
     right: 1.5rem;
-    -webkit-transition: -webkit-transform .2s;
-    transition: -webkit-transform .2s;
-    transition: transform .2s;
-    transition: transform .2s, -webkit-transform .2s;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
 
     &:hover {
       background-color: hsl(210, 5%, 51%);
       border-color: hsl(210, 5%, 41%);
-      -webkit-transform: translateY(.25rem);
-      transform: translateY(.25rem);
+      -webkit-transform: translateY(0.25rem);
+      transform: translateY(0.25rem);
     }
   }
 
@@ -125,7 +124,9 @@ html, body {
     background-color: #bebebe;
   }
 
-  .card-title, .card-text, .card-date {
+  .card-title,
+  .card-text,
+  .card-date {
     background-color: #bebebe;
   }
 }
@@ -160,17 +161,17 @@ html, body {
       text-transform: uppercase;
 
       &.active {
-      color: #dba919;
+        color: #dba919;
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: #dba919;
       }
     }
   }
 
   .fj-dropdown-menu {
-
     .fj-dropdown-item {
       color: #4e4e4e;
 
@@ -192,9 +193,8 @@ html, body {
   background-color: black !important;
 }
 
-
 .bg-transparent.menu-open {
-  background-color: #2C3E50 !important;
+  background-color: #2c3e50 !important;
 }
 
 .bg-transparent.menu-close {
@@ -214,10 +214,11 @@ html, body {
 
 .hljs {
   padding: 20px 20px 10px;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
-.code-filename, .image-alt {
+.code-filename,
+.image-alt {
   opacity: 0.6;
   margin-top: 10px;
   font-style: italic;
@@ -231,7 +232,6 @@ html, body {
 .image-alt {
   margin-top: 3px;
 }
-
 
 .blog-detail-page {
   font-size: 19px;
@@ -251,7 +251,6 @@ html, body {
     font-size: 18px;
   }
 }
-
 
 .dark {
   .card.fj-card {
@@ -296,7 +295,8 @@ html, body {
       background-color: black;
     }
 
-    &-x, &-check {
+    &-x,
+    &-check {
       right: 8px;
       width: 15px;
       height: 15px;

@@ -1,17 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { Rental } from './rental.model';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { exctractApiError } from 'src/app/shared/helpers/functions';
+import { Injectable } from "@angular/core";
+import { Observable, throwError } from "rxjs";
+import { Rental } from "./rental.model";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { catchError } from "rxjs/operators";
+import { exctractApiError } from "src/app/shared/helpers/functions";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class RentalService {
-
-  constructor(
-    private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getRentalById(rentalId: string): Observable<Rental> {
     return this.http.get<Rental>(`/api/v1/rentals/${rentalId}`);
@@ -31,10 +29,13 @@ export class RentalService {
   }
 
   createRental(newRental: Rental): Observable<Rental> {
-    return this.http.post<Rental>('/api/v1/rentals', newRental)
+    return this.http
+      .post<Rental>("/api/v1/rentals", newRental)
       .pipe(
-        catchError(
-          (resError: HttpErrorResponse) => throwError(exctractApiError(resError))));
+        catchError((resError: HttpErrorResponse) =>
+          throwError(exctractApiError(resError))
+        )
+      );
   }
 
   verifyRentalOwner(rentalId: string): Observable<any> {

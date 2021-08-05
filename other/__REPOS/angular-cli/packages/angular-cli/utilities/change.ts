@@ -4,5 +4,5 @@ export {
   MultiChange,
   InsertChange,
   RemoveChange,
-  ReplaceChange
-} from '@angular-cli/ast-tools';
+  ReplaceChange,
+} from "@angular-cli/ast-tools";

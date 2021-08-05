@@ -1,18 +1,14 @@
-
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth/shared/auth.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "./auth/shared/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'bwm-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "bwm-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-
-  constructor(
-    public auth: AuthService,
-    private router: Router) {
+  constructor(public auth: AuthService, private router: Router) {
     // this.logout = this.logout.bind(this);
   }
 
@@ -22,6 +18,6 @@ export class AppComponent implements OnInit {
 
   logout = () => {
     this.auth.logout();
-    this.router.navigate(['/rentals']);
-  }
+    this.router.navigate(["/rentals"]);
+  };
 }

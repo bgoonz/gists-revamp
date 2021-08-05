@@ -1,3 +1,2 @@
 require("source-map-support").install();
-require('./build/server');
-
+require("./build/server");

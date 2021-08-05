@@ -1,7 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
 export class Axios {
-
   static axiosInstance;
 
   static init() {
@@ -9,17 +8,17 @@ export class Axios {
   }
 
   static setAuth() {
-    this.axiosInstance.defaults.headers.common['Authorization'] = authToken();
+    this.axiosInstance.defaults.headers.common["Authorization"] = authToken();
   }
 
   static removeAuth() {
-    this.axiosInstance.defaults.headers.common['Authorization'] = '';
+    this.axiosInstance.defaults.headers.common["Authorization"] = "";
   }
 
   static createInstance() {
     this.axiosInstance = axios.create({
-      baseURL: '/api/v1',
-      timeout: 1000
+      baseURL: "/api/v1",
+      timeout: 1000,
     });
 
     return this.axiosInstance;
@@ -27,7 +26,7 @@ export class Axios {
 }
 
 function authToken() {
-  let token =  localStorage.getItem('auth_token');
+  let token = localStorage.getItem("auth_token");
 
-  return token ? `Bearer ${token}` : '';
+  return token ? `Bearer ${token}` : "";
 }

@@ -9,7 +9,7 @@ function async(fn: () => PromiseLike<any> | void) {
     try {
       result = fn();
 
-      if (result && 'then' in result) {
+      if (result && "then" in result) {
         (result as Promise<any>).then(done, done.fail);
       } else {
         done();
@@ -20,7 +20,6 @@ function async(fn: () => PromiseLike<any> | void) {
   };
 }
 
-
 export function it(description: string, fn: () => PromiseLike<any> | void) {
-  return (global as any)['it'](description, async(fn));
+  return (global as any)["it"](description, async(fn));
 }

@@ -1,5 +1,4 @@
 .top-menu {
-
   padding-left: 20px;
   padding-top: 5px;
 
@@ -7,19 +6,19 @@
   width: 100%;
   background: $contentColor;
 
-  .top-buttons  {
+  .top-buttons {
     list-style: none;
     font-size: 85%;
     color: #b5b5b5;
   }
 
-  .top-buttons li  {
+  .top-buttons li {
     display: inline-block;
     margin-right: 20px;
     cursor: pointer;
   }
 
-  .top-buttons li:hover  {
+  .top-buttons li:hover {
     color: white;
   }
 
@@ -34,6 +33,4 @@
     padding-left: 20px;
     margin-top: 10px;
   }
-
-
 }

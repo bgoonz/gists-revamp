@@ -1,7 +1,9 @@
-'use strict';
+"use strict";
 
-var path = require('path');
+var path = require("path");
 
 module.exports = function normalizeBlueprintOption(blueprint) {
-  return blueprint[0] === '.' ? path.resolve(process.cwd(), blueprint) : blueprint;
+  return blueprint[0] === "."
+    ? path.resolve(process.cwd(), blueprint)
+    : blueprint;
 };

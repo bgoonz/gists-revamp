@@ -1,13 +1,13 @@
-@import 'variables.scss';
-@import 'header/header.scss';
-@import 'form/form.scss';
+@import "variables.scss";
+@import "header/header.scss";
+@import "form/form.scss";
 
-@import 'booking/booking.scss';
-@import 'rental/rental-listing.scss';
-@import 'rental/rental-detail.scss';
-@import 'rental/rental-manage.scss';
-@import 'editable/editable-component.scss';
-@import 'payment/payment';
+@import "booking/booking.scss";
+@import "rental/rental-listing.scss";
+@import "rental/rental-detail.scss";
+@import "rental/rental-manage.scss";
+@import "editable/editable-component.scss";
+@import "payment/payment";
 
 .clickable {
   &:hover {
@@ -40,7 +40,9 @@
   padding: 15px 30px;
   font-size: 20px;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     border-color: $main-color !important;
     background-color: $main-color !important;
   }

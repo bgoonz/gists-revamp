@@ -1,7 +1,8 @@
 <div class="rental">
-  <h2 class="rental-type {{rental.category}}">{{rental-type rental.shared}} {{rental.category}}</h2>
+  <h2 class="rental-type {{rental.category}}">{{rental-type rental.shared}}
+    {{rental.category}}</h2>
   <div class="rental-owner">
-    <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="">
+    <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="" />
     <span>{{rental.user.email}}</span>
   </div>
   <h1 class="rental-title">{{rental.title}}</h1>
@@ -12,7 +13,7 @@
     <span>{{fa-icon "bed"}} {{addition rental.bedrooms 2}} beds</span>
   </div>
   <p class="rental-description">{{rental.description}}</p>
-  <hr>
+  <hr />
   <div class="rental-assets">
     <h3 class="title">Assets</h3>
     <div class="row">
@@ -29,4 +30,3 @@
     </div>
   </div>
 </div>
-

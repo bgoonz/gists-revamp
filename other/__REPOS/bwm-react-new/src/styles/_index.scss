@@ -1,14 +1,14 @@
+@import "./colors.scss";
+@import "./header.scss";
+@import "./rental-home";
+@import "./rental-detail";
+@import "./forms";
+@import "./booking-reserve";
+@import "./booking-listing";
+@import "./editable";
 
-@import './colors.scss';
-@import './header.scss';
-@import './rental-home';
-@import './rental-detail';
-@import './forms';
-@import './booking-reserve';
-@import './booking-listing';
-@import './editable';
-
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -52,7 +52,9 @@ html, body {
     border-color: $main-app-color;
     color: $main-app-color;
 
-    &:hover, &:focus, &:active {
+    &:hover,
+    &:focus,
+    &:active {
       background-color: $main-app-color;
       border-color: $main-app-color;
       color: white;

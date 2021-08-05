@@ -1,9 +1,6 @@
-
 import Link from "next/link";
 
-
 const Navbar = () => {
-
   return (
     <nav className="navbar">
       <div className="container">
@@ -23,7 +20,11 @@ const Navbar = () => {
           <div className="navbar-end">
             <div className=" navbar-item">
               <div className="control has-icons-left">
-                <input className="input is-rounded" type="email" placeholder="Search" />
+                <input
+                  className="input is-rounded"
+                  type="email"
+                  placeholder="Search"
+                />
                 <span className="icon is-left">
                   <i className="fa fa-search"></i>
                 </span>
@@ -46,7 +47,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;

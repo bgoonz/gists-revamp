@@ -6,13 +6,13 @@ export interface SuppressEntryChunksWebpackPluginOptions {
 }
 
 export class SuppressEntryChunksWebpackPlugin {
-  constructor(private options: SuppressEntryChunksWebpackPluginOptions) { }
+  constructor(private options: SuppressEntryChunksWebpackPluginOptions) {}
 
   apply(compiler: any): void {
     let { chunks } = this.options;
-    compiler.plugin('compilation', function (compilation: any) {
+    compiler.plugin("compilation", function (compilation: any) {
       // Remove the js file for supressed chunks
-      compilation.plugin('after-seal', (callback: any) => {
+      compilation.plugin("after-seal", (callback: any) => {
         compilation.chunks
           .filter((chunk: any) => chunks.indexOf(chunk.name) !== -1)
           .forEach((chunk: any) => {
@@ -31,14 +31,16 @@ export class SuppressEntryChunksWebpackPlugin {
       });
       // Remove scripts tags with a css file as source, because HtmlWebpackPlugin will use
       // a css file as a script for chunks without js files.
-      compilation.plugin('html-webpack-plugin-alter-asset-tags',
+      compilation.plugin(
+        "html-webpack-plugin-alter-asset-tags",
         (htmlPluginData: any, callback: any) => {
           const filterFn = (tag: any) =>
-            !(tag.tagName === 'script' && tag.attributes.src.match(/\.css$/));
+            !(tag.tagName === "script" && tag.attributes.src.match(/\.css$/));
           htmlPluginData.head = htmlPluginData.head.filter(filterFn);
           htmlPluginData.body = htmlPluginData.body.filter(filterFn);
           callback(null, htmlPluginData);
-        });
+        }
+      );
     });
   }
 }

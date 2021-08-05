@@ -1,7 +1,10 @@
 <div className="rental-owner">
-  <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="owner"/>
+  <img
+    src="https://api.adorable.io/avatars/285/abott@adorable.png"
+    alt="owner"
+  />
   <span>Some User Name</span>
-</div>
+</div>;
 
 // &-owner {
 //   float: right;

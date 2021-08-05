@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var MockUI = require('./mock-ui');
-var Cli = require('angular-cli/lib/cli');
+var MockUI = require("./mock-ui");
+var Cli = require("angular-cli/lib/cli");
 
 module.exports = function ng(args) {
   var cli;
@@ -13,7 +13,7 @@ module.exports = function ng(args) {
     outputStream: [],
     cliArgs: args,
     UI: MockUI,
-    testing: true
+    testing: true,
   });
 
   return cli;

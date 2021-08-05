@@ -1,28 +1,31 @@
-import * as path from 'path';
-import * as ts from 'typescript';
-import {Request, ResolverPlugin, Callback, Tapable} from './webpack';
+import * as path from "path";
+import * as ts from "typescript";
+import { Request, ResolverPlugin, Callback, Tapable } from "./webpack";
 
-
-const ModulesInRootPlugin: new (a: string, b: string, c: string) => ResolverPlugin
-  = require('enhanced-resolve/lib/ModulesInRootPlugin');
+const ModulesInRootPlugin: new (
+  a: string,
+  b: string,
+  c: string
+) => ResolverPlugin = require("enhanced-resolve/lib/ModulesInRootPlugin");
 
 interface CreateInnerCallback {
-  (callback: Callback<any>,
-   options: Callback<any>,
-   message?: string,
-   messageOptional?: string): Callback<any>;
+  (
+    callback: Callback<any>,
+    options: Callback<any>,
+    message?: string,
+    messageOptional?: string
+  ): Callback<any>;
 }
 
-const createInnerCallback: CreateInnerCallback
-  = require('enhanced-resolve/lib/createInnerCallback');
-const getInnerRequest: (resolver: ResolverPlugin, request: Request) => string
-  = require('enhanced-resolve/lib/getInnerRequest');
-
+const createInnerCallback: CreateInnerCallback = require("enhanced-resolve/lib/createInnerCallback");
+const getInnerRequest: (
+  resolver: ResolverPlugin,
+  request: Request
+) => string = require("enhanced-resolve/lib/getInnerRequest");
 
 function escapeRegExp(str: string): string {
-  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
-
 
 export interface PathsPluginOptions {
   tsConfigPath: string;
@@ -42,8 +45,10 @@ export class PathsPlugin implements Tapable {
 
   private _absoluteBaseUrl: string;
 
-  private static _loadOptionsFromTsConfig(tsConfigPath: string, host?: ts.CompilerHost):
-      ts.CompilerOptions {
+  private static _loadOptionsFromTsConfig(
+    tsConfigPath: string,
+    host?: ts.CompilerHost
+  ): ts.CompilerOptions {
     const tsConfig = ts.readConfigFile(tsConfigPath, (path: string) => {
       if (host) {
         return host.readFile(path);
@@ -58,44 +63,47 @@ export class PathsPlugin implements Tapable {
   }
 
   constructor(options: PathsPluginOptions) {
-    if (!options.hasOwnProperty('tsConfigPath')) {
+    if (!options.hasOwnProperty("tsConfigPath")) {
       // This could happen in JavaScript.
-      throw new Error('tsConfigPath option is mandatory.');
+      throw new Error("tsConfigPath option is mandatory.");
     }
     this._tsConfigPath = options.tsConfigPath;
 
-    if (options.hasOwnProperty('compilerOptions')) {
+    if (options.hasOwnProperty("compilerOptions")) {
       this._compilerOptions = Object.assign({}, options.compilerOptions);
     } else {
-      this._compilerOptions = PathsPlugin._loadOptionsFromTsConfig(this._tsConfigPath, null);
+      this._compilerOptions = PathsPlugin._loadOptionsFromTsConfig(
+        this._tsConfigPath,
+        null
+      );
     }
 
-    if (options.hasOwnProperty('compilerHost')) {
+    if (options.hasOwnProperty("compilerHost")) {
       this._host = options.compilerHost;
     } else {
       this._host = ts.createCompilerHost(this._compilerOptions, false);
     }
 
-    this.source = 'described-resolve';
-    this.target = 'resolve';
+    this.source = "described-resolve";
+    this.target = "resolve";
 
     this._absoluteBaseUrl = path.resolve(
       path.dirname(this._tsConfigPath),
-      this._compilerOptions.baseUrl || '.'
+      this._compilerOptions.baseUrl || "."
     );
 
     this.mappings = [];
     let paths = this._compilerOptions.paths || {};
-    Object.keys(paths).forEach(alias => {
-      let onlyModule = alias.indexOf('*') === -1;
+    Object.keys(paths).forEach((alias) => {
+      let onlyModule = alias.indexOf("*") === -1;
       let excapedAlias = escapeRegExp(alias);
       let targets = paths[alias];
-      targets.forEach(target => {
+      targets.forEach((target) => {
         let aliasPattern: RegExp;
         if (onlyModule) {
           aliasPattern = new RegExp(`^${excapedAlias}$`);
         } else {
-          let withStarCapturing = excapedAlias.replace('\\*', '(.*)');
+          let withStarCapturing = excapedAlias.replace("\\*", "(.*)");
           aliasPattern = new RegExp(`^${withStarCapturing}`);
         }
 
@@ -103,7 +111,7 @@ export class PathsPlugin implements Tapable {
           onlyModule,
           alias,
           aliasPattern,
-          target: target
+          target: target,
         });
       });
     });
@@ -113,7 +121,9 @@ export class PathsPlugin implements Tapable {
     let { baseUrl } = this._compilerOptions;
 
     if (baseUrl) {
-      resolver.apply(new ModulesInRootPlugin('module', this._absoluteBaseUrl, 'resolve'));
+      resolver.apply(
+        new ModulesInRootPlugin("module", this._absoluteBaseUrl, "resolve")
+      );
     }
 
     this.mappings.forEach((mapping: any) => {
@@ -121,7 +131,12 @@ export class PathsPlugin implements Tapable {
     });
   }
 
-  resolve(resolver: ResolverPlugin, mapping: any, request: any, callback: Callback<any>): any {
+  resolve(
+    resolver: ResolverPlugin,
+    mapping: any,
+    request: any,
+    callback: Callback<any>
+  ): any {
     let innerRequest = getInnerRequest(resolver, request);
     if (!innerRequest) {
       return callback();
@@ -134,31 +149,28 @@ export class PathsPlugin implements Tapable {
 
     let newRequestStr = mapping.target;
     if (!mapping.onlyModule) {
-      newRequestStr = newRequestStr.replace('*', match[1]);
+      newRequestStr = newRequestStr.replace("*", match[1]);
     }
-    if (newRequestStr[0] === '.') {
+    if (newRequestStr[0] === ".") {
       newRequestStr = path.resolve(this._absoluteBaseUrl, newRequestStr);
     }
 
     let newRequest = Object.assign({}, request, {
-      request: newRequestStr
+      request: newRequestStr,
     }) as Request;
 
     return resolver.doResolve(
       this.target,
       newRequest,
       `aliased with mapping '${innerRequest}': '${mapping.alias}' to '${newRequestStr}'`,
-      createInnerCallback(
-        function(err, result) {
-          if (arguments.length > 0) {
-            return callback(err, result);
-          }
+      createInnerCallback(function (err, result) {
+        if (arguments.length > 0) {
+          return callback(err, result);
+        }
 
-          // don't allow other aliasing or raw request
-          callback(null, null);
-        },
-        callback
-      )
+        // don't allow other aliasing or raw request
+        callback(null, null);
+      }, callback)
     );
   }
 

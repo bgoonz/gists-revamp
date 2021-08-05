@@ -22,7 +22,8 @@
     background-color: transparent;
     color: $main-color;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: $main-color !important;
       background-color: transparent !important;
       color: $main-color !important;

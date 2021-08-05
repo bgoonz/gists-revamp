@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
 // This needs to be first so fs module can be mocked correctly.
-import { expect } from 'chai';
+import { expect } from "chai";
 
-import { removeModuleIdOnlyForTesting } from '../../packages/@ngtools/webpack/src/loader';
+import { removeModuleIdOnlyForTesting } from "../../packages/@ngtools/webpack/src/loader";
 
-describe('@ngtools webpack loader: ', () => {
-  describe('removeModuleId', () => {
+describe("@ngtools webpack loader: ", () => {
+  describe("removeModuleId", () => {
     let refactor: any;
     let moduleIdProp: any;
     let commaProp: any;
@@ -14,13 +14,17 @@ describe('@ngtools webpack loader: ', () => {
     beforeEach(() => {
       commaProp = { isCommaProp: true };
       moduleIdProp = {
-        name: { getText: () => 'moduleId' },
-        parent: { getChildAt: () => ({ getChildren: (): any => [{}, commaProp] }) }
+        name: { getText: () => "moduleId" },
+        parent: {
+          getChildAt: () => ({ getChildren: (): any => [{}, commaProp] }),
+        },
       };
       refactor = {
-        sourceFile: 'sourceFile',
+        sourceFile: "sourceFile",
         findAstNodes: (): any => [{ properties: [moduleIdProp] }],
-        removeNodes: (...args: any[]) => { removeNodesArgs = args; }
+        removeNodes: (...args: any[]) => {
+          removeNodesArgs = args;
+        },
       };
     });
 

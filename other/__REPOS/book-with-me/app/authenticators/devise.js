@@ -1,5 +1,5 @@
-import Devise from 'ember-simple-auth/authenticators/devise';
+import Devise from "ember-simple-auth/authenticators/devise";
 
 export default Devise.extend({
-  serverTokenEndpoint: '/api/v1/auth'
+  serverTokenEndpoint: "/api/v1/auth",
 });

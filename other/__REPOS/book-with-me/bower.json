@@ -4,13 +4,7 @@
   "main": "",
   "license": "MIT",
   "homepage": "https://github.com/Jerga99/book-with-me",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "dependencies": {
     "bootstrap": "^4.0.0"
   }

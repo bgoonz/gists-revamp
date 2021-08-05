@@ -1,4 +1,4 @@
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default DS.Model.extend({
   title: DS.attr(),
@@ -11,6 +11,6 @@ export default DS.Model.extend({
   description: DS.attr(),
   daily_rate: DS.attr(),
   created_at: DS.attr(),
-  user: DS.belongsTo('user', {async: true}),
-  bookings: DS.hasMany('booking')
+  user: DS.belongsTo("user", { async: true }),
+  bookings: DS.hasMany("booking"),
 });

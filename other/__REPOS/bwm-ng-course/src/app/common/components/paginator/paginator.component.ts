@@ -1,13 +1,12 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import * as _ from 'lodash';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+import * as _ from "lodash";
 
 @Component({
-  selector: 'app-paginator',
-  templateUrl: 'paginator.component.html',
-  styleUrls: ['paginator.component.scss']
+  selector: "app-paginator",
+  templateUrl: "paginator.component.html",
+  styleUrls: ["paginator.component.scss"],
 })
 export class PaginatorComponent {
-
   private initialPageView = 1;
 
   @Input() public pageSize = 5;
@@ -70,7 +69,7 @@ export class PaginatorComponent {
     this.endPage = this.totalPages;
 
     if (this.pagesViewCount % 2 === 0) {
-      this.lowerPageLimit = (this.pagesViewCount / 2) - 1;
+      this.lowerPageLimit = this.pagesViewCount / 2 - 1;
       this.upperPageLimit = this.lowerPageLimit + 1;
     } else {
       this.lowerPageLimit = Math.floor(this.pagesViewCount / 2);
@@ -88,7 +87,8 @@ export class PaginatorComponent {
       return;
     }
 
-    this.initialPageView = this.currentPage = page > this.totalPages ? this.totalPages : parseInt(page, 10);
+    this.initialPageView = this.currentPage =
+      page > this.totalPages ? this.totalPages : parseInt(page, 10);
     this.updateAndEmitPaginator();
   }
 
@@ -111,5 +111,4 @@ export class PaginatorComponent {
     this.currentPage = 1;
     this.updatePager();
   }
-
 }

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const DEFAULT_DATA = {
@@ -6,25 +5,25 @@ const DEFAULT_DATA = {
   description: "",
   link: "",
   priority: "2",
-  timeToFinish: 60
-}
+  timeToFinish: 60,
+};
 
-const ResourceForm = ({onFormSubmit, initialData}) => {
+const ResourceForm = ({ onFormSubmit, initialData }) => {
   const [form, setForm] = useState(initialData || DEFAULT_DATA);
 
-  const resetForm = () => setForm(DEFAULT_DATA)
+  const resetForm = () => setForm(DEFAULT_DATA);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
       ...form,
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
   const submitForm = () => {
     onFormSubmit(form);
-  }
+  };
 
   return (
     <div className="resource-form">
@@ -39,7 +38,8 @@ const ResourceForm = ({onFormSubmit, initialData}) => {
               name="title"
               className="input"
               type="text"
-              placeholder="Learn Next JS and Sanity IO" />
+              placeholder="Learn Next JS and Sanity IO"
+            />
           </div>
         </div>
         <div className="field">
@@ -50,7 +50,8 @@ const ResourceForm = ({onFormSubmit, initialData}) => {
               name="description"
               onChange={handleChange}
               className="textarea"
-              placeholder="Learn these technologies because they are very popular and enable better SEO"></textarea>
+              placeholder="Learn these technologies because they are very popular and enable better SEO"
+            ></textarea>
           </div>
         </div>
         <div className="field">
@@ -62,7 +63,8 @@ const ResourceForm = ({onFormSubmit, initialData}) => {
               name="link"
               className="input"
               type="text"
-              placeholder="https://academy.eincode.com" />
+              placeholder="https://academy.eincode.com"
+            />
           </div>
         </div>
         <div className="field">
@@ -90,7 +92,8 @@ const ResourceForm = ({onFormSubmit, initialData}) => {
               name="timeToFinish"
               className="input"
               type="number"
-              placeholder="60" />
+              placeholder="60"
+            />
           </div>
           <p className="help">Time is in minutes</p>
         </div>
@@ -99,18 +102,24 @@ const ResourceForm = ({onFormSubmit, initialData}) => {
             <button
               type="button"
               onClick={submitForm}
-              className="button is-link">Submit</button>
+              className="button is-link"
+            >
+              Submit
+            </button>
           </div>
           <div className="control">
             <button
               onClick={resetForm}
               type="button"
-              className="button is-link is-light">Reset Form</button>
+              className="button is-link is-light"
+            >
+              Reset Form
+            </button>
           </div>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default ResourceForm;

@@ -5,10 +5,7 @@
       <form>
         <div className="form-group">
           <label htmlFor="username">Username</label>
-          <input 
-            type="text"
-            className="form-control"
-            id="username" />
+          <input type="text" className="form-control" id="username" />
           {/* <div className="alert alert-danger">
             <div *ngIf="username.errors.required">
               Username is required.
@@ -18,30 +15,25 @@
 
         <div className="form-group">
           <label htmlFor="email">Email</label>
-          <input 
-            type="email"
-            className="form-control"
-            id="email" />
+          <input type="email" className="form-control" id="email" />
         </div>
 
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input 
-            type="password"
-            className="form-control"
-            id="password" />
+          <input type="password" className="form-control" id="password" />
         </div>
 
         <div className="form-group">
           <label htmlFor="passwordConfirmation">Confirm Password</label>
-          <input 
+          <input
             type="password"
             className="form-control"
-            id="passwordConfirmation" />
+            id="passwordConfirmation"
+          />
         </div>
-        <button 
-          type="submit" 
-          className="btn btn-bwm-main">Submit</button>
+        <button type="submit" className="btn btn-bwm-main">
+          Submit
+        </button>
       </form>
       {/* <div className="alert alert-danger">
         <p>
@@ -51,9 +43,11 @@
     </div>
     <div className="col-md-6 ml-auto">
       <div className="image-container">
-        <h2 className="catchphrase">As our member you have access to most awesome places in the world.</h2>
+        <h2 className="catchphrase">
+          As our member you have access to most awesome places in the world.
+        </h2>
         <img src="/images/register-image.jpg" alt="Register an user" />
       </div>
     </div>
   </div>
-</div>
+</div>;

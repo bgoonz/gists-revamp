@@ -1,22 +1,21 @@
-import React from 'react';
-import { BookingForm } from './BookingForm';
-import { getRangeOfDates } from 'helpers';
-import { connect } from 'react-redux';
-import { BookingConfirmation } from './BookingConfirmation';
-import { toast, ToastContainer } from 'react-toastify';
-import * as actions from 'actions';
-import 'react-toastify/dist/ReactToastify.css';
+import React from "react";
+import { BookingForm } from "./BookingForm";
+import { getRangeOfDates } from "helpers";
+import { connect } from "react-redux";
+import { BookingConfirmation } from "./BookingConfirmation";
+import { toast, ToastContainer } from "react-toastify";
+import * as actions from "actions";
+import "react-toastify/dist/ReactToastify.css";
 
 class Booking extends React.Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
       didConfirm: false,
       placedBookings: props.rental.bookings,
-      takenDates: []
-    }
+      takenDates: [],
+    };
 
     this.confirmProposedData = this.confirmProposedData.bind(this);
     this.cancelConfirmation = this.cancelConfirmation.bind(this);
@@ -28,14 +27,14 @@ class Booking extends React.Component {
   }
 
   openConfirmationModal() {
-    this.setState({didConfirm: true});
+    this.setState({ didConfirm: true });
   }
 
   cancelConfirmation() {
-   this.setState({didConfirm: false});
+    this.setState({ didConfirm: false });
   }
 
-  confirmProposedData({startAt, endAt, guests}) {
+  confirmProposedData({ startAt, endAt, guests }) {
     this.createBooking(startAt, endAt, guests);
     this.openConfirmationModal();
   }
@@ -59,40 +58,43 @@ class Booking extends React.Component {
   }
 
   bookPlace() {
-    const {dispatch, proposedBooking} = this.props;
+    const { dispatch, proposedBooking } = this.props;
 
     dispatch(actions.bookPlace(proposedBooking.item)).then((res) => {
-       if (res && res.booking) {
+      if (res && res.booking) {
         this.successNotify();
         this.syncCalendar(res.booking);
         this.cancelConfirmation();
-       }
+      }
     });
   }
 
   syncCalendar(booking) {
-    this.setState({placedBookings: [...this.state.placedBookings, booking] });
+    this.setState({ placedBookings: [...this.state.placedBookings, booking] });
     this.computeTakenDates();
   }
 
   title() {
     return (
-       <h3 className="booking-price">${this.props.rental.dailyRate} <span className="booking-per-night">per night</span></h3>
-      )
+      <h3 className="booking-price">
+        ${this.props.rental.dailyRate}{" "}
+        <span className="booking-per-night">per night</span>
+      </h3>
+    );
   }
 
   computeTakenDates() {
-    const {placedBookings : bookings} = this.state;
+    const { placedBookings: bookings } = this.state;
     let takenDates = [];
 
     if (bookings && bookings.length) {
-      bookings.forEach(booking => {
+      bookings.forEach((booking) => {
         const datesRanges = getRangeOfDates(booking.startAt, booking.endAt);
 
         takenDates = [...takenDates, ...datesRanges];
       });
 
-      this.setState({takenDates});
+      this.setState({ takenDates });
     }
   }
 
@@ -102,29 +104,31 @@ class Booking extends React.Component {
 
     return (
       <section id="bookingPanel">
-      <ToastContainer></ToastContainer>
-        <BookingConfirmation close={this.cancelConfirmation}
-                             didConfirm={didConfirm}
-                             booking={proposedBooking}
-                             handleConfirm={this.bookPlace}
-                             rental={rental}/>
-        <BookingForm handleFormConfirm={this.confirmProposedData}
-                     title={this.title()}
-                     takenDates={takenDates}
-                     proposedBooking={proposedBooking}
-                     isAuth={isAuth}
-                     >
-        </BookingForm>
+        <ToastContainer></ToastContainer>
+        <BookingConfirmation
+          close={this.cancelConfirmation}
+          didConfirm={didConfirm}
+          booking={proposedBooking}
+          handleConfirm={this.bookPlace}
+          rental={rental}
+        />
+        <BookingForm
+          handleFormConfirm={this.confirmProposedData}
+          title={this.title()}
+          takenDates={takenDates}
+          proposedBooking={proposedBooking}
+          isAuth={isAuth}
+        ></BookingForm>
       </section>
-      )
+    );
   }
 }
 
 function mapStateToProps(state) {
   return {
     proposedBooking: state.booking,
-    isAuth: state.auth.isAuth
-  }
+    isAuth: state.auth.isAuth,
+  };
 }
 
-export default connect(mapStateToProps)(Booking)
+export default connect(mapStateToProps)(Booking);

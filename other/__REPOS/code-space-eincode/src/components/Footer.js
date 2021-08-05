@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import { Link } from "gatsby";
 
 function Copyright() {
   return (
     <footer>
-      {'Copyright © '}
+      {"Copyright © "}
       <Link color="inherit" to="/">
         CODE_SPACE
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </footer>
   );
 }
@@ -26,7 +26,8 @@ export default function Footer(props) {
             <a
               rel="noreferrer"
               target="_blank"
-              href={`https://www.feedspot.com/infiniterss.php?q=site:${process.env.BASE_URL}/rss.xml`}>
+              href={`https://www.feedspot.com/infiniterss.php?q=site:${process.env.BASE_URL}/rss.xml`}
+            >
               Follow RSS
             </a>
           </div>

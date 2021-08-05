@@ -1,4 +1,3 @@
-
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Resource, ResourceAlert } from './shared/resource.model';
 import { ResourceService } from './shared/resource.service';
@@ -7,10 +6,12 @@ import { AlertComponent } from './shared/alert.component';
 
 @Component({
   selector: 'app-resource',
-  templateUrl: './resource.component.html'
+  templateUrl: './resource.component.html',
 })
-export class ResourceComponent extends AlertComponent implements OnInit, OnDestroy {
-
+export class ResourceComponent
+  extends AlertComponent
+  implements OnInit, OnDestroy
+{
   public selectedResource: Resource;
   public isDetailView = true;
   public resources: Resource[] = [];
@@ -28,11 +29,9 @@ export class ResourceComponent extends AlertComponent implements OnInit, OnDestr
   }
 
   private getResources() {
-    this.resourceService
-      .getResources()
-      .subscribe((resources: Resource[]) => {
-        this.resources = resources;
-      })
+    this.resourceService.getResources().subscribe((resources: Resource[]) => {
+      this.resources = resources;
+    });
   }
 
   private selectResource(resource: Resource): Resource {
@@ -41,12 +40,12 @@ export class ResourceComponent extends AlertComponent implements OnInit, OnDestr
       return null;
     }
 
-    this.selectedResource = {...resource};
+    this.selectedResource = { ...resource };
     return this.selectedResource;
   }
 
   private findResourceIndex(resource: Resource): number {
-    return this.resources.findIndex(r => r._id === resource._id);
+    return this.resources.findIndex((r) => r._id === resource._id);
   }
 
   public handleSearch(searchedTitle: string) {
@@ -56,23 +55,24 @@ export class ResourceComponent extends AlertComponent implements OnInit, OnDestr
 
     this.resourceService
       .searchResources(searchedTitle)
-      .subscribe(resources => {
+      .subscribe((resources) => {
         this.resources = resources;
         this.selectResource(null);
-        !this.isDetailView ? this.isDetailView = true : null;
-      })
+        !this.isDetailView ? (this.isDetailView = true) : null;
+      });
   }
 
   public updateResource = (resource: Resource) => {
-    this.resourceService
-      .updateResource(resource._id, resource)
-      .subscribe(updatedResource => {
+    this.resourceService.updateResource(resource._id, resource).subscribe(
+      (updatedResource) => {
         this.hydrateResources(updatedResource);
         this.setAlert('success', 'Resource was updated!');
-      }, (error: string) => {
+      },
+      (error: string) => {
         this.setAlert('error', error);
-      })
-  }
+      }
+    );
+  };
 
   public deleteResource() {
     const isConfirm = confirm('Are you sure?');
@@ -85,11 +85,11 @@ export class ResourceComponent extends AlertComponent implements OnInit, OnDestr
     if (isConfirm) {
       this.resourceService
         .deleteResource(this.activeResource._id)
-        .subscribe(dResource => {
+        .subscribe((dResource) => {
           const index = this.findResourceIndex(dResource);
           this.resources.splice(index, 1);
           this.selectResource(this.resources[0]);
-        })
+        });
     }
   }
 
@@ -113,7 +113,9 @@ export class ResourceComponent extends AlertComponent implements OnInit, OnDestr
   }
 
   get activeResource(): Resource {
-    return (this.selectedResource || (this.hasResources && this.resources[0])) || null;
+    return (
+      this.selectedResource || (this.hasResources && this.resources[0]) || null
+    );
   }
 
   get resourcesCount(): number {
@@ -124,4 +126,3 @@ export class ResourceComponent extends AlertComponent implements OnInit, OnDestr
     return this.isDetailView ? 'btn-warning' : 'btn-primary';
   }
 }
-

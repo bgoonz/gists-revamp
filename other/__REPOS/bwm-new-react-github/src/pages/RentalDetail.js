@@ -1,21 +1,20 @@
-
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { fetchRentalById } from 'actions';
-import RentalInfo from 'components/rental/RentalInfo';
-
+import React from "react";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { fetchRentalById } from "actions";
+import RentalInfo from "components/rental/RentalInfo";
 
 class RentalDetail extends React.Component {
-
   componentDidMount() {
     const { id } = this.props.match.params;
-    this.props.dispatch(fetchRentalById(id))
+    this.props.dispatch(fetchRentalById(id));
   }
 
   render() {
     const { rental, isFetching } = this.props;
-    if (isFetching) { return null; }
+    if (isFetching) {
+      return null;
+    }
     return (
       <section id="rentalDetails">
         <div className="upper-section">
@@ -37,13 +36,15 @@ class RentalDetail extends React.Component {
             <div className="col-md-4"> BOOKING</div>
           </div>
         </div>
-      </section> 
-    )
+      </section>
+    );
   }
 }
 
-const mapStateToProps = ({rental}) => 
-  ({ rental: rental.item, isFetching: rental.isFetching })
+const mapStateToProps = ({ rental }) => ({
+  rental: rental.item,
+  isFetching: rental.isFetching,
+});
 
 const RentalDetailWithRouter = withRouter(RentalDetail);
 export default connect(mapStateToProps)(RentalDetailWithRouter);

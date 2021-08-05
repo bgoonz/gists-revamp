@@ -1,23 +1,21 @@
-import { Injectable }       from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
-  CanActivate, Router,
+  CanActivate,
+  Router,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
-}                           from '@angular/router';
-import { AuthService }      from './auth.service';
+  RouterStateSnapshot,
+} from "@angular/router";
+import { AuthService } from "./auth.service";
 
 @Injectable()
 export class AuthGuard implements CanActivate {
   private url: string;
 
-  constructor(private auth: AuthService,
-              private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   private handleAuthState(): boolean {
-
     if (this.isLoginOrRegister()) {
-
-      this.router.navigate(['/rentals']);
+      this.router.navigate(["/rentals"]);
       return false;
     }
 
@@ -25,25 +23,26 @@ export class AuthGuard implements CanActivate {
   }
 
   private handleNotAuthState(): boolean {
-
     if (this.isLoginOrRegister()) {
-
       return true;
     }
 
-    this.router.navigate(['/login']);
-      return false;
+    this.router.navigate(["/login"]);
+    return false;
   }
 
   private isLoginOrRegister(): boolean {
-    if (this.url.includes('login') || this.url.includes('register')) {
+    if (this.url.includes("login") || this.url.includes("register")) {
       return true;
     }
 
     return false;
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
     this.url = state.url;
 
     if (this.auth.isAuthenticated()) {
@@ -52,5 +51,4 @@ export class AuthGuard implements CanActivate {
 
     return this.handleNotAuthState();
   }
-
 }

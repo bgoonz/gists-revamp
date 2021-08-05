@@ -1,10 +1,8 @@
+import React from "react";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-
-export default function Seo({title, image, description, meta = []}) {
-
+export default function Seo({ title, image, description, meta = [] }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -16,65 +14,69 @@ export default function Seo({title, image, description, meta = []}) {
         }
       }
     `
-  )
+  );
 
-  const defaultTitle = title ? `${title} | ${site.siteMetadata?.title}` :  site.siteMetadata?.title
-  const defaultDescription = description || site.siteMetadata?.description
-  const defaultImage = image || "https://files.cdn.thinkific.com/courses/course_card_image_000/896/4641598445801.medium.png"
+  const defaultTitle = title
+    ? `${title} | ${site.siteMetadata?.title}`
+    : site.siteMetadata?.title;
+  const defaultDescription = description || site.siteMetadata?.description;
+  const defaultImage =
+    image ||
+    "https://files.cdn.thinkific.com/courses/course_card_image_000/896/4641598445801.medium.png";
 
   // TODO: og:url
   return (
     <Helmet
       htmlAttributes={{
-        lang: "en"
+        lang: "en",
       }}
       title={defaultTitle}
       meta={[
         {
           name: "description",
-          content: defaultDescription
+          content: defaultDescription,
         },
         {
           name: "google-site-verification",
-          content: "vI9Smq6jbiI-QqeTCAmznQ_T14iRbvTjIpU_KKROJLA"
+          content: "vI9Smq6jbiI-QqeTCAmznQ_T14iRbvTjIpU_KKROJLA",
         },
         {
           name: "og:title",
-          content: defaultTitle
+          content: defaultTitle,
         },
         {
           name: "og:description",
-          content: defaultDescription
+          content: defaultDescription,
         },
         {
           name: "og:type",
-          content: "website"
+          content: "website",
         },
         {
           name: "og:image",
-          content: defaultImage
+          content: defaultImage,
         },
         {
           name: "twitter:card",
-          content: "summary"
+          content: "summary",
         },
         {
           name: "twitter:creator",
-          content: "Code Space"
+          content: "Code Space",
         },
         {
           name: "twitter:title",
-          content: defaultTitle
+          content: defaultTitle,
         },
         {
           name: "twitter:description",
-          content: defaultDescription
+          content: defaultDescription,
         },
         {
           name: "twitter:image",
-          content: defaultImage
+          content: defaultImage,
         },
       ].concat(meta)}
     />
-  )
+  );
 }

@@ -14,7 +14,7 @@ coverImage: https://cdn.sanity.io/images/55mm68d3/production/79956e71c495a655567
 
 ![TODO: provide alt](https://cdn.sanity.io/images/55mm68d3/production/79956e71c495a65556731eb6cd650ddd3922581b-750x422.jpg?h=600&fm=jpg&q=70)
 
-* * *
+---
 
 We have witnessed tremendous changes and major developments in every sector for the last few years, and technology, with its own speed, has been able to overcome hurdles by bringing in new technologies, methods, and perspectives to solve problems. To specifically point on, Web Development has seen the rise of new methods to make stuff easy, fast, and better responsive, and for the same reason, Angular came into existence.
 
@@ -68,9 +68,9 @@ While Google brought in Angular as a JS framework, Facebook brought in React as 
 
 There occur many similarities among both like:
 
-*   Works on Mobile & Web,
-*   Single & Multiple Page Applications,
-*   Component-Based.
+- Works on Mobile & Web,
+- Single & Multiple Page Applications,
+- Component-Based.
 
 Along with differences like Angular doesn’t require additional libraries while React asks for them. Angular is full-fledged, while React can be used only for UI development. Angular has a fixed structure, while React is quite flexible and easy to learn.
 
@@ -89,4 +89,3 @@ As mentioned earlier, React is easy to learn than Angular, Vue is quite easier t
 Angular is a TypeScript based web development framework, preferred for big applications though it works fine for small applications. Support and love given by the web development community have helped Angular grow fast and being adopted quickly.
 
 Learn more about Angular with Eincode extensive course: [https://academy.eincode.com/angular-react-node](https://academy.eincode.com/courses/react-angular-node-in-depth-guide-beginner-to-pro-2020)
-

@@ -1,16 +1,15 @@
-import React from 'react';
-const titleize = require('titleize');
+import React from "react";
+const titleize = require("titleize");
 
 export class BwmComponent extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.numbers = [];
   }
 
   resolveType(isShared) {
-    return isShared ? 'shared' : 'whole';
+    return isShared ? "shared" : "whole";
   }
 
   toUpperCase(sentence) {

@@ -1,9 +1,8 @@
-
-const rss = require("./utils/rss-options")
+const rss = require("./utils/rss-options");
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -11,15 +10,15 @@ module.exports = {
     description: "The best resource to learn coding online",
     siteUrl: process.env.BASE_URL,
     body: {
-      content: "Just some SEO content"
-    }
+      content: "Just some SEO content",
+    },
   },
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-feed",
-      options: rss.options
+      options: rss.options,
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -36,12 +35,12 @@ module.exports = {
             resolve: "gatsby-remark-prismjs",
             options: {
               aliases: {
-                es6: "js"
-              }
-            }
-          }
-        ]
-      }
+                es6: "js",
+              },
+            },
+          },
+        ],
+      },
     },
     "gatsby-plugin-react-helmet",
     {
@@ -54,18 +53,21 @@ module.exports = {
         theme_color: `#a2466c`,
         display: `standalone`,
         icon: "src/images/icon.png",
-        icons: [{
-          src: "src/images/icon.png",
-          sizes: "512x512",
-          type: "image/png",
-        }, {
-          src: "src/images/maskable_icon.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "any maskable"
-        }]
+        icons: [
+          {
+            src: "src/images/icon.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "src/images/maskable_icon.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ],
       },
     },
-    "gatsby-plugin-offline"
+    "gatsby-plugin-offline",
   ],
 };

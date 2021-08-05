@@ -14,7 +14,7 @@ coverImage: https://cdn.sanity.io/images/55mm68d3/production/98d581fb1463a4ec94d
 
 ![TODO: provide alt](https://cdn.sanity.io/images/55mm68d3/production/98d581fb1463a4ec94de31aa9ee7bb95ebc9c486-1400x933.jpg?h=600&fm=jpg&q=70)</div>
 
-* * *
+---
 
 <div>
 
@@ -56,8 +56,8 @@ There are 2 functions we can use to fetch data on the server-side when using Nex
 
 The framework calls these functions at different times:
 
-*   getStaticProps = gets called at **BUILD TIME** = Static Site Generation approach.
-*   getServerSideProps = gets called at **REQUEST TIME** = Server Side Rendering on-demand approach.
+- getStaticProps = gets called at **BUILD TIME** = Static Site Generation approach.
+- getServerSideProps = gets called at **REQUEST TIME** = Server Side Rendering on-demand approach.
 
 So, pages are served differently depending on the functions we use to fetch data. If not specified, all pages are pre-rendered at BUILD TIME and served statically. E.g., a page with just:
 

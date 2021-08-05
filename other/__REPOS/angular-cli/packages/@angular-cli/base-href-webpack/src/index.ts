@@ -1,2 +1,1 @@
-
-export * from './base-href-webpack-plugin';
+export * from "./base-href-webpack-plugin";

@@ -1,15 +1,13 @@
-import {NgToolkitError} from '../error';
-import {Serializer} from './serializer';
-import {RootSchemaTreeNode, SchemaTreeNode} from './schema-tree';
+import { NgToolkitError } from "../error";
+import { Serializer } from "./serializer";
+import { RootSchemaTreeNode, SchemaTreeNode } from "./schema-tree";
 
 export class InvalidJsonPath extends NgToolkitError {}
 
-
 // The schema tree node property of the SchemaClass.
-const kSchemaNode = Symbol('schema-node');
+const kSchemaNode = Symbol("schema-node");
 // The value property of the SchemaClass.
-const kOriginalRoot = Symbol('schema-value');
-
+const kOriginalRoot = Symbol("schema-value");
 
 /**
  * Splits a JSON path string into fragments. Fragments can be used to get the value referenced
@@ -20,7 +18,7 @@ const kOriginalRoot = Symbol('schema-value');
  * @private
  */
 function _parseJsonPath(path: string): string[] {
-  const fragments = (path || '').split(/\./g);
+  const fragments = (path || "").split(/\./g);
   const result: string[] = [];
 
   while (fragments.length > 0) {
@@ -33,25 +31,25 @@ function _parseJsonPath(path: string): string[] {
 
     result.push(match[1]);
     if (match[2]) {
-      const indices = match[2].slice(1, -1).split('][');
+      const indices = match[2].slice(1, -1).split("][");
       result.push(...indices);
     }
   }
 
-  return result.filter(fragment => !!fragment);
+  return result.filter((fragment) => !!fragment);
 }
 
-
 /** Get a SchemaTreeNode from the JSON path string. */
-function _getSchemaNodeForPath<T>(rootMetaData: SchemaTreeNode<T>,
-                                  path: string): SchemaTreeNode<any> {
+function _getSchemaNodeForPath<T>(
+  rootMetaData: SchemaTreeNode<T>,
+  path: string
+): SchemaTreeNode<any> {
   let fragments = _parseJsonPath(path);
   // TODO: make this work with union (oneOf) schemas
   return fragments.reduce((md: SchemaTreeNode<any>, current: string) => {
     return md && md.children && md.children[current];
   }, rootMetaData);
 }
-
 
 /** The interface the SchemaClassFactory returned class implements. */
 export interface SchemaClass<JsonType> extends Object {
@@ -69,23 +67,33 @@ export interface SchemaClass<JsonType> extends Object {
   $$serialize(mimetype?: string): string;
 }
 
-
 class SchemaClassBase<T> implements SchemaClass<T> {
   constructor(schema: Object, value: T, ...fallbacks: T[]) {
     (this as any)[kOriginalRoot] = value;
-    const forward = fallbacks.length > 0
-                  ? (new SchemaClassBase<T>(schema, fallbacks.pop(), ...fallbacks).$$schema())
-                  : null;
+    const forward =
+      fallbacks.length > 0
+        ? new SchemaClassBase<T>(
+            schema,
+            fallbacks.pop(),
+            ...fallbacks
+          ).$$schema()
+        : null;
     (this as any)[kSchemaNode] = new RootSchemaTreeNode(this, {
       forward,
       value,
-      schema
+      schema,
     });
   }
 
-  $$root(): T { return this as any; }
-  $$schema(): RootSchemaTreeNode { return (this as any)[kSchemaNode] as RootSchemaTreeNode; }
-  $$originalRoot(): T { return (this as any)[kOriginalRoot] as T; }
+  $$root(): T {
+    return this as any;
+  }
+  $$schema(): RootSchemaTreeNode {
+    return (this as any)[kSchemaNode] as RootSchemaTreeNode;
+  }
+  $$originalRoot(): T {
+    return (this as any)[kOriginalRoot] as T;
+  }
 
   /** Sets the value of a destination if the value is currently undefined. */
   $$alias(source: string, destination: string) {
@@ -155,9 +163,13 @@ class SchemaClassBase<T> implements SchemaClass<T> {
   }
 
   /** Serialize into a string. */
-  $$serialize(mimetype = 'application/json', ...options: any[]): string {
-    let str = '';
-    const serializer = Serializer.fromMimetype(mimetype, (s) => str += s, ...options);
+  $$serialize(mimetype = "application/json", ...options: any[]): string {
+    let str = "";
+    const serializer = Serializer.fromMimetype(
+      mimetype,
+      (s) => (str += s),
+      ...options
+    );
 
     serializer.start();
     this.$$schema().serialize(serializer);
@@ -178,7 +190,9 @@ export interface SchemaClassFactoryReturn<T> {
  * @returns {GeneratedSchemaClass}
  * @constructor
  */
-export function SchemaClassFactory<T>(schema: Object): SchemaClassFactoryReturn<T> {
+export function SchemaClassFactory<T>(
+  schema: Object
+): SchemaClassFactoryReturn<T> {
   class GeneratedSchemaClass extends SchemaClassBase<T> {
     constructor(value: T, ...fallbacks: T[]) {
       super(schema, value, ...fallbacks);

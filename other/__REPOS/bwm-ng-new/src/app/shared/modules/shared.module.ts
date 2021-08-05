@@ -1,20 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { UppercasePipe } from '../pipes/uppercase.pipe';
-import { TimeFormatPipe } from '../pipes/time-format.pipe';
+import { UppercasePipe } from "../pipes/uppercase.pipe";
+import { TimeFormatPipe } from "../pipes/time-format.pipe";
 
 @NgModule({
-  declarations: [
-    UppercasePipe,
-    TimeFormatPipe
-  ],
-  exports: [
-    UppercasePipe,
-    TimeFormatPipe
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [UppercasePipe, TimeFormatPipe],
+  exports: [UppercasePipe, TimeFormatPipe],
+  imports: [CommonModule],
 })
-export class SharedModule { }
+export class SharedModule {}

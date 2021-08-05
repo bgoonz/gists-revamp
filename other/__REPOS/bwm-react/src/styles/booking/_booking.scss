@@ -1,4 +1,4 @@
-@import 'user-bookings';
+@import "user-bookings";
 
 .booking {
   padding: 20px;
@@ -15,7 +15,7 @@
   }
 
   label {
-    font-size:12px;
+    font-size: 12px;
     font-weight: 300;
     margin-bottom: 0;
   }
@@ -45,18 +45,18 @@
     margin-bottom: 10px;
 
     .btn-login {
-    text-align:center;
-    font-size: 15px;
-    padding: 15px;
+      text-align: center;
+      font-size: 15px;
+      padding: 15px;
 
-    &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: white;
         text-decoration: none;
       }
     }
   }
 }
-
 
 // MODAL
 .booking-modal {

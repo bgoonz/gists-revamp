@@ -20,6 +20,5 @@
     "url": "https://github.com/angular/angular-cli/issues"
   },
   "homepage": "https://github.com/angular/angular-cli",
-  "dependencies": {
-  }
+  "dependencies": {}
 }

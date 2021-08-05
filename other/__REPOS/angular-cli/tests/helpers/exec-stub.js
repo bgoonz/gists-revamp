@@ -1,11 +1,11 @@
-'use strict';
-var child_process = require('child_process');
-var sinon = require('sinon');
+"use strict";
+var child_process = require("child_process");
+var sinon = require("sinon");
 
 class ExecStub {
   constructor() {
     this.execOrig = child_process.exec;
-    this.stub = sinon.stub(child_process, 'exec', this.execStubFunc.bind(this));
+    this.stub = sinon.stub(child_process, "exec", this.execStubFunc.bind(this));
     this.stack = [];
     this.failed = false;
   }
@@ -15,13 +15,13 @@ class ExecStub {
     // console.log('####running', cmd);
 
     if (this.failed) {
-      resp = this.failedExec('ExecStub - in fail mode');
+      resp = this.failedExec("ExecStub - in fail mode");
       return resp.apply(null, arguments);
     }
 
     if (this.stack.length === 0) {
       this.failed = true;
-      resp = this.failedExec('ExecStub - expected stack size exceeded');
+      resp = this.failedExec("ExecStub - expected stack size exceeded");
       return resp.apply(null, arguments);
     }
 
@@ -48,23 +48,23 @@ class ExecStub {
     return this;
   }
   addExecSuccess(cmd, sdout) {
-    sdout = sdout || '';
+    sdout = sdout || "";
     this.stack.push({
       cmd,
-      resp: (cmd, opt, cb) => (cb ? cb : opt)(null, sdout, null)
+      resp: (cmd, opt, cb) => (cb ? cb : opt)(null, sdout, null),
     });
     return this;
   }
   addExecError(cmd, stderr) {
-    stderr = stderr || '';
+    stderr = stderr || "";
     this.stack.push({
       cmd,
-      resp: (cmd, opt, cb) => (cb ? cb : opt)(new Error(stderr), null, stderr)
+      resp: (cmd, opt, cb) => (cb ? cb : opt)(new Error(stderr), null, stderr),
     });
     return this;
   }
   failedExec(reason) {
-    return (cmd, opt, cb) => (cb ? cb : opt)(new Error(reason), null, reason)
+    return (cmd, opt, cb) => (cb ? cb : opt)(new Error(reason), null, reason);
   }
 }
 

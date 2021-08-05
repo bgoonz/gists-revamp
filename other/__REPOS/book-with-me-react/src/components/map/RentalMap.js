@@ -1,6 +1,6 @@
-import React from 'react';
-import { MapWithGeocode } from './GoogleMap';
-import PropTypes from 'prop-types';
+import React from "react";
+import { MapWithGeocode } from "./GoogleMap";
+import PropTypes from "prop-types";
 
 export class RentalMap extends React.Component {
   render() {
@@ -14,10 +14,10 @@ export class RentalMap extends React.Component {
         mapElement={<div style={{ height: `100%` }} />}
         location={location}
       />
-    )
+    );
   }
 }
 
 RentalMap.propTypes = {
-  location: PropTypes.any.isRequired
+  location: PropTypes.any.isRequired,
 };

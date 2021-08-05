@@ -1,20 +1,18 @@
-'use strict';
+"use strict";
 
 /**
 @module ember-cli
 */
 
-var existsSync   = require('exists-sync');
-var path         = require('path');
-var assign       = require('lodash/assign');
-var SilentError  = require('silent-error');
-var debug        = require('debug')('ember-cli:addon');
+var existsSync = require("exists-sync");
+var path = require("path");
+var assign = require("lodash/assign");
+var SilentError = require("silent-error");
+var debug = require("debug")("ember-cli:addon");
 
-var CoreObject = require('../ext/core-object');
+var CoreObject = require("../ext/core-object");
 
-var walkSync   = require('walk-sync');
-
-
+var walkSync = require("walk-sync");
 
 /**
   Root class for an Addon. If your addon module exports an Object this
@@ -52,17 +50,17 @@ function Addon(parent, project) {
 Addon.__proto__ = CoreObject;
 Addon.prototype.constructor = Addon;
 
-Addon.prototype.initializeAddons = function() {
+Addon.prototype.initializeAddons = function () {
   if (this._addonsInitialized) {
     return;
   }
   this._addonsInitialized = true;
   this.addonPackages = {
-    'angular-cli': {
-      name: 'angular-cli',
-      path: path.join(__dirname, '../../../'),
+    "angular-cli": {
+      name: "angular-cli",
+      path: path.join(__dirname, "../../../"),
       pkg: cliPkg,
-    }
+    },
   };
 };
 
@@ -79,11 +77,13 @@ Addon.prototype.eachAddonInvoke = function eachAddonInvoke(methodName, args) {
 
   var invokeArguments = args || [];
 
-  return this.addons.map(function(addon) {
-    if (addon[methodName]) {
-      return addon[methodName].apply(addon, invokeArguments);
-    }
-  }).filter(Boolean);
+  return this.addons
+    .map(function (addon) {
+      if (addon[methodName]) {
+        return addon[methodName].apply(addon, invokeArguments);
+      }
+    })
+    .filter(Boolean);
 };
 
 /**
@@ -100,14 +100,14 @@ Addon.prototype.eachAddonInvoke = function eachAddonInvoke(methodName, args) {
   @method included
   @param {EmberApp} app The application object
 */
-Addon.prototype.included = function(/* app */) {
+Addon.prototype.included = function (/* app */) {
   if (!this._addonsInitialized) {
     // someone called `this._super.included` without `apply` (because of older
     // core-object issues that prevent a "real" super call from working properly)
     return;
   }
 
-  this.eachAddonInvoke('included', [this]);
+  this.eachAddonInvoke("included", [this]);
 };
 
 /**
@@ -117,8 +117,8 @@ Addon.prototype.included = function(/* app */) {
   @method blueprintsPath
   @return {String} The path for blueprints
 */
-Addon.prototype.blueprintsPath = function() {
-  return path.join(this.root, 'blueprints');
+Addon.prototype.blueprintsPath = function () {
+  return path.join(this.root, "blueprints");
 };
 
 /**
@@ -142,7 +142,7 @@ Addon.prototype.blueprintsPath = function() {
   @return {Object} Configuration object to be merged with application configuration.
 */
 Addon.prototype.config = function (env, baseConfig) {
-  var configPath = path.join(this.root, 'config', 'environment.js');
+  var configPath = path.join(this.root, "config", "environment.js");
 
   if (existsSync(configPath)) {
     var configGenerator = require(configPath);
@@ -156,10 +156,10 @@ Addon.prototype.config = function (env, baseConfig) {
   @method dependencies
   @return {Object} The addon's dependencies based on the addon's package.json
 */
-Addon.prototype.dependencies = function() {
-  throw new Error()
+Addon.prototype.dependencies = function () {
+  throw new Error();
   var pkg = this.pkg || {};
-  return assign({}, pkg['devDependencies'], pkg['dependencies']);
+  return assign({}, pkg["devDependencies"], pkg["dependencies"]);
 };
 
 /**
@@ -170,18 +170,27 @@ Addon.prototype.dependencies = function() {
   @param {String} addon Addon name
   @return {String} Absolute addon path
 */
-Addon.resolvePath = function(addon) {
-  var addonMain = addon.pkg['ember-addon-main'];
+Addon.resolvePath = function (addon) {
+  var addonMain = addon.pkg["ember-addon-main"];
 
   if (addonMain) {
-    this.ui && this.ui.writeDeprecateLine(addon.pkg.name + ' is using the deprecated ember-addon-main definition. It should be updated to {\'ember-addon\': {\'main\': \'' + addon.pkg['ember-addon-main'] + '\'}}');
+    this.ui &&
+      this.ui.writeDeprecateLine(
+        addon.pkg.name +
+          " is using the deprecated ember-addon-main definition. It should be updated to {'ember-addon': {'main': '" +
+          addon.pkg["ember-addon-main"] +
+          "'}}"
+      );
   } else {
-    addonMain = (addon.pkg['ember-addon'] && addon.pkg['ember-addon'].main) || addon.pkg['main'] || 'index.js';
+    addonMain =
+      (addon.pkg["ember-addon"] && addon.pkg["ember-addon"].main) ||
+      addon.pkg["main"] ||
+      "index.js";
   }
 
   // Resolve will fail unless it has an extension
   if (!path.extname(addonMain)) {
-    addonMain += '.js';
+    addonMain += ".js";
   }
 
   return path.resolve(addon.path, addonMain);
@@ -199,29 +208,40 @@ Addon.resolvePath = function(addon) {
   @param {String} addon Addon name
   @return {Addon} Addon class
 */
-Addon.lookup = function(addon) {
+Addon.lookup = function (addon) {
   var Constructor, addonModule, modulePath, moduleDir;
 
   modulePath = Addon.resolvePath(addon);
-  moduleDir  = path.dirname(modulePath);
+  moduleDir = path.dirname(modulePath);
 
   if (existsSync(modulePath)) {
     addonModule = require(modulePath);
 
-    if (typeof addonModule === 'function') {
+    if (typeof addonModule === "function") {
       Constructor = addonModule;
       Constructor.prototype.root = Constructor.prototype.root || moduleDir;
-      Constructor.prototype.pkg  = Constructor.prototype.pkg || addon.pkg;
+      Constructor.prototype.pkg = Constructor.prototype.pkg || addon.pkg;
     } else {
-      Constructor = Addon.extend(assign({
-        root: moduleDir,
-        pkg: addon.pkg
-      }, addonModule));
+      Constructor = Addon.extend(
+        assign(
+          {
+            root: moduleDir,
+            pkg: addon.pkg,
+          },
+          addonModule
+        )
+      );
     }
   }
 
   if (!Constructor) {
-    throw new SilentError('The `' + addon.pkg.name + '` addon could not be found at `' + addon.path + '`.');
+    throw new SilentError(
+      "The `" +
+        addon.pkg.name +
+        "` addon could not be found at `" +
+        addon.path +
+        "`."
+    );
   }
 
   return Constructor;

@@ -1,9 +1,9 @@
 /*jshint quotmark: false*/
 
-'use strict';
+"use strict";
 
-var Generate     = require('./generate-from-blueprint');
+var Generate = require("./generate-from-blueprint");
 
 module.exports = Generate.extend({
-  blueprintFunction: 'uninstall'
+  blueprintFunction: "uninstall",
 });

@@ -1,6 +1,7 @@
 # ng generate interface
 
 ## Overview
+
 `ng generate interface [name] <type>` generates an interface
 
 ## Arguments

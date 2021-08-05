@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { CamelizePipe } from 'ngx-pipes';
+import { Injectable } from "@angular/core";
+import { CamelizePipe } from "ngx-pipes";
 
 // interface Window {
 //    google: any
@@ -12,20 +12,19 @@ export class MapService {
   private geoCoder: any;
   private positionCache: any = {};
 
-  constructor(private camelizePipe: CamelizePipe ) {}
+  constructor(private camelizePipe: CamelizePipe) {}
 
   private geoCodeAddress(address: string): Promise<any> {
     let position: any = {};
 
     return new Promise((resolve, reject) => {
-      this.geoCoder.geocode({address}, (result, status) => {
+      this.geoCoder.geocode({ address }, (result, status) => {
         if (status === (<any>window).google.maps.GeocoderStatus.OK) {
           const geometry = result[0].geometry.location;
           position = { lat: geometry.lat(), lng: geometry.lng() };
           this.cacheAddress(address, position);
           return resolve(position);
         } else {
-
           return reject("Not found");
         }
       });
@@ -49,11 +48,14 @@ export class MapService {
       this.geoCoder = new (<any>window).google.maps.Geocoder();
       const cacheKey = this.camelize(address);
 
-      if (this.isAddressCached(cacheKey)) return resolve(this.positionCache[cacheKey]);
+      if (this.isAddressCached(cacheKey))
+        return resolve(this.positionCache[cacheKey]);
 
-      this.geoCodeAddress(address).then((position: any) => {
-        return resolve(position);
-      }).catch(err => reject(err));
-    })
+      this.geoCodeAddress(address)
+        .then((position: any) => {
+          return resolve(position);
+        })
+        .catch((err) => reject(err));
+    });
   }
 }

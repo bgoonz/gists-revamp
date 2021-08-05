@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 #userRentals {
   .card-block {
@@ -17,7 +17,7 @@
 
   .btn-delete {
     margin-left: 10px;
-    float: right
+    float: right;
   }
 
   .card-footer {
@@ -35,7 +35,8 @@
     background-color: transparent;
     color: $main-color;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: $main-color !important;
       background-color: transparent !important;
       color: $main-color !important;

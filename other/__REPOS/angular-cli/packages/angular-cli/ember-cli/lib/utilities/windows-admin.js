@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-var Promise = require('../ext/promise');
-var chalk   = require('chalk');
-var exec    = require('child_process').exec;
+var Promise = require("../ext/promise");
+var chalk = require("chalk");
+var exec = require("child_process").exec;
 
 module.exports = {
   /**
@@ -16,26 +16,32 @@ module.exports = {
   checkWindowsElevation: function (ui) {
     return new Promise(function (resolve) {
       if (/^win/.test(process.platform)) {
-        exec('NET SESSION', function (error, stdout, stderr) {
-          var elevated = (!stderr || stderr.length === 0);
+        exec("NET SESSION", function (error, stdout, stderr) {
+          var elevated = !stderr || stderr.length === 0;
 
           if (!elevated && ui && ui.writeLine) {
-            ui.writeLine(chalk.yellow('\nRunning without elevated rights. ' +
-              'Running Ember CLI "as Administrator" increases performance significantly.'));
-            ui.writeLine('See ember-cli.com/user-guide/#windows for details.\n');
+            ui.writeLine(
+              chalk.yellow(
+                "\nRunning without elevated rights. " +
+                  'Running Ember CLI "as Administrator" increases performance significantly.'
+              )
+            );
+            ui.writeLine(
+              "See ember-cli.com/user-guide/#windows for details.\n"
+            );
           }
 
           resolve({
             windows: true,
-            elevated: elevated
+            elevated: elevated,
           });
         });
       } else {
         resolve({
           windows: false,
-          elevated: null
+          elevated: null,
         });
       }
     });
-  }
+  },
 };

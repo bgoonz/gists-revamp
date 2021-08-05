@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var CoreObject = require('../ext/core-object');
+var CoreObject = require("../ext/core-object");
 
 function Task() {
   CoreObject.apply(this, arguments);
@@ -10,6 +10,6 @@ module.exports = Task;
 
 Task.__proto__ = CoreObject;
 
-Task.prototype.run = function(/*options*/) {
-  throw new Error('Task needs to have run() defined.');
+Task.prototype.run = function (/*options*/) {
+  throw new Error("Task needs to have run() defined.");
 };

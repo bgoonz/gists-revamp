@@ -1,5 +1,5 @@
-import Service from '@ember/service';
-import moment from 'moment';
+import Service from "@ember/service";
+import moment from "moment";
 
 export default Service.extend({
   getRangeOfDates(start_at, end_at) {
@@ -7,12 +7,12 @@ export default Service.extend({
     const end = new Date(end_at);
     const dateArr = [];
 
-    while(start < end){
-     dateArr.push(moment(start).format('Y-MM-DD'));
-     const newDate = start.setDate(start.getDate() + 1);
-     start = new Date(newDate);
+    while (start < end) {
+      dateArr.push(moment(start).format("Y-MM-DD"));
+      const newDate = start.setDate(start.getDate() + 1);
+      start = new Date(newDate);
     }
 
     return dateArr;
-  }
+  },
 });

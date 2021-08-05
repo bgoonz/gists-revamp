@@ -1,54 +1,61 @@
-'use strict';
+"use strict";
 
-var chalk                 = require('chalk');
-var Command               = require('../models/command');
-var Promise               = require('../ext/promise');
-var Blueprint             = require('../models/blueprint');
-var mergeBlueprintOptions = require('../utilities/merge-blueprint-options');
-var merge                 = require('lodash/merge');
-var reject                = require('lodash/reject');
-var EOL                   = require('os').EOL;
-var SilentError           = require('silent-error');
+var chalk = require("chalk");
+var Command = require("../models/command");
+var Promise = require("../ext/promise");
+var Blueprint = require("../models/blueprint");
+var mergeBlueprintOptions = require("../utilities/merge-blueprint-options");
+var merge = require("lodash/merge");
+var reject = require("lodash/reject");
+var EOL = require("os").EOL;
+var SilentError = require("silent-error");
 
 module.exports = Command.extend({
-  name: 'generate',
-  description: 'Generates new code from blueprints.',
-  aliases: ['g'],
-  works: 'insideProject',
+  name: "generate",
+  description: "Generates new code from blueprints.",
+  aliases: ["g"],
+  works: "insideProject",
 
   availableOptions: [
-    { name: 'dry-run',       type: Boolean, default: false, aliases: ['d'] },
-    { name: 'verbose',       type: Boolean, default: false, aliases: ['v'] },
-    { name: 'pod',           type: Boolean, default: false, aliases: ['p'] },
-    { name: 'classic',       type: Boolean, default: false, aliases: ['c'] },
-    { name: 'dummy',         type: Boolean, default: false, aliases: ['dum', 'id'] },
-    { name: 'in-repo-addon', type: String,  default: null,  aliases: ['in-repo', 'ir'] }
+    { name: "dry-run", type: Boolean, default: false, aliases: ["d"] },
+    { name: "verbose", type: Boolean, default: false, aliases: ["v"] },
+    { name: "pod", type: Boolean, default: false, aliases: ["p"] },
+    { name: "classic", type: Boolean, default: false, aliases: ["c"] },
+    { name: "dummy", type: Boolean, default: false, aliases: ["dum", "id"] },
+    {
+      name: "in-repo-addon",
+      type: String,
+      default: null,
+      aliases: ["in-repo", "ir"],
+    },
   ],
 
-  anonymousOptions: [
-    '<blueprint>'
-  ],
+  anonymousOptions: ["<blueprint>"],
 
   beforeRun: mergeBlueprintOptions,
 
-  run: function(commandOptions, rawArgs) {
+  run: function (commandOptions, rawArgs) {
     var blueprintName = rawArgs[0];
 
     if (!blueprintName) {
-      return Promise.reject(new SilentError('The `ember generate` command requires a ' +
-                                            'blueprint name to be specified. ' +
-                                            'For more details, use `ember help`.'));
+      return Promise.reject(
+        new SilentError(
+          "The `ember generate` command requires a " +
+            "blueprint name to be specified. " +
+            "For more details, use `ember help`."
+        )
+      );
     }
     var Task = this.tasks.GenerateFromBlueprint;
     var task = new Task({
       ui: this.ui,
       project: this.project,
       testing: this.testing,
-      settings: this.settings
+      settings: this.settings,
     });
 
     var taskArgs = {
-      args: rawArgs
+      args: rawArgs,
     };
 
     if (this.settings && this.settings.usePods && !commandOptions.classic) {
@@ -64,19 +71,19 @@ module.exports = Command.extend({
     return task.run(taskOptions);
   },
 
-  printDetailedHelp: function(options) {
+  printDetailedHelp: function (options) {
     this.ui.writeLine(this.getAllBlueprints(options));
   },
 
-  addAdditionalJsonForHelp: function(json, options) {
+  addAdditionalJsonForHelp: function (json, options) {
     json.availableBlueprints = this.getAllBlueprints(options);
   },
 
-  getAllBlueprints: function(options) {
-    var lookupPaths   = this.project.blueprintLookupPaths();
+  getAllBlueprints: function (options) {
+    var lookupPaths = this.project.blueprintLookupPaths();
     var blueprintList = Blueprint.list({ paths: lookupPaths });
 
-    var output = '';
+    var output = "";
 
     var singleBlueprintName;
     if (options.rawArgs) {
@@ -84,13 +91,17 @@ module.exports = Command.extend({
     }
 
     if (!singleBlueprintName && !options.json) {
-      output += EOL + '  Available blueprints:' + EOL;
+      output += EOL + "  Available blueprints:" + EOL;
     }
 
     var collectionsJson = [];
 
-    blueprintList.forEach(function(collection) {
-      var result = this.getPackageBlueprints(collection, options, singleBlueprintName);
+    blueprintList.forEach(function (collection) {
+      var result = this.getPackageBlueprints(
+        collection,
+        options,
+        singleBlueprintName
+      );
       if (options.json) {
         var collectionJson = {};
         collectionJson[collection.source] = result;
@@ -101,8 +112,12 @@ module.exports = Command.extend({
     }, this);
 
     if (singleBlueprintName && !output && !options.json) {
-      output = chalk.yellow('The \'' + singleBlueprintName +
-        '\' blueprint does not exist in this project.') + EOL;
+      output =
+        chalk.yellow(
+          "The '" +
+            singleBlueprintName +
+            "' blueprint does not exist in this project."
+        ) + EOL;
     }
 
     if (options.json) {
@@ -112,23 +127,23 @@ module.exports = Command.extend({
     }
   },
 
-  getPackageBlueprints: function(collection, options, singleBlueprintName) {
-    var verbose    = options.verbose;
+  getPackageBlueprints: function (collection, options, singleBlueprintName) {
+    var verbose = options.verbose;
     var blueprints = collection.blueprints;
 
     if (!verbose) {
-      blueprints = reject(blueprints, 'overridden');
+      blueprints = reject(blueprints, "overridden");
     }
 
-    var output = '';
+    var output = "";
 
     if (blueprints.length && !singleBlueprintName && !options.json) {
-      output += '    ' + collection.source + ':' + EOL;
+      output += "    " + collection.source + ":" + EOL;
     }
 
     var blueprintsJson = [];
 
-    blueprints.forEach(function(blueprint) {
+    blueprints.forEach(function (blueprint) {
       var singleMatch = singleBlueprintName === blueprint.name;
       if (singleMatch) {
         verbose = true;
@@ -150,5 +165,5 @@ module.exports = Command.extend({
     } else {
       return output;
     }
-  }
+  },
 });

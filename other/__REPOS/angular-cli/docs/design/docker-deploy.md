@@ -6,10 +6,9 @@ Add convenience for users to containerize and deploy their Angular application v
 
 Provide tasks for common Docker workflows:
 
-* Generate starter `Dockerfile` and `docker-compose.yml` files.
-* Build and Push an Angular app image to a Docker Registry.
-* Deploy and run an Angular app container in different Docker Machine environments.
-
+- Generate starter `Dockerfile` and `docker-compose.yml` files.
+- Build and Push an Angular app image to a Docker Registry.
+- Deploy and run an Angular app container in different Docker Machine environments.
 
 ## Requirements
 
@@ -30,22 +29,24 @@ Provide tasks for common Docker workflows:
 1. Use sensible defaults to make it easy for users to get started.
 1. Support `--dry-run` and `--verbose` flags.
 
-
 ## Proposed CLI API
 
 ### Overview
 
 Initialize the project for Docker builds and deploys:
+
 ```
 $ ng docker init [--environment env]
 ```
 
 Build and push a Docker image of the Angular app to the registry:
+
 ```
 $ ng docker push [--registry url]
 ```
 
 Deploy and run the Angular app on a Docker Machine:
+
 ```
 $ ng docker deploy [--environment env]
 ```
@@ -58,14 +59,14 @@ Most users will start with one local 'default' Docker Machine (Mac/Win), or a lo
 
 **Arguments:**
 
-* `--environment {env}` ; initialize for a particular environment (ie. dev, stage, prod). Defaults to `"default"`.
-* `--machine {machineName}` ; choose a particular Docker Machine for this environment. Defaults to the environment name.
-* `--service-name {serviceName}` ; the name for the webservice that serves the angular application. Defaults to `project.name`
-* `--service-port {servicePort}` ; the service port that should be mapped on the host. Defaults to `8000`.
-* `--use-image` ; initializes the environment for deploying with an image, rather than performing a build. By default, this is `false` and the `docker-compose.yml` file will be initialized for builds.
-* `--image-org {orgName}` ; the org name to use for image pushes. Defaults to `null`.
-* `--image-name {imageName}` ; the image name to use for image pushes. Also applies when `--use-image` is `true`. Defaults to `serviceName`.
-* `--image-registry {address}` ; the registry address to use for image pushes. Defaults to `registry.hub.docker.com`. Also applies when `--use-image` is `true`.
+- `--environment {env}` ; initialize for a particular environment (ie. dev, stage, prod). Defaults to `"default"`.
+- `--machine {machineName}` ; choose a particular Docker Machine for this environment. Defaults to the environment name.
+- `--service-name {serviceName}` ; the name for the webservice that serves the angular application. Defaults to `project.name`
+- `--service-port {servicePort}` ; the service port that should be mapped on the host. Defaults to `8000`.
+- `--use-image` ; initializes the environment for deploying with an image, rather than performing a build. By default, this is `false` and the `docker-compose.yml` file will be initialized for builds.
+- `--image-org {orgName}` ; the org name to use for image pushes. Defaults to `null`.
+- `--image-name {imageName}` ; the image name to use for image pushes. Also applies when `--use-image` is `true`. Defaults to `serviceName`.
+- `--image-registry {address}` ; the registry address to use for image pushes. Defaults to `registry.hub.docker.com`. Also applies when `--use-image` is `true`.
 
 **Example - Init default environment:**
 
@@ -155,12 +156,12 @@ The `\${NG_APP_IMAGE}` is a Compose variable, not an Angilar CLI var. It will be
 
 Separate `docker-compose-{environment}.yml` files are used to deploy to different [environments](https://docs.docker.com/compose/extends/#example-use-case), for use with the `ng docker deploy` command.
 
-
 ### Command - Docker Push
 
 The command `ng docker push` builds a Docker image of the Angular app from the `Dockerfile`, and pushes the image with a new tag to a registry address.
 
 Example - Build and push (with auth):
+
 ```bash
 $ ng docker push --tag 1.0.0 --tag-latest
 Building image...
@@ -180,15 +181,15 @@ my-username/my-ng-app:latest
 
 #### Arguments
 
-* `--machine {machineName}` ; the Docker Machine to use for the build. Defaults to the "default" environment's `machineName`.
-* `--image-org {orgName}` ; the org name to use for image pushes. Defaults to `null`.
-* `--image-name {imageName}` ; the image name to use for image pushes. Defaults to `serviceName`.
-* `--image-registry {address}` ; the registry address to use for image pushes. Defaults to `registry.hub.docker.com`.
-* `--tag {tag}` ; the tag for the newly built image. Defaults to the current `package.json` "version" property value.
-* `--tag-latest` ; optionally and additionally apply the "latest" tag. Defaults to `false`.
-* `--no-cache` ; do not use cache when building the image. Defaults to `false`.
-* `--force-rm` ; always remove intermediate containers. Defaults to `false`.
-* `--pull` ; always attempt to pull a newer version of the image. Defaults to `false`.
+- `--machine {machineName}` ; the Docker Machine to use for the build. Defaults to the "default" environment's `machineName`.
+- `--image-org {orgName}` ; the org name to use for image pushes. Defaults to `null`.
+- `--image-name {imageName}` ; the image name to use for image pushes. Defaults to `serviceName`.
+- `--image-registry {address}` ; the registry address to use for image pushes. Defaults to `registry.hub.docker.com`.
+- `--tag {tag}` ; the tag for the newly built image. Defaults to the current `package.json` "version" property value.
+- `--tag-latest` ; optionally and additionally apply the "latest" tag. Defaults to `false`.
+- `--no-cache` ; do not use cache when building the image. Defaults to `false`.
+- `--force-rm` ; always remove intermediate containers. Defaults to `false`.
+- `--pull` ; always attempt to pull a newer version of the image. Defaults to `false`.
 
 The `--no-cache`, `--force-rm`, and `--pull` are [compose build options](https://docs.docker.com/compose/reference/build/).
 
@@ -207,7 +208,6 @@ The `serviceName`, `registryAddress`, `orgName`, and `imageName` defaults will f
    1. `docker tag {imageName} {registryAddress}:{orgName}/{imageName}:latest`
    1. `docker push {registryAddress}:{orgName}/{imageName}:latest`
 
-
 ### Command - Docker Deploy
 
 The command `ng docker deploy` will deploy an environment's compose configuration to a Docker Machine. It starts the containers in the background and leaves them running.
@@ -215,6 +215,7 @@ The command `ng docker deploy` will deploy an environment's compose configuratio
 Consider a command alias: `ng docker run`.
 
 Example - Default environment deploy:
+
 ```bash
 $ ng docker deploy
 Building...
@@ -223,26 +224,28 @@ Deploy complete!
 ```
 
 Example - Deploying to a named environment, without builds:
+
 ```bash
 $ ng docker:deploy --environment stage
 $ ng docker:deploy --environment prod --tag 1.0.1
 ```
 
 Example - Deploying a specific service from the compose file:
+
 ```bash
 $ ng docker deploy --services my-ng-app
 ```
 
 #### Options
 
-* `--environment {env}` ;
-* `--tag {tag}` ; The tag to use whe deploying to non-build Docker Machine environments; Defaults to `package.json` "version" property value.
-* `--services {svc1} {svc2} ... {svcN}` ;
-* `--no-cache` ; do not use cache when building the image. Defaults to `false`.
-* `--force-rm` ; always remove intermediate containers. Defaults to `false`.
-* `--pull` ; always attempt to pull a newer version of the image. Defaults to `false`.
-* `--force-recreate` ; recreate containers even if their configuration and image haven't changed. Defaults to `false`.
-* `--no-recreate` ; if containers already exist, don't recreate them. Defaults to `false`.
+- `--environment {env}` ;
+- `--tag {tag}` ; The tag to use whe deploying to non-build Docker Machine environments; Defaults to `package.json` "version" property value.
+- `--services {svc1} {svc2} ... {svcN}` ;
+- `--no-cache` ; do not use cache when building the image. Defaults to `false`.
+- `--force-rm` ; always remove intermediate containers. Defaults to `false`.
+- `--pull` ; always attempt to pull a newer version of the image. Defaults to `false`.
+- `--force-recreate` ; recreate containers even if their configuration and image haven't changed. Defaults to `false`.
+- `--no-recreate` ; if containers already exist, don't recreate them. Defaults to `false`.
 
 The `--services` option allows for specific services to be deployed. By default, all services within the corresponding compose file will be deployed.
 
@@ -269,10 +272,10 @@ Use the `env` value to namespace the `--project-name` of the container set, for 
    1. `docker-compose build {serviceName}`
    1. `docker-compose up -d [services]`
 
-
 ## Saved State
 
 Example ngConfig model for saved docker command state (per project):
+
 ```
 {
   docker: {
@@ -290,20 +293,18 @@ Example ngConfig model for saved docker command state (per project):
         isImageDeploy: true,
         serviceName: 'ngapp'
       }
-    }    
+    }
   }
 }
 ```
 
-
 ## Other Enhancements
 
-* Ability to list the configured deploy environments.
-* Autocomplete environment names for `ng docker deploy`.
-* New command wrappers for `docker-compose logs`, and `docker exec` commands.
-* Create an Angular development environment image with everything packaged inside. Users can run the container with local volume mounts, and toolset will watch/rebuild for local file changes. Only requires Docker to be installed to get started with Angular development. There are some Node.js complexities to solve when adding new package.json dependencies, and many users report issues with file watchers and docker volume mounts.
-* Deployment support to other container scheduling systems: Kubernetes, Marathon/Mesos, AWS ECS and Beanstalk, Azure Service Fabric, etc.
-
+- Ability to list the configured deploy environments.
+- Autocomplete environment names for `ng docker deploy`.
+- New command wrappers for `docker-compose logs`, and `docker exec` commands.
+- Create an Angular development environment image with everything packaged inside. Users can run the container with local volume mounts, and toolset will watch/rebuild for local file changes. Only requires Docker to be installed to get started with Angular development. There are some Node.js complexities to solve when adding new package.json dependencies, and many users report issues with file watchers and docker volume mounts.
+- Deployment support to other container scheduling systems: Kubernetes, Marathon/Mesos, AWS ECS and Beanstalk, Azure Service Fabric, etc.
 
 ## Appendix
 
@@ -327,97 +328,98 @@ The API has been going through a high rate of change and has some awkward incons
 Example Image Build with `dockerode` module:
 
 ```js
-var Docker = require('dockerode');
-var tar = require('tar-fs');
+var Docker = require("dockerode");
+var tar = require("tar-fs");
 
 var docker = new Docker({
-    host: options.dockerHostIp,
-    port: options.dockerPort || 2375,
-    ca: fs.readFileSync(`${options.dockerCertPath}/ca.pem`),
-    cert: fs.readFileSync(`${options.dockerCertPath}/cert.pem`),
-    key: fs.readFileSync(`${options.dockerCertPath}/key.pem`)
+  host: options.dockerHostIp,
+  port: options.dockerPort || 2375,
+  ca: fs.readFileSync(`${options.dockerCertPath}/ca.pem`),
+  cert: fs.readFileSync(`${options.dockerCertPath}/cert.pem`),
+  key: fs.readFileSync(`${options.dockerCertPath}/key.pem`),
 });
 var buildImagePromise = Promise.denodeify(docker.buildImage);
 var tarStream = tar.pack(project.root);
 
 buildImagePromise(tarStream, {
-    t: options.imageName
+  t: options.imageName,
 }).then((output) => {
-    var imageHash = output.match(/Successfully built\s+([a-f0-9]+)/m)[1];
-    ui.writeLine(chalk.green(`Docker image built! ${imageHash}`));
+  var imageHash = output.match(/Successfully built\s+([a-f0-9]+)/m)[1];
+  ui.writeLine(chalk.green(`Docker image built! ${imageHash}`));
 });
 ```
 
 Tradeoffs with this approach:
 
-* Does not require Docker CLI tools to be installed.
-* Requires cert files for access to remote Docker Machines.
-* Programmatic interface.
-* Requires more configuration on the part of Angular CLI.
-* Configuration imposes a learning curve on existing Docker users.
-* No Docker-Compose API support. Multi-container management features would need to be duplicated.
-* Maintenance effort to keep API updated.
-* Dependent upon 3rd-party Docker module support, or creating our own.
+- Does not require Docker CLI tools to be installed.
+- Requires cert files for access to remote Docker Machines.
+- Programmatic interface.
+- Requires more configuration on the part of Angular CLI.
+- Configuration imposes a learning curve on existing Docker users.
+- No Docker-Compose API support. Multi-container management features would need to be duplicated.
+- Maintenance effort to keep API updated.
+- Dependent upon 3rd-party Docker module support, or creating our own.
 
 #### Execute Docker CLI Commands
 
 This method wraps the following Docker CLI tools with `exec()` calls, formatting the command arguments and parsing their output:
 
-* `docker-machine` : Used to initialize the `docker` client context for communication with a specific Docker Machine host, and for gathering host information (IP address).
-* `docker` : The primary Docker client CLI. Good for pushing images to a registry.
-* `docker-compose` : Manages multi-container deployments on a Docker Machine using a YAML format for defining container options. Can also be used to build images.
+- `docker-machine` : Used to initialize the `docker` client context for communication with a specific Docker Machine host, and for gathering host information (IP address).
+- `docker` : The primary Docker client CLI. Good for pushing images to a registry.
+- `docker-compose` : Manages multi-container deployments on a Docker Machine using a YAML format for defining container options. Can also be used to build images.
 
 Example image build with `docker-machine` and `docker-compose` CLI commands:
 
 ```js
-var execPromise = Promise.denodeify(require('child_process').exec);
+var execPromise = Promise.denodeify(require("child_process").exec);
 
 function getDockerEnv(machineName) {
-    return execPromise(`docker-machine env ${machineName}`)
-        .then((stdout) => {
-            let dockerEnv = {};
-            stdout.split(/\r?\n/)
-                .forEach((line) => {
-                    let m = line.match(/^export\s+(.+?)="(.*?)"$/);
-                    if (m) dockerEnv[m[1]] = m[2];
-                });
-            return dockerEnv;
-        });
+  return execPromise(`docker-machine env ${machineName}`).then((stdout) => {
+    let dockerEnv = {};
+    stdout.split(/\r?\n/).forEach((line) => {
+      let m = line.match(/^export\s+(.+?)="(.*?)"$/);
+      if (m) dockerEnv[m[1]] = m[2];
+    });
+    return dockerEnv;
+  });
 }
 
 function buildImage() {
-    return getDockerEnv(options.buildMachineName)
-        .then((dockerEnv) => {
-            let execOptions = {
-                cwd: project.root,
-                env: dockerEnv
-            };
-            return execPromise(`docker-compose build ${options.dockerServiceName}`, execOptions);
-        })
-        .then((stdout) => {
-            var imageHash = stdout.match(/Successfully built\s+([a-f0-9]+)/m)[1];
-            ui.writeLine(chalk.green(`Docker image built! ${imageHash}`));
-            return imageHash
-        });
+  return getDockerEnv(options.buildMachineName)
+    .then((dockerEnv) => {
+      let execOptions = {
+        cwd: project.root,
+        env: dockerEnv,
+      };
+      return execPromise(
+        `docker-compose build ${options.dockerServiceName}`,
+        execOptions
+      );
+    })
+    .then((stdout) => {
+      var imageHash = stdout.match(/Successfully built\s+([a-f0-9]+)/m)[1];
+      ui.writeLine(chalk.green(`Docker image built! ${imageHash}`));
+      return imageHash;
+    });
 }
 ```
 
 Tradeoffs with this approach:
 
-* Requires user to manually install Docker CLI tools
-* Must build interface around CLI commands, formatting the command arguments and parsing the output.
-* Can leverage Docker-Compose and its configuration format for multi-container deploys.
-* Configuration of build and deploy options is simplified in Angular CLI.
-* User has the flexibility of switching between `ng` commands and Docker CLI tools without having to maintain duplicate configuration.
-* Lower risk of Docker compatibility issues. User has control over their Docker version.
+- Requires user to manually install Docker CLI tools
+- Must build interface around CLI commands, formatting the command arguments and parsing the output.
+- Can leverage Docker-Compose and its configuration format for multi-container deploys.
+- Configuration of build and deploy options is simplified in Angular CLI.
+- User has the flexibility of switching between `ng` commands and Docker CLI tools without having to maintain duplicate configuration.
+- Lower risk of Docker compatibility issues. User has control over their Docker version.
 
 ##### Node.js Docker Modules
 
-Module | Created | Status | Dependencies
---- | --- | --- | ---
-[dockerode](https://www.npmjs.com/package/dockerode) | Sep 1, 2013 | Active | 14
-[dockerizer](https://www.npmjs.com/package/dockerizer) | Feb 1, 2016 | New | 125
-[docker.io](https://www.npmjs.com/package/docker.io) | Jun 1, 2013 | Outdated | ?
+| Module                                                 | Created     | Status   | Dependencies |
+| ------------------------------------------------------ | ----------- | -------- | ------------ |
+| [dockerode](https://www.npmjs.com/package/dockerode)   | Sep 1, 2013 | Active   | 14           |
+| [dockerizer](https://www.npmjs.com/package/dockerizer) | Feb 1, 2016 | New      | 125          |
+| [docker.io](https://www.npmjs.com/package/docker.io)   | Jun 1, 2013 | Outdated | ?            |
 
 [List of Docker client libraries](https://docs.docker.com/engine/reference/api/remote_api_client_libraries/)
 
@@ -425,30 +427,29 @@ Module | Created | Status | Dependencies
 
 The "2. Docker CLI tools via `child_process.exec`" method is recommended based on the following:
 
-* The requirement of having the Docker CLI tools installed is not generally a problem, and they would likely already be installed by the majority of users using these features.
-* Maintenance to Angular CLI would likely be easier using the Docker CLI, having less configuration, documentation, and updates than the Remote API method.
-* Multi-container deploys is a common use-case. Utilizing the Docker Compose features, format, and documentation is a big win.
-* Since this project is a CLI itself, using the Docker CLI tools isn't too far a leap.
-* Users who do not use these features are not forced to install Docker CLI. Conversely, the Remote API method might incur a small penalty of installing unused NPM modules (ie. `dockerode`).
-
+- The requirement of having the Docker CLI tools installed is not generally a problem, and they would likely already be installed by the majority of users using these features.
+- Maintenance to Angular CLI would likely be easier using the Docker CLI, having less configuration, documentation, and updates than the Remote API method.
+- Multi-container deploys is a common use-case. Utilizing the Docker Compose features, format, and documentation is a big win.
+- Since this project is a CLI itself, using the Docker CLI tools isn't too far a leap.
+- Users who do not use these features are not forced to install Docker CLI. Conversely, the Remote API method might incur a small penalty of installing unused NPM modules (ie. `dockerode`).
 
 ### Container Deployment APIs in the Wild
 
-* [Docker Run](https://docs.docker.com/engine/reference/run/)
-* [Docker-Compose File](https://docs.docker.com/compose/compose-file/)
-* [Kubernetes Pod](http://kubernetes.io/docs/api-reference/v1/definitions/#_v1_pod)
-* [Marathon App](https://mesosphere.github.io/marathon/docs/rest-api.html#post-v2-apps)
-* [Tutum Container](https://docs.tutum.co/v2/api/#container)
-* [AWS Elastic Beanstalk/ECS Task Definition](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html)
-* [Azure Service Fabric App](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-deploy-remove-applications/)
-* [Heroku Docker CLI](https://github.com/heroku/heroku-docker)
-* [Redspread](https://github.com/redspread/spread)
-* [Docker Universal Control Plane](https://www.docker.com/products/docker-universal-control-plane)
-* [Puppet Docker Module](https://github.com/garethr/garethr-docker)
-* [Chef Docker Cookbook](https://supermarket.chef.io/cookbooks/docker)
-* [Ansible Docker Module](http://docs.ansible.com/ansible/docker_module.html)
-* [Bamboo Docker Tasks](https://confluence.atlassian.com/bamboo/configuring-the-docker-task-in-bamboo-720411254.html)
-* [Freight Forwarder Manifest](http://freight-forwarder.readthedocs.org/en/latest/config/overview.html)
-* [Gulp Docker Tasks](https://www.npmjs.com/package/gulp-docker)
-* [Grunt Dock Tasks](https://www.npmjs.com/package/grunt-dock)
-* [Robo Docker Tasks](http://robo.li/tasks/Docker/)
+- [Docker Run](https://docs.docker.com/engine/reference/run/)
+- [Docker-Compose File](https://docs.docker.com/compose/compose-file/)
+- [Kubernetes Pod](http://kubernetes.io/docs/api-reference/v1/definitions/#_v1_pod)
+- [Marathon App](https://mesosphere.github.io/marathon/docs/rest-api.html#post-v2-apps)
+- [Tutum Container](https://docs.tutum.co/v2/api/#container)
+- [AWS Elastic Beanstalk/ECS Task Definition](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html)
+- [Azure Service Fabric App](https://azure.microsoft.com/en-us/documentation/articles/service-fabric-deploy-remove-applications/)
+- [Heroku Docker CLI](https://github.com/heroku/heroku-docker)
+- [Redspread](https://github.com/redspread/spread)
+- [Docker Universal Control Plane](https://www.docker.com/products/docker-universal-control-plane)
+- [Puppet Docker Module](https://github.com/garethr/garethr-docker)
+- [Chef Docker Cookbook](https://supermarket.chef.io/cookbooks/docker)
+- [Ansible Docker Module](http://docs.ansible.com/ansible/docker_module.html)
+- [Bamboo Docker Tasks](https://confluence.atlassian.com/bamboo/configuring-the-docker-task-in-bamboo-720411254.html)
+- [Freight Forwarder Manifest](http://freight-forwarder.readthedocs.org/en/latest/config/overview.html)
+- [Gulp Docker Tasks](https://www.npmjs.com/package/gulp-docker)
+- [Grunt Dock Tasks](https://www.npmjs.com/package/grunt-dock)
+- [Robo Docker Tasks](http://robo.li/tasks/Docker/)

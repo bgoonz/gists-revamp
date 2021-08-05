@@ -1,10 +1,14 @@
-import { Component, Input, Output, EventEmitter, OnChanges, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+  ViewEncapsulation,
+} from "@angular/core";
 
-@Component({
-
-})
+@Component({})
 export class EditableComponent implements OnChanges {
-
   @Input() public entity: any;
 
   @Input() public style: any;
@@ -32,7 +36,9 @@ export class EditableComponent implements OnChanges {
 
   public updateEntity(): void {
     if (this.entity[this.entityField] !== this.originEntityValue) {
-      this.entityUpdated.emit({[this.entityField]: this.entity[this.entityField]});
+      this.entityUpdated.emit({
+        [this.entityField]: this.entity[this.entityField],
+      });
       this.setEntityOriginValue();
     }
 

@@ -1,14 +1,13 @@
-
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from './resource/shared/settings.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'Welcome to my Application'
+  title = 'Welcome to my Application';
 
   constructor(private settingsService: SettingsService) {}
 
@@ -20,4 +19,3 @@ export class AppComponent implements OnInit {
     return this.settingsService.settings?.theme;
   }
 }
-

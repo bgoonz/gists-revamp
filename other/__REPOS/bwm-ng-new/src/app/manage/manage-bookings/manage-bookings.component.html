@@ -1,19 +1,18 @@
-
-
-
 <div [ngSwitch]="bookingType">
   <div *ngSwitchCase="bookingTypes.received">
-    <bwm-booking-listing 
+    <bwm-booking-listing
       [type]="bookingTypes.received"
       title="Received Bookings"
-      [getBookings]="getReceivedBookings">
+      [getBookings]="getReceivedBookings"
+    >
     </bwm-booking-listing>
   </div>
   <div *ngSwitchDefault>
-    <bwm-booking-listing 
+    <bwm-booking-listing
       [type]="bookingTypes.all"
       title="My Bookings"
-      [getBookings]="getAuthUserBookings">
+      [getBookings]="getAuthUserBookings"
+    >
     </bwm-booking-listing>
   </div>
 </div>

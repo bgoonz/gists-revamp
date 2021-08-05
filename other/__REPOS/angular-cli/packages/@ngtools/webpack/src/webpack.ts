@@ -19,7 +19,11 @@ export interface Tapable {
 
 export interface ResolverPlugin extends Tapable {
   plugin(source: string, cb: ResolverCallback): void;
-  doResolve(target: string, req: Request, desc: string, callback: Callback<any>): void;
+  doResolve(
+    target: string,
+    req: Request,
+    desc: string,
+    callback: Callback<any>
+  ): void;
   join(relativePath: string, innerRequest: Request): Request;
 }
-

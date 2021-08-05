@@ -1,23 +1,19 @@
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import AuthRoute from "components/auth/AuthRoute";
+import GuestRoute from "components/auth/GuestRoute";
 
-import React from 'react';
-import {
-  Switch,
-  Route
-} from "react-router-dom";
-import AuthRoute from 'components/auth/AuthRoute';
-import GuestRoute from 'components/auth/GuestRoute';
-
-import RentalHome from './pages/RentalHome';
-import RentalHomeSearch from 'pages/RentalHomeSearch';
-import RentalDetail from './pages/RentalDetail';
-import RentalEdit from 'pages/RentalEdit';
-import RentalNew from './pages/RentalNew';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import SecretPage from 'pages/SecretPage';
-import ManageBookings from 'pages/ManageBookings';
-import ReceivedBookings from 'pages/ReceivedBookings';
-import ManageRentals from 'pages/ManageRentals';
+import RentalHome from "./pages/RentalHome";
+import RentalHomeSearch from "pages/RentalHomeSearch";
+import RentalDetail from "./pages/RentalDetail";
+import RentalEdit from "pages/RentalEdit";
+import RentalNew from "./pages/RentalNew";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import SecretPage from "pages/SecretPage";
+import ManageBookings from "pages/ManageBookings";
+import ReceivedBookings from "pages/ReceivedBookings";
+import ManageRentals from "pages/ManageRentals";
 
 const Routes = () => {
   return (
@@ -58,7 +54,7 @@ const Routes = () => {
         </GuestRoute>
       </Switch>
     </div>
-  )
-}
+  );
+};
 
 export default Routes;

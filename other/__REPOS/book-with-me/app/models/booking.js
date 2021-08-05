@@ -1,4 +1,4 @@
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default DS.Model.extend({
   start_at: DS.attr(),
@@ -7,6 +7,6 @@ export default DS.Model.extend({
   days: DS.attr(),
   guests: DS.attr(),
   created_at: DS.attr(),
-  user: DS.belongsTo('user'),
-  rental: DS.belongsTo('rental')
+  user: DS.belongsTo("user"),
+  rental: DS.belongsTo("rental"),
 });

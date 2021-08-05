@@ -1,8 +1,5 @@
-
 <!-- SCSS -->
-#newRental {
-  padding-bottom: 40px;
-} 
+#newRental { padding-bottom: 40px; }
 
 <!-- HMTL -->
 <section id="newRental">
@@ -13,23 +10,17 @@
         <form>
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text"
-                   class="form-control"
-                   id="title">
+            <input type="text" class="form-control" id="title" />
           </div>
 
           <div class="form-group">
             <label for="city">City</label>
-            <input type="text"
-                   class="form-control"
-                   id="city">
+            <input type="text" class="form-control" id="city" />
           </div>
 
           <div class="form-group">
             <label for="street">Street</label>
-            <input type="text"
-                   class="form-control"
-                   id="street">
+            <input type="text" class="form-control" id="street" />
           </div>
 
           <div class="form-group">
@@ -44,24 +35,22 @@
 
           <div class="form-group">
             <label for="bedrooms">Image Url</label>
-            <input type="number"
-                   class="form-control"
-                   id="image">
+            <input type="number" class="form-control" id="image" />
           </div>
 
           <div class="form-group">
             <label for="bedrooms">Rooms</label>
-            <input type="number"
-                   class="form-control"
-                   id="numOfRooms">
+            <input type="number" class="form-control" id="numOfRooms" />
           </div>
 
           <div class="form-group">
             <label for="description">Description</label>
-            <textarea rows="5"
-                      type="text"
-                      class="form-control"
-                      id="description">
+            <textarea
+              rows="5"
+              type="text"
+              class="form-control"
+              id="description"
+            >
             </textarea>
           </div>
 
@@ -71,28 +60,25 @@
               <div class="input-group-prepend">
                 <div class="input-group-text">$</div>
               </div>
-              <input type="number"
-                     class="form-control"
-                     id="dailyPrice">
+              <input type="number" class="form-control" id="dailyPrice" />
             </div>
           </div>
 
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="text"
-                   class="form-control"
-                   id="phone">
+            <input type="text" class="form-control" id="phone" />
           </div>
 
           <div class="form-group">
             <label for="shared">Shared</label>
-            <input type="checkbox"
-                   class="form-control"
-                   id="shared">
+            <input type="checkbox" class="form-control" id="shared" />
           </div>
-          <button type="button"
-                  (click)="createRental()"
-                  class="btn btn-bwm-ghost">Create
+          <button
+            type="button"
+            (click)="createRental()"
+            class="btn btn-bwm-ghost"
+          >
+            Create
           </button>
         </form>
         <!-- <div *ngIf="errors.length > 0" class="alert alert-danger">
@@ -103,10 +89,12 @@
       </div>
       <div class="col-md-6 ml-auto">
         <div class="image-container">
-          <h2 class="catchphrase">Hundreds of awesome places in reach of few clicks.</h2>
-          <img src="assets/images/create-rental.jpg" alt="">
+          <h2 class="catchphrase">
+            Hundreds of awesome places in reach of few clicks.
+          </h2>
+          <img src="assets/images/create-rental.jpg" alt="" />
         </div>
       </div>
     </div>
   </div>
-</section> 
+</section>

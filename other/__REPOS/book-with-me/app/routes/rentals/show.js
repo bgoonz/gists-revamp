@@ -1,7 +1,10 @@
-import Route from '@ember/routing/route';
+import Route from "@ember/routing/route";
 
 export default Route.extend({
-  model(params){
-    return this.get('store').findRecord('rental', params.rental_id, {include: 'user, bookings', reload: true});
-  }
+  model(params) {
+    return this.get("store").findRecord("rental", params.rental_id, {
+      include: "user, bookings",
+      reload: true,
+    });
+  },
 });

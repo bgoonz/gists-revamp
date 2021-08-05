@@ -1,19 +1,17 @@
-import React from 'react';
-import { RentalList } from './RentalList';
-import { connect } from 'react-redux';
+import React from "react";
+import { RentalList } from "./RentalList";
+import { connect } from "react-redux";
 
-import { toUpperCase } from 'helpers';
-import * as actions from 'actions';
-
+import { toUpperCase } from "helpers";
+import * as actions from "actions";
 
 class RentalSearchListing extends React.Component {
-
   constructor() {
     super();
 
     this.state = {
-      searchedCity: ''
-    }
+      searchedCity: "",
+    };
   }
 
   componentWillMount() {
@@ -31,7 +29,7 @@ class RentalSearchListing extends React.Component {
 
   searchRentalsByCity() {
     const searchedCity = this.props.match.params.city;
-    this.setState({searchedCity});
+    this.setState({ searchedCity });
 
     this.props.dispatch(actions.fetchRentals(searchedCity));
   }
@@ -39,17 +37,17 @@ class RentalSearchListing extends React.Component {
   renderTitle() {
     const { errors, data } = this.props.rentals;
     const { searchedCity } = this.state;
-    let title = '';
+    let title = "";
 
     if (errors.length > 0) {
       title = errors[0].detail;
     }
 
-    if(data.length > 0) {
+    if (data.length > 0) {
       title = `Your Home in City of ${toUpperCase(searchedCity)}`;
     }
 
-    return <h1 className="page-title">{title}</h1>
+    return <h1 className="page-title">{title}</h1>;
   }
 
   render() {
@@ -58,14 +56,14 @@ class RentalSearchListing extends React.Component {
         {this.renderTitle()}
         <RentalList rentals={this.props.rentals.data} />
       </section>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    rentals: state.rentals
-  }
+    rentals: state.rentals,
+  };
 }
 
-export default connect(mapStateToProps)(RentalSearchListing)
+export default connect(mapStateToProps)(RentalSearchListing);

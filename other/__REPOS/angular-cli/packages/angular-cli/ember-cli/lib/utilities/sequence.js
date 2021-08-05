@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var Promise = require('../ext/promise');
+var Promise = require("../ext/promise");
 /*
  *
  * given an array of functions, that may or may not return promises sequence

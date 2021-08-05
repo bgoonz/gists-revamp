@@ -1,18 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Booking } from '../../booking/shared/booking.model';
-import * as moment from 'moment';
+import { Injectable } from "@angular/core";
+import { Booking } from "../../booking/shared/booking.model";
+import * as moment from "moment";
 
 @Injectable()
 export class HelperService {
-
   private getRangeOfDates(startAt, endAt, dateFormat) {
     const tempDates = [];
     const mEndAt = moment(endAt);
     let mStartAt = moment(startAt);
 
-    while(mStartAt < mEndAt) {
+    while (mStartAt < mEndAt) {
       tempDates.push(mStartAt.format(dateFormat));
-      mStartAt = mStartAt.add(1, 'day');
+      mStartAt = mStartAt.add(1, "day");
     }
 
     tempDates.push(moment(startAt).format(dateFormat));

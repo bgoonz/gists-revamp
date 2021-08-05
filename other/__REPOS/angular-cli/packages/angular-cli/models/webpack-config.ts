@@ -1,17 +1,16 @@
 import {
   getWebpackAotConfigPartial,
-  getWebpackNonAotConfigPartial
-} from './webpack-build-typescript';
-const webpackMerge = require('webpack-merge');
-import { CliConfig } from './config';
-import { getWebpackCommonConfig } from './webpack-build-common';
-import { getWebpackDevConfigPartial } from './webpack-build-development';
-import { getWebpackProdConfigPartial } from './webpack-build-production';
+  getWebpackNonAotConfigPartial,
+} from "./webpack-build-typescript";
+const webpackMerge = require("webpack-merge");
+import { CliConfig } from "./config";
+import { getWebpackCommonConfig } from "./webpack-build-common";
+import { getWebpackDevConfigPartial } from "./webpack-build-development";
+import { getWebpackProdConfigPartial } from "./webpack-build-production";
 import {
   getWebpackMobileConfigPartial,
-  getWebpackMobileProdConfigPartial
-} from './webpack-build-mobile';
-
+  getWebpackMobileProdConfigPartial,
+} from "./webpack-build-mobile";
 
 export class NgCliWebpackConfig {
   // TODO: When webpack2 types are finished lets replace all these any types
@@ -51,19 +50,36 @@ export class NgCliWebpackConfig {
       progress
     );
     let targetConfigPartial = this.getTargetConfig(
-      this.ngCliProject.root, appConfig, sourcemap, verbose
+      this.ngCliProject.root,
+      appConfig,
+      sourcemap,
+      verbose
     );
     const typescriptConfigPartial = isAoT
-      ? getWebpackAotConfigPartial(this.ngCliProject.root, appConfig, i18nFile, i18nFormat, locale)
+      ? getWebpackAotConfigPartial(
+          this.ngCliProject.root,
+          appConfig,
+          i18nFile,
+          i18nFormat,
+          locale
+        )
       : getWebpackNonAotConfigPartial(this.ngCliProject.root, appConfig);
 
     if (appConfig.mobile) {
-      let mobileConfigPartial = getWebpackMobileConfigPartial(this.ngCliProject.root, appConfig);
-      let mobileProdConfigPartial = getWebpackMobileProdConfigPartial(this.ngCliProject.root,
-                                                                      appConfig);
+      let mobileConfigPartial = getWebpackMobileConfigPartial(
+        this.ngCliProject.root,
+        appConfig
+      );
+      let mobileProdConfigPartial = getWebpackMobileProdConfigPartial(
+        this.ngCliProject.root,
+        appConfig
+      );
       baseConfig = webpackMerge(baseConfig, mobileConfigPartial);
-      if (this.target == 'production') {
-        targetConfigPartial = webpackMerge(targetConfigPartial, mobileProdConfigPartial);
+      if (this.target == "production") {
+        targetConfigPartial = webpackMerge(
+          targetConfigPartial,
+          mobileProdConfigPartial
+        );
       }
     }
 
@@ -74,14 +90,26 @@ export class NgCliWebpackConfig {
     );
   }
 
-  getTargetConfig(projectRoot: string, appConfig: any, sourcemap: boolean, verbose: boolean): any {
+  getTargetConfig(
+    projectRoot: string,
+    appConfig: any,
+    sourcemap: boolean,
+    verbose: boolean
+  ): any {
     switch (this.target) {
-      case 'development':
+      case "development":
         return getWebpackDevConfigPartial(projectRoot, appConfig);
-      case 'production':
-        return getWebpackProdConfigPartial(projectRoot, appConfig, sourcemap, verbose);
+      case "production":
+        return getWebpackProdConfigPartial(
+          projectRoot,
+          appConfig,
+          sourcemap,
+          verbose
+        );
       default:
-        throw new Error("Invalid build target. Only 'development' and 'production' are available.");
+        throw new Error(
+          "Invalid build target. Only 'development' and 'production' are available."
+        );
     }
   }
 }

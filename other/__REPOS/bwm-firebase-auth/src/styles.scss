@@ -1,23 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables';
-@import 'rental-detail';
+@import "variables";
+@import "rental-detail";
 
-html, body, p {
+html,
+body,
+p {
   color: $main-text-color;
 }
 
 .apartment {
-	color: #a72da3;
+  color: #a72da3;
 }
 
 .condo {
-	color: #d68000;
+  color: #d68000;
 }
 
 .house {
-	color: #bf1818;
+  color: #bf1818;
 }
-
 
 .page-title {
   font-size: 30px;
@@ -35,7 +36,8 @@ html, body, p {
   border: 1px solid $main-color !important;
   font-size: 12px !important;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: transparent !important;
     color: $main-color !important;
     border: 1px solid $main-color !important;
@@ -49,7 +51,9 @@ html, body, p {
   padding: 15px 30px;
   font-size: 20px;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     border-color: $main-color !important;
     background-color: $main-color !important;
   }
@@ -95,7 +99,7 @@ html, body, p {
     position: absolute;
     color: #f1f1f1;
     padding: 40px;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     margin-top: 50px;
     letter-spacing: 1px;
   }
@@ -114,4 +118,3 @@ html, body, p {
     }
   }
 }
-

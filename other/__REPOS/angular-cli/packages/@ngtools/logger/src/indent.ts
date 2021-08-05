@@ -1,7 +1,6 @@
-import {Logger} from './logger';
+import { Logger } from "./logger";
 
-import 'rxjs/add/operator/map';
-
+import "rxjs/add/operator/map";
 
 /**
  * Keep an map of indentation => array of indentations based on the level.
@@ -10,17 +9,16 @@ import 'rxjs/add/operator/map';
  * loggers. Also, string concatenation is expensive so performing concats for every log entries
  * is expensive; this alleviates it.
  */
-const indentationMap: {[indentationType: string]: string[]} = {};
-
+const indentationMap: { [indentationType: string]: string[] } = {};
 
 export class IndentLogger extends Logger {
-  constructor(name: string, parent: Logger | null = null, indentation = '  ') {
+  constructor(name: string, parent: Logger | null = null, indentation = "  ") {
     super(name, parent);
 
-    indentationMap[indentation] = indentationMap[indentation] || [''];
+    indentationMap[indentation] = indentationMap[indentation] || [""];
     const map = indentationMap[indentation];
 
-    this._observable = this._observable.map(entry => {
+    this._observable = this._observable.map((entry) => {
       const l = entry.path.length;
       if (l >= map.length) {
         let current = map[map.length - 1];

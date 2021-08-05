@@ -1,21 +1,19 @@
-
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 export class EditableComponent {
-  @Output('entityUpdated') entityUpdated = new EventEmitter();
+  @Output("entityUpdated") entityUpdated = new EventEmitter();
 
-  @Input('entity') entity: any;
-  @Input('className') className: string;
-  @Input('type') type = 'text';
-  @Input('inline') inline = false;
+  @Input("entity") entity: any;
+  @Input("className") className: string;
+  @Input("type") type = "text";
+  @Input("inline") inline = false;
 
   entityField: string;
   originEntityValue: any;
   isActiveInput = false;
 
-  @Input('transformView') transformView = value => value;
-  @Input('field') set field(entityField: string) {
+  @Input("transformView") transformView = (value) => value;
+  @Input("field") set field(entityField: string) {
     this.entityField = entityField;
     this.setOriginValue();
   }
@@ -24,7 +22,7 @@ export class EditableComponent {
     if (this.entityValue !== this.originEntityValue) {
       this.entityUpdated.emit({
         data: { [this.entityField]: this.entityValue },
-        notifier: this.inputNotifier
+        notifier: this.inputNotifier,
       });
     }
   }
@@ -37,7 +35,7 @@ export class EditableComponent {
 
     this.setOriginValue();
     this.isActiveInput = false;
-  }
+  };
 
   cancelUpdate() {
     this.entityValue = this.originEntityValue;

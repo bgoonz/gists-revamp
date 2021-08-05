@@ -1,9 +1,7 @@
-import AuthenticatedRoute from './authenticated';
+import AuthenticatedRoute from "./authenticated";
 
 export default AuthenticatedRoute.extend({
-
   model() {
-    return this.get('store').query('booking', {include: 'rentals'});
-    }
-  })
-
+    return this.get("store").query("booking", { include: "rentals" });
+  },
+});

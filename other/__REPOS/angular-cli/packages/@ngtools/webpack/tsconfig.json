@@ -14,14 +14,8 @@
     "sourceMap": true,
     "sourceRoot": "/",
     "baseUrl": "./",
-    "paths": {
-    },
-    "typeRoots": [
-      "../../node_modules/@types"
-    ],
-    "types": [
-      "jasmine",
-      "node"
-    ]
+    "paths": {},
+    "typeRoots": ["../../node_modules/@types"],
+    "types": ["jasmine", "node"]
   }
 }

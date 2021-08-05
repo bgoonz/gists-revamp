@@ -1,8 +1,8 @@
-const stringUtils = require('ember-cli-string-utils');
-var dynamicPathParser = require('../../utilities/dynamic-path-parser');
+const stringUtils = require("ember-cli-string-utils");
+var dynamicPathParser = require("../../utilities/dynamic-path-parser");
 
 module.exports = {
-  description: '',
+  description: "",
 
   normalizeEntityName: function (entityName) {
     var parsedPath = dynamicPathParser(this.project, entityName);
@@ -17,7 +17,7 @@ module.exports = {
     return {
       dynamicPath: this.dynamicPath.dir,
       flat: options.flat,
-      fileName: this.fileName
+      fileName: this.fileName,
     };
   },
 
@@ -30,7 +30,7 @@ module.exports = {
       },
       __name__: () => {
         return this.fileName;
-      }
+      },
     };
-  }
+  },
 };

@@ -1,2 +1,1 @@
-
-module.exports = { 'Unknown': require('./commands/unknown') };
+module.exports = { Unknown: require("./commands/unknown") };

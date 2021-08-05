@@ -1,11 +1,11 @@
-import { JSONAPISerializer } from 'ember-cli-mirage';
-import { underscore } from '@ember/string';
+import { JSONAPISerializer } from "ember-cli-mirage";
+import { underscore } from "@ember/string";
 
 export default JSONAPISerializer.extend({
-  keyForAttribute: function(attr) {
+  keyForAttribute: function (attr) {
     return underscore(attr);
   },
-  keyForRelationship: function(key) {
+  keyForRelationship: function (key) {
     return underscore(key);
-  }
+  },
 });

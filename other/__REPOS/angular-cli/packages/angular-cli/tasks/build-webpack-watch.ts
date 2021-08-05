@@ -1,22 +1,24 @@
-import * as rimraf from 'rimraf';
-import * as path from 'path';
-const Task = require('../ember-cli/lib/models/task');
-import * as webpack from 'webpack';
-import { NgCliWebpackConfig } from '../models/webpack-config';
-import { getWebpackStatsConfig } from '../models/';
-import { BuildOptions } from '../commands/build';
-import { CliConfig } from '../models/config';
+import * as rimraf from "rimraf";
+import * as path from "path";
+const Task = require("../ember-cli/lib/models/task");
+import * as webpack from "webpack";
+import { NgCliWebpackConfig } from "../models/webpack-config";
+import { getWebpackStatsConfig } from "../models/";
+import { BuildOptions } from "../commands/build";
+import { CliConfig } from "../models/config";
 
 let lastHash: any = null;
 
 export default Task.extend({
-  run: function(runTaskOptions: BuildOptions) {
-
+  run: function (runTaskOptions: BuildOptions) {
     const project = this.cliProject;
 
-    const outputDir = runTaskOptions.outputPath || CliConfig.fromProject().config.apps[0].outDir;
-    const deployUrl = runTaskOptions.deployUrl ||
-                       CliConfig.fromProject().config.apps[0].deployUrl;
+    const outputDir =
+      runTaskOptions.outputPath ||
+      CliConfig.fromProject().config.apps[0].outDir;
+    const deployUrl =
+      runTaskOptions.deployUrl ||
+      CliConfig.fromProject().config.apps[0].deployUrl;
     rimraf.sync(path.resolve(project.root, outputDir));
 
     const config = new NgCliWebpackConfig(
@@ -44,15 +46,17 @@ export default Task.extend({
         if (err) {
           lastHash = null;
           console.error(err.stack || err);
-          if (err.details) { console.error(err.details); }
-            reject(err.details);
+          if (err.details) {
+            console.error(err.details);
+          }
+          reject(err.details);
         }
 
         if (stats.hash !== lastHash) {
           lastHash = stats.hash;
-          process.stdout.write(stats.toString(statsConfig) + '\n');
+          process.stdout.write(stats.toString(statsConfig) + "\n");
         }
       });
     });
-  }
+  },
 });

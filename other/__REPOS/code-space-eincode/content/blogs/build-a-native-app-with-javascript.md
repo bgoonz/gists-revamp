@@ -14,7 +14,7 @@ coverImage: https://cdn.sanity.io/images/55mm68d3/production/7e6821b42975ff43541
 
 ![TODO: provide alt](https://cdn.sanity.io/images/55mm68d3/production/7e6821b42975ff4354159cc13cfe4ba1eec3526e-1280x720.jpg?h=600&fm=jpg&q=70)</div>
 
-* * *
+---
 
 <div>
 
@@ -45,18 +45,18 @@ First, open your coding editors and get ready for programming. Let’s create a 
 7.  create `main.js` with the following content : `console.log("Hello World");`
 
     {
-      "name": "your-electron-app",
-      "version": "1.0.0",
-      "description": "",
-      "main": "main.js",
-      "devDependencies": {
-        "electron": "^10.1.2",
-      },
-      "scripts": {
-        "start": "electron .",
-      },
-      "author": "",
-      "license": "ISC"
+    "name": "your-electron-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "devDependencies": {
+    "electron": "^10.1.2",
+    },
+    "scripts": {
+    "start": "electron .",
+    },
+    "author": "",
+    "license": "ISC"
     }package.json
 
     console.log("Hello World");

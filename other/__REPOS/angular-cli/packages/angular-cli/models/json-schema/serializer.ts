@@ -1,7 +1,6 @@
-import {NgToolkitError} from '../error';
+import { NgToolkitError } from "../error";
 export class InvalidStateError extends NgToolkitError {}
 export class UnknownMimetype extends NgToolkitError {}
-
 
 export interface WriterFn {
   (str: string): void;
@@ -22,19 +21,24 @@ export abstract class Serializer {
   // Fallback when the value does not have metadata.
   abstract outputValue(value: any): void;
 
-
-  static fromMimetype(mimetype: string, writer: WriterFn, ...opts: any[]): Serializer {
-    let Klass: { new(writer: WriterFn, ...args: any[]): Serializer } = null;
+  static fromMimetype(
+    mimetype: string,
+    writer: WriterFn,
+    ...opts: any[]
+  ): Serializer {
+    let Klass: { new (writer: WriterFn, ...args: any[]): Serializer } = null;
     switch (mimetype) {
-      case 'application/json': Klass = JsonSerializer; break;
+      case "application/json":
+        Klass = JsonSerializer;
+        break;
 
-      default: throw new UnknownMimetype();
+      default:
+        throw new UnknownMimetype();
     }
 
     return new Klass(writer, ...opts);
   }
 }
-
 
 interface JsonSerializerState {
   empty?: boolean;
@@ -55,7 +59,7 @@ class JsonSerializer implements Serializer {
       top.empty = false;
 
       if (!wasEmpty && !top.property) {
-        this._writer(',');
+        this._writer(",");
       }
       if (!top.property) {
         this._indent();
@@ -72,10 +76,10 @@ class JsonSerializer implements Serializer {
       return;
     }
 
-    let str = '\n';
+    let str = "\n";
     let i = this._state.length * this._indentDelta;
     while (i--) {
-      str += ' ';
+      str += " ";
     }
     this._writer(str);
   }
@@ -83,30 +87,30 @@ class JsonSerializer implements Serializer {
   start() {}
   end() {
     if (this._indentDelta) {
-      this._writer('\n');
+      this._writer("\n");
     }
   }
 
   object(callback: () => void) {
     this._willOutputValue();
 
-    this._writer('{');
+    this._writer("{");
 
-    this._state.push({ empty: true, type: 'object' });
+    this._state.push({ empty: true, type: "object" });
     callback();
     this._state.pop();
 
     if (!this._top().empty) {
       this._indent();
     }
-    this._writer('}');
+    this._writer("}");
   }
 
   property(name: string, callback: () => void) {
     this._willOutputValue();
 
     this._writer(JSON.stringify(name));
-    this._writer(': ');
+    this._writer(": ");
     this._top().property = true;
     callback();
     this._top().property = false;
@@ -115,15 +119,15 @@ class JsonSerializer implements Serializer {
   array(callback: () => void) {
     this._willOutputValue();
 
-    this._writer('[');
-    this._state.push({ empty: true, type: 'array' });
+    this._writer("[");
+    this._state.push({ empty: true, type: "array" });
     callback();
     this._state.pop();
 
     if (!this._top().empty) {
       this._indent();
     }
-    this._writer(']');
+    this._writer("]");
   }
 
   outputValue(value: any) {

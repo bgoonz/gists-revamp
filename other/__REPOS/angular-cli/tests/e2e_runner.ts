@@ -4,22 +4,20 @@ import {
   ConsoleLoggerStack,
   LogEntry,
   IndentLogger,
-  NullLogger
-} from '../packages/@ngtools/logger/src/index';
-import {blue, bold, green, red, yellow, white} from 'chalk';
-import {gitClean} from './e2e/utils/git';
-import * as glob from 'glob';
-import * as minimist from 'minimist';
-import * as path from 'path';
-import {setGlobalVariable} from './e2e/utils/env';
+  NullLogger,
+} from "../packages/@ngtools/logger/src/index";
+import { blue, bold, green, red, yellow, white } from "chalk";
+import { gitClean } from "./e2e/utils/git";
+import * as glob from "glob";
+import * as minimist from "minimist";
+import * as path from "path";
+import { setGlobalVariable } from "./e2e/utils/env";
 
 // RxJS
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/observable/empty';
-
+import "rxjs/add/operator/filter";
+import "rxjs/add/observable/empty";
 
 Error.stackTraceLimit = Infinity;
-
 
 /**
  * Here's a short description of those flags:
@@ -35,10 +33,9 @@ Error.stackTraceLimit = Infinity;
  * If unnamed flags are passed in, the list of tests will be filtered to include only those passed.
  */
 const argv = minimist(process.argv.slice(2), {
-  'boolean': ['debug', 'nolink', 'nightly', 'noproject', 'verbose'],
-  'string': ['reuse', 'ng-sha']
+  boolean: ["debug", "nolink", "nightly", "noproject", "verbose"],
+  string: ["reuse", "ng-sha"],
 });
-
 
 /**
  * Set the error code of the process to 255.  This is to ensure that if something forces node
@@ -51,49 +48,61 @@ const argv = minimist(process.argv.slice(2), {
  */
 process.exitCode = 255;
 
-
-ConsoleLoggerStack.start(new IndentLogger('name'))
-  .filter((entry: LogEntry) => (entry.level != 'debug' || argv.verbose))
+ConsoleLoggerStack.start(new IndentLogger("name"))
+  .filter((entry: LogEntry) => entry.level != "debug" || argv.verbose)
   .subscribe((entry: LogEntry) => {
     let color: (s: string) => string = white;
     let output = process.stdout;
     switch (entry.level) {
-      case 'info': color = white; break;
-      case 'warn': color = yellow; break;
-      case 'error': color = red; output = process.stderr; break;
-      case 'fatal': color = (x: string) => bold(red(x)); output = process.stderr; break;
+      case "info":
+        color = white;
+        break;
+      case "warn":
+        color = yellow;
+        break;
+      case "error":
+        color = red;
+        output = process.stderr;
+        break;
+      case "fatal":
+        color = (x: string) => bold(red(x));
+        output = process.stderr;
+        break;
     }
 
-    output.write(color(entry.message) + '\n');
+    output.write(color(entry.message) + "\n");
   });
-
 
 let currentFileName = null;
 let index = 0;
 
-const e2eRoot = path.join(__dirname, 'e2e');
-const allSetups = glob.sync(path.join(e2eRoot, 'setup/**/*.ts'), { nodir: true })
-  .map(name => path.relative(e2eRoot, name))
+const e2eRoot = path.join(__dirname, "e2e");
+const allSetups = glob
+  .sync(path.join(e2eRoot, "setup/**/*.ts"), { nodir: true })
+  .map((name) => path.relative(e2eRoot, name))
   .sort();
-const allTests = glob.sync(path.join(e2eRoot, 'tests/**/*.ts'), { nodir: true })
-  .map(name => path.relative(e2eRoot, name))
+const allTests = glob
+  .sync(path.join(e2eRoot, "tests/**/*.ts"), { nodir: true })
+  .map((name) => path.relative(e2eRoot, name))
   .sort();
 
-const testsToRun = allSetups
-  .concat(allTests
-    .filter(name => {
-      // Check for naming tests on command line.
-      if (argv._.length == 0) {
-        return true;
-      }
+const testsToRun = allSetups.concat(
+  allTests.filter((name) => {
+    // Check for naming tests on command line.
+    if (argv._.length == 0) {
+      return true;
+    }
 
-      return argv._.some(argName => {
-        return path.join(process.cwd(), argName) == path.join(__dirname, 'e2e', name)
-          || argName == name
-          || argName == name.replace(/\.ts$/, '');
-      });
-    }));
-
+    return argv._.some((argName) => {
+      return (
+        path.join(process.cwd(), argName) ==
+          path.join(__dirname, "e2e", name) ||
+        argName == name ||
+        argName == name.replace(/\.ts$/, "")
+      );
+    });
+  })
+);
 
 /**
  * Load all the files from the e2e, filter and sort them and build a promise of their default
@@ -102,74 +111,100 @@ const testsToRun = allSetups
 if (testsToRun.length == allTests.length) {
   console.log(`Running ${testsToRun.length} tests`);
 } else {
-  console.log(`Running ${testsToRun.length} tests (${allTests.length + allSetups.length} total)`);
+  console.log(
+    `Running ${testsToRun.length} tests (${
+      allTests.length + allSetups.length
+    } total)`
+  );
 }
 
-setGlobalVariable('argv', argv);
+setGlobalVariable("argv", argv);
 
-testsToRun.reduce((previous, relativeName) => {
-  // Make sure this is a windows compatible path.
-  let absoluteName = path.join(e2eRoot, relativeName);
-  if (/^win/.test(process.platform)) {
-    absoluteName = absoluteName.replace(/\\/g, path.posix.sep);
-  }
+testsToRun
+  .reduce((previous, relativeName) => {
+    // Make sure this is a windows compatible path.
+    let absoluteName = path.join(e2eRoot, relativeName);
+    if (/^win/.test(process.platform)) {
+      absoluteName = absoluteName.replace(/\\/g, path.posix.sep);
+    }
 
-  return previous.then(() => {
-    currentFileName = relativeName.replace(/\.ts$/, '');
-    const start = +new Date();
+    return previous.then(() => {
+      currentFileName = relativeName.replace(/\.ts$/, "");
+      const start = +new Date();
 
-    const module = require(absoluteName);
-    const fn: (...args: any[]) => Promise<any> | any =
-      (typeof module == 'function') ? module
-      : (typeof module.default == 'function') ? module.default
-      : () => { throw new Error('Invalid test module.'); };
+      const module = require(absoluteName);
+      const fn: (...args: any[]) => Promise<any> | any =
+        typeof module == "function"
+          ? module
+          : typeof module.default == "function"
+          ? module.default
+          : () => {
+              throw new Error("Invalid test module.");
+            };
 
-    let clean = true;
-    let previousDir = null;
-    return Promise.resolve()
-      .then(() => printHeader(currentFileName))
-      .then(() => previousDir = process.cwd())
-      .then(() => ConsoleLoggerStack.push(currentFileName))
-      .then(() => fn(() => clean = false))
-      .then(() => ConsoleLoggerStack.pop(), (err: any) => { ConsoleLoggerStack.pop(); throw err; })
-      .then(() => console.log('----'))
-      .then(() => { ConsoleLoggerStack.push(NullLogger); })
-      .then(() => {
-        // If we're not in a setup, change the directory back to where it was before the test.
-        // This allows tests to chdir without worrying about keeping the original directory.
-        if (allSetups.indexOf(relativeName) == -1 && previousDir) {
-          process.chdir(previousDir);
-        }
-      })
-      .then(() => {
-        // Only clean after a real test, not a setup step. Also skip cleaning if the test
-        // requested an exception.
-        if (allSetups.indexOf(relativeName) == -1 && clean) {
-          return gitClean();
-        }
-      })
-      .then(() => ConsoleLoggerStack.pop(), (err: any) => { ConsoleLoggerStack.pop(); throw err; })
-      .then(() => printFooter(currentFileName, start),
-        (err) => {
-          printFooter(currentFileName, start);
-          console.error(err);
-          throw err;
-        });
-  });
-}, Promise.resolve())
-  .then(() => {
-      console.log(green('Done.'));
+      let clean = true;
+      let previousDir = null;
+      return Promise.resolve()
+        .then(() => printHeader(currentFileName))
+        .then(() => (previousDir = process.cwd()))
+        .then(() => ConsoleLoggerStack.push(currentFileName))
+        .then(() => fn(() => (clean = false)))
+        .then(
+          () => ConsoleLoggerStack.pop(),
+          (err: any) => {
+            ConsoleLoggerStack.pop();
+            throw err;
+          }
+        )
+        .then(() => console.log("----"))
+        .then(() => {
+          ConsoleLoggerStack.push(NullLogger);
+        })
+        .then(() => {
+          // If we're not in a setup, change the directory back to where it was before the test.
+          // This allows tests to chdir without worrying about keeping the original directory.
+          if (allSetups.indexOf(relativeName) == -1 && previousDir) {
+            process.chdir(previousDir);
+          }
+        })
+        .then(() => {
+          // Only clean after a real test, not a setup step. Also skip cleaning if the test
+          // requested an exception.
+          if (allSetups.indexOf(relativeName) == -1 && clean) {
+            return gitClean();
+          }
+        })
+        .then(
+          () => ConsoleLoggerStack.pop(),
+          (err: any) => {
+            ConsoleLoggerStack.pop();
+            throw err;
+          }
+        )
+        .then(
+          () => printFooter(currentFileName, start),
+          (err) => {
+            printFooter(currentFileName, start);
+            console.error(err);
+            throw err;
+          }
+        );
+    });
+  }, Promise.resolve())
+  .then(
+    () => {
+      console.log(green("Done."));
       process.exit(0);
     },
     (err) => {
-      console.log('\n');
+      console.log("\n");
       console.error(red(`Test "${currentFileName}" failed...`));
       console.error(red(err.message));
       console.error(red(err.stack));
 
       if (argv.debug) {
         console.log(`Current Directory: ${process.cwd()}`);
-        console.log('Will loop forever while you debug... CTRL-C to quit.');
+        console.log("Will loop forever while you debug... CTRL-C to quit.");
 
         /* eslint-disable no-constant-condition */
         while (1) {
@@ -178,20 +213,25 @@ testsToRun.reduce((previous, relativeName) => {
       }
 
       process.exit(1);
-    });
-
+    }
+  );
 
 function encode(str) {
-  return str.replace(/[^A-Za-z\d\/]+/g, '-').replace(/\//g, '.').replace(/[\/-]$/, '');
+  return str
+    .replace(/[^A-Za-z\d\/]+/g, "-")
+    .replace(/\//g, ".")
+    .replace(/[\/-]$/, "");
 }
 
 function isTravis() {
-  return process.env['TRAVIS'];
+  return process.env["TRAVIS"];
 }
 
 function printHeader(testName) {
   const text = `${++index} of ${testsToRun.length}`;
-  console.log(green(`Running "${bold(blue(testName))}" (${bold(white(text))})...`));
+  console.log(
+    green(`Running "${bold(blue(testName))}" (${bold(white(text))})...`)
+  );
 
   if (isTravis()) {
     console.log(`travis_fold:start:${encode(testName)}`);
@@ -205,6 +245,6 @@ function printFooter(testName, startTime) {
 
   // Round to hundredth of a second.
   const t = Math.round((Date.now() - startTime) / 10) / 100;
-  console.log(green('Last step took ') + bold(blue(t)) + green('s...'));
-  console.log('');
+  console.log(green("Last step took ") + bold(blue(t)) + green("s..."));
+  console.log("");
 }

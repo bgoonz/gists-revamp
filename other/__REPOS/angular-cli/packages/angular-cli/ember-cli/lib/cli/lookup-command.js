@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-var UnknownCommand = require('../commands/unknown');
+var UnknownCommand = require("../commands/unknown");
 
-module.exports = function(commands, commandName, commandArgs, optionHash) {
+module.exports = function (commands, commandName, commandArgs, optionHash) {
   var options = optionHash || {};
   var project = options.project;
-  var ui      = options.ui;
+  var ui = options.ui;
 
   function aliasMatches(alias) {
     return alias === commandName;
@@ -30,7 +30,7 @@ module.exports = function(commands, commandName, commandArgs, optionHash) {
   var addonCommand;
   // Attempt to find command within addons
   if (project && project.eachAddonCommand) {
-    project.eachAddonCommand(function(addonName, commands) {
+    project.eachAddonCommand(function (addonName, commands) {
       addonCommand = findCommand(commands, commandName);
       return !addonCommand;
     });
@@ -38,14 +38,20 @@ module.exports = function(commands, commandName, commandArgs, optionHash) {
 
   if (command && addonCommand) {
     if (addonCommand.overrideCore) {
-      ui.writeWarnLine('An ember-addon has attempted to override the core command "' +
-              command.prototype.name + '". The addon command will be used as the overridding was explicit.');
+      ui.writeWarnLine(
+        'An ember-addon has attempted to override the core command "' +
+          command.prototype.name +
+          '". The addon command will be used as the overridding was explicit.'
+      );
 
       return addonCommand;
     }
 
-    ui.writeWarnLine('An ember-addon has attempted to override the core command "' +
-                            command.prototype.name + '". The core command will be used.');
+    ui.writeWarnLine(
+      'An ember-addon has attempted to override the core command "' +
+        command.prototype.name +
+        '". The core command will be used.'
+    );
     return command;
   }
 
@@ -59,6 +65,6 @@ module.exports = function(commands, commandName, commandArgs, optionHash) {
 
   // if we didn't find anything, return an "UnknownCommand"
   return UnknownCommand.extend({
-    name: commandName
+    name: commandName,
   });
 };

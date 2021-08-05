@@ -1,28 +1,32 @@
-'use strict';
+"use strict";
 
-var UI = require('angular-cli/ember-cli/lib/ui');
-var through = require('through');
-var Promise = require('angular-cli/ember-cli/lib/ext/promise');
+var UI = require("angular-cli/ember-cli/lib/ui");
+var through = require("through");
+var Promise = require("angular-cli/ember-cli/lib/ext/promise");
 
 module.exports = MockUI;
 function MockUI() {
-  this.output = '';
+  this.output = "";
 
   UI.call(this, {
     inputStream: through(),
-    outputStream: through(function (data) {
-      this.output += data;
-    }.bind(this)),
-    errorStream: through(function (data) {
-      this.errors += data;
-    }.bind(this))
+    outputStream: through(
+      function (data) {
+        this.output += data;
+      }.bind(this)
+    ),
+    errorStream: through(
+      function (data) {
+        this.errors += data;
+      }.bind(this)
+    ),
   });
 }
 
 MockUI.prototype = Object.create(UI.prototype);
 MockUI.prototype.constructor = MockUI;
 MockUI.prototype.clear = function () {
-  this.output = '';
+  this.output = "";
 };
 
 MockUI.prototype.waitForPrompt = function () {

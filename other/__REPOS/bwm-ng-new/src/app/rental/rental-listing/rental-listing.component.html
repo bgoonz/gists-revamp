@@ -2,12 +2,8 @@
   <h1 class="title">Your home all around the World</h1>
   <!-- TODO: Create custom directive in end of this section -->
   <div class="row">
-    <div 
-      *ngFor="let rental of rentals"
-      class="col-md-3 col-xs-12">
-        <bwm-rental-card 
-          [rentalItem]="rental">
-        </bwm-rental-card>
+    <div *ngFor="let rental of rentals" class="col-md-3 col-xs-12">
+      <bwm-rental-card [rentalItem]="rental"> </bwm-rental-card>
     </div>
 
     <!-- <div *bwmNgFor="let num of [1,2,3]" class="col-md-3 col-xs-12">
@@ -20,7 +16,5 @@
         {{num}}
       </div>
     </ng-template> -->
-
-
   </div>
 </div>

@@ -1,5 +1,6 @@
 {
-  "rentals": [{
+  "rentals": [
+    {
       "title": "Nice view on ocean",
       "city": "San Francisco",
       "street": "Main street",
@@ -9,8 +10,8 @@
       "shared": false,
       "description": "Very nice apartment in center of the city.",
       "dailyRate": 43
-      },
-      {
+    },
+    {
       "title": "Modern apartment in center",
       "city": "New York",
       "street": "Time Square",
@@ -20,8 +21,8 @@
       "shared": true,
       "description": "Very nice apartment in center of the city.",
       "dailyRate": 11
-      },
-      {
+    },
+    {
       "title": "Old house in nature",
       "city": "Spisska Nova Ves",
       "street": "Banicka 1",
@@ -42,8 +43,8 @@
       "shared": false,
       "description": "Hiking routes 10 min walking away",
       "dailyRate": 140
-      },
-      {
+    },
+    {
       "title": "Apartment In China Town",
       "city": "San Francisco",
       "street": "Union Street",
@@ -53,8 +54,8 @@
       "shared": false,
       "description": "Very nice apartment in China Town",
       "dailyRate": 89
-      },
-      {
+    },
+    {
       "title": "House with Garden",
       "city": "New York",
       "street": "Long Island, Queens",
@@ -77,14 +78,16 @@
       "dailyRate": 68
     }
   ],
-  "users": [{
-    "username": "Test User",
-    "email": "test@gmail.com",
-    "password": "testtest"
-    },{
-    "username": "Test User1",
-    "email": "test1@gmail.com",
-    "password": "testtest1"
+  "users": [
+    {
+      "username": "Test User",
+      "email": "test@gmail.com",
+      "password": "testtest"
+    },
+    {
+      "username": "Test User1",
+      "email": "test1@gmail.com",
+      "password": "testtest1"
     }
   ]
 }

@@ -1,5 +1,5 @@
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
+import Component from "@ember/component";
+import { inject as service } from "@ember/service";
 
 export default Component.extend({
   maps: service(),
@@ -9,9 +9,9 @@ export default Component.extend({
   },
 
   didInsertElement() {
-    let address = this.get('city') + ',' + this.get('street');
-    let mapElement = this.get('maps').getMapElement(address);
-    this.$("#map").parent('.ember-view').css({height: '100%'});
-    this.$("#map" ).replaceWith(mapElement);
-  }
+    let address = this.get("city") + "," + this.get("street");
+    let mapElement = this.get("maps").getMapElement(address);
+    this.$("#map").parent(".ember-view").css({ height: "100%" });
+    this.$("#map").replaceWith(mapElement);
+  },
 });

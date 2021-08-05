@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import {
   withGoogleMap,
   withScriptjs,
   GoogleMap,
-  Circle
+  Circle,
 } from "react-google-maps";
 import MarkerWithLabel from "react-google-maps/lib/components/addons/MarkerWithLabel";
-import camelCase from 'camel-case';
+import camelCase from "camel-case";
 
 // const GoogleMapComponent = (props) => {
 //   const { position } = props;
@@ -47,28 +47,37 @@ function MapComponent(props) {
       center={position}
       defaultCenter={position}
       options={{
-        disableDefaultUI: isPositionFound ? false : true
+        disableDefaultUI: isPositionFound ? false : true,
       }}
     >
-      {isMapLoaded && isPositionFound && <Circle center={position} radius={500} />}
-      {isMapLoaded && !isPositionFound && <MarkerWithLabel
-        position={position}
-        labelAnchor={new window.google.maps.Point(0, 0)}
-        labelStyle={{width: "200px", backgroundColor: "white", fontSize: "20", padding: "16px"}}
-      >
-        <div>
-          Uuuups, there is a problem to find location on the map, we are trying
-          to resolve problem as fast as possible. Contact host for additional info
-          if you are still interested in this place. We are sorry for incoviniance.
-        </div>
-      </MarkerWithLabel>}
+      {isMapLoaded && isPositionFound && (
+        <Circle center={position} radius={500} />
+      )}
+      {isMapLoaded && !isPositionFound && (
+        <MarkerWithLabel
+          position={position}
+          labelAnchor={new window.google.maps.Point(0, 0)}
+          labelStyle={{
+            width: "200px",
+            backgroundColor: "white",
+            fontSize: "20",
+            padding: "16px",
+          }}
+        >
+          <div>
+            Uuuups, there is a problem to find location on the map, we are
+            trying to resolve problem as fast as possible. Contact host for
+            additional info if you are still interested in this place. We are
+            sorry for incoviniance.
+          </div>
+        </MarkerWithLabel>
+      )}
     </GoogleMap>
-  )
+  );
 }
 
 function withGeocode(WrappedMapComponent) {
   return class extends React.Component {
-
     constructor(props) {
       super(props);
 
@@ -77,12 +86,12 @@ function withGeocode(WrappedMapComponent) {
       this.state = {
         position: {
           lat: 0,
-          lng: 0
+          lng: 0,
         },
         isPositionFound: false,
-        isMapLoaded: false
-        }
-      }
+        isMapLoaded: false,
+      };
+    }
 
     isAddressCached(cacheKey) {
       return this.positionCache[cacheKey];
@@ -102,43 +111,46 @@ function withGeocode(WrappedMapComponent) {
 
       if (this.isAddressCached(cacheKey)) {
         this.setState({
-          position: this.positionCache[cacheKey]
-        })
-      };
-      this.geoCodeAddress(address).then((position: any) => {
-        this.setState({
           position: this.positionCache[cacheKey],
-          isPositionFound: true,
-          isMapLoaded: true
         });
-      }).catch(err => {
-        this.setState({
-          isPositionFound: false,
-          isMapLoaded: true
+      }
+      this.geoCodeAddress(address)
+        .then((position: any) => {
+          this.setState({
+            position: this.positionCache[cacheKey],
+            isPositionFound: true,
+            isMapLoaded: true,
+          });
+        })
+        .catch((err) => {
+          this.setState({
+            isPositionFound: false,
+            isMapLoaded: true,
+          });
         });
-      });
     }
 
     geoCodeAddress(address) {
       return new Promise((resolve, reject) => {
-        this.geoCoder.geocode({address}, (result, status) => {
+        this.geoCoder.geocode({ address }, (result, status) => {
           if (status === window.google.maps.GeocoderStatus.OK) {
             const geometry = result[0].geometry.location;
             const position = { lat: geometry.lat(), lng: geometry.lng() };
             this.cacheAddress(address, position);
             resolve(position);
           } else {
-            reject('Not Found!');
+            reject("Not Found!");
           }
         });
-      })
+      });
     }
 
     render() {
-      return (<WrappedMapComponent {...this.state}/>);
+      return <WrappedMapComponent {...this.state} />;
     }
-  }
+  };
 }
 
-export const MapWithGeocode = withScriptjs(withGoogleMap(withGeocode(MapComponent)));
-
+export const MapWithGeocode = withScriptjs(
+  withGoogleMap(withGeocode(MapComponent))
+);

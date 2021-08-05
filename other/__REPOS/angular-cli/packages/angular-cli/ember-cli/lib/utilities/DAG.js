@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 function visit(vertex, fn, visited, path) {
   var name = vertex.name,
-      vertices = vertex.incoming,
-      names = vertex.incomingNames,
-      len = names.length,
-      i;
+    vertices = vertex.incoming,
+    names = vertex.incomingNames,
+    len = names.length,
+    i;
   if (!visited) {
     visited = {};
   }
@@ -29,8 +29,10 @@ function DAG() {
   this.vertices = {};
 }
 
-DAG.prototype.add = function(name) {
-  if (!name) { return; }
+DAG.prototype.add = function (name) {
+  if (!name) {
+    return;
+  }
   if (this.vertices.hasOwnProperty(name)) {
     return this.vertices[name];
   }
@@ -39,7 +41,7 @@ DAG.prototype.add = function(name) {
     incoming: {},
     incomingNames: [],
     hasOutgoing: false,
-    value: null
+    value: null,
   };
 
   this.vertices[name] = vertex;
@@ -47,21 +49,22 @@ DAG.prototype.add = function(name) {
   return vertex;
 };
 
-DAG.prototype.map = function(name, value) {
+DAG.prototype.map = function (name, value) {
   this.add(name).value = value;
 };
 
-DAG.prototype.addEdge = function(fromName, toName) {
+DAG.prototype.addEdge = function (fromName, toName) {
   if (!fromName || !toName || fromName === toName) {
     return;
   }
-  var from = this.add(fromName), to = this.add(toName);
+  var from = this.add(fromName),
+    to = this.add(toName);
   if (to.incoming.hasOwnProperty(fromName)) {
     return;
   }
   function checkCycle(vertex, path) {
     if (vertex.name === toName) {
-      throw new Error('cycle detected: ' + toName + ' <- ' + path.join(' <- '));
+      throw new Error("cycle detected: " + toName + " <- " + path.join(" <- "));
     }
   }
   visit(from, checkCycle);
@@ -70,12 +73,13 @@ DAG.prototype.addEdge = function(fromName, toName) {
   to.incomingNames.push(fromName);
 };
 
-DAG.prototype.topsort = function(fn) {
+DAG.prototype.topsort = function (fn) {
   var visited = {},
-      vertices = this.vertices,
-      names = this.names,
-      len = names.length,
-      i, vertex;
+    vertices = this.vertices,
+    names = this.names,
+    len = names.length,
+    i,
+    vertex;
   for (i = 0; i < len; i++) {
     vertex = vertices[names[i]];
     if (!vertex.hasOutgoing) {
@@ -84,11 +88,11 @@ DAG.prototype.topsort = function(fn) {
   }
 };
 
-DAG.prototype.addEdges = function(name, value, before, after) {
+DAG.prototype.addEdges = function (name, value, before, after) {
   var i;
   this.map(name, value);
   if (before) {
-    if (typeof before === 'string') {
+    if (typeof before === "string") {
       this.addEdge(name, before);
     } else {
       for (i = 0; i < before.length; i++) {
@@ -97,7 +101,7 @@ DAG.prototype.addEdges = function(name, value, before, after) {
     }
   }
   if (after) {
-    if (typeof after === 'string') {
+    if (typeof after === "string") {
       this.addEdge(after, name);
     } else {
       for (i = 0; i < after.length; i++) {

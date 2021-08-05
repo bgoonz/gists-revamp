@@ -1,6 +1,4 @@
-
 class Observer {
-  
   constructor(handlers) {
     this._handlers = handlers;
     this.isSubscribed = true;
@@ -28,7 +26,6 @@ class Observer {
     this.isSubscribed = false;
   }
 }
-
 
 class Observable {
   constructor(executionFunction) {

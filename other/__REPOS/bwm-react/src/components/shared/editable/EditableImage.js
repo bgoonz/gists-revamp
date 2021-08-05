@@ -1,9 +1,8 @@
-import React from 'react';
-import { EditableComponent } from './EditableComponent';
-import { BwmFileUpload } from '../form/BwmFileUpload';
+import React from "react";
+import { EditableComponent } from "./EditableComponent";
+import { BwmFileUpload } from "../form/BwmFileUpload";
 
 export class EditableImage extends EditableComponent {
-
   constructor() {
     super();
 
@@ -11,7 +10,7 @@ export class EditableImage extends EditableComponent {
   }
 
   handleImageUpload(image) {
-    this.setState({value: image});
+    this.setState({ value: image });
 
     this.update();
   }
@@ -20,27 +19,35 @@ export class EditableImage extends EditableComponent {
     const { isActive, value } = this.state;
 
     return (
-      <div className='editableComponent'>
-        { !isActive &&
+      <div className="editableComponent">
+        {!isActive && (
           <React.Fragment>
-            <img src={value} alt=''/>
-            <button onClick={() => this.enableEdit() }
-                className='btn btn-warning btn-editable btn-editable-image'
-                type='button'> Edit
+            <img src={value} alt="" />
+            <button
+              onClick={() => this.enableEdit()}
+              className="btn btn-warning btn-editable btn-editable-image"
+              type="button"
+            >
+              {" "}
+              Edit
             </button>
           </React.Fragment>
-        }
+        )}
 
-        { isActive &&
+        {isActive && (
           <React.Fragment>
-            <button onClick={() => this.disableEdit() }
-                  className='btn btn-warning btn-editable btn-editable-image'
-                  type='button'> Close
+            <button
+              onClick={() => this.disableEdit()}
+              className="btn btn-warning btn-editable btn-editable-image"
+              type="button"
+            >
+              {" "}
+              Close
             </button>
             <BwmFileUpload onChange={this.handleImageUpload}></BwmFileUpload>
           </React.Fragment>
-        }
+        )}
       </div>
-    )
+    );
   }
 }

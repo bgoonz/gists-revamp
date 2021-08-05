@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function CoreObject(options) {
   Object.assign(this, options);
@@ -8,7 +8,7 @@ module.exports = CoreObject;
 
 CoreObject.prototype.constructor = CoreObject;
 
-CoreObject.extend = function(options) {
+CoreObject.extend = function (options) {
   var constructor = this;
   function Class() {
     constructor.apply(this, arguments);
@@ -26,4 +26,3 @@ CoreObject.extend = function(options) {
 
   return Class;
 };
-

@@ -1,8 +1,7 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-const RentalAssets = () => 
+const RentalAssets = () => (
   <div className="rental-assets">
     <h3 className="title">Assets</h3>
     <div className="row">
@@ -30,6 +29,6 @@ const RentalAssets = () =>
       </div>
     </div>
   </div>
-
+);
 
 export default RentalAssets;

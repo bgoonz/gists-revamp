@@ -1,15 +1,15 @@
-const path = require('path');
-const chalk = require('chalk');
-const dynamicPathParser = require('../../utilities/dynamic-path-parser');
-const Blueprint = require('../../ember-cli/lib/models/blueprint');
+const path = require("path");
+const chalk = require("chalk");
+const dynamicPathParser = require("../../utilities/dynamic-path-parser");
+const Blueprint = require("../../ember-cli/lib/models/blueprint");
 const getFiles = Blueprint.prototype.files;
 
 module.exports = {
-  description: '',
+  description: "",
 
   availableOptions: [
-    { name: 'flat', type: Boolean, default: true },
-    { name: 'spec', type: Boolean }
+    { name: "flat", type: Boolean, default: true },
+    { name: "spec", type: Boolean },
   ],
 
   normalizeEntityName: function (entityName) {
@@ -20,21 +20,24 @@ module.exports = {
   },
 
   locals: function (options) {
-    options.spec = options.spec !== undefined ?
-      options.spec :
-      this.project.ngConfigObj.get('defaults.spec.service');
+    options.spec =
+      options.spec !== undefined
+        ? options.spec
+        : this.project.ngConfigObj.get("defaults.spec.service");
 
     return {
       dynamicPath: this.dynamicPath.dir,
-      flat: options.flat
+      flat: options.flat,
     };
   },
 
-  files: function() {
+  files: function () {
     var fileList = getFiles.call(this);
 
     if (this.options && !this.options.spec) {
-      fileList = fileList.filter(p => p.indexOf('__name__.service.spec.ts') < 0);
+      fileList = fileList.filter(
+        (p) => p.indexOf("__name__.service.spec.ts") < 0
+      );
     }
 
     return fileList;
@@ -50,12 +53,13 @@ module.exports = {
         }
         this.generatePath = dir;
         return dir;
-      }
+      },
     };
   },
 
   afterInstall() {
-    const warningMessage = 'Service is generated but not provided, it must be provided to be used';
-    this._writeStatusToUI(chalk.yellow, 'WARNING', warningMessage);
-  }
+    const warningMessage =
+      "Service is generated but not provided, it must be provided to be used";
+    this._writeStatusToUI(chalk.yellow, "WARNING", warningMessage);
+  },
 };

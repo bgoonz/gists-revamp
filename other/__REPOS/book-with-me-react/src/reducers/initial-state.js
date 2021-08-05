@@ -3,33 +3,33 @@ export const INITIAL_STATE = {
     items: [],
     isFetching: false,
     isSearch: false,
-    searchCity: '',
-    errors: []
+    searchCity: "",
+    errors: [],
   },
   rental: {
     item: {},
-    isFetching: false
+    isFetching: false,
   },
   auth: initAuthState(),
   booking: {
     item: {},
     isBooked: false,
-    errors: []
+    errors: [],
   },
   bookings: {
     items: [],
     isFetching: false,
-    errors: []
-  }
-}
+    errors: [],
+  },
+};
 
 function initAuthState() {
-  const token = localStorage.getItem('auth_token');
+  const token = localStorage.getItem("auth_token");
 
   return {
-    token: token ? token : '',
+    token: token ? token : "",
     errors: [],
     isAuth: token ? true : false,
-    username: ''
-  }
+    username: "",
+  };
 }

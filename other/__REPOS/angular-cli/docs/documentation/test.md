@@ -1,9 +1,11 @@
 # ng test
 
 ## Overview
+
 `ng test` compiles the application into an output directory
 
 ## Options
+
 `--watch` (`-w`) flag to run builds when files change
 
 `--browsers` override which browsers tests are run against

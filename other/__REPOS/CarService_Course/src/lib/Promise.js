@@ -1,16 +1,13 @@
-
-
 class Promise {
-
   constructor(executionFunction) {
     this.promiseChain = [];
-    this.handleError = () => {}
+    this.handleError = () => {};
 
     this.onResolve = this.onResolve.bind(this);
     this.onReject = this.onReject.bind(this);
     executionFunction(this.onResolve, this.onReject);
   }
-  
+
   then(callback) {
     this.promiseChain.push(callback);
     return this;
@@ -18,7 +15,7 @@ class Promise {
 
   catch(handleError) {
     this.handleError = handleError;
-    return this; 
+    return this;
   }
 
   onResolve(value) {
@@ -26,8 +23,8 @@ class Promise {
 
     try {
       this.promiseChain.forEach((nextFunction) => {
-        storedValue = nextFunction(storedValue)
-      })
+        storedValue = nextFunction(storedValue);
+      });
     } catch (error) {
       this.promiseChain = [];
 
@@ -38,8 +35,6 @@ class Promise {
   onReject(error) {
     this.handleError(error);
   }
-
-
 }
 
 module.exports = Promise;

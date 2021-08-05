@@ -1,6 +1,3 @@
-
-
-
 export interface IRental {
   someData: string;
   isLoaded: boolean;
@@ -9,7 +6,6 @@ export interface IRental {
 }
 
 export class AppStorage<T> {
-
   items: T[] = [];
 
   addItem(item: T): T {
@@ -22,7 +18,7 @@ export class AppStorage<T> {
   }
 
   displayItems(): T[] {
-    return this.items.map(item => {
+    return this.items.map((item) => {
       console.log(item);
       return item;
     });

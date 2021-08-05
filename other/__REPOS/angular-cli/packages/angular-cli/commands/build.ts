@@ -1,7 +1,7 @@
-import {Version} from '../upgrade/version';
-const Command = require('../ember-cli/lib/models/command');
-import WebpackBuild from '../tasks/build-webpack';
-import WebpackBuildWatch from '../tasks/build-webpack-watch';
+import { Version } from "../upgrade/version";
+const Command = require("../ember-cli/lib/models/command");
+import WebpackBuild from "../tasks/build-webpack";
+import WebpackBuildWatch from "../tasks/build-webpack-watch";
 
 export interface BuildOptions {
   target?: string;
@@ -23,41 +23,42 @@ export interface BuildOptions {
 }
 
 const BuildCommand = Command.extend({
-  name: 'build',
-  description: 'Builds your app and places it into the output path (dist/ by default).',
-  aliases: ['b'],
+  name: "build",
+  description:
+    "Builds your app and places it into the output path (dist/ by default).",
+  aliases: ["b"],
 
   availableOptions: [
     {
-      name: 'target',
+      name: "target",
       type: String,
-      default: 'development',
-      aliases: ['t', { 'dev': 'development' }, { 'prod': 'production' }]
+      default: "development",
+      aliases: ["t", { dev: "development" }, { prod: "production" }],
     },
-    { name: 'environment',    type: String,  default: '', aliases: ['e'] },
-    { name: 'output-path',    type: 'Path',  default: null, aliases: ['o'] },
-    { name: 'watch',          type: Boolean, default: false, aliases: ['w'] },
-    { name: 'watcher',        type: String },
-    { name: 'suppress-sizes', type: Boolean, default: false },
-    { name: 'base-href',      type: String,  default: null, aliases: ['bh'] },
-    { name: 'aot',            type: Boolean, default: false },
-    { name: 'sourcemap',      type: Boolean, default: true, aliases: ['sm'] },
-    { name: 'vendor-chunk',   type: Boolean, default: true },
-    { name: 'verbose',        type: Boolean, default: false },
-    { name: 'progress',       type: Boolean, default: true },
-    { name: 'i18n-file',      type: String, default: null },
-    { name: 'i18n-format',    type: String, default: null },
-    { name: 'locale',         type: String, default: null },
-    { name: 'deploy-url',     type: String,  default: null, aliases: ['d'] }
+    { name: "environment", type: String, default: "", aliases: ["e"] },
+    { name: "output-path", type: "Path", default: null, aliases: ["o"] },
+    { name: "watch", type: Boolean, default: false, aliases: ["w"] },
+    { name: "watcher", type: String },
+    { name: "suppress-sizes", type: Boolean, default: false },
+    { name: "base-href", type: String, default: null, aliases: ["bh"] },
+    { name: "aot", type: Boolean, default: false },
+    { name: "sourcemap", type: Boolean, default: true, aliases: ["sm"] },
+    { name: "vendor-chunk", type: Boolean, default: true },
+    { name: "verbose", type: Boolean, default: false },
+    { name: "progress", type: Boolean, default: true },
+    { name: "i18n-file", type: String, default: null },
+    { name: "i18n-format", type: String, default: null },
+    { name: "locale", type: String, default: null },
+    { name: "deploy-url", type: String, default: null, aliases: ["d"] },
   ],
 
   run: function (commandOptions: BuildOptions) {
-    if (commandOptions.environment === '') {
-      if (commandOptions.target === 'development') {
-        commandOptions.environment = 'dev';
+    if (commandOptions.environment === "") {
+      if (commandOptions.target === "development") {
+        commandOptions.environment = "dev";
       }
-      if (commandOptions.target === 'production') {
-        commandOptions.environment = 'prod';
+      if (commandOptions.target === "production") {
+        commandOptions.environment = "prod";
       }
     }
 
@@ -67,26 +68,25 @@ const BuildCommand = Command.extend({
     Version.assertAngularVersionIs2_3_1OrHigher(project.root);
 
     const ui = this.ui;
-    const buildTask = commandOptions.watch ?
-      new WebpackBuildWatch({
-        cliProject: project,
-        ui: ui,
-        outputPath: commandOptions.outputPath,
-        target: commandOptions.target,
-        environment: commandOptions.environment
-      }) :
-      new WebpackBuild({
-        cliProject: project,
-        ui: ui,
-        outputPath: commandOptions.outputPath,
-        target: commandOptions.target,
-        environment: commandOptions.environment,
-      });
+    const buildTask = commandOptions.watch
+      ? new WebpackBuildWatch({
+          cliProject: project,
+          ui: ui,
+          outputPath: commandOptions.outputPath,
+          target: commandOptions.target,
+          environment: commandOptions.environment,
+        })
+      : new WebpackBuild({
+          cliProject: project,
+          ui: ui,
+          outputPath: commandOptions.outputPath,
+          target: commandOptions.target,
+          environment: commandOptions.environment,
+        });
 
     return buildTask.run(commandOptions);
-  }
+  },
 });
-
 
 BuildCommand.overrideCore = true;
 export default BuildCommand;

@@ -1,8 +1,6 @@
 {
   "extends": "eslint:recommended",
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -12,15 +10,11 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "indent": [
-      "error",
-      "tab",
-      {"SwitchCase" : 1}
-    ],
+    "indent": ["error", "tab", { "SwitchCase": 1 }],
     "semi": ["error", "always"],
     "no-console": "off",
     "no-unused-vars": "warn",
-    "no-debugger":"off",
+    "no-debugger": "off",
 
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error"

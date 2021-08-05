@@ -24,29 +24,45 @@
           <h2 class="rental-city">New York</h2>
           <div class="rental-room-info">
             {/* <!-- TODO: Display numOfRooms --> */}
-            <span><i class="fa fa-building"></i>4 bedrooms</span>
-              {/* // <!-- TODO: Display numOfRooms + 4 --> */}
-            <span><i class="fa fa-user"></i> 8 guests</span>
+            <span>
+              <i class="fa fa-building"></i>4 bedrooms
+            </span>
+            {/* // <!-- TODO: Display numOfRooms + 4 --> */}
+            <span>
+              <i class="fa fa-user"></i> 8 guests
+            </span>
             {/* // <!-- TODO: Display numOfRooms + 2 --> */}
-            <span><i class="fa fa-bed"></i> 6 beds</span>
+            <span>
+              <i class="fa fa-bed"></i> 6 beds
+            </span>
           </div>
           {/* <!-- TODO: Display description --> */}
-          <p class="rental-description">
-            Some Description
-          </p>
-          <hr/>
+          <p class="rental-description">Some Description</p>
+          <hr />
           <div class="rental-assets">
             <h3 class="title">Assets</h3>
             <div class="row">
               <div class="col-md-6">
-                <span><i class="fa fa-asterisk"></i> Cooling</span>
-                <span><i class="fa fa-thermometer"></i> Heating</span>
-                <span><i class="fa fa-location-arrow"></i> Iron</span>
+                <span>
+                  <i class="fa fa-asterisk"></i> Cooling
+                </span>
+                <span>
+                  <i class="fa fa-thermometer"></i> Heating
+                </span>
+                <span>
+                  <i class="fa fa-location-arrow"></i> Iron
+                </span>
               </div>
               <div class="col-md-6">
-                <span><i class="fa fa-desktop"></i> Working area</span>
-                <span><i class="fa fa-cube"></i> Washing machine</span>
-                <span><i class="fa fa-cube"></i> Dishwasher</span>
+                <span>
+                  <i class="fa fa-desktop"></i> Working area
+                </span>
+                <span>
+                  <i class="fa fa-cube"></i> Washing machine
+                </span>
+                <span>
+                  <i class="fa fa-cube"></i> Dishwasher
+                </span>
               </div>
             </div>
           </div>
@@ -55,7 +71,7 @@
       <div class="col-md-4"> BOOKING</div>
     </div>
   </div>
-</section> 
+</section>;
 
 // #rentalDetails {
 //   .upper-section {
@@ -121,4 +137,4 @@
 //       }
 //     }
 //   }
-// }  
+// }

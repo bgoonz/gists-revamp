@@ -8,24 +8,28 @@
             <h4 class="card-title">{{rental.title}} - {{rental.city}}</h4>
             <div class="row">
               <div class="col-md-6">
-                {{#link-to "rentals.show" rental class="btn btn-bwm"}}Go to rental{{/link-to}}
+                {{#link-to "rentals.show" rental class="btn btn-bwm"}}Go to
+                  rental{{/link-to}}
               </div>
-              {{#if rental.bookings }}
+              {{#if rental.bookings}}
                 {{rental-bookings bookings=rental.bookings}}
               {{/if}}
             </div>
           </div>
           <div class="card-footer text-muted">
-            Created at {{rental.created_at}}
+            Created at
+            {{rental.created_at}}
           </div>
         </div>
       </div>
     {{else}}
       <div class="col-md-8">
         <div class="alert alert-warning">
-          You dont have any rentals currenty created. If you want advertised your property
-          please follow this link.
-          {{#link-to "rentals.new" class="btn btn-bwm"}} Register Rental {{/link-to}}
+          You dont have any rentals currenty created. If you want advertised
+          your property please follow this link.
+          {{#link-to "rentals.new" class="btn btn-bwm"}}
+            Register Rental
+          {{/link-to}}
         </div>
       </div>
     {{/each}}

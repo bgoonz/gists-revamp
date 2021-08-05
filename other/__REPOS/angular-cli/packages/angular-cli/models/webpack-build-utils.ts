@@ -1,5 +1,5 @@
-import * as path from 'path';
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+import * as path from "path";
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 /**
  * Enumerate loaders and their dependencies from this file to let the dependency validator
@@ -33,7 +33,7 @@ const webpackOutputOptions = {
   reasons: false,
   warnings: true,
   assets: false, // listing all assets is very noisy when using assets directories
-  version: false
+  version: false,
 };
 
 const verboseWebpackOutputOptions = {
@@ -41,7 +41,7 @@ const verboseWebpackOutputOptions = {
   assets: true,
   version: true,
   reasons: true,
-  chunkModules: false // TODO: set to true when console to file output is fixed
+  chunkModules: false, // TODO: set to true when console to file output is fixed
 };
 
 export function getWebpackStatsConfig(verbose = false) {
@@ -62,27 +62,33 @@ export interface ExtraEntry {
 export function makeCssLoaders(stylePaths: string[] = []) {
   const baseRules = [
     { test: /\.css$/, loaders: [] },
-    { test: /\.scss$|\.sass$/, loaders: ['sass-loader'] },
-    { test: /\.less$/, loaders: ['less-loader'] },
-    { test: /\.styl$/, loaders: ['stylus-loader'] }
+    { test: /\.scss$|\.sass$/, loaders: ["sass-loader"] },
+    { test: /\.less$/, loaders: ["less-loader"] },
+    { test: /\.styl$/, loaders: ["stylus-loader"] },
   ];
 
-  const commonLoaders = ['postcss-loader'];
+  const commonLoaders = ["postcss-loader"];
 
   // load component css as raw strings
-  let cssLoaders: any = baseRules.map(({test, loaders}) => ({
-    exclude: stylePaths, test, loaders: ['raw-loader', ...commonLoaders, ...loaders]
+  let cssLoaders: any = baseRules.map(({ test, loaders }) => ({
+    exclude: stylePaths,
+    test,
+    loaders: ["raw-loader", ...commonLoaders, ...loaders],
   }));
 
   if (stylePaths.length > 0) {
     // load global css as css files
-    cssLoaders.push(...baseRules.map(({test, loaders}) => ({
-      include: stylePaths, test, loaders: ExtractTextPlugin.extract({
-        remove: false,
-        loader: ['css-loader', ...commonLoaders, ...loaders],
-        fallbackLoader: 'style-loader'
-      })
-    })));
+    cssLoaders.push(
+      ...baseRules.map(({ test, loaders }) => ({
+        include: stylePaths,
+        test,
+        loaders: ExtractTextPlugin.extract({
+          remove: false,
+          loader: ["css-loader", ...commonLoaders, ...loaders],
+          fallbackLoader: "style-loader",
+        }),
+      }))
+    );
   }
 
   return cssLoaders;
@@ -96,13 +102,17 @@ export function extraEntryParser(
 ): ExtraEntry[] {
   return extraEntries
     .map((extraEntry: string | ExtraEntry) =>
-      typeof extraEntry === 'string' ? { input: extraEntry } : extraEntry)
+      typeof extraEntry === "string" ? { input: extraEntry } : extraEntry
+    )
     .map((extraEntry: ExtraEntry) => {
       extraEntry.path = path.resolve(appRoot, extraEntry.input);
       if (extraEntry.output) {
-        extraEntry.entry = extraEntry.output.replace(/\.(js|css)$/i, '');
+        extraEntry.entry = extraEntry.output.replace(/\.(js|css)$/i, "");
       } else if (extraEntry.lazy) {
-        extraEntry.entry = extraEntry.input.replace(/\.(js|css|scss|sass|less|styl)$/i, '');
+        extraEntry.entry = extraEntry.input.replace(
+          /\.(js|css|scss|sass|less|styl)$/i,
+          ""
+        );
       } else {
         extraEntry.entry = defaultEntry;
       }

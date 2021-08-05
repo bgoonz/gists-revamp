@@ -1,9 +1,11 @@
 # ng serve
 
 ## Overview
+
 `ng serve` builds the application and starts a web server
 
 ## Options
+
 `--port` (`-p`) port to serve the application on
 
 `--host` (`-H`)

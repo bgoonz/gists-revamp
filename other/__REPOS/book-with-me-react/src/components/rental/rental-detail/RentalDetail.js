@@ -1,12 +1,11 @@
-import React from 'react';
-import { RentalDetailInfo } from './RentalDetailInfo';
-import { connect } from 'react-redux';
-import { RentalMap } from 'components/map/RentalMap';
-import  Booking  from 'components/booking/Booking';
-import * as actions from 'actions';
+import React from "react";
+import { RentalDetailInfo } from "./RentalDetailInfo";
+import { connect } from "react-redux";
+import { RentalMap } from "components/map/RentalMap";
+import Booking from "components/booking/Booking";
+import * as actions from "actions";
 
 class RentalDetail extends React.Component {
-
   componentWillMount() {
     this.props.dispatch(actions.fetchRentalByid(this.props.match.params.id));
   }
@@ -23,7 +22,7 @@ class RentalDetail extends React.Component {
                 <img src={rental.image} alt=""></img>
               </div>
               <div className="col-md-6">
-                <RentalMap location={`${rental.city}, ${rental.street}`}/>
+                <RentalMap location={`${rental.city}, ${rental.street}`} />
               </div>
             </div>
           </div>
@@ -39,9 +38,9 @@ class RentalDetail extends React.Component {
             </div>
           </div>
         </section>
-      )
+      );
     } else {
-      return <div> Loading... </div>
+      return <div> Loading... </div>;
     }
   }
 }
@@ -51,8 +50,8 @@ function mapStateToProps(state) {
 
   return {
     rental: item,
-    isFetching
-  }
+    isFetching,
+  };
 }
 
 export default connect(mapStateToProps)(RentalDetail);

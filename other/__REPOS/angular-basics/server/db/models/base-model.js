@@ -1,6 +1,5 @@
-
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require("fs").promises;
+const path = require("path");
 
 function Model(resource, data) {
   this.resource = resource;
@@ -16,75 +15,96 @@ function Model(resource, data) {
 }
 
 Model.getAll = async function getAll() {
-  const all = await this.db.readData(this.resource)
+  const all = await this.db.readData(this.resource);
   return all || [];
-}
+};
 
 Model.findOne = async function findOne(fields) {
   const keys = Object.keys(fields);
-  if (keys.length === 0) { throw new Error('Provide fields!')}
+  if (keys.length === 0) {
+    throw new Error("Provide fields!");
+  }
 
   const all = await this.getAll();
-  if (all.length === 0) { return null; };
+  if (all.length === 0) {
+    return null;
+  }
 
-  const result = all.find(a => {
-    const isFound = keys.every(k => {
+  const result = all.find((a) => {
+    const isFound = keys.every((k) => {
       return fields[k] === a[k];
-    })
+    });
 
     return isFound;
-  })
+  });
 
-  if (!result) { throw new Error('Item not found!') }
+  if (!result) {
+    throw new Error("Item not found!");
+  }
   return new this(result);
-}
+};
 
 Model.search = async function search(fields) {
   const keys = Object.keys(fields);
-  if (keys.length === 0) { throw new Error('Provide fields!')}
+  if (keys.length === 0) {
+    throw new Error("Provide fields!");
+  }
 
   const all = await this.getAll();
-  if (all.length === 0) { return []; };
+  if (all.length === 0) {
+    return [];
+  }
 
-  const results = all.filter(a => {
-    const isFound = keys.every(k => {
-      return typeof a[k] === 'string' && a[k].toLowerCase().includes(fields[k]);
-    })
+  const results = all.filter((a) => {
+    const isFound = keys.every((k) => {
+      return typeof a[k] === "string" && a[k].toLowerCase().includes(fields[k]);
+    });
 
     return isFound;
-  })
+  });
 
-  if (!results) { throw new Error('Item not found!') }
-  return results.map(r => new this(r))
-}
+  if (!results) {
+    throw new Error("Item not found!");
+  }
+  return results.map((r) => new this(r));
+};
 
 Model.findOneAndUpdate = async function findOneAndUpdate(id, data) {
   const all = await this.getAll();
   if (all.length === 0) {
-    { throw new Error('Collection is empty')};
+    {
+      throw new Error("Collection is empty");
+    }
   }
-  const index = all.findIndex(a => a._id === id);
-  if (index < 0) { throw new Error('Item doesnt exists!')};
-  all[index] = {...all[index], ...data}
+  const index = all.findIndex((a) => a._id === id);
+  if (index < 0) {
+    throw new Error("Item doesnt exists!");
+  }
+  all[index] = { ...all[index], ...data };
   await this.db.saveData(this.resource, all);
   return all[index];
-}
+};
 
 Model.prototype.remove = async function remove() {
-
   const all = await Model.getAll.call(this);
-  if (all.length === 0) { throw new Error('Collection is empty') };
+  if (all.length === 0) {
+    throw new Error("Collection is empty");
+  }
 
-  const index = all.findIndex(a => a._id === this._id)
-  if (index < 0) { throw new Error('Item not found!')};
+  const index = all.findIndex((a) => a._id === this._id);
+  if (index < 0) {
+    throw new Error("Item not found!");
+  }
 
   all.splice(index, 1);
   await this.db.saveData(this.resource, all);
 
-  if (index === -1) { throw new Error('Cannot remove data!')}
+  if (index === -1) {
+    throw new Error("Cannot remove data!");
+  }
 
   return true;
-}
+};
 
 Model.prototype.save = async function save() {
   const all = await Model.getAll.call(this);
@@ -95,20 +115,22 @@ Model.prototype.save = async function save() {
   all.push(newItem);
   await this.db.saveData(this.resource, all);
   return this.data;
-}
+};
 
 class Connection {
   resolvePath(resource) {
-    return path.join(__dirname, '..', 'data', `${resource}.json`);
+    return path.join(__dirname, "..", "data", `${resource}.json`);
   }
 
   async readData(resource) {
     try {
-      const data = await fs.readFile(this.resolvePath(resource), 'utf8');
-      if (!data) { return null; }
+      const data = await fs.readFile(this.resolvePath(resource), "utf8");
+      if (!data) {
+        return null;
+      }
       return JSON.parse(data);
-    } catch(e) {
-      if (e.code = 'ENOENT') {
+    } catch (e) {
+      if ((e.code = "ENOENT")) {
         return [];
       }
 
@@ -120,12 +142,12 @@ class Connection {
     try {
       fs.writeFile(this.resolvePath(resource), JSON.stringify(data, null, 2));
     } catch (e) {
-      throw(e);
+      throw e;
     }
   }
 
   generateId() {
-    return '_' + Math.random().toString(36).substr(2, 9)
+    return "_" + Math.random().toString(36).substr(2, 9);
   }
 }
 
@@ -140,7 +162,7 @@ class FileDatabase {
 
     model = function model(data) {
       Model.call(this, resource, data);
-    }
+    };
 
     model.resource = resource;
     model.db = model.prototype.db = this.db;
@@ -154,11 +176,11 @@ class FileDatabase {
       const methods = schema.methods;
       Object.keys(methods).forEach((method) => {
         model.prototype[method] = methods[method];
-      })
+      });
     }
 
     if (schema.descriptors) {
-      model.prototype.descriptors = {...schema.descriptors};
+      model.prototype.descriptors = { ...schema.descriptors };
     }
 
     this.models[resource] = model;

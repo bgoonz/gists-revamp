@@ -1,11 +1,10 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { RentalList } from './RentalList';
-import { toUpperCase } from 'helpers';
-import * as actions from 'actions';
+import React from "react";
+import { connect } from "react-redux";
+import { RentalList } from "./RentalList";
+import { toUpperCase } from "helpers";
+import * as actions from "actions";
 
 class RentalSearchListing extends React.Component {
-
   componentWillMount() {
     this.searchRentalsByCity();
   }
@@ -14,19 +13,21 @@ class RentalSearchListing extends React.Component {
     const { isFetching } = this.props.rentals;
     const city = this.props.match.params.city;
 
-    if ( !isFetching ) {
+    if (!isFetching) {
       this.props.dispatch(actions.fetchRentalsByCity(city));
     }
   }
 
   renderTitle() {
-    const { rentals: { searchCity, items, isFetching, errors } } = this.props;
+    const {
+      rentals: { searchCity, items, isFetching, errors },
+    } = this.props;
     let title = "";
 
     if (!isFetching && errors.length > 0) {
       title = errors[0].detail;
     } else if (!isFetching && items.length > 0) {
-      title = `Your Home in City of ${toUpperCase(searchCity)}`
+      title = `Your Home in City of ${toUpperCase(searchCity)}`;
     } else {
       title = "";
     }
@@ -42,15 +43,14 @@ class RentalSearchListing extends React.Component {
         {this.renderTitle()}
         <RentalList rentals={rentals} />
       </section>
-      )
+    );
   }
 }
 
-
 function mapStateToProps(state) {
   return {
-    rentals: state.rentals
-  }
+    rentals: state.rentals,
+  };
 }
 
 export default connect(mapStateToProps)(RentalSearchListing);

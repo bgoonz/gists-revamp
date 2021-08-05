@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
 /**
  * Just a small command-line wrapper around the conventional-changelog npm module
@@ -11,33 +11,35 @@
  * see: https://github.com/conventional-changelog/conventional-changelog/blob/v0.2.1/presets/angular.js#L24
  */
 
-var fs = require('fs');
-var cl = require('conventional-changelog');
-const exec = require('child_process').exec;
+var fs = require("fs");
+var cl = require("conventional-changelog");
+const exec = require("child_process").exec;
 
-var changelogStream = fs.createWriteStream('CHANGELOG-delta.md');
+var changelogStream = fs.createWriteStream("CHANGELOG-delta.md");
 
 if (process.argv.length < 3) {
   // eslint-disable-next-line no-console
-  console.log('Usage: ./scripts/publish/changelog.js <start-tag>');
+  console.log("Usage: ./scripts/publish/changelog.js <start-tag>");
   process.exit(-1);
 }
 
 var config = {
-  preset: 'angular',
-  releaseCount: 1
+  preset: "angular",
+  releaseCount: 1,
 };
 
-var prependDelta = function() {
-  exec('cat CHANGELOG-delta.md CHANGELOG.md > CHANGELOG-new.md;' +
-       'mv CHANGELOG-new.md CHANGELOG.md;' +
-       'rm CHANGELOG-delta.md');
-}
+var prependDelta = function () {
+  exec(
+    "cat CHANGELOG-delta.md CHANGELOG.md > CHANGELOG-new.md;" +
+      "mv CHANGELOG-new.md CHANGELOG.md;" +
+      "rm CHANGELOG-delta.md"
+  );
+};
 
 cl(config, null, { from: process.argv[2] })
-    .on('error', function(err) {
-      // eslint-disable-next-line no-console
-      console.error('Failed to generate changelog: ' + err);
-    })
-    .pipe(changelogStream)
-    .on('close', prependDelta);
+  .on("error", function (err) {
+    // eslint-disable-next-line no-console
+    console.error("Failed to generate changelog: " + err);
+  })
+  .pipe(changelogStream)
+  .on("close", prependDelta);

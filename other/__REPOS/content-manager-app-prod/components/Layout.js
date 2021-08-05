@@ -1,12 +1,12 @@
-
 import Navbar from "components/Navbar";
 import ActiveResource from "components/ActiveResource";
 
-const Layout = ({children}) =>
+const Layout = ({ children }) => (
   <>
     <Navbar />
     <ActiveResource />
-    { children }
+    {children}
   </>
+);
 
 export default Layout;

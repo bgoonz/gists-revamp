@@ -5,13 +5,13 @@
 
 export const environment = {
   production: false,
-  STRIPE_PK: 'pk_test_HgtMD9wHltUMpDw2mK4VbF6l',
+  STRIPE_PK: "pk_test_HgtMD9wHltUMpDw2mK4VbF6l",
   firebase: {
     apiKey: "AIzaSyAWscZr7gTB9HRAZpbKOo1-EvcMBCyXp0U",
     authDomain: "vue-school-b9938.firebaseapp.com",
     databaseURL: "https://vue-school-b9938.firebaseio.com",
     projectId: "vue-school-b9938",
     storageBucket: "vue-school-b9938.appspot.com",
-    messagingSenderId: "853695242693"
-  }
+    messagingSenderId: "853695242693",
+  },
 };

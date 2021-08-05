@@ -1,79 +1,79 @@
 export interface CliConfig {
+  /**
+   * The global configuration of the project.
+   */
+  project?: {
+    version?: string;
+    name?: string;
+  };
+  /**
+   * Properties of the different applications in this project.
+   */
+  apps?: {
+    root?: string;
+    outDir?: string;
+    assets?: string;
+    deployUrl?: string;
+    index?: string;
+    main?: string;
+    test?: string;
+    tsconfig?: string;
+    prefix?: string;
+    mobile?: boolean;
     /**
-     * The global configuration of the project.
+     * Global styles to be included in the build.
      */
-    project?: {
-        version?: string;
-        name?: string;
-    };
+    styles?: string[];
     /**
-     * Properties of the different applications in this project.
+     * Global scripts to be included in the build.
      */
-    apps?: {
-        root?: string;
-        outDir?: string;
-        assets?: string;
-        deployUrl?: string;
-        index?: string;
-        main?: string;
-        test?: string;
-        tsconfig?: string;
-        prefix?: string;
-        mobile?: boolean;
-        /**
-         * Global styles to be included in the build.
-         */
-        styles?: string[];
-        /**
-         * Global scripts to be included in the build.
-         */
-        scripts?: string[];
-        /**
-         * Name and corresponding file for environment config.
-         */
-        environments?: {
-            [name: string]: any;
-        };
-    }[];
+    scripts?: string[];
     /**
-     * Configuration reserved for installed third party addons.
+     * Name and corresponding file for environment config.
      */
-    addons?: {
-        [name: string]: any;
-    }[];
-    /**
-     * Configuration reserved for installed third party packages.
-     */
-    packages?: {
-        [name: string]: any;
-    }[];
-    e2e?: {
-        protractor?: {
-            config?: string;
-        };
+    environments?: {
+      [name: string]: any;
     };
-    test?: {
-        karma?: {
-            config?: string;
-        };
+  }[];
+  /**
+   * Configuration reserved for installed third party addons.
+   */
+  addons?: {
+    [name: string]: any;
+  }[];
+  /**
+   * Configuration reserved for installed third party packages.
+   */
+  packages?: {
+    [name: string]: any;
+  }[];
+  e2e?: {
+    protractor?: {
+      config?: string;
     };
-    defaults?: {
-        styleExt?: string;
-        prefixInterfaces?: boolean;
-        poll?: number;
-        viewEncapsulation?: string;
-        changeDetection?: string;
-        inline?: {
-            style?: boolean;
-            template?: boolean;
-        };
-        spec?: {
-            class?: boolean;
-            component?: boolean;
-            directive?: boolean;
-            module?: boolean;
-            pipe?: boolean;
-            service?: boolean;
-        };
+  };
+  test?: {
+    karma?: {
+      config?: string;
     };
+  };
+  defaults?: {
+    styleExt?: string;
+    prefixInterfaces?: boolean;
+    poll?: number;
+    viewEncapsulation?: string;
+    changeDetection?: string;
+    inline?: {
+      style?: boolean;
+      template?: boolean;
+    };
+    spec?: {
+      class?: boolean;
+      component?: boolean;
+      directive?: boolean;
+      module?: boolean;
+      pipe?: boolean;
+      service?: boolean;
+    };
+  };
 }

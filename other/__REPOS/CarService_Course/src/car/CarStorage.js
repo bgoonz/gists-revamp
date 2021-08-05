@@ -1,11 +1,8 @@
-
-
-
 class CarStorage {
   cars = [];
 
   constructor(cars) {
-    this.cars = cars || []; 
+    this.cars = cars || [];
   }
 
   addCar(car) {
@@ -13,11 +10,11 @@ class CarStorage {
   }
 
   removeCar(carId) {
-    const carIndex = this.cars.findIndex(car => car.id === carId )
+    const carIndex = this.cars.findIndex((car) => car.id === carId);
 
-    if (carIndex === -1) { 
-      console.log('The car doesnt exist!');
-      return; 
+    if (carIndex === -1) {
+      console.log("The car doesnt exist!");
+      return;
     }
 
     this.cars.splice(carIndex, 1);
@@ -25,11 +22,11 @@ class CarStorage {
 
   listCars() {
     if (this.cars.length === 0) {
-      console.log('No cars in the list!');
+      console.log("No cars in the list!");
       return;
     }
-        
-    this.cars.forEach(car => car.displayInfo())
+
+    this.cars.forEach((car) => car.displayInfo());
   }
 }
 

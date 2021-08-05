@@ -1,9 +1,8 @@
-import * as jwt from 'jsonwebtoken';
-import * as moment from 'moment';
+import * as jwt from "jsonwebtoken";
+import * as moment from "moment";
 
 class AuthService {
-
-  tokenKey = 'auth_token';
+  tokenKey = "auth_token";
 
   getToken() {
     return localStorage.getItem(this.tokenKey);
@@ -38,9 +37,8 @@ class AuthService {
   isAuthenticated() {
     const token = this.getToken();
 
-    return (token && this.isValid(token)) ? true : false;
+    return token && this.isValid(token) ? true : false;
   }
 }
-
 
 export default new AuthService();

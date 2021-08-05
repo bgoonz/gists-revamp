@@ -1,15 +1,35 @@
-'use strict';
+"use strict";
 
-var fs          = require('fs');
-var existsSync  = require('exists-sync');
+var fs = require("fs");
+var existsSync = require("exists-sync");
 
-var chalk       = require('chalk');
-var SilentError = require('silent-error');
-var isArray     = require('lodash/isArray');
-var merge       = require('lodash/merge');
+var chalk = require("chalk");
+var SilentError = require("silent-error");
+var isArray = require("lodash/isArray");
+var merge = require("lodash/merge");
 
-var colors = ['red', 'green', 'blue', 'cyan', 'magenta', 'yellow', 'black', 'white', 'grey', 'gray'];
-var backgroundColors = ['bgRed', 'bgGreen', 'bgBlue', 'bgCyan', 'bgMagenta', 'bgYellow', 'bgWhite', 'bgBlack'];
+var colors = [
+  "red",
+  "green",
+  "blue",
+  "cyan",
+  "magenta",
+  "yellow",
+  "black",
+  "white",
+  "grey",
+  "gray",
+];
+var backgroundColors = [
+  "bgRed",
+  "bgGreen",
+  "bgBlue",
+  "bgCyan",
+  "bgMagenta",
+  "bgYellow",
+  "bgWhite",
+  "bgBlack",
+];
 
 module.exports = MarkdownColor;
 
@@ -36,12 +56,12 @@ module.exports = MarkdownColor;
   @param {Object} [options]
 */
 function MarkdownColor(options) {
-  var optionTokens = options && options.tokens || {};
-  var renderStyles = options && options.renderStyles || chalk;
+  var optionTokens = (options && options.tokens) || {};
+  var renderStyles = (options && options.renderStyles) || chalk;
   var tokens = this.generateTokens(renderStyles);
-  var markdownOptions = options && options.markdownOptions || {};
-  var markdown = require('markdown-it');
-  var terminal = require('markdown-it-terminal');
+  var markdownOptions = (options && options.markdownOptions) || {};
+  var markdown = require("markdown-it");
+  var terminal = require("markdown-it-terminal");
   this.options = options || {};
   this.markdown = markdown().use(terminal, markdownOptions);
   this.tokens = merge(tokens, optionTokens);
@@ -58,10 +78,14 @@ function MarkdownColor(options) {
 MarkdownColor.prototype.renderFile = function (filePath, options) {
   var file;
   if (existsSync(filePath)) {
-    file = fs.readFileSync(filePath, 'utf-8');
+    file = fs.readFileSync(filePath, "utf-8");
   } else {
-    throw new SilentError('The file \'' + filePath + '\' doesn\'t exist.' +
-      ' Please check your filePath');
+    throw new SilentError(
+      "The file '" +
+        filePath +
+        "' doesn't exist." +
+        " Please check your filePath"
+    );
   }
 
   return this.render(file, options);
@@ -75,13 +99,18 @@ MarkdownColor.prototype.renderFile = function (filePath, options) {
   @return {String}
 */
 MarkdownColor.prototype.render = function (string, options) {
-  var indent = options && options.indent || '';
-  var input  = this.markdown.render(string);
+  var indent = (options && options.indent) || "";
+  var input = this.markdown.render(string);
   var styles = Object.keys(this.tokens);
-  input = input.replace(/^/mg, indent);
-  styles.reverse().map(function(style) {
-    input = input.replace(this.tokens[style].pattern, this.tokens[style].render);
-  }.bind(this));
+  input = input.replace(/^/gm, indent);
+  styles.reverse().map(
+    function (style) {
+      input = input.replace(
+        this.tokens[style].pattern,
+        this.tokens[style].render
+      );
+    }.bind(this)
+  );
   input = input.replace(/\~\^(.*)\~\^/g, escapeToken);
   return input;
 };
@@ -95,29 +124,31 @@ MarkdownColor.prototype.generateTokens = function (renderer) {
   var defaultTokens = {
     // ember-cli styles
     option: {
-      name: 'option',
-      token: '--option',
+      name: "option",
+      token: "--option",
       pattern: /((--\w*\b)|(<options>))/g,
-      render: renderStylesFactory(renderer, 'cyan')
+      render: renderStylesFactory(renderer, "cyan"),
     },
     default: {
-      name: 'default',
-      token: '(Default: default)',
+      name: "default",
+      token: "(Default: default)",
       pattern: /(\(Default:\s.*\))/g,
-      render: renderStylesFactory(renderer, 'cyan')
+      render: renderStylesFactory(renderer, "cyan"),
     },
     required: {
-      name: 'required',
-      token: '(Required)',
+      name: "required",
+      token: "(Required)",
       pattern: /(\(Required\))/g,
-      render: renderStylesFactory(renderer, 'cyan')
-    }
+      render: renderStylesFactory(renderer, "cyan"),
+    },
   };
 
-  var colorTokens = unshiftValue(colors.concat(backgroundColors).map(getToken), {}).reduce(setToken);
+  var colorTokens = unshiftValue(
+    colors.concat(backgroundColors).map(getToken),
+    {}
+  ).reduce(setToken);
   return merge(colorTokens, defaultTokens);
 };
-
 
 /*
   Looks up multiple styles to apply to the rendered output
@@ -134,7 +165,7 @@ function renderStylesFactory(renderer, styleNames) {
   } else {
     styles = [checkStyleName(renderer, styleNames)];
   }
-  return function(match, pattern) {
+  return function (match, pattern) {
     return styles.reverse().reduce(function (previous, current) {
       return renderer[current](previous);
     }, pattern);
@@ -150,7 +181,9 @@ function checkStyleName(renderer, name) {
   if (Object.keys(renderer.styles).indexOf(name) > -1) {
     return name;
   } else {
-    throw new SilentError('The style \'' + name + '\' is not supported by the markdown renderer.');
+    throw new SilentError(
+      "The style '" + name + "' is not supported by the markdown renderer."
+    );
   }
 }
 
@@ -161,14 +194,14 @@ function checkStyleName(renderer, name) {
 */
 function getColorTokenRegex(name, options) {
   options = options || {};
-  var start = options.start || '(?:<';
-  var end = options.end || '>)';
-  var close = options.close || '(?:<\/';
-  var middle = options.middle || '(.*?)';
+  var start = options.start || "(?:<";
+  var end = options.end || ">)";
+  var close = options.close || "(?:</";
+  var middle = options.middle || "(.*?)";
   var tag = start + name + end;
   var closeTag = close + name + end;
   var pattern = tag + middle + closeTag;
-  return new RegExp(pattern, 'g');
+  return new RegExp(pattern, "g");
 }
 
 /*
@@ -177,12 +210,12 @@ function getColorTokenRegex(name, options) {
   @return {Object} Returns token object
 */
 function getToken(name, options) {
-  var renderer = options && options.renderer || chalk;
+  var renderer = (options && options.renderer) || chalk;
   return {
     name: name,
-    token: '<' + name + '></' + name + '>',
+    token: "<" + name + "></" + name + ">",
     pattern: getColorTokenRegex(name),
-    render: renderStylesFactory(renderer, name)
+    render: renderStylesFactory(renderer, name),
   };
 }
 
@@ -192,8 +225,8 @@ function setToken(result, color) {
 }
 
 function escapeToken(match, pattern) {
-  var output = pattern.replace(/\~/g,'');
-  return '<' + output + '>';
+  var output = pattern.replace(/\~/g, "");
+  return "<" + output + ">";
 }
 
 function unshiftValue(array, value) {

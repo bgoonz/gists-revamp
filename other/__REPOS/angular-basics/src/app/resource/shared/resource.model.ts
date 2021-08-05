@@ -1,5 +1,3 @@
-
-
 export class ResourceAlert {
   success: string;
   error: string;
@@ -10,7 +8,6 @@ export class ResourceSettings {
 }
 
 export class Resource {
-
   static readonly types = ['book', 'video', 'blog'];
 
   _id: string;
@@ -19,7 +16,7 @@ export class Resource {
   link: string;
   type: string;
 
-  constructor({title = '', description = '', link = '', type = ''} = {}) {
+  constructor({ title = '', description = '', link = '', type = '' } = {}) {
     this.title = title;
     this.description = description;
     this.link = link;

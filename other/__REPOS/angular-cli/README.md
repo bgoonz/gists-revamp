@@ -33,33 +33,34 @@ with NPM 3 or higher.
 
 ## Table of Contents
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [Generating a New Project](#generating-and-serving-an-angular2-project-via-a-development-server)
-* [Generating Components, Directives, Pipes and Services](#generating-components-directives-pipes-and-services)
-* [Generating a Route](#generating-a-route)
-* [Creating a Build](#creating-a-build)
-* [Build Targets and Environment Files](#build-targets-and-environment-files)
-* [Base tag handling in index.html](#base-tag-handling-in-indexhtml)
-* [Bundling](#bundling)
-* [Running Unit Tests](#running-unit-tests)
-* [Running End-to-End Tests](#running-end-to-end-tests)
-* [Proxy To Backend](#proxy-to-backend)
-* [Deploying the App via GitHub Pages](#deploying-the-app-via-github-pages)
-* [Linting and formatting code](#linting-and-formatting-code)
-* [Support for offline applications](#support-for-offline-applications)
-* [Commands autocompletion](#commands-autocompletion)
-* [Project assets](#project-assets)
-* [Global styles](#global-styles)
-* [CSS preprocessor integration](#css-preprocessor-integration)
-* [3rd Party Library Installation](#3rd-party-library-installation)
-* [Global Library Installation](#global-library-installation)
-* [Updating angular-cli](#updating-angular-cli)
-* [Development Hints for hacking on angular-cli](#development-hints-for-hacking-on-angular-cli)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Generating a New Project](#generating-and-serving-an-angular2-project-via-a-development-server)
+- [Generating Components, Directives, Pipes and Services](#generating-components-directives-pipes-and-services)
+- [Generating a Route](#generating-a-route)
+- [Creating a Build](#creating-a-build)
+- [Build Targets and Environment Files](#build-targets-and-environment-files)
+- [Base tag handling in index.html](#base-tag-handling-in-indexhtml)
+- [Bundling](#bundling)
+- [Running Unit Tests](#running-unit-tests)
+- [Running End-to-End Tests](#running-end-to-end-tests)
+- [Proxy To Backend](#proxy-to-backend)
+- [Deploying the App via GitHub Pages](#deploying-the-app-via-github-pages)
+- [Linting and formatting code](#linting-and-formatting-code)
+- [Support for offline applications](#support-for-offline-applications)
+- [Commands autocompletion](#commands-autocompletion)
+- [Project assets](#project-assets)
+- [Global styles](#global-styles)
+- [CSS preprocessor integration](#css-preprocessor-integration)
+- [3rd Party Library Installation](#3rd-party-library-installation)
+- [Global Library Installation](#global-library-installation)
+- [Updating angular-cli](#updating-angular-cli)
+- [Development Hints for hacking on angular-cli](#development-hints-for-hacking-on-angular-cli)
 
 ## Installation
 
 **BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)
+
 ```bash
 npm install -g angular-cli
 ```
@@ -77,6 +78,7 @@ ng new PROJECT_NAME
 cd PROJECT_NAME
 ng serve
 ```
+
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 You can configure the default HTTP port and the one used by the LiveReload server with two command-line options :
@@ -101,18 +103,19 @@ ng g component new-cmp
 ng g component ../newer-cmp
 # your component will be generated in src/app/newer-cmp
 ```
+
 You can find all possible blueprints in the table below:
 
-Scaffold  | Usage
----       | ---
-Component | `ng g component my-new-component`
-Directive | `ng g directive my-new-directive`
-Pipe      | `ng g pipe my-new-pipe`
-Service   | `ng g service my-new-service`
-Class     | `ng g class my-new-class`
-Interface | `ng g interface my-new-interface`
-Enum      | `ng g enum my-new-enum`
-Module    | `ng g module my-module`
+| Scaffold  | Usage                             |
+| --------- | --------------------------------- |
+| Component | `ng g component my-new-component` |
+| Directive | `ng g directive my-new-directive` |
+| Pipe      | `ng g pipe my-new-pipe`           |
+| Service   | `ng g service my-new-service`     |
+| Class     | `ng g class my-new-class`         |
+| Interface | `ng g interface my-new-interface` |
+| Enum      | `ng g enum my-new-enum`           |
+| Module    | `ng g module my-module`           |
 
 ### Generating a route
 
@@ -160,6 +163,7 @@ ng build
 ```
 
 You can also add your own env files other than `dev` and `prod` by doing the following:
+
 - create a `src/environments/environment.NAME.ts`
 - add `{ "NAME": 'src/environments/environment.NAME.ts' }` to the `apps[0].environments` object in `angular-cli.json`
 - use them via the `--env=NAME` flag on the build/serve commands.
@@ -176,7 +180,7 @@ ng build --bh /myUrl/
 
 ### Bundling
 
-All builds make use of bundling, and using the `--prod` flag in  `ng build --prod`
+All builds make use of bundling, and using the `--prod` flag in `ng build --prod`
 or `ng serve --prod` will also make use of uglifying and tree-shaking functionality.
 
 ### Running unit tests
@@ -202,6 +206,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
 End-to-end tests are run via [Protractor](https://angular.github.io/protractor/).
 
 ### Proxy To Backend
+
 Using the proxying support in webpack's dev server we can highjack certain urls and send them to a backend server.
 We do this by passing a file to `--proxy-config`
 
@@ -260,7 +265,6 @@ ng github-pages:deploy --user-page --message "Optional commit message"
 This command pushes the app to the `master` branch on the github repo instead
 of pushing to `gh-pages`, since user and organization pages require this.
 
-
 ### Linting and formatting code
 
 You can lint your app code by running `ng lint`.
@@ -279,18 +283,21 @@ You can modify the these scripts in `package.json` to run whatever tool you pref
 To turn on auto completion use the following commands:
 
 For bash:
+
 ```bash
 ng completion 1>> ~/.bashrc 2>>&1
 source ~/.bashrc
 ```
 
 For zsh:
+
 ```bash
 ng completion 1>> ~/.zshrc 2>>&1
 source ~/.zshrc
 ```
 
 Windows users using gitbash:
+
 ```bash
 ng completion 1>> ~/.bash_profile 2>>&1
 source ~/.bash_profile
@@ -299,6 +306,7 @@ source ~/.bash_profile
 ### Project assets
 
 You use the `assets` array in `angular-cli.json` to list files or folders you want to copy as-is when building your project:
+
 ```json
 "assets": [
   "assets",
@@ -319,6 +327,7 @@ You can add more global styles via the `apps[0].styles` property in `angular-cli
 ### CSS Preprocessor integration
 
 Angular-CLI supports all major CSS preprocessors:
+
 - sass/scss ([http://sass-lang.com/](http://sass-lang.com/))
 - less ([http://lesscss.org/](http://lesscss.org/))
 - stylus ([http://stylus-lang.com/](http://stylus-lang.com/))
@@ -327,12 +336,12 @@ To use these preprocessors simply add the file to your component's `styleUrls`:
 
 ```javascript
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  selector: "app-root",
+  templateUrl: "app.component.html",
+  styleUrls: ["app.component.scss"],
 })
 export class AppComponent {
-  title = 'app works!';
+  title = "app works!";
 }
 ```
 
@@ -367,16 +376,16 @@ manually adding typings for it:
 
 2. Then, in `src/typings.d.ts`, add the following code:
 
-  ```typescript
-  declare module 'typeless-package';
-  ```
+```typescript
+declare module "typeless-package";
+```
 
 3. Finally, in the component or file that uses the library, add the following code:
 
-  ```typescript
-  import * as typelessPackage from 'typeless-package';
-  typelessPackage.method();
-  ```
+```typescript
+import * as typelessPackage from "typeless-package";
+typelessPackage.method();
+```
 
 Done. Note: you might need or find useful to define more typings for the library that you're trying to use.
 
@@ -406,6 +415,7 @@ Then add the needed script files to `apps[0].scripts`:
 ```
 
 Finally add the Bootstrap CSS to the `apps[0].styles` array:
+
 ```json
 "styles": [
   "../node_modules/bootstrap/dist/css/bootstrap.css",
@@ -421,6 +431,7 @@ your app.
 To update `angular-cli` to a new version, you must update both the global package and your project's local package.
 
 Global package:
+
 ```bash
 npm uninstall -g angular-cli
 npm cache clean
@@ -428,6 +439,7 @@ npm install -g angular-cli@latest
 ```
 
 Local project package:
+
 ```bash
 rm -rf node_modules dist tmp
 npm install --save-dev angular-cli@latest
@@ -442,7 +454,6 @@ Carefully read the diffs for each code file, and either accept the changes or in
 **The main cause of errors after an update is failing to incorporate these updates into your code**.
 
 You can find more details about changes between versions in [CHANGELOG.md](https://github.com/angular/angular-cli/blob/master/CHANGELOG.md).
-
 
 ## Development Hints for hacking on angular-cli
 
@@ -479,11 +490,9 @@ You can also use `ng new foo --link-cli` to automatically link the `angular-cli`
 Please read the official [npm-link documentation](https://www.npmjs.org/doc/cli/npm-link.html)
 and the [npm-link cheatsheet](http://browsenpm.org/help#linkinganynpmpackagelocally) for more information.
 
-
 ## License
 
 MIT
-
 
 [travis-badge]: https://travis-ci.org/angular/angular-cli.svg?branch=master
 [travis-badge-url]: https://travis-ci.org/angular/angular-cli

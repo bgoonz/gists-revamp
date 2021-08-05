@@ -2,7 +2,7 @@
   <div class="upper-section">
     <div class="row">
       <div class="col-md-6">
-        <img src="{{rental.image}}" alt="">
+        <img src="{{ rental.image }}" alt="" />
       </div>
       <div class="col-md-6">
         <bwm-map [location]="rental.city + ', ' + rental.street"> </bwm-map>
@@ -14,23 +14,35 @@
     <div class="row">
       <div class="col-md-8">
         <div class="rental">
-          <h2 class="rental-type {{rental.category}}">{{rental.shared ? 'Shared' : 'Whole'}} {{rental.category}}</h2>
+          <h2 class="rental-type {{ rental.category }}">
+            {{ rental.shared ? "Shared" : "Whole" }} {{ rental.category }}
+          </h2>
           <div class="rental-owner">
-            <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="">
-            <span>{{rental.user.username}}</span>
+            <img
+              src="https://api.adorable.io/avatars/285/abott@adorable.png"
+              alt=""
+            />
+            <span>{{ rental.user.username }}</span>
           </div>
 
-          <h1 class="rental-title">{{rental.title}}</h1>
-          <h2 class="rental-city">{{rental.city | ucwords}}</h2>
+          <h1 class="rental-title">{{ rental.title }}</h1>
+          <h2 class="rental-city">{{ rental.city | ucwords }}</h2>
           <div class="rental-room-info">
-            <span><i class="fa fa-building"></i>{{rental.bedrooms}} bedrooms</span>
-            <span><i class="fa fa-user"></i> {{rental.bedrooms + 4}} guests</span>
-            <span><i class="fa fa-bed"></i> {{rental.bedrooms + 2}} beds</span>
+            <span
+              ><i class="fa fa-building"></i
+              >{{ rental.bedrooms }} bedrooms</span
+            >
+            <span
+              ><i class="fa fa-user"></i> {{ rental.bedrooms + 4 }} guests</span
+            >
+            <span
+              ><i class="fa fa-bed"></i> {{ rental.bedrooms + 2 }} beds</span
+            >
           </div>
           <p class="rental-description">
-            {{rental.description}}
+            {{ rental.description }}
           </p>
-          <hr>
+          <hr />
           <div class="rental-assets">
             <h3 class="title">Assets</h3>
             <div class="row">
@@ -49,8 +61,7 @@
         </div>
       </div>
       <div class="col-md-4">
-        <bwm-rental-detail-booking
-          [rental]="rental">
+        <bwm-rental-detail-booking [rental]="rental">
         </bwm-rental-detail-booking>
       </div>
     </div>

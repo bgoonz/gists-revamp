@@ -1,5 +1,3 @@
-
-
 import {
   ElementRef,
   ViewContainerRef,
@@ -7,14 +5,14 @@ import {
   Directive,
   Input,
   OnInit,
-  OnChanges } from '@angular/core';
+  OnChanges,
+} from "@angular/core";
 
 @Directive({
-  selector: '[bwmHighlight]'
+  selector: "[bwmHighlight]",
 })
 export class HighlightDirective implements OnInit {
-
-  @Input('bwmHighlight') bwmHighlight;
+  @Input("bwmHighlight") bwmHighlight;
 
   constructor(private el: ElementRef) {}
 
@@ -24,17 +22,16 @@ export class HighlightDirective implements OnInit {
 }
 
 @Directive({
-  selector: '[bwmNgIf]'
+  selector: "[bwmNgIf]",
 })
 export class BwmNgIfDirective {
-
   hasView = false;
 
-  @Input('bwmNgIf') set bwmNgIf(condition: boolean) {
-    if (condition && !this.hasView ) {
+  @Input("bwmNgIf") set bwmNgIf(condition: boolean) {
+    if (condition && !this.hasView) {
       this.container.createEmbeddedView(this.template);
       this.hasView = true;
-    } else if (!condition && this.hasView ) {
+    } else if (!condition && this.hasView) {
       this.container.clear();
       this.hasView = false;
     }
@@ -42,23 +39,24 @@ export class BwmNgIfDirective {
 
   constructor(
     private container: ViewContainerRef,
-    private template: TemplateRef<any>) {}
+    private template: TemplateRef<any>
+  ) {}
 }
 
 @Directive({
-  selector: '[bwmNgFor]'
+  selector: "[bwmNgFor]",
 })
 export class BwmNgForDirective implements OnChanges {
-
-  @Input('bwmNgForOf') bwmNgForOf: Array<any>;
+  @Input("bwmNgForOf") bwmNgForOf: Array<any>;
 
   constructor(
     private container: ViewContainerRef,
-    private template: TemplateRef<any>) {}
+    private template: TemplateRef<any>
+  ) {}
 
   ngOnChanges() {
-    this.bwmNgForOf.forEach(value => {
-      this.container.createEmbeddedView(this.template, { $implicit: value});
+    this.bwmNgForOf.forEach((value) => {
+      this.container.createEmbeddedView(this.template, { $implicit: value });
     });
   }
 }

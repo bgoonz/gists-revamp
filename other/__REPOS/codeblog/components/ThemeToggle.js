@@ -1,8 +1,7 @@
+import Toggle from "react-toggle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Toggle from 'react-toggle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const ThemeToggle = ({onChange}) =>
+const ThemeToggle = ({ onChange }) => (
   <label>
     <Toggle
       className="day-night-toggle"
@@ -10,7 +9,9 @@ const ThemeToggle = ({onChange}) =>
         checked: <FontAwesomeIcon inverse icon="sun" />,
         unchecked: <FontAwesomeIcon inverse icon="moon" />,
       }}
-      onChange={onChange} />
+      onChange={onChange}
+    />
   </label>
+);
 
 export default ThemeToggle;

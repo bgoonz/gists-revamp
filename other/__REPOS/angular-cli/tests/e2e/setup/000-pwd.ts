@@ -1,7 +1,6 @@
-import {join} from 'path';
+import { join } from "path";
 
-
-export default function() {
+export default function () {
   // Setup to use the local angular-cli copy.
-  process.chdir(join(__dirname, '../..'));
+  process.chdir(join(__dirname, "../.."));
 }

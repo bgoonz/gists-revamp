@@ -1,11 +1,19 @@
-import {ng} from '../../utils/process';
-import {expectFileToMatch, writeFile, createDir, appendToFile} from '../../utils/fs';
-import {expectToFail} from '../../utils/utils';
+import { ng } from "../../utils/process";
+import {
+  expectFileToMatch,
+  writeFile,
+  createDir,
+  appendToFile,
+} from "../../utils/fs";
+import { expectToFail } from "../../utils/utils";
 
-export default function() {
+export default function () {
   return Promise.resolve()
-    .then(() => createDir('src/locale'))
-    .then(() => writeFile('src/locale/messages.fr.xlf', `
+    .then(() => createDir("src/locale"))
+    .then(() =>
+      writeFile(
+        "src/locale/messages.fr.xlf",
+        `
       <?xml version="1.0" encoding="UTF-8" ?>
         <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
          <file source-language="en" datatype="plaintext" original="ng2.template">
@@ -17,13 +25,33 @@ export default function() {
              </trans-unit>
            </body>
          </file>
-        </xliff>`))
-    .then(() => appendToFile('src/app/app.component.html',
-      '<h1 i18n="An introduction header for this sample">Hello i18n!</h1>'))
-    .then(() => ng('build', '--aot', '--i18n-file', 'src/locale/messages.fr.xlf', '--i18n-format',
-      'xlf', '--locale', 'fr'))
-    .then(() => expectFileToMatch('dist/main.bundle.js', /Bonjour i18n!/))
-    .then(() => ng('build', '--aot'))
-    .then(() => expectToFail(() => expectFileToMatch('dist/main.bundle.js', /Bonjour i18n!/)))
-    .then(() => expectFileToMatch('dist/main.bundle.js', /Hello i18n!/));
+        </xliff>`
+      )
+    )
+    .then(() =>
+      appendToFile(
+        "src/app/app.component.html",
+        '<h1 i18n="An introduction header for this sample">Hello i18n!</h1>'
+      )
+    )
+    .then(() =>
+      ng(
+        "build",
+        "--aot",
+        "--i18n-file",
+        "src/locale/messages.fr.xlf",
+        "--i18n-format",
+        "xlf",
+        "--locale",
+        "fr"
+      )
+    )
+    .then(() => expectFileToMatch("dist/main.bundle.js", /Bonjour i18n!/))
+    .then(() => ng("build", "--aot"))
+    .then(() =>
+      expectToFail(() =>
+        expectFileToMatch("dist/main.bundle.js", /Bonjour i18n!/)
+      )
+    )
+    .then(() => expectFileToMatch("dist/main.bundle.js", /Hello i18n!/));
 }

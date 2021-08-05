@@ -1,26 +1,24 @@
-
-
 #rentalEdit {
   .editable-component {
     display: flex;
     margin-bottom: 5px;
-  
+
     &-inline {
       display: inline-flex;
     }
-  
+
     &-block {
       display: block;
     }
-  
+
     .editable-item {
       margin-bottom: 0;
     }
-  
+
     .button-container {
       align-self: center;
     }
-  
+
     .btn.btn-editable {
       margin-left: 5px;
       color: white;

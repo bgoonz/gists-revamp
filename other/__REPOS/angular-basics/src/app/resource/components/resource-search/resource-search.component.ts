@@ -4,7 +4,8 @@ import {
   EventEmitter,
   ViewChild,
   ElementRef,
-  AfterViewInit } from '@angular/core';
+  AfterViewInit,
+} from '@angular/core';
 
 import { fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -12,10 +13,9 @@ import { debounceTime } from 'rxjs/operators';
 @Component({
   selector: 'app-resource-search',
   templateUrl: './resource-search.component.html',
-  styleUrls: ['./resource-search.component.scss']
+  styleUrls: ['./resource-search.component.scss'],
 })
 export class ResourceSearchComponent implements AfterViewInit {
-
   @ViewChild('searchInput') input: ElementRef;
 
   @Output() onSearch = new EventEmitter<string>();
@@ -24,8 +24,7 @@ export class ResourceSearchComponent implements AfterViewInit {
     fromEvent(this.input.nativeElement, 'keyup')
       .pipe(debounceTime(200))
       .subscribe((e: any) => {
-        this.onSearch.emit(e.target.value)
-      })
+        this.onSearch.emit(e.target.value);
+      });
   }
-
 }

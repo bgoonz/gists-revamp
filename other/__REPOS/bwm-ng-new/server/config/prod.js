@@ -3,5 +3,5 @@ module.exports = {
   JWT_SECRET: process.env.JWT_SECRET,
   CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
   CLOUDINARY_KEY: process.env.CLOUDINARY_KEY,
-  CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET
-}
+  CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET,
+};

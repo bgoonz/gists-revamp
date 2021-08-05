@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var SilentError = require('silent-error');
-var Blueprint   = require('../models/blueprint');
+var SilentError = require("silent-error");
+var Blueprint = require("../models/blueprint");
 
 /*
  * Helper for commands that use a blueprint to merge the blueprint's options
@@ -14,7 +14,7 @@ var Blueprint   = require('../models/blueprint');
  *   beforeRun: mergeBlueprintOptions
  * })
  */
-module.exports = function(rawArgs) {
+module.exports = function (rawArgs) {
   if (rawArgs.length === 0) {
     return;
   }
@@ -22,10 +22,10 @@ module.exports = function(rawArgs) {
   var blueprint;
   try {
     blueprint = Blueprint.lookup(rawArgs[0], {
-      paths: this.project.blueprintLookupPaths()
+      paths: this.project.blueprintLookupPaths(),
     });
     this.registerOptions(blueprint);
   } catch (e) {
-    SilentError.debugOrThrow('ember-cli/commands/' + this.name, e);
+    SilentError.debugOrThrow("ember-cli/commands/" + this.name, e);
   }
 };

@@ -1,13 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { RentalDetailInfo } from './RentalDetailInfo';
-import RentalMap from './RentalMap';
-import Booking from 'components/booking/Booking';
+import React from "react";
+import { connect } from "react-redux";
+import { RentalDetailInfo } from "./RentalDetailInfo";
+import RentalMap from "./RentalMap";
+import Booking from "components/booking/Booking";
 
-import * as actions from 'actions';
+import * as actions from "actions";
 
 class RentalDetail extends React.Component {
-
   componentWillMount() {
     // Dispatch action
     const rentalId = this.props.match.params.id;
@@ -19,34 +18,32 @@ class RentalDetail extends React.Component {
 
     if (rental._id) {
       return (
-        <section id='rentalDetails'>
-          <div className='upper-section'>
-            <div className='row'>
-              <div className='col-md-6'>
-                <img src={rental.image} alt=''></img>
+        <section id="rentalDetails">
+          <div className="upper-section">
+            <div className="row">
+              <div className="col-md-6">
+                <img src={rental.image} alt=""></img>
               </div>
-              <div className='col-md-6'>
+              <div className="col-md-6">
                 <RentalMap location={`${rental.city}, ${rental.street}`} />
               </div>
             </div>
           </div>
 
-          <div className='details-section'>
-            <div className='row'>
-              <div className='col-md-8'>
+          <div className="details-section">
+            <div className="row">
+              <div className="col-md-8">
                 <RentalDetailInfo rental={rental} />
               </div>
-              <div className='col-md-4'>
-               <Booking rental={rental} />
+              <div className="col-md-4">
+                <Booking rental={rental} />
               </div>
             </div>
           </div>
         </section>
-      )
+      );
     } else {
-      return (
-        <h1> Loading... </h1>
-        )
+      return <h1> Loading... </h1>;
     }
   }
 }
@@ -54,8 +51,8 @@ class RentalDetail extends React.Component {
 function mapStateToProps(state) {
   return {
     rental: state.rental.data,
-    errors: state.rental.errors
-  }
+    errors: state.rental.errors,
+  };
 }
 
-export default connect(mapStateToProps)(RentalDetail)
+export default connect(mapStateToProps)(RentalDetail);

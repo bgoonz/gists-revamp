@@ -30,7 +30,9 @@
     border-color: $main-color;
     color: $main-color;
 
-    &:hover, &:focus, &:active {
+    &:hover,
+    &:focus,
+    &:active {
       background-color: transparent;
       border-color: $main-color !important;
       color: $main-color !important;
@@ -38,7 +40,7 @@
     }
   }
 
-   // DROPDOWN
+  // DROPDOWN
   .dropdown-item {
     font-size: 14px;
 
@@ -47,7 +49,7 @@
     }
 
     &:focus {
-     background-color: $main-color;
+      background-color: $main-color;
     }
   }
 }

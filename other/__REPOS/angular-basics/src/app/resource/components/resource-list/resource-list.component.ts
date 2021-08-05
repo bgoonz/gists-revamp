@@ -5,9 +5,9 @@ import { SettingsService } from '../../shared/settings.service';
 @Component({
   selector: 'app-resource-list',
   templateUrl: './resource-list.component.html',
-  styleUrls: ['./resource-list.component.scss']
+  styleUrls: ['./resource-list.component.scss'],
 })
-export class ResourceListComponent  {
+export class ResourceListComponent {
   @Input() resources: Resource[];
   @Input() activeId: string;
   @Output() onResourceClick = new EventEmitter<Resource>();

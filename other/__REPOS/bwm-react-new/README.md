@@ -6,9 +6,9 @@ Create `dev.js` file in `server/config/dev.js` with content of:
 
 ```javascript
 module.exports = {
-  DB_URI: 'your_mongo_db_connection_string', // Get it here -> https://www.mongodb.com/
-  JWT_SECRET: 'some_unique_value' // e.g: 'dasid7asd7xc68zxc!'
-}
+  DB_URI: "your_mongo_db_connection_string", // Get it here -> https://www.mongodb.com/
+  JWT_SECRET: "some_unique_value", // e.g: 'dasid7asd7xc68zxc!'
+};
 ```
 
 In base folder of project run `npm install` and then `npm run start-dev`

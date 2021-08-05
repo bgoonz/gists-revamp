@@ -8,5 +8,5 @@ export {
   getContentOfKeyLiteral,
   getDecoratorMetadata,
   addDeclarationToModule,
-  addProviderToModule
-} from '@angular-cli/ast-tools';
+  addProviderToModule,
+} from "@angular-cli/ast-tools";

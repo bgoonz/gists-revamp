@@ -1,4 +1,3 @@
-
 export class CImage {
   _id: string;
   url: string;
@@ -6,8 +5,7 @@ export class CImage {
 }
 
 export class Rental {
-
-  static readonly CATEGORIES = ['apartment', 'house', 'condo'];
+  static readonly CATEGORIES = ["apartment", "house", "condo"];
 
   _id: string; // unique identifier as it will be stored in DB
   title: string; // Some nice place in LA

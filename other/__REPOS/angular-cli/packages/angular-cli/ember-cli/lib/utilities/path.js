@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   /**
@@ -10,10 +10,14 @@ module.exports = {
   */
   getRelativeParentPath: function getRelativeParentPath(path, offset, slash) {
     var offsetValue = offset || 0;
-    var trailingSlash = typeof slash === 'undefined' ? true : slash;
-    var outputPath = new Array(path.split('/').length + 1 - offsetValue).join('../');
+    var trailingSlash = typeof slash === "undefined" ? true : slash;
+    var outputPath = new Array(path.split("/").length + 1 - offsetValue).join(
+      "../"
+    );
 
-    return trailingSlash ? outputPath : outputPath.substr(0, outputPath.length - 1);
+    return trailingSlash
+      ? outputPath
+      : outputPath.substr(0, outputPath.length - 1);
   },
 
   /**
@@ -25,7 +29,9 @@ module.exports = {
   */
   getRelativePath: function getRelativePath(path, offset) {
     var offsetValue = offset || 0;
-    var relativePath = new Array(path.split('/').length - offsetValue).join('../');
-    return relativePath || './';
-  }
+    var relativePath = new Array(path.split("/").length - offsetValue).join(
+      "../"
+    );
+    return relativePath || "./";
+  },
 };

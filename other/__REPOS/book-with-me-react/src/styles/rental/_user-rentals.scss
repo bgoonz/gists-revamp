@@ -22,7 +22,8 @@
     background-color: transparent;
     color: $main-color;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: $main-color !important;
       background-color: transparent !important;
       color: $main-color !important;
@@ -36,9 +37,9 @@
 
 .rental-booking-modal {
   .btn-bwm {
-  font-size: 14px;
-  color: white;
-  padding: 10px 15px;
+    font-size: 14px;
+    color: white;
+    padding: 10px 15px;
   }
 
   .bookings-inner-container {

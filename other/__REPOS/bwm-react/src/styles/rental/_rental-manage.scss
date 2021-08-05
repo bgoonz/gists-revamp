@@ -1,5 +1,4 @@
 #userRentals {
-
   .toBeDeleted {
     border-color: red;
   }
@@ -31,7 +30,8 @@
     background-color: transparent;
     color: $main-color;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: $main-color !important;
       background-color: transparent !important;
       color: $main-color !important;
@@ -42,7 +42,8 @@
     margin-top: 5px;
   }
 
-  .btn-danger, .btn-success {
+  .btn-danger,
+  .btn-success {
     margin-left: 10px;
     font-size: 14px;
   }
@@ -60,9 +61,9 @@
 
 .rental-booking-modal {
   .btn-bwm {
-  font-size: 14px;
-  color: white;
-  padding: 10px 15px;
+    font-size: 14px;
+    color: white;
+    padding: 10px 15px;
   }
 
   .bookings-inner-container {

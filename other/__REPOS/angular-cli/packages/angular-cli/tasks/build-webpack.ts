@@ -1,24 +1,25 @@
-import * as rimraf from 'rimraf';
-import * as path from 'path';
-const Task = require('../ember-cli/lib/models/task');
-import * as webpack from 'webpack';
-import { BuildOptions } from '../commands/build';
-import { NgCliWebpackConfig } from '../models/webpack-config';
-import { getWebpackStatsConfig } from '../models/';
-import { CliConfig } from '../models/config';
-
+import * as rimraf from "rimraf";
+import * as path from "path";
+const Task = require("../ember-cli/lib/models/task");
+import * as webpack from "webpack";
+import { BuildOptions } from "../commands/build";
+import { NgCliWebpackConfig } from "../models/webpack-config";
+import { getWebpackStatsConfig } from "../models/";
+import { CliConfig } from "../models/config";
 
 // Configure build and output;
 let lastHash: any = null;
 
 export default <any>Task.extend({
   run: function (runTaskOptions: BuildOptions) {
-
     const project = this.cliProject;
 
-    const outputDir = runTaskOptions.outputPath || CliConfig.fromProject().config.apps[0].outDir;
-    const deployUrl = runTaskOptions.deployUrl ||
-                       CliConfig.fromProject().config.apps[0].deployUrl;
+    const outputDir =
+      runTaskOptions.outputPath ||
+      CliConfig.fromProject().config.apps[0].outDir;
+    const deployUrl =
+      runTaskOptions.deployUrl ||
+      CliConfig.fromProject().config.apps[0].deployUrl;
     rimraf.sync(path.resolve(project.root, outputDir));
     const config = new NgCliWebpackConfig(
       project,
@@ -53,7 +54,7 @@ export default <any>Task.extend({
 
         if (stats.hash !== lastHash) {
           lastHash = stats.hash;
-          process.stdout.write(stats.toString(statsConfig) + '\n');
+          process.stdout.write(stats.toString(statsConfig) + "\n");
         }
 
         if (stats.hasErrors()) {
@@ -62,12 +63,13 @@ export default <any>Task.extend({
           resolve();
         }
       });
-    })
-    .catch((err: Error) => {
+    }).catch((err: Error) => {
       if (err) {
-        this.ui.writeError('\nAn error occured during the build:\n' + ((err && err.stack) || err));
+        this.ui.writeError(
+          "\nAn error occured during the build:\n" + ((err && err.stack) || err)
+        );
       }
       throw err;
     });
-  }
+  },
 });

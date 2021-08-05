@@ -1,7 +1,6 @@
+import { Row, Col, Media, Image } from "react-bootstrap";
 
-import { Row, Col, Media, Image } from 'react-bootstrap';
-
-const AuthorIntro = () =>
+const AuthorIntro = () => (
   <Row>
     <Col md="8">
       {/* AUTHOR INTRO STARTS */}
@@ -17,13 +16,14 @@ const AuthorIntro = () =>
         <Media.Body>
           <h5 className="font-weight-bold mb-0">Hello Friends,</h5>
           <p className="welcome-text">
-          My name is Filip Jerga and I am an experienced software engineer and freelance developer.
-          and this is my blog page.
+            My name is Filip Jerga and I am an experienced software engineer and
+            freelance developer. and this is my blog page.
           </p>
         </Media.Body>
       </Media>
       {/* AUTHOR INTRO ENDS */}
     </Col>
   </Row>
+);
 
 export default AuthorIntro;

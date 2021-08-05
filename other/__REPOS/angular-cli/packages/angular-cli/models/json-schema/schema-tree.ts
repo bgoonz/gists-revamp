@@ -1,17 +1,14 @@
-import {NgToolkitError} from '../error';
+import { NgToolkitError } from "../error";
 
-import {Serializer} from './serializer';
-
+import { Serializer } from "./serializer";
 
 export class InvalidSchema extends NgToolkitError {}
 export class MissingImplementationError extends NgToolkitError {}
 export class SettingReadOnlyPropertyError extends NgToolkitError {}
 
-
 export interface Schema {
   [key: string]: any;
 }
-
 
 /** This interface is defined to simplify the arguments passed in to the SchemaTreeNode. */
 export type TreeNodeConstructorArgument<T> = {
@@ -21,7 +18,6 @@ export type TreeNodeConstructorArgument<T> = {
   forward: SchemaTreeNode<any>;
   schema: Schema;
 };
-
 
 /**
  * Holds all the information, including the value, of a node in the schema tree.
@@ -55,8 +51,12 @@ export abstract class SchemaTreeNode<T> {
     this._forward = null;
   }
 
-  get defined() { return this._defined; }
-  get dirty() { return this._dirty; }
+  get defined() {
+    return this._defined;
+  }
+  get dirty() {
+    return this._dirty;
+  }
   set dirty(v: boolean) {
     if (v) {
       this._defined = true;
@@ -69,10 +69,18 @@ export abstract class SchemaTreeNode<T> {
 
   abstract get type(): string;
   abstract destroy(): void;
-  get name() { return this._name; }
-  get readOnly(): boolean { return this._schema['readOnly']; }
-  get parent(): SchemaTreeNode<any> { return this._parent; }
-  get children(): { [key: string]: SchemaTreeNode<any>} { return null; }
+  get name() {
+    return this._name;
+  }
+  get readOnly(): boolean {
+    return this._schema["readOnly"];
+  }
+  get parent(): SchemaTreeNode<any> {
+    return this._parent;
+  }
+  get children(): { [key: string]: SchemaTreeNode<any> } {
+    return null;
+  }
 
   abstract get(): T;
   set(v: T) {
@@ -80,26 +88,28 @@ export abstract class SchemaTreeNode<T> {
       throw new MissingImplementationError();
     }
     throw new SettingReadOnlyPropertyError();
-  };
+  }
 
   abstract serialize(serializer: Serializer, value?: T): void;
 
-  protected static _defineProperty<T>(proto: any, treeNode: SchemaTreeNode<T>): void {
+  protected static _defineProperty<T>(
+    proto: any,
+    treeNode: SchemaTreeNode<T>
+  ): void {
     if (treeNode.readOnly) {
       Object.defineProperty(proto, treeNode.name, {
         enumerable: true,
-        get: () => treeNode.get()
+        get: () => treeNode.get(),
       });
     } else {
       Object.defineProperty(proto, treeNode.name, {
         enumerable: true,
         get: () => treeNode.get(),
-        set: (v: T) => treeNode.set(v)
+        set: (v: T) => treeNode.set(v),
       });
     }
   }
 }
-
 
 /** Base Class used for Non-Leaves TreeNode. Meaning they can have children. */
 export abstract class NonLeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
@@ -111,7 +121,9 @@ export abstract class NonLeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
   }
 
   // Non leaves are read-only.
-  get readOnly() { return true; }
+  get readOnly() {
+    return true;
+  }
   get() {
     if (this.defined) {
       return this._value;
@@ -126,18 +138,24 @@ export abstract class NonLeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
   }
 
   // Helper function to create a child based on its schema.
-  protected _createChildProperty<T>(name: string, value: T, forward: SchemaTreeNode<T>,
-                                    schema: Schema, define = true): SchemaTreeNode<T> {
-
+  protected _createChildProperty<T>(
+    name: string,
+    value: T,
+    forward: SchemaTreeNode<T>,
+    schema: Schema,
+    define = true
+  ): SchemaTreeNode<T> {
     let type: string;
 
-    if (!schema['oneOf']) {
-      type = schema['type'];
+    if (!schema["oneOf"]) {
+      type = schema["type"];
     } else {
-      for (let testSchema of schema['oneOf']) {
-        if ((testSchema['type'] === 'array' && Array.isArray(value))
-            || typeof value === testSchema['type']) {
-          type = testSchema['type'];
+      for (let testSchema of schema["oneOf"]) {
+        if (
+          (testSchema["type"] === "array" && Array.isArray(value)) ||
+          typeof value === testSchema["type"]
+        ) {
+          type = testSchema["type"];
           schema = testSchema;
           break;
         }
@@ -147,15 +165,29 @@ export abstract class NonLeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
     let Klass: any = null;
 
     switch (type) {
-      case 'object': Klass = ObjectSchemaTreeNode; break;
-      case 'array': Klass = ArraySchemaTreeNode; break;
-      case 'string': Klass = StringSchemaTreeNode; break;
-      case 'boolean': Klass = BooleanSchemaTreeNode; break;
-      case 'number': Klass = NumberSchemaTreeNode; break;
-      case 'integer': Klass = IntegerSchemaTreeNode; break;
+      case "object":
+        Klass = ObjectSchemaTreeNode;
+        break;
+      case "array":
+        Klass = ArraySchemaTreeNode;
+        break;
+      case "string":
+        Klass = StringSchemaTreeNode;
+        break;
+      case "boolean":
+        Klass = BooleanSchemaTreeNode;
+        break;
+      case "number":
+        Klass = NumberSchemaTreeNode;
+        break;
+      case "integer":
+        Klass = IntegerSchemaTreeNode;
+        break;
 
       default:
-        console.error('Type ' + type + ' not understood by SchemaClassFactory.');
+        console.error(
+          "Type " + type + " not understood by SchemaClassFactory."
+        );
         return null;
     }
 
@@ -167,9 +199,10 @@ export abstract class NonLeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
   }
 }
 
-
 /** A Schema Tree Node that represents an object. */
-export class ObjectSchemaTreeNode extends NonLeafSchemaTreeNode<{[key: string]: any}> {
+export class ObjectSchemaTreeNode extends NonLeafSchemaTreeNode<{
+  [key: string]: any;
+}> {
   // The map of all children metadata.
   protected _children: { [key: string]: SchemaTreeNode<any> };
 
@@ -183,20 +216,21 @@ export class ObjectSchemaTreeNode extends NonLeafSchemaTreeNode<{[key: string]: 
     this._children = Object.create(null);
     this._value = Object.create(null);
 
-    if (schema['properties']) {
-      for (const name of Object.keys(schema['properties'])) {
-        const propertySchema = schema['properties'][name];
+    if (schema["properties"]) {
+      for (const name of Object.keys(schema["properties"])) {
+        const propertySchema = schema["properties"][name];
         this._children[name] = this._createChildProperty(
           name,
           value ? value[name] : null,
           forward ? (forward as ObjectSchemaTreeNode).children[name] : null,
-          propertySchema);
+          propertySchema
+        );
       }
-    } else if (!schema['additionalProperties']) {
+    } else if (!schema["additionalProperties"]) {
       throw new InvalidSchema();
     }
 
-    if (!schema['additionalProperties']) {
+    if (!schema["additionalProperties"]) {
       Object.freeze(this._value);
     } else if (value) {
       // Set other properties which don't have a schema.
@@ -215,9 +249,11 @@ export class ObjectSchemaTreeNode extends NonLeafSchemaTreeNode<{[key: string]: 
       for (const key of Object.keys(value)) {
         if (this._children[key]) {
           if (this._children[key].defined) {
-            serializer.property(key, () => this._children[key].serialize(serializer, value[key]));
+            serializer.property(key, () =>
+              this._children[key].serialize(serializer, value[key])
+            );
           }
-        } else if (this._schema['additionalProperties']) {
+        } else if (this._schema["additionalProperties"]) {
           // Fallback to direct value output for additional properties
           serializer.property(key, () => serializer.outputValue(value[key]));
         }
@@ -225,10 +261,13 @@ export class ObjectSchemaTreeNode extends NonLeafSchemaTreeNode<{[key: string]: 
     });
   }
 
-  get children() { return this._children; }
-  get type() { return 'object'; }
+  get children() {
+    return this._children;
+  }
+  get type() {
+    return "object";
+  }
 }
-
 
 /** A Schema Tree Node that represents an array. */
 export class ArraySchemaTreeNode extends NonLeafSchemaTreeNode<Array<any>> {
@@ -249,20 +288,24 @@ export class ArraySchemaTreeNode extends NonLeafSchemaTreeNode<Array<any>> {
 
     for (let index = 0; index < value.length; index++) {
       this._items[index] = this._createChildProperty(
-        '' + index,
+        "" + index,
         value && value[index],
         forward && (forward as ArraySchemaTreeNode).children[index],
-        schema['items']
+        schema["items"]
       );
     }
 
-    if (!schema['additionalProperties']) {
+    if (!schema["additionalProperties"]) {
       Object.freeze(this._value);
     }
   }
 
-  get children() { return this._items as {[key: string]: any}; }
-  get type() { return 'array'; }
+  get children() {
+    return this._items as { [key: string]: any };
+  }
+  get type() {
+    return "array";
+  }
 
   serialize(serializer: Serializer, value = this._value) {
     serializer.array(() => {
@@ -272,7 +315,6 @@ export class ArraySchemaTreeNode extends NonLeafSchemaTreeNode<Array<any>> {
     });
   }
 }
-
 
 /**
  * The root class of the tree node. Receives a prototype that will be filled with the
@@ -290,7 +332,6 @@ export class RootSchemaTreeNode extends ObjectSchemaTreeNode {
   }
 }
 
-
 /** A leaf in the schema tree. Must contain a single primitive value. */
 export abstract class LeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
   private _default: T;
@@ -298,8 +339,8 @@ export abstract class LeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
   constructor(metaData: TreeNodeConstructorArgument<T>) {
     super(metaData);
     this._defined = !(metaData.value === undefined || metaData.value === null);
-    if ('default' in metaData.schema) {
-      this._default = metaData.schema['default'];
+    if ("default" in metaData.schema) {
+      this._default = metaData.schema["default"];
     }
   }
 
@@ -312,7 +353,10 @@ export abstract class LeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
     }
     return this._value === undefined ? undefined : this.convert(this._value);
   }
-  set(v: T) { this.dirty = true; this._value = this.convert(v); }
+  set(v: T) {
+    this.dirty = true;
+    this._value = this.convert(v);
+  }
 
   destroy() {
     this._defined = false;
@@ -328,7 +372,6 @@ export abstract class LeafSchemaTreeNode<T> extends SchemaTreeNode<T> {
   }
 }
 
-
 /** Basic primitives for JSON Schema. */
 class StringSchemaTreeNode extends LeafSchemaTreeNode<string> {
   serialize(serializer: Serializer, value: string = this.get()) {
@@ -337,10 +380,13 @@ class StringSchemaTreeNode extends LeafSchemaTreeNode<string> {
     }
   }
 
-  convert(v: any) { return v === undefined ? undefined : '' + v; }
-  get type() { return 'string'; }
+  convert(v: any) {
+    return v === undefined ? undefined : "" + v;
+  }
+  get type() {
+    return "string";
+  }
 }
-
 
 class BooleanSchemaTreeNode extends LeafSchemaTreeNode<boolean> {
   serialize(serializer: Serializer, value: boolean = this.get()) {
@@ -349,10 +395,13 @@ class BooleanSchemaTreeNode extends LeafSchemaTreeNode<boolean> {
     }
   }
 
-  convert(v: any) { return v === undefined ? undefined : !!v; }
-  get type() { return 'boolean'; }
+  convert(v: any) {
+    return v === undefined ? undefined : !!v;
+  }
+  get type() {
+    return "boolean";
+  }
 }
-
 
 class NumberSchemaTreeNode extends LeafSchemaTreeNode<number> {
   serialize(serializer: Serializer, value: number = this.get()) {
@@ -361,11 +410,16 @@ class NumberSchemaTreeNode extends LeafSchemaTreeNode<number> {
     }
   }
 
-  convert(v: any) { return v === undefined ? undefined : +v; }
-  get type() { return 'number'; }
+  convert(v: any) {
+    return v === undefined ? undefined : +v;
+  }
+  get type() {
+    return "number";
+  }
 }
 
-
 class IntegerSchemaTreeNode extends NumberSchemaTreeNode {
-  convert(v: any) { return v === undefined ? undefined : Math.floor(+v); }
+  convert(v: any) {
+    return v === undefined ? undefined : Math.floor(+v);
+  }
 }

@@ -1,40 +1,41 @@
-'use strict';
+"use strict";
 
 /**
 @module ember-cli
 */
-var FileInfo            = require('./file-info');
-var Promise             = require('../ext/promise');
-var chalk               = require('chalk');
-var MarkdownColor       = require('../utilities/markdown-color');
-var printableProperties = require('../utilities/printable-properties').blueprint;
-var sequence            = require('../utilities/sequence');
-var printCommand        = require('../utilities/print-command');
-var fs                  = require('fs-extra');
-var existsSync          = require('exists-sync');
-var inflector           = require('inflection');
-var minimatch           = require('minimatch');
-var path                = require('path');
-var stat                = Promise.denodeify(fs.stat);
-var stringUtils         = require('ember-cli-string-utils');
-var compact             = require('lodash/compact');
-var intersect           = require('lodash/intersection');
-var uniq                = require('lodash/uniq');
-var zipObject           = require('lodash/zipObject');
-var includes            = require('lodash/includes');
-var any                 = require('lodash/some');
-var cloneDeep           = require('lodash/cloneDeep');
-var keys                = require('lodash/keys');
-var merge               = require('lodash/merge');
-var values              = require('lodash/values');
-var walkSync            = require('walk-sync');
-var writeFile           = Promise.denodeify(fs.outputFile);
-var removeFile          = Promise.denodeify(fs.remove);
-var SilentError         = require('silent-error');
-var CoreObject          = require('../ext/core-object');
-var EOL                 = require('os').EOL;
-var debug               = require('debug')('ember-cli:blueprint');
-var normalizeEntityName = require('ember-cli-normalize-entity-name');
+var FileInfo = require("./file-info");
+var Promise = require("../ext/promise");
+var chalk = require("chalk");
+var MarkdownColor = require("../utilities/markdown-color");
+var printableProperties =
+  require("../utilities/printable-properties").blueprint;
+var sequence = require("../utilities/sequence");
+var printCommand = require("../utilities/print-command");
+var fs = require("fs-extra");
+var existsSync = require("exists-sync");
+var inflector = require("inflection");
+var minimatch = require("minimatch");
+var path = require("path");
+var stat = Promise.denodeify(fs.stat);
+var stringUtils = require("ember-cli-string-utils");
+var compact = require("lodash/compact");
+var intersect = require("lodash/intersection");
+var uniq = require("lodash/uniq");
+var zipObject = require("lodash/zipObject");
+var includes = require("lodash/includes");
+var any = require("lodash/some");
+var cloneDeep = require("lodash/cloneDeep");
+var keys = require("lodash/keys");
+var merge = require("lodash/merge");
+var values = require("lodash/values");
+var walkSync = require("walk-sync");
+var writeFile = Promise.denodeify(fs.outputFile);
+var removeFile = Promise.denodeify(fs.remove);
+var SilentError = require("silent-error");
+var CoreObject = require("../ext/core-object");
+var EOL = require("os").EOL;
+var debug = require("debug")("ember-cli:blueprint");
+var normalizeEntityName = require("ember-cli-normalize-entity-name");
 
 module.exports = Blueprint;
 
@@ -288,7 +289,7 @@ Blueprint.__proto__ = CoreObject;
 Blueprint.prototype.constructor = Blueprint;
 
 Blueprint.prototype.availableOptions = [];
-Blueprint.prototype.anonymousOptions = ['name'];
+Blueprint.prototype.anonymousOptions = ["name"];
 
 /**
   Hook to specify the path to the blueprint's files. By default this is
@@ -299,8 +300,8 @@ Blueprint.prototype.anonymousOptions = ['name'];
   @return {String} Path to the blueprints files directory.
 */
 
-Blueprint.prototype.filesPath = function() {
-  return path.join(this.path, 'files');
+Blueprint.prototype.filesPath = function () {
+  return path.join(this.path, "files");
 };
 
 /**
@@ -310,8 +311,10 @@ Blueprint.prototype.filesPath = function() {
   @method files
   @return {Array} Contents of the blueprint's files directory
 */
-Blueprint.prototype.files = function() {
-  if (this._files) { return this._files; }
+Blueprint.prototype.files = function () {
+  if (this._files) {
+    return this._files;
+  }
 
   var filesPath = this.filesPath(this.options);
   if (existsSync(filesPath)) {
@@ -328,7 +331,7 @@ Blueprint.prototype.files = function() {
   @param {String} file
   @return {String} Resolved path to the file
 */
-Blueprint.prototype.srcPath = function(file) {
+Blueprint.prototype.srcPath = function (file) {
   return path.resolve(this.filesPath(this.options), file);
 };
 
@@ -338,7 +341,7 @@ Blueprint.prototype.srcPath = function(file) {
   @param {String} entityName
   @return {null}
 */
-Blueprint.prototype.normalizeEntityName = function(entityName) {
+Blueprint.prototype.normalizeEntityName = function (entityName) {
   return normalizeEntityName(entityName);
 };
 
@@ -350,9 +353,9 @@ Blueprint.prototype.normalizeEntityName = function(entityName) {
   @param {String} keyword
   @param {String} message
 */
-Blueprint.prototype._writeStatusToUI = function(chalkColor, keyword, message) {
+Blueprint.prototype._writeStatusToUI = function (chalkColor, keyword, message) {
   if (this.ui) {
-    this.ui.writeLine('  ' + chalkColor(keyword) + ' ' + message);
+    this.ui.writeLine("  " + chalkColor(keyword) + " " + message);
   }
 };
 
@@ -362,7 +365,7 @@ Blueprint.prototype._writeStatusToUI = function(chalkColor, keyword, message) {
   @param {Object} info
   @return {Promise}
 */
-Blueprint.prototype._writeFile = function(info) {
+Blueprint.prototype._writeFile = function (info) {
   if (!this.dryRun) {
     return writeFile(info.outputPath, info.render());
   }
@@ -374,35 +377,35 @@ Blueprint.prototype._writeFile = function(info) {
 */
 
 Blueprint.prototype._actions = {
-  write: function(info) {
-    this._writeStatusToUI(chalk.green, 'create', info.displayPath);
+  write: function (info) {
+    this._writeStatusToUI(chalk.green, "create", info.displayPath);
     return this._writeFile(info);
   },
-  skip: function(info) {
-    var label = 'skip';
+  skip: function (info) {
+    var label = "skip";
 
-    if (info.resolution === 'identical') {
-      label = 'identical';
+    if (info.resolution === "identical") {
+      label = "identical";
     }
 
     this._writeStatusToUI(chalk.yellow, label, info.displayPath);
   },
 
-  overwrite: function(info) {
-    this._writeStatusToUI(chalk.yellow, 'overwrite', info.displayPath);
+  overwrite: function (info) {
+    this._writeStatusToUI(chalk.yellow, "overwrite", info.displayPath);
     return this._writeFile(info);
   },
 
-  edit: function(info) {
-    this._writeStatusToUI(chalk.green, 'edited', info.displayPath);
+  edit: function (info) {
+    this._writeStatusToUI(chalk.green, "edited", info.displayPath);
   },
 
-  remove: function(info) {
-    this._writeStatusToUI(chalk.red, 'remove', info.displayPath);
+  remove: function (info) {
+    this._writeStatusToUI(chalk.red, "remove", info.displayPath);
     if (!this.dryRun) {
       return removeFile(info.outputPath);
     }
-  }
+  },
 };
 
 /**
@@ -413,13 +416,15 @@ Blueprint.prototype._actions = {
   @return {Promise}
   @throws {Error} Action doesn't exist.
 */
-Blueprint.prototype._commit = function(result) {
+Blueprint.prototype._commit = function (result) {
   var action = this._actions[result.action];
 
   if (action) {
     return action.call(this, result);
   } else {
-    throw new Error('Tried to call action \"' + result.action + '\" but it does not exist');
+    throw new Error(
+      'Tried to call action "' + result.action + '" but it does not exist'
+    );
   }
 };
 
@@ -428,11 +433,15 @@ Blueprint.prototype._commit = function(result) {
   @private
   @method _checkForPod
 */
-Blueprint.prototype._checkForPod = function(verbose) {
+Blueprint.prototype._checkForPod = function (verbose) {
   if (!this.hasPathToken && this.pod && verbose) {
-    this.ui.writeLine(chalk.yellow('You specified the pod flag, but this' +
-      ' blueprint does not support pod structure. It will be generated with' +
-      ' the default structure.'));
+    this.ui.writeLine(
+      chalk.yellow(
+        "You specified the pod flag, but this" +
+          " blueprint does not support pod structure. It will be generated with" +
+          " the default structure."
+      )
+    );
   }
 };
 
@@ -441,7 +450,7 @@ Blueprint.prototype._checkForPod = function(verbose) {
   @method _normalizeEntityName
   @param {Object} entity
 */
-Blueprint.prototype._normalizeEntityName = function(entity) {
+Blueprint.prototype._normalizeEntityName = function (entity) {
   if (entity) {
     entity.name = this.normalizeEntityName(entity.name);
   }
@@ -452,12 +461,16 @@ Blueprint.prototype._normalizeEntityName = function(entity) {
   @method _checkInRepoAddonExists
   @param {String} inRepoAddon
 */
-Blueprint.prototype._checkInRepoAddonExists = function(inRepoAddon) {
+Blueprint.prototype._checkInRepoAddonExists = function (inRepoAddon) {
   if (inRepoAddon) {
     if (!inRepoAddonExists(inRepoAddon, this.project.root)) {
-      throw new SilentError('You specified the in-repo-addon flag, but the' +
-        ' in-repo-addon \'' + inRepoAddon + '\' does not exist. Please' +
-        ' check the name and try again.');
+      throw new SilentError(
+        "You specified the in-repo-addon flag, but the" +
+          " in-repo-addon '" +
+          inRepoAddon +
+          "' does not exist. Please" +
+          " check the name and try again."
+      );
     }
   }
 };
@@ -470,14 +483,20 @@ Blueprint.prototype._checkInRepoAddonExists = function(inRepoAddon) {
   @param {Function} process
   @param {Function} afterHook
 */
-Blueprint.prototype._process = function(options, beforeHook, process, afterHook) {
+Blueprint.prototype._process = function (
+  options,
+  beforeHook,
+  process,
+  afterHook
+) {
   var self = this;
   var intoDir = options.target;
 
   return this._locals(options).then(function (locals) {
     return Promise.resolve()
       .then(beforeHook.bind(self, options, locals))
-      .then(process.bind(self, intoDir, locals)).map(self._commit.bind(self))
+      .then(process.bind(self, intoDir, locals))
+      .map(self._commit.bind(self))
       .then(afterHook.bind(self, options));
   });
 };
@@ -487,36 +506,46 @@ Blueprint.prototype._process = function(options, beforeHook, process, afterHook)
   @param {Object} options
   @return {Promise}
 */
-Blueprint.prototype.install = function(options) {
-  var ui       = this.ui     = options.ui;
-  var dryRun   = this.dryRun = options.dryRun;
+Blueprint.prototype.install = function (options) {
+  var ui = (this.ui = options.ui);
+  var dryRun = (this.dryRun = options.dryRun);
   this.project = options.project;
-  this.pod     = options.pod;
+  this.pod = options.pod;
   this.options = options;
   this.hasPathToken = hasPathToken(this.files());
 
   podDeprecations(this.project.config(), ui);
 
-  ui.writeLine('installing ' + this.name);
+  ui.writeLine("installing " + this.name);
 
   if (dryRun) {
-    ui.writeLine(chalk.yellow('You specified the dry-run flag, so no' +
-      ' changes will be written.'));
+    ui.writeLine(
+      chalk.yellow(
+        "You specified the dry-run flag, so no" + " changes will be written."
+      )
+    );
   }
 
   this._normalizeEntityName(options.entity);
   this._checkForPod(options.verbose);
   this._checkInRepoAddonExists(options.inRepoAddon);
 
-  debug('START: processing blueprint: `%s`', this.name);
+  debug("START: processing blueprint: `%s`", this.name);
   var start = new Date();
   return this._process(
     options,
     this.beforeInstall,
     this.processFiles,
-    this.afterInstall).finally(function() {
-      debug('END: processing blueprint: `%s` in (%dms)', this.name, new Date() - start);
-    }.bind(this));
+    this.afterInstall
+  ).finally(
+    function () {
+      debug(
+        "END: processing blueprint: `%s` in (%dms)",
+        this.name,
+        new Date() - start
+      );
+    }.bind(this)
+  );
 };
 
 /**
@@ -524,21 +553,24 @@ Blueprint.prototype.install = function(options) {
   @param {Object} options
   @return {Promise}
 */
-Blueprint.prototype.uninstall = function(options) {
-  var ui       = this.ui     = options.ui;
-  var dryRun   = this.dryRun = options.dryRun;
+Blueprint.prototype.uninstall = function (options) {
+  var ui = (this.ui = options.ui);
+  var dryRun = (this.dryRun = options.dryRun);
   this.project = options.project;
-  this.pod     = options.pod;
+  this.pod = options.pod;
   this.options = options;
   this.hasPathToken = hasPathToken(this.files());
 
   podDeprecations(this.project.config(), ui);
 
-  ui.writeLine('uninstalling ' + this.name);
+  ui.writeLine("uninstalling " + this.name);
 
   if (dryRun) {
-    ui.writeLine(chalk.yellow('You specified the dry-run flag, so no' +
-      ' files will be deleted.'));
+    ui.writeLine(
+      chalk.yellow(
+        "You specified the dry-run flag, so no" + " files will be deleted."
+      )
+    );
   }
 
   this._normalizeEntityName(options.entity);
@@ -548,7 +580,8 @@ Blueprint.prototype.uninstall = function(options) {
     options,
     this.beforeUninstall,
     this.processFilesForUninstall,
-    this.afterUninstall);
+    this.afterUninstall
+  );
 };
 
 /**
@@ -556,43 +589,42 @@ Blueprint.prototype.uninstall = function(options) {
   @method beforeInstall
   @return {Promise|null}
 */
-Blueprint.prototype.beforeInstall = function() {};
+Blueprint.prototype.beforeInstall = function () {};
 
 /**
   Hook for running operations after install.
   @method afterInstall
   @return {Promise|null}
 */
-Blueprint.prototype.afterInstall = function() {};
+Blueprint.prototype.afterInstall = function () {};
 
 /**
   Hook for running operations before uninstall.
   @method beforeUninstall
   @return {Promise|null}
 */
-Blueprint.prototype.beforeUninstall = function() {};
+Blueprint.prototype.beforeUninstall = function () {};
 
 /**
   Hook for running operations after uninstall.
   @method afterUninstall
   @return {Promise|null}
 */
-Blueprint.prototype.afterUninstall = function() {};
+Blueprint.prototype.afterUninstall = function () {};
 
 /**
   Hook for adding additional locals
   @method locals
   @return {Object|null}
 */
-Blueprint.prototype.locals = function() {};
+Blueprint.prototype.locals = function () {};
 
 /**
   Hook to add additional or override existing fileMapTokens.
   @method fileMapTokens
   @return {Object|null}
 */
-Blueprint.prototype.fileMapTokens = function() {
-};
+Blueprint.prototype.fileMapTokens = function () {};
 
 /**
   @private
@@ -600,43 +632,46 @@ Blueprint.prototype.fileMapTokens = function() {
   @param {Object} options
   @return {Object}
 */
-Blueprint.prototype._fileMapTokens = function(options) {
+Blueprint.prototype._fileMapTokens = function (options) {
   var standardTokens = {
-    __name__: function(options) {
+    __name__: function (options) {
       if (options.pod && options.hasPathToken) {
         return options.blueprintName;
       }
       return options.dasherizedModuleName;
     },
-    __path__: function(options) {
+    __path__: function (options) {
       var blueprintName = options.blueprintName;
 
       if (blueprintName.match(/-test/)) {
-        blueprintName = options.blueprintName.slice(0, options.blueprintName.indexOf('-test'));
+        blueprintName = options.blueprintName.slice(
+          0,
+          options.blueprintName.indexOf("-test")
+        );
       }
       if (options.pod && options.hasPathToken) {
         return path.join(options.podPath, options.dasherizedModuleName);
       }
       return inflector.pluralize(blueprintName);
     },
-    __root__: function(options) {
+    __root__: function (options) {
       if (options.inRepoAddon) {
-        return path.join('lib',options.inRepoAddon, 'addon');
+        return path.join("lib", options.inRepoAddon, "addon");
       }
       if (options.inDummy) {
-        return path.join('tests','dummy','app');
+        return path.join("tests", "dummy", "app");
       }
       if (options.inAddon) {
-        return 'addon';
+        return "addon";
       }
-      return 'app';
+      return "app";
     },
-    __test__: function(options) {
+    __test__: function (options) {
       if (options.pod && options.hasPathToken) {
         return options.blueprintName;
       }
-      return options.dasherizedModuleName + '-test';
-    }
+      return options.dasherizedModuleName + "-test";
+    },
   };
 
   var customTokens = this.fileMapTokens(options) || options.fileMapTokens || {};
@@ -650,12 +685,14 @@ Blueprint.prototype._fileMapTokens = function(options) {
   @param {Object} fileMapVariables
   @return {Object}
 */
-Blueprint.prototype.generateFileMap = function(fileMapVariables) {
-  var tokens        = this._fileMapTokens(fileMapVariables);
+Blueprint.prototype.generateFileMap = function (fileMapVariables) {
+  var tokens = this._fileMapTokens(fileMapVariables);
   var fileMapValues = values(tokens);
-  var tokenValues   = fileMapValues.map(function(token) { return token(fileMapVariables); });
-  var tokenKeys     = keys(tokens);
-  return zipObject(tokenKeys,tokenValues);
+  var tokenValues = fileMapValues.map(function (token) {
+    return token(fileMapVariables);
+  });
+  var tokenKeys = keys(tokens);
+  return zipObject(tokenKeys, tokenValues);
 };
 
 /**
@@ -665,16 +702,20 @@ Blueprint.prototype.generateFileMap = function(fileMapVariables) {
   @param {String} file
   @return {FileInfo}
 */
-Blueprint.prototype.buildFileInfo = function(destPath, templateVariables, file) {
+Blueprint.prototype.buildFileInfo = function (
+  destPath,
+  templateVariables,
+  file
+) {
   var mappedPath = this.mapFile(file, templateVariables);
 
   return new FileInfo({
-    action: 'write',
+    action: "write",
     outputPath: destPath(mappedPath),
     displayPath: path.normalize(mappedPath),
     inputPath: this.srcPath(file),
     templateVariables: templateVariables,
-    ui: this.ui
+    ui: this.ui,
   });
 };
 
@@ -682,7 +723,7 @@ Blueprint.prototype.buildFileInfo = function(destPath, templateVariables, file) 
   @method isUpdate
   @return {Boolean}
 */
-Blueprint.prototype.isUpdate = function() {
+Blueprint.prototype.isUpdate = function () {
   if (this.project && this.project.isEmberCLIProject) {
     return this.project.isEmberCLIProject();
   }
@@ -696,8 +737,18 @@ Blueprint.prototype.isUpdate = function() {
   @param {Object} templateVariables
   @return {Array} file infos
 */
-Blueprint.prototype._getFileInfos = function(files, intoDir, templateVariables) {
-  return files.map(this.buildFileInfo.bind(this, destPath.bind(null, intoDir), templateVariables));
+Blueprint.prototype._getFileInfos = function (
+  files,
+  intoDir,
+  templateVariables
+) {
+  return files.map(
+    this.buildFileInfo.bind(
+      this,
+      destPath.bind(null, intoDir),
+      templateVariables
+    )
+  );
 };
 
 /**
@@ -705,9 +756,11 @@ Blueprint.prototype._getFileInfos = function(files, intoDir, templateVariables) 
   @private
   @method _ignoreUpdateFiles
 */
-Blueprint.prototype._ignoreUpdateFiles = function() {
+Blueprint.prototype._ignoreUpdateFiles = function () {
   if (this.isUpdate()) {
-    Blueprint.ignoredFiles = Blueprint.ignoredFiles.concat(Blueprint.ignoredUpdateFiles);
+    Blueprint.ignoredFiles = Blueprint.ignoredFiles.concat(
+      Blueprint.ignoredUpdateFiles
+    );
   }
 };
 
@@ -717,11 +770,14 @@ Blueprint.prototype._ignoreUpdateFiles = function() {
   @param {Array} targetFiles
   @return {Array} files
 */
-Blueprint.prototype._getFilesForInstall = function(targetFiles) {
+Blueprint.prototype._getFilesForInstall = function (targetFiles) {
   var files = this.files();
 
   // if we've defined targetFiles, get file info on ones that match
-  return targetFiles && targetFiles.length > 0 && intersect(files, targetFiles) || files;
+  return (
+    (targetFiles && targetFiles.length > 0 && intersect(files, targetFiles)) ||
+    files
+  );
 };
 
 /**
@@ -730,10 +786,15 @@ Blueprint.prototype._getFilesForInstall = function(targetFiles) {
   @param {Array} fileInfos
   @param {String} rawArgs
 */
-Blueprint.prototype._checkForNoMatch = function(fileInfos, rawArgs) {
+Blueprint.prototype._checkForNoMatch = function (fileInfos, rawArgs) {
   if (fileInfos.filter(isFilePath).length < 1 && rawArgs) {
-    this.ui.writeLine(chalk.yellow('The globPattern \"' + rawArgs +
-      '\" did not match any files, so no file updates will be made.'));
+    this.ui.writeLine(
+      chalk.yellow(
+        'The globPattern "' +
+          rawArgs +
+          '" did not match any files, so no file updates will be made.'
+      )
+    );
   }
 };
 
@@ -755,16 +816,16 @@ function finishProcessingForUninstall(infos) {
   @param {String} intoDir
   @param {Object} templateVariables
 */
-Blueprint.prototype.processFiles = function(intoDir, templateVariables) {
+Blueprint.prototype.processFiles = function (intoDir, templateVariables) {
   var files = this._getFilesForInstall(templateVariables.targetFiles);
   var fileInfos = this._getFileInfos(files, intoDir, templateVariables);
   this._checkForNoMatch(fileInfos, templateVariables.rawArgs);
 
   this._ignoreUpdateFiles();
 
-  return Promise.filter(fileInfos, isValidFile).
-    map(prepareConfirm).
-    then(finishProcessingForInstall);
+  return Promise.filter(fileInfos, isValidFile)
+    .map(prepareConfirm)
+    .then(finishProcessingForInstall);
 };
 
 /**
@@ -772,27 +833,30 @@ Blueprint.prototype.processFiles = function(intoDir, templateVariables) {
   @param {String} intoDir
   @param {Object} templateVariables
 */
-Blueprint.prototype.processFilesForUninstall = function(intoDir, templateVariables) {
+Blueprint.prototype.processFilesForUninstall = function (
+  intoDir,
+  templateVariables
+) {
   var fileInfos = this._getFileInfos(this.files(), intoDir, templateVariables);
 
   this._ignoreUpdateFiles();
 
-  return Promise.filter(fileInfos, isValidFile).
-    then(finishProcessingForUninstall);
+  return Promise.filter(fileInfos, isValidFile).then(
+    finishProcessingForUninstall
+  );
 };
-
 
 /**
   @method mapFile
   @param {String} file
   @return {String}
 */
-Blueprint.prototype.mapFile = function(file, locals) {
+Blueprint.prototype.mapFile = function (file, locals) {
   var pattern, i;
   var fileMap = locals.fileMap || { __name__: locals.dasherizedModuleName };
   file = Blueprint.renamedFiles[file] || file;
   for (i in fileMap) {
-    pattern = new RegExp(i, 'g');
+    pattern = new RegExp(i, "g");
     file = file.replace(pattern, fileMap[i]);
   }
   return file;
@@ -806,8 +870,10 @@ Blueprint.prototype.mapFile = function(file, locals) {
   @method supportsAddon
   @return {Boolean}
 */
-Blueprint.prototype.supportsAddon = function() {
-  return this.files().join().match(/__root__/);
+Blueprint.prototype.supportsAddon = function () {
+  return this.files()
+    .join()
+    .match(/__root__/);
 };
 
 /**
@@ -816,10 +882,14 @@ Blueprint.prototype.supportsAddon = function() {
   @param {Object} options
   @return {Object}
 */
-Blueprint.prototype._generateFileMapVariables = function(moduleName, locals, options) {
+Blueprint.prototype._generateFileMapVariables = function (
+  moduleName,
+  locals,
+  options
+) {
   var originBlueprintName = options.originBlueprintName || this.name;
-  var podModulePrefix = this.project.config().podModulePrefix || '';
-  var podPath = podModulePrefix.substr(podModulePrefix.lastIndexOf('/') + 1);
+  var podModulePrefix = this.project.config().podModulePrefix || "";
+  var podPath = podModulePrefix.substr(podModulePrefix.lastIndexOf("/") + 1);
   var inAddon = this.project.isEmberCLIAddon() || !!options.inRepoAddon;
   var inDummy = this.project.isEmberCLIAddon() ? options.dummy : false;
 
@@ -833,7 +903,7 @@ Blueprint.prototype._generateFileMapVariables = function(moduleName, locals, opt
     blueprintName: this.name,
     originBlueprintName: originBlueprintName,
     dasherizedModuleName: stringUtils.dasherize(moduleName),
-    locals: locals
+    locals: locals,
   };
 };
 
@@ -843,31 +913,39 @@ Blueprint.prototype._generateFileMapVariables = function(moduleName, locals, opt
   @param {Object} options
   @return {Object}
 */
-Blueprint.prototype._locals = function(options) {
+Blueprint.prototype._locals = function (options) {
   var packageName = options.project.name();
-  var moduleName = options.entity && options.entity.name || packageName;
-  var sanitizedModuleName = moduleName.replace(/\//g, '-');
+  var moduleName = (options.entity && options.entity.name) || packageName;
+  var sanitizedModuleName = moduleName.replace(/\//g, "-");
 
-  return new Promise(function(resolve) {
-    resolve(this.locals(options));
-  }.bind(this)).then(function (customLocals) {
-    var fileMapVariables = this._generateFileMapVariables(moduleName, customLocals, options);
-    var fileMap = this.generateFileMap(fileMapVariables);
-    var standardLocals = {
-      dasherizedPackageName: stringUtils.dasherize(packageName),
-      classifiedPackageName: stringUtils.classify(packageName),
-      dasherizedModuleName: stringUtils.dasherize(moduleName),
-      classifiedModuleName: stringUtils.classify(sanitizedModuleName),
-      camelizedModuleName: stringUtils.camelize(sanitizedModuleName),
-      decamelizedModuleName: stringUtils.decamelize(sanitizedModuleName),
-      fileMap: fileMap,
-      hasPathToken: this.hasPathToken,
-      targetFiles: options.targetFiles,
-      rawArgs: options.rawArgs
-    };
+  return new Promise(
+    function (resolve) {
+      resolve(this.locals(options));
+    }.bind(this)
+  ).then(
+    function (customLocals) {
+      var fileMapVariables = this._generateFileMapVariables(
+        moduleName,
+        customLocals,
+        options
+      );
+      var fileMap = this.generateFileMap(fileMapVariables);
+      var standardLocals = {
+        dasherizedPackageName: stringUtils.dasherize(packageName),
+        classifiedPackageName: stringUtils.classify(packageName),
+        dasherizedModuleName: stringUtils.dasherize(moduleName),
+        classifiedModuleName: stringUtils.classify(sanitizedModuleName),
+        camelizedModuleName: stringUtils.camelize(sanitizedModuleName),
+        decamelizedModuleName: stringUtils.decamelize(sanitizedModuleName),
+        fileMap: fileMap,
+        hasPathToken: this.hasPathToken,
+        targetFiles: options.targetFiles,
+        rawArgs: options.rawArgs,
+      };
 
-    return merge({}, standardLocals, customLocals);
-  }.bind(this));
+      return merge({}, standardLocals, customLocals);
+    }.bind(this)
+  );
 };
 
 /**
@@ -882,8 +960,8 @@ Blueprint.prototype._locals = function(options) {
   @param {String} target
   @return {Promise}
 */
-Blueprint.prototype.addPackageToProject = function(packageName, target) {
-  var packageObject = {name: packageName};
+Blueprint.prototype.addPackageToProject = function (packageName, target) {
+  var packageObject = { name: packageName };
 
   if (target) {
     packageObject.target = target;
@@ -906,9 +984,10 @@ Blueprint.prototype.addPackageToProject = function(packageName, target) {
   @param {Array} packages
   @return {Promise}
 */
-Blueprint.prototype.addPackagesToProject = function(packages) {
-  var task = this.taskFor('npm-install');
-  var installText = (packages.length > 1) ? 'install packages' : 'install package';
+Blueprint.prototype.addPackagesToProject = function (packages) {
+  var task = this.taskFor("npm-install");
+  var installText =
+    packages.length > 1 ? "install packages" : "install package";
   var packageNames = [];
   var packageArray = [];
 
@@ -918,18 +997,18 @@ Blueprint.prototype.addPackagesToProject = function(packages) {
     var packageNameAndVersion = packages[i].name;
 
     if (packages[i].target) {
-      packageNameAndVersion += '@' + packages[i].target;
+      packageNameAndVersion += "@" + packages[i].target;
     }
 
     packageArray.push(packageNameAndVersion);
   }
 
-  this._writeStatusToUI(chalk.green, installText, packageNames.join(', '));
+  this._writeStatusToUI(chalk.green, installText, packageNames.join(", "));
 
   return task.run({
-    'save-dev': true,
+    "save-dev": true,
     verbose: false,
-    packages: packageArray
+    packages: packageArray,
   });
 };
 
@@ -944,8 +1023,8 @@ Blueprint.prototype.addPackagesToProject = function(packages) {
   @param {String} packageName
   @return {Promise}
 */
-Blueprint.prototype.removePackageFromProject = function(packageName) {
-  var packageObject = {name: packageName};
+Blueprint.prototype.removePackageFromProject = function (packageName) {
+  var packageObject = { name: packageName };
 
   return this.removePackagesFromProject([packageObject]);
 };
@@ -963,9 +1042,10 @@ Blueprint.prototype.removePackageFromProject = function(packageName) {
   @param {Array} packages
   @return {Promise}
 */
-Blueprint.prototype.removePackagesFromProject = function(packages) {
-  var task = this.taskFor('npm-uninstall');
-  var installText = (packages.length > 1) ? 'uninstall packages' : 'uninstall package';
+Blueprint.prototype.removePackagesFromProject = function (packages) {
+  var task = this.taskFor("npm-uninstall");
+  var installText =
+    packages.length > 1 ? "uninstall packages" : "uninstall package";
   var packageNames = [];
   var packageArray = [];
 
@@ -977,15 +1057,14 @@ Blueprint.prototype.removePackagesFromProject = function(packages) {
     packageArray.push(packageNameAndVersion);
   }
 
-  this._writeStatusToUI(chalk.green, installText, packageNames.join(', '));
+  this._writeStatusToUI(chalk.green, installText, packageNames.join(", "));
 
   return task.run({
-    'save-dev': true,
+    "save-dev": true,
     verbose: false,
-    packages: packageArray
+    packages: packageArray,
   });
 };
-
 
 /**
   Used to retrieve a task with the given name. Passes the new task
@@ -995,12 +1074,12 @@ Blueprint.prototype.removePackagesFromProject = function(packages) {
   @param dasherizedName
   @public
 */
-Blueprint.prototype.taskFor = function(dasherizedName) {
-  var Task = require('../tasks/' + dasherizedName);
+Blueprint.prototype.taskFor = function (dasherizedName) {
+  var Task = require("../tasks/" + dasherizedName);
 
   return new Task({
     ui: this.ui,
-    project: this.project
+    project: this.project,
   });
 };
 
@@ -1041,40 +1120,54 @@ Blueprint.prototype.taskFor = function(dasherizedName) {
   @param {Object} options
   @return {Promise}
 */
-Blueprint.prototype.insertIntoFile = function(pathRelativeToProjectRoot, contentsToInsert, providedOptions) {
-  var fullPath          = path.join(this.project.root, pathRelativeToProjectRoot);
-  var originalContents  = '';
+Blueprint.prototype.insertIntoFile = function (
+  pathRelativeToProjectRoot,
+  contentsToInsert,
+  providedOptions
+) {
+  var fullPath = path.join(this.project.root, pathRelativeToProjectRoot);
+  var originalContents = "";
 
   if (existsSync(fullPath)) {
-    originalContents = fs.readFileSync(fullPath, { encoding: 'utf8' });
+    originalContents = fs.readFileSync(fullPath, { encoding: "utf8" });
   }
 
-  var contentsToWrite   = originalContents;
+  var contentsToWrite = originalContents;
 
-  var options           = providedOptions || {};
-  var alreadyPresent    = originalContents.indexOf(contentsToInsert) > -1;
-  var insert            = !alreadyPresent;
-  var insertBehavior    = 'end';
+  var options = providedOptions || {};
+  var alreadyPresent = originalContents.indexOf(contentsToInsert) > -1;
+  var insert = !alreadyPresent;
+  var insertBehavior = "end";
 
-  if (options.before) { insertBehavior = 'before'; }
-  if (options.after)  { insertBehavior = 'after'; }
+  if (options.before) {
+    insertBehavior = "before";
+  }
+  if (options.after) {
+    insertBehavior = "after";
+  }
 
-  if (options.force) { insert = true; }
+  if (options.force) {
+    insert = true;
+  }
 
   if (insert) {
-    if (insertBehavior === 'end') {
+    if (insertBehavior === "end") {
       contentsToWrite += contentsToInsert;
     } else {
-      var contentMarker      = options[insertBehavior];
+      var contentMarker = options[insertBehavior];
       var contentMarkerIndex = contentsToWrite.indexOf(contentMarker);
 
       if (contentMarkerIndex !== -1) {
         var insertIndex = contentMarkerIndex;
-        if (insertBehavior === 'after') { insertIndex += contentMarker.length; }
+        if (insertBehavior === "after") {
+          insertIndex += contentMarker.length;
+        }
 
-        contentsToWrite = contentsToWrite.slice(0, insertIndex) +
-                          contentsToInsert + EOL +
-                          contentsToWrite.slice(insertIndex);
+        contentsToWrite =
+          contentsToWrite.slice(0, insertIndex) +
+          contentsToInsert +
+          EOL +
+          contentsToWrite.slice(insertIndex);
       }
     }
   }
@@ -1083,16 +1176,15 @@ Blueprint.prototype.insertIntoFile = function(pathRelativeToProjectRoot, content
     path: fullPath,
     originalContents: originalContents,
     contents: contentsToWrite,
-    inserted: false
+    inserted: false,
   };
 
   if (contentsToWrite !== originalContents) {
     returnValue.inserted = true;
 
-    return writeFile(fullPath, contentsToWrite)
-      .then(function() {
-        return returnValue;
-      });
+    return writeFile(fullPath, contentsToWrite).then(function () {
+      return returnValue;
+    });
   } else {
     return Promise.resolve(returnValue);
   }
@@ -1100,11 +1192,11 @@ Blueprint.prototype.insertIntoFile = function(pathRelativeToProjectRoot, content
 
 Blueprint.prototype._printCommand = printCommand;
 
-Blueprint.prototype.printBasicHelp = function(verbose) {
-  var initialMargin = '      ';
+Blueprint.prototype.printBasicHelp = function (verbose) {
+  var initialMargin = "      ";
   var output = initialMargin;
   if (this.overridden) {
-    output += chalk.grey('(overridden) ' + this.name);
+    output += chalk.grey("(overridden) " + this.name);
   } else {
     output += this.name;
 
@@ -1118,25 +1210,25 @@ Blueprint.prototype.printBasicHelp = function(verbose) {
   return output;
 };
 
-Blueprint.prototype.printDetailedHelp = function() {
+Blueprint.prototype.printDetailedHelp = function () {
   var markdownColor = new MarkdownColor();
   var filePath = getDetailedHelpPath(this.path);
 
   if (existsSync(filePath)) {
-    return markdownColor.renderFile(filePath, { indent: '        ' });
+    return markdownColor.renderFile(filePath, { indent: "        " });
   }
-  return '';
+  return "";
 };
 
-Blueprint.prototype.getJson = function(verbose) {
+Blueprint.prototype.getJson = function (verbose) {
   var json = {};
 
-  printableProperties.forEachWithProperty(function(key) {
+  printableProperties.forEachWithProperty(function (key) {
     var value = this[key];
-    if (key === 'availableOptions') {
+    if (key === "availableOptions") {
       value = cloneDeep(value);
-      value.forEach(function(option) {
-        if (typeof option.type === 'function') {
+      value.forEach(function (option) {
+        if (typeof option.type === "function") {
           option.type = option.type.name;
         }
       });
@@ -1161,11 +1253,11 @@ Blueprint.prototype.getJson = function(verbose) {
   @param dasherizedName
   @public
 */
-Blueprint.prototype.lookupBlueprint = function(dasherizedName) {
+Blueprint.prototype.lookupBlueprint = function (dasherizedName) {
   var projectPaths = this.project ? this.project.blueprintLookupPaths() : [];
 
   return Blueprint.lookup(dasherizedName, {
-    paths: projectPaths
+    paths: projectPaths,
   });
 };
 
@@ -1179,7 +1271,7 @@ Blueprint.prototype.lookupBlueprint = function(dasherizedName) {
   @param {Object} [options.properties] Properties
   @return {Blueprint}
 */
-Blueprint.lookup = function(name, options) {
+Blueprint.lookup = function (name, options) {
   options = options || {};
 
   var lookupPaths = generateLookupPaths(options.paths);
@@ -1196,7 +1288,7 @@ Blueprint.lookup = function(name, options) {
   }
 
   if (!options.ignoreMissing) {
-    throw new SilentError('Unknown blueprint: ' + name);
+    throw new SilentError("Unknown blueprint: " + name);
   }
 };
 
@@ -1208,17 +1300,16 @@ Blueprint.lookup = function(name, options) {
   @param {String} blueprintPath
   @return {Blueprint} blueprint instance
 */
-Blueprint.load = function(blueprintPath) {
-  var constructorPath = path.resolve(blueprintPath, 'index.js');
+Blueprint.load = function (blueprintPath) {
+  var constructorPath = path.resolve(blueprintPath, "index.js");
   var blueprintModule;
   var Constructor = Blueprint;
 
   if (fs.lstatSync(blueprintPath).isDirectory()) {
-
     if (existsSync(constructorPath)) {
       blueprintModule = require(constructorPath);
 
-      if (typeof blueprintModule === 'function') {
+      if (typeof blueprintModule === "function") {
         Constructor = blueprintModule;
       } else {
         Constructor = Blueprint.extend(blueprintModule);
@@ -1239,24 +1330,24 @@ Blueprint.load = function(blueprintPath) {
   @param {Array} [options.paths] Extra paths to search for blueprints
   @return {Blueprint}
 */
-Blueprint.list = function(options) {
+Blueprint.list = function (options) {
   options = options || {};
 
   var lookupPaths = generateLookupPaths(options.paths);
   var seen = [];
 
-  return lookupPaths.map(function(lookupPath) {
+  return lookupPaths.map(function (lookupPath) {
     var blueprints = dir(lookupPath);
-    var packagePath = path.join(lookupPath, '../package.json');
+    var packagePath = path.join(lookupPath, "../package.json");
     var source;
 
     if (existsSync(packagePath)) {
       source = require(packagePath).name;
     } else {
-      source = path.basename(path.join(lookupPath, '..'));
+      source = path.basename(path.join(lookupPath, ".."));
     }
 
-    blueprints = blueprints.map(function(blueprintPath) {
+    blueprints = blueprints.map(function (blueprintPath) {
       var blueprint = Blueprint.load(blueprintPath);
       var name;
 
@@ -1273,7 +1364,7 @@ Blueprint.list = function(options) {
 
     return {
       source: source,
-      blueprints: compact(blueprints)
+      blueprints: compact(blueprints),
     };
   });
 };
@@ -1283,34 +1374,27 @@ Blueprint.list = function(options) {
   @property renameFiles
 */
 Blueprint.renamedFiles = {
-  'gitignore': '.gitignore'
+  gitignore: ".gitignore",
 };
 
 /**
   @static
   @property ignoredFiles
 */
-Blueprint.ignoredFiles = [
-  '.DS_Store'
-];
+Blueprint.ignoredFiles = [".DS_Store"];
 
 /**
   @static
   @property ignoredUpdateFiles
 */
-Blueprint.ignoredUpdateFiles = [
-  '.gitkeep',
-  'app.css'
-];
+Blueprint.ignoredUpdateFiles = [".gitkeep", "app.css"];
 
 /**
   @static
   @property defaultLookupPaths
 */
-Blueprint.defaultLookupPaths = function() {
-  return [
-    path.resolve(__dirname, '..', '..', 'blueprints')
-  ];
+Blueprint.defaultLookupPaths = function () {
+  return [path.resolve(__dirname, "..", "..", "blueprints")];
 };
 
 /**
@@ -1320,7 +1404,7 @@ Blueprint.defaultLookupPaths = function() {
   @return {Promise}
 */
 function prepareConfirm(info) {
-  return info.checkForConflict().then(function(resolution) {
+  return info.checkForConflict().then(function (resolution) {
     info.resolution = resolution;
     return info;
   });
@@ -1332,8 +1416,8 @@ function prepareConfirm(info) {
   @param {FileInfo} info
 */
 function markIdenticalToBeSkipped(info) {
-  if (info.resolution === 'identical') {
-    info.action = 'skip';
+  if (info.resolution === "identical") {
+    info.action = "skip";
   }
 }
 
@@ -1343,7 +1427,7 @@ function markIdenticalToBeSkipped(info) {
   @param {FileInfo} info
 */
 function markToBeRemoved(info) {
-  info.action = 'remove';
+  info.action = "remove";
 }
 
 /**
@@ -1354,7 +1438,7 @@ function markToBeRemoved(info) {
   @return {Array}
 */
 function gatherConfirmationMessages(collection, info) {
-  if (info.resolution === 'confirm') {
+  if (info.resolution === "confirm") {
     collection.push(info.confirmOverwriteTask());
   }
   return collection;
@@ -1367,7 +1451,7 @@ function gatherConfirmationMessages(collection, info) {
   @return {Boolean}
 */
 function isFile(info) {
-  return stat(info.inputPath).invoke('isFile');
+  return stat(info.inputPath).invoke("isFile");
 }
 
 /**
@@ -1379,7 +1463,7 @@ function isFile(info) {
 function isIgnored(info) {
   var fn = info.inputPath;
 
-  return any(Blueprint.ignoredFiles, function(ignoredFile) {
+  return any(Blueprint.ignoredFiles, function (ignoredFile) {
     return minimatch(fn, ignoredFile, { matchBase: true });
   });
 }
@@ -1413,7 +1497,7 @@ function hasPathToken(files) {
 }
 
 function inRepoAddonExists(name, root) {
-  var addonPath = path.join(root, 'lib', name);
+  var addonPath = path.join(root, "lib", name);
   return existsSync(addonPath);
 }
 
@@ -1426,8 +1510,10 @@ function podDeprecations(config, ui) {
     ' Please move existing pods from \'app/' + podPath + '/\' to \'app/\'.', config.podModulePrefix);
   */
   if (config.usePodsByDefault) {
-    ui.writeDeprecateLine('`usePodsByDefault` is no longer supported in \'config/environment.js\',' +
-      ' use `usePods` in \'.ember-cli\' instead.');
+    ui.writeDeprecateLine(
+      "`usePodsByDefault` is no longer supported in 'config/environment.js'," +
+        " use `usePods` in '.ember-cli' instead."
+    );
   }
 }
 
@@ -1473,7 +1559,7 @@ function isFilePath(fileInfo) {
 */
 function dir(fullPath) {
   if (existsSync(fullPath)) {
-    return fs.readdirSync(fullPath).map(function(fileName) {
+    return fs.readdirSync(fullPath).map(function (fileName) {
       return path.join(fullPath, fileName);
     });
   } else {
@@ -1488,5 +1574,5 @@ function dir(fullPath) {
   @return {String} help path
 */
 function getDetailedHelpPath(thisPath) {
-  return path.join(thisPath, './HELP.md');
+  return path.join(thisPath, "./HELP.md");
 }

@@ -1,16 +1,15 @@
-
 .header__main__base {
   height: 50px;
   width: 100%;
   background-color: $c2-white-def;
   border-bottom: 1px solid $c4-white-100;
 
-  &__logo{
+  &__logo {
     height: 50px;
-    width:190px;
+    width: 190px;
     margin: 0 auto;
 
-    & img{
+    & img {
       height: 100%;
     }
   }

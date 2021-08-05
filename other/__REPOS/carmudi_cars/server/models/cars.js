@@ -1,5 +1,3 @@
-const cars = {
-
-};
+const cars = {};
 
 module.exports = cars;

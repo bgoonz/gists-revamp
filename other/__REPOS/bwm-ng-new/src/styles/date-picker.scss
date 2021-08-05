@@ -1,8 +1,4 @@
-
-
-
 .md-drppicker {
-
   &.shown {
     .calendar.right {
       display: none;
@@ -13,7 +9,8 @@
     background-color: #ffe2e2ed !important;
   }
 
-  td.active, td.active:hover {
+  td.active,
+  td.active:hover {
     background-color: $dark-red-color !important;
   }
 

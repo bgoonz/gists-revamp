@@ -1,5 +1,5 @@
-import { Rental } from '../../rental/shared/rental.model';
-import { Booking } from '../../booking/shared/booking.model';
+import { Rental } from "../../rental/shared/rental.model";
+import { Booking } from "../../booking/shared/booking.model";
 
 export interface User {
   username: string;
@@ -10,18 +10,20 @@ export interface User {
   rentals: Rental[];
 }
 
-export function userFactory(username?: string,
-                            email?: string,
-                            password?: string,
-                            passwordConfirmation?:string,
-                            rentals?:Rental[],
-                            bookings?:Booking[] ): User {
+export function userFactory(
+  username?: string,
+  email?: string,
+  password?: string,
+  passwordConfirmation?: string,
+  rentals?: Rental[],
+  bookings?: Booking[]
+): User {
   return {
     username,
     email,
     password,
     passwordConfirmation,
     rentals,
-    bookings
-  }
+    bookings,
+  };
 }

@@ -15,21 +15,17 @@
     "target": "es5",
     "lib": ["es6"],
     "skipLibCheck": true,
-    "typeRoots": [
-      "../../node_modules/@types"
-    ],
+    "typeRoots": ["../../node_modules/@types"],
     "baseUrl": "",
     "paths": {
-      "@angular-cli/ast-tools": [ "../../dist/@angular-cli/ast-tools/src" ],
-      "@angular-cli/base-href-webpack": [ "../../dist/@angular-cli/base-href-webpack/src" ],
-      "@angular-cli/version": [ "../../dist/@angular-cli/version/src" ],
-      "@ngtools/webpack": [ "../../dist/@ngtools/webpack/src" ]
+      "@angular-cli/ast-tools": ["../../dist/@angular-cli/ast-tools/src"],
+      "@angular-cli/base-href-webpack": [
+        "../../dist/@angular-cli/base-href-webpack/src"
+      ],
+      "@angular-cli/version": ["../../dist/@angular-cli/version/src"],
+      "@ngtools/webpack": ["../../dist/@ngtools/webpack/src"]
     }
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "blueprints/*/files/**/*"
-  ]
+  "include": ["**/*"],
+  "exclude": ["blueprints/*/files/**/*"]
 }

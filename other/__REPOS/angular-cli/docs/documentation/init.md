@@ -1,11 +1,13 @@
 # ng init
 
 ## Overview
+
 `ng init [name]` initializes, or re-initializes, an angular application.
 
 Initialization is done in-place, meaning that the generated application is initialized in the current directory.
 
 ## Options
+
 `--dry-run` (`-d`) run through without making any changes
 
 `--skip-npm` (`-sn`) skip installing npm packages
