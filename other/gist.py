@@ -11,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor as PoolExecutor
 
 
 def download_all_from_user(user: str):
-#
+    #
     next_page = True
     page = 1
 

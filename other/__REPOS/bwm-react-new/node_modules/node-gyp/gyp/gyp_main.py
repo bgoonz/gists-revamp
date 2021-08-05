@@ -9,8 +9,8 @@ import sys
 
 # Make sure we're using the version of pylib in this repo, not one installed
 # elsewhere on the system.
-sys.path.insert(0, os.path.join(os.path.dirname(sys.argv[0]), 'pylib'))
+sys.path.insert(0, os.path.join(os.path.dirname(sys.argv[0]), "pylib"))
 import gyp
 
-if __name__ == '__main__':
-  sys.exit(gyp.script_main())
+if __name__ == "__main__":
+    sys.exit(gyp.script_main())
