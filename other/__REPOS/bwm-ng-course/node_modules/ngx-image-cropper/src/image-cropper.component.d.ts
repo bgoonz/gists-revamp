@@ -1,0 +1,57 @@
+import { ElementRef, EventEmitter, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
+import { DomSanitizer, SafeUrl, SafeStyle } from '@angular/platform-browser';
+export interface CropperPosition {
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+}
+export declare class ImageCropperComponent implements OnChanges {
+    private elementRef;
+    private sanitizer;
+    private cd;
+    private originalImage;
+    private moveStart;
+    private maxSize;
+    private originalSize;
+    safeImgDataUrl: SafeUrl | string;
+    marginLeft: SafeStyle | string;
+    imageVisible: boolean;
+    imageFileChanged: File;
+    imageChangedEvent: any;
+    imageBase64: string;
+    format: 'png' | 'jpeg' | 'bmp' | 'webp' | 'ico';
+    maintainAspectRatio: boolean;
+    aspectRatio: number;
+    resizeToWidth: number;
+    onlyScaleDown: boolean;
+    imageQuality: number;
+    cropper: CropperPosition;
+    imageCroppedBase64: EventEmitter<string>;
+    imageCroppedFile: EventEmitter<File>;
+    imageLoaded: EventEmitter<void>;
+    loadImageFailed: EventEmitter<void>;
+    constructor(elementRef: ElementRef, sanitizer: DomSanitizer, cd: ChangeDetectorRef);
+    ngOnChanges(changes: SimpleChanges): void;
+    private initCropper();
+    private loadImageFile(file);
+    private isValidImageType(type);
+    private checkExifRotationAndLoadImage(imageBase64);
+    private loadBase64Image(imageBase64);
+    imageLoadedInView(): void;
+    onResize(event: Event): void;
+    private resizeCropperPosition();
+    private resetCropperPosition();
+    startMove(event: any, moveType: string, position?: string | null): void;
+    moveImg(event: any): void;
+    private setMaxSize();
+    private checkCropperPosition(maintainSize?);
+    moveStop(event: any): void;
+    private move(event);
+    private resize(event);
+    private checkAspectRatio();
+    private crop();
+    private getResizeRatio(width);
+    private getClientX(event);
+    private getClientY(event);
+}

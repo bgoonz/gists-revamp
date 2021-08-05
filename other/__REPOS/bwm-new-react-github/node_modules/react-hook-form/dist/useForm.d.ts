@@ -1,0 +1,3 @@
+import { FormContextValues } from './contextTypes';
+import { FieldValues, UseFormOptions } from './types';
+export declare function useForm<FormValues extends FieldValues = FieldValues, ValidationContext = undefined>({ mode, reValidateMode, validationSchema, validationResolver, validationContext, defaultValues, submitFocusError, validateCriteriaMode, }?: UseFormOptions<FormValues>): FormContextValues<FormValues>;

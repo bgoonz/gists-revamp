@@ -1,0 +1,2 @@
+declare const unset: (target: any, paths: string[]) => any;
+export default unset;
