@@ -27,7 +27,7 @@ import {
   ListItem,
   TodoItem,
   CodeBlockHighlight,
-  Placeholder
+  Placeholder,
 } from "tiptap-extensions";
 import javascript from "highlight.js/lib/languages/javascript";
 import css from "highlight.js/lib/languages/css";
@@ -41,17 +41,17 @@ export default {
   components: {
     EditorContent,
     MenuBubble,
-    MenuBar
+    MenuBar,
   },
   props: {
     blog: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
-      editor: null
+      editor: null,
     };
   },
   mounted() {
@@ -74,16 +74,16 @@ export default {
         this.$store.dispatch("instructor/blog/CREATE_BLOG", {
           title,
           subtitle,
-          content: html
+          content: html,
         });
       } else {
         this.$store.dispatch("instructor/blog/UPDATE_BLOG", {
           payload: {
             title,
             subtitle,
-            content: html
+            content: html,
           },
-          id: this.blog._id
+          id: this.blog._id,
         });
       }
     },
@@ -91,53 +91,53 @@ export default {
       const doc = this.editor.state.doc.content;
       const nodes = doc.content;
       console.log(nodes);
-      const node = nodes.find(n => n.type.name === name);
+      const node = nodes.find((n) => n.type.name === name);
       if (node) {
         return node.textContent;
       }
       return "";
     },
-    initEditor(content = '') {
+    initEditor(content = "") {
       this.editor = new Editor({
-      content,
-      extensions: [
-        new Doc(),
-        new Title(),
-        new Subtitle(),
-        new Placeholder({
-          showOnlyCurrent: false,
-          emptyNodeText: node => {
-            if (node.type.name === 'title') {
-              return 'Inspirational Title'
-            }
-            if (node.type.name === 'subtitle') {
-              return 'Some catchy subtitle'
-            }
-            return 'Write your story...'
-          }
-        }),
-        new Heading({ levels: [1, 2, 3]}),
-        new Bold(),
-        new Code(),
-        new Italic(),
-        new Strike(),
-        new Underline(),
-        new History(),
-        new Blockquote(),
-        new HorizontalRule(),
-        new OrderedList(),
-        new BulletList(),
-        new ListItem(),
-        new CodeBlockHighlight({
-          languages: {
-            javascript,
-            css,
-          }
-        })
-      ]
-    })
-    }
-  }
+        content,
+        extensions: [
+          new Doc(),
+          new Title(),
+          new Subtitle(),
+          new Placeholder({
+            showOnlyCurrent: false,
+            emptyNodeText: (node) => {
+              if (node.type.name === "title") {
+                return "Inspirational Title";
+              }
+              if (node.type.name === "subtitle") {
+                return "Some catchy subtitle";
+              }
+              return "Write your story...";
+            },
+          }),
+          new Heading({ levels: [1, 2, 3] }),
+          new Bold(),
+          new Code(),
+          new Italic(),
+          new Strike(),
+          new Underline(),
+          new History(),
+          new Blockquote(),
+          new HorizontalRule(),
+          new OrderedList(),
+          new BulletList(),
+          new ListItem(),
+          new CodeBlockHighlight({
+            languages: {
+              javascript,
+              css,
+            },
+          }),
+        ],
+      });
+    },
+  },
 };
 </script>
 

@@ -8,9 +8,9 @@ import PortfolioApi from "../../../lib/api/portfolios";
 const portfolio = ({ portfolio }) => {
   const router = useRouter();
   const { data, loading } = useGetUser();
-  
+
   if (router.isFallback) {
-    return (<h1>Loading</h1>)
+    return <h1>Loading</h1>;
   }
 
   return (

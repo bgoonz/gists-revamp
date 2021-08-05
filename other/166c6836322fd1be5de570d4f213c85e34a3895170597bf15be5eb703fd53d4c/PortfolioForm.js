@@ -1,28 +1,33 @@
-
 import DatePicker from "react-datepicker";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-const PortfolioForm = ({onSubmit, initialData = {}}) => {
-  const { register, handleSubmit, setValue, watch } = useForm({defaultValues: initialData});
+const PortfolioForm = ({ onSubmit, initialData = {} }) => {
+  const { register, handleSubmit, setValue, watch } = useForm({
+    defaultValues: initialData,
+  });
 
-  const startDate = watch('startDate');
-  const endDate = watch('endDate');
+  const startDate = watch("startDate");
+  const endDate = watch("endDate");
 
   useEffect(() => {
-    register({name: 'startDate'});
-    register({name: 'endDate'});
-  }, [register])
+    register({ name: "startDate" });
+    register({ name: "endDate" });
+  }, [register]);
 
   useEffect(() => {
     const { startDate, endDate } = initialData;
-    if (startDate) { setValue('startDate'), (new Date(startDate))}
-    if (endDate) { setValue('endDate', new Date(endDate))}
-  }, [initialData])
+    if (startDate) {
+      setValue("startDate"), new Date(startDate);
+    }
+    if (endDate) {
+      setValue("endDate", new Date(endDate));
+    }
+  }, [initialData]);
 
-  const handleDateChange = (dateType) => date => {
+  const handleDateChange = (dateType) => (date) => {
     setValue(dateType, date);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -33,7 +38,8 @@ const PortfolioForm = ({onSubmit, initialData = {}}) => {
           name="title"
           type="text"
           className="form-control"
-          id="title"/>
+          id="title"
+        />
       </div>
 
       <div className="form-group">
@@ -43,7 +49,8 @@ const PortfolioForm = ({onSubmit, initialData = {}}) => {
           name="company"
           type="text"
           className="form-control"
-          id="company"/>
+          id="company"
+        />
       </div>
 
       <div className="form-group">
@@ -53,7 +60,8 @@ const PortfolioForm = ({onSubmit, initialData = {}}) => {
           name="companyWebsite"
           type="text"
           className="form-control"
-          id="companyWebsite"/>
+          id="companyWebsite"
+        />
       </div>
 
       <div className="form-group">
@@ -63,7 +71,8 @@ const PortfolioForm = ({onSubmit, initialData = {}}) => {
           name="location"
           type="text"
           className="form-control"
-          id="location"/>
+          id="location"
+        />
       </div>
 
       <div className="form-group">
@@ -73,7 +82,8 @@ const PortfolioForm = ({onSubmit, initialData = {}}) => {
           name="jobTitle"
           type="text"
           className="form-control"
-          id="jobTitle"/>
+          id="jobTitle"
+        />
       </div>
 
       <div className="form-group">
@@ -84,8 +94,8 @@ const PortfolioForm = ({onSubmit, initialData = {}}) => {
           rows="5"
           type="text"
           className="form-control"
-          id="description">
-        </textarea>
+          id="description"
+        ></textarea>
       </div>
 
       <div className="form-group">
@@ -94,7 +104,7 @@ const PortfolioForm = ({onSubmit, initialData = {}}) => {
           <DatePicker
             showYearDropdown
             selected={startDate}
-            onChange={handleDateChange('startDate')}
+            onChange={handleDateChange("startDate")}
           />
         </div>
       </div>
@@ -106,35 +116,39 @@ const PortfolioForm = ({onSubmit, initialData = {}}) => {
             disabled={!endDate}
             showYearDropdown
             selected={endDate}
-            onChange={handleDateChange('endDate')}
+            onChange={handleDateChange("endDate")}
           />
         </div>
       </div>
       <div className="form-group">
-        { endDate &&
+        {endDate && (
           <button
             type="button"
             className="btn btn-danger"
-            onClick={() => handleDateChange('endDate')(null)}>
+            onClick={() => handleDateChange("endDate")(null)}
+          >
             No End Date
           </button>
-        }
-        { !endDate &&
+        )}
+        {!endDate && (
           <button
             type="button"
             className="btn btn-success"
-            onClick={
-              () => handleDateChange('endDate')(new Date(new Date().setHours(0,0,0,0)))}>
+            onClick={() =>
+              handleDateChange("endDate")(
+                new Date(new Date().setHours(0, 0, 0, 0))
+              )
+            }
+          >
             Set End Date
           </button>
-        }
+        )}
       </div>
-      <button
-        type="submit"
-        className="btn btn-primary">Create
+      <button type="submit" className="btn btn-primary">
+        Create
       </button>
     </form>
-  )
-}
+  );
+};
 
 export default PortfolioForm;

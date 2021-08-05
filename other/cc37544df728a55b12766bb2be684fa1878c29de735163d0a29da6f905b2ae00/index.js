@@ -11,31 +11,34 @@ const handle = routes.getRequestHandler(app);
 
 const secretData = { title: "Secret" };
 
-app.prepare().then(() => {
-  const server = express();
+app
+  .prepare()
+  .then(() => {
+    const server = express();
 
-  server.get("/api/v1/secret",  (req, res) => {
-    return res.json(secretData);
-  });
+    server.get("/api/v1/secret", (req, res) => {
+      return res.json(secretData);
+    });
 
-  server.get("*", (req, res) => {
-    return handle;
-  });
+    server.get("*", (req, res) => {
+      return handle;
+    });
 
-  server.use(function(err,req,res,next){
-    if(err.name==='UnauthorizedError'){
-      res.status(401).send('invalid token...')
-    }
+    server.use(function (err, req, res, next) {
+      if (err.name === "UnauthorizedError") {
+        res.status(401).send("invalid token...");
+      }
+    });
+
+    server.use(handle).listen(3000, (err) => {
+      if (err) throw err;
+      console.log("> Ready on http://localhost:${port}");
+    });
   })
-
-  server.use(handle).listen(3000,(err)=>{
-    if(err) throw err
-    console.log('> Ready on http://localhost:${port}')
-  })
-}).catch(ex =>{
-  console.error(ex.stack)
-  process.exit(1)
-});
+  .catch((ex) => {
+    console.error(ex.stack);
+    process.exit(1);
+  });
 
 // const next = require("next");
 // const http = require("http");

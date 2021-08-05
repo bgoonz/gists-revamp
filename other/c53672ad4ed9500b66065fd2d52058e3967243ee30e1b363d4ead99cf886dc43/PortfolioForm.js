@@ -1,20 +1,20 @@
 import DatePicker from "react-datepicker";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-const PortfolioForm = ({onSubmit}) => {
+const PortfolioForm = ({ onSubmit }) => {
   const { register, handleSubmit, setValue, watch } = useForm();
-  const startDate = watch('startDate');
-  const endDate = watch('endDate');
+  const startDate = watch("startDate");
+  const endDate = watch("endDate");
 
   useEffect(() => {
-    register({name: 'startDate'});
-    register({name: 'endDate'});
-  }, [register])
+    register({ name: "startDate" });
+    register({ name: "endDate" });
+  }, [register]);
 
-  const handleDateChange = dateType => date => {
+  const handleDateChange = (dateType) => (date) => {
     setValue(dateType, date);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit((data) => alert(JSON.stringify(data)))}>
@@ -25,7 +25,8 @@ const PortfolioForm = ({onSubmit}) => {
           name="title"
           type="text"
           className="form-control"
-          id="title"/>
+          id="title"
+        />
       </div>
 
       <div className="form-group">
@@ -35,7 +36,8 @@ const PortfolioForm = ({onSubmit}) => {
           name="company"
           type="text"
           className="form-control"
-          id="company"/>
+          id="company"
+        />
       </div>
 
       <div className="form-group">
@@ -45,7 +47,8 @@ const PortfolioForm = ({onSubmit}) => {
           name="companyWebsite"
           type="text"
           className="form-control"
-          id="companyWebsite"/>
+          id="companyWebsite"
+        />
       </div>
 
       <div className="form-group">
@@ -55,7 +58,8 @@ const PortfolioForm = ({onSubmit}) => {
           name="location"
           type="text"
           className="form-control"
-          id="location"/>
+          id="location"
+        />
       </div>
 
       <div className="form-group">
@@ -65,7 +69,8 @@ const PortfolioForm = ({onSubmit}) => {
           name="jobTitle"
           type="text"
           className="form-control"
-          id="jobTitle"/>
+          id="jobTitle"
+        />
       </div>
 
       <div className="form-group">
@@ -76,8 +81,8 @@ const PortfolioForm = ({onSubmit}) => {
           rows="5"
           type="text"
           className="form-control"
-          id="description">
-        </textarea>
+          id="description"
+        ></textarea>
       </div>
 
       <div className="form-group">
@@ -86,7 +91,7 @@ const PortfolioForm = ({onSubmit}) => {
           <DatePicker
             showYearDropdown
             selected={startDate}
-            onChange={handleDateChange('startDate')}
+            onChange={handleDateChange("startDate")}
           />
         </div>
       </div>
@@ -97,16 +102,15 @@ const PortfolioForm = ({onSubmit}) => {
           <DatePicker
             showYearDropdown
             selected={endDate}
-            onChange={handleDateChange('endDate')}
+            onChange={handleDateChange("endDate")}
           />
         </div>
       </div>
-      <button
-        type="submit"
-        className="btn btn-primary">Create
+      <button type="submit" className="btn btn-primary">
+        Create
       </button>
     </form>
-  )
-}
+  );
+};
 
 export default PortfolioForm;

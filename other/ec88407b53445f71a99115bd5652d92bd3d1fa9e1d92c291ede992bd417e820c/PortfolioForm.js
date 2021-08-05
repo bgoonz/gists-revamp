@@ -3,11 +3,7 @@ const PortfolioForm = () => {
     <form>
       <div className="form-group">
         <label htmlFor="title">Title</label>
-        <input
-          name="title"
-          type="text"
-          className="form-control"
-          id="title"/>
+        <input name="title" type="text" className="form-control" id="title" />
       </div>
 
       <div className="form-group">
@@ -16,7 +12,8 @@ const PortfolioForm = () => {
           name="company"
           type="text"
           className="form-control"
-          id="company"/>
+          id="company"
+        />
       </div>
 
       <div className="form-group">
@@ -25,7 +22,8 @@ const PortfolioForm = () => {
           name="companyWebsite"
           type="text"
           className="form-control"
-          id="companyWebsite"/>
+          id="companyWebsite"
+        />
       </div>
 
       <div className="form-group">
@@ -34,7 +32,8 @@ const PortfolioForm = () => {
           name="location"
           type="text"
           className="form-control"
-          id="location"/>
+          id="location"
+        />
       </div>
 
       <div className="form-group">
@@ -43,7 +42,8 @@ const PortfolioForm = () => {
           name="jobTitle"
           type="text"
           className="form-control"
-          id="jobTitle"/>
+          id="jobTitle"
+        />
       </div>
 
       <div className="form-group">
@@ -53,15 +53,14 @@ const PortfolioForm = () => {
           rows="5"
           type="text"
           className="form-control"
-          id="description">
-        </textarea>
+          id="description"
+        ></textarea>
       </div>
-      <button
-        type="submit"
-        className="btn btn-primary">Create
+      <button type="submit" className="btn btn-primary">
+        Create
       </button>
     </form>
-  )
-}
+  );
+};
 
 export default PortfolioForm;

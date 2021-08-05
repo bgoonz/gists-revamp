@@ -1,16 +1,16 @@
-import React, { createRef, useEffect } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Button, Alert } from 'reactstrap';
-import PortInput from '../form/PortInput';
-import PortDate from '../form/PortDate';
+import React, { createRef, useEffect } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Button, Alert } from "reactstrap";
+import PortInput from "../form/PortInput";
+import PortDate from "../form/PortDate";
 
-import moment from 'moment';
+import moment from "moment";
 
 const validateInputs = (values) => {
   let errors = {};
 
   Object.entries(values).forEach(([key, value]) => {
-    if (!values[key] && key !== 'endDate') {
+    if (!values[key] && key !== "endDate") {
       errors[key] = `Field ${key} is required!`;
     }
   });
@@ -19,23 +19,23 @@ const validateInputs = (values) => {
   const endDate = moment(values.endDate);
 
   if (startDate && endDate && endDate.isBefore(startDate)) {
-    errors.endDate = 'End Date cannot be before start date!!!';
+    errors.endDate = "End Date cannot be before start date!!!";
   }
 
   return errors;
-}
-
-const INITIAL_VALUES = {
-  title: '',
-  company: '',
-  location: '',
-  position: '',
-  description: '',
-  startDate: '',
-  endDate: ''
 };
 
-const PortfolioCreateForm = ({initialValues, onSubmit, error}) => {
+const INITIAL_VALUES = {
+  title: "",
+  company: "",
+  location: "",
+  position: "",
+  description: "",
+  startDate: "",
+  endDate: "",
+};
+
+const PortfolioCreateForm = ({ initialValues, onSubmit, error }) => {
   let inputs = {};
 
   const handleKeyPress = (value, event) => {
@@ -68,7 +68,8 @@ const PortfolioCreateForm = ({initialValues, onSubmit, error}) => {
               type="text"
               name="title"
               onKeyPress={(event) => handleKeyPress("company", event)}
-              component={PortInput} />
+              component={PortInput}
+            />
             <Field
               innerRef={setRef("company")}
               label="Company"
@@ -106,15 +107,15 @@ const PortfolioCreateForm = ({initialValues, onSubmit, error}) => {
             <button
               type="button"
               onClick={handleSubmit}
-              disabled={isSubmitting}>
+              disabled={isSubmitting}
+            >
               Create
             </button>
           </Form>
         )}
       </Formik>
     </div>
-  )
+  );
 };
 
 export default PortfolioCreateForm;
-

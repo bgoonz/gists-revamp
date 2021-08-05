@@ -6,7 +6,7 @@ import { Button, Alert } from "reactstrap";
 
 import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 
-const validateInputs = values => {
+const validateInputs = (values) => {
   let errors = {};
 
   Object.entries(values).forEach(([key, value]) => {
@@ -32,7 +32,7 @@ const PortfolioCreateForm = ({ initialValues, onSubmit, error }) => (
       initialValues={initialValues}
       validate={validateInputs}
       onSubmit={(values, actions) => {
-        return onSubmit(values,{ setSubmitting: actions.setSubmitting });
+        return onSubmit(values, { setSubmitting: actions.setSubmitting });
       }}
       // onSubmit={onSubmit}
     >

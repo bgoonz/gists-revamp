@@ -1,11 +1,12 @@
 <template>
-...
-<input
-  @keyup="handleSearch"
-  type="text"
-  class="form-control"
-  placeholder="Some title" />
-...
+  ...
+  <input
+    @keyup="handleSearch"
+    type="text"
+    class="form-control"
+    placeholder="Some title"
+  />
+  ...
 </template>
 <script>
 ...

@@ -4,20 +4,20 @@ const movieCreateForm = (props) => {
   const { categories } = props;
 
   const defaultData = {
-    name: '',
-    description: '',
-    rating: '',
-    image: '',
-    cover: '',
-    longDesc: ''
-  }
+    name: "",
+    description: "",
+    rating: "",
+    image: "",
+    cover: "",
+    longDesc: "",
+  };
 
-  const formData = props.initialData ? {...props.initialData} : defaultData
-  const [form, setForm] = useState(formData)
+  const formData = props.initialData ? { ...props.initialData } : defaultData;
+  const [form, setForm] = useState(formData);
 
   useEffect(() => {
     props.initialData && setForm(props.initialData);
-  }, [props.initialData])
+  }, [props.initialData]);
 
   const handleChange = (event) => {
     const target = event.target;

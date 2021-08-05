@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import withAuthorization from "components/hoc/withAuthorization";
 import { fetchCollaborations } from "actions";
 import moment from "moment";
-import Spinner from '../../components/Spinner';
+import Spinner from "../../components/Spinner";
 
 class ReceivedCollaborations extends React.Component {
   state = {
@@ -12,7 +12,7 @@ class ReceivedCollaborations extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({ isFetching: true});
+    this.setState({ isFetching: true });
     const {
       auth: { user },
     } = this.props;
@@ -20,7 +20,7 @@ class ReceivedCollaborations extends React.Component {
       .then((collaborations) =>
         this.setState({ collaborations, isFetching: false })
       )
-      .catch(() => this.setState({collaborations: [], isFetching: false})) ;
+      .catch(() => this.setState({ collaborations: [], isFetching: false }));
   }
 
   render() {

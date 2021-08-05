@@ -1,22 +1,21 @@
-import withApollo from '../../hoc/withApollo';
-import withAuth from '../../hoc/withAuth';
-import PortfolioForm from '../../components/forms/PortfolioForm';
-import { useCreatePortfolio } from '../../apolloLogic/actions';
-import { useRouter } from 'next/router';
-import BaseLayout from '@/layouts/BaseLayout';
+import withApollo from "../../hoc/withApollo";
+import withAuth from "../../hoc/withAuth";
+import PortfolioForm from "../../components/forms/PortfolioForm";
+import { useCreatePortfolio } from "../../apolloLogic/actions";
+import { useRouter } from "next/router";
+import BaseLayout from "@/layouts/BaseLayout";
 
 const PortfolioCreate = () => {
   const [createPortfolio, { error }] = useCreatePortfolio();
   const router = useRouter();
 
-  const errorMessage = error => {
-    return (error.graphQLErrors[0]?.message) ||
-      'Ooops, something went wrong';
+  const errorMessage = (error) => {
+    return error.graphQLErrors[0]?.message || "Ooops, something went wrong";
   };
 
-  const handleCreatePortfolio = async data => {
+  const handleCreatePortfolio = async (data) => {
     await createPortfolio({ variables: data });
-    router.push('/portfolios');
+    router.push("/portfolios");
   };
   return (
     <BaseLayout>
@@ -35,4 +34,6 @@ const PortfolioCreate = () => {
   );
 };
 
-export default withApollo(withAuth(PortfolioCreate, ['guest', 'admin', 'instructor']));
+export default withApollo(
+  withAuth(PortfolioCreate, ["guest", "admin", "instructor"])
+);

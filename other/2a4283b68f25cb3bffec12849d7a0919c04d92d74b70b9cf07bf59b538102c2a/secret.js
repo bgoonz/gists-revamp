@@ -4,13 +4,11 @@
 
 // import { getSecretData, getSecretDataServer } from '../actions/index'
 
-import { Component } from 'react';
+import { Component } from "react";
 
-class Secret extends Component {
+class Secret extends Component {}
 
-}
-
-export default Secret
+export default Secret;
 
 // class Secret extends Component {
 //     static async getInitialProps({req}) {
@@ -26,7 +24,6 @@ export default Secret
 
 //     async componentDidMount() {
 //         const secretData = await getSecretData()
-
 
 //         this.setState({ secretData })
 //     }

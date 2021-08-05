@@ -1,9 +1,9 @@
 <script>
-  export default {
-    data() {
-      return {
-        someData: '1234'
-      }
-    }
-  }
+export default {
+  data() {
+    return {
+      someData: "1234",
+    };
+  },
+};
 </script>

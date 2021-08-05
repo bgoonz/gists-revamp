@@ -1,6 +1,6 @@
 // Main Process
-const { app, BrowserWindow, ipcMain, Notification } = require('electron');
-const path = require('path');
+const { app, BrowserWindow, ipcMain, Notification } = require("electron");
+const path = require("path");
 const isDev = !app.isPackaged;
 
 let win;
@@ -15,51 +15,48 @@ function createWindow() {
       nodeIntegration: false,
       worldSafeExecuteJavaScript: true,
       contextIsolation: true,
-      preload: path.join(__dirname, 'preload.js')
-    }
-  })
+      preload: path.join(__dirname, "preload.js"),
+    },
+  });
 
-  win.loadFile('index.html')
+  win.loadFile("index.html");
   isDev && win.webContents.openDevTools();
 }
 
 if (isDev) {
-  require('electron-reload')(__dirname, {
-    electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
-  })
+  require("electron-reload")(__dirname, {
+    electron: path.join(__dirname, "node_modules", ".bin", "electron"),
+  });
 }
 
-app.whenReady()
-  .then(() => {
-    createWindow();
-    //  TEST, after 2 seconds you should get message to frontend //
-    setTimeout(() => {
-      win.webContents.send('to-renderer', "Custom message");
-    }, 2000)
-    //  TEST //
-  });
+app.whenReady().then(() => {
+  createWindow();
+  //  TEST, after 2 seconds you should get message to frontend //
+  setTimeout(() => {
+    win.webContents.send("to-renderer", "Custom message");
+  }, 2000);
+  //  TEST //
+});
 
-ipcMain.on('notify', (_, message) => {
-  new Notification({title: 'Notification', body: message}).show();
-})
+ipcMain.on("notify", (_, message) => {
+  new Notification({ title: "Notification", body: message }).show();
+});
 
-ipcMain.on('app-quit', () => {
+ipcMain.on("app-quit", () => {
   app.quit();
-})
+});
 
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
     app.quit();
   }
-})
+});
 
-app.on('activate', () => {
+app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
-})
-
+});
 
 // Chromium -> web eingine for rendering the UI, full Chrome-like web browser
 // V8 -> engine that provides capabilities to execute, run, JS code in the browser

@@ -1,8 +1,7 @@
-import React from 'react';
-import styles from './testing.scss'
+import React from "react";
+import styles from "./testing.scss";
 
 class Testing extends React.Component {
-
   render() {
     return (
       <div className="container">
@@ -10,7 +9,7 @@ class Testing extends React.Component {
         <h2>Just Testing</h2>
         <style jsx>{styles}</style>
       </div>
-    )
+    );
   }
 }
 

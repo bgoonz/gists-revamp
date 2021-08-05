@@ -22,9 +22,7 @@
         </div>
       </div>
       <div class="col-12 col-md-5">
-        <PostManage
-          v-if="activePost"
-          :postData="activePost"></PostManage>
+        <PostManage v-if="activePost" :postData="activePost"></PostManage>
       </div>
     </div>
   </div>
@@ -37,12 +35,12 @@ import PostManage from "@/components/PostManage";
 export default {
   components: {
     PostCreate,
-    PostManage
+    PostManage,
   },
   data() {
     return {
       selectItem: 0,
-      selectedPost: null
+      selectedPost: null,
     };
   },
   computed: {
@@ -51,7 +49,7 @@ export default {
     },
     activePost() {
       return this.selectedPost || this.posts[0] || null;
-    }
+    },
   },
   mounted() {
     if (this.$store.state.myPost.posts.length === 0) {
@@ -61,8 +59,8 @@ export default {
   methods: {
     selectPost(post) {
       this.selectedPost = post;
-    }
-  }
+    },
+  },
 };
 </script>
 

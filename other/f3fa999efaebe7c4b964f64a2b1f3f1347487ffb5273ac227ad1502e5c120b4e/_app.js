@@ -35,9 +35,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, auth } = this.props;
 
-    return (
-      <Component {...pageProps} auth={auth} />
-    );
+    return <Component {...pageProps} auth={auth} />;
   }
 }
 

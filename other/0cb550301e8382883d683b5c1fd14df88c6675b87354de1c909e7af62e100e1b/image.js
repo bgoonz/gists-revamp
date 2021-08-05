@@ -1,3 +1,3 @@
-const fileDb = require('./model');
+const fileDb = require("./model");
 
-module.exports = fileDb.register('images');
+module.exports = fileDb.register("images");

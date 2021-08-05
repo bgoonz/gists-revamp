@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Alert } from 'react-bootstrap';
+import { Alert } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 
 const PortfolioForm = () => {
   const { handleSubmit } = useForm();
-  
-  const onSubmit = data => {
+
+  const onSubmit = (data) => {
     alert(JSON.stringify(data));
-  }
-  
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="form-group">
@@ -18,7 +18,9 @@ const PortfolioForm = () => {
           <DatePicker
             showYearDropdown
             selected={null}
-            onChange={date => {alert(date)}}
+            onChange={(date) => {
+              alert(date);
+            }}
           />
         </div>
       </div>
@@ -26,15 +28,17 @@ const PortfolioForm = () => {
       <div className="form-group">
         <label htmlFor="endDate">End Date</label>
         <div>
-        <DatePicker
+          <DatePicker
             showYearDropdown
             selected={null}
-            onChange={date => {alert(date)}}
+            onChange={(date) => {
+              alert(date);
+            }}
           />
         </div>
       </div>
     </form>
-  )
-}
+  );
+};
 
 export default PortfolioForm;

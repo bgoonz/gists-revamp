@@ -7,7 +7,7 @@ export const useApiHandler = (apiCall) => {
 
   const clearError = () => {
     setReqState({ ...reqState, error: null });
-  }
+  };
 
   const handler = async (...data) => {
     setReqState({ error: null, data: null, loading: true });
@@ -15,13 +15,13 @@ export const useApiHandler = (apiCall) => {
       const json = await apiCall(...data);
 
       setReqState({ error: null, data: json.data, loading: false });
-      return json.data
+      return json.data;
     } catch (e) {
       // console.log(e.response);
       const msg =
         (e.response && e.response.data) || "Oops, something went wrong!!";
       setReqState({ error: msg, data: null, loading: false });
-      return Promise.reject(msg)
+      return Promise.reject(msg);
     }
   };
 

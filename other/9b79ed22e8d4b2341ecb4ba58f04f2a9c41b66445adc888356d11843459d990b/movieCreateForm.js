@@ -1,56 +1,55 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 const MovieCreateform = (props) => {
-
   const defaultData = {
-    name: '',
-    description: '',
-    rating: '',
-    image: '',
-    cover: '',
-    longDesc: ''
-  }
+    name: "",
+    description: "",
+    rating: "",
+    image: "",
+    cover: "",
+    longDesc: "",
+  };
 
-  const formData = props.initialData ? {...props.initialData} : defaultData
+  const formData = props.initialData ? { ...props.initialData } : defaultData;
 
-  const [form, setform] = useState(formData)
+  const [form, setform] = useState(formData);
 
   useEffect(() => {
     if (props.initialData) {
-      setform(props.initialData)
+      setform(props.initialData);
     }
-  }, [props.initialData])
+  }, [props.initialData]);
 
   const handleChange = (event) => {
-    const target = event.target
-    const name = target.name
+    const target = event.target;
+    const name = target.name;
 
     setform({
       ...form,
-      [name]: target.value
-    })
-  }
+      [name]: target.value,
+    });
+  };
 
   const handleGenreChange = (event) => {
-    const { options } = event.target
-    const optionsLength = options.length
-    let value = []
+    const { options } = event.target;
+    const optionsLength = options.length;
+    let value = [];
 
     for (let i = 0; i < optionsLength; i++) {
       if (options[i].selected) {
-        value.push(options[i].value)
+        value.push(options[i].value);
       }
     }
 
     setform({
       ...form,
-      genre: value.toString()
-    })
-  }
+      genre: value.toString(),
+    });
+  };
 
   const submitform = () => {
-    props.handleFormSubmit({...form})
-  }
+    props.handleFormSubmit({ ...form });
+  };
 
   return (
     <form>
@@ -64,7 +63,8 @@ const MovieCreateform = (props) => {
           className="form-control"
           id="name"
           aria-describedby="emailHelp"
-          placeholder="Lord of the Rings" />
+          placeholder="Lord of the Rings"
+        />
       </div>
       <div className="form-group">
         <label for="description">Description</label>
@@ -75,7 +75,8 @@ const MovieCreateform = (props) => {
           type="text"
           className="form-control"
           id="description"
-          placeholder="Somewhere in Middle-earth..." />
+          placeholder="Somewhere in Middle-earth..."
+        />
       </div>
       <div className="form-group">
         <label for="description">Rating</label>
@@ -88,8 +89,11 @@ const MovieCreateform = (props) => {
           min="0"
           className="form-control"
           id="rating"
-          placeholder="3" />
-        <small id="emailHelp" className="form-text text-muted">Max: 5, Min: 0 </small>
+          placeholder="3"
+        />
+        <small id="emailHelp" className="form-text text-muted">
+          Max: 5, Min: 0{" "}
+        </small>
       </div>
       <div className="form-group">
         <label for="image">Image</label>
@@ -100,7 +104,8 @@ const MovieCreateform = (props) => {
           type="text"
           className="form-control"
           id="image"
-          placeholder="http://....." />
+          placeholder="http://....."
+        />
       </div>
       <div className="form-group">
         <label for="cover">Cover</label>
@@ -111,7 +116,8 @@ const MovieCreateform = (props) => {
           type="text"
           className="form-control"
           id="cover"
-          placeholder="http://......" />
+          placeholder="http://......"
+        />
       </div>
       <div className="form-group">
         <label for="longDesc">Long Description</label>
@@ -121,7 +127,8 @@ const MovieCreateform = (props) => {
           name="longDesc"
           className="form-control"
           id="longDesc"
-          rows="3"></textarea>
+          rows="3"
+        ></textarea>
       </div>
       <div className="form-group">
         <label for="genre">Genre</label>
@@ -129,7 +136,8 @@ const MovieCreateform = (props) => {
           onChange={handleGenreChange}
           multiple
           className="form-control"
-          id="genre">
+          id="genre"
+        >
           <option>drama</option>
           <option>music</option>
           <option>adventure</option>
@@ -137,9 +145,11 @@ const MovieCreateform = (props) => {
           <option>action</option>
         </select>
       </div>
-      <button onClick={submitform} type="button" className="btn btn-primary">Create</button>
+      <button onClick={submitform} type="button" className="btn btn-primary">
+        Create
+      </button>
     </form>
-  )
-}
+  );
+};
 
-export default MovieCreateform
+export default MovieCreateform;

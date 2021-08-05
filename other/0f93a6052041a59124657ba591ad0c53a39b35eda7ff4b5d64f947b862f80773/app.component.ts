@@ -1,19 +1,18 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Platform } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
 
-import { FcmService } from './shared/service/fcm.service';
-import { ToastService } from './shared/service/toast.service';
-import { ToastController } from '@ionic/angular';
+import { FcmService } from "./shared/service/fcm.service";
+import { ToastService } from "./shared/service/toast.service";
+import { ToastController } from "@ionic/angular";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html'
+  selector: "app-root",
+  templateUrl: "app.component.html",
 })
 export class AppComponent {
-
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -21,7 +20,6 @@ export class AppComponent {
     private fcm: FcmService,
     private toastr: ToastService,
     public toastController: ToastController
-
   ) {
     this.initializeApp();
   }
@@ -29,21 +27,20 @@ export class AppComponent {
   private async presentToast(message) {
     const toast = await this.toastController.create({
       message,
-      duration: 3000
+      duration: 3000,
     });
     toast.present();
   }
 
   private notificationSetup() {
     this.fcm.getToken();
-    this.fcm.onNotifications().subscribe(
-      (msg) => {
-        if (this.platform.is('ios')) {
-          this.presentToast(msg.aps.alert);
-        } else {
-          this.presentToast(msg.body);
-        }
-      });
+    this.fcm.onNotifications().subscribe((msg) => {
+      if (this.platform.is("ios")) {
+        this.presentToast(msg.aps.alert);
+      } else {
+        this.presentToast(msg.body);
+      }
+    });
   }
 
   initializeApp() {

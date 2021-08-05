@@ -1,4 +1,4 @@
-const { BrowserWindow, app } = require('electron');
+const { BrowserWindow, app } = require("electron");
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -8,11 +8,11 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: false,
       worldSafeExecuteJavaScript: true,
-      contextIsolation: true
-    }
-  })
+      contextIsolation: true,
+    },
+  });
 
-  win.loadFile('index.html')
+  win.loadFile("index.html");
 }
 
 app.whenReady().then(createWindow);

@@ -2,13 +2,15 @@
   (mapReady)="mapReadyHandler()"
   [latitude]="lat"
   [longitude]="lng"
-  [zoom]="13">
-  <agm-circle *ngIf="lat && lng"
-   [latitude]="lat"
-   [longitude]="lng"
-   [radius]="800"
-   [fillColor]="'#F44336'"
-   [fillOpacity]="0.4"
-   >
+  [zoom]="13"
+>
+  <agm-circle
+    *ngIf="lat && lng"
+    [latitude]="lat"
+    [longitude]="lng"
+    [radius]="800"
+    [fillColor]="'#F44336'"
+    [fillOpacity]="0.4"
+  >
   </agm-circle>
 </agm-map>

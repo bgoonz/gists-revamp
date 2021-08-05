@@ -4,9 +4,9 @@ import { Product, ProductDoc } from "../database/models";
 import { Request, Response, NextFunction } from "express";
 import { InternalServerError, NotFoundError } from "../errors";
 import { Cloudinary } from "../services/cloudinary";
-const path = require('path');
+const path = require("path");
 
-const DatauriParser = require('datauri/parser');
+const DatauriParser = require("datauri/parser");
 const parser = new DatauriParser();
 
 export const getAddProduct = (
@@ -31,7 +31,10 @@ export const postAddProduct = async (
   next: NextFunction
 ) => {
   const title = req.body.title;
-  const file64 = parser.format(path.extname(req.file.originalname).toString(), req.file.buffer);
+  const file64 = parser.format(
+    path.extname(req.file.originalname).toString(),
+    req.file.buffer
+  );
 
   const price = req.body.price;
   const description = req.body.description;

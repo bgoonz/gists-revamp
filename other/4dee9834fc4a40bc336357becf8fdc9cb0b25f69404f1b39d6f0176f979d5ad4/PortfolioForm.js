@@ -1,10 +1,18 @@
-const { register, handleSubmit, errors, setError, clearError, watch, setValue } = useForm();
+const {
+  register,
+  handleSubmit,
+  errors,
+  setError,
+  clearError,
+  watch,
+  setValue,
+} = useForm();
 
-const handleDateChange = dateType => date => {
+const handleDateChange = (dateType) => (date) => {
   if (!isDateInFuture(date)) {
-    setError(dateType, 'isDateInFuture')
+    setError(dateType, "isDateInFuture");
   } else {
-    clearError(dateType, 'isDateInFuture');
+    clearError(dateType, "isDateInFuture");
   }
-  setValue(dateType, date)
+  setValue(dateType, date);
 };

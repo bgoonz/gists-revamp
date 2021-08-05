@@ -1,4 +1,3 @@
-
 input {
   display: none;
 }
@@ -24,13 +23,13 @@ input {
 }
 
 .img-loading-overlay {
-    background-color: black;
-    bottom: 0;
-    left: 0;
-    opacity: .2;
-    position: absolute;
-    right: 0;
-    top: 0;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .img-spinning-circle {
@@ -71,7 +70,9 @@ input {
   padding: 15px 30px;
   font-size: 20px;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     border-color: $main-color !important;
     background-color: $main-color !important;
   }

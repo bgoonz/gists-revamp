@@ -1,7 +1,7 @@
 import { FETCH_SERVICES } from "../actionTypes";
 
 const INITIAL_STATE = {
-  items: []
+  items: [],
 };
 
 const servicesReducer = (state = INITIAL_STATE, action) => {

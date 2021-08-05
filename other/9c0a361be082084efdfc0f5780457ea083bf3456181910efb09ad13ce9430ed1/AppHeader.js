@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
 import { Link } from "gatsby";
 
-export default function Header({seo}) {
-
+export default function Header({ seo }) {
   return (
     <nav className="navbar is-transparent mb-5 p-5">
       <div className="navbar-brand">
         <Link className="navbar-item" to="/">
           <h1 className="title">CODE_SPACE</h1>
         </Link>
-        <div className="navbar-burger" data-target="navbarExampleTransparentExample">
+        <div
+          className="navbar-burger"
+          data-target="navbarExampleTransparentExample"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -37,10 +39,9 @@ export default function Header({seo}) {
                   data-social-target="https://eincode.com"
                   rel="noreferrer"
                   target="_blank"
-                  href={`https://twitter.com/intent/tweet?text=Hello World&hashtags=eincode&url=https://eincode.com`}>
-                  <span>
-                    Tweet
-                  </span>
+                  href={`https://twitter.com/intent/tweet?text=Hello World&hashtags=eincode&url=https://eincode.com`}
+                >
+                  <span>Tweet</span>
                 </a>
               </p>
               <p className="control">

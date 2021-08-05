@@ -1,25 +1,23 @@
-import React from 'react';
+import React from "react";
 
 class App extends React.Component {
-
   state = {
-    counter: 0
-  }
+    counter: 0,
+  };
 
   noState = {
-    counter: 0
-  }
+    counter: 0,
+  };
 
   increment = (num) => {
     this.setState({
-      counter: this.state.counter + num
-    })
-  }
+      counter: this.state.counter + num,
+    });
+  };
 
   noIncrement = (num) => {
-    this.noState.counter = this.noState.counter + num
-
-  }
+    this.noState.counter = this.noState.counter + num;
+  };
 
   render() {
     return (
@@ -36,7 +34,7 @@ class App extends React.Component {
         <button onClick={() => this.noIncrement(1)}>Increment</button>
         <button onClick={() => this.noIncrement(-1)}>Decrement</button>
       </div>
-    )
+    );
   }
 }
 

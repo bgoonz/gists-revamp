@@ -1,4 +1,4 @@
 new Vue({
-  render: h => h(App),
-  components: { App }
-}).$mount('#app')
+  render: (h) => h(App),
+  components: { App },
+}).$mount("#app");

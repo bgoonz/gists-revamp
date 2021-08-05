@@ -22,10 +22,10 @@ export default class SlateEditor extends React.Component {
   // Set the initial value when the app is first constructed.
   state = {
     value: initialValue,
-    isLoaded: false
+    isLoaded: false,
   };
 
-  menuRef = React.createRef()
+  menuRef = React.createRef();
 
   componentDidMount() {
     this.updateMenu();
@@ -42,10 +42,10 @@ export default class SlateEditor extends React.Component {
   };
 
   updateMenu() {
-    const menu = this.menuRef.current
+    const menu = this.menuRef.current;
     if (!menu) return;
 
-    debugger
+    debugger;
     const { value } = this.state;
     const { fragment, selection } = value;
 
@@ -61,10 +61,9 @@ export default class SlateEditor extends React.Component {
     menu.style.opacity = 1;
     menu.style.top = `${rect.top + window.pageYOffset - menu.offsetHeight}px`;
 
-    menu.style.left = `${rect.left +
-      window.pageXOffset -
-      menu.offsetWidth / 2 +
-      rect.width / 2}px`;
+    menu.style.left = `${
+      rect.left + window.pageXOffset - menu.offsetWidth / 2 + rect.width / 2
+    }px`;
   }
 
   // Render the editor.
@@ -91,7 +90,7 @@ export default class SlateEditor extends React.Component {
     return (
       <React.Fragment>
         {children}
-        <HoverMenu ref={(ref) => this.menuRef = ref} editor={editor} />
+        <HoverMenu ref={(ref) => (this.menuRef = ref)} editor={editor} />
       </React.Fragment>
     );
   };

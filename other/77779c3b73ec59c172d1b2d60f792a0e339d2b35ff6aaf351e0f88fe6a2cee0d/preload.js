@@ -1,30 +1,29 @@
-
-const { ipcRenderer, contextBridge } = require('electron');
+const { ipcRenderer, contextBridge } = require("electron");
 
 let listener;
 const bridge = {
-  send: data => ipcRenderer.send('from-renderer', data),
-  onMessage: callback => listener = callback
-}
+  send: (data) => ipcRenderer.send("from-renderer", data),
+  onMessage: (callback) => (listener = callback),
+};
 
-ipcRenderer.on('to-renderer', (event, arg) => {
+ipcRenderer.on("to-renderer", (event, arg) => {
   if (listener) {
-     listener(arg);
+    listener(arg);
   } else {
-     console.warn('No listener');
+    console.warn("No listener");
   }
 });
 
-contextBridge.exposeInMainWorld('electron', {
+contextBridge.exposeInMainWorld("electron", {
   bridge,
   notificationApi: {
     sendNotification(message) {
-      ipcRenderer.send('notify', message);
-    }
+      ipcRenderer.send("notify", message);
+    },
   },
   appApi: {
     quitApp() {
-      ipcRenderer.send('app-quit');
-    }
-  }
-})
+      ipcRenderer.send("app-quit");
+    },
+  },
+});

@@ -1,27 +1,31 @@
-
-import { Container, Row, Col, Navbar, Nav, Media, Image, Card } from 'react-bootstrap';
+import {
+  Container,
+  Row,
+  Col,
+  Navbar,
+  Nav,
+  Media,
+  Image,
+  Card,
+} from "react-bootstrap";
 
 <Container>
   {/* NAVBAR STARTS */}
-  <Navbar
-    className="fj-navbar fj-nav-base"
-    bg="transparent"
-    expand="lg" >
+  <Navbar className="fj-navbar fj-nav-base" bg="transparent" expand="lg">
     <Navbar.Brand className="fj-navbar-brand">
       <a href="#">Filip-Jerga</a>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
-        <Nav.Link
-          className="fj-navbar-item fj-navbar-link"
-          href='/'>Home
+        <Nav.Link className="fj-navbar-item fj-navbar-link" href="/">
+          Home
         </Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
   {/* NAVBAR ENDS */}
-  <div className='blog-detail-page'>
+  <div className="blog-detail-page">
     <Row>
       <Col md="8">
         {/* AUTHOR INTRO STARTS */}
@@ -37,15 +41,15 @@ import { Container, Row, Col, Navbar, Nav, Media, Image, Card } from 'react-boot
           <Media.Body>
             <h5 className="font-weight-bold mb-0">Hello Friends,</h5>
             <p className="welcome-text">
-            My name is Filip Jerga and I am an experienced software engineer and freelance developer.
-            and this is my blog page.
+              My name is Filip Jerga and I am an experienced software engineer
+              and freelance developer. and this is my blog page.
             </p>
           </Media.Body>
         </Media>
         {/* AUTHOR INTRO ENDS */}
       </Col>
     </Row>
-    <hr/>
+    <hr />
     {/* className from props */}
     <div className={`page-wrapper`}>
       <Row className="mb-5">
@@ -53,21 +57,25 @@ import { Container, Row, Col, Navbar, Nav, Media, Image, Card } from 'react-boot
           {/* CardListItem STARTS */}
           <Card className={`fj-card fj-card-list`}>
             <div className="card-body-wrapper">
-              <Card.Header
-                className="d-flex flex-row">
+              <Card.Header className="d-flex flex-row">
                 <img
-                  src={'https://via.placeholder.com/150'}
+                  src={"https://via.placeholder.com/150"}
                   className="rounded-circle mr-3"
                   height="50px"
                   width="50px"
-                  alt="avatar"/>
-                  <div>
-                    <Card.Title className="font-weight-bold mb-1">Placeholder Author</Card.Title>
-                    <Card.Text className="card-date">Placeholder Date</Card.Text>
-                  </div>
+                  alt="avatar"
+                />
+                <div>
+                  <Card.Title className="font-weight-bold mb-1">
+                    Placeholder Author
+                  </Card.Title>
+                  <Card.Text className="card-date">Placeholder Date</Card.Text>
+                </div>
               </Card.Header>
               <Card.Body>
-                <Card.Title className="card-main-title">Placeholder Title</Card.Title>
+                <Card.Title className="card-main-title">
+                  Placeholder Title
+                </Card.Title>
                 <Card.Text>Placehodler Subtitle</Card.Text>
               </Card.Body>
             </div>
@@ -81,33 +89,35 @@ import { Container, Row, Col, Navbar, Nav, Media, Image, Card } from 'react-boot
         <Col md="4">
           <Card className={`fj-card`}>
             <div className="card-body-wrapper">
-              <Card.Header
-                className="d-flex flex-row">
+              <Card.Header className="d-flex flex-row">
                 <img
-                  src={'https://via.placeholder.com/150'}
+                  src={"https://via.placeholder.com/150"}
                   className="rounded-circle mr-3"
                   height="50px"
                   width="50px"
-                  alt="avatar"/>
+                  alt="avatar"
+                />
                 <div>
-                  <Card.Title className="font-weight-bold mb-1">Placeholder Author</Card.Title>
+                  <Card.Title className="font-weight-bold mb-1">
+                    Placeholder Author
+                  </Card.Title>
                   <Card.Text className="card-date">Placeholder Date</Card.Text>
                 </div>
               </Card.Header>
               <div className="view overlay">
                 <Card.Img
-                  src='https://via.placeholder.com/250'
+                  src="https://via.placeholder.com/250"
                   alt="Card image cap"
                 />
               </div>
               <Card.Body>
-                <Card.Title className="card-main-title">Placeholder Title</Card.Title>
+                <Card.Title className="card-main-title">
+                  Placeholder Title
+                </Card.Title>
                 <Card.Text>Placehodler Subtitle</Card.Text>
               </Card.Body>
             </div>
-            <a className="card-button">
-              Read More
-            </a>
+            <a className="card-button">Read More</a>
           </Card>
         </Col>
       </Row>
@@ -115,9 +125,11 @@ import { Container, Row, Col, Navbar, Nav, Media, Image, Card } from 'react-boot
   </div>
   <footer className="page-footer">
     <div>
-      <a href="#">courses</a>{' | '}
-      <a href="#">github</a>{' | '}
+      <a href="#">courses</a>
+      {" | "}
+      <a href="#">github</a>
+      {" | "}
       <a href="#">facebook</a>
     </div>
   </footer>
-</Container>
+</Container>;

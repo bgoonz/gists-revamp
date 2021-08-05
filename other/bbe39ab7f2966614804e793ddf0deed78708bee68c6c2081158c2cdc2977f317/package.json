@@ -1,1 +1,0 @@
-"watch": "webpack --config webpack.common.js --watch"

@@ -1,8 +1,8 @@
 import React from "react";
 import withAuthorization from "components/hoc/withAuthorization";
 import ServiceItem from "components/service/ServiceItem";
-import { connect } from 'react-redux';
-import Spinner from 'components/Spinner';
+import { connect } from "react-redux";
+import Spinner from "components/Spinner";
 
 import { fetchUserServices } from "actions";
 

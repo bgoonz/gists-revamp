@@ -7,10 +7,7 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -22,18 +19,14 @@
         "styles.scss",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
-      "scripts": [
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
-      ],
+      "scripts": ["../node_modules/bootstrap/dist/js/bootstrap.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       },
       "stylePreprocessorOptions": {
-        "includePaths": [
-          "./styles"
-        ]
+        "includePaths": ["./styles"]
       }
     }
   ],
