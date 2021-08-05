@@ -1,2 +1,0 @@
-`ng get`
-`ng set`
