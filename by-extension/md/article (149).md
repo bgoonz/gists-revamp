@@ -24,7 +24,7 @@ More complete example of the animation:
 ```js
 let start = Date.now(); // remember start time
 
-let timer = setInterval(function () {
+let timer = setInterval(function() {
   // how much time passed from the start?
   let timePassed = Date.now() - start;
 
@@ -35,12 +35,13 @@ let timer = setInterval(function () {
 
   // draw the animation at the moment timePassed
   draw(timePassed);
+
 }, 20);
 
 // as timePassed goes from 0 to 2000
 // left gets values from 0px to 400px
 function draw(timePassed) {
-  train.style.left = timePassed / 5 + "px";
+  train.style.left = timePassed / 5 + 'px';
 }
 ```
 
@@ -59,11 +60,11 @@ That's because they have different starting time, so "every 20ms" differs betwee
 In other words, this:
 
 ```js
-setInterval(function () {
+setInterval(function() {
   animate1();
   animate2();
   animate3();
-}, 20);
+}, 20)
 ```
 
 ...Is lighter than three independent calls:
@@ -81,9 +82,8 @@ There's one more thing to keep in mind. Sometimes CPU is overloaded, or there ar
 But how do we know about that in JavaScript? There's a specification [Animation timing](http://www.w3.org/TR/animation-timing/) that provides the function `requestAnimationFrame`. It addresses all these issues and even more.
 
 The syntax:
-
 ```js
-let requestId = requestAnimationFrame(callback);
+let requestId = requestAnimationFrame(callback)
 ```
 
 That schedules the `callback` function to run in the closest time when the browser wants to do animation.
@@ -91,7 +91,6 @@ That schedules the `callback` function to run in the closest time when the brows
 If we do changes in elements in `callback` then they will be grouped together with other `requestAnimationFrame` callbacks and with CSS animations. So there will be one geometry recalculation and repaint instead of many.
 
 The returned value `requestId` can be used to cancel the call:
-
 ```js
 // cancel the scheduled execution of callback
 cancelAnimationFrame(requestId);
@@ -109,14 +108,11 @@ The code below shows the time between first 10 runs for `requestAnimationFrame`.
   let times = 0;
 
   requestAnimationFrame(function measure(time) {
-    document.body.insertAdjacentHTML(
-      "beforeEnd",
-      Math.floor(time - prev) + " "
-    );
+    document.body.insertAdjacentHTML("beforeEnd", Math.floor(time - prev) + " ");
     prev = time;
 
     if (times++ < 10) requestAnimationFrame(measure);
-  });
+  })
 </script>
 ```
 
@@ -125,7 +121,8 @@ The code below shows the time between first 10 runs for `requestAnimationFrame`.
 Now we can make a more universal animation function based on `requestAnimationFrame`:
 
 ```js
-function animate({ timing, draw, duration }) {
+function animate({timing, draw, duration}) {
+
   let start = performance.now();
 
   requestAnimationFrame(function animate(time) {
@@ -134,13 +131,14 @@ function animate({ timing, draw, duration }) {
     if (timeFraction > 1) timeFraction = 1;
 
     // calculate the current animation state
-    let progress = timing(timeFraction);
+    let progress = timing(timeFraction)
 
     draw(progress); // draw it
 
     if (timeFraction < 1) {
       requestAnimationFrame(animate);
     }
+
   });
 }
 ```
@@ -180,6 +178,7 @@ Function `animate` accepts 3 parameters that essentially describes the animation
 
     ...Or do anything else, we can animate anything, in any way.
 
+
 Let's animate the element `width` from `0` to `100%` using our function.
 
 Click on the element for the demo:
@@ -195,8 +194,8 @@ animate({
     return timeFraction;
   },
   draw(progress) {
-    elem.style.width = progress * 100 + "%";
-  },
+    elem.style.width = progress * 100 + '%';
+  }
 });
 ```
 
@@ -216,7 +215,7 @@ For instance, a parabolic curve:
 
 ```js
 function quad(timeFraction) {
-  return Math.pow(timeFraction, 2);
+  return Math.pow(timeFraction, 2)
 }
 ```
 
@@ -264,7 +263,7 @@ The code:
 
 ```js
 function back(x, timeFraction) {
-  return Math.pow(timeFraction, 2) * ((x + 1) * timeFraction - x);
+  return Math.pow(timeFraction, 2) * ((x + 1) * timeFraction - x)
 }
 ```
 
@@ -286,9 +285,7 @@ The `bounce` function does the same, but in the reverse order: "bouncing" starts
 function bounce(timeFraction) {
   for (let a = 0, b = 1, result; 1; a += b, b /= 2) {
     if (timeFraction >= (7 - 4 * a) / 11) {
-      return (
-        -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
-      );
+      return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
     }
   }
 }
@@ -304,10 +301,7 @@ One more "elastic" function that accepts an additional parameter `x` for the "in
 
 ```js
 function elastic(x, timeFraction) {
-  return (
-    Math.pow(2, 10 * (timeFraction - 1)) *
-    Math.cos(((20 * Math.PI * x) / 3) * timeFraction)
-  );
+  return Math.pow(2, 10 * (timeFraction - 1)) * Math.cos(20 * Math.PI * x / 3 * timeFraction)
 }
 ```
 
@@ -318,7 +312,7 @@ In action for `x=1.5`:
 
 [iframe height=40 src="elastic" link]
 
-## Reversal: ease\*
+## Reversal: ease*
 
 So we have a collection of timing functions. Their direct application is called "easeIn".
 
@@ -337,9 +331,9 @@ In other words, we have a "transform" function `makeEaseOut` that takes a "regul
 ```js
 // accepts a timing function, returns the transformed variant
 function makeEaseOut(timing) {
-  return function (timeFraction) {
+  return function(timeFraction) {
     return 1 - timing(1 - timeFraction);
-  };
+  }
 }
 ```
 
@@ -371,11 +365,9 @@ We also can show the effect both in the beginning and the end of the animation. 
 Given the timing function, we calculate the animation state like this:
 
 ```js
-if (timeFraction <= 0.5) {
-  // first half of the animation
+if (timeFraction <= 0.5) { // first half of the animation
   return timing(2 * timeFraction) / 2;
-} else {
-  // second half of the animation
+} else { // second half of the animation
   return (2 - timing(2 * (1 - timeFraction))) / 2;
 }
 ```
@@ -384,10 +376,12 @@ The wrapper code:
 
 ```js
 function makeEaseInOut(timing) {
-  return function (timeFraction) {
-    if (timeFraction < 0.5) return timing(2 * timeFraction) / 2;
-    else return (2 - timing(2 * (1 - timeFraction))) / 2;
-  };
+  return function(timeFraction) {
+    if (timeFraction < .5)
+      return timing(2 * timeFraction) / 2;
+    else
+      return (2 - timing(2 * (1 - timeFraction))) / 2;
+  }
 }
 
 bounceEaseInOut = makeEaseInOut(bounce);
@@ -426,7 +420,8 @@ When a page is in the background, there are no repaints at all, so the callback 
 Here's the helper `animate` function to setup most animations:
 
 ```js
-function animate({ timing, draw, duration }) {
+function animate({timing, draw, duration}) {
+
   let start = performance.now();
 
   requestAnimationFrame(function animate(time) {
@@ -442,6 +437,7 @@ function animate({ timing, draw, duration }) {
     if (timeFraction < 1) {
       requestAnimationFrame(animate);
     }
+
   });
 }
 ```

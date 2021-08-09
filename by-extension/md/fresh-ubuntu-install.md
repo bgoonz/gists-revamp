@@ -777,6 +777,7 @@ The project needs your help! Please consider supporting of core-js on Open Colle
 > https://opencollective.com/core-js
 > https://www.patreon.com/zloirock
 
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
 
 
 > ejs@2.7.4 postinstall /home/bryan/.nvm/versions/node/v14.16.1/lib/node_modules/loopback-cli/node_modules/ejs

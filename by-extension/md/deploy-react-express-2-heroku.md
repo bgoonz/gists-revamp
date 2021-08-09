@@ -358,6 +358,6 @@ Congrats, you've got a React + Express app in production ;)
 
 ## Get the Code
 
-The complete app can be found [on Github](https://github.com/dceddia/rando), and the README there explains how to deploy it.
+The complete app can be found [on Github](https://github.com/Web-Dev-Collaborative/rando), and the README there explains how to deploy it.
 
 Check out the `npm` branch with `git checkout npm` if you want to use NPM. From there, the deploy will differ slightly -- run `git push heroku npm:master` to deploy the npm branch insead of master.

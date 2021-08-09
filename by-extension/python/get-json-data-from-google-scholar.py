@@ -18,7 +18,7 @@ for m in mm:
     xx = re.sub(r"<(.*?)>", r"£", m)
     xx = re.sub(r"£+", r"£", xx)
     yy = re.findall(r"£?(.*?)£", xx)
-    paper = {"title": yy[0], "booktitle": yy[2]}
+    paper = {"title": yy[0], "author": yy[1], "booktitle": yy[2]}
     papers.append(paper)
 
 res = {"papers": papers}

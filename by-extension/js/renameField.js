@@ -4,6 +4,7 @@ import client from "part:@sanity/base/client";
 // Run this script with: `sanity exec --with-user-token migrations/renameField.js`
 //
 // This example shows how you may write a migration script that renames a field (name => fullname)
+// on a specific document type (author).
 // This will migrate documents in batches of 100 and continue patching until no more documents are
 // returned from the query.
 //
@@ -19,7 +20,10 @@ import client from "part:@sanity/base/client";
 // Fetching documents that matches the precondition for the migration.
 // NOTE: This query should eventually return an empty set of documents to mark the migration
 // as complete
-const fetchDocuments = () => client.fetch();
+const fetchDocuments = () =>
+  client.fetch(
+    `*[_type == 'author' && defined(name)][0...100] {_id, _rev, name}`
+  );
 
 const buildPatches = (docs) =>
   docs.map((doc) => ({

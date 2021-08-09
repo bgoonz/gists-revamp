@@ -36,6 +36,7 @@ function downloadResource(urlStr, callback) {
       {
         host: parsedUrl.host,
         path: parsedUrl.path,
+        rejectUnauthorized: false,
         headers: { "User-Agent": "TabNine.tabnine-vscode" },
       },
       (response) => {

@@ -11,6 +11,7 @@ var orgRepoPath = org + "/" + repo; // babel/babel-eslint
 var loggedInUser =
   document.querySelector(".js-menu-target").getAttribute("href").slice(1) || "";
 // console.log(loggedInUser);
+var contributor = document.querySelector("a.author").text.trim();
 // console.log(contributor);
 
 function queryParams(contributor, checkRepo) {
@@ -21,6 +22,7 @@ function queryParams(contributor, checkRepo) {
   }
 
   return (
+    "?q=type:pr+-user:" + contributor + "+author:" + contributor + checkRepo
   );
   ("&sort=created&order=asc&per_page=1");
 }

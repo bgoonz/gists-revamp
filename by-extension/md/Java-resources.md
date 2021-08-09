@@ -1,3 +1,4 @@
+
 <details><summary>Tutorials for Learning Core Java</summary>
 <p>
 
@@ -56,7 +57,6 @@
 - [14 great Java books you need to read before you die](https://marcus-biel.com/must-reads/)
 
 ---
-
 </p>
 </details>
 
@@ -66,9 +66,9 @@
 - [Space Battle Arena - Fun practice with Java! Requires some setting up and 2+ people for best results](http://mikeware.github.io/SpaceBattleArena/)
 - [Robocode - Similar to Space Battle](https://robocode.sourceforge.io/)
 - [Code Wars](https://www.codewars.com/)
+- [playlist features the author of Cracking the Code Interview showing solutions to Algorithms problems in Java from the HankerRank Youtube channel](https://www.youtube.com/watch?v=KEEKn7Me-ms&list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL)
 
 ---
-
 </p>
 </details>
 
@@ -106,7 +106,6 @@
 - [Baeldung A Guide to Spring Boot Admin](https://www.baeldung.com/spring-boot-admin)
 
 ---
-
 </p>
 </details>
 
@@ -147,6 +146,5 @@
 - [Things You Should Do To Become A Top Quality Programmer](https://www.techworm.net/2016/04/things-become-top-quality-programmer.html)
 
 ---
-
 </p>
 </details>

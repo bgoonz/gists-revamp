@@ -1,3 +1,4 @@
+ 
 **SYSTEMS**  
 <img src="docs/icons/windows.svg" alt="Windows icon" title="Windows">
 <img src="docs/icons/powershell.svg" alt="Powershell icon" title="Powershell">
@@ -61,6 +62,7 @@
 <img src="docs/icons/flask.svg" alt="Flask icon" title="Flask">
 <img src="docs/icons/django.svg" alt="Django icon" title="Django">
 
+
 **IDES & TOOLS**  
 <img src="docs/icons/visualstudiocode.svg" alt="Visual Studio Code icon" title="Visual Studio Code">
 <img src="docs/icons/pycharm.svg" alt="PyCharm icon" title="PyCharm">
@@ -70,6 +72,7 @@
 <img src="docs/icons/postman.svg" alt="Postman icon" title="Postman">
 <img src="docs/icons/gitkraken.svg" alt="GitKraken icon" title="GitKraken">
 
+
 **GAME ENGINES**  
 <img src="docs/icons/renpy.svg" alt="Ren'Py icon" title="Ren'Py">
 <img src="docs/icons/stencyl.svg" alt="Stencyl icon" title="Stencyl">
@@ -78,6 +81,7 @@
 <img src="docs/icons/unreal.svg" alt="Unreal icon" title="Unreal">
 <img src="docs/icons/godot.svg" alt="Godot Engine icon" title="Godot Engine">
 <img src="docs/icons/gamemaker.svg" alt="GameMaker icon" title="GameMaker">
+
 
 **RESOURCES**  
 <img src="docs/icons/.svg" alt=" icon" title="">
@@ -95,6 +99,7 @@
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
 
+
 **GAME PLATFORMS**  
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
@@ -105,6 +110,8 @@
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
 
+
+
 **COLLABORATIVE**  
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
@@ -113,6 +120,7 @@
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
+
 
 **CREATIVE (VISUAL)**  
 <img src="docs/icons/.svg" alt=" icon" title="">
@@ -125,6 +133,7 @@
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
+
 
 **MICROSOFT**  
 <img src="docs/icons/.svg" alt=" icon" title="">
@@ -142,6 +151,7 @@
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
 
+
 **ADOBE**  
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
@@ -151,6 +161,7 @@
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
+
 
 **SOCIALS**  
 <img src="docs/icons/.svg" alt=" icon" title="">
@@ -163,6 +174,7 @@
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
 <img src="docs/icons/.svg" alt=" icon" title="">
+
 
 **OTHER**  
 <img src="docs/icons/.svg" alt=" icon" title="">

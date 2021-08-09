@@ -8,6 +8,7 @@ Bot part!
 - Online: https://bitbucket.org/lbesson/bin/src/master/battleplayer.py
 - License: MIT License (http://lbesson.mit-license.org).
 """
+__author__ = "Lilian Besson"
 __name_of_app__ = "Battle Client"
 __version__ = "0.1"
 

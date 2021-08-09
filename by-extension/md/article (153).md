@@ -1,3 +1,4 @@
+
 # Template element
 
 A built-in `<template>` element serves as a storage for HTML markup templates. The browser ignores it contents, only checks for syntax validity, but we can access and use it in JavaScript, to create other elements.
@@ -7,7 +8,6 @@ In theory, we could create any invisible element somewhere in HTML for HTML mark
 First, its content can be any valid HTML, even if it normally requires a proper enclosing tag.
 
 For example, we can put there a table row `<tr>`:
-
 ```html
 <template>
   <tr>
@@ -23,9 +23,7 @@ We can put styles and scripts into `<template>` as well:
 ```html
 <template>
   <style>
-    p {
-      font-weight: bold;
-    }
+    p { font-weight: bold; }
   </style>
   <script>
     alert("Hello");
@@ -54,15 +52,15 @@ For example:
 </template>
 
 <script>
-    let elem = document.createElement('div');
+  let elem = document.createElement('div');
 
-  *!*
-    // Clone the template content to reuse it multiple times
-    elem.append(tmpl.content.cloneNode(true));
-  */!*
+*!*
+  // Clone the template content to reuse it multiple times
+  elem.append(tmpl.content.cloneNode(true));
+*/!*
 
-    document.body.append(elem);
-    // Now the script from <template> runs
+  document.body.append(elem);
+  // Now the script from <template> runs
 </script>
 ```
 
@@ -70,26 +68,22 @@ Let's rewrite a Shadow DOM example from the previous chapter using `<template>`:
 
 ```html run untrusted autorun="no-epub" height=60
 <template id="tmpl">
-  <style>
-    p {
-      font-weight: bold;
-    }
-  </style>
+  <style> p { font-weight: bold; } </style>
   <p id="message"></p>
 </template>
 
 <div id="elem">Click me</div>
 
 <script>
-    elem.onclick = function() {
-      elem.attachShadow({mode: 'open'});
+  elem.onclick = function() {
+    elem.attachShadow({mode: 'open'});
 
-  *!*
-      elem.shadowRoot.append(tmpl.content.cloneNode(true)); // (*)
-  */!*
+*!*
+    elem.shadowRoot.append(tmpl.content.cloneNode(true)); // (*)
+*/!*
 
-      elem.shadowRoot.getElementById('message').innerHTML = "Hello from the shadows!";
-    };
+    elem.shadowRoot.getElementById('message').innerHTML = "Hello from the shadows!";
+  };
 </script>
 ```
 
@@ -100,12 +94,8 @@ They form the shadow DOM:
 ```html
 <div id="elem">
   #shadow-root
-  <style>
-    p {
-      font-weight: bold;
-    }
-  </style>
-  <p id="message"></p>
+    <style> p { font-weight: bold; } </style>
+    <p id="message"></p>
 </div>
 ```
 

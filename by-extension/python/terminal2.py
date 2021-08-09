@@ -26,11 +26,13 @@
 
 """ A terminal embedded in Gedit lateral panel, v3.2.3."""
 
+__author__ = "Paolo Borelli, Lilian BESSON <lbesson at ens-cachan dot fr> for Naereen CORP."
 __version__ = "3.2.3"
 __appname__ = "gedit-terminal2"
 __app_disp_name__ = "Gedit Embeded Terminal Lateral"
 __website__ = "https://sites.google.com/site/naereencorp/gedit/"
 
+print ".:[ Initializing %s, v%s. (c) %s ]:." % (__app_disp_name__, __version__, __author__)
 print ".:[ Take a look at %s for more informations, or for the latest version of this piece of software. ]:." % (__website__)
 
 from gi.repository import GObject, GLib, Gio, Pango, Gdk, Gtk, Gedit, Vte
@@ -112,6 +114,7 @@ class GeditTerminal2(Gtk.Box):
 
     def on_child_exited(self, term):
 #:        print "on_child_exited have been called (shell is terminated)"
+        print ".:[ Re-launching a shell, on %s, v%s. (c) %s ]:." % (__app_disp_name__, __version__, __author__)
         print ".:[ Take a look at %s for more informations, or for the latest version of this piece of software. ]:." % (__website__)
         print self._vte.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
 
@@ -285,6 +288,7 @@ class GeditTerminal2(Gtk.Box):
         about_dlg.set_version(__version__)
         about_dlg.set_comments(__doc__)
         about_dlg.set_website(__website__)
+        about_dlg.set_copyright("Copyright (c) 2005-13  %s" % __author__)
 #: FIXME : on doit aller la chercher + intelligemment.
         logo = Gtk.Image.new_from_file("/usr/share/icons/gnome/32x32/apps/terminal.png") # 32x32
         about_dlg.set_logo(logo.get_pixbuf())

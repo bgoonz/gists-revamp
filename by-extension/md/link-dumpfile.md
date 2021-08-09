@@ -8,3 +8,6 @@
 - [Web Audio Tools](https://github.com/Web-Audio-Tools)
 - [Amp Websites](https://amp.dev/documentation)
 - [Chakra UI React builder](https://chakra-ui.com/docs/getting-started)
+- [Dolby](https://github.com/dolbyio)
+- [prefil iframe embeds](https://blog.codepen.io/documentation/prefill-embeds/)
+- [aesome guitar](https://gist.github.com/bgoonz/ace31617b93241df8b8a7e15339376ec)

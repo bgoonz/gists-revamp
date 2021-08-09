@@ -202,6 +202,7 @@ const motivationSchemaValidation = languages => {
     if (
       !fileJson.motivationalQuotes.every(
         object =>
+          object.hasOwnProperty('quote') && object.hasOwnProperty('author')
       )
     ) {
       console.warn(`${language}/motivation.json has malformed quote objects.`);

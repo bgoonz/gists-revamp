@@ -78,6 +78,7 @@ This should be updated fairly regularly. As usual, **pull requests are encourage
 
 - [Designing Great API Docs](http://blog.parse.com/learn/engineering/designing-great-api-docs/) - Blog post by [@jamesyu](https://twitter.com/jamesjyu) about what he/Parse finds essential in API Docs. (contributed by [@hobbyist](https://twitter.com/https://twitter.com/#!/hobbyist))
 - [TomDoc](http://tomdoc.org/) - A specification for Ruby library API docs by [@mojombo](https://twitter.com/mojombo) (contributed by [@lenary](https://twitter.com/#!/lenary))
+- [Write the Docs](http://conf.writethedocs.org) - A conference for authors of technical documentation. (contributed by [@macintux](https://twitter.com/macintux))
 - [Writing Great Documentation](http://jacobian.org/writing/great-documentation/) - Covers a variety of topics relating to writing good documentation such as content, style, formatting and so on. (contributed by [Paul A. Wilson](http://github.com/paulalexwilson)
 
 ### Generating Docs
@@ -87,6 +88,7 @@ This should be updated fairly regularly. As usual, **pull requests are encourage
 - [Sphinx](http://sphinx-doc.org/) - Comprehensive documentation tool using restructuredText with beautiful HTML and PDF output. (contributed by [@nikhilcutshort](https://twitter.com/nikhilcutshort))
 - [MkDocs](http://www.mkdocs.org/) - Documentation with Markdown, written in Python. (contributed by [ericbn](https://github.com/ericbn))
 - [Read the Docs](https://readthedocs.org/) - Hosted docs using Sphinx or MkDocs, supports translations and finding docs for specific software versions. Used by the Django Docs. (contributed by [Stephen Paulger](https://github.com/stephenpaulger))
+- [dr.js](https://github.com/adobe-webplatform/dr.js) - Tiny JavaScript documentation generator from the author of RaphaëlJS. (contributed by [@nikhilcutshort](https://twitter.com/nikhilcutshort))
 - [Markdoc](http://markdoc.org/) - Lightweight documentation/wiki generator in Python, released in the [public domain](http://unlicense.org/). (contributed by [Neelfyn](http://neelfyn.info/))
 - [ApiGen](http://apigen.org/) - Creates clean API documentation from PHP source code (contributed by [bryceadams](http://bryce.se/))
 - [docgenerator](https://github.com/Ralt/docgenerator/blob/master/README.md) - Organize your documentation in Markdown files. (contributed by [Florian Margaine](http://margaine.com))

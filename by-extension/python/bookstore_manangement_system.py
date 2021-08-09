@@ -676,6 +676,7 @@ while a == True:
 
             SNo10 = int(input("ENTER SNo OF BOOK -- "))
             name10 = input("ENTER NAME OF BOOK --- ")
+            author10 = input("ENTER NAME OF AUTHOR -- ")
             year10 = int(input("ENTER YEAR OF PUBLISHING -- "))
             ISBN10 = input("ENTER ISBN OF BOOK -- ")
             price10 = int(input("ENTER PRICE OF BOOK -- "))
@@ -693,6 +694,7 @@ while a == True:
 
             else:
 
+                insert = (SNo10, name10, author10, year10, ISBN10, price10, nob10)
                 insert20 = "insert into books values(%s,%s,%s,%s,%s,%s,%s)"
                 mycur.execute(insert20, insert)
                 mycon.commit()
@@ -737,10 +739,12 @@ while a == True:
 
             SNo1 = int(input("ENTER NEW SNo OF BOOK -- "))
             name1 = input("ENTER NEW NAME OF BOOK --- ")
+            author1 = input("ENTER NEW NAME OF AUTHOR -- ")
             year1 = int(input("ENTER NEW YEAR OF PUBLISHING -- "))
             ISBN1 = input("ENTER NEW ISBN OF BOOK -- ")
             price1 = int(input("ENTER NEW PRICE OF BOOK -- "))
             nob = int(input("ENTER NEW NO. OF BOOKS -- "))
+            insert = (SNo1, name1, author1, year1, ISBN1, price1, nob, choice4)
             update = "update books set SNo=%s,Name=%s,Author=%s,Year=%s,ISBN=%s,Price=%s,numbers_of_book=%s where ISBN=%s"
             mycur.execute(update, insert)
             mycon.commit()

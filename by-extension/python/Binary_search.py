@@ -1,46 +1,49 @@
-# It returns location of x in given array arr
-# if present, else returns -1
-def binarySearch(arr, l, r, x):
-    while l <= r:
-
-        mid = l + (r - l) / 2  # extracting the middle element from the array
-        mid = int(mid)  # it has to be integer
-
-        # Check if x is present at mid
-        if arr[mid] == x:
-            return mid
-
-            # If x is greater, ignore left half
-        elif arr[mid] < x:
-            l = (
-                mid + 1
-            )  # l is initialised to the rightmost element of the middle so that the search could be started from there the next time
-
-        # If x is smaller, ignore right half
-        elif x < arr[mid]:
-            r = (
-                mid - 1
-            )  # r is initialised to the leftmost element of the middle so that the search goes till there only the next time
-
-    # If we reach here, then the element was not present
-    return -1
+import timeit
+from random import randint
 
 
-# Main Function
-if __name__ == "__main__":
-    # User input array
-    print("Enter the array with comma separated in which element will be searched")
-    arr = [
-        int(x) for x in input().split(",")
-    ]  # the input array will of int type with each element seperated with a comma due to the split fucntion
-    # map function returns a list of results after applying the given function to each item
-    x = eval(input("Enter the element you want to search in given array"))
+def binary_search(collection, target):
+    left, right, counter = 0, len(collection), 0
+    while left != right:
+        c = (left + right) // 2
+        if target == collection[c]:
+            counter += 1
+            print("Step %i -->" % counter, [collection[c]])
+            return c, counter
+        elif target < collection[c]:
+            counter += 1
+            right = c
+            print("Step %i -->" % counter, collection[:right])
+        else:
+            counter += 1
+            left = c + 1
+            print("Step %i -->" % counter, collection[left:])
 
-    # Function call
-    result = binarySearch(arr, 0, len(arr) - 1, x)
+    return -1, counter
 
-    # printing the output
+
+def visualization():
+    length = 10
+    collection = [item for item in range(0, length)]
+    target = randint(0, length - 1)
+
+    print("Initial list:", collection)
+    print("The number of which must be found:", target)
+    print("Visualization of algorithm work.")
+
+    result, counter = binary_search(collection, target)
     if result != -1:
-        print("Element is present at index {}".format(result))
+        print("Result of searching:", result)
     else:
-        print("Element is not present in array")
+        print("This number does not exist in the list.")
+
+    print("Total numbers of passages:", counter)
+
+
+def main():
+    elapsed_time = timeit.timeit(visualization, number=1)
+    print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,5 @@
 libs:
-
-- lodash
+  - lodash
 
 ---
 
@@ -73,21 +72,20 @@ Looks fine, but a slight vulnerability appears in our code structure.
 
 What if before `setTimeout` triggers (there's one second delay!) `user` changes value? Then, suddenly, it will call the wrong object!
 
+
 ```js run
 let user = {
   firstName: "John",
   sayHi() {
     alert(`Hello, ${this.firstName}!`);
-  },
+  }
 };
 
 setTimeout(() => user.sayHi(), 1000);
 
 // ...the value of user changes within 1 second
 user = {
-  sayHi() {
-    alert("Another user in setTimeout!");
-  },
+  sayHi() { alert("Another user in setTimeout!"); }
 };
 
 // Another user in setTimeout!
@@ -112,7 +110,7 @@ In other words, calling `boundFunc` is like `func` with fixed `this`.
 
 For instance, here `funcUser` passes a call to `func` with `this=user`:
 
-```js run
+```js run  
 let user = {
   firstName: "John"
 };
@@ -123,7 +121,7 @@ function func() {
 
 *!*
 let funcUser = func.bind(user);
-funcUser(); // John
+funcUser(); // John  
 */!*
 ```
 
@@ -131,7 +129,7 @@ Here `func.bind(user)` as a "bound variant" of `func`, with fixed `this=user`.
 
 All arguments are passed to the original `func` "as is", for instance:
 
-```js run
+```js run  
 let user = {
   firstName: "John"
 };
@@ -149,6 +147,7 @@ funcUser("Hello"); // Hello, John (argument "Hello" is passed, and this=user)
 ```
 
 Now let's try with an object method:
+
 
 ```js run
 let user = {
@@ -183,7 +182,7 @@ let user = {
   firstName: "John",
   say(phrase) {
     alert(`${phrase}, ${this.firstName}!`);
-  },
+  }
 };
 
 let say = user.say.bind(user);
@@ -197,14 +196,13 @@ If an object has many methods and we plan to actively pass it around, then we co
 
 ```js
 for (let key in user) {
-  if (typeof user[key] == "function") {
+  if (typeof user[key] == 'function') {
     user[key] = user[key].bind(user);
   }
 }
 ```
 
-JavaScript libraries also provide functions for convenient mass binding , e.g. [\_.bindAll(object, methodNames)](http://lodash.com/docs#bindAll) in lodash.
-
+JavaScript libraries also provide functions for convenient mass binding , e.g. [_.bindAll(object, methodNames)](http://lodash.com/docs#bindAll) in lodash.
 ````
 
 ## Partial functions
@@ -328,4 +326,3 @@ Usually we apply `bind` to fix `this` for an object method, so that we can pass 
 When we fix some arguments of an existing function, the resulting (less universal) function is called *partially applied* or *partial*.
 
 Partials are convenient when we don't want to repeat the same argument over and over again. Like if we have a `send(from, to)` function, and `from` should always be the same for our task, we can get a partial and go on with it.
-````

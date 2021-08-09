@@ -14,7 +14,7 @@ Let's say we need to load a third-party script and call a function that resides 
 We can load it dynamically, like this:
 
 ```js
-let script = document.createElement("script");
+let script = document.createElement('script');
 script.src = "my.js";
 
 document.head.append(script);
@@ -84,14 +84,14 @@ The `load` and `error` events also work for other resources, basically for any r
 For example:
 
 ```js run
-let img = document.createElement("img");
+let img = document.createElement('img');
 img.src = "https://js.cx/clipart/train.gif"; // (*)
 
-img.onload = function () {
+img.onload = function() {
   alert(`Image loaded, size ${img.width}x${img.height}`);
 };
 
-img.onerror = function () {
+img.onerror = function() {
   alert("Error occurred while loading image");
 };
 ```
@@ -114,7 +114,6 @@ This rule also affects resources from other domains.
 If we're using a script from another domain, and there's an error in it, we can't get error details.
 
 For example, let's take a script `error.js` that consists of a single (bad) function call:
-
 ```js
 // 📁 error.js
 noSuchFunction();
@@ -124,9 +123,9 @@ Now load it from the same site where it's located:
 
 ```html run height=0
 <script>
-  window.onerror = function (message, url, line, col, errorObj) {
-    alert(`${message}\n${url}, ${line}:${col}`);
-  };
+window.onerror = function(message, url, line, col, errorObj) {
+  alert(`${message}\n${url}, ${line}:${col}`);
+};
 </script>
 <script src="/article/onload-onerror/crossorigin/error.js"></script>
 ```
@@ -142,9 +141,9 @@ Now let's load the same script from another domain:
 
 ```html run height=0
 <script>
-  window.onerror = function (message, url, line, col, errorObj) {
-    alert(`${message}\n${url}, ${line}:${col}`);
-  };
+window.onerror = function(message, url, line, col, errorObj) {
+  alert(`${message}\n${url}, ${line}:${col}`);
+};
 </script>
 <script src="https://cors.javascript.info/article/onload-onerror/crossorigin/error.js"></script>
 ```
@@ -169,6 +168,8 @@ Similar cross-origin policy (CORS) is enforced for other types of resources as w
 There are three levels of cross-origin access:
 
 1. **No `crossorigin` attribute** -- access prohibited.
+2. **`crossorigin="anonymous"`** -- access allowed if the server responds with the header `Access-Control-Allow-Origin` with `*` or our origin. Browser does not send authorization information and cookies to remote server.
+3. **`crossorigin="use-credentials"`** -- access allowed if the server sends back the header `Access-Control-Allow-Origin` with our origin and `Access-Control-Allow-Credentials: true`. Browser sends authorization information and cookies to remote server.
 
 ```smart
 You can read more about cross-origin access in the chapter <info:fetch-crossorigin>. It describes the `fetch` method for network requests, but the policy is exactly the same.

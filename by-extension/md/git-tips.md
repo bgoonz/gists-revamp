@@ -35,6 +35,8 @@ P.S: All these commands are tested on `git version 2.7.4 (Apple Git-66)`.
 - [Reset: Discard commits, advised for private branch](#reset-discard-commits-advised-for-private-branch)
 - [Reword the previous commit message](#reword-the-previous-commit-message)
 - [See commit history for just the current branch](#see-commit-history-for-just-the-current-branch)
+- [Amend author.](#amend-author)
+- [Reset author, after author has been changed in the global config.](#reset-author-after-author-has-been-changed-in-the-global-config)
 - [Changing a remote's URL](#changing-a-remotes-url)
 - [Get list of all remote references](#get-list-of-all-remote-references)
 - [Get list of all local and remote branches](#get-list-of-all-local-and-remote-branches)
@@ -137,7 +139,10 @@ P.S: All these commands are tested on `git version 2.7.4 (Apple Git-66)`.
 - [Force push to Remote Repository](#force-push-to-remote-repository)
 - [Adding Remote name](#adding-remote-name)
 - [List all currently configured remotes](#list-all-currently-configured-remotes)
+- [Show the author, time and last revision made to each line of a given file](#show-the-author-time-and-last-revision-made-to-each-line-of-a-given-file)
+- [Group commits by authors and title](#group-commits-by-authors-and-title)
 - [Forced push but still ensure you don't overwrite other's work](#forced-push-but-still-ensure-you-dont-overwrite-others-work)
+- [Show how many lines does an author contribute](#show-how-many-lines-does-an-author-contribute)
 - [Revert: Reverting an entire merge](#revert-reverting-an-entire-merge)
 - [Number of commits in a branch](#number-of-commits-in-a-branch)
 - [Alias: git undo](#alias-git-undo)
@@ -154,6 +159,7 @@ P.S: All these commands are tested on `git version 2.7.4 (Apple Git-66)`.
 - [Preformatted patch file.](#preformatted-patch-file)
 - [Get the repo name.](#get-the-repo-name)
 - [logs between date range](#logs-between-date-range)
+- [Exclude author from logs](#exclude-author-from-logs)
 - [Generates a summary of pending changes](#generates-a-summary-of-pending-changes)
 - [List references in a remote repository](#list-references-in-a-remote-repository)
 - [Backup untracked files.](#backup-untracked-files)
@@ -368,12 +374,16 @@ git commit -v --amend
 git cherry -v master
 ```
 
+## Amend author.
 
 ```sh
+git commit --amend --author='Author Name <email@address.com>'
 ```
 
+## Reset author, after author has been changed in the global config.
 
 ```sh
+git commit --amend --reset-author --no-edit
 ```
 
 ## Changing a remote's URL
@@ -1162,11 +1172,13 @@ git remote add <remote-nickname> <remote-url>
 git remote -v
 ```
 
+## Show the author, time and last revision made to each line of a given file
 
 ```sh
 git blame <file-name>
 ```
 
+## Group commits by authors and title
 
 ```sh
 git shortlog
@@ -1178,14 +1190,17 @@ git shortlog
 git push --force-with-lease <remote-name> <branch-name>
 ```
 
+## Show how many lines does an author contribute
 
 ```sh
+git log --author='_Your_Name_Here_' --pretty=tformat: --numstat | gawk '{ add += <!-- @doxie.inject start -->; subs += <!-- @doxie.inject end -->; loc += <!-- @doxie.inject start --> - <!-- @doxie.inject end --> } END { printf "added lines: %s removed lines: %s total lines: %s
 ", add, subs, loc }' -
 ```
 
 **Alternatives:**
 
 ```sh
+git log --author='_Your_Name_Here_' --pretty=tformat: --numstat | awk '{ add += <!-- @doxie.inject start -->; subs += <!-- @doxie.inject end -->; loc += <!-- @doxie.inject start --> - <!-- @doxie.inject end --> } END { printf "added lines: %s, removed lines: %s, total lines: %s
 ", add, subs, loc }' - # on Mac OSX
 ```
 
@@ -1295,8 +1310,10 @@ git rev-parse --show-toplevel
 git log --since='FEB 1 2017' --until='FEB 14 2017'
 ```
 
+## Exclude author from logs
 
 ```sh
+git log --perl-regexp --author='^((?!excluded-author-regex).*)
 
 ```
 

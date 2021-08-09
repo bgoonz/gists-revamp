@@ -29,6 +29,9 @@ def get_article(links):
             soup = BeautifulSoup(data.content, "html.parser")
             title = soup.findAll("title")[0]
             title = title.get_text()
+            author = soup.findAll("meta", {"name": "author"})[0]
+            author = author.get("content")
+            article["author"] = unicodedata.normalize("NFKD", author)
             claps = soup.findAll("button", {"data-action": "show-recommends"})[
                 0
             ].get_text()
@@ -59,6 +62,7 @@ def get_article(links):
 
 
 def save_articles(articles, csv_file, is_write=True):
+    csv_columns = ["author", "claps", "reading_time", "link", "title", "text"]
     print(csv_file)
     if is_write:
         with open(csv_file, "w") as csvfile:

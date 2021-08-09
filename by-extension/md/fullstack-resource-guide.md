@@ -1286,6 +1286,7 @@ Finally, here are all the resources that didn’t neatly fit into the other cate
 - [Google Developers — Web](https://developers.google.com/web)
 - [TutorialsPoint](https://www.tutorialspoint.com/index.htm)
 
+- 🔥🔥🔥 [Anything](https://code-cartoons.com/@linclark) [Written](https://hacks.mozilla.org/author/lclarkmozilla-com/) By [Lin Clark](https://twitter.com/codecartoons)
 - 🔥 [Tania Rascia Blog](https://www.taniarascia.com/)
 - 🔥 [Flavio Copes Blog](https://flaviocopes.com/)
 - 🔥 [The Impostor’s Advantage](https://www.zainrizvi.io/blog/the-impostors-advantage/)

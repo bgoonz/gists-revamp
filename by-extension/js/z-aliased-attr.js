@@ -37,6 +37,7 @@ by more descriptive names than their URL parameter-safe name.
     //      slices: 8
     //  }
 
+@author Daniel Stockman
 @since 2012/09
 **/
 

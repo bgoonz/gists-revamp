@@ -10,6 +10,7 @@ I am mainly trying to write fun and "Pythonic" Python, rather than trying to sol
 - Online: https://bitbucket.org/lbesson/bin/src/master/battleserver.py
 - License: MIT License (http://lbesson.mit-license.org).
 """
+__author__ = "Lilian Besson"
 __name_of_app__ = "Battle Server"
 __version__ = "0.1"
 

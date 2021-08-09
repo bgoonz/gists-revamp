@@ -8405,19 +8405,24 @@ In this step, we want to do a simple exercise on object composition.
 
 First of all, what is object composition? 
 
+Up until now, we stored simple elements inside our object, so **id** is a number, **name** is a string,  **author** is a string. In a class, you can use instances of other classes as well. Earlier we used instances of the predefined classes in Python. 
 
 In this step,  we'll create a custom class called ```Review```. In the ```Book``` class, we will have a ```list``` of ```Reviews```. This is called **object composition**. 
 
 Let's look at the solution. 
 
+Let's have a constructor, as in: ```def __init__(self, id, name, author)```. Let's define a `repr` method as well.
 
 ```py
 class Book(object):
+    def __init__(self, id, name, author):
         self.id = id
         self.name = name
+        self.author = author
         self.reviews = []
 
     def __repr__(self):
+        return repr((self.id,self.name,self.author,self.reviews))
 ```
 
 Let's create an **instance** of the ```Book```, read the book as well. You're able to see the content of the book, but the reviews are still empty. 
@@ -8490,11 +8495,14 @@ Here's the complete code we have until now.
 
 ```py
 class Book(object):
+    def __init__(self, id, name, author):
         self.id = id
         self.name = name
+        self.author = author
         self.reviews = []
 
     def __repr__(self):
+        return repr((self.id,self.name,self.author,self.reviews))
 
     def add_review(self, review):
         self.reviews.append(review)

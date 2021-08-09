@@ -16,8 +16,10 @@ export default {
     value: async () => {
       const {name, id} = await userStore.getUser('me')
       return {
+        author: {
           name,
           id,
+          _type: 'author'
         },
       }
     }

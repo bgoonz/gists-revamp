@@ -1860,6 +1860,7 @@
 .co-operativeinvestmentstest.co.uk
 .co.il
 .colorbox-min.js
+.com-authorization-required.html
 .com-bad-request.html
 .com-forbidden.html
 .com-internal-server-error.html

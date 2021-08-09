@@ -3,6 +3,7 @@
   - [GitHub](#github)
     - [Ignore Whitespace](#ignore-whitespace)
     - [Adjust Tab Space](#adjust-tab-space)
+    - [Commit History by Author](#commit-history-by-author)
     - [Cloning a Repository](#cloning-a-repository)
     - [Branch](#branch)
       - [Compare all Branches to Another Branch](#compare-all-branches-to-another-branch)
@@ -93,8 +94,10 @@ Here is a Go source file before adding `?ts=4`:
 ![After, tab space example](http://i.imgur.com/70FL4H9.png)
 
 ### Commit History by Author
+To view all commits on a repo by author add `?author={user}` to the URL.
 
 ```
+https://github.com/rails/rails/commits/master?author=dhh
 ```
 
 ![DHH commit history](http://i.imgur.com/S7AE29b.png)

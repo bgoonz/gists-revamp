@@ -33,6 +33,7 @@
   - [Benchmarking](#benchmarking)
   - [Minifiers](#minifiers)
   - [Authentication](#authentication)
+  - [Authorization](#authorization)
   - [Email](#email)
   - [Job queues](#job-queues)
   - [Node.js management](#nodejs-management)
@@ -627,6 +628,7 @@
 
 ### Authorization
 
+- [CASL](https://github.com/stalniy/casl) - Isomorphic authorization for UI and API.
 - [node-casbin](https://github.com/casbin/node-casbin) - Authorization library that supports access control models like ACL, RBAC and ABAC.
 
 ### Email
@@ -851,6 +853,7 @@
 ### Blogs
 
 - [Node.js blog](https://nodejs.org/en/blog/)
+- [webapplog.com](http://webapplog.com/tag/node-js/) - Blog posts on Node.js and JavaScript from the author of Practical Node.js and Pro Express.js Azat Mardan.
 
 ### Courses
 

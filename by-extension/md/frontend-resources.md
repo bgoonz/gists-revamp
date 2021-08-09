@@ -273,6 +273,7 @@
     + [CSS3 Code Snippets](http://www.webinterfacelab.com/snippets/)
     + The [Blueprints](http://tympanus.net/codrops/category/blueprints/) are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration.
 + DOM Manipulation
+    + [xui](http://xuijs.com/): a super micro tiny dom library for authoring html5 mobile web applications.
     + [Tire](http://tirejs.com/) offers a more lightweight alternative to libraries such as jQuery, Prototype and Zepto.
 + Typography
     + [Quick guide to webfonts via @font-face](http://www.html5rocks.com/en/tutorials/webfonts/quick/)

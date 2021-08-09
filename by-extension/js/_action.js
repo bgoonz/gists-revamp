@@ -1,5 +1,5 @@
 // Action signature should be descriptive so IDE could use it.
-const actionSet = createActions({
+var actionSet = createActions({
   /**
    * @param {object} data
    * @param {string} data.name
@@ -35,5 +35,5 @@ const actionSet = createActions({
    * @param {object} data
    * @param {string} data.name
    */
-  b(data) {},
+  b: function (data) {},
 });

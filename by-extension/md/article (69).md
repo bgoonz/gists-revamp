@@ -1,3 +1,4 @@
+
 # Private and protected properties and methods
 
 One of the most important principles of object oriented programming -- delimiting internal interface from the external one.
@@ -22,7 +23,7 @@ A lot of details. But we can use it without knowing anything.
 
 Coffee machines are quite reliable, aren't they? We can use one for years, and only if something goes wrong -- bring it for repairs.
 
-The secret of reliability and simplicity of a coffee machine -- all details are well-tuned and _hidden_ inside.
+The secret of reliability and simplicity of a coffee machine -- all details are well-tuned and *hidden* inside.
 
 If we remove the protective cover from the coffee machine, then using it will be much more complex (where to press?), and dangerous (it can electrocute).
 
@@ -34,8 +35,8 @@ But in order to hide inner details, we'll use not a protective cover, but rather
 
 In object-oriented programming, properties and methods are split into two groups:
 
-- _Internal interface_ -- methods and properties, accessible from other methods of the class, but not from the outside.
-- _External interface_ -- methods and properties, accessible also from outside the class.
+- *Internal interface* -- methods and properties, accessible from other methods of the class, but not from the outside.
+- *External interface* -- methods and properties, accessible also from outside the class.
 
 If we continue the analogy with the coffee machine -- what's hidden inside: a boiler tube, heating element, and so on -- is its internal interface.
 
@@ -68,8 +69,9 @@ class CoffeeMachine {
 
   constructor(power) {
     this.power = power;
-    alert(`Created a coffee-machine, power: ${power}`);
+    alert( `Created a coffee-machine, power: ${power}` );
   }
+
 }
 
 // create the coffee machine
@@ -107,6 +109,7 @@ class CoffeeMachine {
   constructor(power) {
     this._power = power;
   }
+
 }
 
 // create the coffee machine
@@ -137,6 +140,7 @@ class CoffeeMachine {
   get power() {
     return this._power;
   }
+
 }
 
 // create the coffee machine
@@ -226,6 +230,7 @@ For instance, let's make `waterAmount` an accessor for `#waterAmount`:
 
 ```js run
 class CoffeeMachine {
+
   #waterAmount = 0;
 
   get waterAmount() {
@@ -280,7 +285,7 @@ With private fields that's impossible: `this['#name']` doesn't work. That's a sy
 
 ## Summary
 
-In terms of OOP, delimiting of the internal interface from the external one is called [encapsulation](<https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>).
+In terms of OOP, delimiting of the internal interface from the external one is called [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)).
 
 It gives the following benefits:
 

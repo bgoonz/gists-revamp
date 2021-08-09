@@ -30,19 +30,16 @@ That's exactly what `:host` does:
 </template>
 
 <script>
-  customElements.define(
-    "custom-dialog",
-    class extends HTMLElement {
-      connectedCallback() {
-        this.attachShadow({ mode: "open" }).append(
-          tmpl.content.cloneNode(true)
-        );
-      }
-    }
-  );
+customElements.define('custom-dialog', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'}).append(tmpl.content.cloneNode(true));
+  }
+});
 </script>
 
-<custom-dialog> Hello! </custom-dialog>
+<custom-dialog>
+  Hello!
+</custom-dialog>
 ```
 
 ## Cascading
@@ -52,20 +49,19 @@ The shadow host (`<custom-dialog>` itself) resides in the light DOM, so it's aff
 If there's a property styled both in `:host` locally, and in the document, then the document style takes precedence.
 
 For instance, if in the document we had:
-
 ```html
 <style>
-  custom-dialog {
-    padding: 0;
-  }
+custom-dialog {
+  padding: 0;
+}
 </style>
 ```
-
 ...Then the `<custom-dialog>` would be without padding.
 
 It's very convenient, as we can setup "default" component styles in its `:host` rule, and then easily override them in the document.
 
 The exception is when a local property is labelled `!important`, for such properties, local styles take precedence.
+
 
 ## :host(selector)
 
@@ -76,41 +72,41 @@ For example, we'd like to center the `<custom-dialog>` only if it has `centered`
 ```html run autorun="no-epub" untrusted height=80
 <template id="tmpl">
   <style>
-    *!*
-        :host([centered]) {
-    */!*
-          position: fixed;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          border-color: blue;
-        }
+*!*
+    :host([centered]) {
+*/!*
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-color: blue;
+    }
 
-        :host {
-          display: inline-block;
-          border: 1px solid red;
-          padding: 10px;
-        }
+    :host {
+      display: inline-block;
+      border: 1px solid red;
+      padding: 10px;
+    }
   </style>
   <slot></slot>
 </template>
 
 <script>
-  customElements.define(
-    "custom-dialog",
-    class extends HTMLElement {
-      connectedCallback() {
-        this.attachShadow({ mode: "open" }).append(
-          tmpl.content.cloneNode(true)
-        );
-      }
-    }
-  );
+customElements.define('custom-dialog', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'}).append(tmpl.content.cloneNode(true));
+  }
+});
 </script>
 
-<custom-dialog centered> Centered! </custom-dialog>
 
-<custom-dialog> Not centered. </custom-dialog>
+<custom-dialog centered>
+  Centered!
+</custom-dialog>
+
+<custom-dialog>
+  Not centered.
+</custom-dialog>
 ```
 
 Now the additional centering styles are only applied to the first dialog: `<custom-dialog centered>`.
@@ -139,12 +135,11 @@ Now let's consider the situation with slots.
 Slotted elements come from light DOM, so they use document styles. Local styles do not affect slotted content.
 
 In the example below, slotted `<span>` is bold, as per document style, but does not take `background` from the local style:
-
 ```html run autorun="no-epub" untrusted height=80
 <style>
-  *!*
-    span { font-weight: bold }
-  */!*
+*!*
+  span { font-weight: bold }
+*/!*
 </style>
 
 <user-card>
@@ -152,12 +147,10 @@ In the example below, slotted `<span>` is bold, as per document style, but does 
 </user-card>
 
 <script>
-  customElements.define(
-    "user-card",
-    class extends HTMLElement {
-      connectedCallback() {
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.innerHTML = `
+customElements.define('user-card', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.innerHTML = `
       <style>
 *!*
       span { background: red; }
@@ -165,9 +158,8 @@ In the example below, slotted `<span>` is bold, as per document style, but does 
       </style>
       Name: <slot name="username"></slot>
     `;
-      }
-    }
-  );
+  }
+});
 </script>
 ```
 
@@ -183,12 +175,10 @@ First, we can style the `<slot>` itself and rely on CSS inheritance:
 </user-card>
 
 <script>
-  customElements.define(
-    "user-card",
-    class extends HTMLElement {
-      connectedCallback() {
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.innerHTML = `
+customElements.define('user-card', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.innerHTML = `
       <style>
 *!*
       slot[name="username"] { font-weight: bold; }
@@ -196,9 +186,8 @@ First, we can style the `<slot>` itself and rely on CSS inheritance:
       </style>
       Name: <slot name="username"></slot>
     `;
-      }
-    }
-  );
+  }
+});
 </script>
 ```
 
@@ -219,12 +208,10 @@ In our example, `::slotted(div)` selects exactly `<div slot="username">`, but no
 </user-card>
 
 <script>
-  customElements.define(
-    "user-card",
-    class extends HTMLElement {
-      connectedCallback() {
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.innerHTML = `
+customElements.define('user-card', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.innerHTML = `
       <style>
 *!*
       ::slotted(div) { border: 1px solid red; }
@@ -232,9 +219,8 @@ In our example, `::slotted(div)` selects exactly `<div slot="username">`, but no
       </style>
       Name: <slot name="username"></slot>
     `;
-      }
-    }
-  );
+  }
+});
 </script>
 ```
 
@@ -262,7 +248,7 @@ There's no selector that can directly affect shadow DOM styles from the document
 
 **Custom CSS properties exist on all levels, both in light and shadow.**
 
-For example, in shadow DOM we can use `--user-card-field-color` CSS variable to style fields, and the outer document can set its value:
+For example, in shadow DOM we can use `--user-card-field-color` CSS variable to  style fields, and the outer document can set its value:
 
 ```html
 <style>
@@ -289,37 +275,32 @@ Here's the full example:
 
 ```html run autorun="no-epub" untrusted height=80
 <style>
-  *!*
-    user-card {
-      --user-card-field-color: green;
-    }
-  */!*
+*!*
+  user-card {
+    --user-card-field-color: green;
+  }
+*/!*
 </style>
 
 <template id="tmpl">
   <style>
-    *!*
-        .field {
-          color: var(--user-card-field-color, black);
-        }
-    */!*
+*!*
+    .field {
+      color: var(--user-card-field-color, black);
+    }
+*/!*
   </style>
   <div class="field">Name: <slot name="username"></slot></div>
   <div class="field">Birthday: <slot name="birthday"></slot></div>
 </template>
 
 <script>
-  customElements.define(
-    "user-card",
-    class extends HTMLElement {
-      connectedCallback() {
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.append(
-          document.getElementById("tmpl").content.cloneNode(true)
-        );
-      }
-    }
-  );
+customElements.define('user-card', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.append(document.getElementById('tmpl').content.cloneNode(true));
+  }
+});
 </script>
 
 <user-card>
@@ -328,18 +309,18 @@ Here's the full example:
 </user-card>
 ```
 
+
+
 ## Summary
 
 Shadow DOM can include styles, such as `<style>` or `<link rel="stylesheet">`.
 
 Local styles can affect:
-
 - shadow tree,
 - shadow host with `:host`-family pseudoclasses,
-- slotted elements (coming from light DOM), `::slotted(selector)` allows to select slotted elements themselves, but not their children.
+- slotted elements (coming from light DOM), `::slotted(selector)` allows to select  slotted elements themselves, but not their children.
 
 Document styles can affect:
-
 - shadow host (as it lives in the outer document)
 - slotted elements and their contents (as that's also in the outer document)
 
@@ -348,5 +329,6 @@ When CSS properties conflict, normally document styles have precedence, unless t
 CSS custom properties pierce through shadow DOM. They are used as "hooks" to style the component:
 
 1. The component uses a custom CSS property to style key elements, such as `var(--component-name-title, <default value>)`.
-2. When a developer wants to style a title, they assign `--component-name-title` CSS property for the shadow host or above.
-3. Profit!
+2. Component author publishes these properties for developers, they are same important as other public component methods.
+3. When a developer wants to style a title, they assign `--component-name-title` CSS property for the shadow host or above.
+4. Profit!

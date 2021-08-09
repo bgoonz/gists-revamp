@@ -14,6 +14,7 @@ Wipe your hard drive clean and install your apps quickly.
 
 ## Preparation
 
+The Preparation section will prevent you from losing important files, documents, and application keys upon reinstalling OSX. The hard drive is completely erased during this process and taking the time to back up files and deauthorizing applications will ensure you have zero regrets after your phresh install.
 
 ### 1. Back Up
 
@@ -24,7 +25,9 @@ A fresh install of OS X will wipe any files, programs, and documents from your h
 > [How To Clean Install MacOS High Sierra](http://osxdaily.com/2017/10/02/clean-install-macos-high-sierra/)  
 > Information from [OSXDaily](http://osxdaily.com/2017/10/02/clean-install-macos-high-sierra/)
 
+### 2. Deauthorize
 
+Your computer will be viewed as a new machine after the phresh install, which means that you will want to deauthorize any applications that required a registration key. Otherwise, the same key will not work when registering a product after the wipe and you might have to jump through hoops to get your product license back.
 
 > ###### Resources
 >
@@ -35,6 +38,7 @@ A fresh install of OS X will wipe any files, programs, and documents from your h
 
 ## Wipe + Reinstall
 
+The Wipe + Reinstall section will walk you through installing a phresh copy of OSX. When you are ready, you'll erase your hard drive and install the latest version of OSX. Once you are at this point, double-check that all necessary files, documents, pictures, and videos are backed up and all applications are deauthorized (as mentioned in the previous steps) because there is no going back after this step.
 
 ### 1. Wipe
 

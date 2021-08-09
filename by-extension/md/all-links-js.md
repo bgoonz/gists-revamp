@@ -490,7 +490,7 @@
 [**Understanding Classes (ES5) and Prototypal Inheritance in JavaScript**\
 *In a nutshell the above snippet creates a Person class that can have multiple instances. By convention functional...*dev.to](https://dev.to/_hridaysharma/understanding-classes-es5-and-prototypal-inheritance-in-javascript-n8d "https://dev.to/_hridaysharma/understanding-classes-es5-and-prototypal-inheritance-in-javascript-n8d")[](https://dev.to/_hridaysharma/understanding-classes-es5-and-prototypal-inheritance-in-javascript-n8d)
 
-[**prototype, **proto** and Prototypal inheritance in JavaScript**\
+[**prototype, __proto__ and Prototypal inheritance in JavaScript**\
 *This post was originally published on my website If you have spent some time with JavaScript, chances are that you have...*dev.to](https://dev.to/varundey/prototype-proto-and-prototypal-inheritance-in-javascript-2inl "https://dev.to/varundey/prototype-proto-and-prototypal-inheritance-in-javascript-2inl")[](https://dev.to/varundey/prototype-proto-and-prototypal-inheritance-in-javascript-2inl)
 
 [**Prototypal inheritance**\
@@ -499,7 +499,7 @@
 [**How To Work with Prototypes and Inheritance in JavaScript | DigitalOcean**\
 *JavaScript is a prototype-based language, meaning object properties and methods can be shared through generalized...*www.digitalocean.com](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript "https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript")[](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
 
-[**Master JavaScript Prototypes & _Inheritance_**\
+[**Master JavaScript Prototypes & *Inheritance***\
 Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inheritance-d0a9a5a75c4e "https://codeburst.io/master-javascript-prototypes-inheritance-d0a9a5a75c4e")[](https://codeburst.io/master-javascript-prototypes-inheritance-d0a9a5a75c4e)
 
 [**JavaScript's Prototypal Inheritance Explained Using CSS**\
@@ -568,7 +568,7 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 [**Learn map, filter and reduce in Javascript**\
 *The perfect toolset for your venture in Functional Programming*medium.com](https://medium.com/@joomiguelcunha/learn-map-filter-and-reduce-in-javascript-ea59009593c4 "https://medium.com/@joomiguelcunha/learn-map-filter-and-reduce-in-javascript-ea59009593c4")[](https://medium.com/@joomiguelcunha/learn-map-filter-and-reduce-in-javascript-ea59009593c4)
 
-[**JavaScript's Map, Reduce, and Filter \* Dan Martensen**\
+[**JavaScript's Map, Reduce, and Filter * Dan Martensen**\
 *As engineers we build and manipulate arrays holding numbers, strings, booleans and objects almost everyday. We use them...*danmartensen.svbtle.com](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter "https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter")[](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
 
 [**How to Use Map, Filter, and Reduce in JavaScript**\
@@ -1234,6 +1234,7 @@ medium.com](https://medium.com/yld-blog/program-like-proteus-a-beginners-guide-t
 *December 13, 2016 This post uses ES6 syntax. The same things can be accomplished with ES5, but it would require more...*vanslaars.io](https://vanslaars.io/post/create-pipe-function/ "https://vanslaars.io/post/create-pipe-function/")[](https://vanslaars.io/post/create-pipe-function/)
 
 [**Practical Functional Javascript with Ramda - Telerik Blogs**\
+*Article co-authored by: Andrew D'Amelio and Yuri Takhteyev At rangle.io we've been fans of the functional programming...*developer.telerik.com](https://developer.telerik.com/featured/practical-functional-javascript-ramda/ "https://developer.telerik.com/featured/practical-functional-javascript-ramda/")[](https://developer.telerik.com/featured/practical-functional-javascript-ramda/)
 
 [**The beauty in Partial Application, Currying, and Function Composition.**\
 *Story Time*hackernoon.com](https://hackernoon.com/the-beauty-in-partial-application-currying-and-function-composition-d885bdf0d574 "https://hackernoon.com/the-beauty-in-partial-application-currying-and-function-composition-d885bdf0d574")[](https://hackernoon.com/the-beauty-in-partial-application-currying-and-function-composition-d885bdf0d574)

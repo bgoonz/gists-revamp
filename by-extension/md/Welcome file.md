@@ -411,6 +411,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/ep189-health-psychologist-and-author-kelly-mcgonigal-the-joy-of-movement/">https://www.oneideaaway.com/ep189-health-psychologist-and-author-kelly-mcgonigal-the-joy-of-movement/</a></td>
+<td><a href="https://www.oneideaaway.com/ep189-health-psychologist-and-author-kelly-mcgonigal-the-joy-of-movement/">https://www.oneideaaway.com/ep189-health-psychologist-and-author-kelly-mcgonigal-the-joy-of-movement/</a></td>
 <td>1</td>
 <td>EP189 - Health Psychologist and Author, Kelly McGonigal: The Joy of Movement</td>
 <td>76</td>
@@ -493,6 +495,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/ep190-author-and-leader-in-mindfulness-and-empowerment-heatherash-amara-more-alignment-means-more-joy/">https://www.oneideaaway.com/ep190-author-and-leader-in-mindfulness-and-empowerment-heatherash-amara-more-alignment-means-more-joy/</a></td>
+<td><a href="https://www.oneideaaway.com/ep190-author-and-leader-in-mindfulness-and-empowerment-heatherash-amara-more-alignment-means-more-joy/">https://www.oneideaaway.com/ep190-author-and-leader-in-mindfulness-and-empowerment-heatherash-amara-more-alignment-means-more-joy/</a></td>
 <td>1</td>
 <td>EP190 - Author and Leader in Mindfulness and Empowerment, HeatherAsh Amara: More Alignment Means More Joy</td>
 <td>105</td>
@@ -539,6 +543,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/ep191-author-psychotherapist-and-authenticity-architect-dr-patti-ashley-finding-clarity-through-grief/">https://www.oneideaaway.com/ep191-author-psychotherapist-and-authenticity-architect-dr-patti-ashley-finding-clarity-through-grief/</a></td>
+<td><a href="https://www.oneideaaway.com/ep191-author-psychotherapist-and-authenticity-architect-dr-patti-ashley-finding-clarity-through-grief/">https://www.oneideaaway.com/ep191-author-psychotherapist-and-authenticity-architect-dr-patti-ashley-finding-clarity-through-grief/</a></td>
 <td>1</td>
 <td>EP191 - Author, Psychotherapist, and Authenticity Architect, Dr. Patti Ashley: Finding Clarity Through Grief</td>
 <td>108</td>
@@ -573,6 +579,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/one-idea-away-team/">https://www.oneideaaway.com/author/one-idea-away-team/</a></td>
+<td><a href="https://www.oneideaaway.com/author/one-idea-away-team/">https://www.oneideaaway.com/author/one-idea-away-team/</a></td>
 <td>1</td>
 <td>One Idea Away Team, Author at One Idea Away</td>
 <td>43</td>
@@ -1435,6 +1443,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/laura-moliter/">https://www.oneideaaway.com/author/laura-moliter/</a></td>
+<td><a href="https://www.oneideaaway.com/author/laura-moliter/">https://www.oneideaaway.com/author/laura-moliter/</a></td>
 <td>1</td>
 <td>Laura Moliter, Author at One Idea Away</td>
 <td>38</td>
@@ -1445,6 +1455,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/stacie-speaker/">https://www.oneideaaway.com/author/stacie-speaker/</a></td>
+<td><a href="https://www.oneideaaway.com/author/stacie-speaker/">https://www.oneideaaway.com/author/stacie-speaker/</a></td>
 <td>1</td>
 <td>Stacie Speaker, Author at One Idea Away</td>
 <td>39</td>
@@ -1455,6 +1467,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/drjohnduffy/">https://www.oneideaaway.com/author/drjohnduffy/</a></td>
+<td><a href="https://www.oneideaaway.com/author/drjohnduffy/">https://www.oneideaaway.com/author/drjohnduffy/</a></td>
 <td>1</td>
 <td>drjohnduffy, Author at One Idea Away</td>
 <td>36</td>
@@ -1465,6 +1479,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/gregory-nesmith/">https://www.oneideaaway.com/author/gregory-nesmith/</a></td>
+<td><a href="https://www.oneideaaway.com/author/gregory-nesmith/">https://www.oneideaaway.com/author/gregory-nesmith/</a></td>
 <td>1</td>
 <td>Gregory Nesmith, Author at One Idea Away</td>
 <td>40</td>
@@ -1487,6 +1503,8 @@ Expand!
 <td>Canonicalised</td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/life-coach-radio-network/">https://www.oneideaaway.com/author/life-coach-radio-network/</a></td>
+<td><a href="https://www.oneideaaway.com/author/life-coach-radio-network/">https://www.oneideaaway.com/author/life-coach-radio-network/</a></td>
 <td>1</td>
 <td>Life Coach Radio Network, Author at One Idea Away</td>
 <td>49</td>
@@ -1497,6 +1515,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/teresa-young/">https://www.oneideaaway.com/author/teresa-young/</a></td>
+<td><a href="https://www.oneideaaway.com/author/teresa-young/">https://www.oneideaaway.com/author/teresa-young/</a></td>
 <td>1</td>
 <td>Left Coast Coach Teresa Young</td>
 <td>29</td>
@@ -1507,6 +1527,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/shane-hennesey/">https://www.oneideaaway.com/author/shane-hennesey/</a></td>
+<td><a href="https://www.oneideaaway.com/author/shane-hennesey/">https://www.oneideaaway.com/author/shane-hennesey/</a></td>
 <td>1</td>
 <td>Shane Hennesey, Author at One Idea Away</td>
 <td>39</td>
@@ -1517,6 +1539,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/jacqueline-t-d-huynh/">https://www.oneideaaway.com/author/jacqueline-t-d-huynh/</a></td>
+<td><a href="https://www.oneideaaway.com/author/jacqueline-t-d-huynh/">https://www.oneideaaway.com/author/jacqueline-t-d-huynh/</a></td>
 <td>1</td>
 <td>Jacqueline T.D. Huynh, Author at One Idea Away</td>
 <td>46</td>
@@ -1527,6 +1551,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/jodi-flynn/">https://www.oneideaaway.com/author/jodi-flynn/</a></td>
+<td><a href="https://www.oneideaaway.com/author/jodi-flynn/">https://www.oneideaaway.com/author/jodi-flynn/</a></td>
 <td>1</td>
 <td>Jodi Flynn, Author at One Idea Away</td>
 <td>35</td>
@@ -1537,6 +1563,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/karen-mcmahon/">https://www.oneideaaway.com/author/karen-mcmahon/</a></td>
+<td><a href="https://www.oneideaaway.com/author/karen-mcmahon/">https://www.oneideaaway.com/author/karen-mcmahon/</a></td>
 <td>1</td>
 <td>Karen McMahon, Author at One Idea Away</td>
 <td>38</td>
@@ -1547,6 +1575,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/luke-iorio-2/">https://www.oneideaaway.com/author/luke-iorio-2/</a></td>
+<td><a href="https://www.oneideaaway.com/author/luke-iorio-2/">https://www.oneideaaway.com/author/luke-iorio-2/</a></td>
 <td>1</td>
 <td>Luke Iorio, Author at One Idea Away</td>
 <td>35</td>
@@ -1557,6 +1587,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/saber-fatnassi/">https://www.oneideaaway.com/author/saber-fatnassi/</a></td>
+<td><a href="https://www.oneideaaway.com/author/saber-fatnassi/">https://www.oneideaaway.com/author/saber-fatnassi/</a></td>
 <td>1</td>
 <td>Saber Fatnassi, Author at One Idea Away</td>
 <td>39</td>
@@ -1567,6 +1599,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/marni-battista/">https://www.oneideaaway.com/author/marni-battista/</a></td>
+<td><a href="https://www.oneideaaway.com/author/marni-battista/">https://www.oneideaaway.com/author/marni-battista/</a></td>
 <td>1</td>
 <td>Marni Battista, Author at One Idea Away</td>
 <td>39</td>
@@ -1577,6 +1611,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/rick-clemons/">https://www.oneideaaway.com/author/rick-clemons/</a></td>
+<td><a href="https://www.oneideaaway.com/author/rick-clemons/">https://www.oneideaaway.com/author/rick-clemons/</a></td>
 <td>1</td>
 <td>Rick Clemons, Author at One Idea Away</td>
 <td>37</td>
@@ -1599,6 +1635,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/belinda-brown/">https://www.oneideaaway.com/author/belinda-brown/</a></td>
+<td><a href="https://www.oneideaaway.com/author/belinda-brown/">https://www.oneideaaway.com/author/belinda-brown/</a></td>
 <td>1</td>
 <td>Belinda MJ Brown</td>
 <td>16</td>
@@ -1609,6 +1647,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/luke-iorio/">https://www.oneideaaway.com/author/luke-iorio/</a></td>
+<td><a href="https://www.oneideaaway.com/author/luke-iorio/">https://www.oneideaaway.com/author/luke-iorio/</a></td>
 <td>1</td>
 <td>Luke Iorio, Author at One Idea Away</td>
 <td>35</td>
@@ -1619,6 +1659,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/frank-macri/">https://www.oneideaaway.com/author/frank-macri/</a></td>
+<td><a href="https://www.oneideaaway.com/author/frank-macri/">https://www.oneideaaway.com/author/frank-macri/</a></td>
 <td>1</td>
 <td>Frank Macri, Author at One Idea Away</td>
 <td>36</td>
@@ -1629,6 +1671,8 @@ Expand!
 <td></td>
 </tr>
 <tr>
+<td align="center"><a href="https://www.oneideaaway.com/author/andy-bates/">https://www.oneideaaway.com/author/andy-bates/</a></td>
+<td><a href="https://www.oneideaaway.com/author/andy-bates/">https://www.oneideaaway.com/author/andy-bates/</a></td>
 <td>1</td>
 <td>Andy Bates, Author at One Idea Away</td>
 <td>35</td>
@@ -2098,6 +2142,7 @@ input<span class="token class">.wpcf7-form-control.wpcf7-text.wpcf7-validates-as
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>headline<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Featured Columnists - One Idea Away<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>↩
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Featured Columnists - One Idea Away<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>↩
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.oneideaaway.com/wp-content/uploads/2018/01/One-idea-away-logo.png<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>↩
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>author<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Dan Beldowicz<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>↩
   <span class="token comment">&lt;!--&lt;meta itemprop="publisher" content="One Idea Away"/&gt;--&gt;</span> <span class="token comment">&lt;!-- To solve: The attribute publisher.itemtype has an invalid value --&gt;</span>↩
  <span class="token comment">&lt;!-- Twitter Cards --&gt;</span>↩
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>twitter:title<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Featured Columnists - One Idea Away<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>↩
@@ -2370,6 +2415,7 @@ Yes, by clicking <span class="token entity" title="‘">&amp;#8216;</span>Join<s
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>https://www.oneideaaway.com/wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-after.js<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>↩
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text/javascript<span class="token punctuation">'</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>daves-wordpress-live-search-js-extra<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">↩
 <span class="token comment">/* &lt;![CDATA[ */</span>↩
+<span class="token keyword">var</span> DavesWordPressLiveSearchConfig <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"resultsDirection"</span><span class="token punctuation">:</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">"showThumbs"</span><span class="token punctuation">:</span><span class="token string">"false"</span><span class="token punctuation">,</span><span class="token string">"showExcerpt"</span><span class="token punctuation">:</span><span class="token string">"false"</span><span class="token punctuation">,</span><span class="token string">"displayPostCategory"</span><span class="token punctuation">:</span><span class="token string">"false"</span><span class="token punctuation">,</span><span class="token string">"showMoreResultsLink"</span><span class="token punctuation">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><span class="token string">"activateWidgetLink"</span><span class="token punctuation">:</span><span class="token string">"true"</span><span class="token punctuation">,</span><span class="token string">"minCharsToSearch"</span><span class="token punctuation">:</span><span class="token string">"0"</span><span class="token punctuation">,</span><span class="token string">"xOffset"</span><span class="token punctuation">:</span><span class="token string">"0"</span><span class="token punctuation">,</span><span class="token string">"yOffset"</span><span class="token punctuation">:</span><span class="token string">"0"</span><span class="token punctuation">,</span><span class="token string">"blogURL"</span><span class="token punctuation">:</span><span class="token string">"https:\/\/www.oneideaaway.com"</span><span class="token punctuation">,</span><span class="token string">"ajaxURL"</span><span class="token punctuation">:</span><span class="token string">"https:\/\/www.oneideaaway.com\/wp-admin\/admin-ajax.php"</span><span class="token punctuation">,</span><span class="token string">"viewMoreText"</span><span class="token punctuation">:</span><span class="token string">"View more results"</span><span class="token punctuation">,</span><span class="token string">"outdatedJQuery"</span><span class="token punctuation">:</span><span class="token string">"Dave's WordPress Live Search requires jQuery 1.2.6 or higher. WordPress ships with current jQuery versions. But if you are seeing this message, it's likely that another plugin is including an earlier version."</span><span class="token punctuation">,</span><span class="token string">"resultTemplate"</span><span class="token punctuation">:</span><span class="token string">"&lt;ul id=\"dwls_search_results\" class=\"search_results dwls_search_results\"&gt;\n&lt;input type=\"hidden\" name=\"query\" value=\"&lt;%- resultsSearchTerm %&gt;\" \/&gt;\n&lt;% _.each(searchResults, function(searchResult, index, list) { %&gt;\n        &lt;%\n        \/\/ Thumbnails\n        if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" &amp;&amp; searchResult.attachment_thumbnail) {\n                liClass = \"post_with_thumb\";\n        }\n        else {\n                liClass = \"\";\n        }\n        %&gt;\n        &lt;li class=\"post-&lt;%= searchResult.ID %&gt; daves-wordpress-live-search_result &lt;%- liClass %&gt;\"&gt;\n\n        &lt;a href=\"&lt;%= searchResult.permalink %&gt;\" class=\"daves-wordpress-live-search_title\"&gt;\n        &lt;% if(DavesWordPressLiveSearchConfig.displayPostCategory == \"true\" &amp;&amp; searchResult.post_category !== undefined) { %&gt;\n                &lt;span class=\"search-category\"&gt;&lt;%= searchResult.post_category %&gt;&lt;\/span&gt;\n        &lt;% } %&gt;&lt;span class=\"search-title\"&gt;&lt;%= searchResult.post_title %&gt;&lt;\/span&gt;&lt;\/a&gt;\n\n        &lt;% if(searchResult.post_price !== undefined) { %&gt;\n                &lt;p class=\"price\"&gt;&lt;%- searchResult.post_price %&gt;&lt;\/p&gt;\n        &lt;% } %&gt;\n\n        &lt;% if(DavesWordPressLiveSearchConfig.showExcerpt == \"true\" &amp;&amp; searchResult.post_excerpt) { %&gt;\n                &lt;%= searchResult.post_excerpt %&gt;\n        &lt;% } %&gt;\n\n        &lt;% if(e.displayPostMeta) { %&gt;\n                &lt;p class=\"meta clearfix daves-wordpress-live-search_author\" id=\"daves-wordpress-live-search_author\"&gt;Posted by &lt;%- searchResult.post_author_nicename %&gt;&lt;\/p&gt;&lt;p id=\"daves-wordpress-live-search_date\" class=\"meta clearfix daves-wordpress-live-search_date\"&gt;&lt;%- searchResult.post_date %&gt;&lt;\/p&gt;\n        &lt;% } %&gt;\n        &lt;div class=\"clearfix\"&gt;&lt;\/div&gt;&lt;\/li&gt;\n&lt;% }); %&gt;\n\n&lt;% if(searchResults[0].show_more !== undefined &amp;&amp; searchResults[0].show_more &amp;&amp; DavesWordPressLiveSearchConfig.showMoreResultsLink == \"true\") { %&gt;\n        &lt;div class=\"clearfix search_footer\"&gt;&lt;a href=\"&lt;%= DavesWordPressLiveSearchConfig.blogURL %&gt;\/?s=&lt;%-  resultsSearchTerm %&gt;\"&gt;&lt;%- DavesWordPressLiveSearchConfig.viewMoreText %&gt;&lt;\/a&gt;&lt;\/div&gt;\n&lt;% } %&gt;\n\n&lt;\/ul&gt;"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>↩
 <span class="token comment">/* ]]&gt; */</span>↩
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>↩
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text/javascript<span class="token punctuation">'</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>https://www.oneideaaway.com/wp-content/plugins/uncode-daves-wordpress-live-search/js/daves-wordpress-live-search.js?ver=5.6.2<span class="token punctuation">'</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>daves-wordpress-live-search-js<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>↩

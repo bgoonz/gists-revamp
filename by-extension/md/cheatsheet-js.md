@@ -14,6 +14,8 @@
 
 <table id="cheat_sheet_output_table"><tbody><tr><td><p>compile()</p></td><td><p>lastParen</p></td></tr><tr><td><p>exec()</p></td><td><p>leftCO­ntext</p></td></tr><tr><td><p>global</p></td><td><p>multiline</p></td></tr><tr><td><p>ignoreCase</p></td><td><p>rightC­ontext</p></td></tr><tr><td><p>input</p></td><td><p>source</p></td></tr><tr><td><p>lastIndex</p></td><td><p>test()</p></td></tr><tr><td colspan="2"><p>lastMatch</p></td></tr></tbody></table>
 
+
+
 ### JavaScript Event Handlers
 
 <table id="cheat_sheet_output_table"><tbody><tr><td><p>onabort</p></td><td><p>onmous­edown</p></td></tr><tr><td><p>onblur</p></td><td><p>onmous­emove</p></td></tr><tr><td><p>onchange</p></td><td><p>onmouseout</p></td></tr><tr><td><p>onclick</p></td><td><p>onmous­eover</p></td></tr><tr><td><p>ondblclick</p></td><td><p>onmouseup</p></td></tr><tr><td><p>ondragdrop</p></td><td><p>onmove</p></td></tr><tr><td><p>onerror</p></td><td><p>onreset</p></td></tr><tr><td><p>onfocus</p></td><td><p>onresize</p></td></tr><tr><td><p>onkeydown</p></td><td><p>onselect</p></td></tr><tr><td><p>onkeypress</p></td><td><p>onsubmit</p></td></tr><tr><td><p>onkeyup</p></td><td><p>onunload</p></td></tr><tr><td colspan="2"><p>onload</p></td></tr></tbody></table>
@@ -29,6 +31,8 @@
 ### JavaScript Booleans
 
 <table id="cheat_sheet_output_table"><tbody><tr><td><p>toSource()</p></td><td><p>valueOf()</p></td></tr><tr><td colspan="2"><p>toString()</p></td></tr></tbody></table>
+
+
 
 ### JavaScript Dates
 

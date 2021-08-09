@@ -10,6 +10,7 @@ I am mainly trying to write fun and "Pythonic" Python, rather than trying to sol
 - Online: https://bitbucket.org/lbesson/bin/src/master/battleserver.py
 - License: MIT License (http://lbesson.mit-license.org).
 """
+__author__ = "Lilian Besson"
 __name_of_app__ = "Battle Server"
 __version__ = "0.1"
 
@@ -277,6 +278,8 @@ def NormalizeAuthor(text):
 	return parts[0].strip()
 
 def NormalizeAuthors(text):
+	authors = text.split(' and ')
+	return ' and '.join([NormalizeAuthor(author) for author in authors])
 
 def NormalizePages(text):
 	parts = text.split('--', 1)
@@ -3037,6 +3040,7 @@ for m in mm:
     yy = re.findall(r"£?(.*?)£", xx)
     paper = {
         "title": yy[0],
+        "author": yy[1],
         "booktitle": yy[2],
     }
     papers.append(paper)
@@ -3316,6 +3320,7 @@ if __name__ == '__main__':
 
 #!/usr/bin/python
 """Replacement for htpasswd"""
+# Original author: Eli Carter
 import os
 import sys
 import random
@@ -5157,6 +5162,7 @@ import re
 import os.path
 from bs4 import BeautifulSoup, SoupStrainer
 
+__author__ = "Lilian Besson"
 __version__ = "0.3.1"
 
 # TODO: improve conformity with StrapDown.js Markdown parser:
@@ -5248,6 +5254,7 @@ def main(argv=[], path='/tmp', outfile='test.html', title='Test', use_jquery=Fal
     <link href="http://perso.crans.org/besson/_static/md/themes/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="http://perso.crans.org/besson/_static/prism/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="http://perso.crans.org/besson/_static/.favicon.ico">
+    <meta name="author" content="Lilian Besson">
     <meta name="generator" content="https://bitbucket.org/lbesson/bin/src/master/strapdown2html.py">
 """.format(title=title))
         # Include jquery, and some plugins. Useless except if there is a table in the input document
@@ -5657,11 +5664,13 @@ else:
 
 """ A terminal embedded in Gedit inferior panel, v3.2.2."""
 
+__author__ = "Paolo Borelli, Lilian BESSON <lbesson at ens-cachan dot fr> for Naereen CORP."
 __version__ = "3.2.2"
 __appname__ = "gedit-terminal"
 __app_disp_name__ = "Gedit Embeded Terminal"
 __website__ = "https://sites.google.com/site/naereencorp/gedit/"
 
+print ".:[ Initializing %s, v%s. (c) %s ]:." % (__app_disp_name__, __version__, __author__)
 print ".:[ Take a look at %s for more informations, or for the latest version of this piece of software. ]:." % (__website__)
 
 from gi.repository import GObject, GLib, Gio, Pango, Gdk, Gtk, Gedit, Vte
@@ -5743,6 +5752,7 @@ class GeditTerminal(Gtk.Box):
 
     def on_child_exited(self, term):
 #:        print "on_child_exited have been called (shell is terminated)"
+        print ".:[ Re-launching a shell, on %s, v%s. (c) %s ]:." % (__app_disp_name__, __version__, __author__)
         print ".:[ Take a look at %s for more informations, or for the latest version of this piece of software. ]:." % (__website__)
         print self._vte.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
 
@@ -5916,6 +5926,7 @@ class GeditTerminal(Gtk.Box):
         about_dlg.set_version(__version__)
         about_dlg.set_comments(__doc__)
         about_dlg.set_website(__website__)
+        about_dlg.set_copyright("Copyright (c) 2005-13  %s" % __author__)
 #: FIXME : on doit aller la chercher + intelligemment.
         logo = Gtk.Image.new_from_file("/usr/share/icons/gnome/32x32/apps/terminal.png") # 32x32
         about_dlg.set_logo(logo.get_pixbuf())
@@ -5999,11 +6010,13 @@ class TerminalPlugin(GObject.Object, Gedit.WindowActivatable):
 
 """ A terminal embedded in Gedit lateral panel, v3.2.3."""
 
+__author__ = "Paolo Borelli, Lilian BESSON <lbesson at ens-cachan dot fr> for Naereen CORP."
 __version__ = "3.2.3"
 __appname__ = "gedit-terminal2"
 __app_disp_name__ = "Gedit Embeded Terminal Lateral"
 __website__ = "https://sites.google.com/site/naereencorp/gedit/"
 
+print ".:[ Initializing %s, v%s. (c) %s ]:." % (__app_disp_name__, __version__, __author__)
 print ".:[ Take a look at %s for more informations, or for the latest version of this piece of software. ]:." % (__website__)
 
 from gi.repository import GObject, GLib, Gio, Pango, Gdk, Gtk, Gedit, Vte
@@ -6085,6 +6098,7 @@ class GeditTerminal2(Gtk.Box):
 
     def on_child_exited(self, term):
 #:        print "on_child_exited have been called (shell is terminated)"
+        print ".:[ Re-launching a shell, on %s, v%s. (c) %s ]:." % (__app_disp_name__, __version__, __author__)
         print ".:[ Take a look at %s for more informations, or for the latest version of this piece of software. ]:." % (__website__)
         print self._vte.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
 
@@ -6258,6 +6272,7 @@ class GeditTerminal2(Gtk.Box):
         about_dlg.set_version(__version__)
         about_dlg.set_comments(__doc__)
         about_dlg.set_website(__website__)
+        about_dlg.set_copyright("Copyright (c) 2005-13  %s" % __author__)
 #: FIXME : on doit aller la chercher + intelligemment.
         logo = Gtk.Image.new_from_file("/usr/share/icons/gnome/32x32/apps/terminal.png") # 32x32
         about_dlg.set_logo(logo.get_pixbuf())
@@ -6341,11 +6356,13 @@ class TerminalPlugin2(GObject.Object, Gedit.WindowActivatable):
 
 """ A terminal embedded in Gedit inferior panel, v3.2.3."""
 
+__author__ = "Paolo Borelli, Lilian BESSON <lbesson at ens-cachan dot fr> for Naereen CORP."
 __version__ = "3.2.3"
 __appname__ = "gedit-terminal3"
 __app_disp_name__ = "Gedit Embeded Terminal3"
 __website__ = "https://sites.google.com/site/naereencorp/gedit/"
 
+print ".:[ Initializing %s, v%s. (c) %s ]:." % (__app_disp_name__, __version__, __author__)
 print ".:[ Take a look at %s for more informations, or for the latest version of this piece of software. ]:." % (__website__)
 
 from gi.repository import GObject, GLib, Gio, Pango, Gdk, Gtk, Gedit, Vte
@@ -6427,6 +6444,7 @@ class GeditTerminal3(Gtk.Box):
 
     def on_child_exited(self, term):
 #:        print "on_child_exited have been called (shell is terminated)"
+        print ".:[ Re-launching a shell, on %s, v%s. (c) %s ]:." % (__app_disp_name__, __version__, __author__)
         print ".:[ Take a look at %s for more informations, or for the latest version of this piece of software. ]:." % (__website__)
         print self._vte.fork_command_full(Vte.PtyFlags.DEFAULT, None, [Vte.get_user_shell()], None, GLib.SpawnFlags.SEARCH_PATH, None, None)
 
@@ -6600,6 +6618,7 @@ class GeditTerminal3(Gtk.Box):
         about_dlg.set_version(__version__)
         about_dlg.set_comments(__doc__)
         about_dlg.set_website(__website__)
+        about_dlg.set_copyright("Copyright (c) 2005-13  %s" % __author__)
 #: FIXME : on doit aller la chercher + intelligemment.
         logo = Gtk.Image.new_from_file("/usr/share/icons/gnome/32x32/apps/terminal.png") # 32x32
         about_dlg.set_logo(logo.get_pixbuf())
@@ -7451,10 +7470,12 @@ class QuotesSpider(scrapy.Spider):
         for item in response.css('td.pl-video-title'):
             i += 1  # enumerate(...) was not working!
             video = item.css('a.pl-video-title-link')[0]
+            author = item.css('div.pl-video-owner')[0]
             res = {
                 'id': i,
                 'href': video.xpath('@href').extract_first().replace('&index=%i&list=WL'%i, ''),
                 'title': video.css('a::text').extract_first().strip(),
+                'author': author.css('a::text').extract_first().strip()
             }
             print(res)
             #yield res
@@ -7472,6 +7493,7 @@ Bot part!
 - Online: https://bitbucket.org/lbesson/bin/src/master/battleplayer.py
 - License: MIT License (http://lbesson.mit-license.org).
 """
+__author__ = "Lilian Besson"
 __name_of_app__ = "Battle Client"
 __version__ = "0.1"
 

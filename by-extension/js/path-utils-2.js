@@ -1,5 +1,6 @@
 /**
  * @fileoverview Common helpers for operations on filenames and paths
+ * @author Ian VanSchooten
  */
 "use strict";
 

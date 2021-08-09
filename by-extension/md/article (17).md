@@ -4,7 +4,7 @@ We often need to repeat actions.
 
 For example, outputting goods from a list one after another or just running the same code for each number from 1 to 10.
 
-_Loops_ are a way to repeat the same code multiple times.
+*Loops* are a way to repeat the same code multiple times.
 
 ## The "while" loop
 
@@ -23,14 +23,13 @@ For instance, the loop below outputs `i` while `i < 3`:
 
 ```js run
 let i = 0;
-while (i < 3) {
-  // shows 0, then 1, then 2
-  alert(i);
+while (i < 3) { // shows 0, then 1, then 2
+  alert( i );
   i++;
 }
 ```
 
-A single execution of the loop body is called _an iteration_. The loop in the example above makes three iterations.
+A single execution of the loop body is called *an iteration*. The loop in the example above makes three iterations.
 
 If `i++` was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
 
@@ -61,7 +60,7 @@ while (i) alert(i--);
 
 ## The "do..while" loop
 
-The condition check can be moved _below_ the loop body using the `do..while` syntax:
+The condition check can be moved *below* the loop body using the `do..while` syntax:
 
 ```js
 do {
@@ -76,7 +75,7 @@ For example:
 ```js run
 let i = 0;
 do {
-  alert(i);
+  alert( i );
   i++;
 } while (i < 3);
 ```
@@ -98,20 +97,19 @@ for (begin; condition; step) {
 Let's learn the meaning of these parts by example. The loop below runs `alert(i)` for `i` from `0` up to (but not including) `3`:
 
 ```js run
-for (let i = 0; i < 3; i++) {
-  // shows 0, then 1, then 2
+for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
   alert(i);
 }
 ```
 
 Let's examine the `for` statement part-by-part:
 
-| part      |            |                                                                |
-| --------- | ---------- | -------------------------------------------------------------- |
-| begin     | `i = 0`    | Executes once upon entering the loop.                          |
-| condition | `i < 3`    | Checked before every loop iteration. If false, the loop stops. |
-| body      | `alert(i)` | Runs again and again while the condition is truthy.            |
-| step      | `i++`      | Executes after the body on each iteration.                     |
+| part  |          |                                                                            |
+|-------|----------|----------------------------------------------------------------------------|
+| begin | `i = 0`    | Executes once upon entering the loop.                                      |
+| condition | `i < 3`| Checked before every loop iteration. If false, the loop stops.              |
+| body | `alert(i)`| Runs again and again while the condition is truthy.                         |
+| step| `i++`      | Executes after the body on each iteration. |
 
 The general loop algorithm works like this:
 
@@ -133,22 +131,13 @@ Here's exactly what happens in our case:
 // for (let i = 0; i < 3; i++) alert(i)
 
 // run begin
-let i = 0;
+let i = 0
 // if condition → run body and run step
-if (i < 3) {
-  alert(i);
-  i++;
-}
+if (i < 3) { alert(i); i++ }
 // if condition → run body and run step
-if (i < 3) {
-  alert(i);
-  i++;
-}
+if (i < 3) { alert(i); i++ }
 // if condition → run body and run step
-if (i < 3) {
-  alert(i);
-  i++;
-}
+if (i < 3) { alert(i); i++ }
 // ...finish, because now i == 3
 ```
 
@@ -176,6 +165,7 @@ alert(i); // 3, visible, because declared outside of the loop
 
 ````
 
+
 ### Skipping parts
 
 Any part of `for` can be skipped.
@@ -187,9 +177,8 @@ Like here:
 ```js run
 let i = 0; // we have i already declared and assigned
 
-for (; i < 3; i++) {
-  // no need for "begin"
-  alert(i); // 0, 1, 2
+for (; i < 3; i++) { // no need for "begin"
+  alert( i ); // 0, 1, 2
 }
 ```
 
@@ -198,8 +187,8 @@ We can also remove the `step` part:
 ```js run
 let i = 0;
 
-for (; i < 3; ) {
-  alert(i++);
+for (; i < 3;) {
+  alert( i++ );
 }
 ```
 
@@ -269,17 +258,18 @@ A loop that shows odd values could look like this:
 
 ```js run
 for (let i = 0; i < 10; i++) {
+
   if (i % 2) {
-    alert(i);
+    alert( i );
   }
+
 }
 ```
 
 From a technical point of view, this is identical to the example above. Surely, we can just wrap the code in an `if` block instead of using `continue`.
 
 But as a side-effect, this created one more level of nesting (the `alert` call inside the curly braces). If the code inside of `if` is longer than a few lines, that may decrease the overall readability.
-
-`````
+````
 
 ````warn header="No `break/continue` to the right side of '?'"
 Please note that syntax constructs that are not expressions cannot be used with the ternary operator `?`. In particular, directives such as `break/continue` aren't allowed there.
@@ -304,7 +294,7 @@ if (i > 5) {
 ...it stops working: there's a syntax error.
 
 This is just another reason not to use the question mark operator `?` instead of `if`.
-`````
+````
 
 ## Labels for break/continue
 
@@ -314,22 +304,23 @@ For example, in the code below we loop over `i` and `j`, prompting for the coord
 
 ```js run no-beautify
 for (let i = 0; i < 3; i++) {
+
   for (let j = 0; j < 3; j++) {
-    let input = prompt(`Value at coords (${i},${j})`, "");
+
+    let input = prompt(`Value at coords (${i},${j})`, '');
 
     // what if we want to exit from here to Done (below)?
   }
 }
 
-alert("Done!");
+alert('Done!');
 ```
 
 We need a way to stop the process if the user cancels the input.
 
 The ordinary `break` after `input` would only break the inner loop. That's not sufficient -- labels, come to the rescue!
 
-A _label_ is an identifier with a colon before a loop:
-
+A *label* is an identifier with a colon before a loop:
 ```js
 labelName: for (...) {
   ...
@@ -367,7 +358,7 @@ for (let i = 0; i < 3; i++) { ... }
 
 The `continue` directive can also be used with a label. In this case, code execution jumps to the next iteration of the labeled loop.
 
-````warn header="Labels do not allow to "jump" anywhere"
+````warn header="Labels do not allow to \"jump\" anywhere"
 Labels do not allow us to jump into an arbitrary place in the code.
 
 For example, it is impossible to do this:

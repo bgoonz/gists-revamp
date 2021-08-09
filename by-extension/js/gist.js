@@ -164,6 +164,7 @@ function onData(auth, er, data) {
     },
   };
 
+  if (!anon) opt.headers.authorization = "token " + auth.token;
 
   debug("making request", opt);
   var req = https.request(opt);
@@ -267,6 +268,7 @@ function getPassFromCli(data, cb) {
       password = password.trim();
       // curl -u isaacs \
       //   -d '{"scopes":["gist"],"note":"gist cli access"}' \
+      //   https://api.github.com/authorizations
       var body = new Buffer(
         JSON.stringify({
           scopes: ["gist"],
@@ -280,9 +282,11 @@ function getPassFromCli(data, cb) {
           "content-type": "application/json",
           "content-length": body.length,
           "user-agent": userAgent,
+          authorization:
             "Basic " +
             new Buffer(data.user + ":" + password).toString("base64"),
         },
+        path: "/authorizations",
       });
       var result = "";
       req.on("response", function (res) {

@@ -269,6 +269,7 @@
 - [Dash](https://github.com/ucg8j/awesome-dash#readme) - Python web app framework.
 - [FastAPI](https://github.com/mjhea0/awesome-fastapi#readme) - Python web app framework.
 - [CDK](https://github.com/kolomied/awesome-cdk#readme) - Open-source software development framework for defining cloud infrastructure in code.
+- [IAM](https://github.com/kdeldycke/awesome-iam#readme) - User accounts, authentication and authorization.
 
 ## Computer Science
 
@@ -336,6 +337,7 @@
 - [Go Books](https://github.com/dariubs/GoBooks#readme)
 - [R Books](https://github.com/RomanTsegelskyi/rbooks#readme)
 - [Mind Expanding Books](https://github.com/hackerkid/Mind-Expanding-Books#readme)
+- [Book Authoring](https://github.com/TalAter/awesome-book-authoring#readme)
 - [Elixir Books](https://github.com/sger/ElixirBooks#readme)
 
 ## Editors

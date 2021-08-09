@@ -1,3 +1,4 @@
+
 # Object.keys, values, entries
 
 Let's step away from the individual data structures and talk about the iterations over them.
@@ -24,10 +25,10 @@ For plain objects, the following methods are available:
 
 Please note the distinctions (compared to map for example):
 
-|             | Map          | Object                                   |
-| ----------- | ------------ | ---------------------------------------- |
-| Call syntax | `map.keys()` | `Object.keys(obj)`, but not `obj.keys()` |
-| Returns     | iterable     | "real" Array                             |
+|             | Map              | Object       |
+|-------------|------------------|--------------|
+| Call syntax | `map.keys()`  | `Object.keys(obj)`, but not `obj.keys()` |
+| Returns     | iterable    | "real" Array                     |
 
 The first difference is that we have to call `Object.keys(obj)`, and not `obj.keys()`.
 
@@ -40,7 +41,7 @@ For instance:
 ```js
 let user = {
   name: "John",
-  age: 30,
+  age: 30
 };
 ```
 
@@ -53,7 +54,7 @@ Here's an example of using `Object.values` to loop over property values:
 ```js run
 let user = {
   name: "John",
-  age: 30,
+  age: 30
 };
 
 // loop over values
@@ -67,6 +68,7 @@ Just like a `for..in` loop, these methods ignore properties that use `Symbol(...
 
 Usually that's convenient. But if we want symbolic keys too, then there's a separate method [Object.getOwnPropertySymbols](mdn:js/Object/getOwnPropertySymbols) that returns an array of only symbolic keys. Also, there exist a method [Reflect.ownKeys(obj)](mdn:js/Reflect/ownKeys) that returns *all* keys.
 ```
+
 
 ## Transforming objects
 
@@ -95,6 +97,6 @@ let doublePrices = Object.fromEntries(
 */!*
 
 alert(doublePrices.meat); // 8
-```
+```   
 
-It may look difficult at first sight, but becomes easy to understand after you use it once or twice. We can make powerful chains of transforms this way.
+It may look difficult at first sight, but becomes easy to understand after you use it once or twice. We can make powerful chains of transforms this way. 

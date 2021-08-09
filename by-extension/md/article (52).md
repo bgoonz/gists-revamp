@@ -1,3 +1,4 @@
+
 # The old "var"
 
 ```smart header="This article is for understanding old scripts"
@@ -169,7 +170,7 @@ That's best demonstrated with an example:
 
 ```js run
 function sayHi() {
-  alert(phrase);
+  alert(phrase);  
 
 *!*
   var phrase = "Hello";
@@ -215,10 +216,12 @@ That's not something we should use nowadays, but you can find them in old script
 An IIFE looks like this:
 
 ```js run
-(function () {
+(function() {
+
   var message = "Hello";
 
   alert(message); // Hello
+
 })();
 ```
 

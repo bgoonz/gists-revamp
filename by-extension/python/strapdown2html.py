@@ -28,6 +28,7 @@ import re
 import os.path
 from bs4 import BeautifulSoup, SoupStrainer
 
+__author__ = "Lilian Besson"
 __version__ = "0.3.1"
 
 # TODO: improve conformity with StrapDown.js Markdown parser:
@@ -136,6 +137,7 @@ def main(argv=[], path="/tmp", outfile="test.html", title="Test", use_jquery=Fal
     <link href="http://perso.crans.org/besson/_static/md/themes/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="http://perso.crans.org/besson/_static/prism/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="http://perso.crans.org/besson/_static/.favicon.ico">
+    <meta name="author" content="Lilian Besson">
     <meta name="generator" content="https://bitbucket.org/lbesson/bin/src/master/strapdown2html.py">
 """.format(
                 title=title

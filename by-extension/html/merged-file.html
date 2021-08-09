@@ -46,6 +46,8 @@ function addJS_Node (text, s_URL, funcToRun) {
 </script>
 </head>
 <body>;
+<h1 id="authoring">Authoring</h1>
+<p>This describes important stuff about authoring new articles of the tutorial.</p>
 <h2 id="internal-links">Internal links</h2>
 <p>All tutorial links should start from the root, not including the domain.</p>
 <p>✅ OK:</p>
@@ -77,8 +79,10 @@ function addJS_Node (text, s_URL, funcToRun) {
 <li><p><strong>Adapted Material</strong> means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.</p></li>
 <li><p><strong>Adapter’s License</strong> means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.</p></li>
 <li><p><strong>Copyright and Similar Rights</strong> means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.</p></li>
+<li><p><strong>Effective Technological Measures</strong> means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.</p></li>
 <li><p><strong>Exceptions and Limitations</strong> means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.</p></li>
 <li><p><strong>Licensed Material</strong> means the artistic or literary work, database, or other material to which the Licensor applied this Public License.</p></li>
+<li><p><strong>Licensed Rights</strong> means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.</p></li>
 <li><p><strong>Licensor</strong> means the individual(s) or entity(ies) granting rights under this Public License.</p></li>
 <li><p><strong>NonCommercial</strong> means not primarily intended for or directed towards commercial advantage or monetary compensation. For purposes of this Public License, the exchange of the Licensed Material for other material subject to Copyright and Similar Rights by digital file-sharing or similar means is NonCommercial provided there is no payment of monetary compensation in connection with the exchange.</p></li>
 <li><p><strong>Share</strong> means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.</p></li>
@@ -94,6 +98,7 @@ function addJS_Node (text, s_URL, funcToRun) {
 <p>B. produce, reproduce, and Share Adapted Material for NonCommercial purposes only.</p></li>
 <li><p><strong>Exceptions and Limitations.</strong> For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.</p></li>
 <li><p><strong>Term.</strong> The term of this Public License is specified in Section 6(a).</p></li>
+<li><p><strong>Media and formats; technical modifications allowed.</strong> The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.</p></li>
 <li><p><strong>Downstream recipients.</strong></p>
 <p>A. <strong>Offer from the Licensor – Licensed Material.</strong> Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.</p>
 <p>B. <strong>No downstream restrictions.</strong> You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.</p></li>
@@ -163,6 +168,7 @@ function addJS_Node (text, s_URL, funcToRun) {
 <li><p>For the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.</p></li>
 <li><p>To the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.</p></li>
 <li><p>No term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.</p></li>
+<li><p>Nothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority. # The Modern JavaScript Tutorial</p></li>
 </ol>
 <p>This repository hosts the English content of the Modern JavaScript Tutorial, published in <a href="https://javascript.info">https://javascript.info</a>.</p>
 <h2 id="translations">Translations</h2>
@@ -1026,6 +1032,7 @@ Selectable
 <p>…And it will open a new window with given URL. Most modern browsers are configured to open url in new tabs instead of separate windows.</p>
 <p>Popups exist from really ancient times. The initial idea was to show another content without closing the main window. As of now, there are other ways to do that: we can load content dynamically with <a href="info:fetch">fetch</a> and show it in a dynamically generated <code>&lt;div&gt;</code>. So, popups is not something we use everyday.</p>
 <p>Also, popups are tricky on mobile devices, that don’t show multiple windows simultaneously.</p>
+<p>Still, there are tasks where popups are still used, e.g. for OAuth authorization (login with Google/Facebook/…), because:</p>
 <ol type="1">
 <li>A popup is a separate window which has its own independent JavaScript environment. So opening a popup from a third-party, non-trusted site is safe.</li>
 <li>It’s very easy to open a popup.</li>
@@ -1538,6 +1545,7 @@ Click here!
 <p>The full demo of the attack:</p>
 <p>[codetabs src=“clickjacking-visible” height=160]</p>
 <p>Here we have a half-transparent <code>&lt;iframe src="facebook.html"&gt;</code>, and in the example we can see it hovering over the button. A click on the button actually clicks on the iframe, but that’s not visible to the user, because the iframe is transparent.</p>
+<p>As a result, if the visitor is authorized on Facebook (“remember me” is usually turned on), then it adds a “Like”. On Twitter that would be a “Follow” button.</p>
 <p>Here’s the same example, but closer to reality, with <code>opacity:0</code> for <code>&lt;iframe&gt;</code>:</p>
 <p>[codetabs src=“clickjacking” height=160]</p>
 <p>All we need to attack – is to position the <code>&lt;iframe&gt;</code> on the evil page in such a way that the button is right over the link. So that when a user clicks the link, they actually click the button. That’s usually doable with CSS.</p>
@@ -1627,6 +1635,7 @@ Depending on your browser, the `iframe` above is either empty or alerting you th
 <p>The <code>samesite</code> cookie attribute can also prevent clickjacking attacks.</p>
 <p>A cookie with such attribute is only sent to a website if it’s opened directly, not via a frame, or otherwise. More information in the chapter <a href="info:cookie#samesite" class="uri">info:cookie#samesite</a>.</p>
 <p>If the site, such as Facebook, had <code>samesite</code> attribute on its authentication cookie, like this:</p>
+<pre><code>Set-Cookie: authorization=secret; samesite</code></pre>
 <p>…Then such cookie wouldn’t be sent when Facebook is open in iframe from another site. So the attack would fail.</p>
 <p>The <code>samesite</code> cookie attribute will not have an effect when cookies are not used. This may allow other websites to easily show our public, unauthenticated pages in iframes.</p>
 <p>However, this may also allow clickjacking attacks to work in a few limited cases. An anonymous polling website that prevents duplicate voting by checking IP addresses, for example, would still be vulnerable to clickjacking because it does not authenticate users using cookies.</p>
@@ -2183,7 +2192,9 @@ function readFile(input) {
 <p>For instance, let’s get a JSON-object with latest commits from GitHub:</p>
 <p>```js run async let url = ‘https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits’; let response = await fetch(url);</p>
 <p><em>!</em> let commits = await response.json(); // read response body and parse as JSON <em>/!</em></p>
+<p>alert(commits[0].author.login); ```</p>
 <p>Or, the same without <code>await</code>, using pure promises syntax:</p>
+<p><code>js run fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')   .then(response =&gt; response.json())   .then(commits =&gt; alert(commits[0].author.login));</code></p>
 <p>To get the response text, <code>await response.text()</code> instead of <code>.json()</code>:</p>
 <p>```js run async let response = await fetch(‘https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits’);</p>
 <p>let text = await response.text(); // read response body as text</p>
@@ -2484,6 +2495,7 @@ let parsed = await response.json(); // fails (already consumed)
 <p>console.log(<code>Received ${receivedLength} of ${contentLength}</code>) }</p>
 <p>// Step 4: concatenate chunks into single Uint8Array let chunksAll = new Uint8Array(receivedLength); // (4.1) let position = 0; for(let chunk of chunks) { chunksAll.set(chunk, position); // (4.2) position += chunk.length; }</p>
 <p>// Step 5: decode into a string let result = new TextDecoder(“utf-8”).decode(chunksAll);</p>
+<p>// We’re done! let commits = JSON.parse(result); alert(commits[0].author.login); ```</p>
 <p>Let’s explain that step-by-step:</p>
 <ol type="1">
 <li><p>We perform <code>fetch</code> as usual, but instead of calling <code>response.json()</code>, we obtain a stream reader <code>response.body.getReader()</code>.</p>
@@ -3432,6 +3444,7 @@ function upload(file) {
 <p>```</p>
 <h2 id="cross-origin-requests">Cross-origin requests</h2>
 <p><code>XMLHttpRequest</code> can make cross-origin requests, using the same CORS policy as <a href="info:fetch-crossorigin">fetch</a>.</p>
+<p>Just like <code>fetch</code>, it doesn’t send cookies and HTTP-authorization to another origin by default. To enable them, set <code>xhr.withCredentials</code> to <code>true</code>:</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb101-1" title="1"><span class="kw">let</span> xhr <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb101-2" title="2"><span class="op">*!*</span></a>
 <a class="sourceLine" id="cb101-3" title="3"><span class="va">xhr</span>.<span class="at">withCredentials</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a>
@@ -4310,6 +4323,7 @@ If a script sets a cookie, then no matter where the script came from -- the cook
 <h2 id="appendix-gdpr">Appendix: GDPR</h2>
 <p>This topic is not related to JavaScript at all, just something to keep in mind when setting cookies.</p>
 <p>There’s a legislation in Europe called GDPR, that enforces a set of rules for websites to respect the users’ privacy. One of these rules is to require an explicit permission for tracking cookies from the user.</p>
+<p>Please note, that’s only about tracking/identifying/authorizing cookies.</p>
 <p>So, if we set a cookie that just saves some information, but neither tracks nor identifies the user, then we are free to do it.</p>
 <p>But if we are going to set a cookie with an authentication session or a tracking id, then a user must allow that.</p>
 <p>Websites generally have two variants of following GDPR. You must have seen them both already in the web:</p>
@@ -6929,6 +6943,7 @@ customElements.define('user-card', class extends HTMLElement {
 <p>CSS custom properties pierce through shadow DOM. They are used as “hooks” to style the component:</p>
 <ol type="1">
 <li>The component uses a custom CSS property to style key elements, such as <code>var(--component-name-title, &lt;default value&gt;)</code>.</li>
+<li>Component author publishes these properties for developers, they are same important as other public component methods.</li>
 <li>When a developer wants to style a title, they assign <code>--component-name-title</code> CSS property for the shadow host or above.</li>
 <li>Profit! # Shadow DOM and events</li>
 </ol>
@@ -9944,6 +9959,7 @@ if (n < 0) {
 <li><a href="http://www.jshint.com/">JSHint</a> – more settings than JSLint.</li>
 <li><a href="http://eslint.org/">ESLint</a> – probably the newest one.</li>
 </ul>
+<p>All of them can do the job. The author uses <a href="http://eslint.org/">ESLint</a>.</p>
 <p>Most linters are integrated with many popular editors: just enable the plugin in the editor and configure the style.</p>
 <p>For instance, for ESLint you should do the following:</p>
 <ol type="1">
@@ -10105,6 +10121,7 @@ if (n < 0) {
 <li>Put them in only if it’s impossible to make the code so simple and self-descriptive that it doesn’t require them.</li>
 </ul>
 <p>Comments are also used for auto-documenting tools like JSDoc3: they read them and generate HTML-docs (or docs in another format). # Ninja code</p>
+<p><code>quote author="Confucius (Analects)" Learning without thought is labor lost; thought without learning is perilous.</code></p>
 <p>Programmer ninjas of the past used these tricks to sharpen the mind of code maintainers.</p>
 <p>Code review gurus look for them in test tasks.</p>
 <p>Novice developers sometimes use them even better than programmer ninjas.</p>
@@ -10119,6 +10136,7 @@ if (n < 0) {
 <p>Cool, right? If you write like that, a developer who comes across this line and tries to understand what is the value of <code>i</code> is going to have a merry time. Then come to you, seeking for an answer.</p>
 <p>Tell them that shorter is always better. Initiate them into the paths of ninja.</p>
 <h2 id="one-letter-variables">One-letter variables</h2>
+<p><code>quote author="Laozi (Tao Te Ching)" The Dao hides in wordlessness. Only the Dao is well begun and well completed.</code></p>
 <p>Another way to code shorter is to use single-letter variable names everywhere. Like <code>a</code>, <code>b</code> or <code>c</code>.</p>
 <p>A short variable disappears in the code like a real ninja in the forest. No one will be able to find it using “search” of the editor. And even if someone does, they won’t be able to “decipher” what the name <code>a</code> or <code>b</code> means.</p>
 <p>…But there’s an exception. A real ninja will never use <code>i</code> as the counter in a <code>"for"</code> loop. Anywhere, but not here. Look around, there are many more exotic letters. For instance, <code>x</code> or <code>y</code>.</p>
@@ -10134,6 +10152,7 @@ if (n < 0) {
 </ul>
 <p>Only the one with truly good intuition will be able to understand such names. Try to shorten everything. Only a worthy person should be able to uphold the development of your code.</p>
 <h2 id="soar-high.-be-abstract.">Soar high. Be abstract.</h2>
+<p><code>quote author="Laozi (Tao Te Ching)" The great square is cornerless&lt;br&gt; The great vessel is last complete,&lt;br&gt; The great note is rarified sound,&lt;br&gt; The great image has no form.</code></p>
 <p>While choosing a name try to use the most abstract word. Like <code>obj</code>, <code>data</code>, <code>value</code>, <code>item</code>, <code>elem</code> and so on.</p>
 <ul>
 <li><p><strong>The ideal name for a variable is <code>data</code>.</strong> Use it everywhere you can. Indeed, every variable holds <em>data</em>, right?</p>
@@ -10151,6 +10170,7 @@ if (n < 0) {
 <p>Mix them where you can.</p>
 <p>A quick read of such code becomes impossible. And when there’s a typo… Ummm… We’re stuck for long, time to drink tea.</p>
 <h2 id="smart-synonyms">Smart synonyms</h2>
+<p><code>quote author="Laozi (Tao Te Ching)" The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name.</code></p>
 <p>Using <em>similar</em> names for <em>same</em> things makes life more interesting and shows your creativity to the public.</p>
 <p>For instance, consider function prefixes. If a function shows a message on the screen – start it with <code>display…</code>, like <code>displayMessage</code>. And then if another function shows on the screen something else, like a user name, start it with <code>show…</code> (like <code>showName</code>).</p>
 <p>Insinuate that there’s a subtle difference between such functions, while there is none.</p>
@@ -10159,6 +10179,7 @@ if (n < 0) {
 <p>For two functions with important differences – use the same prefix!</p>
 <p>For instance, the function <code>printPage(page)</code> will use a printer. And the function <code>printText(text)</code> will put the text on-screen. Let an unfamiliar reader think well over similarly named function <code>printMessage</code>: “Where does it put the message? To a printer or on the screen?”. To make it really shine, <code>printMessage(message)</code> should output it in the new window!</p>
 <h2 id="reuse-names">Reuse names</h2>
+<p><code>quote author="Laozi (Tao Te Ching)" Once the whole is divided, the parts&lt;br&gt; need names.&lt;br&gt; There are already enough names.&lt;br&gt; One must know when to stop.</code></p>
 <p>Add a new variable only when absolutely necessary.</p>
 <p>Instead, reuse existing names. Just write new values into them.</p>
 <p>In a function try to use only variables passed as parameters.</p>
@@ -10182,6 +10203,7 @@ if (n < 0) {
 <p>Let everyone see how magnificent your entities are! Names like <code>superElement</code>, <code>megaFrame</code> and <code>niceItem</code> will definitely enlighten a reader.</p>
 <p>Indeed, from one hand, something is written: <code>super..</code>, <code>mega..</code>, <code>nice..</code> But from the other hand – that brings no details. A reader may decide to look for a hidden meaning and meditate for an hour or two of their paid working time.</p>
 <h2 id="overlap-outer-variables">Overlap outer variables</h2>
+<p><code>quote author="Guan Yin Zi" When in the light, can't see anything in the darkness.&lt;br&gt; When in the darkness, can see everything in the light.</code></p>
 <p>Use same names for variables inside and outside a function. As simple. No efforts to invent new names.</p>
 <div class="sourceCode" id="cb342"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb342-1" title="1"><span class="kw">let</span> <span class="op">*!*</span>user<span class="op">*</span><span class="ss">/!</span><span class="sc">*</span><span class="ss"> = authenticateUser</span><span class="sc">()</span><span class="ss">;</span></a>
 <a class="sourceLine" id="cb342-2" title="2"></a>
@@ -10203,6 +10225,7 @@ if (n < 0) {
 <p>Show your original thinking! Let the call of <code>checkPermission</code> return not <code>true/false</code>, but a complex object with the results of the check.</p>
 <p>Those developers who try to write <code>if (checkPermission(..))</code>, will wonder why it doesn’t work. Tell them: “Read the docs!”. And give this article.</p>
 <h2 id="powerful-functions">Powerful functions!</h2>
+<p><code>quote author="Laozi (Tao Te Ching)" The great Tao flows everywhere,&lt;br&gt; both to the left and to the right.</code></p>
 <p>Don’t limit the function by what’s written in its name. Be broader.</p>
 <p>For instance, a function <code>validateEmail(email)</code> could (besides checking the email for correctness) show an error message and ask to re-enter the email.</p>
 <p>Additional actions should not be obvious from the function name. A true ninja coder will make them not obvious from the code as well.</p>

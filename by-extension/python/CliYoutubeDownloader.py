@@ -48,6 +48,15 @@ class YouTubeDownloder:
         self.getPermisionToContinue()
 
     def getPermisionToContinue(self):
+        print(
+            "\n title : {0} \n author : {1} \n size : {2:.2f}MB \n resolution : {3} \n fps : {4} \n ".format(
+                self.youtube.title,
+                self.youtube.author,
+                file_size,
+                self.stream.resolution,
+                self.stream.fps,
+            )
+        )
         if input("do you want it ?(defualt = (y)es) or (n)o ") == "n":
             self.showStreams()
         else:

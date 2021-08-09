@@ -1,6 +1,6 @@
 # The clickjacking attack
 
-The "clickjacking" attack allows an evil page to click on a "victim site" _on behalf of the visitor_.
+The "clickjacking" attack allows an evil page to click on a "victim site" *on behalf of the visitor*.
 
 Many sites were hacked this way, including Twitter, Facebook, Paypal and other sites. They have all been fixed, of course.
 
@@ -21,16 +21,16 @@ Here's how the evil page looks. To make things clear, the `<iframe>` is half-tra
 
 ```html run height=120 no-beautify
 <style>
-  iframe { /* iframe from the victim site */
-    width: 400px;
-    height: 100px;
-    position: absolute;
-    top:0; left:-20px;
-  *!*
-    opacity: 0.5; /* in real opacity:0 */
-  */!*
-    z-index: 1;
-  }
+iframe { /* iframe from the victim site */
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top:0; left:-20px;
+*!*
+  opacity: 0.5; /* in real opacity:0 */
+*/!*
+  z-index: 1;
+}
 </style>
 
 <div>Click to get rich now:</div>
@@ -50,6 +50,8 @@ The full demo of the attack:
 [codetabs src="clickjacking-visible" height=160]
 
 Here we have a half-transparent `<iframe src="facebook.html">`, and in the example we can see it hovering over the button. A click on the button actually clicks on the iframe, but that's not visible to the user, because the iframe is transparent.
+
+As a result, if the visitor is authorized on Facebook ("remember me" is usually turned on), then it adds a "Like". On Twitter that would be a "Follow" button.
 
 Here's the same example, but closer to reality, with `opacity:0` for `<iframe>`:
 
@@ -85,12 +87,12 @@ This not a reliable defence, because there are many ways to hack around it. Let'
 
 ### Blocking top-navigation
 
-We can block the transition caused by changing `top.location` in [beforeunload](info:onload-ondomcontentloaded#window.onbeforeunload) event handler.
+We can block the transition caused by changing `top.location` in  [beforeunload](info:onload-ondomcontentloaded#window.onbeforeunload) event handler.
 
 The top page (enclosing one, belonging to the hacker) sets a preventing handler to it, like this:
 
 ```js
-window.onbeforeunload = function () {
+window.onbeforeunload = function() {
   return false;
 };
 ```
@@ -124,6 +126,7 @@ The server-side header `X-Frame-Options` can permit or forbid displaying the pag
 It must be sent exactly as HTTP-header: the browser will ignore it if found in HTML `<meta>` tag. So, `<meta http-equiv="X-Frame-Options"...>` won't do anything.
 
 The header may have 3 values:
+
 
 `DENY`
 : Never ever show the page inside a frame.
@@ -195,7 +198,7 @@ A cookie with such attribute is only sent to a website if it's opened directly, 
 If the site, such as Facebook, had `samesite` attribute on its authentication cookie, like this:
 
 ```
-
+Set-Cookie: authorization=secret; samesite
 ```
 
 ...Then such cookie wouldn't be sent when Facebook is open in iframe from another site. So the attack would fail.

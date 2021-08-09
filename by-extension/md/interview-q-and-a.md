@@ -456,6 +456,7 @@ m = c^d mod n = m^(e*d) mod n = m^(e*d mod phi(n)) mod n = m
 
 #### [[⬆]](#toc) <a name='security'>Security:</a>
 * What is *OpenID and OAuth2.0 and OpenID Connect*?
+* Four main actors in an OAuth system (clients, resource owners, authorization servers, and protected resources)
 * What is *access_token, refresh_token, SAML token, JWT token*?
 * *Sticky session vs Session Replication*.
 * What is hash [*salt*](https://en.wikipedia.org/wiki/Salt_(cryptography))?

@@ -56,6 +56,7 @@ Git is a version control system that allows us to track, commit and revert chang
     # makes git terminal output pretty
     git config --global color.ui true
 
+    # this will mark you as the 'author' of each committed change
     git config --global user.name "your name here"
 
     # use the email associated with your GitHub account

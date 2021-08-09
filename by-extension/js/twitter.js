@@ -102,11 +102,16 @@ function createAuthHeaders(_oauth, uri, method) {
   }
 
   // NOTE: I added a space after the commma in the join() to explicitly match the way Twitter is doing it
-  "Authorization: OAuth " +
+  var authorization =
+    "Authorization: OAuth " +
     Object.keys(oa)
       .sort()
       .map(function (i) {
         return i + '="' + rfc3986(oa[i]) + '"';
       })
       .join(", ");
+
+  authorization += ', oauth_signature="' + rfc3986(signature) + '"';
+
+  return authorization;
 }

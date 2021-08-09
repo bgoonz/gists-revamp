@@ -4,6 +4,7 @@ import client from "part:@sanity/base/client";
 // Run this script with: `sanity exec --with-user-token migrations/migratePortableTextToPlainText.js`
 //
 // This example shows how you may write a migration script that migrates Portable Text
+// into plain text on a specific document type (author).
 // This will migrate documents in batches of 100 and continue patching until no more documents are
 // returned from the query.
 //
@@ -29,7 +30,10 @@ function blocksToText(blocks) {
     .join("\n\n");
 }
 
-const fetchDocuments = () => client.fetch();
+const fetchDocuments = () =>
+  client.fetch(
+    `*[_type == 'author' && defined(bio) && bio._type === 'array'][0...100] {_id, _rev, name}`
+  );
 
 const buildPatches = (docs) =>
   docs.map((doc) => ({

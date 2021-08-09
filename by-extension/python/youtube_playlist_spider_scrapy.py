@@ -32,12 +32,14 @@ class QuotesSpider(scrapy.Spider):
         for item in response.css("td.pl-video-title"):
             i += 1  # enumerate(...) was not working!
             video = item.css("a.pl-video-title-link")[0]
+            author = item.css("div.pl-video-owner")[0]
             res = {
                 "id": i,
                 "href": video.xpath("@href")
                 .extract_first()
                 .replace("&index=%i&list=WL" % i, ""),
                 "title": video.css("a::text").extract_first().strip(),
+                "author": author.css("a::text").extract_first().strip(),
             }
             print(res)
             # yield res

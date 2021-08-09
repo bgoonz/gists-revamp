@@ -1,5 +1,6 @@
 /**
  * @fileoverview Utilities for working with globs and the filesystem.
+ * @author Ian VanSchooten
  */
 "use strict";
 

@@ -1,5 +1,6 @@
 #!/usr/bin/python
 """Replacement for htpasswd"""
+# Original author: Eli Carter
 import os
 import sys
 import random
