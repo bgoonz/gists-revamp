@@ -1,5 +1,5 @@
-Full CSS Map creator
---------------------
+## Full CSS Map creator
+
 A full CSS map creator with toolbar.
 The differents input radio allows to change the size and the color of each element.
 The number of elements, the maximum sizes and colors can be changed easily thanks to Haml and Sass

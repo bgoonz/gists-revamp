@@ -1,4 +1,5 @@
 # This works wonders!
+
 <hr>
 
 It produces a moc directory structure layout:
@@ -177,12 +178,12 @@ def process_dir(top_dir, opts):
     .icon {
         margin-right: 5px;
     }
-    tr.clickable { 
-        cursor: pointer; 
-    } 
-    tr.clickable a { 
-        display: block; 
-    } 
+    tr.clickable {
+        cursor: pointer;
+    }
+    tr.clickable a {
+        display: block;
+    }
     @media (max-width: 600px) {
         * {
             font-size: 1.06rem;
@@ -427,7 +428,6 @@ if __name__ == "__main__":
     process_dir(config.top_dir, config)
 ```
 
-
 <hr>
 
 ## Alternatively here's a more simple script:
@@ -485,21 +485,18 @@ index_folder('.')
 
 ```
 
-
-  [1]: https://i.stack.imgur.com/WRhyk.jpg
-  [2]: https://i.stack.imgur.com/tcpNw.jpg
+[1]: https://i.stack.imgur.com/WRhyk.jpg
+[2]: https://i.stack.imgur.com/tcpNw.jpg
 
 <hr>
-## You could also use 
+## You could also use
 
 1.) [dirhtml](https://www.portablefreeware.com/index.php?id=308)
 2.) [Snap2Html](https://www.rlvision.com/snap2html/about.php)
 
 ##### to get roughly the same effect.
 
-
 <hr>
-
 
 <hr>
 
@@ -606,6 +603,3 @@ cmd $listing --sort=extension >>$html
 
 
 ```
-
-
-
