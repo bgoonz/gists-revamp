@@ -1,11 +1,19 @@
-// creates a new variable 'counter' and set it's initial value to 0;
-let counter = 0;
-// creates a new function 'addOne' which takes 0 parameters
-function addOne() {
-    // adds one to counter. Equivalent to counter = counter + 1;
-    counter++;
+function counter() {
+  let n = 0;
+  return {
+    count: function () {
+      return n++;
+    },
+    reset: function () {
+      n = 0;
+    },
+  };
 }
-// calling a function. This executes the body of the named function.
-addOne();
-// prints our result to the console 
-console.log(counter);
+
+let c = counter(),
+  d = counter(); // Create two counters
+c.count(); // => 0
+d.count(); // => 0: they count independently
+c.reset(); // reset() and count() methods share state
+c.count(); // => 0: because we reset c
+d.count(); // => 1: d was not reset

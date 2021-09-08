@@ -1,119 +1,35 @@
-var fstream = require('fstream');
-var fstreamIgnore = require('fstream-ignore');
-var fs = require('./fs');
-var Q = require('q');
+// This function writes the specified chunk to the specified stream and
+// returns a Promise that will be fulfilled when it is OK to write again.
+// Because it returns a Promise, it can be used with await.
+function write(stream, chunk) {
+  // Write the specified chunk to the specified stream
+  let hasMoreRoom = stream.write(chunk);
 
-function copy(reader, writer) {
-    var deferred;
-    var ignore;
-
-    // Filter symlinks because they are not 100% portable, specially
-    // when linking between different drives
-    // Following can't be enabled either because symlinks that reference
-    // another symlinks will get filtered
-    // See: https://github.com/bower/bower/issues/699
-    reader.filter = filterSymlinks;
-    reader.follow = false;
-
-    if (reader.type === 'Directory' && reader.ignore) {
-        ignore = reader.ignore;
-        reader = fstreamIgnore(reader);
-        reader.addIgnoreRules(ignore);
-    } else {
-        reader = fstream.Reader(reader);
-    }
-
-    deferred = Q.defer();
-
-    reader
-        .on('error', deferred.reject)
-        // Pipe to writer
-        .pipe(fstream.Writer(writer))
-        .on('error', deferred.reject)
-        .on('close', deferred.resolve);
-
-    return deferred.promise;
-}
-
-function copyMode(src, dst) {
-    return Q.nfcall(fs.stat, src).then(function(stat) {
-        return Q.nfcall(fs.chmod, dst, stat.mode);
+  if (hasMoreRoom) {
+    // If buffer is not full, return
+    return Promise.resolve(null); // an already resolved Promise object
+  } else {
+    return new Promise((resolve) => {
+      // Otherwise, return a Promise that
+      stream.once("drain", resolve); // resolves on the drain event.
     });
+  }
 }
 
-function filterSymlinks(entry) {
-    return entry.type !== 'SymbolicLink';
+// Copy data from the source stream to the destination stream
+// respecting backpressure from the destination stream.
+// This is much like calling source.pipe(destination).
+async function copy(source, destination) {
+  // Set an error handler on the destination stream in case standard
+  // output closes unexpectedly (when piping output to `head`, e.g.)
+  destination.on("error", (err) => process.exit());
+
+  // Use a for/await loop to asynchronously read chunks from the input stream
+  for await (let chunk of source) {
+    // Write the chunk and wait until there is more room in the buffer.
+    await write(destination, chunk);
+  }
 }
 
-function parseOptions(opts) {
-    opts = opts || {};
-
-    if (opts.mode != null) {
-        opts.copyMode = false;
-    } else if (opts.copyMode == null) {
-        opts.copyMode = true;
-    }
-
-    return opts;
-}
-
-// ---------------------
-
-// Available options:
-// - mode: force final mode of dst (defaults to null)
-// - copyMode: copy mode of src to dst, only if mode is not specified (defaults to true)
-function copyFile(src, dst, opts) {
-    var promise;
-
-    opts = parseOptions(opts);
-
-    promise = copy(
-        {
-            path: src,
-            type: 'File'
-        },
-        {
-            path: dst,
-            mode: opts.mode,
-            type: 'File'
-        }
-    );
-
-    if (opts.copyMode) {
-        promise = promise.then(copyMode.bind(copyMode, src, dst));
-    }
-
-    return promise;
-}
-
-// Available options:
-// - ignore: array of patterns to be ignored (defaults to null)
-// - mode: force final mode of dst (defaults to null)
-// - copyMode: copy mode of src to dst, only if mode is not specified (defaults to true)
-function copyDir(src, dst, opts) {
-    var promise;
-
-    opts = parseOptions(opts);
-
-    promise = copy(
-        {
-            path: src,
-            type: 'Directory',
-            ignore: opts.ignore
-        },
-        {
-            path: dst,
-            mode: opts.mode,
-            type: 'Directory'
-        }
-    );
-
-    if (opts.copyMode) {
-        promise = promise.then(copyMode.bind(copyMode, src, dst));
-    }
-
-    return promise;
-}
-
-module.exports.copyDir = copyDir;
-module.exports.copyFile = copyFile;
+// Copy standard input to standard output
+copy(process.stdin, process.stdout);

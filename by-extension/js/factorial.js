@@ -1,22 +1,16 @@
-/* ---------
- * Challenge
- * ---------
- * Rewrite the code of the function factorial
- * in a way to use recursion
-*/
-
-function factorial(num)
-{
-
-    if (num < 0) {
-        return -1;
+// Compute factorials and cache results as properties of the function itself.
+function factorial(n) {
+  if (Number.isInteger(n) && n > 0) {
+    // Positive integers only
+    if (!(n in factorial)) {
+      // If no cached result
+      factorial[n] = n * factorial(n - 1); // Compute and cache it
     }
-
-    else if (num == 0) {
-        return 1;
-    }
-
-    else {
-        return (num * factorial(num - 1));
-    }
+    return factorial[n]; // Return the cached result
+  } else {
+    return NaN; // If input was bad
+  }
 }
+factorial[1] = 1; // Initialize the cache to hold this base case.
+factorial(6); // => 720
+factorial[5]; // => 120; the call above caches this value

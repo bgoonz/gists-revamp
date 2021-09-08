@@ -1,56 +1,15 @@
-const add = ( a, b ) => a + b;
-const add10 = num => add( num, 10 );
-const add200 = num => add( num, 200 );
-const addNew = a => b => a + b;
+// Return a new function that computes f(g(...)).
+// The returned function h passes all of its arguments to g, then passes
+// the return value of g to f, then returns the return value of f.
+// Both f and g are invoked with the same this value as h was invoked with.
+function compose(f, g) {
+  return function (...args) {
+    // We use call for f because we're passing a single value and
+    // apply for g because we're passing an array of values.
+    return f.call(this, g.apply(this, args));
+  };
+}
 
-console.log( add( 10, 20 ) ) // 30
-console.log( add10( 10 ) ) // 20
-console.log( addNew( 10 )( 20 ) ) // 30
-console.log( add200( 10 ) ) // 210
-
-
-const compose = ( ...args ) => target => {
-  return args.reduceRight( ( previousFn, currentFn ) => {
-    return currentFn( previousFn );
-  }, target );
-};
-
-console.log( 'output',
-  compose(
-    add10,
-    add200,
-    add200
-  )( 0 )
-) // 410
-
-const addProps = props => obj => {
-  return Object.assign( {}, obj, props )
-};
-
-const deleteProps = props => obj => {
-  const objCopy = Object.assign( {}, obj );
-  props.forEach( prop => {
-    delete objCopy[ prop ]
-  } );
-  return objCopy;
-};
-
-console.log( 'output',
-  compose(
-    addProps( {
-      qux: true
-    } ),
-    addProps( {
-      baz: true
-    } ),
-    deleteProps( [ 'foo', 'bit' ] ),
-    addProps( {
-      bar: true
-    } ),
-    addProps( {
-      bit: true
-    } ),
-  )( {
-    foo: true
-  } )
-) // { bar: true, baz: true, qux: true }
+const sum = (x, y) => x + y;
+const square = (x) => x * x;
+compose(square, sum)(2, 3); // => 25; the square of the sum

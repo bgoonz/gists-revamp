@@ -1,23 +1,32 @@
-.full-screen {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+#world{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	background: #cefaeb;
+  overflow:hidden;
 }
 
-.flex-container-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#credits{
+  position:absolute;
+  width:100%;
+  margin: auto;
+  bottom:0;
+  margin-bottom:20px;
+  font-family:'Open Sans', sans-serif;
+  color:#f7e1be;;
+  font-size:0.7em;
+  text-transform: uppercase;
+  text-align : center;
+  line-height:1.5;
+  letter-spacing: 2px;
 }
 
-.full-screen {
-  color: white;
+#credits a {
+  color:#dbf4e8;
 }
 
-.hidden {
-  display: none;
+#credits a:hover {
+  color:#fb5d24;
 }

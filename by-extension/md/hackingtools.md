@@ -13,7 +13,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [**»Bluetooth**](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#Bluetooth) [**»Web Scanners**](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#Web_Scanners) [**»Database**](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#Database) [**»Vuln Scanners**](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#Vuln_Scanners) [**»Vuln Apps**](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#Vuln_Apps) [**»Live CD**](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#Live_CD)
 
-| Passwords | |
+| Passwords |  |
 | [Cain & Abel](http://www.oxid.it/cain.html) | Cain & Abel is a password recovery tool for Microsoft Operating Systems. It allows easy recovery of various kind of passwords by sniffing the network. |
 | [CacheDump](http://www.off-by-one.net/) | CacheDump, licensed under the GPL, demonstrates how to recover cache entry information: username and MSCASH. |
 | [John the Ripper](http://www.openwall.com/john/) | John the Ripper is a fast password cracker, currently available for many flavors of Unix (11 are officially supported, not counting different architectures), Windows, DOS, BeOS, and OpenVMS. |
@@ -37,7 +37,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Scanning | |
+| Scanning |  |
 | [Amap](http://freeworld.thc.org/thc-amap) | Amap is a next-generation scanning tool, which identifies applications and services even if they are not listening on the default port by creating a bogus-communication and analyzing the responses. |
 | [VHostScan](https://github.com/codingo/VHostScan) | A virtual host scanner that performs reverse lookups, can be used with pivot tools, detect catch-all scenarios, aliases and dynamic default pages. |
 | [Dr.Morena](http://www.securityfriday.com/tools/DrMorena.html) | Dr.Morena is a tool to confirm the rule configuration of a Firewall. The configuration of a Firewall is done by combining more than one rule. |
@@ -71,7 +71,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Sniffer | |
+| Sniffer |  |
 | [Wireshark](http://www.wireshark.org/) | Wireshark is used by network professionals around the world for troubleshooting, analysis, software and protocol development, and education. |
 | [Chaosreader](http://chaosreader.sourceforge.net/) | A freeware tool to trace TCP/UDP/... sessions and fetch application data from snoop or tcpdump logs. This is a type of "any-snarf" program, as it will fetch telnet sessions, FTP files, HTTP transfers (HTML, GIF, JPEG, ...), SMTP emails, ... from the captured data inside network traffic logs. |
 | [dsniff](http://monkey.org/~dugsong/dsniff/) | dsniff is a collection of tools for network auditing and penetration testing. dsniff, filesnarf, mailsnarf, msgsnarf, urlsnarf, and webspy passively monitor a network for interesting data. |
@@ -86,7 +86,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Enumeration | |
+| Enumeration |  |
 | [dnsenum](http://code.google.com/p/dnsenum/) | The purpose of Dnsenum is to gather as much information as possible about a domain. |
 | [DumpSec](http://www.systemtools.com/somarsoft/) | SomarSoft's DumpSec is a security auditing program for Microsoft Windows NT/XP/200x. |
 | [LDAP Browser](http://www.ldapbrowser.com/) | LDAP Browser is a premier Windows Explorer-like LDAP Directory client available for Win32 platforms. |
@@ -99,7 +99,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Networking Tools | |
+| Networking Tools |  |
 | [fragroute](http://monkey.org/~dugsong/fragroute/) | fragroute intercepts, modifies, and rewrites egress traffic destined for a specified host. |
 | [hping](http://www.hping.org/) | hping is a command-line oriented TCP/IP packet assembler/analyzer. |
 | [Scapy](http://www.secdev.org/projects/scapy/) | Scapy is a powerful interactive packet manipulation program. It is able to forge or decode packets of a wide number of protocols, send them on the wire, capture them, match requests and replies, and much more. |
@@ -111,7 +111,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Wireless | |
+| Wireless |  |
 | [Aircrack-ng](http://www.aircrack-ng.org/) | Aircrack is an 802.11 WEP and WPA-PSK keys cracking program that can recover keys once enough data packets have been captured. |
 | [Kismet](http://www.kismetwireless.net/) | Kismet is an 802.11 layer2 wireless network detector, sniffer, and intrusion detection system. Kismet will work with any wireless card which supports raw monitoring (rfmon) mode, and can sniff 802.11b, 802.11a, and 802.11g traffic. |
 | [NetStumbler](http://www.netstumbler.com/) | NetStumbler delivers a tool that helps you detect 802.11 a/b/g WLAN standards. While wardriving is its main use, the application also facilitates the verifying of network configurations. |
@@ -131,7 +131,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Bluetooth | |
+| Bluetooth |  |
 | [Haraldscan](http://code.google.com/p/haraldscan/) | A Bluetooth Scanner for Linux and Mac OS X. Harald Scan is able to determine Major and Minor device class of device, as well as attempt to resolve the device's MAC address to the largest known Bluetooth MAC address Vendor list. |
 | [FTS4BT](http://www.fte.com/products/FTS4BT.aspx) | Frontline FTS4BT Bluetooth Protocol Analyzer. Developers and test engineers rely on FTS4BT to get them through the design, debug, test, verify, and qualification cycle. |
 | [BlueScanner](http://sourceforge.net/projects/bluescanner/) | BlueScanner is a bash script that implements a scanner for Bluetooth devices. It's a tool designed to extract as much information as possible from Bluetooth devices without the requeriment to pair. |
@@ -144,7 +144,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Web Scanners | |
+| Web Scanners |  |
 | [Arachni](http://arachni-scanner.com/) | Arachni is a fully automated system which tries to enforce the fire and forget principle. As soon as a scan is started it will not bother you for anything nor require further user interaction. |
 | [Burp Suite](http://www.portswigger.net/burp/) | Burp Suite is an integrated platform for performing security testing of web applications. |
 | [CAL9000](https://www.owasp.org/index.php/Category:OWASP_C%20AL9000_Project) | CAL9000 is a collection of web application security testing tools that complement the feature set of current web proxies and automated scanners. CAL9000 gives you the flexibility and functionality you need for more effective manual testing efforts. |
@@ -184,7 +184,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Database Vulnerabilities | |
+| Database Vulnerabilities |  |
 | [Berkeley DB](http://www.oracle.com/us/products/database/berkele%20y-db/index.html) | Oracle Berkeley DB is a family of open source, embeddable databases that allows developers to incorporate within their applications a fast, scalable, transactional database engine with industrial grade reliability and availability. |
 | [Database browser](http://www.dbsoftlab.com/database-editors/database-browser/overview.html) | Database browser is an universal table editor. This easy to use tool allows user to connect to any database and browse or modify data,run sql scripts, export and print data. |
 | [Db2utils](http://www.cqure.net/wp/db2utils/) | db2utils is a small collection of db2 utilities. It currently features three different tools db2disco, db2fakesrv and db2getprofile. |
@@ -200,13 +200,13 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Vuln Scanners | |
+| Vuln Scanners |  |
 | [Metasploit Framework](http://www.metasploit.com/) | The Metasploit Framework is an advanced open-source platform for developing, testing, and using exploit code. |
 | [OpenVAS](http://www.openvas.org/) | OpenVAS is a framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. |
 | [Nessus](http://www.tenable.com/products/nessus) | Nessus detects, scans, and profiles numerous devices and resources to increase security and compliance across your network. |
 | [Porkbind](http://innu.org/) | Porkbind is a multi-threaded nameserver scanner that can recursively query nameservers of subdomains for version strings. (i.e. sub.host.dom's nameservers then host.dom's nameservers) |
 | [Canvas](http://www.immunitysec.com/products-canvas.shtml) | Immunity's CANVAS makes available hundreds of exploits, an automated exploitation system, and a comprehensive, reliable exploit development framework to penetration testers and security professionals worldwide. |
-| [Social-Engineer Toolkit (SET)](<http://www.social-engineer.org/framework/Computer_Based_Social_Engineering_Tools:_Social_Engineer_Toolkit_(SET)>) | The Social-Engineer Toolkit (SET) is specifically designed to perform advanced attacks against the human element. SET was designed to be released with the http://www.social-engineer.org launch and has quickly became a standard tool in a penetration testers arsenal. |
+| [Social-Engineer Toolkit (SET)](http://www.social-engineer.org/framework/Computer_Based_Social_Engineering_Tools:_Social_Engineer_Toolkit_(SET)) | The Social-Engineer Toolkit (SET) is specifically designed to perform advanced attacks against the human element. SET was designed to be released with the http://www.social-engineer.org launch and has quickly became a standard tool in a penetration testers arsenal. |
 | [Acunetix](http://www.acunetix.com/vulnerability-scanner/) | Acunetix web vulnerability scanner is a tool designed to discover security holes in your web applications that an at-tacker would likely abuse to gain illicit access to your systems and data. It looks for multiple vulnerabilities includingSQL injection, cross site scripting, and weak passwords. |
 | [RIPS](http://rips-scanner.sourceforge.net/) | RIPS is a tool written in PHP to find vulnerabilities in PHP applications using static code analysis. |
 | [Rapid7 NeXpose](http://www.rapid7.com/products/nexpose/editions-and-features.jsp) | Rapid7 NeXpose is a vulnerability scanner which aims to support the entire vulnerability management lifecycle, including discovery, detection, verification, risk classification, impact analysis, reporting and mitigation. It integrates with Rapid7's Metasploit for vulnerability exploitation |
@@ -219,7 +219,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Vuln Apps | |
+| Vuln Apps |  |
 | [Damn Vulnerable Web Application (DVWA)](http://www.dvwa.co.uk/) | Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment. |
 | [Damn Vulnerable Linux](http://www.damnvulnerablelinux.org/) | Damn Vulnerable Linux (DVL) is everything a good Linux distribution isn't. Its developers have spent hours stuffing it with broken, ill-configured, outdated, and exploitable software that makes it vulnerable to attacks. DVL isn't built to run on your desktop -- it's a learning tool for security students |
 | [Metasploitable](http://sourceforge.net/projects/metasploitable/) | Metasploitable is an intentionally vulnerable Linux virtual machine. This VM can be used to conduct security training, test security tools, and practice common penetration testing techniques. |
@@ -239,7 +239,7 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 
 [Top](https://githtmlpreview.netlify.app/?https://github.com/Gexos/Hacking-Tools-Repository/blob/gh-pages/index.html#top)
 
-| Live CD | |
+| Live CD |  |
 | [BackTrack](http://www.backtrack-linux.org/) | BackTrack is a Linux-based penetration testing arsenal that aids security professionals in the ability to perform assessments in a purely native environment dedicated to hacking. |
 | [Kali Linux](http://www.kali.org/) | Kali Linux (formerly known as BackTrack) is a Debian-based distribution with a collection of security and forensics tools. It features timely security updates, support for the ARM architecture, a choice of four popular desktop environments, and seamless upgrades to newer versions. |
 | [BackBox](http://www.backbox.org/) | BackBox is a Linux distribution based on Ubuntu. It has been developed to perform penetration tests and security assessments. Designed to be fast, easy to use and provide a minimal yet complete desktop environment, thanks to its own software repositories, always being updated to the latest stable version of the most used and best known ethical hacking tools. |
@@ -251,6 +251,6 @@ If you have suggestions or links to tools/scripts to submit, please do, you can 
 | [Pentoo](http://www.pentoo.ch/) | Pentoo is a penetration testing LiveCD distribution based on Gentoo. It features a lot of tools for auditing and testing a network, from scanning and discovering to exploiting vulnerabilities |
 | [BlackArch](http://www.blackarch.org/) | BlackArch is an Arch-based security distribution. There are over 600 tools in BlackArch's package repository. The BlackArch live ISO comes with multiple window managers, including dwm, Awesome, Fluxbox, Openbox, wmii, i3, and Spectrwm. The BlackArch package repository is compatible with existing Arch installs. |
 
-| String Manipulation | |
+| String Manipulation |  |
 | [Encoding tools](https://encoding.tools/) | Encoding tools is a graphical utility for putting text or binary data through an abritrary series of transforms. This tool can be useful for security researchers or programmers who need to encode or decode strings with multiple steps, e.g. to decode an obfuscated string in a URL path, you may need to perform multiple steps: String → URL decode → Base64 decode. |
 | [CyberChef](https://gchq.github.io/CyberChef/) | A simple, intuitive web app for analysing and decoding data without having to deal with complex tools or programming languages. CyberChef encourages both technical and non-technical people to explore data formats, encryption and compression. |

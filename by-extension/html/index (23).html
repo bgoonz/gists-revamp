@@ -1,58 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>SpectrogramJS</title>
-    <style>
-      canvas,
-      svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      .spectrogram {
-        position: relative;
-      }
-
-      .axis {
-        font: 14px sans-serif;
-      }
-
-      .axis path,
-      .axis line {
-        fill: none;
-      }
-
-      .axis line {
-        shape-rendering: crispEdges;
-        stroke: #444;
-        stroke-width: 1px;
-        stroke-dasharray: 2, 4;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>SpectrogramJS</h1>
-    <p>Visualize sounds using a spectrogram - right in your browser!</p>
-
-    <div id="vis" class="spectrogram"></div>
-
-    <p>
-      <a href="https://github.com/vlandham/spectrogramJS"
-        >See how to use SpectrogramJS</a
-      >
-    </p>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript" src="spectrogram.js"></script>
-    <script>
-      var sample = new Spectrogram("bird_short.ogg", "#vis", {
-        width: 500,
-        height: 200,
-        maxFrequency: 8000,
-      });
-    </script>
-  </body>
-</html>
+<div id="screen">
+	<div id="scene">
+		<img src="back.jpg" class="bfh" data-transform="translateX(-320px) rotateX(90deg) translateZ(-220px) translateY(-30px)">
+		<img src="11_effect_circle.png" data-transform="translateX(-233px) translateY(-320px) translateZ(-90px)">
+		<img src="11_effect_circle.png" data-transform="translateX(-233px) translateY(-320px) translateZ(-60px)">
+		<img src="11_effect_circle.png" data-transform="translateX(-233px) translateY(-320px) translateZ(-30px)">
+		<img src="7_effect_back.png" data-transform="translateX(-153px) translateY(-244px) translateZ(20px)">
+		<img src="9_effet_left.png" data-transform="translateX(-253px) translateY(-80px) translateZ(40px)">
+		<img src="6_1_effect_dome.png" data-transform="translateX(-140px) translateY(-190px) translateZ(60px)">
+		<img src="8_plant_center.png" data-transform="translateX(-180px) translateY(-60px) translateZ(80px)">
+		<img src="6_3_effect_dome.png" data-transform="translateX(-50px) translateY(-140px) translateZ(100px)">
+		<img src="4_2_rain_compo.png" data-transform="translateX(-200px) translateY(-150px) translateZ(140px)">
+		<img src="4_2_rain_compo.png" data-transform="translateX(-200px) translateY(-150px) translateZ(150px)">
+		<img src="1_3_light_geyser.png" data-transform="translateX(-100px) translateY(-220px) translateZ(120px)">
+		<img src="sphere_moy_v3.png" data-transform="translateX(-5px) translateY(-20px) translateZ(80px)" id="particle">
+	</div>
+</div>

@@ -1,223 +1,422 @@
-var svg = document.querySelector("svg");
-var cursor = svg.createSVGPoint();
-var arrows = document.querySelector(".arrows");
-var randomAngle = 0;
+//variable declaration for the global repeated animations
+var gear = $("#gear1, #gear2, #gear3"),
+  wind = $("#windmill"),
+  needle1 = $("#needle3, #needle4"),
+  needle2 = $("#needle2"),
+  needle3 = $("#needle1, #needle5"),
+  panelSq = $("#panel path"),
+  light = $("#light"),
+  graph = $("#graphline"),
+  smoke = $("#smoke circle, #smoke path"),
+  aim = $("#aim1, #aim2, #aim3");
 
-// center of target
-var target = {
-	x: 900,
-	y: 249.5
-};
-
-// target intersection line segment
-var lineSegment = {
-	x1: 875,
-	y1: 280,
-	x2: 925,
-	y2: 220
-};
-
-// bow rotation point
-var pivot = {
-	x: 100,
-	y: 250
-};
-aim({
-	clientX: 320,
-	clientY: 300
+TweenMax.set(smoke, {
+  visibility: "visible"
+});
+TweenMax.set(graph, {
+  drawSVG: "0 0"
 });
 
+//animation that's repeated for all of the sections
+function revolve() {
+  var tl = new TimelineMax();
 
+  tl.add("begin");
+  tl.to(gear, 4, {
+      transformOrigin: "50% 50%",
+      rotation: 360,
+      repeat: -1,
+      ease: Linear.easeNone
+    }, "begin")
+    .to(wind, 2, {
+      transformOrigin: "50% 50%",
+      rotation: 360,
+      repeat: -1,
+      ease: Linear.easeNone
+    }, "begin")
+    .to(needle1, 2, {
+      transformOrigin: "50% 80%",
+      rotation: -30,
+      repeat: -1,
+      yoyo: true,
+      ease: Elastic.easeOut
+    }, "begin")
+    .to(needle2, 1, {
+      transformOrigin: "50% 75%",
+      rotation: -40,
+      repeat: -1,
+      yoyo: true,
+      ease: Back.easeOut
+    }, "begin")
+    .to(needle3, 5, {
+      transformOrigin: "50% 50%",
+      rotation: 150,
+      repeat: -1,
+      yoyo: true,
+      ease: Back.easeOut
+    }, "begin")
+    .staggerTo(panelSq, 1, {
+      opacity: 0.4,
+      repeat: -1,
+      yoyo: true,
+      ease: Back.easeOut
+    }, 0.2, "begin")
+    .staggerFromTo(smoke, 1, {
+      scale: 0
+    }, {
+      scale: 1
+    }, 0.1, "begin")
+    .staggerFromTo(smoke, 1, {
+      opacity: 0.6,
+      y: 40
+    }, {
+      opacity: 0,
+      y: -50,
+      repeat: -1,
+      repeatDelay: -2,
+      ease: Circ.easeOut
+    }, 0.1, "begin")
+    .fromTo(aim, 2, {
+      opacity: 0.6,
+      scale: 0,
+      transformOrigin: "50% 50%"
+    }, {
+      scale: 2,
+      opacity: 0,
+      repeat: -1,
+      transformOrigin: "50% 50%",
+      ease: Expo.easeOut
+    }, "begin")
+    .to(graph, 4, {
+      drawSVG: "100% 120%",
+      opacity: 0.3,
+      repeat: -1,
+      ease: Expo.easeInOut
+    }, "begin")
+    .to(light, 2, {
+      fill: "#ffffff",
+      repeat: -1,
+      yoyo: true,
+      ease: Elastic.easeInOut
+    }, "begin");
 
-// set up start drag event
-window.addEventListener("mousedown", draw);
-
-function draw(e) {
-	// pull back arrow
-	randomAngle = (Math.random() * Math.PI * 0.03) - 0.015;
-	TweenMax.to(".arrow-angle use", 0.3, {
-		opacity: 1
-	});
-	window.addEventListener("mousemove", aim);
-	window.addEventListener("mouseup", loose);
-	aim(e);
+  return tl;
 }
 
+var repeat = new TimelineMax();
+repeat.add(revolve());
 
+//variable declaration for the painted panda
+var panda1 = $("#panda"),
+  colorParts = $("#features path, #limbs path"),
+  panda2 = $("#panda2"),
+  lh = $("#l-hand"),
+  rh = $("#r-hand"),
+  tubeHeart = $("#tubeheart"),
+  paint = $("#paint circle, #paint path"),
+  aim2O = $(".aim2-off");
 
-function aim(e) {
-	// get mouse position in relation to svg position and scale
-	var point = getMouseSVG(e);
-	point.x = Math.min(point.x, pivot.x - 7);
-	point.y = Math.max(point.y, pivot.y + 7);
-	var dx = point.x - pivot.x;
-	var dy = point.y - pivot.y;
-	// Make it more difficult by adding random angle each time
-	var angle = Math.atan2(dy, dx) + randomAngle;
-	var bowAngle = angle - Math.PI;
-	var distance = Math.min(Math.sqrt((dx * dx) + (dy * dy)), 50);
-	var scale = Math.min(Math.max(distance / 30, 1), 2);
-	TweenMax.to("#bow", 0.3, {
-		scaleX: scale,
-		rotation: bowAngle + "rad",
-		transformOrigin: "right center"
-	});
-	var arrowX = Math.min(pivot.x - ((1 / scale) * distance), 88);
-	TweenMax.to(".arrow-angle", 0.3, {
-		rotation: bowAngle + "rad",
-		svgOrigin: "100 250"
-	});
-	TweenMax.to(".arrow-angle use", 0.3, {
-		x: -distance
-	});
-	TweenMax.to("#bow polyline", 0.3, {
-		attr: {
-			points: "88,200 " + Math.min(pivot.x - ((1 / scale) * distance), 88) + ",250 88,300"
-		}
-	});
+TweenMax.set([panda, panda2], {
+  visibility: "visible"
+});
+TweenMax.set(panda, {
+  x: -70
+});
+TweenMax.set(panda2, {
+  y: 70,
+  scale: 0.78
+});
+TweenMax.set(tubeheart, {
+  x: 15,
+  scale: 0
+});
+TweenMax.set(colorParts, {
+  fill: "white"
+});
+TweenMax.set(paint, {
+  visibility: "visible",
+  x: 80,
+  scale: 0
+});
 
-	var radius = distance * 9;
-	var offset = {
-		x: (Math.cos(bowAngle) * radius),
-		y: (Math.sin(bowAngle) * radius)
-	};
-	var arcWidth = offset.x * 3;
+function paintPanda() {
+  var tl = new TimelineMax();
 
-	TweenMax.to("#arc", 0.3, {
-		attr: {
-			d: "M100,250c" + offset.x + "," + offset.y + "," + (arcWidth - offset.x) + "," + (offset.y + 50) + "," + arcWidth + ",50"
-		},
-			autoAlpha: distance/60
-	});
+  tl.add("paintIt");
+  tl.to(aim2O, 0.25, {
+    opacity: 0
+  }, "paintIt");
+  tl.to(panda, 2, {
+    x: 0,
+    ease: Circ.easeOut
+  }, "paintIt");
+  tl.staggerFromTo(paint, 0.5, {
+    scale: 0,
+    opacity: 0,
+    x: 40
+  }, {
+    scale: 1,
+    opacity: 1,
+    x: -40,
+    repeat: 4,
+    ease: Circ.easeOut
+  }, 0.1, "paintIt+=2");
+  tl.to(lh, 1, {
+    scaleY: 1.2,
+    rotation: -5,
+    transformOrigin: "50% 0",
+    ease: Circ.easeOut
+  }, "paintIt+=1");
+  tl.to(rh, 1, {
+    scaleY: 1.2,
+    rotation: 5,
+    transformOrigin: "50% 0",
+    ease: Circ.easeOut
+  }, "paintIt+=1");
+  tl.to(lh, 0.5, {
+    scaleY: 1,
+    transformOrigin: "50% 0",
+    ease: Circ.easeOut
+  }, "paintIt+=2");
+  tl.to(rh, 0.5, {
+    scaleY: 1,
+    transformOrigin: "50% 0",
+    ease: Circ.easeOut
+  }, "paintIt+=2");
+  tl.to(panda, 0.5, {
+    y: -5,
+    ease: Circ.easeOut
+  }, "paintIt+=2");
+  tl.to(lh, 0.5, {
+    scaleY: 1.2,
+    transformOrigin: "50% 0",
+    ease: Circ.easeOut
+  }, "paintIt+=3.5");
+  tl.to(rh, 0.5, {
+    scaleY: 1.2,
+    transformOrigin: "50% 0",
+    ease: Circ.easeOut
+  }, "paintIt+=3.5");
+  tl.to(panda, 0.5, {
+    y: 0,
+    ease: Circ.easeOut
+  }, "paintIt+=3.5");
+  tl.to(rh, 1, {
+    scaleY: 1,
+    rotation: 0,
+    transformOrigin: "50% 0",
+    ease: Circ.easeIn
+  }, "paintIt+=4");
+  tl.to(lh, 1, {
+    scaleY: 1,
+    rotation: 0,
+    transformOrigin: "50% 0",
+    ease: Circ.easeIn
+  }, "paintIt+=4");
+  tl.staggerTo(paint, 0.5, {
+    opacity: 0,
+    ease: Circ.easeIn
+  }, 0.1, "paintIt+=3.5");
+  tl.to(paint, 0.5, {
+    x: 40,
+    opacity: 0
+  }, "paintIt+=6");
+  tl.to(panda, 2, {
+    x: -70,
+    ease: Circ.easeIn
+  }, "paintIt+=4.5");
+  tl.fromTo(colorParts, 3, {
+    fill: "#fff"
+  }, {
+    fill: "#000",
+    ease: Expo.easeOut
+  }, "paintIt+=3");
+  tl.to(aim2O, 0.25, {
+    opacity: 1
+  }, "paintIt+=5");
 
+  return tl;
 }
 
-function loose() {
-	// release arrow
-	window.removeEventListener("mousemove", aim);
-	window.removeEventListener("mouseup", loose);
+//create a timeline but initially pause it so that we can control it via click
+var triggerPaint = new TimelineMax({
+  paused: true
+});
+triggerPaint.add(paintPanda());
 
-	TweenMax.to("#bow", 0.4, {
-		scaleX: 1,
-		transformOrigin: "right center",
-		ease: Elastic.easeOut
-	});
-	TweenMax.to("#bow polyline", 0.4, {
-		attr: {
-			points: "88,200 88,250 88,300"
-		},
-		ease: Elastic.easeOut
-	});
-	// duplicate arrow
-	var newArrow = document.createElementNS("http://www.w3.org/2000/svg", "use");
-	newArrow.setAttributeNS('http://www.w3.org/1999/xlink', 'href', "#arrow");
-	arrows.appendChild(newArrow);
-	
-	// animate arrow along path
-	var path = MorphSVGPlugin.pathDataToBezier("#arc");
-	TweenMax.to([newArrow], 0.5, {
-		force3D: true,
-		bezier: {
-			type: "cubic",
-			values: path,
-			autoRotate: ["x", "y", "rotation"]
-		},
-		onUpdate: hitTest,
-		onUpdateParams: ["{self}"],
-		onComplete: onMiss,
-		ease: Linear.easeNone
-	});
-	TweenMax.to("#arc", 0.3, {
-		opacity: 0
-	});
-	//hide previous arrow
-	TweenMax.set(".arrow-angle use", {
-		opacity: 0
-	});
+//this button kicks off the panda painting timeline
+$("#button").on("click", function(e) {
+  e.preventDefault();
+  triggerPaint.restart();
+});
+
+//variable declaration for the painted panda
+var handle2 = $("#handle2"),
+  hgrow = $(".g-hearts path"),
+  aim3O = $(".aim3-off");
+
+function heartPanda() {
+  var tl = new TimelineMax();
+
+  tl.add("hearts");
+  tl.to(aim3O, 0.25, {
+    opacity: 0
+  }, "hearts");
+  tl.to(handle2, 1, {
+    rotation: -60,
+    transformOrigin: "0 50%",
+    ease: Expo.easeOut
+  }, "hearts");
+  tl.fromTo(panda2, 2, {
+    y: 70,
+    scale: 0.78
+  }, {
+    scale: 1,
+    y: 0,
+    ease: Circ.easeOut
+  }, "hearts");
+  tl.fromTo(tubeheart, 2, {
+    x: 30,
+    scale: 0,
+    opacity: 1
+  }, {
+    scale: 7,
+    x: -20,
+    opacity: 0,
+    transformOrigin: "100% 50%",
+    ease: Circ.easeOut
+  }, "hearts+=2");
+  tl.staggerFromTo(hgrow, 2, {
+    scale: 0,
+    opacity: 1
+  }, {
+    scale: 12,
+    opacity: 0,
+    transformOrigin: "50% 50%",
+    ease: Circ.easeOut
+  }, 0.7, "hearts+=2.4");
+  tl.to(panda2, 2, {
+    y: 70,
+    scale: 0.78,
+    ease: Circ.easeIn
+  }, "hearts+=5");
+  tl.to(handle2, 1, {
+    rotation: 0,
+    transformOrigin: "0 50%",
+    ease: Expo.easeIn
+  }, "hearts+=6");
+  tl.to(aim3O, 0.25, {
+    opacity: 1
+  }, "hearts+=7");
+
+  return tl;
 }
 
-function hitTest(tween) {
-	// check for collisions with arrow and target
-	var arrow = tween.target[0];
-	var transform = arrow._gsTransform;
-	var radians = transform.rotation * Math.PI / 180;
-	var arrowSegment = {
-		x1: transform.x,
-		y1: transform.y,
-		x2: (Math.cos(radians) * 60) + transform.x,
-		y2: (Math.sin(radians) * 60) + transform.y
-	}
+//create a timeline but initially pause it so that we can control it via click
+var triggerHeart = new TimelineMax({
+  paused: true
+});
+triggerHeart.add(heartPanda());
 
-	var intersection = getIntersection(arrowSegment, lineSegment);
-	if (intersection.segment1 && intersection.segment2) {
-		tween.pause();
-		var dx = intersection.x - target.x;
-		var dy = intersection.y - target.y;
-		var distance = Math.sqrt((dx * dx) + (dy * dy));
-		var selector = ".hit";
-		if (distance < 7) {
-			selector = ".bullseye"
-		}
-		showMessage(selector);
-	}
+//this toggle kicks off the panda hearts timeline
+handle2.on("click", function(e) {
+  e.preventDefault();
+  triggerHeart.restart();
+});
 
+//third one
+//variable declaration for the laser panda
+var handle1 = $("#handle1"),
+  chip = $("#chip"),
+  lasers = $("#lasers line"),
+  aim1O = $(".aim1-off"),
+  panda3 = $("#panda3");
+
+TweenMax.set(lasers, {
+  rotation: 150,
+  drawSVG: "0 0",
+  opacity: 0
+});
+TweenMax.set(panda3, {
+  x: 80,
+  visibility: "visible"
+});
+
+function laserPanda() {
+  var tl = new TimelineMax();
+
+  tl.add("laserIn");
+  tl.to(aim1O, 0.25, {
+    opacity: 0
+  }, "laserIn");
+  tl.to(handle1, 1, {
+    rotation: 30,
+    transformOrigin: "20% 50%",
+    ease: Expo.easeOut
+  }, "laserIn");
+  tl.fromTo(panda3, 2, {
+    x: 80
+  }, {
+    x: 0,
+    ease: Circ.easeOut
+  }, "laserIn");
+  tl.to(chip, 0.75, {
+    x: 20,
+    ease: Circ.easeOut
+  }, "laserIn+=2.5");
+  tl.fromTo(lasers, 1, {
+    drawSVG: "0 0",
+    opacity: 0
+  }, {
+    drawSVG: true,
+    opacity: 0.8
+  }, "laserIn+=2.5");
+  tl.to(chip, 0.2, {
+    opacity: 0
+  }, "laserIn+=3");
+  tl.to(chip, 0.2, {
+    x: -5
+  }, "laserIn+=3.5");
+  tl.fromTo(lasers, 2, {
+    rotation: 150
+  }, {
+    rotation: 0,
+    ease: Power3.easeIn
+  }, "laserIn+=3.5");
+  tl.fromTo(lasers, 0.75, {
+    drawSVG: true
+  }, {
+    drawSVG: "0 0"
+  }, "laserIn+=5.5");
+  tl.to(chip, 0.75, {
+    x: 0,
+    opacity: 1,
+    ease: Circ.easeOut
+  }, "laserIn+=8");
+  tl.to(panda3, 2, {
+    x: 80,
+    ease: Circ.easeIn
+  }, "laserIn+=6.5");
+  tl.to(handle1, 1, {
+    rotation: 0,
+    transformOrigin: "20% 50%",
+    ease: Expo.easeIn
+  }, "laserIn+=7.5");
+  tl.to(aim1O, 0.25, {
+    opacity: 1
+  }, "laserIn+=8.25");
+
+  return tl;
 }
 
-function onMiss() {
-	// Damn!
-	showMessage(".miss");
-}
+//create a timeline but initially pause it so that we can control it via click
+var triggerLaser = new TimelineMax({
+  paused: true
+});
+triggerLaser.add(laserPanda());
 
-function showMessage(selector) {
-	// handle all text animations by providing selector
-	TweenMax.killTweensOf(selector);
-	TweenMax.killChildTweensOf(selector);
-	TweenMax.set(selector, {
-		autoAlpha: 1
-	});
-	TweenMax.staggerFromTo(selector + " path", .5, {
-		rotation: -5,
-		scale: 0,
-		transformOrigin: "center"
-	}, {
-		scale: 1,
-		ease: Back.easeOut
-	}, .05);
-	TweenMax.staggerTo(selector + " path", .3, {
-		delay: 2,
-		rotation: 20,
-		scale: 0,
-		ease: Back.easeIn
-	}, .03);
-}
-
-
-
-function getMouseSVG(e) {
-	// normalize mouse position within svg coordinates
-	cursor.x = e.clientX;
-	cursor.y = e.clientY;
-	return cursor.matrixTransform(svg.getScreenCTM().inverse());
-}
-
-function getIntersection(segment1, segment2) {
-	// find intersection point of two line segments and whether or not the point is on either line segment
-	var dx1 = segment1.x2 - segment1.x1;
-	var dy1 = segment1.y2 - segment1.y1;
-	var dx2 = segment2.x2 - segment2.x1;
-	var dy2 = segment2.y2 - segment2.y1;
-	var cx = segment1.x1 - segment2.x1;
-	var cy = segment1.y1 - segment2.y1;
-	var denominator = dy2 * dx1 - dx2 * dy1;
-	if (denominator == 0) {
-		return null;
-	}
-	var ua = (dx2 * cy - dy2 * cx) / denominator;
-	var ub = (dx1 * cy - dy1 * cx) / denominator;
-	return {
-		x: segment1.x1 + ua * dx1,
-		y: segment1.y1 + ua * dy1,
-		segment1: ua >= 0 && ua <= 1,
-		segment2: ub >= 0 && ub <= 1
-	};
-}
+//this toggle kicks off the panda laser timeline
+handle1.on("click", function(e) {
+  e.preventDefault();
+  triggerLaser.restart();
+});
