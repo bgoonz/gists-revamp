@@ -14,7 +14,7 @@
 
 <table id="cheat_sheet_output_table"><tbody><tr><td><p>compile()</p></td><td><p>lastParen</p></td></tr><tr><td><p>exec()</p></td><td><p>leftCO­ntext</p></td></tr><tr><td><p>global</p></td><td><p>multiline</p></td></tr><tr><td><p>ignoreCase</p></td><td><p>rightC­ontext</p></td></tr><tr><td><p>input</p></td><td><p>source</p></td></tr><tr><td><p>lastIndex</p></td><td><p>test()</p></td></tr><tr><td colspan="2"><p>lastMatch</p></td></tr></tbody></table>
 
- 
+
 
 ### JavaScript Event Handlers
 
@@ -32,7 +32,7 @@
 
 <table id="cheat_sheet_output_table"><tbody><tr><td><p>toSource()</p></td><td><p>valueOf()</p></td></tr><tr><td colspan="2"><p>toString()</p></td></tr></tbody></table>
 
- 
+
 
 ### JavaScript Dates
 
@@ -47,4 +47,3 @@ String object methods with an x support regular expres­sions.
 ### JavaScript Functions
 
 <table id="cheat_sheet_output_table"><tbody><tr><td><p>decode­URI()</p></td><td><p>isNaN()</p></td></tr><tr><td><p>decode­URI­Com­pon­ent()</p></td><td><p>Number()</p></td></tr><tr><td><p>encode­URI()</p></td><td><p>parseF­loat()</p></td></tr><tr><td><p>encode­URI­Com­pon­ent()</p></td><td><p>parseInt()</p></td></tr><tr><td><p>escape()</p></td><td><p>String()</p></td></tr><tr><td><p>eval()</p></td><td><p>unescape()</p></td></tr><tr><td colspan="2"><p>isFinite()</p></td></tr></tbody></table>
-
