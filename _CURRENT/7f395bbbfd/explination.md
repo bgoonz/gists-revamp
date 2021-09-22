@@ -1,7 +1,5 @@
 ## [SOURCE](https://dev.to/lydiahallie)
 
-
-
 ### Promise Syntax
 
 ES6 introduced Promises. In many tutorials, you'll read something like:
@@ -20,13 +18,13 @@ A `Promise` is an object that contains a status, (`[[PromiseStatus]]`) and a�
 
 Don't worry - you'll never have to interact with this object, you can't even access the `[[PromiseStatus]]` and `[[PromiseValue]]` properties! However, the values of these properties are important when working with promises.
 
-* * * * *
+---
 
 The value of the `PromiseStatus`, the state, can be one of three values:
 
--   ✅ `fulfilled`: The promise has been `resolved`. Everything went fine, no errors occurred within the promise 🥳
--   ❌ `rejected` : The promise has been `rejected`. Argh, something went wrong..
--   ⏳ `pending`: The promise has neither resolved nor rejected (yet), the promise is still `pending`.
+- ✅ `fulfilled`: The promise has been `resolved`. Everything went fine, no errors occurred within the promise 🥳
+- ❌ `rejected` : The promise has been `rejected`. Argh, something went wrong..
+- ⏳ `pending`: The promise has neither resolved nor rejected (yet), the promise is still `pending`.
 
 Alright this all sounds great, but *when* is a promise status `"pending"`, `"fulfilled"` or `"rejected"`? And why does that status even matter?
 
@@ -59,10 +57,8 @@ The value of a promise, the value of `[[PromiseValue]]`, is the value that we
 > > 09:21 AM - 09 Apr 2020
 > >
 > > [![Twitter reply action](https://res.cloudinary.com/practicaldev/image/fetch/s--fFnoeFxk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev.to/assets/twitter-reply-action-238fe0a37991706a6880ed13941c3efd6b371e4aefe288fe8e0db85250708bc4.svg)](https://twitter.com/intent/tweet?in_reply_to=1248179232775319559) [![Twitter retweet action](https://res.cloudinary.com/practicaldev/image/fetch/s--k6dcrOn8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev.to/assets/twitter-retweet-action-632c83532a4e7de573c5c08dbb090ee18b348b13e2793175fea914827bc42046.svg)](https://twitter.com/intent/retweet?tweet_id=1248179232775319559) [![Twitter like action](https://res.cloudinary.com/practicaldev/image/fetch/s--SRQc9lOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev.to/assets/twitter-like-action-1ea89f4b87c7d37465b0eb78d51fcb7fe6c03a089805d7ea014ba71365be5171.svg)](https://twitter.com/intent/like?tweet_id=1248179232775319559)
->
->
 
-* * * * *
+---
 
 Okay so, now we know a little bit better how to control that vague `Promise` object. But what is it used for?
 
@@ -82,9 +78,9 @@ Cool! A promise got returned with the value of the parsed data, just like we exp
 
 But... what now? We don't care about that entire promise object, we only care about the value of the data! Luckily, there are built-in methods to get a promise's value. To a promise, we can attach 3 methods:
 
--   `.then()`: Gets called after a promise *resolved*.
--   `.catch()`: Gets called after a promise *rejected*.
--   `.finally()`: *Always* gets called, whether the promise resolved or rejected.
+- `.then()`: Gets called after a promise *resolved*.
+- `.catch()`: Gets called after a promise *rejected*.
+- `.finally()`: *Always* gets called, whether the promise resolved or rejected.
 
 [![](https://res.cloudinary.com/practicaldev/image/fetch/s--19tIvFJQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mu1aqqnyfjsfon5hwrtw.png)](https://res.cloudinary.com/practicaldev/image/fetch/s--19tIvFJQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mu1aqqnyfjsfon5hwrtw.png)
 
@@ -98,7 +94,7 @@ The `.catch` method receives the value passed to the `rejected` method
 
 Finally, we have the value that got resolved by the promise without having that entire promise object! We can now do whatever we want with this value.
 
-* * * * *
+---
 
 FYI, when you know that a promise will always resolve or always reject, you can write `Promise.resolve` or `Promise.reject` , with the value you want to reject or resolve the promise with!
 
@@ -106,7 +102,7 @@ FYI, when you know that a promise will always resolve or always reject, you can 
 
 You'll often see this syntax in the following examples 😄
 
-* * * * *
+---
 
 In the `getImage` example, we ended up having to nest multiple callbacks in order to run them. Luckily, the `.then` handlers can help us with that! 🥳
 
@@ -120,10 +116,9 @@ In the case of the `getImage` example, we can chain multiple `then` callback
 
 Perfect! This syntax already looks way better than the nested callbacks.
 
-* * * * *
+---
 
-[](https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke#microtasks-and-macrotasks)Microtasks and (Macro)tasks
------------------------------------------------------------------------------------------------------------------------------------
+## [](https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke#microtasks-and-macrotasks)Microtasks and (Macro)tasks
 
 Okay so we know a little better how to create a promise and how to extract values out of a promise. Let's add some more code to the script, and run it again:
 
@@ -135,7 +130,7 @@ First, `Start!` got logged. Okay we could've seen that one coming: `console.l
 
 We've finally seen the true power of promises! 🚀 Although JavaScript is single-threaded, we can add asynchronous behavior using a `Promise`!
 
-* * * * *
+---
 
 But wait, haven't we seen that before? 🤔 In the [JavaScript event loop](https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif), can't we also use methods native to the browser such as `setTimeout` to create some sort of asynchronous behavior?
 
@@ -154,13 +149,13 @@ So when *is* a `then()`, `catch()` or `finally()` callback executed? The 
 2.  When the call stack is empty, *all* queued up microtasks are popped onto the callstack one by one, and get executed! (Microtasks themselves can also return new microtasks, effectively creating an infinite microtask loop 😬)
 3.  If both the call stack and microtask queue are empty, the event loop checks if there are tasks left on the (macro)task queue. The tasks get popped onto the callstack, executed, and popped off!
 
-* * * * *
+---
 
 Let's take a look at a quick example, simply using:
 
--   `Task1`: a function that's added to the call stack immediately, for example by invoking it instantly in our code.
--   `Task2`, `Task3`, `Task4`: microtasks, for example a promise `then` callback, or a task added with `queueMicrotask`.
--   `Task5`, `Task6`: a (macro)task, for example a `setTimeout` or `setImmediate` callback
+- `Task1`: a function that's added to the call stack immediately, for example by invoking it instantly in our code.
+- `Task2`, `Task3`, `Task4`: microtasks, for example a promise `then` callback, or a task added with `queueMicrotask`.
+- `Task5`, `Task6`: a (macro)task, for example a `setTimeout` or `setImmediate` callback
 
 [![](https://res.cloudinary.com/practicaldev/image/fetch/s--05Fi8vBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/42eatw03fcha0e1qcrf0.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--05Fi8vBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/42eatw03fcha0e1qcrf0.gif)
 
@@ -172,7 +167,7 @@ Okay okay enough pink boxes. Let's use it with some real code!
 
 In this code, we have the macro task `setTimeout`, and the microtask promise `then()` callback. Once the engine reaches the line of the `setTimeout` function. Let's run this code step-by-step, and see what gets logged!
 
-* * * * *
+---
 
 > Quick FYI - in the following examples I'm showing methods like `console.log`, `setTimeout` and `Promise.resolve` being added to the call stack. They're internal methods and actually don't appear in stack traces - so don't worry if you're using the debugger and you don't see them anywhere! It just makes explaining this concept easier without adding a bunch of boilerplate code 🙂
 
@@ -184,13 +179,13 @@ The engine encounters the `setTimeout` method, which gets popped on to the cal
 
 [![](https://res.cloudinary.com/practicaldev/image/fetch/s--6NSYq-nO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/yqoemb6f32lvovge8yrp.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--6NSYq-nO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/yqoemb6f32lvovge8yrp.gif)
 
-* * * * *
+---
 
 The engine encounters the `Promise.resolve()` method. The `Promise.resolve()` method gets added to the call stack, after which is resolves with the value `Promise!`. Its `then` callback function gets added to the microtask queue.
 
 [![](https://res.cloudinary.com/practicaldev/image/fetch/s--us8FF30N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6wxjxduh62fqt531e2rc.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--us8FF30N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6wxjxduh62fqt531e2rc.gif)
 
-* * * * *
+---
 
 The engine encounters the `console.log()` method. It gets added to the call stack immediately, after which it logs the value `End!` to the console, gets popped off the call stack, and the engine continues.
 
@@ -208,10 +203,9 @@ It's time to check the (macro)task queue: the `setTimeout` callback is still 
 
 Finally, all done! 🥳 It seems like the output we saw earlier wasn't so unexpected after all.
 
-* * * * *
+---
 
-[](https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke#asyncawait)Async/Await
-----------------------------------------------------------------------------------------------------
+## [](https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke#asyncawait)Async/Await
 
 ES7 introduced a new way to add async behavior in JavaScript and make working with promises easier! With the introduction of the `async` and `await` keywords, we can create async functions which implicitly return a promise. But.. how can we do that? 😮
 
@@ -231,19 +225,19 @@ Let's see what happens when we run the following block of code:
 
 Hmm.. What's happening here?
 
-* * * * *
+---
 
 [![Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--bfscMU3t--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/d27d7xxiekczftjyic4b.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--bfscMU3t--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/d27d7xxiekczftjyic4b.gif)
 
 First, the engine encounters a `console.log`. It gets popped onto the call stack, after which `Before function!` gets logged.
 
-* * * * *
+---
 
 [![Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--wN7yFTnt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9wqej2269vmntfcuxs9t.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--wN7yFTnt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9wqej2269vmntfcuxs9t.gif)
 
 Then, we invoke the async function `myFunc()`, after which the function body of `myFunc` runs. On the very first line within the function body, we call another `console.log`, this time with the string `In function!`. The `console.log` gets added to the call stack, logs the value, and gets popped off.
 
-* * * * *
+---
 
 [![Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--lX9JfreE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/lch6lutxnl88j0durpyh.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--lX9JfreE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/lch6lutxnl88j0durpyh.gif)
 
@@ -253,13 +247,13 @@ The first thing that happens is that the value that gets awaited gets executed: 
 
 When encountering an `await` keyword, the `async` function gets *suspended*. ✋🏼 The execution of the function body gets paused, and the rest of the async function gets run in a *microtask* instead of a regular task!
 
-* * * * *
+---
 
 [![Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--UC78HoCO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/b6l3psgewvtrtmrr60tg.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--UC78HoCO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/b6l3psgewvtrtmrr60tg.gif)
 
 Now that the async function `myFunc` is suspended as it encountered the `await` keyword, the engine jumps out of the async function and continues executing the code in the execution context in which the async function got called: the global execution context in this case! 🏃🏽‍♀️
 
-* * * * *
+---
 
 [![Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--V8u36kEG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/hlhrtuspjyrstifubdhs.gif)](https://res.cloudinary.com/practicaldev/image/fetch/s--V8u36kEG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/hlhrtuspjyrstifubdhs.gif)
 

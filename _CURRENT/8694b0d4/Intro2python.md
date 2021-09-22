@@ -3309,7 +3309,6 @@ To find if a piece of text contains only upper case alphabets.
         >>> 'HELLO'.isupper()
         True
 
-
 `isdigit()` checks if a string is a numeric value.
 
         >>> '123'.isdigit()
@@ -4369,7 +4368,6 @@ On to the next puzzle.
         print(i)
     print("done")
 
-
 Output : `done`
 
 On to the next puzzle.
@@ -4784,7 +4782,6 @@ If you are lazy like us, and you don’t want to go to Internet to read the Zen 
     If the implementation is easy to explain, it may be a good idea.
     Namespaces are one honking great idea -- let's do more of those!
     >>>
-
 
 As a beginning programmer, a lot of these might not really make sense.
 
@@ -5363,7 +5360,6 @@ We want to have a method called `increase_copies()`, which we define and call it
     def increase_copies(self, how_much):
             self.copies += how_much
 
-
 We also want a method to decrease the `copies`, to be used as `learning_python.decrease_copies()`.
 
     def decrease_copies(self, how_much):
@@ -5792,7 +5788,6 @@ Here is the code for your reference:
         max-{maximum_mark}
         min-{minimum_mark}
         avg-{average} ] """)
-
 
 Output
 
@@ -6230,7 +6225,6 @@ In this step, let’s look at using instances of custom classes inside a list. L
                  Country('China', 1400, 200),
                  Country('USA', 120, 300)]
 
-
 Most of the class is self explanatory.
 
 `__repr__(self)` method provides the string representation of a class. When you print an object of this class, the return value from this method is printed.
@@ -6407,7 +6401,6 @@ To extract only the odd numbers instead, use the condition `value % 2 == 1`.
         >>> values_odd = [ value for value in values if value%2==1]
         >>> values_odd
         [3, 9, 1, 15, 3]
-
 
 ### Step 12: Introduction To `set`
 
@@ -7289,7 +7282,6 @@ Let’s create `Recipe1` .
             print('execute the steps')
 
         def cleanup(self): pass
-
 
 When you run this:
 
@@ -8338,7 +8330,6 @@ In this step, let’s focus on the last argument: `kwargs` or keyword arguments.
 
     def example_method(mandatory_parameter, default_parameter="Default"
                        , *args, **kwargs):
-
 
 Let’s pass a few key-value pairs to the method.
 
