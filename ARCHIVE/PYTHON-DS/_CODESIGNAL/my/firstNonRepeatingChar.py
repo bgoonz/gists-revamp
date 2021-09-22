@@ -19,10 +19,10 @@ There are no characters in this string that do not repeat.
 s = "abacabad"
 
 
-1. We iterate over the string.
-2. We check if the current character is in the rest of the string.
-3. If it’s not, we return it.
-4. If it is, we continue to the next character.
+# 1. We iterate over the string.
+# 2. We check if the current character is in the rest of the string.
+# 3. If it’s not, we return it.
+# 4. If it is, we continue to the next character.
 
 
 
