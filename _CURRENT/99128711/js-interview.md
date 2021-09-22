@@ -3285,12 +3285,11 @@ You can download the PDF and Epub version of this repository from the latest run
 
 1. ### What is nodejs
 
+   Node.js is a server-side platform built on Chrome’s JavaScript runtime for easily building fast and scalable network applications. It is an event-based, non-blocking, asynchronous I/O runtime that uses Google’s V8 JavaScript engine and libuv library.
 
-    Node.js is a server-side platform built on Chrome’s JavaScript runtime for easily building fast and scalable network applications. It is an event-based, non-blocking, asynchronous I/O runtime that uses Google’s V8 JavaScript engine and libuv library.
+   **[⬆ Back to Top](#table-of-contents)**
 
-    **[⬆ Back to Top](#table-of-contents)**
-
-232. ### What is an Intl object
+1. ### What is an Intl object
 
 
     The Intl object is the namespace for the ECMAScript Internationalization API, which provides language sensitive string comparison, number formatting, and date and time formatting. It provides access to several constructors and language sensitive functions.
@@ -6177,11 +6176,10 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Back to Top](#table-of-contents)**
 
-420. ### What is the difference between isNaN and Number.isNaN?
+420.  ### What is the difference between isNaN and Number.isNaN?
 
-1. **isNaN**: The global function `isNaN` converts the argument to a Number and returns true if the resulting value is NaN.
-1. **Number.isNaN**: This method does not convert the argument. But it returns true when the type is a Number and value is NaN.
-
+1.  **isNaN**: The global function `isNaN` converts the argument to a Number and returns true if the resulting value is NaN.
+1.  **Number.isNaN**: This method does not convert the argument. But it returns true when the type is a Number and value is NaN.
 
     Let’s see the difference with an example,
 
@@ -6190,7 +6188,7 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Back to Top](#table-of-contents)**
 
-421. ### How to invoke an IIFE without any extra brackets?
+1.  ### How to invoke an IIFE without any extra brackets?
 
 
     Immediately Invoked Function Expressions(IIFE) requires a pair of parenthesis to wrap the function which contains set of statements.
@@ -6225,7 +6223,6 @@ You can download the PDF and Epub version of this repository from the latest run
 <!-- -->
 
     **[⬆ Back to Top](#table-of-contents)**
-
 
 1.  ### What is the easiest way to ignore promise errors?
 
