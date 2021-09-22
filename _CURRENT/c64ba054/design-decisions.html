@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>design-decisions</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p><a href="https://redux.js.org/" class="navbar__brand"><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /><strong>Redux</strong></a></p>
+<p><a href="https://redux.js.org/introduction/getting-started" class="navbar__item navbar__link">Getting Started</a><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="navbar__item navbar__link">Tutorial</a><a href="https://redux.js.org/api/api-reference" class="navbar__item navbar__link">API</a><a href="https://redux.js.org/faq" class="navbar__item navbar__link navbar__link--active">FAQ</a><a href="https://redux.js.org/style-guide/style-guide" class="navbar__item navbar__link">Best Practices</a><a href="https://www.github.com/reduxjs/redux" class="navbar__item navbar__link">GitHub</a><a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="https://redux.js.org/" class="navbar__brand"><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /><strong>Redux</strong></a></p>
+<ul>
+<li><a href="https://redux.js.org/introduction/getting-started" class="menu__link">Getting Started</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="menu__link">Tutorial</a></li>
+<li><a href="https://redux.js.org/api/api-reference" class="menu__link">API</a></li>
+<li><a href="https://redux.js.org/faq" class="menu__link navbar__link--active">FAQ</a></li>
+<li><a href="https://redux.js.org/style-guide/style-guide" class="menu__link">Best Practices</a></li>
+<li><a href="https://www.github.com/reduxjs/redux" class="menu__link">GitHub</a></li>
+<li><p><a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="menu__link">Need help?</a></p></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+<ul>
+<li><a href="https://redux.js.org/introduction/getting-started" class="menu__link">Getting Started with Redux</a></li>
+<li><a href="https://redux.js.org/introduction/installation" class="menu__link">Installation</a></li>
+<li><a href="https://redux.js.org/introduction/core-concepts" class="menu__link">Core Concepts</a></li>
+<li><a href="https://redux.js.org/introduction/learning-resources" class="menu__link">Learning Resources</a></li>
+<li><a href="https://redux.js.org/introduction/ecosystem" class="menu__link">Ecosystem</a></li>
+<li><a href="https://redux.js.org/introduction/examples" class="menu__link">Examples</a></li>
+</ul></li>
+<li><p><a href="#!" class="menu__link menu__link--sublist">Tutorials</a></p>
+<ul>
+<li><a href="https://redux.js.org/tutorials/index" class="menu__link">Tutorials Index</a></li>
+<li><a href="https://redux.js.org/tutorials/quick-start" class="menu__link">Quick Start</a></li>
+<li><a href="https://redux.js.org/tutorials/typescript-quick-start" class="menu__link">TypeScript Quick Start</a></li>
+<li><p><a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a></p>
+<ul>
+<li><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="menu__link">Redux Overview and Concepts</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-2-app-structure" class="menu__link">Redux App Structure</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-3-data-flow" class="menu__link">Basic Redux Data Flow</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-4-using-data" class="menu__link">Using Redux Data</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-5-async-logic" class="menu__link">Async Logic and Data Fetching</a></li>
+<li><p><a href="https://redux.js.org/tutorials/essentials/part-6-performance-normalization" class="menu__link">Performance and Normalizing Data</a></p></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-1-overview" class="menu__link">Redux Overview</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow" class="menu__link">Redux Concepts and Data Flow</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers" class="menu__link">State, Actions, and Reducers</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-4-store" class="menu__link">Store</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-5-ui-react" class="menu__link">UI and React</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-6-async-logic" class="menu__link">Async Logic and Data Fetching</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns" class="menu__link">Standard Redux Patterns</a></li>
+<li><p><a href="https://redux.js.org/tutorials/fundamentals/part-8-modern-redux" class="menu__link">Modern Redux with Redux Toolkit</a></p></li>
+</ul></li>
+<li><a href="https://redux.js.org/recipes/recipe-index" class="menu__link">Recipes: Index</a></li>
+<li><a href="https://redux.js.org/recipes/configuring-your-store" class="menu__link">Configuring Your Store</a></li>
+<li><a href="https://redux.js.org/recipes/usage-with-typescript" class="menu__link">Usage With TypeScript</a></li>
+<li><a href="https://redux.js.org/recipes/migrating-to-redux" class="menu__link">Migrating to Redux</a></li>
+<li><a href="https://redux.js.org/recipes/using-object-spread-operator" class="menu__link">Using Object Spread Operator</a></li>
+<li><a href="https://redux.js.org/recipes/reducing-boilerplate" class="menu__link">Reducing Boilerplate</a></li>
+<li><a href="https://redux.js.org/recipes/server-rendering" class="menu__link">Server Rendering</a></li>
+<li><a href="https://redux.js.org/recipes/writing-tests" class="menu__link">Writing Tests</a></li>
+<li><a href="https://redux.js.org/recipes/computing-derived-data" class="menu__link">Computing Derived Data</a></li>
+<li><a href="https://redux.js.org/recipes/implementing-undo-history" class="menu__link">Implementing Undo History</a></li>
+<li><a href="https://redux.js.org/recipes/isolating-redux-sub-apps" class="menu__link">Isolating Redux Sub-Apps</a></li>
+<li><a href="https://redux.js.org/recipes/code-splitting" class="menu__link">Code Splitting</a></li>
+<li><a href="https://redux.js.org/recipes/troubleshooting" class="menu__link">Troubleshooting</a></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
+<ul>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/structuring-reducers" class="menu__link">Structuring Reducers</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/prerequisite-concepts" class="menu__link">Prerequisite Concepts</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/basic-reducer-structure" class="menu__link">Basic Reducer Structure</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/splitting-reducer-logic" class="menu__link">Splitting Reducer Logic</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/refactoring-reducer-example" class="menu__link">Refactoring Reducers Example</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/using-combinereducers" class="menu__link">Using combineReducers</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers" class="menu__link">Beyond combineReducers</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape" class="menu__link">Normalizing State Shape</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/updating-normalized-data" class="menu__link">Updating Normalized Data</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/reusing-reducer-logic" class="menu__link">Reusing Reducer Logic</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns" class="menu__link">Immutable Update Patterns</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/initializing-state" class="menu__link">Initializing State</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+<ul>
+<li><a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+<ul>
+<li><a href="https://redux.js.org/understanding/thinking-in-redux/motivation" class="menu__link">Motivation</a></li>
+<li><a href="https://redux.js.org/understanding/thinking-in-redux/three-principles" class="menu__link">Three Principles</a></li>
+<li><a href="https://redux.js.org/understanding/thinking-in-redux/glossary" class="menu__link">Glossary</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+<ul>
+<li><a href="https://redux.js.org/understanding/history-and-design/prior-art" class="menu__link">Prior Art</a></li>
+<li><a href="https://redux.js.org/understanding/history-and-design/middleware" class="menu__link">Middleware</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist menu__link--active">FAQ</a>
+<ul>
+<li><a href="https://redux.js.org/faq" class="menu__link">FAQ Index</a></li>
+<li><a href="https://redux.js.org/faq/general" class="menu__link">General</a></li>
+<li><a href="https://redux.js.org/faq/reducers" class="menu__link">Reducers</a></li>
+<li><a href="https://redux.js.org/faq/organizing-state" class="menu__link">Organizing State</a></li>
+<li><a href="https://redux.js.org/faq/store-setup" class="menu__link">Store Setup</a></li>
+<li><a href="https://redux.js.org/faq/actions" class="menu__link">Actions</a></li>
+<li><a href="https://redux.js.org/faq/immutable-data" class="menu__link">Immutable Data</a></li>
+<li><a href="https://redux.js.org/faq/code-structure" class="menu__link">Code Structure</a></li>
+<li><a href="https://redux.js.org/faq/performance" class="menu__link">Performance</a></li>
+<li><a href="https://redux.js.org/faq/design-decisions" class="menu__link menu__link--active active">Design Decisions</a></li>
+<li><a href="https://redux.js.org/faq/react-redux" class="menu__link">React Redux</a></li>
+<li><a href="https://redux.js.org/faq/miscellaneous" class="menu__link">Miscellaneous</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
+<ul>
+<li><a href="https://redux.js.org/style-guide/style-guide" class="menu__link">Style Guide: Best Practices</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">API Reference</a>
+<ul>
+<li><a href="https://redux.js.org/api/api-reference" class="menu__link">API Reference</a></li>
+<li><a href="https://redux.js.org/api/createstore" class="menu__link">createStore</a></li>
+<li><a href="https://redux.js.org/api/store" class="menu__link">Store</a></li>
+<li><a href="https://redux.js.org/api/combinereducers" class="menu__link">combineReducers</a></li>
+<li><a href="https://redux.js.org/api/applymiddleware" class="menu__link">applyMiddleware</a></li>
+<li><a href="https://redux.js.org/api/bindactioncreators" class="menu__link">bindActionCreators</a></li>
+<li><a href="https://redux.js.org/api/compose" class="menu__link">compose</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+<ul>
+<li><a href="https://redux.js.org/redux-toolkit/overview" class="menu__link">Redux Toolkit: Overview</a></li>
+</ul></li>
+</ul>
+<h1 id="redux-faq-design-decisions"><span id="redux-faq-design-decisions" class="anchor enhancedAnchor_2LWZ"></span>Redux FAQ: Design Decisions<a href="#redux-faq-design-decisions" class="hash-link" title="Direct link to heading">#</a></h1>
+<h2 id="table-of-contents"><span id="table-of-contents" class="anchor enhancedAnchor_2LWZ"></span>Table of Contents<a href="#table-of-contents" class="hash-link" title="Direct link to heading">#</a></h2>
+<ul>
+<li><a href="#why-doesnt-redux-pass-the-state-and-action-to-subscribers">Why doesn’t Redux pass the state and action to subscribers?</a></li>
+<li><a href="#why-doesnt-redux-support-using-classes-for-actions-and-reducers">Why doesn’t Redux support using classes for actions and reducers?</a></li>
+<li><a href="#why-does-the-middleware-signature-use-currying">Why does the middleware signature use currying?</a></li>
+<li><a href="#why-does-applymiddleware-use-a-closure-for-dispatch">Why does applyMiddleware use a closure for dispatch?</a></li>
+<li><a href="#why-doesnt-combinereducers-include-a-third-argument-with-the-entire-state-when-it-calls-each-reducer">Why doesn’t <code>combineReducers</code> include a third argument with the entire state when it calls each reducer?</a></li>
+<li><a href="#why-doesnt-mapdispatchtoprops-allow-use-of-return-values-from-getstate-or-mapstatetoprops">Why doesn’t mapDispatchToProps allow use of return values from <code>getState()</code> or <code>mapStateToProps()</code>?</a></li>
+</ul>
+<h2 id="design-decisions"><span id="design-decisions" class="anchor enhancedAnchor_2LWZ"></span>Design Decisions<a href="#design-decisions" class="hash-link" title="Direct link to heading">#</a></h2>
+<h3 id="why-doesnt-redux-pass-the-state-and-action-to-subscribers"><span id="why-doesnt-redux-pass-the-state-and-action-to-subscribers" class="anchor enhancedAnchor_2LWZ"></span>Why doesn’t Redux pass the state and action to subscribers?<a href="#why-doesnt-redux-pass-the-state-and-action-to-subscribers" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>Subscribers are intended to respond to the state value itself, not the action. Updates to the state are processed synchronously, but notifications to subscribers can be batched or debounced, meaning that subscribers are not always notified with every action. This is a common <a href="https://redux.js.org/faq/performance#performance-update-events">performance optimization</a> to avoid repeated re-rendering.</p>
+<p>Batching or debouncing is possible by using enhancers to override <code>store.dispatch</code> to change the way that subscribers are notified. Also, there are libraries that change Redux to process actions in batches to optimize performance and avoid repeated re-rendering:</p>
+<ul>
+<li><a href="https://github.com/manaflair/redux-batch">redux-batch</a> allows passing an array of actions to <code>store.dispatch()</code> with only one notification,</li>
+<li><a href="https://github.com/tappleby/redux-batched-subscribe">redux-batched-subscribe</a> allows batching of subscribe notifications that occur as a result of dispatches.</li>
+</ul>
+<p>The intended guarantee is that Redux eventually calls all subscribers with the most recent state available, but not that it always calls each subscriber for each action. The store state is available in the subscriber simply by calling <code>store.getState()</code>. The action cannot be made available in the subscribers without breaking the way that actions might be batched.</p>
+<p>A potential use-case for using the action inside a subscriber – which is an unsupported feature – is to ensure that a component only re-renders after certain kinds of actions. Instead, re-rendering should be controlled through:</p>
+<ol type="1">
+<li>the <a href="https://facebook.github.io/react/docs/react-component.html#shouldcomponentupdate">shouldComponentUpdate</a> lifecycle method</li>
+<li>the <a href="https://facebook.github.io/react/docs/optimizing-performance.html#avoid-reconciliation">virtual DOM equality check (vDOMEq)</a></li>
+<li><a href="https://facebook.github.io/react/docs/optimizing-performance.html#examples">React.PureComponent</a></li>
+<li>Using React-Redux: use <a href="https://react-redux.js.org/api#connect">mapStateToProps</a> to subscribe components to only the parts of the store that they need.</li>
+</ol>
+<h4 id="further-information"><span id="further-information" class="anchor enhancedAnchor_2LWZ"></span>Further Information<a href="#further-information" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://redux.js.org/faq/performance#performance-update-events">How can I reduce the number of store update events?</a></li>
+</ul>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://github.com/reactjs/redux/issues/580">#580: Why doesn’t Redux pass the state to subscribers?</a></li>
+<li><a href="https://github.com/reactjs/redux/pull/2214">#2214: Alternate Proof of Concept: Enhancer Overhaul – more on debouncing</a></li>
+</ul>
+<h3 id="why-doesnt-redux-support-using-classes-for-actions-and-reducers"><span id="why-doesnt-redux-support-using-classes-for-actions-and-reducers" class="anchor enhancedAnchor_2LWZ"></span>Why doesn’t Redux support using classes for actions and reducers?<a href="#why-doesnt-redux-support-using-classes-for-actions-and-reducers" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>The pattern of using functions, called action creators, to return action objects may seem counterintuitive to programmers with a lot of Object Oriented Programming experience, who would see this is a strong use-case for Classes and instances. Class instances for action objects and reducers are not supported because class instances make serialization and deserialization tricky. Deserialization methods like <code>JSON.parse(string)</code> will return a plain old Javascript object rather than class instances.</p>
+<p>As described in the <a href="https://redux.js.org/faq/organizing-state#organizing-state-non-serializable">Store FAQ</a>, if you are okay with things like persistence and time-travel debugging not working as intended, you are welcome to put non-serializable items into your Redux store.</p>
+<p>Serialization enables the browser to store all actions that have been dispatched, as well as the previous store states, with much less memory. Rewinding and ‘hot reloading’ the store is central to the Redux developer experience and the function of Redux DevTools. This also enables deserialized actions to be stored on the server and re-serialized in the browser in the case of server-side rendering with Redux.</p>
+<h4 id="further-information-1"><span id="further-information-1" class="anchor enhancedAnchor_2LWZ"></span>Further Information<a href="#further-information-1" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://redux.js.org/faq/organizing-state#organizing-state-non-serializable">Can I put functions, promises, or other non-serializable items in my store state?</a></li>
+</ul>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://github.com/reactjs/redux/issues/1171#issuecomment-196819727">#1171: Why doesn’t Redux use classes for actions and reducers?</a></li>
+</ul>
+<h3 id="why-does-the-middleware-signature-use-currying"><span id="why-does-the-middleware-signature-use-currying" class="anchor enhancedAnchor_2LWZ"></span>Why does the middleware signature use currying?<a href="#why-does-the-middleware-signature-use-currying" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>Redux middleware are written using a triply-nested function structure that looks like <code>const middleware = storeAPI =&gt; next =&gt; action =&gt; {}</code>, rather than a single function that looks like <code>const middleware = (storeAPI, next, action) =&gt; {}</code>. There’s a few reasons for this.</p>
+<p>One is that “currying” functions is a standard functional programming technique, and Redux was explicitly intended to use functional programming principles in its design. Another is that currying functions creates closures where you can declare variables that exist for the lifetime of the middleware (which could be considered a functional equivalent to instance variables that exist for the lifetime of a class instance). Finally, it’s simply the approach that was chosen when Redux was initially designed.</p>
+<p>The <a href="https://github.com/reactjs/redux/issues/1744">curried function signature</a> of declaring middleware is <a href="https://github.com/reactjs/redux/pull/784">deemed unnecessary</a> by some, because both store and next are available when the applyMiddleware function is executed. This issue has been determined to not be <a href="https://github.com/reactjs/redux/issues/1744">worth introducing breaking changes</a>, as there are now hundreds of middleware in the Redux ecosystem that rely on the existing middleware definition.</p>
+<h4 id="further-information-2"><span id="further-information-2" class="anchor enhancedAnchor_2LWZ"></span>Further Information<a href="#further-information-2" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Discussions</strong></p>
+<ul>
+<li>Why does the middleware signature use currying?
+<ul>
+<li>Prior discussions: <a href="https://github.com/reactjs/redux/pull/55">#55</a>, <a href="https://github.com/reactjs/redux/issues/534">#534</a>, <a href="https://github.com/reactjs/redux/pull/784">#784</a>, <a href="https://github.com/reactjs/redux/issues/922">#922</a>, <a href="https://github.com/reactjs/redux/issues/1744">#1744</a></li>
+<li><a href="https://blog.isquaredsoftware.com/2017/09/presentation-might-need-redux-ecosystem/">React Boston 2017: You Might Need Redux (And Its Ecosystem)</a></li>
+</ul></li>
+</ul>
+<h3 id="why-does-applymiddleware-use-a-closure-for-dispatch"><span id="why-does-applymiddleware-use-a-closure-for-dispatch" class="anchor enhancedAnchor_2LWZ"></span>Why does <code>applyMiddleware</code> use a closure for <code>dispatch</code>?<a href="#why-does-applymiddleware-use-a-closure-for-dispatch" class="hash-link" title="Direct link to heading">#</a></h3>
+<p><code>applyMiddleware</code> takes the existing dispatch from the store and closes over it to create the initial chain of middlewares that have been invoked with an object that exposes the getState and dispatch functions, which enables middlewares that <a href="https://github.com/reactjs/redux/pull/1592">rely on dispatch during initialization</a> to run.</p>
+<h4 id="further-information-3"><span id="further-information-3" class="anchor enhancedAnchor_2LWZ"></span>Further Information<a href="#further-information-3" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Discussions</strong></p>
+<ul>
+<li>Why does applyMiddleware use a closure for dispatch?
+<ul>
+<li>See - <a href="https://github.com/reactjs/redux/pull/1592">#1592</a> and <a href="https://github.com/reactjs/redux/issues/2097">#2097</a></li>
+</ul></li>
+</ul>
+<h3 id="why-doesnt-combinereducers-include-a-third-argument-with-the-entire-state-when-it-calls-each-reducer"><span id="why-doesnt-combinereducers-include-a-third-argument-with-the-entire-state-when-it-calls-each-reducer" class="anchor enhancedAnchor_2LWZ"></span>Why doesn’t <code>combineReducers</code> include a third argument with the entire state when it calls each reducer?<a href="#why-doesnt-combinereducers-include-a-third-argument-with-the-entire-state-when-it-calls-each-reducer" class="hash-link" title="Direct link to heading">#</a></h3>
+<p><code>combineReducers</code> is opinionated to encourage splitting reducer logic by domain. As stated in <a href="https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers">Beyond <code>combineReducers</code></a>,<code>combineReducers</code> is deliberately limited to handle a single common use case: updating a state tree that is a plain Javascript object by delegating the work of updating each slice of state to a specific slice reducer.</p>
+<p>It’s not immediately obvious what a potential third argument to each reducer should be: the entire state tree, some callback function, some other part of the state tree, etc. If <code>combineReducers</code> doesn’t fit your use case, consider using libraries like <a href="https://github.com/ryo33/combine-section-reducers">combineSectionReducers</a> or <a href="https://github.com/acdlite/reduce-reducers">reduceReducers</a> for other options with deeply nested reducers and reducers that require access to the global state.</p>
+<p>If none of the published utilities solve your use case, you can always write a function yourself that does just exactly what you need.</p>
+<h4 id="further-information-4"><span id="further-information-4" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-4" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers">Beyond <code>combineReducers</code></a></li>
+</ul>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://github.com/reactjs/redux/pull/1768">#1768 Allow reducers to consult global state</a></li>
+</ul>
+<h3 id="why-doesnt-mapdispatchtoprops-allow-use-of-return-values-from-getstate-or-mapstatetoprops"><span id="why-doesnt-mapdispatchtoprops-allow-use-of-return-values-from-getstate-or-mapstatetoprops" class="anchor enhancedAnchor_2LWZ"></span>Why doesn’t <code>mapDispatchToProps</code> allow use of return values from <code>getState()</code> or <code>mapStateToProps()</code>?<a href="#why-doesnt-mapdispatchtoprops-allow-use-of-return-values-from-getstate-or-mapstatetoprops" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>There have been requests to use either the entire <code>state</code> or the return value of <code>mapState</code> inside of <code>mapDispatch</code>, so that when functions are declared inside of <code>mapDispatch</code>, they can close over the latest returned values from the store.</p>
+<p>This approach is not supported in <code>mapDispatch</code> because it would mean also calling <code>mapDispatch</code> every time the store is updated. This would cause the re-creation of functions with every state update, thus adding a lot of performance overhead.</p>
+<p>The preferred way to handle this use-case–needing to alter props based on the current state and mapDispatchToProps functions–is to work from mergeProps, the third argument to the connect function. If specified, it is passed the result of <code>mapStateToProps()</code>, <code>mapDispatchToProps()</code>, and the container component’s props. The plain object returned from <code>mergeProps</code> will be passed as props to the wrapped component.</p>
+<h4 id="further-information-5"><span id="further-information-5" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-5" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://github.com/reactjs/react-redux/issues/237">#237 Why doesn’t mapDispatchToProps allow use of return values from getState() or mapStateToProps()?</a></li>
+</ul>
+<p><a href="https://redux.js.org/faq/performance" class="pagination-nav__link"></a></p>
+<p>« Performance</p>
+<p><a href="https://redux.js.org/faq/react-redux" class="pagination-nav__link"></a></p>
+<p>Next</p>
+<p>React Redux »</p>
+<ul>
+<li><a href="#table-of-contents" class="table-of-contents__link">Table of Contents</a></li>
+<li><a href="#design-decisions" class="table-of-contents__link">Design Decisions</a>
+<ul>
+<li><a href="#why-doesnt-redux-pass-the-state-and-action-to-subscribers" class="table-of-contents__link">Why doesn’t Redux pass the state and action to subscribers?</a></li>
+<li><a href="#why-doesnt-redux-support-using-classes-for-actions-and-reducers" class="table-of-contents__link">Why doesn’t Redux support using classes for actions and reducers?</a></li>
+<li><a href="#why-does-the-middleware-signature-use-currying" class="table-of-contents__link">Why does the middleware signature use currying?</a></li>
+<li><a href="#why-does-applymiddleware-use-a-closure-for-dispatch" class="table-of-contents__link">Why does <code class="language-js >applyMiddleware</code> use a closure for <code class="language-js >dispatch</code>?</a></li>
+<li><a href="#why-doesnt-combinereducers-include-a-third-argument-with-the-entire-state-when-it-calls-each-reducer" class="table-of-contents__link">Why doesn’t &lt;code class="language-js &gt;combineReducers</code> include a third argument with the entire state when it calls each reducer?</a></li>
+<li><a href="#why-doesnt-mapdispatchtoprops-allow-use-of-return-values-from-getstate-or-mapstatetoprops" class="table-of-contents__link">Why doesn’t <code class="language-js >mapDispatchToProps</code> allow use of return values from <code class="language-js >getState()</code> or &lt;code class="language-js &gt;mapStateToProps()</code>?</a></li>
+</ul></li>
+</ul>
+<h4 id="docs">Docs</h4>
+<ul>
+<li><a href="https://redux.js.org/introduction/getting-started" class="footer__link-item">Getting Started</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="footer__link-item">Tutorial</a></li>
+<li><a href="https://redux.js.org/faq" class="footer__link-item">FAQ</a></li>
+<li><a href="https://redux.js.org/api/api-reference" class="footer__link-item">API Reference</a></li>
+</ul>
+<h4 id="community">Community</h4>
+<ul>
+<li><a href="https://discord.gg/0ZcbPKXt5bZ6au5t" class="footer__link-item">Reactiflux Discord</a></li>
+<li><a href="http://stackoverflow.com/questions/tagged/redux" class="footer__link-item">Stack Overflow</a></li>
+<li><a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="footer__link-item">Feedback</a></li>
+</ul>
+<h4 id="more">More</h4>
+<ul>
+<li><a href="https://github.com/reduxjs/redux" class="footer__link-item">GitHub</a></li>
+<li><a href="https://www.netlify.com/"><img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" /></a></li>
+</ul>
+<p><a href="https://redux.js.org/" class="footerLogoLink_MyFc"><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" /><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--dark_hz6m footer__logo" /></a></p>
+</body>
+</html>

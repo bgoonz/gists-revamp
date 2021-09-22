@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>style-guide</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p><a href="../index.html" class="navbar__brand"> <img src="../official/d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /> <strong>Redux</strong> </a></p>
+<p><a href="../introduction/getting-started.html" class="navbar__item navbar__link">Getting Started</a> <a href="../tutorials/essentials/part-1-overview-concepts.html" class="navbar__item navbar__link">Tutorial</a> <a href="../api/api-reference.html" class="navbar__item navbar__link">API</a> <a href="../faq.html" class="navbar__item navbar__link">FAQ</a> <a href="style-guide.html" class="navbar__item navbar__link navbar__link--active">Best Practices</a> <a href="../official/github.com/reduxjs/redux.html" class="navbar__item navbar__link">GitHub</a> <a href="../introduction/getting-started.html#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="../index.html" class="navbar__brand"> <img src="../official/d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /> <strong>Redux</strong> </a></p>
+<ul>
+<li><a href="../introduction/getting-started.html" class="menu__link">Getting Started</a></li>
+<li><a href="../tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Tutorial</a></li>
+<li><a href="../api/api-reference.html" class="menu__link">API</a></li>
+<li><a href="../faq.html" class="menu__link">FAQ</a></li>
+<li><a href="style-guide.html" class="menu__link navbar__link--active">Best Practices</a></li>
+<li><a href="../official/github.com/reduxjs/redux.html" class="menu__link">GitHub</a></li>
+<li><p><a href="../introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a></p></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+<ul>
+<li><a href="../introduction/getting-started.html" class="menu__link">Getting Started with Redux</a></li>
+<li><a href="../introduction/installation.html" class="menu__link">Installation</a></li>
+<li><a href="../introduction/core-concepts.html" class="menu__link">Core Concepts</a></li>
+<li><a href="../introduction/learning-resources.html" class="menu__link">Learning Resources</a></li>
+<li><a href="../introduction/ecosystem.html" class="menu__link">Ecosystem</a></li>
+<li><a href="../introduction/examples.html" class="menu__link">Examples</a></li>
+</ul></li>
+<li><p><a href="#!" class="menu__link menu__link--sublist">Tutorials</a></p>
+<ul>
+<li><a href="../tutorials/index.html" class="menu__link">Tutorials Index</a></li>
+<li><a href="../tutorials/quick-start.html" class="menu__link">Quick Start</a></li>
+<li><a href="../tutorials/typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a></li>
+<li><p><a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a></p>
+<ul>
+<li><a href="../tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a></li>
+<li><a href="../tutorials/essentials/part-2-app-structure.html" class="menu__link">Redux App Structure</a></li>
+<li><a href="../tutorials/essentials/part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a></li>
+<li><a href="../tutorials/essentials/part-4-using-data.html" class="menu__link">Using Redux Data</a></li>
+<li><a href="../tutorials/essentials/part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a></li>
+<li><p><a href="../tutorials/essentials/part-6-performance-normalization.html" class="menu__link">Performance and Normalizing Data</a></p></li>
+<li><a href="../tutorials/fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a></li>
+<li><a href="../tutorials/fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a></li>
+<li><a href="../tutorials/fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a></li>
+<li><a href="../tutorials/fundamentals/part-4-store.html" class="menu__link">Store</a></li>
+<li><a href="../tutorials/fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a></li>
+<li><a href="../tutorials/fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a></li>
+<li><a href="../tutorials/fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a></li>
+<li><p><a href="../tutorials/fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a></p></li>
+</ul></li>
+<li><a href="../recipes/recipe-index.html" class="menu__link">Recipes: Index</a></li>
+<li><a href="../recipes/configuring-your-store.html" class="menu__link">Configuring Your Store</a></li>
+<li><a href="../recipes/usage-with-typescript.html" class="menu__link">Usage With TypeScript</a></li>
+<li><a href="../recipes/migrating-to-redux.html" class="menu__link">Migrating to Redux</a></li>
+<li><a href="../recipes/using-object-spread-operator.html" class="menu__link">Using Object Spread Operator</a></li>
+<li><a href="../recipes/reducing-boilerplate.html" class="menu__link">Reducing Boilerplate</a></li>
+<li><a href="../recipes/server-rendering.html" class="menu__link">Server Rendering</a></li>
+<li><a href="../recipes/writing-tests.html" class="menu__link">Writing Tests</a></li>
+<li><a href="../recipes/computing-derived-data.html" class="menu__link">Computing Derived Data</a></li>
+<li><a href="../recipes/implementing-undo-history.html" class="menu__link">Implementing Undo History</a></li>
+<li><a href="../recipes/isolating-redux-sub-apps.html" class="menu__link">Isolating Redux Sub-Apps</a></li>
+<li><a href="../recipes/code-splitting.html" class="menu__link">Code Splitting</a></li>
+<li><a href="../recipes/troubleshooting.html" class="menu__link">Troubleshooting</a></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
+<ul>
+<li><a href="../recipes/structuring-reducers/structuring-reducers.html" class="menu__link">Structuring Reducers</a></li>
+<li><a href="../recipes/structuring-reducers/prerequisite-concepts.html" class="menu__link">Prerequisite Concepts</a></li>
+<li><a href="../recipes/structuring-reducers/basic-reducer-structure.html" class="menu__link">Basic Reducer Structure</a></li>
+<li><a href="../recipes/structuring-reducers/splitting-reducer-logic.html" class="menu__link">Splitting Reducer Logic</a></li>
+<li><a href="../recipes/structuring-reducers/refactoring-reducer-example.html" class="menu__link">Refactoring Reducers Example</a></li>
+<li><a href="../recipes/structuring-reducers/using-combinereducers.html" class="menu__link">Using combineReducers</a></li>
+<li><a href="../recipes/structuring-reducers/beyond-combinereducers.html" class="menu__link">Beyond combineReducers</a></li>
+<li><a href="../recipes/structuring-reducers/normalizing-state-shape.html" class="menu__link">Normalizing State Shape</a></li>
+<li><a href="../recipes/structuring-reducers/updating-normalized-data.html" class="menu__link">Updating Normalized Data</a></li>
+<li><a href="../recipes/structuring-reducers/reusing-reducer-logic.html" class="menu__link">Reusing Reducer Logic</a></li>
+<li><a href="../recipes/structuring-reducers/immutable-update-patterns.html" class="menu__link">Immutable Update Patterns</a></li>
+<li><a href="../recipes/structuring-reducers/initializing-state.html" class="menu__link">Initializing State</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+<ul>
+<li><a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+<ul>
+<li><a href="../understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a></li>
+<li><a href="../understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a></li>
+<li><a href="../understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+<ul>
+<li><a href="../understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a></li>
+<li><a href="../understanding/history-and-design/middleware.html" class="menu__link">Middleware</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">FAQ</a>
+<ul>
+<li><a href="../faq.html" class="menu__link">FAQ Index</a></li>
+<li><a href="../faq/general.html" class="menu__link">General</a></li>
+<li><a href="../faq/reducers.html" class="menu__link">Reducers</a></li>
+<li><a href="../faq/organizing-state.html" class="menu__link">Organizing State</a></li>
+<li><a href="../faq/store-setup.html" class="menu__link">Store Setup</a></li>
+<li><a href="../faq/actions.html" class="menu__link">Actions</a></li>
+<li><a href="../faq/immutable-data.html" class="menu__link">Immutable Data</a></li>
+<li><a href="../faq/code-structure.html" class="menu__link">Code Structure</a></li>
+<li><a href="../faq/performance.html" class="menu__link">Performance</a></li>
+<li><a href="../faq/design-decisions.html" class="menu__link">Design Decisions</a></li>
+<li><a href="../faq/react-redux.html" class="menu__link">React Redux</a></li>
+<li><a href="../faq/miscellaneous.html" class="menu__link">Miscellaneous</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist menu__link--active">Style Guide</a>
+<ul>
+<li><a href="style-guide.html" class="menu__link menu__link--active active">Style Guide: Best Practices</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">API Reference</a>
+<ul>
+<li><a href="../api/api-reference.html" class="menu__link">API Reference</a></li>
+<li><a href="../api/createstore.html" class="menu__link">createStore</a></li>
+<li><a href="../api/store.html" class="menu__link">Store</a></li>
+<li><a href="../api/combinereducers.html" class="menu__link">combineReducers</a></li>
+<li><a href="../api/applymiddleware.html" class="menu__link">applyMiddleware</a></li>
+<li><a href="../api/bindactioncreators.html" class="menu__link">bindActionCreators</a></li>
+<li><a href="../api/compose.html" class="menu__link">compose</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+<ul>
+<li><a href="../redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a></li>
+</ul></li>
+</ul>
+<h1 id="section"><span id="redux-style-guide" class="anchor enhancedAnchor_2LWZ"></h1>
+<p></span>Redux Style Guide<a href="#redux-style-guide" class="hash-link" title="Direct link to heading">#</a></p>
+<h2 id="section-1"><span id="introduction" class="anchor enhancedAnchor_2LWZ"></h2>
+<p></span>Introduction<a href="#introduction" class="hash-link" title="Direct link to heading">#</a></p>
+<p>This is the official style guide for writing Redux code. <strong>It lists our recommended patterns, best practices, and suggested approaches for writing Redux applications.</strong></p>
+<p>Both the Redux core library and most of the Redux documentation are unopinionated. There are many ways to use Redux, and much of the time there is no single “right” way to do things.</p>
+<p>However, time and experience have shown that for some topics, certain approaches work better than others. In addition, many developers have asked us to provide official guidance to reduce decision fatigue.</p>
+<p>With that in mind, <strong>we’ve put together this list of recommendations to help you avoid errors, bikeshedding, and anti-patterns</strong>. We also understand that team preferences vary and different projects have different requirements, so no style guide will fit all sizes. <strong>You are encouraged to follow these recommendations, but take the time to evaluate your own situation and decide if they fit your needs</strong>.</p>
+<p>Finally, we’d like to thank the Vue documentation authors for writing the <a href="../../vuejs.org/v2/style-guide/index.html">Vue Style Guide page</a>, which was the inspiration for this page.</p>
+<h2 id="section-2"><span id="rule-categories" class="anchor enhancedAnchor_2LWZ"></h2>
+<p></span>Rule Categories<a href="#rule-categories" class="hash-link" title="Direct link to heading">#</a></p>
+<p>We’ve divided these rules into three categories:</p>
+<h3 id="section-3"><span id="priority-a-essential" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Priority A: Essential<a href="#priority-a-essential" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>These rules help prevent errors, so learn and abide by them at all costs</strong>. Exceptions may exist, but should be very rare and only be made by those with expert knowledge of both JavaScript and Redux.</p>
+<h3 id="section-4"><span id="priority-b-strongly-recommended" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Priority B: Strongly Recommended<a href="#priority-b-strongly-recommended" class="hash-link" title="Direct link to heading">#</a></p>
+<p>These rules have been found to improve readability and/or developer experience in most projects. Your code will still run if you violate them, but violations should be rare and well-justified. <strong>Follow these rules whenever it is reasonably possible</strong>.</p>
+<h3 id="section-5"><span id="priority-c-recommended" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Priority C: Recommended<a href="#priority-c-recommended" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Where multiple, equally good options exist, an arbitrary choice can be made to ensure consistency. In these rules, <strong>we describe each acceptable option and suggest a default choice</strong>. That means you can feel free to make a different choice in your own codebase, as long as you’re consistent and have a good reason. Please do have a good reason though!</p>
+<h2 id="section-6"><span id="priority-a-rules-essential" class="anchor enhancedAnchor_2LWZ"></h2>
+<p></span>Priority A Rules: Essential<a href="#priority-a-rules-essential" class="hash-link" title="Direct link to heading">#</a></p>
+<h3 id="section-7"><span id="do-not-mutate-state" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Do Not Mutate State<a href="#do-not-mutate-state" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Mutating state is the most common cause of bugs in Redux applications, including components failing to re-render properly, and will also break time-travel debugging in the Redux DevTools. <strong>Actual mutation of state values should always be avoided</strong>, both inside reducers and in all other application code.</p>
+<p>Use tools such as <a href="../../github.com/leoasis/redux-immutable-state-invariant.html"><code>redux-immutable-state-invariant</code></a> to catch mutations during development, and <a href="../../immerjs.github.io/immer/index.html">Immer</a> to avoid accidental mutations in state updates.</p>
+<blockquote>
+<p><strong>Note</strong>: it is okay to modify <em>copies</em> of existing values - that is a normal part of writing immutable update logic. Also, if you are using the Immer library for immutable updates, writing “mutating” logic is acceptable because the real data isn’t being mutated - Immer safely tracks changes and generates immutably-updated values internally.</p>
+</blockquote>
+<h3 id="section-8"><span id="reducers-must-not-have-side-effects" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Reducers Must Not Have Side Effects<a href="#reducers-must-not-have-side-effects" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Reducer functions should <em>only</em> depend on their <code>state</code> and <code>action</code> arguments, and should only calculate and return a new state value based on those arguments. <strong>They must not execute any kind of asynchronous logic (AJAX calls, timeouts, promises), generate random values (<code>Date.now()</code>, <code>Math.random()</code>), modify variables outside the reducer, or run other code that affects things outside the scope of the reducer function</strong>.</p>
+<blockquote>
+<p><strong>Note</strong>: It is acceptable to have a reducer call other functions that are defined outside of itself, such as imports from libraries or utility functions, as long as they follow the same rules.</p>
+</blockquote>
+<h4 id="detailed-explanation">Detailed Explanation</h4>
+<p>The purpose of this rule is to guarantee that reducers will behave predictably when called. For example, if you are doing time-travel debugging, reducer functions may be called many times with earlier actions to produce the “current” state value. If a reducer has side effects, this would cause those effects to be executed during the debugging process, and result in the application behaving in unexpected ways.</p>
+<p>There are some gray areas to this rule. Strictly speaking, code such as <code>console.log(state)</code> is a side effect, but in practice has no effect on how the application behaves.</p>
+<h3 id="section-9"><span id="do-not-put-non-serializable-values-in-state-or-actions" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Do Not Put Non-Serializable Values in State or Actions<a href="#do-not-put-non-serializable-values-in-state-or-actions" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>Avoid putting non-serializable values such as Promises, Symbols, Maps/Sets, functions, or class instances into the Redux store state or dispatched actions</strong>. This ensures that capabilities such as debugging via the Redux DevTools will work as expected. It also ensures that the UI will update as expected.</p>
+<blockquote>
+<p><strong>Exception</strong>: you may put non-serializable values in actions <em>if</em> the action will be intercepted and stopped by a middleware before it reaches the reducers. Middleware such as <code>redux-thunk</code> and <code>redux-promise</code> are examples of this.</p>
+</blockquote>
+<h3 id="section-10"><span id="only-one-redux-store-per-app" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Only One Redux Store Per App<a href="#only-one-redux-store-per-app" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>A standard Redux application should only have a single Redux store instance, which will be used by the whole application</strong>. It should typically be defined in a separate file such as <code>store.js</code>.</p>
+<p>Ideally, no app logic will import the store directly. It should be passed to a React component tree via <code>&lt;Provider&gt;</code>, or referenced indirectly via middleware such as thunks. In rare cases, you may need to import it into other logic files, but this should be a last resort.</p>
+<h2 id="section-11"><span id="priority-b-rules-strongly-recommended" class="anchor enhancedAnchor_2LWZ"></h2>
+<p></span>Priority B Rules: Strongly Recommended<a href="#priority-b-rules-strongly-recommended" class="hash-link" title="Direct link to heading">#</a></p>
+<h3 id="section-12"><span id="use-redux-toolkit-for-writing-redux-logic" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use Redux Toolkit for Writing Redux Logic<a href="#use-redux-toolkit-for-writing-redux-logic" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong><a href="../redux-toolkit/overview.html">Redux Toolkit</a> is our recommended toolset for using Redux</strong>. It has functions that build in our suggested best practices, including setting up the store to catch mutations and enable the Redux DevTools Extension, simplifying immutable update logic with Immer, and more.</p>
+<p>You are not required to use RTK with Redux, and you are free to use other approaches if desired, but <strong>using RTK will simplify your logic and ensure that your application is set up with good defaults</strong>.</p>
+<h3 id="section-13"><span id="use-immer-for-writing-immutable-updates" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use Immer for Writing Immutable Updates<a href="#use-immer-for-writing-immutable-updates" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Writing immutable update logic by hand is frequently difficult and prone to errors. <a href="../../immerjs.github.io/immer/index.html">Immer</a> allows you to write simpler immutable updates using “mutative” logic, and even freezes your state in development to catch mutations elsewhere in the app. <strong>We recommend using Immer for writing immutable update logic, preferably as part of <a href="../redux-toolkit/overview.html">Redux Toolkit</a></strong>.</p>
+<p><span id="structure-files-as-feature-folders-or-ducks"> </span></p>
+<h3 id="section-14"><span id="structure-files-as-feature-folders-with-single-file-logic" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Structure Files as Feature Folders with Single-File Logic<a href="#structure-files-as-feature-folders-with-single-file-logic" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Redux itself does not care about how your application’s folders and files are structured. However, co-locating logic for a given feature in one place typically makes it easier to maintain that code.</p>
+<p>Because of this, <strong>we recommend that most applications should structure files using a “feature folder” approach</strong> (all files for a feature in the same folder). Within a given feature folder, <strong>the Redux logic for that feature should be written as a single “slice” file</strong>, preferably using the Redux Toolkit <code>createSlice</code> API. (This is also known as the <a href="../../github.com/erikras/ducks-modular-redux.html">“ducks” pattern</a>). While older Redux codebases often used a “folder-by-type” approach with separate folders for “actions” and “reducers”, keeping related logic together makes it easier to find and update that code.</p>
+<h4 id="detailed-explanation-example-folder-structure">Detailed Explanation: Example Folder Structure</h4>
+<p>An example folder structure might look something like:</p>
+<ul>
+<li><code>/src</code>
+<ul>
+<li><code>index.tsx</code>: Entry point file that renders the React component tree</li>
+<li><code>/app</code>
+<ul>
+<li><code>store.ts</code>: store setup</li>
+<li><code>rootReducer.ts</code>: root reducer (optional)</li>
+<li><code>App.tsx</code>: root React component</li>
+</ul></li>
+<li><code>/common</code>: hooks, generic components, utils, etc</li>
+<li><code>/features</code>: contains all “feature folders”
+<ul>
+<li><code>/todos</code>: a single feature folder
+<ul>
+<li><code>todosSlice.ts</code>: Redux reducer logic and associated actions</li>
+<li><code>Todos.tsx</code>: a React component</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><code>/app</code> contains app-wide setup and layout that depends on all the other folders.</p>
+<p><code>/common</code> contains truly generic and reusable utilities and components.</p>
+<p><code>/features</code> has folders that contain all functionality related to a specific feature. In this example, <code>todosSlice.ts</code> is a “duck”-style file that contains a call to RTK’s <code>createSlice()</code> function, and exports the slice reducer and action creators.</p>
+<h3 id="section-15"><span id="put-as-much-logic-as-possible-in-reducers" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Put as Much Logic as Possible in Reducers<a href="#put-as-much-logic-as-possible-in-reducers" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Wherever possible, <strong>try to put as much of the logic for calculating a new state into the appropriate reducer, rather than in the code that prepares and dispatches the action</strong> (like a click handler). This helps ensure that more of the actual app logic is easily testable, enables more effective use of time-travel debugging, and helps avoid common mistakes that can lead to mutations and bugs.</p>
+<p>There are valid cases where some or all of the new state should be calculated first (such as generating a unique ID), but that should be kept to a minimum.</p>
+<h4 id="detailed-explanation-1">Detailed Explanation</h4>
+<p>The Redux core does not actually care whether a new state value is calculated in the reducer or in the action creation logic. For example, for a todo app, the logic for a “toggle todo” action requires immutably updating an array of todos. It is legal to have the action contain just the todo ID and calculate the new array in the reducer:</p>
+<p><span class="token comment" style="color: #c6cad2">// Click handler:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> </span> <span class="token function-variable function" style="color: #e6d874">onTodoClicked</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token parameter">id</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token arrow operator" style="color: #f8f8f2">=&gt;</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token function" style="color: #e6d874">dispatch</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain">type</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">“todos/toggleTodo”</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> payload</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain">id</span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token comment" style="color: #c6cad2">// Reducer:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">case</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">“todos/toggleTodo”</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> state</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span style="color: #e6d874">map</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token parameter">todo</span> <span class="token plain"> </span> <span class="token arrow operator" style="color: #f8f8f2">=&gt;</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">if</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">todo</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">id</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">!==</span> <span class="token plain"> action</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">payload</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">id</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> todo</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token spread operator" style="color: #f8f8f2">…</span> <span class="token plain">todo</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> completed</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">!</span> <span class="token plain">todo</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">completed</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span>And also to calculate the new array first and put the entire new array in the action:</p>
+<p><span class="token comment" style="color: #c6cad2">// Click handler:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> </span> <span class="token function-variable function" style="color: #e6d874">onTodoClicked</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token parameter">id</span> <span class="token plain"> </span> <span class="token arrow operator" style="color: #f8f8f2">=&gt;</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> newTodos </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> todos</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span style="color: #e6d874">map</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token parameter">todo</span> <span class="token plain"> </span> <span class="token arrow operator" style="color: #f8f8f2">=&gt;</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">if</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">todo</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">id</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">!==</span> <span class="token plain"> id</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> todo</span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span> <span class="token spread operator" style="color: #f8f8f2">…</span> <span class="token plain">todo</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> completed</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">!</span> <span class="token plain">todo</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">completed</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token function" style="color: #e6d874">dispatch</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> type</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘todos/toggleTodo’</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> payload</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> todos</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> newTodos </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token comment" style="color: #c6cad2">// Reducer:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">case</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">“todos/toggleTodo”</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> action</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">payload</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">todos</span> <span class="token punctuation" style="color: #f8f8f2">;</span>However, doing the logic in the reducer is preferable for several reasons:</p>
+<ul>
+<li>Reducers are always easy to test, because they are pure functions - you just call <code>const result = reducer(testState, action)</code>, and assert that the result is what you expected. So, the more logic you can put in a reducer, the more logic you have that is easily testable.</li>
+<li>Redux state updates must always follow <a href="../recipes/structuring-reducers/immutable-update-patterns.html">the rules of immutable updates</a>. Most Redux users realize they have to follow the rules inside a reducer, but it’s not obvious that you <em>also</em> have to do this if the new state is calculated <em>outside</em> the reducer. This can easily lead to mistakes like accidental mutations, or even reading a value from the Redux store and passing it right back inside an action. Doing all of the state calculations in a reducer avoids those mistakes.</li>
+<li>If you are using Redux Toolkit or Immer, it is much easier to write immutable update logic in reducers, and Immer will freeze the state and catch accidental mutations.</li>
+<li>Time-travel debugging works by letting you “undo” a dispatched action, then either do something different or “redo” the action. In addition, hot-reloading of reducers normally involves re-running the new reducer with the existing actions. If you have a correct action but a buggy reducer, you can edit the reducer to fix the bug, hot-reload it, and you should get the correct state right away. If the action itself was wrong, you’d have to re-run the steps that led to that action being dispatched. So, it’s easier to debug if more logic is in the reducer.</li>
+<li>Finally, putting logic in reducers means you know where to look for the update logic, instead of having it scattered in random other parts of the application code.</li>
+</ul>
+<h3 id="section-16"><span id="reducers-should-own-the-state-shape" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Reducers Should Own the State Shape<a href="#reducers-should-own-the-state-shape" class="hash-link" title="Direct link to heading">#</a></p>
+<p>The Redux root state is owned and calculated by the single root reducer function. For maintainability, that reducer is intended to be split up by key/value “slices”, with <strong>each “slice reducer” being responsible for providing an initial value and calculating the updates to that slice of the state</strong>.</p>
+<p>In addition, slice reducers should exercise control over what other values are returned as part of the calculated state. <strong>Minimize the use of “blind spreads/returns”</strong> like <code>return action.payload</code> or <code>return {...state, ...action.payload}</code>, because those rely on the code that dispatched the action to correctly format the contents, and the reducer effectively gives up its ownership of what that state looks like. That can lead to bugs if the action contents are not correct.</p>
+<blockquote>
+<p><strong>Note</strong>: A “spread return” reducer may be a reasonable choice for scenarios like editing data in a form, where writing a separate action type for each individual field would be time-consuming and of little benefit.</p>
+</blockquote>
+<h4 id="detailed-explanation-2">Detailed Explanation</h4>
+<p>Picture a “current user” reducer that looks like:</p>
+<p><span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> initialState </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> firstName</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token keyword null nil" style="color: #f92672">null</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> lastName</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token keyword null nil" style="color: #f92672">null</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> age</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token keyword null nil" style="color: #f92672">null</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">export</span> <span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">default</span> <span class="token plain"> usersReducer </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">state </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> initialState</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> action</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">switch</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">action</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">type</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">case</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">“users/userLoggedIn”</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> action</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">payload</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">default</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> state</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span>In this example, the reducer completely assumes that <code>action.payload</code> is going to be a correctly formatted object.</p>
+<p>However, imagine if some part of the code were to dispatch a “todo” object inside the action, instead of a “user” object:</p>
+<p><span class="token function" style="color: #e6d874">dispatch</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> type</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘users/userLoggedIn’</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> payload</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> id</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token number" style="color: #ae81ff">42</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> text</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘Buy milk’</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">)</span>The reducer would blindly return the todo, and now the rest of the app would likely break when it tries to read the user from the store.</p>
+<p>This could be at least partly fixed if the reducer has some validation checks to ensure that <code>action.payload</code> actually has the right fields, or tries to read the right fields out by name. That does add more code, though, so it’s a question of trading off more code for safety.</p>
+<p>Use of static typing does make this kind of code safer and somewhat more acceptable. If the reducer knows that <code>action</code> is a <code>PayloadAction&lt;User&gt;</code>, then it <em>should</em> be safe to do <code>return action.payload</code>.</p>
+<h3 id="section-17"><span id="name-state-slices-based-on-the-stored-data" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Name State Slices Based On the Stored Data<a href="#name-state-slices-based-on-the-stored-data" class="hash-link" title="Direct link to heading">#</a></p>
+<p>As mentioned in <a href="#reducers-should-own-the-state-shape">Reducers Should Own the State Shape</a> , the standard approach for splitting reducer logic is based on “slices” of state. Correspondingly, <code>combineReducers</code> is the standard function for joining those slice reducers into a larger reducer function.</p>
+<p>The key names in the object passed to <code>combineReducers</code> will define the names of the keys in the resulting state object. Be sure to name these keys after the data that is kept inside, and avoid use of the word “reducer” in the key names. Your object should look like <code>{users: {}, posts: {}}</code>, rather than <code>{usersReducer: {}, postsReducer: {}}</code>.</p>
+<h4 id="detailed-explanation-3">Detailed Explanation</h4>
+<p>ES6 object literal shorthand makes it easy to define a key name and a value in an object at the same time:</p>
+<p><span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> data </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token number" style="color: #ae81ff">42</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> obj </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> data </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token comment" style="color: #c6cad2">// same as: {data: data}</span><code>combineReducers</code> accepts an object full of reducer functions, and uses that to generate state objects that have the same key names. This means that the key names in the functions object define the key names in the state object.</p>
+<p>This results in a common mistake, where a reducer is imported using “reducer” in the variable name, and then passed to <code>combineReducers</code> using the object literal shorthand:</p>
+<p><span class="token keyword module" style="color: #f92672">import</span> <span class="token plain"> </span> <span>usersReducer</span> <span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">from</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘features/users/usersSlice’</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> rootReducer </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token function" style="color: #e6d874">combineReducers</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> usersReducer</span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">)</span>In this case, use of the object literal shorthand created an object like <code>{usersReducer: usersReducer}</code>. So, “reducer” is now in the state key name. This is redundant and useless.</p>
+<p>Instead, define key names that only relate to the data inside. We suggest using explicit <code>key: value</code> syntax for clarity:</p>
+<p><span class="token keyword module" style="color: #f92672">import</span> <span class="token plain"> </span> <span>usersReducer</span> <span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">from</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘features/users/usersSlice’</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">import</span> <span class="token plain"> </span> <span>postsReducer</span> <span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">from</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘features/posts/postsSlice’</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> rootReducer </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token function" style="color: #e6d874">combineReducers</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> users</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> usersReducer</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> posts</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> postsReducer</span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token punctuation" style="color: #f8f8f2">)</span>It’s a bit more typing, but it results in the most understandable code and state definition.</p>
+<h3 id="section-18"><span id="organize-state-structure-based-on-data-types-not-components" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Organize State Structure Based on Data Types, Not Components<a href="#organize-state-structure-based-on-data-types-not-components" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Root state slices should be defined and named based on the major data types or areas of functionality in your application, not based on which specific components you have in your UI. This is because there is not a strict 1:1 correlation between data in the Redux store and components in the UI, and many components may need to access the same data. Think of the state tree as a sort of global database that any part of the app can access to read just the pieces of state needed in that component.</p>
+<p>For example, a blogging app might need to track who is logged in, information on authors and posts, and perhaps some info on what screen is active. A good state structure might look like <code>{auth, posts, users, ui}</code>. A bad structure would be something like <code>{loginScreen, usersList, postsList}</code>.</p>
+<h3 id="section-19"><span id="treat-reducers-as-state-machines" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Treat Reducers as State Machines<a href="#treat-reducers-as-state-machines" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Many Redux reducers are written “unconditionally”. They only look at the dispatched action and calculate a new state value, without basing any of the logic on what the current state might be. This can cause bugs, as some actions may not be “valid” conceptually at certain times depending on the rest of the app logic. For example, a “request succeeded” action should only have a new value calculated if the state says that it’s already “loading”, or an “update this item” action should only be dispatched if there is an item marked as “being edited”.</p>
+<p>To fix this, <strong>treat reducers as “state machines”, where the combination of both the current state <em>and</em> the dispatched action determines whether a new state value is actually calculated</strong>, not just the action itself unconditionally.</p>
+<h4 id="detailed-explanation-4">Detailed Explanation</h4>
+<p>A <a href="../../en.wikipedia.org/wiki/Finite-state_machine.html">finite state machine</a> is a useful way of modeling something that should only be in one of a finite number of “finite states” at any time. For example, if you have a <code>fetchUserReducer</code>, the finite states can be:</p>
+<ul>
+<li><code>"idle"</code> (fetching not started yet)</li>
+<li><code>"loading"</code> (currently fetching the user)</li>
+<li><code>"success"</code> (user fetched successfully)</li>
+<li><code>"failure"</code> (user failed to fetch)</li>
+</ul>
+<p>To make these finite states clear and <a href="../../kentcdodds.com/blog/make-impossible-states-impossible/index.html">make impossible states impossible</a>, you can specify a property that holds this finite state:</p>
+<p><span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> initialUserState </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> status</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘idle’</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span> <span class="token comment" style="color: #c6cad2">// explicit finite state</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> user</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token keyword null nil" style="color: #f92672">null</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> error</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token keyword null nil" style="color: #f92672">null</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span>With TypeScript, this also makes it easy to use <a href="../../basarat.gitbook.io/typescript/type-system/discriminated-unions.html">discriminated unions</a> to represent each finite state. For instance, if <code>state.status === 'success'</code>, then you would expect <code>state.user</code> to be defined and wouldn’t expect <code>state.error</code> to be truthy. You can enforce this with types.</p>
+<p>Typically, reducer logic is written by taking the action into account first. When modeling logic with state machines, it’s important to take the state into account first. Creating “finite state reducers” for each state helps encapsulate behavior per state:</p>
+<p><span class="token keyword module" style="color: #f92672">import</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token constant" style="color: #f92672">FETCH_USER</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token comment" style="color: #c6cad2">// …</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">from</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘./actions’</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">IDLE_STATUS</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘idle’</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">LOADING_STATUS</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘loading’</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">SUCCESS_STATUS</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘success’</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">FAILURE_STATUS</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">‘failure’</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> </span> <span class="token function-variable function" style="color: #e6d874">fetchIdleUserReducer</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token parameter">state</span> <span class="token parameter punctuation" style="color: #f8f8f2">,</span> <span class="token parameter"> action</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token arrow operator" style="color: #f8f8f2">=&gt;</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token comment" style="color: #c6cad2">// state.status is “idle”</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">switch</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">action</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">type</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">case</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">FETCH_USER</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token spread operator" style="color: #f8f8f2">…</span> <span class="token plain">state</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> status</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">LOADING_STATUS</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">default</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> state</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token comment" style="color: #c6cad2">// … other reducers</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">const</span> <span class="token plain"> </span> <span class="token function-variable function" style="color: #e6d874">fetchUserReducer</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">=</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token parameter">state</span> <span class="token parameter punctuation" style="color: #f8f8f2">,</span> <span class="token parameter"> action</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token arrow operator" style="color: #f8f8f2">=&gt;</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">switch</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">state</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">status</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">case</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">IDLE_STATUS</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> </span> <span class="token function" style="color: #e6d874">fetchIdleUserReducer</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">state</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> action</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">case</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">LOADING_STATUS</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> </span> <span class="token function" style="color: #e6d874">fetchLoadingUserReducer</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">state</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> action</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">case</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">SUCCESS_STATUS</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> </span> <span class="token function" style="color: #e6d874">fetchSuccessUserReducer</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">state</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> action</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword" style="color: #f92672">case</span> <span class="token plain"> </span> <span class="token constant" style="color: #f92672">FAILURE_STATUS</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> </span> <span class="token function" style="color: #e6d874">fetchFailureUserReducer</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token plain">state</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> action</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword module" style="color: #f92672">default</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token comment" style="color: #c6cad2">// this should never be reached</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token keyword control-flow" style="color: #f92672">return</span> <span class="token plain"> state</span> <span class="token punctuation" style="color: #f8f8f2">;</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span>Now, since you’re defining behavior per state instead of per action, you also prevent impossible transitions. For instance, a <code>FETCH_USER</code> action should have no effect when <code>status === LOADING_STATUS</code>, and you can enforce that, instead of accidentally introducing edge-cases.</p>
+<h3 id="section-20"><span id="normalize-complex-nestedrelational-state" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Normalize Complex Nested/Relational State<a href="#normalize-complex-nestedrelational-state" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Many applications need to cache complex data in the store. That data is often received in a nested form from an API, or has relations between different entities in the data (such as a blog that contains Users, Posts, and Comments).</p>
+<p><strong>Prefer storing that data in <a href="../recipes/structuring-reducers/normalizing-state-shape.html">a “normalized” form</a> in the store</strong>. This makes it easier to look up items based on their ID and update a single item in the store, and ultimately leads to better performance patterns.</p>
+<h3 id="section-21"><span id="model-actions-as-events-not-setters" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Model Actions as Events, Not Setters<a href="#model-actions-as-events-not-setters" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Redux does not care what the contents of the <code>action.type</code> field are - it just has to be defined. It is legal to write action types in present tense (<code>"users/update"</code>), past tense (<code>"users/updated"</code>), described as an event (<code>"upload/progress"</code>), or treated as a “setter” (<code>"users/setUserName"</code>). It is up to you to determine what a given action means in your application, and how you model those actions.</p>
+<p>However, <strong>we recommend trying to treat actions more as “describing events that occurred”, rather than “setters”</strong>. Treating actions as “events” generally leads to more meaningful action names, fewer total actions being dispatched, and a more meaningful action log history. Writing “setters” often results in too many individual action types, too many dispatches, and an action log that is less meaningful.</p>
+<h4 id="detailed-explanation-5">Detailed Explanation</h4>
+<p>Imagine you’ve got a restaurant app, and someone orders a pizza and a bottle of Coke. You could dispatch an action like:</p>
+<p><span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> type</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">“food/orderAdded”</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> payload</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain">pizza</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token number" style="color: #ae81ff">1</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> coke</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token number" style="color: #ae81ff">1</span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span>Or you could dispatch:</p>
+<p><span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> type</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">“orders/setPizzasOrdered”</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> payload</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> amount</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token function" style="color: #e6d874">getState</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">orders</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">pizza</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">+</span> <span class="token plain"> </span> <span class="token number" style="color: #ae81ff">1</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> type</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token string" style="color: #a6e22e">“orders/setCokesOrdered”</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> payload</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">{</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> amount</span> <span class="token operator" style="color: #f8f8f2">:</span> <span class="token plain"> </span> <span class="token function" style="color: #e6d874">getState</span> <span class="token punctuation" style="color: #f8f8f2">(</span> <span class="token punctuation" style="color: #f8f8f2">)</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">orders</span> <span class="token punctuation" style="color: #f8f8f2">.</span> <span class="token property-access">coke</span> <span class="token plain"> </span> <span class="token operator" style="color: #f8f8f2">+</span> <span class="token plain"> </span> <span class="token number" style="color: #ae81ff">1</span> <span class="token punctuation" style="color: #f8f8f2">,</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span> <span class="token plain"> </span></p>
+<p><span class="token plain"> </span> <span class="token punctuation" style="color: #f8f8f2">}</span>The first example would be an “event”. “Hey, someone ordered a pizza and a pop, deal with it somehow”.</p>
+<p>The second example is a “setter”. “I <em>know</em> there are fields for ‘pizzas ordered’ and ‘pops ordered’, and I am commanding you to set their current values to these numbers”.</p>
+<p>The “event” approach only really needed a single action to be dispatched, and it’s more flexible. It doesn’t matter how many pizzas were already ordered. Maybe there’s no cooks available, so the order gets ignored.</p>
+<p>With the “setter” approach, the client code needed to know more about what the actual structure of the state is, what the “right” values should be, and ended up actually having to dispatch multiple actions to finish the “transaction”.</p>
+<h3 id="section-22"><span id="write-meaningful-action-names" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Write Meaningful Action Names<a href="#write-meaningful-action-names" class="hash-link" title="Direct link to heading">#</a></p>
+<p>The <code>action.type</code> field serves two main purposes:</p>
+<ul>
+<li>Reducer logic checks the action type to see if this action should be handled to calculate a new state</li>
+<li>Action types are shown in the Redux DevTools history log for you to read</li>
+</ul>
+<p>Per <a href="#model-actions-as-events-not-setters">Model Actions as “Events”</a>, the actual contents of the <code>type</code> field do not matter to Redux itself. However, the <code>type</code> value <em>does</em> matter to you, the developer. <strong>Actions should be written with meaningful, informative, descriptive type fields</strong>. Ideally, you should be able to read through a list of dispatched action types, and have a good understanding of what happened in the application without even looking at the contents of each action. Avoid using very generic action names like <code>"SET_DATA"</code> or <code>"UPDATE_STORE"</code>, as they don’t provide meaningful information on what happened.</p>
+<h3 id="section-23"><span id="allow-many-reducers-to-respond-to-the-same-action" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Allow Many Reducers to Respond to the Same Action<a href="#allow-many-reducers-to-respond-to-the-same-action" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Redux reducer logic is intended to be split into many smaller reducers, each independently updating their own portion of the state tree, and all composed back together to form the root reducer function. When a given action is dispatched, it might be handled by all, some, or none of the reducers.</p>
+<p>As part of this, you are encouraged to <strong>have many reducer functions all handle the same action separately</strong> if possible. In practice, experience has shown that most actions are typically only handled by a single reducer function, which is fine. But, modeling actions as “events” and allowing many reducers to respond to those actions will typically allow your application’s codebase to scale better, and minimize the number of times you need to dispatch multiple actions to accomplish one meaningful update.</p>
+<h3 id="section-24"><span id="avoid-dispatching-many-actions-sequentially" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Avoid Dispatching Many Actions Sequentially<a href="#avoid-dispatching-many-actions-sequentially" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>Avoid dispatching many actions in a row to accomplish a larger conceptual “transaction”</strong>. This is legal, but will usually result in multiple relatively expensive UI updates, and some of the intermediate states could be potentially invalid by other parts of the application logic. Prefer dispatching a single “event”-type action that results in all of the appropriate state updates at once, or consider use of action batching addons to dispatch multiple actions with only a single UI update at the end.</p>
+<h4 id="detailed-explanation-6">Detailed Explanation</h4>
+<p>There is no limit on how many actions you can dispatch in a row. However, each dispatched action does result in execution of all store subscription callbacks (typically one or more per Redux-connected UI component), and will usually result in UI updates.</p>
+<p>While UI updates queued from React event handlers will usually be batched into a single React render pass, updates queued <em>outside</em> of those event handlers are not. This includes dispatches from most <code>async</code> functions, timeout callbacks, and non-React code. In those situations, each dispatch will result in a complete synchronous React render pass before the dispatch is done, which will decrease performance.</p>
+<p>In addition, multiple dispatches that are conceptually part of a larger “transaction”-style update sequence will result in intermediate states that might not be considered valid. For example, if actions <code>"UPDATE_A"</code>, <code>"UPDATE_B"</code>, and <code>"UPDATE_C"</code> are dispatched in a row, and some code is expecting all three of <code>a</code>, <code>b</code>, and <code>c</code> to be updated together, the state after the first two dispatches will effectively be incomplete because only one or two of them has been updated.</p>
+<p>If multiple dispatches are truly necessary, consider batching the updates in some way. Depending on your use case, this may just be batching React’s own renders (possibly using <a href="../../react-redux.js.org/api/batch.html"><code>batch()</code> from React-Redux</a>), debouncing the store notification callbacks, or grouping many actions into a larger single dispatch that only results in one subscriber notification. See <a href="../faq/performance.html#how-can-i-reduce-the-number-of-store-update-events">the FAQ entry on “reducing store update events”</a> for additional examples and links to related addons.</p>
+<h3 id="section-25"><span id="evaluate-where-each-piece-of-state-should-live" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Evaluate Where Each Piece of State Should Live<a href="#evaluate-where-each-piece-of-state-should-live" class="hash-link" title="Direct link to heading">#</a></p>
+<p>The <a href="../understanding/thinking-in-redux/three-principles.html">“Three Principles of Redux”</a> says that “the state of your whole application is stored in a single tree”. This phrasing has been over-interpreted. It does not mean that literally <em>every</em> value in the entire app <em>must</em> be kept in the Redux store. Instead, <strong>there should be a single place to find all values that <em>you</em> consider to be global and app-wide</strong>. Values that are “local” should generally be kept in the nearest UI component instead.</p>
+<p>Because of this, it is up to you as a developer to decide what state should actually live in the Redux store, and what should stay in component state. <strong><a href="../faq/organizing-state.html#do-i-have-to-put-all-my-state-into-redux-should-i-ever-use-reacts-setstate">Use these rules of thumb to help evaluate each piece of state and decide where it should live</a></strong>.</p>
+<h3 id="section-26"><span id="use-the-react-redux-hooks-api" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use the React-Redux Hooks API<a href="#use-the-react-redux-hooks-api" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>Prefer using <a href="../../react-redux.js.org/api/hooks.html">the React-Redux hooks API (<code>useSelector</code> and <code>useDispatch</code>)</a> as the default way to interact with a Redux store from your React components</strong>. While the classic <code>connect</code> API still works fine and will continue to be supported, the hooks API is generally easier to use in several ways. The hooks have less indirection, less code to write, and are simpler to use with TypeScript than <code>connect</code> is.</p>
+<p>The hooks API does introduce some different tradeoffs than <code>connect</code> does in terms of performance and data flow, but we now recommend them as the default.</p>
+<h4 id="detailed-explanation-7">Detailed Explanation</h4>
+<p>The <a href="../../react-redux.js.org/api/connect.html">classic <code>connect</code> API</a> is a <a href="../../reactjs.org/docs/higher-order-components.html">Higher Order Component</a>. It generates a new wrapper component that subscribes to the store, renders your own component, and passes down data from the store and action creators as props.</p>
+<p>This is a deliberate level of indirection, and allows you to write “presentational”-style components that receive all their values as props, without being specifically dependent on Redux.</p>
+<p>The introduction of hooks has changed how most React developers write their components. While the “container/presentational” concept is still valid, hooks push you to write components that are responsible for requesting their own data internally by calling an appropriate hook. This leads to different approaches in how we write and test components and logic.</p>
+<p>The indirection of <code>connect</code> has always made it a bit difficult for some users to follow the data flow. In addition, <code>connect</code>’s complexity has made it very difficult to type correctly with TypeScript, due to the multiple overloads, optional parameters, merging of props from <code>mapState</code> / <code>mapDispatch</code> / parent component, and binding of action creators and thunks.</p>
+<p><code>useSelector</code> and <code>useDispatch</code> eliminate the indirection, so it’s much more clear how your own component is interacting with Redux. Since <code>useSelector</code> just accepts a single selector, it’s much easier to define with TypeScript, and the same goes for <code>useDispatch</code>.</p>
+<p>For more details, see Redux maintainer Mark Erikson’s post and conference talk on the tradeoffs between hooks and HOCs:</p>
+<ul>
+<li><a href="../../blog.isquaredsoftware.com/2019/07/blogged-answers-thoughts-on-hooks/index.html">Thoughts on React Hooks, Redux, and Separation of Concerns</a></li>
+<li><a href="../../blog.isquaredsoftware.com/2019/09/presentation-hooks-hocs-tradeoffs/index.html">ReactBoston 2019: Hooks, HOCs, and Tradeoffs</a></li>
+</ul>
+<p>Also see the <a href="../../react-redux.js.org/api/hooks.html">React-Redux hooks API docs</a> for info on how to correctly optimize components and handle rare edge cases.</p>
+<h3 id="section-27"><span id="connect-more-components-to-read-data-from-the-store" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Connect More Components to Read Data from the Store<a href="#connect-more-components-to-read-data-from-the-store" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Prefer having more UI components subscribed to the Redux store and reading data at a more granular level. This typically leads to better UI performance, as fewer components will need to render when a given piece of state changes.</p>
+<p>For example, rather than just connecting a <code>&lt;UserList&gt;</code> component and reading the entire array of users, have <code>&lt;UserList&gt;</code> retrieve a list of all user IDs, render list items as <code>&lt;UserListItem userId={userId}&gt;</code>, and have <code>&lt;UserListItem&gt;</code> be connected and extract its own user entry from the store.</p>
+<p>This applies for both the React-Redux <code>connect()</code> API and the <code>useSelector()</code> hook.</p>
+<h3 id="section-28"><span id="use-the-object-shorthand-form-of-mapdispatch-with-connect" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use the Object Shorthand Form of <code>mapDispatch</code> with <code>connect</code><a href="#use-the-object-shorthand-form-of-mapdispatch-with-connect" class="hash-link" title="Direct link to heading">#</a></p>
+<p>The <code>mapDispatch</code> argument to <code>connect</code> can be defined as either a function that receives <code>dispatch</code> as an argument, or an object containing action creators. <strong>We recommend always using <a href="../../react-redux.js.org/using-react-redux/connect-mapdispatch.html#defining-mapdispatchtoprops-as-an-object">the “object shorthand” form of <code>mapDispatch</code></a></strong>, as it simplifies the code considerably. There is almost never a real need to write <code>mapDispatch</code> as a function.</p>
+<h3 id="section-29"><span id="call-useselector-multiple-times-in-function-components" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Call <code>useSelector</code> Multiple Times in Function Components<a href="#call-useselector-multiple-times-in-function-components" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>When retrieving data using the <code>useSelector</code> hook, prefer calling <code>useSelector</code> many times and retrieving smaller amounts of data, instead of having a single larger <code>useSelector</code> call that returns multiple results in an object</strong>. Unlike <code>mapState</code>, <code>useSelector</code> is not required to return an object, and having selectors read smaller values means it is less likely that a given state change will cause this component to render.</p>
+<p>However, try to find an appropriate balance of granularity. If a single component does need all fields in a slice of the state , just write one <code>useSelector</code> that returns that whole slice instead of separate selectors for each individual field.</p>
+<h3 id="section-30"><span id="use-static-typing" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use Static Typing<a href="#use-static-typing" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>Use a static type system like TypeScript or Flow rather than plain JavaScript</strong>. The type systems will catch many common mistakes, improve the documentation of your code, and ultimately lead to better long-term maintainability. While Redux and React-Redux were originally designed with plain JS in mind, both work well with TS and Flow. Redux Toolkit is specifically written in TS and is designed to provide good type safety with a minimal amount of additional type declarations.</p>
+<h3 id="section-31"><span id="use-the-redux-devtools-extension-for-debugging" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use the Redux DevTools Extension for Debugging<a href="#use-the-redux-devtools-extension-for-debugging" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>Configure your Redux store to enable <a href="../../github.com/zalmoxisus/redux-devtools-extension.html">debugging with the Redux DevTools Extension</a></strong>. It allows you to view:</p>
+<ul>
+<li>The history log of dispatched actions</li>
+<li>The contents of each action</li>
+<li>The final state after an action was dispatched</li>
+<li>The diff in the state after an action</li>
+<li>The <a href="../../github.com/zalmoxisus/redux-devtools-extension/blob/master/docs/Features/Trace.html">function stack trace showing the code where the action was actually dispatched</a></li>
+</ul>
+<p>In addition, the DevTools allows you to do “time-travel debugging”, stepping back and forth in the action history to see the entire app state and UI at different points in time.</p>
+<p><strong>Redux was specifically designed to enable this kind of debugging, and the DevTools are one of the most powerful reasons to use Redux</strong>.</p>
+<h3 id="section-32"><span id="use-plain-javascript-objects-for-state" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use Plain JavaScript Objects for State<a href="#use-plain-javascript-objects-for-state" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Prefer using plain JavaScript objects and arrays for your state tree, rather than specialized libraries like Immutable.js. While there are some potential benefits to using Immutable.js, most of the commonly stated goals such as easy reference comparisons are a property of immutable updates in general, and do not require a specific library. This also keeps bundle sizes smaller and reduces complexity from data type conversions.</p>
+<p>As mentioned above, we specifically recommend using Immer if you want to simplify immutable update logic, specifically as part of Redux Toolkit.</p>
+<h4 id="detailed-explanation-8">Detailed Explanation</h4>
+<p>Immutable.js has been semi-frequently used in Redux apps since the beginning. There are several common reasons stated for using Immutable.js:</p>
+<ul>
+<li>Performance improvements from cheap reference comparisons</li>
+<li>Performance improvements from making updates thanks to specialized data structures</li>
+<li>Prevention of accidental mutations</li>
+<li>Easier nested updates via APIs like <code>setIn()</code></li>
+</ul>
+<p>There are some valid aspects to those reasons, but in practice, the benefits aren’t as good as stated, and there’s multiple negatives to using it:</p>
+<ul>
+<li>Cheap reference comparisons are a property of any immutable updates, not just Immutable.js</li>
+<li>Accidental mutations can be prevented via other mechanisms, such as using Immer (which eliminates accident-prone manual copying logic, and deep-freezes state in development by default) or <code>redux-immutable-state-invariant</code> (which checks state for mutations)</li>
+<li>Immer allows simpler update logic overall, eliminating the need for <code>setIn()</code></li>
+<li>Immutable.js has a very large bundle size</li>
+<li>The API is fairly complex</li>
+<li>The API “infects” your application’s code. All logic must know whether it’s dealing with plain JS objects or Immutable objects</li>
+<li>Converting from Immutable objects to plain JS objects is relatively expensive, and always produces completely new deep object references</li>
+<li>Lack of ongoing maintenance to the library</li>
+</ul>
+<p>The strongest remaining reason to use Immutable.js is fast updates of <em>very</em> large objects (tens of thousands of keys). Most applications won’t deal with objects that large.</p>
+<p>Overall, Immutable.js adds too much overhead for too little practical benefit. Immer is a much better option.</p>
+<h2 id="section-33"><span id="priority-c-rules-recommended" class="anchor enhancedAnchor_2LWZ"></h2>
+<p></span>Priority C Rules: Recommended<a href="#priority-c-rules-recommended" class="hash-link" title="Direct link to heading">#</a></p>
+<h3 id="section-34"><span id="write-action-types-as-domaineventname" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Write Action Types as <code>domain/eventName</code><a href="#write-action-types-as-domaineventname" class="hash-link" title="Direct link to heading">#</a></p>
+<p>The original Redux docs and examples generally used a “SCREAMING_SNAKE_CASE” convention for defining action types, such as <code>"ADD_TODO"</code> and <code>"INCREMENT"</code>. This matches typical conventions in most programming languages for declaring constant values. The downside is that the uppercase strings can be hard to read.</p>
+<p>Other communities have adopted other conventions, usually with some indication of the “feature” or “domain” the action is related to, and the specific action type. The NgRx community typically uses a pattern like <code>"[Domain] Action Type"</code>, such as <code>"[Login Page] Login"</code>. Other patterns like <code>"domain:action"</code> have been used as well.</p>
+<p>Redux Toolkit’s <code>createSlice</code> function currently generates action types that look like <code>"domain/action"</code>, such as <code>"todos/addTodo"</code>. Going forward, <strong>we suggest using the <code>"domain/action"</code> convention for readability</strong>.</p>
+<h3 id="section-35"><span id="write-actions-using-the-flux-standard-action-convention" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Write Actions Using the Flux Standard Action Convention<a href="#write-actions-using-the-flux-standard-action-convention" class="hash-link" title="Direct link to heading">#</a></p>
+<p>The original “Flux Architecture” documentation only specified that action objects should have a <code>type</code> field, and did not give any further guidance on what kinds of fields or naming conventions should be used for fields in actions. To provide consistency, Andrew Clark created a convention called <a href="../../github.com/redux-utilities/flux-standard-action.html">“Flux Standard Actions”</a> early in Redux’s development. Summarized, the FSA convention says that actions:</p>
+<ul>
+<li>Should always put their data into a <code>payload</code> field</li>
+<li>May have a <code>meta</code> field for additional info</li>
+<li>May have an <code>error</code> field to indicate the action represents a failure of some kind</li>
+</ul>
+<p>Many libraries in the Redux ecosystem have adopted the FSA convention, and Redux Toolkit generates action creators that match the FSA format.</p>
+<p><strong>Prefer using FSA-formatted actions for consistency</strong>.</p>
+<blockquote>
+<p><strong>Note</strong>: The FSA spec says that “error” actions should set <code>error: true</code>, and use the same action type as the “valid” form of the action. In practice, most developers write separate action types for the “success” and “error” cases. Either is acceptable.</p>
+</blockquote>
+<h3 id="section-36"><span id="use-action-creators" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use Action Creators<a href="#use-action-creators" class="hash-link" title="Direct link to heading">#</a></p>
+<p>“Action creator” functions started with the original “Flux Architecture” approach. With Redux, action creators are not strictly required. Components and other logic can always call <code>dispatch({type: "some/action"})</code> with the action object written inline.</p>
+<p>However, using action creators provides consistency, especially in cases where some kind of preparation or additional logic is needed to fill in the contents of the action (such as generating a unique ID).</p>
+<p><strong>Prefer using action creators for dispatching any actions</strong>. However, rather than writing action creators by hand, <strong>we recommend using the <code>createSlice</code> function from Redux Toolkit, which will generate action creators and action types automatically</strong>.</p>
+<h3 id="section-37"><span id="use-thunks-for-async-logic" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use Thunks for Async Logic<a href="#use-thunks-for-async-logic" class="hash-link" title="Direct link to heading">#</a></p>
+<p>Redux was designed to be extensible, and the middleware API was specifically created to allow different forms of async logic to be plugged into the Redux store. That way, users wouldn’t be forced to learn a specific library like RxJS if it wasn’t appropriate for their needs.</p>
+<p>This led to a wide variety of Redux async middleware addons being created, and that in turn has caused confusion and questions over which async middleware should be used.</p>
+<p><strong>We recommend <a href="../../github.com/reduxjs/redux-thunk.html">using the Redux Thunk middleware by default</a></strong>, as it is sufficient for most typical use cases (such as basic AJAX data fetching). In addition, use of the <code>async/await</code> syntax in thunks makes them easier to read.</p>
+<p>If you have truly complex async workflows that involve things like cancelation, debouncing, running logic after a given action was dispatched, or “background-thread”-type behavior, then consider adding more powerful async middleware like Redux-Saga or Redux-Observable.</p>
+<h3 id="section-38"><span id="move-complex-logic-outside-components" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Move Complex Logic Outside Components<a href="#move-complex-logic-outside-components" class="hash-link" title="Direct link to heading">#</a></p>
+<p>We have traditionally suggested keeping as much logic as possible outside components. That was partly due to encouraging the “container/presentational” pattern, where many components simply accept data as props and display UI accordingly, but also because dealing with async logic in class component lifecycle methods can become difficult to maintain.</p>
+<p><strong>We still encourage moving complex synchronous or async logic outside components, usually into thunks</strong>. This is especially true if the logic needs to read from the store state.</p>
+<p>However, <strong>the use of React hooks does make it somewhat easier to manage logic like data fetching directly inside a component</strong>, and this may replace the need for thunks in some cases.</p>
+<h3 id="section-39"><span id="use-selector-functions-to-read-from-store-state" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Use Selector Functions to Read from Store State<a href="#use-selector-functions-to-read-from-store-state" class="hash-link" title="Direct link to heading">#</a></p>
+<p>“Selector functions” are a powerful tool for encapsulating reading values from the Redux store state and deriving further data from those values. In addition, libraries like Reselect enable creating memoized selector functions that only recalculate results when the inputs have changed, which is an important aspect of optimizing performance.</p>
+<p><strong>We strongly recommend using memoized selector functions for reading store state whenever possible</strong>, and recommend creating those selectors with Reselect.</p>
+<p>However, don’t feel that you <em>must</em> write selector functions for every field in your state. Find a reasonable balance for granularity, based on how often fields are accessed and updated, and how much actual benefit the selectors are providing in your application.</p>
+<h3 id="section-40"><span id="name-selector-functions-as-selectthing" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Name Selector Functions as <code>selectThing</code><a href="#name-selector-functions-as-selectthing" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>We recommend prefixing selector function names with the word <code>select</code></strong>, combined with a description of the value being selected. Examples of this would be <code>selectTodos</code>, <code>selectVisibleTodos</code>, and <code>selectTodoById</code>.</p>
+<h3 id="section-41"><span id="avoid-putting-form-state-in-redux" class="anchor enhancedAnchor_2LWZ"></h3>
+<p></span>Avoid Putting Form State In Redux<a href="#avoid-putting-form-state-in-redux" class="hash-link" title="Direct link to heading">#</a></p>
+<p><strong>Most form state shouldn’t go in Redux</strong>. In most use cases, the data is not truly global, is not being cached, and is not being used by multiple components at once. In addition, connecting forms to Redux often involves dispatching actions on every single change event, which causes performance overhead and provides no real benefit. (You probably don’t need to time-travel backwards one character from <code>name: "Mark"</code> to <code>name: "Mar"</code>.)</p>
+<p>Even if the data ultimately ends up in Redux, prefer keeping the form edits themselves in local component state, and only dispatching an action to update the Redux store once the user has completed the form.</p>
+<p>There are use cases when keeping form state in Redux does actually make sense, such as WYSIWYG live previews of edited item attributes. But, in most cases, this isn’t necessary.</p>
+<p><a href="../faq/miscellaneous.html" class="pagination-nav__link"> </a></p>
+<p>« Miscellaneous</p>
+<p><a href="../api/api-reference.html" class="pagination-nav__link"> </a></p>
+<p>Next</p>
+<p>API Reference »</p>
+<ul>
+<li><a href="#introduction" class="table-of-contents__link">Introduction</a></li>
+<li><a href="#rule-categories" class="table-of-contents__link">Rule Categories</a>
+<ul>
+<li><a href="#priority-a-essential" class="table-of-contents__link">Priority A: Essential</a></li>
+<li><a href="#priority-b-strongly-recommended" class="table-of-contents__link">Priority B: Strongly Recommended</a></li>
+<li><a href="#priority-c-recommended" class="table-of-contents__link">Priority C: Recommended</a></li>
+</ul></li>
+<li><a href="#priority-a-rules-essential" class="table-of-contents__link">Priority A Rules: Essential</a>
+<ul>
+<li><a href="#do-not-mutate-state" class="table-of-contents__link">Do Not Mutate State</a></li>
+<li><a href="#reducers-must-not-have-side-effects" class="table-of-contents__link">Reducers Must Not Have Side Effects</a></li>
+<li><a href="#do-not-put-non-serializable-values-in-state-or-actions" class="table-of-contents__link">Do Not Put Non-Serializable Values in State or Actions</a></li>
+<li><a href="#only-one-redux-store-per-app" class="table-of-contents__link">Only One Redux Store Per App</a></li>
+</ul></li>
+<li><a href="#priority-b-rules-strongly-recommended" class="table-of-contents__link">Priority B Rules: Strongly Recommended</a>
+<ul>
+<li><a href="#use-redux-toolkit-for-writing-redux-logic" class="table-of-contents__link">Use Redux Toolkit for Writing Redux Logic</a></li>
+<li><a href="#use-immer-for-writing-immutable-updates" class="table-of-contents__link">Use Immer for Writing Immutable Updates</a></li>
+<li><a href="#structure-files-as-feature-folders-with-single-file-logic" class="table-of-contents__link">Structure Files as Feature Folders with Single-File Logic</a></li>
+<li><a href="#put-as-much-logic-as-possible-in-reducers" class="table-of-contents__link">Put as Much Logic as Possible in Reducers</a></li>
+<li><a href="#reducers-should-own-the-state-shape" class="table-of-contents__link">Reducers Should Own the State Shape</a></li>
+<li><a href="#name-state-slices-based-on-the-stored-data" class="table-of-contents__link">Name State Slices Based On the Stored Data</a></li>
+<li><a href="#organize-state-structure-based-on-data-types-not-components" class="table-of-contents__link">Organize State Structure Based on Data Types, Not Components</a></li>
+<li><a href="#treat-reducers-as-state-machines" class="table-of-contents__link">Treat Reducers as State Machines</a></li>
+<li><a href="#normalize-complex-nestedrelational-state" class="table-of-contents__link">Normalize Complex Nested/Relational State</a></li>
+<li><a href="#model-actions-as-events-not-setters" class="table-of-contents__link">Model Actions as Events, Not Setters</a></li>
+<li><a href="#write-meaningful-action-names" class="table-of-contents__link">Write Meaningful Action Names</a></li>
+<li><a href="#allow-many-reducers-to-respond-to-the-same-action" class="table-of-contents__link">Allow Many Reducers to Respond to the Same Action</a></li>
+<li><a href="#avoid-dispatching-many-actions-sequentially" class="table-of-contents__link">Avoid Dispatching Many Actions Sequentially</a></li>
+<li><a href="#evaluate-where-each-piece-of-state-should-live" class="table-of-contents__link">Evaluate Where Each Piece of State Should Live</a></li>
+<li><a href="#use-the-react-redux-hooks-api" class="table-of-contents__link">Use the React-Redux Hooks API</a></li>
+<li><a href="#connect-more-components-to-read-data-from-the-store" class="table-of-contents__link">Connect More Components to Read Data from the Store</a></li>
+<li><a href="#use-the-object-shorthand-form-of-mapdispatch-with-connect" class="table-of-contents__link">Use the Object Shorthand Form of <code class="language-js >mapDispatch</code> with <code class="language-js >connect</code> </a></li>
+<li><a href="#call-useselector-multiple-times-in-function-components" class="table-of-contents__link">Call &lt;code class="language-js &gt;useSelector</code> Multiple Times in Function Components</a></li>
+<li><a href="#use-static-typing" class="table-of-contents__link">Use Static Typing</a></li>
+<li><a href="#use-the-redux-devtools-extension-for-debugging" class="table-of-contents__link">Use the Redux DevTools Extension for Debugging</a></li>
+<li><a href="#use-plain-javascript-objects-for-state" class="table-of-contents__link">Use Plain JavaScript Objects for State</a></li>
+</ul></li>
+<li><a href="#priority-c-rules-recommended" class="table-of-contents__link">Priority C Rules: Recommended</a>
+<ul>
+<li><a href="#write-action-types-as-domaineventname" class="table-of-contents__link">Write Action Types as &lt;code class="language-js &gt;domain/eventName</code> </a></li>
+<li><a href="#write-actions-using-the-flux-standard-action-convention" class="table-of-contents__link">Write Actions Using the Flux Standard Action Convention</a></li>
+<li><a href="#use-action-creators" class="table-of-contents__link">Use Action Creators</a></li>
+<li><a href="#use-thunks-for-async-logic" class="table-of-contents__link">Use Thunks for Async Logic</a></li>
+<li><a href="#move-complex-logic-outside-components" class="table-of-contents__link">Move Complex Logic Outside Components</a></li>
+<li><a href="#use-selector-functions-to-read-from-store-state" class="table-of-contents__link">Use Selector Functions to Read from Store State</a></li>
+<li><a href="#name-selector-functions-as-selectthing" class="table-of-contents__link">Name Selector Functions as &lt;code class="language-js &gt;selectThing</code> </a></li>
+<li><a href="#avoid-putting-form-state-in-redux" class="table-of-contents__link">Avoid Putting Form State In Redux</a></li>
+</ul></li>
+</ul>
+<h4 id="docs">Docs</h4>
+<ul>
+<li><a href="../introduction/getting-started.html" class="footer__link-item">Getting Started</a></li>
+<li><a href="../tutorials/essentials/part-1-overview-concepts.html" class="footer__link-item">Tutorial</a></li>
+<li><a href="../faq.html" class="footer__link-item">FAQ</a></li>
+<li><a href="../api/api-reference.html" class="footer__link-item">API Reference</a></li>
+</ul>
+<h4 id="community">Community</h4>
+<ul>
+<li><a href="../official/discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a></li>
+<li><a href="../official/stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a></li>
+<li><a href="../introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a></li>
+</ul>
+<h4 id="more">More</h4>
+<ul>
+<li><a href="../official/github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a></li>
+<li><a href="../../www.netlify.com/index.html"><img src="../../www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" /></a></li>
+</ul>
+<p><a href="../index.html" class="footerLogoLink_MyFc"> <img src="../official/d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" /> <img src="../official/d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--dark_hz6m footer__logo" /> </a></p>
+</body>
+</html>

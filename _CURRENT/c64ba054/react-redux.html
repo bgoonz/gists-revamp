@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>react-redux</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p><a href="https://redux.js.org/" class="navbar__brand"><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /><strong>Redux</strong></a></p>
+<p><a href="https://redux.js.org/introduction/getting-started" class="navbar__item navbar__link">Getting Started</a><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="navbar__item navbar__link">Tutorial</a><a href="https://redux.js.org/api/api-reference" class="navbar__item navbar__link">API</a><a href="https://redux.js.org/faq" class="navbar__item navbar__link navbar__link--active">FAQ</a><a href="https://redux.js.org/style-guide/style-guide" class="navbar__item navbar__link">Best Practices</a><a href="https://www.github.com/reduxjs/redux" class="navbar__item navbar__link">GitHub</a><a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="https://redux.js.org/" class="navbar__brand"><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /><strong>Redux</strong></a></p>
+<ul>
+<li><a href="https://redux.js.org/introduction/getting-started" class="menu__link">Getting Started</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="menu__link">Tutorial</a></li>
+<li><a href="https://redux.js.org/api/api-reference" class="menu__link">API</a></li>
+<li><a href="https://redux.js.org/faq" class="menu__link navbar__link--active">FAQ</a></li>
+<li><a href="https://redux.js.org/style-guide/style-guide" class="menu__link">Best Practices</a></li>
+<li><a href="https://www.github.com/reduxjs/redux" class="menu__link">GitHub</a></li>
+<li><p><a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="menu__link">Need help?</a></p></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+<ul>
+<li><a href="https://redux.js.org/introduction/getting-started" class="menu__link">Getting Started with Redux</a></li>
+<li><a href="https://redux.js.org/introduction/installation" class="menu__link">Installation</a></li>
+<li><a href="https://redux.js.org/introduction/core-concepts" class="menu__link">Core Concepts</a></li>
+<li><a href="https://redux.js.org/introduction/learning-resources" class="menu__link">Learning Resources</a></li>
+<li><a href="https://redux.js.org/introduction/ecosystem" class="menu__link">Ecosystem</a></li>
+<li><a href="https://redux.js.org/introduction/examples" class="menu__link">Examples</a></li>
+</ul></li>
+<li><p><a href="#!" class="menu__link menu__link--sublist">Tutorials</a></p>
+<ul>
+<li><a href="https://redux.js.org/tutorials/index" class="menu__link">Tutorials Index</a></li>
+<li><a href="https://redux.js.org/tutorials/quick-start" class="menu__link">Quick Start</a></li>
+<li><a href="https://redux.js.org/tutorials/typescript-quick-start" class="menu__link">TypeScript Quick Start</a></li>
+<li><p><a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a></p>
+<ul>
+<li><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="menu__link">Redux Overview and Concepts</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-2-app-structure" class="menu__link">Redux App Structure</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-3-data-flow" class="menu__link">Basic Redux Data Flow</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-4-using-data" class="menu__link">Using Redux Data</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-5-async-logic" class="menu__link">Async Logic and Data Fetching</a></li>
+<li><p><a href="https://redux.js.org/tutorials/essentials/part-6-performance-normalization" class="menu__link">Performance and Normalizing Data</a></p></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-1-overview" class="menu__link">Redux Overview</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow" class="menu__link">Redux Concepts and Data Flow</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers" class="menu__link">State, Actions, and Reducers</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-4-store" class="menu__link">Store</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-5-ui-react" class="menu__link">UI and React</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-6-async-logic" class="menu__link">Async Logic and Data Fetching</a></li>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns" class="menu__link">Standard Redux Patterns</a></li>
+<li><p><a href="https://redux.js.org/tutorials/fundamentals/part-8-modern-redux" class="menu__link">Modern Redux with Redux Toolkit</a></p></li>
+</ul></li>
+<li><a href="https://redux.js.org/recipes/recipe-index" class="menu__link">Recipes: Index</a></li>
+<li><a href="https://redux.js.org/recipes/configuring-your-store" class="menu__link">Configuring Your Store</a></li>
+<li><a href="https://redux.js.org/recipes/usage-with-typescript" class="menu__link">Usage With TypeScript</a></li>
+<li><a href="https://redux.js.org/recipes/migrating-to-redux" class="menu__link">Migrating to Redux</a></li>
+<li><a href="https://redux.js.org/recipes/using-object-spread-operator" class="menu__link">Using Object Spread Operator</a></li>
+<li><a href="https://redux.js.org/recipes/reducing-boilerplate" class="menu__link">Reducing Boilerplate</a></li>
+<li><a href="https://redux.js.org/recipes/server-rendering" class="menu__link">Server Rendering</a></li>
+<li><a href="https://redux.js.org/recipes/writing-tests" class="menu__link">Writing Tests</a></li>
+<li><a href="https://redux.js.org/recipes/computing-derived-data" class="menu__link">Computing Derived Data</a></li>
+<li><a href="https://redux.js.org/recipes/implementing-undo-history" class="menu__link">Implementing Undo History</a></li>
+<li><a href="https://redux.js.org/recipes/isolating-redux-sub-apps" class="menu__link">Isolating Redux Sub-Apps</a></li>
+<li><a href="https://redux.js.org/recipes/code-splitting" class="menu__link">Code Splitting</a></li>
+<li><a href="https://redux.js.org/recipes/troubleshooting" class="menu__link">Troubleshooting</a></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
+<ul>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/structuring-reducers" class="menu__link">Structuring Reducers</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/prerequisite-concepts" class="menu__link">Prerequisite Concepts</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/basic-reducer-structure" class="menu__link">Basic Reducer Structure</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/splitting-reducer-logic" class="menu__link">Splitting Reducer Logic</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/refactoring-reducer-example" class="menu__link">Refactoring Reducers Example</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/using-combinereducers" class="menu__link">Using combineReducers</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers" class="menu__link">Beyond combineReducers</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape" class="menu__link">Normalizing State Shape</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/updating-normalized-data" class="menu__link">Updating Normalized Data</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/reusing-reducer-logic" class="menu__link">Reusing Reducer Logic</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns" class="menu__link">Immutable Update Patterns</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/initializing-state" class="menu__link">Initializing State</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+<ul>
+<li><a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+<ul>
+<li><a href="https://redux.js.org/understanding/thinking-in-redux/motivation" class="menu__link">Motivation</a></li>
+<li><a href="https://redux.js.org/understanding/thinking-in-redux/three-principles" class="menu__link">Three Principles</a></li>
+<li><a href="https://redux.js.org/understanding/thinking-in-redux/glossary" class="menu__link">Glossary</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+<ul>
+<li><a href="https://redux.js.org/understanding/history-and-design/prior-art" class="menu__link">Prior Art</a></li>
+<li><a href="https://redux.js.org/understanding/history-and-design/middleware" class="menu__link">Middleware</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist menu__link--active">FAQ</a>
+<ul>
+<li><a href="https://redux.js.org/faq" class="menu__link">FAQ Index</a></li>
+<li><a href="https://redux.js.org/faq/general" class="menu__link">General</a></li>
+<li><a href="https://redux.js.org/faq/reducers" class="menu__link">Reducers</a></li>
+<li><a href="https://redux.js.org/faq/organizing-state" class="menu__link">Organizing State</a></li>
+<li><a href="https://redux.js.org/faq/store-setup" class="menu__link">Store Setup</a></li>
+<li><a href="https://redux.js.org/faq/actions" class="menu__link">Actions</a></li>
+<li><a href="https://redux.js.org/faq/immutable-data" class="menu__link">Immutable Data</a></li>
+<li><a href="https://redux.js.org/faq/code-structure" class="menu__link">Code Structure</a></li>
+<li><a href="https://redux.js.org/faq/performance" class="menu__link">Performance</a></li>
+<li><a href="https://redux.js.org/faq/design-decisions" class="menu__link">Design Decisions</a></li>
+<li><a href="https://redux.js.org/faq/react-redux" class="menu__link menu__link--active active">React Redux</a></li>
+<li><a href="https://redux.js.org/faq/miscellaneous" class="menu__link">Miscellaneous</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
+<ul>
+<li><a href="https://redux.js.org/style-guide/style-guide" class="menu__link">Style Guide: Best Practices</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">API Reference</a>
+<ul>
+<li><a href="https://redux.js.org/api/api-reference" class="menu__link">API Reference</a></li>
+<li><a href="https://redux.js.org/api/createstore" class="menu__link">createStore</a></li>
+<li><a href="https://redux.js.org/api/store" class="menu__link">Store</a></li>
+<li><a href="https://redux.js.org/api/combinereducers" class="menu__link">combineReducers</a></li>
+<li><a href="https://redux.js.org/api/applymiddleware" class="menu__link">applyMiddleware</a></li>
+<li><a href="https://redux.js.org/api/bindactioncreators" class="menu__link">bindActionCreators</a></li>
+<li><a href="https://redux.js.org/api/compose" class="menu__link">compose</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+<ul>
+<li><a href="https://redux.js.org/redux-toolkit/overview" class="menu__link">Redux Toolkit: Overview</a></li>
+</ul></li>
+</ul>
+<h1 id="redux-faq-react-redux"><span id="redux-faq-react-redux" class="anchor enhancedAnchor_2LWZ"></span>Redux FAQ: React Redux<a href="#redux-faq-react-redux" class="hash-link" title="Direct link to heading">#</a></h1>
+<h2 id="table-of-contents"><span id="table-of-contents" class="anchor enhancedAnchor_2LWZ"></span>Table of Contents<a href="#table-of-contents" class="hash-link" title="Direct link to heading">#</a></h2>
+<ul>
+<li><a href="#redux-faq-react-redux">Redux FAQ: React Redux</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#react-redux">React Redux</a>
+<ul>
+<li><a href="#why-should-i-use-react-redux">Why should I use React-Redux?</a>
+<ul>
+<li><a href="#further-information">Further Information</a></li>
+</ul></li>
+<li><a href="#why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running">Why isn’t my component re-rendering, or my mapStateToProps running?</a>
+<ul>
+<li><a href="#further-information-1">Further information</a></li>
+</ul></li>
+<li><a href="#why-is-my-component-re-rendering-too-often">Why is my component re-rendering too often?</a>
+<ul>
+<li><a href="#further-information-2">Further information</a></li>
+</ul></li>
+<li><a href="#how-can-i-speed-up-my-mapstatetoprops">How can I speed up my <code>mapStateToProps</code>?</a>
+<ul>
+<li><a href="#further-information-3">Further information</a></li>
+</ul></li>
+<li><a href="#why-dont-i-have-thispropsdispatch-available-in-my-connected-component">Why don’t I have <code>this.props.dispatch</code> available in my connected component?</a>
+<ul>
+<li><a href="#further-information-4">Further information</a></li>
+</ul></li>
+<li><a href="#should-i-only-connect-my-top-component-or-can-i-connect-multiple-components-in-my-tree">Should I only connect my top component, or can I connect multiple components in my tree?</a>
+<ul>
+<li><a href="#further-information-5">Further information</a></li>
+</ul></li>
+<li><a href="#how-does-redux-compare-to-the-react-context-api">How does Redux compare to the React Context API?</a>
+<ul>
+<li><a href="#further-information-6">Further information</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="react-redux"><span id="react-redux" class="anchor enhancedAnchor_2LWZ"></span>React Redux<a href="#react-redux" class="hash-link" title="Direct link to heading">#</a></h2>
+<h3 id="why-should-i-use-react-redux"><span id="why-should-i-use-react-redux" class="anchor enhancedAnchor_2LWZ"></span>Why should I use React-Redux?<a href="#why-should-i-use-react-redux" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>Redux itself is a standalone library that can be used with any UI layer or framework, including React, Angular, Vue, Ember, and vanilla JS. Although Redux and React are commonly used together, they are independent of each other.</p>
+<p>If you are using Redux with any kind of UI framework, you will normally use a “UI binding” library to tie Redux together with your UI framework, rather than directly interacting with the store from your UI code.</p>
+<p><strong>React-Redux is the official Redux UI binding library for React</strong>. If you are using Redux and React together, you should also use React-Redux to bind these two libraries.</p>
+<p>While it is possible to write Redux store subscription logic by hand, doing so would become very repetitive. In addition, optimizing UI performance would require complicated logic.</p>
+<p>The process of subscribing to the store, checking for updated data, and triggering a re-render can be made more generic and reusable. <strong>A UI binding library like React-Redux handles the store interaction logic, so you don’t have to write that code yourself.</strong></p>
+<p>Overall, React-Redux encourages good React architecture, and implements complex performance optimizations for you. It is also kept up-to-date with the latest API changes from Redux and React.</p>
+<h4 id="further-information"><span id="further-information" class="anchor enhancedAnchor_2LWZ"></span>Further Information<a href="#further-information" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Documentation</strong></p>
+<ul>
+<li><strong><a href="https://react-redux.js.org/introduction/why-use-react-redux">React-Redux docs: Why Use React-Redux?</a></strong></li>
+</ul>
+<h3 id="why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running"><span id="why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running" class="anchor enhancedAnchor_2LWZ"></span>Why isn’t my component re-rendering, or my mapStateToProps running?<a href="#why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>Accidentally mutating or modifying your state directly is by far the most common reason why components do not re-render after an action has been dispatched. Redux expects that your reducers will update their state “immutably”, which effectively means always making copies of your data, and applying your changes to the copies. If you return the same object from a reducer, Redux assumes that nothing has been changed, even if you made changes to its contents. Similarly, React Redux tries to improve performance by doing shallow equality reference checks on incoming props in <code>shouldComponentUpdate</code>, and if all references are the same, <code>shouldComponentUpdate</code> returns <code>false</code> to skip actually updating your original component.</p>
+<p>It’s important to remember that whenever you update a nested value, you must also return new copies of anything above it in your state tree. If you have <code>state.a.b.c.d</code>, and you want to make an update to <code>d</code>, you would also need to return new copies of <code>c</code>, <code>b</code>, <code>a</code>, and <code>state</code>. This <a href="http://arqex.com/wp-content/uploads/2015/02/trees.png">state tree mutation diagram</a> demonstrates how a change deep in a tree requires changes all the way up.</p>
+<p>Note that “updating data immutably” does <em>not</em> mean that you must use <a href="https://github.com/immerjs/immer">Immer</a>, although that is certainly an option. You can do immutable updates to plain JS objects and arrays using several different approaches:</p>
+<ul>
+<li>Copying objects using functions like <code>Object.assign()</code> or <code>_.extend()</code>, and array functions such as <code>slice()</code> and <code>concat()</code></li>
+<li>The array spread operator in ES6, and the similar object spread operator that is proposed for a future version of JavaScript</li>
+<li>Utility libraries that wrap immutable update logic into simpler functions</li>
+</ul>
+<h4 id="further-information-1"><span id="further-information-1" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-1" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Documentation</strong></p>
+<ul>
+<li><a href="https://redux.js.org/recipes/troubleshooting">Troubleshooting</a></li>
+<li><a href="https://react-redux.js.org/troubleshooting">React Redux: Troubleshooting</a></li>
+<li><a href="https://redux.js.org/recipes/using-object-spread-operator">Recipes: Using the Object Spread Operator</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/prerequisite-concepts">Recipes: Structuring Reducers - Prerequisite Concepts</a></li>
+<li><a href="https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns">Recipes: Structuring Reducers - Immutable Update Patterns</a></li>
+</ul>
+<p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://reactkungfu.com/2015/08/pros-and-cons-of-using-immutability-with-react-js/">Pros and Cons of Using Immutability with React</a></li>
+<li><a href="https://github.com/markerikson/react-redux-links/blob/master/immutable-data.md">React/Redux Links: Immutable Data</a></li>
+</ul>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://github.com/reduxjs/redux/issues/1262">#1262: Immutable data + bad performance</a></li>
+<li><a href="https://github.com/reduxjs/react-redux/issues/235">React Redux #235: Predicate function for updating component</a></li>
+<li><a href="https://github.com/reduxjs/react-redux/issues/291">React Redux #291: Should mapStateToProps be called every time an action is dispatched?</a></li>
+<li><a href="https://stackoverflow.com/questions/35592078/cleaner-shorter-way-to-update-nested-state-in-redux">Stack Overflow: Cleaner/shorter way to update nested state in Redux?</a></li>
+<li><a href="https://gist.github.com/amcdnl/7d93c0c67a9a44fe5761#gistcomment-1706579">Gist: state mutations</a></li>
+</ul>
+<h3 id="why-is-my-component-re-rendering-too-often"><span id="why-is-my-component-re-rendering-too-often" class="anchor enhancedAnchor_2LWZ"></span>Why is my component re-rendering too often?<a href="#why-is-my-component-re-rendering-too-often" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>React Redux implements several optimizations to ensure your actual component only re-renders when actually necessary. One of those is a shallow equality check on the combined props object generated by the <code>mapStateToProps</code> and <code>mapDispatchToProps</code> arguments passed to <code>connect</code>. Unfortunately, shallow equality does not help in cases where new array or object instances are created each time <code>mapStateToProps</code> is called. A typical example might be mapping over an array of IDs and returning the matching object references, such as:</p>
+<p><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token function-variable function" style="color: #e6d874">mapStateToProps</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token parameter">state</span><span class="token plain"> </span><span class="token arrow operator" style="color: #f8f8f2">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> objects</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> state</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">objectIds</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">map</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">id</span><span class="token plain"> </span><span class="token arrow operator" style="color: #f8f8f2">=&gt;</span><span class="token plain"> state</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">objects</span><span class="token punctuation" style="color: #f8f8f2">[</span><span class="token plain">id</span><span class="token punctuation" style="color: #f8f8f2">]</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span></p>
+<p><span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>Even though the array might contain the exact same object references each time, the array itself is a different reference, so the shallow equality check fails and React Redux would re-render the wrapped component.</p>
+<p>The extra re-renders could be resolved by saving the array of objects into the state using a reducer, caching the mapped array using <a href="https://github.com/reduxjs/reselect">Reselect</a>, or implementing <code>shouldComponentUpdate</code> in the component by hand and doing a more in-depth props comparison using a function such as <code>_.isEqual</code>. Be careful to not make your custom <code>shouldComponentUpdate()</code> more expensive than the rendering itself! Always use a profiler to check your assumptions about performance.</p>
+<p>For non-connected components, you may want to check what props are being passed in. A common issue is having a parent component re-bind a callback inside its render function, like <code>&lt;Child onClick={this.handleClick.bind(this)} /&gt;</code>. That creates a new function reference every time the parent re-renders. It’s generally good practice to only bind callbacks once in the parent component’s constructor.</p>
+<h4 id="further-information-2"><span id="further-information-2" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-2" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Documentation</strong></p>
+<ul>
+<li><a href="https://redux.js.org/faq/performance#performance-scaling">FAQ: Performance - Scaling</a></li>
+</ul>
+<p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://benchling.engineering/deep-dive-react-perf-debugging/">A Deep Dive into React Perf Debugging</a></li>
+<li><a href="https://medium.com/@esamatti/react-js-pure-render-performance-anti-pattern-fb88c101332f">React.js pure render performance anti-pattern</a></li>
+<li><a href="https://blog.rangle.io/react-and-redux-performance-with-reselect/">Improving React and Redux Performance with Reselect</a></li>
+<li><a href="https://randycoulman.com/blog/2016/09/13/encapsulating-the-redux-state-tree/">Encapsulating the Redux State Tree</a></li>
+<li><a href="https://github.com/markerikson/react-redux-links/blob/master/react-performance.md">React/Redux Links: React/Redux Performance</a></li>
+</ul>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/34782249/can-a-react-redux-app-really-scale-as-well-as-say-backbone-even-with-reselect">Stack Overflow: Can a React Redux app scale as well as Backbone?</a></li>
+</ul>
+<p><strong>Libraries</strong></p>
+<ul>
+<li><a href="https://github.com/markerikson/redux-ecosystem-links/blob/master/devtools.md#component-update-monitoring">Redux Addons Catalog: DevTools - Component Update Monitoring</a></li>
+</ul>
+<h3 id="how-can-i-speed-up-my-mapstatetoprops"><span id="how-can-i-speed-up-my-mapstatetoprops" class="anchor enhancedAnchor_2LWZ"></span>How can I speed up my <code>mapStateToProps</code>?<a href="#how-can-i-speed-up-my-mapstatetoprops" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>While React Redux does work to minimize the number of times that your <code>mapStateToProps</code> function is called, it’s still a good idea to ensure that your <code>mapStateToProps</code> runs quickly and also minimizes the amount of work it does. The common recommended approach is to create memoized “selector” functions using <a href="https://github.com/reduxjs/reselect">Reselect</a>. These selectors can be combined and composed together, and selectors later in a pipeline will only run if their inputs have changed. This means you can create selectors that do things like filtering or sorting, and ensure that the real work only happens if needed.</p>
+<h4 id="further-information-3"><span id="further-information-3" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-3" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Documentation</strong></p>
+<ul>
+<li><a href="https://redux.js.org/recipes/computing-derived-data">Recipes: Computed Derived Data</a></li>
+</ul>
+<p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://blog.rangle.io/react-and-redux-performance-with-reselect/">Improving React and Redux Performance with Reselect</a></li>
+</ul>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://github.com/reduxjs/redux/issues/815">#815: Working with Data Structures</a></li>
+<li><a href="https://github.com/reduxjs/reselect/issues/47">Reselect #47: Memoizing Hierarchical Selectors</a></li>
+</ul>
+<h3 id="why-dont-i-have-this.props.dispatch-available-in-my-connected-component"><span id="why-dont-i-have-thispropsdispatch-available-in-my-connected-component" class="anchor enhancedAnchor_2LWZ"></span>Why don’t I have <code>this.props.dispatch</code> available in my connected component?<a href="#why-dont-i-have-thispropsdispatch-available-in-my-connected-component" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>The <code>connect()</code> function takes two primary arguments, both optional. The first, <code>mapStateToProps</code>, is a function you provide to pull data from the store when it changes, and pass those values as props to your component. The second, <code>mapDispatchToProps</code>, is a function you provide to make use of the store’s <code>dispatch</code> function, usually by creating pre-bound versions of action creators that will automatically dispatch their actions as soon as they are called.</p>
+<p>If you do not provide your own <code>mapDispatchToProps</code> function when calling <code>connect()</code>, React Redux will provide a default version, which simply returns the <code>dispatch</code> function as a prop. That means that if you <em>do</em> provide your own function, <code>dispatch</code> is <em>not</em> automatically provided. If you still want it available as a prop, you need to explicitly return it yourself in your <code>mapDispatchToProps</code> implementation.</p>
+<h4 id="further-information-4"><span id="further-information-4" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-4" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Documentation</strong></p>
+<ul>
+<li><a href="https://react-redux.js.org/api/connect">React Redux API: connect()</a></li>
+</ul>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://github.com/reduxjs/react-redux/issues/89">React Redux #89: can i wrap multi actionCreators into one props with name?</a></li>
+<li><a href="https://github.com/reduxjs/react-redux/issues/145">React Redux #145: consider always passing down dispatch regardless of what mapDispatchToProps does</a></li>
+<li><a href="https://github.com/reduxjs/react-redux/issues/255">React Redux #255: this.props.dispatch is undefined if using mapDispatchToProps</a></li>
+<li><a href="https://stackoverflow.com/questions/34458261/how-to-get-simple-dispatch-from-this-props-using-connect-w-redux/34458710%5D">Stack Overflow: How to get simple dispatch from this.props using connect w/ Redux?</a></li>
+</ul>
+<h3 id="should-i-only-connect-my-top-component-or-can-i-connect-multiple-components-in-my-tree"><span id="should-i-only-connect-my-top-component-or-can-i-connect-multiple-components-in-my-tree" class="anchor enhancedAnchor_2LWZ"></span>Should I only connect my top component, or can I connect multiple components in my tree?<a href="#should-i-only-connect-my-top-component-or-can-i-connect-multiple-components-in-my-tree" class="hash-link" title="Direct link to heading">#</a></h3>
+<p>Early Redux documentation advised that you should only have a few connected components near the top of your component tree. However, time and experience has shown that such a component architecture generally requires a few components to know too much about the data requirements of all their descendants, and forces them to pass down a confusing number of props.</p>
+<p>The current suggested best practice is to categorize your components as “presentational” or “container” components, and extract a connected container component wherever it makes sense:</p>
+<blockquote>
+<p>Emphasizing “one container component at the top” in Redux examples was a mistake. Don’t take this as a maxim. Try to keep your presentation components separate. Create container components by connecting them when it’s convenient. Whenever you feel like you’re duplicating code in parent components to provide data for same kinds of children, time to extract a container. Generally as soon as you feel a parent knows too much about “personal” data or actions of its children, time to extract a container.</p>
+</blockquote>
+<p>In fact, benchmarks have shown that more connected components generally leads to better performance than fewer connected components.</p>
+<p>In general, try to find a balance between understandable data flow and areas of responsibility with your components.</p>
+<h4 id="further-information-5"><span id="further-information-5" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-5" class="hash-link" title="Direct link to heading">#</a></h4>
+<p><strong>Documentation</strong></p>
+<ul>
+<li><a href="https://redux.js.org/tutorials/fundamentals/part-5-ui-react">Fundamentals: UI and React</a></li>
+<li><a href="https://redux.js.org/faq/performance#performance-scaling">FAQ: Performance - Scaling</a></li>
+</ul>
+<p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">Presentational and Container Components</a></li>
+<li><a href="https://somebody32.github.io/high-performance-redux/">High-Performance Redux</a></li>
+<li><a href="https://github.com/markerikson/react-redux-links/blob/master/react-redux-architecture.md#redux-architecture">React/Redux Links: Architecture - Redux Architecture</a></li>
+<li><a href="https://github.com/markerikson/react-redux-links/blob/master/react-performance.md#redux-performance">React/Redux Links: Performance - Redux Performance</a></li>
+</ul>
+<p><strong>Discussions</strong></p>
+<ul>
+<li><a href="https://twitter.com/dan_abramov/status/668585589609005056">Twitter: emphasizing “one container” was a mistake</a></li>
+<li><a href="https://github.com/reduxjs/redux/issues/419">#419: Recommended usage of connect</a></li>
+<li><a href="https://github.com/reduxjs/redux/issues/756">#756: container vs component?</a></li>
+<li><a href="https://github.com/reduxjs/redux/issues/1176">#1176: Redux+React with only stateless components</a></li>
+<li><a href="https://stackoverflow.com/questions/34992247/can-a-dumb-component-use-render-redux-container-component">Stack Overflow: can a dumb component use a Redux container?</a></li>
+</ul>
+<h3 id="how-does-redux-compare-to-the-react-context-api"><span id="how-does-redux-compare-to-the-react-context-api" class="anchor enhancedAnchor_2LWZ"></span>How does Redux compare to the React Context API?<a href="#how-does-redux-compare-to-the-react-context-api" class="hash-link" title="Direct link to heading">#</a></h3>
+<p><strong>Similarities</strong></p>
+<p>Both Redux and React’s Context API deal with “prop drilling”. That said, they both allow you to pass data without having to pass the props through multiple layers of components. Internally, Redux <em>uses</em> the React context API that allows it to pass the store along your component tree.</p>
+<p><strong>Differences</strong></p>
+<p>With Redux, you get the the power of <a href="https://github.com/zalmoxisus/redux-devtools-extension">Redux Dev Tools Extension</a>. It automatically logs every action your app performs, and it allows time traveling – you can click on any past action and jump to that point in time. Redux also supports the concept of middleware, where you may bind customized function calls on every action dispatch. Such examples include an automatic event logger, interception of certain actions, etc.</p>
+<p>With React’s Context API, you deal with a pair of components speaking only to each other. This gives you nice isolation between irrelevant data. You also have the flexibility of how you may use the data with your components, i.e., you can provide the state of a parent component, and you may pass context data as props to wrapped components.</p>
+<p>There is a key difference in how Redux and React’s Context treat data. Redux maintains the data of your whole app in a giant, stateful object. It deduces the changes of your data by running the reducer function you provide, and returns the next state that corresponds to every action dispatched. React Redux then optimizes component rendering and makes sure that each component re-renders only when the data it needs change. Context, on the other hand, does not hold any state. It is only a conduit for the data. To express changes in data you need to rely on the state of a parent component.</p>
+<h4 id="further-information-6"><span id="further-information-6" class="anchor enhancedAnchor_2LWZ"></span>Further information<a href="#further-information-6" class="hash-link" title="Direct link to heading">#</a></h4>
+<ul>
+<li><a href="https://changelog.com/posts/when-and-when-not-to-reach-for-redux">When (and when not) to reach for Redux</a></li>
+<li><a href="https://daveceddia.com/context-api-vs-redux/">Redux vs. The React Context API</a></li>
+<li><a href="https://www.simplethread.com/cant-replace-redux-with-hooks/">You Might Not Need Redux (But You Can’t Replace It With Hooks)</a></li>
+</ul>
+<p><a href="https://redux.js.org/faq/design-decisions" class="pagination-nav__link"></a></p>
+<p>« Design Decisions</p>
+<p><a href="https://redux.js.org/faq/miscellaneous" class="pagination-nav__link"></a></p>
+<p>Next</p>
+<p>Miscellaneous »</p>
+<ul>
+<li><a href="#table-of-contents" class="table-of-contents__link">Table of Contents</a></li>
+<li><a href="#react-redux" class="table-of-contents__link">React Redux</a>
+<ul>
+<li><a href="#why-should-i-use-react-redux" class="table-of-contents__link">Why should I use React-Redux?</a></li>
+<li><a href="#why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running" class="table-of-contents__link">Why isn’t my component re-rendering, or my mapStateToProps running?</a></li>
+<li><a href="#why-is-my-component-re-rendering-too-often" class="table-of-contents__link">Why is my component re-rendering too often?</a></li>
+<li><a href="#how-can-i-speed-up-my-mapstatetoprops" class="table-of-contents__link">How can I speed up my &lt;code class="language-js &gt;mapStateToProps</code>?</a></li>
+<li><a href="#why-dont-i-have-thispropsdispatch-available-in-my-connected-component" class="table-of-contents__link">Why don’t I have &lt;code class="language-js &gt;this.props.dispatch</code> available in my connected component?</a></li>
+<li><a href="#should-i-only-connect-my-top-component-or-can-i-connect-multiple-components-in-my-tree" class="table-of-contents__link">Should I only connect my top component, or can I connect multiple components in my tree?</a></li>
+<li><a href="#how-does-redux-compare-to-the-react-context-api" class="table-of-contents__link">How does Redux compare to the React Context API?</a></li>
+</ul></li>
+</ul>
+<h4 id="docs">Docs</h4>
+<ul>
+<li><a href="https://redux.js.org/introduction/getting-started" class="footer__link-item">Getting Started</a></li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="footer__link-item">Tutorial</a></li>
+<li><a href="https://redux.js.org/faq" class="footer__link-item">FAQ</a></li>
+<li><a href="https://redux.js.org/api/api-reference" class="footer__link-item">API Reference</a></li>
+</ul>
+<h4 id="community">Community</h4>
+<ul>
+<li><a href="https://discord.gg/0ZcbPKXt5bZ6au5t" class="footer__link-item">Reactiflux Discord</a></li>
+<li><a href="http://stackoverflow.com/questions/tagged/redux" class="footer__link-item">Stack Overflow</a></li>
+<li><a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="footer__link-item">Feedback</a></li>
+</ul>
+<h4 id="more">More</h4>
+<ul>
+<li><a href="https://github.com/reduxjs/redux" class="footer__link-item">GitHub</a></li>
+<li><a href="https://www.netlify.com/"><img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" /></a></li>
+</ul>
+<p><a href="https://redux.js.org/" class="footerLogoLink_MyFc"><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" /><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--dark_hz6m footer__logo" /></a></p>
+</body>
+</html>

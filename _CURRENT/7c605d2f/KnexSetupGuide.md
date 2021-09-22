@@ -9,13 +9,14 @@ $ mkdir node-knex-demo
 $ cd node-knex-demo
 $ npm init
 ```
+
 ## Knex
 
 Knex is a SQL query builder, mainly used for Node.js applications with built in model schema creation, table migrations, connection pooling and seeding.
 
 ### Install Knex and Knex Command Line Tool
 
-Install `knex` __globally__ on your local computer.
+Install `knex` **globally** on your local computer.
 
 ```bash
 $ npm install knex -g
@@ -23,7 +24,7 @@ $ npm install knex -g
 
 This will allow us to use `knex` as a command line tool that helps you create and manage your knex files.
 
-In addition, you will need to also install the `knex` module __locally__ to use in your project.
+In addition, you will need to also install the `knex` module **locally** to use in your project.
 
 ```bash
 $ npm install knex --save
@@ -50,44 +51,44 @@ This will create a `knexfile.js` with the different configurations for the diffe
 ```javascript
 module.exports = {
   development: {
-    client: 'sqlite3',
+    client: "sqlite3",
     connection: {
-      filename: './dev.sqlite3'
-    }
+      filename: "./dev.sqlite3",
+    },
   },
   staging: {
-    client: 'postgresql',
+    client: "postgresql",
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: "my_db",
+      user: "username",
+      password: "password",
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      tableName: "knex_migrations",
+    },
   },
   production: {
-    client: 'postgresql',
+    client: "postgresql",
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: "my_db",
+      user: "username",
+      password: "password",
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      tableName: "knex_migrations",
+    },
+  },
 };
-
 ```
+
 Edit your `development` settings in `knexfile.js` to point to your postgres database, using your db username and password. DON'T FORGET TO CREATE YOUR DATABASE LOCALLY!
 
 **Example `development` config object**
@@ -113,8 +114,7 @@ Edit your `development` settings in `knexfile.js` to point to your postgres data
 }
 ```
 
-We want to create a `knex`  directory at the root of our project to hold our `migrations` and `seeds` scripts. Inside of the `knex` directory, we need a `knex.js` file to hold the single instance of the `knex` module with the correct environment config.
-
+We want to create a `knex` directory at the root of our project to hold our `migrations` and `seeds` scripts. Inside of the `knex` directory, we need a `knex.js` file to hold the single instance of the `knex` module with the correct environment config.
 
 ```bash
 $ mkdir knex
@@ -137,13 +137,12 @@ At this point, our project structure should look like this:
 
 _For more information on migrations and seeds with knex, checkout the **[knex migrations and seeds guide](https://gist.github.com/NigelEarle/70db130cc040cc2868555b29a0278261)**._
 
-
 **Example `knex.js`**
 
 ```javascript
-const environment = process.env.ENVIRONMENT || 'development'
-const config = require('../knexfile.js')[environment];
-module.exports = require('knex')(config);
+const environment = process.env.ENVIRONMENT || "development";
+const config = require("../knexfile.js")[environment];
+module.exports = require("knex")(config);
 ```
 
 ## Create your Express application
@@ -155,19 +154,18 @@ $ npm install express --save
 Now let's create a `server.js` file in the root of your project. Create your express application how you normally would, for this example the server listening on port `3001`. Let's also create a super basic `GET` endpoint to query our db.
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const PORT = process.env.PORT || 3001;
-const knex = require('./knex/knex.js');
+const knex = require("./knex/knex.js");
 const app = express();
 
-app.get('/tasks', (req, res) => {
+app.get("/tasks", (req, res) => {
   // use the knex variable above to create dynamic queries
 });
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
-
 ```
 
 Start the server:
@@ -175,4 +173,5 @@ Start the server:
 ```
 $ node server.js
 ```
+
 SAVE TO CACHER
