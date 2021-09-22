@@ -19,12 +19,12 @@ const nativeGetSymbols = Object.getOwnPropertySymbols;
  */
 const getSymbols = !nativeGetSymbols
   ? stubArray
-  : object => {
+  : (object) => {
       if (object == null) {
         return [];
       }
       object = Object(object);
-      return arrayFilter(nativeGetSymbols(object), symbol => {
+      return arrayFilter(nativeGetSymbols(object), (symbol) => {
         return propertyIsEnumerable.call(object, symbol);
       });
     };

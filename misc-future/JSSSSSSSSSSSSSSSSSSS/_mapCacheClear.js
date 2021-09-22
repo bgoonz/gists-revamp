@@ -1,4 +1,6 @@
-const Hash = require("./_Hash"), ListCache = require("./_ListCache"), Map = require("./_Map");
+const Hash = require("./_Hash"),
+  ListCache = require("./_ListCache"),
+  Map = require("./_Map");
 
 /**
  * Removes all key-value entries from the map.

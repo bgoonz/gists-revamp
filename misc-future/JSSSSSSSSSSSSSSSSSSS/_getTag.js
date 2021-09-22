@@ -41,7 +41,7 @@ if (
   (Set && getTag(new Set()) != setTag) ||
   (WeakMap && getTag(new WeakMap()) != weakMapTag)
 ) {
-  getTag = value => {
+  getTag = (value) => {
     const result = baseGetTag(value);
     const Ctor = result == objectTag ? value.constructor : undefined;
     const ctorString = Ctor ? toSource(Ctor) : "";

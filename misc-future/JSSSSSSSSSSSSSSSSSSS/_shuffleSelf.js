@@ -15,7 +15,8 @@ function shuffleSelf(array, size) {
 
   size = size === undefined ? length : size;
   while (++index < size) {
-    const rand = baseRandom(index, lastIndex), value = array[rand];
+    const rand = baseRandom(index, lastIndex),
+      value = array[rand];
 
     array[rand] = array[index];
     array[index] = value;

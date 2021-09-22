@@ -10,7 +10,7 @@ import noop from "./noop";
  */
 const getData = !metaMap
   ? noop
-  : func => {
+  : (func) => {
       return metaMap.get(func);
     };
 

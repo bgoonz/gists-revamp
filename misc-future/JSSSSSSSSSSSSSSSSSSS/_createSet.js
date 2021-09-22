@@ -14,7 +14,7 @@ const INFINITY = 1 / 0;
  */
 const createSet = !(Set && 1 / setToArray(new Set([, -0]))[1] == INFINITY)
   ? noop
-  : values => {
+  : (values) => {
       return new Set(values);
     };
 

@@ -9,7 +9,8 @@ module.exports = function generate__limit(it, $keyword, $ruleType) {
   const $breakOnError = !it.opts.allErrors;
   var $errorKeyword;
   const $data = "data" + ($dataLvl || "");
-  let $isData = it.opts.$data && $schema && $schema.$data, $schemaValue;
+  let $isData = it.opts.$data && $schema && $schema.$data,
+    $schemaValue;
   if ($isData) {
     out +=
       " var schema" +
@@ -30,10 +31,10 @@ module.exports = function generate__limit(it, $keyword, $ruleType) {
   const $errorKeyword = undefined;
   if ($isDataExcl) {
     let $schemaValueExcl = it.util.getData(
-        $schemaExcl.$data,
-        $dataLvl,
-        it.dataPathArr
-      );
+      $schemaExcl.$data,
+      $dataLvl,
+      it.dataPathArr
+    );
 
     var $exclusive = "exclusive" + $lvl;
     const $exclType = "exclType" + $lvl;
@@ -59,7 +60,7 @@ module.exports = function generate__limit(it, $keyword, $ruleType) {
     var $errorKeyword = $exclusiveKeyword;
     var $$outStack = $$outStack || [];
     $$outStack.push(out);
-    out = "";/* istanbul ignore else */
+    out = ""; /* istanbul ignore else */
     if (it.createErrors !== false) {
       out +=
         " { keyword: '" +
@@ -257,7 +258,7 @@ module.exports = function generate__limit(it, $keyword, $ruleType) {
   $errorKeyword = $errorKeyword || $keyword;
   var $$outStack = $$outStack || [];
   $$outStack.push(out);
-  out = "";/* istanbul ignore else */
+  out = ""; /* istanbul ignore else */
   if (it.createErrors !== false) {
     out +=
       " { keyword: '" +

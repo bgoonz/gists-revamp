@@ -15,7 +15,7 @@ function createFind(findIndexFunc) {
     if (!isArrayLike(collection)) {
       var iteratee = baseIteratee(predicate, 3);
       collection = keys(collection);
-      predicate = key => {
+      predicate = (key) => {
         return iteratee(iterable[key], key, iterable);
       };
     }

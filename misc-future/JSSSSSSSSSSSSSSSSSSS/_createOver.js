@@ -13,11 +13,11 @@ import flatRest from "./_flatRest";
  * @returns {Function} Returns the new over function.
  */
 function createOver(arrayFunc) {
-  return flatRest(iteratees => {
+  return flatRest((iteratees) => {
     iteratees = arrayMap(iteratees, baseUnary(baseIteratee));
     return baseRest(function (args) {
       const thisArg = this;
-      return arrayFunc(iteratees, iteratee => {
+      return arrayFunc(iteratees, (iteratee) => {
         return apply(iteratee, thisArg, args);
       });
     });

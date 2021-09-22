@@ -23,7 +23,7 @@ function baseOrderBy(collection, iteratees, orders) {
   );
 
   const result = baseMap(collection, (value, key, collection) => {
-    const criteria = arrayMap(iteratees, iteratee => {
+    const criteria = arrayMap(iteratees, (iteratee) => {
       return iteratee(value);
     });
     return { criteria: criteria, index: ++index, value: value };

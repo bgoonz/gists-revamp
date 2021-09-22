@@ -17,10 +17,7 @@ function insertWrapDetails(source, details) {
   const lastIndex = length - 1;
   details[lastIndex] = (length > 1 ? "& " : "") + details[lastIndex];
   details = details.join(length > 2 ? ", " : " ");
-  return source.replace(
-    reWrapComment,
-    `{\n/* [wrapped with ${details}] */\n`
-  );
+  return source.replace(reWrapComment, `{\n/* [wrapped with ${details}] */\n`);
 }
 
 export default insertWrapDetails;

@@ -16,7 +16,7 @@ const setTag = "[object Set]";
  * @returns {Function} Returns the new pairs function.
  */
 function createToPairs(keysFunc) {
-  return object => {
+  return (object) => {
     const tag = getTag(object);
     if (tag == mapTag) {
       return mapToArray(object);

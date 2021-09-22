@@ -14,7 +14,7 @@ const reEscapeChar = /\\(\\)?/g;
  * @param {string} string The string to convert.
  * @returns {Array} Returns the property path array.
  */
-const stringToPath = memoizeCapped(string => {
+const stringToPath = memoizeCapped((string) => {
   const result = [];
   if (string.charCodeAt(0) === 46 /* . */) {
     result.push("");

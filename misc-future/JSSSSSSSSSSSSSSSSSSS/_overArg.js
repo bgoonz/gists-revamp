@@ -7,7 +7,7 @@
  * @returns {Function} Returns the new function.
  */
 function overArg(func, transform) {
-  return arg => {
+  return (arg) => {
     return func(transform(arg));
   };
 }

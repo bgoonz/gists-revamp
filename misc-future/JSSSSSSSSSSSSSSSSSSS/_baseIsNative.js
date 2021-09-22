@@ -26,12 +26,12 @@ const hasOwnProperty = objectProto.hasOwnProperty;
 /** Used to detect if a method is native. */
 const reIsNative = RegExp(
   `^${funcToString
-  .call(hasOwnProperty)
-  .replace(reRegExpChar, "\\$&")
-  .replace(
-    /hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,
-    "$1.*?"
-  )}$`
+    .call(hasOwnProperty)
+    .replace(reRegExpChar, "\\$&")
+    .replace(
+      /hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,
+      "$1.*?"
+    )}$`
 );
 
 /**

@@ -1,4 +1,8 @@
-const listCacheClear = require("./_listCacheClear"), listCacheDelete = require("./_listCacheDelete"), listCacheGet = require("./_listCacheGet"), listCacheHas = require("./_listCacheHas"), listCacheSet = require("./_listCacheSet");
+const listCacheClear = require("./_listCacheClear"),
+  listCacheDelete = require("./_listCacheDelete"),
+  listCacheGet = require("./_listCacheGet"),
+  listCacheHas = require("./_listCacheHas"),
+  listCacheSet = require("./_listCacheSet");
 
 /**
  * Creates an list cache object.

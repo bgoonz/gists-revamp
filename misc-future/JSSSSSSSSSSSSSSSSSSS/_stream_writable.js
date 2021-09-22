@@ -185,7 +185,7 @@ class WritableState {
     this.bufferProcessing = false;
 
     // the callback that's passed to _write(chunk,cb)
-    this.onwrite = er => {
+    this.onwrite = (er) => {
       onwrite(stream, er);
     };
 
@@ -291,7 +291,8 @@ class Writable {
 
       if (typeof options.writev === "function") this._writev = options.writev;
 
-      if (typeof options.destroy === "function") this._destroy = options.destroy;
+      if (typeof options.destroy === "function")
+        this._destroy = options.destroy;
 
       if (typeof options.final === "function") this._final = options.final;
     }
@@ -684,7 +685,7 @@ function needFinish(state) {
   );
 }
 function callFinal(stream, state) {
-  stream._final(err => {
+  stream._final((err) => {
     state.pendingcb--;
     if (err) {
       stream.emit("error", err);

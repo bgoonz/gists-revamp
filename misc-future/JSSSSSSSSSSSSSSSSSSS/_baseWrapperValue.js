@@ -19,11 +19,8 @@ function baseWrapperValue(value, actions) {
   }
   return arrayReduce(
     actions,
-    (result, {func, thisArg, args}) => {
-      return func.apply(
-        thisArg,
-        arrayPush([result], args)
-      );
+    (result, { func, thisArg, args }) => {
+      return func.apply(thisArg, arrayPush([result], args));
     },
     result
   );

@@ -1,4 +1,5 @@
-const baseSetData = require("./_baseSetData"), shortOut = require("./_shortOut");
+const baseSetData = require("./_baseSetData"),
+  shortOut = require("./_shortOut");
 
 /**
  * Sets metadata for `func`.

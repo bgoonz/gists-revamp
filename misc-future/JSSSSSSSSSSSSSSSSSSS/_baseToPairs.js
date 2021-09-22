@@ -10,7 +10,7 @@ import arrayMap from "./_arrayMap";
  * @returns {Object} Returns the key-value pairs.
  */
 function baseToPairs(object, props) {
-  return arrayMap(props, key => {
+  return arrayMap(props, (key) => {
     return [key, object[key]];
   });
 }

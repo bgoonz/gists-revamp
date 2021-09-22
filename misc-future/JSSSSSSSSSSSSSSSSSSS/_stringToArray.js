@@ -1,4 +1,6 @@
-const asciiToArray = require("./_asciiToArray"), hasUnicode = require("./_hasUnicode"), unicodeToArray = require("./_unicodeToArray");
+const asciiToArray = require("./_asciiToArray"),
+  hasUnicode = require("./_hasUnicode"),
+  unicodeToArray = require("./_unicodeToArray");
 
 /**
  * Converts `string` to an array.

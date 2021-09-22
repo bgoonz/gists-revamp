@@ -37,7 +37,7 @@ module.exports = function generate__limitProperties(it, $keyword, $ruleType) {
   var $errorKeyword = $keyword;
   const $$outStack = $$outStack || [];
   $$outStack.push(out);
-  out = "";/* istanbul ignore else */
+  out = ""; /* istanbul ignore else */
   if (it.createErrors !== false) {
     out +=
       " { keyword: '" +

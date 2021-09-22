@@ -8,7 +8,7 @@ import baseGet from "./_baseGet";
  * @returns {Function} Returns the new accessor function.
  */
 function basePropertyDeep(path) {
-  return object => {
+  return (object) => {
     return baseGet(object, path);
   };
 }

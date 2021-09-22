@@ -1,4 +1,6 @@
-const ListCache = require("./_ListCache"), Map = require("./_Map"), MapCache = require("./_MapCache");
+const ListCache = require("./_ListCache"),
+  Map = require("./_Map"),
+  MapCache = require("./_MapCache");
 
 /** Used as the size to enable large array optimizations. */
 const LARGE_ARRAY_SIZE = 200;

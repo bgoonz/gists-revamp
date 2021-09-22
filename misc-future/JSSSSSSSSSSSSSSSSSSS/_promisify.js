@@ -3,7 +3,7 @@ const _slice = Array.prototype.slice;
 const getPromise = require("./_promise.js");
 
 // deferred gets its own scope to prevent inadvertent capture in the closure
-const deferred = options => {
+const deferred = (options) => {
   const Promise = getPromise();
   let resolve;
   let reject;
@@ -17,17 +17,17 @@ const deferred = options => {
   const noError = options && options.noError;
   const cb = pattern
     ? function (err) {
-    if (err && !noError) {
-      return reject(err);
-    }
-    const result = {};
-    let i;
-    const offset = noError ? 0 : 1;
-    for (i = 0; i < pattern.length; i++) {
-      result[pattern[i]] = arguments[i + offset];
-    }
-    resolve(result);
-  }
+        if (err && !noError) {
+          return reject(err);
+        }
+        const result = {};
+        let i;
+        const offset = noError ? 0 : 1;
+        for (i = 0; i < pattern.length; i++) {
+          result[pattern[i]] = arguments[i + offset];
+        }
+        resolve(result);
+      }
     : noError
     ? resolve
     : (err, val) => {

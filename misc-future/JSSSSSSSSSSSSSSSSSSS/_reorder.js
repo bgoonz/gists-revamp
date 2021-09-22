@@ -1,4 +1,5 @@
-const copyArray = require("./_copyArray"), isIndex = require("./_isIndex");
+const copyArray = require("./_copyArray"),
+  isIndex = require("./_isIndex");
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 const nativeMin = Math.min;

@@ -1,4 +1,6 @@
-const LazyWrapper = require("./_LazyWrapper"), LodashWrapper = require("./_LodashWrapper"), copyArray = require("./_copyArray");
+const LazyWrapper = require("./_LazyWrapper"),
+  LodashWrapper = require("./_LodashWrapper"),
+  copyArray = require("./_copyArray");
 
 /**
  * Creates a clone of `wrapper`.

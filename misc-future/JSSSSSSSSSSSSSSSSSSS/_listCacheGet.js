@@ -10,7 +10,8 @@ const assocIndexOf = require("./_assocIndexOf");
  * @returns {*} Returns the entry value.
  */
 function listCacheGet(key) {
-  const data = this.__data__, index = assocIndexOf(data, key);
+  const data = this.__data__,
+    index = assocIndexOf(data, key);
 
   return index < 0 ? undefined : data[index][1];
 }

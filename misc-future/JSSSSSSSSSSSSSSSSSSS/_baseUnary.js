@@ -6,7 +6,7 @@
  * @returns {Function} Returns the new capped function.
  */
 function baseUnary(func) {
-  return value => {
+  return (value) => {
     return func(value);
   };
 }

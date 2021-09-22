@@ -445,7 +445,9 @@ exports.mutate = {
 
 /** Used to map real names to their aliases. */
 exports.realToAlias = (() => {
-  const hasOwnProperty = Object.prototype.hasOwnProperty, object = exports.aliasToReal, result = {};
+  const hasOwnProperty = Object.prototype.hasOwnProperty,
+    object = exports.aliasToReal,
+    result = {};
 
   for (const key in object) {
     const value = object[key];

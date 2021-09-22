@@ -187,7 +187,7 @@ class Transform {
   _destroy(err, cb) {
     const _this2 = this;
 
-    Duplex.prototype._destroy.call(this, err, err2 => {
+    Duplex.prototype._destroy.call(this, err, (err2) => {
       cb(err2);
       _this2.emit("close");
     });

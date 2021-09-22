@@ -1,4 +1,6 @@
-const MapCache = require("./_MapCache"), setCacheAdd = require("./_setCacheAdd"), setCacheHas = require("./_setCacheHas");
+const MapCache = require("./_MapCache"),
+  setCacheAdd = require("./_setCacheAdd"),
+  setCacheHas = require("./_setCacheHas");
 
 /**
  *

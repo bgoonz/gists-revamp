@@ -197,7 +197,8 @@ class Readable {
     if (options) {
       if (typeof options.read === "function") this._read = options.read;
 
-      if (typeof options.destroy === "function") this._destroy = options.destroy;
+      if (typeof options.destroy === "function")
+        this._destroy = options.destroy;
     }
 
     Stream.call(this);
@@ -262,7 +263,8 @@ class Readable {
 
   // backwards compatibility.
   setEncoding(enc) {
-    if (!StringDecoder) StringDecoder = require("string_decoder/").StringDecoder;
+    if (!StringDecoder)
+      StringDecoder = require("string_decoder/").StringDecoder;
     this._readableState.decoder = new StringDecoder(enc);
     this._readableState.encoding = enc;
     return this;
@@ -646,7 +648,7 @@ class Readable {
       _this.push(null);
     });
 
-    stream.on("data", chunk => {
+    stream.on("data", (chunk) => {
       debug("wrapped data");
       if (state.decoder) chunk = state.decoder.write(chunk);
 
@@ -665,7 +667,7 @@ class Readable {
     // important when wrapping filters and duplexes.
     for (const i in stream) {
       if (this[i] === undefined && typeof stream[i] === "function") {
-        this[i] = (method => {
+        this[i] = ((method) => {
           return function () {
             return stream[method].apply(stream, arguments);
           };
@@ -680,7 +682,7 @@ class Readable {
 
     // when we try to consume some more bytes, simply unpause the
     // underlying stream.
-    this._read = n => {
+    this._read = (n) => {
       debug("wrapped _read", n);
       if (paused) {
         paused = false;

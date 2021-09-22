@@ -1,4 +1,8 @@
-const mapCacheClear = require("./_mapCacheClear"), mapCacheDelete = require("./_mapCacheDelete"), mapCacheGet = require("./_mapCacheGet"), mapCacheHas = require("./_mapCacheHas"), mapCacheSet = require("./_mapCacheSet");
+const mapCacheClear = require("./_mapCacheClear"),
+  mapCacheDelete = require("./_mapCacheDelete"),
+  mapCacheGet = require("./_mapCacheGet"),
+  mapCacheHas = require("./_mapCacheHas"),
+  mapCacheSet = require("./_mapCacheSet");
 
 /**
  * Creates a map cache object to store key-value pairs.

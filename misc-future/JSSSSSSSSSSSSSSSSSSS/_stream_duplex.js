@@ -34,7 +34,7 @@ const pna = require("process-nextick-args");
 /*<replacement>*/
 const objectKeys =
   Object.keys ||
-  (obj => {
+  ((obj) => {
     const keys = [];
     for (const key in obj) {
       keys.push(key);

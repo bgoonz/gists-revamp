@@ -11,7 +11,8 @@ const assocIndexOf = require("./_assocIndexOf");
  * @returns {Object} Returns the list cache instance.
  */
 function listCacheSet(key, value) {
-  const data = this.__data__, index = assocIndexOf(data, key);
+  const data = this.__data__,
+    index = assocIndexOf(data, key);
 
   if (index < 0) {
     ++this.size;

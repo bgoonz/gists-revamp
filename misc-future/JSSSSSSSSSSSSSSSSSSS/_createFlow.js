@@ -23,7 +23,7 @@ const WRAP_REARG_FLAG = 256;
  * @returns {Function} Returns the new flow function.
  */
 function createFlow(fromRight) {
-  return flatRest(funcs => {
+  return flatRest((funcs) => {
     const length = funcs.length;
     let index = length;
     const prereq = LodashWrapper.prototype.thru;

@@ -1,10 +1,17 @@
-const composeArgs = require("./_composeArgs"), composeArgsRight = require("./_composeArgsRight"), replaceHolders = require("./_replaceHolders");
+const composeArgs = require("./_composeArgs"),
+  composeArgsRight = require("./_composeArgsRight"),
+  replaceHolders = require("./_replaceHolders");
 
 /** Used as the internal argument placeholder. */
 const PLACEHOLDER = "__lodash_placeholder__";
 
 /** Used to compose bitmasks for function metadata. */
-const WRAP_BIND_FLAG = 1, WRAP_BIND_KEY_FLAG = 2, WRAP_CURRY_BOUND_FLAG = 4, WRAP_CURRY_FLAG = 8, WRAP_ARY_FLAG = 128, WRAP_REARG_FLAG = 256;
+const WRAP_BIND_FLAG = 1,
+  WRAP_BIND_KEY_FLAG = 2,
+  WRAP_CURRY_BOUND_FLAG = 4,
+  WRAP_CURRY_FLAG = 8,
+  WRAP_ARY_FLAG = 128,
+  WRAP_REARG_FLAG = 256;
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 const nativeMin = Math.min;

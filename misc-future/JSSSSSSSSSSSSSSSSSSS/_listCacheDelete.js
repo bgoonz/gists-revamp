@@ -16,7 +16,8 @@ const splice = arrayProto.splice;
  * @returns {boolean} Returns `true` if the entry was removed, else `false`.
  */
 function listCacheDelete(key) {
-  const data = this.__data__, index = assocIndexOf(data, key);
+  const data = this.__data__,
+    index = assocIndexOf(data, key);
 
   if (index < 0) {
     return false;

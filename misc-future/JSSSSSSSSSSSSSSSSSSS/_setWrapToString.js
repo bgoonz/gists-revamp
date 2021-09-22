@@ -1,4 +1,7 @@
-const getWrapDetails = require("./_getWrapDetails"), insertWrapDetails = require("./_insertWrapDetails"), setToString = require("./_setToString"), updateWrapDetails = require("./_updateWrapDetails");
+const getWrapDetails = require("./_getWrapDetails"),
+  insertWrapDetails = require("./_insertWrapDetails"),
+  setToString = require("./_setToString"),
+  updateWrapDetails = require("./_updateWrapDetails");
 
 /**
  * Sets the `toString` method of `wrapper` to mimic the source of `reference`

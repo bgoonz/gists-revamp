@@ -1,4 +1,6 @@
-const asciiSize = require("./_asciiSize"), hasUnicode = require("./_hasUnicode"), unicodeSize = require("./_unicodeSize");
+const asciiSize = require("./_asciiSize"),
+  hasUnicode = require("./_hasUnicode"),
+  unicodeSize = require("./_unicodeSize");
 
 /**
  * Gets the number of symbols in `string`.

@@ -8,7 +8,7 @@ import isKeyable from "./_isKeyable";
  * @param {string} key The reference key.
  * @returns {*} Returns the map data.
  */
-function getMapData({__data__}, key) {
+function getMapData({ __data__ }, key) {
   const data = __data__;
   return isKeyable(key)
     ? data[typeof key == "string" ? "string" : "hash"]

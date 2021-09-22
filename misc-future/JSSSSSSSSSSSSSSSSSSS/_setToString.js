@@ -1,4 +1,5 @@
-const baseSetToString = require("./_baseSetToString"), shortOut = require("./_shortOut");
+const baseSetToString = require("./_baseSetToString"),
+  shortOut = require("./_shortOut");
 
 /**
  * Sets the `toString` method of `func` to return `string`.

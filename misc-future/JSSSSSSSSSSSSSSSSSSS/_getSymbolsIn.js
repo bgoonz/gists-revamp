@@ -15,7 +15,7 @@ const nativeGetSymbols = Object.getOwnPropertySymbols;
  */
 const getSymbolsIn = !nativeGetSymbols
   ? stubArray
-  : object => {
+  : (object) => {
       const result = [];
       while (object) {
         arrayPush(result, getSymbols(object));
