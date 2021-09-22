@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>markdown-cheat-sheet-demo</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h2 id="why-markdown">Why markdown?</h2>
+<p>Markdown is a universal doc format that is easy to write and easy to add to a version control system.</p>
+<ul>
+<li><strong>Open</strong> - Anyone can submit content, fix typos &amp; update anything via pull requests</li>
+<li><strong>Version control</strong> - Roll back &amp; see the history of any given post</li>
+<li><strong>No CMS lock in</strong> - We can easily port to any static site generator</li>
+<li><strong>It’s just simple</strong> - No user accounts to manage, no CMS software to upgrade, no plugins to install.</li>
+</ul>
+<hr />
+<h2 id="markdown-basics">Markdown basics</h2>
+<p>The basics of markdown can be found <a href="https://guides.github.com/features/mastering-markdown/">here</a> &amp; <a href="https://daringfireball.net/projects/markdown/">here</a>. Super easy!</p>
+<h2 id="advanced-formatting-tips">Advanced Formatting tips</h2>
+<h3 id="left-alignment"><code>left</code> alignment</h3>
+<p><img align="left" width="100" height="100" src="http://www.fillmurray.com/100/100"></p>
+<p>This is the code you need to align images to the left:</p>
+<pre><code>&lt;img align=&quot;left&quot; width=&quot;100&quot; height=&quot;100&quot; src=&quot;http://www.fillmurray.com/100/100&quot;&gt;</code></pre>
+<hr />
+<h3 id="right-alignment"><code>right</code> alignment</h3>
+<p><img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100"></p>
+<p>This is the code you need to align images to the right:</p>
+<pre><code>&lt;img align=&quot;right&quot; width=&quot;100&quot; height=&quot;100&quot; src=&quot;http://www.fillmurray.com/100/100&quot;&gt;</code></pre>
+<hr />
+<h3 id="center-alignment-example"><code>center</code> alignment example</h3>
+<p align="center">
+<img width="460" height="300" src="http://www.fillmurray.com/460/300">
+</p>
+<pre><code>&lt;p align=&quot;center&quot;&gt;
+  &lt;img width=&quot;460&quot; height=&quot;300&quot; src=&quot;http://www.fillmurray.com/460/300&quot;&gt;
+&lt;/p&gt;</code></pre>
+<hr />
+<h3 id="collapse-sections"><code>collapse</code> Sections</h3>
+<p>Collapsing large blocks of text can make your markdown much easier to digest</p>
+<details>
+<summary>“Click to expand”</summary> this is hidden block
+</details>
+<pre><code>&lt;details&gt;
+&lt;summary&gt;&quot;Click to expand&quot;&lt;/summary&gt;
+this is hidden
+&lt;/details&gt;</code></pre>
+<p>Collapsing large blocks of Markdown text</p>
+<details>
+<p><summary>To make sure markdown is rendered correctly in the collapsed section…</summary></p>
+<ol type="1">
+<li>Put an <strong>empty line</strong> after the <code>&lt;summary&gt;</code> block.</li>
+<li><em>Insert your markdown syntax</em></li>
+<li>Put an <strong>empty line</strong> before the <code>&lt;/details&gt;</code> tag</li>
+</ol>
+</details>
+<pre><code>&lt;details&gt;
+&lt;summary&gt;To make sure markdown is rendered correctly in the collapsed section...&lt;/summary&gt;
+
+ 1. Put an **empty line** after the `&lt;summary&gt;` block.
+ 2. *Insert your markdown syntax*
+ 3. Put an **empty line** before the `&lt;/details&gt;` tag
+ 
+&lt;/details&gt;</code></pre>
+<hr />
+<h3 id="additional-links"><code>additional links</code></h3>
+<p><a href="http://www.serverless.com">Website</a> • <a href="http://eepurl.com/b8dv4P">Email Updates</a> • <a href="https://gitter.im/serverless/serverless">Gitter</a> • <a href="http://forum.serverless.com">Forum</a> • <a href="https://github.com/serverless-meetups/main">Meetups</a> • <a href="https://twitter.com/goserverless">Twitter</a> • <a href="https://www.facebook.com/serverless">Facebook</a> • <a href="mailto:hello@serverless.com">Contact Us</a></p>
+<pre><code>[Website](http://www.serverless.com) • [Email Updates](http://eepurl.com/b8dv4P) • [Gitter](https://gitter.im/serverless/serverless) • [Forum](http://forum.serverless.com) • [Meetups](https://github.com/serverless-meetups/main) • [Twitter](https://twitter.com/goserverless) • [Facebook](https://www.facebook.com/serverless) • [Contact Us](mailto:hello@serverless.com)</code></pre>
+<hr />
+<h3 id="badges">Badges</h3>
+<p>I hate them so. Don’t use badges.</p>
+<hr />
+<h3 id="nice-looking-file-tree">Nice looking file tree</h3>
+<p>For whatever <a href="https://twitter.com/alexdotjs/status/1421015442286596100">reason</a> the <code>graphql</code> syntax will nicely highlight file trees like below:</p>
+<pre class="graphql"><code># Code &amp; components for pages
+./src/* 
+  ├─ src/assets - # Minified images, fonts, icon files
+  ├─ src/components - # Individual smaller components
+  ├─ src/fragments - # Larger chunks of a page composed of multiple components
+  ├─ src/layouts - # Page layouts used for different types of pages composed of components and fragments
+  ├─ src/page - # Custom pages or pages composed of layouts with hardcoded data components, fragments, &amp; layouts
+  ├─ src/pages/* - # Next.js file based routing
+  │  ├─ _app.js - # next.js app entry point
+  │  ├─ _document.js - # next.js document wrapper
+  │  ├─ global.css - #  Global CSS styles
+  │  └─ Everything else... - # File based routing
+  └─ src/utils - # Utility functions used in various places</code></pre>
+<hr />
+<h2 id="useful-packages">Useful packages</h2>
+<ol type="1">
+<li><a href="https://www.npmjs.com/package/gray-matter">gray-matter</a></li>
+</ol>
+<p>YAML front-matter is your friend. You can keep metadata in markdown files</p>
+<pre><code>title: Serverless Framework Documentation
+description: &quot;Great F&#39;in docs!&quot;
+menuText: Docs
+layout: Doc</code></pre>
+<ol start="2" type="1">
+<li><a href="https://www.npmjs.com/package/remark">Remark</a></li>
+</ol>
+<p>Useful for rendering markdown in HTML/React</p>
+<ol start="3" type="1">
+<li><a href="https://github.com/DavidWells/markdown-magic">Markdown Magic</a></li>
+</ol>
+<ul>
+<li><a href="https://github.com/DavidWells/markdown-magic">Repo</a></li>
+<li><a href="https://github.com/DavidWells/markdown-magic#plugins">Plugins</a></li>
+<li>Show automatic doc generation. <a href="https://github.com/DavidWells/markdown-magic/blob/master/examples/generate-readme.js#L15-L23">Example 1</a> | <a href="https://github.com/serverless/examples/blob/master/generate-readme.js#L71-L87">Example 2</a></li>
+</ul>
+<hr />
+<h2 id="useful-utilities">Useful utilities</h2>
+<ol type="1">
+<li><a href="https://github.com/serverless/post-scheduler">Schedule Posts</a> - Post scheduler for static sites</li>
+</ol>
+<p>Show DEMO</p>
+<ol start="2" type="1">
+<li><a href="https://jekyll-anon.surge.sh/gods/2015/02/18/vesta.html">Zero friction inline content editing</a></li>
+</ol>
+<p>Show DEMO</p>
+<ol start="3" type="1">
+<li><p><a href="https://bywordapp.com/">Byword</a> &amp; <a href="https://typora.io/">Typora</a> - Good Editors</p></li>
+<li><p><a href="https://monodraw.helftone.com/">Monodraw</a> - Flow charts for days</p></li>
+<li><p><a href="https://getkap.co/">Kap</a> - Make gifs</p></li>
+<li><p><a href="https://atom.io/packages/markdown-preview">IDE markdown preview</a></p></li>
+<li><p>Stuck on WordPress? Try <a href="https://github.com/DavidWells/easy-markdown">easy-markdown plugin</a></p></li>
+</ol>
+<hr />
+<h2 id="how-serverless-uses-markdown">How Serverless uses markdown</h2>
+<p>Serverless.com is comprised of 3 separate repositories</p>
+<ul>
+<li>https://github.com/serverless/blog</li>
+<li>https://github.com/serverless/serverless | Shoutout to <a href="https://phenomic.io/">Phenomic.io</a></li>
+<li>https://github.com/serverless/site</li>
+</ul>
+<p><strong>Why multiple repos?</strong></p>
+<ol type="1">
+<li>We wanted documentation about the framework to live in the serverless github repo for easy access</li>
+<li>We wanted our blog content to be easily portable to any static site generator separate from the implementation (site)</li>
+<li><code>prebuild</code> npm script pulls the content together &amp; processes them for site build</li>
+</ol>
+<p>A single repo is easier to manage but harder for people to find/edit/PR content.</p>
+<hr />
+<h3 id="demo">DEMO</h3>
+<ul>
+<li>Site structure</li>
+<li>Serverless build process</li>
+<li><a href="https://github.com/serverless/blog/blob/master/.travis.yml#L10">Validation</a></li>
+<li><a href="https://serverless.com/framework/docs/providers/aws/cli-reference/deploy/">Editing Flow</a></li>
+<li>Github optimizations
+<ul>
+<li><a href="https://github.com/serverless/serverless/blob/master/docs/providers/aws/events/schedule.md">Link from top of each doc to live link on site</a></li>
+<li>use markdown magic =) to <a href="https://github.com/serverless/examples">auto generate tables</a> etc</li>
+<li><a href="https://github.com/serverless/serverless/blame/master/docs/providers/aws/events/schedule.md#L1-L7">Hide yaml frontmatter from github folks</a></li>
+<li>consider linking everything to site</li>
+</ul></li>
+</ul>
+<h2 id="other-markdown-resources">Other Markdown Resources</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/verb">Verb</a> - Documentation generator for GitHub projects</li>
+<li><a href="http://asciidoctor.org/">ACSII docs</a> - Markdown alternative</li>
+</ul>
+</body>
+</html>

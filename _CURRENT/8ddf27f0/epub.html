@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="John MacFarlane" />
+  <title>Creating an ebook with pandoc</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Creating an ebook with pandoc</h1>
+<p class="author">John MacFarlane</p>
+</header>
+<p>Starting with version 1.6, pandoc can produce output in the <a href="https://en.wikipedia.org/wiki/EPUB">EPUB</a> electronic book format. EPUB books can be viewed on iPads, Nooks, and other electronic book readers, including many smart phones. (They can also be converted to Kindle books using <a href="https://www.amazon.com/gp/feature.html?ie=UTF8&amp;docId=1000765211">KindleGen</a>.)</p>
+<p>This means that it’s now very easy to produce an electronic book! Let’s try it.</p>
+<h1 id="a-toy-example">A toy example</h1>
+<p>Use your text editor to create a file <code>mybook.txt</code>, with the following contents:</p>
+<pre><code>% My Book
+% Sam Smith
+
+This is my book!
+
+# Chapter One
+
+Chapter one is over.
+
+# Chapter Two
+
+Chapter two has just begun.</code></pre>
+<p>To make this into an ebook takes only one command:</p>
+<pre><code>pandoc mybook.txt -o mybook.epub</code></pre>
+<p>You can upload <code>mybook.epub</code> to your ebook reader and try it out.</p>
+<p>Note that if your markdown file contains links to local images, for example</p>
+<pre><code>![Juliet](images/sun.jpg)</code></pre>
+<p>pandoc will automatically include the images in the generated epub.</p>
+<h1 id="a-real-book">A real book</h1>
+<p>To see what this would look like for a real book, let’s convert Scott Chacon’s book <a href="https://git-scm.com/book/en/v2">Pro Git</a>, which he wrote using pandoc’s markdown variant and released under a <a href="https://creativecommons.org/">Creative Commons</a> license. (If you use the book, please consider <a href="https://git-scm.com/book/en/v2">buying a copy</a> to help support his excellent work.)</p>
+<p>You can find the markdown source for the book on its <a href="https://github.com/progit/progit">github site</a>. Let’s get a copy of the whole repository:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<pre><code>git clone https://github.com/progit/progit.git</code></pre>
+<p>This command will create a working directory called <code>progit</code> on your machine. The actual markdown sources for the English version of the book are in the <code>en</code> subdirectory, so start by changing to that directory:</p>
+<pre><code>cd progit/en</code></pre>
+<p>As you can see, each chapter is a single text file in its own directory. Chacon does some postprocessing on these files, for example, to insert images. This is a placeholder for Figure 1-1, for example:</p>
+<pre><code>Insert 18333fig0101.png
+Figure 1-1. Local version control diagram.</code></pre>
+<p>The actual image file is called <code>18333fig0101-tn.png</code> and lives in the <code>figures</code> subdirectory of the repository, as you can verify.</p>
+<p>For demonstration purposes, we want pure markdown files, so let’s change this placeholder into a markdown image link. Pandoc will treat a paragraph containing a single image as a figure with a caption, which is what we want:</p>
+<pre><code>![Figure 1-1. Local version control diagram.](../figures/18333fig0101-tn.png)</code></pre>
+<p>We can make this change in all the files with a perl one-liner:</p>
+<pre><code>perl -i -0pe \
+&#39;s/^Insert\s*(.*)\.png\s*\n([^\n]*)$/!\[\2](..\/figures\/\1-tn.png)/mg&#39; \
+*/*.markdown</code></pre>
+<p>This will modify the files in place. (We won’t worry about backing them up; if we mess up, we can get the original files back with <code>git reset --hard</code>.)</p>
+<p>OK! Now we’re almost ready to make an ebook. We have the chapters, each in its own file, but we still need a title. Create a file, <code>title.txt</code>, with a pandoc YAML metadata block:</p>
+<pre><code>---
+title: Pro Git
+author: Scott Chacon
+rights:  Creative Commons Non-Commercial Share Alike 3.0
+language: en-US
+...</code></pre>
+<p>See the <a href="https://pandoc.org/MANUAL.html#epub-metadata">User’s Guide</a> for more information above these fields.</p>
+<p>Now run pandoc to make the ebook, using our title page and modified chapter files as sources:</p>
+<pre><code>pandoc -o progit.epub title.txt \
+  01-introduction/01-chapter1.markdown \
+  02-git-basics/01-chapter2.markdown \
+  03-git-branching/01-chapter3.markdown \
+  04-git-server/01-chapter4.markdown \
+  05-distributed-git/01-chapter5.markdown \
+  06-git-tools/01-chapter6.markdown \
+  07-customizing-git/01-chapter7.markdown \
+  08-git-and-other-scms/01-chapter8.markdown \
+  09-git-internals/01-chapter9.markdown</code></pre>
+<p>That’s it! The ebook, <code>progit.epub</code>, is ready to be uploaded to your reader.</p>
+<h2 id="changing-the-format">Changing the format</h2>
+<p>You can use the <code>--css</code> option to specify a CSS file for the book. The default CSS is minimal and can be found <a href="https://github.com/jgm/pandoc/blob/master/data/epub.css">on GitHub</a> or in the <code>epub.css</code> file in your data directory (see <code>--data-dir</code> in the <a href="https://pandoc.org/MANUAL.html">User’s Guide</a>).</p>
+<p>You can even embed fonts in the EPUB if you want; see the <a href="https://pandoc.org/MANUAL.html">User’s Guide</a> under <code>--epub-embed-font</code> for instructions.</p>
+<h2 id="math">Math</h2>
+<p>Pandoc has an EPUB3 writer. It renders LaTeX math into MathML, which EPUB3 readers are supposed to support (but unfortunately few do).</p>
+<p>Of course, this isn’t much help if you want EPUB2 output (<code>pandoc -t epub2</code>) or target readers that don’t support MathML. Then you have two options:</p>
+<ol type="1">
+<li>Use the <a href="https://pandoc.org/MANUAL.html#option--webtex"><code>--webtex</code></a> option, which will use a web service to convert the TeX to an image.</li>
+<li>Use the <a href="https://pandoc.org/MANUAL.html#option--gladtex"><code>--gladtex</code></a> option to convert maths into SVG images on your local machine.</li>
+</ol>
+<p>Both GladTeX and WebTeX add the LaTeX source of the formula as alternative text of the image, increasing accessibility for blind users.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>If you don’t have <a href="https://git-scm.com">git</a>, you can browse to the <a href="https://github.com/progit/progit">github site</a> and click “Download Source” to get the same files in a zip or tar archive.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>

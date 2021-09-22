@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>explination</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<h2 id="source"><a href="https://dev.to/lydiahallie">SOURCE</a></h2>
+<h3 id="promise-syntax">Promise Syntax</h3>
+<p>ES6 introduced Promises. In many tutorials, you’ll read something like:</p>
+<blockquote>
+<p>“A promise is a placeholder for a value that can either resolve or reject at some time in the future”</p>
+</blockquote>
+<p>Yeah… That explanation never made things clearer for me. In fact it only made me feel like a Promise was a weird, vague, unpredictable piece of magic. So let’s look at what promises <em>really</em> are.</p>
+<p>We can create a promise, using a <code>Promise</code> constructor that receives a callback. Okay cool, let’s try it out!</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--phTVdCKA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/79zi452hphe7ecylhozy.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--phTVdCKA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/79zi452hphe7ecylhozy.gif" alt="Alt Text" /></a></p>
+<p>Wait woah, what just got returned?</p>
+<p>A <code>Promise</code> is an object that contains a status, (<code>[[PromiseStatus]]</code>) and a value (<code>[[PromiseValue]]</code>). In the above example, you can see that the value of <code>[[PromiseStatus]]</code> is <code>"pending"</code>, and the value of the promise is <code>undefined</code>.</p>
+<p>Don’t worry - you’ll never have to interact with this object, you can’t even access the <code>[[PromiseStatus]]</code> and <code>[[PromiseValue]]</code> properties! However, the values of these properties are important when working with promises.</p>
+<hr />
+<p>The value of the <code>PromiseStatus</code>, the state, can be one of three values:</p>
+<ul>
+<li>✅ <code>fulfilled</code>: The promise has been <code>resolved</code>. Everything went fine, no errors occurred within the promise 🥳</li>
+<li>❌ <code>rejected</code> : The promise has been <code>rejected</code>. Argh, something went wrong..</li>
+<li>⏳ <code>pending</code>: The promise has neither resolved nor rejected (yet), the promise is still <code>pending</code>.</li>
+</ul>
+<p>Alright this all sounds great, but <em>when</em> is a promise status <code>"pending"</code>, <code>"fulfilled"</code> or <code>"rejected"</code>? And why does that status even matter?</p>
+<p>In the above example, we just passed the simple callback function <code>() =&gt; {}</code> to the <code>Promise</code> constructor. However, this callback function actually receives two arguments. The value of the first argument, often called <code>resolve</code> or <code>res</code>, is the method to be called when the Promise should resolve. The value of the second argument, often called <code>reject</code> or <code>rej</code>, is the value method to be called when the Promise should reject, something went wrong.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--9A_mOYMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/duen4peq0bdr55cka5ya.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--9A_mOYMP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/duen4peq0bdr55cka5ya.png" /></a></p>
+<p>Let’s try and see that gets logged when we invoke either the <code>resolve</code> or <code>reject</code> method! In my example, I called the <code>resolve</code> method <code>res</code>, and the <code>reject</code> method <code>rej</code>.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--qKIq-sYt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/z0b9v0h7aiq073l5tl2l.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--qKIq-sYt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/z0b9v0h7aiq073l5tl2l.gif" /></a></p>
+<p>Awesome! We finally know how to get rid of the <code>"pending"</code> status and the <code>undefined</code> value! The status of a promise is <code>"fulfilled"</code> if we invoked the <code>resolve</code> method, and the status of the promise is <code>"rejected</code>" if we invoked the <code>rejected</code> method.</p>
+<p>The value of a promise, the value of <code>[[PromiseValue]]</code>, is the value that we pass to the either the <code>resolved</code> or <code>rejected</code> method as their argument.</p>
+<blockquote>
+<p>Fun fact, I let Jake Archibald proofread this article and he actually pointed out there’s a bug in Chrome that currently shows the status as <code>"resolved"</code> instead of <code>"fulfilled"</code>. Thanks to <a href="https://twitter.com/mathias">Mathias Bynens</a> it’s now fixed in Canary! 🥳🕺🏼</p>
+<blockquote>
+<figure>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--kZ3BKUHA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://pbs.twimg.com/media/EVJqgKLUwAEocsG.png" alt="unknown tweet media content" /><figcaption>unknown tweet media content</figcaption>
+</figure>
+<figure>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ynOngITX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://pbs.twimg.com/profile_images/1695239906/me_normal.jpg" alt="Jake Archibald profile image" /><figcaption>Jake Archibald profile image</figcaption>
+</figure>
+<p>Jake Archibald</p>
+<p><span class="citation" data-cites="jaffathecake">@jaffathecake</span></p>
+<figure>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--ir1kO05j--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev.to/assets/twitter-f95605061196010f91e64806688390eb1a4dbc9e913682e043eb8b1e06ca484f.svg" alt="twitter logo" /><figcaption>twitter logo</figcaption>
+</figure>
+<p>Chrome and Safari call this a “resolved” promise, which is true, but kinda misleading…</p>
+<p>09:21 AM - 09 Apr 2020</p>
+<p><a href="https://twitter.com/intent/tweet?in_reply_to=1248179232775319559"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fFnoeFxk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev.to/assets/twitter-reply-action-238fe0a37991706a6880ed13941c3efd6b371e4aefe288fe8e0db85250708bc4.svg" alt="Twitter reply action" /></a> <a href="https://twitter.com/intent/retweet?tweet_id=1248179232775319559"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--k6dcrOn8--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev.to/assets/twitter-retweet-action-632c83532a4e7de573c5c08dbb090ee18b348b13e2793175fea914827bc42046.svg" alt="Twitter retweet action" /></a> <a href="https://twitter.com/intent/like?tweet_id=1248179232775319559"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--SRQc9lOp--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev.to/assets/twitter-like-action-1ea89f4b87c7d37465b0eb78d51fcb7fe6c03a089805d7ea014ba71365be5171.svg" alt="Twitter like action" /></a></p>
+</blockquote>
+</blockquote>
+<hr />
+<p>Okay so, now we know a little bit better how to control that vague <code>Promise</code> object. But what is it used for?</p>
+<p>In the introductory section, I showed an example in which we get an image, compress it, apply a filer, and save it! Eventually, this ended up being a nested callback mess.</p>
+<p>Luckily, Promises can help us fix this! First, let’s rewrite the entire code block, so that each function returns a <code>Promise</code> instead.</p>
+<p>If the image is loaded and everything went fine, let’s resolve the promise with the loaded image! Else, if there was an error somewhere while loading the file, let’s reject the promise with the error that occurred.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--r9xngcNz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/iebp0rzfnfqsrmmjplme.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--r9xngcNz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/iebp0rzfnfqsrmmjplme.png" /></a></p>
+<p>Let’s see what happens when we run this in the terminal!</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uERkfSWf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/wsu5nn26dp4elcwh764m.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uERkfSWf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/wsu5nn26dp4elcwh764m.gif" /></a></p>
+<p>Cool! A promise got returned with the value of the parsed data, just like we expected.</p>
+<p>But… what now? We don’t care about that entire promise object, we only care about the value of the data! Luckily, there are built-in methods to get a promise’s value. To a promise, we can attach 3 methods:</p>
+<ul>
+<li><code>.then()</code>: Gets called after a promise <em>resolved</em>.</li>
+<li><code>.catch()</code>: Gets called after a promise <em>rejected</em>.</li>
+<li><code>.finally()</code>: <em>Always</em> gets called, whether the promise resolved or rejected.</li>
+</ul>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--19tIvFJQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mu1aqqnyfjsfon5hwrtw.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--19tIvFJQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mu1aqqnyfjsfon5hwrtw.png" /></a></p>
+<p>The <code>.then</code> method receives the value passed to the <code>resolve</code> method.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--DZld0c-0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/11vxhn9cun7stpjbdi80.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DZld0c-0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/11vxhn9cun7stpjbdi80.gif" /></a></p>
+<p>The <code>.catch</code> method receives the value passed to the <code>rejected</code> method</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--e9SZHcPk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/v5y24jz4u89flazvdyn4.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--e9SZHcPk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/v5y24jz4u89flazvdyn4.gif" /></a></p>
+<p>Finally, we have the value that got resolved by the promise without having that entire promise object! We can now do whatever we want with this value.</p>
+<hr />
+<p>FYI, when you know that a promise will always resolve or always reject, you can write <code>Promise.resolve</code> or <code>Promise.reject</code> , with the value you want to reject or resolve the promise with!</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--61Gva3Ze--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/90hxwjfadzslvdbkr4l8.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--61Gva3Ze--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/90hxwjfadzslvdbkr4l8.png" alt="Alt Text" /></a></p>
+<p>You’ll often see this syntax in the following examples 😄</p>
+<hr />
+<p>In the <code>getImage</code> example, we ended up having to nest multiple callbacks in order to run them. Luckily, the <code>.then</code> handlers can help us with that! 🥳</p>
+<p>The result of the <code>.then</code> itself is a promise value. This means that we can chain as many <code>.then</code>s as we want: the result of the previous <code>then</code> callback will be passed as an argument to the next <code>then</code> callback!</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--X8h-NDc2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/i6busbetmoya9vny2eku.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--X8h-NDc2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/i6busbetmoya9vny2eku.png" /></a></p>
+<p>In the case of the <code>getImage</code> example, we can chain multiple <code>then</code> callbacks in order to pass the processed image onto the next function! Instead of ending up with many nested callbacks, we get a clean <code>then</code> chain.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--e1nVrqe1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/u9l3lxwxlxgv2edv79xh.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--e1nVrqe1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/u9l3lxwxlxgv2edv79xh.png" /></a></p>
+<p>Perfect! This syntax already looks way better than the nested callbacks.</p>
+<hr />
+<h2 id="microtasks-and-macrotasks"><a href="https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke#microtasks-and-macrotasks"></a>Microtasks and (Macro)tasks</h2>
+<p>Okay so we know a little better how to create a promise and how to extract values out of a promise. Let’s add some more code to the script, and run it again:</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--uNG7sXon--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/ey4ubnv5yjgi6hbh97xq.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uNG7sXon--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/ey4ubnv5yjgi6hbh97xq.gif" /></a></p>
+<p>Wait what?! 🤯</p>
+<p>First, <code>Start!</code> got logged. Okay we could’ve seen that one coming: <code>console.log('Start!')</code> is on the very first line! However, the second value that got logged was <code>End!</code>, and <em>not</em> the value of the resolved promise! Only after <code>End!</code> was logged, the value of the promise got logged. What’s going on here?</p>
+<p>We’ve finally seen the true power of promises! 🚀 Although JavaScript is single-threaded, we can add asynchronous behavior using a <code>Promise</code>!</p>
+<hr />
+<p>But wait, haven’t we seen that before? 🤔 In the <a href="https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif">JavaScript event loop</a>, can’t we also use methods native to the browser such as <code>setTimeout</code> to create some sort of asynchronous behavior?</p>
+<p>Yes! However, within the Event Loop, there are actually two types of queues: the (macro)task queue (or just called the task queue), and the microtask queue. The (macro)task queue is for (macro)tasks and the microtask queue is for microtasks.</p>
+<p>So what’s a <em>(macro)task</em> and what’s a <em>microtask</em>? Although there are a few more than I’ll cover here, the most common are shown in the table below!</p>
+<div class="line-block">(Macro)task | <code>setTimeout</code> | <code>setInterval</code> | <code>setImmediate</code> |<br />
+Microtask | <code>process.nextTick</code> | <code>Promise callback</code> | <code>queueMicrotask</code> |</div>
+<p>Ahh, we see <code>Promise</code> in the microtask list! 😃 When a <code>Promise</code> resolves and calls its <code>then()</code>, <code>catch()</code> or <code>finally()</code>, method, the callback within the method gets added to the microtask queue! This means that the callback within the <code>then()</code>, <code>catch()</code> or <code>finally()</code> method isn’t executed immediately, essentially adding some async behavior to our JavaScript code!</p>
+<p>So when <em>is</em> a <code>then()</code>, <code>catch()</code> or <code>finally()</code> callback executed? The event loop gives a different priority to the tasks:</p>
+<ol type="1">
+<li>All functions in that are currently in the call stack get executed. When they returned a value, they get popped off the stack.</li>
+<li>When the call stack is empty, <em>all</em> queued up microtasks are popped onto the callstack one by one, and get executed! (Microtasks themselves can also return new microtasks, effectively creating an infinite microtask loop 😬)</li>
+<li>If both the call stack and microtask queue are empty, the event loop checks if there are tasks left on the (macro)task queue. The tasks get popped onto the callstack, executed, and popped off!</li>
+</ol>
+<hr />
+<p>Let’s take a look at a quick example, simply using:</p>
+<ul>
+<li><code>Task1</code>: a function that’s added to the call stack immediately, for example by invoking it instantly in our code.</li>
+<li><code>Task2</code>, <code>Task3</code>, <code>Task4</code>: microtasks, for example a promise <code>then</code> callback, or a task added with <code>queueMicrotask</code>.</li>
+<li><code>Task5</code>, <code>Task6</code>: a (macro)task, for example a <code>setTimeout</code> or <code>setImmediate</code> callback</li>
+</ul>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--05Fi8vBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/42eatw03fcha0e1qcrf0.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--05Fi8vBq--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/42eatw03fcha0e1qcrf0.gif" /></a></p>
+<p>First, <code>Task1</code> returned a value and got popped off the call stack. Then, the engine checked for tasks queued in the microtask queue. Once all the tasks were put on the call stack and eventually popped off, the engine checked for tasks on the (macro)task queue, which got popped onto the call stack, and popped off when they returned a value.</p>
+<p>Okay okay enough pink boxes. Let’s use it with some real code!</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--fnbqqf1d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/g61wwyi8wchk2hpzeq4u.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--fnbqqf1d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/g61wwyi8wchk2hpzeq4u.png" /></a></p>
+<p>In this code, we have the macro task <code>setTimeout</code>, and the microtask promise <code>then()</code> callback. Once the engine reaches the line of the <code>setTimeout</code> function. Let’s run this code step-by-step, and see what gets logged!</p>
+<hr />
+<blockquote>
+<p>Quick FYI - in the following examples I’m showing methods like <code>console.log</code>, <code>setTimeout</code> and <code>Promise.resolve</code> being added to the call stack. They’re internal methods and actually don’t appear in stack traces - so don’t worry if you’re using the debugger and you don’t see them anywhere! It just makes explaining this concept easier without adding a bunch of boilerplate code 🙂</p>
+</blockquote>
+<p>On the first line, the engine encounters the <code>console.log()</code> method. It gets added to the call stack, after which it logs the value <code>Start!</code> to the console. The method gets popped off the call stack, and the engine continues.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s---Bt6DKsn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6cbjuexvy6z9ltk0bi18.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---Bt6DKsn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6cbjuexvy6z9ltk0bi18.gif" /></a></p>
+<p>The engine encounters the <code>setTimeout</code> method, which gets popped on to the call stack. The <code>setTimeout</code> method is native to the browser: its callback function (<code>() =&gt; console.log('In timeout')</code>) will get added to the Web API, until the timer is done. Although we provided the value <code>0</code> for the timer, the call back still gets pushed to the Web API first, after which it gets added to the (macro)task queue: <code>setTimeout</code> is a macro task!</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--6NSYq-nO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/yqoemb6f32lvovge8yrp.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--6NSYq-nO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/yqoemb6f32lvovge8yrp.gif" /></a></p>
+<hr />
+<p>The engine encounters the <code>Promise.resolve()</code> method. The <code>Promise.resolve()</code> method gets added to the call stack, after which is resolves with the value <code>Promise!</code>. Its <code>then</code> callback function gets added to the microtask queue.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--us8FF30N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6wxjxduh62fqt531e2rc.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--us8FF30N--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/6wxjxduh62fqt531e2rc.gif" /></a></p>
+<hr />
+<p>The engine encounters the <code>console.log()</code> method. It gets added to the call stack immediately, after which it logs the value <code>End!</code> to the console, gets popped off the call stack, and the engine continues.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--oOS_-CiG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/a6jk0exl137yka3oq9k4.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oOS_-CiG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/a6jk0exl137yka3oq9k4.gif" /></a></p>
+<p>The engine sees the callstack is empty now. Since the call stack is empty, it’s going to check whether there are queued tasks in the microtask queue! And yes there are, the promise <code>then</code> callback is waiting for its turn! It gets popped onto the call stack, after which it logs the resolved value of the promise: the string <code>Promise!</code>in this case.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5iH5BNWm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/lczn4fca41is4vpicr6w.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5iH5BNWm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/lczn4fca41is4vpicr6w.gif" /></a></p>
+<p>The engine sees the call stack is empty, so it’s going to check the microtask queue once again to see if tasks are queued. Nope, the microtask queue is all empty.</p>
+<p>It’s time to check the (macro)task queue: the <code>setTimeout</code> callback is still waiting there! The <code>setTimeout</code> callback gets popped on to the callstack. The callback function returns the <code>console.log</code> method, which logs the string <code>"In timeout!"</code>. The <code>setTimeout</code> callback get popped off the callstack.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--hPFPTZp2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/p54casaaz9oq0g8ztpi5.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--hPFPTZp2--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/p54casaaz9oq0g8ztpi5.gif" /></a></p>
+<p>Finally, all done! 🥳 It seems like the output we saw earlier wasn’t so unexpected after all.</p>
+<hr />
+<h2 id="asyncawait"><a href="https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke#asyncawait"></a>Async/Await</h2>
+<p>ES7 introduced a new way to add async behavior in JavaScript and make working with promises easier! With the introduction of the <code>async</code> and <code>await</code> keywords, we can create async functions which implicitly return a promise. But.. how can we do that? 😮</p>
+<p>Previously, we saw that we can explicitly create promises using the <code>Promise</code> object, whether it was by typing <code>new Promise(() =&gt; {})</code>, <code>Promise.resolve</code>, or <code>Promise.reject</code>.</p>
+<p>Instead of explicitly using the <code>Promise</code> object, we can now create asynchronous functions that <em>implicitly</em> return an object! This means that we no longer have to write any <code>Promise</code> object ourselves.</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--5ED_HyNC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/72lqrcvy9lc8ehbpitd0.png"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5ED_HyNC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/72lqrcvy9lc8ehbpitd0.png" /></a></p>
+<p>Although the fact that async functions implicitly return promises is pretty great, the real power of <code>async</code> functions can be seen when using the <code>await</code> keyword! With the <code>await</code> keyword, we can <em>suspend</em> the asynchronous function while we wait for the <code>await</code>ed value return a resolved promise. If we want to get the value of this resolved promise, like we previously did with the <code>then()</code> callback, we can assign variables to the <code>await</code>ed promise value!</p>
+<p>So, we can <em>suspend</em> an async function? Okay great but.. what does that even mean?</p>
+<p>Let’s see what happens when we run the following block of code:</p>
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--aOWmZxnV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/e5duygomitj9o455107a.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--aOWmZxnV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/e5duygomitj9o455107a.gif" alt="Alt Text" /></a></p>
+<p>Hmm.. What’s happening here?</p>
+<hr />
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--bfscMU3t--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/d27d7xxiekczftjyic4b.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bfscMU3t--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/d27d7xxiekczftjyic4b.gif" alt="Alt Text" /></a></p>
+<p>First, the engine encounters a <code>console.log</code>. It gets popped onto the call stack, after which <code>Before function!</code> gets logged.</p>
+<hr />
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--wN7yFTnt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9wqej2269vmntfcuxs9t.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wN7yFTnt--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9wqej2269vmntfcuxs9t.gif" alt="Alt Text" /></a></p>
+<p>Then, we invoke the async function <code>myFunc()</code>, after which the function body of <code>myFunc</code> runs. On the very first line within the function body, we call another <code>console.log</code>, this time with the string <code>In function!</code>. The <code>console.log</code> gets added to the call stack, logs the value, and gets popped off.</p>
+<hr />
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--lX9JfreE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/lch6lutxnl88j0durpyh.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--lX9JfreE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/lch6lutxnl88j0durpyh.gif" alt="Alt Text" /></a></p>
+<p>The function body keeps on being executed, which gets us to the second line. Finally, we see an <code>await</code> keyword! 🎉</p>
+<p>The first thing that happens is that the value that gets awaited gets executed: the function <code>one</code> in this case. It gets popped onto the call stack, and eventually returns a resolved promise. Once the promise has resolved and <code>one</code> returned a value, the engine encounters the <code>await</code> keyword.</p>
+<p>When encountering an <code>await</code> keyword, the <code>async</code> function gets <em>suspended</em>. ✋🏼 The execution of the function body gets paused, and the rest of the async function gets run in a <em>microtask</em> instead of a regular task!</p>
+<hr />
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--UC78HoCO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/b6l3psgewvtrtmrr60tg.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--UC78HoCO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/b6l3psgewvtrtmrr60tg.gif" alt="Alt Text" /></a></p>
+<p>Now that the async function <code>myFunc</code> is suspended as it encountered the <code>await</code> keyword, the engine jumps out of the async function and continues executing the code in the execution context in which the async function got called: the global execution context in this case! 🏃🏽‍♀️</p>
+<hr />
+<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--V8u36kEG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/hlhrtuspjyrstifubdhs.gif"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--V8u36kEG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/hlhrtuspjyrstifubdhs.gif" alt="Alt Text" /></a></p>
+<p>Finally, there are no more tasks to run in the global execution context! The event loop checks to see if there are any microtasks queued up: and there are! The async <code>myFunc</code> function is queued up after resolving the valued of <code>one</code>. <code>myFunc</code> gets popped back onto the call stack, and continues running where it previously left off.</p>
+<p>The variable <code>res</code> finally gets its value, namely the value of the resolved promise that <code>one</code> returned! We invoke <code>console.log</code> with the value of <code>res</code>: the string <code>One!</code> in this case. <code>One!</code> gets logged to the console and gets popped off the call stack! 😊</p>
+<p>Finally, all done! Did you notice how <code>async</code> functions are different compared to a promise <code>then</code>? The <code>await</code> keyword <em>suspends</em> the <code>async</code> function, whereas the Promise body would’ve kept on being executed if we would’ve used <code>then</code>!</p>
+</body>
+</html>
