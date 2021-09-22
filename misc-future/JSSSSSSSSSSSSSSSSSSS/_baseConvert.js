@@ -207,7 +207,7 @@ function baseConvert(util, name, func, options) {
   var aryMethodKeys = keys(mapping.aryMethod);
 
   var wrappers = {
-    castArray: function (castArray) {
+    castArray(castArray) {
       return function () {
         var value = arguments[0];
         return isArray(value)
@@ -215,7 +215,7 @@ function baseConvert(util, name, func, options) {
           : castArray.apply(undefined, arguments);
       };
     },
-    iteratee: function (iteratee) {
+    iteratee(iteratee) {
       return function () {
         var func = arguments[0],
           arity = arguments[1],
@@ -229,7 +229,7 @@ function baseConvert(util, name, func, options) {
         return result;
       };
     },
-    mixin: function (mixin) {
+    mixin(mixin) {
       return function (source) {
         var func = this;
         if (!isFunction(func)) {
@@ -255,19 +255,19 @@ function baseConvert(util, name, func, options) {
         return func;
       };
     },
-    nthArg: function (nthArg) {
+    nthArg(nthArg) {
       return function (n) {
         var arity = n < 0 ? 1 : toInteger(n) + 1;
         return curry(nthArg(n), arity);
       };
     },
-    rearg: function (rearg) {
+    rearg(rearg) {
       return function (func, indexes) {
         var arity = indexes ? indexes.length : 0;
         return curry(rearg(func, indexes), arity);
       };
     },
-    runInContext: function (runInContext) {
+    runInContext(runInContext) {
       return function (context) {
         return baseConvert(util, runInContext(context), options);
       };

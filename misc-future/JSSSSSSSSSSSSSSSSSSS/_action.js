@@ -35,5 +35,5 @@ var actionSet = createActions({
    * @param {object} data
    * @param {string} data.name
    */
-  b: function (data) {},
+  b(data) {},
 });
