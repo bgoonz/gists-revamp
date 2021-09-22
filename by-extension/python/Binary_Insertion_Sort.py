@@ -24,3 +24,12 @@ if __name__ == "__main__":
     Test_list = input("Enter the list of Numbers: ").split()
     Test_list = [int(i) for i in Test_list]
     print(f"Binary Insertion Sort: {Insertion_Sort(Test_list)}")
+
+
+
+
+# 1. First, we take a list of numbers from the user.
+# 2. Then, we call the Binary_Search function to find the index of the number to be inserted.
+# 3. Then, we pop the number to be inserted from the list and insert it at the index returned by the Binary_Search function.
+# 4. Finally, we return the sorted list.
+
