@@ -10,14 +10,17 @@ function HTMLDialogElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLDialogElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLDialogElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLDialogElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLDialogElement, "prototype", {
   value: HTMLDialogElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLDialogElement.prototype, "open", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLDialogElement.prototype, "open", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'open' property on 'HTMLDialogElement': The provided value"
+      context:
+        "Failed to set the 'open' property on 'HTMLDialogElement': The provided value",
     });
 
     if (V) {
@@ -46,14 +50,14 @@ Object.defineProperty(HTMLDialogElement.prototype, "open", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLDialogElement.prototype, Symbol.toStringTag, {
   value: "HTMLDialogElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -119,7 +123,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -130,8 +134,8 @@ const iface = {
   },
   interface: HTMLDialogElement,
   expose: {
-    Window: { HTMLDialogElement }
-  }
+    Window: { HTMLDialogElement },
+  },
 }; // iface
 module.exports = iface;
 

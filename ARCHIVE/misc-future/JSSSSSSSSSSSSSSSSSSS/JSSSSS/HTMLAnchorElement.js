@@ -11,14 +11,17 @@ function HTMLAnchorElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLAnchorElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLAnchorElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLAnchorElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLAnchorElement, "prototype", {
   value: HTMLAnchorElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "target", {
@@ -37,14 +40,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "target", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'target' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'target' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("target", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "download", {
@@ -63,14 +67,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "download", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'download' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'download' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("download", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "rel", {
@@ -89,14 +94,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "rel", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'rel' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'rel' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("rel", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "hreflang", {
@@ -115,14 +121,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "hreflang", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'hreflang' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'hreflang' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("hreflang", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "type", {
@@ -141,14 +148,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "text", {
@@ -166,14 +174,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "text", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'text' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'text' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["text"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "coords", {
@@ -192,14 +201,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "coords", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'coords' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'coords' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("coords", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "charset", {
@@ -218,14 +228,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "charset", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'charset' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'charset' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("charset", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "name", {
@@ -244,14 +255,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "rev", {
@@ -270,14 +282,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "rev", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'rev' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'rev' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("rev", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "shape", {
@@ -296,14 +309,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "shape", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'shape' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'shape' property on 'HTMLAnchorElement': The provided value",
     });
 
     this.setAttribute("shape", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "href", {
@@ -321,14 +335,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "href", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'href' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'href' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["href"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 HTMLAnchorElement.prototype.toString = function toString() {
@@ -348,7 +363,7 @@ Object.defineProperty(HTMLAnchorElement.prototype, "origin", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "protocol", {
@@ -366,14 +381,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "protocol", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'protocol' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'protocol' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["protocol"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "username", {
@@ -391,14 +407,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "username", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'username' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'username' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["username"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "password", {
@@ -416,14 +433,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "password", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'password' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'password' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["password"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "host", {
@@ -441,14 +459,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "host", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'host' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'host' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["host"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "hostname", {
@@ -466,14 +485,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "hostname", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'hostname' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'hostname' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["hostname"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "port", {
@@ -491,14 +511,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "port", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'port' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'port' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["port"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "pathname", {
@@ -516,14 +537,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "pathname", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'pathname' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'pathname' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["pathname"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "search", {
@@ -541,14 +563,15 @@ Object.defineProperty(HTMLAnchorElement.prototype, "search", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'search' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'search' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["search"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, "hash", {
@@ -566,21 +589,22 @@ Object.defineProperty(HTMLAnchorElement.prototype, "hash", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'hash' property on 'HTMLAnchorElement': The provided value"
+      context:
+        "Failed to set the 'hash' property on 'HTMLAnchorElement': The provided value",
     });
 
     this[impl]["hash"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAnchorElement.prototype, Symbol.toStringTag, {
   value: "HTMLAnchorElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -646,7 +670,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -657,8 +681,8 @@ const iface = {
   },
   interface: HTMLAnchorElement,
   expose: {
-    Window: { HTMLAnchorElement }
-  }
+    Window: { HTMLAnchorElement },
+  },
 }; // iface
 module.exports = iface;
 

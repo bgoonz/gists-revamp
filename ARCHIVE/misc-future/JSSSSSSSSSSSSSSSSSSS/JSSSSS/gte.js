@@ -1,4 +1,4 @@
-var createRelationalOperation = require('./_createRelationalOperation');
+var createRelationalOperation = require("./_createRelationalOperation");
 
 /**
  * Checks if `value` is greater than or equal to `other`.
@@ -23,7 +23,7 @@ var createRelationalOperation = require('./_createRelationalOperation');
  * _.gte(1, 3);
  * // => false
  */
-var gte = createRelationalOperation(function(value, other) {
+var gte = createRelationalOperation(function (value, other) {
   return value >= other;
 });
 

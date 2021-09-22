@@ -13,7 +13,7 @@ Object.defineProperty(GlobalEventHandlers, "prototype", {
   value: GlobalEventHandlers.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onabort", {
@@ -36,7 +36,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onabort", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onauxclick", {
@@ -59,7 +59,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onauxclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onblur", {
@@ -82,7 +82,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onblur", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "oncancel", {
@@ -105,7 +105,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "oncancel", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "oncanplay", {
@@ -128,7 +128,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "oncanplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "oncanplaythrough", {
@@ -151,7 +151,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "oncanplaythrough", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onchange", {
@@ -174,7 +174,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onclick", {
@@ -197,7 +197,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onclose", {
@@ -220,7 +220,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onclose", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "oncontextmenu", {
@@ -243,7 +243,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "oncontextmenu", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "oncuechange", {
@@ -266,7 +266,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "oncuechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondblclick", {
@@ -289,7 +289,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondblclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondrag", {
@@ -312,7 +312,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondrag", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondragend", {
@@ -335,7 +335,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondragend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondragenter", {
@@ -358,7 +358,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondragenter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondragexit", {
@@ -381,7 +381,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondragexit", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondragleave", {
@@ -404,7 +404,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondragleave", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondragover", {
@@ -427,7 +427,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondragover", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondragstart", {
@@ -450,7 +450,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondragstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondrop", {
@@ -473,7 +473,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondrop", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ondurationchange", {
@@ -496,7 +496,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ondurationchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onemptied", {
@@ -519,7 +519,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onemptied", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onended", {
@@ -542,7 +542,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onended", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onerror", {
@@ -565,7 +565,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onfocus", {
@@ -588,7 +588,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onfocus", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "oninput", {
@@ -611,7 +611,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "oninput", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "oninvalid", {
@@ -634,7 +634,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "oninvalid", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onkeydown", {
@@ -657,7 +657,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onkeydown", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onkeypress", {
@@ -680,7 +680,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onkeypress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onkeyup", {
@@ -703,7 +703,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onkeyup", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onload", {
@@ -726,7 +726,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onloadeddata", {
@@ -749,7 +749,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onloadeddata", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onloadedmetadata", {
@@ -772,7 +772,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onloadedmetadata", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onloadend", {
@@ -795,7 +795,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onloadend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onloadstart", {
@@ -818,7 +818,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onloadstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onmousedown", {
@@ -841,7 +841,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onmousedown", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onmouseenter", {
@@ -856,7 +856,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onmouseenter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onmouseleave", {
@@ -871,7 +871,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onmouseleave", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onmousemove", {
@@ -894,7 +894,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onmousemove", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onmouseout", {
@@ -917,7 +917,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onmouseout", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onmouseover", {
@@ -940,7 +940,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onmouseover", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onmouseup", {
@@ -963,7 +963,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onmouseup", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onwheel", {
@@ -986,7 +986,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onwheel", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onpause", {
@@ -1009,7 +1009,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onpause", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onplay", {
@@ -1032,7 +1032,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onplaying", {
@@ -1055,7 +1055,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onplaying", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onprogress", {
@@ -1078,7 +1078,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onprogress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onratechange", {
@@ -1101,7 +1101,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onratechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onreset", {
@@ -1124,7 +1124,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onreset", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onresize", {
@@ -1147,7 +1147,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onresize", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onscroll", {
@@ -1170,31 +1170,35 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onscroll", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
-Object.defineProperty(GlobalEventHandlers.prototype, "onsecuritypolicyviolation", {
-  get() {
-    if (!this || !module.exports.is(this)) {
-      throw new TypeError("Illegal invocation");
-    }
+Object.defineProperty(
+  GlobalEventHandlers.prototype,
+  "onsecuritypolicyviolation",
+  {
+    get() {
+      if (!this || !module.exports.is(this)) {
+        throw new TypeError("Illegal invocation");
+      }
 
-    return utils.tryWrapperForImpl(this[impl]["onsecuritypolicyviolation"]);
-  },
+      return utils.tryWrapperForImpl(this[impl]["onsecuritypolicyviolation"]);
+    },
 
-  set(V) {
-    if (!this || !module.exports.is(this)) {
-      throw new TypeError("Illegal invocation");
-    }
+    set(V) {
+      if (!this || !module.exports.is(this)) {
+        throw new TypeError("Illegal invocation");
+      }
 
-    V = utils.tryImplForWrapper(V);
+      V = utils.tryImplForWrapper(V);
 
-    this[impl]["onsecuritypolicyviolation"] = V;
-  },
+      this[impl]["onsecuritypolicyviolation"] = V;
+    },
 
-  enumerable: true,
-  configurable: true
-});
+    enumerable: true,
+    configurable: true,
+  }
+);
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onseeked", {
   get() {
@@ -1216,7 +1220,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onseeked", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onseeking", {
@@ -1239,7 +1243,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onseeking", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onselect", {
@@ -1262,7 +1266,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onselect", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onstalled", {
@@ -1285,7 +1289,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onstalled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onsubmit", {
@@ -1308,7 +1312,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onsubmit", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onsuspend", {
@@ -1331,7 +1335,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onsuspend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ontimeupdate", {
@@ -1354,7 +1358,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ontimeupdate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "ontoggle", {
@@ -1377,7 +1381,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "ontoggle", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onvolumechange", {
@@ -1400,7 +1404,7 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onvolumechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, "onwaiting", {
@@ -1423,14 +1427,14 @@ Object.defineProperty(GlobalEventHandlers.prototype, "onwaiting", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(GlobalEventHandlers.prototype, Symbol.toStringTag, {
   value: "GlobalEventHandlers",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -1494,7 +1498,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -1504,7 +1508,7 @@ const iface = {
     return obj;
   },
   interface: GlobalEventHandlers,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

@@ -10,14 +10,17 @@ function HTMLButtonElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLButtonElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLButtonElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLButtonElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLButtonElement, "prototype", {
   value: HTMLButtonElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLButtonElement.prototype.checkValidity = function checkValidity() {
@@ -36,7 +39,9 @@ HTMLButtonElement.prototype.reportValidity = function reportValidity() {
   return this[impl].reportValidity();
 };
 
-HTMLButtonElement.prototype.setCustomValidity = function setCustomValidity(error) {
+HTMLButtonElement.prototype.setCustomValidity = function setCustomValidity(
+  error
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -52,7 +57,8 @@ HTMLButtonElement.prototype.setCustomValidity = function setCustomValidity(error
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setCustomValidity' on 'HTMLButtonElement': parameter 1"
+      context:
+        "Failed to execute 'setCustomValidity' on 'HTMLButtonElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -74,7 +80,8 @@ Object.defineProperty(HTMLButtonElement.prototype, "autofocus", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'autofocus' property on 'HTMLButtonElement': The provided value"
+      context:
+        "Failed to set the 'autofocus' property on 'HTMLButtonElement': The provided value",
     });
 
     if (V) {
@@ -85,7 +92,7 @@ Object.defineProperty(HTMLButtonElement.prototype, "autofocus", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "disabled", {
@@ -103,7 +110,8 @@ Object.defineProperty(HTMLButtonElement.prototype, "disabled", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'disabled' property on 'HTMLButtonElement': The provided value"
+      context:
+        "Failed to set the 'disabled' property on 'HTMLButtonElement': The provided value",
     });
 
     if (V) {
@@ -114,7 +122,7 @@ Object.defineProperty(HTMLButtonElement.prototype, "disabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "form", {
@@ -127,7 +135,7 @@ Object.defineProperty(HTMLButtonElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "formNoValidate", {
@@ -145,7 +153,8 @@ Object.defineProperty(HTMLButtonElement.prototype, "formNoValidate", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'formNoValidate' property on 'HTMLButtonElement': The provided value"
+      context:
+        "Failed to set the 'formNoValidate' property on 'HTMLButtonElement': The provided value",
     });
 
     if (V) {
@@ -156,7 +165,7 @@ Object.defineProperty(HTMLButtonElement.prototype, "formNoValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "formTarget", {
@@ -175,14 +184,15 @@ Object.defineProperty(HTMLButtonElement.prototype, "formTarget", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'formTarget' property on 'HTMLButtonElement': The provided value"
+      context:
+        "Failed to set the 'formTarget' property on 'HTMLButtonElement': The provided value",
     });
 
     this.setAttribute("formTarget", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "name", {
@@ -201,14 +211,15 @@ Object.defineProperty(HTMLButtonElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLButtonElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLButtonElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "type", {
@@ -226,14 +237,15 @@ Object.defineProperty(HTMLButtonElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLButtonElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLButtonElement': The provided value",
     });
 
     this[impl]["type"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "value", {
@@ -252,14 +264,15 @@ Object.defineProperty(HTMLButtonElement.prototype, "value", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'value' property on 'HTMLButtonElement': The provided value"
+      context:
+        "Failed to set the 'value' property on 'HTMLButtonElement': The provided value",
     });
 
     this.setAttribute("value", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "willValidate", {
@@ -272,7 +285,7 @@ Object.defineProperty(HTMLButtonElement.prototype, "willValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "validity", {
@@ -285,7 +298,7 @@ Object.defineProperty(HTMLButtonElement.prototype, "validity", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "validationMessage", {
@@ -298,7 +311,7 @@ Object.defineProperty(HTMLButtonElement.prototype, "validationMessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, "labels", {
@@ -311,14 +324,14 @@ Object.defineProperty(HTMLButtonElement.prototype, "labels", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLButtonElement.prototype, Symbol.toStringTag, {
   value: "HTMLButtonElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -384,7 +397,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -395,8 +408,8 @@ const iface = {
   },
   interface: HTMLButtonElement,
   expose: {
-    Window: { HTMLButtonElement }
-  }
+    Window: { HTMLButtonElement },
+  },
 }; // iface
 module.exports = iface;
 

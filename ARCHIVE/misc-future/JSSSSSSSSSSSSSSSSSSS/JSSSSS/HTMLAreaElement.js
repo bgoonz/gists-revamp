@@ -11,14 +11,17 @@ function HTMLAreaElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLAreaElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLAreaElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLAreaElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLAreaElement, "prototype", {
   value: HTMLAreaElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "alt", {
@@ -37,14 +40,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "alt", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'alt' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'alt' property on 'HTMLAreaElement': The provided value",
     });
 
     this.setAttribute("alt", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "coords", {
@@ -63,14 +67,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "coords", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'coords' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'coords' property on 'HTMLAreaElement': The provided value",
     });
 
     this.setAttribute("coords", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "shape", {
@@ -89,14 +94,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "shape", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'shape' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'shape' property on 'HTMLAreaElement': The provided value",
     });
 
     this.setAttribute("shape", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "target", {
@@ -115,14 +121,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "target", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'target' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'target' property on 'HTMLAreaElement': The provided value",
     });
 
     this.setAttribute("target", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "rel", {
@@ -141,14 +148,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "rel", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'rel' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'rel' property on 'HTMLAreaElement': The provided value",
     });
 
     this.setAttribute("rel", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "noHref", {
@@ -166,7 +174,8 @@ Object.defineProperty(HTMLAreaElement.prototype, "noHref", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'noHref' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'noHref' property on 'HTMLAreaElement': The provided value",
     });
 
     if (V) {
@@ -177,7 +186,7 @@ Object.defineProperty(HTMLAreaElement.prototype, "noHref", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "href", {
@@ -195,14 +204,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "href", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'href' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'href' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["href"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 HTMLAreaElement.prototype.toString = function toString() {
@@ -222,7 +232,7 @@ Object.defineProperty(HTMLAreaElement.prototype, "origin", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "protocol", {
@@ -240,14 +250,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "protocol", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'protocol' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'protocol' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["protocol"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "username", {
@@ -265,14 +276,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "username", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'username' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'username' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["username"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "password", {
@@ -290,14 +302,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "password", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'password' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'password' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["password"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "host", {
@@ -315,14 +328,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "host", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'host' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'host' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["host"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "hostname", {
@@ -340,14 +354,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "hostname", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'hostname' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'hostname' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["hostname"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "port", {
@@ -365,14 +380,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "port", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'port' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'port' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["port"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "pathname", {
@@ -390,14 +406,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "pathname", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'pathname' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'pathname' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["pathname"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "search", {
@@ -415,14 +432,15 @@ Object.defineProperty(HTMLAreaElement.prototype, "search", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'search' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'search' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["search"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, "hash", {
@@ -440,21 +458,22 @@ Object.defineProperty(HTMLAreaElement.prototype, "hash", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'hash' property on 'HTMLAreaElement': The provided value"
+      context:
+        "Failed to set the 'hash' property on 'HTMLAreaElement': The provided value",
     });
 
     this[impl]["hash"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLAreaElement.prototype, Symbol.toStringTag, {
   value: "HTMLAreaElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -520,7 +539,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -531,8 +550,8 @@ const iface = {
   },
   interface: HTMLAreaElement,
   expose: {
-    Window: { HTMLAreaElement }
-  }
+    Window: { HTMLAreaElement },
+  },
 }; // iface
 module.exports = iface;
 

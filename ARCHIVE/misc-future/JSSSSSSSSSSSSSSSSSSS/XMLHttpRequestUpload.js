@@ -10,21 +10,27 @@ function XMLHttpRequestUpload() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(XMLHttpRequestUpload.prototype, XMLHttpRequestEventTarget.interface.prototype);
-Object.setPrototypeOf(XMLHttpRequestUpload, XMLHttpRequestEventTarget.interface);
+Object.setPrototypeOf(
+  XMLHttpRequestUpload.prototype,
+  XMLHttpRequestEventTarget.interface.prototype
+);
+Object.setPrototypeOf(
+  XMLHttpRequestUpload,
+  XMLHttpRequestEventTarget.interface
+);
 
 Object.defineProperty(XMLHttpRequestUpload, "prototype", {
   value: XMLHttpRequestUpload.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(XMLHttpRequestUpload.prototype, Symbol.toStringTag, {
   value: "XMLHttpRequestUpload",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +96,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -103,8 +109,8 @@ const iface = {
   expose: {
     Window: { XMLHttpRequestUpload },
     DedicatedWorker: { XMLHttpRequestUpload },
-    SharedWorker: { XMLHttpRequestUpload }
-  }
+    SharedWorker: { XMLHttpRequestUpload },
+  },
 }; // iface
 module.exports = iface;
 

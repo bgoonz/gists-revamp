@@ -17,7 +17,7 @@ Object.defineProperty(HTMLBRElement, "prototype", {
   value: HTMLBRElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLBRElement.prototype, "clear", {
@@ -36,21 +36,22 @@ Object.defineProperty(HTMLBRElement.prototype, "clear", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'clear' property on 'HTMLBRElement': The provided value"
+      context:
+        "Failed to set the 'clear' property on 'HTMLBRElement': The provided value",
     });
 
     this.setAttribute("clear", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBRElement.prototype, Symbol.toStringTag, {
   value: "HTMLBRElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +117,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +128,8 @@ const iface = {
   },
   interface: HTMLBRElement,
   expose: {
-    Window: { HTMLBRElement }
-  }
+    Window: { HTMLBRElement },
+  },
 }; // iface
 module.exports = iface;
 

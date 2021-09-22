@@ -6,14 +6,14 @@
 "use strict";
 
 const ACCEPTABLE_PARENTS = [
-    "AssignmentExpression",
-    "VariableDeclarator",
-    "MemberExpression",
-    "ExpressionStatement",
-    "CallExpression",
-    "ConditionalExpression",
-    "Program",
-    "VariableDeclaration"
+  "AssignmentExpression",
+  "VariableDeclarator",
+  "MemberExpression",
+  "ExpressionStatement",
+  "CallExpression",
+  "ConditionalExpression",
+  "Program",
+  "VariableDeclaration",
 ];
 
 /**
@@ -23,15 +23,17 @@ const ACCEPTABLE_PARENTS = [
  * @returns {Reference|null} Returns the found reference or null if none were found.
  */
 function findReference(scope, node) {
-    const references = scope.references.filter(reference => reference.identifier.range[0] === node.range[0] &&
-            reference.identifier.range[1] === node.range[1]);
+  const references = scope.references.filter(
+    (reference) =>
+      reference.identifier.range[0] === node.range[0] &&
+      reference.identifier.range[1] === node.range[1]
+  );
 
-    /* istanbul ignore else: correctly returns null */
-    if (references.length === 1) {
-        return references[0];
-    }
-    return null;
-
+  /* istanbul ignore else: correctly returns null */
+  if (references.length === 1) {
+    return references[0];
+  }
+  return null;
 }
 
 /**
@@ -41,41 +43,47 @@ function findReference(scope, node) {
  * @returns {boolean} Whether or not the name is shadowed.
  */
 function isShadowed(scope, node) {
-    const reference = findReference(scope, node);
+  const reference = findReference(scope, node);
 
-    return reference && reference.resolved && reference.resolved.defs.length > 0;
+  return reference && reference.resolved && reference.resolved.defs.length > 0;
 }
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "require `require()` calls to be placed at top-level module scope",
-            category: "Node.js and CommonJS",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/global-require"
-        },
-
-        schema: [],
-        messages: {
-            unexpected: "Unexpected require()."
-        }
+    docs: {
+      description:
+        "require `require()` calls to be placed at top-level module scope",
+      category: "Node.js and CommonJS",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/global-require",
     },
 
-    create(context) {
-        return {
-            CallExpression(node) {
-                const currentScope = context.getScope();
+    schema: [],
+    messages: {
+      unexpected: "Unexpected require().",
+    },
+  },
 
-                if (node.callee.name === "require" && !isShadowed(currentScope, node.callee)) {
-                    const isGoodRequire = context.getAncestors().every(parent => ACCEPTABLE_PARENTS.indexOf(parent.type) > -1);
+  create(context) {
+    return {
+      CallExpression(node) {
+        const currentScope = context.getScope();
 
-                    if (!isGoodRequire) {
-                        context.report({ node, messageId: "unexpected" });
-                    }
-                }
-            }
-        };
-    }
+        if (
+          node.callee.name === "require" &&
+          !isShadowed(currentScope, node.callee)
+        ) {
+          const isGoodRequire = context
+            .getAncestors()
+            .every((parent) => ACCEPTABLE_PARENTS.indexOf(parent.type) > -1);
+
+          if (!isGoodRequire) {
+            context.report({ node, messageId: "unexpected" });
+          }
+        }
+      },
+    };
+  },
 };

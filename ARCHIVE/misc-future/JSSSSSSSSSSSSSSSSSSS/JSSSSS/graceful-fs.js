@@ -1,58 +1,59 @@
-var fs = require('fs')
-var polyfills = require('./polyfills.js')
-var legacy = require('./legacy-streams.js')
-var clone = require('./clone.js')
+var fs = require("fs");
+var polyfills = require("./polyfills.js");
+var legacy = require("./legacy-streams.js");
+var clone = require("./clone.js");
 
-var queue = []
+var queue = [];
 
-var util = require('util')
+var util = require("util");
 
-function noop () {}
+function noop() {}
 
-var debug = noop
-if (util.debuglog)
-  debug = util.debuglog('gfs4')
-else if (/\bgfs4\b/i.test(process.env.NODE_DEBUG || ''))
-  debug = function() {
-    var m = util.format.apply(util, arguments)
-    m = 'GFS4: ' + m.split(/\n/).join('\nGFS4: ')
-    console.error(m)
-  }
+var debug = noop;
+if (util.debuglog) debug = util.debuglog("gfs4");
+else if (/\bgfs4\b/i.test(process.env.NODE_DEBUG || ""))
+  debug = function () {
+    var m = util.format.apply(util, arguments);
+    m = "GFS4: " + m.split(/\n/).join("\nGFS4: ");
+    console.error(m);
+  };
 
-if (/\bgfs4\b/i.test(process.env.NODE_DEBUG || '')) {
-  process.on('exit', function() {
-    debug(queue)
-    require('assert').equal(queue.length, 0)
-  })
+if (/\bgfs4\b/i.test(process.env.NODE_DEBUG || "")) {
+  process.on("exit", function () {
+    debug(queue);
+    require("assert").equal(queue.length, 0);
+  });
 }
 
-module.exports = patch(clone(fs))
+module.exports = patch(clone(fs));
 if (process.env.TEST_GRACEFUL_FS_GLOBAL_PATCH && !fs.__patched) {
-    module.exports = patch(fs)
-    fs.__patched = true;
+  module.exports = patch(fs);
+  fs.__patched = true;
 }
 
 // Always patch fs.close/closeSync, because we want to
 // retry() whenever a close happens *anywhere* in the program.
 // This is essential when multiple graceful-fs instances are
 // in play at the same time.
-module.exports.close = (function (fs$close) { return function (fd, cb) {
-  return fs$close.call(fs, fd, function (err) {
-    if (!err)
-      retry()
+module.exports.close = (function (fs$close) {
+  return function (fd, cb) {
+    return fs$close.call(fs, fd, function (err) {
+      if (!err) retry();
 
-    if (typeof cb === 'function')
-      cb.apply(this, arguments)
-  })
-}})(fs.close)
+      if (typeof cb === "function") cb.apply(this, arguments);
+    });
+  };
+})(fs.close);
 
-module.exports.closeSync = (function (fs$closeSync) { return function (fd) {
-  // Note that graceful-fs also retries when fs.closeSync() fails.
-  // Looks like a bug to me, although it's probably a harmless one.
-  var rval = fs$closeSync.apply(fs, arguments)
-  retry()
-  return rval
-}})(fs.closeSync)
+module.exports.closeSync = (function (fs$closeSync) {
+  return function (fd) {
+    // Note that graceful-fs also retries when fs.closeSync() fails.
+    // Looks like a bug to me, although it's probably a harmless one.
+    var rval = fs$closeSync.apply(fs, arguments);
+    retry();
+    return rval;
+  };
+})(fs.closeSync);
 
 // Only patch fs once, otherwise we'll run into a memory leak if
 // graceful-fs is loaded multiple times, such as in test environments that
@@ -65,215 +66,202 @@ if (!/\bgraceful-fs\b/.test(fs.closeSync.toString())) {
   fs.close = module.exports.close;
 }
 
-function patch (fs) {
+function patch(fs) {
   // Everything that references the open() function needs to be in here
-  polyfills(fs)
-  fs.gracefulify = patch
-  fs.FileReadStream = ReadStream;  // Legacy name.
-  fs.FileWriteStream = WriteStream;  // Legacy name.
-  fs.createReadStream = createReadStream
-  fs.createWriteStream = createWriteStream
-  var fs$readFile = fs.readFile
-  fs.readFile = readFile
-  function readFile (path, options, cb) {
-    if (typeof options === 'function')
-      cb = options, options = null
+  polyfills(fs);
+  fs.gracefulify = patch;
+  fs.FileReadStream = ReadStream; // Legacy name.
+  fs.FileWriteStream = WriteStream; // Legacy name.
+  fs.createReadStream = createReadStream;
+  fs.createWriteStream = createWriteStream;
+  var fs$readFile = fs.readFile;
+  fs.readFile = readFile;
+  function readFile(path, options, cb) {
+    if (typeof options === "function") (cb = options), (options = null);
 
-    return go$readFile(path, options, cb)
+    return go$readFile(path, options, cb);
 
-    function go$readFile (path, options, cb) {
+    function go$readFile(path, options, cb) {
       return fs$readFile(path, options, function (err) {
-        if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
-          enqueue([go$readFile, [path, options, cb]])
+        if (err && (err.code === "EMFILE" || err.code === "ENFILE"))
+          enqueue([go$readFile, [path, options, cb]]);
         else {
-          if (typeof cb === 'function')
-            cb.apply(this, arguments)
-          retry()
+          if (typeof cb === "function") cb.apply(this, arguments);
+          retry();
         }
-      })
+      });
     }
   }
 
-  var fs$writeFile = fs.writeFile
-  fs.writeFile = writeFile
-  function writeFile (path, data, options, cb) {
-    if (typeof options === 'function')
-      cb = options, options = null
+  var fs$writeFile = fs.writeFile;
+  fs.writeFile = writeFile;
+  function writeFile(path, data, options, cb) {
+    if (typeof options === "function") (cb = options), (options = null);
 
-    return go$writeFile(path, data, options, cb)
+    return go$writeFile(path, data, options, cb);
 
-    function go$writeFile (path, data, options, cb) {
+    function go$writeFile(path, data, options, cb) {
       return fs$writeFile(path, data, options, function (err) {
-        if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
-          enqueue([go$writeFile, [path, data, options, cb]])
+        if (err && (err.code === "EMFILE" || err.code === "ENFILE"))
+          enqueue([go$writeFile, [path, data, options, cb]]);
         else {
-          if (typeof cb === 'function')
-            cb.apply(this, arguments)
-          retry()
+          if (typeof cb === "function") cb.apply(this, arguments);
+          retry();
         }
-      })
+      });
     }
   }
 
-  var fs$appendFile = fs.appendFile
-  if (fs$appendFile)
-    fs.appendFile = appendFile
-  function appendFile (path, data, options, cb) {
-    if (typeof options === 'function')
-      cb = options, options = null
+  var fs$appendFile = fs.appendFile;
+  if (fs$appendFile) fs.appendFile = appendFile;
+  function appendFile(path, data, options, cb) {
+    if (typeof options === "function") (cb = options), (options = null);
 
-    return go$appendFile(path, data, options, cb)
+    return go$appendFile(path, data, options, cb);
 
-    function go$appendFile (path, data, options, cb) {
+    function go$appendFile(path, data, options, cb) {
       return fs$appendFile(path, data, options, function (err) {
-        if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
-          enqueue([go$appendFile, [path, data, options, cb]])
+        if (err && (err.code === "EMFILE" || err.code === "ENFILE"))
+          enqueue([go$appendFile, [path, data, options, cb]]);
         else {
-          if (typeof cb === 'function')
-            cb.apply(this, arguments)
-          retry()
+          if (typeof cb === "function") cb.apply(this, arguments);
+          retry();
         }
-      })
+      });
     }
   }
 
-  var fs$readdir = fs.readdir
-  fs.readdir = readdir
-  function readdir (path, options, cb) {
-    var args = [path]
-    if (typeof options !== 'function') {
-      args.push(options)
+  var fs$readdir = fs.readdir;
+  fs.readdir = readdir;
+  function readdir(path, options, cb) {
+    var args = [path];
+    if (typeof options !== "function") {
+      args.push(options);
     } else {
-      cb = options
+      cb = options;
     }
-    args.push(go$readdir$cb)
+    args.push(go$readdir$cb);
 
-    return go$readdir(args)
+    return go$readdir(args);
 
-    function go$readdir$cb (err, files) {
-      if (files && files.sort)
-        files.sort()
+    function go$readdir$cb(err, files) {
+      if (files && files.sort) files.sort();
 
-      if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
-        enqueue([go$readdir, [args]])
-
+      if (err && (err.code === "EMFILE" || err.code === "ENFILE"))
+        enqueue([go$readdir, [args]]);
       else {
-        if (typeof cb === 'function')
-          cb.apply(this, arguments)
-        retry()
+        if (typeof cb === "function") cb.apply(this, arguments);
+        retry();
       }
     }
   }
 
-  function go$readdir (args) {
-    return fs$readdir.apply(fs, args)
+  function go$readdir(args) {
+    return fs$readdir.apply(fs, args);
   }
 
-  if (process.version.substr(0, 4) === 'v0.8') {
-    var legStreams = legacy(fs)
-    ReadStream = legStreams.ReadStream
-    WriteStream = legStreams.WriteStream
+  if (process.version.substr(0, 4) === "v0.8") {
+    var legStreams = legacy(fs);
+    ReadStream = legStreams.ReadStream;
+    WriteStream = legStreams.WriteStream;
   }
 
-  var fs$ReadStream = fs.ReadStream
+  var fs$ReadStream = fs.ReadStream;
   if (fs$ReadStream) {
-    ReadStream.prototype = Object.create(fs$ReadStream.prototype)
-    ReadStream.prototype.open = ReadStream$open
+    ReadStream.prototype = Object.create(fs$ReadStream.prototype);
+    ReadStream.prototype.open = ReadStream$open;
   }
 
-  var fs$WriteStream = fs.WriteStream
+  var fs$WriteStream = fs.WriteStream;
   if (fs$WriteStream) {
-    WriteStream.prototype = Object.create(fs$WriteStream.prototype)
-    WriteStream.prototype.open = WriteStream$open
+    WriteStream.prototype = Object.create(fs$WriteStream.prototype);
+    WriteStream.prototype.open = WriteStream$open;
   }
 
-  fs.ReadStream = ReadStream
-  fs.WriteStream = WriteStream
+  fs.ReadStream = ReadStream;
+  fs.WriteStream = WriteStream;
 
-  function ReadStream (path, options) {
+  function ReadStream(path, options) {
     if (this instanceof ReadStream)
-      return fs$ReadStream.apply(this, arguments), this
+      return fs$ReadStream.apply(this, arguments), this;
     else
-      return ReadStream.apply(Object.create(ReadStream.prototype), arguments)
+      return ReadStream.apply(Object.create(ReadStream.prototype), arguments);
   }
 
-  function ReadStream$open () {
-    var that = this
+  function ReadStream$open() {
+    var that = this;
     open(that.path, that.flags, that.mode, function (err, fd) {
       if (err) {
-        if (that.autoClose)
-          that.destroy()
+        if (that.autoClose) that.destroy();
 
-        that.emit('error', err)
+        that.emit("error", err);
       } else {
-        that.fd = fd
-        that.emit('open', fd)
-        that.read()
+        that.fd = fd;
+        that.emit("open", fd);
+        that.read();
       }
-    })
+    });
   }
 
-  function WriteStream (path, options) {
+  function WriteStream(path, options) {
     if (this instanceof WriteStream)
-      return fs$WriteStream.apply(this, arguments), this
+      return fs$WriteStream.apply(this, arguments), this;
     else
-      return WriteStream.apply(Object.create(WriteStream.prototype), arguments)
+      return WriteStream.apply(Object.create(WriteStream.prototype), arguments);
   }
 
-  function WriteStream$open () {
-    var that = this
+  function WriteStream$open() {
+    var that = this;
     open(that.path, that.flags, that.mode, function (err, fd) {
       if (err) {
-        that.destroy()
-        that.emit('error', err)
+        that.destroy();
+        that.emit("error", err);
       } else {
-        that.fd = fd
-        that.emit('open', fd)
+        that.fd = fd;
+        that.emit("open", fd);
       }
-    })
+    });
   }
 
-  function createReadStream (path, options) {
-    return new ReadStream(path, options)
+  function createReadStream(path, options) {
+    return new ReadStream(path, options);
   }
 
-  function createWriteStream (path, options) {
-    return new WriteStream(path, options)
+  function createWriteStream(path, options) {
+    return new WriteStream(path, options);
   }
 
-  var fs$open = fs.open
-  fs.open = open
-  function open (path, flags, mode, cb) {
-    if (typeof mode === 'function')
-      cb = mode, mode = null
+  var fs$open = fs.open;
+  fs.open = open;
+  function open(path, flags, mode, cb) {
+    if (typeof mode === "function") (cb = mode), (mode = null);
 
-    return go$open(path, flags, mode, cb)
+    return go$open(path, flags, mode, cb);
 
-    function go$open (path, flags, mode, cb) {
+    function go$open(path, flags, mode, cb) {
       return fs$open(path, flags, mode, function (err, fd) {
-        if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
-          enqueue([go$open, [path, flags, mode, cb]])
+        if (err && (err.code === "EMFILE" || err.code === "ENFILE"))
+          enqueue([go$open, [path, flags, mode, cb]]);
         else {
-          if (typeof cb === 'function')
-            cb.apply(this, arguments)
-          retry()
+          if (typeof cb === "function") cb.apply(this, arguments);
+          retry();
         }
-      })
+      });
     }
   }
 
-  return fs
+  return fs;
 }
 
-function enqueue (elem) {
-  debug('ENQUEUE', elem[0].name, elem[1])
-  queue.push(elem)
+function enqueue(elem) {
+  debug("ENQUEUE", elem[0].name, elem[1]);
+  queue.push(elem);
 }
 
-function retry () {
-  var elem = queue.shift()
+function retry() {
+  var elem = queue.shift();
   if (elem) {
-    debug('RETRY', elem[0].name, elem[1])
-    elem[0].apply(null, elem[1])
+    debug("RETRY", elem[0].name, elem[1]);
+    elem[0].apply(null, elem[1]);
   }
 }

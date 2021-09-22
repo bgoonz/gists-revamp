@@ -68,8 +68,11 @@ class HTMLButtonElementImpl extends HTMLElementImpl {
   }
 }
 
-mixin(HTMLButtonElementImpl.prototype, DefaultConstraintValidationImpl.prototype);
+mixin(
+  HTMLButtonElementImpl.prototype,
+  DefaultConstraintValidationImpl.prototype
+);
 
 module.exports = {
-  implementation: HTMLButtonElementImpl
+  implementation: HTMLButtonElementImpl,
 };

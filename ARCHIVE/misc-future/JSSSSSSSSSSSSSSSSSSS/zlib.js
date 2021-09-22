@@ -1,6 +1,8 @@
 var zlib = require("zlib");
 var promisify = require("./_promisify.js");
-var bind = function(c, f) { return f && f.bind(c); };
+var bind = function (c, f) {
+  return f && f.bind(c);
+};
 Object.defineProperties(module.exports, {
   DEFLATE: { enumerable: true, value: zlib.DEFLATE },
   DEFLATERAW: { enumerable: true, value: zlib.DEFLATERAW },
@@ -24,7 +26,10 @@ Object.defineProperties(module.exports, {
   Z_BUF_ERROR: { enumerable: true, value: zlib.Z_BUF_ERROR },
   Z_DATA_ERROR: { enumerable: true, value: zlib.Z_DATA_ERROR },
   Z_DEFAULT_CHUNK: { enumerable: true, value: zlib.Z_DEFAULT_CHUNK },
-  Z_DEFAULT_COMPRESSION: { enumerable: true, value: zlib.Z_DEFAULT_COMPRESSION },
+  Z_DEFAULT_COMPRESSION: {
+    enumerable: true,
+    value: zlib.Z_DEFAULT_COMPRESSION,
+  },
   Z_DEFAULT_LEVEL: { enumerable: true, value: zlib.Z_DEFAULT_LEVEL },
   Z_DEFAULT_MEMLEVEL: { enumerable: true, value: zlib.Z_DEFAULT_MEMLEVEL },
   Z_DEFAULT_STRATEGY: { enumerable: true, value: zlib.Z_DEFAULT_STRATEGY },
@@ -56,13 +61,27 @@ Object.defineProperties(module.exports, {
   Z_VERSION_ERROR: { enumerable: true, value: zlib.Z_VERSION_ERROR },
   Zlib: { enumerable: true, value: zlib.Zlib },
   codes: { enumerable: true, value: zlib.codes },
-  constants: { enumerable: true, get: function() { return zlib.constants; }, set: function(v) { zlib.constants = v; } },
+  constants: {
+    enumerable: true,
+    get: function () {
+      return zlib.constants;
+    },
+    set: function (v) {
+      zlib.constants = v;
+    },
+  },
   createDeflate: { enumerable: true, value: bind(zlib, zlib.createDeflate) },
-  createDeflateRaw: { enumerable: true, value: bind(zlib, zlib.createDeflateRaw) },
+  createDeflateRaw: {
+    enumerable: true,
+    value: bind(zlib, zlib.createDeflateRaw),
+  },
   createGunzip: { enumerable: true, value: bind(zlib, zlib.createGunzip) },
   createGzip: { enumerable: true, value: bind(zlib, zlib.createGzip) },
   createInflate: { enumerable: true, value: bind(zlib, zlib.createInflate) },
-  createInflateRaw: { enumerable: true, value: bind(zlib, zlib.createInflateRaw) },
+  createInflateRaw: {
+    enumerable: true,
+    value: bind(zlib, zlib.createInflateRaw),
+  },
   createUnzip: { enumerable: true, value: bind(zlib, zlib.createUnzip) },
   deflate: { enumerable: true, value: promisify(zlib, zlib.deflate, 1) },
   deflateRaw: { enumerable: true, value: promisify(zlib, zlib.deflateRaw, 1) },

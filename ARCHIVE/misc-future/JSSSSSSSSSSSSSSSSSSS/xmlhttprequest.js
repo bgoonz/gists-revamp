@@ -21,13 +21,18 @@ const FormData = require("./generated/FormData");
 const XMLHttpRequestEventTarget = require("./generated/XMLHttpRequestEventTarget");
 const XMLHttpRequestUpload = require("./generated/XMLHttpRequestUpload");
 const { domToHtml } = require("../browser/domtohtml");
-const { setupForSimpleEventAccessors } = require("./helpers/create-event-accessor");
+const {
+  setupForSimpleEventAccessors,
+} = require("./helpers/create-event-accessor");
 const { parseJSONFromBytes } = require("./helpers/json");
 
-const syncWorkerFile = require.resolve ? require.resolve("./xhr-sync-worker.js") : null;
+const syncWorkerFile = require.resolve
+  ? require.resolve("./xhr-sync-worker.js")
+  : null;
 
 const tokenRegexp = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;
-const fieldValueRegexp = /^[ \t]*(?:[\x21-\x7E\x80-\xFF](?:[ \t][\x21-\x7E\x80-\xFF])?)*[ \t]*$/;
+const fieldValueRegexp =
+  /^[ \t]*(?:[\x21-\x7E\x80-\xFF](?:[ \t][\x21-\x7E\x80-\xFF])?)*[ \t]*$/;
 
 const forbiddenRequestHeaders = new Set([
   "accept-charset",
@@ -49,12 +54,9 @@ const forbiddenRequestHeaders = new Set([
   "trailer",
   "transfer-encoding",
   "upgrade",
-  "via"
+  "via",
 ]);
-const forbiddenResponseHeaders = new Set([
-  "set-cookie",
-  "set-cookie2"
-]);
+const forbiddenResponseHeaders = new Set(["set-cookie", "set-cookie2"]);
 const uniqueResponseHeaders = new Set([
   "content-type",
   "content-length",
@@ -67,7 +69,7 @@ const uniqueResponseHeaders = new Set([
   "if-unmodified-since",
   "from",
   "location",
-  "max-forwards"
+  "max-forwards",
 ]);
 const corsSafeResponseHeaders = new Set([
   "cache-control",
@@ -75,11 +77,17 @@ const corsSafeResponseHeaders = new Set([
   "content-type",
   "expires",
   "last-modified",
-  "pragma"
+  "pragma",
 ]);
 
-
-const allowedRequestMethods = new Set(["OPTIONS", "GET", "HEAD", "POST", "PUT", "DELETE"]);
+const allowedRequestMethods = new Set([
+  "OPTIONS",
+  "GET",
+  "HEAD",
+  "POST",
+  "PUT",
+  "DELETE",
+]);
 const forbiddenRequestMethods = new Set(["TRACK", "TRACE", "CONNECT"]);
 
 const XMLHttpRequestResponseType = new Set([
@@ -88,14 +96,15 @@ const XMLHttpRequestResponseType = new Set([
   "blob",
   "document",
   "json",
-  "text"
+  "text",
 ]);
 
 module.exports = function createXMLHttpRequest(window) {
   const { Event, ProgressEvent } = window;
 
   class XMLHttpRequest extends XMLHttpRequestEventTarget.interface {
-    constructor() { // eslint-disable-line constructor-super
+    constructor() {
+      // eslint-disable-line constructor-super
       const theThis = Object.create(new.target.prototype);
       XMLHttpRequestEventTarget.setup(theThis);
       theThis.upload = XMLHttpRequestUpload.create();
@@ -123,7 +132,7 @@ module.exports = function createXMLHttpRequest(window) {
         cookieJar: theThis._ownerDocument._cookieJar,
         encoding: theThis._ownerDocument._encoding,
         origin: theThis._ownerDocument.origin,
-        userAgent: window.navigator.userAgent
+        userAgent: window.navigator.userAgent,
       };
 
       theThis[xhrSymbols.properties] = {
@@ -153,7 +162,7 @@ module.exports = function createXMLHttpRequest(window) {
 
         cookieJar: theThis._ownerDocument._cookieJar,
         bufferStepSize: 1 * 1024 * 1024, // pre-allocate buffer increase step size. init value is 1MB
-        totalReceivedChunkSize: 0
+        totalReceivedChunkSize: 0,
       };
 
       return theThis;
@@ -173,11 +182,20 @@ module.exports = function createXMLHttpRequest(window) {
     }
     set responseType(responseType) {
       const flag = this[xhrSymbols.flag];
-      if (this.readyState === XMLHttpRequest.LOADING || this.readyState === XMLHttpRequest.DONE) {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      if (
+        this.readyState === XMLHttpRequest.LOADING ||
+        this.readyState === XMLHttpRequest.DONE
+      ) {
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
       if (this.readyState === XMLHttpRequest.OPENED && flag.synchronous) {
-        throw new DOMException("The object does not support the operation or argument.", "InvalidAccessError");
+        throw new DOMException(
+          "The object does not support the operation or argument.",
+          "InvalidAccessError"
+        );
       }
       if (!XMLHttpRequestResponseType.has(responseType)) {
         responseType = "";
@@ -191,9 +209,9 @@ module.exports = function createXMLHttpRequest(window) {
       }
       let res = "";
 
-      const responseBuffer = properties.responseBuffer ?
-                             properties.responseBuffer.slice(0, properties.totalReceivedChunkSize) :
-                             null;
+      const responseBuffer = properties.responseBuffer
+        ? properties.responseBuffer.slice(0, properties.totalReceivedChunkSize)
+        : null;
 
       switch (this.responseType) {
         case "":
@@ -205,7 +223,7 @@ module.exports = function createXMLHttpRequest(window) {
           if (!responseBuffer) {
             return null;
           }
-          res = (new Uint8Array(responseBuffer)).buffer;
+          res = new Uint8Array(responseBuffer).buffer;
           break;
         }
         case "blob": {
@@ -215,7 +233,7 @@ module.exports = function createXMLHttpRequest(window) {
           const contentType = finalMIMEType(this);
           res = Blob.create([
             [new Uint8Array(responseBuffer)],
-            { type: contentType || "" }
+            { type: contentType || "" },
           ]);
           break;
         }
@@ -242,23 +260,32 @@ module.exports = function createXMLHttpRequest(window) {
     get responseText() {
       const properties = this[xhrSymbols.properties];
       if (this.responseType !== "" && this.responseType !== "text") {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
-      if (this.readyState !== XMLHttpRequest.LOADING && this.readyState !== XMLHttpRequest.DONE) {
+      if (
+        this.readyState !== XMLHttpRequest.LOADING &&
+        this.readyState !== XMLHttpRequest.DONE
+      ) {
         return "";
       }
       if (properties.responseTextCache) {
         return properties.responseTextCache;
       }
-      const responseBuffer = properties.responseBuffer ?
-                             properties.responseBuffer.slice(0, properties.totalReceivedChunkSize) :
-                             null;
+      const responseBuffer = properties.responseBuffer
+        ? properties.responseBuffer.slice(0, properties.totalReceivedChunkSize)
+        : null;
 
       if (!responseBuffer) {
         return "";
       }
 
-      const fallbackEncoding = finalCharset(this) || whatwgEncoding.getBOMEncoding(responseBuffer) || "UTF-8";
+      const fallbackEncoding =
+        finalCharset(this) ||
+        whatwgEncoding.getBOMEncoding(responseBuffer) ||
+        "UTF-8";
       const res = whatwgEncoding.decode(responseBuffer, fallbackEncoding);
 
       properties.responseTextCache = res;
@@ -268,7 +295,10 @@ module.exports = function createXMLHttpRequest(window) {
       const flag = this[xhrSymbols.flag];
       const properties = this[xhrSymbols.properties];
       if (this.responseType !== "" && this.responseType !== "document") {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
       if (this.readyState !== XMLHttpRequest.DONE) {
         return null;
@@ -276,9 +306,9 @@ module.exports = function createXMLHttpRequest(window) {
       if (properties.responseXMLCache) {
         return properties.responseXMLCache;
       }
-      const responseBuffer = properties.responseBuffer ?
-                             properties.responseBuffer.slice(0, properties.totalReceivedChunkSize) :
-                             null;
+      const responseBuffer = properties.responseBuffer
+        ? properties.responseBuffer.slice(0, properties.totalReceivedChunkSize)
+        : null;
 
       if (!responseBuffer) {
         return null;
@@ -300,20 +330,28 @@ module.exports = function createXMLHttpRequest(window) {
         return null;
       }
 
-      const encoding = finalCharset(this) || whatwgEncoding.getBOMEncoding(responseBuffer) || "UTF-8";
+      const encoding =
+        finalCharset(this) ||
+        whatwgEncoding.getBOMEncoding(responseBuffer) ||
+        "UTF-8";
       const resText = whatwgEncoding.decode(responseBuffer, encoding);
 
       if (!resText) {
         return null;
       }
-      const res = Document.create([], { options: {
-        url: flag.uri,
-        lastModified: new Date(getResponseHeader(this, "last-modified")),
-        parsingMode: isHTML ? "html" : "xml",
-        cookieJar: { setCookieSync: () => undefined, getCookieStringSync: () => "" },
-        encoding,
-        parseOptions: this._ownerDocument._parseOptions
-      } });
+      const res = Document.create([], {
+        options: {
+          url: flag.uri,
+          lastModified: new Date(getResponseHeader(this, "last-modified")),
+          parsingMode: isHTML ? "html" : "xml",
+          cookieJar: {
+            setCookieSync: () => undefined,
+            getCookieStringSync: () => "",
+          },
+          encoding,
+          parseOptions: this._ownerDocument._parseOptions,
+        },
+      });
       const resImpl = idlUtils.implForWrapper(res);
       try {
         resImpl._htmlToDom.appendToDocument(resText, resImpl);
@@ -337,14 +375,17 @@ module.exports = function createXMLHttpRequest(window) {
       const flag = this[xhrSymbols.flag];
       const properties = this[xhrSymbols.properties];
       if (flag.synchronous) {
-        throw new DOMException("The object does not support the operation or argument.", "InvalidAccessError");
+        throw new DOMException(
+          "The object does not support the operation or argument.",
+          "InvalidAccessError"
+        );
       }
       flag.timeout = val;
       clearTimeout(properties.timeoutId);
       if (val > 0 && properties.timeoutFn) {
         properties.timeoutId = setTimeout(
           properties.timeoutFn,
-          Math.max(0, val - ((new Date()).getTime() - properties.timeoutStart))
+          Math.max(0, val - (new Date().getTime() - properties.timeoutStart))
         );
       } else {
         properties.timeoutFn = null;
@@ -357,11 +398,22 @@ module.exports = function createXMLHttpRequest(window) {
     set withCredentials(val) {
       const flag = this[xhrSymbols.flag];
       const properties = this[xhrSymbols.properties];
-      if (!(this.readyState === XMLHttpRequest.UNSENT || this.readyState === XMLHttpRequest.OPENED)) {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      if (
+        !(
+          this.readyState === XMLHttpRequest.UNSENT ||
+          this.readyState === XMLHttpRequest.OPENED
+        )
+      ) {
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
       if (properties.send) {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
       flag.withCredentials = val;
     }
@@ -389,9 +441,11 @@ module.exports = function createXMLHttpRequest(window) {
         return;
       }
 
-      if ((this.readyState === XMLHttpRequest.OPENED && properties.send) ||
-          this.readyState === XMLHttpRequest.HEADERS_RECEIVED ||
-          this.readyState === XMLHttpRequest.LOADING) {
+      if (
+        (this.readyState === XMLHttpRequest.OPENED && properties.send) ||
+        this.readyState === XMLHttpRequest.HEADERS_RECEIVED ||
+        this.readyState === XMLHttpRequest.LOADING
+      ) {
         xhrUtils.requestErrorSteps(this, "abort");
       }
 
@@ -404,23 +458,38 @@ module.exports = function createXMLHttpRequest(window) {
     getAllResponseHeaders() {
       const properties = this[xhrSymbols.properties];
       const { readyState } = this;
-      if (readyState === XMLHttpRequest.UNSENT || readyState === XMLHttpRequest.OPENED) {
+      if (
+        readyState === XMLHttpRequest.UNSENT ||
+        readyState === XMLHttpRequest.OPENED
+      ) {
         return "";
       }
       return Object.keys(properties.responseHeaders)
-        .filter(key => properties.filteredResponseHeaders.indexOf(key) === -1)
-        .map(key => [conversions.ByteString(key).toLowerCase(), properties.responseHeaders[key]].join(": "))
+        .filter((key) => properties.filteredResponseHeaders.indexOf(key) === -1)
+        .map((key) =>
+          [
+            conversions.ByteString(key).toLowerCase(),
+            properties.responseHeaders[key],
+          ].join(": ")
+        )
         .join("\r\n");
     }
 
     getResponseHeader(header) {
       const properties = this[xhrSymbols.properties];
       const { readyState } = this;
-      if (readyState === XMLHttpRequest.UNSENT || readyState === XMLHttpRequest.OPENED) {
+      if (
+        readyState === XMLHttpRequest.UNSENT ||
+        readyState === XMLHttpRequest.OPENED
+      ) {
         return null;
       }
       const lcHeader = conversions.ByteString(header).toLowerCase();
-      if (properties.filteredResponseHeaders.find(filtered => lcHeader === filtered.toLowerCase())) {
+      if (
+        properties.filteredResponseHeaders.find(
+          (filtered) => lcHeader === filtered.toLowerCase()
+        )
+      ) {
         return null;
       }
       return getResponseHeader(this, lcHeader);
@@ -428,7 +497,10 @@ module.exports = function createXMLHttpRequest(window) {
 
     open(method, uri, asynchronous, user, password) {
       if (!this._ownerDocument) {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
       const flag = this[xhrSymbols.flag];
       const properties = this[xhrSymbols.properties];
@@ -447,7 +519,10 @@ module.exports = function createXMLHttpRequest(window) {
       }
 
       if (!tokenRegexp.test(method)) {
-        throw new DOMException("The string did not match the expected pattern.", "SyntaxError");
+        throw new DOMException(
+          "The string did not match the expected pattern.",
+          "SyntaxError"
+        );
       }
       const upperCaseMethod = method.toUpperCase();
       if (forbiddenRequestMethods.has(upperCaseMethod)) {
@@ -468,10 +543,16 @@ module.exports = function createXMLHttpRequest(window) {
         flag.synchronous = false;
       }
       if (flag.responseType && flag.synchronous) {
-        throw new DOMException("The object does not support the operation or argument.", "InvalidAccessError");
+        throw new DOMException(
+          "The object does not support the operation or argument.",
+          "InvalidAccessError"
+        );
       }
       if (flag.synchronous && flag.timeout) {
-        throw new DOMException("The object does not support the operation or argument.", "InvalidAccessError");
+        throw new DOMException(
+          "The object does not support the operation or argument.",
+          "InvalidAccessError"
+        );
       }
       flag.method = method;
 
@@ -479,13 +560,16 @@ module.exports = function createXMLHttpRequest(window) {
       try {
         urlObj = new URL(uri, documentBaseURLSerialized(this._ownerDocument));
       } catch (e) {
-        throw new DOMException("The string did not match the expected pattern.", "SyntaxError");
+        throw new DOMException(
+          "The string did not match the expected pattern.",
+          "SyntaxError"
+        );
       }
 
       if (user || (password && !urlObj.username)) {
         flag.auth = {
           user,
-          pass: password
+          pass: password,
         };
         urlObj.username = "";
         urlObj.password = "";
@@ -508,8 +592,14 @@ module.exports = function createXMLHttpRequest(window) {
       mime = String(mime);
 
       const { readyState } = this;
-      if (readyState === XMLHttpRequest.LOADING || readyState === XMLHttpRequest.DONE) {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      if (
+        readyState === XMLHttpRequest.LOADING ||
+        readyState === XMLHttpRequest.DONE
+      ) {
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
 
       this[xhrSymbols.flag].overrideMIMEType = "application/octet-stream";
@@ -521,7 +611,8 @@ module.exports = function createXMLHttpRequest(window) {
 
         const charset = parsed.parameters.get("charset");
         if (charset) {
-          this[xhrSymbols.flag].overrideCharset = whatwgEncoding.labelToName(charset);
+          this[xhrSymbols.flag].overrideCharset =
+            whatwgEncoding.labelToName(charset);
         }
       }
     }
@@ -531,14 +622,20 @@ module.exports = function createXMLHttpRequest(window) {
 
       // Not per spec, but per tests: https://github.com/whatwg/xhr/issues/65
       if (!this._ownerDocument) {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
 
       const flag = this[xhrSymbols.flag];
       const properties = this[xhrSymbols.properties];
 
       if (this.readyState !== XMLHttpRequest.OPENED || properties.send) {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
 
       properties.beforeSend = true;
@@ -554,7 +651,9 @@ module.exports = function createXMLHttpRequest(window) {
 
           if (Document.isImpl(body)) {
             encoding = "UTF-8";
-            mimeType = (body._parsingMode === "html" ? "text/html" : "application/xml") + ";charset=UTF-8";
+            mimeType =
+              (body._parsingMode === "html" ? "text/html" : "application/xml") +
+              ";charset=UTF-8";
             flag.body = domToHtml([body]);
           } else {
             if (typeof body === "string") {
@@ -566,7 +665,10 @@ module.exports = function createXMLHttpRequest(window) {
             flag.formData = Boolean(formData);
           }
 
-          const existingContentType = xhrUtils.getRequestHeader(flag.requestHeaders, "content-type");
+          const existingContentType = xhrUtils.getRequestHeader(
+            flag.requestHeaders,
+            "content-type"
+          );
           if (mimeType !== null && existingContentType === null) {
             flag.requestHeaders["Content-Type"] = mimeType;
           } else if (existingContentType !== null && encoding !== null) {
@@ -575,10 +677,18 @@ module.exports = function createXMLHttpRequest(window) {
             const parsed = MIMEType.parse(existingContentType);
             if (parsed) {
               const charset = parsed.parameters.get("charset");
-              if (charset && !asciiCaseInsensitiveMatch(charset, encoding) && encoding !== null) {
+              if (
+                charset &&
+                !asciiCaseInsensitiveMatch(charset, encoding) &&
+                encoding !== null
+              ) {
                 parsed.parameters.set("charset", encoding);
               }
-              xhrUtils.updateRequestHeader(flag.requestHeaders, "content-type", parsed.toString());
+              xhrUtils.updateRequestHeader(
+                flag.requestHeaders,
+                "content-type",
+                parsed.toString()
+              );
             }
           }
         }
@@ -586,11 +696,17 @@ module.exports = function createXMLHttpRequest(window) {
         if (properties.beforeSend) {
           properties.beforeSend = false;
         } else {
-          throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+          throw new DOMException(
+            "The object is in an invalid state.",
+            "InvalidStateError"
+          );
         }
       }
 
-      if (Object.keys(idlUtils.implForWrapper(this.upload)._eventListeners).length > 0) {
+      if (
+        Object.keys(idlUtils.implForWrapper(this.upload)._eventListeners)
+          .length > 0
+      ) {
         properties.uploadListener = true;
       }
 
@@ -609,11 +725,9 @@ module.exports = function createXMLHttpRequest(window) {
           }
           return v;
         });
-        const res = spawnSync(
-          process.execPath,
-          [syncWorkerFile],
-          { input: flagStr }
-        );
+        const res = spawnSync(process.execPath, [syncWorkerFile], {
+          input: flagStr,
+        });
         if (res.status !== 0) {
           throw new Error(res.stderr.toString());
         }
@@ -625,8 +739,13 @@ module.exports = function createXMLHttpRequest(window) {
         }
 
         const response = JSON.parse(res.stdout.toString());
-        if (response.properties.responseBuffer && response.properties.responseBuffer.data) {
-          response.properties.responseBuffer = Buffer.from(response.properties.responseBuffer.data);
+        if (
+          response.properties.responseBuffer &&
+          response.properties.responseBuffer.data
+        ) {
+          response.properties.responseBuffer = Buffer.from(
+            response.properties.responseBuffer.data
+          );
         }
         if (response.properties.cookieJar) {
           response.properties.cookieJar = tough.CookieJar.deserializeSync(
@@ -643,7 +762,8 @@ module.exports = function createXMLHttpRequest(window) {
           throw new DOMException(response.properties.error, "NetworkError");
         } else {
           const { responseBuffer } = this[xhrSymbols.properties];
-          const contentLength = getResponseHeader(this, "content-length") || "0";
+          const contentLength =
+            getResponseHeader(this, "content-length") || "0";
           const bufferLength = parseInt(contentLength) || responseBuffer.length;
           const progressObj = { lengthComputable: false };
           if (bufferLength !== 0) {
@@ -670,13 +790,13 @@ module.exports = function createXMLHttpRequest(window) {
 
         properties.origin = flag.origin;
 
-        client.on("error", err => {
+        client.on("error", (err) => {
           client.removeAllListeners();
           properties.error = err;
           xhrUtils.dispatchError(this);
         });
 
-        client.on("response", res => receiveResponse(this, res));
+        client.on("response", (res) => receiveResponse(this, res));
 
         client.on("redirect", () => {
           const { response } = client;
@@ -684,15 +804,28 @@ module.exports = function createXMLHttpRequest(window) {
 
           const urlObj = new URL(response.request.uri.href);
 
-          if (destUrlObj.origin !== urlObj.origin && destUrlObj.origin !== flag.origin) {
+          if (
+            destUrlObj.origin !== urlObj.origin &&
+            destUrlObj.origin !== flag.origin
+          ) {
             properties.origin = "null";
           }
 
           response.request.headers.Origin = properties.origin;
 
-          if (flag.origin !== destUrlObj.origin &&
-              destUrlObj.protocol !== "data:") {
-            if (!xhrUtils.validCORSHeaders(this, response, flag, properties, flag.origin)) {
+          if (
+            flag.origin !== destUrlObj.origin &&
+            destUrlObj.protocol !== "data:"
+          ) {
+            if (
+              !xhrUtils.validCORSHeaders(
+                this,
+                response,
+                flag,
+                properties,
+                flag.origin
+              )
+            ) {
               return;
             }
             if (urlObj.username || urlObj.password) {
@@ -708,12 +841,17 @@ module.exports = function createXMLHttpRequest(window) {
           properties.uploadComplete = true;
         }
         if (this.timeout > 0) {
-          properties.timeoutStart = (new Date()).getTime();
+          properties.timeoutStart = new Date().getTime();
           properties.timeoutFn = () => {
             client.abort();
-            if (!(this.readyState === XMLHttpRequest.UNSENT ||
-                (this.readyState === XMLHttpRequest.OPENED && !properties.send) ||
-                this.readyState === XMLHttpRequest.DONE)) {
+            if (
+              !(
+                this.readyState === XMLHttpRequest.UNSENT ||
+                (this.readyState === XMLHttpRequest.OPENED &&
+                  !properties.send) ||
+                this.readyState === XMLHttpRequest.DONE
+              )
+            ) {
               properties.send = false;
               let stateChanged = false;
               if (!properties.uploadComplete) {
@@ -750,18 +888,28 @@ module.exports = function createXMLHttpRequest(window) {
       value = conversions.ByteString(value);
 
       if (this.readyState !== XMLHttpRequest.OPENED || properties.send) {
-        throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+        throw new DOMException(
+          "The object is in an invalid state.",
+          "InvalidStateError"
+        );
       }
 
       value = normalizeHeaderValue(value);
 
       if (!tokenRegexp.test(header) || !fieldValueRegexp.test(value)) {
-        throw new DOMException("The string did not match the expected pattern.", "SyntaxError");
+        throw new DOMException(
+          "The string did not match the expected pattern.",
+          "SyntaxError"
+        );
       }
 
       const lcHeader = header.toLowerCase();
 
-      if (forbiddenRequestHeaders.has(lcHeader) || lcHeader.startsWith("sec-") || lcHeader.startsWith("proxy-")) {
+      if (
+        forbiddenRequestHeaders.has(lcHeader) ||
+        lcHeader.startsWith("sec-") ||
+        lcHeader.startsWith("proxy-")
+      ) {
         return;
       }
 
@@ -786,7 +934,7 @@ module.exports = function createXMLHttpRequest(window) {
     value: "XMLHttpRequest",
     writable: false,
     enumerable: false,
-    configurable: true
+    configurable: true,
   });
 
   setupForSimpleEventAccessors(XMLHttpRequest.prototype, ["readystatechange"]);
@@ -796,7 +944,7 @@ module.exports = function createXMLHttpRequest(window) {
     OPENED: 1,
     HEADERS_RECEIVED: 2,
     LOADING: 3,
-    DONE: 4
+    DONE: 4,
   });
 
   function readyStateChange(xhr, readyState) {
@@ -842,13 +990,30 @@ module.exports = function createXMLHttpRequest(window) {
     }
 
     const destUrlObj = new URL(response.request.uri.href);
-    if (properties.origin !== destUrlObj.origin &&
-        destUrlObj.protocol !== "data:") {
-      if (!xhrUtils.validCORSHeaders(xhr, response, flag, properties, properties.origin)) {
+    if (
+      properties.origin !== destUrlObj.origin &&
+      destUrlObj.protocol !== "data:"
+    ) {
+      if (
+        !xhrUtils.validCORSHeaders(
+          xhr,
+          response,
+          flag,
+          properties,
+          properties.origin
+        )
+      ) {
         return;
       }
       const acehStr = response.headers["access-control-expose-headers"];
-      const aceh = new Set(acehStr ? acehStr.trim().toLowerCase().split(xhrUtils.headerListSeparatorRegexp) : []);
+      const aceh = new Set(
+        acehStr
+          ? acehStr
+              .trim()
+              .toLowerCase()
+              .split(xhrUtils.headerListSeparatorRegexp)
+          : []
+      );
       for (const header in headers) {
         const lcHeader = header.toLowerCase();
         if (!corsSafeResponseHeaders.has(lcHeader) && !aceh.has(lcHeader)) {
@@ -867,7 +1032,8 @@ module.exports = function createXMLHttpRequest(window) {
     properties.responseURL = destUrlObj.href;
 
     properties.status = statusCode;
-    properties.statusText = response.statusMessage || HTTP_STATUS_CODES[statusCode] || "";
+    properties.statusText =
+      response.statusMessage || HTTP_STATUS_CODES[statusCode] || "";
 
     properties.responseHeaders = headers;
     properties.filteredResponseHeaders = filteredResponseHeaders;
@@ -895,12 +1061,12 @@ module.exports = function createXMLHttpRequest(window) {
 
     // Can't use the client since the client gets the post-ungzipping bytes (which can be greater than the
     // Content-Length).
-    response.on("data", chunk => {
+    response.on("data", (chunk) => {
       byteOffset += chunk.length;
       progressObj.loaded = byteOffset;
     });
 
-    properties.client.on("data", chunk => {
+    properties.client.on("data", (chunk) => {
       properties.totalReceivedChunkSize += chunk.length;
       if (properties.totalReceivedChunkSize >= properties.bufferStepSize) {
         properties.bufferStepSize *= 2;
@@ -908,10 +1074,20 @@ module.exports = function createXMLHttpRequest(window) {
           properties.bufferStepSize *= 2;
         }
         const tmpBuf = Buffer.alloc(properties.bufferStepSize);
-        properties.responseBuffer.copy(tmpBuf, 0, 0, properties.responseBuffer.length);
+        properties.responseBuffer.copy(
+          tmpBuf,
+          0,
+          0,
+          properties.responseBuffer.length
+        );
         properties.responseBuffer = tmpBuf;
       }
-      chunk.copy(properties.responseBuffer, properties.totalReceivedChunkSize - chunk.length, 0, chunk.length);
+      chunk.copy(
+        properties.responseBuffer,
+        properties.totalReceivedChunkSize - chunk.length,
+        0,
+        chunk.length
+      );
       properties.responseCache = null;
       properties.responseTextCache = null;
       properties.responseXMLCache = null;
@@ -921,7 +1097,10 @@ module.exports = function createXMLHttpRequest(window) {
       }
       xhr.dispatchEvent(new Event("readystatechange"));
 
-      if (progressObj.total !== progressObj.loaded || properties.totalReceivedChunkSize === byteOffset) {
+      if (
+        progressObj.total !== progressObj.loaded ||
+        properties.totalReceivedChunkSize === byteOffset
+      ) {
         if (lastProgressReported !== progressObj.loaded) {
           // This is a necessary check in the gzip case where we can be getting new data from the client, as it
           // un-gzips, but no new data has been gotten from the response, so we should not fire a progress event.
@@ -949,7 +1128,9 @@ module.exports = function createXMLHttpRequest(window) {
 
     let total = 0;
     let lengthComputable = false;
-    const length = client.headers && parseInt(xhrUtils.getRequestHeader(client.headers, "content-length"));
+    const length =
+      client.headers &&
+      parseInt(xhrUtils.getRequestHeader(client.headers, "content-length"));
     if (length) {
       total = length;
       lengthComputable = true;
@@ -957,14 +1138,14 @@ module.exports = function createXMLHttpRequest(window) {
     const initProgress = {
       lengthComputable,
       total,
-      loaded: 0
+      loaded: 0,
     };
 
     if (properties.uploadListener) {
       upload.dispatchEvent(new ProgressEvent("loadstart", initProgress));
     }
 
-    client.on("request", req => {
+    client.on("request", (req) => {
       req.on("response", () => {
         properties.uploadComplete = true;
 
@@ -975,7 +1156,7 @@ module.exports = function createXMLHttpRequest(window) {
         const progress = {
           lengthComputable,
           total,
-          loaded: total
+          loaded: total,
         };
         upload.dispatchEvent(new ProgressEvent("progress", progress));
         upload.dispatchEvent(new ProgressEvent("load", progress));
@@ -997,9 +1178,13 @@ function finalCharset(xhr) {
   if (flag.overrideCharset) {
     return flag.overrideCharset;
   }
-  const parsedContentType = MIMEType.parse(getResponseHeader(xhr, "content-type"));
+  const parsedContentType = MIMEType.parse(
+    getResponseHeader(xhr, "content-type")
+  );
   if (parsedContentType) {
-    return whatwgEncoding.labelToName(parsedContentType.parameters.get("charset"));
+    return whatwgEncoding.labelToName(
+      parsedContentType.parameters.get("charset")
+    );
   }
   return null;
 }
@@ -1018,7 +1203,9 @@ function getResponseHeader(xhr, lcHeader) {
 }
 
 function normalizeHeaderValue(value) {
-  return value.replace(/^[\x09\x0A\x0D\x20]+/, "").replace(/[\x09\x0A\x0D\x20]+$/, "");
+  return value
+    .replace(/^[\x09\x0A\x0D\x20]+/, "")
+    .replace(/[\x09\x0A\x0D\x20]+$/, "");
 }
 
 function coerceBodyArg(body) {
@@ -1052,17 +1239,21 @@ function extractBody(bodyInit) {
   if (Blob.isImpl(bodyInit)) {
     return {
       buffer: bodyInit._buffer,
-      contentType: bodyInit.type === "" ? null : bodyInit.type
+      contentType: bodyInit.type === "" ? null : bodyInit.type,
     };
   } else if (bodyInit instanceof ArrayBuffer) {
     return {
       buffer: Buffer.from(bodyInit),
-      contentType: null
+      contentType: null,
     };
   } else if (ArrayBuffer.isView(bodyInit)) {
     return {
-      buffer: Buffer.from(bodyInit.buffer, bodyInit.byteOffset, bodyInit.byteLength),
-      contentType: null
+      buffer: Buffer.from(
+        bodyInit.buffer,
+        bodyInit.byteOffset,
+        bodyInit.byteLength
+      ),
+      contentType: null,
     };
   } else if (FormData.isImpl(bodyInit)) {
     const formData = [];
@@ -1076,8 +1267,8 @@ function extractBody(bodyInit) {
           options: {
             filename: blob.name,
             contentType: blob.type,
-            knownLength: blob.size
-          }
+            knownLength: blob.size,
+          },
         };
       } else {
         val = entry;
@@ -1092,6 +1283,6 @@ function extractBody(bodyInit) {
   // Must be a string
   return {
     buffer: Buffer.from(bodyInit, "utf-8"),
-    contentType: "text/plain;charset=UTF-8"
+    contentType: "text/plain;charset=UTF-8",
   };
 }

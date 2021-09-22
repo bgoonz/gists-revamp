@@ -10,14 +10,17 @@ function HTMLCanvasElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLCanvasElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLCanvasElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLCanvasElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLCanvasElement, "prototype", {
   value: HTMLCanvasElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLCanvasElement.prototype.getContext = function getContext(contextId) {
@@ -36,14 +39,17 @@ HTMLCanvasElement.prototype.getContext = function getContext(contextId) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getContext' on 'HTMLCanvasElement': parameter 1"
+      context:
+        "Failed to execute 'getContext' on 'HTMLCanvasElement': parameter 1",
     });
     args.push(curArg);
   }
   for (let i = 1; i < arguments.length; i++) {
     let curArg = arguments[i];
     curArg = conversions["any"](curArg, {
-      context: "Failed to execute 'getContext' on 'HTMLCanvasElement': parameter " + (i + 1)
+      context:
+        "Failed to execute 'getContext' on 'HTMLCanvasElement': parameter " +
+        (i + 1),
     });
     args.push(curArg);
   }
@@ -59,7 +65,8 @@ HTMLCanvasElement.prototype.toDataURL = function toDataURL() {
     let curArg = arguments[0];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'toDataURL' on 'HTMLCanvasElement': parameter 1"
+        context:
+          "Failed to execute 'toDataURL' on 'HTMLCanvasElement': parameter 1",
       });
     }
     args.push(curArg);
@@ -68,7 +75,8 @@ HTMLCanvasElement.prototype.toDataURL = function toDataURL() {
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["any"](curArg, {
-        context: "Failed to execute 'toDataURL' on 'HTMLCanvasElement': parameter 2"
+        context:
+          "Failed to execute 'toDataURL' on 'HTMLCanvasElement': parameter 2",
       });
     }
     args.push(curArg);
@@ -98,7 +106,8 @@ HTMLCanvasElement.prototype.toBlob = function toBlob(callback) {
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'toBlob' on 'HTMLCanvasElement': parameter 2"
+        context:
+          "Failed to execute 'toBlob' on 'HTMLCanvasElement': parameter 2",
       });
     }
     args.push(curArg);
@@ -107,7 +116,8 @@ HTMLCanvasElement.prototype.toBlob = function toBlob(callback) {
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["any"](curArg, {
-        context: "Failed to execute 'toBlob' on 'HTMLCanvasElement': parameter 3"
+        context:
+          "Failed to execute 'toBlob' on 'HTMLCanvasElement': parameter 3",
       });
     }
     args.push(curArg);
@@ -130,14 +140,15 @@ Object.defineProperty(HTMLCanvasElement.prototype, "width", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'width' property on 'HTMLCanvasElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLCanvasElement': The provided value",
     });
 
     this[impl]["width"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLCanvasElement.prototype, "height", {
@@ -155,21 +166,22 @@ Object.defineProperty(HTMLCanvasElement.prototype, "height", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'height' property on 'HTMLCanvasElement': The provided value"
+      context:
+        "Failed to set the 'height' property on 'HTMLCanvasElement': The provided value",
     });
 
     this[impl]["height"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLCanvasElement.prototype, Symbol.toStringTag, {
   value: "HTMLCanvasElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -235,7 +247,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -246,8 +258,8 @@ const iface = {
   },
   interface: HTMLCanvasElement,
   expose: {
-    Window: { HTMLCanvasElement }
-  }
+    Window: { HTMLCanvasElement },
+  },
 }; // iface
 module.exports = iface;
 

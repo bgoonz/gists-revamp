@@ -14,13 +14,11 @@ class HTMLDetailsElementImpl extends HTMLElementImpl {
   _dispatchToggleEvent() {
     this._taskQueue = null;
 
-    this._dispatch(Event.createImpl(
-      [
-        "toggle",
-        { bubbles: false, cancelable: false }
-      ],
-      { isTrusted: true }
-    ));
+    this._dispatch(
+      Event.createImpl(["toggle", { bubbles: false, cancelable: false }], {
+        isTrusted: true,
+      })
+    );
   }
 
   _attrModified(name, value, oldValue) {
@@ -28,8 +26,10 @@ class HTMLDetailsElementImpl extends HTMLElementImpl {
 
     if (name === "open" && this._taskQueue === null) {
       // Check that the attribute is added or removed, not merely changed
-      if ((value !== oldValue && value !== null && oldValue === null) ||
-          (value === null && oldValue !== null)) {
+      if (
+        (value !== oldValue && value !== null && oldValue === null) ||
+        (value === null && oldValue !== null)
+      ) {
         this._taskQueue = setTimeout(this._dispatchToggleEvent.bind(this), 0);
       }
     }
@@ -37,5 +37,5 @@ class HTMLDetailsElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLDetailsElementImpl
+  implementation: HTMLDetailsElementImpl,
 };

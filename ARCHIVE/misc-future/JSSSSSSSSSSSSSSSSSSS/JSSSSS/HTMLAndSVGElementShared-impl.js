@@ -43,13 +43,24 @@ class HTMLAndSVGElementSharedImpl {
   }
 
   blur() {
-    if (this._ownerDocument._lastFocusedElement !== this || !focusing.isFocusableAreaElement(this)) {
+    if (
+      this._ownerDocument._lastFocusedElement !== this ||
+      !focusing.isFocusableAreaElement(this)
+    ) {
       return;
     }
 
-    focusing.fireFocusEventWithTargetAdjustment("blur", this, this._ownerDocument);
+    focusing.fireFocusEventWithTargetAdjustment(
+      "blur",
+      this,
+      this._ownerDocument
+    );
     this._ownerDocument._lastFocusedElement = null;
-    focusing.fireFocusEventWithTargetAdjustment("focus", this._ownerDocument, this);
+    focusing.fireFocusEventWithTargetAdjustment(
+      "focus",
+      this._ownerDocument,
+      this
+    );
   }
 }
 

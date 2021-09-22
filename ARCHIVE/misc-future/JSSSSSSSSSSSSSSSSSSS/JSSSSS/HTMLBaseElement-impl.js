@@ -8,7 +8,9 @@ class HTMLBaseElementImpl extends HTMLElementImpl {
     const document = this._ownerDocument;
 
     const url = this.hasAttribute("href") ? this.getAttribute("href") : "";
-    const parsed = whatwgURL.parseURL(url, { baseURL: fallbackBaseURL(document) });
+    const parsed = whatwgURL.parseURL(url, {
+      baseURL: fallbackBaseURL(document),
+    });
 
     if (parsed === null) {
       return url;
@@ -23,5 +25,5 @@ class HTMLBaseElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLBaseElementImpl
+  implementation: HTMLBaseElementImpl,
 };

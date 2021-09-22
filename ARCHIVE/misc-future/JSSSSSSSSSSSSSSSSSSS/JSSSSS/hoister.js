@@ -1,25 +1,27 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
 var _t = require("@babel/types");
 
 var _t2 = _t;
-const {
-  react
-} = _t;
+const { react } = _t;
 const {
   cloneNode,
   jsxExpressionContainer,
   variableDeclaration,
-  variableDeclarator
+  variableDeclarator,
 } = _t2;
 const referenceVisitor = {
   ReferencedIdentifier(path, state) {
-    if (path.isJSXIdentifier() && react.isCompatTag(path.node.name) && !path.parentPath.isJSXMemberExpression()) {
+    if (
+      path.isJSXIdentifier() &&
+      react.isCompatTag(path.node.name) &&
+      !path.parentPath.isJSXMemberExpression()
+    ) {
       return;
     }
 
@@ -27,10 +29,13 @@ const referenceVisitor = {
       let scope = path.scope;
 
       do {
-        if (scope.path.isFunction() && !scope.path.isArrowFunctionExpression()) {
+        if (
+          scope.path.isFunction() &&
+          !scope.path.isArrowFunctionExpression()
+        ) {
           break;
         }
-      } while (scope = scope.parent);
+      } while ((scope = scope.parent));
 
       if (scope) state.breakOnScopePaths.push(scope.path);
     }
@@ -48,8 +53,7 @@ const referenceVisitor = {
 
     if (binding !== state.scope.getBinding(path.node.name)) return;
     state.bindings[path.node.name] = binding;
-  }
-
+  },
 };
 
 class PathHoister {
@@ -95,7 +99,7 @@ class PathHoister {
       if (this.breakOnScopePaths.indexOf(scope.path) >= 0) {
         break;
       }
-    } while (scope = scope.parent);
+    } while ((scope = scope.parent));
   }
 
   getAttachmentPath() {
@@ -164,10 +168,13 @@ class PathHoister {
 
   getAttachmentParentForPath(path) {
     do {
-      if (!path.parentPath || Array.isArray(path.container) && path.isStatement()) {
+      if (
+        !path.parentPath ||
+        (Array.isArray(path.container) && path.isStatement())
+      ) {
         return path;
       }
-    } while (path = path.parentPath);
+    } while ((path = path.parentPath));
   }
 
   hasOwnParamBindings(scope) {
@@ -190,7 +197,11 @@ class PathHoister {
     let uid = attachTo.scope.generateUidIdentifier("ref");
     const declarator = variableDeclarator(uid, this.path.node);
     const insertFn = this.attachAfter ? "insertAfter" : "insertBefore";
-    const [attached] = attachTo[insertFn]([attachTo.isVariableDeclarator() ? declarator : variableDeclaration("var", [declarator])]);
+    const [attached] = attachTo[insertFn]([
+      attachTo.isVariableDeclarator()
+        ? declarator
+        : variableDeclaration("var", [declarator]),
+    ]);
     const parent = this.path.parentPath;
 
     if (parent.isJSXElement() && this.path.container === parent.node.children) {
@@ -198,9 +209,10 @@ class PathHoister {
     }
 
     this.path.replaceWith(cloneNode(uid));
-    return attachTo.isVariableDeclarator() ? attached.get("init") : attached.get("declarations.0.init");
+    return attachTo.isVariableDeclarator()
+      ? attached.get("init")
+      : attached.get("declarations.0.init");
   }
-
 }
 
 exports.default = PathHoister;

@@ -10,14 +10,17 @@ function XMLHttpRequestEventTarget() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(XMLHttpRequestEventTarget.prototype, EventTarget.interface.prototype);
+Object.setPrototypeOf(
+  XMLHttpRequestEventTarget.prototype,
+  EventTarget.interface.prototype
+);
 Object.setPrototypeOf(XMLHttpRequestEventTarget, EventTarget.interface);
 
 Object.defineProperty(XMLHttpRequestEventTarget, "prototype", {
   value: XMLHttpRequestEventTarget.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onloadstart", {
@@ -40,7 +43,7 @@ Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onloadstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onprogress", {
@@ -63,7 +66,7 @@ Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onprogress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onabort", {
@@ -86,7 +89,7 @@ Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onabort", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onerror", {
@@ -109,7 +112,7 @@ Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onload", {
@@ -132,7 +135,7 @@ Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(XMLHttpRequestEventTarget.prototype, "ontimeout", {
@@ -155,7 +158,7 @@ Object.defineProperty(XMLHttpRequestEventTarget.prototype, "ontimeout", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onloadend", {
@@ -178,14 +181,14 @@ Object.defineProperty(XMLHttpRequestEventTarget.prototype, "onloadend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(XMLHttpRequestEventTarget.prototype, Symbol.toStringTag, {
   value: "XMLHttpRequestEventTarget",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -225,7 +228,9 @@ const iface = {
     if (module.exports.is(obj)) {
       return utils.implForWrapper(obj);
     }
-    throw new TypeError(`${context} is not of type 'XMLHttpRequestEventTarget'.`);
+    throw new TypeError(
+      `${context} is not of type 'XMLHttpRequestEventTarget'.`
+    );
   },
 
   create(constructorArgs, privateData) {
@@ -251,7 +256,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -264,8 +269,8 @@ const iface = {
   expose: {
     Window: { XMLHttpRequestEventTarget },
     DedicatedWorker: { XMLHttpRequestEventTarget },
-    SharedWorker: { XMLHttpRequestEventTarget }
-  }
+    SharedWorker: { XMLHttpRequestEventTarget },
+  },
 }; // iface
 module.exports = iface;
 

@@ -15,8 +15,11 @@ class HTMLFieldSetElementImpl extends HTMLElementImpl {
   }
 }
 
-mixin(HTMLFieldSetElementImpl.prototype, DefaultConstraintValidationImpl.prototype);
+mixin(
+  HTMLFieldSetElementImpl.prototype,
+  DefaultConstraintValidationImpl.prototype
+);
 
 module.exports = {
-  implementation: HTMLFieldSetElementImpl
+  implementation: HTMLFieldSetElementImpl,
 };

@@ -10,14 +10,17 @@ function HTMLDirectoryElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLDirectoryElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLDirectoryElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLDirectoryElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLDirectoryElement, "prototype", {
   value: HTMLDirectoryElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLDirectoryElement.prototype, "compact", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLDirectoryElement.prototype, "compact", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'compact' property on 'HTMLDirectoryElement': The provided value"
+      context:
+        "Failed to set the 'compact' property on 'HTMLDirectoryElement': The provided value",
     });
 
     if (V) {
@@ -46,14 +50,14 @@ Object.defineProperty(HTMLDirectoryElement.prototype, "compact", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLDirectoryElement.prototype, Symbol.toStringTag, {
   value: "HTMLDirectoryElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -119,7 +123,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -130,8 +134,8 @@ const iface = {
   },
   interface: HTMLDirectoryElement,
   expose: {
-    Window: { HTMLDirectoryElement }
-  }
+    Window: { HTMLDirectoryElement },
+  },
 }; // iface
 module.exports = iface;
 

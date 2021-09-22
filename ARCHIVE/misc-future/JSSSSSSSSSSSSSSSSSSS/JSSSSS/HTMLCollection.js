@@ -13,14 +13,14 @@ Object.defineProperty(HTMLCollection, "prototype", {
   value: HTMLCollection.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLCollection.prototype, Symbol.iterator, {
   writable: true,
   enumerable: false,
   configurable: true,
-  value: Array.prototype[Symbol.iterator]
+  value: Array.prototype[Symbol.iterator],
 });
 
 HTMLCollection.prototype.item = function item(index) {
@@ -30,14 +30,16 @@ HTMLCollection.prototype.item = function item(index) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'item' on 'HTMLCollection': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'item' on 'HTMLCollection': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'item' on 'HTMLCollection': parameter 1"
+      context: "Failed to execute 'item' on 'HTMLCollection': parameter 1",
     });
     args.push(curArg);
   }
@@ -60,7 +62,7 @@ HTMLCollection.prototype.namedItem = function namedItem(name) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'namedItem' on 'HTMLCollection': parameter 1"
+      context: "Failed to execute 'namedItem' on 'HTMLCollection': parameter 1",
     });
     args.push(curArg);
   }
@@ -77,14 +79,14 @@ Object.defineProperty(HTMLCollection.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLCollection.prototype, Symbol.toStringTag, {
   value: "HTMLCollection",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -148,7 +150,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -222,7 +224,7 @@ const iface = {
               writable: false,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
           ignoreNamedProps = true;
@@ -235,7 +237,7 @@ const iface = {
             writable: false,
             enumerable: false,
             configurable: true,
-            value: utils.tryWrapperForImpl(namedValue)
+            value: utils.tryWrapperForImpl(namedValue),
           };
         }
 
@@ -261,7 +263,7 @@ const iface = {
               writable: false,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
         }
@@ -274,7 +276,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -293,7 +300,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -334,7 +346,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -345,8 +357,8 @@ const iface = {
   },
   interface: HTMLCollection,
   expose: {
-    Window: { HTMLCollection }
-  }
+    Window: { HTMLCollection },
+  },
 }; // iface
 module.exports = iface;
 

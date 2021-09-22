@@ -12,15 +12,15 @@
  * @return {String} encrypted string
  */
 
-function XOR (str, key) {
-  let result = ''
+function XOR(str, key) {
+  let result = "";
   for (const elem of str) {
-    result += String.fromCharCode(elem.charCodeAt(0) ^ key)
+    result += String.fromCharCode(elem.charCodeAt(0) ^ key);
   }
-  return result
+  return result;
 }
 
-const encryptedString = XOR('test string', 32)
-console.log('Encrypted: ', encryptedString)
-const decryptedString = XOR(encryptedString, 32)
-console.log('Decrypted: ', decryptedString)
+const encryptedString = XOR("test string", 32);
+console.log("Encrypted: ", encryptedString);
+const decryptedString = XOR(encryptedString, 32);
+console.log("Decrypted: ", decryptedString);

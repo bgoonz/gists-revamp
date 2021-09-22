@@ -10,21 +10,24 @@ function HTMLDataListElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLDataListElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLDataListElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLDataListElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLDataListElement, "prototype", {
   value: HTMLDataListElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLDataListElement.prototype, Symbol.toStringTag, {
   value: "HTMLDataListElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +93,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -101,8 +104,8 @@ const iface = {
   },
   interface: HTMLDataListElement,
   expose: {
-    Window: { HTMLDataListElement }
-  }
+    Window: { HTMLDataListElement },
+  },
 }; // iface
 module.exports = iface;
 

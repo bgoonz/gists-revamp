@@ -20,7 +20,7 @@ const astUtils = require("../util/ast-utils");
  * @returns {boolean} Whether or not it is a comparison operator.
  */
 function isComparisonOperator(operator) {
-    return (/^(==|===|!=|!==|<|>|<=|>=)$/u).test(operator);
+  return /^(==|===|!=|!==|<|>|<=|>=)$/u.test(operator);
 }
 
 /**
@@ -29,7 +29,7 @@ function isComparisonOperator(operator) {
  * @returns {boolean} Whether or not it is an equality operator.
  */
 function isEqualityOperator(operator) {
-    return (/^(==|===)$/u).test(operator);
+  return /^(==|===)$/u.test(operator);
 }
 
 /**
@@ -39,7 +39,7 @@ function isEqualityOperator(operator) {
  * @returns {boolean} Whether the operator is used in range tests.
  */
 function isRangeTestOperator(operator) {
-    return ["<", "<="].indexOf(operator) >= 0;
+  return ["<", "<="].indexOf(operator) >= 0;
 }
 
 /**
@@ -50,11 +50,13 @@ function isRangeTestOperator(operator) {
  *                    real literal and should be treated as such.
  */
 function looksLikeLiteral(node) {
-    return (node.type === "UnaryExpression" &&
-        node.operator === "-" &&
-        node.prefix &&
-        node.argument.type === "Literal" &&
-        typeof node.argument.value === "number");
+  return (
+    node.type === "UnaryExpression" &&
+    node.operator === "-" &&
+    node.prefix &&
+    node.argument.type === "Literal" &&
+    typeof node.argument.value === "number"
+  );
 }
 
 /**
@@ -70,27 +72,27 @@ function looksLikeLiteral(node) {
  *  4. Otherwise `null`.
  */
 function getNormalizedLiteral(node, defaultValue) {
-    if (node.type === "Literal") {
-        return node;
-    }
+  if (node.type === "Literal") {
+    return node;
+  }
 
-    if (looksLikeLiteral(node)) {
-        return {
-            type: "Literal",
-            value: -node.argument.value,
-            raw: `-${node.argument.value}`
-        };
-    }
+  if (looksLikeLiteral(node)) {
+    return {
+      type: "Literal",
+      value: -node.argument.value,
+      raw: `-${node.argument.value}`,
+    };
+  }
 
-    if (defaultValue) {
-        return {
-            type: "Literal",
-            value: defaultValue,
-            raw: String(defaultValue)
-        };
-    }
+  if (defaultValue) {
+    return {
+      type: "Literal",
+      value: defaultValue,
+      raw: String(defaultValue),
+    };
+  }
 
-    return null;
+  return null;
 }
 
 /**
@@ -104,46 +106,46 @@ function getNormalizedLiteral(node, defaultValue) {
  * @returns {boolean}   True if both sides match and reference the same value.
  */
 function same(a, b) {
-    if (a.type !== b.type) {
-        return false;
+  if (a.type !== b.type) {
+    return false;
+  }
+
+  switch (a.type) {
+    case "Identifier":
+      return a.name === b.name;
+
+    case "Literal":
+      return a.value === b.value;
+
+    case "MemberExpression": {
+      const nameA = astUtils.getStaticPropertyName(a);
+
+      // x.y = x["y"]
+      if (nameA) {
+        return (
+          same(a.object, b.object) &&
+          nameA === astUtils.getStaticPropertyName(b)
+        );
+      }
+
+      /*
+       * x[0] = x[0]
+       * x[y] = x[y]
+       * x.y = x.y
+       */
+      return (
+        a.computed === b.computed &&
+        same(a.object, b.object) &&
+        same(a.property, b.property)
+      );
     }
 
-    switch (a.type) {
-        case "Identifier":
-            return a.name === b.name;
+    case "ThisExpression":
+      return true;
 
-        case "Literal":
-            return a.value === b.value;
-
-        case "MemberExpression": {
-            const nameA = astUtils.getStaticPropertyName(a);
-
-            // x.y = x["y"]
-            if (nameA) {
-                return (
-                    same(a.object, b.object) &&
-                    nameA === astUtils.getStaticPropertyName(b)
-                );
-            }
-
-            /*
-             * x[0] = x[0]
-             * x[y] = x[y]
-             * x.y = x.y
-             */
-            return (
-                a.computed === b.computed &&
-                same(a.object, b.object) &&
-                same(a.property, b.property)
-            );
-        }
-
-        case "ThisExpression":
-            return true;
-
-        default:
-            return false;
-    }
+    default:
+      return false;
+  }
 }
 
 //------------------------------------------------------------------------------
@@ -151,168 +153,209 @@ function same(a, b) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "require or disallow \"Yoda\" conditions",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/yoda"
-        },
-
-        schema: [
-            {
-                enum: ["always", "never"]
-            },
-            {
-                type: "object",
-                properties: {
-                    exceptRange: {
-                        type: "boolean",
-                        default: false
-                    },
-                    onlyEquality: {
-                        type: "boolean",
-                        default: false
-                    }
-                },
-                additionalProperties: false
-            }
-        ],
-
-        fixable: "code",
-        messages: {
-            expected: "Expected literal to be on the {{expectedSide}} side of {{operator}}."
-        }
+    docs: {
+      description: 'require or disallow "Yoda" conditions',
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/yoda",
     },
 
-    create(context) {
+    schema: [
+      {
+        enum: ["always", "never"],
+      },
+      {
+        type: "object",
+        properties: {
+          exceptRange: {
+            type: "boolean",
+            default: false,
+          },
+          onlyEquality: {
+            type: "boolean",
+            default: false,
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
 
-        // Default to "never" (!always) if no option
-        const always = (context.options[0] === "always");
-        const exceptRange = (context.options[1] && context.options[1].exceptRange);
-        const onlyEquality = (context.options[1] && context.options[1].onlyEquality);
+    fixable: "code",
+    messages: {
+      expected:
+        "Expected literal to be on the {{expectedSide}} side of {{operator}}.",
+    },
+  },
 
-        const sourceCode = context.getSourceCode();
+  create(context) {
+    // Default to "never" (!always) if no option
+    const always = context.options[0] === "always";
+    const exceptRange = context.options[1] && context.options[1].exceptRange;
+    const onlyEquality = context.options[1] && context.options[1].onlyEquality;
 
-        /**
-         * Determines whether node represents a range test.
-         * A range test is a "between" test like `(0 <= x && x < 1)` or an "outside"
-         * test like `(x < 0 || 1 <= x)`. It must be wrapped in parentheses, and
-         * both operators must be `<` or `<=`. Finally, the literal on the left side
-         * must be less than or equal to the literal on the right side so that the
-         * test makes any sense.
-         * @param {ASTNode} node LogicalExpression node to test.
-         * @returns {boolean} Whether node is a range test.
-         */
-        function isRangeTest(node) {
-            const left = node.left,
-                right = node.right;
+    const sourceCode = context.getSourceCode();
 
-            /**
-             * Determines whether node is of the form `0 <= x && x < 1`.
-             * @returns {boolean} Whether node is a "between" range test.
-             */
-            function isBetweenTest() {
-                let leftLiteral, rightLiteral;
+    /**
+     * Determines whether node represents a range test.
+     * A range test is a "between" test like `(0 <= x && x < 1)` or an "outside"
+     * test like `(x < 0 || 1 <= x)`. It must be wrapped in parentheses, and
+     * both operators must be `<` or `<=`. Finally, the literal on the left side
+     * must be less than or equal to the literal on the right side so that the
+     * test makes any sense.
+     * @param {ASTNode} node LogicalExpression node to test.
+     * @returns {boolean} Whether node is a range test.
+     */
+    function isRangeTest(node) {
+      const left = node.left,
+        right = node.right;
 
-                return (node.operator === "&&" &&
-                    (leftLiteral = getNormalizedLiteral(left.left)) &&
-                    (rightLiteral = getNormalizedLiteral(right.right, Number.POSITIVE_INFINITY)) &&
-                    leftLiteral.value <= rightLiteral.value &&
-                    same(left.right, right.left));
-            }
+      /**
+       * Determines whether node is of the form `0 <= x && x < 1`.
+       * @returns {boolean} Whether node is a "between" range test.
+       */
+      function isBetweenTest() {
+        let leftLiteral, rightLiteral;
 
-            /**
-             * Determines whether node is of the form `x < 0 || 1 <= x`.
-             * @returns {boolean} Whether node is an "outside" range test.
-             */
-            function isOutsideTest() {
-                let leftLiteral, rightLiteral;
+        return (
+          node.operator === "&&" &&
+          (leftLiteral = getNormalizedLiteral(left.left)) &&
+          (rightLiteral = getNormalizedLiteral(
+            right.right,
+            Number.POSITIVE_INFINITY
+          )) &&
+          leftLiteral.value <= rightLiteral.value &&
+          same(left.right, right.left)
+        );
+      }
 
-                return (node.operator === "||" &&
-                    (leftLiteral = getNormalizedLiteral(left.right, Number.NEGATIVE_INFINITY)) &&
-                    (rightLiteral = getNormalizedLiteral(right.left)) &&
-                    leftLiteral.value <= rightLiteral.value &&
-                    same(left.left, right.right));
-            }
+      /**
+       * Determines whether node is of the form `x < 0 || 1 <= x`.
+       * @returns {boolean} Whether node is an "outside" range test.
+       */
+      function isOutsideTest() {
+        let leftLiteral, rightLiteral;
 
-            /**
-             * Determines whether node is wrapped in parentheses.
-             * @returns {boolean} Whether node is preceded immediately by an open
-             *                    paren token and followed immediately by a close
-             *                    paren token.
-             */
-            function isParenWrapped() {
-                return astUtils.isParenthesised(sourceCode, node);
-            }
+        return (
+          node.operator === "||" &&
+          (leftLiteral = getNormalizedLiteral(
+            left.right,
+            Number.NEGATIVE_INFINITY
+          )) &&
+          (rightLiteral = getNormalizedLiteral(right.left)) &&
+          leftLiteral.value <= rightLiteral.value &&
+          same(left.left, right.right)
+        );
+      }
 
-            return (node.type === "LogicalExpression" &&
-                left.type === "BinaryExpression" &&
-                right.type === "BinaryExpression" &&
-                isRangeTestOperator(left.operator) &&
-                isRangeTestOperator(right.operator) &&
-                (isBetweenTest() || isOutsideTest()) &&
-                isParenWrapped());
-        }
+      /**
+       * Determines whether node is wrapped in parentheses.
+       * @returns {boolean} Whether node is preceded immediately by an open
+       *                    paren token and followed immediately by a close
+       *                    paren token.
+       */
+      function isParenWrapped() {
+        return astUtils.isParenthesised(sourceCode, node);
+      }
 
-        const OPERATOR_FLIP_MAP = {
-            "===": "===",
-            "!==": "!==",
-            "==": "==",
-            "!=": "!=",
-            "<": ">",
-            ">": "<",
-            "<=": ">=",
-            ">=": "<="
-        };
-
-        /**
-         * Returns a string representation of a BinaryExpression node with its sides/operator flipped around.
-         * @param {ASTNode} node The BinaryExpression node
-         * @returns {string} A string representation of the node with the sides and operator flipped
-         */
-        function getFlippedString(node) {
-            const operatorToken = sourceCode.getFirstTokenBetween(node.left, node.right, token => token.value === node.operator);
-            const textBeforeOperator = sourceCode.getText().slice(sourceCode.getTokenBefore(operatorToken).range[1], operatorToken.range[0]);
-            const textAfterOperator = sourceCode.getText().slice(operatorToken.range[1], sourceCode.getTokenAfter(operatorToken).range[0]);
-            const leftText = sourceCode.getText().slice(node.range[0], sourceCode.getTokenBefore(operatorToken).range[1]);
-            const rightText = sourceCode.getText().slice(sourceCode.getTokenAfter(operatorToken).range[0], node.range[1]);
-
-            return rightText + textBeforeOperator + OPERATOR_FLIP_MAP[operatorToken.value] + textAfterOperator + leftText;
-        }
-
-        //--------------------------------------------------------------------------
-        // Public
-        //--------------------------------------------------------------------------
-
-        return {
-            BinaryExpression(node) {
-                const expectedLiteral = always ? node.left : node.right;
-                const expectedNonLiteral = always ? node.right : node.left;
-
-                // If `expectedLiteral` is not a literal, and `expectedNonLiteral` is a literal, raise an error.
-                if (
-                    (expectedNonLiteral.type === "Literal" || looksLikeLiteral(expectedNonLiteral)) &&
-                    !(expectedLiteral.type === "Literal" || looksLikeLiteral(expectedLiteral)) &&
-                    !(!isEqualityOperator(node.operator) && onlyEquality) &&
-                    isComparisonOperator(node.operator) &&
-                    !(exceptRange && isRangeTest(context.getAncestors().pop()))
-                ) {
-                    context.report({
-                        node,
-                        messageId: "expected",
-                        data: {
-                            operator: node.operator,
-                            expectedSide: always ? "left" : "right"
-                        },
-                        fix: fixer => fixer.replaceText(node, getFlippedString(node))
-                    });
-                }
-
-            }
-        };
-
+      return (
+        node.type === "LogicalExpression" &&
+        left.type === "BinaryExpression" &&
+        right.type === "BinaryExpression" &&
+        isRangeTestOperator(left.operator) &&
+        isRangeTestOperator(right.operator) &&
+        (isBetweenTest() || isOutsideTest()) &&
+        isParenWrapped()
+      );
     }
+
+    const OPERATOR_FLIP_MAP = {
+      "===": "===",
+      "!==": "!==",
+      "==": "==",
+      "!=": "!=",
+      "<": ">",
+      ">": "<",
+      "<=": ">=",
+      ">=": "<=",
+    };
+
+    /**
+     * Returns a string representation of a BinaryExpression node with its sides/operator flipped around.
+     * @param {ASTNode} node The BinaryExpression node
+     * @returns {string} A string representation of the node with the sides and operator flipped
+     */
+    function getFlippedString(node) {
+      const operatorToken = sourceCode.getFirstTokenBetween(
+        node.left,
+        node.right,
+        (token) => token.value === node.operator
+      );
+      const textBeforeOperator = sourceCode
+        .getText()
+        .slice(
+          sourceCode.getTokenBefore(operatorToken).range[1],
+          operatorToken.range[0]
+        );
+      const textAfterOperator = sourceCode
+        .getText()
+        .slice(
+          operatorToken.range[1],
+          sourceCode.getTokenAfter(operatorToken).range[0]
+        );
+      const leftText = sourceCode
+        .getText()
+        .slice(
+          node.range[0],
+          sourceCode.getTokenBefore(operatorToken).range[1]
+        );
+      const rightText = sourceCode
+        .getText()
+        .slice(sourceCode.getTokenAfter(operatorToken).range[0], node.range[1]);
+
+      return (
+        rightText +
+        textBeforeOperator +
+        OPERATOR_FLIP_MAP[operatorToken.value] +
+        textAfterOperator +
+        leftText
+      );
+    }
+
+    //--------------------------------------------------------------------------
+    // Public
+    //--------------------------------------------------------------------------
+
+    return {
+      BinaryExpression(node) {
+        const expectedLiteral = always ? node.left : node.right;
+        const expectedNonLiteral = always ? node.right : node.left;
+
+        // If `expectedLiteral` is not a literal, and `expectedNonLiteral` is a literal, raise an error.
+        if (
+          (expectedNonLiteral.type === "Literal" ||
+            looksLikeLiteral(expectedNonLiteral)) &&
+          !(
+            expectedLiteral.type === "Literal" ||
+            looksLikeLiteral(expectedLiteral)
+          ) &&
+          !(!isEqualityOperator(node.operator) && onlyEquality) &&
+          isComparisonOperator(node.operator) &&
+          !(exceptRange && isRangeTest(context.getAncestors().pop()))
+        ) {
+          context.report({
+            node,
+            messageId: "expected",
+            data: {
+              operator: node.operator,
+              expectedSide: always ? "left" : "right",
+            },
+            fix: (fixer) => fixer.replaceText(node, getFlippedString(node)),
+          });
+        }
+      },
+    };
+  },
 };
