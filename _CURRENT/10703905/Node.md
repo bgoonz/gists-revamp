@@ -2,7 +2,6 @@ Node.js is a JavaScript runtime environment. Sounds great, but what does that me
 
 The Node.js run-time environment includes everything you need to execute a program written in JavaScript.
 
-
 If you know Java, here’s a little analogy.
 Node.js came into existence when the original developers of JavaScript extended it from something you could only run in the browser to something you could run on your machine as a standalone application.
 
@@ -28,7 +27,6 @@ I/O takes time and hence blocks other functions.
 
 Consider a scenario where we request a backend database for the details of user1 and user2 and then print them on the screen/console. The response to this request takes time, but both of the user data requests can be carried out independently and at the same time.
 
-
 Blocking I/O (left) vs Non-Blocking I/O (right)
 Blocking I/O
 In the blocking method, user2's data request is not initiated until user1's data is printed to the screen.
@@ -46,7 +44,6 @@ The JavaScript event loop
 If you have 26 minutes, watch this excellent video explanation of the Node Event Loop:
 
 Otherwise, here’s a quick step-by-step explanation of how the JavaScript Event Loop works.
-
 
 Image Credits: Andrew Mead’s course
 Push main() onto the call stack.

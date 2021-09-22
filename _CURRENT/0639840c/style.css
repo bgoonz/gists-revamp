@@ -30,10 +30,18 @@ nav a {
   transition: all 400ms;
 }
 
-nav a.red { color: #f33; }
-nav a.green { color: #3f3; }
-nav a.blue { color: #39f; }
-nav a.yellow { color: #ff3; }
+nav a.red {
+  color: #f33;
+}
+nav a.green {
+  color: #3f3;
+}
+nav a.blue {
+  color: #39f;
+}
+nav a.yellow {
+  color: #ff3;
+}
 
 nav a canvas {
   display: block;
