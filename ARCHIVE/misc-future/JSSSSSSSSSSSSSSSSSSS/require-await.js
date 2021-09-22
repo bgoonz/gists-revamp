@@ -22,7 +22,7 @@ const astUtils = require("../util/ast-utils");
  * @returns {string} The text that the 1st letter was capitalized.
  */
 function capitalizeFirstLetter(text) {
-    return text[0].toUpperCase() + text.slice(1);
+  return text[0].toUpperCase() + text.slice(1);
 }
 
 //------------------------------------------------------------------------------
@@ -30,75 +30,77 @@ function capitalizeFirstLetter(text) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow async functions which have no `await` expression",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/require-await"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow async functions which have no `await` expression",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/require-await",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
-        let scopeInfo = null;
+    schema: [],
+  },
 
-        /**
-         * Push the scope info object to the stack.
-         *
-         * @returns {void}
-         */
-        function enterFunction() {
-            scopeInfo = {
-                upper: scopeInfo,
-                hasAwait: false
-            };
-        }
+  create(context) {
+    const sourceCode = context.getSourceCode();
+    let scopeInfo = null;
 
-        /**
-         * Pop the top scope info object from the stack.
-         * Also, it reports the function if needed.
-         *
-         * @param {ASTNode} node - The node to report.
-         * @returns {void}
-         */
-        function exitFunction(node) {
-            if (node.async && !scopeInfo.hasAwait && !astUtils.isEmptyFunction(node)) {
-                context.report({
-                    node,
-                    loc: astUtils.getFunctionHeadLoc(node, sourceCode),
-                    message: "{{name}} has no 'await' expression.",
-                    data: {
-                        name: capitalizeFirstLetter(
-                            astUtils.getFunctionNameWithKind(node)
-                        )
-                    }
-                });
-            }
-
-            scopeInfo = scopeInfo.upper;
-        }
-
-        return {
-            FunctionDeclaration: enterFunction,
-            FunctionExpression: enterFunction,
-            ArrowFunctionExpression: enterFunction,
-            "FunctionDeclaration:exit": exitFunction,
-            "FunctionExpression:exit": exitFunction,
-            "ArrowFunctionExpression:exit": exitFunction,
-
-            AwaitExpression() {
-                scopeInfo.hasAwait = true;
-            },
-            ForOfStatement(node) {
-                if (node.await) {
-                    scopeInfo.hasAwait = true;
-                }
-            }
-        };
+    /**
+     * Push the scope info object to the stack.
+     *
+     * @returns {void}
+     */
+    function enterFunction() {
+      scopeInfo = {
+        upper: scopeInfo,
+        hasAwait: false,
+      };
     }
+
+    /**
+     * Pop the top scope info object from the stack.
+     * Also, it reports the function if needed.
+     *
+     * @param {ASTNode} node - The node to report.
+     * @returns {void}
+     */
+    function exitFunction(node) {
+      if (
+        node.async &&
+        !scopeInfo.hasAwait &&
+        !astUtils.isEmptyFunction(node)
+      ) {
+        context.report({
+          node,
+          loc: astUtils.getFunctionHeadLoc(node, sourceCode),
+          message: "{{name}} has no 'await' expression.",
+          data: {
+            name: capitalizeFirstLetter(astUtils.getFunctionNameWithKind(node)),
+          },
+        });
+      }
+
+      scopeInfo = scopeInfo.upper;
+    }
+
+    return {
+      FunctionDeclaration: enterFunction,
+      FunctionExpression: enterFunction,
+      ArrowFunctionExpression: enterFunction,
+      "FunctionDeclaration:exit": exitFunction,
+      "FunctionExpression:exit": exitFunction,
+      "ArrowFunctionExpression:exit": exitFunction,
+
+      AwaitExpression() {
+        scopeInfo.hasAwait = true;
+      },
+      ForOfStatement(node) {
+        if (node.await) {
+          scopeInfo.hasAwait = true;
+        }
+      },
+    };
+  },
 };

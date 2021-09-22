@@ -1,6 +1,6 @@
-var baseFindIndex = require('./_baseFindIndex'),
-    baseIsNaN = require('./_baseIsNaN'),
-    strictIndexOf = require('./_strictIndexOf');
+var baseFindIndex = require("./_baseFindIndex"),
+  baseIsNaN = require("./_baseIsNaN"),
+  strictIndexOf = require("./_strictIndexOf");
 
 /**
  * The base implementation of `_.indexOf` without `fromIndex` bounds checks.

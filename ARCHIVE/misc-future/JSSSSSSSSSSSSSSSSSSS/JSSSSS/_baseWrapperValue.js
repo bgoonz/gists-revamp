@@ -1,6 +1,6 @@
-var LazyWrapper = require('./_LazyWrapper'),
-    arrayPush = require('./_arrayPush'),
-    arrayReduce = require('./_arrayReduce');
+var LazyWrapper = require("./_LazyWrapper"),
+  arrayPush = require("./_arrayPush"),
+  arrayReduce = require("./_arrayReduce");
 
 /**
  * The base implementation of `wrapperValue` which returns the result of
@@ -17,9 +17,16 @@ function baseWrapperValue(value, actions) {
   if (result instanceof LazyWrapper) {
     result = result.value();
   }
-  return arrayReduce(actions, function(result, action) {
-    return action.func.apply(action.thisArg, arrayPush([result], action.args));
-  }, result);
+  return arrayReduce(
+    actions,
+    function (result, action) {
+      return action.func.apply(
+        action.thisArg,
+        arrayPush([result], action.args)
+      );
+    },
+    result
+  );
 }
 
 module.exports = baseWrapperValue;

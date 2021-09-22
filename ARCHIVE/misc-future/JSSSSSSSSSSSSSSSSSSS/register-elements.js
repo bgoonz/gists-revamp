@@ -59,306 +59,307 @@ const mappings = {
         "tt",
         "u",
         "var",
-        "wbr"
-      ]
+        "wbr",
+      ],
     },
     HTMLAnchorElement: {
       file: require("./generated/HTMLAnchorElement.js"),
-      tags: ["a"]
+      tags: ["a"],
     },
     HTMLAreaElement: {
       file: require("./generated/HTMLAreaElement.js"),
-      tags: ["area"]
+      tags: ["area"],
     },
     HTMLAudioElement: {
       file: require("./generated/HTMLAudioElement.js"),
-      tags: ["audio"]
+      tags: ["audio"],
     },
     HTMLBaseElement: {
       file: require("./generated/HTMLBaseElement.js"),
-      tags: ["base"]
+      tags: ["base"],
     },
     HTMLBodyElement: {
       file: require("./generated/HTMLBodyElement.js"),
-      tags: ["body"]
+      tags: ["body"],
     },
     HTMLBRElement: {
       file: require("./generated/HTMLBRElement.js"),
-      tags: ["br"]
+      tags: ["br"],
     },
     HTMLButtonElement: {
       file: require("./generated/HTMLButtonElement.js"),
-      tags: ["button"]
+      tags: ["button"],
     },
     HTMLCanvasElement: {
       file: require("./generated/HTMLCanvasElement.js"),
-      tags: ["canvas"]
+      tags: ["canvas"],
     },
     HTMLDataElement: {
       file: require("./generated/HTMLDataElement.js"),
-      tags: ["data"]
+      tags: ["data"],
     },
     HTMLDataListElement: {
       file: require("./generated/HTMLDataListElement.js"),
-      tags: ["datalist"]
+      tags: ["datalist"],
     },
     HTMLDetailsElement: {
       file: require("./generated/HTMLDetailsElement.js"),
-      tags: ["details"]
+      tags: ["details"],
     },
     HTMLDialogElement: {
       file: require("./generated/HTMLDialogElement.js"),
-      tags: ["dialog"]
+      tags: ["dialog"],
     },
     HTMLDirectoryElement: {
       file: require("./generated/HTMLDirectoryElement.js"),
-      tags: ["dir"]
+      tags: ["dir"],
     },
     HTMLDivElement: {
       file: require("./generated/HTMLDivElement.js"),
-      tags: ["div"]
+      tags: ["div"],
     },
     HTMLDListElement: {
       file: require("./generated/HTMLDListElement.js"),
-      tags: ["dl"]
+      tags: ["dl"],
     },
     HTMLEmbedElement: {
       file: require("./generated/HTMLEmbedElement.js"),
-      tags: ["embed"]
+      tags: ["embed"],
     },
     HTMLFieldSetElement: {
       file: require("./generated/HTMLFieldSetElement.js"),
-      tags: ["fieldset"]
+      tags: ["fieldset"],
     },
     HTMLFontElement: {
       file: require("./generated/HTMLFontElement.js"),
-      tags: ["font"]
+      tags: ["font"],
     },
     HTMLFormElement: {
       file: require("./generated/HTMLFormElement.js"),
-      tags: ["form"]
+      tags: ["form"],
     },
     HTMLFrameElement: {
       file: require("./generated/HTMLFrameElement.js"),
-      tags: ["frame"]
+      tags: ["frame"],
     },
     HTMLFrameSetElement: {
       file: require("./generated/HTMLFrameSetElement.js"),
-      tags: ["frameset"]
+      tags: ["frameset"],
     },
     HTMLHeadingElement: {
       file: require("./generated/HTMLHeadingElement.js"),
-      tags: ["h1", "h2", "h3", "h4", "h5", "h6"]
+      tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
     },
     HTMLHeadElement: {
       file: require("./generated/HTMLHeadElement.js"),
-      tags: ["head"]
+      tags: ["head"],
     },
     HTMLHRElement: {
       file: require("./generated/HTMLHRElement.js"),
-      tags: ["hr"]
+      tags: ["hr"],
     },
     HTMLHtmlElement: {
       file: require("./generated/HTMLHtmlElement.js"),
-      tags: ["html"]
+      tags: ["html"],
     },
     HTMLIFrameElement: {
       file: require("./generated/HTMLIFrameElement.js"),
-      tags: ["iframe"]
+      tags: ["iframe"],
     },
     HTMLImageElement: {
       file: require("./generated/HTMLImageElement.js"),
-      tags: ["img"]
+      tags: ["img"],
     },
     HTMLInputElement: {
       file: require("./generated/HTMLInputElement.js"),
-      tags: ["input"]
+      tags: ["input"],
     },
     HTMLLabelElement: {
       file: require("./generated/HTMLLabelElement.js"),
-      tags: ["label"]
+      tags: ["label"],
     },
     HTMLLegendElement: {
       file: require("./generated/HTMLLegendElement.js"),
-      tags: ["legend"]
+      tags: ["legend"],
     },
     HTMLLIElement: {
       file: require("./generated/HTMLLIElement.js"),
-      tags: ["li"]
+      tags: ["li"],
     },
     HTMLLinkElement: {
       file: require("./generated/HTMLLinkElement.js"),
-      tags: ["link"]
+      tags: ["link"],
     },
     HTMLMapElement: {
       file: require("./generated/HTMLMapElement.js"),
-      tags: ["map"]
+      tags: ["map"],
     },
     HTMLMarqueeElement: {
       file: require("./generated/HTMLMarqueeElement.js"),
-      tags: ["marquee"]
+      tags: ["marquee"],
     },
     HTMLMediaElement: {
       file: require("./generated/HTMLMediaElement.js"),
-      tags: []
+      tags: [],
     },
     HTMLMenuElement: {
       file: require("./generated/HTMLMenuElement.js"),
-      tags: ["menu"]
+      tags: ["menu"],
     },
     HTMLMetaElement: {
       file: require("./generated/HTMLMetaElement.js"),
-      tags: ["meta"]
+      tags: ["meta"],
     },
     HTMLMeterElement: {
       file: require("./generated/HTMLMeterElement.js"),
-      tags: ["meter"]
+      tags: ["meter"],
     },
     HTMLModElement: {
       file: require("./generated/HTMLModElement.js"),
-      tags: ["del", "ins"]
+      tags: ["del", "ins"],
     },
     HTMLObjectElement: {
       file: require("./generated/HTMLObjectElement.js"),
-      tags: ["object"]
+      tags: ["object"],
     },
     HTMLOListElement: {
       file: require("./generated/HTMLOListElement.js"),
-      tags: ["ol"]
+      tags: ["ol"],
     },
     HTMLOptGroupElement: {
       file: require("./generated/HTMLOptGroupElement.js"),
-      tags: ["optgroup"]
+      tags: ["optgroup"],
     },
     HTMLOptionElement: {
       file: require("./generated/HTMLOptionElement.js"),
-      tags: ["option"]
+      tags: ["option"],
     },
     HTMLOutputElement: {
       file: require("./generated/HTMLOutputElement.js"),
-      tags: ["output"]
+      tags: ["output"],
     },
     HTMLParagraphElement: {
       file: require("./generated/HTMLParagraphElement.js"),
-      tags: ["p"]
+      tags: ["p"],
     },
     HTMLParamElement: {
       file: require("./generated/HTMLParamElement.js"),
-      tags: ["param"]
+      tags: ["param"],
     },
     HTMLPictureElement: {
       file: require("./generated/HTMLPictureElement.js"),
-      tags: ["picture"]
+      tags: ["picture"],
     },
     HTMLPreElement: {
       file: require("./generated/HTMLPreElement.js"),
-      tags: ["listing", "pre", "xmp"]
+      tags: ["listing", "pre", "xmp"],
     },
     HTMLProgressElement: {
       file: require("./generated/HTMLProgressElement.js"),
-      tags: ["progress"]
+      tags: ["progress"],
     },
     HTMLQuoteElement: {
       file: require("./generated/HTMLQuoteElement.js"),
-      tags: ["blockquote", "q"]
+      tags: ["blockquote", "q"],
     },
     HTMLScriptElement: {
       file: require("./generated/HTMLScriptElement.js"),
-      tags: ["script"]
+      tags: ["script"],
     },
     HTMLSelectElement: {
       file: require("./generated/HTMLSelectElement.js"),
-      tags: ["select"]
+      tags: ["select"],
     },
     HTMLSourceElement: {
       file: require("./generated/HTMLSourceElement.js"),
-      tags: ["source"]
+      tags: ["source"],
     },
     HTMLSpanElement: {
       file: require("./generated/HTMLSpanElement.js"),
-      tags: ["span"]
+      tags: ["span"],
     },
     HTMLStyleElement: {
       file: require("./generated/HTMLStyleElement.js"),
-      tags: ["style"]
+      tags: ["style"],
     },
     HTMLTableCaptionElement: {
       file: require("./generated/HTMLTableCaptionElement.js"),
-      tags: ["caption"]
+      tags: ["caption"],
     },
     HTMLTableCellElement: {
       file: require("./generated/HTMLTableCellElement.js"),
-      tags: ["th", "td"]
+      tags: ["th", "td"],
     },
     HTMLTableColElement: {
       file: require("./generated/HTMLTableColElement.js"),
-      tags: ["col", "colgroup"]
+      tags: ["col", "colgroup"],
     },
     HTMLTableElement: {
       file: require("./generated/HTMLTableElement.js"),
-      tags: ["table"]
+      tags: ["table"],
     },
     HTMLTimeElement: {
       file: require("./generated/HTMLTimeElement.js"),
-      tags: ["time"]
+      tags: ["time"],
     },
     HTMLTitleElement: {
       file: require("./generated/HTMLTitleElement.js"),
-      tags: ["title"]
+      tags: ["title"],
     },
     HTMLTableRowElement: {
       file: require("./generated/HTMLTableRowElement.js"),
-      tags: ["tr"]
+      tags: ["tr"],
     },
     HTMLTableSectionElement: {
       file: require("./generated/HTMLTableSectionElement.js"),
-      tags: ["thead", "tbody", "tfoot"]
+      tags: ["thead", "tbody", "tfoot"],
     },
     HTMLTemplateElement: {
       file: require("./generated/HTMLTemplateElement.js"),
-      tags: ["template"]
+      tags: ["template"],
     },
     HTMLTextAreaElement: {
       file: require("./generated/HTMLTextAreaElement.js"),
-      tags: ["textarea"]
+      tags: ["textarea"],
     },
     HTMLTrackElement: {
       file: require("./generated/HTMLTrackElement.js"),
-      tags: ["track"]
+      tags: ["track"],
     },
     HTMLUListElement: {
       file: require("./generated/HTMLUListElement.js"),
-      tags: ["ul"]
+      tags: ["ul"],
     },
     HTMLUnknownElement: {
       file: require("./generated/HTMLUnknownElement.js"),
-      tags: []
+      tags: [],
     },
     HTMLVideoElement: {
       file: require("./generated/HTMLVideoElement.js"),
-      tags: ["video"]
-    }
+      tags: ["video"],
+    },
   },
   "http://www.w3.org/2000/svg": {
     SVGElement: {
       file: require("./generated/SVGElement.js"),
-      tags: []
+      tags: [],
     },
     SVGGraphicsElement: {
       file: require("./generated/SVGGraphicsElement.js"),
-      tags: []
+      tags: [],
     },
     SVGSVGElement: {
       file: require("./generated/SVGSVGElement.js"),
-      tags: ["svg"]
-    }
-  }
+      tags: ["svg"],
+    },
+  },
 };
 
-module.exports = core => {
+module.exports = (core) => {
   for (const ns of Object.keys(mappings)) {
     const interfaces = mappings[ns];
-    DocumentImpl.implementation.prototype._elementBuilders[ns] = Object.create(null);
+    DocumentImpl.implementation.prototype._elementBuilders[ns] =
+      Object.create(null);
 
     for (const interfaceName of Object.keys(interfaces)) {
       const { file, tags } = interfaces[interfaceName];
@@ -366,11 +367,15 @@ module.exports = core => {
       core[interfaceName] = file.interface;
 
       for (const tagName of tags) {
-        DocumentImpl.implementation.prototype._elementBuilders[ns][tagName] = (document, localName, namespace) => {
+        DocumentImpl.implementation.prototype._elementBuilders[ns][tagName] = (
+          document,
+          localName,
+          namespace
+        ) => {
           return file.createImpl([], {
             ownerDocument: document,
             localName,
-            namespace
+            namespace,
           });
         };
       }

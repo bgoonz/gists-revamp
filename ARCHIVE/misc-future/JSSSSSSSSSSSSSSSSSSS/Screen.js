@@ -13,7 +13,7 @@ Object.defineProperty(Screen, "prototype", {
   value: Screen.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(Screen.prototype, "availWidth", {
@@ -26,7 +26,7 @@ Object.defineProperty(Screen.prototype, "availWidth", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Screen.prototype, "availHeight", {
@@ -39,7 +39,7 @@ Object.defineProperty(Screen.prototype, "availHeight", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Screen.prototype, "width", {
@@ -52,7 +52,7 @@ Object.defineProperty(Screen.prototype, "width", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Screen.prototype, "height", {
@@ -65,7 +65,7 @@ Object.defineProperty(Screen.prototype, "height", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Screen.prototype, "colorDepth", {
@@ -78,7 +78,7 @@ Object.defineProperty(Screen.prototype, "colorDepth", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Screen.prototype, "pixelDepth", {
@@ -91,14 +91,14 @@ Object.defineProperty(Screen.prototype, "pixelDepth", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Screen.prototype, Symbol.toStringTag, {
   value: "Screen",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -162,7 +162,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -173,8 +173,8 @@ const iface = {
   },
   interface: Screen,
   expose: {
-    Window: { Screen }
-  }
+    Window: { Screen },
+  },
 }; // iface
 module.exports = iface;
 

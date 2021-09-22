@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.remove = remove;
 exports._removeFromScope = _removeFromScope;
@@ -42,7 +42,7 @@ function remove() {
 
 function _removeFromScope() {
   const bindings = this.getBindingIdentifiers();
-  Object.keys(bindings).forEach(name => this.scope.removeBinding(name));
+  Object.keys(bindings).forEach((name) => this.scope.removeBinding(name));
 }
 
 function _callRemovalHooks() {
@@ -68,6 +68,8 @@ function _markRemoved() {
 
 function _assertUnremoved() {
   if (this.removed) {
-    throw this.buildCodeFrameError("NodePath has been removed so is read-only.");
+    throw this.buildCodeFrameError(
+      "NodePath has been removed so is read-only."
+    );
   }
 }

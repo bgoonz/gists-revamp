@@ -27,8 +27,8 @@ function reportAnError(line, col, target, errorObject, message, location) {
       filename: location,
       lineno: line,
       colno: col,
-      error: errorObject
-    }
+      error: errorObject,
+    },
   ]);
 
   try {
@@ -49,20 +49,32 @@ module.exports = function reportException(window, error, filenameHint) {
   let pieces;
   if (lines) {
     for (let i = 1; i < lines.length && !pieces; ++i) {
-      pieces = lines[i].match(/at (?:(.+)\s+)?\(?(?:(.+?):(\d+):(\d+)|([^)]+))\)?/);
+      pieces = lines[i].match(
+        /at (?:(.+)\s+)?\(?(?:(.+?):(\d+):(\d+)|([^)]+))\)?/
+      );
     }
   }
 
-  const fileName = (pieces && pieces[2]) || filenameHint || window._document.URL;
+  const fileName =
+    (pieces && pieces[2]) || filenameHint || window._document.URL;
   const lineNumber = (pieces && parseInt(pieces[3])) || 0;
   const columnNumber = (pieces && parseInt(pieces[4])) || 0;
 
   const windowImpl = idlUtils.implForWrapper(window);
 
-  const handled = reportAnError(lineNumber, columnNumber, windowImpl, error, error.message, fileName);
+  const handled = reportAnError(
+    lineNumber,
+    columnNumber,
+    windowImpl,
+    error,
+    error.message,
+    fileName
+  );
 
   if (!handled) {
-    const errorString = shouldBeDisplayedAsError(error) ? `[${error.name}: ${error.message}]` : util.inspect(error);
+    const errorString = shouldBeDisplayedAsError(error)
+      ? `[${error.name}: ${error.message}]`
+      : util.inspect(error);
     const jsdomError = new Error(`Uncaught ${errorString}`);
     jsdomError.detail = error;
     jsdomError.type = "unhandled exception";

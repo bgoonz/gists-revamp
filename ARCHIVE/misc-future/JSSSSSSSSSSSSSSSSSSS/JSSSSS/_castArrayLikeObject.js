@@ -1,4 +1,4 @@
-var isArrayLikeObject = require('./isArrayLikeObject');
+var isArrayLikeObject = require("./isArrayLikeObject");
 
 /**
  * Casts `value` to an empty array if it's not an array like object.

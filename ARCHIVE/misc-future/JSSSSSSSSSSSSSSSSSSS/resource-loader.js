@@ -6,7 +6,9 @@ const sniffHTMLEncoding = require("html-encoding-sniffer");
 const whatwgEncoding = require("whatwg-encoding");
 const fs = require("fs");
 const request = require("request");
-const { documentBaseURLSerialized } = require("../living/helpers/document-base-url");
+const {
+  documentBaseURLSerialized,
+} = require("../living/helpers/document-base-url");
 const NODE_TYPE = require("../living/node-type");
 
 /* eslint-disable no-restricted-modules */
@@ -15,9 +17,15 @@ const NODE_TYPE = require("../living/node-type");
 const URL = require("url");
 /* eslint-enable no-restricted-modules */
 
-const IS_BROWSER = Object.prototype.toString.call(process) !== "[object process]";
+const IS_BROWSER =
+  Object.prototype.toString.call(process) !== "[object process]";
 
-function createResourceLoadHandler(element, resourceUrl, document, loadCallback) {
+function createResourceLoadHandler(
+  element,
+  resourceUrl,
+  document,
+  loadCallback
+) {
   if (loadCallback === undefined) {
     loadCallback = () => {
       // do nothing
@@ -41,7 +49,9 @@ function createResourceLoadHandler(element, resourceUrl, document, loadCallback)
         ev.error = err;
         element.dispatchEvent(ev);
 
-        const error = new Error(`Could not load ${element.localName}: "${resourceUrl}"`);
+        const error = new Error(
+          `Could not load ${element.localName}: "${resourceUrl}"`
+        );
         error.detail = err;
         error.type = "resource loading";
 
@@ -53,25 +63,31 @@ function createResourceLoadHandler(element, resourceUrl, document, loadCallback)
   };
 }
 
-exports.readFile = function (filePath, { defaultEncoding, detectMetaCharset }, callback) {
+exports.readFile = function (
+  filePath,
+  { defaultEncoding, detectMetaCharset },
+  callback
+) {
   const readableStream = fs.createReadStream(filePath);
 
   let data = Buffer.alloc(0);
 
   readableStream.on("error", callback);
 
-  readableStream.on("data", chunk => {
+  readableStream.on("data", (chunk) => {
     data = Buffer.concat([data, chunk]);
   });
 
   readableStream.on("end", () => {
     // Not passing default encoding means binary
     if (defaultEncoding) {
-      const encoding = detectMetaCharset ?
-                       sniffHTMLEncoding(data, { defaultEncoding }) :
-                       whatwgEncoding.getBOMEncoding(data) || defaultEncoding;
+      const encoding = detectMetaCharset
+        ? sniffHTMLEncoding(data, { defaultEncoding })
+        : whatwgEncoding.getBOMEncoding(data) || defaultEncoding;
       const decoded = whatwgEncoding.decode(data, encoding);
-      callback(null, decoded, { headers: { "content-type": "text/plain;charset=" + encoding } });
+      callback(null, decoded, {
+        headers: { "content-type": "text/plain;charset=" + encoding },
+      });
     } else {
       callback(null, data);
     }
@@ -83,32 +99,42 @@ exports.readFile = function (filePath, { defaultEncoding, detectMetaCharset }, c
       const error = new Error("request canceled by user");
       error.isAbortError = true;
       callback(error);
-    }
+    },
   };
 };
 
-function readDataURL(dataURL, { defaultEncoding, detectMetaCharset }, callback) {
+function readDataURL(
+  dataURL,
+  { defaultEncoding, detectMetaCharset },
+  callback
+) {
   try {
     const parsed = parseDataURL(dataURL);
     // If default encoding does not exist, pass on binary data.
     if (defaultEncoding) {
       const sniffOptions = {
         transportLayerEncodingLabel: parsed.mimeType.parameters.get("charset"),
-        defaultEncoding
+        defaultEncoding,
       };
 
-      const encoding = detectMetaCharset ?
-                       sniffHTMLEncoding(parsed.body, sniffOptions) :
-                       whatwgEncoding.getBOMEncoding(parsed.body) ||
-                        whatwgEncoding.labelToName(parsed.mimeType.parameters.get("charset")) ||
-                        defaultEncoding;
+      const encoding = detectMetaCharset
+        ? sniffHTMLEncoding(parsed.body, sniffOptions)
+        : whatwgEncoding.getBOMEncoding(parsed.body) ||
+          whatwgEncoding.labelToName(
+            parsed.mimeType.parameters.get("charset")
+          ) ||
+          defaultEncoding;
       const decoded = whatwgEncoding.decode(parsed.body, encoding);
 
       parsed.mimeType.parameters.set("charset", encoding);
 
-      callback(null, decoded, { headers: { "content-type": parsed.mimeType.toString() } });
+      callback(null, decoded, {
+        headers: { "content-type": parsed.mimeType.toString() },
+      });
     } else {
-      callback(null, parsed.body, { headers: { "content-type": parsed.mimeType.toString() } });
+      callback(null, parsed.body, {
+        headers: { "content-type": parsed.mimeType.toString() },
+      });
     }
   } catch (err) {
     callback(err, null);
@@ -120,7 +146,7 @@ function readDataURL(dataURL, { defaultEncoding, detectMetaCharset }, callback) 
 // (see: https://github.com/request/request/blob/master/lib/cookies.js).
 // Therefore, to pass our cookie jar to the request, we need to create
 // request's wrapper and monkey patch it with our jar.
-exports.wrapCookieJarForRequest = cookieJar => {
+exports.wrapCookieJarForRequest = (cookieJar) => {
   const jarWrapper = request.jar();
   jarWrapper._jar = cookieJar;
   return jarWrapper;
@@ -140,10 +166,18 @@ function fetch(urlObj, options, callback) {
 }
 
 exports.enqueue = function (element, resourceUrl, callback) {
-  const document = element.nodeType === NODE_TYPE.DOCUMENT_NODE ? element : element._ownerDocument;
+  const document =
+    element.nodeType === NODE_TYPE.DOCUMENT_NODE
+      ? element
+      : element._ownerDocument;
 
   if (document._queue) {
-    const loadHandler = createResourceLoadHandler(element, resourceUrl || document.URL, document, callback);
+    const loadHandler = createResourceLoadHandler(
+      element,
+      resourceUrl || document.URL,
+      document,
+      callback
+    );
     return document._queue.push(loadHandler);
   }
 
@@ -165,8 +199,8 @@ exports.download = function (url, options, callback) {
     headers: {
       "User-Agent": options.userAgent,
       "Accept-Language": "en",
-      Accept: options.accept || "*/*"
-    }
+      Accept: options.accept || "*/*",
+    },
   };
   if (options.referrer && !IS_BROWSER) {
     requestOptions.headers.referer = options.referrer;
@@ -182,17 +216,19 @@ exports.download = function (url, options, callback) {
     if (!error) {
       // If default encoding does not exist, pass on binary data.
       if (defaultEncoding) {
-        const contentType = MIMEType.parse(response.headers["content-type"]) || new MIMEType("text/plain");
+        const contentType =
+          MIMEType.parse(response.headers["content-type"]) ||
+          new MIMEType("text/plain");
         const sniffOptions = {
           transportLayerEncodingLabel: contentType.parameters.get("charset"),
-          defaultEncoding
+          defaultEncoding,
         };
 
-        const encoding = detectMetaCharset ?
-                         sniffHTMLEncoding(bufferData, sniffOptions) :
-                         whatwgEncoding.getBOMEncoding(bufferData) ||
-                           whatwgEncoding.labelToName(contentType.parameters.get("charset")) ||
-                           defaultEncoding;
+        const encoding = detectMetaCharset
+          ? sniffHTMLEncoding(bufferData, sniffOptions)
+          : whatwgEncoding.getBOMEncoding(bufferData) ||
+            whatwgEncoding.labelToName(contentType.parameters.get("charset")) ||
+            defaultEncoding;
         const decoded = whatwgEncoding.decode(bufferData, encoding);
 
         contentType.parameters.set("charset", encoding);
@@ -212,7 +248,7 @@ exports.download = function (url, options, callback) {
       const error = new Error("request canceled by user");
       error.isAbortError = true;
       callback(error);
-    }
+    },
   };
 };
 
@@ -220,7 +256,12 @@ exports.load = function (element, urlString, options, callback) {
   const document = element._ownerDocument;
   const documentImpl = document.implementation;
 
-  if (!documentImpl._hasFeature("FetchExternalResources", element.tagName.toLowerCase())) {
+  if (
+    !documentImpl._hasFeature(
+      "FetchExternalResources",
+      element.tagName.toLowerCase()
+    )
+  ) {
     return;
   }
 
@@ -262,7 +303,7 @@ exports.load = function (element, urlString, options, callback) {
         baseUrl: documentBaseURLSerialized(document),
         defaultFetch(fetchCallback) {
           return fetch(urlObj, options, fetchCallback);
-        }
+        },
       },
       wrappedEnqueued
     );

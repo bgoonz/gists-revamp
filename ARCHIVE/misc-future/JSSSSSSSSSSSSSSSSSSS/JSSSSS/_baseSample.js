@@ -1,5 +1,5 @@
-var arraySample = require('./_arraySample'),
-    values = require('./values');
+var arraySample = require("./_arraySample"),
+  values = require("./values");
 
 /**
  * The base implementation of `_.sample`.

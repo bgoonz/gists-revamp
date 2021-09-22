@@ -1,5 +1,5 @@
-var baseUnset = require('./_baseUnset'),
-    isIndex = require('./_isIndex');
+var baseUnset = require("./_baseUnset"),
+  isIndex = require("./_isIndex");
 
 /** Used for built-in method references. */
 var arrayProto = Array.prototype;
@@ -18,7 +18,7 @@ var splice = arrayProto.splice;
  */
 function basePullAt(array, indexes) {
   var length = array ? indexes.length : 0,
-      lastIndex = length - 1;
+    lastIndex = length - 1;
 
   while (length--) {
     var index = indexes[length];

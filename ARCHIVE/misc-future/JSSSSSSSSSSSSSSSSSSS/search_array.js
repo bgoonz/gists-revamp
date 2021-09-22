@@ -4,10 +4,8 @@
  * @return {number}
  */
 
-function search(nums, target) {
-
-};
+function search(nums, target) {}
 
 module.exports = {
-    search: search,
-  };
+  search: search,
+};

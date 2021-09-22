@@ -6,11 +6,11 @@
  * @returns {Function} Returns the new base function.
  */
 function createBaseFor(fromRight) {
-  return function(object, iteratee, keysFunc) {
+  return function (object, iteratee, keysFunc) {
     var index = -1,
-        iterable = Object(object),
-        props = keysFunc(object),
-        length = props.length;
+      iterable = Object(object),
+      props = keysFunc(object),
+      length = props.length;
 
     while (length--) {
       var key = props[fromRight ? length : ++index];

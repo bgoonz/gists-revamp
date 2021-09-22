@@ -1,8 +1,8 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObjectLike = require('./isObjectLike');
+var baseGetTag = require("./_baseGetTag"),
+  isObjectLike = require("./isObjectLike");
 
 /** `Object#toString` result references. */
-var argsTag = '[object Arguments]';
+var argsTag = "[object Arguments]";
 
 /**
  * The base implementation of `_.isArguments`.

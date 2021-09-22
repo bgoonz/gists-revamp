@@ -1,16 +1,16 @@
-'use strict';
-var _ = require('lodash');
-var util = require('./readline');
-var cliWidth = require('cli-width');
-var stripAnsi = require('strip-ansi');
-var stringWidth = require('string-width');
+"use strict";
+var _ = require("lodash");
+var util = require("./readline");
+var cliWidth = require("cli-width");
+var stripAnsi = require("strip-ansi");
+var stringWidth = require("string-width");
 
 function height(content) {
-  return content.split('\n').length;
+  return content.split("\n").length;
 }
 
 function lastLine(content) {
-  return _.last(content.split('\n'));
+  return _.last(content.split("\n"));
 }
 
 class ScreenManager {
@@ -56,10 +56,10 @@ class ScreenManager {
     // This prevent the cursor from appearing at the beginning of the
     // current line.
     if (rawPromptLine.length % width === 0) {
-      content += '\n';
+      content += "\n";
     }
 
-    var fullContent = content + (bottomContent ? '\n' + bottomContent : '');
+    var fullContent = content + (bottomContent ? "\n" + bottomContent : "");
     this.rl.output.write(fullContent);
 
     /**
@@ -68,7 +68,8 @@ class ScreenManager {
 
     // We need to consider parts of the prompt under the cursor as part of the bottom
     // content in order to correctly cleanup and re-render.
-    var promptLineUpDiff = Math.floor(rawPromptLine.length / width) - cursorPos.rows;
+    var promptLineUpDiff =
+      Math.floor(rawPromptLine.length / width) - cursorPos.rows;
     var bottomContentHeight =
       promptLineUpDiff + (bottomContent ? height(bottomContent) : 0);
     if (bottomContentHeight > 0) {
@@ -101,9 +102,9 @@ class ScreenManager {
   }
 
   done() {
-    this.rl.setPrompt('');
+    this.rl.setPrompt("");
     this.rl.output.unmute();
-    this.rl.output.write('\n');
+    this.rl.output.write("\n");
   }
 
   releaseCursor() {
@@ -115,7 +116,7 @@ class ScreenManager {
   normalizedCliWidth() {
     var width = cliWidth({
       defaultWidth: 80,
-      output: this.rl.output
+      output: this.rl.output,
     });
     return width;
   }
@@ -124,18 +125,18 @@ class ScreenManager {
     // Break lines who're longer than the cli width so we can normalize the natural line
     // returns behavior across terminals.
     width = width || this.normalizedCliWidth();
-    var regex = new RegExp('(?:(?:\\033[[0-9;]*m)*.?){1,' + width + '}', 'g');
-    return lines.map(line => {
+    var regex = new RegExp("(?:(?:\\033[[0-9;]*m)*.?){1," + width + "}", "g");
+    return lines.map((line) => {
       var chunk = line.match(regex);
       // Last match is always empty
       chunk.pop();
-      return chunk || '';
+      return chunk || "";
     });
   }
 
   forceLineReturn(content, width) {
     width = width || this.normalizedCliWidth();
-    return _.flatten(this.breakLines(content.split('\n'), width)).join('\n');
+    return _.flatten(this.breakLines(content.split("\n"), width)).join("\n");
   }
 }
 

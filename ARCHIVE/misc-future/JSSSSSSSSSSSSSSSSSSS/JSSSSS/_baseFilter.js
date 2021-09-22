@@ -1,4 +1,4 @@
-var baseEach = require('./_baseEach');
+var baseEach = require("./_baseEach");
 
 /**
  * The base implementation of `_.filter` without support for iteratee shorthands.
@@ -10,7 +10,7 @@ var baseEach = require('./_baseEach');
  */
 function baseFilter(collection, predicate) {
   var result = [];
-  baseEach(collection, function(value, index, collection) {
+  baseEach(collection, function (value, index, collection) {
     if (predicate(value, index, collection)) {
       result.push(value);
     }

@@ -1,5 +1,5 @@
-var baseForRight = require('./_baseForRight'),
-    keys = require('./keys');
+var baseForRight = require("./_baseForRight"),
+  keys = require("./keys");
 
 /**
  * The base implementation of `_.forOwnRight` without support for iteratee shorthands.

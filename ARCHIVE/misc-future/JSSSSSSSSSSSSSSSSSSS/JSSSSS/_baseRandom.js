@@ -1,6 +1,6 @@
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeFloor = Math.floor,
-    nativeRandom = Math.random;
+  nativeRandom = Math.random;
 
 /**
  * The base implementation of `_.random` without support for returning

@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -17,19 +17,22 @@ const {
   identifier,
   toExpression,
   variableDeclaration,
-  variableDeclarator
+  variableDeclarator,
 } = _t;
 const renameVisitor = {
-  ReferencedIdentifier({
-    node
-  }, state) {
+  ReferencedIdentifier({ node }, state) {
     if (node.name === state.oldName) {
       node.name = state.newName;
     }
   },
 
   Scope(path, state) {
-    if (!path.scope.bindingIdentifierEquals(state.oldName, state.binding.identifier)) {
+    if (
+      !path.scope.bindingIdentifierEquals(
+        state.oldName,
+        state.binding.identifier
+      )
+    ) {
       skipAllButComputedMethodKey(path);
     }
   },
@@ -41,8 +44,7 @@ const renameVisitor = {
     for (const name in ids) {
       if (name === state.oldName) ids[name].name = state.newName;
     }
-  }
-
+  },
 };
 
 class Renamer {
@@ -59,7 +61,10 @@ class Renamer {
       return;
     }
 
-    if (maybeExportDeclar.isExportDefaultDeclaration() && !maybeExportDeclar.get("declaration").node.id) {
+    if (
+      maybeExportDeclar.isExportDefaultDeclaration() &&
+      !maybeExportDeclar.get("declaration").node.id
+    ) {
       return;
     }
 
@@ -72,7 +77,11 @@ class Renamer {
     if (this.binding.kind !== "hoisted") return;
     path.node.id = identifier(this.oldName);
     path.node._blockHoist = 3;
-    path.replaceWith(variableDeclaration("let", [variableDeclarator(identifier(this.newName), toExpression(path.node))]));
+    path.replaceWith(
+      variableDeclaration("let", [
+        variableDeclarator(identifier(this.newName), toExpression(path.node)),
+      ])
+    );
   }
 
   maybeConvertFromClassFunctionExpression(path) {
@@ -81,22 +90,22 @@ class Renamer {
     if (this.binding.kind !== "local") return;
     path.node.id = identifier(this.oldName);
     this.binding.scope.parent.push({
-      id: identifier(this.newName)
+      id: identifier(this.newName),
     });
-    path.replaceWith(assignmentExpression("=", identifier(this.newName), path.node));
+    path.replaceWith(
+      assignmentExpression("=", identifier(this.newName), path.node)
+    );
   }
 
   rename(block) {
-    const {
-      binding,
-      oldName,
-      newName
-    } = this;
-    const {
-      scope,
-      path
-    } = binding;
-    const parentDeclar = path.find(path => path.isDeclaration() || path.isFunctionExpression() || path.isClassExpression());
+    const { binding, oldName, newName } = this;
+    const { scope, path } = binding;
+    const parentDeclar = path.find(
+      (path) =>
+        path.isDeclaration() ||
+        path.isFunctionExpression() ||
+        path.isClassExpression()
+    );
 
     if (parentDeclar) {
       const bindingIds = parentDeclar.getOuterBindingIdentifiers();
@@ -108,8 +117,11 @@ class Renamer {
 
     const blockToTraverse = block || scope.block;
 
-    if ((blockToTraverse == null ? void 0 : blockToTraverse.type) === "SwitchStatement") {
-      blockToTraverse.cases.forEach(c => {
+    if (
+      (blockToTraverse == null ? void 0 : blockToTraverse.type) ===
+      "SwitchStatement"
+    ) {
+      blockToTraverse.cases.forEach((c) => {
         scope.traverse(c, renameVisitor, this);
       });
     } else {
@@ -127,7 +139,6 @@ class Renamer {
       this.maybeConvertFromClassFunctionExpression(parentDeclar);
     }
   }
-
 }
 
 exports.default = Renamer;

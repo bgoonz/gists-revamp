@@ -1,4 +1,4 @@
-var createBaseFor = require('./_createBaseFor');
+var createBaseFor = require("./_createBaseFor");
 
 /**
  * The base implementation of `baseForOwn` which iterates over `object`

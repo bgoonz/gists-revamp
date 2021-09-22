@@ -1,5 +1,5 @@
-var baseFor = require('./_baseFor'),
-    keys = require('./keys');
+var baseFor = require("./_baseFor"),
+  keys = require("./keys");
 
 /**
  * The base implementation of `_.forOwn` without support for iteratee shorthands.

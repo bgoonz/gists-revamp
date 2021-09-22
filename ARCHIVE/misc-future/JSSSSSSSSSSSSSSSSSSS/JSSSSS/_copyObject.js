@@ -1,5 +1,5 @@
-var assignValue = require('./_assignValue'),
-    baseAssignValue = require('./_baseAssignValue');
+var assignValue = require("./_assignValue"),
+  baseAssignValue = require("./_baseAssignValue");
 
 /**
  * Copies properties of `source` to `object`.
@@ -16,7 +16,7 @@ function copyObject(source, props, object, customizer) {
   object || (object = {});
 
   var index = -1,
-      length = props.length;
+    length = props.length;
 
   while (++index < length) {
     var key = props[index];

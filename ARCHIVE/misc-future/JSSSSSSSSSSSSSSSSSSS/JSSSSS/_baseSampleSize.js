@@ -1,6 +1,6 @@
-var baseClamp = require('./_baseClamp'),
-    shuffleSelf = require('./_shuffleSelf'),
-    values = require('./values');
+var baseClamp = require("./_baseClamp"),
+  shuffleSelf = require("./_shuffleSelf"),
+  values = require("./values");
 
 /**
  * The base implementation of `_.sampleSize` without param guards.

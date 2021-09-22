@@ -48,39 +48,36 @@ const interpolate = require("./interpolate");
 // Module Definition
 //------------------------------------------------------------------------------
 
-
 /**
  * Translates a multi-argument context.report() call into a single object argument call
  * @param {...*} args A list of arguments passed to `context.report`
  * @returns {MessageDescriptor} A normalized object containing report information
  */
 function normalizeMultiArgReportCall(...args) {
+  // If there is one argument, it is considered to be a new-style call already.
+  if (args.length === 1) {
+    // Shallow clone the object to avoid surprises if reusing the descriptor
+    return Object.assign({}, args[0]);
+  }
 
-    // If there is one argument, it is considered to be a new-style call already.
-    if (args.length === 1) {
-
-        // Shallow clone the object to avoid surprises if reusing the descriptor
-        return Object.assign({}, args[0]);
-    }
-
-    // If the second argument is a string, the arguments are interpreted as [node, message, data, fix].
-    if (typeof args[1] === "string") {
-        return {
-            node: args[0],
-            message: args[1],
-            data: args[2],
-            fix: args[3]
-        };
-    }
-
-    // Otherwise, the arguments are interpreted as [node, loc, message, data, fix].
+  // If the second argument is a string, the arguments are interpreted as [node, message, data, fix].
+  if (typeof args[1] === "string") {
     return {
-        node: args[0],
-        loc: args[1],
-        message: args[2],
-        data: args[3],
-        fix: args[4]
+      node: args[0],
+      message: args[1],
+      data: args[2],
+      fix: args[3],
     };
+  }
+
+  // Otherwise, the arguments are interpreted as [node, loc, message, data, fix].
+  return {
+    node: args[0],
+    loc: args[1],
+    message: args[2],
+    data: args[3],
+    fix: args[4],
+  };
 }
 
 /**
@@ -90,11 +87,14 @@ function normalizeMultiArgReportCall(...args) {
  * @throws AssertionError if neither a node nor a loc was provided, or if the node is not an object
  */
 function assertValidNodeInfo(descriptor) {
-    if (descriptor.node) {
-        assert(typeof descriptor.node === "object", "Node must be an object");
-    } else {
-        assert(descriptor.loc, "Node must be provided when reporting error if location is not provided");
-    }
+  if (descriptor.node) {
+    assert(typeof descriptor.node === "object", "Node must be an object");
+  } else {
+    assert(
+      descriptor.loc,
+      "Node must be provided when reporting error if location is not provided"
+    );
+  }
 }
 
 /**
@@ -104,13 +104,13 @@ function assertValidNodeInfo(descriptor) {
  * from the `node` of the original descriptor, or infers the `start` from the `loc` of the original descriptor.
  */
 function normalizeReportLoc(descriptor) {
-    if (descriptor.loc) {
-        if (descriptor.loc.start) {
-            return descriptor.loc;
-        }
-        return { start: descriptor.loc, end: null };
+  if (descriptor.loc) {
+    if (descriptor.loc.start) {
+      return descriptor.loc;
     }
-    return descriptor.node.loc;
+    return { start: descriptor.loc, end: null };
+  }
+  return descriptor.node.loc;
 }
 
 /**
@@ -121,7 +121,7 @@ function normalizeReportLoc(descriptor) {
  * @private
  */
 function compareFixesByRange(a, b) {
-    return a.range[0] - b.range[0] || a.range[1] - b.range[1];
+  return a.range[0] - b.range[0] || a.range[1] - b.range[1];
 }
 
 /**
@@ -131,33 +131,36 @@ function compareFixesByRange(a, b) {
  * @returns {{text: string, range: number[]}} The merged fixes
  */
 function mergeFixes(fixes, sourceCode) {
-    if (fixes.length === 0) {
-        return null;
+  if (fixes.length === 0) {
+    return null;
+  }
+  if (fixes.length === 1) {
+    return fixes[0];
+  }
+
+  fixes.sort(compareFixesByRange);
+
+  const originalText = sourceCode.text;
+  const start = fixes[0].range[0];
+  const end = fixes[fixes.length - 1].range[1];
+  let text = "";
+  let lastPos = Number.MIN_SAFE_INTEGER;
+
+  for (const fix of fixes) {
+    assert(
+      fix.range[0] >= lastPos,
+      "Fix objects must not be overlapped in a report."
+    );
+
+    if (fix.range[0] >= 0) {
+      text += originalText.slice(Math.max(0, start, lastPos), fix.range[0]);
     }
-    if (fixes.length === 1) {
-        return fixes[0];
-    }
+    text += fix.text;
+    lastPos = fix.range[1];
+  }
+  text += originalText.slice(Math.max(0, start, lastPos), end);
 
-    fixes.sort(compareFixesByRange);
-
-    const originalText = sourceCode.text;
-    const start = fixes[0].range[0];
-    const end = fixes[fixes.length - 1].range[1];
-    let text = "";
-    let lastPos = Number.MIN_SAFE_INTEGER;
-
-    for (const fix of fixes) {
-        assert(fix.range[0] >= lastPos, "Fix objects must not be overlapped in a report.");
-
-        if (fix.range[0] >= 0) {
-            text += originalText.slice(Math.max(0, start, lastPos), fix.range[0]);
-        }
-        text += fix.text;
-        lastPos = fix.range[1];
-    }
-    text += originalText.slice(Math.max(0, start, lastPos), end);
-
-    return { range: [start, end], text };
+  return { range: [start, end], text };
 }
 
 /**
@@ -168,18 +171,18 @@ function mergeFixes(fixes, sourceCode) {
  * @returns {({text: string, range: number[]}|null)} The fix for the descriptor
  */
 function normalizeFixes(descriptor, sourceCode) {
-    if (typeof descriptor.fix !== "function") {
-        return null;
-    }
+  if (typeof descriptor.fix !== "function") {
+    return null;
+  }
 
-    // @type {null | Fix | Fix[] | IterableIterator<Fix>}
-    const fix = descriptor.fix(ruleFixer);
+  // @type {null | Fix | Fix[] | IterableIterator<Fix>}
+  const fix = descriptor.fix(ruleFixer);
 
-    // Merge to one.
-    if (fix && Symbol.iterator in fix) {
-        return mergeFixes(Array.from(fix), sourceCode);
-    }
-    return fix;
+  // Merge to one.
+  if (fix && Symbol.iterator in fix) {
+    return mergeFixes(Array.from(fix), sourceCode);
+  }
+  return fix;
 }
 
 /**
@@ -195,33 +198,33 @@ function normalizeFixes(descriptor, sourceCode) {
  * @returns {function(...args): ReportInfo} Function that returns information about the report
  */
 function createProblem(options) {
-    const problem = {
-        ruleId: options.ruleId,
-        severity: options.severity,
-        message: options.message,
-        line: options.loc.start.line,
-        column: options.loc.start.column + 1,
-        nodeType: options.node && options.node.type || null
-    };
+  const problem = {
+    ruleId: options.ruleId,
+    severity: options.severity,
+    message: options.message,
+    line: options.loc.start.line,
+    column: options.loc.start.column + 1,
+    nodeType: (options.node && options.node.type) || null,
+  };
 
-    /*
-     * If this isn’t in the conditional, some of the tests fail
-     * because `messageId` is present in the problem object
-     */
-    if (options.messageId) {
-        problem.messageId = options.messageId;
-    }
+  /*
+   * If this isn’t in the conditional, some of the tests fail
+   * because `messageId` is present in the problem object
+   */
+  if (options.messageId) {
+    problem.messageId = options.messageId;
+  }
 
-    if (options.loc.end) {
-        problem.endLine = options.loc.end.line;
-        problem.endColumn = options.loc.end.column + 1;
-    }
+  if (options.loc.end) {
+    problem.endLine = options.loc.end.line;
+    problem.endColumn = options.loc.end.column + 1;
+  }
 
-    if (options.fix) {
-        problem.fix = options.fix;
-    }
+  if (options.fix) {
+    problem.fix = options.fix;
+  }
 
-    return problem;
+  return problem;
 }
 
 /**
@@ -233,49 +236,59 @@ function createProblem(options) {
  */
 
 module.exports = function createReportTranslator(metadata) {
+  /*
+   * `createReportTranslator` gets called once per enabled rule per file. It needs to be very performant.
+   * The report translator itself (i.e. the function that `createReportTranslator` returns) gets
+   * called every time a rule reports a problem, which happens much less frequently (usually, the vast
+   * majority of rules don't report any problems for a given file).
+   */
+  return (...args) => {
+    const descriptor = normalizeMultiArgReportCall(...args);
 
-    /*
-     * `createReportTranslator` gets called once per enabled rule per file. It needs to be very performant.
-     * The report translator itself (i.e. the function that `createReportTranslator` returns) gets
-     * called every time a rule reports a problem, which happens much less frequently (usually, the vast
-     * majority of rules don't report any problems for a given file).
-     */
-    return (...args) => {
-        const descriptor = normalizeMultiArgReportCall(...args);
+    assertValidNodeInfo(descriptor);
 
-        assertValidNodeInfo(descriptor);
+    let computedMessage;
 
-        let computedMessage;
+    if (descriptor.messageId) {
+      if (!metadata.messageIds) {
+        throw new TypeError(
+          "context.report() called with a messageId, but no messages were present in the rule metadata."
+        );
+      }
+      const id = descriptor.messageId;
+      const messages = metadata.messageIds;
 
-        if (descriptor.messageId) {
-            if (!metadata.messageIds) {
-                throw new TypeError("context.report() called with a messageId, but no messages were present in the rule metadata.");
-            }
-            const id = descriptor.messageId;
-            const messages = metadata.messageIds;
+      if (descriptor.message) {
+        throw new TypeError(
+          "context.report() called with a message and a messageId. Please only pass one."
+        );
+      }
+      if (!messages || !Object.prototype.hasOwnProperty.call(messages, id)) {
+        throw new TypeError(
+          `context.report() called with a messageId of '${id}' which is not present in the 'messages' config: ${JSON.stringify(
+            messages,
+            null,
+            2
+          )}`
+        );
+      }
+      computedMessage = messages[id];
+    } else if (descriptor.message) {
+      computedMessage = descriptor.message;
+    } else {
+      throw new TypeError(
+        "Missing `message` property in report() call; add a message that describes the linting problem."
+      );
+    }
 
-            if (descriptor.message) {
-                throw new TypeError("context.report() called with a message and a messageId. Please only pass one.");
-            }
-            if (!messages || !Object.prototype.hasOwnProperty.call(messages, id)) {
-                throw new TypeError(`context.report() called with a messageId of '${id}' which is not present in the 'messages' config: ${JSON.stringify(messages, null, 2)}`);
-            }
-            computedMessage = messages[id];
-        } else if (descriptor.message) {
-            computedMessage = descriptor.message;
-        } else {
-            throw new TypeError("Missing `message` property in report() call; add a message that describes the linting problem.");
-        }
-
-
-        return createProblem({
-            ruleId: metadata.ruleId,
-            severity: metadata.severity,
-            node: descriptor.node,
-            message: interpolate(computedMessage, descriptor.data),
-            messageId: descriptor.messageId,
-            loc: normalizeReportLoc(descriptor),
-            fix: normalizeFixes(descriptor, metadata.sourceCode)
-        });
-    };
+    return createProblem({
+      ruleId: metadata.ruleId,
+      severity: metadata.severity,
+      node: descriptor.node,
+      message: interpolate(computedMessage, descriptor.data),
+      messageId: descriptor.messageId,
+      loc: normalizeReportLoc(descriptor),
+      fix: normalizeFixes(descriptor, metadata.sourceCode),
+    });
+  };
 };

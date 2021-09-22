@@ -10,10 +10,10 @@
 //------------------------------------------------------------------------------
 
 const {
-    CALL,
-    CONSTRUCT,
-    ReferenceTracker,
-    getStringIfConstant
+  CALL,
+  CONSTRUCT,
+  ReferenceTracker,
+  getStringIfConstant,
 } = require("eslint-utils");
 
 //------------------------------------------------------------------------------
@@ -21,49 +21,52 @@ const {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "enforce the use of `u` flag on RegExp",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/require-unicode-regexp"
-        },
-
-        messages: {
-            requireUFlag: "Use the 'u' flag."
-        },
-
-        schema: []
+    docs: {
+      description: "enforce the use of `u` flag on RegExp",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/require-unicode-regexp",
     },
 
-    create(context) {
-        return {
-            "Literal[regex]"(node) {
-                const flags = node.regex.flags || "";
+    messages: {
+      requireUFlag: "Use the 'u' flag.",
+    },
 
-                if (!flags.includes("u")) {
-                    context.report({ node, messageId: "requireUFlag" });
-                }
-            },
+    schema: [],
+  },
 
-            Program() {
-                const scope = context.getScope();
-                const tracker = new ReferenceTracker(scope);
-                const trackMap = {
-                    RegExp: { [CALL]: true, [CONSTRUCT]: true }
-                };
+  create(context) {
+    return {
+      "Literal[regex]"(node) {
+        const flags = node.regex.flags || "";
 
-                for (const { node } of tracker.iterateGlobalReferences(trackMap)) {
-                    const flagsNode = node.arguments[1];
-                    const flags = getStringIfConstant(flagsNode, scope);
+        if (!flags.includes("u")) {
+          context.report({ node, messageId: "requireUFlag" });
+        }
+      },
 
-                    if (!flagsNode || (typeof flags === "string" && !flags.includes("u"))) {
-                        context.report({ node, messageId: "requireUFlag" });
-                    }
-                }
-            }
+      Program() {
+        const scope = context.getScope();
+        const tracker = new ReferenceTracker(scope);
+        const trackMap = {
+          RegExp: { [CALL]: true, [CONSTRUCT]: true },
         };
-    }
+
+        for (const { node } of tracker.iterateGlobalReferences(trackMap)) {
+          const flagsNode = node.arguments[1];
+          const flags = getStringIfConstant(flagsNode, scope);
+
+          if (
+            !flagsNode ||
+            (typeof flags === "string" && !flags.includes("u"))
+          ) {
+            context.report({ node, messageId: "requireUFlag" });
+          }
+        }
+      },
+    };
+  },
 };

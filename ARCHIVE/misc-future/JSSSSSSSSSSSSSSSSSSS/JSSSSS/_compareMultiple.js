@@ -1,4 +1,4 @@
-var compareAscending = require('./_compareAscending');
+var compareAscending = require("./_compareAscending");
 
 /**
  * Used by `_.orderBy` to compare multiple properties of a value to another
@@ -16,10 +16,10 @@ var compareAscending = require('./_compareAscending');
  */
 function compareMultiple(object, other, orders) {
   var index = -1,
-      objCriteria = object.criteria,
-      othCriteria = other.criteria,
-      length = objCriteria.length,
-      ordersLength = orders.length;
+    objCriteria = object.criteria,
+    othCriteria = other.criteria,
+    length = objCriteria.length,
+    ordersLength = orders.length;
 
   while (++index < length) {
     var result = compareAscending(objCriteria[index], othCriteria[index]);
@@ -28,7 +28,7 @@ function compareMultiple(object, other, orders) {
         return result;
       }
       var order = orders[index];
-      return result * (order == 'desc' ? -1 : 1);
+      return result * (order == "desc" ? -1 : 1);
     }
   }
   // Fixes an `Array#sort` bug in the JS engine embedded in Adobe applications

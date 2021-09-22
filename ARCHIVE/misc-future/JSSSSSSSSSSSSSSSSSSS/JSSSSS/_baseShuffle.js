@@ -1,5 +1,5 @@
-var shuffleSelf = require('./_shuffleSelf'),
-    values = require('./values');
+var shuffleSelf = require("./_shuffleSelf"),
+  values = require("./values");
 
 /**
  * The base implementation of `_.shuffle`.

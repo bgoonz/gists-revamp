@@ -1,4 +1,4 @@
-var baseIndexOf = require('./_baseIndexOf');
+var baseIndexOf = require("./_baseIndexOf");
 
 /**
  * Used by `_.trim` and `_.trimEnd` to get the index of the last string symbol

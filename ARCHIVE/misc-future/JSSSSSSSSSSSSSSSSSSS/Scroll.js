@@ -1,8 +1,8 @@
-import smoothscroll from 'smoothscroll-polyfill';
-import React from 'react';
-import PropTypes from 'prop-types';
+import smoothscroll from "smoothscroll-polyfill";
+import React from "react";
+import PropTypes from "prop-types";
 
-const Element = props => {
+const Element = (props) => {
   return props.children;
 };
 
@@ -28,11 +28,11 @@ class Scroll extends React.Component {
     const { type, element, offset, timeout } = this.props;
     if (type && element) {
       switch (type) {
-        case 'class':
+        case "class":
           elem = document.getElementsByClassName(element)[0];
           scroll = elem ? true : false;
           break;
-        case 'id':
+        case "id":
           elem = document.getElementById(element);
           scroll = elem ? true : false;
           break;
@@ -49,16 +49,16 @@ class Scroll extends React.Component {
       : 0;
     if (timeout) {
       setTimeout(() => {
-        window.scroll({ top: elemPos + offSet, left: 0, behavior: 'smooth' });
+        window.scroll({ top: elemPos + offSet, left: 0, behavior: "smooth" });
       }, timeout);
     } else {
-      window.scroll({ top: elemPos + offSet, left: 0, behavior: 'smooth' });
+      window.scroll({ top: elemPos + offSet, left: 0, behavior: "smooth" });
     }
   }
   render() {
     return (
       <Element>
-        {typeof this.props.children === 'object' ? (
+        {typeof this.props.children === "object" ? (
           React.cloneElement(this.props.children, { onClick: this.handleClick })
         ) : (
           <span onClick={this.handleClick}>{this.props.children}</span>

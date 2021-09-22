@@ -1,5 +1,5 @@
-var baseConformsTo = require('./_baseConformsTo'),
-    keys = require('./keys');
+var baseConformsTo = require("./_baseConformsTo"),
+  keys = require("./keys");
 
 /**
  * The base implementation of `_.conforms` which doesn't clone `source`.
@@ -10,7 +10,7 @@ var baseConformsTo = require('./_baseConformsTo'),
  */
 function baseConforms(source) {
   var props = keys(source);
-  return function(object) {
+  return function (object) {
     return baseConformsTo(object, source, props);
   };
 }

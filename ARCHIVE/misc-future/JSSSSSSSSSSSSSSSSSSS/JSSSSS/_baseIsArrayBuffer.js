@@ -1,7 +1,7 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObjectLike = require('./isObjectLike');
+var baseGetTag = require("./_baseGetTag"),
+  isObjectLike = require("./isObjectLike");
 
-var arrayBufferTag = '[object ArrayBuffer]';
+var arrayBufferTag = "[object ArrayBuffer]";
 
 /**
  * The base implementation of `_.isArrayBuffer` without Node.js optimizations.

@@ -1,4 +1,4 @@
-var isSymbol = require('./isSymbol');
+var isSymbol = require("./isSymbol");
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
@@ -12,7 +12,7 @@ var NAN = 0 / 0;
  * @returns {number} Returns the number.
  */
 function baseToNumber(value) {
-  if (typeof value == 'number') {
+  if (typeof value == "number") {
     return value;
   }
   if (isSymbol(value)) {

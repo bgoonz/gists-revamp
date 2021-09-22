@@ -12,9 +12,9 @@
  * @returns {*} Returns the accumulated value.
  */
 function baseReduce(collection, iteratee, accumulator, initAccum, eachFunc) {
-  eachFunc(collection, function(value, index, collection) {
+  eachFunc(collection, function (value, index, collection) {
     accumulator = initAccum
-      ? (initAccum = false, value)
+      ? ((initAccum = false), value)
       : iteratee(accumulator, value, index, collection);
   });
   return accumulator;

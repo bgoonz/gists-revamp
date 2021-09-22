@@ -1,5 +1,5 @@
-var arrayPush = require('./_arrayPush'),
-    isArray = require('./isArray');
+var arrayPush = require("./_arrayPush"),
+  isArray = require("./isArray");
 
 /**
  * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
