@@ -27,7 +27,8 @@ $ sudo apt-get install fdupes
 On **CentOS**/**RHEL** and **Fedora** based systems, you need to turn on [epel repository](https://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/) to install fdupes package.
 
 \# yum install fdupes
-# dnf install fdupes    \[On Fedora 22 onwards\]
+
+# dnf install fdupes \[On Fedora 22 onwards\]
 
 **Note**: The default package manager **yum** is replaced by **dnf** from **Fedora 22** onwards…
 
@@ -42,21 +43,21 @@ After running above command, let’s verify the duplicates files are created or 
 **$ ls -l**
 
 total 60
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint10.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint11.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint12.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint13.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint14.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint15.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint1.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint2.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint3.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint4.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint5.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint6.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint7.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint8.txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint10.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint11.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint12.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint13.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint14.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint15.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint1.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint2.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint3.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint4.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint5.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint6.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint7.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint8.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint9.txt
 
 The above script create **15** files namely tecmint1.txt, tecmint2.txt…tecmint15.txt and every files contains the same data i.e.,
 
@@ -64,7 +65,7 @@ The above script create **15** files namely tecmint1.txt, tecmint2.txt…tecmint
 
 **2.** Now search for duplicate files within the folder **tecmint**.
 
-**$ fdupes /home/$USER/Desktop/tecmint** 
+**$ fdupes /home/$USER/Desktop/tecmint**
 
 /home/tecmint/Desktop/tecmint/tecmint13.txt
 /home/tecmint/Desktop/tecmint/tecmint8.txt
@@ -94,7 +95,7 @@ Progress \[37780/54747\] 69%
 
 **$ fdupes -S /home/$USER/Desktop/tecmint**
 
-**65 bytes each**:                          
+**65 bytes each**:  
 /home/tecmint/Desktop/tecmint/tecmint13.txt
 /home/tecmint/Desktop/tecmint/tecmint8.txt
 /home/tecmint/Desktop/tecmint/tecmint11.txt
@@ -115,7 +116,7 @@ Progress \[37780/54747\] 69%
 
 **$ fdupes -Sr /home/avi/Desktop/**
 
-**65 bytes each:**                          
+**65 bytes each:**  
 /home/tecmint/Desktop/tecmint/tecmint13.txt
 /home/tecmint/Desktop/tecmint/tecmint8.txt
 /home/tecmint/Desktop/tecmint/tecmint11.txt
@@ -133,8 +134,8 @@ Progress \[37780/54747\] 69%
 /home/tecmint/Desktop/tecmint/tecmint12.txt
 
 **107 bytes each:**
-/home/tecmint/Desktop/resume\_files/r-csc.html
-/home/tecmint/Desktop/resume\_files/fc.html
+/home/tecmint/Desktop/resume_files/r-csc.html
+/home/tecmint/Desktop/resume_files/fc.html
 
 **6.** Other than searching in one folder or all the folders recursively, you may choose to choose in two folders or three folders as required. Not to mention you can use option **\-S** and/or **\-r** if required.
 
@@ -160,27 +161,27 @@ $ fdupes /home/avi/Desktop/ /home/avi/Templates/
 \[14\] /home/tecmint/Desktop/tecmint/tecmint15.txt
 \[15\] /home/tecmint/Desktop/tecmint/tecmint12.txt
 
-Set 1 of 1, preserve files \[1 - 15, all\]: 
+Set 1 of 1, preserve files \[1 - 15, all\]:
 
 You may notice that all the duplicates are listed and you are prompted to delete, either one by one or certain range or all in one go. You may select a range something like below to delete files files of specific range.
 
 Set 1 of 1, preserve files \[1 - 15, all\]: **2-15**
 
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint13.txt
-   \[+\] /home/tecmint/Desktop/tecmint/tecmint8.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint11.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint3.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint4.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint6.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint7.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint9.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint10.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint2.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint5.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint14.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint1.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint15.txt
-   \[-\] /home/tecmint/Desktop/tecmint/tecmint12.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint13.txt
+\[+\] /home/tecmint/Desktop/tecmint/tecmint8.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint11.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint3.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint4.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint6.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint7.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint9.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint10.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint2.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint5.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint14.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint1.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint15.txt
+\[-\] /home/tecmint/Desktop/tecmint/tecmint12.txt
 
 **8.** From safety point of view, you may like to print the output of **‘fdupes’** to file and then check text file to decide what file to delete. This decrease chances of getting your file deleted accidentally. You may do:
 
@@ -195,11 +196,11 @@ First List files of the directory.
 **$ ls -l /home/$USER/Desktop/tecmint**
 
 total 20
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9 (3rd copy).txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9 (4th copy).txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9 (another copy).txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9 (copy).txt
--rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9.txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint9 (3rd copy).txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint9 (4th copy).txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint9 (another copy).txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint9 (copy).txt
+-rw-r--r-- 1 tecmint tecmint 65 Aug 8 11:22 tecmint9.txt
 
 and then omit the first file from each set of matches.
 
@@ -222,35 +223,34 @@ fdupes 1.51
 
 Usage: fdupes \[options\] DIRECTORY...
 
- -r --recurse     	for every directory given follow subdirectories
-                  	encountered within
- -R --recurse:    	for each directory given after this option follow
-                  	subdirectories encountered within (note the ':' at
-                  	the end of the option, manpage for more details)
- -s --symlinks    	follow symlinks
- -H --hardlinks   	normally, when two or more files point to the same
-                  	disk area they are treated as non-duplicates; this
-                  	option will change this behavior
- -n --noempty     	exclude zero-length files from consideration
- -A --nohidden    	exclude hidden files from consideration
- -f --omitfirst   	omit the first file in each set of matches
- -1 --sameline    	list each set of matches on a single line
- -S --size        	show size of duplicate files
- -m --summarize   	summarize dupe information
- -q --quiet       	hide progress indicator
- -d --delete      	prompt user for files to preserve and delete all
-                  	others; important: under particular circumstances,
-                  	data may be lost when using this option together
-                  	with -s or --symlinks, or when specifying a
-                  	particular directory more than once; refer to the
-                  	fdupes documentation for additional information
- -N --noprompt    	together with --delete, preserve the first file in
-                  	each set of duplicates and delete the rest without
-                  	prompting the user
- -v --version     	display fdupes version
- -h --help        	display this help message
+-r --recurse for every directory given follow subdirectories
+encountered within
+-R --recurse: for each directory given after this option follow
+subdirectories encountered within (note the ':' at
+the end of the option, manpage for more details)
+-s --symlinks follow symlinks
+-H --hardlinks normally, when two or more files point to the same
+disk area they are treated as non-duplicates; this
+option will change this behavior
+-n --noempty exclude zero-length files from consideration
+-A --nohidden exclude hidden files from consideration
+-f --omitfirst omit the first file in each set of matches
+-1 --sameline list each set of matches on a single line
+-S --size show size of duplicate files
+-m --summarize summarize dupe information
+-q --quiet hide progress indicator
+-d --delete prompt user for files to preserve and delete all
+others; important: under particular circumstances,
+data may be lost when using this option together
+with -s or --symlinks, or when specifying a
+particular directory more than once; refer to the
+fdupes documentation for additional information
+-N --noprompt together with --delete, preserve the first file in
+each set of duplicates and delete the rest without
+prompting the user
+-v --version display fdupes version
+-h --help display this help message
 
 That’s for all now. Let me know how you were finding and deleting duplicates files till now in Linux? and also tell me your opinion about this utility. Put your valuable feedback in the comment section below and don’t forget to like/share us and help us get spread.
 
 I am working on another utility called [fslint to remove duplicate files](https://www.tecmint.com/fslint-find-and-remove-duplicate-unwanted-files-in-linux/), will soon post and you people will love to read.
-
