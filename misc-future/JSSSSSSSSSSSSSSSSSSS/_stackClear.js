@@ -1,4 +1,4 @@
-var ListCache = require("./_ListCache");
+const ListCache = require("./_ListCache");
 
 /**
  * Removes all key-value entries from the stack.

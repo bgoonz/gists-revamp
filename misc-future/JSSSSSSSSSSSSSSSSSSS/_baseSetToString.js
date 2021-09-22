@@ -1,6 +1,6 @@
-var constant = require("./constant"),
-  defineProperty = require("./_defineProperty"),
-  identity = require("./identity");
+import constant from "./constant";
+import defineProperty from "./_defineProperty";
+import identity from "./identity";
 
 /**
  * The base implementation of `setToString` without support for hot loop shorting.
@@ -10,9 +10,9 @@ var constant = require("./constant"),
  * @param {Function} string The `toString` result.
  * @returns {Function} Returns `func`.
  */
-var baseSetToString = !defineProperty
+const baseSetToString = !defineProperty
   ? identity
-  : function (func, string) {
+  : (func, string) => {
       return defineProperty(func, "toString", {
         configurable: true,
         enumerable: false,
@@ -21,4 +21,4 @@ var baseSetToString = !defineProperty
       });
     };
 
-module.exports = baseSetToString;
+export default baseSetToString;

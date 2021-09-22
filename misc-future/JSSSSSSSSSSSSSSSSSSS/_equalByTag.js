@@ -1,31 +1,33 @@
-var Symbol = require("./_Symbol"),
-  Uint8Array = require("./_Uint8Array"),
-  eq = require("./eq"),
-  equalArrays = require("./_equalArrays"),
-  mapToArray = require("./_mapToArray"),
-  setToArray = require("./_setToArray");
+import Symbol from "./_Symbol";
+import Uint8Array from "./_Uint8Array";
+import eq from "./eq";
+import equalArrays from "./_equalArrays";
+import mapToArray from "./_mapToArray";
+import setToArray from "./_setToArray";
 
 /** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1,
-  COMPARE_UNORDERED_FLAG = 2;
+const COMPARE_PARTIAL_FLAG = 1;
+
+const COMPARE_UNORDERED_FLAG = 2;
 
 /** `Object#toString` result references. */
-var boolTag = "[object Boolean]",
-  dateTag = "[object Date]",
-  errorTag = "[object Error]",
-  mapTag = "[object Map]",
-  numberTag = "[object Number]",
-  regexpTag = "[object RegExp]",
-  setTag = "[object Set]",
-  stringTag = "[object String]",
-  symbolTag = "[object Symbol]";
+const boolTag = "[object Boolean]";
 
-var arrayBufferTag = "[object ArrayBuffer]",
-  dataViewTag = "[object DataView]";
+const dateTag = "[object Date]";
+const errorTag = "[object Error]";
+const mapTag = "[object Map]";
+const numberTag = "[object Number]";
+const regexpTag = "[object RegExp]";
+const setTag = "[object Set]";
+const stringTag = "[object String]";
+const symbolTag = "[object Symbol]";
+const arrayBufferTag = "[object ArrayBuffer]";
+const dataViewTag = "[object DataView]";
 
 /** Used to convert symbols to primitives and strings. */
-var symbolProto = Symbol ? Symbol.prototype : undefined,
-  symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+const symbolProto = Symbol ? Symbol.prototype : undefined;
+
+const symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
 
 /**
  * A specialized version of `baseIsEqualDeep` for comparing objects of
@@ -80,20 +82,20 @@ function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
       // Coerce regexes to strings and treat strings, primitives and objects,
       // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
       // for more details.
-      return object == other + "";
+      return object == `${other}`;
 
     case mapTag:
-      var convert = mapToArray;
+      let convert = mapToArray;
 
     case setTag:
-      var isPartial = bitmask & COMPARE_PARTIAL_FLAG;
+      const isPartial = bitmask & COMPARE_PARTIAL_FLAG;
       convert || (convert = setToArray);
 
       if (object.size != other.size && !isPartial) {
         return false;
       }
       // Assume cyclic values are equal.
-      var stacked = stack.get(object);
+      const stacked = stack.get(object);
       if (stacked) {
         return stacked == other;
       }
@@ -101,7 +103,7 @@ function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
 
       // Recursively compare objects (susceptible to call stack limits).
       stack.set(object, other);
-      var result = equalArrays(
+      const result = equalArrays(
         convert(object),
         convert(other),
         bitmask,
@@ -120,4 +122,4 @@ function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
   return false;
 }
 
-module.exports = equalByTag;
+export default equalByTag;

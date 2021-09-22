@@ -1,7 +1,7 @@
-exports.seed = function (knex, Promise) {
+exports.seed = (knex, Promise) => {
   return knex("tags")
     .del() // delete existing tags
-    .then(function () {
+    .then(() => {
       return knex("tags").insert([
         { tag: "shire" }, // 1
         { tag: "fellowship of the ring" }, // 2

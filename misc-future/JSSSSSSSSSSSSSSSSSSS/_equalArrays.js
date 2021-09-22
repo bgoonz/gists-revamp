@@ -1,10 +1,11 @@
-var SetCache = require("./_SetCache"),
-  arraySome = require("./_arraySome"),
-  cacheHas = require("./_cacheHas");
+import SetCache from "./_SetCache";
+import arraySome from "./_arraySome";
+import cacheHas from "./_cacheHas";
 
 /** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1,
-  COMPARE_UNORDERED_FLAG = 2;
+const COMPARE_PARTIAL_FLAG = 1;
+
+const COMPARE_UNORDERED_FLAG = 2;
 
 /**
  * A specialized version of `baseIsEqualDeep` for arrays with support for
@@ -20,29 +21,29 @@ var COMPARE_PARTIAL_FLAG = 1,
  * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
  */
 function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
-  var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
-    arrLength = array.length,
-    othLength = other.length;
+  const isPartial = bitmask & COMPARE_PARTIAL_FLAG;
+  const arrLength = array.length;
+  const othLength = other.length;
 
   if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
     return false;
   }
   // Assume cyclic values are equal.
-  var stacked = stack.get(array);
+  const stacked = stack.get(array);
   if (stacked && stack.get(other)) {
     return stacked == other;
   }
-  var index = -1,
-    result = true,
-    seen = bitmask & COMPARE_UNORDERED_FLAG ? new SetCache() : undefined;
+  let index = -1;
+  let result = true;
+  const seen = bitmask & COMPARE_UNORDERED_FLAG ? new SetCache() : undefined;
 
   stack.set(array, other);
   stack.set(other, array);
 
   // Ignore non-index properties.
   while (++index < arrLength) {
-    var arrValue = array[index],
-      othValue = other[index];
+    const arrValue = array[index];
+    const othValue = other[index];
 
     if (customizer) {
       var compared = isPartial
@@ -59,7 +60,7 @@ function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
     // Recursively compare arrays (susceptible to call stack limits).
     if (seen) {
       if (
-        !arraySome(other, function (othValue, othIndex) {
+        !arraySome(other, (othValue, othIndex) => {
           if (
             !cacheHas(seen, othIndex) &&
             (arrValue === othValue ||
@@ -87,4 +88,4 @@ function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
   return result;
 }
 
-module.exports = equalArrays;
+export default equalArrays;

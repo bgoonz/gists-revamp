@@ -1,8 +1,4 @@
-var listCacheClear = require("./_listCacheClear"),
-  listCacheDelete = require("./_listCacheDelete"),
-  listCacheGet = require("./_listCacheGet"),
-  listCacheHas = require("./_listCacheHas"),
-  listCacheSet = require("./_listCacheSet");
+const listCacheClear = require("./_listCacheClear"), listCacheDelete = require("./_listCacheDelete"), listCacheGet = require("./_listCacheGet"), listCacheHas = require("./_listCacheHas"), listCacheSet = require("./_listCacheSet");
 
 /**
  * Creates an list cache object.
@@ -12,12 +8,12 @@ var listCacheClear = require("./_listCacheClear"),
  * @param {Array} [entries] The key-value pairs to cache.
  */
 function ListCache(entries) {
-  var index = -1,
-    length = entries == null ? 0 : entries.length;
+  let index = -1;
+  const length = entries == null ? 0 : entries.length;
 
   this.clear();
   while (++index < length) {
-    var entry = entries[index];
+    const entry = entries[index];
     this.set(entry[0], entry[1]);
   }
 }

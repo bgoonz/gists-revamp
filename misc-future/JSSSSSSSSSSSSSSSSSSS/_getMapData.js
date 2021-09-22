@@ -1,4 +1,4 @@
-var isKeyable = require("./_isKeyable");
+import isKeyable from "./_isKeyable";
 
 /**
  * Gets the data for `map`.
@@ -8,11 +8,11 @@ var isKeyable = require("./_isKeyable");
  * @param {string} key The reference key.
  * @returns {*} Returns the map data.
  */
-function getMapData(map, key) {
-  var data = map.__data__;
+function getMapData({__data__}, key) {
+  const data = __data__;
   return isKeyable(key)
     ? data[typeof key == "string" ? "string" : "hash"]
     : data.map;
 }
 
-module.exports = getMapData;
+export default getMapData;

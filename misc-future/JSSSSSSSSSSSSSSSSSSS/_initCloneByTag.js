@@ -1,30 +1,30 @@
-var cloneArrayBuffer = require("./_cloneArrayBuffer"),
-  cloneDataView = require("./_cloneDataView"),
-  cloneRegExp = require("./_cloneRegExp"),
-  cloneSymbol = require("./_cloneSymbol"),
-  cloneTypedArray = require("./_cloneTypedArray");
+import cloneArrayBuffer from "./_cloneArrayBuffer";
+import cloneDataView from "./_cloneDataView";
+import cloneRegExp from "./_cloneRegExp";
+import cloneSymbol from "./_cloneSymbol";
+import cloneTypedArray from "./_cloneTypedArray";
 
 /** `Object#toString` result references. */
-var boolTag = "[object Boolean]",
-  dateTag = "[object Date]",
-  mapTag = "[object Map]",
-  numberTag = "[object Number]",
-  regexpTag = "[object RegExp]",
-  setTag = "[object Set]",
-  stringTag = "[object String]",
-  symbolTag = "[object Symbol]";
+const boolTag = "[object Boolean]";
 
-var arrayBufferTag = "[object ArrayBuffer]",
-  dataViewTag = "[object DataView]",
-  float32Tag = "[object Float32Array]",
-  float64Tag = "[object Float64Array]",
-  int8Tag = "[object Int8Array]",
-  int16Tag = "[object Int16Array]",
-  int32Tag = "[object Int32Array]",
-  uint8Tag = "[object Uint8Array]",
-  uint8ClampedTag = "[object Uint8ClampedArray]",
-  uint16Tag = "[object Uint16Array]",
-  uint32Tag = "[object Uint32Array]";
+const dateTag = "[object Date]";
+const mapTag = "[object Map]";
+const numberTag = "[object Number]";
+const regexpTag = "[object RegExp]";
+const setTag = "[object Set]";
+const stringTag = "[object String]";
+const symbolTag = "[object Symbol]";
+const arrayBufferTag = "[object ArrayBuffer]";
+const dataViewTag = "[object DataView]";
+const float32Tag = "[object Float32Array]";
+const float64Tag = "[object Float64Array]";
+const int8Tag = "[object Int8Array]";
+const int16Tag = "[object Int16Array]";
+const int32Tag = "[object Int32Array]";
+const uint8Tag = "[object Uint8Array]";
+const uint8ClampedTag = "[object Uint8ClampedArray]";
+const uint16Tag = "[object Uint16Array]";
+const uint32Tag = "[object Uint32Array]";
 
 /**
  * Initializes an object clone based on its `toStringTag`.
@@ -39,7 +39,7 @@ var arrayBufferTag = "[object ArrayBuffer]",
  * @returns {Object} Returns the initialized clone.
  */
 function initCloneByTag(object, tag, isDeep) {
-  var Ctor = object.constructor;
+  const Ctor = object.constructor;
   switch (tag) {
     case arrayBufferTag:
       return cloneArrayBuffer(object);
@@ -80,4 +80,4 @@ function initCloneByTag(object, tag, isDeep) {
   }
 }
 
-module.exports = initCloneByTag;
+export default initCloneByTag;

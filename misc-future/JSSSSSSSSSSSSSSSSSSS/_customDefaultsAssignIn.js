@@ -1,10 +1,10 @@
-var eq = require("./eq");
+import eq from "./eq";
 
 /** Used for built-in method references. */
-var objectProto = Object.prototype;
+const objectProto = Object.prototype;
 
 /** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
+const hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * Used by `_.defaults` to customize its `_.assignIn` use to assign properties
@@ -28,4 +28,4 @@ function customDefaultsAssignIn(objValue, srcValue, key, object) {
   return objValue;
 }
 
-module.exports = customDefaultsAssignIn;
+export default customDefaultsAssignIn;

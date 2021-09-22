@@ -1,9 +1,10 @@
-var Stack = require("./_Stack"),
-  baseIsEqual = require("./_baseIsEqual");
+import Stack from "./_Stack";
+import baseIsEqual from "./_baseIsEqual";
 
 /** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1,
-  COMPARE_UNORDERED_FLAG = 2;
+const COMPARE_PARTIAL_FLAG = 1;
+
+const COMPARE_UNORDERED_FLAG = 2;
 
 /**
  * The base implementation of `_.isMatch` without support for iteratee shorthands.
@@ -16,9 +17,9 @@ var COMPARE_PARTIAL_FLAG = 1,
  * @returns {boolean} Returns `true` if `object` is a match, else `false`.
  */
 function baseIsMatch(object, source, matchData, customizer) {
-  var index = matchData.length,
-    length = index,
-    noCustomizer = !customizer;
+  let index = matchData.length;
+  const length = index;
+  const noCustomizer = !customizer;
 
   if (object == null) {
     return !length;
@@ -36,16 +37,16 @@ function baseIsMatch(object, source, matchData, customizer) {
   }
   while (++index < length) {
     data = matchData[index];
-    var key = data[0],
-      objValue = object[key],
-      srcValue = data[1];
+    const key = data[0];
+    const objValue = object[key];
+    const srcValue = data[1];
 
     if (noCustomizer && data[2]) {
       if (objValue === undefined && !(key in object)) {
         return false;
       }
     } else {
-      var stack = new Stack();
+      const stack = new Stack();
       if (customizer) {
         var result = customizer(objValue, srcValue, key, object, source, stack);
       }
@@ -67,4 +68,4 @@ function baseIsMatch(object, source, matchData, customizer) {
   return true;
 }
 
-module.exports = baseIsMatch;
+export default baseIsMatch;

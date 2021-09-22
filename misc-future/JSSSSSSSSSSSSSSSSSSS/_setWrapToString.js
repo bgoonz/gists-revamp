@@ -1,7 +1,4 @@
-var getWrapDetails = require("./_getWrapDetails"),
-  insertWrapDetails = require("./_insertWrapDetails"),
-  setToString = require("./_setToString"),
-  updateWrapDetails = require("./_updateWrapDetails");
+const getWrapDetails = require("./_getWrapDetails"), insertWrapDetails = require("./_insertWrapDetails"), setToString = require("./_setToString"), updateWrapDetails = require("./_updateWrapDetails");
 
 /**
  * Sets the `toString` method of `wrapper` to mimic the source of `reference`
@@ -14,7 +11,7 @@ var getWrapDetails = require("./_getWrapDetails"),
  * @returns {Function} Returns `wrapper`.
  */
 function setWrapToString(wrapper, reference, bitmask) {
-  var source = reference + "";
+  const source = reference + "";
   return setToString(
     wrapper,
     insertWrapDetails(

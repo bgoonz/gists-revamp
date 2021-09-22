@@ -1,5 +1,5 @@
-var baseToNumber = require("./_baseToNumber"),
-  baseToString = require("./_baseToString");
+import baseToNumber from "./_baseToNumber";
+import baseToString from "./_baseToString";
 
 /**
  * Creates a function that performs a mathematical operation on two values.
@@ -10,8 +10,8 @@ var baseToNumber = require("./_baseToNumber"),
  * @returns {Function} Returns the new mathematical operation function.
  */
 function createMathOperation(operator, defaultValue) {
-  return function (value, other) {
-    var result;
+  return (value, other) => {
+    let result;
     if (value === undefined && other === undefined) {
       return defaultValue;
     }
@@ -35,4 +35,4 @@ function createMathOperation(operator, defaultValue) {
   };
 }
 
-module.exports = createMathOperation;
+export default createMathOperation;

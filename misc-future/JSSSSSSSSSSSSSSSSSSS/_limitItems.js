@@ -1,16 +1,16 @@
 "use strict";
 module.exports = function generate__limitItems(it, $keyword, $ruleType) {
-  var out = " ";
-  var $lvl = it.level;
-  var $dataLvl = it.dataLevel;
-  var $schema = it.schema[$keyword];
-  var $schemaPath = it.schemaPath + it.util.getProperty($keyword);
-  var $errSchemaPath = it.errSchemaPath + "/" + $keyword;
-  var $breakOnError = !it.opts.allErrors;
+  let out = " ";
+  const $lvl = it.level;
+  const $dataLvl = it.dataLevel;
+  const $schema = it.schema[$keyword];
+  const $schemaPath = it.schemaPath + it.util.getProperty($keyword);
+  const $errSchemaPath = it.errSchemaPath + "/" + $keyword;
+  const $breakOnError = !it.opts.allErrors;
   var $errorKeyword;
-  var $data = "data" + ($dataLvl || "");
-  var $isData = it.opts.$data && $schema && $schema.$data,
-    $schemaValue;
+  const $data = "data" + ($dataLvl || "");
+  const $isData = it.opts.$data && $schema && $schema.$data;
+  let $schemaValue;
   if ($isData) {
     out +=
       " var schema" +
@@ -22,7 +22,7 @@ module.exports = function generate__limitItems(it, $keyword, $ruleType) {
   } else {
     $schemaValue = $schema;
   }
-  var $op = $keyword == "maxItems" ? ">" : "<";
+  const $op = $keyword == "maxItems" ? ">" : "<";
   out += "if ( ";
   if ($isData) {
     out +=
@@ -34,9 +34,9 @@ module.exports = function generate__limitItems(it, $keyword, $ruleType) {
   }
   out += " " + $data + ".length " + $op + " " + $schemaValue + ") { ";
   var $errorKeyword = $keyword;
-  var $$outStack = $$outStack || [];
+  const $$outStack = $$outStack || [];
   $$outStack.push(out);
-  out = ""; /* istanbul ignore else */
+  out = "";/* istanbul ignore else */
   if (it.createErrors !== false) {
     out +=
       " { keyword: '" +
@@ -81,7 +81,7 @@ module.exports = function generate__limitItems(it, $keyword, $ruleType) {
   } else {
     out += " {} ";
   }
-  var __err = out;
+  const __err = out;
   out = $$outStack.pop();
   if (!it.compositeRule && $breakOnError) {
     /* istanbul ignore if */

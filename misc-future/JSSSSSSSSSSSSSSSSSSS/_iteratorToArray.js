@@ -6,8 +6,8 @@
  * @returns {Array} Returns the converted array.
  */
 function iteratorToArray(iterator) {
-  var data,
-    result = [];
+  let data;
+  const result = [];
 
   while (!(data = iterator.next()).done) {
     result.push(data.value);
@@ -15,4 +15,4 @@ function iteratorToArray(iterator) {
   return result;
 }
 
-module.exports = iteratorToArray;
+export default iteratorToArray;

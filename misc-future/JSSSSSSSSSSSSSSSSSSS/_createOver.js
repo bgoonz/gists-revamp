@@ -1,9 +1,9 @@
-var apply = require("./_apply"),
-  arrayMap = require("./_arrayMap"),
-  baseIteratee = require("./_baseIteratee"),
-  baseRest = require("./_baseRest"),
-  baseUnary = require("./_baseUnary"),
-  flatRest = require("./_flatRest");
+import apply from "./_apply";
+import arrayMap from "./_arrayMap";
+import baseIteratee from "./_baseIteratee";
+import baseRest from "./_baseRest";
+import baseUnary from "./_baseUnary";
+import flatRest from "./_flatRest";
 
 /**
  * Creates a function like `_.over`.
@@ -13,15 +13,15 @@ var apply = require("./_apply"),
  * @returns {Function} Returns the new over function.
  */
 function createOver(arrayFunc) {
-  return flatRest(function (iteratees) {
+  return flatRest(iteratees => {
     iteratees = arrayMap(iteratees, baseUnary(baseIteratee));
     return baseRest(function (args) {
-      var thisArg = this;
-      return arrayFunc(iteratees, function (iteratee) {
+      const thisArg = this;
+      return arrayFunc(iteratees, iteratee => {
         return apply(iteratee, thisArg, args);
       });
     });
   });
 }
 
-module.exports = createOver;
+export default createOver;

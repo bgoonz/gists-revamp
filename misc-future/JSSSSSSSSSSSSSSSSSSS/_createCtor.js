@@ -1,5 +1,5 @@
-var baseCreate = require("./_baseCreate"),
-  isObject = require("./isObject");
+import baseCreate from "./_baseCreate";
+import isObject from "./isObject";
 
 /**
  * Creates a function that produces an instance of `Ctor` regardless of
@@ -14,7 +14,7 @@ function createCtor(Ctor) {
     // Use a `switch` statement to work with class constructors. See
     // http://ecma-international.org/ecma-262/7.0/#sec-ecmascript-function-objects-call-thisargument-argumentslist
     // for more details.
-    var args = arguments;
+    const args = arguments;
     switch (args.length) {
       case 0:
         return new Ctor();
@@ -41,8 +41,8 @@ function createCtor(Ctor) {
           args[6]
         );
     }
-    var thisBinding = baseCreate(Ctor.prototype),
-      result = Ctor.apply(thisBinding, args);
+    const thisBinding = baseCreate(Ctor.prototype);
+    const result = Ctor.apply(thisBinding, args);
 
     // Mimic the constructor's `return` behavior.
     // See https://es5.github.io/#x13.2.2 for more details.
@@ -50,4 +50,4 @@ function createCtor(Ctor) {
   };
 }
 
-module.exports = createCtor;
+export default createCtor;

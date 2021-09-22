@@ -1,12 +1,12 @@
-var SetCache = require("./_SetCache"),
-  arrayIncludes = require("./_arrayIncludes"),
-  arrayIncludesWith = require("./_arrayIncludesWith"),
-  arrayMap = require("./_arrayMap"),
-  baseUnary = require("./_baseUnary"),
-  cacheHas = require("./_cacheHas");
+import SetCache from "./_SetCache";
+import arrayIncludes from "./_arrayIncludes";
+import arrayIncludesWith from "./_arrayIncludesWith";
+import arrayMap from "./_arrayMap";
+import baseUnary from "./_baseUnary";
+import cacheHas from "./_cacheHas";
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeMin = Math.min;
+const nativeMin = Math.min;
 
 /**
  * The base implementation of methods like `_.intersection`, without support
@@ -19,13 +19,13 @@ var nativeMin = Math.min;
  * @returns {Array} Returns the new array of shared values.
  */
 function baseIntersection(arrays, iteratee, comparator) {
-  var includes = comparator ? arrayIncludesWith : arrayIncludes,
-    length = arrays[0].length,
-    othLength = arrays.length,
-    othIndex = othLength,
-    caches = Array(othLength),
-    maxLength = Infinity,
-    result = [];
+  const includes = comparator ? arrayIncludesWith : arrayIncludes;
+  const length = arrays[0].length;
+  const othLength = arrays.length;
+  let othIndex = othLength;
+  const caches = Array(othLength);
+  let maxLength = Infinity;
+  const result = [];
 
   while (othIndex--) {
     var array = arrays[othIndex];
@@ -40,12 +40,12 @@ function baseIntersection(arrays, iteratee, comparator) {
   }
   array = arrays[0];
 
-  var index = -1,
-    seen = caches[0];
+  let index = -1;
+  const seen = caches[0];
 
   outer: while (++index < length && result.length < maxLength) {
-    var value = array[index],
-      computed = iteratee ? iteratee(value) : value;
+    let value = array[index];
+    const computed = iteratee ? iteratee(value) : value;
 
     value = comparator || value !== 0 ? value : 0;
     if (
@@ -55,7 +55,7 @@ function baseIntersection(arrays, iteratee, comparator) {
     ) {
       othIndex = othLength;
       while (--othIndex) {
-        var cache = caches[othIndex];
+        const cache = caches[othIndex];
         if (
           !(cache
             ? cacheHas(cache, computed)
@@ -73,4 +73,4 @@ function baseIntersection(arrays, iteratee, comparator) {
   return result;
 }
 
-module.exports = baseIntersection;
+export default baseIntersection;

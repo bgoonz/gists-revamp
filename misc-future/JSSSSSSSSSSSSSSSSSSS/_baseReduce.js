@@ -12,7 +12,7 @@
  * @returns {*} Returns the accumulated value.
  */
 function baseReduce(collection, iteratee, accumulator, initAccum, eachFunc) {
-  eachFunc(collection, function (value, index, collection) {
+  eachFunc(collection, (value, index, collection) => {
     accumulator = initAccum
       ? ((initAccum = false), value)
       : iteratee(accumulator, value, index, collection);
@@ -20,4 +20,4 @@ function baseReduce(collection, iteratee, accumulator, initAccum, eachFunc) {
   return accumulator;
 }
 
-module.exports = baseReduce;
+export default baseReduce;

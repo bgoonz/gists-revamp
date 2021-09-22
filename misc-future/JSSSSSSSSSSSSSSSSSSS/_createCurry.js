@@ -1,10 +1,10 @@
-var apply = require("./_apply"),
-  createCtor = require("./_createCtor"),
-  createHybrid = require("./_createHybrid"),
-  createRecurry = require("./_createRecurry"),
-  getHolder = require("./_getHolder"),
-  replaceHolders = require("./_replaceHolders"),
-  root = require("./_root");
+import apply from "./_apply";
+import createCtor from "./_createCtor";
+import createHybrid from "./_createHybrid";
+import createRecurry from "./_createRecurry";
+import getHolder from "./_getHolder";
+import replaceHolders from "./_replaceHolders";
+import root from "./_root";
 
 /**
  * Creates a function that wraps `func` to enable currying.
@@ -16,18 +16,18 @@ var apply = require("./_apply"),
  * @returns {Function} Returns the new wrapped function.
  */
 function createCurry(func, bitmask, arity) {
-  var Ctor = createCtor(func);
+  const Ctor = createCtor(func);
 
   function wrapper() {
-    var length = arguments.length,
-      args = Array(length),
-      index = length,
-      placeholder = getHolder(wrapper);
+    let length = arguments.length;
+    const args = Array(length);
+    let index = length;
+    const placeholder = getHolder(wrapper);
 
     while (index--) {
       args[index] = arguments[index];
     }
-    var holders =
+    const holders =
       length < 3 && args[0] !== placeholder && args[length - 1] !== placeholder
         ? []
         : replaceHolders(args, placeholder);
@@ -47,10 +47,10 @@ function createCurry(func, bitmask, arity) {
         arity - length
       );
     }
-    var fn = this && this !== root && this instanceof wrapper ? Ctor : func;
+    const fn = this && this !== root && this instanceof wrapper ? Ctor : func;
     return apply(fn, this, args);
   }
   return wrapper;
 }
 
-module.exports = createCurry;
+export default createCurry;

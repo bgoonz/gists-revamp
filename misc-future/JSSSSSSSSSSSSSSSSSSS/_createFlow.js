@@ -1,18 +1,19 @@
-var LodashWrapper = require("./_LodashWrapper"),
-  flatRest = require("./_flatRest"),
-  getData = require("./_getData"),
-  getFuncName = require("./_getFuncName"),
-  isArray = require("./isArray"),
-  isLaziable = require("./_isLaziable");
+import LodashWrapper from "./_LodashWrapper";
+import flatRest from "./_flatRest";
+import getData from "./_getData";
+import getFuncName from "./_getFuncName";
+import isArray from "./isArray";
+import isLaziable from "./_isLaziable";
 
 /** Error message constants. */
-var FUNC_ERROR_TEXT = "Expected a function";
+const FUNC_ERROR_TEXT = "Expected a function";
 
 /** Used to compose bitmasks for function metadata. */
-var WRAP_CURRY_FLAG = 8,
-  WRAP_PARTIAL_FLAG = 32,
-  WRAP_ARY_FLAG = 128,
-  WRAP_REARG_FLAG = 256;
+const WRAP_CURRY_FLAG = 8;
+
+const WRAP_PARTIAL_FLAG = 32;
+const WRAP_ARY_FLAG = 128;
+const WRAP_REARG_FLAG = 256;
 
 /**
  * Creates a `_.flow` or `_.flowRight` function.
@@ -22,10 +23,10 @@ var WRAP_CURRY_FLAG = 8,
  * @returns {Function} Returns the new flow function.
  */
 function createFlow(fromRight) {
-  return flatRest(function (funcs) {
-    var length = funcs.length,
-      index = length,
-      prereq = LodashWrapper.prototype.thru;
+  return flatRest(funcs => {
+    const length = funcs.length;
+    let index = length;
+    const prereq = LodashWrapper.prototype.thru;
 
     if (fromRight) {
       funcs.reverse();
@@ -43,8 +44,8 @@ function createFlow(fromRight) {
     while (++index < length) {
       func = funcs[index];
 
-      var funcName = getFuncName(func),
-        data = funcName == "wrapper" ? getData(func) : undefined;
+      const funcName = getFuncName(func);
+      const data = funcName == "wrapper" ? getData(func) : undefined;
 
       if (
         data &&
@@ -57,7 +58,7 @@ function createFlow(fromRight) {
         !data[4].length &&
         data[9] == 1
       ) {
-        wrapper = wrapper[getFuncName(data[0])].apply(wrapper, data[3]);
+        wrapper = wrapper[getFuncName(data[0])](...data[3]);
       } else {
         wrapper =
           func.length == 1 && isLaziable(func)
@@ -66,14 +67,14 @@ function createFlow(fromRight) {
       }
     }
     return function () {
-      var args = arguments,
-        value = args[0];
+      const args = arguments;
+      const value = args[0];
 
       if (wrapper && args.length == 1 && isArray(value)) {
         return wrapper.plant(value).value();
       }
-      var index = 0,
-        result = length ? funcs[index].apply(this, args) : value;
+      let index = 0;
+      let result = length ? funcs[index].apply(this, args) : value;
 
       while (++index < length) {
         result = funcs[index].call(this, result);
@@ -83,4 +84,4 @@ function createFlow(fromRight) {
   });
 }
 
-module.exports = createFlow;
+export default createFlow;

@@ -6,10 +6,10 @@
  * @returns {Array} Returns the values.
  */
 function setToArray(set) {
-  var index = -1,
-    result = Array(set.size);
+  let index = -1;
+  const result = Array(set.size);
 
-  set.forEach(function (value) {
+  set.forEach(value => {
     result[++index] = value;
   });
   return result;

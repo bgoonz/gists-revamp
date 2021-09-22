@@ -1,6 +1,6 @@
-var identity = require("./identity"),
-  overRest = require("./_overRest"),
-  setToString = require("./_setToString");
+import identity from "./identity";
+import overRest from "./_overRest";
+import setToString from "./_setToString";
 
 /**
  * The base implementation of `_.rest` which doesn't validate or coerce arguments.
@@ -11,7 +11,7 @@ var identity = require("./identity"),
  * @returns {Function} Returns the new function.
  */
 function baseRest(func, start) {
-  return setToString(overRest(func, start, identity), func + "");
+  return setToString(overRest(func, start, identity), `${func}`);
 }
 
-module.exports = baseRest;
+export default baseRest;

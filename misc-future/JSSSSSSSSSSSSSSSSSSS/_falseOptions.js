@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   cap: false,
   curry: false,
   fixed: false,

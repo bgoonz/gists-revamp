@@ -1,14 +1,14 @@
-var arrayMap = require("./_arrayMap"),
-  baseIndexOf = require("./_baseIndexOf"),
-  baseIndexOfWith = require("./_baseIndexOfWith"),
-  baseUnary = require("./_baseUnary"),
-  copyArray = require("./_copyArray");
+import arrayMap from "./_arrayMap";
+import baseIndexOf from "./_baseIndexOf";
+import baseIndexOfWith from "./_baseIndexOfWith";
+import baseUnary from "./_baseUnary";
+import copyArray from "./_copyArray";
 
 /** Used for built-in method references. */
-var arrayProto = Array.prototype;
+const arrayProto = Array.prototype;
 
 /** Built-in value references. */
-var splice = arrayProto.splice;
+const splice = arrayProto.splice;
 
 /**
  * The base implementation of `_.pullAllBy` without support for iteratee
@@ -22,10 +22,10 @@ var splice = arrayProto.splice;
  * @returns {Array} Returns `array`.
  */
 function basePullAll(array, values, iteratee, comparator) {
-  var indexOf = comparator ? baseIndexOfWith : baseIndexOf,
-    index = -1,
-    length = values.length,
-    seen = array;
+  const indexOf = comparator ? baseIndexOfWith : baseIndexOf;
+  let index = -1;
+  const length = values.length;
+  let seen = array;
 
   if (array === values) {
     values = copyArray(values);
@@ -34,9 +34,9 @@ function basePullAll(array, values, iteratee, comparator) {
     seen = arrayMap(array, baseUnary(iteratee));
   }
   while (++index < length) {
-    var fromIndex = 0,
-      value = values[index],
-      computed = iteratee ? iteratee(value) : value;
+    let fromIndex = 0;
+    const value = values[index];
+    const computed = iteratee ? iteratee(value) : value;
 
     while ((fromIndex = indexOf(seen, computed, fromIndex, comparator)) > -1) {
       if (seen !== array) {
@@ -48,4 +48,4 @@ function basePullAll(array, values, iteratee, comparator) {
   return array;
 }
 
-module.exports = basePullAll;
+export default basePullAll;

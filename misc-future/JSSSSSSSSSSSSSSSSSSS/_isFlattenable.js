@@ -1,9 +1,9 @@
-var Symbol = require("./_Symbol"),
-  isArguments = require("./isArguments"),
-  isArray = require("./isArray");
+import Symbol from "./_Symbol";
+import isArguments from "./isArguments";
+import isArray from "./isArray";
 
 /** Built-in value references. */
-var spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;
+const spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;
 
 /**
  * Checks if `value` is a flattenable `arguments` object or array.
@@ -20,4 +20,4 @@ function isFlattenable(value) {
   );
 }
 
-module.exports = isFlattenable;
+export default isFlattenable;

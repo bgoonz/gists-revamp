@@ -8,16 +8,16 @@
  * @returns {Object} Returns the new object.
  */
 function baseZipObject(props, values, assignFunc) {
-  var index = -1,
-    length = props.length,
-    valsLength = values.length,
-    result = {};
+  let index = -1;
+  const length = props.length;
+  const valsLength = values.length;
+  const result = {};
 
   while (++index < length) {
-    var value = index < valsLength ? values[index] : undefined;
+    const value = index < valsLength ? values[index] : undefined;
     assignFunc(result, props[index], value);
   }
   return result;
 }
 
-module.exports = baseZipObject;
+export default baseZipObject;

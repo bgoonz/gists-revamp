@@ -1,18 +1,18 @@
-var assignMergeValue = require("./_assignMergeValue"),
-  cloneBuffer = require("./_cloneBuffer"),
-  cloneTypedArray = require("./_cloneTypedArray"),
-  copyArray = require("./_copyArray"),
-  initCloneObject = require("./_initCloneObject"),
-  isArguments = require("./isArguments"),
-  isArray = require("./isArray"),
-  isArrayLikeObject = require("./isArrayLikeObject"),
-  isBuffer = require("./isBuffer"),
-  isFunction = require("./isFunction"),
-  isObject = require("./isObject"),
-  isPlainObject = require("./isPlainObject"),
-  isTypedArray = require("./isTypedArray"),
-  safeGet = require("./_safeGet"),
-  toPlainObject = require("./toPlainObject");
+import assignMergeValue from "./_assignMergeValue";
+import cloneBuffer from "./_cloneBuffer";
+import cloneTypedArray from "./_cloneTypedArray";
+import copyArray from "./_copyArray";
+import initCloneObject from "./_initCloneObject";
+import isArguments from "./isArguments";
+import isArray from "./isArray";
+import isArrayLikeObject from "./isArrayLikeObject";
+import isBuffer from "./isBuffer";
+import isFunction from "./isFunction";
+import isObject from "./isObject";
+import isPlainObject from "./isPlainObject";
+import isTypedArray from "./isTypedArray";
+import safeGet from "./_safeGet";
+import toPlainObject from "./toPlainObject";
 
 /**
  * A specialized version of `baseMerge` for arrays and objects which performs
@@ -38,24 +38,24 @@ function baseMergeDeep(
   customizer,
   stack
 ) {
-  var objValue = safeGet(object, key),
-    srcValue = safeGet(source, key),
-    stacked = stack.get(srcValue);
+  const objValue = safeGet(object, key);
+  const srcValue = safeGet(source, key);
+  const stacked = stack.get(srcValue);
 
   if (stacked) {
     assignMergeValue(object, key, stacked);
     return;
   }
-  var newValue = customizer
-    ? customizer(objValue, srcValue, key + "", object, source, stack)
+  let newValue = customizer
+    ? customizer(objValue, srcValue, `${key}`, object, source, stack)
     : undefined;
 
-  var isCommon = newValue === undefined;
+  let isCommon = newValue === undefined;
 
   if (isCommon) {
-    var isArr = isArray(srcValue),
-      isBuff = !isArr && isBuffer(srcValue),
-      isTyped = !isArr && !isBuff && isTypedArray(srcValue);
+    const isArr = isArray(srcValue);
+    const isBuff = !isArr && isBuffer(srcValue);
+    const isTyped = !isArr && !isBuff && isTypedArray(srcValue);
 
     newValue = srcValue;
     if (isArr || isBuff || isTyped) {
@@ -92,4 +92,4 @@ function baseMergeDeep(
   assignMergeValue(object, key, newValue);
 }
 
-module.exports = baseMergeDeep;
+export default baseMergeDeep;

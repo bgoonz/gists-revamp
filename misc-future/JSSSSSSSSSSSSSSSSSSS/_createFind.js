@@ -1,6 +1,6 @@
-var baseIteratee = require("./_baseIteratee"),
-  isArrayLike = require("./isArrayLike"),
-  keys = require("./keys");
+import baseIteratee from "./_baseIteratee";
+import isArrayLike from "./isArrayLike";
+import keys from "./keys";
 
 /**
  * Creates a `_.find` or `_.findLast` function.
@@ -10,20 +10,20 @@ var baseIteratee = require("./_baseIteratee"),
  * @returns {Function} Returns the new find function.
  */
 function createFind(findIndexFunc) {
-  return function (collection, predicate, fromIndex) {
-    var iterable = Object(collection);
+  return (collection, predicate, fromIndex) => {
+    const iterable = Object(collection);
     if (!isArrayLike(collection)) {
       var iteratee = baseIteratee(predicate, 3);
       collection = keys(collection);
-      predicate = function (key) {
+      predicate = key => {
         return iteratee(iterable[key], key, iterable);
       };
     }
-    var index = findIndexFunc(collection, predicate, fromIndex);
+    const index = findIndexFunc(collection, predicate, fromIndex);
     return index > -1
       ? iterable[iteratee ? collection[index] : index]
       : undefined;
   };
 }
 
-module.exports = createFind;
+export default createFind;

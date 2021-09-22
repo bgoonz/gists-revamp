@@ -1,4 +1,4 @@
-var compareAscending = require("./_compareAscending");
+import compareAscending from "./_compareAscending";
 
 /**
  * Used by `_.orderBy` to compare multiple properties of a value to another
@@ -15,19 +15,19 @@ var compareAscending = require("./_compareAscending");
  * @returns {number} Returns the sort order indicator for `object`.
  */
 function compareMultiple(object, other, orders) {
-  var index = -1,
-    objCriteria = object.criteria,
-    othCriteria = other.criteria,
-    length = objCriteria.length,
-    ordersLength = orders.length;
+  let index = -1;
+  const objCriteria = object.criteria;
+  const othCriteria = other.criteria;
+  const length = objCriteria.length;
+  const ordersLength = orders.length;
 
   while (++index < length) {
-    var result = compareAscending(objCriteria[index], othCriteria[index]);
+    const result = compareAscending(objCriteria[index], othCriteria[index]);
     if (result) {
       if (index >= ordersLength) {
         return result;
       }
-      var order = orders[index];
+      const order = orders[index];
       return result * (order == "desc" ? -1 : 1);
     }
   }
@@ -41,4 +41,4 @@ function compareMultiple(object, other, orders) {
   return object.index - other.index;
 }
 
-module.exports = compareMultiple;
+export default compareMultiple;

@@ -1,4 +1,4 @@
-var baseRandom = require("./_baseRandom");
+const baseRandom = require("./_baseRandom");
 
 /**
  * A specialized version of `_.shuffle` which mutates and sets the size of `array`.
@@ -9,14 +9,13 @@ var baseRandom = require("./_baseRandom");
  * @returns {Array} Returns `array`.
  */
 function shuffleSelf(array, size) {
-  var index = -1,
-    length = array.length,
-    lastIndex = length - 1;
+  let index = -1;
+  const length = array.length;
+  const lastIndex = length - 1;
 
   size = size === undefined ? length : size;
   while (++index < size) {
-    var rand = baseRandom(index, lastIndex),
-      value = array[rand];
+    const rand = baseRandom(index, lastIndex), value = array[rand];
 
     array[rand] = array[index];
     array[index] = value;

@@ -1,11 +1,11 @@
-var getNative = require("./_getNative");
+import getNative from "./_getNative";
 
-var defineProperty = (function () {
+const defineProperty = (() => {
   try {
-    var func = getNative(Object, "defineProperty");
+    const func = getNative(Object, "defineProperty");
     func({}, "", {});
     return func;
   } catch (e) {}
 })();
 
-module.exports = defineProperty;
+export default defineProperty;

@@ -1,9 +1,9 @@
-var castPath = require("./_castPath"),
-  isArguments = require("./isArguments"),
-  isArray = require("./isArray"),
-  isIndex = require("./_isIndex"),
-  isLength = require("./isLength"),
-  toKey = require("./_toKey");
+import castPath from "./_castPath";
+import isArguments from "./isArguments";
+import isArray from "./isArray";
+import isIndex from "./_isIndex";
+import isLength from "./isLength";
+import toKey from "./_toKey";
 
 /**
  * Checks if `path` exists on `object`.
@@ -17,9 +17,9 @@ var castPath = require("./_castPath"),
 function hasPath(object, path, hasFunc) {
   path = castPath(path, object);
 
-  var index = -1,
-    length = path.length,
-    result = false;
+  let index = -1;
+  let length = path.length;
+  let result = false;
 
   while (++index < length) {
     var key = toKey(path[index]);
@@ -40,4 +40,4 @@ function hasPath(object, path, hasFunc) {
   );
 }
 
-module.exports = hasPath;
+export default hasPath;

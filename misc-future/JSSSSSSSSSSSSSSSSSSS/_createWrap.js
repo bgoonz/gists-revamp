@@ -1,27 +1,28 @@
-var baseSetData = require("./_baseSetData"),
-  createBind = require("./_createBind"),
-  createCurry = require("./_createCurry"),
-  createHybrid = require("./_createHybrid"),
-  createPartial = require("./_createPartial"),
-  getData = require("./_getData"),
-  mergeData = require("./_mergeData"),
-  setData = require("./_setData"),
-  setWrapToString = require("./_setWrapToString"),
-  toInteger = require("./toInteger");
+import baseSetData from "./_baseSetData";
+import createBind from "./_createBind";
+import createCurry from "./_createCurry";
+import createHybrid from "./_createHybrid";
+import createPartial from "./_createPartial";
+import getData from "./_getData";
+import mergeData from "./_mergeData";
+import setData from "./_setData";
+import setWrapToString from "./_setWrapToString";
+import toInteger from "./toInteger";
 
 /** Error message constants. */
-var FUNC_ERROR_TEXT = "Expected a function";
+const FUNC_ERROR_TEXT = "Expected a function";
 
 /** Used to compose bitmasks for function metadata. */
-var WRAP_BIND_FLAG = 1,
-  WRAP_BIND_KEY_FLAG = 2,
-  WRAP_CURRY_FLAG = 8,
-  WRAP_CURRY_RIGHT_FLAG = 16,
-  WRAP_PARTIAL_FLAG = 32,
-  WRAP_PARTIAL_RIGHT_FLAG = 64;
+const WRAP_BIND_FLAG = 1;
+
+const WRAP_BIND_KEY_FLAG = 2;
+const WRAP_CURRY_FLAG = 8;
+const WRAP_CURRY_RIGHT_FLAG = 16;
+const WRAP_PARTIAL_FLAG = 32;
+const WRAP_PARTIAL_RIGHT_FLAG = 64;
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeMax = Math.max;
+const nativeMax = Math.max;
 
 /**
  * Creates a function that either curries or invokes `func` with optional
@@ -58,11 +59,11 @@ function createWrap(
   ary,
   arity
 ) {
-  var isBindKey = bitmask & WRAP_BIND_KEY_FLAG;
+  const isBindKey = bitmask & WRAP_BIND_KEY_FLAG;
   if (!isBindKey && typeof func != "function") {
     throw new TypeError(FUNC_ERROR_TEXT);
   }
-  var length = partials ? partials.length : 0;
+  let length = partials ? partials.length : 0;
   if (!length) {
     bitmask &= ~(WRAP_PARTIAL_FLAG | WRAP_PARTIAL_RIGHT_FLAG);
     partials = holders = undefined;
@@ -72,14 +73,14 @@ function createWrap(
   length -= holders ? holders.length : 0;
 
   if (bitmask & WRAP_PARTIAL_RIGHT_FLAG) {
-    var partialsRight = partials,
-      holdersRight = holders;
+    var partialsRight = partials;
+    var holdersRight = holders;
 
     partials = holders = undefined;
   }
-  var data = isBindKey ? undefined : getData(func);
+  const data = isBindKey ? undefined : getData(func);
 
-  var newData = [
+  const newData = [
     func,
     bitmask,
     thisArg,
@@ -121,10 +122,10 @@ function createWrap(
   ) {
     result = createPartial(func, bitmask, thisArg, partials);
   } else {
-    result = createHybrid.apply(undefined, newData);
+    result = createHybrid(...newData);
   }
-  var setter = data ? baseSetData : setData;
+  const setter = data ? baseSetData : setData;
   return setWrapToString(setter(result, newData), func, bitmask);
 }
 
-module.exports = createWrap;
+export default createWrap;

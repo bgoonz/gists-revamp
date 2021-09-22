@@ -1,4 +1,4 @@
-var assocIndexOf = require("./_assocIndexOf");
+const assocIndexOf = require("./_assocIndexOf");
 
 /**
  * Checks if a list cache value for `key` exists.

@@ -1,5 +1,4 @@
-var baseGet = require("./_baseGet"),
-  baseSlice = require("./_baseSlice");
+const baseGet = require("./_baseGet"), baseSlice = require("./_baseSlice");
 
 /**
  * Gets the parent value at `path` of `object`.

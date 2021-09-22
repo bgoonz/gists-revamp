@@ -1,4 +1,4 @@
-var getMapData = require("./_getMapData");
+const getMapData = require("./_getMapData");
 
 /**
  * Checks if a map value for `key` exists.

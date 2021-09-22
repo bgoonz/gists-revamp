@@ -1,14 +1,14 @@
-var arrayFilter = require("./_arrayFilter"),
-  stubArray = require("./stubArray");
+import arrayFilter from "./_arrayFilter";
+import stubArray from "./stubArray";
 
 /** Used for built-in method references. */
-var objectProto = Object.prototype;
+const objectProto = Object.prototype;
 
 /** Built-in value references. */
-var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+const propertyIsEnumerable = objectProto.propertyIsEnumerable;
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeGetSymbols = Object.getOwnPropertySymbols;
+const nativeGetSymbols = Object.getOwnPropertySymbols;
 
 /**
  * Creates an array of the own enumerable symbols of `object`.
@@ -17,16 +17,16 @@ var nativeGetSymbols = Object.getOwnPropertySymbols;
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of symbols.
  */
-var getSymbols = !nativeGetSymbols
+const getSymbols = !nativeGetSymbols
   ? stubArray
-  : function (object) {
+  : object => {
       if (object == null) {
         return [];
       }
       object = Object(object);
-      return arrayFilter(nativeGetSymbols(object), function (symbol) {
+      return arrayFilter(nativeGetSymbols(object), symbol => {
         return propertyIsEnumerable.call(object, symbol);
       });
     };
 
-module.exports = getSymbols;
+export default getSymbols;

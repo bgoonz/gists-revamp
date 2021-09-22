@@ -1,4 +1,4 @@
-var getMapData = require("./_getMapData");
+const getMapData = require("./_getMapData");
 
 /**
  * Gets the map value for `key`.

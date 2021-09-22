@@ -1,7 +1,7 @@
-var eq = require("./eq"),
-  isArrayLike = require("./isArrayLike"),
-  isIndex = require("./_isIndex"),
-  isObject = require("./isObject");
+import eq from "./eq";
+import isArrayLike from "./isArrayLike";
+import isIndex from "./_isIndex";
+import isObject from "./isObject";
 
 /**
  * Checks if the given arguments are from an iteratee call.
@@ -17,7 +17,7 @@ function isIterateeCall(value, index, object) {
   if (!isObject(object)) {
     return false;
   }
-  var type = typeof index;
+  const type = typeof index;
   if (
     type == "number"
       ? isArrayLike(object) && isIndex(index, object.length)
@@ -28,4 +28,4 @@ function isIterateeCall(value, index, object) {
   return false;
 }
 
-module.exports = isIterateeCall;
+export default isIterateeCall;

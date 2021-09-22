@@ -1,9 +1,10 @@
-var isArray = require("./isArray"),
-  isSymbol = require("./isSymbol");
+import isArray from "./isArray";
+import isSymbol from "./isSymbol";
 
 /** Used to match property names within property paths. */
-var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
-  reIsPlainProp = /^\w*$/;
+const reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/;
+
+const reIsPlainProp = /^\w*$/;
 
 /**
  * Checks if `value` is a property name and not a property path.
@@ -17,7 +18,7 @@ function isKey(value, object) {
   if (isArray(value)) {
     return false;
   }
-  var type = typeof value;
+  const type = typeof value;
   if (
     type == "number" ||
     type == "symbol" ||
@@ -34,4 +35,4 @@ function isKey(value, object) {
   );
 }
 
-module.exports = isKey;
+export default isKey;

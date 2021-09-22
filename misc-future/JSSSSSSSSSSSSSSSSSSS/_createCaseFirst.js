@@ -1,7 +1,7 @@
-var castSlice = require("./_castSlice"),
-  hasUnicode = require("./_hasUnicode"),
-  stringToArray = require("./_stringToArray"),
-  toString = require("./toString");
+import castSlice from "./_castSlice";
+import hasUnicode from "./_hasUnicode";
+import stringToArray from "./_stringToArray";
+import toString from "./toString";
 
 /**
  * Creates a function like `_.lowerFirst`.
@@ -11,14 +11,14 @@ var castSlice = require("./_castSlice"),
  * @returns {Function} Returns the new case function.
  */
 function createCaseFirst(methodName) {
-  return function (string) {
+  return string => {
     string = toString(string);
 
-    var strSymbols = hasUnicode(string) ? stringToArray(string) : undefined;
+    const strSymbols = hasUnicode(string) ? stringToArray(string) : undefined;
 
-    var chr = strSymbols ? strSymbols[0] : string.charAt(0);
+    const chr = strSymbols ? strSymbols[0] : string.charAt(0);
 
-    var trailing = strSymbols
+    const trailing = strSymbols
       ? castSlice(strSymbols, 1).join("")
       : string.slice(1);
 
@@ -26,4 +26,4 @@ function createCaseFirst(methodName) {
   };
 }
 
-module.exports = createCaseFirst;
+export default createCaseFirst;

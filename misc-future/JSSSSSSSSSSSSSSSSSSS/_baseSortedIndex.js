@@ -1,10 +1,11 @@
-var baseSortedIndexBy = require("./_baseSortedIndexBy"),
-  identity = require("./identity"),
-  isSymbol = require("./isSymbol");
+import baseSortedIndexBy from "./_baseSortedIndexBy";
+import identity from "./identity";
+import isSymbol from "./isSymbol";
 
 /** Used as references for the maximum length and index of an array. */
-var MAX_ARRAY_LENGTH = 4294967295,
-  HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
+const MAX_ARRAY_LENGTH = 4294967295;
+
+const HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
 
 /**
  * The base implementation of `_.sortedIndex` and `_.sortedLastIndex` which
@@ -19,8 +20,8 @@ var MAX_ARRAY_LENGTH = 4294967295,
  *  into `array`.
  */
 function baseSortedIndex(array, value, retHighest) {
-  var low = 0,
-    high = array == null ? low : array.length;
+  let low = 0;
+  let high = array == null ? low : array.length;
 
   if (
     typeof value == "number" &&
@@ -28,8 +29,8 @@ function baseSortedIndex(array, value, retHighest) {
     high <= HALF_MAX_ARRAY_LENGTH
   ) {
     while (low < high) {
-      var mid = (low + high) >>> 1,
-        computed = array[mid];
+      const mid = (low + high) >>> 1;
+      const computed = array[mid];
 
       if (
         computed !== null &&
@@ -46,4 +47,4 @@ function baseSortedIndex(array, value, retHighest) {
   return baseSortedIndexBy(array, value, identity, retHighest);
 }
 
-module.exports = baseSortedIndex;
+export default baseSortedIndex;

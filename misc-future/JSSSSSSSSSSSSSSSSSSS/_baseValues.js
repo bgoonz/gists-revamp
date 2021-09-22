@@ -1,4 +1,4 @@
-var arrayMap = require("./_arrayMap");
+import arrayMap from "./_arrayMap";
 
 /**
  * The base implementation of `_.values` and `_.valuesIn` which creates an
@@ -11,9 +11,9 @@ var arrayMap = require("./_arrayMap");
  * @returns {Object} Returns the array of property values.
  */
 function baseValues(object, props) {
-  return arrayMap(props, function (key) {
+  return arrayMap(props, key => {
     return object[key];
   });
 }
 
-module.exports = baseValues;
+export default baseValues;

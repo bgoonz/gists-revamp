@@ -1,6 +1,4 @@
-var MapCache = require("./_MapCache"),
-  setCacheAdd = require("./_setCacheAdd"),
-  setCacheHas = require("./_setCacheHas");
+const MapCache = require("./_MapCache"), setCacheAdd = require("./_setCacheAdd"), setCacheHas = require("./_setCacheHas");
 
 /**
  *
@@ -11,8 +9,8 @@ var MapCache = require("./_MapCache"),
  * @param {Array} [values] The values to cache.
  */
 function SetCache(values) {
-  var index = -1,
-    length = values == null ? 0 : values.length;
+  let index = -1;
+  const length = values == null ? 0 : values.length;
 
   this.__data__ = new MapCache();
   while (++index < length) {

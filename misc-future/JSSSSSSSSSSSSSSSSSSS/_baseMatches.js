@@ -1,6 +1,6 @@
-var baseIsMatch = require("./_baseIsMatch"),
-  getMatchData = require("./_getMatchData"),
-  matchesStrictComparable = require("./_matchesStrictComparable");
+import baseIsMatch from "./_baseIsMatch";
+import getMatchData from "./_getMatchData";
+import matchesStrictComparable from "./_matchesStrictComparable";
 
 /**
  * The base implementation of `_.matches` which doesn't clone `source`.
@@ -10,13 +10,13 @@ var baseIsMatch = require("./_baseIsMatch"),
  * @returns {Function} Returns the new spec function.
  */
 function baseMatches(source) {
-  var matchData = getMatchData(source);
+  const matchData = getMatchData(source);
   if (matchData.length == 1 && matchData[0][2]) {
     return matchesStrictComparable(matchData[0][0], matchData[0][1]);
   }
-  return function (object) {
+  return object => {
     return object === source || baseIsMatch(object, source, matchData);
   };
 }
 
-module.exports = baseMatches;
+export default baseMatches;

@@ -1,6 +1,6 @@
-var baseRange = require("./_baseRange"),
-  isIterateeCall = require("./_isIterateeCall"),
-  toFinite = require("./toFinite");
+import baseRange from "./_baseRange";
+import isIterateeCall from "./_isIterateeCall";
+import toFinite from "./toFinite";
 
 /**
  * Creates a `_.range` or `_.rangeRight` function.
@@ -10,7 +10,7 @@ var baseRange = require("./_baseRange"),
  * @returns {Function} Returns the new range function.
  */
 function createRange(fromRight) {
-  return function (start, end, step) {
+  return (start, end, step) => {
     if (step && typeof step != "number" && isIterateeCall(start, end, step)) {
       end = step = undefined;
     }
@@ -27,4 +27,4 @@ function createRange(fromRight) {
   };
 }
 
-module.exports = createRange;
+export default createRange;

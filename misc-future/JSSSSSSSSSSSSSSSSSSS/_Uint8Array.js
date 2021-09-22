@@ -1,6 +1,6 @@
-var root = require("./_root");
+const root = require("./_root");
 
 /** Built-in value references. */
-var Uint8Array = root.Uint8Array;
+const Uint8Array = root.Uint8Array;
 
 module.exports = Uint8Array;

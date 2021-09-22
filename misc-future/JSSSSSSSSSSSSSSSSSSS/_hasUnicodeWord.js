@@ -1,5 +1,5 @@
 /** Used to detect strings that need a more robust regexp to match words. */
-var reHasUnicodeWord =
+const reHasUnicodeWord =
   /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
 
 /**
@@ -13,4 +13,4 @@ function hasUnicodeWord(string) {
   return reHasUnicodeWord.test(string);
 }
 
-module.exports = hasUnicodeWord;
+export default hasUnicodeWord;

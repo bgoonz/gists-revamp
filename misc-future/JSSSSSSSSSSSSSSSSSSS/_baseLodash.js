@@ -7,4 +7,4 @@ function baseLodash() {
   // No operation performed.
 }
 
-module.exports = baseLodash;
+export default baseLodash;

@@ -1,7 +1,7 @@
-var isSymbol = require("./isSymbol");
+import isSymbol from "./isSymbol";
 
 /** Used as references for various `Number` constants. */
-var NAN = 0 / 0;
+const NAN = 0 / 0;
 
 /**
  * The base implementation of `_.toNumber` which doesn't ensure correct
@@ -21,4 +21,4 @@ function baseToNumber(value) {
   return +value;
 }
 
-module.exports = baseToNumber;
+export default baseToNumber;

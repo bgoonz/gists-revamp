@@ -1,4 +1,4 @@
-var isArrayLike = require("./isArrayLike");
+import isArrayLike from "./isArrayLike";
 
 /**
  * Creates a `baseEach` or `baseEachRight` function.
@@ -9,16 +9,16 @@ var isArrayLike = require("./isArrayLike");
  * @returns {Function} Returns the new base function.
  */
 function createBaseEach(eachFunc, fromRight) {
-  return function (collection, iteratee) {
+  return (collection, iteratee) => {
     if (collection == null) {
       return collection;
     }
     if (!isArrayLike(collection)) {
       return eachFunc(collection, iteratee);
     }
-    var length = collection.length,
-      index = fromRight ? length : -1,
-      iterable = Object(collection);
+    const length = collection.length;
+    let index = fromRight ? length : -1;
+    const iterable = Object(collection);
 
     while (fromRight ? index-- : ++index < length) {
       if (iteratee(iterable[index], index, iterable) === false) {
@@ -29,4 +29,4 @@ function createBaseEach(eachFunc, fromRight) {
   };
 }
 
-module.exports = createBaseEach;
+export default createBaseEach;

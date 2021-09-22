@@ -1,7 +1,7 @@
-var basePropertyOf = require("./_basePropertyOf");
+import basePropertyOf from "./_basePropertyOf";
 
 /** Used to map characters to HTML entities. */
-var htmlEscapes = {
+const htmlEscapes = {
   "&": "&amp;",
   "<": "&lt;",
   ">": "&gt;",
@@ -16,6 +16,6 @@ var htmlEscapes = {
  * @param {string} chr The matched character to escape.
  * @returns {string} Returns the escaped character.
  */
-var escapeHtmlChar = basePropertyOf(htmlEscapes);
+const escapeHtmlChar = basePropertyOf(htmlEscapes);
 
-module.exports = escapeHtmlChar;
+export default escapeHtmlChar;

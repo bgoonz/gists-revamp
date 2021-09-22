@@ -1,8 +1,8 @@
-var baseGetTag = require("./_baseGetTag"),
-  isObjectLike = require("./isObjectLike");
+import baseGetTag from "./_baseGetTag";
+import isObjectLike from "./isObjectLike";
 
 /** `Object#toString` result references. */
-var argsTag = "[object Arguments]";
+const argsTag = "[object Arguments]";
 
 /**
  * The base implementation of `_.isArguments`.
@@ -15,4 +15,4 @@ function baseIsArguments(value) {
   return isObjectLike(value) && baseGetTag(value) == argsTag;
 }
 
-module.exports = baseIsArguments;
+export default baseIsArguments;

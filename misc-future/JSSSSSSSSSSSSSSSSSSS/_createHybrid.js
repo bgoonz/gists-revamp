@@ -1,20 +1,21 @@
-var composeArgs = require("./_composeArgs"),
-  composeArgsRight = require("./_composeArgsRight"),
-  countHolders = require("./_countHolders"),
-  createCtor = require("./_createCtor"),
-  createRecurry = require("./_createRecurry"),
-  getHolder = require("./_getHolder"),
-  reorder = require("./_reorder"),
-  replaceHolders = require("./_replaceHolders"),
-  root = require("./_root");
+import composeArgs from "./_composeArgs";
+import composeArgsRight from "./_composeArgsRight";
+import countHolders from "./_countHolders";
+import createCtor from "./_createCtor";
+import createRecurry from "./_createRecurry";
+import getHolder from "./_getHolder";
+import reorder from "./_reorder";
+import replaceHolders from "./_replaceHolders";
+import root from "./_root";
 
 /** Used to compose bitmasks for function metadata. */
-var WRAP_BIND_FLAG = 1,
-  WRAP_BIND_KEY_FLAG = 2,
-  WRAP_CURRY_FLAG = 8,
-  WRAP_CURRY_RIGHT_FLAG = 16,
-  WRAP_ARY_FLAG = 128,
-  WRAP_FLIP_FLAG = 512;
+const WRAP_BIND_FLAG = 1;
+
+const WRAP_BIND_KEY_FLAG = 2;
+const WRAP_CURRY_FLAG = 8;
+const WRAP_CURRY_RIGHT_FLAG = 16;
+const WRAP_ARY_FLAG = 128;
+const WRAP_FLIP_FLAG = 512;
 
 /**
  * Creates a function that wraps `func` to invoke it with optional `this`
@@ -47,24 +48,24 @@ function createHybrid(
   ary,
   arity
 ) {
-  var isAry = bitmask & WRAP_ARY_FLAG,
-    isBind = bitmask & WRAP_BIND_FLAG,
-    isBindKey = bitmask & WRAP_BIND_KEY_FLAG,
-    isCurried = bitmask & (WRAP_CURRY_FLAG | WRAP_CURRY_RIGHT_FLAG),
-    isFlip = bitmask & WRAP_FLIP_FLAG,
-    Ctor = isBindKey ? undefined : createCtor(func);
+  const isAry = bitmask & WRAP_ARY_FLAG;
+  const isBind = bitmask & WRAP_BIND_FLAG;
+  const isBindKey = bitmask & WRAP_BIND_KEY_FLAG;
+  const isCurried = bitmask & (WRAP_CURRY_FLAG | WRAP_CURRY_RIGHT_FLAG);
+  const isFlip = bitmask & WRAP_FLIP_FLAG;
+  const Ctor = isBindKey ? undefined : createCtor(func);
 
   function wrapper() {
-    var length = arguments.length,
-      args = Array(length),
-      index = length;
+    let length = arguments.length;
+    let args = Array(length);
+    let index = length;
 
     while (index--) {
       args[index] = arguments[index];
     }
     if (isCurried) {
-      var placeholder = getHolder(wrapper),
-        holdersCount = countHolders(args, placeholder);
+      var placeholder = getHolder(wrapper);
+      var holdersCount = countHolders(args, placeholder);
     }
     if (partials) {
       args = composeArgs(args, partials, holders, isCurried);
@@ -74,7 +75,7 @@ function createHybrid(
     }
     length -= holdersCount;
     if (isCurried && length < arity) {
-      var newHolders = replaceHolders(args, placeholder);
+      const newHolders = replaceHolders(args, placeholder);
       return createRecurry(
         func,
         bitmask,
@@ -88,8 +89,8 @@ function createHybrid(
         arity - length
       );
     }
-    var thisBinding = isBind ? thisArg : this,
-      fn = isBindKey ? thisBinding[func] : func;
+    const thisBinding = isBind ? thisArg : this;
+    let fn = isBindKey ? thisBinding[func] : func;
 
     length = args.length;
     if (argPos) {
@@ -108,4 +109,4 @@ function createHybrid(
   return wrapper;
 }
 
-module.exports = createHybrid;
+export default createHybrid;

@@ -1,8 +1,8 @@
-var hashClear = require("./_hashClear"),
-  hashDelete = require("./_hashDelete"),
-  hashGet = require("./_hashGet"),
-  hashHas = require("./_hashHas"),
-  hashSet = require("./_hashSet");
+import hashClear from "./_hashClear";
+import hashDelete from "./_hashDelete";
+import hashGet from "./_hashGet";
+import hashHas from "./_hashHas";
+import hashSet from "./_hashSet";
 
 /**
  * Creates a hash object.
@@ -12,12 +12,12 @@ var hashClear = require("./_hashClear"),
  * @param {Array} [entries] The key-value pairs to cache.
  */
 function Hash(entries) {
-  var index = -1,
-    length = entries == null ? 0 : entries.length;
+  let index = -1;
+  const length = entries == null ? 0 : entries.length;
 
   this.clear();
   while (++index < length) {
-    var entry = entries[index];
+    const entry = entries[index];
     this.set(entry[0], entry[1]);
   }
 }
@@ -29,4 +29,4 @@ Hash.prototype.get = hashGet;
 Hash.prototype.has = hashHas;
 Hash.prototype.set = hashSet;
 
-module.exports = Hash;
+export default Hash;

@@ -1,6 +1,6 @@
-var baseGet = require("./_baseGet"),
-  baseSet = require("./_baseSet"),
-  castPath = require("./_castPath");
+import baseGet from "./_baseGet";
+import baseSet from "./_baseSet";
+import castPath from "./_castPath";
 
 /**
  * The base implementation of  `_.pickBy` without support for iteratee shorthands.
@@ -12,13 +12,13 @@ var baseGet = require("./_baseGet"),
  * @returns {Object} Returns the new object.
  */
 function basePickBy(object, paths, predicate) {
-  var index = -1,
-    length = paths.length,
-    result = {};
+  let index = -1;
+  const length = paths.length;
+  const result = {};
 
   while (++index < length) {
-    var path = paths[index],
-      value = baseGet(object, path);
+    const path = paths[index];
+    const value = baseGet(object, path);
 
     if (predicate(value, path)) {
       baseSet(result, castPath(path, object), value);
@@ -27,4 +27,4 @@ function basePickBy(object, paths, predicate) {
   return result;
 }
 
-module.exports = basePickBy;
+export default basePickBy;

@@ -1,8 +1,8 @@
-var assignValue = require("./_assignValue"),
-  castPath = require("./_castPath"),
-  isIndex = require("./_isIndex"),
-  isObject = require("./isObject"),
-  toKey = require("./_toKey");
+import assignValue from "./_assignValue";
+import castPath from "./_castPath";
+import isIndex from "./_isIndex";
+import isObject from "./isObject";
+import toKey from "./_toKey";
 
 /**
  * The base implementation of `_.set`.
@@ -20,17 +20,17 @@ function baseSet(object, path, value, customizer) {
   }
   path = castPath(path, object);
 
-  var index = -1,
-    length = path.length,
-    lastIndex = length - 1,
-    nested = object;
+  let index = -1;
+  const length = path.length;
+  const lastIndex = length - 1;
+  let nested = object;
 
   while (nested != null && ++index < length) {
-    var key = toKey(path[index]),
-      newValue = value;
+    const key = toKey(path[index]);
+    let newValue = value;
 
     if (index != lastIndex) {
-      var objValue = nested[key];
+      const objValue = nested[key];
       newValue = customizer ? customizer(objValue, key, nested) : undefined;
       if (newValue === undefined) {
         newValue = isObject(objValue)
@@ -46,4 +46,4 @@ function baseSet(object, path, value, customizer) {
   return object;
 }
 
-module.exports = baseSet;
+export default baseSet;

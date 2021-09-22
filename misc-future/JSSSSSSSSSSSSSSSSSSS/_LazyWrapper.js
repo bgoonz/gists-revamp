@@ -1,8 +1,8 @@
-var baseCreate = require("./_baseCreate"),
-  baseLodash = require("./_baseLodash");
+import baseCreate from "./_baseCreate";
+import baseLodash from "./_baseLodash";
 
 /** Used as references for the maximum length and index of an array. */
-var MAX_ARRAY_LENGTH = 4294967295;
+const MAX_ARRAY_LENGTH = 4294967295;
 
 /**
  * Creates a lazy wrapper object which wraps `value` to enable lazy evaluation.
@@ -25,4 +25,4 @@ function LazyWrapper(value) {
 LazyWrapper.prototype = baseCreate(baseLodash.prototype);
 LazyWrapper.prototype.constructor = LazyWrapper;
 
-module.exports = LazyWrapper;
+export default LazyWrapper;

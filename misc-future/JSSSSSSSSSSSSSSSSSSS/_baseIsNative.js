@@ -1,38 +1,37 @@
-var isFunction = require("./isFunction"),
-  isMasked = require("./_isMasked"),
-  isObject = require("./isObject"),
-  toSource = require("./_toSource");
+import isFunction from "./isFunction";
+import isMasked from "./_isMasked";
+import isObject from "./isObject";
+import toSource from "./_toSource";
 
 /**
  * Used to match `RegExp`
  * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
  */
-var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+const reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
 
 /** Used to detect host constructors (Safari). */
-var reIsHostCtor = /^\[object .+?Constructor\]$/;
+const reIsHostCtor = /^\[object .+?Constructor\]$/;
 
 /** Used for built-in method references. */
-var funcProto = Function.prototype,
-  objectProto = Object.prototype;
+const funcProto = Function.prototype;
+
+const objectProto = Object.prototype;
 
 /** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
+const funcToString = funcProto.toString;
 
 /** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
+const hasOwnProperty = objectProto.hasOwnProperty;
 
 /** Used to detect if a method is native. */
-var reIsNative = RegExp(
-  "^" +
-    funcToString
-      .call(hasOwnProperty)
-      .replace(reRegExpChar, "\\$&")
-      .replace(
-        /hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,
-        "$1.*?"
-      ) +
-    "$"
+const reIsNative = RegExp(
+  `^${funcToString
+  .call(hasOwnProperty)
+  .replace(reRegExpChar, "\\$&")
+  .replace(
+    /hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,
+    "$1.*?"
+  )}$`
 );
 
 /**
@@ -47,8 +46,8 @@ function baseIsNative(value) {
   if (!isObject(value) || isMasked(value)) {
     return false;
   }
-  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
+  const pattern = isFunction(value) ? reIsNative : reIsHostCtor;
   return pattern.test(toSource(value));
 }
 
-module.exports = baseIsNative;
+export default baseIsNative;

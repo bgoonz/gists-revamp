@@ -1,10 +1,10 @@
-var Stack = require("./_Stack"),
-  assignMergeValue = require("./_assignMergeValue"),
-  baseFor = require("./_baseFor"),
-  baseMergeDeep = require("./_baseMergeDeep"),
-  isObject = require("./isObject"),
-  keysIn = require("./keysIn"),
-  safeGet = require("./_safeGet");
+import Stack from "./_Stack";
+import assignMergeValue from "./_assignMergeValue";
+import baseFor from "./_baseFor";
+import baseMergeDeep from "./_baseMergeDeep";
+import isObject from "./isObject";
+import keysIn from "./keysIn";
+import safeGet from "./_safeGet";
 
 /**
  * The base implementation of `_.merge` without support for multiple sources.
@@ -23,7 +23,7 @@ function baseMerge(object, source, srcIndex, customizer, stack) {
   }
   baseFor(
     source,
-    function (srcValue, key) {
+    (srcValue, key) => {
       if (isObject(srcValue)) {
         stack || (stack = new Stack());
         baseMergeDeep(
@@ -36,11 +36,11 @@ function baseMerge(object, source, srcIndex, customizer, stack) {
           stack
         );
       } else {
-        var newValue = customizer
+        let newValue = customizer
           ? customizer(
               safeGet(object, key),
               srcValue,
-              key + "",
+              `${key}`,
               object,
               source,
               stack
@@ -57,4 +57,4 @@ function baseMerge(object, source, srcIndex, customizer, stack) {
   );
 }
 
-module.exports = baseMerge;
+export default baseMerge;

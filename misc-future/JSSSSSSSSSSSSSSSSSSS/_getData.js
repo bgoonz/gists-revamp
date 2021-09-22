@@ -1,5 +1,5 @@
-var metaMap = require("./_metaMap"),
-  noop = require("./noop");
+import metaMap from "./_metaMap";
+import noop from "./noop";
 
 /**
  * Gets metadata for `func`.
@@ -8,10 +8,10 @@ var metaMap = require("./_metaMap"),
  * @param {Function} func The function to query.
  * @returns {*} Returns the metadata for `func`.
  */
-var getData = !metaMap
+const getData = !metaMap
   ? noop
-  : function (func) {
+  : func => {
       return metaMap.get(func);
     };
 
-module.exports = getData;
+export default getData;

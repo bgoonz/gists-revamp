@@ -1,5 +1,5 @@
 /** Used to escape characters for inclusion in compiled string literals. */
-var stringEscapes = {
+const stringEscapes = {
   "\\": "\\",
   "'": "'",
   "\n": "n",
@@ -16,7 +16,7 @@ var stringEscapes = {
  * @returns {string} Returns the escaped character.
  */
 function escapeStringChar(chr) {
-  return "\\" + stringEscapes[chr];
+  return `\\${stringEscapes[chr]}`;
 }
 
-module.exports = escapeStringChar;
+export default escapeStringChar;

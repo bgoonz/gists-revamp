@@ -6,8 +6,8 @@
  * @returns {*} Returns the placeholder value.
  */
 function getHolder(func) {
-  var object = func;
+  const object = func;
   return object.placeholder;
 }
 
-module.exports = getHolder;
+export default getHolder;

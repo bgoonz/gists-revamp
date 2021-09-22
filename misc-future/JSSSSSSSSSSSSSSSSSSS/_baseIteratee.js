@@ -1,8 +1,8 @@
-var baseMatches = require("./_baseMatches"),
-  baseMatchesProperty = require("./_baseMatchesProperty"),
-  identity = require("./identity"),
-  isArray = require("./isArray"),
-  property = require("./property");
+import baseMatches from "./_baseMatches";
+import baseMatchesProperty from "./_baseMatchesProperty";
+import identity from "./identity";
+import isArray from "./isArray";
+import property from "./property";
 
 /**
  * The base implementation of `_.iteratee`.
@@ -28,4 +28,4 @@ function baseIteratee(value) {
   return property(value);
 }
 
-module.exports = baseIteratee;
+export default baseIteratee;

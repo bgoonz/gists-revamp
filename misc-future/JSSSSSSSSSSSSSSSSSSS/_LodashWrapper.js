@@ -1,5 +1,4 @@
-var baseCreate = require("./_baseCreate"),
-  baseLodash = require("./_baseLodash");
+const baseCreate = require("./_baseCreate"), baseLodash = require("./_baseLodash");
 
 /**
  * The base constructor for creating `lodash` wrapper objects.

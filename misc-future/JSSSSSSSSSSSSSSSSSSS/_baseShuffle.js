@@ -1,5 +1,5 @@
-var shuffleSelf = require("./_shuffleSelf"),
-  values = require("./values");
+import shuffleSelf from "./_shuffleSelf";
+import values from "./values";
 
 /**
  * The base implementation of `_.shuffle`.
@@ -12,4 +12,4 @@ function baseShuffle(collection) {
   return shuffleSelf(values(collection));
 }
 
-module.exports = baseShuffle;
+export default baseShuffle;

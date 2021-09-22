@@ -1,5 +1,5 @@
-var baseIsEqualDeep = require("./_baseIsEqualDeep"),
-  isObjectLike = require("./isObjectLike");
+import baseIsEqualDeep from "./_baseIsEqualDeep";
+import isObjectLike from "./isObjectLike";
 
 /**
  * The base implementation of `_.isEqual` which supports partial comparisons
@@ -29,4 +29,4 @@ function baseIsEqual(value, other, bitmask, customizer, stack) {
   return baseIsEqualDeep(value, other, bitmask, customizer, baseIsEqual, stack);
 }
 
-module.exports = baseIsEqual;
+export default baseIsEqual;

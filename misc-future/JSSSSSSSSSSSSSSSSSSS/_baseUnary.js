@@ -6,9 +6,9 @@
  * @returns {Function} Returns the new capped function.
  */
 function baseUnary(func) {
-  return function (value) {
+  return value => {
     return func(value);
   };
 }
 
-module.exports = baseUnary;
+export default baseUnary;

@@ -1,11 +1,11 @@
-var coreJsData = require("./_coreJsData");
+import coreJsData from "./_coreJsData";
 
 /** Used to detect methods masquerading as native. */
-var maskSrcKey = (function () {
-  var uid = /[^.]+$/.exec(
+const maskSrcKey = (() => {
+  const uid = /[^.]+$/.exec(
     (coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO) || ""
   );
-  return uid ? "Symbol(src)_1." + uid : "";
+  return uid ? `Symbol(src)_1.${uid}` : "";
 })();
 
 /**
@@ -19,4 +19,4 @@ function isMasked(func) {
   return !!maskSrcKey && maskSrcKey in func;
 }
 
-module.exports = isMasked;
+export default isMasked;

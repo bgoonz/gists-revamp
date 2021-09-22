@@ -1,12 +1,12 @@
-var SetCache = require("./_SetCache"),
-  arrayIncludes = require("./_arrayIncludes"),
-  arrayIncludesWith = require("./_arrayIncludesWith"),
-  cacheHas = require("./_cacheHas"),
-  createSet = require("./_createSet"),
-  setToArray = require("./_setToArray");
+import SetCache from "./_SetCache";
+import arrayIncludes from "./_arrayIncludes";
+import arrayIncludesWith from "./_arrayIncludesWith";
+import cacheHas from "./_cacheHas";
+import createSet from "./_createSet";
+import setToArray from "./_setToArray";
 
 /** Used as the size to enable large array optimizations. */
-var LARGE_ARRAY_SIZE = 200;
+const LARGE_ARRAY_SIZE = 200;
 
 /**
  * The base implementation of `_.uniqBy` without support for iteratee shorthands.
@@ -18,18 +18,18 @@ var LARGE_ARRAY_SIZE = 200;
  * @returns {Array} Returns the new duplicate free array.
  */
 function baseUniq(array, iteratee, comparator) {
-  var index = -1,
-    includes = arrayIncludes,
-    length = array.length,
-    isCommon = true,
-    result = [],
-    seen = result;
+  let index = -1;
+  let includes = arrayIncludes;
+  const length = array.length;
+  let isCommon = true;
+  const result = [];
+  let seen = result;
 
   if (comparator) {
     isCommon = false;
     includes = arrayIncludesWith;
   } else if (length >= LARGE_ARRAY_SIZE) {
-    var set = iteratee ? null : createSet(array);
+    const set = iteratee ? null : createSet(array);
     if (set) {
       return setToArray(set);
     }
@@ -40,12 +40,12 @@ function baseUniq(array, iteratee, comparator) {
     seen = iteratee ? [] : result;
   }
   outer: while (++index < length) {
-    var value = array[index],
-      computed = iteratee ? iteratee(value) : value;
+    let value = array[index];
+    const computed = iteratee ? iteratee(value) : value;
 
     value = comparator || value !== 0 ? value : 0;
     if (isCommon && computed === computed) {
-      var seenIndex = seen.length;
+      let seenIndex = seen.length;
       while (seenIndex--) {
         if (seen[seenIndex] === computed) {
           continue outer;
@@ -65,4 +65,4 @@ function baseUniq(array, iteratee, comparator) {
   return result;
 }
 
-module.exports = baseUniq;
+export default baseUniq;

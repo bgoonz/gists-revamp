@@ -1,7 +1,7 @@
-var getNative = require("./_getNative"),
-  root = require("./_root");
+import getNative from "./_getNative";
+import root from "./_root";
 
 /* Built-in method references that are verified to be native. */
-var DataView = getNative(root, "DataView");
+const DataView = getNative(root, "DataView");
 
-module.exports = DataView;
+export default DataView;

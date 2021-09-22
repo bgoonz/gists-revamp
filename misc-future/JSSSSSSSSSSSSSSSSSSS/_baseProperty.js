@@ -6,9 +6,9 @@
  * @returns {Function} Returns the new accessor function.
  */
 function baseProperty(key) {
-  return function (object) {
+  return object => {
     return object == null ? undefined : object[key];
   };
 }
 
-module.exports = baseProperty;
+export default baseProperty;

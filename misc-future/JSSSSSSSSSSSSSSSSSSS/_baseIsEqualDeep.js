@@ -1,25 +1,26 @@
-var Stack = require("./_Stack"),
-  equalArrays = require("./_equalArrays"),
-  equalByTag = require("./_equalByTag"),
-  equalObjects = require("./_equalObjects"),
-  getTag = require("./_getTag"),
-  isArray = require("./isArray"),
-  isBuffer = require("./isBuffer"),
-  isTypedArray = require("./isTypedArray");
+import Stack from "./_Stack";
+import equalArrays from "./_equalArrays";
+import equalByTag from "./_equalByTag";
+import equalObjects from "./_equalObjects";
+import getTag from "./_getTag";
+import isArray from "./isArray";
+import isBuffer from "./isBuffer";
+import isTypedArray from "./isTypedArray";
 
 /** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1;
+const COMPARE_PARTIAL_FLAG = 1;
 
 /** `Object#toString` result references. */
-var argsTag = "[object Arguments]",
-  arrayTag = "[object Array]",
-  objectTag = "[object Object]";
+const argsTag = "[object Arguments]";
+
+const arrayTag = "[object Array]";
+const objectTag = "[object Object]";
 
 /** Used for built-in method references. */
-var objectProto = Object.prototype;
+const objectProto = Object.prototype;
 
 /** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
+const hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * A specialized version of `baseIsEqual` for arrays and objects which performs
@@ -36,17 +37,17 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
  */
 function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
-  var objIsArr = isArray(object),
-    othIsArr = isArray(other),
-    objTag = objIsArr ? arrayTag : getTag(object),
-    othTag = othIsArr ? arrayTag : getTag(other);
+  let objIsArr = isArray(object);
+  const othIsArr = isArray(other);
+  let objTag = objIsArr ? arrayTag : getTag(object);
+  let othTag = othIsArr ? arrayTag : getTag(other);
 
   objTag = objTag == argsTag ? objectTag : objTag;
   othTag = othTag == argsTag ? objectTag : othTag;
 
-  var objIsObj = objTag == objectTag,
-    othIsObj = othTag == objectTag,
-    isSameTag = objTag == othTag;
+  let objIsObj = objTag == objectTag;
+  const othIsObj = othTag == objectTag;
+  const isSameTag = objTag == othTag;
 
   if (isSameTag && isBuffer(object)) {
     if (!isBuffer(other)) {
@@ -70,12 +71,12 @@ function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
         );
   }
   if (!(bitmask & COMPARE_PARTIAL_FLAG)) {
-    var objIsWrapped = objIsObj && hasOwnProperty.call(object, "__wrapped__"),
-      othIsWrapped = othIsObj && hasOwnProperty.call(other, "__wrapped__");
+    const objIsWrapped = objIsObj && hasOwnProperty.call(object, "__wrapped__");
+    const othIsWrapped = othIsObj && hasOwnProperty.call(other, "__wrapped__");
 
     if (objIsWrapped || othIsWrapped) {
-      var objUnwrapped = objIsWrapped ? object.value() : object,
-        othUnwrapped = othIsWrapped ? other.value() : other;
+      const objUnwrapped = objIsWrapped ? object.value() : object;
+      const othUnwrapped = othIsWrapped ? other.value() : other;
 
       stack || (stack = new Stack());
       return equalFunc(objUnwrapped, othUnwrapped, bitmask, customizer, stack);
@@ -88,4 +89,4 @@ function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
   return equalObjects(object, other, bitmask, customizer, equalFunc, stack);
 }
 
-module.exports = baseIsEqualDeep;
+export default baseIsEqualDeep;

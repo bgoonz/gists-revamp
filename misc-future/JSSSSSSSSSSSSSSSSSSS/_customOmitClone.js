@@ -1,4 +1,4 @@
-var isPlainObject = require("./isPlainObject");
+import isPlainObject from "./isPlainObject";
 
 /**
  * Used by `_.omit` to customize its `_.cloneDeep` use to only clone plain
@@ -13,4 +13,4 @@ function customOmitClone(value) {
   return isPlainObject(value) ? undefined : value;
 }
 
-module.exports = customOmitClone;
+export default customOmitClone;

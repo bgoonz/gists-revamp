@@ -27,21 +27,23 @@
 
 module.exports = PassThrough;
 
-var Transform = require("./_stream_transform");
+const Transform = require("./_stream_transform");
 
 /*<replacement>*/
-var util = require("core-util-is");
+const util = require("core-util-is");
 util.inherits = require("inherits");
 /*</replacement>*/
 
 util.inherits(PassThrough, Transform);
 
-function PassThrough(options) {
-  if (!(this instanceof PassThrough)) return new PassThrough(options);
+class PassThrough {
+  constructor(options) {
+    if (!(this instanceof PassThrough)) return new PassThrough(options);
 
-  Transform.call(this, options);
+    Transform.call(this, options);
+  }
+
+  _transform(chunk, encoding, cb) {
+    cb(null, chunk);
+  }
 }
-
-PassThrough.prototype._transform = function (chunk, encoding, cb) {
-  cb(null, chunk);
-};

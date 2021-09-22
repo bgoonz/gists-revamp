@@ -1,7 +1,7 @@
-var basePropertyOf = require("./_basePropertyOf");
+import basePropertyOf from "./_basePropertyOf";
 
 /** Used to map Latin Unicode letters to basic Latin letters. */
-var deburredLetters = {
+const deburredLetters = {
   // Latin-1 Supplement block.
   "\xc0": "A",
   "\xc1": "A",
@@ -204,6 +204,6 @@ var deburredLetters = {
  * @param {string} letter The matched letter to deburr.
  * @returns {string} Returns the deburred letter.
  */
-var deburrLetter = basePropertyOf(deburredLetters);
+const deburrLetter = basePropertyOf(deburredLetters);
 
-module.exports = deburrLetter;
+export default deburrLetter;

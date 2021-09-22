@@ -1,7 +1,7 @@
-var arrayAggregator = require("./_arrayAggregator"),
-  baseAggregator = require("./_baseAggregator"),
-  baseIteratee = require("./_baseIteratee"),
-  isArray = require("./isArray");
+import arrayAggregator from "./_arrayAggregator";
+import baseAggregator from "./_baseAggregator";
+import baseIteratee from "./_baseIteratee";
+import isArray from "./isArray";
 
 /**
  * Creates a function like `_.groupBy`.
@@ -12,12 +12,12 @@ var arrayAggregator = require("./_arrayAggregator"),
  * @returns {Function} Returns the new aggregator function.
  */
 function createAggregator(setter, initializer) {
-  return function (collection, iteratee) {
-    var func = isArray(collection) ? arrayAggregator : baseAggregator,
-      accumulator = initializer ? initializer() : {};
+  return (collection, iteratee) => {
+    const func = isArray(collection) ? arrayAggregator : baseAggregator;
+    const accumulator = initializer ? initializer() : {};
 
     return func(collection, setter, baseIteratee(iteratee, 2), accumulator);
   };
 }
 
-module.exports = createAggregator;
+export default createAggregator;

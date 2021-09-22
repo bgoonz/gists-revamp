@@ -1,6 +1,6 @@
-var root = require("./_root");
+const root = require("./_root");
 
 /** Built-in value references. */
-var Symbol = root.Symbol;
+const Symbol = root.Symbol;
 
 module.exports = Symbol;

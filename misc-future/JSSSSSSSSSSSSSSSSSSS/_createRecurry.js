@@ -1,14 +1,15 @@
-var isLaziable = require("./_isLaziable"),
-  setData = require("./_setData"),
-  setWrapToString = require("./_setWrapToString");
+import isLaziable from "./_isLaziable";
+import setData from "./_setData";
+import setWrapToString from "./_setWrapToString";
 
 /** Used to compose bitmasks for function metadata. */
-var WRAP_BIND_FLAG = 1,
-  WRAP_BIND_KEY_FLAG = 2,
-  WRAP_CURRY_BOUND_FLAG = 4,
-  WRAP_CURRY_FLAG = 8,
-  WRAP_PARTIAL_FLAG = 32,
-  WRAP_PARTIAL_RIGHT_FLAG = 64;
+const WRAP_BIND_FLAG = 1;
+
+const WRAP_BIND_KEY_FLAG = 2;
+const WRAP_CURRY_BOUND_FLAG = 4;
+const WRAP_CURRY_FLAG = 8;
+const WRAP_PARTIAL_FLAG = 32;
+const WRAP_PARTIAL_RIGHT_FLAG = 64;
 
 /**
  * Creates a function that wraps `func` to continue currying.
@@ -39,11 +40,11 @@ function createRecurry(
   ary,
   arity
 ) {
-  var isCurry = bitmask & WRAP_CURRY_FLAG,
-    newHolders = isCurry ? holders : undefined,
-    newHoldersRight = isCurry ? undefined : holders,
-    newPartials = isCurry ? partials : undefined,
-    newPartialsRight = isCurry ? undefined : partials;
+  const isCurry = bitmask & WRAP_CURRY_FLAG;
+  const newHolders = isCurry ? holders : undefined;
+  const newHoldersRight = isCurry ? undefined : holders;
+  const newPartials = isCurry ? partials : undefined;
+  const newPartialsRight = isCurry ? undefined : partials;
 
   bitmask |= isCurry ? WRAP_PARTIAL_FLAG : WRAP_PARTIAL_RIGHT_FLAG;
   bitmask &= ~(isCurry ? WRAP_PARTIAL_RIGHT_FLAG : WRAP_PARTIAL_FLAG);
@@ -51,7 +52,7 @@ function createRecurry(
   if (!(bitmask & WRAP_CURRY_BOUND_FLAG)) {
     bitmask &= ~(WRAP_BIND_FLAG | WRAP_BIND_KEY_FLAG);
   }
-  var newData = [
+  const newData = [
     func,
     bitmask,
     thisArg,
@@ -64,7 +65,7 @@ function createRecurry(
     arity,
   ];
 
-  var result = wrapFunc.apply(undefined, newData);
+  const result = wrapFunc(...newData);
   if (isLaziable(func)) {
     setData(result, newData);
   }
@@ -72,4 +73,4 @@ function createRecurry(
   return setWrapToString(result, func, bitmask);
 }
 
-module.exports = createRecurry;
+export default createRecurry;

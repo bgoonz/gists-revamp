@@ -1,11 +1,11 @@
-var freeGlobal = require("./_freeGlobal");
+const freeGlobal = require("./_freeGlobal");
 
 /** Detect free variable `exports`. */
-var freeExports =
+const freeExports =
   typeof exports == "object" && exports && !exports.nodeType && exports;
 
 /** Detect free variable `module`. */
-var freeModule =
+const freeModule =
   freeExports &&
   typeof module == "object" &&
   module &&
@@ -13,16 +13,16 @@ var freeModule =
   module;
 
 /** Detect the popular CommonJS extension `module.exports`. */
-var moduleExports = freeModule && freeModule.exports === freeExports;
+const moduleExports = freeModule && freeModule.exports === freeExports;
 
 /** Detect free variable `process` from Node.js. */
-var freeProcess = moduleExports && freeGlobal.process;
+const freeProcess = moduleExports && freeGlobal.process;
 
 /** Used to access faster Node.js helpers. */
-var nodeUtil = (function () {
+const nodeUtil = (() => {
   try {
     // Use `util.types` for Node.js 10+.
-    var types =
+    const types =
       freeModule && freeModule.require && freeModule.require("util").types;
 
     if (types) {

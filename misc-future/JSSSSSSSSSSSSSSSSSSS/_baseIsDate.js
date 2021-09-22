@@ -1,8 +1,8 @@
-var baseGetTag = require("./_baseGetTag"),
-  isObjectLike = require("./isObjectLike");
+import baseGetTag from "./_baseGetTag";
+import isObjectLike from "./isObjectLike";
 
 /** `Object#toString` result references. */
-var dateTag = "[object Date]";
+const dateTag = "[object Date]";
 
 /**
  * The base implementation of `_.isDate` without Node.js optimizations.
@@ -15,4 +15,4 @@ function baseIsDate(value) {
   return isObjectLike(value) && baseGetTag(value) == dateTag;
 }
 
-module.exports = baseIsDate;
+export default baseIsDate;

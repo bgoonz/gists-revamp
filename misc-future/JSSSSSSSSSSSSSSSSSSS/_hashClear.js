@@ -1,4 +1,4 @@
-var nativeCreate = require("./_nativeCreate");
+import nativeCreate from "./_nativeCreate";
 
 /**
  * Removes all key-value entries from the hash.
@@ -12,4 +12,4 @@ function hashClear() {
   this.size = 0;
 }
 
-module.exports = hashClear;
+export default hashClear;

@@ -7,8 +7,8 @@
  * @returns {number} Returns the placeholder count.
  */
 function countHolders(array, placeholder) {
-  var length = array.length,
-    result = 0;
+  let length = array.length;
+  let result = 0;
 
   while (length--) {
     if (array[length] === placeholder) {
@@ -18,4 +18,4 @@ function countHolders(array, placeholder) {
   return result;
 }
 
-module.exports = countHolders;
+export default countHolders;

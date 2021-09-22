@@ -1,4 +1,4 @@
-var toNumber = require("./toNumber");
+import toNumber from "./toNumber";
 
 /**
  * Creates a function that performs a relational operation on two values.
@@ -8,7 +8,7 @@ var toNumber = require("./toNumber");
  * @returns {Function} Returns the new relational operation function.
  */
 function createRelationalOperation(operator) {
-  return function (value, other) {
+  return (value, other) => {
     if (!(typeof value == "string" && typeof other == "string")) {
       value = toNumber(value);
       other = toNumber(other);
@@ -17,4 +17,4 @@ function createRelationalOperation(operator) {
   };
 }
 
-module.exports = createRelationalOperation;
+export default createRelationalOperation;

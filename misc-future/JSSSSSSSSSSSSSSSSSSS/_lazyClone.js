@@ -1,5 +1,5 @@
-var LazyWrapper = require("./_LazyWrapper"),
-  copyArray = require("./_copyArray");
+import LazyWrapper from "./_LazyWrapper";
+import copyArray from "./_copyArray";
 
 /**
  * Creates a clone of the lazy wrapper object.
@@ -10,7 +10,7 @@ var LazyWrapper = require("./_LazyWrapper"),
  * @returns {Object} Returns the cloned `LazyWrapper` object.
  */
 function lazyClone() {
-  var result = new LazyWrapper(this.__wrapped__);
+  const result = new LazyWrapper(this.__wrapped__);
   result.__actions__ = copyArray(this.__actions__);
   result.__dir__ = this.__dir__;
   result.__filtered__ = this.__filtered__;
@@ -20,4 +20,4 @@ function lazyClone() {
   return result;
 }
 
-module.exports = lazyClone;
+export default lazyClone;

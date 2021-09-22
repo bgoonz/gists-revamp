@@ -1,16 +1,15 @@
 "use strict";
 module.exports = function generate__limit(it, $keyword, $ruleType) {
-  var out = " ";
-  var $lvl = it.level;
-  var $dataLvl = it.dataLevel;
-  var $schema = it.schema[$keyword];
-  var $schemaPath = it.schemaPath + it.util.getProperty($keyword);
-  var $errSchemaPath = it.errSchemaPath + "/" + $keyword;
-  var $breakOnError = !it.opts.allErrors;
+  let out = " ";
+  const $lvl = it.level;
+  const $dataLvl = it.dataLevel;
+  const $schema = it.schema[$keyword];
+  const $schemaPath = it.schemaPath + it.util.getProperty($keyword);
+  let $errSchemaPath = it.errSchemaPath + "/" + $keyword;
+  const $breakOnError = !it.opts.allErrors;
   var $errorKeyword;
-  var $data = "data" + ($dataLvl || "");
-  var $isData = it.opts.$data && $schema && $schema.$data,
-    $schemaValue;
+  const $data = "data" + ($dataLvl || "");
+  let $isData = it.opts.$data && $schema && $schema.$data, $schemaValue;
   if ($isData) {
     out +=
       " var schema" +
@@ -22,24 +21,25 @@ module.exports = function generate__limit(it, $keyword, $ruleType) {
   } else {
     $schemaValue = $schema;
   }
-  var $isMax = $keyword == "maximum",
-    $exclusiveKeyword = $isMax ? "exclusiveMaximum" : "exclusiveMinimum",
-    $schemaExcl = it.schema[$exclusiveKeyword],
-    $isDataExcl = it.opts.$data && $schemaExcl && $schemaExcl.$data,
-    $op = $isMax ? "<" : ">",
-    $notOp = $isMax ? ">" : "<",
-    $errorKeyword = undefined;
+  const $isMax = $keyword == "maximum";
+  const $exclusiveKeyword = $isMax ? "exclusiveMaximum" : "exclusiveMinimum";
+  const $schemaExcl = it.schema[$exclusiveKeyword];
+  const $isDataExcl = it.opts.$data && $schemaExcl && $schemaExcl.$data;
+  const $op = $isMax ? "<" : ">";
+  let $notOp = $isMax ? ">" : "<";
+  const $errorKeyword = undefined;
   if ($isDataExcl) {
-    var $schemaValueExcl = it.util.getData(
+    let $schemaValueExcl = it.util.getData(
         $schemaExcl.$data,
         $dataLvl,
         it.dataPathArr
-      ),
-      $exclusive = "exclusive" + $lvl,
-      $exclType = "exclType" + $lvl,
-      $exclIsNumber = "exclIsNumber" + $lvl,
-      $opExpr = "op" + $lvl,
-      $opStr = "' + " + $opExpr + " + '";
+      );
+
+    var $exclusive = "exclusive" + $lvl;
+    const $exclType = "exclType" + $lvl;
+    var $exclIsNumber = "exclIsNumber" + $lvl;
+    var $opExpr = "op" + $lvl;
+    var $opStr = "' + " + $opExpr + " + '";
     out += " var schemaExcl" + $lvl + " = " + $schemaValueExcl + "; ";
     $schemaValueExcl = "schemaExcl" + $lvl;
     out +=
@@ -59,7 +59,7 @@ module.exports = function generate__limit(it, $keyword, $ruleType) {
     var $errorKeyword = $exclusiveKeyword;
     var $$outStack = $$outStack || [];
     $$outStack.push(out);
-    out = ""; /* istanbul ignore else */
+    out = "";/* istanbul ignore else */
     if (it.createErrors !== false) {
       out +=
         " { keyword: '" +
@@ -257,7 +257,7 @@ module.exports = function generate__limit(it, $keyword, $ruleType) {
   $errorKeyword = $errorKeyword || $keyword;
   var $$outStack = $$outStack || [];
   $$outStack.push(out);
-  out = ""; /* istanbul ignore else */
+  out = "";/* istanbul ignore else */
   if (it.createErrors !== false) {
     out +=
       " { keyword: '" +
