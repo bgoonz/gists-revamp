@@ -1,6 +1,6 @@
-var baseClamp = require('./_baseClamp'),
-    copyArray = require('./_copyArray'),
-    shuffleSelf = require('./_shuffleSelf');
+var baseClamp = require("./_baseClamp"),
+  copyArray = require("./_copyArray"),
+  shuffleSelf = require("./_shuffleSelf");
 
 /**
  * A specialized version of `_.sampleSize` for arrays.

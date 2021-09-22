@@ -1,9 +1,9 @@
-var SetCache = require('./_SetCache'),
-    arrayIncludes = require('./_arrayIncludes'),
-    arrayIncludesWith = require('./_arrayIncludesWith'),
-    arrayMap = require('./_arrayMap'),
-    baseUnary = require('./_baseUnary'),
-    cacheHas = require('./_cacheHas');
+var SetCache = require("./_SetCache"),
+  arrayIncludes = require("./_arrayIncludes"),
+  arrayIncludesWith = require("./_arrayIncludesWith"),
+  arrayMap = require("./_arrayMap"),
+  baseUnary = require("./_baseUnary"),
+  cacheHas = require("./_cacheHas");
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -21,11 +21,11 @@ var LARGE_ARRAY_SIZE = 200;
  */
 function baseDifference(array, values, iteratee, comparator) {
   var index = -1,
-      includes = arrayIncludes,
-      isCommon = true,
-      length = array.length,
-      result = [],
-      valuesLength = values.length;
+    includes = arrayIncludes,
+    isCommon = true,
+    length = array.length,
+    result = [],
+    valuesLength = values.length;
 
   if (!length) {
     return result;
@@ -36,18 +36,16 @@ function baseDifference(array, values, iteratee, comparator) {
   if (comparator) {
     includes = arrayIncludesWith;
     isCommon = false;
-  }
-  else if (values.length >= LARGE_ARRAY_SIZE) {
+  } else if (values.length >= LARGE_ARRAY_SIZE) {
     includes = cacheHas;
     isCommon = false;
     values = new SetCache(values);
   }
-  outer:
-  while (++index < length) {
+  outer: while (++index < length) {
     var value = array[index],
-        computed = iteratee == null ? value : iteratee(value);
+      computed = iteratee == null ? value : iteratee(value);
 
-    value = (comparator || value !== 0) ? value : 0;
+    value = comparator || value !== 0 ? value : 0;
     if (isCommon && computed === computed) {
       var valuesIndex = valuesLength;
       while (valuesIndex--) {
@@ -56,8 +54,7 @@ function baseDifference(array, values, iteratee, comparator) {
         }
       }
       result.push(value);
-    }
-    else if (!includes(values, computed, comparator)) {
+    } else if (!includes(values, computed, comparator)) {
       result.push(value);
     }
   }

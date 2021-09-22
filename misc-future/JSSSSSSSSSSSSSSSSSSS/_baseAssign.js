@@ -1,5 +1,5 @@
-var copyObject = require('./_copyObject'),
-    keys = require('./keys');
+var copyObject = require("./_copyObject"),
+  keys = require("./keys");
 
 /**
  * The base implementation of `_.assign` without support for multiple sources

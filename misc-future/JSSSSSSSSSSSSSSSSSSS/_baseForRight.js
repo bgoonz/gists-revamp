@@ -1,4 +1,4 @@
-var createBaseFor = require('./_createBaseFor');
+var createBaseFor = require("./_createBaseFor");
 
 /**
  * This function is like `baseFor` except that it iterates over properties

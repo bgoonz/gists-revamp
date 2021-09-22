@@ -1,4 +1,4 @@
-var get = require('./get');
+var get = require("./get");
 
 /**
  * The base implementation of `_.at` without support for individual paths.
@@ -10,9 +10,9 @@ var get = require('./get');
  */
 function baseAt(object, paths) {
   var index = -1,
-      length = paths.length,
-      result = Array(length),
-      skip = object == null;
+    length = paths.length,
+    result = Array(length),
+    skip = object == null;
 
   while (++index < length) {
     result[index] = skip ? undefined : get(object, paths[index]);

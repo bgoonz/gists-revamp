@@ -1,1 +1,1 @@
-module.exports = require('./placeholder');
+module.exports = require("./placeholder");

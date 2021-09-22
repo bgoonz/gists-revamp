@@ -1,5 +1,5 @@
-var arrayPush = require('./_arrayPush'),
-    isFlattenable = require('./_isFlattenable');
+var arrayPush = require("./_arrayPush"),
+  isFlattenable = require("./_isFlattenable");
 
 /**
  * The base implementation of `_.flatten` with support for restricting flattening.
@@ -14,7 +14,7 @@ var arrayPush = require('./_arrayPush'),
  */
 function baseFlatten(array, depth, predicate, isStrict, result) {
   var index = -1,
-      length = array.length;
+    length = array.length;
 
   predicate || (predicate = isFlattenable);
   result || (result = []);

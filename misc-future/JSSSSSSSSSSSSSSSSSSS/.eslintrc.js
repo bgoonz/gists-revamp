@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 module.exports = {
   root: true,
-  extends: ['eslint:recommended', 'prettier'],
+  extends: ["eslint:recommended", "prettier"],
   parserOptions: {
     ecmaVersion: 2018,
   },
@@ -15,33 +15,33 @@ module.exports = {
     require: true,
     window: true,
   },
-  plugins: ['prettier'],
+  plugins: ["prettier"],
   rules: {
-    'prettier/prettier': [
-      'warn',
+    "prettier/prettier": [
+      "warn",
       {
         printWidth: 100,
         singleQuote: true,
-        trailingComma: 'es5',
+        trailingComma: "es5",
       },
     ],
-    strict: ['warn', 'global'],
+    strict: ["warn", "global"],
   },
   overrides: [
     {
-      files: ['lib/implementedProperties.js', 'lib/properties.js'],
+      files: ["lib/implementedProperties.js", "lib/properties.js"],
       rules: {
-        'prettier/prettier': 'off',
+        "prettier/prettier": "off",
       },
     },
     {
-      files: 'scripts/**/*',
+      files: "scripts/**/*",
       rules: {
-        'no-console': 'off',
+        "no-console": "off",
       },
     },
     {
-      files: ['scripts/**/*', 'tests/**/*'],
+      files: ["scripts/**/*", "tests/**/*"],
       env: {
         node: true,
       },

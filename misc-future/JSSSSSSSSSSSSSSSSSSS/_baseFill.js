@@ -1,5 +1,5 @@
-var toInteger = require('./toInteger'),
-    toLength = require('./toLength');
+var toInteger = require("./toInteger"),
+  toLength = require("./toLength");
 
 /**
  * The base implementation of `_.fill` without an iteratee call guard.
@@ -16,9 +16,9 @@ function baseFill(array, value, start, end) {
 
   start = toInteger(start);
   if (start < 0) {
-    start = -start > length ? 0 : (length + start);
+    start = -start > length ? 0 : length + start;
   }
-  end = (end === undefined || end > length) ? length : toInteger(end);
+  end = end === undefined || end > length ? length : toInteger(end);
   if (end < 0) {
     end += length;
   }

@@ -1,5 +1,5 @@
-var baseAssignValue = require('./_baseAssignValue'),
-    eq = require('./eq');
+var baseAssignValue = require("./_baseAssignValue"),
+  eq = require("./eq");
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -19,8 +19,10 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  */
 function assignValue(object, key, value) {
   var objValue = object[key];
-  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
-      (value === undefined && !(key in object))) {
+  if (
+    !(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
+    (value === undefined && !(key in object))
+  ) {
     baseAssignValue(object, key, value);
   }
 }
