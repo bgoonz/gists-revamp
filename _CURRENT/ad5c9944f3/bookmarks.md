@@ -52,7 +52,7 @@
 
 [The Good AA Meeting](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=The%20Good%20AA%20Meeting&pos=0&uri=http://127.0.0.1:5500/core-site/index.html)
 
-[deferred.always() | jQuery API Documentation](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=deferred.always()%20%7C%20jQuery%20API%20Documentation&pos=333.33331298828125&uri=https://api.jquery.com/deferred.always/)
+[deferred.always() | jQuery API Documentation](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=deferred.always()%20%7C%20jQuery%20API%20Documentation&pos=333.33331298828125&uri=https://api.jquery.com/deferred.always/>)
 
 [is there a way to automatically remove broken links from my website - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=is%20there%20a%20way%20to%20automatically%20remove%20broken%20links%20from%20my%20website%20-%20Google%20Search&pos=800&uri=https://www.google.com/search?q=is+there+a+way+to+automatically+remove+broken+links+from+my+website&rlz=1C1UEAD_enUS928US928&oq=is+there+a+way+to+automatically+remove+broken+links+from+my+website&aqs=chrome..69i57.13578j1j7&sourceid=chrome&ie=UTF-8)
 
@@ -386,7 +386,7 @@
 
 [API-first content platform to build digital experiences | Contentful](https://www.contentful.com/)
 
-[https://raw.githubusercontent.com/bgoonz/Knowledge-Bank/master/blog-posts/How to turn any GitHub repo into a CDN _ Go Make Things.html?token=AP4RFINS2EL5V4EJVE2KCHTATNI6A](https://raw.githubusercontent.com/bgoonz/Knowledge-Bank/master/blog-posts/How%20to%20turn%20any%20GitHub%20repo%20into%20a%20CDN%20_%20Go%20Make%20Things.html?token=AP4RFINS2EL5V4EJVE2KCHTATNI6A)
+[https://raw.githubusercontent.com/bgoonz/Knowledge-Bank/master/blog-posts/How to turn any GitHub repo into a CDN \_ Go Make Things.html?token=AP4RFINS2EL5V4EJVE2KCHTATNI6A](https://raw.githubusercontent.com/bgoonz/Knowledge-Bank/master/blog-posts/How%20to%20turn%20any%20GitHub%20repo%20into%20a%20CDN%20_%20Go%20Make%20Things.html?token=AP4RFINS2EL5V4EJVE2KCHTATNI6A)
 
 [bgoonz/BGOONZ_BLOG_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
@@ -514,7 +514,7 @@
 
 [PDF Conversion Results](https://www.pdfconvertonline.com/results.php)
 
-[127.0.0.1:5501/javascript-basic-program-main.html/The setFullYear() Method.html](http://127.0.0.1:5501/javascript-basic-program-main.html/The%20setFullYear()%20Method.html)
+[127.0.0.1:5501/javascript-basic-program-main.html/The setFullYear() Method.html](<http://127.0.0.1:5501/javascript-basic-program-main.html/The%20setFullYear()%20Method.html>)
 
 [javascript display all other html files as iframes - Google Search](https://www.google.com/search?q=javascript+display+all+other+html+files+as+iframes&oq=javascript+display+all+other+html+files+as+iframes&aqs=chrome..69i57j69i64.9519j0j7&sourceid=chrome&ie=UTF-8)
 
@@ -1296,7 +1296,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Download Splice | Splice](https://splice.com/download)
 
-[Splice (platform) - Wikipedia](https://en.wikipedia.org/wiki/Splice_(platform)#:~:text=Splice%20is%20a%20cloud%2Dbased,well%20as%20visualization%20of%20the)
+[Splice (platform) - Wikipedia](<https://en.wikipedia.org/wiki/Splice_(platform)#:~:text=Splice%20is%20a%20cloud%2Dbased,well%20as%20visualization%20of%20the>)
 
 [jupyter/notebook: Jupyter Interactive Notebook](https://github.com/jupyter/notebook)
 
@@ -1464,7 +1464,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Free Bootstrap Themes, Templates, Snippets, and Guides - Start Bootstrap](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Free%20Bootstrap%20Themes%2C%20Templates%2C%20Snippets%2C%20and%20Guides%20-%20Start%20Bootstrap&pos=0&uri=https://startbootstrap.com/)
 
-[127.0.0.1:5501/02-cloned-repos/_web_dev_tools/_Html-Templates/startbootstrap-master/templates/admin-dashboard.html](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5501%2F02-cloned-repos%2F_web_dev_tools%2F_Html-Templates%2Fstartbootstrap-master%2Ftemplates%2Fadmin-dashboard.html&pos=0&uri=http://127.0.0.1:5501/02-cloned-repos/_web_dev_tools/_Html-Templates/startbootstrap-master/templates/admin-dashboard.html)
+[127.0.0.1:5501/02-cloned-repos/\_web_dev_tools/\_Html-Templates/startbootstrap-master/templates/admin-dashboard.html](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5501%2F02-cloned-repos%2F_web_dev_tools%2F_Html-Templates%2Fstartbootstrap-master%2Ftemplates%2Fadmin-dashboard.html&pos=0&uri=http://127.0.0.1:5501/02-cloned-repos/_web_dev_tools/_Html-Templates/startbootstrap-master/templates/admin-dashboard.html)
 
 [Mongodb - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Mongodb%20-%20Google%20Search&pos=0&uri=https://www.google.com/search?rlz=1C1UEAD_enUS928US928&sxsrf=ALeKk03jA2xWewWzMXp36sg1DiEghNxcjw%3A1610735181489&ei=Td4BYIWBHbGl_QaqsbvACA&q=Mongodb&oq=Mongodb&gs_lcp=CgZwc3ktYWIQAzIICAAQyQMQkQIyBwgAELEDEEMyBwgAEEMQiwMyCggAELEDEEMQiwMyCggAELEDEEMQiwMyCAgAELEDEIsDMgUIABCLAzILCAAQsQMQgwEQiwMyCAgAELEDEIsDMggIABCxAxCLAzoECAAQRzoECCMQJzoECAAQQzoICC4QxwEQowI6CAgAELEDEIMBOgsILhCxAxDHARCjAjoCCAA6BQgAEJECOgsILhCLAxCoAxCjAzoFCC4QiwM6EQguEMcBEKMCEIsDEKgDEKcDOggILhCxAxCLAzoOCC4QsQMQiwMQqAMQnwM6DgguELEDEIsDEKgDEJ0DUPdXWNJoYMJxaABwBXgAgAFhiAHNBJIBATeYAQCgAQGqAQdnd3Mtd2l6yAEIuAEDwAEB&sclient=psy-ab&ved=0ahUKEwjF28aSyJ7uAhWxUt8KHarYDogQ4dUDCA0&uact=5)
 
@@ -1490,7 +1490,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Generic - Hyperspace by HTML5 UP](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Generic%20-%20Hyperspace%20by%20HTML5%20UP&pos=0&uri=http://127.0.0.1:5500/05-misc/repo/ALW93.github.io-master/generic.html)
 
-[(1) Bryan Guner | LinkedIn](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=(1)%20Bryan%20Guner%20%7C%20LinkedIn&pos=499.9999694824219&uri=https://www.linkedin.com/in/bryan-guner-046199128/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAB9Z4fYBOjR8mPtiKIcZgX-UFNh5WtKvONE,1607836837160)/)
+[(1) Bryan Guner | LinkedIn](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=(1)%20Bryan%20Guner%20%7C%20LinkedIn&pos=499.9999694824219&uri=https://www.linkedin.com/in/bryan-guner-046199128/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAB9Z4fYBOjR8mPtiKIcZgX-UFNh5WtKvONE,1607836837160)/>)
 
 [1607836819225](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=1607836819225&pos=0&uri=https://media-exp1.licdn.com/dms/document/C562DAQFpcTxXb0OwDQ/profile-treasury-document-pdf-analyzed/0/1607836819225?e=1610848800&v=beta&t=2FsPvNAAutzhgmPcJDS9QyVb2l-WNzViJMRejmrcG40)
 
@@ -1514,9 +1514,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Analytics | Home](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Analytics%20%7C%20Home&pos=0&uri=https://analytics.google.com/analytics/web/#/p258860576/reports/defaulthome?params=_u..nav%3Ddefault)
 
-[(1) Bryan Guner | Facebook](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=(1)%20Bryan%20Guner%20%7C%20Facebook&pos=0&uri=https://www.facebook.com/bryan.guner/)
+[(1) Bryan Guner | Facebook](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=(1)%20Bryan%20Guner%20%7C%20Facebook&pos=0&uri=https://www.facebook.com/bryan.guner/>)
 
-[Bryan Guner Music (@bgoonz) - Instagram photos and videos](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Bryan%20Guner%20Music%20(%40bgoonz)%20%E2%80%A2%20Instagram%20photos%20and%20videos&pos=0&uri=https://www.instagram.com/bgoonz/)
+[Bryan Guner Music (@bgoonz) - Instagram photos and videos](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Bryan%20Guner%20Music%20(%40bgoonz)%20%E2%80%A2%20Instagram%20photos%20and%20videos&pos=0&uri=https://www.instagram.com/bgoonz/>)
 
 [Bryan Guner](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Bryan%20Guner&pos=2400&uri=http://127.0.0.1:5500/02-portfolios/bgoonz.github.io-master/index.html)
 
@@ -1640,11 +1640,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Build your first WebAuthn app](https://codelabs.developers.google.com/codelabs/webauthn-reauth#1)
 
-[Glitch :･ﾟ✧](https://glitch.com/edit/#!/entertaining-night-garment)
+[Glitch :･ﾟ ✧](https://glitch.com/edit/#!/entertaining-night-garment)
 
-[Glitch :･ﾟ✧](https://glitch.com/edit/#!/planet-sore-dragon?path=.env%3A1%3A0)
+[Glitch :･ﾟ ✧](https://glitch.com/edit/#!/planet-sore-dragon?path=.env%3A1%3A0)
 
-[Glitch :･ﾟ✧](https://glitch.com/edit/#!/planet-sore-dragon?path=README.md%3A1%3A0)
+[Glitch :･ﾟ ✧](https://glitch.com/edit/#!/planet-sore-dragon?path=README.md%3A1%3A0)
 
 [How do I store secrets, credentials or private data? - Glitch Support](https://glitch.com/help/kb/article/18-how-do-i-store-secrets-credentials-or-private-data/)
 
@@ -2150,7 +2150,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Newest 'pandoc' Questions - Stack Overflow](https://stackoverflow.com/questions/tagged/pandoc)
 
-[Pandoc: Convert Markdown to HTML *without* any HTML attributes - Stack Overflow](https://stackoverflow.com/questions/53403041/pandoc-convert-markdown-to-html-without-any-html-attributes)
+[Pandoc: Convert Markdown to HTML _without_ any HTML attributes - Stack Overflow](https://stackoverflow.com/questions/53403041/pandoc-convert-markdown-to-html-without-any-html-attributes)
 
 [Hottest 'pandoc' Answers - Super User](https://superuser.com/tags/pandoc/hot)
 
@@ -2168,7 +2168,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [127.0.0.1:5500/knowledge-master/focusing/rules.md](http://127.0.0.1:5500/knowledge-master/focusing/rules.md)
 
-[C:/MY-WEB-DEV/_0-KNOWLEDGE/knowledge-master](file:///C:/MY-WEB-DEV/_0-KNOWLEDGE/knowledge-master/directory.html)
+[C:/MY-WEB-DEV/\_0-KNOWLEDGE/knowledge-master](file:///C:/MY-WEB-DEV/_0-KNOWLEDGE/knowledge-master/directory.html)
 
 [‎Nikita Voloboev's profile - Letterboxd](https://letterboxd.com/nikitavoloboev/)
 
@@ -2328,7 +2328,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Document](https://code-playground.netlify.app/)
 
-[C:/MY-WEB-DEV/__Projects/Medium_Articles](https://modest-booth-4e17df.netlify.app/directory.html)
+[C:/MY-WEB-DEV/\_\_Projects/Medium_Articles](https://modest-booth-4e17df.netlify.app/directory.html)
 
 [(4) LinkedIn](https://www.linkedin.com/mynetwork/)
 
@@ -2588,7 +2588,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 ### New folder
 
-[bgoonz (Bryan C Guner)](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=bgoonz%20(Bryan%20C%20Guner)&pos=3000&uri=https://github.com/bgoonz)
+[bgoonz (Bryan C Guner)](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=bgoonz%20(Bryan%20C%20Guner)&pos=3000&uri=https://github.com/bgoonz>)
 
 [github serve markdown as website - Google Search](https://www.google.com/search?q=github+serve+markdown+as+website&oq=github+serve+markdown+as+website&aqs=chrome..69i57j69i64.8142j1j7&sourceid=chrome&ie=UTF-8)
 
@@ -2596,7 +2596,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [nicolas-van/easy-markdown-to-github-pages: Convert Markdown files in Github to a full website using Github Pages](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=nicolas-van%2Feasy-markdown-to-github-pages%3A%20Convert%20Markdown%20files%20in%20Github%20to%20a%20full%20website%20using%20Github%20Pages&pos=0&uri=https://github.com/nicolas-van/easy-markdown-to-github-pages)
 
-[markserv/markserv: 🏁 serve markdown as html (GitHub style), index directories, live-reload as you edit](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=markserv%2Fmarkserv%3A%20%F0%9F%8F%81%20serve%20markdown%20as%20html%20(GitHub%20style)%2C%20index%20directories%2C%20live-reload%20as%20you%20edit&pos=0&uri=https://github.com/markserv/markserv)
+[markserv/markserv: 🏁 serve markdown as html (GitHub style), index directories, live-reload as you edit](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=markserv%2Fmarkserv%3A%20%F0%9F%8F%81%20serve%20markdown%20as%20html%20(GitHub%20style)%2C%20index%20directories%2C%20live-reload%20as%20you%20edit&pos=0&uri=https://github.com/markserv/markserv>)
 
 [bgoonz/Express-basic-server-template](https://github.com/bgoonz/Express-basic-server-template)
 
@@ -2870,7 +2870,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [html-progressbar - Visual Studio Marketplace](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=html-progressbar%20-%20Visual%20Studio%20Marketplace&pos=0&uri=https://marketplace.visualstudio.com/items?itemName=congnguyendinh0.html-progressbar)
 
-[iamshipon1988 (Sazzad Hossain)](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=iamshipon1988%20(Sazzad%20Hossain)&pos=0&uri=https://github.com/iamshipon1988)
+[iamshipon1988 (Sazzad Hossain)](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=iamshipon1988%20(Sazzad%20Hossain)&pos=0&uri=https://github.com/iamshipon1988>)
 
 [iamshipon1988/crossway: An open-source block-based template system.](https://github.com/iamshipon1988/crossway)
 
@@ -2884,9 +2884,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [jQuery Resizable Columns](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=jQuery%20Resizable%20Columns&pos=0&uri=http://dobtco.github.io/jquery-resizable-columns/)
 
-[Prinzhorn/skrollr: Stand-alone parallax scrolling library for mobile (Android + iOS) and desktop. No jQuery. Just plain JavaScript (and some love).](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prinzhorn%2Fskrollr%3A%20Stand-alone%20parallax%20scrolling%20library%20for%20mobile%20(Android%20%2B%20iOS)%20and%20desktop.%20No%20jQuery.%20Just%20plain%20JavaScript%20(and%20some%20love).&pos=0&uri=https://github.com/Prinzhorn/skrollr)
+[Prinzhorn/skrollr: Stand-alone parallax scrolling library for mobile (Android + iOS) and desktop. No jQuery. Just plain JavaScript (and some love).](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prinzhorn%2Fskrollr%3A%20Stand-alone%20parallax%20scrolling%20library%20for%20mobile%20(Android%20%2B%20iOS)%20and%20desktop.%20No%20jQuery.%20Just%20plain%20JavaScript%20(and%20some%20love).&pos=0&uri=https://github.com/Prinzhorn/skrollr>)
 
-[Prinzhorn (Alexander Prinzhorn) / Repositories](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prinzhorn%20(Alexander%20Prinzhorn)%20%2F%20Repositories&pos=4296.29638671875&uri=https://github.com/Prinzhorn?tab=repositories)
+[Prinzhorn (Alexander Prinzhorn) / Repositories](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prinzhorn%20(Alexander%20Prinzhorn)%20%2F%20Repositories&pos=4296.29638671875&uri=https://github.com/Prinzhorn?tab=repositories>)
 
 [Classic parallax page](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Classic%20parallax%20page&pos=1979.423828125&uri=http://prinzhorn.github.io/skrollr/examples/classic.html)
 
@@ -3160,7 +3160,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Inbox (12,771) - gunerb1@tcnj.edu - The College of New Jersey Mail](https://mail.google.com/mail/u/0/#inbox)
 
-[Slack | * general | App Academy Mentor](https://app.slack.com/client/TD2587M3Q/CD0Q6GWTU)
+[Slack | \* general | App Academy Mentor](https://app.slack.com/client/TD2587M3Q/CD0Q6GWTU)
 
 [Amazon password assistance - gunerb1@tcnj.edu - The College of New Jersey Mail](https://mail.google.com/mail/u/0/#inbox/FMfcgxwLsdCrLhlbPwQlPLjgWSKxjxNv)
 
@@ -3258,7 +3258,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Explore](https://hub.docker.com/search?q=&type=image&image_filter=store&category=tools%2Clanguages%2Cstorage&operating_system=linux%2Cwindows)
 
-[/MY-WEB-DEV/08-my-website/_Outer-STABLE/Stable](http://127.0.0.1:5501/directory.html)
+[/MY-WEB-DEV/08-my-website/\_Outer-STABLE/Stable](http://127.0.0.1:5501/directory.html)
 
 [Docker Hub](https://hub.docker.com/settings/general)
 
@@ -3594,7 +3594,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [DOM Tips and Techniques: Parent, Child, and Siblings - SitePoint](https://www.sitepoint.com/dom-tips-techniques-parent-child-siblings/)
 
-[C:/MY-WEB-DEV/__Projects/Medium_Articles](https://modest-booth-4e17df.netlify.app/directory.html)
+[C:/MY-WEB-DEV/\_\_Projects/Medium_Articles](https://modest-booth-4e17df.netlify.app/directory.html)
 
 [bgoonz (Bryan C Guner)](https://github.com/bgoonz)
 
@@ -3958,7 +3958,7 @@ AddToAny
 
 [Network Graph - bgoonz/web-dev-notes-resource-site](https://github.com/bgoonz/web-dev-notes-resource-site/network)
 
-[127.0.0.1:5501/_EDUCATIONAL/free-code-camp/CurriculumExpansion-master/functional-programming-spreadsheet/index.html](http://127.0.0.1:5501/_EDUCATIONAL/free-code-camp/CurriculumExpansion-master/functional-programming-spreadsheet/index.html)
+[127.0.0.1:5501/\_EDUCATIONAL/free-code-camp/CurriculumExpansion-master/functional-programming-spreadsheet/index.html](http://127.0.0.1:5501/_EDUCATIONAL/free-code-camp/CurriculumExpansion-master/functional-programming-spreadsheet/index.html)
 
 [Dashboard - WakaTime](https://wakatime.com/dashboard)
 
@@ -4118,7 +4118,7 @@ AddToAny
 
 [127.0.0.1:5500/Javascript/js-basics/Closure/closure.html](http://127.0.0.1:5500/Javascript/js-basics/Closure/closure.html)
 
-[C:/MY-WEB-DEV/08-my-website/_Outer-STABLE/Stable](file:///C:/MY-WEB-DEV/08-my-website/_Outer-STABLE/Stable/directory.html)
+[C:/MY-WEB-DEV/08-my-website/\_Outer-STABLE/Stable](file:///C:/MY-WEB-DEV/08-my-website/_Outer-STABLE/Stable/directory.html)
 
 [Get Really Good at React | Epic React by Kent C. Dodds](https://epicreact.dev/)
 
@@ -4752,7 +4752,7 @@ AddToAny
 
 [bgoonz/random-list-of-embedable-content](https://github.com/bgoonz/random-list-of-embedable-content)
 
-[*GridSound](https://gridsound.com/daw/)
+[\*GridSound](https://gridsound.com/daw/)
 
 [general](https://discord.com/channels/442778850829795330/442778851534307339)
 
@@ -5138,11 +5138,11 @@ AddToAny
 
 [#just-typin](https://discord.com/channels/724736182650667132/724736183439065173)
 
-[(1) Bryan Guner | LinkedIn](https://www.linkedin.com/in/bryan-guner-046199128/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAB9Z4fYBOjR8mPtiKIcZgX-UFNh5WtKvONE,1607836837160)/)
+[(1) Bryan Guner | LinkedIn](<https://www.linkedin.com/in/bryan-guner-046199128/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAB9Z4fYBOjR8mPtiKIcZgX-UFNh5WtKvONE,1607836837160)/>)
 
 [Stop Using console.log() In JavaScript | by Harsha Vardhan | JavaScript In Plain English | Oct, 2020 | Medium](https://medium.com/javascript-in-plain-english/stop-using-console-log-in-javascript-d29d6c24dc26)
 
-[0*t6SE511h7v_N1ask (1200×900)](https://miro.medium.com/max/1200/0*t6SE511h7v_N1ask)
+[0\*t6SE511h7v_N1ask (1200×900)](https://miro.medium.com/max/1200/0*t6SE511h7v_N1ask)
 
 [New Tab](chrome://newtab/)
 
@@ -5206,7 +5206,7 @@ AddToAny
 
 [Hello Alonso Ahmetaj, while I agree that Colt Steele's JavaScript Algorithms and Data Structures... | by javinpaul | Medium](https://medium.com/@javinpaul/hello-alonso-ahmetaj-while-i-agree-that-colt-steeles-javascript-algorithms-and-data-structures-fa5a33d22ae3)
 
-[______🚗______________](https://bruno-simon.com/)
+[**\_\_**🚗******\_\_******](https://bruno-simon.com/)
 
 [The Hash Table data structure - Ben's Blog](https://blog.benoitvallon.com/data-structures-in-javascript/the-hash-table-data-structure/)
 
@@ -5292,7 +5292,7 @@ AddToAny
 
 [delete zzbots account - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=delete%20zzbots%20account%20-%20Google%20Search&pos=0&uri=https://www.google.com/search?rlz=1C1UEAD_enUS928US928&biw=1424&bih=604&sxsrf=ALeKk02McgXWfmHMCixRYelZ3UzwpEQvdg%3A1609829610512&ei=6gz0X83eHsqQ5gLgl4bIBA&q=delete+zzbots+account&oq=delete+zzbots+account&gs_lcp=CgZwc3ktYWIQAzIFCCEQqwI6BAgAEEc6BAgjECc6BAgAEEM6BQguEJECOgUIABCRAjoFCAAQsQM6CwguELEDEMcBEKMCOggILhDJAxCRAjoHCAAQsQMQQzoFCAAQyQM6AggAOgYIABAWEB46CwgAEMkDEBYQChAeOgUIIRCgAToJCAAQyQMQFhAeOggIABAWEAoQHjoHCAAQyQMQDToECAAQDToGCAAQDRAKOgcIIRAKEKABUK8MWNo-YP4_aANwBXgAgAGRAYgBsQ6SAQQyMy4xmAEAoAEBqgEHZ3dzLXdpesgBCMABAQ&sclient=psy-ab&ved=0ahUKEwjN-9TQmoTuAhVKiFkKHeCLAUkQ4dUDCA0&uact=5)
 
-[Inbox (5,059) - bryan.guner@gmail.com - Gmail](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Inbox%20(5%2C059)%20-%20bryan.guner%40gmail.com%20-%20Gmail&pos=0&uri=https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox)
+[Inbox (5,059) - bryan.guner@gmail.com - Gmail](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Inbox%20(5%2C059)%20-%20bryan.guner%40gmail.com%20-%20Gmail&pos=0&uri=https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox>)
 
 [Welcome to zzBots :) - gunerb1@tcnj.edu - The College of New Jersey Mail](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Welcome%20to%20zzBots%20%3A)%20-%20gunerb1%40tcnj.edu%20-%20The%20College%20of%20New%20Jersey%20Mail&pos=0&uri=https://mail.google.com/mail/u/1/#inbox/FMfcgxwKkRBWKLqFDGPdrGJDZpKLKTDq)
 
@@ -5390,7 +5390,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Site overview | project-showcase-bgoonz](https://app.netlify.com/teams/bgoonz)
 
-[/MY-WEB-DEV/__Projects/Projects](https://project-showcase-bgoonz.netlify.app/)
+[/MY-WEB-DEV/\_\_Projects/Projects](https://project-showcase-bgoonz.netlify.app/)
 
 [Stackbit Libris Theme](https://best-celery-b2d7c.netlify.app/)
 

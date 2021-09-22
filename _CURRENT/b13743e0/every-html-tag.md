@@ -61,7 +61,6 @@ Classes Using the html class attribute makes it possible to define equal styles,
           padding: 20px;
         }
 
-
 ## London
 
 London is the capital of England.

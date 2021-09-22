@@ -142,7 +142,6 @@ sudo sed -i ‘/.git/d’ ./index.html sudo sed -i ‘/images/d’ ./index.html 
           num=$(($num+1))
     done
 
-
 ---
 
 print a dummy text file in each folder

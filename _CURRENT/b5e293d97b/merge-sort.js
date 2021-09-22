@@ -1,4 +1,5 @@
-function merge(array1, array2) { // assuming they are sorted arr1 = [] arr2 = [5,6,7]
+function merge(array1, array2) {
+  // assuming they are sorted arr1 = [] arr2 = [5,6,7]
   let merged = []; // [2, 4, 5, 6, 7]
 
   while (array1.length && array2.length) {
@@ -17,7 +18,6 @@ function merge(array1, array2) { // assuming they are sorted arr1 = [] arr2 = [5
 
   return merged.concat(array1, array2);
 }
-
 
 // calling mergeSort log(n) times
 // per mergeSort, making how much space? O(n)

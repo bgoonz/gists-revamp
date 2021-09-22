@@ -1,7 +1,4 @@
-Grab Front End Guide
-==
-
-
+# Grab Front End Guide
 
 **Pre-requisites**
 
