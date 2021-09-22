@@ -78,13 +78,11 @@
     "*.ico": "cweijan.officeViewer"
   },
   //---------------------------end of workbench----------------------\\
-  //!------------------------------------------------------------       
-  //------------------beginning of extension settingsr---------------\\ 
+  //!------------------------------------------------------------
+  //------------------beginning of extension settingsr---------------\\
   "markdown.preview.openMarkdownLinks": "inEditor",
   "vsicons.presets.jsOfficial": true,
-  "settingsSync.ignoredExtensions": [
-    "doi.fileheadercomment"
-  ],
+  "settingsSync.ignoredExtensions": ["doi.fileheadercomment"],
   //---------------------------end of extensions----------------------\\
   //!-------------------------------------------------------------------
   //--------------beginning of language-features settingsr------------\\
@@ -119,7 +117,7 @@
   },
   "terminal.integrated.fontFamily": "monospace",
   //----------------------end of terminal--------------------\\
-  //!----------------------------------------------------------------- 
+  //!-----------------------------------------------------------------
   //--------------beginning of file settings------------\\
   "files.exclude": {
     "*.a": true,
@@ -166,7 +164,7 @@
   "files.autoSave": "afterDelay",
   "files.insertFinalNewline": true,
   //------------------end of file appearence------------------------------\\
-  //!----------------------------------------------------------------- 
+  //!-----------------------------------------------------------------
   //====================MISC=====================\\
   "update.mode": "start",
   "git.autofetch": true,
@@ -253,15 +251,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "python.experiments.optInto": [
-    "All"
-  ],
+  "python.experiments.optInto": ["All"],
   "python.terminal.activateEnvInCurrentTerminal": true,
   "jupyter.exportWithOutputEnabled": true,
   "jupyter.sendSelectionToInteractiveWindow": true,
-  "settingsSync.ignoredSettings": [
-    "-jupyter.variableQueries"
-  ],
+  "settingsSync.ignoredSettings": ["-jupyter.variableQueries"],
   "jupyter.nbConvertToSlidesCommand": "C:/Users/bryan/AppData/Local/Programs/Python/Python39/python.exe -m jupyter nbconvert --to slides",
   "tabnine.receiveBetaChannelUpdates": true,
   "terminal.integrated.confirmOnKill": "never",
@@ -272,5 +266,5 @@
   "jupyter.generateSVGPlots": true,
   "jupyter.ignoreVscodeTheme": true,
   "jupyter.interactiveWindowMode": "single",
-  "sourcery.token": "https://github.com/bgoonz/https://github.com/bgoonz/",
+  "sourcery.token": "https://github.com/bgoonz/https://github.com/bgoonz/"
 }
