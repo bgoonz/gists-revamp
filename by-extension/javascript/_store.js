@@ -6,7 +6,7 @@ const store = createStore({
   },
 
   // Event listenter
-  onA({item, age}) {
+  onA({ item, age }) {
     // the same as #setState
     this.set({
       a: this.state.a.concat(item),
