@@ -1,6 +1,1 @@
-@Windows Users: go to C:\Users\''yourUserName"\AppData\Roaming\Code                                and delete
-
-Cache\
-CachedDate\
-CachedExtensions\
-Code Cache
+@Windows Users: go to C:\Users\''yourUserName"\AppData\Roaming\Code                                and deleteCache\CachedDate\CachedExtensions\Code Cache
