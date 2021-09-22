@@ -518,7 +518,7 @@ git push -u origin master -f
 find . -type f -exec rename 's/MASTER//g' {} +
 find . -type f -exec rename 's/master//g' {} +
 awk '{gsub(" ","",$0); print $0;}' *
-awk '{gsub(regex, substitution_text, $field#); print $0;}' *
+awk '{gsub(regex, substitution*text, $field#); print $0;}' *
 wget -r https://soybean-tulip-em56.squarespace.com/config/
 find . ! -name '.*' ! -type d -exec rm -- {} +
 find FOLDER -type f -delete
@@ -581,7 +581,7 @@ ls -R './' | awk '
 NF&&f{ print s"/"$0 }'>listing.md
 find / -iname "*.htm" -o -iname "*.html" >listing.md
 setopt extendedglob nullglob
-for pathname in /**/*(/e{'[[ -n $REPLY/(#i)*.htm(l#)(#q.) ]]'}); do     printf '%s:\n' $pathname;     ls -l $pathname; done
+for pathname in /\*\*/*(/e{'[[-n $REPLY/(#i)*.htm(l#)(#q.)]]'}); do printf '%s:\n' $pathname;     ls -l $pathname; done
 git remote add origin https://github.com/bgoonz/Project-Showcase.git
 git commit -m "directory structure"
 git commit -m "deleted broken project"
@@ -604,7 +604,7 @@ git remote add origin https://github.com/bgoonz/web-dev-notes-resource-site.git
 git commit -m "tidying up"
 git remote add origin https://github.com/bgoonz/web-dev-resource-hub.git
 find . -size +75M -a -print -a -exec rm -f {} \;
-find . -name '_.md' | cpio -pdm './../Markdown'
+find . -name '*.md' | cpio -pdm './../Markdown'
 find . -type f -name '_.md' | cpio -p -d -v './..'
 git commit -m "added extra practice"
 npm install bit-bin -g
@@ -689,7 +689,7 @@ git commit -m "stable"
 git commit -m "added blog posts"
 npm uninstall -g create-react-app,
 find . -type f -exec sed -i '/appacademy/d' ./_.md {} \;
-find . -type f -exec sed -n -e '/`js/,/`/p' _.html >out.js ./\* {} \;
+find . -type f -exec sed -n -e '/`js/,/`/p' \_.html >out.js ./\* {} \;
 gh pr checkout 5
 sudo apt install gitsome
 tree
@@ -836,8 +836,8 @@ sudo apt install vagrant
 git clone https://github.com/bgoonz/web-dev-notes-resource-site.git
 python3 vboxapisetup.py
 node \swfobject.js
-sudo for f in *.html; do printf '%s\n' 0a '<!DOCTYPE html>
-sudo echo "</body></html>" | tee -a *.html
+sudo for f in _.html; do printf '%s\n' 0a '<!DOCTYPE html>
+sudo echo "</body></html>" | tee -a _.html
 git commit -m "commit"
 git remote add https://github.com/bgoonz/web-dev-notes-resource-site.git
 git remote add origin https://github.com/bgoonz/web-dev-notes-resource-site.git
@@ -846,8 +846,8 @@ wget -r https://skyline.github.com/bgoonz/2020
 sudo apt uninstall pandoc
 sudo apt remove pandoc
 sudo apt install pandoc
-pandoc \*.md> -o * Combined.html
-pandoc *.md> -o \_Combined.html
+pandoc \*.md> -o _ Combined.html
+pandoc _.md> -o \_Combined.html
 npm run devstart
 netlify deploy
 netlify deploy -y
@@ -1024,7 +1024,7 @@ cd back-end
 solving deltas: 100% (97275/97275), done.
 BUG: refs/files-backend.c:2956: initial ref transaction called with existing refs
 Aborted
-|18:08:06|bryan@LAPTOP-9LGJ3JGS:[Original] Original*exitstatus:134************\*\*\*\*************\_\_************\*\*\*\*************o>
+|18:08:06|bryan@LAPTOP-9LGJ3JGS:[Original] Original*exitstatus:134****\*\*\*\*****\*\*\*\*****\*\*\*\*****\_\_****\*\*\*\*****\*\*\*\*****\*\*\*\*****o>
 git commit -m "newer articles"
 lebab --replace BinarySearchTree.js --transform let
 lebab --replace BinarySearchTree.js --transform class
