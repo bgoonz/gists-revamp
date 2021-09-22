@@ -17,5 +17,5 @@ The interview will be a review of your web skillset and knowledge. Please come p
 
 The interviewer will score your performance according to objectives that correspond with the core Web curriculum. You will receive your score in your Sprint 3 canvas course on the interview assignment. Click the assignment to view your feedback and score on each objective.
 
-A passing score consists of scoring a two or higher across all objectives.\
+A passing score consists of scoring a two or higher across all objectives.  
 Receiving a one on any objective(s) will be considered not passing.
