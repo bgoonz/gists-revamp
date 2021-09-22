@@ -1,5 +1,5 @@
-SVG Bubble Slider
------------------
+## SVG Bubble Slider
+
 A dynamic menu I've built that can be used with either icons or text for the slider bubbles.
 
 This one is a fun emoticon rating slider - you can drag and throw or just click to show how you feel.

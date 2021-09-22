@@ -3291,12 +3291,11 @@ You can download the PDF and Epub version of this repository from the latest run
 
 1. ### What is an Intl object
 
+   The Intl object is the namespace for the ECMAScript Internationalization API, which provides language sensitive string comparison, number formatting, and date and time formatting. It provides access to several constructors and language sensitive functions.
 
-    The Intl object is the namespace for the ECMAScript Internationalization API, which provides language sensitive string comparison, number formatting, and date and time formatting. It provides access to several constructors and language sensitive functions.
+   **[⬆ Back to Top](#table-of-contents)**
 
-    **[⬆ Back to Top](#table-of-contents)**
-
-233. ### How do you perform language specific date and time formatting
+1. ### How do you perform language specific date and time formatting
 
 
     You can use the `Intl.DateTimeFormat` object which is a constructor for objects that enable language-sensitive date and time formatting. Let’s see this behavior with an example,
@@ -6189,7 +6188,6 @@ You can download the PDF and Epub version of this repository from the latest run
     **[⬆ Back to Top](#table-of-contents)**
 
 1.  ### How to invoke an IIFE without any extra brackets?
-
 
     Immediately Invoked Function Expressions(IIFE) requires a pair of parenthesis to wrap the function which contains set of statements.
 
