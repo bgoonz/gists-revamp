@@ -216,7 +216,6 @@ This will assume that you have both `client` and `server` running correctly and 
         // name from Netlify or if you changed the name it will
         // be the name you gave it
 
-
 **Ensure that you push these changes up to GitHub.** Netlify will trigger a redeploy when they detect changes to your `master` branch. So for this to work you must make those changes apparent to Netlify essentially.
 
 Now any request, instead of going to your local server you’ve ran while developing, will go to the hosted server you just deployed to Heroku with all of your Express Routes still intact and functioning properly.
