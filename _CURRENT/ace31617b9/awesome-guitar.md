@@ -6,7 +6,6 @@
 
 You might also like [awesome-sheet-music](https://github.com/adius/awesome-sheet-music) and [awesome-music](https://github.com/ciconia/awesome-music).
 
-
 ## Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->

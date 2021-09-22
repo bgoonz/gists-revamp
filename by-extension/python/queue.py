@@ -27,4 +27,3 @@ class queue:
 # 3. The __init__ method takes an argument, initialVal, which is the list that will be used to store the queue.
 # 4. The __init__ method creates an instance variable, queue, which is initially set to initialVal.
 # 5. The rest of the methods are self-explanatory.
-
