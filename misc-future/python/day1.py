@@ -22,8 +22,6 @@
 # print("something on a new line")
 
 
-
-
 # collections
 
 # create an empty list? Array
@@ -45,7 +43,6 @@ lst1.append(24)
 
 # # print all values in lst2
 # print(lst2)
-
 
 
 # range(9, 10)
@@ -83,14 +80,9 @@ numbers = [1, 2, 3, 4]
 # print(evens)
 # create a new list containing only the names that start with 's' make sure they are capitalized (regardless of their original case)
 names = ["Sarah", "jorge", "sam", "frank", "bob", "sandy"]
-s_names = [name.capitalize() for name in names if name[0].lower() == 's']
+s_names = [name.capitalize() for name in names if name[0].lower() == "s"]
 
 # print(s_names)
-
-
-
-
-
 
 
 # Dictionaries
@@ -101,12 +93,7 @@ s_names = [name.capitalize() for name in names if name[0].lower() == 's']
 d = {}
 d2 = dict()
 # key value pairs
-student = {
-    "name": "Amin",
-    "cohort": "cseuflex",
-    "current_sprint": "Intro to Python"
-} 
+student = {"name": "Amin", "cohort": "cseuflex", "current_sprint": "Intro to Python"}
 # access an element via its key
 student["friends"] = ["bob", "dave", "steve"]
 print(student["friends"])
-

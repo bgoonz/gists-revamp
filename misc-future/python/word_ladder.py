@@ -2,8 +2,8 @@
 from util import Queue
 
 # read in the words.txt file (think about file io)
-f = open('words.txt', 'r')
-words = f.read().split('\n')
+f = open("words.txt", "r")
+words = f.read().split("\n")
 f.close()
 
 # remember to plan it out before you code
@@ -17,7 +17,34 @@ for word in words:
     word_set.add(word.lower())
 
 # hold a list of lower case letters
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+letters = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+]
 
 # helper function get neighbors
 def get_neighbors(word):
@@ -44,43 +71,45 @@ def get_neighbors(word):
     # return neighbors list
     return neighbors
 
+
 # traversal bfs path
 def find_ladders(begin_word, end_word):
-            # create a queue
-        q = Queue()
-        # enqueue a list holding the starting vertex id
-        q.enqueue([begin_word])
-        # created an empty visited set
-        visited = set()
-        
-        # while the queue is not empty
-        while q.size() > 0:
-            # dequeue to the path
-            path = q.dequeue()
-            
-            # set a vert to the last item in the path
-            vert = path[-1]
-           
-            # if vert is not in visited
-            if vert not in visited:
-                # if vert is equal to target value
-                if vert == end_word:
-                    # return path
-                    return path
-                # add vert to visited set
-                visited.add(vert)
-                # loop over next vert in vertices at the index of vert
-                for next_vert in get_neighbors(vert):
-                    # set a new path equal to a new list of the path (copy)
-                    new_path = list(path)
-                    # append next vert to new path
-                    new_path.append(next_vert)
-                    # enqueue the new path
-                    q.enqueue(new_path)
-        # return None
-        return None
+    # create a queue
+    q = Queue()
+    # enqueue a list holding the starting vertex id
+    q.enqueue([begin_word])
+    # created an empty visited set
+    visited = set()
 
-if __name__ == '__main__':
+    # while the queue is not empty
+    while q.size() > 0:
+        # dequeue to the path
+        path = q.dequeue()
+
+        # set a vert to the last item in the path
+        vert = path[-1]
+
+        # if vert is not in visited
+        if vert not in visited:
+            # if vert is equal to target value
+            if vert == end_word:
+                # return path
+                return path
+            # add vert to visited set
+            visited.add(vert)
+            # loop over next vert in vertices at the index of vert
+            for next_vert in get_neighbors(vert):
+                # set a new path equal to a new list of the path (copy)
+                new_path = list(path)
+                # append next vert to new path
+                new_path.append(next_vert)
+                # enqueue the new path
+                q.enqueue(new_path)
+    # return None
+    return None
+
+
+if __name__ == "__main__":
     print(find_ladders("hit", "cog"))
     print(find_ladders("sail", "boat"))
     print(find_ladders("hungry", "happy"))

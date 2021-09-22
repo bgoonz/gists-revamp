@@ -5,11 +5,12 @@ import sys
 LDI = 0b10000010
 PRN = 0b01000111
 HLT = 0b00000001
-POP  = 0b01000110
+POP = 0b01000110
 PUSH = 0b01000101
-MUL  = 0b10100010
+MUL = 0b10100010
 
 SP = 7
+
 
 class CPU:
     """Main CPU class."""
@@ -21,7 +22,6 @@ class CPU:
         self.ram = [0] * 256
 
         self.running = False
-    
 
     # Helper Methods
     def ram_read(self, mar):
@@ -33,7 +33,7 @@ class CPU:
     def push_val(self, val):
         self.reg[SP] -= 1
         self.ram_write(val, self.reg[7])
-        
+
     def pop_val(self):
         val = self.ram_read(self.reg[7])
         self.reg[SP] += 1
@@ -53,7 +53,7 @@ class CPU:
                 # strip the whitespace on element zero (the instruction)
                 num = comment_split[0].strip()
 
-                if num == '':  # ignore blanks
+                if num == "":  # ignore blanks
                     continue
 
                 # turn the number string in to an integer
@@ -62,7 +62,6 @@ class CPU:
 
                 self.ram_write(address, val)
                 address += 1
-
 
     def alu(self, op, reg_a, reg_b):
         """ALU operations."""
@@ -84,17 +83,21 @@ class CPU:
         from run() if you need help debugging.
         """
 
-        print(f"TRACE: %02X | %02X %02X %02X |" % (
-            self.pc,
-            #self.fl,
-            #self.ie,
-            self.ram_read(self.pc),
-            self.ram_read(self.pc + 1),
-            self.ram_read(self.pc + 2)
-        ), end='')
+        print(
+            f"TRACE: %02X | %02X %02X %02X |"
+            % (
+                self.pc,
+                # self.fl,
+                # self.ie,
+                self.ram_read(self.pc),
+                self.ram_read(self.pc + 1),
+                self.ram_read(self.pc + 2),
+            ),
+            end="",
+        )
 
         for i in range(8):
-            print(" %02X" % self.reg[i], end='')
+            print(" %02X" % self.reg[i], end="")
 
         print()
 
@@ -113,12 +116,11 @@ class CPU:
             # decode instruction size
             opcode_size = (inst >> 6) + 1
 
-            
             # decode
             if inst == HLT:
                 # execute
                 self.running = False
-            
+
                 # decode
             elif inst == LDI:
                 # execute
@@ -137,7 +139,6 @@ class CPU:
 
                 # Copy the value at the given register to the address in memory pointed to by the Stack Pointer.
                 self.ram[self.reg[SP]] = self.reg[opa]
-                
 
             # decode
             elif inst == PRN:
@@ -145,18 +146,17 @@ class CPU:
                 # get reg index.
                 reg_index = opa
                 print(self.reg[reg_index])
-           
 
             # decode
             else:
                 print(f"Unknown instruction {inst}")
                 self.running = False
 
-
             self.pc += opcode_size
 
+
 if __name__ == "__main__":
-    
+
     """Main."""
 
     import sys

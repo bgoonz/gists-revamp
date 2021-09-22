@@ -5,15 +5,16 @@ def letter_count(s):
 
         if c.isspace():
             continue
-        
+
         c = c.lower()
 
         if c not in d:
             d[c] = 1
         else:
             d[c] += 1
-    
+
     return d
+
 
 def print_sorted_count(s):
     count = letter_count(s)
@@ -30,4 +31,3 @@ my_string = "aabcDcc dd      ddd D"
 
 print(letter_count(my_string))
 print_sorted_count(my_string)
-

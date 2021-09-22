@@ -17,7 +17,7 @@ class BinarySearchTree:
         # LEFT CASE
         # check if the new nodes value is less than our current ones value
         if value < self.value:
-            # if the is no left child, 
+            # if the is no left child,
             if not self.left:
                 # place a new node here
                 self.left = BinarySearchTree(value)
@@ -28,7 +28,7 @@ class BinarySearchTree:
         # RIGHT CASE
         # check if the new nodes value is greater than or equal to the current parent value
         elif value >= self.value:
-            # if there is no right child here, 
+            # if there is no right child here,
             if not self.right:
                 # place a new one
                 self.right = BinarySearchTree(value)
@@ -61,12 +61,12 @@ class BinarySearchTree:
 
     # Return the maximum value found in the tree
     def get_max(self):
-        # BASE CASE 
+        # BASE CASE
         # if empty tree
         if not self:
             # return none
             return None
-        
+
         # RECURSIVE
         # # if the the is no right value
         # if not self.right:
@@ -159,12 +159,12 @@ class BinarySearchTree:
         q = Queue()
         # enqueue the starting node on to the queue
         # loop while the queue has data
-            # dequeue the current it em off the queue
-            # print the current value
-            # if the current node has a left child
-                # enqueue the left child on to the queue
-            # if the current node has a right child
-                # enqueue right child on to the queue          
+        # dequeue the current it em off the queue
+        # print the current value
+        # if the current node has a left child
+        # enqueue the left child on to the queue
+        # if the current node has a right child
+        # enqueue right child on to the queue
         pass
 
     # Print the value of every node, starting with the given node,
@@ -174,12 +174,12 @@ class BinarySearchTree:
         s = Stack()
         # push the starting node on to the stack
         # loop while the stack has data
-            # pop the current it em off the stack
-            # print the current value
-            # if the current node has a left child
-                # push the left child on to the stack
-            # if the current node has a right child
-                # push right child on to the stack          
+        # pop the current it em off the stack
+        # print the current value
+        # if the current node has a left child
+        # push the left child on to the stack
+        # if the current node has a right child
+        # push right child on to the stack
         pass
 
     # STRETCH Goals -------------------------

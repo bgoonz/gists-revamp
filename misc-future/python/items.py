@@ -1,5 +1,5 @@
 class Item:
-    def __init__(self,name, description):
+    def __init__(self, name, description):
         self.name = name
         self.description = description
 
@@ -13,12 +13,13 @@ class Item:
     def __str__(self):
         return f"{self.name}"
 
+
 class Treasure(Item):
     def __init__(self, name, description, value):
         super().__init__(name, description)
         self.value = value
         self.picked_up = False
-    
+
     def on_pickup(self, player):
         super().on_pickup(player)
 
@@ -27,12 +28,13 @@ class Treasure(Item):
             print(f"You gained {self.value} Gold!")
             self.picked_up = True
 
+
 class Weapon(Item):
     def __init__(self, name, description, power):
         super().__init__(name, description)
         self.power = power
         self.picked_up = False
-    
+
     def on_pickup(self, player):
         super().on_pickup(player)
 
@@ -40,7 +42,7 @@ class Weapon(Item):
             player.atk += self.power
             print(f"You gain {self.power} Power!")
             self.picked_up = True
-    
+
     def on_drop(self, player):
         super().on_drop(player)
 
@@ -48,6 +50,7 @@ class Weapon(Item):
             player.atk -= self.power
             print(f"You lost {self.power} Power!")
             self.picked_up = False
+
 
 class LightSource(Item):
     def __init__(self, name, description):

@@ -1,4 +1,5 @@
 import sys
+
 # lets build up our simulator some more
 # now we will add the concept of registers
 # and an add opcode, using external files for program code
@@ -24,11 +25,11 @@ def load_memory(filename):
         with open(filename) as f:
             for line in f:
                 # split the comment out
-                comment_split = line.split('#')
+                comment_split = line.split("#")
 
                 num = comment_split[0].strip()
 
-                if num == '':
+                if num == "":
                     continue
 
                 i_num = int(num, 2)
@@ -69,7 +70,7 @@ while running:
     if command == HALT:
         # EXECUTE
         running = False
-    
+
     elif command == PRINT_TOM:
         # EXECUTE
         print("Tom")
@@ -98,11 +99,9 @@ while running:
         register[reg_a] += register[reg_b]
         op_size = 3
 
-    
     else:
         print(f"Invalid Instruction: {command}")
         running = False
 
     # how will we move forward in memory to grab the next command?
     pc += op_size
-

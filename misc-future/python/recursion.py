@@ -26,15 +26,16 @@
 #     print(t)
 
 # Recursion
-    # Code that calls itself
-    # Needs a base case to prevent a stack overflow
-    # makes for fairly clean and elegant code
+# Code that calls itself
+# Needs a base case to prevent a stack overflow
+# makes for fairly clean and elegant code
 # O(n)
 def foo(n):
     if n == 0:
         return
     print(n)
     foo(n - 1)
+
 
 # O(2^n)
 def foo2(n):
@@ -44,6 +45,7 @@ def foo2(n):
     foo(n - 1)
     foo(n - 2)
 
+
 # 1, 2, 4, 8, 16, 32, 64, 128, 258
 
 n = 1000000
@@ -52,4 +54,3 @@ while n > 0:
     n -= 1
 
 # foo(1000000)
-

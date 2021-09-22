@@ -1,4 +1,5 @@
 import sys
+
 # lets build up our simulator some more
 # now we will add the concept of registers
 # and an add opcode, using external files for program code
@@ -13,7 +14,7 @@ ADD = 6
 PUSH = 7
 POP = 8
 CALL = 9
-RET  = 10
+RET = 10
 
 
 # lets make a model of memory to hold our program
@@ -22,10 +23,9 @@ memory = [0] * 256
 register = [0] * 8
 
 # TODO: Stack Pointer (R7) as per specs
-SP = 7 # index of the registers list 
+SP = 7  # index of the registers list
 # to use to store where the top of the stack is
-register[SP] = 0xf4
-
+register[SP] = 0xF4
 
 
 # lets load a program in to memory
@@ -35,11 +35,11 @@ def load_memory(filename):
         with open(filename) as f:
             for line in f:
                 # split the comment out
-                comment_split = line.split('#')
+                comment_split = line.split("#")
 
                 num = comment_split[0].strip()
 
-                if num == '':
+                if num == "":
                     continue
 
                 i_num = int(num, 2)
@@ -80,7 +80,7 @@ while running:
     if command == HALT:
         # EXECUTE
         running = False
-    
+
     elif command == PRINT_VLAD:
         # EXECUTE
         print("Vlad")
@@ -145,14 +145,13 @@ while running:
         # remember to set op_size to zero
         op_size = 0
 
-
     elif command == RET:
         # Pop return address from stack and store in pc
         pc = memory[register[SP]]
         register[SP] += 1
         # remember to set op_size to zero
         op_size = 0
-         
+
     else:
         print(f"Invalid Instruction: {command}")
         running = False

@@ -18,6 +18,7 @@
 
 # write out a basic structure
 
+
 class Vec2:
     def __init__(self, x, y):
         self.x = x
@@ -33,6 +34,7 @@ class Vec2:
         self.x += fred.x
         self.y += fred.y
         return Vec2(self.x, self.y)
+
     # try not to make nonsensical argument / field names
     def __add__(self, mouse_spartan_fresco_jinx):
         ret = Vec2(0, 0)
@@ -81,12 +83,10 @@ print(v2)
 v3 = v1 + v2
 
 
-
 3 - 5
 print(v3)
 print(v1)
 print(v2)
-
 
 
 # 2.
@@ -117,6 +117,7 @@ SLL
 
 """
 
+
 class BTNode:
     def __init__(self, value, left=None, right=None):
         self.value = value
@@ -135,7 +136,6 @@ class BTNode:
             self.__add_right__(value)
         elif value < self.value:
             self.__add_left__(value)
-
 
 
 bt1 = BTNode(10)

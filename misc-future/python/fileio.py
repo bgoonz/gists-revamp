@@ -14,37 +14,37 @@ else:
         # open the file using the `open()` function
         with open(file_name) as file:
 
-                # iterate over each line in the file
-                for line in file:
-                    # split each line in to an element of a list
-                    line_data = line.split("#")
+            # iterate over each line in the file
+            for line in file:
+                # split each line in to an element of a list
+                line_data = line.split("#")
 
-                    # select the first element (the raw instruction string)
-                    raw_instruction_string = line_data[0]
+                # select the first element (the raw instruction string)
+                raw_instruction_string = line_data[0]
 
-                    # strip any whitespace / newline characters using `.strip()` method
-                    sanatized_instruction_string = raw_instruction_string.strip()
+                # strip any whitespace / newline characters using `.strip()` method
+                sanatized_instruction_string = raw_instruction_string.strip()
 
-                    # deal with lines with only comments
-                    if sanatized_instruction_string == '':
-                        continue
-                    
-                    # cast the binary string to an integer, using the `int()` function. passing in a base of 2
-                    int_of_bin = int(sanatized_instruction_string, 2)
+                # deal with lines with only comments
+                if sanatized_instruction_string == "":
+                    continue
 
-                    # # print(f"{int_of_bin:08b}: {int_of_bin}")
-                    # if int_of_bin == LDI:
-                    #     print("LDI")
-                    # elif int_of_bin == LDI:
-                    #     print("LDI")
-                    # elif int_of_bin == PRN:
-                    #     print("PRN")
-                    # elif int_of_bin == HLT:
-                    #     print("HLT")
+                # cast the binary string to an integer, using the `int()` function. passing in a base of 2
+                int_of_bin = int(sanatized_instruction_string, 2)
 
-                    # append the integer to the program list as an element of machine code
-                    program.append(int_of_bin)
+                # # print(f"{int_of_bin:08b}: {int_of_bin}")
+                # if int_of_bin == LDI:
+                #     print("LDI")
+                # elif int_of_bin == LDI:
+                #     print("LDI")
+                # elif int_of_bin == PRN:
+                #     print("PRN")
+                # elif int_of_bin == HLT:
+                #     print("HLT")
+
+                # append the integer to the program list as an element of machine code
+                program.append(int_of_bin)
     except FileNotFoundError:
         print("I can not find the file!!!!!!!!")
-        
+
 print(program)

@@ -1,7 +1,8 @@
-# make a equipment class with the fields of 
+# make a equipment class with the fields of
 # name, price, style and weight
 # that inherits from the product class
 from product import Product
+
 
 class Equipment(Product):
     # constructor
@@ -11,4 +12,4 @@ class Equipment(Product):
         self.weight = weight
 
     def __str__(self):
-        f'{super().__str__()} Style: {self.style}, Weight: {str(self.weight)}'
+        f"{super().__str__()} Style: {self.style}, Weight: {str(self.weight)}"

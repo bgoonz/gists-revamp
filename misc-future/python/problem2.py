@@ -6,7 +6,7 @@ class Node:
 
     def add(self, value):
         self.next = Node(value)
-    
+
     def find_middle(self):
         middle = self
         end = self
@@ -16,7 +16,6 @@ class Node:
             if end:
                 end = end.next
                 middle = middle.next
-            
 
         print(f"Middle: {middle.value}")
 
@@ -50,10 +49,6 @@ cur = cur.next
 # cur = cur.next
 
 root.find_middle()
-
-
-
-
 
 
 # # tests

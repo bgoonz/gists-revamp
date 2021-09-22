@@ -14,6 +14,7 @@ print out the output of...
 # lets just get the area and print it then work from there
 # import math module to use math.pi
 import math
+
 # set a radius variable (r)
 r = 3
 # set an area of a circle by using pi * r * r (math.pi * r * r)

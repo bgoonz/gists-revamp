@@ -1,5 +1,5 @@
 # player class
-from item import Item # might centralize all this in to 1 file at some point
+from item import Item  # might centralize all this in to 1 file at some point
 from lightsource import LightSource
 
 # created a simple constructor to take in a room to match the calling convention in my adv.py
@@ -44,7 +44,9 @@ class Player:
 
     # list out the items in the players inventory [items] list
     def inventory(self):
-        print(f"\nYou have the following items: {', '.join(item.name for item in self.items)}")
+        print(
+            f"\nYou have the following items: {', '.join(item.name for item in self.items)}"
+        )
 
     def __str__(self):
-        return str(self.location.name)  + "\n" + str(self.location.description)
+        return str(self.location.name) + "\n" + str(self.location.description)

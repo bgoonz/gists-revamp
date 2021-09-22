@@ -35,7 +35,7 @@ Write a function to determine if a number divides itself.
 #         if value % (num % 10) != 0:
 #             # return False
 #             return False
-        
+
 #         # divide our value by 10 to make sure we do not get an infinite loop
 #         value //= 10
 
@@ -50,14 +50,17 @@ def divides_self(num):
             return False
     return True
 
-def mannie_divides_self(num):  
+
+def mannie_divides_self(num):
     value = num
     while value != 0:
         digit = int(value % 10)
-        if digit ==  0 or num % digit != 0:
+        if digit == 0 or num % digit != 0:
             return False
         value = value // 10
     return True
+
+
 print(divides_self(128))  # > True
 print(divides_self(12))  # > True
-print(divides_self(120)) # > False
+print(divides_self(120))  # > False

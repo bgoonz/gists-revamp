@@ -1,4 +1,5 @@
 import sys
+
 # lets build up our simulator some more
 # now we will add the concept of registers
 # and an add opcode, using external files for program code
@@ -29,16 +30,16 @@ def load_memory(filename):
         with open(filename) as f:
             for line in f:
                 # split before comment
-                comment_split = line.split('#')
+                comment_split = line.split("#")
 
                 # convert to a number splitting and stripping
                 num = comment_split[0].strip()
 
-                if num == '':
+                if num == "":
                     continue  # ignore blank lines
-                
+
                 val = int(num, 2)
-                
+
                 # store val in memory at the given address
                 memory[address] = val
 
@@ -77,7 +78,7 @@ while running:
     if command == HALT:
         # EXECUTE
         running = False
-    
+
     elif command == PRINT_TOM:
         # EXECUTE
         print("Tom")
@@ -126,7 +127,7 @@ while running:
         reg_b = memory[pc + 2]
         register[reg_a] /= register[reg_b]
         op_size = 3
-    
+
         # handle IDIV opcode
     elif command == IDIV:
         reg_a = memory[pc + 1]
@@ -134,7 +135,6 @@ while running:
         register[reg_a] //= register[reg_b]
         op_size = 3
 
-    
     else:
         print(f"Invalid Instruction: {command}")
         running = False

@@ -1,4 +1,5 @@
 import sys
+
 # lets build up our simulator some more
 # now we will add the concept of registers
 # and an add opcode
@@ -26,10 +27,10 @@ def load_memory(filename):
                 comment_split = line.split("#")
 
                 # extract our number
-                num = comment_split[0].strip() # trim whitespace
+                num = comment_split[0].strip()  # trim whitespace
 
-                if num == '':
-                    continue # ignore blank lines
+                if num == "":
+                    continue  # ignore blank lines
 
                 # convert our binary string to a number
                 val = int(num, 2)
@@ -79,7 +80,7 @@ while running:
     if cmd == HALT:
         # EXECUTE
         running = False
-    
+
     elif cmd == PRINT_TOM:
         # EXECUTE
         print("Tom")
@@ -114,10 +115,10 @@ while running:
         reg = memory[pc + 1]
         val = register[reg]
 
-        #PUSH
+        # PUSH
         register[sp] -= 1
         memory[register[sp]] = val
-        
+
         inc_size = 2
 
     # TODO: Handle POP
@@ -131,7 +132,7 @@ while running:
         register[sp] += 1
 
         inc_size = 2
-    
+
     else:
         print(f"Invalid Instruction: {cmd}")
         running = False

@@ -1,5 +1,6 @@
 # Let's build a data driven machine!
 import sys
+
 # What do we need to have our machine working?
 """
 - Some sort of memory
@@ -31,6 +32,7 @@ SHR = 0b10101101
 
 # some sort of memory (lets refactor this to load in opcodes from a file)
 
+
 def load_memory(filename):
     # TODO do some logic here
     try:
@@ -40,7 +42,7 @@ def load_memory(filename):
                 comment_split = line.split("#")
                 n = comment_split[0].strip()
 
-                if n == '':
+                if n == "":
                     continue
 
                 val = int(n, 2)
@@ -68,7 +70,7 @@ pc = 0
 registers = [0] * 10
 
 # Stack Pointer (R7) as per specs
-# index of the registers list 
+# index of the registers list
 # SP
 SP = 7
 
@@ -94,12 +96,10 @@ while running:
     cmd = memory[pc]
     op_size = ((cmd >> 6) & 0b11) + 1
 
-
     # DECODE
     if cmd == PRINT_VLAD:
         # EXECUTE
         print("Vlad")
-        
 
     elif cmd == HALT:
         running = False
@@ -113,18 +113,15 @@ while running:
         print(num_at_reg)
 
     elif cmd == SAVE:
-        num_to_save = memory[pc + 1] # 300
+        num_to_save = memory[pc + 1]  # 300
         reg_index = memory[pc + 2]
 
         registers[reg_index] = num_to_save
-
 
     elif cmd == ADD:
         reg_index_a = memory[pc + 1]
         reg_index_b = memory[pc + 2]
         registers[reg_index_a] += registers[reg_index_b]
-
-
 
     elif cmd == SUB:
         reg_index_a = memory[pc + 1]
@@ -141,8 +138,6 @@ while running:
         reg_index_b = memory[pc + 2]
         registers[reg_index_a] >>= registers[reg_index_b]
 
-
-    
     # PUSH
     elif cmd == PUSH:
         # setup
@@ -154,8 +149,6 @@ while running:
 
         # insert val on to the stack
         memory[registers[SP]] = val
-
-
 
     # POP
     elif cmd == POP:
@@ -169,8 +162,6 @@ while running:
         # increment Stack Pointer
         registers[SP] += 1
 
-
-    
     # CALL
     elif cmd == CALL:
         # push the return address on to the stack
@@ -194,6 +185,5 @@ while running:
     else:
         print(f"Invalid Instruction: {cmd}")
         running = False
-
 
     pc += op_size

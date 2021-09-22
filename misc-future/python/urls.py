@@ -22,12 +22,12 @@ from notes.api import PersonalNoteViewSet
 from polls.api import QuestionViewSet
 
 router = routers.DefaultRouter()
-router.register(r'notes', PersonalNoteViewSet)
-router.register(r'questions', QuestionViewSet)
+router.register(r"notes", PersonalNoteViewSet)
+router.register(r"questions", QuestionViewSet)
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    re_path(r'^api-token-auth/', views.obtain_auth_token),
+    path("polls/", include("polls.urls")),
+    path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),
+    re_path(r"^api-token-auth/", views.obtain_auth_token),
 ]

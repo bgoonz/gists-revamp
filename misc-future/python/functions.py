@@ -9,9 +9,11 @@ y = 4
 
 
 # halt
-def add(a, b): # ADD 0, 1
+def add(a, b):  # ADD 0, 1
     # ADD R0 R1
-    return a + b # RET
+    return a + b  # RET
+
+
 # CALL reg
 # store our variables on the stack
 r0 = add(x, y)

@@ -35,6 +35,8 @@ Notes:
 - order.length == 26
 - All characters in words[i] and order are English lowercase letters.
 """
+
+
 def are_words_sorted(words, alpha_order):
     """
     Inputs:
@@ -64,18 +66,18 @@ def are_words_sorted(words, alpha_order):
                     return False
                 else:
                     break
-        
+
         # if we end up falling out of the inner loop check if the length of w1 is greater than the length of w2
         if len(w1) > len(w2):
             # return False
             return False
 
-    
     # once we fall out of the outer loop if we did not already return then we must return true
     return True
 
 
-
 print(are_words_sorted(["lambda", "school"], "hlabcdefgijkmnopqrstuvwxyz"))  # => True
-print(are_words_sorted(["were", "where", "yellow"], "habcdefgijklmnopqrstuvwxyz"))  # => False
-print(are_words_sorted(["lambda","lamb"], "abcdefghijklmnopqrstuvwxyz")) # => False
+print(
+    are_words_sorted(["were", "where", "yellow"], "habcdefgijklmnopqrstuvwxyz")
+)  # => False
+print(are_words_sorted(["lambda", "lamb"], "abcdefghijklmnopqrstuvwxyz"))  # => False

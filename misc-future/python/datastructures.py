@@ -4,10 +4,10 @@ NODE
 - ref / pointer -> next node / -> tail
 - ref / pointer -> prev node / -> head
 """
-l = [12, 23, 34] # heap (block of mem)
+l = [12, 23, 34]  # heap (block of mem)
 
-a = 12 # stack LIFO
-# - push() 
+a = 12  # stack LIFO
+# - push()
 # pop()
 
 # [g]
@@ -29,9 +29,3 @@ a = 12 # stack LIFO
 # e 6
 # e 4
 # d -> 1
-
-
-
-
-
-

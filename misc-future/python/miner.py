@@ -17,7 +17,7 @@ def proof_of_work(block):
     proof = 0
     # loop while the return from a call to valid proof is False
     while valid_proof(block_string, proof) is False:
-        proof += 1        
+        proof += 1
     # return proof
     return proof
 
@@ -41,7 +41,7 @@ def valid_proof(block_string, proof):
     return guess_hash[:6] == "000000"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # What is the server address? IE `python3 miner.py https://server.com/api/`
     if len(sys.argv) > 1:
         node = sys.argv[1]
@@ -69,7 +69,7 @@ if __name__ == '__main__':
             break
 
         # Get the block from `data` and use it to look for a new proof
-        new_proof = proof_of_work(data.get('last_block'))
+        new_proof = proof_of_work(data.get("last_block"))
 
         # When found, POST it to the server {"proof": new_proof, "id": id}
         post_data = {"proof": new_proof, "id": id}
@@ -78,11 +78,11 @@ if __name__ == '__main__':
         data = r.json()
 
         # If the server responds with a 'message' 'New Block Forged'
-        if data.get('message') == 'New Block Forged':
+        if data.get("message") == "New Block Forged":
             # add 1 to the number of coins mined and print it.  Otherwise,
             coins_mined += 1
             print(f"Total Coins Mined: {coins_mined}")
         # otherwise
         else:
             # print the message from the server.
-            print(data.get('message'))
+            print(data.get("message"))

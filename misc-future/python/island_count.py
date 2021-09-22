@@ -29,18 +29,23 @@ each connection of north, south, east or west (edge)
 
 """
 
-class Stack():
+
+class Stack:
     def __init__(self):
         self.stack = []
+
     def push(self, value):
         self.stack.append(value)
+
     def pop(self):
         if self.size() > 0:
             return self.stack.pop()
         else:
             return None
+
     def size(self):
         return len(self.stack)
+
 
 def dft(row, col, matrix, visited):
     # make a stack
@@ -63,6 +68,7 @@ def dft(row, col, matrix, visited):
     # return visited
     return visited
 
+
 def get_neighbors(col, row, graph_matrix):
     neighbors = []
     # check north
@@ -79,6 +85,7 @@ def get_neighbors(col, row, graph_matrix):
         neighbors.append((row, col - 1))
     # return neighbors
     return neighbors
+
 
 def island_counter(matrix):
     # create visited matrix of the same dimensions as the given matrix
@@ -103,24 +110,29 @@ def island_counter(matrix):
                     visited[row][col] = True
     return island_count
 
+
 if __name__ == "__main__":
-    islands = [[0, 1, 0, 1, 0],
-           [1, 1, 0, 1, 1],
-           [0, 0, 1, 0, 0],
-           [1, 0, 1, 0, 0],
-           [1, 1, 0, 0, 0]]
+    islands = [
+        [0, 1, 0, 1, 0],
+        [1, 1, 0, 1, 1],
+        [0, 0, 1, 0, 0],
+        [1, 0, 1, 0, 0],
+        [1, 1, 0, 0, 0],
+    ]
 
     print(island_counter(islands))  # 4
 
-    islands = [[1, 0, 0, 1, 1, 0, 1, 1, 0, 1],
-            [0, 0, 1, 1, 0, 1, 0, 0, 0, 0],
-            [0, 1, 1, 1, 0, 0, 0, 1, 0, 1],
-            [0, 0, 1, 0, 0, 1, 0, 0, 1, 1],
-            [0, 0, 1, 1, 0, 1, 0, 1, 1, 0],
-            [0, 1, 0, 1, 1, 1, 0, 1, 0, 0],
-            [0, 0, 1, 0, 0, 1, 1, 0, 0, 0],
-            [1, 0, 1, 1, 0, 0, 0, 1, 1, 0],
-            [0, 1, 1, 0, 0, 0, 1, 1, 0, 0],
-            [0, 0, 1, 1, 0, 1, 0, 0, 1, 0]]
+    islands = [
+        [1, 0, 0, 1, 1, 0, 1, 1, 0, 1],
+        [0, 0, 1, 1, 0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0, 0, 1, 0, 1],
+        [0, 0, 1, 0, 0, 1, 0, 0, 1, 1],
+        [0, 0, 1, 1, 0, 1, 0, 1, 1, 0],
+        [0, 1, 0, 1, 1, 1, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0, 1, 1, 0, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 1, 1, 0],
+        [0, 1, 1, 0, 0, 0, 1, 1, 0, 0],
+        [0, 0, 1, 1, 0, 1, 0, 0, 1, 0],
+    ]
 
     print(island_counter(islands))  # 13

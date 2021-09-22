@@ -7,20 +7,18 @@
 # and loop
 
 
-
-
 # what is a REPL?
-# how can we make this game replayable? 
+# how can we make this game replayable?
 
 
-#repl
+# repl
 playing = True
 number = 45
-while playing: # LOOP
-    val = int(input(" Guess the number i am thinking of >>> ")) # READ
+while playing:  # LOOP
+    val = int(input(" Guess the number i am thinking of >>> "))  # READ
 
-    if val == number: # EVAL
-        print("You win") # PRINT
+    if val == number:  # EVAL
+        print("You win")  # PRINT
         playing = False
     else:
         print("Not correct!!")

@@ -1,4 +1,5 @@
 import unittest
+
 # found this playlist useful for this and python in general: https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7
 # and this videos in particular was good: https://www.youtube.com/watch?v=q5uM4VKywbA
 import csv  # this is to read in the csv file
@@ -33,8 +34,8 @@ cities = []
 # opening the ciyies.csv file and reading in the data to a list
 # found this useful when thinking about this: https://www.youtube.com/watch?v=q5uM4VKywbA
 
-with open('cities.csv') as csvfile:
-    reader = csv.reader(csvfile, delimiter=',')
+with open("cities.csv") as csvfile:
+    reader = csv.reader(csvfile, delimiter=",")
     next(reader)
     for row in reader:
         cities.append(City(row[0], row[3], row[4]))
@@ -81,7 +82,10 @@ lats = sorted([latlon1[0], latlon2[0]])
 lons = sorted([latlon1[1], latlon2[1]])
 
 # set the data using a list comprehension outputting the result to the console
-[print("{}: ({},{})\n".format(c.name, c.lat, c.lon)) for c in cities if lats[0] <= float(
-    c.lat) <= lats[1] and lons[0] <= float(c.lon) <= lons[1]]
+[
+    print("{}: ({},{})\n".format(c.name, c.lat, c.lon))
+    for c in cities
+    if lats[0] <= float(c.lat) <= lats[1] and lons[0] <= float(c.lon) <= lons[1]
+]
 
 ### STRETCH COMPLETE ###

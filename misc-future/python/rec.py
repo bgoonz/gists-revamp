@@ -7,4 +7,5 @@ def rec_func(n):
     rec_func(n - 2)
     rec_func(n - 3)
 
+
 rec_func(200)

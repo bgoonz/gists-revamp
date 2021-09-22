@@ -27,8 +27,9 @@ class ListNode:
         self.value = value
         self.next = None
 
+
 class MyHashTable:
-    def __init__(self, capacity = 100):
+    def __init__(self, capacity=100):
         # Your code here
         self.capacity = capacity
         self.storage = [None] * self.capacity
@@ -43,8 +44,7 @@ class MyHashTable:
         for byte in key_bytes:
             hash_value = ((hash_value << 5) + hash_value) + byte
             # hash_value = 5381 << 5 + 5381 + "e"
-            hash_value &= 0xfffffffff # keep the number to be only 32bit
-
+            hash_value &= 0xFFFFFFFFF  # keep the number to be only 32bit
 
         # return the hash value
         return hash_value
@@ -64,7 +64,7 @@ class MyHashTable:
             curr_node = self.storage[index]
             # iterate # traverse over the linked list
             while True:
-                
+
                 # check if our current nodes key is equal to our key
                 if curr_node.key == key:
                     # set our current nodes value to value and return
@@ -80,10 +80,6 @@ class MyHashTable:
 
             # set our current nodes next to a new list node with the key and value
             curr_node.next = ListNode(key, value)
-
-
-
-
 
     def get(self, key):
         # Your code here
@@ -106,7 +102,6 @@ class MyHashTable:
 
         return -1
 
-
     def remove(self, key) -> None:
         # Your code here
         # set the index to the hash of the key moded against the capacity
@@ -121,7 +116,7 @@ class MyHashTable:
         if not curr_node:
             # just return (None)
             return None
-        
+
         # check if the current nodes key is the key we pass in?
         if curr_node.key == key:
             # set the storage at index to the current nodes next
@@ -151,9 +146,9 @@ class MyHashTable:
 hash_table = MyHashTable()
 hash_table.put("a", 1)
 hash_table.put("b", 2)
-print(hash_table.get("a"))           # returns 1
-print(hash_table.get("c"))           # returns -1 (not found)
-hash_table.put("b", 1)        # update the existing value
-print(hash_table.get("b"))           # returns 1
-hash_table.remove("b")       # remove the mapping for 2
-print(hash_table.get("b"))          # returns -1 (not found)
+print(hash_table.get("a"))  # returns 1
+print(hash_table.get("c"))  # returns -1 (not found)
+hash_table.put("b", 1)  # update the existing value
+print(hash_table.get("b"))  # returns 1
+hash_table.remove("b")  # remove the mapping for 2
+print(hash_table.get("b"))  # returns -1 (not found)

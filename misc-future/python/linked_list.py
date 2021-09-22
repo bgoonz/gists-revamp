@@ -2,12 +2,11 @@
 
 # lets make some node class
 class Node:
-    def __init__(self, value, next_node = None):
+    def __init__(self, value, next_node=None):
         # value that the node is holding
         self.value = value
         # ref to the next node in the chain
         self.next_node = next_node
-    
 
     def get_value(self):
         """
@@ -27,14 +26,13 @@ class Node:
         """
         self.next_node = new_next
 
-    
-
 
 # now lets think of how we can make nodes interact in a way that consolidates their pieces together
 
 # lets make a LinkedList class
-# think of the idea of having a head and a tail like a snake 
+# think of the idea of having a head and a tail like a snake
 # where the snake can grow based upon having more links in it
+
 
 class LinkedList:
     def __init__(self):
@@ -52,7 +50,7 @@ class LinkedList:
         # otherwise the list must have at least one item in there
         else:
             # update the last node's "next_node" to the new node
-            self.tail.set_next(new_node) # (last node in chain).next_node = new_node
+            self.tail.set_next(new_node)  # (last node in chain).next_node = new_node
             # update the "self.tail" to point to the new node that we just added
             self.tail = new_node
 
@@ -95,21 +93,21 @@ class LinkedList:
             self.tail.set_next(None)
             # return Value
             return value
-            
+
     def add_to_head(self, value):
-            # wrap the input value in a node
-            new_node = Node(value)
-            # check if the linked list is empty
-            if not self.head and not self.tail:
-                # if the list is initially empty, set both head and tail to the new node
-                self.head = new_node
-                self.tail = new_node
-            # we have a non-empty list, add the new node to the head 
-            else:
-                # set the new node's `next` to refer to the current head
-                new_node.set_next(self.head)
-                # set the list's head reference to the new node 
-                self.head = new_node
+        # wrap the input value in a node
+        new_node = Node(value)
+        # check if the linked list is empty
+        if not self.head and not self.tail:
+            # if the list is initially empty, set both head and tail to the new node
+            self.head = new_node
+            self.tail = new_node
+        # we have a non-empty list, add the new node to the head
+        else:
+            # set the new node's `next` to refer to the current head
+            new_node.set_next(self.head)
+            # set the list's head reference to the new node
+            self.head = new_node
 
     def remove_head(self):
         # check for empty list
@@ -131,8 +129,7 @@ class LinkedList:
             # set self.head to old head's next
             self.head = self.head.get_next()
             # return the value
-            return value 
-
+            return value
 
 
 n1 = Node(1)
@@ -140,6 +137,6 @@ n2 = Node(2)
 n3 = Node(3)
 n4 = Node(4)
 
-n1.set_next(n2) # n1.next_node = n2
-print(n1.get_value()) # => 2
-print('n1',n1)
+n1.set_next(n2)  # n1.next_node = n2
+print(n1.get_value())  # => 2
+print("n1", n1)

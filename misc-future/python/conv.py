@@ -144,6 +144,7 @@ b * 1 => 11
 
 # Lets convert diferent bases to decimal
 
+
 def to_decimal(num_string, base):
     # turn num string in to a list
     num_list = list(num_string)
@@ -158,6 +159,7 @@ def to_decimal(num_string, base):
         value += int(num_list[i], base) * (base ** i)
     # return the value
     return value
+
 
 print(to_decimal("7b", 16))  # => 123
 print(to_decimal("010111010110101", 2))  # => 4

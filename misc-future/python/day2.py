@@ -1,8 +1,10 @@
 # Passing by value Vs passing by Ref
 import time
+
 # define a doubling function that passes args by value
 def mult2(x):
     return x * 2
+
 
 # define a doubling function that passes args by reference
 def mult2_list(l):
@@ -23,11 +25,10 @@ def mult2_list(l):
 #     print(num)
 
 
+# ===========================================================
 
-#===========================================================
-
-# Return the "centered" average of an array of ints, which we'll say is the mean average of the values, 
-# except ignoring the largest and smallest values in the array. 
+# Return the "centered" average of an array of ints, which we'll say is the mean average of the values,
+# except ignoring the largest and smallest values in the array.
 
 # centered_average([1, 2, 3, 4, 100]) → 3 (1 100)... (2 + 3 + 4) => 9 ==> 9 / 3 => 3
 # centered_average([1, 1, 5, 5, 10, 8, 7]) → 5 (1 + 5 + 5 + 8 + 7) // 5
@@ -42,6 +43,7 @@ def mult2_list(l):
 # PLAN & EXECUTE
 # maybe use min / max?
 # maybe use builtins?
+
 
 def centered_avg1(ints):
     # gather smallest and largest values for later
@@ -62,13 +64,15 @@ def centered_avg1(ints):
     # set our sum to our sum minus smallest and largest
     sum = sum - smallest - largest
 
-    # get the mean of the remaining items by way of this algorithm 
+    # get the mean of the remaining items by way of this algorithm
     # end_result = sum of all numbers excluding the smallest and largest floor divided by the length of the list minus 2
     end_result = sum // (len(ints) - 2)
     # and return our end_result
     return end_result
 
+
 import statistics
+
 # def centered_avg2(ints):
 #     # sort our ints
 #     ints.sort()
@@ -78,6 +82,7 @@ import statistics
 #     our_mean = statistics.mean(middle_values)
 #     # return our mean
 #     return our_mean
+
 
 def centered_avg2(ints):
     ints.sort()
@@ -112,4 +117,3 @@ print(end - start)
 # b = a // 4
 
 # print(b)
-

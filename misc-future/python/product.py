@@ -1,5 +1,6 @@
 # lets make a superclass
 
+
 class Product:
     def __init__(self, name, price):
         self.name = name
@@ -7,4 +8,3 @@ class Product:
 
     def __str__(self):
         return f"{self.name}:\t£{self.price}"
-        
