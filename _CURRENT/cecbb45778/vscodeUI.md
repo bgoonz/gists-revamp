@@ -1,20 +1,18 @@
-User Interface
-==============
+# User Interface
 
 At its heart, Visual Studio Code is a code editor. Like many other code editors, VS Code adopts a common user interface and layout of an explorer on the left, showing all of the files and folders you have access to, and an editor on the right, showing the content of the files you have opened.
 
 ![code basics hero](https://code.visualstudio.com/assets/docs/getstarted/userinterface/hero.png)
 
-Basic Layout[#](https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout)
-------------------------------------------------------------------------------------------
+## Basic Layout[#](https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout)
 
 VS Code comes with a simple and intuitive layout that maximizes the space provided for the editor while leaving ample room to browse and access the full context of your folder or project. The UI is divided into five areas:
 
--   Editor - The main area to edit your files. You can open as many editors as you like side by side vertically and horizontally.
--   Side Bar - Contains different views like the Explorer to assist you while working on your project.
--   Status Bar - Information about the opened project and the files you edit.
--   Activity Bar - Located on the far left-hand side, this lets you switch between views and gives you additional context-specific indicators, like the number of outgoing changes when Git is enabled.
--   Panels - You can display different panels below the editor region for output or debug information, errors and warnings, or an integrated terminal. Panel can also be moved to the right for more vertical space.
+- Editor - The main area to edit your files. You can open as many editors as you like side by side vertically and horizontally.
+- Side Bar - Contains different views like the Explorer to assist you while working on your project.
+- Status Bar - Information about the opened project and the files you edit.
+- Activity Bar - Located on the far left-hand side, this lets you switch between views and gives you additional context-specific indicators, like the number of outgoing changes when Git is enabled.
+- Panels - You can display different panels below the editor region for output or debug information, errors and warnings, or an integrated terminal. Panel can also be moved to the right for more vertical space.
 
 Each time you start VS Code, it opens up in the same state it was in when you last closed it. The folder, layout, and opened files are preserved.
 
@@ -22,17 +20,16 @@ Open files in each editor are displayed with tabbed headers (Tabs) at the top of
 
 > Tip: You can move the Side Bar to the right hand side (View > Move Side Bar Right) or toggle its visibility (Ctrl+B).
 
-Side by side editing[#](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing)
-----------------------------------------------------------------------------------------------------------
+## Side by side editing[#](https://code.visualstudio.com/docs/getstarted/userinterface#_side-by-side-editing)
 
 You can open as many editors as you like side by side vertically and horizontally. If you already have one editor open, there are multiple ways of opening another editor to the side of the existing one:
 
--   Alt click on a file in the Explorer.
--   Ctrl+\ to split the active editor into two.
--   Open to the Side (Ctrl+Enter) from the Explorer context menu on a file.
--   Click the Split Editor button in the upper right of an editor.
--   Drag and drop a file to any side of the editor region.
--   Ctrl+Enter (macOS: Cmd+Enter) in the Quick Open (Ctrl+P) file list.
+- Alt click on a file in the Explorer.
+- Ctrl+\ to split the active editor into two.
+- Open to the Side (Ctrl+Enter) from the Explorer context menu on a file.
+- Click the Split Editor button in the upper right of an editor.
+- Drag and drop a file to any side of the editor region.
+- Ctrl+Enter (macOS: Cmd+Enter) in the Quick Open (Ctrl+P) file list.
 
 ![Side by Side editing](https://code.visualstudio.com/assets/docs/getstarted/userinterface/sidebyside.png)
 
@@ -44,8 +41,7 @@ When you have more than one editor open you can switch between them quickly by h
 
 > Tip: You can resize editors and reorder them. Drag and drop the editor title area to reposition or resize the editor.
 
-Minimap[#](https://code.visualstudio.com/docs/getstarted/userinterface#_minimap)
---------------------------------------------------------------------------------
+## Minimap[#](https://code.visualstudio.com/docs/getstarted/userinterface#_minimap)
 
 A Minimap (code outline) gives you a high-level overview of your source code, which is useful for quick navigation and code understanding. A file's minimap is shown on the right side of the editor. You can click or drag the shaded area to quickly jump to different sections of your file.
 
@@ -57,25 +53,23 @@ A Minimap (code outline) gives you a high-level overview of your source code, wh
 
 The image above also shows indentation guides (vertical lines) which help you quickly see matching indent levels. If you would like to disable indent guides, you can set `"editor.renderIndentGuides": false` in your user or workspace [settings](https://code.visualstudio.com/docs/getstarted/settings).
 
-Breadcrumbs[#](https://code.visualstudio.com/docs/getstarted/userinterface#_breadcrumbs)
-----------------------------------------------------------------------------------------
+## Breadcrumbs[#](https://code.visualstudio.com/docs/getstarted/userinterface#_breadcrumbs)
 
-The editor has a navigation bar above its contents called [Breadcrumbs](https://en.wikipedia.org/wiki/Breadcrumb_(navigation)). It shows the current location and allows you to quickly navigate between folders, files, and symbols.
+The editor has a navigation bar above its contents called [Breadcrumbs](<https://en.wikipedia.org/wiki/Breadcrumb_(navigation)>). It shows the current location and allows you to quickly navigate between folders, files, and symbols.
 
 ![Breadcrumbs](https://code.visualstudio.com/assets/docs/getstarted/userinterface/breadcrumbs.png)
 
 Breadcrumbs always show the file path and if the current file type has language support for symbols, the symbol path up to the cursor position. You can disable breadcrumbs with the View > Show Breadcrumbs toggle command. For more information about the breadcrumbs feature, such as how to customize their appearance, see the [Breadcrumbs](https://code.visualstudio.com/docs/editor/editingevolved#_breadcrumbs) section of the [Code Navigation](https://code.visualstudio.com/docs/editor/editingevolved) article.
 
-Explorer[#](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer)
-----------------------------------------------------------------------------------
+## Explorer[#](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer)
 
 The Explorer is used to browse, open, and manage all of the files and folders in your project. VS Code is file and folder based - you can get started immediately by opening a file or folder in VS Code.
 
 After opening a folder in VS Code, the contents of the folder are shown in the Explorer. You can do many things from here:
 
--   Create, delete, and rename files and folders.
--   Move files and folders with drag and drop.
--   Use the context menu to explore all options.
+- Create, delete, and rename files and folders.
+- Move files and folders with drag and drop.
+- Use the context menu to explore all options.
 
 > Tip: You can drag and drop files into the Explorer from outside VS Code to copy them (if the explorer is empty VS Code will open them instead)
 
@@ -123,35 +117,33 @@ For symbols, the view relies on information computed by your installed extension
 
 There are several Outline view [settings](https://code.visualstudio.com/docs/getstarted/settings) which allow you to enable/disable icons and control the errors and warnings display (all enabled by default):
 
--   `outline.icons` - Toggle rendering outline elements with icons.
--   `outline.problems.enabled` - Show errors and warnings on outline elements.
--   `outline.problems.badges` - Toggle using badges for errors and warnings.
--   `outline.problems.colors` - Toggle using colors for errors and warnings.
+- `outline.icons` - Toggle rendering outline elements with icons.
+- `outline.problems.enabled` - Show errors and warnings on outline elements.
+- `outline.problems.badges` - Toggle using badges for errors and warnings.
+- `outline.problems.colors` - Toggle using colors for errors and warnings.
 
-Open Editors[#](https://code.visualstudio.com/docs/getstarted/userinterface#_open-editors)
-------------------------------------------------------------------------------------------
+## Open Editors[#](https://code.visualstudio.com/docs/getstarted/userinterface#_open-editors)
 
 At the top of the Explorer is a view labeled OPEN EDITORS. This is a list of active files or previews. These are files you previously opened in VS Code that you were working on. For example, a file will be listed in the OPEN EDITORS view if you:
 
--   Make a change to a file.
--   Double-click a file's header.
--   Double-click a file in the Explorer.
--   Open a file that is not part of the current folder.
+- Make a change to a file.
+- Double-click a file's header.
+- Double-click a file in the Explorer.
+- Open a file that is not part of the current folder.
 
 Just click an item in the OPEN EDITORS view, and it becomes active in VS Code.
 
 Once you are done with your task, you can remove files individually from the OPEN EDITORS view, or you can remove all files by using the View: Close All Editors or View: Close All Editors in Group actions.
 
-Views[#](https://code.visualstudio.com/docs/getstarted/userinterface#_views)
-----------------------------------------------------------------------------
+## Views[#](https://code.visualstudio.com/docs/getstarted/userinterface#_views)
 
 The File Explorer is just one of the Views available in VS Code. There are also Views for:
 
--   Search - Provides global search and replace across your open folder.
--   Source Control - VS Code includes Git source control by default.
--   Run - VS Code's Run and Debug View displays variables, call stacks, and breakpoints.
--   Extensions - Install and manage your extensions within VS Code.
--   Custom views - Views contributed by extensions.
+- Search - Provides global search and replace across your open folder.
+- Source Control - VS Code includes Git source control by default.
+- Run - VS Code's Run and Debug View displays variables, call stacks, and breakpoints.
+- Extensions - Install and manage your extensions within VS Code.
+- Custom views - Views contributed by extensions.
 
 > Tip: You can open any view using the View: Open View command.
 
@@ -167,8 +159,7 @@ The Activity Bar on the left lets you quickly switch between Views. You can al
 
 ![activity bar context menu](https://code.visualstudio.com/assets/docs/getstarted/userinterface/activity-bar-context-menu.png)
 
-Command Palette[#](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette)
-------------------------------------------------------------------------------------------------
+## Command Palette[#](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette)
 
 VS Code is equally accessible from the keyboard. The most important key combination to know is Ctrl+Shift+P, which brings up the Command Palette. From here, you have access to all of the functionality of VS Code, including keyboard shortcuts for the most common operations.
 
@@ -176,18 +167,17 @@ VS Code is equally accessible from the keyboard. The most important key combinat
 
 The Command Palette provides access to many commands. You can execute editor commands, open files, search for symbols, and see a quick outline of a file, all using the same interactive window. Here are a few tips:
 
--   Ctrl+P will let you navigate to any file or symbol by typing its name
--   Ctrl+Tab will cycle you through the last set of files opened
--   Ctrl+Shift+P will bring you directly to the editor commands
--   Ctrl+Shift+O will let you navigate to a specific symbol in a file
--   Ctrl+G will let you navigate to a specific line in a file
+- Ctrl+P will let you navigate to any file or symbol by typing its name
+- Ctrl+Tab will cycle you through the last set of files opened
+- Ctrl+Shift+P will bring you directly to the editor commands
+- Ctrl+Shift+O will let you navigate to a specific symbol in a file
+- Ctrl+G will let you navigate to a specific line in a file
 
 Type `?` into the input field to get a list of available commands you can execute from here:
 
 ![Quick Open Help](https://code.visualstudio.com/assets/docs/getstarted/userinterface/quickopenhelp.png)
 
-Configuring the editor[#](https://code.visualstudio.com/docs/getstarted/userinterface#_configuring-the-editor)
---------------------------------------------------------------------------------------------------------------
+## Configuring the editor[#](https://code.visualstudio.com/docs/getstarted/userinterface#_configuring-the-editor)
 
 VS Code gives you many options to configure the editor. From the View menu, you can hide or toggle various parts of the user interface, such as the Side Bar, Status Bar, and Activity Bar.
 
@@ -201,8 +191,8 @@ You can also hide the Menu Bar on Windows and Linux with the View > Toggle Me
 
 Most editor configurations are kept in settings which can be modified directly. You can set options globally through user settings or per project/folder through workspace settings. Settings values are kept in a `settings.json` [file](https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations).
 
--   Select File > Preferences > Settings (or press Ctrl+,) to edit the user `settings.json` file.
--   To edit workspace settings, select the WORKSPACE SETTINGS tab to edit the workspace `settings.json` file.
+- Select File > Preferences > Settings (or press Ctrl+,) to edit the user `settings.json` file.
+- To edit workspace settings, select the WORKSPACE SETTINGS tab to edit the workspace `settings.json` file.
 
 > Note for macOS users: The Preferences menu is under Code not File. For example, Code > Preferences > Settings.
 
@@ -222,8 +212,7 @@ Zen Mode lets you focus on your code by hiding all UI except the editor (no Acti
 
 Centered editor layout allows you to center align the editor area. This is particularly useful when working with a single editor on a large monitor. You can use the sashes on the side to resize the view (hold down the `Alt` key to independently move the sashes).
 
-Tabs[#](https://code.visualstudio.com/docs/getstarted/userinterface#_tabs)
---------------------------------------------------------------------------
+## Tabs[#](https://code.visualstudio.com/docs/getstarted/userinterface#_tabs)
 
 Visual Studio Code shows open items with Tabs (tabbed headings) in the title area above the editor.
 
@@ -253,8 +242,7 @@ For example, you might like new tabbed items to appear on the left:
     "workbench.editor.openPositioning": "left"
 ```
 
-Preview mode[#](https://code.visualstudio.com/docs/getstarted/userinterface#_preview-mode)
-------------------------------------------------------------------------------------------
+## Preview mode[#](https://code.visualstudio.com/docs/getstarted/userinterface#_preview-mode)
 
 When you single-click or select a file in the Explorer, it is shown in a preview mode and reuses an existing Tab. This is useful if you are quickly browsing files and don't want every visited file to have its own Tab. When you start editing the file or use double-click to open the file from the Explorer, a new Tab is dedicated to that file.
 
@@ -264,11 +252,10 @@ Preview mode is indicated by italics in the Tab heading:
 
 If you'd prefer to not use preview mode and always create a new Tab, you can control the behavior with these settings:
 
--   `workbench.editor.enablePreview` to globally enable or disable preview editors
--   `workbench.editor.enablePreviewFromQuickOpen` to enable or disable preview editors when opened from Quick Open
+- `workbench.editor.enablePreview` to globally enable or disable preview editors
+- `workbench.editor.enablePreviewFromQuickOpen` to enable or disable preview editors when opened from Quick Open
 
-Editor Groups[#](https://code.visualstudio.com/docs/getstarted/userinterface#_editor-groups)
---------------------------------------------------------------------------------------------
+## Editor Groups[#](https://code.visualstudio.com/docs/getstarted/userinterface#_editor-groups)
 
 When you split an editor (using the Split Editor or Open to the Side commands), a new editor region is created which can hold a group of items. You can open as many editor regions as you like side by side vertically and horizontally.
 
@@ -280,8 +267,7 @@ You can Drag and Drop editor groups on the workbench, move individual Tabs betwe
 
 > Note: VS Code uses editor groups whether or not you have enabled Tabs. Without Tabs, editor groups are a stack of your open items with the most recently selected item visible in the editor pane.
 
-Grid editor layout[#](https://code.visualstudio.com/docs/getstarted/userinterface#_grid-editor-layout)
-------------------------------------------------------------------------------------------------------
+## Grid editor layout[#](https://code.visualstudio.com/docs/getstarted/userinterface#_grid-editor-layout)
 
 By default, editor groups are laid out in vertical columns (for example when you split an editor to open it to the side). You can easily arrange editor groups in any layout you like, both vertically and horizontally:
 
@@ -311,18 +297,17 @@ Here are some handy keyboard shortcuts to quickly navigate between editors and e
 
 > If you'd like to modify the default keyboard shortcuts, see [Key Bindings](https://code.visualstudio.com/docs/getstarted/keybindings) for details.
 
--   Ctrl+PageDown go to the right editor.
--   Ctrl+PageUp go to the left editor.
--   Ctrl+Tab open the previous editor in the editor group MRU list.
--   Ctrl+1 go to the leftmost editor group.
--   Ctrl+2 go to the center editor group.
--   Ctrl+3 go to the rightmost editor group.
--   Ctrl+F4 close the active editor.
--   Ctrl+K W close all editors in the editor group.
--   Ctrl+K Ctrl+W close all editors.
+- Ctrl+PageDown go to the right editor.
+- Ctrl+PageUp go to the left editor.
+- Ctrl+Tab open the previous editor in the editor group MRU list.
+- Ctrl+1 go to the leftmost editor group.
+- Ctrl+2 go to the center editor group.
+- Ctrl+3 go to the rightmost editor group.
+- Ctrl+F4 close the active editor.
+- Ctrl+K W close all editors in the editor group.
+- Ctrl+K Ctrl+W close all editors.
 
-Working without Tabs[#](https://code.visualstudio.com/docs/getstarted/userinterface#_working-without-tabs)
-----------------------------------------------------------------------------------------------------------
+## Working without Tabs[#](https://code.visualstudio.com/docs/getstarted/userinterface#_working-without-tabs)
 
 If you prefer not to use Tabs (tabbed headings), you can disable Tabs (tabbed headings) entirely by setting `workbench.editor.showTabs` to false.
 
@@ -357,8 +342,7 @@ Windows/Linux:
 { "key": "ctrl+w", "command": "workbench.action.closeEditorsInGroup" }
 ```
 
-Window management[#](https://code.visualstudio.com/docs/getstarted/userinterface#_window-management)
-----------------------------------------------------------------------------------------------------
+## Window management[#](https://code.visualstudio.com/docs/getstarted/userinterface#_window-management)
 
 VS Code has some options to control how windows (instances) should be opened or restored between sessions.
 
@@ -370,15 +354,13 @@ Note: There can still be cases where this setting is ignored (for example, when 
 
 The `window.restoreWindows` setting tells VS Code how to restore the opened windows of your previous session. By default, VS Code will restore all windows you worked on during your previous session (setting: `all`). Change this setting to `none` to never reopen any windows and always start with an empty VS Code instance. Change it to `one` to reopen the last opened window you worked on or `folders` to only restore windows that had folders opened.
 
-Next steps[#](https://code.visualstudio.com/docs/getstarted/userinterface#_next-steps)
---------------------------------------------------------------------------------------
+## Next steps[#](https://code.visualstudio.com/docs/getstarted/userinterface#_next-steps)
 
 Now that you know the overall layout of VS Code, start to customize the editor to how you like to work by looking at the following topics:
 
--   [Changing the Theme](https://code.visualstudio.com/docs/getstarted/themes) - Set a Color and/or File Icon theme to your preference.
+- [Changing the Theme](https://code.visualstudio.com/docs/getstarted/themes) - Set a Color and/or File Icon theme to your preference.
 
-Common questions[#](https://code.visualstudio.com/docs/getstarted/userinterface#_common-questions)
---------------------------------------------------------------------------------------------------
+## Common questions[#](https://code.visualstudio.com/docs/getstarted/userinterface#_common-questions)
 
 ### How can I change the color of the indent guides?[#](https://code.visualstudio.com/docs/getstarted/userinterface#_how-can-i-change-the-color-of-the-indent-guides)
 

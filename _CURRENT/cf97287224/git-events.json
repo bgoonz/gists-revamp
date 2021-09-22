@@ -106,18 +106,10 @@
         "merged_at": "2021-09-01T14:13:18Z",
         "merge_commit_sha": "2d238f1776fc6b5f2443123a238514e2ba346cfa",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/sanity-commercelayer/pulls/1/commits",
@@ -547,18 +539,10 @@
         "merged_at": "2021-09-01T14:12:50Z",
         "merge_commit_sha": "fd7ce29fa2b23b0acc50298eb857ff9f564c0739",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/sanity-commercelayer/pulls/6/commits",
@@ -988,18 +972,10 @@
         "merged_at": "2021-09-01T14:12:40Z",
         "merge_commit_sha": "350778d60e0fcc644fed9417f08dd9b040f92d53",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/sanity-commercelayer/pulls/5/commits",
@@ -1380,18 +1356,10 @@
         "merged_at": null,
         "merge_commit_sha": "50f123eeaf1ad172491dfd676cef2b2650a9adcb",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/138/commits",
@@ -1741,18 +1709,10 @@
         "merged_at": null,
         "merge_commit_sha": "54bc45712b5084ebd50c13330e0a5f5d4437c3c3",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/137/commits",
@@ -2102,18 +2062,10 @@
         "merged_at": null,
         "merge_commit_sha": "cc122825fb5784ab0c6703a6cffc894bd13030d4",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/136/commits",
@@ -2463,18 +2415,10 @@
         "merged_at": null,
         "merge_commit_sha": "cfacb95585462e59e7b208a9369ba81967ce7714",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/135/commits",
@@ -2824,18 +2768,10 @@
         "merged_at": null,
         "merge_commit_sha": "8ebf9f9b224d9bf41571fb90c8ff1d4bb888ac13",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/132/commits",
@@ -3185,18 +3121,10 @@
         "merged_at": null,
         "merge_commit_sha": "aba80178b9ea80ca5f19478ec01448c64b422ed0",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/131/commits",
@@ -3546,18 +3474,10 @@
         "merged_at": null,
         "merge_commit_sha": "4708f914f8735f0aa31f399bb0b7d9bc3b6d97dc",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/130/commits",
@@ -3907,18 +3827,10 @@
         "merged_at": null,
         "merge_commit_sha": "ea1bee892c594e481515b5659e33290e47a04cda",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/129/commits",
@@ -4268,18 +4180,10 @@
         "merged_at": null,
         "merge_commit_sha": "ce50c23893f9c6985656851299ff63890b6134bd",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/128/commits",
@@ -4629,18 +4533,10 @@
         "merged_at": null,
         "merge_commit_sha": "8a483416a6a1bf7b069ff96539036581d7475441",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/127/commits",
@@ -4990,18 +4886,10 @@
         "merged_at": null,
         "merge_commit_sha": "b36760298857080278eac2ea1c5e27a49a8a4b21",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/125/commits",
@@ -5351,18 +5239,10 @@
         "merged_at": null,
         "merge_commit_sha": "1847df401277176cb79ab6f5ead98d2aa7e34f73",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/124/commits",
@@ -5712,18 +5592,10 @@
         "merged_at": null,
         "merge_commit_sha": "c4414660fd9daafa5ce21f38cbc3df6f8abaa647",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/123/commits",
@@ -6073,18 +5945,10 @@
         "merged_at": null,
         "merge_commit_sha": "3d5119f1b23ff96f9cdf539ae78fcb42e7c7c7af",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/122/commits",
@@ -6434,18 +6298,10 @@
         "merged_at": null,
         "merge_commit_sha": "76dab113606b9cb1a4336aedb808db439cd4f1fb",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/121/commits",
@@ -6795,18 +6651,10 @@
         "merged_at": null,
         "merge_commit_sha": "33b1839799f3a0ff639f90ca7e86198e99d5139e",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/117/commits",
@@ -7156,18 +7004,10 @@
         "merged_at": null,
         "merge_commit_sha": "921cb060ee8a512cec141da7ab8fe36858bbba4b",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/120/commits",
@@ -7517,18 +7357,10 @@
         "merged_at": null,
         "merge_commit_sha": "3adb1680e452f031d43a5a85efd193720072c624",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/119/commits",
@@ -7878,18 +7710,10 @@
         "merged_at": null,
         "merge_commit_sha": "b4d374570ed6c264d9472c19caedea7a5bf831d7",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/bgoonz/DATA_STRUC_PYTHON_NOTES/pulls/118/commits",
@@ -8239,12 +8063,8 @@
         "merged_at": null,
         "merge_commit_sha": null,
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
         "requested_teams": [
           {
             "name": "maintainers",
@@ -8261,9 +8081,7 @@
             "parent": null
           }
         ],
-        "labels": [
-
-        ],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/google-github-actions/deploy-cloudrun/pulls/201/commits",
@@ -8800,18 +8618,10 @@
         "merged_at": null,
         "merge_commit_sha": "86b7e87662dd2c994af8ea5d4af8f0514452043b",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/Archive-42/react-linktree/pulls/38/commits",
@@ -9168,18 +8978,10 @@
         "merged_at": null,
         "merge_commit_sha": "d8a18f3908135db326d4610a427e73397c5574d2",
         "assignee": null,
-        "assignees": [
-
-        ],
-        "requested_reviewers": [
-
-        ],
-        "requested_teams": [
-
-        ],
-        "labels": [
-
-        ],
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "labels": [],
         "milestone": null,
         "draft": false,
         "commits_url": "https://api.github.com/repos/Archive-42/react-linktree/pulls/37/commits",

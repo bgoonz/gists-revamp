@@ -5,9 +5,8 @@ This snippet returns `true` if the predicate function returns `true` for all ele
 ```js
 const all = (arr, fn = Boolean) => arr.every(fn);
 
-all([4, 2, 3], x => x > 1); // true
+all([4, 2, 3], (x) => x > 1); // true
 all([1, 2, 3]); // true
-
 ```
 
 2\. allEqual
@@ -15,11 +14,10 @@ all([1, 2, 3]); // true
 This snippet checks whether all elements of the array are equal.
 
 ```js
-const allEqual = arr => arr.every(val => val === arr[0]);
+const allEqual = (arr) => arr.every((val) => val === arr[0]);
 
 allEqual([1, 2, 3, 4, 5, 6]); // false
 allEqual([1, 1, 1, 1]); // true
-
 ```
 
 3\. approximatelyEqual
@@ -27,10 +25,10 @@ allEqual([1, 1, 1, 1]); // true
 This snippet checks whether two numbers are approximately equal to each other, with a small difference.
 
 ```js
-const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
+const approximatelyEqual = (v1, v2, epsilon = 0.001) =>
+  Math.abs(v1 - v2) < epsilon;
 
 approximatelyEqual(Math.PI / 2.0, 1.5708); // true
-
 ```
 
 4\. arrayToCSV
@@ -38,12 +36,20 @@ approximatelyEqual(Math.PI / 2.0, 1.5708); // true
 This snippet converts the elements that don't have commas or double quotes to strings with comma-separated values.
 
 ```js
-const arrayToCSV = (arr, delimiter = ',') =>
-  arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
+const arrayToCSV = (arr, delimiter = ",") =>
+  arr.map((v) => v.map((x) => `"${x}"`).join(delimiter)).join("\n");
 
-arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
-arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
-
+arrayToCSV([
+  ["a", "b"],
+  ["c", "d"],
+]); // '"a","b"\n"c","d"'
+arrayToCSV(
+  [
+    ["a", "b"],
+    ["c", "d"],
+  ],
+  ";"
+); // '"a";"b"\n"c";"d"'
 ```
 
 5\. arrayToHtmlList
@@ -52,13 +58,12 @@ This snippet converts the elements of an array into `` tags and appends them to 
 
 ```js
 const arrayToHtmlList = (arr, listID) =>
-  (el => (
-    (el = document.querySelector('#' + listID)),
-    (el.innerHTML += arr.map(item => `<li>${item}</li>`).join(''))
+  ((el) => (
+    (el = document.querySelector("#" + listID)),
+    (el.innerHTML += arr.map((item) => `<li>${item}</li>`).join(""))
   ))();
 
-arrayToHtmlList(['item 1', 'item 2'], 'myListID');
-
+arrayToHtmlList(["item 1", "item 2"], "myListID");
 ```
 
 6\. attempt
@@ -73,11 +78,10 @@ const attempt = (fn, ...args) => {
     return e instanceof Error ? e : new Error(e);
   }
 };
-var elements = attempt(function(selector) {
+var elements = attempt(function (selector) {
   return document.querySelectorAll(selector);
-}, '>_>');
+}, ">_>");
 if (elements instanceof Error) elements = []; // elements = []
-
 ```
 
 7\. average
@@ -85,10 +89,10 @@ if (elements instanceof Error) elements = []; // elements = []
 This snippet returns the average of two or more numerical values.
 
 ```js
-const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.length;
+const average = (...nums) =>
+  nums.reduce((acc, val) => acc + val, 0) / nums.length;
 average(...[1, 2, 3]); // 2
 average(1, 2, 3); // 2
-
 ```
 
 8\. averageBy
@@ -97,12 +101,12 @@ This snippet returns the average of an array after initially doing the mapping o
 
 ```js
 const averageBy = (arr, fn) =>
-  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0) /
-  arr.length;
+  arr
+    .map(typeof fn === "function" ? fn : (val) => val[fn])
+    .reduce((acc, val) => acc + val, 0) / arr.length;
 
-averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 5
-averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
-
+averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], (o) => o.n); // 5
+averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], "n"); // 5
 ```
 
 9\. bifurcate
@@ -113,10 +117,12 @@ You can use `Array.prototype.reduce()`and `Array.prototype.push()`to add element
 
 ```js
 const bifurcate = (arr, filter) =>
-  arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
-bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]);
+  arr.reduce(
+    (acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc),
+    [[], []]
+  );
+bifurcate(["beep", "boop", "foo", "bar"], [true, true, false, true]);
 // [ ['beep', 'boop', 'bar'], ['foo'] ]
-
 ```
 
 10\. bifurcateBy
@@ -127,11 +133,13 @@ You can use `Array.prototype.reduce()`and `Array.prototype.push()`to add element
 
 ```js
 const bifurcateBy = (arr, fn) =>
-  arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []]);
+  arr.reduce(
+    (acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc),
+    [[], []]
+  );
 
-bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b');
+bifurcateBy(["beep", "boop", "foo", "bar"], (x) => x[0] === "b");
 // [ ['beep', 'boop', 'bar'], ['foo'] ]
-
 ```
 
 11\. bottomVisible
@@ -141,10 +149,10 @@ This snippet checks whether the bottom of a page is visible.
 ```js
 const bottomVisible = () =>
   document.documentElement.clientHeight + window.scrollY >=
-  (document.documentElement.scrollHeight || document.documentElement.clientHeight);
+  (document.documentElement.scrollHeight ||
+    document.documentElement.clientHeight);
 
 bottomVisible(); // true
-
 ```
 
 12\. byteSize
@@ -152,11 +160,10 @@ bottomVisible(); // true
 This snippet returns the length of a string in bytes.
 
 ```js
-const byteSize = str => new Blob([str]).size;
+const byteSize = (str) => new Blob([str]).size;
 
-byteSize('😀'); // 4
-byteSize('Hello World'); // 11
-
+byteSize("😀"); // 4
+byteSize("Hello World"); // 11
 ```
 
 13\. capitalize
@@ -164,12 +171,10 @@ byteSize('Hello World'); // 11
 This snippet capitalizes the first letter of a string.
 
 ```js
-const capitalize = ([first, ...rest]) =>
-  first.toUpperCase() + rest.join('');
+const capitalize = ([first, ...rest]) => first.toUpperCase() + rest.join("");
 
-capitalize('fooBar'); // 'FooBar'
-capitalize('fooBar', true); // 'FooBar'
-
+capitalize("fooBar"); // 'FooBar'
+capitalize("fooBar", true); // 'FooBar'
 ```
 
 14\. capitalizeEveryWord
@@ -177,10 +182,10 @@ capitalize('fooBar', true); // 'FooBar'
 This snippet capitalizes the first letter of every word in a given string.
 
 ```js
-const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+const capitalizeEveryWord = (str) =>
+  str.replace(/\b[a-z]/g, (char) => char.toUpperCase());
 
-capitalizeEveryWord('hello world!'); // 'Hello World!'
-
+capitalizeEveryWord("hello world!"); // 'Hello World!'
 ```
 
 15\. castArray
@@ -188,11 +193,10 @@ capitalizeEveryWord('hello world!'); // 'Hello World!'
 This snippet converts a non-array value into array.
 
 ```js
-const castArray = val => (Array.isArray(val) ? val : [val]);
+const castArray = (val) => (Array.isArray(val) ? val : [val]);
 
-castArray('foo'); // ['foo']
+castArray("foo"); // ['foo']
 castArray([1]); // [1]
-
 ```
 
 16\. compact
@@ -200,11 +204,10 @@ castArray([1]); // [1]
 This snippet removes false values from an array.
 
 ```js
-const compact = arr => arr.filter(Boolean);
+const compact = (arr) => arr.filter(Boolean);
 
-compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]);
+compact([0, 1, false, 2, "", 3, "a", "e" * 23, NaN, "s", 34]);
 // [ 1, 2, 3, 'a', 's', 34 ]
-
 ```
 
 17\. countOccurrences
@@ -212,9 +215,9 @@ compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]);
 This snippet counts the occurrences of a value in an array.
 
 ```js
-const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+const countOccurrences = (arr, val) =>
+  arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
-
 ```
 
 18\. Create Directory
@@ -222,11 +225,11 @@ countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 This snippet uses `existsSync()` to check whether a directory exists and then `mkdirSync()` to create it if it doesn't.
 
 ```js
-const fs = require('fs');
-const createDirIfNotExists = dir => (!fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined);
-createDirIfNotExists('test');
+const fs = require("fs");
+const createDirIfNotExists = (dir) =>
+  !fs.existsSync(dir) ? fs.mkdirSync(dir) : undefined;
+createDirIfNotExists("test");
 // creates the directory 'test', if it doesn't exist
-
 ```
 
 19\. currentURL
@@ -237,7 +240,6 @@ This snippet returns the current URL.
 const currentURL = () => window.location.href;
 
 currentURL(); // 'https://medium.com/@fatosmorina'
-
 ```
 
 20\. dayOfYear
@@ -245,11 +247,10 @@ currentURL(); // 'https://medium.com/@fatosmorina'
 This snippet gets the day of the year from a `Date`object.
 
 ```js
-const dayOfYear = date =>
+const dayOfYear = (date) =>
   Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
 
 dayOfYear(new Date()); // 272
-
 ```
 
 21\. decapitalize
@@ -257,12 +258,10 @@ dayOfYear(new Date()); // 272
 This snippet turns the first letter of a string into lowercase.
 
 ```js
-const decapitalize = ([first, ...rest]) =>
-  first.toLowerCase() + rest.join('')
+const decapitalize = ([first, ...rest]) => first.toLowerCase() + rest.join("");
 
-decapitalize('FooBar'); // 'fooBar'
-decapitalize('FooBar'); // 'fooBar
-
+decapitalize("FooBar"); // 'fooBar'
+decapitalize("FooBar"); // 'fooBar
 ```
 
 22\. deepFlatten
@@ -270,21 +269,21 @@ decapitalize('FooBar'); // 'fooBar
 This snippet flattens an array recursively.
 
 ```js
-const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
+const deepFlatten = (arr) =>
+  [].concat(...arr.map((v) => (Array.isArray(v) ? deepFlatten(v) : v)));
 
 deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
-
 ```
 
 23\. default
 
-This snippet assigns default values for all properties in an object that are *undefined*.
+This snippet assigns default values for all properties in an object that are _undefined_.
 
 ```js
-const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
+const defaults = (obj, ...defs) =>
+  Object.assign({}, obj, ...defs.reverse(), obj);
 
 defaults({ a: 1 }, { b: 2 }, { b: 6 }, { a: 3 }); // { a: 1, b: 2 }
-
 ```
 
 24\. defer
@@ -294,8 +293,7 @@ This snippet delays the execution of a function until the current call stack is 
 ```js
 const defer = (fn, ...args) => setTimeout(fn, 1, ...args);
 
-defer(console.log, 'a'), console.log('b'); // logs 'b' then 'a'
-
+defer(console.log, "a"), console.log("b"); // logs 'b' then 'a'
 ```
 
 25\. degreesToRads
@@ -629,8 +627,7 @@ indexOfAll([1, 2, 3], 4); // []
 
 ```
 
-52\. initial
-============
+# 52\. initial
 
 This snippet returns all elements of an array except the last one.
 
@@ -1263,7 +1260,7 @@ sample([3, 7, 9, 11]); // 9
 
 This snippet can be used to get `n`random elements from unique positions from an array up to the size of the array. Elements in the array are shuffled using the [Fisher-Yates algorithm](https://github.com/30-seconds/30-seconds-of-code#shuffle)
 
-```
+````
 const sampleSize = ([...arr], n = 1) => {
   let m = arr.length;
   while (m) {
@@ -1276,4 +1273,4 @@ const sampleSize = ([...arr], n = 1) => {
 sampleSize([1, 2, 3], 2); // [3,1]
 sampleSize([1, 2, 3], 4); // [2,3,1]
 ```.
-```
+````

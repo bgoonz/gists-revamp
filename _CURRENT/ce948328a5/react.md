@@ -1,6 +1,9 @@
 # **Notes**
+
 # **Notes**
+
 ## **Random Things to Remember**
+
 - Using `()` implicity returns components.
 - Role of `index.js` is to _render_ your application.
 - The reference to `root` comes from a div in the body of your public html file.
@@ -16,10 +19,13 @@
   }
   ```
 - Purpose of `React.Fragment` is to allow you to create groups of children without adding an extra dom element.
+
 ---
+
 ## **Front-End History**
+
 - React makes it easier for you to make front-end elements.
-**A front-end timeline**
+  **A front-end timeline**
 - Some noteworthy front end libraries that have been used in the past few years:
   - 2005: Script.aculo.us
   - 2005: Dojo
@@ -39,6 +45,7 @@
   - Just contains a few rules for developers to follow, and it just works.
 - **JSX** : Javascript Extension is a language invented to help write React Applications (looks like a mixture of JS and HTML)
 - Here is an overview of the difference between rendering out vanilla JS to create elements, and JSX:
+
 ```js
 fetch("https://example.com/api/people")
   .then((response) => response.json())
@@ -51,6 +58,7 @@ fetch("https://example.com/api/people")
     document.querySelector("#people-list").innerHTML = html;
   });
 ```
+
 ```jsx
 function PeopleList(props) {
   return (
@@ -72,20 +80,25 @@ fetch("https://example.com/api/people")
     ReactDOM.render(<PeopleList props={props} />, peopleListElement);
   });
 ```
+
 - This may seem like a lot of code but when you end up building many components, it becomes nice to put each of those functions/classes into their own files to organize your code.
-**Using tools with React**
+  **Using tools with React**
 - **`React DevTools`** : New tool in your browser to see ow React is working in the browser
 - **`create-react-app`** : Extensible command-line tool to help generate standard React applications.
 - **`Webpack`** : In between tool for dealing with the extra build step involved.
-![pic](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/webpack.png)
+  ![pic](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/webpack.png)
 - **HMR** : (Hot Module Replacement) When you make changes to your source code the changes are delivered in real-time.
 - React Developers created something called `Flux Architecture` to moderate how their web page consumes and modifies data received from back-end API's.
-![fluxarch](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/flux-architecture.png)
-**Choosing React**
+  ![fluxarch](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/flux-architecture.png)
+  **Choosing React**
 - Basically, React is super important to learn and master.
+
 ---
+
 ## **React Concepts and Features**
+
 There are many benefits to using React over just Vanilla JS.
+
 - **`Modularity`**
   - To avoid the mess of many event listeners and template strings, React gives you the benefit of a lot of modularity.
 - **`Easy to start`**
@@ -95,17 +108,22 @@ There are many benefits to using React over just Vanilla JS.
   - React is declarative in nature, utilizing either it's build in createElement method or the higher-level language known as JSX.
 - **`Reusability`**
   - Create elements that can be re-used over and over.
-**One-flow of data**
+    **One-flow of data**
 - React apps are built as a combination of parent and child components.
   - Parents can have one or more child components, all children have parents.
   - Data is never passed from child to the parent.
 - **`Virtual DOM`** : React provides a Virtual DOM that acts as an agent between the real DOM and the developer to help debug, maintain, and provide general use.
   - Due to this usage, React handles web pages much more intelligently; making it one of the speediest Front End Libraries available.
+
 ---
+
 ## **ES6 Refresher**
+
 **Exporting one item per file**
+
 - Use `export default` statement in ES6 to export an item.
-**ES6**
+  **ES6**
+
 ```js
 export default class Wallet {
   // ...
@@ -115,7 +133,9 @@ function sayHello() {
   console.log("Hello!");
 }
 ```
+
 **CommonJS** (Equivalent)
+
 ```js
 class Wallet {
   // ...
@@ -126,9 +146,12 @@ function sayHello() {
 }
 module.exports = Wallet;
 ```
+
 **Exporting multiple items per file**
+
 - Use just thw `export` keyword (without default) to export multiple items per file.
-**ES6** (Better to export them individually like this, rather than bunching them all into an object)
+  **ES6** (Better to export them individually like this, rather than bunching them all into an object)
+
 ```js
 export class Wallet {
   // ...
@@ -150,7 +173,9 @@ const sayHi = () => {
 };
 export { Wallet, sayHello, sayHi };
 ```
+
 **CommonJS** (Equivalent)
+
 ```js
 class Wallet {
   // ...
@@ -167,23 +192,31 @@ module.exports = {
   sayHi,
 };
 ```
+
 **Importing with ES6 vs CommonJS**
 ![pic](https://i.gyazo.com/c878559d41854ce51a288c50021511c9.png)
+
 - Import statements in ES6 modules must **always** be at the top of the file, because all imports must occur before the rest of the file's code runs.
-**ES6**
+  **ES6**
+
 ```js
 import { Wallet } from "./wallet";
 import * as fs from "fs";
 const wallet = new Wallet();
 ```
+
 **CommonJS**
+
 ```js
 let { Wallet } = require("./wallet");
 const wallet = new Wallet();
 let fs = require("fs");
 ```
+
 **Unnamed default imports**
+
 - You can name unnamed items exported with export default any name when you import them.
+
 ```js
 // exporting
 export default class Wallet {
@@ -193,7 +226,9 @@ export default class Wallet {
 import Money from "wallet.js";
 const wallet = new Money();
 ```
+
 - Just remember if you use `export` instead of `export default` then your import is already named and cannot be renamed.
+
 ```js
 // exporting
 export class Wallet {
@@ -203,9 +238,12 @@ export class Wallet {
 import { Wallet } from "wallet.js";
 const wallet = new Wallet();
 ```
+
 **Aliasing imports**
+
 - Use as asterisk to import an entire module's contents.
   - Keep in mind you **must** use an **`as`** keyword to refer to it later.
+
 ```js
 // export
 export function sayHello() {
@@ -219,34 +257,46 @@ import * as Greetings from "greetings.js";
 Greetings.sayHello(); // Hello!
 Greetings.sayHi(); // Hi!
 ```
+
 - You can also name identically named functions or items from different files.
+
 ```js
 import { Wallet as W1 } from "./wallet1";
 import { Wallet as W2 } from "./wallet2";
 const w1 = new W1();
 const w2 = new W2();
 ```
+
 **Browser support for ES6 Modules**
+
 - ES6 Modules can only be used when a JS file is specified as a module.
   `<script type="module" src="./wallet.js"></script>`
 - You can get browser support for ES6 modules by adding module into your script tag.
+
 ---
+
 ---
+
 # **Notes**
+
 ## **JSX In Depth**
+
 - Remember that JSX is just syntactic sugar for the built in `React.createElement(component, props, ...children)`
 - React Library must always be in scope from your JSX code.
 - Use Dot Notation for JSX Type
 - User-Defined Components Must Be Capitalized `<Foo />` vs `<div>`
 - Cannot use a general expression as the React element type.
-(`Incorrect`)
+  (`Incorrect`)
+
 ```js
   function Story(props) {
   // Wrong! JSX type can't be an expression.
     return <components[props.storyType] story={props.story} />;
   };
 ```
+
 (`Corrected`)
+
 ```js
 function Story(props) {
   // Correct! JSX type can be a capitalized variable.
@@ -254,7 +304,9 @@ function Story(props) {
   return <SpecificStory story={props.story} />;
 }
 ```
+
 **Props in JSX**
+
 - Several ways to specify props in JSX.
 - **`Javascript Expressions as Props`**
   ```js
@@ -282,9 +334,10 @@ function Story(props) {
     return <Greeting {...props} />;
   }
   ```
-**Children in JSX**
+  **Children in JSX**
 - **`props.children`** : The content between opening and closing tag.
-**JavaScript Expressions as Children**
+  **JavaScript Expressions as Children**
+
 ```js
 function Item(props) {
   return <li>{props.message}</li>;
@@ -300,8 +353,11 @@ function TodoList() {
   );
 }
 ```
+
 **Functions as Children**
+
 - `props.children` works like any other prop, meaning it can pass any sort of data.
+
 ```js
 // Calls the children callback numTimes to produce a repeated component
 function Repeat(props) {
@@ -319,17 +375,22 @@ function ListOfTenThings() {
   );
 }
 ```
+
 **Booleans, Null, and Undefined Are Ignored**
+
 - `false`, `null`, `undefined`, and `true` are all valid children.
   - They will **not** render.
 - You can use these to conditionally render items.
+
 ```js
 <div>
   {showHeader && <Header />}
   <Content />
 </div>
 ```
+
 - In this example, the component will only render if `showHeader` evals to True.
+
 ```js
 // Before work-around
 <div>
@@ -344,13 +405,18 @@ function ListOfTenThings() {
   }
 </div>
 ```
+
 - Note that certain falsy values such as zero will still be rendered by React, you can work around this by ensuring situations like the above eval. into a boolean.
 - In the times you want booleans to be rendered out, simply **convert it into a string** first.
+
 ```js
 <div>My JavaScript variable is {String(myVariable)}.</div>
 ```
+
 ## **Reconciliation**
+
 **The Diffing Algorithm**
+
 - **`Diffing`** : When the state of a component changes React creates a new virtual DOM tree.
 - Elements of Different Types
   - Every time the root elements have different types, React tears down the old tree and builds the new tree from scratch.
@@ -374,12 +440,16 @@ function ListOfTenThings() {
 - Tradeoffs
   - Important to remember that reconciliation algorithm is an _implementation detail_.
   - Re-rendering only to apply the differences following the rules stated in the previous sections.
+
 ---
+
 ## **Typechecking With PropTypes**
+
 - As your application grows, you can use React's `typechecking` to catch bugs.
 - `propTypes` is a special property to run typechecking.
   - exports range of built in validators to ensure your received data is valid.
   - propTypes is only checked in development mode.
+
 ```js
 import PropTypes from "prop-types";
 class Greeting extends React.Component {
@@ -391,8 +461,11 @@ Greeting.propTypes = {
   name: PropTypes.string,
 };
 ```
+
 **Requiring Single Child**
+
 - Use `PropTypes.element` to specify only a single child can be passed to a component as children.
+
 ```js
 import PropTypes from "prop-types";
 class MyComponent extends React.Component {
@@ -406,8 +479,11 @@ MyComponent.propTypes = {
   children: PropTypes.element.isRequired,
 };
 ```
+
 **Default Prop Values**
+
 - Use `defaultProps` to assign default values for props.
+
 ```js
 class Greeting extends React.Component {
   render() {
@@ -421,6 +497,7 @@ Greeting.defaultProps = {
 // Renders "Hello, Stranger":
 ReactDOM.render(<Greeting />, document.getElementById("example"));
 ```
+
 ```js
 class Greeting extends React.Component {
   static defaultProps = {
@@ -432,14 +509,19 @@ class Greeting extends React.Component {
     )
   }
 ```
+
 ---
+
 ---
+
 # **Notes**
+
 ## **React Router Introduction**
+
 - `React Router` is the answer for rendering different components for different pages.
   - A front-end library that allows you to control which components to display using the browser location.
   - `Client-side Routing`
-**Getting started with routing**
+    **Getting started with routing**
 - Install React Router with:
   ```js
   npm install --save react-router-dom@^5.1.2
@@ -452,13 +534,14 @@ class Greeting extends React.Component {
     - Wrap it around components.
     - Creates a `React Context` that passes routing information down to all its descendant components.
 - You can also use `HashRouter`, where it would generate a hash before the endpoint.
-**Creating frontend routes**
+  **Creating frontend routes**
 - React Router helps your app render specific components based on the URL.
 - The most common component is `<Route>`
   - Wrapped around another component, causing the comp. to only render if the a certain URL is matched.
   - **`Props`** : path, component, exact, and [render]
 - Browser Router can only have a single child component.
   - The Browser Router wraps all routes within a parent div element.
+
 ```js
 const Root = () => {
   const users = {
@@ -477,6 +560,7 @@ const Root = () => {
   );
 };
 ```
+
 - **component**
   - Indicates component to render.
 - **path**
@@ -503,15 +587,17 @@ const Root = () => {
   };
   <Route path="/users" render={() => <Users users={users} />} />;
   ```
-**Route path params**
+  **Route path params**
 - Your component's props can hold information about URL's parameters.
   - Will match segments starting at `:` to the next `/`, `?`, `#`.
+
 ```js
 <Route
   path="/users/:userId"
   render={(props) => <Profile users={users} {...props} />}
 />
 ```
+
 - `{...props}` spreads out the router's props.
 - `props.match.params` is used to access the match prop's parameters.
 - Useful keys on the `match` object:
@@ -519,32 +605,34 @@ const Root = () => {
   - `url` : the currentURL
   - `path` : Route path it matched against (w/o wildcards)
   - `params` : Matches for the individual wildcard segments.
+
 ---
+
 ## **Navigation**
+
 **React Router Navigation**
+
 - `Link`, `NavLink`, `Redirect`, `history` props of React Router are used to help your user navigate routes.
-**Adding links for navigation**
+  **Adding links for navigation**
 - Issues on-click navigation event to a route defined in app.
 - Usage renders an anchor tag with a correctly set `href` attribute.
+
 ```js
 import { BrowserRouter, Route, Link } from "react-router-dom";
 ```
+
 - `Link` takes two properties: `to` and `onClick`.
   - `to` : route location that points to an absolute path.
   - `onClick` : clickHandler.
 - `NavLink` works just like `Link` but has a bit of extra functionality.
   - Adds extra styling, when the path it links to matches the current path.
   - As it's name suggests, it is used to Nav Bars.
-  - Takes three props:
-    - `activeClassName` : allows you to set a CSS class name for styling. (default set to 'active')
-    - `activeStyle` : style object that is applied inline when it's `to` prop. matches the current URL.
-    - `exact` prop is a boolean that defaults to false; you can set it to true to apply requirement of an exact URL match.
-      - exact can also be used as a flag instead of a reg. property value.
-      - benefit of adding this is so that you don't trigger other matches.
-**Switching between routes**
+  - Takes three props: - `activeClassName` : allows you to set a CSS class name for styling. (default set to 'active') - `activeStyle` : style object that is applied inline when it's `to` prop. matches the current URL. - `exact` prop is a boolean that defaults to false; you can set it to true to apply requirement of an exact URL match. - exact can also be used as a flag instead of a reg. property value. - benefit of adding this is so that you don't trigger other matches.
+    **Switching between routes**
 - **`<Switch>`** : Component allows you to only render one route even if several match the current URL.
   - You may nest as many routes as you wish but only the first match of the current URL will be rendered.
 - Very useful if we want a default component to render if none of our routes match.
+
 ```js
 <Switch>
   <Route path="some/url" component={SomeComponent} />
@@ -552,9 +640,11 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
   <Route component={DefaultComponent} />
 </Switch>
 ```
+
 - `DefaultComponent` will only render if none of the other URLs match up.
 - **`<Redirect>`** : Helps redirect users.
   - Only takes a single prop: `to`.
+
 ```js
 <Route
   exact
@@ -562,22 +652,30 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
   render={() => (this.props.currentUser ? <Home /> : <Redirect to="/login" />)}
 />
 ```
+
 **History**
+
 - `History` allows you to update the URL programmatically.
 - Contains two useful methods:
   - `push` : Adds a new URL to the end of the history stack.
   - `replace` : Replaces the current URL on the history stack, so the back button won't take you to it.
+
 ```js
 // Pushing a new URL (and adding to the end of history stack):
 const handleClick = () => this.props.history.push("/some/url");
 // Replacing the current URL (won't be tracked in history stack):
 const redirect = () => this.props.history.replace("/some/other/url");
 ```
+
 ---
+
 ## **Nested Routes**
+
 **Why nested routes?**
+
 - Create routes that tunnel into main components vs getting rendered on the main page as it's own thing.
-**What are nested routes?**
+  **What are nested routes?**
+
 ```js
 const Profile = (props) => {
   // Custom call to database to fetch a user by a user ID.
@@ -594,7 +692,9 @@ const Profile = (props) => {
   );
 };
 ```
+
 **Alt. version using `props.match`**
+
 ```js
 // Destructure `match` prop
 const Profile = ({ match: { url, path, params }) => {
@@ -612,25 +712,29 @@ const Profile = ({ match: { url, path, params }) => {
   );
 };
 ```
+
 - As you can see above, our end URL isn't even defined until we apply those flexible values in.
+
 ---
+
 ## **React Builds**
+
 - **`Build`** : Process of converting code into something that can actually execute or run on the target platform.
   - In regards to React, the minimum a build should do is convert JSX to something that browsers can understand.
-**Reviewing common terminology**
+    **Reviewing common terminology**
 - **`Linting`** : Process of using a tool to analyze your code to catch common errors, bugs, inconsistencies etc...
 - **`Transpilation`** : Process of converting source code, like JS, from one version to another.
 - **`Minification`** : Process of removing all unnecessary characters in your code.
 - **`Bundling`** : Process of combining multiple code files into a single file.
 - **`Tree Shaking`** : Process of removing unused or dead code from your application before it's bundled.
-**Configuration or code?**
+  **Configuration or code?**
 - `Configuration` allows developers to create build tasks by declaring either JSON, XML, or YAML without explicitly writing every step in the process.
 - `Coding` or `Scripting` simply requires code.
-**Babel and webpack (yes, that's intentionally a lowercase 'w')**
+  **Babel and webpack (yes, that's intentionally a lowercase 'w')**
 - **`Babel`** : Code Transpiler that allows you to use all of the latest features and syntax wihtout worrying about what browsers support what.
 - **`webpack`** : Allows developers to use JS modules w/o requiring users to use a browser that natively supports ES modules.
 - Create React App uses webpack and Babel under the hood to build applications.
-**The Create React App build process**
+  **The Create React App build process**
 - What happens when you run `npm start`:
   1. .env variables are loaded.
   2. list of browsers to support are checked.
@@ -640,21 +744,26 @@ const Profile = ({ match: { url, path, params }) => {
   6. `webpack-dev-starter` compiles app.
   7. `index.html` is loaded into browser
   8. file watcher is started to watch for changes.
-**Ejecting**
+     **Ejecting**
 - There is a script in Create React App called `eject` that allows you to 'eject' your application and expose all the hidden stuff.
-**Preparing to deploy a React application for production**
+  **Preparing to deploy a React application for production**
 - **Defining Env Variables**
+
 ```
 REACT_APP_FOO: some value
 REACT_APP_BAR: another value
 ```
+
 ```js
 console.log(process.env.REACT_APP_FOO);
 ```
+
 ```html
 Can be referenced in your index.html like so: <title>%REACT_APP_BAR%</title>
 ```
+
 **Configuring the supported browsers**
+
 ```js
 {
   "browserslist": {
@@ -671,29 +780,42 @@ Can be referenced in your index.html like so: <title>%REACT_APP_BAR%</title>
   }
 }
 ```
+
 - If you specify older browsers it will affect how your code get's transpiled.
-**Creating a production build**
+  **Creating a production build**
 - Run `npm run build` to create a production build.
   - Bundles React in production mode and optimizes the build for the best performance.
+
 ---
+
 ---
+
 # **Notes**
+
 ## **Introduction to React**
+
 - Simply a nice library that turns data into DOM.
 - **`Tree Diffing`** : Fast comparison and patching of data by comparing the current virtual DOM and new virtual DOM - updating only the pieces that change.
 - `It's just a tree with some fancy diffing`
+
 ---
+
 ## **Create Element**
+
 **From JavaScript To DOM**
+
 - The `React.createElement` function has the following form:
+
 ```js
 React.createElement(type, [props], [...children]);
 ```
+
 - **`Type`** : Type of element to create, i.e. a string for an HTML element or a reference to a function or class that is a React component.
 - **`Props`** : Object that contains data to render the element.
 - **`Children`** : Children of the elemet, as many as you want.
-**Creating elements**
+  **Creating elements**
 - Our rendering goal:
+
 ```html
 <ul>
   <li class="selected">
@@ -704,6 +826,7 @@ React.createElement(type, [props], [...children]);
   </li>
 </ul>
 ```
+
 - There are five tags to create:
   - One `ul`
   - Two `li`
@@ -715,7 +838,8 @@ React.createElement(type, [props], [...children]);
   - `ul` is the parent of both `li`
   - Each `li` has an `a` element as a child
   - Each `a` has a `text content` child
-![pic](https://gyazo.com/8c9a121612c806360941d693b085b3b1)
+    ![pic](https://gyazo.com/8c9a121612c806360941d693b085b3b1)
+
 ```js
 React.createElement(
   "ul",
@@ -732,8 +856,11 @@ React.createElement(
   )
 );
 ```
+
 **Converting to virtual DOM**
+
 - After you set up your `React.createElement`, you use `React.render` to take the value returned from cE and a DOM node to insert into the conversion of the real DOM.
+
 ```js
 // Put the element tree in a variable
 const navList = React.createElement(
@@ -755,16 +882,22 @@ const mainElement = document.querySelector("main");
 // Give React the element tree and the target
 ReactDOM.render(navList, mainElement);
 ```
+
 - JS Code => Virtual DOM => Real Dom
-**Updates**
+  **Updates**
 - If you call React.render a second or multiple times it just checks the existing Virtual DOM and it knows which smaller areas to change.
-**Thinking in Components**
+  **Thinking in Components**
 - Components are pieces of reusable front-end pieces.
 - Components should be Single Responsibility Principle compliant.
+
 ---
+
 ## **Create Element**
+
 **`React.createElement Demo`**
+
 - Can import non-local dependencies with `import 'package-link'`
+
 ```js
 const App = () => React.createElement("h1", null, "Hello, Programmers!");
 const target = document.querySelector("main");
@@ -772,8 +905,10 @@ const app = React.createElement(App, null);
 // Give React the element tree and the target
 ReactDOM.render(app, target);
 ```
+
 - Remember when importing modules from other files you have to denote the file type in the import statement.
-**HTML Original**
+  **HTML Original**
+
 ```html
 <section class="clue">
   <h1 class="clue__title">Clue$ 268530</h1>
@@ -788,7 +923,9 @@ ReactDOM.render(app, target);
   </div>
 </section>
 ```
+
 **React Version**
+
 ```js
 const Clue = () =>
   React.createElement(
@@ -800,20 +937,24 @@ const Clue = () =>
     React.createElement("div", { className: "clue__amount" }, "$800")
   );
 ```
+
 - Because `class` is a reserved keyword in JS, in React we can use `className` to assign a class to an element.
 - Remember the data that goes into createElement: element type, data to pass into the element, and then children.
 - **`props`** : Properties;
 - To handle certain values that are initially undefined, we can use `defaultProps`.
+
 ```js
 Clue.defaultProps = {
   category: {},
 };
 ```
+
 - You can change in the devTools Network tab the internet speed to check for values that may be undefined to hangle with defaultProps.
 - If we fetch multiple pieces of data, we can render many things by using `map`.
 - You need to assign a unique key to each of the clues.
   - We need to keep track of them individually so that React can easily refer to a specific one if there is an issue.
     `clue => { key:clue.id, ...clue }`
+
 ```js
 const App = (props) =>
   React.createElement(
@@ -825,17 +966,24 @@ const App = (props) =>
   );
 export default App;
 ```
+
 - Note: JSX is preferred over React.createElement;
+
 ---
+
 ## **Notes from Hello Programmer Exercise**
+
 - When you import modules from websites they must have CORs activated.
 - These import statements, import `global variables`.
 - When we want to move our code into production we need to change the imports into the production minified versions.
+
 ```js
 import "https://unpkg.com/react@16/umd/react.production.min.js";
 import "https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js";
 ```
+
 - While we will never actually be creating full apps with just React.createElement => it is the enginer that is running under the hood!
+
 ```js
 import "https://unpkg.com/react@16/umd/react.development.js";
 import "https://unpkg.com/react-dom@16/umd/react-dom.development.js";
@@ -872,12 +1020,16 @@ const app = React.createElement(AllTogether, null);
 // Render from the Virtual Dom to the Actual Dom
 ReactDOM.render(app, target);
 ```
+
 ---
+
 ## **Introduction to JSX**
+
 - **`JSX`** : Javascript Extension, a new language created by React developers to have an easier way of interacting with the React API.
-**How to use JSX**
+  **How to use JSX**
 - We will use **`babel`** to convert version of modern JS into an older version of JS.
   **React Create Element**
+
 ```js
 const ExampleComponent = (props) =>
   React.createElement(
@@ -888,7 +1040,9 @@ const ExampleComponent = (props) =>
     React.createElement("a", { href: props.searchUrl }, props.searchText)
   );
 ```
+
 **JSX Version**
+
 ```js
 const ExampleComponent = (props) => (
   <React.Fragment>
@@ -898,9 +1052,11 @@ const ExampleComponent = (props) => (
   </React.Fragment>
 );
 ```
+
 - Keep in mind that self closing tags in React must have a `forward slash` to close it.
   ![syn](https://gyazo.com/ede2a5d5791902aad53f82b7b4854b51)
 - **Properties and Data**
+
 ```js
 <img src="https://via.placeholder.com/150" />;
 // becomes..
@@ -912,13 +1068,16 @@ React.createElement("a", { href: props.searchUrl }, props.searchText);
 // if you want the text search uppercase..
 <a href={props.searchUrl}>{props.searchText.toUpperCase()}</a>;
 ```
+
 - Comments in JSX have the following syntax:
+
 ```js
 <div>
   <h2>This is JSX</h2>
   {/* This is a comment in JSX */}
 </div>
 ```
+
 - **`Property Names`**:
   - **`checked`** : Attribute of input components such as checkbox or radio, use it to set whether the component is checked or not.
   - **`className`** : Used to specify a CSS class.
@@ -928,7 +1087,8 @@ React.createElement("a", { href: props.searchUrl }, props.searchText);
   - **`style`** : Accepts a JS object with camelCase properties rather than a CSS string.
   - **`value`** : Supported by Input, Select, and TextArea components; use it to set the value of the component.
 - Note: React uses camel-case!!!
-**The JSX semicolon gotcha**
+  **The JSX semicolon gotcha**
+
 ```js
 function App() {
   return (
@@ -939,7 +1099,9 @@ function App() {
   );
 }
 ```
+
 **create Element equivalent**
+
 ```js
 is equivalent to
 function App() {
@@ -953,15 +1115,20 @@ function App() {
   );
 }
 ```
+
 - We wrap what want to return in parenthesis so JS doesn't auto add semi-colons after every line and run the code incorrectly.
 - Just remember if you decided to use the return keyword in a function to 'return some JSX', then make sure you wrap the JSX in parenthesis.
+
 ---
+
 `npx create-react-app my-app`
+
 - Single line used to initiate a React application.
 - React has a great toolchain where you can see changes live as you're editing your application.
 - React errors will be rendered directly onto the browser window.
 - A downside is that it installs a lot of bloat files.
 - Examples of React create Element and JSX equivalent
+
 ```js
 React.createElement(
   "a",
@@ -976,6 +1143,7 @@ React.createElement(
   App Academy
 </a>;
 ```
+
 ```js
 React.createElement(
   OwnerDetails,
@@ -990,7 +1158,9 @@ React.createElement(
   {props.name}
 </OwnerDetails>;
 ```
+
 **More Complex JSX Example**
+
 ```js
 const BookPanel = (props) => {
   <section className="book" id={`book-${props.id}`}>
@@ -1000,12 +1170,18 @@ const BookPanel = (props) => {
   </section>;
 };
 ```
+
 ---
+
 ---
+
 # **Notes**
+
 ## **Using Custom CRA Templates**
+
 **Using a Custom Template**
 `npx create-react-app my-app --template @appacademy/simple`
+
 - Keep in mind that using `create-react-app` automatically initializes a git repository for you!
 - App Academy custom template for creating a react app.
 - If using the default react create project you can delete the following files:
@@ -1015,6 +1191,7 @@ const BookPanel = (props) => {
   - logo512.png
   - manifest.json
 - You can also simplify the `html` file into:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -1027,7 +1204,9 @@ const BookPanel = (props) => {
   </body>
 </html>
 ```
+
 **Simplifying the src folder**
+
 - Remove:
   App.css
   App.test.js
@@ -1035,6 +1214,7 @@ const BookPanel = (props) => {
   serviceWorker.js
   setupTests.js
 - Update the Following Files:
+
 ```js
 // ./src/App.js
 import React from "react";
@@ -1044,6 +1224,7 @@ function App() {
 export default App;
 ``;
 ```
+
 ```js
 // ./src/index.js
 import React from "react";
@@ -1057,11 +1238,16 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+
 ---
+
 ## **React Class Components**
+
 **Class Components**
+
 - You can write React components using ES2015 Classes:
   **Function Component**
+
 ```js
 // ./src/Message.js
 import React from "react";
@@ -1070,7 +1256,9 @@ const Message = (props) => {
 };
 export default Message;
 ```
+
 **ES2015 Version**
+
 ```js
 // ./src/Message.js
 import React from "react";
@@ -1081,8 +1269,10 @@ class Message extends React.Component {
 }
 export default Message;
 ```
+
 - We can access props within a `class component` by using `this.props`
 - Keep in mind Class Components are used just like function components.
+
 ```js
 // ./src/index.js
 import React from "react";
@@ -1095,7 +1285,9 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+
 **Setting and accessing props**
+
 ```js
 class Message extends React.Component {
   constructor(props) {
@@ -1107,25 +1299,27 @@ class Message extends React.Component {
   }
 }
 ```
+
 - If we define a constructor method in our Class Component, we have to define the `super` method with `props` passed through it.
 - Side Note: Before React used ES2015 Classes, it used `React.createclass` function, if you ever need to use this antiquated method make sure you install a module called `create-react-class`
-**Stateful components**
+  **Stateful components**
 - One of the major reasons why you would choose to use a **Class Component** over a Function Component is to add and manage local or internal state to your component.
 - Second of the major reasons is to be able to use a Class Component's lifecycle methods.
-**What is state?**
+  **What is state?**
 - Props are data that are provided by the consumer or caller of the component.
   - Not meant to be changed by a component.
 - State is data that is **`internal`** to the component.
   - Intended to be updated or mutated.
-**When to use state**
+    **When to use state**
 - _Only Use State when it is absolutely necessary_
   - If the data never changes, or if it's needed through an entire application use props instead.
 - State is more often used when creating components that retrieve data from APIs or render forms.
 - **The general rule of thumb**: If a component doesn't need to use state or lifecyle methods, it should be prioritized as a **`function component`**.
 - Functional:Stateless || Class:Stateful
-**Initializing state**
+  **Initializing state**
 - Use a class constructor method to initialize `this.state` object.
-// Application Entry Point
+  // Application Entry Point
+
 ```js
 // ./src/index.js
 import React from 'react'
@@ -1138,7 +1332,9 @@ ReactDOM.render(
   document.getElementById('root');
 )
 ```
+
 // Class Component: RandomQuote
+
 ```js
 import React from "react";
 class RandomQuote extends React.Component {
@@ -1170,7 +1366,9 @@ class RandomQuote extends React.Component {
 }
 export default RandomQuote;
 ```
+
 **Updating State**
+
 - Let's say we want to update our state with a new quote.
 - We can set up event listeners in React similarly to how we did them before.
   ```js
@@ -1181,6 +1379,7 @@ export default RandomQuote;
   - `onClick` is the event listener.
   - `{this.changeQuote}` is the event handler method.
 - Our Class Component File should now look like this with the new additions:
+
 ```js
 import React from "react";
 class RandomQuote extends React.Component {
@@ -1223,15 +1422,18 @@ class RandomQuote extends React.Component {
 }
 export default RandomQuote;
 ```
+
 **Don't modify state directly**
+
 - It is important to **`never`** modify your state directly!
   - ALWAYS use `this.setState` method to update state.
   - This is because when you only use this.state to re-assign, no re-rendering will occur => leaving our component out of sync.
-**Properly updating state from the previous state**
+    **Properly updating state from the previous state**
 - In our current example, the way we have `changeQuote` set up leaves us with occasionally producing the same index twice in a row.
   - One solution is to design a loop but keep in mind that state updates are handled asynchronously in React (your current value is not guaranteed to be the latest)
 - A safe method is to pass an anonymous method to `this.setState` (instead of an object literal)
-**Previous**
+  **Previous**
+
 ```js
 changeQuote = () => {
     const newIndex = this.getRandomInt(this.state.quotes.length);
@@ -1240,7 +1442,9 @@ changeQuote = () => {
     })
   }
 ```
+
 **Passing w/ Anon Method**
+
 ```js
 changeQuote = () => {
   this.setState((state, props) => {
@@ -1255,7 +1459,9 @@ changeQuote = () => {
   });
 };
 ```
+
 **Providing default values for props**
+
 - In our current example, we pass in a static array of predefined quotes in our constructor.
   - The way it is set up right now leaves our list of quotes unchanged after initialization.
   - We can make quotes more dynamic by replacing our static array with a `props` argument passed into `super`.
@@ -1265,7 +1471,8 @@ changeQuote = () => {
   }
   ```
 - We can now move our quotes array to our application entry point and pass it in as a prop.
-// Application Entry Point
+  // Application Entry Point
+
 ```js
 // ./src/index.js
 import React from 'react'
@@ -1287,7 +1494,9 @@ ReactDOM.render(
   document.getElementById('root');
 )
 ```
+
 - One thing to note about this workaround is that the caller of the component _must_ set the quotes prop or the component will throw an error => so use `defaultProps`!
+
 ```js
 // At the bottom of RandomQuote.js...
 RandomQuote.defaultProps = {
@@ -1301,12 +1510,17 @@ RandomQuote.defaultProps = {
   ],
 };
 ```
+
 - A good safety net in case the consumer/caller doesn't provide a value for the quotes array.
   - We can even remove it from our index.js now and an error will not be thrown.
+
 ---
+
 ## **Handling Events**
+
 - To add an event listener to an element, just define a method to handle the event and associate that method with the element event you are listening for.
   **Example**
+
 ```js
 import React from "react";
 class AlertButton extends React.Component {
@@ -1322,11 +1536,13 @@ class AlertButton extends React.Component {
   }
 }
 ```
+
 - Note that when refering the handler method in onClick we're not invoking showAlert simply just passing a reference.
-**Preventing default behavior**
+  **Preventing default behavior**
 - HTML Elements in the browser often have a lot of default behavior.
   - I.E. Clicking on an `<a>` element navigates so a resource denoted by `<href>` property.
 - Here is an example of where using `e.preventDefault()` could come in handy.
+
 ```js
 import React from "react";
 class NoDefaultSubmitForm extends React.Component {
@@ -1342,10 +1558,12 @@ class NoDefaultSubmitForm extends React.Component {
     )}
 }
 ```
+
 - The button contained within the form will end up refreshing the page before `this.submitForm` method can be completed.
 - We can stick an `e.preventDefault()` into the actual method to get around this problem.
 - **`e`** : Parameter that references a **`Synthetic Event`** object type.
-**Using `this` in event handlers**
+  **Using `this` in event handlers**
+
 ```js
 // ./src/AlertButton.js
 import React from "react";
@@ -1364,16 +1582,20 @@ class AlertButton extends React.Component {
 }
 export default AlertButton;
 ```
+
 - When we console log `this` we see the AlertButton object.
 - If we were to write the showAlert method with a regular class method like:
+
 ```js
 showAlert() {
   console.log(this);
 }
 ```
+
 - We would get `undefined` => remember that fat arrow binds to the current context!
-**Reviewing class methods and the `this` keyword**
+  **Reviewing class methods and the `this` keyword**
 - Let's refresh on binding.
+
 ```js
 class Boyfriend {
   constructor() {
@@ -1388,6 +1610,7 @@ Ming.displayName(); // => Momato Riruru
 const displayAgain = Ming.displayName;
 displayAgain(); // => Result in a Type Error: Cannot read property 'name' of undefined.
 ```
+
 - The first time we use our `displayMethod` call, it is called directly on the instance of the boyfriend class, which is why `Momato Riruru` was printed out.
 - The second time it was called, the ref of the method is stored as a variable and method is called on that variable instead of the instance; resulting in a type error (it has lost it's context)
 - Remember we can use the **`bind`** method to rebind context!
@@ -1397,6 +1620,7 @@ displayAgain(); // => Result in a Type Error: Cannot read property 'name' of und
   displayAgain(); // => Now Momato Riruru will be printed out.
   ```
 - To continue using function declarations vs fat arrow we can assign context in a constructor within a class component.
+
 ```js
 import React from "react";
 class AlertButton extends React.Component {
@@ -1417,11 +1641,12 @@ class AlertButton extends React.Component {
 }
 export default AlertButton;
 ```
+
 - **`Experimental Syntax`** : Syntax that has been proposed to add to ECMAScript but hasn't officially been added to the language specification yet.
 - It's good to pick one approach and use it consistently, either:
   1. Class Properties & Arrow Functions
   2. Bind Method & This Keyword
-**The `SyntheticEvent` object**
+     **The `SyntheticEvent` object**
 - **Synthetic Event Objects**: Cross Browser wrappeds around the browser's native event.
   - Includes the use of stopPropagation() and preventDefault();
 - Attributes of the Synthetic Event Object:
@@ -1443,10 +1668,14 @@ export default AlertButton;
   | number timeStamp |
   | string type |
 - **`nativeEvent`** : property defined in a synthetic event object that gives you access to the underlying native browser event (rarely used!)
+
 ---
+
 ## **Forms in React**
+
 _Exercise being done in a separate file_
 **Random Notes**
+
 - `onChange` : detects when a value of an input element changes.
   - Assigning `onChange` to our input fields makes our component's state update in real time during user input.
 - Dont forget to add `preventDefault` onto form submissions to deal with the default behavior of the browser refreshing the page!
@@ -1456,6 +1685,7 @@ _Exercise being done in a separate file_
 - Adding an `onChange` event handler to every single input can massively bloat your code.
   - Try assiging it to it's own method to apply everywhere.
 - `textarea` is handled differently in react: it takes in a value property to handle what the inner text will be.
+
 ```js
 // ./src/ContactUs.js
 import React from "react";
@@ -1595,7 +1825,9 @@ ContactUs.defaultProps = {
 };
 export default ContactUs;
 ```
+
 - We can use validation libraries like `validate` to make our validation functions more complex.
+
 ```js
 import isEmail from "validator/es/lib/isEmail";
   validate(name, email) {
@@ -1611,18 +1843,24 @@ import isEmail from "validator/es/lib/isEmail";
     return validationErrors;
   }
 ```
+
 **Note About Client-side vs server-side validation**
+
 - Server-side validation is not optional.
 - Tech-savvy users can manipulate client-side validations.
 - Sometimes the 'best approach' is to skip implementing validations on the client-side and rely completely on the server-side validation.
+
 ---
+
 ## **Component Lifecycle**
+
 ![life](https://i.gyazo.com/2cf79a8f98c2afc7a2a13bdf123a70f4.png)
+
 - Component Lifecycle is simply a way of describing the key moments in the lifetime of a component.
   1. Loading (Mounting)
   2. Updating
   3. Unloading (Unmounting)
-**The lifecycle of a React component**
+     **The lifecycle of a React component**
 - Each `Class Component` has several `lifecycle methods` that you can add to run code at specific times.
   - `componentDidMount` : Method called after your component has been added to the component tree.
   - `componentDidUpdate` : Method called after your component has been updated.
@@ -1644,50 +1882,65 @@ import isEmail from "validator/es/lib/isEmail";
 - **`Unmounting`**
   - The moment before a class component is removed from the component tree:
   - `componentDidMount` will be called.
-**Avoiding the legacy lifecycle methods**
+    **Avoiding the legacy lifecycle methods**
 - Occasionally you will encounter some deprecated lifecycle methods:
   - UNSAFE_componentWillMount
   - UNSAFE_componentWillReceiveProps
   - UNSAFE_componentWillUpdate
 - Just know they will be removed soon from React's API, peace.
-**Using the class component lifecycle methods**
-_Exercise done in sep. directory_
+  **Using the class component lifecycle methods**
+  _Exercise done in sep. directory_
 - Assorted Notes:
   - Common Use for `componentDidMount` lifecycle method is for fetching data from an API.
+
 ---
+
 --
+
 # **Notes**
+
 ## **React Context**
+
 - You can use **`React Context`** to pass data through a component tree without having to manually thread props.
   - Convenient way to share & update `global data`.
-**Creating a Context**
+    **Creating a Context**
+
 ```js
 // PupContext.js
 import { createContext } from "react";
 const PupContext = createContext();
 export default PupContext;
 ```
+
 - We use **`React.createContext`** to create context.
   - Keep in mind if you invoke this method with aruguments, those arguments will be set as default context.
-**Adding a Provider to the App component**
+    **Adding a Provider to the App component**
 - In order to pass context over to child components we need to wrap them in a provider component.
   - The provider component takes in a value property that points to the information that needs to be passed to the children.
+
 ```js
 <MyContext.Provider value={/* some value */}>
   <ChildComponent />
 </MyContext.Provider>
 ```
+
 **Setting up a Consumer**
+
 ```js
 <MyContext.Consumer>
   {(value) => <Component value={value} />}
 </MyContext.Consumer>
 ```
+
 - Keep in mind that `Context.Consumer` expects a function as a child.
   - The function has a value prop passed in from `Context.Provider`
+
 ---
+
 # **Notes**
+
 ## **Redux Explained**
+
 - JS Framework for managing the frontend state of a web application.
   - Gives us ability to store information in an organized manner in a web app and quickly retrieve that information from anywhere in the app.
 - **`Redux`**
@@ -1696,11 +1949,11 @@ export default PupContext;
   - NOT Your Database
   - NOT Component State
   - Just used for managing Data
-![pic](https://i.gyazo.com/60842c925c90bf2c1d310360ea7ab5b0.png)
+    ![pic](https://i.gyazo.com/60842c925c90bf2c1d310360ea7ab5b0.png)
 - Visual of how an app without React manages it's data.
   - A lot of prop threading happening.
 - Data stored in a sep. location - `global data`.
-**The Anatomy of Redux**
+  **The Anatomy of Redux**
 - **`Store`**
   - Holds the Frontend State
   - Provides an API for the Frontend State
@@ -1710,15 +1963,15 @@ export default PupContext;
 - **`Reducers`**
   - Functions
   - Make Changes to Frontend State
-**Where did Redux come from?**
+    **Where did Redux come from?**
 - There are three central philosophies of Redux:
   1. `A Single Source of Truth` : state is stored in a POJO
   2. `State is Read Only` : State is immutable, modified by dispatching actions.
   3. `Changes are Made with Pure Functions` : Reducers that receive the actions and return updated state are pure functions of the old state and action.
-**When is it appropriate to use Redux?**
+     **When is it appropriate to use Redux?**
 - When doing a project with simpler global state requirements, it may be better to choose React's Context API over Redux.
 - Redux offers more flexibility and support for middleware along with richer developer tools.
-**Vocabulary**
+  **Vocabulary**
 - **`State`**
   - _Redux is a State Manager_
   - State is all the information stored by that program at a particular point in time.
@@ -1753,9 +2006,13 @@ export default PupContext;
   - _Convenient format for taking async actions in Redux_
   - General concept in CS referring to a function who's primary purpose is to call another function.
   - Most commonly used to make async API requests.
+
 ---
+
 ## **Flux and Redux**
+
 **What is Flux?**
+
 - Front-end application architecutre.
 - A pattern in which to structure an application.
 - Unidirectional Data Flow - offers more predictability.
@@ -1764,22 +2021,26 @@ export default PupContext;
 - `Dispatcher` : Mechanism for distributing actions to the store.
 - `Store` : The entire state of the application, responsible for updating the state of your app.
 - `View` : Unit of code that's responsible for rendering the user interface. Used to re-render the application when actions and changes occur.
-![graph](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/fullstack/react/assets/flux-loop.png)
-**Redux**
-![rdx](https://assets.aaonline.io/fullstack/react/assets/redux.gif)
+  ![graph](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/fullstack/react/assets/flux-loop.png)
+  **Redux**
+  ![rdx](https://assets.aaonline.io/fullstack/react/assets/redux.gif)
 - Library that facilitates the implementation of Flux.
 - Redux Three Principles
   - `Single Source of Truth`
   - `State is Read-Only`
   - `Only Pure Functions Change State`
+
 ---
+
 ## **Store**
+
 - Simply an object that holds the application state wrapped in an API.
 - **`Three methods`**:
   - **`getState()`** : Returns the store's current state.
   - **`dispatch(action)`** : Passes an action into the store's reducer to tell it what info to update.
   - **`subscribe(callback)`** : Registers a callback to be triggered whenever the store updates.
-**Updating the Store**
+    **Updating the Store**
+
 ```js
 store.dispatch(action);
 // Add Orange Action
@@ -1801,9 +2062,12 @@ console.log(store.getState()); // []
 store.dispatch(addOrange);
 console.log(store.getState()); // [ 'orange' ]
 ```
+
 **Subscribing to the store**
+
 - Whenever a store process a dispatch(), it triggers all its subscribers.
 - **`Subscribers`** : callbacks that can be added to the store via subscribe().
+
 ```js
 const display = () => {
   console.log(store.getState());
@@ -1814,7 +2078,9 @@ store.dispatch(addOrange); // [ 'orange', 'orange' ]
 unsubscribeDisplay();
 store.dispatch(addOrange); // no output
 ```
+
 **Reviewing a simple example**
+
 ```js
 // app.js
 const { createStore } = require("redux");
@@ -1855,9 +2121,12 @@ unsubscribeDisplay();
 // when the store state is updated.
 store.dispatch(addOrange); // no output
 ```
+
 ## **Reducers**
+
 - Reducer function receives the current `state` and `action`, updates the state appropriately based on the `action.type` and returns the following state.
 - You can bundles different action types and ensuing logic by using a switch/case statement.
+
 ```js
 const fruitReducer = (state = [], action) => {
   switch (action.type) {
@@ -1879,7 +2148,9 @@ const fruitReducer = (state = [], action) => {
   }
 };
 ```
+
 **Reviewing how Array#slice works**
+
 ```js
 const fruits = ["apple", "apple", "orange", "banana", "watermelon"];
 // The index of the 'orange' element is 2.
@@ -1890,10 +2161,12 @@ const index = fruits.indexOf("orange");
 // ['apple', 'apple', 'banana', 'watermelon']
 const newFruits = [...fruits.slice(0, index), ...fruits.slice(index + 1)];
 ```
+
 - Approach that can be used to remove an element without mutating the original array.
-**Avoiding state mutations**
+  **Avoiding state mutations**
 - **Your reducer must always return a new object if the state changes.**
-**GOOD**
+  **GOOD**
+
 ```js
 const goodReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
@@ -1906,7 +2179,9 @@ const goodReducer = (state = { count: 0 }, action) => {
   }
 };
 ```
+
 **BAD**
+
 ```js
 const badReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
@@ -1918,10 +2193,14 @@ const badReducer = (state = { count: 0 }, action) => {
   }
 };
 ```
+
 ---
+
 ## **Actions**
+
 - Actions are the only way to trigger changes to the store's state.
-**Using action creators**
+  **Using action creators**
+
 ```js
 const addOrange = {
   type: "ADD_FRUIT",
@@ -1930,23 +2209,29 @@ const addOrange = {
 store.dispatch(addOrange);
 console.log(store.getState()); // [ 'orange' ]
 ```
+
 - fruit is the `payload key` and orange is the `state data`
 - **`Action Creators`** : Functions created from extrapolating the creation of an action object.
+
 ```js
 const addFruit = (fruit) => ({
   type: "ADD_FRUIT",
   fruit,
 });
 ```
+
 - Use parenthesis for implicit return value.
 - We can now add whatever fruit we'd like.
+
 ```js
 store.dispatch(addFruit("apple"));
 store.dispatch(addFruit("strawberry"));
 store.dispatch(addFruit("lychee"));
 console.log(store.getState()); // [ 'orange', 'apple', 'strawberry', 'lychee' ]
 ```
+
 **Preventing typos in action type string literals**
+
 ```js
 const ADD_FRUIT = "ADD_FRUIT";
 const ADD_FRUITS = "ADD_FRUITS";
@@ -1968,11 +2253,16 @@ const sellOut = () => ({
   type: SELL_OUT,
 });
 ```
+
 - Using constant variables helps reduce simple typos in a reducer's case clauses.
+
 ---
+
 ## **Debugging Arrow Functions**
+
 - It is important to learn how to use debugger statements with arrow functions to effectively debug Redux cycle.
-**Understanding the limitations of implicit return values**
+  **Understanding the limitations of implicit return values**
+
 ```js
 const addFruit = (fruit) => {
   return {
@@ -1988,9 +2278,10 @@ const addFruit = (fruit) => {
   };
 };
 ```
-- You must use explicit return statement arrow function to use a debugger.
----
 
+- You must use explicit return statement arrow function to use a debugger.
+
+---
 
 # React Router Introduction
 
@@ -2004,8 +2295,8 @@ the `http://localhost:3000/users/2` URL to render a specific HTML page.
 
 ```js
 // http://localhost:3000/users/2
-app.get('/users/:userId', (req, res) => {
-  res.render('userProfile.pug');
+app.get("/users/:userId", (req, res) => {
+  res.render("userProfile.pug");
 });
 ```
 
@@ -2019,13 +2310,13 @@ a URL and email it to a friend or link to it from their own website.
 When you finish this article, you should be able to use the following from the
 `react-router-dom` library:
 
-* `<BrowserRouter>` to provide your application access to the `react-router-dom`
+- `<BrowserRouter>` to provide your application access to the `react-router-dom`
   library; and
-* `<Route>` to connect specific URL paths to specific components you want
+- `<Route>` to connect specific URL paths to specific components you want
   rendered; and
-* `<Switch>` to wrap several `Route` elements, rendering only one even if
+- `<Switch>` to wrap several `Route` elements, rendering only one even if
   several match the current URL; and
-* React Router's `match` prop to access route path parameters.
+- React Router's `match` prop to access route path parameters.
 
 ## Getting started with routing
 
@@ -2061,10 +2352,10 @@ its children components access to React Router, you would wrap `<App>` like so:
 
 ```js
 // ./src/index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
 
 const Root = () => {
   return (
@@ -2078,7 +2369,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Root />
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );
 ```
 
@@ -2103,24 +2394,21 @@ component to only be rendered if a certain URL is matched. The behavior of the
 `<Route>` component is controlled by the following props: `path`, `component`,
 `exact`, and `render` (optional).
 
-Create a simple `Users` component that returns `<h1>This is the users
-index!</h1>`. Now let's refactor your `index.js` file so that you can create
+Create a simple `Users` component that returns `<h1>This is the users index!</h1>`. Now let's refactor your `index.js` file so that you can create
 your routes within the component:
 
 ```js
 // ./src/index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import App from './App';
-import Users from './Users';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+import App from "./App";
+import Users from "./Users";
 
 const Root = () => {
   return (
     <BrowserRouter>
-      <div>
-        {/* TODO: Routes */}
-      </div>
+      <div>{/* TODO: Routes */}</div>
     </BrowserRouter>
   );
 };
@@ -2129,7 +2417,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Root />
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );
 ```
 
@@ -2214,8 +2502,8 @@ component like so:
 ```js
 // `users` to be passed as a prop:
 const users = {
-  1: { name: 'Andrew' },
-  2: { name: 'Raymond' }
+  1: { name: "Andrew" },
+  2: { name: "Raymond" },
 };
 ```
 
@@ -2229,8 +2517,8 @@ why you have wrapped all your routes within parent a `<div>` element.
 ```jsx
 const Root = () => {
   const users = {
-    1: { name: 'Andrew' },
-    2: { name: 'Raymond' }
+    1: { name: "Andrew" },
+    2: { name: "Raymond" },
   };
 
   return (
@@ -2262,8 +2550,10 @@ segments are _wildcard_ values that make up your route parameters.
 For example, take the route below:
 
 ```jsx
-<Route path="/users/:userId"
-       render={(props) => <Profile users={users} {...props} />} />
+<Route
+  path="/users/:userId"
+  render={(props) => <Profile users={users} {...props} />}
+/>
 ```
 
 The router would break down the full `/users/:userId/photos` path to two parts:
@@ -2293,9 +2583,7 @@ following code:
 import React from "react";
 
 const Profile = (props) => (
-  <div>
-    The user's id is {props.match.params.userId}.
-  </div>
+  <div>The user's id is {props.match.params.userId}.</div>
 );
 
 export default Profile;
@@ -2313,7 +2601,6 @@ to fetch a specific user:
 import React from "react";
 
 const Profile = ({ users, match: { params } }) => {
-
   // In a real-world scenario, you'd make a call to an API to fetch the user,
   // instead of passing down and keying into a `users` prop.
   const user = users[params.userId];
@@ -2362,8 +2649,8 @@ something like this:
 ```js
 const Root = () => {
   const users = {
-    1: { name: 'Andrew' },
-    2: { name: 'Raymond' }
+    1: { name: "Andrew" },
+    2: { name: "Raymond" },
   };
 
   return (
@@ -2377,7 +2664,10 @@ const Root = () => {
         <Route exact path="/users" render={() => <Users users={users} />} />
 
         {/* Otherwise, render the profile page for that userId. */}
-        <Route path="/users/:userId" component={(props) => <Profile users={users} {...props} />} />
+        <Route
+          path="/users/:userId"
+          component={(props) => <Profile users={users} {...props} />}
+        />
       </div>
     </BrowserRouter>
   );
@@ -2388,18 +2678,18 @@ const Root = () => {
 
 In this article, you learned how to:
 
-* Use components from the React Router library; and
-* Create routes to render specific components; and
-* Manage the order of rendered routes; and
-* Use the `exact` flag to ensure that a specific path renders a specific
+- Use components from the React Router library; and
+- Create routes to render specific components; and
+- Manage the order of rendered routes; and
+- Use the `exact` flag to ensure that a specific path renders a specific
   component; and
-* Use the React Router `match` prop to access Router params.
+- Use the React Router `match` prop to access Router params.
 
-[React Router]: https://github.com/ReactTraining/react-router
-
+[react router]: https://github.com/ReactTraining/react-router
 [route props]: https://reacttraining.com/react-router/web/api/Route/route-props
 
-________________________________________________________________________________
+---
+
 # React Router Navigation
 
 Now that you know how to create front-end routes with React Router, you'll need
@@ -2411,11 +2701,11 @@ In this article, you'll be working off of the demo project you built in the
 React Router Intro reading. When you finish this article, you should be able to
 use the following components from the `react-router-dom` library:
 
-* `<Link>` or `<NavLink>` to create links with absolute paths to routes in your
+- `<Link>` or `<NavLink>` to create links with absolute paths to routes in your
   application (like "/users/1"); and,
-* `<Redirect>` to redirect a user to another path (i.e. a login page when the
+- `<Redirect>` to redirect a user to another path (i.e. a login page when the
   user is not logged in); and
-* React Router's `history` prop to update a browser's URL programmatically.
+- React Router's `history` prop to update a browser's URL programmatically.
 
 ## Adding links for navigation
 
@@ -2429,7 +2719,7 @@ To use it, update your imports from the `react-router-dom` package to include
 `Link`:
 
 ```js
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from "react-router-dom";
 ```
 
 Note that `<Link>` can take two props: `to` and `onClick`.
@@ -2451,19 +2741,20 @@ component:
 
 ```jsx
 // Link with onClick prop
-<Link to="/" onClick={handleClick}>App with click handler</Link>
+<Link to="/" onClick={handleClick}>
+  App with click handler
+</Link>
 ```
 
 ```js
 // Click handler function
 const handleClick = () => {
-  console.log('Thanks for clicking!')
+  console.log("Thanks for clicking!");
 };
 ```
 
 Now, test your routes and links! If you inspect the page, you'll see that your
-links are now rendered as `<a>` elements. Notice that clicking the `App with
-click handler` link logs a message in your console while directing your browser
+links are now rendered as `<a>` elements. Notice that clicking the `App with click handler` link logs a message in your console while directing your browser
 to render the `App` component.
 
 ### NavLink
@@ -2476,7 +2767,7 @@ hence the name. This styling can be controlled by three extra props:
 your imports from the `react-router-dom` package:
 
 ```js
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink } from "react-router-dom";
 ```
 
 The `activeClassName` prop of the `NavLink` component allows you to set a CSS
@@ -2553,7 +2844,9 @@ The `activeStyle` prop is a style object that will be applied inline to the
 file.
 
 ```jsx
-<NavLink to="/" activeStyle={{ fontWeight: "bold" }}>App</NavLink>
+<NavLink to="/" activeStyle={{ fontWeight: "bold" }}>
+  App
+</NavLink>
 ```
 
 The following html is rendered when at the `/` path:
@@ -2569,8 +2862,7 @@ to this NavLink.
 
 The `exact` prop is a boolean that defaults to `false`. If set to `true`, then
 the `activeStyle` and `activeClassName` props will only be applied when the
-current URL exactly matches the `to` prop. Update your `App` and `App with click
-handler` links with an `exact` prop set. Just like in your routes, you can use
+current URL exactly matches the `to` prop. Update your `App` and `App with click handler` links with an `exact` prop set. Just like in your routes, you can use
 the `exact` flag instead of `exact={true}`.
 
 ```jsx
@@ -2609,8 +2901,7 @@ match.
 
 Import `Switch` from `react-router-dom` and add `<Switch>` tags around your
 routes to take care of ordering and switching between your routes! Begin by
-adding the following route to the bottom of your routes to render that a `404:
-Page not found` message:
+adding the following route to the bottom of your routes to render that a `404: Page not found` message:
 
 ```jsx
 <Route render={() => <h1>404: Page not found</h1>} />
@@ -2620,13 +2911,10 @@ This is what your `Root` component should look like at this point:
 
 ```js
 const Root = () => {
-  const users = [
-    { name: 'andrew' },
-    { name: 'raymond' }
-  ];
+  const users = [{ name: "andrew" }, { name: "raymond" }];
 
   const handleClick = () => {
-    console.log('Thanks for clicking!')
+    console.log("Thanks for clicking!");
   };
 
   return (
@@ -2634,14 +2922,27 @@ const Root = () => {
       <h1>Hi, I'm Root!</h1>
 
       <div>
-        <NavLink to="/" exact={true} activeStyle={{ fontWeight: "bold" }}>App</NavLink>
-        <NavLink activeClassName="red" to="/users">Users</NavLink>
-        <NavLink activeClassName="blue" to="/hello">Hello</NavLink>
-        <NavLink activeClassName="green" to="/users/1">Andrew's Profile</NavLink>
-        <NavLink to="/" exact onClick={handleClick}>App with click handler</NavLink>
+        <NavLink to="/" exact={true} activeStyle={{ fontWeight: "bold" }}>
+          App
+        </NavLink>
+        <NavLink activeClassName="red" to="/users">
+          Users
+        </NavLink>
+        <NavLink activeClassName="blue" to="/hello">
+          Hello
+        </NavLink>
+        <NavLink activeClassName="green" to="/users/1">
+          Andrew's Profile
+        </NavLink>
+        <NavLink to="/" exact onClick={handleClick}>
+          App with click handler
+        </NavLink>
 
         <Switch>
-          <Route path="/users/:userId" component={(props) => <Profile users={users} {...props} />} />
+          <Route
+            path="/users/:userId"
+            component={(props) => <Profile users={users} {...props} />}
+          />
           <Route exact path="/users" render={() => <Users users={users} />} />
           <Route path="/hello" render={() => <h1>Hello!</h1>} />
           <Route exact path="/" component={App} />
@@ -2672,7 +2973,8 @@ redirect the user to the `/login` path.
 
 ```jsx
 <Route
-  exact path="/"
+  exact
+  path="/"
   render={() => (this.props.currentUser ? <Home /> : <Redirect to="/login" />)}
 />
 ```
@@ -2688,10 +2990,10 @@ need to redirect users programmatically? You've learned about the React Router's
 
 ```js
 // Pushing a new URL (and adding to the end of history stack):
-const handleClick = () => this.props.history.push('/some/url');
+const handleClick = () => this.props.history.push("/some/url");
 
 // Replacing the current URL (won't be tracked in history stack):
-const redirect = () => this.props.history.replace('/some/other/url');
+const redirect = () => this.props.history.replace("/some/other/url");
 ```
 
 This prop lets you update the URL programmatically. For example, suppose you
@@ -2710,14 +3012,14 @@ want to push a new URL when the user clicks a button. It has two useful methods:
 
 In this article, you learned how to:
 
-* Create navigation links for your route paths; and
-* Redirect users through using the `<Redirect>` component; and
-* Update a browser's URL programmatically by using React Router's `history`
+- Create navigation links for your route paths; and
+- Redirect users through using the `<Redirect>` component; and
+- Update a browser's URL programmatically by using React Router's `history`
   prop.
 
 [route props]: https://reacttraining.com/react-router/web/api/Route/route-props
 
-________________________________________________________________________________
+---
 
 # React Router Nested Routes
 
@@ -2732,9 +3034,9 @@ components!
 In this article, let's dive into [nested routes]! When you finish the article,
 you should:
 
-* Describe what nested routes are; and
-* Be able to use React Router to create and navigate nested routes; and
-* Know how to use the React Router `match` prop to generate links and routes.
+- Describe what nested routes are; and
+- Be able to use React Router to create and navigate nested routes; and
+- Know how to use the React Router `match` prop to generate links and routes.
 
 ## Why nested routes?
 
@@ -2779,8 +3081,8 @@ const Profile = (props) => {
       <Link to={`/users/${id}/photos`}>{name}'s Photos</Link>
 
       {/* Routes to a specific user's posts and photos */}
-      <Route path='/users/:userId/posts' component={UserPosts} />
-      <Route path='/users/:userId/photos' component={UserPhotos} />
+      <Route path="/users/:userId/posts" component={UserPosts} />
+      <Route path="/users/:userId/photos" component={UserPhotos} />
     </div>
   );
 };
@@ -2827,14 +3129,13 @@ application's routes organized within related components.
 
 In this article, you learned:
 
-* What nested routes are; and
-* About creating and navigating nested routes with React Router; and
-* How to use the React Router props to generate nested links and routes.
+- What nested routes are; and
+- About creating and navigating nested routes with React Router; and
+- How to use the React Router props to generate nested links and routes.
 
-[nested routes]:
-  https://reacttraining.com/react-router/core/guides/philosophy/nested-routes
+[nested routes]: https://reacttraining.com/react-router/core/guides/philosophy/nested-routes
 
-________________________________________________________________________________
+---
 
 # React Builds
 
@@ -2848,10 +3149,9 @@ process is automatically configured to do that and a lot more.
 
 When you finish this article, you should be able to:
 
-* Describe what front-end builds are and why they're needed;
-* Describe at a high level what happens in a Create React App when you run `npm
-  start`; and
-* Prepare to deploy a React application into a production environment.
+- Describe what front-end builds are and why they're needed;
+- Describe at a high level what happens in a Create React App when you run `npm start`; and
+- Prepare to deploy a React application into a production environment.
 
 ## Understanding front-end builds
 
@@ -2926,8 +3226,7 @@ sometimes have a dramatic positive impact on overall bundled file sizes.
 ### Configuration or code?
 
 Front-end build tools have come and gone over the years; sometimes very quickly,
-which helped bring about the phenomenon known as [JavaScript fatigue][js
-fatigue].
+which helped bring about the phenomenon known as [JavaScript fatigue][js fatigue].
 
 Configuration based tools allow you to create your build tasks by declaring
 (usually using JSON, XML, or YAML) what you want to be done, without explicitly
@@ -2976,14 +3275,14 @@ changes will (usually) automatically appear in the browser!
 
 At a high level, here's what happens when you run `npm start`:
 
-* Environment variables are loaded (more about this in a bit);
-* The list of browsers to support are checked (more about this too in a bit);
-* The configured HTTP port is checked to ensure that it's available;
-* The application compiler is configured and created;
-* [`webpack-dev-server`] is started;
-* [`webpack-dev-server`] compiles your application;
-* The `index.html` file is loaded into the browser; and
-* A file watcher is started to watch your files, waiting for changes.
+- Environment variables are loaded (more about this in a bit);
+- The list of browsers to support are checked (more about this too in a bit);
+- The configured HTTP port is checked to ensure that it's available;
+- The application compiler is configured and created;
+- [`webpack-dev-server`] is started;
+- [`webpack-dev-server`] compiles your application;
+- The `index.html` file is loaded into the browser; and
+- A file watcher is started to watch your files, waiting for changes.
 
 ### Ejecting
 
@@ -2996,8 +3295,7 @@ hidden stuff is exposed so that you can review and customize it.
 > been ejected, there's no going back (though you could always undo the ejection
 > process by reverting to an earlier commit if you're using source control).
 
-To eject your application from Create React App, run the command `npm run
-eject`. You'll be prompted if you want to continue; type "y" to continue with
+To eject your application from Create React App, run the command `npm run eject`. You'll be prompted if you want to continue; type "y" to continue with
 the ejection process. Once the ejection process has completed, you can review
 the files that were previously hidden from you.
 
@@ -3062,11 +3360,7 @@ browsers:
 ```json
 {
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -3102,17 +3396,16 @@ Now your application is ready to be deployed!
 
 In this article, you learned how to:
 
-* Describe what front-end builds are and why they're needed;
-* Describe at a high level what happens in a Create React App when you run `npm
-  start`; and
-* Prepare to deploy a React application into a production environment.
+- Describe what front-end builds are and why they're needed;
+- Describe at a high level what happens in a Create React App when you run `npm start`; and
+- Prepare to deploy a React application into a production environment.
 
 [coffeescript]: https://coffeescript.org/
 [typescript]: https://www.typescriptlang.org/
 [sass]: https://sass-lang.com/
 [eslint]: https://eslint.org/
 [es2019]: https://www.ecma-international.org/ecma-262/10.0/index.html
-[es2021]: https://tc39.es/ecma262/ 
+[es2021]: https://tc39.es/ecma262/
 [es2015]: http://www.ecma-international.org/ecma-262/6.0/
 [es5]: https://www.ecma-international.org/ecma-262/5.1/
 [es3]: https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf
@@ -3124,12 +3417,13 @@ In this article, you learned how to:
 [json]: https://www.json.org/json-en.html
 [xml]: https://www.w3.org/XML/
 [yaml]: https://yaml.org/
-[babel]:https://babeljs.io/
+[babel]: https://babeljs.io/
 [`webpack-dev-server`]: https://webpack.js.org/configuration/dev-server/
 [browserl.ist]: https://browserl.ist
 [cra deployment]: https://facebook.github.io/create-react-app/docs/deployment
 
-________________________________________________________________________________
+---
+
 # React Router Documentation
 
 Now that you've had an introduction to React Router, feel free to explore the
@@ -3163,7 +3457,8 @@ documentation and learn!
 - [props.location](https://reacttraining.com/react-router/web/api/location)
 - [props.match](https://reacttraining.com/react-router/web/api/match)
 
-________________________________________________________________________________
+---
+
 # Rainbow Routes Project
 
 Today you're going to get our first experience using React Router. The goal is
@@ -3266,11 +3561,8 @@ instead of the DOM element with an `id` of `root`. Lastly, wrap your render
 function with a `DOMContentLoaded` event listener, like so:
 
 ```js
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Root />,
-    document.getElementById('root'),
-  );
+document.addEventListener("DOMContentLoaded", () => {
+  ReactDOM.render(<Root />, document.getElementById("root"));
 });
 ```
 
@@ -3296,7 +3588,7 @@ npm install react-router-dom@^5.0.0
 Now import `BrowserRouter` from the `react-router-dom` package, like so:
 
 ```js
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 ```
 
 You're going to be rendering a lot of components, so let's keep your `src`
@@ -3306,17 +3598,15 @@ component with the following code:
 
 ```js
 // ./src/components/Rainbow.js
-import React from 'react';
-import { Route, Link, NavLink } from 'react-router-dom';
+import React from "react";
+import { Route, Link, NavLink } from "react-router-dom";
 
 const Rainbow = () => (
   <div>
     <h1>Rainbow Router!</h1>
     {/* Your links should go here */}
 
-    <div id="rainbow">
-      {/* Your routes should go here */}
-    </div>
+    <div id="rainbow">{/* Your routes should go here */}</div>
   </div>
 );
 
@@ -3353,8 +3643,8 @@ Create files for the following components in your `./src/components` directory:
 Your `Red` and `Blue` components will look something like this:
 
 ```js
-import React from 'react';
-import { Route, Link, NavLink } from 'react-router-dom';
+import React from "react";
+import { Route, Link, NavLink } from "react-router-dom";
 
 const Color = () => (
   <div>
@@ -3372,7 +3662,7 @@ Your `Green`, `Indigo`, `Orange`, `Violet`, and `Yellow` components will look
 something like this:
 
 ```js
-import React from 'react';
+import React from "react";
 
 const Color = () => (
   <div>
@@ -3481,7 +3771,7 @@ Do the same for the `Red only` link. Everything should be working now.
 
 # Phase 4 - Changing NavLink's Active Class
 
-You've already set up `NavLink` to __bold__ the link text using the `.active`
+You've already set up `NavLink` to **bold** the link text using the `.active`
 class in `src/index.css`. But what if you wanted this class to be something
 else? For instance, what if you want your main color links (Red, Green, Blue,
 Violet) to be styled differently when active than your sub-route links (Red
@@ -3494,7 +3784,7 @@ For instance, when we are at a route matching the below `NavLink`'s `to` prop,
 the component will have a class of `.parent-active` applied:
 
 ```js
-<NavLink to="/blue" activeClassName="parent-active" >
+<NavLink to="/blue" activeClassName="parent-active">
   Blue
 </NavLink>
 ```
@@ -3510,10 +3800,9 @@ to celebrate! ✨ 🌈 ✨
 
 You can also learn more about using the React Router at [reacttraining.com]!
 
-[reacttraining.com]:
-  https://reacttraining.com/react-router/web/guides/quick-start
+[reacttraining.com]: https://reacttraining.com/react-router/web/guides/quick-start
 
-________________________________________________________________________________
+---
 
 # Exploring React Builds Project
 
@@ -3536,13 +3825,13 @@ npx create-react-app exploring-react-builds --template @appacademy/simple
 
 Update the `App` component:
 
-* Wrap the `<h1>` element with a `<div>` element; and
-* Change the `<h1>` element content to something like "Exploring React Builds".
+- Wrap the `<h1>` element with a `<div>` element; and
+- Change the `<h1>` element content to something like "Exploring React Builds".
 
 ```js
 // ./src/App.js
 
-import React from 'react';
+import React from "react";
 
 function App() {
   return (
@@ -3564,16 +3853,16 @@ That's the technique being used to include the global `index.css` stylesheet:
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -3585,23 +3874,21 @@ to worry if they might collide with class names used in another component.
 Add a new `css-modules` folder to the `src` folder. Within that folder, add the
 following files:
 
-* `HeadingA.js`
-* `HeadingA.module.css`
-* `HeadingB.js`
-* `HeadingB.module.css`
+- `HeadingA.js`
+- `HeadingA.module.css`
+- `HeadingB.js`
+- `HeadingB.module.css`
 
 Then update the contents of each file to the following:
 
 ```js
 // ./src/css-modules/HeadingA.js
 
-import React from 'react';
-import styles from './HeadingA.module.css';
+import React from "react";
+import styles from "./HeadingA.module.css";
 
 function HeadingA() {
-  return (
-    <h1 className={styles.heading}>Heading A</h1>
-  );
+  return <h1 className={styles.heading}>Heading A</h1>;
 }
 
 export default HeadingA;
@@ -3618,13 +3905,11 @@ export default HeadingA;
 ```js
 // ./src/css-modules/HeadingB.js
 
-import React from 'react';
-import styles from './HeadingB.module.css';
+import React from "react";
+import styles from "./HeadingB.module.css";
 
 function HeadingB() {
-  return (
-    <h1 className={styles.heading}>Heading B</h1>
-  );
+  return <h1 className={styles.heading}>Heading B</h1>;
 }
 
 export default HeadingB;
@@ -3643,15 +3928,15 @@ set the color of the `<h1>` element. For the `HeadingA` component, the color is
 `green`, and for the `HeadingB` component, the color is `red`. Using the file
 naming convention `[name].module.css` let's Create React App know that we want
 these stylesheets to be processed as CSS Modules. Using CSS Modules allows the
-`.heading` class name to be reused across components without any issue. 
+`.heading` class name to be reused across components without any issue.
 
 To see this feature in action, update your `App` component to render both of
 your new components:
 
 ```js
-import React from 'react';
-import HeadingA from './css-modules/HeadingA';
-import HeadingB from './css-modules/HeadingB';
+import React from "react";
+import HeadingA from "./css-modules/HeadingA";
+import HeadingB from "./css-modules/HeadingB";
 
 function App() {
   return (
@@ -3697,8 +3982,8 @@ Update the contents of the `Image.js` file to this:
 ```js
 // ./src/image/Image.js
 
-import React from 'react';
-import cat from './react-builds-cat.png';
+import React from "react";
+import cat from "./react-builds-cat.png";
 
 console.log(cat); // /static/media/react-builds-cat.45f7f4d2.png
 
@@ -3723,10 +4008,10 @@ Now update the `App` component to import and render the `Image` component:
 ```js
 // ./src/App.js
 
-import React from 'react';
-import HeadingA from './css-modules/HeadingA';
-import HeadingB from './css-modules/HeadingB';
-import Image from './image/Image';
+import React from "react";
+import HeadingA from "./css-modules/HeadingA";
+import HeadingB from "./css-modules/HeadingB";
+import Image from "./image/Image";
 
 function App() {
   return (
@@ -3770,9 +4055,9 @@ Then update the `Image` component to this:
 ```js
 // ./src/image/Image.js
 
-import React from 'react';
-import './Image.css';
-import cat from './react-builds-cat.png';
+import React from "react";
+import "./Image.css";
+import cat from "./react-builds-cat.png";
 
 console.log(cat); // /static/media/react-builds-cat.45f7f4d2.png
 
@@ -3781,7 +4066,7 @@ function Image() {
     <div>
       {/* Import result is the URL of your image. */}
       <img src={cat} alt="Cat" />
-      <div className='cat'></div>
+      <div className="cat"></div>
     </div>
   );
 }
@@ -3799,11 +4084,7 @@ and now adjusting these targets affect how your code will be transpiled:
 ```json
 {
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -3827,13 +4108,11 @@ that folder, add a file named `ClassComponent.js` containing the following code:
 ```js
 // ./src/class-component/ClassComponent.js
 
-import React from 'react';
+import React from "react";
 
 class ClassComponent extends React.Component {
   render() {
-    return (
-      <h1>Class Component</h1>
-    );
+    return <h1>Class Component</h1>;
   }
 }
 
@@ -3845,11 +4124,11 @@ Don't forget to update your `App` component to render the new component:
 ```js
 // ./src/App.js
 
-import React from 'react';
-import HeadingA from './css-modules/HeadingA';
-import HeadingB from './css-modules/HeadingB';
-import Image from './image/Image';
-import ClassComponent from './class-component/ClassComponent';
+import React from "react";
+import HeadingA from "./css-modules/HeadingA";
+import HeadingB from "./css-modules/HeadingB";
+import Image from "./image/Image";
+import ClassComponent from "./class-component/ClassComponent";
 
 function App() {
   return (
@@ -3874,16 +4153,21 @@ Component". Here's what the transpiled code looks like for the `ClassComponent`
 class:
 
 ```js
-class ClassComponent extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+class ClassComponent extends react__WEBPACK_IMPORTED_MODULE_0___default.a
+  .Component {
   render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7,
-        columnNumber: 7
-      }
-    }, "Class Component");
+    return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "h1",
+      {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7,
+          columnNumber: 7,
+        },
+      },
+      "Class Component"
+    );
   }
 }
 ```
@@ -3913,11 +4197,7 @@ this:
 ```json
 {
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "chrome >= 30",
       "last 1 firefox version",
@@ -3943,33 +4223,55 @@ Now your ES2015 class component is being converted to a constructor function!
 Here's the transpiled code for reference:
 
 ```js
-var ClassComponent = /*#__PURE__*/function (_React$Component) {
-  Object(_Users_jameschurchill_Documents_GitHub_Modular_Curriculum_content_react_redux_topics_react_builds_projects_exploring_react_builds_solution_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__["default"])(ClassComponent, _React$Component);
+var ClassComponent = /*#__PURE__*/ (function (_React$Component) {
+  Object(
+    _Users_jameschurchill_Documents_GitHub_Modular_Curriculum_content_react_redux_topics_react_builds_projects_exploring_react_builds_solution_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__[
+      "default"
+    ]
+  )(ClassComponent, _React$Component);
 
-  var _super = Object(_Users_jameschurchill_Documents_GitHub_Modular_Curriculum_content_react_redux_topics_react_builds_projects_exploring_react_builds_solution_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_3__["default"])(ClassComponent);
+  var _super = Object(
+    _Users_jameschurchill_Documents_GitHub_Modular_Curriculum_content_react_redux_topics_react_builds_projects_exploring_react_builds_solution_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_3__[
+      "default"
+    ]
+  )(ClassComponent);
 
   function ClassComponent() {
-    Object(_Users_jameschurchill_Documents_GitHub_Modular_Curriculum_content_react_redux_topics_react_builds_projects_exploring_react_builds_solution_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ClassComponent);
+    Object(
+      _Users_jameschurchill_Documents_GitHub_Modular_Curriculum_content_react_redux_topics_react_builds_projects_exploring_react_builds_solution_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__[
+        "default"
+      ]
+    )(this, ClassComponent);
 
     return _super.apply(this, arguments);
   }
 
-  Object(_Users_jameschurchill_Documents_GitHub_Modular_Curriculum_content_react_redux_topics_react_builds_projects_exploring_react_builds_solution_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ClassComponent, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h1", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7,
-          columnNumber: 7
-        }
-      }, "Class Component");
-    }
-  }]);
+  Object(
+    _Users_jameschurchill_Documents_GitHub_Modular_Curriculum_content_react_redux_topics_react_builds_projects_exploring_react_builds_solution_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__[
+      "default"
+    ]
+  )(ClassComponent, [
+    {
+      key: "render",
+      value: function render() {
+        return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(
+          "h1",
+          {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 7,
+              columnNumber: 7,
+            },
+          },
+          "Class Component"
+        );
+      },
+    },
+  ]);
 
   return ClassComponent;
-}(react__WEBPACK_IMPORTED_MODULE_4___default.a.Component);
+})(react__WEBPACK_IMPORTED_MODULE_4___default.a.Component);
 ```
 
 Luckily it's very rare that you'll need to read the code in your generated
@@ -4007,11 +4309,11 @@ you can refer to it within JSX using an expression and `process.env`:
 ```js
 // ./src/App.js
 
-import React from 'react';
-import HeadingA from './css-modules/HeadingA';
-import HeadingB from './css-modules/HeadingB';
-import Image from './image/Image';
-import ClassComponent from './class-component/ClassComponent';
+import React from "react";
+import HeadingA from "./css-modules/HeadingA";
+import HeadingB from "./css-modules/HeadingB";
+import Image from "./image/Image";
+import ClassComponent from "./class-component/ClassComponent";
 
 function App() {
   return (
@@ -4053,8 +4355,7 @@ like this:
 Run your application again using `npm start`. Open your browser's developer
 tools and view the "Sources" for the current page. Expand the `localhost:3000`
 node on the left and select `(index)`. Notice that the text `%REACT_APP_TITLE%`
-within the `<title>` element has been converted to the text literal `Exploring
-React Builds`:
+within the `<title>` element has been converted to the text literal `Exploring React Builds`:
 
 ![react builds index html]
 
@@ -4067,14 +4368,18 @@ converted to JavaScript:
 Here's a closer look at the relevant `React.createElement` method call:
 
 ```js
-/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+/*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+  "h1",
+  {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10,
-      columnNumber: 7
-    }
-  }, "Exploring React Builds")
+      columnNumber: 7,
+    },
+  },
+  "Exploring React Builds"
+);
 ```
 
 Again, notice how the environment variable has been replaced with a text
@@ -4103,17 +4408,12 @@ Then update the `App` component to this code:
 ```js
 // ./src/App.js
 
-import React from 'react';
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
-import HeadingA from './css-modules/HeadingA';
-import HeadingB from './css-modules/HeadingB';
-import Image from './image/Image';
-import ClassComponent from './class-component/ClassComponent';
+import React from "react";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import HeadingA from "./css-modules/HeadingA";
+import HeadingB from "./css-modules/HeadingB";
+import Image from "./image/Image";
+import ClassComponent from "./class-component/ClassComponent";
 
 function App() {
   return (
@@ -4156,9 +4456,9 @@ export default App;
 Be sure to run and test your application to ensure that the defined routes work
 as expected:
 
-* `/` - Should display the `HeadingA` and `HeadingB` components;
-* `/image` - Should display the `Image` component; and
-* `/class-component` - Should display the `ClassComponent` component.
+- `/` - Should display the `HeadingA` and `HeadingB` components;
+- `/image` - Should display the `Image` component; and
+- `/class-component` - Should display the `ClassComponent` component.
 
 ### Creating a production build
 
@@ -4193,8 +4493,7 @@ Find out more about deployment here:
   bit.ly/CRA-deploy
 ```
 
-**Ignore the comments about using `serve` to deploy your application (i.e. `npm
-install -g serve` and `serve -s build`).** In the next step, you'll create a
+**Ignore the comments about using `serve` to deploy your application (i.e. `npm install -g serve` and `serve -s build`).** In the next step, you'll create a
 simple Express application to server your React application.
 
 ### Serving a React application using Express
@@ -4203,8 +4502,7 @@ Create a new folder for your Express application outside of the Create React App
 project folder.
 
 > For example, from the root of your project, use `cd ..` to go up a level and
-> then create a new folder named `express-server` by running the command `mkdir
-> express-server`. This makes the `express-server` folder a sibling to your
+> then create a new folder named `express-server` by running the command `mkdir express-server`. This makes the `express-server` folder a sibling to your
 > Create React App project folder.
 
 Browse into the `express-server` folder and initialize it to use npm (i.e.
@@ -4216,15 +4514,15 @@ App a file named `app.js` with the following contents:
 ```js
 // ./app.js
 
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 const port = 9000;
@@ -4234,9 +4532,9 @@ app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 This simple Express application will:
 
-* Attempt to match incoming requests to static files located in the `public`
+- Attempt to match incoming requests to static files located in the `public`
   folder; and
-* If a matching static file isn't found, then the `./public/index.html` file
+- If a matching static file isn't found, then the `./public/index.html` file
   will be served for all other requests.
 
 Now add a folder named `public` to the root of your Express project. Copy the
@@ -4253,8 +4551,8 @@ Also, because you configured Express to serve the `./public/index.html` file for
 any request that doesn't match a static file, you can "deep link" to any of your
 React application's routes:
 
-* [http://localhost:9000/image][image link]
-* [http://localhost:9000/class-component][class component link]
+- [http://localhost:9000/image][image link]
+- [http://localhost:9000/class-component][class component link]
 
 [create-react-app]: https://github.com/facebook/create-react-app
 [react builds cat]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-builds/assets/react-builds-cat.png
