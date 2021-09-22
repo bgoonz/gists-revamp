@@ -212,7 +212,7 @@ This snippet flattens an array recursively.
 
 23. default
 
-This snippet assigns default values for all properties in an object that are *undefined*.
+This snippet assigns default values for all properties in an object that are _undefined_.
 
     const defaults = (obj, ...defs) => Object.assign({}, obj, ...defs.reverse(), obj);
 
@@ -476,8 +476,7 @@ This snippet can be used to get all indexes of a value in an array, which return
     indexOfAll([1, 2, 3, 1, 2, 3], 1); // [0,3]
     indexOfAll([1, 2, 3], 4); // []
 
-52. initial
-===========
+52. # initial
 
 This snippet returns all elements of an array except the last one.
 
@@ -969,5 +968,3 @@ This snippet can be used to get `n`random elements from unique positions from an
 \`\`\` const sampleSize = (\[…arr\], n = 1) =&gt; { let m = arr.length; while (m) { const i = Math.floor(Math.random() \* m–); \[arr\[m\], arr\[i\]\] = \[arr\[i\], arr\[m\]\]; } return arr.slice(0, n); };
 
 sampleSize(\[1, 2, 3\], 2); // \[3,1\] sampleSize(\[1, 2, 3\], 4); // \[2,3,1\]
-
-

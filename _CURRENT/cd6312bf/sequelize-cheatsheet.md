@@ -1,8 +1,6 @@
-Sequelize Cheatsheet
-====================
+# Sequelize Cheatsheet
 
-Command Line
-------------
+## Command Line
 
 Sequelize provides utilities for generating migrations, models, and seed files. They are exposed through the `sequelize-cli` command.
 
@@ -48,8 +46,7 @@ You must create a database user, and update the `config/config.json` file to mat
 
     $ npx sequelize-cli db:seed:undo:all
 
-Migrations
-----------
+## Migrations
 
 ### Column Attribute Keywords
 
@@ -60,8 +57,7 @@ Migrations
         references: { model: <TableName> }, // This is the plural table name that the column references.
     }
 
-Model Associations
-------------------
+## Model Associations
 
 ### One to One between Student and Scholarship
 
@@ -105,8 +101,7 @@ Model Associations
 
         Lesson.belongsToMany(models.Student, columnMapping);
 
-Query Format
-------------
+## Query Format
 
 ### findOne
 

@@ -1,5 +1,4 @@
-SpectrogramJS
-=============
+# SpectrogramJS
 
 Visualize sounds using a spectrogram - right in your browser!
 
