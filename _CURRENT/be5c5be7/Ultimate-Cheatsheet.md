@@ -1,6 +1,5 @@
 # Ultimate Resource List
 
-
 - **[CLI Tools](#cli-tools-toc)**
 - **[GUI Tools](#gui-tools-toc)**
 - **[Web Tools](#web-tools-toc)**

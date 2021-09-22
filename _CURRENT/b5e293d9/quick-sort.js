@@ -1,11 +1,12 @@
-function quickSort(array) { // n is the length of the input array
+function quickSort(array) {
+  // n is the length of the input array
   if (array.length <= 1) {
     return array;
   }
 
   let pivot = array.shift();
-  let left = array.filter(el => el < pivot); // O(n) linear
-  let right = array.filter(el => el >= pivot);
+  let left = array.filter((el) => el < pivot); // O(n) linear
+  let right = array.filter((el) => el >= pivot);
 
   let leftSorted = quickSort(left); // O(log n) best case - O(n) worst case
   let rightSorted = quickSort(right);
@@ -25,6 +26,4 @@ function quickSort(array) { // n is the length of the input array
 // left = [2]
 // right = [4,5]
 
-
 // O((3n^2*(logn)) - 2n - 5) === O(n^2 * logn)
-
