@@ -35,18 +35,18 @@ polygon(c(-10, -10, 0), c(0, 10, 0), col = "grey",
     # x <= 0
     # y >= 0
     # y + x <= 0 # Representing y = 0 - 1*x
-    # 
+    #
     # # Rewritten
     # x <= 0
     # -y <= 0
     # x + y <= 0
-    # 
-    # A 
+    #
+    # A
     #   1   0
     #   0  -1
     #   1   1
-    #   
-    # b 
+    #
+    # b
     # 0
     # 0
     # 0
@@ -55,8 +55,3 @@ A <- matrix(c(1, 0, 0, -1, 1, 1), 3, 2, byrow = T)
 b <- c(0, 0, 0)
 constrOptim(c(-5, 2),fb, NULL, A, b)
 ```
-
-
-
-
-

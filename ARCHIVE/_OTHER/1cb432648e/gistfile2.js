@@ -4,12 +4,12 @@ function foo() {
   console.log(2 in arguments);
 }
 
-foo.apply(null,[,,42]);
+foo.apply(null, [, , 42]);
 // true
 // true
 // true
 
-foo(...[,,42]);
+foo(...[, , 42]);
 // ??
 // ??
 // ??

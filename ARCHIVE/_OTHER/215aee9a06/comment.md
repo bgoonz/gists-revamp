@@ -1,4 +1,4 @@
-This is a *sample* sentence to **test Markdown** in the comments of a WordPress blog with Jetpack Markdown enabled for comments.
+This is a _sample_ sentence to **test Markdown** in the comments of a WordPress blog with Jetpack Markdown enabled for comments.
 
 ```
 <h1 id="test">This is a code block</h1>
@@ -16,4 +16,3 @@ This is a *sample* sentence to **test Markdown** in the comments of a WordPress 
 Hopefully this fenced code block comes out wrapped in `<pre>` and `<code>` tags.
 
 Single-backticked `<code>` should allow anything also, since it escapes, like this `<script>alert("hi");</script>`
-

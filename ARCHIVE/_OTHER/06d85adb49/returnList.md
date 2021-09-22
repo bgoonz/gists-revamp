@@ -1,12 +1,12 @@
-```r 
+```r
 # Function
 xylist <- function(start, finish){
-  
+
   x <- seq(start, finish)
   y <- seq(start, finish)^2
-  
+
   return(list("x" = x, "y" = y))
-  
+
 }
 
 xyOut <- xylist(1,5)
@@ -14,7 +14,8 @@ xyOut$x
 xyOut$y
 
 ```
-```r 
+
+```r
 # Outputs
 xyOut <- xylist(1,5)
 

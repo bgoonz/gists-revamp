@@ -1,14 +1,14 @@
 function* foo() {
-   throw "Oops!";
+  throw "Oops!";
 }
 
 function* bar() {
-   try {
-      // QUESTION: but also... I *can* catch an error passing through, if I want to!?
-      yield* foo();
-   } catch (err) {
-      console.log("Error: " + err);
-   }
+  try {
+    // QUESTION: but also... I *can* catch an error passing through, if I want to!?
+    yield* foo();
+  } catch (err) {
+    console.log("Error: " + err);
+  }
 }
 
 var it = bar();

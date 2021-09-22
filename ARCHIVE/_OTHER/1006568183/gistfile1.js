@@ -6,10 +6,7 @@ function step() {
 
 var stepVal = 0;
 
-var isq = ASQ.iterable()
-.then(step)
-.then(step)
-.then(step);
+var isq = ASQ.iterable().then(step).then(step).then(step);
 
 // if you try this code in ES6fiddle or traceur,
 // uncomment the next line:

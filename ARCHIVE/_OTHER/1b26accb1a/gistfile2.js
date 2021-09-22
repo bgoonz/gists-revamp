@@ -2,9 +2,9 @@
 
 var self = this;
 
-addEventListener("message",function(evt){
-	console.log("from child.js:",evt.data);
+addEventListener("message", function (evt) {
+  console.log("from child.js:", evt.data);
 
-	// here `self.` is optional
-	self.postMessage(evt.data.toUpperCase());
+  // here `self.` is optional
+  self.postMessage(evt.data.toUpperCase());
 });

@@ -3,13 +3,16 @@
  */
 
 div {
-   position: relative;
-   transition: top 1s ease-in, left 1s ease-out;
+  position: relative;
+  transition: top 1s ease-in, left 1s ease-out;
 }
 body:hover div {
-   top: 100px;
-   left: 100px;
+  top: 100px;
+  left: 100px;
 }
 
-body, html { height: 100%; overflow: hidden; }
-
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}

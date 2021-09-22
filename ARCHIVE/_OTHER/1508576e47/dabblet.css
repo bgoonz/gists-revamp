@@ -2,14 +2,18 @@
    Saw some movie and there was some Oprah-related commerical before it and it had title things like this during it 
  */
 
-body { background: black; padding: 100px; margin: 0; }
+body {
+  background: black;
+  padding: 100px;
+  margin: 0;
+}
 
-h1 { 
+h1 {
   text-align: center;
   color: white;
   text-transform: uppercase;
   padding: 1px;
-  font-family: 'Raleway', cursive;
+  font-family: "Raleway", cursive;
   font-weight: 100;
   position: relative;
   background: linear-gradient(left, black, #eee, black);
@@ -37,7 +41,15 @@ h1 a {
 }
 
 @keyframes comein {
-   0% { letter-spacing: 100px; color: rgba(255,255,255,0); }
-   70% { letter-spacing: 20px; }
-   100% { letter-spacing: 30px; color: rgba(255,255,255,1) }
+  0% {
+    letter-spacing: 100px;
+    color: rgba(255, 255, 255, 0);
+  }
+  70% {
+    letter-spacing: 20px;
+  }
+  100% {
+    letter-spacing: 30px;
+    color: rgba(255, 255, 255, 1);
+  }
 }

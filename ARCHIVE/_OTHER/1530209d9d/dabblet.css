@@ -2,8 +2,12 @@
 body {
   font-size: 150%;
 }
-h1, h2, h3, h4, h5 {
-  font-family: 'Spicy Rice', cursive;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Spicy Rice", cursive;
   font-weight: 400;
-   /* Your other headings CSS */
+  /* Your other headings CSS */
 }

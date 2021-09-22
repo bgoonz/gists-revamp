@@ -1,6 +1,6 @@
 // For further color on this, consider:
 
-(function(a){
+(function (a) {
   var a;
   console.log(a);
 })(2); // 2

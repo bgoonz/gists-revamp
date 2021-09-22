@@ -6,34 +6,83 @@
 
 html {
   font-size: 1.3vmin;
-  background: var(--bg) radial-gradient(closest-corner, rgba(255,255,255,.25), rgba(255,255,255,0));
+  background: var(--bg)
+    radial-gradient(
+      closest-corner,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0)
+    );
   height: 90%;
 }
 
 @keyframes rotate1 {
-  25% { left: 0; transform: rotate(-135deg); opacity: 1; }
-  25.01% { left: -.5em; opacity: 0; }
-  50% { left: 0; opacity: 0; }
-  50.01% { opacity: 1; transform: rotate(-135deg); }
-  75% { left: 0; transform: rotate(-315deg); }
-  100% { transform: rotate(-315deg);  }
+  25% {
+    left: 0;
+    transform: rotate(-135deg);
+    opacity: 1;
+  }
+  25.01% {
+    left: -0.5em;
+    opacity: 0;
+  }
+  50% {
+    left: 0;
+    opacity: 0;
+  }
+  50.01% {
+    opacity: 1;
+    transform: rotate(-135deg);
+  }
+  75% {
+    left: 0;
+    transform: rotate(-315deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+  }
 }
 
 @keyframes rotate2 {
-  25% { right: 0; transform: rotate(-135deg); opacity: 1; }
-  25.01% { right: -.5em; opacity: 0; }
-  50% { right: 0; opacity: 0; }
-  50.01% { opacity: 1; transform: rotate(-135deg); }
-  75% { right: 0; transform: rotate(-315deg);  }
-  100% { transform: rotate(-315deg);  }
+  25% {
+    right: 0;
+    transform: rotate(-135deg);
+    opacity: 1;
+  }
+  25.01% {
+    right: -0.5em;
+    opacity: 0;
+  }
+  50% {
+    right: 0;
+    opacity: 0;
+  }
+  50.01% {
+    opacity: 1;
+    transform: rotate(-135deg);
+  }
+  75% {
+    right: 0;
+    transform: rotate(-315deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+  }
 }
 
 @keyframes container {
-  25% { transform: translate3d(0, -50%, 0); width: .5em; }
-  50% { transform: translate3d(-100%, -50%, 0); width: .5em; }
-  75% { transform: translate3d(-50%, -50%, 0); width: 1em; }
+  25% {
+    transform: translate3d(0, -50%, 0);
+    width: 0.5em;
+  }
+  50% {
+    transform: translate3d(-100%, -50%, 0);
+    width: 0.5em;
+  }
+  75% {
+    transform: translate3d(-50%, -50%, 0);
+    width: 1em;
+  }
 }
-
 
 .countdown {
   font-size: 50rem;
@@ -45,13 +94,13 @@ html {
   transform: translate3d(-50%, -50%, 0);
   animation: container calc(var(--duration) * 2) steps(1) infinite;
   overflow: hidden;
-  
+
   &::before,
   &::after {
     display: block;
-    content: '';
+    content: "";
     box-sizing: border-box;
-    border: .125em solid transparent;
+    border: 0.125em solid transparent;
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -62,7 +111,7 @@ html {
     animation-duration: calc(var(--duration) * 2);
     animation-iteration-count: infinite;
   }
-  
+
   &::before {
     border-color: transparent transparent var(--color) var(--color);
     animation-name: rotate1;
@@ -75,4 +124,4 @@ html {
     animation-name: rotate2;
     right: 0;
   }
-} 
+}

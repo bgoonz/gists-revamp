@@ -18,13 +18,12 @@
 }
 .rating > span:hover:before,
 .rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-   left: 0; 
-   color: gold;
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: gold;
 }
 
-
-
-
-body { padding: 100px; }
+body {
+  padding: 100px;
+}

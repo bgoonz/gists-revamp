@@ -1,16 +1,16 @@
 var obj = {
-	_step: 0
+  _step: 0,
 };
 
-obj[Symbol.iterator] = function() {
-	return {
-		next: function() {
-			return { value: ++obj._step, done: (obj._step === 4) };
-		}
-	};
+obj[Symbol.iterator] = function () {
+  return {
+    next: function () {
+      return { value: ++obj._step, done: obj._step === 4 };
+    },
+  };
 };
 
-for (var v of obj){
+for (var v of obj) {
   console.log(v);
 }
 

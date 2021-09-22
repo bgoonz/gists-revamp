@@ -1,65 +1,65 @@
 /* Click open/close Dropdown in pure CSS */
 
 .tabs {
-    position: relative;
-    clear: both;
-    margin: 50px;
+  position: relative;
+  clear: both;
+  margin: 50px;
 }
 .tab {
-    float: left;
-    position: relative;
+  float: left;
+  position: relative;
 }
 .tab label {
-    background: -webkit-linear-gradient(#eee, #ccc);
-    padding: 10px 30px;
-    cursor: pointer;
-    text-align: center;
-    display: block;
-    position: relative;
+  background: -webkit-linear-gradient(#eee, #ccc);
+  padding: 10px 30px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  position: relative;
 }
 .tab label i {
-    font-style: normal;
-    font-size: 10px;
-    color: #aaa;
+  font-style: normal;
+  font-size: 10px;
+  color: #aaa;
 }
-.tab [type=radio] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    margin: 0;
+.tab [type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
 }
 .content {
-    position: absolute;
-    top: 100%;
-    opacity: 0;
-    left: 0;
-    background: #333;
-    color: white;
-    padding: 20px;
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+  left: 0;
+  background: #333;
+  color: white;
+  padding: 20px;
 }
-[type=radio]:checked ~ label {
-    z-index: 2;
+[type="radio"]:checked ~ label {
+  z-index: 2;
 }
-[type=radio]:checked ~ label ~ .content {
-    z-index: 1;
-    opacity: 1;
+[type="radio"]:checked ~ label ~ .content {
+  z-index: 1;
+  opacity: 1;
 }
 
 .close-tab {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .close-tab label {
-    background: #333;
-    color: white;
+  background: #333;
+  color: white;
 }
-[type=radio]:checked ~ label ~ .close-tab {
-    z-index: 3;
+[type="radio"]:checked ~ label ~ .close-tab {
+  z-index: 3;
 }

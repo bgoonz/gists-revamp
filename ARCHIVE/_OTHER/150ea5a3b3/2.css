@@ -1,16 +1,16 @@
 :root {
-   /* initial CSS computation values, that are overriden by the JS */
-   --vw-unit: 1vw;
-   --vh-unit: 1vh;
+  /* initial CSS computation values, that are overriden by the JS */
+  --vw-unit: 1vw;
+  --vh-unit: 1vh;
 }
 
 h1 {
-   /* make the h1 50% of the width of the viewport */
-   width: calc(50 * var(--vw-unit));  /* instead of '50vw' */
+  /* make the h1 50% of the width of the viewport */
+  width: calc(50 * var(--vw-unit)); /* instead of '50vw' */
 
-   /* make the h1 80% of the height of the viewport */
-   height: calc(80 * var(--vh-unit));  /* instead of '80vh' */
+  /* make the h1 80% of the height of the viewport */
+  height: calc(80 * var(--vh-unit)); /* instead of '80vh' */
 
-   background-color: blue;
-   color: white;
+  background-color: blue;
+  color: white;
 }

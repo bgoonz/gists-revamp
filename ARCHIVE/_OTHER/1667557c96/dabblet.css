@@ -1,23 +1,28 @@
 /* Animate to natural width */
 
-body { background: black; padding: 100px; margin: 0; }
+body {
+  background: black;
+  padding: 100px;
+  margin: 0;
+}
 
 .progress-bar {
   border: 2px solid red;
   border-radius: 14px;
-
 }
-.progress-bar > div { 
-  color: white; 
+.progress-bar > div {
+  color: white;
   background: red;
   overflow: hidden;
-  white-space: nowrap; 
+  white-space: nowrap;
   padding: 10px 20px;
   border-radius: 10px;
-  
+
   animation: progress-bar 2s;
 }
 
 @keyframes progress-bar {
-   0% { width: 0; }
+  0% {
+    width: 0;
+  }
 }

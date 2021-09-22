@@ -6,8 +6,6 @@ function a() {
   console.log("yay");
 }
 
-
-
 // **********************
 // Hoists as:
 

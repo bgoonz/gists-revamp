@@ -3,23 +3,24 @@
 */
 
 .triangle-with-shadow {
-   width: 100px;
-   height: 100px;
-   position: relative;
-   overflow: hidden;
-   box-shadow: 0 16px 10px -17px rgba(0,0,0,0.5);
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.5);
 }
 .triangle-with-shadow:after {
-   content: "";
-   position: absolute;
-   width: 50px;
-   height: 50px;
-   background: #999;
-   transform: rotate(45deg);
-   top: 75px;
-   left: 25px;
-   box-shadow: -1px -1px 10px -2px rgba(0,0,0,0.5);
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #999;
+  transform: rotate(45deg);
+  top: 75px;
+  left: 25px;
+  box-shadow: -1px -1px 10px -2px rgba(0, 0, 0, 0.5);
 }
-.triangle-with-shadow:hover, .triangle-with-shadow:hover:after {
-   box-shadow: none;
+.triangle-with-shadow:hover,
+.triangle-with-shadow:hover:after {
+  box-shadow: none;
 }

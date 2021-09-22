@@ -1,9 +1,9 @@
 /* F.A.Q */
 
-input[type=checkbox] {
-   position: absolute;
-   top: -9999px;
-   left: -9999px;
+input[type="checkbox"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 h2 {
   font-size: 30px;
@@ -12,13 +12,13 @@ h2 {
   margin: 60px 0 10px 0;
 }
 label {
-   cursor: pointer;
+  cursor: pointer;
 }
 label {
   position: relative;
   display: block;
   padding-left: 30px;
-  font-family: 'Spicy Rice', cursive;
+  font-family: "Spicy Rice", cursive;
 }
 label:before {
   content: "";
@@ -32,12 +32,12 @@ label:before {
   border-bottom: 8px solid transparent;
   margin-top: -8px;
 }
-input[type=checkbox]:checked ~ h2 label:before {
+input[type="checkbox"]:checked ~ h2 label:before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
   margin-left: -4px;
-  margin-top: -4px
+  margin-top: -4px;
 }
 
 p {
@@ -45,15 +45,13 @@ p {
   overflow: hidden;
   padding-left: 30px;
   transition: max-height 0.4s ease;
-  font-family: 'Habibi', serif;
+  font-family: "Habibi", serif;
 }
-input[type=checkbox]:checked ~ h2 ~ p {
+input[type="checkbox"]:checked ~ h2 ~ p {
   max-height: 80px;
 }
 
-
-
 body {
-   background: #fbbe05;
-   padding: 40px;
+  background: #fbbe05;
+  padding: 40px;
 }

@@ -3,26 +3,28 @@
  * Multiple backgrounds, basic linear gradients
  */
 
-html, body { 
-	height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 html {
-	background: linear-gradient(black, #444);	
-	background-color: #222;
+  background: linear-gradient(black, #444);
+  background-color: #222;
 }
 
 body {
-	background: url("http://e-steki.gr/nem/images/onenightchat/moon.png") no-repeat 100% 1em,
-		url("http://e-steki.gr/nem/images/onenightchat/stars.png") repeat-x 0 0,
-		url("http://e-steki.gr/nem/images/onenightchat/city.png") repeat-x bottom;
-	margin: 0;
+  background: url("http://e-steki.gr/nem/images/onenightchat/moon.png")
+      no-repeat 100% 1em,
+    url("http://e-steki.gr/nem/images/onenightchat/stars.png") repeat-x 0 0,
+    url("http://e-steki.gr/nem/images/onenightchat/city.png") repeat-x bottom;
+  margin: 0;
 }
 
 section {
-	max-width: 25em; 
-	margin: 0 auto;
-	padding-top: 100px;
-	color: white;
-	font: italic 100%/1.5 'Palatino Linotype', Georgia, serif;
+  max-width: 25em;
+  margin: 0 auto;
+  padding-top: 100px;
+  color: white;
+  font: italic 100%/1.5 "Palatino Linotype", Georgia, serif;
 }

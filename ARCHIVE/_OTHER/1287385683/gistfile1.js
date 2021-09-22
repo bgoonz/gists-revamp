@@ -1,9 +1,7 @@
 var script1 = document.createElement("script"),
-    script2 = document.createElement("script"),
-    script3 = document.createElement("script"),
-    script4 = document.createElement("script")
-;
-
+  script2 = document.createElement("script"),
+  script3 = document.createElement("script"),
+  script4 = document.createElement("script");
 script1.async = false;
 script1.src = "../js/mustache-min.js";
 

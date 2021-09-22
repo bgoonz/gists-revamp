@@ -50,6 +50,7 @@ Now, your local master branch is up-to-date with everything modified upstream.
 ## Doing Your Work
 
 ### Create a Branch
+
 Whenever you begin work on a new feature or bugfix, it's important that you create a new branch. Not only is it proper git workflow, but it also keeps your changes organized and separated from the master branch so that you can easily submit and manage multiple pull requests for every task you complete.
 
 To create a new branch and start working on it:
@@ -90,7 +91,7 @@ Now, it may be desirable to squash some of your smaller commits down into a smal
 
 ```shell
 # Rebase all commits on your development branch
-git checkout 
+git checkout
 git rebase -i master
 ```
 
@@ -103,6 +104,7 @@ Once you've committed all of you're changes and pushed them to GitHub, go to the
 ## Accepting and Merging a Pull Request
 
 ### Checking Out and Testing Pull Requests
+
 Open up the `.git/config` file and add a new line under `[remote "orgin"]`:
 
 ```
@@ -122,9 +124,11 @@ git checkout -b 999 pull/origin/999
 Keep in mind that these branches will be read only and you won't be able to push any changes.
 
 ### Automatically Merging a Pull Request
+
 In cases where the merge would be a simple fast-forward, you can automatically do the merge by just clicking the button on the pull request page on GitHub.
 
 ### Manually Merging a Pull Request
+
 To do the merge manually, you'll need to checkout the target branch in the source repo, pull directly from the fork, and then merge and push.
 
 ```shell
@@ -148,6 +152,7 @@ git branch -d newfeature
 ```
 
 **Sources**
-* [GitHub - Fork a Repo](https://help.github.com/articles/fork-a-repo)
-* [GitHub - Syncing a Fork](https://help.github.com/articles/syncing-a-fork)
-* [GitHub - Checking Out a Pull Request](https://help.github.com/articles/checking-out-pull-requests-locally)
+
+- [GitHub - Fork a Repo](https://help.github.com/articles/fork-a-repo)
+- [GitHub - Syncing a Fork](https://help.github.com/articles/syncing-a-fork)
+- [GitHub - Checking Out a Pull Request](https://help.github.com/articles/checking-out-pull-requests-locally)
