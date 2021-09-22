@@ -31,7 +31,7 @@ The following export keywords are supported:
 
 - TITLE: document title; fully supported.
 
-- EXPORT_FILE_NAME: target filename; _unsupported_, the output
+- EXPORT*FILE_NAME: target filename; \_unsupported*, the output
   defaults to stdout unless a target has to be given as a command
   line option.
 
