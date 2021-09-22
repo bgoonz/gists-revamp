@@ -1,6 +1,6 @@
 #### Producing Execution Plans
 
-When you execute a query in the database, the query goes through the query optimizer, which produces an execution plan. The execution plan then instructs the database *how* to execute the query. The optimizer, for example, determines whether a query will use an index or scan the entire table.
+When you execute a query in the database, the query goes through the query optimizer, which produces an execution plan. The execution plan then instructs the database _how_ to execute the query. The optimizer, for example, determines whether a query will use an index or scan the entire table.
 
 In this scenario you are going to inspect and evaluate execution plans.
 

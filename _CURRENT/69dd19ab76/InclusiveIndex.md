@@ -1,7 +1,6 @@
 #### Inclusive Index
 
-Resolving a Key to a Full URL
-=============================
+# Resolving a Key to a Full URL
 
 One of the most common tasks in a URL shortener system is to find the URL for a given key. A query to find a URL for a key can look like this:
 
