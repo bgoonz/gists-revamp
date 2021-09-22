@@ -1643,7 +1643,7 @@ But if we’re going to write into it, or iterate over it, basically for almost 
 
 _!_ let view = new Uint32Array(buffer); // treat buffer as a sequence of 32-bit integers
 
-alert(Uint32Array.BYTES_PER_ELEMENT); // 4 bytes per integer _/!_
+alert(Uint32Array.BYTES*PER_ELEMENT); // 4 bytes per integer */!\_
 
 alert(view.length); // 4, it stores that many integers alert(view.byteLength); // 16, the size in bytes
 

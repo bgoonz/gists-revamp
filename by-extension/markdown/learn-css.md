@@ -1,13 +1,12 @@
 Web pages are built with HTML, which specifies the content of a page. CSS (Cascading Style Sheets) is a separate language which specifies a page’s **appearance**.
 
-CSS code is made of static *rules*. Each rule takes one or more *selectors* and gives specific *values* to a number of visual *properties*. Those properties are then applied to the page elements indicated by the selectors.
+CSS code is made of static _rules_. Each rule takes one or more _selectors_ and gives specific _values_ to a number of visual _properties_. Those properties are then applied to the page elements indicated by the selectors.
 
 This guide has been written with CSS 2 in mind, which is extended by the new features of CSS 3.
 
 **NOTE:** Because CSS produces visual results, in order to learn it, you need to try everything in a CSS playground like [dabblet](http://dabblet.com/). The main focus of this article is on the syntax and some general tips.
 
-Syntax
-------
+## Syntax
 
     /* comments appear inside slash-asterisk, just like this line!
        there are no "one-line comments"; this is the only comment style */
@@ -172,8 +171,7 @@ Syntax
         font-family: "Courier New", Trebuchet, Arial, sans-serif;
     }
 
-Usage
------
+## Usage
 
 Save a CSS stylesheet with the extension `.css`.
 
@@ -190,8 +188,7 @@ Save a CSS stylesheet with the extension `.css`.
     <div style="border: 1px solid red;">
     </div>
 
-Precedence or Cascade
----------------------
+## Precedence or Cascade
 
 An element may be targeted by multiple selectors and may have a property set on it in more than once. In these cases, one of the rules takes precedence over others. Rules with a more specific selector take precedence over a less specific one, and a rule occurring later in the stylesheet overwrites a previous one (which also means that if two different linked stylesheets contain rules for an element and if the rules are of the same specificity, then order of linking would take precedence and the sheet linked latest would govern styling) .
 
@@ -220,15 +217,14 @@ and the following markup:
 
 The precedence of style is as follows. Remember, the precedence is for each **property**, not for the entire block.
 
--   `E` has the highest precedence because of the keyword `!important`. It is recommended that you avoid its usage.
--   `F` is next, because it is an inline style.
--   `A` is next, because it is more “specific” than anything else. It has 3 specifiers: The name of the element `p`, its class `class1`, an attribute `attr='value'`.
--   `C` is next, even though it has the same specificity as `B`. This is because it appears after `B`.
--   `B` is next.
--   `D` is the last one.
+- `E` has the highest precedence because of the keyword `!important`. It is recommended that you avoid its usage.
+- `F` is next, because it is an inline style.
+- `A` is next, because it is more “specific” than anything else. It has 3 specifiers: The name of the element `p`, its class `class1`, an attribute `attr='value'`.
+- `C` is next, even though it has the same specificity as `B`. This is because it appears after `B`.
+- `B` is next.
+- `D` is the last one.
 
-Media Queries
--------------
+## Media Queries
 
 CSS Media Queries are a feature in CSS 3 which allows you to specify when certain CSS rules should be applied, such as when printed, or when on a screen with certain dimensions or pixel density. They do not add to the selector’s specificity.
 
@@ -265,26 +261,23 @@ Many smartphones and tablets will attempt to render the page as if it were on a 
       <meta name="viewport" content="width=device-width; initial-scale=1.0">
     </head>
 
-Compatibility
--------------
+## Compatibility
 
 Most of the features in CSS 2 (and many in CSS 3) are available across all browsers and devices. But it’s always good practice to check before using a new feature.
 
-Resources
----------
+## Resources
 
--   [CanIUse](http://caniuse.com) (Detailed compatibility info)
--   [Dabblet](http://dabblet.com/) (CSS playground)
--   [Mozilla Developer Network’s CSS documentation](https://developer.mozilla.org/en-US/docs/Web/CSS) (Tutorials and reference)
--   [Codrops’ CSS Reference](http://tympanus.net/codrops/css_reference/) (Reference)
--   [DevTips’ CSS Basics](https://www.youtube.com/playlist?list=PLqGj3iMvMa4IOmy04kDxh_hqODMqoeeCy) (Tutorials)
+- [CanIUse](http://caniuse.com) (Detailed compatibility info)
+- [Dabblet](http://dabblet.com/) (CSS playground)
+- [Mozilla Developer Network’s CSS documentation](https://developer.mozilla.org/en-US/docs/Web/CSS) (Tutorials and reference)
+- [Codrops’ CSS Reference](http://tympanus.net/codrops/css_reference/) (Reference)
+- [DevTips’ CSS Basics](https://www.youtube.com/playlist?list=PLqGj3iMvMa4IOmy04kDxh_hqODMqoeeCy) (Tutorials)
 
-Further Reading
----------------
+## Further Reading
 
--   [Understanding Style Precedence in CSS: Specificity, Inheritance, and the Cascade](http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/)
--   [Selecting elements using attributes](https://css-tricks.com/almanac/selectors/a/attribute/)
--   [QuirksMode CSS](http://www.quirksmode.org/css/)
--   [Z-Index - The stacking context](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context)
--   [SASS](http://sass-lang.com/) and [LESS](http://lesscss.org/) for CSS pre-processing
--   [CSS-Tricks](https://css-tricks.com)
+- [Understanding Style Precedence in CSS: Specificity, Inheritance, and the Cascade](http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/)
+- [Selecting elements using attributes](https://css-tricks.com/almanac/selectors/a/attribute/)
+- [QuirksMode CSS](http://www.quirksmode.org/css/)
+- [Z-Index - The stacking context](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context)
+- [SASS](http://sass-lang.com/) and [LESS](http://lesscss.org/) for CSS pre-processing
+- [CSS-Tricks](https://css-tricks.com)
