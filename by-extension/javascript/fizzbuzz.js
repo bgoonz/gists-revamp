@@ -1,31 +1,25 @@
-// --- Directions
-// Write a program that console logs the numbers
-// from 1 to n. But for multiples of three print
-// “fizz” instead of the number and for the multiples
-// of five print “buzz”. For numbers which are multiples
-// of both three and five print “fizzbuzz”.
-// --- Example
-//   fizzBuzz(5);
-//   1
-//   2
-//   fizz
-//   4
-//   buzz
+const maybe = (result) => {
+  return {
+    if(number) {
+      return {
+        divisibleBy(divisor) {
+          return number % divisor === 0 && result;
+        },
+      };
+    },
+  };
+};
 
-function fizzBuzz(n) {
-  for (let i = 1; i <= n; i++) {
-    // Is the number a multiple of 3 and 5?
-    if (i % 3 === 0 && i % 5 === 0) {
-      console.log("fizzbuzz");
-    } else if (i % 3 === 0) {
-      // Is the number a multiple of 3?
-      console.log("fizz");
-    } else if (i % 5 === 0) {
-      console.log("buzz");
-    } else {
-      console.log(i);
-    }
-  }
-}
+const result = Array.from({ length: 100 })
+  .map((_, index) => {
+    const number = index + 1;
+    return (
+      maybe("FizzBuzz").if(number).divisibleBy(15) ||
+      maybe("Buzz").if(number).divisibleBy(5) ||
+      maybe("Fizz").if(number).divisibleBy(3) ||
+      number
+    );
+  })
+  .join("\n");
 
-module.exports = fizzBuzz;
+console.log(result);

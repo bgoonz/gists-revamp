@@ -1,11 +1,3 @@
-const app = require("express")();
+import person form "./person.css";
 
-const PORT = process.env.PORT || 3000;
-
-app.get("", (req, res) => {
-  res.send("He110 world");
-});
-
-app.ltsten(PORT, () => {
-  console.log(`App up at port ${PORT}`);
-});
+element.innerHTML = `<h1 class="${person.name}">Name</h1>`;
