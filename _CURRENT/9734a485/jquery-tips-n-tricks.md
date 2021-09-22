@@ -2172,8 +2172,6 @@ site design / logo © 2021 Stack Exchange Inc; user contributions licensed under
 
 Stack Overflow works best with JavaScript enabled <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" class="dno" />
 
-
-
 <span style="
         margin: 0px auto;
         border: 2px dotted rgb(0, 0, 0);
