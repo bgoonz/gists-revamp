@@ -1,46 +1,92 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>article (43)</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<h1 id="map-and-set">Map and Set</h1>
-<p>Till now, we’ve learned about the following complex data structures:</p>
-<ul>
-<li>Objects are used for storing keyed collections.</li>
-<li>Arrays are used for storing ordered collections.</li>
-</ul>
-<p>But that’s not enough for real life. That’s why <code>Map</code> and <code>Set</code> also exist.</p>
-<h2 id="map">Map</h2>
-<p><a href="mdn:js/Map">Map</a> is a collection of keyed data items, just like an <code>Object</code>. But the main difference is that <code>Map</code> allows keys of any type.</p>
-<p>Methods and properties are:</p>
-<ul>
-<li><code>new Map()</code> – creates the map.</li>
-<li><code>map.set(key, value)</code> – stores the value by the key.</li>
-<li><code>map.get(key)</code> – returns the value by the key, <code>undefined</code> if <code>key</code> doesn’t exist in map.</li>
-<li><code>map.has(key)</code> – returns <code>true</code> if the <code>key</code> exists, <code>false</code> otherwise.</li>
-<li><code>map.delete(key)</code> – removes the value by the key.</li>
-<li><code>map.clear()</code> – removes everything from the map.</li>
-<li><code>map.size</code> – returns the current element count.</li>
-</ul>
-<p>For instance:</p>
-<p>```js run let map = new Map();</p>
-<p>map.set(“1”, “str1”); // a string key map.set(1, “num1”); // a numeric key map.set(true, “bool1”); // a boolean key</p>
-<p>// remember the regular Object? it would convert keys to string // Map keeps the type, so these two are different: alert(map.get(1)); // ‘num1’ alert(map.get(“1”)); // ‘str1’</p>
-<p>alert(map.size); // 3 ```</p>
-<p>As we can see, unlike objects, keys are not converted to strings. Any type of key is possible.</p>
-<p>``<code>smart header="</code>map[key]<code>isn't the right way to use a</code>Map<code>" Although</code>map[key]<code>also works, e.g. we can set</code>map[key] = 2<code>, this is treating</code>map` as a plain JavaScript object, so it implies all corresponding limitations (only string/symbol keys and so on).</p>
-<p>So we should use <code>map</code> methods: <code>set</code>, <code>get</code> and so on.</p>
-<pre><code>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>article (43)</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="map-and-set">Map and Set</h1>
+    <p>Till now, we’ve learned about the following complex data structures:</p>
+    <ul>
+      <li>Objects are used for storing keyed collections.</li>
+      <li>Arrays are used for storing ordered collections.</li>
+    </ul>
+    <p>
+      But that’s not enough for real life. That’s why <code>Map</code> and
+      <code>Set</code> also exist.
+    </p>
+    <h2 id="map">Map</h2>
+    <p>
+      <a href="mdn:js/Map">Map</a> is a collection of keyed data items, just
+      like an <code>Object</code>. But the main difference is that
+      <code>Map</code> allows keys of any type.
+    </p>
+    <p>Methods and properties are:</p>
+    <ul>
+      <li><code>new Map()</code> – creates the map.</li>
+      <li><code>map.set(key, value)</code> – stores the value by the key.</li>
+      <li>
+        <code>map.get(key)</code> – returns the value by the key,
+        <code>undefined</code> if <code>key</code> doesn’t exist in map.
+      </li>
+      <li>
+        <code>map.has(key)</code> – returns <code>true</code> if the
+        <code>key</code> exists, <code>false</code> otherwise.
+      </li>
+      <li><code>map.delete(key)</code> – removes the value by the key.</li>
+      <li><code>map.clear()</code> – removes everything from the map.</li>
+      <li><code>map.size</code> – returns the current element count.</li>
+    </ul>
+    <p>For instance:</p>
+    <p>```js run let map = new Map();</p>
+    <p>
+      map.set(“1”, “str1”); // a string key map.set(1, “num1”); // a numeric key
+      map.set(true, “bool1”); // a boolean key
+    </p>
+    <p>
+      // remember the regular Object? it would convert keys to string // Map
+      keeps the type, so these two are different: alert(map.get(1)); // ‘num1’
+      alert(map.get(“1”)); // ‘str1’
+    </p>
+    <p>alert(map.size); // 3 ```</p>
+    <p>
+      As we can see, unlike objects, keys are not converted to strings. Any type
+      of key is possible.
+    </p>
+    <p>
+      ``<code>smart header="</code>map[key]<code
+        >isn't the right way to use a</code
+      >Map<code>" Although</code>map[key]<code>also works, e.g. we can set</code
+      >map[key] = 2<code>, this is treating</code>map` as a plain JavaScript
+      object, so it implies all corresponding limitations (only string/symbol
+      keys and so on).
+    </p>
+    <p>
+      So we should use <code>map</code> methods: <code>set</code>,
+      <code>get</code> and so on.
+    </p>
+    <pre><code>
 **Map can also use objects as keys.**
 
 For instance:
@@ -55,16 +101,43 @@ let visitsCountMap = new Map();
 visitsCountMap.set(john, 123);
 
 alert( visitsCountMap.get(john) ); // 123</code></pre>
-<p>Using objects as keys is one of the most notable and important <code>Map</code> features. The same does not count for <code>Object</code>. String as a key in <code>Object</code> is fine, but we can’t use another <code>Object</code> as a key in <code>Object</code>.</p>
-<p>Let’s try:</p>
-<p>```js run let john = { name: “John” }; let ben = { name: “Ben” };</p>
-<p>let visitsCountObj = {}; // try to use an object</p>
-<p>visitsCountObj[ben] = 234; // try to use ben object as the key visitsCountObj[john] = 123; // try to use john object as the key, ben object will get replaced</p>
-<p><em>!</em> // That’s what got written! alert( visitsCountObj[“[object Object]”] ); // 123 <em>/!</em> ```</p>
-<p>As <code>visitsCountObj</code> is an object, it converts all <code>Object</code> keys, such as <code>john</code> and <code>ben</code> above, to same string <code>"[object Object]"</code>. Definitely not what we want.</p>
-<p>``<code>smart header="How</code>Map<code>compares keys" To test keys for equivalence,</code>Map<code>uses the algorithm [SameValueZero](https://tc39.github.io/ecma262/#sec-samevaluezero). It is roughly the same as strict equality</code>===<code>, but the difference is that</code>NaN<code>is considered equal to</code>NaN<code>. So</code>NaN` can be used as the key as well.</p>
-<p>This algorithm can’t be changed or customized.</p>
-<pre><code>
+    <p>
+      Using objects as keys is one of the most notable and important
+      <code>Map</code> features. The same does not count for
+      <code>Object</code>. String as a key in <code>Object</code> is fine, but
+      we can’t use another <code>Object</code> as a key in <code>Object</code>.
+    </p>
+    <p>Let’s try:</p>
+    <p>```js run let john = { name: “John” }; let ben = { name: “Ben” };</p>
+    <p>let visitsCountObj = {}; // try to use an object</p>
+    <p>
+      visitsCountObj[ben] = 234; // try to use ben object as the key
+      visitsCountObj[john] = 123; // try to use john object as the key, ben
+      object will get replaced
+    </p>
+    <p>
+      <em>!</em> // That’s what got written! alert( visitsCountObj[“[object
+      Object]”] ); // 123 <em>/!</em> ```
+    </p>
+    <p>
+      As <code>visitsCountObj</code> is an object, it converts all
+      <code>Object</code> keys, such as <code>john</code> and
+      <code>ben</code> above, to same string <code>"[object Object]"</code>.
+      Definitely not what we want.
+    </p>
+    <p>
+      ``<code>smart header="How</code>Map<code
+        >compares keys" To test keys for equivalence,</code
+      >Map<code
+        >uses the algorithm
+        [SameValueZero](https://tc39.github.io/ecma262/#sec-samevaluezero). It
+        is roughly the same as strict equality</code
+      >===<code>, but the difference is that</code>NaN<code
+        >is considered equal to</code
+      >NaN<code>. So</code>NaN` can be used as the key as well.
+    </p>
+    <p>This algorithm can’t be changed or customized.</p>
+    <pre><code>
 ````smart header=&quot;Chaining&quot;
 Every `map.set` call returns the map itself, so we can &quot;chain&quot; the calls:
 
@@ -72,7 +145,7 @@ Every `map.set` call returns the map itself, so we can &quot;chain&quot; the cal
 map.set(&#39;1&#39;, &#39;str1&#39;)
   .set(1, &#39;num1&#39;)
   .set(true, &#39;bool1&#39;);</code></pre>
-<pre><code>
+    <pre><code>
 
 ## Iteration over Map
 
@@ -303,5 +376,5 @@ Methods and properties:
 - `set.size` -- is the elements count.
 
 Iteration over `Map` and `Set` is always in the insertion order, so we can&#39;t say that these collections are unordered, but we can&#39;t reorder elements or directly get an element by its number.</code></pre>
-</body>
+  </body>
 </html>
