@@ -1,0 +1,66 @@
+
+.tabs {
+    position: relative;
+    clear: both;
+    margin: 50px;
+}
+.tab {
+    float: left;
+    position: relative;
+}
+.tab label {
+    background: #eee;
+    padding: 10px 30px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+    position: relative;
+}
+.tab label i {
+    font-style: normal;
+    font-size: 10px;
+    color: #aaa;
+}
+.tab [type=radio] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 0;
+}
+.content {
+    position: absolute;
+    top: 99%;
+    opacity: 0;
+    left: -1px;
+    background: white;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+[type=radio]:checked ~ label {
+    z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content {
+    z-index: 1;
+    opacity: 1;
+}
+
+.close-tab {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.close-tab label {
+    background: white;
+    border-bottom: 1px solid white;
+}
+[type=radio]:checked ~ label ~ .close-tab {
+    z-index: 3;
+}

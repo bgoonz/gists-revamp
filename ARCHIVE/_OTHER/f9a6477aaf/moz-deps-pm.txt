@@ -1,0 +1,7 @@
+npm - 1616
+pypi - 446
+bower - 202
+rubygems - 182
+cargo - 91
+clojars - 27
+packagist - 27

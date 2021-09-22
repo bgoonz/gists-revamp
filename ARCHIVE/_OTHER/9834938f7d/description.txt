@@ -1,0 +1,1 @@
+Exemplo básico de como trabalhar com os métodos strptime e strftime da biblioteca datetime do python

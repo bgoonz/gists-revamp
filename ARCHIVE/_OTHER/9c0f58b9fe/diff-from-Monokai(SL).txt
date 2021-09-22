@@ -1,0 +1,84 @@
+52a53,54
+> 				<key>fontStyle</key>
+> 				<string>bold</string>
+218,219d219
+< 				<key>fontStyle</key>
+< 				<string>italic</string>
+221c221
+< 				<string>#FD971F</string>
+---
+> 				<string>#AA77AA</string>
+254c254
+< 			<string>variable.function, variable.annotation</string>
+---
+> 			<string>variable.function, variable.annotation, meta.function-call entity.name.function</string>
+349c349
+< 				<string>#CFCFC2</string>
+---
+> 				<string>#E6DB74</string>
+590c590
+< 	<dict>
+---
+> 		<dict>
+600c600,601
+<         </dict><dict>
+---
+>         </dict>
+>         <dict>
+610c611,612
+<         </dict><dict>
+---
+>         </dict>
+>         <dict>
+620c622,670
+<         </dict></array>
+---
+>         </dict>
+> 
+> 
+> 
+> 		<dict>
+> 			<key>name</key>
+> 			<string>js variable readwrite</string>
+> 			<key>scope</key>
+> 			<string>meta.initialization, variable.other.readwrite.js</string>
+> 			<key>settings</key>
+> 			<dict>
+> 				<key>foreground</key>
+> 				<string>#ffffff</string>
+> 			</dict>
+> 		</dict>
+> 		<dict>
+> 			<key>name</key>
+> 			<string>string.template-string.js</string>
+> 			<key>scope</key>
+> 			<string>string.template-string.js</string>
+> 			<key>settings</key>
+> 			<dict>
+> 				<key>foreground</key>
+> 				<string>#E6DB74</string>
+> 			</dict>
+> 		</dict>
+> 		<dict>
+> 			<key>name</key>
+> 			<string>punctuation.template-string.element</string>
+> 			<key>scope</key>
+> 			<string>punctuation.template-string.element</string>
+> 			<key>settings</key>
+> 			<dict>
+> 				<key>foreground</key>
+> 				<string>#F92672</string>
+> 			</dict>
+> 		</dict>
+> 		<dict>
+> 			<key>name</key>
+> 			<string>entity.template-string.tag.name.js</string>
+> 			<key>scope</key>
+> 			<string>entity.template-string.tag.name.js</string>
+> 			<key>settings</key>
+> 			<dict>
+> 				<key>foreground</key>
+> 				<string>#FFFFFF</string>
+> 			</dict>
+> 		</dict>
+>     </array>

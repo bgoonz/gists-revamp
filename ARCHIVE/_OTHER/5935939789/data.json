@@ -1,0 +1,7 @@
+/* this is an example of how to use
+   whitespace and comments in your JSON
+   but still have it parseable */
+{
+   "name": "JSON.minify()",
+   "type": "javascript" // values: "javascript", "js"
+}

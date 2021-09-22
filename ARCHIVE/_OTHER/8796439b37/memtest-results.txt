@@ -1,0 +1,11 @@
+> node --expose-gc memtest.js
+
+On my 64bit mac, this process uses about 391mb of memory according to "Activity Monitor".
+
+> node --expose-gc memtest2.js
+
+By contrast, if I read in 3.1mm records nearly identical to those being generated, from a .json file,
+this process fills up 1.5gb of memory quickly, then crawls to a halt, and takes a REALLY long time to 
+get all the records finally pulled in (like hours).
+
+What gives?

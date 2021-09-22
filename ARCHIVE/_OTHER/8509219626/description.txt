@@ -1,0 +1,1 @@
+Example usage of the new asynquence.map() contrib plugin to update an array against a redis cache

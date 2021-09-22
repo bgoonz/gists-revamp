@@ -1,0 +1,34 @@
+# .Rprofile -- commands to execute at the beginning of each R session
+#
+# You can use this file to load packages, set options, etc.
+#
+# NOTE: changes in this file won't be reflected until after you quit
+# and start a new session
+#
+require(ProjectTemplate)
+
+
+options(show.signif.stars=FALSE, scipen=10, htmlhelp=TRUE)
+options(width=115, repos="http://cran.rstudio.com",
+        CRAN = "http://cran.rstudio.com",
+        browserNLdisabled = TRUE,
+        deparse.max.lines = 2)
+if (interactive()) {
+  suppressMessages(require(devtools))
+}
+options(error= function() cat("    \\\   \n     \\\
+ 
+      \\`*-.
+        )  _`-.
+       .  : `. .
+       : _   '  \
+       ; *` _.   `*-._
+       `-.-'          `-.
+         ;       `       `.
+         :.       .       \\
+         .\\  .   :   .-'   .
+         '  `+.;  ;  '      :
+         :  '  |    ;       ;-.
+         ; '   : :`-:     _.`* ;
+      .*' /  .*' ; .*`- +'  `*'
+      `*-*   `*-*  `*-*'\n\n"))

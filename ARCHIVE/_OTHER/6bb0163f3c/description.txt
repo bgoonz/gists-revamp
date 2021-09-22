@@ -1,0 +1,1 @@
+experiment: mimicking React's new "useState()" hook for stand-alone functions, including "custom hooks"

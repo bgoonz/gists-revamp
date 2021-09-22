@@ -1,0 +1,16 @@
+So now, in the code snippets, we move the "*" from being cuddled up on the left, to the
+"function" and "yield" keywords, to being cuddled up on the right, to the identifiers
+or expressions. Why?
+
+Because now, in the body text, when we go to talk about the "foo" generator, we can say
+"*foo()", and likewise we can say "*bar()" for the generator version compared to just
+"bar()" for the normal function type.
+
+Now, pay close attention to all the inline references to "foo" and "bar", and how the "*"
+being present or not is a visual clue to help the reader know if you're talking about
+a generator or a function. "*" being present makes the body text a little clearer and
+a little less confusing.
+
+Moreover, it "fits" cohesively with the "yield" statement, too. "yield *bar()" matches
+the body text referring to a "*bar()", as opposed to "yield* bar()" not as clearly
+being a match.

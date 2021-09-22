@@ -1,0 +1,1 @@
+Collection of CodinGame puzzles solved (http://www.codingame.com/)

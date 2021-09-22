@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-symbol": "beer",
+        "marker-size": "large",
+        "What": "London Meetup",
+        "Venue": "Electricity Showrooms",
+        "Address": "39A Hoxton Square, London, UK, N1 6NN",
+        "When": "Thursday, June 19th, 7:30pm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0803095,
+          51.5275981
+        ]
+      }
+    }
+  ]
+}

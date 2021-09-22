@@ -1,0 +1,1 @@
+no such thing as "silent errors" in asynquence, like there is with other promises' libs. So, asynquence doesn't need the hack of `done(..)` like others do.

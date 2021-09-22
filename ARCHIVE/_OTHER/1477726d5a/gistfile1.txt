@@ -1,0 +1,7 @@
+	<?php if ($_SERVER['something'] == mx) { ?>
+		<div class="no-translate">
+			<?php echo get_post_meta($post->ID, 'translate-mx', true) ?>
+		</div>
+	<?php } else { ?>
+		<?php the_content(); ?>
+	<?php } ?>

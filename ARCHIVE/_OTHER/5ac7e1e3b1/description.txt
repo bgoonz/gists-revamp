@@ -1,0 +1,1 @@
+Free Fundamentals Time Series from Quandl (Tangible Book and Equity) [R]

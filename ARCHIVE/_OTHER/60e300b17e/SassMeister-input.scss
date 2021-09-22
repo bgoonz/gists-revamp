@@ -1,0 +1,12 @@
+// ----
+// Sass (v3.4.13)
+// Compass (v1.0.3)
+// Jeet (v6.1.2)
+// ----
+
+@import "jeet/index";
+
+.col {
+  @include col(1/2);
+  background: red;
+}

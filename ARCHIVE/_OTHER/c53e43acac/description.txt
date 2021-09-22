@@ -1,0 +1,1 @@
+is this allowed in ES5/ES6 strict mode?

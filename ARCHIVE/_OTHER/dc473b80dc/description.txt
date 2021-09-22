@@ -1,0 +1,1 @@
+verificar se um PID está ativo (unix e windows 32bits)

@@ -1,0 +1,1 @@
+Promises pop quiz: can you articulate the difference(s) between these two snippets?

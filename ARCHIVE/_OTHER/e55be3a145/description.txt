@@ -1,0 +1,1 @@
+Exemplo simples de uso de Threads em python

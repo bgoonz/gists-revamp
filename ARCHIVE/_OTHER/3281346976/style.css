@@ -1,0 +1,41 @@
+html {
+  background-image: linear-gradient(hsla(0,0%,0%,.25), hsla(0,0%,0%,0));
+  height: 100%;
+}
+.loader {
+  animation: load 1s linear infinite;
+  border: .5em solid #555;
+  border-radius: 100%;
+  display: block;
+  height: 2em;
+  left: 50%;
+  margin: -1.5em;
+  position: absolute;
+  top: 50%;
+  width: 2em;
+}
+.loader:after {
+  border: .5em solid #6cf;
+  border-radius: 100%;
+  bottom: .25em;
+  content: '';
+  left: .25em;
+  position: absolute;
+  right: .25em;
+  top: .25em;
+}
+.loader:before {
+  border-bottom: 1em solid #6cf;
+  border-left: .7em solid transparent;
+  border-right: .7em solid transparent;
+  content: '';
+  height: 0;
+  left: 50%;
+  margin-left: -.7em;
+  position: absolute;
+  top: -.25em;
+  width: 0;
+}
+@keyframes load {
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,160 @@
+ ---------------------------------
+true,true,true,true,true
+a ? b : c ? d : e => true (a,b)
+(a ? b : c) ? d : e => true (a,b,d)
+a ? b : (c ? d : e) => true (a,b)
+---------------------------------
+false,true,true,true,true
+a ? b : c ? d : e => true (a,c,d)
+(a ? b : c) ? d : e => true (a,c,d)
+a ? b : (c ? d : e) => true (a,c,d)
+---------------------------------
+true,false,true,true,true
+a ? b : c ? d : e => false (a,b)
+(a ? b : c) ? d : e => true (a,b,e)
+a ? b : (c ? d : e) => false (a,b)
+---------------------------------
+false,false,true,true,true
+a ? b : c ? d : e => true (a,c,d)
+(a ? b : c) ? d : e => true (a,c,d)
+a ? b : (c ? d : e) => true (a,c,d)
+---------------------------------
+true,true,false,true,true
+a ? b : c ? d : e => true (a,b)
+(a ? b : c) ? d : e => true (a,b,d)
+a ? b : (c ? d : e) => true (a,b)
+---------------------------------
+false,true,false,true,true
+a ? b : c ? d : e => true (a,c,e)
+(a ? b : c) ? d : e => true (a,c,e)
+a ? b : (c ? d : e) => true (a,c,e)
+---------------------------------
+true,false,false,true,true
+a ? b : c ? d : e => false (a,b)
+(a ? b : c) ? d : e => true (a,b,e)
+a ? b : (c ? d : e) => false (a,b)
+---------------------------------
+false,false,false,true,true
+a ? b : c ? d : e => true (a,c,e)
+(a ? b : c) ? d : e => true (a,c,e)
+a ? b : (c ? d : e) => true (a,c,e)
+---------------------------------
+true,true,true,false,true
+a ? b : c ? d : e => true (a,b)
+(a ? b : c) ? d : e => false (a,b,d)
+a ? b : (c ? d : e) => true (a,b)
+---------------------------------
+false,true,true,false,true
+a ? b : c ? d : e => false (a,c,d)
+(a ? b : c) ? d : e => false (a,c,d)
+a ? b : (c ? d : e) => false (a,c,d)
+---------------------------------
+true,false,true,false,true
+a ? b : c ? d : e => false (a,b)
+(a ? b : c) ? d : e => true (a,b,e)
+a ? b : (c ? d : e) => false (a,b)
+---------------------------------
+false,false,true,false,true
+a ? b : c ? d : e => false (a,c,d)
+(a ? b : c) ? d : e => false (a,c,d)
+a ? b : (c ? d : e) => false (a,c,d)
+---------------------------------
+true,true,false,false,true
+a ? b : c ? d : e => true (a,b)
+(a ? b : c) ? d : e => false (a,b,d)
+a ? b : (c ? d : e) => true (a,b)
+---------------------------------
+false,true,false,false,true
+a ? b : c ? d : e => true (a,c,e)
+(a ? b : c) ? d : e => true (a,c,e)
+a ? b : (c ? d : e) => true (a,c,e)
+---------------------------------
+true,false,false,false,true
+a ? b : c ? d : e => false (a,b)
+(a ? b : c) ? d : e => true (a,b,e)
+a ? b : (c ? d : e) => false (a,b)
+---------------------------------
+false,false,false,false,true
+a ? b : c ? d : e => true (a,c,e)
+(a ? b : c) ? d : e => true (a,c,e)
+a ? b : (c ? d : e) => true (a,c,e)
+---------------------------------
+true,true,true,true,false
+a ? b : c ? d : e => true (a,b)
+(a ? b : c) ? d : e => true (a,b,d)
+a ? b : (c ? d : e) => true (a,b)
+---------------------------------
+false,true,true,true,false
+a ? b : c ? d : e => true (a,c,d)
+(a ? b : c) ? d : e => true (a,c,d)
+a ? b : (c ? d : e) => true (a,c,d)
+---------------------------------
+true,false,true,true,false
+a ? b : c ? d : e => false (a,b)
+(a ? b : c) ? d : e => false (a,b,e)
+a ? b : (c ? d : e) => false (a,b)
+---------------------------------
+false,false,true,true,false
+a ? b : c ? d : e => true (a,c,d)
+(a ? b : c) ? d : e => true (a,c,d)
+a ? b : (c ? d : e) => true (a,c,d)
+---------------------------------
+true,true,false,true,false
+a ? b : c ? d : e => true (a,b)
+(a ? b : c) ? d : e => true (a,b,d)
+a ? b : (c ? d : e) => true (a,b)
+---------------------------------
+false,true,false,true,false
+a ? b : c ? d : e => false (a,c,e)
+(a ? b : c) ? d : e => false (a,c,e)
+a ? b : (c ? d : e) => false (a,c,e)
+---------------------------------
+true,false,false,true,false
+a ? b : c ? d : e => false (a,b)
+(a ? b : c) ? d : e => false (a,b,e)
+a ? b : (c ? d : e) => false (a,b)
+---------------------------------
+false,false,false,true,false
+a ? b : c ? d : e => false (a,c,e)
+(a ? b : c) ? d : e => false (a,c,e)
+a ? b : (c ? d : e) => false (a,c,e)
+---------------------------------
+true,true,true,false,false
+a ? b : c ? d : e => true (a,b)
+(a ? b : c) ? d : e => false (a,b,d)
+a ? b : (c ? d : e) => true (a,b)
+---------------------------------
+false,true,true,false,false
+a ? b : c ? d : e => false (a,c,d)
+(a ? b : c) ? d : e => false (a,c,d)
+a ? b : (c ? d : e) => false (a,c,d)
+---------------------------------
+true,false,true,false,false
+a ? b : c ? d : e => false (a,b)
+(a ? b : c) ? d : e => false (a,b,e)
+a ? b : (c ? d : e) => false (a,b)
+---------------------------------
+false,false,true,false,false
+a ? b : c ? d : e => false (a,c,d)
+(a ? b : c) ? d : e => false (a,c,d)
+a ? b : (c ? d : e) => false (a,c,d)
+---------------------------------
+true,true,false,false,false
+a ? b : c ? d : e => true (a,b)
+(a ? b : c) ? d : e => false (a,b,d)
+a ? b : (c ? d : e) => true (a,b)
+---------------------------------
+false,true,false,false,false
+a ? b : c ? d : e => false (a,c,e)
+(a ? b : c) ? d : e => false (a,c,e)
+a ? b : (c ? d : e) => false (a,c,e)
+---------------------------------
+true,false,false,false,false
+a ? b : c ? d : e => false (a,b)
+(a ? b : c) ? d : e => false (a,b,e)
+a ? b : (c ? d : e) => false (a,b)
+---------------------------------
+false,false,false,false,false
+a ? b : c ? d : e => false (a,c,e)
+(a ? b : c) ? d : e => false (a,c,e)
+a ? b : (c ? d : e) => false (a,c,e)

@@ -1,0 +1,39 @@
+@import "compass"
+body
+  background-color: #323a45
+  text-align: center
+    
+figure
+  background-color: #667282
+  display: inline-block
+  width: 15em
+  height: 15em
+  border-radius: 10px
+  position: relative
+  $bs: null
+  @for $i from 1 through 500
+    $bs: #{$i}px #{$i}px 0 0 #29313c, $bs
+  box-shadow: $bs
+  > span
+    display: block
+    width: 6em
+    height: 6em
+    border: 1px solid transparent
+    border-radius: 70px 0 70px 70px
+    position: absolute 
+    &:nth-child(1)
+      background-color: rgba(#d98d2f, .8)
+      z-index: 15
+      -webkit-transform: translate(35px, 40px) rotate(270deg)
+    &:nth-child(2)
+      background-color: rgba(#f5e365, .8)
+      z-index: 10
+      -webkit-transform: translate(110px, 40px) rotate(0deg)
+    &:nth-child(3)
+      background-color: rgba(#c36b9e, .8)
+      z-index: 20
+      -webkit-transform: translate(35px, 100px) rotate(180deg)
+    &:nth-child(4)
+      background-color: rgba(#76c2e2, .8)
+      z-index: 5
+      -webkit-transform: translate(110px, 100px) rotate(90deg)     

@@ -1,0 +1,6 @@
+  # accept traffic to the normal ssh port
+  iptables -A INPUT -i eth0 -p tcp --dport 22 -j ACCEPT
+  # accept traffic on the port kippo is listening on
+  iptables -A INPUT -i eth0 -p tcp --dport 2222 -j ACCEPT
+  # direct traffic inbound on port 22 to port 2222
+  iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 22 -j REDIRECT --to-port 2222

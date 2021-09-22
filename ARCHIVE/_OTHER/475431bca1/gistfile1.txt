@@ -1,0 +1,55 @@
+<html>
+<head>
+<script type="text/javascript" src="LAB.js"></script>
+<script type="text/javascript">
+var _queue = ["script1.js",null], $L = $LAB;
+</script>
+
+...
+</head>
+<body>
+<script type="text/javascript">
+if (something) { // script 2 going to be loaded
+	_queue.push("script2-a.js","script2-b.js",function(){
+		initScript1();
+		initScript2();
+	});
+}
+else {	// script 2 not going to be loaded, so just init script-1
+	_queue.push(function(){
+		initScript1();
+	});
+}
+
+</script>
+
+...
+
+<script type="text/javascript">
+if (somethingElse) {
+	_queue.push("script-3.js",function(){
+		initScript3();
+	});
+}
+</script>
+
+...
+
+<script type="text/javascript">
+
+for (var i=0, len=_queue.length; i<len; i++) {
+	if (typeof _queue[i] == "string") { // script string source found
+		$L = $L.script(_queue[i]);
+	}
+	else if (!_queue[i]) { // null/false found
+		$L = $L.wait();
+	}
+	else if (typeof _queue[i] == "function") { // inline function found
+		$L = $L.wait(_queue[i]);
+	}
+}
+
+</script>
+
+</body>
+</html>

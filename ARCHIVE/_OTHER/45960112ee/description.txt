@@ -1,0 +1,5 @@
+A native syntax alternative for `Function.prototype.bind`? This is an open exploration and soft proposal. Feedback appreciated.
+
+The main problem I'm trying to solve with `Function.prototype.bind()` is that it creates a new function that's wrapped around the function you specify. This means if you do that a lot, you're creating (and throwing away) lots of extra functions (likely) creating more memory usage and GC cleanup. Secondarily, this proposed syntactic approach would only provide a different default `this`, but could still be overridable with `call()` and `apply()`, whereas the result of `Function.prototype.bind()` isn't overridable.
+
+What I propose here is an operator that would essentially create a "late binding" for a function's `this` reference, meaning it didn't need to wrap a new function, but could instead just default the `this` binding for the function at the time the function is called. Think of it like adding an internal flag/property along with an existing (not new) function reference to

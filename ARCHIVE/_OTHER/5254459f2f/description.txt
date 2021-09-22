@@ -1,0 +1,1 @@
+a rather inefficient, but workable, "polyfill" (of sorts) for `currentThis` as proposed in: https://gist.github.com/getify/5253319

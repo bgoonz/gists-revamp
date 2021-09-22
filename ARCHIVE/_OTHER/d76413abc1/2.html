@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rotating An Rectangle</title>
+</head>
+<body>
+<p>
+   <canvas id="canvas-1"></canvas>
+</p>
+<p>
+   <canvas id="canvas-2"></canvas>
+</p>
+
+<script>
+
+var rectWidth = 375;
+var rectHeight = 250;
+
+function drawRect(ctx) {
+   ctx.beginPath();
+   ctx.rect(0,0,rectWidth,rectHeight);
+   ctx.stroke();
+   ctx.closePath();
+}
+
+window.onload = function onLoad(){
+   var cnv1 = document.getElementById("canvas-1");
+   var ctx1 = cnv1.getContext("2d");
+   var cnv2 = document.getElementById("canvas-2");
+   var ctx2 = cnv2.getContext("2d");
+
+   cnv1.width = rectWidth;
+   cnv1.height = rectHeight;
+   cnv2.width = rectHeight;
+   cnv2.height = rectWidth;
+
+   drawRect(ctx1);
+
+   // rotate 90 degrees clockwise
+   ctx2.save();
+   var cx = cnv2.width / 2;
+   var cy = cnv2.height / 2;
+   ctx2.translate(cx,cy);
+   ctx2.rotate(Math.PI / 2);
+   ctx2.translate(-cx,-cy);
+   drawRect(ctx2);
+   ctx2.restore();
+};
+
+</script>
+</body>
+</html>

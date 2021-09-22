@@ -1,0 +1,5 @@
+Use decorator to avoid retyping function/class names into __all__ module variable.
+
+It's an effective way to cut down large number of unnecessary imports caused by "from some_module import *".
+
+Works on Python 2.6 and greater.

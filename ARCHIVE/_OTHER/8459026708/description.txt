@@ -1,0 +1,1 @@
+example: refactoring some code (in keystonejs) from "callback hell"-style to asynquence-style

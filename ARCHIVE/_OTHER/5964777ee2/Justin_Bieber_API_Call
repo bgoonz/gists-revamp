@@ -1,0 +1,1 @@
+curl 'http://api.nytimes.com/svc/search/v1/article?query=justin%20beiber&api-key=f7b4a1749764aec0364b215c354e3a0f:18:25759498'

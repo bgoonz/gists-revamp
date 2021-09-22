@@ -1,0 +1,16 @@
+	var tooFast = false;
+
+	$(window).load(function() {
+		tooFast = true;
+	});
+
+	function bindLoad() {
+		if (tooFast) {
+			$("html").addClass("loaded");
+		} else {
+			$(window).load(function() {
+				$("html").addClass("loaded");
+			});
+		}
+	}
+	setTimeout(bindLoad, 500);

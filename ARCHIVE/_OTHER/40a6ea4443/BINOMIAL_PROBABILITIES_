@@ -1,0 +1,37 @@
+# Quick GIST I wrote in the Data Science Capstone JHU forum (Dec 2014)
+
+# It appears if the one of us draws 5 random tweets or news excerpts as the grading criteria calls for, 
+# the probability that none of the five match the top-word is 32.8%--assuming the 
+# true accuracy of model is 20%.
+
+# Overall, if the top-word as criteria for success is used, where 4 reviewers using 5 random samples, 
+# the probability that none of the 20 predictions match the top word is only 1.2%.
+
+
+k <- 0 # Success
+n <- 5 # Trials
+p <- .2 # True prob
+
+binom.test(k, n, p,  alternative = "less", conf.level = 0.95)
+# Zero Successes: 32.8% Chance (p-value = 0.3277)
+
+
+k <- 1 # Success
+n <- 5 # Trials
+p <- .2 # True prob
+
+binom.test(k, n, p,  alternative = "less", conf.level = 0.95)
+# One or Less Success 73.73% (p-value .7373)
+
+
+# Exactly 1 Success: 73.73% - 32.8%  =  40.9% (1 out of 5 Correct)
+# Greater than 1 Sucesses: 100% - 73.73% = 26.7%
+
+
+### Assuming 4 reviewers
+k <- 0 # Success
+n <- 20 # Trials
+p <- .2 # True prob
+
+binom.test(k, n, p,  alternative = "less", conf.level = 0.95)
+# Zero Successes 1.2% Chance (p-value = 0.01153)

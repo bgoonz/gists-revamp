@@ -1,0 +1,1 @@
+some ranting on the nature of browser versions and backward-browser compatibility

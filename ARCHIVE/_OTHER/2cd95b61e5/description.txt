@@ -1,0 +1,1 @@
+`asyncify(..)` for ensuring callback asynchrony, from "YDKJS: Async & Performance", Chapter 2

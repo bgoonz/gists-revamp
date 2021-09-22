@@ -1,0 +1,1 @@
+exploring what a `currentThis` might look like in JS

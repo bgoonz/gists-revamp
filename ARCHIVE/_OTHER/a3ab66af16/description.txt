@@ -1,0 +1,1 @@
+fun little experiment... a point-free definition for "copySession()" (essentially a shallow object copy)

@@ -1,0 +1,45 @@
+//COMPILER: Scope, can you register an `Animal` and a `dog`?
+//SCOPE: Sure.
+var Animal, dog;
+
+//ENGINE: Scope, do you have `Animal` available?
+//SCOPE: Sure, here it is.
+//ENGINE: I'm assigning a reference to the anonymous function to `Animal`
+
+//COMPILER: I see a function expression with a parameter called `inLove`
+//COMPILER: Scope, can you register `inLove` inside this function scope?
+//SCOPE: Sure.
+
+Animal = function(inLove) {
+
+//ENGINE: Scope, do you have a `inLove` variable?
+//SCOPE: Sure do, here ya go.
+//ENGINE: great, looks like its value was set to `true` when this function was
+//        called.
+//ENGINE: looking up what `this` was bound to when this function was called.
+//ENGINE: ahh, it's this empty object. I'm adding the `lovesHumans` property to
+//        it, and setting the property value to `true`.
+
+    this.lovesHumans = inLove || false;
+    
+//ENGINE: since there's no other explicit `return ..` here, I'm returning back the
+//        `this` from this function call, like an assumed `return this;`
+};
+
+//ENGINE: Scope, do you have an `Animal` variable?
+//SCOPE: As usual, yes. Here.
+//ENGINE: great, looks like Animal points to that function.
+
+//ENGINE: calling the function with `new`, which means I need to create an empty
+//        object for its `this` to point to. Also, passing `true` for the first
+//        argument, whatever it's called.
+dog = new Animal(true);
+
+//ENGINE: great, got an object back from that `Animal(..)` function call.
+//ENGINE: Scope, do you have a `dog` variable?
+//SCOPE: Sure do, here ya go.
+//ENGINE: great, assigning its reference to the `dog` variable
+
+//ENGINE: looking at the `dog` object, does it have a `lovesHumans` property?
+//        yep, and its value is currently `true`.
+dog.lovesHumans; // true

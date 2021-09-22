@@ -1,0 +1,260 @@
+Bitly tech talk 4/22/2010
+
+On 4/22 we held a bit.ly tech talk on 'Command Line Fu', where we invited talented hackers to come share their best moves. Please correct my notes and add your fu here!
+
+# @jehiah
+
+# in place file regex replacement
+perl -pi -e 's/this/that/g' filename_pattern
+
+# print the last column of a file ($NF stands for 'Number of Fields' or more commonly Last Field).
+tail -F access.log | awk '{print $NF}'
+
+# auto re-tail when file is replaced (useful for daemontools/multilog)
+tail -F file.log
+
+# shell expansion (easily create backups)
+# curly braces expand so "test{a,b}" gets expanded to "testa testb"
+cp this.filename{,.backup}
+# also useful to open multiple items
+mate /bitly/src/svn/bitly/trunk/{opt,bitly2,tornado_v3}
+
+# de-duplicate history
+# (source: http://blog.macromates.com/2008/working-with-history-in-bash/)
+export HISTCONTROL=erasedups
+# append history on shell termination
+shopt -s histappend
+
+from @hmason ¶
+
+# .screenrc FOR MAX AWESOME
+caption string "%?%F%{= Bk}%? %C%A %D %d-%m-%Y %{= kB} %t%= %?%F%{= Bk}%:%{= wk}%? %n "
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+defscrollback 100000
+vbell off
+
+# add to your .bash_profile to see your current git branch in your prompt
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+ 
+function proml {
+  local        BLUE="\[\033[0;34m\]"
+  local         RED="\[\033[0;31m\]"
+  local   LIGHT_RED="\[\033[1;31m\]"
+  local       GREEN="\[\033[0;32m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
+  local       WHITE="\[\033[1;37m\]"
+  local  LIGHT_GRAY="\[\033[0;37m\]"
+  case $TERM in
+    xterm*)
+    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+    ;;
+    *)
+    TITLEBAR=""
+    ;;
+  esac
+ 
+PS1="${TITLEBAR}\
+$BLUE[$BLUE\h:\w$GREEN\$(parse_git_branch)$BLUE]\
+$LIGHT_GRAY\$ "
+PS2='> '
+PS4='+ '
+}
+proml
+
+# from michael ¶
+
+# Mac Terminal open the current working dir in Finder
+open .
+
+# how many instances of field N occur in file $file?
+awk ‘{print $N}’ $file | sort | uniq –c | sort –nr
+
+    # for tab delimited, add 
+        ... | awk '{print $1"\t"$2}’ > file.xls 
+
+# do something foreach line in a file
+foreach item (`cat $file`)
+    do something >> out
+end
+
+    # Examples: 
+      1. curl a bunch of URLs in a file
+      2. grep through files(s) for a bunch of strings 
+  
+# tolower a file’s contents
+cat $file | tr A-Z a-z > out
+
+# alias the most used command to obvious and short
+alias l='ls -l'
+
+from the session ¶
+
+# @jehiah: perl to regex replace content in a file inplace
+perl -pi -e 's/this/that/g' test
+sed -i # can do this as well
+
+# @jehiah recommends using a ? instead of a * in ls and grep to match one char
+# given files test1 test2 and test10, use "ls test?" to match only the first two files
+
+# @hmason
+# using binary calculator; -l increases the precision 
+echo '12 /3 ' | bc -l
+# @jayridge uses bc for practical things
+# @alexlines's version (using RPN)!
+dc -e '5 k 12 3 / p'
+
+# aditya is totally famous: http://aditya.sublucid.com/2009/07/09/best-shell-tip-ever-bck-i-search-or-reverse-i-search-for-the-bash-heads/
+stty stop undef
+# now Ctrl+S takes you forward in history search
+
+# michael 
+open . # on mac
+# in tcsh
+foreach url (`cat tmp.txt`)
+curl #url -o foo
+end
+# curls tons of URLs
+
+echo "FOO" | tr A-Z a-z # tr lets you do a regex on a file or command line
+alias l='ls -al'
+
+# dave (bug labs)
+ls -alF foo asdf # redirect, stderr/stdout
+ls -alF foo asdf > out.txt 2>&1 
+exec >&- # closed stdout
+&^ # shortcut for redirecting both stdin and stdout
+
+# copy only files that match a filter while preserving the directory structure
+find . -name '*.mp3' # gets list of all mp3s
+tar c * # tars to stdout
+# So...
+find . -name '*.mp3' | tar cT - | (cd ../droid/; tar x) # omg awesome
+
+echi hello bit.ly # oh no typo
+^echi^echo # YAY!
+!!:gs/echi/echo # global substitution on the last command
+
+# alicia (from bug labs)
+xwininfo # copy window ID
+recordmydesktop -windowid 0x1a00da1
+# writes an .ogv video of activity in the window
+
+# eric (from drop.io) - port forwarding
+ssh glitch@24.97.18.70 -L 9999:192.168.1.5:80 # also good for using connections that only block port 80
+
+# alex's lemma to port forwarding
+ssh -2 -f -N -R8888:localhost:22 alex@publicmachine # run this from a firewalled machine to allow you to access that machine from outside
+
+# terry - ping tunnel
+http://www.cs.uit.no/~daniels/PingTunnel/
+
+# @alexlines
+sed -n '28757445{p;q;}' largefile # pull one line from a file
+
+# heewa
+find . -type f | grep ".c$" | xargs grep yay # chained greps -- this runs WAY faster than recursive grep because pipe is essentially parallel
+find . -type f -print0 | xargs -0 | grep *whatever # terry's corrolary - also use -r on xargs to stop running the command if no input on the file
+tail -F -u / | grep "YAY" | head -n 1 # look at log file until a certain thing happens
+
+# jehiah
+watch date # watch will rerun any command every 2 secs
+
+# terry
+echo sdkfjsd sdkfjd sjdfd # if you want the last argument from the command
+cat [meta]. # use meta or esc .
+
+# dave (bug labs)
+bash
+set -o vi
+# allows you to edit with vi syntax on the command line
+
+# terry
+for i in a b c
+do
+echo $i
+done
+
+# output
+a
+b
+c
+
+# ctrl+r to find, but instead of enter hit ctrl+o send the command and puts next command into your shell buffer
+# keep hitting ctrl+o to go back through history
+
+stty sane # fixes your terminal
+reset # an alternative
+
+cd - # back to the previous directory
+
+pushd 
+popd
+
+# @krave and greg want to know how to find things on a port
+lsof -i tcp # every open tcp connection
+
+# rich's awesome log tail with color coding script
+http://github.com/dimartin
+
+# @alexlines is badass
+sb 500
+mysql> show variables like 'log_slave_updates';
+mysql> set global log_slave_updates = 1; # note you can't access this variable
+mysql> show variables like 'log_slave_updates' \G # \G prints results vertically
+mysql> select * from user limit 1 \G # paginated!!
+
+# @alexlines won't take no for an answer
+mysql> system ps wwaux| grep mysqld
+# grap pid
+mysql> system gdb -p 2788 -ex "set opt_log_slave_updates=1" -batch # 
+mysql> show variables like 'log_slave_updates' \G # note it's now been updated to 'ON'
+
+# more from Alex
+# show  git branches which have most recently been committed to. this
+is local branches only:
+$ git branch | sed -e s/^..// | \
+     awk '{printf "env GIT_PAGER='' git log --date=short
+--pretty=format:\"%%cd [%s] <%%an> %%s\n\" -n 1 heads/%s\n", $0, $0}'
+\
+     | sh | sort -nr
+
+# display line number 2783298 from a large file
+$ sed -n '2783298{p;q;}' bigfile
+
+# diff between a local and a remote file (didn't get to demo this one):
+$ ssh remote "cat filename" | diff -u - filename
+
+# diff between a local and a remote file which share a long path name:
+$ pwd
+$ /home/alex/projects/bitly/whatever/filename
+$ ssh remote "cat $PWD/filename" | diff -u - filename
+
+# reverse ssh: access a machine which can ssh out but is otherwise
+inaccessible from the outside
+firewalled$ ssh -f -N -2 -R8888:localhost:22 user@publicmachine
+publicmachine$ ssh -p 8888 localhost
+
+# use xargs to fork off multiple parallel processes, 5 at a time
+$ seq 1 10 | xargs -n 1 -P 5 sleep
+
+# copy a file to a remote machine without using scp
+$ cat localfile | gzip -c - | ssh target cat ">" remotefile.gz
+
+# use netcat to transfer a file very quickly on the local network
+$ ssh 10.0.45.12 "( nc -l -p 8888 > /testwhatever.tar & )" && cat
+example.tar  |  nc -q 10 10.0.45.12 8888
+
+# abuse apps with gdb
+mysql> show variables like 'ft_max_word_len';
+returns '84'
+mysql> set global ft_max_word_len=100;
+ERROR 1238 (HY000): Variable 'ft_max_word_len' is a read only variable
+mysql> system ps wwaux| grep mysqld
+shows pid 5178
+mysql> system gdb -p 5178 -ex "set ft_max_word_len=100" -batch;
+mysql> show variables like 'ft_max_word_len';
+should return 100
+

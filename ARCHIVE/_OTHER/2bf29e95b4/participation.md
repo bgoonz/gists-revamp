@@ -1,0 +1,7 @@
+* http://dl.acm.org/citation.cfm?id=1554443
+* https://lwn.net/Articles/547405/
+* https://archive.org/details/4StepsToIncreaseOpenSourceParticipation-JoshuaWulf
+* http://www.acquia.com/blog/measuring-community-participation-open-source-projects-data-drupalorg
+* http://www.slideshare.net/wso2.org/2013-06participate-inosscommunity
+* http://opensource.com/life/13/4/increasing-foss-participation
+* https://www.newschallenge.org/challenge/2014/feedback-review/increasing-diversity-in-open-source-for-a-better-internet

@@ -1,0 +1,1 @@
+demonstrating how to use "nodegit" to modify and read from a local bare git repo

@@ -1,0 +1,93 @@
+###### Gcloud: Jupyter Notebook with GPUs from browser
+
+## First Step Install GCP 16.04 LTS with 20GB and Tesla K80 NVIDIA GPU and HTTP/HTTPS
+
+## From Remote shell (*need to run twice after generating keys). Can also use SSH with default user
+gcloud compute --project <project name> ssh --zone "us-central1-a" <gce name>
+
+## Install Anaconda and setup path
+# Required upfront: Installs nano / curl / bzip2 / etc.
+sudo -s
+sudo apt-get update 
+mkdir Downloads
+cd Downloads
+wget "https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh" -O "Anaconda3-5.0.1-Linux-x86_64.sh"
+chmod +x Anaconda3-5.0.1-Linux-x86_64.sh
+sudo sh "Anaconda3-5.0.1-Linux-x86_64.sh" -b
+cd $HOME
+rm -r Downloads
+echo 'export PATH=$PATH:$HOME/anaconda3/bin' >> ~/.bashrc
+source ~/.bashrc
+
+
+## Install Cuda from NVIDIA
+curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+sudo dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+rm -r cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+sudo apt-get update
+sudo apt-get -y install cuda-8.0
+# Install cuDNN v6.0
+CUDNN_TAR_FILE="cudnn-8.0-linux-x64-v6.0.tgz"
+wget http://developer.download.nvidia.com/compute/redist/cudnn/v6.0/${CUDNN_TAR_FILE}
+tar -xzvf ${CUDNN_TAR_FILE}
+rm -r cudnn-8.0-linux-x64-v6.0.tgz
+mkdir -p /usr/local/cuda/include/
+mkdir -p /usr/local/cuda/lib64/
+sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+# Paths
+echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
+echo 'export PATH=$PATH:$CUDA_HOME/bin' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=$CUDA_HOME/lib64' >> ~/.bashrc
+source ~/.bashrc
+# Shows Cuda / GPU Info
+nvidia-smi
+
+
+## Create Conda Environment with Tensorflow
+sudo apt-get update
+conda create --name tf_gpu tensorflow-gpu -y
+source activate tf_gpu
+
+	## Python
+	from tensorflow.python.client import device_lib
+	device_lib.list_local_devices()
+	
+## Configure Notebook
+# .jupyter edit
+# https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52
+mkdir .jupyter
+cd .jupyter/
+pip install --upgrade jupyter
+jupyter notebook --generate-config
+nano jupyter_notebook_config.py
+	
+	# Add to jupyter_notebook_config.py
+	c = get_config()
+	c.NotebookApp.ip =  '*'
+	c.NotebookApp.open_browser = False
+	c.NotebookApp.port = 5000
+	
+	## To kill processes on open ports if needed
+	sudo netstat -tlnp
+
+	# Active Internet connections (only servers)
+	# Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+	# tcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      4216/python
+	# tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1593/sshd
+	# tcp6       0      0 :::5000                 :::*                    LISTEN      4216/python
+	# tcp6       0      0 :::22                   :::*                    LISTEN      1593/sshd
+
+	kill 4216
+
+
+
+##
+cd # Get back to home directory
+jupyter-notebook --port=5000 --allow-root --no-browser
+
+# To view jupyter notebook -- after setting static ip on External IP tab
+# Copy paste token from output along with external ip to log into jupyter notebook
+<External IP>:5000<Token Address>
+# source deactivate tf_gpu

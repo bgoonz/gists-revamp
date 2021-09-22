@@ -1,0 +1,1 @@
+modifications to Sublime Text 3 - Monokai (SL) theme via "Sublime Linter" package, in part to style some ES6 features better

@@ -1,0 +1,1 @@
+sudo iptables -t nat -A OUTPUT -p tcp --dport 80 -j DNAT --to-destination IP:80

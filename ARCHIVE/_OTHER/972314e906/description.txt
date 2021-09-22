@@ -1,0 +1,1 @@
+is_custom_post_type.php

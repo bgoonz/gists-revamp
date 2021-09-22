@@ -1,0 +1,29 @@
+<script>
+       
+	function processEntries(data) {
+
+		// Loop for each entry
+		$.each(data.Entries, function(entriesIndex, entriesObject) {
+							
+			// Field3 is the email field on this particular form
+			if (entriesObject.Field3 != "") {
+
+				$("<img />", {
+
+					src: "http://www.gravatar.com/avatar/" + MD5(entriesObject.Field3)
+
+				}).appendTo("#people");  
+			
+			}
+
+		});
+
+	};
+
+	$.wufooAPI.getEntries({
+		"callback"   : processEntries,
+		"formHash"   : "z7p0p1",
+		"getterPath" : "../gravatar-party-list/"
+	});
+
+</script>

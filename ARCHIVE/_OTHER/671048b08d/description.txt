@@ -1,0 +1,1 @@
+using join() and regex to count occurrences of some string in an array

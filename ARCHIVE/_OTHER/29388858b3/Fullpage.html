@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>CodePen &middot; A Pen by vladzinculescu</title>
+
+  <style>
+/**
+ * Space invadors - 1 HTML element	
+ */
+@-webkit-keyframes invader { 0%, 49.99%, 100% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em 1em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em 1em 0 0 red, -5em 2em 0 0 red, 5em 2em 0 0 red, -5em 3em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 3em 0 0 red, -2em 4em 0 0 red, -1em 4em 0 0 red, 1em 4em 0 0 red, 2em 4em 0 0 red; } 50%, 99.99% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0em 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em -2em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em -2em 0 0 red, -5em -1em 0 0 red, 5em -1em 0 0 red, -5em 0em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 0em 0 0 red, -4em 4em 0 0 red, 4em 4em 0 0 red; }  }
+@-moz-keyframes invader { 0%, 49.99%, 100% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em 1em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em 1em 0 0 red, -5em 2em 0 0 red, 5em 2em 0 0 red, -5em 3em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 3em 0 0 red, -2em 4em 0 0 red, -1em 4em 0 0 red, 1em 4em 0 0 red, 2em 4em 0 0 red; } 50%, 99.99% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0em 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em -2em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em -2em 0 0 red, -5em -1em 0 0 red, 5em -1em 0 0 red, -5em 0em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 0em 0 0 red, -4em 4em 0 0 red, 4em 4em 0 0 red; }  }
+@-ms-keyframes invader { 0%, 49.99%, 100% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em 1em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em 1em 0 0 red, -5em 2em 0 0 red, 5em 2em 0 0 red, -5em 3em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 3em 0 0 red, -2em 4em 0 0 red, -1em 4em 0 0 red, 1em 4em 0 0 red, 2em 4em 0 0 red; } 50%, 99.99% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0em 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em -2em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em -2em 0 0 red, -5em -1em 0 0 red, 5em -1em 0 0 red, -5em 0em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 0em 0 0 red, -4em 4em 0 0 red, 4em 4em 0 0 red; }  }
+@-o-keyframes invader { 0%, 49.99%, 100% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em 1em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em 1em 0 0 red, -5em 2em 0 0 red, 5em 2em 0 0 red, -5em 3em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 3em 0 0 red, -2em 4em 0 0 red, -1em 4em 0 0 red, 1em 4em 0 0 red, 2em 4em 0 0 red; } 50%, 99.99% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0em 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em -2em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em -2em 0 0 red, -5em -1em 0 0 red, 5em -1em 0 0 red, -5em 0em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 0em 0 0 red, -4em 4em 0 0 red, 4em 4em 0 0 red; }  }
+@-keyframes invader { 0%, 49.99%, 100% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em 1em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em 1em 0 0 red, -5em 2em 0 0 red, 5em 2em 0 0 red, -5em 3em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 3em 0 0 red, -2em 4em 0 0 red, -1em 4em 0 0 red, 1em 4em 0 0 red, 2em 4em 0 0 red; } 50%, 99.99% { box-shadow:0 0 0 1em red, 0 1em 0 1em red, -2.5em 1.5em 0 .5em red, 2.5em 1.5em 0 .5em red, -3em -3em 0 0 red, 3em -3em 0 0 red, -2em -2em 0 0 red, 2em -2em 0 0 red, -3em -1em 0 0 red, -2em -1em 0 0 red, 2em -1em 0 0 red, 3em -1em 0 0 red, -4em 0em 0 0 red, -3em 0 0 0 red, 3em 0 0 0 red, 4em 0 0 0 red, -5em -2em 0 0 red, -4em 1em 0 0 red, 4em 1em 0 0 red, 5em -2em 0 0 red, -5em -1em 0 0 red, 5em -1em 0 0 red, -5em 0em 0 0 red, -3em 3em 0 0 red, 3em 3em 0 0 red, 5em 0em 0 0 red, -4em 4em 0 0 red, 4em 4em 0 0 red; }  }
+#spaceInvador {
+	-webkit-animation: invader 1s linear 0s infinite;
+	   -moz-animation: invader 1s linear 0s infinite;
+	    -ms-animation: invader 1s linear 0s infinite;
+	     -o-animation: invader 1s linear 0s infinite;
+	        animation: invader 1s linear 0s infinite;
+	background: red;
+	height: 1em;
+	font-size: 10px;
+	margin: 3em auto 4em;
+	overflow: hidden;
+	text-indent: 100%;
+	width: 1em;
+
+}
+  </style>
+
+  <style>
+    #codepen-footer, #codepen-footer * {
+      -webkit-box-sizing: border-box !important;
+      -moz-box-sizing: border-box !important;
+      box-sizing: border-box !important;
+    }
+    #codepen-footer {
+      display: block !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      padding: 0 10px !important;
+      margin: 0 !important;
+      height: 30px !important;
+      line-height: 30px !important;
+      font-size: 12px !important;
+      color: #eeeeee !important;
+      background-color: #505050 !important;
+      text-align: left !important;
+      background: -webkit-linear-gradient(top, #505050, #383838) !important;
+      background: -moz-linear-gradient(top, #505050, #383838) !important;
+      background: -ms-linear-gradient(top, #505050, #383838) !important;
+      background: -o-linear-gradient(top, #505050, #383838) !important;
+      border-top: 1px solid black !important;
+      border-bottom: 1px solid black !important;
+      box-shadow: inset 0 1px 0 #6e6e6e, 0 2px 2px rgba(0, 0, 0, 0.4) !important;
+      z-index: 300 !important; 
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif !important;
+      letter-spacing: 0 !important;
+      word-spacing: 0 !important;
+    }
+    #codepen-footer a {
+      color: #a7a7a7 !important; 
+      text-decoration: none !important;
+    }
+    #codepen-footer a:hover {
+      color: white !important; 
+    }
+  </style>
+
+</head>
+<body>
+
+  <div id="spaceInvador"></div>
+
+  <div id="codepen-footer">
+    <a style="color: #f73535 !important;" href="https://codepen.wufoo.com/forms/m7x3r3/def/field14=" onclick="window.open(this.href,  null, 'height=517, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false">Report Abuse</a>
+
+    &nbsp;
+
+    <a href="/vladzinculescu/pen/1/1">Edit this Pen</a>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+In "Safari 5.0.1" on Win7:
+
+> console.log(navigator.userAgent);
+Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.18.1 (KHTML, like Gecko) Version/5.0.1 Safari/533.17.8
+
+
+
+In "Webkit Nightly r74232" on Win7:
+
+> console.log(navigator.userAgent);
+Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533+ (KHTML, like Gecko) Version/5.0.1 Safari/533.17.8

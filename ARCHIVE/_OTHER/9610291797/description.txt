@@ -1,0 +1,1 @@
+Aplicativo de exemplo referente a post de titulo "Recuperando o XML de uma requisição SOAP em Delphi" no blog http://drgarcia1986.wordpress.com/

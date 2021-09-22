@@ -1,0 +1,1 @@
+using LABjs to load from a CDN, with simple error detection (& timeout), and a local load fallback

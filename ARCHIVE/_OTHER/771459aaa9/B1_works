@@ -1,0 +1,40 @@
+v8::HandleScope handle_scope;
+v8::Context::Scope scope(my_context);
+
+v8::Handle<v8::Function> func3;
+
+const char* ToCString(const v8::String::Utf8Value& value) {
+	return *value ? *value : "<string conversion failed>";
+}
+
+v8::Handle<v8::Object> getObj() {
+	v8::HandleScope handle_scope;
+	v8::Context::Scope scope(my_context);
+
+	v8::TryCatch try_catch;
+	v8::Handle<v8::Script> func3_script = v8::Script::Compile(v8::String::New("func3"), v8::String::New("inline::code"));
+	v8::Handle<v8::Value> func3_res = func3_script->Run();
+	func3 = v8::Handle<v8::Function>::Cast(func3_res);
+
+	v8::Handle<v8::Value> func3_args[0] = {};
+	v8::Handle<v8::Value> val3 = func3->Call(my_context->Global(), 0, func3_args);
+	return v8::Handle<v8::Object>::Cast(val3);
+}
+
+
+// .....
+
+
+{
+	v8::Handle<v8::Object> obj3 = getObj();
+
+	v8::Handle<v8::Value> v3_1 = obj3->Get(v8::String::New("prop3_1"));
+	std::string s3_1 = ToCString(v8::String::Utf8Value(v3_1));
+	printf("%s\n",s3_1.c_str());
+	// ^^^^^ this works fine.
+
+	v8::Handle<v8::Value> v3_2 = obj3->Get(v8::String::New("prop3_2"));
+	std::string s3_2 = ToCString(v8::String::Utf8Value(v3_2));
+	printf("$s\n",s3_2.c_str());
+	// ^^^^^ this works fine.
+}

@@ -1,0 +1,1 @@
+a system that has a reasonable expectation (NO GUARANTEE!) of relative ordering, but "A" and "B" are not dependent on each other.

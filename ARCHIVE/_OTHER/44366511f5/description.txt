@@ -1,0 +1,3 @@
+the following are cases where LTR evaluation happens. Of course, there are plenty of (not shown) cases (like operator precedence) where RTL can come into effect.
+
+still, some of these LTR results are unexpected to the way my brain works (originally coming from some other languages where the RH of an assignment is evaluated before the assigment, etc).

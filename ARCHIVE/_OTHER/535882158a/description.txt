@@ -1,0 +1,5 @@
+A comparison of prototype-style of coding objects and Object.create()-style of coding objects.
+
+Both code snippets create two objects `b1` and `b2` which are `prototype` linked to behaviors defined by `Foo` and `Bar`. Take a look at both code snippets to see the pros and cons of each style of code, and decide for yourself which one is simpler to understand and follow.
+
+NOTE: I am intentionally avoiding "polymorphism" (aka, having shadowed properties/methods of the same name at different levels of the chain, and using "super" style calls to invoke ones higher up the chain) in this example, as in either case, relative polymorphism in JavaScript is impossible, and the solution is always to manually call to the object/level of the chain you want and use `call(this)` to borrow the function in question and "mixin" to your current `this`.

@@ -1,0 +1,1 @@
+Didip's minimal .vimrc

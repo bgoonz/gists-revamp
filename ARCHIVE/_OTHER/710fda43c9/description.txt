@@ -1,0 +1,1 @@
+Example documentation on ES6 generators. --> exploring pros/cons of the * placement either next to `function` / `yield`, or next to the identifier / expression.

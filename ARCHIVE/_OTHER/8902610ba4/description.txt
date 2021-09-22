@@ -1,0 +1,1 @@
+how i wish JS generators could have worked

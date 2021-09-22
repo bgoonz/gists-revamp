@@ -1,0 +1,1 @@
+Return Multiple Objects with Apply Function in R -- Using Empirical Bayesian Baseball Example

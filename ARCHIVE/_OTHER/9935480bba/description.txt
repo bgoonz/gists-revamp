@@ -1,0 +1,1 @@
+Generic Singleton Pattern in Delphi

@@ -1,0 +1,43 @@
+/* Oprah Thing
+   Saw some movie and there was some Oprah-related commerical before it and it had title things like this during it 
+ */
+
+body { background: black; padding: 100px; margin: 0; }
+
+h1 { 
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  padding: 1px;
+  font-family: 'Raleway', cursive;
+  font-weight: 100;
+  position: relative;
+  background: linear-gradient(left, black, #eee, black);
+}
+h1:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  width: 600px;
+  margin-left: -300px;
+  margin-top: -220px;
+  height: 600px;
+  background: radial-gradient(50% 50%, ellipse closest-side, #444, black);
+  z-index: -1;
+}
+h1 a {
+  background: black;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  letter-spacing: 30px;
+  color: white;
+  animation: comein 1.5s 1 ease-in-out forwards;
+}
+
+@keyframes comein {
+   0% { letter-spacing: 100px; color: rgba(255,255,255,0); }
+   70% { letter-spacing: 20px; }
+   100% { letter-spacing: 30px; color: rgba(255,255,255,1) }
+}

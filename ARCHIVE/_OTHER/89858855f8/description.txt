@@ -1,0 +1,1 @@
+Classe feita em Python para recuperar a cotação de algumas moedas estrangeiras baseada nas versões brasileiras do site CashCash.cc

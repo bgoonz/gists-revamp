@@ -1,0 +1,1 @@
+regex matching escaped or non-escaped character

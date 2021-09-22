@@ -1,0 +1,31 @@
+function onclick(obj,callback) {
+   obj.addEventHandler("click", callback, true);
+}
+
+var clicker = document.getElementById("clicker"),
+    btn = document.getElementById("btn")
+;
+onclick(elem,function(){
+   onclick(btn,function(){
+      console.log("clicker & button clicked");
+   });
+});
+
+--------------------------
+
+function onclick(obj) {
+   var p = promise;
+   obj.addEventHandler("click", function(){
+      p.fulfill();
+   }, true);
+   p.defer();
+}
+
+var clicker = document.getElementById("clicker"),
+    btn = document.getElementById("btn")
+;
+
+onclick(elem) @ 
+onclick(btn) @ 
+function(){ console.log("clicker & button clicked"); };
+

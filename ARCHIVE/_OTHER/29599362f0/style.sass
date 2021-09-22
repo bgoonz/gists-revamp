@@ -1,0 +1,268 @@
+@import "compass"
+=mask-image($background)
+  @if $experimental-support-for-webkit and prefixed(-webkit, $background)
+    -webkit-mask-image: -webkit($background)
+  @if $experimental-support-for-mozilla and prefixed(-moz, $background)
+    -box-mask-image: -moz($background)
+  @if $experimental-support-for-opera and prefixed(-o, $background)
+    -o-mask-image: -o($background)
+  mask-image: $background
+
+#main
+  text-align: center
+
+.iphone
+  +inline-block
+
+.iphone
+  &.white
+    .glass_face
+      +background(linear-gradient(#eee, #ddd))
+
+  .steel_band
+    position: relative
+
+    width: 372px
+    height: 734px
+    padding: 3px
+
+    +background(linear-gradient(left, #dcdbda, #ebeae9))
+
+    +border-radius(60px)
+
+    +box-shadow(inset 1px 0 0 #7e7c7a, inset -1px 0 1px #7e7c7a)
+
+  .plastic_band
+    width: 364px
+    height: 726px
+
+    padding: 4px
+
+    +border-radius(57px)
+
+    +background(#2b2b2b)
+
+    +box-shadow(inset 0 0 1px rgba(#000, 0.5),  0 0 1px rgba(#000, 0.5))
+
+  .glass_face
+    position: relative
+
+    width: 364px
+    height: 726px
+
+    overflow: hidden
+
+    +background(linear-gradient(#000, #090909))
+
+    +border-radius(53px)
+
+    +box-shadow(-1px -1px 2px rgba(#fff, 0.15), -1px -1px 0 rgba(#000, 0.5))
+
+  .gloss
+    position: relative
+    z-index: 1
+
+    height: 100%
+    width: 100%
+
+    +mask-image(linear-gradient(-162deg, rgba(#000, 1) 32%, rgba(#000, 0) 32%))
+    +border-radius(53px)
+    +background(linear-gradient(280deg, rgba(#fff, 0.6), rgba(#fff, 0) 70%) no-repeat)
+    +background-size(60% 100%)
+    background-position: top right
+
+  .camera
+    position: absolute
+    z-index: 2
+
+    top: 50px
+    left: 50%
+
+    margin-left: -75px
+
+    height: 8px
+    width: 8px
+
+    padding: 4px
+
+    border: 1px solid rgba(#fff, 0.05)
+
+    +border-radius(9px)
+
+    +box-shadow(inset 0 3px 6px rgba(0,0,0,0.25))
+
+    +background(radial-gradient(5px 5px, #1b1b1b, #343434))
+    background-position: top left
+
+    &:after
+      display: block
+
+      height: 8px
+      width: 8px
+
+      +border-radius(4px)
+
+      +box-shadow(1px 1px 1px rgba(#fff, 0.1))
+
+      +background(radial-gradient(1px 1px, rgba(#3c2b90, 1) 25%, rgba(#3c2b90, 0.75) 50%), radial-gradient(1px 1px, rgba(#2b5d90, 0.75) 25%, rgba(#2b5d90, 0) 50%), radial-gradient(1px 1px, rgba(#2b5d90, 0.75) 25%, rgba(#2b5d90, 0) 50%), radial-gradient(#07131b 40%, #1b3d70 60%))
+      background-position: top left, center left, center, right center
+
+      content: ''
+
+  .speaker
+    position: absolute
+    z-index: 2
+
+    top: 50px
+    left: 50%
+
+    margin-left: -37px
+
+    width: 62px
+    height: 8px
+
+    padding: 5px
+
+    +border-radius(9px)
+
+    +background(radial-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0)) no-repeat, linear-gradient(#000 8px, #444 18px))
+    +background-size(10px 10px, 100% 100%)
+    background-position: bottom right, center   
+
+    &:after
+      display: block
+
+      width: 62px
+      height: 8px
+
+      +border-radius(6px)
+
+      +background(linear-gradient(45deg, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 75%, rgba(0,0,0,1)), #888)
+      +background-size(2px 2px)
+
+      +box-shadow(inset 0 2px 3px rgba(0,0,0,0.75), inset 0 0 2px rgba(#000, 0.5))
+
+      content: ''
+
+  .home_button
+    position: absolute
+
+    bottom: 20px
+    left: 50%
+    margin-left: -35px
+
+    height: 70px
+    width: 70px
+
+    +border-radius(35px)
+
+    +background(linear-gradient(left, #444, #000 60%))
+
+    border: 1px solid #000
+
+    +box-shadow(1px 1px 1px #222, inset 0 10px 30px rgba(0,0,0,0.5))
+
+    &:after
+      position: absolute
+
+      top: 23px
+      left: 23px
+      right: 23px
+      bottom: 23px
+
+      border: 2px solid #888
+
+      +box-shadow(inset 0 0 1px #000, 0 0 1px #000)
+
+      +border-radius(6px)
+
+      content: ''
+
+  .screen
+    position: absolute
+
+    top: 120px
+    left: 50%
+
+    margin-left: -166px
+
+    width: 320px
+    height: 480px
+
+    padding: 5px
+
+    +border-radius(5px)
+
+    +background(#0a0a0a)
+
+  .stage
+    width: 320px
+    height: 480px
+
+    +background(linear-gradient(#222, #111))
+
+  .mute_rocker
+    position: absolute
+
+    top: 90px
+    right: 100%
+
+    width: 2px
+    height: 32px
+
+    border: 1px solid #888
+    border-right: none
+
+    +border-left-radius(2px)
+
+    +background(linear-gradient(#fbfbfb 5%, #dbdbdb 5%, #dbdbdb 50%, #aeaeae 75%, #fbfbfb 90%))
+
+  .volume
+    position: absolute
+
+    right: 100%
+
+    width: 2px
+    height: 25px
+
+    border: 1px solid #888
+    border-right: none
+
+    +border-left-radius(2px)
+
+    +background(linear-gradient(#dbdbdb, #eee 15%, #333 75%, #fbfbfb 90%))
+
+    &.up
+      top: 160px
+
+    &.down
+      top: 222px
+
+  .sleep_wake
+    position: absolute
+
+    bottom: 100%
+    right: 70px
+
+    width: 60px
+    height: 3px
+
+    border: 1px solid #888
+    border-bottom: none
+
+    +border-top-radius(2px)
+
+    +background(linear-gradient(left, #aaa, #fff 7%, #aaa 15%, #ddd 70%, #bbb 85%, #eee 93%, #aaa))
+
+
+
+
+
+
+
+
+
+
+
+
+

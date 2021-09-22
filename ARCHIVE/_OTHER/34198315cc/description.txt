@@ -1,0 +1,1 @@
+Did you know that bash will reload a script *while it is executing*?!

@@ -1,0 +1,100 @@
+//SUMMARY:
+// a() @ b()  ==>  execute a(). if a() flags an async deferral inside it, 
+// then wait to continue execution of the expression until that promise is 
+// fulfilled, then continue execution *AT* b().
+//
+// more generally: X @ Y  ==>  evaluate X expression. if it was a function call
+// call that deferred with a promise, wait until fulfilled then continue at
+// Y. otherwise, assume that X had an implicit immediately fulfilled promise,
+// and continue evaluating at Y.
+// ------
+// basically, the idea is that every function should be able to flag a "state"
+// that is inspectable (by the operator) after the function's call completes,
+// and that state (the "promise") indicates if the promise is immediately
+// fulfilled, or if it's deferred to fulfill later. The @ operator inspects
+// this special state of the function call to determine if it should wait or
+// proceed with evaluation of the rest of the statement expression.
+//
+// NOTE: by modeling a function's promise as a special internal state of the
+// function, rather than conflating it with the function's return value, the
+// function can also return any value immediately, even if it's ultimately
+// deferred to complete later.
+
+function foo() {
+   setTimeout(function(){
+      blah++;
+      console.log(blah);
+   },1000);
+}
+
+var blah = 1;
+
+foo(); blah = 10; foo(); // expected output: 11, 12
+
+
+----------------
+
+
+function foo() {
+   var p = promise; // `promise` being new auto keyword kinda like `arguments`
+   setTimeout(function(){
+      blah++;
+      console.log(blah);
+      p.fulfill();
+   },1000);
+   p.defer(); // flag this function as needing to defer its promise
+}
+
+var blah = 1;
+
+foo() @ (blah = 10); foo(); // expected output: 2, 11
+
+blah = 1;
+
+foo() @ (blah = 10) @ foo(); // expected output: 2, 11
+
+
+----------------
+
+
+function foo() {
+   var p = promise; // `promise` being new auto keyword kinda like `arguments`
+   setTimeout(function(){
+      blah++;
+      console.log(blah);
+      p.fulfill();
+   },1000);
+   p.defer(); // flag this function as needing to defer its promise
+}
+
+var blah;
+
+(blah = 5) @ foo() @ (blah = 10) @ foo(); blah = 100; // expected output: 101, 11
+
+
+
+----------------
+
+
+function foo() {
+   var p = promise; // `promise` being new auto keyword kinda like `arguments`
+
+   console.log(blah);
+
+   setTimeout(function(){
+      blah++;
+      console.log(blah);
+      p.fulfill();
+   },1000);
+   p.defer(); // flag this function as needing to defer its promise
+}
+
+var blah;
+
+(blah = 5) @ foo(); blah = 100; // expected output: 5, 101
+
+blah = 5; foo(); blah = 100; // expected output: 5, 101
+
+blah = 5; foo(); blah = 100; foo(); // expected output: 5, 100, 101, 102
+
+(blah = 5) @ foo() @ (blah = 100) @ foo(); // expected output: 5, 6, 100, 101

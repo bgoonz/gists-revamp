@@ -1,0 +1,32 @@
+/**
+ * Fake animated pseudo
+ */
+div {
+  width: 200px;
+  padding: 10px;
+  position: relative;
+  background: red;
+  background-clip: content-box;
+  animation: bounce infinite alternate 0.5s;
+}
+div:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 15px solid red;
+  left: 100%;
+  top: 20px;
+  transform: rotate(360deg);
+}
+
+@keyframes bounce {
+  0% {
+    padding-right: 0px;
+  }
+  100% {
+    padding-right: 10px;
+  }
+}

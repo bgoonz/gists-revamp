@@ -1,0 +1,1 @@
+[UPDATE: fixed! see gist patch history]  my ssl cert config in node, that's apparently broken/insufficient somehow?

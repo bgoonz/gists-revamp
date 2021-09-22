@@ -1,0 +1,1 @@
+Where are the systems location for Python eggs on Ubuntu 10.04 LTS

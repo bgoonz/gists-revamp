@@ -1,0 +1,1 @@
+Generates secure cookie secret for Tornado Web Framework

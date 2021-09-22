@@ -1,0 +1,21 @@
+// **********
+// NOTE: this is a stupid trivial example illustrating automatic
+// type-coercion, not an example of the kind of data-structure logic
+// you'd ever actually use. don't miss the forest for the trees.
+// Read down in the comment thread for 'myCoolString' for a slightly
+// more sensible example.
+//
+// NOTE #2: this gist thread was spawned from a twitter discussion
+// about `parseInt(0/1,19)==18`:
+// https://twitter.com/getify/status/221009838006747136
+// **********
+
+
+var myObj = {
+   _val: [10,5,7,9,-1,4,13,6],
+   toString: function(){
+     return ""+Math.max.apply(this,this._val);
+   }
+};
+
+parseInt(myObj); // 13 ==> this is part of what makes javascript awesome

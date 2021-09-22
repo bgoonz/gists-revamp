@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Worker Polyfill</title>
+<script src="polyfill.worker.js"></script>
+</head>
+<body>
+<h1>Worker Polyfill</h1>
+<script>
+
+var w = new Worker("child.js");
+
+w.addEventListener("message",function(evt){
+	console.log("from test.html:",evt.data);
+});
+
+w.postMessage("hello world");
+
+// from child.js: hello world
+// from test.html: HELLO WORLD
+
+</script>
+</body>
+</html>

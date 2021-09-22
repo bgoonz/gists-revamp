@@ -1,0 +1,1 @@
+Simple script to download CentOS mirror. You can totally put this in cron.

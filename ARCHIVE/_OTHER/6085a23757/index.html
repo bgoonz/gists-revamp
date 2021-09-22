@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .icon {
+      width: 100px;
+      height: 100px;
+    }
+    .spade-path,
+    .pencil-path {
+      fill: green;
+    }
+  </style>
+</head>
+<body>
+
+  <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-spades" viewBox="0 0 1024 1024">
+        <title>spades</title>
+        <path class="spade-path" d="M817.57 348.15c-193.566-143.858-260.266-259.018-305.566-348.148v0c-0.004 0-0.004-0.002-0.004-0.002v0.002c-45.296 89.13-112 204.292-305.566 348.148-330.036 245.286-19.376 587.668 253.758 399.224-17.796 116.93-78.53 202.172-140.208 238.882v37.744h384.032v-37.74c-61.682-36.708-122.41-121.954-140.212-238.884 273.136 188.446 583.8-153.94 253.766-399.226z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- INTERNAL -->
+  <svg class="icon">
+    <use xlink:href="#icon-spades" />
+  </svg>
+
+  <!-- EXTERNAL -->
+  <svg class="icon">
+    <use xlink:href="test-ext-svgdefs.svg#icon-pencil" />
+  </svg>
+
+  <script>
+    var one = document.querySelectorAll(".spade-path");
+    console.log(one);
+
+    var two = document.querySelectorAll(".pencil-path");
+    console.log(two);
+  </script>
+</body>
+</html>

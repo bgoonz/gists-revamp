@@ -1,0 +1,1 @@
+more Promise confusion/inconsistency (or implementation bugs?)

@@ -1,0 +1,1 @@
+Click open/close Dropdown in pure CSS 

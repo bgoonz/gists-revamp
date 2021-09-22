@@ -1,0 +1,1 @@
+Rake task to restart web dynos over a rolling 30 seconds window

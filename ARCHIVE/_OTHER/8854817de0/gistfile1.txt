@@ -1,0 +1,13 @@
+Chriss-MacBook-Pro-4:codepen2 chriscoyier$ node --version
+v0.8.20
+
+{
+  "name": "example-project",
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "~3.4.0",
+    "gulp-util": "~2.2.14",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-ruby-sass": "~0.3.0"
+  }
+}

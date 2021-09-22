@@ -1,0 +1,1 @@
+illustrating a gotcha with "differential inheritance" in JS

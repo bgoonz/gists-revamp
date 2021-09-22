@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="canvas-dashed-lines.js"></script>
+</head>
+<body>
+<canvas id="foobar" width="500" height="500"></canvas>
+
+<script>
+
+var foobar = document.getElementById("foobar");
+var ctx = foobar.getContext("2d");
+
+with (ctx) {
+	strokeStyle = "#f00";
+	lineWidth = "1";
+
+	if ("mozDash" in ctx) {
+		mozDash = [10,5];
+	}
+	else if ("webkitLineDash" in ctx) {
+		webkitLineDash = [10,5];
+	}
+	else {
+		ctx._lineDash = [10,5]; // polyfill setting
+	}
+
+	beginPath();
+	moveTo(10,10);
+	lineTo(78,132);
+	lineTo(250,50);
+	lineTo(250,100);
+	lineTo(240,100);
+	stroke();
+}
+
+</script>
+</body>
+</html>

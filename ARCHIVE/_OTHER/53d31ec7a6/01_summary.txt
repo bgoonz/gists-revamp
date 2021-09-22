@@ -1,0 +1,6 @@
+Total discovered scoped packages: 843
+Total users who published discovered scoped packages: 304
+Total published npm modules dependent on discovered scoped packages: 587
+Total scoped modules depended upon by open source github repos: 599
+Total open source github repos dependent on discovered scoped packages: 1105 (944 not forks)
+Total github users/orgs depending upon discovered scoped packages: 412

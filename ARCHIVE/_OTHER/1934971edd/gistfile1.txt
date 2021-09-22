@@ -1,0 +1,23 @@
+{assign var="formHash" value="{$form->idToUrlHash($form->FormId, $profile->ProfileId)}"}
+<div id="wufoo-{$formHash}">
+Fill out my <a href="http://{$profile->Username}.wufoo.com/forms/{$formHash}">online form</a>.
+</div>
+<script type="text/javascript">
+var {$formHash};(function(d, t) {ldelim}
+var s = d.createElement(t), options = {ldelim}
+
+'userName':'{$profile->Username}', 
+'formHash':'{$formHash}', 
+'autoResize':true,
+'height':'{$form->OffsetHeight}',
+'async':true,
+'header':'show'{if $profile->PlanId > 2}, 
+'ssl':true{/if}{rdelim};
+
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {ldelim}
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try {ldelim} {$formHash} = new WufooForm();{$formHash}.initialize(options);{$formHash}.display(); {rdelim} catch (e) {ldelim}{rdelim}{rdelim}
+d.getElementsByTagName(t)[0].parentNode.insertBefore(s);
+{rdelim})(document, 'script');
+</script>

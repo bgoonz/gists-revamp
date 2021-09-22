@@ -1,0 +1,7 @@
+library(data.table)
+trainRaw <- fread("train.csv", header = TRUE, sep = ",")
+
+classVec <- NULL
+for(i in 1:length(names(trainRaw))){
+  classVec[i] <- class(unlist(trainRaw[, i, with=F]))
+}

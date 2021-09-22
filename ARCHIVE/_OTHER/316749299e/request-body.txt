@@ -1,0 +1,15 @@
+Content-Type:multipart/form-data
+File-Name:blah.jpg
+File-Size:29080
+File-Type:image/jpeg
+Origin:http://foobar.com
+Referer:http://foobar.com/blah/
+Session-ID:12345
+User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.2 (KHTML, like Gecko) Chrome/22.0.1215.0 Safari/537.2
+Request Payload
+------WebKitFormBoundary3KzOjhaAGvJbm65r
+Content-Disposition: form-data; name="blah.jpg"; filename="blah.jpg"
+Content-Type: image/jpeg
+
+
+------WebKitFormBoundary3KzOjhaAGvJbm65r--

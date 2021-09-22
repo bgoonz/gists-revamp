@@ -1,0 +1,1 @@
+exploring javascript type auto-coercion (and its pitfalls)

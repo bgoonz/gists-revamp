@@ -1,0 +1,16 @@
+dpkg -s python-pycurl
+
+Package: python-pycurl
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 272
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Source: pycurl
+Version: 7.19.0-3
+Replaces: python2.3-pycurl, python2.4-pycurl
+Provides: python2.6-pycurl
+Depends: libc6 (>= 2.2.5), libcurl3-gnutls (>= 7.19.5), libgcrypt11 (>= 1.4.2), libgnutls26 (>= 2.7.14-0), libgssapi-krb5-2 (>= 1.6.dfsg.2), libidn11 (>= 1.13), libldap-2.4-2 (>= 2.4.7), zlib1g (>= 1:1.1.4), python (<< 2.7), python (>= 2.6), python-support (>= 0.90.0)
+Suggests: libcurl4-gnutls-dev, python-pycurl-dbg
+Conflicts: python2.3-pycurl, python2.4-pycurl

@@ -1,0 +1,15 @@
+//In asynquence-contrib
+var emptyItems = [],
+    sq = ASQ();
+
+sq.map(emptyItems, function(item, done){
+  // do some things to item
+  item.values = [];
+  done(item);
+});
+
+sq.map(function(item, done) {
+  ASQ().map(item.values, function(value, valueDone) {
+    valueDone(value);
+  });
+});

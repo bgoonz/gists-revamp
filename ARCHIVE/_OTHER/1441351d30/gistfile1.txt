@@ -1,0 +1,79 @@
+From: Google Checkout <noreply@checkout.google.com>
+To: chriscoyier@gmail.com
+Message-ID: <1322809231824.decbabd0-c157-4e85-8a86-10c29a647323@checkout.google.com>
+Subject: Rate your shopping experience with GatewayCDI using Google Checkout
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_8012_10578721.1322809232534"
+
+------=_Part_8012_10578721.1322809232534
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear Christopher,
+
+Thanks for your recent purchase from GatewayCDI.
+
+We'd appreciate hearing and sharing your experience. Please take a
+moment to tell us about it by filling out the form below. We will
+publish your review online so that others can learn from your
+experience. Your review will be linked to your Google account.
+
+
+Excellent: I would definitely buy from this store again. Poor: I would
+discourage others from this store.
+How was your overall experience with this store?
+
+
+
+Having trouble with this form?
+Submit your review online
+
+How do I get details about this order?
+Get up-to-date information about order #725353880403781
+
+
+Need help? Visit the Google Checkout help center.
+Stop receiving seller review emails
+------=_Part_8012_10578721.1322809232534
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Dear  Christopher,</p>
+<p>Thanks for your recent purchase from  GatewayCDI.</p>
+<p>We&#39;d appreciate hearing and sharing your experience. Please take a moment to tell us about it by filling out the form below. We will publish your review online so that others can learn from your experience. Your review will be linked to your Google account.</p>
+<p></p>
+<form action="https://checkout.google.com/reviews/merchant/rateMerchantEmail?t=725353880403781&amp;e=f&amp;authTok=ngmT_TMBAAA.JxFTGPYi08eIPfwKQ1XKRA.o_us0iDppmgWEYMod_eSmw" method="POST" name="rateForm"><table><tr><th valign="top" align="left" style="padding-top:6px;"></th></tr>
+<tr><td><table cellpadding="2" cellspacing="0"><tr><td><input type="radio" name="ratingIndicator" value="5" id="rating5"></td>
+<td><font style="font-family:Arial, sans serif; font-size: 83%"><label for="rating5"><img src="https://checkout.google.com/img/composite-5.gif" alt="5 stars"></label></font></td>
+<td>Excellent: I would definitely buy from this store again.</td></tr>
+<tr><td><input type="radio" name="ratingIndicator" value="4" id="rating4"></td>
+<td><font style="font-family:Arial, sans serif; font-size: 83%"><label for="rating4"><img src="https://checkout.google.com/img/composite-4.gif" alt="4 stars"></label></font></td>
+<td></td></tr>
+<tr><td><input type="radio" name="ratingIndicator" value="3" id="rating3"></td>
+<td><font style="font-family:Arial, sans serif; font-size: 83%"><label for="rating3"><img src="https://checkout.google.com/img/composite-3.gif" alt="3 stars"></label></font></td>
+<td></td></tr>
+<tr><td><input type="radio" name="ratingIndicator" value="2" id="rating2"></td>
+<td><font style="font-family:Arial, sans serif; font-size: 83%"><label for="rating2"><img src="https://checkout.google.com/img/composite-2.gif" alt="2 stars"></label></font></td>
+<td></td></tr>
+<tr><td><input type="radio" name="ratingIndicator" value="1" id="rating1"></td>
+<td><font style="font-family:Arial, sans serif; font-size: 83%"><label for="rating1"><img src="https://checkout.google.com/img/composite-1.gif" alt="1 star"></label></font></td>
+<td>Poor: I would discourage others from this store.</td></tr></table></td></tr>
+<tr><td colspan="3"><br>
+How was your overall experience with this store?</td></tr>
+<tr><td colspan="3"><textarea name="commentText" rows="5" cols="75"></textarea>
+<br></td></tr></table>
+<br>
+<input type="hidden" name="enableEmailReviews" value="enableEmailReviews">
+<table><tr><td valign="top"><input type="submit" name="submit" value="Publish this Review"></td></tr></table></form>
+<br>
+<p><strong>Having trouble with this form?</strong><br>
+<a href="https://checkout.google.com/reviews/merchant/rateMerchant?t=725353880403781&amp;e=l">Submit your review online</a><br><br>
+<strong>How do I get details about this order?</strong><br>
+<a href="https://checkout.google.com/view/receipt?t=725353880403781">Get up-to-date information about order #725353880403781</a></p>
+<br>
+<div style="padding: 2px; border-top: 1px solid #3366CC"><center><font color="#676767" size="-2"><br>
+Need help? Visit the
+<a href="https://checkout.google.com/support?hl=en_US">Google Checkout help center.</a><br>
+<a href="https://checkout.google.com/reviews/merchant/reviewsEmailOptOut?t=725353880403781&amp;authTok=ngmT_TMBAAA.JxFTGPYi08eIPfwKQ1XKRA.o_us0iDppmgWEYMod_eSmw">Stop receiving seller review emails</a></font></center></div>
+------=_Part_8012_10578721.1322809232534--

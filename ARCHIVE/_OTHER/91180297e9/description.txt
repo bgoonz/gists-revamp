@@ -1,0 +1,1 @@
+how sync/async inconsistency + setTimeout hack == race condition

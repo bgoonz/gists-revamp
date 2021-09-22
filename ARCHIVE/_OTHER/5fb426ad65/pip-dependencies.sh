@@ -1,0 +1,1 @@
+pip download cryptography==1.2 -i http://pypi.libraries.io/simple -d /tmp --no-binary :all: --trusted-host pypi.libraries.io | grep "from cryptography" | cut -d' ' -f2

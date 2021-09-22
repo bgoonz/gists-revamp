@@ -1,0 +1,5 @@
+108-166-96-237.static.cloud-ips.com [Mon, 26 Mar 2012 17:53:32 +0000] ERROR: Running exception handlers
+108-166-96-237.static.cloud-ips.com [Mon, 26 Mar 2012 17:53:32 +0000] FATAL: Saving node information to /var/chef/cache/failed-run-data.json
+108-166-96-237.static.cloud-ips.com [Mon, 26 Mar 2012 17:53:32 +0000] ERROR: Exception handlers complete
+108-166-96-237.static.cloud-ips.com [Mon, 26 Mar 2012 17:53:32 +0000] FATAL: Stacktrace dumped to /var/chef/cache/chef-stacktrace.out
+108-166-96-237.static.cloud-ips.com [Mon, 26 Mar 2012 17:53:32 +0000] FATAL: RuntimeError: Could not locate the chef-client bin in any known path. Please set the proper path by overriding node['chef_client']['bin'] in a role.

@@ -1,0 +1,1 @@
+curl --silent http://your.jenkins/cc.xml | grep -o '<Project[^>]*/>' | grep -o 'name="[^"]*"' | cut -f2 -d'"'

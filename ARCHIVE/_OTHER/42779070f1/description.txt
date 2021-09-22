@@ -1,0 +1,1 @@
+Rolling restart supervisord watched processes. Since every restart it waits for "$status" == "RUNNING", it's safer that simply running /etc/init.d/supervisor restart

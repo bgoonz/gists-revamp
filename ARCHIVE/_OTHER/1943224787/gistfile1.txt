@@ -1,0 +1,59 @@
+Chriss-MacBook-Pro-2:Tinkerbox chriscoyier$ foreman start
+10:15:50 web.1     | started with pid 22938
+10:15:50 web.1     | started with pid 22939
+10:15:50 worker.1  | started with pid 22940
+10:15:50 worker.1  | mongod --help for help and startup options
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [initandlisten] MongoDB starting : pid=22940 port=27017 dbpath=/data/db/ 64-bit host=Chriss-MacBook-Pro-2.local
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [initandlisten] db version v2.0.2, pdfile version 4.5
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [initandlisten] git version: 514b122d308928517f5841888ceaa4246a7f18e3
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [initandlisten] build info: Darwin erh2.10gen.cc 9.6.0 Darwin Kernel Version 9.6.0: Mon Nov 24 17:37:00 PST 2008; root:xnu-1228.9.59~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [initandlisten] options: {}
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [initandlisten] journal dir=/data/db/journal
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [initandlisten] recover : no journal files present, no recovery needed
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [websvr] admin web console waiting for connections on port 28017
+10:15:50 worker.1  | Wed Feb 29 10:15:50 [initandlisten] waiting for connections on port 27017
+10:15:50 web.1     | Server running at http://127.0.0.1:8124/
+10:15:52 web.1     | /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/eventmachine-0.12.10/lib/eventmachine.rb:572:in `start_tcp_server': no acceptor (RuntimeError)
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/eventmachine-0.12.10/lib/eventmachine.rb:572:in `start_server'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/thin-1.3.1/lib/thin/backends/tcp_server.rb:16:in `connect'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/thin-1.3.1/lib/thin/backends/base.rb:53:in `block in start'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `call'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run_machine'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/thin-1.3.1/lib/thin/backends/base.rb:61:in `start'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/thin-1.3.1/lib/thin/server.rb:159:in `start'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.4.1/lib/rack/handler/thin.rb:13:in `run'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.4.1/lib/rack/server.rb:265:in `start'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.4.1/lib/rack/server.rb:137:in `start'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.4.1/bin/rackup:4:in `<top (required)>'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/bin/rackup:19:in `load'
+10:15:52 web.1     | 	from /Users/chriscoyier/.rvm/gems/ruby-1.9.2-p290/bin/rackup:19:in `<main>'
+10:15:52 web.1     | >> Thin web server (v1.3.1 codename Triple Espresso)
+10:15:52 web.1     | >> Maximum connections set to 1024
+10:15:52 web.1     | >> Listening on 0.0.0.0:9292, CTRL+C to stop
+10:15:52 web.1     | process terminated
+10:15:52 system    | sending SIGTERM to all processes
+10:15:52 system    | sending SIGTERM to pid 22939
+10:15:53 system    | sending SIGTERM to pid 22940
+10:15:53 worker.1  | Wed Feb 29 10:15:53 got kill or ctrl c or hup signal 15 (Terminated: 15), will terminate after current cmd ends
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] now exiting
+10:15:53 worker.1  | Wed Feb 29 10:15:53 dbexit: 
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] shutdown: going to close listening sockets...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] closing listening socket: 17
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] closing listening socket: 18
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] closing listening socket: 19
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] removing socket file: /tmp/mongodb-27017.sock
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] shutdown: going to flush diaglog...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] shutdown: going to close sockets...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] shutdown: waiting for fs preallocator...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] shutdown: lock for final commit...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] shutdown: final commit...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] shutdown: closing all files...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] closeAllFiles() finished
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] journalCleanup...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] removeJournalFiles
+10:15:53 worker.1  | Wed Feb 29 10:15:53 [interruptThread] shutdown: removing fs lock...
+10:15:53 worker.1  | Wed Feb 29 10:15:53 dbexit: really exiting now
+10:15:53 worker.1  | process terminated
+10:15:53 web.1     | process terminated
+Chriss-MacBook-Pro-2:Tinkerbox chriscoyier$ 

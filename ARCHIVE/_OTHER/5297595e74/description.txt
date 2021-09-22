@@ -1,0 +1,1 @@
+"polymorphism" w/ JS? sorta. kinda. maybe. comes from: https://gist.github.com/getify/5253319

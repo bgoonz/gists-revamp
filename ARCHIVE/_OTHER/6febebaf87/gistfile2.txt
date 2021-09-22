@@ -1,0 +1,40 @@
+---------------------------------
+true,true,true
+a && b && c => true (a,b,c)
+(a && b) && c => true (a,b,c)
+a && (b && c) => true (a,b,c)
+---------------------------------
+false,true,true
+a && b && c => false (a)
+(a && b) && c => false (a)
+a && (b && c) => false (a)
+---------------------------------
+true,false,true
+a && b && c => false (a,b)
+(a && b) && c => false (a,b)
+a && (b && c) => false (a,b)
+---------------------------------
+false,false,true
+a && b && c => false (a)
+(a && b) && c => false (a)
+a && (b && c) => false (a)
+---------------------------------
+true,true,false
+a && b && c => false (a,b,c)
+(a && b) && c => false (a,b,c)
+a && (b && c) => false (a,b,c)
+---------------------------------
+false,true,false
+a && b && c => false (a)
+(a && b) && c => false (a)
+a && (b && c) => false (a)
+---------------------------------
+true,false,false
+a && b && c => false (a,b)
+(a && b) && c => false (a,b)
+a && (b && c) => false (a,b)
+---------------------------------
+false,false,false
+a && b && c => false (a)
+(a && b) && c => false (a)
+a && (b && c) => false (a)

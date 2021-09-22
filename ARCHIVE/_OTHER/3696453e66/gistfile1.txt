@@ -1,0 +1,3 @@
+here's how "grips" template engine would handle this scenario:
+
+https://gist.github.com/3706912

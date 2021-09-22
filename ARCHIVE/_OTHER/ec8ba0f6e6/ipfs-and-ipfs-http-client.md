@@ -1,0 +1,15 @@
+IPFS collab repos that have a top level dependency on both ipfs and ipfs-http-client:
+
+- [3box/3box-pinning-node](https://github.com/3box/3box-pinning-node/blob/develop/package.json)
+- [cybercongress/dot-cyber](https://github.com/cybercongress/dot-cyber/blob/episode-1/package.json)
+- [district0x/cljs-orbitdb](https://github.com/district0x/cljs-orbitdb/blob/master/package.json)
+- [galtproject/geesome-extension](https://github.com/galtproject/geesome-extension/blob/master/package.json)
+- [galtproject/geesome-node](https://github.com/galtproject/geesome-node/blob/master/package.json)
+- [orbitdb/orbit-db-http-api](https://github.com/orbitdb/orbit-db-http-api/blob/develop/package.json)
+- [orbitdb/orbit-db-test-utils](https://github.com/orbitdb/orbit-db-test-utils/blob/master/package.json)
+- [rs-ipfs/interop](https://github.com/rs-ipfs/interop/blob/master/package.json)
+- [rs-ipfs/ipfs-rust-conformance](https://github.com/rs-ipfs/ipfs-rust-conformance/blob/master/package.json)
+- [rs-ipfs/js-ipfsd-ctl](https://github.com/rs-ipfs/js-ipfsd-ctl/blob/master/package.json)
+- [rsksmart/rif-storage-js](https://github.com/rsksmart/rif-storage-js/blob/master/package.json)
+- [unstoppabledomains/unstoppable-demo-browser](https://github.com/unstoppabledomains/unstoppable-demo-browser/blob/master/package.json)
+- [zippiehq/ipfs-webpack-plugin](https://github.com/zippiehq/ipfs-webpack-plugin/blob/master/package.json)

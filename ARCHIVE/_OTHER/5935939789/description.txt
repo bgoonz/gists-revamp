@@ -1,0 +1,1 @@
+Example of how to use JSON.minify() to pre-process your JSON strings and remove comments (and whitespace) before parsing.

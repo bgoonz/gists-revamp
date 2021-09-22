@@ -1,0 +1,1 @@
+example dub.sdl with dependencies

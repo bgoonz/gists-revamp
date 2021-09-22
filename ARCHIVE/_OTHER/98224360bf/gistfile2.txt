@@ -1,0 +1,6 @@
+If you were to make a property or method reference against
+`Foo` or `Bar` that didn't exist on either, you'd have a
+legitimate "infinite recursion" type of error condition.
+
+But, it seems like `Bar.baz` and `Foo.bam` are safe and
+should be allowed, no?

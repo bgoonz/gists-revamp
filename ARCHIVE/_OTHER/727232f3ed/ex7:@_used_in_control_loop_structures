@@ -1,0 +1,25 @@
+// Because @ can suspend the containing statement, it can be used in control and loop structures, as well
+
+if (X() @ true) {
+   // if X() completes immediately, this block will run
+   // if X() defers, the whole if-statement is paused.
+   //    if X() eventually fulfills successfully, the @ expression
+   //      will evaluate the `true`, and this block will then run
+   //    if X() eventually fails, the @ expression will evaluate to
+   //      `undefined` (falsy), and this block will NOT run
+}
+
+// OR, more explicitly if you like
+
+if (X() @ true : false) {
+   // will be have the exact same way
+}
+
+// in a loop:
+
+for (i=0; X() @ true; i++) {
+   // loop iteration each time that X() fulfills successfully,
+   // whether that's immediate or later
+   // stop when X() fails
+}
+

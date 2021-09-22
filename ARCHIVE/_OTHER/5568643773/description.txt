@@ -1,0 +1,1 @@
+interesting gotcha with `[[Prototype]]` and owned vs delegated properties

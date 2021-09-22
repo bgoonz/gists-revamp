@@ -1,0 +1,1 @@
+Threads em Python? é claro! http://www.diego-garcia.info/2016/02/18/threads-em-python-e-claro

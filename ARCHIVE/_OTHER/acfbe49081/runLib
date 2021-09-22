@@ -1,0 +1,10 @@
+packages <- c("data.table", "dplyr", "doParallel") # List of libraries 
+
+runLib <- function(packages = packages) {
+        packagesCheck <- packages[!(packages %in% installed.packages()[,"Package"])]
+        if(length(packagesCheck)) {install.packages(packagesCheck)}; rm(packagesCheck)
+        lapply(packages, function(x) {do.call("require", list(x))})
+    }
+    
+runLib(packages)    # Rerun this line after RESTART in R and add packages as needed
+

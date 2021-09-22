@@ -1,0 +1,4 @@
+packages <- c("twitteR", "dismo", "maps", "ggplot2")
+installAll <- packageList[!packages %in% rownames(installed.packages())]
+if(installAll){install.packages(installAll, repos = "http://cran.us.r-project.org")} else {print("No Packages Installed")}
+lapply(packages, library, character.only = TRUE)

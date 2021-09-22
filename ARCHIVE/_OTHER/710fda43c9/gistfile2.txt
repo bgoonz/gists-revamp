@@ -1,0 +1,10 @@
+So, the concern with the above approach is the many places where "foo()" and "bar()"
+appear inline in the paragraph text. It is confusing while reading the text whether
+"foo()" is referring to a generator or a regular function, and the same is true of
+"bar()". It's especially pronounced with "bar()" since in this example, the second
+snippet changes "bar()" from a function to a generator, so now it's harder to know
+in the text if we mean the function or generator version of "bar()".
+
+In other words, "bar()" needs some way to denote that it's a generator function to
+distinguish it from "bar()" referring to a normal function call. The two being
+identical is confusing to readers.

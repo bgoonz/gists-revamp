@@ -1,0 +1,23 @@
+v8::HandleScope handle_scope;
+v8::Context::Scope scope(my_context);
+
+v8::Handle<v8::Function> func1;
+{
+	v8::TryCatch try_catch;
+	v8::Handle<v8::Script> func1_script = v8::Script::Compile(v8::String::New("func1"), v8::String::New("inline::code"));
+	v8::Handle<v8::Value> func1_res = func1_script->Run();
+	func1 = v8::Handle<v8::Function>::Cast(func1_res);
+}
+v8::Handle<v8::Function> func2;
+{
+	v8::TryCatch try_catch;
+	v8::Handle<v8::Script> func2_script = v8::Script::Compile(v8::String::New("func2"), v8::String::New("inline::code"));
+	v8::Handle<v8::Value> func2_res = func2_script->Run();
+	func2 = v8::Handle<v8::Function>::Cast(func2_res);
+}
+
+v8::Handle<v8::Value> func1_args[2] = {v8::String::New("foo"), v8::String::New("bar")};
+v8::Handle<v8::Value> val1 = func1->Call(my_context->Global(), 2, func1_args);
+
+v8::Handle<v8::Value> func2_args[1] = {v8::String::New("baz")};
+v8::Handle<v8::Value> val2 = func2->Call(my_context->Global(), 1, func2_args);

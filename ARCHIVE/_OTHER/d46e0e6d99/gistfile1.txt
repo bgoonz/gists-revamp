@@ -1,0 +1,16 @@
+> docker version
+Client version: 1.1.2
+Client API version: 1.13
+Go version (client): go1.2.2
+Git commit (client): d84a070/1.1.2
+Server version: 1.1.2
+Server API version: 1.13
+Go version (server): go1.2.2
+Git commit (server): d84a070/1.1.2
+
+Engine: devicemapper
+OS: CentOS release 6.5 (Final)
+URL path: /v1.7/containers/c6017015cce4d33af293a73b4c2913cfd6f5a09045b5b2b26c0ec00141f82aee
+
+The error message is the usual:
+Cannot destroy container c6017015cce4d33af293a73b4c2913cfd6f5a09045b5b2b26c0ec00141f82aee: Driver devicemapper failed to remove root filesystem c6017015cce4d33af293a73b4c2913cfd6f5a09045b5b2b26c0ec00141f82aee: Device is Busy

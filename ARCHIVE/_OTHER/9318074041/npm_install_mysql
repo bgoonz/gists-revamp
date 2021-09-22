@@ -1,0 +1,20 @@
+npm install mysql
+npm info it worked if it ends with ok
+npm info using npm@0.3.18
+npm info using node@v0.4.2
+npm info fetch http://registry.npmjs.org/mysql/-/mysql-0.9.1.tgz
+npm info calculating sha1 /var/folders/2w/2wHKL8C9Gvak-rp5FepbE++++TI/-Tmp-/npm-1303316504106/1303316504106-0.5520619999151677/tmp.tgz
+npm info shasum 4f240429f60343c9e6cb6717feab072f64ca45d2
+npm info calculating sha1 /Users/didip/npm/.npm/.cache/mysql/0.9.1/package.tgz
+npm info shasum 33b887a4a3f5e9f4b34d2d83f7cde523bd67241a
+npm info preinstall mysql@0.9.1
+npm info install mysql@0.9.1
+npm info postinstall mysql@0.9.1
+npm info predeactivate mysql@0.9.1
+npm info deactivate mysql@0.9.1
+npm info postdeactivate mysql@0.9.1
+npm info preactivate mysql@0.9.1
+npm info activate mysql@0.9.1
+npm info postactivate mysql@0.9.1
+npm info build Success: mysql@0.9.1
+npm ok

@@ -1,0 +1,1 @@
+converting digit-by-digit, a stream of hexadecimal digits (of PI for example) into decimal base-10 digits.

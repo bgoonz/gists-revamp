@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none
+}
+
+li {
+  background: slategrey;
+  display: inline-block;
+  /* inline block hack for IE 6&7 */
+  zoom: 1;
+  *display: inline;
+  padding: 4px;
+  color: white
+}
+
+ul.white-space-fix li {
+  margin-right: -4px;
+}
+
+ul.zero-size {
+  font-size: 0px;
+}
+ul.zero-size li {
+  font-size: 16px;
+}

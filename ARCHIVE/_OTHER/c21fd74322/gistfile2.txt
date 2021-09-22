@@ -1,0 +1,10 @@
+a
+.filter( foo )
+.map( bar )
+.forEach( baz )
+.map( bam )
+.forEach( qux )
+.map( fiz )
+.forEach( fun )
+.map( .. )
+..

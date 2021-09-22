@@ -1,0 +1,11 @@
+$ time curl -o /dev/null localhost:5000/serial/
+
+real	0m1.312s
+user	0m0.011s
+sys	0m0.007s
+
+$ time curl -o /dev/null localhost:5000/concurrent/
+
+real	0m0.786s
+user	0m0.010s
+sys	0m0.005s

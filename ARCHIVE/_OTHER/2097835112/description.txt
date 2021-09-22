@@ -1,0 +1,1 @@
+get the realtime output for a shell command in golang|-|{"files":{"shell_output.go":{"env":"plain"}},"tag":"bigdata"}

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Custom Error Objects in JavaScript</title>
+</head>
+<body>
+
+<h1>Custom Error Objects in JavaScript</h1>
+
+<form>
+<textarea id="thelog" name="thelog" cols="50" rows="15"></textarea>
+</form>
+
+
+<script>
+// howto: subclass/extend built-in Error object, courtesy @jdalton
+
+var MyError = (function() {
+	function F(){}
+	function CustomError() {
+		var _this = (this===window) ? new F() : this, // correct if not called with "new" 
+			tmp = Error.prototype.constructor.apply(_this,arguments)
+		;
+		for (var i in tmp) {
+			if (tmp.hasOwnProperty(i)) _this[i] = tmp[i];
+		}
+		return _this;
+	}
+	function SubClass(){}
+	SubClass.prototype = Error.prototype;
+	F.prototype = CustomError.prototype = new SubClass();
+	CustomError.prototype.constructor = CustomError;
+
+	// add a custom method
+	CustomError.prototype.CustomField1 = function(custom_1){
+		if (custom_1 != null) this.custom_1 = custom_1;
+		return this.custom_1;
+	}
+		
+	return CustomError;
+})();
+
+var MoreMyError = (function() {
+	function F(){}
+	function CustomError() {
+		var _this = (this===window) ? new F() : this, // correct if not called with "new"
+			tmp = MyError.prototype.constructor.apply(_this,arguments)
+		;
+		for (var i in tmp) {
+			if (tmp.hasOwnProperty(i)) _this[i] = tmp[i];
+		}
+		return _this;
+	}
+	function SubClass(){}
+	SubClass.prototype = MyError.prototype;
+	F.prototype = CustomError.prototype = new SubClass();
+	CustomError.prototype.constructor = CustomError;
+
+	// override inherited custom method
+	CustomError.prototype.CustomField1 = function(custom_1){
+		if (custom_1 != null) this.custom_1 = custom_1;
+		return this.custom_1.toUpperCase();
+	}
+
+	// add another custom method
+	CustomError.prototype.CustomField2 = function(custom_2){
+		if (custom_2 != null) this.custom_2 = custom_2;
+		return this.custom_2;
+	}
+		
+	return CustomError;
+})();
+
+function logit(msg) {
+	document.getElementById("thelog").value += msg + "\n";
+}
+
+
+var err = Error("{native Error}");	// or better, new Error(...)
+logit("[err]message:"+err.message);
+logit("[err]instanceof Error:"+(err instanceof Error));
+logit("");
+
+
+var err2 = MyError("{custom MyError}");	// or better, new MyError(...)
+err2.CustomField1("custom1");
+logit("[err2]message:"+err2.message);
+logit("[err2]custom_field_1:"+err2.CustomField1());
+logit("[err2]instanceof Error:"+(err2 instanceof Error));
+logit("[err2]instanceof MyError:"+(err2 instanceof MyError));
+logit("");
+
+
+var err3 = MoreMyError("{custom MoreMyError}");	// or better, new MoreMyError(...)
+err3.CustomField1("custom1");
+err3.CustomField2("custom2");
+logit("[err3]message:"+err3.message);
+logit("[err3]custom_field_1:"+err3.CustomField1());
+logit("[err3]custom_field_2:"+err3.CustomField2());
+logit("[err3]instanceof Error:"+(err3 instanceof Error));
+logit("[err3]instanceof MyError:"+(err3 instanceof MyError));
+logit("[err3]instanceof MoreMyError:"+(err3 instanceof MoreMyError));
+
+</script>
+
+</body>
+</html>

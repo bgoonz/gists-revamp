@@ -1,0 +1,5 @@
+settings = {'debug': True}
+
+handlers = [(r"/", MainHandler)]
+
+tornado.web.Application.__init__(self, handlers, **settings)

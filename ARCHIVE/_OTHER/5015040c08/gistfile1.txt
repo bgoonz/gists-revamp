@@ -1,0 +1,32 @@
+var https = require("https");
+
+var options = {
+  hostname: "foo.bar",
+  port: 443,
+  path: "/baz",
+  method: "GET",
+  headers: {
+    "User-Agent": "curl/7.21.4 (universal-apple-darwin11.0) libcurl/7.21.4 OpenSSL/0.9.8r zlib/1.2.5",
+    "Referer": "https://foobar.baz/",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Charset": "ISO-8859-1,utf-8;q=0.7,*;q=0.3",
+    "Accept-Language": "en-US,en;q=0.8",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache"
+  }
+};
+
+var req = https.request(options, function(res) {
+  console.log("STATUS: " + res.statusCode);
+  console.log("HEADERS: " + JSON.stringify(res.headers));
+  res.setEncoding("utf8");
+  res.on("data", function (chunk) {
+    console.log("BODY: " + chunk);
+  });
+});
+
+req.on("error", function(e) {
+  console.log("problem with request: " + e.message);
+});
+
+req.end();

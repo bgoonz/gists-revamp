@@ -1,0 +1,66 @@
+# say
+alias say="say -v Vicki"
+
+# Don't check mail
+unset MAILCHECK
+
+#
+# Fancy bash functions
+#
+function ifconfig_line {
+  ifconfig | grep 'inet ' | grep -v 127.0.0.1
+}
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+function local_ip {
+  ifconfig_line | awk '{print $2}'
+}
+
+# SHELL PROMPT CONFIG
+export PS1='\u@$(local_ip) [\w] $(parse_git_branch) '
+
+export EDITOR='sub -w'
+
+# SHORTCUTS
+alias psg='ps wwaux | grep -v grep | grep -i'
+alias l='ls -1'
+alias ll='ls -lah'
+alias gitpull="git pull --rebase"
+alias gitco="git checkout"
+alias gitst="git status"
+
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias which='type -a'
+alias path='echo -e ${PATH//:/\\n}'
+
+alias du='du -kh'       # Makes a more readable output.
+alias df='df -kTh'
+
+#---------------------
+# history awesomeness
+#---------------------
+bind '"\e[A"':history-search-backward
+bind '"\e[B"':history-search-forward
+bind '"\M-\e[B"':"\"\C-k\C-ahistory | grep '^ *[0-9]* *\C-e.'\C-m\""
+bind Space:magic-space
+shopt -s histappend
+export PROMPT_COMMAND='history -a'
+
+#Memcache
+EVENT_NOKQUEUE=yes
+
+# CD shortcuts
+shopt -s cdable_vars
+export post=$HOME/projects/postano
+
+# bash completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
+#PATH
+PATH=/usr/local/share/npm/bin:~/bin:$PATH

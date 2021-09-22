@@ -1,0 +1,40 @@
+ ---------------------------------
+true,true,true
+a || b || c => true (a)
+(a || b) || c => true (a)
+a || (b || c) => true (a)
+---------------------------------
+false,true,true
+a || b || c => true (a,b)
+(a || b) || c => true (a,b)
+a || (b || c) => true (a,b)
+---------------------------------
+true,false,true
+a || b || c => true (a)
+(a || b) || c => true (a)
+a || (b || c) => true (a)
+---------------------------------
+false,false,true
+a || b || c => true (a,b,c)
+(a || b) || c => true (a,b,c)
+a || (b || c) => true (a,b,c)
+---------------------------------
+true,true,false
+a || b || c => true (a)
+(a || b) || c => true (a)
+a || (b || c) => true (a)
+---------------------------------
+false,true,false
+a || b || c => true (a,b)
+(a || b) || c => true (a,b)
+a || (b || c) => true (a,b)
+---------------------------------
+true,false,false
+a || b || c => true (a)
+(a || b) || c => true (a)
+a || (b || c) => true (a)
+---------------------------------
+false,false,false
+a || b || c => false (a,b,c)
+(a || b) || c => false (a,b,c)
+a || (b || c) => false (a,b,c)

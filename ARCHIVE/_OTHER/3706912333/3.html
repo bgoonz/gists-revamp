@@ -1,0 +1,57 @@
+{$: '#settings' }
+    <h1>Settings</h1>
+    {$* $.settings | name = _.key | options['low','high'] = _.value ? "checked" }
+        <h2>{$= name $}</h2>
+        {$* options }
+            <input type="radio" name="{$= name $}" value="{$= _.key $}" {$= _.value $}> {$= _.key $}
+        {$}
+    {$}
+{$}
+
+
+
+
+<!--
+Here's how "grips" templating engine would handle it.
+
+Some notes:
+
+1. Some of the "grips" template tag syntax shown in this example:
+     - `{$: "#id" }` defines a top-level template section by id.
+     - `{$* ref }` defines a loop block to iterate over `ref`.
+     - `{$= ref $}` includes the value of `ref`.
+     - for define tags and loop tags, you can optionally have a | delimited
+       list of assignment statements. (see `name` and `setting` assignments above)
+     - any reference of a variable that is not scoped (prefixed) with `$.` or
+       `_.` will automatically be treated as a "local variable" within that
+       block. you can create local variables as much as necessary. (see `name`
+       and `setting` variables above)
+     - assignments can optionally use a ?: ternary operator. A special syntax 
+       applies to the else clause: an empty string ("") expression is assumed if the
+       else clause (`: ref`) is omitted.
+     - a special syntax for assignment statements is when the LH of the assignment
+       includes a set literal (like `checked['low','high'] = ...`), and the RH of
+       the assignment is a ?: ternary expression. The example above
+       (`checked['low','high'] = setting ? 'checked'`) roughly equates to:
+       `checked['low'] = (setting === 'low') ? 'checked' : ''` and
+       `checked['high'] = (setting === 'high') ? 'checked' : ''`. It basically is
+       a pre-computation hash for the comparisons, where the comparison results can
+       then be used in the template as an include. Since the conditional comparison
+       has already happened before you include, it emulates the concept of a
+       conditional include.
+2. in expressions, `$` is how you reference the data structure in the current
+   context.
+3. in expressions, `_` is how you reference the current iterator in a loop.
+     - `_.value` is the actual value of the current iteration (whatever data
+       type it may be).
+     - `_.key` is either the numeric index for an array iteration, or the string 
+       property name for an object-property iteration.
+     - `_.index` is the numeric index of the iteration (regardless of whether
+       iterating over an array or object).
+     - `_.even` is true for even (0,2,4,...) iterations.
+     - `_.odd` is true for odd (1,3,5,...) iterations (iterations are 0-based).
+4. Loops can iterate over arrays, objects, set literals (`['low','high']` as shown
+   above), or range literals (which would look like `[3..7]`).
+-->
+
+

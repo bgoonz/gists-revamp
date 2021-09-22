@@ -1,0 +1,1 @@
+theoretical native promise/defer via @ operator (in JavaScript or something like it)

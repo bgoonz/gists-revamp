@@ -1,0 +1,195 @@
+<p>It may be news to you, but there is a nifty resource called <a href="http://quotesondesign.com/">Quotes on Design</a> that serves up interesting quotes <em>about design</em>, curated by our very own <a href="http://chriscoyier.net">Chris Coyier</a>.</p>
+<p>Up to this point, Quotes on Design (QoD) used a bit of custom code to query the WordPress database and serve up quotes. This was used for the site itself, and for its <a href="http://quotesondesign.com/api-v4-0/">API</a> to allow use on external sites. With the excitement surrounding the upcoming <a href="http://wp-api.org/">WordPress JSON REST API</a>, we thought it would be fun to rebuild the site to use the WP API instead of our own custom code.</p>
+<p><span id="more-200657"></span></p>
+<figure id='post-201770' class='align-right media-201770'><img src='//css-tricks.com/wp-content/uploads/2015/07/qod.gif' alt='' /></figure>
+<p>Here's what we'll cover:</p>
+<ol>
+<li>Setting up the API</li>
+<li>Querying the API to grab a random quote</li>
+<li>Doing something interesting with that quote</li>
+<li>Customizing the API to remove unused information</li>
+<li>Using the new QoD JSON REST API to grab nifty quotes for your site</li>
+</ol>
+<p><strong>Warning!</strong> The WP JSON REST API is still in development, and the query interface could change before the final version. We'll do our best to update this tutorial if anything changes. We wouldn't recommend using the WP API on any super-important sites just yet, unless you're a ultra-professional WordPress developer, in which case you probably can skip this article, right?</p>
+<h3>Installing the WP API</h3>
+<p>The WP API is packaged as a plugin, <a href="https://wordpress.org/plugins/json-rest-api/">available on the WordPress.org plugin repository</a>. That means you can</p>
+<ul>
+<li>Open your WordPress dashboard</li>
+<li>Go to Plugins &rarr; Add New</li>
+<li>Search for "WP API"</li>
+<li>Install, activate, and you're done</li>
+</ul>
+<p>Let's start digging in!</p>
+<h3>Grabbing a random post</h3>
+<p>For QoD, we wanted to add some simple functionality to the home page: Click a button, and have a random quote reloaded from the API.</p>
+<p>The WP API includes several endpoints you can use to read information from the database, including <a href="http://wp-api.org/#posts_retrieve-meta-for-a-post">meta</a>, <a href="http://wp-api.org/#media_get-attachments">attachments</a>, <a href="http://wp-api.org/#users_retrieve-users">users</a> - really, anything that is stored in the standard WP database is accessible to some degree.</p>
+<p>For our use case, we just needed to grab a random post. We started with the <code>/wp-json/posts</code> endpoint, which is essentially like running a <code>WP_Query</code>, if you're familiar with WordPress development. Here's the base endpoint URL:</p>
+<p><code>http://quotesondesign.com/wp-json/posts</code></p>
+<p>Visiting that URL without any query parameters returns the default list of posts in JSON format &mdash; essentially, the same list of posts you'd see on the blog page:</p>
+<pre rel="JSON"><code class="language-javascript">[
+  {
+    "ID": 2328,
+    "content": "&lt;p&gt;Everything we do communicates.&lt;/p&gt;\n",
+    /* ...snip most of the fields... */
+    "title": "Pete Episcopo",
+    "type": "post"
+  },
+  {
+    "ID": 2326,
+    "content": "&lt;p&gt;The only &amp;#8220;intuitive&amp;#8221; interface is the nipple. After that it&amp;#8217;s all learned.&lt;/p&gt;\n",
+    /* ...snip most of the fields... */
+    "title": "Bruce Ediger",
+    "type": "post"
+  },
+  {
+    "ID": 2323,
+    "content": "&lt;p&gt;Only show work you like, or you&amp;#8217;ll end up being hired to do things you don&amp;#8217;t like.&lt;/p&gt;\n",
+    /* ...snip most of the fields... */
+    "title": "Victoria Pater",
+    "type": "post"
+  }
+]</code></pre>
+<p>Note that the IDs of the quotes are sequential: they represent the three most recent quotes on the site.</p>
+<p>For our design, we only need one post and we want it to be randomly selected. We need to <em>filter</em> the results, and we can do this using the same arguments we would use when calling <code>WP_Query</code> or <code>get_posts</code>. </p>
+<p>In this case, we need two arguments:</p>
+<ul>
+<li>The <code>orderby</code> argument needs to be <code>rand</code>, to fetch a random post</li>
+<li>The <code>posts_per_page</code> argument needs to be <code>1</code>, to limit the results to a single post</li>
+</ul>
+<p>See a list of all available parameters on the <a href="https://codex.wordpress.org/Class_Reference/WP_Query">WP_Query codex entry</a>.</p>
+<p>We pass those arguments through the URL, using the <code>filter</code> query variable as an array, like so:</p>
+<p><code>http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&amp;filter[posts_per_page]=1</code></p>
+<p>Here's what we get back from the WP API using our filtered URL:</p>
+<pre rel="JSON"><code class="language-javascript">[
+  {
+    "ID": 2153,
+    "author": {
+        "ID": 2,
+        "URL": "http://css-tricks.com",
+        "avatar": "http://0.gravatar.com/avatar/8081b26e05bb4354f7d65ffc34cbbd67?s=96",
+        "description": "",
+        "first_name": "Chris",
+        "last_name": "Coyier",
+        /* ...snip some fields... */
+    },
+    "comment_status": "closed",
+    "content": "&lt;p&gt;Wonderfully designed &gt; beautifully designed. Any day.&lt;/p&gt;\n",
+    "date": "2013-06-27T08:34:04",
+    "date_gmt": "2013-06-27T16:34:04",
+    "date_tz": "Etc/GMT-8",
+    "excerpt": "&lt;p&gt;Wonderfully designed &gt; beautifully designed. Any day.&lt;/p&gt;\n",
+    "featured_image": null,
+    "format": "standard",
+    "guid": "http://quotesondesign.com/?p=2153",
+    "link": "http://quotesondesign.com/daniel-burka-2/",
+    "menu_order": 0,
+    "meta": {
+        /* ...snip some fields... */
+    },
+    "modified": "2013-06-27T08:34:04",
+    "modified_gmt": "2013-06-27T16:34:04",
+    "modified_tz": "Etc/GMT-8",
+    "parent": null,
+    "ping_status": "closed",
+    "slug": "daniel-burka-2",
+    "status": "publish",
+    "sticky": false,
+    "terms": {
+      /* ...snip some fields... */
+    },
+    "title": "Daniel Burka",
+    "type": "post"
+  }
+]</code></pre>
+<p>Every time we refresh our filtered URL, we'll get a different quote. Sweet! </p>
+<p>You'll notice that I've included more of the WP API JSON response in the last snippet. There's a <strong>lot</strong> of information there &mdash; even when I hide the meta, author and terms.</p>
+<p>For our purposes, we don't need most of that information. Plus it's more bandwidth-effient to not include it all - so let's chop it out!</p>
+<h3>Removing fields from the JSON response</h3>
+<p>We need to filter the data being returned by the API, and fortunately the WP API provides us with exactly the filter we need, called <code>json_prepare_post</code>. To use it, we <a href="https://codex.wordpress.org/Writing_a_Plugin">create a new plugin</a> with the following snippet of code:</p>
+<pre rel="PHP"><code class="language-javascript">function qod_remove_extra_data( $data, $post, $context ) {
+  // We only want to modify the 'view' context, for reading posts
+  if ( $context !== 'view' || is_wp_error( $data ) ) {
+    return $data;
+  }
+  
+  // Here, we unset any data we don't want to see on the front end:
+  unset( $data['author'] );
+  unset( $data['status'] );
+  // continue unsetting whatever other fields you want
+
+  return $data;
+}
+
+add_filter( 'json_prepare_post', 'qod_remove_extra_data', 12, 3 );</code></pre>
+<p>Activating our plugin leaves us with a much smaller JSON response, which only contains the info we need for our use case:</p>
+<pre rel="JSON"><code class="language-javascript">[
+  {
+    "ID": 686,
+    "content": "&lt;p&gt;My secret is being not terrible at a lot of things.  &lt;/p&gt;\n",
+    "link": "http://quotesondesign.com/moby/",
+    "title": "Moby"
+  }
+]</code></pre>
+<h3>Adding fields to the JSON response</h3>
+<p>Now that we're done removing unnecessary information from the JSON data, it's only fitting that we add some of our own custom fields to stay balanced. Wax on, wax off.</p>
+<p>Some of the quotes have a custom meta field called "Source", which Chris uses to link to the original source of the quote, if it is available online. Let's add that meta data to the JSON response using the same <code>json_prepare_post</code> filter we used to <em>remove</em> data previously. In the same plugin, we add the following function:</p>
+<pre rel="PHP"><code class="language-javascript">function qod_add_custom_meta_to_posts( $data, $post, $context ) {
+  // We only want to modify the 'view' context, for reading posts
+  if ( $context !== 'view' || is_wp_error( $data ) ) {
+    return $data;
+  }
+
+  $source = get_post_meta( $post['ID'], 'Source', true );
+
+  if ( ! empty( $source ) ) {
+    $data['custom_meta'] = array( 'Source' =&gt; $source );
+  }
+
+  return $data;
+}
+
+add_filter( 'json_prepare_post', 'qod_add_custom_meta_to_posts', 10, 3 );</code></pre>
+<p>With that extra field appended, here's what a JSON response looks like:</p>
+<pre rel="JSON"><code class="language-javascript">[
+  {
+    "ID": 2039,
+    "content": "&lt;p&gt;Communication that doesn&amp;#8217;t take a chance doesn&amp;#8217;t stand a chance.&lt;/p&gt;\n",
+    "custom_meta": {
+        "Source": "&lt;a href=\"http://altpick.com/spot/segura/segura.php\"&gt;article&lt;/a&gt;"
+    },
+   "link": "http://quotesondesign.com/carlos-segura/",
+    "title": "Carlos Segura"
+  }
+]</code></pre>
+<p>Now that we have <em>exactly</em> the information we need, let's use the JSON API to load a random quote via AJAX on the home page.</p>
+<h3>Fetching and using data from the JSON API</h3>
+<p>On the homepage of QoD, we have a button to grab another quote:</p>
+<figure id='post-200888' class='align-none media-200888'><img src='https://css-tricks.com/wp-content/uploads/2015/07/qod-button.png' alt='Get Another Quote Button' /></figure>
+<p>Using jQuery event handlers and the <a href="http://api.jquery.com/jquery.ajax/">jQuery.ajax</a> function, we grab a quote and update the HTML with the following snippet:</p>
+<pre rel="Javascript"><code class="language-javascript">jQuery( function( $ ) {
+  $( '#get-another-quote-button' ).on( 'click', function ( e ) {
+    e.preventDefault();
+    $.ajax( {
+      url: '/wp-json/posts?filter[orderby]=rand&amp;filter[posts_per_page]=1',
+      success: function ( data ) {
+        var post = data.shift(); // The data is an array of posts. Grab the first one.
+        $( '#quote-title' ).text( post.title );
+        $( '#quote-content' ).html( post.content );
+
+        // If the Source is available, use it. Otherwise hide it.
+        if ( typeof post.custom_meta !== 'undefined' &amp;&amp; typeof post.custom_meta.Source !== 'undefined' ) {
+          $( '#quote-source' ).html( 'Source:' + post.custom_meta.Source );
+        } else {
+          $( '#quote-source' ).text( '' );
+        }
+      },
+      cache: false
+    } );
+  } );
+} );</code></pre>
+<p>Now, when the button is pressed a new random quote is automagically loaded. <a href="http://quotesondesign.com/">Try it out</a>.</p>
+<h3>Using the API on your site</h3>
+<p>You can query Quotes on Design using the API to show nifty quotes for your own site. We've updated the <a href="http://quotesondesign.com/api-v4-0/">API page</a> to use the new WP JSON API. As mentioned earlier, <strong>the WP API is subject to change</strong>, so don't rely on this API for uber-important sites just yet.</p>
+<h3>More API goodness is coming</h3>
+<p>Development on the WP API is ongoing, and there is a lot of excitement to see what folks can build with it. Our example is pretty basic, but the thought of a JSON API has already gotten our gears turning about the possibilities. </p>
+<p>Check out <a href="http://quotesondesign.com/">Quotes on Design</a> and share your thoughts and questions in the comments. And if you have a great quote you'd like to see on the site, <a href="http://quotesondesign.com/submit/">submit it</a>!</p>

@@ -1,0 +1,1 @@
+Grab Jenkins project names from cc.xml

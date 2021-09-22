@@ -1,0 +1,22 @@
+### Likelihood of getting 3 heads out of 8 flips given a fair coin
+n = 8
+k = 3
+steps = 10001 # Non zero ending to get likelihood; best if > 10000
+p_grid = seq(0,1,length.out = steps)
+prior = rep(1, steps)
+likelihood = dbinom(k, n, prob = p_grid)
+  # unstd.posterior = likelihood*prior
+  # posterior = unstd.posterior/sum(unstd.posterior)
+  # plot(p_grid, posterior)
+
+plot(p_grid, likelihood)
+abline(v = .5, col = "red")
+
+gridFind = cbind(p_grid, likelihood)
+findProb = .5
+gridFind[which(abs(p_grid - findProb) == min(abs(p_grid - findProb))),]
+# .2187 likelihood
+
+# Combinations of 3 heads in 8 flips out of 2^n flips
+(factorial(n)/(factorial(k)*factorial(n - k))) / ( 2 ^ n )
+# 0.21875 likelihood

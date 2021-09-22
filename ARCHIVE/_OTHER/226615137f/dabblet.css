@@ -1,0 +1,19 @@
+/* Keyframes */
+
+#mover {
+  background: red;
+  border: 10px solid black;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: moveit 2.5s linear infinite;
+}
+
+@keyframes moveit {
+  0% { left: -10%; }
+  100% { left: 100%; }
+}
+
+body {
+  overflow: hidden;
+}

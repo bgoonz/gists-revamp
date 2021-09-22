@@ -1,0 +1,25 @@
+cat /var/chef/cache/chef-stacktrace.out
+Generated at Mon Mar 26 17:53:32 +0000 2012
+RuntimeError: Could not locate the chef-client bin in any known path. Please set the proper path by overriding node['chef_client']['bin'] in a role.
+/var/chef/cache/cookbooks/chef-client/recipes/service.rb:38:in `from_file'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/cookbook_version.rb:578:in `load_recipe'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/mixin/language_include_recipe.rb:40:in `include_recipe'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/mixin/language_include_recipe.rb:27:in `each'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/mixin/language_include_recipe.rb:27:in `include_recipe'
+/var/chef/cache/cookbooks/chef-client/recipes/default.rb:20:in `from_file'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/cookbook_version.rb:578:in `load_recipe'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/mixin/language_include_recipe.rb:40:in `include_recipe'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/mixin/language_include_recipe.rb:27:in `each'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/mixin/language_include_recipe.rb:27:in `include_recipe'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/run_context.rb:72:in `load'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/run_context.rb:69:in `each'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/run_context.rb:69:in `load'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/client.rb:195:in `setup_run_context'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/client.rb:159:in `run'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/application/client.rb:239:in `run_application'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/application/client.rb:229:in `loop'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/application/client.rb:229:in `run_application'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/../lib/chef/application.rb:67:in `run'
+/opt/ruby-enterprise/lib/ruby/gems/1.8/gems/chef-0.10.8/bin/chef-client:26
+/opt/ruby-enterprise/bin/chef-client:19:in `load'
+/opt/ruby-enterprise/bin/chef-client:19

@@ -1,0 +1,1 @@
+create an auto-loader for Google Analytics (using LABjs)

@@ -1,0 +1,1 @@
+converting between Uint8Arrays and binary-encoded strings and word-arrays (for crypto purposes, with CryptoJS and NaCL)

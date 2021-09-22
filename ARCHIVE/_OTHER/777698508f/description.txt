@@ -1,0 +1,1 @@
+a 66% reduction in lines-of-code from "gistfile1.js" to "gistfile3.js". clearly FTW!

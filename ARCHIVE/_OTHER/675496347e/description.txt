@@ -1,0 +1,1 @@
+detecting if flash plugin is installed

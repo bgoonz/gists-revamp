@@ -1,0 +1,1 @@
+The markup from http://getify.com/simply-text.html which has been injected with advertising malware when accessed over the Holiday Inn Express wifi in San Diego (Sorrento Valley). The same page accessed over HTTPS does not get injected, shockingly. :)
