@@ -16,4 +16,4 @@
 
 [Algorithms II - The Traveling Salesman Problem](https://github.com/LambdaSchool/Algorithms-Two_React-TSP)
 
-[Dijikstra's D3 Demo](https://github.com/LambdaSchool/DijkstrasD3Demo)
+[Dijikstra’s D3 Demo](https://github.com/LambdaSchool/DijkstrasD3Demo)

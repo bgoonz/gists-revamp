@@ -1,81 +1,79 @@
-# Prerequisites of Computer Programming
+Prerequisites of Computer Programming
+=====================================
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fxdvrx1%2Fprerequisites-of-computer-programming&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=PAGE+VIEWS&edge_flat=false)](https://hits.seeyoufarm.com)
 
-- History of Computer Programming Languages
+-   History of Computer Programming Languages
 
-  <https://cs.brown.edu/~adf/programming_languages.html>
+    <a href="https://cs.brown.edu/~adf/programming_languages.html" class="uri">https://cs.brown.edu/~adf/programming_languages.html</a>
 
-- Hardware & Software
+-   Hardware & Software
 
-  <https://www.computerhope.com/issues/ch000039.htm>
+    <a href="https://www.computerhope.com/issues/ch000039.htm" class="uri">https://www.computerhope.com/issues/ch000039.htm</a>
 
-- Low-Level Languages
+-   Low-Level Languages
 
-  <https://www.computerhope.com/jargon/l/lowlangu.htm>
+    <a href="https://www.computerhope.com/jargon/l/lowlangu.htm" class="uri">https://www.computerhope.com/jargon/l/lowlangu.htm</a>
 
-- High-Level Languages
+-   High-Level Languages
+    -   Compiled & Interpreted Languages (or both)
 
-  - Compiled & Interpreted Languages (or both)
+        <a href="https://guide.freecodecamp.org/computer-science/compiled-versus-interpreted-languages/" class="uri">https://guide.freecodecamp.org/computer-science/compiled-versus-interpreted-languages/</a>
 
-    <https://guide.freecodecamp.org/computer-science/compiled-versus-interpreted-languages/>
+-   Assembler and Compiler
 
-- Assembler and Compiler
+    <a href="https://techdifferences.com/difference-between-compiler-and-assembler.html" class="uri">https://techdifferences.com/difference-between-compiler-and-assembler.html</a>
 
-  <https://techdifferences.com/difference-between-compiler-and-assembler.html>
+-   Programming Paradigms
 
-- Programming Paradigms
+    <a href="https://cs.lmu.edu/~ray/notes/paradigms/" class="uri">https://cs.lmu.edu/~ray/notes/paradigms/</a>
 
-  <https://cs.lmu.edu/~ray/notes/paradigms/>
+    -   Structured Programming vs. Object-Oriented Programming
 
-  - Structured Programming vs. Object-Oriented Programming
+        <a href="https://freefeast.info/difference-between/difference-between-structured-programming-and-object-oriented-programming-structured-programming-vs-object-oriented-programming/" class="uri">https://freefeast.info/difference-between/difference-between-structured-programming-and-object-oriented-programming-structured-programming-vs-object-oriented-programming/</a>
 
-    <https://freefeast.info/difference-between/difference-between-structured-programming-and-object-oriented-programming-structured-programming-vs-object-oriented-programming/>
+-   System Software and Application Software
 
-- System Software and Application Software
+    <a href="https://www.thecrazyprogrammer.com/2016/04/difference-system-software-application-software.html" class="uri">https://www.thecrazyprogrammer.com/2016/04/difference-system-software-application-software.html</a>
 
-  <https://www.thecrazyprogrammer.com/2016/04/difference-system-software-application-software.html>
+-   Operating Systems
 
-- Operating Systems
+    <a href="https://www.techopedia.com/definition/3515/operating-system-os" class="uri">https://www.techopedia.com/definition/3515/operating-system-os</a>
 
-  <https://www.techopedia.com/definition/3515/operating-system-os>
+-   Data Types
 
-- Data Types
+    <a href="https://searchapparchitecture.techtarget.com/definition/data-type" class="uri">https://searchapparchitecture.techtarget.com/definition/data-type</a>
 
-  <https://searchapparchitecture.techtarget.com/definition/data-type>
+-   Data Structures
 
-- Data Structures
+    <a href="https://www.freecodecamp.org/news/the-top-data-structures-you-should-know-for-your-next-coding-interview-36af0831f5e3/" class="uri">https://www.freecodecamp.org/news/the-top-data-structures-you-should-know-for-your-next-coding-interview-36af0831f5e3/</a>
 
-  <https://www.freecodecamp.org/news/the-top-data-structures-you-should-know-for-your-next-coding-interview-36af0831f5e3/>
+-   Syntax in Programming
 
-- Syntax in Programming
+    <a href="https://www.webopedia.com/TERM/S/syntax.html" class="uri">https://www.webopedia.com/TERM/S/syntax.html</a>
 
-  <https://www.webopedia.com/TERM/S/syntax.html>
+-   Program Flow
+    -   Processing
+        -   Algorithm
 
-- Program Flow
+            <a href="https://www.techopedia.com/definition/3739/algorithm" class="uri">https://www.techopedia.com/definition/3739/algorithm</a>
 
-  - Processing
+        -   Pseudocode
 
-    - Algorithm
+            <a href="https://computersciencewiki.org/index.php/Pseudocode" class="uri">https://computersciencewiki.org/index.php/Pseudocode</a>
 
-      <https://www.techopedia.com/definition/3739/algorithm>
+        -   Flowchart
 
-    - Pseudocode
+            <a href="https://www.visual-paradigm.com/tutorials/flowchart-tutorial/" class="uri">https://www.visual-paradigm.com/tutorials/flowchart-tutorial/</a>
 
-      <https://computersciencewiki.org/index.php/Pseudocode>
+    -   Conditionals
 
-    - Flowchart
+        <a href="https://computersciencewiki.org/index.php/Conditionals" class="uri">https://computersciencewiki.org/index.php/Conditionals</a>
 
-      <https://www.visual-paradigm.com/tutorials/flowchart-tutorial/>
+    -   Loops
 
-  - Conditionals
+        <a href="https://users.cs.fiu.edu/~downeyt/cop2210/loops.html" class="uri">https://users.cs.fiu.edu/~downeyt/cop2210/loops.html</a>
 
-    <https://computersciencewiki.org/index.php/Conditionals>
+-   Memory & Storage
 
-  - Loops
-
-    <https://users.cs.fiu.edu/~downeyt/cop2210/loops.html>
-
-- Memory & Storage
-
-  <https://www.kingston.com/en/community/articledetail/articleid/29685>
+    <a href="https://www.kingston.com/en/community/articledetail/articleid/29685" class="uri">https://www.kingston.com/en/community/articledetail/articleid/29685</a>
