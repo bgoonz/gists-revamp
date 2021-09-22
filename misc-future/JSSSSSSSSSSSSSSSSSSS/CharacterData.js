@@ -20,7 +20,7 @@ Object.defineProperty(CharacterData, "prototype", {
   value: CharacterData.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 CharacterData.prototype.substringData = function substringData(offset, count) {
@@ -39,14 +39,16 @@ CharacterData.prototype.substringData = function substringData(offset, count) {
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'substringData' on 'CharacterData': parameter 1"
+      context:
+        "Failed to execute 'substringData' on 'CharacterData': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'substringData' on 'CharacterData': parameter 2"
+      context:
+        "Failed to execute 'substringData' on 'CharacterData': parameter 2",
     });
     args.push(curArg);
   }
@@ -69,7 +71,7 @@ CharacterData.prototype.appendData = function appendData(data) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'appendData' on 'CharacterData': parameter 1"
+      context: "Failed to execute 'appendData' on 'CharacterData': parameter 1",
     });
     args.push(curArg);
   }
@@ -92,14 +94,14 @@ CharacterData.prototype.insertData = function insertData(offset, data) {
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'insertData' on 'CharacterData': parameter 1"
+      context: "Failed to execute 'insertData' on 'CharacterData': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'insertData' on 'CharacterData': parameter 2"
+      context: "Failed to execute 'insertData' on 'CharacterData': parameter 2",
     });
     args.push(curArg);
   }
@@ -122,21 +124,25 @@ CharacterData.prototype.deleteData = function deleteData(offset, count) {
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'deleteData' on 'CharacterData': parameter 1"
+      context: "Failed to execute 'deleteData' on 'CharacterData': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'deleteData' on 'CharacterData': parameter 2"
+      context: "Failed to execute 'deleteData' on 'CharacterData': parameter 2",
     });
     args.push(curArg);
   }
   return this[impl].deleteData(...args);
 };
 
-CharacterData.prototype.replaceData = function replaceData(offset, count, data) {
+CharacterData.prototype.replaceData = function replaceData(
+  offset,
+  count,
+  data
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -152,21 +158,24 @@ CharacterData.prototype.replaceData = function replaceData(offset, count, data) 
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'replaceData' on 'CharacterData': parameter 1"
+      context:
+        "Failed to execute 'replaceData' on 'CharacterData': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'replaceData' on 'CharacterData': parameter 2"
+      context:
+        "Failed to execute 'replaceData' on 'CharacterData': parameter 2",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[2];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'replaceData' on 'CharacterData': parameter 3"
+      context:
+        "Failed to execute 'replaceData' on 'CharacterData': parameter 3",
     });
     args.push(curArg);
   }
@@ -184,7 +193,8 @@ CharacterData.prototype.before = function before() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'before' on 'CharacterData': parameter " + (i + 1)
+        context:
+          "Failed to execute 'before' on 'CharacterData': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -203,7 +213,8 @@ CharacterData.prototype.after = function after() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'after' on 'CharacterData': parameter " + (i + 1)
+        context:
+          "Failed to execute 'after' on 'CharacterData': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -222,7 +233,9 @@ CharacterData.prototype.replaceWith = function replaceWith() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'replaceWith' on 'CharacterData': parameter " + (i + 1)
+        context:
+          "Failed to execute 'replaceWith' on 'CharacterData': parameter " +
+          (i + 1),
       });
     }
     args.push(curArg);
@@ -253,15 +266,16 @@ Object.defineProperty(CharacterData.prototype, "data", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'data' property on 'CharacterData': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'data' property on 'CharacterData': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this[impl]["data"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CharacterData.prototype, "length", {
@@ -274,7 +288,7 @@ Object.defineProperty(CharacterData.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CharacterData.prototype, "previousElementSibling", {
@@ -287,7 +301,7 @@ Object.defineProperty(CharacterData.prototype, "previousElementSibling", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CharacterData.prototype, "nextElementSibling", {
@@ -300,14 +314,14 @@ Object.defineProperty(CharacterData.prototype, "nextElementSibling", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CharacterData.prototype, Symbol.toStringTag, {
   value: "CharacterData",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -373,7 +387,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -384,8 +398,8 @@ const iface = {
   },
   interface: CharacterData,
   expose: {
-    Window: { CharacterData }
-  }
+    Window: { CharacterData },
+  },
 }; // iface
 module.exports = iface;
 

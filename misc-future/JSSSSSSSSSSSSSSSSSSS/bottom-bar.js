@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 /**
  * Sticky bottom bar user interface
  */
 
-var through = require('through');
-var Base = require('./baseUI');
-var rlUtils = require('../utils/readline');
-var _ = require('lodash');
+var through = require("through");
+var Base = require("./baseUI");
+var rlUtils = require("../utils/readline");
+var _ = require("lodash");
 
 class BottomBar extends Base {
   constructor(opt) {
@@ -15,7 +15,7 @@ class BottomBar extends Base {
     super(opt);
 
     this.log = through(this.writeLog.bind(this));
-    this.bottomBar = opt.bottomBar || '';
+    this.bottomBar = opt.bottomBar || "";
     this.render();
   }
 
@@ -30,7 +30,7 @@ class BottomBar extends Base {
   }
 
   clean() {
-    rlUtils.clearLine(this.rl, this.bottomBar.split('\n').length);
+    rlUtils.clearLine(this.rl, this.bottomBar.split("\n").length);
     return this;
   }
 
@@ -72,7 +72,7 @@ class BottomBar extends Base {
    */
 
   enforceLF(str) {
-    return str.match(/[\r\n]$/) ? str : str + '\n';
+    return str.match(/[\r\n]$/) ? str : str + "\n";
   }
 
   /**

@@ -1,4 +1,4 @@
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 
 function firstItem(arr, cb) {
   // firstItem passes the first item of the given array to the callback function.
@@ -25,33 +25,31 @@ function multiplyNums(x, y, cb) {
   return cb(x * y);
 }
 
-// testing 
+// testing
 // -- 1 --
-firstItem(items, function(item) {
-  console.log(item)
+firstItem(items, function (item) {
+  console.log(item);
 }); // --> Pencil
 
 // -- 2 --
-getLength(items, function(length) {
+getLength(items, function (length) {
   console.log(length);
 }); // --> 4
 
-// -- 3 -- 
-last(items, function(item) {
+// -- 3 --
+last(items, function (item) {
   console.log(item);
 }); // --> Gum
 
 // -- 4 --
-sumNums(4, 6, function(result) {
+sumNums(4, 6, function (result) {
   console.log(result);
 }); // --> 10
 
 // -- 5 --
-multiplyNums(4, 6, function(result) {
+multiplyNums(4, 6, function (result) {
   console.log(result);
 }); // --> 24
-
-
 
 /* STRETCH PROBLEM */
 
@@ -62,7 +60,7 @@ function contains(item, list, cb) {
 }
 
 // stretch 1
-contains("Pencil", items, function(present) {
+contains("Pencil", items, function (present) {
   console.log(present);
 });
 

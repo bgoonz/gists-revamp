@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var parsers = require('../parsers');
+var parsers = require("../parsers");
 
 var parse = function parse(v) {
   var parsed = parsers.parseColor(v);
@@ -9,7 +9,7 @@ var parse = function parse(v) {
   }
   if (
     parsers.valueType(v) === parsers.TYPES.KEYWORD &&
-    (v.toLowerCase() === 'transparent' || v.toLowerCase() === 'inherit')
+    (v.toLowerCase() === "transparent" || v.toLowerCase() === "inherit")
   ) {
     return v;
   }
@@ -21,15 +21,15 @@ module.exports.isValid = function isValid(v) {
 };
 
 module.exports.definition = {
-  set: function(v) {
+  set: function (v) {
     var parsed = parse(v);
     if (parsed === undefined) {
       return;
     }
-    this._setProperty('background-color', parsed);
+    this._setProperty("background-color", parsed);
   },
-  get: function() {
-    return this.getPropertyValue('background-color');
+  get: function () {
+    return this.getPropertyValue("background-color");
   },
   enumerable: true,
   configurable: true,

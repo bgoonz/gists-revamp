@@ -183,7 +183,9 @@ function serializeNormalizedDateAndTime({ date, time }) {
 // https://stackoverflow.com/a/18538272/1937836
 function weekNumberOfLastDay(year) {
   const jan1 = new Date(year, 0);
-  return jan1.getDay() === 4 || (isLeapYear(year) && jan1.getDay() === 3) ? 53 : 52;
+  return jan1.getDay() === 4 || (isLeapYear(year) && jan1.getDay() === 3)
+    ? 53
+    : 52;
 }
 
 const weekRe = /^([0-9]{4,5})-W([0-9]{2})$/;
@@ -242,5 +244,5 @@ module.exports = {
   weekNumberOfLastDay,
   parseWeekString,
   isValidWeekString,
-  serializeWeek
+  serializeWeek,
 };

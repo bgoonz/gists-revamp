@@ -5,17 +5,25 @@ const OrderedSet = require("../helpers/ordered-set.js");
 const { asciiLowercase } = require("../helpers/strings.js");
 const idlUtils = require("../generated/utils.js");
 
-const { getAttributeValue, setAttributeValue, hasAttributeByName } = require("../attributes.js");
+const {
+  getAttributeValue,
+  setAttributeValue,
+  hasAttributeByName,
+} = require("../attributes.js");
 
 function validateTokens(...tokens) {
   for (const token of tokens) {
     if (token === "") {
-      throw new DOMException("The token provided must not be empty.", "SyntaxError");
+      throw new DOMException(
+        "The token provided must not be empty.",
+        "SyntaxError"
+      );
     }
   }
   for (const token of tokens) {
     if (/[\t\n\f\r ]/.test(token)) {
-      const whitespaceMsg = "The token provided contains HTML space characters, which are not valid in tokens.";
+      const whitespaceMsg =
+        "The token provided contains HTML space characters, which are not valid in tokens.";
       throw new DOMException(whitespaceMsg, "InvalidCharacterError");
     }
   }
@@ -55,17 +63,26 @@ class DOMTokenListImpl {
 
   _validationSteps(token) {
     if (!this._supportedTokens) {
-      throw new TypeError(`${this._attributeLocalName} attribute has no supported tokens`);
+      throw new TypeError(
+        `${this._attributeLocalName} attribute has no supported tokens`
+      );
     }
     const lowerToken = asciiLowercase(token);
     return this._supportedTokens.has(lowerToken);
   }
 
   _updateSteps() {
-    if (!hasAttributeByName(this._element, this._attributeLocalName) && this._tokenSet.isEmpty()) {
+    if (
+      !hasAttributeByName(this._element, this._attributeLocalName) &&
+      this._tokenSet.isEmpty()
+    ) {
       return;
     }
-    setAttributeValue(this._element, this._attributeLocalName, this._tokenSet.serialize());
+    setAttributeValue(
+      this._element,
+      this._attributeLocalName,
+      this._tokenSet.serialize()
+    );
   }
 
   _serializeSteps() {

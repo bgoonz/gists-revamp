@@ -1,15 +1,19 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
 var _lodash = _interopRequireDefault(require("lodash"));
 
-var _calculateCellHeight = _interopRequireDefault(require("./calculateCellHeight"));
+var _calculateCellHeight = _interopRequireDefault(
+  require("./calculateCellHeight")
+);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * Calculates the vertical row span index.
@@ -21,18 +25,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const calculateRowHeightIndex = (rows, config) => {
   const tableWidth = rows[0].length;
   const rowSpanIndex = [];
-  rows.forEach(cells => {
+  rows.forEach((cells) => {
     const cellHeightIndex = new Array(tableWidth).fill(1);
     cells.forEach((value, index1) => {
       if (!_lodash.default.isNumber(config.columns[index1].width)) {
-        throw new TypeError('column[index].width must be a number.');
+        throw new TypeError("column[index].width must be a number.");
       }
 
       if (!_lodash.default.isBoolean(config.columns[index1].wrapWord)) {
-        throw new TypeError('column[index].wrapWord must be a boolean.');
+        throw new TypeError("column[index].wrapWord must be a boolean.");
       }
 
-      cellHeightIndex[index1] = (0, _calculateCellHeight.default)(value, config.columns[index1].width, config.columns[index1].wrapWord);
+      cellHeightIndex[index1] = (0, _calculateCellHeight.default)(
+        value,
+        config.columns[index1].width,
+        config.columns[index1].wrapWord
+      );
     });
     rowSpanIndex.push(_lodash.default.max(cellHeightIndex));
   });

@@ -1,8 +1,8 @@
-'use strict';
-var assert = require('assert');
-var _ = require('lodash');
-var Separator = require('./separator');
-var Choice = require('./choice');
+"use strict";
+var assert = require("assert");
+var _ = require("lodash");
+var Separator = require("./separator");
+var Choice = require("./choice");
 
 /**
  * Choices collection
@@ -13,8 +13,8 @@ var Choice = require('./choice');
 
 module.exports = class Choices {
   constructor(choices, answers) {
-    this.choices = choices.map(val => {
-      if (val.type === 'separator') {
+    this.choices = choices.map((val) => {
+      if (val.type === "separator") {
         if (!(val instanceof Separator)) {
           val = new Separator(val.line);
         }
@@ -27,24 +27,24 @@ module.exports = class Choices {
 
     this.realChoices = this.choices
       .filter(Separator.exclude)
-      .filter(item => !item.disabled);
+      .filter((item) => !item.disabled);
 
-    Object.defineProperty(this, 'length', {
+    Object.defineProperty(this, "length", {
       get() {
         return this.choices.length;
       },
       set(val) {
         this.choices.length = val;
-      }
+      },
     });
 
-    Object.defineProperty(this, 'realLength', {
+    Object.defineProperty(this, "realLength", {
       get() {
         return this.realChoices.length;
       },
       set() {
-        throw new Error('Cannot set `realLength` of a Choices collection');
-      }
+        throw new Error("Cannot set `realLength` of a Choices collection");
+      },
     });
   }
 
@@ -108,7 +108,7 @@ module.exports = class Choices {
   }
 
   push() {
-    var objs = _.map(arguments, val => new Choice(val));
+    var objs = _.map(arguments, (val) => new Choice(val));
     this.choices.push.apply(this.choices, objs);
     this.realChoices = this.choices.filter(Separator.exclude);
     return this.choices;

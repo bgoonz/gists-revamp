@@ -17,18 +17,24 @@ function CloseEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'CloseEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'CloseEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'CloseEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'CloseEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertCloseEventInit(curArg, { context: "Failed to construct 'CloseEvent': parameter 2" });
+    curArg = convertCloseEventInit(curArg, {
+      context: "Failed to construct 'CloseEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(CloseEvent, "prototype", {
   value: CloseEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(CloseEvent.prototype, "wasClean", {
@@ -55,7 +61,7 @@ Object.defineProperty(CloseEvent.prototype, "wasClean", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CloseEvent.prototype, "code", {
@@ -68,7 +74,7 @@ Object.defineProperty(CloseEvent.prototype, "code", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CloseEvent.prototype, "reason", {
@@ -81,14 +87,14 @@ Object.defineProperty(CloseEvent.prototype, "reason", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CloseEvent.prototype, Symbol.toStringTag, {
   value: "CloseEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -154,7 +160,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -166,8 +172,8 @@ const iface = {
   interface: CloseEvent,
   expose: {
     Window: { CloseEvent },
-    Worker: { CloseEvent }
-  }
+    Worker: { CloseEvent },
+  },
 }; // iface
 module.exports = iface;
 

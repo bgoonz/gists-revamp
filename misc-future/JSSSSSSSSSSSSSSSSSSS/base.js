@@ -1,41 +1,41 @@
-'use strict';
+"use strict";
 /**
  * Base prompt implementation
  * Should be extended by prompt types.
  */
 
-var _ = require('lodash');
-var chalk = require('chalk');
-var runAsync = require('run-async');
-var { filter, flatMap, share, take, takeUntil } = require('rxjs/operators');
-var Choices = require('../objects/choices');
-var ScreenManager = require('../utils/screen-manager');
+var _ = require("lodash");
+var chalk = require("chalk");
+var runAsync = require("run-async");
+var { filter, flatMap, share, take, takeUntil } = require("rxjs/operators");
+var Choices = require("../objects/choices");
+var ScreenManager = require("../utils/screen-manager");
 
 class Prompt {
   constructor(question, rl, answers) {
     // Setup instance defaults property
     _.assign(this, {
       answers: answers,
-      status: 'pending'
+      status: "pending",
     });
 
     // Set defaults prompt options
     this.opt = _.defaults(_.clone(question), {
       validate: () => true,
-      filter: val => val,
+      filter: (val) => val,
       when: () => true,
-      suffix: '',
-      prefix: chalk.green('?')
+      suffix: "",
+      prefix: chalk.green("?"),
     });
 
     // Make sure name is present
     if (!this.opt.name) {
-      this.throwParamError('name');
+      this.throwParamError("name");
     }
 
     // Set default message if no message defined
     if (!this.opt.message) {
-      this.opt.message = this.opt.name + ':';
+      this.opt.message = this.opt.name + ":";
     }
 
     // Normalize choices
@@ -53,8 +53,8 @@ class Prompt {
    */
 
   run() {
-    return new Promise(resolve => {
-      this._run(value => resolve(value));
+    return new Promise((resolve) => {
+      this._run((value) => resolve(value));
     });
   }
 
@@ -70,7 +70,7 @@ class Prompt {
    */
 
   throwParamError(name) {
-    throw new Error('You must provide a `' + name + '` parameter');
+    throw new Error("You must provide a `" + name + "` parameter");
   }
 
   /**
@@ -90,31 +90,31 @@ class Prompt {
     var validate = runAsync(this.opt.validate);
     var asyncFilter = runAsync(this.opt.filter);
     var validation = submit.pipe(
-      flatMap(value =>
+      flatMap((value) =>
         asyncFilter(value, self.answers).then(
-          filteredValue =>
+          (filteredValue) =>
             validate(filteredValue, self.answers).then(
-              isValid => ({ isValid: isValid, value: filteredValue }),
-              err => ({ isValid: err })
+              (isValid) => ({ isValid: isValid, value: filteredValue }),
+              (err) => ({ isValid: err })
             ),
-          err => ({ isValid: err })
+          (err) => ({ isValid: err })
         )
       ),
       share()
     );
 
     var success = validation.pipe(
-      filter(state => state.isValid === true),
+      filter((state) => state.isValid === true),
       take(1)
     );
     var error = validation.pipe(
-      filter(state => state.isValid !== true),
+      filter((state) => state.isValid !== true),
       takeUntil(success)
     );
 
     return {
       success: success,
-      error: error
+      error: error,
     };
   }
 
@@ -126,18 +126,18 @@ class Prompt {
   getQuestion() {
     var message =
       this.opt.prefix +
-      ' ' +
+      " " +
       chalk.bold(this.opt.message) +
       this.opt.suffix +
-      chalk.reset(' ');
+      chalk.reset(" ");
 
     // Append the default if available, and if question isn't answered
-    if (this.opt.default != null && this.status !== 'answered') {
+    if (this.opt.default != null && this.status !== "answered") {
       // If default password is supplied, hide it
-      if (this.opt.type === 'password') {
-        message += chalk.italic.dim('[hidden] ');
+      if (this.opt.type === "password") {
+        message += chalk.italic.dim("[hidden] ");
       } else {
-        message += chalk.dim('(' + this.opt.default + ') ');
+        message += chalk.dim("(" + this.opt.default + ") ");
       }
     }
 

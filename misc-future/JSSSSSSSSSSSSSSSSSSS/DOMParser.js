@@ -21,7 +21,7 @@ Object.defineProperty(DOMParser, "prototype", {
   value: DOMParser.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 DOMParser.prototype.parseFromString = function parseFromString(str, type) {
@@ -40,14 +40,16 @@ DOMParser.prototype.parseFromString = function parseFromString(str, type) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'parseFromString' on 'DOMParser': parameter 1"
+      context:
+        "Failed to execute 'parseFromString' on 'DOMParser': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = convertSupportedType(curArg, {
-      context: "Failed to execute 'parseFromString' on 'DOMParser': parameter 2"
+      context:
+        "Failed to execute 'parseFromString' on 'DOMParser': parameter 2",
     });
     args.push(curArg);
   }
@@ -58,7 +60,7 @@ Object.defineProperty(DOMParser.prototype, Symbol.toStringTag, {
   value: "DOMParser",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -122,7 +124,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -133,8 +135,8 @@ const iface = {
   },
   interface: DOMParser,
   expose: {
-    Window: { DOMParser }
-  }
+    Window: { DOMParser },
+  },
 }; // iface
 module.exports = iface;
 

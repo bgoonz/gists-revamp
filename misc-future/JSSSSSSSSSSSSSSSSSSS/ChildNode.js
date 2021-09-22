@@ -14,7 +14,7 @@ Object.defineProperty(ChildNode, "prototype", {
   value: ChildNode.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 ChildNode.prototype.before = function before() {
@@ -28,7 +28,8 @@ ChildNode.prototype.before = function before() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'before' on 'ChildNode': parameter " + (i + 1)
+        context:
+          "Failed to execute 'before' on 'ChildNode': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -47,7 +48,8 @@ ChildNode.prototype.after = function after() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'after' on 'ChildNode': parameter " + (i + 1)
+        context:
+          "Failed to execute 'after' on 'ChildNode': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -66,7 +68,9 @@ ChildNode.prototype.replaceWith = function replaceWith() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'replaceWith' on 'ChildNode': parameter " + (i + 1)
+        context:
+          "Failed to execute 'replaceWith' on 'ChildNode': parameter " +
+          (i + 1),
       });
     }
     args.push(curArg);
@@ -87,18 +91,18 @@ Object.defineProperty(ChildNode.prototype, Symbol.unscopables, {
     before: true,
     after: true,
     replaceWith: true,
-    remove: true
+    remove: true,
   },
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ChildNode.prototype, Symbol.toStringTag, {
   value: "ChildNode",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -162,7 +166,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -172,7 +176,7 @@ const iface = {
     return obj;
   },
   interface: ChildNode,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

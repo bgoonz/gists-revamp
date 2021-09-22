@@ -16,8 +16,10 @@ exports.hasAttributeByName = function (element, name) {
 };
 
 exports.hasAttributeByNameNS = function (element, namespace, localName) {
-  return element._attributeList.some(attribute => {
-    return attribute._localName === localName && attribute._namespace === namespace;
+  return element._attributeList.some((attribute) => {
+    return (
+      attribute._localName === localName && attribute._namespace === namespace
+    );
   });
 };
 
@@ -118,8 +120,10 @@ exports.replaceAttribute = function (element, oldAttr, newAttr) {
 exports.getAttributeByName = function (element, name) {
   // https://dom.spec.whatwg.org/#concept-element-attributes-get-by-name
 
-  if (element._namespaceURI === HTML_NS &&
-      element._ownerDocument._parsingMode === "html") {
+  if (
+    element._namespaceURI === HTML_NS &&
+    element._ownerDocument._parsingMode === "html"
+  ) {
     name = asciiLowercase(name);
   }
 
@@ -179,7 +183,11 @@ exports.setAttribute = function (element, attr) {
     throw new DOMException("The attribute is in use.", "InUseAttributeError");
   }
 
-  const oldAttr = exports.getAttributeByNameNS(element, attr._namespace, attr._localName);
+  const oldAttr = exports.getAttributeByNameNS(
+    element,
+    attr._namespace,
+    attr._localName
+  );
   if (oldAttr === attr) {
     return attr;
   }
@@ -193,7 +201,13 @@ exports.setAttribute = function (element, attr) {
   return oldAttr;
 };
 
-exports.setAttributeValue = function (element, localName, value, prefix, namespace) {
+exports.setAttributeValue = function (
+  element,
+  localName,
+  value,
+  prefix,
+  namespace
+) {
   // https://dom.spec.whatwg.org/#concept-element-attributes-set-value
 
   if (prefix === undefined) {
@@ -205,7 +219,12 @@ exports.setAttributeValue = function (element, localName, value, prefix, namespa
 
   const attribute = exports.getAttributeByNameNS(element, namespace, localName);
   if (attribute === null) {
-    const newAttribute = attrGenerated.createImpl([], { namespace, namespacePrefix: prefix, localName, value });
+    const newAttribute = attrGenerated.createImpl([], {
+      namespace,
+      namespacePrefix: prefix,
+      localName,
+      value,
+    });
     exports.appendAttribute(element, newAttribute);
     return;
   }
@@ -253,7 +272,7 @@ exports.copyAttributeList = function (sourceElement, destElement) {
       namespace: sourceAttr._namespace,
       namespacePrefix: sourceAttr._namespacePrefix,
       localName: sourceAttr._localName,
-      value: sourceAttr._value
+      value: sourceAttr._value,
     });
 
     exports.appendAttribute(destElement, destAttr);
@@ -273,13 +292,16 @@ exports.attributeListsEqual = function (elementA, elementB) {
   for (let i = 0; i < listA.length; ++i) {
     const attrA = listA[i];
 
-    if (!listB.some(attrB => equalsA(attrB))) {
+    if (!listB.some((attrB) => equalsA(attrB))) {
       return false;
     }
 
     function equalsA(attrB) {
-      return attrA._namespace === attrB._namespace && attrA._localName === attrB._localName &&
-             attrA._value === attrB._value;
+      return (
+        attrA._namespace === attrB._namespace &&
+        attrA._localName === attrB._localName &&
+        attrA._value === attrB._value
+      );
     }
   }
 
@@ -289,7 +311,7 @@ exports.attributeListsEqual = function (elementA, elementB) {
 exports.attributeNames = function (element) {
   // Needed by https://dom.spec.whatwg.org/#dom-element-getattributenames
 
-  return element._attributeList.map(a => a._qualifiedName);
+  return element._attributeList.map((a) => a._qualifiedName);
 };
 
 exports.hasAttributes = function (element) {

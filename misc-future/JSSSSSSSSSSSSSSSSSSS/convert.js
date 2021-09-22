@@ -1,5 +1,5 @@
-var baseConvert = require('./_baseConvert'),
-    util = require('./_util');
+var baseConvert = require("./_baseConvert"),
+  util = require("./_util");
 
 /**
  * Converts `func` of `name` to an immutable auto-curried iteratee-first data-last

@@ -11,7 +11,7 @@ function characterActions(action) {
     console.log(charName + " ran away safely");
   }
 
-  if(action === "attack") {
+  if (action === "attack") {
     attack();
   } else if (action === "run") {
     run();
@@ -25,10 +25,13 @@ characterActions("eat");
 
 // ==== Challenge 2: Create a counter function ====
 
-const counter = function() {
+const counter = function () {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
-  const inc = function() {count++; return count}
+  const inc = function () {
+    count++;
+    return count;
+  };
   return inc;
 };
 
@@ -42,9 +45,15 @@ let count = 0;
 const counterFactory = () => {
   const counter = {
     // `increment` should increment a counter variable in closure scope and return it.
-    increment: () => {count++; return count},
+    increment: () => {
+      count++;
+      return count;
+    },
     // `decrement` should decrement the counter variable and return it.
-    decrement: () => {count--; return count}
+    decrement: () => {
+      count--;
+      return count;
+    },
   };
   // Return an object that has two methods called `increment` and `decrement`.
   return counter;

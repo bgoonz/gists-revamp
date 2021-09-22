@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('cloneDeepWith', require('../cloneDeepWith'));
+var convert = require("./convert"),
+  func = convert("cloneDeepWith", require("../cloneDeepWith"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

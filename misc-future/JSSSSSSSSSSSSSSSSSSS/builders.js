@@ -6,7 +6,7 @@ import stringifyValidator from "../utils/stringifyValidator.js";
 
 function areAllRemainingFieldsNullable(fieldName, fieldNames, fields) {
   const index = fieldNames.indexOf(fieldName);
-  return fieldNames.slice(index).every(_ => isNullable(fields[_]));
+  return fieldNames.slice(index).every((_) => isNullable(fields[_]));
 }
 
 function hasDefault(field) {
@@ -35,7 +35,7 @@ function generateBuilderArgs(type) {
 
   const args = [];
 
-  fieldNames.forEach(fieldName => {
+  fieldNames.forEach((fieldName) => {
     const field = fields[fieldName];
     // Future / annoying TODO:
     // MemberExpression.property, ObjectProperty.key and ObjectMethod.key need special cases; either:
@@ -90,7 +90,7 @@ import type * as t from "../..";
 `;
 
   const reservedNames = new Set(["super", "import"]);
-  Object.keys(definitions.BUILDER_KEYS).forEach(type => {
+  Object.keys(definitions.BUILDER_KEYS).forEach((type) => {
     const defArgs = generateBuilderArgs(type);
     const formatedBuilderName = formatBuilderName(type);
     const formatedBuilderNameLocal = reservedNames.has(formatedBuilderName)
@@ -115,7 +115,7 @@ import type * as t from "../..";
     }
   });
 
-  Object.keys(definitions.DEPRECATED_KEYS).forEach(type => {
+  Object.keys(definitions.DEPRECATED_KEYS).forEach((type) => {
     const newType = definitions.DEPRECATED_KEYS[type];
     const formatedBuilderName = formatBuilderName(type);
     output += `/** @deprecated */
@@ -148,12 +148,12 @@ function generateUppercaseBuilders() {
 
  export {\n`;
 
-  Object.keys(definitions.BUILDER_KEYS).forEach(type => {
+  Object.keys(definitions.BUILDER_KEYS).forEach((type) => {
     const formatedBuilderName = formatBuilderName(type);
     output += `  ${formatedBuilderName} as ${type},\n`;
   });
 
-  Object.keys(definitions.DEPRECATED_KEYS).forEach(type => {
+  Object.keys(definitions.DEPRECATED_KEYS).forEach((type) => {
     const formatedBuilderName = formatBuilderName(type);
     output += `  ${formatedBuilderName} as ${type},\n`;
   });

@@ -13,14 +13,14 @@ Object.defineProperty(DOMTokenList, "prototype", {
   value: DOMTokenList.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(DOMTokenList.prototype, Symbol.iterator, {
   writable: true,
   enumerable: false,
   configurable: true,
-  value: Array.prototype[Symbol.iterator]
+  value: Array.prototype[Symbol.iterator],
 });
 DOMTokenList.prototype.forEach = Array.prototype.forEach;
 DOMTokenList.prototype.item = function item(index) {
@@ -30,14 +30,16 @@ DOMTokenList.prototype.item = function item(index) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'item' on 'DOMTokenList': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'item' on 'DOMTokenList': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'item' on 'DOMTokenList': parameter 1"
+      context: "Failed to execute 'item' on 'DOMTokenList': parameter 1",
     });
     args.push(curArg);
   }
@@ -51,14 +53,16 @@ DOMTokenList.prototype.contains = function contains(token) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'contains' on 'DOMTokenList': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'contains' on 'DOMTokenList': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'contains' on 'DOMTokenList': parameter 1"
+      context: "Failed to execute 'contains' on 'DOMTokenList': parameter 1",
     });
     args.push(curArg);
   }
@@ -73,7 +77,8 @@ DOMTokenList.prototype.add = function add() {
   for (let i = 0; i < arguments.length; i++) {
     let curArg = arguments[i];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'add' on 'DOMTokenList': parameter " + (i + 1)
+      context:
+        "Failed to execute 'add' on 'DOMTokenList': parameter " + (i + 1),
     });
     args.push(curArg);
   }
@@ -88,7 +93,8 @@ DOMTokenList.prototype.remove = function remove() {
   for (let i = 0; i < arguments.length; i++) {
     let curArg = arguments[i];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'remove' on 'DOMTokenList': parameter " + (i + 1)
+      context:
+        "Failed to execute 'remove' on 'DOMTokenList': parameter " + (i + 1),
     });
     args.push(curArg);
   }
@@ -102,19 +108,25 @@ DOMTokenList.prototype.toggle = function toggle(token) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'toggle' on 'DOMTokenList': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'toggle' on 'DOMTokenList': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'toggle' on 'DOMTokenList': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'toggle' on 'DOMTokenList': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     if (curArg !== undefined) {
-      curArg = conversions["boolean"](curArg, { context: "Failed to execute 'toggle' on 'DOMTokenList': parameter 2" });
+      curArg = conversions["boolean"](curArg, {
+        context: "Failed to execute 'toggle' on 'DOMTokenList': parameter 2",
+      });
     }
     args.push(curArg);
   }
@@ -128,21 +140,23 @@ DOMTokenList.prototype.replace = function replace(token, newToken) {
 
   if (arguments.length < 2) {
     throw new TypeError(
-      "Failed to execute 'replace' on 'DOMTokenList': 2 arguments required, but only " + arguments.length + " present."
+      "Failed to execute 'replace' on 'DOMTokenList': 2 arguments required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'replace' on 'DOMTokenList': parameter 1"
+      context: "Failed to execute 'replace' on 'DOMTokenList': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'replace' on 'DOMTokenList': parameter 2"
+      context: "Failed to execute 'replace' on 'DOMTokenList': parameter 2",
     });
     args.push(curArg);
   }
@@ -156,14 +170,16 @@ DOMTokenList.prototype.supports = function supports(token) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'supports' on 'DOMTokenList': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'supports' on 'DOMTokenList': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'supports' on 'DOMTokenList': parameter 1"
+      context: "Failed to execute 'supports' on 'DOMTokenList': parameter 1",
     });
     args.push(curArg);
   }
@@ -184,7 +200,7 @@ Object.defineProperty(DOMTokenList.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(DOMTokenList.prototype, "value", {
@@ -202,14 +218,15 @@ Object.defineProperty(DOMTokenList.prototype, "value", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'value' property on 'DOMTokenList': The provided value"
+      context:
+        "Failed to set the 'value' property on 'DOMTokenList': The provided value",
     });
 
     this[impl]["value"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 DOMTokenList.prototype.toString = function toString() {
@@ -223,7 +240,7 @@ Object.defineProperty(DOMTokenList.prototype, Symbol.toStringTag, {
   value: "DOMTokenList",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -287,7 +304,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -355,7 +372,7 @@ const iface = {
               writable: false,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
           ignoreNamedProps = true;
@@ -381,7 +398,7 @@ const iface = {
               writable: false,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
         }
@@ -394,7 +411,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -413,7 +435,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -445,7 +472,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -456,8 +483,8 @@ const iface = {
   },
   interface: DOMTokenList,
   expose: {
-    Window: { DOMTokenList }
-  }
+    Window: { DOMTokenList },
+  },
 }; // iface
 module.exports = iface;
 

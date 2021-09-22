@@ -22,7 +22,7 @@ class DOMImplementationImpl {
       ownerDocument: this._ownerDocument,
       name: qualifiedName,
       publicId,
-      systemId
+      systemId,
     });
   }
 
@@ -36,7 +36,7 @@ class DOMImplementationImpl {
     }
 
     const document = Document.createImpl([], {
-      options: { contentType, parsingMode: "xml", encoding: "UTF-8" }
+      options: { contentType, parsingMode: "xml", encoding: "UTF-8" },
     });
 
     let element = null;
@@ -61,7 +61,7 @@ class DOMImplementationImpl {
     // Let doc be a new document that is an HTML document.
     // Set doc's content type to "text/html".
     const document = Document.createImpl([], {
-      options: { parsingMode: "html", encoding: "UTF-8" }
+      options: { parsingMode: "html", encoding: "UTF-8" },
     });
 
     // Create a doctype, with "html" as its name and with its node document set
@@ -70,7 +70,7 @@ class DOMImplementationImpl {
       ownerDocument: this,
       name: "html",
       publicId: "",
-      systemId: ""
+      systemId: "",
     });
 
     document.appendChild(doctype);
@@ -152,7 +152,10 @@ class DOMImplementationImpl {
       return versions === version;
     } else if (versions.indexOf && versions.length > 0) {
       for (let i = 0; i < versions.length; i++) {
-        const found = versions[i] instanceof RegExp ? versions[i].test(version) : versions[i] === version;
+        const found =
+          versions[i] instanceof RegExp
+            ? versions[i].test(version)
+            : versions[i] === version;
         if (found) {
           return true;
         }
@@ -165,5 +168,5 @@ class DOMImplementationImpl {
 }
 
 module.exports = {
-  implementation: DOMImplementationImpl
+  implementation: DOMImplementationImpl,
 };

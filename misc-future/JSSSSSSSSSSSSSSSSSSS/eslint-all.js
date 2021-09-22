@@ -16,10 +16,10 @@ const builtInRules = require("../lib/built-in-rules-index");
 //------------------------------------------------------------------------------
 
 const enabledRules = Object.keys(builtInRules).reduce((result, ruleId) => {
-    if (!builtInRules[ruleId].meta.deprecated) {
-        result[ruleId] = "error";
-    }
-    return result;
+  if (!builtInRules[ruleId].meta.deprecated) {
+    result[ruleId] = "error";
+  }
+  return result;
 }, {});
 
 //------------------------------------------------------------------------------

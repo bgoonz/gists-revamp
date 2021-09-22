@@ -1,1 +1,1 @@
-module.exports = require('./dropRight');
+module.exports = require("./dropRight");

@@ -13,7 +13,7 @@ Object.defineProperty(Attr, "prototype", {
   value: Attr.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(Attr.prototype, "namespaceURI", {
@@ -26,7 +26,7 @@ Object.defineProperty(Attr.prototype, "namespaceURI", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "prefix", {
@@ -39,7 +39,7 @@ Object.defineProperty(Attr.prototype, "prefix", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "localName", {
@@ -52,7 +52,7 @@ Object.defineProperty(Attr.prototype, "localName", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "name", {
@@ -65,7 +65,7 @@ Object.defineProperty(Attr.prototype, "name", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "nodeName", {
@@ -78,7 +78,7 @@ Object.defineProperty(Attr.prototype, "nodeName", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "value", {
@@ -95,13 +95,16 @@ Object.defineProperty(Attr.prototype, "value", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["DOMString"](V, { context: "Failed to set the 'value' property on 'Attr': The provided value" });
+    V = conversions["DOMString"](V, {
+      context:
+        "Failed to set the 'value' property on 'Attr': The provided value",
+    });
 
     this[impl]["value"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "nodeValue", {
@@ -119,15 +122,16 @@ Object.defineProperty(Attr.prototype, "nodeValue", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'nodeValue' property on 'Attr': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'nodeValue' property on 'Attr': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this[impl]["nodeValue"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "textContent", {
@@ -145,15 +149,16 @@ Object.defineProperty(Attr.prototype, "textContent", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'textContent' property on 'Attr': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'textContent' property on 'Attr': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this[impl]["textContent"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "ownerElement", {
@@ -166,7 +171,7 @@ Object.defineProperty(Attr.prototype, "ownerElement", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, "specified", {
@@ -179,14 +184,14 @@ Object.defineProperty(Attr.prototype, "specified", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Attr.prototype, Symbol.toStringTag, {
   value: "Attr",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -250,7 +255,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -261,8 +266,8 @@ const iface = {
   },
   interface: Attr,
   expose: {
-    Window: { Attr }
-  }
+    Window: { Attr },
+  },
 }; // iface
 module.exports = iface;
 

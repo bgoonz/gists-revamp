@@ -13,14 +13,14 @@ Object.defineProperty(DOMStringMap, "prototype", {
   value: DOMStringMap.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(DOMStringMap.prototype, Symbol.toStringTag, {
   value: "DOMStringMap",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -84,7 +84,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -148,12 +148,16 @@ const iface = {
 
         const namedValue = target[impl][utils.namedGet](P);
 
-        if (namedValue !== undefined && !utils.hasOwn(target, P) && !ignoreNamedProps) {
+        if (
+          namedValue !== undefined &&
+          !utils.hasOwn(target, P) &&
+          !ignoreNamedProps
+        ) {
           return {
             writable: true,
             enumerable: true,
             configurable: true,
-            value: utils.tryWrapperForImpl(namedValue)
+            value: utils.tryWrapperForImpl(namedValue),
           };
         }
 
@@ -169,7 +173,10 @@ const iface = {
             let namedValue = V;
 
             namedValue = conversions["DOMString"](namedValue, {
-              context: "Failed to set the '" + P + "' property on 'DOMStringMap': The provided value"
+              context:
+                "Failed to set the '" +
+                P +
+                "' property on 'DOMStringMap': The provided value",
             });
 
             const creating = !(target[impl][utils.namedGet](P) !== undefined);
@@ -192,7 +199,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -211,7 +223,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -228,7 +245,10 @@ const iface = {
         let namedValue = desc.value;
 
         namedValue = conversions["DOMString"](namedValue, {
-          context: "Failed to set the '" + P + "' property on 'DOMStringMap': The provided value"
+          context:
+            "Failed to set the '" +
+            P +
+            "' property on 'DOMStringMap': The provided value",
         });
 
         const creating = !(target[impl][utils.namedGet](P) !== undefined);
@@ -246,7 +266,10 @@ const iface = {
           return Reflect.deleteProperty(target, P);
         }
 
-        if (target[impl][utils.namedGet](P) !== undefined && !utils.hasOwn(target, P)) {
+        if (
+          target[impl][utils.namedGet](P) !== undefined &&
+          !utils.hasOwn(target, P)
+        ) {
           target[impl][utils.namedDelete](P);
           return true;
         }
@@ -256,7 +279,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -267,8 +290,8 @@ const iface = {
   },
   interface: DOMStringMap,
   expose: {
-    Window: { DOMStringMap }
-  }
+    Window: { DOMStringMap },
+  },
 }; // iface
 module.exports = iface;
 

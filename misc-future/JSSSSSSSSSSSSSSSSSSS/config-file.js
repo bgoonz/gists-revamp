@@ -10,15 +10,15 @@
 //------------------------------------------------------------------------------
 
 const fs = require("fs"),
-    path = require("path"),
-    ConfigOps = require("./config-ops"),
-    validator = require("./config-validator"),
-    ModuleResolver = require("../util/module-resolver"),
-    naming = require("../util/naming"),
-    pathIsInside = require("path-is-inside"),
-    stripComments = require("strip-json-comments"),
-    stringify = require("json-stable-stringify-without-jsonify"),
-    importFresh = require("import-fresh");
+  path = require("path"),
+  ConfigOps = require("./config-ops"),
+  validator = require("./config-validator"),
+  ModuleResolver = require("../util/module-resolver"),
+  naming = require("../util/naming"),
+  pathIsInside = require("path-is-inside"),
+  stripComments = require("strip-json-comments"),
+  stringify = require("json-stable-stringify-without-jsonify"),
+  importFresh = require("import-fresh");
 
 const debug = require("debug")("eslint:config-file");
 
@@ -36,7 +36,7 @@ const debug = require("debug")("eslint:config-file");
  * @returns {number}   1 or -1, used in stringify cmp method
  */
 function sortByKey(a, b) {
-    return a.key > b.key ? 1 : -1;
+  return a.key > b.key ? 1 : -1;
 }
 
 //------------------------------------------------------------------------------
@@ -44,12 +44,12 @@ function sortByKey(a, b) {
 //------------------------------------------------------------------------------
 
 const CONFIG_FILES = [
-    ".eslintrc.js",
-    ".eslintrc.yaml",
-    ".eslintrc.yml",
-    ".eslintrc.json",
-    ".eslintrc",
-    "package.json"
+  ".eslintrc.js",
+  ".eslintrc.yaml",
+  ".eslintrc.yml",
+  ".eslintrc.json",
+  ".eslintrc",
+  "package.json",
 ];
 
 const resolver = new ModuleResolver();
@@ -61,7 +61,7 @@ const resolver = new ModuleResolver();
  * @private
  */
 function readFile(filePath) {
-    return fs.readFileSync(filePath, "utf8").replace(/^\ufeff/u, "");
+  return fs.readFileSync(filePath, "utf8").replace(/^\ufeff/u, "");
 }
 
 /**
@@ -73,7 +73,7 @@ function readFile(filePath) {
  * @private
  */
 function isFilePath(filePath) {
-    return path.isAbsolute(filePath) || !/\w|@/u.test(filePath.charAt(0));
+  return path.isAbsolute(filePath) || !/\w|@/u.test(filePath.charAt(0));
 }
 
 /**
@@ -84,20 +84,19 @@ function isFilePath(filePath) {
  * @private
  */
 function loadYAMLConfigFile(filePath) {
-    debug(`Loading YAML config file: ${filePath}`);
+  debug(`Loading YAML config file: ${filePath}`);
 
-    // lazy load YAML to improve performance when not used
-    const yaml = require("js-yaml");
+  // lazy load YAML to improve performance when not used
+  const yaml = require("js-yaml");
 
-    try {
-
-        // empty YAML file can be null, so always use
-        return yaml.safeLoad(readFile(filePath)) || {};
-    } catch (e) {
-        debug(`Error reading YAML file: ${filePath}`);
-        e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
-        throw e;
-    }
+  try {
+    // empty YAML file can be null, so always use
+    return yaml.safeLoad(readFile(filePath)) || {};
+  } catch (e) {
+    debug(`Error reading YAML file: ${filePath}`);
+    e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
+    throw e;
+  }
 }
 
 /**
@@ -108,20 +107,20 @@ function loadYAMLConfigFile(filePath) {
  * @private
  */
 function loadJSONConfigFile(filePath) {
-    debug(`Loading JSON config file: ${filePath}`);
+  debug(`Loading JSON config file: ${filePath}`);
 
-    try {
-        return JSON.parse(stripComments(readFile(filePath)));
-    } catch (e) {
-        debug(`Error reading JSON file: ${filePath}`);
-        e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
-        e.messageTemplate = "failed-to-read-json";
-        e.messageData = {
-            path: filePath,
-            message: e.message
-        };
-        throw e;
-    }
+  try {
+    return JSON.parse(stripComments(readFile(filePath)));
+  } catch (e) {
+    debug(`Error reading JSON file: ${filePath}`);
+    e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
+    e.messageTemplate = "failed-to-read-json";
+    e.messageData = {
+      path: filePath,
+      message: e.message,
+    };
+    throw e;
+  }
 }
 
 /**
@@ -132,18 +131,21 @@ function loadJSONConfigFile(filePath) {
  * @private
  */
 function loadLegacyConfigFile(filePath) {
-    debug(`Loading config file: ${filePath}`);
+  debug(`Loading config file: ${filePath}`);
 
-    // lazy load YAML to improve performance when not used
-    const yaml = require("js-yaml");
+  // lazy load YAML to improve performance when not used
+  const yaml = require("js-yaml");
 
-    try {
-        return yaml.safeLoad(stripComments(readFile(filePath))) || /* istanbul ignore next */ {};
-    } catch (e) {
-        debug(`Error reading YAML file: ${filePath}`);
-        e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
-        throw e;
-    }
+  try {
+    return (
+      yaml.safeLoad(stripComments(readFile(filePath))) ||
+      /* istanbul ignore next */ {}
+    );
+  } catch (e) {
+    debug(`Error reading YAML file: ${filePath}`);
+    e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
+    throw e;
+  }
 }
 
 /**
@@ -154,14 +156,14 @@ function loadLegacyConfigFile(filePath) {
  * @private
  */
 function loadJSConfigFile(filePath) {
-    debug(`Loading JS config file: ${filePath}`);
-    try {
-        return importFresh(filePath);
-    } catch (e) {
-        debug(`Error reading JavaScript file: ${filePath}`);
-        e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
-        throw e;
-    }
+  debug(`Loading JS config file: ${filePath}`);
+  try {
+    return importFresh(filePath);
+  } catch (e) {
+    debug(`Error reading JavaScript file: ${filePath}`);
+    e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
+    throw e;
+  }
 }
 
 /**
@@ -172,14 +174,14 @@ function loadJSConfigFile(filePath) {
  * @private
  */
 function loadPackageJSONConfigFile(filePath) {
-    debug(`Loading package.json config file: ${filePath}`);
-    try {
-        return loadJSONConfigFile(filePath).eslintConfig || null;
-    } catch (e) {
-        debug(`Error reading package.json file: ${filePath}`);
-        e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
-        throw e;
-    }
+  debug(`Loading package.json config file: ${filePath}`);
+  try {
+    return loadJSONConfigFile(filePath).eslintConfig || null;
+  } catch (e) {
+    debug(`Error reading package.json file: ${filePath}`);
+    e.message = `Cannot read config file: ${filePath}\nError: ${e.message}`;
+    throw e;
+  }
 }
 
 /**
@@ -189,13 +191,15 @@ function loadPackageJSONConfigFile(filePath) {
  * @private
  */
 function configMissingError(configName) {
-    const error = new Error(`Failed to load config "${configName}" to extend from.`);
+  const error = new Error(
+    `Failed to load config "${configName}" to extend from.`
+  );
 
-    error.messageTemplate = "extend-config-missing";
-    error.messageData = {
-        configName
-    };
-    return error;
+  error.messageTemplate = "extend-config-missing";
+  error.messageData = {
+    configName,
+  };
+  return error;
 }
 
 /**
@@ -206,41 +210,41 @@ function configMissingError(configName) {
  * @private
  */
 function loadConfigFile(file) {
-    const filePath = file.filePath;
-    let config;
+  const filePath = file.filePath;
+  let config;
 
-    switch (path.extname(filePath)) {
-        case ".js":
-            config = loadJSConfigFile(filePath);
-            if (file.configName) {
-                config = config.configs[file.configName];
-                if (!config) {
-                    throw configMissingError(file.configFullName);
-                }
-            }
-            break;
+  switch (path.extname(filePath)) {
+    case ".js":
+      config = loadJSConfigFile(filePath);
+      if (file.configName) {
+        config = config.configs[file.configName];
+        if (!config) {
+          throw configMissingError(file.configFullName);
+        }
+      }
+      break;
 
-        case ".json":
-            if (path.basename(filePath) === "package.json") {
-                config = loadPackageJSONConfigFile(filePath);
-                if (config === null) {
-                    return null;
-                }
-            } else {
-                config = loadJSONConfigFile(filePath);
-            }
-            break;
+    case ".json":
+      if (path.basename(filePath) === "package.json") {
+        config = loadPackageJSONConfigFile(filePath);
+        if (config === null) {
+          return null;
+        }
+      } else {
+        config = loadJSONConfigFile(filePath);
+      }
+      break;
 
-        case ".yaml":
-        case ".yml":
-            config = loadYAMLConfigFile(filePath);
-            break;
+    case ".yaml":
+    case ".yml":
+      config = loadYAMLConfigFile(filePath);
+      break;
 
-        default:
-            config = loadLegacyConfigFile(filePath);
-    }
+    default:
+      config = loadLegacyConfigFile(filePath);
+  }
 
-    return ConfigOps.merge(ConfigOps.createEmptyConfig(), config);
+  return ConfigOps.merge(ConfigOps.createEmptyConfig(), config);
 }
 
 /**
@@ -251,11 +255,11 @@ function loadConfigFile(file) {
  * @private
  */
 function writeJSONConfigFile(config, filePath) {
-    debug(`Writing JSON config file: ${filePath}`);
+  debug(`Writing JSON config file: ${filePath}`);
 
-    const content = stringify(config, { cmp: sortByKey, space: 4 });
+  const content = stringify(config, { cmp: sortByKey, space: 4 });
 
-    fs.writeFileSync(filePath, content, "utf8");
+  fs.writeFileSync(filePath, content, "utf8");
 }
 
 /**
@@ -266,14 +270,14 @@ function writeJSONConfigFile(config, filePath) {
  * @private
  */
 function writeYAMLConfigFile(config, filePath) {
-    debug(`Writing YAML config file: ${filePath}`);
+  debug(`Writing YAML config file: ${filePath}`);
 
-    // lazy load YAML to improve performance when not used
-    const yaml = require("js-yaml");
+  // lazy load YAML to improve performance when not used
+  const yaml = require("js-yaml");
 
-    const content = yaml.safeDump(config, { sortKeys: true });
+  const content = yaml.safeDump(config, { sortKeys: true });
 
-    fs.writeFileSync(filePath, content, "utf8");
+  fs.writeFileSync(filePath, content, "utf8");
 }
 
 /**
@@ -285,33 +289,38 @@ function writeYAMLConfigFile(config, filePath) {
  * @private
  */
 function writeJSConfigFile(config, filePath) {
-    debug(`Writing JS config file: ${filePath}`);
+  debug(`Writing JS config file: ${filePath}`);
 
-    let contentToWrite;
-    const stringifiedContent = `module.exports = ${stringify(config, { cmp: sortByKey, space: 4 })};`;
+  let contentToWrite;
+  const stringifiedContent = `module.exports = ${stringify(config, {
+    cmp: sortByKey,
+    space: 4,
+  })};`;
 
-    try {
-        const CLIEngine = require("../cli-engine");
-        const linter = new CLIEngine({
-            baseConfig: config,
-            fix: true,
-            useEslintrc: false
-        });
-        const report = linter.executeOnText(stringifiedContent);
+  try {
+    const CLIEngine = require("../cli-engine");
+    const linter = new CLIEngine({
+      baseConfig: config,
+      fix: true,
+      useEslintrc: false,
+    });
+    const report = linter.executeOnText(stringifiedContent);
 
-        contentToWrite = report.results[0].output || stringifiedContent;
-    } catch (e) {
-        debug("Error linting JavaScript config file, writing unlinted version");
-        const errorMessage = e.message;
+    contentToWrite = report.results[0].output || stringifiedContent;
+  } catch (e) {
+    debug("Error linting JavaScript config file, writing unlinted version");
+    const errorMessage = e.message;
 
-        contentToWrite = stringifiedContent;
-        e.message = "An error occurred while generating your JavaScript config file. ";
-        e.message += "A config file was still generated, but the config file itself may not follow your linting rules.";
-        e.message += `\nError: ${errorMessage}`;
-        throw e;
-    } finally {
-        fs.writeFileSync(filePath, contentToWrite, "utf8");
-    }
+    contentToWrite = stringifiedContent;
+    e.message =
+      "An error occurred while generating your JavaScript config file. ";
+    e.message +=
+      "A config file was still generated, but the config file itself may not follow your linting rules.";
+    e.message += `\nError: ${errorMessage}`;
+    throw e;
+  } finally {
+    fs.writeFileSync(filePath, contentToWrite, "utf8");
+  }
 }
 
 /**
@@ -323,23 +332,23 @@ function writeJSConfigFile(config, filePath) {
  * @private
  */
 function write(config, filePath) {
-    switch (path.extname(filePath)) {
-        case ".js":
-            writeJSConfigFile(config, filePath);
-            break;
+  switch (path.extname(filePath)) {
+    case ".js":
+      writeJSConfigFile(config, filePath);
+      break;
 
-        case ".json":
-            writeJSONConfigFile(config, filePath);
-            break;
+    case ".json":
+      writeJSONConfigFile(config, filePath);
+      break;
 
-        case ".yaml":
-        case ".yml":
-            writeYAMLConfigFile(config, filePath);
-            break;
+    case ".yaml":
+    case ".yml":
+      writeYAMLConfigFile(config, filePath);
+      break;
 
-        default:
-            throw new Error("Can't write to unknown file type.");
-    }
+    default:
+      throw new Error("Can't write to unknown file type.");
+  }
 }
 
 /**
@@ -351,21 +360,19 @@ function write(config, filePath) {
  * @private
  */
 function getBaseDir(configFilePath) {
+  // calculates the path of the project including ESLint as dependency
+  const projectPath = path.resolve(__dirname, "../../../");
 
-    // calculates the path of the project including ESLint as dependency
-    const projectPath = path.resolve(__dirname, "../../../");
+  if (configFilePath && pathIsInside(configFilePath, projectPath)) {
+    // be careful of https://github.com/substack/node-resolve/issues/78
+    return path.join(path.resolve(configFilePath));
+  }
 
-    if (configFilePath && pathIsInside(configFilePath, projectPath)) {
-
-        // be careful of https://github.com/substack/node-resolve/issues/78
-        return path.join(path.resolve(configFilePath));
-    }
-
-    /*
-     * default to ESLint project path since it's unlikely that plugins will be
-     * in this directory
-     */
-    return path.join(projectPath);
+  /*
+   * default to ESLint project path since it's unlikely that plugins will be
+   * in this directory
+   */
+  return path.join(projectPath);
 }
 
 /**
@@ -376,9 +383,9 @@ function getBaseDir(configFilePath) {
  * @private
  */
 function getLookupPath(configFilePath) {
-    const basedir = getBaseDir(configFilePath);
+  const basedir = getBaseDir(configFilePath);
 
-    return path.join(basedir, "node_modules");
+  return path.join(basedir, "node_modules");
 }
 
 /**
@@ -388,24 +395,22 @@ function getLookupPath(configFilePath) {
  * @private
  */
 function getEslintCoreConfigPath(name) {
-    if (name === "eslint:recommended") {
+  if (name === "eslint:recommended") {
+    /*
+     * Add an explicit substitution for eslint:recommended to
+     * conf/eslint-recommended.js.
+     */
+    return path.resolve(__dirname, "../../conf/eslint-recommended.js");
+  }
 
-        /*
-         * Add an explicit substitution for eslint:recommended to
-         * conf/eslint-recommended.js.
-         */
-        return path.resolve(__dirname, "../../conf/eslint-recommended.js");
-    }
+  if (name === "eslint:all") {
+    /*
+     * Add an explicit substitution for eslint:all to conf/eslint-all.js
+     */
+    return path.resolve(__dirname, "../../conf/eslint-all.js");
+  }
 
-    if (name === "eslint:all") {
-
-        /*
-         * Add an explicit substitution for eslint:all to conf/eslint-all.js
-         */
-        return path.resolve(__dirname, "../../conf/eslint-all.js");
-    }
-
-    throw configMissingError(name);
+  throw configMissingError(name);
 }
 
 /**
@@ -420,50 +425,49 @@ function getEslintCoreConfigPath(name) {
  * @private
  */
 function applyExtends(config, configContext, filePath, relativeTo) {
-    let configExtends = config.extends;
+  let configExtends = config.extends;
 
-    // normalize into an array for easier handling
-    if (!Array.isArray(config.extends)) {
-        configExtends = [config.extends];
+  // normalize into an array for easier handling
+  if (!Array.isArray(config.extends)) {
+    configExtends = [config.extends];
+  }
+
+  // Make the last element in an array take the highest precedence
+  return configExtends.reduceRight((previousValue, parentPath) => {
+    try {
+      let extensionPath;
+
+      if (parentPath.startsWith("eslint:")) {
+        extensionPath = getEslintCoreConfigPath(parentPath);
+      } else if (isFilePath(parentPath)) {
+        /*
+         * If the `extends` path is relative, use the directory of the current configuration
+         * file as the reference point. Otherwise, use as-is.
+         */
+        extensionPath = path.isAbsolute(parentPath)
+          ? parentPath
+          : path.join(relativeTo || path.dirname(filePath), parentPath);
+      } else {
+        extensionPath = parentPath;
+      }
+      debug(`Loading ${extensionPath}`);
+
+      // eslint-disable-next-line no-use-before-define
+      return ConfigOps.merge(
+        load(extensionPath, configContext, relativeTo),
+        previousValue
+      );
+    } catch (e) {
+      /*
+       * If the file referenced by `extends` failed to load, add the path
+       * to the configuration file that referenced it to the error
+       * message so the user is able to see where it was referenced from,
+       * then re-throw.
+       */
+      e.message += `\nReferenced from: ${filePath}`;
+      throw e;
     }
-
-    // Make the last element in an array take the highest precedence
-    return configExtends.reduceRight((previousValue, parentPath) => {
-        try {
-            let extensionPath;
-
-            if (parentPath.startsWith("eslint:")) {
-                extensionPath = getEslintCoreConfigPath(parentPath);
-            } else if (isFilePath(parentPath)) {
-
-                /*
-                 * If the `extends` path is relative, use the directory of the current configuration
-                 * file as the reference point. Otherwise, use as-is.
-                 */
-                extensionPath = (path.isAbsolute(parentPath)
-                    ? parentPath
-                    : path.join(relativeTo || path.dirname(filePath), parentPath)
-                );
-            } else {
-                extensionPath = parentPath;
-            }
-            debug(`Loading ${extensionPath}`);
-
-            // eslint-disable-next-line no-use-before-define
-            return ConfigOps.merge(load(extensionPath, configContext, relativeTo), previousValue);
-        } catch (e) {
-
-            /*
-             * If the file referenced by `extends` failed to load, add the path
-             * to the configuration file that referenced it to the error
-             * message so the user is able to see where it was referenced from,
-             * then re-throw.
-             */
-            e.message += `\nReferenced from: ${filePath}`;
-            throw e;
-        }
-
-    }, config);
+  }, config);
 }
 
 /**
@@ -479,36 +483,43 @@ function applyExtends(config, configContext, filePath, relativeTo) {
  * @private
  */
 function resolve(filePath, relativeTo) {
-    if (isFilePath(filePath)) {
-        const fullPath = path.resolve(relativeTo || "", filePath);
+  if (isFilePath(filePath)) {
+    const fullPath = path.resolve(relativeTo || "", filePath);
 
-        return { filePath: fullPath, configFullName: fullPath };
-    }
-    let normalizedPackageName;
+    return { filePath: fullPath, configFullName: fullPath };
+  }
+  let normalizedPackageName;
 
-    if (filePath.startsWith("plugin:")) {
-        const configFullName = filePath;
-        const pluginName = filePath.slice(7, filePath.lastIndexOf("/"));
-        const configName = filePath.slice(filePath.lastIndexOf("/") + 1);
+  if (filePath.startsWith("plugin:")) {
+    const configFullName = filePath;
+    const pluginName = filePath.slice(7, filePath.lastIndexOf("/"));
+    const configName = filePath.slice(filePath.lastIndexOf("/") + 1);
 
-        normalizedPackageName = naming.normalizePackageName(pluginName, "eslint-plugin");
-        debug(`Attempting to resolve ${normalizedPackageName}`);
-
-        return {
-            filePath: require.resolve(normalizedPackageName),
-            configName,
-            configFullName
-        };
-    }
-    normalizedPackageName = naming.normalizePackageName(filePath, "eslint-config");
+    normalizedPackageName = naming.normalizePackageName(
+      pluginName,
+      "eslint-plugin"
+    );
     debug(`Attempting to resolve ${normalizedPackageName}`);
 
     return {
-        filePath: resolver.resolve(normalizedPackageName, getLookupPath(relativeTo)),
-        configFullName: filePath
+      filePath: require.resolve(normalizedPackageName),
+      configName,
+      configFullName,
     };
+  }
+  normalizedPackageName = naming.normalizePackageName(
+    filePath,
+    "eslint-config"
+  );
+  debug(`Attempting to resolve ${normalizedPackageName}`);
 
-
+  return {
+    filePath: resolver.resolve(
+      normalizedPackageName,
+      getLookupPath(relativeTo)
+    ),
+    configFullName: filePath,
+  };
 }
 
 /**
@@ -518,41 +529,50 @@ function resolve(filePath, relativeTo) {
  * @returns {Object} The configuration information.
  */
 function loadFromDisk(resolvedPath, configContext) {
-    const dirname = path.dirname(resolvedPath.filePath),
-        lookupPath = getLookupPath(dirname);
-    let config = loadConfigFile(resolvedPath);
+  const dirname = path.dirname(resolvedPath.filePath),
+    lookupPath = getLookupPath(dirname);
+  let config = loadConfigFile(resolvedPath);
 
-    if (config) {
-
-        // ensure plugins are properly loaded first
-        if (config.plugins) {
-            configContext.plugins.loadAll(config.plugins);
-        }
-
-        // include full path of parser if present
-        if (config.parser) {
-            if (isFilePath(config.parser)) {
-                config.parser = path.resolve(dirname || "", config.parser);
-            } else {
-                config.parser = resolver.resolve(config.parser, lookupPath);
-            }
-        }
-
-        const ruleMap = configContext.linterContext.getRules();
-
-        // validate the configuration before continuing
-        validator.validate(config, ruleMap.get.bind(ruleMap), configContext.linterContext.environments, resolvedPath.configFullName);
-
-        /*
-         * If an `extends` property is defined, it represents a configuration file to use as
-         * a "parent". Load the referenced file and merge the configuration recursively.
-         */
-        if (config.extends) {
-            config = applyExtends(config, configContext, resolvedPath.filePath, dirname);
-        }
+  if (config) {
+    // ensure plugins are properly loaded first
+    if (config.plugins) {
+      configContext.plugins.loadAll(config.plugins);
     }
 
-    return config;
+    // include full path of parser if present
+    if (config.parser) {
+      if (isFilePath(config.parser)) {
+        config.parser = path.resolve(dirname || "", config.parser);
+      } else {
+        config.parser = resolver.resolve(config.parser, lookupPath);
+      }
+    }
+
+    const ruleMap = configContext.linterContext.getRules();
+
+    // validate the configuration before continuing
+    validator.validate(
+      config,
+      ruleMap.get.bind(ruleMap),
+      configContext.linterContext.environments,
+      resolvedPath.configFullName
+    );
+
+    /*
+     * If an `extends` property is defined, it represents a configuration file to use as
+     * a "parent". Load the referenced file and merge the configuration recursively.
+     */
+    if (config.extends) {
+      config = applyExtends(
+        config,
+        configContext,
+        resolvedPath.filePath,
+        dirname
+      );
+    }
+  }
+
+  return config;
 }
 
 /**
@@ -563,7 +583,9 @@ function loadFromDisk(resolvedPath, configContext) {
  * @private
  */
 function loadObject(configObject, configContext) {
-    return configObject.extends ? applyExtends(configObject, configContext, "") : configObject;
+  return configObject.extends
+    ? applyExtends(configObject, configContext, "")
+    : configObject;
 }
 
 /**
@@ -576,23 +598,25 @@ function loadObject(configObject, configContext) {
  * @private
  */
 function load(filePath, configContext, relativeTo) {
-    const resolvedPath = resolve(filePath, relativeTo);
+  const resolvedPath = resolve(filePath, relativeTo);
 
-    const cachedConfig = configContext.configCache.getConfig(resolvedPath.configFullName);
+  const cachedConfig = configContext.configCache.getConfig(
+    resolvedPath.configFullName
+  );
 
-    if (cachedConfig) {
-        return cachedConfig;
-    }
+  if (cachedConfig) {
+    return cachedConfig;
+  }
 
-    const config = loadFromDisk(resolvedPath, configContext);
+  const config = loadFromDisk(resolvedPath, configContext);
 
-    if (config) {
-        config.filePath = resolvedPath.filePath;
-        config.baseDirectory = path.dirname(resolvedPath.filePath);
-        configContext.configCache.setConfig(resolvedPath.configFullName, config);
-    }
+  if (config) {
+    config.filePath = resolvedPath.filePath;
+    config.baseDirectory = path.dirname(resolvedPath.filePath);
+    configContext.configCache.setConfig(resolvedPath.configFullName, config);
+  }
 
-    return config;
+  return config;
 }
 
 /**
@@ -601,40 +625,42 @@ function load(filePath, configContext, relativeTo) {
  * @returns {boolean} `true` if a file exists at the given location
  */
 function isExistingFile(filename) {
-    try {
-        return fs.statSync(filename).isFile();
-    } catch (err) {
-        if (err.code === "ENOENT") {
-            return false;
-        }
-        throw err;
+  try {
+    return fs.statSync(filename).isFile();
+  } catch (err) {
+    if (err.code === "ENOENT") {
+      return false;
     }
+    throw err;
+  }
 }
-
 
 //------------------------------------------------------------------------------
 // Public Interface
 //------------------------------------------------------------------------------
 
 module.exports = {
+  getBaseDir,
+  getLookupPath,
+  load,
+  loadObject,
+  resolve,
+  write,
+  applyExtends,
+  CONFIG_FILES,
 
-    getBaseDir,
-    getLookupPath,
-    load,
-    loadObject,
-    resolve,
-    write,
-    applyExtends,
-    CONFIG_FILES,
-
-    /**
-     * Retrieves the configuration filename for a given directory. It loops over all
-     * of the valid configuration filenames in order to find the first one that exists.
-     * @param {string} directory The directory to check for a config file.
-     * @returns {?string} The filename of the configuration file for the directory
-     *      or null if there is no configuration file in the directory.
-     */
-    getFilenameForDirectory(directory) {
-        return CONFIG_FILES.map(filename => path.join(directory, filename)).find(isExistingFile) || null;
-    }
+  /**
+   * Retrieves the configuration filename for a given directory. It loops over all
+   * of the valid configuration filenames in order to find the first one that exists.
+   * @param {string} directory The directory to check for a config file.
+   * @returns {?string} The filename of the configuration file for the directory
+   *      or null if there is no configuration file in the directory.
+   */
+  getFilenameForDirectory(directory) {
+    return (
+      CONFIG_FILES.map((filename) => path.join(directory, filename)).find(
+        isExistingFile
+      ) || null
+    );
+  },
 };

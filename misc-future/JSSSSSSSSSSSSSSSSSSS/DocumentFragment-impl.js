@@ -3,7 +3,8 @@ const { mixin } = require("../../utils");
 const { domSymbolTree } = require("../helpers/internal-constants");
 const NODE_TYPE = require("../node-type");
 const NodeImpl = require("./Node-impl").implementation;
-const NonElementParentNodeImpl = require("./NonElementParentNode-impl").implementation;
+const NonElementParentNodeImpl =
+  require("./NonElementParentNode-impl").implementation;
 const ParentNodeImpl = require("./ParentNode-impl").implementation;
 
 class DocumentFragmentImpl extends NodeImpl {
@@ -20,7 +21,10 @@ class DocumentFragmentImpl extends NodeImpl {
     }
 
     for (const descendant of domSymbolTree.treeIterator(this)) {
-      if (descendant.nodeType === NODE_TYPE.ELEMENT_NODE && descendant.getAttributeNS(null, "id") === id) {
+      if (
+        descendant.nodeType === NODE_TYPE.ELEMENT_NODE &&
+        descendant.getAttributeNS(null, "id") === id
+      ) {
         return descendant;
       }
     }
@@ -33,5 +37,5 @@ mixin(DocumentFragmentImpl.prototype, NonElementParentNodeImpl.prototype);
 mixin(DocumentFragmentImpl.prototype, ParentNodeImpl.prototype);
 
 module.exports = {
-  implementation: DocumentFragmentImpl
+  implementation: DocumentFragmentImpl,
 };

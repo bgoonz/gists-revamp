@@ -3,7 +3,8 @@
 const conversions = require("webidl-conversions");
 const utils = require("./utils.js");
 
-const convertCompositionEventInit = require("./CompositionEventInit.js").convert;
+const convertCompositionEventInit =
+  require("./CompositionEventInit.js").convert;
 const impl = utils.implSymbol;
 const UIEvent = require("./UIEvent.js");
 
@@ -17,18 +18,24 @@ function CompositionEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'CompositionEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'CompositionEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'CompositionEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'CompositionEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertCompositionEventInit(curArg, { context: "Failed to construct 'CompositionEvent': parameter 2" });
+    curArg = convertCompositionEventInit(curArg, {
+      context: "Failed to construct 'CompositionEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,10 +49,12 @@ Object.defineProperty(CompositionEvent, "prototype", {
   value: CompositionEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
-CompositionEvent.prototype.initCompositionEvent = function initCompositionEvent(typeArg) {
+CompositionEvent.prototype.initCompositionEvent = function initCompositionEvent(
+  typeArg
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -61,7 +70,8 @@ CompositionEvent.prototype.initCompositionEvent = function initCompositionEvent(
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'initCompositionEvent' on 'CompositionEvent': parameter 1"
+      context:
+        "Failed to execute 'initCompositionEvent' on 'CompositionEvent': parameter 1",
     });
     args.push(curArg);
   }
@@ -69,7 +79,8 @@ CompositionEvent.prototype.initCompositionEvent = function initCompositionEvent(
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initCompositionEvent' on 'CompositionEvent': parameter 2"
+        context:
+          "Failed to execute 'initCompositionEvent' on 'CompositionEvent': parameter 2",
       });
     } else {
       curArg = false;
@@ -80,7 +91,8 @@ CompositionEvent.prototype.initCompositionEvent = function initCompositionEvent(
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initCompositionEvent' on 'CompositionEvent': parameter 3"
+        context:
+          "Failed to execute 'initCompositionEvent' on 'CompositionEvent': parameter 3",
       });
     } else {
       curArg = false;
@@ -104,7 +116,8 @@ CompositionEvent.prototype.initCompositionEvent = function initCompositionEvent(
     let curArg = arguments[4];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'initCompositionEvent' on 'CompositionEvent': parameter 5"
+        context:
+          "Failed to execute 'initCompositionEvent' on 'CompositionEvent': parameter 5",
       });
     } else {
       curArg = "";
@@ -124,14 +137,14 @@ Object.defineProperty(CompositionEvent.prototype, "data", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CompositionEvent.prototype, Symbol.toStringTag, {
   value: "CompositionEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -197,7 +210,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -208,8 +221,8 @@ const iface = {
   },
   interface: CompositionEvent,
   expose: {
-    Window: { CompositionEvent }
-  }
+    Window: { CompositionEvent },
+  },
 }; // iface
 module.exports = iface;
 

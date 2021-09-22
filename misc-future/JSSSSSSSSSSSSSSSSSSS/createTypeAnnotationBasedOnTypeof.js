@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = createTypeAnnotationBasedOnTypeof;
 
@@ -17,11 +17,17 @@ function createTypeAnnotationBasedOnTypeof(type) {
   } else if (type === "boolean") {
     return (0, _generated.booleanTypeAnnotation)();
   } else if (type === "function") {
-    return (0, _generated.genericTypeAnnotation)((0, _generated.identifier)("Function"));
+    return (0, _generated.genericTypeAnnotation)(
+      (0, _generated.identifier)("Function")
+    );
   } else if (type === "object") {
-    return (0, _generated.genericTypeAnnotation)((0, _generated.identifier)("Object"));
+    return (0, _generated.genericTypeAnnotation)(
+      (0, _generated.identifier)("Object")
+    );
   } else if (type === "symbol") {
-    return (0, _generated.genericTypeAnnotation)((0, _generated.identifier)("Symbol"));
+    return (0, _generated.genericTypeAnnotation)(
+      (0, _generated.identifier)("Symbol")
+    );
   } else if (type === "bigint") {
     return (0, _generated.anyTypeAnnotation)();
   } else {

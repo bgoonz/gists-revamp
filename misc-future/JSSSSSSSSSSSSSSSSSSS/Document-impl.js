@@ -6,13 +6,19 @@ const NodeImpl = require("./Node-impl").implementation;
 
 const NODE_TYPE = require("../node-type");
 const { mixin, memoizeQuery } = require("../../utils");
-const { firstChildWithHTMLLocalName, firstChildWithHTMLLocalNames, firstDescendantWithHTMLLocalName } =
-  require("../helpers/traversal");
+const {
+  firstChildWithHTMLLocalName,
+  firstChildWithHTMLLocalNames,
+  firstDescendantWithHTMLLocalName,
+} = require("../helpers/traversal");
 const whatwgURL = require("whatwg-url");
 const { StyleSheetList } = require("../../level2/style");
 const { domSymbolTree } = require("../helpers/internal-constants");
 const eventAccessors = require("../helpers/create-event-accessor");
-const { asciiLowercase, stripAndCollapseASCIIWhitespace } = require("../helpers/strings");
+const {
+  asciiLowercase,
+  stripAndCollapseASCIIWhitespace,
+} = require("../helpers/strings");
 const { HTML_NS, SVG_NS } = require("../helpers/namespaces");
 const DOMException = require("domexception");
 const HTMLToDOM = require("../../browser/htmltodom");
@@ -24,10 +30,15 @@ const validateName = require("../helpers/validate-names").name;
 const { validateAndExtract } = require("../helpers/validate-names");
 const resourceLoader = require("../../browser/resource-loader");
 
-const GlobalEventHandlersImpl = require("./GlobalEventHandlers-impl").implementation;
+const GlobalEventHandlersImpl =
+  require("./GlobalEventHandlers-impl").implementation;
 
-const { clone, listOfElementsWithQualifiedName, listOfElementsWithNamespaceAndLocalName,
-  listOfElementsWithClassNames } = require("../node");
+const {
+  clone,
+  listOfElementsWithQualifiedName,
+  listOfElementsWithNamespaceAndLocalName,
+  listOfElementsWithClassNames,
+} = require("../node");
 const generatedAttr = require("../generated/Attr");
 const Comment = require("../generated/Comment");
 const ProcessingInstruction = require("../generated/ProcessingInstruction");
@@ -35,7 +46,8 @@ const CDATASection = require("../generated/CDATASection");
 const Text = require("../generated/Text");
 const DocumentFragment = require("../generated/DocumentFragment");
 const DOMImplementation = require("../generated/DOMImplementation");
-const NonElementParentNodeImpl = require("./NonElementParentNode-impl").implementation;
+const NonElementParentNodeImpl =
+  require("./NonElementParentNode-impl").implementation;
 const ParentNodeImpl = require("./ParentNode-impl").implementation;
 const Element = require("../generated/Element");
 const HTMLUnknownElement = require("../generated/HTMLUnknownElement");
@@ -57,7 +69,11 @@ const TouchEvent = require("../generated/TouchEvent");
 const UIEvent = require("../generated/UIEvent");
 
 function clearChildNodes(node) {
-  for (let child = domSymbolTree.firstChild(node); child; child = domSymbolTree.firstChild(node)) {
+  for (
+    let child = domSymbolTree.firstChild(node);
+    child;
+    child = domSymbolTree.firstChild(node)
+  ) {
     node.removeChild(child);
   }
 }
@@ -77,11 +93,12 @@ class ResourceQueue {
           if (this.next) {
             this.next.prev = null;
             this.next.check();
-          } else { // q.tail===this
+          } else {
+            // q.tail===this
             q.tail = null;
           }
         }
-      }
+      },
     };
     if (q.tail) {
       q.tail.next = item;
@@ -148,12 +165,19 @@ function pad(number) {
 }
 
 function toLastModifiedString(date) {
-  return pad(date.getMonth() + 1) +
-    "/" + pad(date.getDate()) +
-    "/" + date.getFullYear() +
-    " " + pad(date.getHours()) +
-    ":" + pad(date.getMinutes()) +
-    ":" + pad(date.getSeconds());
+  return (
+    pad(date.getMonth() + 1) +
+    "/" +
+    pad(date.getDate()) +
+    "/" +
+    date.getFullYear() +
+    " " +
+    pad(date.getHours()) +
+    ":" +
+    pad(date.getMinutes()) +
+    ":" +
+    pad(date.getSeconds())
+  );
 }
 
 const eventInterfaceTable = {
@@ -173,7 +197,7 @@ const eventInterfaceTable = {
   svgevents: Event,
   touchevent: TouchEvent,
   uievent: UIEvent,
-  uievents: UIEvent
+  uievents: UIEvent,
 };
 
 class DocumentImpl extends NodeImpl {
@@ -194,14 +218,17 @@ class DocumentImpl extends NodeImpl {
       privateData.options.encoding = "UTF-8";
     }
     if (!privateData.options.contentType) {
-      privateData.options.contentType = privateData.options.parsingMode === "xml" ? "application/xml" : "text/html";
+      privateData.options.contentType =
+        privateData.options.parsingMode === "xml"
+          ? "application/xml"
+          : "text/html";
     }
 
     this._parsingMode = privateData.options.parsingMode;
     this._htmlToDom = new HTMLToDOM(privateData.options.parsingMode);
 
     this._implementation = DOMImplementation.createImpl([], {
-      ownerDocument: this
+      ownerDocument: this,
     });
 
     this._defaultView = privateData.options.defaultView || null;
@@ -219,7 +246,10 @@ class DocumentImpl extends NodeImpl {
     this.contentType = privateData.options.contentType;
     this._encoding = privateData.options.encoding;
 
-    const urlOption = privateData.options.url === undefined ? "about:blank" : privateData.options.url;
+    const urlOption =
+      privateData.options.url === undefined
+        ? "about:blank"
+        : privateData.options.url;
     const parsed = whatwgURL.parseURL(urlOption);
     if (parsed === null) {
       throw new TypeError(`Could not parse "${urlOption}" as a URL`);
@@ -232,35 +262,44 @@ class DocumentImpl extends NodeImpl {
     this._history = History.createImpl([], {
       window: this._defaultView,
       document: this,
-      actAsIfLocationReloadCalled: () => this._location.reload()
+      actAsIfLocationReloadCalled: () => this._location.reload(),
     });
 
     if (privateData.options.cookie) {
-      const cookies = Array.isArray(privateData.options.cookie) ?
-                      privateData.options.cookie :
-                      [privateData.options.cookie];
+      const cookies = Array.isArray(privateData.options.cookie)
+        ? privateData.options.cookie
+        : [privateData.options.cookie];
       const document = this;
 
-      cookies.forEach(cookieStr => {
-        document._cookieJar.setCookieSync(cookieStr, document.URL, { ignoreError: true });
+      cookies.forEach((cookieStr) => {
+        document._cookieJar.setCookieSync(cookieStr, document.URL, {
+          ignoreError: true,
+        });
       });
     }
 
     this._workingNodeIterators = [];
-    this._workingNodeIteratorsMax = privateData.options.concurrentNodeIterators === undefined ?
-                                    10 :
-                                    Number(privateData.options.concurrentNodeIterators);
+    this._workingNodeIteratorsMax =
+      privateData.options.concurrentNodeIterators === undefined
+        ? 10
+        : Number(privateData.options.concurrentNodeIterators);
 
     if (isNaN(this._workingNodeIteratorsMax)) {
-      throw new TypeError("The 'concurrentNodeIterators' option must be a Number");
+      throw new TypeError(
+        "The 'concurrentNodeIterators' option must be a Number"
+      );
     }
 
     if (this._workingNodeIteratorsMax < 0) {
-      throw new RangeError("The 'concurrentNodeIterators' option must be a non negative Number");
+      throw new RangeError(
+        "The 'concurrentNodeIterators' option must be a non negative Number"
+      );
     }
 
     this._referrer = privateData.options.referrer || "";
-    this._lastModified = toLastModifiedString(privateData.options.lastModified || new Date());
+    this._lastModified = toLastModifiedString(
+      privateData.options.lastModified || new Date()
+    );
     this._queue = new ResourceQueue(privateData.options.deferClose);
     this._customResourceLoader = privateData.options.resourceLoader;
     this._pool = privateData.options.pool;
@@ -279,7 +318,9 @@ class DocumentImpl extends NodeImpl {
   }
 
   get compatMode() {
-    return this._parsingMode === "xml" || this.doctype ? "CSS1Compat" : "BackCompat";
+    return this._parsingMode === "xml" || this.doctype
+      ? "CSS1Compat"
+      : "BackCompat";
   }
   get charset() {
     return this._encoding;
@@ -352,32 +393,42 @@ class DocumentImpl extends NodeImpl {
   _createElementWithCorrectElementInterface(localName, namespace) {
     // https://dom.spec.whatwg.org/#concept-element-interface
 
-    if (this._elementBuilders[namespace] && this._elementBuilders[namespace][localName]) {
-      return this._elementBuilders[namespace][localName](this, localName, namespace);
+    if (
+      this._elementBuilders[namespace] &&
+      this._elementBuilders[namespace][localName]
+    ) {
+      return this._elementBuilders[namespace][localName](
+        this,
+        localName,
+        namespace
+      );
     } else if (namespace === HTML_NS) {
       return HTMLUnknownElement.createImpl([], {
         ownerDocument: this,
         localName,
-        namespace
+        namespace,
       });
     } else if (namespace === SVG_NS) {
       return SVGElement.createImpl([], {
         ownerDocument: this,
         localName,
-        namespace
+        namespace,
       });
     }
 
     return Element.createImpl([], {
       ownerDocument: this,
       localName,
-      namespace
+      namespace,
     });
   }
 
   appendChild(/* Node */ arg) {
     if (this.documentElement && arg.nodeType === NODE_TYPE.ELEMENT_NODE) {
-      throw new DOMException("The operation would yield an incorrect node tree.", "HierarchyRequestError");
+      throw new DOMException(
+        "The operation would yield an incorrect node tree.",
+        "HierarchyRequestError"
+      );
     }
     return super.appendChild(arg);
   }
@@ -385,7 +436,7 @@ class DocumentImpl extends NodeImpl {
   removeChild(/* Node */ arg) {
     const ret = super.removeChild(arg);
     if (arg === this._documentElement) {
-      this._documentElement = null;// force a recalculation
+      this._documentElement = null; // force a recalculation
     }
     return ret;
   }
@@ -406,7 +457,10 @@ class DocumentImpl extends NodeImpl {
     }
 
     if (this._parsingMode === "xml") {
-      throw new DOMException("Cannot use document.write on XML documents", "InvalidStateError");
+      throw new DOMException(
+        "Cannot use document.write on XML documents",
+        "InvalidStateError"
+      );
     }
 
     if (this._writeAfterElement) {
@@ -434,7 +488,10 @@ class DocumentImpl extends NodeImpl {
       // Find the last child that has been added to the document.
       if (this.lastChild) {
         let node = this;
-        while (node.lastChild && node.lastChild.nodeType === NODE_TYPE.ELEMENT_NODE) {
+        while (
+          node.lastChild &&
+          node.lastChild.nodeType === NODE_TYPE.ELEMENT_NODE
+        ) {
           node = node.lastChild;
         }
         node.innerHTML = text;
@@ -476,11 +533,13 @@ class DocumentImpl extends NodeImpl {
   get links() {
     return HTMLCollection.createImpl([], {
       element: this,
-      query: () => domSymbolTree.treeToArray(this, {
-        filter: node => (node._localName === "a" || node._localName === "area") &&
-                        node.hasAttribute("href") &&
-                        node._namespaceURI === HTML_NS
-      })
+      query: () =>
+        domSymbolTree.treeToArray(this, {
+          filter: (node) =>
+            (node._localName === "a" || node._localName === "area") &&
+            node.hasAttribute("href") &&
+            node._namespaceURI === HTML_NS,
+        }),
     });
   }
   get forms() {
@@ -492,11 +551,13 @@ class DocumentImpl extends NodeImpl {
   get anchors() {
     return HTMLCollection.createImpl([], {
       element: this,
-      query: () => domSymbolTree.treeToArray(this, {
-        filter: node => node._localName === "a" &&
-                        node.hasAttribute("name") &&
-                        node._namespaceURI === HTML_NS
-      })
+      query: () =>
+        domSymbolTree.treeToArray(this, {
+          filter: (node) =>
+            node._localName === "a" &&
+            node.hasAttribute("name") &&
+            node._namespaceURI === HTML_NS,
+        }),
     });
   }
 
@@ -507,7 +568,7 @@ class DocumentImpl extends NodeImpl {
   get applets() {
     return HTMLCollection.createImpl([], {
       element: this,
-      query: () => []
+      query: () => [],
     });
   }
 
@@ -537,9 +598,11 @@ class DocumentImpl extends NodeImpl {
   getElementsByName(elementName) {
     return NodeList.createImpl([], {
       element: this,
-      query: () => domSymbolTree.treeToArray(this, {
-        filter: node => node.getAttribute && node.getAttribute("name") === elementName
-      })
+      query: () =>
+        domSymbolTree.treeToArray(this, {
+          filter: (node) =>
+            node.getAttribute && node.getAttribute("name") === elementName,
+        }),
     });
   }
 
@@ -583,24 +646,37 @@ class DocumentImpl extends NodeImpl {
   }
 
   get head() {
-    return this.documentElement ? firstChildWithHTMLLocalName(this.documentElement, "head") : null;
+    return this.documentElement
+      ? firstChildWithHTMLLocalName(this.documentElement, "head")
+      : null;
   }
 
   get body() {
     const { documentElement } = this;
-    if (!documentElement || documentElement._localName !== "html" ||
-        documentElement._namespaceURI !== HTML_NS) {
+    if (
+      !documentElement ||
+      documentElement._localName !== "html" ||
+      documentElement._namespaceURI !== HTML_NS
+    ) {
       return null;
     }
 
-    return firstChildWithHTMLLocalNames(this.documentElement, new Set(["body", "frameset"]));
+    return firstChildWithHTMLLocalNames(
+      this.documentElement,
+      new Set(["body", "frameset"])
+    );
   }
 
   set body(value) {
-    if (value === null ||
-        value._namespaceURI !== HTML_NS ||
-        (value._localName !== "body" && value._localName !== "frameset")) {
-      throw new DOMException("Cannot set the body to null or a non-body/frameset element", "HierarchyRequestError");
+    if (
+      value === null ||
+      value._namespaceURI !== HTML_NS ||
+      (value._localName !== "body" && value._localName !== "frameset")
+    ) {
+      throw new DOMException(
+        "Cannot set the body to null or a non-body/frameset element",
+        "HierarchyRequestError"
+      );
     }
 
     const bodyElement = this.body;
@@ -615,7 +691,10 @@ class DocumentImpl extends NodeImpl {
 
     const { documentElement } = this;
     if (documentElement === null) {
-      throw new DOMException("Cannot set the body when there is no document element", "HierarchyRequestError");
+      throw new DOMException(
+        "Cannot set the body when there is no document element",
+        "HierarchyRequestError"
+      );
     }
 
     documentElement.appendChild(value);
@@ -632,7 +711,10 @@ class DocumentImpl extends NodeImpl {
     const eventWrapper = eventInterfaceTable[typeLower] || null;
 
     if (!eventWrapper) {
-      throw new DOMException("The provided event type (\"" + type + "\") is invalid", "NotSupportedError");
+      throw new DOMException(
+        'The provided event type ("' + type + '") is invalid',
+        "NotSupportedError"
+      );
     }
 
     const impl = eventWrapper.createImpl([""]);
@@ -644,43 +726,52 @@ class DocumentImpl extends NodeImpl {
     validateName(target);
 
     if (data.includes("?>")) {
-      throw new DOMException("Processing instruction data cannot contain the string \"?>\"", "InvalidCharacterError");
+      throw new DOMException(
+        'Processing instruction data cannot contain the string "?>"',
+        "InvalidCharacterError"
+      );
     }
 
     return ProcessingInstruction.createImpl([], {
       ownerDocument: this,
       target,
-      data
+      data,
     });
   }
 
   // https://dom.spec.whatwg.org/#dom-document-createcdatasection
   createCDATASection(data) {
     if (this._parsingMode === "html") {
-      throw new DOMException("Cannot create CDATA sections in HTML documents", "NotSupportedError");
+      throw new DOMException(
+        "Cannot create CDATA sections in HTML documents",
+        "NotSupportedError"
+      );
     }
 
     if (data.includes("]]>")) {
-      throw new DOMException("CDATA section data cannot contain the string \"]]>\"", "InvalidCharacterError");
+      throw new DOMException(
+        'CDATA section data cannot contain the string "]]>"',
+        "InvalidCharacterError"
+      );
     }
 
     return CDATASection.createImpl([], {
       ownerDocument: this,
-      data
+      data,
     });
   }
 
   createTextNode(data) {
     return Text.createImpl([], {
       ownerDocument: this,
-      data
+      data,
     });
   }
 
   createComment(data) {
     return Comment.createImpl([], {
       ownerDocument: this,
-      data
+      data,
     });
   }
 
@@ -690,7 +781,11 @@ class DocumentImpl extends NodeImpl {
       localName = asciiLowercase(localName);
     }
 
-    const namespace = this._parsingMode === "html" || this.contentType === "application/xhtml+xml" ? HTML_NS : null;
+    const namespace =
+      this._parsingMode === "html" ||
+      this.contentType === "application/xhtml+xml"
+        ? HTML_NS
+        : null;
 
     return this._createElementWithCorrectElementInterface(localName, namespace);
   }
@@ -700,7 +795,10 @@ class DocumentImpl extends NodeImpl {
 
     const extracted = validateAndExtract(namespace, qualifiedName);
 
-    const element = this._createElementWithCorrectElementInterface(extracted.localName, extracted.namespace);
+    const element = this._createElementWithCorrectElementInterface(
+      extracted.localName,
+      extracted.namespace
+    );
     element._prefix = extracted.prefix;
 
     return element;
@@ -730,7 +828,7 @@ class DocumentImpl extends NodeImpl {
     return generatedAttr.createImpl([], {
       namespace: extracted.namespace,
       namespacePrefix: extracted.prefix,
-      localName: extracted.localName
+      localName: extracted.localName,
     });
   }
 
@@ -740,7 +838,11 @@ class DocumentImpl extends NodeImpl {
   }
 
   createNodeIterator(root, whatToShow, filter) {
-    const nodeIterator = NodeIterator.createImpl([], { root, whatToShow, filter });
+    const nodeIterator = NodeIterator.createImpl([], {
+      root,
+      whatToShow,
+      filter,
+    });
 
     this._workingNodeIterators.push(nodeIterator);
     while (this._workingNodeIterators.length > this._workingNodeIteratorsMax) {
@@ -753,7 +855,10 @@ class DocumentImpl extends NodeImpl {
 
   importNode(node, deep) {
     if (node.nodeType === NODE_TYPE.DOCUMENT_NODE) {
-      throw new DOMException("Cannot import a document node", "NotSupportedError");
+      throw new DOMException(
+        "Cannot import a document node",
+        "NotSupportedError"
+      );
     }
 
     return clone(node, this, deep);
@@ -761,7 +866,10 @@ class DocumentImpl extends NodeImpl {
 
   adoptNode(node) {
     if (node.nodeType === NODE_TYPE.DOCUMENT_NODE) {
-      throw new DOMException("Cannot adopt a document node", "NotSupportedError");
+      throw new DOMException(
+        "Cannot adopt a document node",
+        "NotSupportedError"
+      );
     }
     // TODO: Determine correct way to detect a shadow root
     // See also https://github.com/w3c/webcomponents/issues/182
@@ -784,7 +892,7 @@ class DocumentImpl extends NodeImpl {
     cookieStr = String(cookieStr);
     this._cookieJar.setCookieSync(cookieStr, this.URL, {
       http: false,
-      ignoreError: true
+      ignoreError: true,
     });
   }
 
@@ -829,18 +937,25 @@ mixin(DocumentImpl.prototype, ParentNodeImpl.prototype);
 
 DocumentImpl.prototype._elementBuilders = Object.create(null);
 
-DocumentImpl.prototype.getElementsByTagName = memoizeQuery(function (qualifiedName) {
+DocumentImpl.prototype.getElementsByTagName = memoizeQuery(function (
+  qualifiedName
+) {
   return listOfElementsWithQualifiedName(qualifiedName, this);
 });
 
-DocumentImpl.prototype.getElementsByTagNameNS = memoizeQuery(function (namespace, localName) {
+DocumentImpl.prototype.getElementsByTagNameNS = memoizeQuery(function (
+  namespace,
+  localName
+) {
   return listOfElementsWithNamespaceAndLocalName(namespace, localName, this);
 });
 
-DocumentImpl.prototype.getElementsByClassName = memoizeQuery(function getElementsByClassName(classNames) {
-  return listOfElementsWithClassNames(classNames, this);
-});
+DocumentImpl.prototype.getElementsByClassName = memoizeQuery(
+  function getElementsByClassName(classNames) {
+    return listOfElementsWithClassNames(classNames, this);
+  }
+);
 
 module.exports = {
-  implementation: DocumentImpl
+  implementation: DocumentImpl,
 };

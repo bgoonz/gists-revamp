@@ -22,7 +22,7 @@ Object.defineProperty(Element, "prototype", {
   value: Element.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Element.prototype.hasAttributes = function hasAttributes() {
@@ -48,21 +48,26 @@ Element.prototype.getAttribute = function getAttribute(qualifiedName) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'getAttribute' on 'Element': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'getAttribute' on 'Element': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getAttribute' on 'Element': parameter 1"
+      context: "Failed to execute 'getAttribute' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   return this[impl].getAttribute(...args);
 };
 
-Element.prototype.getAttributeNS = function getAttributeNS(namespace, localName) {
+Element.prototype.getAttributeNS = function getAttributeNS(
+  namespace,
+  localName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -81,7 +86,7 @@ Element.prototype.getAttributeNS = function getAttributeNS(namespace, localName)
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'getAttributeNS' on 'Element': parameter 1"
+        context: "Failed to execute 'getAttributeNS' on 'Element': parameter 1",
       });
     }
     args.push(curArg);
@@ -89,7 +94,7 @@ Element.prototype.getAttributeNS = function getAttributeNS(namespace, localName)
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getAttributeNS' on 'Element': parameter 2"
+      context: "Failed to execute 'getAttributeNS' on 'Element': parameter 2",
     });
     args.push(curArg);
   }
@@ -103,28 +108,34 @@ Element.prototype.setAttribute = function setAttribute(qualifiedName, value) {
 
   if (arguments.length < 2) {
     throw new TypeError(
-      "Failed to execute 'setAttribute' on 'Element': 2 arguments required, but only " + arguments.length + " present."
+      "Failed to execute 'setAttribute' on 'Element': 2 arguments required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setAttribute' on 'Element': parameter 1"
+      context: "Failed to execute 'setAttribute' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setAttribute' on 'Element': parameter 2"
+      context: "Failed to execute 'setAttribute' on 'Element': parameter 2",
     });
     args.push(curArg);
   }
   return this[impl].setAttribute(...args);
 };
 
-Element.prototype.setAttributeNS = function setAttributeNS(namespace, qualifiedName, value) {
+Element.prototype.setAttributeNS = function setAttributeNS(
+  namespace,
+  qualifiedName,
+  value
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -143,7 +154,7 @@ Element.prototype.setAttributeNS = function setAttributeNS(namespace, qualifiedN
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'setAttributeNS' on 'Element': parameter 1"
+        context: "Failed to execute 'setAttributeNS' on 'Element': parameter 1",
       });
     }
     args.push(curArg);
@@ -151,14 +162,14 @@ Element.prototype.setAttributeNS = function setAttributeNS(namespace, qualifiedN
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setAttributeNS' on 'Element': parameter 2"
+      context: "Failed to execute 'setAttributeNS' on 'Element': parameter 2",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[2];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setAttributeNS' on 'Element': parameter 3"
+      context: "Failed to execute 'setAttributeNS' on 'Element': parameter 3",
     });
     args.push(curArg);
   }
@@ -181,14 +192,17 @@ Element.prototype.removeAttribute = function removeAttribute(qualifiedName) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'removeAttribute' on 'Element': parameter 1"
+      context: "Failed to execute 'removeAttribute' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   return this[impl].removeAttribute(...args);
 };
 
-Element.prototype.removeAttributeNS = function removeAttributeNS(namespace, localName) {
+Element.prototype.removeAttributeNS = function removeAttributeNS(
+  namespace,
+  localName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -207,7 +221,8 @@ Element.prototype.removeAttributeNS = function removeAttributeNS(namespace, loca
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'removeAttributeNS' on 'Element': parameter 1"
+        context:
+          "Failed to execute 'removeAttributeNS' on 'Element': parameter 1",
       });
     }
     args.push(curArg);
@@ -215,7 +230,8 @@ Element.prototype.removeAttributeNS = function removeAttributeNS(namespace, loca
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'removeAttributeNS' on 'Element': parameter 2"
+      context:
+        "Failed to execute 'removeAttributeNS' on 'Element': parameter 2",
     });
     args.push(curArg);
   }
@@ -229,21 +245,26 @@ Element.prototype.hasAttribute = function hasAttribute(qualifiedName) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'hasAttribute' on 'Element': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'hasAttribute' on 'Element': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'hasAttribute' on 'Element': parameter 1"
+      context: "Failed to execute 'hasAttribute' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   return this[impl].hasAttribute(...args);
 };
 
-Element.prototype.hasAttributeNS = function hasAttributeNS(namespace, localName) {
+Element.prototype.hasAttributeNS = function hasAttributeNS(
+  namespace,
+  localName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -262,7 +283,7 @@ Element.prototype.hasAttributeNS = function hasAttributeNS(namespace, localName)
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'hasAttributeNS' on 'Element': parameter 1"
+        context: "Failed to execute 'hasAttributeNS' on 'Element': parameter 1",
       });
     }
     args.push(curArg);
@@ -270,7 +291,7 @@ Element.prototype.hasAttributeNS = function hasAttributeNS(namespace, localName)
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'hasAttributeNS' on 'Element': parameter 2"
+      context: "Failed to execute 'hasAttributeNS' on 'Element': parameter 2",
     });
     args.push(curArg);
   }
@@ -293,14 +314,17 @@ Element.prototype.getAttributeNode = function getAttributeNode(qualifiedName) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getAttributeNode' on 'Element': parameter 1"
+      context: "Failed to execute 'getAttributeNode' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getAttributeNode(...args));
 };
 
-Element.prototype.getAttributeNodeNS = function getAttributeNodeNS(namespace, localName) {
+Element.prototype.getAttributeNodeNS = function getAttributeNodeNS(
+  namespace,
+  localName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -319,7 +343,8 @@ Element.prototype.getAttributeNodeNS = function getAttributeNodeNS(namespace, lo
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'getAttributeNodeNS' on 'Element': parameter 1"
+        context:
+          "Failed to execute 'getAttributeNodeNS' on 'Element': parameter 1",
       });
     }
     args.push(curArg);
@@ -327,7 +352,8 @@ Element.prototype.getAttributeNodeNS = function getAttributeNodeNS(namespace, lo
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getAttributeNodeNS' on 'Element': parameter 2"
+      context:
+        "Failed to execute 'getAttributeNodeNS' on 'Element': parameter 2",
     });
     args.push(curArg);
   }
@@ -349,7 +375,9 @@ Element.prototype.setAttributeNode = function setAttributeNode(attr) {
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertAttr(curArg, { context: "Failed to execute 'setAttributeNode' on 'Element': parameter 1" });
+    curArg = convertAttr(curArg, {
+      context: "Failed to execute 'setAttributeNode' on 'Element': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].setAttributeNode(...args));
@@ -370,7 +398,10 @@ Element.prototype.setAttributeNodeNS = function setAttributeNodeNS(attr) {
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertAttr(curArg, { context: "Failed to execute 'setAttributeNodeNS' on 'Element': parameter 1" });
+    curArg = convertAttr(curArg, {
+      context:
+        "Failed to execute 'setAttributeNodeNS' on 'Element': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].setAttributeNodeNS(...args));
@@ -391,7 +422,10 @@ Element.prototype.removeAttributeNode = function removeAttributeNode(attr) {
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertAttr(curArg, { context: "Failed to execute 'removeAttributeNode' on 'Element': parameter 1" });
+    curArg = convertAttr(curArg, {
+      context:
+        "Failed to execute 'removeAttributeNode' on 'Element': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].removeAttributeNode(...args));
@@ -404,13 +438,17 @@ Element.prototype.closest = function closest(selectors) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'closest' on 'Element': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'closest' on 'Element': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'closest' on 'Element': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'closest' on 'Element': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].closest(...args));
@@ -423,19 +461,25 @@ Element.prototype.matches = function matches(selectors) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'matches' on 'Element': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'matches' on 'Element': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'matches' on 'Element': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'matches' on 'Element': parameter 1",
+    });
     args.push(curArg);
   }
   return this[impl].matches(...args);
 };
 
-Element.prototype.webkitMatchesSelector = function webkitMatchesSelector(selectors) {
+Element.prototype.webkitMatchesSelector = function webkitMatchesSelector(
+  selectors
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -451,14 +495,17 @@ Element.prototype.webkitMatchesSelector = function webkitMatchesSelector(selecto
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'webkitMatchesSelector' on 'Element': parameter 1"
+      context:
+        "Failed to execute 'webkitMatchesSelector' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   return this[impl].webkitMatchesSelector(...args);
 };
 
-Element.prototype.getElementsByTagName = function getElementsByTagName(qualifiedName) {
+Element.prototype.getElementsByTagName = function getElementsByTagName(
+  qualifiedName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -474,14 +521,18 @@ Element.prototype.getElementsByTagName = function getElementsByTagName(qualified
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementsByTagName' on 'Element': parameter 1"
+      context:
+        "Failed to execute 'getElementsByTagName' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getElementsByTagName(...args));
 };
 
-Element.prototype.getElementsByTagNameNS = function getElementsByTagNameNS(namespace, localName) {
+Element.prototype.getElementsByTagNameNS = function getElementsByTagNameNS(
+  namespace,
+  localName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -500,7 +551,8 @@ Element.prototype.getElementsByTagNameNS = function getElementsByTagNameNS(names
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'getElementsByTagNameNS' on 'Element': parameter 1"
+        context:
+          "Failed to execute 'getElementsByTagNameNS' on 'Element': parameter 1",
       });
     }
     args.push(curArg);
@@ -508,14 +560,17 @@ Element.prototype.getElementsByTagNameNS = function getElementsByTagNameNS(names
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementsByTagNameNS' on 'Element': parameter 2"
+      context:
+        "Failed to execute 'getElementsByTagNameNS' on 'Element': parameter 2",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getElementsByTagNameNS(...args));
 };
 
-Element.prototype.getElementsByClassName = function getElementsByClassName(classNames) {
+Element.prototype.getElementsByClassName = function getElementsByClassName(
+  classNames
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -531,14 +586,18 @@ Element.prototype.getElementsByClassName = function getElementsByClassName(class
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementsByClassName' on 'Element': parameter 1"
+      context:
+        "Failed to execute 'getElementsByClassName' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getElementsByClassName(...args));
 };
 
-Element.prototype.insertAdjacentHTML = function insertAdjacentHTML(position, text) {
+Element.prototype.insertAdjacentHTML = function insertAdjacentHTML(
+  position,
+  text
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -554,14 +613,16 @@ Element.prototype.insertAdjacentHTML = function insertAdjacentHTML(position, tex
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'insertAdjacentHTML' on 'Element': parameter 1"
+      context:
+        "Failed to execute 'insertAdjacentHTML' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'insertAdjacentHTML' on 'Element': parameter 2"
+      context:
+        "Failed to execute 'insertAdjacentHTML' on 'Element': parameter 2",
     });
     args.push(curArg);
   }
@@ -595,7 +656,8 @@ Element.prototype.before = function before() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'before' on 'Element': parameter " + (i + 1)
+        context:
+          "Failed to execute 'before' on 'Element': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -614,7 +676,7 @@ Element.prototype.after = function after() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'after' on 'Element': parameter " + (i + 1)
+        context: "Failed to execute 'after' on 'Element': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -633,7 +695,8 @@ Element.prototype.replaceWith = function replaceWith() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'replaceWith' on 'Element': parameter " + (i + 1)
+        context:
+          "Failed to execute 'replaceWith' on 'Element': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -660,7 +723,8 @@ Element.prototype.prepend = function prepend() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'prepend' on 'Element': parameter " + (i + 1)
+        context:
+          "Failed to execute 'prepend' on 'Element': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -679,7 +743,8 @@ Element.prototype.append = function append() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'append' on 'Element': parameter " + (i + 1)
+        context:
+          "Failed to execute 'append' on 'Element': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -694,14 +759,16 @@ Element.prototype.querySelector = function querySelector(selectors) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'querySelector' on 'Element': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'querySelector' on 'Element': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'querySelector' on 'Element': parameter 1"
+      context: "Failed to execute 'querySelector' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
@@ -724,7 +791,7 @@ Element.prototype.querySelectorAll = function querySelectorAll(selectors) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'querySelectorAll' on 'Element': parameter 1"
+      context: "Failed to execute 'querySelectorAll' on 'Element': parameter 1",
     });
     args.push(curArg);
   }
@@ -741,7 +808,7 @@ Object.defineProperty(Element.prototype, "namespaceURI", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "prefix", {
@@ -754,7 +821,7 @@ Object.defineProperty(Element.prototype, "prefix", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "localName", {
@@ -767,7 +834,7 @@ Object.defineProperty(Element.prototype, "localName", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "tagName", {
@@ -780,7 +847,7 @@ Object.defineProperty(Element.prototype, "tagName", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "id", {
@@ -798,13 +865,16 @@ Object.defineProperty(Element.prototype, "id", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["DOMString"](V, { context: "Failed to set the 'id' property on 'Element': The provided value" });
+    V = conversions["DOMString"](V, {
+      context:
+        "Failed to set the 'id' property on 'Element': The provided value",
+    });
 
     this.setAttribute("id", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "className", {
@@ -823,14 +893,15 @@ Object.defineProperty(Element.prototype, "className", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'className' property on 'Element': The provided value"
+      context:
+        "Failed to set the 'className' property on 'Element': The provided value",
     });
 
     this.setAttribute("class", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "classList", {
@@ -853,7 +924,7 @@ Object.defineProperty(Element.prototype, "classList", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "attributes", {
@@ -868,7 +939,7 @@ Object.defineProperty(Element.prototype, "attributes", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "innerHTML", {
@@ -886,15 +957,16 @@ Object.defineProperty(Element.prototype, "innerHTML", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'innerHTML' property on 'Element': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'innerHTML' property on 'Element': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this[impl]["innerHTML"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "outerHTML", {
@@ -912,15 +984,16 @@ Object.defineProperty(Element.prototype, "outerHTML", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'outerHTML' property on 'Element': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'outerHTML' property on 'Element': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this[impl]["outerHTML"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "scrollTop", {
@@ -938,14 +1011,15 @@ Object.defineProperty(Element.prototype, "scrollTop", {
     }
 
     V = conversions["unrestricted double"](V, {
-      context: "Failed to set the 'scrollTop' property on 'Element': The provided value"
+      context:
+        "Failed to set the 'scrollTop' property on 'Element': The provided value",
     });
 
     this[impl]["scrollTop"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "scrollLeft", {
@@ -963,14 +1037,15 @@ Object.defineProperty(Element.prototype, "scrollLeft", {
     }
 
     V = conversions["unrestricted double"](V, {
-      context: "Failed to set the 'scrollLeft' property on 'Element': The provided value"
+      context:
+        "Failed to set the 'scrollLeft' property on 'Element': The provided value",
     });
 
     this[impl]["scrollLeft"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "scrollWidth", {
@@ -983,7 +1058,7 @@ Object.defineProperty(Element.prototype, "scrollWidth", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "scrollHeight", {
@@ -996,7 +1071,7 @@ Object.defineProperty(Element.prototype, "scrollHeight", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "clientTop", {
@@ -1009,7 +1084,7 @@ Object.defineProperty(Element.prototype, "clientTop", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "clientLeft", {
@@ -1022,7 +1097,7 @@ Object.defineProperty(Element.prototype, "clientLeft", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "clientWidth", {
@@ -1035,7 +1110,7 @@ Object.defineProperty(Element.prototype, "clientWidth", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "clientHeight", {
@@ -1048,7 +1123,7 @@ Object.defineProperty(Element.prototype, "clientHeight", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "previousElementSibling", {
@@ -1061,7 +1136,7 @@ Object.defineProperty(Element.prototype, "previousElementSibling", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "nextElementSibling", {
@@ -1074,7 +1149,7 @@ Object.defineProperty(Element.prototype, "nextElementSibling", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "children", {
@@ -1089,7 +1164,7 @@ Object.defineProperty(Element.prototype, "children", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "firstElementChild", {
@@ -1102,7 +1177,7 @@ Object.defineProperty(Element.prototype, "firstElementChild", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "lastElementChild", {
@@ -1115,7 +1190,7 @@ Object.defineProperty(Element.prototype, "lastElementChild", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, "childElementCount", {
@@ -1128,14 +1203,14 @@ Object.defineProperty(Element.prototype, "childElementCount", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Element.prototype, Symbol.toStringTag, {
   value: "Element",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -1201,7 +1276,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -1212,8 +1287,8 @@ const iface = {
   },
   interface: Element,
   expose: {
-    Window: { Element }
-  }
+    Window: { Element },
+  },
 }; // iface
 module.exports = iface;
 

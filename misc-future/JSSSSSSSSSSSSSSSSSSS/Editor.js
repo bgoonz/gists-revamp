@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 /**
  * `editor` type prompt
  */
 
-var chalk = require('chalk');
-var editAsync = require('external-editor').editAsync;
-var Base = require('./base');
-var observe = require('../utils/events');
-var { Subject } = require('rxjs');
+var chalk = require("chalk");
+var editAsync = require("external-editor").editAsync;
+var Base = require("./base");
+var observe = require("../utils/events");
+var { Subject } = require("rxjs");
 
 class EditorPrompt extends Base {
   /**
@@ -23,7 +23,9 @@ class EditorPrompt extends Base {
 
     // Open Editor on "line" (Enter Key)
     var events = observe(this.rl);
-    this.lineSubscription = events.line.subscribe(this.startExternalEditor.bind(this));
+    this.lineSubscription = events.line.subscribe(
+      this.startExternalEditor.bind(this)
+    );
 
     // Trigger Validation when editor closes
     var validation = this.handleSubmitEvents(this.editorResult);
@@ -46,17 +48,17 @@ class EditorPrompt extends Base {
    */
 
   render(error) {
-    var bottomContent = '';
+    var bottomContent = "";
     var message = this.getQuestion();
 
-    if (this.status === 'answered') {
-      message += chalk.dim('Received');
+    if (this.status === "answered") {
+      message += chalk.dim("Received");
     } else {
-      message += chalk.dim('Press <enter> to launch your preferred editor.');
+      message += chalk.dim("Press <enter> to launch your preferred editor.");
     }
 
     if (error) {
-      bottomContent = chalk.red('>> ') + error;
+      bottomContent = chalk.red(">> ") + error;
     }
 
     this.screen.render(message, bottomContent);
@@ -85,7 +87,7 @@ class EditorPrompt extends Base {
     this.editorResult.unsubscribe();
     this.lineSubscription.unsubscribe();
     this.answer = state.value;
-    this.status = 'answered';
+    this.status = "answered";
     // Re-render prompt
     this.render();
     this.screen.done();

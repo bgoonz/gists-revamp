@@ -17,18 +17,24 @@ function CustomEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'CustomEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'CustomEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'CustomEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'CustomEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertCustomEventInit(curArg, { context: "Failed to construct 'CustomEvent': parameter 2" });
+    curArg = convertCustomEventInit(curArg, {
+      context: "Failed to construct 'CustomEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(CustomEvent, "prototype", {
   value: CustomEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 CustomEvent.prototype.initCustomEvent = function initCustomEvent(type) {
@@ -61,7 +67,8 @@ CustomEvent.prototype.initCustomEvent = function initCustomEvent(type) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'initCustomEvent' on 'CustomEvent': parameter 1"
+      context:
+        "Failed to execute 'initCustomEvent' on 'CustomEvent': parameter 1",
     });
     args.push(curArg);
   }
@@ -69,7 +76,8 @@ CustomEvent.prototype.initCustomEvent = function initCustomEvent(type) {
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initCustomEvent' on 'CustomEvent': parameter 2"
+        context:
+          "Failed to execute 'initCustomEvent' on 'CustomEvent': parameter 2",
       });
     } else {
       curArg = false;
@@ -80,7 +88,8 @@ CustomEvent.prototype.initCustomEvent = function initCustomEvent(type) {
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initCustomEvent' on 'CustomEvent': parameter 3"
+        context:
+          "Failed to execute 'initCustomEvent' on 'CustomEvent': parameter 3",
       });
     } else {
       curArg = false;
@@ -91,7 +100,8 @@ CustomEvent.prototype.initCustomEvent = function initCustomEvent(type) {
     let curArg = arguments[3];
     if (curArg !== undefined) {
       curArg = conversions["any"](curArg, {
-        context: "Failed to execute 'initCustomEvent' on 'CustomEvent': parameter 4"
+        context:
+          "Failed to execute 'initCustomEvent' on 'CustomEvent': parameter 4",
       });
     } else {
       curArg = null;
@@ -111,14 +121,14 @@ Object.defineProperty(CustomEvent.prototype, "detail", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(CustomEvent.prototype, Symbol.toStringTag, {
   value: "CustomEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -184,7 +194,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -196,8 +206,8 @@ const iface = {
   interface: CustomEvent,
   expose: {
     Window: { CustomEvent },
-    Worker: { CustomEvent }
-  }
+    Worker: { CustomEvent },
+  },
 }; // iface
 module.exports = iface;
 

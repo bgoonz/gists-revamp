@@ -2,13 +2,13 @@
  * This is a fork from the CSS Style Declaration part of
  * https://github.com/NV/CSSOM
  ********************************************************************/
-'use strict';
-var CSSOM = require('cssom');
-var allProperties = require('./allProperties');
-var allExtraProperties = require('./allExtraProperties');
-var implementedProperties = require('./implementedProperties');
-var { dashedToCamelCase } = require('./parsers');
-var getBasicPropertyDescriptor = require('./utils/getBasicPropertyDescriptor');
+"use strict";
+var CSSOM = require("cssom");
+var allProperties = require("./allProperties");
+var allExtraProperties = require("./allExtraProperties");
+var implementedProperties = require("./implementedProperties");
+var { dashedToCamelCase } = require("./parsers");
+var getBasicPropertyDescriptor = require("./utils/getBasicPropertyDescriptor");
 
 /**
  * @constructor
@@ -20,7 +20,7 @@ var CSSStyleDeclaration = function CSSStyleDeclaration(onChangeCallback) {
   this._length = 0;
   this._onChange =
     onChangeCallback ||
-    function() {
+    function () {
       return;
     };
 };
@@ -34,9 +34,9 @@ CSSStyleDeclaration.prototype = {
    * @return {string} the value of the property if it has been explicitly set for this declaration block.
    * Returns the empty string if the property has not been set.
    */
-  getPropertyValue: function(name) {
+  getPropertyValue: function (name) {
     if (!this._values.hasOwnProperty(name)) {
-      return '';
+      return "";
     }
     return this._values[name].toString();
   },
@@ -48,27 +48,30 @@ CSSStyleDeclaration.prototype = {
    * @param {string} [priority=null] "important" or null
    * @see http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSSStyleDeclaration-setProperty
    */
-  setProperty: function(name, value, priority) {
+  setProperty: function (name, value, priority) {
     if (value === undefined) {
       return;
     }
-    if (value === null || value === '') {
+    if (value === null || value === "") {
       this.removeProperty(name);
       return;
     }
     var lowercaseName = name.toLowerCase();
-    if (!allProperties.has(lowercaseName) && !allExtraProperties.has(lowercaseName)) {
+    if (
+      !allProperties.has(lowercaseName) &&
+      !allExtraProperties.has(lowercaseName)
+    ) {
       return;
     }
 
     this[lowercaseName] = value;
     this._importants[lowercaseName] = priority;
   },
-  _setProperty: function(name, value, priority) {
+  _setProperty: function (name, value, priority) {
     if (value === undefined) {
       return;
     }
-    if (value === null || value === '') {
+    if (value === null || value === "") {
       this.removeProperty(name);
       return;
     }
@@ -96,9 +99,9 @@ CSSStyleDeclaration.prototype = {
    * @return {string} the value of the property if it has been explicitly set for this declaration block.
    * Returns the empty string if the property has not been set or the property name does not correspond to a known CSS property.
    */
-  removeProperty: function(name) {
+  removeProperty: function (name) {
     if (!this._values.hasOwnProperty(name)) {
-      return '';
+      return "";
     }
 
     var prevValue = this._values[name];
@@ -124,11 +127,11 @@ CSSStyleDeclaration.prototype = {
    *
    * @param {String} name
    */
-  getPropertyPriority: function(name) {
-    return this._importants[name] || '';
+  getPropertyPriority: function (name) {
+    return this._importants[name] || "";
   },
 
-  getPropertyCSSValue: function() {
+  getPropertyCSSValue: function () {
     //FIXME
     return;
   },
@@ -138,12 +141,12 @@ CSSStyleDeclaration.prototype = {
    *   element.style.getPropertyShorthand("overflow-x")
    *   -> "overflow"
    */
-  getPropertyShorthand: function() {
+  getPropertyShorthand: function () {
     //FIXME
     return;
   },
 
-  isPropertyImplicit: function() {
+  isPropertyImplicit: function () {
     //FIXME
     return;
   },
@@ -151,10 +154,10 @@ CSSStyleDeclaration.prototype = {
   /**
    *   http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSSStyleDeclaration-item
    */
-  item: function(index) {
+  item: function (index) {
     index = parseInt(index, 10);
     if (index < 0 || index >= this._length) {
-      return '';
+      return "";
     }
     return this[index];
   },
@@ -162,7 +165,7 @@ CSSStyleDeclaration.prototype = {
 
 Object.defineProperties(CSSStyleDeclaration.prototype, {
   cssText: {
-    get: function() {
+    get: function () {
       var properties = [];
       var i;
       var name;
@@ -172,21 +175,21 @@ Object.defineProperties(CSSStyleDeclaration.prototype, {
         name = this[i];
         value = this.getPropertyValue(name);
         priority = this.getPropertyPriority(name);
-        if (priority !== '') {
-          priority = ' !' + priority;
+        if (priority !== "") {
+          priority = " !" + priority;
         }
-        properties.push([name, ': ', value, priority, ';'].join(''));
+        properties.push([name, ": ", value, priority, ";"].join(""));
       }
-      return properties.join(' ');
+      return properties.join(" ");
     },
-    set: function(value) {
+    set: function (value) {
       var i;
       this._values = {};
       Array.prototype.splice.call(this, 0, this._length);
       this._importants = {};
       var dummyRule;
       try {
-        dummyRule = CSSOM.parse('#bogus{' + value + '}').cssRules[0].style;
+        dummyRule = CSSOM.parse("#bogus{" + value + "}").cssRules[0].style;
       } catch (err) {
         // malformed css, just return
         return;
@@ -207,14 +210,14 @@ Object.defineProperties(CSSStyleDeclaration.prototype, {
     configurable: true,
   },
   parentRule: {
-    get: function() {
+    get: function () {
       return null;
     },
     enumerable: true,
     configurable: true,
   },
   length: {
-    get: function() {
+    get: function () {
       return this._length;
     },
     /**
@@ -222,7 +225,7 @@ Object.defineProperties(CSSStyleDeclaration.prototype, {
      * length. If the new length is more, it does nothing, the new indices
      * will be undefined until set.
      **/
-    set: function(value) {
+    set: function (value) {
       var i;
       for (i = value; i < this._length; i++) {
         delete this[i];
@@ -234,21 +237,29 @@ Object.defineProperties(CSSStyleDeclaration.prototype, {
   },
 });
 
-require('./properties')(CSSStyleDeclaration.prototype);
+require("./properties")(CSSStyleDeclaration.prototype);
 
-allProperties.forEach(function(property) {
+allProperties.forEach(function (property) {
   if (!implementedProperties.has(property)) {
     var declaration = getBasicPropertyDescriptor(property);
     Object.defineProperty(CSSStyleDeclaration.prototype, property, declaration);
-    Object.defineProperty(CSSStyleDeclaration.prototype, dashedToCamelCase(property), declaration);
+    Object.defineProperty(
+      CSSStyleDeclaration.prototype,
+      dashedToCamelCase(property),
+      declaration
+    );
   }
 });
 
-allExtraProperties.forEach(function(property) {
+allExtraProperties.forEach(function (property) {
   if (!implementedProperties.has(property)) {
     var declaration = getBasicPropertyDescriptor(property);
     Object.defineProperty(CSSStyleDeclaration.prototype, property, declaration);
-    Object.defineProperty(CSSStyleDeclaration.prototype, dashedToCamelCase(property), declaration);
+    Object.defineProperty(
+      CSSStyleDeclaration.prototype,
+      dashedToCamelCase(property),
+      declaration
+    );
   }
 });
 

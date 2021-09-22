@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -13,19 +13,27 @@ var _drawRow = _interopRequireDefault(require("./drawRow"));
 
 var _drawBorder = require("./drawBorder");
 
-var _stringifyTableData = _interopRequireDefault(require("./stringifyTableData"));
+var _stringifyTableData = _interopRequireDefault(
+  require("./stringifyTableData")
+);
 
 var _truncateTableData = _interopRequireDefault(require("./truncateTableData"));
 
-var _mapDataUsingRowHeightIndex = _interopRequireDefault(require("./mapDataUsingRowHeightIndex"));
+var _mapDataUsingRowHeightIndex = _interopRequireDefault(
+  require("./mapDataUsingRowHeightIndex")
+);
 
 var _alignTableData = _interopRequireDefault(require("./alignTableData"));
 
 var _padTableData = _interopRequireDefault(require("./padTableData"));
 
-var _calculateRowHeightIndex = _interopRequireDefault(require("./calculateRowHeightIndex"));
+var _calculateRowHeightIndex = _interopRequireDefault(
+  require("./calculateRowHeightIndex")
+);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * @param {Array} data
@@ -49,14 +57,15 @@ const prepareData = (data, config) => {
  * @returns {undefined}
  */
 
-
 const create = (row, columnWidthIndex, config) => {
   const rows = prepareData([row], config);
-  const body = rows.map(literalRow => {
-    return (0, _drawRow.default)(literalRow, config.border);
-  }).join('');
+  const body = rows
+    .map((literalRow) => {
+      return (0, _drawRow.default)(literalRow, config.border);
+    })
+    .join("");
   let output;
-  output = '';
+  output = "";
   output += (0, _drawBorder.drawBorderTop)(columnWidthIndex, config.border);
   output += body;
   output += (0, _drawBorder.drawBorderBottom)(columnWidthIndex, config.border);
@@ -70,14 +79,15 @@ const create = (row, columnWidthIndex, config) => {
  * @returns {undefined}
  */
 
-
 const append = (row, columnWidthIndex, config) => {
   const rows = prepareData([row], config);
-  const body = rows.map(literalRow => {
-    return (0, _drawRow.default)(literalRow, config.border);
-  }).join('');
+  const body = rows
+    .map((literalRow) => {
+      return (0, _drawRow.default)(literalRow, config.border);
+    })
+    .join("");
   let output;
-  output = '\r\u001B[K';
+  output = "\r\u001B[K";
   output += (0, _drawBorder.drawBorderJoin)(columnWidthIndex, config.border);
   output += body;
   output += (0, _drawBorder.drawBorderBottom)(columnWidthIndex, config.border);
@@ -89,13 +99,14 @@ const append = (row, columnWidthIndex, config) => {
  * @returns {Object}
  */
 
-
 const createStream = (userConfig = {}) => {
   const config = (0, _makeStreamConfig.default)(userConfig); // @todo Use 'Object.values' when Node.js v6 support is dropped.
 
-  const columnWidthIndex = _lodash.default.values(_lodash.default.mapValues(config.columns, column => {
-    return column.width + column.paddingLeft + column.paddingRight;
-  }));
+  const columnWidthIndex = _lodash.default.values(
+    _lodash.default.mapValues(config.columns, (column) => {
+      return column.width + column.paddingLeft + column.paddingRight;
+    })
+  );
 
   let empty;
   empty = true;
@@ -104,9 +115,11 @@ const createStream = (userConfig = {}) => {
      * @param {string[]} row
      * @returns {undefined}
      */
-    write: row => {
+    write: (row) => {
       if (row.length !== config.columnCount) {
-        throw new Error('Row cell count does not match the config.columnCount.');
+        throw new Error(
+          "Row cell count does not match the config.columnCount."
+        );
       }
 
       if (empty) {
@@ -115,7 +128,7 @@ const createStream = (userConfig = {}) => {
       } else {
         return append(row, columnWidthIndex, config);
       }
-    }
+    },
   };
 };
 

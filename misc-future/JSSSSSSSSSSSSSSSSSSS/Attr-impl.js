@@ -4,11 +4,16 @@ const attributes = require("../attributes.js");
 
 exports.implementation = class AttrImpl {
   constructor(_, privateData) {
-    this._namespace = privateData.namespace !== undefined ? privateData.namespace : null;
-    this._namespacePrefix = privateData.namespacePrefix !== undefined ? privateData.namespacePrefix : null;
+    this._namespace =
+      privateData.namespace !== undefined ? privateData.namespace : null;
+    this._namespacePrefix =
+      privateData.namespacePrefix !== undefined
+        ? privateData.namespacePrefix
+        : null;
     this._localName = privateData.localName;
     this._value = privateData.value !== undefined ? privateData.value : "";
-    this._element = privateData.element !== undefined ? privateData.element : null;
+    this._element =
+      privateData.element !== undefined ? privateData.element : null;
 
     this.specified = true;
   }

@@ -1,11 +1,11 @@
-'use strict';
-var toIndexedObject = require('../internals/to-indexed-object');
-var addToUnscopables = require('../internals/add-to-unscopables');
-var Iterators = require('../internals/iterators');
-var InternalStateModule = require('../internals/internal-state');
-var defineIterator = require('../internals/define-iterator');
+"use strict";
+var toIndexedObject = require("../internals/to-indexed-object");
+var addToUnscopables = require("../internals/add-to-unscopables");
+var Iterators = require("../internals/iterators");
+var InternalStateModule = require("../internals/internal-state");
+var defineIterator = require("../internals/define-iterator");
 
-var ARRAY_ITERATOR = 'Array Iterator';
+var ARRAY_ITERATOR = "Array Iterator";
 var setInternalState = InternalStateModule.set;
 var getInternalState = InternalStateModule.getterFor(ARRAY_ITERATOR);
 
@@ -19,40 +19,48 @@ var getInternalState = InternalStateModule.getterFor(ARRAY_ITERATOR);
 // https://tc39.es/ecma262/#sec-array.prototype-@@iterator
 // `CreateArrayIterator` internal method
 // https://tc39.es/ecma262/#sec-createarrayiterator
-module.exports = defineIterator(Array, 'Array', function(iterated, kind) {
+module.exports = defineIterator(
+  Array,
+  "Array",
+  function (iterated, kind) {
     setInternalState(this, {
-        type: ARRAY_ITERATOR,
-        target: toIndexedObject(iterated), // target
-        index: 0, // next index
-        kind: kind // kind
+      type: ARRAY_ITERATOR,
+      target: toIndexedObject(iterated), // target
+      index: 0, // next index
+      kind: kind, // kind
     });
     // `%ArrayIteratorPrototype%.next` method
     // https://tc39.es/ecma262/#sec-%arrayiteratorprototype%.next
-}, function() {
+  },
+  function () {
     var state = getInternalState(this);
     var target = state.target;
     var kind = state.kind;
     var index = state.index++;
     if (!target || index >= target.length) {
-        state.target = undefined;
-        return {
-            value: undefined,
-            done: true
-        };
+      state.target = undefined;
+      return {
+        value: undefined,
+        done: true,
+      };
     }
-    if (kind == 'keys') return {
+    if (kind == "keys")
+      return {
         value: index,
-        done: false
-    };
-    if (kind == 'values') return {
+        done: false,
+      };
+    if (kind == "values")
+      return {
         value: target[index],
-        done: false
-    };
+        done: false,
+      };
     return {
-        value: [index, target[index]],
-        done: false
+      value: [index, target[index]],
+      done: false,
     };
-}, 'values');
+  },
+  "values"
+);
 
 // argumentsList[@@iterator] is %ArrayProto_values%
 // https://tc39.es/ecma262/#sec-createunmappedargumentsobject
@@ -60,6 +68,6 @@ module.exports = defineIterator(Array, 'Array', function(iterated, kind) {
 Iterators.Arguments = Iterators.Array;
 
 // https://tc39.es/ecma262/#sec-array.prototype-@@unscopables
-addToUnscopables('keys');
-addToUnscopables('values');
-addToUnscopables('entries');
+addToUnscopables("keys");
+addToUnscopables("values");
+addToUnscopables("entries");

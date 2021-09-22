@@ -17,12 +17,21 @@ const attrGenerated = require("../generated/Attr");
 const NamedNodeMap = require("../generated/NamedNodeMap");
 const validateNames = require("../helpers/validate-names");
 const { asciiLowercase } = require("../helpers/strings");
-const { clone, listOfElementsWithQualifiedName, listOfElementsWithNamespaceAndLocalName,
-  listOfElementsWithClassNames } = require("../node");
-const NonDocumentTypeChildNode = require("./NonDocumentTypeChildNode-impl").implementation;
+const {
+  clone,
+  listOfElementsWithQualifiedName,
+  listOfElementsWithNamespaceAndLocalName,
+  listOfElementsWithClassNames,
+} = require("../node");
+const NonDocumentTypeChildNode =
+  require("./NonDocumentTypeChildNode-impl").implementation;
 
 function clearChildNodes(node) {
-  for (let child = domSymbolTree.firstChild(node); child; child = domSymbolTree.firstChild(node)) {
+  for (
+    let child = domSymbolTree.firstChild(node);
+    child;
+    child = domSymbolTree.firstChild(node)
+  ) {
     node.removeChild(child);
   }
 }
@@ -84,7 +93,7 @@ class ElementImpl extends NodeImpl {
     // Used for caching.
     this._attributesByNameMap = new Map();
     this._attributes = NamedNodeMap.createImpl([], {
-      element: this
+      element: this,
     });
   }
 
@@ -136,11 +145,16 @@ class ElementImpl extends NodeImpl {
     return this._localName;
   }
   get _qualifiedName() {
-    return this._prefix !== null ? this._prefix + ":" + this._localName : this._localName;
+    return this._prefix !== null
+      ? this._prefix + ":" + this._localName
+      : this._localName;
   }
   get tagName() {
     let qualifiedName = this._qualifiedName;
-    if (this.namespaceURI === HTML_NS && this._ownerDocument._parsingMode === "html") {
+    if (
+      this.namespaceURI === HTML_NS &&
+      this._ownerDocument._parsingMode === "html"
+    ) {
       qualifiedName = qualifiedName.toUpperCase();
     }
     return qualifiedName;
@@ -168,7 +182,10 @@ class ElementImpl extends NodeImpl {
 
     let contextElement;
     if (parent.nodeType === NODE_TYPE.DOCUMENT_NODE) {
-      throw new DOMException("Modifications are not allowed for this document", "NoModificationAllowedError");
+      throw new DOMException(
+        "Modifications are not allowed for this document",
+        "NoModificationAllowedError"
+      );
     } else if (parent.nodeType === NODE_TYPE.DOCUMENT_FRAGMENT_NODE) {
       contextElement = document.createElementNS(HTML_NS, "body");
     } else if (parent.nodeType === NODE_TYPE.ELEMENT_NODE) {
@@ -216,7 +233,7 @@ class ElementImpl extends NodeImpl {
     if (this._classList === undefined) {
       this._classList = DOMTokenList.createImpl([], {
         element: this,
-        attributeLocalName: "class"
+        attributeLocalName: "class",
       });
     }
     return this._classList;
@@ -249,7 +266,10 @@ class ElementImpl extends NodeImpl {
   setAttribute(name, value) {
     validateNames.name(name);
 
-    if (this._namespaceURI === HTML_NS && this._ownerDocument._parsingMode === "html") {
+    if (
+      this._namespaceURI === HTML_NS &&
+      this._ownerDocument._parsingMode === "html"
+    ) {
       name = asciiLowercase(name);
     }
 
@@ -267,7 +287,13 @@ class ElementImpl extends NodeImpl {
   setAttributeNS(namespace, name, value) {
     const extracted = validateNames.validateAndExtract(namespace, name);
 
-    attributes.setAttributeValue(this, extracted.localName, value, extracted.prefix, extracted.namespace);
+    attributes.setAttributeValue(
+      this,
+      extracted.localName,
+      value,
+      extracted.prefix,
+      extracted.namespace
+    );
   }
 
   removeAttribute(name) {
@@ -279,7 +305,10 @@ class ElementImpl extends NodeImpl {
   }
 
   hasAttribute(name) {
-    if (this._namespaceURI === HTML_NS && this._ownerDocument._parsingMode === "html") {
+    if (
+      this._namespaceURI === HTML_NS &&
+      this._ownerDocument._parsingMode === "html"
+    ) {
       name = asciiLowercase(name);
     }
 
@@ -312,7 +341,10 @@ class ElementImpl extends NodeImpl {
 
   removeAttributeNode(attr) {
     if (!attributes.hasAttribute(this, attr)) {
-      throw new DOMException("Tried to remove an attribute that was not present", "NotFoundError");
+      throw new DOMException(
+        "Tried to remove an attribute that was not present",
+        "NotFoundError"
+      );
     }
 
     attributes.removeAttribute(this, attr);
@@ -327,7 +359,7 @@ class ElementImpl extends NodeImpl {
       left: 0,
       right: 0,
       top: 0,
-      width: 0
+      width: 0,
     };
   }
 
@@ -369,8 +401,11 @@ class ElementImpl extends NodeImpl {
       case "afterend": {
         context = this.parentNode;
         if (context === null || context.nodeType === NODE_TYPE.DOCUMENT_NODE) {
-          throw new DOMException("Cannot insert HTML adjacent to " +
-            "parent-less nodes or children of document nodes.", "NoModificationAllowedError");
+          throw new DOMException(
+            "Cannot insert HTML adjacent to " +
+              "parent-less nodes or children of document nodes.",
+            "NoModificationAllowedError"
+          );
         }
         break;
       }
@@ -380,8 +415,11 @@ class ElementImpl extends NodeImpl {
         break;
       }
       default: {
-        throw new DOMException("Must provide one of \"beforebegin\", \"afterend\", " +
-          "\"afterbegin\", or \"beforeend\".", "SyntaxError");
+        throw new DOMException(
+          'Must provide one of "beforebegin", "afterend", ' +
+            '"afterbegin", or "beforeend".',
+          "SyntaxError"
+        );
       }
     }
 
@@ -419,15 +457,22 @@ mixin(ElementImpl.prototype, NonDocumentTypeChildNode.prototype);
 mixin(ElementImpl.prototype, ParentNodeImpl.prototype);
 mixin(ElementImpl.prototype, ChildNodeImpl.prototype);
 
-ElementImpl.prototype.getElementsByTagName = memoizeQuery(function (qualifiedName) {
+ElementImpl.prototype.getElementsByTagName = memoizeQuery(function (
+  qualifiedName
+) {
   return listOfElementsWithQualifiedName(qualifiedName, this);
 });
 
-ElementImpl.prototype.getElementsByTagNameNS = memoizeQuery(function (namespace, localName) {
+ElementImpl.prototype.getElementsByTagNameNS = memoizeQuery(function (
+  namespace,
+  localName
+) {
   return listOfElementsWithNamespaceAndLocalName(namespace, localName, this);
 });
 
-ElementImpl.prototype.getElementsByClassName = memoizeQuery(function (classNames) {
+ElementImpl.prototype.getElementsByClassName = memoizeQuery(function (
+  classNames
+) {
   return listOfElementsWithClassNames(classNames, this);
 });
 
@@ -440,5 +485,5 @@ ElementImpl.prototype.matches = memoizeQuery(function (selectors) {
 ElementImpl.prototype.webkitMatchesSelector = ElementImpl.prototype.matches;
 
 module.exports = {
-  implementation: ElementImpl
+  implementation: ElementImpl,
 };

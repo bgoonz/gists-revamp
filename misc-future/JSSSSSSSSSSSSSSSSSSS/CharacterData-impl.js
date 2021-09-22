@@ -3,7 +3,8 @@
 const { mixin } = require("../../utils");
 const NodeImpl = require("./Node-impl").implementation;
 const ChildNodeImpl = require("./ChildNode-impl").implementation;
-const NonDocumentTypeChildNodeImpl = require("./NonDocumentTypeChildNode-impl").implementation;
+const NonDocumentTypeChildNodeImpl =
+  require("./NonDocumentTypeChildNode-impl").implementation;
 const DOMException = require("domexception");
 const { TEXT_NODE } = require("../node-type");
 
@@ -29,7 +30,10 @@ class CharacterDataImpl extends NodeImpl {
     const { length } = this;
 
     if (offset > length) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
 
     if (offset + count > length) {
@@ -55,7 +59,10 @@ class CharacterDataImpl extends NodeImpl {
     const { length } = this;
 
     if (offset > length) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
 
     if (offset + count > length) {
@@ -79,5 +86,5 @@ mixin(CharacterDataImpl.prototype, NonDocumentTypeChildNodeImpl.prototype);
 mixin(CharacterDataImpl.prototype, ChildNodeImpl.prototype);
 
 module.exports = {
-  implementation: CharacterDataImpl
+  implementation: CharacterDataImpl,
 };

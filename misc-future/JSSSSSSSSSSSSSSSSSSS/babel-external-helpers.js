@@ -32,12 +32,25 @@ function collect(value, previousValue) {
   return values;
 }
 
-_commander().option("-l, --whitelist [whitelist]", "Whitelist of helpers to ONLY include", collect);
+_commander().option(
+  "-l, --whitelist [whitelist]",
+  "Whitelist of helpers to ONLY include",
+  collect
+);
 
-_commander().option("-t, --output-type [type]", "Type of output (global|umd|var)", "global");
+_commander().option(
+  "-t, --output-type [type]",
+  "Type of output (global|umd|var)",
+  "global"
+);
 
 _commander().usage("[options]");
 
 _commander().parse(process.argv);
 
-console.log((0, _core().buildExternalHelpers)(_commander().whitelist, _commander().outputType));
+console.log(
+  (0, _core().buildExternalHelpers)(
+    _commander().whitelist,
+    _commander().outputType
+  )
+);

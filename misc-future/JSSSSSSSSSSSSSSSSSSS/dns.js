@@ -1,6 +1,8 @@
 var dns = require("dns");
 var promisify = require("./_promisify.js");
-var bind = function(c, f) { return f && f.bind(c); };
+var bind = function (c, f) {
+  return f && f.bind(c);
+};
 Object.defineProperties(module.exports, {
   ADDRCONFIG: { enumerable: true, value: dns.ADDRCONFIG },
   ADDRGETNETWORKPARAMS: { enumerable: true, value: dns.ADDRGETNETWORKPARAMS },
@@ -31,14 +33,25 @@ Object.defineProperties(module.exports, {
   V4MAPPED: { enumerable: true, value: dns.V4MAPPED },
   getServers: { enumerable: true, value: bind(dns, dns.getServers) },
   lookup: { enumerable: true, value: promisify(dns, dns.lookup, 1) },
-  lookupService: { enumerable: true, value: promisify(dns, dns.lookupService, 2, {"pattern":["hostname","service"]}) },
+  lookupService: {
+    enumerable: true,
+    value: promisify(dns, dns.lookupService, 2, {
+      pattern: ["hostname", "service"],
+    }),
+  },
   resolve: { enumerable: true, value: promisify(dns, dns.resolve, 1) },
   resolve4: { enumerable: true, value: promisify(dns, dns.resolve4, 1) },
   resolve6: { enumerable: true, value: promisify(dns, dns.resolve6, 1) },
   resolveAny: { enumerable: true, value: promisify(dns, dns.resolveAny, 1) },
-  resolveCname: { enumerable: true, value: promisify(dns, dns.resolveCname, 1) },
+  resolveCname: {
+    enumerable: true,
+    value: promisify(dns, dns.resolveCname, 1),
+  },
   resolveMx: { enumerable: true, value: promisify(dns, dns.resolveMx, 1) },
-  resolveNaptr: { enumerable: true, value: promisify(dns, dns.resolveNaptr, 1) },
+  resolveNaptr: {
+    enumerable: true,
+    value: promisify(dns, dns.resolveNaptr, 1),
+  },
   resolveNs: { enumerable: true, value: promisify(dns, dns.resolveNs, 1) },
   resolvePtr: { enumerable: true, value: promisify(dns, dns.resolvePtr, 1) },
   resolveSoa: { enumerable: true, value: promisify(dns, dns.resolveSoa, 1) },

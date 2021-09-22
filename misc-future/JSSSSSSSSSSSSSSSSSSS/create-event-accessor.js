@@ -7,7 +7,7 @@ const ErrorEvent = require("../generated/ErrorEvent");
 const reportException = require("./runtime-script-errors");
 
 exports.appendHandler = function appendHandler(el, eventName) {
-  el.addEventListener(eventName, event => {
+  el.addEventListener(eventName, (event) => {
     // https://html.spec.whatwg.org/#the-event-handler-processing-algorithm
     event = idlUtils.implForWrapper(event);
 
@@ -16,7 +16,9 @@ exports.appendHandler = function appendHandler(el, eventName) {
       return;
     }
 
-    const specialError = ErrorEvent.isImpl(event) && event.type === "error" &&
+    const specialError =
+      ErrorEvent.isImpl(event) &&
+      event.type === "error" &&
       event.currentTarget.constructor.name === "Window";
 
     let returnValue = null;
@@ -25,8 +27,12 @@ exports.appendHandler = function appendHandler(el, eventName) {
     if (typeof callback === "function") {
       if (specialError) {
         returnValue = callback.call(
-          thisValue, event.message,
-          event.filename, event.lineno, event.colno, event.error
+          thisValue,
+          event.message,
+          event.filename,
+          event.lineno,
+          event.colno,
+          event.error
         );
       } else {
         const eventWrapper = idlUtils.wrapperForImpl(event);
@@ -34,9 +40,13 @@ exports.appendHandler = function appendHandler(el, eventName) {
       }
     }
 
-    if (event.type === "beforeunload") { // TODO: we don't implement BeforeUnloadEvent so we can't brand-check here
+    if (event.type === "beforeunload") {
+      // TODO: we don't implement BeforeUnloadEvent so we can't brand-check here
       // Perform conversion which in the spec is done by the event handler return type being DOMString?
-      returnValue = returnValue === undefined || returnValue === null ? null : conversions.DOMString(returnValue);
+      returnValue =
+        returnValue === undefined || returnValue === null
+          ? null
+          : conversions.DOMString(returnValue);
 
       if (returnValue !== null) {
         event._canceledFlag = true;
@@ -83,7 +93,8 @@ exports.createEventAccessor = function createEventAccessor(obj, event) {
   Object.defineProperty(obj, "on" + event, {
     configurable: true,
     enumerable: true,
-    get() { // https://html.spec.whatwg.org/#getting-the-current-value-of-the-event-handler
+    get() {
+      // https://html.spec.whatwg.org/#getting-the-current-value-of-the-event-handler
       const value = this._getEventHandlerFor(event);
       if (!value) {
         return null;
@@ -101,8 +112,12 @@ exports.createEventAccessor = function createEventAccessor(obj, event) {
         }
         const { body } = value;
 
-        const formOwner = element !== null && element.form ? element.form : null;
-        const window = this.constructor.name === "Window" && this._document ? this : document.defaultView;
+        const formOwner =
+          element !== null && element.form ? element.form : null;
+        const window =
+          this.constructor.name === "Window" && this._document
+            ? this
+            : document.defaultView;
 
         try {
           // eslint-disable-next-line no-new-func
@@ -119,14 +134,21 @@ exports.createEventAccessor = function createEventAccessor(obj, event) {
         // Note: the with (window) { } is not necessary in Node, but is necessary in a browserified environment.
 
         let fn;
-        const createFunction = vm.isContext(document._global) ? document.defaultView._globalProxy.Function : Function;
+        const createFunction = vm.isContext(document._global)
+          ? document.defaultView._globalProxy.Function
+          : Function;
         if (event === "error" && element === null) {
-          const wrapperBody = document ? body + `\n//# sourceURL=${document.URL}` : body;
+          const wrapperBody = document
+            ? body + `\n//# sourceURL=${document.URL}`
+            : body;
 
           // eslint-disable-next-line no-new-func
-          fn = createFunction("window", `with (window) { return function onerror(event, source, lineno, colno, error) {
+          fn = createFunction(
+            "window",
+            `with (window) { return function onerror(event, source, lineno, colno, error) {
   ${wrapperBody}
-}; }`)(window);
+}; }`
+          )(window);
         } else {
           const argNames = [];
           const args = [];
@@ -167,7 +189,7 @@ return function on${event}(event) {
     set(val) {
       val = eventHandlerArgCoercion(val);
       this._setEventHandlerFor(event, val);
-    }
+    },
   });
 };
 

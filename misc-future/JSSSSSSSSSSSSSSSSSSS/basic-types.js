@@ -6,7 +6,9 @@ function detach(value) {
     return;
   }
 
-  throw new TypeError(`jsdom internal error: detaching object of wrong type ${value}`);
+  throw new TypeError(
+    `jsdom internal error: detaching object of wrong type ${value}`
+  );
 }
 exports.detach = detach;
 
@@ -19,7 +21,9 @@ function attach(value, listObject) {
     return;
   }
 
-  throw new TypeError(`jsdom internal error: attaching object of wrong type ${value}`);
+  throw new TypeError(
+    `jsdom internal error: attaching object of wrong type ${value}`
+  );
 }
 exports.attach = attach;
 

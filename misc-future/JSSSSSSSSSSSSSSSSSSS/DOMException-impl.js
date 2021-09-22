@@ -14,7 +14,7 @@ exports.implementation = class DOMExceptionImpl {
 };
 
 // A proprietary V8 extension that causes the stack property to appear.
-exports.init = impl => {
+exports.init = (impl) => {
   if (Error.captureStackTrace) {
     const wrapper = idlUtils.wrapperForImpl(impl);
     Error.captureStackTrace(wrapper, wrapper.constructor);

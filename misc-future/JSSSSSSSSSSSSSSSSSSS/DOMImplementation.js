@@ -14,10 +14,14 @@ Object.defineProperty(DOMImplementation, "prototype", {
   value: DOMImplementation.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
-DOMImplementation.prototype.createDocumentType = function createDocumentType(qualifiedName, publicId, systemId) {
+DOMImplementation.prototype.createDocumentType = function createDocumentType(
+  qualifiedName,
+  publicId,
+  systemId
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -33,28 +37,34 @@ DOMImplementation.prototype.createDocumentType = function createDocumentType(qua
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createDocumentType' on 'DOMImplementation': parameter 1"
+      context:
+        "Failed to execute 'createDocumentType' on 'DOMImplementation': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createDocumentType' on 'DOMImplementation': parameter 2"
+      context:
+        "Failed to execute 'createDocumentType' on 'DOMImplementation': parameter 2",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[2];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createDocumentType' on 'DOMImplementation': parameter 3"
+      context:
+        "Failed to execute 'createDocumentType' on 'DOMImplementation': parameter 3",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].createDocumentType(...args));
 };
 
-DOMImplementation.prototype.createDocument = function createDocument(namespace, qualifiedName) {
+DOMImplementation.prototype.createDocument = function createDocument(
+  namespace,
+  qualifiedName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -73,7 +83,8 @@ DOMImplementation.prototype.createDocument = function createDocument(namespace, 
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'createDocument' on 'DOMImplementation': parameter 1"
+        context:
+          "Failed to execute 'createDocument' on 'DOMImplementation': parameter 1",
       });
     }
     args.push(curArg);
@@ -81,8 +92,9 @@ DOMImplementation.prototype.createDocument = function createDocument(namespace, 
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createDocument' on 'DOMImplementation': parameter 2",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to execute 'createDocument' on 'DOMImplementation': parameter 2",
+      treatNullAsEmptyString: true,
     });
     args.push(curArg);
   }
@@ -93,7 +105,8 @@ DOMImplementation.prototype.createDocument = function createDocument(namespace, 
         curArg = null;
       } else {
         curArg = convertDocumentType(curArg, {
-          context: "Failed to execute 'createDocument' on 'DOMImplementation': parameter 3"
+          context:
+            "Failed to execute 'createDocument' on 'DOMImplementation': parameter 3",
         });
       }
     } else {
@@ -113,7 +126,8 @@ DOMImplementation.prototype.createHTMLDocument = function createHTMLDocument() {
     let curArg = arguments[0];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'createHTMLDocument' on 'DOMImplementation': parameter 1"
+        context:
+          "Failed to execute 'createHTMLDocument' on 'DOMImplementation': parameter 1",
       });
     }
     args.push(curArg);
@@ -133,7 +147,7 @@ Object.defineProperty(DOMImplementation.prototype, Symbol.toStringTag, {
   value: "DOMImplementation",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -197,7 +211,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -208,8 +222,8 @@ const iface = {
   },
   interface: DOMImplementation,
   expose: {
-    Window: { DOMImplementation }
-  }
+    Window: { DOMImplementation },
+  },
 }; // iface
 module.exports = iface;
 

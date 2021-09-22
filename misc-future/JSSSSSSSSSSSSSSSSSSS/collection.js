@@ -1,2 +1,2 @@
-var convert = require('./convert');
-module.exports = convert(require('../collection'));
+var convert = require("./convert");
+module.exports = convert(require("../collection"));

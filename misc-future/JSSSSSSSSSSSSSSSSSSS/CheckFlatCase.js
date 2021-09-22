@@ -9,12 +9,12 @@
  */
 const CheckFlatCase = (varname) => {
   // firstly, check that input is a string or not.
-  if (typeof varname !== 'string') {
-    return new TypeError('Argument is not a string.')
+  if (typeof varname !== "string") {
+    return new TypeError("Argument is not a string.");
   }
 
-  const pat = /^[a-z]*$/
-  return pat.test(varname)
-}
+  const pat = /^[a-z]*$/;
+  return pat.test(varname);
+};
 
-module.exports = CheckFlatCase
+module.exports = CheckFlatCase;

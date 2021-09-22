@@ -44,7 +44,10 @@ exports.implementation = class DefaultConstraintValidationImpl {
   // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-cva-validationmessage
   get validationMessage() {
     const { validity } = this;
-    if (!this._isCandidateForConstraintValidation() || this._satisfiesConstraints()) {
+    if (
+      !this._isCandidateForConstraintValidation() ||
+      this._satisfiesConstraints()
+    ) {
       return "";
     }
     const isSufferingFromCustomError = validity.customError;
@@ -56,11 +59,13 @@ exports.implementation = class DefaultConstraintValidationImpl {
 
   _isCandidateForConstraintValidation() {
     // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled
-    return !isDisabled(this) &&
+    return (
+      !isDisabled(this) &&
       // If an element has a datalist element ancestor,
       // it is barred from constraint validation.
       closest(this, "datalist") === null &&
-      !this._barredFromConstraintValidationSpecialization();
+      !this._barredFromConstraintValidationSpecialization()
+    );
   }
 
   _isBarredFromConstraintValidation() {

@@ -12,85 +12,98 @@ const astUtils = require("../util/ast-utils");
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "layout",
+  meta: {
+    type: "layout",
 
-        docs: {
-            description: "enforce consistent newlines before and after dots",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/dot-location"
-        },
-
-        schema: [
-            {
-                enum: ["object", "property"]
-            }
-        ],
-
-        fixable: "code",
-
-        messages: {
-            expectedDotAfterObject: "Expected dot to be on same line as object.",
-            expectedDotBeforeProperty: "Expected dot to be on same line as property."
-        }
+    docs: {
+      description: "enforce consistent newlines before and after dots",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/dot-location",
     },
 
-    create(context) {
+    schema: [
+      {
+        enum: ["object", "property"],
+      },
+    ],
 
-        const config = context.options[0];
+    fixable: "code",
 
-        // default to onObject if no preference is passed
-        const onObject = config === "object" || !config;
+    messages: {
+      expectedDotAfterObject: "Expected dot to be on same line as object.",
+      expectedDotBeforeProperty: "Expected dot to be on same line as property.",
+    },
+  },
 
-        const sourceCode = context.getSourceCode();
+  create(context) {
+    const config = context.options[0];
 
-        /**
-         * Reports if the dot between object and property is on the correct loccation.
-         * @param {ASTNode} obj The object owning the property.
-         * @param {ASTNode} prop The property of the object.
-         * @param {ASTNode} node The corresponding node of the token.
-         * @returns {void}
-         */
-        function checkDotLocation(obj, prop, node) {
-            const dot = sourceCode.getTokenBefore(prop);
-            const textBeforeDot = sourceCode.getText().slice(obj.range[1], dot.range[0]);
-            const textAfterDot = sourceCode.getText().slice(dot.range[1], prop.range[0]);
+    // default to onObject if no preference is passed
+    const onObject = config === "object" || !config;
 
-            if (dot.type === "Punctuator" && dot.value === ".") {
-                if (onObject) {
-                    if (!astUtils.isTokenOnSameLine(obj, dot)) {
-                        const neededTextAfterObj = astUtils.isDecimalInteger(obj) ? " " : "";
+    const sourceCode = context.getSourceCode();
 
-                        context.report({
-                            node,
-                            loc: dot.loc.start,
-                            messageId: "expectedDotAfterObject",
-                            fix: fixer => fixer.replaceTextRange([obj.range[1], prop.range[0]], `${neededTextAfterObj}.${textBeforeDot}${textAfterDot}`)
-                        });
-                    }
-                } else if (!astUtils.isTokenOnSameLine(dot, prop)) {
-                    context.report({
-                        node,
-                        loc: dot.loc.start,
-                        messageId: "expectedDotBeforeProperty",
-                        fix: fixer => fixer.replaceTextRange([obj.range[1], prop.range[0]], `${textBeforeDot}${textAfterDot}.`)
-                    });
-                }
-            }
+    /**
+     * Reports if the dot between object and property is on the correct loccation.
+     * @param {ASTNode} obj The object owning the property.
+     * @param {ASTNode} prop The property of the object.
+     * @param {ASTNode} node The corresponding node of the token.
+     * @returns {void}
+     */
+    function checkDotLocation(obj, prop, node) {
+      const dot = sourceCode.getTokenBefore(prop);
+      const textBeforeDot = sourceCode
+        .getText()
+        .slice(obj.range[1], dot.range[0]);
+      const textAfterDot = sourceCode
+        .getText()
+        .slice(dot.range[1], prop.range[0]);
+
+      if (dot.type === "Punctuator" && dot.value === ".") {
+        if (onObject) {
+          if (!astUtils.isTokenOnSameLine(obj, dot)) {
+            const neededTextAfterObj = astUtils.isDecimalInteger(obj)
+              ? " "
+              : "";
+
+            context.report({
+              node,
+              loc: dot.loc.start,
+              messageId: "expectedDotAfterObject",
+              fix: (fixer) =>
+                fixer.replaceTextRange(
+                  [obj.range[1], prop.range[0]],
+                  `${neededTextAfterObj}.${textBeforeDot}${textAfterDot}`
+                ),
+            });
+          }
+        } else if (!astUtils.isTokenOnSameLine(dot, prop)) {
+          context.report({
+            node,
+            loc: dot.loc.start,
+            messageId: "expectedDotBeforeProperty",
+            fix: (fixer) =>
+              fixer.replaceTextRange(
+                [obj.range[1], prop.range[0]],
+                `${textBeforeDot}${textAfterDot}.`
+              ),
+          });
         }
-
-        /**
-         * Checks the spacing of the dot within a member expression.
-         * @param {ASTNode} node The node to check.
-         * @returns {void}
-         */
-        function checkNode(node) {
-            checkDotLocation(node.object, node.property, node);
-        }
-
-        return {
-            MemberExpression: checkNode
-        };
+      }
     }
+
+    /**
+     * Checks the spacing of the dot within a member expression.
+     * @param {ASTNode} node The node to check.
+     * @returns {void}
+     */
+    function checkNode(node) {
+      checkDotLocation(node.object, node.property, node);
+    }
+
+    return {
+      MemberExpression: checkNode,
+    };
+  },
 };

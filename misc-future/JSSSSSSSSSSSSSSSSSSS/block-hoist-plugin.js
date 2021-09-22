@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = loadBlockHoistPlugin;
 
@@ -21,9 +21,12 @@ let LOADED_PLUGIN;
 
 function loadBlockHoistPlugin() {
   if (!LOADED_PLUGIN) {
-    LOADED_PLUGIN = new _plugin.default(Object.assign({}, blockHoistPlugin, {
-      visitor: _traverse().default.explode(blockHoistPlugin.visitor)
-    }), {});
+    LOADED_PLUGIN = new _plugin.default(
+      Object.assign({}, blockHoistPlugin, {
+        visitor: _traverse().default.explode(blockHoistPlugin.visitor),
+      }),
+      {}
+    );
   }
 
   return LOADED_PLUGIN;
@@ -46,7 +49,9 @@ function stableSort(body) {
     bucket.push(n);
   }
 
-  const keys = Object.keys(buckets).map(k => +k).sort((a, b) => b - a);
+  const keys = Object.keys(buckets)
+    .map((k) => +k)
+    .sort((a, b) => b - a);
   let index = 0;
 
   for (const key of keys) {
@@ -64,12 +69,8 @@ const blockHoistPlugin = {
   name: "internal.blockHoist",
   visitor: {
     Block: {
-      exit({
-        node
-      }) {
-        const {
-          body
-        } = node;
+      exit({ node }) {
+        const { body } = node;
         let max = Math.pow(2, 30) - 1;
         let hasChange = false;
 
@@ -87,8 +88,7 @@ const blockHoistPlugin = {
 
         if (!hasChange) return;
         node.body = stableSort(body.slice());
-      }
-
-    }
-  }
+      },
+    },
+  },
 };

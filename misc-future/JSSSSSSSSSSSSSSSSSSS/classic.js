@@ -4,9 +4,13 @@ var classic,
 
 module.exports = classic = {};
 
-classic.implement = function() {
+classic.implement = function () {
   var classProto, classReference, desc, member, mixin, mixins, _i, _j, _len;
-  mixins = 2 <= arguments.length ? __slice.call(arguments, 0, _i = arguments.length - 1) : (_i = 0, []), classReference = arguments[_i++];
+  (mixins =
+    2 <= arguments.length
+      ? __slice.call(arguments, 0, (_i = arguments.length - 1))
+      : ((_i = 0), [])),
+    (classReference = arguments[_i++]);
   for (_j = 0, _len = mixins.length; _j < _len; _j++) {
     mixin = mixins[_j];
     classProto = classReference.prototype;
@@ -20,12 +24,16 @@ classic.implement = function() {
   return classReference;
 };
 
-classic.mix = function() {
+classic.mix = function () {
   var classProto, classReference, desc, member, mixin, mixins, _i, _j, _len;
-  mixins = 2 <= arguments.length ? __slice.call(arguments, 0, _i = arguments.length - 1) : (_i = 0, []), classReference = arguments[_i++];
+  (mixins =
+    2 <= arguments.length
+      ? __slice.call(arguments, 0, (_i = arguments.length - 1))
+      : ((_i = 0), [])),
+    (classReference = arguments[_i++]);
   classProto = classReference.prototype;
   classReference.__mixinCloners = [];
-  classReference.__applyClonersFor = function(instance, args) {
+  classReference.__applyClonersFor = function (instance, args) {
     var cloner, _j, _len, _ref;
     if (args == null) {
       args = null;
@@ -37,7 +45,7 @@ classic.mix = function() {
     }
   };
   classReference.__mixinInitializers = [];
-  classReference.__initMixinsFor = function(instance, args) {
+  classReference.__initMixinsFor = function (instance, args) {
     var initializer, _j, _len, _ref;
     if (args == null) {
       args = null;
@@ -49,7 +57,7 @@ classic.mix = function() {
     }
   };
   classReference.__mixinQuitters = [];
-  classReference.__applyQuittersFor = function(instance, args) {
+  classReference.__applyQuittersFor = function (instance, args) {
     var quitter, _j, _len, _ref;
     if (args == null) {
       args = null;
@@ -66,13 +74,13 @@ classic.mix = function() {
       throw Error("Mixin should be a function");
     }
     for (member in mixin.prototype) {
-      if (member.substr(0, 11) === '__initMixin') {
+      if (member.substr(0, 11) === "__initMixin") {
         classReference.__mixinInitializers.push(mixin.prototype[member]);
         continue;
-      } else if (member.substr(0, 11) === '__clonerFor') {
+      } else if (member.substr(0, 11) === "__clonerFor") {
         classReference.__mixinCloners.push(mixin.prototype[member]);
         continue;
-      } else if (member.substr(0, 12) === '__quitterFor') {
+      } else if (member.substr(0, 12) === "__quitterFor") {
         classReference.__mixinQuitters.push(mixin.prototype[member]);
         continue;
       }

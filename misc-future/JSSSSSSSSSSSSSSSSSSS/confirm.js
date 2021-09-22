@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 /**
  * `confirm` type prompt
  */
 
-var _ = require('lodash');
-var chalk = require('chalk');
-var { take, takeUntil } = require('rxjs/operators');
-var Base = require('./base');
-var observe = require('../utils/events');
+var _ = require("lodash");
+var chalk = require("chalk");
+var { take, takeUntil } = require("rxjs/operators");
+var Base = require("./base");
+var observe = require("../utils/events");
 
 class ConfirmPrompt extends Base {
   constructor(questions, rl, answers) {
@@ -16,21 +16,21 @@ class ConfirmPrompt extends Base {
     var rawDefault = true;
 
     _.extend(this.opt, {
-      filter: function(input) {
+      filter: function (input) {
         var value = rawDefault;
-        if (input != null && input !== '') {
+        if (input != null && input !== "") {
           value = /^y(es)?/i.test(input);
         }
 
         return value;
-      }
+      },
     });
 
     if (_.isBoolean(this.opt.default)) {
       rawDefault = this.opt.default;
     }
 
-    this.opt.default = rawDefault ? 'Y/n' : 'y/N';
+    this.opt.default = rawDefault ? "Y/n" : "y/N";
 
     return this;
   }
@@ -46,7 +46,9 @@ class ConfirmPrompt extends Base {
 
     // Once user confirm (enter key)
     var events = observe(this.rl);
-    events.keypress.pipe(takeUntil(events.line)).forEach(this.onKeypress.bind(this));
+    events.keypress
+      .pipe(takeUntil(events.line))
+      .forEach(this.onKeypress.bind(this));
 
     events.line.pipe(take(1)).forEach(this.onEnd.bind(this));
 
@@ -64,8 +66,8 @@ class ConfirmPrompt extends Base {
   render(answer) {
     var message = this.getQuestion();
 
-    if (typeof answer === 'boolean') {
-      message += chalk.cyan(answer ? 'Yes' : 'No');
+    if (typeof answer === "boolean") {
+      message += chalk.cyan(answer ? "Yes" : "No");
     } else {
       message += this.rl.line;
     }
@@ -80,7 +82,7 @@ class ConfirmPrompt extends Base {
    */
 
   onEnd(input) {
-    this.status = 'answered';
+    this.status = "answered";
 
     var output = this.opt.filter(input);
     this.render(output);

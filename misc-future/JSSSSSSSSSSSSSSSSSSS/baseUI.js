@@ -1,7 +1,7 @@
-'use strict';
-var _ = require('lodash');
-var MuteStream = require('mute-stream');
-var readline = require('readline');
+"use strict";
+var _ = require("lodash");
+var MuteStream = require("mute-stream");
+var readline = require("readline");
 
 /**
  * Base interface class other can inherits from
@@ -20,10 +20,10 @@ class UI {
     this.onForceClose = this.onForceClose.bind(this);
 
     // Make sure new prompt start on a newline when closing
-    process.on('exit', this.onForceClose);
+    process.on("exit", this.onForceClose);
 
     // Terminate process on SIGINT (which will call process.on('exit') in return)
-    this.rl.on('SIGINT', this.onForceClose);
+    this.rl.on("SIGINT", this.onForceClose);
   }
 
   /**
@@ -33,8 +33,8 @@ class UI {
 
   onForceClose() {
     this.close();
-    process.kill(process.pid, 'SIGINT');
-    console.log('');
+    process.kill(process.pid, "SIGINT");
+    console.log("");
   }
 
   /**
@@ -43,12 +43,12 @@ class UI {
 
   close() {
     // Remove events listeners
-    this.rl.removeListener('SIGINT', this.onForceClose);
-    process.removeListener('exit', this.onForceClose);
+    this.rl.removeListener("SIGINT", this.onForceClose);
+    process.removeListener("exit", this.onForceClose);
 
     this.rl.output.unmute();
 
-    if (this.activePrompt && typeof this.activePrompt.close === 'function') {
+    if (this.activePrompt && typeof this.activePrompt.close === "function") {
       this.activePrompt.close();
     }
 
@@ -74,9 +74,9 @@ function setupReadlineOptions(opt) {
     {
       terminal: true,
       input: input,
-      output: output
+      output: output,
     },
-    _.omit(opt, ['input', 'output'])
+    _.omit(opt, ["input", "output"])
   );
 }
 

@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = buildMatchMemberExpression;
 
@@ -9,5 +9,5 @@ var _matchesPattern = require("./matchesPattern");
 
 function buildMatchMemberExpression(match, allowPartial) {
   const parts = match.split(".");
-  return member => (0, _matchesPattern.default)(member, parts, allowPartial);
+  return (member) => (0, _matchesPattern.default)(member, parts, allowPartial);
 }

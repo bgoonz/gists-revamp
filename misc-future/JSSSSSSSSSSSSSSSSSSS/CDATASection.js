@@ -17,14 +17,14 @@ Object.defineProperty(CDATASection, "prototype", {
   value: CDATASection.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(CDATASection.prototype, Symbol.toStringTag, {
   value: "CDATASection",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +90,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -101,8 +101,8 @@ const iface = {
   },
   interface: CDATASection,
   expose: {
-    Window: { CDATASection }
-  }
+    Window: { CDATASection },
+  },
 }; // iface
 module.exports = iface;
 

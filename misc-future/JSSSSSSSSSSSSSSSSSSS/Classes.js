@@ -12,7 +12,12 @@ class CuboidMaker {
   }
 
   surfaceArea() {
-    return (2 * (this.length * this.width + this.length * this.height + this.width * this.height));
+    return (
+      2 *
+      (this.length * this.width +
+        this.length * this.height +
+        this.width * this.height)
+    );
   }
 }
 
@@ -37,10 +42,10 @@ class CubeMaker extends CuboidMaker {
   volume() {
     return this.size * this.size * this.size;
   }
-  
+
   // 6 * (size * size)
   surfaceArea() {
-    return (6 * (this.size * this.size));
+    return 6 * (this.size * this.size);
   }
 }
 

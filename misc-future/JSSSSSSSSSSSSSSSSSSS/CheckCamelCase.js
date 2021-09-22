@@ -9,12 +9,12 @@
  */
 const CheckCamelCase = (varName) => {
   // firstly, check that input is a string or not.
-  if (typeof varName !== 'string') {
-    return new TypeError('Argument is not a string.')
+  if (typeof varName !== "string") {
+    return new TypeError("Argument is not a string.");
   }
 
-  const pat = /^[a-z][A-Za-z]*$/
-  return pat.test(varName)
-}
+  const pat = /^[a-z][A-Za-z]*$/;
+  return pat.test(varName);
+};
 
-module.exports = CheckCamelCase
+module.exports = CheckCamelCase;

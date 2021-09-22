@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = builder;
 
@@ -14,14 +14,16 @@ function builder(type, ...args) {
   const countArgs = args.length;
 
   if (countArgs > keys.length) {
-    throw new Error(`${type}: Too many arguments passed. Received ${countArgs} but can receive no more than ${keys.length}`);
+    throw new Error(
+      `${type}: Too many arguments passed. Received ${countArgs} but can receive no more than ${keys.length}`
+    );
   }
 
   const node = {
-    type
+    type,
   };
   let i = 0;
-  keys.forEach(key => {
+  keys.forEach((key) => {
     const field = _definitions.NODE_FIELDS[type][key];
     let arg;
     if (i < countArgs) arg = args[i];

@@ -1,23 +1,19 @@
-'use strict';
-
+"use strict";
 
 function isNothing(subject) {
-  return (typeof subject === 'undefined') || (subject === null);
+  return typeof subject === "undefined" || subject === null;
 }
-
 
 function isObject(subject) {
-  return (typeof subject === 'object') && (subject !== null);
+  return typeof subject === "object" && subject !== null;
 }
-
 
 function toArray(sequence) {
   if (Array.isArray(sequence)) return sequence;
   else if (isNothing(sequence)) return [];
 
-  return [ sequence ];
+  return [sequence];
 }
-
 
 function extend(target, source) {
   var index, length, key, sourceKeys;
@@ -34,9 +30,9 @@ function extend(target, source) {
   return target;
 }
 
-
 function repeat(string, count) {
-  var result = '', cycle;
+  var result = "",
+    cycle;
 
   for (cycle = 0; cycle < count; cycle += 1) {
     result += string;
@@ -45,15 +41,13 @@ function repeat(string, count) {
   return result;
 }
 
-
 function isNegativeZero(number) {
-  return (number === 0) && (Number.NEGATIVE_INFINITY === 1 / number);
+  return number === 0 && Number.NEGATIVE_INFINITY === 1 / number;
 }
 
-
-module.exports.isNothing      = isNothing;
-module.exports.isObject       = isObject;
-module.exports.toArray        = toArray;
-module.exports.repeat         = repeat;
+module.exports.isNothing = isNothing;
+module.exports.isObject = isObject;
+module.exports.toArray = toArray;
+module.exports.repeat = repeat;
 module.exports.isNegativeZero = isNegativeZero;
-module.exports.extend         = extend;
+module.exports.extend = extend;

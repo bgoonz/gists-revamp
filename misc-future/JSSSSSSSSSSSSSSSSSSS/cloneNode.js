@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = cloneNode;
 
@@ -21,7 +21,7 @@ function cloneIfNode(obj, deep, withoutLoc) {
 
 function cloneIfNodeOrArray(obj, deep, withoutLoc) {
   if (Array.isArray(obj)) {
-    return obj.map(node => cloneIfNode(node, deep, withoutLoc));
+    return obj.map((node) => cloneIfNode(node, deep, withoutLoc));
   }
 
   return cloneIfNode(obj, deep, withoutLoc);
@@ -29,11 +29,9 @@ function cloneIfNodeOrArray(obj, deep, withoutLoc) {
 
 function cloneNode(node, deep = true, withoutLoc = false) {
   if (!node) return node;
-  const {
-    type
-  } = node;
+  const { type } = node;
   const newNode = {
-    type: node.type
+    type: node.type,
   };
 
   if ((0, _generated.isIdentifier)(node)) {
@@ -44,7 +42,9 @@ function cloneNode(node, deep = true, withoutLoc = false) {
     }
 
     if (has(node, "typeAnnotation")) {
-      newNode.typeAnnotation = deep ? cloneIfNodeOrArray(node.typeAnnotation, true, withoutLoc) : node.typeAnnotation;
+      newNode.typeAnnotation = deep
+        ? cloneIfNodeOrArray(node.typeAnnotation, true, withoutLoc)
+        : node.typeAnnotation;
     }
   } else if (!has(_definitions.NODE_FIELDS, type)) {
     throw new Error(`Unknown node type: "${type}"`);
@@ -52,7 +52,10 @@ function cloneNode(node, deep = true, withoutLoc = false) {
     for (const field of Object.keys(_definitions.NODE_FIELDS[type])) {
       if (has(node, field)) {
         if (deep) {
-          newNode[field] = (0, _generated.isFile)(node) && field === "comments" ? maybeCloneComments(node.comments, deep, withoutLoc) : cloneIfNodeOrArray(node[field], true, withoutLoc);
+          newNode[field] =
+            (0, _generated.isFile)(node) && field === "comments"
+              ? maybeCloneComments(node.comments, deep, withoutLoc)
+              : cloneIfNodeOrArray(node[field], true, withoutLoc);
         } else {
           newNode[field] = node[field];
         }
@@ -69,15 +72,27 @@ function cloneNode(node, deep = true, withoutLoc = false) {
   }
 
   if (has(node, "leadingComments")) {
-    newNode.leadingComments = maybeCloneComments(node.leadingComments, deep, withoutLoc);
+    newNode.leadingComments = maybeCloneComments(
+      node.leadingComments,
+      deep,
+      withoutLoc
+    );
   }
 
   if (has(node, "innerComments")) {
-    newNode.innerComments = maybeCloneComments(node.innerComments, deep, withoutLoc);
+    newNode.innerComments = maybeCloneComments(
+      node.innerComments,
+      deep,
+      withoutLoc
+    );
   }
 
   if (has(node, "trailingComments")) {
-    newNode.trailingComments = maybeCloneComments(node.trailingComments, deep, withoutLoc);
+    newNode.trailingComments = maybeCloneComments(
+      node.trailingComments,
+      deep,
+      withoutLoc
+    );
   }
 
   if (has(node, "extra")) {
@@ -92,23 +107,19 @@ function maybeCloneComments(comments, deep, withoutLoc) {
     return comments;
   }
 
-  return comments.map(({
-    type,
-    value,
-    loc
-  }) => {
+  return comments.map(({ type, value, loc }) => {
     if (withoutLoc) {
       return {
         type,
         value,
-        loc: null
+        loc: null,
       };
     }
 
     return {
       type,
       value,
-      loc
+      loc,
     };
   });
 }

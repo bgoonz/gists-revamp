@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = _default;
 
@@ -66,10 +66,11 @@ const {
   stringLiteral,
   unaryExpression,
   variableDeclaration,
-  variableDeclarator
+  variableDeclarator,
 } = _t();
 
-const buildUmdWrapper = replacements => _template().default.statement`
+const buildUmdWrapper = (replacements) =>
+  _template().default.statement`
     (function (root, factory) {
       if (typeof define === "function" && define.amd) {
         define(AMD_ARGUMENTS, factory);
@@ -86,9 +87,38 @@ const buildUmdWrapper = replacements => _template().default.statement`
 function buildGlobal(allowlist) {
   const namespace = identifier("babelHelpers");
   const body = [];
-  const container = functionExpression(null, [identifier("global")], blockStatement(body));
-  const tree = program([expressionStatement(callExpression(container, [conditionalExpression(binaryExpression("===", unaryExpression("typeof", identifier("global")), stringLiteral("undefined")), identifier("self"), identifier("global"))]))]);
-  body.push(variableDeclaration("var", [variableDeclarator(namespace, assignmentExpression("=", memberExpression(identifier("global"), namespace), objectExpression([])))]));
+  const container = functionExpression(
+    null,
+    [identifier("global")],
+    blockStatement(body)
+  );
+  const tree = program([
+    expressionStatement(
+      callExpression(container, [
+        conditionalExpression(
+          binaryExpression(
+            "===",
+            unaryExpression("typeof", identifier("global")),
+            stringLiteral("undefined")
+          ),
+          identifier("self"),
+          identifier("global")
+        ),
+      ])
+    ),
+  ]);
+  body.push(
+    variableDeclaration("var", [
+      variableDeclarator(
+        namespace,
+        assignmentExpression(
+          "=",
+          memberExpression(identifier("global"), namespace),
+          objectExpression([])
+        )
+      ),
+    ])
+  );
   buildHelpers(body, namespace, allowlist);
   return tree;
 }
@@ -96,31 +126,50 @@ function buildGlobal(allowlist) {
 function buildModule(allowlist) {
   const body = [];
   const refs = buildHelpers(body, null, allowlist);
-  body.unshift(exportNamedDeclaration(null, Object.keys(refs).map(name => {
-    return exportSpecifier(cloneNode(refs[name]), identifier(name));
-  })));
+  body.unshift(
+    exportNamedDeclaration(
+      null,
+      Object.keys(refs).map((name) => {
+        return exportSpecifier(cloneNode(refs[name]), identifier(name));
+      })
+    )
+  );
   return program(body, [], "module");
 }
 
 function buildUmd(allowlist) {
   const namespace = identifier("babelHelpers");
   const body = [];
-  body.push(variableDeclaration("var", [variableDeclarator(namespace, identifier("global"))]));
+  body.push(
+    variableDeclaration("var", [
+      variableDeclarator(namespace, identifier("global")),
+    ])
+  );
   buildHelpers(body, namespace, allowlist);
-  return program([buildUmdWrapper({
-    FACTORY_PARAMETERS: identifier("global"),
-    BROWSER_ARGUMENTS: assignmentExpression("=", memberExpression(identifier("root"), namespace), objectExpression([])),
-    COMMON_ARGUMENTS: identifier("exports"),
-    AMD_ARGUMENTS: arrayExpression([stringLiteral("exports")]),
-    FACTORY_BODY: body,
-    UMD_ROOT: identifier("this")
-  })]);
+  return program([
+    buildUmdWrapper({
+      FACTORY_PARAMETERS: identifier("global"),
+      BROWSER_ARGUMENTS: assignmentExpression(
+        "=",
+        memberExpression(identifier("root"), namespace),
+        objectExpression([])
+      ),
+      COMMON_ARGUMENTS: identifier("exports"),
+      AMD_ARGUMENTS: arrayExpression([stringLiteral("exports")]),
+      FACTORY_BODY: body,
+      UMD_ROOT: identifier("this"),
+    }),
+  ]);
 }
 
 function buildVar(allowlist) {
   const namespace = identifier("babelHelpers");
   const body = [];
-  body.push(variableDeclaration("var", [variableDeclarator(namespace, objectExpression([]))]));
+  body.push(
+    variableDeclaration("var", [
+      variableDeclarator(namespace, objectExpression([])),
+    ])
+  );
   const tree = program(body);
   buildHelpers(body, namespace, allowlist);
   body.push(expressionStatement(namespace));
@@ -128,18 +177,18 @@ function buildVar(allowlist) {
 }
 
 function buildHelpers(body, namespace, allowlist) {
-  const getHelperReference = name => {
-    return namespace ? memberExpression(namespace, identifier(name)) : identifier(`_${name}`);
+  const getHelperReference = (name) => {
+    return namespace
+      ? memberExpression(namespace, identifier(name))
+      : identifier(`_${name}`);
   };
 
   const refs = {};
   helpers().list.forEach(function (name) {
     if (allowlist && allowlist.indexOf(name) < 0) return;
-    const ref = refs[name] = getHelperReference(name);
+    const ref = (refs[name] = getHelperReference(name));
     helpers().ensure(name, _file.default);
-    const {
-      nodes
-    } = helpers().get(name, getHelperReference, ref);
+    const { nodes } = helpers().get(name, getHelperReference, ref);
     body.push(...nodes);
   });
   return refs;
@@ -151,7 +200,7 @@ function _default(allowlist, outputType = "global") {
     global: buildGlobal,
     module: buildModule,
     umd: buildUmd,
-    var: buildVar
+    var: buildVar,
   }[outputType];
 
   if (build) {

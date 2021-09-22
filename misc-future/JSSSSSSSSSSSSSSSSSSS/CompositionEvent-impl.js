@@ -16,5 +16,5 @@ class CompositionEventImpl extends UIEventImpl {
 CompositionEventImpl.defaultInit = CompositionEventInit.convert(undefined);
 
 module.exports = {
-  implementation: CompositionEventImpl
+  implementation: CompositionEventImpl,
 };

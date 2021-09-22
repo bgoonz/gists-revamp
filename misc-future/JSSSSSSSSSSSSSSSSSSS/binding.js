@@ -1,17 +1,12 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
 class Binding {
-  constructor({
-    identifier,
-    scope,
-    path,
-    kind
-  }) {
+  constructor({ identifier, scope, path, kind }) {
     this.identifier = void 0;
     this.scope = void 0;
     this.path = void 0;
@@ -69,7 +64,6 @@ class Binding {
     this.references--;
     this.referenced = !!this.references;
   }
-
 }
 
 exports.default = Binding;

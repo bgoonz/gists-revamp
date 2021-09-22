@@ -6,14 +6,14 @@ describe("calculate", () => {
         {
           total: "10",
           next: "20",
-          operation: "+"
+          operation: "+",
         },
         "="
       )
     ).toEqual({
       total: "30",
       next: null,
-      operation: null
+      operation: null,
     });
   });
 
@@ -23,14 +23,14 @@ describe("calculate", () => {
         {
           total: "10",
           next: "20",
-          operation: "-"
+          operation: "-",
         },
         "="
       )
     ).toEqual({
       total: "-10",
       next: null,
-      operation: null
+      operation: null,
     });
   });
 });

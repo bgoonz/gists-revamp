@@ -12,7 +12,7 @@ function attrCamelCase(name) {
 }
 
 function attrSnakeCase(name) {
-  return name.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`);
+  return name.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
 }
 
 exports.implementation = class DOMStringMapImpl {
@@ -44,7 +44,10 @@ exports.implementation = class DOMStringMapImpl {
   }
   [idlUtils.namedSetNew](name, value) {
     if (/-[a-z]/.test(name)) {
-      throw new DOMException(`'${name}' is not a valid property name`, "SyntaxError");
+      throw new DOMException(
+        `'${name}' is not a valid property name`,
+        "SyntaxError"
+      );
     }
     name = `data-${attrSnakeCase(name)}`;
     validateName(name);

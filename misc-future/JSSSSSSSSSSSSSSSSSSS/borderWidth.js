@@ -1,20 +1,20 @@
-'use strict';
+"use strict";
 
-var parsers = require('../parsers');
-var implicitSetter = require('../parsers').implicitSetter;
+var parsers = require("../parsers");
+var implicitSetter = require("../parsers").implicitSetter;
 
 // the valid border-widths:
-var widths = ['thin', 'medium', 'thick'];
+var widths = ["thin", "medium", "thick"];
 
 module.exports.isValid = function parse(v) {
   var length = parsers.parseLength(v);
   if (length !== undefined) {
     return true;
   }
-  if (typeof v !== 'string') {
+  if (typeof v !== "string") {
     return false;
   }
-  if (v === '') {
+  if (v === "") {
     return true;
   }
   v = v.toLowerCase();
@@ -25,7 +25,7 @@ module.exports.isValid = function parse(v) {
 };
 var isValid = module.exports.isValid;
 
-var parser = function(v) {
+var parser = function (v) {
   var length = parsers.parseLength(v);
   if (length !== undefined) {
     return length;
@@ -37,9 +37,9 @@ var parser = function(v) {
 };
 
 module.exports.definition = {
-  set: implicitSetter('border', 'width', isValid, parser),
-  get: function() {
-    return this.getPropertyValue('border-width');
+  set: implicitSetter("border", "width", isValid, parser),
+  get: function () {
+    return this.getPropertyValue("border-width");
   },
   enumerable: true,
   configurable: true,

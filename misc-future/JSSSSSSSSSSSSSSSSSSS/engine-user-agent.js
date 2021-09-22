@@ -1,3 +1,3 @@
-var getBuiltIn = require('../internals/get-built-in');
+var getBuiltIn = require("../internals/get-built-in");
 
-module.exports = getBuiltIn('navigator', 'userAgent') || '';
+module.exports = getBuiltIn("navigator", "userAgent") || "";

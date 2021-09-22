@@ -13,7 +13,7 @@ Object.defineProperty(BarProp, "prototype", {
   value: BarProp.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(BarProp.prototype, "visible", {
@@ -26,14 +26,14 @@ Object.defineProperty(BarProp.prototype, "visible", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(BarProp.prototype, Symbol.toStringTag, {
   value: "BarProp",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -97,7 +97,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -108,8 +108,8 @@ const iface = {
   },
   interface: BarProp,
   expose: {
-    Window: { BarProp }
-  }
+    Window: { BarProp },
+  },
 }; // iface
 module.exports = iface;
 

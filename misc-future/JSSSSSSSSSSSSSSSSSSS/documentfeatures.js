@@ -4,12 +4,12 @@ const idlUtils = require("../living/generated/utils");
 
 exports.availableDocumentFeatures = [
   "FetchExternalResources",
-  "SkipExternalResources"
+  "SkipExternalResources",
 ];
 
 exports.defaultDocumentFeatures = {
   FetchExternalResources: ["script", "link"], // omitted by default: "frame"
-  SkipExternalResources: false
+  SkipExternalResources: false,
 };
 
 exports.applyDocumentFeatures = (documentImpl, features = {}) => {
@@ -44,12 +44,15 @@ exports.applyDocumentFeatures = (documentImpl, features = {}) => {
   }
 };
 
-exports.contextifyWindow = window => {
+exports.contextifyWindow = (window) => {
   if (vm.isContext(window)) {
     return;
   }
 
   vm.createContext(window);
   const documentImpl = idlUtils.implForWrapper(window._document);
-  documentImpl._defaultView = window._globalProxy = vm.runInContext("this", window);
+  documentImpl._defaultView = window._globalProxy = vm.runInContext(
+    "this",
+    window
+  );
 };

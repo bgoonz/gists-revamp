@@ -1,1 +1,1 @@
-module.exports.browserVersions = require('../../data/browserVersions')
+module.exports.browserVersions = require("../../data/browserVersions");
