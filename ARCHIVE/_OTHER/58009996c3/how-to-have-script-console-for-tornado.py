@@ -5,9 +5,11 @@ import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 
+
 class Application(tornado.web.Application):
     def __init__(self):
         pass
+
 
 if __name__ == "__main__":
     application = Application()

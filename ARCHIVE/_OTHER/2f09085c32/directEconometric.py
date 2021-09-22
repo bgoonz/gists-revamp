@@ -1,98 +1,106 @@
 # Adapted for python 3
 # https://github.com/pbharrin/pyconometrics
-    
-'''
+
+"""
 Created on Aug 17, 2010
 
 @author: Peter Harrington
 peter.b.harrington@gmail.com
-'''
+"""
 from numpy import *
 
-# Cross-section Augmented Dickey-Fuller (CADF) 
+# Cross-section Augmented Dickey-Fuller (CADF)
 # https://github.com/pbharrin/pyconometrics
 def cadf(inMatX, inMatY, p, nlags):
-    if (p < -1):
-        print ("Error: p cannot be less than -1")
+    if p < -1:
+        print("Error: p cannot be less than -1")
     numObs = inMatX.shape[0]
-    if ((numObs - 2*nlags + 1) < 1):
-        print ("Error nlags is too large in cadf, negative degrees of freedom")
-        
-    inMatX = detrend(inMatX,p)
-    inMatY = detrend(inMatY,p)
-    b = ((inMatX.transpose()*inMatX).I)*(inMatX.transpose()*inMatY)
-    r = inMatY - inMatX*b
-    dep = tdiff(r,1)
-    dep = trimr(dep,1,0)
-    z = trimr(lag(r,1),1,0)
+    if (numObs - 2 * nlags + 1) < 1:
+        print("Error nlags is too large in cadf, negative degrees of freedom")
+
+    inMatX = detrend(inMatX, p)
+    inMatY = detrend(inMatY, p)
+    b = ((inMatX.transpose() * inMatX).I) * (inMatX.transpose() * inMatY)
+    r = inMatY - inMatX * b
+    dep = tdiff(r, 1)
+    dep = trimr(dep, 1, 0)
+    z = trimr(lag(r, 1), 1, 0)
     k = 1
-    while (k <= nlags):
-        z = concatenate((z,lag(dep,k)),1)
+    while k <= nlags:
+        z = concatenate((z, lag(dep, k)), 1)
         k += 1
-    z = trimr(z,nlags,0)
-    dep = trimr(dep,nlags,0)
-    
-    dtemp = detrend(z,0)
-    beta = linalg.solve(dtemp.transpose()*dtemp, dtemp.transpose()*detrend(dep,0))    #beta = a\b
-    res = detrend(dep,0) - detrend(z,0)*beta
-    so = (res.transpose()*res)/(dep.shape[0]-z.shape[1])
-    var_cov = so[0,0] * ((z.transpose()*z).I)
-    
-    results={}          #use dictonary to return bundled results
-    results['alpha'] = beta[0,0]
-    results['adf'] = beta[0,0]/sqrt(var_cov[0,0])
-    results['crit'] = rztcrit(numObs,inMatX.shape[1],p)
-    results['nlag'] = nlags
-    results['nvar'] = inMatX.shape[1]   #number of columns in inMatX
+    z = trimr(z, nlags, 0)
+    dep = trimr(dep, nlags, 0)
+
+    dtemp = detrend(z, 0)
+    beta = linalg.solve(
+        dtemp.transpose() * dtemp, dtemp.transpose() * detrend(dep, 0)
+    )  # beta = a\b
+    res = detrend(dep, 0) - detrend(z, 0) * beta
+    so = (res.transpose() * res) / (dep.shape[0] - z.shape[1])
+    var_cov = so[0, 0] * ((z.transpose() * z).I)
+
+    results = {}  # use dictonary to return bundled results
+    results["alpha"] = beta[0, 0]
+    results["adf"] = beta[0, 0] / sqrt(var_cov[0, 0])
+    results["crit"] = rztcrit(numObs, inMatX.shape[1], p)
+    results["nlag"] = nlags
+    results["nvar"] = inMatX.shape[1]  # number of columns in inMatX
     return results
-    
+
+
 def detrend(inputMatrix, p):
     if p == -1:
         return inputMatrix
-    
+
     numObs = inputMatrix.shape[0]
-    u = matrix(ones((numObs,1)))                #create 0th order term
-    
-    if (p > 0): #create a time matrix
-        timep = matrix(zeros((numObs,p)))
+    u = matrix(ones((numObs, 1)))  # create 0th order term
+
+    if p > 0:  # create a time matrix
+        timep = matrix(zeros((numObs, p)))
         t = matrix(range(numObs))
-        tp = t.transpose()/float(numObs)
+        tp = t.transpose() / float(numObs)
         m = 1
-        while (m <= p):
-            timep[:,m-1] = multiply(tp,m)
+        while m <= p:
+            timep[:, m - 1] = multiply(tp, m)
             m += 1
-        xmat = concatenate((u,timep),1)
+        xmat = concatenate((u, timep), 1)
     else:
         xmat = u
-    xpxi = (xmat.transpose()*xmat).I            #denom for ols
-    beta = xpxi*(xmat.transpose()*inputMatrix)  #calc ols
-    residuals = inputMatrix - xmat*beta         #subtract residuals
+    xpxi = (xmat.transpose() * xmat).I  # denom for ols
+    beta = xpxi * (xmat.transpose() * inputMatrix)  # calc ols
+    residuals = inputMatrix - xmat * beta  # subtract residuals
     return residuals
 
-def lag(inMatX, n = 1, v = 0):
-    zt = multiply(matrix(ones((n,inMatX.shape[1]))),v) #zero term
-    z = concatenate((zt,trimr(inMatX,0,n)))
+
+def lag(inMatX, n=1, v=0):
+    zt = multiply(matrix(ones((n, inMatX.shape[1]))), v)  # zero term
+    z = concatenate((zt, trimr(inMatX, 0, n)))
     return z
 
+
 def tdiff(inputMatrix, k):
-    numObs,numVar = inputMatrix.shape
-    if k==0:
+    numObs, numVar = inputMatrix.shape
+    if k == 0:
         dmat = inputMatrix
     elif k == 1:
-        dmat = matrix(zeros((numObs,numVar)))
-        dmat[1:numObs,:] = inputMatrix[1:numObs,:]-inputMatrix[0:numObs-1,:]
+        dmat = matrix(zeros((numObs, numVar)))
+        dmat[1:numObs, :] = inputMatrix[1:numObs, :] - inputMatrix[0 : numObs - 1, :]
     else:
-        dmat = matrix(zeros((numObs,numVar)))
-        dmat[k:numObs,:] = inputMatrix[k:numObs,:]-inputMatrix[0:numObs-k,:]
+        dmat = matrix(zeros((numObs, numVar)))
+        dmat[k:numObs, :] = inputMatrix[k:numObs, :] - inputMatrix[0 : numObs - k, :]
     return dmat
+
 
 def trimr(inputMatrix, bottom, top):
     n = inputMatrix.shape[0]
-    return inputMatrix[bottom:n-top,:]
+    return inputMatrix[bottom : n - top, :]
 
-def rztcrit(numObs,k,p):
-    if (numObs >= 500):
-        zt = matrix('\
+
+def rztcrit(numObs, k, p):
+    if numObs >= 500:
+        zt = matrix(
+            "\
 -3.28608,-2.71123,-2.44427,-0.22827,0.19684,1.07845;\
 -3.88031,-3.35851,-3.03798,-1.01144,-0.65334,0.15312;\
 -4.36339,-3.84931,-3.52926,-1.59069,-1.27691,-0.68855;\
@@ -127,9 +135,11 @@ def rztcrit(numObs,k,p):
 -5.85790,-5.28516,-4.99765,-3.11650,-2.85684,-2.38643;\
 -6.03218,-5.50167,-5.24244,-3.37898,-3.13182,-2.57977;\
 -6.38137,-5.80056,-5.52693,-3.62856,-3.37482,-2.85511;\
--6.60394,-6.03056,-5.73651,-3.83174,-3.56048,-3.09560')
-    elif ((numObs >= 400) and (numObs <= 499)):
-        zt = matrix('\
+-6.60394,-6.03056,-5.73651,-3.83174,-3.56048,-3.09560"
+        )
+    elif (numObs >= 400) and (numObs <= 499):
+        zt = matrix(
+            "\
 -3.39320,-2.78062,-2.47410,-0.27917,0.17257,1.01757;\
 -3.81898,-3.34274,-3.04197,-0.98464,-0.63219,0.07862;\
 -4.43824,-3.83476,-3.53856,-1.59769,-1.32538,-0.68273;\
@@ -164,9 +174,11 @@ def rztcrit(numObs,k,p):
 -5.88425,-5.29788,-5.01558,-3.10698,-2.83781,-2.33035;\
 -6.15156,-5.57259,-5.28198,-3.36062,-3.10140,-2.61065;\
 -6.37314,-5.80031,-5.51577,-3.63686,-3.38505,-2.87176;\
--6.58251,-6.03057,-5.74573,-3.85037,-3.60485,-3.11932')
-    elif ((numObs >= 300) and (numObs <= 399)):
-        zt = matrix('\
+-6.58251,-6.03057,-5.74573,-3.85037,-3.60485,-3.11932"
+        )
+    elif (numObs >= 300) and (numObs <= 399):
+        zt = matrix(
+            "\
 -3.36203,-2.77548,-2.46139,-0.28681,0.13287,1.03471;\
 -3.90239,-3.32711,-3.03723,-0.99653,-0.60551,0.11851;\
 -4.32982,-3.81156,-3.51879,-1.59453,-1.29025,-0.57675;\
@@ -201,9 +213,11 @@ def rztcrit(numObs,k,p):
 -5.85590,-5.33224,-5.03207,-3.11489,-2.86007,-2.36551;\
 -6.20771,-5.62475,-5.32273,-3.36439,-3.10806,-2.63899;\
 -6.38397,-5.87287,-5.56819,-3.63376,-3.37917,-2.87215;\
--6.69353,-6.08474,-5.78590,-3.87231,-3.61022,-3.14908')
-    elif ((numObs >= 200) and (numObs <= 299)):
-        zt = matrix('\
+-6.69353,-6.08474,-5.78590,-3.87231,-3.61022,-3.14908"
+        )
+    elif (numObs >= 200) and (numObs <= 299):
+        zt = matrix(
+            "\
 -3.35671,-2.77519,-2.46594,-0.25410,0.19613,1.07222;\
 -3.92428,-3.38037,-3.08215,-1.00759,-0.63422,0.09456;\
 -4.48168,-3.83395,-3.54540,-1.60205,-1.31840,-0.73432;\
@@ -238,9 +252,11 @@ def rztcrit(numObs,k,p):
 -6.01717,-5.38593,-5.07183,-3.10854,-2.83015,-2.38316;\
 -6.22810,-5.62644,-5.32983,-3.37920,-3.11022,-2.58412;\
 -6.51923,-5.91250,-5.61917,-3.64604,-3.37807,-2.91979;\
--6.74433,-6.15641,-5.85483,-3.88559,-3.62884,-3.22791')
-    elif ((numObs >= 1) and (numObs <= 199)):
-        zt = matrix('\
+-6.74433,-6.15641,-5.85483,-3.88559,-3.62884,-3.22791"
+        )
+    elif (numObs >= 1) and (numObs <= 199):
+        zt = matrix(
+            "\
 -3.40026,-2.81980,-2.49012,-0.28406,0.16278,0.99118;\
 -4.02456,-3.40397,-3.08903,-0.99877,-0.63826,0.09294;\
 -4.50406,-3.91574,-3.60618,-1.64640,-1.34126,-0.67499;\
@@ -275,9 +291,10 @@ def rztcrit(numObs,k,p):
 -6.16676,-5.52360,-5.22425,-3.12455,-2.84785,-2.41246;\
 -6.43205,-5.80308,-5.46594,-3.42417,-3.19918,-2.69791;\
 -6.81177,-6.11377,-5.74083,-3.67826,-3.41996,-2.95145;\
--6.98960,-6.36882,-6.03754,-3.95573,-3.71192,-3.30766')
-    if ((k < 1) or (k > 5) or (p > 5)):
-        crit = matrix(zeros((6,1)))
+-6.98960,-6.36882,-6.03754,-3.95573,-3.71192,-3.30766"
+        )
+    if (k < 1) or (k > 5) or (p > 5):
+        crit = matrix(zeros((6, 1)))
     n = (k - 1) * 7 + p + 2
-    crit = zt[n-1,:]
+    crit = zt[n - 1, :]
     return crit

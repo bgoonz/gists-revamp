@@ -1,15 +1,17 @@
-__author__ = 'diego.garcia'
+__author__ = "diego.garcia"
 
 import socket
 
 
 class UDPClient:
-    __IP = '255.255.255.255'
+    __IP = "255.255.255.255"
     __PORT = 49152
-    __udp_cli = ''
+    __udp_cli = ""
 
     def __init__(self):
-        self.__udp_cli = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+        self.__udp_cli = socket.socket(
+            socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP
+        )
         self.__udp_cli.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, True)
         self.__udp_cli.settimeout(5000)
 

@@ -8,23 +8,24 @@ import random
 app = Flask("encolinks")
 
 links = {}
-        
+
+
 def gerador_id():
     chars = string.uppercase + string.lowercase + string.digits
-    return ''.join(random.choice(chars) for _ in range(6))
+    return "".join(random.choice(chars) for _ in range(6))
 
 
 @app.route("/encolher")
 def encolher():
     id = gerador_id()
-        
-    link = request.args.get('url', '')
-    if link == '':
+
+    link = request.args.get("url", "")
+    if link == "":
         abort(500)
-        
+
     links[id] = {"url": link, "qtd": 0}
-    return redirect(url_for('info', link=id), 301)    
-        
+    return redirect(url_for("info", link=id), 301)
+
 
 @app.route("/<link>")
 def redirecionar(link):
@@ -36,7 +37,7 @@ def redirecionar(link):
         return abort(404)
 
 
-@app.route("/info/<link>")        
+@app.route("/info/<link>")
 def info(link):
     try:
         return jsonify(links[link])
@@ -47,5 +48,6 @@ def info(link):
 @app.route("/lista")
 def lista():
     return jsonify(links)
+
 
 app.run(debug=True, use_reloader=True)

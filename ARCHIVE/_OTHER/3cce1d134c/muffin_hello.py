@@ -2,9 +2,9 @@
 import muffin
 
 
-app = muffin.Application('hello')
+app = muffin.Application("hello")
 
 
-@app.register('/')
+@app.register("/")
 def products(request):
-    return {'hello': 'world'}
+    return {"hello": "world"}

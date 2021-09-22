@@ -2,9 +2,9 @@
 from bottle import route, run
 
 
-@route('/')
+@route("/")
 def index():
-    return '<h1>Hello World/h1>'
+    return "<h1>Hello World/h1>"
 
 
-run(host='localhost', port=8000)
+run(host="localhost", port=8000)

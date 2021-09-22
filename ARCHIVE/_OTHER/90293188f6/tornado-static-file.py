@@ -16,6 +16,7 @@ class StaticFileHandler(RequestHandler):
     want browsers to cache a file indefinitely, send them to, e.g.,
     /static/images/myimage.png?v=xxx.
     """
+
     def initialize(self, path, default_filename=None):
         self.root = os.path.abspath(path) + os.path.sep
         self.default_filename = default_filename
@@ -49,9 +50,11 @@ class StaticFileHandler(RequestHandler):
 
         self.set_header("Last-Modified", modified)
         if "v" in self.request.arguments:
-            self.set_header("Expires", datetime.datetime.utcnow() + \
-                                       datetime.timedelta(days=365*10))
-            self.set_header("Cache-Control", "max-age=" + str(86400*365*10))
+            self.set_header(
+                "Expires",
+                datetime.datetime.utcnow() + datetime.timedelta(days=365 * 10),
+            )
+            self.set_header("Cache-Control", "max-age=" + str(86400 * 365 * 10))
         else:
             self.set_header("Cache-Control", "public")
         mime_type, encoding = mimetypes.guess_type(abspath)

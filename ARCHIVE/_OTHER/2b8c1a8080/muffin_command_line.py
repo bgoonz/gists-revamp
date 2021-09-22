@@ -1,7 +1,7 @@
 import muffin
 
 
-app = muffin.Application('cmdline')
+app = muffin.Application("cmdline")
 
 
 @app.manage.command
@@ -12,10 +12,11 @@ def hello(name: str, upper=False):
     :param name: Your name :)
     :param upper: Show msg in uppercase
     """
-    msg = 'Hello {}'.format(name)
+    msg = "Hello {}".format(name)
     if upper:
         msg = msg.upper()
     print(msg)
+
 
 """
 $ muffin muffin_command_line hello Diego --upper

@@ -8,23 +8,21 @@ def version_middleware(app, handler):
     @asyncio.coroutine
     def middleware(request):
         response = yield from handler(request)
-        response.headers['X-Version'] = '1.0'
+        response.headers["X-Version"] = "1.0"
         return response
+
     return middleware
 
 
-app = muffin.Application(
-    'middleware_example',
-    middlewares=(version_middleware,)
-)
+app = muffin.Application("middleware_example", middlewares=(version_middleware,))
 
 
-@app.register('/')
+@app.register("/")
 def version(request):
-    return 'check version in http header!'
+    return "check version in http header!"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.manage()
 """
 $ curl -i http://localhost:5000/

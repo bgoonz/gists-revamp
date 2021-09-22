@@ -1,5 +1,5 @@
 #!/usr/bin/python
-__author__ = 'Diego Garcia'
+__author__ = "Diego Garcia"
 
 from threading import Thread
 from time import sleep
@@ -18,7 +18,9 @@ class MinhaThread(Thread):
 
     def run(self):
         while (not self.suspensa) and self.vezes:
-            print("[{}] - execucoes restantes: {}".format(self.identificador, self.vezes))
+            print(
+                "[{}] - execucoes restantes: {}".format(self.identificador, self.vezes)
+            )
             self.vezes -= 1
             sleep(randint(1, 10))
 

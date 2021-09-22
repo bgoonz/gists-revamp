@@ -1,17 +1,13 @@
-#based on: https://github.com/sixohsix/twitter
-__author__ = 'Diego Garcia'
+# based on: https://github.com/sixohsix/twitter
+__author__ = "Diego Garcia"
 
 from twitter import *
 from my_twitter_tokens import *  # TOKENS CONSTS
 
-t = Twitter(
-    auth=OAuth(ACCESS_TOKEN,
-               ACCESS_TOKEN_SECRET,
-               API_KEY,
-               API_SECRET))
+t = Twitter(auth=OAuth(ACCESS_TOKEN, ACCESS_TOKEN_SECRET, API_KEY, API_SECRET))
 
 
-# View timeline 
+# View timeline
 for tw in t.statuses.home_timeline():
     print("Account: {}".format(tw["user"]["screen_name"]))
     print("Name: {}".format(tw["user"]["name"]))
@@ -25,6 +21,6 @@ t.search.tweets(q="CleanCode")
 t.statuses.user_timeline(screen_name="MongoDB")
 
 # Update user status
-t.statuses.update(status="Status update only work if your token access level is Read/Write")
-
-
+t.statuses.update(
+    status="Status update only work if your token access level is Read/Write"
+)

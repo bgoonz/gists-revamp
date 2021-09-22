@@ -3,9 +3,9 @@ import os
 import sys
 
 
-PROG_NAME = 'tesseract'
-TEMP_IMAGE = 'tmp.bmp'
-TEMP_FILE = 'tmp'
+PROG_NAME = "tesseract"
+TEMP_IMAGE = "tmp.bmp"
+TEMP_FILE = "tmp"
 
 PSM_OSD_ONLY = 0
 PSM_SEG_AND_OSD = 1
@@ -24,28 +24,30 @@ class TesseractException(Exception):
     pass
 
 
-class TesseractNotFound(Exception): 
+class TesseractNotFound(Exception):
     pass
 
 
-def check_path(): 
-    for path in os.environ.get('PATH', '').split(';'):
+def check_path():
+    for path in os.environ.get("PATH", "").split(";"):
         filepath = os.path.join(path, PROG_NAME)
-        if (os.path.exists(filepath) or os.path.exists('{}.exe'.format(filepath))) and not os.path.isdir(filepath):
+        if (
+            os.path.exists(filepath) or os.path.exists("{}.exe".format(filepath))
+        ) and not os.path.isdir(filepath):
             return True
     raise TesseractNotFound
 
 
 def process_request(input_file, output_file, lang=None, psm=None):
-    args = [PROG_NAME, input_file, output_file] 
+    args = [PROG_NAME, input_file, output_file]
     if lang is not None:
         args.append("-l")
         args.append(lang)
     if psm is not None:
         args.append("-psm")
         args.append(str(psm))
-    proc = Popen(args, stdout=PIPE, stderr=PIPE) 
-    ret = proc.communicate() 
+    proc = Popen(args, stdout=PIPE, stderr=PIPE)
+    ret = proc.communicate()
 
     code = proc.returncode
     if code != 0:
@@ -60,12 +62,12 @@ def process_request(input_file, output_file, lang=None, psm=None):
 def image_to_string(file, lang=None, psm=None):
     check_path()
     process_request(file, TEMP_FILE, lang, psm)
-    with open(TEMP_FILE+".txt", "r") as f:
+    with open(TEMP_FILE + ".txt", "r") as f:
         txt = f.read()
 
-    os.remove(TEMP_FILE+".txt")
+    os.remove(TEMP_FILE + ".txt")
     return txt
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(image_to_string(sys.argv[1], psm=PSM_AUTO))

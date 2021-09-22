@@ -1,5 +1,6 @@
 def delete_module(modname, paranoid=None):
     from sys import modules
+
     try:
         thismod = modules[modname]
     except KeyError:
@@ -9,7 +10,7 @@ def delete_module(modname, paranoid=None):
         try:
             paranoid[:]  # sequence support
         except:
-            raise ValueError('must supply a finite list for paranoid')
+            raise ValueError("must supply a finite list for paranoid")
         else:
             these_symbols = paranoid[:]
     del modules[modname]
@@ -20,7 +21,7 @@ def delete_module(modname, paranoid=None):
             pass
         if paranoid:
             for symbol in these_symbols:
-                if symbol[:2] == '__':  # ignore special symbols
+                if symbol[:2] == "__":  # ignore special symbols
                     continue
                 try:
                     delattr(mod, symbol)
@@ -28,7 +29,7 @@ def delete_module(modname, paranoid=None):
                     pass
 
 
-'''
+"""
 >>> import sys
 >>> import pymongo
 >>> 'pymongo' in sys.modules.keys()
@@ -36,4 +37,4 @@ True
 >>> delete_module('pymongo')
 >>> 'pymongo' in sys.modules.keys()
 False
-'''
+"""

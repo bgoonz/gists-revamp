@@ -9,18 +9,18 @@ LX, LY, TX, TY = [int(i) for i in input().split()]
 while 1:
     E = int(input())
 
-    direction = ''
+    direction = ""
     if LY > TY:
-        direction += 'S'
+        direction += "S"
         TY += 1
     elif LY < TY:
-        direction += 'N'
+        direction += "N"
         TY -= 1
     if LX > TX:
-        direction += 'E'
+        direction += "E"
         TX += 1
     elif LX < TX:
-        direction += 'W'
+        direction += "W"
         TX -= 1
 
     print(direction)

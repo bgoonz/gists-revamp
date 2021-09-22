@@ -10,7 +10,7 @@ import tornado.ioloop
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        self.finish({'hello': 'world'})
+        self.finish({"hello": "world"})
 
 
 class Block(tornado.web.RequestHandler):
@@ -23,16 +23,13 @@ class Block(tornado.web.RequestHandler):
     @tornado.gen.coroutine
     def get(self):
         yield self.executor.submit(self.make_sleep)
-        self.finish({'msg': 'finish blocking call'})
+        self.finish({"msg": "finish blocking call"})
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     executor = concurrent.futures.ThreadPoolExecutor(max_workers=5)
     app = tornado.web.Application(
-        [
-            (r'/', IndexHandler),
-            (r'/block/', Block, dict(executor=executor)),
-        ]
+        [(r"/", IndexHandler), (r"/block/", Block, dict(executor=executor))]
     )
     http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(8000)
