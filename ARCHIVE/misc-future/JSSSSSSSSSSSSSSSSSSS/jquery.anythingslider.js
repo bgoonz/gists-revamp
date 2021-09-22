@@ -483,15 +483,13 @@
         var p = base.pages - o.navigationSize + 1;
         n = n <= 1 ? 1 : n > 1 && n < p ? n : p;
         if (n !== base.navLeft) {
-          base.$controls
-            .find(".anythingNavWindow")
-            .animate(
-              {
-                scrollLeft: base.navWidth(1, n),
-                width: base.navWidth(n, n + o.navigationSize),
-              },
-              { queue: false, duration: o.animationTime }
-            );
+          base.$controls.find(".anythingNavWindow").animate(
+            {
+              scrollLeft: base.navWidth(1, n),
+              width: base.navWidth(n, n + o.navigationSize),
+            },
+            { queue: false, duration: o.animationTime }
+          );
           base.navLeft = n;
         }
       }
@@ -874,13 +872,11 @@
             empty = false;
           }
           if (!empty) {
-            base.$wrapper
-              .filter(":not(:animated)")
-              .animate(d, {
-                queue: false,
-                duration: time < 0 ? 0 : time,
-                easing: o.easing,
-              });
+            base.$wrapper.filter(":not(:animated)").animate(d, {
+              queue: false,
+              duration: time < 0 ? 0 : time,
+              easing: o.easing,
+            });
           }
         }
 
