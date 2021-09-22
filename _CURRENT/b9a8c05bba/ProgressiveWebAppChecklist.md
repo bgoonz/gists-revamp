@@ -1,5 +1,4 @@
-Core Progressive Web App checklist 
----------------------------------------------------------------------------
+## Core Progressive Web App checklist 
 
 The Progressive Web App Checklist describes what makes an app installable and usable by all users, regardless of size or input type.
 
@@ -37,9 +36,9 @@ Jeremy Keith's [Resilient Web Design](https://resilientwebdesign.com/) is an e
 
 #### Additional reading [#](https://web.dev/pwa-checklist/#additional-reading)
 
--   A List Apart's [Understanding Progressive Enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) is a good introduction to the topic.
--   Smashing Magazine's [Progressive Enhancement: What It Is, And How To Use It?](https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/) gives a practical introduction and links to more advanced topics.
--   MDN has an article titled [Implementing feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection) that talks about how to detect a feature by directly querying it.
+- A List Apart's [Understanding Progressive Enhancement](https://alistapart.com/article/understandingprogressiveenhancement/) is a good introduction to the topic.
+- Smashing Magazine's [Progressive Enhancement: What It Is, And How To Use It?](https://www.smashingmagazine.com/2009/04/progressive-enhancement-what-it-is-and-how-to-use-it/) gives a practical introduction and links to more advanced topics.
+- MDN has an article titled [Implementing feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection) that talks about how to detect a feature by directly querying it.
 
 ### Responsive to any screen size
 
@@ -83,8 +82,7 @@ Why would you want a user to install your PWA? The same reason you'd want a user
 
 You can follow our [installable guide](https://web.dev/customize-install/) to learn how to make your PWA installable, how to test to see that it's installable, and try doing it yourself.
 
-Optimal Progressive Web App checklist [#](https://web.dev/pwa-checklist/#optimal)
----------------------------------------------------------------------------------
+## Optimal Progressive Web App checklist [#](https://web.dev/pwa-checklist/#optimal)
 
 To create a truly great Progressive Web App, one that feels like a best-in-class app, you need more than just the core checklist. The optimal Progressive Web App checklist is about making your PWA feel like it's part of the device it's running on while taking advantage of what makes the web powerful.
 
@@ -164,8 +162,7 @@ There are a number of high-priority checks to ensure a healthy codebase: avoidin
 
 Last updated: Feb 24, 2020 [Improve article](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/progressive-web-apps/pwa-checklist/index.md)
 
-Give feedback
--------------
+## Give feedback
 
 All fields optional
 
@@ -177,39 +174,41 @@ Was this page helpful?
 
 Did this page help you complete your goal(s)?
 
-Congrats on finding this field, I'd recommend you not filling it out though... 
+Congrats on finding this field, I'd recommend you not filling it out though...
 
 SUBMIT
 
 [Return to all articles](https://web.dev/progressive-web-apps)
 
--   ### Contribute
+- ### Contribute
 
-    -   [File a bug](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title=)
-    -   [View source](https://github.com/googlechrome/web.dev)
--   ### Related content
+  - [File a bug](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title=)
+  - [View source](https://github.com/googlechrome/web.dev)
 
-    -   [Chrome updates](https://blog.chromium.org/)
-    -   [Web Fundamentals](https://developers.google.com/web/)
-    -   [Case studies](https://developers.google.com/web/showcase/)
-    -   [DevWeb Content Firehose](https://devwebfeed.appspot.com/)
-    -   [Podcasts](https://web.dev/podcasts/)
-    -   [Shows](https://web.dev/shows/)
--   ### Connect
+- ### Related content
 
-    -   [Twitter](https://www.twitter.com/ChromiumDev)
-    -   [YouTube](https://www.youtube.com/user/ChromeDevelopers)
+  - [Chrome updates](https://blog.chromium.org/)
+  - [Web Fundamentals](https://developers.google.com/web/)
+  - [Case studies](https://developers.google.com/web/showcase/)
+  - [DevWeb Content Firehose](https://devwebfeed.appspot.com/)
+  - [Podcasts](https://web.dev/podcasts/)
+  - [Shows](https://web.dev/shows/)
+
+- ### Connect
+
+  - [Twitter](https://www.twitter.com/ChromiumDev)
+  - [YouTube](https://www.youtube.com/user/ChromeDevelopers)
 
 [![Google Developers](https://web.dev/images/lockup-color.png)](https://developers.google.com/)
 
--   [Chrome](https://developer.chrome.com/)
--   [Firebase](https://firebase.google.com/)
--   [Google Cloud Platform](https://cloud.google.com/)
--   [All products](https://developers.google.com/products)
+- [Chrome](https://developer.chrome.com/)
+- [Firebase](https://firebase.google.com/)
+- [Google Cloud Platform](https://cloud.google.com/)
+- [All products](https://developers.google.com/products)
 
-Choose language                                   ENGLISH (en)                             
+Choose language                                   ENGLISH (en)
 
--   [Terms & Privacy](https://policies.google.com/)
--   [Community Guidelines](https://web.dev/community-guidelines/)
+- [Terms & Privacy](https://policies.google.com/)
+- [Community Guidelines](https://web.dev/community-guidelines/)
 
 Except as otherwise noted, the content of this page is licensed under the [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/), and code samples are licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). For details, see the [Google Developers Site Policies](https://developers.google.com/terms/site-policies).
