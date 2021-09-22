@@ -1,3 +1,0 @@
-- Install Xcode (App Store)
-- Install developer tools (Xcode preferences > Additional downloads)
-- Install Homebrew
