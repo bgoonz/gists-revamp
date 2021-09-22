@@ -17,18 +17,24 @@ function MessageEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'MessageEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'MessageEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'MessageEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'MessageEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertMessageEventInit(curArg, { context: "Failed to construct 'MessageEvent': parameter 2" });
+    curArg = convertMessageEventInit(curArg, {
+      context: "Failed to construct 'MessageEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(MessageEvent, "prototype", {
   value: MessageEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 MessageEvent.prototype.initMessageEvent = function initMessageEvent(type) {
@@ -61,7 +67,8 @@ MessageEvent.prototype.initMessageEvent = function initMessageEvent(type) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 1"
+      context:
+        "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 1",
     });
     args.push(curArg);
   }
@@ -69,7 +76,8 @@ MessageEvent.prototype.initMessageEvent = function initMessageEvent(type) {
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 2"
+        context:
+          "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 2",
       });
     } else {
       curArg = false;
@@ -80,7 +88,8 @@ MessageEvent.prototype.initMessageEvent = function initMessageEvent(type) {
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 3"
+        context:
+          "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 3",
       });
     } else {
       curArg = false;
@@ -91,7 +100,8 @@ MessageEvent.prototype.initMessageEvent = function initMessageEvent(type) {
     let curArg = arguments[3];
     if (curArg !== undefined) {
       curArg = conversions["any"](curArg, {
-        context: "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 4"
+        context:
+          "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 4",
       });
     } else {
       curArg = null;
@@ -102,7 +112,8 @@ MessageEvent.prototype.initMessageEvent = function initMessageEvent(type) {
     let curArg = arguments[4];
     if (curArg !== undefined) {
       curArg = conversions["USVString"](curArg, {
-        context: "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 5"
+        context:
+          "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 5",
       });
     } else {
       curArg = "";
@@ -113,7 +124,8 @@ MessageEvent.prototype.initMessageEvent = function initMessageEvent(type) {
     let curArg = arguments[5];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 6"
+        context:
+          "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 6",
       });
     } else {
       curArg = "";
@@ -138,7 +150,8 @@ MessageEvent.prototype.initMessageEvent = function initMessageEvent(type) {
     if (curArg !== undefined) {
       if (!utils.isObject(curArg)) {
         throw new TypeError(
-          "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 8" + " is not an iterable object."
+          "Failed to execute 'initMessageEvent' on 'MessageEvent': parameter 8" +
+            " is not an iterable object."
         );
       } else {
         const V = [];
@@ -168,7 +181,7 @@ Object.defineProperty(MessageEvent.prototype, "data", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MessageEvent.prototype, "origin", {
@@ -181,7 +194,7 @@ Object.defineProperty(MessageEvent.prototype, "origin", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MessageEvent.prototype, "lastEventId", {
@@ -194,7 +207,7 @@ Object.defineProperty(MessageEvent.prototype, "lastEventId", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MessageEvent.prototype, "source", {
@@ -207,7 +220,7 @@ Object.defineProperty(MessageEvent.prototype, "source", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MessageEvent.prototype, "ports", {
@@ -220,14 +233,14 @@ Object.defineProperty(MessageEvent.prototype, "ports", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MessageEvent.prototype, Symbol.toStringTag, {
   value: "MessageEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -293,7 +306,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -306,8 +319,8 @@ const iface = {
   expose: {
     Window: { MessageEvent },
     Worker: { MessageEvent },
-    AudioWorklet: { MessageEvent }
-  }
+    AudioWorklet: { MessageEvent },
+  },
 }; // iface
 module.exports = iface;
 

@@ -4,7 +4,7 @@ const serialize = require("./serializer.js");
 const {
   asciiLowercase,
   solelyContainsHTTPTokenCodePoints,
-  soleyContainsHTTPQuotedStringTokenCodePoints
+  soleyContainsHTTPQuotedStringTokenCodePoints,
 } = require("./utils.js");
 
 module.exports = class MIMEType {
@@ -43,7 +43,9 @@ module.exports = class MIMEType {
       throw new Error("Invalid type: must be a non-empty string");
     }
     if (!solelyContainsHTTPTokenCodePoints(value)) {
-      throw new Error(`Invalid type ${value}: must contain only HTTP token code points`);
+      throw new Error(
+        `Invalid type ${value}: must contain only HTTP token code points`
+      );
     }
 
     this._type = value;
@@ -60,7 +62,9 @@ module.exports = class MIMEType {
       throw new Error("Invalid subtype: must be a non-empty string");
     }
     if (!solelyContainsHTTPTokenCodePoints(value)) {
-      throw new Error(`Invalid subtype ${value}: must contain only HTTP token code points`);
+      throw new Error(
+        `Invalid subtype ${value}: must contain only HTTP token code points`
+      );
     }
 
     this._subtype = value;
@@ -118,8 +122,11 @@ module.exports = class MIMEType {
     }
   }
   isXML() {
-    return (this._subtype === "xml" && (this._type === "text" || this._type === "application")) ||
-           this._subtype.endsWith("+xml");
+    return (
+      (this._subtype === "xml" &&
+        (this._type === "text" || this._type === "application")) ||
+      this._subtype.endsWith("+xml")
+    );
   }
   isHTML() {
     return this._subtype === "html" && this._type === "text";
@@ -150,11 +157,15 @@ class MIMETypeParameters {
     value = String(value);
 
     if (!solelyContainsHTTPTokenCodePoints(name)) {
-      throw new Error(`Invalid MIME type parameter name "${name}": only HTTP token code points are valid.`);
+      throw new Error(
+        `Invalid MIME type parameter name "${name}": only HTTP token code points are valid.`
+      );
     }
     if (!soleyContainsHTTPQuotedStringTokenCodePoints(value)) {
-      throw new Error(`Invalid MIME type parameter value "${value}": only HTTP quoted-string token code points are ` +
-                      `valid.`);
+      throw new Error(
+        `Invalid MIME type parameter value "${value}": only HTTP quoted-string token code points are ` +
+          `valid.`
+      );
     }
 
     return this._map.set(name, value);

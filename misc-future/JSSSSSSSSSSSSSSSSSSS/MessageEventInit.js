@@ -13,7 +13,9 @@ module.exports = {
       const key = "data";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["any"](value, { context: context + " has member data that" });
+        value = conversions["any"](value, {
+          context: context + " has member data that",
+        });
 
         ret[key] = value;
       } else {
@@ -25,7 +27,9 @@ module.exports = {
       const key = "lastEventId";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["DOMString"](value, { context: context + " has member lastEventId that" });
+        value = conversions["DOMString"](value, {
+          context: context + " has member lastEventId that",
+        });
 
         ret[key] = value;
       } else {
@@ -37,7 +41,9 @@ module.exports = {
       const key = "origin";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["USVString"](value, { context: context + " has member origin that" });
+        value = conversions["USVString"](value, {
+          context: context + " has member origin that",
+        });
 
         ret[key] = value;
       } else {
@@ -50,7 +56,9 @@ module.exports = {
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
         if (!utils.isObject(value)) {
-          throw new TypeError(context + " has member ports that" + " is not an iterable object.");
+          throw new TypeError(
+            context + " has member ports that" + " is not an iterable object."
+          );
         } else {
           const V = [];
           const tmp = value;
@@ -85,12 +93,16 @@ module.exports = {
   },
 
   convert(obj, { context = "The provided value" } = {}) {
-    if (obj !== undefined && typeof obj !== "object" && typeof obj !== "function") {
+    if (
+      obj !== undefined &&
+      typeof obj !== "object" &&
+      typeof obj !== "function"
+    ) {
       throw new TypeError(`${context} is not an object.`);
     }
 
     const ret = Object.create(null);
     module.exports.convertInherit(obj, ret, { context });
     return ret;
-  }
+  },
 };
