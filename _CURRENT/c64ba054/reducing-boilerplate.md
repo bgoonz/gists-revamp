@@ -2,112 +2,110 @@
 
 <a href="../introduction/getting-started.html" class="navbar__item navbar__link">Getting Started</a><a href="../tutorials/essentials/part-1-overview-concepts.html" class="navbar__item navbar__link">Tutorial</a><a href="../api/api-reference.html" class="navbar__item navbar__link">API</a><a href="../faq.html" class="navbar__item navbar__link">FAQ</a><a href="../style-guide/style-guide.html" class="navbar__item navbar__link">Best Practices</a><a href="../official/github.com/reduxjs/redux.html" class="navbar__item navbar__link">GitHub</a><a href="../introduction/getting-started.html#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="../index.html" class="navbar__brand"><img src="../official/d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /><strong>Redux</strong></a>
 
--   <a href="../introduction/getting-started.html" class="menu__link">Getting Started</a>
--   <a href="../tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Tutorial</a>
--   <a href="../api/api-reference.html" class="menu__link">API</a>
--   <a href="../faq.html" class="menu__link">FAQ</a>
--   <a href="../style-guide/style-guide.html" class="menu__link">Best Practices</a>
--   <a href="../official/github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
--   <a href="../introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
+- <a href="../introduction/getting-started.html" class="menu__link">Getting Started</a>
+- <a href="../tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Tutorial</a>
+- <a href="../api/api-reference.html" class="menu__link">API</a>
+- <a href="../faq.html" class="menu__link">FAQ</a>
+- <a href="../style-guide/style-guide.html" class="menu__link">Best Practices</a>
+- <a href="../official/github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
+- <a href="../introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
 
--   <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
-    -   <a href="../introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
-    -   <a href="../introduction/installation.html" class="menu__link">Installation</a>
-    -   <a href="../introduction/core-concepts.html" class="menu__link">Core Concepts</a>
-    -   <a href="../introduction/learning-resources.html" class="menu__link">Learning Resources</a>
-    -   <a href="../introduction/ecosystem.html" class="menu__link">Ecosystem</a>
-    -   <a href="../introduction/examples.html" class="menu__link">Examples</a>
--   <a href="#!" class="menu__link menu__link--sublist">Tutorials</a>
+- <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+  - <a href="../introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
+  - <a href="../introduction/installation.html" class="menu__link">Installation</a>
+  - <a href="../introduction/core-concepts.html" class="menu__link">Core Concepts</a>
+  - <a href="../introduction/learning-resources.html" class="menu__link">Learning Resources</a>
+  - <a href="../introduction/ecosystem.html" class="menu__link">Ecosystem</a>
+  - <a href="../introduction/examples.html" class="menu__link">Examples</a>
+- <a href="#!" class="menu__link menu__link--sublist">Tutorials</a>
 
-    -   <a href="../tutorials/index.html" class="menu__link">Tutorials Index</a>
-    -   <a href="../tutorials/quick-start.html" class="menu__link">Quick Start</a>
-    -   <a href="../tutorials/typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a>
+  - <a href="../tutorials/index.html" class="menu__link">Tutorials Index</a>
+  - <a href="../tutorials/quick-start.html" class="menu__link">Quick Start</a>
+  - <a href="../tutorials/typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a>
 
-        -   <a href="../tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a>
-        -   <a href="../tutorials/essentials/part-2-app-structure.html" class="menu__link">Redux App Structure</a>
-        -   <a href="../tutorials/essentials/part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a>
-        -   <a href="../tutorials/essentials/part-4-using-data.html" class="menu__link">Using Redux Data</a>
-        -   <a href="../tutorials/essentials/part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="../tutorials/essentials/part-6-performance-normalization.html" class="menu__link">Performance and Normalizing Data</a>
+    - <a href="../tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a>
+    - <a href="../tutorials/essentials/part-2-app-structure.html" class="menu__link">Redux App Structure</a>
+    - <a href="../tutorials/essentials/part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a>
+    - <a href="../tutorials/essentials/part-4-using-data.html" class="menu__link">Using Redux Data</a>
+    - <a href="../tutorials/essentials/part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="../tutorials/essentials/part-6-performance-normalization.html" class="menu__link">Performance and Normalizing Data</a>
 
-        -   <a href="../tutorials/fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a>
-        -   <a href="../tutorials/fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a>
-        -   <a href="../tutorials/fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a>
-        -   <a href="../tutorials/fundamentals/part-4-store.html" class="menu__link">Store</a>
-        -   <a href="../tutorials/fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a>
-        -   <a href="../tutorials/fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="../tutorials/fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a>
-        -   <a href="../tutorials/fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a>
+    - <a href="../tutorials/fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a>
+    - <a href="../tutorials/fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a>
+    - <a href="../tutorials/fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a>
+    - <a href="../tutorials/fundamentals/part-4-store.html" class="menu__link">Store</a>
+    - <a href="../tutorials/fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a>
+    - <a href="../tutorials/fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="../tutorials/fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a>
+    - <a href="../tutorials/fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a>
 
--   <a href="#!" class="menu__link menu__link--sublist menu__link--active">Recipes</a>
-    -   <a href="recipe-index.html" class="menu__link">Recipes: Index</a>
-    -   <a href="configuring-your-store.html" class="menu__link">Configuring Your Store</a>
-    -   <a href="usage-with-typescript.html" class="menu__link">Usage With TypeScript</a>
-    -   <a href="migrating-to-redux.html" class="menu__link">Migrating to Redux</a>
-    -   <a href="using-object-spread-operator.html" class="menu__link">Using Object Spread Operator</a>
-    -   <a href="reducing-boilerplate.html" class="menu__link menu__link--active active">Reducing Boilerplate</a>
-    -   <a href="server-rendering.html" class="menu__link">Server Rendering</a>
-    -   <a href="writing-tests.html" class="menu__link">Writing Tests</a>
-    -   <a href="computing-derived-data.html" class="menu__link">Computing Derived Data</a>
-    -   <a href="implementing-undo-history.html" class="menu__link">Implementing Undo History</a>
-    -   <a href="isolating-redux-sub-apps.html" class="menu__link">Isolating Redux Sub-Apps</a>
-    -   <a href="code-splitting.html" class="menu__link">Code Splitting</a>
-    -   <a href="troubleshooting.html" class="menu__link">Troubleshooting</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
-        -   <a href="structuring-reducers/structuring-reducers.html" class="menu__link">Structuring Reducers</a>
-        -   <a href="structuring-reducers/prerequisite-concepts.html" class="menu__link">Prerequisite Concepts</a>
-        -   <a href="structuring-reducers/basic-reducer-structure.html" class="menu__link">Basic Reducer Structure</a>
-        -   <a href="structuring-reducers/splitting-reducer-logic.html" class="menu__link">Splitting Reducer Logic</a>
-        -   <a href="structuring-reducers/refactoring-reducer-example.html" class="menu__link">Refactoring Reducers Example</a>
-        -   <a href="structuring-reducers/using-combinereducers.html" class="menu__link">Using combineReducers</a>
-        -   <a href="structuring-reducers/beyond-combinereducers.html" class="menu__link">Beyond combineReducers</a>
-        -   <a href="structuring-reducers/normalizing-state-shape.html" class="menu__link">Normalizing State Shape</a>
-        -   <a href="structuring-reducers/updating-normalized-data.html" class="menu__link">Updating Normalized Data</a>
-        -   <a href="structuring-reducers/reusing-reducer-logic.html" class="menu__link">Reusing Reducer Logic</a>
-        -   <a href="structuring-reducers/immutable-update-patterns.html" class="menu__link">Immutable Update Patterns</a>
-        -   <a href="structuring-reducers/initializing-state.html" class="menu__link">Initializing State</a>
--   <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
-        -   <a href="../understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a>
-        -   <a href="../understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a>
-        -   <a href="../understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
-        -   <a href="../understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a>
-        -   <a href="../understanding/history-and-design/middleware.html" class="menu__link">Middleware</a>
--   <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
-    -   <a href="../faq.html" class="menu__link">FAQ Index</a>
-    -   <a href="../faq/general.html" class="menu__link">General</a>
-    -   <a href="../faq/reducers.html" class="menu__link">Reducers</a>
-    -   <a href="../faq/organizing-state.html" class="menu__link">Organizing State</a>
-    -   <a href="../faq/store-setup.html" class="menu__link">Store Setup</a>
-    -   <a href="../faq/actions.html" class="menu__link">Actions</a>
-    -   <a href="../faq/immutable-data.html" class="menu__link">Immutable Data</a>
-    -   <a href="../faq/code-structure.html" class="menu__link">Code Structure</a>
-    -   <a href="../faq/performance.html" class="menu__link">Performance</a>
-    -   <a href="../faq/design-decisions.html" class="menu__link">Design Decisions</a>
-    -   <a href="../faq/react-redux.html" class="menu__link">React Redux</a>
-    -   <a href="../faq/miscellaneous.html" class="menu__link">Miscellaneous</a>
--   <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
-    -   <a href="../style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a>
--   <a href="#!" class="menu__link menu__link--sublist">API Reference</a>
-    -   <a href="../api/api-reference.html" class="menu__link">API Reference</a>
-    -   <a href="../api/createstore.html" class="menu__link">createStore</a>
-    -   <a href="../api/store.html" class="menu__link">Store</a>
-    -   <a href="../api/combinereducers.html" class="menu__link">combineReducers</a>
-    -   <a href="../api/applymiddleware.html" class="menu__link">applyMiddleware</a>
-    -   <a href="../api/bindactioncreators.html" class="menu__link">bindActionCreators</a>
-    -   <a href="../api/compose.html" class="menu__link">compose</a>
--   <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
-    -   <a href="../redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a>
+- <a href="#!" class="menu__link menu__link--sublist menu__link--active">Recipes</a>
+  - <a href="recipe-index.html" class="menu__link">Recipes: Index</a>
+  - <a href="configuring-your-store.html" class="menu__link">Configuring Your Store</a>
+  - <a href="usage-with-typescript.html" class="menu__link">Usage With TypeScript</a>
+  - <a href="migrating-to-redux.html" class="menu__link">Migrating to Redux</a>
+  - <a href="using-object-spread-operator.html" class="menu__link">Using Object Spread Operator</a>
+  - <a href="reducing-boilerplate.html" class="menu__link menu__link--active active">Reducing Boilerplate</a>
+  - <a href="server-rendering.html" class="menu__link">Server Rendering</a>
+  - <a href="writing-tests.html" class="menu__link">Writing Tests</a>
+  - <a href="computing-derived-data.html" class="menu__link">Computing Derived Data</a>
+  - <a href="implementing-undo-history.html" class="menu__link">Implementing Undo History</a>
+  - <a href="isolating-redux-sub-apps.html" class="menu__link">Isolating Redux Sub-Apps</a>
+  - <a href="code-splitting.html" class="menu__link">Code Splitting</a>
+  - <a href="troubleshooting.html" class="menu__link">Troubleshooting</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
+    - <a href="structuring-reducers/structuring-reducers.html" class="menu__link">Structuring Reducers</a>
+    - <a href="structuring-reducers/prerequisite-concepts.html" class="menu__link">Prerequisite Concepts</a>
+    - <a href="structuring-reducers/basic-reducer-structure.html" class="menu__link">Basic Reducer Structure</a>
+    - <a href="structuring-reducers/splitting-reducer-logic.html" class="menu__link">Splitting Reducer Logic</a>
+    - <a href="structuring-reducers/refactoring-reducer-example.html" class="menu__link">Refactoring Reducers Example</a>
+    - <a href="structuring-reducers/using-combinereducers.html" class="menu__link">Using combineReducers</a>
+    - <a href="structuring-reducers/beyond-combinereducers.html" class="menu__link">Beyond combineReducers</a>
+    - <a href="structuring-reducers/normalizing-state-shape.html" class="menu__link">Normalizing State Shape</a>
+    - <a href="structuring-reducers/updating-normalized-data.html" class="menu__link">Updating Normalized Data</a>
+    - <a href="structuring-reducers/reusing-reducer-logic.html" class="menu__link">Reusing Reducer Logic</a>
+    - <a href="structuring-reducers/immutable-update-patterns.html" class="menu__link">Immutable Update Patterns</a>
+    - <a href="structuring-reducers/initializing-state.html" class="menu__link">Initializing State</a>
+- <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+    - <a href="../understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a>
+    - <a href="../understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a>
+    - <a href="../understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a>
+  - <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+    - <a href="../understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a>
+    - <a href="../understanding/history-and-design/middleware.html" class="menu__link">Middleware</a>
+- <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
+  - <a href="../faq.html" class="menu__link">FAQ Index</a>
+  - <a href="../faq/general.html" class="menu__link">General</a>
+  - <a href="../faq/reducers.html" class="menu__link">Reducers</a>
+  - <a href="../faq/organizing-state.html" class="menu__link">Organizing State</a>
+  - <a href="../faq/store-setup.html" class="menu__link">Store Setup</a>
+  - <a href="../faq/actions.html" class="menu__link">Actions</a>
+  - <a href="../faq/immutable-data.html" class="menu__link">Immutable Data</a>
+  - <a href="../faq/code-structure.html" class="menu__link">Code Structure</a>
+  - <a href="../faq/performance.html" class="menu__link">Performance</a>
+  - <a href="../faq/design-decisions.html" class="menu__link">Design Decisions</a>
+  - <a href="../faq/react-redux.html" class="menu__link">React Redux</a>
+  - <a href="../faq/miscellaneous.html" class="menu__link">Miscellaneous</a>
+- <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
+  - <a href="../style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a>
+- <a href="#!" class="menu__link menu__link--sublist">API Reference</a>
+  - <a href="../api/api-reference.html" class="menu__link">API Reference</a>
+  - <a href="../api/createstore.html" class="menu__link">createStore</a>
+  - <a href="../api/store.html" class="menu__link">Store</a>
+  - <a href="../api/combinereducers.html" class="menu__link">combineReducers</a>
+  - <a href="../api/applymiddleware.html" class="menu__link">applyMiddleware</a>
+  - <a href="../api/bindactioncreators.html" class="menu__link">bindActionCreators</a>
+  - <a href="../api/compose.html" class="menu__link">compose</a>
+- <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+  - <a href="../redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a>
 
-<span id="reducing-boilerplate" class="anchor enhancedAnchor_2LWZ"></span>Reducing Boilerplate<a href="#reducing-boilerplate" class="hash-link" title="Direct link to heading">#</a>
-====================================================================================================================================================================================
+# <span id="reducing-boilerplate" class="anchor enhancedAnchor_2LWZ"></span>Reducing Boilerplate<a href="#reducing-boilerplate" class="hash-link" title="Direct link to heading">#</a>
 
 Redux is in part [inspired by Flux](../understanding/history-and-design/prior-art.html), and the most common complaint about Flux is how it makes you write a lot of boilerplate. In this recipe, we will consider how Redux lets us choose how verbose we’d like our code to be, depending on personal style, team preferences, longer term maintainability, and so on.
 
-<span id="actions" class="anchor enhancedAnchor_2LWZ"></span>Actions<a href="#actions" class="hash-link" title="Direct link to heading">#</a>
----------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="actions" class="anchor enhancedAnchor_2LWZ"></span>Actions<a href="#actions" class="hash-link" title="Direct link to heading">#</a>
 
 Actions are plain objects describing what happened in the app, and serve as the sole way to describe an intention to mutate the data. It’s important that **actions being objects you have to dispatch is not boilerplate, but one of the [fundamental design choices](../understanding/thinking-in-redux/three-principles.html) of Redux**.
 
@@ -115,29 +113,28 @@ There are frameworks claiming to be similar to Flux, but without a concept of ac
 
 Actions look like this:
 
-<span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> text</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘Use Redux’</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span>
+<span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> text</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘Use Redux’</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘REMOVE\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> id</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">42</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span>
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘REMOVE_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> id</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">42</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_ARTICLE’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> response</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"> </span><span class="token spread operator" style="color: #f8f8f2">…</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span>It is a common convention that actions have a constant type that helps reducers (or Stores in Flux) identify them. We recommend that you use strings and not [Symbols](../../developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol.html) for action types, because strings are serializable, and by using Symbols you make recording and replaying harder than it needs to be.
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_ARTICLE’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> response</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"> </span><span class="token spread operator" style="color: #f8f8f2">…</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span>It is a common convention that actions have a constant type that helps reducers (or Stores in Flux) identify them. We recommend that you use strings and not [Symbols](../../developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol.html) for action types, because strings are serializable, and by using Symbols you make recording and replaying harder than it needs to be.
 
 In Flux, it is traditionally thought that you would define every action type as a string constant:
 
-<span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">ADD\_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_TODO’</span><span class="token plain"></span>
+<span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">ADD_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_TODO’</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">REMOVE\_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘REMOVE\_TODO’</span><span class="token plain"></span>
+<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">REMOVE_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘REMOVE_TODO’</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">LOAD\_ARTICLE</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_ARTICLE’</span>Why is this beneficial? **It is often claimed that constants are unnecessary, and for small projects, this might be correct.** For larger projects, there are some benefits to defining action types as constants:
+<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">LOAD_ARTICLE</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_ARTICLE’</span>Why is this beneficial? **It is often claimed that constants are unnecessary, and for small projects, this might be correct.** For larger projects, there are some benefits to defining action types as constants:
 
--   It helps keep the naming consistent because all action types are gathered in a single place.
--   Sometimes you want to see all existing actions before working on a new feature. It may be that the action you need was already added by somebody on the team, but you didn’t know.
--   The list of action types that were added, removed, and changed in a Pull Request helps everyone on the team keep track of scope and implementation of new features.
--   If you make a typo when importing an action constant, you will get `undefined`. Redux will immediately throw when dispatching such an action, and you’ll find the mistake sooner.
+- It helps keep the naming consistent because all action types are gathered in a single place.
+- Sometimes you want to see all existing actions before working on a new feature. It may be that the action you need was already added by somebody on the team, but you didn’t know.
+- The list of action types that were added, removed, and changed in a Pull Request helps everyone on the team keep track of scope and implementation of new features.
+- If you make a typo when importing an action constant, you will get `undefined`. Redux will immediately throw when dispatching such an action, and you’ll find the mistake sooner.
 
 It is up to you to choose the conventions for your project. You may start by using inline strings, and later transition to constants, and maybe later group them into a single file. Redux does not have any opinion here, so use your best judgment.
 
-<span id="action-creators" class="anchor enhancedAnchor_2LWZ"></span>Action Creators<a href="#action-creators" class="hash-link" title="Direct link to heading">#</a>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="action-creators" class="anchor enhancedAnchor_2LWZ"></span>Action Creators<a href="#action-creators" class="hash-link" title="Direct link to heading">#</a>
 
 It is another common convention that, instead of creating action objects inline in the places where you dispatch the actions, you would create functions generating them.
 
@@ -147,7 +144,7 @@ For example, instead of calling `dispatch` with an object literal:
 
 <span class="token plain"></span><span class="token function" style="color: #e6d874">dispatch</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> text</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘Use Redux’</span><span class="token plain"></span>
 
@@ -159,7 +156,7 @@ For example, instead of calling `dispatch` with an object literal:
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> text</span>
 
@@ -181,7 +178,7 @@ Let’s say a designer comes back to us after reviewing our prototype, and tells
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> text</span>
 
@@ -223,7 +220,7 @@ Writing simple action creators can be tiresome and often ends up generating redu
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> text</span>
 
@@ -237,7 +234,7 @@ Writing simple action creators can be tiresome and often ends up generating redu
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘EDIT\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘EDIT_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> id</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -253,7 +250,7 @@ Writing simple action creators can be tiresome and often ends up generating redu
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘REMOVE\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘REMOVE_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> id</span>
 
@@ -281,22 +278,21 @@ Writing simple action creators can be tiresome and often ends up generating redu
 
 <span class="token plain" style="display: inline-block"> </span>
 
-<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">ADD\_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_TODO’</span><span class="token plain"></span>
+<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">ADD_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_TODO’</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">EDIT\_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘EDIT\_TODO’</span><span class="token plain"></span>
+<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">EDIT_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘EDIT_TODO’</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">REMOVE\_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘REMOVE\_TODO’</span><span class="token plain"></span>
+<span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> </span><span class="token constant" style="color: #f92672">REMOVE_TODO</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘REMOVE_TODO’</span><span class="token plain"></span>
 
 <span class="token plain" style="display: inline-block"> </span>
 
-<span class="token plain"></span><span class="token keyword module" style="color: #f92672">export</span><span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> addTodo </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">makeActionCreator</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token constant" style="color: #f92672">ADD\_TODO</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘text’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
+<span class="token plain"></span><span class="token keyword module" style="color: #f92672">export</span><span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> addTodo </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">makeActionCreator</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token constant" style="color: #f92672">ADD_TODO</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘text’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token keyword module" style="color: #f92672">export</span><span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> editTodo </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">makeActionCreator</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token constant" style="color: #f92672">EDIT\_TODO</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘id’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘text’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
+<span class="token plain"></span><span class="token keyword module" style="color: #f92672">export</span><span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> editTodo </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">makeActionCreator</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token constant" style="color: #f92672">EDIT_TODO</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘id’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘text’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token keyword module" style="color: #f92672">export</span><span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> removeTodo </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">makeActionCreator</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token constant" style="color: #f92672">REMOVE\_TODO</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘id’</span><span class="token punctuation" style="color: #f8f8f2">)</span>There are also utility libraries to aid in generating action creators, such as [redux-act](../../github.com/pauldijou/redux-act.html) and [redux-actions](../../github.com/redux-utilities/redux-actions.html). These can help reduce boilerplate code and enforce adherence to standards such as [Flux Standard Action (FSA)](../../github.com/redux-utilities/flux-standard-action.html).
+<span class="token plain"></span><span class="token keyword module" style="color: #f92672">export</span><span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> removeTodo </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">makeActionCreator</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token constant" style="color: #f92672">REMOVE_TODO</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘id’</span><span class="token punctuation" style="color: #f8f8f2">)</span>There are also utility libraries to aid in generating action creators, such as [redux-act](../../github.com/pauldijou/redux-act.html) and [redux-actions](../../github.com/redux-utilities/redux-actions.html). These can help reduce boilerplate code and enforce adherence to standards such as [Flux Standard Action (FSA)](../../github.com/redux-utilities/flux-standard-action.html).
 
-<span id="async-action-creators" class="anchor enhancedAnchor_2LWZ"></span>Async Action Creators<a href="#async-action-creators" class="hash-link" title="Direct link to heading">#</a>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="async-action-creators" class="anchor enhancedAnchor_2LWZ"></span>Async Action Creators<a href="#async-action-creators" class="hash-link" title="Direct link to heading">#</a>
 
 [Middleware](../understanding/thinking-in-redux/glossary.html#middleware) lets you inject custom logic that interprets every action object before it is dispatched. Async actions are the most common use case for middleware.
 
@@ -308,7 +304,7 @@ Without any middleware, [`dispatch`](../api/store.html#dispatchaction) only acce
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> userId</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -324,7 +320,7 @@ Without any middleware, [`dispatch`](../api/store.html#dispatchaction) only acce
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_FAILURE’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_FAILURE’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> userId</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -340,7 +336,7 @@ Without any middleware, [`dispatch`](../api/store.html#dispatchaction) only acce
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> userId</span>
 
@@ -492,7 +488,7 @@ Consider the code above rewritten with [redux-thunk](../../github.com/reduxjs/re
 
 <span class="token plain"> </span><span class="token function" style="color: #e6d874">dispatch</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> userId</span>
 
@@ -508,7 +504,7 @@ Consider the code above rewritten with [redux-thunk](../../github.com/reduxjs/re
 
 <span class="token plain"> </span><span class="token function" style="color: #e6d874">dispatch</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> userId</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -520,7 +516,7 @@ Consider the code above rewritten with [redux-thunk](../../github.com/reduxjs/re
 
 <span class="token plain"> </span><span class="token function" style="color: #e6d874">dispatch</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_FAILURE’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_FAILURE’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> userId</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -606,7 +602,7 @@ Consider the code above rewritten with [redux-thunk](../../github.com/reduxjs/re
 
 <span class="token plain"> </span><span class="token comment" style="color: #c6cad2">// Types of actions to emit before and after</span><span class="token plain"></span>
 
-<span class="token plain"> types</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_FAILURE’</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> types</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_FAILURE’</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> </span><span class="token comment" style="color: #c6cad2">// Check the cache (optional):</span><span class="token plain"></span>
 
@@ -730,7 +726,7 @@ Consider the code above rewritten with [redux-thunk](../../github.com/reduxjs/re
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> types</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_POSTS\_FAILURE’</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> types</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_POSTS_FAILURE’</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> </span><span class="token function-variable function" style="color: #e6d874">shouldCallAPI</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token parameter">state</span><span class="token plain"> </span><span class="token arrow operator" style="color: #f8f8f2">=&gt;</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">!</span><span class="token plain">state</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">posts</span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token plain">userId</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -750,11 +746,11 @@ Consider the code above rewritten with [redux-thunk](../../github.com/reduxjs/re
 
 <span class="token plain"> types</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_COMMENTS\_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_COMMENTS_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_COMMENTS\_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_COMMENTS_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD\_COMMENTS\_FAILURE’</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘LOAD_COMMENTS_FAILURE’</span><span class="token plain"></span>
 
 <span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -776,11 +772,11 @@ Consider the code above rewritten with [redux-thunk](../../github.com/reduxjs/re
 
 <span class="token plain"> types</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_COMMENT\_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_COMMENT_REQUEST’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_COMMENT\_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_COMMENT_SUCCESS’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_COMMENT\_FAILURE’</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_COMMENT_FAILURE’</span><span class="token plain"></span>
 
 <span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -832,7 +828,7 @@ Consider this Flux store:
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">switch</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">type</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token keyword" style="color: #f92672">case</span><span class="token plain"> </span><span class="token maybe-class-name">ActionTypes</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token constant" style="color: #f92672">ADD\_TODO</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token keyword" style="color: #f92672">case</span><span class="token plain"> </span><span class="token maybe-class-name">ActionTypes</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token constant" style="color: #f92672">ADD_TODO</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"></span>
 
 <span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> text </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">text</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">trim</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
@@ -852,7 +848,7 @@ Consider this Flux store:
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">switch</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">type</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token keyword" style="color: #f92672">case</span><span class="token plain"> </span><span class="token maybe-class-name">ActionTypes</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token constant" style="color: #f92672">ADD\_TODO</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token keyword" style="color: #f92672">case</span><span class="token plain"> </span><span class="token maybe-class-name">ActionTypes</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token constant" style="color: #f92672">ADD_TODO</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"></span>
 
 <span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> text </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">text</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">trim</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
@@ -864,7 +860,7 @@ Consider this Flux store:
 
 <span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>The `switch` statement is *not* the real boilerplate. The real boilerplate of Flux is conceptual: the need to emit an update, the need to register the Store with a Dispatcher, the need for the Store to be an object (and the complications that arise when you want a universal app).
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>The `switch` statement is _not_ the real boilerplate. The real boilerplate of Flux is conceptual: the need to emit an update, the need to register the Store with a Dispatcher, the need for the Store to be an object (and the complications that arise when you want a universal app).
 
 It’s unfortunate that many still choose Flux framework based on whether it uses `switch` statements in the documentation. If you don’t like `switch`, you can solve this with a single function, as we show below.
 
@@ -874,7 +870,7 @@ Let’s write a function that lets us express reducers as an object mapping from
 
 <span class="token keyword module" style="color: #f92672">export</span><span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> todos </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">createReducer</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token maybe-class-name">ActionTypes</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token constant" style="color: #f92672">ADD\_TODO</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">state</span><span class="token parameter punctuation" style="color: #f8f8f2">,</span><span class="token parameter"> action</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token arrow operator" style="color: #f8f8f2">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token maybe-class-name">ActionTypes</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token constant" style="color: #f92672">ADD_TODO</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">state</span><span class="token parameter punctuation" style="color: #f8f8f2">,</span><span class="token parameter"> action</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token arrow operator" style="color: #f8f8f2">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
 <span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> text </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">text</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">trim</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
@@ -914,29 +910,29 @@ Next
 
 Server Rendering »
 
--   <a href="#actions" class="table-of-contents__link">Actions</a>
--   <a href="#action-creators" class="table-of-contents__link">Action Creators</a>
-    -   <a href="#generating-action-creators" class="table-of-contents__link">Generating Action Creators</a>
--   <a href="#async-action-creators" class="table-of-contents__link">Async Action Creators</a>
--   <a href="#reducers" class="table-of-contents__link">Reducers</a>
-    -   <a href="#generating-reducers" class="table-of-contents__link">Generating Reducers</a>
+- <a href="#actions" class="table-of-contents__link">Actions</a>
+- <a href="#action-creators" class="table-of-contents__link">Action Creators</a>
+  - <a href="#generating-action-creators" class="table-of-contents__link">Generating Action Creators</a>
+- <a href="#async-action-creators" class="table-of-contents__link">Async Action Creators</a>
+- <a href="#reducers" class="table-of-contents__link">Reducers</a>
+  - <a href="#generating-reducers" class="table-of-contents__link">Generating Reducers</a>
 
 #### Docs
 
--   <a href="../introduction/getting-started.html" class="footer__link-item">Getting Started</a>
--   <a href="../tutorials/essentials/part-1-overview-concepts.html" class="footer__link-item">Tutorial</a>
--   <a href="../faq.html" class="footer__link-item">FAQ</a>
--   <a href="../api/api-reference.html" class="footer__link-item">API Reference</a>
+- <a href="../introduction/getting-started.html" class="footer__link-item">Getting Started</a>
+- <a href="../tutorials/essentials/part-1-overview-concepts.html" class="footer__link-item">Tutorial</a>
+- <a href="../faq.html" class="footer__link-item">FAQ</a>
+- <a href="../api/api-reference.html" class="footer__link-item">API Reference</a>
 
 #### Community
 
--   <a href="../official/discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a>
--   <a href="../official/stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a>
--   <a href="../introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a>
+- <a href="../official/discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a>
+- <a href="../official/stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a>
+- <a href="../introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a>
 
 #### More
 
--   <a href="../official/github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a>
--   [![Deploys by Netlify](../../www.netlify.com/img/global/badges/netlify-color-accent.svg)](../../www.netlify.com/index.html)
+- <a href="../official/github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a>
+- [![Deploys by Netlify](../../www.netlify.com/img/global/badges/netlify-color-accent.svg)](../../www.netlify.com/index.html)
 
 <a href="../index.html" class="footerLogoLink_MyFc"><img src="../official/d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" /><img src="../official/d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--dark_hz6m footer__logo" /></a>

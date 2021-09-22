@@ -1,5 +1,4 @@
-50 Git questions (with answers)
-===============================
+# 50 Git questions (with answers)
 
 A list of 50 frequently git questions with answers. Released under a [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
 
@@ -164,7 +163,7 @@ A single branch of another repository can be easily placed under a subdirectory 
 
 git subtree add –prefix=rails git://github.com/rails/rails.git master
 
-#### 42. What is the difference between HEAD and ORIG\_HEAD?
+#### 42. What is the difference between HEAD and ORIG_HEAD?
 
 #### 43. How to use a global .gitignore?
 

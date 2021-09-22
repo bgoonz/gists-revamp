@@ -2,122 +2,119 @@
 
 <a href="../official/introduction/getting-started.html" class="navbar__item navbar__link">Getting Started</a><a href="part-1-overview-concepts.html" class="navbar__item navbar__link">Tutorial</a><a href="../official/api/api-reference.html" class="navbar__item navbar__link">API</a><a href="../official/faq.html" class="navbar__item navbar__link">FAQ</a><a href="../official/style-guide/style-guide.html" class="navbar__item navbar__link">Best Practices</a><a href="../official/../github.com/reduxjs/redux.html" class="navbar__item navbar__link">GitHub</a><a href="../official/introduction/getting-started.html#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="../official/index.html" class="navbar__brand"><strong>Redux</strong></a>
 
--   <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started</a>
--   <a href="part-1-overview-concepts.html" class="menu__link">Tutorial</a>
--   <a href="../official/api/api-reference.html" class="menu__link">API</a>
--   <a href="../official/faq.html" class="menu__link">FAQ</a>
--   <a href="../official/style-guide/style-guide.html" class="menu__link">Best Practices</a>
--   <a href="../official/../github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
--   <a href="../official/introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
+- <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started</a>
+- <a href="part-1-overview-concepts.html" class="menu__link">Tutorial</a>
+- <a href="../official/api/api-reference.html" class="menu__link">API</a>
+- <a href="../official/faq.html" class="menu__link">FAQ</a>
+- <a href="../official/style-guide/style-guide.html" class="menu__link">Best Practices</a>
+- <a href="../official/../github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
+- <a href="../official/introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
 
--   <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
-    -   <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
-    -   <a href="../official/introduction/installation.html" class="menu__link">Installation</a>
-    -   <a href="../official/introduction/core-concepts.html" class="menu__link">Core Concepts</a>
-    -   <a href="../official/introduction/learning-resources.html" class="menu__link">Learning Resources</a>
-    -   <a href="../official/introduction/ecosystem.html" class="menu__link">Ecosystem</a>
-    -   <a href="../official/introduction/examples.html" class="menu__link">Examples</a>
--   <a href="#!" class="menu__link menu__link--sublist menu__link--active">Tutorials</a>
+- <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+  - <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
+  - <a href="../official/introduction/installation.html" class="menu__link">Installation</a>
+  - <a href="../official/introduction/core-concepts.html" class="menu__link">Core Concepts</a>
+  - <a href="../official/introduction/learning-resources.html" class="menu__link">Learning Resources</a>
+  - <a href="../official/introduction/ecosystem.html" class="menu__link">Ecosystem</a>
+  - <a href="../official/introduction/examples.html" class="menu__link">Examples</a>
+- <a href="#!" class="menu__link menu__link--sublist menu__link--active">Tutorials</a>
 
-    -   <a href="../index.html" class="menu__link">Tutorials Index</a>
-    -   <a href="../quick-start.html" class="menu__link">Quick Start</a>
-    -   <a href="../typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a>
-    -   <a href="#!" class="menu__link menu__link--sublist menu__link--active">Redux Essentials</a>
+  - <a href="../index.html" class="menu__link">Tutorials Index</a>
+  - <a href="../quick-start.html" class="menu__link">Quick Start</a>
+  - <a href="../typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a>
+  - <a href="#!" class="menu__link menu__link--sublist menu__link--active">Redux Essentials</a>
 
-        -   <a href="part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a>
-        -   <a href="part-2-app-structure.html" class="menu__link menu__link--active active">Redux App Structure</a>
-        -   <a href="part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a>
-        -   <a href="part-4-using-data.html" class="menu__link">Using Redux Data</a>
-        -   <a href="part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="part-6-performance-normalization.html" class="menu__link">Performance and Normalizing Data</a>
+    - <a href="part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a>
+    - <a href="part-2-app-structure.html" class="menu__link menu__link--active active">Redux App Structure</a>
+    - <a href="part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a>
+    - <a href="part-4-using-data.html" class="menu__link">Using Redux Data</a>
+    - <a href="part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="part-6-performance-normalization.html" class="menu__link">Performance and Normalizing Data</a>
 
-        -   <a href="../fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a>
-        -   <a href="../fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a>
-        -   <a href="../fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a>
-        -   <a href="../fundamentals/part-4-store.html" class="menu__link">Store</a>
-        -   <a href="../fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a>
-        -   <a href="../fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="../fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a>
-        -   <a href="../fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a>
+    - <a href="../fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a>
+    - <a href="../fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a>
+    - <a href="../fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a>
+    - <a href="../fundamentals/part-4-store.html" class="menu__link">Store</a>
+    - <a href="../fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a>
+    - <a href="../fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="../fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a>
+    - <a href="../fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a>
 
-    -   <a href="../official/recipes/recipe-index.html" class="menu__link">Recipes: Index</a>
-    -   <a href="../official/recipes/configuring-your-store.html" class="menu__link">Configuring Your Store</a>
-    -   <a href="../official/recipes/usage-with-typescript.html" class="menu__link">Usage With TypeScript</a>
-    -   <a href="../official/recipes/migrating-to-redux.html" class="menu__link">Migrating to Redux</a>
-    -   <a href="../official/recipes/using-object-spread-operator.html" class="menu__link">Using Object Spread Operator</a>
-    -   <a href="../official/recipes/reducing-boilerplate.html" class="menu__link">Reducing Boilerplate</a>
-    -   <a href="../official/recipes/server-rendering.html" class="menu__link">Server Rendering</a>
-    -   <a href="../official/recipes/writing-tests.html" class="menu__link">Writing Tests</a>
-    -   <a href="../official/recipes/computing-derived-data.html" class="menu__link">Computing Derived Data</a>
-    -   <a href="../official/recipes/implementing-undo-history.html" class="menu__link">Implementing Undo History</a>
-    -   <a href="../official/recipes/isolating-redux-sub-apps.html" class="menu__link">Isolating Redux Sub-Apps</a>
-    -   <a href="../official/recipes/code-splitting.html" class="menu__link">Code Splitting</a>
-    -   <a href="../official/recipes/troubleshooting.html" class="menu__link">Troubleshooting</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
-        -   <a href="../official/recipes/structuring-reducers/structuring-reducers.html" class="menu__link">Structuring Reducers</a>
-        -   <a href="../official/recipes/structuring-reducers/prerequisite-concepts.html" class="menu__link">Prerequisite Concepts</a>
-        -   <a href="../official/recipes/structuring-reducers/basic-reducer-structure.html" class="menu__link">Basic Reducer Structure</a>
-        -   <a href="../official/recipes/structuring-reducers/splitting-reducer-logic.html" class="menu__link">Splitting Reducer Logic</a>
-        -   <a href="../official/recipes/structuring-reducers/refactoring-reducer-example.html" class="menu__link">Refactoring Reducers Example</a>
-        -   <a href="../official/recipes/structuring-reducers/using-combinereducers.html" class="menu__link">Using combineReducers</a>
-        -   <a href="../official/recipes/structuring-reducers/beyond-combinereducers.html" class="menu__link">Beyond combineReducers</a>
-        -   <a href="../official/recipes/structuring-reducers/normalizing-state-shape.html" class="menu__link">Normalizing State Shape</a>
-        -   <a href="../official/recipes/structuring-reducers/updating-normalized-data.html" class="menu__link">Updating Normalized Data</a>
-        -   <a href="../official/recipes/structuring-reducers/reusing-reducer-logic.html" class="menu__link">Reusing Reducer Logic</a>
-        -   <a href="../official/recipes/structuring-reducers/immutable-update-patterns.html" class="menu__link">Immutable Update Patterns</a>
-        -   <a href="../official/recipes/structuring-reducers/initializing-state.html" class="menu__link">Initializing State</a>
+  - <a href="../official/recipes/recipe-index.html" class="menu__link">Recipes: Index</a>
+  - <a href="../official/recipes/configuring-your-store.html" class="menu__link">Configuring Your Store</a>
+  - <a href="../official/recipes/usage-with-typescript.html" class="menu__link">Usage With TypeScript</a>
+  - <a href="../official/recipes/migrating-to-redux.html" class="menu__link">Migrating to Redux</a>
+  - <a href="../official/recipes/using-object-spread-operator.html" class="menu__link">Using Object Spread Operator</a>
+  - <a href="../official/recipes/reducing-boilerplate.html" class="menu__link">Reducing Boilerplate</a>
+  - <a href="../official/recipes/server-rendering.html" class="menu__link">Server Rendering</a>
+  - <a href="../official/recipes/writing-tests.html" class="menu__link">Writing Tests</a>
+  - <a href="../official/recipes/computing-derived-data.html" class="menu__link">Computing Derived Data</a>
+  - <a href="../official/recipes/implementing-undo-history.html" class="menu__link">Implementing Undo History</a>
+  - <a href="../official/recipes/isolating-redux-sub-apps.html" class="menu__link">Isolating Redux Sub-Apps</a>
+  - <a href="../official/recipes/code-splitting.html" class="menu__link">Code Splitting</a>
+  - <a href="../official/recipes/troubleshooting.html" class="menu__link">Troubleshooting</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
+    - <a href="../official/recipes/structuring-reducers/structuring-reducers.html" class="menu__link">Structuring Reducers</a>
+    - <a href="../official/recipes/structuring-reducers/prerequisite-concepts.html" class="menu__link">Prerequisite Concepts</a>
+    - <a href="../official/recipes/structuring-reducers/basic-reducer-structure.html" class="menu__link">Basic Reducer Structure</a>
+    - <a href="../official/recipes/structuring-reducers/splitting-reducer-logic.html" class="menu__link">Splitting Reducer Logic</a>
+    - <a href="../official/recipes/structuring-reducers/refactoring-reducer-example.html" class="menu__link">Refactoring Reducers Example</a>
+    - <a href="../official/recipes/structuring-reducers/using-combinereducers.html" class="menu__link">Using combineReducers</a>
+    - <a href="../official/recipes/structuring-reducers/beyond-combinereducers.html" class="menu__link">Beyond combineReducers</a>
+    - <a href="../official/recipes/structuring-reducers/normalizing-state-shape.html" class="menu__link">Normalizing State Shape</a>
+    - <a href="../official/recipes/structuring-reducers/updating-normalized-data.html" class="menu__link">Updating Normalized Data</a>
+    - <a href="../official/recipes/structuring-reducers/reusing-reducer-logic.html" class="menu__link">Reusing Reducer Logic</a>
+    - <a href="../official/recipes/structuring-reducers/immutable-update-patterns.html" class="menu__link">Immutable Update Patterns</a>
+    - <a href="../official/recipes/structuring-reducers/initializing-state.html" class="menu__link">Initializing State</a>
 
--   <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
-        -   <a href="../official/understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a>
-        -   <a href="../official/understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a>
-        -   <a href="../official/understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
-        -   <a href="../official/understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a>
-        -   <a href="../official/understanding/history-and-design/middleware.html" class="menu__link">Middleware</a>
--   <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
-    -   <a href="../official/faq.html" class="menu__link">FAQ Index</a>
-    -   <a href="../official/faq/general.html" class="menu__link">General</a>
-    -   <a href="../official/faq/reducers.html" class="menu__link">Reducers</a>
-    -   <a href="../official/faq/organizing-state.html" class="menu__link">Organizing State</a>
-    -   <a href="../official/faq/store-setup.html" class="menu__link">Store Setup</a>
-    -   <a href="../official/faq/actions.html" class="menu__link">Actions</a>
-    -   <a href="../official/faq/immutable-data.html" class="menu__link">Immutable Data</a>
-    -   <a href="../official/faq/code-structure.html" class="menu__link">Code Structure</a>
-    -   <a href="../official/faq/performance.html" class="menu__link">Performance</a>
-    -   <a href="../official/faq/design-decisions.html" class="menu__link">Design Decisions</a>
-    -   <a href="../official/faq/react-redux.html" class="menu__link">React Redux</a>
-    -   <a href="../official/faq/miscellaneous.html" class="menu__link">Miscellaneous</a>
--   <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
-    -   <a href="../official/style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a>
--   <a href="#!" class="menu__link menu__link--sublist">API Reference</a>
-    -   <a href="../official/api/api-reference.html" class="menu__link">API Reference</a>
-    -   <a href="../official/api/createstore.html" class="menu__link">createStore</a>
-    -   <a href="../official/api/store.html" class="menu__link">Store</a>
-    -   <a href="../official/api/combinereducers.html" class="menu__link">combineReducers</a>
-    -   <a href="../official/api/applymiddleware.html" class="menu__link">applyMiddleware</a>
-    -   <a href="../official/api/bindactioncreators.html" class="menu__link">bindActionCreators</a>
-    -   <a href="../official/api/compose.html" class="menu__link">compose</a>
--   <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
-    -   <a href="../official/redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a>
+- <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+    - <a href="../official/understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a>
+    - <a href="../official/understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a>
+    - <a href="../official/understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a>
+  - <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+    - <a href="../official/understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a>
+    - <a href="../official/understanding/history-and-design/middleware.html" class="menu__link">Middleware</a>
+- <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
+  - <a href="../official/faq.html" class="menu__link">FAQ Index</a>
+  - <a href="../official/faq/general.html" class="menu__link">General</a>
+  - <a href="../official/faq/reducers.html" class="menu__link">Reducers</a>
+  - <a href="../official/faq/organizing-state.html" class="menu__link">Organizing State</a>
+  - <a href="../official/faq/store-setup.html" class="menu__link">Store Setup</a>
+  - <a href="../official/faq/actions.html" class="menu__link">Actions</a>
+  - <a href="../official/faq/immutable-data.html" class="menu__link">Immutable Data</a>
+  - <a href="../official/faq/code-structure.html" class="menu__link">Code Structure</a>
+  - <a href="../official/faq/performance.html" class="menu__link">Performance</a>
+  - <a href="../official/faq/design-decisions.html" class="menu__link">Design Decisions</a>
+  - <a href="../official/faq/react-redux.html" class="menu__link">React Redux</a>
+  - <a href="../official/faq/miscellaneous.html" class="menu__link">Miscellaneous</a>
+- <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
+  - <a href="../official/style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a>
+- <a href="#!" class="menu__link menu__link--sublist">API Reference</a>
+  - <a href="../official/api/api-reference.html" class="menu__link">API Reference</a>
+  - <a href="../official/api/createstore.html" class="menu__link">createStore</a>
+  - <a href="../official/api/store.html" class="menu__link">Store</a>
+  - <a href="../official/api/combinereducers.html" class="menu__link">combineReducers</a>
+  - <a href="../official/api/applymiddleware.html" class="menu__link">applyMiddleware</a>
+  - <a href="../official/api/bindactioncreators.html" class="menu__link">bindActionCreators</a>
+  - <a href="../official/api/compose.html" class="menu__link">compose</a>
+- <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+  - <a href="../official/redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a>
 
-<span id="redux-essentials-part-2-redux-app-structure" class="anchor enhancedAnchor_2LWZ"></span>Redux Essentials, Part 2: Redux App Structure<a href="#redux-essentials-part-2-redux-app-structure" class="hash-link" title="Direct link to heading">#</a>
-===========================================================================================================================================================================================================================================================
+# <span id="redux-essentials-part-2-redux-app-structure" class="anchor enhancedAnchor_2LWZ"></span>Redux Essentials, Part 2: Redux App Structure<a href="#redux-essentials-part-2-redux-app-structure" class="hash-link" title="Direct link to heading">#</a>
 
 ##### <span class="admonition-icon"> </span>What You’ll Learn
 
--   The structure of a typical React + Redux app
--   How to view state changes in the Redux DevTools Extension
+- The structure of a typical React + Redux app
+- How to view state changes in the Redux DevTools Extension
 
-<span id="introduction" class="anchor enhancedAnchor_2LWZ"></span>Introduction<a href="#introduction" class="hash-link" title="Direct link to heading">#</a>
-------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="introduction" class="anchor enhancedAnchor_2LWZ"></span>Introduction<a href="#introduction" class="hash-link" title="Direct link to heading">#</a>
 
 In [Part 1: Redux Overview and Concepts](part-1-overview-concepts.html), we looked at why Redux is useful, the terms and concepts used to describe different parts of Redux code, and how data flows through a Redux app.
 
 Now, let’s look at a real working example to see how these pieces fit together.
 
-<span id="the-counter-example-app" class="anchor enhancedAnchor_2LWZ"></span>The Counter Example App<a href="#the-counter-example-app" class="hash-link" title="Direct link to heading">#</a>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="the-counter-example-app" class="anchor enhancedAnchor_2LWZ"></span>The Counter Example App<a href="#the-counter-example-app" class="hash-link" title="Direct link to heading">#</a>
 
 The sample project we’ll look at is a small counter application that lets us add or subtract from a number as we click buttons. It may not be very exciting, but it shows all the important pieces of a React+Redux application in action.
 
@@ -153,16 +150,16 @@ Let’s play with the app first to see what it does. Click the “+” button in
 
 We can see two important things here:
 
--   When we clicked the “+” button, an action with a type of `"counter/increment"` was dispatched to the store
--   When that action was dispatched, the `state.counter.value` field changed from `0` to `1`
+- When we clicked the “+” button, an action with a type of `"counter/increment"` was dispatched to the store
+- When that action was dispatched, the `state.counter.value` field changed from `0` to `1`
 
 Now try these steps:
 
--   Click the “+” button again. The displayed value should now be 2.
--   Click the “-” button once. The displayed value should now be 1.
--   Click the “Add Amount” button. The displayed value should now be 3.
--   Change the number “2” in the textbox to a “3”
--   Click the “Add Async” button. You should see a progress bar fill the button, and after a couple seconds, the displayed value should change to 6.
+- Click the “+” button again. The displayed value should now be 2.
+- Click the “-” button once. The displayed value should now be 1.
+- Click the “Add Amount” button. The displayed value should now be 3.
+- Change the number “2” in the textbox to a “3”
+- Click the “Add Async” button. You should see a progress bar fill the button, and after a couple seconds, the displayed value should change to 6.
 
 Go back to the Redux DevTools. You should see a total of five actions dispatched, one for each time we clicked a button . Now select the last `"counter/incrementByAmount"` entry from the list on the left, and click the “Action” tab on the right side:
 
@@ -186,22 +183,21 @@ The DevTools have several more commands and options to help you debug your app. 
 
 This makes it easier to trace what part of the code dispatched a specific action.
 
-<span id="application-contents" class="anchor enhancedAnchor_2LWZ"></span>Application Contents<a href="#application-contents" class="hash-link" title="Direct link to heading">#</a>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="application-contents" class="anchor enhancedAnchor_2LWZ"></span>Application Contents<a href="#application-contents" class="hash-link" title="Direct link to heading">#</a>
 
 Now that you know what the app does, let’s look at how it works.
 
 Here are the key files that make up this application:
 
--   `/src`
-    -   `index.js`: the starting point for the app
-    -   `App.js`: the top-level React component
-    -   `/app`
-        -   `store.js`: creates the Redux store instance
-    -   `/features`
-        -   `/counter`
-            -   `Counter.js`: a React component that shows the UI for the counter feature
-            -   `counterSlice.js`: the Redux logic for the counter feature
+- `/src`
+  - `index.js`: the starting point for the app
+  - `App.js`: the top-level React component
+  - `/app`
+    - `store.js`: creates the Redux store instance
+  - `/features`
+    - `/counter`
+      - `Counter.js`: a React component that shows the UI for the counter feature
+      - `counterSlice.js`: the Redux logic for the counter feature
 
 Let’s start by looking at how the Redux store is created.
 
@@ -363,13 +359,13 @@ features/counter/counterSlice.js
 
 <span class="token plain"></span><span class="token keyword module" style="color: #f92672">export</span><span class="token plain"> </span><span class="token keyword module" style="color: #f92672">default</span><span class="token plain"> counterSlice</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">reducer</span>Earlier, we saw that clicking the different buttons in the UI dispatched three different Redux action types:
 
--   `{type: "counter/increment"}`
--   `{type: "counter/decrement"}`
--   `{type: "counter/incrementByAmount"}`
+- `{type: "counter/increment"}`
+- `{type: "counter/decrement"}`
+- `{type: "counter/incrementByAmount"}`
 
 We know that actions are plain objects with a `type` field, the `type` field is always a string, and we typically have “action creator” functions that create and return the action objects. So where are those action objects, type strings, and action creators defined?
 
-We *could* write those all by hand, every time. But, that would be tedious. Besides, what’s *really* important in Redux is the reducer functions, and the logic they have for calculating new state.
+We _could_ write those all by hand, every time. But, that would be tedious. Besides, what’s _really_ important in Redux is the reducer functions, and the logic they have for calculating new state.
 
 Redux Toolkit has a function called `createSlice`, which takes care of the work of generating action type strings, action creator functions, and action objects. All you have to do is define a name for this slice, write an object that has some reducer functions in it, and it generates the corresponding action code automatically. The string from the `name` option is used as the first part of each action type, and the key name of each reducer function is used as the second part. So, the `"counter"` name + the `"increment"` reducer function generated an action type of `{type: "counter/increment"}`. (After all, why write this by hand if the computer can do it for us!)
 
@@ -397,16 +393,16 @@ We can see here that there are three reducer functions, and that corresponds to 
 
 We said earlier that reducers must **always** follow some special rules:
 
--   They should only calculate the new state value based on the `state` and `action` arguments
--   They are not allowed to modify the existing `state`. Instead, they must make *immutable updates*, by copying the existing `state` and making changes to the copied values.
--   They must not do any asynchronous logic or other “side effects”
+- They should only calculate the new state value based on the `state` and `action` arguments
+- They are not allowed to modify the existing `state`. Instead, they must make _immutable updates_, by copying the existing `state` and making changes to the copied values.
+- They must not do any asynchronous logic or other “side effects”
 
 But why are these rules important? There’s a few different reasons:
 
--   One of the goals of Redux is to make your code predictable. When a function’s output is only calculated from the input arguments, it’s easier to understand how that code works, and to test it.
--   On the other hand, if a function depends on variables outside itself, or behaves randomly, you never know what will happen when you run it.
--   If a function modifies other values, including its arguments, that can change the way the application works unexpectedly. This can be a common source of bugs, such as “I updated my state, but now my UI isn’t updating when it should!”
--   Some of the Redux DevTools capabilities depend on having your reducers follow these rules correctly
+- One of the goals of Redux is to make your code predictable. When a function’s output is only calculated from the input arguments, it’s easier to understand how that code works, and to test it.
+- On the other hand, if a function depends on variables outside itself, or behaves randomly, you never know what will happen when you run it.
+- If a function modifies other values, including its arguments, that can change the way the application works unexpectedly. This can be a common source of bugs, such as “I updated my state, but now my UI isn’t updating when it should!”
+- Some of the Redux DevTools capabilities depend on having your reducers follow these rules correctly
 
 The rule about “immutable updates” is particularly important, and worth talking about further.
 
@@ -414,23 +410,23 @@ The rule about “immutable updates” is particularly important, and worth talk
 
 Earlier, we talked about “mutation” (modifying existing object/array values) and “immutability” (treating values as something that cannot be changed).
 
-In Redux, **our reducers are *never* allowed to mutate the original / current state values!**
+In Redux, **our reducers are _never_ allowed to mutate the original / current state values!**
 
 <span class="token comment" style="color: #c6cad2">// ❌ Illegal - by default, this will mutate the state!</span><span class="token plain"></span>
 
 <span class="token plain">state</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">value</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">123</span>There are several reasons why you must not mutate state in Redux:
 
--   It causes bugs, such as the UI not updating properly to show the latest values
--   It makes it harder to understand why and how the state has been updated
--   It makes it harder to write tests
--   It breaks the ability to use “time-travel debugging” correctly
--   It goes against the intended spirit and usage patterns for Redux
+- It causes bugs, such as the UI not updating properly to show the latest values
+- It makes it harder to understand why and how the state has been updated
+- It makes it harder to write tests
+- It breaks the ability to use “time-travel debugging” correctly
+- It goes against the intended spirit and usage patterns for Redux
 
 So if we can’t change the originals, how do we return an updated state?
 
 ##### <span class="admonition-icon"> </span>tip
 
-**Reducers can only make *copies* of the original values, and then they can mutate the copies.**
+**Reducers can only make _copies_ of the original values, and then they can mutate the copies.**
 
 <span class="token comment" style="color: #c6cad2">// ✅ This is safe, because we made a copy</span><span class="token plain"></span>
 
@@ -442,7 +438,7 @@ So if we can’t change the originals, how do we return an updated state?
 
 <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>We already saw that we can [write immutable updates by hand](part-1-overview-concepts.html#immutability), by using JavaScript’s array / object spread operators and other functions that return copies of the original values. However, if you’re thinking that “writing immutable updates by hand this way looks hard to remember and do correctly”… yeah, you’re right! :)
 
-Writing immutable update logic by hand *is* hard, and accidentally mutating state in reducers is the single most common mistake Redux users make.
+Writing immutable update logic by hand _is_ hard, and accidentally mutating state in reducers is the single most common mistake Redux users make.
 
 **That’s why Redux Toolkit’s `createSlice` function lets you write immutable updates an easier way!**
 
@@ -486,11 +482,11 @@ So, instead of this:
 
 <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>That’s a lot easier to read!
 
-But, here’s something *very* important to remember:
+But, here’s something _very_ important to remember:
 
 ##### <span class="admonition-icon"> </span>warning
 
-**You can *only* write “mutating” logic in Redux Toolkit’s `createSlice` and `createReducer` because they use Immer inside! If you write mutating logic in reducers without Immer, it *will* mutate the state and cause bugs!**
+**You can _only_ write “mutating” logic in Redux Toolkit’s `createSlice` and `createReducer` because they use Immer inside! If you write mutating logic in reducers without Immer, it _will_ mutate the state and cause bugs!**
 
 With that in mind, let’s go back and look at the actual reducers from the counter slice.
 
@@ -540,7 +536,7 @@ features/counter/counterSlice.js
 
 In both of those reducers, we don’t actually need to have our code look at the `action` object. It will be passed in anyway, but since we don’t need it, we can skip declaring `action` as a parameter for the reducers.
 
-On the other hand, the `incrementByAmount` reducer *does* need to know something: how much it should be adding to the counter value. So, we declare the reducer as having both `state` and `action` arguments. In this case, we know that the amount we typed into the textbox is being put into the `action.payload` field, so we can add that to `state.value`.
+On the other hand, the `incrementByAmount` reducer _does_ need to know something: how much it should be adding to the counter value. So, we declare the reducer as having both `state` and `action` arguments. In this case, we know that the amount we typed into the textbox is being put into the `action.payload` field, so we can add that to `state.value`.
 
 ##### <span class="admonition-icon"> </span>Want to Know More?
 
@@ -552,8 +548,8 @@ So far, all the logic in our application has been synchronous. Actions are dispa
 
 A **thunk** is a specific kind of Redux function that can contain asynchronous logic. Thunks are written using two functions:
 
--   An inside thunk function, which gets `dispatch` and `getState` as arguments
--   The outside creator function, which creates and returns the thunk function
+- An inside thunk function, which gets `dispatch` and `getState` as arguments
+- The outside creator function, which creates and returns the thunk function
 
 The next function that’s exported from `counterSlice` is an example of a thunk action creator:
 
@@ -577,7 +573,7 @@ features/counter/counterSlice.js
 
 <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>We can use them the same way we use a typical Redux action creator:
 
-<span class="token plain">store</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">dispatch</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token function" style="color: #e6d874">incrementAsync</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token number" style="color: #ae81ff">5</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token punctuation" style="color: #f8f8f2">)</span>However, using thunks requires that the `redux-thunk` *middleware* (a type of plugin for Redux) be added to the Redux store when it’s created. Fortunately, Redux Toolkit’s `configureStore` function already sets that up for us automatically, so we can go ahead and use thunks here.
+<span class="token plain">store</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">dispatch</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token function" style="color: #e6d874">incrementAsync</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token number" style="color: #ae81ff">5</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token punctuation" style="color: #f8f8f2">)</span>However, using thunks requires that the `redux-thunk` _middleware_ (a type of plugin for Redux) be added to the Redux store when it’s created. Fortunately, Redux Toolkit’s `configureStore` function already sets that up for us automatically, so we can go ahead and use thunks here.
 
 When you need to make AJAX calls to fetch data from the server, you can put that call in a thunk. Here’s an example that’s written a bit longer, so you can see how it’s defined:
 
@@ -627,9 +623,9 @@ If we have access to the Redux store, we could write some async code and call `s
 
 <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">250</span><span class="token punctuation" style="color: #f8f8f2">)</span>But, in a real Redux app, we’re not allowed to import the store into other files, especially in our React components, because it makes that code harder to test and reuse.
 
-In addition, we often need to write some async logic that we know will be used with *some* store, eventually, but we don’t know *which* store.
+In addition, we often need to write some async logic that we know will be used with _some_ store, eventually, but we don’t know _which_ store.
 
-The Redux store can be extended with “middleware”, which are a kind of add-on or plugin that can add extra abilities. The most common reason to use middleware is to let you write code that can have async logic, but still talk to the store at the same time. They can also modify the store so that we can call `dispatch()` and pass in values that are *not* plain action objects, like functions or Promises.
+The Redux store can be extended with “middleware”, which are a kind of add-on or plugin that can add extra abilities. The most common reason to use middleware is to let you write code that can have async logic, but still talk to the store at the same time. They can also modify the store so that we can call `dispatch()` and pass in values that are _not_ plain action objects, like functions or Promises.
 
 The Redux Thunk middleware modifies the store to let you pass functions into `dispatch`. In fact, it’s short enough we can paste it here:
 
@@ -747,7 +743,7 @@ features/counter/Counter.js
 
 <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>Like with the earlier plain React example, we have a function component called `Counter`, that stores some data in a `useState` hook.
 
-However, in our component, it doesn’t look like we’re storing the actual current counter value as state. There *is* a variable called `count`, but it’s not coming from a `useState` hook.
+However, in our component, it doesn’t look like we’re storing the actual current counter value as state. There _is_ a variable called `count`, but it’s not coming from a `useState` hook.
 
 While React includes several built-in hooks like `useState` and `useEffect`, other libraries can create their own [custom hooks](../../../reactjs.org/docs/hooks-custom.html) that use React’s hooks to build custom logic.
 
@@ -779,7 +775,7 @@ features/counter/counterSlice.js
 
 So, we can get the current store counter value by doing:
 
-<span class="token keyword" style="color: #f92672">const</span><span class="token plain"> count </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">useSelector</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">selectCount</span><span class="token punctuation" style="color: #f8f8f2">)</span>We don’t have to *only* use selectors that have already been exported, either. For example, we could write a selector function as an inline argument to `useSelector`:
+<span class="token keyword" style="color: #f92672">const</span><span class="token plain"> count </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">useSelector</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">selectCount</span><span class="token punctuation" style="color: #f8f8f2">)</span>We don’t have to _only_ use selectors that have already been exported, either. For example, we could write a selector function as an inline argument to `useSelector`:
 
 <span class="token keyword" style="color: #f92672">const</span><span class="token plain"> countPlusTwo </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">useSelector</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">state</span><span class="token plain"> </span><span class="token arrow operator" style="color: #f8f8f2">=&gt;</span><span class="token plain"> state</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">counter</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">value</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">+</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">2</span><span class="token punctuation" style="color: #f8f8f2">)</span>Any time an action has been dispatched and the Redux store has been updated, `useSelector` will re-run our selector function. If the selector returns a different value than last time, `useSelector` will make sure our component re-renders with the new value.
 
@@ -863,7 +859,7 @@ features/counter/Counter.js
 
 <span class="token plain"> </span><span class="token tag punctuation" style="color: #f8f8f2">&lt;/</span><span class="token tag" style="color: #f92672">div</span><span class="token tag punctuation" style="color: #f8f8f2">&gt;</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">)</span>We *could* keep the current number string in the Redux store, by dispatching an action in the input’s `onChange` handler and keeping it in our reducer. But, that doesn’t give us any benefit. The only place that text string is used is here, in the `<Counter>` component. (Sure, there’s only one other component in this example: `<App>`. But even if we had a larger application with many components, only `<Counter>` cares about this input value.)
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">)</span>We _could_ keep the current number string in the Redux store, by dispatching an action in the input’s `onChange` handler and keeping it in our reducer. But, that doesn’t give us any benefit. The only place that text string is used is here, in the `<Counter>` component. (Sure, there’s only one other component in this example: `<App>`. But even if we had a larger application with many components, only `<Counter>` cares about this input value.)
 
 So, it makes sense to keep that value in a `useState` hook here in the `<Counter>` component.
 
@@ -873,12 +869,12 @@ Similarly, if we had a boolean flag called `isDropdownOpen`, no other components
 
 If you’re not sure where to put something, here are some common rules of thumb for determining what kind of data should be put into Redux:
 
--   Do other parts of the application care about this data?
--   Do you need to be able to create further derived data based on this original data?
--   Is the same data being used to drive multiple components?
--   Is there value to you in being able to restore this state to a given point in time (ie, time travel debugging)?
--   Do you want to cache the data (ie, use what’s in state if it’s already there instead of re-requesting it)?
--   Do you want to keep this data consistent while hot-reloading UI components (which may lose their internal state when swapped)?
+- Do other parts of the application care about this data?
+- Do you need to be able to create further derived data based on this original data?
+- Is the same data being used to drive multiple components?
+- Is there value to you in being able to restore this state to a given point in time (ie, time travel debugging)?
+- Do you want to cache the data (ie, use what’s in state if it’s already there instead of re-requesting it)?
+- Do you want to keep this data consistent while hot-reloading UI components (which may lose their internal state when swapped)?
 
 This is also a good example of how to think about forms in Redux in general. **Most form state probably shouldn’t be kept in Redux.** Instead, keep the data in your form components as you’re editing it, and then dispatch Redux actions to update the store when the user is done.
 
@@ -924,33 +920,31 @@ We already created our store in `app/store.js`, so we can import it here. Then, 
 
 Now, any React components that call `useSelector` or `useDispatch` will be talking to the Redux store we gave to the `<Provider>`.
 
-<span id="what-youve-learned" class="anchor enhancedAnchor_2LWZ"></span>What You’ve Learned<a href="#what-youve-learned" class="hash-link" title="Direct link to heading">#</a>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="what-youve-learned" class="anchor enhancedAnchor_2LWZ"></span>What You’ve Learned<a href="#what-youve-learned" class="hash-link" title="Direct link to heading">#</a>
 
 Even though the counter example app is pretty small, it showed all the key pieces of a React + Redux app working together. Here’s what we covered:
 
 ##### <span class="admonition-icon"> </span>Summary
 
--   **We can create a Redux store using the Redux Toolkit `configureStore` API**
-    -   `configureStore` accepts a `reducer` function as a named argument
-    -   `configureStore` automatically sets up the store with good default settings
--   **Redux logic is typically organized into files called “slices”**
-    -   A “slice” contains the reducer logic and actions related to a specific feature / section of the Redux state
-    -   Redux Toolkit’s `createSlice` API generates action creators and action types for each individual reducer function you provide
--   **Redux reducers must follow specific rules**
-    -   Should only calculate a new state value based on the `state` and `action` arguments
-    -   Must make *immutable updates* by copying the existing state
-    -   Cannot contain any asynchronous logic or other “side effects”
-    -   Redux Toolkit’s `createSlice` API uses Immer to allow “mutating” immutable updates
--   **Async logic is typically written in special functions called “thunks”**
-    -   Thunks receive `dispatch` and `getState` as arguments
-    -   Redux Toolkit enables the `redux-thunk` middleware by default
--   **React-Redux allows React components to interact with a Redux store**
-    -   Wrapping the app with `<Provider store={store}>` enables all components to use the store
-    -   Global state should go in the Redux store, local state should stay in React components
+- **We can create a Redux store using the Redux Toolkit `configureStore` API**
+  - `configureStore` accepts a `reducer` function as a named argument
+  - `configureStore` automatically sets up the store with good default settings
+- **Redux logic is typically organized into files called “slices”**
+  - A “slice” contains the reducer logic and actions related to a specific feature / section of the Redux state
+  - Redux Toolkit’s `createSlice` API generates action creators and action types for each individual reducer function you provide
+- **Redux reducers must follow specific rules**
+  - Should only calculate a new state value based on the `state` and `action` arguments
+  - Must make _immutable updates_ by copying the existing state
+  - Cannot contain any asynchronous logic or other “side effects”
+  - Redux Toolkit’s `createSlice` API uses Immer to allow “mutating” immutable updates
+- **Async logic is typically written in special functions called “thunks”**
+  - Thunks receive `dispatch` and `getState` as arguments
+  - Redux Toolkit enables the `redux-thunk` middleware by default
+- **React-Redux allows React components to interact with a Redux store**
+  - Wrapping the app with `<Provider store={store}>` enables all components to use the store
+  - Global state should go in the Redux store, local state should stay in React components
 
-<span id="whats-next" class="anchor enhancedAnchor_2LWZ"></span>What’s Next?<a href="#whats-next" class="hash-link" title="Direct link to heading">#</a>
---------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="whats-next" class="anchor enhancedAnchor_2LWZ"></span>What’s Next?<a href="#whats-next" class="hash-link" title="Direct link to heading">#</a>
 
 Now that you’ve seen all the pieces of a Redux app in action, it’s time to write your own! For the rest of this tutorial, you’ll be building a larger example app that uses Redux. Along the way, we’ll cover all the key ideas you need to know to use Redux the right way.
 
@@ -966,37 +960,37 @@ Next
 
 Redux Essentials, Part 3: Basic Redux Data Flow »
 
--   <a href="#introduction" class="table-of-contents__link">Introduction</a>
--   <a href="#the-counter-example-app" class="table-of-contents__link">The Counter Example App</a>
-    -   <a href="#using-the-counter-app" class="table-of-contents__link">Using the Counter App</a>
--   <a href="#application-contents" class="table-of-contents__link">Application Contents</a>
-    -   <a href="#creating-the-redux-store" class="table-of-contents__link">Creating the Redux Store</a>
-    -   <a href="#creating-slice-reducers-and-actions" class="table-of-contents__link">Creating Slice Reducers and Actions</a>
-    -   <a href="#rules-of-reducers" class="table-of-contents__link">Rules of Reducers</a>
-    -   <a href="#reducers-and-immutable-updates" class="table-of-contents__link">Reducers and Immutable Updates</a>
-    -   <a href="#writing-async-logic-with-thunks" class="table-of-contents__link">Writing Async Logic with Thunks</a>
-    -   <a href="#the-react-counter-component" class="table-of-contents__link">The React Counter Component</a>
-    -   <a href="#component-state-and-forms" class="table-of-contents__link">Component State and Forms</a>
-    -   <a href="#providing-the-store" class="table-of-contents__link">Providing the Store</a>
--   <a href="#what-youve-learned" class="table-of-contents__link">What You’ve Learned</a>
--   <a href="#whats-next" class="table-of-contents__link">What’s Next?</a>
+- <a href="#introduction" class="table-of-contents__link">Introduction</a>
+- <a href="#the-counter-example-app" class="table-of-contents__link">The Counter Example App</a>
+  - <a href="#using-the-counter-app" class="table-of-contents__link">Using the Counter App</a>
+- <a href="#application-contents" class="table-of-contents__link">Application Contents</a>
+  - <a href="#creating-the-redux-store" class="table-of-contents__link">Creating the Redux Store</a>
+  - <a href="#creating-slice-reducers-and-actions" class="table-of-contents__link">Creating Slice Reducers and Actions</a>
+  - <a href="#rules-of-reducers" class="table-of-contents__link">Rules of Reducers</a>
+  - <a href="#reducers-and-immutable-updates" class="table-of-contents__link">Reducers and Immutable Updates</a>
+  - <a href="#writing-async-logic-with-thunks" class="table-of-contents__link">Writing Async Logic with Thunks</a>
+  - <a href="#the-react-counter-component" class="table-of-contents__link">The React Counter Component</a>
+  - <a href="#component-state-and-forms" class="table-of-contents__link">Component State and Forms</a>
+  - <a href="#providing-the-store" class="table-of-contents__link">Providing the Store</a>
+- <a href="#what-youve-learned" class="table-of-contents__link">What You’ve Learned</a>
+- <a href="#whats-next" class="table-of-contents__link">What’s Next?</a>
 
 #### Docs
 
--   <a href="../official/introduction/getting-started.html" class="footer__link-item">Getting Started</a>
--   <a href="part-1-overview-concepts.html" class="footer__link-item">Tutorial</a>
--   <a href="../official/faq.html" class="footer__link-item">FAQ</a>
--   <a href="../official/api/api-reference.html" class="footer__link-item">API Reference</a>
+- <a href="../official/introduction/getting-started.html" class="footer__link-item">Getting Started</a>
+- <a href="part-1-overview-concepts.html" class="footer__link-item">Tutorial</a>
+- <a href="../official/faq.html" class="footer__link-item">FAQ</a>
+- <a href="../official/api/api-reference.html" class="footer__link-item">API Reference</a>
 
 #### Community
 
--   <a href="../official/../discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a>
--   <a href="../official/../stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a>
--   <a href="../official/introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a>
+- <a href="../official/../discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a>
+- <a href="../official/../stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a>
+- <a href="../official/introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a>
 
 #### More
 
--   <a href="../official/../github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a>
--   [![Deploys by Netlify](../../../www.netlify.com/img/global/badges/netlify-color-accent.svg)](../../../www.netlify.com/index.html)
+- <a href="../official/../github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a>
+- [![Deploys by Netlify](../../../www.netlify.com/img/global/badges/netlify-color-accent.svg)](../../../www.netlify.com/index.html)
 
 <img src="../official/../d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" />

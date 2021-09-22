@@ -2,90 +2,88 @@
 
 <a href="../official/introduction/getting-started.html" class="navbar__item navbar__link">Getting Started</a><a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="navbar__item navbar__link">Tutorial</a><a href="../official/api/api-reference.html" class="navbar__item navbar__link">API</a><a href="../official/faq.html" class="navbar__item navbar__link">FAQ</a><a href="../official/style-guide/style-guide.html" class="navbar__item navbar__link">Best Practices</a><a href="../official/../github.com/reduxjs/redux.html" class="navbar__item navbar__link">GitHub</a><a href="../official/introduction/getting-started.html#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="../official/index.html" class="navbar__brand"><strong>Redux</strong></a>
 
--   <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started</a>
--   <a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Tutorial</a>
--   <a href="../official/api/api-reference.html" class="menu__link">API</a>
--   <a href="../official/faq.html" class="menu__link">FAQ</a>
--   <a href="../official/style-guide/style-guide.html" class="menu__link">Best Practices</a>
--   <a href="../official/../github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
--   <a href="../official/introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
+- <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started</a>
+- <a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Tutorial</a>
+- <a href="../official/api/api-reference.html" class="menu__link">API</a>
+- <a href="../official/faq.html" class="menu__link">FAQ</a>
+- <a href="../official/style-guide/style-guide.html" class="menu__link">Best Practices</a>
+- <a href="../official/../github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
+- <a href="../official/introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
 
--   <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
-    -   <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
-    -   <a href="../official/introduction/installation.html" class="menu__link">Installation</a>
-    -   <a href="../official/introduction/core-concepts.html" class="menu__link">Core Concepts</a>
-    -   <a href="../official/introduction/learning-resources.html" class="menu__link">Learning Resources</a>
-    -   <a href="../official/introduction/ecosystem.html" class="menu__link">Ecosystem</a>
-    -   <a href="../official/introduction/examples.html" class="menu__link">Examples</a>
--   <a href="#!" class="menu__link menu__link--sublist">Tutorials</a>
+- <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+  - <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
+  - <a href="../official/introduction/installation.html" class="menu__link">Installation</a>
+  - <a href="../official/introduction/core-concepts.html" class="menu__link">Core Concepts</a>
+  - <a href="../official/introduction/learning-resources.html" class="menu__link">Learning Resources</a>
+  - <a href="../official/introduction/ecosystem.html" class="menu__link">Ecosystem</a>
+  - <a href="../official/introduction/examples.html" class="menu__link">Examples</a>
+- <a href="#!" class="menu__link menu__link--sublist">Tutorials</a>
 
-    -   <a href="../official/tutorials/index.html" class="menu__link">Tutorials Index</a>
-    -   <a href="../official/tutorials/quick-start.html" class="menu__link">Quick Start</a>
-    -   <a href="../official/tutorials/typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a>
+  - <a href="../official/tutorials/index.html" class="menu__link">Tutorials Index</a>
+  - <a href="../official/tutorials/quick-start.html" class="menu__link">Quick Start</a>
+  - <a href="../official/tutorials/typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a>
 
-        -   <a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a>
-        -   <a href="../official/tutorials/essentials/part-2-app-structure.html" class="menu__link">Redux App Structure</a>
-        -   <a href="../official/tutorials/essentials/part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a>
-        -   <a href="../official/tutorials/essentials/part-4-using-data.html" class="menu__link">Using Redux Data</a>
-        -   <a href="../official/tutorials/essentials/part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="../official/tutorials/essentials/part-6-performance-normalization.html" class="menu__link">Performance and Normalizing Data</a>
+    - <a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a>
+    - <a href="../official/tutorials/essentials/part-2-app-structure.html" class="menu__link">Redux App Structure</a>
+    - <a href="../official/tutorials/essentials/part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a>
+    - <a href="../official/tutorials/essentials/part-4-using-data.html" class="menu__link">Using Redux Data</a>
+    - <a href="../official/tutorials/essentials/part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="../official/tutorials/essentials/part-6-performance-normalization.html" class="menu__link">Performance and Normalizing Data</a>
 
-        -   <a href="../official/tutorials/fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a>
-        -   <a href="../official/tutorials/fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a>
-        -   <a href="../official/tutorials/fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a>
-        -   <a href="../official/tutorials/fundamentals/part-4-store.html" class="menu__link">Store</a>
-        -   <a href="../official/tutorials/fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a>
-        -   <a href="../official/tutorials/fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="../official/tutorials/fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a>
-        -   <a href="../official/tutorials/fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a>
+    - <a href="../official/tutorials/fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a>
+    - <a href="../official/tutorials/fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a>
+    - <a href="../official/tutorials/fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a>
+    - <a href="../official/tutorials/fundamentals/part-4-store.html" class="menu__link">Store</a>
+    - <a href="../official/tutorials/fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a>
+    - <a href="../official/tutorials/fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="../official/tutorials/fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a>
+    - <a href="../official/tutorials/fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a>
 
--   <a href="#!" class="menu__link menu__link--sublist menu__link--active">Recipes</a>
-    -   <a href="immutable-update-patterns.html" class="menu__link menu__link--active active">Immutable Update Patterns</a>
-    -   <a href="initializing-state.html" class="menu__link">Initializing State</a>
--   <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
-        -   <a href="../official/understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a>
-        -   <a href="../official/understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a>
-        -   <a href="../official/understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
-        -   <a href="../official/understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a>
-        -   <a href="../official/understanding/history-and-design/middleware.html" class="menu__link">Middleware</a>
--   <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
-    -   <a href="../official/faq.html" class="menu__link">FAQ Index</a>
-    -   <a href="../official/faq/general.html" class="menu__link">General</a>
-    -   <a href="../official/faq/reducers.html" class="menu__link">Reducers</a>
-    -   <a href="../official/faq/organizing-state.html" class="menu__link">Organizing State</a>
-    -   <a href="../official/faq/store-setup.html" class="menu__link">Store Setup</a>
-    -   <a href="../official/faq/actions.html" class="menu__link">Actions</a>
-    -   <a href="../official/faq/immutable-data.html" class="menu__link">Immutable Data</a>
-    -   <a href="../official/faq/code-structure.html" class="menu__link">Code Structure</a>
-    -   <a href="../official/faq/performance.html" class="menu__link">Performance</a>
-    -   <a href="../official/faq/design-decisions.html" class="menu__link">Design Decisions</a>
-    -   <a href="../official/faq/react-redux.html" class="menu__link">React Redux</a>
-    -   <a href="../official/faq/miscellaneous.html" class="menu__link">Miscellaneous</a>
--   <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
-    -   <a href="../official/style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a>
--   <a href="#!" class="menu__link menu__link--sublist">API Reference</a>
-    -   <a href="../official/api/api-reference.html" class="menu__link">API Reference</a>
-    -   <a href="../official/api/createstore.html" class="menu__link">createStore</a>
-    -   <a href="../official/api/store.html" class="menu__link">Store</a>
-    -   <a href="../official/api/combinereducers.html" class="menu__link">combineReducers</a>
-    -   <a href="../official/api/applymiddleware.html" class="menu__link">applyMiddleware</a>
-    -   <a href="../official/api/bindactioncreators.html" class="menu__link">bindActionCreators</a>
-    -   <a href="../official/api/compose.html" class="menu__link">compose</a>
--   <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
-    -   <a href="../official/redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a>
+- <a href="#!" class="menu__link menu__link--sublist menu__link--active">Recipes</a>
+  - <a href="immutable-update-patterns.html" class="menu__link menu__link--active active">Immutable Update Patterns</a>
+  - <a href="initializing-state.html" class="menu__link">Initializing State</a>
+- <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+    - <a href="../official/understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a>
+    - <a href="../official/understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a>
+    - <a href="../official/understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a>
+  - <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+    - <a href="../official/understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a>
+    - <a href="../official/understanding/history-and-design/middleware.html" class="menu__link">Middleware</a>
+- <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
+  - <a href="../official/faq.html" class="menu__link">FAQ Index</a>
+  - <a href="../official/faq/general.html" class="menu__link">General</a>
+  - <a href="../official/faq/reducers.html" class="menu__link">Reducers</a>
+  - <a href="../official/faq/organizing-state.html" class="menu__link">Organizing State</a>
+  - <a href="../official/faq/store-setup.html" class="menu__link">Store Setup</a>
+  - <a href="../official/faq/actions.html" class="menu__link">Actions</a>
+  - <a href="../official/faq/immutable-data.html" class="menu__link">Immutable Data</a>
+  - <a href="../official/faq/code-structure.html" class="menu__link">Code Structure</a>
+  - <a href="../official/faq/performance.html" class="menu__link">Performance</a>
+  - <a href="../official/faq/design-decisions.html" class="menu__link">Design Decisions</a>
+  - <a href="../official/faq/react-redux.html" class="menu__link">React Redux</a>
+  - <a href="../official/faq/miscellaneous.html" class="menu__link">Miscellaneous</a>
+- <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
+  - <a href="../official/style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a>
+- <a href="#!" class="menu__link menu__link--sublist">API Reference</a>
+  - <a href="../official/api/api-reference.html" class="menu__link">API Reference</a>
+  - <a href="../official/api/createstore.html" class="menu__link">createStore</a>
+  - <a href="../official/api/store.html" class="menu__link">Store</a>
+  - <a href="../official/api/combinereducers.html" class="menu__link">combineReducers</a>
+  - <a href="../official/api/applymiddleware.html" class="menu__link">applyMiddleware</a>
+  - <a href="../official/api/bindactioncreators.html" class="menu__link">bindActionCreators</a>
+  - <a href="../official/api/compose.html" class="menu__link">compose</a>
+- <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+  - <a href="../official/redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a>
 
-<span id="immutable-update-patterns" class="anchor enhancedAnchor_2LWZ"></span>Immutable Update Patterns<a href="#immutable-update-patterns" class="hash-link" title="Direct link to heading">#</a>
-===================================================================================================================================================================================================
+# <span id="immutable-update-patterns" class="anchor enhancedAnchor_2LWZ"></span>Immutable Update Patterns<a href="#immutable-update-patterns" class="hash-link" title="Direct link to heading">#</a>
 
 The articles listed in [Prerequisite Concepts\#Immutable Data Management](prerequisite-concepts.html#immutable-data-management) give a number of good examples for how to perform basic update operations immutably, such as updating a field in an object or adding an item to the end of an array. However, reducers will often need to use those basic operations in combination to perform more complicated tasks. Here are some examples for some of the more common tasks you might have to implement.
 
-<span id="updating-nested-objects" class="anchor enhancedAnchor_2LWZ"></span>Updating Nested Objects<a href="#updating-nested-objects" class="hash-link" title="Direct link to heading">#</a>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="updating-nested-objects" class="anchor enhancedAnchor_2LWZ"></span>Updating Nested Objects<a href="#updating-nested-objects" class="hash-link" title="Direct link to heading">#</a>
 
-The key to updating nested data is **that *every* level of nesting must be copied and updated appropriately**. This is often a difficult concept for those learning Redux, and there are some specific problems that frequently occur when trying to update nested objects. These lead to accidental direct mutation, and should be avoided.
+The key to updating nested data is **that _every_ level of nesting must be copied and updated appropriately**. This is often a difficult concept for those learning Redux, and there are some specific problems that frequently occur when trying to update nested objects. These lead to accidental direct mutation, and should be avoided.
 
 ##### <span id="correct-approach-copying-all-levels-of-nested-data" class="anchor enhancedAnchor_2LWZ"></span>Correct Approach: Copying All Levels of Nested Data<a href="#correct-approach-copying-all-levels-of-nested-data" class="hash-link" title="Direct link to heading">#</a>
 
@@ -123,7 +121,7 @@ Unfortunately, the process of correctly applying immutable updates to deeply nes
 
 ##### <span id="common-mistake-1-new-variables-that-point-to-the-same-objects" class="anchor enhancedAnchor_2LWZ"></span>Common Mistake \#1: New variables that point to the same objects<a href="#common-mistake-1-new-variables-that-point-to-the-same-objects" class="hash-link" title="Direct link to heading">#</a>
 
-Defining a new variable does *not* create a new actual object - it only creates another reference to the same object. An example of this error would be:
+Defining a new variable does _not_ create a new actual object - it only creates another reference to the same object. An example of this error would be:
 
 <span class="token keyword" style="color: #f92672">function</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">updateNestedState</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">state</span><span class="token parameter punctuation" style="color: #f8f8f2">,</span><span class="token parameter"> action</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
@@ -165,10 +163,9 @@ Another common version of this error looks like this:
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> newState</span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>Doing a shallow copy of the top level is *not* sufficient - the `nestedState` object should be copied as well.
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>Doing a shallow copy of the top level is _not_ sufficient - the `nestedState` object should be copied as well.
 
-<span id="inserting-and-removing-items-in-arrays" class="anchor enhancedAnchor_2LWZ"></span>Inserting and Removing Items in Arrays<a href="#inserting-and-removing-items-in-arrays" class="hash-link" title="Direct link to heading">#</a>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="inserting-and-removing-items-in-arrays" class="anchor enhancedAnchor_2LWZ"></span>Inserting and Removing Items in Arrays<a href="#inserting-and-removing-items-in-arrays" class="hash-link" title="Direct link to heading">#</a>
 
 Normally, a Javascript array’s contents are modified using mutative functions like `push`, `unshift`, and `splice`. Since we don’t want to mutate state directly in reducers, those should normally be avoided. Because of that, you might see “insert” or “remove” behavior written like this:
 
@@ -192,7 +189,7 @@ Normally, a Javascript array’s contents are modified using mutative functions 
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token spread operator" style="color: #f8f8f2">…</span><span class="token plain">array</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">slice</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token number" style="color: #ae81ff">0</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">index</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token spread operator" style="color: #f8f8f2">…</span><span class="token plain">array</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">slice</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">index</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">+</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">1</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>However, remember that the key is that the *original in-memory reference* is not modified. **As long as we make a copy first, we can safely mutate the copy**. Note that this is true for both arrays and objects, but nested values still must be updated using the same rules.
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>However, remember that the key is that the _original in-memory reference_ is not modified. **As long as we make a copy first, we can safely mutate the copy**. Note that this is true for both arrays and objects, but nested values still must be updated using the same rules.
 
 This means that we could also write the insert and remove functions like this:
 
@@ -280,8 +277,7 @@ Because writing immutable update code can become tedious, there are a number of 
 
 A list of many immutable update utilities can be found in the [Immutable Data\#Immutable Update Utilities](../../../github.com/markerikson/redux-ecosystem-links/blob/master/immutable-data.html#immutable-update-utilities) section of the [Redux Addons Catalog](../../../github.com/markerikson/redux-ecosystem-links.html).
 
-<span id="simplifying-immutable-updates-with-redux-toolkit" class="anchor enhancedAnchor_2LWZ"></span>Simplifying Immutable Updates with Redux Toolkit<a href="#simplifying-immutable-updates-with-redux-toolkit" class="hash-link" title="Direct link to heading">#</a>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="simplifying-immutable-updates-with-redux-toolkit" class="anchor enhancedAnchor_2LWZ"></span>Simplifying Immutable Updates with Redux Toolkit<a href="#simplifying-immutable-updates-with-redux-toolkit" class="hash-link" title="Direct link to heading">#</a>
 
 Our **[Redux Toolkit](../../../redux-toolkit.js.org/index.html)** package includes a [`createReducer` utility](../../../redux-toolkit.js.org/api/createReducer-2.html) that uses Immer internally. Because of this, you can write reducers that appear to “mutate” state, but the updates are actually applied immutably.
 
@@ -311,13 +307,13 @@ This allows immutable update logic to be written in a much simpler way. Here’s
 
 <span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> reducer </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">createReducer</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">initialState</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> </span><span class="token function-variable function maybe-class-name" style="color: #e6d874">UPDATE\_ITEM</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">state</span><span class="token parameter punctuation" style="color: #f8f8f2">,</span><span class="token parameter"> action</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token arrow operator" style="color: #f8f8f2">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
+<span class="token plain"> </span><span class="token function-variable function maybe-class-name" style="color: #e6d874">UPDATE_ITEM</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">state</span><span class="token parameter punctuation" style="color: #f8f8f2">,</span><span class="token parameter"> action</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token arrow operator" style="color: #f8f8f2">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
 <span class="token plain"> state</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">first</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">second</span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token plain">action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">someId</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">fourth</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">someValue</span><span class="token plain"></span>
 
 <span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">)</span>This is clearly *much* shorter and easier to read. However, **this *only* works correctly if you are using the “magic” `createReducer` function from Redux Toolkit** that wraps this reducer in Immer’s [`produce` function](../../../immerjs.github.io/immer/produce/index.html). **If this reducer is used without Immer, it will actually mutate the state!**. It’s also not obvious just by looking at the code that this function is actually safe and updates the state immutably. Please make sure you understand the concepts of immutable updates fully. If you do use this, it may help to add some comments to your code that explain your reducers are using Redux Toolkit and Immer.
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">)</span>This is clearly _much_ shorter and easier to read. However, **this _only_ works correctly if you are using the “magic” `createReducer` function from Redux Toolkit** that wraps this reducer in Immer’s [`produce` function](../../../immerjs.github.io/immer/produce/index.html). **If this reducer is used without Immer, it will actually mutate the state!**. It’s also not obvious just by looking at the code that this function is actually safe and updates the state immutably. Please make sure you understand the concepts of immutable updates fully. If you do use this, it may help to add some comments to your code that explain your reducers are using Redux Toolkit and Immer.
 
 In addition, Redux Toolkit’s [`createSlice` utility](../../../redux-toolkit.js.org/api/createSlice-2.html) will auto-generate action creators and action types based on the reducer functions you provide, with the same Immer-powered update capabilities inside.
 
@@ -331,28 +327,28 @@ Next
 
 Initializing State »
 
--   <a href="#updating-nested-objects" class="table-of-contents__link">Updating Nested Objects</a>
--   <a href="#inserting-and-removing-items-in-arrays" class="table-of-contents__link">Inserting and Removing Items in Arrays</a>
--   <a href="#updating-an-item-in-an-array" class="table-of-contents__link">Updating an Item in an Array</a>
--   <a href="#immutable-update-utility-libraries" class="table-of-contents__link">Immutable Update Utility Libraries</a>
--   <a href="#simplifying-immutable-updates-with-redux-toolkit" class="table-of-contents__link">Simplifying Immutable Updates with Redux Toolkit</a>
+- <a href="#updating-nested-objects" class="table-of-contents__link">Updating Nested Objects</a>
+- <a href="#inserting-and-removing-items-in-arrays" class="table-of-contents__link">Inserting and Removing Items in Arrays</a>
+- <a href="#updating-an-item-in-an-array" class="table-of-contents__link">Updating an Item in an Array</a>
+- <a href="#immutable-update-utility-libraries" class="table-of-contents__link">Immutable Update Utility Libraries</a>
+- <a href="#simplifying-immutable-updates-with-redux-toolkit" class="table-of-contents__link">Simplifying Immutable Updates with Redux Toolkit</a>
 
 #### Docs
 
--   <a href="../official/introduction/getting-started.html" class="footer__link-item">Getting Started</a>
--   <a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="footer__link-item">Tutorial</a>
--   <a href="../official/faq.html" class="footer__link-item">FAQ</a>
--   <a href="../official/api/api-reference.html" class="footer__link-item">API Reference</a>
+- <a href="../official/introduction/getting-started.html" class="footer__link-item">Getting Started</a>
+- <a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="footer__link-item">Tutorial</a>
+- <a href="../official/faq.html" class="footer__link-item">FAQ</a>
+- <a href="../official/api/api-reference.html" class="footer__link-item">API Reference</a>
 
 #### Community
 
--   <a href="../official/../discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a>
--   <a href="../official/../stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a>
--   <a href="../official/introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a>
+- <a href="../official/../discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a>
+- <a href="../official/../stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a>
+- <a href="../official/introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a>
 
 #### More
 
--   <a href="../official/../github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a>
--   [![Deploys by Netlify](../../../www.netlify.com/img/global/badges/netlify-color-accent.svg)](../../../www.netlify.com/index.html)
+- <a href="../official/../github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a>
+- [![Deploys by Netlify](../../../www.netlify.com/img/global/badges/netlify-color-accent.svg)](../../../www.netlify.com/index.html)
 
 <img src="../official/../d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" />

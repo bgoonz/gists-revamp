@@ -1,8 +1,6 @@
-code-review-tips
-================
+# code-review-tips
 
-Table of Contents
------------------
+## Table of Contents
 
 1.  [Introduction](#introduction)
 2.  [Why Review Code?](#why-review-code)
@@ -15,22 +13,19 @@ Table of Contents
 9.  [Testing](#testing)
 10. [Miscellaneous](#miscellaneous)
 
-Introduction
-------------
+## Introduction
 
 Code reviews can inspire dread in both reviewer and reviewee. Having your code analyzed can feel as invasive and uncomfortable. Even worse, reviewing other people’s code can feel like a painful and ambiguous exercise, searching for problems and not even knowing where to begin.
 
 This project aims to provide some solid tips for how to review the code that you and your team write. All examples are written in JavaScript, but the advice should be applicable to any project of any language. This is by no means an exhaustive list, but hopefully this will help you catch as many bugs as possible long before users ever see your feature.
 
-Why Review Code?
-----------------
+## Why Review Code?
 
 Code reviews are a necessary part of the software engineering process because you alone can’t catch every problem in a piece of code you write. That’s ok though! Even the best basketball players in the world miss shots.
 
 Having others review our work ensures that we deliver the best product to users and with the least amount of errors. Make sure your team implements a code review process for new code that is introduced into your codebase. Find a process that works for you and your team. There’s no one size fits all. The important point is to do code reviews as regularly as possible.
 
-Basics
-------
+## Basics
 
 ### Code reviews should be as automated as possible
 
@@ -44,8 +39,7 @@ These discussions should happen before the code is even written. Don’t try to 
 
 It’s scary to have your code reviewed and it can bring about feelings of insecurity in even the most experienced developer. Be positive in your language and keep your teammates comfortable and secure in their work!
 
-Readability
------------
+## Readability
 
 ### Typos should be corrected
 
@@ -123,8 +117,7 @@ If you have named things well and the logic is still confusing, then it’s time
       return pad + str;
     }
 
-Side Effects
-------------
+## Side Effects
 
 ### Functions should be as pure as possible
 
@@ -153,8 +146,7 @@ Any function that does I/O should handle when something goes wrong
       return readFile('./ingredients.txt').then(onFulfilled);
     }
 
-Limits
-------
+## Limits
 
 ### Null cases should be handled
 
@@ -235,8 +227,7 @@ Users will always surprise you with the data they give you. Don’t expect that 
       transferMoney(from, to, amount);
     });
 
-Security
---------
+## Security
 
 Data security is the most important aspect of your application. If users can’t trust you with their data, then you won’t have a business. There are numerous different types of security exploits that can plague an app, depending on the particular language and runtime environment. Below is a very small and incomplete list of common security problems. Don’t rely on this alone! Automate as much security review as you can on every commit, and perform routine security audits.
 
@@ -276,8 +267,7 @@ You bear an enormous weight of responsibility every time you take in user data. 
       });
     });
 
-Performance
------------
+## Performance
 
 ### Functions should use efficient algorithms and data structures
 
@@ -312,8 +302,7 @@ Logging helps give metrics about performance and insight into user behavior. Not
       });
     });
 
-Testing
--------
+## Testing
 
 ### New code should be tested
 
@@ -356,10 +345,9 @@ All new code should include a test, whether it fixes a bug, or is a new feature.
     // What happens if we add fractional days: 1.2, 8.7, etc.
     // What happens if we add 1 billion days?
 
-Miscellaneous
--------------
+## Miscellaneous
 
-> *“Everything can be filed under miscellaneous”*
+> _“Everything can be filed under miscellaneous”_
 
 > George Bernard Shaw
 

@@ -2,120 +2,118 @@
 
 <a href="../official/introduction/getting-started.html" class="navbar__item navbar__link">Getting Started</a><a href="part-1-overview-concepts.html" class="navbar__item navbar__link">Tutorial</a><a href="../official/api/api-reference.html" class="navbar__item navbar__link">API</a><a href="../official/faq.html" class="navbar__item navbar__link">FAQ</a><a href="../official/style-guide/style-guide.html" class="navbar__item navbar__link">Best Practices</a><a href="../official/../github.com/reduxjs/redux.html" class="navbar__item navbar__link">GitHub</a><a href="../official/introduction/getting-started.html#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="../official/index.html" class="navbar__brand"><strong>Redux</strong></a>
 
--   <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started</a>
--   <a href="part-1-overview-concepts.html" class="menu__link">Tutorial</a>
--   <a href="../official/api/api-reference.html" class="menu__link">API</a>
--   <a href="../official/faq.html" class="menu__link">FAQ</a>
--   <a href="../official/style-guide/style-guide.html" class="menu__link">Best Practices</a>
--   <a href="../official/../github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
--   <a href="../official/introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
+- <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started</a>
+- <a href="part-1-overview-concepts.html" class="menu__link">Tutorial</a>
+- <a href="../official/api/api-reference.html" class="menu__link">API</a>
+- <a href="../official/faq.html" class="menu__link">FAQ</a>
+- <a href="../official/style-guide/style-guide.html" class="menu__link">Best Practices</a>
+- <a href="../official/../github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
+- <a href="../official/introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
 
--   <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
-    -   <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
-    -   <a href="../official/introduction/installation.html" class="menu__link">Installation</a>
-    -   <a href="../official/introduction/core-concepts.html" class="menu__link">Core Concepts</a>
-    -   <a href="../official/introduction/learning-resources.html" class="menu__link">Learning Resources</a>
-    -   <a href="../official/introduction/ecosystem.html" class="menu__link">Ecosystem</a>
-    -   <a href="../official/introduction/examples.html" class="menu__link">Examples</a>
--   <a href="#!" class="menu__link menu__link--sublist menu__link--active">Tutorials</a>
+- <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+  - <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
+  - <a href="../official/introduction/installation.html" class="menu__link">Installation</a>
+  - <a href="../official/introduction/core-concepts.html" class="menu__link">Core Concepts</a>
+  - <a href="../official/introduction/learning-resources.html" class="menu__link">Learning Resources</a>
+  - <a href="../official/introduction/ecosystem.html" class="menu__link">Ecosystem</a>
+  - <a href="../official/introduction/examples.html" class="menu__link">Examples</a>
+- <a href="#!" class="menu__link menu__link--sublist menu__link--active">Tutorials</a>
 
-    -   <a href="../index.html" class="menu__link">Tutorials Index</a>
-    -   <a href="../quick-start.html" class="menu__link">Quick Start</a>
-    -   <a href="../typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a>
-    -   <a href="#!" class="menu__link menu__link--sublist menu__link--active">Redux Essentials</a>
+  - <a href="../index.html" class="menu__link">Tutorials Index</a>
+  - <a href="../quick-start.html" class="menu__link">Quick Start</a>
+  - <a href="../typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a>
+  - <a href="#!" class="menu__link menu__link--sublist menu__link--active">Redux Essentials</a>
 
-        -   <a href="part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a>
-        -   <a href="part-2-app-structure.html" class="menu__link">Redux App Structure</a>
-        -   <a href="part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a>
-        -   <a href="part-4-using-data.html" class="menu__link">Using Redux Data</a>
-        -   <a href="part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="part-6-performance-normalization.html" class="menu__link menu__link--active active">Performance and Normalizing Data</a>
+    - <a href="part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a>
+    - <a href="part-2-app-structure.html" class="menu__link">Redux App Structure</a>
+    - <a href="part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a>
+    - <a href="part-4-using-data.html" class="menu__link">Using Redux Data</a>
+    - <a href="part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="part-6-performance-normalization.html" class="menu__link menu__link--active active">Performance and Normalizing Data</a>
 
-        -   <a href="../fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a>
-        -   <a href="../fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a>
-        -   <a href="../fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a>
-        -   <a href="../fundamentals/part-4-store.html" class="menu__link">Store</a>
-        -   <a href="../fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a>
-        -   <a href="../fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="../fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a>
-        -   <a href="../fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a>
+    - <a href="../fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a>
+    - <a href="../fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a>
+    - <a href="../fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a>
+    - <a href="../fundamentals/part-4-store.html" class="menu__link">Store</a>
+    - <a href="../fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a>
+    - <a href="../fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="../fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a>
+    - <a href="../fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a>
 
-    -   <a href="../official/recipes/recipe-index.html" class="menu__link">Recipes: Index</a>
-    -   <a href="../official/recipes/configuring-your-store.html" class="menu__link">Configuring Your Store</a>
-    -   <a href="../official/recipes/usage-with-typescript.html" class="menu__link">Usage With TypeScript</a>
-    -   <a href="../official/recipes/migrating-to-redux.html" class="menu__link">Migrating to Redux</a>
-    -   <a href="../official/recipes/using-object-spread-operator.html" class="menu__link">Using Object Spread Operator</a>
-    -   <a href="../official/recipes/reducing-boilerplate.html" class="menu__link">Reducing Boilerplate</a>
-    -   <a href="../official/recipes/server-rendering.html" class="menu__link">Server Rendering</a>
-    -   <a href="../official/recipes/writing-tests.html" class="menu__link">Writing Tests</a>
-    -   <a href="../official/recipes/computing-derived-data.html" class="menu__link">Computing Derived Data</a>
-    -   <a href="../official/recipes/implementing-undo-history.html" class="menu__link">Implementing Undo History</a>
-    -   <a href="../official/recipes/isolating-redux-sub-apps.html" class="menu__link">Isolating Redux Sub-Apps</a>
-    -   <a href="../official/recipes/code-splitting.html" class="menu__link">Code Splitting</a>
-    -   <a href="../official/recipes/troubleshooting.html" class="menu__link">Troubleshooting</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
-        -   <a href="../official/recipes/structuring-reducers/structuring-reducers.html" class="menu__link">Structuring Reducers</a>
-        -   <a href="../official/recipes/structuring-reducers/prerequisite-concepts.html" class="menu__link">Prerequisite Concepts</a>
-        -   <a href="../official/recipes/structuring-reducers/basic-reducer-structure.html" class="menu__link">Basic Reducer Structure</a>
-        -   <a href="../official/recipes/structuring-reducers/splitting-reducer-logic.html" class="menu__link">Splitting Reducer Logic</a>
-        -   <a href="../official/recipes/structuring-reducers/refactoring-reducer-example.html" class="menu__link">Refactoring Reducers Example</a>
-        -   <a href="../official/recipes/structuring-reducers/using-combinereducers.html" class="menu__link">Using combineReducers</a>
-        -   <a href="../official/recipes/structuring-reducers/beyond-combinereducers.html" class="menu__link">Beyond combineReducers</a>
-        -   <a href="../official/recipes/structuring-reducers/normalizing-state-shape.html" class="menu__link">Normalizing State Shape</a>
-        -   <a href="../official/recipes/structuring-reducers/updating-normalized-data.html" class="menu__link">Updating Normalized Data</a>
-        -   <a href="../official/recipes/structuring-reducers/reusing-reducer-logic.html" class="menu__link">Reusing Reducer Logic</a>
-        -   <a href="../official/recipes/structuring-reducers/immutable-update-patterns.html" class="menu__link">Immutable Update Patterns</a>
-        -   <a href="../official/recipes/structuring-reducers/initializing-state.html" class="menu__link">Initializing State</a>
+  - <a href="../official/recipes/recipe-index.html" class="menu__link">Recipes: Index</a>
+  - <a href="../official/recipes/configuring-your-store.html" class="menu__link">Configuring Your Store</a>
+  - <a href="../official/recipes/usage-with-typescript.html" class="menu__link">Usage With TypeScript</a>
+  - <a href="../official/recipes/migrating-to-redux.html" class="menu__link">Migrating to Redux</a>
+  - <a href="../official/recipes/using-object-spread-operator.html" class="menu__link">Using Object Spread Operator</a>
+  - <a href="../official/recipes/reducing-boilerplate.html" class="menu__link">Reducing Boilerplate</a>
+  - <a href="../official/recipes/server-rendering.html" class="menu__link">Server Rendering</a>
+  - <a href="../official/recipes/writing-tests.html" class="menu__link">Writing Tests</a>
+  - <a href="../official/recipes/computing-derived-data.html" class="menu__link">Computing Derived Data</a>
+  - <a href="../official/recipes/implementing-undo-history.html" class="menu__link">Implementing Undo History</a>
+  - <a href="../official/recipes/isolating-redux-sub-apps.html" class="menu__link">Isolating Redux Sub-Apps</a>
+  - <a href="../official/recipes/code-splitting.html" class="menu__link">Code Splitting</a>
+  - <a href="../official/recipes/troubleshooting.html" class="menu__link">Troubleshooting</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
+    - <a href="../official/recipes/structuring-reducers/structuring-reducers.html" class="menu__link">Structuring Reducers</a>
+    - <a href="../official/recipes/structuring-reducers/prerequisite-concepts.html" class="menu__link">Prerequisite Concepts</a>
+    - <a href="../official/recipes/structuring-reducers/basic-reducer-structure.html" class="menu__link">Basic Reducer Structure</a>
+    - <a href="../official/recipes/structuring-reducers/splitting-reducer-logic.html" class="menu__link">Splitting Reducer Logic</a>
+    - <a href="../official/recipes/structuring-reducers/refactoring-reducer-example.html" class="menu__link">Refactoring Reducers Example</a>
+    - <a href="../official/recipes/structuring-reducers/using-combinereducers.html" class="menu__link">Using combineReducers</a>
+    - <a href="../official/recipes/structuring-reducers/beyond-combinereducers.html" class="menu__link">Beyond combineReducers</a>
+    - <a href="../official/recipes/structuring-reducers/normalizing-state-shape.html" class="menu__link">Normalizing State Shape</a>
+    - <a href="../official/recipes/structuring-reducers/updating-normalized-data.html" class="menu__link">Updating Normalized Data</a>
+    - <a href="../official/recipes/structuring-reducers/reusing-reducer-logic.html" class="menu__link">Reusing Reducer Logic</a>
+    - <a href="../official/recipes/structuring-reducers/immutable-update-patterns.html" class="menu__link">Immutable Update Patterns</a>
+    - <a href="../official/recipes/structuring-reducers/initializing-state.html" class="menu__link">Initializing State</a>
 
--   <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
-        -   <a href="../official/understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a>
-        -   <a href="../official/understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a>
-        -   <a href="../official/understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
-        -   <a href="../official/understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a>
-        -   <a href="../official/understanding/history-and-design/middleware.html" class="menu__link">Middleware</a>
--   <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
-    -   <a href="../official/faq.html" class="menu__link">FAQ Index</a>
-    -   <a href="../official/faq/general.html" class="menu__link">General</a>
-    -   <a href="../official/faq/reducers.html" class="menu__link">Reducers</a>
-    -   <a href="../official/faq/organizing-state.html" class="menu__link">Organizing State</a>
-    -   <a href="../official/faq/store-setup.html" class="menu__link">Store Setup</a>
-    -   <a href="../official/faq/actions.html" class="menu__link">Actions</a>
-    -   <a href="../official/faq/immutable-data.html" class="menu__link">Immutable Data</a>
-    -   <a href="../official/faq/code-structure.html" class="menu__link">Code Structure</a>
-    -   <a href="../official/faq/performance.html" class="menu__link">Performance</a>
-    -   <a href="../official/faq/design-decisions.html" class="menu__link">Design Decisions</a>
-    -   <a href="../official/faq/react-redux.html" class="menu__link">React Redux</a>
-    -   <a href="../official/faq/miscellaneous.html" class="menu__link">Miscellaneous</a>
--   <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
-    -   <a href="../official/style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a>
--   <a href="#!" class="menu__link menu__link--sublist">API Reference</a>
-    -   <a href="../official/api/api-reference.html" class="menu__link">API Reference</a>
-    -   <a href="../official/api/createstore.html" class="menu__link">createStore</a>
-    -   <a href="../official/api/store.html" class="menu__link">Store</a>
-    -   <a href="../official/api/combinereducers.html" class="menu__link">combineReducers</a>
-    -   <a href="../official/api/applymiddleware.html" class="menu__link">applyMiddleware</a>
-    -   <a href="../official/api/bindactioncreators.html" class="menu__link">bindActionCreators</a>
-    -   <a href="../official/api/compose.html" class="menu__link">compose</a>
--   <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
-    -   <a href="../official/redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a>
+- <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+    - <a href="../official/understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a>
+    - <a href="../official/understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a>
+    - <a href="../official/understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a>
+  - <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+    - <a href="../official/understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a>
+    - <a href="../official/understanding/history-and-design/middleware.html" class="menu__link">Middleware</a>
+- <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
+  - <a href="../official/faq.html" class="menu__link">FAQ Index</a>
+  - <a href="../official/faq/general.html" class="menu__link">General</a>
+  - <a href="../official/faq/reducers.html" class="menu__link">Reducers</a>
+  - <a href="../official/faq/organizing-state.html" class="menu__link">Organizing State</a>
+  - <a href="../official/faq/store-setup.html" class="menu__link">Store Setup</a>
+  - <a href="../official/faq/actions.html" class="menu__link">Actions</a>
+  - <a href="../official/faq/immutable-data.html" class="menu__link">Immutable Data</a>
+  - <a href="../official/faq/code-structure.html" class="menu__link">Code Structure</a>
+  - <a href="../official/faq/performance.html" class="menu__link">Performance</a>
+  - <a href="../official/faq/design-decisions.html" class="menu__link">Design Decisions</a>
+  - <a href="../official/faq/react-redux.html" class="menu__link">React Redux</a>
+  - <a href="../official/faq/miscellaneous.html" class="menu__link">Miscellaneous</a>
+- <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
+  - <a href="../official/style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a>
+- <a href="#!" class="menu__link menu__link--sublist">API Reference</a>
+  - <a href="../official/api/api-reference.html" class="menu__link">API Reference</a>
+  - <a href="../official/api/createstore.html" class="menu__link">createStore</a>
+  - <a href="../official/api/store.html" class="menu__link">Store</a>
+  - <a href="../official/api/combinereducers.html" class="menu__link">combineReducers</a>
+  - <a href="../official/api/applymiddleware.html" class="menu__link">applyMiddleware</a>
+  - <a href="../official/api/bindactioncreators.html" class="menu__link">bindActionCreators</a>
+  - <a href="../official/api/compose.html" class="menu__link">compose</a>
+- <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+  - <a href="../official/redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a>
 
-<span id="redux-essentials-part-6-performance-and-normalizing-data" class="anchor enhancedAnchor_2LWZ"></span>Redux Essentials, Part 6: Performance and Normalizing Data<a href="#redux-essentials-part-6-performance-and-normalizing-data" class="hash-link" title="Direct link to heading">#</a>
-==================================================================================================================================================================================================================================================================================================
+# <span id="redux-essentials-part-6-performance-and-normalizing-data" class="anchor enhancedAnchor_2LWZ"></span>Redux Essentials, Part 6: Performance and Normalizing Data<a href="#redux-essentials-part-6-performance-and-normalizing-data" class="hash-link" title="Direct link to heading">#</a>
 
 ##### <span class="admonition-icon"> </span>What You’ll Learn
 
--   How to create memoized selector functions with `createSelector`
--   Patterns for optimizing component rendering performance
--   How to use `createEntityAdapter` to store and update normalized data
+- How to create memoized selector functions with `createSelector`
+- Patterns for optimizing component rendering performance
+- How to use `createEntityAdapter` to store and update normalized data
 
 ##### <span class="admonition-icon"> </span>Prerequisites
 
--   Completion of the previous sections of this tutorial
+- Completion of the previous sections of this tutorial
 
-<span id="introduction" class="anchor enhancedAnchor_2LWZ"></span>Introduction<a href="#introduction" class="hash-link" title="Direct link to heading">#</a>
-------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="introduction" class="anchor enhancedAnchor_2LWZ"></span>Introduction<a href="#introduction" class="hash-link" title="Direct link to heading">#</a>
 
 In [Part 5: Async Logic and Data Fetching](part-5-async-logic.html), we saw how to write async thunks to fetch data from a server API, patterns for handling async request loading state, and use of selector functions for encapsulating lookups of data from the Redux state.
 
@@ -123,8 +121,7 @@ In this final section, we’ll look at optimized patterns for ensuring good perf
 
 So far, most of our functionality has been centered around the `posts` feature. We’re going to add a couple new sections of the app. After those are added, we’ll look at some specific details of how we’ve built things, and talk about some weaknesses with what we’ve built so far and how we can improve the implementation.
 
-<span id="adding-user-pages" class="anchor enhancedAnchor_2LWZ"></span>Adding User Pages<a href="#adding-user-pages" class="hash-link" title="Direct link to heading">#</a>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="adding-user-pages" class="anchor enhancedAnchor_2LWZ"></span>Adding User Pages<a href="#adding-user-pages" class="hash-link" title="Direct link to heading">#</a>
 
 We’re fetching a list of users from our fake API, and we can choose a user as the author when we add a new post. But, a social media app needs the ability to look at the page for a specific user and see all the posts they’ve made. Let’s add a page to show the list of all users, and another to show all posts by a specific user.
 
@@ -268,12 +265,11 @@ App.js
 
 <span class="token plain"> </span><span class="token tag punctuation" style="color: #f8f8f2">&lt;</span><span class="token tag class-name" style="color: #f92672">Redirect</span><span class="token tag" style="color: #f92672"> </span><span class="token tag attr-name" style="color: #a6e22e">to</span><span class="token tag attr-value punctuation attr-equals" style="color: #f8f8f2">=</span><span class="token tag attr-value punctuation" style="color: #f8f8f2">"</span><span class="token tag attr-value" style="color: #e6d874">/</span><span class="token tag attr-value punctuation" style="color: #f8f8f2">"</span><span class="token tag" style="color: #f92672"> </span><span class="token tag punctuation" style="color: #f8f8f2">/&gt;</span>And add another tab in `<Navbar>` that links to `/users` so that we can click and go to `<UsersList>`.
 
-<span id="adding-notifications" class="anchor enhancedAnchor_2LWZ"></span>Adding Notifications<a href="#adding-notifications" class="hash-link" title="Direct link to heading">#</a>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="adding-notifications" class="anchor enhancedAnchor_2LWZ"></span>Adding Notifications<a href="#adding-notifications" class="hash-link" title="Direct link to heading">#</a>
 
 No social media app would be complete without some notifications popping up to tell us that someone has sent a message, left a comment, or reacted to one of our posts.
 
-In a real application, our app client would be in constant communication with the backend server, and the server would push an update to the client every time something happens. Since this is a small example app, we’re going to mimic that process by adding a button to actually fetch some notification entries from our fake API. We also don’t have any other *real* users sending messages or reacting to posts, so the fake API will just create some random notification entries every time we make a request. (Remember, the goal here is to see how to use Redux itself.)
+In a real application, our app client would be in constant communication with the backend server, and the server would push an update to the client every time something happens. Since this is a small example app, we’re going to mimic that process by adding a button to actually fetch some notification entries from our fake API. We also don’t have any other _real_ users sending messages or reacting to posts, so the fake API will just create some random notification entries every time we make a request. (Remember, the goal here is to see how to use Redux itself.)
 
 ### <span id="notifications-slice" class="anchor enhancedAnchor_2LWZ"></span>Notifications Slice<a href="#notifications-slice" class="hash-link" title="Direct link to heading">#</a>
 
@@ -359,11 +355,11 @@ We’ve already seen that we can pass an argument into a thunk action creator wh
 
 The second argument to our payload creator is a `thunkAPI` object containing several useful functions and pieces of information:
 
--   `dispatch` and `getState`: the actual `dispatch` and `getState` methods from our Redux store. You can use these inside the thunk to dispatch more actions, or get the latest Redux store state (such as reading an updated value after another action is dispatched).
--   `extra`: the “extra argument” that can be passed into the thunk middleware when creating the store. This is typically some kind of API wrapper, such as a set of functions that know how to make API calls to your application’s server and return data, so that your thunks don’t have to have all the URLs and query logic directly inside.
--   `requestId`: a unique random ID value for this thunk call. Useful for tracking status of an individual request.
--   `signal`: An `AbortController.signal` function that can be used to cancel an in-progress request.
--   `rejectWithValue`: a utility that helps customize the contents of a `rejected` action if the thunk receives an error.
+- `dispatch` and `getState`: the actual `dispatch` and `getState` methods from our Redux store. You can use these inside the thunk to dispatch more actions, or get the latest Redux store state (such as reading an updated value after another action is dispatched).
+- `extra`: the “extra argument” that can be passed into the thunk middleware when creating the store. This is typically some kind of API wrapper, such as a set of functions that know how to make API calls to your application’s server and return data, so that your thunks don’t have to have all the URLs and query logic directly inside.
+- `requestId`: a unique random ID value for this thunk call. Useful for tracking status of an individual request.
+- `signal`: An `AbortController.signal` function that can be used to cancel an in-progress request.
+- `rejectWithValue`: a utility that helps customize the contents of a `rejected` action if the thunk receives an error.
 
 (If you’re writing a thunk by hand instead of using `createAsyncThunk`, the thunk function will get`(dispatch, getState)` as separate arguments, instead of putting them together in one object.)
 
@@ -725,13 +721,13 @@ allNotificationsRead
 
 <span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>This works, but actually has a slightly surprising bit of behavior. Any time there are new notifications (either because we’ve just switched to this tab, or we’ve fetched some new notifications from the API), you’ll actually see *two* `"notifications/allNotificationsRead"` actions dispatched. Why is that?
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>This works, but actually has a slightly surprising bit of behavior. Any time there are new notifications (either because we’ve just switched to this tab, or we’ve fetched some new notifications from the API), you’ll actually see _two_ `"notifications/allNotificationsRead"` actions dispatched. Why is that?
 
 Let’s say we have fetched some notifications while looking at the `<PostsList>`, and then click the “Notifications” tab. The `<NotificationsList>` component will mount, and the `useEffect` callback will run after that first render and dispatch `allNotificationsRead`. Our `notificationsSlice` will handle that by updating the notification entries in the store. This creates a new `state.notifications` array containing the immutably-updated entries, which forces our component to render again because it sees a new array returned from the `useSelector`, and the `useEffect` hook runs again and dispatches `allNotificationsRead` a second time. The reducer runs again, but this time no data changes, so the component doesn’t re-render.
 
 There’s a couple ways we could potentially avoid that second dispatch, like splitting the logic to dispatch once when the component mounts, and only dispatch again if the size of the notifications array changes. But, this isn’t actually hurting anything, so we can leave it alone.
 
-This does actually show that **it’s possible to dispatch an action and not have *any* state changes happen at all**. Remember, **it’s always up to your reducers to decide *if* any state actually needs to be updated, and “nothing needs to happen” is a valid decision for a reducer to make**.
+This does actually show that **it’s possible to dispatch an action and not have _any_ state changes happen at all**. Remember, **it’s always up to your reducers to decide _if_ any state actually needs to be updated, and “nothing needs to happen” is a valid decision for a reducer to make**.
 
 Here’s how the notifications tab looks now that we’ve got the “new/read” behavior working:
 
@@ -849,11 +845,11 @@ If we look at `<UserPage>` carefully, there’s a specific problem:
 
 <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>We know that `useSelector` will re-run every time an action is dispatched, and that it forces the component to re-render if we return a new reference value.
 
-We’re calling `filter()` inside of our `useSelector` hook, so that we only return the list of posts that belong to this user. Unfortunately, **this means that `useSelector` *always* returns a new array reference, and so our component will re-render after *every* action even if the posts data hasn’t changed!**.
+We’re calling `filter()` inside of our `useSelector` hook, so that we only return the list of posts that belong to this user. Unfortunately, **this means that `useSelector` _always_ returns a new array reference, and so our component will re-render after _every_ action even if the posts data hasn’t changed!**.
 
 ### <span id="memoizing-selector-functions" class="anchor enhancedAnchor_2LWZ"></span>Memoizing Selector Functions<a href="#memoizing-selector-functions" class="hash-link" title="Direct link to heading">#</a>
 
-What we really need is a way to only calculate the new filtered array if either `state.posts` or `userId` have changed. If they *haven’t* changed, we want to return the same filtered array reference as the last time.
+What we really need is a way to only calculate the new filtered array if either `state.posts` or `userId` have changed. If they _haven’t_ changed, we want to return the same filtered array reference as the last time.
 
 This idea is called “memoization”. We want to save a previous set of inputs and the calculated result, and if the inputs are the same, return the previous result instead of recalculating it again.
 
@@ -953,7 +949,7 @@ If we try calling `selectPostsByUser` multiple times, it will only re-run the ou
 
 ### <span id="investigating-the-posts-list" class="anchor enhancedAnchor_2LWZ"></span>Investigating the Posts List<a href="#investigating-the-posts-list" class="hash-link" title="Direct link to heading">#</a>
 
-If we go back to our `<PostsList>` and try clicking a reaction button on one of the posts while capturing a React profiler trace, we’ll see that not only did the `<PostsList>` and the updated `<PostExcerpt>` instance render, *all* of the `<PostExcerpt>` components rendered:
+If we go back to our `<PostsList>` and try clicking a reaction button on one of the posts while capturing a React profiler trace, we’ll see that not only did the `<PostsList>` and the updated `<PostExcerpt>` instance render, _all_ of the `<PostExcerpt>` components rendered:
 
 React DevTools Profiler render capture -
 
@@ -979,14 +975,13 @@ First, we could wrap the `<PostExcerpt>` component in [`React.memo()`](../../../
 
 <span class="token plain">PostExcerpt </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> React</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token function" style="color: #e6d874">memo</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">PostExcerpt</span><span class="token punctuation" style="color: #f8f8f2">)</span>Another option is to rewrite `<PostsList>` so that it only selects a list of post IDs from the store instead of the entire `posts` array, and rewrite `<PostExcerpt>` so that it receives a `postId` prop and calls `useSelector` to read the post object it needs. If `<PostsList>` gets the same list of IDs as before, it won’t need to re-render, and so only our one changed `<PostExcerpt>` component should have to render.
 
-Unfortunately, this gets tricky because we also need to have all our posts sorted by date and rendered in the right order. We could update our `postsSlice` to keep the array sorted at all times, so we don’t have to sort it in the component, and use a memoized selector to extract just the list of post IDs. We could also [customize the comparison function that `useSelector` runs to check the results](../../../react-redux.js.org/api/hooks.html#equality-comparisons-and-updates), like `useSelector(selectPostIds, shallowEqual)`, so that will skip re-rendering if the *contents* of the IDs array haven’t changed.
+Unfortunately, this gets tricky because we also need to have all our posts sorted by date and rendered in the right order. We could update our `postsSlice` to keep the array sorted at all times, so we don’t have to sort it in the component, and use a memoized selector to extract just the list of post IDs. We could also [customize the comparison function that `useSelector` runs to check the results](../../../react-redux.js.org/api/hooks.html#equality-comparisons-and-updates), like `useSelector(selectPostIds, shallowEqual)`, so that will skip re-rendering if the _contents_ of the IDs array haven’t changed.
 
 The last option is to find some way to have our reducer keep a separate array of IDs for all the posts, and only modify that array when posts are added or removed, and do the same rewrite of `<PostsList>` and `<PostExcerpt>`. This way, `<PostsList>` only needs to re-render when that IDs array changes.
 
 Conveniently, Redux Toolkit has a `createEntityAdapter` function that will help us do just that.
 
-<span id="normalizing-data" class="anchor enhancedAnchor_2LWZ"></span>Normalizing Data<a href="#normalizing-data" class="hash-link" title="Direct link to heading">#</a>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="normalizing-data" class="anchor enhancedAnchor_2LWZ"></span>Normalizing Data<a href="#normalizing-data" class="hash-link" title="Direct link to heading">#</a>
 
 You’ve seen that a lot of our logic has been looking up items by their ID field. Since we’ve been storing our data in arrays, that means we have to loop over all the items in the array using `array.find()` until we find the item with the ID we’re looking for.
 
@@ -996,9 +991,9 @@ Realistically, this doesn’t take very long, but if we had arrays with hundreds
 
 “Normalized state” means that:
 
--   We only have one copy of each particular piece of data in our state, so there’s no duplication
--   Data that has been normalized is kept in a lookup table, where the item IDs are the keys, and the items themselves are the values.
--   There may also be an array of all of the IDs for a particular item type
+- We only have one copy of each particular piece of data in our state, so there’s no duplication
+- Data that has been normalized is kept in a lookup table, where the item IDs are the keys, and the items themselves are the values.
+- There may also be an array of all of the IDs for a particular item type
 
 JavaScript objects can be used as lookup tables, similar to “maps” or “dictionaries” in other languages. Here’s what the normalized state for a group of `user` objects might look like:
 
@@ -1034,9 +1029,9 @@ Redux Toolkit’s `createEntityAdapter` API provides a standardized way to store
 
 This has several benefits:
 
--   We don’t have to write the code to manage the normalization ourselves
--   `createEntityAdapter`’s pre-built reducer functions handle common cases like “add all these items”, “update one item”, or “remove multiple items”
--   `createEntityAdapter` can keep the ID array in a sorted order based on the contents of the items, and will only update that array if items are added / removed or the sorting order changes.
+- We don’t have to write the code to manage the normalization ourselves
+- `createEntityAdapter`’s pre-built reducer functions handle common cases like “add all these items”, “update one item”, or “remove multiple items”
+- `createEntityAdapter` can keep the ID array in a sorted order based on the contents of the items, and will only update that array if items are added / removed or the sorting order changes.
 
 `createEntityAdapter` accepts an options object that may include a `sortComparer` function, which will be used to keep the item IDs array in sorted order by comparing two items (and works the same way as `Array.sort()`).
 
@@ -1266,12 +1261,11 @@ features/posts/PostsList.js
 
 <span class="token plain"> </span><span class="token comment" style="color: #c6cad2">// omit other rendering</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>Now, if we try clicking a reaction button on one of the posts while capturing a React component performance profile, we should see that *only* that one component re-rendered:
+<span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>Now, if we try clicking a reaction button on one of the posts while capturing a React component performance profile, we should see that _only_ that one component re-rendered:
 
 ![React DevTools Profiler render capture - optimized](../../../d33wubrfki0l68.cloudfront.net/fb91b859b4afee5d008830dce454eda1dce33516/9fb6f/assets/images/postslist-optimized-dcf59b403248250ec88d365fe04221ad)
 
-<span id="converting-other-slices" class="anchor enhancedAnchor_2LWZ"></span>Converting Other Slices<a href="#converting-other-slices" class="hash-link" title="Direct link to heading">#</a>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="converting-other-slices" class="anchor enhancedAnchor_2LWZ"></span>Converting Other Slices<a href="#converting-other-slices" class="hash-link" title="Direct link to heading">#</a>
 
 We’re almost done. As a final cleanup step, we’ll update our other two slices to use `createEntityAdapter` as well.
 
@@ -1433,8 +1427,7 @@ Ironically, we do have a couple places in here where we need to loop over all no
 
 And with that… we’re done!
 
-<span id="what-youve-learned" class="anchor enhancedAnchor_2LWZ"></span>What You’ve Learned<a href="#what-youve-learned" class="hash-link" title="Direct link to heading">#</a>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="what-youve-learned" class="anchor enhancedAnchor_2LWZ"></span>What You’ve Learned<a href="#what-youve-learned" class="hash-link" title="Direct link to heading">#</a>
 
 Congratulations, you’ve completed the Redux Essentials tutorial! Let’s see what the final app looks like in action:
 
@@ -1442,28 +1435,27 @@ Here’s what we covered in this section:
 
 ##### <span class="admonition-icon"> </span>Summary
 
--   **Memoized selector functions can be used to optimize performance**
-    -   Redux Toolkit re-exports the `createSelector` function from Reselect, which generates memoized selectors
-    -   Memoized selectors will only recalculate the results if the input selectors return new values
-    -   Memoization can skip expensive calculations, and ensure the same result references are returned
--   **There are multiple patterns you can use to optimize React component rendering with Redux**
-    -   Avoid creating new object/array references inside of `useSelector` - those will cause unnecessary re-renders
-    -   Memoized selector functions can be passed to `useSelector` to optimize rendering
-    -   `useSelector` can accept an alternate comparison function like `shallowEqual` instead of reference equality
-    -   Components can be wrapped in `React.memo()` to only re-render if their props change
-    -   List rendering can be optimized by having list parent components read just an array of item IDs, passing the IDs to list item children, and retrieving items by ID in the children
--   **Normalized state structure is a recommended approach for storing items**
-    -   “Normalization” means no duplication of data, and keeping items stored in a lookup table by item ID
-    -   Normalized state shape usually looks like `{ids: [], entities: {}}`
--   **Redux Toolkit’s `createEntityAdapter` API helps manage normalized data in a slice**
-    -   Item IDs can be kept in sorted order by passing in a `sortComparer` option
-    -   The adapter object includes:
-        -   `adapter.getInitialState`, which can accept additional state fields like loading state
-        -   Prebuilt reducers for common cases, like `setAll`, `addMany`, `upsertOne`, and `removeMany`
-        -   `adapter.getSelectors`, which generates selectors like `selectAll` and `selectById`
+- **Memoized selector functions can be used to optimize performance**
+  - Redux Toolkit re-exports the `createSelector` function from Reselect, which generates memoized selectors
+  - Memoized selectors will only recalculate the results if the input selectors return new values
+  - Memoization can skip expensive calculations, and ensure the same result references are returned
+- **There are multiple patterns you can use to optimize React component rendering with Redux**
+  - Avoid creating new object/array references inside of `useSelector` - those will cause unnecessary re-renders
+  - Memoized selector functions can be passed to `useSelector` to optimize rendering
+  - `useSelector` can accept an alternate comparison function like `shallowEqual` instead of reference equality
+  - Components can be wrapped in `React.memo()` to only re-render if their props change
+  - List rendering can be optimized by having list parent components read just an array of item IDs, passing the IDs to list item children, and retrieving items by ID in the children
+- **Normalized state structure is a recommended approach for storing items**
+  - “Normalization” means no duplication of data, and keeping items stored in a lookup table by item ID
+  - Normalized state shape usually looks like `{ids: [], entities: {}}`
+- **Redux Toolkit’s `createEntityAdapter` API helps manage normalized data in a slice**
+  - Item IDs can be kept in sorted order by passing in a `sortComparer` option
+  - The adapter object includes:
+    - `adapter.getInitialState`, which can accept additional state fields like loading state
+    - Prebuilt reducers for common cases, like `setAll`, `addMany`, `upsertOne`, and `removeMany`
+    - `adapter.getSelectors`, which generates selectors like `selectAll` and `selectById`
 
-<span id="whats-next" class="anchor enhancedAnchor_2LWZ"></span>What’s Next?<a href="#whats-next" class="hash-link" title="Direct link to heading">#</a>
---------------------------------------------------------------------------------------------------------------------------------------------------------
+## <span id="whats-next" class="anchor enhancedAnchor_2LWZ"></span>What’s Next?<a href="#whats-next" class="hash-link" title="Direct link to heading">#</a>
 
 The concepts we’ve covered in this tutorial should be enough to get you started building your own applications using React and Redux. Now’s a great time to try working on a project yourself to solidify these concepts and see how they work in practice. If you’re not sure what kind of a project to build, see [this list of app project ideas](../../../github.com/florinpop17/app-ideas.html) for some inspiration.
 
@@ -1471,7 +1463,7 @@ The Redux Essentials tutorial focused on “how to use Redux correctly”, rathe
 
 The [Recipes](../../recipes/recipe-index.html) section has information on a number of important concepts, like [how to structure your reducers](../../recipes/structuring-reducers/structuring-reducers.html), and [our Style Guide page](../../style-guide/style-guide.html) has important information on our recommended patterns and best practices.
 
-If you’d like to know more about *why* Redux exists, what problems it tries to solve, and how it’s meant to be used, see Redux maintainer Mark Erikson’s posts on [The Tao of Redux, Part 1: Implementation and Intent](../../../blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-1/index.html) and [The Tao of Redux, Part 2: Practice and Philosophy](../../../blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-2/index.html).
+If you’d like to know more about _why_ Redux exists, what problems it tries to solve, and how it’s meant to be used, see Redux maintainer Mark Erikson’s posts on [The Tao of Redux, Part 1: Implementation and Intent](../../../blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-1/index.html) and [The Tao of Redux, Part 2: Practice and Philosophy](../../../blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-2/index.html).
 
 If you’re looking for help with Redux questions, come join [the `#redux` channel in the Reactiflux server on Discord](../../../www.reactiflux.com/index.html).
 
@@ -1487,44 +1479,44 @@ Next
 
 Redux Fundamentals, Part 1: Redux Overview »
 
--   <a href="#introduction" class="table-of-contents__link">Introduction</a>
--   <a href="#adding-user-pages" class="table-of-contents__link">Adding User Pages</a>
--   <a href="#adding-notifications" class="table-of-contents__link">Adding Notifications</a>
-    -   <a href="#notifications-slice" class="table-of-contents__link">Notifications Slice</a>
-    -   <a href="#thunk-arguments" class="table-of-contents__link">Thunk Arguments</a>
-    -   <a href="#adding-the-notifications-list" class="table-of-contents__link">Adding the Notifications List</a>
-    -   <a href="#showing-new-notifications" class="table-of-contents__link">Showing New Notifications</a>
--   <a href="#improving-render-performance" class="table-of-contents__link">Improving Render Performance</a>
-    -   <a href="#investigating-render-behavior" class="table-of-contents__link">Investigating Render Behavior</a>
-    -   <a href="#memoizing-selector-functions" class="table-of-contents__link">Memoizing Selector Functions</a>
-    -   <a href="#investigating-the-posts-list" class="table-of-contents__link">Investigating the Posts List</a>
--   <a href="#normalizing-data" class="table-of-contents__link">Normalizing Data</a>
-    -   <a href="#normalized-state-structure" class="table-of-contents__link">Normalized State Structure</a>
-    -   <a href="#managing-normalized-state-with-createentityadapter" class="table-of-contents__link">Managing Normalized State with &lt;code class="language-js &gt;createEntityAdapter</a>
-    -   <a href="#updating-the-posts-slice" class="table-of-contents__link">Updating the Posts Slice</a>
-    -   <a href="#optimizing-the-posts-list" class="table-of-contents__link">Optimizing the Posts List</a>
--   <a href="#converting-other-slices" class="table-of-contents__link">Converting Other Slices</a>
-    -   <a href="#converting-the-users-slice" class="table-of-contents__link">Converting the Users Slice</a>
-    -   <a href="#converting-the-notifications-slice" class="table-of-contents__link">Converting the Notifications Slice</a>
--   <a href="#what-youve-learned" class="table-of-contents__link">What You’ve Learned</a>
--   <a href="#whats-next" class="table-of-contents__link">What’s Next?</a>
+- <a href="#introduction" class="table-of-contents__link">Introduction</a>
+- <a href="#adding-user-pages" class="table-of-contents__link">Adding User Pages</a>
+- <a href="#adding-notifications" class="table-of-contents__link">Adding Notifications</a>
+  - <a href="#notifications-slice" class="table-of-contents__link">Notifications Slice</a>
+  - <a href="#thunk-arguments" class="table-of-contents__link">Thunk Arguments</a>
+  - <a href="#adding-the-notifications-list" class="table-of-contents__link">Adding the Notifications List</a>
+  - <a href="#showing-new-notifications" class="table-of-contents__link">Showing New Notifications</a>
+- <a href="#improving-render-performance" class="table-of-contents__link">Improving Render Performance</a>
+  - <a href="#investigating-render-behavior" class="table-of-contents__link">Investigating Render Behavior</a>
+  - <a href="#memoizing-selector-functions" class="table-of-contents__link">Memoizing Selector Functions</a>
+  - <a href="#investigating-the-posts-list" class="table-of-contents__link">Investigating the Posts List</a>
+- <a href="#normalizing-data" class="table-of-contents__link">Normalizing Data</a>
+  - <a href="#normalized-state-structure" class="table-of-contents__link">Normalized State Structure</a>
+  - <a href="#managing-normalized-state-with-createentityadapter" class="table-of-contents__link">Managing Normalized State with &lt;code class="language-js &gt;createEntityAdapter</a>
+  - <a href="#updating-the-posts-slice" class="table-of-contents__link">Updating the Posts Slice</a>
+  - <a href="#optimizing-the-posts-list" class="table-of-contents__link">Optimizing the Posts List</a>
+- <a href="#converting-other-slices" class="table-of-contents__link">Converting Other Slices</a>
+  - <a href="#converting-the-users-slice" class="table-of-contents__link">Converting the Users Slice</a>
+  - <a href="#converting-the-notifications-slice" class="table-of-contents__link">Converting the Notifications Slice</a>
+- <a href="#what-youve-learned" class="table-of-contents__link">What You’ve Learned</a>
+- <a href="#whats-next" class="table-of-contents__link">What’s Next?</a>
 
 #### Docs
 
--   <a href="../official/introduction/getting-started.html" class="footer__link-item">Getting Started</a>
--   <a href="part-1-overview-concepts.html" class="footer__link-item">Tutorial</a>
--   <a href="../official/faq.html" class="footer__link-item">FAQ</a>
--   <a href="../official/api/api-reference.html" class="footer__link-item">API Reference</a>
+- <a href="../official/introduction/getting-started.html" class="footer__link-item">Getting Started</a>
+- <a href="part-1-overview-concepts.html" class="footer__link-item">Tutorial</a>
+- <a href="../official/faq.html" class="footer__link-item">FAQ</a>
+- <a href="../official/api/api-reference.html" class="footer__link-item">API Reference</a>
 
 #### Community
 
--   <a href="../official/../discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a>
--   <a href="../official/../stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a>
--   <a href="../official/introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a>
+- <a href="../official/../discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a>
+- <a href="../official/../stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a>
+- <a href="../official/introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a>
 
 #### More
 
--   <a href="../official/../github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a>
--   [![Deploys by Netlify](../../../www.netlify.com/img/global/badges/netlify-color-accent.svg)](../../../www.netlify.com/index.html)
+- <a href="../official/../github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a>
+- [![Deploys by Netlify](../../../www.netlify.com/img/global/badges/netlify-color-accent.svg)](../../../www.netlify.com/index.html)
 
 <img src="../official/../d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" />

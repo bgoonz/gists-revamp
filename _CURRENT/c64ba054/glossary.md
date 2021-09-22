@@ -1,5 +1,4 @@
-Glossary
-========
+# Glossary
 
 This is a glossary of the core terms in Redux, along with their type signatures. The types are documented using
 
@@ -53,12 +52,11 @@ Setting up “boundaries” with your types means you can tell Flow your intent 
 
 This guide will teach you the syntax and semantics of all the different types you can have in Flow.
 
-------------------------------------------------------------------------
+---
 
-------------------------------------------------------------------------
+---
 
-State[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#state)
-----------------------------------------------------------------------------------------------
+## State[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#state)
 
     type State = any;
 
@@ -66,8 +64,7 @@ State[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/g
 
 By convention, the top-level state is an object or some other key-value collection like a Map, but technically it can be any type. Still, you should do your best to keep the state serializable. Don’t put anything inside it that you can’t easily turn into JSON.
 
-Action[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#action)
-------------------------------------------------------------------------------------------------
+## Action[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#action)
 
     type Action = Object;
 
@@ -79,8 +76,7 @@ Other than `type`, the structure of an action object is really up to you. If yo
 
 See also [async action](https://redux.js.org/understanding/thinking-in-redux/glossary#async-action) below.
 
-Reducer[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#reducer)
---------------------------------------------------------------------------------------------------
+## Reducer[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#reducer)
 
     type Reducer<S, A> = (state: S, action: A) => S;
 
@@ -92,10 +88,9 @@ In Redux, the accumulated value is the state object, and the values being accumu
 
 Reducers are the most important concept in Redux.
 
-*Do not put API calls into reducers.*
+_Do not put API calls into reducers._
 
-Dispatching Function[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#dispatching-function)
-----------------------------------------------------------------------------------------------------------------------------
+## Dispatching Function[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#dispatching-function)
 
     type BaseDispatch = (a: Action) => Actiontype Dispatch = (a: Action | AsyncAction) => any
 
@@ -107,8 +102,7 @@ The base dispatch function *always* synchronously sends an action to the store
 
 [Middleware](https://redux.js.org/understanding/thinking-in-redux/glossary#middleware) wraps the base dispatch function. It allows the dispatch function to handle [async actions](https://redux.js.org/understanding/thinking-in-redux/glossary#async-action) in addition to actions. Middleware may transform, delay, ignore, or otherwise interpret actions or async actions before passing them to the next middleware. See below for more information.
 
-Action Creator[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#action-creator)
-----------------------------------------------------------------------------------------------------------------
+## Action Creator[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#action-creator)
 
     type ActionCreator<A, P extends any[] = any[]> = (...args: P) => Action | AsyncAction
 
@@ -118,15 +112,13 @@ Calling an action creator only produces an action, but does not dispatch it. You
 
 If an action creator needs to read the current state, perform an API call, or cause a side effect, like a routing transition, it should return an [async action](https://redux.js.org/understanding/thinking-in-redux/glossary#async-action) instead of an action.
 
-Async Action[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#async-action)
-------------------------------------------------------------------------------------------------------------
+## Async Action[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#async-action)
 
     type AsyncAction = any;
 
 An *async action* is a value that is sent to a dispatching function, but is not yet ready for consumption by the reducer. It will be transformed by [middleware](https://redux.js.org/understanding/thinking-in-redux/glossary#middleware) into an action (or a series of actions) before being sent to the base [`dispatch()`](https://redux.js.org/api/store#dispatchaction) function. Async actions may have different types, depending on the middleware you use. They are often asynchronous primitives, like a Promise or a thunk, which are not passed to the reducer immediately, but trigger action dispatches once an operation has completed.
 
-Middleware[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#middleware)
---------------------------------------------------------------------------------------------------------
+## Middleware[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#middleware)
 
     type MiddlewareAPI = { dispatch: Dispatch, getState: () => State }type Middleware = (api: MiddlewareAPI) => (next: Dispatch) => Dispatch
 
@@ -136,29 +128,26 @@ Middleware is composable using function composition. It is useful for logging ac
 
 See [`applyMiddleware(...middlewares)`](https://redux.js.org/api/applymiddleware) for a detailed look at middleware.
 
-Store[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#store)
-----------------------------------------------------------------------------------------------
+## Store[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#store)
 
     type Store = {  dispatch: Dispatch  getState: () => State  subscribe: (listener: () => void) => () => void  replaceReducer: (reducer: Reducer) => void}
 
 A store is an object that holds the application’s state tree. There should only be a single store in a Redux app, as the composition happens on the reducer level.
 
--   [`dispatch(action)`](https://redux.js.org/api/store#dispatchaction) is the base dispatch function described above.
--   [`getState()`](https://redux.js.org/api/store#getState) returns the current state of the store.
--   [`subscribe(listener)`](https://redux.js.org/api/store#subscribelistener) registers a function to be called on state changes.
--   [`replaceReducer(nextReducer)`](https://redux.js.org/api/store#replacereducernextreducer) can be used to implement hot reloading and code splitting. Most likely you won’t use it.
+- [`dispatch(action)`](https://redux.js.org/api/store#dispatchaction) is the base dispatch function described above.
+- [`getState()`](https://redux.js.org/api/store#getState) returns the current state of the store.
+- [`subscribe(listener)`](https://redux.js.org/api/store#subscribelistener) registers a function to be called on state changes.
+- [`replaceReducer(nextReducer)`](https://redux.js.org/api/store#replacereducernextreducer) can be used to implement hot reloading and code splitting. Most likely you won’t use it.
 
 See the complete [store API reference](https://redux.js.org/api/store#dispatchaction) for more details.
 
-Store creator[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#store-creator)
---------------------------------------------------------------------------------------------------------------
+## Store creator[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#store-creator)
 
     type StoreCreator = (reducer: Reducer, preloadedState: ?State) => Store;
 
 A store creator is a function that creates a Redux store. Like with dispatching function, we must distinguish the base store creator, [`createStore(reducer, preloadedState)`](https://redux.js.org/api/createstore) exported from the Redux package, from store creators that are returned from the store enhancers.
 
-Store enhancer[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#store-enhancer)
-----------------------------------------------------------------------------------------------------------------
+## Store enhancer[**(Link To Docs)**](https://redux.js.org/understanding/thinking-in-redux/glossary#store-enhancer)
 
     type StoreEnhancer = (next: StoreCreator) => StoreCreator;
 

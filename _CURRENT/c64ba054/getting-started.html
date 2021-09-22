@@ -1,44 +1,101 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>getting-started</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-</head>
-<body>
-<p>import LiteYouTubeEmbed from ‘react-lite-youtube-embed’; import ‘react-lite-youtube-embed/dist/LiteYouTubeEmbed.css’</p>
-<h1 id="getting-started-with-react-redux">Getting Started with React Redux</h1>
-<p><a href="https://github.com/reduxjs/react-redux">React Redux</a> is the official <a href="https://reactjs.org/">React</a> UI bindings layer for <a href="https://redux.js.org/">Redux</a>. It lets your React components read data from a Redux store, and dispatch actions to the store to update state.</p>
-<h2 id="installation">Installation</h2>
-<p>React Redux 7.1+ requires <strong>React 16.8.3 or later</strong>, in order to make use of React Hooks.</p>
-<h3 id="using-create-react-app">Using Create React App</h3>
-<p>The recommended way to start new apps with React and Redux is by using the <a href="https://github.com/reduxjs/cra-template-redux">official Redux+JS template</a> or <a href="https://github.com/reduxjs/cra-template-redux-typescript">Redux+TS template</a> for <a href="https://github.com/facebook/create-react-app">Create React App</a>, which takes advantage of <strong><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></strong> and React Redux’s integration with React components.</p>
-<pre><code># Redux + Plain JS template
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>getting-started</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      import LiteYouTubeEmbed from ‘react-lite-youtube-embed’; import
+      ‘react-lite-youtube-embed/dist/LiteYouTubeEmbed.css’
+    </p>
+    <h1 id="getting-started-with-react-redux">
+      Getting Started with React Redux
+    </h1>
+    <p>
+      <a href="https://github.com/reduxjs/react-redux">React Redux</a> is the
+      official <a href="https://reactjs.org/">React</a> UI bindings layer for
+      <a href="https://redux.js.org/">Redux</a>. It lets your React components
+      read data from a Redux store, and dispatch actions to the store to update
+      state.
+    </p>
+    <h2 id="installation">Installation</h2>
+    <p>
+      React Redux 7.1+ requires <strong>React 16.8.3 or later</strong>, in order
+      to make use of React Hooks.
+    </p>
+    <h3 id="using-create-react-app">Using Create React App</h3>
+    <p>
+      The recommended way to start new apps with React and Redux is by using the
+      <a href="https://github.com/reduxjs/cra-template-redux"
+        >official Redux+JS template</a
+      >
+      or
+      <a href="https://github.com/reduxjs/cra-template-redux-typescript"
+        >Redux+TS template</a
+      >
+      for
+      <a href="https://github.com/facebook/create-react-app">Create React App</a
+      >, which takes advantage of
+      <strong><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></strong>
+      and React Redux’s integration with React components.
+    </p>
+    <pre><code># Redux + Plain JS template
 npx create-react-app my-app --template redux
 
 # Redux + TypeScript template
 npx create-react-app my-app --template redux-typescript</code></pre>
-<h3 id="an-existing-react-app">An Existing React App</h3>
-<p>To use React Redux with your React app, install it as a dependency:</p>
-<pre><code># If you use npm:
+    <h3 id="an-existing-react-app">An Existing React App</h3>
+    <p>To use React Redux with your React app, install it as a dependency:</p>
+    <pre><code># If you use npm:
 npm install react-redux
 
 # Or if you use Yarn:
 yarn add react-redux</code></pre>
-<p>You’ll also need to <a href="https://redux.js.org/introduction/installation">install Redux</a> and <a href="https://redux.js.org/recipes/configuring-your-store/">set up a Redux store</a> in your app.</p>
-<p>If you are using TypeScript, the React Redux types are maintained separately in DefinitelyTyped, but included as a dependency of the <code>react-redux</code> package, so they should be installed automatically. If you still need to install them manually, run:</p>
-<pre><code>npm install @types/react-redux</code></pre>
-<h2 id="api-overview">API Overview</h2>
-<h3 id="provider"><code>Provider</code></h3>
-<p>React Redux includes a <code>&lt;Provider /&gt;</code> component, which makes the Redux store available to the rest of your app:</p>
-<pre><code>import React from &#39;react&#39;
+    <p>
+      You’ll also need to
+      <a href="https://redux.js.org/introduction/installation">install Redux</a>
+      and
+      <a href="https://redux.js.org/recipes/configuring-your-store/"
+        >set up a Redux store</a
+      >
+      in your app.
+    </p>
+    <p>
+      If you are using TypeScript, the React Redux types are maintained
+      separately in DefinitelyTyped, but included as a dependency of the
+      <code>react-redux</code> package, so they should be installed
+      automatically. If you still need to install them manually, run:
+    </p>
+    <pre><code>npm install @types/react-redux</code></pre>
+    <h2 id="api-overview">API Overview</h2>
+    <h3 id="provider"><code>Provider</code></h3>
+    <p>
+      React Redux includes a <code>&lt;Provider /&gt;</code> component, which
+      makes the Redux store available to the rest of your app:
+    </p>
+    <pre><code>import React from &#39;react&#39;
 import ReactDOM from &#39;react-dom&#39;
 
 import { Provider } from &#39;react-redux&#39;
@@ -53,10 +110,17 @@ ReactDOM.render(
   &lt;/Provider&gt;,
   rootElement
 )</code></pre>
-<h3 id="hooks">Hooks</h3>
-<p>React Redux provides a pair of custom React hooks that allow your React components to interact with the Redux store.</p>
-<p><code>useSelector</code> reads a value from the store state and subscribes to updates, while <code>useDispatch</code> returns the store’s <code>dispatch</code> method to let you dispatch actions.</p>
-<pre><code>import React from &#39;react&#39;
+    <h3 id="hooks">Hooks</h3>
+    <p>
+      React Redux provides a pair of custom React hooks that allow your React
+      components to interact with the Redux store.
+    </p>
+    <p>
+      <code>useSelector</code> reads a value from the store state and subscribes
+      to updates, while <code>useDispatch</code> returns the store’s
+      <code>dispatch</code> method to let you dispatch actions.
+    </p>
+    <pre><code>import React from &#39;react&#39;
 import { useSelector, useDispatch } from &#39;react-redux&#39;
 import {
   decrement,
@@ -94,16 +158,53 @@ export function Counter() {
     &lt;/div&gt;
   )
 }</code></pre>
-<h2 id="learning-react-redux">Learning React Redux</h2>
-<h3 id="learn-modern-redux-livestream">Learn Modern Redux Livestream</h3>
-<p>Redux maintainer Mark Erikson appeared on the “Learn with Jason” show to explain how we recommend using Redux today. The show includes a live-coded example app that shows how to use Redux Toolkit and React-Redux hooks with Typescript, as well as the new RTK Query data fetching APIs.</p>
-<p>See <a href="https://www.learnwithjason.dev/let-s-learn-modern-redux">the “Learn Modern Redux” show notes page</a> for a transcript and links to the example app source.</p>
-<h2 id="help-and-discussion">Help and Discussion</h2>
-<p>The <strong><a href="https://discord.gg/0ZcbPKXt5bZ6au5t">#redux channel</a></strong> of the <strong><a href="http://www.reactiflux.com">Reactiflux Discord community</a></strong> is our official resource for all questions related to learning and using Redux. Reactiflux is a great place to hang out, ask questions, and learn - come join us!</p>
-<p>You can also ask questions on <a href="https://stackoverflow.com">Stack Overflow</a> using the <strong><a href="https://stackoverflow.com/questions/tagged/redux">#redux tag</a></strong>.</p>
-<h2 id="docs-translations">Docs Translations</h2>
-<ul>
-<li><a href="https://fernandobelotto.github.io/react-redux">Portuguese</a></li>
-</ul>
-</body>
+    <h2 id="learning-react-redux">Learning React Redux</h2>
+    <h3 id="learn-modern-redux-livestream">Learn Modern Redux Livestream</h3>
+    <p>
+      Redux maintainer Mark Erikson appeared on the “Learn with Jason” show to
+      explain how we recommend using Redux today. The show includes a live-coded
+      example app that shows how to use Redux Toolkit and React-Redux hooks with
+      Typescript, as well as the new RTK Query data fetching APIs.
+    </p>
+    <p>
+      See
+      <a href="https://www.learnwithjason.dev/let-s-learn-modern-redux"
+        >the “Learn Modern Redux” show notes page</a
+      >
+      for a transcript and links to the example app source.
+    </p>
+    <h2 id="help-and-discussion">Help and Discussion</h2>
+    <p>
+      The
+      <strong
+        ><a href="https://discord.gg/0ZcbPKXt5bZ6au5t"
+          >#redux channel</a
+        ></strong
+      >
+      of the
+      <strong
+        ><a href="http://www.reactiflux.com"
+          >Reactiflux Discord community</a
+        ></strong
+      >
+      is our official resource for all questions related to learning and using
+      Redux. Reactiflux is a great place to hang out, ask questions, and learn -
+      come join us!
+    </p>
+    <p>
+      You can also ask questions on
+      <a href="https://stackoverflow.com">Stack Overflow</a> using the
+      <strong
+        ><a href="https://stackoverflow.com/questions/tagged/redux"
+          >#redux tag</a
+        ></strong
+      >.
+    </p>
+    <h2 id="docs-translations">Docs Translations</h2>
+    <ul>
+      <li>
+        <a href="https://fernandobelotto.github.io/react-redux">Portuguese</a>
+      </li>
+    </ul>
+  </body>
 </html>
