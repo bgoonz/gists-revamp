@@ -20,8 +20,8 @@ Here’s an AJAX form submission example using the `fetch` API for a static HTML
 
 Requirements for the request:
 
--   The body of the request must be URL-encoded. In the above example, the form is passed to a `FormData` constructor. That object is then encoded using the `URLSearchParams` constructor and converted to a string. Note that Netlify forms do not support JSON form data at this time.
--   If the form accepts alphanumeric data only, the request should include the header `"Content-Type": "application/x-www-form-urlencoded"`. If the form accepts [file uploads](https://docs.netlify.com/forms/setup/#file-uploads), the request should instead include the header `"Content-Type": "multipart/form-data"`.
+- The body of the request must be URL-encoded. In the above example, the form is passed to a `FormData` constructor. That object is then encoded using the `URLSearchParams` constructor and converted to a string. Note that Netlify forms do not support JSON form data at this time.
+- If the form accepts alphanumeric data only, the request should include the header `"Content-Type": "application/x-www-form-urlencoded"`. If the form accepts [file uploads](https://docs.netlify.com/forms/setup/#file-uploads), the request should instead include the header `"Content-Type": "multipart/form-data"`.
 
 ## [#](https://docs.netlify.com/forms/setup/#javascript-forms) JavaScript forms
 
@@ -31,15 +31,13 @@ You don’t need to include extra JavaScript on your site to use Netlify Forms. 
 
 Our buildbots find your forms by parsing the HTML of your site when the build completes. This means that if you’re using JavaScript to render a form client-side, our buildbots won’t find it in the pre-built files. You can work around this:
 
--   Create a hidden HTML form with the `data-netlify="true"` attribute or a `netlify` attribute and input fields with `name` attributes to match the inputs of your JavaScript-rendered form. You need to apply the same work around if you want to use our [reCAPTCHA 2 integration](https://docs.netlify.com/forms/spam-filters/#recaptcha-2-challenge), and create a `div` element in the hidden HTML with the `data-netlify-recaptcha="true"` attribute.
-    
--   Add a hidden input to the JavaScript-rendered form or JSX form:
-    
+- Create a hidden HTML form with the `data-netlify="true"` attribute or a `netlify` attribute and input fields with `name` attributes to match the inputs of your JavaScript-rendered form. You need to apply the same work around if you want to use our [reCAPTCHA 2 integration](https://docs.netlify.com/forms/spam-filters/#recaptcha-2-challenge), and create a `div` element in the hidden HTML with the `data-netlify-recaptcha="true"` attribute.
+- Add a hidden input to the JavaScript-rendered form or JSX form:
 
 You can also find related tutorials on our blog:
 
--   [How to Integrate Netlify’s Form Handling in a React App](https://www.netlify.com/blog/2017/07/19/how-to-integrate-netlifys-form-handling-in-a-react-app/)
--   [How to Integrate Netlify forms in a Vue App](https://www.netlify.com/blog/2018/09/07/how-to-integrate-netlify-forms-in-a-vue-app/)
+- [How to Integrate Netlify’s Form Handling in a React App](https://www.netlify.com/blog/2017/07/19/how-to-integrate-netlifys-form-handling-in-a-react-app/)
+- [How to Integrate Netlify forms in a Vue App](https://www.netlify.com/blog/2018/09/07/how-to-integrate-netlify-forms-in-a-vue-app/)
 
 While the two articles are fairly framework-specific, the code demonstrates how to prerender forms when working with them in a web application.
 
@@ -47,9 +45,9 @@ While the two articles are fairly framework-specific, the code demonstrates how 
 
 To submit a JavaScript-rendered form built with a framework like Gatsby or Nuxt, you can send an AJAX `POST` request to any path on your site. Requirements for the request:
 
--   You need a function to URL-encode your form data in the body of the request.
--   If you haven’t added a hidden `form-name` input to your JavaScript-rendered form, you need to send a `form-name` attribute in the AJAX `POST` request body.
--   If the form accepts alphanumeric data only, the request should include the header `"Content-Type": "application/x-www-form-urlencoded"`. If the form accepts [file uploads](https://docs.netlify.com/forms/setup/#file-uploads), the request should instead include the header `"Content-Type": "multipart/form-data"`.
+- You need a function to URL-encode your form data in the body of the request.
+- If you haven’t added a hidden `form-name` input to your JavaScript-rendered form, you need to send a `form-name` attribute in the AJAX `POST` request body.
+- If the form accepts alphanumeric data only, the request should include the header `"Content-Type": "application/x-www-form-urlencoded"`. If the form accepts [file uploads](https://docs.netlify.com/forms/setup/#file-uploads), the request should instead include the header `"Content-Type": "multipart/form-data"`.
 
 Here’s an AJAX form submission code sample using the `fetch` API for a JavaScript-rendered form. It uses Gatsby’s `navigate` function to redirect to a custom page on form submission success.
 
@@ -71,8 +69,8 @@ Here’s a sample HTML form with a file upload field:
 
 Keep the following considerations in mind when working with file uploads in forms.
 
--   Only one file upload per field is supported. For multiple file uploads, use multiple fields.
--   There is no file size limit, but file uploads time out after 30 seconds.
+- Only one file upload per field is supported. For multiple file uploads, use multiple fields.
+- There is no file size limit, but file uploads time out after 30 seconds.
 
 ### [#](https://docs.netlify.com/forms/setup/#submit-file-uploads-with-ajax) Submit file uploads with AJAX
 
@@ -82,8 +80,8 @@ Here’s an AJAX form submission code sample using the `fetch` API for the above
 
 ## [#](https://docs.netlify.com/forms/setup/#more-forms-resources) More Forms resources
 
--   [Spam filters](https://docs.netlify.com/forms/spam-filters)
--   [Form submissions](https://docs.netlify.com/forms/submissions)
--   [Form notifications](https://docs.netlify.com/forms/notifications)
--   [Troubleshooting tips](https://docs.netlify.com/forms/troubleshooting-tips)
--   [Forms usage and billing](https://docs.netlify.com/forms/usage-and-billing)
+- [Spam filters](https://docs.netlify.com/forms/spam-filters)
+- [Form submissions](https://docs.netlify.com/forms/submissions)
+- [Form notifications](https://docs.netlify.com/forms/notifications)
+- [Troubleshooting tips](https://docs.netlify.com/forms/troubleshooting-tips)
+- [Forms usage and billing](https://docs.netlify.com/forms/usage-and-billing)

@@ -1,9 +1,9 @@
+## Getting started
 
-Getting started
----------------
 {: .-three-column}
 
 ### Introduction
+
 {: .-intro}
 
 This is a quick reference to getting started with Bash scripting.
@@ -55,6 +55,7 @@ git commit || echo "Commit failed"
 ```
 
 ### Functions
+
 {: id='functions-example'}
 
 ```bash
@@ -68,6 +69,7 @@ echo "You are $(get_name)"
 See: [Functions](#functions)
 
 ### Conditionals
+
 {: id='conditionals-example'}
 
 ```bash
@@ -103,9 +105,8 @@ echo {A,B}.js
 
 See: [Brace expansion](http://wiki.bash-hackers.org/syntax/expansion/brace)
 
+## Parameter expansions
 
-Parameter expansions
---------------------
 {: .-three-column}
 
 ### Basics
@@ -222,8 +223,8 @@ echo ${STR^^}  #=> "HELLO WORLD!" (all uppercase)
 
 Omitting the `:` removes the (non)nullity checks, e.g. `${FOO-val}` expands to `val` if unset otherwise `$FOO`.
 
-Loops
------
+## Loops
+
 {: .-three-column}
 
 ### Basic for loop
@@ -274,8 +275,8 @@ while true; do
 done
 ```
 
-Functions
----------
+## Functions
+
 {: .-three-column}
 
 ### Defining functions
@@ -328,21 +329,21 @@ fi
 
 ### Arguments
 
-| Expression | Description                                      |
-| ---        | ---                                              |
-| `$#`       | Number of arguments                              |
-| `$*`       | All postional arguments  (as a single word)     |
-| `$@`       | All postitional arguments (as separate strings)  |
-| `$1`       | First argument                                   |
-| `$_`       | Last argument of the previous command            |
+| Expression | Description                                     |
+| ---------- | ----------------------------------------------- |
+| `$#`       | Number of arguments                             |
+| `$*`       | All postional arguments (as a single word)      |
+| `$@`       | All postitional arguments (as separate strings) |
+| `$1`       | First argument                                  |
+| `$_`       | Last argument of the previous command           |
 
 **Note**: `$@` and `$*` must be quoted in order to perform as described.
 Otherwise, they do exactly the same thing (arguments as separate strings).
 
 See [Special parameters](http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables).
 
-Conditionals
-------------
+## Conditionals
+
 {: .-three-column}
 
 ### Conditions
@@ -350,7 +351,7 @@ Conditionals
 Note that `[[` is actually a command/program that returns either `0` (true) or `1` (false). Any program that obeys the same logic (like all base utils, such as `grep(1)` or `ping(1)`) can be used as condition, see examples.
 
 | Condition                | Description           |
-| ---                      | ---                   |
+| ------------------------ | --------------------- |
 | `[[ -z STRING ]]`        | Empty string          |
 | `[[ -n STRING ]]`        | Not empty string      |
 | `[[ STRING == STRING ]]` | Equal                 |
@@ -370,17 +371,17 @@ Note that `[[` is actually a command/program that returns either `0` (true) or `
 #### More conditions
 
 | Condition            | Description              |
-| -------------------- | ------------------------ |
+| -------------------- | ------------------------ | ----- | --- |
 | `[[ -o noclobber ]]` | If OPTIONNAME is enabled |
 | ---                  | ---                      |
 | `[[ ! EXPR ]]`       | Not                      |
 | `[[ X && Y ]]`       | And                      |
-| `[[ X || Y ]]`       | Or                       |
+| `[[ X                |                          | Y ]]` | Or  |
 
 ### File conditions
 
 | Condition               | Description             |
-| ---                     | ---                     |
+| ----------------------- | ----------------------- |
 | `[[ -e FILE ]]`         | Exists                  |
 | `[[ -r FILE ]]`         | Readable                |
 | `[[ -h FILE ]]`         | Symlink                 |
@@ -436,8 +437,7 @@ if [[ -e "file.txt" ]]; then
 fi
 ```
 
-Arrays
-------
+## Arrays
 
 ### Defining arrays
 
@@ -484,8 +484,8 @@ for i in "${arrayName[@]}"; do
 done
 ```
 
-Dictionaries
-------------
+## Dictionaries
+
 {: .-three-column}
 
 ### Defining
@@ -531,8 +531,7 @@ for key in "${!sounds[@]}"; do
 done
 ```
 
-Options
--------
+## Options
 
 ### Options
 
@@ -556,8 +555,7 @@ shopt -s globstar    # Allow ** for recursive matches ('lib/**/*.rb' => 'lib/a/b
 Set `GLOBIGNORE` as a colon-separated list of patterns to be removed from glob
 matches.
 
-History
--------
+## History
 
 ### Commands
 
@@ -600,9 +598,7 @@ History
 
 `!!` can be replaced with any valid expansion i.e. `!cat`, `!-2`, `!42`, etc.
 
-
-Miscellaneous
--------------
+## Miscellaneous
 
 ### Numeric calculations
 
@@ -775,10 +771,11 @@ fi
 ```
 
 ## Also see
+
 {: .-one-column}
 
-* [Bash-hackers wiki](http://wiki.bash-hackers.org/) _(bash-hackers.org)_
-* [Shell vars](http://wiki.bash-hackers.org/syntax/shellvars) _(bash-hackers.org)_
-* [Learn bash in y minutes](https://learnxinyminutes.com/docs/bash/) _(learnxinyminutes.com)_
-* [Bash Guide](http://mywiki.wooledge.org/BashGuide) _(mywiki.wooledge.org)_
-* [ShellCheck](https://www.shellcheck.net/) _(shellcheck.net)_
+- [Bash-hackers wiki](http://wiki.bash-hackers.org/) _(bash-hackers.org)_
+- [Shell vars](http://wiki.bash-hackers.org/syntax/shellvars) _(bash-hackers.org)_
+- [Learn bash in y minutes](https://learnxinyminutes.com/docs/bash/) _(learnxinyminutes.com)_
+- [Bash Guide](http://mywiki.wooledge.org/BashGuide) _(mywiki.wooledge.org)_
+- [ShellCheck](https://www.shellcheck.net/) _(shellcheck.net)_
