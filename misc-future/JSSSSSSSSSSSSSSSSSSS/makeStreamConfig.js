@@ -1,17 +1,21 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
 var _lodash = _interopRequireDefault(require("lodash"));
 
-var _getBorderCharacters = _interopRequireDefault(require("./getBorderCharacters"));
+var _getBorderCharacters = _interopRequireDefault(
+  require("./getBorderCharacters")
+);
 
 var _validateConfig = _interopRequireDefault(require("./validateConfig"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * Merges user provided border characters with the default border ("honeywell") characters.
@@ -20,7 +24,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @returns {Object}
  */
 const makeBorder = (border = {}) => {
-  return Object.assign({}, (0, _getBorderCharacters.default)('honeywell'), border);
+  return Object.assign(
+    {},
+    (0, _getBorderCharacters.default)("honeywell"),
+    border
+  );
 };
 /**
  * Creates a configuration for every column using default
@@ -32,20 +40,23 @@ const makeBorder = (border = {}) => {
  * @returns {Object}
  */
 
-
 const makeColumns = (columnCount, columns = {}, columnDefault = {}) => {
-  _lodash.default.times(columnCount, index => {
+  _lodash.default.times(columnCount, (index) => {
     if (_lodash.default.isUndefined(columns[index])) {
       columns[index] = {};
     }
 
-    columns[index] = Object.assign({
-      alignment: 'left',
-      paddingLeft: 1,
-      paddingRight: 1,
-      truncate: Infinity,
-      wrapWord: false
-    }, columnDefault, columns[index]);
+    columns[index] = Object.assign(
+      {
+        alignment: "left",
+        paddingLeft: 1,
+        paddingRight: 1,
+        truncate: Infinity,
+        wrapWord: false,
+      },
+      columnDefault,
+      columns[index]
+    );
   });
 
   return columns;
@@ -75,22 +86,27 @@ const makeColumns = (columnCount, columns = {}, columnDefault = {}) => {
  * @returns {Object}
  */
 
-
 const makeStreamConfig = (userConfig = {}) => {
-  (0, _validateConfig.default)('streamConfig.json', userConfig);
+  (0, _validateConfig.default)("streamConfig.json", userConfig);
 
   const config = _lodash.default.cloneDeep(userConfig);
 
   if (!config.columnDefault || !config.columnDefault.width) {
-    throw new Error('Must provide config.columnDefault.width when creating a stream.');
+    throw new Error(
+      "Must provide config.columnDefault.width when creating a stream."
+    );
   }
 
   if (!config.columnCount) {
-    throw new Error('Must provide config.columnCount.');
+    throw new Error("Must provide config.columnCount.");
   }
 
   config.border = makeBorder(config.border);
-  config.columns = makeColumns(config.columnCount, config.columns, config.columnDefault);
+  config.columns = makeColumns(
+    config.columnCount,
+    config.columns,
+    config.columnDefault
+  );
   return config;
 };
 

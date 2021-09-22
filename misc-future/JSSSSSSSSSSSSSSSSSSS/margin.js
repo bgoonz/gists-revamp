@@ -1,54 +1,54 @@
-'use strict';
+"use strict";
 
-var parsers = require('../parsers.js');
+var parsers = require("../parsers.js");
 var TYPES = parsers.TYPES;
 
-var isValid = function(v) {
-  if (v.toLowerCase() === 'auto') {
+var isValid = function (v) {
+  if (v.toLowerCase() === "auto") {
     return true;
   }
   var type = parsers.valueType(v);
   return (
     type === TYPES.LENGTH ||
     type === TYPES.PERCENT ||
-    (type === TYPES.INTEGER && (v === '0' || v === 0))
+    (type === TYPES.INTEGER && (v === "0" || v === 0))
   );
 };
 
-var parser = function(v) {
+var parser = function (v) {
   var V = v.toLowerCase();
-  if (V === 'auto') {
+  if (V === "auto") {
     return V;
   }
   return parsers.parseMeasurement(v);
 };
 
-var mySetter = parsers.implicitSetter('margin', '', isValid, parser);
+var mySetter = parsers.implicitSetter("margin", "", isValid, parser);
 var myGlobal = parsers.implicitSetter(
-  'margin',
-  '',
-  function() {
+  "margin",
+  "",
+  function () {
     return true;
   },
-  function(v) {
+  function (v) {
     return v;
   }
 );
 
 module.exports.definition = {
-  set: function(v) {
-    if (typeof v === 'number') {
+  set: function (v) {
+    if (typeof v === "number") {
       v = String(v);
     }
-    if (typeof v !== 'string') {
+    if (typeof v !== "string") {
       return;
     }
     var V = v.toLowerCase();
     switch (V) {
-      case 'inherit':
-      case 'initial':
-      case 'unset':
-      case '':
+      case "inherit":
+      case "initial":
+      case "unset":
+      case "":
         myGlobal.call(this, V);
         break;
 
@@ -57,8 +57,8 @@ module.exports.definition = {
         break;
     }
   },
-  get: function() {
-    return this.getPropertyValue('margin');
+  get: function () {
+    return this.getPropertyValue("margin");
   },
   enumerable: true,
   configurable: true,

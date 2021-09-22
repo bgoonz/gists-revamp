@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('mapKeys', require('../mapKeys'));
+var convert = require("./convert"),
+  func = convert("mapKeys", require("../mapKeys"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

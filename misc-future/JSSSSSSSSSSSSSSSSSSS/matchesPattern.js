@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = matchesPattern;
 
@@ -13,7 +13,11 @@ function matchesPattern(member, match, allowPartial) {
   const nodes = [];
   let node;
 
-  for (node = member; (0, _generated.isMemberExpression)(node); node = node.object) {
+  for (
+    node = member;
+    (0, _generated.isMemberExpression)(node);
+    node = node.object
+  ) {
     nodes.push(node.property);
   }
 
