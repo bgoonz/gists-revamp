@@ -17,18 +17,24 @@ function UIEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'UIEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'UIEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'UIEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'UIEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertUIEventInit(curArg, { context: "Failed to construct 'UIEvent': parameter 2" });
+    curArg = convertUIEventInit(curArg, {
+      context: "Failed to construct 'UIEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(UIEvent, "prototype", {
   value: UIEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 UIEvent.prototype.initUIEvent = function initUIEvent(typeArg) {
@@ -52,19 +58,25 @@ UIEvent.prototype.initUIEvent = function initUIEvent(typeArg) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'initUIEvent' on 'UIEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'initUIEvent' on 'UIEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'initUIEvent' on 'UIEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'initUIEvent' on 'UIEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     if (curArg !== undefined) {
-      curArg = conversions["boolean"](curArg, { context: "Failed to execute 'initUIEvent' on 'UIEvent': parameter 2" });
+      curArg = conversions["boolean"](curArg, {
+        context: "Failed to execute 'initUIEvent' on 'UIEvent': parameter 2",
+      });
     } else {
       curArg = false;
     }
@@ -73,7 +85,9 @@ UIEvent.prototype.initUIEvent = function initUIEvent(typeArg) {
   {
     let curArg = arguments[2];
     if (curArg !== undefined) {
-      curArg = conversions["boolean"](curArg, { context: "Failed to execute 'initUIEvent' on 'UIEvent': parameter 3" });
+      curArg = conversions["boolean"](curArg, {
+        context: "Failed to execute 'initUIEvent' on 'UIEvent': parameter 3",
+      });
     } else {
       curArg = false;
     }
@@ -95,7 +109,9 @@ UIEvent.prototype.initUIEvent = function initUIEvent(typeArg) {
   {
     let curArg = arguments[4];
     if (curArg !== undefined) {
-      curArg = conversions["long"](curArg, { context: "Failed to execute 'initUIEvent' on 'UIEvent': parameter 5" });
+      curArg = conversions["long"](curArg, {
+        context: "Failed to execute 'initUIEvent' on 'UIEvent': parameter 5",
+      });
     } else {
       curArg = 0;
     }
@@ -114,7 +130,7 @@ Object.defineProperty(UIEvent.prototype, "view", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(UIEvent.prototype, "detail", {
@@ -127,7 +143,7 @@ Object.defineProperty(UIEvent.prototype, "detail", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(UIEvent.prototype, "which", {
@@ -140,14 +156,14 @@ Object.defineProperty(UIEvent.prototype, "which", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(UIEvent.prototype, Symbol.toStringTag, {
   value: "UIEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -213,7 +229,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -224,8 +240,8 @@ const iface = {
   },
   interface: UIEvent,
   expose: {
-    Window: { UIEvent }
-  }
+    Window: { UIEvent },
+  },
 }; // iface
 module.exports = iface;
 

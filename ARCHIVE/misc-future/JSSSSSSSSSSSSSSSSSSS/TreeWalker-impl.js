@@ -1,7 +1,12 @@
 "use strict";
 
 const DOMException = require("domexception");
-const { filter, FILTER_ACCEPT, FILTER_REJECT, FILTER_SKIP } = require("./helpers");
+const {
+  filter,
+  FILTER_ACCEPT,
+  FILTER_REJECT,
+  FILTER_SKIP,
+} = require("./helpers");
 
 const FIRST = false;
 const LAST = true;
@@ -24,7 +29,10 @@ exports.implementation = class TreeWalkerImpl {
 
   set currentNode(node) {
     if (node === null) {
-      throw new DOMException("Cannot set currentNode to null", "NotSupportedError");
+      throw new DOMException(
+        "Cannot set currentNode to null",
+        "NotSupportedError"
+      );
     }
 
     this._currentNode = node;
@@ -159,7 +167,8 @@ exports.implementation = class TreeWalkerImpl {
       }
 
       for (;;) {
-        const sibling = type === FIRST ? node.nextSibling : node.previousSibling;
+        const sibling =
+          type === FIRST ? node.nextSibling : node.previousSibling;
 
         if (sibling !== null) {
           node = sibling;
@@ -168,7 +177,11 @@ exports.implementation = class TreeWalkerImpl {
 
         const parent = node.parentNode;
 
-        if (parent === null || parent === this.root || parent === this._currentNode) {
+        if (
+          parent === null ||
+          parent === this.root ||
+          parent === this._currentNode
+        ) {
           return null;
         }
 

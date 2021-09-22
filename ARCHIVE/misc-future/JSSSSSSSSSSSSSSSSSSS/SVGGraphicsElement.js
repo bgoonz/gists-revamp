@@ -11,14 +11,17 @@ function SVGGraphicsElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(SVGGraphicsElement.prototype, SVGElement.interface.prototype);
+Object.setPrototypeOf(
+  SVGGraphicsElement.prototype,
+  SVGElement.interface.prototype
+);
 Object.setPrototypeOf(SVGGraphicsElement, SVGElement.interface);
 
 Object.defineProperty(SVGGraphicsElement, "prototype", {
   value: SVGGraphicsElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(SVGGraphicsElement.prototype, "requiredExtensions", {
@@ -33,7 +36,7 @@ Object.defineProperty(SVGGraphicsElement.prototype, "requiredExtensions", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGGraphicsElement.prototype, "systemLanguage", {
@@ -48,14 +51,14 @@ Object.defineProperty(SVGGraphicsElement.prototype, "systemLanguage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGGraphicsElement.prototype, Symbol.toStringTag, {
   value: "SVGGraphicsElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -121,7 +124,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -132,8 +135,8 @@ const iface = {
   },
   interface: SVGGraphicsElement,
   expose: {
-    Window: { SVGGraphicsElement }
-  }
+    Window: { SVGGraphicsElement },
+  },
 }; // iface
 module.exports = iface;
 

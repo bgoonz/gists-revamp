@@ -2,7 +2,7 @@
 const { domSymbolTree } = require("./internal-constants");
 const { TEXT_NODE } = require("../node-type");
 
-exports.childTextContent = node => {
+exports.childTextContent = (node) => {
   let result = "";
   const iterator = domSymbolTree.childrenIterator(node);
   for (const child of iterator) {

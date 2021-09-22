@@ -4,27 +4,30 @@ const asciiWhitespaceRe = /^[\t\n\f\r ]$/;
 exports.asciiWhitespaceRe = asciiWhitespaceRe;
 
 // https://infra.spec.whatwg.org/#ascii-lowercase
-exports.asciiLowercase = s => {
-  return s.replace(/[A-Z]/g, l => l.toLowerCase());
+exports.asciiLowercase = (s) => {
+  return s.replace(/[A-Z]/g, (l) => l.toLowerCase());
 };
 
 // https://infra.spec.whatwg.org/#strip-newlines
-exports.stripNewlines = s => {
+exports.stripNewlines = (s) => {
   return s.replace(/[\n\r]+/g, "");
 };
 
 // https://infra.spec.whatwg.org/#strip-leading-and-trailing-ascii-whitespace
-exports.stripLeadingAndTrailingASCIIWhitespace = s => {
+exports.stripLeadingAndTrailingASCIIWhitespace = (s) => {
   return s.replace(/^[ \t\n\f\r]+/, "").replace(/[ \t\n\f\r]+$/, "");
 };
 
 // https://infra.spec.whatwg.org/#strip-and-collapse-ascii-whitespace
-exports.stripAndCollapseASCIIWhitespace = s => {
-  return s.replace(/[ \t\n\f\r]+/g, " ").replace(/^[ \t\n\f\r]+/, "").replace(/[ \t\n\f\r]+$/, "");
+exports.stripAndCollapseASCIIWhitespace = (s) => {
+  return s
+    .replace(/[ \t\n\f\r]+/g, " ")
+    .replace(/^[ \t\n\f\r]+/, "")
+    .replace(/[ \t\n\f\r]+$/, "");
 };
 
 // https://html.spec.whatwg.org/multipage/infrastructure.html#valid-simple-colour
-exports.isValidSimpleColor = s => {
+exports.isValidSimpleColor = (s) => {
   return /^#[a-fA-F\d]{6}$/.test(s);
 };
 
@@ -45,16 +48,16 @@ exports.asciiCaseInsensitiveMatch = (a, b) => {
 
 // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-floating-point-number
 const floatingPointNumRe = /^-?(?:\d+|\d*\.\d+)(?:[eE][-+]?\d+)?$/;
-exports.isValidFloatingPointNumber = str => floatingPointNumRe.test(str);
+exports.isValidFloatingPointNumber = (str) => floatingPointNumRe.test(str);
 
 // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#rules-for-parsing-floating-point-number-values
-exports.parseFloatingPointNumber = str => {
+exports.parseFloatingPointNumber = (str) => {
   const parsed = parseFloat(str);
   return isFinite(parsed) ? parsed : NaN;
 };
 
 // https://infra.spec.whatwg.org/#split-on-ascii-whitespace
-exports.splitOnASCIIWhitespace = str => {
+exports.splitOnASCIIWhitespace = (str) => {
   let position = 0;
   const tokens = [];
   while (position < str.length && asciiWhitespaceRe.test(str[position])) {
@@ -77,7 +80,7 @@ exports.splitOnASCIIWhitespace = str => {
 };
 
 // https://infra.spec.whatwg.org/#split-on-commas
-exports.splitOnCommas = str => {
+exports.splitOnCommas = (str) => {
   let position = 0;
   const tokens = [];
   while (position < str.length) {

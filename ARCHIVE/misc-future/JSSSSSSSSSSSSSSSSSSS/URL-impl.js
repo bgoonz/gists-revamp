@@ -27,7 +27,9 @@ exports.implementation = class URLImpl {
 
     // We cannot invoke the "new URLSearchParams object" algorithm without going through the constructor, which strips
     // question mark by default. Therefore the doNotStripQMark hack is used.
-    this._query = URLSearchParams.createImpl([query], { doNotStripQMark: true });
+    this._query = URLSearchParams.createImpl([query], {
+      doNotStripQMark: true,
+    });
     this._query._url = this;
   }
 
@@ -59,7 +61,10 @@ exports.implementation = class URLImpl {
   }
 
   set protocol(v) {
-    usm.basicURLParse(v + ":", { url: this._url, stateOverride: "scheme start" });
+    usm.basicURLParse(v + ":", {
+      url: this._url,
+      stateOverride: "scheme start",
+    });
   }
 
   get username() {

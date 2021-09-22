@@ -17,18 +17,24 @@ function TouchEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'TouchEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'TouchEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'TouchEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'TouchEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertTouchEventInit(curArg, { context: "Failed to construct 'TouchEvent': parameter 2" });
+    curArg = convertTouchEventInit(curArg, {
+      context: "Failed to construct 'TouchEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(TouchEvent, "prototype", {
   value: TouchEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(TouchEvent.prototype, "touches", {
@@ -55,7 +61,7 @@ Object.defineProperty(TouchEvent.prototype, "touches", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TouchEvent.prototype, "targetTouches", {
@@ -68,7 +74,7 @@ Object.defineProperty(TouchEvent.prototype, "targetTouches", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TouchEvent.prototype, "changedTouches", {
@@ -81,7 +87,7 @@ Object.defineProperty(TouchEvent.prototype, "changedTouches", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TouchEvent.prototype, "altKey", {
@@ -94,7 +100,7 @@ Object.defineProperty(TouchEvent.prototype, "altKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TouchEvent.prototype, "metaKey", {
@@ -107,7 +113,7 @@ Object.defineProperty(TouchEvent.prototype, "metaKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TouchEvent.prototype, "ctrlKey", {
@@ -120,7 +126,7 @@ Object.defineProperty(TouchEvent.prototype, "ctrlKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TouchEvent.prototype, "shiftKey", {
@@ -133,14 +139,14 @@ Object.defineProperty(TouchEvent.prototype, "shiftKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TouchEvent.prototype, Symbol.toStringTag, {
   value: "TouchEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -206,7 +212,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -217,8 +223,8 @@ const iface = {
   },
   interface: TouchEvent,
   expose: {
-    Window: { TouchEvent }
-  }
+    Window: { TouchEvent },
+  },
 }; // iface
 module.exports = iface;
 

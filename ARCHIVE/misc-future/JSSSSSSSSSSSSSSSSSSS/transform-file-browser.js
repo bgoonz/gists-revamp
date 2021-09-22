@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.transformFileSync = transformFileSync;
 exports.transformFileAsync = transformFileAsync;
@@ -22,5 +22,7 @@ function transformFileSync() {
 }
 
 function transformFileAsync() {
-  return Promise.reject(new Error("Transforming files is not supported in browsers"));
+  return Promise.reject(
+    new Error("Transforming files is not supported in browsers")
+  );
 }

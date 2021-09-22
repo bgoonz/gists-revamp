@@ -10,7 +10,7 @@
 //------------------------------------------------------------------------------
 
 const astUtils = require("../util/ast-utils"),
-    naturalCompare = require("natural-compare");
+  naturalCompare = require("natural-compare");
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -29,7 +29,7 @@ const astUtils = require("../util/ast-utils"),
  * @private
  */
 function getPropertyName(node) {
-    return astUtils.getStaticPropertyName(node) || node.key.name || null;
+  return astUtils.getStaticPropertyName(node) || node.key.name || null;
 }
 
 /**
@@ -41,30 +41,30 @@ function getPropertyName(node) {
  * @private
  */
 const isValidOrders = {
-    asc(a, b) {
-        return a <= b;
-    },
-    ascI(a, b) {
-        return a.toLowerCase() <= b.toLowerCase();
-    },
-    ascN(a, b) {
-        return naturalCompare(a, b) <= 0;
-    },
-    ascIN(a, b) {
-        return naturalCompare(a.toLowerCase(), b.toLowerCase()) <= 0;
-    },
-    desc(a, b) {
-        return isValidOrders.asc(b, a);
-    },
-    descI(a, b) {
-        return isValidOrders.ascI(b, a);
-    },
-    descN(a, b) {
-        return isValidOrders.ascN(b, a);
-    },
-    descIN(a, b) {
-        return isValidOrders.ascIN(b, a);
-    }
+  asc(a, b) {
+    return a <= b;
+  },
+  ascI(a, b) {
+    return a.toLowerCase() <= b.toLowerCase();
+  },
+  ascN(a, b) {
+    return naturalCompare(a, b) <= 0;
+  },
+  ascIN(a, b) {
+    return naturalCompare(a.toLowerCase(), b.toLowerCase()) <= 0;
+  },
+  desc(a, b) {
+    return isValidOrders.asc(b, a);
+  },
+  descI(a, b) {
+    return isValidOrders.ascI(b, a);
+  },
+  descN(a, b) {
+    return isValidOrders.ascN(b, a);
+  },
+  descIN(a, b) {
+    return isValidOrders.ascIN(b, a);
+  },
 };
 
 //------------------------------------------------------------------------------
@@ -72,98 +72,97 @@ const isValidOrders = {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "require object keys to be sorted",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/sort-keys"
-        },
-
-        schema: [
-            {
-                enum: ["asc", "desc"]
-            },
-            {
-                type: "object",
-                properties: {
-                    caseSensitive: {
-                        type: "boolean",
-                        default: true
-                    },
-                    natural: {
-                        type: "boolean",
-                        default: false
-                    }
-                },
-                additionalProperties: false
-            }
-        ]
+    docs: {
+      description: "require object keys to be sorted",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/sort-keys",
     },
 
-    create(context) {
+    schema: [
+      {
+        enum: ["asc", "desc"],
+      },
+      {
+        type: "object",
+        properties: {
+          caseSensitive: {
+            type: "boolean",
+            default: true,
+          },
+          natural: {
+            type: "boolean",
+            default: false,
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
+  },
 
-        // Parse options.
-        const order = context.options[0] || "asc";
-        const options = context.options[1];
-        const insensitive = options && options.caseSensitive === false;
-        const natual = options && options.natural;
-        const isValidOrder = isValidOrders[
-            order + (insensitive ? "I" : "") + (natual ? "N" : "")
-        ];
+  create(context) {
+    // Parse options.
+    const order = context.options[0] || "asc";
+    const options = context.options[1];
+    const insensitive = options && options.caseSensitive === false;
+    const natual = options && options.natural;
+    const isValidOrder =
+      isValidOrders[order + (insensitive ? "I" : "") + (natual ? "N" : "")];
 
-        // The stack to save the previous property's name for each object literals.
-        let stack = null;
+    // The stack to save the previous property's name for each object literals.
+    let stack = null;
 
-        return {
-            ObjectExpression() {
-                stack = {
-                    upper: stack,
-                    prevName: null
-                };
-            },
-
-            "ObjectExpression:exit"() {
-                stack = stack.upper;
-            },
-
-            SpreadElement(node) {
-                if (node.parent.type === "ObjectExpression") {
-                    stack.prevName = null;
-                }
-            },
-
-            Property(node) {
-                if (node.parent.type === "ObjectPattern") {
-                    return;
-                }
-
-                const prevName = stack.prevName;
-                const thisName = getPropertyName(node);
-
-                stack.prevName = thisName || prevName;
-
-                if (!prevName || !thisName) {
-                    return;
-                }
-
-                if (!isValidOrder(prevName, thisName)) {
-                    context.report({
-                        node,
-                        loc: node.key.loc,
-                        message: "Expected object keys to be in {{natual}}{{insensitive}}{{order}}ending order. '{{thisName}}' should be before '{{prevName}}'.",
-                        data: {
-                            thisName,
-                            prevName,
-                            order,
-                            insensitive: insensitive ? "insensitive " : "",
-                            natual: natual ? "natural " : ""
-                        }
-                    });
-                }
-            }
+    return {
+      ObjectExpression() {
+        stack = {
+          upper: stack,
+          prevName: null,
         };
-    }
+      },
+
+      "ObjectExpression:exit"() {
+        stack = stack.upper;
+      },
+
+      SpreadElement(node) {
+        if (node.parent.type === "ObjectExpression") {
+          stack.prevName = null;
+        }
+      },
+
+      Property(node) {
+        if (node.parent.type === "ObjectPattern") {
+          return;
+        }
+
+        const prevName = stack.prevName;
+        const thisName = getPropertyName(node);
+
+        stack.prevName = thisName || prevName;
+
+        if (!prevName || !thisName) {
+          return;
+        }
+
+        if (!isValidOrder(prevName, thisName)) {
+          context.report({
+            node,
+            loc: node.key.loc,
+            message:
+              "Expected object keys to be in {{natual}}{{insensitive}}{{order}}ending order. '{{thisName}}' should be before '{{prevName}}'.",
+            data: {
+              thisName,
+              prevName,
+              order,
+              insensitive: insensitive ? "insensitive " : "",
+              natual: natual ? "natural " : "",
+            },
+          });
+        }
+      },
+    };
+  },
 };

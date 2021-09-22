@@ -9,42 +9,37 @@
 /*
  * Module dependencies.
  */
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
-const osTmpDir = require('os-tmpdir');
-const _c = process.binding('constants');
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
+const osTmpDir = require("os-tmpdir");
+const _c = process.binding("constants");
 
 /*
  * The working inner variables.
  */
-const
-  /**
+const /**
    * The temporary directory.
    * @type {string}
    */
   tmpDir = osTmpDir(),
-
   // the random characters to choose from
-  RANDOM_CHARS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
-
+  RANDOM_CHARS =
+    "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
   TEMPLATE_PATTERN = /XXXXXX/,
-
   DEFAULT_TRIES = 3,
-
-  CREATE_FLAGS = (_c.O_CREAT || _c.fs.O_CREAT) | (_c.O_EXCL || _c.fs.O_EXCL) | (_c.O_RDWR || _c.fs.O_RDWR),
-
+  CREATE_FLAGS =
+    (_c.O_CREAT || _c.fs.O_CREAT) |
+    (_c.O_EXCL || _c.fs.O_EXCL) |
+    (_c.O_RDWR || _c.fs.O_RDWR),
   EBADF = _c.EBADF || _c.os.errno.EBADF,
   ENOENT = _c.ENOENT || _c.os.errno.ENOENT,
-
   DIR_MODE = 448 /* 0o700 */,
   FILE_MODE = 384 /* 0o600 */,
-
   // this will hold the objects need to be removed on exit
   _removeObjects = [];
 
-var
-  _gracefulCleanup = false,
+var _gracefulCleanup = false,
   _uncaughtException = false;
 
 /**
@@ -56,8 +51,7 @@ var
  * @private
  */
 function _randomChars(howMany) {
-  var
-    value = [],
+  var value = [],
     rnd = null;
 
   // make sure that we do not fail because we ran out of entropy
@@ -71,7 +65,7 @@ function _randomChars(howMany) {
     value.push(RANDOM_CHARS[rnd[i] % RANDOM_CHARS.length]);
   }
 
-  return value.join('');
+  return value.join("");
 }
 
 /**
@@ -82,7 +76,7 @@ function _randomChars(howMany) {
  * @private
  */
 function _isUndefined(obj) {
-  return typeof obj === 'undefined';
+  return typeof obj === "undefined";
 }
 
 /**
@@ -96,7 +90,7 @@ function _isUndefined(obj) {
  * @private
  */
 function _parseArguments(options, callback) {
-  if (typeof options == 'function') {
+  if (typeof options == "function") {
     return [callback || {}, options];
   }
 
@@ -126,11 +120,11 @@ function _generateTmpName(opts) {
 
   // prefix and postfix
   const name = [
-    opts.prefix || 'tmp-',
+    opts.prefix || "tmp-",
     process.pid,
     _randomChars(12),
-    opts.postfix || ''
-  ].join('');
+    opts.postfix || "",
+  ].join("");
 
   return path.join(opts.dir || tmpDir, name);
 }
@@ -142,17 +136,15 @@ function _generateTmpName(opts) {
  * @param {?tmpNameCallback} callback the callback function
  */
 function tmpName(options, callback) {
-  var
-    args = _parseArguments(options, callback),
+  var args = _parseArguments(options, callback),
     opts = args[0],
     cb = args[1],
     tries = opts.name ? 1 : opts.tries || DEFAULT_TRIES;
 
-  if (isNaN(tries) || tries < 0)
-    return cb(new Error('Invalid tries'));
+  if (isNaN(tries) || tries < 0) return cb(new Error("Invalid tries"));
 
   if (opts.template && !opts.template.match(TEMPLATE_PATTERN))
-    return cb(new Error('Invalid template provided'));
+    return cb(new Error("Invalid template provided"));
 
   (function _getUniqueName() {
     const name = _generateTmpName(opts);
@@ -162,12 +154,16 @@ function tmpName(options, callback) {
       if (!err) {
         if (tries-- > 0) return _getUniqueName();
 
-        return cb(new Error('Could not get a unique tmp filename, max tries reached ' + name));
+        return cb(
+          new Error(
+            "Could not get a unique tmp filename, max tries reached " + name
+          )
+        );
       }
 
       cb(null, name);
     });
-  }());
+  })();
 }
 
 /**
@@ -178,16 +174,14 @@ function tmpName(options, callback) {
  * @throws {Error} if the options are invalid or could not generate a filename
  */
 function tmpNameSync(options) {
-  var
-    args = _parseArguments(options),
+  var args = _parseArguments(options),
     opts = args[0],
     tries = opts.name ? 1 : opts.tries || DEFAULT_TRIES;
 
-  if (isNaN(tries) || tries < 0)
-    throw new Error('Invalid tries');
+  if (isNaN(tries) || tries < 0) throw new Error("Invalid tries");
 
   if (opts.template && !opts.template.match(TEMPLATE_PATTERN))
-    throw new Error('Invalid template provided');
+    throw new Error("Invalid template provided");
 
   do {
     const name = _generateTmpName(opts);
@@ -198,7 +192,7 @@ function tmpNameSync(options) {
     }
   } while (tries-- > 0);
 
-  throw new Error('Could not get a unique tmp filename, max tries reached');
+  throw new Error("Could not get a unique tmp filename, max tries reached");
 }
 
 /**
@@ -208,45 +202,59 @@ function tmpNameSync(options) {
  * @param {?fileCallback} callback
  */
 function file(options, callback) {
-  var
-    args = _parseArguments(options, callback),
+  var args = _parseArguments(options, callback),
     opts = args[0],
     cb = args[1];
 
-  opts.postfix = (_isUndefined(opts.postfix)) ? '.tmp' : opts.postfix;
+  opts.postfix = _isUndefined(opts.postfix) ? ".tmp" : opts.postfix;
 
   // gets a temporary filename
   tmpName(opts, function _tmpNameCreated(err, name) {
     if (err) return cb(err);
 
     // create and open the file
-    fs.open(name, CREATE_FLAGS, opts.mode || FILE_MODE, function _fileCreated(err, fd) {
-      if (err) return cb(err);
+    fs.open(
+      name,
+      CREATE_FLAGS,
+      opts.mode || FILE_MODE,
+      function _fileCreated(err, fd) {
+        if (err) return cb(err);
 
-      if (opts.discardDescriptor) {
-        return fs.close(fd, function _discardCallback(err) {
-          if (err) {
-            // Low probability, and the file exists, so this could be
-            // ignored.  If it isn't we certainly need to unlink the
-            // file, and if that fails too its error is more
-            // important.
-            try {
-              fs.unlinkSync(name);
-            } catch (e) {
-              if (!isENOENT(e)) {
-                err = e;
+        if (opts.discardDescriptor) {
+          return fs.close(fd, function _discardCallback(err) {
+            if (err) {
+              // Low probability, and the file exists, so this could be
+              // ignored.  If it isn't we certainly need to unlink the
+              // file, and if that fails too its error is more
+              // important.
+              try {
+                fs.unlinkSync(name);
+              } catch (e) {
+                if (!isENOENT(e)) {
+                  err = e;
+                }
               }
+              return cb(err);
             }
-            return cb(err);
-          }
-          cb(null, name, undefined, _prepareTmpFileRemoveCallback(name, -1, opts));
-        });
+            cb(
+              null,
+              name,
+              undefined,
+              _prepareTmpFileRemoveCallback(name, -1, opts)
+            );
+          });
+        }
+        if (opts.detachDescriptor) {
+          return cb(
+            null,
+            name,
+            fd,
+            _prepareTmpFileRemoveCallback(name, -1, opts)
+          );
+        }
+        cb(null, name, fd, _prepareTmpFileRemoveCallback(name, fd, opts));
       }
-      if (opts.detachDescriptor) {
-        return cb(null, name, fd, _prepareTmpFileRemoveCallback(name, -1, opts));
-      }
-      cb(null, name, fd, _prepareTmpFileRemoveCallback(name, fd, opts));
-    });
+    );
   });
 }
 
@@ -258,24 +266,28 @@ function file(options, callback) {
  * @throws {Error} if cannot create a file
  */
 function fileSync(options) {
-  var
-    args = _parseArguments(options),
+  var args = _parseArguments(options),
     opts = args[0];
 
-  opts.postfix = opts.postfix || '.tmp';
+  opts.postfix = opts.postfix || ".tmp";
 
-  const discardOrDetachDescriptor = opts.discardDescriptor || opts.detachDescriptor;
+  const discardOrDetachDescriptor =
+    opts.discardDescriptor || opts.detachDescriptor;
   const name = tmpNameSync(opts);
   var fd = fs.openSync(name, CREATE_FLAGS, opts.mode || FILE_MODE);
   if (opts.discardDescriptor) {
-    fs.closeSync(fd); 
+    fs.closeSync(fd);
     fd = undefined;
   }
 
   return {
     name: name,
     fd: fd,
-    removeCallback: _prepareTmpFileRemoveCallback(name, discardOrDetachDescriptor ? -1 : fd, opts)
+    removeCallback: _prepareTmpFileRemoveCallback(
+      name,
+      discardOrDetachDescriptor ? -1 : fd,
+      opts
+    ),
   };
 }
 
@@ -289,14 +301,12 @@ function _rmdirRecursiveSync(root) {
   const dirs = [root];
 
   do {
-    var
-      dir = dirs.pop(),
+    var dir = dirs.pop(),
       deferred = false,
       files = fs.readdirSync(dir);
 
     for (var i = 0, length = files.length; i < length; i++) {
-      var
-        file = path.join(dir, files[i]),
+      var file = path.join(dir, files[i]),
         stat = fs.lstatSync(file); // lstat so we don't recurse into symlinked directories
 
       if (stat.isDirectory()) {
@@ -323,8 +333,7 @@ function _rmdirRecursiveSync(root) {
  * @param {?dirCallback} callback
  */
 function dir(options, callback) {
-  var
-    args = _parseArguments(options, callback),
+  var args = _parseArguments(options, callback),
     opts = args[0],
     cb = args[1];
 
@@ -349,8 +358,7 @@ function dir(options, callback) {
  * @throws {Error} if it cannot create a directory
  */
 function dirSync(options) {
-  var
-    args = _parseArguments(options),
+  var args = _parseArguments(options),
     opts = args[0];
 
   const name = tmpNameSync(opts);
@@ -358,7 +366,7 @@ function dirSync(options) {
 
   return {
     name: name,
-    removeCallback: _prepareTmpDirRemoveCallback(name, opts)
+    removeCallback: _prepareTmpDirRemoveCallback(name, opts),
   };
 }
 
@@ -372,31 +380,32 @@ function dirSync(options) {
  * @private
  */
 function _prepareTmpFileRemoveCallback(name, fd, opts) {
-  const removeCallback = _prepareRemoveCallback(function _removeCallback(fdPath) {
-    try {
-      if (0 <= fdPath[0]) {
-        fs.closeSync(fdPath[0]);
+  const removeCallback = _prepareRemoveCallback(
+    function _removeCallback(fdPath) {
+      try {
+        if (0 <= fdPath[0]) {
+          fs.closeSync(fdPath[0]);
+        }
+      } catch (e) {
+        // under some node/windows related circumstances, a temporary file
+        // may have not be created as expected or the file was already closed
+        // by the user, in which case we will simply ignore the error
+        if (!isEBADF(e) && !isENOENT(e)) {
+          // reraise any unanticipated error
+          throw e;
+        }
       }
-    }
-    catch (e) {
-      // under some node/windows related circumstances, a temporary file
-      // may have not be created as expected or the file was already closed
-      // by the user, in which case we will simply ignore the error
-      if (!isEBADF(e) && !isENOENT(e)) {
-        // reraise any unanticipated error
-        throw e;
+      try {
+        fs.unlinkSync(fdPath[1]);
+      } catch (e) {
+        if (!isENOENT(e)) {
+          // reraise any unanticipated error
+          throw e;
+        }
       }
-    }
-    try {
-      fs.unlinkSync(fdPath[1]);
-    }
-    catch (e) {
-      if (!isENOENT(e)) {
-        // reraise any unanticipated error
-        throw e;
-      }
-    }
-  }, [fd, name]);
+    },
+    [fd, name]
+  );
 
   if (!opts.keep) {
     _removeObjects.unshift(removeCallback);
@@ -414,7 +423,9 @@ function _prepareTmpFileRemoveCallback(name, fd, opts) {
  * @private
  */
 function _prepareTmpDirRemoveCallback(name, opts) {
-  const removeFunction = opts.unsafeCleanup ? _rmdirRecursiveSync : fs.rmdirSync.bind(fs);
+  const removeFunction = opts.unsafeCleanup
+    ? _rmdirRecursiveSync
+    : fs.rmdirSync.bind(fs);
   const removeCallback = _prepareRemoveCallback(removeFunction, name);
 
   if (!opts.keep) {
@@ -475,14 +486,14 @@ function _garbageCollector() {
  * Helper for testing against EBADF to compensate changes made to Node 7.x under Windows.
  */
 function isEBADF(error) {
-  return isExpectedError(error, -EBADF, 'EBADF');
+  return isExpectedError(error, -EBADF, "EBADF");
 }
 
 /**
  * Helper for testing against ENOENT to compensate changes made to Node 7.x under Windows.
  */
 function isENOENT(error) {
-  return isExpectedError(error, -ENOENT, 'ENOENT');
+  return isExpectedError(error, -ENOENT, "ENOENT");
 }
 
 /**
@@ -518,20 +529,26 @@ function setGracefulCleanup() {
   _gracefulCleanup = true;
 }
 
-const version = process.versions.node.split('.').map(function (value) {
+const version = process.versions.node.split(".").map(function (value) {
   return parseInt(value, 10);
 });
 
-if (version[0] === 0 && (version[1] < 9 || version[1] === 9 && version[2] < 5)) {
-  process.addListener('uncaughtException', function _uncaughtExceptionThrown(err) {
-    _uncaughtException = true;
-    _garbageCollector();
+if (
+  version[0] === 0 &&
+  (version[1] < 9 || (version[1] === 9 && version[2] < 5))
+) {
+  process.addListener(
+    "uncaughtException",
+    function _uncaughtExceptionThrown(err) {
+      _uncaughtException = true;
+      _garbageCollector();
 
-    throw err;
-  });
+      throw err;
+    }
+  );
 }
 
-process.addListener('exit', function _exit(code) {
+process.addListener("exit", function _exit(code) {
   if (code) _uncaughtException = true;
   _garbageCollector();
 });

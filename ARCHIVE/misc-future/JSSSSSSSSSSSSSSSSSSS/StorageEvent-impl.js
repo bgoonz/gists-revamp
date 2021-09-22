@@ -6,7 +6,16 @@ const StorageEventInit = require("../generated/StorageEventInit");
 
 // https://html.spec.whatwg.org/multipage/webstorage.html#the-storageevent-interface
 class StorageEventImpl extends EventImpl {
-  initStorageEvent(type, bubbles, cancelable, key, oldValue, newValue, url, storageArea) {
+  initStorageEvent(
+    type,
+    bubbles,
+    cancelable,
+    key,
+    oldValue,
+    newValue,
+    url,
+    storageArea
+  ) {
     if (this._dispatchFlag) {
       return;
     }
@@ -22,5 +31,5 @@ class StorageEventImpl extends EventImpl {
 StorageEventImpl.defaultInit = StorageEventInit.convert(undefined);
 
 module.exports = {
-  implementation: StorageEventImpl
+  implementation: StorageEventImpl,
 };

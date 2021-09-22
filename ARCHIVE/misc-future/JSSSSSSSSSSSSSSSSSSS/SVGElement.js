@@ -19,7 +19,7 @@ Object.defineProperty(SVGElement, "prototype", {
   value: SVGElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 SVGElement.prototype.focus = function focus() {
@@ -50,7 +50,7 @@ Object.defineProperty(SVGElement.prototype, "className", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "dataset", {
@@ -65,7 +65,7 @@ Object.defineProperty(SVGElement.prototype, "dataset", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ownerSVGElement", {
@@ -78,7 +78,7 @@ Object.defineProperty(SVGElement.prototype, "ownerSVGElement", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "viewportElement", {
@@ -91,7 +91,7 @@ Object.defineProperty(SVGElement.prototype, "viewportElement", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "tabIndex", {
@@ -109,14 +109,15 @@ Object.defineProperty(SVGElement.prototype, "tabIndex", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'tabIndex' property on 'SVGElement': The provided value"
+      context:
+        "Failed to set the 'tabIndex' property on 'SVGElement': The provided value",
     });
 
     this[impl]["tabIndex"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "style", {
@@ -139,7 +140,7 @@ Object.defineProperty(SVGElement.prototype, "style", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onabort", {
@@ -162,7 +163,7 @@ Object.defineProperty(SVGElement.prototype, "onabort", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onauxclick", {
@@ -185,7 +186,7 @@ Object.defineProperty(SVGElement.prototype, "onauxclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onblur", {
@@ -208,7 +209,7 @@ Object.defineProperty(SVGElement.prototype, "onblur", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "oncancel", {
@@ -231,7 +232,7 @@ Object.defineProperty(SVGElement.prototype, "oncancel", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "oncanplay", {
@@ -254,7 +255,7 @@ Object.defineProperty(SVGElement.prototype, "oncanplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "oncanplaythrough", {
@@ -277,7 +278,7 @@ Object.defineProperty(SVGElement.prototype, "oncanplaythrough", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onchange", {
@@ -300,7 +301,7 @@ Object.defineProperty(SVGElement.prototype, "onchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onclick", {
@@ -323,7 +324,7 @@ Object.defineProperty(SVGElement.prototype, "onclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onclose", {
@@ -346,7 +347,7 @@ Object.defineProperty(SVGElement.prototype, "onclose", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "oncontextmenu", {
@@ -369,7 +370,7 @@ Object.defineProperty(SVGElement.prototype, "oncontextmenu", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "oncuechange", {
@@ -392,7 +393,7 @@ Object.defineProperty(SVGElement.prototype, "oncuechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondblclick", {
@@ -415,7 +416,7 @@ Object.defineProperty(SVGElement.prototype, "ondblclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondrag", {
@@ -438,7 +439,7 @@ Object.defineProperty(SVGElement.prototype, "ondrag", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondragend", {
@@ -461,7 +462,7 @@ Object.defineProperty(SVGElement.prototype, "ondragend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondragenter", {
@@ -484,7 +485,7 @@ Object.defineProperty(SVGElement.prototype, "ondragenter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondragexit", {
@@ -507,7 +508,7 @@ Object.defineProperty(SVGElement.prototype, "ondragexit", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondragleave", {
@@ -530,7 +531,7 @@ Object.defineProperty(SVGElement.prototype, "ondragleave", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondragover", {
@@ -553,7 +554,7 @@ Object.defineProperty(SVGElement.prototype, "ondragover", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondragstart", {
@@ -576,7 +577,7 @@ Object.defineProperty(SVGElement.prototype, "ondragstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondrop", {
@@ -599,7 +600,7 @@ Object.defineProperty(SVGElement.prototype, "ondrop", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ondurationchange", {
@@ -622,7 +623,7 @@ Object.defineProperty(SVGElement.prototype, "ondurationchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onemptied", {
@@ -645,7 +646,7 @@ Object.defineProperty(SVGElement.prototype, "onemptied", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onended", {
@@ -668,7 +669,7 @@ Object.defineProperty(SVGElement.prototype, "onended", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onerror", {
@@ -691,7 +692,7 @@ Object.defineProperty(SVGElement.prototype, "onerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onfocus", {
@@ -714,7 +715,7 @@ Object.defineProperty(SVGElement.prototype, "onfocus", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "oninput", {
@@ -737,7 +738,7 @@ Object.defineProperty(SVGElement.prototype, "oninput", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "oninvalid", {
@@ -760,7 +761,7 @@ Object.defineProperty(SVGElement.prototype, "oninvalid", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onkeydown", {
@@ -783,7 +784,7 @@ Object.defineProperty(SVGElement.prototype, "onkeydown", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onkeypress", {
@@ -806,7 +807,7 @@ Object.defineProperty(SVGElement.prototype, "onkeypress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onkeyup", {
@@ -829,7 +830,7 @@ Object.defineProperty(SVGElement.prototype, "onkeyup", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onload", {
@@ -852,7 +853,7 @@ Object.defineProperty(SVGElement.prototype, "onload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onloadeddata", {
@@ -875,7 +876,7 @@ Object.defineProperty(SVGElement.prototype, "onloadeddata", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onloadedmetadata", {
@@ -898,7 +899,7 @@ Object.defineProperty(SVGElement.prototype, "onloadedmetadata", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onloadend", {
@@ -921,7 +922,7 @@ Object.defineProperty(SVGElement.prototype, "onloadend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onloadstart", {
@@ -944,7 +945,7 @@ Object.defineProperty(SVGElement.prototype, "onloadstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onmousedown", {
@@ -967,7 +968,7 @@ Object.defineProperty(SVGElement.prototype, "onmousedown", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onmouseenter", {
@@ -982,7 +983,7 @@ Object.defineProperty(SVGElement.prototype, "onmouseenter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onmouseleave", {
@@ -997,7 +998,7 @@ Object.defineProperty(SVGElement.prototype, "onmouseleave", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onmousemove", {
@@ -1020,7 +1021,7 @@ Object.defineProperty(SVGElement.prototype, "onmousemove", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onmouseout", {
@@ -1043,7 +1044,7 @@ Object.defineProperty(SVGElement.prototype, "onmouseout", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onmouseover", {
@@ -1066,7 +1067,7 @@ Object.defineProperty(SVGElement.prototype, "onmouseover", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onmouseup", {
@@ -1089,7 +1090,7 @@ Object.defineProperty(SVGElement.prototype, "onmouseup", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onwheel", {
@@ -1112,7 +1113,7 @@ Object.defineProperty(SVGElement.prototype, "onwheel", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onpause", {
@@ -1135,7 +1136,7 @@ Object.defineProperty(SVGElement.prototype, "onpause", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onplay", {
@@ -1158,7 +1159,7 @@ Object.defineProperty(SVGElement.prototype, "onplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onplaying", {
@@ -1181,7 +1182,7 @@ Object.defineProperty(SVGElement.prototype, "onplaying", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onprogress", {
@@ -1204,7 +1205,7 @@ Object.defineProperty(SVGElement.prototype, "onprogress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onratechange", {
@@ -1227,7 +1228,7 @@ Object.defineProperty(SVGElement.prototype, "onratechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onreset", {
@@ -1250,7 +1251,7 @@ Object.defineProperty(SVGElement.prototype, "onreset", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onresize", {
@@ -1273,7 +1274,7 @@ Object.defineProperty(SVGElement.prototype, "onresize", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onscroll", {
@@ -1296,7 +1297,7 @@ Object.defineProperty(SVGElement.prototype, "onscroll", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onsecuritypolicyviolation", {
@@ -1319,7 +1320,7 @@ Object.defineProperty(SVGElement.prototype, "onsecuritypolicyviolation", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onseeked", {
@@ -1342,7 +1343,7 @@ Object.defineProperty(SVGElement.prototype, "onseeked", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onseeking", {
@@ -1365,7 +1366,7 @@ Object.defineProperty(SVGElement.prototype, "onseeking", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onselect", {
@@ -1388,7 +1389,7 @@ Object.defineProperty(SVGElement.prototype, "onselect", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onstalled", {
@@ -1411,7 +1412,7 @@ Object.defineProperty(SVGElement.prototype, "onstalled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onsubmit", {
@@ -1434,7 +1435,7 @@ Object.defineProperty(SVGElement.prototype, "onsubmit", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onsuspend", {
@@ -1457,7 +1458,7 @@ Object.defineProperty(SVGElement.prototype, "onsuspend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ontimeupdate", {
@@ -1480,7 +1481,7 @@ Object.defineProperty(SVGElement.prototype, "ontimeupdate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "ontoggle", {
@@ -1503,7 +1504,7 @@ Object.defineProperty(SVGElement.prototype, "ontoggle", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onvolumechange", {
@@ -1526,7 +1527,7 @@ Object.defineProperty(SVGElement.prototype, "onvolumechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, "onwaiting", {
@@ -1549,14 +1550,14 @@ Object.defineProperty(SVGElement.prototype, "onwaiting", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGElement.prototype, Symbol.toStringTag, {
   value: "SVGElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -1622,7 +1623,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -1633,8 +1634,8 @@ const iface = {
   },
   interface: SVGElement,
   expose: {
-    Window: { SVGElement }
-  }
+    Window: { SVGElement },
+  },
 }; // iface
 module.exports = iface;
 

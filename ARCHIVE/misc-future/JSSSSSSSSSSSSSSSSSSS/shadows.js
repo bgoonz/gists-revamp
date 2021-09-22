@@ -1,6 +1,6 @@
-import style from './style';
+import style from "./style";
 var boxShadow = style({
-    prop: 'boxShadow',
-    themeKey: 'shadows'
+  prop: "boxShadow",
+  themeKey: "shadows",
 });
 export default boxShadow;

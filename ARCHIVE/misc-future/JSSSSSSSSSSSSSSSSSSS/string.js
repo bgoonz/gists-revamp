@@ -1,2 +1,2 @@
-var convert = require('./convert');
-module.exports = convert(require('../string'));
+var convert = require("./convert");
+module.exports = convert(require("../string"));

@@ -10,7 +10,10 @@ class SVGAnimatedStringImpl {
 
   get baseVal() {
     if (!this._element.hasAttribute(this._attribute)) {
-      if (this._attributeDeprecated !== undefined && this._element.hasAttribute(this._attributeDeprecated)) {
+      if (
+        this._attributeDeprecated !== undefined &&
+        this._element.hasAttribute(this._attributeDeprecated)
+      ) {
         return this._element.getAttribute(this._attributeDeprecated);
       } else if (this._initialValue !== undefined) {
         return this._initialValue;
@@ -25,9 +28,11 @@ class SVGAnimatedStringImpl {
   }
 
   set baseVal(base) {
-    if (!this._element.hasAttribute(this._attribute) &&
-        this._attributeDeprecated !== undefined &&
-        this._element.hasAttribute(this._attributeDeprecated)) {
+    if (
+      !this._element.hasAttribute(this._attribute) &&
+      this._attributeDeprecated !== undefined &&
+      this._element.hasAttribute(this._attributeDeprecated)
+    ) {
       this._element.setAttribute(this._attributeDeprecated, base);
     } else {
       this._element.setAttribute(this._attribute, base);

@@ -26,7 +26,7 @@ module.exports = class VirtualConsole extends EventEmitter {
     }
 
     if (!options.omitJSDOMErrors) {
-      this.on("jsdomError", e => anyConsole.error(e.stack, e.detail));
+      this.on("jsdomError", (e) => anyConsole.error(e.stack, e.detail));
     }
 
     return this;

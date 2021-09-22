@@ -14,7 +14,7 @@ StyleSheetList.prototype.item = function item(i) {
 
 exports.StyleSheetList = StyleSheetList;
 
-exports.addToCore = core => {
+exports.addToCore = (core) => {
   // What works now:
   // - Accessing the rules defined in individual stylesheets
   // - Modifications to style content attribute are reflected in style property

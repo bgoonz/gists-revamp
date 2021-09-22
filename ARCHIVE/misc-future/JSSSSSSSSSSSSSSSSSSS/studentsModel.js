@@ -20,19 +20,19 @@ router.post("/", (req, res) => {
   // perform insert
   db.insert(student)
     .into("students")
-    .then(newStudents => {
+    .then((newStudents) => {
       res.status(201).json(newStudents);
     })
-    .catch(err => res.status(500).json(err));
+    .catch((err) => res.status(500).json(err));
 });
 
 // get students = get endpoint
 router.get("/", (req, res) => {
   db("students")
-    .then(students => {
+    .then((students) => {
       res.status(200).json(students);
     })
-    .catch(err => res.status(500).json(err));
+    .catch((err) => res.status(500).json(err));
 });
 
 // get single student based upon id - get single student endpiont
@@ -40,10 +40,10 @@ router.get("/:id", (req, res) => {
   const { id } = req.params;
   db("students")
     .where({ id })
-    .then(student => {
+    .then((student) => {
       res.status(200).json(student);
     })
-    .catch(err => res.status(500).json(err));
+    .catch((err) => res.status(500).json(err));
 });
 
 // put endpoint for student to update a student based upon id
@@ -59,10 +59,10 @@ router.put("/:id", (req, res) => {
   db("students")
     .where({ id: id })
     .update(updates)
-    .then(currentStudent => {
+    .then((currentStudent) => {
       res.status(200).json(currentStudent);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json(err);
     });
 });
@@ -72,10 +72,10 @@ router.delete("/:id", (req, res) => {
   db("students")
     .where({ id: id })
     .del()
-    .then(response => {
+    .then((response) => {
       res.status(200).json(response);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json(err);
     });
 });

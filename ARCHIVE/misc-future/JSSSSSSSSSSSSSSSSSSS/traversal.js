@@ -16,7 +16,7 @@ exports.closest = (e, localName) => {
   return null;
 };
 
-exports.isConnected = node => {
+exports.isConnected = (node) => {
   while (node) {
     if (node.nodeType === DOCUMENT_NODE) {
       return true;
@@ -27,29 +27,45 @@ exports.isConnected = node => {
 };
 
 exports.childrenByHTMLLocalName = (parent, localName) => {
-  return domSymbolTree.childrenToArray(parent, { filter(node) {
-    return node._localName === localName && node._namespaceURI === HTML_NS;
-  } });
+  return domSymbolTree.childrenToArray(parent, {
+    filter(node) {
+      return node._localName === localName && node._namespaceURI === HTML_NS;
+    },
+  });
 };
 
 exports.descendantsByHTMLLocalName = (parent, localName) => {
-  return domSymbolTree.treeToArray(parent, { filter(node) {
-    return node._localName === localName && node._namespaceURI === HTML_NS && node !== parent;
-  } });
+  return domSymbolTree.treeToArray(parent, {
+    filter(node) {
+      return (
+        node._localName === localName &&
+        node._namespaceURI === HTML_NS &&
+        node !== parent
+      );
+    },
+  });
 };
 
 exports.childrenByHTMLLocalNames = (parent, localNamesSet) => {
-  return domSymbolTree.childrenToArray(parent, { filter(node) {
-    return localNamesSet.has(node._localName) && node._namespaceURI === HTML_NS;
-  } });
+  return domSymbolTree.childrenToArray(parent, {
+    filter(node) {
+      return (
+        localNamesSet.has(node._localName) && node._namespaceURI === HTML_NS
+      );
+    },
+  });
 };
 
 exports.descendantsByHTMLLocalNames = (parent, localNamesSet) => {
-  return domSymbolTree.treeToArray(parent, { filter(node) {
-    return localNamesSet.has(node._localName) &&
-           node._namespaceURI === HTML_NS &&
-           node !== parent;
-  } });
+  return domSymbolTree.treeToArray(parent, {
+    filter(node) {
+      return (
+        localNamesSet.has(node._localName) &&
+        node._namespaceURI === HTML_NS &&
+        node !== parent
+      );
+    },
+  });
 };
 
 exports.firstChildWithHTMLLocalName = (parent, localName) => {
@@ -65,7 +81,10 @@ exports.firstChildWithHTMLLocalName = (parent, localName) => {
 exports.firstChildWithHTMLLocalNames = (parent, localNamesSet) => {
   const iterator = domSymbolTree.childrenIterator(parent);
   for (const child of iterator) {
-    if (localNamesSet.has(child._localName) && child._namespaceURI === HTML_NS) {
+    if (
+      localNamesSet.has(child._localName) &&
+      child._namespaceURI === HTML_NS
+    ) {
       return child;
     }
   }
@@ -75,7 +94,10 @@ exports.firstChildWithHTMLLocalNames = (parent, localNamesSet) => {
 exports.firstDescendantWithHTMLLocalName = (parent, localName) => {
   const iterator = domSymbolTree.treeIterator(parent);
   for (const descendant of iterator) {
-    if (descendant._localName === localName && descendant._namespaceURI === HTML_NS) {
+    if (
+      descendant._localName === localName &&
+      descendant._namespaceURI === HTML_NS
+    ) {
       return descendant;
     }
   }

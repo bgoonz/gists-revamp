@@ -1,1 +1,1 @@
-module.exports = require('./flatten');
+module.exports = require("./flatten");

@@ -1,9 +1,5 @@
-import {
-    useContext
-} from 'react';
-import {
-    ReactReduxContext
-} from '../components/Context';
+import { useContext } from "react";
+import { ReactReduxContext } from "../components/Context";
 /**
  * A hook to access the value of the `ReactReduxContext`. This is a low-level
  * hook that you should usually not need to call directly.
@@ -22,11 +18,13 @@ import {
  */
 
 export function useReduxContext() {
-    var contextValue = useContext(ReactReduxContext);
+  var contextValue = useContext(ReactReduxContext);
 
-    if (process.env.NODE_ENV !== 'production' && !contextValue) {
-        throw new Error('could not find react-redux context value; please ensure the component is wrapped in a <Provider>');
-    }
+  if (process.env.NODE_ENV !== "production" && !contextValue) {
+    throw new Error(
+      "could not find react-redux context value; please ensure the component is wrapped in a <Provider>"
+    );
+  }
 
-    return contextValue;
+  return contextValue;
 }

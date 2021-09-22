@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.explode = explode;
 exports.verify = verify;
@@ -11,11 +11,7 @@ var virtualTypes = require("./path/lib/virtual-types");
 
 var _t = require("@babel/types");
 
-const {
-  DEPRECATED_KEYS,
-  FLIPPED_ALIAS_KEYS,
-  TYPES
-} = _t;
+const { DEPRECATED_KEYS, FLIPPED_ALIAS_KEYS, TYPES } = _t;
 
 function explode(visitor) {
   if (visitor._exploded) return visitor;
@@ -70,7 +66,9 @@ function explode(visitor) {
     const deprecatedKey = DEPRECATED_KEYS[nodeType];
 
     if (deprecatedKey) {
-      console.trace(`Visitor defined for ${nodeType} but it has been renamed to ${deprecatedKey}`);
+      console.trace(
+        `Visitor defined for ${nodeType} but it has been renamed to ${deprecatedKey}`
+      );
       aliases = [deprecatedKey];
     }
 
@@ -100,7 +98,10 @@ function verify(visitor) {
   if (visitor._verified) return;
 
   if (typeof visitor === "function") {
-    throw new Error("You passed `traverse()` a function when it expected a visitor object, " + "are you sure you didn't mean `{ enter: Function }`?");
+    throw new Error(
+      "You passed `traverse()` a function when it expected a visitor object, " +
+        "are you sure you didn't mean `{ enter: Function }`?"
+    );
   }
 
   for (const nodeType of Object.keys(visitor)) {
@@ -111,7 +112,9 @@ function verify(visitor) {
     if (shouldIgnoreKey(nodeType)) continue;
 
     if (TYPES.indexOf(nodeType) < 0) {
-      throw new Error(`You gave us a visitor for the node type ${nodeType} but it's not a valid type`);
+      throw new Error(
+        `You gave us a visitor for the node type ${nodeType} but it's not a valid type`
+      );
     }
 
     const visitors = visitor[nodeType];
@@ -119,9 +122,15 @@ function verify(visitor) {
     if (typeof visitors === "object") {
       for (const visitorKey of Object.keys(visitors)) {
         if (visitorKey === "enter" || visitorKey === "exit") {
-          validateVisitorMethods(`${nodeType}.${visitorKey}`, visitors[visitorKey]);
+          validateVisitorMethods(
+            `${nodeType}.${visitorKey}`,
+            visitors[visitorKey]
+          );
         } else {
-          throw new Error("You passed `traverse()` a visitor object with the property " + `${nodeType} that has the invalid property ${visitorKey}`);
+          throw new Error(
+            "You passed `traverse()` a visitor object with the property " +
+              `${nodeType} that has the invalid property ${visitorKey}`
+          );
         }
       }
     }
@@ -135,7 +144,9 @@ function validateVisitorMethods(path, val) {
 
   for (const fn of fns) {
     if (typeof fn !== "function") {
-      throw new TypeError(`Non-function found defined in ${path} with type ${typeof fn}`);
+      throw new TypeError(
+        `Non-function found defined in ${path} with type ${typeof fn}`
+      );
     }
   }
 }
@@ -155,7 +166,7 @@ function merge(visitors, states = [], wrapper) {
         visitorType = wrapWithStateOrWrapper(visitorType, state, wrapper);
       }
 
-      const nodeVisitor = rootVisitor[type] = rootVisitor[type] || {};
+      const nodeVisitor = (rootVisitor[type] = rootVisitor[type] || {});
       mergePair(nodeVisitor, visitorType);
     }
   }
@@ -201,7 +212,7 @@ function ensureEntranceObjects(obj) {
 
     if (typeof fns === "function") {
       obj[key] = {
-        enter: fns
+        enter: fns,
       };
     }
   }
@@ -228,7 +239,12 @@ function shouldIgnoreKey(key) {
   if (key[0] === "_") return true;
   if (key === "enter" || key === "exit" || key === "shouldSkip") return true;
 
-  if (key === "denylist" || key === "noScope" || key === "skipKeys" || key === "blacklist") {
+  if (
+    key === "denylist" ||
+    key === "noScope" ||
+    key === "skipKeys" ||
+    key === "blacklist"
+  ) {
     return true;
   }
 

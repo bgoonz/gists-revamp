@@ -1,7 +1,7 @@
 "use strict";
 const { solelyContainsHTTPTokenCodePoints } = require("./utils.js");
 
-module.exports = mimeType => {
+module.exports = (mimeType) => {
   let serialization = `${mimeType.type}/${mimeType.subtype}`;
 
   if (mimeType.parameters.size === 0) {

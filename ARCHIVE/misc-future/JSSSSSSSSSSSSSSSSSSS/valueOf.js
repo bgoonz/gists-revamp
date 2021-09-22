@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('valueOf', require('../valueOf'), require('./_falseOptions'));
+var convert = require("./convert"),
+  func = convert("valueOf", require("../valueOf"), require("./_falseOptions"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

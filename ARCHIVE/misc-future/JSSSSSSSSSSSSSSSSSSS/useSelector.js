@@ -1,99 +1,108 @@
-import {
-    useReducer,
-    useRef,
-    useMemo,
-    useContext,
-    useDebugValue
-} from 'react';
-import {
-    useReduxContext as useDefaultReduxContext
-} from './useReduxContext';
-import Subscription from '../utils/Subscription';
-import {
-    useIsomorphicLayoutEffect
-} from '../utils/useIsomorphicLayoutEffect';
-import {
-    ReactReduxContext
-} from '../components/Context';
+import { useReducer, useRef, useMemo, useContext, useDebugValue } from "react";
+import { useReduxContext as useDefaultReduxContext } from "./useReduxContext";
+import Subscription from "../utils/Subscription";
+import { useIsomorphicLayoutEffect } from "../utils/useIsomorphicLayoutEffect";
+import { ReactReduxContext } from "../components/Context";
 
 var refEquality = function refEquality(a, b) {
-    return a === b;
+  return a === b;
 };
 
-function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contextSub) {
-    var _useReducer = useReducer(function(s) {
-            return s + 1;
-        }, 0),
-        forceRender = _useReducer[1];
+function useSelectorWithStoreAndSubscription(
+  selector,
+  equalityFn,
+  store,
+  contextSub
+) {
+  var _useReducer = useReducer(function (s) {
+      return s + 1;
+    }, 0),
+    forceRender = _useReducer[1];
 
-    var subscription = useMemo(function() {
-        return new Subscription(store, contextSub);
-    }, [store, contextSub]);
-    var latestSubscriptionCallbackError = useRef();
-    var latestSelector = useRef();
-    var latestStoreState = useRef();
-    var latestSelectedState = useRef();
-    var storeState = store.getState();
-    var selectedState;
+  var subscription = useMemo(
+    function () {
+      return new Subscription(store, contextSub);
+    },
+    [store, contextSub]
+  );
+  var latestSubscriptionCallbackError = useRef();
+  var latestSelector = useRef();
+  var latestStoreState = useRef();
+  var latestSelectedState = useRef();
+  var storeState = store.getState();
+  var selectedState;
 
-    try {
-        if (selector !== latestSelector.current || storeState !== latestStoreState.current || latestSubscriptionCallbackError.current) {
-            var newSelectedState = selector(storeState); // ensure latest selected state is reused so that a custom equality function can result in identical references
+  try {
+    if (
+      selector !== latestSelector.current ||
+      storeState !== latestStoreState.current ||
+      latestSubscriptionCallbackError.current
+    ) {
+      var newSelectedState = selector(storeState); // ensure latest selected state is reused so that a custom equality function can result in identical references
 
-            if (latestSelectedState.current === undefined || !equalityFn(newSelectedState, latestSelectedState.current)) {
-                selectedState = newSelectedState;
-            } else {
-                selectedState = latestSelectedState.current;
-            }
-        } else {
-            selectedState = latestSelectedState.current;
-        }
-    } catch (err) {
-        if (latestSubscriptionCallbackError.current) {
-            err.message += "\nThe error may be correlated with this previous error:\n" + latestSubscriptionCallbackError.current.stack + "\n\n";
-        }
-
-        throw err;
+      if (
+        latestSelectedState.current === undefined ||
+        !equalityFn(newSelectedState, latestSelectedState.current)
+      ) {
+        selectedState = newSelectedState;
+      } else {
+        selectedState = latestSelectedState.current;
+      }
+    } else {
+      selectedState = latestSelectedState.current;
+    }
+  } catch (err) {
+    if (latestSubscriptionCallbackError.current) {
+      err.message +=
+        "\nThe error may be correlated with this previous error:\n" +
+        latestSubscriptionCallbackError.current.stack +
+        "\n\n";
     }
 
-    useIsomorphicLayoutEffect(function() {
-        latestSelector.current = selector;
-        latestStoreState.current = storeState;
-        latestSelectedState.current = selectedState;
-        latestSubscriptionCallbackError.current = undefined;
-    });
-    useIsomorphicLayoutEffect(function() {
-        function checkForUpdates() {
-            try {
-                var newStoreState = store.getState();
+    throw err;
+  }
 
-                var _newSelectedState = latestSelector.current(newStoreState);
+  useIsomorphicLayoutEffect(function () {
+    latestSelector.current = selector;
+    latestStoreState.current = storeState;
+    latestSelectedState.current = selectedState;
+    latestSubscriptionCallbackError.current = undefined;
+  });
+  useIsomorphicLayoutEffect(
+    function () {
+      function checkForUpdates() {
+        try {
+          var newStoreState = store.getState();
 
-                if (equalityFn(_newSelectedState, latestSelectedState.current)) {
-                    return;
-                }
+          var _newSelectedState = latestSelector.current(newStoreState);
 
-                latestSelectedState.current = _newSelectedState;
-                latestStoreState.current = newStoreState;
-            } catch (err) {
-                // we ignore all errors here, since when the component
-                // is re-rendered, the selectors are called again, and
-                // will throw again, if neither props nor store state
-                // changed
-                latestSubscriptionCallbackError.current = err;
-            }
+          if (equalityFn(_newSelectedState, latestSelectedState.current)) {
+            return;
+          }
 
-            forceRender();
+          latestSelectedState.current = _newSelectedState;
+          latestStoreState.current = newStoreState;
+        } catch (err) {
+          // we ignore all errors here, since when the component
+          // is re-rendered, the selectors are called again, and
+          // will throw again, if neither props nor store state
+          // changed
+          latestSubscriptionCallbackError.current = err;
         }
 
-        subscription.onStateChange = checkForUpdates;
-        subscription.trySubscribe();
-        checkForUpdates();
-        return function() {
-            return subscription.tryUnsubscribe();
-        };
-    }, [store, subscription]);
-    return selectedState;
+        forceRender();
+      }
+
+      subscription.onStateChange = checkForUpdates;
+      subscription.trySubscribe();
+      checkForUpdates();
+      return function () {
+        return subscription.tryUnsubscribe();
+      };
+    },
+    [store, subscription]
+  );
+  return selectedState;
 }
 /**
  * Hook factory, which creates a `useSelector` hook bound to a given context.
@@ -102,42 +111,53 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
  * @returns {Function} A `useSelector` hook bound to the specified context.
  */
 
-
 export function createSelectorHook(context) {
-    if (context === void 0) {
-        context = ReactReduxContext;
+  if (context === void 0) {
+    context = ReactReduxContext;
+  }
+
+  var useReduxContext =
+    context === ReactReduxContext
+      ? useDefaultReduxContext
+      : function () {
+          return useContext(context);
+        };
+  return function useSelector(selector, equalityFn) {
+    if (equalityFn === void 0) {
+      equalityFn = refEquality;
     }
 
-    var useReduxContext = context === ReactReduxContext ? useDefaultReduxContext : function() {
-        return useContext(context);
-    };
-    return function useSelector(selector, equalityFn) {
-        if (equalityFn === void 0) {
-            equalityFn = refEquality;
-        }
+    if (process.env.NODE_ENV !== "production") {
+      if (!selector) {
+        throw new Error("You must pass a selector to useSelector");
+      }
 
-        if (process.env.NODE_ENV !== 'production') {
-            if (!selector) {
-                throw new Error("You must pass a selector to useSelector");
-            }
+      if (typeof selector !== "function") {
+        throw new Error(
+          "You must pass a function as a selector to useSelector"
+        );
+      }
 
-            if (typeof selector !== 'function') {
-                throw new Error("You must pass a function as a selector to useSelector");
-            }
+      if (typeof equalityFn !== "function") {
+        throw new Error(
+          "You must pass a function as an equality function to useSelector"
+        );
+      }
+    }
 
-            if (typeof equalityFn !== 'function') {
-                throw new Error("You must pass a function as an equality function to useSelector");
-            }
-        }
+    var _useReduxContext = useReduxContext(),
+      store = _useReduxContext.store,
+      contextSub = _useReduxContext.subscription;
 
-        var _useReduxContext = useReduxContext(),
-            store = _useReduxContext.store,
-            contextSub = _useReduxContext.subscription;
-
-        var selectedState = useSelectorWithStoreAndSubscription(selector, equalityFn, store, contextSub);
-        useDebugValue(selectedState);
-        return selectedState;
-    };
+    var selectedState = useSelectorWithStoreAndSubscription(
+      selector,
+      equalityFn,
+      store,
+      contextSub
+    );
+    useDebugValue(selectedState);
+    return selectedState;
+  };
 }
 /**
  * A hook to access the redux store's state. This hook takes a selector function

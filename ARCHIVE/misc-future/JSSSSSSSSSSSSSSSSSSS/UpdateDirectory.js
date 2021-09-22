@@ -1,21 +1,21 @@
 // requiring path and fs modules
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
 
 let URL_BASE = "https://github.com/TheAlgorithms/Javascript/blob/master";
 let g_output = [];
 
 let filepaths = [];
 function good_filepaths(top_dir = ".") {
-  fs.readdir(top_dir, function(err, list) {
+  fs.readdir(top_dir, function (err, list) {
     if (err) {
       console.log(err);
       return;
     }
-    list.forEach(function(file) {
+    list.forEach(function (file) {
       let path = top_dir + "/" + file;
       if (!file.startsWith(".")) {
-        fs.stat(path, function(err, stat) {
+        fs.stat(path, function (err, stat) {
           if (stat && stat.isDirectory()) {
             good_filepaths(path);
           } else {
@@ -26,15 +26,15 @@ function good_filepaths(top_dir = ".") {
         });
       }
     });
-  })
+  });
 }
 
 function md_prefix(i) {
   if (i) {
-    let res = '  '.repeat(i);
+    let res = "  ".repeat(i);
     return res + "*";
   } else {
-    return "\n##"
+    return "\n##";
   }
 }
 
@@ -45,7 +45,7 @@ function print_path(old_path, new_path) {
     let new_part = new_parts[i];
     if (i + 1 > old_parts.len || old_parts[i] != new_part) {
       if (new_part) {
-        g_output.push(`${md_prefix(i)} ${new_part.replace('_', ' ')}`);
+        g_output.push(`${md_prefix(i)} ${new_part.replace("_", " ")}`);
       }
     }
   }
@@ -54,7 +54,7 @@ function print_path(old_path, new_path) {
 
 function build_directory_md(top_dir = ".") {
   old_path = "";
-  filepaths.sort(function(a, b) {
+  filepaths.sort(function (a, b) {
     if (a.toLowerCase() < b.toLowerCase()) return -1;
     if (a.toLowerCase() > b.toLowerCase()) return 1;
     return 0;
@@ -87,7 +87,7 @@ function build_directory_md(top_dir = ".") {
     filename = filename.split(".")[0];
     g_output.push(`${md_prefix(indent)} [${filename}](${url})`);
   }
-  g_output = g_output.join('\n');
+  g_output = g_output.join("\n");
   return g_output;
 }
 
@@ -99,10 +99,10 @@ setTimeout(() => {
 }, 1000);
 setTimeout(() => {
   // once the g_output has been constructed, write to the file
-  fs.writeFile('DIRECTORY.md', g_output + '\n', (err) => {
+  fs.writeFile("DIRECTORY.md", g_output + "\n", (err) => {
     if (err) {
       console.log(err);
     }
-  })
+  });
   // console.log(g_output);
 }, 1000);

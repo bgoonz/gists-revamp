@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.OptionValidator = void 0;
 
@@ -17,8 +17,13 @@ class OptionValidator {
 
     for (const option of Object.keys(options)) {
       if (!validOptionNames.includes(option)) {
-        throw new Error(this.formatMessage(`'${option}' is not a valid top-level option.
-- Did you mean '${(0, _findSuggestion.findSuggestion)(option, validOptionNames)}'?`));
+        throw new Error(
+          this.formatMessage(`'${option}' is not a valid top-level option.
+- Did you mean '${(0, _findSuggestion.findSuggestion)(
+            option,
+            validOptionNames
+          )}'?`)
+        );
       }
     }
   }
@@ -27,7 +32,10 @@ class OptionValidator {
     if (value === undefined) {
       return defaultValue;
     } else {
-      this.invariant(typeof value === "boolean", `'${name}' option must be a boolean.`);
+      this.invariant(
+        typeof value === "boolean",
+        `'${name}' option must be a boolean.`
+      );
     }
 
     return value;
@@ -37,7 +45,10 @@ class OptionValidator {
     if (value === undefined) {
       return defaultValue;
     } else {
-      this.invariant(typeof value === "string", `'${name}' option must be a string.`);
+      this.invariant(
+        typeof value === "string",
+        `'${name}' option must be a string.`
+      );
     }
 
     return value;
@@ -52,7 +63,6 @@ class OptionValidator {
   formatMessage(message) {
     return `${this.descriptor}: ${message}`;
   }
-
 }
 
 exports.OptionValidator = OptionValidator;

@@ -13,7 +13,7 @@ Object.defineProperty(Storage, "prototype", {
   value: Storage.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Storage.prototype.key = function key(index) {
@@ -23,13 +23,17 @@ Storage.prototype.key = function key(index) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'key' on 'Storage': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'key' on 'Storage': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["unsigned long"](curArg, { context: "Failed to execute 'key' on 'Storage': parameter 1" });
+    curArg = conversions["unsigned long"](curArg, {
+      context: "Failed to execute 'key' on 'Storage': parameter 1",
+    });
     args.push(curArg);
   }
   return this[impl].key(...args);
@@ -42,13 +46,17 @@ Storage.prototype.getItem = function getItem(key) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'getItem' on 'Storage': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'getItem' on 'Storage': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'getItem' on 'Storage': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'getItem' on 'Storage': parameter 1",
+    });
     args.push(curArg);
   }
   return this[impl].getItem(...args);
@@ -61,18 +69,24 @@ Storage.prototype.setItem = function setItem(key, value) {
 
   if (arguments.length < 2) {
     throw new TypeError(
-      "Failed to execute 'setItem' on 'Storage': 2 arguments required, but only " + arguments.length + " present."
+      "Failed to execute 'setItem' on 'Storage': 2 arguments required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'setItem' on 'Storage': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'setItem' on 'Storage': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'setItem' on 'Storage': parameter 2" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'setItem' on 'Storage': parameter 2",
+    });
     args.push(curArg);
   }
   return this[impl].setItem(...args);
@@ -85,13 +99,17 @@ Storage.prototype.removeItem = function removeItem(key) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'removeItem' on 'Storage': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'removeItem' on 'Storage': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'removeItem' on 'Storage': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'removeItem' on 'Storage': parameter 1",
+    });
     args.push(curArg);
   }
   return this[impl].removeItem(...args);
@@ -115,14 +133,14 @@ Object.defineProperty(Storage.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Storage.prototype, Symbol.toStringTag, {
   value: "Storage",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -186,7 +204,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -255,7 +273,7 @@ const iface = {
             writable: true,
             enumerable: true,
             configurable: true,
-            value: utils.tryWrapperForImpl(namedValue)
+            value: utils.tryWrapperForImpl(namedValue),
           };
         }
 
@@ -271,7 +289,10 @@ const iface = {
             let namedValue = V;
 
             namedValue = conversions["DOMString"](namedValue, {
-              context: "Failed to set the '" + P + "' property on 'Storage': The provided value"
+              context:
+                "Failed to set the '" +
+                P +
+                "' property on 'Storage': The provided value",
             });
 
             target[impl].setItem(P, namedValue);
@@ -289,7 +310,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -308,7 +334,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -325,7 +356,10 @@ const iface = {
           let namedValue = desc.value;
 
           namedValue = conversions["DOMString"](namedValue, {
-            context: "Failed to set the '" + P + "' property on 'Storage': The provided value"
+            context:
+              "Failed to set the '" +
+              P +
+              "' property on 'Storage': The provided value",
           });
 
           target[impl].setItem(P, namedValue);
@@ -350,7 +384,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -361,8 +395,8 @@ const iface = {
   },
   interface: Storage,
   expose: {
-    Window: { Storage }
-  }
+    Window: { Storage },
+  },
 }; // iface
 module.exports = iface;
 

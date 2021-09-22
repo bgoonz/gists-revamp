@@ -1,9 +1,9 @@
 // Copyright 2015 Joyent, Inc.
 
-var assert = require('assert-plus');
-var crypto = require('crypto');
-var sshpk = require('sshpk');
-var utils = require('./utils');
+var assert = require("assert-plus");
+var crypto = require("crypto");
+var sshpk = require("sshpk");
+var utils = require("./utils");
 
 var HASH_ALGOS = utils.HASH_ALGOS;
 var PK_ALGOS = utils.PK_ALGOS;
@@ -25,18 +25,17 @@ module.exports = {
    * @throws {InvalidAlgorithmError}
    */
   verifySignature: function verifySignature(parsedSignature, pubkey) {
-    assert.object(parsedSignature, 'parsedSignature');
-    if (typeof (pubkey) === 'string' || Buffer.isBuffer(pubkey))
+    assert.object(parsedSignature, "parsedSignature");
+    if (typeof pubkey === "string" || Buffer.isBuffer(pubkey))
       pubkey = sshpk.parseKey(pubkey);
-    assert.ok(sshpk.Key.isKey(pubkey, [1, 1]), 'pubkey must be a sshpk.Key');
+    assert.ok(sshpk.Key.isKey(pubkey, [1, 1]), "pubkey must be a sshpk.Key");
 
     var alg = validateAlgorithm(parsedSignature.algorithm);
-    if (alg[0] === 'hmac' || alg[0] !== pubkey.type)
-      return (false);
+    if (alg[0] === "hmac" || alg[0] !== pubkey.type) return false;
 
     var v = pubkey.createVerify(alg[1]);
     v.update(parsedSignature.signingString);
-    return (v.verify(parsedSignature.params.signature, 'base64'));
+    return v.verify(parsedSignature.params.signature, "base64");
   },
 
   /**
@@ -50,12 +49,11 @@ module.exports = {
    * @throws {InvalidAlgorithmError}
    */
   verifyHMAC: function verifyHMAC(parsedSignature, secret) {
-    assert.object(parsedSignature, 'parsedHMAC');
-    assert.string(secret, 'secret');
+    assert.object(parsedSignature, "parsedHMAC");
+    assert.string(secret, "secret");
 
     var alg = validateAlgorithm(parsedSignature.algorithm);
-    if (alg[0] !== 'hmac')
-      return (false);
+    if (alg[0] !== "hmac") return false;
 
     var hashAlg = alg[1].toUpperCase();
 
@@ -73,16 +71,15 @@ module.exports = {
     h1.update(hmac.digest());
     h1 = h1.digest();
     var h2 = crypto.createHmac(hashAlg, secret);
-    h2.update(new Buffer(parsedSignature.params.signature, 'base64'));
+    h2.update(new Buffer(parsedSignature.params.signature, "base64"));
     h2 = h2.digest();
 
     /* Node 0.8 returns strings from .digest(). */
-    if (typeof (h1) === 'string')
-      return (h1 === h2);
+    if (typeof h1 === "string") return h1 === h2;
     /* And node 0.10 lacks the .equals() method on Buffers. */
     if (Buffer.isBuffer(h1) && !h1.equals)
-      return (h1.toString('binary') === h2.toString('binary'));
+      return h1.toString("binary") === h2.toString("binary");
 
-    return (h1.equals(h2));
-  }
+    return h1.equals(h2);
+  },
 };

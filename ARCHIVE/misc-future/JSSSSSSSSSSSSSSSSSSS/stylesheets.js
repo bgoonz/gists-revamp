@@ -36,7 +36,10 @@ exports.createStylesheet = (sheetText, elementImpl, baseURL) => {
       error.detail = sheetText;
       error.type = "css parsing";
 
-      elementImpl._ownerDocument._defaultView._virtualConsole.emit("jsdomError", error);
+      elementImpl._ownerDocument._defaultView._virtualConsole.emit(
+        "jsdomError",
+        error
+      );
     }
     return;
   }
@@ -59,10 +62,12 @@ function addStylesheet(sheet, elementImpl) {
 function fetchStylesheetInternal(elementImpl, urlString, parsedURL) {
   let defaultEncoding = elementImpl._ownerDocument._encoding;
   if (elementImpl.localName === "link" && elementImpl.hasAttribute("charset")) {
-    defaultEncoding = whatwgEncoding.labelToName(elementImpl.getAttribute("charset"));
+    defaultEncoding = whatwgEncoding.labelToName(
+      elementImpl.getAttribute("charset")
+    );
   }
 
-  resourceLoader.load(elementImpl, urlString, { defaultEncoding }, data => {
+  resourceLoader.load(elementImpl, urlString, { defaultEncoding }, (data) => {
     // TODO: MIME type checking?
     if (elementImpl.sheet) {
       exports.removeStylesheet(elementImpl.sheet, elementImpl);
@@ -91,13 +96,19 @@ function scanForImportRules(elementImpl, cssRules, baseURL) {
       if (parsed === null) {
         const window = elementImpl._ownerDocument._defaultView;
         if (window) {
-          const error = new Error(`Could not parse CSS @import URL ${cssRules[i].href} relative to base URL ` +
-                                  `"${whatwgURL.serializeURL(baseURL)}"`);
+          const error = new Error(
+            `Could not parse CSS @import URL ${cssRules[i].href} relative to base URL ` +
+              `"${whatwgURL.serializeURL(baseURL)}"`
+          );
           error.type = "css @import URL parsing";
           window._virtualConsole.emit("jsdomError", error);
         }
       } else {
-        fetchStylesheetInternal(elementImpl, whatwgURL.serializeURL(parsed), parsed);
+        fetchStylesheetInternal(
+          elementImpl,
+          whatwgURL.serializeURL(parsed),
+          parsed
+        );
       }
     }
   }

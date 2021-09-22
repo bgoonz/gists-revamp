@@ -36,14 +36,14 @@ const IteratorPrototype = Object.create(utils.IteratorPrototype, {
     },
     writable: true,
     enumerable: true,
-    configurable: true
+    configurable: true,
   },
   [Symbol.toStringTag]: {
     value: "URLSearchParamsIterator",
     writable: false,
     enumerable: false,
-    configurable: true
-  }
+    configurable: true,
+  },
 });
 
 function URLSearchParams() {
@@ -57,7 +57,9 @@ function URLSearchParams() {
       if (args[0][Symbol.iterator] !== undefined) {
         if (!utils.isObject(args[0])) {
           throw new TypeError(
-            "Failed to construct 'URLSearchParams': parameter 1" + " sequence" + " is not an iterable object."
+            "Failed to construct 'URLSearchParams': parameter 1" +
+              " sequence" +
+              " is not an iterable object."
           );
         } else {
           const V = [];
@@ -76,7 +78,10 @@ function URLSearchParams() {
               for (let nextItem of tmp) {
                 nextItem = conversions["USVString"](nextItem, {
                   context:
-                    "Failed to construct 'URLSearchParams': parameter 1" + " sequence" + "'s element" + "'s element"
+                    "Failed to construct 'URLSearchParams': parameter 1" +
+                    " sequence" +
+                    "'s element" +
+                    "'s element",
                 });
 
                 V.push(nextItem);
@@ -90,7 +95,11 @@ function URLSearchParams() {
         }
       } else {
         if (!utils.isObject(args[0])) {
-          throw new TypeError("Failed to construct 'URLSearchParams': parameter 1" + " record" + " is not an object.");
+          throw new TypeError(
+            "Failed to construct 'URLSearchParams': parameter 1" +
+              " record" +
+              " is not an object."
+          );
         } else {
           const result = Object.create(null);
           for (const key of Reflect.ownKeys(args[0])) {
@@ -100,11 +109,17 @@ function URLSearchParams() {
               let typedValue = args[0][key];
 
               typedKey = conversions["USVString"](typedKey, {
-                context: "Failed to construct 'URLSearchParams': parameter 1" + " record" + "'s key"
+                context:
+                  "Failed to construct 'URLSearchParams': parameter 1" +
+                  " record" +
+                  "'s key",
               });
 
               typedValue = conversions["USVString"](typedValue, {
-                context: "Failed to construct 'URLSearchParams': parameter 1" + " record" + "'s value"
+                context:
+                  "Failed to construct 'URLSearchParams': parameter 1" +
+                  " record" +
+                  "'s value",
               });
 
               result[typedKey] = typedValue;
@@ -114,7 +129,9 @@ function URLSearchParams() {
         }
       }
     } else {
-      args[0] = conversions["USVString"](args[0], { context: "Failed to construct 'URLSearchParams': parameter 1" });
+      args[0] = conversions["USVString"](args[0], {
+        context: "Failed to construct 'URLSearchParams': parameter 1",
+      });
     }
   } else {
     args[0] = "";
@@ -127,7 +144,7 @@ Object.defineProperty(URLSearchParams, "prototype", {
   value: URLSearchParams.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(URLSearchParams.prototype, Symbol.iterator, {
@@ -139,7 +156,7 @@ Object.defineProperty(URLSearchParams.prototype, Symbol.iterator, {
       throw new TypeError("Illegal invocation");
     }
     return module.exports.createDefaultIterator(this, "key+value");
-  }
+  },
 });
 URLSearchParams.prototype.forEach = function forEach(callback) {
   if (!this || !module.exports.is(this)) {
@@ -147,12 +164,14 @@ URLSearchParams.prototype.forEach = function forEach(callback) {
   }
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'forEach' on 'URLSearchParams': 1 argument required, " + "but only 0 present."
+      "Failed to execute 'forEach' on 'URLSearchParams': 1 argument required, " +
+        "but only 0 present."
     );
   }
   if (typeof callback !== "function") {
     throw new TypeError(
-      "Failed to execute 'forEach' on 'URLSearchParams': The callback provided " + "as parameter 1 is not a function."
+      "Failed to execute 'forEach' on 'URLSearchParams': The callback provided " +
+        "as parameter 1 is not a function."
     );
   }
   const thisArg = arguments[1];
@@ -185,11 +204,11 @@ URLSearchParams.prototype.append = function append(name, value) {
   }
 
   args[0] = conversions["USVString"](args[0], {
-    context: "Failed to execute 'append' on 'URLSearchParams': parameter 1"
+    context: "Failed to execute 'append' on 'URLSearchParams': parameter 1",
   });
 
   args[1] = conversions["USVString"](args[1], {
-    context: "Failed to execute 'append' on 'URLSearchParams': parameter 2"
+    context: "Failed to execute 'append' on 'URLSearchParams': parameter 2",
   });
 
   return this[impl].append(...args);
@@ -215,7 +234,7 @@ URLSearchParams.prototype.delete = function _(name) {
   }
 
   args[0] = conversions["USVString"](args[0], {
-    context: "Failed to execute 'delete' on 'URLSearchParams': parameter 1"
+    context: "Failed to execute 'delete' on 'URLSearchParams': parameter 1",
   });
 
   return this[impl].delete(...args);
@@ -240,7 +259,9 @@ URLSearchParams.prototype.get = function get(name) {
     args[i] = arguments[i];
   }
 
-  args[0] = conversions["USVString"](args[0], { context: "Failed to execute 'get' on 'URLSearchParams': parameter 1" });
+  args[0] = conversions["USVString"](args[0], {
+    context: "Failed to execute 'get' on 'URLSearchParams': parameter 1",
+  });
 
   return this[impl].get(...args);
 };
@@ -265,7 +286,7 @@ URLSearchParams.prototype.getAll = function getAll(name) {
   }
 
   args[0] = conversions["USVString"](args[0], {
-    context: "Failed to execute 'getAll' on 'URLSearchParams': parameter 1"
+    context: "Failed to execute 'getAll' on 'URLSearchParams': parameter 1",
   });
 
   return utils.tryWrapperForImpl(this[impl].getAll(...args));
@@ -290,7 +311,9 @@ URLSearchParams.prototype.has = function has(name) {
     args[i] = arguments[i];
   }
 
-  args[0] = conversions["USVString"](args[0], { context: "Failed to execute 'has' on 'URLSearchParams': parameter 1" });
+  args[0] = conversions["USVString"](args[0], {
+    context: "Failed to execute 'has' on 'URLSearchParams': parameter 1",
+  });
 
   return this[impl].has(...args);
 };
@@ -314,9 +337,13 @@ URLSearchParams.prototype.set = function set(name, value) {
     args[i] = arguments[i];
   }
 
-  args[0] = conversions["USVString"](args[0], { context: "Failed to execute 'set' on 'URLSearchParams': parameter 1" });
+  args[0] = conversions["USVString"](args[0], {
+    context: "Failed to execute 'set' on 'URLSearchParams': parameter 1",
+  });
 
-  args[1] = conversions["USVString"](args[1], { context: "Failed to execute 'set' on 'URLSearchParams': parameter 2" });
+  args[1] = conversions["USVString"](args[1], {
+    context: "Failed to execute 'set' on 'URLSearchParams': parameter 2",
+  });
 
   return this[impl].set(...args);
 };
@@ -357,7 +384,7 @@ Object.defineProperty(URLSearchParams.prototype, Symbol.toStringTag, {
   value: "URLSearchParams",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -403,7 +430,7 @@ const iface = {
       value: { target, kind, index: 0 },
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
     return iterator;
   },
@@ -429,7 +456,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -441,8 +468,8 @@ const iface = {
   interface: URLSearchParams,
   expose: {
     Window: { URLSearchParams },
-    Worker: { URLSearchParams }
-  }
+    Worker: { URLSearchParams },
+  },
 }; // iface
 module.exports = iface;
 

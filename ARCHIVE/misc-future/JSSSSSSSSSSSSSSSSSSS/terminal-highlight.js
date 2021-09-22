@@ -9,44 +9,46 @@ var _tokenize = _interopRequireDefault(require("./tokenize"));
 
 var _input = _interopRequireDefault(require("./input"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var HIGHLIGHT_THEME = {
-  'brackets': _chalk.default.cyan,
-  'at-word': _chalk.default.cyan,
-  'comment': _chalk.default.gray,
-  'string': _chalk.default.green,
-  'class': _chalk.default.yellow,
-  'call': _chalk.default.cyan,
-  'hash': _chalk.default.magenta,
-  '(': _chalk.default.cyan,
-  ')': _chalk.default.cyan,
-  '{': _chalk.default.yellow,
-  '}': _chalk.default.yellow,
-  '[': _chalk.default.yellow,
-  ']': _chalk.default.yellow,
-  ':': _chalk.default.yellow,
-  ';': _chalk.default.yellow
+  brackets: _chalk.default.cyan,
+  "at-word": _chalk.default.cyan,
+  comment: _chalk.default.gray,
+  string: _chalk.default.green,
+  class: _chalk.default.yellow,
+  call: _chalk.default.cyan,
+  hash: _chalk.default.magenta,
+  "(": _chalk.default.cyan,
+  ")": _chalk.default.cyan,
+  "{": _chalk.default.yellow,
+  "}": _chalk.default.yellow,
+  "[": _chalk.default.yellow,
+  "]": _chalk.default.yellow,
+  ":": _chalk.default.yellow,
+  ";": _chalk.default.yellow,
 };
 
 function getTokenType(_ref, processor) {
   var type = _ref[0],
-      value = _ref[1];
+    value = _ref[1];
 
-  if (type === 'word') {
-    if (value[0] === '.') {
-      return 'class';
+  if (type === "word") {
+    if (value[0] === ".") {
+      return "class";
     }
 
-    if (value[0] === '#') {
-      return 'hash';
+    if (value[0] === "#") {
+      return "hash";
     }
   }
 
   if (!processor.endOfFile()) {
     var next = processor.nextToken();
     processor.back(next);
-    if (next[0] === 'brackets' || next[0] === '(') return 'call';
+    if (next[0] === "brackets" || next[0] === "(") return "call";
   }
 
   return type;
@@ -54,18 +56,21 @@ function getTokenType(_ref, processor) {
 
 function terminalHighlight(css) {
   var processor = (0, _tokenize.default)(new _input.default(css), {
-    ignoreErrors: true
+    ignoreErrors: true,
   });
-  var result = '';
+  var result = "";
 
   var _loop = function _loop() {
     var token = processor.nextToken();
     var color = HIGHLIGHT_THEME[getTokenType(token, processor)];
 
     if (color) {
-      result += token[1].split(/\r?\n/).map(function (i) {
-        return color(i);
-      }).join('\n');
+      result += token[1]
+        .split(/\r?\n/)
+        .map(function (i) {
+          return color(i);
+        })
+        .join("\n");
     } else {
       result += token[1];
     }

@@ -4,23 +4,19 @@ const server = require("./server.js");
 describe("server.js", () => {
   describe("POST /games", () => {
     it("should return a status code 201 if valid data is passed in", async () => {
-      const response = await request(server)
-        .post("/games")
-        .send({
-          title: "Galaxian",
-          genre: "Arcade",
-          releaseYear: 1979
-        });
+      const response = await request(server).post("/games").send({
+        title: "Galaxian",
+        genre: "Arcade",
+        releaseYear: 1979,
+      });
       expect(response.status).toEqual(201);
     });
     it("should return a bresponse body of type object", async () => {
-      const response = await request(server)
-        .post("/games")
-        .send({
-          title: "Galaxian",
-          genre: "Arcade",
-          releaseYear: 1979
-        });
+      const response = await request(server).post("/games").send({
+        title: "Galaxian",
+        genre: "Arcade",
+        releaseYear: 1979,
+      });
       expect(typeof response.body).toEqual("object");
     });
   });
@@ -35,14 +31,14 @@ describe("server.js", () => {
           id: 1,
           title: "Pacman",
           genre: "Arcade",
-          releaseYear: 1980
+          releaseYear: 1980,
         },
         {
           id: 2,
           title: "Galaxian",
           genre: "Arcade",
-          releaseYear: 1979
-        }
+          releaseYear: 1979,
+        },
       ]);
     });
     it("should return a response with type on json", async () => {
@@ -57,14 +53,14 @@ describe("server.js", () => {
           id: 1,
           title: "Pacman",
           genre: "Arcade",
-          releaseYear: 1980
+          releaseYear: 1980,
         },
         {
           id: 2,
           title: "Galaxian",
           genre: "Arcade",
-          releaseYear: 1979
-        }
+          releaseYear: 1979,
+        },
       ]);
     });
 
@@ -86,7 +82,7 @@ describe("GET /games", () => {
   it("should always return an array of data", async () => {
     await request(server)
       .get("/games")
-      .then(response => {
+      .then((response) => {
         typeof response === "array";
       });
   });

@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.WithStatement = WithStatement;
 exports.IfStatement = IfStatement;
@@ -16,16 +16,17 @@ exports.SwitchCase = SwitchCase;
 exports.DebuggerStatement = DebuggerStatement;
 exports.VariableDeclaration = VariableDeclaration;
 exports.VariableDeclarator = VariableDeclarator;
-exports.ThrowStatement = exports.BreakStatement = exports.ReturnStatement = exports.ContinueStatement = exports.ForOfStatement = exports.ForInStatement = void 0;
+exports.ThrowStatement =
+  exports.BreakStatement =
+  exports.ReturnStatement =
+  exports.ContinueStatement =
+  exports.ForOfStatement =
+  exports.ForInStatement =
+    void 0;
 
 var _t = require("@babel/types");
 
-const {
-  isFor,
-  isForStatement,
-  isIfStatement,
-  isStatement
-} = _t;
+const { isFor, isForStatement, isIfStatement, isStatement } = _t;
 
 function WithStatement(node) {
   this.word("with");
@@ -43,7 +44,8 @@ function IfStatement(node) {
   this.print(node.test, node);
   this.token(")");
   this.space();
-  const needsBlock = node.alternate && isIfStatement(getLastStatement(node.consequent));
+  const needsBlock =
+    node.alternate && isIfStatement(getLastStatement(node.consequent));
 
   if (needsBlock) {
     this.token("{");
@@ -226,8 +228,7 @@ function SwitchStatement(node) {
 
     addNewlines(leading, cas) {
       if (!leading && node.cases[node.cases.length - 1] === cas) return -1;
-    }
-
+    },
   });
   this.token("}");
 }
@@ -246,7 +247,7 @@ function SwitchCase(node) {
   if (node.consequent.length) {
     this.newline();
     this.printSequence(node.consequent, node, {
-      indent: true
+      indent: true,
     });
   }
 }
@@ -295,11 +296,14 @@ function VariableDeclaration(node, parent) {
   let separator;
 
   if (hasInits) {
-    separator = node.kind === "const" ? constDeclarationIndent : variableDeclarationIndent;
+    separator =
+      node.kind === "const"
+        ? constDeclarationIndent
+        : variableDeclarationIndent;
   }
 
   this.printList(node.declarations, node, {
-    separator
+    separator,
   });
 
   if (isFor(parent)) {

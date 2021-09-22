@@ -13,7 +13,7 @@ Object.defineProperty(WindowEventHandlers, "prototype", {
   value: WindowEventHandlers.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onafterprint", {
@@ -36,7 +36,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onafterprint", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onbeforeprint", {
@@ -59,7 +59,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onbeforeprint", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onbeforeunload", {
@@ -82,7 +82,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onbeforeunload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onhashchange", {
@@ -105,7 +105,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onhashchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onlanguagechange", {
@@ -128,7 +128,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onlanguagechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onmessage", {
@@ -151,7 +151,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onmessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onmessageerror", {
@@ -174,7 +174,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onmessageerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onoffline", {
@@ -197,7 +197,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onoffline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "ononline", {
@@ -220,7 +220,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "ononline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onpagehide", {
@@ -243,7 +243,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onpagehide", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onpageshow", {
@@ -266,7 +266,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onpageshow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onpopstate", {
@@ -289,7 +289,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onpopstate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onrejectionhandled", {
@@ -312,7 +312,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onrejectionhandled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onstorage", {
@@ -335,7 +335,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onstorage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onunhandledrejection", {
@@ -358,7 +358,7 @@ Object.defineProperty(WindowEventHandlers.prototype, "onunhandledrejection", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, "onunload", {
@@ -381,14 +381,14 @@ Object.defineProperty(WindowEventHandlers.prototype, "onunload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WindowEventHandlers.prototype, Symbol.toStringTag, {
   value: "WindowEventHandlers",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -452,7 +452,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -462,7 +462,7 @@ const iface = {
     return obj;
   },
   interface: WindowEventHandlers,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

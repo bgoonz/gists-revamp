@@ -13,7 +13,7 @@ Object.defineProperty(SVGTests, "prototype", {
   value: SVGTests.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(SVGTests.prototype, "requiredExtensions", {
@@ -28,7 +28,7 @@ Object.defineProperty(SVGTests.prototype, "requiredExtensions", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGTests.prototype, "systemLanguage", {
@@ -43,14 +43,14 @@ Object.defineProperty(SVGTests.prototype, "systemLanguage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGTests.prototype, Symbol.toStringTag, {
   value: "SVGTests",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -114,7 +114,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -124,7 +124,7 @@ const iface = {
     return obj;
   },
   interface: SVGTests,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

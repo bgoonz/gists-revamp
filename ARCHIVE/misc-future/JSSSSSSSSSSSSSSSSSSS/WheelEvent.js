@@ -17,18 +17,24 @@ function WheelEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'WheelEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'WheelEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'WheelEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'WheelEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertWheelEventInit(curArg, { context: "Failed to construct 'WheelEvent': parameter 2" });
+    curArg = convertWheelEventInit(curArg, {
+      context: "Failed to construct 'WheelEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(WheelEvent, "prototype", {
   value: WheelEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(WheelEvent.prototype, "deltaX", {
@@ -55,7 +61,7 @@ Object.defineProperty(WheelEvent.prototype, "deltaX", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WheelEvent.prototype, "deltaY", {
@@ -68,7 +74,7 @@ Object.defineProperty(WheelEvent.prototype, "deltaY", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WheelEvent.prototype, "deltaZ", {
@@ -81,7 +87,7 @@ Object.defineProperty(WheelEvent.prototype, "deltaZ", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WheelEvent.prototype, "deltaMode", {
@@ -94,41 +100,41 @@ Object.defineProperty(WheelEvent.prototype, "deltaMode", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(WheelEvent, "DOM_DELTA_PIXEL", {
   value: 0x00,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(WheelEvent.prototype, "DOM_DELTA_PIXEL", {
   value: 0x00,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(WheelEvent, "DOM_DELTA_LINE", {
   value: 0x01,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(WheelEvent.prototype, "DOM_DELTA_LINE", {
   value: 0x01,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(WheelEvent, "DOM_DELTA_PAGE", {
   value: 0x02,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(WheelEvent.prototype, "DOM_DELTA_PAGE", {
   value: 0x02,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(WheelEvent.prototype, Symbol.toStringTag, {
   value: "WheelEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -194,7 +200,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -205,8 +211,8 @@ const iface = {
   },
   interface: WheelEvent,
   expose: {
-    Window: { WheelEvent }
-  }
+    Window: { WheelEvent },
+  },
 }; // iface
 module.exports = iface;
 

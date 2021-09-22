@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('updateWith', require('../updateWith'));
+var convert = require("./convert"),
+  func = convert("updateWith", require("../updateWith"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

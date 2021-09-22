@@ -14,7 +14,7 @@ Object.defineProperty(TreeWalker, "prototype", {
   value: TreeWalker.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 TreeWalker.prototype.parentNode = function parentNode() {
@@ -85,7 +85,7 @@ Object.defineProperty(TreeWalker.prototype, "root", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TreeWalker.prototype, "whatToShow", {
@@ -98,7 +98,7 @@ Object.defineProperty(TreeWalker.prototype, "whatToShow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TreeWalker.prototype, "filter", {
@@ -111,7 +111,7 @@ Object.defineProperty(TreeWalker.prototype, "filter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TreeWalker.prototype, "currentNode", {
@@ -128,20 +128,23 @@ Object.defineProperty(TreeWalker.prototype, "currentNode", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = convertNode(V, { context: "Failed to set the 'currentNode' property on 'TreeWalker': The provided value" });
+    V = convertNode(V, {
+      context:
+        "Failed to set the 'currentNode' property on 'TreeWalker': The provided value",
+    });
 
     this[impl]["currentNode"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(TreeWalker.prototype, Symbol.toStringTag, {
   value: "TreeWalker",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -205,7 +208,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -216,8 +219,8 @@ const iface = {
   },
   interface: TreeWalker,
   expose: {
-    Window: { TreeWalker }
-  }
+    Window: { TreeWalker },
+  },
 }; // iface
 module.exports = iface;
 

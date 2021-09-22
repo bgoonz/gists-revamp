@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = toIdentifier;
 
@@ -14,7 +14,9 @@ function toIdentifier(input) {
   let name = "";
 
   for (const c of input) {
-    name += (0, _helperValidatorIdentifier.isIdentifierChar)(c.codePointAt(0)) ? c : "-";
+    name += (0, _helperValidatorIdentifier.isIdentifierChar)(c.codePointAt(0))
+      ? c
+      : "-";
   }
 
   name = name.replace(/^[-0-9]+/, "");

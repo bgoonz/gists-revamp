@@ -9,7 +9,7 @@ exports.name = function (name) {
   const result = xnv.name(name);
   if (!result.success) {
     throw new DOMException(
-      "\"" + name + "\" did not match the Name production: " + result.error,
+      '"' + name + '" did not match the Name production: ' + result.error,
       "InvalidCharacterError"
     );
   }
@@ -21,7 +21,7 @@ exports.qname = function (qname) {
   const result = xnv.qname(qname);
   if (!result.success) {
     throw new DOMException(
-      "\"" + qname + "\" did not match the QName production: " + result.error,
+      '"' + qname + '" did not match the QName production: ' + result.error,
       "InvalidCharacterError"
     );
   }
@@ -52,19 +52,29 @@ exports.validateAndExtract = function (namespace, qualifiedName) {
 
   if (prefix === "xml" && namespace !== XML_NS) {
     throw new DOMException(
-      "A prefix of \"xml\" was given but the namespace was not the XML namespace",
+      'A prefix of "xml" was given but the namespace was not the XML namespace',
       "NamespaceError"
     );
   }
 
-  if ((qualifiedName === "xmlns" || prefix === "xmlns") && namespace !== XMLNS_NS) {
-    throw new DOMException("A prefix or qualifiedName of \"xmlns\" was given but the namespace was not the XMLNS " +
-      "namespace", "NamespaceError");
+  if (
+    (qualifiedName === "xmlns" || prefix === "xmlns") &&
+    namespace !== XMLNS_NS
+  ) {
+    throw new DOMException(
+      'A prefix or qualifiedName of "xmlns" was given but the namespace was not the XMLNS ' +
+        "namespace",
+      "NamespaceError"
+    );
   }
 
-  if (namespace === XMLNS_NS && qualifiedName !== "xmlns" && prefix !== "xmlns") {
+  if (
+    namespace === XMLNS_NS &&
+    qualifiedName !== "xmlns" &&
+    prefix !== "xmlns"
+  ) {
     throw new DOMException(
-      "The XMLNS namespace was given but neither the prefix nor qualifiedName was \"xmlns\"",
+      'The XMLNS namespace was given but neither the prefix nor qualifiedName was "xmlns"',
       "NamespaceError"
     );
   }

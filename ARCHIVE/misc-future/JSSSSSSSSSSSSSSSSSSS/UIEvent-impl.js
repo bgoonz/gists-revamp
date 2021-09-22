@@ -25,10 +25,18 @@ class UIEventImpl extends EventImpl {
     const eventInitDict = args[1];
 
     // undefined check included so that we can omit the property in internal usage.
-    if (eventInitDict && eventInitDict.view !== null && eventInitDict.view !== undefined) {
+    if (
+      eventInitDict &&
+      eventInitDict.view !== null &&
+      eventInitDict.view !== undefined
+    ) {
       if (!isWindow(eventInitDict.view)) {
-        throw new TypeError(`Failed to construct '${new.target.name.replace(/Impl$/, "")}': member view is not of ` +
-                            "type Window.");
+        throw new TypeError(
+          `Failed to construct '${new.target.name.replace(
+            /Impl$/,
+            ""
+          )}': member view is not of ` + "type Window."
+        );
       }
     }
 
@@ -38,8 +46,12 @@ class UIEventImpl extends EventImpl {
   initUIEvent(type, bubbles, cancelable, view, detail) {
     if (view !== null) {
       if (!isWindow(view)) {
-        throw new TypeError(`Failed to execute 'initUIEvent' on '${this.constructor.name.replace(/Impl$/, "")}': ` +
-                            "parameter 4 is not of type 'Window'.");
+        throw new TypeError(
+          `Failed to execute 'initUIEvent' on '${this.constructor.name.replace(
+            /Impl$/,
+            ""
+          )}': ` + "parameter 4 is not of type 'Window'."
+        );
       }
     }
 
@@ -55,5 +67,5 @@ class UIEventImpl extends EventImpl {
 UIEventImpl.defaultInit = UIEventInit.convert(undefined);
 
 module.exports = {
-  implementation: UIEventImpl
+  implementation: UIEventImpl,
 };

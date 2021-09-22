@@ -4,25 +4,25 @@
 */
 
 /*
-*  Doctests
-*
-* > validateEmail('mahfoudh.arous@gmail.com')
-*  true
-* > validateEmail('mahfoudh.arous@helsinki.edu')
-*  true
-* > validateEmail('mahfoudh.arous.com')
-*  false
-* > validateEmail('')
-*  ! TypeError
-* > validateEmail(null)
-*  ! TypeError
-*/
+ *  Doctests
+ *
+ * > validateEmail('mahfoudh.arous@gmail.com')
+ *  true
+ * > validateEmail('mahfoudh.arous@helsinki.edu')
+ *  true
+ * > validateEmail('mahfoudh.arous.com')
+ *  false
+ * > validateEmail('')
+ *  ! TypeError
+ * > validateEmail(null)
+ *  ! TypeError
+ */
 const validateEmail = (str) => {
-  if (str === '' || str === null) {
-    throw new TypeError('Email Address String Null or Empty.')
+  if (str === "" || str === null) {
+    throw new TypeError("Email Address String Null or Empty.");
   }
 
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str)
-}
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+};
 
-export { validateEmail }
+export { validateEmail };

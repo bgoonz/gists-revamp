@@ -2,7 +2,9 @@
 
 // Returns "Type(value) is Object" in ES terminology.
 function isObject(value) {
-  return typeof value === "object" && value !== null || typeof value === "function";
+  return (
+    (typeof value === "object" && value !== null) || typeof value === "function"
+  );
 }
 
 function getReferenceToBytes(bufferSource) {
@@ -13,7 +15,11 @@ function getReferenceToBytes(bufferSource) {
   if (bufferSource instanceof ArrayBuffer) {
     return Buffer.from(bufferSource);
   }
-  return Buffer.from(bufferSource.buffer, bufferSource.byteOffset, bufferSource.byteLength);
+  return Buffer.from(
+    bufferSource.buffer,
+    bufferSource.byteOffset,
+    bufferSource.byteLength
+  );
 }
 
 function getCopyToBytes(bufferSource) {
@@ -27,7 +33,11 @@ function mixin(target, source) {
       continue;
     }
 
-    Object.defineProperty(target, keys[i], Object.getOwnPropertyDescriptor(source, keys[i]));
+    Object.defineProperty(
+      target,
+      keys[i],
+      Object.getOwnPropertyDescriptor(source, keys[i])
+    );
   }
 }
 
@@ -67,7 +77,9 @@ function tryImplForWrapper(wrapper) {
 }
 
 const iterInternalSymbol = Symbol("internal");
-const IteratorPrototype = Object.getPrototypeOf(Object.getPrototypeOf([][Symbol.iterator]()));
+const IteratorPrototype = Object.getPrototypeOf(
+  Object.getPrototypeOf([][Symbol.iterator]())
+);
 
 function isArrayIndexPropName(P) {
   if (typeof P !== "string") {
@@ -121,5 +133,5 @@ module.exports = exports = {
   namedGet,
   namedSetNew,
   namedSetExisting,
-  namedDelete
+  namedDelete,
 };

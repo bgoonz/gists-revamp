@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = _wrapRegExp;
 
@@ -39,9 +39,13 @@ function _wrapRegExp() {
     if (typeof substitution === "string") {
       var groups = _groups.get(this);
 
-      return _super[Symbol.replace].call(this, str, substitution.replace(/\$<([^>]+)>/g, function (_, name) {
-        return "$" + groups[name];
-      }));
+      return _super[Symbol.replace].call(
+        this,
+        str,
+        substitution.replace(/\$<([^>]+)>/g, function (_, name) {
+          return "$" + groups[name];
+        })
+      );
     } else if (typeof substitution === "function") {
       var _this = this;
 

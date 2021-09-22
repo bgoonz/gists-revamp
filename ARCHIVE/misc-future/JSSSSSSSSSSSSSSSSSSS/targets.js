@@ -1,11 +1,11 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.browserNameMap = exports.unreleasedLabels = void 0;
 const unreleasedLabels = {
-  safari: "tp"
+  safari: "tp",
 };
 exports.unreleasedLabels = unreleasedLabels;
 const browserNameMap = {
@@ -22,6 +22,6 @@ const browserNameMap = {
   op_mob: "opera",
   opera: "opera",
   safari: "safari",
-  samsung: "samsung"
+  samsung: "samsung",
 };
 exports.browserNameMap = browserNameMap;

@@ -5,7 +5,9 @@
 const DOMException = require("domexception");
 const { parseURL, serializeURL, serializeURLOrigin } = require("whatwg-url");
 
-const { setupForSimpleEventAccessors } = require("../helpers/create-event-accessor");
+const {
+  setupForSimpleEventAccessors,
+} = require("../helpers/create-event-accessor");
 
 const EventTargetImpl = require("../events/EventTarget-impl").implementation;
 
@@ -17,7 +19,7 @@ const MessageEvent = require("../generated/MessageEvent");
 
 const productions = {
   // https://tools.ietf.org/html/rfc7230#section-3.2.6
-  token: /^[!#$%&'*+\-.^_`|~\dA-Za-z]+$/
+  token: /^[!#$%&'*+\-.^_`|~\dA-Za-z]+$/,
 };
 
 // https://tools.ietf.org/html/rfc6455#section-4.3
@@ -49,8 +51,11 @@ class WebSocketImpl extends EventTargetImpl {
       );
     }
     if (urlRecord.fragment !== null) {
-      throw new DOMException(`The URL contains a fragment identifier ('${urlRecord.fragment}'). Fragment identifiers ` +
-                             "are not allowed in WebSocket URLs.", "SyntaxError");
+      throw new DOMException(
+        `The URL contains a fragment identifier ('${urlRecord.fragment}'). Fragment identifiers ` +
+          "are not allowed in WebSocket URLs.",
+        "SyntaxError"
+      );
     }
 
     if (typeof protocols === "string") {
@@ -59,11 +64,17 @@ class WebSocketImpl extends EventTargetImpl {
     const protocolSet = new Set();
     for (const protocol of protocols) {
       if (!verifySecWebSocketProtocol(protocol)) {
-        throw new DOMException(`The subprotocol '${protocol}' is invalid.`, "SyntaxError");
+        throw new DOMException(
+          `The subprotocol '${protocol}' is invalid.`,
+          "SyntaxError"
+        );
       }
       const lowered = protocol.toLowerCase();
       if (protocolSet.has(lowered)) {
-        throw new DOMException(`The subprotocol '${protocol}' is duplicated.`, "SyntaxError");
+        throw new DOMException(
+          `The subprotocol '${protocol}' is duplicated.`,
+          "SyntaxError"
+        );
       }
       protocolSet.add(lowered);
     }
@@ -79,24 +90,36 @@ class WebSocketImpl extends EventTargetImpl {
     this._ws.onerror = () => {
       this._dispatch(Event.createImpl(["error"], { isTrusted: true }));
     };
-    this._ws.onclose = event => {
-      this._dispatch(CloseEvent.createImpl([
-        "close", {
-          wasClean: event.wasClean,
-          code: event.code,
-          reason: event.reason
-        }
-      ], { isTrusted: true }));
+    this._ws.onclose = (event) => {
+      this._dispatch(
+        CloseEvent.createImpl(
+          [
+            "close",
+            {
+              wasClean: event.wasClean,
+              code: event.code,
+              reason: event.reason,
+            },
+          ],
+          { isTrusted: true }
+        )
+      );
     };
-    this._ws.onmessage = event => {
-      this._dispatch(MessageEvent.createImpl([
-        "message", {
-          data: event.data,
-          origin: serializeURLOrigin(this._urlRecord)
-        }
-      ], {
-        isTrusted: true
-      }));
+    this._ws.onmessage = (event) => {
+      this._dispatch(
+        MessageEvent.createImpl(
+          [
+            "message",
+            {
+              data: event.data,
+              origin: serializeURLOrigin(this._urlRecord),
+            },
+          ],
+          {
+            isTrusted: true,
+          }
+        )
+      );
     };
 
     let openSocketsForWindow = openSockets.get(window._globalProxy);
@@ -139,14 +162,21 @@ class WebSocketImpl extends EventTargetImpl {
   }
 
   close(code = undefined, reason = undefined) {
-    if (code !== undefined && code !== 1000 && !(code >= 3000 && code <= 4999)) {
+    if (
+      code !== undefined &&
+      code !== 1000 &&
+      !(code >= 3000 && code <= 4999)
+    ) {
       throw new DOMException(
         `The code must be either 1000, or between 3000 and 4999. ${code} is neither.`,
         "InvalidAccessError"
       );
     }
     if (reason !== undefined && Buffer.byteLength(reason, "utf8") > 123) {
-      throw new DOMException("The message must not be greater than 123 bytes.", "SyntaxError");
+      throw new DOMException(
+        "The message must not be greater than 123 bytes.",
+        "SyntaxError"
+      );
     }
     return this._ws.close(code, reason);
   }
@@ -167,6 +197,11 @@ class WebSocketImpl extends EventTargetImpl {
   }
 }
 
-setupForSimpleEventAccessors(WebSocketImpl.prototype, ["open", "message", "error", "close"]);
+setupForSimpleEventAccessors(WebSocketImpl.prototype, [
+  "open",
+  "message",
+  "error",
+  "close",
+]);
 
 exports.implementation = WebSocketImpl;

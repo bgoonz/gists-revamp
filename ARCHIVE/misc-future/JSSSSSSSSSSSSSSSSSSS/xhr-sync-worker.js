@@ -10,7 +10,7 @@ const xhr = new dom.window.XMLHttpRequest();
 
 const chunks = [];
 
-process.stdin.on("data", chunk => {
+process.stdin.on("data", (chunk) => {
   chunks.push(chunk);
 });
 
@@ -30,14 +30,19 @@ process.stdin.on("end", () => {
   const properties = xhr[xhrSymbols.properties];
   properties.readyState = xhr.OPENED;
   try {
-    xhr.addEventListener("loadend", () => {
-      if (properties.error) {
-        properties.error = properties.error.stack || util.inspect(properties.error);
-      }
-      process.stdout.write(JSON.stringify({ properties }), () => {
-        process.exit(0);
-      });
-    }, false);
+    xhr.addEventListener(
+      "loadend",
+      () => {
+        if (properties.error) {
+          properties.error =
+            properties.error.stack || util.inspect(properties.error);
+        }
+        process.stdout.write(JSON.stringify({ properties }), () => {
+          process.exit(0);
+        });
+      },
+      false
+    );
     xhr.send(flag.body);
   } catch (error) {
     properties.error += error.stack || util.inspect(error);

@@ -14,7 +14,11 @@ module.exports = {
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
         if (!utils.isObject(value)) {
-          throw new TypeError(context + " has member changedTouches that" + " is not an iterable object.");
+          throw new TypeError(
+            context +
+              " has member changedTouches that" +
+              " is not an iterable object."
+          );
         } else {
           const V = [];
           const tmp = value;
@@ -37,7 +41,11 @@ module.exports = {
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
         if (!utils.isObject(value)) {
-          throw new TypeError(context + " has member targetTouches that" + " is not an iterable object.");
+          throw new TypeError(
+            context +
+              " has member targetTouches that" +
+              " is not an iterable object."
+          );
         } else {
           const V = [];
           const tmp = value;
@@ -60,7 +68,9 @@ module.exports = {
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
         if (!utils.isObject(value)) {
-          throw new TypeError(context + " has member touches that" + " is not an iterable object.");
+          throw new TypeError(
+            context + " has member touches that" + " is not an iterable object."
+          );
         } else {
           const V = [];
           const tmp = value;
@@ -80,12 +90,16 @@ module.exports = {
   },
 
   convert(obj, { context = "The provided value" } = {}) {
-    if (obj !== undefined && typeof obj !== "object" && typeof obj !== "function") {
+    if (
+      obj !== undefined &&
+      typeof obj !== "object" &&
+      typeof obj !== "function"
+    ) {
       throw new TypeError(`${context} is not an object.`);
     }
 
     const ret = Object.create(null);
     module.exports.convertInherit(obj, ret, { context });
     return ret;
-  }
+  },
 };

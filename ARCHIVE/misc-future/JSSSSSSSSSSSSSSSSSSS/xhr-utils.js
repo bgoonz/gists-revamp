@@ -12,12 +12,17 @@ const xhrSymbols = require("./xmlhttprequest-symbols");
 
 const headerListSeparatorRegexp = /,[ \t]*/;
 const simpleMethods = new Set(["GET", "HEAD", "POST"]);
-const simpleHeaders = new Set(["accept", "accept-language", "content-language", "content-type"]);
+const simpleHeaders = new Set([
+  "accept",
+  "accept-language",
+  "content-language",
+  "content-type",
+]);
 const preflightHeaders = new Set([
   "access-control-expose-headers",
   "access-control-allow-headers",
   "access-control-allow-credentials",
-  "access-control-allow-origin"
+  "access-control-allow-origin",
 ]);
 
 function wrapCookieJarForRequest(cookieJar) {
@@ -54,7 +59,9 @@ function updateRequestHeader(requestHeaders, header, newValue) {
 function mergeHeaders(lhs, rhs) {
   const rhsParts = rhs.split(",");
   const lhsParts = lhs.split(",");
-  return rhsParts.concat(lhsParts.filter(p => rhsParts.indexOf(p) < 0)).join(",");
+  return rhsParts
+    .concat(lhsParts.filter((p) => rhsParts.indexOf(p) < 0))
+    .join(",");
 }
 
 function dispatchError(xhr) {
@@ -92,8 +99,10 @@ function validCORSPreflightHeaders(xhr, response, flag, properties) {
     return false;
   }
   const acahStr = response.headers["access-control-allow-headers"];
-  const acah = new Set(acahStr ? acahStr.trim().toLowerCase().split(headerListSeparatorRegexp) : []);
-  const forbiddenHeaders = Object.keys(flag.requestHeaders).filter(header => {
+  const acah = new Set(
+    acahStr ? acahStr.trim().toLowerCase().split(headerListSeparatorRegexp) : []
+  );
+  const forbiddenHeaders = Object.keys(flag.requestHeaders).filter((header) => {
     const lcHeader = header.toLowerCase();
     return !simpleHeaders.has(lcHeader) && !acah.has(lcHeader);
   });
@@ -124,18 +133,41 @@ function requestErrorSteps(xhr, event, exception) {
     properties.uploadComplete = true;
 
     if (properties.uploadListener) {
-      xhr.upload.dispatchEvent(ProgressEvent.create([event, { loaded: 0, total: 0, lengthComputable: false }]));
-      xhr.upload.dispatchEvent(ProgressEvent.create(["loadend", { loaded: 0, total: 0, lengthComputable: false }]));
+      xhr.upload.dispatchEvent(
+        ProgressEvent.create([
+          event,
+          { loaded: 0, total: 0, lengthComputable: false },
+        ])
+      );
+      xhr.upload.dispatchEvent(
+        ProgressEvent.create([
+          "loadend",
+          { loaded: 0, total: 0, lengthComputable: false },
+        ])
+      );
     }
   }
 
-  xhr.dispatchEvent(ProgressEvent.create([event, { loaded: 0, total: 0, lengthComputable: false }]));
-  xhr.dispatchEvent(ProgressEvent.create(["loadend", { loaded: 0, total: 0, lengthComputable: false }]));
+  xhr.dispatchEvent(
+    ProgressEvent.create([
+      event,
+      { loaded: 0, total: 0, lengthComputable: false },
+    ])
+  );
+  xhr.dispatchEvent(
+    ProgressEvent.create([
+      "loadend",
+      { loaded: 0, total: 0, lengthComputable: false },
+    ])
+  );
 }
 
 function setResponseToNetworkError(xhr) {
   const properties = xhr[xhrSymbols.properties];
-  properties.responseCache = properties.responseTextCache = properties.responseXMLCache = null;
+  properties.responseCache =
+    properties.responseTextCache =
+    properties.responseXMLCache =
+      null;
   properties.responseHeaders = {};
   properties.status = 0;
   properties.statusText = "";
@@ -167,7 +199,7 @@ function createClient(xhr) {
 
     const readableStream = fs.createReadStream(filePath, { encoding: null });
 
-    readableStream.on("data", chunk => {
+    readableStream.on("data", (chunk) => {
       response.emit("data", chunk);
       client.emit("data", chunk);
     });
@@ -177,7 +209,7 @@ function createClient(xhr) {
       client.emit("end");
     });
 
-    readableStream.on("error", err => {
+    readableStream.on("error", (err) => {
       response.emit("error", err);
       client.emit("error", err);
     });
@@ -192,7 +224,7 @@ function createClient(xhr) {
         abort() {
           properties.abortError = true;
           xhr.abort();
-        }
+        },
       };
       requestManager.add(req);
       const rmReq = requestManager.remove.bind(requestManager, req);
@@ -277,13 +309,13 @@ function createClient(xhr) {
     encoding: null,
     pool: flag.pool,
     agentOptions: flag.agentOptions,
-    strictSSL: flag.strictSSL
+    strictSSL: flag.strictSSL,
   };
   if (flag.auth) {
     options.auth = {
       user: flag.auth.user || "",
       pass: flag.auth.pass || "",
-      sendImmediately: false
+      sendImmediately: false,
     };
   }
   if (flag.cookieJar && (!crossOrigin || flag.withCredentials)) {
@@ -295,16 +327,20 @@ function createClient(xhr) {
   }
 
   const { body } = flag;
-  const hasBody = body !== undefined &&
-                  body !== null &&
-                  body !== "" &&
-                  !(ucMethod === "HEAD" || ucMethod === "GET");
+  const hasBody =
+    body !== undefined &&
+    body !== null &&
+    body !== "" &&
+    !(ucMethod === "HEAD" || ucMethod === "GET");
 
   if (hasBody && !flag.formData) {
     options.body = body;
   }
 
-  if (hasBody && getRequestHeader(flag.requestHeaders, "content-type") === null) {
+  if (
+    hasBody &&
+    getRequestHeader(flag.requestHeaders, "content-type") === null
+  ) {
     requestHeaders["Content-Type"] = "text/plain;charset=UTF-8";
   }
 
@@ -329,10 +365,16 @@ function createClient(xhr) {
 
   let client;
 
-  const nonSimpleHeaders = Object.keys(flag.requestHeaders)
-    .filter(header => !simpleHeaders.has(header.toLowerCase()));
+  const nonSimpleHeaders = Object.keys(flag.requestHeaders).filter(
+    (header) => !simpleHeaders.has(header.toLowerCase())
+  );
 
-  if (crossOrigin && (!simpleMethods.has(ucMethod) || nonSimpleHeaders.length > 0 || properties.uploadListener)) {
+  if (
+    crossOrigin &&
+    (!simpleMethods.has(ucMethod) ||
+      nonSimpleHeaders.length > 0 ||
+      properties.uploadListener)
+  ) {
     client = new EventEmitter();
 
     const preflightRequestHeaders = [];
@@ -346,7 +388,8 @@ function createClient(xhr) {
 
     preflightRequestHeaders["Access-Control-Request-Method"] = flag.method;
     if (nonSimpleHeaders.length > 0) {
-      preflightRequestHeaders["Access-Control-Request-Headers"] = nonSimpleHeaders.join(", ");
+      preflightRequestHeaders["Access-Control-Request-Headers"] =
+        nonSimpleHeaders.join(", ");
     }
 
     preflightRequestHeaders["User-Agent"] = flag.userAgent;
@@ -361,7 +404,7 @@ function createClient(xhr) {
       encoding: null,
       pool: flag.pool,
       agentOptions: flag.agentOptions,
-      strictSSL: flag.strictSSL
+      strictSSL: flag.strictSSL,
     };
 
     if (flag.proxy) {
@@ -370,10 +413,16 @@ function createClient(xhr) {
 
     const preflightClient = request(preflightOptions);
 
-    preflightClient.on("response", resp => {
+    preflightClient.on("response", (resp) => {
       // don't send the real request if the preflight request returned an error
       if (resp.statusCode < 200 || resp.statusCode > 299) {
-        client.emit("error", new Error("Response for preflight has invalid HTTP status code " + resp.statusCode));
+        client.emit(
+          "error",
+          new Error(
+            "Response for preflight has invalid HTTP status code " +
+              resp.statusCode
+          )
+        );
         return;
       }
       // don't send the real request if we aren't allowed to use the headers
@@ -382,20 +431,23 @@ function createClient(xhr) {
         return;
       }
       const realClient = doRequest();
-      realClient.on("response", res => {
+      realClient.on("response", (res) => {
         for (const header in resp.headers) {
           if (preflightHeaders.has(header)) {
-            res.headers[header] = Object.prototype.hasOwnProperty.call(res.headers, header) ?
-                                  mergeHeaders(res.headers[header], resp.headers[header]) :
-                                  resp.headers[header];
+            res.headers[header] = Object.prototype.hasOwnProperty.call(
+              res.headers,
+              header
+            )
+              ? mergeHeaders(res.headers[header], resp.headers[header])
+              : resp.headers[header];
           }
         }
         client.emit("response", res);
       });
-      realClient.on("data", chunk => client.emit("data", chunk));
+      realClient.on("data", (chunk) => client.emit("data", chunk));
       realClient.on("end", () => client.emit("end"));
       realClient.on("abort", () => client.emit("abort"));
-      realClient.on("request", req => {
+      realClient.on("request", (req) => {
         client.headers = realClient.headers;
         client.emit("request", req);
       });
@@ -403,13 +455,13 @@ function createClient(xhr) {
         client.response = realClient.response;
         client.emit("redirect");
       });
-      realClient.on("error", err => client.emit("error", err));
+      realClient.on("error", (err) => client.emit("error", err));
       client.abort = () => {
         realClient.abort();
       };
     });
 
-    preflightClient.on("error", err => client.emit("error", err));
+    preflightClient.on("error", (err) => client.emit("error", err));
 
     client.abort = () => {
       preflightClient.abort();
@@ -423,7 +475,7 @@ function createClient(xhr) {
       abort() {
         properties.abortError = true;
         xhr.abort();
-      }
+      },
     };
     requestManager.add(req);
     const rmReq = requestManager.remove.bind(requestManager, req);

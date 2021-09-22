@@ -38,7 +38,11 @@ function percentDecode(input) {
   const output = Buffer.alloc(input.byteLength);
   let ptr = 0;
   for (let i = 0; i < input.length; ++i) {
-    if (input[i] !== 37 || !isASCIIHex(input[i + 1]) || !isASCIIHex(input[i + 2])) {
+    if (
+      input[i] !== 37 ||
+      !isASCIIHex(input[i + 1]) ||
+      !isASCIIHex(input[i + 2])
+    ) {
       output[ptr++] = input[i];
     } else {
       output[ptr++] = parseInt(input.slice(i + 1, i + 3).toString(), 16);
@@ -71,7 +75,10 @@ function parseUrlencoded(input) {
     name = replaceByteInByteSequence(Buffer.from(name), 43, 32);
     value = replaceByteInByteSequence(Buffer.from(value), 43, 32);
 
-    output.push([percentDecode(name).toString(), percentDecode(value).toString()]);
+    output.push([
+      percentDecode(name).toString(),
+      percentDecode(value).toString(),
+    ]);
   }
   return output;
 }
@@ -81,13 +88,15 @@ function serializeUrlencodedByte(input) {
   for (const byte of input) {
     if (byte === 32) {
       output += "+";
-    } else if (byte === 42 ||
-               byte === 45 ||
-               byte === 46 ||
-               (byte >= 48 && byte <= 57) ||
-               (byte >= 65 && byte <= 90) ||
-               byte === 95 ||
-               (byte >= 97 && byte <= 122)) {
+    } else if (
+      byte === 42 ||
+      byte === 45 ||
+      byte === 46 ||
+      (byte >= 48 && byte <= 57) ||
+      (byte >= 65 && byte <= 90) ||
+      byte === 95 ||
+      (byte >= 97 && byte <= 122)
+    ) {
       output += String.fromCodePoint(byte);
     } else {
       output += percentEncode(byte);
@@ -134,5 +143,5 @@ module.exports = {
   },
 
   // application/x-www-form-urlencoded serializer
-  serializeUrlencoded
+  serializeUrlencoded,
 };

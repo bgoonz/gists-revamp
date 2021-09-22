@@ -8,12 +8,16 @@ const impl = utils.implSymbol;
 function URL(url) {
   if (!new.target) {
     throw new TypeError(
-      "Failed to construct 'URL'. Please use the 'new' operator; this constructor " + "cannot be called as a function."
+      "Failed to construct 'URL'. Please use the 'new' operator; this constructor " +
+        "cannot be called as a function."
     );
   }
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'URL': 1 " + "argument required, but only " + arguments.length + " present."
+      "Failed to construct 'URL': 1 " +
+        "argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
 
@@ -22,10 +26,14 @@ function URL(url) {
     args[i] = arguments[i];
   }
 
-  args[0] = conversions["USVString"](args[0], { context: "Failed to construct 'URL': parameter 1" });
+  args[0] = conversions["USVString"](args[0], {
+    context: "Failed to construct 'URL': parameter 1",
+  });
 
   if (args[1] !== undefined) {
-    args[1] = conversions["USVString"](args[1], { context: "Failed to construct 'URL': parameter 2" });
+    args[1] = conversions["USVString"](args[1], {
+      context: "Failed to construct 'URL': parameter 2",
+    });
   }
 
   iface.setup(this, args);
@@ -35,7 +43,7 @@ Object.defineProperty(URL, "prototype", {
   value: URL.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 URL.prototype.toJSON = function toJSON() {
@@ -60,13 +68,15 @@ Object.defineProperty(URL.prototype, "href", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'href' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context: "Failed to set the 'href' property on 'URL': The provided value",
+    });
 
     this[impl]["href"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 URL.prototype.toString = function toString() {
@@ -86,7 +96,7 @@ Object.defineProperty(URL.prototype, "origin", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "protocol", {
@@ -103,13 +113,16 @@ Object.defineProperty(URL.prototype, "protocol", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'protocol' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context:
+        "Failed to set the 'protocol' property on 'URL': The provided value",
+    });
 
     this[impl]["protocol"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "username", {
@@ -126,13 +139,16 @@ Object.defineProperty(URL.prototype, "username", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'username' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context:
+        "Failed to set the 'username' property on 'URL': The provided value",
+    });
 
     this[impl]["username"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "password", {
@@ -149,13 +165,16 @@ Object.defineProperty(URL.prototype, "password", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'password' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context:
+        "Failed to set the 'password' property on 'URL': The provided value",
+    });
 
     this[impl]["password"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "host", {
@@ -172,13 +191,15 @@ Object.defineProperty(URL.prototype, "host", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'host' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context: "Failed to set the 'host' property on 'URL': The provided value",
+    });
 
     this[impl]["host"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "hostname", {
@@ -195,13 +216,16 @@ Object.defineProperty(URL.prototype, "hostname", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'hostname' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context:
+        "Failed to set the 'hostname' property on 'URL': The provided value",
+    });
 
     this[impl]["hostname"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "port", {
@@ -218,13 +242,15 @@ Object.defineProperty(URL.prototype, "port", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'port' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context: "Failed to set the 'port' property on 'URL': The provided value",
+    });
 
     this[impl]["port"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "pathname", {
@@ -241,13 +267,16 @@ Object.defineProperty(URL.prototype, "pathname", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'pathname' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context:
+        "Failed to set the 'pathname' property on 'URL': The provided value",
+    });
 
     this[impl]["pathname"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "search", {
@@ -264,13 +293,16 @@ Object.defineProperty(URL.prototype, "search", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'search' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context:
+        "Failed to set the 'search' property on 'URL': The provided value",
+    });
 
     this[impl]["search"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "searchParams", {
@@ -285,7 +317,7 @@ Object.defineProperty(URL.prototype, "searchParams", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, "hash", {
@@ -302,20 +334,22 @@ Object.defineProperty(URL.prototype, "hash", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["USVString"](V, { context: "Failed to set the 'hash' property on 'URL': The provided value" });
+    V = conversions["USVString"](V, {
+      context: "Failed to set the 'hash' property on 'URL': The provided value",
+    });
 
     this[impl]["hash"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(URL.prototype, Symbol.toStringTag, {
   value: "URL",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -376,7 +410,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -388,8 +422,8 @@ const iface = {
   interface: URL,
   expose: {
     Window: { URL },
-    Worker: { URL }
-  }
+    Worker: { URL },
+  },
 }; // iface
 module.exports = iface;
 

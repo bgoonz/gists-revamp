@@ -60,7 +60,7 @@ for (const type in t.NODE_FIELDS) {
   const struct = ['type: "' + type + '";'];
   const args = [];
 
-  fieldNames.forEach(fieldName => {
+  fieldNames.forEach((fieldName) => {
     const field = fields[fieldName];
     // Future / annoying TODO:
     // MemberExpression.property, ObjectProperty.key and ObjectMethod.key need special cases; either:
@@ -325,7 +325,7 @@ export type ${type} = ${t.DEPRECATED_KEYS[type]};\n
 for (const type in t.FLIPPED_ALIAS_KEYS) {
   const types = t.FLIPPED_ALIAS_KEYS[type];
   code += `export type ${type} = ${types
-    .map(type => `${type}`)
+    .map((type) => `${type}`)
     .join(" | ")};\n`;
 }
 code += "\n";
@@ -346,7 +346,7 @@ process.stdout.write(code);
 
 function areAllRemainingFieldsNullable(fieldName, fieldNames, fields) {
   const index = fieldNames.indexOf(fieldName);
-  return fieldNames.slice(index).every(_ => isNullable(fields[_]));
+  return fieldNames.slice(index).every((_) => isNullable(fields[_]));
 }
 
 function hasDefault(field) {

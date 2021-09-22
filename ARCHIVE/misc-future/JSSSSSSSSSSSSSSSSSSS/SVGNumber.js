@@ -13,7 +13,7 @@ Object.defineProperty(SVGNumber, "prototype", {
   value: SVGNumber.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(SVGNumber.prototype, "value", {
@@ -30,20 +30,23 @@ Object.defineProperty(SVGNumber.prototype, "value", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["float"](V, { context: "Failed to set the 'value' property on 'SVGNumber': The provided value" });
+    V = conversions["float"](V, {
+      context:
+        "Failed to set the 'value' property on 'SVGNumber': The provided value",
+    });
 
     this[impl]["value"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGNumber.prototype, Symbol.toStringTag, {
   value: "SVGNumber",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -107,7 +110,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -118,8 +121,8 @@ const iface = {
   },
   interface: SVGNumber,
   expose: {
-    Window: { SVGNumber }
-  }
+    Window: { SVGNumber },
+  },
 }; // iface
 module.exports = iface;
 

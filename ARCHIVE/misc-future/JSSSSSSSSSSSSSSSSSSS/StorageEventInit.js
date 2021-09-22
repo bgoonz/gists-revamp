@@ -17,7 +17,9 @@ module.exports = {
         if (value === null || value === undefined) {
           value = null;
         } else {
-          value = conversions["DOMString"](value, { context: context + " has member key that" });
+          value = conversions["DOMString"](value, {
+            context: context + " has member key that",
+          });
         }
         ret[key] = value;
       } else {
@@ -32,7 +34,9 @@ module.exports = {
         if (value === null || value === undefined) {
           value = null;
         } else {
-          value = conversions["DOMString"](value, { context: context + " has member newValue that" });
+          value = conversions["DOMString"](value, {
+            context: context + " has member newValue that",
+          });
         }
         ret[key] = value;
       } else {
@@ -47,7 +51,9 @@ module.exports = {
         if (value === null || value === undefined) {
           value = null;
         } else {
-          value = conversions["DOMString"](value, { context: context + " has member oldValue that" });
+          value = conversions["DOMString"](value, {
+            context: context + " has member oldValue that",
+          });
         }
         ret[key] = value;
       } else {
@@ -62,7 +68,9 @@ module.exports = {
         if (value === null || value === undefined) {
           value = null;
         } else {
-          value = convertStorage(value, { context: context + " has member storageArea that" });
+          value = convertStorage(value, {
+            context: context + " has member storageArea that",
+          });
         }
         ret[key] = value;
       } else {
@@ -74,7 +82,9 @@ module.exports = {
       const key = "url";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["USVString"](value, { context: context + " has member url that" });
+        value = conversions["USVString"](value, {
+          context: context + " has member url that",
+        });
 
         ret[key] = value;
       } else {
@@ -84,12 +94,16 @@ module.exports = {
   },
 
   convert(obj, { context = "The provided value" } = {}) {
-    if (obj !== undefined && typeof obj !== "object" && typeof obj !== "function") {
+    if (
+      obj !== undefined &&
+      typeof obj !== "object" &&
+      typeof obj !== "function"
+    ) {
       throw new TypeError(`${context} is not an object.`);
     }
 
     const ret = Object.create(null);
     module.exports.convertInherit(obj, ret, { context });
     return ret;
-  }
+  },
 };

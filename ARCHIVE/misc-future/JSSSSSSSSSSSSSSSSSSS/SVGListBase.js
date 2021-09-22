@@ -8,14 +8,11 @@ const { attach, detach } = require("../helpers/svg/basic-types");
 
 // Child classes must implement _reserialize()
 class List {
-  _initList({
-    element,
-    attribute,
-    readOnly = false
-  }) {
+  _initList({ element, attribute, readOnly = false }) {
     this._element = element;
     this._attribute = attribute;
-    this._attributeRegistryEntry = element.constructor.attributeRegistry.get(attribute);
+    this._attributeRegistryEntry =
+      element.constructor.attributeRegistry.get(attribute);
     this._readOnly = readOnly;
     this._list = [];
     this._version = -1;
@@ -31,10 +28,17 @@ class List {
     }
     let value = [];
     if (this._element.hasAttribute(this._attribute)) {
-      value = this._attributeRegistryEntry.getValue(this._element.getAttribute(this._attribute));
+      value = this._attributeRegistryEntry.getValue(
+        this._element.getAttribute(this._attribute)
+      );
     }
-    if (value.length === 0 && this._attributeRegistryEntry.initialValue !== undefined) {
-      value = this._attributeRegistryEntry.getValue(this._attributeRegistryEntry.initialValue);
+    if (
+      value.length === 0 &&
+      this._attributeRegistryEntry.initialValue !== undefined
+    ) {
+      value = this._attributeRegistryEntry.getValue(
+        this._attributeRegistryEntry.initialValue
+      );
     }
     // TODO: support non-DOMString lists.
     this._list = value;
@@ -43,7 +47,10 @@ class List {
 
   _reserialize() {
     const elements = this._list;
-    this._element.setAttribute(this._attribute, this._attributeRegistryEntry.serialize(elements));
+    this._element.setAttribute(
+      this._attribute,
+      this._attributeRegistryEntry.serialize(elements)
+    );
     // Prevent ping-ponging back and forth between _reserialize() and _synchronize().
     this._version = this._element._version;
   }
@@ -71,7 +78,10 @@ class List {
   clear() {
     this._synchronize();
     if (this._readOnly) {
-      throw new DOMException("Attempting to modify a read-only list", "NoModificationAllowedError");
+      throw new DOMException(
+        "Attempting to modify a read-only list",
+        "NoModificationAllowedError"
+      );
     }
     for (const item of this._list) {
       detach(item);
@@ -83,7 +93,10 @@ class List {
   initialize(newItem) {
     this._synchronize();
     if (this._readOnly) {
-      throw new DOMException("Attempting to modify a read-only list", "NoModificationAllowedError");
+      throw new DOMException(
+        "Attempting to modify a read-only list",
+        "NoModificationAllowedError"
+      );
     }
     for (const item of this._list) {
       detach(item);
@@ -109,7 +122,10 @@ class List {
   insertItemBefore(newItem, index) {
     this._synchronize();
     if (this._readOnly) {
-      throw new DOMException("Attempting to modify a read-only list", "NoModificationAllowedError");
+      throw new DOMException(
+        "Attempting to modify a read-only list",
+        "NoModificationAllowedError"
+      );
     }
     // TODO: clone non-DOMString list elements.
     if (index > this._list.length) {
@@ -124,7 +140,10 @@ class List {
   replaceItem(newItem, index) {
     this._synchronize();
     if (this._readOnly) {
-      throw new DOMException("Attempting to modify a read-only list", "NoModificationAllowedError");
+      throw new DOMException(
+        "Attempting to modify a read-only list",
+        "NoModificationAllowedError"
+      );
     }
     if (index >= this._list.length) {
       throw new DOMException(
@@ -143,7 +162,10 @@ class List {
   removeItem(index) {
     this._synchronize();
     if (this._readOnly) {
-      throw new DOMException("Attempting to modify a read-only list", "NoModificationAllowedError");
+      throw new DOMException(
+        "Attempting to modify a read-only list",
+        "NoModificationAllowedError"
+      );
     }
     if (index >= this._list.length) {
       throw new DOMException(

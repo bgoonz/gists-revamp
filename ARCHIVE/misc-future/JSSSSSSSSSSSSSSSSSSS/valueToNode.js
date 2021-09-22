@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -18,7 +18,11 @@ function isRegExp(value) {
 }
 
 function isPlainObject(value) {
-  if (typeof value !== "object" || value === null || Object.prototype.toString.call(value) !== "[object Object]") {
+  if (
+    typeof value !== "object" ||
+    value === null ||
+    Object.prototype.toString.call(value) !== "[object Object]"
+  ) {
     return false;
   }
 
@@ -57,7 +61,11 @@ function valueToNode(value) {
         numerator = (0, _generated.numericLiteral)(1);
       }
 
-      result = (0, _generated.binaryExpression)("/", numerator, (0, _generated.numericLiteral)(0));
+      result = (0, _generated.binaryExpression)(
+        "/",
+        numerator,
+        (0, _generated.numericLiteral)(0)
+      );
     }
 
     if (value < 0 || Object.is(value, -0)) {
@@ -89,7 +97,9 @@ function valueToNode(value) {
         nodeKey = (0, _generated.stringLiteral)(key);
       }
 
-      props.push((0, _generated.objectProperty)(nodeKey, valueToNode(value[key])));
+      props.push(
+        (0, _generated.objectProperty)(nodeKey, valueToNode(value[key]))
+      );
     }
 
     return (0, _generated.objectExpression)(props);

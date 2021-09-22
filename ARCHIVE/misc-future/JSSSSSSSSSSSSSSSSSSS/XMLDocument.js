@@ -17,14 +17,14 @@ Object.defineProperty(XMLDocument, "prototype", {
   value: XMLDocument.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(XMLDocument.prototype, Symbol.toStringTag, {
   value: "XMLDocument",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +90,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -101,8 +101,8 @@ const iface = {
   },
   interface: XMLDocument,
   expose: {
-    Window: { XMLDocument }
-  }
+    Window: { XMLDocument },
+  },
 }; // iface
 module.exports = iface;
 

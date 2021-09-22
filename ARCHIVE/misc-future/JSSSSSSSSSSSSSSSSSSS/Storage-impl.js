@@ -6,7 +6,10 @@ const idlUtils = require("../generated/utils");
 
 // https://html.spec.whatwg.org/multipage/webstorage.html#the-storage-interface
 class StorageImpl {
-  constructor(args, { associatedWindow, storageArea, url, type, storageQuota }) {
+  constructor(
+    args,
+    { associatedWindow, storageArea, url, type, storageQuota }
+  ) {
     this._associatedWindow = associatedWindow;
     this._items = storageArea;
     this._url = url;
@@ -16,19 +19,23 @@ class StorageImpl {
 
   _dispatchStorageEvent(key, oldValue, newValue) {
     return this._associatedWindow._currentOriginData.windowsInSameOrigin
-      .filter(target => target !== this._associatedWindow)
-      .forEach(target => target.dispatchEvent(StorageEvent.create([
-        "storage",
-        {
-          bubbles: false,
-          cancelable: false,
-          key,
-          oldValue,
-          newValue,
-          url: this._url,
-          storageArea: target["_" + this._type]
-        }
-      ])));
+      .filter((target) => target !== this._associatedWindow)
+      .forEach((target) =>
+        target.dispatchEvent(
+          StorageEvent.create([
+            "storage",
+            {
+              bubbles: false,
+              cancelable: false,
+              key,
+              oldValue,
+              newValue,
+              url: this._url,
+              storageArea: target["_" + this._type],
+            },
+          ])
+        )
+      );
   }
 
   get length() {
@@ -65,7 +72,10 @@ class StorageImpl {
       }
     }
     if (itemsTotalLength > this._quota) {
-      throw new DOMException(`The ${this._quota}-code unit storage quota has been exceeded.`, "QuotaExceededError");
+      throw new DOMException(
+        `The ${this._quota}-code unit storage quota has been exceeded.`,
+        "QuotaExceededError"
+      );
     }
 
     setTimeout(this._dispatchStorageEvent.bind(this), 0, key, oldValue, value);
@@ -75,7 +85,13 @@ class StorageImpl {
 
   removeItem(key) {
     if (this._items.has(key)) {
-      setTimeout(this._dispatchStorageEvent.bind(this), 0, key, this._items.get(key), null);
+      setTimeout(
+        this._dispatchStorageEvent.bind(this),
+        0,
+        key,
+        this._items.get(key),
+        null
+      );
 
       this._items.delete(key);
     }
@@ -95,5 +111,5 @@ class StorageImpl {
 }
 
 module.exports = {
-  implementation: StorageImpl
+  implementation: StorageImpl,
 };

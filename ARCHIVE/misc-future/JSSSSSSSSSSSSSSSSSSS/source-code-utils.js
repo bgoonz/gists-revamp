@@ -10,8 +10,8 @@
 //------------------------------------------------------------------------------
 
 const CLIEngine = require("../cli-engine"),
-    globUtils = require("./glob-utils"),
-    baseDefaultOptions = require("../../conf/default-cli-options");
+  globUtils = require("./glob-utils"),
+  baseDefaultOptions = require("../../conf/default-cli-options");
 
 const debug = require("debug")("eslint:source-code-utils");
 
@@ -27,25 +27,29 @@ const debug = require("debug")("eslint:source-code-utils");
  *                                and fatal error message.
  */
 function getSourceCodeOfFile(filename, options) {
-    debug("getting sourceCode of", filename);
-    const opts = Object.assign({}, options, { rules: {} });
-    const cli = new CLIEngine(opts);
-    const results = cli.executeOnFiles([filename]);
+  debug("getting sourceCode of", filename);
+  const opts = Object.assign({}, options, { rules: {} });
+  const cli = new CLIEngine(opts);
+  const results = cli.executeOnFiles([filename]);
 
-    if (results && results.results[0] && results.results[0].messages[0] && results.results[0].messages[0].fatal) {
-        const msg = results.results[0].messages[0];
+  if (
+    results &&
+    results.results[0] &&
+    results.results[0].messages[0] &&
+    results.results[0].messages[0].fatal
+  ) {
+    const msg = results.results[0].messages[0];
 
-        throw new Error(`(${filename}:${msg.line}:${msg.column}) ${msg.message}`);
-    }
-    const sourceCode = cli.linter.getSourceCode();
+    throw new Error(`(${filename}:${msg.line}:${msg.column}) ${msg.message}`);
+  }
+  const sourceCode = cli.linter.getSourceCode();
 
-    return sourceCode;
+  return sourceCode;
 }
 
 //------------------------------------------------------------------------------
 // Public Interface
 //------------------------------------------------------------------------------
-
 
 /**
  * This callback is used to measure execution status in a progress bar
@@ -61,45 +65,48 @@ function getSourceCodeOfFile(filename, options) {
  * @returns {Object} The SourceCode of all processed files.
  */
 function getSourceCodeOfFiles(patterns, providedOptions, providedCallback) {
-    const sourceCodes = {};
-    const globPatternsList = typeof patterns === "string" ? [patterns] : patterns;
-    let options, callback;
+  const sourceCodes = {};
+  const globPatternsList = typeof patterns === "string" ? [patterns] : patterns;
+  let options, callback;
 
-    const defaultOptions = Object.assign({}, baseDefaultOptions, { cwd: process.cwd() });
+  const defaultOptions = Object.assign({}, baseDefaultOptions, {
+    cwd: process.cwd(),
+  });
 
-    if (typeof providedOptions === "undefined") {
-        options = defaultOptions;
-        callback = null;
-    } else if (typeof providedOptions === "function") {
-        callback = providedOptions;
-        options = defaultOptions;
-    } else if (typeof providedOptions === "object") {
-        options = Object.assign({}, defaultOptions, providedOptions);
-        callback = providedCallback;
+  if (typeof providedOptions === "undefined") {
+    options = defaultOptions;
+    callback = null;
+  } else if (typeof providedOptions === "function") {
+    callback = providedOptions;
+    options = defaultOptions;
+  } else if (typeof providedOptions === "object") {
+    options = Object.assign({}, defaultOptions, providedOptions);
+    callback = providedCallback;
+  }
+  debug("constructed options:", options);
+
+  const filenames = globUtils
+    .listFilesToProcess(globPatternsList, options)
+    .filter((fileInfo) => !fileInfo.ignored)
+    .reduce((files, fileInfo) => files.concat(fileInfo.filename), []);
+
+  if (filenames.length === 0) {
+    debug(`Did not find any files matching pattern(s): ${globPatternsList}`);
+  }
+  filenames.forEach((filename) => {
+    const sourceCode = getSourceCodeOfFile(filename, options);
+
+    if (sourceCode) {
+      debug("got sourceCode of", filename);
+      sourceCodes[filename] = sourceCode;
     }
-    debug("constructed options:", options);
-
-    const filenames = globUtils.listFilesToProcess(globPatternsList, options)
-        .filter(fileInfo => !fileInfo.ignored)
-        .reduce((files, fileInfo) => files.concat(fileInfo.filename), []);
-
-    if (filenames.length === 0) {
-        debug(`Did not find any files matching pattern(s): ${globPatternsList}`);
+    if (callback) {
+      callback(filenames.length); // eslint-disable-line callback-return
     }
-    filenames.forEach(filename => {
-        const sourceCode = getSourceCodeOfFile(filename, options);
-
-        if (sourceCode) {
-            debug("got sourceCode of", filename);
-            sourceCodes[filename] = sourceCode;
-        }
-        if (callback) {
-            callback(filenames.length); // eslint-disable-line callback-return
-        }
-    });
-    return sourceCodes;
+  });
+  return sourceCodes;
 }
 
 module.exports = {
-    getSourceCodeOfFiles
+  getSourceCodeOfFiles,
 };

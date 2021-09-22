@@ -13,7 +13,7 @@ Object.defineProperty(ValidityState, "prototype", {
   value: ValidityState.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(ValidityState.prototype, "valueMissing", {
@@ -26,7 +26,7 @@ Object.defineProperty(ValidityState.prototype, "valueMissing", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "typeMismatch", {
@@ -39,7 +39,7 @@ Object.defineProperty(ValidityState.prototype, "typeMismatch", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "patternMismatch", {
@@ -52,7 +52,7 @@ Object.defineProperty(ValidityState.prototype, "patternMismatch", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "tooLong", {
@@ -65,7 +65,7 @@ Object.defineProperty(ValidityState.prototype, "tooLong", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "tooShort", {
@@ -78,7 +78,7 @@ Object.defineProperty(ValidityState.prototype, "tooShort", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "rangeUnderflow", {
@@ -91,7 +91,7 @@ Object.defineProperty(ValidityState.prototype, "rangeUnderflow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "rangeOverflow", {
@@ -104,7 +104,7 @@ Object.defineProperty(ValidityState.prototype, "rangeOverflow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "stepMismatch", {
@@ -117,7 +117,7 @@ Object.defineProperty(ValidityState.prototype, "stepMismatch", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "badInput", {
@@ -130,7 +130,7 @@ Object.defineProperty(ValidityState.prototype, "badInput", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "customError", {
@@ -143,7 +143,7 @@ Object.defineProperty(ValidityState.prototype, "customError", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, "valid", {
@@ -156,14 +156,14 @@ Object.defineProperty(ValidityState.prototype, "valid", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ValidityState.prototype, Symbol.toStringTag, {
   value: "ValidityState",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -227,7 +227,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -238,8 +238,8 @@ const iface = {
   },
   interface: ValidityState,
   expose: {
-    Window: { ValidityState }
-  }
+    Window: { ValidityState },
+  },
 }; // iface
 module.exports = iface;
 

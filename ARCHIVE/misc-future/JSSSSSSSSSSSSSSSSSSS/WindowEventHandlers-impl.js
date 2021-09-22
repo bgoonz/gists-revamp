@@ -27,14 +27,14 @@ const events = new Set([
   "focus",
   "load",
   "resize",
-  "scroll"
+  "scroll",
 ]);
 
 // This class builds on GlobalEventHandlers, which must be mixed in first.
 class WindowEventHandlersImpl {
   _proxyWindowEventsToWindow() {
     // We're a <body> or <frameset>, so we need to proxy these specific events to the Window (if it exists)
-    this._getEventHandlerTarget = event => {
+    this._getEventHandlerTarget = (event) => {
       if (events.has(event)) {
         return this.ownerDocument.defaultView || null;
       }
@@ -48,5 +48,5 @@ for (const event of events) {
 }
 
 module.exports = {
-  implementation: WindowEventHandlersImpl
+  implementation: WindowEventHandlersImpl,
 };

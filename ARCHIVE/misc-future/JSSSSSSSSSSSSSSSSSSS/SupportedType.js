@@ -5,15 +5,17 @@ const enumerationValues = new Set([
   "text/xml",
   "application/xml",
   "application/xhtml+xml",
-  "image/svg+xml"
+  "image/svg+xml",
 ]);
 module.exports = {
   enumerationValues,
   convert(value, { context = "The provided value" } = {}) {
     const string = `${value}`;
     if (!enumerationValues.has(value)) {
-      throw new TypeError(`${context} '${value}' is not a valid enumeration value for SupportedType`);
+      throw new TypeError(
+        `${context} '${value}' is not a valid enumeration value for SupportedType`
+      );
     }
     return string;
-  }
+  },
 };

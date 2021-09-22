@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -9,7 +9,9 @@ var _sliceAnsi = _interopRequireDefault(require("slice-ansi"));
 
 var _stringWidth = _interopRequireDefault(require("string-width"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * Creates an array of strings split into groups the length of size.

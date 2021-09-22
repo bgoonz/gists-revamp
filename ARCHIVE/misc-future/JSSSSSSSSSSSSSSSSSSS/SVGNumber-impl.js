@@ -35,7 +35,10 @@ class SVGNumberImpl {
 
   set value(value) {
     if (this._readOnly) {
-      throw new DOMException("Attempting to modify a read-only SVGNumber", "NoModificationAllowedError");
+      throw new DOMException(
+        "Attempting to modify a read-only SVGNumber",
+        "NoModificationAllowedError"
+      );
     }
     this._value = value;
     this._reserialize();

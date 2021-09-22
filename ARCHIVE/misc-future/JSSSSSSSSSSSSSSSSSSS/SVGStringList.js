@@ -13,14 +13,14 @@ Object.defineProperty(SVGStringList, "prototype", {
   value: SVGStringList.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(SVGStringList.prototype, Symbol.iterator, {
   writable: true,
   enumerable: false,
   configurable: true,
-  value: Array.prototype[Symbol.iterator]
+  value: Array.prototype[Symbol.iterator],
 });
 
 SVGStringList.prototype.clear = function clear() {
@@ -47,7 +47,7 @@ SVGStringList.prototype.initialize = function initialize(newItem) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'initialize' on 'SVGStringList': parameter 1"
+      context: "Failed to execute 'initialize' on 'SVGStringList': parameter 1",
     });
     args.push(curArg);
   }
@@ -61,21 +61,26 @@ SVGStringList.prototype.getItem = function getItem(index) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'getItem' on 'SVGStringList': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'getItem' on 'SVGStringList': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'getItem' on 'SVGStringList': parameter 1"
+      context: "Failed to execute 'getItem' on 'SVGStringList': parameter 1",
     });
     args.push(curArg);
   }
   return this[impl].getItem(...args);
 };
 
-SVGStringList.prototype.insertItemBefore = function insertItemBefore(newItem, index) {
+SVGStringList.prototype.insertItemBefore = function insertItemBefore(
+  newItem,
+  index
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -91,14 +96,16 @@ SVGStringList.prototype.insertItemBefore = function insertItemBefore(newItem, in
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'insertItemBefore' on 'SVGStringList': parameter 1"
+      context:
+        "Failed to execute 'insertItemBefore' on 'SVGStringList': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'insertItemBefore' on 'SVGStringList': parameter 2"
+      context:
+        "Failed to execute 'insertItemBefore' on 'SVGStringList': parameter 2",
     });
     args.push(curArg);
   }
@@ -121,14 +128,16 @@ SVGStringList.prototype.replaceItem = function replaceItem(newItem, index) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'replaceItem' on 'SVGStringList': parameter 1"
+      context:
+        "Failed to execute 'replaceItem' on 'SVGStringList': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'replaceItem' on 'SVGStringList': parameter 2"
+      context:
+        "Failed to execute 'replaceItem' on 'SVGStringList': parameter 2",
     });
     args.push(curArg);
   }
@@ -151,7 +160,7 @@ SVGStringList.prototype.removeItem = function removeItem(index) {
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'removeItem' on 'SVGStringList': parameter 1"
+      context: "Failed to execute 'removeItem' on 'SVGStringList': parameter 1",
     });
     args.push(curArg);
   }
@@ -174,7 +183,7 @@ SVGStringList.prototype.appendItem = function appendItem(newItem) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'appendItem' on 'SVGStringList': parameter 1"
+      context: "Failed to execute 'appendItem' on 'SVGStringList': parameter 1",
     });
     args.push(curArg);
   }
@@ -191,7 +200,7 @@ Object.defineProperty(SVGStringList.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGStringList.prototype, "numberOfItems", {
@@ -204,14 +213,14 @@ Object.defineProperty(SVGStringList.prototype, "numberOfItems", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGStringList.prototype, Symbol.toStringTag, {
   value: "SVGStringList",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -275,7 +284,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -344,7 +353,7 @@ const iface = {
               writable: true,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
           ignoreNamedProps = true;
@@ -363,7 +372,10 @@ const iface = {
             let indexedValue = V;
 
             indexedValue = conversions["DOMString"](indexedValue, {
-              context: "Failed to set the " + index + " property on 'SVGStringList': The provided value"
+              context:
+                "Failed to set the " +
+                index +
+                " property on 'SVGStringList': The provided value",
             });
 
             const creating = !target[impl][utils.supportsPropertyIndex](index);
@@ -387,7 +399,7 @@ const iface = {
               writable: true,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
         }
@@ -400,7 +412,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -419,7 +436,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -438,7 +460,10 @@ const iface = {
           let indexedValue = desc.value;
 
           indexedValue = conversions["DOMString"](indexedValue, {
-            context: "Failed to set the " + index + " property on 'SVGStringList': The provided value"
+            context:
+              "Failed to set the " +
+              index +
+              " property on 'SVGStringList': The provided value",
           });
 
           const creating = !target[impl][utils.supportsPropertyIndex](index);
@@ -469,7 +494,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -480,8 +505,8 @@ const iface = {
   },
   interface: SVGStringList,
   expose: {
-    Window: { SVGStringList }
-  }
+    Window: { SVGStringList },
+  },
 }; // iface
 module.exports = iface;
 

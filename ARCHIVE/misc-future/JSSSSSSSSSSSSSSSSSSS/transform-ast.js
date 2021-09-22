@@ -1,9 +1,12 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
-exports.transformFromAstAsync = exports.transformFromAstSync = exports.transformFromAst = void 0;
+exports.transformFromAstAsync =
+  exports.transformFromAstSync =
+  exports.transformFromAst =
+    void 0;
 
 function _gensync() {
   const data = require("gensync");

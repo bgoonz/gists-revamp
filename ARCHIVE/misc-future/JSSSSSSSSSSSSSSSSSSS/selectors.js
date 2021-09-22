@@ -10,33 +10,36 @@ exports.matchesDontThrow = (elImpl, selector) => {
   if (!document._nwsapiDontThrow) {
     document._nwsapiDontThrow = nwsapi({
       document,
-      DOMException
+      DOMException,
     });
     document._nwsapiDontThrow.configure({
       LOGERRORS: false,
       VERBOSITY: false,
       IDS_DUPES: true,
-      MIXEDCASE: true
+      MIXEDCASE: true,
     });
   }
 
-  return document._nwsapiDontThrow.match(selector, idlUtils.wrapperForImpl(elImpl));
+  return document._nwsapiDontThrow.match(
+    selector,
+    idlUtils.wrapperForImpl(elImpl)
+  );
 };
 
 // nwsapi gets `document.documentElement` at creation-time, so we have to initialize lazily, since in the initial
 // stages of Document initialization, there is no documentElement present yet.
-exports.addNwsapi = parentNode => {
+exports.addNwsapi = (parentNode) => {
   const document = parentNode._ownerDocument;
 
   if (!document._nwsapi) {
     document._nwsapi = nwsapi({
       document,
-      DOMException
+      DOMException,
     });
     document._nwsapi.configure({
       LOGERRORS: false,
       IDS_DUPES: true,
-      MIXEDCASE: true
+      MIXEDCASE: true,
     });
   }
 

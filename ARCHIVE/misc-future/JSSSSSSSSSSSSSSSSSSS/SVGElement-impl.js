@@ -5,9 +5,12 @@ const { SVG_NS } = require("../helpers/namespaces");
 const { mixin } = require("../../utils");
 const SVGAnimatedString = require("../generated/SVGAnimatedString");
 const ElementImpl = require("./Element-impl").implementation;
-const ElementCSSInlineStyleImpl = require("./ElementCSSInlineStyle-impl").implementation;
-const GlobalEventHandlersImpl = require("./GlobalEventHandlers-impl").implementation;
-const HTMLAndSVGElementSharedImpl = require("./HTMLAndSVGElementShared-impl").implementation;
+const ElementCSSInlineStyleImpl =
+  require("./ElementCSSInlineStyle-impl").implementation;
+const GlobalEventHandlersImpl =
+  require("./GlobalEventHandlers-impl").implementation;
+const HTMLAndSVGElementSharedImpl =
+  require("./HTMLAndSVGElementShared-impl").implementation;
 
 class SVGElementImpl extends ElementImpl {
   constructor(args, privateData) {
@@ -20,7 +23,7 @@ class SVGElementImpl extends ElementImpl {
   get className() {
     return SVGAnimatedString.createImpl([], {
       element: this,
-      attribute: "class"
+      attribute: "class",
     });
   }
 

@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-var parseColor = require('../parsers').parseColor;
+var parseColor = require("../parsers").parseColor;
 
 module.exports.definition = {
-  set: function(v) {
-    this._setProperty('-webkit-text-fill-color', parseColor(v));
+  set: function (v) {
+    this._setProperty("-webkit-text-fill-color", parseColor(v));
   },
-  get: function() {
-    return this.getPropertyValue('-webkit-text-fill-color');
+  get: function () {
+    return this.getPropertyValue("-webkit-text-fill-color");
   },
   enumerable: true,
   configurable: true,

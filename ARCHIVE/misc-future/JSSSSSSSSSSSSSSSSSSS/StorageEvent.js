@@ -17,18 +17,24 @@ function StorageEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'StorageEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'StorageEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'StorageEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'StorageEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertStorageEventInit(curArg, { context: "Failed to construct 'StorageEvent': parameter 2" });
+    curArg = convertStorageEventInit(curArg, {
+      context: "Failed to construct 'StorageEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(StorageEvent, "prototype", {
   value: StorageEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(StorageEvent.prototype, "key", {
@@ -55,7 +61,7 @@ Object.defineProperty(StorageEvent.prototype, "key", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(StorageEvent.prototype, "oldValue", {
@@ -68,7 +74,7 @@ Object.defineProperty(StorageEvent.prototype, "oldValue", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(StorageEvent.prototype, "newValue", {
@@ -81,7 +87,7 @@ Object.defineProperty(StorageEvent.prototype, "newValue", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(StorageEvent.prototype, "url", {
@@ -94,7 +100,7 @@ Object.defineProperty(StorageEvent.prototype, "url", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(StorageEvent.prototype, "storageArea", {
@@ -107,14 +113,14 @@ Object.defineProperty(StorageEvent.prototype, "storageArea", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(StorageEvent.prototype, Symbol.toStringTag, {
   value: "StorageEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -180,7 +186,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -191,8 +197,8 @@ const iface = {
   },
   interface: StorageEvent,
   expose: {
-    Window: { StorageEvent }
-  }
+    Window: { StorageEvent },
+  },
 }; // iface
 module.exports = iface;
 

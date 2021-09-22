@@ -69,7 +69,10 @@ class SessionHistory {
 
         if (specifiedEntry.document !== this.currentEntry.document) {
           // TODO: unload the active document with the recycle parameter set to false
-          notImplemented("Traversing history in a way that would change the window", this._window);
+          notImplemented(
+            "Traversing history in a way that would change the window",
+            this._window
+          );
         }
         this.traverseHistory(specifiedEntry);
       });
@@ -81,7 +84,10 @@ class SessionHistory {
     if (!specifiedEntry.document) {
       // If entry no longer holds a Document object, then navigate the browsing context to entry's URL
       // to perform an entry update of entry, and abort these steps
-      notImplemented("Traversing the history to an entry that no longer holds a Document object", this._window);
+      notImplemented(
+        "Traversing the history to an entry that no longer holds a Document object",
+        this._window
+      );
     }
     // Not spec compliant, just minimal. Lots of missing steps.
 
@@ -97,16 +103,19 @@ class SessionHistory {
       currentEntry.title = document.title;
     }
 
-
     if (specifiedEntry.document !== currentEntry.document) {
       // If entry has a different Document object than the current entry, then...
-      notImplemented("Traversing the history to an entry with a different Document", this._window);
+      notImplemented(
+        "Traversing the history to an entry with a different Document",
+        this._window
+      );
     }
 
     document._URL = specifiedEntry.url;
 
     const hashChanged =
-      specifiedEntry.url.fragment !== currentEntry.url.fragment && specifiedEntry.document === currentEntry.document;
+      specifiedEntry.url.fragment !== currentEntry.url.fragment &&
+      specifiedEntry.document === currentEntry.document;
     let oldURL;
     let newURL;
     if (hashChanged) {
@@ -127,10 +136,12 @@ class SessionHistory {
     // arguably it's a bit odd that the state and latestEntry do not belong to the SessionHistory
     // but the spec gives them to "History" and "Document" respecively.
     document._history._state = state;
-    const stateChanged = specifiedEntry.document._latestEntry !== specifiedEntry;
+    const stateChanged =
+      specifiedEntry.document._latestEntry !== specifiedEntry;
     specifiedEntry.document._latestEntry = specifiedEntry;
 
-    const fireEvents = () => this._fireEvents(stateChanged, hashChanged, state, oldURL, newURL);
+    const fireEvents = () =>
+      this._fireEvents(stateChanged, hashChanged, state, oldURL, newURL);
 
     if (nonBlockingEvents) {
       this._window.setTimeout(fireEvents, 0);
@@ -141,28 +152,38 @@ class SessionHistory {
 
   _fireEvents(stateChanged, hashChanged, state, oldURL, newURL) {
     if (stateChanged) {
-      this._windowImpl._dispatch(PopStateEvent.createImpl([
-        "popstate",
-        {
-          bubbles: false,
-          state
-        }
-      ], {
-        isTrusted: true
-      }));
+      this._windowImpl._dispatch(
+        PopStateEvent.createImpl(
+          [
+            "popstate",
+            {
+              bubbles: false,
+              state,
+            },
+          ],
+          {
+            isTrusted: true,
+          }
+        )
+      );
     }
 
     if (hashChanged) {
-      this._windowImpl._dispatch(HashChangeEvent.createImpl([
-        "hashchange",
-        {
-          bubbles: false,
-          oldURL: whatwgURL.serializeURL(oldURL),
-          newURL: whatwgURL.serializeURL(newURL)
-        }
-      ], {
-        isTrusted: true
-      }));
+      this._windowImpl._dispatch(
+        HashChangeEvent.createImpl(
+          [
+            "hashchange",
+            {
+              bubbles: false,
+              oldURL: whatwgURL.serializeURL(oldURL),
+              newURL: whatwgURL.serializeURL(newURL),
+            },
+          ],
+          {
+            isTrusted: true,
+          }
+        )
+      );
     }
   }
 

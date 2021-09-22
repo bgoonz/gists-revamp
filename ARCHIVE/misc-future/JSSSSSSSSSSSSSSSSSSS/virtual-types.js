@@ -12,7 +12,7 @@ export interface VirtualTypeAliases {
 
   for (const type of Object.keys(virtualTypes)) {
     output += `  ${type}: ${(virtualTypes[type].types || ["Node"])
-      .map(t => `t.${t}`)
+      .map((t) => `t.${t}`)
       .join(" | ")};`;
   }
 

@@ -2,25 +2,25 @@
 
 exports.__esModule = true;
 exports.default = tokenizer;
-var SINGLE_QUOTE = '\''.charCodeAt(0);
+var SINGLE_QUOTE = "'".charCodeAt(0);
 var DOUBLE_QUOTE = '"'.charCodeAt(0);
-var BACKSLASH = '\\'.charCodeAt(0);
-var SLASH = '/'.charCodeAt(0);
-var NEWLINE = '\n'.charCodeAt(0);
-var SPACE = ' '.charCodeAt(0);
-var FEED = '\f'.charCodeAt(0);
-var TAB = '\t'.charCodeAt(0);
-var CR = '\r'.charCodeAt(0);
-var OPEN_SQUARE = '['.charCodeAt(0);
-var CLOSE_SQUARE = ']'.charCodeAt(0);
-var OPEN_PARENTHESES = '('.charCodeAt(0);
-var CLOSE_PARENTHESES = ')'.charCodeAt(0);
-var OPEN_CURLY = '{'.charCodeAt(0);
-var CLOSE_CURLY = '}'.charCodeAt(0);
-var SEMICOLON = ';'.charCodeAt(0);
-var ASTERISK = '*'.charCodeAt(0);
-var COLON = ':'.charCodeAt(0);
-var AT = '@'.charCodeAt(0);
+var BACKSLASH = "\\".charCodeAt(0);
+var SLASH = "/".charCodeAt(0);
+var NEWLINE = "\n".charCodeAt(0);
+var SPACE = " ".charCodeAt(0);
+var FEED = "\f".charCodeAt(0);
+var TAB = "\t".charCodeAt(0);
+var CR = "\r".charCodeAt(0);
+var OPEN_SQUARE = "[".charCodeAt(0);
+var CLOSE_SQUARE = "]".charCodeAt(0);
+var OPEN_PARENTHESES = "(".charCodeAt(0);
+var CLOSE_PARENTHESES = ")".charCodeAt(0);
+var OPEN_CURLY = "{".charCodeAt(0);
+var CLOSE_CURLY = "}".charCodeAt(0);
+var SEMICOLON = ";".charCodeAt(0);
+var ASTERISK = "*".charCodeAt(0);
+var COLON = ":".charCodeAt(0);
+var AT = "@".charCodeAt(0);
 var RE_AT_END = /[ \n\t\r\f{}()'"\\;/[\]#]/g;
 var RE_WORD_END = /[ \n\t\r\f(){}:;@!'"\\\][#]|\/(?=\*)/g;
 var RE_BAD_BRACKET = /.[\\/("'\n]/;
@@ -47,7 +47,7 @@ function tokenizer(input, options) {
   }
 
   function unclosed(what) {
-    throw input.error('Unclosed ' + what, line, pos - offset);
+    throw input.error("Unclosed " + what, line, pos - offset);
   }
 
   function endOfFile() {
@@ -60,7 +60,11 @@ function tokenizer(input, options) {
     var ignoreUnclosed = opts ? opts.ignoreUnclosed : false;
     code = css.charCodeAt(pos);
 
-    if (code === NEWLINE || code === FEED || code === CR && css.charCodeAt(pos + 1) !== NEWLINE) {
+    if (
+      code === NEWLINE ||
+      code === FEED ||
+      (code === CR && css.charCodeAt(pos + 1) !== NEWLINE)
+    ) {
       offset = pos;
       line += 1;
     }
@@ -81,9 +85,15 @@ function tokenizer(input, options) {
             offset = next;
             line += 1;
           }
-        } while (code === SPACE || code === NEWLINE || code === TAB || code === CR || code === FEED);
+        } while (
+          code === SPACE ||
+          code === NEWLINE ||
+          code === TAB ||
+          code === CR ||
+          code === FEED
+        );
 
-        currentToken = ['space', css.slice(pos, next)];
+        currentToken = ["space", css.slice(pos, next)];
         pos = next - 1;
         break;
 
@@ -99,22 +109,31 @@ function tokenizer(input, options) {
         break;
 
       case OPEN_PARENTHESES:
-        prev = buffer.length ? buffer.pop()[1] : '';
+        prev = buffer.length ? buffer.pop()[1] : "";
         n = css.charCodeAt(pos + 1);
 
-        if (prev === 'url' && n !== SINGLE_QUOTE && n !== DOUBLE_QUOTE && n !== SPACE && n !== NEWLINE && n !== TAB && n !== FEED && n !== CR) {
+        if (
+          prev === "url" &&
+          n !== SINGLE_QUOTE &&
+          n !== DOUBLE_QUOTE &&
+          n !== SPACE &&
+          n !== NEWLINE &&
+          n !== TAB &&
+          n !== FEED &&
+          n !== CR
+        ) {
           next = pos;
 
           do {
             escaped = false;
-            next = css.indexOf(')', next + 1);
+            next = css.indexOf(")", next + 1);
 
             if (next === -1) {
               if (ignore || ignoreUnclosed) {
                 next = pos;
                 break;
               } else {
-                unclosed('bracket');
+                unclosed("bracket");
               }
             }
 
@@ -126,16 +145,30 @@ function tokenizer(input, options) {
             }
           } while (escaped);
 
-          currentToken = ['brackets', css.slice(pos, next + 1), line, pos - offset, line, next - offset];
+          currentToken = [
+            "brackets",
+            css.slice(pos, next + 1),
+            line,
+            pos - offset,
+            line,
+            next - offset,
+          ];
           pos = next;
         } else {
-          next = css.indexOf(')', pos + 1);
+          next = css.indexOf(")", pos + 1);
           content = css.slice(pos, next + 1);
 
           if (next === -1 || RE_BAD_BRACKET.test(content)) {
-            currentToken = ['(', '(', line, pos - offset];
+            currentToken = ["(", "(", line, pos - offset];
           } else {
-            currentToken = ['brackets', content, line, pos - offset, line, next - offset];
+            currentToken = [
+              "brackets",
+              content,
+              line,
+              pos - offset,
+              line,
+              next - offset,
+            ];
             pos = next;
           }
         }
@@ -144,7 +177,7 @@ function tokenizer(input, options) {
 
       case SINGLE_QUOTE:
       case DOUBLE_QUOTE:
-        quote = code === SINGLE_QUOTE ? '\'' : '"';
+        quote = code === SINGLE_QUOTE ? "'" : '"';
         next = pos;
 
         do {
@@ -156,7 +189,7 @@ function tokenizer(input, options) {
               next = pos + 1;
               break;
             } else {
-              unclosed('string');
+              unclosed("string");
             }
           }
 
@@ -169,7 +202,7 @@ function tokenizer(input, options) {
         } while (escaped);
 
         content = css.slice(pos, next + 1);
-        lines = content.split('\n');
+        lines = content.split("\n");
         last = lines.length - 1;
 
         if (last > 0) {
@@ -180,7 +213,14 @@ function tokenizer(input, options) {
           nextOffset = offset;
         }
 
-        currentToken = ['string', css.slice(pos, next + 1), line, pos - offset, nextLine, next - nextOffset];
+        currentToken = [
+          "string",
+          css.slice(pos, next + 1),
+          line,
+          pos - offset,
+          nextLine,
+          next - nextOffset,
+        ];
         offset = nextOffset;
         line = nextLine;
         pos = next;
@@ -196,7 +236,14 @@ function tokenizer(input, options) {
           next = RE_AT_END.lastIndex - 2;
         }
 
-        currentToken = ['at-word', css.slice(pos, next + 1), line, pos - offset, line, next - offset];
+        currentToken = [
+          "at-word",
+          css.slice(pos, next + 1),
+          line,
+          pos - offset,
+          line,
+          next - offset,
+        ];
         pos = next;
         break;
 
@@ -211,7 +258,15 @@ function tokenizer(input, options) {
 
         code = css.charCodeAt(next + 1);
 
-        if (escape && code !== SLASH && code !== SPACE && code !== NEWLINE && code !== TAB && code !== CR && code !== FEED) {
+        if (
+          escape &&
+          code !== SLASH &&
+          code !== SPACE &&
+          code !== NEWLINE &&
+          code !== TAB &&
+          code !== CR &&
+          code !== FEED
+        ) {
           next += 1;
 
           if (RE_HEX_ESCAPE.test(css.charAt(next))) {
@@ -225,24 +280,31 @@ function tokenizer(input, options) {
           }
         }
 
-        currentToken = ['word', css.slice(pos, next + 1), line, pos - offset, line, next - offset];
+        currentToken = [
+          "word",
+          css.slice(pos, next + 1),
+          line,
+          pos - offset,
+          line,
+          next - offset,
+        ];
         pos = next;
         break;
 
       default:
         if (code === SLASH && css.charCodeAt(pos + 1) === ASTERISK) {
-          next = css.indexOf('*/', pos + 2) + 1;
+          next = css.indexOf("*/", pos + 2) + 1;
 
           if (next === 0) {
             if (ignore || ignoreUnclosed) {
               next = css.length;
             } else {
-              unclosed('comment');
+              unclosed("comment");
             }
           }
 
           content = css.slice(pos, next + 1);
-          lines = content.split('\n');
+          lines = content.split("\n");
           last = lines.length - 1;
 
           if (last > 0) {
@@ -253,7 +315,14 @@ function tokenizer(input, options) {
             nextOffset = offset;
           }
 
-          currentToken = ['comment', content, line, pos - offset, nextLine, next - nextOffset];
+          currentToken = [
+            "comment",
+            content,
+            line,
+            pos - offset,
+            nextLine,
+            next - nextOffset,
+          ];
           offset = nextOffset;
           line = nextLine;
           pos = next;
@@ -267,7 +336,14 @@ function tokenizer(input, options) {
             next = RE_WORD_END.lastIndex - 2;
           }
 
-          currentToken = ['word', css.slice(pos, next + 1), line, pos - offset, line, next - offset];
+          currentToken = [
+            "word",
+            css.slice(pos, next + 1),
+            line,
+            pos - offset,
+            line,
+            next - offset,
+          ];
           buffer.push(currentToken);
           pos = next;
         }
@@ -287,7 +363,7 @@ function tokenizer(input, options) {
     back: back,
     nextToken: nextToken,
     endOfFile: endOfFile,
-    position: position
+    position: position,
   };
 }
 

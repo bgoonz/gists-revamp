@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('sortedLastIndexBy', require('../sortedLastIndexBy'));
+var convert = require("./convert"),
+  func = convert("sortedLastIndexBy", require("../sortedLastIndexBy"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

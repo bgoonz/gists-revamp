@@ -19,7 +19,10 @@ class TextImpl extends CharacterDataImpl {
     const { length } = this;
 
     if (offset > length) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
 
     const count = length - offset;
@@ -44,12 +47,18 @@ class TextImpl extends CharacterDataImpl {
     let wholeText = this.textContent;
     let next;
     let current = this;
-    while ((next = domSymbolTree.previousSibling(current)) && next.nodeType === NODE_TYPE.TEXT_NODE) {
+    while (
+      (next = domSymbolTree.previousSibling(current)) &&
+      next.nodeType === NODE_TYPE.TEXT_NODE
+    ) {
       wholeText = next.textContent + wholeText;
       current = next;
     }
     current = this;
-    while ((next = domSymbolTree.nextSibling(current)) && next.nodeType === NODE_TYPE.TEXT_NODE) {
+    while (
+      (next = domSymbolTree.nextSibling(current)) &&
+      next.nodeType === NODE_TYPE.TEXT_NODE
+    ) {
       wholeText += next.textContent;
       current = next;
     }
@@ -58,5 +67,5 @@ class TextImpl extends CharacterDataImpl {
 }
 
 module.exports = {
-  implementation: TextImpl
+  implementation: TextImpl,
 };

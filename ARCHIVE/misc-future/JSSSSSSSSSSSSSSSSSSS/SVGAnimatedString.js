@@ -13,7 +13,7 @@ Object.defineProperty(SVGAnimatedString, "prototype", {
   value: SVGAnimatedString.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(SVGAnimatedString.prototype, "baseVal", {
@@ -31,14 +31,15 @@ Object.defineProperty(SVGAnimatedString.prototype, "baseVal", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'baseVal' property on 'SVGAnimatedString': The provided value"
+      context:
+        "Failed to set the 'baseVal' property on 'SVGAnimatedString': The provided value",
     });
 
     this[impl]["baseVal"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGAnimatedString.prototype, "animVal", {
@@ -51,14 +52,14 @@ Object.defineProperty(SVGAnimatedString.prototype, "animVal", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGAnimatedString.prototype, Symbol.toStringTag, {
   value: "SVGAnimatedString",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -122,7 +123,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -133,8 +134,8 @@ const iface = {
   },
   interface: SVGAnimatedString,
   expose: {
-    Window: { SVGAnimatedString }
-  }
+    Window: { SVGAnimatedString },
+  },
 }; // iface
 module.exports = iface;
 

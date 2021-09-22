@@ -10,12 +10,52 @@ const escodegen = require("escodegen");
 // If someone feels ambitious maybe make this into an npm package.
 const builtInConsts = ["Infinity", "NaN", "undefined"];
 const otherBuiltIns = [
-  "isFinite", "isNaN", "parseFloat", "parseInt", "decodeURI", "decodeURIComponent",
-  "encodeURI", "encodeURIComponent", "Array", "ArrayBuffer", "Boolean", "DataView", "Date", "Error", "EvalError",
-  "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Number", "Object",
-  "Proxy", "Promise", "RangeError", "ReferenceError", "RegExp", "Set", "String", "Symbol", "SyntaxError", "TypeError",
-  "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "URIError", "WeakMap", "WeakSet", "JSON", "Math",
-  "Reflect", "escape", "unescape"
+  "isFinite",
+  "isNaN",
+  "parseFloat",
+  "parseInt",
+  "decodeURI",
+  "decodeURIComponent",
+  "encodeURI",
+  "encodeURIComponent",
+  "Array",
+  "ArrayBuffer",
+  "Boolean",
+  "DataView",
+  "Date",
+  "Error",
+  "EvalError",
+  "Float32Array",
+  "Float64Array",
+  "Function",
+  "Int8Array",
+  "Int16Array",
+  "Int32Array",
+  "Map",
+  "Number",
+  "Object",
+  "Proxy",
+  "Promise",
+  "RangeError",
+  "ReferenceError",
+  "RegExp",
+  "Set",
+  "String",
+  "Symbol",
+  "SyntaxError",
+  "TypeError",
+  "Uint8Array",
+  "Uint8ClampedArray",
+  "Uint16Array",
+  "Uint32Array",
+  "URIError",
+  "WeakMap",
+  "WeakSet",
+  "JSON",
+  "Math",
+  "Reflect",
+  "escape",
+  "unescape",
 ];
 
 exports.createContext = function (sandbox) {
@@ -23,7 +63,7 @@ exports.createContext = function (sandbox) {
     value: true,
     writable: true,
     configurable: true,
-    enumerable: false
+    enumerable: false,
   });
 
   for (const builtIn of builtInConsts) {
@@ -31,7 +71,7 @@ exports.createContext = function (sandbox) {
       value: global[builtIn],
       writable: false,
       configurable: false,
-      enumerable: false
+      enumerable: false,
     });
   }
 
@@ -40,7 +80,7 @@ exports.createContext = function (sandbox) {
       value: global[builtIn],
       writable: true,
       configurable: true,
-      enumerable: false
+      enumerable: false,
     });
   }
 
@@ -50,7 +90,7 @@ exports.createContext = function (sandbox) {
     },
     writable: true,
     configurable: true,
-    enumerable: false
+    enumerable: false,
   });
 };
 
@@ -76,7 +116,7 @@ exports.runInContext = function (code, contextifiedSandbox, options) {
     // collect comments in Esprima's format
     onComment: comments,
     // collect token ranges
-    onToken: tokens
+    onToken: tokens,
   });
 
   // make sure we keep comments
@@ -96,7 +136,7 @@ exports.runInContext = function (code, contextifiedSandbox, options) {
       nodes[j].computed = false;
       nodes[j].object = {
         name: "window",
-        type: "Identifier"
+        type: "Identifier",
       };
     }
   }
@@ -109,9 +149,12 @@ exports.runInContext = function (code, contextifiedSandbox, options) {
   }
 
   const rewrittenCode = escodegen.generate(ast, { comment: true });
-  const suffix = options.filename !== undefined ? "\n//# sourceURL=" + options.filename : "";
+  const suffix =
+    options.filename !== undefined ? "\n//# sourceURL=" + options.filename : "";
 
-  return Function("window", rewrittenCode + suffix).bind(contextifiedSandbox)(contextifiedSandbox);
+  return Function("window", rewrittenCode + suffix).bind(contextifiedSandbox)(
+    contextifiedSandbox
+  );
 };
 
 exports.Script = class VMShimScript {
@@ -121,6 +164,10 @@ exports.Script = class VMShimScript {
   }
 
   runInContext(sandbox, options) {
-    return exports.runInContext(this._code, sandbox, Object.assign({}, this._options, options));
+    return exports.runInContext(
+      this._code,
+      sandbox,
+      Object.assign({}, this._options, options)
+    );
   }
 };

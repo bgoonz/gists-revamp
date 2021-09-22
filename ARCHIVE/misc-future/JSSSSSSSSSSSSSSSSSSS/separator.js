@@ -1,6 +1,6 @@
-'use strict';
-var chalk = require('chalk');
-var figures = require('figures');
+"use strict";
+var chalk = require("chalk");
+var figures = require("figures");
 
 /**
  * Separator object
@@ -11,7 +11,7 @@ var figures = require('figures');
 
 class Separator {
   constructor(line) {
-    this.type = 'separator';
+    this.type = "separator";
     this.line = chalk.dim(line || new Array(15).join(figures.line));
   }
 
@@ -30,8 +30,8 @@ class Separator {
  * @return {Boolean}    `false` if object is a separator
  */
 
-Separator.exclude = function(obj) {
-  return obj.type !== 'separator';
+Separator.exclude = function (obj) {
+  return obj.type !== "separator";
 };
 
 module.exports = Separator;

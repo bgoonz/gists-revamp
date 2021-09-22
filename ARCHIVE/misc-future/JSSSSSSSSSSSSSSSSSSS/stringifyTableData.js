@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -11,8 +11,8 @@ exports.default = void 0;
  * @param {table~row[]} rows
  * @returns {table~row[]}
  */
-const stringifyTableData = rows => {
-  return rows.map(cells => {
+const stringifyTableData = (rows) => {
+  return rows.map((cells) => {
     return cells.map(String);
   });
 };

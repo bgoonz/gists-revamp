@@ -15,12 +15,17 @@ exports.implementation = class URLSearchParamsImpl {
     if (Array.isArray(init)) {
       for (const pair of init) {
         if (pair.length !== 2) {
-          throw new TypeError("Failed to construct 'URLSearchParams': parameter 1 sequence's element does not " +
-                              "contain exactly two elements.");
+          throw new TypeError(
+            "Failed to construct 'URLSearchParams': parameter 1 sequence's element does not " +
+              "contain exactly two elements."
+          );
         }
         this._list.push([pair[0], pair[1]]);
       }
-    } else if (typeof init === "object" && Object.getPrototypeOf(init) === null) {
+    } else if (
+      typeof init === "object" &&
+      Object.getPrototypeOf(init) === null
+    ) {
       for (const name of Object.keys(init)) {
         const value = init[name];
         this._list.push([name, value]);

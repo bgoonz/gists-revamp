@@ -69,15 +69,15 @@ export default function generateValidators() {
 import shallowEqual from "../../utils/shallowEqual";
 import type * as t from "../..";\n\n`;
 
-  Object.keys(definitions.VISITOR_KEYS).forEach(type => {
+  Object.keys(definitions.VISITOR_KEYS).forEach((type) => {
     output += addIsHelper(type);
   });
 
-  Object.keys(definitions.FLIPPED_ALIAS_KEYS).forEach(type => {
+  Object.keys(definitions.FLIPPED_ALIAS_KEYS).forEach((type) => {
     output += addIsHelper(type, definitions.FLIPPED_ALIAS_KEYS[type]);
   });
 
-  Object.keys(definitions.DEPRECATED_KEYS).forEach(type => {
+  Object.keys(definitions.DEPRECATED_KEYS).forEach((type) => {
     const newType = definitions.DEPRECATED_KEYS[type];
     const deprecated = `console.trace("The node type ${type} has been renamed to ${newType}");`;
     output += addIsHelper(type, null, deprecated);

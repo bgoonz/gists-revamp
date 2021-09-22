@@ -1,10 +1,5 @@
-import {
-    ReactReduxContext
-} from '../components/Context';
-import {
-    useStore as useDefaultStore,
-    createStoreHook
-} from './useStore';
+import { ReactReduxContext } from "../components/Context";
+import { useStore as useDefaultStore, createStoreHook } from "./useStore";
 /**
  * Hook factory, which creates a `useDispatch` hook bound to a given context.
  *
@@ -13,15 +8,16 @@ import {
  */
 
 export function createDispatchHook(context) {
-    if (context === void 0) {
-        context = ReactReduxContext;
-    }
+  if (context === void 0) {
+    context = ReactReduxContext;
+  }
 
-    var useStore = context === ReactReduxContext ? useDefaultStore : createStoreHook(context);
-    return function useDispatch() {
-        var store = useStore();
-        return store.dispatch;
-    };
+  var useStore =
+    context === ReactReduxContext ? useDefaultStore : createStoreHook(context);
+  return function useDispatch() {
+    var store = useStore();
+    return store.dispatch;
+  };
 }
 /**
  * A hook to access the redux `dispatch` function.

@@ -1,4 +1,4 @@
 var shape = {
-    borderRadius: 4
+  borderRadius: 4,
 };
 export default shape;

@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
-import KeyError from '../exceptions/KeyError';
-import Map from '../_internals/Map';
-import Set from '../_internals/Set';
-import JSNetworkXError from '../exceptions/JSNetworkXError';
+import KeyError from "../exceptions/KeyError";
+import Map from "../_internals/Map";
+import Set from "../_internals/Set";
+import JSNetworkXError from "../exceptions/JSNetworkXError";
 
-import isBoolean from 'lodash/lang/isBoolean';
-import isString from 'lodash/lang/isString';
+import isBoolean from "lodash/lang/isBoolean";
+import isString from "lodash/lang/isString";
 
-import * as convert from '../convert';
+import * as convert from "../convert";
 import {
   clear,
   clone,
@@ -23,10 +23,8 @@ import {
   tuple2c,
   tuple3,
   tuple3c,
-  zipSequence
-} from '../_internals';
-
-
+  zipSequence,
+} from "../_internals";
 
 /*jshint expr:false*/
 
@@ -133,7 +131,6 @@ import {
  * @see MultiDiGraph
  */
 export default class Graph {
-
   /*
    * @param {Iterable} optData Data to initialize graph.  If `data` is not
    *    provided, an empty graph is created. The data can be an edge list, or
@@ -143,8 +140,8 @@ export default class Graph {
    */
   constructor(optData, optAttr) {
     // makes it possible to call Graph without new
-    if(!(this instanceof Graph)) {
-        return new Graph(optData, optAttr);
+    if (!(this instanceof Graph)) {
+      return new Graph(optData, optAttr);
     }
 
     this.graph = {}; // dictionary for graph attributes
@@ -163,14 +160,13 @@ export default class Graph {
     this.edge = this.adj;
   }
 
-
   /**
    * Holds the graph type (class) name for information.
    *
    * @type {string}
    */
   static get __name__() {
-    return 'Graph';
+    return "Graph";
   }
 
   /**
@@ -180,7 +176,7 @@ export default class Graph {
    * @return {(string|undefined)} Graph name if no parameter was passed.
    */
   get name() {
-    return this.graph.name || '';
+    return this.graph.name || "";
   }
 
   set name(name) {
@@ -205,8 +201,8 @@ export default class Graph {
    */
   get(n) {
     var value = this.adj.get(n);
-    if (typeof value === 'undefined') {
-      throw new KeyError('Graph does not contain node ' + n + '.');
+    if (typeof value === "undefined") {
+      throw new KeyError("Graph does not contain node " + n + ".");
     }
     return value;
   }
@@ -230,16 +226,16 @@ export default class Graph {
    * @param {Object=} opt_attr_dict Dictionary of node attributes.
    *      Key/value pairs will update existing data associated with the node.
    */
-  addNode(n, optAttrDict={}) {
+  addNode(n, optAttrDict = {}) {
     if (!isPlainObject(optAttrDict)) {
-      throw new JSNetworkXError('The attr_dict argument must be an object.');
+      throw new JSNetworkXError("The attr_dict argument must be an object.");
     }
 
     if (!this.node.has(n)) {
       this.adj.set(n, new Map());
       this.node.set(n, optAttrDict);
-    }
-    else { // update attr even if node already exists
+    } else {
+      // update attr even if node already exists
       Object.assign(this.node.get(n), optAttrDict);
     }
   }
@@ -286,31 +282,37 @@ export default class Graph {
    *       Node attributes specified in nodes as a tuple
    *       take precedence over attributes specified generally.
    */
-  addNodesFrom(nodes, optAttr={}) {
-    forEach(nodes, function(node) {
-      if (Array.isArray(node) && node.length === 2 && isPlainObject(node[1])) {
-        var [nn, ndict] = node;
+  addNodesFrom(nodes, optAttr = {}) {
+    forEach(
+      nodes,
+      function (node) {
+        if (
+          Array.isArray(node) &&
+          node.length === 2 &&
+          isPlainObject(node[1])
+        ) {
+          var [nn, ndict] = node;
 
-        if (!this.adj.has(nn)) {
-          this.adj.set(nn, new Map());
-          var newdict = clone(optAttr);
-          this.node.set(nn, Object.assign(newdict, ndict));
+          if (!this.adj.has(nn)) {
+            this.adj.set(nn, new Map());
+            var newdict = clone(optAttr);
+            this.node.set(nn, Object.assign(newdict, ndict));
+          } else {
+            var olddict = this.node.get(nn);
+            Object.assign(olddict, optAttr, ndict);
+          }
+          return; // continue next iteration
         }
-        else {
-          var olddict = this.node.get(nn);
-          Object.assign(olddict, optAttr, ndict);
+        var newnode = !this.node.has(node);
+        if (newnode) {
+          this.adj.set(node, new Map());
+          this.node.set(node, clone(optAttr));
+        } else {
+          Object.assign(this.node.get(node), optAttr);
         }
-        return; // continue next iteration
-      }
-      var newnode = !this.node.has(node);
-      if (newnode) {
-        this.adj.set(node, new Map());
-        this.node.set(node, clone(optAttr));
-      }
-      else {
-        Object.assign(this.node.get(node), optAttr);
-      }
-    }, this);
+      },
+      this
+    );
   }
 
   /**
@@ -343,9 +345,8 @@ export default class Graph {
         (_, u) => adj.get(u).delete(n) // remove all edges n-u in graph
       );
       adj.delete(n); // now remove node
-    }
-    else {
-      throw new JSNetworkXError('The node %s is not in the graph', n);
+    } else {
+      throw new JSNetworkXError("The node %s is not in the graph", n);
     }
   }
 
@@ -372,7 +373,7 @@ export default class Graph {
     var adj = this.adj;
     var node = this.node;
 
-    forEach(nodes, function(n) {
+    forEach(nodes, function (n) {
       if (node.delete(n)) {
         adj.get(n).forEach((_, u) => adj.get(u).delete(n));
         adj.delete(n);
@@ -404,7 +405,7 @@ export default class Graph {
    * @return {Iterator} of nodes If data=true the iterator gives
    *           two-tuples containing (node, node data, dictionary).
    */
-  nodesIter(optData=false) {
+  nodesIter(optData = false) {
     if (optData) {
       return toIterator(this.node);
     }
@@ -432,7 +433,7 @@ export default class Graph {
    * @return {!Array} of nodes If data=true a list of two-tuples containing
    *           (node, node data object).
    */
-  nodes(optData=false) {
+  nodes(optData = false) {
     return Array.from(optData ? this.node.entries() : this.node.keys());
   }
 
@@ -456,7 +457,6 @@ export default class Graph {
     return this.node.size;
   }
 
-
   /**
    * Return the number of nodes in the graph.
    *
@@ -467,7 +467,6 @@ export default class Graph {
   order() {
     return this.node.size;
   }
-
 
   /**
    * Return true if the graph contains the node n.
@@ -487,7 +486,6 @@ export default class Graph {
   hasNode(n) {
     return this.node.has(n);
   }
-
 
   /**
    * Add an edge between u and v.
@@ -532,7 +530,7 @@ export default class Graph {
    */
   addEdge(u, v, optAttrDict) {
     if (optAttrDict && !isPlainObject(optAttrDict)) {
-      throw new JSNetworkXError('The attr_dict argument must be an object.');
+      throw new JSNetworkXError("The attr_dict argument must be an object.");
     }
 
     // add nodes
@@ -551,7 +549,6 @@ export default class Graph {
     this.adj.get(u).set(v, datadict);
     this.adj.get(v).set(u, datadict);
   }
-
 
   /**
    * Add all the edges in `ebunch`.
@@ -589,14 +586,14 @@ export default class Graph {
    */
   addEdgesFrom(ebunch, optAttrDict) {
     if (optAttrDict && !isPlainObject(optAttrDict)) {
-      throw new JSNetworkXError('The attr_dict argument must be an object.');
+      throw new JSNetworkXError("The attr_dict argument must be an object.");
     }
 
     // process ebunch
     for (var tuple of ebunch) {
       if (tuple.length == null) {
         throw new JSNetworkXError(
-          sprintf('Edge tuple %j must be a 2-tuple or 3-tuple.', tuple)
+          sprintf("Edge tuple %j must be a 2-tuple or 3-tuple.", tuple)
         );
       }
 
@@ -605,10 +602,9 @@ export default class Graph {
         data = {};
       }
       if (u == null || v == null || tuple[3] != null) {
-        throw new JSNetworkXError(sprintf(
-          'Edge tuple %j must be a 2-tuple or 3-tuple.',
-          tuple
-        ));
+        throw new JSNetworkXError(
+          sprintf("Edge tuple %j must be a 2-tuple or 3-tuple.", tuple)
+        );
       }
 
       if (!this.node.has(u)) {
@@ -627,7 +623,6 @@ export default class Graph {
       this.adj.get(v).set(u, datadict);
     }
   }
-
 
   /**
    * Add all the edges in `ebunch` as weighted edges with specified weights.
@@ -660,17 +655,21 @@ export default class Graph {
     optAttr = optAttr || {};
     if (!isString(optWeight)) {
       optAttr = optWeight;
-      optWeight = 'weight';
+      optWeight = "weight";
     }
 
-    this.addEdgesFrom(mapSequence(ebunch, function(e) {
-      var attr = {};
-      attr[optWeight] = e[2];
-      if (attr[optWeight] == null) { // simulate too few value to unpack error
-        throw new TypeError('Values must consist of three elements: %s.', e);
-      }
-      return [e[0], e[1], attr];
-    }), optAttr);
+    this.addEdgesFrom(
+      mapSequence(ebunch, function (e) {
+        var attr = {};
+        attr[optWeight] = e[2];
+        if (attr[optWeight] == null) {
+          // simulate too few value to unpack error
+          throw new TypeError("Values must consist of three elements: %s.", e);
+        }
+        return [e[0], e[1], attr];
+      }),
+      optAttr
+    );
   }
 
   /**
@@ -698,9 +697,8 @@ export default class Graph {
       if (vnode !== node) {
         vnode.delete(u);
       }
-    }
-    else {
-      throw new JSNetworkXError('The edge %s-%s is not in the graph', u, v);
+    } else {
+      throw new JSNetworkXError("The edge %s-%s is not in the graph", u, v);
     }
   }
 
@@ -728,7 +726,7 @@ export default class Graph {
    */
   removeEdgesFrom(ebunch) {
     var adj = this.adj;
-    forEach(ebunch, function([u, v]) {
+    forEach(ebunch, function ([u, v]) {
       var unode = adj.get(u);
       if (unode != null && unode.has(v)) {
         unode.delete(v);
@@ -820,9 +818,8 @@ export default class Graph {
     var node = this.adj.get(n);
     if (node != null) {
       return node.keys();
-    }
-    else {
-      throw new JSNetworkXError('The node %s is not in the graph.', n);
+    } else {
+      throw new JSNetworkXError("The node %s is not in the graph.", n);
     }
   }
 
@@ -861,7 +858,7 @@ export default class Graph {
    *      Edges that are adjacent to any node in nbunch, or a list
    *      of all edges if nbunch is not specified.
    */
-  edges(optNbunch, optData=false) {
+  edges(optNbunch, optData = false) {
     return Array.from(this.edgesIter(optNbunch, optData));
   }
 
@@ -898,8 +895,7 @@ export default class Graph {
    *      or three-tuples (u,v,data) (True).
    * @return {!Iterator} iterater if `(u,v)` or `(u,v,d)` edge tuples
    */
-  *edgesIter(optNbunch, optData=false) {
-
+  *edgesIter(optNbunch, optData = false) {
     // handle calls with data being the only argument
     if (isBoolean(optNbunch)) {
       optData = optNbunch;
@@ -912,12 +908,10 @@ export default class Graph {
 
     if (optNbunch == null) {
       nodesNbrs = this.adj.entries();
-    }
-    else {
+    } else {
       var adj = this.adj;
-      nodesNbrs = mapIterator(
-        this.nbunchIter(optNbunch),
-        n => tuple2(n, adj.get(n))
+      nodesNbrs = mapIterator(this.nbunchIter(optNbunch), (n) =>
+        tuple2(n, adj.get(n))
       );
     }
 
@@ -929,8 +923,7 @@ export default class Graph {
           if (optData) {
             neighborsData.unshift(node);
             yield neighborsData;
-          }
-          else {
+          } else {
             yield [node, neighborsData[0]];
           }
         }
@@ -960,7 +953,7 @@ export default class Graph {
    *   Value to return if the edge (u,v) is not found.
    * @return {*} The edge attribute object.
    */
-  getEdgeData(u, v, optDefault=null) {
+  getEdgeData(u, v, optDefault = null) {
     var nbrs = this.adj.get(u);
     if (nbrs != null) {
       var data = nbrs.get(v);
@@ -991,10 +984,9 @@ export default class Graph {
    */
   adjacencyList() {
     /*eslint no-unused-vars:0*/
-    return Array.from(mapIterator(
-      this.adjacencyIter(),
-      ([_, adj]) => Array.from(adj.keys())
-    ));
+    return Array.from(
+      mapIterator(this.adjacencyIter(), ([_, adj]) => Array.from(adj.keys()))
+    );
   }
 
   /**
@@ -1054,9 +1046,8 @@ export default class Graph {
   degree(optNbunch, optWeight) {
     if (optNbunch != null && this.hasNode(optNbunch)) {
       // return a single node
-      return this.degreeIter(optNbunch,optWeight).next().value[1];
-    }
-    else {
+      return this.degreeIter(optNbunch, optWeight).next().value[1];
+    } else {
       return new Map(this.degreeIter(optNbunch, optWeight));
     }
   }
@@ -1094,44 +1085,37 @@ export default class Graph {
 
     if (optNbunch == null) {
       nodesNbrs = this.adj.entries();
-    }
-    else {
+    } else {
       let adj = this.adj;
-      nodesNbrs = mapIterator(
-        this.nbunchIter(optNbunch),
-        n => tuple2(n, adj.get(n))
+      nodesNbrs = mapIterator(this.nbunchIter(optNbunch), (n) =>
+        tuple2(n, adj.get(n))
       );
     }
 
     if (!optWeight) {
-      iterator = mapIterator(nodesNbrs, function([node, nbrs]) {
-        return [node, nbrs.size + (+nbrs.has(node))];
+      iterator = mapIterator(nodesNbrs, function ([node, nbrs]) {
+        return [node, nbrs.size + +nbrs.has(node)];
       });
-    }
-    else {
-      iterator = mapIterator(
-        nodesNbrs,
-        function([n, nbrs]) {
-          let sum = 0;
+    } else {
+      iterator = mapIterator(nodesNbrs, function ([n, nbrs]) {
+        let sum = 0;
 
-          nbrs.forEach(function(data) {
-            let weight = data[optWeight];
-            sum += +(weight != null ? weight : 1);
-          });
+        nbrs.forEach(function (data) {
+          let weight = data[optWeight];
+          sum += +(weight != null ? weight : 1);
+        });
 
-          if (nbrs.has(n)) {
-            let weight = nbrs.get(n)[optWeight];
-            sum += +(weight != null ? weight : 1);
-          }
-
-          return [n, sum];
+        if (nbrs.has(n)) {
+          let weight = nbrs.get(n)[optWeight];
+          sum += +(weight != null ? weight : 1);
         }
-      );
+
+        return [n, sum];
+      });
     }
 
     return iterator;
   }
-
 
   /**
    * Remove all nodes and edges from the graph.
@@ -1151,7 +1135,7 @@ export default class Graph {
    * ```
    */
   clear() {
-    this.name = '';
+    this.name = "";
     this.adj.clear();
     this.node.clear();
     clear(this.graph);
@@ -1188,7 +1172,6 @@ export default class Graph {
     return false;
   }
 
-
   /**
    * Return True if graph is directed, False otherwise.
    *
@@ -1197,7 +1180,6 @@ export default class Graph {
   isDirected() {
     return false;
   }
-
 
   /**
    * Return a directed representation of the graph.
@@ -1237,17 +1219,19 @@ export default class Graph {
    *   (u,v,data) and (v,u,data).
    */
   toDirected() {
-    var G = new (require('./DiGraph'))();
+    var G = new (require("./DiGraph"))();
     G.name = this.name;
     G.addNodesFrom(this);
-    G.addEdgesFrom((function*() {
-      for (var nd of this.adjacencyIter()) {
-        var u = nd[0];
-        for (var nbr of nd[1]) {
-          yield tuple3(u, nbr[0], deepcopy(nbr[1]));
+    G.addEdgesFrom(
+      function* () {
+        for (var nd of this.adjacencyIter()) {
+          var u = nd[0];
+          for (var nbr of nd[1]) {
+            yield tuple3(u, nbr[0], deepcopy(nbr[1]));
+          }
         }
-      }
-    }.call(this)));
+      }.call(this)
+    );
     G.graph = deepcopy(this.graph);
     G.node = deepcopy(this.node);
 
@@ -1285,7 +1269,6 @@ export default class Graph {
   toUndirected() {
     return deepcopy(this);
   }
-
 
   /**
    * Return the subgraph induced on nodes in nbunch.
@@ -1409,7 +1392,7 @@ export default class Graph {
    *
    * @return {Array}  A list of all selfloop edges.
    */
-  selfloopEdges(optData=false) {
+  selfloopEdges(optData = false) {
     var edges = [];
 
     for (var nd of this.adj.entries()) {
@@ -1417,8 +1400,7 @@ export default class Graph {
       if (nbrs.has(node)) {
         if (optData) {
           edges.push(tuple3c(node, node, nbrs.get(node), nd));
-        }
-        else {
+        } else {
           edges.push(tuple2c(node, node, nd));
         }
       }
@@ -1481,12 +1463,10 @@ export default class Graph {
 
     if (optWeight == null) {
       return Math.floor(s); // int(s)
-    }
-    else {
+    } else {
       return s; // no need to cast to float
     }
   }
-
 
   /**
    * Return the number of edges between two nodes.
@@ -1516,12 +1496,10 @@ export default class Graph {
     }
     if (this.adj.get(u).has(v)) {
       return 1;
-    }
-    else {
+    } else {
       return 0;
     }
   }
-
 
   /**
    * Add a star.
@@ -1542,10 +1520,9 @@ export default class Graph {
   addStar(nodes, optAttr) {
     var niter = toIterator(nodes);
     var v = niter.next().value;
-    var edges = mapIterator(niter, n => tuple2(v, n));
+    var edges = mapIterator(niter, (n) => tuple2(v, n));
     this.addEdgesFrom(edges, optAttr);
   }
-
 
   /**
    * Add a path.
@@ -1565,13 +1542,9 @@ export default class Graph {
    */
   addPath(nodes, optAttr) {
     var nlist = Array.from(nodes);
-    var edges = zipSequence(
-      nlist.slice(0, nlist.length - 1),
-      nlist.slice(1)
-    );
+    var edges = zipSequence(nlist.slice(0, nlist.length - 1), nlist.slice(1));
     this.addEdgesFrom(edges, optAttr);
   }
-
 
   /**
    * Add a cycle.
@@ -1591,13 +1564,9 @@ export default class Graph {
    */
   addCycle(nodes, optAttr) {
     var nlist = Array.from(nodes);
-    var edges = zipSequence(
-      nlist,
-      nlist.slice(1).concat([nlist[0]])
-    );
+    var edges = zipSequence(nlist, nlist.slice(1).concat([nlist[0]]));
     this.addEdgesFrom(edges, optAttr);
   }
-
 
   /**
    * Return an iterator of nodes contained in `nbunch` that are
@@ -1625,14 +1594,15 @@ export default class Graph {
    *      If nbunch is null or not defined, iterate over all nodes in the graph.
    */
   *nbunchIter(optNbunch) {
-    if (optNbunch == null) { // include all nodes
+    if (optNbunch == null) {
+      // include all nodes
       /*jshint expr:true*/
       yield* this.adj.keys();
-    }
-    else if (this.hasNode(optNbunch)) { // if nbunch is a single node
+    } else if (this.hasNode(optNbunch)) {
+      // if nbunch is a single node
       yield optNbunch;
-    }
-    else { // if nbunch is a sequence of nodes
+    } else {
+      // if nbunch is a sequence of nodes
       var adj = this.adj;
 
       try {
@@ -1641,11 +1611,10 @@ export default class Graph {
             yield n;
           }
         }
-      }
-      catch(ex) {
+      } catch (ex) {
         if (ex instanceof TypeError) {
           throw new JSNetworkXError(
-            'nbunch is not a node or a sequence of nodes'
+            "nbunch is not a node or a sequence of nodes"
           );
         }
       }

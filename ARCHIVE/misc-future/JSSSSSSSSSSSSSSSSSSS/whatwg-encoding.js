@@ -6,7 +6,7 @@ const labelsToNames = require("./labels-to-names.json");
 const supportedNamesSet = new Set(supportedNames);
 
 // https://encoding.spec.whatwg.org/#concept-encoding-get
-exports.labelToName = label => {
+exports.labelToName = (label) => {
   label = String(label).trim().toLowerCase();
 
   return labelsToNames[label] || null;
@@ -30,18 +30,18 @@ exports.decode = (buffer, fallbackEncodingName) => {
 };
 
 // https://github.com/whatwg/html/issues/1910#issuecomment-254017369
-exports.getBOMEncoding = buffer => {
-  if (buffer[0] === 0xFE && buffer[1] === 0xFF) {
+exports.getBOMEncoding = (buffer) => {
+  if (buffer[0] === 0xfe && buffer[1] === 0xff) {
     return "UTF-16BE";
-  } else if (buffer[0] === 0xFF && buffer[1] === 0xFE) {
+  } else if (buffer[0] === 0xff && buffer[1] === 0xfe) {
     return "UTF-16LE";
-  } else if (buffer[0] === 0xEF && buffer[1] === 0xBB && buffer[2] === 0xBF) {
+  } else if (buffer[0] === 0xef && buffer[1] === 0xbb && buffer[2] === 0xbf) {
     return "UTF-8";
   }
 
   return null;
 };
 
-exports.isSupported = name => {
+exports.isSupported = (name) => {
   return supportedNamesSet.has(String(name));
 };

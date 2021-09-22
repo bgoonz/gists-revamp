@@ -6,7 +6,9 @@ const DOMException = require("domexception");
 const { parseURL, serializeURL, serializeURLOrigin } = require("whatwg-url");
 const WebSocket = require("ws");
 
-const { setupForSimpleEventAccessors } = require("../helpers/create-event-accessor");
+const {
+  setupForSimpleEventAccessors,
+} = require("../helpers/create-event-accessor");
 
 const EventTargetImpl = require("../events/EventTarget-impl").implementation;
 
@@ -23,7 +25,7 @@ const CLOSED = 3;
 
 const productions = {
   // https://tools.ietf.org/html/rfc7230#section-3.2.6
-  token: /^[!#$%&'*+\-.^_`|~\dA-Za-z]+$/
+  token: /^[!#$%&'*+\-.^_`|~\dA-Za-z]+$/,
 };
 
 const readyStateWSToDOM = [];
@@ -69,8 +71,11 @@ class WebSocketImpl extends EventTargetImpl {
       );
     }
     if (urlRecord.fragment !== null) {
-      throw new DOMException(`The URL contains a fragment identifier ('${urlRecord.fragment}'). Fragment identifiers ` +
-                             "are not allowed in WebSocket URLs.", "SyntaxError");
+      throw new DOMException(
+        `The URL contains a fragment identifier ('${urlRecord.fragment}'). Fragment identifiers ` +
+          "are not allowed in WebSocket URLs.",
+        "SyntaxError"
+      );
     }
 
     if (typeof protocols === "string") {
@@ -79,11 +84,17 @@ class WebSocketImpl extends EventTargetImpl {
     const protocolSet = new Set();
     for (const protocol of protocols) {
       if (!verifySecWebSocketProtocol(protocol)) {
-        throw new DOMException(`The subprotocol '${protocol}' is invalid.`, "SyntaxError");
+        throw new DOMException(
+          `The subprotocol '${protocol}' is invalid.`,
+          "SyntaxError"
+        );
       }
       const lowered = protocol.toLowerCase();
       if (protocolSet.has(lowered)) {
-        throw new DOMException(`The subprotocol '${protocol}' is duplicated.`, "SyntaxError");
+        throw new DOMException(
+          `The subprotocol '${protocol}' is duplicated.`,
+          "SyntaxError"
+        );
       }
       protocolSet.add(lowered);
     }
@@ -109,52 +120,66 @@ class WebSocketImpl extends EventTargetImpl {
     }
     openSocketsForWindow.add(this);
 
-    openingQueues.set(this._ownerDocument, openingQueues.get(this._ownerDocument).then(() => new Promise(resolve => {
-      // close() called before _ws has been initialized.
-      if (this._requiredToFail) {
-        resolve();
-        this._readyState = CLOSED;
-        this._onConnectionClosed(1006, "");
-        return;
-      }
+    openingQueues.set(
+      this._ownerDocument,
+      openingQueues.get(this._ownerDocument).then(
+        () =>
+          new Promise((resolve) => {
+            // close() called before _ws has been initialized.
+            if (this._requiredToFail) {
+              resolve();
+              this._readyState = CLOSED;
+              this._onConnectionClosed(1006, "");
+              return;
+            }
 
-      this._ws = new WebSocket(this.url, protocols, {
-        headers: {
-          "user-agent": window.navigator.userAgent,
-          cookie: this._ownerDocument._cookieJar.getCookieStringSync(nodeParsedURL, { http: true }),
-          origin: this._ownerDocument.origin
-        },
-        rejectUnauthorized: this._ownerDocument._strictSSL
-      });
-      this._ws.once("open", () => {
-        resolve();
-        this._onConnectionEstablished();
-      });
-      this._ws.on("message", this._onMessageReceived.bind(this));
-      this._ws.once("close", (...args) => {
-        resolve();
-        this._onConnectionClosed(...args);
-      });
-      this._ws.once("upgrade", ({ headers }) => {
-        if (Array.isArray(headers["set-cookie"])) {
-          for (const cookie of headers["set-cookie"]) {
-            this._ownerDocument._cookieJar.setCookieSync(cookie, nodeParsedURL, { http: true, ignoreError: true });
-          }
-        } else if (headers["set-cookie"] !== undefined) {
-          this._ownerDocument._cookieJar.setCookieSync(
-            headers["set-cookie"], nodeParsedURL,
-            { http: true, ignoreError: true }
-          );
-        }
-      });
-      this._ws.on("error", () => {
-        // The exact error is passed into this callback, but it is ignored as we don't really care about it.
-        resolve();
-        this._requiredToFail = true;
-        // Do not emit an error here, as that will be handled in _onConnectionClosed. ws always emits a close event
-        // after errors.
-      });
-    })));
+            this._ws = new WebSocket(this.url, protocols, {
+              headers: {
+                "user-agent": window.navigator.userAgent,
+                cookie: this._ownerDocument._cookieJar.getCookieStringSync(
+                  nodeParsedURL,
+                  { http: true }
+                ),
+                origin: this._ownerDocument.origin,
+              },
+              rejectUnauthorized: this._ownerDocument._strictSSL,
+            });
+            this._ws.once("open", () => {
+              resolve();
+              this._onConnectionEstablished();
+            });
+            this._ws.on("message", this._onMessageReceived.bind(this));
+            this._ws.once("close", (...args) => {
+              resolve();
+              this._onConnectionClosed(...args);
+            });
+            this._ws.once("upgrade", ({ headers }) => {
+              if (Array.isArray(headers["set-cookie"])) {
+                for (const cookie of headers["set-cookie"]) {
+                  this._ownerDocument._cookieJar.setCookieSync(
+                    cookie,
+                    nodeParsedURL,
+                    { http: true, ignoreError: true }
+                  );
+                }
+              } else if (headers["set-cookie"] !== undefined) {
+                this._ownerDocument._cookieJar.setCookieSync(
+                  headers["set-cookie"],
+                  nodeParsedURL,
+                  { http: true, ignoreError: true }
+                );
+              }
+            });
+            this._ws.on("error", () => {
+              // The exact error is passed into this callback, but it is ignored as we don't really care about it.
+              resolve();
+              this._requiredToFail = true;
+              // Do not emit an error here, as that will be handled in _onConnectionClosed. ws always emits a close event
+              // after errors.
+            });
+          })
+      )
+    );
   }
 
   // https://html.spec.whatwg.org/multipage/web-sockets.html#make-disappear
@@ -199,35 +224,50 @@ class WebSocketImpl extends EventTargetImpl {
       } else {
         dataForEvent = new Uint8Array(data).buffer;
       }
-    } else { // this.binaryType === "blob"
+    } else {
+      // this.binaryType === "blob"
       if (!Array.isArray(data)) {
         data = [data];
       }
       dataForEvent = Blob.create([data, { type: "" }]);
     }
-    this._dispatch(MessageEvent.createImpl([
-      "message", {
-        data: dataForEvent,
-        origin: serializeURLOrigin(this._urlRecord)
-      }
-    ], { isTrusted: true }));
+    this._dispatch(
+      MessageEvent.createImpl(
+        [
+          "message",
+          {
+            data: dataForEvent,
+            origin: serializeURLOrigin(this._urlRecord),
+          },
+        ],
+        { isTrusted: true }
+      )
+    );
   }
 
   _onConnectionClosed(code, reason) {
-    const openSocketsForWindow = openSockets.get(this._ownerDocument._defaultView);
+    const openSocketsForWindow = openSockets.get(
+      this._ownerDocument._defaultView
+    );
     openSocketsForWindow.delete(this);
 
     const wasClean = !this._requiredToFail;
     if (this._requiredToFail) {
       this._dispatch(Event.createImpl(["error"], { isTrusted: true }));
     }
-    this._dispatch(CloseEvent.createImpl([
-      "close", {
-        wasClean,
-        code,
-        reason
-      }
-    ], { isTrusted: true }));
+    this._dispatch(
+      CloseEvent.createImpl(
+        [
+          "close",
+          {
+            wasClean,
+            code,
+            reason,
+          },
+        ],
+        { isTrusted: true }
+      )
+    );
   }
 
   get readyState() {
@@ -245,14 +285,21 @@ class WebSocketImpl extends EventTargetImpl {
   }
 
   close(code = undefined, reason = undefined) {
-    if (code !== undefined && code !== 1000 && !(code >= 3000 && code <= 4999)) {
+    if (
+      code !== undefined &&
+      code !== 1000 &&
+      !(code >= 3000 && code <= 4999)
+    ) {
       throw new DOMException(
         `The code must be either 1000, or between 3000 and 4999. ${code} is neither.`,
         "InvalidAccessError"
       );
     }
     if (reason !== undefined && Buffer.byteLength(reason, "utf8") > 123) {
-      throw new DOMException("The message must not be greater than 123 bytes.", "SyntaxError");
+      throw new DOMException(
+        "The message must not be greater than 123 bytes.",
+        "SyntaxError"
+      );
     }
     this._close(code, reason);
   }
@@ -311,6 +358,11 @@ class WebSocketImpl extends EventTargetImpl {
   }
 }
 
-setupForSimpleEventAccessors(WebSocketImpl.prototype, ["open", "message", "error", "close"]);
+setupForSimpleEventAccessors(WebSocketImpl.prototype, [
+  "open",
+  "message",
+  "error",
+  "close",
+]);
 
 exports.implementation = WebSocketImpl;

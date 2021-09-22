@@ -11,14 +11,17 @@ function SVGSVGElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(SVGSVGElement.prototype, SVGGraphicsElement.interface.prototype);
+Object.setPrototypeOf(
+  SVGSVGElement.prototype,
+  SVGGraphicsElement.interface.prototype
+);
 Object.setPrototypeOf(SVGSVGElement, SVGGraphicsElement.interface);
 
 Object.defineProperty(SVGSVGElement, "prototype", {
   value: SVGSVGElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 SVGSVGElement.prototype.createSVGNumber = function createSVGNumber() {
@@ -45,14 +48,17 @@ SVGSVGElement.prototype.getElementById = function getElementById(elementId) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementById' on 'SVGSVGElement': parameter 1"
+      context:
+        "Failed to execute 'getElementById' on 'SVGSVGElement': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getElementById(...args));
 };
 
-SVGSVGElement.prototype.suspendRedraw = function suspendRedraw(maxWaitMilliseconds) {
+SVGSVGElement.prototype.suspendRedraw = function suspendRedraw(
+  maxWaitMilliseconds
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -68,14 +74,17 @@ SVGSVGElement.prototype.suspendRedraw = function suspendRedraw(maxWaitMillisecon
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'suspendRedraw' on 'SVGSVGElement': parameter 1"
+      context:
+        "Failed to execute 'suspendRedraw' on 'SVGSVGElement': parameter 1",
     });
     args.push(curArg);
   }
   return this[impl].suspendRedraw(...args);
 };
 
-SVGSVGElement.prototype.unsuspendRedraw = function unsuspendRedraw(suspendHandleID) {
+SVGSVGElement.prototype.unsuspendRedraw = function unsuspendRedraw(
+  suspendHandleID
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -91,7 +100,8 @@ SVGSVGElement.prototype.unsuspendRedraw = function unsuspendRedraw(suspendHandle
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'unsuspendRedraw' on 'SVGSVGElement': parameter 1"
+      context:
+        "Failed to execute 'unsuspendRedraw' on 'SVGSVGElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -134,7 +144,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onafterprint", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onbeforeprint", {
@@ -157,7 +167,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onbeforeprint", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onbeforeunload", {
@@ -180,7 +190,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onbeforeunload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onhashchange", {
@@ -203,7 +213,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onhashchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onlanguagechange", {
@@ -226,7 +236,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onlanguagechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onmessage", {
@@ -249,7 +259,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onmessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onmessageerror", {
@@ -272,7 +282,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onmessageerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onoffline", {
@@ -295,7 +305,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onoffline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "ononline", {
@@ -318,7 +328,7 @@ Object.defineProperty(SVGSVGElement.prototype, "ononline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onpagehide", {
@@ -341,7 +351,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onpagehide", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onpageshow", {
@@ -364,7 +374,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onpageshow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onpopstate", {
@@ -387,7 +397,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onpopstate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onrejectionhandled", {
@@ -410,7 +420,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onrejectionhandled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onstorage", {
@@ -433,7 +443,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onstorage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onunhandledrejection", {
@@ -456,7 +466,7 @@ Object.defineProperty(SVGSVGElement.prototype, "onunhandledrejection", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, "onunload", {
@@ -479,14 +489,14 @@ Object.defineProperty(SVGSVGElement.prototype, "onunload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(SVGSVGElement.prototype, Symbol.toStringTag, {
   value: "SVGSVGElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -552,7 +562,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -563,8 +573,8 @@ const iface = {
   },
   interface: SVGSVGElement,
   expose: {
-    Window: { SVGSVGElement }
-  }
+    Window: { SVGSVGElement },
+  },
 }; // iface
 module.exports = iface;
 

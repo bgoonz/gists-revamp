@@ -7,14 +7,14 @@ let gameData = [
     id: 1,
     title: "Pacman",
     genre: "Arcade",
-    releaseYear: 1980
+    releaseYear: 1980,
   },
   {
     id: 2,
     title: "Galaxian",
     genre: "Arcade",
-    releaseYear: 1979
-  }
+    releaseYear: 1979,
+  },
 ];
 
 // Post Game
@@ -36,7 +36,7 @@ server.get("/games", (req, res) => {
 
 server.get("/games/:id", (req, res) => {
   const { id } = req.params;
-  const game = gameData.find(g => g.id === Number(id));
+  const game = gameData.find((g) => g.id === Number(id));
   if (game === undefined) {
     return res.status(404).json();
   }

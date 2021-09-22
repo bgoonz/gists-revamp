@@ -16,12 +16,12 @@ export default function stringifyValidator(validator, nodePrefix) {
   }
 
   if (validator.oneOfNodeTypes) {
-    return validator.oneOfNodeTypes.map(_ => nodePrefix + _).join(" | ");
+    return validator.oneOfNodeTypes.map((_) => nodePrefix + _).join(" | ");
   }
 
   if (validator.oneOfNodeOrValueTypes) {
     return validator.oneOfNodeOrValueTypes
-      .map(_ => {
+      .map((_) => {
         return isValueType(_) ? _ : nodePrefix + _;
       })
       .join(" | ");
@@ -35,7 +35,7 @@ export default function stringifyValidator(validator, nodePrefix) {
     return (
       "{ " +
       Object.keys(validator.shapeOf)
-        .map(shapeKey => {
+        .map((shapeKey) => {
           const propertyDefinition = validator.shapeOf[shapeKey];
           if (propertyDefinition.validate) {
             const isOptional =

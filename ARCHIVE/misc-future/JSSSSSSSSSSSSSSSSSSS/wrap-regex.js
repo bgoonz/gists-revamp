@@ -10,50 +10,58 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "layout",
+  meta: {
+    type: "layout",
 
-        docs: {
-            description: "require parenthesis around regex literals",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/wrap-regex"
-        },
-
-        schema: [],
-        fixable: "code",
-
-        messages: {
-            requireParens: "Wrap the regexp literal in parens to disambiguate the slash."
-        }
+    docs: {
+      description: "require parenthesis around regex literals",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/wrap-regex",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
+    schema: [],
+    fixable: "code",
 
-        return {
+    messages: {
+      requireParens:
+        "Wrap the regexp literal in parens to disambiguate the slash.",
+    },
+  },
 
-            Literal(node) {
-                const token = sourceCode.getFirstToken(node),
-                    nodeType = token.type;
+  create(context) {
+    const sourceCode = context.getSourceCode();
 
-                if (nodeType === "RegularExpression") {
-                    const beforeToken = sourceCode.getTokenBefore(node);
-                    const afterToken = sourceCode.getTokenAfter(node);
-                    const ancestors = context.getAncestors();
-                    const grandparent = ancestors[ancestors.length - 1];
+    return {
+      Literal(node) {
+        const token = sourceCode.getFirstToken(node),
+          nodeType = token.type;
 
-                    if (grandparent.type === "MemberExpression" && grandparent.object === node &&
-                        !(beforeToken && beforeToken.value === "(" && afterToken && afterToken.value === ")")) {
-                        context.report({
-                            node,
-                            messageId: "requireParens",
-                            fix: fixer => fixer.replaceText(node, `(${sourceCode.getText(node)})`)
-                        });
-                    }
-                }
-            }
-        };
+        if (nodeType === "RegularExpression") {
+          const beforeToken = sourceCode.getTokenBefore(node);
+          const afterToken = sourceCode.getTokenAfter(node);
+          const ancestors = context.getAncestors();
+          const grandparent = ancestors[ancestors.length - 1];
 
-    }
+          if (
+            grandparent.type === "MemberExpression" &&
+            grandparent.object === node &&
+            !(
+              beforeToken &&
+              beforeToken.value === "(" &&
+              afterToken &&
+              afterToken.value === ")"
+            )
+          ) {
+            context.report({
+              node,
+              messageId: "requireParens",
+              fix: (fixer) =>
+                fixer.replaceText(node, `(${sourceCode.getText(node)})`),
+            });
+          }
+        }
+      },
+    };
+  },
 };
