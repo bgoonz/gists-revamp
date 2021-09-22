@@ -1,5 +1,5 @@
-var baseMerge = require('./_baseMerge'),
-    createAssigner = require('./_createAssigner');
+var baseMerge = require("./_baseMerge"),
+  createAssigner = require("./_createAssigner");
 
 /**
  * This method is like `_.merge` except that it accepts `customizer` which
@@ -32,7 +32,7 @@ var baseMerge = require('./_baseMerge'),
  * _.mergeWith(object, other, customizer);
  * // => { 'a': [1, 3], 'b': [2, 4] }
  */
-var mergeWith = createAssigner(function(object, source, srcIndex, customizer) {
+var mergeWith = createAssigner(function (object, source, srcIndex, customizer) {
   baseMerge(object, source, srcIndex, customizer);
 });
 

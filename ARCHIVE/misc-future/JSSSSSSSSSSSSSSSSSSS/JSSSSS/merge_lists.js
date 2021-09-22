@@ -10,6 +10,4 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var mergeTwoLists = function(l1, l2) {
-    
-};
+var mergeTwoLists = function (l1, l2) {};

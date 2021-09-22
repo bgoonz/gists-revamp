@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports._params = _params;
 exports._parameters = _parameters;
@@ -14,9 +14,7 @@ exports.ArrowFunctionExpression = ArrowFunctionExpression;
 
 var _t = require("@babel/types");
 
-const {
-  isIdentifier
-} = _t;
+const { isIdentifier } = _t;
 
 function _params(node) {
   this.print(node.typeParameters, node);
@@ -128,7 +126,14 @@ function ArrowFunctionExpression(node) {
 
   const firstParam = node.params[0];
 
-  if (!this.format.retainLines && !this.format.auxiliaryCommentBefore && !this.format.auxiliaryCommentAfter && node.params.length === 1 && isIdentifier(firstParam) && !hasTypesOrComments(node, firstParam)) {
+  if (
+    !this.format.retainLines &&
+    !this.format.auxiliaryCommentBefore &&
+    !this.format.auxiliaryCommentAfter &&
+    node.params.length === 1 &&
+    isIdentifier(firstParam) &&
+    !hasTypesOrComments(node, firstParam)
+  ) {
     this.print(firstParam, node);
   } else {
     this._params(node);
@@ -145,5 +150,15 @@ function ArrowFunctionExpression(node) {
 function hasTypesOrComments(node, param) {
   var _param$leadingComment, _param$trailingCommen;
 
-  return !!(node.typeParameters || node.returnType || node.predicate || param.typeAnnotation || param.optional || (_param$leadingComment = param.leadingComments) != null && _param$leadingComment.length || (_param$trailingCommen = param.trailingComments) != null && _param$trailingCommen.length);
+  return !!(
+    node.typeParameters ||
+    node.returnType ||
+    node.predicate ||
+    param.typeAnnotation ||
+    param.optional ||
+    ((_param$leadingComment = param.leadingComments) != null &&
+      _param$leadingComment.length) ||
+    ((_param$trailingCommen = param.trailingComments) != null &&
+      _param$trailingCommen.length)
+  );
 }

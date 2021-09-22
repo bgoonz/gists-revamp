@@ -1,6 +1,6 @@
-var baseExtremum = require('./_baseExtremum'),
-    baseIteratee = require('./_baseIteratee'),
-    baseLt = require('./_baseLt');
+var baseExtremum = require("./_baseExtremum"),
+  baseIteratee = require("./_baseIteratee"),
+  baseLt = require("./_baseLt");
 
 /**
  * This method is like `_.min` except that it accepts `iteratee` which is
@@ -26,7 +26,7 @@ var baseExtremum = require('./_baseExtremum'),
  * // => { 'n': 1 }
  */
 function minBy(array, iteratee) {
-  return (array && array.length)
+  return array && array.length
     ? baseExtremum(array, baseIteratee(iteratee, 2), baseLt)
     : undefined;
 }

@@ -1,5 +1,5 @@
-var baseInvoke = require('./_baseInvoke'),
-    baseRest = require('./_baseRest');
+var baseInvoke = require("./_baseInvoke"),
+  baseRest = require("./_baseRest");
 
 /**
  * The opposite of `_.method`; this method creates a function that invokes
@@ -24,8 +24,8 @@ var baseInvoke = require('./_baseInvoke'),
  * _.map([['a', '2'], ['c', '0']], _.methodOf(object));
  * // => [2, 0]
  */
-var methodOf = baseRest(function(object, args) {
-  return function(path) {
+var methodOf = baseRest(function (object, args) {
+  return function (path) {
     return baseInvoke(object, path, args);
   };
 });
