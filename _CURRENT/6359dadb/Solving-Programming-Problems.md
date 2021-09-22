@@ -131,7 +131,7 @@ Answers from the client:
 
 Fields:
 
-Field name| :-:| name| addr1| addr2| city| state| zip| country| total sales| hourly_sales_1_1| hourly_sales_1_2| hourly_sales_1_3| hourly_sales_1_4| hourly_sales_1_5| hourly_sales_1_6| hourly_sales_1_7| hourly_sales_1_8| hourly_sales_1_9| hourly_sales_1_10| hourly_sales_1_11| hourly_sales_1_12| hourly_sales_2_1| hourly_sales_2_2| hourly_sales_2_3| hourly_sales_2_4| hourly_sales_2_5| hourly_sales_2_6| hourly_sales_2_7| hourly_sales_2_8| hourly_sales_2_9| hourly_sales_2_10| hourly_sales_2_11| hourly_sales_2_12| _\[… 4365 fields omitted …\]_| hourly_sales_365_1| hourly_sales_365_2| hourly_sales_365_3| hourly_sales_365_4| hourly_sales_365_5| hourly_sales_365_6| hourly_sales_365_7| hourly_sales_365_8| hourly_sales_365_9| hourly_sales_365_10| hourly_sales_365_11| hourly_sales_365_12|
+Field name| :-:| name| addr1| addr2| city| state| zip| country| total sales| hourly*sales_1_1| hourly_sales_1_2| hourly_sales_1_3| hourly_sales_1_4| hourly_sales_1_5| hourly_sales_1_6| hourly_sales_1_7| hourly_sales_1_8| hourly_sales_1_9| hourly_sales_1_10| hourly_sales_1_11| hourly_sales_1_12| hourly_sales_2_1| hourly_sales_2_2| hourly_sales_2_3| hourly_sales_2_4| hourly_sales_2_5| hourly_sales_2_6| hourly_sales_2_7| hourly_sales_2_8| hourly_sales_2_9| hourly_sales_2_10| hourly_sales_2_11| hourly_sales_2_12| *\[… 4365 fields omitted …\]\_| hourly_sales_365_1| hourly_sales_365_2| hourly_sales_365_3| hourly_sales_365_4| hourly_sales_365_5| hourly_sales_365_6| hourly_sales_365_7| hourly_sales_365_8| hourly_sales_365_9| hourly_sales_365_10| hourly_sales_365_11| hourly_sales_365_12|
 
 There are 12 fields per every day of the year per store. Apparently this is where the 1.8 GB comes from.
 
