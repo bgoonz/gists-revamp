@@ -1,18 +1,16 @@
-Design Resources
-================
+# Design Resources
 
 A curated list of design resources from design templates, stock photos, icons, colors, and much more
 
 ![Repository banner](thumbnail.png)
 
-Table of Contents
------------------
+## Table of Contents
 
--   [General](#general)
--   [Colors](#colors)
--   [Illustrations](#illustrations)
--   [Stock Photos](#stock-photos)
--   [Icons](#icons)
+- [General](#general)
+- [Colors](#colors)
+- [Illustrations](#illustrations)
+- [Stock Photos](#stock-photos)
+- [Icons](#icons)
 
 ### General
 

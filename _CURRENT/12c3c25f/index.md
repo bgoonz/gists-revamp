@@ -1,2 +1,1 @@
-Copy Excel Paste Markdown
-=========================
+# Copy Excel Paste Markdown

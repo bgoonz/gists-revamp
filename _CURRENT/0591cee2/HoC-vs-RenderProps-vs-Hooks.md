@@ -1,27 +1,26 @@
-HoC (pattern) vs Render Props (pattern) vs Hooks (not pattern, a new API)
-=========================================================================
+# HoC (pattern) vs Render Props (pattern) vs Hooks (not pattern, a new API)
 
 Someone was asking me about comparing the HoC and Render Props patterns (and their shortcomings) to hooks. I might leave this up as a public gist for others if it’s helpful.
 
-------------------------------------------------------------------------
+---
 
 tldr;
 
 Issues with HoC:
 
--   Prop Collisions (sometimes)
--   Can’t use the HoC twice
--   Indirection
--   Composing happens at build-time (can cause issues)
+- Prop Collisions (sometimes)
+- Can’t use the HoC twice
+- Indirection
+- Composing happens at build-time (can cause issues)
 
 Issues with Render Props
 
--   Ugly (deep nesting)
--   Scoping Issues (sometimes)
+- Ugly (deep nesting)
+- Scoping Issues (sometimes)
 
 Hooks solve all the issues that both HoC’s and Render Props Have.
 
-------------------------------------------------------------------------
+---
 
 Some main points we need to understand first:
 
@@ -60,10 +59,9 @@ So you can think of hooks as being a “more official” way now to abstract re-
 
 Understanding these two main points is required before we continue.
 
-------------------------------------------------------------------------
-
-HoC
 ---
+
+## HoC
 
 HoC’s are a way of composing two components together - a parent and a child. When we have a file like this:
 
@@ -99,7 +97,7 @@ The first and most obvious shortcoming of HoC is “prop collisions”. If you c
 
     <MyComponent name="Brad" />
 
-We’re actually passing the prop `name` to the parent “wrapper component” that was provided by the HoC – we’re not passing name to what we think which is the `MyComponent` that we wrote. Technically, it’s the job of the HoC to forward those props on to it’s child which is the real `MyComponent` that we wrote, so it *feels* like doing `<MyComponent name="Brad" />` is working directly with our `MyComponent`, but there is this middle-man component which is that parent from the HoC.
+We’re actually passing the prop `name` to the parent “wrapper component” that was provided by the HoC – we’re not passing name to what we think which is the `MyComponent` that we wrote. Technically, it’s the job of the HoC to forward those props on to it’s child which is the real `MyComponent` that we wrote, so it _feels_ like doing `<MyComponent name="Brad" />` is working directly with our `MyComponent`, but there is this middle-man component which is that parent from the HoC.
 
 This means we could have “prop collisions” between what we want to pass into `MyComponent` and what the HoC wants to pass in. What if we pass `name` but the HoC also wants to pass in a prop called `name`. This might not happen often, but it can happen and will cause bugs in your code. This problem does not exist with Render Props or Hooks as we’ll see later on.
 
@@ -165,8 +163,7 @@ You want to do this:
 
 But do you see the problem? The moment that you have access to the prop `uid` which is `5` now but could be anything later is something that is too dynamic to plug into our path for fetching users. How do I get the value `5` into the path where I have `???`
 
-Render Props
-------------
+## Render Props
 
 Render Props is considered to be an alternative pattern to HoC. The premise of a Render Prop is similar though in that it also creates a parent wrapper that has the reusable state/functions - but it doesn’t do this as a wrapper to our component:
 
@@ -275,7 +272,7 @@ And the values provided to us by `Toggle` don’t collide because their in two d
 
 How about that “data fetching” abstraction?
 
-> I’m not trying to say you should make this fetching thing as an HoC or a RenderProp, keep in mind I’m just trying to illustrates an example of an abstraction that *needs* to be given some dynamic data as it’s input. Data fetching is just an easy example
+> I’m not trying to say you should make this fetching thing as an HoC or a RenderProp, keep in mind I’m just trying to illustrates an example of an abstraction that _needs_ to be given some dynamic data as it’s input. Data fetching is just an easy example
 
 Before we needed to take a prop like `uid` and and give it to the code that does the abstraction:
 
@@ -311,8 +308,7 @@ Render Props solve all the problems I know about that HoC’s introduce. However
 1.  Render Props look ugly! HoC’s are nice looking because we just call a function where we do the export and now we just get these magic props that show up. But Render Props require deeper nesting of our JSX and make it look terrible.
 2.  The values given to us by the Render Props are scoped to the function we pass into `render` or `children`. This is one of the reasons why Render Props solves problems of HoC’s but what if we need those values in the lifecycle methods for any reason? Not easy with Render Props. With HoC’s those values provided were props at the top level of our component so that wasn’t a problem.
 
-Enter, Hooks!!
---------------
+## Enter, Hooks!!
 
 Remember, Hooks are not a third-pattern that simply serves as an alternative to the two we’ve discussed. Hooks are a whole new way to think about writing React and it just so happens that we don’t need the HoC and Render Props patterns as much anymore (if at all) since hooks solves those problems in a much nicer way.
 
@@ -332,16 +328,16 @@ The main “problems” around HoC’s and Render Props revolved around “how�
 
 Problems with HoC solved with Hooks
 
--   No variable collisions
--   No indirection
--   We can use the same custom hook twice
--   Composing happens at runtime so we can take our props and use them in hooks (`uid` in this case)
+- No variable collisions
+- No indirection
+- We can use the same custom hook twice
+- Composing happens at runtime so we can take our props and use them in hooks (`uid` in this case)
 
 Problems with Render Props solved with Hooks
 
--   Not ugly, doesn’t cause deep nesting
--   Values given to us by the custom hooks are scoped to the top level of the component itself and not just a limited place in the JSX
+- Not ugly, doesn’t cause deep nesting
+- Values given to us by the custom hooks are scoped to the top level of the component itself and not just a limited place in the JSX
 
-------------------------------------------------------------------------
+---
 
 I’d prefer questions on Twitter if you have any <span class="citation" data-cites="bradwestfall">@bradwestfall</span>

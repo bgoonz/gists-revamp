@@ -1,46 +1,43 @@
-S3 Static Sites
-===============
+# S3 Static Sites
 
 What this will cover
 
--   Host a static website at S3
--   Redirect `www.website.com` to `website.com`
--   Website can be an SPA (requiring all requests to return `index.html`)
--   Free AWS SSL certs
--   Deployment with CDN invalidation
+- Host a static website at S3
+- Redirect `www.website.com` to `website.com`
+- Website can be an SPA (requiring all requests to return `index.html`)
+- Free AWS SSL certs
+- Deployment with CDN invalidation
 
-Resources
----------
+## Resources
 
--   https://stormpath.com/blog/ultimate-guide-deploying-static-site-aws
--   https://miketabor.com/host-static-website-using-aws-s3/
--   http://www.mycowsworld.com/blog/2013/07/29/setting-up-a-godaddy-domain-name-with-amazon-web-services.html
--   https://www.davidbaumgold.com/tutorials/host-static-site-aws-s3-cloudfront/\#make-an-s3-bucket
+- https://stormpath.com/blog/ultimate-guide-deploying-static-site-aws
+- https://miketabor.com/host-static-website-using-aws-s3/
+- http://www.mycowsworld.com/blog/2013/07/29/setting-up-a-godaddy-domain-name-with-amazon-web-services.html
+- https://www.davidbaumgold.com/tutorials/host-static-site-aws-s3-cloudfront/\#make-an-s3-bucket
 
-S3 Bucket
----------
+## S3 Bucket
 
--   Create an S3 bucket named exactly after the domain name, for example `website.com`.
--   In **Properties**, click the Static Website section.
-    -   Click **Use this bucket to host a website** and enter `index.html` into **Index Document** field.
-    -   Don’t enter anything else in this form.
-    -   This will create an “endpoint” on the same screen similar to `http://website.com.s3-website-us-east-1.amazonaws.com`.
--   Then click on **Permissions** tab, then **Bucket Policy**. Enter this policy:
+- Create an S3 bucket named exactly after the domain name, for example `website.com`.
+- In **Properties**, click the Static Website section.
+  - Click **Use this bucket to host a website** and enter `index.html` into **Index Document** field.
+  - Don’t enter anything else in this form.
+  - This will create an “endpoint” on the same screen similar to `http://website.com.s3-website-us-east-1.amazonaws.com`.
+- Then click on **Permissions** tab, then **Bucket Policy**. Enter this policy:
 
-    {
-      "Version": "2008-10-17",
-      "Statement": [
-        {
-          "Sid": "AllowPublicRead",
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "*"
-          },
-          "Action": "s3:GetObject",
-          "Resource": "arn:aws:s3:::BUCKET_NAME/*"
-        }
-      ]
-    }
+  {
+  "Version": "2008-10-17",
+  "Statement": [
+  {
+  "Sid": "AllowPublicRead",
+  "Effect": "Allow",
+  "Principal": {
+  "AWS": "*"
+  },
+  "Action": "s3:GetObject",
+  "Resource": "arn:aws:s3:::BUCKET_NAME/*"
+  }
+  ]
+  }
 
 > Be sure to replace `BUCKET_NAME` with yours.
 
@@ -48,27 +45,25 @@ S3 Bucket
 
 Uploading an `index.html` should allow us to visit the “endpoint”
 
-CloudFront
-----------
+## CloudFront
 
--   Go to the CloudFront section and click **Create Distribution** and then create for **Web**, not RTMP.
--   In **Origin Domain Name**, paste the “endpoint” previously created in S3 (without the `http://` part). Note that when you click on this field it will act like a dropdown with options to your existing buckets. I think you can just select one of those two which is a valid list of your S3 buckets.
--   The order of these instructions assume SSL certificates are not setup yet. So don’t do anything with settings regarding SSL
--   Select “yes” for **Compress Objects Automatically**.
--   In **Alternate Domain Names (CNAMEs)**, put the domain names which you want to correspond to this bucket. Put each on their own line **OR** separated by comma. The reason why you may have two or more is something like this: `mywebsite.com` and `www.mywebsite.com`. The field is called “Alternative Domain Names” because AWS will have an aws-specific domain name for the CDN, but you don’t want to use that so you’ll want to put in your custom domains and then use Route 53 (next section) to point domains to the CDN.
--   In **Default Root Object**, type `index.html`.
--   Create. The next screen will show distributions in table form, the one we just made will be “in progress” for a few minutes
+- Go to the CloudFront section and click **Create Distribution** and then create for **Web**, not RTMP.
+- In **Origin Domain Name**, paste the “endpoint” previously created in S3 (without the `http://` part). Note that when you click on this field it will act like a dropdown with options to your existing buckets. I think you can just select one of those two which is a valid list of your S3 buckets.
+- The order of these instructions assume SSL certificates are not setup yet. So don’t do anything with settings regarding SSL
+- Select “yes” for **Compress Objects Automatically**.
+- In **Alternate Domain Names (CNAMEs)**, put the domain names which you want to correspond to this bucket. Put each on their own line **OR** separated by comma. The reason why you may have two or more is something like this: `mywebsite.com` and `www.mywebsite.com`. The field is called “Alternative Domain Names” because AWS will have an aws-specific domain name for the CDN, but you don’t want to use that so you’ll want to put in your custom domains and then use Route 53 (next section) to point domains to the CDN.
+- In **Default Root Object**, type `index.html`.
+- Create. The next screen will show distributions in table form, the one we just made will be “in progress” for a few minutes
 
 The distribution will have a domain name like `dpo155j0y52ps.cloudfront.net`. This is important for DNS (see below). So copy it somehwere.
 
-Route 53
---------
+## Route 53
 
 These DNS instructions assume your DNS is hosted at AWS. **This does not mean** you have to buy a domain at AWS, it just means that when you buy a domain at somewhere like Google or GoDaddy, over there you need to point NS records to AWS to allow AWS to manage the parts of the DNS record. But first, at AWS is where you create the “Hosted Zone” which is where you create the NS values to eventually give to Google or GoDaddy, etc. I don’t know how any of this is different if you buy your domain at AWS (But then again I never buy domains at the same place I host)
 
--   Click **Hosted Zones**
--   Create a new Zone: Use the domain name (`mywebsite.com` without sub domain) for zone. Note that each domain name will get one zone, sub domains all belong to the same zone.
--   This should create NS records such as:
+- Click **Hosted Zones**
+- Create a new Zone: Use the domain name (`mywebsite.com` without sub domain) for zone. Note that each domain name will get one zone, sub domains all belong to the same zone.
+- This should create NS records such as:
 
 <!-- -->
 
@@ -77,27 +72,26 @@ These DNS instructions assume your DNS is hosted at AWS. **This does not mean** 
     ns-642.awsdns-16.net.
     ns-243.awsdns-30.com.
 
--   The NS records can be used to point DNS management from other domain registrar to AWS Route 53
--   Click **Create Record Set** to create an `A` record.
-    -   This will be the record that points `mywebsite.com` to CloudFront.
-    -   For the **name**, enter no value
-    -   Change **Alias** to Yes
-    -   Paste the CloutFront domain in the **Alias** field
-        -   This should look like `[some-random-number].couldfront.net`. You can get this by clicking your CloudFront distribution and in the General tab there is a “Domain Name” label.
-    -   Click Create Record Set
--   Create another `A` record for the `www` redirect
-    -   Follow the same steps for the previous `A` record, but enter `www` for **name** and use the same CloudFront domain. But note this is because we want `www.mywebsite.com` and `mywebsite.com` to point to the same bucket (and therefore the same CloudFront domain). I suppose you would make a whole new bucket and a whole new CloudFront distrubution (with a new CF domain) if you wanted a second project at `app.mywebsite.com`. This might be common if you app is a React app that is completly separate code from your “home page” website which might be from a static site generator or something.
+- The NS records can be used to point DNS management from other domain registrar to AWS Route 53
+- Click **Create Record Set** to create an `A` record.
+  - This will be the record that points `mywebsite.com` to CloudFront.
+  - For the **name**, enter no value
+  - Change **Alias** to Yes
+  - Paste the CloutFront domain in the **Alias** field
+    - This should look like `[some-random-number].couldfront.net`. You can get this by clicking your CloudFront distribution and in the General tab there is a “Domain Name” label.
+  - Click Create Record Set
+- Create another `A` record for the `www` redirect
+  - Follow the same steps for the previous `A` record, but enter `www` for **name** and use the same CloudFront domain. But note this is because we want `www.mywebsite.com` and `mywebsite.com` to point to the same bucket (and therefore the same CloudFront domain). I suppose you would make a whole new bucket and a whole new CloudFront distrubution (with a new CF domain) if you wanted a second project at `app.mywebsite.com`. This might be common if you app is a React app that is completly separate code from your “home page” website which might be from a static site generator or something.
 
-HTTPS
------
+## HTTPS
 
 In the AWS Console, go to **Certificate Manager** and request a cert for domain and all sub domains. We will be required to verify certificate via email or DNS. If verifying by email, AWS will look up the public DNS owner information and use up to three emails it finds there (if your domain ownership info is public). But even if it’s not public, AWS will also use these (that you don’t get to choose from)
 
--   `administrator@mywebsite.com`
--   `hostmaster@mywebsite.com`
--   `postmaster@mywebsite.com`
--   `webmaster@mywebsite.com`
--   `admin@mywebsite.com`
+- `administrator@mywebsite.com`
+- `hostmaster@mywebsite.com`
+- `postmaster@mywebsite.com`
+- `webmaster@mywebsite.com`
+- `admin@mywebsite.com`
 
 If your company uses “webmaster@”, hats off to you, because your app is probably 1000 years old.
 
@@ -107,27 +101,25 @@ If you choose to verify via DNS, AWS will ask you to add some CNAME records to y
 
 After the verification is done and the cert is “issued”, we can go back into CloudFont to edit our distribution for this domain:
 
--   Click the distribution and on the next page (in the General tab), click **Edit**
--   Check the box for **Custom SSL Certificate**
--   Select our cert and save. Note that what looks like a text field is really a dropdown menu once you click it to choose your certificate
--   When done with the form, click the **Behaviors** tab and edit the only record that should be there
--   Select **Redirect HTTP to HTTPS**. Click Save
+- Click the distribution and on the next page (in the General tab), click **Edit**
+- Check the box for **Custom SSL Certificate**
+- Select our cert and save. Note that what looks like a text field is really a dropdown menu once you click it to choose your certificate
+- When done with the form, click the **Behaviors** tab and edit the only record that should be there
+- Select **Redirect HTTP to HTTPS**. Click Save
 
-SPA
----
+## SPA
 
 If the website is an SPA, then we need to make sure all requests to the server (S3 in this case) return something even if no file exists. This is becuase SPAs like React (with React Router) need the `index.html` page for every requests, then things like “not found” pages are handled in the front-end.
 
 Go to CloudFront and click the distribution you want to apply these SPA settings to. Click the **Error Pages** tab and add a new error page. Fill the form with these fields:
 
--   **HTTP Error Code**: 404
--   **TTL**: 0
--   **Custom Error Response**: Yes
--   **Response Page Path**: `/index.html`
--   **HTTP Response Code**: 200
+- **HTTP Error Code**: 404
+- **TTL**: 0
+- **Custom Error Response**: Yes
+- **Response Page Path**: `/index.html`
+- **HTTP Response Code**: 200
 
-Deployment
-----------
+## Deployment
 
 For deployment, we need to consider that files in the CloudFront CDN are not meant to change. If we were to upload new files to S3, they would not be deployed to the CDN’s edge servers and therefore would not update the website. [Read More](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ReplacingObjectsSameName.html).
 
@@ -172,18 +164,18 @@ We should be setup now to dest a deployment. Run:
 
     aws s3 sync --acl public-read --profile YOUR_PROFILE_NAME --delete build/ s3://BUCKET_NAME
 
--   Obviously replace `YOUR_PROFILE_NAME` and `BUCKET_NAME` with yours. Also this assumes the folder you want to upload is `build`.
--   This command will
-    -   Ensure all new files uploaded are public (`--acl public-read`)
-    -   Ensure we’re using your credentials from your local AWS profile (`--profile YOUR_PROFILE_NAME`)
-    -   Remove any existing S3 objects that don’t exist locally (`--delete`)
+- Obviously replace `YOUR_PROFILE_NAME` and `BUCKET_NAME` with yours. Also this assumes the folder you want to upload is `build`.
+- This command will
+  - Ensure all new files uploaded are public (`--acl public-read`)
+  - Ensure we’re using your credentials from your local AWS profile (`--profile YOUR_PROFILE_NAME`)
+  - Remove any existing S3 objects that don’t exist locally (`--delete`)
 
 After deployment is verified and successful, we need to invalidate:
 
     aws cloudfront --profile YOUR_PROFILE_NAME create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths '/*'
 
--   Obviously replace `YOUR_PROFILE_NAME` and `YOUR_DISTRIBUTION_ID` with yours. Note that your Distribution ID can be found in the CloudFront seciton of AWS console.
--   If the invalidation worked, you’ll be able to see a record of it in the **Invalidations** tab after clicking on your distribution.
+- Obviously replace `YOUR_PROFILE_NAME` and `YOUR_DISTRIBUTION_ID` with yours. Note that your Distribution ID can be found in the CloudFront seciton of AWS console.
+- If the invalidation worked, you’ll be able to see a record of it in the **Invalidations** tab after clicking on your distribution.
 
 To make it all easier, add to `package.json`:
 

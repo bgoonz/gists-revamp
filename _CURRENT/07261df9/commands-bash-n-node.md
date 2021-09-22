@@ -1,10 +1,8 @@
-Resources:
-==========
+# Resources:
 
--   [holy grail](https://gist.github.com/bgoonz/df74dfa73bb5edd239ac738a14104eee)
+- [holy grail](https://gist.github.com/bgoonz/df74dfa73bb5edd239ac738a14104eee)
 
-1. Remove spaces from file and folder names and then remove numbers from files and folder names….
-=================================================================================================
+1. # Remove spaces from file and folder names and then remove numbers from files and folder names….
 
 ### Description: need to : `sudo apt install rename`
 
@@ -44,10 +42,9 @@ Resources:
       if (err) throw err;
     });
 
-------------------------------------------------------------------------
+---
 
-2. Download Website Using Wget:
-===============================
+2. # Download Website Using Wget:
 
 ### Description:
 
@@ -57,17 +54,15 @@ Resources:
 
     wget --limit-rate=200k --no-clobber --convert-links --random-wait -r -p -E -e robots=off -U mozilla https://bootcamp42.gitbook.io/python/
 
-------------------------------------------------------------------------
+---
 
-3. Clean Out Messy Git Repo:
-============================
+3. # Clean Out Messy Git Repo:
 
 ### Description: recursively removes git related folders as well as internal use files / attributions in addition to empty folders
 
 > Notes: To clear up clutter in repositories that only get used on your local machine.
 
 ###### code:
-
 
     find . -empty -type d -print -delete
 
@@ -77,10 +72,9 @@ Resources:
 
     find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o  -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o  -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "*CONTRIBUTING.md" \) -exec rm -rf -- {} +
 
-------------------------------------------------------------------------
+---
 
-4. clone all of a user’s git repositories
-=========================================
+4. # clone all of a user’s git repositories
 
 ### Description: clone all of a user or organization’s git repositories.
 
@@ -88,10 +82,7 @@ Resources:
 
 ###### code:
 
-Generalized:
-============
-
-
+# Generalized:
 
     CNTX={users|orgs}; NAME={username|orgname}; PAGE=1
     curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
@@ -99,8 +90,7 @@ Generalized:
       cut -d \" -f 4 |
       xargs -L1 git clone
 
-Clone all Git User
-==================
+# Clone all Git User
 
     CNTX={users}; NAME={bgoonz}; PAGE=1
     curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=200"?branch=master |
@@ -108,8 +98,7 @@ Clone all Git User
       cut -d \" -f 4 |
       xargs -L1 git clone
 
-Clone all Git Organization:
-===========================
+# Clone all Git Organization:
 
     CNTX={organizations}; NAME={TheAlgorithms}; PAGE=1
     curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=200"?branch=master |
@@ -117,10 +106,9 @@ Clone all Git Organization:
       cut -d \" -f 4 |
       xargs -L1 git clone
 
-------------------------------------------------------------------------
+---
 
-5. Git Workflow
-===============
+5. # Git Workflow
 
 ### Description:
 
@@ -152,10 +140,9 @@ Clone all Git Organization:
     git commit -m"update"
     git push -u origin preview
 
-------------------------------------------------------------------------
+---
 
-6. Recursive Unzip In Place
-===========================
+6. # Recursive Unzip In Place
 
 ### Description: recursively unzips folders and then deletes the zip file by the same name.
 
@@ -169,10 +156,9 @@ Clone all Git Organization:
 
     find . -name "*.zip" -type f -print -delete
 
-------------------------------------------------------------------------
+---
 
-7. git pull keeping local changes:
-==================================
+7. # git pull keeping local changes:
 
 ### Description:
 
@@ -180,15 +166,13 @@ Clone all Git Organization:
 
 ###### code:
 
-
     git stash
     git pull
     git stash pop
 
-------------------------------------------------------------------------
+---
 
-8. Prettier Code Formatter:
-===========================
+8. # Prettier Code Formatter:
 
 ### Description:
 
@@ -200,10 +184,9 @@ Clone all Git Organization:
 
     prettier --write .
 
-------------------------------------------------------------------------
+---
 
-9. Pandoc
-=========
+9. # Pandoc
 
 ### Description:
 
@@ -221,10 +204,9 @@ Clone all Git Organization:
 
     find ./ -iname "*.docx" -type f -exec sh -c 'pandoc "${0}" -o "${0%.docx}.md"' {} \;
 
-------------------------------------------------------------------------
+---
 
-10. Gitpod Installs
-===================
+10. # Gitpod Installs
 
 ### Description:
 
@@ -246,10 +228,9 @@ Clone all Git Organization:
     prettier --write .
     npm-recursive-install
 
-------------------------------------------------------------------------
+---
 
-11. Repo Utils Package:
-=======================
+11. # Repo Utils Package:
 
 ### Description: my standard repo utis package
 
@@ -259,10 +240,9 @@ Clone all Git Organization:
 
     npm i @bgoonz11/repoutils
 
-------------------------------------------------------------------------
+---
 
-12. Unix Tree Package Usage:
-============================
+12. # Unix Tree Package Usage:
 
 ### Description:
 
@@ -285,10 +265,9 @@ Clone all Git Organization:
 
     tree -f >README.md
 
-------------------------------------------------------------------------
+---
 
-13. Find & Replace string in file & folder names recursively..
-==============================================================
+13. # Find & Replace string in file & folder names recursively..
 
 ### Description:
 
@@ -319,10 +298,9 @@ Clone all Git Organization:
 
     find . -type d -exec rename 's/es6//g' {} +
 
-------------------------------------------------------------------------
+---
 
-14. Remove double extensions :
-==============================
+14. # Remove double extensions :
 
 ### Description:
 
@@ -357,10 +335,9 @@ Clone all Git Organization:
         mv "${file}" "${file%.png}"
     done
 
-------------------------------------------------------------------------
+---
 
-15. Truncate folder names down to 12 characters:
-================================================
+15. # Truncate folder names down to 12 characters:
 
 ### Description:
 
@@ -370,10 +347,9 @@ Clone all Git Organization:
 
     for d in ./*; do mv $d ${d:0:12}; done
 
-------------------------------------------------------------------------
+---
 
-16.Appendir.js
-==============
+# 16.Appendir.js
 
 ### Description: combine the contents of every file in the contaning directory.
 
@@ -388,10 +364,9 @@ Clone all Git Organization:
       if (err) throw err;
     });
 
-------------------------------------------------------------------------
+---
 
-17. Replace space in filename with underscore
-=============================================
+17. # Replace space in filename with underscore
 
 ### Description: followed by replace `'#' with '_'` in directory name
 
@@ -403,10 +378,9 @@ Clone all Git Organization:
 
     find . -name "* *" -type d | rename 's/#/_/g'
 
-------------------------------------------------------------------------
+---
 
-18. Filter & delete files by name and extension
-===============================================
+18. # Filter & delete files by name and extension
 
 ### Description:
 
@@ -428,10 +402,9 @@ Clone all Git Organization:
 
     find . -name 'left.html' -type f -prune -exec rm -rf '{}' +
 
-------------------------------------------------------------------------
+---
 
-19. Remove lines containing string:
-===================================
+19. # Remove lines containing string:
 
 ### Description:
 
@@ -453,10 +426,9 @@ Clone all Git Organization:
 
     sudo sed -i '/author/d' ./*
 
-------------------------------------------------------------------------
+---
 
-20. Remove duplicate lines from a text file
-===========================================
+20. # Remove duplicate lines from a text file
 
 ### Description:
 
@@ -467,10 +439,9 @@ Clone all Git Organization:
     sudo apt install uniq
     uniq -u input.txt output.txt
 
-------------------------------------------------------------------------
+---
 
-21. Remove lines containing string:
-===================================
+21. # Remove lines containing string:
 
 ### Description:
 
@@ -495,17 +466,15 @@ Clone all Git Organization:
     sudo sed -i '/right\.html/d' ./index.html
     sudo sed -i '/right\.html/d' ./right.html
 
-------------------------------------------------------------------------
+---
 
-22. Zip directory excluding .git and node\_modules all the way down (Linux)
-===========================================================================
+22. # Zip directory excluding .git and node_modules all the way down (Linux)
 
 ### Description:
 
 > Notes:
 
 ###### code:
-
 
     #!/bin/bash
     TSTAMP=`date '+%Y%m%d-%H%M%S'`
@@ -520,10 +489,9 @@ Clone all Git Organization:
     # if in windows/git-bash, add 'zip' command this way:
     # https://stackoverflow.com/a/55749636/1482990
 
-------------------------------------------------------------------------
+---
 
-23. Delete files containing a certain string:
-=============================================
+23. # Delete files containing a certain string:
 
 ### Description:
 
@@ -535,10 +503,9 @@ Clone all Git Organization:
     vi doit.sh // check for murphy and his law
     source doit.sh
 
-------------------------------------------------------------------------
+---
 
-24.
-===
+24. ===
 
 ### Description:
 
@@ -641,18 +608,15 @@ Clone all Git Organization:
 
     cmd $listing --sort=extension >>$html
 
-------------------------------------------------------------------------
+---
 
-25. Index of Iframes
-====================
+25. # Index of Iframes
 
 ### Description: Creates an index.html file that contains all the files in the working directory or any of it’s sub folders as iframes instead of anchor tags.
 
 > Notes: Useful Follow up Code:
 
-
 ###### code:
-
 
     #!/bin/sh
 
@@ -749,10 +713,9 @@ Clone all Git Organization:
 
     cmd $listing --sort=extension >>$html
 
-------------------------------------------------------------------------
+---
 
-26. Filter Corrupted Git Repo For Troublesome File:
-===================================================
+26. # Filter Corrupted Git Repo For Troublesome File:
 
 ### Description:
 
@@ -762,10 +725,9 @@ Clone all Git Organization:
 
     git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/_index.html' HEAD
 
-------------------------------------------------------------------------
+---
 
-27. OVERWRITE LOCAL CHANGES:
-============================
+27. # OVERWRITE LOCAL CHANGES:
 
 ### Description:
 
@@ -792,25 +754,23 @@ Important: If you have any local changes, they will be lost. With or without –
     git fetch --all
     git reset --hard origin/master
 
-------------------------------------------------------------------------
+---
 
-28. Remove Submodules:
-======================
+28. # Remove Submodules:
 
 ### Description: To remove a submodule you need to:
 
 > Notes:
 
-> Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm –cached path\_to\_submodule (no trailing slash). Run rm -rf .git/modules/path\_to\_submodule (no trailing slash). Commit git commit -m “Removed submodule” Delete the now untracked submodule files rm -rf path\_to\_submodule
+> Delete the relevant section from the .gitmodules file. Stage the .gitmodules changes git add .gitmodules Delete the relevant section from .git/config. Run git rm –cached path_to_submodule (no trailing slash). Run rm -rf .git/modules/path_to_submodule (no trailing slash). Commit git commit -m “Removed submodule” Delete the now untracked submodule files rm -rf path_to_submodule
 
 ###### code:
 
     git submodule deinit
 
-------------------------------------------------------------------------
+---
 
-29. GET GISTS
-=============
+29. # GET GISTS
 
 ### Description:
 
@@ -832,10 +792,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     wget -q -O - https://api.github.com/users/thomasmb/gists | grep raw_url | awk -F\" '{print $4}' | xargs -n1 wget
 
-------------------------------------------------------------------------
+---
 
-30. Remove Remote OriginL
-=========================
+30. # Remove Remote OriginL
 
 ### Description:
 
@@ -845,10 +804,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     git remote remove origin
 
-------------------------------------------------------------------------
+---
 
-31. just clone .git folder:
-===========================
+31. # just clone .git folder:
 
 ### Description:
 
@@ -856,13 +814,11 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-
     git clone --bare --branch=master --single-branch https://github.com/bgoonz/My-Web-Dev-Archive.git
 
-------------------------------------------------------------------------
+---
 
-32. Undo recent pull request:
-=============================
+32. # Undo recent pull request:
 
 ### Description:
 
@@ -872,10 +828,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     git reset --hard master@{"10 minutes ago"}
 
-------------------------------------------------------------------------
+---
 
-33. Lebab
-=========
+33. # Lebab
 
 ### Description: ES5 –&gt; ES6
 
@@ -929,10 +884,9 @@ Important: If you have any local changes, they will be lost. With or without –
     lebab --replace ./ --transform  destruct-param
     lebab --replace ./ --transform includes
 
-------------------------------------------------------------------------
+---
 
-34. Troubleshoot Ubuntu Input/Output Error
-==========================================
+34. # Troubleshoot Ubuntu Input/Output Error
 
 ### Description: Open Powershell as Administrator…
 
@@ -944,10 +898,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
      Get-Service LxssManager | Restart-Service
 
-------------------------------------------------------------------------
+---
 
-35. Export Medium as Markdown
-=============================
+35. # Export Medium as Markdown
 
 ### Description:
 
@@ -960,10 +913,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     mediumexporter https://medium.com/codex/fundamental-data-structures-in-javascript-8f9f709c15b4 >ds.md
 
-------------------------------------------------------------------------
+---
 
-36. Delete files in violation of a given size range (100MB for git)
-===================================================================
+36. # Delete files in violation of a given size range (100MB for git)
 
 ### Description:
 
@@ -978,35 +930,21 @@ Important: If you have any local changes, they will be lost. With or without –
 
     find . -size +98M -a -print -a -exec rm -f {} \;
 
-------------------------------------------------------------------------
+---
 
-37. download all links of given file type
-=========================================
+37. # download all links of given file type
 
 ### Description:
 
 > Notes:
 
 ###### code:
-
 
     wget -r -A.pdf https://overapi.com/git
 
-------------------------------------------------------------------------
+---
 
-38.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-39.
-===
+38. ===
 
 ### Description:
 
@@ -1014,21 +952,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-40.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-41.
-===
+39. ===
 
 ### Description:
 
@@ -1036,21 +962,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-42.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-43.
-===
+40. ===
 
 ### Description:
 
@@ -1058,21 +972,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-44.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-45.
-===
+41. ===
 
 ### Description:
 
@@ -1080,21 +982,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-46.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-47.
-===
+42. ===
 
 ### Description:
 
@@ -1102,21 +992,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-48.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-49.
-===
+43. ===
 
 ### Description:
 
@@ -1124,21 +1002,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-50.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-51.
-===
+44. ===
 
 ### Description:
 
@@ -1146,21 +1012,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-52.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-53.
-===
+45. ===
 
 ### Description:
 
@@ -1168,21 +1022,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-54.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-55.
-===
+46. ===
 
 ### Description:
 
@@ -1190,21 +1032,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-56.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-57.
-===
+47. ===
 
 ### Description:
 
@@ -1212,21 +1042,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-58.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-59.
-===
+48. ===
 
 ### Description:
 
@@ -1234,21 +1052,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-60.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-61.
-===
+49. ===
 
 ### Description:
 
@@ -1256,21 +1062,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-62.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-63.
-===
+50. ===
 
 ### Description:
 
@@ -1278,21 +1072,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-64.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-65.
-===
+51. ===
 
 ### Description:
 
@@ -1300,21 +1082,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-66.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-67.
-===
+52. ===
 
 ### Description:
 
@@ -1322,21 +1092,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-68.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-69.
-===
+53. ===
 
 ### Description:
 
@@ -1344,21 +1102,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-70.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-71.
-===
+54. ===
 
 ### Description:
 
@@ -1366,21 +1112,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-72.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-73.
-===
+55. ===
 
 ### Description:
 
@@ -1388,21 +1122,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-74.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-75.
-===
+56. ===
 
 ### Description:
 
@@ -1410,21 +1132,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-76.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-77.
-===
+57. ===
 
 ### Description:
 
@@ -1432,21 +1142,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-78.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-79.
-===
+58. ===
 
 ### Description:
 
@@ -1454,21 +1152,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-80.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-81.
-===
+59. ===
 
 ### Description:
 
@@ -1476,21 +1162,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-82.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-83.
-===
+60. ===
 
 ### Description:
 
@@ -1498,21 +1172,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-84.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-85.
-===
+61. ===
 
 ### Description:
 
@@ -1520,21 +1182,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-86.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-87.
-===
+62. ===
 
 ### Description:
 
@@ -1542,21 +1192,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-88.
-===
-
-### Description:
-
-> Notes:
-
-###### code:
-
-------------------------------------------------------------------------
-
-89.
-===
+63. ===
 
 ### Description:
 
@@ -1564,10 +1202,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-90.
-===
+64. ===
 
 ### Description:
 
@@ -1575,10 +1212,269 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-------------------------------------------------------------------------
+---
 
-91. Unzip PowerShell
-====================
+65. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+66. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+67. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+68. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+69. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+70. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+71. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+72. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+73. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+74. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+75. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+76. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+77. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+78. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+79. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+80. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+81. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+82. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+83. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+84. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+85. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+86. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+87. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+88. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+89. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+90. ===
+
+### Description:
+
+> Notes:
+
+###### code:
+
+---
+
+91. # Unzip PowerShell
 
 ### Description:
 
@@ -1606,10 +1502,9 @@ Important: If you have any local changes, they will be lost. With or without –
         $progress++
     }
 
-------------------------------------------------------------------------
+---
 
-92. return to bash from zsh
-===========================
+92. # return to bash from zsh
 
 ### Description:
 
@@ -1619,10 +1514,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
      sudo apt --purge remove zsh
 
-------------------------------------------------------------------------
+---
 
-93. Symbolic Link
-=================
+93. # Symbolic Link
 
 ### Description: to working directory
 
@@ -1634,10 +1528,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     ln -s "$(pwd)" ~/Downloads
 
-------------------------------------------------------------------------
+---
 
-94. auto generate readme
-========================
+94. # auto generate readme
 
 ### Description: rename existing readme to blueprint.md
 
@@ -1647,10 +1540,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     npx @appnest/readme generate
 
-------------------------------------------------------------------------
+---
 
-95. Log into postgres:
-======================
+95. # Log into postgres:
 
 ### Description:
 
@@ -1660,10 +1552,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     sudo -u postgres psql
 
-------------------------------------------------------------------------
+---
 
-96. URL To Subscribe To YouTube Channel
-=======================================
+96. # URL To Subscribe To YouTube Channel
 
 ### Description:
 
@@ -1673,10 +1564,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     https://www.youtube.com/channel/UC1HDa0wWnIKUf-b4yY9JecQ?sub_confirmation=1
 
-------------------------------------------------------------------------
+---
 
-97. Embed Repl.it In Medium Post:
-=================================
+97. # Embed Repl.it In Medium Post:
 
 ###### code:
 
@@ -1690,10 +1580,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
     https://repl.it/@bgoonz/Database-Prac?lite=true&amp;referrer=https%3A%2F%2Fbryanguner.medium.com
 
-------------------------------------------------------------------------
+---
 
-98.
-===
+98. ===
 
 ### Description:
 
@@ -1701,16 +1590,14 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-
     find . -name *right.html  -type f -exec sed -i 's/target="_parent"//g' {} +
 
 
     find . -name *right.html  -type f -exec sed -i 's/target="_parent"//g' {} +
 
-------------------------------------------------------------------------
+---
 
-99. Cheat Sheet
-===============
+99. # Cheat Sheet
 
 ### Description:
 
@@ -2267,4 +2154,4 @@ Important: If you have any local changes, they will be lost. With or without –
     # option -e is mandatory, it enable interpretation of backslash escapes
     printf "${Red} This is red \n"
 
-------------------------------------------------------------------------
+---

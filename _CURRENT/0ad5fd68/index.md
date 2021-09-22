@@ -1,5 +1,4 @@
-Dashed border using background-image property
----------------------------------------------
+## Dashed border using background-image property
 
 Creating dashed borders with background-image is not a new concept. Many people use it because it allows full flexibility, and with a little creativity (and a few lines of code) it is possible to do cool things without it being too complicated.
 
@@ -19,10 +18,9 @@ Faded
 
 Animated
 
-------------------------------------------------------------------------
+---
 
-Create your own background-image border
----------------------------------------
+## Create your own background-image border
 
 Border width Border color  
 Dash length Spacing Slanting angle Fade Flip diraction Animation

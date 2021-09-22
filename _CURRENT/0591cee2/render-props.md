@@ -1,18 +1,16 @@
-Avoiding HOC; Favoring render props
-===================================
+# Avoiding HOC; Favoring render props
 
 The React community is moving away from HOC (higher order components) in favor of render prop components (RPC). For the most part, HOC and render prop components solve the same problem. However, render prop components provide are gaining popularity because they are more declarative and flexible than an HOC.
 
 Read more:
 
--   [Use a render prop](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
--   [Breaking up with HOC](https://medium.com/tandemly/im-breaking-up-with-higher-order-components-44b0df2db052)
--   [HOC vs. render props](https://twitter.com/dan_abramov/status/910246052992884736?lang=en)
--   [React HOC docs](https://reactjs.org/docs/higher-order-components.html)
--   [React render props docs](https://reactjs.org/docs/render-props.html)
+- [Use a render prop](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
+- [Breaking up with HOC](https://medium.com/tandemly/im-breaking-up-with-higher-order-components-44b0df2db052)
+- [HOC vs. render props](https://twitter.com/dan_abramov/status/910246052992884736?lang=en)
+- [React HOC docs](https://reactjs.org/docs/higher-order-components.html)
+- [React render props docs](https://reactjs.org/docs/render-props.html)
 
-Using and Abusing HOC
----------------------
+## Using and Abusing HOC
 
 There are lots of good things about higher order components. An HOC is a function that accepts a plain component and returns a new extended component. The concepts behind HOC are a marriage of React’s now-deprecated “mixins” functionality and functional composition. The idea is to encapsulate common functionality and make it reusable.
 
@@ -33,7 +31,7 @@ Every HOC provides at least one of two things to the child component:
 
 In the context of `connect()`, this relates to the `mapStateToProps` and `mapDispatchToProps` functions.
 
-**Key point:** an HOC doesn’t really “wrap” their child component in a JSX sense, instead it *extends* your component. Meaning, the `MyThingContainer` component (see below) is a *new* component. In practice, this means that your React dev tools will show the component as `connect(MyThing)`. It’s a subtle but important difference.
+**Key point:** an HOC doesn’t really “wrap” their child component in a JSX sense, instead it _extends_ your component. Meaning, the `MyThingContainer` component (see below) is a _new_ component. In practice, this means that your React dev tools will show the component as `connect(MyThing)`. It’s a subtle but important difference.
 
 One of the reasons to prefer render prop components is that they don’t subvert the normal React component tree.
 
@@ -73,7 +71,7 @@ We use `mapStateToProps` to derive the `name` prop from the redux state. As an e
 
 For all of the benefits of an HOC, there are some problems with the pattern. Many of the issues of the mixins pattern still apply to HOC — it can make code more confusing. A well-designed HOC, like `connect` makes code better. But there are ways to abuse the pattern and make code harder to understand.
 
-Problems arise when developers see HOC as the solution to *every* problem.
+Problems arise when developers see HOC as the solution to _every_ problem.
 
 For instance, it’s not a good idea to use an HOC to do something that a normal component can do. In the connect example, HOC is a natural fit. But, what if we’re adding a different type of functionality?
 
@@ -97,14 +95,14 @@ In this case, a `row` HOC breaks the basic rules for what and HOC should provide
 
 **Breaking the rules of HOC:**
 
--   Not providing any derived props
--   Not providing any callback props
+- Not providing any derived props
+- Not providing any callback props
 
 **Confusing and restrictive:**
 
--   Creates a new “wrapped” component, complicating the React tree
--   Only supports a single child, must be a component
--   Requires additional compatibility code to work like a “normal” component
+- Creates a new “wrapped” component, complicating the React tree
+- Only supports a single child, must be a component
+- Requires additional compatibility code to work like a “normal” component
 
 **Compatibility code?** The HOC below adds some extra stuff that all HOCs need (as recommended in the React documentation). Because of how HOCs subvert the normal React rendering tree, we need to **1.** [copy over static methods](https://reactjs.org/docs/higher-order-components.html#static-methods-must-be-copied-over) and **2.** [forward refs](https://reactjs.org/docs/higher-order-components.html#refs-arent-passed-through).
 
@@ -160,35 +158,35 @@ Also notice that the configuration object that we passed to the `row` HOC works 
 
 **Benefits of a plain wrapper component:**
 
--   Accepts *anything* as children
--   Just a component, keeps the React tree clear
--   Prop type checking!
--   No compatibility code needed
--   No need to spread props!
+- Accepts _anything_ as children
+- Just a component, keeps the React tree clear
+- Prop type checking!
+- No compatibility code needed
+- No need to spread props!
 
-    import React from "react";
-    import PropTypes from "prop-types";
-    import classnames from "classnames";
+  import React from "react";
+  import PropTypes from "prop-types";
+  import classnames from "classnames";
 
-    import styles from "./row.css";
+  import styles from "./row.css";
 
-    const Row = ({ backgroundColor, children, className, style }) => (
-      <div
-        class={classnames(styles.row, className)}
-        style={{ backgroundColor, ...style }}
-      >
-        {children}
-      </div>
-    );
+  const Row = ({ backgroundColor, children, className, style }) => (
+    <div
+      class={classnames(styles.row, className)}
+      style={{ backgroundColor, ...style }}
+    >
+      {children}
+    </div>
+  );
 
-    Row.propTypes = {
-      backgroundColor: PropTypes.string.isRequired(),
-      children: PropTypes.node,
-      className: PropTypes.string,
-      style: PropTypes.object,
-    };
+  Row.propTypes = {
+  backgroundColor: PropTypes.string.isRequired(),
+  children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.object,
+  };
 
-    export default Row;
+  export default Row;
 
 **Notice:** `children` is a `PropTypes.node` which allows it to be “any renderable value”. This means that you can provide plain text or an array of nodes or anything else that React can render. By contrast, an HOC requires you to pass a `WrappedComponent`, which must be a full React component.
 
@@ -202,7 +200,7 @@ One common case would be to manually wrap `<MyThing />` with a `<Row />` everywh
 
 The benefit here is that we can keep give the implementor total control.
 
-The downside to this approach is that you need to do this *everywhere* that you use `<MyThing />`.
+The downside to this approach is that you need to do this _everywhere_ that you use `<MyThing />`.
 
     // Option 1: manually wrap MyThing
     import React from "react";
@@ -222,7 +220,7 @@ The downside to this approach is that you need to do this *everywhere* that you 
 
 #### Integrate the wrapper
 
-If you know that you *always* want your component to be wrapped in a `<Row />` you can integrate it directly into the component that needs it. Conceptually, this is like using a `<div />` or a `<span />`. Below you can see that we’re using `<Row />` instead of using a top-level `<div />`. The `Row` component allows you to define whatever you would like for your `children`. You can think of `MyThing` as a `Row` with pre-defined children.
+If you know that you _always_ want your component to be wrapped in a `<Row />` you can integrate it directly into the component that needs it. Conceptually, this is like using a `<div />` or a `<span />`. Below you can see that we’re using `<Row />` instead of using a top-level `<div />`. The `Row` component allows you to define whatever you would like for your `children`. You can think of `MyThing` as a `Row` with pre-defined children.
 
 The benefit here is that `MyThing` will always be properly wrapped in a `Row`. Below you can see that (as an example) we are forcing the `backgroundColor` to always be “green”.
 
@@ -250,8 +248,7 @@ The downside to this approach is that you need to pipe props into the `Row` comp
 
     export default MyThing;
 
-Using Render Props
-------------------
+## Using Render Props
 
 In the case of our `Row` component, we can use declarative JSX instead of using an HOC. This works because we don’t need the children of `Row` to receive any derived props. Things get tricky when you need your `children` to know about derived props.
 
@@ -314,9 +311,9 @@ The `visible` boolean indicates whether or not the row is currently visible on s
 
 Below you can see that we’ve wrapped our `<div />` with an `<Observer />`. To enable the render props technique we need to add three new props to our `Row` component.
 
--   `children` must now be a `func` instead of a `node`
--   `component` accepts a React component to render
--   `render` must be a `func` as well
+- `children` must now be a `func` instead of a `node`
+- `component` accepts a React component to render
+- `render` must be a `func` as well
 
 Why three props? This allows us to support multiple use cases. Because render props are a somewhat new pattern, there are a few different ways that people have been using them. See the “Generic Render Props” template at the end of this document for a deeper explanation. All three props are mutually exclusive, meaning you should only use one of them at a time.
 
@@ -415,63 +412,63 @@ Compare this `MyThing` component using a render-props `Row` to the `MyThings` co
 
     export default MyThing;
 
-A generic render props component
---------------------------------
+## A generic render props component
 
 We can follow the example set by `<Route />` as well as the [`render-prop`](https://www.npmjs.com/package/render-props) package and create a general purpose template to use as the basis for any render-props component.
 
-A generic render-props component *must* accept 3 props, `children`, `component` and `render`. You’ll recognize the `render` prop from the examples above. Although it is [somewhat frowned upon](https://americanexpress.io/faccs-are-an-antipattern/), it is popular to support using [`children` as a function](https://reactjs.org/docs/render-props.html#using-props-other-than-render) to provide the render function. And finally, based on how `<Route />` works, you may want to simply supply a `component` to render.
+A generic render-props component _must_ accept 3 props, `children`, `component` and `render`. You’ll recognize the `render` prop from the examples above. Although it is [somewhat frowned upon](https://americanexpress.io/faccs-are-an-antipattern/), it is popular to support using [`children` as a function](https://reactjs.org/docs/render-props.html#using-props-other-than-render) to provide the render function. And finally, based on how `<Route />` works, you may want to simply supply a `component` to render.
 
 Only one of those props will be used. By convention, we have the `component` prop override the `render` props, which overrides `children`. You can see in the [code for the `Route` component](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/modules/Route.js) that they use the `warning` and `invariant` libraries to warn users when they provide conflicting props.
 
--   Allows `render` or `children` to define the render prop function
--   Allows `component` to enable straight rendering
--   Prefers `component` and transparently falls back to `render` and `children`
--   *Optional:* Transparently merges `otherProps` with derived props
+- Allows `render` or `children` to define the render prop function
+- Allows `component` to enable straight rendering
+- Prefers `component` and transparently falls back to `render` and `children`
+- _Optional:_ Transparently merges `otherProps` with derived props
 
-    import React, { Component } from "react";
-    import PropTypes from "prop-types";
-    import renderProps from "render-props";
+  import React, { Component } from "react";
+  import PropTypes from "prop-types";
+  import renderProps from "render-props";
 
-    class GenericRenderPropsComponent extends Component {
-      constructor(props) {
-        super(props);
-        this.state = {
-          something: false,
-        };
-        this.handleOnSomething = this.handleOnSomething.bind(this);
-      }
+  class GenericRenderPropsComponent extends Component {
+  constructor(props) {
+  super(props);
+  this.state = {
+  something: false,
+  };
+  this.handleOnSomething = this.handleOnSomething.bind(this);
+  }
 
-      handleOnSomething(value) {
-        const { something } = state;
-        if (something !== value) {
-          this.setState({ something: value });
-        }
-      }
+  handleOnSomething(value) {
+  const { something } = state;
+  if (something !== value) {
+  this.setState({ something: value });
+  }
+  }
 
-      render() {
-        const { children, component, render, ...otherProps } = this.props;
-        const { something } = this.state;
+  render() {
+  const { children, component, render, ...otherProps } = this.props;
+  const { something } = this.state;
 
-        const componentOrFunction = component || render || children;
-        const props = {
-          ...otherProps,
-          onSomething: this.handleOnSomething,
-          something,
-        };
+      const componentOrFunction = component || render || children;
+      const props = {
+        ...otherProps,
+        onSomething: this.handleOnSomething,
+        something,
+      };
 
-        return componentOrFunction ? renderProps(componentOrFunction, props) : null;
-      }
-    }
+      return componentOrFunction ? renderProps(componentOrFunction, props) : null;
 
-    GenericRenderPropsComponent.propTypes = {
-      children: PropTypes.function,
-      component: PropTypes.function,
-      render: PropTypes.function,
-    };
+  }
+  }
 
-    export default GenericRenderPropsComponent;
+  GenericRenderPropsComponent.propTypes = {
+  children: PropTypes.function,
+  component: PropTypes.function,
+  render: PropTypes.function,
+  };
+
+  export default GenericRenderPropsComponent;
 
 ### Open questions?
 
--   See [answers to common questions about render props](https://blog.kentcdodds.com/answers-to-common-questions-about-render-props-a9f84bb12d5d)
+- See [answers to common questions about render props](https://blog.kentcdodds.com/answers-to-common-questions-about-render-props-a9f84bb12d5d)

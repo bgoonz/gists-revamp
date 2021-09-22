@@ -1,80 +1,64 @@
-Pipenv Cheat Sheet
-==================
+# Pipenv Cheat Sheet
 
-Install pipenv
---------------
+## Install pipenv
 
     pip3 install pipenv
 
-Activate
---------
+## Activate
 
     pipenv shell
 
-Check version of Python
------------------------
+## Check version of Python
 
     python --version
 
-Check path
-----------
+## Check path
 
     python
     >>> import sys
     >>> sys.executable
     quit()
 
-Install a package
------------------
+## Install a package
 
     pipenv install camelcase
 
-Check local packages
---------------------
+## Check local packages
 
     pipenv lock -r
 
-Uninstall a package
--------------------
+## Uninstall a package
 
     pipenv uninstall camelcase
 
-Install a dev package
----------------------
+## Install a dev package
 
     pipenv install nose --dev
 
-Install from requirements.txt
------------------------------
+## Install from requirements.txt
 
     pipenv install -r ./requirements.txt
 
-Check security vulnerabilities
-------------------------------
+## Check security vulnerabilities
 
     pipenv check
 
-Check dependency graph
-----------------------
+## Check dependency graph
 
     pipenv graph
 
-Ignore pipfile
---------------
+## Ignore pipfile
 
     pipenv install --ignore-pipfile
 
-Set lockfile - before deployment
---------------------------------
+## Set lockfile - before deployment
 
     pipenv lock
 
-Exiting the virtualenv
-----------------------
+## Exiting the virtualenv
 
     exit
 
-Run with pipenv
----------------
+## Run with pipenv
 
     pipenv run *

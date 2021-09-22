@@ -1,10 +1,8 @@
-Do something with a uploaded file and populate a field in the document based on that
-====================================================================================
+# Do something with a uploaded file and populate a field in the document based on that
 
 Consider the following schema, where we describe a route with a gpx map file of some sort, and we want to populate a field “bounds” in that document computed from the uploaded file.
 
-The schema
-----------
+## The schema
 
     import RouteFileInput from "../components/RouteFileInput";
     export default {
@@ -39,8 +37,7 @@ The schema
       ],
     };
 
-The input component
--------------------
+## The input component
 
     import PropTypes from "prop-types";
     import React from "react";
