@@ -8,7 +8,7 @@ function celebrityID () {
             // It will return the current value of celebrityID, even after the changeTheID function changes it​
           return celebrityID;
         },
-        setID: (theNewID) => {
+        setID: function (theNewID)  {
             // This inner function will change the outer function's variable anytime​
             celebrityID = theNewID;
         }

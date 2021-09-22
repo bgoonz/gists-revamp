@@ -11,8 +11,7 @@
  * @return {boolean}
  */
 const hasCycle = (head) => {
-  let slow;
-  let fast;
+  let slow, fast;
   slow = fast = head;
 
   while (fast && fast.next) {
