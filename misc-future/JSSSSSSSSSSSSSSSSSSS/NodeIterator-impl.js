@@ -46,19 +46,26 @@ exports.implementation = class NodeIteratorImpl {
   // Called by Documents.
   _preRemovingSteps(toBeRemovedNode) {
     // Second clause is https://github.com/whatwg/dom/issues/496
-    if (!toBeRemovedNode.contains(this._referenceNode) || toBeRemovedNode === this.root) {
+    if (
+      !toBeRemovedNode.contains(this._referenceNode) ||
+      toBeRemovedNode === this.root
+    ) {
       return;
     }
 
     if (this._pointerBeforeReferenceNode) {
       let next = null;
-      let candidateForNext = domSymbolTree.following(toBeRemovedNode, { skipChildren: true });
+      let candidateForNext = domSymbolTree.following(toBeRemovedNode, {
+        skipChildren: true,
+      });
       while (candidateForNext !== null) {
         if (this.root.contains(candidateForNext)) {
           next = candidateForNext;
           break;
         }
-        candidateForNext = domSymbolTree.following(candidateForNext, { skipChildren: true });
+        candidateForNext = domSymbolTree.following(candidateForNext, {
+          skipChildren: true,
+        });
       }
 
       if (next !== null) {
@@ -70,16 +77,21 @@ exports.implementation = class NodeIteratorImpl {
     }
 
     const { previousSibling } = toBeRemovedNode;
-    this._referenceNode = previousSibling === null ?
-                          toBeRemovedNode.parentNode :
-                          domSymbolTree.lastInclusiveDescendant(toBeRemovedNode.previousSibling);
+    this._referenceNode =
+      previousSibling === null
+        ? toBeRemovedNode.parentNode
+        : domSymbolTree.lastInclusiveDescendant(
+            toBeRemovedNode.previousSibling
+          );
   }
 
   // Only called by getters and methods that are affected by the pre-removing steps
   _throwIfNotWorking() {
     if (!this._working) {
-      throw Error(`This NodeIterator is no longer working. More than ${this._workingNodeIteratorsMax} iterators are ` +
-        `being used concurrently. You can increase the 'concurrentNodeIterators' option to make this error go away.`);
+      throw Error(
+        `This NodeIterator is no longer working. More than ${this._workingNodeIteratorsMax} iterators are ` +
+          `being used concurrently. You can increase the 'concurrentNodeIterators' option to make this error go away.`
+      );
     }
   }
 

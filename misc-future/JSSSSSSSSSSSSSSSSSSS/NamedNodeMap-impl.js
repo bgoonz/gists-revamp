@@ -27,9 +27,12 @@ exports.implementation = class NamedNodeMapImpl {
   }
 
   get [idlUtils.supportedPropertyNames]() {
-    const names = new Set(this._attributeList.map(a => a._qualifiedName));
+    const names = new Set(this._attributeList.map((a) => a._qualifiedName));
     const el = this._element;
-    if (el._namespaceURI === HTML_NS && el._ownerDocument._parsingMode === "html") {
+    if (
+      el._namespaceURI === HTML_NS &&
+      el._ownerDocument._parsingMode === "html"
+    ) {
       for (const name of names) {
         const lowercaseName = name.toLowerCase();
         if (lowercaseName !== name) {
@@ -54,14 +57,24 @@ exports.implementation = class NamedNodeMapImpl {
   removeNamedItem(qualifiedName) {
     const attr = attributes.removeAttributeByName(this._element, qualifiedName);
     if (attr === null) {
-      throw new DOMException("Tried to remove an attribute that was not present", "NotFoundError");
+      throw new DOMException(
+        "Tried to remove an attribute that was not present",
+        "NotFoundError"
+      );
     }
     return attr;
   }
   removeNamedItemNS(namespace, localName) {
-    const attr = attributes.removeAttributeByNameNS(this._element, namespace, localName);
+    const attr = attributes.removeAttributeByNameNS(
+      this._element,
+      namespace,
+      localName
+    );
     if (attr === null) {
-      throw new DOMException("Tried to remove an attribute that was not present", "NotFoundError");
+      throw new DOMException(
+        "Tried to remove an attribute that was not present",
+        "NotFoundError"
+      );
     }
     return attr;
   }

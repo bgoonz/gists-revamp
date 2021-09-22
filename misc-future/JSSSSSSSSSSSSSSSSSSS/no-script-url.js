@@ -12,33 +12,30 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow `javascript:` urls",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-script-url"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow `javascript:` urls",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-script-url",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
+  create(context) {
+    return {
+      Literal(node) {
+        if (node.value && typeof node.value === "string") {
+          const value = node.value.toLowerCase();
 
-            Literal(node) {
-                if (node.value && typeof node.value === "string") {
-                    const value = node.value.toLowerCase();
-
-                    if (value.indexOf("javascript:") === 0) {
-                        context.report({ node, message: "Script URL is a form of eval." });
-                    }
-                }
-            }
-        };
-
-    }
+          if (value.indexOf("javascript:") === 0) {
+            context.report({ node, message: "Script URL is a form of eval." });
+          }
+        }
+      },
+    };
+  },
 };

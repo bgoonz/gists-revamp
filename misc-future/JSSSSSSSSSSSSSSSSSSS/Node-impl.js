@@ -12,11 +12,13 @@ const { clone, locateNamespacePrefix, locateNamespace } = require("../node");
 const attributes = require("../attributes");
 
 function isObsoleteNodeType(node) {
-  return node.nodeType === NODE_TYPE.ENTITY_NODE ||
+  return (
+    node.nodeType === NODE_TYPE.ENTITY_NODE ||
     node.nodeType === NODE_TYPE.ENTITY_REFERENCE_NODE ||
     node.nodeType === NODE_TYPE.NOTATION_NODE ||
-  //  node.nodeType === NODE_TYPE.ATTRIBUTE_NODE ||  // this is missing how do we handle?
-    node.nodeType === NODE_TYPE.CDATA_SECTION_NODE;
+    //  node.nodeType === NODE_TYPE.ATTRIBUTE_NODE ||  // this is missing how do we handle?
+    node.nodeType === NODE_TYPE.CDATA_SECTION_NODE
+  );
 }
 
 function nodeEquals(a, b) {
@@ -26,14 +28,21 @@ function nodeEquals(a, b) {
 
   switch (a.nodeType) {
     case NODE_TYPE.DOCUMENT_TYPE_NODE:
-      if (a.name !== b.name || a.publicId !== b.publicId ||
-          a.systemId !== b.systemId) {
+      if (
+        a.name !== b.name ||
+        a.publicId !== b.publicId ||
+        a.systemId !== b.systemId
+      ) {
         return false;
       }
       break;
     case NODE_TYPE.ELEMENT_NODE:
-      if (a._namespaceURI !== b._namespaceURI || a._prefix !== b._prefix || a._localName !== b._localName ||
-          a._attributes.length !== b._attributes.length) {
+      if (
+        a._namespaceURI !== b._namespaceURI ||
+        a._prefix !== b._prefix ||
+        a._localName !== b._localName ||
+        a._attributes.length !== b._attributes.length
+      ) {
         return false;
       }
       break;
@@ -50,11 +59,17 @@ function nodeEquals(a, b) {
       break;
   }
 
-  if (a.nodeType === NODE_TYPE.ELEMENT_NODE && !attributes.attributeListsEqual(a, b)) {
+  if (
+    a.nodeType === NODE_TYPE.ELEMENT_NODE &&
+    !attributes.attributeListsEqual(a, b)
+  ) {
     return false;
   }
 
-  for (const nodes of simultaneousIterators(domSymbolTree.childrenIterator(a), domSymbolTree.childrenIterator(b))) {
+  for (const nodes of simultaneousIterators(
+    domSymbolTree.childrenIterator(a),
+    domSymbolTree.childrenIterator(b)
+  )) {
     if (!nodes[0] || !nodes[1]) {
       // mismatch in the amount of childNodes
       return false;
@@ -133,7 +148,9 @@ class NodeImpl extends EventTargetImpl {
   }
 
   get ownerDocument() {
-    return this.nodeType === NODE_TYPE.DOCUMENT_NODE ? null : this._ownerDocument;
+    return this.nodeType === NODE_TYPE.DOCUMENT_NODE
+      ? null
+      : this._ownerDocument;
   }
 
   get lastChild() {
@@ -144,7 +161,7 @@ class NodeImpl extends EventTargetImpl {
     if (!this._childNodesList) {
       this._childNodesList = NodeList.createImpl([], {
         element: this,
-        query: () => domSymbolTree.childrenToArray(this)
+        query: () => domSymbolTree.childrenToArray(this),
       });
     } else {
       this._childNodesList._update();
@@ -167,8 +184,14 @@ class NodeImpl extends EventTargetImpl {
       newChildImpl._ownerDocument = this._ownerDocument;
     }
 
-    if (newChildImpl.nodeType && newChildImpl.nodeType === NODE_TYPE.ATTRIBUTE_NODE) {
-      throw new DOMException("The operation would yield an incorrect node tree.", "HierarchyRequestError");
+    if (
+      newChildImpl.nodeType &&
+      newChildImpl.nodeType === NODE_TYPE.ATTRIBUTE_NODE
+    ) {
+      throw new DOMException(
+        "The operation would yield an incorrect node tree.",
+        "HierarchyRequestError"
+      );
     }
 
     if (this._ownerDocument !== newChildImpl._ownerDocument) {
@@ -178,7 +201,10 @@ class NodeImpl extends EventTargetImpl {
       // search for parents matching the newChild
       for (const ancestor of domSymbolTree.ancestorsIterator(this)) {
         if (ancestor === newChildImpl) {
-          throw new DOMException("The operation would yield an incorrect node tree.", "HierarchyRequestError");
+          throw new DOMException(
+            "The operation would yield an incorrect node tree.",
+            "HierarchyRequestError"
+          );
         }
       }
     }
@@ -203,7 +229,10 @@ class NodeImpl extends EventTargetImpl {
         domSymbolTree.appendChild(this, newChildImpl);
       } else {
         if (domSymbolTree.parent(refChildImpl) !== this) {
-          throw new DOMException("The object can not be found here.", "NotFoundError");
+          throw new DOMException(
+            "The object can not be found here.",
+            "NotFoundError"
+          );
         }
 
         domSymbolTree.insertBefore(refChildImpl, newChildImpl);
@@ -283,7 +312,10 @@ class NodeImpl extends EventTargetImpl {
   _detach() {
     this._attached = false;
 
-    if (this._ownerDocument && this._ownerDocument._lastFocusedElement === this) {
+    if (
+      this._ownerDocument &&
+      this._ownerDocument._lastFocusedElement === this
+    ) {
       this._ownerDocument._lastFocusedElement = null;
     }
 
@@ -296,7 +328,10 @@ class NodeImpl extends EventTargetImpl {
 
   removeChild(/* Node */ oldChildImpl) {
     if (!oldChildImpl || domSymbolTree.parent(oldChildImpl) !== this) {
-      throw new DOMException("The object can not be found here.", "NotFoundError");
+      throw new DOMException(
+        "The object can not be found here.",
+        "NotFoundError"
+      );
     }
 
     if (this._ownerDocument) {
@@ -348,7 +383,9 @@ class NodeImpl extends EventTargetImpl {
 
   get parentElement() {
     const parentNode = domSymbolTree.parent(this);
-    return parentNode !== null && parentNode.nodeType === NODE_TYPE.ELEMENT_NODE ? parentNode : null;
+    return parentNode !== null && parentNode.nodeType === NODE_TYPE.ELEMENT_NODE
+      ? parentNode
+      : null;
   }
 
   get baseURI() {
@@ -370,9 +407,11 @@ class NodeImpl extends EventTargetImpl {
     // DOCUMENT_POSITION_FOLLOWING, with the constraint that this is to be consistent, together.”
     if (result === NODE_DOCUMENT_POSITION.DOCUMENT_POSITION_DISCONNECTED) {
       // symbol-tree does not add these bits required by the spec:
-      return NODE_DOCUMENT_POSITION.DOCUMENT_POSITION_DISCONNECTED |
+      return (
+        NODE_DOCUMENT_POSITION.DOCUMENT_POSITION_DISCONNECTED |
         NODE_DOCUMENT_POSITION.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC |
-        NODE_DOCUMENT_POSITION.DOCUMENT_POSITION_FOLLOWING;
+        NODE_DOCUMENT_POSITION.DOCUMENT_POSITION_FOLLOWING
+      );
     }
 
     return result;
@@ -388,17 +427,23 @@ class NodeImpl extends EventTargetImpl {
         return locateNamespacePrefix(this, namespace);
       }
       case NODE_TYPE.DOCUMENT_NODE: {
-        return this.documentElement !== null ? locateNamespacePrefix(this.documentElement, namespace) : null;
+        return this.documentElement !== null
+          ? locateNamespacePrefix(this.documentElement, namespace)
+          : null;
       }
       case NODE_TYPE.DOCUMENT_TYPE_NODE:
       case NODE_TYPE.DOCUMENT_FRAGMENT_NODE: {
         return null;
       }
       case NODE_TYPE.ATTRIBUTE_NODE: {
-        return this._element !== null ? locateNamespacePrefix(this._element, namespace) : null;
+        return this._element !== null
+          ? locateNamespacePrefix(this._element, namespace)
+          : null;
       }
       default: {
-        return this.parentElement !== null ? locateNamespacePrefix(this.parentElement, namespace) : null;
+        return this.parentElement !== null
+          ? locateNamespacePrefix(this.parentElement, namespace)
+          : null;
       }
     }
   }
@@ -426,7 +471,10 @@ class NodeImpl extends EventTargetImpl {
     } else if (this === other) {
       return true;
     }
-    return Boolean(this.compareDocumentPosition(other) & NODE_DOCUMENT_POSITION.DOCUMENT_POSITION_CONTAINED_BY);
+    return Boolean(
+      this.compareDocumentPosition(other) &
+        NODE_DOCUMENT_POSITION.DOCUMENT_POSITION_CONTAINED_BY
+    );
   }
 
   isEqualNode(node) {
@@ -499,7 +547,10 @@ class NodeImpl extends EventTargetImpl {
       case NODE_TYPE.ELEMENT_NODE: {
         let text = "";
         for (const child of domSymbolTree.treeIterator(this)) {
-          if (child.nodeType === NODE_TYPE.TEXT_NODE || child.nodeType === NODE_TYPE.CDATA_SECTION_NODE) {
+          if (
+            child.nodeType === NODE_TYPE.TEXT_NODE ||
+            child.nodeType === NODE_TYPE.CDATA_SECTION_NODE
+          ) {
             text += child.nodeValue;
           }
         }
@@ -557,5 +608,5 @@ class NodeImpl extends EventTargetImpl {
 }
 
 module.exports = {
-  implementation: NodeImpl
+  implementation: NodeImpl,
 };

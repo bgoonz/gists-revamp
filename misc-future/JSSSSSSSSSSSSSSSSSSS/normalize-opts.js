@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = normalizeOptions;
 
@@ -19,35 +19,44 @@ function normalizeOptions(config) {
   const {
     filename,
     cwd,
-    filenameRelative = typeof filename === "string" ? _path().relative(cwd, filename) : "unknown",
+    filenameRelative = typeof filename === "string"
+      ? _path().relative(cwd, filename)
+      : "unknown",
     sourceType = "module",
     inputSourceMap,
     sourceMaps = !!inputSourceMap,
     sourceRoot = config.options.moduleRoot,
     sourceFileName = _path().basename(filenameRelative),
     comments = true,
-    compact = "auto"
+    compact = "auto",
   } = config.options;
   const opts = config.options;
   const options = Object.assign({}, opts, {
-    parserOpts: Object.assign({
-      sourceType: _path().extname(filenameRelative) === ".mjs" ? "module" : sourceType,
-      sourceFileName: filename,
-      plugins: []
-    }, opts.parserOpts),
-    generatorOpts: Object.assign({
-      filename,
-      auxiliaryCommentBefore: opts.auxiliaryCommentBefore,
-      auxiliaryCommentAfter: opts.auxiliaryCommentAfter,
-      retainLines: opts.retainLines,
-      comments,
-      shouldPrintComment: opts.shouldPrintComment,
-      compact,
-      minified: opts.minified,
-      sourceMaps,
-      sourceRoot,
-      sourceFileName
-    }, opts.generatorOpts)
+    parserOpts: Object.assign(
+      {
+        sourceType:
+          _path().extname(filenameRelative) === ".mjs" ? "module" : sourceType,
+        sourceFileName: filename,
+        plugins: [],
+      },
+      opts.parserOpts
+    ),
+    generatorOpts: Object.assign(
+      {
+        filename,
+        auxiliaryCommentBefore: opts.auxiliaryCommentBefore,
+        auxiliaryCommentAfter: opts.auxiliaryCommentAfter,
+        retainLines: opts.retainLines,
+        comments,
+        shouldPrintComment: opts.shouldPrintComment,
+        compact,
+        minified: opts.minified,
+        sourceMaps,
+        sourceRoot,
+        sourceFileName,
+      },
+      opts.generatorOpts
+    ),
   });
 
   for (const plugins of config.passes) {

@@ -1,1 +1,1 @@
-module.exports = require('./matchesProperty');
+module.exports = require("./matchesProperty");

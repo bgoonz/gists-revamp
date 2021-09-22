@@ -14,14 +14,14 @@ Object.defineProperty(NamedNodeMap, "prototype", {
   value: NamedNodeMap.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(NamedNodeMap.prototype, Symbol.iterator, {
   writable: true,
   enumerable: false,
   configurable: true,
-  value: Array.prototype[Symbol.iterator]
+  value: Array.prototype[Symbol.iterator],
 });
 
 NamedNodeMap.prototype.item = function item(index) {
@@ -31,14 +31,16 @@ NamedNodeMap.prototype.item = function item(index) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'item' on 'NamedNodeMap': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'item' on 'NamedNodeMap': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'item' on 'NamedNodeMap': parameter 1"
+      context: "Failed to execute 'item' on 'NamedNodeMap': parameter 1",
     });
     args.push(curArg);
   }
@@ -61,14 +63,18 @@ NamedNodeMap.prototype.getNamedItem = function getNamedItem(qualifiedName) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getNamedItem' on 'NamedNodeMap': parameter 1"
+      context:
+        "Failed to execute 'getNamedItem' on 'NamedNodeMap': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getNamedItem(...args));
 };
 
-NamedNodeMap.prototype.getNamedItemNS = function getNamedItemNS(namespace, localName) {
+NamedNodeMap.prototype.getNamedItemNS = function getNamedItemNS(
+  namespace,
+  localName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -87,7 +93,8 @@ NamedNodeMap.prototype.getNamedItemNS = function getNamedItemNS(namespace, local
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'getNamedItemNS' on 'NamedNodeMap': parameter 1"
+        context:
+          "Failed to execute 'getNamedItemNS' on 'NamedNodeMap': parameter 1",
       });
     }
     args.push(curArg);
@@ -95,7 +102,8 @@ NamedNodeMap.prototype.getNamedItemNS = function getNamedItemNS(namespace, local
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getNamedItemNS' on 'NamedNodeMap': parameter 2"
+      context:
+        "Failed to execute 'getNamedItemNS' on 'NamedNodeMap': parameter 2",
     });
     args.push(curArg);
   }
@@ -117,7 +125,10 @@ NamedNodeMap.prototype.setNamedItem = function setNamedItem(attr) {
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertAttr(curArg, { context: "Failed to execute 'setNamedItem' on 'NamedNodeMap': parameter 1" });
+    curArg = convertAttr(curArg, {
+      context:
+        "Failed to execute 'setNamedItem' on 'NamedNodeMap': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].setNamedItem(...args));
@@ -138,13 +149,18 @@ NamedNodeMap.prototype.setNamedItemNS = function setNamedItemNS(attr) {
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertAttr(curArg, { context: "Failed to execute 'setNamedItemNS' on 'NamedNodeMap': parameter 1" });
+    curArg = convertAttr(curArg, {
+      context:
+        "Failed to execute 'setNamedItemNS' on 'NamedNodeMap': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].setNamedItemNS(...args));
 };
 
-NamedNodeMap.prototype.removeNamedItem = function removeNamedItem(qualifiedName) {
+NamedNodeMap.prototype.removeNamedItem = function removeNamedItem(
+  qualifiedName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -160,14 +176,18 @@ NamedNodeMap.prototype.removeNamedItem = function removeNamedItem(qualifiedName)
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'removeNamedItem' on 'NamedNodeMap': parameter 1"
+      context:
+        "Failed to execute 'removeNamedItem' on 'NamedNodeMap': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].removeNamedItem(...args));
 };
 
-NamedNodeMap.prototype.removeNamedItemNS = function removeNamedItemNS(namespace, localName) {
+NamedNodeMap.prototype.removeNamedItemNS = function removeNamedItemNS(
+  namespace,
+  localName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -186,7 +206,8 @@ NamedNodeMap.prototype.removeNamedItemNS = function removeNamedItemNS(namespace,
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'removeNamedItemNS' on 'NamedNodeMap': parameter 1"
+        context:
+          "Failed to execute 'removeNamedItemNS' on 'NamedNodeMap': parameter 1",
       });
     }
     args.push(curArg);
@@ -194,7 +215,8 @@ NamedNodeMap.prototype.removeNamedItemNS = function removeNamedItemNS(namespace,
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'removeNamedItemNS' on 'NamedNodeMap': parameter 2"
+      context:
+        "Failed to execute 'removeNamedItemNS' on 'NamedNodeMap': parameter 2",
     });
     args.push(curArg);
   }
@@ -211,14 +233,14 @@ Object.defineProperty(NamedNodeMap.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NamedNodeMap.prototype, Symbol.toStringTag, {
   value: "NamedNodeMap",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -282,7 +304,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -356,7 +378,7 @@ const iface = {
               writable: false,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
           ignoreNamedProps = true;
@@ -369,7 +391,7 @@ const iface = {
             writable: false,
             enumerable: false,
             configurable: true,
-            value: utils.tryWrapperForImpl(namedValue)
+            value: utils.tryWrapperForImpl(namedValue),
           };
         }
 
@@ -395,7 +417,7 @@ const iface = {
               writable: false,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
         }
@@ -408,7 +430,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -427,7 +454,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -468,7 +500,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -479,8 +511,8 @@ const iface = {
   },
   interface: NamedNodeMap,
   expose: {
-    Window: { NamedNodeMap }
-  }
+    Window: { NamedNodeMap },
+  },
 }; // iface
 module.exports = iface;
 

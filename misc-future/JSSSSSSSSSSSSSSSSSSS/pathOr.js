@@ -1,1 +1,1 @@
-module.exports = require('./getOr');
+module.exports = require("./getOr");

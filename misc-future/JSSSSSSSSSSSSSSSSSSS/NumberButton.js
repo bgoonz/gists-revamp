@@ -1,9 +1,10 @@
-import React from 'react';
-
+import React from "react";
 
 function NumberButton(props) {
   return (
-    <button onClick={props.clickfn} className={`num-btn ${props.type}`}>{props.value}</button>
+    <button onClick={props.clickfn} className={`num-btn ${props.type}`}>
+      {props.value}
+    </button>
   );
 }
 

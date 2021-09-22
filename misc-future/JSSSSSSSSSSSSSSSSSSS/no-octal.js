@@ -10,29 +10,29 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow octal literals",
-            category: "Best Practices",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-octal"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow octal literals",
+      category: "Best Practices",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-octal",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
-
-            Literal(node) {
-                if (typeof node.value === "number" && /^0[0-7]/u.test(node.raw)) {
-                    context.report({ node, message: "Octal literals should not be used." });
-                }
-            }
-        };
-
-    }
+  create(context) {
+    return {
+      Literal(node) {
+        if (typeof node.value === "number" && /^0[0-7]/u.test(node.raw)) {
+          context.report({
+            node,
+            message: "Octal literals should not be used.",
+          });
+        }
+      },
+    };
+  },
 };

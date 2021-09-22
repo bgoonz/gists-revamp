@@ -1,6 +1,7 @@
 "use strict";
 /* eslint-disable no-unused-expressions */
-() => `jsdom 7.x onward only works on Node.js 4 or newer: https://github.com/tmpvar/jsdom#install`;
+() =>
+  `jsdom 7.x onward only works on Node.js 4 or newer: https://github.com/tmpvar/jsdom#install`;
 /* eslint-enable no-unused-expressions */
 
 const fs = require("fs");
@@ -73,7 +74,7 @@ Object.defineProperty(exports, "defaultDocumentFeatures", {
   },
   set(v) {
     documentFeatures.defaultDocumentFeatures = v;
-  }
+  },
 });
 
 exports.jsdom = function (html, options) {
@@ -85,8 +86,11 @@ exports.jsdom = function (html, options) {
   }
 
   if (options.parsingMode !== "html" && options.parsingMode !== "xml") {
-    throw new RangeError(`Invalid parsingMode option ${JSON.stringify(options.parsingMode)}; must be either "html", ` +
-      `"xml", "auto", or undefined`);
+    throw new RangeError(
+      `Invalid parsingMode option ${JSON.stringify(
+        options.parsingMode
+      )}; must be either "html", ` + `"xml", "auto", or undefined`
+    );
   }
 
   options.encoding = options.encoding || "UTF-8";
@@ -114,9 +118,13 @@ exports.jsdom = function (html, options) {
   if (options.features.ProcessExternalResources === undefined) {
     options.features.ProcessExternalResources = ["script"];
   }
-  const ProcessExternalResources = options.features.ProcessExternalResources || [];
-  if (ProcessExternalResources === "script" ||
-      (ProcessExternalResources.includes && ProcessExternalResources.includes("script"))) {
+  const ProcessExternalResources =
+    options.features.ProcessExternalResources || [];
+  if (
+    ProcessExternalResources === "script" ||
+    (ProcessExternalResources.includes &&
+      ProcessExternalResources.includes("script"))
+  ) {
     options.runScripts = "dangerously";
   }
 
@@ -152,7 +160,7 @@ exports.jsdom = function (html, options) {
     userAgent: options.userAgent,
     runScripts: options.runScripts,
     pretendToBeVisual: options.pretendToBeVisual,
-    storageQuota: options.storageQuota
+    storageQuota: options.storageQuota,
   });
 
   const documentImpl = idlUtils.implForWrapper(window.document);
@@ -181,7 +189,11 @@ exports.jsdom = function (html, options) {
   return window.document;
 };
 
-exports.jQueryify = exports.jsdom.jQueryify = function (window, jqueryUrl, callback) {
+exports.jQueryify = exports.jsdom.jQueryify = function (
+  window,
+  jqueryUrl,
+  callback
+) {
   if (!window || !window.document) {
     return;
   }
@@ -191,7 +203,9 @@ exports.jQueryify = exports.jsdom.jQueryify = function (window, jqueryUrl, callb
   const oldRunScripts = window._runScripts;
 
   implImpl._addFeature("FetchExternalResources", ["script"]);
-  documentFeatures.contextifyWindow(idlUtils.implForWrapper(window.document)._global);
+  documentFeatures.contextifyWindow(
+    idlUtils.implForWrapper(window.document)._global
+  );
   window._runScripts = "dangerously";
 
   const scriptEl = window.document.createElement("script");
@@ -248,7 +262,11 @@ exports.env = exports.jsdom.env = function () {
           { defaultEncoding: config.defaultEncoding, detectMetaCharset: true },
           (err, text, res) => {
             if (err) {
-              if (err.code === "ENOENT" || err.code === "ENAMETOOLONG" || err.code === "ERR_INVALID_ARG_TYPE") {
+              if (
+                err.code === "ENOENT" ||
+                err.code === "ENAMETOOLONG" ||
+                err.code === "ERR_INVALID_ARG_TYPE"
+              ) {
                 config.html = config.somethingToAutodetect;
                 processHTML(config);
               } else {
@@ -289,40 +307,44 @@ exports.env = exports.jsdom.env = function () {
       userAgent: config.userAgent,
       agent: config.agent,
       agentClass: config.agentClass,
-      agentOptions: config.agentOptions
+      agentOptions: config.agentOptions,
     };
 
     const { fragment } = whatwgURL.parseURL(config.url);
 
-    return resourceLoader.download(config.url, options, (err, responseText, res) => {
-      if (err) {
-        reportInitError(err, config);
-        return;
-      }
-
-      // The use of `res.request.uri.href` ensures that `window.location.href`
-      // is updated when `request` follows redirects.
-      config.html = responseText;
-      config.url = res.request.uri.href;
-      if (fragment) {
-        config.url += `#${fragment}`;
-      }
-
-      if (res.headers["last-modified"]) {
-        config.lastModified = new Date(res.headers["last-modified"]);
-      }
-
-      const contentType = new MIMEType(res.headers["content-type"]);
-      if (config.parsingMode === "auto") {
-        if (contentType.isXML()) {
-          config.parsingMode = "xml";
+    return resourceLoader.download(
+      config.url,
+      options,
+      (err, responseText, res) => {
+        if (err) {
+          reportInitError(err, config);
+          return;
         }
-      }
-      config.contentType = contentType.essence;
-      config.encoding = contentType.parameters.get("charset");
 
-      processHTML(config);
-    });
+        // The use of `res.request.uri.href` ensures that `window.location.href`
+        // is updated when `request` follows redirects.
+        config.html = responseText;
+        config.url = res.request.uri.href;
+        if (fragment) {
+          config.url += `#${fragment}`;
+        }
+
+        if (res.headers["last-modified"]) {
+          config.lastModified = new Date(res.headers["last-modified"]);
+        }
+
+        const contentType = new MIMEType(res.headers["content-type"]);
+        if (config.parsingMode === "auto") {
+          if (contentType.isXML()) {
+            config.parsingMode = "xml";
+          }
+        }
+        config.contentType = contentType.essence;
+        config.encoding = contentType.parameters.get("charset");
+
+        processHTML(config);
+      }
+    );
   }
   return req;
 };
@@ -348,7 +370,10 @@ function processHTML(config) {
   const totalDocs = config.scripts.length + config.src.length;
 
   if (!window || !window.document) {
-    reportInitError(new Error("JSDOM: a window object could not be created."), config);
+    reportInitError(
+      new Error("JSDOM: a window object could not be created."),
+      config
+    );
     return;
   }
 
@@ -409,13 +434,15 @@ function setGlobalDefaultConfig(config) {
 
   config.pool = config.pool !== undefined ? config.pool : { maxSockets: 6 };
 
-  config.agentOptions = config.agentOptions !== undefined ?
-                        config.agentOptions :
-                        { keepAlive: true, keepAliveMsecs: 115 * 1000 };
+  config.agentOptions =
+    config.agentOptions !== undefined
+      ? config.agentOptions
+      : { keepAlive: true, keepAliveMsecs: 115 * 1000 };
 
   config.strictSSL = config.strictSSL !== undefined ? config.strictSSL : true;
 
-  config.userAgent = config.userAgent ||
+  config.userAgent =
+    config.userAgent ||
     `Node.js (${process.platform}; U; rv:${process.version}) AppleWebKit/537.36 (KHTML, like Gecko)`;
 }
 
@@ -444,12 +471,20 @@ function getConfigFromEnvArguments(args) {
   }
 
   if (!config.done && !config.created && !config.onload) {
-    throw new Error("Must pass a \"created\", \"onload\", or \"done\" option, or a callback, to jsdom.env");
+    throw new Error(
+      'Must pass a "created", "onload", or "done" option, or a callback, to jsdom.env'
+    );
   }
 
-  if (config.somethingToAutodetect === undefined &&
-      config.html === undefined && !config.file && !config.url) {
-    throw new Error("Must pass a \"html\", \"file\", or \"url\" option, or a string, to jsdom.env");
+  if (
+    config.somethingToAutodetect === undefined &&
+    config.html === undefined &&
+    !config.file &&
+    !config.url
+  ) {
+    throw new Error(
+      'Must pass a "html", "file", or "url" option, or a string, to jsdom.env'
+    );
   }
 
   config.scripts = ensureArray(config.scripts);
@@ -459,7 +494,7 @@ function getConfigFromEnvArguments(args) {
   config.features = config.features || {
     FetchExternalResources: false,
     SkipExternalResources: false,
-    ProcessExternalResources: false // needed since we'll process it inside jsdom.jsdom()
+    ProcessExternalResources: false, // needed since we'll process it inside jsdom.jsdom()
   };
 
   if (!config.url && config.file) {

@@ -11,36 +11,40 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow `null` comparisons without type-checking operators",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-eq-null"
-        },
-
-        schema: [],
-
-        messages: {
-            unexpected: "Use '===' to compare with null."
-        }
+    docs: {
+      description:
+        "disallow `null` comparisons without type-checking operators",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-eq-null",
     },
 
-    create(context) {
+    schema: [],
 
-        return {
+    messages: {
+      unexpected: "Use '===' to compare with null.",
+    },
+  },
 
-            BinaryExpression(node) {
-                const badOperator = node.operator === "==" || node.operator === "!=";
+  create(context) {
+    return {
+      BinaryExpression(node) {
+        const badOperator = node.operator === "==" || node.operator === "!=";
 
-                if (node.right.type === "Literal" && node.right.raw === "null" && badOperator ||
-                        node.left.type === "Literal" && node.left.raw === "null" && badOperator) {
-                    context.report({ node, messageId: "unexpected" });
-                }
-            }
-        };
-
-    }
+        if (
+          (node.right.type === "Literal" &&
+            node.right.raw === "null" &&
+            badOperator) ||
+          (node.left.type === "Literal" &&
+            node.left.raw === "null" &&
+            badOperator)
+        ) {
+          context.report({ node, messageId: "unexpected" });
+        }
+      },
+    };
+  },
 };

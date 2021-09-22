@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('rearg', require('../rearg'));
+var convert = require("./convert"),
+  func = convert("rearg", require("../rearg"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

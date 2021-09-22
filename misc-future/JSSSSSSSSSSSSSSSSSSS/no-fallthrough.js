@@ -24,10 +24,10 @@ const DEFAULT_FALLTHROUGH_COMMENT = /falls?\s?through/iu;
  * @returns {boolean} `true` if the node has a valid fallthrough comment.
  */
 function hasFallthroughComment(node, context, fallthroughCommentPattern) {
-    const sourceCode = context.getSourceCode();
-    const comment = lodash.last(sourceCode.getCommentsBefore(node));
+  const sourceCode = context.getSourceCode();
+  const comment = lodash.last(sourceCode.getCommentsBefore(node));
 
-    return Boolean(comment && fallthroughCommentPattern.test(comment.value));
+  return Boolean(comment && fallthroughCommentPattern.test(comment.value));
 }
 
 /**
@@ -36,7 +36,7 @@ function hasFallthroughComment(node, context, fallthroughCommentPattern) {
  * @returns {boolean} `true` if the segment is reachable.
  */
 function isReachable(segment) {
-    return segment.reachable;
+  return segment.reachable;
 }
 
 /**
@@ -46,7 +46,7 @@ function isReachable(segment) {
  * @returns {boolean} `true` if there are blank lines between node and token
  */
 function hasBlankLinesBetween(node, token) {
-    return token.loc.start.line > node.loc.end.line + 1;
+  return token.loc.start.line > node.loc.end.line + 1;
 }
 
 //------------------------------------------------------------------------------
@@ -54,89 +54,94 @@ function hasBlankLinesBetween(node, token) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow fallthrough of `case` statements",
-            category: "Best Practices",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-fallthrough"
-        },
-
-        schema: [
-            {
-                type: "object",
-                properties: {
-                    commentPattern: {
-                        type: "string",
-                        default: ""
-                    }
-                },
-                additionalProperties: false
-            }
-        ],
-        messages: {
-            case: "Expected a 'break' statement before 'case'.",
-            default: "Expected a 'break' statement before 'default'."
-        }
+    docs: {
+      description: "disallow fallthrough of `case` statements",
+      category: "Best Practices",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-fallthrough",
     },
 
-    create(context) {
-        const options = context.options[0] || {};
-        let currentCodePath = null;
-        const sourceCode = context.getSourceCode();
+    schema: [
+      {
+        type: "object",
+        properties: {
+          commentPattern: {
+            type: "string",
+            default: "",
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
+    messages: {
+      case: "Expected a 'break' statement before 'case'.",
+      default: "Expected a 'break' statement before 'default'.",
+    },
+  },
+
+  create(context) {
+    const options = context.options[0] || {};
+    let currentCodePath = null;
+    const sourceCode = context.getSourceCode();
+
+    /*
+     * We need to use leading comments of the next SwitchCase node because
+     * trailing comments is wrong if semicolons are omitted.
+     */
+    let fallthroughCase = null;
+    let fallthroughCommentPattern = null;
+
+    if (options.commentPattern) {
+      fallthroughCommentPattern = new RegExp(options.commentPattern); // eslint-disable-line require-unicode-regexp
+    } else {
+      fallthroughCommentPattern = DEFAULT_FALLTHROUGH_COMMENT;
+    }
+
+    return {
+      onCodePathStart(codePath) {
+        currentCodePath = codePath;
+      },
+      onCodePathEnd() {
+        currentCodePath = currentCodePath.upper;
+      },
+
+      SwitchCase(node) {
+        /*
+         * Checks whether or not there is a fallthrough comment.
+         * And reports the previous fallthrough node if that does not exist.
+         */
+        if (
+          fallthroughCase &&
+          !hasFallthroughComment(node, context, fallthroughCommentPattern)
+        ) {
+          context.report({
+            messageId: node.test ? "case" : "default",
+            node,
+          });
+        }
+        fallthroughCase = null;
+      },
+
+      "SwitchCase:exit"(node) {
+        const nextToken = sourceCode.getTokenAfter(node);
 
         /*
-         * We need to use leading comments of the next SwitchCase node because
-         * trailing comments is wrong if semicolons are omitted.
+         * `reachable` meant fall through because statements preceded by
+         * `break`, `return`, or `throw` are unreachable.
+         * And allows empty cases and the last case.
          */
-        let fallthroughCase = null;
-        let fallthroughCommentPattern = null;
-
-        if (options.commentPattern) {
-            fallthroughCommentPattern = new RegExp(options.commentPattern); // eslint-disable-line require-unicode-regexp
-        } else {
-            fallthroughCommentPattern = DEFAULT_FALLTHROUGH_COMMENT;
+        if (
+          currentCodePath.currentSegments.some(isReachable) &&
+          (node.consequent.length > 0 ||
+            hasBlankLinesBetween(node, nextToken)) &&
+          lodash.last(node.parent.cases) !== node
+        ) {
+          fallthroughCase = node;
         }
-
-        return {
-            onCodePathStart(codePath) {
-                currentCodePath = codePath;
-            },
-            onCodePathEnd() {
-                currentCodePath = currentCodePath.upper;
-            },
-
-            SwitchCase(node) {
-
-                /*
-                 * Checks whether or not there is a fallthrough comment.
-                 * And reports the previous fallthrough node if that does not exist.
-                 */
-                if (fallthroughCase && !hasFallthroughComment(node, context, fallthroughCommentPattern)) {
-                    context.report({
-                        messageId: node.test ? "case" : "default",
-                        node
-                    });
-                }
-                fallthroughCase = null;
-            },
-
-            "SwitchCase:exit"(node) {
-                const nextToken = sourceCode.getTokenAfter(node);
-
-                /*
-                 * `reachable` meant fall through because statements preceded by
-                 * `break`, `return`, or `throw` are unreachable.
-                 * And allows empty cases and the last case.
-                 */
-                if (currentCodePath.currentSegments.some(isReachable) &&
-                    (node.consequent.length > 0 || hasBlankLinesBetween(node, nextToken)) &&
-                    lodash.last(node.parent.cases) !== node) {
-                    fallthroughCase = node;
-                }
-            }
-        };
-    }
+      },
+    };
+  },
 };

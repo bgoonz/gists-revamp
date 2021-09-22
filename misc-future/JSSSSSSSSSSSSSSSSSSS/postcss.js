@@ -23,7 +23,9 @@ var _rule = _interopRequireDefault(require("./rule"));
 
 var _root = _interopRequireDefault(require("./root"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * Create a new {@link Processor} instance that will apply `plugins`
@@ -44,7 +46,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @namespace postcss
  */
 function postcss() {
-  for (var _len = arguments.length, plugins = new Array(_len), _key = 0; _key < _len; _key++) {
+  for (
+    var _len = arguments.length, plugins = new Array(_len), _key = 0;
+    _key < _len;
+    _key++
+  ) {
     plugins[_key] = arguments[_key];
   }
 
@@ -127,7 +133,6 @@ function postcss() {
  * @return {Plugin} PostCSS plugin.
  */
 
-
 postcss.plugin = function plugin(name, initializer) {
   function creator() {
     var transformer = initializer.apply(void 0, arguments);
@@ -137,11 +142,11 @@ postcss.plugin = function plugin(name, initializer) {
   }
 
   var cache;
-  Object.defineProperty(creator, 'postcss', {
+  Object.defineProperty(creator, "postcss", {
     get: function get() {
       if (!cache) cache = creator();
       return cache;
-    }
+    },
   });
 
   creator.process = function (css, processOpts, pluginOpts) {
@@ -161,7 +166,6 @@ postcss.plugin = function plugin(name, initializer) {
  *
  * @function
  */
-
 
 postcss.stringify = _stringify.default;
 /**
@@ -229,7 +233,6 @@ postcss.comment = function (defaults) {
  * postcss.atRule({ name: 'charset' }).toString() //=> "@charset"
  */
 
-
 postcss.atRule = function (defaults) {
   return new _atRule.default(defaults);
 };
@@ -243,7 +246,6 @@ postcss.atRule = function (defaults) {
  * @example
  * postcss.decl({ prop: 'color', value: 'red' }).toString() //=> "color: red"
  */
-
 
 postcss.decl = function (defaults) {
   return new _declaration.default(defaults);
@@ -259,7 +261,6 @@ postcss.decl = function (defaults) {
  * postcss.rule({ selector: 'a' }).toString() //=> "a {\n}"
  */
 
-
 postcss.rule = function (defaults) {
   return new _rule.default(defaults);
 };
@@ -273,7 +274,6 @@ postcss.rule = function (defaults) {
  * @example
  * postcss.root({ after: '\n' }).toString() //=> "\n"
  */
-
 
 postcss.root = function (defaults) {
   return new _root.default(defaults);

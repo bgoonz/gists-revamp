@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 /**
  * `password` type prompt
  */
 
-var chalk = require('chalk');
-var { map, takeUntil } = require('rxjs/operators');
-var Base = require('./base');
-var observe = require('../utils/events');
+var chalk = require("chalk");
+var { map, takeUntil } = require("rxjs/operators");
+var Base = require("./base");
+var observe = require("../utils/events");
 
 function mask(input, maskChar) {
   input = String(input);
-  maskChar = typeof maskChar === 'string' ? maskChar : '*';
+  maskChar = typeof maskChar === "string" ? maskChar : "*";
   if (input.length === 0) {
-    return '';
+    return "";
   }
 
   return new Array(input.length + 1).join(maskChar);
@@ -54,20 +54,20 @@ class PasswordPrompt extends Base {
 
   render(error) {
     var message = this.getQuestion();
-    var bottomContent = '';
+    var bottomContent = "";
 
-    if (this.status === 'answered') {
+    if (this.status === "answered") {
       message += this.opt.mask
         ? chalk.cyan(mask(this.answer, this.opt.mask))
-        : chalk.italic.dim('[hidden]');
+        : chalk.italic.dim("[hidden]");
     } else if (this.opt.mask) {
-      message += mask(this.rl.line || '', this.opt.mask);
+      message += mask(this.rl.line || "", this.opt.mask);
     } else {
-      message += chalk.italic.dim('[input is hidden] ');
+      message += chalk.italic.dim("[input is hidden] ");
     }
 
     if (error) {
-      bottomContent = '\n' + chalk.red('>> ') + error;
+      bottomContent = "\n" + chalk.red(">> ") + error;
     }
 
     this.screen.render(message, bottomContent);
@@ -79,14 +79,14 @@ class PasswordPrompt extends Base {
 
   filterInput(input) {
     if (!input) {
-      return this.opt.default == null ? '' : this.opt.default;
+      return this.opt.default == null ? "" : this.opt.default;
     }
 
     return input;
   }
 
   onEnd(state) {
-    this.status = 'answered';
+    this.status = "answered";
     this.answer = state.value;
 
     // Re-render prompt

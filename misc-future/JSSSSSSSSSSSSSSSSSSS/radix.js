@@ -16,7 +16,7 @@ const astUtils = require("../util/ast-utils");
 //------------------------------------------------------------------------------
 
 const MODE_ALWAYS = "always",
-    MODE_AS_NEEDED = "as-needed";
+  MODE_AS_NEEDED = "as-needed";
 
 /**
  * Checks whether a given variable is shadowed or not.
@@ -25,7 +25,7 @@ const MODE_ALWAYS = "always",
  * @returns {boolean} `true` if the variable is shadowed.
  */
 function isShadowed(variable) {
-    return variable.defs.length >= 1;
+  return variable.defs.length >= 1;
 }
 
 /**
@@ -36,12 +36,12 @@ function isShadowed(variable) {
  *      method.
  */
 function isParseIntMethod(node) {
-    return (
-        node.type === "MemberExpression" &&
-        !node.computed &&
-        node.property.type === "Identifier" &&
-        node.property.name === "parseInt"
-    );
+  return (
+    node.type === "MemberExpression" &&
+    !node.computed &&
+    node.property.type === "Identifier" &&
+    node.property.name === "parseInt"
+  );
 }
 
 /**
@@ -56,10 +56,10 @@ function isParseIntMethod(node) {
  * @returns {boolean} `true` if the node is valid.
  */
 function isValidRadix(radix) {
-    return !(
-        (radix.type === "Literal" && typeof radix.value !== "number") ||
-        (radix.type === "Identifier" && radix.name === "undefined")
-    );
+  return !(
+    (radix.type === "Literal" && typeof radix.value !== "number") ||
+    (radix.type === "Identifier" && radix.name === "undefined")
+  );
 }
 
 /**
@@ -69,7 +69,7 @@ function isValidRadix(radix) {
  * @returns {boolean} `true` if the node is the literal node of `10`.
  */
 function isDefaultRadix(radix) {
-    return radix.type === "Literal" && radix.value === 10;
+  return radix.type === "Literal" && radix.value === 10;
 }
 
 //------------------------------------------------------------------------------
@@ -77,98 +77,99 @@ function isDefaultRadix(radix) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "enforce the consistent use of the radix argument when using `parseInt()`",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/radix"
-        },
-
-        schema: [
-            {
-                enum: ["always", "as-needed"]
-            }
-        ]
+    docs: {
+      description:
+        "enforce the consistent use of the radix argument when using `parseInt()`",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/radix",
     },
 
-    create(context) {
-        const mode = context.options[0] || MODE_ALWAYS;
+    schema: [
+      {
+        enum: ["always", "as-needed"],
+      },
+    ],
+  },
 
-        /**
-         * Checks the arguments of a given CallExpression node and reports it if it
-         * offends this rule.
-         *
-         * @param {ASTNode} node - A CallExpression node to check.
-         * @returns {void}
-         */
-        function checkArguments(node) {
-            const args = node.arguments;
+  create(context) {
+    const mode = context.options[0] || MODE_ALWAYS;
 
-            switch (args.length) {
-                case 0:
-                    context.report({
-                        node,
-                        message: "Missing parameters."
-                    });
-                    break;
+    /**
+     * Checks the arguments of a given CallExpression node and reports it if it
+     * offends this rule.
+     *
+     * @param {ASTNode} node - A CallExpression node to check.
+     * @returns {void}
+     */
+    function checkArguments(node) {
+      const args = node.arguments;
 
-                case 1:
-                    if (mode === MODE_ALWAYS) {
-                        context.report({
-                            node,
-                            message: "Missing radix parameter."
-                        });
-                    }
-                    break;
+      switch (args.length) {
+        case 0:
+          context.report({
+            node,
+            message: "Missing parameters.",
+          });
+          break;
 
-                default:
-                    if (mode === MODE_AS_NEEDED && isDefaultRadix(args[1])) {
-                        context.report({
-                            node,
-                            message: "Redundant radix parameter."
-                        });
-                    } else if (!isValidRadix(args[1])) {
-                        context.report({
-                            node,
-                            message: "Invalid radix parameter."
-                        });
-                    }
-                    break;
+        case 1:
+          if (mode === MODE_ALWAYS) {
+            context.report({
+              node,
+              message: "Missing radix parameter.",
+            });
+          }
+          break;
+
+        default:
+          if (mode === MODE_AS_NEEDED && isDefaultRadix(args[1])) {
+            context.report({
+              node,
+              message: "Redundant radix parameter.",
+            });
+          } else if (!isValidRadix(args[1])) {
+            context.report({
+              node,
+              message: "Invalid radix parameter.",
+            });
+          }
+          break;
+      }
+    }
+
+    return {
+      "Program:exit"() {
+        const scope = context.getScope();
+        let variable;
+
+        // Check `parseInt()`
+        variable = astUtils.getVariableByName(scope, "parseInt");
+        if (!isShadowed(variable)) {
+          variable.references.forEach((reference) => {
+            const node = reference.identifier;
+
+            if (astUtils.isCallee(node)) {
+              checkArguments(node.parent);
             }
+          });
         }
 
-        return {
-            "Program:exit"() {
-                const scope = context.getScope();
-                let variable;
+        // Check `Number.parseInt()`
+        variable = astUtils.getVariableByName(scope, "Number");
+        if (!isShadowed(variable)) {
+          variable.references.forEach((reference) => {
+            const node = reference.identifier.parent;
 
-                // Check `parseInt()`
-                variable = astUtils.getVariableByName(scope, "parseInt");
-                if (!isShadowed(variable)) {
-                    variable.references.forEach(reference => {
-                        const node = reference.identifier;
-
-                        if (astUtils.isCallee(node)) {
-                            checkArguments(node.parent);
-                        }
-                    });
-                }
-
-                // Check `Number.parseInt()`
-                variable = astUtils.getVariableByName(scope, "Number");
-                if (!isShadowed(variable)) {
-                    variable.references.forEach(reference => {
-                        const node = reference.identifier.parent;
-
-                        if (isParseIntMethod(node) && astUtils.isCallee(node)) {
-                            checkArguments(node.parent);
-                        }
-                    });
-                }
+            if (isParseIntMethod(node) && astUtils.isCallee(node)) {
+              checkArguments(node.parent);
             }
-        };
-    }
+          });
+        }
+      },
+    };
+  },
 };

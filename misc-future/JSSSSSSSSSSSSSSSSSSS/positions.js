@@ -1,22 +1,22 @@
-import style from './style';
-import compose from './compose';
+import style from "./style";
+import compose from "./compose";
 export var position = style({
-    prop: 'position'
+  prop: "position",
 });
 export var zIndex = style({
-    prop: 'zIndex',
-    themeKey: 'zIndex'
+  prop: "zIndex",
+  themeKey: "zIndex",
 });
 export var top = style({
-    prop: 'top'
+  prop: "top",
 });
 export var right = style({
-    prop: 'right'
+  prop: "right",
 });
 export var bottom = style({
-    prop: 'bottom'
+  prop: "bottom",
 });
 export var left = style({
-    prop: 'left'
+  prop: "left",
 });
 export default compose(position, zIndex, top, right, bottom, left);

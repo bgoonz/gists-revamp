@@ -1,22 +1,22 @@
-'use strict';
+"use strict";
 /**
  * `rawlist` type prompt
  */
 
-var _ = require('lodash');
-var chalk = require('chalk');
-var { map, takeUntil } = require('rxjs/operators');
-var Base = require('./base');
-var Separator = require('../objects/separator');
-var observe = require('../utils/events');
-var Paginator = require('../utils/paginator');
+var _ = require("lodash");
+var chalk = require("chalk");
+var { map, takeUntil } = require("rxjs/operators");
+var Base = require("./base");
+var Separator = require("../objects/separator");
+var observe = require("../utils/events");
+var Paginator = require("../utils/paginator");
 
 class RawListPrompt extends Base {
   constructor(questions, rl, answers) {
     super(questions, rl, answers);
 
     if (!this.opt.choices) {
-      this.throwParamError('choices');
+      this.throwParamError("choices");
     }
 
     this.opt.validChoices = this.opt.choices.filter(Separator.exclude);
@@ -25,9 +25,9 @@ class RawListPrompt extends Base {
     this.rawDefault = 0;
 
     _.extend(this.opt, {
-      validate: function(val) {
+      validate: function (val) {
         return val != null;
-      }
+      },
     });
 
     var def = this.opt.default;
@@ -35,7 +35,10 @@ class RawListPrompt extends Base {
       this.selected = def;
       this.rawDefault = def;
     } else if (!_.isNumber(def) && def != null) {
-      let index = _.findIndex(this.opt.choices.realChoices, ({ value }) => value === def);
+      let index = _.findIndex(
+        this.opt.choices.realChoices,
+        ({ value }) => value === def
+      );
       let safeIndex = Math.max(index, 0);
       this.selected = safeIndex;
       this.rawDefault = safeIndex;
@@ -67,7 +70,9 @@ class RawListPrompt extends Base {
     events.keypress
       .pipe(takeUntil(validation.success))
       .forEach(this.onKeypress.bind(this));
-    events.normalizedUpKey.pipe(takeUntil(events.line)).forEach(this.onUpKey.bind(this));
+    events.normalizedUpKey
+      .pipe(takeUntil(events.line))
+      .forEach(this.onUpKey.bind(this));
     events.normalizedDownKey
       .pipe(takeUntil(events.line))
       .forEach(this.onDownKey.bind(this));
@@ -86,21 +91,22 @@ class RawListPrompt extends Base {
   render(error) {
     // Render question
     var message = this.getQuestion();
-    var bottomContent = '';
+    var bottomContent = "";
 
-    if (this.status === 'answered') {
+    if (this.status === "answered") {
       message += chalk.cyan(this.answer);
     } else {
       var choicesStr = renderChoices(this.opt.choices, this.selected);
       message +=
-        '\n' + this.paginator.paginate(choicesStr, this.selected, this.opt.pageSize);
-      message += '\n  Answer: ';
+        "\n" +
+        this.paginator.paginate(choicesStr, this.selected, this.opt.pageSize);
+      message += "\n  Answer: ";
     }
 
     message += this.rl.line;
 
     if (error) {
-      bottomContent = '\n' + chalk.red('>> ') + error;
+      bottomContent = "\n" + chalk.red(">> ") + error;
     }
 
     this.screen.render(message, bottomContent);
@@ -111,7 +117,7 @@ class RawListPrompt extends Base {
    */
 
   getCurrentValue(index) {
-    if (index == null || index === '') {
+    if (index == null || index === "") {
       index = this.rawDefault;
     } else {
       index -= 1;
@@ -122,7 +128,7 @@ class RawListPrompt extends Base {
   }
 
   onEnd(state) {
-    this.status = 'answered';
+    this.status = "answered";
     this.answer = state.value;
 
     // Re-render prompt
@@ -133,7 +139,7 @@ class RawListPrompt extends Base {
   }
 
   onError() {
-    this.render('Please enter a valid index');
+    this.render("Please enter a valid index");
   }
 
   /**
@@ -157,7 +163,7 @@ class RawListPrompt extends Base {
    */
 
   onUpKey() {
-    this.onArrowKey('up');
+    this.onArrowKey("up");
   }
 
   /**
@@ -165,7 +171,7 @@ class RawListPrompt extends Base {
    */
 
   onDownKey() {
-    this.onArrowKey('down');
+    this.onArrowKey("down");
   }
 
   /**
@@ -175,7 +181,8 @@ class RawListPrompt extends Base {
 
   onArrowKey(type) {
     var index = this.rl.line.length ? Number(this.rl.line) - 1 : 0;
-    if (type === 'up') index = index === 0 ? this.opt.choices.length - 1 : index - 1;
+    if (type === "up")
+      index = index === 0 ? this.opt.choices.length - 1 : index - 1;
     else index = index === this.opt.choices.length - 1 ? 0 : index + 1;
     this.rl.line = String(index + 1);
     this.onKeypress();
@@ -189,20 +196,20 @@ class RawListPrompt extends Base {
  */
 
 function renderChoices(choices, pointer) {
-  var output = '';
+  var output = "";
   var separatorOffset = 0;
 
-  choices.forEach(function(choice, i) {
-    output += '\n  ';
+  choices.forEach(function (choice, i) {
+    output += "\n  ";
 
-    if (choice.type === 'separator') {
+    if (choice.type === "separator") {
       separatorOffset++;
-      output += ' ' + choice;
+      output += " " + choice;
       return;
     }
 
     var index = i - separatorOffset;
-    var display = index + 1 + ') ' + choice.name;
+    var display = index + 1 + ") " + choice.name;
     if (index === pointer) {
       display = chalk.cyan(display);
     }

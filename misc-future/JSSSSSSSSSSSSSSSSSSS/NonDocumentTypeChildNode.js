@@ -13,40 +13,48 @@ Object.defineProperty(NonDocumentTypeChildNode, "prototype", {
   value: NonDocumentTypeChildNode.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
-Object.defineProperty(NonDocumentTypeChildNode.prototype, "previousElementSibling", {
-  get() {
-    if (!this || !module.exports.is(this)) {
-      throw new TypeError("Illegal invocation");
-    }
+Object.defineProperty(
+  NonDocumentTypeChildNode.prototype,
+  "previousElementSibling",
+  {
+    get() {
+      if (!this || !module.exports.is(this)) {
+        throw new TypeError("Illegal invocation");
+      }
 
-    return utils.tryWrapperForImpl(this[impl]["previousElementSibling"]);
-  },
+      return utils.tryWrapperForImpl(this[impl]["previousElementSibling"]);
+    },
 
-  enumerable: true,
-  configurable: true
-});
+    enumerable: true,
+    configurable: true,
+  }
+);
 
-Object.defineProperty(NonDocumentTypeChildNode.prototype, "nextElementSibling", {
-  get() {
-    if (!this || !module.exports.is(this)) {
-      throw new TypeError("Illegal invocation");
-    }
+Object.defineProperty(
+  NonDocumentTypeChildNode.prototype,
+  "nextElementSibling",
+  {
+    get() {
+      if (!this || !module.exports.is(this)) {
+        throw new TypeError("Illegal invocation");
+      }
 
-    return utils.tryWrapperForImpl(this[impl]["nextElementSibling"]);
-  },
+      return utils.tryWrapperForImpl(this[impl]["nextElementSibling"]);
+    },
 
-  enumerable: true,
-  configurable: true
-});
+    enumerable: true,
+    configurable: true,
+  }
+);
 
 Object.defineProperty(NonDocumentTypeChildNode.prototype, Symbol.toStringTag, {
   value: "NonDocumentTypeChildNode",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -86,7 +94,9 @@ const iface = {
     if (module.exports.is(obj)) {
       return utils.implForWrapper(obj);
     }
-    throw new TypeError(`${context} is not of type 'NonDocumentTypeChildNode'.`);
+    throw new TypeError(
+      `${context} is not of type 'NonDocumentTypeChildNode'.`
+    );
   },
 
   create(constructorArgs, privateData) {
@@ -110,7 +120,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -120,7 +130,7 @@ const iface = {
     return obj;
   },
   interface: NonDocumentTypeChildNode,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

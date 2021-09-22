@@ -4,12 +4,12 @@
  * Module requirements.
  */
 
-var XMLHttpRequest = require('xmlhttprequest-ssl');
-var Polling = require('./polling');
-var Emitter = require('component-emitter');
-var inherit = require('component-inherit');
-var debug = require('debug')('engine.io-client:polling-xhr');
-var globalThis = require('../globalThis');
+var XMLHttpRequest = require("xmlhttprequest-ssl");
+var Polling = require("./polling");
+var Emitter = require("component-emitter");
+var inherit = require("component-inherit");
+var debug = require("debug")("engine.io-client:polling-xhr");
+var globalThis = require("../globalThis");
 
 /**
  * Module exports.
@@ -32,23 +32,25 @@ function empty() {}
  */
 
 function XHR(opts) {
-    Polling.call(this, opts);
-    this.requestTimeout = opts.requestTimeout;
-    this.extraHeaders = opts.extraHeaders;
+  Polling.call(this, opts);
+  this.requestTimeout = opts.requestTimeout;
+  this.extraHeaders = opts.extraHeaders;
 
-    if (typeof location !== 'undefined') {
-        var isSSL = 'https:' === location.protocol;
-        var port = location.port;
+  if (typeof location !== "undefined") {
+    var isSSL = "https:" === location.protocol;
+    var port = location.port;
 
-        // some user agents have empty `location.port`
-        if (!port) {
-            port = isSSL ? 443 : 80;
-        }
-
-        this.xd = (typeof location !== 'undefined' && opts.hostname !== location.hostname) ||
-            port !== opts.port;
-        this.xs = opts.secure !== isSSL;
+    // some user agents have empty `location.port`
+    if (!port) {
+      port = isSSL ? 443 : 80;
     }
+
+    this.xd =
+      (typeof location !== "undefined" &&
+        opts.hostname !== location.hostname) ||
+      port !== opts.port;
+    this.xs = opts.secure !== isSSL;
+  }
 }
 
 /**
@@ -70,30 +72,30 @@ XHR.prototype.supportsBinary = true;
  * @api private
  */
 
-XHR.prototype.request = function(opts) {
-    opts = opts || {};
-    opts.uri = this.uri();
-    opts.xd = this.xd;
-    opts.xs = this.xs;
-    opts.agent = this.agent || false;
-    opts.supportsBinary = this.supportsBinary;
-    opts.enablesXDR = this.enablesXDR;
-    opts.withCredentials = this.withCredentials;
+XHR.prototype.request = function (opts) {
+  opts = opts || {};
+  opts.uri = this.uri();
+  opts.xd = this.xd;
+  opts.xs = this.xs;
+  opts.agent = this.agent || false;
+  opts.supportsBinary = this.supportsBinary;
+  opts.enablesXDR = this.enablesXDR;
+  opts.withCredentials = this.withCredentials;
 
-    // SSL options for Node.js client
-    opts.pfx = this.pfx;
-    opts.key = this.key;
-    opts.passphrase = this.passphrase;
-    opts.cert = this.cert;
-    opts.ca = this.ca;
-    opts.ciphers = this.ciphers;
-    opts.rejectUnauthorized = this.rejectUnauthorized;
-    opts.requestTimeout = this.requestTimeout;
+  // SSL options for Node.js client
+  opts.pfx = this.pfx;
+  opts.key = this.key;
+  opts.passphrase = this.passphrase;
+  opts.cert = this.cert;
+  opts.ca = this.ca;
+  opts.ciphers = this.ciphers;
+  opts.rejectUnauthorized = this.rejectUnauthorized;
+  opts.requestTimeout = this.requestTimeout;
 
-    // other options for Node.js client
-    opts.extraHeaders = this.extraHeaders;
+  // other options for Node.js client
+  opts.extraHeaders = this.extraHeaders;
 
-    return new Request(opts);
+  return new Request(opts);
 };
 
 /**
@@ -104,19 +106,19 @@ XHR.prototype.request = function(opts) {
  * @api private
  */
 
-XHR.prototype.doWrite = function(data, fn) {
-    var isBinary = typeof data !== 'string' && data !== undefined;
-    var req = this.request({
-        method: 'POST',
-        data: data,
-        isBinary: isBinary
-    });
-    var self = this;
-    req.on('success', fn);
-    req.on('error', function(err) {
-        self.onError('xhr post error', err);
-    });
-    this.sendXhr = req;
+XHR.prototype.doWrite = function (data, fn) {
+  var isBinary = typeof data !== "string" && data !== undefined;
+  var req = this.request({
+    method: "POST",
+    data: data,
+    isBinary: isBinary,
+  });
+  var self = this;
+  req.on("success", fn);
+  req.on("error", function (err) {
+    self.onError("xhr post error", err);
+  });
+  this.sendXhr = req;
 };
 
 /**
@@ -125,17 +127,17 @@ XHR.prototype.doWrite = function(data, fn) {
  * @api private
  */
 
-XHR.prototype.doPoll = function() {
-    debug('xhr poll');
-    var req = this.request();
-    var self = this;
-    req.on('data', function(data) {
-        self.onData(data);
-    });
-    req.on('error', function(err) {
-        self.onError('xhr poll error', err);
-    });
-    this.pollXhr = req;
+XHR.prototype.doPoll = function () {
+  debug("xhr poll");
+  var req = this.request();
+  var self = this;
+  req.on("data", function (data) {
+    self.onData(data);
+  });
+  req.on("error", function (err) {
+    self.onError("xhr poll error", err);
+  });
+  this.pollXhr = req;
 };
 
 /**
@@ -146,32 +148,32 @@ XHR.prototype.doPoll = function() {
  */
 
 function Request(opts) {
-    this.method = opts.method || 'GET';
-    this.uri = opts.uri;
-    this.xd = !!opts.xd;
-    this.xs = !!opts.xs;
-    this.async = false !== opts.async;
-    this.data = undefined !== opts.data ? opts.data : null;
-    this.agent = opts.agent;
-    this.isBinary = opts.isBinary;
-    this.supportsBinary = opts.supportsBinary;
-    this.enablesXDR = opts.enablesXDR;
-    this.withCredentials = opts.withCredentials;
-    this.requestTimeout = opts.requestTimeout;
+  this.method = opts.method || "GET";
+  this.uri = opts.uri;
+  this.xd = !!opts.xd;
+  this.xs = !!opts.xs;
+  this.async = false !== opts.async;
+  this.data = undefined !== opts.data ? opts.data : null;
+  this.agent = opts.agent;
+  this.isBinary = opts.isBinary;
+  this.supportsBinary = opts.supportsBinary;
+  this.enablesXDR = opts.enablesXDR;
+  this.withCredentials = opts.withCredentials;
+  this.requestTimeout = opts.requestTimeout;
 
-    // SSL options for Node.js client
-    this.pfx = opts.pfx;
-    this.key = opts.key;
-    this.passphrase = opts.passphrase;
-    this.cert = opts.cert;
-    this.ca = opts.ca;
-    this.ciphers = opts.ciphers;
-    this.rejectUnauthorized = opts.rejectUnauthorized;
+  // SSL options for Node.js client
+  this.pfx = opts.pfx;
+  this.key = opts.key;
+  this.passphrase = opts.passphrase;
+  this.cert = opts.cert;
+  this.ca = opts.ca;
+  this.ciphers = opts.ciphers;
+  this.rejectUnauthorized = opts.rejectUnauthorized;
 
-    // other options for Node.js client
-    this.extraHeaders = opts.extraHeaders;
+  // other options for Node.js client
+  this.extraHeaders = opts.extraHeaders;
 
-    this.create();
+  this.create();
 }
 
 /**
@@ -186,109 +188,113 @@ Emitter(Request.prototype);
  * @api private
  */
 
-Request.prototype.create = function() {
-    var opts = {
-        agent: this.agent,
-        xdomain: this.xd,
-        xscheme: this.xs,
-        enablesXDR: this.enablesXDR
-    };
+Request.prototype.create = function () {
+  var opts = {
+    agent: this.agent,
+    xdomain: this.xd,
+    xscheme: this.xs,
+    enablesXDR: this.enablesXDR,
+  };
 
-    // SSL options for Node.js client
-    opts.pfx = this.pfx;
-    opts.key = this.key;
-    opts.passphrase = this.passphrase;
-    opts.cert = this.cert;
-    opts.ca = this.ca;
-    opts.ciphers = this.ciphers;
-    opts.rejectUnauthorized = this.rejectUnauthorized;
+  // SSL options for Node.js client
+  opts.pfx = this.pfx;
+  opts.key = this.key;
+  opts.passphrase = this.passphrase;
+  opts.cert = this.cert;
+  opts.ca = this.ca;
+  opts.ciphers = this.ciphers;
+  opts.rejectUnauthorized = this.rejectUnauthorized;
 
-    var xhr = this.xhr = new XMLHttpRequest(opts);
-    var self = this;
+  var xhr = (this.xhr = new XMLHttpRequest(opts));
+  var self = this;
+
+  try {
+    debug("xhr open %s: %s", this.method, this.uri);
+    xhr.open(this.method, this.uri, this.async);
+    try {
+      if (this.extraHeaders) {
+        xhr.setDisableHeaderCheck && xhr.setDisableHeaderCheck(true);
+        for (var i in this.extraHeaders) {
+          if (this.extraHeaders.hasOwnProperty(i)) {
+            xhr.setRequestHeader(i, this.extraHeaders[i]);
+          }
+        }
+      }
+    } catch (e) {}
+
+    if ("POST" === this.method) {
+      try {
+        if (this.isBinary) {
+          xhr.setRequestHeader("Content-type", "application/octet-stream");
+        } else {
+          xhr.setRequestHeader("Content-type", "text/plain;charset=UTF-8");
+        }
+      } catch (e) {}
+    }
 
     try {
-        debug('xhr open %s: %s', this.method, this.uri);
-        xhr.open(this.method, this.uri, this.async);
-        try {
-            if (this.extraHeaders) {
-                xhr.setDisableHeaderCheck && xhr.setDisableHeaderCheck(true);
-                for (var i in this.extraHeaders) {
-                    if (this.extraHeaders.hasOwnProperty(i)) {
-                        xhr.setRequestHeader(i, this.extraHeaders[i]);
-                    }
-                }
+      xhr.setRequestHeader("Accept", "*/*");
+    } catch (e) {}
+
+    // ie6 check
+    if ("withCredentials" in xhr) {
+      xhr.withCredentials = this.withCredentials;
+    }
+
+    if (this.requestTimeout) {
+      xhr.timeout = this.requestTimeout;
+    }
+
+    if (this.hasXDR()) {
+      xhr.onload = function () {
+        self.onLoad();
+      };
+      xhr.onerror = function () {
+        self.onError(xhr.responseText);
+      };
+    } else {
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 2) {
+          try {
+            var contentType = xhr.getResponseHeader("Content-Type");
+            if (
+              (self.supportsBinary &&
+                contentType === "application/octet-stream") ||
+              contentType === "application/octet-stream; charset=UTF-8"
+            ) {
+              xhr.responseType = "arraybuffer";
             }
-        } catch (e) {}
-
-        if ('POST' === this.method) {
-            try {
-                if (this.isBinary) {
-                    xhr.setRequestHeader('Content-type', 'application/octet-stream');
-                } else {
-                    xhr.setRequestHeader('Content-type', 'text/plain;charset=UTF-8');
-                }
-            } catch (e) {}
+          } catch (e) {}
         }
-
-        try {
-            xhr.setRequestHeader('Accept', '*/*');
-        } catch (e) {}
-
-        // ie6 check
-        if ('withCredentials' in xhr) {
-            xhr.withCredentials = this.withCredentials;
-        }
-
-        if (this.requestTimeout) {
-            xhr.timeout = this.requestTimeout;
-        }
-
-        if (this.hasXDR()) {
-            xhr.onload = function() {
-                self.onLoad();
-            };
-            xhr.onerror = function() {
-                self.onError(xhr.responseText);
-            };
+        if (4 !== xhr.readyState) return;
+        if (200 === xhr.status || 1223 === xhr.status) {
+          self.onLoad();
         } else {
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 2) {
-                    try {
-                        var contentType = xhr.getResponseHeader('Content-Type');
-                        if (self.supportsBinary && contentType === 'application/octet-stream' || contentType === 'application/octet-stream; charset=UTF-8') {
-                            xhr.responseType = 'arraybuffer';
-                        }
-                    } catch (e) {}
-                }
-                if (4 !== xhr.readyState) return;
-                if (200 === xhr.status || 1223 === xhr.status) {
-                    self.onLoad();
-                } else {
-                    // make sure the `error` event handler that's user-set
-                    // does not throw in the same tick and gets caught here
-                    setTimeout(function() {
-                        self.onError(typeof xhr.status === 'number' ? xhr.status : 0);
-                    }, 0);
-                }
-            };
+          // make sure the `error` event handler that's user-set
+          // does not throw in the same tick and gets caught here
+          setTimeout(function () {
+            self.onError(typeof xhr.status === "number" ? xhr.status : 0);
+          }, 0);
         }
-
-        debug('xhr data %s', this.data);
-        xhr.send(this.data);
-    } catch (e) {
-        // Need to defer since .create() is called directly fhrom the constructor
-        // and thus the 'error' event can only be only bound *after* this exception
-        // occurs.  Therefore, also, we cannot throw here at all.
-        setTimeout(function() {
-            self.onError(e);
-        }, 0);
-        return;
+      };
     }
 
-    if (typeof document !== 'undefined') {
-        this.index = Request.requestsCount++;
-        Request.requests[this.index] = this;
-    }
+    debug("xhr data %s", this.data);
+    xhr.send(this.data);
+  } catch (e) {
+    // Need to defer since .create() is called directly fhrom the constructor
+    // and thus the 'error' event can only be only bound *after* this exception
+    // occurs.  Therefore, also, we cannot throw here at all.
+    setTimeout(function () {
+      self.onError(e);
+    }, 0);
+    return;
+  }
+
+  if (typeof document !== "undefined") {
+    this.index = Request.requestsCount++;
+    Request.requests[this.index] = this;
+  }
 };
 
 /**
@@ -297,9 +303,9 @@ Request.prototype.create = function() {
  * @api private
  */
 
-Request.prototype.onSuccess = function() {
-    this.emit('success');
-    this.cleanup();
+Request.prototype.onSuccess = function () {
+  this.emit("success");
+  this.cleanup();
 };
 
 /**
@@ -308,9 +314,9 @@ Request.prototype.onSuccess = function() {
  * @api private
  */
 
-Request.prototype.onData = function(data) {
-    this.emit('data', data);
-    this.onSuccess();
+Request.prototype.onData = function (data) {
+  this.emit("data", data);
+  this.onSuccess();
 };
 
 /**
@@ -319,9 +325,9 @@ Request.prototype.onData = function(data) {
  * @api private
  */
 
-Request.prototype.onError = function(err) {
-    this.emit('error', err);
-    this.cleanup(true);
+Request.prototype.onError = function (err) {
+  this.emit("error", err);
+  this.cleanup(true);
 };
 
 /**
@@ -330,28 +336,28 @@ Request.prototype.onError = function(err) {
  * @api private
  */
 
-Request.prototype.cleanup = function(fromError) {
-    if ('undefined' === typeof this.xhr || null === this.xhr) {
-        return;
-    }
-    // xmlhttprequest
-    if (this.hasXDR()) {
-        this.xhr.onload = this.xhr.onerror = empty;
-    } else {
-        this.xhr.onreadystatechange = empty;
-    }
+Request.prototype.cleanup = function (fromError) {
+  if ("undefined" === typeof this.xhr || null === this.xhr) {
+    return;
+  }
+  // xmlhttprequest
+  if (this.hasXDR()) {
+    this.xhr.onload = this.xhr.onerror = empty;
+  } else {
+    this.xhr.onreadystatechange = empty;
+  }
 
-    if (fromError) {
-        try {
-            this.xhr.abort();
-        } catch (e) {}
-    }
+  if (fromError) {
+    try {
+      this.xhr.abort();
+    } catch (e) {}
+  }
 
-    if (typeof document !== 'undefined') {
-        delete Request.requests[this.index];
-    }
+  if (typeof document !== "undefined") {
+    delete Request.requests[this.index];
+  }
 
-    this.xhr = null;
+  this.xhr = null;
 };
 
 /**
@@ -360,24 +366,27 @@ Request.prototype.cleanup = function(fromError) {
  * @api private
  */
 
-Request.prototype.onLoad = function() {
-    var data;
+Request.prototype.onLoad = function () {
+  var data;
+  try {
+    var contentType;
     try {
-        var contentType;
-        try {
-            contentType = this.xhr.getResponseHeader('Content-Type');
-        } catch (e) {}
-        if (contentType === 'application/octet-stream' || contentType === 'application/octet-stream; charset=UTF-8') {
-            data = this.xhr.response || this.xhr.responseText;
-        } else {
-            data = this.xhr.responseText;
-        }
-    } catch (e) {
-        this.onError(e);
+      contentType = this.xhr.getResponseHeader("Content-Type");
+    } catch (e) {}
+    if (
+      contentType === "application/octet-stream" ||
+      contentType === "application/octet-stream; charset=UTF-8"
+    ) {
+      data = this.xhr.response || this.xhr.responseText;
+    } else {
+      data = this.xhr.responseText;
     }
-    if (null != data) {
-        this.onData(data);
-    }
+  } catch (e) {
+    this.onError(e);
+  }
+  if (null != data) {
+    this.onData(data);
+  }
 };
 
 /**
@@ -386,8 +395,8 @@ Request.prototype.onLoad = function() {
  * @api private
  */
 
-Request.prototype.hasXDR = function() {
-    return typeof XDomainRequest !== 'undefined' && !this.xs && this.enablesXDR;
+Request.prototype.hasXDR = function () {
+  return typeof XDomainRequest !== "undefined" && !this.xs && this.enablesXDR;
 };
 
 /**
@@ -396,8 +405,8 @@ Request.prototype.hasXDR = function() {
  * @api public
  */
 
-Request.prototype.abort = function() {
-    this.cleanup();
+Request.prototype.abort = function () {
+  this.cleanup();
 };
 
 /**
@@ -409,19 +418,19 @@ Request.prototype.abort = function() {
 Request.requestsCount = 0;
 Request.requests = {};
 
-if (typeof document !== 'undefined') {
-    if (typeof attachEvent === 'function') {
-        attachEvent('onunload', unloadHandler);
-    } else if (typeof addEventListener === 'function') {
-        var terminationEvent = 'onpagehide' in globalThis ? 'pagehide' : 'unload';
-        addEventListener(terminationEvent, unloadHandler, false);
-    }
+if (typeof document !== "undefined") {
+  if (typeof attachEvent === "function") {
+    attachEvent("onunload", unloadHandler);
+  } else if (typeof addEventListener === "function") {
+    var terminationEvent = "onpagehide" in globalThis ? "pagehide" : "unload";
+    addEventListener(terminationEvent, unloadHandler, false);
+  }
 }
 
 function unloadHandler() {
-    for (var i in Request.requests) {
-        if (Request.requests.hasOwnProperty(i)) {
-            Request.requests[i].abort();
-        }
+  for (var i in Request.requests) {
+    if (Request.requests.hasOwnProperty(i)) {
+      Request.requests[i].abort();
     }
+  }
 }

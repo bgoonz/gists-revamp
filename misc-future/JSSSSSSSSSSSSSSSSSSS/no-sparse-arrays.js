@@ -9,38 +9,35 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow sparse arrays",
-            category: "Possible Errors",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-sparse-arrays"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow sparse arrays",
+      category: "Possible Errors",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-sparse-arrays",
     },
 
-    create(context) {
+    schema: [],
+  },
 
+  create(context) {
+    //--------------------------------------------------------------------------
+    // Public
+    //--------------------------------------------------------------------------
 
-        //--------------------------------------------------------------------------
-        // Public
-        //--------------------------------------------------------------------------
+    return {
+      ArrayExpression(node) {
+        const emptySpot = node.elements.indexOf(null) > -1;
 
-        return {
-
-            ArrayExpression(node) {
-
-                const emptySpot = node.elements.indexOf(null) > -1;
-
-                if (emptySpot) {
-                    context.report({ node, message: "Unexpected comma in middle of array." });
-                }
-            }
-
-        };
-
-    }
+        if (emptySpot) {
+          context.report({
+            node,
+            message: "Unexpected comma in middle of array.",
+          });
+        }
+      },
+    };
+  },
 };

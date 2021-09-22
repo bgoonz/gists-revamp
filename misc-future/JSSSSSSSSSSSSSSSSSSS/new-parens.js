@@ -20,44 +20,48 @@ const astUtils = require("../util/ast-utils");
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "layout",
+  meta: {
+    type: "layout",
 
-        docs: {
-            description: "require parentheses when invoking a constructor with no arguments",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/new-parens"
-        },
-
-        fixable: "code",
-        schema: [],
-        messages: {
-            missing: "Missing '()' invoking a constructor."
-        }
+    docs: {
+      description:
+        "require parentheses when invoking a constructor with no arguments",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/new-parens",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
+    fixable: "code",
+    schema: [],
+    messages: {
+      missing: "Missing '()' invoking a constructor.",
+    },
+  },
 
-        return {
-            NewExpression(node) {
-                if (node.arguments.length !== 0) {
-                    return; // shortcut: if there are arguments, there have to be parens
-                }
+  create(context) {
+    const sourceCode = context.getSourceCode();
 
-                const lastToken = sourceCode.getLastToken(node);
-                const hasLastParen = lastToken && astUtils.isClosingParenToken(lastToken);
-                const hasParens = hasLastParen && astUtils.isOpeningParenToken(sourceCode.getTokenBefore(lastToken));
+    return {
+      NewExpression(node) {
+        if (node.arguments.length !== 0) {
+          return; // shortcut: if there are arguments, there have to be parens
+        }
 
-                if (!hasParens) {
-                    context.report({
-                        node,
-                        messageId: "missing",
-                        fix: fixer => fixer.insertTextAfter(node, "()")
-                    });
-                }
-            }
-        };
-    }
+        const lastToken = sourceCode.getLastToken(node);
+        const hasLastParen =
+          lastToken && astUtils.isClosingParenToken(lastToken);
+        const hasParens =
+          hasLastParen &&
+          astUtils.isOpeningParenToken(sourceCode.getTokenBefore(lastToken));
+
+        if (!hasParens) {
+          context.report({
+            node,
+            messageId: "missing",
+            fix: (fixer) => fixer.insertTextAfter(node, "()"),
+          });
+        }
+      },
+    };
+  },
 };

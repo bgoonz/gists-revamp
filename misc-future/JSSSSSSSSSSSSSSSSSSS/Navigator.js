@@ -19,7 +19,7 @@ Object.defineProperty(Navigator, "prototype", {
   value: Navigator.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Navigator.prototype.javaEnabled = function javaEnabled() {
@@ -40,7 +40,7 @@ Object.defineProperty(Navigator.prototype, "appCodeName", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "appName", {
@@ -53,7 +53,7 @@ Object.defineProperty(Navigator.prototype, "appName", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "appVersion", {
@@ -66,7 +66,7 @@ Object.defineProperty(Navigator.prototype, "appVersion", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "platform", {
@@ -79,7 +79,7 @@ Object.defineProperty(Navigator.prototype, "platform", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "product", {
@@ -92,7 +92,7 @@ Object.defineProperty(Navigator.prototype, "product", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "productSub", {
@@ -105,7 +105,7 @@ Object.defineProperty(Navigator.prototype, "productSub", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "userAgent", {
@@ -118,7 +118,7 @@ Object.defineProperty(Navigator.prototype, "userAgent", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "vendor", {
@@ -131,7 +131,7 @@ Object.defineProperty(Navigator.prototype, "vendor", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "vendorSub", {
@@ -144,7 +144,7 @@ Object.defineProperty(Navigator.prototype, "vendorSub", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "language", {
@@ -157,7 +157,7 @@ Object.defineProperty(Navigator.prototype, "language", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "languages", {
@@ -170,7 +170,7 @@ Object.defineProperty(Navigator.prototype, "languages", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "onLine", {
@@ -183,7 +183,7 @@ Object.defineProperty(Navigator.prototype, "onLine", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "cookieEnabled", {
@@ -196,7 +196,7 @@ Object.defineProperty(Navigator.prototype, "cookieEnabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, "hardwareConcurrency", {
@@ -209,14 +209,14 @@ Object.defineProperty(Navigator.prototype, "hardwareConcurrency", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Navigator.prototype, Symbol.toStringTag, {
   value: "Navigator",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -280,7 +280,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -291,8 +291,8 @@ const iface = {
   },
   interface: Navigator,
   expose: {
-    Window: { Navigator }
-  }
+    Window: { Navigator },
+  },
 }; // iface
 module.exports = iface;
 

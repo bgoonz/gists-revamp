@@ -17,18 +17,24 @@ function PopStateEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'PopStateEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'PopStateEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'PopStateEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'PopStateEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertPopStateEventInit(curArg, { context: "Failed to construct 'PopStateEvent': parameter 2" });
+    curArg = convertPopStateEventInit(curArg, {
+      context: "Failed to construct 'PopStateEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(PopStateEvent, "prototype", {
   value: PopStateEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(PopStateEvent.prototype, "state", {
@@ -55,14 +61,14 @@ Object.defineProperty(PopStateEvent.prototype, "state", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(PopStateEvent.prototype, Symbol.toStringTag, {
   value: "PopStateEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -128,7 +134,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -139,8 +145,8 @@ const iface = {
   },
   interface: PopStateEvent,
   expose: {
-    Window: { PopStateEvent }
-  }
+    Window: { PopStateEvent },
+  },
 }; // iface
 module.exports = iface;
 

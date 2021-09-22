@@ -7,7 +7,9 @@ const idlUtils = require("../generated/utils.js");
 
 exports.evaluateJavaScriptURL = (window, urlRecord) => {
   const urlString = whatwgURL.serializeURL(urlRecord);
-  const scriptSource = whatwgURL.percentDecode(Buffer.from(urlString)).toString();
+  const scriptSource = whatwgURL
+    .percentDecode(Buffer.from(urlString))
+    .toString();
   if (window._runScripts === "dangerously") {
     try {
       return window.eval(scriptSource);
@@ -27,7 +29,10 @@ exports.navigate = (window, newURL, flags) => {
   const document = idlUtils.implForWrapper(window._document);
   const currentURL = document._URL;
 
-  if (!flags.reloadTriggered && urlEquals(currentURL, newURL, { excludeFragments: true })) {
+  if (
+    !flags.reloadTriggered &&
+    urlEquals(currentURL, newURL, { excludeFragments: true })
+  ) {
     if (newURL.fragment !== currentURL.fragment) {
       navigateToFragment(window, newURL, flags);
     }
@@ -65,7 +70,10 @@ function navigateToFragment(window, newURL, flags) {
   }
   const newEntry = { document, url: newURL };
   window._sessionHistory.addEntryAfterCurrentEntry(newEntry);
-  window._sessionHistory.traverseHistory(newEntry, { nonBlockingEvents: true, replacement: flags.replacement });
+  window._sessionHistory.traverseHistory(newEntry, {
+    nonBlockingEvents: true,
+    replacement: flags.replacement,
+  });
 }
 
 // https://html.spec.whatwg.org/#process-a-navigate-fetch
@@ -75,15 +83,17 @@ function navigateFetch(window) {
 }
 
 function urlEquals(a, b, flags) {
-  if (a.scheme !== b.scheme ||
-      a.username !== b.username ||
-      a.password !== b.password ||
-      a.host !== b.host ||
-      a.port !== b.port ||
-      !arrayEqual(a.path, b.path) ||
-      a.query !== b.query ||
-      // Omitted per spec: url.fragment !== this._url.fragment ||
-      a.cannotBeABaseURL !== b.cannotBeABaseURL) {
+  if (
+    a.scheme !== b.scheme ||
+    a.username !== b.username ||
+    a.password !== b.password ||
+    a.host !== b.host ||
+    a.port !== b.port ||
+    !arrayEqual(a.path, b.path) ||
+    a.query !== b.query ||
+    // Omitted per spec: url.fragment !== this._url.fragment ||
+    a.cannotBeABaseURL !== b.cannotBeABaseURL
+  ) {
     return false;
   }
   return flags.excludeFragments || a.fragment === b.fragment;

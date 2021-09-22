@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var _ = require('lodash');
-var chalk = require('chalk');
+var _ = require("lodash");
+var chalk = require("chalk");
 
 /**
  * The paginator keeps track of a pointer index in a list and returns
@@ -18,11 +18,13 @@ class Paginator {
   paginate(output, active, pageSize) {
     pageSize = pageSize || 7;
     var middleOfList = Math.floor(pageSize / 2);
-    var lines = output.split('\n');
+    var lines = output.split("\n");
 
     if (this.screen) {
       lines = this.screen.breakLines(lines);
-      active = _.sum(lines.map(lineParts => lineParts.length).splice(0, active));
+      active = _.sum(
+        lines.map((lineParts) => lineParts.length).splice(0, active)
+      );
       lines = _.flatten(lines);
     }
 
@@ -37,7 +39,10 @@ class Paginator {
       this.lastIndex < active &&
       active - this.lastIndex < pageSize
     ) {
-      this.pointer = Math.min(middleOfList, this.pointer + active - this.lastIndex);
+      this.pointer = Math.min(
+        middleOfList,
+        this.pointer + active - this.lastIndex
+      );
     }
 
     this.lastIndex = active;
@@ -46,8 +51,10 @@ class Paginator {
     var infinite = _.flatten([lines, lines, lines]);
     var topIndex = Math.max(0, active + lines.length - this.pointer);
 
-    var section = infinite.splice(topIndex, pageSize).join('\n');
-    return section + '\n' + chalk.dim('(Move up and down to reveal more choices)');
+    var section = infinite.splice(topIndex, pageSize).join("\n");
+    return (
+      section + "\n" + chalk.dim("(Move up and down to reveal more choices)")
+    );
   }
 }
 

@@ -13,7 +13,7 @@ Object.defineProperty(NodeIterator, "prototype", {
   value: NodeIterator.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 NodeIterator.prototype.nextNode = function nextNode() {
@@ -52,7 +52,7 @@ Object.defineProperty(NodeIterator.prototype, "root", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NodeIterator.prototype, "referenceNode", {
@@ -65,7 +65,7 @@ Object.defineProperty(NodeIterator.prototype, "referenceNode", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NodeIterator.prototype, "pointerBeforeReferenceNode", {
@@ -78,7 +78,7 @@ Object.defineProperty(NodeIterator.prototype, "pointerBeforeReferenceNode", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NodeIterator.prototype, "whatToShow", {
@@ -91,7 +91,7 @@ Object.defineProperty(NodeIterator.prototype, "whatToShow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NodeIterator.prototype, "filter", {
@@ -104,14 +104,14 @@ Object.defineProperty(NodeIterator.prototype, "filter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NodeIterator.prototype, Symbol.toStringTag, {
   value: "NodeIterator",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -175,7 +175,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -186,8 +186,8 @@ const iface = {
   },
   interface: NodeIterator,
   expose: {
-    Window: { NodeIterator }
-  }
+    Window: { NodeIterator },
+  },
 }; // iface
 module.exports = iface;
 

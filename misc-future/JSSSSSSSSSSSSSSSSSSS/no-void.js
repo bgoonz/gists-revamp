@@ -9,32 +9,33 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow `void` operators",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-void"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow `void` operators",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-void",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        //--------------------------------------------------------------------------
-        // Public
-        //--------------------------------------------------------------------------
+  create(context) {
+    //--------------------------------------------------------------------------
+    // Public
+    //--------------------------------------------------------------------------
 
-        return {
-            UnaryExpression(node) {
-                if (node.operator === "void") {
-                    context.report({ node, message: "Expected 'undefined' and instead saw 'void'." });
-                }
-            }
-        };
-
-    }
+    return {
+      UnaryExpression(node) {
+        if (node.operator === "void") {
+          context.report({
+            node,
+            message: "Expected 'undefined' and instead saw 'void'.",
+          });
+        }
+      },
+    };
+  },
 };

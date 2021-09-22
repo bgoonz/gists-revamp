@@ -20,12 +20,14 @@ module.exports = function (core) {
    * @return {FILTER_ACCEPT|FILTER_REJECT|FILTER_SKIP}
    */
   core.NodeFilter.acceptNode = function (/* node */) {
-    throw new Error("This method is expected to be written by the user of a NodeFilter.");
+    throw new Error(
+      "This method is expected to be written by the user of a NodeFilter."
+    );
   };
 
   addConstants(core.NodeFilter, {
     // Constants for whatToShow
-    SHOW_ALL: 0xFFFFFFFF,
+    SHOW_ALL: 0xffffffff,
     SHOW_ELEMENT: 0x00000001,
     SHOW_ATTRIBUTE: 0x00000002,
     SHOW_TEXT: 0x00000004,
@@ -42,6 +44,6 @@ module.exports = function (core) {
     // Constants returned by acceptNode
     FILTER_ACCEPT: 1,
     FILTER_REJECT: 2,
-    FILTER_SKIP: 3
+    FILTER_SKIP: 3,
   });
 };

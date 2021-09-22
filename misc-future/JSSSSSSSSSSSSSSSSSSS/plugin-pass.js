@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -43,7 +43,6 @@ class PluginPass {
   buildCodeFrameError(node, msg, _Error) {
     return this.file.buildCodeFrameError(node, msg, _Error);
   }
-
 }
 
 exports.default = PluginPass;

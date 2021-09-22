@@ -25,7 +25,9 @@ const TRACKER = Symbol("named property tracker");
  */
 exports.create = function (object, objectProxy, resolverFunc) {
   if (object[TRACKER]) {
-    throw Error("A NamedPropertiesTracker has already been created for this object");
+    throw Error(
+      "A NamedPropertiesTracker has already been created for this object"
+    );
   }
 
   const tracker = new NamedPropertiesTracker(object, objectProxy, resolverFunc);
@@ -66,9 +68,9 @@ function newPropertyDescriptor(tracker, name) {
         enumerable: true,
         configurable: true,
         writable: true,
-        value
+        value,
       });
-    }
+    },
   };
 
   descriptor.get[IS_NAMED_PROPERTY] = true;
@@ -146,7 +148,11 @@ NamedPropertiesTracker.prototype.untrack = function (name, value) {
 
   const descriptor = Object.getOwnPropertyDescriptor(this.object, name);
 
-  if (!descriptor || !descriptor.get || descriptor.get[IS_NAMED_PROPERTY] !== true) {
+  if (
+    !descriptor ||
+    !descriptor.get ||
+    descriptor.get[IS_NAMED_PROPERTY] !== true
+  ) {
     // Not defined by NamedPropertyTracker
     return;
   }

@@ -10,28 +10,29 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow nested ternary expressions",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-nested-ternary"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow nested ternary expressions",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-nested-ternary",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
-            ConditionalExpression(node) {
-                if (node.alternate.type === "ConditionalExpression" ||
-                        node.consequent.type === "ConditionalExpression") {
-                    context.report({ node, message: "Do not nest ternary expressions." });
-                }
-            }
-        };
-    }
+  create(context) {
+    return {
+      ConditionalExpression(node) {
+        if (
+          node.alternate.type === "ConditionalExpression" ||
+          node.consequent.type === "ConditionalExpression"
+        ) {
+          context.report({ node, message: "Do not nest ternary expressions." });
+        }
+      },
+    };
+  },
 };

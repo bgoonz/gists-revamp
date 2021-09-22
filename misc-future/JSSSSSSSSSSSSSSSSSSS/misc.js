@@ -6,7 +6,7 @@ var _placeholders = require("./placeholders");
 
 {
   (0, _utils.default)("Noop", {
-    visitor: []
+    visitor: [],
   });
 }
 (0, _utils.default)("Placeholder", {
@@ -14,18 +14,18 @@ var _placeholders = require("./placeholders");
   builder: ["expectedNode", "name"],
   fields: {
     name: {
-      validate: (0, _utils.assertNodeType)("Identifier")
+      validate: (0, _utils.assertNodeType)("Identifier"),
     },
     expectedNode: {
-      validate: (0, _utils.assertOneOf)(..._placeholders.PLACEHOLDERS)
-    }
-  }
+      validate: (0, _utils.assertOneOf)(..._placeholders.PLACEHOLDERS),
+    },
+  },
 });
 (0, _utils.default)("V8IntrinsicIdentifier", {
   builder: ["name"],
   fields: {
     name: {
-      validate: (0, _utils.assertValueType)("string")
-    }
-  }
+      validate: (0, _utils.assertValueType)("string"),
+    },
+  },
 });

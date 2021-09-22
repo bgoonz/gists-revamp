@@ -13,7 +13,7 @@ Object.defineProperty(NavigatorLanguage, "prototype", {
   value: NavigatorLanguage.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(NavigatorLanguage.prototype, "language", {
@@ -26,7 +26,7 @@ Object.defineProperty(NavigatorLanguage.prototype, "language", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorLanguage.prototype, "languages", {
@@ -39,14 +39,14 @@ Object.defineProperty(NavigatorLanguage.prototype, "languages", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorLanguage.prototype, Symbol.toStringTag, {
   value: "NavigatorLanguage",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -110,7 +110,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -120,7 +120,7 @@ const iface = {
     return obj;
   },
   interface: NavigatorLanguage,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

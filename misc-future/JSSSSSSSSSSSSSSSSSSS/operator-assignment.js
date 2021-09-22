@@ -22,7 +22,7 @@ const astUtils = require("../util/ast-utils");
  *     shorthand form.
  */
 function isCommutativeOperatorWithShorthand(operator) {
-    return ["*", "&", "^", "|"].indexOf(operator) >= 0;
+  return ["*", "&", "^", "|"].indexOf(operator) >= 0;
 }
 
 /**
@@ -33,7 +33,7 @@ function isCommutativeOperatorWithShorthand(operator) {
  *     a shorthand form.
  */
 function isNonCommutativeOperatorWithShorthand(operator) {
-    return ["+", "-", "/", "%", "<<", ">>", ">>>", "**"].indexOf(operator) >= 0;
+  return ["+", "-", "/", "%", "<<", ">>", ">>>", "**"].indexOf(operator) >= 0;
 }
 
 //------------------------------------------------------------------------------
@@ -51,29 +51,28 @@ function isNonCommutativeOperatorWithShorthand(operator) {
  * @returns {boolean}   True if both sides match and reference the same value.
  */
 function same(a, b) {
-    if (a.type !== b.type) {
-        return false;
-    }
+  if (a.type !== b.type) {
+    return false;
+  }
 
-    switch (a.type) {
-        case "Identifier":
-            return a.name === b.name;
+  switch (a.type) {
+    case "Identifier":
+      return a.name === b.name;
 
-        case "Literal":
-            return a.value === b.value;
+    case "Literal":
+      return a.value === b.value;
 
-        case "MemberExpression":
+    case "MemberExpression":
+      /*
+       * x[0] = x[0]
+       * x[y] = x[y]
+       * x.y = x.y
+       */
+      return same(a.object, b.object) && same(a.property, b.property);
 
-            /*
-             * x[0] = x[0]
-             * x[y] = x[y]
-             * x.y = x.y
-             */
-            return same(a.object, b.object) && same(a.property, b.property);
-
-        default:
-            return false;
-    }
+    default:
+      return false;
+  }
 }
 
 /**
@@ -83,131 +82,165 @@ function same(a, b) {
  * @returns {boolean} `true` if the node can be fixed
  */
 function canBeFixed(node) {
-    return node.type === "Identifier" ||
-        node.type === "MemberExpression" && node.object.type === "Identifier" && (!node.computed || node.property.type === "Literal");
+  return (
+    node.type === "Identifier" ||
+    (node.type === "MemberExpression" &&
+      node.object.type === "Identifier" &&
+      (!node.computed || node.property.type === "Literal"))
+  );
 }
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "require or disallow assignment operator shorthand where possible",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/operator-assignment"
-        },
-
-        schema: [
-            {
-                enum: ["always", "never"]
-            }
-        ],
-
-        fixable: "code",
-        messages: {
-            replaced: "Assignment can be replaced with operator assignment.",
-            unexpected: "Unexpected operator assignment shorthand."
-        }
+    docs: {
+      description:
+        "require or disallow assignment operator shorthand where possible",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/operator-assignment",
     },
 
-    create(context) {
+    schema: [
+      {
+        enum: ["always", "never"],
+      },
+    ],
 
-        const sourceCode = context.getSourceCode();
+    fixable: "code",
+    messages: {
+      replaced: "Assignment can be replaced with operator assignment.",
+      unexpected: "Unexpected operator assignment shorthand.",
+    },
+  },
 
-        /**
-         * Returns the operator token of an AssignmentExpression or BinaryExpression
-         * @param {ASTNode} node An AssignmentExpression or BinaryExpression node
-         * @returns {Token} The operator token in the node
-         */
-        function getOperatorToken(node) {
-            return sourceCode.getFirstTokenBetween(node.left, node.right, token => token.value === node.operator);
-        }
+  create(context) {
+    const sourceCode = context.getSourceCode();
 
-        /**
-         * Ensures that an assignment uses the shorthand form where possible.
-         * @param   {ASTNode} node An AssignmentExpression node.
-         * @returns {void}
-         */
-        function verify(node) {
-            if (node.operator !== "=" || node.right.type !== "BinaryExpression") {
-                return;
-            }
-
-            const left = node.left;
-            const expr = node.right;
-            const operator = expr.operator;
-
-            if (isCommutativeOperatorWithShorthand(operator) || isNonCommutativeOperatorWithShorthand(operator)) {
-                if (same(left, expr.left)) {
-                    context.report({
-                        node,
-                        messageId: "replaced",
-                        fix(fixer) {
-                            if (canBeFixed(left)) {
-                                const equalsToken = getOperatorToken(node);
-                                const operatorToken = getOperatorToken(expr);
-                                const leftText = sourceCode.getText().slice(node.range[0], equalsToken.range[0]);
-                                const rightText = sourceCode.getText().slice(operatorToken.range[1], node.right.range[1]);
-
-                                return fixer.replaceText(node, `${leftText}${expr.operator}=${rightText}`);
-                            }
-                            return null;
-                        }
-                    });
-                } else if (same(left, expr.right) && isCommutativeOperatorWithShorthand(operator)) {
-
-                    /*
-                     * This case can't be fixed safely.
-                     * If `a` and `b` both have custom valueOf() behavior, then fixing `a = b * a` to `a *= b` would
-                     * change the execution order of the valueOf() functions.
-                     */
-                    context.report({
-                        node,
-                        messageId: "replaced"
-                    });
-                }
-            }
-        }
-
-        /**
-         * Warns if an assignment expression uses operator assignment shorthand.
-         * @param   {ASTNode} node An AssignmentExpression node.
-         * @returns {void}
-         */
-        function prohibit(node) {
-            if (node.operator !== "=") {
-                context.report({
-                    node,
-                    messageId: "unexpected",
-                    fix(fixer) {
-                        if (canBeFixed(node.left)) {
-                            const operatorToken = getOperatorToken(node);
-                            const leftText = sourceCode.getText().slice(node.range[0], operatorToken.range[0]);
-                            const newOperator = node.operator.slice(0, -1);
-                            let rightText;
-
-                            // If this change would modify precedence (e.g. `foo *= bar + 1` => `foo = foo * (bar + 1)`), parenthesize the right side.
-                            if (
-                                astUtils.getPrecedence(node.right) <= astUtils.getPrecedence({ type: "BinaryExpression", operator: newOperator }) &&
-                                !astUtils.isParenthesised(sourceCode, node.right)
-                            ) {
-                                rightText = `${sourceCode.text.slice(operatorToken.range[1], node.right.range[0])}(${sourceCode.getText(node.right)})`;
-                            } else {
-                                rightText = sourceCode.text.slice(operatorToken.range[1], node.range[1]);
-                            }
-
-                            return fixer.replaceText(node, `${leftText}= ${leftText}${newOperator}${rightText}`);
-                        }
-                        return null;
-                    }
-                });
-            }
-        }
-
-        return {
-            AssignmentExpression: context.options[0] !== "never" ? verify : prohibit
-        };
-
+    /**
+     * Returns the operator token of an AssignmentExpression or BinaryExpression
+     * @param {ASTNode} node An AssignmentExpression or BinaryExpression node
+     * @returns {Token} The operator token in the node
+     */
+    function getOperatorToken(node) {
+      return sourceCode.getFirstTokenBetween(
+        node.left,
+        node.right,
+        (token) => token.value === node.operator
+      );
     }
+
+    /**
+     * Ensures that an assignment uses the shorthand form where possible.
+     * @param   {ASTNode} node An AssignmentExpression node.
+     * @returns {void}
+     */
+    function verify(node) {
+      if (node.operator !== "=" || node.right.type !== "BinaryExpression") {
+        return;
+      }
+
+      const left = node.left;
+      const expr = node.right;
+      const operator = expr.operator;
+
+      if (
+        isCommutativeOperatorWithShorthand(operator) ||
+        isNonCommutativeOperatorWithShorthand(operator)
+      ) {
+        if (same(left, expr.left)) {
+          context.report({
+            node,
+            messageId: "replaced",
+            fix(fixer) {
+              if (canBeFixed(left)) {
+                const equalsToken = getOperatorToken(node);
+                const operatorToken = getOperatorToken(expr);
+                const leftText = sourceCode
+                  .getText()
+                  .slice(node.range[0], equalsToken.range[0]);
+                const rightText = sourceCode
+                  .getText()
+                  .slice(operatorToken.range[1], node.right.range[1]);
+
+                return fixer.replaceText(
+                  node,
+                  `${leftText}${expr.operator}=${rightText}`
+                );
+              }
+              return null;
+            },
+          });
+        } else if (
+          same(left, expr.right) &&
+          isCommutativeOperatorWithShorthand(operator)
+        ) {
+          /*
+           * This case can't be fixed safely.
+           * If `a` and `b` both have custom valueOf() behavior, then fixing `a = b * a` to `a *= b` would
+           * change the execution order of the valueOf() functions.
+           */
+          context.report({
+            node,
+            messageId: "replaced",
+          });
+        }
+      }
+    }
+
+    /**
+     * Warns if an assignment expression uses operator assignment shorthand.
+     * @param   {ASTNode} node An AssignmentExpression node.
+     * @returns {void}
+     */
+    function prohibit(node) {
+      if (node.operator !== "=") {
+        context.report({
+          node,
+          messageId: "unexpected",
+          fix(fixer) {
+            if (canBeFixed(node.left)) {
+              const operatorToken = getOperatorToken(node);
+              const leftText = sourceCode
+                .getText()
+                .slice(node.range[0], operatorToken.range[0]);
+              const newOperator = node.operator.slice(0, -1);
+              let rightText;
+
+              // If this change would modify precedence (e.g. `foo *= bar + 1` => `foo = foo * (bar + 1)`), parenthesize the right side.
+              if (
+                astUtils.getPrecedence(node.right) <=
+                  astUtils.getPrecedence({
+                    type: "BinaryExpression",
+                    operator: newOperator,
+                  }) &&
+                !astUtils.isParenthesised(sourceCode, node.right)
+              ) {
+                rightText = `${sourceCode.text.slice(
+                  operatorToken.range[1],
+                  node.right.range[0]
+                )}(${sourceCode.getText(node.right)})`;
+              } else {
+                rightText = sourceCode.text.slice(
+                  operatorToken.range[1],
+                  node.range[1]
+                );
+              }
+
+              return fixer.replaceText(
+                node,
+                `${leftText}= ${leftText}${newOperator}${rightText}`
+              );
+            }
+            return null;
+          },
+        });
+      }
+    }
+
+    return {
+      AssignmentExpression: context.options[0] !== "never" ? verify : prohibit,
+    };
+  },
 };

@@ -1,17 +1,18 @@
+"use strict";
 
-"use strict"
-
-var path = require('path');
+var path = require("path");
 var dir = path.resolve(__dirname);
 
-module.exports = function() {
+module.exports = function () {
   return {
     "rxjs/util/tryCatch": "rxjs-compat/_esm5/util/tryCatch",
     "rxjs/util/toSubscriber": "rxjs-compat/_esm5/util/toSubscriber",
     "rxjs/util/subscribeToResult": "rxjs-compat/_esm5/util/subscribeToResult",
     "rxjs/util/subscribeToPromise": "rxjs-compat/_esm5/util/subscribeToPromise",
-    "rxjs/util/subscribeToObservable": "rxjs-compat/_esm5/util/subscribeToObservable",
-    "rxjs/util/subscribeToIterable": "rxjs-compat/_esm5/util/subscribeToIterable",
+    "rxjs/util/subscribeToObservable":
+      "rxjs-compat/_esm5/util/subscribeToObservable",
+    "rxjs/util/subscribeToIterable":
+      "rxjs-compat/_esm5/util/subscribeToIterable",
     "rxjs/util/subscribeToArray": "rxjs-compat/_esm5/util/subscribeToArray",
     "rxjs/util/subscribeTo": "rxjs-compat/_esm5/util/subscribeTo",
     "rxjs/util/root": "rxjs-compat/_esm5/util/root",
@@ -32,22 +33,27 @@ module.exports = function() {
     "rxjs/util/hostReportError": "rxjs-compat/_esm5/util/hostReportError",
     "rxjs/util/errorObject": "rxjs-compat/_esm5/util/errorObject",
     "rxjs/util/applyMixins": "rxjs-compat/_esm5/util/applyMixins",
-    "rxjs/util/UnsubscriptionError": "rxjs-compat/_esm5/util/UnsubscriptionError",
+    "rxjs/util/UnsubscriptionError":
+      "rxjs-compat/_esm5/util/UnsubscriptionError",
     "rxjs/util/TimeoutError": "rxjs-compat/_esm5/util/TimeoutError",
-    "rxjs/util/ObjectUnsubscribedError": "rxjs-compat/_esm5/util/ObjectUnsubscribedError",
+    "rxjs/util/ObjectUnsubscribedError":
+      "rxjs-compat/_esm5/util/ObjectUnsubscribedError",
     "rxjs/util/Immediate": "rxjs-compat/_esm5/util/Immediate",
     "rxjs/util/EmptyError": "rxjs-compat/_esm5/util/EmptyError",
-    "rxjs/util/ArgumentOutOfRangeError": "rxjs-compat/_esm5/util/ArgumentOutOfRangeError",
+    "rxjs/util/ArgumentOutOfRangeError":
+      "rxjs-compat/_esm5/util/ArgumentOutOfRangeError",
     "rxjs/symbol/rxSubscriber": "rxjs-compat/_esm5/symbol/rxSubscriber",
     "rxjs/symbol/observable": "rxjs-compat/_esm5/symbol/observable",
     "rxjs/symbol/iterator": "rxjs-compat/_esm5/symbol/iterator",
     "rxjs/scheduler/queue": "rxjs-compat/_esm5/scheduler/queue",
     "rxjs/scheduler/async": "rxjs-compat/_esm5/scheduler/async",
     "rxjs/scheduler/asap": "rxjs-compat/_esm5/scheduler/asap",
-    "rxjs/scheduler/animationFrame": "rxjs-compat/_esm5/scheduler/animationFrame",
+    "rxjs/scheduler/animationFrame":
+      "rxjs-compat/_esm5/scheduler/animationFrame",
     "rxjs/operators/zipAll": "rxjs-compat/_esm5/operators/zipAll",
     "rxjs/operators/zip": "rxjs-compat/_esm5/operators/zip",
-    "rxjs/operators/withLatestFrom": "rxjs-compat/_esm5/operators/withLatestFrom",
+    "rxjs/operators/withLatestFrom":
+      "rxjs-compat/_esm5/operators/withLatestFrom",
     "rxjs/operators/windowWhen": "rxjs-compat/_esm5/operators/windowWhen",
     "rxjs/operators/windowToggle": "rxjs-compat/_esm5/operators/windowToggle",
     "rxjs/operators/windowTime": "rxjs-compat/_esm5/operators/windowTime",
@@ -91,12 +97,14 @@ module.exports = function() {
     "rxjs/operators/race": "rxjs-compat/_esm5/operators/race",
     "rxjs/operators/publishReplay": "rxjs-compat/_esm5/operators/publishReplay",
     "rxjs/operators/publishLast": "rxjs-compat/_esm5/operators/publishLast",
-    "rxjs/operators/publishBehavior": "rxjs-compat/_esm5/operators/publishBehavior",
+    "rxjs/operators/publishBehavior":
+      "rxjs-compat/_esm5/operators/publishBehavior",
     "rxjs/operators/publish": "rxjs-compat/_esm5/operators/publish",
     "rxjs/operators/pluck": "rxjs-compat/_esm5/operators/pluck",
     "rxjs/operators/partition": "rxjs-compat/_esm5/operators/partition",
     "rxjs/operators/pairwise": "rxjs-compat/_esm5/operators/pairwise",
-    "rxjs/operators/onErrorResumeNext": "rxjs-compat/_esm5/operators/onErrorResumeNext",
+    "rxjs/operators/onErrorResumeNext":
+      "rxjs-compat/_esm5/operators/onErrorResumeNext",
     "rxjs/operators/observeOn": "rxjs-compat/_esm5/operators/observeOn",
     "rxjs/operators/multicast": "rxjs-compat/_esm5/operators/multicast",
     "rxjs/operators/min": "rxjs-compat/_esm5/operators/min",
@@ -111,7 +119,8 @@ module.exports = function() {
     "rxjs/operators/map": "rxjs-compat/_esm5/operators/map",
     "rxjs/operators/last": "rxjs-compat/_esm5/operators/last",
     "rxjs/operators/isEmpty": "rxjs-compat/_esm5/operators/isEmpty",
-    "rxjs/operators/ignoreElements": "rxjs-compat/_esm5/operators/ignoreElements",
+    "rxjs/operators/ignoreElements":
+      "rxjs-compat/_esm5/operators/ignoreElements",
     "rxjs/operators/groupBy": "rxjs-compat/_esm5/operators/groupBy",
     "rxjs/operators/first": "rxjs-compat/_esm5/operators/first",
     "rxjs/operators/findIndex": "rxjs-compat/_esm5/operators/findIndex",
@@ -123,13 +132,16 @@ module.exports = function() {
     "rxjs/operators/exhaust": "rxjs-compat/_esm5/operators/exhaust",
     "rxjs/operators/every": "rxjs-compat/_esm5/operators/every",
     "rxjs/operators/elementAt": "rxjs-compat/_esm5/operators/elementAt",
-    "rxjs/operators/distinctUntilKeyChanged": "rxjs-compat/_esm5/operators/distinctUntilKeyChanged",
-    "rxjs/operators/distinctUntilChanged": "rxjs-compat/_esm5/operators/distinctUntilChanged",
+    "rxjs/operators/distinctUntilKeyChanged":
+      "rxjs-compat/_esm5/operators/distinctUntilKeyChanged",
+    "rxjs/operators/distinctUntilChanged":
+      "rxjs-compat/_esm5/operators/distinctUntilChanged",
     "rxjs/operators/distinct": "rxjs-compat/_esm5/operators/distinct",
     "rxjs/operators/dematerialize": "rxjs-compat/_esm5/operators/dematerialize",
     "rxjs/operators/delayWhen": "rxjs-compat/_esm5/operators/delayWhen",
     "rxjs/operators/delay": "rxjs-compat/_esm5/operators/delay",
-    "rxjs/operators/defaultIfEmpty": "rxjs-compat/_esm5/operators/defaultIfEmpty",
+    "rxjs/operators/defaultIfEmpty":
+      "rxjs-compat/_esm5/operators/defaultIfEmpty",
     "rxjs/operators/debounceTime": "rxjs-compat/_esm5/operators/debounceTime",
     "rxjs/operators/debounce": "rxjs-compat/_esm5/operators/debounce",
     "rxjs/operators/count": "rxjs-compat/_esm5/operators/count",
@@ -191,12 +203,14 @@ module.exports = function() {
     "rxjs/operator/race": "rxjs-compat/_esm5/operator/race",
     "rxjs/operator/publishReplay": "rxjs-compat/_esm5/operator/publishReplay",
     "rxjs/operator/publishLast": "rxjs-compat/_esm5/operator/publishLast",
-    "rxjs/operator/publishBehavior": "rxjs-compat/_esm5/operator/publishBehavior",
+    "rxjs/operator/publishBehavior":
+      "rxjs-compat/_esm5/operator/publishBehavior",
     "rxjs/operator/publish": "rxjs-compat/_esm5/operator/publish",
     "rxjs/operator/pluck": "rxjs-compat/_esm5/operator/pluck",
     "rxjs/operator/partition": "rxjs-compat/_esm5/operator/partition",
     "rxjs/operator/pairwise": "rxjs-compat/_esm5/operator/pairwise",
-    "rxjs/operator/onErrorResumeNext": "rxjs-compat/_esm5/operator/onErrorResumeNext",
+    "rxjs/operator/onErrorResumeNext":
+      "rxjs-compat/_esm5/operator/onErrorResumeNext",
     "rxjs/operator/observeOn": "rxjs-compat/_esm5/operator/observeOn",
     "rxjs/operator/multicast": "rxjs-compat/_esm5/operator/multicast",
     "rxjs/operator/min": "rxjs-compat/_esm5/operator/min",
@@ -225,8 +239,10 @@ module.exports = function() {
     "rxjs/operator/every": "rxjs-compat/_esm5/operator/every",
     "rxjs/operator/elementAt": "rxjs-compat/_esm5/operator/elementAt",
     "rxjs/operator/do": "rxjs-compat/_esm5/operator/do",
-    "rxjs/operator/distinctUntilKeyChanged": "rxjs-compat/_esm5/operator/distinctUntilKeyChanged",
-    "rxjs/operator/distinctUntilChanged": "rxjs-compat/_esm5/operator/distinctUntilChanged",
+    "rxjs/operator/distinctUntilKeyChanged":
+      "rxjs-compat/_esm5/operator/distinctUntilKeyChanged",
+    "rxjs/operator/distinctUntilChanged":
+      "rxjs-compat/_esm5/operator/distinctUntilChanged",
     "rxjs/operator/distinct": "rxjs-compat/_esm5/operator/distinct",
     "rxjs/operator/dematerialize": "rxjs-compat/_esm5/operator/dematerialize",
     "rxjs/operator/delayWhen": "rxjs-compat/_esm5/operator/delayWhen",
@@ -256,7 +272,8 @@ module.exports = function() {
     "rxjs/observable/range": "rxjs-compat/_esm5/observable/range",
     "rxjs/observable/race": "rxjs-compat/_esm5/observable/race",
     "rxjs/observable/pairs": "rxjs-compat/_esm5/observable/pairs",
-    "rxjs/observable/onErrorResumeNext": "rxjs-compat/_esm5/observable/onErrorResumeNext",
+    "rxjs/observable/onErrorResumeNext":
+      "rxjs-compat/_esm5/observable/onErrorResumeNext",
     "rxjs/observable/of": "rxjs-compat/_esm5/observable/of",
     "rxjs/observable/never": "rxjs-compat/_esm5/observable/never",
     "rxjs/observable/merge": "rxjs-compat/_esm5/observable/merge",
@@ -265,79 +282,118 @@ module.exports = function() {
     "rxjs/observable/generate": "rxjs-compat/_esm5/observable/generate",
     "rxjs/observable/fromPromise": "rxjs-compat/_esm5/observable/fromPromise",
     "rxjs/observable/fromIterable": "rxjs-compat/_esm5/observable/fromIterable",
-    "rxjs/observable/fromEventPattern": "rxjs-compat/_esm5/observable/fromEventPattern",
+    "rxjs/observable/fromEventPattern":
+      "rxjs-compat/_esm5/observable/fromEventPattern",
     "rxjs/observable/fromEvent": "rxjs-compat/_esm5/observable/fromEvent",
     "rxjs/observable/fromArray": "rxjs-compat/_esm5/observable/fromArray",
     "rxjs/observable/from": "rxjs-compat/_esm5/observable/from",
     "rxjs/observable/forkJoin": "rxjs-compat/_esm5/observable/forkJoin",
     "rxjs/observable/empty": "rxjs-compat/_esm5/observable/empty",
-    "rxjs/observable/dom/webSocket": "rxjs-compat/_esm5/observable/dom/webSocket",
+    "rxjs/observable/dom/webSocket":
+      "rxjs-compat/_esm5/observable/dom/webSocket",
     "rxjs/observable/dom/ajax": "rxjs-compat/_esm5/observable/dom/ajax",
-    "rxjs/observable/dom/WebSocketSubject": "rxjs-compat/_esm5/observable/dom/WebSocketSubject",
-    "rxjs/observable/dom/AjaxObservable": "rxjs-compat/_esm5/observable/dom/AjaxObservable",
+    "rxjs/observable/dom/WebSocketSubject":
+      "rxjs-compat/_esm5/observable/dom/WebSocketSubject",
+    "rxjs/observable/dom/AjaxObservable":
+      "rxjs-compat/_esm5/observable/dom/AjaxObservable",
     "rxjs/observable/defer": "rxjs-compat/_esm5/observable/defer",
     "rxjs/observable/concat": "rxjs-compat/_esm5/observable/concat",
-    "rxjs/observable/combineLatest": "rxjs-compat/_esm5/observable/combineLatest",
-    "rxjs/observable/bindNodeCallback": "rxjs-compat/_esm5/observable/bindNodeCallback",
+    "rxjs/observable/combineLatest":
+      "rxjs-compat/_esm5/observable/combineLatest",
+    "rxjs/observable/bindNodeCallback":
+      "rxjs-compat/_esm5/observable/bindNodeCallback",
     "rxjs/observable/bindCallback": "rxjs-compat/_esm5/observable/bindCallback",
-    "rxjs/observable/UsingObservable": "rxjs-compat/_esm5/observable/UsingObservable",
-    "rxjs/observable/TimerObservable": "rxjs-compat/_esm5/observable/TimerObservable",
-    "rxjs/observable/SubscribeOnObservable": "rxjs-compat/_esm5/observable/SubscribeOnObservable",
-    "rxjs/observable/ScalarObservable": "rxjs-compat/_esm5/observable/ScalarObservable",
-    "rxjs/observable/RangeObservable": "rxjs-compat/_esm5/observable/RangeObservable",
-    "rxjs/observable/PromiseObservable": "rxjs-compat/_esm5/observable/PromiseObservable",
-    "rxjs/observable/PairsObservable": "rxjs-compat/_esm5/observable/PairsObservable",
-    "rxjs/observable/NeverObservable": "rxjs-compat/_esm5/observable/NeverObservable",
-    "rxjs/observable/IteratorObservable": "rxjs-compat/_esm5/observable/IteratorObservable",
-    "rxjs/observable/IntervalObservable": "rxjs-compat/_esm5/observable/IntervalObservable",
+    "rxjs/observable/UsingObservable":
+      "rxjs-compat/_esm5/observable/UsingObservable",
+    "rxjs/observable/TimerObservable":
+      "rxjs-compat/_esm5/observable/TimerObservable",
+    "rxjs/observable/SubscribeOnObservable":
+      "rxjs-compat/_esm5/observable/SubscribeOnObservable",
+    "rxjs/observable/ScalarObservable":
+      "rxjs-compat/_esm5/observable/ScalarObservable",
+    "rxjs/observable/RangeObservable":
+      "rxjs-compat/_esm5/observable/RangeObservable",
+    "rxjs/observable/PromiseObservable":
+      "rxjs-compat/_esm5/observable/PromiseObservable",
+    "rxjs/observable/PairsObservable":
+      "rxjs-compat/_esm5/observable/PairsObservable",
+    "rxjs/observable/NeverObservable":
+      "rxjs-compat/_esm5/observable/NeverObservable",
+    "rxjs/observable/IteratorObservable":
+      "rxjs-compat/_esm5/observable/IteratorObservable",
+    "rxjs/observable/IntervalObservable":
+      "rxjs-compat/_esm5/observable/IntervalObservable",
     "rxjs/observable/IfObservable": "rxjs-compat/_esm5/observable/IfObservable",
-    "rxjs/observable/GenerateObservable": "rxjs-compat/_esm5/observable/GenerateObservable",
-    "rxjs/observable/FromObservable": "rxjs-compat/_esm5/observable/FromObservable",
-    "rxjs/observable/FromEventPatternObservable": "rxjs-compat/_esm5/observable/FromEventPatternObservable",
-    "rxjs/observable/FromEventObservable": "rxjs-compat/_esm5/observable/FromEventObservable",
-    "rxjs/observable/ForkJoinObservable": "rxjs-compat/_esm5/observable/ForkJoinObservable",
-    "rxjs/observable/ErrorObservable": "rxjs-compat/_esm5/observable/ErrorObservable",
-    "rxjs/observable/EmptyObservable": "rxjs-compat/_esm5/observable/EmptyObservable",
-    "rxjs/observable/DeferObservable": "rxjs-compat/_esm5/observable/DeferObservable",
-    "rxjs/observable/ConnectableObservable": "rxjs-compat/_esm5/observable/ConnectableObservable",
-    "rxjs/observable/BoundNodeCallbackObservable": "rxjs-compat/_esm5/observable/BoundNodeCallbackObservable",
-    "rxjs/observable/BoundCallbackObservable": "rxjs-compat/_esm5/observable/BoundCallbackObservable",
-    "rxjs/observable/ArrayObservable": "rxjs-compat/_esm5/observable/ArrayObservable",
-    "rxjs/observable/ArrayLikeObservable": "rxjs-compat/_esm5/observable/ArrayLikeObservable",
+    "rxjs/observable/GenerateObservable":
+      "rxjs-compat/_esm5/observable/GenerateObservable",
+    "rxjs/observable/FromObservable":
+      "rxjs-compat/_esm5/observable/FromObservable",
+    "rxjs/observable/FromEventPatternObservable":
+      "rxjs-compat/_esm5/observable/FromEventPatternObservable",
+    "rxjs/observable/FromEventObservable":
+      "rxjs-compat/_esm5/observable/FromEventObservable",
+    "rxjs/observable/ForkJoinObservable":
+      "rxjs-compat/_esm5/observable/ForkJoinObservable",
+    "rxjs/observable/ErrorObservable":
+      "rxjs-compat/_esm5/observable/ErrorObservable",
+    "rxjs/observable/EmptyObservable":
+      "rxjs-compat/_esm5/observable/EmptyObservable",
+    "rxjs/observable/DeferObservable":
+      "rxjs-compat/_esm5/observable/DeferObservable",
+    "rxjs/observable/ConnectableObservable":
+      "rxjs-compat/_esm5/observable/ConnectableObservable",
+    "rxjs/observable/BoundNodeCallbackObservable":
+      "rxjs-compat/_esm5/observable/BoundNodeCallbackObservable",
+    "rxjs/observable/BoundCallbackObservable":
+      "rxjs-compat/_esm5/observable/BoundCallbackObservable",
+    "rxjs/observable/ArrayObservable":
+      "rxjs-compat/_esm5/observable/ArrayObservable",
+    "rxjs/observable/ArrayLikeObservable":
+      "rxjs-compat/_esm5/observable/ArrayLikeObservable",
     "rxjs/interfaces": "rxjs-compat/_esm5/interfaces",
     "rxjs/add/operator/zipAll": "rxjs-compat/_esm5/add/operator/zipAll",
     "rxjs/add/operator/zip": "rxjs-compat/_esm5/add/operator/zip",
-    "rxjs/add/operator/withLatestFrom": "rxjs-compat/_esm5/add/operator/withLatestFrom",
+    "rxjs/add/operator/withLatestFrom":
+      "rxjs-compat/_esm5/add/operator/withLatestFrom",
     "rxjs/add/operator/windowWhen": "rxjs-compat/_esm5/add/operator/windowWhen",
-    "rxjs/add/operator/windowToggle": "rxjs-compat/_esm5/add/operator/windowToggle",
+    "rxjs/add/operator/windowToggle":
+      "rxjs-compat/_esm5/add/operator/windowToggle",
     "rxjs/add/operator/windowTime": "rxjs-compat/_esm5/add/operator/windowTime",
-    "rxjs/add/operator/windowCount": "rxjs-compat/_esm5/add/operator/windowCount",
+    "rxjs/add/operator/windowCount":
+      "rxjs-compat/_esm5/add/operator/windowCount",
     "rxjs/add/operator/window": "rxjs-compat/_esm5/add/operator/window",
     "rxjs/add/operator/toPromise": "rxjs-compat/_esm5/add/operator/toPromise",
     "rxjs/add/operator/toArray": "rxjs-compat/_esm5/add/operator/toArray",
     "rxjs/add/operator/timestamp": "rxjs-compat/_esm5/add/operator/timestamp",
-    "rxjs/add/operator/timeoutWith": "rxjs-compat/_esm5/add/operator/timeoutWith",
+    "rxjs/add/operator/timeoutWith":
+      "rxjs-compat/_esm5/add/operator/timeoutWith",
     "rxjs/add/operator/timeout": "rxjs-compat/_esm5/add/operator/timeout",
-    "rxjs/add/operator/timeInterval": "rxjs-compat/_esm5/add/operator/timeInterval",
-    "rxjs/add/operator/throttleTime": "rxjs-compat/_esm5/add/operator/throttleTime",
+    "rxjs/add/operator/timeInterval":
+      "rxjs-compat/_esm5/add/operator/timeInterval",
+    "rxjs/add/operator/throttleTime":
+      "rxjs-compat/_esm5/add/operator/throttleTime",
     "rxjs/add/operator/throttle": "rxjs-compat/_esm5/add/operator/throttle",
     "rxjs/add/operator/takeWhile": "rxjs-compat/_esm5/add/operator/takeWhile",
     "rxjs/add/operator/takeUntil": "rxjs-compat/_esm5/add/operator/takeUntil",
     "rxjs/add/operator/takeLast": "rxjs-compat/_esm5/add/operator/takeLast",
     "rxjs/add/operator/take": "rxjs-compat/_esm5/add/operator/take",
-    "rxjs/add/operator/switchMapTo": "rxjs-compat/_esm5/add/operator/switchMapTo",
+    "rxjs/add/operator/switchMapTo":
+      "rxjs-compat/_esm5/add/operator/switchMapTo",
     "rxjs/add/operator/switchMap": "rxjs-compat/_esm5/add/operator/switchMap",
     "rxjs/add/operator/switch": "rxjs-compat/_esm5/add/operator/switch",
-    "rxjs/add/operator/subscribeOn": "rxjs-compat/_esm5/add/operator/subscribeOn",
+    "rxjs/add/operator/subscribeOn":
+      "rxjs-compat/_esm5/add/operator/subscribeOn",
     "rxjs/add/operator/startWith": "rxjs-compat/_esm5/add/operator/startWith",
     "rxjs/add/operator/skipWhile": "rxjs-compat/_esm5/add/operator/skipWhile",
     "rxjs/add/operator/skipUntil": "rxjs-compat/_esm5/add/operator/skipUntil",
     "rxjs/add/operator/skipLast": "rxjs-compat/_esm5/add/operator/skipLast",
     "rxjs/add/operator/skip": "rxjs-compat/_esm5/add/operator/skip",
     "rxjs/add/operator/single": "rxjs-compat/_esm5/add/operator/single",
-    "rxjs/add/operator/shareReplay": "rxjs-compat/_esm5/add/operator/shareReplay",
+    "rxjs/add/operator/shareReplay":
+      "rxjs-compat/_esm5/add/operator/shareReplay",
     "rxjs/add/operator/share": "rxjs-compat/_esm5/add/operator/share",
-    "rxjs/add/operator/sequenceEqual": "rxjs-compat/_esm5/add/operator/sequenceEqual",
+    "rxjs/add/operator/sequenceEqual":
+      "rxjs-compat/_esm5/add/operator/sequenceEqual",
     "rxjs/add/operator/scan": "rxjs-compat/_esm5/add/operator/scan",
     "rxjs/add/operator/sampleTime": "rxjs-compat/_esm5/add/operator/sampleTime",
     "rxjs/add/operator/sample": "rxjs-compat/_esm5/add/operator/sample",
@@ -347,14 +403,18 @@ module.exports = function() {
     "rxjs/add/operator/repeat": "rxjs-compat/_esm5/add/operator/repeat",
     "rxjs/add/operator/reduce": "rxjs-compat/_esm5/add/operator/reduce",
     "rxjs/add/operator/race": "rxjs-compat/_esm5/add/operator/race",
-    "rxjs/add/operator/publishReplay": "rxjs-compat/_esm5/add/operator/publishReplay",
-    "rxjs/add/operator/publishLast": "rxjs-compat/_esm5/add/operator/publishLast",
-    "rxjs/add/operator/publishBehavior": "rxjs-compat/_esm5/add/operator/publishBehavior",
+    "rxjs/add/operator/publishReplay":
+      "rxjs-compat/_esm5/add/operator/publishReplay",
+    "rxjs/add/operator/publishLast":
+      "rxjs-compat/_esm5/add/operator/publishLast",
+    "rxjs/add/operator/publishBehavior":
+      "rxjs-compat/_esm5/add/operator/publishBehavior",
     "rxjs/add/operator/publish": "rxjs-compat/_esm5/add/operator/publish",
     "rxjs/add/operator/pluck": "rxjs-compat/_esm5/add/operator/pluck",
     "rxjs/add/operator/partition": "rxjs-compat/_esm5/add/operator/partition",
     "rxjs/add/operator/pairwise": "rxjs-compat/_esm5/add/operator/pairwise",
-    "rxjs/add/operator/onErrorResumeNext": "rxjs-compat/_esm5/add/operator/onErrorResumeNext",
+    "rxjs/add/operator/onErrorResumeNext":
+      "rxjs-compat/_esm5/add/operator/onErrorResumeNext",
     "rxjs/add/operator/observeOn": "rxjs-compat/_esm5/add/operator/observeOn",
     "rxjs/add/operator/multicast": "rxjs-compat/_esm5/add/operator/multicast",
     "rxjs/add/operator/min": "rxjs-compat/_esm5/add/operator/min",
@@ -364,13 +424,15 @@ module.exports = function() {
     "rxjs/add/operator/mergeAll": "rxjs-compat/_esm5/add/operator/mergeAll",
     "rxjs/add/operator/merge": "rxjs-compat/_esm5/add/operator/merge",
     "rxjs/add/operator/max": "rxjs-compat/_esm5/add/operator/max",
-    "rxjs/add/operator/materialize": "rxjs-compat/_esm5/add/operator/materialize",
+    "rxjs/add/operator/materialize":
+      "rxjs-compat/_esm5/add/operator/materialize",
     "rxjs/add/operator/mapTo": "rxjs-compat/_esm5/add/operator/mapTo",
     "rxjs/add/operator/map": "rxjs-compat/_esm5/add/operator/map",
     "rxjs/add/operator/let": "rxjs-compat/_esm5/add/operator/let",
     "rxjs/add/operator/last": "rxjs-compat/_esm5/add/operator/last",
     "rxjs/add/operator/isEmpty": "rxjs-compat/_esm5/add/operator/isEmpty",
-    "rxjs/add/operator/ignoreElements": "rxjs-compat/_esm5/add/operator/ignoreElements",
+    "rxjs/add/operator/ignoreElements":
+      "rxjs-compat/_esm5/add/operator/ignoreElements",
     "rxjs/add/operator/groupBy": "rxjs-compat/_esm5/add/operator/groupBy",
     "rxjs/add/operator/first": "rxjs-compat/_esm5/add/operator/first",
     "rxjs/add/operator/findIndex": "rxjs-compat/_esm5/add/operator/findIndex",
@@ -383,27 +445,36 @@ module.exports = function() {
     "rxjs/add/operator/every": "rxjs-compat/_esm5/add/operator/every",
     "rxjs/add/operator/elementAt": "rxjs-compat/_esm5/add/operator/elementAt",
     "rxjs/add/operator/do": "rxjs-compat/_esm5/add/operator/do",
-    "rxjs/add/operator/distinctUntilKeyChanged": "rxjs-compat/_esm5/add/operator/distinctUntilKeyChanged",
-    "rxjs/add/operator/distinctUntilChanged": "rxjs-compat/_esm5/add/operator/distinctUntilChanged",
+    "rxjs/add/operator/distinctUntilKeyChanged":
+      "rxjs-compat/_esm5/add/operator/distinctUntilKeyChanged",
+    "rxjs/add/operator/distinctUntilChanged":
+      "rxjs-compat/_esm5/add/operator/distinctUntilChanged",
     "rxjs/add/operator/distinct": "rxjs-compat/_esm5/add/operator/distinct",
-    "rxjs/add/operator/dematerialize": "rxjs-compat/_esm5/add/operator/dematerialize",
+    "rxjs/add/operator/dematerialize":
+      "rxjs-compat/_esm5/add/operator/dematerialize",
     "rxjs/add/operator/delayWhen": "rxjs-compat/_esm5/add/operator/delayWhen",
     "rxjs/add/operator/delay": "rxjs-compat/_esm5/add/operator/delay",
-    "rxjs/add/operator/defaultIfEmpty": "rxjs-compat/_esm5/add/operator/defaultIfEmpty",
-    "rxjs/add/operator/debounceTime": "rxjs-compat/_esm5/add/operator/debounceTime",
+    "rxjs/add/operator/defaultIfEmpty":
+      "rxjs-compat/_esm5/add/operator/defaultIfEmpty",
+    "rxjs/add/operator/debounceTime":
+      "rxjs-compat/_esm5/add/operator/debounceTime",
     "rxjs/add/operator/debounce": "rxjs-compat/_esm5/add/operator/debounce",
     "rxjs/add/operator/count": "rxjs-compat/_esm5/add/operator/count",
-    "rxjs/add/operator/concatMapTo": "rxjs-compat/_esm5/add/operator/concatMapTo",
+    "rxjs/add/operator/concatMapTo":
+      "rxjs-compat/_esm5/add/operator/concatMapTo",
     "rxjs/add/operator/concatMap": "rxjs-compat/_esm5/add/operator/concatMap",
     "rxjs/add/operator/concatAll": "rxjs-compat/_esm5/add/operator/concatAll",
     "rxjs/add/operator/concat": "rxjs-compat/_esm5/add/operator/concat",
-    "rxjs/add/operator/combineLatest": "rxjs-compat/_esm5/add/operator/combineLatest",
+    "rxjs/add/operator/combineLatest":
+      "rxjs-compat/_esm5/add/operator/combineLatest",
     "rxjs/add/operator/combineAll": "rxjs-compat/_esm5/add/operator/combineAll",
     "rxjs/add/operator/catch": "rxjs-compat/_esm5/add/operator/catch",
     "rxjs/add/operator/bufferWhen": "rxjs-compat/_esm5/add/operator/bufferWhen",
-    "rxjs/add/operator/bufferToggle": "rxjs-compat/_esm5/add/operator/bufferToggle",
+    "rxjs/add/operator/bufferToggle":
+      "rxjs-compat/_esm5/add/operator/bufferToggle",
     "rxjs/add/operator/bufferTime": "rxjs-compat/_esm5/add/operator/bufferTime",
-    "rxjs/add/operator/bufferCount": "rxjs-compat/_esm5/add/operator/bufferCount",
+    "rxjs/add/operator/bufferCount":
+      "rxjs-compat/_esm5/add/operator/bufferCount",
     "rxjs/add/operator/buffer": "rxjs-compat/_esm5/add/operator/buffer",
     "rxjs/add/operator/auditTime": "rxjs-compat/_esm5/add/operator/auditTime",
     "rxjs/add/operator/audit": "rxjs-compat/_esm5/add/operator/audit",
@@ -414,26 +485,34 @@ module.exports = function() {
     "rxjs/add/observable/range": "rxjs-compat/_esm5/add/observable/range",
     "rxjs/add/observable/race": "rxjs-compat/_esm5/add/observable/race",
     "rxjs/add/observable/pairs": "rxjs-compat/_esm5/add/observable/pairs",
-    "rxjs/add/observable/onErrorResumeNext": "rxjs-compat/_esm5/add/observable/onErrorResumeNext",
+    "rxjs/add/observable/onErrorResumeNext":
+      "rxjs-compat/_esm5/add/observable/onErrorResumeNext",
     "rxjs/add/observable/of": "rxjs-compat/_esm5/add/observable/of",
     "rxjs/add/observable/never": "rxjs-compat/_esm5/add/observable/never",
     "rxjs/add/observable/merge": "rxjs-compat/_esm5/add/observable/merge",
     "rxjs/add/observable/interval": "rxjs-compat/_esm5/add/observable/interval",
     "rxjs/add/observable/if": "rxjs-compat/_esm5/add/observable/if",
     "rxjs/add/observable/generate": "rxjs-compat/_esm5/add/observable/generate",
-    "rxjs/add/observable/fromPromise": "rxjs-compat/_esm5/add/observable/fromPromise",
-    "rxjs/add/observable/fromEventPattern": "rxjs-compat/_esm5/add/observable/fromEventPattern",
-    "rxjs/add/observable/fromEvent": "rxjs-compat/_esm5/add/observable/fromEvent",
+    "rxjs/add/observable/fromPromise":
+      "rxjs-compat/_esm5/add/observable/fromPromise",
+    "rxjs/add/observable/fromEventPattern":
+      "rxjs-compat/_esm5/add/observable/fromEventPattern",
+    "rxjs/add/observable/fromEvent":
+      "rxjs-compat/_esm5/add/observable/fromEvent",
     "rxjs/add/observable/from": "rxjs-compat/_esm5/add/observable/from",
     "rxjs/add/observable/forkJoin": "rxjs-compat/_esm5/add/observable/forkJoin",
     "rxjs/add/observable/empty": "rxjs-compat/_esm5/add/observable/empty",
-    "rxjs/add/observable/dom/webSocket": "rxjs-compat/_esm5/add/observable/dom/webSocket",
+    "rxjs/add/observable/dom/webSocket":
+      "rxjs-compat/_esm5/add/observable/dom/webSocket",
     "rxjs/add/observable/dom/ajax": "rxjs-compat/_esm5/add/observable/dom/ajax",
     "rxjs/add/observable/defer": "rxjs-compat/_esm5/add/observable/defer",
     "rxjs/add/observable/concat": "rxjs-compat/_esm5/add/observable/concat",
-    "rxjs/add/observable/combineLatest": "rxjs-compat/_esm5/add/observable/combineLatest",
-    "rxjs/add/observable/bindNodeCallback": "rxjs-compat/_esm5/add/observable/bindNodeCallback",
-    "rxjs/add/observable/bindCallback": "rxjs-compat/_esm5/add/observable/bindCallback",
+    "rxjs/add/observable/combineLatest":
+      "rxjs-compat/_esm5/add/observable/combineLatest",
+    "rxjs/add/observable/bindNodeCallback":
+      "rxjs-compat/_esm5/add/observable/bindNodeCallback",
+    "rxjs/add/observable/bindCallback":
+      "rxjs-compat/_esm5/add/observable/bindCallback",
     "rxjs/Subscription": "rxjs-compat/_esm5/Subscription",
     "rxjs/Subscriber": "rxjs-compat/_esm5/Subscriber",
     "rxjs/SubjectSubscription": "rxjs-compat/_esm5/SubjectSubscription",
@@ -448,6 +527,6 @@ module.exports = function() {
     "rxjs/Notification": "rxjs-compat/_esm5/Notification",
     "rxjs/InnerSubscriber": "rxjs-compat/_esm5/InnerSubscriber",
     "rxjs/BehaviorSubject": "rxjs-compat/_esm5/BehaviorSubject",
-    "rxjs/AsyncSubject": "rxjs-compat/_esm5/AsyncSubject"
+    "rxjs/AsyncSubject": "rxjs-compat/_esm5/AsyncSubject",
+  };
 };
-}

@@ -24,5 +24,5 @@ class NonDocumentTypeChildNodeImpl {
 }
 
 module.exports = {
-  implementation: NonDocumentTypeChildNodeImpl
+  implementation: NonDocumentTypeChildNodeImpl,
 };

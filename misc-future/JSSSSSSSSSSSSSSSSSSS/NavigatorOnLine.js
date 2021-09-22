@@ -13,7 +13,7 @@ Object.defineProperty(NavigatorOnLine, "prototype", {
   value: NavigatorOnLine.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(NavigatorOnLine.prototype, "onLine", {
@@ -26,14 +26,14 @@ Object.defineProperty(NavigatorOnLine.prototype, "onLine", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorOnLine.prototype, Symbol.toStringTag, {
   value: "NavigatorOnLine",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -97,7 +97,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -107,7 +107,7 @@ const iface = {
     return obj;
   },
   interface: NavigatorOnLine,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

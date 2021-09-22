@@ -18,7 +18,7 @@ const astUtils = require("../util/ast-utils.js");
  * @returns {boolean} `true` if the node is a conditional expression.
  */
 function isConditional(node) {
-    return node && node.type === "ConditionalExpression";
+  return node && node.type === "ConditionalExpression";
 }
 
 //------------------------------------------------------------------------------
@@ -26,58 +26,67 @@ function isConditional(node) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow arrow functions where they could be confused with comparisons",
-            category: "ECMAScript 6",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-confusing-arrow"
-        },
-
-        fixable: "code",
-
-        schema: [{
-            type: "object",
-            properties: {
-                allowParens: { type: "boolean", default: false }
-            },
-            additionalProperties: false
-        }],
-
-        messages: {
-            confusing: "Arrow function used ambiguously with a conditional expression."
-        }
+    docs: {
+      description:
+        "disallow arrow functions where they could be confused with comparisons",
+      category: "ECMAScript 6",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-confusing-arrow",
     },
 
-    create(context) {
-        const config = context.options[0] || {};
-        const sourceCode = context.getSourceCode();
+    fixable: "code",
 
-        /**
-         * Reports if an arrow function contains an ambiguous conditional.
-         * @param {ASTNode} node - A node to check and report.
-         * @returns {void}
-         */
-        function checkArrowFunc(node) {
-            const body = node.body;
+    schema: [
+      {
+        type: "object",
+        properties: {
+          allowParens: { type: "boolean", default: false },
+        },
+        additionalProperties: false,
+      },
+    ],
 
-            if (isConditional(body) && !(config.allowParens && astUtils.isParenthesised(sourceCode, body))) {
-                context.report({
-                    node,
-                    messageId: "confusing",
-                    fix(fixer) {
+    messages: {
+      confusing:
+        "Arrow function used ambiguously with a conditional expression.",
+    },
+  },
 
-                        // if `allowParens` is not set to true dont bother wrapping in parens
-                        return config.allowParens && fixer.replaceText(node.body, `(${sourceCode.getText(node.body)})`);
-                    }
-                });
-            }
-        }
+  create(context) {
+    const config = context.options[0] || {};
+    const sourceCode = context.getSourceCode();
 
-        return {
-            ArrowFunctionExpression: checkArrowFunc
-        };
+    /**
+     * Reports if an arrow function contains an ambiguous conditional.
+     * @param {ASTNode} node - A node to check and report.
+     * @returns {void}
+     */
+    function checkArrowFunc(node) {
+      const body = node.body;
+
+      if (
+        isConditional(body) &&
+        !(config.allowParens && astUtils.isParenthesised(sourceCode, body))
+      ) {
+        context.report({
+          node,
+          messageId: "confusing",
+          fix(fixer) {
+            // if `allowParens` is not set to true dont bother wrapping in parens
+            return (
+              config.allowParens &&
+              fixer.replaceText(node.body, `(${sourceCode.getText(node.body)})`)
+            );
+          },
+        });
+      }
     }
+
+    return {
+      ArrowFunctionExpression: checkArrowFunc,
+    };
+  },
 };

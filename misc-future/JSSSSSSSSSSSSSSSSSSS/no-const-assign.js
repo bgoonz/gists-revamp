@@ -12,43 +12,47 @@ const astUtils = require("../util/ast-utils");
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow reassigning `const` variables",
-            category: "ECMAScript 6",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-const-assign"
-        },
-
-        schema: [],
-
-        messages: {
-            const: "'{{name}}' is constant."
-        }
+    docs: {
+      description: "disallow reassigning `const` variables",
+      category: "ECMAScript 6",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-const-assign",
     },
 
-    create(context) {
+    schema: [],
 
-        /**
-         * Finds and reports references that are non initializer and writable.
-         * @param {Variable} variable - A variable to check.
-         * @returns {void}
-         */
-        function checkVariable(variable) {
-            astUtils.getModifyingReferences(variable.references).forEach(reference => {
-                context.report({ node: reference.identifier, messageId: "const", data: { name: reference.identifier.name } });
-            });
-        }
+    messages: {
+      const: "'{{name}}' is constant.",
+    },
+  },
 
-        return {
-            VariableDeclaration(node) {
-                if (node.kind === "const") {
-                    context.getDeclaredVariables(node).forEach(checkVariable);
-                }
-            }
-        };
-
+  create(context) {
+    /**
+     * Finds and reports references that are non initializer and writable.
+     * @param {Variable} variable - A variable to check.
+     * @returns {void}
+     */
+    function checkVariable(variable) {
+      astUtils
+        .getModifyingReferences(variable.references)
+        .forEach((reference) => {
+          context.report({
+            node: reference.identifier,
+            messageId: "const",
+            data: { name: reference.identifier.name },
+          });
+        });
     }
+
+    return {
+      VariableDeclaration(node) {
+        if (node.kind === "const") {
+          context.getDeclaredVariables(node).forEach(checkVariable);
+        }
+      },
+    };
+  },
 };

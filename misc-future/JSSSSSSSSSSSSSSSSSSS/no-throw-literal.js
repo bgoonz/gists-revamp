@@ -12,35 +12,30 @@ const astUtils = require("../util/ast-utils");
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow throwing literals as exceptions",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-throw-literal"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow throwing literals as exceptions",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-throw-literal",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
-
-            ThrowStatement(node) {
-                if (!astUtils.couldBeError(node.argument)) {
-                    context.report({ node, message: "Expected an object to be thrown." });
-                } else if (node.argument.type === "Identifier") {
-                    if (node.argument.name === "undefined") {
-                        context.report({ node, message: "Do not throw undefined." });
-                    }
-                }
-
-            }
-
-        };
-
-    }
+  create(context) {
+    return {
+      ThrowStatement(node) {
+        if (!astUtils.couldBeError(node.argument)) {
+          context.report({ node, message: "Expected an object to be thrown." });
+        } else if (node.argument.type === "Identifier") {
+          if (node.argument.name === "undefined") {
+            context.report({ node, message: "Do not throw undefined." });
+          }
+        }
+      },
+    };
+  },
 };

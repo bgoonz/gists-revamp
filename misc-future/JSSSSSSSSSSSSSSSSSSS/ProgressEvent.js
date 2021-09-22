@@ -17,18 +17,24 @@ function ProgressEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'ProgressEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'ProgressEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'ProgressEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'ProgressEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertProgressEventInit(curArg, { context: "Failed to construct 'ProgressEvent': parameter 2" });
+    curArg = convertProgressEventInit(curArg, {
+      context: "Failed to construct 'ProgressEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(ProgressEvent, "prototype", {
   value: ProgressEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(ProgressEvent.prototype, "lengthComputable", {
@@ -55,7 +61,7 @@ Object.defineProperty(ProgressEvent.prototype, "lengthComputable", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ProgressEvent.prototype, "loaded", {
@@ -68,7 +74,7 @@ Object.defineProperty(ProgressEvent.prototype, "loaded", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ProgressEvent.prototype, "total", {
@@ -81,14 +87,14 @@ Object.defineProperty(ProgressEvent.prototype, "total", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ProgressEvent.prototype, Symbol.toStringTag, {
   value: "ProgressEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -154,7 +160,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -167,8 +173,8 @@ const iface = {
   expose: {
     Window: { ProgressEvent },
     DedicatedWorker: { ProgressEvent },
-    SharedWorker: { ProgressEvent }
-  }
+    SharedWorker: { ProgressEvent },
+  },
 }; // iface
 module.exports = iface;
 

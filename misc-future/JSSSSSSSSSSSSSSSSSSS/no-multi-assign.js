@@ -5,41 +5,42 @@
 
 "use strict";
 
-
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow use of chained assignment expressions",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-multi-assign"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow use of chained assignment expressions",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-multi-assign",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        //--------------------------------------------------------------------------
-        // Public
-        //--------------------------------------------------------------------------
+  create(context) {
+    //--------------------------------------------------------------------------
+    // Public
+    //--------------------------------------------------------------------------
 
-        return {
-            AssignmentExpression(node) {
-                if (["AssignmentExpression", "VariableDeclarator"].indexOf(node.parent.type) !== -1) {
-                    context.report({
-                        node,
-                        message: "Unexpected chained assignment."
-                    });
-                }
-            }
-        };
-
-    }
+    return {
+      AssignmentExpression(node) {
+        if (
+          ["AssignmentExpression", "VariableDeclarator"].indexOf(
+            node.parent.type
+          ) !== -1
+        ) {
+          context.report({
+            node,
+            message: "Unexpected chained assignment.",
+          });
+        }
+      },
+    };
+  },
 };

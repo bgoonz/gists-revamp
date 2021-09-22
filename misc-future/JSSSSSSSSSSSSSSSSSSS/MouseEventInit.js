@@ -14,7 +14,9 @@ module.exports = {
       const key = "button";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["short"](value, { context: context + " has member button that" });
+        value = conversions["short"](value, {
+          context: context + " has member button that",
+        });
 
         ret[key] = value;
       } else {
@@ -26,7 +28,9 @@ module.exports = {
       const key = "buttons";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["unsigned short"](value, { context: context + " has member buttons that" });
+        value = conversions["unsigned short"](value, {
+          context: context + " has member buttons that",
+        });
 
         ret[key] = value;
       } else {
@@ -38,7 +42,9 @@ module.exports = {
       const key = "clientX";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["long"](value, { context: context + " has member clientX that" });
+        value = conversions["long"](value, {
+          context: context + " has member clientX that",
+        });
 
         ret[key] = value;
       } else {
@@ -50,7 +56,9 @@ module.exports = {
       const key = "clientY";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["long"](value, { context: context + " has member clientY that" });
+        value = conversions["long"](value, {
+          context: context + " has member clientY that",
+        });
 
         ret[key] = value;
       } else {
@@ -65,7 +73,9 @@ module.exports = {
         if (value === null || value === undefined) {
           value = null;
         } else {
-          value = convertEventTarget(value, { context: context + " has member relatedTarget that" });
+          value = convertEventTarget(value, {
+            context: context + " has member relatedTarget that",
+          });
         }
         ret[key] = value;
       } else {
@@ -77,7 +87,9 @@ module.exports = {
       const key = "screenX";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["long"](value, { context: context + " has member screenX that" });
+        value = conversions["long"](value, {
+          context: context + " has member screenX that",
+        });
 
         ret[key] = value;
       } else {
@@ -89,7 +101,9 @@ module.exports = {
       const key = "screenY";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["long"](value, { context: context + " has member screenY that" });
+        value = conversions["long"](value, {
+          context: context + " has member screenY that",
+        });
 
         ret[key] = value;
       } else {
@@ -99,12 +113,16 @@ module.exports = {
   },
 
   convert(obj, { context = "The provided value" } = {}) {
-    if (obj !== undefined && typeof obj !== "object" && typeof obj !== "function") {
+    if (
+      obj !== undefined &&
+      typeof obj !== "object" &&
+      typeof obj !== "function"
+    ) {
       throw new TypeError(`${context} is not an object.`);
     }
 
     const ret = Object.create(null);
     module.exports.convertInherit(obj, ret, { context });
     return ret;
-  }
+  },
 };

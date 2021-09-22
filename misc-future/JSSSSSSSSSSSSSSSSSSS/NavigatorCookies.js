@@ -13,7 +13,7 @@ Object.defineProperty(NavigatorCookies, "prototype", {
   value: NavigatorCookies.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(NavigatorCookies.prototype, "cookieEnabled", {
@@ -26,14 +26,14 @@ Object.defineProperty(NavigatorCookies.prototype, "cookieEnabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorCookies.prototype, Symbol.toStringTag, {
   value: "NavigatorCookies",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -97,7 +97,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -107,7 +107,7 @@ const iface = {
     return obj;
   },
   interface: NavigatorCookies,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

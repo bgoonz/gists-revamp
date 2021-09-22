@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = loadCjsOrMjsDefault;
 
@@ -37,9 +37,37 @@ function _module() {
   return data;
 }
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+      args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(undefined);
+    });
+  };
+}
 
 let import_;
 
@@ -47,7 +75,11 @@ try {
   import_ = require("./import").default;
 } catch (_unused) {}
 
-function* loadCjsOrMjsDefault(filepath, asyncError, fallbackToTranspiledModule = false) {
+function* loadCjsOrMjsDefault(
+  filepath,
+  asyncError,
+  fallbackToTranspiledModule = false
+) {
   switch (guessJSModuleType(filepath)) {
     case "cjs":
       return loadCjsDefault(filepath, fallbackToTranspiledModule);
@@ -84,7 +116,9 @@ function guessJSModuleType(filename) {
 function loadCjsDefault(filepath, fallbackToTranspiledModule) {
   const module = require(filepath);
 
-  return module != null && module.__esModule ? module.default || (fallbackToTranspiledModule ? module : undefined) : module;
+  return module != null && module.__esModule
+    ? module.default || (fallbackToTranspiledModule ? module : undefined)
+    : module;
 }
 
 function loadMjsDefault(_x) {
@@ -94,7 +128,10 @@ function loadMjsDefault(_x) {
 function _loadMjsDefault() {
   _loadMjsDefault = _asyncToGenerator(function* (filepath) {
     if (!import_) {
-      throw new Error("Internal error: Native ECMAScript modules aren't supported" + " by this platform.\n");
+      throw new Error(
+        "Internal error: Native ECMAScript modules aren't supported" +
+          " by this platform.\n"
+      );
     }
 
     const module = yield import_((0, _url().pathToFileURL)(filepath));

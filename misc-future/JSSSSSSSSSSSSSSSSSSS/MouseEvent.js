@@ -18,18 +18,24 @@ function MouseEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'MouseEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'MouseEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'MouseEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'MouseEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertMouseEventInit(curArg, { context: "Failed to construct 'MouseEvent': parameter 2" });
+    curArg = convertMouseEventInit(curArg, {
+      context: "Failed to construct 'MouseEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -43,7 +49,7 @@ Object.defineProperty(MouseEvent, "prototype", {
   value: MouseEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 MouseEvent.prototype.getModifierState = function getModifierState(keyArg) {
@@ -62,7 +68,8 @@ MouseEvent.prototype.getModifierState = function getModifierState(keyArg) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getModifierState' on 'MouseEvent': parameter 1"
+      context:
+        "Failed to execute 'getModifierState' on 'MouseEvent': parameter 1",
     });
     args.push(curArg);
   }
@@ -85,7 +92,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 1"
+      context:
+        "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 1",
     });
     args.push(curArg);
   }
@@ -93,7 +101,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 2"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 2",
       });
     } else {
       curArg = false;
@@ -104,7 +113,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 3"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 3",
       });
     } else {
       curArg = false;
@@ -128,7 +138,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[4];
     if (curArg !== undefined) {
       curArg = conversions["long"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 5"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 5",
       });
     } else {
       curArg = 0;
@@ -139,7 +150,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[5];
     if (curArg !== undefined) {
       curArg = conversions["long"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 6"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 6",
       });
     } else {
       curArg = 0;
@@ -150,7 +162,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[6];
     if (curArg !== undefined) {
       curArg = conversions["long"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 7"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 7",
       });
     } else {
       curArg = 0;
@@ -161,7 +174,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[7];
     if (curArg !== undefined) {
       curArg = conversions["long"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 8"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 8",
       });
     } else {
       curArg = 0;
@@ -172,7 +186,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[8];
     if (curArg !== undefined) {
       curArg = conversions["long"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 9"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 9",
       });
     } else {
       curArg = 0;
@@ -183,7 +198,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[9];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 10"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 10",
       });
     } else {
       curArg = 0;
@@ -194,7 +210,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[10];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 11"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 11",
       });
     } else {
       curArg = 0;
@@ -205,7 +222,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[11];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 12"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 12",
       });
     } else {
       curArg = 0;
@@ -216,7 +234,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[12];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 13"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 13",
       });
     } else {
       curArg = 0;
@@ -227,7 +246,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
     let curArg = arguments[13];
     if (curArg !== undefined) {
       curArg = conversions["short"](curArg, {
-        context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 14"
+        context:
+          "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 14",
       });
     } else {
       curArg = 0;
@@ -241,7 +261,8 @@ MouseEvent.prototype.initMouseEvent = function initMouseEvent(typeArg) {
         curArg = null;
       } else {
         curArg = convertEventTarget(curArg, {
-          context: "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 15"
+          context:
+            "Failed to execute 'initMouseEvent' on 'MouseEvent': parameter 15",
         });
       }
     } else {
@@ -262,7 +283,7 @@ Object.defineProperty(MouseEvent.prototype, "screenX", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "screenY", {
@@ -275,7 +296,7 @@ Object.defineProperty(MouseEvent.prototype, "screenY", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "clientX", {
@@ -288,7 +309,7 @@ Object.defineProperty(MouseEvent.prototype, "clientX", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "clientY", {
@@ -301,7 +322,7 @@ Object.defineProperty(MouseEvent.prototype, "clientY", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "ctrlKey", {
@@ -314,7 +335,7 @@ Object.defineProperty(MouseEvent.prototype, "ctrlKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "shiftKey", {
@@ -327,7 +348,7 @@ Object.defineProperty(MouseEvent.prototype, "shiftKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "altKey", {
@@ -340,7 +361,7 @@ Object.defineProperty(MouseEvent.prototype, "altKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "metaKey", {
@@ -353,7 +374,7 @@ Object.defineProperty(MouseEvent.prototype, "metaKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "button", {
@@ -366,7 +387,7 @@ Object.defineProperty(MouseEvent.prototype, "button", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "buttons", {
@@ -379,7 +400,7 @@ Object.defineProperty(MouseEvent.prototype, "buttons", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, "relatedTarget", {
@@ -392,14 +413,14 @@ Object.defineProperty(MouseEvent.prototype, "relatedTarget", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(MouseEvent.prototype, Symbol.toStringTag, {
   value: "MouseEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -465,7 +486,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -476,8 +497,8 @@ const iface = {
   },
   interface: MouseEvent,
   expose: {
-    Window: { MouseEvent }
-  }
+    Window: { MouseEvent },
+  },
 }; // iface
 module.exports = iface;
 

@@ -12,9 +12,13 @@
  * @returns {boolean} true if this variable safely shadows `undefined`
  */
 function safelyShadowsUndefined(variable) {
-    return variable.name === "undefined" &&
-        variable.references.every(ref => !ref.isWrite()) &&
-        variable.defs.every(def => def.node.type === "VariableDeclarator" && def.node.init === null);
+  return (
+    variable.name === "undefined" &&
+    variable.references.every((ref) => !ref.isWrite()) &&
+    variable.defs.every(
+      (def) => def.node.type === "VariableDeclarator" && def.node.init === null
+    )
+  );
 }
 
 //------------------------------------------------------------------------------
@@ -22,39 +26,46 @@ function safelyShadowsUndefined(variable) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow identifiers from shadowing restricted names",
-            category: "Variables",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-shadow-restricted-names"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow identifiers from shadowing restricted names",
+      category: "Variables",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-shadow-restricted-names",
     },
 
-    create(context) {
+    schema: [],
+  },
 
+  create(context) {
+    const RESTRICTED = new Set([
+      "undefined",
+      "NaN",
+      "Infinity",
+      "arguments",
+      "eval",
+    ]);
 
-        const RESTRICTED = new Set(["undefined", "NaN", "Infinity", "arguments", "eval"]);
-
-        return {
-            "VariableDeclaration, :function, CatchClause"(node) {
-                for (const variable of context.getDeclaredVariables(node)) {
-                    if (variable.defs.length > 0 && RESTRICTED.has(variable.name) && !safelyShadowsUndefined(variable)) {
-                        context.report({
-                            node: variable.defs[0].name,
-                            message: "Shadowing of global property '{{idName}}'.",
-                            data: {
-                                idName: variable.name
-                            }
-                        });
-                    }
-                }
-            }
-        };
-
-    }
+    return {
+      "VariableDeclaration, :function, CatchClause"(node) {
+        for (const variable of context.getDeclaredVariables(node)) {
+          if (
+            variable.defs.length > 0 &&
+            RESTRICTED.has(variable.name) &&
+            !safelyShadowsUndefined(variable)
+          ) {
+            context.report({
+              node: variable.defs[0].name,
+              message: "Shadowing of global property '{{idName}}'.",
+              data: {
+                idName: variable.name,
+              },
+            });
+          }
+        }
+      },
+    };
+  },
 };

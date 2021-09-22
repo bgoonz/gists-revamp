@@ -10,49 +10,60 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow variable and `function` declarations in the global scope",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-implicit-globals"
-        },
-
-        schema: []
+    docs: {
+      description:
+        "disallow variable and `function` declarations in the global scope",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-implicit-globals",
     },
 
-    create(context) {
-        return {
-            Program() {
-                const scope = context.getScope();
+    schema: [],
+  },
 
-                scope.variables.forEach(variable => {
-                    if (variable.writeable) {
-                        return;
-                    }
+  create(context) {
+    return {
+      Program() {
+        const scope = context.getScope();
 
-                    variable.defs.forEach(def => {
-                        if (def.type === "FunctionName" || (def.type === "Variable" && def.parent.kind === "var")) {
-                            context.report({ node: def.node, message: "Implicit global variable, assign as global property instead." });
-                        }
-                    });
-                });
+        scope.variables.forEach((variable) => {
+          if (variable.writeable) {
+            return;
+          }
 
-                scope.implicit.variables.forEach(variable => {
-                    const scopeVariable = scope.set.get(variable.name);
-
-                    if (scopeVariable && scopeVariable.writeable) {
-                        return;
-                    }
-
-                    variable.defs.forEach(def => {
-                        context.report({ node: def.node, message: "Implicit global variable, assign as global property instead." });
-                    });
-                });
+          variable.defs.forEach((def) => {
+            if (
+              def.type === "FunctionName" ||
+              (def.type === "Variable" && def.parent.kind === "var")
+            ) {
+              context.report({
+                node: def.node,
+                message:
+                  "Implicit global variable, assign as global property instead.",
+              });
             }
-        };
+          });
+        });
 
-    }
+        scope.implicit.variables.forEach((variable) => {
+          const scopeVariable = scope.set.get(variable.name);
+
+          if (scopeVariable && scopeVariable.writeable) {
+            return;
+          }
+
+          variable.defs.forEach((def) => {
+            context.report({
+              node: def.node,
+              message:
+                "Implicit global variable, assign as global property instead.",
+            });
+          });
+        });
+      },
+    };
+  },
 };

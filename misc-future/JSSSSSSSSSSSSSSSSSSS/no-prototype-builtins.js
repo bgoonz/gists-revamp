@@ -9,49 +9,51 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow calling some `Object.prototype` methods directly on objects",
-            category: "Possible Errors",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-prototype-builtins"
-        },
-
-        schema: []
+    docs: {
+      description:
+        "disallow calling some `Object.prototype` methods directly on objects",
+      category: "Possible Errors",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-prototype-builtins",
     },
 
-    create(context) {
-        const DISALLOWED_PROPS = [
-            "hasOwnProperty",
-            "isPrototypeOf",
-            "propertyIsEnumerable"
-        ];
+    schema: [],
+  },
 
-        /**
-         * Reports if a disallowed property is used in a CallExpression
-         * @param {ASTNode} node The CallExpression node.
-         * @returns {void}
-         */
-        function disallowBuiltIns(node) {
-            if (node.callee.type !== "MemberExpression" || node.callee.computed) {
-                return;
-            }
-            const propName = node.callee.property.name;
+  create(context) {
+    const DISALLOWED_PROPS = [
+      "hasOwnProperty",
+      "isPrototypeOf",
+      "propertyIsEnumerable",
+    ];
 
-            if (DISALLOWED_PROPS.indexOf(propName) > -1) {
-                context.report({
-                    message: "Do not access Object.prototype method '{{prop}}' from target object.",
-                    loc: node.callee.property.loc.start,
-                    data: { prop: propName },
-                    node
-                });
-            }
-        }
+    /**
+     * Reports if a disallowed property is used in a CallExpression
+     * @param {ASTNode} node The CallExpression node.
+     * @returns {void}
+     */
+    function disallowBuiltIns(node) {
+      if (node.callee.type !== "MemberExpression" || node.callee.computed) {
+        return;
+      }
+      const propName = node.callee.property.name;
 
-        return {
-            CallExpression: disallowBuiltIns
-        };
+      if (DISALLOWED_PROPS.indexOf(propName) > -1) {
+        context.report({
+          message:
+            "Do not access Object.prototype method '{{prop}}' from target object.",
+          loc: node.callee.property.loc.start,
+          data: { prop: propName },
+          node,
+        });
+      }
     }
+
+    return {
+      CallExpression: disallowBuiltIns,
+    };
+  },
 };

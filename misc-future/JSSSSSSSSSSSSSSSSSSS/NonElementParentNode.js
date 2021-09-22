@@ -13,10 +13,12 @@ Object.defineProperty(NonElementParentNode, "prototype", {
   value: NonElementParentNode.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
-NonElementParentNode.prototype.getElementById = function getElementById(elementId) {
+NonElementParentNode.prototype.getElementById = function getElementById(
+  elementId
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -32,7 +34,8 @@ NonElementParentNode.prototype.getElementById = function getElementById(elementI
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementById' on 'NonElementParentNode': parameter 1"
+      context:
+        "Failed to execute 'getElementById' on 'NonElementParentNode': parameter 1",
     });
     args.push(curArg);
   }
@@ -43,7 +46,7 @@ Object.defineProperty(NonElementParentNode.prototype, Symbol.toStringTag, {
   value: "NonElementParentNode",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -107,7 +110,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -117,7 +120,7 @@ const iface = {
     return obj;
   },
   interface: NonElementParentNode,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

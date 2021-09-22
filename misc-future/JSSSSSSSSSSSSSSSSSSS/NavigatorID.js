@@ -13,7 +13,7 @@ Object.defineProperty(NavigatorID, "prototype", {
   value: NavigatorID.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(NavigatorID.prototype, "appCodeName", {
@@ -26,7 +26,7 @@ Object.defineProperty(NavigatorID.prototype, "appCodeName", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, "appName", {
@@ -39,7 +39,7 @@ Object.defineProperty(NavigatorID.prototype, "appName", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, "appVersion", {
@@ -52,7 +52,7 @@ Object.defineProperty(NavigatorID.prototype, "appVersion", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, "platform", {
@@ -65,7 +65,7 @@ Object.defineProperty(NavigatorID.prototype, "platform", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, "product", {
@@ -78,7 +78,7 @@ Object.defineProperty(NavigatorID.prototype, "product", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, "productSub", {
@@ -91,7 +91,7 @@ Object.defineProperty(NavigatorID.prototype, "productSub", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, "userAgent", {
@@ -104,7 +104,7 @@ Object.defineProperty(NavigatorID.prototype, "userAgent", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, "vendor", {
@@ -117,7 +117,7 @@ Object.defineProperty(NavigatorID.prototype, "vendor", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, "vendorSub", {
@@ -130,14 +130,14 @@ Object.defineProperty(NavigatorID.prototype, "vendorSub", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NavigatorID.prototype, Symbol.toStringTag, {
   value: "NavigatorID",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -201,7 +201,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -211,7 +211,7 @@ const iface = {
     return obj;
   },
   interface: NavigatorID,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

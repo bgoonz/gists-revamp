@@ -14,7 +14,7 @@ Object.defineProperty(ParentNode, "prototype", {
   value: ParentNode.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 ParentNode.prototype.prepend = function prepend() {
@@ -28,7 +28,8 @@ ParentNode.prototype.prepend = function prepend() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'prepend' on 'ParentNode': parameter " + (i + 1)
+        context:
+          "Failed to execute 'prepend' on 'ParentNode': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -47,7 +48,8 @@ ParentNode.prototype.append = function append() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'append' on 'ParentNode': parameter " + (i + 1)
+        context:
+          "Failed to execute 'append' on 'ParentNode': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -71,7 +73,7 @@ ParentNode.prototype.querySelector = function querySelector(selectors) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'querySelector' on 'ParentNode': parameter 1"
+      context: "Failed to execute 'querySelector' on 'ParentNode': parameter 1",
     });
     args.push(curArg);
   }
@@ -94,7 +96,8 @@ ParentNode.prototype.querySelectorAll = function querySelectorAll(selectors) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'querySelectorAll' on 'ParentNode': parameter 1"
+      context:
+        "Failed to execute 'querySelectorAll' on 'ParentNode': parameter 1",
     });
     args.push(curArg);
   }
@@ -113,7 +116,7 @@ Object.defineProperty(ParentNode.prototype, "children", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ParentNode.prototype, "firstElementChild", {
@@ -126,7 +129,7 @@ Object.defineProperty(ParentNode.prototype, "firstElementChild", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ParentNode.prototype, "lastElementChild", {
@@ -139,7 +142,7 @@ Object.defineProperty(ParentNode.prototype, "lastElementChild", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ParentNode.prototype, "childElementCount", {
@@ -152,24 +155,24 @@ Object.defineProperty(ParentNode.prototype, "childElementCount", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ParentNode.prototype, Symbol.unscopables, {
   value: {
     prepend: true,
-    append: true
+    append: true,
   },
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ParentNode.prototype, Symbol.toStringTag, {
   value: "ParentNode",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -233,7 +236,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -243,7 +246,7 @@ const iface = {
     return obj;
   },
   interface: ParentNode,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

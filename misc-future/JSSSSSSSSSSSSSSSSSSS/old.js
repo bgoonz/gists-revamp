@@ -19,9 +19,9 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var pathModule = require('path');
-var isWindows = process.platform === 'win32';
-var fs = require('fs');
+var pathModule = require("path");
+var isWindows = process.platform === "win32";
+var fs = require("fs");
 
 // JavaScript implementation of realpath, ported from node pre-v6
 
@@ -32,10 +32,9 @@ function rethrow() {
   // is fairly slow to generate.
   var callback;
   if (DEBUG) {
-    var backtrace = new Error;
+    var backtrace = new Error();
     callback = debugCallback;
-  } else
-    callback = missingCallback;
+  } else callback = missingCallback;
 
   return callback;
 
@@ -49,21 +48,19 @@ function rethrow() {
 
   function missingCallback(err) {
     if (err) {
-      if (process.throwDeprecation)
-        throw err;  // Forgot a callback but don't know where? Use NODE_DEBUG=fs
+      if (process.throwDeprecation) throw err;
+      // Forgot a callback but don't know where? Use NODE_DEBUG=fs
       else if (!process.noDeprecation) {
-        var msg = 'fs: missing callback ' + (err.stack || err.message);
-        if (process.traceDeprecation)
-          console.trace(msg);
-        else
-          console.error(msg);
+        var msg = "fs: missing callback " + (err.stack || err.message);
+        if (process.traceDeprecation) console.trace(msg);
+        else console.error(msg);
       }
     }
   }
 }
 
 function maybeCallback(cb) {
-  return typeof cb === 'function' ? cb : rethrow();
+  return typeof cb === "function" ? cb : rethrow();
 }
 
 var normalize = pathModule.normalize;
@@ -92,8 +89,8 @@ exports.realpathSync = function realpathSync(p, cache) {
   }
 
   var original = p,
-      seenLinks = {},
-      knownHard = {};
+    seenLinks = {},
+    knownHard = {};
 
   // current character position in p
   var pos;
@@ -112,7 +109,7 @@ exports.realpathSync = function realpathSync(p, cache) {
     pos = m[0].length;
     current = m[0];
     base = m[0];
-    previous = '';
+    previous = "";
 
     // On windows, check that the root exists. On unix there is no need.
     if (isWindows && !knownHard[base]) {
@@ -154,7 +151,7 @@ exports.realpathSync = function realpathSync(p, cache) {
       // dev/ino always return 0 on windows, so skip the check.
       var linkTarget = null;
       if (!isWindows) {
-        var id = stat.dev.toString(32) + ':' + stat.ino.toString(32);
+        var id = stat.dev.toString(32) + ":" + stat.ino.toString(32);
         if (seenLinks.hasOwnProperty(id)) {
           linkTarget = seenLinks[id];
         }
@@ -179,9 +176,8 @@ exports.realpathSync = function realpathSync(p, cache) {
   return p;
 };
 
-
 exports.realpath = function realpath(p, cache, cb) {
-  if (typeof cb !== 'function') {
+  if (typeof cb !== "function") {
     cb = maybeCallback(cache);
     cache = null;
   }
@@ -194,8 +190,8 @@ exports.realpath = function realpath(p, cache, cb) {
   }
 
   var original = p,
-      seenLinks = {},
-      knownHard = {};
+    seenLinks = {},
+    knownHard = {};
 
   // current character position in p
   var pos;
@@ -214,11 +210,11 @@ exports.realpath = function realpath(p, cache, cb) {
     pos = m[0].length;
     current = m[0];
     base = m[0];
-    previous = '';
+    previous = "";
 
     // On windows, check that the root exists. On unix there is no need.
     if (isWindows && !knownHard[base]) {
-      fs.lstat(base, function(err) {
+      fs.lstat(base, function (err) {
         if (err) return cb(err);
         knownHard[base] = true;
         LOOP();
@@ -272,15 +268,15 @@ exports.realpath = function realpath(p, cache, cb) {
     // call gotTarget as soon as the link target is known
     // dev/ino always return 0 on windows, so skip the check.
     if (!isWindows) {
-      var id = stat.dev.toString(32) + ':' + stat.ino.toString(32);
+      var id = stat.dev.toString(32) + ":" + stat.ino.toString(32);
       if (seenLinks.hasOwnProperty(id)) {
         return gotTarget(null, seenLinks[id], base);
       }
     }
-    fs.stat(base, function(err) {
+    fs.stat(base, function (err) {
       if (err) return cb(err);
 
-      fs.readlink(base, function(err, target) {
+      fs.readlink(base, function (err, target) {
         if (!isWindows) seenLinks[id] = target;
         gotTarget(err, target);
       });

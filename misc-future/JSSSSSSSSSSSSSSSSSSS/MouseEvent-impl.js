@@ -1,15 +1,29 @@
 "use strict";
 
 const { mixin } = require("../../utils");
-const EventModifierMixinImpl = require("./EventModifierMixin-impl").implementation;
+const EventModifierMixinImpl =
+  require("./EventModifierMixin-impl").implementation;
 const UIEventImpl = require("./UIEvent-impl").implementation;
 
 const MouseEventInit = require("../generated/MouseEventInit");
 
 class MouseEventImpl extends UIEventImpl {
   initMouseEvent(
-    type, bubbles, cancelable, view, detail, screenX, screenY, clientX, clientY,
-    ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget
+    type,
+    bubbles,
+    cancelable,
+    view,
+    detail,
+    screenX,
+    screenY,
+    clientX,
+    clientY,
+    ctrlKey,
+    altKey,
+    shiftKey,
+    metaKey,
+    button,
+    relatedTarget
   ) {
     if (this._dispatchFlag) {
       return;
@@ -32,5 +46,5 @@ mixin(MouseEventImpl.prototype, EventModifierMixinImpl.prototype);
 MouseEventImpl.defaultInit = MouseEventInit.convert(undefined);
 
 module.exports = {
-  implementation: MouseEventImpl
+  implementation: MouseEventImpl,
 };

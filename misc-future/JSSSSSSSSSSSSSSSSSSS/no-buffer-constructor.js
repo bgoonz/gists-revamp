@@ -9,37 +9,41 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow use of the `Buffer()` constructor",
-            category: "Node.js and CommonJS",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-buffer-constructor"
-        },
-
-        schema: [],
-
-        messages: {
-            deprecated: "{{expr}} is deprecated. Use Buffer.from(), Buffer.alloc(), or Buffer.allocUnsafe() instead."
-        }
+    docs: {
+      description: "disallow use of the `Buffer()` constructor",
+      category: "Node.js and CommonJS",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-buffer-constructor",
     },
 
-    create(context) {
+    schema: [],
 
-        //----------------------------------------------------------------------
-        // Public
-        //----------------------------------------------------------------------
+    messages: {
+      deprecated:
+        "{{expr}} is deprecated. Use Buffer.from(), Buffer.alloc(), or Buffer.allocUnsafe() instead.",
+    },
+  },
 
-        return {
-            "CallExpression[callee.name='Buffer'], NewExpression[callee.name='Buffer']"(node) {
-                context.report({
-                    node,
-                    messageId: "deprecated",
-                    data: { expr: node.type === "CallExpression" ? "Buffer()" : "new Buffer()" }
-                });
-            }
-        };
-    }
+  create(context) {
+    //----------------------------------------------------------------------
+    // Public
+    //----------------------------------------------------------------------
+
+    return {
+      "CallExpression[callee.name='Buffer'], NewExpression[callee.name='Buffer']"(
+        node
+      ) {
+        context.report({
+          node,
+          messageId: "deprecated",
+          data: {
+            expr: node.type === "CallExpression" ? "Buffer()" : "new Buffer()",
+          },
+        });
+      },
+    };
+  },
 };

@@ -11,46 +11,65 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow comparisons where both sides are exactly the same",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-self-compare"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow comparisons where both sides are exactly the same",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-self-compare",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
+    schema: [],
+  },
 
-        /**
-         * Determines whether two nodes are composed of the same tokens.
-         * @param {ASTNode} nodeA The first node
-         * @param {ASTNode} nodeB The second node
-         * @returns {boolean} true if the nodes have identical token representations
-         */
-        function hasSameTokens(nodeA, nodeB) {
-            const tokensA = sourceCode.getTokens(nodeA);
-            const tokensB = sourceCode.getTokens(nodeB);
+  create(context) {
+    const sourceCode = context.getSourceCode();
 
-            return tokensA.length === tokensB.length &&
-                tokensA.every((token, index) => token.type === tokensB[index].type && token.value === tokensB[index].value);
-        }
+    /**
+     * Determines whether two nodes are composed of the same tokens.
+     * @param {ASTNode} nodeA The first node
+     * @param {ASTNode} nodeB The second node
+     * @returns {boolean} true if the nodes have identical token representations
+     */
+    function hasSameTokens(nodeA, nodeB) {
+      const tokensA = sourceCode.getTokens(nodeA);
+      const tokensB = sourceCode.getTokens(nodeB);
 
-        return {
-
-            BinaryExpression(node) {
-                const operators = new Set(["===", "==", "!==", "!=", ">", "<", ">=", "<="]);
-
-                if (operators.has(node.operator) && hasSameTokens(node.left, node.right)) {
-                    context.report({ node, message: "Comparing to itself is potentially pointless." });
-                }
-            }
-        };
-
+      return (
+        tokensA.length === tokensB.length &&
+        tokensA.every(
+          (token, index) =>
+            token.type === tokensB[index].type &&
+            token.value === tokensB[index].value
+        )
+      );
     }
+
+    return {
+      BinaryExpression(node) {
+        const operators = new Set([
+          "===",
+          "==",
+          "!==",
+          "!=",
+          ">",
+          "<",
+          ">=",
+          "<=",
+        ]);
+
+        if (
+          operators.has(node.operator) &&
+          hasSameTokens(node.left, node.right)
+        ) {
+          context.report({
+            node,
+            message: "Comparing to itself is potentially pointless.",
+          });
+        }
+      },
+    };
+  },
 };

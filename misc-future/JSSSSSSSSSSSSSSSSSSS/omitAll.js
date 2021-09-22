@@ -1,1 +1,1 @@
-module.exports = require('./omit');
+module.exports = require("./omit");

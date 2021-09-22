@@ -7,10 +7,10 @@
 const astUtils = require("../util/ast-utils");
 
 const NODE_DESCRIPTIONS = {
-    DoWhileStatement: "a 'do...while' statement",
-    ForStatement: "a 'for' statement",
-    IfStatement: "an 'if' statement",
-    WhileStatement: "a 'while' statement"
+  DoWhileStatement: "a 'do...while' statement",
+  ForStatement: "a 'for' statement",
+  IfStatement: "an 'if' statement",
+  WhileStatement: "a 'while' statement",
 };
 
 //------------------------------------------------------------------------------
@@ -18,132 +18,135 @@ const NODE_DESCRIPTIONS = {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow assignment operators in conditional expressions",
-            category: "Possible Errors",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-cond-assign"
-        },
-
-        schema: [
-            {
-                enum: ["except-parens", "always"]
-            }
-        ],
-
-        messages: {
-            unexpected: "Unexpected assignment within {{type}}.",
-
-            // must match JSHint's error message
-            missing: "Expected a conditional expression and instead saw an assignment."
-        }
+    docs: {
+      description: "disallow assignment operators in conditional expressions",
+      category: "Possible Errors",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-cond-assign",
     },
 
-    create(context) {
+    schema: [
+      {
+        enum: ["except-parens", "always"],
+      },
+    ],
 
-        const prohibitAssign = (context.options[0] || "except-parens");
+    messages: {
+      unexpected: "Unexpected assignment within {{type}}.",
 
-        const sourceCode = context.getSourceCode();
+      // must match JSHint's error message
+      missing:
+        "Expected a conditional expression and instead saw an assignment.",
+    },
+  },
 
-        /**
-         * Check whether an AST node is the test expression for a conditional statement.
-         * @param {!Object} node The node to test.
-         * @returns {boolean} `true` if the node is the text expression for a conditional statement; otherwise, `false`.
-         */
-        function isConditionalTestExpression(node) {
-            return node.parent &&
-                node.parent.test &&
-                node === node.parent.test;
-        }
+  create(context) {
+    const prohibitAssign = context.options[0] || "except-parens";
 
-        /**
-         * Given an AST node, perform a bottom-up search for the first ancestor that represents a conditional statement.
-         * @param {!Object} node The node to use at the start of the search.
-         * @returns {?Object} The closest ancestor node that represents a conditional statement.
-         */
-        function findConditionalAncestor(node) {
-            let currentAncestor = node;
+    const sourceCode = context.getSourceCode();
 
-            do {
-                if (isConditionalTestExpression(currentAncestor)) {
-                    return currentAncestor.parent;
-                }
-            } while ((currentAncestor = currentAncestor.parent) && !astUtils.isFunction(currentAncestor));
-
-            return null;
-        }
-
-        /**
-         * Check whether the code represented by an AST node is enclosed in two sets of parentheses.
-         * @param {!Object} node The node to test.
-         * @returns {boolean} `true` if the code is enclosed in two sets of parentheses; otherwise, `false`.
-         */
-        function isParenthesisedTwice(node) {
-            const previousToken = sourceCode.getTokenBefore(node, 1),
-                nextToken = sourceCode.getTokenAfter(node, 1);
-
-            return astUtils.isParenthesised(sourceCode, node) &&
-                astUtils.isOpeningParenToken(previousToken) && previousToken.range[1] <= node.range[0] &&
-                astUtils.isClosingParenToken(nextToken) && nextToken.range[0] >= node.range[1];
-        }
-
-        /**
-         * Check a conditional statement's test expression for top-level assignments that are not enclosed in parentheses.
-         * @param {!Object} node The node for the conditional statement.
-         * @returns {void}
-         */
-        function testForAssign(node) {
-            if (node.test &&
-                (node.test.type === "AssignmentExpression") &&
-                (node.type === "ForStatement"
-                    ? !astUtils.isParenthesised(sourceCode, node.test)
-                    : !isParenthesisedTwice(node.test)
-                )
-            ) {
-
-                context.report({
-                    node,
-                    loc: node.test.loc.start,
-                    messageId: "missing"
-                });
-            }
-        }
-
-        /**
-         * Check whether an assignment expression is descended from a conditional statement's test expression.
-         * @param {!Object} node The node for the assignment expression.
-         * @returns {void}
-         */
-        function testForConditionalAncestor(node) {
-            const ancestor = findConditionalAncestor(node);
-
-            if (ancestor) {
-                context.report({
-                    node: ancestor,
-                    messageId: "unexpected",
-                    data: {
-                        type: NODE_DESCRIPTIONS[ancestor.type] || ancestor.type
-                    }
-                });
-            }
-        }
-
-        if (prohibitAssign === "always") {
-            return {
-                AssignmentExpression: testForConditionalAncestor
-            };
-        }
-
-        return {
-            DoWhileStatement: testForAssign,
-            ForStatement: testForAssign,
-            IfStatement: testForAssign,
-            WhileStatement: testForAssign,
-            ConditionalExpression: testForAssign
-        };
-
+    /**
+     * Check whether an AST node is the test expression for a conditional statement.
+     * @param {!Object} node The node to test.
+     * @returns {boolean} `true` if the node is the text expression for a conditional statement; otherwise, `false`.
+     */
+    function isConditionalTestExpression(node) {
+      return node.parent && node.parent.test && node === node.parent.test;
     }
+
+    /**
+     * Given an AST node, perform a bottom-up search for the first ancestor that represents a conditional statement.
+     * @param {!Object} node The node to use at the start of the search.
+     * @returns {?Object} The closest ancestor node that represents a conditional statement.
+     */
+    function findConditionalAncestor(node) {
+      let currentAncestor = node;
+
+      do {
+        if (isConditionalTestExpression(currentAncestor)) {
+          return currentAncestor.parent;
+        }
+      } while (
+        (currentAncestor = currentAncestor.parent) &&
+        !astUtils.isFunction(currentAncestor)
+      );
+
+      return null;
+    }
+
+    /**
+     * Check whether the code represented by an AST node is enclosed in two sets of parentheses.
+     * @param {!Object} node The node to test.
+     * @returns {boolean} `true` if the code is enclosed in two sets of parentheses; otherwise, `false`.
+     */
+    function isParenthesisedTwice(node) {
+      const previousToken = sourceCode.getTokenBefore(node, 1),
+        nextToken = sourceCode.getTokenAfter(node, 1);
+
+      return (
+        astUtils.isParenthesised(sourceCode, node) &&
+        astUtils.isOpeningParenToken(previousToken) &&
+        previousToken.range[1] <= node.range[0] &&
+        astUtils.isClosingParenToken(nextToken) &&
+        nextToken.range[0] >= node.range[1]
+      );
+    }
+
+    /**
+     * Check a conditional statement's test expression for top-level assignments that are not enclosed in parentheses.
+     * @param {!Object} node The node for the conditional statement.
+     * @returns {void}
+     */
+    function testForAssign(node) {
+      if (
+        node.test &&
+        node.test.type === "AssignmentExpression" &&
+        (node.type === "ForStatement"
+          ? !astUtils.isParenthesised(sourceCode, node.test)
+          : !isParenthesisedTwice(node.test))
+      ) {
+        context.report({
+          node,
+          loc: node.test.loc.start,
+          messageId: "missing",
+        });
+      }
+    }
+
+    /**
+     * Check whether an assignment expression is descended from a conditional statement's test expression.
+     * @param {!Object} node The node for the assignment expression.
+     * @returns {void}
+     */
+    function testForConditionalAncestor(node) {
+      const ancestor = findConditionalAncestor(node);
+
+      if (ancestor) {
+        context.report({
+          node: ancestor,
+          messageId: "unexpected",
+          data: {
+            type: NODE_DESCRIPTIONS[ancestor.type] || ancestor.type,
+          },
+        });
+      }
+    }
+
+    if (prohibitAssign === "always") {
+      return {
+        AssignmentExpression: testForConditionalAncestor,
+      };
+    }
+
+    return {
+      DoWhileStatement: testForAssign,
+      ForStatement: testForAssign,
+      IfStatement: testForAssign,
+      WhileStatement: testForAssign,
+      ConditionalExpression: testForAssign,
+    };
+  },
 };

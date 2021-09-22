@@ -10,36 +10,35 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow division operators explicitly at the beginning of regular expressions",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-div-regex"
-        },
-
-        schema: [],
-
-        messages: {
-            unexpected: "A regular expression literal can be confused with '/='."
-        }
+    docs: {
+      description:
+        "disallow division operators explicitly at the beginning of regular expressions",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-div-regex",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
+    schema: [],
 
-        return {
+    messages: {
+      unexpected: "A regular expression literal can be confused with '/='.",
+    },
+  },
 
-            Literal(node) {
-                const token = sourceCode.getFirstToken(node);
+  create(context) {
+    const sourceCode = context.getSourceCode();
 
-                if (token.type === "RegularExpression" && token.value[1] === "=") {
-                    context.report({ node, messageId: "unexpected" });
-                }
-            }
-        };
+    return {
+      Literal(node) {
+        const token = sourceCode.getFirstToken(node);
 
-    }
+        if (token.type === "RegularExpression" && token.value[1] === "=") {
+          context.report({ node, messageId: "unexpected" });
+        }
+      },
+    };
+  },
 };

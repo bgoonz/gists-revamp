@@ -11,6 +11,7 @@ exports.serializeInteger = require("./url-state-machine").serializeInteger;
 exports.serializeURLOrigin = require("./url-state-machine").serializeURLOrigin;
 exports.setTheUsername = require("./url-state-machine").setTheUsername;
 exports.setThePassword = require("./url-state-machine").setThePassword;
-exports.cannotHaveAUsernamePasswordPort = require("./url-state-machine").cannotHaveAUsernamePasswordPort;
+exports.cannotHaveAUsernamePasswordPort =
+  require("./url-state-machine").cannotHaveAUsernamePasswordPort;
 
 exports.percentDecode = require("./urlencoded").percentDecode;

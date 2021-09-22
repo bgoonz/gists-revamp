@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.ImportSpecifier = ImportSpecifier;
 exports.ImportDefaultSpecifier = ImportDefaultSpecifier;
@@ -23,7 +23,7 @@ const {
   isExportNamespaceSpecifier,
   isImportDefaultSpecifier,
   isImportNamespaceSpecifier,
-  isStatement
+  isStatement,
 } = _t;
 
 function ImportSpecifier(node) {
@@ -88,7 +88,10 @@ function ExportAllDeclaration(node) {
 }
 
 function ExportNamedDeclaration(node) {
-  if (this.format.decoratorsBeforeExport && isClassDeclaration(node.declaration)) {
+  if (
+    this.format.decoratorsBeforeExport &&
+    isClassDeclaration(node.declaration)
+  ) {
     this.printJoin(node.declaration.decorators, node);
   }
 
@@ -98,7 +101,10 @@ function ExportNamedDeclaration(node) {
 }
 
 function ExportDefaultDeclaration(node) {
-  if (this.format.decoratorsBeforeExport && isClassDeclaration(node.declaration)) {
+  if (
+    this.format.decoratorsBeforeExport &&
+    isClassDeclaration(node.declaration)
+  ) {
     this.printJoin(node.declaration.decorators, node);
   }
 
@@ -126,7 +132,10 @@ function ExportDeclaration(node) {
     for (;;) {
       const first = specifiers[0];
 
-      if (isExportDefaultSpecifier(first) || isExportNamespaceSpecifier(first)) {
+      if (
+        isExportDefaultSpecifier(first) ||
+        isExportNamespaceSpecifier(first)
+      ) {
         hasSpecial = true;
         this.print(specifiers.shift(), node);
 
@@ -139,7 +148,7 @@ function ExportDeclaration(node) {
       }
     }
 
-    if (specifiers.length || !specifiers.length && !hasSpecial) {
+    if (specifiers.length || (!specifiers.length && !hasSpecial)) {
       this.token("{");
 
       if (specifiers.length) {
@@ -178,7 +187,10 @@ function ImportDeclaration(node) {
     for (;;) {
       const first = specifiers[0];
 
-      if (isImportDefaultSpecifier(first) || isImportNamespaceSpecifier(first)) {
+      if (
+        isImportDefaultSpecifier(first) ||
+        isImportNamespaceSpecifier(first)
+      ) {
         this.print(specifiers.shift(), node);
 
         if (specifiers.length) {
@@ -208,7 +220,10 @@ function ImportDeclaration(node) {
   {
     var _node$attributes;
 
-    if ((_node$attributes = node.attributes) != null && _node$attributes.length) {
+    if (
+      (_node$attributes = node.attributes) != null &&
+      _node$attributes.length
+    ) {
       this.space();
       this.word("with");
       this.space();

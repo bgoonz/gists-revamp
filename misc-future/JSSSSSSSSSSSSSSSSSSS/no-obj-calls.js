@@ -10,33 +10,34 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow calling global object properties as functions",
-            category: "Possible Errors",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-obj-calls"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow calling global object properties as functions",
+      category: "Possible Errors",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-obj-calls",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
-            CallExpression(node) {
+  create(context) {
+    return {
+      CallExpression(node) {
+        if (node.callee.type === "Identifier") {
+          const name = node.callee.name;
 
-                if (node.callee.type === "Identifier") {
-                    const name = node.callee.name;
-
-                    if (name === "Math" || name === "JSON" || name === "Reflect") {
-                        context.report({ node, message: "'{{name}}' is not a function.", data: { name } });
-                    }
-                }
-            }
-        };
-
-    }
+          if (name === "Math" || name === "JSON" || name === "Reflect") {
+            context.report({
+              node,
+              message: "'{{name}}' is not a function.",
+              data: { name },
+            });
+          }
+        }
+      },
+    };
+  },
 };

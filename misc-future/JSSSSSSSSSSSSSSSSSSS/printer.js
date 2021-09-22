@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -13,20 +13,12 @@ var _t = require("@babel/types");
 
 var generatorFunctions = require("./generators");
 
-const {
-  isProgram,
-  isFile,
-  isEmptyStatement
-} = _t;
+const { isProgram, isFile, isEmptyStatement } = _t;
 const SCIENTIFIC_NOTATION = /e/i;
 const ZERO_DECIMAL_INTEGER = /\.0+$/;
 const NON_DECIMAL_LITERAL = /^0[box]/;
 const PURE_ANNOTATION_RE = /^\s*[@#]__PURE__\s*$/;
-const {
-  needsParens,
-  needsWhitespaceAfter,
-  needsWhitespaceBefore
-} = n;
+const { needsParens, needsWhitespaceAfter, needsWhitespaceBefore } = n;
 
 class Printer {
   constructor(format, map) {
@@ -91,7 +83,7 @@ class Printer {
   }
 
   word(str) {
-    if (this._endsWithWord || this.endsWith(47) && str.charCodeAt(0) === 47) {
+    if (this._endsWithWord || (this.endsWith(47) && str.charCodeAt(0) === 47)) {
       this._space();
     }
 
@@ -104,14 +96,24 @@ class Printer {
 
   number(str) {
     this.word(str);
-    this._endsWithInteger = Number.isInteger(+str) && !NON_DECIMAL_LITERAL.test(str) && !SCIENTIFIC_NOTATION.test(str) && !ZERO_DECIMAL_INTEGER.test(str) && str.charCodeAt(str.length - 1) !== 46;
+    this._endsWithInteger =
+      Number.isInteger(+str) &&
+      !NON_DECIMAL_LITERAL.test(str) &&
+      !SCIENTIFIC_NOTATION.test(str) &&
+      !ZERO_DECIMAL_INTEGER.test(str) &&
+      str.charCodeAt(str.length - 1) !== 46;
   }
 
   token(str) {
     const lastChar = this.getLastChar();
     const strFirst = str.charCodeAt(0);
 
-    if (str === "--" && lastChar === 33 || strFirst === 43 && lastChar === 43 || strFirst === 45 && lastChar === 45 || strFirst === 46 && this._endsWithInteger) {
+    if (
+      (str === "--" && lastChar === 33) ||
+      (strFirst === 43 && lastChar === 43) ||
+      (strFirst === 45 && lastChar === 45) ||
+      (strFirst === 46 && this._endsWithInteger)
+    ) {
       this._space();
     }
 
@@ -189,7 +191,8 @@ class Printer {
 
     this._maybeIndent(str);
 
-    if (queue) this._buf.queue(str);else this._buf.append(str);
+    if (queue) this._buf.queue(str);
+    else this._buf.append(str);
     this._endsWithWord = false;
     this._endsWithInteger = false;
   }
@@ -258,9 +261,9 @@ class Printer {
       this._noLineTerminator = true;
       return null;
     } else {
-      return this._parenPushNewlineState = {
-        printed: false
-      };
+      return (this._parenPushNewlineState = {
+        printed: false,
+      });
     }
   }
 
@@ -285,7 +288,13 @@ class Printer {
     const printMethod = this[node.type];
 
     if (!printMethod) {
-      throw new ReferenceError(`unknown node of type ${JSON.stringify(node.type)} with constructor ${JSON.stringify(node == null ? void 0 : node.constructor.name)}`);
+      throw new ReferenceError(
+        `unknown node of type ${JSON.stringify(
+          node.type
+        )} with constructor ${JSON.stringify(
+          node == null ? void 0 : node.constructor.name
+        )}`
+      );
     }
 
     this._printStack.push(node);
@@ -297,7 +306,12 @@ class Printer {
 
     let shouldPrintParens = needsParens(node, parent, this._printStack);
 
-    if (this.format.retainFunctionParens && node.type === "FunctionExpression" && node.extra && node.extra.parenthesized) {
+    if (
+      this.format.retainFunctionParens &&
+      node.type === "FunctionExpression" &&
+      node.extra &&
+      node.extra.parenthesized
+    ) {
       shouldPrintParens = true;
     }
 
@@ -333,7 +347,7 @@ class Printer {
     if (comment) {
       this._printComment({
         type: "CommentBlock",
-        value: comment
+        value: comment,
       });
     }
   }
@@ -346,7 +360,7 @@ class Printer {
     if (comment) {
       this._printComment({
         type: "CommentBlock",
-        value: comment
+        value: comment,
       });
     }
   }
@@ -354,7 +368,12 @@ class Printer {
   getPossibleRaw(node) {
     const extra = node.extra;
 
-    if (extra && extra.raw != null && extra.rawValue != null && node.value === extra.rawValue) {
+    if (
+      extra &&
+      extra.raw != null &&
+      extra.rawValue != null &&
+      node.value === extra.rawValue
+    ) {
       return extra.raw;
     }
   }
@@ -363,7 +382,7 @@ class Printer {
     if (!(nodes != null && nodes.length)) return;
     if (opts.indent) this.indent();
     const newlineOpts = {
-      addNewlines: opts.addNewlines
+      addNewlines: opts.addNewlines,
     };
 
     for (let i = 0; i < nodes.length; i++) {
@@ -414,7 +433,13 @@ class Printer {
   printInnerComments(node, indent = true) {
     var _node$innerComments;
 
-    if (!((_node$innerComments = node.innerComments) != null && _node$innerComments.length)) return;
+    if (
+      !(
+        (_node$innerComments = node.innerComments) != null &&
+        _node$innerComments.length
+      )
+    )
+      return;
     if (indent) this.indent();
 
     this._printComments(node.innerComments);
@@ -456,7 +481,9 @@ class Printer {
   }
 
   _getComments(leading, node) {
-    return node && (leading ? node.leadingComments : node.trailingComments) || [];
+    return (
+      (node && (leading ? node.leadingComments : node.trailingComments)) || []
+    );
   }
 
   _printComment(comment, skipNewLines) {
@@ -467,7 +494,8 @@ class Printer {
     this._printedComments.add(comment);
 
     const isBlockComment = comment.type === "CommentBlock";
-    const printNewLines = isBlockComment && !skipNewLines && !this._noLineTerminator;
+    const printNewLines =
+      isBlockComment && !skipNewLines && !this._noLineTerminator;
     if (printNewLines && this._buf.hasContent()) this.newline(1);
     const lastCharCode = this.getLastChar();
 
@@ -475,19 +503,28 @@ class Printer {
       this.space();
     }
 
-    let val = !isBlockComment && !this._noLineTerminator ? `//${comment.value}\n` : `/*${comment.value}*/`;
+    let val =
+      !isBlockComment && !this._noLineTerminator
+        ? `//${comment.value}\n`
+        : `/*${comment.value}*/`;
 
     if (isBlockComment && this.format.indent.adjustMultilineComment) {
       var _comment$loc;
 
-      const offset = (_comment$loc = comment.loc) == null ? void 0 : _comment$loc.start.column;
+      const offset =
+        (_comment$loc = comment.loc) == null
+          ? void 0
+          : _comment$loc.start.column;
 
       if (offset) {
         const newlineRegex = new RegExp("\\n\\s{1," + offset + "}", "g");
         val = val.replace(newlineRegex, "\n");
       }
 
-      const indentSize = Math.max(this._getIndent().length, this.format.retainLines ? 0 : this._buf.getCurrentColumn());
+      const indentSize = Math.max(
+        this._getIndent().length,
+        this.format.retainLines ? 0 : this._buf.getCurrentColumn()
+      );
       val = val.replace(/\n(?!$)/g, `\n${" ".repeat(indentSize)}`);
     }
 
@@ -501,8 +538,15 @@ class Printer {
   _printComments(comments, inlinePureAnnotation) {
     if (!(comments != null && comments.length)) return;
 
-    if (inlinePureAnnotation && comments.length === 1 && PURE_ANNOTATION_RE.test(comments[0].value)) {
-      this._printComment(comments[0], this._buf.hasContent() && !this.endsWith(10));
+    if (
+      inlinePureAnnotation &&
+      comments.length === 1 &&
+      PURE_ANNOTATION_RE.test(comments[0].value)
+    ) {
+      this._printComment(
+        comments[0],
+        this._buf.hasContent() && !this.endsWith(10)
+      );
     } else {
       for (const comment of comments) {
         this._printComment(comment);
@@ -513,7 +557,10 @@ class Printer {
   printAssertions(node) {
     var _node$assertions;
 
-    if ((_node$assertions = node.assertions) != null && _node$assertions.length) {
+    if (
+      (_node$assertions = node.assertions) != null &&
+      _node$assertions.length
+    ) {
       this.space();
       this.word("assert");
       this.space();
@@ -524,7 +571,6 @@ class Printer {
       this.token("}");
     }
   }
-
 }
 
 Object.assign(Printer.prototype, generatorFunctions);

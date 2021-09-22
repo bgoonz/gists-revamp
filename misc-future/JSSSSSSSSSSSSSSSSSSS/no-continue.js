@@ -10,30 +10,28 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow `continue` statements",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-continue"
-        },
-
-        schema: [],
-
-        messages: {
-            unexpected: "Unexpected use of continue statement."
-        }
+    docs: {
+      description: "disallow `continue` statements",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-continue",
     },
 
-    create(context) {
+    schema: [],
 
-        return {
-            ContinueStatement(node) {
-                context.report({ node, messageId: "unexpected" });
-            }
-        };
+    messages: {
+      unexpected: "Unexpected use of continue statement.",
+    },
+  },
 
-    }
+  create(context) {
+    return {
+      ContinueStatement(node) {
+        context.report({ node, messageId: "unexpected" });
+      },
+    };
+  },
 };

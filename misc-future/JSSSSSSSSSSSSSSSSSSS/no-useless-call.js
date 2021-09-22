@@ -17,17 +17,16 @@ const astUtils = require("../util/ast-utils");
  * @returns {boolean} Whether or not the node is a `.call()`/`.apply()`.
  */
 function isCallOrNonVariadicApply(node) {
-    return (
-        node.callee.type === "MemberExpression" &&
-        node.callee.property.type === "Identifier" &&
-        node.callee.computed === false &&
-        (
-            (node.callee.property.name === "call" && node.arguments.length >= 1) ||
-            (node.callee.property.name === "apply" && node.arguments.length === 2 && node.arguments[1].type === "ArrayExpression")
-        )
-    );
+  return (
+    node.callee.type === "MemberExpression" &&
+    node.callee.property.type === "Identifier" &&
+    node.callee.computed === false &&
+    ((node.callee.property.name === "call" && node.arguments.length >= 1) ||
+      (node.callee.property.name === "apply" &&
+        node.arguments.length === 2 &&
+        node.arguments[1].type === "ArrayExpression"))
+  );
 }
-
 
 /**
  * Checks whether or not `thisArg` is not changed by `.call()`/`.apply()`.
@@ -37,10 +36,10 @@ function isCallOrNonVariadicApply(node) {
  * @returns {boolean} Whether or not `thisArg` is not changed by `.call()`/`.apply()`.
  */
 function isValidThisArg(expectedThis, thisArg, sourceCode) {
-    if (!expectedThis) {
-        return astUtils.isNullOrUndefined(thisArg);
-    }
-    return astUtils.equalTokens(expectedThis, thisArg, sourceCode);
+  if (!expectedThis) {
+    return astUtils.isNullOrUndefined(thisArg);
+  }
+  return astUtils.equalTokens(expectedThis, thisArg, sourceCode);
 }
 
 //------------------------------------------------------------------------------
@@ -48,36 +47,41 @@ function isValidThisArg(expectedThis, thisArg, sourceCode) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow unnecessary calls to `.call()` and `.apply()`",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-useless-call"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow unnecessary calls to `.call()` and `.apply()`",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-useless-call",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
+    schema: [],
+  },
 
-        return {
-            CallExpression(node) {
-                if (!isCallOrNonVariadicApply(node)) {
-                    return;
-                }
+  create(context) {
+    const sourceCode = context.getSourceCode();
 
-                const applied = node.callee.object;
-                const expectedThis = (applied.type === "MemberExpression") ? applied.object : null;
-                const thisArg = node.arguments[0];
+    return {
+      CallExpression(node) {
+        if (!isCallOrNonVariadicApply(node)) {
+          return;
+        }
 
-                if (isValidThisArg(expectedThis, thisArg, sourceCode)) {
-                    context.report({ node, message: "unnecessary '.{{name}}()'.", data: { name: node.callee.property.name } });
-                }
-            }
-        };
-    }
+        const applied = node.callee.object;
+        const expectedThis =
+          applied.type === "MemberExpression" ? applied.object : null;
+        const thisArg = node.arguments[0];
+
+        if (isValidThisArg(expectedThis, thisArg, sourceCode)) {
+          context.report({
+            node,
+            message: "unnecessary '.{{name}}()'.",
+            data: { name: node.callee.property.name },
+          });
+        }
+      },
+    };
+  },
 };

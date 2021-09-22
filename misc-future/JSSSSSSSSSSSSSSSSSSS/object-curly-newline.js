@@ -18,28 +18,28 @@ const lodash = require("lodash");
 
 // Schema objects.
 const OPTION_VALUE = {
-    oneOf: [
-        {
-            enum: ["always", "never"]
+  oneOf: [
+    {
+      enum: ["always", "never"],
+    },
+    {
+      type: "object",
+      properties: {
+        multiline: {
+          type: "boolean",
         },
-        {
-            type: "object",
-            properties: {
-                multiline: {
-                    type: "boolean"
-                },
-                minProperties: {
-                    type: "integer",
-                    minimum: 0
-                },
-                consistent: {
-                    type: "boolean"
-                }
-            },
-            additionalProperties: false,
-            minProperties: 1
-        }
-    ]
+        minProperties: {
+          type: "integer",
+          minimum: 0,
+        },
+        consistent: {
+          type: "boolean",
+        },
+      },
+      additionalProperties: false,
+      minProperties: 1,
+    },
+  ],
 };
 
 /**
@@ -49,25 +49,25 @@ const OPTION_VALUE = {
  * @returns {{multiline: boolean, minProperties: number, consistent: boolean}} Normalized option object.
  */
 function normalizeOptionValue(value) {
-    let multiline = false;
-    let minProperties = Number.POSITIVE_INFINITY;
-    let consistent = false;
+  let multiline = false;
+  let minProperties = Number.POSITIVE_INFINITY;
+  let consistent = false;
 
-    if (value) {
-        if (value === "always") {
-            minProperties = 0;
-        } else if (value === "never") {
-            minProperties = Number.POSITIVE_INFINITY;
-        } else {
-            multiline = Boolean(value.multiline);
-            minProperties = value.minProperties || Number.POSITIVE_INFINITY;
-            consistent = Boolean(value.consistent);
-        }
+  if (value) {
+    if (value === "always") {
+      minProperties = 0;
+    } else if (value === "never") {
+      minProperties = Number.POSITIVE_INFINITY;
     } else {
-        consistent = true;
+      multiline = Boolean(value.multiline);
+      minProperties = value.minProperties || Number.POSITIVE_INFINITY;
+      consistent = Boolean(value.consistent);
     }
+  } else {
+    consistent = true;
+  }
 
-    return { multiline, minProperties, consistent };
+  return { multiline, minProperties, consistent };
 }
 
 /**
@@ -82,20 +82,31 @@ function normalizeOptionValue(value) {
  * }} Normalized option object.
  */
 function normalizeOptions(options) {
-    const isNodeSpecificOption = lodash.overSome([lodash.isPlainObject, lodash.isString]);
+  const isNodeSpecificOption = lodash.overSome([
+    lodash.isPlainObject,
+    lodash.isString,
+  ]);
 
-    if (lodash.isPlainObject(options) && lodash.some(options, isNodeSpecificOption)) {
-        return {
-            ObjectExpression: normalizeOptionValue(options.ObjectExpression),
-            ObjectPattern: normalizeOptionValue(options.ObjectPattern),
-            ImportDeclaration: normalizeOptionValue(options.ImportDeclaration),
-            ExportNamedDeclaration: normalizeOptionValue(options.ExportDeclaration)
-        };
-    }
+  if (
+    lodash.isPlainObject(options) &&
+    lodash.some(options, isNodeSpecificOption)
+  ) {
+    return {
+      ObjectExpression: normalizeOptionValue(options.ObjectExpression),
+      ObjectPattern: normalizeOptionValue(options.ObjectPattern),
+      ImportDeclaration: normalizeOptionValue(options.ImportDeclaration),
+      ExportNamedDeclaration: normalizeOptionValue(options.ExportDeclaration),
+    };
+  }
 
-    const value = normalizeOptionValue(options);
+  const value = normalizeOptionValue(options);
 
-    return { ObjectExpression: value, ObjectPattern: value, ImportDeclaration: value, ExportNamedDeclaration: value };
+  return {
+    ObjectExpression: value,
+    ObjectPattern: value,
+    ImportDeclaration: value,
+    ExportNamedDeclaration: value,
+  };
 }
 
 /**
@@ -109,23 +120,23 @@ function normalizeOptions(options) {
  * @returns {boolean} `true` if node needs to be checked for missing line breaks
  */
 function areLineBreaksRequired(node, options, first, last) {
-    let objectProperties;
+  let objectProperties;
 
-    if (node.type === "ObjectExpression" || node.type === "ObjectPattern") {
-        objectProperties = node.properties;
-    } else {
+  if (node.type === "ObjectExpression" || node.type === "ObjectPattern") {
+    objectProperties = node.properties;
+  } else {
+    // is ImportDeclaration or ExportNamedDeclaration
+    objectProperties = node.specifiers.filter(
+      (s) => s.type === "ImportSpecifier" || s.type === "ExportSpecifier"
+    );
+  }
 
-        // is ImportDeclaration or ExportNamedDeclaration
-        objectProperties = node.specifiers
-            .filter(s => s.type === "ImportSpecifier" || s.type === "ExportSpecifier");
-    }
-
-    return objectProperties.length >= options.minProperties ||
-        (
-            options.multiline &&
-            objectProperties.length > 0 &&
-            first.loc.start.line !== last.loc.end.line
-        );
+  return (
+    objectProperties.length >= options.minProperties ||
+    (options.multiline &&
+      objectProperties.length > 0 &&
+      first.loc.start.line !== last.loc.end.line)
+  );
 }
 
 //------------------------------------------------------------------------------
@@ -133,170 +144,184 @@ function areLineBreaksRequired(node, options, first, last) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "layout",
+  meta: {
+    type: "layout",
 
-        docs: {
-            description: "enforce consistent line breaks inside braces",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/object-curly-newline"
-        },
-
-        fixable: "whitespace",
-
-        schema: [
-            {
-                oneOf: [
-                    OPTION_VALUE,
-                    {
-                        type: "object",
-                        properties: {
-                            ObjectExpression: OPTION_VALUE,
-                            ObjectPattern: OPTION_VALUE,
-                            ImportDeclaration: OPTION_VALUE,
-                            ExportDeclaration: OPTION_VALUE
-                        },
-                        additionalProperties: false,
-                        minProperties: 1
-                    }
-                ]
-            }
-        ]
+    docs: {
+      description: "enforce consistent line breaks inside braces",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/object-curly-newline",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
-        const normalizedOptions = normalizeOptions(context.options[0]);
+    fixable: "whitespace",
 
-        /**
-         * Reports a given node if it violated this rule.
-         * @param {ASTNode} node - A node to check. This is an ObjectExpression, ObjectPattern, ImportDeclaration or ExportNamedDeclaration node.
-         * @returns {void}
-         */
-        function check(node) {
-            const options = normalizedOptions[node.type];
+    schema: [
+      {
+        oneOf: [
+          OPTION_VALUE,
+          {
+            type: "object",
+            properties: {
+              ObjectExpression: OPTION_VALUE,
+              ObjectPattern: OPTION_VALUE,
+              ImportDeclaration: OPTION_VALUE,
+              ExportDeclaration: OPTION_VALUE,
+            },
+            additionalProperties: false,
+            minProperties: 1,
+          },
+        ],
+      },
+    ],
+  },
 
-            if (
-                (node.type === "ImportDeclaration" &&
-                    !node.specifiers.some(specifier => specifier.type === "ImportSpecifier")) ||
-                (node.type === "ExportNamedDeclaration" &&
-                    !node.specifiers.some(specifier => specifier.type === "ExportSpecifier"))
-            ) {
-                return;
-            }
+  create(context) {
+    const sourceCode = context.getSourceCode();
+    const normalizedOptions = normalizeOptions(context.options[0]);
 
-            const openBrace = sourceCode.getFirstToken(node, token => token.value === "{");
+    /**
+     * Reports a given node if it violated this rule.
+     * @param {ASTNode} node - A node to check. This is an ObjectExpression, ObjectPattern, ImportDeclaration or ExportNamedDeclaration node.
+     * @returns {void}
+     */
+    function check(node) {
+      const options = normalizedOptions[node.type];
 
-            let closeBrace;
+      if (
+        (node.type === "ImportDeclaration" &&
+          !node.specifiers.some(
+            (specifier) => specifier.type === "ImportSpecifier"
+          )) ||
+        (node.type === "ExportNamedDeclaration" &&
+          !node.specifiers.some(
+            (specifier) => specifier.type === "ExportSpecifier"
+          ))
+      ) {
+        return;
+      }
 
-            if (node.typeAnnotation) {
-                closeBrace = sourceCode.getTokenBefore(node.typeAnnotation);
-            } else {
-                closeBrace = sourceCode.getLastToken(node, token => token.value === "}");
-            }
+      const openBrace = sourceCode.getFirstToken(
+        node,
+        (token) => token.value === "{"
+      );
 
-            let first = sourceCode.getTokenAfter(openBrace, { includeComments: true });
-            let last = sourceCode.getTokenBefore(closeBrace, { includeComments: true });
+      let closeBrace;
 
-            const needsLineBreaks = areLineBreaksRequired(node, options, first, last);
+      if (node.typeAnnotation) {
+        closeBrace = sourceCode.getTokenBefore(node.typeAnnotation);
+      } else {
+        closeBrace = sourceCode.getLastToken(
+          node,
+          (token) => token.value === "}"
+        );
+      }
 
-            const hasCommentsFirstToken = astUtils.isCommentToken(first);
-            const hasCommentsLastToken = astUtils.isCommentToken(last);
+      let first = sourceCode.getTokenAfter(openBrace, {
+        includeComments: true,
+      });
+      let last = sourceCode.getTokenBefore(closeBrace, {
+        includeComments: true,
+      });
 
-            /*
-             * Use tokens or comments to check multiline or not.
-             * But use only tokens to check whether line breaks are needed.
-             * This allows:
-             *     var obj = { // eslint-disable-line foo
-             *         a: 1
-             *     }
-             */
-            first = sourceCode.getTokenAfter(openBrace);
-            last = sourceCode.getTokenBefore(closeBrace);
+      const needsLineBreaks = areLineBreaksRequired(node, options, first, last);
 
-            if (needsLineBreaks) {
-                if (astUtils.isTokenOnSameLine(openBrace, first)) {
-                    context.report({
-                        message: "Expected a line break after this opening brace.",
-                        node,
-                        loc: openBrace.loc.start,
-                        fix(fixer) {
-                            if (hasCommentsFirstToken) {
-                                return null;
-                            }
+      const hasCommentsFirstToken = astUtils.isCommentToken(first);
+      const hasCommentsLastToken = astUtils.isCommentToken(last);
 
-                            return fixer.insertTextAfter(openBrace, "\n");
-                        }
-                    });
-                }
-                if (astUtils.isTokenOnSameLine(last, closeBrace)) {
-                    context.report({
-                        message: "Expected a line break before this closing brace.",
-                        node,
-                        loc: closeBrace.loc.start,
-                        fix(fixer) {
-                            if (hasCommentsLastToken) {
-                                return null;
-                            }
+      /*
+       * Use tokens or comments to check multiline or not.
+       * But use only tokens to check whether line breaks are needed.
+       * This allows:
+       *     var obj = { // eslint-disable-line foo
+       *         a: 1
+       *     }
+       */
+      first = sourceCode.getTokenAfter(openBrace);
+      last = sourceCode.getTokenBefore(closeBrace);
 
-                            return fixer.insertTextBefore(closeBrace, "\n");
-                        }
-                    });
-                }
-            } else {
-                const consistent = options.consistent;
-                const hasLineBreakBetweenOpenBraceAndFirst = !astUtils.isTokenOnSameLine(openBrace, first);
-                const hasLineBreakBetweenCloseBraceAndLast = !astUtils.isTokenOnSameLine(last, closeBrace);
+      if (needsLineBreaks) {
+        if (astUtils.isTokenOnSameLine(openBrace, first)) {
+          context.report({
+            message: "Expected a line break after this opening brace.",
+            node,
+            loc: openBrace.loc.start,
+            fix(fixer) {
+              if (hasCommentsFirstToken) {
+                return null;
+              }
 
-                if (
-                    (!consistent && hasLineBreakBetweenOpenBraceAndFirst) ||
-                    (consistent && hasLineBreakBetweenOpenBraceAndFirst && !hasLineBreakBetweenCloseBraceAndLast)
-                ) {
-                    context.report({
-                        message: "Unexpected line break after this opening brace.",
-                        node,
-                        loc: openBrace.loc.start,
-                        fix(fixer) {
-                            if (hasCommentsFirstToken) {
-                                return null;
-                            }
-
-                            return fixer.removeRange([
-                                openBrace.range[1],
-                                first.range[0]
-                            ]);
-                        }
-                    });
-                }
-                if (
-                    (!consistent && hasLineBreakBetweenCloseBraceAndLast) ||
-                    (consistent && !hasLineBreakBetweenOpenBraceAndFirst && hasLineBreakBetweenCloseBraceAndLast)
-                ) {
-                    context.report({
-                        message: "Unexpected line break before this closing brace.",
-                        node,
-                        loc: closeBrace.loc.start,
-                        fix(fixer) {
-                            if (hasCommentsLastToken) {
-                                return null;
-                            }
-
-                            return fixer.removeRange([
-                                last.range[1],
-                                closeBrace.range[0]
-                            ]);
-                        }
-                    });
-                }
-            }
+              return fixer.insertTextAfter(openBrace, "\n");
+            },
+          });
         }
+        if (astUtils.isTokenOnSameLine(last, closeBrace)) {
+          context.report({
+            message: "Expected a line break before this closing brace.",
+            node,
+            loc: closeBrace.loc.start,
+            fix(fixer) {
+              if (hasCommentsLastToken) {
+                return null;
+              }
 
-        return {
-            ObjectExpression: check,
-            ObjectPattern: check,
-            ImportDeclaration: check,
-            ExportNamedDeclaration: check
-        };
+              return fixer.insertTextBefore(closeBrace, "\n");
+            },
+          });
+        }
+      } else {
+        const consistent = options.consistent;
+        const hasLineBreakBetweenOpenBraceAndFirst =
+          !astUtils.isTokenOnSameLine(openBrace, first);
+        const hasLineBreakBetweenCloseBraceAndLast =
+          !astUtils.isTokenOnSameLine(last, closeBrace);
+
+        if (
+          (!consistent && hasLineBreakBetweenOpenBraceAndFirst) ||
+          (consistent &&
+            hasLineBreakBetweenOpenBraceAndFirst &&
+            !hasLineBreakBetweenCloseBraceAndLast)
+        ) {
+          context.report({
+            message: "Unexpected line break after this opening brace.",
+            node,
+            loc: openBrace.loc.start,
+            fix(fixer) {
+              if (hasCommentsFirstToken) {
+                return null;
+              }
+
+              return fixer.removeRange([openBrace.range[1], first.range[0]]);
+            },
+          });
+        }
+        if (
+          (!consistent && hasLineBreakBetweenCloseBraceAndLast) ||
+          (consistent &&
+            !hasLineBreakBetweenOpenBraceAndFirst &&
+            hasLineBreakBetweenCloseBraceAndLast)
+        ) {
+          context.report({
+            message: "Unexpected line break before this closing brace.",
+            node,
+            loc: closeBrace.loc.start,
+            fix(fixer) {
+              if (hasCommentsLastToken) {
+                return null;
+              }
+
+              return fixer.removeRange([last.range[1], closeBrace.range[0]]);
+            },
+          });
+        }
+      }
     }
+
+    return {
+      ObjectExpression: check,
+      ObjectPattern: check,
+      ImportDeclaration: check,
+      ExportNamedDeclaration: check,
+    };
+  },
 };

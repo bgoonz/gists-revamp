@@ -13,14 +13,14 @@ Object.defineProperty(NodeList, "prototype", {
   value: NodeList.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(NodeList.prototype, Symbol.iterator, {
   writable: true,
   enumerable: false,
   configurable: true,
-  value: Array.prototype[Symbol.iterator]
+  value: Array.prototype[Symbol.iterator],
 });
 NodeList.prototype.forEach = Array.prototype.forEach;
 NodeList.prototype.item = function item(index) {
@@ -30,13 +30,17 @@ NodeList.prototype.item = function item(index) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'item' on 'NodeList': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'item' on 'NodeList': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["unsigned long"](curArg, { context: "Failed to execute 'item' on 'NodeList': parameter 1" });
+    curArg = conversions["unsigned long"](curArg, {
+      context: "Failed to execute 'item' on 'NodeList': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].item(...args));
@@ -56,14 +60,14 @@ Object.defineProperty(NodeList.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(NodeList.prototype, Symbol.toStringTag, {
   value: "NodeList",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -127,7 +131,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -195,7 +199,7 @@ const iface = {
               writable: false,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
           ignoreNamedProps = true;
@@ -221,7 +225,7 @@ const iface = {
               writable: false,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
         }
@@ -234,7 +238,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -253,7 +262,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -285,7 +299,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -296,8 +310,8 @@ const iface = {
   },
   interface: NodeList,
   expose: {
-    Window: { NodeList }
-  }
+    Window: { NodeList },
+  },
 }; // iface
 module.exports = iface;
 

@@ -9,30 +9,33 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow the use of `process.exit()`",
-            category: "Node.js and CommonJS",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-process-exit"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow the use of `process.exit()`",
+      category: "Node.js and CommonJS",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-process-exit",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        //--------------------------------------------------------------------------
-        // Public
-        //--------------------------------------------------------------------------
+  create(context) {
+    //--------------------------------------------------------------------------
+    // Public
+    //--------------------------------------------------------------------------
 
-        return {
-            "CallExpression > MemberExpression.callee[object.name = 'process'][property.name = 'exit']"(node) {
-                context.report({ node: node.parent, message: "Don't use process.exit(); throw an error instead." });
-            }
-        };
-
-    }
+    return {
+      "CallExpression > MemberExpression.callee[object.name = 'process'][property.name = 'exit']"(
+        node
+      ) {
+        context.report({
+          node: node.parent,
+          message: "Don't use process.exit(); throw an error instead.",
+        });
+      },
+    };
+  },
 };

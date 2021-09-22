@@ -10,29 +10,32 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow `new` operators with calls to `require`",
-            category: "Node.js and CommonJS",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-new-require"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow `new` operators with calls to `require`",
+      category: "Node.js and CommonJS",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-new-require",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
-
-            NewExpression(node) {
-                if (node.callee.type === "Identifier" && node.callee.name === "require") {
-                    context.report({ node, message: "Unexpected use of new with require." });
-                }
-            }
-        };
-
-    }
+  create(context) {
+    return {
+      NewExpression(node) {
+        if (
+          node.callee.type === "Identifier" &&
+          node.callee.name === "require"
+        ) {
+          context.report({
+            node,
+            message: "Unexpected use of new with require.",
+          });
+        }
+      },
+    };
+  },
 };

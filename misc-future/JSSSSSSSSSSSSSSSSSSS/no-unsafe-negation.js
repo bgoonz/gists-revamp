@@ -22,7 +22,7 @@ const astUtils = require("../util/ast-utils");
  * @returns {boolean} `true` if the operator is a relational operator.
  */
 function isRelationalOperator(op) {
-    return op === "in" || op === "instanceof";
+  return op === "in" || op === "instanceof";
 }
 
 /**
@@ -32,7 +32,7 @@ function isRelationalOperator(op) {
  * @returns {boolean} `true` if the node is a logical negation expression.
  */
 function isNegation(node) {
-    return node.type === "UnaryExpression" && node.operator === "!";
+  return node.type === "UnaryExpression" && node.operator === "!";
 }
 
 //------------------------------------------------------------------------------
@@ -40,48 +40,50 @@ function isNegation(node) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow negating the left operand of relational operators",
-            category: "Possible Errors",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-unsafe-negation"
-        },
-
-        schema: [],
-        fixable: "code",
-        messages: {
-            unexpected: "Unexpected negating the left operand of '{{operator}}' operator."
-        }
+    docs: {
+      description: "disallow negating the left operand of relational operators",
+      category: "Possible Errors",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-unsafe-negation",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
+    schema: [],
+    fixable: "code",
+    messages: {
+      unexpected:
+        "Unexpected negating the left operand of '{{operator}}' operator.",
+    },
+  },
 
-        return {
-            BinaryExpression(node) {
-                if (isRelationalOperator(node.operator) &&
-                    isNegation(node.left) &&
-                    !astUtils.isParenthesised(sourceCode, node.left)
-                ) {
-                    context.report({
-                        node,
-                        loc: node.left.loc,
-                        messageId: "unexpected",
-                        data: { operator: node.operator },
+  create(context) {
+    const sourceCode = context.getSourceCode();
 
-                        fix(fixer) {
-                            const negationToken = sourceCode.getFirstToken(node.left);
-                            const fixRange = [negationToken.range[1], node.range[1]];
-                            const text = sourceCode.text.slice(fixRange[0], fixRange[1]);
+    return {
+      BinaryExpression(node) {
+        if (
+          isRelationalOperator(node.operator) &&
+          isNegation(node.left) &&
+          !astUtils.isParenthesised(sourceCode, node.left)
+        ) {
+          context.report({
+            node,
+            loc: node.left.loc,
+            messageId: "unexpected",
+            data: { operator: node.operator },
 
-                            return fixer.replaceTextRange(fixRange, `(${text})`);
-                        }
-                    });
-                }
-            }
-        };
-    }
+            fix(fixer) {
+              const negationToken = sourceCode.getFirstToken(node.left);
+              const fixRange = [negationToken.range[1], node.range[1]];
+              const text = sourceCode.text.slice(fixRange[0], fixRange[1]);
+
+              return fixer.replaceTextRange(fixRange, `(${text})`);
+            },
+          });
+        }
+      },
+    };
+  },
 };

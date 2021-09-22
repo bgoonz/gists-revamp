@@ -10,45 +10,43 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow `Array` constructors",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-array-constructor"
-        },
-
-        schema: [],
-
-        messages: {
-            preferLiteral: "The array literal notation [] is preferable."
-        }
+    docs: {
+      description: "disallow `Array` constructors",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-array-constructor",
     },
 
-    create(context) {
+    schema: [],
 
-        /**
-         * Disallow construction of dense arrays using the Array constructor
-         * @param {ASTNode} node node to evaluate
-         * @returns {void}
-         * @private
-         */
-        function check(node) {
-            if (
-                node.arguments.length !== 1 &&
-                node.callee.type === "Identifier" &&
-                node.callee.name === "Array"
-            ) {
-                context.report({ node, messageId: "preferLiteral" });
-            }
-        }
+    messages: {
+      preferLiteral: "The array literal notation [] is preferable.",
+    },
+  },
 
-        return {
-            CallExpression: check,
-            NewExpression: check
-        };
-
+  create(context) {
+    /**
+     * Disallow construction of dense arrays using the Array constructor
+     * @param {ASTNode} node node to evaluate
+     * @returns {void}
+     * @private
+     */
+    function check(node) {
+      if (
+        node.arguments.length !== 1 &&
+        node.callee.type === "Identifier" &&
+        node.callee.name === "Array"
+      ) {
+        context.report({ node, messageId: "preferLiteral" });
+      }
     }
+
+    return {
+      CallExpression: check,
+      NewExpression: check,
+    };
+  },
 };

@@ -9,11 +9,13 @@ var _path = _interopRequireDefault(require("path"));
 
 var _fs = _interopRequireDefault(require("fs"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 function fromBase64(str) {
   if (Buffer) {
-    return Buffer.from(str, 'base64').toString();
+    return Buffer.from(str, "base64").toString();
   } else {
     return window.atob(str);
   }
@@ -30,130 +32,147 @@ function fromBase64(str) {
  * root.input.map //=> PreviousMap
  */
 
-
 var PreviousMap =
-/*#__PURE__*/
-function () {
-  /**
-   * @param {string}         css    Input CSS source.
-   * @param {processOptions} [opts] {@link Processor#process} options.
-   */
-  function PreviousMap(css, opts) {
-    this.loadAnnotation(css);
+  /*#__PURE__*/
+  (function () {
     /**
-     * Was source map inlined by data-uri to input CSS.
+     * @param {string}         css    Input CSS source.
+     * @param {processOptions} [opts] {@link Processor#process} options.
+     */
+    function PreviousMap(css, opts) {
+      this.loadAnnotation(css);
+      /**
+       * Was source map inlined by data-uri to input CSS.
+       *
+       * @type {boolean}
+       */
+
+      this.inline = this.startWith(this.annotation, "data:");
+      var prev = opts.map ? opts.map.prev : undefined;
+      var text = this.loadMap(opts.from, prev);
+      if (text) this.text = text;
+    }
+    /**
+     * Create a instance of `SourceMapGenerator` class
+     * from the `source-map` library to work with source map information.
      *
-     * @type {boolean}
+     * It is lazy method, so it will create object only on first call
+     * and then it will use cache.
+     *
+     * @return {SourceMapGenerator} Object with source map information.
      */
 
-    this.inline = this.startWith(this.annotation, 'data:');
-    var prev = opts.map ? opts.map.prev : undefined;
-    var text = this.loadMap(opts.from, prev);
-    if (text) this.text = text;
-  }
-  /**
-   * Create a instance of `SourceMapGenerator` class
-   * from the `source-map` library to work with source map information.
-   *
-   * It is lazy method, so it will create object only on first call
-   * and then it will use cache.
-   *
-   * @return {SourceMapGenerator} Object with source map information.
-   */
+    var _proto = PreviousMap.prototype;
 
+    _proto.consumer = function consumer() {
+      if (!this.consumerCache) {
+        this.consumerCache = new _sourceMap.default.SourceMapConsumer(
+          this.text
+        );
+      }
 
-  var _proto = PreviousMap.prototype;
+      return this.consumerCache;
+    };
+    /**
+     * Does source map contains `sourcesContent` with input source text.
+     *
+     * @return {boolean} Is `sourcesContent` present.
+     */
 
-  _proto.consumer = function consumer() {
-    if (!this.consumerCache) {
-      this.consumerCache = new _sourceMap.default.SourceMapConsumer(this.text);
-    }
+    _proto.withContent = function withContent() {
+      return !!(
+        this.consumer().sourcesContent &&
+        this.consumer().sourcesContent.length > 0
+      );
+    };
 
-    return this.consumerCache;
-  }
-  /**
-   * Does source map contains `sourcesContent` with input source text.
-   *
-   * @return {boolean} Is `sourcesContent` present.
-   */
-  ;
+    _proto.startWith = function startWith(string, start) {
+      if (!string) return false;
+      return string.substr(0, start.length) === start;
+    };
 
-  _proto.withContent = function withContent() {
-    return !!(this.consumer().sourcesContent && this.consumer().sourcesContent.length > 0);
-  };
+    _proto.loadAnnotation = function loadAnnotation(css) {
+      var match = css.match(/\/\*\s*# sourceMappingURL=(.*)\s*\*\//);
+      if (match) this.annotation = match[1].trim();
+    };
 
-  _proto.startWith = function startWith(string, start) {
-    if (!string) return false;
-    return string.substr(0, start.length) === start;
-  };
+    _proto.decodeInline = function decodeInline(text) {
+      var baseCharsetUri = /^data:application\/json;charset=utf-?8;base64,/;
+      var baseUri = /^data:application\/json;base64,/;
+      var uri = "data:application/json,";
 
-  _proto.loadAnnotation = function loadAnnotation(css) {
-    var match = css.match(/\/\*\s*# sourceMappingURL=(.*)\s*\*\//);
-    if (match) this.annotation = match[1].trim();
-  };
+      if (this.startWith(text, uri)) {
+        return decodeURIComponent(text.substr(uri.length));
+      }
 
-  _proto.decodeInline = function decodeInline(text) {
-    var baseCharsetUri = /^data:application\/json;charset=utf-?8;base64,/;
-    var baseUri = /^data:application\/json;base64,/;
-    var uri = 'data:application/json,';
+      if (baseCharsetUri.test(text) || baseUri.test(text)) {
+        return fromBase64(text.substr(RegExp.lastMatch.length));
+      }
 
-    if (this.startWith(text, uri)) {
-      return decodeURIComponent(text.substr(uri.length));
-    }
+      var encoding = text.match(/data:application\/json;([^,]+),/)[1];
+      throw new Error("Unsupported source map encoding " + encoding);
+    };
 
-    if (baseCharsetUri.test(text) || baseUri.test(text)) {
-      return fromBase64(text.substr(RegExp.lastMatch.length));
-    }
+    _proto.loadMap = function loadMap(file, prev) {
+      if (prev === false) return false;
 
-    var encoding = text.match(/data:application\/json;([^,]+),/)[1];
-    throw new Error('Unsupported source map encoding ' + encoding);
-  };
+      if (prev) {
+        if (typeof prev === "string") {
+          return prev;
+        } else if (typeof prev === "function") {
+          var prevPath = prev(file);
 
-  _proto.loadMap = function loadMap(file, prev) {
-    if (prev === false) return false;
-
-    if (prev) {
-      if (typeof prev === 'string') {
-        return prev;
-      } else if (typeof prev === 'function') {
-        var prevPath = prev(file);
-
-        if (prevPath && _fs.default.existsSync && _fs.default.existsSync(prevPath)) {
-          return _fs.default.readFileSync(prevPath, 'utf-8').toString().trim();
+          if (
+            prevPath &&
+            _fs.default.existsSync &&
+            _fs.default.existsSync(prevPath)
+          ) {
+            return _fs.default
+              .readFileSync(prevPath, "utf-8")
+              .toString()
+              .trim();
+          } else {
+            throw new Error(
+              "Unable to load previous source map: " + prevPath.toString()
+            );
+          }
+        } else if (prev instanceof _sourceMap.default.SourceMapConsumer) {
+          return _sourceMap.default.SourceMapGenerator.fromSourceMap(
+            prev
+          ).toString();
+        } else if (prev instanceof _sourceMap.default.SourceMapGenerator) {
+          return prev.toString();
+        } else if (this.isMap(prev)) {
+          return JSON.stringify(prev);
         } else {
-          throw new Error('Unable to load previous source map: ' + prevPath.toString());
+          throw new Error(
+            "Unsupported previous source map format: " + prev.toString()
+          );
         }
-      } else if (prev instanceof _sourceMap.default.SourceMapConsumer) {
-        return _sourceMap.default.SourceMapGenerator.fromSourceMap(prev).toString();
-      } else if (prev instanceof _sourceMap.default.SourceMapGenerator) {
-        return prev.toString();
-      } else if (this.isMap(prev)) {
-        return JSON.stringify(prev);
-      } else {
-        throw new Error('Unsupported previous source map format: ' + prev.toString());
+      } else if (this.inline) {
+        return this.decodeInline(this.annotation);
+      } else if (this.annotation) {
+        var map = this.annotation;
+        if (file) map = _path.default.join(_path.default.dirname(file), map);
+        this.root = _path.default.dirname(map);
+
+        if (_fs.default.existsSync && _fs.default.existsSync(map)) {
+          return _fs.default.readFileSync(map, "utf-8").toString().trim();
+        } else {
+          return false;
+        }
       }
-    } else if (this.inline) {
-      return this.decodeInline(this.annotation);
-    } else if (this.annotation) {
-      var map = this.annotation;
-      if (file) map = _path.default.join(_path.default.dirname(file), map);
-      this.root = _path.default.dirname(map);
+    };
 
-      if (_fs.default.existsSync && _fs.default.existsSync(map)) {
-        return _fs.default.readFileSync(map, 'utf-8').toString().trim();
-      } else {
-        return false;
-      }
-    }
-  };
+    _proto.isMap = function isMap(map) {
+      if (typeof map !== "object") return false;
+      return (
+        typeof map.mappings === "string" || typeof map._mappings === "string"
+      );
+    };
 
-  _proto.isMap = function isMap(map) {
-    if (typeof map !== 'object') return false;
-    return typeof map.mappings === 'string' || typeof map._mappings === 'string';
-  };
-
-  return PreviousMap;
-}();
+    return PreviousMap;
+  })();
 
 var _default = PreviousMap;
 exports.default = _default;

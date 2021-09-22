@@ -10,32 +10,36 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow the use of the `__proto__` property",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-proto"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow the use of the `__proto__` property",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-proto",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
-
-            MemberExpression(node) {
-
-                if (node.property &&
-                        (node.property.type === "Identifier" && node.property.name === "__proto__" && !node.computed) ||
-                        (node.property.type === "Literal" && node.property.value === "__proto__")) {
-                    context.report({ node, message: "The '__proto__' property is deprecated." });
-                }
-            }
-        };
-
-    }
+  create(context) {
+    return {
+      MemberExpression(node) {
+        if (
+          (node.property &&
+            node.property.type === "Identifier" &&
+            node.property.name === "__proto__" &&
+            !node.computed) ||
+          (node.property.type === "Literal" &&
+            node.property.value === "__proto__")
+        ) {
+          context.report({
+            node,
+            message: "The '__proto__' property is deprecated.",
+          });
+        }
+      },
+    };
+  },
 };

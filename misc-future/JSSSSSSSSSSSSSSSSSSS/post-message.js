@@ -4,14 +4,21 @@ const DOMException = require("domexception");
 
 module.exports = function (message, targetOrigin) {
   if (arguments.length < 2) {
-    throw new TypeError("'postMessage' requires 2 arguments: 'message' and 'targetOrigin'");
+    throw new TypeError(
+      "'postMessage' requires 2 arguments: 'message' and 'targetOrigin'"
+    );
   }
 
   targetOrigin = String(targetOrigin);
 
   if (!isValidTargetOrigin(targetOrigin)) {
-    throw new DOMException("Failed to execute 'postMessage' on 'Window': " +
-      "Invalid target origin '" + targetOrigin + "' in a call to 'postMessage'.", "SyntaxError");
+    throw new DOMException(
+      "Failed to execute 'postMessage' on 'Window': " +
+        "Invalid target origin '" +
+        targetOrigin +
+        "' in a call to 'postMessage'.",
+      "SyntaxError"
+    );
   }
 
   // TODO: targetOrigin === '/' - requires reference to source window
@@ -25,7 +32,7 @@ module.exports = function (message, targetOrigin) {
   // TODO: event.ports
   // TODO: event.data - structured clone message - requires cloning DOM nodes
   const event = new this.MessageEvent("message", {
-    data: message
+    data: message,
   });
 
   event.initEvent("message", false, false);

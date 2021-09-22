@@ -13,28 +13,36 @@ Object.defineProperty(NavigatorConcurrentHardware, "prototype", {
   value: NavigatorConcurrentHardware.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
-Object.defineProperty(NavigatorConcurrentHardware.prototype, "hardwareConcurrency", {
-  get() {
-    if (!this || !module.exports.is(this)) {
-      throw new TypeError("Illegal invocation");
-    }
+Object.defineProperty(
+  NavigatorConcurrentHardware.prototype,
+  "hardwareConcurrency",
+  {
+    get() {
+      if (!this || !module.exports.is(this)) {
+        throw new TypeError("Illegal invocation");
+      }
 
-    return this[impl]["hardwareConcurrency"];
-  },
+      return this[impl]["hardwareConcurrency"];
+    },
 
-  enumerable: true,
-  configurable: true
-});
+    enumerable: true,
+    configurable: true,
+  }
+);
 
-Object.defineProperty(NavigatorConcurrentHardware.prototype, Symbol.toStringTag, {
-  value: "NavigatorConcurrentHardware",
-  writable: false,
-  enumerable: false,
-  configurable: true
-});
+Object.defineProperty(
+  NavigatorConcurrentHardware.prototype,
+  Symbol.toStringTag,
+  {
+    value: "NavigatorConcurrentHardware",
+    writable: false,
+    enumerable: false,
+    configurable: true,
+  }
+);
 
 const iface = {
   // When an interface-module that implements this interface as a mixin is loaded, it will append its own `.is()`
@@ -73,7 +81,9 @@ const iface = {
     if (module.exports.is(obj)) {
       return utils.implForWrapper(obj);
     }
-    throw new TypeError(`${context} is not of type 'NavigatorConcurrentHardware'.`);
+    throw new TypeError(
+      `${context} is not of type 'NavigatorConcurrentHardware'.`
+    );
   },
 
   create(constructorArgs, privateData) {
@@ -97,7 +107,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -107,7 +117,7 @@ const iface = {
     return obj;
   },
   interface: NavigatorConcurrentHardware,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

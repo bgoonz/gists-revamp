@@ -1,1 +1,1 @@
-module.exports = require('./ary');
+module.exports = require("./ary");

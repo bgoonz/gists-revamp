@@ -24,8 +24,9 @@ module.exports = class OrderedSet {
 
   replace(item, replacement) {
     let seen = false;
-    for (let i = 0; i < this._items.length;) {
-      const isInstance = this._items[i] === item || this._items[i] === replacement;
+    for (let i = 0; i < this._items.length; ) {
+      const isInstance =
+        this._items[i] === item || this._items[i] === replacement;
       if (seen && isInstance) {
         this._items.splice(i, 1);
       } else {
@@ -39,11 +40,11 @@ module.exports = class OrderedSet {
   }
 
   remove(...items) {
-    this.removePredicate(item => items.includes(item));
+    this.removePredicate((item) => items.includes(item));
   }
 
   removePredicate(predicate) {
-    for (let i = 0; i < this._items.length;) {
+    for (let i = 0; i < this._items.length; ) {
       if (predicate(this._items[i])) {
         this._items.splice(i, 1);
       } else {

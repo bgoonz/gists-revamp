@@ -34,117 +34,117 @@ const esrecurse = require("esrecurse");
  * @returns {any} Last elment
  */
 function getLast(xs) {
-    return xs[xs.length - 1] || null;
+  return xs[xs.length - 1] || null;
 }
 
 class PatternVisitor extends esrecurse.Visitor {
-    static isPattern(node) {
-        const nodeType = node.type;
+  static isPattern(node) {
+    const nodeType = node.type;
 
-        return (
-            nodeType === Syntax.Identifier ||
-            nodeType === Syntax.ObjectPattern ||
-            nodeType === Syntax.ArrayPattern ||
-            nodeType === Syntax.SpreadElement ||
-            nodeType === Syntax.RestElement ||
-            nodeType === Syntax.AssignmentPattern
-        );
+    return (
+      nodeType === Syntax.Identifier ||
+      nodeType === Syntax.ObjectPattern ||
+      nodeType === Syntax.ArrayPattern ||
+      nodeType === Syntax.SpreadElement ||
+      nodeType === Syntax.RestElement ||
+      nodeType === Syntax.AssignmentPattern
+    );
+  }
+
+  constructor(options, rootPattern, callback) {
+    super(null, options);
+    this.rootPattern = rootPattern;
+    this.callback = callback;
+    this.assignments = [];
+    this.rightHandNodes = [];
+    this.restElements = [];
+  }
+
+  Identifier(pattern) {
+    const lastRestElement = getLast(this.restElements);
+
+    this.callback(pattern, {
+      topLevel: pattern === this.rootPattern,
+      rest:
+        lastRestElement !== null &&
+        lastRestElement !== undefined &&
+        lastRestElement.argument === pattern,
+      assignments: this.assignments,
+    });
+  }
+
+  Property(property) {
+    // Computed property's key is a right hand node.
+    if (property.computed) {
+      this.rightHandNodes.push(property.key);
     }
 
-    constructor(options, rootPattern, callback) {
-        super(null, options);
-        this.rootPattern = rootPattern;
-        this.callback = callback;
-        this.assignments = [];
-        this.rightHandNodes = [];
-        this.restElements = [];
+    // If it's shorthand, its key is same as its value.
+    // If it's shorthand and has its default value, its key is same as its value.left (the value is AssignmentPattern).
+    // If it's not shorthand, the name of new variable is its value's.
+    this.visit(property.value);
+  }
+
+  ArrayPattern(pattern) {
+    for (let i = 0, iz = pattern.elements.length; i < iz; ++i) {
+      const element = pattern.elements[i];
+
+      this.visit(element);
+    }
+  }
+
+  AssignmentPattern(pattern) {
+    this.assignments.push(pattern);
+    this.visit(pattern.left);
+    this.rightHandNodes.push(pattern.right);
+    this.assignments.pop();
+  }
+
+  RestElement(pattern) {
+    this.restElements.push(pattern);
+    this.visit(pattern.argument);
+    this.restElements.pop();
+  }
+
+  MemberExpression(node) {
+    // Computed property's key is a right hand node.
+    if (node.computed) {
+      this.rightHandNodes.push(node.property);
     }
 
-    Identifier(pattern) {
-        const lastRestElement = getLast(this.restElements);
+    // the object is only read, write to its property.
+    this.rightHandNodes.push(node.object);
+  }
 
-        this.callback(pattern, {
-            topLevel: pattern === this.rootPattern,
-            rest: lastRestElement !== null && lastRestElement !== undefined && lastRestElement.argument === pattern,
-            assignments: this.assignments
-        });
-    }
+  //
+  // ForInStatement.left and AssignmentExpression.left are LeftHandSideExpression.
+  // By spec, LeftHandSideExpression is Pattern or MemberExpression.
+  //   (see also: https://github.com/estree/estree/pull/20#issuecomment-74584758)
+  // But espree 2.0 parses to ArrayExpression, ObjectExpression, etc...
+  //
 
-    Property(property) {
+  SpreadElement(node) {
+    this.visit(node.argument);
+  }
 
-        // Computed property's key is a right hand node.
-        if (property.computed) {
-            this.rightHandNodes.push(property.key);
-        }
+  ArrayExpression(node) {
+    node.elements.forEach(this.visit, this);
+  }
 
-        // If it's shorthand, its key is same as its value.
-        // If it's shorthand and has its default value, its key is same as its value.left (the value is AssignmentPattern).
-        // If it's not shorthand, the name of new variable is its value's.
-        this.visit(property.value);
-    }
+  AssignmentExpression(node) {
+    this.assignments.push(node);
+    this.visit(node.left);
+    this.rightHandNodes.push(node.right);
+    this.assignments.pop();
+  }
 
-    ArrayPattern(pattern) {
-        for (let i = 0, iz = pattern.elements.length; i < iz; ++i) {
-            const element = pattern.elements[i];
-
-            this.visit(element);
-        }
-    }
-
-    AssignmentPattern(pattern) {
-        this.assignments.push(pattern);
-        this.visit(pattern.left);
-        this.rightHandNodes.push(pattern.right);
-        this.assignments.pop();
-    }
-
-    RestElement(pattern) {
-        this.restElements.push(pattern);
-        this.visit(pattern.argument);
-        this.restElements.pop();
-    }
-
-    MemberExpression(node) {
-
-        // Computed property's key is a right hand node.
-        if (node.computed) {
-            this.rightHandNodes.push(node.property);
-        }
-
-        // the object is only read, write to its property.
-        this.rightHandNodes.push(node.object);
-    }
-
-    //
-    // ForInStatement.left and AssignmentExpression.left are LeftHandSideExpression.
-    // By spec, LeftHandSideExpression is Pattern or MemberExpression.
-    //   (see also: https://github.com/estree/estree/pull/20#issuecomment-74584758)
-    // But espree 2.0 parses to ArrayExpression, ObjectExpression, etc...
-    //
-
-    SpreadElement(node) {
-        this.visit(node.argument);
-    }
-
-    ArrayExpression(node) {
-        node.elements.forEach(this.visit, this);
-    }
-
-    AssignmentExpression(node) {
-        this.assignments.push(node);
-        this.visit(node.left);
-        this.rightHandNodes.push(node.right);
-        this.assignments.pop();
-    }
-
-    CallExpression(node) {
-
-        // arguments are right hand nodes.
-        node.arguments.forEach(a => {
-            this.rightHandNodes.push(a);
-        });
-        this.visit(node.callee);
-    }
+  CallExpression(node) {
+    // arguments are right hand nodes.
+    node.arguments.forEach((a) => {
+      this.rightHandNodes.push(a);
+    });
+    this.visit(node.callee);
+  }
 }
 
 module.exports = PatternVisitor;

@@ -12,50 +12,53 @@ const astUtils = require("../util/ast-utils");
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow reassigning class members",
-            category: "ECMAScript 6",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-class-assign"
-        },
-
-        schema: [],
-
-        messages: {
-            class: "'{{name}}' is a class."
-        }
+    docs: {
+      description: "disallow reassigning class members",
+      category: "ECMAScript 6",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-class-assign",
     },
 
-    create(context) {
+    schema: [],
 
-        /**
-         * Finds and reports references that are non initializer and writable.
-         * @param {Variable} variable - A variable to check.
-         * @returns {void}
-         */
-        function checkVariable(variable) {
-            astUtils.getModifyingReferences(variable.references).forEach(reference => {
-                context.report({ node: reference.identifier, messageId: "class", data: { name: reference.identifier.name } });
+    messages: {
+      class: "'{{name}}' is a class.",
+    },
+  },
 
-            });
-        }
-
-        /**
-         * Finds and reports references that are non initializer and writable.
-         * @param {ASTNode} node - A ClassDeclaration/ClassExpression node to check.
-         * @returns {void}
-         */
-        function checkForClass(node) {
-            context.getDeclaredVariables(node).forEach(checkVariable);
-        }
-
-        return {
-            ClassDeclaration: checkForClass,
-            ClassExpression: checkForClass
-        };
-
+  create(context) {
+    /**
+     * Finds and reports references that are non initializer and writable.
+     * @param {Variable} variable - A variable to check.
+     * @returns {void}
+     */
+    function checkVariable(variable) {
+      astUtils
+        .getModifyingReferences(variable.references)
+        .forEach((reference) => {
+          context.report({
+            node: reference.identifier,
+            messageId: "class",
+            data: { name: reference.identifier.name },
+          });
+        });
     }
+
+    /**
+     * Finds and reports references that are non initializer and writable.
+     * @param {ASTNode} node - A ClassDeclaration/ClassExpression node to check.
+     * @returns {void}
+     */
+    function checkForClass(node) {
+      context.getDeclaredVariables(node).forEach(checkVariable);
+    }
+
+    return {
+      ClassDeclaration: checkForClass,
+      ClassExpression: checkForClass,
+    };
+  },
 };

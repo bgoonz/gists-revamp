@@ -5,10 +5,10 @@ const {
   isHTTPWhitespaceChar,
   solelyContainsHTTPTokenCodePoints,
   soleyContainsHTTPQuotedStringTokenCodePoints,
-  asciiLowercase
+  asciiLowercase,
 } = require("./utils.js");
 
-module.exports = input => {
+module.exports = (input) => {
   input = removeLeadingAndTrailingHTTPWhitespace(input);
 
   let position = 0;
@@ -44,7 +44,7 @@ module.exports = input => {
   const mimeType = {
     type: asciiLowercase(type),
     subtype: asciiLowercase(subtype),
-    parameters: new Map()
+    parameters: new Map(),
   };
 
   while (position < input.length) {
@@ -56,7 +56,11 @@ module.exports = input => {
     }
 
     let parameterName = "";
-    while (position < input.length && input[position] !== ";" && input[position] !== "=") {
+    while (
+      position < input.length &&
+      input[position] !== ";" &&
+      input[position] !== "="
+    ) {
       parameterName += input[position];
       ++position;
     }
@@ -72,11 +76,15 @@ module.exports = input => {
     }
 
     let parameterValue = "";
-    if (input[position] === "\"") {
+    if (input[position] === '"') {
       ++position;
 
       while (true) {
-        while (position < input.length && input[position] !== "\"" && input[position] !== "\\") {
+        while (
+          position < input.length &&
+          input[position] !== '"' &&
+          input[position] !== "\\"
+        ) {
           parameterValue += input[position];
           ++position;
         }
@@ -112,10 +120,12 @@ module.exports = input => {
       }
     }
 
-    if (parameterName.length > 0 &&
-        solelyContainsHTTPTokenCodePoints(parameterName) &&
-        soleyContainsHTTPQuotedStringTokenCodePoints(parameterValue) &&
-        !mimeType.parameters.has(parameterName)) {
+    if (
+      parameterName.length > 0 &&
+      solelyContainsHTTPTokenCodePoints(parameterName) &&
+      soleyContainsHTTPQuotedStringTokenCodePoints(parameterValue) &&
+      !mimeType.parameters.has(parameterName)
+    ) {
       mimeType.parameters.set(parameterName, parameterValue);
     }
   }

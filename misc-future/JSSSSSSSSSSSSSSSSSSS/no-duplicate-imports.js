@@ -15,11 +15,11 @@
  * @returns {string} the name of the module, or empty string if no name.
  */
 function getValue(node) {
-    if (node && node.source && node.source.value) {
-        return node.source.value.trim();
-    }
+  if (node && node.source && node.source.value) {
+    return node.source.value.trim();
+  }
 
-    return "";
+  return "";
 }
 
 /**
@@ -34,15 +34,15 @@ function getValue(node) {
  * @returns {void} No return value
  */
 function checkAndReport(context, node, value, array, messageId) {
-    if (array.indexOf(value) !== -1) {
-        context.report({
-            node,
-            messageId,
-            data: {
-                module: value
-            }
-        });
-    }
+  if (array.indexOf(value) !== -1) {
+    context.report({
+      node,
+      messageId,
+      data: {
+        module: value,
+      },
+    });
+  }
 }
 
 /**
@@ -61,19 +61,19 @@ function checkAndReport(context, node, value, array, messageId) {
  * @returns {nodeCallback} A function passed to ESLint to handle the statement.
  */
 function handleImports(context, includeExports, importsInFile, exportsInFile) {
-    return function(node) {
-        const value = getValue(node);
+  return function (node) {
+    const value = getValue(node);
 
-        if (value) {
-            checkAndReport(context, node, value, importsInFile, "import");
+    if (value) {
+      checkAndReport(context, node, value, importsInFile, "import");
 
-            if (includeExports) {
-                checkAndReport(context, node, value, exportsInFile, "importAs");
-            }
+      if (includeExports) {
+        checkAndReport(context, node, value, exportsInFile, "importAs");
+      }
 
-            importsInFile.push(value);
-        }
-    };
+      importsInFile.push(value);
+    }
+  };
 }
 
 /**
@@ -86,61 +86,76 @@ function handleImports(context, includeExports, importsInFile, exportsInFile) {
  * @returns {nodeCallback} A function passed to ESLint to handle the statement.
  */
 function handleExports(context, importsInFile, exportsInFile) {
-    return function(node) {
-        const value = getValue(node);
+  return function (node) {
+    const value = getValue(node);
 
-        if (value) {
-            checkAndReport(context, node, value, exportsInFile, "export");
-            checkAndReport(context, node, value, importsInFile, "exportAs");
+    if (value) {
+      checkAndReport(context, node, value, exportsInFile, "export");
+      checkAndReport(context, node, value, importsInFile, "exportAs");
 
-            exportsInFile.push(value);
-        }
-    };
+      exportsInFile.push(value);
+    }
+  };
 }
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow duplicate module imports",
-            category: "ECMAScript 6",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-duplicate-imports"
-        },
-
-        schema: [{
-            type: "object",
-            properties: {
-                includeExports: {
-                    type: "boolean",
-                    default: false
-                }
-            },
-            additionalProperties: false
-        }],
-        messages: {
-            import: "'{{module}}' import is duplicated.",
-            importAs: "'{{module}}' import is duplicated as export.",
-            export: "'{{module}}' export is duplicated.",
-            exportAs: "'{{module}}' export is duplicated as import."
-        }
+    docs: {
+      description: "disallow duplicate module imports",
+      category: "ECMAScript 6",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-duplicate-imports",
     },
 
-    create(context) {
-        const includeExports = (context.options[0] || {}).includeExports,
-            importsInFile = [],
-            exportsInFile = [];
+    schema: [
+      {
+        type: "object",
+        properties: {
+          includeExports: {
+            type: "boolean",
+            default: false,
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
+    messages: {
+      import: "'{{module}}' import is duplicated.",
+      importAs: "'{{module}}' import is duplicated as export.",
+      export: "'{{module}}' export is duplicated.",
+      exportAs: "'{{module}}' export is duplicated as import.",
+    },
+  },
 
-        const handlers = {
-            ImportDeclaration: handleImports(context, includeExports, importsInFile, exportsInFile)
-        };
+  create(context) {
+    const includeExports = (context.options[0] || {}).includeExports,
+      importsInFile = [],
+      exportsInFile = [];
 
-        if (includeExports) {
-            handlers.ExportNamedDeclaration = handleExports(context, importsInFile, exportsInFile);
-            handlers.ExportAllDeclaration = handleExports(context, importsInFile, exportsInFile);
-        }
+    const handlers = {
+      ImportDeclaration: handleImports(
+        context,
+        includeExports,
+        importsInFile,
+        exportsInFile
+      ),
+    };
 
-        return handlers;
+    if (includeExports) {
+      handlers.ExportNamedDeclaration = handleExports(
+        context,
+        importsInFile,
+        exportsInFile
+      );
+      handlers.ExportAllDeclaration = handleExports(
+        context,
+        importsInFile,
+        exportsInFile
+      );
     }
+
+    return handlers;
+  },
 };

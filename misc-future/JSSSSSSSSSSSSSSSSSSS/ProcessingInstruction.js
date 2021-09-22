@@ -10,14 +10,17 @@ function ProcessingInstruction() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(ProcessingInstruction.prototype, CharacterData.interface.prototype);
+Object.setPrototypeOf(
+  ProcessingInstruction.prototype,
+  CharacterData.interface.prototype
+);
 Object.setPrototypeOf(ProcessingInstruction, CharacterData.interface);
 
 Object.defineProperty(ProcessingInstruction, "prototype", {
   value: ProcessingInstruction.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(ProcessingInstruction.prototype, "target", {
@@ -30,14 +33,14 @@ Object.defineProperty(ProcessingInstruction.prototype, "target", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ProcessingInstruction.prototype, Symbol.toStringTag, {
   value: "ProcessingInstruction",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -103,7 +106,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -114,8 +117,8 @@ const iface = {
   },
   interface: ProcessingInstruction,
   expose: {
-    Window: { ProcessingInstruction }
-  }
+    Window: { ProcessingInstruction },
+  },
 }; // iface
 module.exports = iface;
 

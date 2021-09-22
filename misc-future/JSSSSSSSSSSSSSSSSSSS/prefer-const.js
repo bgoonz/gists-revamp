@@ -11,9 +11,11 @@ const astUtils = require("../util/ast-utils");
 // Helpers
 //------------------------------------------------------------------------------
 
-const PATTERN_TYPE = /^(?:.+?Pattern|RestElement|SpreadProperty|ExperimentalRestProperty|Property)$/u;
+const PATTERN_TYPE =
+  /^(?:.+?Pattern|RestElement|SpreadProperty|ExperimentalRestProperty|Property)$/u;
 const DECLARATION_HOST_TYPE = /^(?:Program|BlockStatement|SwitchCase)$/u;
-const DESTRUCTURING_HOST_TYPE = /^(?:VariableDeclarator|AssignmentExpression)$/u;
+const DESTRUCTURING_HOST_TYPE =
+  /^(?:VariableDeclarator|AssignmentExpression)$/u;
 
 /**
  * Checks whether a given node is located at `ForStatement.init` or not.
@@ -22,7 +24,7 @@ const DESTRUCTURING_HOST_TYPE = /^(?:VariableDeclarator|AssignmentExpression)$/u
  * @returns {boolean} `true` if the node is located at `ForStatement.init`.
  */
 function isInitOfForStatement(node) {
-    return node.parent.type === "ForStatement" && node.parent.init === node;
+  return node.parent.type === "ForStatement" && node.parent.init === node;
 }
 
 /**
@@ -32,20 +34,18 @@ function isInitOfForStatement(node) {
  * @returns {boolean} `true` if the node can become a VariableDeclaration.
  */
 function canBecomeVariableDeclaration(identifier) {
-    let node = identifier.parent;
+  let node = identifier.parent;
 
-    while (PATTERN_TYPE.test(node.type)) {
-        node = node.parent;
-    }
+  while (PATTERN_TYPE.test(node.type)) {
+    node = node.parent;
+  }
 
-    return (
-        node.type === "VariableDeclarator" ||
-        (
-            node.type === "AssignmentExpression" &&
-            node.parent.type === "ExpressionStatement" &&
-            DECLARATION_HOST_TYPE.test(node.parent.parent.type)
-        )
-    );
+  return (
+    node.type === "VariableDeclarator" ||
+    (node.type === "AssignmentExpression" &&
+      node.parent.type === "ExpressionStatement" &&
+      DECLARATION_HOST_TYPE.test(node.parent.parent.type))
+  );
 }
 
 /**
@@ -57,18 +57,19 @@ function canBecomeVariableDeclaration(identifier) {
  * @returns {boolean} Indicates if the variable is from outer scope or function parameters.
  */
 function isOuterVariableInDestructing(name, initScope) {
+  if (
+    initScope.through.find((ref) => ref.resolved && ref.resolved.name === name)
+  ) {
+    return true;
+  }
 
-    if (initScope.through.find(ref => ref.resolved && ref.resolved.name === name)) {
-        return true;
-    }
+  const variable = astUtils.getVariableByName(initScope, name);
 
-    const variable = astUtils.getVariableByName(initScope, name);
+  if (variable !== null) {
+    return variable.defs.some((def) => def.type === "Parameter");
+  }
 
-    if (variable !== null) {
-        return variable.defs.some(def => def.type === "Parameter");
-    }
-
-    return false;
+  return false;
 }
 
 /**
@@ -82,19 +83,19 @@ function isOuterVariableInDestructing(name, initScope) {
  *      null.
  */
 function getDestructuringHost(reference) {
-    if (!reference.isWrite()) {
-        return null;
-    }
-    let node = reference.identifier.parent;
+  if (!reference.isWrite()) {
+    return null;
+  }
+  let node = reference.identifier.parent;
 
-    while (PATTERN_TYPE.test(node.type)) {
-        node = node.parent;
-    }
+  while (PATTERN_TYPE.test(node.type)) {
+    node = node.parent;
+  }
 
-    if (!DESTRUCTURING_HOST_TYPE.test(node.type)) {
-        return null;
-    }
-    return node;
+  if (!DESTRUCTURING_HOST_TYPE.test(node.type)) {
+    return null;
+  }
+  return node;
 }
 
 /**
@@ -107,42 +108,41 @@ function getDestructuringHost(reference) {
  *      a MemberExpression, false if not.
  */
 function hasMemberExpressionAssignment(node) {
-    switch (node.type) {
-        case "ObjectPattern":
-            return node.properties.some(prop => {
-                if (prop) {
+  switch (node.type) {
+    case "ObjectPattern":
+      return node.properties.some((prop) => {
+        if (prop) {
+          /*
+           * Spread elements have an argument property while
+           * others have a value property. Because different
+           * parsers use different node types for spread elements,
+           * we just check if there is an argument property.
+           */
+          return hasMemberExpressionAssignment(prop.argument || prop.value);
+        }
 
-                    /*
-                     * Spread elements have an argument property while
-                     * others have a value property. Because different
-                     * parsers use different node types for spread elements,
-                     * we just check if there is an argument property.
-                     */
-                    return hasMemberExpressionAssignment(prop.argument || prop.value);
-                }
+        return false;
+      });
 
-                return false;
-            });
+    case "ArrayPattern":
+      return node.elements.some((element) => {
+        if (element) {
+          return hasMemberExpressionAssignment(element);
+        }
 
-        case "ArrayPattern":
-            return node.elements.some(element => {
-                if (element) {
-                    return hasMemberExpressionAssignment(element);
-                }
+        return false;
+      });
 
-                return false;
-            });
+    case "AssignmentPattern":
+      return hasMemberExpressionAssignment(node.left);
 
-        case "AssignmentPattern":
-            return hasMemberExpressionAssignment(node.left);
+    case "MemberExpression":
+      return true;
 
-        case "MemberExpression":
-            return true;
+    // no default
+  }
 
-        // no default
-    }
-
-    return false;
+  return false;
 }
 
 /**
@@ -171,90 +171,84 @@ function hasMemberExpressionAssignment(node) {
  *      Otherwise, null.
  */
 function getIdentifierIfShouldBeConst(variable, ignoreReadBeforeAssign) {
-    if (variable.eslintUsed && variable.scope.type === "global") {
+  if (variable.eslintUsed && variable.scope.type === "global") {
+    return null;
+  }
+
+  // Finds the unique WriteReference.
+  let writer = null;
+  let isReadBeforeInit = false;
+  const references = variable.references;
+
+  for (let i = 0; i < references.length; ++i) {
+    const reference = references[i];
+
+    if (reference.isWrite()) {
+      const isReassigned =
+        writer !== null && writer.identifier !== reference.identifier;
+
+      if (isReassigned) {
         return null;
-    }
+      }
 
-    // Finds the unique WriteReference.
-    let writer = null;
-    let isReadBeforeInit = false;
-    const references = variable.references;
+      const destructuringHost = getDestructuringHost(reference);
 
-    for (let i = 0; i < references.length; ++i) {
-        const reference = references[i];
+      if (destructuringHost !== null && destructuringHost.left !== void 0) {
+        const leftNode = destructuringHost.left;
+        let hasOuterVariables = false,
+          hasNonIdentifiers = false;
 
-        if (reference.isWrite()) {
-            const isReassigned = (
-                writer !== null &&
-                writer.identifier !== reference.identifier
-            );
+        if (leftNode.type === "ObjectPattern") {
+          const properties = leftNode.properties;
 
-            if (isReassigned) {
-                return null;
-            }
+          hasOuterVariables = properties
+            .filter((prop) => prop.value)
+            .map((prop) => prop.value.name)
+            .some((name) => isOuterVariableInDestructing(name, variable.scope));
 
-            const destructuringHost = getDestructuringHost(reference);
+          hasNonIdentifiers = hasMemberExpressionAssignment(leftNode);
+        } else if (leftNode.type === "ArrayPattern") {
+          const elements = leftNode.elements;
 
-            if (destructuringHost !== null && destructuringHost.left !== void 0) {
-                const leftNode = destructuringHost.left;
-                let hasOuterVariables = false,
-                    hasNonIdentifiers = false;
+          hasOuterVariables = elements
+            .map((element) => element && element.name)
+            .some((name) => isOuterVariableInDestructing(name, variable.scope));
 
-                if (leftNode.type === "ObjectPattern") {
-                    const properties = leftNode.properties;
-
-                    hasOuterVariables = properties
-                        .filter(prop => prop.value)
-                        .map(prop => prop.value.name)
-                        .some(name => isOuterVariableInDestructing(name, variable.scope));
-
-                    hasNonIdentifiers = hasMemberExpressionAssignment(leftNode);
-
-                } else if (leftNode.type === "ArrayPattern") {
-                    const elements = leftNode.elements;
-
-                    hasOuterVariables = elements
-                        .map(element => element && element.name)
-                        .some(name => isOuterVariableInDestructing(name, variable.scope));
-
-                    hasNonIdentifiers = hasMemberExpressionAssignment(leftNode);
-                }
-
-                if (hasOuterVariables || hasNonIdentifiers) {
-                    return null;
-                }
-
-            }
-
-            writer = reference;
-
-        } else if (reference.isRead() && writer === null) {
-            if (ignoreReadBeforeAssign) {
-                return null;
-            }
-            isReadBeforeInit = true;
+          hasNonIdentifiers = hasMemberExpressionAssignment(leftNode);
         }
-    }
 
-    /*
-     * If the assignment is from a different scope, ignore it.
-     * If the assignment cannot change to a declaration, ignore it.
-     */
-    const shouldBeConst = (
-        writer !== null &&
-        writer.from === variable.scope &&
-        canBecomeVariableDeclaration(writer.identifier)
-    );
+        if (hasOuterVariables || hasNonIdentifiers) {
+          return null;
+        }
+      }
 
-    if (!shouldBeConst) {
+      writer = reference;
+    } else if (reference.isRead() && writer === null) {
+      if (ignoreReadBeforeAssign) {
         return null;
+      }
+      isReadBeforeInit = true;
     }
+  }
 
-    if (isReadBeforeInit) {
-        return variable.defs[0].name;
-    }
+  /*
+   * If the assignment is from a different scope, ignore it.
+   * If the assignment cannot change to a declaration, ignore it.
+   */
+  const shouldBeConst =
+    writer !== null &&
+    writer.from === variable.scope &&
+    canBecomeVariableDeclaration(writer.identifier);
 
-    return writer.identifier;
+  if (!shouldBeConst) {
+    return null;
+  }
+
+  if (isReadBeforeInit) {
+    return variable.defs[0].name;
+  }
+
+  return writer.identifier;
 }
 
 /**
@@ -269,41 +263,44 @@ function getIdentifierIfShouldBeConst(variable, ignoreReadBeforeAssign) {
  * @returns {Map<ASTNode, ASTNode[]>} Grouped identifier nodes.
  */
 function groupByDestructuring(variables, ignoreReadBeforeAssign) {
-    const identifierMap = new Map();
+  const identifierMap = new Map();
 
-    for (let i = 0; i < variables.length; ++i) {
-        const variable = variables[i];
-        const references = variable.references;
-        const identifier = getIdentifierIfShouldBeConst(variable, ignoreReadBeforeAssign);
-        let prevId = null;
+  for (let i = 0; i < variables.length; ++i) {
+    const variable = variables[i];
+    const references = variable.references;
+    const identifier = getIdentifierIfShouldBeConst(
+      variable,
+      ignoreReadBeforeAssign
+    );
+    let prevId = null;
 
-        for (let j = 0; j < references.length; ++j) {
-            const reference = references[j];
-            const id = reference.identifier;
+    for (let j = 0; j < references.length; ++j) {
+      const reference = references[j];
+      const id = reference.identifier;
 
-            /*
-             * Avoid counting a reference twice or more for default values of
-             * destructuring.
-             */
-            if (id === prevId) {
-                continue;
-            }
-            prevId = id;
+      /*
+       * Avoid counting a reference twice or more for default values of
+       * destructuring.
+       */
+      if (id === prevId) {
+        continue;
+      }
+      prevId = id;
 
-            // Add the identifier node into the destructuring group.
-            const group = getDestructuringHost(reference);
+      // Add the identifier node into the destructuring group.
+      const group = getDestructuringHost(reference);
 
-            if (group) {
-                if (identifierMap.has(group)) {
-                    identifierMap.get(group).push(identifier);
-                } else {
-                    identifierMap.set(group, [identifier]);
-                }
-            }
+      if (group) {
+        if (identifierMap.has(group)) {
+          identifierMap.get(group).push(identifier);
+        } else {
+          identifierMap.set(group, [identifier]);
         }
+      }
     }
+  }
 
-    return identifierMap;
+  return identifierMap;
 }
 
 /**
@@ -315,13 +312,13 @@ function groupByDestructuring(variables, ignoreReadBeforeAssign) {
  * @returns {ASTNode} The closest ancestor with the specified type; null if no such ancestor exists.
  */
 function findUp(node, type, shouldStop) {
-    if (!node || shouldStop(node)) {
-        return null;
-    }
-    if (node.type === type) {
-        return node;
-    }
-    return findUp(node.parent, type, shouldStop);
+  if (!node || shouldStop(node)) {
+    return null;
+  }
+  if (node.type === type) {
+    return node;
+  }
+  return findUp(node.parent, type, shouldStop);
 }
 
 //------------------------------------------------------------------------------
@@ -329,143 +326,167 @@ function findUp(node, type, shouldStop) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "require `const` declarations for variables that are never reassigned after declared",
-            category: "ECMAScript 6",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/prefer-const"
-        },
-
-        fixable: "code",
-
-        schema: [
-            {
-                type: "object",
-                properties: {
-                    destructuring: { enum: ["any", "all"], default: "any" },
-                    ignoreReadBeforeAssign: { type: "boolean", default: false }
-                },
-                additionalProperties: false
-            }
-        ],
-        messages: {
-            useConst: "'{{name}}' is never reassigned. Use 'const' instead."
-        }
+    docs: {
+      description:
+        "require `const` declarations for variables that are never reassigned after declared",
+      category: "ECMAScript 6",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/prefer-const",
     },
 
-    create(context) {
-        const options = context.options[0] || {};
-        const sourceCode = context.getSourceCode();
-        const shouldMatchAnyDestructuredVariable = options.destructuring !== "all";
-        const ignoreReadBeforeAssign = options.ignoreReadBeforeAssign === true;
-        const variables = [];
-        let reportCount = 0;
-        let name = "";
+    fixable: "code",
 
-        /**
-         * Reports given identifier nodes if all of the nodes should be declared
-         * as const.
-         *
-         * The argument 'nodes' is an array of Identifier nodes.
-         * This node is the result of 'getIdentifierIfShouldBeConst()', so it's
-         * nullable. In simple declaration or assignment cases, the length of
-         * the array is 1. In destructuring cases, the length of the array can
-         * be 2 or more.
-         *
-         * @param {(eslint-scope.Reference|null)[]} nodes -
-         *      References which are grouped by destructuring to report.
-         * @returns {void}
-         */
-        function checkGroup(nodes) {
-            const nodesToReport = nodes.filter(Boolean);
+    schema: [
+      {
+        type: "object",
+        properties: {
+          destructuring: { enum: ["any", "all"], default: "any" },
+          ignoreReadBeforeAssign: { type: "boolean", default: false },
+        },
+        additionalProperties: false,
+      },
+    ],
+    messages: {
+      useConst: "'{{name}}' is never reassigned. Use 'const' instead.",
+    },
+  },
 
-            if (nodes.length && (shouldMatchAnyDestructuredVariable || nodesToReport.length === nodes.length)) {
-                const varDeclParent = findUp(nodes[0], "VariableDeclaration", parentNode => parentNode.type.endsWith("Statement"));
-                const isVarDecParentNull = varDeclParent === null;
+  create(context) {
+    const options = context.options[0] || {};
+    const sourceCode = context.getSourceCode();
+    const shouldMatchAnyDestructuredVariable = options.destructuring !== "all";
+    const ignoreReadBeforeAssign = options.ignoreReadBeforeAssign === true;
+    const variables = [];
+    let reportCount = 0;
+    let name = "";
 
-                if (!isVarDecParentNull && varDeclParent.declarations.length > 0) {
-                    const firstDeclaration = varDeclParent.declarations[0];
+    /**
+     * Reports given identifier nodes if all of the nodes should be declared
+     * as const.
+     *
+     * The argument 'nodes' is an array of Identifier nodes.
+     * This node is the result of 'getIdentifierIfShouldBeConst()', so it's
+     * nullable. In simple declaration or assignment cases, the length of
+     * the array is 1. In destructuring cases, the length of the array can
+     * be 2 or more.
+     *
+     * @param {(eslint-scope.Reference|null)[]} nodes -
+     *      References which are grouped by destructuring to report.
+     * @returns {void}
+     */
+    function checkGroup(nodes) {
+      const nodesToReport = nodes.filter(Boolean);
 
-                    if (firstDeclaration.init) {
-                        const firstDecParent = firstDeclaration.init.parent;
+      if (
+        nodes.length &&
+        (shouldMatchAnyDestructuredVariable ||
+          nodesToReport.length === nodes.length)
+      ) {
+        const varDeclParent = findUp(
+          nodes[0],
+          "VariableDeclaration",
+          (parentNode) => parentNode.type.endsWith("Statement")
+        );
+        const isVarDecParentNull = varDeclParent === null;
 
-                        /*
-                         * First we check the declaration type and then depending on
-                         * if the type is a "VariableDeclarator" or its an "ObjectPattern"
-                         * we compare the name from the first identifier, if the names are different
-                         * we assign the new name and reset the count of reportCount and nodeCount in
-                         * order to check each block for the number of reported errors and base our fix
-                         * based on comparing nodes.length and nodesToReport.length.
-                         */
+        if (!isVarDecParentNull && varDeclParent.declarations.length > 0) {
+          const firstDeclaration = varDeclParent.declarations[0];
 
-                        if (firstDecParent.type === "VariableDeclarator") {
+          if (firstDeclaration.init) {
+            const firstDecParent = firstDeclaration.init.parent;
 
-                            if (firstDecParent.id.name !== name) {
-                                name = firstDecParent.id.name;
-                                reportCount = 0;
-                            }
+            /*
+             * First we check the declaration type and then depending on
+             * if the type is a "VariableDeclarator" or its an "ObjectPattern"
+             * we compare the name from the first identifier, if the names are different
+             * we assign the new name and reset the count of reportCount and nodeCount in
+             * order to check each block for the number of reported errors and base our fix
+             * based on comparing nodes.length and nodesToReport.length.
+             */
 
-                            if (firstDecParent.id.type === "ObjectPattern") {
-                                if (firstDecParent.init.name !== name) {
-                                    name = firstDecParent.init.name;
-                                    reportCount = 0;
-                                }
-                            }
-                        }
-                    }
+            if (firstDecParent.type === "VariableDeclarator") {
+              if (firstDecParent.id.name !== name) {
+                name = firstDecParent.id.name;
+                reportCount = 0;
+              }
+
+              if (firstDecParent.id.type === "ObjectPattern") {
+                if (firstDecParent.init.name !== name) {
+                  name = firstDecParent.init.name;
+                  reportCount = 0;
                 }
-
-                let shouldFix = varDeclParent &&
-
-                    // Don't do a fix unless the variable is initialized (or it's in a for-in or for-of loop)
-                    (varDeclParent.parent.type === "ForInStatement" || varDeclParent.parent.type === "ForOfStatement" || varDeclParent.declarations[0].init) &&
-
-                    /*
-                     * If options.destructuring is "all", then this warning will not occur unless
-                     * every assignment in the destructuring should be const. In that case, it's safe
-                     * to apply the fix.
-                     */
-                    nodesToReport.length === nodes.length;
-
-                if (!isVarDecParentNull && varDeclParent.declarations && varDeclParent.declarations.length !== 1) {
-
-                    if (varDeclParent && varDeclParent.declarations && varDeclParent.declarations.length >= 1) {
-
-                        /*
-                         * Add nodesToReport.length to a count, then comparing the count to the length
-                         * of the declarations in the current block.
-                         */
-
-                        reportCount += nodesToReport.length;
-
-                        shouldFix = shouldFix && (reportCount === varDeclParent.declarations.length);
-                    }
-                }
-
-                nodesToReport.forEach(node => {
-                    context.report({
-                        node,
-                        messageId: "useConst",
-                        data: node,
-                        fix: shouldFix ? fixer => fixer.replaceText(sourceCode.getFirstToken(varDeclParent), "const") : null
-                    });
-                });
+              }
             }
+          }
         }
 
-        return {
-            "Program:exit"() {
-                groupByDestructuring(variables, ignoreReadBeforeAssign).forEach(checkGroup);
-            },
+        let shouldFix =
+          varDeclParent &&
+          // Don't do a fix unless the variable is initialized (or it's in a for-in or for-of loop)
+          (varDeclParent.parent.type === "ForInStatement" ||
+            varDeclParent.parent.type === "ForOfStatement" ||
+            varDeclParent.declarations[0].init) &&
+          /*
+           * If options.destructuring is "all", then this warning will not occur unless
+           * every assignment in the destructuring should be const. In that case, it's safe
+           * to apply the fix.
+           */
+          nodesToReport.length === nodes.length;
 
-            VariableDeclaration(node) {
-                if (node.kind === "let" && !isInitOfForStatement(node)) {
-                    variables.push(...context.getDeclaredVariables(node));
-                }
-            }
-        };
+        if (
+          !isVarDecParentNull &&
+          varDeclParent.declarations &&
+          varDeclParent.declarations.length !== 1
+        ) {
+          if (
+            varDeclParent &&
+            varDeclParent.declarations &&
+            varDeclParent.declarations.length >= 1
+          ) {
+            /*
+             * Add nodesToReport.length to a count, then comparing the count to the length
+             * of the declarations in the current block.
+             */
+
+            reportCount += nodesToReport.length;
+
+            shouldFix =
+              shouldFix && reportCount === varDeclParent.declarations.length;
+          }
+        }
+
+        nodesToReport.forEach((node) => {
+          context.report({
+            node,
+            messageId: "useConst",
+            data: node,
+            fix: shouldFix
+              ? (fixer) =>
+                  fixer.replaceText(
+                    sourceCode.getFirstToken(varDeclParent),
+                    "const"
+                  )
+              : null,
+          });
+        });
+      }
     }
+
+    return {
+      "Program:exit"() {
+        groupByDestructuring(variables, ignoreReadBeforeAssign).forEach(
+          checkGroup
+        );
+      },
+
+      VariableDeclaration(node) {
+        if (node.kind === "let" && !isInitOfForStatement(node)) {
+          variables.push(...context.getDeclaredVariables(node));
+        }
+      },
+    };
+  },
 };

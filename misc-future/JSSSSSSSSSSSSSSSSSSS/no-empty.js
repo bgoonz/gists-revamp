@@ -15,72 +15,77 @@ const astUtils = require("../util/ast-utils");
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow empty block statements",
-            category: "Possible Errors",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-empty"
-        },
-
-        schema: [
-            {
-                type: "object",
-                properties: {
-                    allowEmptyCatch: {
-                        type: "boolean",
-                        default: false
-                    }
-                },
-                additionalProperties: false
-            }
-        ],
-
-        messages: {
-            unexpected: "Empty {{type}} statement."
-        }
+    docs: {
+      description: "disallow empty block statements",
+      category: "Possible Errors",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-empty",
     },
 
-    create(context) {
-        const options = context.options[0] || {},
-            allowEmptyCatch = options.allowEmptyCatch || false;
+    schema: [
+      {
+        type: "object",
+        properties: {
+          allowEmptyCatch: {
+            type: "boolean",
+            default: false,
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
 
-        const sourceCode = context.getSourceCode();
+    messages: {
+      unexpected: "Empty {{type}} statement.",
+    },
+  },
 
-        return {
-            BlockStatement(node) {
+  create(context) {
+    const options = context.options[0] || {},
+      allowEmptyCatch = options.allowEmptyCatch || false;
 
-                // if the body is not empty, we can just return immediately
-                if (node.body.length !== 0) {
-                    return;
-                }
+    const sourceCode = context.getSourceCode();
 
-                // a function is generally allowed to be empty
-                if (astUtils.isFunction(node.parent)) {
-                    return;
-                }
+    return {
+      BlockStatement(node) {
+        // if the body is not empty, we can just return immediately
+        if (node.body.length !== 0) {
+          return;
+        }
 
-                if (allowEmptyCatch && node.parent.type === "CatchClause") {
-                    return;
-                }
+        // a function is generally allowed to be empty
+        if (astUtils.isFunction(node.parent)) {
+          return;
+        }
 
-                // any other block is only allowed to be empty, if it contains a comment
-                if (sourceCode.getCommentsInside(node).length > 0) {
-                    return;
-                }
+        if (allowEmptyCatch && node.parent.type === "CatchClause") {
+          return;
+        }
 
-                context.report({ node, messageId: "unexpected", data: { type: "block" } });
-            },
+        // any other block is only allowed to be empty, if it contains a comment
+        if (sourceCode.getCommentsInside(node).length > 0) {
+          return;
+        }
 
-            SwitchStatement(node) {
+        context.report({
+          node,
+          messageId: "unexpected",
+          data: { type: "block" },
+        });
+      },
 
-                if (typeof node.cases === "undefined" || node.cases.length === 0) {
-                    context.report({ node, messageId: "unexpected", data: { type: "switch" } });
-                }
-            }
-        };
-
-    }
+      SwitchStatement(node) {
+        if (typeof node.cases === "undefined" || node.cases.length === 0) {
+          context.report({
+            node,
+            messageId: "unexpected",
+            data: { type: "switch" },
+          });
+        }
+      },
+    };
+  },
 };

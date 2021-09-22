@@ -13,7 +13,7 @@ Object.defineProperty(NavigatorPlugins, "prototype", {
   value: NavigatorPlugins.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 NavigatorPlugins.prototype.javaEnabled = function javaEnabled() {
@@ -28,7 +28,7 @@ Object.defineProperty(NavigatorPlugins.prototype, Symbol.toStringTag, {
   value: "NavigatorPlugins",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -92,7 +92,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -102,7 +102,7 @@ const iface = {
     return obj;
   },
   interface: NavigatorPlugins,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

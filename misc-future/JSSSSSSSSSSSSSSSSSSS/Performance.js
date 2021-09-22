@@ -45,7 +45,7 @@ class Performance {
 
   toJSON() {
     return {
-      timeOrigin: this.timeOrigin
+      timeOrigin: this.timeOrigin,
     };
   }
 }

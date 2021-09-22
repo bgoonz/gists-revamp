@@ -15,12 +15,12 @@
  * @returns {boolean} `true` if the body is a single call of `super`.
  */
 function isSingleSuperCall(body) {
-    return (
-        body.length === 1 &&
-        body[0].type === "ExpressionStatement" &&
-        body[0].expression.type === "CallExpression" &&
-        body[0].expression.callee.type === "Super"
-    );
+  return (
+    body.length === 1 &&
+    body[0].type === "ExpressionStatement" &&
+    body[0].expression.type === "CallExpression" &&
+    body[0].expression.callee.type === "Super"
+  );
 }
 
 /**
@@ -31,7 +31,7 @@ function isSingleSuperCall(body) {
  * @returns {boolean} `true` if the node doesn't have any side effects.
  */
 function isSimple(node) {
-    return node.type === "Identifier" || node.type === "RestElement";
+  return node.type === "Identifier" || node.type === "RestElement";
 }
 
 /**
@@ -42,12 +42,12 @@ function isSimple(node) {
  * @returns {boolean} `true` if the superArgs is `...arguments`.
  */
 function isSpreadArguments(superArgs) {
-    return (
-        superArgs.length === 1 &&
-        superArgs[0].type === "SpreadElement" &&
-        superArgs[0].argument.type === "Identifier" &&
-        superArgs[0].argument.name === "arguments"
-    );
+  return (
+    superArgs.length === 1 &&
+    superArgs[0].type === "SpreadElement" &&
+    superArgs[0].argument.type === "Identifier" &&
+    superArgs[0].argument.name === "arguments"
+  );
 }
 
 /**
@@ -59,11 +59,11 @@ function isSpreadArguments(superArgs) {
  *      name.
  */
 function isValidIdentifierPair(ctorParam, superArg) {
-    return (
-        ctorParam.type === "Identifier" &&
-        superArg.type === "Identifier" &&
-        ctorParam.name === superArg.name
-    );
+  return (
+    ctorParam.type === "Identifier" &&
+    superArg.type === "Identifier" &&
+    ctorParam.name === superArg.name
+  );
 }
 
 /**
@@ -75,11 +75,11 @@ function isValidIdentifierPair(ctorParam, superArg) {
  *      same values.
  */
 function isValidRestSpreadPair(ctorParam, superArg) {
-    return (
-        ctorParam.type === "RestElement" &&
-        superArg.type === "SpreadElement" &&
-        isValidIdentifierPair(ctorParam.argument, superArg.argument)
-    );
+  return (
+    ctorParam.type === "RestElement" &&
+    superArg.type === "SpreadElement" &&
+    isValidIdentifierPair(ctorParam.argument, superArg.argument)
+  );
 }
 
 /**
@@ -90,10 +90,10 @@ function isValidRestSpreadPair(ctorParam, superArg) {
  * @returns {boolean} `true` if the nodes have the same value or not.
  */
 function isValidPair(ctorParam, superArg) {
-    return (
-        isValidIdentifierPair(ctorParam, superArg) ||
-        isValidRestSpreadPair(ctorParam, superArg)
-    );
+  return (
+    isValidIdentifierPair(ctorParam, superArg) ||
+    isValidRestSpreadPair(ctorParam, superArg)
+  );
 }
 
 /**
@@ -105,17 +105,17 @@ function isValidPair(ctorParam, superArg) {
  * @returns {boolean} `true` if those have the same values.
  */
 function isPassingThrough(ctorParams, superArgs) {
-    if (ctorParams.length !== superArgs.length) {
-        return false;
-    }
+  if (ctorParams.length !== superArgs.length) {
+    return false;
+  }
 
-    for (let i = 0; i < ctorParams.length; ++i) {
-        if (!isValidPair(ctorParams[i], superArgs[i])) {
-            return false;
-        }
+  for (let i = 0; i < ctorParams.length; ++i) {
+    if (!isValidPair(ctorParams[i], superArgs[i])) {
+      return false;
     }
+  }
 
-    return true;
+  return true;
 }
 
 /**
@@ -126,14 +126,12 @@ function isPassingThrough(ctorParams, superArgs) {
  * @returns {boolean} true if the construtor body is redundant
  */
 function isRedundantSuperCall(body, ctorParams) {
-    return (
-        isSingleSuperCall(body) &&
-        ctorParams.every(isSimple) &&
-        (
-            isSpreadArguments(body[0].expression.arguments) ||
-            isPassingThrough(ctorParams, body[0].expression.arguments)
-        )
-    );
+  return (
+    isSingleSuperCall(body) &&
+    ctorParams.every(isSimple) &&
+    (isSpreadArguments(body[0].expression.arguments) ||
+      isPassingThrough(ctorParams, body[0].expression.arguments))
+  );
 }
 
 //------------------------------------------------------------------------------
@@ -141,45 +139,46 @@ function isRedundantSuperCall(body, ctorParams) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow unnecessary constructors",
-            category: "ECMAScript 6",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-useless-constructor"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow unnecessary constructors",
+      category: "ECMAScript 6",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-useless-constructor",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        /**
-         * Checks whether a node is a redundant constructor
-         * @param {ASTNode} node - node to check
-         * @returns {void}
-         */
-        function checkForConstructor(node) {
-            if (node.kind !== "constructor") {
-                return;
-            }
+  create(context) {
+    /**
+     * Checks whether a node is a redundant constructor
+     * @param {ASTNode} node - node to check
+     * @returns {void}
+     */
+    function checkForConstructor(node) {
+      if (node.kind !== "constructor") {
+        return;
+      }
 
-            const body = node.value.body.body;
-            const ctorParams = node.value.params;
-            const superClass = node.parent.parent.superClass;
+      const body = node.value.body.body;
+      const ctorParams = node.value.params;
+      const superClass = node.parent.parent.superClass;
 
-            if (superClass ? isRedundantSuperCall(body, ctorParams) : (body.length === 0)) {
-                context.report({
-                    node,
-                    message: "Useless constructor."
-                });
-            }
-        }
-
-        return {
-            MethodDefinition: checkForConstructor
-        };
+      if (
+        superClass ? isRedundantSuperCall(body, ctorParams) : body.length === 0
+      ) {
+        context.report({
+          node,
+          message: "Useless constructor.",
+        });
+      }
     }
+
+    return {
+      MethodDefinition: checkForConstructor,
+    };
+  },
 };

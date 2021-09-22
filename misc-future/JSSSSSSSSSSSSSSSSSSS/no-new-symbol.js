@@ -10,37 +10,38 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow `new` operators with the `Symbol` object",
-            category: "ECMAScript 6",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-new-symbol"
-        },
-
-        schema: []
+    docs: {
+      description: "disallow `new` operators with the `Symbol` object",
+      category: "ECMAScript 6",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-new-symbol",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
-            "Program:exit"() {
-                const globalScope = context.getScope();
-                const variable = globalScope.set.get("Symbol");
+  create(context) {
+    return {
+      "Program:exit"() {
+        const globalScope = context.getScope();
+        const variable = globalScope.set.get("Symbol");
 
-                if (variable && variable.defs.length === 0) {
-                    variable.references.forEach(ref => {
-                        const node = ref.identifier;
+        if (variable && variable.defs.length === 0) {
+          variable.references.forEach((ref) => {
+            const node = ref.identifier;
 
-                        if (node.parent && node.parent.type === "NewExpression") {
-                            context.report({ node, message: "`Symbol` cannot be called as a constructor." });
-                        }
-                    });
-                }
+            if (node.parent && node.parent.type === "NewExpression") {
+              context.report({
+                node,
+                message: "`Symbol` cannot be called as a constructor.",
+              });
             }
-        };
-
-    }
+          });
+        }
+      },
+    };
+  },
 };

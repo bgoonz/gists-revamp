@@ -1,10 +1,10 @@
-'use strict';
-var _ = require('lodash');
-var { defer, empty, from, of } = require('rxjs');
-var { concatMap, filter, publish, reduce } = require('rxjs/operators');
-var runAsync = require('run-async');
-var utils = require('../utils/utils');
-var Base = require('./baseUI');
+"use strict";
+var _ = require("lodash");
+var { defer, empty, from, of } = require("rxjs");
+var { concatMap, filter, publish, reduce } = require("rxjs/operators");
+var runAsync = require("run-async");
+var utils = require("../utils/utils");
+var Base = require("./baseUI");
 
 /**
  * Base interface class other can inherits from
@@ -67,13 +67,13 @@ class PromptUI extends Base {
         concatMap(this.setDefaultType.bind(this)),
         concatMap(this.filterIfRunnable.bind(this)),
         concatMap(() =>
-          utils.fetchAsyncQuestionProperty(question, 'message', this.answers)
+          utils.fetchAsyncQuestionProperty(question, "message", this.answers)
         ),
         concatMap(() =>
-          utils.fetchAsyncQuestionProperty(question, 'default', this.answers)
+          utils.fetchAsyncQuestionProperty(question, "default", this.answers)
         ),
         concatMap(() =>
-          utils.fetchAsyncQuestionProperty(question, 'choices', this.answers)
+          utils.fetchAsyncQuestionProperty(question, "choices", this.answers)
         ),
         concatMap(this.fetchAnswer.bind(this))
       );
@@ -85,7 +85,9 @@ class PromptUI extends Base {
     this.activePrompt = new Prompt(question, this.rl, this.answers);
     return defer(() =>
       from(
-        this.activePrompt.run().then(answer => ({ name: question.name, answer: answer }))
+        this.activePrompt
+          .run()
+          .then((answer) => ({ name: question.name, answer: answer }))
       )
     );
   }
@@ -93,7 +95,7 @@ class PromptUI extends Base {
   setDefaultType(question) {
     // Default type to input
     if (!this.prompts[question.type]) {
-      question.type = 'input';
+      question.type = "input";
     }
 
     return defer(() => of(question));
@@ -111,12 +113,12 @@ class PromptUI extends Base {
     var answers = this.answers;
     return defer(() =>
       from(
-        runAsync(question.when)(answers).then(shouldRun => {
+        runAsync(question.when)(answers).then((shouldRun) => {
           if (shouldRun) {
             return question;
           }
         })
-      ).pipe(filter(val => val != null))
+      ).pipe(filter((val) => val != null))
     );
   }
 }

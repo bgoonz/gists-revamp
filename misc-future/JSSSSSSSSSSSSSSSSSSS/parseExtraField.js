@@ -1,19 +1,19 @@
-var binary = require('binary');
+var binary = require("binary");
 
-module.exports = function(extraField, vars) {
+module.exports = function (extraField, vars) {
   var extra;
   // Find the ZIP64 header, if present.
-  while(!extra && extraField && extraField.length) {
-    var candidateExtra = binary.parse(extraField)
-      .word16lu('signature')
-      .word16lu('partsize')
-      .word64lu('uncompressedSize')
-      .word64lu('compressedSize')
-      .word64lu('offset')
-      .word64lu('disknum')
-      .vars;
+  while (!extra && extraField && extraField.length) {
+    var candidateExtra = binary
+      .parse(extraField)
+      .word16lu("signature")
+      .word16lu("partsize")
+      .word64lu("uncompressedSize")
+      .word64lu("compressedSize")
+      .word64lu("offset")
+      .word64lu("disknum").vars;
 
-    if(candidateExtra.signature === 0x0001) {
+    if (candidateExtra.signature === 0x0001) {
       extra = candidateExtra;
     } else {
       // Advance the buffer to the next part.
@@ -27,8 +27,8 @@ module.exports = function(extraField, vars) {
   if (vars.compressedSize === 0xffffffff)
     vars.compressedSize = extra.compressedSize;
 
-  if (vars.uncompressedSize  === 0xffffffff)
-    vars.uncompressedSize= extra.uncompressedSize;
+  if (vars.uncompressedSize === 0xffffffff)
+    vars.uncompressedSize = extra.uncompressedSize;
 
   return extra;
 };

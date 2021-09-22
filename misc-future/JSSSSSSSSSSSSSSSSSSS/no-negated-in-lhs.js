@@ -11,32 +11,36 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow negating the left operand in `in` expressions",
-            category: "Possible Errors",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-negated-in-lhs"
-        },
-
-        replacedBy: ["no-unsafe-negation"],
-
-        deprecated: true,
-        schema: []
+    docs: {
+      description: "disallow negating the left operand in `in` expressions",
+      category: "Possible Errors",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-negated-in-lhs",
     },
 
-    create(context) {
+    replacedBy: ["no-unsafe-negation"],
 
-        return {
+    deprecated: true,
+    schema: [],
+  },
 
-            BinaryExpression(node) {
-                if (node.operator === "in" && node.left.type === "UnaryExpression" && node.left.operator === "!") {
-                    context.report({ node, message: "The 'in' expression's left operand is negated." });
-                }
-            }
-        };
-
-    }
+  create(context) {
+    return {
+      BinaryExpression(node) {
+        if (
+          node.operator === "in" &&
+          node.left.type === "UnaryExpression" &&
+          node.left.operator === "!"
+        ) {
+          context.report({
+            node,
+            message: "The 'in' expression's left operand is negated.",
+          });
+        }
+      },
+    };
+  },
 };

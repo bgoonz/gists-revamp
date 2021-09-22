@@ -21,11 +21,17 @@ module.exports = class JSDOMParse5Adapter {
   }
 
   createDocumentFragment() {
-    return DocumentFragment.createImpl([], { ownerDocument: this._documentImpl });
+    return DocumentFragment.createImpl([], {
+      ownerDocument: this._documentImpl,
+    });
   }
 
   createElement(localName, namespace, attrs) {
-    const element = this._documentImpl._createElementWithCorrectElementInterface(localName, namespace);
+    const element =
+      this._documentImpl._createElementWithCorrectElementInterface(
+        localName,
+        namespace
+      );
     element._namespaceURI = namespace;
     this.adoptAttributes(element, attrs);
 
@@ -64,7 +70,12 @@ module.exports = class JSDOMParse5Adapter {
       systemId = "";
     }
 
-    const documentType = DocumentType.createImpl([], { name, publicId, systemId, ownerDocument: this._documentImpl });
+    const documentType = DocumentType.createImpl([], {
+      name,
+      publicId,
+      systemId,
+      ownerDocument: this._documentImpl,
+    });
     document.appendChild(documentType);
   }
 
@@ -82,7 +93,10 @@ module.exports = class JSDOMParse5Adapter {
     if (lastChild && lastChild.nodeType === nodeTypes.TEXT_NODE) {
       lastChild.data += text;
     } else {
-      const textNode = Text.createImpl([], { data: text, ownerDocument: this._documentImpl });
+      const textNode = Text.createImpl([], {
+        data: text,
+        ownerDocument: this._documentImpl,
+      });
 
       parentNode.appendChild(textNode);
     }
@@ -93,7 +107,10 @@ module.exports = class JSDOMParse5Adapter {
     if (previousSibling && previousSibling.nodeType === nodeTypes.TEXT_NODE) {
       previousSibling.data += text;
     } else {
-      const textNode = Text.createImpl([], { data: text, ownerDocument: this._documentImpl });
+      const textNode = Text.createImpl([], {
+        data: text,
+        ownerDocument: this._documentImpl,
+      });
 
       parentNode.insertBefore(textNode, referenceNode);
     }
@@ -102,7 +119,13 @@ module.exports = class JSDOMParse5Adapter {
   adoptAttributes(element, attrs) {
     for (const attr of attrs) {
       const prefix = attr.prefix === "" ? null : attr.prefix;
-      attributes.setAttributeValue(element, attr.name, attr.value, prefix, attr.namespace);
+      attributes.setAttributeValue(
+        element,
+        attr.name,
+        attr.value,
+        prefix,
+        attr.namespace
+      );
     }
   }
 };

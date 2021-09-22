@@ -10,37 +10,43 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow the use of `arguments.caller` or `arguments.callee`",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-caller"
-        },
-
-        schema: [],
-
-        messages: {
-            unexpected: "Avoid arguments.{{prop}}."
-        }
+    docs: {
+      description:
+        "disallow the use of `arguments.caller` or `arguments.callee`",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-caller",
     },
 
-    create(context) {
+    schema: [],
 
-        return {
+    messages: {
+      unexpected: "Avoid arguments.{{prop}}.",
+    },
+  },
 
-            MemberExpression(node) {
-                const objectName = node.object.name,
-                    propertyName = node.property.name;
+  create(context) {
+    return {
+      MemberExpression(node) {
+        const objectName = node.object.name,
+          propertyName = node.property.name;
 
-                if (objectName === "arguments" && !node.computed && propertyName && propertyName.match(/^calle[er]$/u)) {
-                    context.report({ node, messageId: "unexpected", data: { prop: propertyName } });
-                }
-
-            }
-        };
-
-    }
+        if (
+          objectName === "arguments" &&
+          !node.computed &&
+          propertyName &&
+          propertyName.match(/^calle[er]$/u)
+        ) {
+          context.report({
+            node,
+            messageId: "unexpected",
+            data: { prop: propertyName },
+          });
+        }
+      },
+    };
+  },
 };

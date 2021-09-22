@@ -28,37 +28,34 @@ const regex = /^\/([^\\[]|\\.|\[([^\\\]]|\\.)+\])*\/[gimuys]*$/u;
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "problem",
+  meta: {
+    type: "problem",
 
-        docs: {
-            description: "disallow empty character classes in regular expressions",
-            category: "Possible Errors",
-            recommended: true,
-            url: "https://eslint.org/docs/rules/no-empty-character-class"
-        },
-
-        schema: [],
-
-        messages: {
-            unexpected: "Empty class."
-        }
+    docs: {
+      description: "disallow empty character classes in regular expressions",
+      category: "Possible Errors",
+      recommended: true,
+      url: "https://eslint.org/docs/rules/no-empty-character-class",
     },
 
-    create(context) {
-        const sourceCode = context.getSourceCode();
+    schema: [],
 
-        return {
+    messages: {
+      unexpected: "Empty class.",
+    },
+  },
 
-            Literal(node) {
-                const token = sourceCode.getFirstToken(node);
+  create(context) {
+    const sourceCode = context.getSourceCode();
 
-                if (token.type === "RegularExpression" && !regex.test(token.value)) {
-                    context.report({ node, messageId: "unexpected" });
-                }
-            }
+    return {
+      Literal(node) {
+        const token = sourceCode.getFirstToken(node);
 
-        };
-
-    }
+        if (token.type === "RegularExpression" && !regex.test(token.value)) {
+          context.report({ node, messageId: "unexpected" });
+        }
+      },
+    };
+  },
 };

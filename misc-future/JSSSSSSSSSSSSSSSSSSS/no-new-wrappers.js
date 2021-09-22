@@ -10,31 +10,33 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "disallow `new` operators with the `String`, `Number`, and `Boolean` objects",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/no-new-wrappers"
-        },
-
-        schema: []
+    docs: {
+      description:
+        "disallow `new` operators with the `String`, `Number`, and `Boolean` objects",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/no-new-wrappers",
     },
 
-    create(context) {
+    schema: [],
+  },
 
-        return {
+  create(context) {
+    return {
+      NewExpression(node) {
+        const wrapperObjects = ["String", "Number", "Boolean", "Math", "JSON"];
 
-            NewExpression(node) {
-                const wrapperObjects = ["String", "Number", "Boolean", "Math", "JSON"];
-
-                if (wrapperObjects.indexOf(node.callee.name) > -1) {
-                    context.report({ node, message: "Do not use {{fn}} as a constructor.", data: { fn: node.callee.name } });
-                }
-            }
-        };
-
-    }
+        if (wrapperObjects.indexOf(node.callee.name) > -1) {
+          context.report({
+            node,
+            message: "Do not use {{fn}} as a constructor.",
+            data: { fn: node.callee.name },
+          });
+        }
+      },
+    };
+  },
 };
