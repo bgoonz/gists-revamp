@@ -1,9 +1,9 @@
 var Foo = {
-	hello() { }
+  hello() {},
 };
 
-var Bar = Object.delegate(Foo,{
-	world() { }	
+var Bar = Object.delegate(Foo, {
+  world() {},
 });
 
 var baz = Object.delegate(Bar);

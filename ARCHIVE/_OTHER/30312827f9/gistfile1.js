@@ -1,4 +1,4 @@
-(function(){
-   alert(window);  // "undefined"
-   var window = window;
+(function () {
+  alert(window); // "undefined"
+  var window = window;
 })();

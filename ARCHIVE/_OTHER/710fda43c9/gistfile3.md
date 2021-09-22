@@ -1,14 +1,14 @@
 Let's take a look at a new kind of function, called a "generator" in ES6:
 
 ```js
-function *foo() {
-   yield 1;
-   yield 2;
-   yield bar();
+function* foo() {
+  yield 1;
+  yield 2;
+  yield bar();
 }
 
 function bar() {
-   return 3;
+  return 3;
 }
 
 var it = foo();
@@ -25,14 +25,14 @@ When you call `foo()`, you're actually not calling the `*foo()` generator, you'r
 However, if `bar()` was instead another generator, and the call was `yield *bar()`, we'd be delegating iteration control to the `*bar()` generator:
 
 ```js
-function *foo() {
-   yield 1;
-   yield 2;
-   yield *bar();
+function* foo() {
+  yield 1;
+  yield 2;
+  yield* bar();
 }
 
-function *bar() {
-   return 3;
+function* bar() {
+  return 3;
 }
 
 var it = foo();

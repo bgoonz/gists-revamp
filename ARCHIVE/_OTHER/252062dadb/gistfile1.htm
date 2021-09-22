@@ -1,20 +1,22 @@
-    <script src='LABjs/LAB.min.js'></script>
-    <script>
-      <!--
-         $LAB
-           .setOptions({BasePath:'/syntaxhighlight/js/'})
-           .script('shCore.js',
-                   'shBrushCpp.js',
-                   'shBrushCss.js',
-                   'shBrushJScript.js',
-                   'shBrushPython.js',
-                   'shBrushSql.js',
-                   'shBrushXml.js',
-                   'shBrushLisp.js'
-           )
-           .wait(function () {
-             dp.SyntaxHighlighter.ClipboardSwf = '/syntaxhighlight/flash/clipboard.swf';
-             dp.SyntaxHighlighter.HighlightAll('code');
-           });
-      // -->
-    </script>
+<script src="LABjs/LAB.min.js"></script>
+<script>
+  <!--
+  $LAB
+    .setOptions({ BasePath: "/syntaxhighlight/js/" })
+    .script(
+      "shCore.js",
+      "shBrushCpp.js",
+      "shBrushCss.js",
+      "shBrushJScript.js",
+      "shBrushPython.js",
+      "shBrushSql.js",
+      "shBrushXml.js",
+      "shBrushLisp.js"
+    )
+    .wait(function () {
+      dp.SyntaxHighlighter.ClipboardSwf =
+        "/syntaxhighlight/flash/clipboard.swf";
+      dp.SyntaxHighlighter.HighlightAll("code");
+    });
+  // -->
+</script>

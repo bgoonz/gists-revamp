@@ -1,6 +1,6 @@
 # Building That Better Web
 
-In honor of the 30th anniversary of the web, I wanted to share a few thoughts about what a *better web* could aspire to be, and challenge us to move toward it.
+In honor of the 30th anniversary of the web, I wanted to share a few thoughts about what a _better web_ could aspire to be, and challenge us to move toward it.
 
 ## The Worser Web
 
@@ -8,9 +8,9 @@ It's tempting to frame "better" simply in terms of improvement and progress, as 
 
 So in one practical respect, a better web is one that empowers developers and users alike to express themselves and connect with others more *fluent*ly.
 
-But I don't think "better" just means improved from where it *was* in the past. I think "better" really needs to be thought of in terms of steering toward a different future for the web than where some forces might want to take it.
+But I don't think "better" just means improved from where it _was_ in the past. I think "better" really needs to be thought of in terms of steering toward a different future for the web than where some forces might want to take it.
 
-To me, a *better web* is one that takes HTML's [Priority of Constitutencies (Section 3.2)](https://www.w3.org/TR/html-design-principles/#priority-of-constituencies) as sacred inviolable law, not merely a hollow anecdote.
+To me, a _better web_ is one that takes HTML's [Priority of Constitutencies (Section 3.2)](https://www.w3.org/TR/html-design-principles/#priority-of-constituencies) as sacred inviolable law, not merely a hollow anecdote.
 
 > In case of conflict, consider users over authors over implementors over specifiers over theoretical purity. In other words costs or difficulties to the user should be given more weight than costs to authors; which in turn should be given more weight than costs to implementors; which should be given more weight than costs to authors of the spec itself, which should be given more weight than those proposing changes for theoretical reasons alone.
 
@@ -20,7 +20,7 @@ If we are to build a better web, first we must face down what the worser web wou
 
 In the name of providing free and practically ubiquitous access to news, shopping, social media, and a host of other interactive engagments on the web, countless sites have given these services away for "free", in exchange for one tiny little token: your very digital soul -- your privacy, your right to anonymity.
 
-Of course, advertisers claim that by tracking your every move, online and even offline, they can make your user *experience* better by more accurately targeting you with stuff they know you'll want to see. That's a nice claim, of course, but it's a sword that cuts both ways. They may realize that you really do want a new pair of shoes, and helpfully provide you an advertisment for them. But they also realize that they can persuade you and alter your behavior, and they do. These are just different shades of the same color.
+Of course, advertisers claim that by tracking your every move, online and even offline, they can make your user _experience_ better by more accurately targeting you with stuff they know you'll want to see. That's a nice claim, of course, but it's a sword that cuts both ways. They may realize that you really do want a new pair of shoes, and helpfully provide you an advertisment for them. But they also realize that they can persuade you and alter your behavior, and they do. These are just different shades of the same color.
 
 Speaking of claims to improve experience, content providers (video, audio, etc) from the gaming and entertainment industries are always more keen to leverage the web to drive content interaction. And users love it. Who reading this seriously doesn't have a Netflix account?!
 
@@ -46,7 +46,7 @@ As long as we can find some form of rational connection to them, we can sympathi
 
 Except... they are a real person. 100% of the time. Even if they're not a good hearted person, they're still real. And by [flipping the bozo bit](https://en.wikipedia.org/wiki/Bozo_bit) on them so that you're free to de-humanize them and treat them however you feel, you've broken down what makes the web the web: people and connection. Another word for that is community.
 
-I always like to define empathy as different from sympathy in this way: sympathy is what you feel for someone when you can understand and rationalize their experiences, whereas empathy is when you *choose* to extend compassion in those circumstances when you quite literally cannot understand or reason about their reality.
+I always like to define empathy as different from sympathy in this way: sympathy is what you feel for someone when you can understand and rationalize their experiences, whereas empathy is when you _choose_ to extend compassion in those circumstances when you quite literally cannot understand or reason about their reality.
 
 You have a choice: either you assume the set of pixels you're interacting with is actually a human being, and their reality is just completely and utterly different, but no less valid, than your own... or you assume that your logic and experience is all you could possibly need to understand any of the billions of people on this planet. **Which is more plausible?**
 
@@ -58,7 +58,7 @@ Start choosing to act with empathy to others who are as different from you as yo
 
 ## Better, Together
 
-The better web I believe we all collectively want isn't about waiting for that next feature to land in a browser nightly. It's not about your favorite social media site *finally* launching a [PWA](https://developers.google.com/web/progressive-web-apps/) to fight the app tyranny. And it's certainly not about winning (aka, outlasting) that next twitter argument thread.
+The better web I believe we all collectively want isn't about waiting for that next feature to land in a browser nightly. It's not about your favorite social media site _finally_ launching a [PWA](https://developers.google.com/web/progressive-web-apps/) to fight the app tyranny. And it's certainly not about winning (aka, outlasting) that next twitter argument thread.
 
 No, the better web we all want, or should anyway, is the one where we knit our community more closely than ever, where we shrink the gaps between us. We can and should use the web's amazing technology and unprecedented reach to do so. The better web is one where we keep fighting to put users first, and we reject continually and vigorously the urges to wrap "but, users like it" around evil intentions like non-open control, vendor lock-in, and deep and persistent data collection.
 
@@ -66,4 +66,4 @@ And none of this is going to come easily.
 
 I don't have any magic answers to the problems that constantly try to steer us toward that worser web. But I do know that we have to fight to tear down the silos (technical and social) and walled gardens and divisions-by-choice.
 
-If the web is going to survive and thrive for another 30 years and beyond, to that *better web* we could imagine, we're going to have to build it together.
+If the web is going to survive and thrive for another 30 years and beyond, to that _better web_ we could imagine, we're going to have to build it together.

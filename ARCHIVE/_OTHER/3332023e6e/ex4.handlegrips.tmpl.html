@@ -7,10 +7,6 @@ of values (`"bar","baz"`), and only make the assignment for the matching set val
 the comparison hash.
 -->
 
-
-{$: "#foobar" | data.foobar{"bar","baz"} = "checked" }
-
-   <input name="foobar" value="bar" {$=data.foobar{"bar"}$}>
-   <input name="foobar" value="baz" {$=data.foobar{"baz"}$}>
-
-{$}
+{$: "#foobar" | data.foobar{"bar","baz"} = "checked" } <input name="foobar"
+value="bar" {$=data.foobar{"bar"}$}> <input name="foobar" value="baz"
+{$=data.foobar{"baz"}$}> {$}

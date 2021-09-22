@@ -1,4 +1,4 @@
-Howdy! We use [CodeMirror](http://codemirror.net/) as our editor on CodePen. We also use the [Emmet](https://github.com/emmetio/codemirror) add on for it. We love it. The users love it. It's also **very very big** at 831k (before compression and stuff). 
+Howdy! We use [CodeMirror](http://codemirror.net/) as our editor on CodePen. We also use the [Emmet](https://github.com/emmetio/codemirror) add on for it. We love it. The users love it. It's also **very very big** at 831k (before compression and stuff).
 
 I've been wanting to optimize it for a while, I've just struggled with it the few times I've tried, and think maybe one of you smart people might be able to do the job more efficiently.
 

@@ -2,13 +2,13 @@ Let's take a look at a new kind of function, called a "generator" in ES6:
 
 ```js
 function* foo() {
-   yield 1;
-   yield 2;
-   yield bar();
+  yield 1;
+  yield 2;
+  yield bar();
 }
 
 function bar() {
-   return 3;
+  return 3;
 }
 
 var it = foo();
@@ -26,13 +26,13 @@ However, if `bar()` was instead another generator, and the call was `yield* bar(
 
 ```js
 function* foo() {
-   yield 1;
-   yield 2;
-   yield* bar();
+  yield 1;
+  yield 2;
+  yield* bar();
 }
 
 function* bar() {
-   return 3;
+  return 3;
 }
 
 var it = foo();

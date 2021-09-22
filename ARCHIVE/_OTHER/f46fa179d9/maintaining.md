@@ -1,6 +1,7 @@
 # Maintaining Open Source Software
 
 ## Presentations
+
 https://speakerdeck.com/bf4/the-open-source-junkyard
 https://speakerdeck.com/mattt/open-source-stewardship
 https://speakerdeck.com/mathonsunday/friendly-open-source-projects
@@ -12,6 +13,7 @@ https://speakerdeck.com/alex/why-open-source-works
 https://speakerdeck.com/alex/communicating-in-open-source
 
 ## Articles
+
 https://segment.io/blog/tips-for-maintaining-an-open-source-library/
 http://treyhunner.com/2013/07/maintaining-an-open-source-project/
 http://www.sutor.com/c/2010/06/10-considerations-for-maintaining-open-source/
@@ -23,5 +25,5 @@ http://words.steveklabnik.com/how-to-be-an-open-source-gardener
 http://blog.lazerwalker.com/blog/2013/09/02/tending-your-garden
 
 ## Videos
-http://pyvideo.org/video/2637/set-your-code-free-releasing-and-maintaining-an
 
+http://pyvideo.org/video/2637/set-your-code-free-releasing-and-maintaining-an

@@ -1,13 +1,13 @@
-function *foo() {
-	var x = 2 instanceof (yield);
-	console.log(x);
+function* foo() {
+  var x = 2 instanceof (yield);
+  console.log(x);
 }
 
 function Foo() {}
-Object.defineProperty(Foo,Symbol.hasInstance,{
-	value: function(inst) {
-		return inst.bar == "foo";
-	}
+Object.defineProperty(Foo, Symbol.hasInstance, {
+  value: function (inst) {
+    return inst.bar == "foo";
+  },
 });
 
 Number.prototype.bar = "foo";

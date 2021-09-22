@@ -3,7 +3,7 @@ body {
 }
 
 ul {
-  list-style: none
+  list-style: none;
 }
 
 li {
@@ -13,7 +13,7 @@ li {
   zoom: 1;
   *display: inline;
   padding: 4px;
-  color: white
+  color: white;
 }
 
 ul.white-space-fix li {

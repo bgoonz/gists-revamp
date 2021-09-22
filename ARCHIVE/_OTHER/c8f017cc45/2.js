@@ -1,6 +1,6 @@
 // Preferred:
 
-var fn = x => y => z => x * y / z;
+var fn = (x) => (y) => (z) => (x * y) / z;
 
 // pros: much shorter and thus a bit more visually attractive
 // cons: doesn't hoist, all functions are anonymous (lexically)...

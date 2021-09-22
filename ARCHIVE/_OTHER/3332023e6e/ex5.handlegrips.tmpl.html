@@ -6,16 +6,13 @@ kind of like an array comprehension, where you can specify a set-literal as the
 looping context of values, so your computation happens once for each iteration.
 -->
 
-
 {$: "#foobar" }
 
-   <!-- {$* is the looping construct. this example allows a set literal for the
+<!-- {$* is the looping construct. this example allows a set literal for the
         looping context. you then evaluate the loop expression for each iteration,
         setting a helper local variable `checked` to use in the markup.
    -->
 
-   {$* ["bar","baz"] | checked = (data.foobar==.) ? "checked" }
-      <input name="foobar" value="{$=.$}" {$=checked$}>
-   {$}
-
-{$}
+{$* ["bar","baz"] | checked = (data.foobar==.) ? "checked" }
+<input name="foobar" value="{$=.$}" {$="checked$}" />
+{$} {$}

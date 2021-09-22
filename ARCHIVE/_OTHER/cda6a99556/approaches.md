@@ -17,7 +17,7 @@ IPFS support directly in mainline registries:
 
 - On package upload, resulting artifacts are added to IPFS and CID is stored and served alongside other metadata
 - Clients receive CIDs along with other metadata from registry APIs and use IPFS to download artifacts
-- Clients store resolved CIDs in lockfiles to allow for  installation
+- Clients store resolved CIDs in lockfiles to allow for installation
 
 #### Problems
 

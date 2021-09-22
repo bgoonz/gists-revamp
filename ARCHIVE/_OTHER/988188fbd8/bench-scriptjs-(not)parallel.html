@@ -1,16 +1,16 @@
-    <script src="../dist/script.js"></script>
-    <script type="text/javascript">
-      var start = (+new Date);
+<script src="../dist/script.js"></script>
+<script type="text/javascript">
+  var start = +new Date();
 
-      // load some scripts dependent on each other (as nested $script calls, so NOT parallel)
-      $script('a.js',function(){
-        $script('b.js',function(){
-          $script('c.js',function(){
-            a() + b() + c();
+  // load some scripts dependent on each other (as nested $script calls, so NOT parallel)
+  $script("a.js", function () {
+    $script("b.js", function () {
+      $script("c.js", function () {
+        a() + b() + c();
 
-            // benchmark time!
-            document.getElementById('total').innerHTML = (+new Date) - start;
-          });
-        });
+        // benchmark time!
+        document.getElementById("total").innerHTML = +new Date() - start;
       });
-    </script>
+    });
+  });
+</script>

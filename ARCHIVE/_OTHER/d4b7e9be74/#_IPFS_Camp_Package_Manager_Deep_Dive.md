@@ -2,7 +2,7 @@
 
 ## Package Managers: What Now, What Next?
 
-> Community evaluation and ideation session to recap the current (as of late June) state of the IPFS-enabled package manager landscape, discuss happiness and pain points, and do some ideation/co-creation  around the direction of our next rounds of package manager efforts.
+> Community evaluation and ideation session to recap the current (as of late June) state of the IPFS-enabled package manager landscape, discuss happiness and pain points, and do some ideation/co-creation around the direction of our next rounds of package manager efforts.
 
 ## Existing materials
 
@@ -29,39 +29,43 @@
 - Community
 
 ## Order of activities
-- Overview of current space (can @achingbrain and @andrew help assemble this?) with 
-    - Emphasis that there's a lot to tackle here, and we want to give you a brief overview to level-set
-    - Emphasis on "here's our body of research/analysis over the last six months, here are the problems and opportunities we've reached as part of this research, now let's rank/discuss these"
-    - Emphasis that this is a large problem space: show the reproducable build group's current work and problem space?
+
+- Overview of current space (can @achingbrain and @andrew help assemble this?) with
+  - Emphasis that there's a lot to tackle here, and we want to give you a brief overview to level-set
+  - Emphasis on "here's our body of research/analysis over the last six months, here are the problems and opportunities we've reached as part of this research, now let's rank/discuss these"
+  - Emphasis that this is a large problem space: show the reproducable build group's current work and problem space?
 - Posters with streamlined versions of the in-depth problems and benefits below
 - Dot-voting (include fill-in-the-blank for "other")
 - 2x2 grids: prevalence of problem, pain of problem. Points on the grids to be noted per package manger or other area of specificity
 - Further discussion on the "biggest" dots: potential solutions and technical hurdles on stickies
   - [Crazy Eights](https://www.iamnotmypixels.com/how-to-use-crazy-8s-to-generate-design-ideas/) would be another great approach if we have enough people or enough concentration of interest in particular areas
- 
+
 ## Session Flow ideas
 
 Q: which problems with package management should IPFS tackle?
 
 Outputs for each problem:
-  - why that problem is important
-  - what solutions are available
-  - advantages and shortcomings of proposed solutions
-  - important concepts, obstacles, and related topics
+
+- why that problem is important
+- what solutions are available
+- advantages and shortcomings of proposed solutions
+- important concepts, obstacles, and related topics
 
 Q: which benefits for package management should IPFS focus on?
 
 Outputs for each benefit:
-  - why that benefit is important
-  - how to achieve that benefit
-  - advantages and shortcomings of proposed solutions
-  - important concepts, obstacles, and related topics
+
+- why that benefit is important
+- how to achieve that benefit
+- advantages and shortcomings of proposed solutions
+- important concepts, obstacles, and related topics
 
 Q: ideas for potential solutions
+
 - Even if they are wacky
 - Or they've been done before
 
-## Indepth problems that face package managers today that  IPFS could help with
+## Indepth problems that face package managers today that IPFS could help with
 
 - Compatibility/interoperability
   - Maintaining compatibility with multiple platforms, architectures and run times
@@ -113,11 +117,13 @@ Q: ideas for potential solutions
 ## Indepth potential benefits of putting package managers on IPFS:
 
 - Ease of use
+
   - easier to mirror a registry
   - easier to run private registries
-  - easier to use specific historial versions 
+  - easier to use specific historial versions
 
 - Save resources
+
   - Save bandwidth reducing re-downloads
   - minimize storage requirements by de-duping package contents
   - updates are smaller/more condensed
@@ -126,11 +132,13 @@ Q: ideas for potential solutions
   - more users = more savings
 
 - Performance
+
   - Faster to download from IPFS powered registries/mirrors
   - Faster when there are other local devs with the same packages installed
   - Faster in production environments (clusters, CI etc)
 
 - Offline
+
   - More resilient to network problems during installations
   - possible to install and verify packages whilst Offline
   - registry downtime doesn't delay deployment
@@ -138,30 +146,33 @@ Q: ideas for potential solutions
   - takes load off community ran registries
 
 - Reproducibility
+
   - Easy to delcare and verify the provenance of all software you run
   - confirm that you're running exactly the same code you expect
   - No more left-pads
 
 - Forkability
+
   - Users can easily fork existing registries
   - Users can easily make use of multiple registry indexes
   - Users can easily start their own registries
 
 - User hosted
+
   - Users can replicate and provide the packages they care about
   - People automatically cache the packages and content they rely on
-  - cached copies remain available when network partitions happen 
+  - cached copies remain available when network partitions happen
   - small actors can contribute to scaling their community
   - every user is a mirror (the term mirror falls away)
   - no special access required to copy/mirror/edit parts of a dependency network
 
 - Decentralized publishing
+
   - reduced requirement for centralized registries
   - publish directly to IPFS
   - avoid namespacing problems
-  - reduce central points of failure and trust 
+  - reduce central points of failure and trust
 
 - Communication
   - Improved ways to broadcast/announce things to package consumers (new release, cve, license issue, bugs etc)
   - verification data can be broadly shared between many users to improve visibility and reduce verification rework
-

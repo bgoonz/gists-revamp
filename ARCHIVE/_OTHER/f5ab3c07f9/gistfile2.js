@@ -1,6 +1,6 @@
-run(function*(){
-	var foo = yield require("foo");
-	var bar = yield require("bar");
-	
-	foo.bam( bar.baz() );
+run(function* () {
+  var foo = yield require("foo");
+  var bar = yield require("bar");
+
+  foo.bam(bar.baz());
 });

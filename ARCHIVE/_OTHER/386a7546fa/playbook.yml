@@ -9,8 +9,8 @@
     - name: install gunicorn and flask
       pip: name={{ item }}
       with_items:
-      - gunicorn
-      - flask
+        - gunicorn
+        - flask
     - name: copy app file to host
       copy: src=app.py dest=~/app.py
     - name: run server

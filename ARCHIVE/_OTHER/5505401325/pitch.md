@@ -6,9 +6,9 @@ This would be focused on providing as much value to the community as possible, t
 
 Why would someone want to pledge towards this?
 
-* They cannot attend but would like to support the confernce
-* They want to help out free meetups/hackdays that don't charge for entry but have running costs
-* They like the work that the organisers are doing for the community and want to support them
-* To promote themselves within the community
+- They cannot attend but would like to support the confernce
+- They want to help out free meetups/hackdays that don't charge for entry but have running costs
+- They like the work that the organisers are doing for the community and want to support them
+- To promote themselves within the community
 
 Rewards could also be offered by event organisers to encourage people to pledge such as t-shirts, stickers, early access to ticket sales or discounts.

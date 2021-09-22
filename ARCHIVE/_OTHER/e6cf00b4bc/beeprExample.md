@@ -1,10 +1,10 @@
 ## Calls a sound -- useful when waiting...
+
 ```R
 install.packages("beepr")
 library(beepr)
 beep(sound = 3, expr = NULL) #Fanfare!!
 ```
-
 
 1: "ping"
 

@@ -1,20 +1,20 @@
 function Foo(who) {
-	this.me = who;
+  this.me = who;
 }
 
-Foo.prototype.identify = function() {
-	return "I am " + this.me;
+Foo.prototype.identify = function () {
+  return "I am " + this.me;
 };
 
 function Bar(who) {
-	Foo.call(this,who);
+  Foo.call(this, who);
 }
 
 Bar.prototype = Object.create(Foo.prototype);
 //Bar.prototype.constructor = Bar;    // uncomment this line to "fix" the delegated `constructor`
 
-Bar.prototype.speak = function() {
-	alert("Hello, " + this.identify() + ".");
+Bar.prototype.speak = function () {
+  alert("Hello, " + this.identify() + ".");
 };
 
 var b1 = new Bar("b1");

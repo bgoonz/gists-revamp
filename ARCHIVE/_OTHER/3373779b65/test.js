@@ -1,14 +1,16 @@
 var a = {
-   b: 12,
-   c: true,
-   d: "foobar",
-   e: {
-      f: function() { alert("blah"); }, // functions get ignored
-      g: new Date(), // dates get their own `toJSON()` serialization called
-      h: [ true,1.3,"haha" ]
-   },
-   k: {},
-   l: /foobar/g // regexes get turned into an empty {}
+  b: 12,
+  c: true,
+  d: "foobar",
+  e: {
+    f: function () {
+      alert("blah");
+    }, // functions get ignored
+    g: new Date(), // dates get their own `toJSON()` serialization called
+    h: [true, 1.3, "haha"],
+  },
+  k: {},
+  l: /foobar/g, // regexes get turned into an empty {}
 };
 a.i = a; // circular ref!!
 a.e.i = a; // circular ref!!

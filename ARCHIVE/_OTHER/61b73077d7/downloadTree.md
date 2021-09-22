@@ -1,7 +1,6 @@
+### Creating Zips
 
-### Creating Zips 
-
-``` python
+```python
 
 import shutil
 import os
@@ -16,7 +15,9 @@ shutil.make_archive(zip_name, 'zip', directory_name)
 
 
 ```
+
 ### Similar to the linux/unix tar version (can run from .ipynb -- note "!")
+
 ```text
 !tar cvfz test.tar.gz *
 ```

@@ -1,4 +1,3 @@
-
 `Game explained` https://www.scientificamerican.com/article/the-3-door-monty-hall-problem/
 
 ```r
@@ -27,23 +26,23 @@ actualSequence = NULL
 # Picks prize sequence randomly
 for(prizeSlotI in 1:nrow(prizeTable)){
 # for(prizeSlotI in 1:20){
-  
+
   firstDoorGuess = NULL
   firstDoorPos = NULL
   guestChosesDoorPos = NULL
   hostChosesDoorPos = NULL
   sampleSelectFP = NULL
   unchosenDoorPositions = NULL
-  
+
     # prizeSlotI = 2 # with for loop
     prizeDist = prizeTable[prizeSlotI,] # Randomly chosen prize dist of prizeSlotI
     print(paste("NEW GAME........",prizeSlotI))
     print(prizeDist)
-    
-    
+
+
     # Guest chooses first door
     firstDoorGuess = sample(LETTERS[1:3],1, replace=TRUE) # Uniform guesss one by one in loop between 3 letter positions
-    
+
         firstDoorPos = NULL
         if(firstDoorGuess=="A"){
           firstDoorPos = 1
@@ -54,19 +53,19 @@ for(prizeSlotI in 1:nrow(prizeTable)){
         }
         print(paste("First Door Guess is: ",firstDoorGuess ))
         print(paste("First Door Position is: ", firstDoorPos ))
-    
+
     ## Finds second letter and position, where the host opens door without Mazarati
-    
+
         # Non picked door hidden prizes
         unchosenDoorPositions = which(doorPositionSeq!=firstDoorPos)
         print(paste("Unchosen are now FP: " , prizeDist[unchosenDoorPositions][1],
                     "  Unchosen are now LP: " , prizeDist[unchosenDoorPositions][2]))
-        
+
         hostChosesDoorPos = NULL
         guestChosesDoorPos = NULL
         sampleSelectFP = NULL
         #If both are Goats
-        if( prizeDist[unchosenDoorPositions][1]=="G" & 
+        if( prizeDist[unchosenDoorPositions][1]=="G" &
             prizeDist[unchosenDoorPositions][2]=="G"){
           print("Secret: Both Are Goats")
           sampleSelectFP = sample(1:2,1, replace=TRUE)
@@ -74,36 +73,36 @@ for(prizeSlotI in 1:nrow(prizeTable)){
           print(paste0("Host Choses Door ", doorLetterSeq[hostChosesDoorPos] ))
           guestChosesDoorPos = unchosenDoorPositions[which(unchosenDoorPositions != hostChosesDoorPos)]
           print(paste("Guest Chooses Door: ", doorLetterSeq[guestChosesDoorPos] ))
-          
-        } else if ( prizeDist[unchosenDoorPositions][1]=="G" & 
+
+        } else if ( prizeDist[unchosenDoorPositions][1]=="G" &
                     prizeDist[unchosenDoorPositions][2]=="M"){
           print("Secret: FP revealed as Goat; Mazarati is LP")
           hostChosesDoorPos = unchosenDoorPositions[1]
           print(paste0("Host Choses Door ", doorLetterSeq[hostChosesDoorPos]))
           guestChosesDoorPos = unchosenDoorPositions[2]
           print(paste("Guest Chooses Door: ", doorLetterSeq[guestChosesDoorPos] ))
-          
+
         } else {
           print("Secret: Mazarati is FP; Goat is revealed in LP")
           hostChosesDoorPos = unchosenDoorPositions[2]
           print(paste0("Host Choses Door ", doorLetterSeq[hostChosesDoorPos]))
           guestChosesDoorPos = unchosenDoorPositions[1]
           print(paste("Guest Chooses Door: ", doorLetterSeq[guestChosesDoorPos] ))
-          
+
         }
-        
-       
-    
+
+
+
     if(prizeDist[guestChosesDoorPos]=="M"){
       print("You picked a Mazeratti you Winner")
       winnerLoser[prizeSlotI] = "W"
     } else {
       print("You picked a Goat you Looser")
       winnerLoser[prizeSlotI] = "L"
-      
+
     }
 
-        
+
     # For checking even distribution of sample space after loop
     actualSequence[prizeSlotI] = paste0(firstDoorGuess, doorLetterSeq[hostChosesDoorPos], doorLetterSeq[guestChosesDoorPos] )
     print(actualSequence[prizeSlotI] )

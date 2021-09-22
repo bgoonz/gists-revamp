@@ -12,9 +12,9 @@ But some of it veered decidedly the other direction. I'm deliberately not linkin
 
 Here are two threads I posted to try, in part, to present some of the ideas around the topic of monads, as I currently understand them, in a way that I was hoping non-FP, non-monad-aware JS developers might resonate with:
 
-* https://twitter.com/getify/status/1283113651470307333
+- https://twitter.com/getify/status/1283113651470307333
 
-* https://twitter.com/getify/status/1283132504078274560
+- https://twitter.com/getify/status/1283132504078274560
 
 It's important to note that the goal was **not** to present a formal, comprehensive dissertation on the topic. It was more like marketing with a light bit of information transmission.
 
@@ -34,15 +34,15 @@ In late 2016, I decided to change all that, finally. I decided to learn FP a dif
 
 I called the eventual approach that emerged, "Functional-Light". Not "light" as in easy or intro (or "wrong", as my detractors would say), but "light" as in as biased toward pragmatic balance, embracing the mixture of FP and non-FP side by side, and ultimately choosing the best way to code a certain task regardless of whether that was fully FP, no FP, or somewhere in between.
 
-I wrote a whole book called [*Functional-Light JavaScript*](https://github.com/getify/Functional-Light-JS), which has sold nearly 10,000 copies. I developed a [2-day long course on the topics](https://frontendmasters.com/courses/functional-javascript-v3/) (now at version 3!) which I've taught dozens of times to companies and which thousands of developers have watched online. I've given numerous conference and meetup talks on various selected topics from the book/course.
+I wrote a whole book called [_Functional-Light JavaScript_](https://github.com/getify/Functional-Light-JS), which has sold nearly 10,000 copies. I developed a [2-day long course on the topics](https://frontendmasters.com/courses/functional-javascript-v3/) (now at version 3!) which I've taught dozens of times to companies and which thousands of developers have watched online. I've given numerous conference and meetup talks on various selected topics from the book/course.
 
-Along the way, I developed a friendship with, and mentorship-guidance from, [Brian Lonsdorf, aka @drboolean](https://twitter.com/drboolean). Brian is one of the smartest people I've ever met, but also one of the most patient, kind, empathetic people I've ever been privileged to call *friend*. He has given me hundreds and hundreds of hours of his time over the years now, fielding way too many questions and frustrations of mine. He agreed to tech edit my book, and [he even wrote the Foreword](https://github.com/getify/Functional-Light-JS/blob/master/manuscript/foreword.md).
+Along the way, I developed a friendship with, and mentorship-guidance from, [Brian Lonsdorf, aka @drboolean](https://twitter.com/drboolean). Brian is one of the smartest people I've ever met, but also one of the most patient, kind, empathetic people I've ever been privileged to call _friend_. He has given me hundreds and hundreds of hours of his time over the years now, fielding way too many questions and frustrations of mine. He agreed to tech edit my book, and [he even wrote the Foreword](https://github.com/getify/Functional-Light-JS/blob/master/manuscript/foreword.md).
 
 I would be underselling his impact on my journey if I didn't say that I owe nearly everything I know about FP to him. He's been my oracle. I've been fortuntate to get to know and learn from several others in the FP space who've provided guidance and vetting, as well. But Brian's efforts stand far above the crowd.
 
 What I should point out is, I still don't consider myself a qualified or "certified" FP programmer. I know an awful lot of the foundations of FP, and I feel very comfortable in this space. But I am still very much a work in progress, as is my understanding of all of these things.
 
-The book and the course both *end* at the topic of Monads. The book has a simple appendix that gives a brief overview. The course has a brief section on it near the end, without even any exercises. Back then, I only had a glancing level of understanding of monads, so I didn't get very deep into what I had to say about them.
+The book and the course both _end_ at the topic of Monads. The book has a simple appendix that gives a brief overview. The course has a brief section on it near the end, without even any exercises. Back then, I only had a glancing level of understanding of monads, so I didn't get very deep into what I had to say about them.
 
 My understanding of monads is today quite a bit richer than it was when I prepared that material. If I were re-writing it, I'd have a lot more to say, and say things somewhat differently. But I don't think what I said is wildly wrong, per se. It was just less evolved then than it is now.
 
@@ -76,7 +76,7 @@ And importantly, in my perspective on continual learning and teaching and the vi
 
 So... there's a ton about this I still don't know. But there's also I believe a lot of learning already behind me, and a decent foundation is settling in.
 
-As I always remind people, all you can expect from me is my earnest attempt to explain what I know *so far*. I hope that's beneficial.
+As I always remind people, all you can expect from me is my earnest attempt to explain what I know _so far_. I hope that's beneficial.
 
 ## Clarifying A Few Things
 
@@ -100,7 +100,7 @@ These are part of the broader topic, and not specifically or exclusively about a
 
 I don't think many in my audience will be interested in what `fold(..)` does outside the context of learning what a monad is. I know that many in the FP world would take issue with that assertion, but I think there's at least an obvious dotted line creating a clear mental connection. And I think by using the two together, I can draw upon some intuitions that may not be as effective with them separate.
 
-So when my first thread said I was going to talk about "monads", and then I proceeded to *first* talk about adjacent behaviors like Functor, Foldable, Concatable (which, by the way, is apparently more formally Semigroup), most of the strict FP crowd objected vehemently, claiming that I was conflating the terms and mixing everything up.
+So when my first thread said I was going to talk about "monads", and then I proceeded to _first_ talk about adjacent behaviors like Functor, Foldable, Concatable (which, by the way, is apparently more formally Semigroup), most of the strict FP crowd objected vehemently, claiming that I was conflating the terms and mixing everything up.
 
 I don't think most of my readers were helplessly confused. I think they appreciated the informality and the conceptual connection making. I think they got that my use of "monad" was a big picture concept to set the stage for both threads and a broader topic.
 
@@ -119,7 +119,7 @@ With the `Just(..)` function in Monio, this is how you create a monad instance:
 ```js
 var three = Just(3);
 
-three._inspect();  // Just(3)
+three._inspect(); // Just(3)
 ```
 
 So, here's the three laws:
@@ -127,24 +127,23 @@ So, here's the three laws:
 1. "Left Identity" Law
 
    ```js
-   f = v => Just(v);
-   Just(3).chain(f) == f(3);  // true
+   f = (v) => Just(v);
+   Just(3).chain(f) == f(3); // true
    ```
 
 2. "Right Identity" Law
 
-	```js
-	Just(3).chain(Just) == Just(3);  // true
-	```
+   ```js
+   Just(3).chain(Just) == Just(3); // true
+   ```
 
 3. "Associativity" Law
 
-	```js
-	f = v => Just(v + 1);
-	g = v => Just(v * 2);
-	Just(3).chain(f).chain(g) ==
-		Just(3).chain(v => f(v).chain(g));  // true
-	```
+   ```js
+   f = (v) => Just(v + 1);
+   g = (v) => Just(v * 2);
+   Just(3).chain(f).chain(g) == Just(3).chain((v) => f(v).chain(g)); // true
+   ```
 
 In these code snippets, I'm only using a single value (`3`) here to illustrate, which in and of itself doesn't fully "prove" the laws; the laws have to hold for any value. Since `Just` is an "Identity" monad, if it does it for one value, it's going to do it for any value. I think the code illustrates the behavior that's expected of a monad.
 
@@ -157,10 +156,10 @@ I don't want to dive too fully into the laws, since the post you're reading is a
 Consider this code:
 
 ```js
-Just(3).chain(v => v);  // 3
+Just(3).chain((v) => v); // 3
 ```
 
-I asserted that this usage was a *violation* of the third law, since the number `3` isn't a monad, and wouldn't have the `.chain(..)` method on it, so it would break. I was deliberately taking a bit of artistic license, and perhaps I shouldn't have. I was speaking informally (blaspheming!) about something that's consider sacred in its formality: the laws.
+I asserted that this usage was a _violation_ of the third law, since the number `3` isn't a monad, and wouldn't have the `.chain(..)` method on it, so it would break. I was deliberately taking a bit of artistic license, and perhaps I shouldn't have. I was speaking informally (blaspheming!) about something that's consider sacred in its formality: the laws.
 
 Here's what I meant: calling `chain(..)` with a function that does not return a monad of the same type is a failure to uphold the "contract" of how it's supposed to be used. `chain(..)` (and the laws!) expect that you do so, and if you don't, you're venturing into undefined territory, where things fall apart.
 
@@ -184,7 +183,7 @@ By "data structure", I mean the same thing, that you are pairing value(s) with b
 
 Let me acknowledge their frustration. It's a fuzzy metaphor (as most are). It doesn't hold completely for every single monad ever. It isn't a comprehensive metaphor.
 
-At the same time, a variety of monads I have worked with recently *are* "holding" a value, in an implementation sense if not a conceptual sense: `Just`, `Maybe`, `Either`, and `IO`, to name several.
+At the same time, a variety of monads I have worked with recently _are_ "holding" a value, in an implementation sense if not a conceptual sense: `Just`, `Maybe`, `Either`, and `IO`, to name several.
 
 I still like the genericism of the word "container", and [I'm not alone](https://twitter.com/drboolean/status/1283809343641542656). But it's certainly not meant to be a precise, prescriptive explanation of everything you need to understand. As with all metaphors, don't try to overstretch or over-apply its implications.
 
@@ -206,7 +205,7 @@ Consider (using Monio's `Just(..)` monad):
 var hello = Just("Hello");
 var world = Just("World");
 var HelloWorld = hello.concat(world);
-HelloWorld._inspect();  // Just("HelloWorld");
+HelloWorld._inspect(); // Just("HelloWorld");
 ```
 
 Under the covers, the primitive string `"Hello"` had its `concat(..)` method called, with `"World"` as the argument. The result was `"HelloWorld"`, which was then wrapped back in a `Just`.
@@ -218,9 +217,9 @@ Not all monads have a `concat(..)` method. And not all usages of a method name `
 Also in the first thread, I showed off how JS arrays have a `map(..)` method that creates a new array with all the newly mapped values in it:
 
 ```js
-var double = v => v * 2;
-var nums = [ 10, 100, 1000 ];
-nums.map(double);  // [ 20, 200, 2000 ]
+var double = (v) => v * 2;
+var nums = [10, 100, 1000];
+nums.map(double); // [ 20, 200, 2000 ]
 ```
 
 And I used that as an intuition hook for how, when you have a monad with functor behavior, you can take its value and `map(..)` it to a new monad holding the new value.
@@ -228,18 +227,18 @@ And I used that as an intuition hook for how, when you have a monad with functor
 For example, again using Monio's `Just(..)` to illustrate:
 
 ```js
-var inc = v => v + 1;
+var inc = (v) => v + 1;
 var three = Just(3);
 var four = three.map(inc);
 
-four._inspect();  // Just(4)
+four._inspect(); // Just(4)
 ```
 
-The `map(..)` method, which is indicative of functor behavior, is not part of the strict definition of a monad. But the `chain(..)` call (or `flatMap(..)` or `bind(..)`) *is* a core requirement of any monad, and `map(..)` can be implemented with it (and `of(..)`). So, in essence, all monads are functors, even if all monads don't have `map(..)` itself. And in my experience, pretty often, `map(..)` is present on a monad.
+The `map(..)` method, which is indicative of functor behavior, is not part of the strict definition of a monad. But the `chain(..)` call (or `flatMap(..)` or `bind(..)`) _is_ a core requirement of any monad, and `map(..)` can be implemented with it (and `of(..)`). So, in essence, all monads are functors, even if all monads don't have `map(..)` itself. And in my experience, pretty often, `map(..)` is present on a monad.
 
 There are indeed functors that aren't monads; JS's `Promise` is one. The JS `Promise` exposes a `then(..)` method instead of a `map(..)` (or `chain(..)`) method, but it does behave as a functor in creating a new promise from the returned value. But behaviorally, JS `Promise` violates other parts of the monad law requirements, so it's not a true monad.
 
-Even though functor and monad *can* stand apart, it doesn't mean there's no connection between these two ideas; there's clearly a correlation in their most common usage. They're quite often paired together. In the kind of JS I'm often writing, I don't typically think explicitly about functors separately from monads. I use `Promise` a lot, but I don't find it helpful to label or describe it as a functor.
+Even though functor and monad _can_ stand apart, it doesn't mean there's no connection between these two ideas; there's clearly a correlation in their most common usage. They're quite often paired together. In the kind of JS I'm often writing, I don't typically think explicitly about functors separately from monads. I use `Promise` a lot, but I don't find it helpful to label or describe it as a functor.
 
 If you like thinking about functor separate from monad, that's fine. But I've found it super helpful to pair them together. My thread was trying to de-mystify monads a little bit by saying, "hey, if you've used array `map(..)`, you're already on your way to a monad". Let's just be clear that I didn't, and I'm not, saying that they are exactly the same. They're friends who can often be found playing together in the sandbox.
 
@@ -251,7 +250,7 @@ At times, we talk about the nature of a value, and at other times, we talk about
 
 When I define a `Just(..)` function that makes an "instance" of the Just monad, and then talk about the fact that it has `chain(..)`, `map(..)`, and `ap(..)` methods on it, am I talking about the type or the value? Sorta both. I'm saying that monads of the "Just" type are, behaviorally, functors and applicatives (ie, the `ap(..)` method). But I'm also saying that an instance `m` of the "Just" type actually has these specific methods I can interact with.
 
-A monad value that has a `chain(..)` method is a concrete instance of the monad type. That's why I've alluded to alternate names like `flatMap(..)` and `bind(..)`. The *type* says how the behavior is supposed to work, but doesn't require specific names. On the other hand, a concrete monad instance value you can interact with has chosen a specific implementation and given the behavior a specific method name.
+A monad value that has a `chain(..)` method is a concrete instance of the monad type. That's why I've alluded to alternate names like `flatMap(..)` and `bind(..)`. The _type_ says how the behavior is supposed to work, but doesn't require specific names. On the other hand, a concrete monad instance value you can interact with has chosen a specific implementation and given the behavior a specific method name.
 
 Or when I said earlier, "all monads are functors". This is true at the value level, but not true at the type level. Monad and functor are separate types, and a single value can exhibit sufficient behavior to satisfy both.
 

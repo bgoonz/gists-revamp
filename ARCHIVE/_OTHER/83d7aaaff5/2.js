@@ -1,28 +1,28 @@
 function followPath(path) {
-   let nextHops = nearby(path[path.length-1]);
-   var pathForwardFound = false;
-   for (let nextHop of nextHops) {
-      if (!path.includes(nextHop)) {
-         pathForwardFound = true;
-         let nextPath = [...path,nextHop];
-         followPath(nextPath);
-      }
-   }
-   if (!pathForwardFound) {
-      console.log(path);
-      return;
-   }
+  let nextHops = nearby(path[path.length - 1]);
+  var pathForwardFound = false;
+  for (let nextHop of nextHops) {
+    if (!path.includes(nextHop)) {
+      pathForwardFound = true;
+      let nextPath = [...path, nextHop];
+      followPath(nextPath);
+    }
+  }
+  if (!pathForwardFound) {
+    console.log(path);
+    return;
+  }
 }
 
 function uniqueDigitPaths() {
-   for (let i = 0; i <= 9; i++) {
-      let nextHops = nearby(i);
-      for (let nextHop of nextHops) {
-         let path = [i,nextHop];
-         followPath(path);
-      }
-      console.log("");
-   }
+  for (let i = 0; i <= 9; i++) {
+    let nextHops = nearby(i);
+    for (let nextHop of nextHops) {
+      let path = [i, nextHop];
+      followPath(path);
+    }
+    console.log("");
+  }
 }
 
 uniqueDigitPaths();

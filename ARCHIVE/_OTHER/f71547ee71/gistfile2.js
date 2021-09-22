@@ -2,15 +2,14 @@ console.log("A");
 
 var p1 = Promise.resolve("B");
 
-setTimeout(function(){
+setTimeout(function () {
   console.log("D");
-},0);
+}, 0);
 
-p1.then(function(msg){
+p1.then(function (msg) {
   console.log(msg);
   return Promise.resolve("C");
-})
-.then(function(msg){
+}).then(function (msg) {
   console.log(msg);
 });
 

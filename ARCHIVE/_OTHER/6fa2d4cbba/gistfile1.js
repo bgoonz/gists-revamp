@@ -1,14 +1,12 @@
 // Which bugs account for the crazy inconsistencies here? What's "correct" expected behavior?
 
 // first, let's muck with the built-ins!
-Array.prototype.push(1,2,3);
+Array.prototype.push(1, 2, 3);
 
 // now, make a clean array (supposedly)
 var a = ["foo"];
 
-
 // -------------------------------
-
 
 a.length;
 // Chrome: 1

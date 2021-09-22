@@ -9,6 +9,7 @@ hw.logicalcpu: 8
 # go-ipfs 0.4.21
 
 cmds:
+
 ```
 rm -rf ~/.ipfs
 
@@ -23,6 +24,7 @@ time ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 ```
 
 results:
+
 ```
 time ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 47.50 GiB / 47.50 GiB [===============================================] 100.00%
@@ -36,6 +38,7 @@ sys	1m24.406s
 # go-ipfs master (8417818af1cbdb79ffd22ede4885471d88bbcb58)
 
 cmds:
+
 ```
 rm -rf ~/.ipfs
 
@@ -54,6 +57,7 @@ time $GOPATH/bin/ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 ```
 
 results:
+
 ```
 time $GOPATH/bin/ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 47.50 GiB / 47.50 GiB [===============================================] 100.00%
@@ -67,12 +71,13 @@ sys	1m25.566s
 # go-ipfs dirkmc/go-ipfs (1c3c4f0a8142bf778500efae4eb0ba1048993f13)
 
 cmds:
+
 ```
 rm -rf ~/.ipfs
 rm -rf go-ipfs
 git clone https://github.com/dirkmc/go-ipfs.git
 cd go-ipfs/
-git co exp/add-perf 
+git co exp/add-perf
 make install
 
 $GOPATH/bin/ipfs init --profile=badgerds
@@ -85,6 +90,7 @@ time $GOPATH/bin/ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 ```
 
 results:
+
 ```
 1.01 TiB / 47.50 GiB [===============================================] 2167.65%
 643387 milli-seconds add
@@ -96,20 +102,22 @@ user	1m12.190s
 sys	0m15.891s
 ```
 
-notes: 
-- pool is missing 38GB of content 
+notes:
+
+- pool is missing 38GB of content
 - progress is broken
 - different CID
 
 # go-ipfs dirkmc/go-ipfs (1c3c4f0a8142bf778500efae4eb0ba1048993f13) attempt 2 (less experimental config flags)
 
 cmds:
+
 ```
 rm -rf ~/.ipfs
 rm -rf go-ipfs
 git clone https://github.com/dirkmc/go-ipfs.git
 cd go-ipfs/
-git co exp/add-perf 
+git co exp/add-perf
 make install
 
 $GOPATH/bin/ipfs init --profile=badgerds
@@ -120,6 +128,7 @@ time $GOPATH/bin/ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 ```
 
 results:
+
 ```
 time $GOPATH/bin/ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 1.09 TiB / 47.50 GiB [===============================================] 2356.23%
@@ -132,19 +141,21 @@ user	1m13.165s
 sys	0m16.306s
 ```
 
-notes: 
-- pool is still missing 38GB of content 
+notes:
+
+- pool is still missing 38GB of content
 - different CID again
 
 # go-ipfs dirkmc/go-ipfs (1c3c4f0a8142bf778500efae4eb0ba1048993f13) attempt 3 (no experimental config flags)
 
 cmds:
+
 ```
 rm -rf ~/.ipfs
 rm -rf go-ipfs
 git clone https://github.com/dirkmc/go-ipfs.git
 cd go-ipfs/
-git co exp/add-perf 
+git co exp/add-perf
 make install
 
 $GOPATH/bin/ipfs init --profile=badgerds
@@ -153,6 +164,7 @@ time $GOPATH/bin/ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 ```
 
 results:
+
 ```
 time $GOPATH/bin/ipfs add -r --progress --offline --quieter /Volumes/5TB/arch/
 1010.09 GiB / 47.50 GiB [============================================] 2126.59%

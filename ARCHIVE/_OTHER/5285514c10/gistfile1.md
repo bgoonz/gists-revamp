@@ -1,10 +1,10 @@
 I hereby propose this form of `let` usage as the next best option, since the clearly better `let (foo = 42) { ... }` let-block-statement syntax is [dead](https://twitter.com/littlecalculist/status/318728098545811458) and [not coming to ES6](https://twitter.com/littlecalculist/status/318726015432159233):
 
 ```js
-/*let*/ { let foo = 42;
+/*let*/ {
+  let foo = 42;
 
-   // your code that uses `foo`
-
+  // your code that uses `foo`
 }
 ```
 

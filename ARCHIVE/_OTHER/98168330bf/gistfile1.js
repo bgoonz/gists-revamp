@@ -1,20 +1,20 @@
-function* foo(arr){
-	for (var i=0; i<arr.length; i++) {
-		console.log("foo running: " + i);
-		yield (arr[i] * 2);
-	}
+function* foo(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    console.log("foo running: " + i);
+    yield arr[i] * 2;
+  }
 }
 
 function* bar(arr) {
-	var f = foo(arr);
-	for (var i=0; i<arr.length; i++) {
-		console.log("bar running: " + i);
-		yield* f;
-	}
+  var f = foo(arr);
+  for (var i = 0; i < arr.length; i++) {
+    console.log("bar running: " + i);
+    yield* f;
+  }
 }
 
-for (var k of bar([1,2,3])) {
-	console.log("k: " + k);
+for (var k of bar([1, 2, 3])) {
+  console.log("k: " + k);
 }
 
 // What I expected:
@@ -28,8 +28,6 @@ for (var k of bar([1,2,3])) {
 // bar running: 2
 // foo running: 2
 // k: 6
-
-
 
 // What we ACTUALLY get:
 

@@ -12,11 +12,11 @@ I was really annoyed at what I perceive to have been a waste of my time, so I to
 
 In retrospect, I wish I had put more context and level thought into the earlier part of that tweet thread, so that people's first impressions of my take wouldn't have been skewed.
 
-But I was also *not* exactly and precisely detailing how it actually went down. I figured most who read my tweets would get that it was an emotional illustration, not a court-ready transcript of the proceedings. As usual, that assumption was wrong.
+But I was also _not_ exactly and precisely detailing how it actually went down. I figured most who read my tweets would get that it was an emotional illustration, not a court-ready transcript of the proceedings. As usual, that assumption was wrong.
 
 But I want to set the record straight on several things:
 
-1. I did not *actually* roll my eyes at the interviewer. This was figurative language. In fact, there was no camera at all in the interview, only a screenshare and a mic, so even if I did, they wouldn't have seen it.
+1. I did not _actually_ roll my eyes at the interviewer. This was figurative language. In fact, there was no camera at all in the interview, only a screenshare and a mic, so even if I did, they wouldn't have seen it.
 
    In my head, I was really annoyed. But I consciously counteracted that by spending the whole time super engaged and enthusiastic to answer all the questions with as much depth and color as I could muster.
 
@@ -30,13 +30,13 @@ But I want to set the record straight on several things:
 
    In doing so, you'd find I've written almost a dozen books on JS (and sold nearly 200,000 copies worldwide). I've given about 200 conference talks over the span of more than a decade. I've taught more than 5,000 developers across hundreds of workshops given at companies all over the world. And I've created well over 50 OSS projects, putting out many tens of thousands of lines of code I've written.
 
-   In short, there's *more than enough* information out there to, in about 2 minutes of skimming, get a *really solid* idea of what my technical skills (programming, etc) are.
+   In short, there's _more than enough_ information out there to, in about 2 minutes of skimming, get a _really solid_ idea of what my technical skills (programming, etc) are.
 
-4. Just because I have such a public track record with my technical reputation does *not* mean I think I'm a special snowflake that deserves to have any job I want with no questions asked. That's what assholes will have you believe, but it's not at all true.
+4. Just because I have such a public track record with my technical reputation does _not_ mean I think I'm a special snowflake that deserves to have any job I want with no questions asked. That's what assholes will have you believe, but it's not at all true.
 
 5. There was a much larger point to my tweet thread than just venting my frustrations about my interview process. It wasn't really about me, but more about how many people are being screwed by shitty interview processes designed by asshole hiring managers.
 
-6. More on that later, but in summary: one-size-fits-all interview processes are exactly what assholes design and put in place at companies because they can't be bothered to actually design good interview processes. Their job is *too hard* to do well, so they skate by doing a really shitty job, and shitting all over every candidate they come in contact with. And we've all just accepted this as status quo, *because scale* and *because fairness* (a gross abuse of that notion).
+6. More on that later, but in summary: one-size-fits-all interview processes are exactly what assholes design and put in place at companies because they can't be bothered to actually design good interview processes. Their job is _too hard_ to do well, so they skate by doing a really shitty job, and shitting all over every candidate they come in contact with. And we've all just accepted this as status quo, _because scale_ and _because fairness_ (a gross abuse of that notion).
 
    Not everyone who participates in these interview processes is an asshole, but I have found a strong correlation between those who strongly defend such hiring practices and those who, in my estimation, are assholes. If you're one of the "good ones", fine great, I'm not calling you an asshole. But you're definitely the exception, not the rule.
 
@@ -56,9 +56,9 @@ I mean, that's not surprising. But it's still awful. No matter how great that pe
 
 This asshole went on to write a really [thin and uninsightful blog post](https://blog.pete.holiday/2020/08/are-you-special-enough-to-skip-the-interview) that was sort of about the topic, but really just an excuse to throw more insults at me.
 
-From what I can tell reading this piece, this asshole has a really naive take on what hiring should be about. I feel bad for their company (whatever it is) that *this person* is who candidates get their first impression from.
+From what I can tell reading this piece, this asshole has a really naive take on what hiring should be about. I feel bad for their company (whatever it is) that _this person_ is who candidates get their first impression from.
 
-But enough about *that* asshole.
+But enough about _that_ asshole.
 
 ## Why Hiring By Assholes Sucks
 
@@ -66,37 +66,37 @@ These folks would have you believe that because I pointed out that I've written 
 
 This is not what I ever said, or an opinion I hold.
 
-In fact, while I used my experience as a launching off point, the much bigger intent was to shine light (as I have done many times in the past) on why such asshole-designed interviewing processes are not just *annoying* for people like me, but are *actively gatekeeping* and *discriminatory* against a whole range of others who don't fit the one-size-fits-all cookie cutter interview process.
+In fact, while I used my experience as a launching off point, the much bigger intent was to shine light (as I have done many times in the past) on why such asshole-designed interviewing processes are not just _annoying_ for people like me, but are _actively gatekeeping_ and _discriminatory_ against a whole range of others who don't fit the one-size-fits-all cookie cutter interview process.
 
 I actually ran interviewing at most of the jobs I worked at. I've been independent for the last 8+ years, but prior to that I held a slew of jobs over a span of nearly 15 years, and I was almost always the one the team relied on for doing technical interviewing of candidates.
 
 I think part of that is because I know my technical stuff pretty well. But I think another part is that they know that my approach is to try to elevate the human above the technology, to try to find the best candidate, not just to apply the most rigid ruleset.
 
-Across all the hundreds of interviews I conducted for candidates in that time, I saw *a lot* of developers who completely crumbled in the "whiteboard screening" type of interview format. In fact, it happened more often than not. So I learned that this was a bad format. That's where I formed my initial impressions of why hiring is so broken.
+Across all the hundreds of interviews I conducted for candidates in that time, I saw _a lot_ of developers who completely crumbled in the "whiteboard screening" type of interview format. In fact, it happened more often than not. So I learned that this was a bad format. That's where I formed my initial impressions of why hiring is so broken.
 
 Of course, I had started doing it the way I had always been interviewed. But I realized how terrible it was.
 
-I switched my approach (over time). I started focusing on trying to help the candidate show me their best side. I started tailoring the conversation and questions to respond to what I was seeing and hearing. I started trying to pull out their best instead of trying to filter them out based on their worst. I felt it was my *job* to put them in the best possible light.
+I switched my approach (over time). I started focusing on trying to help the candidate show me their best side. I started tailoring the conversation and questions to respond to what I was seeing and hearing. I started trying to pull out their best instead of trying to filter them out based on their worst. I felt it was my _job_ to put them in the best possible light.
 
-Over time, I realized how many more *great candidates* I found with this different approach. Folks who would have bombed the typical tech interview instead blossomed and shone bright when given a chance to be their best in the interview.
+Over time, I realized how many more _great candidates_ I found with this different approach. Folks who would have bombed the typical tech interview instead blossomed and shone bright when given a chance to be their best in the interview.
 
-We hired a bunch of really great folks over that time that I am pretty sure would have never been hired if we had kept running interviewing the way *I* had been interviewed to get in there.
+We hired a bunch of really great folks over that time that I am pretty sure would have never been hired if we had kept running interviewing the way _I_ had been interviewed to get in there.
 
 So a big part of what motivates me to keep trying to tear down these shitty interviewing institutions and processes is because I am absolutely convinced that so many of these companies are missing out on some of the greatest hires.
 
 And why? **Because they let selfish, narrow-minded assholes design the interview.**
 
-My tweet rant wasn't about *me* having a wasteful interview. It was about how poor interview design is so unfair to *most candidates*. Is it surprising that people design interview processes to select for more people like themselves, and then roar in defense if anyone criticizes the process? It's called survivor bias.
+My tweet rant wasn't about _me_ having a wasteful interview. It was about how poor interview design is so unfair to _most candidates_. Is it surprising that people design interview processes to select for more people like themselves, and then roar in defense if anyone criticizes the process? It's called survivor bias.
 
-If that company can't interview *me* well (whether they hire me or not!), with all the extra information that's out there about me helping aid their contextual decisions, imagine how many thousands they are completely failing to even get in the door.
+If that company can't interview _me_ well (whether they hire me or not!), with all the extra information that's out there about me helping aid their contextual decisions, imagine how many thousands they are completely failing to even get in the door.
 
-It's a sure bet that many of them are *way* better fit for those jobs than I would be. But these asshole-designed interview processes will never find them. I'm fine, I'll find work. But I feel really sad for so many that aren't as lucky and privileged as I am.
+It's a sure bet that many of them are _way_ better fit for those jobs than I would be. But these asshole-designed interview processes will never find them. I'm fine, I'll find work. But I feel really sad for so many that aren't as lucky and privileged as I am.
 
 ## My Asshole-Designed Interview
 
 As I said, I had no expectation that my technical reputation would allow me to skip all (or even most) of the interview process. Assholes will say that's what I meant, **but it isn't**. I've publicly written about this many times, so if someone bothered to get to know anything at all about me, they would clearly see that context.
 
-I *do* think my public and verifiable reputation should have substituted for the initial tech screen that I spent (wasted) an hour on. I've worked really hard to get to where I'm at, and I've also worked hard to put my *whole self* out there, warts and shit and all, so that I'm easy to judge. Some people like me, others really don't. That's OK.
+I _do_ think my public and verifiable reputation should have substituted for the initial tech screen that I spent (wasted) an hour on. I've worked really hard to get to where I'm at, and I've also worked hard to put my _whole self_ out there, warts and shit and all, so that I'm easy to judge. Some people like me, others really don't. That's OK.
 
 But there's a ton of other really important things that interviewing should be figuring out, absolutely none of which are found in these technical screen interviews. I was so dismayed because I really wanted to spend my time showing them all I have to offer (far beyond the code I can write), but we wasted our time checking to make sure I could write a for-loop.
 
@@ -106,11 +106,11 @@ Even with my technical expertise on the table, there's a whole bunch of valid re
 
 I would love for them, after the first 10 minutes of chatting, to just say, "listen, you clearly have the technical skills, but I'm not getting a good sense of fit from our conversation." That would be a glorious outcome! I would love to get that signal 10 minutes in, instead of 10 (wasted) hours in.
 
-You see, I wasn't expecting to glide into any job I wanted at this company. I expected the opposite. I expected that there were a lot of hurdles to overcome. I'm not the easiest person to get along with. I have tons of really strong opinions, and most people won't like how strongly I hold them. I suspected that I probably *would not* get the job, but I wanted to at least give it the full effort such an endeavor requires.
+You see, I wasn't expecting to glide into any job I wanted at this company. I expected the opposite. I expected that there were a lot of hurdles to overcome. I'm not the easiest person to get along with. I have tons of really strong opinions, and most people won't like how strongly I hold them. I suspected that I probably _would not_ get the job, but I wanted to at least give it the full effort such an endeavor requires.
 
-What I was *hoping* (not expecting) was that I was dealing with a company that knew that wasting our time on writing for loops wasn't good for them or for me, and that we could instead shorten the cycle to focus on the important stuff.
+What I was _hoping_ (not expecting) was that I was dealing with a company that knew that wasting our time on writing for loops wasn't good for them or for me, and that we could instead shorten the cycle to focus on the important stuff.
 
-But the story didn't end with *that* technical screen. I was annoyed at the mutual waste of our time, but I figured that at least that technical vetting was out of the way. As I said in the tweet thread, the interviewer said they had no follow-up questions because I had so completely answered the question, more than they'd ever seen before. I assumed that because I hit that homerun out of the park, according to them, that we could *now* finally get to the good and important interviewing work.
+But the story didn't end with _that_ technical screen. I was annoyed at the mutual waste of our time, but I figured that at least that technical vetting was out of the way. As I said in the tweet thread, the interviewer said they had no follow-up questions because I had so completely answered the question, more than they'd ever seen before. I assumed that because I hit that homerun out of the park, according to them, that we could _now_ finally get to the good and important interviewing work.
 
 But nope.
 
@@ -126,11 +126,11 @@ I alluded to having strong reservations about this mismatch in my email to the h
 
 Instead, that manager just thanked me for my time and that was it. No follow-up questions or anything.
 
-I waited two whole weeks (and interviewed at several other companies) before *then* deciding to tweet out my thoughts.
+I waited two whole weeks (and interviewed at several other companies) before _then_ deciding to tweet out my thoughts.
 
 ## An Interview For (And From) Non-Assholes
 
-So far all I've done is rail against what I think we shouldn't be doing. To be productive and move forward, we need to talk about what interviewing *should be*, at least according to me.
+So far all I've done is rail against what I think we shouldn't be doing. To be productive and move forward, we need to talk about what interviewing _should be_, at least according to me.
 
 But this whole post is far too long already. So I'm going to focus the next post on that topic. [Read "What Hiring Should Look Like" here](https://gist.github.com/getify/4f4b7886d181d5fe9c6b1bfdf134709f).
 

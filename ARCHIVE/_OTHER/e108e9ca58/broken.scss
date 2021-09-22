@@ -63,9 +63,9 @@ $fade-topbar-duration: 0.5s;
 
 @mixin fade-topbar($fade-topbar-active) {
   @if ($fade-topbar-active == yes) {
-    content: 'active';
+    content: "active";
   } @else {
-    content: 'inactive';
+    content: "inactive";
   }
 }
 

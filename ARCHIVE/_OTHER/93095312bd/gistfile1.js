@@ -3,10 +3,10 @@
 // just thrown as a normal uncaught global error.
 
 ASQ()
-.then(function(){
-	done("foobar");
-})
-.or(function(msg){
-	console.log(msg); // foobar
-	a.b; // ReferenceError: `a` is undefined
-});
+  .then(function () {
+    done("foobar");
+  })
+  .or(function (msg) {
+    console.log(msg); // foobar
+    a.b; // ReferenceError: `a` is undefined
+  });

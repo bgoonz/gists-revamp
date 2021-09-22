@@ -1,5 +1,5 @@
 // current solution adapted from: https://gist.github.com/getify/e5ed084f122d73ac375b#gistcomment-1621271
-// 
+//
 // Problem:
 //
 // given a stream of "hexadecimal digits" from PI, as in 0.243F6A8885A308D31319...,
@@ -25,29 +25,30 @@
 
 var overflow = 0;
 
-function hexDigitToDec(hexDigit,position) {
-    var dec = parseInt(hexDigit,16) / Math.pow(16,position) * Math.pow(10,position);
-    dec = dec + overflow; 
-    var whole = Math.floor(dec);
-    overflow = (dec % 1) * 10;
-    return whole;
+function hexDigitToDec(hexDigit, position) {
+  var dec =
+    (parseInt(hexDigit, 16) / Math.pow(16, position)) * Math.pow(10, position);
+  dec = dec + overflow;
+  var whole = Math.floor(dec);
+  overflow = (dec % 1) * 10;
+  return whole;
 }
 
-hexDigitToDec("2",0);   // 1
-hexDigitToDec("4",1);   // 4
-hexDigitToDec("3",2);   // 1
-hexDigitToDec("F",3);   // 5
-hexDigitToDec("6",4);   // 9
-hexDigitToDec("A",5);   // 2
-hexDigitToDec("8",6);   // 6
-hexDigitToDec("8",7);   // 5
-hexDigitToDec("8",8);   // 3
+hexDigitToDec("2", 0); // 1
+hexDigitToDec("4", 1); // 4
+hexDigitToDec("3", 2); // 1
+hexDigitToDec("F", 3); // 5
+hexDigitToDec("6", 4); // 9
+hexDigitToDec("A", 5); // 2
+hexDigitToDec("8", 6); // 6
+hexDigitToDec("8", 7); // 5
+hexDigitToDec("8", 8); // 3
 // ... digits 9 - 30 of PI
-hexDigitToDec("4",31);  // 0
-hexDigitToDec("A",32);  // 1, but should be 2
-hexDigitToDec("4",33);  // 3, but should be 8
+hexDigitToDec("4", 31); // 0
+hexDigitToDec("A", 32); // 1, but should be 2
+hexDigitToDec("4", 33); // 3, but should be 8
 // ... digits 26 - 306 of PI
-hexDigitToDec("4",307); // 8, but should be 0
-hexDigitToDec("A",308); // NaN, but should be 6
-hexDigitToDec("4",309); // NaN, but should be 6
+hexDigitToDec("4", 307); // 8, but should be 0
+hexDigitToDec("A", 308); // NaN, but should be 6
+hexDigitToDec("4", 309); // NaN, but should be 6
 // ...

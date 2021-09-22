@@ -18,17 +18,17 @@ There is a feeling that often community events are really only for pushing agend
 
 Why would someone want to pledge towards this?
 
-* They cannot attend but would like to support the confernce
-* They want to help out free meetups/hackdays that don't charge for entry but have running costs
-* They like the work that the organisers are doing for the community and want to support them
-* To promote themselves within the community
+- They cannot attend but would like to support the confernce
+- They want to help out free meetups/hackdays that don't charge for entry but have running costs
+- They like the work that the organisers are doing for the community and want to support them
+- To promote themselves within the community
 
 Other extras could be offered for sponsors
 
-* access to special sponsor ticket discounts 
-* t-shirts and other swag from the conference without having to attend
-* access to insider interviews with organisers and speakers
-* early access to videos and other conference content
+- access to special sponsor ticket discounts
+- t-shirts and other swag from the conference without having to attend
+- access to insider interviews with organisers and speakers
+- early access to videos and other conference content
 
 ## Other ideas and notes
 
@@ -44,8 +44,8 @@ Could encourgage conferences to source materials locally and help put money into
 
 ## Related projects
 
-* <https://www.gittip.com/>
-* <http://www.kickstarter.com/>
+- <https://www.gittip.com/>
+- <http://www.kickstarter.com/>
 
 ## Find out more
 

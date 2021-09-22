@@ -18,33 +18,32 @@
 // on `Foo`, but `currentThis` will point to `Foo`, since that's
 // where `identify()` was found in the chain.
 
-
 // So... what if:
 
 var Foo = Object.create(null);
 Foo.me = "Foo";
-Foo.identify = function() {
-	// whenever Foo#identify() is called, `currentThis` will 
-	// always be `Foo`, but `this` will continue to follow the 
-	// established rules for determining a `this` binding.
-	console.log("Me: " + this.me + "; Current: " + currentThis.me);
+Foo.identify = function () {
+  // whenever Foo#identify() is called, `currentThis` will
+  // always be `Foo`, but `this` will continue to follow the
+  // established rules for determining a `this` binding.
+  console.log("Me: " + this.me + "; Current: " + currentThis.me);
 };
 
 var Bar = Object.create(Foo);
 Bar.me = "Bar";
-Bar.another = function() {
-	console.log("Current: " + currentThis.me);
-}
+Bar.another = function () {
+  console.log("Current: " + currentThis.me);
+};
 
 var bar1 = Object.create(Bar);
 bar1.me = "bar1";
 var bar2 = Object.create(Bar);
 bar2.me = "bar2";
 
-Foo.identify();  // "Me: Foo; Current: Foo"
-Bar.identify();  // "Me: Bar; Current: Foo"
-Bar.another();   // "Current: Bar"
+Foo.identify(); // "Me: Foo; Current: Foo"
+Bar.identify(); // "Me: Bar; Current: Foo"
+Bar.another(); // "Current: Bar"
 bar1.identify(); // "Me: bar1; Current: Foo"
 bar2.identify(); // "Me: bar2; Current: Foo"
-bar1.another();  // "Current: Bar"
-bar2.another();  // "Current: Bar"
+bar1.another(); // "Current: Bar"
+bar2.another(); // "Current: Bar"

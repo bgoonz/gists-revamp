@@ -7,7 +7,7 @@ var p2 = p1.then(3);
 
 // So if `p2` was fulfilled as `3`, we should be able
 // to extract that value right away, right?
-p2.then(function(msg){
+p2.then(function (msg) {
   console.log(msg);
 });
 // prints nothing in Chrome as well as ES6Fiddle

@@ -3,6 +3,6 @@
 // in the sequence. :(
 
 for (var v of myNumbers) {
-	console.log(v);
+  console.log(v);
 }
 // prints out all 100 numbers 0..99

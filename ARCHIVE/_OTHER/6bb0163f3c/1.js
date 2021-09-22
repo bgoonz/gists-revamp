@@ -1,33 +1,33 @@
 "use strict";
 
-[foo,bar] = TNG(foo,bar);
+[foo, bar] = TNG(foo, bar);
 // NOTE: intentionally not TNG(..) wrapping useBaz(), so that it's
 // basically like a "custom hook" that can be called only from other
 // TNG-wrapped functions
 
-function foo(origX,origY) {
-   var [x,setX] = useState(origX);
-   var [y,setY] = useState(origY);
-   useBaz("foo");  // calling useBaz(..) like it's a "custom hook"
-   
-   console.log(`foo: ${x} ${y}`);
-   
-   setX( x * 2 );
-   setY( bar(y) );
-   
-   return origX;
+function foo(origX, origY) {
+  var [x, setX] = useState(origX);
+  var [y, setY] = useState(origY);
+  useBaz("foo"); // calling useBaz(..) like it's a "custom hook"
+
+  console.log(`foo: ${x} ${y}`);
+
+  setX(x * 2);
+  setY(bar(y));
+
+  return origX;
 }
 
 function bar(curY) {
-   var [z,setZ] = useState(curY + 1);
-   useBaz("bar");  // calling useBaz(..) like it's a "custom hook"
-   
-   console.log(`bar: ${z}`);
-   
-   z = z * curY;
-   setZ( z );
-   
-   return z;
+  var [z, setZ] = useState(curY + 1);
+  useBaz("bar"); // calling useBaz(..) like it's a "custom hook"
+
+  console.log(`bar: ${z}`);
+
+  z = z * curY;
+  setZ(z);
+
+  return z;
 }
 
 // since useBaz(..) isn't TNG-wrapped, it's like a "custom hook", in that
@@ -35,13 +35,13 @@ function bar(curY) {
 // TNG-wrapped function. thus, useBaz(..) uses the context of the calling
 // TNG-wrapped function for its useState(..) calls.
 function useBaz(which) {
-   var [count,setCount] = useState(0);
-   count++;
-   setCount(count);
-   console.log(`${which} count: ${count}`);
+  var [count, setCount] = useState(0);
+  count++;
+  setCount(count);
+  console.log(`${which} count: ${count}`);
 }
 
-foo(3,9);
+foo(3, 9);
 // foo count: 1
 // foo: 3 9
 // bar count: 1

@@ -8,10 +8,10 @@ var obj = {
     for (let k of Object.keys(this)) {
       yield this[k];
     }
-  }
+  },
 };
-  
+
 for (let v of obj) {
-  console.log( v );
+  console.log(v);
 }
 // 1 2 3

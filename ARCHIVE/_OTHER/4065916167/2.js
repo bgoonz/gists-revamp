@@ -5,21 +5,22 @@ visual and mental processing to track which scope each variable is in, and wheth
 */
 
 function foo() {
-   if (true) {
+  if (true) {
+    if (true) {
+      let a = 1;
       if (true) {
-         let a = 1;
-         if (true) {
-            let b = 2, c = 3;
-            if (true) {
-               let d = 4;
-               console.log("d: " + d);
-            }
-            console.log("c: " + c);
-         }
-         console.log("b: " + b);
+        let b = 2,
+          c = 3;
+        if (true) {
+          let d = 4;
+          console.log("d: " + d);
+        }
+        console.log("c: " + c);
       }
-      console.log("a: " + a);
-   }
+      console.log("b: " + b);
+    }
+    console.log("a: " + a);
+  }
 }
 
 // will print:

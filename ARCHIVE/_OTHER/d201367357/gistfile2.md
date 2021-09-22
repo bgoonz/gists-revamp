@@ -9,7 +9,6 @@ So, as I would expect it:
 
 But that can't explain how it works. So, are these not in order? And which of these is synchronous, vs which of these (if any) happens async (like on the next event tick)?
 
-
 For this to work like it observably does, it seems to me like it needs to instead be:
 
 1. the `put(..)` on line 4 is blocked. control transfers to the second generator.
@@ -18,4 +17,3 @@ For this to work like it observably does, it seems to me like it needs to instea
 4. the `put(..)` is unblocked, and so finally the `ch.close()` is called on line 5.
 
 Is that more accurate? It sure seems like a stranger processing model. Can you offer any insight?
-

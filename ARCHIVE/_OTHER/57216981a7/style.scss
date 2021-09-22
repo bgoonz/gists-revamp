@@ -1,14 +1,17 @@
 @import "compass";
-* { @include box-sizing(border-box); }
-body { 
+* {
+  @include box-sizing(border-box);
+}
+body {
   background: #333;
   font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   font-size: 14px;
   line-height: 1.4;
   padding: 20px;
 }
-h1, h2 {
-  font-family: Sans-Serif; 
+h1,
+h2 {
+  font-family: Sans-Serif;
 }
 
 .pro-form {
@@ -18,7 +21,8 @@ h1, h2 {
   padding: 2px 20px 20px 20px;
   .field {
     margin: 0 0 10px 0;
-    input[type=text], input[type=number] {
+    input[type="text"],
+    input[type="number"] {
       width: 100%;
     }
   }
@@ -44,14 +48,14 @@ h1, h2 {
   }
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type='text'],
-input[type='number'], {
+input[type="text"],
+input[type="number"] {
   -webkit-appearance: none;
   @include background(linear-gradient(#ccc, #fff));
   padding: 4px 20px 4px 5px;
@@ -73,10 +77,12 @@ input[type='number'], {
   border: 1px solid #111;
   color: white !important;
   font-size: 16px;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.8);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
   text-overflow: ellipsis;
   cursor: pointer;
-  &:hover, &:focus, &.gsc-cursor-current-page {
+  &:hover,
+  &:focus,
+  &.gsc-cursor-current-page {
     background: #333;
     text-decoration: none !important;
     @include box-shadow((0 2px 3px -2px rgba(0, 0, 0, 0.5)));

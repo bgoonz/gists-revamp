@@ -4,7 +4,7 @@ Today, I had a [brief conversation](https://twitter.com/pamelafox/status/3017626
 
 I mentioned to her my recent talk ["Browser Versions Are Dead"](https://speakerdeck.com/getify/browser-versions-are-dead-v2) (which btw I hope will have video up soon!), where I advocate abandoning an obsession with browser versions (and vendors!) and embracing, among other things, [feature testing](https://speakerdeck.com/getify/browser-versions-are-dead-v2?slide=12).
 
-She responded, in part, with: 
+She responded, in part, with:
 
 > There'd be too many things to check for (and stuff that can't be sniffed easily, like performance) and the tests would take time.
 
@@ -22,7 +22,7 @@ There's also implied in her tweets that there's a fear that "too many" feature t
 
 So, allow me to just share my take on these concerns. These are just opinions and suggestions, not binding facts or harsh criticisms.
 
-------------
+---
 
 I fully recognize [not everything can be feature tested](https://github.com/Modernizr/Modernizr/wiki/Undetectables). But, most things CAN be. And for everything we can be feature-testing for, I think we should be. For the stuff which we can't feature test effectively, there's one of three options I find acceptable:
 
@@ -38,7 +38,7 @@ So, more to Pamela's concerns directly.
 
 How do you feature test for everything? Well, [Modernizr](http://modernizr.com) does a fantastic job of removing most of that effort from what you have to think about. In addition, there are many lists of feature-tests, like [this one](http://kangax.github.com/cft/) from [@kangax](http://twitter.com/kangax), or [this one](http://diveintohtml5.info/everything.html) from [@diveintomark--dead acct](http://twitter.com/diveintomarkl).
 
-Let me reiterate: I think you *should* be feature-testing for anything which you consider to be mission-critical to your application. Making assumptions about things which "should work" in the environment you're in MIGHT not bite you now. But there's almost a guarantee it'll bite you at some point. Don't set landmines for yourself. Feature test.
+Let me reiterate: I think you _should_ be feature-testing for anything which you consider to be mission-critical to your application. Making assumptions about things which "should work" in the environment you're in MIGHT not bite you now. But there's almost a guarantee it'll bite you at some point. Don't set landmines for yourself. Feature test.
 
 But will that slow everything down if we feature-test on every single page-load?
 
@@ -60,7 +60,7 @@ Hopefully, you get the idea. You don't have to feature-test for how fast somethi
 
 The point is, performance is measurable and monitorable, and therefore performance-as-a-feature is definitely feature-detectable. You just have to be willing and motivated to do it.
 
------------------
+---
 
 The alternative:
 

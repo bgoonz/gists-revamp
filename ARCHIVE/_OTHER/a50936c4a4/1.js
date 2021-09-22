@@ -1,10 +1,10 @@
 function lowercase(v) {
-   return v.toLowerCase();
+  return v.toLowerCase();
 }
 
 function uppercase(v) {
-   return v.toUpperCase();
+  return v.toUpperCase();
 }
 
-var words = ["Now","Is","The","Time"];
-var moreWords = ["The","Quick","Brown","Fox"];
+var words = ["Now", "Is", "The", "Time"];
+var moreWords = ["The", "Quick", "Brown", "Fox"];

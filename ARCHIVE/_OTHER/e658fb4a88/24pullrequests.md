@@ -1,8 +1,8 @@
-♬ On the First day of Christmas my true love sent to me 
+♬ On the First day of Christmas my true love sent to me
 a Parser for a Syntax Tree.
 
-On the Second day of Christmas my true love sent to me 
-Two passing tests, 
+On the Second day of Christmas my true love sent to me
+Two passing tests,
 and a Parser for a Syntax Tree. ♬
 
 We've had a visit from a ghost, the ghost of Christmas yet to come. It showed us a horrible future where projects we used and loved lay unmaintained because developers took from open-source without contributing. Projects were incompatible with new browsers and only supported old versions of the spec. Security errors stalked the land and many pagers summoned unhappy developers from their Christmas feasts.
@@ -17,7 +17,7 @@ If you need a reminder about what 24 Pull Requests is all about, it's a yearly i
 
 Open source has given so much to all of us, it's time to give 24 little gifts back.
 
-This year we've encouraging people to setup events and allow you to work alongside some great company. 
+This year we've encouraging people to setup events and allow you to work alongside some great company.
 Find a list of events at http://24pullrequests.com/events or host your own event and list it on the site: http://24pullrequests.com/events/new
 
 We've also got a shiny new gitter chatroom for everyone to hang out in: http://gitter.im/24pullrequests/24pullrequests

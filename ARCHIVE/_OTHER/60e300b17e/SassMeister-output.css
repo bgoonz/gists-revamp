@@ -25,7 +25,24 @@
 /** Unstack an element. */
 /** Center an element on either or both axes. @requires A parent container with relative positioning. @param {string} [$direction=both] - Specify which axes to center the element on. */
 /** Apply a clearfix to an element. */
-.col { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; background: red; }
-.col:before, .col:after { content: ''; display: table; }
-.col:after { clear: both; }
-.col:last-child { margin-right: 0%; }
+.col {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  background: red;
+}
+.col:before,
+.col:after {
+  content: "";
+  display: table;
+}
+.col:after {
+  clear: both;
+}
+.col:last-child {
+  margin-right: 0%;
+}

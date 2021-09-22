@@ -1,12 +1,12 @@
-setInterval(function(){
+setInterval(function () {
   console.log("A");
-},500);
+}, 500);
 
-setTimeout(function(){
-  setInterval(function(){
+setTimeout(function () {
+  setInterval(function () {
     console.log("B");
-  },500);
-},250);
+  }, 500);
+}, 250);
 
 // generally expect:
 // A

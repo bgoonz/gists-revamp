@@ -1,5 +1,3 @@
-
-
 ```python
 # Python Change Pandas DataFrame Variables
 
@@ -9,9 +7,6 @@ data = [['hello', '1.222', '4', '5.22'], ['world', '66', '4', '6.33'], ['hello',
 data = pd.DataFrame(data, columns = ['a', 'b', 'c', 'd'])
 data
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -50,15 +45,9 @@ data
 </table>
 </div>
 
-
-
-
 ```python
 data.dtypes
 ```
-
-
-
 
     a    object
     b    object
@@ -66,20 +55,11 @@ data.dtypes
     d    object
     dtype: object
 
-
-
-
 ```python
 data.a[0] + " "  + data.a[1]
 ```
 
-
-
-
     'hello world'
-
-
-
 
 ```python
 data[['b', 'd']] = data[['b', 'd']].astype(float)
@@ -87,9 +67,6 @@ data[['c']] = data[['c']].astype(int)
 data[['a']] = data[['a']].astype(str) # Defaults to string
 data
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">
@@ -128,15 +105,9 @@ data
 </table>
 </div>
 
-
-
-
 ```python
 data.dtypes
 ```
-
-
-
 
     a     object
     b    float64
@@ -144,20 +115,11 @@ data.dtypes
     d    float64
     dtype: object
 
-
-
-
 ```python
 data.a[0] + " "  + data.a[1]
 ```
 
-
-
-
     'hello world'
-
-
-
 
 ```python
 

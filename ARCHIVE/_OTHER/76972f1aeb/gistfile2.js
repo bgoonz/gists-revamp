@@ -1,6 +1,4 @@
 "use strict";
-`${function(){
-
-	// my whole program here
-
-}()}`
+`${(function () {
+  // my whole program here
+})()}`;

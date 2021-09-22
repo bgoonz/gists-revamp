@@ -1,4 +1,4 @@
-var f = (x,y) => z => x + y + z
+var f = (x, y) => (z) => x + y + z;
 
 // POP QUIZ: how do you use `f(..)` here?
 
@@ -15,4 +15,4 @@ var f = (x,y) => z => x + y + z
 
 // ANSWER:
 
-f(1,2)(3);   // 6
+f(1, 2)(3); // 6

@@ -37,10 +37,10 @@ var concat = require("gulp-concat");
 
 // Browsersync server. This is the general command I run to work on the site.
 // Maybe should be the default task?
-gulp.task("serve", function() {
+gulp.task("serve", function () {
   browserSync.init({
     proxy: "css-tricks.cool", // served by Local by Flywheel
-    reloadDelay: 500
+    reloadDelay: 500,
   });
 
   gulp.watch(["scss/**/*.scss", "style.scss"], ["run-all-css-tasks"]);
@@ -54,7 +54,7 @@ gulp.task("serve", function() {
 });
 
 // SVG workflow: folder of SVGs combined into a SVG sprite of <symbol>s, output as a PHP file I can include();
-gulp.task("svg", function() {
+gulp.task("svg", function () {
   return gulp
     .src("icons/*.svg")
     .pipe(svgmin())
@@ -64,8 +64,8 @@ gulp.task("svg", function() {
         svgAttrs: {
           width: 0,
           height: 0,
-          display: "none"
-        }
+          display: "none",
+        },
       })
     )
     .pipe(rename("icons/sprite/icons.php")) // so I can include() it
@@ -75,7 +75,7 @@ gulp.task("svg", function() {
 // CSS Workflow
 // I should probably get sourcemaps in here...
 // Issue... Sass errors don't kill the watch command, but they don't spit out errors in there either, so if I find Sass isn't refreshing, I have to stop the watch, process this separately, get the error and fix it, then restart watch.
-gulp.task("sass", function() {
+gulp.task("sass", function () {
   return gulp
     .src(["scss/*.scss", "style.scss"])
     .pipe(plumber())
@@ -83,35 +83,35 @@ gulp.task("sass", function() {
     .pipe(gulp.dest("css"))
     .pipe(browserSync.stream());
 });
-gulp.task("autoprefixer", function() {
+gulp.task("autoprefixer", function () {
   return gulp
     .src("css/*.css")
     .pipe(
       autoprefixer({
         browsers: ["last 2 versions"],
-        cascade: false
+        cascade: false,
       })
     )
     .pipe(gulp.dest("css"));
 });
 // Is this the best CSS minfier? I have no idea. I supposed I could try to find that fancy one that looks at my templates and tries to find unused selectors too?
-gulp.task("minify-css", function() {
+gulp.task("minify-css", function () {
   return gulp
     .src("css/*.css")
     .pipe(cleanCSS({ compatibility: "*" }))
     .pipe(gulp.dest("css"));
 });
-gulp.task("move-main-style", function() {
+gulp.task("move-main-style", function () {
   return gulp
     .src("css/style.css")
     .pipe(rename("style.css"))
     .pipe(gulp.dest("./"));
 });
 // Seems kinda messy/confusing way to be shuffling files around.
-gulp.task("remove-style-after", function() {
+gulp.task("remove-style-after", function () {
   return gulp.src("css/style.css", { read: false }).pipe(clean());
 });
-gulp.task("run-all-css-tasks", function(callback) {
+gulp.task("run-all-css-tasks", function (callback) {
   runSequence(
     "sass",
     "autoprefixer",
@@ -123,41 +123,41 @@ gulp.task("run-all-css-tasks", function(callback) {
 });
 
 // JS workflow. I don't think the sourcemaps are working.
-gulp.task("babel", function() {
+gulp.task("babel", function () {
   return gulp
     .src([
       "js/*.js",
       "!js/min/*.js",
       "!js/global.js",
-      "js/concat/global-concat.js"
+      "js/concat/global-concat.js",
     ])
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(
       babel({
         presets: ["@babel/env"],
-        plugins: ["@babel/plugin-proposal-class-properties"]
+        plugins: ["@babel/plugin-proposal-class-properties"],
       })
     )
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("js/babel"));
 });
 // I have no idea if this is the best JavaScript minifier.
-gulp.task("minify-javascript", function(cb) {
+gulp.task("minify-javascript", function (cb) {
   return gulp
     .src("js/babel/*.js")
     .pipe(
       minify({
         ext: {
           src: ".js",
-          min: ".min.js"
-        }
+          min: ".min.js",
+        },
       })
     )
     .pipe(gulp.dest("js/min"));
 });
 // Maybe webpack should be doing this? But then do I need to only use ES6 `import` compatible libs?
-gulp.task("concat-scripts", function() {
+gulp.task("concat-scripts", function () {
   return gulp
     .src([
       "js/libs/jquery.lazy.js",
@@ -166,15 +166,15 @@ gulp.task("concat-scripts", function() {
       "js/highlighting-fixes.js",
       "js/libs/prism.js",
       "js/bsa.js",
-      "js/global.js"
+      "js/global.js",
     ])
     .pipe(concat("global-concat.js"))
     .pipe(gulp.dest("js/concat"));
 });
-gulp.task("clean-js-temp", function() {
+gulp.task("clean-js-temp", function () {
   return gulp.src(["js/babel", "js/concat"], { read: false }).pipe(clean());
 });
-gulp.task("run-all-js-tasks", function(callback) {
+gulp.task("run-all-js-tasks", function (callback) {
   runSequence(
     "clean-js-temp",
     "concat-scripts",

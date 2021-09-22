@@ -1,35 +1,34 @@
 var ASQ = require("asynquence-contrib");
 
-
 ASQ()
-.runner(
-	ASQ.csp.go(function*(ch) {
-		// change the default buffer size on the default channel
-		ch.buffer_size = 13;
-		for(var x=0; x<15; x++) {
-			yield ASQ.csp.put(ch, x);
-			console.log('put ' + x);
-		}
-	}),
-	ASQ.csp.go(function*(ch) {
-		while(!ch.closed) {
-			yield ASQ.csp.take(ASQ.csp.timeout(200));
-			for(var i=0; i<5; i++) {
-				console.log(yield ASQ.csp.take(ch));
-			}
-		}
-	}),
-	ASQ.csp.go(function*(ch) {
-		yield ASQ.csp.take(ASQ.csp.timeout(1000));
-		ch.close();
-	})
-)
-.val(function(){
-	console.log("all done:", arguments);
-})
-.or(function(err){
-	console.log(err.stack || err);
-});
+  .runner(
+    ASQ.csp.go(function* (ch) {
+      // change the default buffer size on the default channel
+      ch.buffer_size = 13;
+      for (var x = 0; x < 15; x++) {
+        yield ASQ.csp.put(ch, x);
+        console.log("put " + x);
+      }
+    }),
+    ASQ.csp.go(function* (ch) {
+      while (!ch.closed) {
+        yield ASQ.csp.take(ASQ.csp.timeout(200));
+        for (var i = 0; i < 5; i++) {
+          console.log(yield ASQ.csp.take(ch));
+        }
+      }
+    }),
+    ASQ.csp.go(function* (ch) {
+      yield ASQ.csp.take(ASQ.csp.timeout(1000));
+      ch.close();
+    })
+  )
+  .val(function () {
+    console.log("all done:", arguments);
+  })
+  .or(function (err) {
+    console.log(err.stack || err);
+  });
 
 // put 0
 // put 1

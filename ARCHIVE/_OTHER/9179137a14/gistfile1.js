@@ -11,38 +11,29 @@
 // the "sin" of curly-brace-less `if`, the same "sin" everyone
 // complained about with the iOS/OSX #gotofail.
 
-
 // So.. this code:
 if (foo) {
-	// ..
+  // ..
+} else if (bar) {
+  // ..
+} else if (bam) {
+  // ..
+} else {
+  // ..
 }
-else if (bar) {
-	// ..
-}
-else if (bam) {
-	// ..
-}
-else {
-	// ..
-}
-
 
 // ..is actually treated as:
 
-
 if (foo) {
-	// ..
-}
-else {
-	if (bar) {
-		// ..
-	}
-	else {
-		if (bam) {
-			// ..
-		}
-		else {
-			// ..
-		}
-	}
+  // ..
+} else {
+  if (bar) {
+    // ..
+  } else {
+    if (bam) {
+      // ..
+    } else {
+      // ..
+    }
+  }
 }

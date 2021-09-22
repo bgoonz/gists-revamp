@@ -1,4 +1,4 @@
-function Parent(){}
+function Parent() {}
 Parent.prototype.something = 42;
 
 var p = new Parent();

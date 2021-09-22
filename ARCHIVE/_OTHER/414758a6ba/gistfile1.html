@@ -1,37 +1,29 @@
 <html>
-<head>
-<script>var _queue = [];</script>
-</head>
-<body>
+  <head>
+    <script>
+      var _queue = [];
+    </script>
+  </head>
+  <body>
+    ... ...
+    <script>
+      _queue.push(function () {
+        // a bunch of inline code
+      });
+    </script>
+    ... ...
 
+    <script src="LAB.js"></script>
+    <script>
+      var $L = $LAB.script("1.js", "2.js", "3.js").wait(function () {
+        init1();
+        init2();
+        init3();
+      });
 
-...
-...
-<script>
-_queue.push(function(){
-
-   // a bunch of inline code 
-
-});
-</script>
-...
-...
-
-
-<script src="LAB.js"></script>
-<script>
-var $L = $LAB
-.script("1.js", "2.js", "3.js")
-.wait(function(){
-   init1();
-   init2();
-   init3();
-});
-
-for (var i=0,len=_queue.length; i<len; i++) {
-   $L = $L.wait(_queue[i]);
-}
-</script>
-
-</body>
+      for (var i = 0, len = _queue.length; i < len; i++) {
+        $L = $L.wait(_queue[i]);
+      }
+    </script>
+  </body>
 </html>

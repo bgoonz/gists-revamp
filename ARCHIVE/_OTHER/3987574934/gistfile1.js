@@ -1,11 +1,11 @@
-var FOO = (function() {
-   var a = "Hello";
+var FOO = (function () {
+  var a = "Hello";
 
-   return {
-      something:function(){
-        alert(a);    // referenced via closure
-      }
-   };
+  return {
+    something: function () {
+      alert(a); // referenced via closure
+    },
+  };
 })();
 
 FOO.something();

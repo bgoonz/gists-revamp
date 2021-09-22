@@ -2,9 +2,9 @@
 
 I hereby claim:
 
-  * I am getify on github.
-  * I am getify (https://keybase.io/getify) on keybase.
-  * I have a public key ASCMGyYZgzXV7OoA4Aw_DzSwADaqpyFN2enUhGeeAbxaZgo
+- I am getify on github.
+- I am getify (https://keybase.io/getify) on keybase.
+- I have a public key ASCMGyYZgzXV7OoA4Aw_DzSwADaqpyFN2enUhGeeAbxaZgo
 
 To claim this, I am signing this object:
 

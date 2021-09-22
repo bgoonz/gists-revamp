@@ -3,13 +3,13 @@
 // all the other steps resolve async? For consistency,
 // one would expect them all to be async.
 
-var p = new Promise(function(resolve,reject){
-   console.log("what");
-   resolve();
+var p = new Promise(function (resolve, reject) {
+  console.log("what");
+  resolve();
 });
 
-p.then(function(){
-   console.log("here?");
+p.then(function () {
+  console.log("here?");
 });
 
 console.log("happened");

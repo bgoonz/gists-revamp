@@ -2,9 +2,9 @@
 
 I hereby claim:
 
-  * I am harbolkn on github.
-  * I am harbolkn (https://keybase.io/harbolkn) on keybase.
-  * I have a public key ASARFShcFhG9iHqJnUqJp5_XgHDMJSG8MR3979Gtrb1iswo
+- I am harbolkn on github.
+- I am harbolkn (https://keybase.io/harbolkn) on keybase.
+- I have a public key ASARFShcFhG9iHqJnUqJp5_XgHDMJSG8MR3979Gtrb1iswo
 
 To claim this, I am signing this object:
 

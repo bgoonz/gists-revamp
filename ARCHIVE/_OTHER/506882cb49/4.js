@@ -1,14 +1,20 @@
 var IO = (function DefineIO() {
   const brand = {};
 
-  return Object.assign(IO,{ of, is, do: $do, doEither, });
+  return Object.assign(IO, { of, is, do: $do, doEither });
 
   // **************************
 
   function IO(effect) {
     var publicAPI = {
-      map, chain, flatMap: chain, bind: chain,
-      ap, run, _inspect, _is,
+      map,
+      chain,
+      flatMap: chain,
+      bind: chain,
+      ap,
+      run,
+      _inspect,
+      _is,
       [Symbol.toStringTag]: "IO",
     };
     return publicAPI;
@@ -16,24 +22,18 @@ var IO = (function DefineIO() {
     // *********************
 
     function map(fn) {
-      return IO(v => {
+      return IO((v) => {
         var res = effect(v);
-        return (
-          _isPromise(res) ?
-            res.then(fn) :
-            fn(res)
-        );
+        return _isPromise(res) ? res.then(fn) : fn(res);
       });
     }
 
     function chain(fn) {
-      return IO(v => {
+      return IO((v) => {
         var res = effect(v);
-        return (
-          _isPromise(res) ?
-            res.then(fn).then(v2 => v2.run(v)) :
-            fn(res).run(v)
-        );
+        return _isPromise(res)
+          ? res.then(fn).then((v2) => v2.run(v))
+          : fn(res).run(v);
       });
     }
 
@@ -47,16 +47,17 @@ var IO = (function DefineIO() {
 
     function _inspect() {
       return `${publicAPI[Symbol.toStringTag]}(${
-        typeof effect == "function" ? (effect.name || "anonymous function") :
-        (effect && typeof effect._inspect == "function") ? effect._inspect() :
-        val
+        typeof effect == "function"
+          ? effect.name || "anonymous function"
+          : effect && typeof effect._inspect == "function"
+          ? effect._inspect()
+          : val
       })`;
     }
 
     function _is(br) {
       return br === brand;
     }
-
   }
 
   function of(v) {
@@ -67,98 +68,71 @@ var IO = (function DefineIO() {
     return v && typeof v._is == "function" && v._is(brand);
   }
 
-  function processNext(next,respVal,outerV) {
-    return (new Promise(async (resv,rej) => {
+  function processNext(next, respVal, outerV) {
+    return new Promise(async (resv, rej) => {
       try {
-        await monadFlatMap(
-          (_isPromise(respVal) ? await respVal : respVal),
-          v => IO(() => next(v).then(resv,rej))
+        await monadFlatMap(_isPromise(respVal) ? await respVal : respVal, (v) =>
+          IO(() => next(v).then(resv, rej))
         ).run(outerV);
-      }
-      catch (err) {
+      } catch (err) {
         rej(err);
       }
-    }));
+    });
   }
 
   function $do(block) {
-    return IO(outerV => {
-      var it = getIterator(block,outerV);
+    return IO((outerV) => {
+      var it = getIterator(block, outerV);
 
-      return (async function next(v){
+      return (async function next(v) {
         var resp = it.next(_isPromise(v) ? await v : v);
         resp = _isPromise(resp) ? await resp : resp;
-        return (
-          resp.done ?
-            resp.value :
-            processNext(next,resp.value,outerV)
-        );
+        return resp.done ? resp.value : processNext(next, resp.value, outerV);
       })();
     });
   }
 
   function doEither(block) {
-    return IO(outerV => {
-      var it = getIterator(block,outerV);
+    return IO((outerV) => {
+      var it = getIterator(block, outerV);
 
-      return (async function next(v){
+      return (async function next(v) {
         try {
           v = _isPromise(v) ? await v : v;
-          let resp = (
-            Either.Left.is(v) ?
-              it.throw(v) :
-              it.next(v)
-          );
+          let resp = Either.Left.is(v) ? it.throw(v) : it.next(v);
           resp = _isPromise(resp) ? await resp : resp;
-          let respVal = (
-            resp.done ?
-              (
-                (_isPromise(resp.value) ? await resp.value : resp.value)
-              ) :
-              resp.value
-          );
-          return (
-            resp.done ?
-              (
-                Either.Right.is(respVal) ?
-                  respVal :
-                  Either.Right(respVal)
-              ) :
-              processNext(next,respVal,outerV)
-              .catch(next)
-          );
-        }
-        catch (err) {
-          throw (
-            Either.Left.is(err) ?
-              err :
-              Either.Left(err)
-          );
+          let respVal = resp.done
+            ? _isPromise(resp.value)
+              ? await resp.value
+              : resp.value
+            : resp.value;
+          return resp.done
+            ? Either.Right.is(respVal)
+              ? respVal
+              : Either.Right(respVal)
+            : processNext(next, respVal, outerV).catch(next);
+        } catch (err) {
+          throw Either.Left.is(err) ? err : Either.Left(err);
         }
       })();
     });
   }
 
-  function getIterator(block,v) {
-    return (
-      typeof block == "function" ? block(v) :
-      (block && typeof block == "object" && typeof block.next == "function") ? block :
-      undefined
-    );
+  function getIterator(block, v) {
+    return typeof block == "function"
+      ? block(v)
+      : block && typeof block == "object" && typeof block.next == "function"
+      ? block
+      : undefined;
   }
 
-  function monadFlatMap(m,fn) {
-    return m[
-      "flatMap" in m ? "flatMap" :
-      "chain" in m ? "chain" :
-      "bind"
-    ](fn);
+  function monadFlatMap(m, fn) {
+    return m["flatMap" in m ? "flatMap" : "chain" in m ? "chain" : "bind"](fn);
   }
 
   function _isPromise(v) {
     return v && typeof v.then == "function";
   }
-
 })();
 
 var Either = (function DefineEither() {
@@ -167,15 +141,20 @@ var Either = (function DefineEither() {
   Left.is = LeftIs;
   Right.is = RightIs;
 
-  return Object.assign(Either,{
-    Left, Right, of: Right, pure: Right,
-    unit: Right, is, fromFoldable,
+  return Object.assign(Either, {
+    Left,
+    Right,
+    of: Right,
+    pure: Right,
+    unit: Right,
+    is,
+    fromFoldable,
   });
 
   // **************************
 
   function Left(val) {
-    return LeftOrRight(val,/*isRight=*/ false);
+    return LeftOrRight(val, /*isRight=*/ false);
   }
 
   function LeftIs(val) {
@@ -183,7 +162,7 @@ var Either = (function DefineEither() {
   }
 
   function Right(val) {
-    return LeftOrRight(val,/*isRight=*/ true);
+    return LeftOrRight(val, /*isRight=*/ true);
   }
 
   function RightIs(val) {
@@ -191,13 +170,20 @@ var Either = (function DefineEither() {
   }
 
   function Either(val) {
-    return LeftOrRight(val,/*isRight=*/ true);
+    return LeftOrRight(val, /*isRight=*/ true);
   }
 
-  function LeftOrRight(val,isRight = true) {
+  function LeftOrRight(val, isRight = true) {
     var publicAPI = {
-      map, chain, flatMap: chain, bind: chain,
-      ap, fold, _inspect, _is, _is_right,
+      map,
+      chain,
+      flatMap: chain,
+      bind: chain,
+      ap,
+      fold,
+      _inspect,
+      _is,
+      _is_right,
       get [Symbol.toStringTag]() {
         return `Either:${isRight ? "Right" : "Left"}`;
       },
@@ -207,40 +193,32 @@ var Either = (function DefineEither() {
     // *********************
 
     function map(fn) {
-      return (
-        isRight ?
-          LeftOrRight(fn(val),isRight) :
-          publicAPI
-      );
+      return isRight ? LeftOrRight(fn(val), isRight) : publicAPI;
     }
 
     function chain(fn) {
-      return (
-        isRight ?
-          fn(val) :
-          publicAPI
-      );
+      return isRight ? fn(val) : publicAPI;
     }
 
     function ap(m) {
       return m.map(val);
     }
 
-    function fold(asLeft,asRight) {
-      return (
-        isRight ?
-          asRight(val) :
-          asLeft(val)
-      );
+    function fold(asLeft, asRight) {
+      return isRight ? asRight(val) : asLeft(val);
     }
 
     function _inspect() {
       return `${publicAPI[Symbol.toStringTag]}(${
-        typeof val == "string" ? JSON.stringify(val) :
-        typeof val == "undefined" ? "" :
-        typeof val == "function" ? (val.name || "anonymous function") :
-        val && typeof val._inspect == "function" ? val._inspect() :
-        val
+        typeof val == "string"
+          ? JSON.stringify(val)
+          : typeof val == "undefined"
+          ? ""
+          : typeof val == "function"
+          ? val.name || "anonymous function"
+          : val && typeof val._inspect == "function"
+          ? val._inspect()
+          : val
       })`;
     }
 
@@ -251,7 +229,6 @@ var Either = (function DefineEither() {
     function _is_right() {
       return isRight;
     }
-
   }
 
   function is(val) {
@@ -259,7 +236,6 @@ var Either = (function DefineEither() {
   }
 
   function fromFoldable(m) {
-    return m.fold(Left,Right);
+    return m.fold(Left, Right);
   }
-
 })();

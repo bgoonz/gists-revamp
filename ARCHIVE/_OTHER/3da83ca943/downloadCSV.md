@@ -1,4 +1,5 @@
 ### Code to download attached csv and clean leading zeros, if needed
+
 http://time.com/money/collection/best-places-to-live-2017/
 
 ```R
@@ -18,11 +19,13 @@ head(dataRaw)
   # dataRaw$placeFips <- sprintf("%05d",dataRaw$placeFips)
 
 ```
+
 #### Plot 100 places on US Map
+
 ```R
 library(ggmap)
 map <- get_map(location = 'USA', zoom = 4)
 ggmap(map) +
-  geom_point(aes(x = longitude, y = latitude), size = 5, 
-             data = dataRaw, alpha = .5) 
+  geom_point(aes(x = longitude, y = latitude), size = 5,
+             data = dataRaw, alpha = .5)
 ```

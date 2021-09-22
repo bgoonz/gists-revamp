@@ -2,9 +2,9 @@ function A() {}
 var a = new A();
 
 function B() {
-   function F(){}
-   F.prototype = a;
-   return new F();
+  function F() {}
+  F.prototype = a;
+  return new F();
 }
 var b = new B(); // `b` now inherits from `a` (*not* `A`)
 

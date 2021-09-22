@@ -4,38 +4,48 @@
 $n: 7; // colour branches (8 in the image)
 $m: 3; // colour repetitions (4 in the image)
 $p: 32; // dots on each "arm"
-$d: .125em;
-$c: .25; // cutoff; between 0 and 1
+$d: 0.125em;
+$c: 0.25; // cutoff; between 0 and 1
 $sh: ();
 $sh2: ();
 
-@for $i from 0 to $n*$m {
-  $beta: $i*2*pi()/($n*$m);
+@for $i from 0 to $n * $m {
+  $beta: $i * 2 * pi() / ($n * $m);
   $x: 0;
   @for $j from 1 through $p {
-    $gamma: $j*2*pi()/$p;
-    $s: 7.5*($c*$p - $j)*($j - (1 + $c/4)*$p)/pow((.5 + $c)*$p, 2);
-    @if $j < $c*$p { $s: 0; }
-    $x: $x + 1.65*($s + 1)*$d;
-    $y: $x*sin($gamma)/5;
-    $x1: $x*cos($beta) - $y*sin($beta); // change of coords
-    $y1: $x*sin($beta) + $y*cos($beta);
-    $x2: $x*cos($beta + $gamma);
-    $y2: $x*sin($beta + $gamma);
-    $sh: $sh, $x1 $y1 0 $s*$d hsl($i*360/$n, 100%, 50%);
-    $sh2: $sh2, $x2 $y2 0 $d/2 hsl($i*360/$n, 100%, 50%);
+    $gamma: $j * 2 * pi() / $p;
+    $s: 7.5 * ($c * $p - $j) * ($j - (1 + $c/4) * $p) / pow((0.5 + $c) * $p, 2);
+    @if $j < $c * $p {
+      $s: 0;
+    }
+    $x: $x + 1.65 * ($s + 1) * $d;
+    $y: $x * sin($gamma) / 5;
+    $x1: $x * cos($beta) - $y * sin($beta); // change of coords
+    $y1: $x * sin($beta) + $y * cos($beta);
+    $x2: $x * cos($beta + $gamma);
+    $y2: $x * sin($beta + $gamma);
+    $sh: $sh, $x1 $y1 0 $s * $d hsl($i * 360 / $n, 100%, 50%);
+    $sh2: $sh2, $x2 $y2 0 $d/2 hsl($i * 360 / $n, 100%, 50%);
   }
 }
 
-html { background: black; }
+html {
+  background: black;
+}
 .boo {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   margin: -$d/2;
-  width: $d; height: $d;
+  width: $d;
+  height: $d;
   border-radius: 50%;
   box-shadow: $sh;
   background: black;
   animation: ani 2s ease-in-out infinite alternate;
 }
-@keyframes ani { to { box-shadow: $sh2; } }
+@keyframes ani {
+  to {
+    box-shadow: $sh2;
+  }
+}

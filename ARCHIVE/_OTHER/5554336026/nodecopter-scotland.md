@@ -15,8 +15,8 @@ EH9 1PL
 
 http://www.summerhall.co.uk/about/location/
 
+## Schedule
 
-## Schedule 
 Doors open at 9:00am, but we'll kicking it all off at 10am.
 
 We'll then form teams or 2 or 3 to a drone and start hacking.
@@ -29,16 +29,16 @@ If you're going to be hacking you'll need a laptop with wifi and Node.js install
 
 If you're new to node check out these guides:
 
-* http://nodeguide.com/beginner.html
-* http://nodetuts.com/
-* http://howtonode.org/
+- http://nodeguide.com/beginner.html
+- http://nodetuts.com/
+- http://howtonode.org/
 
 If you want to read up on hacking the nodecopters, check out the following pages of http://nodecopter.com
 
-* http://nodecopter.com/guides/getting_started
-* http://nodecopter.com/modules
-* http://nodecopter.com/ideas
-* http://shama.github.com/voxel-drone/
+- http://nodecopter.com/guides/getting_started
+- http://nodecopter.com/modules
+- http://nodecopter.com/ideas
+- http://shama.github.com/voxel-drone/
 
 You can also join the irc channel #nodecopter on freenode to chat with more experienced devs
 
@@ -46,9 +46,9 @@ You can also join the irc channel #nodecopter on freenode to chat with more expe
 
 If you get lost of have any questions, my details are:
 
-* email: andrewnez@gmail.com
-* tel: 07983354257
-* twitter: [@teabass](http://twitter.com/teabass)
+- email: andrewnez@gmail.com
+- tel: 07983354257
+- twitter: [@teabass](http://twitter.com/teabass)
 
 See you all tomorrow morning, it should be a great day!
 

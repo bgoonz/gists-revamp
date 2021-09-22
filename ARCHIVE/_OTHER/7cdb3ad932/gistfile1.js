@@ -1,6 +1,6 @@
 function Foo() {}
-Foo.prototype.method1 = function(){};
-Foo.prototype.method2 = function(){};
+Foo.prototype.method1 = function () {};
+Foo.prototype.method2 = function () {};
 
 var a1 = new Foo();
 var a2 = new Foo();

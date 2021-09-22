@@ -1,7 +1,5 @@
-function
+function foo(x, y) {
+  return x * y;
+}
 
-  foo(x,y) {
-	return x * y;
-  }
-
-foo(3,5); // 15
+foo(3, 5); // 15

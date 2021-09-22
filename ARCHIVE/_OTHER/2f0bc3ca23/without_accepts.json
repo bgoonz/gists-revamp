@@ -18,9 +18,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^6.0.2"
       },
@@ -60,9 +58,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -98,9 +94,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -139,9 +133,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -180,9 +172,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -229,9 +219,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -278,9 +266,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -327,9 +313,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -376,9 +360,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -425,9 +407,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -474,9 +454,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -535,9 +513,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -600,9 +576,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^5.0.0"
       },
@@ -665,9 +639,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {
         "babel-runtime": "^6.0.0"
       },
@@ -730,9 +702,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@6.13.0",
@@ -791,9 +761,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.1",
@@ -852,9 +820,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.3",
@@ -913,9 +879,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.9",
@@ -974,9 +938,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.12",
@@ -1025,9 +987,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.13",
@@ -1078,9 +1038,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.14",
@@ -1131,9 +1089,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.15",
@@ -1184,9 +1140,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.16",
@@ -1237,9 +1191,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.17",
@@ -1290,9 +1242,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "dependencies": {},
       "devDependencies": {},
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.18",
@@ -1345,9 +1295,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.19",
       "_npmVersion": "5.3.0",
       "_nodeVersion": "8.1.4",
@@ -1398,9 +1346,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-alpha.20",
       "_npmVersion": "5.3.0",
       "_nodeVersion": "8.1.4",
@@ -1451,9 +1397,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-beta.0",
       "_npmVersion": "5.3.0",
       "_nodeVersion": "8.1.4",
@@ -1504,9 +1448,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-beta.1",
       "_npmVersion": "5.4.1",
       "_nodeVersion": "8.1.4",
@@ -1557,9 +1499,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-beta.2",
       "_npmVersion": "5.4.1",
       "_nodeVersion": "8.1.4",
@@ -1614,9 +1554,7 @@
       },
       "license": "MIT",
       "main": "lib/index.js",
-      "keywords": [
-        "babel-plugin"
-      ],
+      "keywords": ["babel-plugin"],
       "_id": "babel-plugin-syntax-object-rest-spread@7.0.0-beta.3",
       "_npmVersion": "5.5.1",
       "_nodeVersion": "8.1.4",
@@ -1716,9 +1654,7 @@
     "7.0.0-beta.2": "2017-09-26T15:14:56.095Z",
     "7.0.0-beta.3": "2017-10-15T13:11:20.372Z"
   },
-  "keywords": [
-    "babel-plugin"
-  ],
+  "keywords": ["babel-plugin"],
   "repository": {
     "type": "git",
     "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-object-rest-spread"

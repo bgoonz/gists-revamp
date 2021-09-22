@@ -1,50 +1,46 @@
 var ASQ = require("asynquence-contrib");
 
-
 ASQ()
-.runner(
-	ASQ.csp.go(function*(ch){
-		listen(ch);
-		while (yield ASQ.csp.put(ch,Math.random())) {}
-	})
-)
-.val(function(){
-	console.log("all done:", arguments);
-})
-.or(function(err){
-	console.log(err.stack || err);
-});
+  .runner(
+    ASQ.csp.go(function* (ch) {
+      listen(ch);
+      while (yield ASQ.csp.put(ch, Math.random())) {}
+    })
+  )
+  .val(function () {
+    console.log("all done:", arguments);
+  })
+  .or(function (err) {
+    console.log(err.stack || err);
+  });
 
 function listen(ch) {
-	setTimeout(ch.close,5000);
+  setTimeout(ch.close, 5000);
 
-	var rsq = ASQ.react(function(proceed,stop){
+  var rsq = ASQ.react(function (proceed, stop) {
+    (function iter() {
+      ASQ.csp.takeAsync(ch).val(function (v) {
+        if (v !== ASQ.csp.CLOSED) {
+          setTimeout(iter, 500);
+        }
+        proceed(v);
+      });
+    })();
 
-		(function iter(){
-			ASQ.csp.takeAsync(ch)
-			.val(function(v){
-				if (v !== ASQ.csp.CLOSED) {
-					setTimeout(iter,500);
-				}
-				proceed(v);
-			});
-		})();
-
-		stop(function(){
-			console.log("can't get anymore");
-		});
- 	})
-	.val(function(v){
-		if (v !== ASQ.csp.CLOSED) {
-			console.log(v);
-		}
-		else {
-			rsq.stop();
-		}
-	})
-	.or(function(err){
-		console.log(err);
-	});
+    stop(function () {
+      console.log("can't get anymore");
+    });
+  })
+    .val(function (v) {
+      if (v !== ASQ.csp.CLOSED) {
+        console.log(v);
+      } else {
+        rsq.stop();
+      }
+    })
+    .or(function (err) {
+      console.log(err);
+    });
 }
 
 // 0.20062327338382602

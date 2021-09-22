@@ -1,36 +1,35 @@
 var ASQ = require("asynquence-contrib");
 
-
 ASQ()
-.runner(
-	ASQ.csp.go(function*(table){
-		table.go(player, ["ping"]);
-		table.go(player, ["pong"]);
+  .runner(
+    ASQ.csp.go(function* (table) {
+      table.go(player, ["ping"]);
+      table.go(player, ["pong"]);
 
-		yield ASQ.csp.put(table, {hits: 0});
-		yield ASQ.csp.take(ASQ.csp.timeout(1000));
-		table.close();
-	})
-)
-.val(function(){
-	console.log("all done:", arguments);
-})
-.or(function(err){
-	console.log(err.stack || err);
-});
+      yield ASQ.csp.put(table, { hits: 0 });
+      yield ASQ.csp.take(ASQ.csp.timeout(1000));
+      table.close();
+    })
+  )
+  .val(function () {
+    console.log("all done:", arguments);
+  })
+  .or(function (err) {
+    console.log(err.stack || err);
+  });
 
 function* player(table, name) {
-	while (true) {
-		var ball = yield ASQ.csp.take(table);
-		if (ball === ASQ.csp.CLOSED) {
-			console.log(name + ": table's gone");
-			return;
-		}
-		ball.hits += 1;
-		console.log(name + " " + ball.hits);
-		yield ASQ.csp.take(ASQ.csp.timeout(100));
-		yield ASQ.csp.put(table, ball);
-	}
+  while (true) {
+    var ball = yield ASQ.csp.take(table);
+    if (ball === ASQ.csp.CLOSED) {
+      console.log(name + ": table's gone");
+      return;
+    }
+    ball.hits += 1;
+    console.log(name + " " + ball.hits);
+    yield ASQ.csp.take(ASQ.csp.timeout(100));
+    yield ASQ.csp.put(table, ball);
+  }
 }
 
 // ping 1

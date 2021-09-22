@@ -1,7 +1,7 @@
 Foo = { baz: 2 /*, .. */ };
 
 // link Bar to Foo
-Bar = Object.create( Foo );
+Bar = Object.create(Foo);
 Bar.bam = 3;
 
 // link Foo back to Bar

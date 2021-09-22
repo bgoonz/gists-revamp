@@ -4,9 +4,8 @@
 var a = xhrcall();
 var b = delay(10);
 
-a.then(function(P){
-   return b.then(P.value);
-})
-.then(function(P){
-   alert(P.value);
+a.then(function (P) {
+  return b.then(P.value);
+}).then(function (P) {
+  alert(P.value);
 });

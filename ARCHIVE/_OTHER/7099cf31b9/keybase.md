@@ -2,48 +2,48 @@
 
 I hereby claim:
 
-  * I am felixonmars on github.
-  * I am felixonmars (https://keybase.io/felixonmars) on keybase.
-  * I have a public key whose fingerprint is B597 1F2C 5C10 A9A0 8C60  030F 786C 63F3 30D7 CB92
+- I am felixonmars on github.
+- I am felixonmars (https://keybase.io/felixonmars) on keybase.
+- I have a public key whose fingerprint is B597 1F2C 5C10 A9A0 8C60 030F 786C 63F3 30D7 CB92
 
 To claim this, I am signing this object:
 
 ```json
 {
-    "body": {
-        "client": {
-            "name": "keybase.io node.js client",
-            "version": "0.7.2"
-        },
-        "key": {
-            "fingerprint": "b5971f2c5c10a9a08c60030f786c63f330d7cb92",
-            "host": "keybase.io",
-            "key_id": "786C63F330D7CB92",
-            "uid": "b125b755fae16b1eec26cb1b5e767000",
-            "username": "felixonmars"
-        },
-        "merkle_root": {
-            "ctime": 1414232979,
-            "hash": "e684834c88b84b8a536ea7192ab55f57ce44730c52f929359ca7cf7dddf50d505ed4bb32cc8517b15a1446146e942a64955771930ef48e00d9545d6c58a24f1a",
-            "seqno": 85143
-        },
-        "service": {
-            "name": "github",
-            "username": "felixonmars"
-        },
-        "type": "web_service_binding",
-        "version": 1
+  "body": {
+    "client": {
+      "name": "keybase.io node.js client",
+      "version": "0.7.2"
     },
-    "ctime": 1414233017,
-    "expire_in": 157680000,
-    "prev": "40b8b84f3e6341719aef72d20fc5907ae293016f4e0a421e56ad42fb1cda3ede",
-    "seqno": 2,
-    "tag": "signature"
+    "key": {
+      "fingerprint": "b5971f2c5c10a9a08c60030f786c63f330d7cb92",
+      "host": "keybase.io",
+      "key_id": "786C63F330D7CB92",
+      "uid": "b125b755fae16b1eec26cb1b5e767000",
+      "username": "felixonmars"
+    },
+    "merkle_root": {
+      "ctime": 1414232979,
+      "hash": "e684834c88b84b8a536ea7192ab55f57ce44730c52f929359ca7cf7dddf50d505ed4bb32cc8517b15a1446146e942a64955771930ef48e00d9545d6c58a24f1a",
+      "seqno": 85143
+    },
+    "service": {
+      "name": "github",
+      "username": "felixonmars"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1414233017,
+  "expire_in": 157680000,
+  "prev": "40b8b84f3e6341719aef72d20fc5907ae293016f4e0a421e56ad42fb1cda3ede",
+  "seqno": 2,
+  "tag": "signature"
 }
 ```
 
 with the PGP key whose fingerprint is
-[B597 1F2C 5C10 A9A0 8C60  030F 786C 63F3 30D7 CB92](https://keybase.io/felixonmars)
+[B597 1F2C 5C10 A9A0 8C60 030F 786C 63F3 30D7 CB92](https://keybase.io/felixonmars)
 (captured above as `body.key.fingerprint`), yielding the PGP signature:
 
 ```

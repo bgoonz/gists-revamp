@@ -1,18 +1,17 @@
-    <script src="../vendor/lab2.min.js"></script>
-    <script type="text/javascript">
-      var start = (+new Date);
+<script src="../vendor/lab2.min.js"></script>
+<script type="text/javascript">
+  var start = +new Date();
 
-      // load some scripts dependent on each other (in parallel but preserving execution order)
-      $LAB
-      .setOptions({AlwaysPreserveOrder:true})
-      .script('a.js')
-      .script('b-needs-a.js')
-      .script('c-needs-b.js')
-      .wait(function(){
-        a() + b() + c();
+  // load some scripts dependent on each other (in parallel but preserving execution order)
+  $LAB
+    .setOptions({ AlwaysPreserveOrder: true })
+    .script("a.js")
+    .script("b-needs-a.js")
+    .script("c-needs-b.js")
+    .wait(function () {
+      a() + b() + c();
 
-        // benchmark time!
-        document.getElementById('total').innerHTML = (+new Date) - start;
-        
-      });
-    </script>
+      // benchmark time!
+      document.getElementById("total").innerHTML = +new Date() - start;
+    });
+</script>

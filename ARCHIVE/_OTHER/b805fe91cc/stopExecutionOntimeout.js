@@ -1,6 +1,6 @@
 "use strict";
 
-if (typeof (window.CP) !== "object") {
+if (typeof window.CP !== "object") {
   window.CP = {};
 }
 
@@ -20,11 +20,11 @@ window.CP.PenTimer = {
   // tested against pen: xbwYNm, it loops over 200k real loop
   MAX_TIME_IN_LOOP_WO_EXIT: 2200,
 
-  exitedLoop: function(loopID) {
+  exitedLoop: function (loopID) {
     this._loopExits[loopID] = true;
   },
 
-  shouldStopLoop: function(loopID) {
+  shouldStopLoop: function (loopID) {
     // Once we kill a loop, kill them all, we have an infinite loop and
     // it must be fixed prior to running again.
     if (this.programKilledSoStopMonitoring) {
@@ -70,7 +70,7 @@ window.CP.PenTimer = {
     // Second level shit around new hotness logic
     try {
       this._checkOnInfiniteLoop(loopID, now);
-    } catch(e) {
+    } catch (e) {
       this._sendErrorMessageToEditor();
       this.programKilledSoStopMonitoring = true;
       return true;
@@ -79,32 +79,32 @@ window.CP.PenTimer = {
     return false;
   },
 
-  _sendErrorMessageToEditor: function() {
+  _sendErrorMessageToEditor: function () {
     try {
       if (this._shouldPostMessage()) {
         var data = {
           action: "infinite-loop",
-          line: this._findAroundLineNumber()
+          line: this._findAroundLineNumber(),
         };
 
         parent.postMessage(JSON.stringify(data), "*");
       } else {
         this._throwAnErrorToStopPen();
       }
-    } catch(error) {
+    } catch (error) {
       this._throwAnErrorToStopPen();
     }
   },
 
-  _shouldPostMessage: function() {
+  _shouldPostMessage: function () {
     return document.location.href.match(/boomerang/);
   },
 
-  _throwAnErrorToStopPen: function() {
-    throw "We found an infinite loop in your Pen. We've stopped the Pen from running. Please correct it or contact\ support@codepen.io.";
+  _throwAnErrorToStopPen: function () {
+    throw "We found an infinite loop in your Pen. We've stopped the Pen from running. Please correct it or contact support@codepen.io.";
   },
 
-  _findAroundLineNumber: function() {
+  _findAroundLineNumber: function () {
     var err = new Error();
     var lineNumber = 0;
 
@@ -120,7 +120,7 @@ window.CP.PenTimer = {
     return lineNumber;
   },
 
-  _checkOnInfiniteLoop: function(loopID, now) {
+  _checkOnInfiniteLoop: function (loopID, now) {
     if (!this._loopTimers[loopID]) {
       this._loopTimers[loopID] = now;
       // We just started the timer for this loop. exit early
@@ -134,19 +134,21 @@ window.CP.PenTimer = {
     }
   },
 
-  _getTime: function() {
+  _getTime: function () {
     return +new Date();
-  }
+  },
 };
 
-window.CP.shouldStopExecution = function(loopID) {
+window.CP.shouldStopExecution = function (loopID) {
   var shouldStop = window.CP.PenTimer.shouldStopLoop(loopID);
-  if( shouldStop === true ) {
-    console.warn("[CodePen]: An infinite loop (or a loop taking too long) was detected, so we stopped its execution. Sorry!");
+  if (shouldStop === true) {
+    console.warn(
+      "[CodePen]: An infinite loop (or a loop taking too long) was detected, so we stopped its execution. Sorry!"
+    );
   }
   return shouldStop;
 };
 
-window.CP.exitedLoop = function(loopID) {
+window.CP.exitedLoop = function (loopID) {
   window.CP.PenTimer.exitedLoop(loopID);
 };

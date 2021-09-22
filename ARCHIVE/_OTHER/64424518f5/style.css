@@ -88,7 +88,7 @@ body {
   left: 0;
   height: 3.1em;
   width: 3.1em;
-  border-radius: 2.0em;
+  border-radius: 2em;
   background-color: #239374;
   z-index: 2;
 }
@@ -97,7 +97,7 @@ body {
   content: "";
   height: 2.5em;
   width: 2.5em;
-  border-radius: 2.0em;
+  border-radius: 2em;
   background-color: #47b79b;
   position: absolute;
   margin-top: 2.8em;
@@ -111,8 +111,8 @@ body {
   top: 1.3em;
   height: 3.1em;
   width: 3.1em;
-  border-radius: 2.0em;
-  background-color: #239374;  
+  border-radius: 2em;
+  background-color: #239374;
   z-index: 2;
 }
 
@@ -120,7 +120,7 @@ body {
   content: "";
   height: 2.5em;
   width: 2.5em;
-  border-radius: 2.0em;
+  border-radius: 2em;
   background-color: #47b79b;
   position: absolute;
   margin-top: 2.8em;
@@ -134,9 +134,9 @@ body {
   top: 3.2em;
   height: 3.1em;
   width: 3.1em;
-  border-radius: 2.0em;
+  border-radius: 2em;
   background-color: #239374;
-  
+
   z-index: 2;
 }
 
@@ -144,7 +144,7 @@ body {
   content: "";
   height: 2.5em;
   width: 2.5em;
-  border-radius: 2.0em;
+  border-radius: 2em;
   background-color: #47b79b;
   position: absolute;
   margin-top: 2.4em;
@@ -158,9 +158,9 @@ body {
   top: 2.9em;
   height: 3.1em;
   width: 3.1em;
-  border-radius: 2.0em;
+  border-radius: 2em;
   background-color: #239374;
-  
+
   z-index: 2;
 }
 
@@ -168,7 +168,7 @@ body {
   content: "";
   height: 2.5em;
   width: 2.5em;
-  border-radius: 2.0em;
+  border-radius: 2em;
   background-color: #47b79b;
   position: absolute;
   margin-top: 2.4em;
@@ -181,7 +181,18 @@ body {
 .sunlounger3 {
   width: 20px;
   height: 54px;
-  background: linear-gradient(to right, #ffbc45 20%, #fffefe 20%, #fffefe 40%, #ffbc45 40%, #ffbc45 60%, #fffefe 60%, #ffffff 80%, #ffbc45 80%, #ffbc45 80%);
+  background: linear-gradient(
+    to right,
+    #ffbc45 20%,
+    #fffefe 20%,
+    #fffefe 40%,
+    #ffbc45 40%,
+    #ffbc45 60%,
+    #fffefe 60%,
+    #ffffff 80%,
+    #ffbc45 80%,
+    #ffbc45 80%
+  );
   position: absolute;
   box-shadow: 5px 5px 0px 0px #44b69c;
 }

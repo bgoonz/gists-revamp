@@ -11,12 +11,12 @@ var obj = {
       next: () => {
         if (idx < keys.length) return { value: this[keys[idx++]], done: false };
         return { value: undefined, done: true };
-      }
+      },
     };
-  }
+  },
 };
-  
+
 for (let v of obj) {
-  console.log( v );
+  console.log(v);
 }
 // 1 2 3

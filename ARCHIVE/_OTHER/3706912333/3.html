@@ -1,15 +1,10 @@
 {$: '#settings' }
-    <h1>Settings</h1>
-    {$* $.settings | name = _.key | options['low','high'] = _.value ? "checked" }
-        <h2>{$= name $}</h2>
-        {$* options }
-            <input type="radio" name="{$= name $}" value="{$= _.key $}" {$= _.value $}> {$= _.key $}
-        {$}
-    {$}
-{$}
-
-
-
+<h1>Settings</h1>
+{$* $.settings | name = _.key | options['low','high'] = _.value ? "checked" }
+<h2>{$= name $}</h2>
+{$* options }
+<input type="radio" name="{$= name $}" value="{$= _.key $}" {$="_.value" $} />
+{$= _.key $} {$} {$} {$}
 
 <!--
 Here's how "grips" templating engine would handle it.
@@ -53,5 +48,3 @@ Some notes:
 4. Loops can iterate over arrays, objects, set literals (`['low','high']` as shown
    above), or range literals (which would look like `[3..7]`).
 -->
-
-

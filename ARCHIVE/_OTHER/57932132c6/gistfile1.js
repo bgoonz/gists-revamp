@@ -1,7 +1,7 @@
 function Foo() {}
 function Baz() {}
 Foo.prototype.constructor = Baz;
-var f = new Foo()
+var f = new Foo();
 f; // Foo {}
 var o = new Object();
 o; // Object {}

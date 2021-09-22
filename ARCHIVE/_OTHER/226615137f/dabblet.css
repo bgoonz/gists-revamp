@@ -10,8 +10,12 @@
 }
 
 @keyframes moveit {
-  0% { left: -10%; }
-  100% { left: 100%; }
+  0% {
+    left: -10%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 body {

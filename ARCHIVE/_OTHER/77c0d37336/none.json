@@ -1,8 +1,6 @@
 {
   "state": "pending",
-  "statuses": [
-
-  ],
+  "statuses": [],
   "sha": "0ed87dacfb18331e90a84e66be30bd97685a3417",
   "total_count": 0,
   "repository": {

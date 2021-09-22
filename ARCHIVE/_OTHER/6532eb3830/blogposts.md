@@ -1,4 +1,4 @@
-## Ideas for Libraries.io blogposts  
+## Ideas for Libraries.io blogposts
 
 - Don't judge a project by it's GitHub stars
 - Affordably scaling a Ruby on Rails project

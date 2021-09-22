@@ -1,12 +1,16 @@
-var a = Array( 3 );
+var a = Array(3);
 a; // []
 a.length; // 3
-a.map( function( v, idx ){ return idx; } ); // [ ] <-- WTF?
+a.map(function (v, idx) {
+  return idx;
+}); // [ ] <-- WTF?
 
-var b = Array.apply( null, Array(3) );
+var b = Array.apply(null, Array(3));
 b; // [undefined,undefined,undefined]
 b.length; // 3
-b.map( function( v, idx ){ return idx; } ); // [0,1,2] <-- :)
+b.map(function (v, idx) {
+  return idx;
+}); // [0,1,2] <-- :)
 
 /*
 Here, Array(3) means two different kinds of
@@ -25,10 +29,12 @@ coerce it to a **non-empty** array filled with
 
 // Moreover:
 
-var c = Array.apply( null, { length: 3 } );
+var c = Array.apply(null, { length: 3 });
 c; // [undefined,undefined,undefined]
 c.length; // 3
-c.map( function( v, idx ){ return idx; } ); // [0,1,2]
+c.map(function (v, idx) {
+  return idx;
+}); // [0,1,2]
 
 // **************************************
 
@@ -40,24 +46,25 @@ accessing each numeric index on it, sorta
 like this (faked obviously):
 */
 
-Function.prototype.apply = function( thisObj, arrLikeObj ) {
-	if (arrLikeObj.length === 0) {
-		return this( );
-	}
-	// ...
-	else if (arrLikeObj.length === 3) {
-		return this( arrLikeObj[0], arrLikeObj[1], arrLikeObj[2] );
-	}
-	// ...
+Function.prototype.apply = function (thisObj, arrLikeObj) {
+  if (arrLikeObj.length === 0) {
+    return this();
+  }
+  // ...
+  else if (arrLikeObj.length === 3) {
+    return this(arrLikeObj[0], arrLikeObj[1], arrLikeObj[2]);
+  }
+  // ...
 };
 
-var d = Array.apply( null, { length: 3 } );
+var d = Array.apply(null, { length: 3 });
 // which ends up the same as:
-var d = Array( undefined, undefined, undefined );
+var d = Array(undefined, undefined, undefined);
 // which obviously results in:
 //    [undefined,undefined,undefined]
-d.map( function( v, idx ){ return idx; } ); // [0,1,2]
-
+d.map(function (v, idx) {
+  return idx;
+}); // [0,1,2]
 
 /*
 You can easily see there that when `arrLikeObj[2]`
@@ -72,9 +79,11 @@ If JS had just made `Array(3)` as `[undefined,undefined,undefined]`,
 all the observable side-effects would be more sensible:
 */
 
-var e = [ undefined, undefined, undefined] ; // pretending from Array(3)
+var e = [undefined, undefined, undefined]; // pretending from Array(3)
 e; // [undefined,undefined,undefined]
 e.length; // 3
 
-Array.apply( null, e ); // [undefined,undefined,undefined]
-e.map( function( v, idx ){ return idx; } ); // [0,1,2]
+Array.apply(null, e); // [undefined,undefined,undefined]
+e.map(function (v, idx) {
+  return idx;
+}); // [0,1,2]

@@ -1,6 +1,6 @@
 var Foo = {
-   method1: function(){},
-   method2: function(){}
+  method1: function () {},
+  method2: function () {},
 };
 
 var a1 = Object.create(Foo);

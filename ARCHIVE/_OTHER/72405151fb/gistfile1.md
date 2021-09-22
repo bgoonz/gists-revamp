@@ -4,7 +4,7 @@ In new-school web archicture, where we do SPA's and we ditched cookies in favor 
 
 This means that the initial page-response from the server, even in the case where someone has a valid session, must be session-unaware, and the SPA code on the client side must update the page with session-aware info "later", since the session-ID on the client wasn't provided with the initial HTTP request like a session-cookie would have been.
 
-------------
+---
 
 Soft proposal:
 
@@ -19,12 +19,12 @@ When that's sent out with a user's first visit to a page, the browser then regis
 Then, if somewhere in that page's code, it does:
 
 ```js
-sessionStorage.set("sessID","23kml2r2-aniwpkmsd-li24t-35n");
+sessionStorage.set("sessID", "23kml2r2-aniwpkmsd-li24t-35n");
 ```
 
 That value will be stored in `sessionStorage` as normal, but be available for auto-transmission with subsequent requests.
 
-Alternatively, the server could provide the session ID *value* along with the registered property name, as:
+Alternatively, the server could provide the session ID _value_ along with the registered property name, as:
 
 ```
 HTTP Response Header (or <meta> value)
@@ -43,8 +43,6 @@ Session-ID: 23kml2r2-aniwpkmsd-li24t-35n
 ```
 
 These headers would strictly be SOP and not CORS. That is, only requests to the hosting page's same protocol/hostname/port would be sent this `Session-ID` HTTP Request Header. This will prevent unintended session ID leakage, and prevent adding complexity to CORS header authorizations, etc.
-
-
 
 In this way, SPAs utilizing `sessionStorage` to save session ID's will still be able to have the server respond with session-aware response content on the initial page, thereby hopefully speeding up how quickly a user can be shown session-aware content upon page request.
 

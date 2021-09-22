@@ -8,21 +8,21 @@ But at the same time, I hope you'll set aside the assumptions and status quo of 
 
 If you're happy with the way technical interviewing currently works at your company, fine. Just stop, don't read any further. I'm not going to spend any effort trying to convince you otherwise.
 
-The rest of this post will *assume* that you agree with me, that's the whole current status quo process is broken from the ground up, and that it needs to be completely re-designed. I'm going to offer thoughts on what I think it *should look like*.
+The rest of this post will _assume_ that you agree with me, that's the whole current status quo process is broken from the ground up, and that it needs to be completely re-designed. I'm going to offer thoughts on what I think it _should look like_.
 
 ## Technical Screen
 
 Off the top, let's call out that every technical-position interview is necessarily going to need several parts to it. You can't have a single 15 minute conversation with any person and know (and them know!) that everything is a perfect fit and hire them on the spot. That's a terrible and unattainable process.
 
-One of those steps is the *technical screen*. Why does this step exist? Why is it necessary?
+One of those steps is the _technical screen_. Why does this step exist? Why is it necessary?
 
 The reason for the "screening call" is to weed out, in an early pass with very little expense on either side, those who are definitely not a good fit (technically, especially), perhaps either because they're too inexperienced, or (worse) they are misrepresenting themselves.
 
-I guess it's also possible that screening eliminates those who are over-qualified. But for this post, I'm going to assume that it's a *good problem* if you find someone over-qualified, because at least you now have a future pool for other positions you may someday need to fill.
+I guess it's also possible that screening eliminates those who are over-qualified. But for this post, I'm going to assume that it's a _good problem_ if you find someone over-qualified, because at least you now have a future pool for other positions you may someday need to fill.
 
-Somewhere along the way, the screening call also became more of a way to fully vet technical skills. Let's all admit that while vetting technical skills is important, that's separate from weeding out the lower end that isn't up to the necessary level. Using the same *mechanism* for both is part of what makes technical interviewing so broken.
+Somewhere along the way, the screening call also became more of a way to fully vet technical skills. Let's all admit that while vetting technical skills is important, that's separate from weeding out the lower end that isn't up to the necessary level. Using the same _mechanism_ for both is part of what makes technical interviewing so broken.
 
-Let's also talk about this "lower threshold" for a moment. My assertion is that most companies *think* they know what the lower threshold is, but they are actually really bad at that.
+Let's also talk about this "lower threshold" for a moment. My assertion is that most companies _think_ they know what the lower threshold is, but they are actually really bad at that.
 
 If your job posting title is "Junior Developer - JS", what exactly is the lowest threshold that you should screen people out who fall below?
 
@@ -40,7 +40,7 @@ But coding quiz type interviews are **the worst possible way** to do this vettin
 
 Also, ability to code with algorithms should only be a **tiny** part of what you should be trying to vet a candidate.
 
-Anyone who's ever spent much time as a developer knows that coding is *a* part of the job, but there's a ton of other stuff that I would argue is every bit as important as the code, probably more. For example: documentation, writing good tests, written communication (in PRs/issues), ability to take constructive feedback on code, and much, much more.
+Anyone who's ever spent much time as a developer knows that coding is _a_ part of the job, but there's a ton of other stuff that I would argue is every bit as important as the code, probably more. For example: documentation, writing good tests, written communication (in PRs/issues), ability to take constructive feedback on code, and much, much more.
 
 All of those things are far more indicative of how well you'll do as a developer on most teams than whether you're someone who likes to write `for (let i = 0; ..)` or `list.forEach(..)`.
 
@@ -58,7 +58,7 @@ So, we have to vet candidates for a variety of technical skills, only one small 
 
 Here's my concept for the ideal tech interview. By the way, I'm going to say throughout "I ..." as if I'm the only one conducting all these steps. But that's not necessary. Other team members can absolutely help with different parts, and we can collect all that feedback together at the end.
 
-First, my strong preference is that a candidate be able to demonstrate what they've done *over a period of time*, ideally at least 3-6 months. I don't need a picture of you over the course of *45 minutes* or even *4 hours*. That's not even close to a large enough time sample.
+First, my strong preference is that a candidate be able to demonstrate what they've done _over a period of time_, ideally at least 3-6 months. I don't need a picture of you over the course of _45 minutes_ or even _4 hours_. That's not even close to a large enough time sample.
 
 One great way this can be done is through someone's OSS work (on github, etc). That's by far not the only way to get this information -- I'll cover alternatives in a minute -- but it's in my mind a really good option if the person has done so.
 
@@ -66,17 +66,17 @@ What I want then is for them to submit links to 1-3 samples of recent (less than
 
 What I'm looking for in my quick review (say, 15-20 minutes max) is:
 
-* Can I see some samples of code they wrote?
+- Can I see some samples of code they wrote?
 
-* Can I see any documentation? How easy it to understand the project from the docs?
+- Can I see any documentation? How easy it to understand the project from the docs?
 
-* Are there tests, and what do the tests look like? Are they insightful and well designed, or naive?
+- Are there tests, and what do the tests look like? Are they insightful and well designed, or naive?
 
-* Any open issues filed (by others)? How has this person triaged comments/questions from others?
+- Any open issues filed (by others)? How has this person triaged comments/questions from others?
 
-* Any PRs opened? How did this person handle when someone wanted to change their code? Did they feel threatened? Did they respond cogently and respectfully?
+- Any PRs opened? How did this person handle when someone wanted to change their code? Did they feel threatened? Did they respond cogently and respectfully?
 
-After I've reviewed this material, if I feel I've seen enough that I can ask some questions, I'll want to schedule a call with the person, say for 30-60 minutes. On this call, I want that person to walk me through their submitted links. I'll hopefully have a bunch of questions I can probe with, but I'll want them to convince me that what I'm seeing is a good representation of how that person performed *as a developer* over the span of some time.
+After I've reviewed this material, if I feel I've seen enough that I can ask some questions, I'll want to schedule a call with the person, say for 30-60 minutes. On this call, I want that person to walk me through their submitted links. I'll hopefully have a bunch of questions I can probe with, but I'll want them to convince me that what I'm seeing is a good representation of how that person performed _as a developer_ over the span of some time.
 
 ### Alternative To OSS Portfolio
 
@@ -86,7 +86,7 @@ I'd still probably want to see at least one example to review, but depending on 
 
 Let's say the person has no public resources to demonstrate their developer credentials.
 
-My backup plan, which by the way any candidate could choose to participate in if they didn't *want* to use their public work, would be this:
+My backup plan, which by the way any candidate could choose to participate in if they didn't _want_ to use their public work, would be this:
 
 1. I would clone a private github repo with a half dozen code files and resources in it, maybe something on the lines of a TodoMVC level of complexity.
 
@@ -98,7 +98,7 @@ My backup plan, which by the way any candidate could choose to participate in if
 
 5. One task might be to file a PR with a change to the code. I'd ask them to review the PR and make any comments they feel are necessary, and to ask any clarifying questions.
 
-6. Another task might be to ask for a newly added feature to have some documentation written. Another might be to write tests for a segment of the code. Another might be to conduct a PR review of *their* code they added.
+6. Another task might be to ask for a newly added feature to have some documentation written. Another might be to write tests for a segment of the code. Another might be to conduct a PR review of _their_ code they added.
 
 7. I might, in the persona of a customer, file a bug report (with very little information!), and ask the candidate to triage this report. I'd want them to politely ask for more information and follow-up to understand the bug report.
 
@@ -112,7 +112,7 @@ At the end, I'd schedule a short (30min max) feedback call, for the candidate to
 
 By the end of either a review session of existing OSS work, or the private re-creation of the whole software lifecycle process in the private repository, I would think I have a very solid idea of their technical skills.
 
-In other words, at this point, they've been fully vetted technically. I've seen everything *technical* that I need to make my decision.
+In other words, at this point, they've been fully vetted technically. I've seen everything _technical_ that I need to make my decision.
 
 If they want to keep moving forward, and I like what I've seen, then we move onto the next stage: the in-person (or, in these COVID days, the group online) interview.
 
@@ -126,7 +126,7 @@ I would schedule a half day (at most) with the candidate. Here's how we'd break 
 
 4. (60-90 min) Lastly, I'd ask them to teach me something (they would be prepared for this in advance of the interview). I'd want to see how carefully they pay attention to me and the questions I ask as they explain some skill. This could be tech related, or not. Their choice. My objective is to see how well they communicate and share knowledge with others.
 
-	**Note:** If they can't come up with anything suitable to teach me, I'd ask them (in advance of the interview) to take a quick 30-60min course on something, and then re-teach me what they learned.
+   **Note:** If they can't come up with anything suitable to teach me, I'd ask them (in advance of the interview) to take a quick 30-60min course on something, and then re-teach me what they learned.
 
 At the end, I'd have one final short feedback session where I give them a chance to ask me any final questions, and provide any other observations they made while being embedded with the team for the (half) day.
 
@@ -158,6 +158,6 @@ So I'm really not expanding the scope of interviewing burden, but re-purposing t
 
 There's a lot more details in between the lines of all these suggested ideas. And it's just a rough sketch, not a precise formula.
 
-I suspect some readers will reject everything here entirely. That's fine. But I hope a few more of you take a step back and re-consider if your processes are actually asking *the right questions* of candidates.
+I suspect some readers will reject everything here entirely. That's fine. But I hope a few more of you take a step back and re-consider if your processes are actually asking _the right questions_ of candidates.
 
 Wouldn't you rather know how they're going to do when you file a bug against their code, than spending time checking to see what style of `for` loop/iteration they prefer?

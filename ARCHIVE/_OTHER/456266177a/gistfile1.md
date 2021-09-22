@@ -24,10 +24,10 @@ Again, this answer is technically correct, but the possible answers are misleadi
 
 The four available answers are:
 
-* Creating and disposing of objects whenever you need them
-* Using short variable names
-* Using prototypes
-* Avoiding closures when possible 
+- Creating and disposing of objects whenever you need them
+- Using short variable names
+- Using prototypes
+- Avoiding closures when possible
 
 The fourth answer is more "incorrect" than "correct" in that doing so will at best help speed things up (the question asks "not help"), and at worst, have no impact. Closures don't necessarily slow the engine down, but they can lead to more memory usage, which in an indirect way MIGHT slow things down. But if they're not slowing things down in your program, avoiding them won't speed up anything, it won't affect anything at all. In that case, the fourth answer COULD be considered correct. So, the fourth answer is misleading, could be correct, might not be.
 
@@ -41,7 +41,7 @@ So all 3 of those answers are "correct" (and possibly the fourth). The second an
 
 <img src="http://gyazo.com/2d26439d0d238c6b8f479fbc50d76ac3.png">
 
-This answer is technically more correct than the others, but it's misleading. All 4 answers *can* create objects. This fourth answer MIGHT create an object, if there's a function called `List` defined by the user (it's not built-in to the language or browser, for sure). If a user has made a function called `List` (regardless of what it does), calling it with `new` WILL create a new object, that's what `new` does. The fact that this object may never get used or is discarded implicitly doesn't mean it's not created.
+This answer is technically more correct than the others, but it's misleading. All 4 answers _can_ create objects. This fourth answer MIGHT create an object, if there's a function called `List` defined by the user (it's not built-in to the language or browser, for sure). If a user has made a function called `List` (regardless of what it does), calling it with `new` WILL create a new object, that's what `new` does. The fact that this object may never get used or is discarded implicitly doesn't mean it's not created.
 
 The fact that this is supposed to be the correct answer because you're supposed to assume it throws an error because `List` is not built-in is confusing and misleading. The question should specify that there is in fact no `List` predefined, which would mean that it will not create an object, but for the more accurate reason that it will throw an error.
 
@@ -68,4 +68,3 @@ The correct explanation for this was just given above: coercion makes `null` and
 <img src="http://gyazo.com/4c3726bc7707ebb3e36a1f1517bf181a.png">
 
 The answer "Creates a global variable" is the one and only correct answer to this question. Why? Because that's exactly how JavaScript works, variables that are implicitly declared (that is, assigned a value without a prior explicit declaration with `var`) and declared automatically in the global scope.
-

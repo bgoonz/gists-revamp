@@ -3,9 +3,8 @@
 // actually gets, confusingly:
 //       1, 2, 4, 3, 5
 
-
-var p = new Promise(function(resolve,reject){
-	resolve();
+var p = new Promise(function (resolve, reject) {
+  resolve();
 });
 
 // ****************************************
@@ -16,22 +15,21 @@ console.log("1");
 // so that we normalize sync and async logic.
 // ...
 // So, we just think of "everything" as "async", right? No.
-p.then(function(){
-	// But Promise construction is sync, not async, which creates unexpected
-	// sync in the middle of all this async.
-	// ...
-	//     :(
-	var p2 = new Promise(function(resolve,reject){
-		console.log("4"); // "4" comes before "3", obviously </sarcasm>
-		resolve();
-	});
+p.then(function () {
+  // But Promise construction is sync, not async, which creates unexpected
+  // sync in the middle of all this async.
+  // ...
+  //     :(
+  var p2 = new Promise(function (resolve, reject) {
+    console.log("4"); // "4" comes before "3", obviously </sarcasm>
+    resolve();
+  });
 
-	console.log("3");
-	
-	return p2;
-})
-.then(function(){
-	console.log("5");
+  console.log("3");
+
+  return p2;
+}).then(function () {
+  console.log("5");
 });
 
 console.log("2");

@@ -2,40 +2,40 @@
 
 I hereby claim:
 
-  * I am andrew on github.
-  * I am andrewnez (https://keybase.io/andrewnez) on keybase.
-  * I have a public key whose fingerprint is 1D9E 30D6 5CB5 A5FF E31D  5DA6 94C5 333D 0F99 496E
+- I am andrew on github.
+- I am andrewnez (https://keybase.io/andrewnez) on keybase.
+- I have a public key whose fingerprint is 1D9E 30D6 5CB5 A5FF E31D 5DA6 94C5 333D 0F99 496E
 
 To claim this, I am signing this object:
 
 ```json
 {
-    "body": {
-        "key": {
-            "eldest_kid": "010106416e9dae57c386adfa95e379089d0b8953edc39d0bf06aa9a0c8ffe5c384480a",
-            "fingerprint": "1d9e30d65cb5a5ffe31d5da694c5333d0f99496e",
-            "host": "keybase.io",
-            "key_id": "94c5333d0f99496e",
-            "kid": "010106416e9dae57c386adfa95e379089d0b8953edc39d0bf06aa9a0c8ffe5c384480a",
-            "uid": "5425ebff7042938e896a6a9e385b1f00",
-            "username": "andrewnez"
-        },
-        "service": {
-            "name": "github",
-            "username": "andrew"
-        },
-        "type": "web_service_binding",
-        "version": 1
+  "body": {
+    "key": {
+      "eldest_kid": "010106416e9dae57c386adfa95e379089d0b8953edc39d0bf06aa9a0c8ffe5c384480a",
+      "fingerprint": "1d9e30d65cb5a5ffe31d5da694c5333d0f99496e",
+      "host": "keybase.io",
+      "key_id": "94c5333d0f99496e",
+      "kid": "010106416e9dae57c386adfa95e379089d0b8953edc39d0bf06aa9a0c8ffe5c384480a",
+      "uid": "5425ebff7042938e896a6a9e385b1f00",
+      "username": "andrewnez"
     },
-    "ctime": 1460643840,
-    "expire_in": 157680000,
-    "prev": "702ebd69ff840bcb396f59e7abe8df903ca2556b276fc187150225d40a4ea02e",
-    "seqno": 7,
-    "tag": "signature"
+    "service": {
+      "name": "github",
+      "username": "andrew"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1460643840,
+  "expire_in": 157680000,
+  "prev": "702ebd69ff840bcb396f59e7abe8df903ca2556b276fc187150225d40a4ea02e",
+  "seqno": 7,
+  "tag": "signature"
 }
 ```
 
-with the key [1D9E 30D6 5CB5 A5FF E31D  5DA6 94C5 333D 0F99 496E](https://keybase.io/andrewnez), yielding the signature:
+with the key [1D9E 30D6 5CB5 A5FF E31D 5DA6 94C5 333D 0F99 496E](https://keybase.io/andrewnez), yielding the signature:
 
 ```
 -----BEGIN PGP MESSAGE-----
@@ -81,4 +81,3 @@ Consider the [keybase command line program](https://keybase.io/download).
 # look me up
 keybase id andrewnez
 ```
-

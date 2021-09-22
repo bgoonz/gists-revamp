@@ -13,4 +13,3 @@ console.log(Object.getPrototypeOf(b) == a); // true
 
 console.log(b.__proto__ == b.constructor.prototype); // true
 console.log(Object.getPrototypeOf(b) == b.constructor.prototype); // true
-

@@ -2,12 +2,11 @@
 // adapted from: http://marijn.haverbeke.nl/js1k.html
 
 var Canv = document.body.children.c,
-    Gr = Canv.getContext("2d"),
-    prop
-;
+  Gr = Canv.getContext("2d"),
+  prop;
 
 for (prop in Gr) {
-    Gr[ prop[0] + (prop[3]||"") + (prop[6]||"") ] = Gr[prop];
+  Gr[prop[0] + (prop[3] || "") + (prop[6] || "")] = Gr[prop];
 }
 
 /*
@@ -71,4 +70,4 @@ translate                    => tna
 transform                    => tno
 textAlign                    => tti
 textBaseline                 => tts
-*/        
+*/

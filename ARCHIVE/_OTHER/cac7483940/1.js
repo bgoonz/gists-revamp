@@ -10,28 +10,29 @@
    
 */
 
-var mongoModule = require('mongodb');
-var dbServer = new mongoModule.Server('localhost', 27017);//27017 is default port for mongo
-var mongoDb = new mongoModule.Db('hellomeandb', dbServer);
+var mongoModule = require("mongodb");
+var dbServer = new mongoModule.Server("localhost", 27017); //27017 is default port for mongo
+var mongoDb = new mongoModule.Db("hellomeandb", dbServer);
 
-mongoDb.open(function(err, theDb){
-  if (err){
-    console.log('error opening db');
+mongoDb.open(function (err, theDb) {
+  if (err) {
+    console.log("error opening db");
     return;
   }
 
-  theDb.collection('collection1', function(err, theCollection){
-    theCollection.find().toArray(function(err, theDocs){
-      if (theDocs){
-         console.log(theDocs.length + " records:");
-         theDocs.forEach(function(elem){
-            console.log(elem.fname + " " + elem.lname + " is " + elem.age + " years old!");
-         });
+  theDb.collection("collection1", function (err, theCollection) {
+    theCollection.find().toArray(function (err, theDocs) {
+      if (theDocs) {
+        console.log(theDocs.length + " records:");
+        theDocs.forEach(function (elem) {
+          console.log(
+            elem.fname + " " + elem.lname + " is " + elem.age + " years old!"
+          );
+        });
+      } else {
+        console.log("no records to display");
       }
-      else{
-         console.log("no records to display");
-      }
-      theDb.close();//must be within callback, else, trouble.
+      theDb.close(); //must be within callback, else, trouble.
     });
-   });
+  });
 });

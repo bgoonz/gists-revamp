@@ -8,7 +8,7 @@ Watch a flying nodecopter using a kinect, allowing for a much more precise posit
 
 ## Flight recorder (and replayer)
 
-Write all commands to a log file (or stream elsewhere) and allow replay of logs back to the copter again to repeat movements. 
+Write all commands to a log file (or stream elsewhere) and allow replay of logs back to the copter again to repeat movements.
 
 ## Preprogram route using Logo syntax
 
@@ -16,7 +16,7 @@ Allow programming of a route in the Logo programming language: http://en.wikiped
 
 ## 3D representation of copter in 6 axis in webgl
 
-Stream the gyroscope data back to a web and draw a 3d model of the copter in its real world position (tilt, rotation etc) in a web browser 
+Stream the gyroscope data back to a web and draw a 3d model of the copter in its real world position (tilt, rotation etc) in a web browser
 
 ## Streetview style mapping
 
@@ -44,6 +44,6 @@ I've managed to get one copter dancing to music, why not 5 in a row?
 
 ## Attaching stuff to quadcopters
 
-* Velco - for sticking to things and other quadcopters
-* Mifi device - for much greater range over GSM/3G
-* Lazers
+- Velco - for sticking to things and other quadcopters
+- Mifi device - for much greater range over GSM/3G
+- Lazers

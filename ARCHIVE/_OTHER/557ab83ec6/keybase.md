@@ -2,9 +2,9 @@
 
 I hereby claim:
 
-  * I am chriscoyier on github.
-  * I am chriscoyier (https://keybase.io/chriscoyier) on keybase.
-  * I have a public key ASAOqGFRMkYF7J1yITeO3M2VMTRRoozedjmZoEz-UBGVTwo
+- I am chriscoyier on github.
+- I am chriscoyier (https://keybase.io/chriscoyier) on keybase.
+- I have a public key ASAOqGFRMkYF7J1yITeO3M2VMTRRoozedjmZoEz-UBGVTwo
 
 To claim this, I am signing this object:
 

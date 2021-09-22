@@ -1,6 +1,6 @@
 # IDEA: WordPress Plugin for Improving Leaving Code in Comments
 
-It's always quite a struggle to keep people doing it correctly on CSS-Tricks, so I'd love if there was a plugin to make it more foolproof. 
+It's always quite a struggle to keep people doing it correctly on CSS-Tricks, so I'd love if there was a plugin to make it more foolproof.
 
 The overall idea: make it so if you use `<code>` tags, it will come out perfectly.
 

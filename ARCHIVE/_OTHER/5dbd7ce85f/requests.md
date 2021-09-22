@@ -1,15 +1,15 @@
-Client Step By Step
-===========
+# Client Step By Step
 
-Get a Token
--------
+## Get a Token
 
 **Request**
+
 ```
 curl -i http://localhost:8889/oauth/token -X POST -H 'Content-Type: application/json' -d '{"client_id": "abc", "client_secret": "xyz", "grant_type": "client_credentials", "scope": "foo"}'
 ```
 
 **Response**
+
 ```http
 HTTP/1.1 200 OK
 Content-Length: 100
@@ -24,8 +24,8 @@ Connection: keep-alive
 {"token_type": "Bearer", "expires_in": 3600, "access_token": "7d2adcd2-2756-4531-b7d2-69c19f5b1063"}
 ```
 
-Consumer Resource
--------
+## Consumer Resource
+
 **Request**
 
 ```
@@ -33,6 +33,7 @@ curl -i http://localhost:8889/foo -H 'Authorization: Bearer 7d2adcd2-2756-4531-b
 ```
 
 **Response**
+
 ```http
 HTTP/1.1 200 OK
 Etag: "e8ac30e7653f247f956a04b1f901d893e593cd1b"

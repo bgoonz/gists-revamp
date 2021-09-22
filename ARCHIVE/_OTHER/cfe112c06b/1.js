@@ -6,21 +6,21 @@ foo();
 // *******************************
 
 function foo() {
-  for (let i=0; i<2; i++) {
-    let obj = { x: 2 };   // <-- bug because of `let` here
+  for (let i = 0; i < 2; i++) {
+    let obj = { x: 2 }; // <-- bug because of `let` here
     bar(obj);
-    
-    setTimeout(function(){
+
+    setTimeout(function () {
       obj.x = 10;
-    },100);
+    }, 100);
   }
 }
 
 function bar(obj) {
-  setTimeout(function(){
+  setTimeout(function () {
     y.x++;
     console.log(`values: ${y.x} ${obj.x}`);
-  },1000);
-  
-  y = Object.assign({},obj);
+  }, 1000);
+
+  y = Object.assign({}, obj);
 }

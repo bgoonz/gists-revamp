@@ -32,7 +32,7 @@ Firefox 要增加针对数字内容版权的 drm 支持啦...
 
 (嗯, 我没打错字, 是仇不是愁)
 
-Q:（我的B站会全灰了…）
+Q:（我的 B 站会全灰了…）
 
 A: 啊, 全灰的一定是吃了金坷垃(
 
@@ -56,7 +56,7 @@ A: 啊, 全灰的一定是吃了金坷垃(
 
 isatap 等 ipv6 隧道的用户可以上啦(
 
-Q: 有什么工具可以方便生成systemctl的启动脚本？
+Q: 有什么工具可以方便生成 systemctl 的启动脚本？
 
 A: service 文件么
 
@@ -92,7 +92,7 @@ User=felix
 
 (啊, 千万不要吐槽那个文件名)
 
-Q: 话说systemd的debug信息在哪可以看到..? 如果是以前的syslog-ng这样的话一般就收集在/usr/log里面了, systemd呢..?
+Q: 话说 systemd 的 debug 信息在哪可以看到..? 如果是以前的 syslog-ng 这样的话一般就收集在/usr/log 里面了, systemd 呢..?
 
 A: 在一个被称为 journal 的二进制日志系统里
 
@@ -171,7 +171,7 @@ psd 做的事情是, 在开机的时候把浏览器的 profile 复制到内存�
 
 备份到硬盘
 
-默认的间隔是1个小时
+默认的间隔是 1 个小时
 
 这样即使掉电也不会有太大的损失呢~
 
@@ -187,7 +187,7 @@ psd 做的事情是, 在开机的时候把浏览器的 profile 复制到内存�
 
 所以如果你开机后根本没有用过浏览器就关机了, 是不会产生额外的写操作的
 
-Q: profile是哪些文件
+Q: profile 是哪些文件
 
 CA: 浏览器历史记录，扩展，书签，缓存等等吧
 
@@ -245,7 +245,7 @@ A: 这些文件很大的啦...
 
 ### 其他交流
 
-Q: 话说, 如果swap的fstab项存在的话systemd.swap是会fail的吗..? 本人今天刚用上systemd至少是这么感觉的..
+Q: 话说, 如果 swap 的 fstab 项存在的话 systemd.swap 是会 fail 的吗..? 本人今天刚用上 systemd 至少是这么感觉的..
 
 A: 嗯... 你用的是 GPT 吗?
 
@@ -261,22 +261,22 @@ GPT 是的确有这个问题的...
 
 参考: <https://wiki.archlinux.org/index.php/swap#Activation_by_systemd>
 
-Q: systemd是干什么的？有相似的功能的软件叫什么？
+Q: systemd 是干什么的？有相似的功能的软件叫什么？
 
 CA: initscript
 
-还有ububtu的upstart？
+还有 ububtu 的 upstart？
 
-现在主要arch和fedora用户在用
+现在主要 arch 和 fedora 用户在用
 
 A: systemd 是一个启动管理器/服务管理器
 
-前期主要的feature 有基于依赖的启动关系管理，基于socket的服务激活，以及基于cgroups的进程组管理，等等
+前期主要的 feature 有基于依赖的启动关系管理，基于 socket 的服务激活，以及基于 cgroups 的进程组管理，等等
 
-upstart 相对于initscripts的改进主要在第一项
+upstart 相对于 initscripts 的改进主要在第一项
 
-但是其他的大量systemd的新特性它是没有的
+但是其他的大量 systemd 的新特性它是没有的
 
-debian已经讨论决定用systemd了，所以ubuntu的话。。。嗯。。。。
+debian 已经讨论决定用 systemd 了，所以 ubuntu 的话。。。嗯。。。。
 
 （啊，这部分如果没听懂的话没关系的，真的没关系的

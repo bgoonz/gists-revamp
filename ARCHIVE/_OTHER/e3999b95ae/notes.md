@@ -2,7 +2,7 @@
 
 ## What?
 
-There are general four approaches to the implementation of package manager seen in popular usage: 
+There are general four approaches to the implementation of package manager seen in popular usage:
 
 - File System Based
 - Database Based
@@ -20,7 +20,7 @@ Clients of these package managers will have a built-in understanding of the dire
 
 Because the whole registry is available as a single folder, downloading a whole working copy of that registry is easy, and so many people will make copies for themselves, their companies or even the community (often called mirrors).
 
-Publishing to file-system-based registries is quite different than with database-based package manager that you may have used before (via `npm publish` for example). This is because only a handful of people have write access to a file-system-based registry and when they do, they have access to add/update/edit/remove any package within the whole registry. 
+Publishing to file-system-based registries is quite different than with database-based package manager that you may have used before (via `npm publish` for example). This is because only a handful of people have write access to a file-system-based registry and when they do, they have access to add/update/edit/remove any package within the whole registry.
 
 The general process for publishing to a file-system-based registry is to email one of the admins of the registry (usually via a public mailing list or bug tracker) and once your package has been audited, it will be added to the registry at the admins discretion.
 
@@ -38,7 +38,7 @@ Because file-system-based package managers have minimal requirements of read+wri
 
 IPFS also has all of the basic elements to be able to support file-system-based package managers already, the main amount of work is to optimise those pieces for performance and end user experience.
 
-Almost all Linux Distributions us a file system based package manager, so making IPFS support this kind will enable a large percentage of system package managers to be deployed/mirrored onto IPFS, as well as a handful of popular language package managers. 
+Almost all Linux Distributions us a file system based package manager, so making IPFS support this kind will enable a large percentage of system package managers to be deployed/mirrored onto IPFS, as well as a handful of popular language package managers.
 
 The work to enable file system based package managers is not specific to any one registry, as long as all standard file system features are supported, all file system based package managers will be able to us it on the registry/server/mirror side of things, which existing clients will be able to continue to use HTTP and upgrade to load data directly over IPFS on their own time.
 
@@ -52,7 +52,7 @@ In theory, IPFS already has all of the required pieces to be able to support fil
 
 Some relevant IPFS subsystems to file-system-based package managers:
 
-- unixFS 
+- unixFS
 - DNSlink
 - IPNS
 - MFS
@@ -60,17 +60,17 @@ Some relevant IPFS subsystems to file-system-based package managers:
 
 There are two main sections in file-system-based package manager support:
 
-  1. Hosting a registry on IPFS
-  2. Installing packages from a registry hosted IPFS 
+1. Hosting a registry on IPFS
+2. Installing packages from a registry hosted IPFS
 
 Steps involved in hosting a file-system-based registry on IPFS:
 
 Initial import:
 
-  - Given the path to the root directory of the registry on disk,
-  - import the whole directory into IPFS, resulting in a single CID of the root directory and all files+folders contained within
-  - Publish that CID to a DNSlink txt record on a domain name to act as the domain name for the registry 
-  - (optional) publish that CID to IPNS and publish the IPNS hash to DNSlink instead of the CID
+- Given the path to the root directory of the registry on disk,
+- import the whole directory into IPFS, resulting in a single CID of the root directory and all files+folders contained within
+- Publish that CID to a DNSlink txt record on a domain name to act as the domain name for the registry
+- (optional) publish that CID to IPNS and publish the IPNS hash to DNSlink instead of the CID
 
 Updating the registry:
 

@@ -21,7 +21,4 @@ yet the ASI applies to separate the two and make the regex valid?
 
 */
 
-
-something
-/aregexliteral/ig;
-
+something / aregexliteral / ig;

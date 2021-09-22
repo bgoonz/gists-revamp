@@ -10,9 +10,9 @@
    
 */
 
-var mongoModule = require('mongodb');
-var dbServer = new mongoModule.Server('localhost', 27017);//27017 is default port for mongo
-var mongoDb = new mongoModule.Db('hellomeandb', dbServer);
+var mongoModule = require("mongodb");
+var dbServer = new mongoModule.Server("localhost", 27017); //27017 is default port for mongo
+var mongoDb = new mongoModule.Db("hellomeandb", dbServer);
 
 var openDB = promisify(mongoDb.open);
 
@@ -34,73 +34,72 @@ var openDB = promisify(mongoDb.open);
 // var ASQ = require("asynquence");
 ASQ().runner(main);
 
-
 // .......................................
 
-function *main() {
+function* main() {
   try {
     var theDb = yield openDB();
+  } catch (err) {
+    return handleError(err);
   }
-  catch (err) { return handleError(err); }
-  
+
   try {
     var theCollection = yield handleOpen(theDb);
+  } catch (err) {
+    return handleCollectionError(err);
   }
-  catch (err) { return handleCollectionError(err); }
-  
+
   try {
     var theDocs = yield handleCollection(theCollection);
+  } catch (err) {
+    return handleDocsError(theDb, err);
   }
-  catch (err) { return handleDocsError(theDb,err); }
-  
-  handleDocs(theDb,theDocs);
+
+  handleDocs(theDb, theDocs);
 }
 
 function handleOpen(theDb) {
   var getCollection = promisify(theDb.collection);
-  
-  return getCollection('collection1')
+
+  return getCollection("collection1");
 }
 
 function handleCollection(theCollection) {
   var collectionArray = promisify(theCollection.find().toArray);
-  
+
   return collectionArray();
 }
 
-function handleDocs(theDB,theDocs) {
+function handleDocs(theDB, theDocs) {
   console.log(`${theDocs.length} records:`);
-  theDocs.forEach(function eacher({ fname, lname, age }){
-    console.log(
-      `${fname} ${lname} is ${age} years old!`
-    );
+  theDocs.forEach(function eacher({ fname, lname, age }) {
+    console.log(`${fname} ${lname} is ${age} years old!`);
   });
-  
+
   theDb.close();
-}  
+}
 
 function handleError(err) {
-  console.log('error opening db');
+  console.log("error opening db");
 }
 
 function handleCollectionError(err) {
   // ..
 }
 
-function handleDocsError(theDb,err) {
+function handleDocsError(theDb, err) {
   console.log("no records to display");
   theDb.close();
 }
 
 function promisfy(fn) {
   return function wrapped(...args) {
-    return new Promise(function executor(resolve,reject){
-      
-      args.push(function callback(err,val){
+    return new Promise(function executor(resolve, reject) {
+      args.push(function callback(err, val) {
         if (err) reject(err);
         else resolve(val);
       });
-      
+
       fn(...args);
     });
   };

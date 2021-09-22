@@ -1,38 +1,37 @@
 var ASQ = require("asynquence-contrib");
 
-
 ASQ()
-.runner(
-	ASQ.csp.go(function*(ch){
-		listen(ch);
-		while (yield ASQ.csp.put(ch,Math.random())) {}
-	})
-)
-.val(function(){
-	console.log("all done:", arguments);
-})
-.or(function(err){
-	console.log(err.stack || err);
-});
+  .runner(
+    ASQ.csp.go(function* (ch) {
+      listen(ch);
+      while (yield ASQ.csp.put(ch, Math.random())) {}
+    })
+  )
+  .val(function () {
+    console.log("all done:", arguments);
+  })
+  .or(function (err) {
+    console.log(err.stack || err);
+  });
 
 function listen(ch) {
-	setTimeout(ch.close,5000);
+  setTimeout(ch.close, 5000);
 
-	(function iter(){
-		ASQ.csp.takeAsync(ch)
-		.val(function(v){
-			if (v !== ASQ.csp.CLOSED) {
-				console.log(v);
-				setTimeout(iter,500);
-			}
-			else {
-				console.log("can't get anymore");
-			}
-		})
-		.or(function(err){
-			console.log(err);
-		});
-	})();
+  (function iter() {
+    ASQ.csp
+      .takeAsync(ch)
+      .val(function (v) {
+        if (v !== ASQ.csp.CLOSED) {
+          console.log(v);
+          setTimeout(iter, 500);
+        } else {
+          console.log("can't get anymore");
+        }
+      })
+      .or(function (err) {
+        console.log(err);
+      });
+  })();
 }
 
 // 0.2430584009271115

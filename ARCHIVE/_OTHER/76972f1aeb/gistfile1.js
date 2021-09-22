@@ -1,6 +1,8 @@
 "use strict";
-eval("("+function(){
-  
-	// my whole program here
-
-}+")")()
+eval(
+  "(" +
+    function () {
+      // my whole program here
+    } +
+    ")"
+)();

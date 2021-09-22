@@ -4,14 +4,16 @@
 //
 // or is there another pattern for "parallel" generator steps?
 
-spawn(function*(){
-	var [x,y] = yield Promise.all(getValue(10),getValue(12));
-	var z = yield getValue(20);
-	console.log("Meaning of life: " + (x+y+z)); // Meaning of life: 42
+spawn(function* () {
+  var [x, y] = yield Promise.all(getValue(10), getValue(12));
+  var z = yield getValue(20);
+  console.log("Meaning of life: " + (x + y + z)); // Meaning of life: 42
 });
 
 function getValue(v) {
-	return new Promise(function(resolve,reject){
-		setTimeout(function(){ resolve(v); },100); // faking async with timer
-	});
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve(v);
+    }, 100); // faking async with timer
+  });
 }

@@ -1,17 +1,17 @@
 function XYZ() {
-   X();
+  X();
 }
 
 function X() {
-   // do X
-   Y();
+  // do X
+  Y();
 }
 
 function Y() {
-   // do Y
-   Z();
+  // do Y
+  Z();
 }
 
 function Z() {
-   // do Z
+  // do Z
 }

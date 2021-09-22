@@ -1,17 +1,19 @@
 // delegation
 
 var obj1 = {
-	doSomething: function() {
-		console.log( "Something: " + this.myId() );
-	}
+  doSomething: function () {
+    console.log("Something: " + this.myId());
+  },
 };
 
 var obj2 = {
-	id: "obj2",
-	myId: function() { return this.id; },
-	doAnother: function() {
-		this.doSomething();
-	}
+  id: "obj2",
+  myId: function () {
+    return this.id;
+  },
+  doAnother: function () {
+    this.doSomething();
+  },
 };
 
 // link for delegation

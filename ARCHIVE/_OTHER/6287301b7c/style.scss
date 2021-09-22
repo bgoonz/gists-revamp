@@ -30,7 +30,8 @@ body {
   span {
     position: relative;
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: white;
     &:before {
       width: 270px;
@@ -40,24 +41,24 @@ body {
   }
 }
 
-.button:nth-child(1) { 
+.button:nth-child(1) {
   background: #9b59b6;
 }
-.button:nth-child(2) { 
+.button:nth-child(2) {
   background: #3498db;
   &:before {
     bottom: auto;
     top: -40px;
   }
 }
-.button:nth-child(3) { 
+.button:nth-child(3) {
   background: #e74c3c;
   &:before {
     right: auto;
     left: -40px;
   }
 }
-.button:nth-child(4) { 
+.button:nth-child(4) {
   background: #f1c40f;
   &:before {
     right: auto;
@@ -66,7 +67,7 @@ body {
     top: -40px;
   }
 }
-.button:nth-child(5) { 
+.button:nth-child(5) {
   background: #1abc9c;
   &:before {
     right: auto;
@@ -74,7 +75,8 @@ body {
     left: 90px;
     top: -40px;
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     &:before {
       left: -50px;
     }

@@ -21,7 +21,7 @@ $ cut -c 1-15 /var/log/babeld/babeld.log | uniq -c
 ...
 ```
 
-_(*) Spike at 18:20, a build job probably woke up and started polling. Look for spikes and consistently high numbers._
+_(\*) Spike at 18:20, a build job probably woke up and started polling. Look for spikes and consistently high numbers._
 
 ## Top 10 owners of repositories
 
@@ -42,7 +42,7 @@ $ grep -oP 'repo=[^/]*' babeld.log | sort | uniq -c | sort -nr | head
 ...
 ```
 
-_(*) It looks like `pollingUser` is really active._
+_(\*) It looks like `pollingUser` is really active._
 
 ## Top 10 users doing git operations
 
@@ -63,7 +63,7 @@ $ grep -oP 'user=[^ ]*' babeld.log | sort | uniq -c | sort -nr | head
 ...
 ```
 
-_(*) There is the `pollingUser` again._
+_(\*) There is the `pollingUser` again._
 
 ## Per hour access rate
 
@@ -84,7 +84,7 @@ $ grep -F 'user=user:270:1:pollingUser' babeld.log | cut -c 1-13 | uniq -c
 ...
 ```
 
-_(*) A high of 111 per minute._
+_(\*) A high of 111 per minute._
 
 ## Repositories and counts for that user
 
@@ -100,7 +100,7 @@ $ grep -F 'user=user:270:1:pollingUser' babeld.log | grep -oP 'repo=[^ ]*' | sor
 ...
 ```
 
-_(*) `bigRepo` has a lot of activity._
+_(\*) `bigRepo` has a lot of activity._
 
 ## Identifying the 15 most active SSH keys
 
@@ -119,7 +119,7 @@ $ grep fingerprint gitauth.log | awk '{print $8}' | sort | uniq -c | sort -nr | 
 12465 fingerprint="09:****:67"
 ```
 
-_(*) Very active SSH fingerprint. Do you have a lot of build machines? A lot of builds on one machine? Start a dialogue with the user._
+_(\*) Very active SSH fingerprint. Do you have a lot of build machines? A lot of builds on one machine? Start a dialogue with the user._
 
 # References
 

@@ -10,17 +10,17 @@ We'll start writing basic programs to take off and land, and before you know it 
 
 First, if you’ve not already played with an AR Drone before then download the FreeFlight app for your iOS or Android device and take one of the drones for a flight:
 
-* Plug in the battery of your drone:
-* <https://www.youtube.com/watch?v=QdFsd9R3vJ8#t=25s> 
-* Connect your device to the wifi labeled on the drone, i.e. D1
-* Open the FreeFlight app and tap “Piloting”
-* Hit "Takeoff" and enjoy flying your robot around the room
+- Plug in the battery of your drone:
+- <https://www.youtube.com/watch?v=QdFsd9R3vJ8#t=25s>
+- Connect your device to the wifi labeled on the drone, i.e. D1
+- Open the FreeFlight app and tap “Piloting”
+- Hit "Takeoff" and enjoy flying your robot around the room
 
 Now that you’ve got the hang of how to fly your robot around, let’s get setup for controlling them programmatically with JavaScript
 
-* Install Node.js on your computer: <http://nodejs.org/download/>
-* Create a folder to work in (something like *nodecopter*)
-* Install the ar-drone npm module with `npm install ar-drone` within the folder
+- Install Node.js on your computer: <http://nodejs.org/download/>
+- Create a folder to work in (something like _nodecopter_)
+- Install the ar-drone npm module with `npm install ar-drone` within the folder
 
 ## Main flow
 
@@ -28,7 +28,7 @@ Now connect to the drone's WiFi with your smartphone, start the FreeFlight app a
 
 Once you've done that, save this to a file called `flight.js`:
 
-~~~~ {.numberLines}
+```{.numberLines}
 var arDrone = require('ar-drone');
 var client = arDrone.createClient();
 
@@ -45,7 +45,7 @@ client
     this.stop();
     this.land();
   });
-~~~~~~~
+```
 
 and run it with `node flight.js`. See how your drone takes of, rotates clockwise and then back again! Amazing. Now let’s try customising your script with different commands:
 
@@ -83,13 +83,13 @@ Now that you’ve got the hang of the basics, there are three different challeng
 
 Wouldn’t it be cool if we could control the drone from the keyboard on your laptop, like playing a real life computer game!? Let’s see how we can do that next.
 
-First off we’ll need to listen for key presses, we can do that with the *keypress* (<https://github.com/TooTallNate/keypress/>) node module, we can install that with:
+First off we’ll need to listen for key presses, we can do that with the _keypress_ (<https://github.com/TooTallNate/keypress/>) node module, we can install that with:
 
 `npm install keypress`
 
 The example from the Readme (<https://github.com/TooTallNate/keypress#readme>) shows how to listen for keypress events in the terminal and then react to them:
 
-~~~~ {.numberLines}
+```{.numberLines}
 var keypress = require('keypress');
 
 // make `process.stdin` begin emitting "keypress" events
@@ -105,11 +105,11 @@ process.stdin.on('keypress', function (ch, key) {
 
 process.stdin.setRawMode(true);
 process.stdin.resume();
-~~~~~~~
+```
 
-Let’s combine that with some of the ar-drone code we wrote before to get the drone to take off when *spacebar* is pressed and land when *L* is pressed:
+Let’s combine that with some of the ar-drone code we wrote before to get the drone to take off when _spacebar_ is pressed and land when _L_ is pressed:
 
-~~~~ {.numberLines}
+```{.numberLines}
 var keypress = require('keypress');
 var arDrone = require('ar-drone');
 
@@ -147,7 +147,7 @@ process.stdin.on('keypress', function (ch, key) {
 
 process.stdin.setRawMode(true);
 process.stdin.resume();
-~~~~~~~
+```
 
 Copy that code into a file called `keyboard.js`, make sure you’re connected to the drones wifi and run the code from the terminal:
 
@@ -157,7 +157,7 @@ Then you can hit the spacebar and your drone should take off, then press the L b
 
 Before we start adding more keys and commands, why don’t we refactor this code a little to make it easier to add new commands:
 
-~~~~ {.numberLines}
+```{.numberLines}
 ar keypress = require('keypress');
 var arDrone = require('ar-drone');
 
@@ -193,11 +193,11 @@ process.stdin.on('keypress', function (ch, key) {
 
 process.stdin.setRawMode(true);
 process.stdin.resume();
-~~~~~~~
+```
 
-Now we can easily add more commands to the `keys` object, using the name of the keyboard key, for example, see how we’ve added the *up arrow* key option:
+Now we can easily add more commands to the `keys` object, using the name of the keyboard key, for example, see how we’ve added the _up arrow_ key option:
 
-~~~~ {.numberLines}
+```{.numberLines}
 keys = {
   'space': function(){
     console.log('Takeoff!');
@@ -212,7 +212,7 @@ keys = {
     client.up(0.5);
   }
 }
-~~~~~~~
+```
 
 Why not try adding some more commands from the initial tutorial, mapping them to keyboard keys and try it out by flying your drone around the room, maybe even use the key layout from your favourite flight sim game? WASD and arrow keys work great for me.
 
@@ -224,22 +224,22 @@ As well as sending commands to the drone (takeoff, turn left, do a flip! etc), y
 
 First let’s output a stream of raw data directly from drone, add the following code to a file called `navdata.js`:
 
-~~~~ {.numberLines}
+```{.numberLines}
 var arDrone = require('ar-drone');
 var client = arDrone.createClient();
 
 client.on('navdata', function(data){
   console.log(data);
 });
-~~~~~~~
+```
 
-Connect to your drones wifi and then run the code with: 
+Connect to your drones wifi and then run the code with:
 
 `node navdata.js`
 
 You should see huge amounts of pure drone data streaming down your terminal looking something like this:
 
-~~~~ {.numberLines}
+```{.numberLines}
 { header: 1432778632,
   droneState:
    { flying: 0,
@@ -266,13 +266,13 @@ You should see huge amounts of pure drone data streaming down your terminal look
      … },
   }
 }
-~~~~~~~
+```
 
-Every time the drone send some information to you, the *navdata* event is fired, and our callback recieved a “data” object. There’s all kinds of information stored inside this object, things like how much battery life is left, the position of the drone in 3D space (pitch, yaw and roll etc), altitude and error messages to name a few.
+Every time the drone send some information to you, the _navdata_ event is fired, and our callback recieved a “data” object. There’s all kinds of information stored inside this object, things like how much battery life is left, the position of the drone in 3D space (pitch, yaw and roll etc), altitude and error messages to name a few.
 
 With this data we can start to make our drones truly autonomous, using their sensor data to provide feedback and change direction based on the environment or the drones position, one fun task to try would be to try and get your drone to hover exactly 2.5 meters above the ground.
 
-You can use the *altitude* section within the navdata to read what the current height of the drone is, and if it’s lower than 2.5 meters, then tell it to fly up, and if it’s higher then move downwards until it reaches the correct height.
+You can use the _altitude_ section within the navdata to read what the current height of the drone is, and if it’s lower than 2.5 meters, then tell it to fly up, and if it’s higher then move downwards until it reaches the correct height.
 
 Another neat use of the navdata to create a dashboard or visual display in a web browser, but first we need to send the data from our node.js process up to a browser, the perfect excuse to play around with some WebSockets.
 
@@ -282,7 +282,7 @@ First lets install socket.io (<http://socket.io/>), a node module that makes it 
 
 Now let’s use the example socket.io code (<http://socket.io/#how-to-use>) with our nodecopter navdata code, first lets add the server to a file called `app.js`:
 
-~~~~ {.numberLines}
+```{.numberLines}
 var app = require('express')()
   , server = require('http').createServer(app)
   , io = require('socket.io').listen(server)
@@ -300,11 +300,11 @@ io.sockets.on('connection', function (socket) {
     socket.emit('navdata', data);
   });
 });
-~~~~~~~
+```
 
 Then for our web page, add the following code to a file called `index.html`:
 
-~~~~ {.numberLines}
+```{.numberLines}
 <!DOCTYPE html>
 <html>
 <head>
@@ -323,17 +323,17 @@ Then for our web page, add the following code to a file called `index.html`:
   Let's fly!
 </body>
 </html>
-~~~~~~~
+```
 
 Make sure you are connected to the drone’s wifi and start up the server with:
 
 `node app.js`
 
-And point your browser to <http://localhost:8080>, you should see *"Let’s fly"* and if you open up the javascript console in the developer tools section of your browser, you should see the navdata being sent to the browser via socket.io. 
+And point your browser to <http://localhost:8080>, you should see _"Let’s fly"_ and if you open up the javascript console in the developer tools section of your browser, you should see the navdata being sent to the browser via socket.io.
 
 Now we have data that we can use to display what is happening inside the drone, for example, here’s an updated version of `index.html` that shows how to display the current percentage of battery life left:
 
-~~~~ {.numberLines}
+```{.numberLines}
 <!DOCTYPE html>
 <html>
 <head>
@@ -354,13 +354,13 @@ socket.on('navdata', function (data) {
   Battery: <span id="battery"></span>%
 </body>
 </html>
-~~~~~~~
+```
 
 That’s quite a simple example but it’s a good starting point. Here’s some ideas of ways you could extend this:
 
-* Show any error messages received from the drone (when it has crashed or having communication issues for example),
-* Visualise the position and direction of the drone with css 3D transforms (<http://desandro.github.io/3dtransforms/docs/introduction.html>),
-* You could even send messages back to the server from the browser over the web socket connection to send commands to the drone from the browser.
+- Show any error messages received from the drone (when it has crashed or having communication issues for example),
+- Visualise the position and direction of the drone with css 3D transforms (<http://desandro.github.io/3dtransforms/docs/introduction.html>),
+- You could even send messages back to the server from the browser over the web socket connection to send commands to the drone from the browser.
 
 If you are feeling adventurous you can also ask the drone to send ever more data, more often as well, by disabling it’s `demo` flag with this extra line of code:
 
@@ -370,80 +370,79 @@ If you are feeling adventurous you can also ask the drone to send ever more data
 
 Try out some of these more advanced nodecopter projects:
 
-* AR Drone Autonomy (<https://github.com/eschnou/ardrone-autonomy>) - Instead of directly controlling the drone speed, you can use Autonomy to plan and execute missions by describing the path, altitude and orientation the drone must follow.
+- AR Drone Autonomy (<https://github.com/eschnou/ardrone-autonomy>) - Instead of directly controlling the drone speed, you can use Autonomy to plan and execute missions by describing the path, altitude and orientation the drone must follow.
 
-    ~~~~ {.numberLines}
-    var autonomy = require('ardrone-autonomy');
-    var mission  = autonomy.createMission();
+  ```{.numberLines}
+  var autonomy = require('ardrone-autonomy');
+  var mission  = autonomy.createMission();
 
-    mission.takeoff()
-           .zero()       // Sets the current state as the reference
-           .altitude(1)  // Climb to altitude = 1 meter
-           .forward(2)   
-           .right(2)     
-           .backward(2) 
-           .left(2)
-           .hover(1000)  // Hover in place for 1 second
-           .land();
+  mission.takeoff()
+         .zero()       // Sets the current state as the reference
+         .altitude(1)  // Climb to altitude = 1 meter
+         .forward(2)
+         .right(2)
+         .backward(2)
+         .left(2)
+         .hover(1000)  // Hover in place for 1 second
+         .land();
 
-    mission.run(function (err, result) {
-        if (err) {
-            console.trace("Oops, something bad happened: %s", err.message);
-            mission.client().stop();
-            mission.client().land();
-        } else {
-            console.log("Mission success!");
-            process.exit(0);
-        }
-    });
-    ~~~~~~~
+  mission.run(function (err, result) {
+      if (err) {
+          console.trace("Oops, something bad happened: %s", err.message);
+          mission.client().stop();
+          mission.client().land();
+      } else {
+          console.log("Mission success!");
+          process.exit(0);
+      }
+  });
+  ```
 
-* The AR Drone comes with two different cameras, a HD one on the front, and a downward facing camera as well. There are couple of open source projects that allow you to actually stream these video streams from the drone and up to a browser so you can see what the drone sees from your laptop:
+- The AR Drone comes with two different cameras, a HD one on the front, and a downward facing camera as well. There are couple of open source projects that allow you to actually stream these video streams from the drone and up to a browser so you can see what the drone sees from your laptop:
 
-    * <https://github.com/bkw/node-dronestream>
-    * <https://github.com/Soarez/ar-drone-png-stream>
+  - <https://github.com/bkw/node-dronestream>
+  - <https://github.com/Soarez/ar-drone-png-stream>
 
-* Build your own webflight plugin (<https://github.com/eschnou/ardrone-webflight>) - Webflight is a really neat project that provides a browser based controller for the AR Drone, and best of all it’s got a great plugin architecture, including plugins for: 
-    * video streaming,
-    * heads up display, 
-    * controlling via keyboard or gamepad
-    * even visualising air traffic control data
+- Build your own webflight plugin (<https://github.com/eschnou/ardrone-webflight>) - Webflight is a really neat project that provides a browser based controller for the AR Drone, and best of all it’s got a great plugin architecture, including plugins for:
 
-    Why not try and build your own plugin to add some new functionality to the project?
+  - video streaming,
+  - heads up display,
+  - controlling via keyboard or gamepad
+  - even visualising air traffic control data
 
-* Check out some of the other Nodecopter projects on GitHub and maybe send a pull request to one of them? <https://github.com/search?q=nodecopter>
+  Why not try and build your own plugin to add some new functionality to the project?
 
+- Check out some of the other Nodecopter projects on GitHub and maybe send a pull request to one of them? <https://github.com/search?q=nodecopter>
 
 ## FAQ
 
-* __Help! I crashed my drone!__
- 
-    Don’t worry, crashes will happen and the AR Drones are fairly rugged and easy to repair if they do break. Try not to fly the drones too close to other people or drones, in a big open space to avoid collisions and triple check your code before you do a test flight!
+- **Help! I crashed my drone!**
 
-* __My drone won’t take off__
+  Don’t worry, crashes will happen and the AR Drones are fairly rugged and easy to repair if they do break. Try not to fly the drones too close to other people or drones, in a big open space to avoid collisions and triple check your code before you do a test flight!
 
-    The most likely reason your drone won’t take off is because the battery is flat, swap it out with a freshly charged one. If it’s still not working try connecting to it using one of the official mobile apps as they often show more error messages, it could be that something is broken and needs repairing.
+- **My drone won’t take off**
 
+  The most likely reason your drone won’t take off is because the battery is flat, swap it out with a freshly charged one. If it’s still not working try connecting to it using one of the official mobile apps as they often show more error messages, it could be that something is broken and needs repairing.
 
-* __Where do I get the mobile app from?__
+- **Where do I get the mobile app from?**
 
-    You can get the mobile app for iOS from the App Store, it’s called *FreeFlight* and for Android the app is on Google Play and is called *AR.FreeFlight*, both are free.
+  You can get the mobile app for iOS from the App Store, it’s called _FreeFlight_ and for Android the app is on Google Play and is called _AR.FreeFlight_, both are free.
 
-* __How much can an AR Drone lift?__
+- **How much can an AR Drone lift?**
 
-    Not much, about 100g before it becomes unstable, just about enough for an Arduino.
+  Not much, about 100g before it becomes unstable, just about enough for an Arduino.
 
-* __What other programming languages can be used?__
+- **What other programming languages can be used?**
 
-    You don’t use have to use Node.js for controlling AR Drones, there are libraries in lots of other languages, here are a few we know of:
+  You don’t use have to use Node.js for controlling AR Drones, there are libraries in lots of other languages, here are a few we know of:
 
-    * Ruby: <https://github.com/jimweirich/argus>
-    * Python: <https://github.com/venthur/python-ardrone>
-    * Go: <https://github.com/felixge/go-ardrone>
-    * Clojure: <https://github.com/gigasquid/clj-drone>
-    * C#: <https://github.com/Ruslan-B/AR.Drone>
-    * Java: <https://github.com/MahatmaX/YADrone>
-    * PHP: <https://github.com/jolicode/php-ar-drone>
+  - Ruby: <https://github.com/jimweirich/argus>
+  - Python: <https://github.com/venthur/python-ardrone>
+  - Go: <https://github.com/felixge/go-ardrone>
+  - Clojure: <https://github.com/gigasquid/clj-drone>
+  - C#: <https://github.com/Ruslan-B/AR.Drone>
+  - Java: <https://github.com/MahatmaX/YADrone>
+  - PHP: <https://github.com/jolicode/php-ar-drone>
 
 ## Additional resources
 
@@ -453,4 +452,4 @@ Try out some of these more advanced nodecopter projects:
 
 ### Author
 
-__Andrew Nesbitt__ is a passionate full stack developer. He spends most of his days programming in Ruby, playing with Node.js, contributing to open source projects and organising local developer user groups. He also aspires to one day take over the world with a fleet of JavaScript powered quadcopters.
+**Andrew Nesbitt** is a passionate full stack developer. He spends most of his days programming in Ruby, playing with Node.js, contributing to open source projects and organising local developer user groups. He also aspires to one day take over the world with a fleet of JavaScript powered quadcopters.

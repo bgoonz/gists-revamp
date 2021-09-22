@@ -1,18 +1,22 @@
-let names = people.map(personToGetNameFrom => personToGetNameFrom.name);
+let names = people.map((personToGetNameFrom) => personToGetNameFrom.name);
 
 // ******************
 
-let getName = person => person.name;
+let getName = (person) => person.name;
 let names = people.map(getName);
 
 // ******************
 
-function getName(person) { return person.name; }
+function getName(person) {
+  return person.name;
+}
 let names = people.map(getName);
 
 // *****************
 
-let names = people.map(function getName(person){ return person.name; });
+let names = people.map(function getName(person) {
+  return person.name;
+});
 
 // *****************
 
@@ -22,7 +26,9 @@ let names = people.map(prop("name"));
 // **********************************************
 // **********************************************
 
-function getNames(people) { /* ... */ }
+function getNames(people) {
+  /* ... */
+}
 let names = getNames(people);
 
 // *****************

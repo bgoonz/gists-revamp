@@ -1,13 +1,15 @@
-function Dad(){}
+function Dad() {}
 Dad.prototype.limbs = {
-	leftLeg: true,
-	rightLeg: true,
-	leftArm: true,
-	rightArm: true
+  leftLeg: true,
+  rightLeg: true,
+  leftArm: true,
+  rightArm: true,
 };
-Dad.prototype.break = function(limb) { this.limbs[limb] = false; };
+Dad.prototype.break = function (limb) {
+  this.limbs[limb] = false;
+};
 
-function Son(){}
+function Son() {}
 Son.prototype = Object.create(Dad.prototype);
 
 var mydad = new Dad();
