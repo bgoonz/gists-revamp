@@ -15,20 +15,21 @@
 
 3. Implement
 """
-wordz = ['dave', 'steve', 'apple', 'bob', 'joe', 'azzzzzzz']
+wordz = ["dave", "steve", "apple", "bob", "joe", "azzzzzzz"]
 
 import random
 import operator
 
-def first_pass_anagrams(words): 
+
+def first_pass_anagrams(words):
     import random
     import operator
 
     # generate random values for each char a-z
     chars = [0] * 26
     for i in range(26):
-        chars[i] = random.randint(0,1000000)
-    
+        chars[i] = random.randint(0, 1000000)
+
     # create new dictionary
     anagrams = {}
     signature = 0
@@ -37,7 +38,7 @@ def first_pass_anagrams(words):
     for word in words:
         word = word.lower()
         for char in word:
-            index = ord(char)-97
+            index = ord(char) - 97
             if index >= 0 and index < 26:
                 signature += chars[index]
         # groups words with same value
@@ -49,6 +50,7 @@ def first_pass_anagrams(words):
     # get max entry in dictionary
     maxAnagrams = max(anagrams.items(), key=operator.itemgetter(1))[0]
     return maxAnagrams
+
 
 # def anagrams(words):
 #     # generate random values for each character a-z
@@ -82,7 +84,7 @@ def first_pass_anagrams(words):
 #                 # add the value of the char at index to the signature
 #                 signature += chars[index]
 
-            
+
 #             # group words with the same value
 #             # check if the signature is not in anagrams:
 #             if signature not in anagrams:
@@ -98,13 +100,13 @@ def first_pass_anagrams(words):
 
 #     max_anagrams = max(anagrams.items(), key=operator.itemgetter(1))[1]
 
-    
+
 #     return max_anagrams
+
 
 def second_anagrams(words):
     # create a dictionary
     anagrams = {}
-
 
     # generate all sets of anagrams
     # iterate over word in words
@@ -112,14 +114,14 @@ def second_anagrams(words):
         # convert list to a string
         # and set that to the signature
         signature = "".join(sorted(word.lower()))
-        #check if the signature is not in anagrams
+        # check if the signature is not in anagrams
         if signature not in anagrams:
             # create an empty list to hold anagrams at the signature
             anagrams[signature] = []
 
         # append the word to the anagrams at signature
         anagrams[signature].append(word)
-    
+
     # find the largest set of anagrams
     # set a max length to zero
     max_length = 0
@@ -133,27 +135,29 @@ def second_anagrams(words):
             max_length = len(anagrams[signature])
             # set max anagrams to the anagrams at the signature
             max_anagrams = anagrams[signature]
-    
+
     # return maxAnagrams
     return max_anagrams
- 
+
+
 # allWords = []
 # with open('./words.txt') as wordsFile:
 #   allWords = wordsFile.read().split(',')
 
 # read in the words from a file
-f = open('words.txt', 'r')
-words = f.read().split('\n')
+f = open("words.txt", "r")
+words = f.read().split("\n")
 f.close()
 
 # test the algorithms
 import time
+
 start = time.time()
 print(first_pass_anagrams(words))
-end = time. time()
-print(f'1st pass solution time: {end - start} seconds\n')
+end = time.time()
+print(f"1st pass solution time: {end - start} seconds\n")
 
 start = time.time()
 print(second_anagrams(words))
-end = time. time()
-print(f'2st pass solution time: {end - start} seconds\n')
+end = time.time()
+print(f"2st pass solution time: {end - start} seconds\n")

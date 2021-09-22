@@ -1,5 +1,6 @@
 from product import Product
 
+
 class Clothing(Product):
     def __init__(self, name, price, colour, size):
         super().__init__(name, price)
@@ -16,7 +17,7 @@ class Clothing(Product):
 # # Procedural / imperative
 # verb(noun)
 
-# Functional 
+# Functional
 # (input) synth1 -> synth2 -> synth3 -> synthn -> (end result)
 
 # a = 12

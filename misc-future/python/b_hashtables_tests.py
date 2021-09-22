@@ -1,13 +1,14 @@
 import unittest
 
-from b_hashtables import (BasicHashTable,
-                          hash_table_insert,
-                          hash_table_remove,
-                          hash_table_retrieve)
+from b_hashtables import (
+    BasicHashTable,
+    hash_table_insert,
+    hash_table_remove,
+    hash_table_retrieve,
+)
 
 
 class TestBasicHashTable(unittest.TestCase):
-
     def test_hash_table_creation(self):
         ht = BasicHashTable(8)
 
@@ -36,5 +37,5 @@ class TestBasicHashTable(unittest.TestCase):
         self.assertTrue(return_value is None)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

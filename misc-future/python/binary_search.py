@@ -22,7 +22,7 @@ def binary_search(lst, target):
         elif lst[guess] < target:
             # our min set to guess plus one
             min = guess + 1
-        
+
         # otherwise our guess was too high, reset the max to one less than the guess
         else:
             # set max to our guess minus 1
@@ -31,4 +31,3 @@ def binary_search(lst, target):
     # no match was found
     # return minus one
     return -1
-

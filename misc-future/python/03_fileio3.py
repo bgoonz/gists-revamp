@@ -11,9 +11,9 @@ memory = []
 try:
     with open(sys.argv[1]) as f:
         for line in f:
-            comment_split = line.split('#')
+            comment_split = line.split("#")
             num = comment_split[0]
-            if num == '':
+            if num == "":
                 continue
             x = int(num, 2)
             print(f"{x:08b}")

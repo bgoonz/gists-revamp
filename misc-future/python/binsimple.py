@@ -1,6 +1,6 @@
-f=open("file","rb")
+f = open("file", "rb")
 # f.seek(256, 0)
-num=list(f.read())
+num = list(f.read())
 # print(len(num))
 # print(f"{num[0]:02X}")
 # print(f"{num[256]:02X}")
@@ -11,4 +11,3 @@ for i in range(255, len(num)):
     data.append(num[i])
 print(data[2])
 f.close()
-

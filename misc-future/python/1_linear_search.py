@@ -19,12 +19,14 @@ print(my_random)
 
 searching_for = 7
 
+
 def linear_search(arr, target):
     for i in range(len(arr)):
         if arr[i] == target:
             return True
 
     return False
+
 
 # print(linear_search(my_random, searching_for))
 
@@ -38,9 +40,10 @@ Key Points
 - Key words: sorted, ordered
 """
 
+
 def find_value_binary(arr, value):
     first = 0
-    last = (len(arr) - 1)
+    last = len(arr) - 1
 
     found = False
 
@@ -60,6 +63,7 @@ def find_value_binary(arr, value):
                 first = middle + 1
 
     return found
+
 
 # Sort the array of numbers
 my_random.sort()

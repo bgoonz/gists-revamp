@@ -1,8 +1,20 @@
 # card class
 from item import Item
 
+
 class Card:
-    def __init__(self, name, description, deck, level=None, attack=None, defence=None, card_type=None, element=None, effects=None):
+    def __init__(
+        self,
+        name,
+        description,
+        deck,
+        level=None,
+        attack=None,
+        defence=None,
+        card_type=None,
+        element=None,
+        effects=None,
+    ):
         self.name = name
         self.description = description
         self.deck = deck
@@ -19,7 +31,6 @@ class Card:
     def discard(self, item):
         del self.items[self.items.index(item)]
 
-
     # check the cards effect list for a specific effect
     def check_for_effect(self, effect_name):
         for effect in self.effects:
@@ -28,4 +39,4 @@ class Card:
         return False
 
     def __str__(self):
-        return str(self.name)  + "\n" + str(self.description)
+        return str(self.name) + "\n" + str(self.description)

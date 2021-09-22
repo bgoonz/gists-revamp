@@ -4,6 +4,7 @@ from Clothing import Clothing
 from Tool import Tool
 from Electronic import Electronic
 
+
 class Store:
     # attributes
     # name
@@ -11,24 +12,20 @@ class Store:
     def __init__(self, name, departments):
         self.name = name
         self.departments = departments
+
     def __str__(self):
         output = f"{self.name}\n"
- 
+
         for i, dept in enumerate(self.departments):
             output += " " + str(i + 1) + ". " + dept.name + "\n"
-        
+
         output += f" {i + 2}. Exit"
-
-
-
-
 
         return output
 
-
-
     def __repr__(self):
         return f'Store("{self.name}", {self.departments})'
+
 
 # lets make some products
 
@@ -43,7 +40,6 @@ screw_driver = Tool("Philips Head Screw Driver", 3, "Screw Driver")
 # electronics
 televisions = Electronic("50 inch Wide Screen LCD", 400, "50w")
 tablet = Electronic("Android Tablet", 50, "8w")
-
 
 
 # lets create some Departments
@@ -71,5 +67,6 @@ while choice != len(my_store.departments) + 1:
         # print the users choice
         print(f"{my_store.departments[choice - 1]}")
     else:
-        print(f"Please choose a valid number between [1] and [{len(my_store.departments) + 1}]")
-    
+        print(
+            f"Please choose a valid number between [1] and [{len(my_store.departments) + 1}]"
+        )

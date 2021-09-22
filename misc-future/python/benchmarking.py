@@ -1,4 +1,4 @@
-import time 
+import time
 from linked_list import LinkedList
 
 n = 10000
@@ -7,13 +7,13 @@ ll = LinkedList()
 
 start_time = time.time()
 for i in range(n):
-    l.append(i) # O(1)
+    l.append(i)  # O(1)
 end_time = time.time()
 print(f"Adding {n} elements to list took {end_time - start_time} seconds")
 
 start_time = time.time()
 for i in range(n):
-    ll.add_to_tail(i) # O(1)
+    ll.add_to_tail(i)  # O(1)
 end_time = time.time()
 print(f"Adding {n} elements to linked list took {end_time - start_time} seconds")
 

@@ -60,12 +60,12 @@ def recursive_fib(n):
 
     # if we're not on the base case
     # return recursion of n-1 + n-2
-    n_minus_1 = recursive_fib(n-1)
-    n_minus_2 = recursive_fib(n-2)
+    n_minus_1 = recursive_fib(n - 1)
+    n_minus_2 = recursive_fib(n - 2)
     return n_minus_1 + n_minus_2
 
 
-print(recursive_fib(38)) # => 8
+print(recursive_fib(38))  # => 8
 
 
 fib = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]

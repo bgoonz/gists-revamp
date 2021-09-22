@@ -3,7 +3,7 @@ class Graph:
 
     # constructor
     def __init__(self):
-        self.vertices = {} # adjacency list (dictionary)
+        self.vertices = {}  # adjacency list (dictionary)
         # self.vertices = [[],[],[]] # adjacency matrix (2d list or array)
 
     # add vertex

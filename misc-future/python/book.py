@@ -1,5 +1,6 @@
 class Book:
     """Simple Book class"""
+
     title = "title"
     author = "last, first"
     genre = "fiction"

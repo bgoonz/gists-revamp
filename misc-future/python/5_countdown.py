@@ -6,10 +6,11 @@ We can do that simply by writing a function that prints n, then calls itself for
 
 # sys.setrecursionlimit(100000000)
 def countdown(n):  # label
-    if n == 0: # condition
+    if n == 0:  # condition
         return
-    print(n) # body
+    print(n)  # body
     countdown(n - 1)  # decrement
+
 
 # n = 10
 # def countdown_i(n):
@@ -21,36 +22,12 @@ def countdown(n):  # label
 countdown(1000000)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # # Base case (note, the base case is not always first)
 # def countdown(n):
 #     if n == 0:
 #         return
 #     print(n)
 #     countdown(n-1)
-
-
-
-
-
-
 
 
 # """
@@ -67,5 +44,4 @@ countdown(1000000)
 #     countdown(n-1)
 
 
-   
 # countdown(100)
