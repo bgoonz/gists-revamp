@@ -15,7 +15,9 @@ const options = {};
 function help(status) {
   const print = status === 0 ? console.log : console.error;
   print(
-    `usage: ${path.basename(process.argv[1])} [--ecma3|--ecma5|--ecma6|--ecma7|--ecma8|--ecma9|...|--ecma2015|--ecma2016|--ecma2017|--ecma2018|...]`
+    `usage: ${path.basename(
+      process.argv[1]
+    )} [--ecma3|--ecma5|--ecma6|--ecma7|--ecma8|--ecma9|...|--ecma2015|--ecma2016|--ecma2017|--ecma2018|...]`
   );
   print(
     "        [--tokenize] [--locations] [---allow-hash-bang] [--compact] [--silent] [--module] [--help] [--] [infile]"
@@ -81,7 +83,7 @@ if (forceFile || (infile && infile !== "-")) {
 } else {
   let code = "";
   process.stdin.resume();
-  process.stdin.on("data", chunk => {
+  process.stdin.on("data", (chunk) => {
     return (code += chunk);
   });
   process.stdin.on("end", () => {

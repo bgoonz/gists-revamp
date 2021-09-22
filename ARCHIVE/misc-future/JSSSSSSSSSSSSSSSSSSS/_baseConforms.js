@@ -10,7 +10,7 @@ import keys from "./keys";
  */
 function baseConforms(source) {
   const props = keys(source);
-  return object => {
+  return (object) => {
     return baseConformsTo(object, source, props);
   };
 }

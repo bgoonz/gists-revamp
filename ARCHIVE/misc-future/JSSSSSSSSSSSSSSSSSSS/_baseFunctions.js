@@ -11,7 +11,7 @@ import isFunction from "./isFunction";
  * @returns {Array} Returns the function names.
  */
 function baseFunctions(object, props) {
-  return arrayFilter(props, key => {
+  return arrayFilter(props, (key) => {
     return isFunction(object[key]);
   });
 }

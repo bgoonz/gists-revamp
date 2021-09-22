@@ -152,7 +152,7 @@ function baseClone(value, bitmask, customizer, key, object, stack) {
   stack.set(value, result);
 
   if (isSet(value)) {
-    value.forEach(subValue => {
+    value.forEach((subValue) => {
       result.add(
         baseClone(subValue, bitmask, customizer, subValue, value, stack)
       );

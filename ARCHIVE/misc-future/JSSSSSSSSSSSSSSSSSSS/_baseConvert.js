@@ -37,7 +37,7 @@ function baseAry(func, n) {
     ? (a, b) => {
         return func(a, b);
       }
-    : a => {
+    : (a) => {
         return func(a);
       };
 }
@@ -67,7 +67,7 @@ function cloneArray(array) {
  * @returns {Function} Returns the new cloner function.
  */
 function createCloner(func) {
-  return object => {
+  return (object) => {
     return func({}, object);
   };
 }
@@ -236,7 +236,7 @@ function baseConvert(util, name, func, options) {
           return mixin(func, Object(source));
         }
         const pairs = [];
-        each(keys(source), key => {
+        each(keys(source), (key) => {
           if (isFunction(source[key])) {
             pairs.push([key, func.prototype[key]]);
           }
@@ -244,7 +244,7 @@ function baseConvert(util, name, func, options) {
 
         mixin(func, Object(source));
 
-        each(pairs, pair => {
+        each(pairs, (pair) => {
           const value = pair[1];
           if (isFunction(value)) {
             func.prototype[pair[0]] = value;
@@ -256,7 +256,7 @@ function baseConvert(util, name, func, options) {
       };
     },
     nthArg(nthArg) {
-      return n => {
+      return (n) => {
         const arity = n < 0 ? 1 : toInteger(n) + 1;
         return curry(nthArg(n), arity);
       };
@@ -268,7 +268,7 @@ function baseConvert(util, name, func, options) {
       };
     },
     runInContext(runInContext) {
-      return context => {
+      return (context) => {
         return baseConvert(util, runInContext(context), options);
       };
     },
@@ -400,7 +400,7 @@ function baseConvert(util, name, func, options) {
     const methodName = mapping.remap[realName] || realName;
     const oldOptions = options;
 
-    return options => {
+    return (options) => {
       const newUtil = isLib ? pristine : helpers;
       const newFunc = isLib ? pristine[methodName] : func;
       const newOptions = assign(assign({}, oldOptions), options);
@@ -419,7 +419,7 @@ function baseConvert(util, name, func, options) {
    * @returns {Function} Returns the new function.
    */
   function iterateeAry(func, n) {
-    return overArg(func, func => {
+    return overArg(func, (func) => {
       return typeof func == "function" ? baseAry(func, n) : func;
     });
   }
@@ -436,7 +436,7 @@ function baseConvert(util, name, func, options) {
    * @returns {Function} Returns the new function.
    */
   function iterateeRearg(func, indexes) {
-    return overArg(func, func => {
+    return overArg(func, (func) => {
       const n = indexes.length;
       return baseArity(rearg(baseAry(func, n), indexes), n);
     });
@@ -492,8 +492,8 @@ function baseConvert(util, name, func, options) {
         wrapped = wrapImmutable(func, cloneByPath);
       }
     }
-    each(aryMethodKeys, aryKey => {
-      each(mapping.aryMethod[aryKey], otherName => {
+    each(aryMethodKeys, (aryKey) => {
+      each(mapping.aryMethod[aryKey], (otherName) => {
         if (realName == otherName) {
           const data = mapping.methodSpread[realName];
           const afterRearg = data && data.afterRearg;
@@ -514,7 +514,7 @@ function baseConvert(util, name, func, options) {
     if (result == func) {
       result = forceCurry
         ? curry(result, 1)
-        : function(...args) {
+        : function (...args) {
             return func.apply(this, args);
           };
     }
@@ -533,8 +533,8 @@ function baseConvert(util, name, func, options) {
 
   // Convert methods by ary cap.
   const pairs = [];
-  each(aryMethodKeys, aryKey => {
-    each(mapping.aryMethod[aryKey], key => {
+  each(aryMethodKeys, (aryKey) => {
+    each(mapping.aryMethod[aryKey], (key) => {
       const func = _[mapping.remap[key] || key];
       if (func) {
         pairs.push([key, wrap(key, func, _)]);
@@ -543,7 +543,7 @@ function baseConvert(util, name, func, options) {
   });
 
   // Convert remaining methods.
-  each(keys(_), key => {
+  each(keys(_), (key) => {
     const func = _[key];
     if (typeof func == "function") {
       let length = pairs.length;
@@ -558,7 +558,7 @@ function baseConvert(util, name, func, options) {
   });
 
   // Assign to `_` leaving `_.prototype` unchanged to allow chaining.
-  each(pairs, pair => {
+  each(pairs, (pair) => {
     _[pair[0]] = pair[1];
   });
 
@@ -566,8 +566,8 @@ function baseConvert(util, name, func, options) {
   _.placeholder = _;
 
   // Assign aliases.
-  each(keys(_), key => {
-    each(mapping.realToAlias[key] || [], alias => {
+  each(keys(_), (key) => {
+    each(mapping.realToAlias[key] || [], (alias) => {
       _[alias] = _[key];
     });
   });

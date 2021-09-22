@@ -13,7 +13,7 @@ const objectCreate = Object.create;
  */
 const baseCreate = (() => {
   function object() {}
-  return proto => {
+  return (proto) => {
     if (!isObject(proto)) {
       return {};
     }
