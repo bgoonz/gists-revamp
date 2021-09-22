@@ -1,7 +1,6 @@
 Are you already using the Jamstack? Boost your understanding of modern web dev and learn what the Jamstack is — and what it’s not — in this overview.
 
-TABLE OF CONTENTS
------------------
+## TABLE OF CONTENTS
 
 1.  [The Jamstack is not a traditional tech stack.](https://www.learnwithjason.dev/blog/wtf-is-jamstack#the-jamstack-is-not-a-traditional-tech-stack)
 2.  [Jamstack is more of an architecture.](https://www.learnwithjason.dev/blog/wtf-is-jamstack#jamstack-is-more-of-an-architecture)
@@ -12,9 +11,9 @@ TABLE OF CONTENTS
 
 At a high level, the Jamstack is an architectural approach to web apps that focuses on:
 
--   generating cacheable, static assets at build time whenever possible,
--   deploying those assets to CDNs, and
--   using client-side JavaScript to call third-party APIs and serverless functions for dynamic interactions and data.
+- generating cacheable, static assets at build time whenever possible,
+- deploying those assets to CDNs, and
+- using client-side JavaScript to call third-party APIs and serverless functions for dynamic interactions and data.
 
 For individual developers, the Jamstack lowers the barrier to entry, cuts down on the number of tools to learn, and provides modern tooling to build web apps.
 
@@ -22,8 +21,7 @@ For teams, the Jamstack helps enforce a more maintainable architecture and decre
 
 For users, Jamstack apps typically load faster and are more reliable, which makes the web a less frustrating place.
 
-[](https://www.learnwithjason.dev/blog/wtf-is-jamstack#the-jamstack-is-not-a-traditional-tech-stack)The Jamstack is not a traditional tech stack.
--------------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://www.learnwithjason.dev/blog/wtf-is-jamstack#the-jamstack-is-not-a-traditional-tech-stack)The Jamstack is not a traditional tech stack.
 
 The Jamstack is not a “stack” in the same way the term is commonly used, such as the LAMP stack (Linux, Apache, MySQL, PHP) or MERN stack (Mongo, Express, React, Node).
 
@@ -31,8 +29,7 @@ It *is* true that the origin of Jamstack comes from the acronym JAM, standing 
 
 Instead of being a descriptive acronym describing a particular tech stack, Jamstack joins “[radar](https://www.etymonline.com/word/radar)” and “[laser](https://www.etymonline.com/word/laser)” as an often-inaccurately-used acronym that represents a general idea instead of a precise origin.
 
-[](https://www.learnwithjason.dev/blog/wtf-is-jamstack#jamstack-is-more-of-an-architecture)Jamstack is more of an *architecture*.
----------------------------------------------------------------------------------------------------------------------------------
+## [](https://www.learnwithjason.dev/blog/wtf-is-jamstack#jamstack-is-more-of-an-architecture)Jamstack is more of an *architecture*.
 
 The Jamstack is similar to terms like “[microservices](https://en.wikipedia.org/wiki/Microservices)” and “[monolith](https://en.wikipedia.org/wiki/Monolithic_application)” because it doesn’t describe the specifics of implementation. Instead, these terms communicate the high-level details about how the code is organized.
 
@@ -40,15 +37,14 @@ If we hear someone describe a codebase as a monolith or microservices, we get a 
 
 Jamstack is like that: if we hear an app described as a Jamstack app, we can make broad architectural assumptions, but the implementation details can vary widely between teams.
 
-[](https://www.learnwithjason.dev/blog/wtf-is-jamstack#what-architectural-decisions-make-an-app-a-jamstack-app)What architectural decisions make an app a Jamstack app?
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://www.learnwithjason.dev/blog/wtf-is-jamstack#what-architectural-decisions-make-an-app-a-jamstack-app)What architectural decisions make an app a Jamstack app?
 
 If the Jamstack allows us to make architectural assumptions, *what are those assumptions?* In the broadest strokes, the software architecture decisions that make up the Jamstack are:
 
--   Assets are generated at build time, not request time.
--   Apps are deployed to CDNs instead of always-on servers.
--   Deployments ship atomic, static assets instead of dynamic, derived assets.
--   Dynamic interactions use APIs and serverless functions instead of monolithic servers.
+- Assets are generated at build time, not request time.
+- Apps are deployed to CDNs instead of always-on servers.
+- Deployments ship atomic, static assets instead of dynamic, derived assets.
+- Dynamic interactions use APIs and serverless functions instead of monolithic servers.
 
 ### [](https://www.learnwithjason.dev/blog/wtf-is-jamstack#assets-are-generated-at-build-time-not-request-time)Assets are generated at build time, not request time
 
@@ -68,10 +64,10 @@ This gives us much more certainty about our deployment process because, as [Phi
 
 By thinking of our apps as pre-generated caches, we eliminate the need for always-on servers. This creates several huge benefits:
 
--   Our sites load faster because we can deploy to Content Delivery Networks (CDNs), putting our app assets closer to the people trying to load them.
--   We cut down on costs. Using CDNs means we don’t have to pay for massively scalable servers to handle traffic spikes. We’re shipping more reliable sites *and* reducing operational overhead.
--   Our apps are more secure because there’s no active connection to a server or database. Sites are made of pre-generated, static assets, which means we don’t *need* a server or database to display them.
--   Our apps are more stable. There are very few moving parts between your site visitors and the content they’re requesting, so there are fewer points of failure in the request chain.
+- Our sites load faster because we can deploy to Content Delivery Networks (CDNs), putting our app assets closer to the people trying to load them.
+- We cut down on costs. Using CDNs means we don’t have to pay for massively scalable servers to handle traffic spikes. We’re shipping more reliable sites *and* reducing operational overhead.
+- Our apps are more secure because there’s no active connection to a server or database. Sites are made of pre-generated, static assets, which means we don’t *need* a server or database to display them.
+- Our apps are more stable. There are very few moving parts between your site visitors and the content they’re requesting, so there are fewer points of failure in the request chain.
 
 ### [](https://www.learnwithjason.dev/blog/wtf-is-jamstack#deployments-ship-atomic-static-assets-instead-of-dynamic-derived-assets)Deployments ship atomic, static assets instead of dynamic, derived assets
 
@@ -99,8 +95,7 @@ I’ve written a whole article with [examples of dynamic patterns in the Jamsta
 
 The benefit here is that we get to focus just on the data and business logic instead of building out all the boilerplate for a service and dealing with the operational overhead of keeping it deployed and maintained.
 
-[](https://www.learnwithjason.dev/blog/wtf-is-jamstack#isnt-this-the-same-as-what-we-used-to-do)Isn’t this the same as what we used to do?
-------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://www.learnwithjason.dev/blog/wtf-is-jamstack#isnt-this-the-same-as-what-we-used-to-do)Isn’t this the same as what we used to do?
 
 In a sense, the Jamstack is a return to a very old method of building websites: we create a static asset — an HTML file — and put that online somewhere. If you’ve ever dragged a file into an FTP program to make website changes, this may feel familiar.
 
@@ -114,8 +109,7 @@ Jamstack returns to the old way of deploying static files as a folder — we’r
 
 The Jamstack combines tried-and-true development and deployment strategies with more ergonomic tooling, better abstractions around common infrastructure, and improvements to the JavaScript ecosystem have helped smooth out the developer experience around all this powerful tooling, decreasing the friction to build and deploy web apps.
 
-[](https://www.learnwithjason.dev/blog/wtf-is-jamstack#the-jamstack-is-not-just-marketing-fluff)The Jamstack is not just marketing fluff.
------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://www.learnwithjason.dev/blog/wtf-is-jamstack#the-jamstack-is-not-just-marketing-fluff)The Jamstack is not just marketing fluff.
 
 A common criticism of the Jamstack is that it’s just a marketing term for stuff that already exists.
 
@@ -127,8 +121,7 @@ Put charitably, the Jamstack is “revolutionizing web development by removing b
 
 Somewhere in the middle lies a more objective assessment: the Jamstack is a label for a broad assortment of website-building techniques. These techniques are based on several mature solutions that have existed long before the Jamstack was around to describe it, and *also* introduces new innovations that streamline the process and make building in this way more approachable.
 
-[](https://www.learnwithjason.dev/blog/wtf-is-jamstack#the-jamstack-is-dope)The Jamstack is dope.
--------------------------------------------------------------------------------------------------
+## [](https://www.learnwithjason.dev/blog/wtf-is-jamstack#the-jamstack-is-dope)The Jamstack is dope.
 
 To recap, let’s run through the Big Ideas™ of the Jamstack that we covered in this article:
 

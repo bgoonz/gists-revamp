@@ -1,5 +1,4 @@
-Hacking The Github Stats
-========================
+# Hacking The Github Stats
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fxdvrx1%2Fhacking-the-github-stats&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=PAGE+VIEWS&edge_flat=false)](https://hits.seeyoufarm.com)
 
@@ -23,8 +22,7 @@ Add description about you and this, of course, you must change the details:
 
 It’s now embedded in your GitHub Profile! You can still change the settings. Refer to the details [here](https://github.com/anuraghazra/github-readme-stats).
 
-App Stat Computation Breakdown
-------------------------------
+## App Stat Computation Breakdown
 
 The breakdown of the components:
 
@@ -38,8 +36,7 @@ The breakdown of the components:
 
 this is directly from the code of the app itself, so you want to focus on `commits` and `contrib`.
 
-Rationale
----------
+## Rationale
 
 This is not to cheat an app or to fake something. Much more, this should not be interpreted as spam.
 
@@ -49,8 +46,7 @@ If you only use GitHub to code and code, you would not have a good standing. Git
 
 If you really feel that you deserve that rank, then go for it.
 
-Commits
--------
+## Commits
 
 Make sure that you turn on private commits in the API, as was instructed above, so that you can simply create a diary, for example. It will generate a lot of commits.
 
@@ -60,20 +56,17 @@ Or, if you are a writer writing stories, do that in GitHub. Others were already 
 
 You can check [this](https://github.com/xdvrx1/github-pages-tutorial) out if you are not familiar with GitHub Pages.
 
-Contributed To
---------------
+## Contributed To
 
 The `Contributed To` component as part of the computation is when you create pull requests and are merged to the `main` branch.
 
 It’s not always about submitting proposed changes in a code base, even simply changing something at the README file of others will do. What I did was a pull request to add a Page View on a README file. If you click the README file of others, then click the edit button, it will automatically create a fork. Then, edit the file and create a pull request.
 
-Your Stars
-----------
+## Your Stars
 
 Take note, this is not the stars on GitHub when you leave a star to an external repo. This is the star that you received from your original repos.
 
-Followers
----------
+## Followers
 
 You don’t need to be famous to have followers. All you need is the initiative to follow others too. It’s just like building a linkedin network.
 

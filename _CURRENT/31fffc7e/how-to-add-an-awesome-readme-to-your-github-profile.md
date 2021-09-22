@@ -1,5 +1,4 @@
-How to add an awesome README to your GitHub Profile
-===================================================
+# How to add an awesome README to your GitHub Profile
 
 > Hi Reader! ✌ In this post, we are going to learn how to add an awesome README.md to a GitHub Profile….
 
@@ -28,8 +27,7 @@ This was the true inspiration behind my `README.md`.
 >
 > [![Twitter reply action](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/assets/twitter-reply-action.svg)](https://twitter.com/intent/tweet?in_reply_to=1281146411736694784) [![Twitter retweet action](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/assets/twitter-retweet-action.svg)](https://twitter.com/intent/retweet?tweet_id=1281146411736694784) 270 [![Twitter like action](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/assets/twitter-like-action.svg)](https://twitter.com/intent/like?tweet_id=1281146411736694784) 2109
 
-[](#key-steps)Key Steps:
-------------------------
+## [](#key-steps)Key Steps:
 
 1.  [Make a repository](#step-1)
 2.  [Build a Website and Screen Record](#step-2)
@@ -40,12 +38,12 @@ Here’s a link to my GitHub repository for your reference.
 
 ### [](#set-up-the-github-repository)Set up the GitHub Repository
 
--   Create a repository with your GitHub username
+- Create a repository with your GitHub username
 
 `Template: https://github.com/username/username`  
 Example: <https://github.com/satvikchachra/satvikchachra>
 
--   Create a `README.md`
+- Create a `README.md`
 
 So now that you have set it up, let’s come to the interesting part: Designing your `README.md`.
 
@@ -54,8 +52,8 @@ So now that you have set it up, let’s come to the interesting part: Designing 
 Now let’s jump into the Code!  
 Let’s divide the code into 2 main sections.
 
--   [Particles JS](#section-1)
--   [Typewriter JS](#section-2)
+- [Particles JS](#section-1)
+- [Typewriter JS](#section-2)
 
 #### [](#section-1-particles-js)Section 1: Particles JS
 
@@ -64,7 +62,7 @@ GitHub Link: <https://github.com/VincentGarreau/particles.js/>
 When you look at the background there are some white particles floating and forming polygons.  
 We will use `particiles.js` to bring that effect into life.
 
--   Important tip: Remember to run the `index.html` file on a Live Server otherwise, you won’t observe the particle effect.
+- Important tip: Remember to run the `index.html` file on a Live Server otherwise, you won’t observe the particle effect.
 
 Step 1: Include the CDN Link for particles.js
 
@@ -155,9 +153,9 @@ Step 4: Use different methods to achieve the desired result
         .deleteAll()
         .start();
 
--   Important tip: Remember to nest the `divs` because you want the typewriter effect in front and particle effect in the background.
+- Important tip: Remember to nest the `divs` because you want the typewriter effect in front and particle effect in the background.
 
-            <div id="typewriter"></div>
+          <div id="typewriter"></div>
 
 Add styling to elements on the page to get the desired output.
 

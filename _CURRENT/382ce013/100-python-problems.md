@@ -1,8 +1,8 @@
-100+ Python challenging programming exercises for Python 3
-==========================================================
+# 100+ Python challenging programming exercises for Python 3
 
 1. Level description
---------------------
+
+---
 
 ### Level 1 Beginner
 
@@ -16,17 +16,19 @@ Intermediate means someone who has just learned Python, but already has a relati
 
 He should use Python to solve more complex problem using more rich libraries functions and data structures and algorithms. He is supposed to solve the problem using several Python standard packages and advanced techniques.
 
-------------------------------------------------------------------------
+---
 
 2. Problem template
--------------------
+
+---
 
 Question Hints Solution
 
-------------------------------------------------------------------------
+---
 
 3. Questions
-------------
+
+---
 
 ### Question 1
 
@@ -112,7 +114,7 @@ Solution:
 
         def getString(self):
             self.s = input()
-        
+
         def printString(self):
             print(self.s.upper())
 
@@ -500,7 +502,7 @@ Question:
 
 Python has many built-in functions, and if you do not know how to use it, you can read document online or find some books. But Python has a built-in document function for every built-in functions.
 
-Please write a program to print some Python built-in functions documents, such as abs(), int(), raw\_input()
+Please write a program to print some Python built-in functions documents, such as abs(), int(), raw_input()
 
 And add document for your own function Hints: The built-in document method is **doc**
 
@@ -512,7 +514,7 @@ Solution:
 
     def square(num):
         '''Return the square value of the input number.
-        
+
         The input number must be integer.
         '''
         return num ** 2
@@ -533,7 +535,7 @@ Solution:
     class Person:
         # Define the class parameter "name"
         name = "Person"
-        
+
         def __init__(self, name = None):
             # self.name is the instance parameter
             self.name = name
@@ -638,7 +640,7 @@ Solution
         else:
             print(s1)
             print(s2)
-            
+
     printValue("one","three")
 
 ### Question 32
@@ -656,7 +658,7 @@ Solution
             print("It is an even number")
         else:
             print("It is an odd number")
-            
+
     checkValue(7)
 
     ### Question 33
@@ -675,7 +677,7 @@ Solution
         d[2]=2**2
         d[3]=3**2
         print(d)
-            
+
     printDict()
 
 ### Question 34
@@ -710,7 +712,7 @@ Solution
         d=dict()
         for i in range(1,21):
             d[i]=i**2
-        for (k,v) in d.items(): 
+        for (k,v) in d.items():
             print(v)
 
     printDict()
@@ -729,7 +731,7 @@ Solution
         d=dict()
         for i in range(1,21):
             d[i]=i**2
-        for k in d.keys():  
+        for k in d.keys():
             print(k)
 
     printDict()
@@ -821,7 +823,7 @@ Solution
         for i in range(1,21):
             li.append(i**2)
         print(tuple(li))
-            
+
     printTuple()
 
 ### Question 42
@@ -1094,7 +1096,7 @@ Solution:
         Attributes:
             msg  -- explanation of the error
         """
-        
+
         def __init__(self, msg):
             self.msg = msg
 

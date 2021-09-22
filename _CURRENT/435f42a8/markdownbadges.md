@@ -1,43 +1,40 @@
-Markdown Badges
-===============
+# Markdown Badges
 
 Add badges to your Profile and Projects.
 
-How to Use
-----------
+## How to Use
 
--   Copy the appropriate `<img>` element and paste it in your Markdown file (e.g., `README.md`)
+- Copy the appropriate `<img>` element and paste it in your Markdown file (e.g., `README.md`)
 
-Shortcuts
----------
+## Shortcuts
 
--   [Markdown Badges](#markdown-badges)
-    -   [How to Use](#how-to-use)
-    -   [Shortcuts](#shortcuts)
-        -   [Programming Languages](#programming-languages)
-        -   [Frameworks](#frameworks)
-        -   [Design](#design)
-        -   [Version Control](#version-control)
-        -   [Social](#social)
-            -   [Education](#education)
-            -   [Developer/Forums](#developerforums)
-        -   [Hosting/SaaS](#hostingsaas)
-        -   [Servers](#servers)
-        -   [Databases](#databases)
-        -   [CI](#ci)
-        -   [Testing](#testing)
-        -   [ML/DL](#mldl)
-        -   [Gaming](#gaming)
-        -   [Store](#store)
-        -   [Music](#music)
-        -   [Funding](#funding)
-        -   [Operating System](#operating-system)
-        -   [Blog](#blog)
-        -   [Other](#other)
-        -   [Design](#design)
-    -   [Contribution](#contribution)
-    -   [Contact](#contact)
-    -   [License](#license)
+- [Markdown Badges](#markdown-badges)
+  - [How to Use](#how-to-use)
+  - [Shortcuts](#shortcuts)
+    - [Programming Languages](#programming-languages)
+    - [Frameworks](#frameworks)
+    - [Design](#design)
+    - [Version Control](#version-control)
+    - [Social](#social)
+      - [Education](#education)
+      - [Developer/Forums](#developerforums)
+    - [Hosting/SaaS](#hostingsaas)
+    - [Servers](#servers)
+    - [Databases](#databases)
+    - [CI](#ci)
+    - [Testing](#testing)
+    - [ML/DL](#mldl)
+    - [Gaming](#gaming)
+    - [Store](#store)
+    - [Music](#music)
+    - [Funding](#funding)
+    - [Operating System](#operating-system)
+    - [Blog](#blog)
+    - [Other](#other)
+    - [Design](#design)
+  - [Contribution](#contribution)
+  - [Contact](#contact)
+  - [License](#license)
 
 ### Programming Languages
 
@@ -123,36 +120,35 @@ Shortcuts
 
 <table style="width:98%;"><colgroup><col style="width: 3%" /><col style="width: 47%" /><col style="width: 48%" /></colgroup><thead><tr class="header"><th>Name</th><th>Badge</th><th>Markdown</th></tr></thead><tbody><tr class="odd"><td>Docker</td><td><img src="https://img.shields.io/badge/docker%20-%230db7ed.svg?&amp;style=for-the-badge&amp;logo=docker&amp;logoColor=white" alt="Docker" /></td><td><code>&lt;img alt="Docker" src="https://img.shields.io/badge/docker%20-%230db7ed.svg?&amp;style=for-the-badge&amp;logo=docker&amp;logoColor=white"/&gt;</code></td></tr><tr class="even"><td>Kubernetes</td><td><img src="https://img.shields.io/badge/kubernetes%20-%23326ce5.svg?&amp;style=for-the-badge&amp;logo=kubernetes&amp;logoColor=white" alt="Kubernetes" /></td><td><code>&lt;img alt="Kubernetes" src="https://img.shields.io/badge/kubernetes%20-%23326ce5.svg?&amp;style=for-the-badge&amp;logo=kubernetes&amp;logoColor=white"/&gt;</code></td></tr><tr class="odd"><td>Rancher</td><td><img src="https://img.shields.io/badge/rancher%20-%230075A8.svg?&amp;style=for-the-badge&amp;logo=rancher&amp;logoColor=white" alt="Rancher" /></td><td><code>&lt;img alt="Rancher" src="https://img.shields.io/badge/rancher%20-%230075A8.svg?&amp;style=for-the-badge&amp;logo=rancher&amp;logoColor=white"/&gt;</code></td></tr><tr class="even"><td>Vagrant</td><td><img src="https://img.shields.io/badge/vagrant%20-%231563FF.svg?&amp;style=for-the-badge&amp;logo=vagrant&amp;logoColor=white" alt="Vagrant" /></td><td><code>&lt;img alt="Vagrant" src="https://img.shields.io/badge/vagrant%20-%231563FF.svg?&amp;style=for-the-badge&amp;logo=vagrant&amp;logoColor=white"/&gt;</code></td></tr><tr class="odd"><td>Ansible</td><td><img src="https://img.shields.io/badge/ansible%20-%231A1918.svg?&amp;style=for-the-badge&amp;logo=ansible&amp;logoColor=white" alt="Ansible" /></td><td><code>&lt;img alt="Ansible" src="https://img.shields.io/badge/ansible%20-%231A1918.svg?&amp;style=for-the-badge&amp;logo=ansible&amp;logoColor=white"/&gt;</code></td></tr><tr class="even"><td>Terraform</td><td><img src="https://img.shields.io/badge/terraform%20-%235835CC.svg?&amp;style=for-the-badge&amp;logo=terraform&amp;logoColor=white" alt="Terraform" /></td><td><code>&lt;img alt="Terraform" src="https://img.shields.io/badge/terraform%20-%235835CC.svg?&amp;style=for-the-badge&amp;logo=terraform&amp;logoColor=white"/&gt;</code></td></tr><tr class="odd"><td>Jupyter</td><td><img src="https://img.shields.io/badge/Jupyter%20-%23F37626.svg?&amp;style=for-the-badge&amp;logo=Jupyter&amp;logoColor=white" alt="Jupyter" /></td><td><code>&lt;img alt="Jupyter" src="https://img.shields.io/badge/Jupyter%20-%23F37626.svg?&amp;style=for-the-badge&amp;logo=Jupyter&amp;logoColor=white" /&gt;</code></td></tr><tr class="even"><td>Raspberry Pi</td><td><img src="https://img.shields.io/badge/-Raspberry%20Pi-C51A4A?style=for-the-badge&amp;logo=Raspberry-Pi" alt="Raspberry Pi" /></td><td><code>&lt;img alt="Raspberry Pi" src="https://img.shields.io/badge/-Raspberry%20Pi-C51A4A?style=for-the-badge&amp;logo=Raspberry-Pi"/&gt;" /&gt;</code></td></tr><tr class="odd"><td>Arduino</td><td><img src="https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&amp;logo=Arduino&amp;logoColor=white" alt="Arduino" /></td><td><code>&lt;img alt="Arduino" src="https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&amp;logo=Arduino&amp;logoColor=white"/&gt;</code></td></tr><tr class="even"><td>Trello</td><td><img src="https://img.shields.io/badge/Trello%20-%23026AA7.svg?&amp;style=for-the-badge&amp;logo=Trello&amp;logoColor=white" alt="Trello" /></td><td><code>&lt;img alt="Trello" src="https://img.shields.io/badge/Trello%20-%23026AA7.svg?&amp;style=for-the-badge&amp;logo=Trello&amp;logoColor=white"/&gt;</code></td></tr><tr class="odd"><td>Prezi</td><td><img src="https://img.shields.io/badge/Prezi%20-%23000000.svg?&amp;style=for-the-badge&amp;logo=Prezi&amp;logoColor=white" alt="Prezi" /></td><td><code>&lt;img alt="Prezi" src="https://img.shields.io/badge/Prezi%20-%23000000.svg?&amp;style=for-the-badge&amp;logo=Prezi&amp;logoColor=white"/&gt;</code></td></tr><tr class="even"><td>Google Pay</td><td><img src="https://img.shields.io/badge/Google%20Pay%20-%233780F1.svg?&amp;style=for-the-badge&amp;logo=Google%20Pay&amp;logoColor=white" alt="Google Pay" /></td><td><code>&lt;img alt="Google Pay" src="https://img.shields.io/badge/Google%20Pay%20-%233780F1.svg?&amp;style=for-the-badge&amp;logo=Google%20Pay&amp;logoColor=white"/&gt;</code></td></tr><tr class="odd"><td>Uber</td><td><img src="https://img.shields.io/badge/Uber%20-%23000000.svg?&amp;style=for-the-badge&amp;logo=Uber&amp;logoColor=white" alt="Uber" /></td><td><code>&lt;img alt="" src="https://img.shields.io/badge/Uber%20-%23000000.svg?&amp;style=for-the-badge&amp;logo=Uber&amp;logoColor=white"/&gt;</code></td></tr><tr class="even"><td>ElasticSearch</td><td><img src="https://img.shields.io/badge/-ElasticSearch-005571?style=for-the-badge&amp;logo=elasticsearch" alt="ElasticSearch" /></td><td><code>&lt;img alt="ElasticSearch" src="https://img.shields.io/badge/-ElasticSearch-005571?style=for-the-badge&amp;logo=elasticsearch"/&gt;</code></td></tr></tbody></table>
 
-awesome-github-badges
-=====================
+# awesome-github-badges
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Made With Love](https://img.shields.io/badge/Made%20With-Love-orange.svg)](https://github.com/chetanraj/awesome-github-badges)
 
 > A curated list of awesome github README.md badges
 
--   [AppVeyor](https://www.appveyor.com/docs/status-badges) - AppVeyor Status Badges.
--   [BitDeli](https://bitdeli.com/) - Analytics Badge for GitHub.
--   [bitHound](https://www.bithound.io/) - Analysis the repository code and generates
-    -   overall badge
-    -   npm & bower dependencies badges
-    -   code badge
-    -   dev dependencies badge
--   [Codeship](https://codeship.com/documentation/faq/codeship-badge/) - Codeship Status Badge.
--   [Code Climate](https://codeclimate.com) - Automated Code Review For Your Private Repositories.
--   [Codecov](https://codecov.io) - faster code reviews and workflow enhancements.
--   [David.](https://david-dm.org/) - Watch your node.js dependencies.
--   [FORTHEBADGE](http://forthebadge.com/) - Badges for the sake of Badges.
--   [Gemnasium](https://gemnasium.com/) - Dependencies Checks Badge.
--   [Gitter](https://gitter.im) - Create a Room using GitHub Repository, Gitter automatically adds badge to the repository.
--   [Gitential](https://gitential.com) - Coding Hours, Productivity, Active Contributors
--   [Grunt](http://gruntjs.com/built-with-grunt-badge) - Built with Grunt Badge.
--   [Inch CI](http://inch-ci.org/) - Documentation badges for Ruby, JS & Elixir.
--   [JavaScript Standard Style](https://github.com/feross/standard#badge) - JavaScript Standard Style - Not like JSLint or JS Hint
--   [NodeICO](https://nodei.co/) - classy node.js badges.
--   [RubyGems](https://rubygems.org/) - Gem Version Badge.
--   [Semaphore CI](https://semaphoreci.com/docs/how-to-get-build-badge.html) - Semaphore CI Build Status Badge.
--   [Shields.io](http://shields.io/) - Quality metadata badges for open source projects.
--   [Stability Badges](https://github.com/badges/stability-badges) - A set of SVG badges to mark your modules with the Node stability index.
--   [Travis CI](https://docs.travis-ci.com/user/status-images/) - Travis CI Status Badge.
--   [Version Badge](https://badge.fury.io/) - Version Badge for npm, Ruby, Python, Bower, GitHub, NuGet, PHP, CocoaPods, Perl, PGXN.
--   [Wercker](http://blog.wercker.com/2014/02/10/branch-badges.html) - Wercker Branch Badges.
+- [AppVeyor](https://www.appveyor.com/docs/status-badges) - AppVeyor Status Badges.
+- [BitDeli](https://bitdeli.com/) - Analytics Badge for GitHub.
+- [bitHound](https://www.bithound.io/) - Analysis the repository code and generates
+  - overall badge
+  - npm & bower dependencies badges
+  - code badge
+  - dev dependencies badge
+- [Codeship](https://codeship.com/documentation/faq/codeship-badge/) - Codeship Status Badge.
+- [Code Climate](https://codeclimate.com) - Automated Code Review For Your Private Repositories.
+- [Codecov](https://codecov.io) - faster code reviews and workflow enhancements.
+- [David.](https://david-dm.org/) - Watch your node.js dependencies.
+- [FORTHEBADGE](http://forthebadge.com/) - Badges for the sake of Badges.
+- [Gemnasium](https://gemnasium.com/) - Dependencies Checks Badge.
+- [Gitter](https://gitter.im) - Create a Room using GitHub Repository, Gitter automatically adds badge to the repository.
+- [Gitential](https://gitential.com) - Coding Hours, Productivity, Active Contributors
+- [Grunt](http://gruntjs.com/built-with-grunt-badge) - Built with Grunt Badge.
+- [Inch CI](http://inch-ci.org/) - Documentation badges for Ruby, JS & Elixir.
+- [JavaScript Standard Style](https://github.com/feross/standard#badge) - JavaScript Standard Style - Not like JSLint or JS Hint
+- [NodeICO](https://nodei.co/) - classy node.js badges.
+- [RubyGems](https://rubygems.org/) - Gem Version Badge.
+- [Semaphore CI](https://semaphoreci.com/docs/how-to-get-build-badge.html) - Semaphore CI Build Status Badge.
+- [Shields.io](http://shields.io/) - Quality metadata badges for open source projects.
+- [Stability Badges](https://github.com/badges/stability-badges) - A set of SVG badges to mark your modules with the Node stability index.
+- [Travis CI](https://docs.travis-ci.com/user/status-images/) - Travis CI Status Badge.
+- [Version Badge](https://badge.fury.io/) - Version Badge for npm, Ruby, Python, Bower, GitHub, NuGet, PHP, CocoaPods, Perl, PGXN.
+- [Wercker](http://blog.wercker.com/2014/02/10/branch-badges.html) - Wercker Branch Badges.

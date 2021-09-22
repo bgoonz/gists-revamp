@@ -1,5 +1,4 @@
-A Command Line Tool to Find and Delete Duplicate Files in Linux
-===============================================================
+# A Command Line Tool to Find and Delete Duplicate Files in Linux
 
 > fdupes is a Linux utility for identifying or deleting duplicate files in the given set of directories and sub-directories. It recognize duplicates by comparing MD5 signature of files followed by a byte-to-byte comparison.
 
@@ -75,7 +74,7 @@ Progress \[37780/54747\] 69%
 **65 bytes each:**  
 /home/tecmint/Desktop/tecmint/tecmint13.txt /home/tecmint/Desktop/tecmint/tecmint8.txt /home/tecmint/Desktop/tecmint/tecmint11.txt /home/tecmint/Desktop/tecmint/tecmint3.txt /home/tecmint/Desktop/tecmint/tecmint4.txt /home/tecmint/Desktop/tecmint/tecmint6.txt /home/tecmint/Desktop/tecmint/tecmint7.txt /home/tecmint/Desktop/tecmint/tecmint9.txt /home/tecmint/Desktop/tecmint/tecmint10.txt /home/tecmint/Desktop/tecmint/tecmint2.txt /home/tecmint/Desktop/tecmint/tecmint5.txt /home/tecmint/Desktop/tecmint/tecmint14.txt /home/tecmint/Desktop/tecmint/tecmint1.txt /home/tecmint/Desktop/tecmint/tecmint15.txt /home/tecmint/Desktop/tecmint/tecmint12.txt
 
-**107 bytes each:** /home/tecmint/Desktop/resume\_files/r-csc.html /home/tecmint/Desktop/resume\_files/fc.html
+**107 bytes each:** /home/tecmint/Desktop/resume_files/r-csc.html /home/tecmint/Desktop/resume_files/fc.html
 
 **6.** Other than searching in one folder or all the folders recursively, you may choose to choose in two folders or three folders as required. Not to mention you can use option **-S** and/or **-r** if required.
 

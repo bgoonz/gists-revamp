@@ -4,7 +4,7 @@
 
     [
         { language: 'JavaScript' },{ language: 'JavaScript' },{ language: 'TypeScript' },
-    ] 
+    ]
 
 #### SHOULD BE CONVERTED TO =
 
@@ -16,7 +16,7 @@
 
 ##### The idea is to count the frequency of each unique key in an array of objects and then instead of making the result look like
 
-    { key1: 2, key2: 1, key3: 7 } 
+    { key1: 2, key2: 1, key3: 7 }
 
 The result should be an array of objects so that it can be map over and get rendered in React.JS or something like that.
 

@@ -1,5 +1,4 @@
-Installation
-------------
+## Installation
 
 Knex can be used as an SQL query builder in both Node.JS and the browser, limited to WebSQL’s constraints (like the inability to drop tables or read schemas). Composing SQL queries in the browser for execution on the server is highly discouraged, as this can be the cause of serious security vulnerabilities. The browser builds outside of WebSQL are primarily for learning purposes - for example, you can pop open the console and build queries on this page using the knex object.
 
@@ -17,7 +16,7 @@ The primary target environment for Knex is Node.js, you will need to install the
     $ npm install oracledb
     $ npm install tedious
 
-*If you want to use a MariaDB instance, you can use the `mysql` driver.*
+_If you want to use a MariaDB instance, you can use the `mysql` driver._
 
 ### Browser
 
@@ -256,7 +255,7 @@ For convenience, the any migration configuration may be specified when initializ
 
 ### postProcessResponse
 
-Hook for modifying returned rows, before passing them forward to user. One can do for example snake\_case -&gt; camelCase conversion for returned columns with this hook. The `queryContext` is only available if configured for a query builder instance via [queryContext](https://knexjs.org/#Builder-queryContext).
+Hook for modifying returned rows, before passing them forward to user. One can do for example snake_case -&gt; camelCase conversion for returned columns with this hook. The `queryContext` is only available if configured for a query builder instance via [queryContext](https://knexjs.org/#Builder-queryContext).
 
     const knex = require("knex")({
       client: "mysql",
@@ -298,8 +297,7 @@ Knex contains some internal log functions for printing warnings, errors, depreca
       },
     });
 
-Knex Query Builder
-------------------
+## Knex Query Builder
 
 The heart of the library, the knex query builder is the interface used for building and executing standard SQL queries, such as `select`, `insert`, `update`, `delete`.
 
@@ -1538,7 +1536,6 @@ Creates an insert query, taking either a hash of properties to be inserted into 
 
 For MSSQL, triggers on tables can interrupt returning a valid value from the standard insert statements. You can add the `includeTriggerModifications` option to get around this issue. This modifies the SQL so the proper values can be returned. This only modifies the statement if you are using MSSQL, a returning value is specified, and the `includeTriggerModifications` option is set.
 
-
     knex('books')
       .insert({title: 'Alice in Wonderland'}, ['id'], { includeTriggerModifications: true })
 
@@ -1612,7 +1609,7 @@ This also works with batch inserts:
       .onConflict("email")
       .merge();
 
-It is also possible to specify a subset of the columns to merge when a conflict occurs. For example, you may want to set a ‘created\_at’ column when inserting but would prefer not to update it if the row already exists:
+It is also possible to specify a subset of the columns to merge when a conflict occurs. For example, you may want to set a ‘created_at’ column when inserting but would prefer not to update it if the row already exists:
 
     const timestamp = Date.now();
     knex("tableName")
@@ -1678,7 +1675,6 @@ Creates an update query, taking a hash of properties or a key/value pair to be u
 
 For MSSQL, triggers on tables can interrupt returning a valid value from the standard update statements. You can add the `includeTriggerModifications` option to get around this issue. This modifies the SQL so the proper values can be returned. This only modifies the statement if you are using MSSQL, a returning value is specified, and the `includeTriggerModifications` option is set.
 
-
     knex('books')
       .update({title: 'Alice in Wonderland'}, ['id', 'title'], { includeTriggerModifications: true })
 
@@ -1693,7 +1689,6 @@ Aliased to del as delete is a reserved word in JavaScript, this method deletes o
     knex("accounts").where("activated", false).del();
 
 For MSSQL, triggers on tables can interrupt returning a valid value from the standard delete statements. You can add the `includeTriggerModifications` option to get around this issue. This modifies the SQL so the proper values can be returned. This only modifies the statement if you are using MSSQL, a returning value is specified, and the `includeTriggerModifications` option is set.
-
 
     knex('books')
       .where('title', 'Alice in Wonderland')
@@ -1720,7 +1715,6 @@ Utilized by PostgreSQL, MSSQL, and Oracle databases, the returning method specif
       .insert({title: 'Slaughterhouse Five'})
 
 For MSSQL, triggers on tables can interrupt returning a valid value from the standard DML statements. You can add the `includeTriggerModifications` option to get around this issue. This modifies the SQL so the proper values can be returned. This only modifies the statement if you are using MSSQL, a returning value is specified, and the `includeTriggerModifications` option is set.
-
 
     knex('books')
       .returning(['id','title'], { includeTriggerModifications: true })
@@ -2011,7 +2005,7 @@ Clones the current query chain, useful for re-using partial query snippets in ot
 
 `.denseRank(alias, ~mixed~)`
 
-Add a dense\_rank() call to your query. For all the following queries, alias can be set to a falsy value if not needed.
+Add a dense_rank() call to your query. For all the following queries, alias can be set to a falsy value if not needed.
 
 String Syntax — .denseRank(alias, orderByClause, \[partitionByClause\]) :
 
@@ -2079,7 +2073,7 @@ Use orderBy() and partitionBy() (both chainable) to build your query :
 
 `.rowNumber(alias, ~mixed~)`
 
-Add a row\_number() call to your query. For all the following queries, alias can be set to a falsy value if not needed.
+Add a row_number() call to your query. For all the following queries, alias can be set to a falsy value if not needed.
 
 String Syntax — .rowNumber(alias, orderByClause, \[partitionByClause\]) :
 
@@ -2136,12 +2130,12 @@ Allows encapsulating and re-using query snippets and common behaviors as functio
 
 Returns an object with the column info about the current table, or an individual column if one is passed, returning an object with the following keys:
 
--   **defaultValue**: the default value for the column
--   **type**: the column type
--   **maxLength**: the max length set for the column
--   **nullable**: whether the column may be null
+- **defaultValue**: the default value for the column
+- **type**: the column type
+- **maxLength**: the max length set for the column
+- **nullable**: whether the column may be null
 
-    knex('users').columnInfo().then(function(info) {
+  knex('users').columnInfo().then(function(info) {
 
 **debug**
 
@@ -2225,7 +2219,6 @@ If using TypeScript, you can extend the QueryBuilder interface with your custom 
 
 <!-- -->
 
-
     import { Knex as KnexOriginal } from 'knex';
 
     declare module 'knex' {
@@ -2240,7 +2233,6 @@ If using TypeScript, you can extend the QueryBuilder interface with your custom 
 
 <!-- -->
 
-
     {
       "compilerOptions": {
         "typeRoots": [
@@ -2250,8 +2242,7 @@ If using TypeScript, you can extend the QueryBuilder interface with your custom 
       }
     }
 
-Schema Builder
---------------
+## Schema Builder
 
 The `knex.schema` is a **getter function**, which returns a stateful object containing the query. Therefore be sure to obtain a new instance of the `knex.schema` for every query. These methods return [promises](https://knexjs.org/#Interfaces-Promises).
 
@@ -2440,7 +2431,6 @@ Adds an auto incrementing column. In PostgreSQL this is a serial; in Amazon Reds
 
 A primaryKey option may be passed, to disable to automatic primary key creation:
 
-
     knex.schema.createTable('users', function (table) {
       table.increments('id');
       table.increments('other_id', { primaryKey: false });
@@ -2558,7 +2548,7 @@ In PostgreSQL and MSSQL a timezone option may be passed:
 
 `table.timestamps([useTimestamps], [defaultToNow])`
 
-Adds created\_at and updated\_at columns on the database, setting each to datetime types. When true is passed as the first argument a timestamp type is used instead. Both columns default to being not null and using the current timestamp when true is passed as the second argument. Note that on MySQL the .timestamps() only have seconds precision, to get better precision use the .datetime or .timestamp methods directly with precision.
+Adds created_at and updated_at columns on the database, setting each to datetime types. When true is passed as the first argument a timestamp type is used instead. Both columns default to being not null and using the current timestamp when true is passed as the second argument. Note that on MySQL the .timestamps() only have seconds precision, to get better precision use the .datetime or .timestamp methods directly with precision.
 
 **dropTimestamps**
 
@@ -2566,7 +2556,7 @@ Adds created\_at and updated\_at columns on the database, setting each to dateti
 
 `table.dropTimestamps()`
 
-Drops the columns created\_at and updated\_at from the table, which can be created via timestamps.
+Drops the columns created_at and updated_at from the table, which can be created via timestamps.
 
 **binary**
 
@@ -2741,7 +2731,7 @@ Drops a unique key constraint from a table. A default unique key name using the 
 
 `table.dropPrimary([constraintName])`
 
-Drops the primary key constraint on a table. Defaults to tablename\_pkey unless constraintName is specified.
+Drops the primary key constraint on a table. Defaults to tablename_pkey unless constraintName is specified.
 
 **queryContext**
 
@@ -2785,7 +2775,7 @@ The following three methods may be chained on the schema building methods, as mo
 
 `column.alter()`
 
-Marks the column as an alter / modify, instead of the default add. Note: This only works in .alterTable() and is not supported by SQlite or Amazon Redshift. Alter is *not* done incrementally over older column type so if you like to add `notNullable` and keep the old default value, the alter statement must contain both `.notNullable().defaultTo(1).alter()`. If one just tries to add `.notNullable().alter()` the old default value will be dropped.
+Marks the column as an alter / modify, instead of the default add. Note: This only works in .alterTable() and is not supported by SQlite or Amazon Redshift. Alter is _not_ done incrementally over older column type so if you like to add `notNullable` and keep the old default value, the alter statement must contain both `.notNullable().defaultTo(1).alter()`. If one just tries to add `.notNullable().alter()` the old default value will be dropped.
 
     knex.schema.alterTable("user", function (t) {
       t.increments().primary(); // add
@@ -2801,7 +2791,7 @@ Marks the column as an alter / modify, instead of the default add. Note: This on
 
 `column.index([indexName], [indexType])`
 
-Specifies a field as an index. If an indexName is specified, it is used in place of the standard index naming convention of tableName\_columnName. The indexType can be optionally specified for PostgreSQL and MySQL. No-op if this is chained off of a field that cannot be indexed.
+Specifies a field as an index. If an indexName is specified, it is used in place of the standard index naming convention of tableName_columnName. The indexType can be optionally specified for PostgreSQL and MySQL. No-op if this is chained off of a field that cannot be indexed.
 
 **primary**
 
@@ -2913,8 +2903,7 @@ Sets the column to be inserted after another, only used in MySQL alter tables.
       t.string("email").unique().collate("utf8_unicode_ci");
     });
 
-Migrations
-----------
+## Migrations
 
 Migrations allow for you to define sets of schema changes so upgrading a database is a breeze.
 
@@ -2926,17 +2915,17 @@ The migration CLI is bundled with the knex install, and is driven by the [node-l
 
 The migration CLI accepts the following general command-line options. You can view help text and additional options for each command using `--help`. E.g. `knex migrate:latest --help`.
 
--   `--debug`: Run with debugging
--   `--knexfile [path]`: Specify the knexfile path
--   `--knexpath [path]`: Specify the path to the knex instance
--   `--cwd [path]`: Specify the working directory
--   `--client [name]`: Set the DB client without a knexfile
--   `--connection [address]`: Set the DB connection without a knexfile
--   `--migrations-table-name`: Set the migration table name without a knexfile
--   `--migrations-directory`: Set the migrations directory without a knexfile
--   `--env`: environment, default: process.env.NODE\_ENV || development
--   `--esm`: [Enables ESM module interoperability](https://knexjs.org/#esm-interop)
--   `--help`: Display help text for a particular command and exit.
+- `--debug`: Run with debugging
+- `--knexfile [path]`: Specify the knexfile path
+- `--knexpath [path]`: Specify the path to the knex instance
+- `--cwd [path]`: Specify the working directory
+- `--client [name]`: Set the DB client without a knexfile
+- `--connection [address]`: Set the DB connection without a knexfile
+- `--migrations-table-name`: Set the migration table name without a knexfile
+- `--migrations-directory`: Set the migrations directory without a knexfile
+- `--env`: environment, default: process.env.NODE_ENV || development
+- `--esm`: [Enables ESM module interoperability](https://knexjs.org/#esm-interop)
+- `--help`: Display help text for a particular command and exit.
 
 Migrations use a **knexfile**, which specify various configuration settings for the module. To create a new knexfile, run the following:
 
@@ -2954,8 +2943,8 @@ will create a sample knexfile.js - the file which contains our various database 
 
     $ knex migrate:make migration_name -x ts
 
--   you can also create your migration using a specific stub file, this serves as a migration template to speed up development for common migration operations
--   if the –stub option is not passed, the CLI will use either the knex default stub for the chosen extension, or the config.stub file
+- you can also create your migration using a specific stub file, this serves as a migration template to speed up development for common migration operations
+- if the –stub option is not passed, the CLI will use either the knex default stub for the chosen extension, or the config.stub file
 
 <!-- -->
 
@@ -2965,8 +2954,8 @@ will create a sample knexfile.js - the file which contains our various database 
 
     $ knex migrate:make --stub
 
--   if a stub path is provided, it must be relative to the knexfile.\[js, ts, etc\] location
--   if a is used, the stub is selected by its file name. The CLI will look for this file in the config.migrations.directory folder. If the config.migrations.directory is not defined, this operation will fail
+- if a stub path is provided, it must be relative to the knexfile.\[js, ts, etc\] location
+- if a is used, the stub is selected by its file name. The CLI will look for this file in the config.migrations.directory folder. If the config.migrations.directory is not defined, this operation will fail
 
 Once you have finished writing the migrations, you can update the database matching your `NODE_ENV` by running:
 
@@ -3008,8 +2997,7 @@ To list both completed and pending migrations:
 
     $ knex migrate:list
 
-Seed files
-----------
+## Seed files
 
 Seed files allow you to populate your database with test or seed data independent of your migration files.
 
@@ -3035,7 +3023,7 @@ To run seed files, execute:
 
     $ knex seed:run
 
-Seed files are executed in alphabetical order. Unlike migrations, *every* seed file will be executed when you run the command. You should design your seed files to reset tables as needed before inserting data.
+Seed files are executed in alphabetical order. Unlike migrations, _every_ seed file will be executed when you run the command. You should design your seed files to reset tables as needed before inserting data.
 
 To run specific seed files, execute:
 
@@ -3118,15 +3106,15 @@ If you don’t specify the extension explicitly, the extension of generated migr
 
 Each method takes an optional `config` object, which may specify the following properties:
 
--   `directory`: a relative path to the directory containing the migration files. Can be an array of paths (default `./migrations`)
--   `extension`: the file extension used for the generated migration files (default `js`)
--   `tableName`: the table name used for storing the migration state (default `knex_migrations`)
--   `schemaName`: the schema name used for storing the table with migration state (optional parameter, only works on DBs that support multiple schemas in a single DB, such as PostgreSQL)
--   `disableTransactions`: don’t run migrations inside transactions (default `false`)
--   `disableMigrationsListValidation`: do not validate that all the already executed migrations are still present in migration directories (default `false`)
--   `sortDirsSeparately`: if true and multiple directories are specified, all migrations from a single directory will be executed before executing migrations in the next folder (default `false`)
--   `loadExtensions`: array of file extensions which knex will treat as migrations. For example, if you have typescript transpiled into javascript in the same folder, you want to execute only javascript migrations. In this case, set `loadExtensions` to `['.js']` (Notice the dot!) (default `['.co', '.coffee', '.eg', '.iced', '.js', '.litcoffee', '.ls', '.ts']`)
--   `migrationSource`: specify a custom migration source, see [Custom Migration Source](https://knexjs.org/#custom-migration-sources) for more info (default filesystem)
+- `directory`: a relative path to the directory containing the migration files. Can be an array of paths (default `./migrations`)
+- `extension`: the file extension used for the generated migration files (default `js`)
+- `tableName`: the table name used for storing the migration state (default `knex_migrations`)
+- `schemaName`: the schema name used for storing the table with migration state (optional parameter, only works on DBs that support multiple schemas in a single DB, such as PostgreSQL)
+- `disableTransactions`: don’t run migrations inside transactions (default `false`)
+- `disableMigrationsListValidation`: do not validate that all the already executed migrations are still present in migration directories (default `false`)
+- `sortDirsSeparately`: if true and multiple directories are specified, all migrations from a single directory will be executed before executing migrations in the next folder (default `false`)
+- `loadExtensions`: array of file extensions which knex will treat as migrations. For example, if you have typescript transpiled into javascript in the same folder, you want to execute only javascript migrations. In this case, set `loadExtensions` to `['.js']` (Notice the dot!) (default `['.co', '.coffee', '.eg', '.iced', '.js', '.litcoffee', '.ls', '.ts']`)
+- `migrationSource`: specify a custom migration source, see [Custom Migration Source](https://knexjs.org/#custom-migration-sources) for more info (default filesystem)
 
 #### Transactions in migrations
 
@@ -3233,7 +3221,7 @@ Forcibly unlocks the migrations lock table, and ensures that there is only one r
 
 A lock system is there to prevent multiple processes from running the same migration batch in the same time. When a batch of migrations is about to be run, the migration system first tries to get a lock using a `SELECT ... FOR UPDATE` statement (preventing race conditions from happening). If it can get a lock, the migration batch will run. If it can’t, it will wait until the lock is released.
 
-Please note that if your process unfortunately crashes, the lock will have to be *manually* removed with `knex migrate:unlock` in order to let migrations run again.
+Please note that if your process unfortunately crashes, the lock will have to be _manually_ removed with `knex migrate:unlock` in order to let migrations run again.
 
 The locks are saved in a table called “`tableName`\_lock”; it has a column called `is_locked` that `knex migrate:unlock` sets to `0` in order to release the lock. The `index` column in the lock table exists for compatibility with some database clusters that require a primary key, but is otherwise unused. There must be only one row in this table, or an error will be thrown when running migrations: “Migration table is already locked”. Run `knex migrate:unlock` to ensure that there is only one row in the table.
 
@@ -3299,7 +3287,7 @@ An example of how to create a migration source where migrations are included in 
 ### ECMAScript modules (ESM) Interoperability
 
 ECMAScript Module support for knex CLI’s configuration, migration and seeds  
-enabled by the `--esm` flag, ECMAScript Interoperability is provided by the [*‘esm’*](https://github.com/standard-things/esm) module.  
+enabled by the `--esm` flag, ECMAScript Interoperability is provided by the [_‘esm’_](https://github.com/standard-things/esm) module.  
 You can find [here](https://github.com/standard-things/esm) more information about ‘esm’ superpowers.
 
 Node ‘mjs’ files are handled by NodeJS own import mechanics  
@@ -3310,7 +3298,7 @@ You can find details about NodeJS ECMAScript modules [here](https://nodejs.org/a
 While it is possible to mix and match different module formats (extensions)  
 between your knexfile, seeds and migrations,  
 some format combinations will require specific NodeJS versions,  
-*Notably mjs/cjs files will follow NodeJS import and require restrictions.*  
+_Notably mjs/cjs files will follow NodeJS import and require restrictions._  
 You can see [here](https://github.com/knex/knex/blob/master/test/cli/esm-interop.spec.js) many possible scenarios,  
 and [here](https://github.com/knex/knex/tree/master/test/jake-util/knexfile-imports) some sample configurations
 
@@ -3373,7 +3361,6 @@ it will take precedence over named export.
     export const { client, connection, migrations, seeds } = config;
 
 Seed an migration files need to follow Knex conventions
-
 
     export function seed(next) {
 

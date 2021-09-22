@@ -1,10 +1,9 @@
-**Iterators and Iterables**
-===========================
+# **Iterators and Iterables**
 
 Iterators are rather strictly defined: they are object (the iterators) which contains a `next` (and possibly a few other) function. Every time the `next` function is called, it is expected to return an object with two properties:
 
--   `value`: the current value of the iterator
--   `done`: is the iterator finished?
+- `value`: the current value of the iterator
+- `done`: is the iterator finished?
 
 An iterable on the other hand is an object which has a property with a `Symbol.iterator` key (which represents the well know symbol `@@iterator`). That key contains a function, which when called, returns a new iterator. An example of an iterable:
 
@@ -30,8 +29,7 @@ Their main purpose, as their name suggests, is to provide an interface which can
     // 'a'
     // 'b'
 
-**Generators**
-==============
+# **Generators**
 
 Generators on the other hand are much more versatile. It helps to think of them as functions which can be paused and resumed.
 
@@ -88,6 +86,6 @@ Generators and Promises together can create a sort of automatic asynchronous ite
 
 So in conclusion one could say that the main purpose of iterators is to create an interface for custom objects to be iterated, whereas generators provide a plethora of possibilities for synchronous and asynchronous workflows:
 
--   stateful functions
--   generator delegation
--   generators & promises
+- stateful functions
+- generator delegation
+- generators & promises

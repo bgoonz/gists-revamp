@@ -1,5 +1,4 @@
-Website Header Design in 2020: Best Practices and Examples
-==========================================================
+# Website Header Design in 2020: Best Practices and Examples
 
 > The header plays a key role in the design of a website and sets the tone for its every other aspect. Especially now in the era of…
 
@@ -17,11 +16,11 @@ Web designers put forth a lot of effort into designing this part of a website wi
 
 To learn how to design a website header that works, and what elements it should include, read on, there will be examples.
 
-> *"Life is a first impression. You get one shot at it.*
+> _"Life is a first impression. You get one shot at it._
 >
-> *Make it everlasting."*
+> _Make it everlasting."_
 >
-> *― J.R. Rim*
+> _― J.R. Rim_
 
 ![Tea company website concept](https://miro.medium.com/max/60/0*wRpDwRK9P634Tz3z?q=20)
 
@@ -47,11 +46,11 @@ Apart from that, it also represents the quality and even identity of a website. 
 
 The main elements of a website header usually are:
 
--   logo or brand identifier
--   call to action
--   text or headline
--   navigational elements
--   search.
+- logo or brand identifier
+- call to action
+- text or headline
+- navigational elements
+- search.
 
 You don’t have to add all of them at once. It is necessary to find a balance between the abundance of information and its harmonious arrangement. Use only the data you need, overloading a header would not prove beneficial, however important all the links may seem.
 
@@ -107,8 +106,8 @@ Persistent navigation bars, or in other words “sticky headers”, mean that th
 
 Make the header fixed if it doesn’t violate your overall design concept. It’s a good idea for both desktop and mobile designs:
 
--   E-commerce websites — the cart is always in front of the user.
--   Service websites — the phone number or a CTA are constantly on display.
+- E-commerce websites — the cart is always in front of the user.
+- Service websites — the phone number or a CTA are constantly on display.
 
 Fixed headers improve the customer experience, keeping users oriented and giving them more control.
 
@@ -124,10 +123,10 @@ If it’s a **promotional website** intended for the presentation of a product, 
 
 There are several possible messages a header can convey:
 
--   urge a consumer to do something
--   work on trust-building
--   encourage a visitor to know more
--   be amusing, etc.
+- urge a consumer to do something
+- work on trust-building
+- encourage a visitor to know more
+- be amusing, etc.
 
 The choice depends on a particular website’s aim.
 

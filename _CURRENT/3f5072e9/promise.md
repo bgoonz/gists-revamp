@@ -1,12 +1,10 @@
-intro
------
+## intro
 
 A Promise is a programming construct that can reduce some of the pains of asynchronous programming. Using Promises can help produce code that is leaner, easier to maintain, and easier to build on.
 
 This lesson will mostly focus on ES6 Promise syntax, but will use [Bluebird](https://github.com/petkaantonov/bluebird) since it provides excellent error handling in the browser. The CommonJS syntax will need a bundler like [browserify](https://github.com/substack/node-browserify) or [webpack](http://webpack.github.io/). See [jam3-lesson-module-basics](https://github.com/Jam3/jam3-lesson-module-basics) for an introduction to CommonJS and browserify.
 
-the problem
------------
+## the problem
 
 To demonstrate, let’s take the problem of loading images in the browser. The following shows an implementation using a Node style (error-first) callback:
 
@@ -24,7 +22,7 @@ To demonstrate, let’s take the problem of loading images in the browser. The f
       image.src = url;
     }
 
-<sub>*Tip:*\ The\ above\ is\ implemented\ on\ npm\ as\ [img](https://www.npmjs.com/package/img).</sub>
+<sub>_Tip:_\ The\ above\ is\ implemented\ on\ npm\ as\ [img](https://www.npmjs.com/package/img).</sub>
 
 Loading a single image is relatively easy, and looks like this:
 
@@ -52,8 +50,7 @@ However, as our application grows in complexity, so too does the code. If we wer
 
 This tends to create a “Christmas Tree” of functions; and leads to code that is difficult to read and maintain. Further, if we wanted the images to load in parallel, it would need a [more complex solution](https://gist.github.com/mattdesl/7b2afa86481fbce87098).
 
-async
------
+## async
 
 There are numerous abstractions built around the error-first callbacks, sometimes called “errbacks.”
 
@@ -69,18 +66,17 @@ One way to solve the problem is with the [async](https://github.com/caolan/async
 
 Similar abstractions exist independently on npm, such as:
 
--   [async-each](https://www.npmjs.com/package/async-each)
--   [async-each-series](https://www.npmjs.com/package/async-each-series)
--   [run-series](https://www.npmjs.com/package/run-series)
--   [run-waterfall](https://www.npmjs.com/package/run-waterfall)
--   [map-limit](https://www.npmjs.com/package/map-limit)
+- [async-each](https://www.npmjs.com/package/async-each)
+- [async-each-series](https://www.npmjs.com/package/async-each-series)
+- [run-series](https://www.npmjs.com/package/run-series)
+- [run-waterfall](https://www.npmjs.com/package/run-waterfall)
+- [map-limit](https://www.npmjs.com/package/map-limit)
 
 This approach is very powerful. It’s [a great fit for small modules](#promises-in-small-modules) as it does not introduce additional bloat or vendor lock-in, and does not have some of the other [pitfalls of promises](#pitfalls).
 
 However, in a larger scope, promises can provide a unified and composable structure throughout your application. They will also lay the groundwork for [ES7 async/await](https://jakearchibald.com/2014/es7-async-functions/).
 
-promises
---------
+## promises
 
 Let’s re-implement the above with promises for our control flow. At first this may seem like more overhead, but the benefits will become clear shortly.
 
@@ -106,7 +102,7 @@ Below is how the image loading function would be implemented with promises. We�
       });
     }
 
-The function returns a new instance of `Promise` which is *resolved* to `image` if the load succeeds, or *rejected* with a new `Error` if it fails. In our case, we `require('bluebird')` for the Promise implementation.
+The function returns a new instance of `Promise` which is _resolved_ to `image` if the load succeeds, or _rejected_ with a new `Error` if it fails. In our case, we `require('bluebird')` for the Promise implementation.
 
 The `Promise` constructor is typically only needed for edge cases like this, where we are converting a callback-style API into a promise-style API. In many cases it is preferable to use a `promisify` or `denodeify` utility which converts Node style (error-first) functions into their `Promise` counterpart.
 
@@ -147,7 +143,7 @@ Promises also have a `.catch(func)` to handle errors, which is the same as `.the
 
 ### chaining
 
-The `.then()` method *always returns a Promise*, which means it can be chained. The above could be re-written like so. If a promise is rejected, the next `catch()` or `then(null, rejected)` will be called.
+The `.then()` method _always returns a Promise_, which means it can be chained. The above could be re-written like so. If a promise is rejected, the next `catch()` or `then(null, rejected)` will be called.
 
 In the following example, if the `loadImageAsync` method is rejected, the only output to the console will be the error message.
 
@@ -200,7 +196,7 @@ The above tries to load `'one.png'`, but if that fails it will then load `'not-f
 
 Let’s go back to our original task of loading multiple images.
 
-The `Promise.all()` method accepts an array of values or promises and returns a new `Promise` that is only resolved once *all* the promises are resolved. Here we map each URL to a new Promise using `loadImageAsync`, and then pass those promises to `all()`.
+The `Promise.all()` method accepts an array of values or promises and returns a new `Promise` that is only resolved once _all_ the promises are resolved. Here we map each URL to a new Promise using `loadImageAsync`, and then pass those promises to `all()`.
 
     var urls = ['one.png', 'two.png', 'three.png'];
     var promises = urls.map(loadImageAsync);
@@ -271,8 +267,7 @@ It leads to frustrations during browser development: you might lose debugger cap
 
 For many developers, this is enough reason to eschew promises in favour of error-first callbacks and abstractions like [async](#async).
 
-common patterns
----------------
+## common patterns
 
 ### memoization
 
@@ -312,7 +307,7 @@ Here `loadUserThumbnail` returns a `Promise` that resolves to an image. With `Pr
 
 ### handling user errors
 
-Functions that return promises should *always* return promises, so the user does not need to wrap them in a `try/catch` block.
+Functions that return promises should _always_ return promises, so the user does not need to wrap them in a `try/catch` block.
 
 Instead of throwing errors on invalid user arguments, you should return a promise that rejects with an error. [Promise.reject()](#promiseresolve--promisereject) can be convenient here.
 
@@ -348,8 +343,8 @@ Although this guide uses [bluebird](https://github.com/petkaantonov/bluebird), i
 
 Some other implementations:
 
--   [pinkie-promise](https://github.com/floatdrop/pinkie-promise)
--   [es6-promise](https://www.npmjs.com/package/es6-promise)
+- [pinkie-promise](https://github.com/floatdrop/pinkie-promise)
+- [es6-promise](https://www.npmjs.com/package/es6-promise)
 
 For example, in Node/browserify:
 
@@ -357,8 +352,7 @@ For example, in Node/browserify:
     // otherwise fall back to polyfill
     var Promise = global.Promise || require('es6-promise').Promise;
 
-pitfalls
---------
+## pitfalls
 
 In addition to the the issues mentioned in [`throw` and implicit catch](#throw-and-implicit-catch), there are some other problems to keep in mind when choosing promises. Some developers choose not to use promises for these reasons.
 
@@ -366,9 +360,9 @@ In addition to the the issues mentioned in [`throw` and implicit catch](#throw-a
 
 One situation where promises are not yet a good fit is in small, self-contained [npm](https://www.npmjs.com/) modules.
 
--   Depending on `bluebird` or `es6-promise` is a form of vendor lock-in. It can be a problem for frontend developers, where bundle size is a constraint.
--   Expecting the native `Promise` (ES2015) constructor is also a problem, since it creates a peer dependency on these polyfills.
--   Mixing different promise implementations across modules may lead to subtle bugs and debugging irks.
+- Depending on `bluebird` or `es6-promise` is a form of vendor lock-in. It can be a problem for frontend developers, where bundle size is a constraint.
+- Expecting the native `Promise` (ES2015) constructor is also a problem, since it creates a peer dependency on these polyfills.
+- Mixing different promise implementations across modules may lead to subtle bugs and debugging irks.
 
 Until native Promise support is widespread, it is often easier to use Node-style callbacks and independent [async modules](#async) for control flow and smaller bundle size.
 
@@ -385,13 +379,12 @@ See Nolan Lawson’s [“We Have a Problem With Promises”](http://pouchdb.com/
 
 ### lock-in
 
-Another frustration is that promises tend to work best once *everything* in your codebase is using them. In practice, you might find yourself refactoring and “promisifying” a lot of code before you can reap the benefits of promises. It also means that new code must be written with promises in mind — you are now stuck with them!
+Another frustration is that promises tend to work best once _everything_ in your codebase is using them. In practice, you might find yourself refactoring and “promisifying” a lot of code before you can reap the benefits of promises. It also means that new code must be written with promises in mind — you are now stuck with them!
 
-further reading
----------------
+## further reading
 
 For a comprehensive list of Promise resources and small modules to avoid library lock-in, check out [Awesome Promises](https://github.com/wbinnssmith/awesome-promises).
 
--   [JavaScript Promises: There and back again](http://www.html5rocks.com/en/tutorials/es6/promises/)
--   [We Have a Problem With Promises](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
--   [You’re Missing the Point of Promises](https://blog.domenic.me/youre-missing-the-point-of-promises/)
+- [JavaScript Promises: There and back again](http://www.html5rocks.com/en/tutorials/es6/promises/)
+- [We Have a Problem With Promises](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
+- [You’re Missing the Point of Promises](https://blog.domenic.me/youre-missing-the-point-of-promises/)
