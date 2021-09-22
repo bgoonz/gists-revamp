@@ -431,7 +431,7 @@ tree -d -L 5 >README.md
 tree -L 5 >README.md
 git commit -m "readme"
 find ./ -mindepth 2 -type f -exec mv -t ./ --backup=t '{}' +
-for f in * ; do mv "$f" "$f.md"; done
+for f in _ ; do mv "$f" "$f.md"; done
 find . -type f -exec mv '{}' '{}'.md \;
 httrack https://apply.lambdaschool.com/courses/web/
 httrack https://en.wikipedia.org/wiki/List_of_lists_of_lists
@@ -466,16 +466,16 @@ git remote remove origin
 cd ecommerce-interactive
 git commit -m "content update"
 git commit -m "not initial commit"
-sudo sed -i '/This is Squarespace/d' ./*.html
-sudo sed -i '/\<\!\-\- flounder\-flower\-xpaw \-\-\>/d' ./*.html
-sudo sed -i '/flounder\-flower\-xpaw/d' ./*.html
-sudo sed -i '/Added by HTTrack/d' ./*.html
-pandoc *.html >/ALL.html
-sudo pandoc *.html >/ALL.html
-$ cat * > merged-file
+sudo sed -i '/This is Squarespace/d' ./_.html
+sudo sed -i '/\<\!\-\- flounder\-flower\-xpaw \-\-\>/d' ./_.html
+sudo sed -i '/flounder\-flower\-xpaw/d' ./_.html
+sudo sed -i '/Added by HTTrack/d' ./_.html
+pandoc _.html >/ALL.html
+sudo pandoc _.html >/ALL.html
+$ cat _ > merged-file
 $ cat *html > merged-file.html
 cat *html > merged-file.html
-cat *.html > merged-file.html
+cat _.html > merged-file.html
 git commit -m "format"
 npm install -g create-react-app
 create-react-app hello-world
@@ -498,15 +498,15 @@ eslint parse.js
 npminstall eslint
 sudo apt install eslint
 unzip
-find ./ -type f -name *.tar.gz -exec tar -xf {} \;
+find ./ -type f -name _.tar.gz -exec tar -xf {} \;
 git commit -m "right folder"
-find -name "* \*" -type d | rename 's/ /*/g' # do the directories first
+find -name "_ \*" -type d | rename 's/ /_/g' # do the directories first
 find -name "\* _" -type f | rename 's/ /\_/g'
 pandoc _.html> ./OUTPUT.html
 git checkoout
 checkout
 git checkout
-cd Medium_Articles/
+cd Medium*Articles/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://soybean-tulip-em56.squarespace.com/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://bryans-spectacular-project-fae067.webflow.io/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off http://creado-template.webflow.io/v1/works
@@ -549,7 +549,7 @@ rm -rd
 rm -rf
 npm install -g modernizr
 python3 get-gists.py Colt
-rm -rf _
+rm -rf *
 npm run serve
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://az-aurora.webflow.io/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://brian-miller.webflow.io/
@@ -567,10 +567,10 @@ python3 get-gists.py bartdorsey
 python3 get-gists.py ericelliott
 python3 get-gists.py noelbundick
 python3 get-gists.py jhnns
-python3 get_gists.py anders
+python3 get*gists.py anders
 python3 get-gists.py anders
 python3 get-gists.py E-Bo
-rm-rf _
+rm-rf *
 modernizr -c modernizr-config.json
 tree > README.md
 git remote add origin https://github.com/bgoonz/mini-project-showcase.git
@@ -808,8 +808,8 @@ cd \_JAMES/
 python3 get-gists.py jamesurobertson
 hi
 rename 's/\.js\.download$/.js/' *.js\.download
-function RecurseDirs () { oldIFS=$IFS;     IFS=$'\n'; for f in "$@";     do    rename  's/ *$//' * if [[-d "${f}"]]; then cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
-find . -name 'node_modules' -type d -print
+function RecurseDirs () { oldIFS=$IFS; IFS=$'\n'; for f in "$@"; do rename 's/ _$//' _ if [[-d "${f}"]]; then cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
+find . -name 'node*modules' -type d -print
 git submodule add https://github.com/bgoonz/bgoonz.github.io.git
 function RecurseDirs () { oldIFS=$IFS;     IFS=$'\n'; for f in "$@";     do    rename 's/\.js\.download$/.js/' *.js\.download if [[-d "${f}"]]; then cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
 git commit -m "updated content"
@@ -847,17 +847,17 @@ sudo apt uninstall pandoc
 sudo apt remove pandoc
 sudo apt install pandoc
 pandoc \*.md> -o * Combined.html
-pandoc _.md> -o \_Combined.html
+pandoc *.md> -o \_Combined.html
 npm run devstart
 netlify deploy
 netlify deploy -y
-npm config set msvs_version 2017
+npm config set msvs*version 2017
 npm audit fix --force
 sudo npm audit fix --force
 npm install -g npmnpm install -g npm
 cd "c:\0-a-A-October\00-weeks-container\00-weeks_CONTAINER\02-mod1-a-2--\App-Academy-Notes-master\week-4\Test_Review"
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://skilled.dev/
-pandoc _.md> -o _OUTPUT.html
+pandoc *.md> -o _OUTPUT.html
 pandoc \*.md> -o _./OUTPUT.html
 pandoc ./ _.md> -o \_./OUTPUT.html
 pandoc ./ _.md> -o _OUTPUT.html
@@ -1024,7 +1024,7 @@ cd back-end
 solving deltas: 100% (97275/97275), done.
 BUG: refs/files-backend.c:2956: initial ref transaction called with existing refs
 Aborted
-|18:08:06|bryan@LAPTOP-9LGJ3JGS:[Original] Original_exitstatus:134****************************\_\_****************************o>
+|18:08:06|bryan@LAPTOP-9LGJ3JGS:[Original] Original*exitstatus:134************\*\*\*\*************\_\_************\*\*\*\*************o>
 git commit -m "newer articles"
 lebab --replace BinarySearchTree.js --transform let
 lebab --replace BinarySearchTree.js --transform class
@@ -1041,8 +1041,8 @@ git remote rm https://github.com/bgoonz/web-dev-resource-hub.git
 npm i beautify -gnpm i beautify -gnpm i beautify -g
 npm i beautify -g
 git clone https://gitlab.com/bryan.guner.dev/web-dev-notes-resource-site.git
-find . -type f -exec sed -i '/Andreas Mehlsen/d' ./_.html {} \;
-find . -type f -exec sed -i '/andreas/d' ./_.html {} \;
+find . -type f -exec sed -i '/Andreas Mehlsen/d' ./*.html {} \;
+find . -type f -exec sed -i '/andreas/d' ./\_.html {} \;
 npm run deploy
 firebase login
 npm install --save site-mapper
