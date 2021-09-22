@@ -1,3 +1,4 @@
+
 def bellman_ford(graph, source):
     weight = {}
     pre_node = {}
@@ -18,11 +19,11 @@ def bellman_ford(graph, source):
 
     return True
 
-
 def initialize_single_source(graph, source, weight, pre_node):
 
     for node in graph:
-        weight[node] = float("inf")
+        weight[node] = float('inf')
         pre_node[node] = None
 
     weight[source] = 0
+    
