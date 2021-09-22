@@ -10,4 +10,3 @@ function charCount(inputString) {
   return res;
 }
 console.log(charCount("aaabbbeebbcdkjfalksdfjlkasdfasdfiiidkkdingds"));
-
