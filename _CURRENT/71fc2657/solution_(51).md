@@ -1,22 +1,11 @@
-```js run demo
-function Calculator() {
-  this.read = function () {
-    this.a = +prompt("a?", 0);
-    this.b = +prompt("b?", 0);
-  };
+\`\`\`js run demo function Calculator() {
 
-  this.sum = function () {
-    return this.a + this.b;
-  };
+this.read = function() { this.a = +prompt(‘a?’, 0); this.b = +prompt(‘b?’, 0); };
 
-  this.mul = function () {
-    return this.a * this.b;
-  };
-}
+this.sum = function() { return this.a + this.b; };
 
-let calculator = new Calculator();
-calculator.read();
+this.mul = function() { return this.a \* this.b; }; }
 
-alert("Sum=" + calculator.sum());
-alert("Mul=" + calculator.mul());
-```
+let calculator = new Calculator(); calculator.read();
+
+alert( “Sum=” + calculator.sum() ); alert( “Mul=” + calculator.mul() ); \`\`\`

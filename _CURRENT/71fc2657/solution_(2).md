@@ -1,7 +1,7 @@
 The HTML code:
 
-[html src="index.html"]
+\[html src=“index.html”\]
 
 For the file `alert.js` in the same folder:
 
-[js src="alert.js"]
+\[js src=“alert.js”\]

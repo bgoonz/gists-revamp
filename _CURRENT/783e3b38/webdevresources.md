@@ -6,11 +6,11 @@
 
 [![word doc to html](https://html-css-js.com/images/banners/wordhtml.jpg)Word HTMLFree online Word and other rich text editor and HTML converter. Copy-paste your document in the editor and switch to HTML view to get the code. *wordhtml.com*](https://wordhtml.com/)
 
-[![html css js cheat sheet](https://html-css-js.com/images/banners/html-cheat-sheet.jpg)HTML Cheat SheetHTML, CSS, JavaScript and other web technology cheat sheet with interactive user interface. Grab the code you're looking for quickly. *htmlcheatsheet.com*](https://htmlcheatsheet.com/)
+[![html css js cheat sheet](https://html-css-js.com/images/banners/html-cheat-sheet.jpg)HTML Cheat SheetHTML, CSS, JavaScript and other web technology cheat sheet with interactive user interface. Grab the code you’re looking for quickly. *htmlcheatsheet.com*](https://htmlcheatsheet.com/)
 
-[![stack overflow](https://html-css-js.com/images/banners/stackoverflow.jpg)Stack OverflowHuge programmer community where you usually don't have to ask for help because probably someone has already answered the same question. *stackoverflow.com*](https://stackoverflow.com/)
+[![stack overflow](https://html-css-js.com/images/banners/stackoverflow.jpg)Stack OverflowHuge programmer community where you usually don’t have to ask for help because probably someone has already answered the same question. *stackoverflow.com*](https://stackoverflow.com/)
 
-[![w3schools](https://html-css-js.com/images/banners/w3schools.jpg)w3schoolsThe place to learn web technologies. There's a big chance that this site gives the first search result when you're looking for a HTML term. *w3schools.com*](https://www.w3schools.com/)
+[![w3schools](https://html-css-js.com/images/banners/w3schools.jpg)w3schoolsThe place to learn web technologies. There’s a big chance that this site gives the first search result when you’re looking for a HTML term. *w3schools.com*](https://www.w3schools.com/)
 
 [![Mozzilla Developer Network](https://html-css-js.com/images/banners/mdn.jpg)Mozzilla Developer NetworkAn evolving learning platform for web technologies. Providing tutorials, developer tools and the information to easily build projects. *developer.mozilla.org*](https://developer.mozilla.org/)
 
@@ -46,7 +46,7 @@
 
 [![google fonts](https://html-css-js.com/images/banners/google-fonts.jpg)Google FontsAn interactive directory of over 800 free hosted web fonts. It allows to optimize loading speed by including only what you need. *fonts.google.com*](https://fonts.google.com/)
 
-[![font awesome](https://html-css-js.com/images/banners/font-awesome.jpg)Font AwesomeThe most popular icon set based on CSS and LESS. The vector icons can be customized as text -- size, color, drop shadow *fontawesome.io*](https://fontawesome.com/)
+[![font awesome](https://html-css-js.com/images/banners/font-awesome.jpg)Font AwesomeThe most popular icon set based on CSS and LESS. The vector icons can be customized as text – size, color, drop shadow *fontawesome.io*](https://fontawesome.com/)
 
 [![rgb color code](https://html-css-js.com/images/banners/rgb-color-code.jpg)RGB Color CodesSearch and save color codes. Search by name or mix the RGB, HSV or CMYK values. Use the generated HTML/CSS codes. *rgbcolorcode.com*](https://rgbcolorcode.com/)
 
@@ -60,7 +60,7 @@
 
 [![codepen](https://html-css-js.com/images/banners/codepen.jpg)CodepenRegister to create, save and share HTML-CSS-JS code snippets and run them online. *codepen.io*](https://codepen.io/)
 
-[![jsfiddle](https://html-css-js.com/images/banners/jsfiddle.jpg)JSFiddleSimilar to Codepen but this one doesn't require registration. Test HTML-CSS-JS code online and save your small project in a shareable URL. *jsfiddle.net*](https://jsfiddle.net/)
+[![jsfiddle](https://html-css-js.com/images/banners/jsfiddle.jpg)JSFiddleSimilar to Codepen but this one doesn’t require registration. Test HTML-CSS-JS code online and save your small project in a shareable URL. *jsfiddle.net*](https://jsfiddle.net/)
 
 [![wordpress](https://html-css-js.com/images/banners/wordpress.jpg)WordPress.OrgMore than 10 million websites use this free and open-source content management system based on PHP-MySql. *wordpress.org*](https://wordpress.org/)
 
@@ -68,8 +68,8 @@
 
 [![website setup](https://html-css-js.com/images/banners/websitesetup.jpg)Website SetupA friendly guide about how to make a website, discussing the hosting, the CMS, domain name and promotion. *websitesetup.org*](https://websitesetup.org/)
 
-[![expireddomains](https://html-css-js.com/images/banners/expireddomains.jpg)Expired DomainsHunt for expired domain names or get inspiration for your next project. It's worth registering for an account on this free website. *expireddomains.net*](https://www.expireddomains.net/)
+[![expireddomains](https://html-css-js.com/images/banners/expireddomains.jpg)Expired DomainsHunt for expired domain names or get inspiration for your next project. It’s worth registering for an account on this free website. *expireddomains.net*](https://www.expireddomains.net/)
 
 [![badhtml](https://html-css-js.com/images/banners/badhtml.jpg)Bad HTMLThe ugliest website on the internet, collecting bad UI/UX practices. A deterrent example about how not to build a website. *badhtml.com*](https://badhtml.com/)
 
-[![1stwebdesigner](https://html-css-js.com/images/banners/1stwebdesign.jpg)1st Web DesignerFollow this web design blog to find out what's new in freelance, marketing, UX etc. categories. *1stwebdesigner.com*](https://1stwebdesigner.com/)
+[![1stwebdesigner](https://html-css-js.com/images/banners/1stwebdesign.jpg)1st Web DesignerFollow this web design blog to find out what’s new in freelance, marketing, UX etc. categories. *1stwebdesigner.com*](https://1stwebdesigner.com/)

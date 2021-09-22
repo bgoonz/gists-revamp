@@ -1,165 +1,72 @@
-# Notes About Leetcode/Interview Prep
+Notes About Leetcode/Interview Prep
+===================================
 
-## Tips
+Tips
+----
 
-- You don't need to complete all 3.
-- I got 3 Qs to complete in 1 hour.
-- I was able to give solutions to 2 of them.
-- I had to use Eclipse to debug and ensure the tests passed.
-- For the third one, I mentioned the approach, that too a brute force approach, and got invited to on-site.
-- Giving time/space complexities in comments and a 2 to 3 line explanation is also expected.
+-   You don’t need to complete all 3.
+-   I got 3 Qs to complete in 1 hour.
+-   I was able to give solutions to 2 of them.
+-   I had to use Eclipse to debug and ensure the tests passed.
+-   For the third one, I mentioned the approach, that too a brute force approach, and got invited to on-site.
+-   Giving time/space complexities in comments and a 2 to 3 line explanation is also expected.
 
-## Puzzle
+Puzzle
+------
 
 Given an 8-pint jug full of water and two empty jugs of 5- and 3-pint capacity, get exactly 4 pints of water in one of the jugs by completely filling up and/or emptying jugs into others?
 
-- pour from 8 to 5 (3 in 8, 5 in 5, 0 in 3)
-- pour from 5 to 3 (3 in 8, 2 in 5, 3 in 3)
-- pour from 3 to 8 (6 in 8, 2 in 5, 0 in 3)
-- pour from 5 to 3 (6 in 8, 0 in 5, 2 in 3)
-- pour from 8 to 5 (1 in 8, 5 in 5, 2 in 3)
-- pour from 5 to 3 (1 in 8, 4 in 5, 3 in 3)
-- pour from 3 to 8 (4 in 8, 4 in 5, 0 in 3)
+-   pour from 8 to 5 (3 in 8, 5 in 5, 0 in 3)
+-   pour from 5 to 3 (3 in 8, 2 in 5, 3 in 3)
+-   pour from 3 to 8 (6 in 8, 2 in 5, 0 in 3)
+-   pour from 5 to 3 (6 in 8, 0 in 5, 2 in 3)
+-   pour from 8 to 5 (1 in 8, 5 in 5, 2 in 3)
+-   pour from 5 to 3 (1 in 8, 4 in 5, 3 in 3)
+-   pour from 3 to 8 (4 in 8, 4 in 5, 0 in 3)
 
-## Left To Add
+Left To Add
+-----------
 
-- [x] [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
-- [x] [Milk Bottles](https://leetcode.com/discuss/interview-question/707939/Microsoft-or-Azure-or-Milk-Bottles)
-- [ ] [Find Largest BST Subtree in a given Binary Tree](https://www.geeksforgeeks.org/find-the-largest-subtree-in-a-tree-that-is-also-a-bst/)
-- [ ] [Return Strings That Do Not Contain Identical Neighbors](https://leetcode.com/discuss/interview-question/525986/Microsoft-or-OA-2020-or-Return-strings-that-donot-contain-identical-neighbors)
-- [ ] [Largest M-Aligned Subset](https://leetcode.com/discuss/interview-question/525894/Microsoft-or-OA-2020-or-m-aligned-subset)
-- [ ] [Concatenated String Length with unique Characters](https://leetcode.com/discuss/interview-question/401826/)
-- [ ] [Largest K such that both K and -K exist in array](https://leetcode.com/discuss/interview-question/406031/)
-- [ ] [Min Swaps to Group Red Balls](https://leetcode.com/discuss/interview-question/414660/)
-- [ ] [Max Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
-- [ ] [Unique Integers That Sum Up To 0](https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/)
-- [ ] [Min Deletions To Obtain String in Right Format](https://leetcode.com/discuss/interview-question/421975/)
-- [ ] [Particle Velocity](https://leetcode.com/discuss/interview-question/428272/)
-- [ ] [Partition array into N subsets with balanced sum](https://leetcode.com/discuss/interview-question/430981/)
-- [ ] [Widest Path Without Trees [Experienced]](https://leetcode.com/discuss/interview-question/447448/)
-- [ ] [Jump Game [Experienced]](https://leetcode.com/discuss/interview-question/451482/)
-- [ ] [Fair Indexes](https://leetcode.com/discuss/interview-question/451422/)
-- [ ] [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)
-- [ ] [Light Bulb Switcher](https://leetcode.com/discuss/interview-question/502549/)
-- [ ] [Plane Seat Reservation](https://leetcode.com/discuss/interview-question/492652/)
-- [ ] [Crop Words](https://leetcode.com/discuss/interview-question/507367/)
-- [ ] [Max Chunks to Sort Array](https://leetcode.com/discuss/interview-question/524146/)
-- [ ] [Largest number X which occurs X times](https://leetcode.com/discuss/interview-question/525977/)
-- [ ] [Min Cost to Get String Without 2 Identical Consecutive Letters](https://leetcode.com/discuss/interview-question/558379/)
-- [ ] [Riddle](https://leetcode.com/discuss/interview-question/578315/)
-- [ ] [Count Visible Nodes in Binary Tree](https://leetcode.com/discuss/interview-question/546703/)
-- [ ] [Largest Alphabetic Character](https://leetcode.com/discuss/interview-question/548119/)
-- [ ] [Count Of Hours Variations](https://leetcode.com/discuss/interview-question/645626/)
-- [ ] [Aladdin Checkers Game](https://leetcode.com/discuss/interview-question/654921/)
-- [ ] [Number of fractions that sum up to 1](https://leetcode.com/discuss/interview-question/684355/)
-- [ ] [Word Machine](https://leetcode.com/discuss/interview-question/760379/Microsoft-or-OA-2020-or-Word-Machine)
-- [ ] [Xavier War](<https://leetcode.com/discuss/interview-question/551198/Microsoft-or-OA-or-Xavier-War(need-help-with-solution)>)
+-   \[X\] [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
+-   \[X\] [Milk Bottles](https://leetcode.com/discuss/interview-question/707939/Microsoft-or-Azure-or-Milk-Bottles)
+-   \[ \] [Find Largest BST Subtree in a given Binary Tree](https://www.geeksforgeeks.org/find-the-largest-subtree-in-a-tree-that-is-also-a-bst/)
+-   \[ \] [Return Strings That Do Not Contain Identical Neighbors](https://leetcode.com/discuss/interview-question/525986/Microsoft-or-OA-2020-or-Return-strings-that-donot-contain-identical-neighbors)
+-   \[ \] [Largest M-Aligned Subset](https://leetcode.com/discuss/interview-question/525894/Microsoft-or-OA-2020-or-m-aligned-subset)
+-   \[ \] [Concatenated String Length with unique Characters](https://leetcode.com/discuss/interview-question/401826/)
+-   \[ \] [Largest K such that both K and -K exist in array](https://leetcode.com/discuss/interview-question/406031/)
+-   \[ \] [Min Swaps to Group Red Balls](https://leetcode.com/discuss/interview-question/414660/)
+-   \[ \] [Max Length of a Concatenated String with Unique Characters](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
+-   \[ \] [Unique Integers That Sum Up To 0](https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/)
+-   \[ \] [Min Deletions To Obtain String in Right Format](https://leetcode.com/discuss/interview-question/421975/)
+-   \[ \] [Particle Velocity](https://leetcode.com/discuss/interview-question/428272/)
+-   \[ \] [Partition array into N subsets with balanced sum](https://leetcode.com/discuss/interview-question/430981/)
+-   \[ \] [Widest Path Without Trees \[Experienced\]](https://leetcode.com/discuss/interview-question/447448/)
+-   \[ \] [Jump Game \[Experienced\]](https://leetcode.com/discuss/interview-question/451482/)
+-   \[ \] [Fair Indexes](https://leetcode.com/discuss/interview-question/451422/)
+-   \[ \] [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)
+-   \[ \] [Light Bulb Switcher](https://leetcode.com/discuss/interview-question/502549/)
+-   \[ \] [Plane Seat Reservation](https://leetcode.com/discuss/interview-question/492652/)
+-   \[ \] [Crop Words](https://leetcode.com/discuss/interview-question/507367/)
+-   \[ \] [Max Chunks to Sort Array](https://leetcode.com/discuss/interview-question/524146/)
+-   \[ \] [Largest number X which occurs X times](https://leetcode.com/discuss/interview-question/525977/)
+-   \[ \] [Min Cost to Get String Without 2 Identical Consecutive Letters](https://leetcode.com/discuss/interview-question/558379/)
+-   \[ \] [Riddle](https://leetcode.com/discuss/interview-question/578315/)
+-   \[ \] [Count Visible Nodes in Binary Tree](https://leetcode.com/discuss/interview-question/546703/)
+-   \[ \] [Largest Alphabetic Character](https://leetcode.com/discuss/interview-question/548119/)
+-   \[ \] [Count Of Hours Variations](https://leetcode.com/discuss/interview-question/645626/)
+-   \[ \] [Aladdin Checkers Game](https://leetcode.com/discuss/interview-question/654921/)
+-   \[ \] [Number of fractions that sum up to 1](https://leetcode.com/discuss/interview-question/684355/)
+-   \[ \] [Word Machine](https://leetcode.com/discuss/interview-question/760379/Microsoft-or-OA-2020-or-Word-Machine)
+-   \[ \] [Xavier War](https://leetcode.com/discuss/interview-question/551198/Microsoft-or-OA-or-Xavier-War(need-help-with-solution))
 
 ### More Easy Problems
 
-| Title | Acceptance                                     | Frequency | Difficulty |
-| ----- | ---------------------------------------------- | --------- | ---------- |
-| 258   | Add Digits                                     | 51.5%     | Easy       |
-| 171   | Excel Sheet Column Number                      | 47.7%     | Easy       |
-| 387   | First Unique Character in a String             | 47.1%     | Easy       |
-| 237   | Delete Node in a Linked List                   | 47.0%     | Easy       |
-| 13    | Roman to Integer                               | 46.8%     | Easy       |
-| 206   | Reverse Linked List                            | 46.1%     | Easy       |
-| 268   | Missing Number                                 | 44.3%     | Easy       |
-| 121   | Best Time to Buy and Sell Stock                | 42.1%     | Easy       |
-| 270   | Closest Binary Search Tree Value               | 40.1%     | Easy       |
-| 235   | Lowest Common Ancestor of a Binary Search Tree | 39.5%     | Easy       |
-| 53    | Maximum Subarray                               | 39.9%     | Easy       |
-| 21    | Merge Two Sorted Lists                         | 39.3%     | Easy       |
-| 191   | Number of 1 Bits                               | 39.9%     | Easy       |
-| 101   | Symmetric Tree                                 | 39.5%     | Easy       |
-| 232   | Implement Queue using Stacks                   | 37.4%     | Easy       |
-| 443   | String Compression                             | 37.1%     | Easy       |
-| 1     | Two Sum                                        | 36.1%     | Easy       |
-| 141   | Linked List Cycle                              | 35.3%     | Easy       |
-| 26    | Remove Duplicates from Sorted Array            | 35.5%     | Easy       |
-| 112   | Path Sum                                       | 34.4%     | Easy       |
-| 20    | Valid Parentheses                              | 33.7%     | Easy       |
-| 88    | Merge Sorted Array                             | 32.1%     | Easy       |
-| 160   | Intersection of Two Linked Lists               | 30.8%     | Easy       |
-| 28    | Implement strStr()                             | 28.6%     | Easy       |
-| 168   | Excel Sheet Column Title                       | 26.7%     | Easy       |
-| 125   | Valid Palindrome                               | 26.6%     | Easy       |
-| 204   | Count Primes                                   | 26.6%     | Easy       |
-| 189   | Rotate Array                                   | 25.0%     | Easy       |
+<table><thead><tr class="header"><th>Title</th><th>Acceptance</th><th>Frequency</th><th>Difficulty</th></tr></thead><tbody><tr class="odd"><td>258</td><td>Add Digits</td><td>51.5%</td><td>Easy</td></tr><tr class="even"><td>171</td><td>Excel Sheet Column Number</td><td>47.7%</td><td>Easy</td></tr><tr class="odd"><td>387</td><td>First Unique Character in a String</td><td>47.1%</td><td>Easy</td></tr><tr class="even"><td>237</td><td>Delete Node in a Linked List</td><td>47.0%</td><td>Easy</td></tr><tr class="odd"><td>13</td><td>Roman to Integer</td><td>46.8%</td><td>Easy</td></tr><tr class="even"><td>206</td><td>Reverse Linked List</td><td>46.1%</td><td>Easy</td></tr><tr class="odd"><td>268</td><td>Missing Number</td><td>44.3%</td><td>Easy</td></tr><tr class="even"><td>121</td><td>Best Time to Buy and Sell Stock</td><td>42.1%</td><td>Easy</td></tr><tr class="odd"><td>270</td><td>Closest Binary Search Tree Value</td><td>40.1%</td><td>Easy</td></tr><tr class="even"><td>235</td><td>Lowest Common Ancestor of a Binary Search Tree</td><td>39.5%</td><td>Easy</td></tr><tr class="odd"><td>53</td><td>Maximum Subarray</td><td>39.9%</td><td>Easy</td></tr><tr class="even"><td>21</td><td>Merge Two Sorted Lists</td><td>39.3%</td><td>Easy</td></tr><tr class="odd"><td>191</td><td>Number of 1 Bits</td><td>39.9%</td><td>Easy</td></tr><tr class="even"><td>101</td><td>Symmetric Tree</td><td>39.5%</td><td>Easy</td></tr><tr class="odd"><td>232</td><td>Implement Queue using Stacks</td><td>37.4%</td><td>Easy</td></tr><tr class="even"><td>443</td><td>String Compression</td><td>37.1%</td><td>Easy</td></tr><tr class="odd"><td>1</td><td>Two Sum</td><td>36.1%</td><td>Easy</td></tr><tr class="even"><td>141</td><td>Linked List Cycle</td><td>35.3%</td><td>Easy</td></tr><tr class="odd"><td>26</td><td>Remove Duplicates from Sorted Array</td><td>35.5%</td><td>Easy</td></tr><tr class="even"><td>112</td><td>Path Sum</td><td>34.4%</td><td>Easy</td></tr><tr class="odd"><td>20</td><td>Valid Parentheses</td><td>33.7%</td><td>Easy</td></tr><tr class="even"><td>88</td><td>Merge Sorted Array</td><td>32.1%</td><td>Easy</td></tr><tr class="odd"><td>160</td><td>Intersection of Two Linked Lists</td><td>30.8%</td><td>Easy</td></tr><tr class="even"><td>28</td><td>Implement strStr()</td><td>28.6%</td><td>Easy</td></tr><tr class="odd"><td>168</td><td>Excel Sheet Column Title</td><td>26.7%</td><td>Easy</td></tr><tr class="even"><td>125</td><td>Valid Palindrome</td><td>26.6%</td><td>Easy</td></tr><tr class="odd"><td>204</td><td>Count Primes</td><td>26.6%</td><td>Easy</td></tr><tr class="even"><td>189</td><td>Rotate Array</td><td>25.0%</td><td>Easy</td></tr></tbody></table>
 
 ### More Medium Problems
 
-| Title | Acceptance                                                 | Frequency | Difficulty |
-| ----- | ---------------------------------------------------------- | --------- | ---------- |
-| 654   | Maximum Binary Tree                                        | 69.9%     | Medium     |
-| 419   | Battleships in a Board                                     | 62.3%     | Medium     |
-| 513   | Find Bottom Left Tree Value                                | 56.1%     | Medium     |
-| 238   | Product of Array Except Self                               | 49.8%     | Medium     |
-| 651   | 4 Keys Keyboard                                            | 48.8%     | Medium     |
-| 672   | Bulb Switcher II                                           | 47.9%     | Medium     |
-| 94    | Binary Tree Inorder Traversal                              | 47.8%     | Medium     |
-| 445   | Add Two Numbers II                                         | 45.9%     | Medium     |
-| 348   | Design Tic-Tac-Toe                                         | 45.8%     | Medium     |
-| 46    | Permutations                                               | 45.3%     | Medium     |
-| 650   | 2 Keys Keyboard                                            | 44.5%     | Medium     |
-| 452   | Minimum Number of Arrows to Burst Balloons                 | 44.4%     | Medium     |
-| 173   | Binary Search Tree Iterator                                | 42.4%     | Medium     |
-| 102   | Binary Tree Level Order Traversal                          | 41.0%     | Medium     |
-| 153   | Find Minimum in Rotated Sorted Array                       | 40.3%     | Medium     |
-| 48    | Rotate Image                                               | 40.0%     | Medium     |
-| 215   | Kth Largest Element in an Array                            | 39.9%     | Medium     |
-| 300   | Longest Increasing Subsequence                             | 38.7%     | Medium     |
-| 24    | Swap Nodes in Pairs                                        | 38.7%     | Medium     |
-| 75    | Sort Colors                                                | 38.4%     | Medium     |
-| 162   | Find Peak Element                                          | 38.1%     | Medium     |
-| 116   | Populating Next Right Pointers in Each Node                | 36.9%     | Medium     |
-| 567   | Permutation in String                                      | 36.6%     | Medium     |
-| 285   | Inorder Successor in BST                                   | 36.3%     | Medium     |
-| 73    | Set Matrix Zeroes                                          | 36.2%     | Medium     |
-| 114   | Flatten Binary Tree to Linked List                         | 35.7%     | Medium     |
-| 200   | Number of Islands                                          | 35.6%     | Medium     |
-| 103   | Binary Tree Zigzag Level Order Traversal                   | 35.5%     | Medium     |
-| 213   | House Robber II                                            | 34.3%     | Medium     |
-| 117   | Populating Next Right Pointers in Each Node II             | 33.8%     | Medium     |
-| 47    | Permutations II                                            | 33.7%     | Medium     |
-| 106   | Construct Binary Tree from Inorder and Postorder Traversal | 32.6%     | Medium     |
-| 33    | Search in Rotated Sorted Array                             | 32.0%     | Medium     |
-| 56    | Merge Intervals                                            | 31.0%     | Medium     |
-| 333   | Largest BST Subtree                                        | 30.6%     | Medium     |
-| 236   | Lowest Common Ancestor of a Binary Tree                    | 30.0%     | Medium     |
-| 55    | Jump Game                                                  | 29.5%     | Medium     |
-| 208   | Implement Trie (Prefix Tree)                               | 29.5%     | Medium     |
-| 2     | Add Two Numbers                                            | 28.1%     | Medium     |
-| 186   | Reverse Words in a String II                               | 27.7%     | Medium     |
-| 365   | Water and Jug Problem                                      | 27.7%     | Medium     |
-| 79    | Word Search                                                | 27.4%     | Medium     |
-| 54    | Spiral Matrix                                              | 26.6%     | Medium     |
-| 138   | Copy List with Random Pointer                              | 26.1%     | Medium     |
-| 722   | Remove Comments                                            | 25.8%     | Medium     |
-| 71    | Simplify Path                                              | 25.8%     | Medium     |
-| 5     | Longest Palindromic Substring                              | 25.3%     | Medium     |
-| 98    | Validate Binary Search Tree                                | 23.8%     | Medium     |
-| 15    | 3Sum                                                       | 21.8%     | Medium     |
-| 165   | Compare Version Numbers                                    | 20.4%     | Medium     |
-| 91    | Decode Ways                                                | 20.0%     | Medium     |
-| 151   | Reverse Words in a String                                  | 15.7%     | Medium     |
-| 8     | String to Integer (atoi)                                   | 13.9%     | Medium     |
+<table><thead><tr class="header"><th>Title</th><th>Acceptance</th><th>Frequency</th><th>Difficulty</th></tr></thead><tbody><tr class="odd"><td>654</td><td>Maximum Binary Tree</td><td>69.9%</td><td>Medium</td></tr><tr class="even"><td>419</td><td>Battleships in a Board</td><td>62.3%</td><td>Medium</td></tr><tr class="odd"><td>513</td><td>Find Bottom Left Tree Value</td><td>56.1%</td><td>Medium</td></tr><tr class="even"><td>238</td><td>Product of Array Except Self</td><td>49.8%</td><td>Medium</td></tr><tr class="odd"><td>651</td><td>4 Keys Keyboard</td><td>48.8%</td><td>Medium</td></tr><tr class="even"><td>672</td><td>Bulb Switcher II</td><td>47.9%</td><td>Medium</td></tr><tr class="odd"><td>94</td><td>Binary Tree Inorder Traversal</td><td>47.8%</td><td>Medium</td></tr><tr class="even"><td>445</td><td>Add Two Numbers II</td><td>45.9%</td><td>Medium</td></tr><tr class="odd"><td>348</td><td>Design Tic-Tac-Toe</td><td>45.8%</td><td>Medium</td></tr><tr class="even"><td>46</td><td>Permutations</td><td>45.3%</td><td>Medium</td></tr><tr class="odd"><td>650</td><td>2 Keys Keyboard</td><td>44.5%</td><td>Medium</td></tr><tr class="even"><td>452</td><td>Minimum Number of Arrows to Burst Balloons</td><td>44.4%</td><td>Medium</td></tr><tr class="odd"><td>173</td><td>Binary Search Tree Iterator</td><td>42.4%</td><td>Medium</td></tr><tr class="even"><td>102</td><td>Binary Tree Level Order Traversal</td><td>41.0%</td><td>Medium</td></tr><tr class="odd"><td>153</td><td>Find Minimum in Rotated Sorted Array</td><td>40.3%</td><td>Medium</td></tr><tr class="even"><td>48</td><td>Rotate Image</td><td>40.0%</td><td>Medium</td></tr><tr class="odd"><td>215</td><td>Kth Largest Element in an Array</td><td>39.9%</td><td>Medium</td></tr><tr class="even"><td>300</td><td>Longest Increasing Subsequence</td><td>38.7%</td><td>Medium</td></tr><tr class="odd"><td>24</td><td>Swap Nodes in Pairs</td><td>38.7%</td><td>Medium</td></tr><tr class="even"><td>75</td><td>Sort Colors</td><td>38.4%</td><td>Medium</td></tr><tr class="odd"><td>162</td><td>Find Peak Element</td><td>38.1%</td><td>Medium</td></tr><tr class="even"><td>116</td><td>Populating Next Right Pointers in Each Node</td><td>36.9%</td><td>Medium</td></tr><tr class="odd"><td>567</td><td>Permutation in String</td><td>36.6%</td><td>Medium</td></tr><tr class="even"><td>285</td><td>Inorder Successor in BST</td><td>36.3%</td><td>Medium</td></tr><tr class="odd"><td>73</td><td>Set Matrix Zeroes</td><td>36.2%</td><td>Medium</td></tr><tr class="even"><td>114</td><td>Flatten Binary Tree to Linked List</td><td>35.7%</td><td>Medium</td></tr><tr class="odd"><td>200</td><td>Number of Islands</td><td>35.6%</td><td>Medium</td></tr><tr class="even"><td>103</td><td>Binary Tree Zigzag Level Order Traversal</td><td>35.5%</td><td>Medium</td></tr><tr class="odd"><td>213</td><td>House Robber II</td><td>34.3%</td><td>Medium</td></tr><tr class="even"><td>117</td><td>Populating Next Right Pointers in Each Node II</td><td>33.8%</td><td>Medium</td></tr><tr class="odd"><td>47</td><td>Permutations II</td><td>33.7%</td><td>Medium</td></tr><tr class="even"><td>106</td><td>Construct Binary Tree from Inorder and Postorder Traversal</td><td>32.6%</td><td>Medium</td></tr><tr class="odd"><td>33</td><td>Search in Rotated Sorted Array</td><td>32.0%</td><td>Medium</td></tr><tr class="even"><td>56</td><td>Merge Intervals</td><td>31.0%</td><td>Medium</td></tr><tr class="odd"><td>333</td><td>Largest BST Subtree</td><td>30.6%</td><td>Medium</td></tr><tr class="even"><td>236</td><td>Lowest Common Ancestor of a Binary Tree</td><td>30.0%</td><td>Medium</td></tr><tr class="odd"><td>55</td><td>Jump Game</td><td>29.5%</td><td>Medium</td></tr><tr class="even"><td>208</td><td>Implement Trie (Prefix Tree)</td><td>29.5%</td><td>Medium</td></tr><tr class="odd"><td>2</td><td>Add Two Numbers</td><td>28.1%</td><td>Medium</td></tr><tr class="even"><td>186</td><td>Reverse Words in a String II</td><td>27.7%</td><td>Medium</td></tr><tr class="odd"><td>365</td><td>Water and Jug Problem</td><td>27.7%</td><td>Medium</td></tr><tr class="even"><td>79</td><td>Word Search</td><td>27.4%</td><td>Medium</td></tr><tr class="odd"><td>54</td><td>Spiral Matrix</td><td>26.6%</td><td>Medium</td></tr><tr class="even"><td>138</td><td>Copy List with Random Pointer</td><td>26.1%</td><td>Medium</td></tr><tr class="odd"><td>722</td><td>Remove Comments</td><td>25.8%</td><td>Medium</td></tr><tr class="even"><td>71</td><td>Simplify Path</td><td>25.8%</td><td>Medium</td></tr><tr class="odd"><td>5</td><td>Longest Palindromic Substring</td><td>25.3%</td><td>Medium</td></tr><tr class="even"><td>98</td><td>Validate Binary Search Tree</td><td>23.8%</td><td>Medium</td></tr><tr class="odd"><td>15</td><td>3Sum</td><td>21.8%</td><td>Medium</td></tr><tr class="even"><td>165</td><td>Compare Version Numbers</td><td>20.4%</td><td>Medium</td></tr><tr class="odd"><td>91</td><td>Decode Ways</td><td>20.0%</td><td>Medium</td></tr><tr class="even"><td>151</td><td>Reverse Words in a String</td><td>15.7%</td><td>Medium</td></tr><tr class="odd"><td>8</td><td>String to Integer (atoi)</td><td>13.9%</td><td>Medium</td></tr></tbody></table>
 
 ### More Hard Problems
 
-| Title | Acceptance                            | Frequency | Difficulty |
-| ----- | ------------------------------------- | --------- | ---------- |
-| 297   | Serialize and Deserialize Binary Tree | 34.0%     | Hard       |
-| 25    | Reverse Nodes in k-Group              | 31.1%     | Hard       |
-| 642   | Design Search Autocomplete System     | 30.7%     | Hard       |
-| 591   | Tag Validator                         | 30.1%     | Hard       |
-| 218   | The Skyline Problem                   | 28.2%     | Hard       |
-| 631   | Design Excel Sum Formula              | 27.6%     | Hard       |
-| 23    | Merge k Sorted Lists                  | 27.7%     | Hard       |
-| 124   | Binary Tree Maximum Path Sum          | 26.6%     | Hard       |
-| 212   | Word Search II                        | 24.0%     | Hard       |
-| 174   | Dungeon Game                          | 23.9%     | Hard       |
-| 4     | Median of Two Sorted Arrays           | 22.3%     | Hard       |
-| 273   | Integer to English Words              | 22.4%     | Hard       |
-| 146   | LRU Cache                             | 18.7%     | Hard       |
+<table><thead><tr class="header"><th>Title</th><th>Acceptance</th><th>Frequency</th><th>Difficulty</th></tr></thead><tbody><tr class="odd"><td>297</td><td>Serialize and Deserialize Binary Tree</td><td>34.0%</td><td>Hard</td></tr><tr class="even"><td>25</td><td>Reverse Nodes in k-Group</td><td>31.1%</td><td>Hard</td></tr><tr class="odd"><td>642</td><td>Design Search Autocomplete System</td><td>30.7%</td><td>Hard</td></tr><tr class="even"><td>591</td><td>Tag Validator</td><td>30.1%</td><td>Hard</td></tr><tr class="odd"><td>218</td><td>The Skyline Problem</td><td>28.2%</td><td>Hard</td></tr><tr class="even"><td>631</td><td>Design Excel Sum Formula</td><td>27.6%</td><td>Hard</td></tr><tr class="odd"><td>23</td><td>Merge k Sorted Lists</td><td>27.7%</td><td>Hard</td></tr><tr class="even"><td>124</td><td>Binary Tree Maximum Path Sum</td><td>26.6%</td><td>Hard</td></tr><tr class="odd"><td>212</td><td>Word Search II</td><td>24.0%</td><td>Hard</td></tr><tr class="even"><td>174</td><td>Dungeon Game</td><td>23.9%</td><td>Hard</td></tr><tr class="odd"><td>4</td><td>Median of Two Sorted Arrays</td><td>22.3%</td><td>Hard</td></tr><tr class="even"><td>273</td><td>Integer to English Words</td><td>22.4%</td><td>Hard</td></tr><tr class="odd"><td>146</td><td>LRU Cache</td><td>18.7%</td><td>Hard</td></tr></tbody></table>
