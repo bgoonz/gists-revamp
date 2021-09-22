@@ -1,10 +1,10 @@
-var baseSortedIndexBy = require('./_baseSortedIndexBy'),
-    identity = require('./identity'),
-    isSymbol = require('./isSymbol');
+var baseSortedIndexBy = require("./_baseSortedIndexBy"),
+  identity = require("./identity"),
+  isSymbol = require("./isSymbol");
 
 /** Used as references for the maximum length and index of an array. */
 var MAX_ARRAY_LENGTH = 4294967295,
-    HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
+  HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
 
 /**
  * The base implementation of `_.sortedIndex` and `_.sortedLastIndex` which
@@ -20,15 +20,22 @@ var MAX_ARRAY_LENGTH = 4294967295,
  */
 function baseSortedIndex(array, value, retHighest) {
   var low = 0,
-      high = array == null ? low : array.length;
+    high = array == null ? low : array.length;
 
-  if (typeof value == 'number' && value === value && high <= HALF_MAX_ARRAY_LENGTH) {
+  if (
+    typeof value == "number" &&
+    value === value &&
+    high <= HALF_MAX_ARRAY_LENGTH
+  ) {
     while (low < high) {
       var mid = (low + high) >>> 1,
-          computed = array[mid];
+        computed = array[mid];
 
-      if (computed !== null && !isSymbol(computed) &&
-          (retHighest ? (computed <= value) : (computed < value))) {
+      if (
+        computed !== null &&
+        !isSymbol(computed) &&
+        (retHighest ? computed <= value : computed < value)
+      ) {
         low = mid + 1;
       } else {
         high = mid;

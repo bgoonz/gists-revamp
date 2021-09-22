@@ -1,9 +1,9 @@
-var SetCache = require('./_SetCache'),
-    arrayIncludes = require('./_arrayIncludes'),
-    arrayIncludesWith = require('./_arrayIncludesWith'),
-    cacheHas = require('./_cacheHas'),
-    createSet = require('./_createSet'),
-    setToArray = require('./_setToArray');
+var SetCache = require("./_SetCache"),
+  arrayIncludes = require("./_arrayIncludes"),
+  arrayIncludesWith = require("./_arrayIncludesWith"),
+  cacheHas = require("./_cacheHas"),
+  createSet = require("./_createSet"),
+  setToArray = require("./_setToArray");
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -19,34 +19,31 @@ var LARGE_ARRAY_SIZE = 200;
  */
 function baseUniq(array, iteratee, comparator) {
   var index = -1,
-      includes = arrayIncludes,
-      length = array.length,
-      isCommon = true,
-      result = [],
-      seen = result;
+    includes = arrayIncludes,
+    length = array.length,
+    isCommon = true,
+    result = [],
+    seen = result;
 
   if (comparator) {
     isCommon = false;
     includes = arrayIncludesWith;
-  }
-  else if (length >= LARGE_ARRAY_SIZE) {
+  } else if (length >= LARGE_ARRAY_SIZE) {
     var set = iteratee ? null : createSet(array);
     if (set) {
       return setToArray(set);
     }
     isCommon = false;
     includes = cacheHas;
-    seen = new SetCache;
-  }
-  else {
+    seen = new SetCache();
+  } else {
     seen = iteratee ? [] : result;
   }
-  outer:
-  while (++index < length) {
+  outer: while (++index < length) {
     var value = array[index],
-        computed = iteratee ? iteratee(value) : value;
+      computed = iteratee ? iteratee(value) : value;
 
-    value = (comparator || value !== 0) ? value : 0;
+    value = comparator || value !== 0 ? value : 0;
     if (isCommon && computed === computed) {
       var seenIndex = seen.length;
       while (seenIndex--) {
@@ -58,8 +55,7 @@ function baseUniq(array, iteratee, comparator) {
         seen.push(computed);
       }
       result.push(value);
-    }
-    else if (!includes(seen, computed, comparator)) {
+    } else if (!includes(seen, computed, comparator)) {
       if (seen !== result) {
         seen.push(computed);
       }

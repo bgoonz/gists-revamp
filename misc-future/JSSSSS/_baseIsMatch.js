@@ -1,9 +1,9 @@
-var Stack = require('./_Stack'),
-    baseIsEqual = require('./_baseIsEqual');
+var Stack = require("./_Stack"),
+  baseIsEqual = require("./_baseIsEqual");
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
-    COMPARE_UNORDERED_FLAG = 2;
+  COMPARE_UNORDERED_FLAG = 2;
 
 /**
  * The base implementation of `_.isMatch` without support for iteratee shorthands.
@@ -17,8 +17,8 @@ var COMPARE_PARTIAL_FLAG = 1,
  */
 function baseIsMatch(object, source, matchData, customizer) {
   var index = matchData.length,
-      length = index,
-      noCustomizer = !customizer;
+    length = index,
+    noCustomizer = !customizer;
 
   if (object == null) {
     return !length;
@@ -26,32 +26,40 @@ function baseIsMatch(object, source, matchData, customizer) {
   object = Object(object);
   while (index--) {
     var data = matchData[index];
-    if ((noCustomizer && data[2])
-          ? data[1] !== object[data[0]]
-          : !(data[0] in object)
-        ) {
+    if (
+      noCustomizer && data[2]
+        ? data[1] !== object[data[0]]
+        : !(data[0] in object)
+    ) {
       return false;
     }
   }
   while (++index < length) {
     data = matchData[index];
     var key = data[0],
-        objValue = object[key],
-        srcValue = data[1];
+      objValue = object[key],
+      srcValue = data[1];
 
     if (noCustomizer && data[2]) {
       if (objValue === undefined && !(key in object)) {
         return false;
       }
     } else {
-      var stack = new Stack;
+      var stack = new Stack();
       if (customizer) {
         var result = customizer(objValue, srcValue, key, object, source, stack);
       }
-      if (!(result === undefined
-            ? baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG, customizer, stack)
-            : result
-          )) {
+      if (
+        !(result === undefined
+          ? baseIsEqual(
+              srcValue,
+              objValue,
+              COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG,
+              customizer,
+              stack
+            )
+          : result)
+      ) {
         return false;
       }
     }

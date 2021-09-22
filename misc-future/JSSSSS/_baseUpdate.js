@@ -1,5 +1,5 @@
-var baseGet = require('./_baseGet'),
-    baseSet = require('./_baseSet');
+var baseGet = require("./_baseGet"),
+  baseSet = require("./_baseSet");
 
 /**
  * The base implementation of `_.update`.

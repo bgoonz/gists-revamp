@@ -1,5 +1,5 @@
-var identity = require('./identity'),
-    metaMap = require('./_metaMap');
+var identity = require("./identity"),
+  metaMap = require("./_metaMap");
 
 /**
  * The base implementation of `setData` without support for hot loop shorting.
@@ -9,9 +9,11 @@ var identity = require('./identity'),
  * @param {*} data The metadata.
  * @returns {Function} Returns `func`.
  */
-var baseSetData = !metaMap ? identity : function(func, data) {
-  metaMap.set(func, data);
-  return func;
-};
+var baseSetData = !metaMap
+  ? identity
+  : function (func, data) {
+      metaMap.set(func, data);
+      return func;
+    };
 
 module.exports = baseSetData;

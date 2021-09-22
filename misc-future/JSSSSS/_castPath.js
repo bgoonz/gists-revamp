@@ -1,7 +1,7 @@
-var isArray = require('./isArray'),
-    isKey = require('./_isKey'),
-    stringToPath = require('./_stringToPath'),
-    toString = require('./toString');
+var isArray = require("./isArray"),
+  isKey = require("./_isKey"),
+  stringToPath = require("./_stringToPath"),
+  toString = require("./toString");
 
 /**
  * Casts `value` to a path array if it's not one.

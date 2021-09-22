@@ -1,5 +1,5 @@
-var copyArray = require('./_copyArray'),
-    shuffleSelf = require('./_shuffleSelf');
+var copyArray = require("./_copyArray"),
+  shuffleSelf = require("./_shuffleSelf");
 
 /**
  * A specialized version of `_.shuffle` for arrays.

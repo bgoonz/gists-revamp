@@ -1,6 +1,6 @@
-var isObject = require('./isObject'),
-    isPrototype = require('./_isPrototype'),
-    nativeKeysIn = require('./_nativeKeysIn');
+var isObject = require("./isObject"),
+  isPrototype = require("./_isPrototype"),
+  nativeKeysIn = require("./_nativeKeysIn");
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -20,10 +20,12 @@ function baseKeysIn(object) {
     return nativeKeysIn(object);
   }
   var isProto = isPrototype(object),
-      result = [];
+    result = [];
 
   for (var key in object) {
-    if (!(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
+    if (
+      !(key == "constructor" && (isProto || !hasOwnProperty.call(object, key)))
+    ) {
       result.push(key);
     }
   }

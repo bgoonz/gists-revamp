@@ -1,8 +1,8 @@
-var apply = require('./_apply'),
-    castPath = require('./_castPath'),
-    last = require('./last'),
-    parent = require('./_parent'),
-    toKey = require('./_toKey');
+var apply = require("./_apply"),
+  castPath = require("./_castPath"),
+  last = require("./last"),
+  parent = require("./_parent"),
+  toKey = require("./_toKey");
 
 /**
  * The base implementation of `_.invoke` without support for individual

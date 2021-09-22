@@ -8,7 +8,7 @@
  */
 function countHolders(array, placeholder) {
   var length = array.length,
-      result = 0;
+    result = 0;
 
   while (length--) {
     if (array[length] === placeholder) {

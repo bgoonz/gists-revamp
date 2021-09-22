@@ -13,7 +13,7 @@ var nativeFloor = Math.floor;
  * @returns {string} Returns the repeated string.
  */
 function baseRepeat(string, n) {
-  var result = '';
+  var result = "";
   if (!string || n < 1 || n > MAX_SAFE_INTEGER) {
     return result;
   }

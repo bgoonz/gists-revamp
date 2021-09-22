@@ -1,7 +1,7 @@
-var castPath = require('./_castPath'),
-    last = require('./last'),
-    parent = require('./_parent'),
-    toKey = require('./_toKey');
+var castPath = require("./_castPath"),
+  last = require("./last"),
+  parent = require("./_parent"),
+  toKey = require("./_toKey");
 
 /**
  * The base implementation of `_.unset`.

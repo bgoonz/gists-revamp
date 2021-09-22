@@ -1,4 +1,4 @@
-var isIndex = require('./_isIndex');
+var isIndex = require("./_isIndex");
 
 /**
  * The base implementation of `_.nth` which doesn't coerce arguments.

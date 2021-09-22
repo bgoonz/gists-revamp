@@ -1,5 +1,5 @@
-var copyObject = require('./_copyObject'),
-    getSymbols = require('./_getSymbols');
+var copyObject = require("./_copyObject"),
+  getSymbols = require("./_getSymbols");
 
 /**
  * Copies own symbols of `source` to `object`.

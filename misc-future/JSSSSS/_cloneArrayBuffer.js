@@ -1,4 +1,4 @@
-var Uint8Array = require('./_Uint8Array');
+var Uint8Array = require("./_Uint8Array");
 
 /**
  * Creates a clone of `arrayBuffer`.

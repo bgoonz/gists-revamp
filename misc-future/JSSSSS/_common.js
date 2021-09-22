@@ -7,8 +7,8 @@ module.exports = common = {
   	of some class.
   */
 
-  isBareObject: function(o) {
-    if ((o != null) && o.constructor === Object) {
+  isBareObject: function (o) {
+    if (o != null && o.constructor === Object) {
       return true;
     }
     return false;
@@ -19,41 +19,43 @@ module.exports = common = {
   	arguments, element, textnode, whitespace, and object
   */
 
-  typeOf: function(item) {
+  typeOf: function (item) {
     var _ref;
     if (item === null) {
-      return 'null';
+      return "null";
     }
-    if (typeof item !== 'object') {
+    if (typeof item !== "object") {
       return typeof item;
     }
     if (Array.isArray(item)) {
-      return 'array';
+      return "array";
     }
     if (item.nodeName) {
       if (item.nodeType === 1) {
-        return 'element';
+        return "element";
       }
       if (item.nodeType === 3) {
-        return (_ref = /\S/.test(item.nodeValue)) != null ? _ref : {
-          'textnode': 'whitespace'
-        };
+        return (_ref = /\S/.test(item.nodeValue)) != null
+          ? _ref
+          : {
+              textnode: "whitespace",
+            };
       }
-    } else if (typeof item.length === 'number') {
+    } else if (typeof item.length === "number") {
       if (item.callee) {
-        return 'arguments';
+        return "arguments";
       }
     }
     return typeof item;
   },
-  clone: function(item, includePrototype) {
+  clone: function (item, includePrototype) {
     if (includePrototype == null) {
       includePrototype = false;
     }
     switch (common.typeOf(item)) {
-      case 'array':
+      case "array":
         return common._cloneArray(item, includePrototype);
-      case 'object':
+      case "object":
         return common._cloneObject(item, includePrototype);
       default:
         return item;
@@ -64,7 +66,7 @@ module.exports = common = {
   	From MooTools
   */
 
-  _cloneObject: function(o, includePrototype) {
+  _cloneObject: function (o, includePrototype) {
     var clone, key;
     if (includePrototype == null) {
       includePrototype = false;
@@ -96,7 +98,7 @@ module.exports = common = {
   	From MooTools
   */
 
-  _cloneArray: function(a, includePrototype) {
+  _cloneArray: function (a, includePrototype) {
     var clone, i;
     if (includePrototype == null) {
       includePrototype = false;
@@ -107,5 +109,5 @@ module.exports = common = {
       clone[i] = common.clone(a[i], includePrototype);
     }
     return clone;
-  }
+  },
 };

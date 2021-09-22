@@ -1,4 +1,4 @@
-var baseRandom = require('./_baseRandom');
+var baseRandom = require("./_baseRandom");
 
 /**
  * A specialized version of `_.sample` for arrays.

@@ -1,4 +1,4 @@
-var isObject = require('./isObject');
+var isObject = require("./isObject");
 
 /** Built-in value references. */
 var objectCreate = Object.create;
@@ -11,9 +11,9 @@ var objectCreate = Object.create;
  * @param {Object} proto The object to inherit from.
  * @returns {Object} Returns the new object.
  */
-var baseCreate = (function() {
+var baseCreate = (function () {
   function object() {}
-  return function(proto) {
+  return function (proto) {
     if (!isObject(proto)) {
       return {};
     }
@@ -21,10 +21,10 @@ var baseCreate = (function() {
       return objectCreate(proto);
     }
     object.prototype = proto;
-    var result = new object;
+    var result = new object();
     object.prototype = undefined;
     return result;
   };
-}());
+})();
 
 module.exports = baseCreate;

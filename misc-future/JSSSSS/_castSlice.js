@@ -1,4 +1,4 @@
-var baseSlice = require('./_baseSlice');
+var baseSlice = require("./_baseSlice");
 
 /**
  * Casts `array` to a slice if it's needed.
@@ -12,7 +12,7 @@ var baseSlice = require('./_baseSlice');
 function castSlice(array, start, end) {
   var length = array.length;
   end = end === undefined ? length : end;
-  return (!start && end >= length) ? array : baseSlice(array, start, end);
+  return !start && end >= length ? array : baseSlice(array, start, end);
 }
 
 module.exports = castSlice;

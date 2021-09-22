@@ -1,8 +1,8 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObjectLike = require('./isObjectLike');
+var baseGetTag = require("./_baseGetTag"),
+  isObjectLike = require("./isObjectLike");
 
 /** `Object#toString` result references. */
-var regexpTag = '[object RegExp]';
+var regexpTag = "[object RegExp]";
 
 /**
  * The base implementation of `_.isRegExp` without Node.js optimizations.

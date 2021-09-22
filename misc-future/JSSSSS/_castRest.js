@@ -1,4 +1,4 @@
-var baseRest = require('./_baseRest');
+var baseRest = require("./_baseRest");
 
 /**
  * A `baseRest` alias which can be replaced with `identity` by module

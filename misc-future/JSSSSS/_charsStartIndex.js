@@ -1,4 +1,4 @@
-var baseIndexOf = require('./_baseIndexOf');
+var baseIndexOf = require("./_baseIndexOf");
 
 /**
  * Used by `_.trim` and `_.trimStart` to get the index of the first string symbol
@@ -11,9 +11,12 @@ var baseIndexOf = require('./_baseIndexOf');
  */
 function charsStartIndex(strSymbols, chrSymbols) {
   var index = -1,
-      length = strSymbols.length;
+    length = strSymbols.length;
 
-  while (++index < length && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {}
+  while (
+    ++index < length &&
+    baseIndexOf(chrSymbols, strSymbols[index], 0) > -1
+  ) {}
   return index;
 }
 

@@ -1,4 +1,4 @@
-var baseIndexOf = require('./_baseIndexOf');
+var baseIndexOf = require("./_baseIndexOf");
 
 /**
  * A specialized version of `_.includes` for arrays without support for

@@ -1,6 +1,6 @@
-var baseDifference = require('./_baseDifference'),
-    baseFlatten = require('./_baseFlatten'),
-    baseUniq = require('./_baseUniq');
+var baseDifference = require("./_baseDifference"),
+  baseFlatten = require("./_baseFlatten"),
+  baseUniq = require("./_baseUniq");
 
 /**
  * The base implementation of methods like `_.xor`, without support for
@@ -18,15 +18,20 @@ function baseXor(arrays, iteratee, comparator) {
     return length ? baseUniq(arrays[0]) : [];
   }
   var index = -1,
-      result = Array(length);
+    result = Array(length);
 
   while (++index < length) {
     var array = arrays[index],
-        othIndex = -1;
+      othIndex = -1;
 
     while (++othIndex < length) {
       if (othIndex != index) {
-        result[index] = baseDifference(result[index] || array, arrays[othIndex], iteratee, comparator);
+        result[index] = baseDifference(
+          result[index] || array,
+          arrays[othIndex],
+          iteratee,
+          comparator
+        );
       }
     }
   }
