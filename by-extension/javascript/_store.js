@@ -6,11 +6,11 @@ const store = createStore({
   },
 
   // Event listenter
-  onA(data) {
+  onA({item, age}) {
     // the same as #setState
     this.set({
-      a: this.state.a.concat(data.item),
-      b: Math.max(data.age, this.state.b),
+      a: this.state.a.concat(item),
+      b: Math.max(age, this.state.b),
     });
   },
 
