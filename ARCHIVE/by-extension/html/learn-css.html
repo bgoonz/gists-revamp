@@ -1,87 +1,231 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>learn-css</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<p>Web pages are built with HTML, which specifies the content of a page. CSS (Cascading Style Sheets) is a separate language which specifies a page’s <strong>appearance</strong>.</p>
-<p>CSS code is made of static <em>rules</em>. Each rule takes one or more <em>selectors</em> and gives specific <em>values</em> to a number of visual <em>properties</em>. Those properties are then applied to the page elements indicated by the selectors.</p>
-<p>This guide has been written with CSS 2 in mind, which is extended by the new features of CSS 3.</p>
-<p><strong>NOTE:</strong> Because CSS produces visual results, in order to learn it, you need to try everything in a CSS playground like <a href="http://dabblet.com/">dabblet</a>. The main focus of this article is on the syntax and some general tips.</p>
-<h2 id="syntax">Syntax</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb1-1" title="1"><span class="co">/* comments appear inside slash-asterisk, just like this line!</span></a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>learn-css</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <p>
+      Web pages are built with HTML, which specifies the content of a page. CSS
+      (Cascading Style Sheets) is a separate language which specifies a page’s
+      <strong>appearance</strong>.
+    </p>
+    <p>
+      CSS code is made of static <em>rules</em>. Each rule takes one or more
+      <em>selectors</em> and gives specific <em>values</em> to a number of
+      visual <em>properties</em>. Those properties are then applied to the page
+      elements indicated by the selectors.
+    </p>
+    <p>
+      This guide has been written with CSS 2 in mind, which is extended by the
+      new features of CSS 3.
+    </p>
+    <p>
+      <strong>NOTE:</strong> Because CSS produces visual results, in order to
+      learn it, you need to try everything in a CSS playground like
+      <a href="http://dabblet.com/">dabblet</a>. The main focus of this article
+      is on the syntax and some general tips.
+    </p>
+    <h2 id="syntax">Syntax</h2>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode css"
+      ><code class="sourceCode css"><a class="sourceLine" id="cb1-1" title="1"><span class="co">/* comments appear inside slash-asterisk, just like this line!</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="co">   there are no &quot;one-line comments&quot;; this is the only comment style */</span></a>
 <a class="sourceLine" id="cb1-3" title="3"></a>
 <a class="sourceLine" id="cb1-4" title="4"><span class="co">/* ####################</span></a>
@@ -277,10 +421,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-194" title="194">  <span class="kw">font-family</span>: <span class="st">&quot;Courier New&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb1-195" title="195">  <span class="co">/* if the first one is not found, the browser uses the next, and so on */</span></a>
 <a class="sourceLine" id="cb1-196" title="196">  <span class="kw">font-family</span>: <span class="st">&quot;Courier New&quot;</span><span class="op">,</span> Trebuchet<span class="op">,</span> Arial<span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb1-197" title="197">}</a></code></pre></div>
-<h2 id="usage">Usage</h2>
-<p>Save a CSS stylesheet with the extension <code>.css</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="co">&lt;!-- You need to include the css file in your page&#39;s &lt;head&gt;. This is the</span></a>
+<a class="sourceLine" id="cb1-197" title="197">}</a></code></pre>
+    </div>
+    <h2 id="usage">Usage</h2>
+    <p>Save a CSS stylesheet with the extension <code>.css</code>.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="co">&lt;!-- You need to include the css file in your page&#39;s &lt;head&gt;. This is the</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="co">     recommended method. Refer to http://stackoverflow.com/questions/8284365 --&gt;</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;path/to/style.css&quot;</span> <span class="kw">/&gt;</span></a>
 <a class="sourceLine" id="cb2-4" title="4"></a>
@@ -292,12 +440,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-10" title="10"><span class="kw">&lt;/style&gt;</span></a>
 <a class="sourceLine" id="cb2-11" title="11"></a>
 <a class="sourceLine" id="cb2-12" title="12"><span class="co">&lt;!-- Or directly set CSS properties on the element. --&gt;</span></a>
-<a class="sourceLine" id="cb2-13" title="13"><span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&quot;border: 1px solid red;&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a></code></pre></div>
-<h2 id="precedence-or-cascade">Precedence or Cascade</h2>
-<p>An element may be targeted by multiple selectors and may have a property set on it in more than once. In these cases, one of the rules takes precedence over others. Rules with a more specific selector take precedence over a less specific one, and a rule occurring later in the stylesheet overwrites a previous one (which also means that if two different linked stylesheets contain rules for an element and if the rules are of the same specificity, then order of linking would take precedence and the sheet linked latest would govern styling) .</p>
-<p>This process is called cascading, hence the name Cascading Style Sheets.</p>
-<p>Given the following CSS:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb3-1" title="1"><span class="co">/* A */</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&quot;border: 1px solid red;&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <h2 id="precedence-or-cascade">Precedence or Cascade</h2>
+    <p>
+      An element may be targeted by multiple selectors and may have a property
+      set on it in more than once. In these cases, one of the rules takes
+      precedence over others. Rules with a more specific selector take
+      precedence over a less specific one, and a rule occurring later in the
+      stylesheet overwrites a previous one (which also means that if two
+      different linked stylesheets contain rules for an element and if the rules
+      are of the same specificity, then order of linking would take precedence
+      and the sheet linked latest would govern styling) .
+    </p>
+    <p>
+      This process is called cascading, hence the name Cascading Style Sheets.
+    </p>
+    <p>Given the following CSS:</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode css"
+      ><code class="sourceCode css"><a class="sourceLine" id="cb3-1" title="1"><span class="co">/* A */</span></a>
 <a class="sourceLine" id="cb3-2" title="2">p<span class="fu">.class1</span><span class="ex">[attr</span><span class="op">=</span><span class="st">&#39;value&#39;</span><span class="ex">]</span></a>
 <a class="sourceLine" id="cb3-3" title="3"></a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="co">/* B */</span></a>
@@ -315,21 +478,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb3-16" title="16"><span class="co">/* E */</span></a>
 <a class="sourceLine" id="cb3-17" title="17">p {</a>
 <a class="sourceLine" id="cb3-18" title="18">  property: value <span class="at">!important</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb3-19" title="19">}</a></code></pre></div>
-<p>and the following markup:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;/*F*/ property:value;&quot;</span><span class="ot"> class=</span><span class="st">&quot;class1 class2&quot;</span><span class="ot"> attr=</span><span class="st">&quot;value&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></a></code></pre></div>
-<p>The precedence of style is as follows. Remember, the precedence is for each <strong>property</strong>, not for the entire block.</p>
-<ul>
-<li><code>E</code> has the highest precedence because of the keyword <code>!important</code>. It is recommended that you avoid its usage.</li>
-<li><code>F</code> is next, because it is an inline style.</li>
-<li><code>A</code> is next, because it is more “specific” than anything else. It has 3 specifiers: The name of the element <code>p</code>, its class <code>class1</code>, an attribute <code>attr='value'</code>.</li>
-<li><code>C</code> is next, even though it has the same specificity as <code>B</code>. This is because it appears after <code>B</code>.</li>
-<li><code>B</code> is next.</li>
-<li><code>D</code> is the last one.</li>
-</ul>
-<h2 id="media-queries">Media Queries</h2>
-<p>CSS Media Queries are a feature in CSS 3 which allows you to specify when certain CSS rules should be applied, such as when printed, or when on a screen with certain dimensions or pixel density. They do not add to the selector’s specificity.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb5-1" title="1"><span class="co">/* A rule that will be used on all devices */</span></a>
+<a class="sourceLine" id="cb3-19" title="19">}</a></code></pre>
+    </div>
+    <p>and the following markup:</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;/*F*/ property:value;&quot;</span><span class="ot"> class=</span><span class="st">&quot;class1 class2&quot;</span><span class="ot"> attr=</span><span class="st">&quot;value&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></a></code></pre>
+    </div>
+    <p>
+      The precedence of style is as follows. Remember, the precedence is for
+      each <strong>property</strong>, not for the entire block.
+    </p>
+    <ul>
+      <li>
+        <code>E</code> has the highest precedence because of the keyword
+        <code>!important</code>. It is recommended that you avoid its usage.
+      </li>
+      <li><code>F</code> is next, because it is an inline style.</li>
+      <li>
+        <code>A</code> is next, because it is more “specific” than anything
+        else. It has 3 specifiers: The name of the element <code>p</code>, its
+        class <code>class1</code>, an attribute <code>attr='value'</code>.
+      </li>
+      <li>
+        <code>C</code> is next, even though it has the same specificity as
+        <code>B</code>. This is because it appears after <code>B</code>.
+      </li>
+      <li><code>B</code> is next.</li>
+      <li><code>D</code> is the last one.</li>
+    </ul>
+    <h2 id="media-queries">Media Queries</h2>
+    <p>
+      CSS Media Queries are a feature in CSS 3 which allows you to specify when
+      certain CSS rules should be applied, such as when printed, or when on a
+      screen with certain dimensions or pixel density. They do not add to the
+      selector’s specificity.
+    </p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode css"
+      ><code class="sourceCode css"><a class="sourceLine" id="cb5-1" title="1"><span class="co">/* A rule that will be used on all devices */</span></a>
 <a class="sourceLine" id="cb5-2" title="2">h1 {</a>
 <a class="sourceLine" id="cb5-3" title="3">  <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb5-4" title="4">  <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></a>
@@ -350,31 +539,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-19" title="19">    <span class="kw">font-size</span>: <span class="dv">3</span><span class="dt">em</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb5-20" title="20">    <span class="kw">font-weight</span>: <span class="dv">normal</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb5-21" title="21">  }</a>
-<a class="sourceLine" id="cb5-22" title="22">}</a></code></pre></div>
-<p>Media queries can include these features: <code>width</code>, <code>height</code>, <code>device-width</code>, <code>device-height</code>, <code>orientation</code>, <code>aspect-ratio</code>, <code>device-aspect-ratio</code>, <code>color</code>, <code>color-index</code>, <code>monochrome</code>, <code>resolution</code>, <code>scan</code>, <code>grid</code>. Most of these features can be prefixed with <code>min-</code> or <code>max-</code>.</p>
-<p>The <code>resolution</code> feature is not supported by older devices, instead use <code>device-pixel-ratio</code>.</p>
-<p>Many smartphones and tablets will attempt to render the page as if it were on a desktop unless you provide a <code>viewport</code> meta-tag.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb5-22" title="22">}</a></code></pre>
+    </div>
+    <p>
+      Media queries can include these features: <code>width</code>,
+      <code>height</code>, <code>device-width</code>,
+      <code>device-height</code>, <code>orientation</code>,
+      <code>aspect-ratio</code>, <code>device-aspect-ratio</code>,
+      <code>color</code>, <code>color-index</code>, <code>monochrome</code>,
+      <code>resolution</code>, <code>scan</code>, <code>grid</code>. Most of
+      these features can be prefixed with <code>min-</code> or
+      <code>max-</code>.
+    </p>
+    <p>
+      The <code>resolution</code> feature is not supported by older devices,
+      instead use <code>device-pixel-ratio</code>.
+    </p>
+    <p>
+      Many smartphones and tablets will attempt to render the page as if it were
+      on a desktop unless you provide a <code>viewport</code> meta-tag.
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode html"
+      ><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;head&gt;</span></a>
 <a class="sourceLine" id="cb6-2" title="2">  <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width; initial-scale=1.0&quot;</span> <span class="kw">/&gt;</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre></div>
-<h2 id="compatibility">Compatibility</h2>
-<p>Most of the features in CSS 2 (and many in CSS 3) are available across all browsers and devices. But it’s always good practice to check before using a new feature.</p>
-<h2 id="resources">Resources</h2>
-<ul>
-<li><a href="http://caniuse.com">CanIUse</a> (Detailed compatibility info)</li>
-<li><a href="http://dabblet.com/">Dabblet</a> (CSS playground)</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">Mozilla Developer Network’s CSS documentation</a> (Tutorials and reference)</li>
-<li><a href="http://tympanus.net/codrops/css_reference/">Codrops’ CSS Reference</a> (Reference)</li>
-<li><a href="https://www.youtube.com/playlist?list=PLqGj3iMvMa4IOmy04kDxh_hqODMqoeeCy">DevTips’ CSS Basics</a> (Tutorials)</li>
-</ul>
-<h2 id="further-reading">Further Reading</h2>
-<ul>
-<li><a href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/">Understanding Style Precedence in CSS: Specificity, Inheritance, and the Cascade</a></li>
-<li><a href="https://css-tricks.com/almanac/selectors/a/attribute/">Selecting elements using attributes</a></li>
-<li><a href="http://www.quirksmode.org/css/">QuirksMode CSS</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context">Z-Index - The stacking context</a></li>
-<li><a href="http://sass-lang.com/">SASS</a> and <a href="http://lesscss.org/">LESS</a> for CSS pre-processing</li>
-<li><a href="https://css-tricks.com">CSS-Tricks</a></li>
-</ul>
-</body>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw">&lt;/head&gt;</span></a></code></pre>
+    </div>
+    <h2 id="compatibility">Compatibility</h2>
+    <p>
+      Most of the features in CSS 2 (and many in CSS 3) are available across all
+      browsers and devices. But it’s always good practice to check before using
+      a new feature.
+    </p>
+    <h2 id="resources">Resources</h2>
+    <ul>
+      <li>
+        <a href="http://caniuse.com">CanIUse</a> (Detailed compatibility info)
+      </li>
+      <li><a href="http://dabblet.com/">Dabblet</a> (CSS playground)</li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+          >Mozilla Developer Network’s CSS documentation</a
+        >
+        (Tutorials and reference)
+      </li>
+      <li>
+        <a href="http://tympanus.net/codrops/css_reference/"
+          >Codrops’ CSS Reference</a
+        >
+        (Reference)
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/playlist?list=PLqGj3iMvMa4IOmy04kDxh_hqODMqoeeCy"
+          >DevTips’ CSS Basics</a
+        >
+        (Tutorials)
+      </li>
+    </ul>
+    <h2 id="further-reading">Further Reading</h2>
+    <ul>
+      <li>
+        <a
+          href="http://www.vanseodesign.com/css/css-specificity-inheritance-cascaade/"
+          >Understanding Style Precedence in CSS: Specificity, Inheritance, and
+          the Cascade</a
+        >
+      </li>
+      <li>
+        <a href="https://css-tricks.com/almanac/selectors/a/attribute/"
+          >Selecting elements using attributes</a
+        >
+      </li>
+      <li><a href="http://www.quirksmode.org/css/">QuirksMode CSS</a></li>
+      <li>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context"
+          >Z-Index - The stacking context</a
+        >
+      </li>
+      <li>
+        <a href="http://sass-lang.com/">SASS</a> and
+        <a href="http://lesscss.org/">LESS</a> for CSS pre-processing
+      </li>
+      <li><a href="https://css-tricks.com">CSS-Tricks</a></li>
+    </ul>
+  </body>
 </html>
