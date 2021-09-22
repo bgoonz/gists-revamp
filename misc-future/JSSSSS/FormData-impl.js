@@ -1,7 +1,12 @@
 "use strict";
 const idlUtils = require("../generated/utils");
 const { closest } = require("../helpers/traversal");
-const { isDisabled, isSubmittable, isButton, normalizeToCRLF } = require("../helpers/form-controls");
+const {
+  isDisabled,
+  isSubmittable,
+  isButton,
+  normalizeToCRLF,
+} = require("../helpers/form-controls");
 const Blob = require("../generated/Blob.js");
 const File = require("../generated/File.js");
 const conversions = require("webidl-conversions");
@@ -21,35 +26,39 @@ exports.implementation = class FormDataImpl {
   }
 
   delete(name) {
-    this._entries = this._entries.filter(entry => entry.name !== name);
+    this._entries = this._entries.filter((entry) => entry.name !== name);
   }
 
   get(name) {
-    const foundEntry = this._entries.find(entry => entry.name === name);
+    const foundEntry = this._entries.find((entry) => entry.name === name);
     return foundEntry !== undefined ? foundEntry.value : null;
   }
 
   getAll(name) {
-    return this._entries.filter(entry => entry.name === name).map(entry => entry.value);
+    return this._entries
+      .filter((entry) => entry.name === name)
+      .map((entry) => entry.value);
   }
 
   has(name) {
-    return this._entries.findIndex(entry => entry.name === name) !== -1;
+    return this._entries.findIndex((entry) => entry.name === name) !== -1;
   }
 
   set(name, value, filename) {
     const entry = createAnEntry(name, value, filename);
 
-    const foundIndex = this._entries.findIndex(e => e.name === name);
+    const foundIndex = this._entries.findIndex((e) => e.name === name);
     if (foundIndex !== -1) {
       this._entries[foundIndex] = entry;
-      this._entries = this._entries.filter((e, i) => e.name !== name || i === foundIndex);
+      this._entries = this._entries.filter(
+        (e, i) => e.name !== name || i === foundIndex
+      );
     } else {
       this._entries.push(entry);
     }
   }
 
-  * [Symbol.iterator]() {
+  *[Symbol.iterator]() {
     for (const entry of this._entries) {
       yield [entry.name, idlUtils.tryWrapperForImpl(entry.value)];
     }
@@ -63,11 +72,7 @@ function createAnEntry(name, value, filename) {
 
   if (Blob.isImpl(value) && !File.isImpl(value)) {
     const oldValue = value;
-    value = File.createImpl([
-      [],
-      "blob",
-      { type: oldValue.type }
-    ]);
+    value = File.createImpl([[], "blob", { type: oldValue.type }]);
     // "representing the same bytes"
     value._buffer = oldValue._buffer;
   }
@@ -79,7 +84,7 @@ function createAnEntry(name, value, filename) {
       filename,
       // spec makes no mention of `lastModified`; assume it is inherited
       // (Chrome's behavior)
-      { type: oldValue.type, lastModified: oldValue.lastModified }
+      { type: oldValue.type, lastModified: oldValue.lastModified },
     ]);
     // "representing the same bytes"
     value._buffer = oldValue._buffer;
@@ -114,10 +119,14 @@ function constructTheFormDataSet(form, submitter) {
     if (field.type === "radio" && field._checkedness === false) {
       continue;
     }
-    if (field.type !== "image" && (!field.hasAttribute("name") || field.getAttribute("name") === "")) {
+    if (
+      field.type !== "image" &&
+      (!field.hasAttribute("name") || field.getAttribute("name") === "")
+    ) {
       continue;
     }
-    if (field.localName === "object") { // in jsdom, no objects are "using a plugin"
+    if (field.localName === "object") {
+      // in jsdom, no objects are "using a plugin"
       continue;
     }
 
@@ -134,8 +143,13 @@ function constructTheFormDataSet(form, submitter) {
           formDataSet.push({ name, value: option.value, type });
         }
       }
-    } else if (field.localName === "input" && (type === "checkbox" || type === "radio")) {
-      const value = field.hasAttribute("value") ? field.getAttribute("value") : "on";
+    } else if (
+      field.localName === "input" &&
+      (type === "checkbox" || type === "radio")
+    ) {
+      const value = field.hasAttribute("value")
+        ? field.getAttribute("value")
+        : "on";
       formDataSet.push({ name, value, type });
     } else if (type === "file") {
       for (let i = 0; i < field.files.length; ++i) {

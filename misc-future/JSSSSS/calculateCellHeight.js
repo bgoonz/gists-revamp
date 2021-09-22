@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -9,7 +9,9 @@ var _lodash = _interopRequireDefault(require("lodash"));
 
 var _wrapCell = _interopRequireDefault(require("./wrapCell"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * @param {string} value
@@ -19,15 +21,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 const calculateCellHeight = (value, columnWidth, useWrapWord = false) => {
   if (!_lodash.default.isString(value)) {
-    throw new TypeError('Value must be a string.');
+    throw new TypeError("Value must be a string.");
   }
 
   if (!Number.isInteger(columnWidth)) {
-    throw new TypeError('Column width must be an integer.');
+    throw new TypeError("Column width must be an integer.");
   }
 
   if (columnWidth < 1) {
-    throw new Error('Column width must be greater than 0.');
+    throw new Error("Column width must be greater than 0.");
   }
 
   return (0, _wrapCell.default)(value, columnWidth, useWrapWord).length;

@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = _default;
 const serialized = "$$ babel internal serialized type" + Math.random();
@@ -10,7 +10,7 @@ function serialize(key, value) {
   if (typeof value !== "bigint") return value;
   return {
     [serialized]: "BigInt",
-    value: value.toString()
+    value: value.toString(),
   };
 }
 

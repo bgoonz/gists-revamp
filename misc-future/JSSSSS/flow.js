@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.AnyTypeAnnotation = AnyTypeAnnotation;
 exports.ArrayTypeAnnotation = ArrayTypeAnnotation;
@@ -32,7 +32,10 @@ exports.EnumStringMember = EnumStringMember;
 exports.ExistsTypeAnnotation = ExistsTypeAnnotation;
 exports.FunctionTypeAnnotation = FunctionTypeAnnotation;
 exports.FunctionTypeParam = FunctionTypeParam;
-exports.GenericTypeAnnotation = exports.ClassImplements = exports.InterfaceExtends = InterfaceExtends;
+exports.GenericTypeAnnotation =
+  exports.ClassImplements =
+  exports.InterfaceExtends =
+    InterfaceExtends;
 exports._interfaceish = _interfaceish;
 exports._variance = _variance;
 exports.InterfaceDeclaration = InterfaceDeclaration;
@@ -48,7 +51,8 @@ exports.TupleTypeAnnotation = TupleTypeAnnotation;
 exports.TypeofTypeAnnotation = TypeofTypeAnnotation;
 exports.TypeAlias = TypeAlias;
 exports.TypeAnnotation = TypeAnnotation;
-exports.TypeParameterDeclaration = exports.TypeParameterInstantiation = TypeParameterInstantiation;
+exports.TypeParameterDeclaration = exports.TypeParameterInstantiation =
+  TypeParameterInstantiation;
 exports.TypeParameter = TypeParameter;
 exports.OpaqueType = OpaqueType;
 exports.ObjectTypeAnnotation = ObjectTypeAnnotation;
@@ -69,13 +73,13 @@ Object.defineProperty(exports, "NumberLiteralTypeAnnotation", {
   enumerable: true,
   get: function () {
     return _types2.NumericLiteral;
-  }
+  },
 });
 Object.defineProperty(exports, "StringLiteralTypeAnnotation", {
   enumerable: true,
   get: function () {
     return _types2.StringLiteral;
-  }
+  },
 });
 
 var _t = require("@babel/types");
@@ -84,10 +88,7 @@ var _modules = require("./modules");
 
 var _types2 = require("./types");
 
-const {
-  isDeclareExportDeclaration,
-  isStatement
-} = _t;
+const { isDeclareExportDeclaration, isStatement } = _t;
 
 function AnyTypeAnnotation() {
   this.word("any");
@@ -230,10 +231,7 @@ function DeclareExportAllDeclaration() {
 }
 
 function EnumDeclaration(node) {
-  const {
-    id,
-    body
-  } = node;
+  const { id, body } = node;
   this.word("enum");
   this.space();
   this.print(id, node);
@@ -252,9 +250,7 @@ function enumExplicitType(context, name, hasExplicitType) {
 }
 
 function enumBody(context, node) {
-  const {
-    members
-  } = node;
+  const { members } = node;
   context.token("{");
   context.indent();
   context.newline();
@@ -274,25 +270,19 @@ function enumBody(context, node) {
 }
 
 function EnumBooleanBody(node) {
-  const {
-    explicitType
-  } = node;
+  const { explicitType } = node;
   enumExplicitType(this, "boolean", explicitType);
   enumBody(this, node);
 }
 
 function EnumNumberBody(node) {
-  const {
-    explicitType
-  } = node;
+  const { explicitType } = node;
   enumExplicitType(this, "number", explicitType);
   enumBody(this, node);
 }
 
 function EnumStringBody(node) {
-  const {
-    explicitType
-  } = node;
+  const { explicitType } = node;
   enumExplicitType(this, "string", explicitType);
   enumBody(this, node);
 }
@@ -303,18 +293,13 @@ function EnumSymbolBody(node) {
 }
 
 function EnumDefaultedMember(node) {
-  const {
-    id
-  } = node;
+  const { id } = node;
   this.print(id, node);
   this.token(",");
 }
 
 function enumInitializedMember(context, node) {
-  const {
-    id,
-    init
-  } = node;
+  const { id, init } = node;
   context.print(id, node);
   context.space();
   context.token("=");
@@ -396,7 +381,11 @@ function FunctionTypeAnnotation(node, parent) {
 
   this.token(")");
 
-  if (parent.type === "ObjectTypeCallProperty" || parent.type === "DeclareFunction" || parent.type === "ObjectTypeProperty" && parent.method) {
+  if (
+    parent.type === "ObjectTypeCallProperty" ||
+    parent.type === "DeclareFunction" ||
+    (parent.type === "ObjectTypeProperty" && parent.method)
+  ) {
     this.token(":");
   } else {
     this.space();
@@ -494,7 +483,7 @@ function InterfaceTypeAnnotation(node) {
 
 function IntersectionTypeAnnotation(node) {
   this.printJoin(node.types, node, {
-    separator: andSeparator
+    separator: andSeparator,
   });
 }
 
@@ -608,7 +597,12 @@ function ObjectTypeAnnotation(node) {
     this.token("{");
   }
 
-  const props = [...node.properties, ...(node.callProperties || []), ...(node.indexers || []), ...(node.internalSlots || [])];
+  const props = [
+    ...node.properties,
+    ...(node.callProperties || []),
+    ...(node.indexers || []),
+    ...(node.internalSlots || []),
+  ];
 
   if (props.length) {
     this.space();
@@ -624,7 +618,7 @@ function ObjectTypeAnnotation(node) {
           this.token(",");
           this.space();
         }
-      }
+      },
     });
     this.space();
   }
@@ -752,7 +746,7 @@ function orSeparator() {
 
 function UnionTypeAnnotation(node) {
   this.printJoin(node.types, node, {
-    separator: orSeparator
+    separator: orSeparator,
   });
 }
 

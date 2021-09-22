@@ -1,5 +1,5 @@
-var baseClamp = require('./_baseClamp'),
-    toNumber = require('./toNumber');
+var baseClamp = require("./_baseClamp"),
+  toNumber = require("./toNumber");
 
 /**
  * Clamps `number` within the inclusive `lower` and `upper` bounds.

@@ -17,18 +17,24 @@ function ErrorEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'ErrorEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'ErrorEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'ErrorEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'ErrorEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertErrorEventInit(curArg, { context: "Failed to construct 'ErrorEvent': parameter 2" });
+    curArg = convertErrorEventInit(curArg, {
+      context: "Failed to construct 'ErrorEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(ErrorEvent, "prototype", {
   value: ErrorEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(ErrorEvent.prototype, "message", {
@@ -55,7 +61,7 @@ Object.defineProperty(ErrorEvent.prototype, "message", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ErrorEvent.prototype, "filename", {
@@ -68,7 +74,7 @@ Object.defineProperty(ErrorEvent.prototype, "filename", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ErrorEvent.prototype, "lineno", {
@@ -81,7 +87,7 @@ Object.defineProperty(ErrorEvent.prototype, "lineno", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ErrorEvent.prototype, "colno", {
@@ -94,7 +100,7 @@ Object.defineProperty(ErrorEvent.prototype, "colno", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ErrorEvent.prototype, "error", {
@@ -107,14 +113,14 @@ Object.defineProperty(ErrorEvent.prototype, "error", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ErrorEvent.prototype, Symbol.toStringTag, {
   value: "ErrorEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -180,7 +186,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -192,8 +198,8 @@ const iface = {
   interface: ErrorEvent,
   expose: {
     Window: { ErrorEvent },
-    Worker: { ErrorEvent }
-  }
+    Worker: { ErrorEvent },
+  },
 }; // iface
 module.exports = iface;
 

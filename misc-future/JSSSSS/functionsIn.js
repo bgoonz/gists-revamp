@@ -1,5 +1,5 @@
-var baseFunctions = require('./_baseFunctions'),
-    keysIn = require('./keysIn');
+var baseFunctions = require("./_baseFunctions"),
+  keysIn = require("./keysIn");
 
 /**
  * Creates an array of function property names from own and inherited

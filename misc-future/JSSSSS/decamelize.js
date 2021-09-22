@@ -20,13 +20,13 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-'use strict'
+"use strict";
 
 module.exports = (text, separator) => {
-  separator = typeof separator === 'undefined' ? '_' : separator
+  separator = typeof separator === "undefined" ? "_" : separator;
 
   return text
     .replace(/([a-z\d])([A-Z])/g, `$1${separator}$2`)
     .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, `$1${separator}$2`)
-    .toLowerCase()
-}
+    .toLowerCase();
+};

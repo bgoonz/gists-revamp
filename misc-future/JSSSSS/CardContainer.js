@@ -1,9 +1,9 @@
-import React from 'react';
-import './Card.css';
-import CardBanner from './CardBanner';
-import CardContent from './CardContent';
+import React from "react";
+import "./Card.css";
+import CardBanner from "./CardBanner";
+import CardContent from "./CardContent";
 
-const CardContainer = props => {
+const CardContainer = (props) => {
   return (
     <div className="card-container-wrapper">
       <div className="card-wrapper">
@@ -17,4 +17,3 @@ const CardContainer = props => {
 };
 
 export default CardContainer;
-

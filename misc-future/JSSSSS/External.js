@@ -13,7 +13,7 @@ Object.defineProperty(External, "prototype", {
   value: External.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 External.prototype.AddSearchProvider = function AddSearchProvider() {
@@ -24,19 +24,20 @@ External.prototype.AddSearchProvider = function AddSearchProvider() {
   return this[impl].AddSearchProvider();
 };
 
-External.prototype.IsSearchProviderInstalled = function IsSearchProviderInstalled() {
-  if (!this || !module.exports.is(this)) {
-    throw new TypeError("Illegal invocation");
-  }
+External.prototype.IsSearchProviderInstalled =
+  function IsSearchProviderInstalled() {
+    if (!this || !module.exports.is(this)) {
+      throw new TypeError("Illegal invocation");
+    }
 
-  return this[impl].IsSearchProviderInstalled();
-};
+    return this[impl].IsSearchProviderInstalled();
+  };
 
 Object.defineProperty(External.prototype, Symbol.toStringTag, {
   value: "External",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -100,7 +101,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -110,7 +111,7 @@ const iface = {
     return obj;
   },
   interface: External,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

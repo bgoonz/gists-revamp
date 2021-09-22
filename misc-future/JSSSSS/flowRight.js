@@ -1,4 +1,4 @@
-var createFlow = require('./_createFlow');
+var createFlow = require("./_createFlow");
 
 /**
  * This method is like `_.flow` except that it creates a function that

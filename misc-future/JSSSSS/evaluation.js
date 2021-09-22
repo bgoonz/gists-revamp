@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.evaluateTruthy = evaluateTruthy;
 exports.evaluate = evaluate;
@@ -20,12 +20,8 @@ function deopt(path, state) {
 }
 
 function evaluateCached(path, state) {
-  const {
-    node
-  } = path;
-  const {
-    seen
-  } = state;
+  const { node } = path;
+  const { seen } = state;
 
   if (seen.has(node)) {
     const existing = seen.get(node);
@@ -38,7 +34,7 @@ function evaluateCached(path, state) {
     }
   } else {
     const item = {
-      resolved: false
+      resolved: false,
     };
     seen.set(node, item);
 
@@ -61,7 +57,11 @@ function _evaluate(path, state) {
     return evaluateCached(exprs[exprs.length - 1], state);
   }
 
-  if (path.isStringLiteral() || path.isNumericLiteral() || path.isBooleanLiteral()) {
+  if (
+    path.isStringLiteral() ||
+    path.isNumericLiteral() ||
+    path.isBooleanLiteral()
+  ) {
     return path.node.value;
   }
 
@@ -73,16 +73,23 @@ function _evaluate(path, state) {
     return evaluateQuasis(path, path.node.quasis, state);
   }
 
-  if (path.isTaggedTemplateExpression() && path.get("tag").isMemberExpression()) {
+  if (
+    path.isTaggedTemplateExpression() &&
+    path.get("tag").isMemberExpression()
+  ) {
     const object = path.get("tag.object");
     const {
-      node: {
-        name
-      }
+      node: { name },
     } = object;
     const property = path.get("tag.property");
 
-    if (object.isIdentifier() && name === "String" && !path.scope.getBinding(name) && property.isIdentifier() && property.node.name === "raw") {
+    if (
+      object.isIdentifier() &&
+      name === "String" &&
+      !path.scope.getBinding(name) &&
+      property.isIdentifier() &&
+      property.node.name === "raw"
+    ) {
       return evaluateQuasis(path, path.node.quasi.quasis, state, true);
     }
   }
@@ -102,9 +109,12 @@ function _evaluate(path, state) {
     return evaluateCached(path.get("expression"), state);
   }
 
-  if (path.isMemberExpression() && !path.parentPath.isCallExpression({
-    callee: path.node
-  })) {
+  if (
+    path.isMemberExpression() &&
+    !path.parentPath.isCallExpression({
+      callee: path.node,
+    })
+  ) {
     const property = path.get("property");
     const object = path.get("object");
 
@@ -150,16 +160,21 @@ function _evaluate(path, state) {
     }
   }
 
-  if (path.isUnaryExpression({
-    prefix: true
-  })) {
+  if (
+    path.isUnaryExpression({
+      prefix: true,
+    })
+  ) {
     if (path.node.operator === "void") {
       return undefined;
     }
 
     const argument = path.get("argument");
 
-    if (path.node.operator === "typeof" && (argument.isFunction() || argument.isClass())) {
+    if (
+      path.node.operator === "typeof" &&
+      (argument.isFunction() || argument.isClass())
+    ) {
       return "function";
     }
 
@@ -336,7 +351,11 @@ function _evaluate(path, state) {
     let context;
     let func;
 
-    if (callee.isIdentifier() && !path.scope.getBinding(callee.node.name) && VALID_CALLEES.indexOf(callee.node.name) >= 0) {
+    if (
+      callee.isIdentifier() &&
+      !path.scope.getBinding(callee.node.name) &&
+      VALID_CALLEES.indexOf(callee.node.name) >= 0
+    ) {
       func = global[callee.node.name];
     }
 
@@ -344,7 +363,12 @@ function _evaluate(path, state) {
       const object = callee.get("object");
       const property = callee.get("property");
 
-      if (object.isIdentifier() && property.isIdentifier() && VALID_CALLEES.indexOf(object.node.name) >= 0 && INVALID_METHODS.indexOf(property.node.name) < 0) {
+      if (
+        object.isIdentifier() &&
+        property.isIdentifier() &&
+        VALID_CALLEES.indexOf(object.node.name) >= 0 &&
+        INVALID_METHODS.indexOf(property.node.name) < 0
+      ) {
         context = global[object.node.name];
         func = context[property.node.name];
       }
@@ -360,7 +384,9 @@ function _evaluate(path, state) {
     }
 
     if (func) {
-      const args = path.get("arguments").map(arg => evaluateCached(arg, state));
+      const args = path
+        .get("arguments")
+        .map((arg) => evaluateCached(arg, state));
       if (!state.confident) return;
       return func.apply(context, args);
     }
@@ -389,13 +415,13 @@ function evaluate() {
   const state = {
     confident: true,
     deoptPath: null,
-    seen: new Map()
+    seen: new Map(),
   };
   let value = evaluateCached(this, state);
   if (!state.confident) value = undefined;
   return {
     confident: state.confident,
     deopt: state.deoptPath,
-    value: value
+    value: value,
   };
 }

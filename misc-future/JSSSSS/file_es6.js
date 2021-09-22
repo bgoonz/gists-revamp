@@ -1,5 +1,5 @@
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = _default;
 
@@ -14,14 +14,14 @@ function _convertSourceMap() {
 }
 
 const _sourceMap = () => {
-                const data = require("source-map");
+  const data = require("source-map");
 
   _sourceMap = () => {
     return data;
   };
 
   return data;
-            };
+};
 
 function _slash() {
   const data = require("slash");
@@ -55,23 +55,51 @@ function _fs() {
 
 const util = require("./util");
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
 
-function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise((resolve, reject) => { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) {
+  return function () {
+    const self = this,
+      args = arguments;
+    return new Promise((resolve, reject) => {
+      const gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(undefined);
+    });
+  };
+}
 
 function _default(_x) {
   return _ref.apply(this, arguments);
 }
 
 function _ref(...args) {
-  _ref = _asyncToGenerator(function* ({
-    cliOptions,
-    babelOptions
-  }) {
+  _ref = _asyncToGenerator(function* ({ cliOptions, babelOptions }) {
     function buildResult(fileResults) {
       const map = new (_sourceMap().SourceMapGenerator)({
-        file: cliOptions.sourceMapTarget || _path().basename(cliOptions.outFile || "") || "stdout",
-        sourceRoot: babelOptions.sourceRoot
+        file:
+          cliOptions.sourceMapTarget ||
+          _path().basename(cliOptions.outFile || "") ||
+          "stdout",
+        sourceRoot: babelOptions.sourceRoot,
       });
       let code = "";
       let offset = 0;
@@ -83,21 +111,24 @@ function _ref(...args) {
         if (result.map) {
           const consumer = new (_sourceMap().SourceMapConsumer)(result.map);
           const sources = new Set();
-          consumer.eachMapping(mapping => {
+          consumer.eachMapping((mapping) => {
             if (mapping.source != null) sources.add(mapping.source);
             map.addMapping({
               generated: {
                 line: mapping.generatedLine + offset,
-                column: mapping.generatedColumn
+                column: mapping.generatedColumn,
               },
               source: mapping.source,
-              original: mapping.source == null ? null : {
-                line: mapping.originalLine,
-                column: mapping.originalColumn
-              }
+              original:
+                mapping.source == null
+                  ? null
+                  : {
+                      line: mapping.originalLine,
+                      column: mapping.originalColumn,
+                    },
             });
           });
-          sources.forEach(source => {
+          sources.forEach((source) => {
             const content = consumer.sourceContentFor(source, true);
 
             if (content !== null) {
@@ -108,13 +139,16 @@ function _ref(...args) {
         }
       }
 
-      if (babelOptions.sourceMaps === "inline" || !cliOptions.outFile && babelOptions.sourceMaps) {
+      if (
+        babelOptions.sourceMaps === "inline" ||
+        (!cliOptions.outFile && babelOptions.sourceMaps)
+      ) {
         code += `\n${_convertSourceMap().fromObject(map).toComment()}`;
       }
 
       return {
         map,
-        code
+        code,
       };
     }
 
@@ -122,8 +156,14 @@ function _ref(...args) {
       const result = buildResult(fileResults);
 
       if (cliOptions.outFile) {
-        (((v, w) => (v = v.split("."), w = w.split("."), +v[0] > +w[0] || v[0] == w[0] && +v[1] >= +w[1]))(process.versions.node, "10.12") ? _fs().mkdirSync : require("make-dir").sync)(_path().dirname(cliOptions.outFile), {
-          recursive: true
+        (((v, w) => (
+          (v = v.split(".")),
+          (w = w.split(".")),
+          +v[0] > +w[0] || (v[0] == w[0] && +v[1] >= +w[1])
+        ))(process.versions.node, "10.12")
+          ? _fs().mkdirSync
+          : require("make-dir").sync)(_path().dirname(cliOptions.outFile), {
+          recursive: true,
         });
 
         if (babelOptions.sourceMaps && babelOptions.sourceMaps !== "inline") {
@@ -161,9 +201,13 @@ function _ref(...args) {
     function _stdin(...args) {
       _stdin = _asyncToGenerator(function* () {
         const code = yield readStdin();
-        const res = yield util.transform(cliOptions.filename, code, Object.assign({}, babelOptions, {
-          sourceFileName: "stdin"
-        }));
+        const res = yield util.transform(
+          cliOptions.filename,
+          code,
+          Object.assign({}, babelOptions, {
+            sourceFileName: "stdin",
+          })
+        );
         output([res]);
       });
       return _stdin.apply(this, args);
@@ -176,49 +220,68 @@ function _ref(...args) {
     function _walk(...args) {
       _walk = _asyncToGenerator(function* (filenames) {
         const _filenames = [];
-        filenames.forEach(filename => {
+        filenames.forEach((filename) => {
           if (!_fs().existsSync(filename)) return;
 
           const stat = _fs().statSync(filename);
 
           if (stat.isDirectory()) {
             const dirname = filename;
-            util.readdirForCompilable(filename, cliOptions.includeDotfiles, cliOptions.extensions).forEach(filename => {
-              _filenames.push(_path().join(dirname, filename));
-            });
+            util
+              .readdirForCompilable(
+                filename,
+                cliOptions.includeDotfiles,
+                cliOptions.extensions
+              )
+              .forEach((filename) => {
+                _filenames.push(_path().join(dirname, filename));
+              });
           } else {
             _filenames.push(filename);
           }
         });
-        const results = yield Promise.all(_filenames.map((() => {
-          const _ref2 = _asyncToGenerator(function* (filename) {
-            let sourceFilename = filename;
+        const results = yield Promise.all(
+          _filenames.map(
+            (() => {
+              const _ref2 = _asyncToGenerator(function* (filename) {
+                let sourceFilename = filename;
 
-            if (cliOptions.outFile) {
-              sourceFilename = _path().relative(_path().dirname(cliOptions.outFile), sourceFilename);
-            }
+                if (cliOptions.outFile) {
+                  sourceFilename = _path().relative(
+                    _path().dirname(cliOptions.outFile),
+                    sourceFilename
+                  );
+                }
 
-            sourceFilename = _slash()(sourceFilename);
+                sourceFilename = _slash()(sourceFilename);
 
-            try {
-              return yield util.compile(filename, Object.assign({}, babelOptions, {
-                sourceFileName: sourceFilename,
-                sourceMaps: babelOptions.sourceMaps === "inline" ? true : babelOptions.sourceMaps
-              }));
-            } catch (err) {
-              if (!cliOptions.watch) {
-                throw err;
-              }
+                try {
+                  return yield util.compile(
+                    filename,
+                    Object.assign({}, babelOptions, {
+                      sourceFileName: sourceFilename,
+                      sourceMaps:
+                        babelOptions.sourceMaps === "inline"
+                          ? true
+                          : babelOptions.sourceMaps,
+                    })
+                  );
+                } catch (err) {
+                  if (!cliOptions.watch) {
+                    throw err;
+                  }
 
-              console.error(err);
-              return null;
-            }
-          });
+                  console.error(err);
+                  return null;
+                }
+              });
 
-          return function (_x4) {
-            return _ref2.apply(this, arguments);
-          };
-        })()));
+              return function (_x4) {
+                return _ref2.apply(this, arguments);
+              };
+            })()
+          )
+        );
         output(results);
       });
       return _walk.apply(this, args);
@@ -236,29 +299,34 @@ function _ref(...args) {
 
         if (cliOptions.watch) {
           const chokidar = util.requireChokidar();
-          chokidar.watch(filenames, {
-            disableGlobbing: true,
-            persistent: true,
-            ignoreInitial: true,
-            awaitWriteFinish: {
-              stabilityThreshold: 50,
-              pollInterval: 10
-            }
-          }).on("all", (type, filename) => {
-            if (!util.isCompilableExtension(filename, cliOptions.extensions) && !filenames.includes(filename)) {
-              return;
-            }
-
-            if (type === "add" || type === "change") {
-              if (cliOptions.verbose) {
-                console.log(`${type} ${filename}`);
+          chokidar
+            .watch(filenames, {
+              disableGlobbing: true,
+              persistent: true,
+              ignoreInitial: true,
+              awaitWriteFinish: {
+                stabilityThreshold: 50,
+                pollInterval: 10,
+              },
+            })
+            .on("all", (type, filename) => {
+              if (
+                !util.isCompilableExtension(filename, cliOptions.extensions) &&
+                !filenames.includes(filename)
+              ) {
+                return;
               }
 
-              walk(filenames).catch(err => {
-                console.error(err);
-              });
-            }
-          });
+              if (type === "add" || type === "change") {
+                if (cliOptions.verbose) {
+                  console.log(`${type} ${filename}`);
+                }
+
+                walk(filenames).catch((err) => {
+                  console.error(err);
+                });
+              }
+            });
         }
       });
       return _files.apply(this, args);

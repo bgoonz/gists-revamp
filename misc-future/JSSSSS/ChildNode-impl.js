@@ -24,7 +24,10 @@ class ChildNodeImpl {
         }
         idx = nodes.indexOf(viableNextSibling);
       }
-      parent.insertBefore(convertNodesIntoNode(this._ownerDocument, nodes), viableNextSibling);
+      parent.insertBefore(
+        convertNodesIntoNode(this._ownerDocument, nodes),
+        viableNextSibling
+      );
     }
   }
 
@@ -32,7 +35,9 @@ class ChildNodeImpl {
     const parent = this.parentNode;
     if (parent) {
       let viablePreviousSibling = this.previousSibling;
-      let idx = viablePreviousSibling ? nodes.indexOf(viablePreviousSibling) : -1;
+      let idx = viablePreviousSibling
+        ? nodes.indexOf(viablePreviousSibling)
+        : -1;
 
       while (idx !== -1) {
         viablePreviousSibling = viablePreviousSibling.previousSibling;
@@ -44,7 +49,9 @@ class ChildNodeImpl {
 
       parent.insertBefore(
         convertNodesIntoNode(this._ownerDocument, nodes),
-        viablePreviousSibling ? viablePreviousSibling.nextSibling : parent.firstChild
+        viablePreviousSibling
+          ? viablePreviousSibling.nextSibling
+          : parent.firstChild
       );
     }
   }
@@ -75,5 +82,5 @@ class ChildNodeImpl {
 }
 
 module.exports = {
-  implementation: ChildNodeImpl
+  implementation: ChildNodeImpl,
 };

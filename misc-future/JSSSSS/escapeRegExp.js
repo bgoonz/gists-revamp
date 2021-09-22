@@ -1,11 +1,11 @@
-var toString = require('./toString');
+var toString = require("./toString");
 
 /**
  * Used to match `RegExp`
  * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
  */
 var reRegExpChar = /[\\^$.*+?()[\]{}|]/g,
-    reHasRegExpChar = RegExp(reRegExpChar.source);
+  reHasRegExpChar = RegExp(reRegExpChar.source);
 
 /**
  * Escapes the `RegExp` special characters "^", "$", "\", ".", "*", "+",
@@ -24,8 +24,8 @@ var reRegExpChar = /[\\^$.*+?()[\]{}|]/g,
  */
 function escapeRegExp(string) {
   string = toString(string);
-  return (string && reHasRegExpChar.test(string))
-    ? string.replace(reRegExpChar, '\\$&')
+  return string && reHasRegExpChar.test(string)
+    ? string.replace(reRegExpChar, "\\$&")
     : string;
 }
 

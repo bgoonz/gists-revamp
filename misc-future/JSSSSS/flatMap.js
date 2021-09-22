@@ -1,5 +1,5 @@
-var baseFlatten = require('./_baseFlatten'),
-    map = require('./map');
+var baseFlatten = require("./_baseFlatten"),
+  map = require("./map");
 
 /**
  * Creates a flattened array of values by running each element in `collection`

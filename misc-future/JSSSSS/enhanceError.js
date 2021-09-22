@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Update an Error with the specified config, error code, and response.
@@ -11,32 +11,32 @@
  * @returns {Error} The error.
  */
 module.exports = function enhanceError(error, config, code, request, response) {
-    error.config = config;
-    if (code) {
-        error.code = code;
-    }
+  error.config = config;
+  if (code) {
+    error.code = code;
+  }
 
-    error.request = request;
-    error.response = response;
-    error.isAxiosError = true;
+  error.request = request;
+  error.response = response;
+  error.isAxiosError = true;
 
-    error.toJSON = function toJSON() {
-        return {
-            // Standard
-            message: this.message,
-            name: this.name,
-            // Microsoft
-            description: this.description,
-            number: this.number,
-            // Mozilla
-            fileName: this.fileName,
-            lineNumber: this.lineNumber,
-            columnNumber: this.columnNumber,
-            stack: this.stack,
-            // Axios
-            config: this.config,
-            code: this.code
-        };
+  error.toJSON = function toJSON() {
+    return {
+      // Standard
+      message: this.message,
+      name: this.name,
+      // Microsoft
+      description: this.description,
+      number: this.number,
+      // Mozilla
+      fileName: this.fileName,
+      lineNumber: this.lineNumber,
+      columnNumber: this.columnNumber,
+      stack: this.stack,
+      // Axios
+      config: this.config,
+      code: this.code,
     };
-    return error;
+  };
+  return error;
 };

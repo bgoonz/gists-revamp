@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
-const fill = require('fill-range');
-const utils = require('./utils');
+const fill = require("fill-range");
+const utils = require("./utils");
 
 const compile = (ast, options = {}) => {
   let walk = (node, parent = {}) => {
     let invalidBlock = utils.isInvalidBrace(parent);
     let invalidNode = node.invalid === true && options.escapeInvalid === true;
     let invalid = invalidBlock === true || invalidNode === true;
-    let prefix = options.escapeInvalid === true ? '\\' : '';
-    let output = '';
+    let prefix = options.escapeInvalid === true ? "\\" : "";
+    let output = "";
 
     if (node.isOpen === true) {
       return prefix + node.value;
@@ -18,16 +18,16 @@ const compile = (ast, options = {}) => {
       return prefix + node.value;
     }
 
-    if (node.type === 'open') {
-      return invalid ? (prefix + node.value) : '(';
+    if (node.type === "open") {
+      return invalid ? prefix + node.value : "(";
     }
 
-    if (node.type === 'close') {
-      return invalid ? (prefix + node.value) : ')';
+    if (node.type === "close") {
+      return invalid ? prefix + node.value : ")";
     }
 
-    if (node.type === 'comma') {
-      return node.prev.type === 'comma' ? '' : (invalid ? node.value : '|');
+    if (node.type === "comma") {
+      return node.prev.type === "comma" ? "" : invalid ? node.value : "|";
     }
 
     if (node.value) {

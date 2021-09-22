@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.toComputedKey = toComputedKey;
 exports.ensureBlock = ensureBlock;
@@ -35,7 +35,7 @@ const {
   stringLiteral,
   super: _super,
   thisExpression,
-  unaryExpression
+  unaryExpression,
 } = _t;
 
 function toComputedKey() {
@@ -95,7 +95,12 @@ function ensureBlock() {
 
   this.node.body = blockStatement(statements);
   const parentPath = this.get(stringPath);
-  body.setup(parentPath, listKey ? parentPath.node[listKey] : parentPath.node, listKey, key);
+  body.setup(
+    parentPath,
+    listKey ? parentPath.node[listKey] : parentPath.node,
+    listKey,
+    key
+  );
   return this.node;
 }
 
@@ -105,8 +110,14 @@ function arrowFunctionToShadowed() {
 }
 
 function unwrapFunctionEnvironment() {
-  if (!this.isArrowFunctionExpression() && !this.isFunctionExpression() && !this.isFunctionDeclaration()) {
-    throw this.buildCodeFrameError("Can only unwrap the environment of a function.");
+  if (
+    !this.isArrowFunctionExpression() &&
+    !this.isFunctionExpression() &&
+    !this.isFunctionDeclaration()
+  ) {
+    throw this.buildCodeFrameError(
+      "Can only unwrap the environment of a function."
+    );
   }
 
   hoistFunctionEnvironment(this);
@@ -115,54 +126,88 @@ function unwrapFunctionEnvironment() {
 function arrowFunctionToExpression({
   allowInsertArrow = true,
   specCompliant = false,
-  noNewArrows = !specCompliant
+  noNewArrows = !specCompliant,
 } = {}) {
   if (!this.isArrowFunctionExpression()) {
-    throw this.buildCodeFrameError("Cannot convert non-arrow function to a function expression.");
+    throw this.buildCodeFrameError(
+      "Cannot convert non-arrow function to a function expression."
+    );
   }
 
-  const thisBinding = hoistFunctionEnvironment(this, noNewArrows, allowInsertArrow);
+  const thisBinding = hoistFunctionEnvironment(
+    this,
+    noNewArrows,
+    allowInsertArrow
+  );
   this.ensureBlock();
   this.node.type = "FunctionExpression";
 
   if (!noNewArrows) {
-    const checkBinding = thisBinding ? null : this.parentPath.scope.generateUidIdentifier("arrowCheckId");
+    const checkBinding = thisBinding
+      ? null
+      : this.parentPath.scope.generateUidIdentifier("arrowCheckId");
 
     if (checkBinding) {
       this.parentPath.scope.push({
         id: checkBinding,
-        init: objectExpression([])
+        init: objectExpression([]),
       });
     }
 
-    this.get("body").unshiftContainer("body", expressionStatement(callExpression(this.hub.addHelper("newArrowCheck"), [thisExpression(), checkBinding ? identifier(checkBinding.name) : identifier(thisBinding)])));
-    this.replaceWith(callExpression(memberExpression((0, _helperFunctionName.default)(this, true) || this.node, identifier("bind")), [checkBinding ? identifier(checkBinding.name) : thisExpression()]));
+    this.get("body").unshiftContainer(
+      "body",
+      expressionStatement(
+        callExpression(this.hub.addHelper("newArrowCheck"), [
+          thisExpression(),
+          checkBinding
+            ? identifier(checkBinding.name)
+            : identifier(thisBinding),
+        ])
+      )
+    );
+    this.replaceWith(
+      callExpression(
+        memberExpression(
+          (0, _helperFunctionName.default)(this, true) || this.node,
+          identifier("bind")
+        ),
+        [checkBinding ? identifier(checkBinding.name) : thisExpression()]
+      )
+    );
   }
 }
 
-function hoistFunctionEnvironment(fnPath, noNewArrows = true, allowInsertArrow = true) {
-  const thisEnvFn = fnPath.findParent(p => {
-    return p.isFunction() && !p.isArrowFunctionExpression() || p.isProgram() || p.isClassProperty({
-      static: false
-    });
+function hoistFunctionEnvironment(
+  fnPath,
+  noNewArrows = true,
+  allowInsertArrow = true
+) {
+  const thisEnvFn = fnPath.findParent((p) => {
+    return (
+      (p.isFunction() && !p.isArrowFunctionExpression()) ||
+      p.isProgram() ||
+      p.isClassProperty({
+        static: false,
+      })
+    );
   });
-  const inConstructor = (thisEnvFn == null ? void 0 : thisEnvFn.node.kind) === "constructor";
+  const inConstructor =
+    (thisEnvFn == null ? void 0 : thisEnvFn.node.kind) === "constructor";
 
   if (thisEnvFn.isClassProperty()) {
-    throw fnPath.buildCodeFrameError("Unable to transform arrow inside class property");
+    throw fnPath.buildCodeFrameError(
+      "Unable to transform arrow inside class property"
+    );
   }
 
-  const {
-    thisPaths,
-    argumentsPaths,
-    newTargetPaths,
-    superProps,
-    superCalls
-  } = getScopeInformation(fnPath);
+  const { thisPaths, argumentsPaths, newTargetPaths, superProps, superCalls } =
+    getScopeInformation(fnPath);
 
   if (inConstructor && superCalls.length > 0) {
     if (!allowInsertArrow) {
-      throw superCalls[0].buildCodeFrameError("Unable to handle nested super() usage in arrow");
+      throw superCalls[0].buildCodeFrameError(
+        "Unable to handle nested super() usage in arrow"
+      );
     }
 
     const allSuperCalls = [];
@@ -179,11 +224,10 @@ function hoistFunctionEnvironment(fnPath, noNewArrows = true, allowInsertArrow =
       CallExpression(child) {
         if (!child.get("callee").isSuper()) return;
         allSuperCalls.push(child);
-      }
-
+      },
     });
     const superBinding = getSuperBinding(thisEnvFn);
-    allSuperCalls.forEach(superCall => {
+    allSuperCalls.forEach((superCall) => {
       const callee = identifier(superBinding);
       callee.loc = superCall.node.callee.loc;
       superCall.get("callee").replaceWith(callee);
@@ -195,12 +239,20 @@ function hoistFunctionEnvironment(fnPath, noNewArrows = true, allowInsertArrow =
       const args = () => identifier("arguments");
 
       if (thisEnvFn.scope.path.isProgram()) {
-        return conditionalExpression(binaryExpression("===", unaryExpression("typeof", args()), stringLiteral("undefined")), thisEnvFn.scope.buildUndefinedNode(), args());
+        return conditionalExpression(
+          binaryExpression(
+            "===",
+            unaryExpression("typeof", args()),
+            stringLiteral("undefined")
+          ),
+          thisEnvFn.scope.buildUndefinedNode(),
+          args()
+        );
       } else {
         return args();
       }
     });
-    argumentsPaths.forEach(argumentsChild => {
+    argumentsPaths.forEach((argumentsChild) => {
       const argsRef = identifier(argumentsBinding);
       argsRef.loc = argumentsChild.node.loc;
       argumentsChild.replaceWith(argsRef);
@@ -208,8 +260,10 @@ function hoistFunctionEnvironment(fnPath, noNewArrows = true, allowInsertArrow =
   }
 
   if (newTargetPaths.length > 0) {
-    const newTargetBinding = getBinding(thisEnvFn, "newtarget", () => metaProperty(identifier("new"), identifier("target")));
-    newTargetPaths.forEach(targetChild => {
+    const newTargetBinding = getBinding(thisEnvFn, "newtarget", () =>
+      metaProperty(identifier("new"), identifier("target"))
+    );
+    newTargetPaths.forEach((targetChild) => {
       const targetRef = identifier(newTargetBinding);
       targetRef.loc = targetChild.node.loc;
       targetChild.replaceWith(targetRef);
@@ -218,17 +272,24 @@ function hoistFunctionEnvironment(fnPath, noNewArrows = true, allowInsertArrow =
 
   if (superProps.length > 0) {
     if (!allowInsertArrow) {
-      throw superProps[0].buildCodeFrameError("Unable to handle nested super.prop usage");
+      throw superProps[0].buildCodeFrameError(
+        "Unable to handle nested super.prop usage"
+      );
     }
 
-    const flatSuperProps = superProps.reduce((acc, superProp) => acc.concat(standardizeSuperProperty(superProp)), []);
-    flatSuperProps.forEach(superProp => {
-      const key = superProp.node.computed ? "" : superProp.get("property").node.name;
+    const flatSuperProps = superProps.reduce(
+      (acc, superProp) => acc.concat(standardizeSuperProperty(superProp)),
+      []
+    );
+    flatSuperProps.forEach((superProp) => {
+      const key = superProp.node.computed
+        ? ""
+        : superProp.get("property").node.name;
       const isAssignment = superProp.parentPath.isAssignmentExpression({
-        left: superProp.node
+        left: superProp.node,
       });
       const isCall = superProp.parentPath.isCallExpression({
-        callee: superProp.node
+        callee: superProp.node,
       });
       const superBinding = getSuperPropBinding(thisEnvFn, isAssignment, key);
       const args = [];
@@ -261,9 +322,11 @@ function hoistFunctionEnvironment(fnPath, noNewArrows = true, allowInsertArrow =
   if (thisPaths.length > 0 || !noNewArrows) {
     thisBinding = getThisBinding(thisEnvFn, inConstructor);
 
-    if (noNewArrows || inConstructor && hasSuperClass(thisEnvFn)) {
-      thisPaths.forEach(thisChild => {
-        const thisRef = thisChild.isJSX() ? jsxIdentifier(thisBinding) : identifier(thisBinding);
+    if (noNewArrows || (inConstructor && hasSuperClass(thisEnvFn))) {
+      thisPaths.forEach((thisChild) => {
+        const thisRef = thisChild.isJSX()
+          ? jsxIdentifier(thisBinding)
+          : identifier(thisBinding);
         thisRef.loc = thisChild.node.loc;
         thisChild.replaceWith(thisRef);
       });
@@ -275,7 +338,10 @@ function hoistFunctionEnvironment(fnPath, noNewArrows = true, allowInsertArrow =
 }
 
 function standardizeSuperProperty(superProp) {
-  if (superProp.parentPath.isAssignmentExpression() && superProp.parentPath.node.operator !== "=") {
+  if (
+    superProp.parentPath.isAssignmentExpression() &&
+    superProp.parentPath.node.operator !== "="
+  ) {
     const assignmentPath = superProp.parentPath;
     const op = assignmentPath.node.operator.slice(0, -1);
     const value = assignmentPath.node.right;
@@ -283,19 +349,76 @@ function standardizeSuperProperty(superProp) {
 
     if (superProp.node.computed) {
       const tmp = superProp.scope.generateDeclaredUidIdentifier("tmp");
-      assignmentPath.get("left").replaceWith(memberExpression(superProp.node.object, assignmentExpression("=", tmp, superProp.node.property), true));
-      assignmentPath.get("right").replaceWith(binaryExpression(op, memberExpression(superProp.node.object, identifier(tmp.name), true), value));
+      assignmentPath
+        .get("left")
+        .replaceWith(
+          memberExpression(
+            superProp.node.object,
+            assignmentExpression("=", tmp, superProp.node.property),
+            true
+          )
+        );
+      assignmentPath
+        .get("right")
+        .replaceWith(
+          binaryExpression(
+            op,
+            memberExpression(superProp.node.object, identifier(tmp.name), true),
+            value
+          )
+        );
     } else {
-      assignmentPath.get("left").replaceWith(memberExpression(superProp.node.object, superProp.node.property));
-      assignmentPath.get("right").replaceWith(binaryExpression(op, memberExpression(superProp.node.object, identifier(superProp.node.property.name)), value));
+      assignmentPath
+        .get("left")
+        .replaceWith(
+          memberExpression(superProp.node.object, superProp.node.property)
+        );
+      assignmentPath
+        .get("right")
+        .replaceWith(
+          binaryExpression(
+            op,
+            memberExpression(
+              superProp.node.object,
+              identifier(superProp.node.property.name)
+            ),
+            value
+          )
+        );
     }
 
-    return [assignmentPath.get("left"), assignmentPath.get("right").get("left")];
+    return [
+      assignmentPath.get("left"),
+      assignmentPath.get("right").get("left"),
+    ];
   } else if (superProp.parentPath.isUpdateExpression()) {
     const updateExpr = superProp.parentPath;
     const tmp = superProp.scope.generateDeclaredUidIdentifier("tmp");
-    const computedKey = superProp.node.computed ? superProp.scope.generateDeclaredUidIdentifier("prop") : null;
-    const parts = [assignmentExpression("=", tmp, memberExpression(superProp.node.object, computedKey ? assignmentExpression("=", computedKey, superProp.node.property) : superProp.node.property, superProp.node.computed)), assignmentExpression("=", memberExpression(superProp.node.object, computedKey ? identifier(computedKey.name) : superProp.node.property, superProp.node.computed), binaryExpression("+", identifier(tmp.name), numericLiteral(1)))];
+    const computedKey = superProp.node.computed
+      ? superProp.scope.generateDeclaredUidIdentifier("prop")
+      : null;
+    const parts = [
+      assignmentExpression(
+        "=",
+        tmp,
+        memberExpression(
+          superProp.node.object,
+          computedKey
+            ? assignmentExpression("=", computedKey, superProp.node.property)
+            : superProp.node.property,
+          superProp.node.computed
+        )
+      ),
+      assignmentExpression(
+        "=",
+        memberExpression(
+          superProp.node.object,
+          computedKey ? identifier(computedKey.name) : superProp.node.property,
+          superProp.node.computed
+        ),
+        binaryExpression("+", identifier(tmp.name), numericLiteral(1))
+      ),
+    ];
 
     if (!superProp.parentPath.node.prefix) {
       parts.push(identifier(tmp.name));
@@ -311,11 +434,14 @@ function standardizeSuperProperty(superProp) {
 }
 
 function hasSuperClass(thisEnvFn) {
-  return thisEnvFn.isClassMethod() && !!thisEnvFn.parentPath.parentPath.node.superClass;
+  return (
+    thisEnvFn.isClassMethod() &&
+    !!thisEnvFn.parentPath.parentPath.node.superClass
+  );
 }
 
 function getThisBinding(thisEnvFn, inConstructor) {
-  return getBinding(thisEnvFn, "this", thisBinding => {
+  return getBinding(thisEnvFn, "this", (thisBinding) => {
     if (!inConstructor || !hasSuperClass(thisEnvFn)) return thisExpression();
     const supers = new WeakSet();
     thisEnvFn.traverse({
@@ -332,9 +458,15 @@ function getThisBinding(thisEnvFn, inConstructor) {
         if (!child.get("callee").isSuper()) return;
         if (supers.has(child.node)) return;
         supers.add(child.node);
-        child.replaceWithMultiple([child.node, assignmentExpression("=", identifier(thisBinding), identifier("this"))]);
-      }
-
+        child.replaceWithMultiple([
+          child.node,
+          assignmentExpression(
+            "=",
+            identifier(thisBinding),
+            identifier("this")
+          ),
+        ]);
+      },
     });
   });
 }
@@ -342,7 +474,10 @@ function getThisBinding(thisEnvFn, inConstructor) {
 function getSuperBinding(thisEnvFn) {
   return getBinding(thisEnvFn, "supercall", () => {
     const argsBinding = thisEnvFn.scope.generateUidIdentifier("args");
-    return arrowFunctionExpression([restElement(argsBinding)], callExpression(_super(), [spreadElement(identifier(argsBinding.name))]));
+    return arrowFunctionExpression(
+      [restElement(argsBinding)],
+      callExpression(_super(), [spreadElement(identifier(argsBinding.name))])
+    );
   });
 }
 
@@ -380,7 +515,7 @@ function getBinding(thisEnvFn, key, init) {
     thisEnvFn.setData(cacheKey, data);
     thisEnvFn.scope.push({
       id: id,
-      init: init(data)
+      init: init(data),
     });
   }
 
@@ -410,11 +545,14 @@ function getScopeInformation(fnPath) {
     JSXIdentifier(child) {
       if (child.node.name !== "this") return;
 
-      if (!child.parentPath.isJSXMemberExpression({
-        object: child.node
-      }) && !child.parentPath.isJSXOpeningElement({
-        name: child.node
-      })) {
+      if (
+        !child.parentPath.isJSXMemberExpression({
+          object: child.node,
+        }) &&
+        !child.parentPath.isJSXOpeningElement({
+          name: child.node,
+        })
+      ) {
         return;
       }
 
@@ -442,27 +580,32 @@ function getScopeInformation(fnPath) {
         if (curr.path.isFunction() && !curr.path.isArrowFunctionExpression()) {
           break;
         }
-      } while (curr = curr.parent);
+      } while ((curr = curr.parent));
 
       argumentsPaths.push(child);
     },
 
     MetaProperty(child) {
-      if (!child.get("meta").isIdentifier({
-        name: "new"
-      })) return;
-      if (!child.get("property").isIdentifier({
-        name: "target"
-      })) return;
+      if (
+        !child.get("meta").isIdentifier({
+          name: "new",
+        })
+      )
+        return;
+      if (
+        !child.get("property").isIdentifier({
+          name: "target",
+        })
+      )
+        return;
       newTargetPaths.push(child);
-    }
-
+    },
   });
   return {
     thisPaths,
     argumentsPaths,
     newTargetPaths,
     superProps,
-    superCalls
+    superCalls,
   };
 }

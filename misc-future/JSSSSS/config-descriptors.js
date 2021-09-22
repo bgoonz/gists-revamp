@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.createCachedDescriptors = createCachedDescriptors;
 exports.createUncachedDescriptors = createUncachedDescriptors;
@@ -26,7 +26,16 @@ var _caching = require("./caching");
 var _resolveTargets = require("./resolve-targets");
 
 function isEqualDescriptor(a, b) {
-  return a.name === b.name && a.value === b.value && a.options === b.options && a.dirname === b.dirname && a.alias === b.alias && a.ownPass === b.ownPass && (a.file && a.file.request) === (b.file && b.file.request) && (a.file && a.file.resolved) === (b.file && b.file.resolved);
+  return (
+    a.name === b.name &&
+    a.value === b.value &&
+    a.options === b.options &&
+    a.dirname === b.dirname &&
+    a.alias === b.alias &&
+    a.ownPass === b.ownPass &&
+    (a.file && a.file.request) === (b.file && b.file.request) &&
+    (a.file && a.file.resolved) === (b.file && b.file.resolved)
+  );
 }
 
 function* handlerOf(value) {
@@ -35,22 +44,29 @@ function* handlerOf(value) {
 
 function optionsWithResolvedBrowserslistConfigFile(options, dirname) {
   if (typeof options.browserslistConfigFile === "string") {
-    options.browserslistConfigFile = (0, _resolveTargets.resolveBrowserslistConfigFile)(options.browserslistConfigFile, dirname);
+    options.browserslistConfigFile = (0,
+    _resolveTargets.resolveBrowserslistConfigFile)(
+      options.browserslistConfigFile,
+      dirname
+    );
   }
 
   return options;
 }
 
 function createCachedDescriptors(dirname, options, alias) {
-  const {
-    plugins,
-    presets,
-    passPerPreset
-  } = options;
+  const { plugins, presets, passPerPreset } = options;
   return {
     options: optionsWithResolvedBrowserslistConfigFile(options, dirname),
-    plugins: plugins ? () => createCachedPluginDescriptors(plugins, dirname)(alias) : () => handlerOf([]),
-    presets: presets ? () => createCachedPresetDescriptors(presets, dirname)(alias)(!!passPerPreset) : () => handlerOf([])
+    plugins: plugins
+      ? () => createCachedPluginDescriptors(plugins, dirname)(alias)
+      : () => handlerOf([]),
+    presets: presets
+      ? () =>
+          createCachedPresetDescriptors(presets, dirname)(alias)(
+            !!passPerPreset
+          )
+      : () => handlerOf([]),
   };
 }
 
@@ -62,7 +78,11 @@ function createUncachedDescriptors(dirname, options, alias) {
 
     *plugins() {
       if (!plugins) {
-        plugins = yield* createPluginDescriptors(options.plugins || [], dirname, alias);
+        plugins = yield* createPluginDescriptors(
+          options.plugins || [],
+          dirname,
+          alias
+        );
       }
 
       return plugins;
@@ -70,38 +90,54 @@ function createUncachedDescriptors(dirname, options, alias) {
 
     *presets() {
       if (!presets) {
-        presets = yield* createPresetDescriptors(options.presets || [], dirname, alias, !!options.passPerPreset);
+        presets = yield* createPresetDescriptors(
+          options.presets || [],
+          dirname,
+          alias,
+          !!options.passPerPreset
+        );
       }
 
       return presets;
-    }
-
+    },
   };
 }
 
 const PRESET_DESCRIPTOR_CACHE = new WeakMap();
-const createCachedPresetDescriptors = (0, _caching.makeWeakCacheSync)((items, cache) => {
-  const dirname = cache.using(dir => dir);
-  return (0, _caching.makeStrongCacheSync)(alias => (0, _caching.makeStrongCache)(function* (passPerPreset) {
-    const descriptors = yield* createPresetDescriptors(items, dirname, alias, passPerPreset);
-    return descriptors.map(desc => loadCachedDescriptor(PRESET_DESCRIPTOR_CACHE, desc));
-  }));
-});
+const createCachedPresetDescriptors = (0, _caching.makeWeakCacheSync)(
+  (items, cache) => {
+    const dirname = cache.using((dir) => dir);
+    return (0, _caching.makeStrongCacheSync)((alias) =>
+      (0, _caching.makeStrongCache)(function* (passPerPreset) {
+        const descriptors = yield* createPresetDescriptors(
+          items,
+          dirname,
+          alias,
+          passPerPreset
+        );
+        return descriptors.map((desc) =>
+          loadCachedDescriptor(PRESET_DESCRIPTOR_CACHE, desc)
+        );
+      })
+    );
+  }
+);
 const PLUGIN_DESCRIPTOR_CACHE = new WeakMap();
-const createCachedPluginDescriptors = (0, _caching.makeWeakCacheSync)((items, cache) => {
-  const dirname = cache.using(dir => dir);
-  return (0, _caching.makeStrongCache)(function* (alias) {
-    const descriptors = yield* createPluginDescriptors(items, dirname, alias);
-    return descriptors.map(desc => loadCachedDescriptor(PLUGIN_DESCRIPTOR_CACHE, desc));
-  });
-});
+const createCachedPluginDescriptors = (0, _caching.makeWeakCacheSync)(
+  (items, cache) => {
+    const dirname = cache.using((dir) => dir);
+    return (0, _caching.makeStrongCache)(function* (alias) {
+      const descriptors = yield* createPluginDescriptors(items, dirname, alias);
+      return descriptors.map((desc) =>
+        loadCachedDescriptor(PLUGIN_DESCRIPTOR_CACHE, desc)
+      );
+    });
+  }
+);
 const DEFAULT_OPTIONS = {};
 
 function loadCachedDescriptor(cache, desc) {
-  const {
-    value,
-    options = DEFAULT_OPTIONS
-  } = desc;
+  const { value, options = DEFAULT_OPTIONS } = desc;
   if (options === false) return desc;
   let cacheByOptions = cache.get(value);
 
@@ -118,7 +154,9 @@ function loadCachedDescriptor(cache, desc) {
   }
 
   if (possibilities.indexOf(desc) === -1) {
-    const matches = possibilities.filter(possibility => isEqualDescriptor(possibility, desc));
+    const matches = possibilities.filter((possibility) =>
+      isEqualDescriptor(possibility, desc)
+    );
 
     if (matches.length > 0) {
       return matches[0];
@@ -131,7 +169,13 @@ function loadCachedDescriptor(cache, desc) {
 }
 
 function* createPresetDescriptors(items, dirname, alias, passPerPreset) {
-  return yield* createDescriptors("preset", items, dirname, alias, passPerPreset);
+  return yield* createDescriptors(
+    "preset",
+    items,
+    dirname,
+    alias,
+    passPerPreset
+  );
 }
 
 function* createPluginDescriptors(items, dirname, alias) {
@@ -139,20 +183,20 @@ function* createPluginDescriptors(items, dirname, alias) {
 }
 
 function* createDescriptors(type, items, dirname, alias, ownPass) {
-  const descriptors = yield* _gensync().all(items.map((item, index) => createDescriptor(item, dirname, {
-    type,
-    alias: `${alias}$${index}`,
-    ownPass: !!ownPass
-  })));
+  const descriptors = yield* _gensync().all(
+    items.map((item, index) =>
+      createDescriptor(item, dirname, {
+        type,
+        alias: `${alias}$${index}`,
+        ownPass: !!ownPass,
+      })
+    )
+  );
   assertNoDuplicates(descriptors);
   return descriptors;
 }
 
-function* createDescriptor(pair, dirname, {
-  type,
-  alias,
-  ownPass
-}) {
+function* createDescriptor(pair, dirname, { type, alias, ownPass }) {
   const desc = (0, _item.getItemDescriptor)(pair);
 
   if (desc) {
@@ -176,18 +220,17 @@ function* createDescriptor(pair, dirname, {
 
   if (typeof value === "string") {
     if (typeof type !== "string") {
-      throw new Error("To resolve a string-based item, the type of item must be given");
+      throw new Error(
+        "To resolve a string-based item, the type of item must be given"
+      );
     }
 
     const resolver = type === "plugin" ? _files.loadPlugin : _files.loadPreset;
     const request = value;
-    ({
-      filepath,
-      value
-    } = yield* resolver(value, dirname));
+    ({ filepath, value } = yield* resolver(value, dirname));
     file = {
       request,
-      resolved: filepath
+      resolved: filepath,
     };
   }
 
@@ -204,11 +247,15 @@ function* createDescriptor(pair, dirname, {
   }
 
   if (typeof value !== "object" && typeof value !== "function") {
-    throw new Error(`Unsupported format: ${typeof value}. Expected an object or a function.`);
+    throw new Error(
+      `Unsupported format: ${typeof value}. Expected an object or a function.`
+    );
   }
 
   if (filepath !== null && typeof value === "object" && value) {
-    throw new Error(`Plugin/Preset files are not allowed to export objects, only functions. In ${filepath}`);
+    throw new Error(
+      `Plugin/Preset files are not allowed to export objects, only functions. In ${filepath}`
+    );
   }
 
   return {
@@ -218,7 +265,7 @@ function* createDescriptor(pair, dirname, {
     options,
     dirname,
     ownPass,
-    file
+    file,
   };
 }
 
@@ -235,8 +282,22 @@ function assertNoDuplicates(items) {
     }
 
     if (nameMap.has(item.name)) {
-      const conflicts = items.filter(i => i.value === item.value);
-      throw new Error([`Duplicate plugin/preset detected.`, `If you'd like to use two separate instances of a plugin,`, `they need separate names, e.g.`, ``, `  plugins: [`, `    ['some-plugin', {}],`, `    ['some-plugin', {}, 'some unique name'],`, `  ]`, ``, `Duplicates detected are:`, `${JSON.stringify(conflicts, null, 2)}`].join("\n"));
+      const conflicts = items.filter((i) => i.value === item.value);
+      throw new Error(
+        [
+          `Duplicate plugin/preset detected.`,
+          `If you'd like to use two separate instances of a plugin,`,
+          `they need separate names, e.g.`,
+          ``,
+          `  plugins: [`,
+          `    ['some-plugin', {}],`,
+          `    ['some-plugin', {}, 'some unique name'],`,
+          `  ]`,
+          ``,
+          `Duplicates detected are:`,
+          `${JSON.stringify(conflicts, null, 2)}`,
+        ].join("\n")
+      );
     }
 
     nameMap.add(item.name);

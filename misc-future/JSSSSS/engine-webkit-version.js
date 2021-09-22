@@ -1,4 +1,4 @@
-var userAgent = require('../internals/engine-user-agent');
+var userAgent = require("../internals/engine-user-agent");
 
 var webkit = userAgent.match(/AppleWebKit\/(\d+)\./);
 

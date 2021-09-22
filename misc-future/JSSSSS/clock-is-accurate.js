@@ -25,7 +25,7 @@ function testClockAccuracy() {
     cur = Date.now();
   }
   end = hrtime(start);
-  if ((end[0] * 1e9 + end[1]) > 1000000) {
+  if (end[0] * 1e9 + end[1] > 1000000) {
     return false;
   }
 
@@ -35,7 +35,7 @@ function testClockAccuracy() {
     cur = Date.now();
   }
   end = hrtime(start);
-  if ((end[0] * 1e9 + end[1]) > 50000000) {
+  if (end[0] * 1e9 + end[1] > 50000000) {
     return false;
   }
 

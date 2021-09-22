@@ -27,7 +27,7 @@ Object.defineProperty(DocumentFragment, "prototype", {
   value: DocumentFragment.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 DocumentFragment.prototype.getElementById = function getElementById(elementId) {
@@ -46,7 +46,8 @@ DocumentFragment.prototype.getElementById = function getElementById(elementId) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementById' on 'DocumentFragment': parameter 1"
+      context:
+        "Failed to execute 'getElementById' on 'DocumentFragment': parameter 1",
     });
     args.push(curArg);
   }
@@ -64,7 +65,9 @@ DocumentFragment.prototype.prepend = function prepend() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'prepend' on 'DocumentFragment': parameter " + (i + 1)
+        context:
+          "Failed to execute 'prepend' on 'DocumentFragment': parameter " +
+          (i + 1),
       });
     }
     args.push(curArg);
@@ -83,7 +86,9 @@ DocumentFragment.prototype.append = function append() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'append' on 'DocumentFragment': parameter " + (i + 1)
+        context:
+          "Failed to execute 'append' on 'DocumentFragment': parameter " +
+          (i + 1),
       });
     }
     args.push(curArg);
@@ -107,14 +112,17 @@ DocumentFragment.prototype.querySelector = function querySelector(selectors) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'querySelector' on 'DocumentFragment': parameter 1"
+      context:
+        "Failed to execute 'querySelector' on 'DocumentFragment': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].querySelector(...args));
 };
 
-DocumentFragment.prototype.querySelectorAll = function querySelectorAll(selectors) {
+DocumentFragment.prototype.querySelectorAll = function querySelectorAll(
+  selectors
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -130,7 +138,8 @@ DocumentFragment.prototype.querySelectorAll = function querySelectorAll(selector
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'querySelectorAll' on 'DocumentFragment': parameter 1"
+      context:
+        "Failed to execute 'querySelectorAll' on 'DocumentFragment': parameter 1",
     });
     args.push(curArg);
   }
@@ -149,7 +158,7 @@ Object.defineProperty(DocumentFragment.prototype, "children", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(DocumentFragment.prototype, "firstElementChild", {
@@ -162,7 +171,7 @@ Object.defineProperty(DocumentFragment.prototype, "firstElementChild", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(DocumentFragment.prototype, "lastElementChild", {
@@ -175,7 +184,7 @@ Object.defineProperty(DocumentFragment.prototype, "lastElementChild", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(DocumentFragment.prototype, "childElementCount", {
@@ -188,14 +197,14 @@ Object.defineProperty(DocumentFragment.prototype, "childElementCount", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(DocumentFragment.prototype, Symbol.toStringTag, {
   value: "DocumentFragment",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -261,7 +270,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -272,8 +281,8 @@ const iface = {
   },
   interface: DocumentFragment,
   expose: {
-    Window: { DocumentFragment }
-  }
+    Window: { DocumentFragment },
+  },
 }; // iface
 module.exports = iface;
 

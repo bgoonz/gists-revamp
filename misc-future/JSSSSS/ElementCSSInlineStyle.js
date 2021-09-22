@@ -13,7 +13,7 @@ Object.defineProperty(ElementCSSInlineStyle, "prototype", {
   value: ElementCSSInlineStyle.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(ElementCSSInlineStyle.prototype, "style", {
@@ -36,14 +36,14 @@ Object.defineProperty(ElementCSSInlineStyle.prototype, "style", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(ElementCSSInlineStyle.prototype, Symbol.toStringTag, {
   value: "ElementCSSInlineStyle",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -107,7 +107,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -117,7 +117,7 @@ const iface = {
     return obj;
   },
   interface: ElementCSSInlineStyle,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = _default;
 
@@ -37,20 +37,54 @@ function _fs() {
 
 var util = require("./util");
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+      args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(undefined);
+    });
+  };
+}
 
 const FILE_TYPE = Object.freeze({
   NON_COMPILABLE: "NON_COMPILABLE",
   COMPILED: "COMPILED",
   IGNORED: "IGNORED",
-  ERR_COMPILATION: "ERR_COMPILATION"
+  ERR_COMPILATION: "ERR_COMPILATION",
 });
 
 function outputFileSync(filePath, data) {
-  (((v, w) => (v = v.split("."), w = w.split("."), +v[0] > +w[0] || v[0] == w[0] && +v[1] >= +w[1]))(process.versions.node, "10.12") ? _fs().mkdirSync : require("make-dir").sync)(_path().dirname(filePath), {
-    recursive: true
+  (((v, w) => (
+    (v = v.split(".")),
+    (w = w.split(".")),
+    +v[0] > +w[0] || (v[0] == w[0] && +v[1] >= +w[1])
+  ))(process.versions.node, "10.12")
+    ? _fs().mkdirSync
+    : require("make-dir").sync)(_path().dirname(filePath), {
+    recursive: true,
   });
 
   _fs().writeFileSync(filePath, data);
@@ -61,10 +95,7 @@ function _default(_x) {
 }
 
 function _ref() {
-  _ref = _asyncToGenerator(function* ({
-    cliOptions,
-    babelOptions
-  }) {
+  _ref = _asyncToGenerator(function* ({ cliOptions, babelOptions }) {
     const filenames = cliOptions.filenames;
 
     function write(_x2, _x3) {
@@ -79,16 +110,28 @@ function _ref() {
           return FILE_TYPE.NON_COMPILABLE;
         }
 
-        relative = util.withExtension(relative, cliOptions.keepFileExtension ? _path().extname(relative) : cliOptions.outFileExtension);
+        relative = util.withExtension(
+          relative,
+          cliOptions.keepFileExtension
+            ? _path().extname(relative)
+            : cliOptions.outFileExtension
+        );
         const dest = getDest(relative, base);
 
         try {
-          const res = yield util.compile(src, Object.assign({}, babelOptions, {
-            sourceFileName: _slash()(_path().relative(dest + "/..", src))
-          }));
+          const res = yield util.compile(
+            src,
+            Object.assign({}, babelOptions, {
+              sourceFileName: _slash()(_path().relative(dest + "/..", src)),
+            })
+          );
           if (!res) return FILE_TYPE.IGNORED;
 
-          if (res.map && babelOptions.sourceMaps && babelOptions.sourceMaps !== "inline") {
+          if (
+            res.map &&
+            babelOptions.sourceMaps &&
+            babelOptions.sourceMaps !== "inline"
+          ) {
             const mapLoc = dest + ".map";
             res.code = util.addSourceMappingUrl(res.code, mapLoc);
             res.map.file = _path().basename(relative);
@@ -131,7 +174,10 @@ function _ref() {
       _handleFile = _asyncToGenerator(function* (src, base) {
         const written = yield write(src, base);
 
-        if (cliOptions.copyFiles && written === FILE_TYPE.NON_COMPILABLE || cliOptions.copyIgnored && written === FILE_TYPE.IGNORED) {
+        if (
+          (cliOptions.copyFiles && written === FILE_TYPE.NON_COMPILABLE) ||
+          (cliOptions.copyIgnored && written === FILE_TYPE.IGNORED)
+        ) {
           const filename = _path().relative(base, src);
 
           const dest = getDest(filename, base);
@@ -184,7 +230,11 @@ function _ref() {
       }
 
       const diff = process.hrtime(startTime);
-      console.log(`Successfully compiled ${compiledFiles} ${compiledFiles !== 1 ? "files" : "file"} with Babel (${diff[0] * 1e3 + Math.round(diff[1] / 1e6)}ms).`);
+      console.log(
+        `Successfully compiled ${compiledFiles} ${
+          compiledFiles !== 1 ? "files" : "file"
+        } with Babel (${diff[0] * 1e3 + Math.round(diff[1] / 1e6)}ms).`
+      );
       compiledFiles = 0;
       startTime = null;
     }, 100);
@@ -194,8 +244,14 @@ function _ref() {
         util.deleteDir(cliOptions.outDir);
       }
 
-      (((v, w) => (v = v.split("."), w = w.split("."), +v[0] > +w[0] || v[0] == w[0] && +v[1] >= +w[1]))(process.versions.node, "10.12") ? _fs().mkdirSync : require("make-dir").sync)(cliOptions.outDir, {
-        recursive: true
+      (((v, w) => (
+        (v = v.split(".")),
+        (w = w.split(".")),
+        +v[0] > +w[0] || (v[0] == w[0] && +v[1] >= +w[1])
+      ))(process.versions.node, "10.12")
+        ? _fs().mkdirSync
+        : require("make-dir").sync)(cliOptions.outDir, {
+        recursive: true,
       });
       startTime = process.hrtime();
 
@@ -217,31 +273,39 @@ function _ref() {
           ignoreInitial: true,
           awaitWriteFinish: {
             stabilityThreshold: 50,
-            pollInterval: 10
-          }
+            pollInterval: 10,
+          },
         });
         let processing = 0;
         ["add", "change"].forEach(function (type) {
-          watcher.on(type, function () {
-            var _ref2 = _asyncToGenerator(function* (filename) {
-              processing++;
-              if (startTime === null) startTime = process.hrtime();
+          watcher.on(
+            type,
+            (function () {
+              var _ref2 = _asyncToGenerator(function* (filename) {
+                processing++;
+                if (startTime === null) startTime = process.hrtime();
 
-              try {
-                yield handleFile(filename, filename === filenameOrDir ? _path().dirname(filenameOrDir) : filenameOrDir);
-                compiledFiles++;
-              } catch (err) {
-                console.error(err);
-              }
+                try {
+                  yield handleFile(
+                    filename,
+                    filename === filenameOrDir
+                      ? _path().dirname(filenameOrDir)
+                      : filenameOrDir
+                  );
+                  compiledFiles++;
+                } catch (err) {
+                  console.error(err);
+                }
 
-              processing--;
-              if (processing === 0 && !cliOptions.quiet) logSuccess();
-            });
+                processing--;
+                if (processing === 0 && !cliOptions.quiet) logSuccess();
+              });
 
-            return function (_x7) {
-              return _ref2.apply(this, arguments);
-            };
-          }());
+              return function (_x7) {
+                return _ref2.apply(this, arguments);
+              };
+            })()
+          );
         });
       });
     }

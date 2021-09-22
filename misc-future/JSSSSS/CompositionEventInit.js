@@ -13,7 +13,9 @@ module.exports = {
       const key = "data";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["DOMString"](value, { context: context + " has member data that" });
+        value = conversions["DOMString"](value, {
+          context: context + " has member data that",
+        });
 
         ret[key] = value;
       } else {
@@ -23,12 +25,16 @@ module.exports = {
   },
 
   convert(obj, { context = "The provided value" } = {}) {
-    if (obj !== undefined && typeof obj !== "object" && typeof obj !== "function") {
+    if (
+      obj !== undefined &&
+      typeof obj !== "object" &&
+      typeof obj !== "function"
+    ) {
       throw new TypeError(`${context} is not an object.`);
     }
 
     const ret = Object.create(null);
     module.exports.convertInherit(obj, ret, { context });
     return ret;
-  }
+  },
 };

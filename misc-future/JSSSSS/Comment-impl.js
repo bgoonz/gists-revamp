@@ -13,5 +13,5 @@ class CommentImpl extends CharacterDataImpl {
 }
 
 module.exports = {
-  implementation: CommentImpl
+  implementation: CommentImpl,
 };

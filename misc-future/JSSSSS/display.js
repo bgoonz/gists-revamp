@@ -1,29 +1,36 @@
-import style from './style';
-import compose from './compose';
+import style from "./style";
+import compose from "./compose";
 export var displayPrint = style({
-    prop: 'displayPrint',
-    cssProperty: false,
-    transform: function transform(value) {
-        return {
-            '@media print': {
-                display: value
-            }
-        };
-    }
+  prop: "displayPrint",
+  cssProperty: false,
+  transform: function transform(value) {
+    return {
+      "@media print": {
+        display: value,
+      },
+    };
+  },
 });
 export var displayRaw = style({
-    prop: 'display'
+  prop: "display",
 });
 export var overflow = style({
-    prop: 'overflow'
+  prop: "overflow",
 });
 export var textOverflow = style({
-    prop: 'textOverflow'
+  prop: "textOverflow",
 });
 export var visibility = style({
-    prop: 'visibility'
+  prop: "visibility",
 });
 export var whiteSpace = style({
-    prop: 'whiteSpace'
+  prop: "whiteSpace",
 });
-export default compose(displayPrint, displayRaw, overflow, textOverflow, visibility, whiteSpace);
+export default compose(
+  displayPrint,
+  displayRaw,
+  overflow,
+  textOverflow,
+  visibility,
+  whiteSpace
+);

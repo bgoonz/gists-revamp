@@ -5,13 +5,18 @@ const idlUtils = require("../generated/utils.js");
 const { isDisabled } = require("./form-controls.js");
 const { HTML_NS } = require("./namespaces");
 
-const focusableFormElements = new Set(["input", "select", "textarea", "button"]);
+const focusableFormElements = new Set([
+  "input",
+  "select",
+  "textarea",
+  "button",
+]);
 
 // https://html.spec.whatwg.org/multipage/interaction.html#focusable-area, but also some of
 // https://html.spec.whatwg.org/multipage/interaction.html#focusing-steps: e.g., Documents are not actually focusable
 // areas, but their viewports are, and the first step of the latter algorithm translates Documents to their viewports.
 // And also https://html.spec.whatwg.org/multipage/interaction.html#specially-focusable!
-exports.isFocusableAreaElement = elImpl => {
+exports.isFocusableAreaElement = (elImpl) => {
   if (!elImpl._ownerDocument._defaultView && !elImpl._defaultView) {
     return false;
   }
@@ -61,11 +66,11 @@ exports.fireFocusEventWithTargetAdjustment = (name, target, relatedTarget) => {
         cancelable: false,
         relatedTarget,
         view: target._ownerDocument._defaultView,
-        detail: 0
-      }
+        detail: 0,
+      },
     ],
     {
-      isTrusted: true
+      isTrusted: true,
     }
   );
 

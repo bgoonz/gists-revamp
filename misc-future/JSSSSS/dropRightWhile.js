@@ -1,5 +1,5 @@
-var baseIteratee = require('./_baseIteratee'),
-    baseWhile = require('./_baseWhile');
+var baseIteratee = require("./_baseIteratee"),
+  baseWhile = require("./_baseWhile");
 
 /**
  * Creates a slice of `array` excluding elements dropped from the end.
@@ -37,7 +37,7 @@ var baseIteratee = require('./_baseIteratee'),
  * // => objects for ['barney', 'fred', 'pebbles']
  */
 function dropRightWhile(array, predicate) {
-  return (array && array.length)
+  return array && array.length
     ? baseWhile(array, baseIteratee(predicate, 3), true, true)
     : [];
 }

@@ -1,4 +1,4 @@
-var isArray = require('./isArray');
+var isArray = require("./isArray");
 
 /**
  * Casts `value` as an array if it's not one.

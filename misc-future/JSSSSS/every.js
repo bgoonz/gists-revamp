@@ -1,8 +1,8 @@
-var arrayEvery = require('./_arrayEvery'),
-    baseEvery = require('./_baseEvery'),
-    baseIteratee = require('./_baseIteratee'),
-    isArray = require('./isArray'),
-    isIterateeCall = require('./_isIterateeCall');
+var arrayEvery = require("./_arrayEvery"),
+  baseEvery = require("./_baseEvery"),
+  baseIteratee = require("./_baseIteratee"),
+  isArray = require("./isArray"),
+  isIterateeCall = require("./_isIterateeCall");
 
 /**
  * Checks if `predicate` returns truthy for **all** elements of `collection`.

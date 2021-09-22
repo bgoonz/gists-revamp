@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.findConfigUpwards = findConfigUpwards;
 exports.findRelativeConfig = findRelativeConfig;
@@ -84,9 +84,20 @@ function _module() {
 
 const debug = _debug()("babel:config:loading:files:configuration");
 
-const ROOT_CONFIG_FILENAMES = ["babel.config.js", "babel.config.cjs", "babel.config.mjs", "babel.config.json"];
+const ROOT_CONFIG_FILENAMES = [
+  "babel.config.js",
+  "babel.config.cjs",
+  "babel.config.mjs",
+  "babel.config.json",
+];
 exports.ROOT_CONFIG_FILENAMES = ROOT_CONFIG_FILENAMES;
-const RELATIVE_CONFIG_FILENAMES = [".babelrc", ".babelrc.js", ".babelrc.cjs", ".babelrc.mjs", ".babelrc.json"];
+const RELATIVE_CONFIG_FILENAMES = [
+  ".babelrc",
+  ".babelrc.js",
+  ".babelrc.cjs",
+  ".babelrc.mjs",
+  ".babelrc.json",
+];
 const BABELIGNORE_FILENAME = ".babelignore";
 
 function findConfigUpwards(rootDir) {
@@ -118,7 +129,17 @@ function* findRelativeConfig(packageData, envName, caller) {
     if (!config) {
       var _packageData$pkg;
 
-      config = yield* loadOneConfig(RELATIVE_CONFIG_FILENAMES, loc, envName, caller, ((_packageData$pkg = packageData.pkg) == null ? void 0 : _packageData$pkg.dirname) === loc ? packageToBabelConfig(packageData.pkg) : null);
+      config = yield* loadOneConfig(
+        RELATIVE_CONFIG_FILENAMES,
+        loc,
+        envName,
+        caller,
+        ((_packageData$pkg = packageData.pkg) == null
+          ? void 0
+          : _packageData$pkg.dirname) === loc
+          ? packageToBabelConfig(packageData.pkg)
+          : null
+      );
     }
 
     if (!ignore) {
@@ -134,7 +155,7 @@ function* findRelativeConfig(packageData, envName, caller) {
 
   return {
     config,
-    ignore
+    ignore,
   };
 }
 
@@ -142,11 +163,26 @@ function findRootConfig(dirname, envName, caller) {
   return loadOneConfig(ROOT_CONFIG_FILENAMES, dirname, envName, caller);
 }
 
-function* loadOneConfig(names, dirname, envName, caller, previousConfig = null) {
-  const configs = yield* _gensync().all(names.map(filename => readConfig(_path().join(dirname, filename), envName, caller)));
+function* loadOneConfig(
+  names,
+  dirname,
+  envName,
+  caller,
+  previousConfig = null
+) {
+  const configs = yield* _gensync().all(
+    names.map((filename) =>
+      readConfig(_path().join(dirname, filename), envName, caller)
+    )
+  );
   const config = configs.reduce((previousConfig, config) => {
     if (config && previousConfig) {
-      throw new Error(`Multiple configuration files found. Please remove one:\n` + ` - ${_path().basename(previousConfig.filepath)}\n` + ` - ${config.filepath}\n` + `from ${dirname}`);
+      throw new Error(
+        `Multiple configuration files found. Please remove one:\n` +
+          ` - ${_path().basename(previousConfig.filepath)}\n` +
+          ` - ${config.filepath}\n` +
+          `from ${dirname}`
+      );
     }
 
     return config || previousConfig;
@@ -160,17 +196,23 @@ function* loadOneConfig(names, dirname, envName, caller, previousConfig = null) 
 }
 
 function* loadConfig(name, dirname, envName, caller) {
-  const filepath = (((v, w) => (v = v.split("."), w = w.split("."), +v[0] > +w[0] || v[0] == w[0] && +v[1] >= +w[1]))(process.versions.node, "8.9") ? require.resolve : (r, {
-    paths: [b]
-  }, M = require("module")) => {
-    let f = M._findPath(r, M._nodeModulePaths(b).concat(b));
+  const filepath = (
+    ((v, w) => (
+      (v = v.split(".")),
+      (w = w.split(".")),
+      +v[0] > +w[0] || (v[0] == w[0] && +v[1] >= +w[1])
+    ))(process.versions.node, "8.9")
+      ? require.resolve
+      : (r, { paths: [b] }, M = require("module")) => {
+          let f = M._findPath(r, M._nodeModulePaths(b).concat(b));
 
-    if (f) return f;
-    f = new Error(`Cannot resolve module '${r}'`);
-    f.code = "MODULE_NOT_FOUND";
-    throw f;
-  })(name, {
-    paths: [dirname]
+          if (f) return f;
+          f = new Error(`Cannot resolve module '${r}'`);
+          f.code = "MODULE_NOT_FOUND";
+          throw f;
+        }
+  )(name, {
+    paths: [dirname],
   });
   const conf = yield* readConfig(filepath, envName, caller);
 
@@ -185,14 +227,19 @@ function* loadConfig(name, dirname, envName, caller) {
 function readConfig(filepath, envName, caller) {
   const ext = _path().extname(filepath);
 
-  return ext === ".js" || ext === ".cjs" || ext === ".mjs" ? readConfigJS(filepath, {
-    envName,
-    caller
-  }) : readConfigJSON5(filepath);
+  return ext === ".js" || ext === ".cjs" || ext === ".mjs"
+    ? readConfigJS(filepath, {
+        envName,
+        caller,
+      })
+    : readConfigJSON5(filepath);
 }
 
 const LOADING_CONFIGS = new Set();
-const readConfigJS = (0, _caching.makeStrongCache)(function* readConfigJS(filepath, cache) {
+const readConfigJS = (0, _caching.makeStrongCache)(function* readConfigJS(
+  filepath,
+  cache
+) {
   if (!_fs().existsSync(filepath)) {
     cache.never();
     return null;
@@ -204,7 +251,7 @@ const readConfigJS = (0, _caching.makeStrongCache)(function* readConfigJS(filepa
     return {
       filepath,
       dirname: _path().dirname(filepath),
-      options: {}
+      options: {},
     };
   }
 
@@ -212,7 +259,11 @@ const readConfigJS = (0, _caching.makeStrongCache)(function* readConfigJS(filepa
 
   try {
     LOADING_CONFIGS.add(filepath);
-    options = yield* (0, _moduleTypes.default)(filepath, "You appear to be using a native ECMAScript module configuration " + "file, which is only supported when running Babel asynchronously.");
+    options = yield* (0, _moduleTypes.default)(
+      filepath,
+      "You appear to be using a native ECMAScript module configuration " +
+        "file, which is only supported when running Babel asynchronously."
+    );
   } catch (err) {
     err.message = `${filepath}: Error while loading config - ${err.message}`;
     throw err;
@@ -229,21 +280,29 @@ const readConfigJS = (0, _caching.makeStrongCache)(function* readConfigJS(filepa
   }
 
   if (!options || typeof options !== "object" || Array.isArray(options)) {
-    throw new Error(`${filepath}: Configuration should be an exported JavaScript object.`);
+    throw new Error(
+      `${filepath}: Configuration should be an exported JavaScript object.`
+    );
   }
 
   if (typeof options.then === "function") {
-    throw new Error(`You appear to be using an async configuration, ` + `which your current version of Babel does not support. ` + `We may add support for this in the future, ` + `but if you're on the most recent version of @babel/core and still ` + `seeing this error, then you'll need to synchronously return your config.`);
+    throw new Error(
+      `You appear to be using an async configuration, ` +
+        `which your current version of Babel does not support. ` +
+        `We may add support for this in the future, ` +
+        `but if you're on the most recent version of @babel/core and still ` +
+        `seeing this error, then you'll need to synchronously return your config.`
+    );
   }
 
   if (assertCache && !cache.configured()) throwConfigError();
   return {
     filepath,
     dirname: _path().dirname(filepath),
-    options
+    options,
   };
 });
-const packageToBabelConfig = (0, _caching.makeWeakCacheSync)(file => {
+const packageToBabelConfig = (0, _caching.makeWeakCacheSync)((file) => {
   const babel = file.options["babel"];
   if (typeof babel === "undefined") return null;
 
@@ -254,7 +313,7 @@ const packageToBabelConfig = (0, _caching.makeWeakCacheSync)(file => {
   return {
     filepath: file.filepath,
     dirname: file.dirname,
-    options: babel
+    options: babel,
   };
 });
 const readConfigJSON5 = (0, _utils.makeStaticFileCache)((filepath, content) => {
@@ -280,26 +339,33 @@ const readConfigJSON5 = (0, _utils.makeStaticFileCache)((filepath, content) => {
   return {
     filepath,
     dirname: _path().dirname(filepath),
-    options
+    options,
   };
 });
-const readIgnoreConfig = (0, _utils.makeStaticFileCache)((filepath, content) => {
-  const ignoreDir = _path().dirname(filepath);
+const readIgnoreConfig = (0, _utils.makeStaticFileCache)(
+  (filepath, content) => {
+    const ignoreDir = _path().dirname(filepath);
 
-  const ignorePatterns = content.split("\n").map(line => line.replace(/#(.*?)$/, "").trim()).filter(line => !!line);
+    const ignorePatterns = content
+      .split("\n")
+      .map((line) => line.replace(/#(.*?)$/, "").trim())
+      .filter((line) => !!line);
 
-  for (const pattern of ignorePatterns) {
-    if (pattern[0] === "!") {
-      throw new Error(`Negation of file paths is not supported.`);
+    for (const pattern of ignorePatterns) {
+      if (pattern[0] === "!") {
+        throw new Error(`Negation of file paths is not supported.`);
+      }
     }
-  }
 
-  return {
-    filepath,
-    dirname: _path().dirname(filepath),
-    ignore: ignorePatterns.map(pattern => (0, _patternToRegex.default)(pattern, ignoreDir))
-  };
-});
+    return {
+      filepath,
+      dirname: _path().dirname(filepath),
+      ignore: ignorePatterns.map((pattern) =>
+        (0, _patternToRegex.default)(pattern, ignoreDir)
+      ),
+    };
+  }
+);
 
 function* resolveShowConfigPath(dirname) {
   const targetPath = process.env.BABEL_SHOW_CONFIG_FOR;
@@ -310,7 +376,9 @@ function* resolveShowConfigPath(dirname) {
     const stats = yield* fs.stat(absolutePath);
 
     if (!stats.isFile()) {
-      throw new Error(`${absolutePath}: BABEL_SHOW_CONFIG_FOR must refer to a regular file, directories are not supported.`);
+      throw new Error(
+        `${absolutePath}: BABEL_SHOW_CONFIG_FOR must refer to a regular file, directories are not supported.`
+      );
     }
 
     return absolutePath;

@@ -32,45 +32,45 @@
  *
  */
 module.exports = class Cursor {
+  /**
+   * Initializes this cursor.
+   */
+  constructor() {
+    this.current = null;
+  }
 
-    /**
-     * Initializes this cursor.
-     */
-    constructor() {
-        this.current = null;
+  /**
+   * Gets the first token.
+   * This consumes this cursor.
+   * @returns {Token|Comment} The first token or null.
+   */
+  getOneToken() {
+    return this.moveNext() ? this.current : null;
+  }
+
+  /**
+   * Gets the first tokens.
+   * This consumes this cursor.
+   * @returns {(Token|Comment)[]} All tokens.
+   */
+  getAllTokens() {
+    const tokens = [];
+
+    while (this.moveNext()) {
+      tokens.push(this.current);
     }
 
-    /**
-     * Gets the first token.
-     * This consumes this cursor.
-     * @returns {Token|Comment} The first token or null.
-     */
-    getOneToken() {
-        return this.moveNext() ? this.current : null;
-    }
+    return tokens;
+  }
 
-    /**
-     * Gets the first tokens.
-     * This consumes this cursor.
-     * @returns {(Token|Comment)[]} All tokens.
-     */
-    getAllTokens() {
-        const tokens = [];
-
-        while (this.moveNext()) {
-            tokens.push(this.current);
-        }
-
-        return tokens;
-    }
-
-    /**
-     * Moves this cursor to the next token.
-     * @returns {boolean} `true` if the next token exists.
-     * @abstract
-     */
-    /* istanbul ignore next */
-    moveNext() { // eslint-disable-line class-methods-use-this
-        throw new Error("Not implemented.");
-    }
+  /**
+   * Moves this cursor to the next token.
+   * @returns {boolean} `true` if the next token exists.
+   * @abstract
+   */
+  /* istanbul ignore next */
+  moveNext() {
+    // eslint-disable-line class-methods-use-this
+    throw new Error("Not implemented.");
+  }
 };

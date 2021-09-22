@@ -1,1 +1,1 @@
-module.exports = require('./head');
+module.exports = require("./head");

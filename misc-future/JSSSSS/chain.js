@@ -1,4 +1,4 @@
-var lodash = require('./wrapperLodash');
+var lodash = require("./wrapperLodash");
 
 /**
  * Creates a `lodash` wrapper instance that wraps `value` with explicit method

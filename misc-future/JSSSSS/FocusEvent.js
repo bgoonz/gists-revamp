@@ -17,18 +17,24 @@ function FocusEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'FocusEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'FocusEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'FocusEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'FocusEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertFocusEventInit(curArg, { context: "Failed to construct 'FocusEvent': parameter 2" });
+    curArg = convertFocusEventInit(curArg, {
+      context: "Failed to construct 'FocusEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(FocusEvent, "prototype", {
   value: FocusEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(FocusEvent.prototype, "relatedTarget", {
@@ -55,14 +61,14 @@ Object.defineProperty(FocusEvent.prototype, "relatedTarget", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(FocusEvent.prototype, Symbol.toStringTag, {
   value: "FocusEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -128,7 +134,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -139,8 +145,8 @@ const iface = {
   },
   interface: FocusEvent,
   expose: {
-    Window: { FocusEvent }
-  }
+    Window: { FocusEvent },
+  },
 }; // iface
 module.exports = iface;
 

@@ -9,12 +9,12 @@
  */
 const CheckPascalCase = (VarName) => {
   // firstly, check that input is a string or not.
-  if (typeof VarName !== 'string') {
-    return new TypeError('Argument is not a string.')
+  if (typeof VarName !== "string") {
+    return new TypeError("Argument is not a string.");
   }
 
-  const pat = /^[A-Z][A-Za-z]*$/
-  return pat.test(VarName)
-}
+  const pat = /^[A-Z][A-Za-z]*$/;
+  return pat.test(VarName);
+};
 
-module.exports = CheckPascalCase
+module.exports = CheckPascalCase;

@@ -13,14 +13,14 @@ Object.defineProperty(ElementContentEditable, "prototype", {
   value: ElementContentEditable.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(ElementContentEditable.prototype, Symbol.toStringTag, {
   value: "ElementContentEditable",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -84,7 +84,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -94,7 +94,7 @@ const iface = {
     return obj;
   },
   interface: ElementContentEditable,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

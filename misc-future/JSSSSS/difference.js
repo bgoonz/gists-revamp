@@ -1,7 +1,7 @@
-var baseDifference = require('./_baseDifference'),
-    baseFlatten = require('./_baseFlatten'),
-    baseRest = require('./_baseRest'),
-    isArrayLikeObject = require('./isArrayLikeObject');
+var baseDifference = require("./_baseDifference"),
+  baseFlatten = require("./_baseFlatten"),
+  baseRest = require("./_baseRest"),
+  isArrayLikeObject = require("./isArrayLikeObject");
 
 /**
  * Creates an array of `array` values not included in the other given arrays
@@ -24,7 +24,7 @@ var baseDifference = require('./_baseDifference'),
  * _.difference([2, 1], [2, 3]);
  * // => [1]
  */
-var difference = baseRest(function(array, values) {
+var difference = baseRest(function (array, values) {
   return isArrayLikeObject(array)
     ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true))
     : [];

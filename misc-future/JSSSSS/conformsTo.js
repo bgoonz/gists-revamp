@@ -1,5 +1,5 @@
-var baseConformsTo = require('./_baseConformsTo'),
-    keys = require('./keys');
+var baseConformsTo = require("./_baseConformsTo"),
+  keys = require("./keys");
 
 /**
  * Checks if `object` conforms to `source` by invoking the predicate

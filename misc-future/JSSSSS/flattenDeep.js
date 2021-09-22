@@ -1,4 +1,4 @@
-var baseFlatten = require('./_baseFlatten');
+var baseFlatten = require("./_baseFlatten");
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;

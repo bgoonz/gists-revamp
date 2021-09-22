@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = buildChildren;
 
@@ -20,7 +20,8 @@ function buildChildren(node) {
       continue;
     }
 
-    if ((0, _generated.isJSXExpressionContainer)(child)) child = child.expression;
+    if ((0, _generated.isJSXExpressionContainer)(child))
+      child = child.expression;
     if ((0, _generated.isJSXEmptyExpression)(child)) continue;
     elements.push(child);
   }

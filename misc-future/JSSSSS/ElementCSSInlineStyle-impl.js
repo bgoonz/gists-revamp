@@ -3,7 +3,7 @@ const cssstyle = require("cssstyle");
 
 class ElementCSSInlineStyle {
   _initElementCSSInlineStyle() {
-    this._style = new cssstyle.CSSStyleDeclaration(newCssText => {
+    this._style = new cssstyle.CSSStyleDeclaration((newCssText) => {
       if (!this._settingCssText) {
         this._settingCssText = true;
         this.setAttribute("style", newCssText);
@@ -20,5 +20,5 @@ class ElementCSSInlineStyle {
 }
 
 module.exports = {
-  implementation: ElementCSSInlineStyle
+  implementation: ElementCSSInlineStyle,
 };

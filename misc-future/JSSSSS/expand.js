@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-const fill = require('fill-range');
-const stringify = require('./stringify');
-const utils = require('./utils');
+const fill = require("fill-range");
+const stringify = require("./stringify");
+const utils = require("./utils");
 
-const append = (queue = '', stash = '', enclose = false) => {
+const append = (queue = "", stash = "", enclose = false) => {
   let result = [];
 
   queue = [].concat(queue);
@@ -12,7 +12,7 @@ const append = (queue = '', stash = '', enclose = false) => {
 
   if (!stash.length) return queue;
   if (!queue.length) {
-    return enclose ? utils.flatten(stash).map(ele => `{${ele}}`) : stash;
+    return enclose ? utils.flatten(stash).map((ele) => `{${ele}}`) : stash;
   }
 
   for (let item of queue) {
@@ -22,8 +22,10 @@ const append = (queue = '', stash = '', enclose = false) => {
       }
     } else {
       for (let ele of stash) {
-        if (enclose === true && typeof ele === 'string') ele = `{${ele}}`;
-        result.push(Array.isArray(ele) ? append(item, ele, enclose) : (item + ele));
+        if (enclose === true && typeof ele === "string") ele = `{${ele}}`;
+        result.push(
+          Array.isArray(ele) ? append(item, ele, enclose) : item + ele
+        );
       }
     }
   }
@@ -39,7 +41,7 @@ const expand = (ast, options = {}) => {
     let p = parent;
     let q = parent.queue;
 
-    while (p.type !== 'brace' && p.type !== 'root' && p.parent) {
+    while (p.type !== "brace" && p.type !== "root" && p.parent) {
       p = p.parent;
       q = p.queue;
     }
@@ -49,8 +51,12 @@ const expand = (ast, options = {}) => {
       return;
     }
 
-    if (node.type === 'brace' && node.invalid !== true && node.nodes.length === 2) {
-      q.push(append(q.pop(), ['{}']));
+    if (
+      node.type === "brace" &&
+      node.invalid !== true &&
+      node.nodes.length === 2
+    ) {
+      q.push(append(q.pop(), ["{}"]));
       return;
     }
 
@@ -58,7 +64,9 @@ const expand = (ast, options = {}) => {
       let args = utils.reduce(node.nodes);
 
       if (utils.exceedsLimit(...args, options.step, rangeLimit)) {
-        throw new RangeError('expanded array length exceeds range limit. Use options.rangeLimit to increase or disable the limit.');
+        throw new RangeError(
+          "expanded array length exceeds range limit. Use options.rangeLimit to increase or disable the limit."
+        );
       }
 
       let range = fill(...args, options);
@@ -75,7 +83,7 @@ const expand = (ast, options = {}) => {
     let queue = node.queue;
     let block = node;
 
-    while (block.type !== 'brace' && block.type !== 'root' && block.parent) {
+    while (block.type !== "brace" && block.type !== "root" && block.parent) {
       block = block.parent;
       queue = block.queue;
     }
@@ -83,18 +91,18 @@ const expand = (ast, options = {}) => {
     for (let i = 0; i < node.nodes.length; i++) {
       let child = node.nodes[i];
 
-      if (child.type === 'comma' && node.type === 'brace') {
-        if (i === 1) queue.push('');
-        queue.push('');
+      if (child.type === "comma" && node.type === "brace") {
+        if (i === 1) queue.push("");
+        queue.push("");
         continue;
       }
 
-      if (child.type === 'close') {
+      if (child.type === "close") {
         q.push(append(q.pop(), queue, enclose));
         continue;
       }
 
-      if (child.value && child.type !== 'open') {
+      if (child.value && child.type !== "open") {
         queue.push(append(queue.pop(), child.value));
         continue;
       }

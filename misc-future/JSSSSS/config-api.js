@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.makeConfigAPI = makeConfigAPI;
 exports.makePresetAPI = makePresetAPI;
@@ -24,24 +24,26 @@ var _caching = require("../caching");
 var Context = require("../cache-contexts");
 
 function makeConfigAPI(cache) {
-  const env = value => cache.using(data => {
-    if (typeof value === "undefined") return data.envName;
+  const env = (value) =>
+    cache.using((data) => {
+      if (typeof value === "undefined") return data.envName;
 
-    if (typeof value === "function") {
-      return (0, _caching.assertSimpleType)(value(data.envName));
-    }
-
-    if (!Array.isArray(value)) value = [value];
-    return value.some(entry => {
-      if (typeof entry !== "string") {
-        throw new Error("Unexpected non-string value");
+      if (typeof value === "function") {
+        return (0, _caching.assertSimpleType)(value(data.envName));
       }
 
-      return entry === data.envName;
-    });
-  });
+      if (!Array.isArray(value)) value = [value];
+      return value.some((entry) => {
+        if (typeof entry !== "string") {
+          throw new Error("Unexpected non-string value");
+        }
 
-  const caller = cb => cache.using(data => (0, _caching.assertSimpleType)(cb(data.caller)));
+        return entry === data.envName;
+      });
+    });
+
+  const caller = (cb) =>
+    cache.using((data) => (0, _caching.assertSimpleType)(cb(data.caller)));
 
   return {
     version: _.version,
@@ -49,23 +51,24 @@ function makeConfigAPI(cache) {
     env,
     async: () => false,
     caller,
-    assertVersion
+    assertVersion,
   };
 }
 
 function makePresetAPI(cache) {
-  const targets = () => JSON.parse(cache.using(data => JSON.stringify(data.targets)));
+  const targets = () =>
+    JSON.parse(cache.using((data) => JSON.stringify(data.targets)));
 
   return Object.assign({}, makeConfigAPI(cache), {
-    targets
+    targets,
   });
 }
 
 function makePluginAPI(cache) {
-  const assumption = name => cache.using(data => data.assumptions[name]);
+  const assumption = (name) => cache.using((data) => data.assumptions[name]);
 
   return Object.assign({}, makePresetAPI(cache), {
-    assumption
+    assumption,
   });
 }
 
@@ -89,7 +92,14 @@ function assertVersion(range) {
     Error.stackTraceLimit = 25;
   }
 
-  const err = new Error(`Requires Babel "${range}", but was loaded with "${_.version}". ` + `If you are sure you have a compatible version of @babel/core, ` + `it is likely that something in your build process is loading the ` + `wrong version. Inspect the stack trace of this error to look for ` + `the first entry that doesn't mention "@babel/core" or "babel-core" ` + `to see what is calling Babel.`);
+  const err = new Error(
+    `Requires Babel "${range}", but was loaded with "${_.version}". ` +
+      `If you are sure you have a compatible version of @babel/core, ` +
+      `it is likely that something in your build process is loading the ` +
+      `wrong version. Inspect the stack trace of this error to look for ` +
+      `the first entry that doesn't mention "@babel/core" or "babel-core" ` +
+      `to see what is calling Babel.`
+  );
 
   if (typeof limit === "number") {
     Error.stackTraceLimit = limit;
@@ -98,6 +108,6 @@ function assertVersion(range) {
   throw Object.assign(err, {
     code: "BABEL_VERSION_UNSUPPORTED",
     version: _.version,
-    range
+    range,
   });
 }

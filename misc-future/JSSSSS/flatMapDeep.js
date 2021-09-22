@@ -1,5 +1,5 @@
-var baseFlatten = require('./_baseFlatten'),
-    map = require('./map');
+var baseFlatten = require("./_baseFlatten"),
+  map = require("./map");
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;

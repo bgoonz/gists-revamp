@@ -1,5 +1,5 @@
-var baseForOwn = require('./_baseForOwn'),
-    castFunction = require('./_castFunction');
+var baseForOwn = require("./_baseForOwn"),
+  castFunction = require("./_castFunction");
 
 /**
  * Iterates over own enumerable string keyed properties of an object and

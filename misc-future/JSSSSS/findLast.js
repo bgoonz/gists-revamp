@@ -1,5 +1,5 @@
-var createFind = require('./_createFind'),
-    findLastIndex = require('./findLastIndex');
+var createFind = require("./_createFind"),
+  findLastIndex = require("./findLastIndex");
 
 /**
  * This method is like `_.find` except that it iterates over elements of

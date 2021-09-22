@@ -30,10 +30,12 @@ Object.defineProperty(Document, "prototype", {
   value: Document.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
-Document.prototype.getElementsByTagName = function getElementsByTagName(qualifiedName) {
+Document.prototype.getElementsByTagName = function getElementsByTagName(
+  qualifiedName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -49,14 +51,18 @@ Document.prototype.getElementsByTagName = function getElementsByTagName(qualifie
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementsByTagName' on 'Document': parameter 1"
+      context:
+        "Failed to execute 'getElementsByTagName' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getElementsByTagName(...args));
 };
 
-Document.prototype.getElementsByTagNameNS = function getElementsByTagNameNS(namespace, localName) {
+Document.prototype.getElementsByTagNameNS = function getElementsByTagNameNS(
+  namespace,
+  localName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -75,7 +81,8 @@ Document.prototype.getElementsByTagNameNS = function getElementsByTagNameNS(name
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'getElementsByTagNameNS' on 'Document': parameter 1"
+        context:
+          "Failed to execute 'getElementsByTagNameNS' on 'Document': parameter 1",
       });
     }
     args.push(curArg);
@@ -83,14 +90,17 @@ Document.prototype.getElementsByTagNameNS = function getElementsByTagNameNS(name
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementsByTagNameNS' on 'Document': parameter 2"
+      context:
+        "Failed to execute 'getElementsByTagNameNS' on 'Document': parameter 2",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getElementsByTagNameNS(...args));
 };
 
-Document.prototype.getElementsByClassName = function getElementsByClassName(classNames) {
+Document.prototype.getElementsByClassName = function getElementsByClassName(
+  classNames
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -106,7 +116,8 @@ Document.prototype.getElementsByClassName = function getElementsByClassName(clas
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementsByClassName' on 'Document': parameter 1"
+      context:
+        "Failed to execute 'getElementsByClassName' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
@@ -120,21 +131,26 @@ Document.prototype.createElement = function createElement(localName) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'createElement' on 'Document': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'createElement' on 'Document': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createElement' on 'Document': parameter 1"
+      context: "Failed to execute 'createElement' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].createElement(...args));
 };
 
-Document.prototype.createElementNS = function createElementNS(namespace, qualifiedName) {
+Document.prototype.createElementNS = function createElementNS(
+  namespace,
+  qualifiedName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -153,7 +169,8 @@ Document.prototype.createElementNS = function createElementNS(namespace, qualifi
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'createElementNS' on 'Document': parameter 1"
+        context:
+          "Failed to execute 'createElementNS' on 'Document': parameter 1",
       });
     }
     args.push(curArg);
@@ -161,7 +178,7 @@ Document.prototype.createElementNS = function createElementNS(namespace, qualifi
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createElementNS' on 'Document': parameter 2"
+      context: "Failed to execute 'createElementNS' on 'Document': parameter 2",
     });
     args.push(curArg);
   }
@@ -192,7 +209,7 @@ Document.prototype.createTextNode = function createTextNode(data) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createTextNode' on 'Document': parameter 1"
+      context: "Failed to execute 'createTextNode' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
@@ -215,7 +232,8 @@ Document.prototype.createCDATASection = function createCDATASection(data) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createCDATASection' on 'Document': parameter 1"
+      context:
+        "Failed to execute 'createCDATASection' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
@@ -229,28 +247,7 @@ Document.prototype.createComment = function createComment(data) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'createComment' on 'Document': 1 argument required, but only " + arguments.length + " present."
-    );
-  }
-  const args = [];
-  {
-    let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createComment' on 'Document': parameter 1"
-    });
-    args.push(curArg);
-  }
-  return utils.tryWrapperForImpl(this[impl].createComment(...args));
-};
-
-Document.prototype.createProcessingInstruction = function createProcessingInstruction(target, data) {
-  if (!this || !module.exports.is(this)) {
-    throw new TypeError("Illegal invocation");
-  }
-
-  if (arguments.length < 2) {
-    throw new TypeError(
-      "Failed to execute 'createProcessingInstruction' on 'Document': 2 arguments required, but only " +
+      "Failed to execute 'createComment' on 'Document': 1 argument required, but only " +
         arguments.length +
         " present."
     );
@@ -259,19 +256,47 @@ Document.prototype.createProcessingInstruction = function createProcessingInstru
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createProcessingInstruction' on 'Document': parameter 1"
+      context: "Failed to execute 'createComment' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
-  {
-    let curArg = arguments[1];
-    curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createProcessingInstruction' on 'Document': parameter 2"
-    });
-    args.push(curArg);
-  }
-  return utils.tryWrapperForImpl(this[impl].createProcessingInstruction(...args));
+  return utils.tryWrapperForImpl(this[impl].createComment(...args));
 };
+
+Document.prototype.createProcessingInstruction =
+  function createProcessingInstruction(target, data) {
+    if (!this || !module.exports.is(this)) {
+      throw new TypeError("Illegal invocation");
+    }
+
+    if (arguments.length < 2) {
+      throw new TypeError(
+        "Failed to execute 'createProcessingInstruction' on 'Document': 2 arguments required, but only " +
+          arguments.length +
+          " present."
+      );
+    }
+    const args = [];
+    {
+      let curArg = arguments[0];
+      curArg = conversions["DOMString"](curArg, {
+        context:
+          "Failed to execute 'createProcessingInstruction' on 'Document': parameter 1",
+      });
+      args.push(curArg);
+    }
+    {
+      let curArg = arguments[1];
+      curArg = conversions["DOMString"](curArg, {
+        context:
+          "Failed to execute 'createProcessingInstruction' on 'Document': parameter 2",
+      });
+      args.push(curArg);
+    }
+    return utils.tryWrapperForImpl(
+      this[impl].createProcessingInstruction(...args)
+    );
+  };
 
 Document.prototype.importNode = function importNode(node) {
   if (!this || !module.exports.is(this)) {
@@ -280,19 +305,25 @@ Document.prototype.importNode = function importNode(node) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'importNode' on 'Document': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'importNode' on 'Document': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertNode(curArg, { context: "Failed to execute 'importNode' on 'Document': parameter 1" });
+    curArg = convertNode(curArg, {
+      context: "Failed to execute 'importNode' on 'Document': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     if (curArg !== undefined) {
-      curArg = conversions["boolean"](curArg, { context: "Failed to execute 'importNode' on 'Document': parameter 2" });
+      curArg = conversions["boolean"](curArg, {
+        context: "Failed to execute 'importNode' on 'Document': parameter 2",
+      });
     } else {
       curArg = false;
     }
@@ -308,13 +339,17 @@ Document.prototype.adoptNode = function adoptNode(node) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'adoptNode' on 'Document': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'adoptNode' on 'Document': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertNode(curArg, { context: "Failed to execute 'adoptNode' on 'Document': parameter 1" });
+    curArg = convertNode(curArg, {
+      context: "Failed to execute 'adoptNode' on 'Document': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].adoptNode(...args));
@@ -336,14 +371,17 @@ Document.prototype.createAttribute = function createAttribute(localName) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createAttribute' on 'Document': parameter 1"
+      context: "Failed to execute 'createAttribute' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].createAttribute(...args));
 };
 
-Document.prototype.createAttributeNS = function createAttributeNS(namespace, qualifiedName) {
+Document.prototype.createAttributeNS = function createAttributeNS(
+  namespace,
+  qualifiedName
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -362,7 +400,8 @@ Document.prototype.createAttributeNS = function createAttributeNS(namespace, qua
       curArg = null;
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'createAttributeNS' on 'Document': parameter 1"
+        context:
+          "Failed to execute 'createAttributeNS' on 'Document': parameter 1",
       });
     }
     args.push(curArg);
@@ -370,7 +409,8 @@ Document.prototype.createAttributeNS = function createAttributeNS(namespace, qua
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createAttributeNS' on 'Document': parameter 2"
+      context:
+        "Failed to execute 'createAttributeNS' on 'Document': parameter 2",
     });
     args.push(curArg);
   }
@@ -384,14 +424,16 @@ Document.prototype.createEvent = function createEvent(_interface) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'createEvent' on 'Document': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'createEvent' on 'Document': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'createEvent' on 'Document': parameter 1"
+      context: "Failed to execute 'createEvent' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
@@ -413,14 +455,18 @@ Document.prototype.createNodeIterator = function createNodeIterator(root) {
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertNode(curArg, { context: "Failed to execute 'createNodeIterator' on 'Document': parameter 1" });
+    curArg = convertNode(curArg, {
+      context:
+        "Failed to execute 'createNodeIterator' on 'Document': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["unsigned long"](curArg, {
-        context: "Failed to execute 'createNodeIterator' on 'Document': parameter 2"
+        context:
+          "Failed to execute 'createNodeIterator' on 'Document': parameter 2",
       });
     } else {
       curArg = 0xffffffff;
@@ -458,14 +504,18 @@ Document.prototype.createTreeWalker = function createTreeWalker(root) {
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertNode(curArg, { context: "Failed to execute 'createTreeWalker' on 'Document': parameter 1" });
+    curArg = convertNode(curArg, {
+      context:
+        "Failed to execute 'createTreeWalker' on 'Document': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["unsigned long"](curArg, {
-        context: "Failed to execute 'createTreeWalker' on 'Document': parameter 2"
+        context:
+          "Failed to execute 'createTreeWalker' on 'Document': parameter 2",
       });
     } else {
       curArg = 0xffffffff;
@@ -504,7 +554,8 @@ Document.prototype.getElementsByName = function getElementsByName(elementName) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementsByName' on 'Document': parameter 1"
+      context:
+        "Failed to execute 'getElementsByName' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
@@ -519,7 +570,9 @@ Document.prototype.open = function open() {
   {
     let curArg = arguments[0];
     if (curArg !== undefined) {
-      curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'open' on 'Document': parameter 1" });
+      curArg = conversions["DOMString"](curArg, {
+        context: "Failed to execute 'open' on 'Document': parameter 1",
+      });
     } else {
       curArg = "text/html";
     }
@@ -528,7 +581,9 @@ Document.prototype.open = function open() {
   {
     let curArg = arguments[1];
     if (curArg !== undefined) {
-      curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'open' on 'Document': parameter 2" });
+      curArg = conversions["DOMString"](curArg, {
+        context: "Failed to execute 'open' on 'Document': parameter 2",
+      });
     } else {
       curArg = "";
     }
@@ -553,7 +608,7 @@ Document.prototype.write = function write() {
   for (let i = 0; i < arguments.length; i++) {
     let curArg = arguments[i];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'write' on 'Document': parameter " + (i + 1)
+      context: "Failed to execute 'write' on 'Document': parameter " + (i + 1),
     });
     args.push(curArg);
   }
@@ -568,7 +623,8 @@ Document.prototype.writeln = function writeln() {
   for (let i = 0; i < arguments.length; i++) {
     let curArg = arguments[i];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'writeln' on 'Document': parameter " + (i + 1)
+      context:
+        "Failed to execute 'writeln' on 'Document': parameter " + (i + 1),
     });
     args.push(curArg);
   }
@@ -623,7 +679,7 @@ Document.prototype.getElementById = function getElementById(elementId) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getElementById' on 'Document': parameter 1"
+      context: "Failed to execute 'getElementById' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
@@ -641,7 +697,8 @@ Document.prototype.prepend = function prepend() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'prepend' on 'Document': parameter " + (i + 1)
+        context:
+          "Failed to execute 'prepend' on 'Document': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -660,7 +717,8 @@ Document.prototype.append = function append() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'append' on 'Document': parameter " + (i + 1)
+        context:
+          "Failed to execute 'append' on 'Document': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -675,14 +733,16 @@ Document.prototype.querySelector = function querySelector(selectors) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'querySelector' on 'Document': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'querySelector' on 'Document': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'querySelector' on 'Document': parameter 1"
+      context: "Failed to execute 'querySelector' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
@@ -705,7 +765,8 @@ Document.prototype.querySelectorAll = function querySelectorAll(selectors) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'querySelectorAll' on 'Document': parameter 1"
+      context:
+        "Failed to execute 'querySelectorAll' on 'Document': parameter 1",
     });
     args.push(curArg);
   }
@@ -724,7 +785,7 @@ Object.defineProperty(Document.prototype, "implementation", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "URL", {
@@ -737,7 +798,7 @@ Object.defineProperty(Document.prototype, "URL", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "documentURI", {
@@ -750,7 +811,7 @@ Object.defineProperty(Document.prototype, "documentURI", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "origin", {
@@ -763,7 +824,7 @@ Object.defineProperty(Document.prototype, "origin", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "compatMode", {
@@ -776,7 +837,7 @@ Object.defineProperty(Document.prototype, "compatMode", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "characterSet", {
@@ -789,7 +850,7 @@ Object.defineProperty(Document.prototype, "characterSet", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "charset", {
@@ -802,7 +863,7 @@ Object.defineProperty(Document.prototype, "charset", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "inputEncoding", {
@@ -815,7 +876,7 @@ Object.defineProperty(Document.prototype, "inputEncoding", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "contentType", {
@@ -828,7 +889,7 @@ Object.defineProperty(Document.prototype, "contentType", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "doctype", {
@@ -841,7 +902,7 @@ Object.defineProperty(Document.prototype, "doctype", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "documentElement", {
@@ -854,7 +915,7 @@ Object.defineProperty(Document.prototype, "documentElement", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "referrer", {
@@ -867,7 +928,7 @@ Object.defineProperty(Document.prototype, "referrer", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "cookie", {
@@ -885,14 +946,15 @@ Object.defineProperty(Document.prototype, "cookie", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'cookie' property on 'Document': The provided value"
+      context:
+        "Failed to set the 'cookie' property on 'Document': The provided value",
     });
 
     this[impl]["cookie"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "lastModified", {
@@ -905,7 +967,7 @@ Object.defineProperty(Document.prototype, "lastModified", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "readyState", {
@@ -918,7 +980,7 @@ Object.defineProperty(Document.prototype, "readyState", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "title", {
@@ -936,14 +998,15 @@ Object.defineProperty(Document.prototype, "title", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'title' property on 'Document': The provided value"
+      context:
+        "Failed to set the 'title' property on 'Document': The provided value",
     });
 
     this[impl]["title"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "dir", {
@@ -960,13 +1023,16 @@ Object.defineProperty(Document.prototype, "dir", {
       throw new TypeError("Illegal invocation");
     }
 
-    V = conversions["DOMString"](V, { context: "Failed to set the 'dir' property on 'Document': The provided value" });
+    V = conversions["DOMString"](V, {
+      context:
+        "Failed to set the 'dir' property on 'Document': The provided value",
+    });
 
     this[impl]["dir"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "body", {
@@ -986,13 +1052,16 @@ Object.defineProperty(Document.prototype, "body", {
     if (V === null || V === undefined) {
       V = null;
     } else {
-      V = convertHTMLElement(V, { context: "Failed to set the 'body' property on 'Document': The provided value" });
+      V = convertHTMLElement(V, {
+        context:
+          "Failed to set the 'body' property on 'Document': The provided value",
+      });
     }
     this[impl]["body"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "head", {
@@ -1005,7 +1074,7 @@ Object.defineProperty(Document.prototype, "head", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "images", {
@@ -1020,7 +1089,7 @@ Object.defineProperty(Document.prototype, "images", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "embeds", {
@@ -1035,7 +1104,7 @@ Object.defineProperty(Document.prototype, "embeds", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "plugins", {
@@ -1050,7 +1119,7 @@ Object.defineProperty(Document.prototype, "plugins", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "links", {
@@ -1065,7 +1134,7 @@ Object.defineProperty(Document.prototype, "links", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "forms", {
@@ -1080,7 +1149,7 @@ Object.defineProperty(Document.prototype, "forms", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "scripts", {
@@ -1095,7 +1164,7 @@ Object.defineProperty(Document.prototype, "scripts", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "currentScript", {
@@ -1108,7 +1177,7 @@ Object.defineProperty(Document.prototype, "currentScript", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "defaultView", {
@@ -1121,7 +1190,7 @@ Object.defineProperty(Document.prototype, "defaultView", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "activeElement", {
@@ -1134,7 +1203,7 @@ Object.defineProperty(Document.prototype, "activeElement", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onreadystatechange", {
@@ -1149,7 +1218,7 @@ Object.defineProperty(Document.prototype, "onreadystatechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "anchors", {
@@ -1164,7 +1233,7 @@ Object.defineProperty(Document.prototype, "anchors", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "applets", {
@@ -1179,7 +1248,7 @@ Object.defineProperty(Document.prototype, "applets", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "styleSheets", {
@@ -1194,7 +1263,7 @@ Object.defineProperty(Document.prototype, "styleSheets", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "hidden", {
@@ -1207,7 +1276,7 @@ Object.defineProperty(Document.prototype, "hidden", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "visibilityState", {
@@ -1220,7 +1289,7 @@ Object.defineProperty(Document.prototype, "visibilityState", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onvisibilitychange", {
@@ -1243,7 +1312,7 @@ Object.defineProperty(Document.prototype, "onvisibilitychange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onabort", {
@@ -1266,7 +1335,7 @@ Object.defineProperty(Document.prototype, "onabort", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onauxclick", {
@@ -1289,7 +1358,7 @@ Object.defineProperty(Document.prototype, "onauxclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onblur", {
@@ -1312,7 +1381,7 @@ Object.defineProperty(Document.prototype, "onblur", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "oncancel", {
@@ -1335,7 +1404,7 @@ Object.defineProperty(Document.prototype, "oncancel", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "oncanplay", {
@@ -1358,7 +1427,7 @@ Object.defineProperty(Document.prototype, "oncanplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "oncanplaythrough", {
@@ -1381,7 +1450,7 @@ Object.defineProperty(Document.prototype, "oncanplaythrough", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onchange", {
@@ -1404,7 +1473,7 @@ Object.defineProperty(Document.prototype, "onchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onclick", {
@@ -1427,7 +1496,7 @@ Object.defineProperty(Document.prototype, "onclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onclose", {
@@ -1450,7 +1519,7 @@ Object.defineProperty(Document.prototype, "onclose", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "oncontextmenu", {
@@ -1473,7 +1542,7 @@ Object.defineProperty(Document.prototype, "oncontextmenu", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "oncuechange", {
@@ -1496,7 +1565,7 @@ Object.defineProperty(Document.prototype, "oncuechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondblclick", {
@@ -1519,7 +1588,7 @@ Object.defineProperty(Document.prototype, "ondblclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondrag", {
@@ -1542,7 +1611,7 @@ Object.defineProperty(Document.prototype, "ondrag", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondragend", {
@@ -1565,7 +1634,7 @@ Object.defineProperty(Document.prototype, "ondragend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondragenter", {
@@ -1588,7 +1657,7 @@ Object.defineProperty(Document.prototype, "ondragenter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondragexit", {
@@ -1611,7 +1680,7 @@ Object.defineProperty(Document.prototype, "ondragexit", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondragleave", {
@@ -1634,7 +1703,7 @@ Object.defineProperty(Document.prototype, "ondragleave", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondragover", {
@@ -1657,7 +1726,7 @@ Object.defineProperty(Document.prototype, "ondragover", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondragstart", {
@@ -1680,7 +1749,7 @@ Object.defineProperty(Document.prototype, "ondragstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondrop", {
@@ -1703,7 +1772,7 @@ Object.defineProperty(Document.prototype, "ondrop", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ondurationchange", {
@@ -1726,7 +1795,7 @@ Object.defineProperty(Document.prototype, "ondurationchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onemptied", {
@@ -1749,7 +1818,7 @@ Object.defineProperty(Document.prototype, "onemptied", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onended", {
@@ -1772,7 +1841,7 @@ Object.defineProperty(Document.prototype, "onended", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onerror", {
@@ -1795,7 +1864,7 @@ Object.defineProperty(Document.prototype, "onerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onfocus", {
@@ -1818,7 +1887,7 @@ Object.defineProperty(Document.prototype, "onfocus", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "oninput", {
@@ -1841,7 +1910,7 @@ Object.defineProperty(Document.prototype, "oninput", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "oninvalid", {
@@ -1864,7 +1933,7 @@ Object.defineProperty(Document.prototype, "oninvalid", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onkeydown", {
@@ -1887,7 +1956,7 @@ Object.defineProperty(Document.prototype, "onkeydown", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onkeypress", {
@@ -1910,7 +1979,7 @@ Object.defineProperty(Document.prototype, "onkeypress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onkeyup", {
@@ -1933,7 +2002,7 @@ Object.defineProperty(Document.prototype, "onkeyup", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onload", {
@@ -1956,7 +2025,7 @@ Object.defineProperty(Document.prototype, "onload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onloadeddata", {
@@ -1979,7 +2048,7 @@ Object.defineProperty(Document.prototype, "onloadeddata", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onloadedmetadata", {
@@ -2002,7 +2071,7 @@ Object.defineProperty(Document.prototype, "onloadedmetadata", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onloadend", {
@@ -2025,7 +2094,7 @@ Object.defineProperty(Document.prototype, "onloadend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onloadstart", {
@@ -2048,7 +2117,7 @@ Object.defineProperty(Document.prototype, "onloadstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onmousedown", {
@@ -2071,7 +2140,7 @@ Object.defineProperty(Document.prototype, "onmousedown", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onmouseenter", {
@@ -2086,7 +2155,7 @@ Object.defineProperty(Document.prototype, "onmouseenter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onmouseleave", {
@@ -2101,7 +2170,7 @@ Object.defineProperty(Document.prototype, "onmouseleave", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onmousemove", {
@@ -2124,7 +2193,7 @@ Object.defineProperty(Document.prototype, "onmousemove", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onmouseout", {
@@ -2147,7 +2216,7 @@ Object.defineProperty(Document.prototype, "onmouseout", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onmouseover", {
@@ -2170,7 +2239,7 @@ Object.defineProperty(Document.prototype, "onmouseover", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onmouseup", {
@@ -2193,7 +2262,7 @@ Object.defineProperty(Document.prototype, "onmouseup", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onwheel", {
@@ -2216,7 +2285,7 @@ Object.defineProperty(Document.prototype, "onwheel", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onpause", {
@@ -2239,7 +2308,7 @@ Object.defineProperty(Document.prototype, "onpause", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onplay", {
@@ -2262,7 +2331,7 @@ Object.defineProperty(Document.prototype, "onplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onplaying", {
@@ -2285,7 +2354,7 @@ Object.defineProperty(Document.prototype, "onplaying", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onprogress", {
@@ -2308,7 +2377,7 @@ Object.defineProperty(Document.prototype, "onprogress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onratechange", {
@@ -2331,7 +2400,7 @@ Object.defineProperty(Document.prototype, "onratechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onreset", {
@@ -2354,7 +2423,7 @@ Object.defineProperty(Document.prototype, "onreset", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onresize", {
@@ -2377,7 +2446,7 @@ Object.defineProperty(Document.prototype, "onresize", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onscroll", {
@@ -2400,7 +2469,7 @@ Object.defineProperty(Document.prototype, "onscroll", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onsecuritypolicyviolation", {
@@ -2423,7 +2492,7 @@ Object.defineProperty(Document.prototype, "onsecuritypolicyviolation", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onseeked", {
@@ -2446,7 +2515,7 @@ Object.defineProperty(Document.prototype, "onseeked", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onseeking", {
@@ -2469,7 +2538,7 @@ Object.defineProperty(Document.prototype, "onseeking", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onselect", {
@@ -2492,7 +2561,7 @@ Object.defineProperty(Document.prototype, "onselect", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onstalled", {
@@ -2515,7 +2584,7 @@ Object.defineProperty(Document.prototype, "onstalled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onsubmit", {
@@ -2538,7 +2607,7 @@ Object.defineProperty(Document.prototype, "onsubmit", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onsuspend", {
@@ -2561,7 +2630,7 @@ Object.defineProperty(Document.prototype, "onsuspend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ontimeupdate", {
@@ -2584,7 +2653,7 @@ Object.defineProperty(Document.prototype, "ontimeupdate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "ontoggle", {
@@ -2607,7 +2676,7 @@ Object.defineProperty(Document.prototype, "ontoggle", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onvolumechange", {
@@ -2630,7 +2699,7 @@ Object.defineProperty(Document.prototype, "onvolumechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "onwaiting", {
@@ -2653,7 +2722,7 @@ Object.defineProperty(Document.prototype, "onwaiting", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "children", {
@@ -2668,7 +2737,7 @@ Object.defineProperty(Document.prototype, "children", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "firstElementChild", {
@@ -2681,7 +2750,7 @@ Object.defineProperty(Document.prototype, "firstElementChild", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "lastElementChild", {
@@ -2694,7 +2763,7 @@ Object.defineProperty(Document.prototype, "lastElementChild", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, "childElementCount", {
@@ -2707,14 +2776,14 @@ Object.defineProperty(Document.prototype, "childElementCount", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Document.prototype, Symbol.toStringTag, {
   value: "Document",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -2788,7 +2857,7 @@ const iface = {
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
   },
   setup(obj, constructorArgs, privateData) {
@@ -2801,7 +2870,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -2812,8 +2881,8 @@ const iface = {
   },
   interface: Document,
   expose: {
-    Window: { Document }
-  }
+    Window: { Document },
+  },
 }; // iface
 module.exports = iface;
 

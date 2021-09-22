@@ -1,4 +1,4 @@
-var createWrap = require('./_createWrap');
+var createWrap = require("./_createWrap");
 
 /** Used to compose bitmasks for function metadata. */
 var WRAP_FLIP_FLAG = 512;

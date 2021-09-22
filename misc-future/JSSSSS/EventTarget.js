@@ -3,8 +3,10 @@
 const conversions = require("webidl-conversions");
 const utils = require("./utils.js");
 
-const convertAddEventListenerOptions = require("./AddEventListenerOptions.js").convert;
-const convertEventListenerOptions = require("./EventListenerOptions.js").convert;
+const convertAddEventListenerOptions =
+  require("./AddEventListenerOptions.js").convert;
+const convertEventListenerOptions =
+  require("./EventListenerOptions.js").convert;
 const convertEvent = require("./Event.js").convert;
 const impl = utils.implSymbol;
 
@@ -23,10 +25,13 @@ Object.defineProperty(EventTarget, "prototype", {
   value: EventTarget.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
-EventTarget.prototype.addEventListener = function addEventListener(type, callback) {
+EventTarget.prototype.addEventListener = function addEventListener(
+  type,
+  callback
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -42,7 +47,8 @@ EventTarget.prototype.addEventListener = function addEventListener(type, callbac
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'addEventListener' on 'EventTarget': parameter 1"
+      context:
+        "Failed to execute 'addEventListener' on 'EventTarget': parameter 1",
     });
     args.push(curArg);
   }
@@ -60,19 +66,24 @@ EventTarget.prototype.addEventListener = function addEventListener(type, callbac
     if (curArg !== undefined) {
       if (curArg === null || curArg === undefined) {
         curArg = convertAddEventListenerOptions(curArg, {
-          context: "Failed to execute 'addEventListener' on 'EventTarget': parameter 3"
+          context:
+            "Failed to execute 'addEventListener' on 'EventTarget': parameter 3",
         });
       } else if (utils.isObject(curArg)) {
         curArg = convertAddEventListenerOptions(curArg, {
-          context: "Failed to execute 'addEventListener' on 'EventTarget': parameter 3" + " dictionary"
+          context:
+            "Failed to execute 'addEventListener' on 'EventTarget': parameter 3" +
+            " dictionary",
         });
       } else if (typeof curArg === "boolean") {
         curArg = conversions["boolean"](curArg, {
-          context: "Failed to execute 'addEventListener' on 'EventTarget': parameter 3"
+          context:
+            "Failed to execute 'addEventListener' on 'EventTarget': parameter 3",
         });
       } else {
         curArg = conversions["boolean"](curArg, {
-          context: "Failed to execute 'addEventListener' on 'EventTarget': parameter 3"
+          context:
+            "Failed to execute 'addEventListener' on 'EventTarget': parameter 3",
         });
       }
     }
@@ -81,7 +92,10 @@ EventTarget.prototype.addEventListener = function addEventListener(type, callbac
   return this[impl].addEventListener(...args);
 };
 
-EventTarget.prototype.removeEventListener = function removeEventListener(type, callback) {
+EventTarget.prototype.removeEventListener = function removeEventListener(
+  type,
+  callback
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -97,7 +111,8 @@ EventTarget.prototype.removeEventListener = function removeEventListener(type, c
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'removeEventListener' on 'EventTarget': parameter 1"
+      context:
+        "Failed to execute 'removeEventListener' on 'EventTarget': parameter 1",
     });
     args.push(curArg);
   }
@@ -115,19 +130,24 @@ EventTarget.prototype.removeEventListener = function removeEventListener(type, c
     if (curArg !== undefined) {
       if (curArg === null || curArg === undefined) {
         curArg = convertEventListenerOptions(curArg, {
-          context: "Failed to execute 'removeEventListener' on 'EventTarget': parameter 3"
+          context:
+            "Failed to execute 'removeEventListener' on 'EventTarget': parameter 3",
         });
       } else if (utils.isObject(curArg)) {
         curArg = convertEventListenerOptions(curArg, {
-          context: "Failed to execute 'removeEventListener' on 'EventTarget': parameter 3" + " dictionary"
+          context:
+            "Failed to execute 'removeEventListener' on 'EventTarget': parameter 3" +
+            " dictionary",
         });
       } else if (typeof curArg === "boolean") {
         curArg = conversions["boolean"](curArg, {
-          context: "Failed to execute 'removeEventListener' on 'EventTarget': parameter 3"
+          context:
+            "Failed to execute 'removeEventListener' on 'EventTarget': parameter 3",
         });
       } else {
         curArg = conversions["boolean"](curArg, {
-          context: "Failed to execute 'removeEventListener' on 'EventTarget': parameter 3"
+          context:
+            "Failed to execute 'removeEventListener' on 'EventTarget': parameter 3",
         });
       }
     }
@@ -151,7 +171,10 @@ EventTarget.prototype.dispatchEvent = function dispatchEvent(event) {
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = convertEvent(curArg, { context: "Failed to execute 'dispatchEvent' on 'EventTarget': parameter 1" });
+    curArg = convertEvent(curArg, {
+      context:
+        "Failed to execute 'dispatchEvent' on 'EventTarget': parameter 1",
+    });
     args.push(curArg);
   }
   return this[impl].dispatchEvent(...args);
@@ -161,7 +184,7 @@ Object.defineProperty(EventTarget.prototype, Symbol.toStringTag, {
   value: "EventTarget",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -225,7 +248,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -238,8 +261,8 @@ const iface = {
   expose: {
     Window: { EventTarget },
     Worker: { EventTarget },
-    AudioWorklet: { EventTarget }
-  }
+    AudioWorklet: { EventTarget },
+  },
 }; // iface
 module.exports = iface;
 

@@ -19,7 +19,7 @@ Object.defineProperty(DocumentType, "prototype", {
   value: DocumentType.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 DocumentType.prototype.before = function before() {
@@ -33,7 +33,8 @@ DocumentType.prototype.before = function before() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'before' on 'DocumentType': parameter " + (i + 1)
+        context:
+          "Failed to execute 'before' on 'DocumentType': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -52,7 +53,8 @@ DocumentType.prototype.after = function after() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'after' on 'DocumentType': parameter " + (i + 1)
+        context:
+          "Failed to execute 'after' on 'DocumentType': parameter " + (i + 1),
       });
     }
     args.push(curArg);
@@ -71,7 +73,9 @@ DocumentType.prototype.replaceWith = function replaceWith() {
       curArg = utils.implForWrapper(curArg);
     } else {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'replaceWith' on 'DocumentType': parameter " + (i + 1)
+        context:
+          "Failed to execute 'replaceWith' on 'DocumentType': parameter " +
+          (i + 1),
       });
     }
     args.push(curArg);
@@ -97,7 +101,7 @@ Object.defineProperty(DocumentType.prototype, "name", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(DocumentType.prototype, "publicId", {
@@ -110,7 +114,7 @@ Object.defineProperty(DocumentType.prototype, "publicId", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(DocumentType.prototype, "systemId", {
@@ -123,14 +127,14 @@ Object.defineProperty(DocumentType.prototype, "systemId", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(DocumentType.prototype, Symbol.toStringTag, {
   value: "DocumentType",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -196,7 +200,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -207,8 +211,8 @@ const iface = {
   },
   interface: DocumentType,
   expose: {
-    Window: { DocumentType }
-  }
+    Window: { DocumentType },
+  },
 }; // iface
 module.exports = iface;
 

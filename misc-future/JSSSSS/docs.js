@@ -51,7 +51,7 @@ const APIHistory = {
 };
 function formatHistory(historyItems) {
   const lines = historyItems.map(
-    item => "| `" + item[0] + "` | " + item[1] + " |"
+    (item) => "| `" + item[0] + "` | " + item[1] + " |"
   );
   return [
     "<details>",

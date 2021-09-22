@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -9,7 +9,9 @@ var _drawBorder = require("./drawBorder");
 
 var _drawRow = _interopRequireDefault(require("./drawRow"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * @param {Array} rows
@@ -20,13 +22,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {boolean} singleLine
  * @returns {string}
  */
-const drawTable = (rows, border, columnSizeIndex, rowSpanIndex, drawHorizontalLine, singleLine) => {
+const drawTable = (
+  rows,
+  border,
+  columnSizeIndex,
+  rowSpanIndex,
+  drawHorizontalLine,
+  singleLine
+) => {
   let output;
   let realRowIndex;
   let rowHeight;
   const rowCount = rows.length;
   realRowIndex = 0;
-  output = '';
+  output = "";
 
   if (drawHorizontalLine(realRowIndex, rowCount)) {
     output += (0, _drawBorder.drawBorderTop)(columnSizeIndex, border);
@@ -42,7 +51,12 @@ const drawTable = (rows, border, columnSizeIndex, rowSpanIndex, drawHorizontalLi
 
     rowHeight--;
 
-    if (!singleLine && rowHeight === 0 && index0 !== rowCount - 1 && drawHorizontalLine(realRowIndex, rowCount)) {
+    if (
+      !singleLine &&
+      rowHeight === 0 &&
+      index0 !== rowCount - 1 &&
+      drawHorizontalLine(realRowIndex, rowCount)
+    ) {
       output += (0, _drawBorder.drawBorderJoin)(columnSizeIndex, border);
     }
   });

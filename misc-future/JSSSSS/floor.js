@@ -1,4 +1,4 @@
-var createRound = require('./_createRound');
+var createRound = require("./_createRound");
 
 /**
  * Computes `number` rounded down to `precision`.
@@ -21,6 +21,6 @@ var createRound = require('./_createRound');
  * _.floor(4060, -2);
  * // => 4000
  */
-var floor = createRound('floor');
+var floor = createRound("floor");
 
 module.exports = floor;

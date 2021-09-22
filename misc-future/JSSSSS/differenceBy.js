@@ -1,9 +1,9 @@
-var baseDifference = require('./_baseDifference'),
-    baseFlatten = require('./_baseFlatten'),
-    baseIteratee = require('./_baseIteratee'),
-    baseRest = require('./_baseRest'),
-    isArrayLikeObject = require('./isArrayLikeObject'),
-    last = require('./last');
+var baseDifference = require("./_baseDifference"),
+  baseFlatten = require("./_baseFlatten"),
+  baseIteratee = require("./_baseIteratee"),
+  baseRest = require("./_baseRest"),
+  isArrayLikeObject = require("./isArrayLikeObject"),
+  last = require("./last");
 
 /**
  * This method is like `_.difference` except that it accepts `iteratee` which
@@ -31,13 +31,17 @@ var baseDifference = require('./_baseDifference'),
  * _.differenceBy([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], 'x');
  * // => [{ 'x': 2 }]
  */
-var differenceBy = baseRest(function(array, values) {
+var differenceBy = baseRest(function (array, values) {
   var iteratee = last(values);
   if (isArrayLikeObject(iteratee)) {
     iteratee = undefined;
   }
   return isArrayLikeObject(array)
-    ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), baseIteratee(iteratee, 2))
+    ? baseDifference(
+        array,
+        baseFlatten(values, 1, isArrayLikeObject, true),
+        baseIteratee(iteratee, 2)
+      )
     : [];
 });
 

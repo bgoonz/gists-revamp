@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 //
 // Allowed token characters:
@@ -12,14 +12,134 @@
 // ...
 //
 const tokenChars = [
-  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0 - 15
-  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 16 - 31
-  0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, // 32 - 47
-  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, // 48 - 63
-  0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, // 64 - 79
-  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, // 80 - 95
-  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, // 96 - 111
-  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0 // 112 - 127
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0, // 0 - 15
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0, // 16 - 31
+  0,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  1,
+  0,
+  1,
+  1,
+  0, // 32 - 47
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0, // 48 - 63
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1, // 64 - 79
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  1,
+  1, // 80 - 95
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1, // 96 - 111
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  0,
+  1,
+  0, // 112 - 127
 ];
 
 /**
@@ -32,7 +152,7 @@ const tokenChars = [
  *     parameter value
  * @private
  */
-function push (dest, name, elem) {
+function push(dest, name, elem) {
   if (Object.prototype.hasOwnProperty.call(dest, name)) dest[name].push(elem);
   else dest[name] = [elem];
 }
@@ -44,10 +164,10 @@ function push (dest, name, elem) {
  * @return {Object} The parsed object
  * @public
  */
-function parse (header) {
+function parse(header) {
   const offers = {};
 
-  if (header === undefined || header === '') return offers;
+  if (header === undefined || header === "") return offers;
 
   var params = {};
   var mustUnescape = false;
@@ -64,9 +184,9 @@ function parse (header) {
     if (extensionName === undefined) {
       if (end === -1 && tokenChars[code] === 1) {
         if (start === -1) start = i;
-      } else if (code === 0x20/* ' ' */|| code === 0x09/* '\t' */) {
+      } else if (code === 0x20 /* ' ' */ || code === 0x09 /* '\t' */) {
         if (end === -1 && start !== -1) end = i;
-      } else if (code === 0x3b/* ';' */ || code === 0x2c/* ',' */) {
+      } else if (code === 0x3b /* ';' */ || code === 0x2c /* ',' */) {
         if (start === -1) {
           throw new SyntaxError(`Unexpected character at index ${i}`);
         }
@@ -103,7 +223,7 @@ function parse (header) {
         }
 
         start = end = -1;
-      } else if (code === 0x3d/* '=' */&& start !== -1 && end === -1) {
+      } else if (code === 0x3d /* '=' */ && start !== -1 && end === -1) {
         paramName = header.slice(start, i);
         start = end = -1;
       } else {
@@ -125,10 +245,10 @@ function parse (header) {
       } else if (inQuotes) {
         if (tokenChars[code] === 1) {
           if (start === -1) start = i;
-        } else if (code === 0x22/* '"' */ && start !== -1) {
+        } else if (code === 0x22 /* '"' */ && start !== -1) {
           inQuotes = false;
           end = i;
-        } else if (code === 0x5c/* '\' */) {
+        } else if (code === 0x5c /* '\' */) {
           isEscaping = true;
         } else {
           throw new SyntaxError(`Unexpected character at index ${i}`);
@@ -147,7 +267,7 @@ function parse (header) {
         if (end === -1) end = i;
         var value = header.slice(start, end);
         if (mustUnescape) {
-          value = value.replace(/\\/g, '');
+          value = value.replace(/\\/g, "");
           mustUnescape = false;
         }
         push(params, paramName, value);
@@ -166,7 +286,7 @@ function parse (header) {
   }
 
   if (start === -1 || inQuotes) {
-    throw new SyntaxError('Unexpected end of input');
+    throw new SyntaxError("Unexpected end of input");
   }
 
   if (end === -1) end = i;
@@ -177,7 +297,7 @@ function parse (header) {
     if (paramName === undefined) {
       push(params, token, true);
     } else if (mustUnescape) {
-      push(params, paramName, token.replace(/\\/g, ''));
+      push(params, paramName, token.replace(/\\/g, ""));
     } else {
       push(params, paramName, token);
     }
@@ -194,18 +314,28 @@ function parse (header) {
  * @return {String} A string representing the given object
  * @public
  */
-function format (extensions) {
-  return Object.keys(extensions).map((extension) => {
-    var configurations = extensions[extension];
-    if (!Array.isArray(configurations)) configurations = [configurations];
-    return configurations.map((params) => {
-      return [extension].concat(Object.keys(params).map((k) => {
-        var values = params[k];
-        if (!Array.isArray(values)) values = [values];
-        return values.map((v) => v === true ? k : `${k}=${v}`).join('; ');
-      })).join('; ');
-    }).join(', ');
-  }).join(', ');
+function format(extensions) {
+  return Object.keys(extensions)
+    .map((extension) => {
+      var configurations = extensions[extension];
+      if (!Array.isArray(configurations)) configurations = [configurations];
+      return configurations
+        .map((params) => {
+          return [extension]
+            .concat(
+              Object.keys(params).map((k) => {
+                var values = params[k];
+                if (!Array.isArray(values)) values = [values];
+                return values
+                  .map((v) => (v === true ? k : `${k}=${v}`))
+                  .join("; ");
+              })
+            )
+            .join("; ");
+        })
+        .join(", ");
+    })
+    .join(", ");
 }
 
 module.exports = { format, parse };

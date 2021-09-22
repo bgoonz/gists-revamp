@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = generateCode;
 
@@ -28,22 +28,20 @@ function _generator() {
 var _mergeMap = require("./merge-map");
 
 function generateCode(pluginPasses, file) {
-  const {
-    opts,
-    ast,
-    code,
-    inputMap
-  } = file;
+  const { opts, ast, code, inputMap } = file;
   const results = [];
 
   for (const plugins of pluginPasses) {
     for (const plugin of plugins) {
-      const {
-        generatorOverride
-      } = plugin;
+      const { generatorOverride } = plugin;
 
       if (generatorOverride) {
-        const result = generatorOverride(ast, opts.generatorOpts, code, _generator().default);
+        const result = generatorOverride(
+          ast,
+          opts.generatorOpts,
+          code,
+          _generator().default
+        );
         if (result !== undefined) results.push(result);
       }
     }
@@ -57,16 +55,18 @@ function generateCode(pluginPasses, file) {
     result = results[0];
 
     if (typeof result.then === "function") {
-      throw new Error(`You appear to be using an async codegen plugin, ` + `which your current version of Babel does not support. ` + `If you're using a published plugin, ` + `you may need to upgrade your @babel/core version.`);
+      throw new Error(
+        `You appear to be using an async codegen plugin, ` +
+          `which your current version of Babel does not support. ` +
+          `If you're using a published plugin, ` +
+          `you may need to upgrade your @babel/core version.`
+      );
     }
   } else {
     throw new Error("More than one plugin attempted to override codegen.");
   }
 
-  let {
-    code: outputCode,
-    map: outputMap
-  } = result;
+  let { code: outputCode, map: outputMap } = result;
 
   if (outputMap && inputMap) {
     outputMap = (0, _mergeMap.default)(inputMap.toObject(), outputMap);
@@ -82,6 +82,6 @@ function generateCode(pluginPasses, file) {
 
   return {
     outputCode,
-    outputMap
+    outputMap,
   };
 }

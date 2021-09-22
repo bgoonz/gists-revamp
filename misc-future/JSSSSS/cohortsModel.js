@@ -20,19 +20,19 @@ router.post("/", (req, res) => {
   // perform insert
   db.insert(cohort)
     .into("cohorts")
-    .then(newCohorts => {
+    .then((newCohorts) => {
       res.status(201).json(newCohorts);
     })
-    .catch(err => res.status(500).json(err));
+    .catch((err) => res.status(500).json(err));
 });
 
 // get cohorts = get endpoint
 router.get("/", (req, res) => {
   db("cohorts")
-    .then(cohorts => {
+    .then((cohorts) => {
       res.status(200).json(cohorts);
     })
-    .catch(err => res.status(500).json(err));
+    .catch((err) => res.status(500).json(err));
 });
 
 // get single cohort based upon id - get single cohort endpiont
@@ -40,10 +40,10 @@ router.get("/:id", (req, res) => {
   const { id } = req.params;
   db("cohorts")
     .where({ id })
-    .then(cohort => {
+    .then((cohort) => {
       res.status(200).json(cohort);
     })
-    .catch(err => res.status(500).json(err));
+    .catch((err) => res.status(500).json(err));
 });
 
 // get all students of a cohort using id (cross table get using id and subroute of students) - get all students from cohort endpoint
@@ -51,10 +51,10 @@ router.get("/:id/students", (req, res) => {
   const { id } = req.params;
   db("students")
     .where({ cohort_id: id })
-    .then(currentStudents => {
+    .then((currentStudents) => {
       res.status(200).json(currentStudents);
     })
-    .catch(err => res.status(500).json(err));
+    .catch((err) => res.status(500).json(err));
 });
 
 // put endpoint for cohort to update a cohort based upon id
@@ -70,10 +70,10 @@ router.put("/:id", (req, res) => {
   db("cohorts")
     .where({ id: id })
     .update(updates)
-    .then(currentCohort => {
+    .then((currentCohort) => {
       res.status(200).json(currentCohort);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json(err);
     });
 });
@@ -83,10 +83,10 @@ router.delete("/:id", (req, res) => {
   db("cohorts")
     .where({ id: id })
     .del()
-    .then(response => {
+    .then((response) => {
       res.status(200).json(response);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json(err);
     });
 });

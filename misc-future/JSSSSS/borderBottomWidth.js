@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
-var isValid = (module.exports.isValid = require('./borderWidth').isValid);
+var isValid = (module.exports.isValid = require("./borderWidth").isValid);
 
 module.exports.definition = {
-  set: function(v) {
+  set: function (v) {
     if (isValid(v)) {
-      this._setProperty('border-bottom-width', v);
+      this._setProperty("border-bottom-width", v);
     }
   },
-  get: function() {
-    return this.getPropertyValue('border-bottom-width');
+  get: function () {
+    return this.getPropertyValue("border-bottom-width");
   },
   enumerable: true,
   configurable: true,

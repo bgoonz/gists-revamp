@@ -3,10 +3,8 @@
  * @return {number}
  */
 
-function find_duplicate(nums) {
-
-};
+function find_duplicate(nums) {}
 
 module.exports = {
-    find_duplicate: find_duplicate,
-  };
+  find_duplicate: find_duplicate,
+};

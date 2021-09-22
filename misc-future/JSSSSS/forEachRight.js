@@ -1,7 +1,7 @@
-var arrayEachRight = require('./_arrayEachRight'),
-    baseEachRight = require('./_baseEachRight'),
-    castFunction = require('./_castFunction'),
-    isArray = require('./isArray');
+var arrayEachRight = require("./_arrayEachRight"),
+  baseEachRight = require("./_baseEachRight"),
+  castFunction = require("./_castFunction"),
+  isArray = require("./isArray");
 
 /**
  * This method is like `_.forEach` except that it iterates over elements of

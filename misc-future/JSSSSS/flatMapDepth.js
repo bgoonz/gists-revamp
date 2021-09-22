@@ -1,6 +1,6 @@
-var baseFlatten = require('./_baseFlatten'),
-    map = require('./map'),
-    toInteger = require('./toInteger');
+var baseFlatten = require("./_baseFlatten"),
+  map = require("./map"),
+  toInteger = require("./toInteger");
 
 /**
  * This method is like `_.flatMap` except that it recursively flattens the

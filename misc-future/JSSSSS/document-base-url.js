@@ -1,7 +1,7 @@
 "use strict";
 const whatwgURL = require("whatwg-url");
 
-exports.documentBaseURL = document => {
+exports.documentBaseURL = (document) => {
   // https://html.spec.whatwg.org/multipage/infrastructure.html#document-base-url
 
   const firstBase = document.querySelector("base[href]");
@@ -14,17 +14,20 @@ exports.documentBaseURL = document => {
   return frozenBaseURL(firstBase, fallbackBaseURL);
 };
 
-exports.documentBaseURLSerialized = document => {
+exports.documentBaseURLSerialized = (document) => {
   return whatwgURL.serializeURL(exports.documentBaseURL(document));
 };
 
-exports.fallbackBaseURL = document => {
+exports.fallbackBaseURL = (document) => {
   // https://html.spec.whatwg.org/multipage/infrastructure.html#fallback-base-url
 
   // Unimplemented: <iframe srcdoc>
 
-  if (document.URL === "about:blank" && document._defaultView &&
-      document._defaultView._parent !== document._defaultView) {
+  if (
+    document.URL === "about:blank" &&
+    document._defaultView &&
+    document._defaultView._parent !== document._defaultView
+  ) {
     return exports.documentBaseURL(document._defaultView._parent._document);
   }
 
@@ -47,6 +50,8 @@ function frozenBaseURL(baseElement, fallbackBaseURL) {
   // The spec is eager (setting the frozen base URL when things change); we are lazy (getting it when we need to)
 
   const baseHrefAttribute = baseElement.getAttribute("href");
-  const result = whatwgURL.parseURL(baseHrefAttribute, { baseURL: fallbackBaseURL });
+  const result = whatwgURL.parseURL(baseHrefAttribute, {
+    baseURL: fallbackBaseURL,
+  });
   return result === null ? fallbackBaseURL : result;
 }

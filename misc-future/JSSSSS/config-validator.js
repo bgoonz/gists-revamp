@@ -10,10 +10,10 @@
 //------------------------------------------------------------------------------
 
 const path = require("path"),
-    ajv = require("../util/ajv"),
-    lodash = require("lodash"),
-    configSchema = require("../../conf/config-schema.js"),
-    util = require("util");
+  ajv = require("../util/ajv"),
+  lodash = require("lodash"),
+  configSchema = require("../../conf/config-schema.js"),
+  util = require("util");
 
 const ruleValidators = new WeakMap();
 
@@ -24,13 +24,15 @@ let validateSchema;
 
 // Defitions for deprecation warnings.
 const deprecationWarningMessages = {
-    ESLINT_LEGACY_ECMAFEATURES: "The 'ecmaFeatures' config file property is deprecated, and has no effect.",
-    ESLINT_LEGACY_OBJECT_REST_SPREAD: "The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead."
+  ESLINT_LEGACY_ECMAFEATURES:
+    "The 'ecmaFeatures' config file property is deprecated, and has no effect.",
+  ESLINT_LEGACY_OBJECT_REST_SPREAD:
+    "The 'parserOptions.ecmaFeatures.experimentalObjectRestSpread' option is deprecated. Use 'parserOptions.ecmaVersion' instead.",
 };
 const severityMap = {
-    error: 2,
-    warn: 1,
-    off: 0
+  error: 2,
+  warn: 1,
+  off: 0,
 };
 
 /**
@@ -39,28 +41,27 @@ const severityMap = {
  * @returns {Object} JSON Schema for the rule's options.
  */
 function getRuleOptionsSchema(rule) {
-    const schema = rule.schema || rule.meta && rule.meta.schema;
+  const schema = rule.schema || (rule.meta && rule.meta.schema);
 
-    // Given a tuple of schemas, insert warning level at the beginning
-    if (Array.isArray(schema)) {
-        if (schema.length) {
-            return {
-                type: "array",
-                items: schema,
-                minItems: 0,
-                maxItems: schema.length
-            };
-        }
-        return {
-            type: "array",
-            minItems: 0,
-            maxItems: 0
-        };
-
+  // Given a tuple of schemas, insert warning level at the beginning
+  if (Array.isArray(schema)) {
+    if (schema.length) {
+      return {
+        type: "array",
+        items: schema,
+        minItems: 0,
+        maxItems: schema.length,
+      };
     }
+    return {
+      type: "array",
+      minItems: 0,
+      maxItems: 0,
+    };
+  }
 
-    // Given a full schema, leave it alone
-    return schema || null;
+  // Given a full schema, leave it alone
+  return schema || null;
 }
 
 /**
@@ -69,15 +70,22 @@ function getRuleOptionsSchema(rule) {
  * @returns {number|string} The rule's severity value
  */
 function validateRuleSeverity(options) {
-    const severity = Array.isArray(options) ? options[0] : options;
-    const normSeverity = typeof severity === "string" ? severityMap[severity.toLowerCase()] : severity;
+  const severity = Array.isArray(options) ? options[0] : options;
+  const normSeverity =
+    typeof severity === "string"
+      ? severityMap[severity.toLowerCase()]
+      : severity;
 
-    if (normSeverity === 0 || normSeverity === 1 || normSeverity === 2) {
-        return normSeverity;
-    }
+  if (normSeverity === 0 || normSeverity === 1 || normSeverity === 2) {
+    return normSeverity;
+  }
 
-    throw new Error(`\tSeverity should be one of the following: 0 = off, 1 = warn, 2 = error (you passed '${util.inspect(severity).replace(/'/gu, "\"").replace(/\n/gu, "")}').\n`);
-
+  throw new Error(
+    `\tSeverity should be one of the following: 0 = off, 1 = warn, 2 = error (you passed '${util
+      .inspect(severity)
+      .replace(/'/gu, '"')
+      .replace(/\n/gu, "")}').\n`
+  );
 }
 
 /**
@@ -87,24 +95,29 @@ function validateRuleSeverity(options) {
  * @returns {void}
  */
 function validateRuleSchema(rule, localOptions) {
-    if (!ruleValidators.has(rule)) {
-        const schema = getRuleOptionsSchema(rule);
+  if (!ruleValidators.has(rule)) {
+    const schema = getRuleOptionsSchema(rule);
 
-        if (schema) {
-            ruleValidators.set(rule, ajv.compile(schema));
-        }
+    if (schema) {
+      ruleValidators.set(rule, ajv.compile(schema));
     }
+  }
 
-    const validateRule = ruleValidators.get(rule);
+  const validateRule = ruleValidators.get(rule);
 
-    if (validateRule) {
-        validateRule(localOptions);
-        if (validateRule.errors) {
-            throw new Error(validateRule.errors.map(
-                error => `\tValue ${JSON.stringify(error.data)} ${error.message}.\n`
-            ).join(""));
-        }
+  if (validateRule) {
+    validateRule(localOptions);
+    if (validateRule.errors) {
+      throw new Error(
+        validateRule.errors
+          .map(
+            (error) =>
+              `\tValue ${JSON.stringify(error.data)} ${error.message}.\n`
+          )
+          .join("")
+      );
     }
+  }
 }
 
 /**
@@ -117,24 +130,24 @@ function validateRuleSchema(rule, localOptions) {
  * @returns {void}
  */
 function validateRuleOptions(rule, ruleId, options, source = null) {
-    if (!rule) {
-        return;
-    }
-    try {
-        const severity = validateRuleSeverity(options);
+  if (!rule) {
+    return;
+  }
+  try {
+    const severity = validateRuleSeverity(options);
 
-        if (severity !== 0) {
-            validateRuleSchema(rule, Array.isArray(options) ? options.slice(1) : []);
-        }
-    } catch (err) {
-        const enhancedMessage = `Configuration for rule "${ruleId}" is invalid:\n${err.message}`;
-
-        if (typeof source === "string") {
-            throw new Error(`${source}:\n\t${enhancedMessage}`);
-        } else {
-            throw new Error(enhancedMessage);
-        }
+    if (severity !== 0) {
+      validateRuleSchema(rule, Array.isArray(options) ? options.slice(1) : []);
     }
+  } catch (err) {
+    const enhancedMessage = `Configuration for rule "${ruleId}" is invalid:\n${err.message}`;
+
+    if (typeof source === "string") {
+      throw new Error(`${source}:\n\t${enhancedMessage}`);
+    } else {
+      throw new Error(enhancedMessage);
+    }
+  }
 }
 
 /**
@@ -145,19 +158,18 @@ function validateRuleOptions(rule, ruleId, options, source = null) {
  * @returns {void}
  */
 function validateEnvironment(environment, envContext, source = null) {
+  // not having an environment is ok
+  if (!environment) {
+    return;
+  }
 
-    // not having an environment is ok
-    if (!environment) {
-        return;
+  Object.keys(environment).forEach((env) => {
+    if (!envContext.get(env)) {
+      const message = `${source}:\n\tEnvironment key "${env}" is unknown\n`;
+
+      throw new Error(message);
     }
-
-    Object.keys(environment).forEach(env => {
-        if (!envContext.get(env)) {
-            const message = `${source}:\n\tEnvironment key "${env}" is unknown\n`;
-
-            throw new Error(message);
-        }
-    });
+  });
 }
 
 /**
@@ -168,13 +180,13 @@ function validateEnvironment(environment, envContext, source = null) {
  * @returns {void}
  */
 function validateRules(rulesConfig, ruleMapper, source = null) {
-    if (!rulesConfig) {
-        return;
-    }
+  if (!rulesConfig) {
+    return;
+  }
 
-    Object.keys(rulesConfig).forEach(id => {
-        validateRuleOptions(ruleMapper(id), id, rulesConfig[id], source);
-    });
+  Object.keys(rulesConfig).forEach((id) => {
+    validateRuleOptions(ruleMapper(id), id, rulesConfig[id], source);
+  });
 }
 
 /**
@@ -183,24 +195,34 @@ function validateRules(rulesConfig, ruleMapper, source = null) {
  * @returns {string} Formatted error message
  */
 function formatErrors(errors) {
-    return errors.map(error => {
-        if (error.keyword === "additionalProperties") {
-            const formattedPropertyPath = error.dataPath.length ? `${error.dataPath.slice(1)}.${error.params.additionalProperty}` : error.params.additionalProperty;
+  return errors
+    .map((error) => {
+      if (error.keyword === "additionalProperties") {
+        const formattedPropertyPath = error.dataPath.length
+          ? `${error.dataPath.slice(1)}.${error.params.additionalProperty}`
+          : error.params.additionalProperty;
 
-            return `Unexpected top-level property "${formattedPropertyPath}"`;
-        }
-        if (error.keyword === "type") {
-            const formattedField = error.dataPath.slice(1);
-            const formattedExpectedType = Array.isArray(error.schema) ? error.schema.join("/") : error.schema;
-            const formattedValue = JSON.stringify(error.data);
+        return `Unexpected top-level property "${formattedPropertyPath}"`;
+      }
+      if (error.keyword === "type") {
+        const formattedField = error.dataPath.slice(1);
+        const formattedExpectedType = Array.isArray(error.schema)
+          ? error.schema.join("/")
+          : error.schema;
+        const formattedValue = JSON.stringify(error.data);
 
-            return `Property "${formattedField}" is the wrong type (expected ${formattedExpectedType} but got \`${formattedValue}\`)`;
-        }
+        return `Property "${formattedField}" is the wrong type (expected ${formattedExpectedType} but got \`${formattedValue}\`)`;
+      }
 
-        const field = error.dataPath[0] === "." ? error.dataPath.slice(1) : error.dataPath;
+      const field =
+        error.dataPath[0] === "." ? error.dataPath.slice(1) : error.dataPath;
 
-        return `"${field}" ${error.message}. Value: ${JSON.stringify(error.data)}`;
-    }).map(message => `\t- ${message}.\n`).join("");
+      return `"${field}" ${error.message}. Value: ${JSON.stringify(
+        error.data
+      )}`;
+    })
+    .map((message) => `\t- ${message}.\n`)
+    .join("");
 }
 
 /**
@@ -212,14 +234,14 @@ function formatErrors(errors) {
  * @returns {void}
  */
 const emitDeprecationWarning = lodash.memoize((source, errorCode) => {
-    const rel = path.relative(process.cwd(), source);
-    const message = deprecationWarningMessages[errorCode];
+  const rel = path.relative(process.cwd(), source);
+  const message = deprecationWarningMessages[errorCode];
 
-    process.emitWarning(
-        `${message} (found in "${rel}")`,
-        "DeprecationWarning",
-        errorCode
-    );
+  process.emitWarning(
+    `${message} (found in "${rel}")`,
+    "DeprecationWarning",
+    errorCode
+  );
 });
 
 /**
@@ -229,24 +251,28 @@ const emitDeprecationWarning = lodash.memoize((source, errorCode) => {
  * @returns {void}
  */
 function validateConfigSchema(config, source = null) {
-    validateSchema = validateSchema || ajv.compile(configSchema);
+  validateSchema = validateSchema || ajv.compile(configSchema);
 
-    if (!validateSchema(config)) {
-        throw new Error(`ESLint configuration in ${source} is invalid:\n${formatErrors(validateSchema.errors)}`);
-    }
+  if (!validateSchema(config)) {
+    throw new Error(
+      `ESLint configuration in ${source} is invalid:\n${formatErrors(
+        validateSchema.errors
+      )}`
+    );
+  }
 
-    if (Object.hasOwnProperty.call(config, "ecmaFeatures")) {
-        emitDeprecationWarning(source, "ESLINT_LEGACY_ECMAFEATURES");
-    }
+  if (Object.hasOwnProperty.call(config, "ecmaFeatures")) {
+    emitDeprecationWarning(source, "ESLINT_LEGACY_ECMAFEATURES");
+  }
 
-    if (
-        (config.parser || "espree") === "espree" &&
-        config.parserOptions &&
-        config.parserOptions.ecmaFeatures &&
-        config.parserOptions.ecmaFeatures.experimentalObjectRestSpread
-    ) {
-        emitDeprecationWarning(source, "ESLINT_LEGACY_OBJECT_REST_SPREAD");
-    }
+  if (
+    (config.parser || "espree") === "espree" &&
+    config.parserOptions &&
+    config.parserOptions.ecmaFeatures &&
+    config.parserOptions.ecmaFeatures.experimentalObjectRestSpread
+  ) {
+    emitDeprecationWarning(source, "ESLINT_LEGACY_OBJECT_REST_SPREAD");
+  }
 }
 
 /**
@@ -258,14 +284,14 @@ function validateConfigSchema(config, source = null) {
  * @returns {void}
  */
 function validate(config, ruleMapper, envContext, source = null) {
-    validateConfigSchema(config, source);
-    validateRules(config.rules, ruleMapper, source);
-    validateEnvironment(config.env, envContext, source);
+  validateConfigSchema(config, source);
+  validateRules(config.rules, ruleMapper, source);
+  validateEnvironment(config.env, envContext, source);
 
-    for (const override of config.overrides || []) {
-        validateRules(override.rules, ruleMapper, source);
-        validateEnvironment(override.env, envContext, source);
-    }
+  for (const override of config.overrides || []) {
+    validateRules(override.rules, ruleMapper, source);
+    validateEnvironment(override.env, envContext, source);
+  }
 }
 
 //------------------------------------------------------------------------------
@@ -273,7 +299,7 @@ function validate(config, ruleMapper, envContext, source = null) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    getRuleOptionsSchema,
-    validate,
-    validateRuleOptions
+  getRuleOptionsSchema,
+  validate,
+  validateRuleOptions,
 };

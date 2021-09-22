@@ -1,17 +1,17 @@
-'use strict';
+"use strict";
 
-var utils = require('./../utils');
-var transformData = require('./transformData');
-var isCancel = require('../cancel/isCancel');
-var defaults = require('../defaults');
+var utils = require("./../utils");
+var transformData = require("./transformData");
+var isCancel = require("../cancel/isCancel");
+var defaults = require("../defaults");
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
  */
 function throwIfCancellationRequested(config) {
-    if (config.cancelToken) {
-        config.cancelToken.throwIfRequested();
-    }
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
 }
 
 /**
@@ -21,59 +21,62 @@ function throwIfCancellationRequested(config) {
  * @returns {Promise} The Promise to be fulfilled
  */
 module.exports = function dispatchRequest(config) {
-    throwIfCancellationRequested(config);
+  throwIfCancellationRequested(config);
 
-    // Ensure headers exist
-    config.headers = config.headers || {};
+  // Ensure headers exist
+  config.headers = config.headers || {};
 
-    // Transform request data
-    config.data = transformData(
-        config.data,
-        config.headers,
-        config.transformRequest
-    );
+  // Transform request data
+  config.data = transformData(
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
 
-    // Flatten headers
-    config.headers = utils.merge(
-        config.headers.common || {},
-        config.headers[config.method] || {},
-        config.headers
-    );
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers
+  );
 
-    utils.forEach(
-        ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
-        function cleanHeaderConfig(method) {
-            delete config.headers[method];
-        }
-    );
+  utils.forEach(
+    ["delete", "get", "head", "post", "put", "patch", "common"],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
 
-    var adapter = config.adapter || defaults.adapter;
+  var adapter = config.adapter || defaults.adapter;
 
-    return adapter(config).then(function onAdapterResolution(response) {
+  return adapter(config).then(
+    function onAdapterResolution(response) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      response.data = transformData(
+        response.data,
+        response.headers,
+        config.transformResponse
+      );
+
+      return response;
+    },
+    function onAdapterRejection(reason) {
+      if (!isCancel(reason)) {
         throwIfCancellationRequested(config);
 
         // Transform response data
-        response.data = transformData(
-            response.data,
-            response.headers,
+        if (reason && reason.response) {
+          reason.response.data = transformData(
+            reason.response.data,
+            reason.response.headers,
             config.transformResponse
-        );
-
-        return response;
-    }, function onAdapterRejection(reason) {
-        if (!isCancel(reason)) {
-            throwIfCancellationRequested(config);
-
-            // Transform response data
-            if (reason && reason.response) {
-                reason.response.data = transformData(
-                    reason.response.data,
-                    reason.response.headers,
-                    config.transformResponse
-                );
-            }
+          );
         }
+      }
 
-        return Promise.reject(reason);
-    });
+      return Promise.reject(reason);
+    }
+  );
 };

@@ -1,6 +1,6 @@
-var baseForRight = require('./_baseForRight'),
-    castFunction = require('./_castFunction'),
-    keysIn = require('./keysIn');
+var baseForRight = require("./_baseForRight"),
+  castFunction = require("./_castFunction"),
+  keysIn = require("./keysIn");
 
 /**
  * This method is like `_.forIn` except that it iterates over properties of

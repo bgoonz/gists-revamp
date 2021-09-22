@@ -18,7 +18,10 @@ exports.implementation = class DOMParserImpl {
           return createScriptingDisabledDocument("xml", contentType, string);
         } catch (error) {
           const document = createScriptingDisabledDocument("xml", contentType);
-          const element = document.createElementNS("http://www.mozilla.org/newlayout/xml/parsererror.xml", "parsererror");
+          const element = document.createElementNS(
+            "http://www.mozilla.org/newlayout/xml/parsererror.xml",
+            "parsererror"
+          );
 
           element.textContent = error.message;
 
@@ -38,15 +41,15 @@ function createScriptingDisabledDocument(parsingMode, contentType, string) {
     options: {
       parsingMode,
       encoding: "UTF-8",
-      contentType
+      contentType,
       // TODO: somehow set URL to active document's URL
-    }
+    },
   });
 
   // "scripting enabled" set to false
   applyDocumentFeatures(document, {
     FetchExternalResources: [],
-    SkipExternalResources: false
+    SkipExternalResources: false,
   });
 
   if (string !== undefined) {

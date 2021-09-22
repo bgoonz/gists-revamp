@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var isAbsoluteURL = require('../helpers/isAbsoluteURL');
-var combineURLs = require('../helpers/combineURLs');
+var isAbsoluteURL = require("../helpers/isAbsoluteURL");
+var combineURLs = require("../helpers/combineURLs");
 
 /**
  * Creates a new URL by combining the baseURL with the requestedURL,
@@ -13,8 +13,8 @@ var combineURLs = require('../helpers/combineURLs');
  * @returns {string} The combined full path
  */
 module.exports = function buildFullPath(baseURL, requestedURL) {
-    if (baseURL && !isAbsoluteURL(requestedURL)) {
-        return combineURLs(baseURL, requestedURL);
-    }
-    return requestedURL;
+  if (baseURL && !isAbsoluteURL(requestedURL)) {
+    return combineURLs(baseURL, requestedURL);
+  }
+  return requestedURL;
 };

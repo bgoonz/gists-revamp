@@ -1,3 +1,3 @@
-import createTheme from './createTheme';
+import createTheme from "./createTheme";
 var defaultTheme = createTheme();
 export default defaultTheme;

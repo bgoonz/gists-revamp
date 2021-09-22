@@ -1,5 +1,5 @@
-var baseForOwnRight = require('./_baseForOwnRight'),
-    castFunction = require('./_castFunction');
+var baseForOwnRight = require("./_baseForOwnRight"),
+  castFunction = require("./_castFunction");
 
 /**
  * This method is like `_.forOwn` except that it iterates over properties of

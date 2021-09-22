@@ -1,9 +1,13 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
-exports.drawBorderTop = exports.drawBorderJoin = exports.drawBorderBottom = exports.drawBorder = void 0;
+exports.drawBorderTop =
+  exports.drawBorderJoin =
+  exports.drawBorderBottom =
+  exports.drawBorder =
+    void 0;
 
 /**
  * @typedef drawBorder~parts
@@ -19,10 +23,12 @@ exports.drawBorderTop = exports.drawBorderJoin = exports.drawBorderBottom = expo
  * @returns {string}
  */
 const drawBorder = (columnSizeIndex, parts) => {
-  const columns = columnSizeIndex.map(size => {
-    return parts.body.repeat(size);
-  }).join(parts.join);
-  return parts.left + columns + parts.right + '\n';
+  const columns = columnSizeIndex
+    .map((size) => {
+      return parts.body.repeat(size);
+    })
+    .join(parts.join);
+  return parts.left + columns + parts.right + "\n";
 };
 /**
  * @typedef drawBorderTop~parts
@@ -38,7 +44,6 @@ const drawBorder = (columnSizeIndex, parts) => {
  * @returns {string}
  */
 
-
 exports.drawBorder = drawBorder;
 
 const drawBorderTop = (columnSizeIndex, parts) => {
@@ -46,7 +51,7 @@ const drawBorderTop = (columnSizeIndex, parts) => {
     body: parts.topBody,
     join: parts.topJoin,
     left: parts.topLeft,
-    right: parts.topRight
+    right: parts.topRight,
   });
 };
 /**
@@ -63,7 +68,6 @@ const drawBorderTop = (columnSizeIndex, parts) => {
  * @returns {string}
  */
 
-
 exports.drawBorderTop = drawBorderTop;
 
 const drawBorderJoin = (columnSizeIndex, parts) => {
@@ -71,7 +75,7 @@ const drawBorderJoin = (columnSizeIndex, parts) => {
     body: parts.joinBody,
     join: parts.joinJoin,
     left: parts.joinLeft,
-    right: parts.joinRight
+    right: parts.joinRight,
   });
 };
 /**
@@ -88,7 +92,6 @@ const drawBorderJoin = (columnSizeIndex, parts) => {
  * @returns {string}
  */
 
-
 exports.drawBorderJoin = drawBorderJoin;
 
 const drawBorderBottom = (columnSizeIndex, parts) => {
@@ -96,7 +99,7 @@ const drawBorderBottom = (columnSizeIndex, parts) => {
     body: parts.bottomBody,
     join: parts.bottomJoin,
     left: parts.bottomLeft,
-    right: parts.bottomRight
+    right: parts.bottomRight,
   });
 };
 

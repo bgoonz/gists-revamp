@@ -1,6 +1,6 @@
-var baseFindIndex = require('./_baseFindIndex'),
-    baseIteratee = require('./_baseIteratee'),
-    toInteger = require('./toInteger');
+var baseFindIndex = require("./_baseFindIndex"),
+  baseIteratee = require("./_baseIteratee"),
+  toInteger = require("./toInteger");
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;

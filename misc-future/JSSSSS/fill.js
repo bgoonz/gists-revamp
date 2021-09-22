@@ -1,5 +1,5 @@
-var baseFill = require('./_baseFill'),
-    isIterateeCall = require('./_isIterateeCall');
+var baseFill = require("./_baseFill"),
+  isIterateeCall = require("./_isIterateeCall");
 
 /**
  * Fills elements of `array` with `value` from `start` up to, but not
@@ -35,7 +35,11 @@ function fill(array, value, start, end) {
   if (!length) {
     return [];
   }
-  if (start && typeof start != 'number' && isIterateeCall(array, value, start)) {
+  if (
+    start &&
+    typeof start != "number" &&
+    isIterateeCall(array, value, start)
+  ) {
     start = 0;
     end = length;
   }

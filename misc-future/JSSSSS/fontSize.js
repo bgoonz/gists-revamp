@@ -1,12 +1,20 @@
-'use strict';
+"use strict";
 
-var TYPES = require('../parsers').TYPES;
-var valueType = require('../parsers').valueType;
+var TYPES = require("../parsers").TYPES;
+var valueType = require("../parsers").valueType;
 
-var absoluteSizes = ['xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large'];
-var relativeSizes = ['larger', 'smaller'];
+var absoluteSizes = [
+  "xx-small",
+  "x-small",
+  "small",
+  "medium",
+  "large",
+  "x-large",
+  "xx-large",
+];
+var relativeSizes = ["larger", "smaller"];
 
-module.exports.isValid = function(v) {
+module.exports.isValid = function (v) {
   var type = valueType(v.toLowerCase());
   return (
     type === TYPES.LENGTH ||
@@ -17,11 +25,11 @@ module.exports.isValid = function(v) {
 };
 
 module.exports.definition = {
-  set: function(v) {
-    this._setProperty('font-size', v);
+  set: function (v) {
+    this._setProperty("font-size", v);
   },
-  get: function() {
-    return this.getPropertyValue('font-size');
+  get: function () {
+    return this.getPropertyValue("font-size");
   },
   enumerable: true,
   configurable: true,

@@ -1,3 +1,1 @@
-var containsDuplicate = function(nums) {
-
-}
+var containsDuplicate = function (nums) {};

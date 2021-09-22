@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -9,9 +9,7 @@ var _path = require("./path");
 
 var _t = require("@babel/types");
 
-const {
-  VISITOR_KEYS
-} = _t;
+const { VISITOR_KEYS } = _t;
 
 class TraversalContext {
   constructor(scope, opts, state, parentPath) {
@@ -43,7 +41,7 @@ class TraversalContext {
       parent: node,
       container: obj,
       key: key,
-      listKey
+      listKey,
     });
   }
 
@@ -89,14 +87,15 @@ class TraversalContext {
     for (const path of queue) {
       path.resync();
 
-      if (path.contexts.length === 0 || path.contexts[path.contexts.length - 1] !== this) {
+      if (
+        path.contexts.length === 0 ||
+        path.contexts[path.contexts.length - 1] !== this
+      ) {
         path.pushContext(this);
       }
 
       if (path.key === null) continue;
-      const {
-        node
-      } = path;
+      const { node } = path;
       if (visited.has(node)) continue;
       if (node) visited.add(node);
 
@@ -131,7 +130,6 @@ class TraversalContext {
       return this.visitSingle(node, key);
     }
   }
-
 }
 
 exports.default = TraversalContext;

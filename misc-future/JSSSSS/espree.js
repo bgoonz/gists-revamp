@@ -65,32 +65,30 @@ const espree = require("./lib/espree");
 
 // To initialize lazily.
 const parsers = {
-    _regular: null,
-    _jsx: null,
+  _regular: null,
+  _jsx: null,
 
-    get regular() {
-        if (this._regular === null) {
-            this._regular = acorn.Parser.extend(espree());
-        }
-        return this._regular;
-    },
-
-    get jsx() {
-        if (this._jsx === null) {
-            this._jsx = acorn.Parser.extend(jsx(), espree());
-        }
-        return this._jsx;
-    },
-
-    get(options) {
-        const useJsx = Boolean(
-            options &&
-            options.ecmaFeatures &&
-            options.ecmaFeatures.jsx
-        );
-
-        return useJsx ? this.jsx : this.regular;
+  get regular() {
+    if (this._regular === null) {
+      this._regular = acorn.Parser.extend(espree());
     }
+    return this._regular;
+  },
+
+  get jsx() {
+    if (this._jsx === null) {
+      this._jsx = acorn.Parser.extend(jsx(), espree());
+    }
+    return this._jsx;
+  },
+
+  get(options) {
+    const useJsx = Boolean(
+      options && options.ecmaFeatures && options.ecmaFeatures.jsx
+    );
+
+    return useJsx ? this.jsx : this.regular;
+  },
 };
 
 //------------------------------------------------------------------------------
@@ -106,14 +104,14 @@ const parsers = {
  * @private
  */
 function tokenize(code, options) {
-    const Parser = parsers.get(options);
+  const Parser = parsers.get(options);
 
-    // Ensure to collect tokens.
-    if (!options || options.tokens !== true) {
-        options = Object.assign({}, options, { tokens: true }); // eslint-disable-line no-param-reassign
-    }
+  // Ensure to collect tokens.
+  if (!options || options.tokens !== true) {
+    options = Object.assign({}, options, { tokens: true }); // eslint-disable-line no-param-reassign
+  }
 
-    return new Parser(options, code).tokenize();
+  return new Parser(options, code).tokenize();
 }
 
 //------------------------------------------------------------------------------
@@ -128,9 +126,9 @@ function tokenize(code, options) {
  * @throws {SyntaxError} If the input code is invalid.
  */
 function parse(code, options) {
-    const Parser = parsers.get(options);
+  const Parser = parsers.get(options);
 
-    return new Parser(options, code).parse();
+  return new Parser(options, code).parse();
 }
 
 //------------------------------------------------------------------------------
@@ -145,28 +143,28 @@ exports.parse = parse;
 
 // Deep copy.
 /* istanbul ignore next */
-exports.Syntax = (function() {
-    let name,
-        types = {};
+exports.Syntax = (function () {
+  let name,
+    types = {};
 
-    if (typeof Object.create === "function") {
-        types = Object.create(null);
+  if (typeof Object.create === "function") {
+    types = Object.create(null);
+  }
+
+  for (name in astNodeTypes) {
+    if (astNodeTypes.hasOwnProperty(name)) {
+      types[name] = astNodeTypes[name];
     }
+  }
 
-    for (name in astNodeTypes) {
-        if (astNodeTypes.hasOwnProperty(name)) {
-            types[name] = astNodeTypes[name];
-        }
-    }
+  if (typeof Object.freeze === "function") {
+    Object.freeze(types);
+  }
 
-    if (typeof Object.freeze === "function") {
-        Object.freeze(types);
-    }
-
-    return types;
-}());
+  return types;
+})();
 
 /* istanbul ignore next */
-exports.VisitorKeys = (function() {
-    return require("eslint-visitor-keys").KEYS;
-}());
+exports.VisitorKeys = (function () {
+  return require("eslint-visitor-keys").KEYS;
+})();

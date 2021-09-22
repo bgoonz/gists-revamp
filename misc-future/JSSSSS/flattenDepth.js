@@ -1,5 +1,5 @@
-var baseFlatten = require('./_baseFlatten'),
-    toInteger = require('./toInteger');
+var baseFlatten = require("./_baseFlatten"),
+  toInteger = require("./toInteger");
 
 /**
  * Recursively flatten `array` up to `depth` times.

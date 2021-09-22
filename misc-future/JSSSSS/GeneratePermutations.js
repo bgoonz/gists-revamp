@@ -12,22 +12,22 @@
 const swap = (arr, i, j) => {
   const newArray = [...arr];
 
-  [newArray[i], newArray[j]] = [newArray[j], newArray[i]] // Swapping elements ES6 way
+  [newArray[i], newArray[j]] = [newArray[j], newArray[i]]; // Swapping elements ES6 way
 
-  return newArray
-}
+  return newArray;
+};
 
 const permutations = (arr, low, high) => {
   if (low === high) {
-    console.log(arr.join(' '))
-    return
+    console.log(arr.join(" "));
+    return;
   }
   for (let i = low; i <= high; i++) {
-    arr = swap(arr, low, i)
-    permutations(arr, low + 1, high)
+    arr = swap(arr, low, i);
+    permutations(arr, low + 1, high);
   }
-}
+};
 
 // Driver Code
-const input = [1, 2, 3]
-permutations(input, 0, input.length - 1)
+const input = [1, 2, 3];
+permutations(input, 0, input.length - 1);

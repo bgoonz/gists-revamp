@@ -6,7 +6,7 @@ const {
   parseFloatingPointNumber,
   stripLeadingAndTrailingASCIIWhitespace,
   stripNewlines,
-  splitOnCommas
+  splitOnCommas,
 } = require("./strings");
 const {
   isValidDateString,
@@ -14,18 +14,29 @@ const {
   isValidTimeString,
   isValidWeekString,
   parseLocalDateAndTimeString,
-  serializeNormalizedDateAndTime
+  serializeNormalizedDateAndTime,
 } = require("./dates-and-times");
 const whatwgURL = require("whatwg-url");
 
 const NodeList = require("../generated/NodeList");
 const { domSymbolTree } = require("../helpers/internal-constants");
 const NODE_TYPE = require("../node-type");
-const submittableLocalNames = new Set(["button", "input", "keygen", "object", "select", "textarea"]);
+const submittableLocalNames = new Set([
+  "button",
+  "input",
+  "keygen",
+  "object",
+  "select",
+  "textarea",
+]);
 
-exports.isDisabled = formControl => {
-  if (formControl.localName === "button" || formControl.localName === "input" || formControl.localName === "select" ||
-      formControl.localName === "textarea") {
+exports.isDisabled = (formControl) => {
+  if (
+    formControl.localName === "button" ||
+    formControl.localName === "input" ||
+    formControl.localName === "select" ||
+    formControl.localName === "textarea"
+  ) {
     if (formControl.hasAttribute("disabled")) {
       return true;
     }
@@ -35,7 +46,10 @@ exports.isDisabled = formControl => {
   while (e) {
     if (e.localName === "fieldset" && e.hasAttribute("disabled")) {
       const firstLegendElementChild = e.querySelector("legend");
-      if (!firstLegendElementChild || !firstLegendElementChild.contains(formControl)) {
+      if (
+        !firstLegendElementChild ||
+        !firstLegendElementChild.contains(formControl)
+      ) {
         return true;
       }
     }
@@ -45,25 +59,31 @@ exports.isDisabled = formControl => {
   return false;
 };
 
-exports.isSubmittable = formControl => {
+exports.isSubmittable = (formControl) => {
   // https://html.spec.whatwg.org/multipage/forms.html#category-submit
   return submittableLocalNames.has(formControl.localName);
 };
 
-exports.isButton = formControl => {
+exports.isButton = (formControl) => {
   // https://html.spec.whatwg.org/multipage/forms.html#concept-button
-  return formControl.type === "button" || formControl.type === "submit" || formControl.type === "reset" ||
-         formControl.type === "image" || formControl.localName === "button";
+  return (
+    formControl.type === "button" ||
+    formControl.type === "submit" ||
+    formControl.type === "reset" ||
+    formControl.type === "image" ||
+    formControl.localName === "button"
+  );
 };
 
-exports.normalizeToCRLF = string => {
-  return string.replace(/\r([^\n])/g, "\r\n$1")
+exports.normalizeToCRLF = (string) => {
+  return string
+    .replace(/\r([^\n])/g, "\r\n$1")
     .replace(/\r$/, "\r\n")
     .replace(/([^\r])\n/g, "$1\r\n")
     .replace(/^\n/, "\r\n");
 };
 
-exports.isLabelable = node => {
+exports.isLabelable = (node) => {
   // labelable logic defined at: https://html.spec.whatwg.org/multipage/forms.html#category-label
   if (node.nodeType !== NODE_TYPE.ELEMENT_NODE) {
     return false;
@@ -85,7 +105,7 @@ exports.isLabelable = node => {
   return false;
 };
 
-exports.getLabelsForLabelable = labelable => {
+exports.getLabelsForLabelable = (labelable) => {
   if (!exports.isLabelable(labelable)) {
     return null;
   }
@@ -101,7 +121,7 @@ exports.getLabelsForLabelable = labelable => {
           }
         }
         return nodes;
-      }
+      },
     });
   }
   return labelable._labels;
@@ -109,19 +129,23 @@ exports.getLabelsForLabelable = labelable => {
 
 // https://html.spec.whatwg.org/multipage/forms.html#valid-e-mail-address
 exports.isValidEmailAddress = (emailAddress, multiple = false) => {
-  const emailAddressRegExp = new RegExp("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9]" +
-    "(?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}" +
-    "[a-zA-Z0-9])?)*$");
+  const emailAddressRegExp = new RegExp(
+    "^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9]" +
+      "(?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}" +
+      "[a-zA-Z0-9])?)*$"
+  );
   // A valid e-mail address list is a set of comma-separated tokens, where each token is itself
   // a valid e - mail address.To obtain the list of tokens from a valid e - mail address list,
   // an implementation must split the string on commas.
   if (multiple) {
-    return splitOnCommas(emailAddress).every(value => emailAddressRegExp.test(value));
+    return splitOnCommas(emailAddress).every((value) =>
+      emailAddressRegExp.test(value)
+    );
   }
   return emailAddressRegExp.test(emailAddress);
 };
 
-exports.isValidAbsoluteURL = url => {
+exports.isValidAbsoluteURL = (url) => {
   return whatwgURL.parseURL(url) !== null;
 };
 
@@ -149,7 +173,8 @@ exports.sanitizeValueByType = (input, val) => {
     case "datetime-local": {
       // https://html.spec.whatwg.org/multipage/input.html#local-date-and-time-state-(type=datetime-local):value-sanitization-algorithm
       const dateAndTime = parseLocalDateAndTimeString(val);
-      val = dateAndTime !== null ? serializeNormalizedDateAndTime(dateAndTime) : "";
+      val =
+        dateAndTime !== null ? serializeNormalizedDateAndTime(dateAndTime) : "";
       break;
     }
 
@@ -157,7 +182,10 @@ exports.sanitizeValueByType = (input, val) => {
       // https://html.spec.whatwg.org/multipage/forms.html#e-mail-state-(type=email):value-sanitization-algorithm
       // https://html.spec.whatwg.org/multipage/forms.html#e-mail-state-(type=email):value-sanitization-algorithm-2
       if (input.hasAttribute("multiple")) {
-        val = val.split(",").map(token => stripLeadingAndTrailingASCIIWhitespace(token)).join(",");
+        val = val
+          .split(",")
+          .map((token) => stripLeadingAndTrailingASCIIWhitespace(token))
+          .join(",");
       } else {
         val = stripNewlines(val);
         val = stripLeadingAndTrailingASCIIWhitespace(val);
@@ -175,7 +203,10 @@ exports.sanitizeValueByType = (input, val) => {
       // https://html.spec.whatwg.org/multipage/input.html#number-state-(type=number):value-sanitization-algorithm
       // TODO: using parseFloatingPointNumber in addition to isValidFloatingPointNumber to pass number.html WPT.
       // Possible spec bug.
-      if (!isValidFloatingPointNumber(val) || isNaN(parseFloatingPointNumber(val))) {
+      if (
+        !isValidFloatingPointNumber(val) ||
+        isNaN(parseFloatingPointNumber(val))
+      ) {
         val = "";
       }
       break;
@@ -184,10 +215,14 @@ exports.sanitizeValueByType = (input, val) => {
       // https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range):value-sanitization-algorithm
       // TODO: using parseFloatingPointNumber in addition to isValidFloatingPointNumber to pass number.html WPT.
       // Possible spec bug.
-      if (!isValidFloatingPointNumber(val) || isNaN(parseFloatingPointNumber(val))) {
+      if (
+        !isValidFloatingPointNumber(val) ||
+        isNaN(parseFloatingPointNumber(val))
+      ) {
         const minimum = input._minimum;
         const maximum = input._maximum;
-        const defaultValue = maximum < minimum ? minimum : (minimum + maximum) / 2;
+        const defaultValue =
+          maximum < minimum ? minimum : (minimum + maximum) / 2;
         val = `${defaultValue}`;
       }
       break;

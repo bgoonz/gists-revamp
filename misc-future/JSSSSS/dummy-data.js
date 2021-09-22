@@ -4,25 +4,23 @@ const dummyData = [
     thumbnailUrl:
       "https://images-na.ssl-images-amazon.com/images/I/7176SRs4%2BsL.png",
 
-    imageUrl:
-      "https://i.imgur.com/gSvLLhB.jpg",
+    imageUrl: "https://i.imgur.com/gSvLLhB.jpg",
     likes: 9000,
     timestamp: "July 17th 2018, 12:42:40 pm",
     comments: [
       {
         username: "tomtarpey",
-        text:
-          "UNIX FTW!!"
+        text: "UNIX FTW!!",
       },
       {
         username: "biancasaurus",
-        text: "Looks AMAZING!"
+        text: "Looks AMAZING!",
       },
       {
         username: "martinseludo",
-        text: "Can't wait to try UNIX!"
-      }
-    ]
+        text: "Can't wait to try UNIX!",
+      },
+    ],
   },
   {
     username: "philzcoffee",
@@ -37,20 +35,19 @@ const dummyData = [
       {
         index: 0,
         username: "philzcoffee",
-        text:
-          "We've got more than just delicious coffees to offer at our shops!"
+        text: "We've got more than just delicious coffees to offer at our shops!",
       },
       {
         index: 1,
         username: "biancasaurus",
-        text: "Looks delicious!"
+        text: "Looks delicious!",
       },
       {
         index: 2,
         username: "martinseludo",
-        text: "Can't wait to try it!"
-      }
-    ]
+        text: "Can't wait to try it!",
+      },
+    ],
   },
   {
     username: "fortnite",
@@ -63,25 +60,25 @@ const dummyData = [
     comments: [
       {
         username: "twitch",
-        text: "Epic Street Fighter action here in Las Vegas at #EVO2017!"
+        text: "Epic Street Fighter action here in Las Vegas at #EVO2017!",
       },
       {
         username: "michaelmarzetta",
-        text: "Omg that match was crazy"
+        text: "Omg that match was crazy",
       },
       {
         username: "themexican_leprechaun",
-        text: "What a setup"
+        text: "What a setup",
       },
       {
         username: "dennis_futbol",
-        text: "It that injustice"
+        text: "It that injustice",
       },
       {
         username: "dennis_futbol",
-        text: "Is"
-      }
-    ]
+        text: "Is",
+      },
+    ],
   },
   {
     username: "playhearthstone",
@@ -94,18 +91,18 @@ const dummyData = [
     comments: [
       {
         username: "playhearthstone",
-        text: "Love this shot!"
+        text: "Love this shot!",
       },
       {
         username: "awaywetravel",
-        text: "Yosemite is my most favorite place in the universe"
+        text: "Yosemite is my most favorite place in the universe",
       },
       {
         username: "awesomebt28",
-        text: "I like how Half Dome looks so old and useless"
-      }
-    ]
-  }
+        text: "I like how Half Dome looks so old and useless",
+      },
+    ],
+  },
 ];
 
 export default dummyData;

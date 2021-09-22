@@ -17,44 +17,45 @@ const xmlEscape = require("../util/xml-escape");
  * @private
  */
 function getMessageType(message) {
-    if (message.fatal || message.severity === 2) {
-        return "error";
-    }
-    return "warning";
-
+  if (message.fatal || message.severity === 2) {
+    return "error";
+  }
+  return "warning";
 }
 
 //------------------------------------------------------------------------------
 // Public Interface
 //------------------------------------------------------------------------------
 
-module.exports = function(results) {
+module.exports = function (results) {
+  let output = "";
 
-    let output = "";
+  output += '<?xml version="1.0" encoding="utf-8"?>';
+  output += '<checkstyle version="4.3">';
 
-    output += "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-    output += "<checkstyle version=\"4.3\">";
+  results.forEach((result) => {
+    const messages = result.messages;
 
-    results.forEach(result => {
-        const messages = result.messages;
+    output += `<file name="${xmlEscape(result.filePath)}">`;
 
-        output += `<file name="${xmlEscape(result.filePath)}">`;
-
-        messages.forEach(message => {
-            output += [
-                `<error line="${xmlEscape(message.line)}"`,
-                `column="${xmlEscape(message.column)}"`,
-                `severity="${xmlEscape(getMessageType(message))}"`,
-                `message="${xmlEscape(message.message)}${message.ruleId ? ` (${message.ruleId})` : ""}"`,
-                `source="${message.ruleId ? xmlEscape(`eslint.rules.${message.ruleId}`) : ""}" />`
-            ].join(" ");
-        });
-
-        output += "</file>";
-
+    messages.forEach((message) => {
+      output += [
+        `<error line="${xmlEscape(message.line)}"`,
+        `column="${xmlEscape(message.column)}"`,
+        `severity="${xmlEscape(getMessageType(message))}"`,
+        `message="${xmlEscape(message.message)}${
+          message.ruleId ? ` (${message.ruleId})` : ""
+        }"`,
+        `source="${
+          message.ruleId ? xmlEscape(`eslint.rules.${message.ruleId}`) : ""
+        }" />`,
+      ].join(" ");
     });
 
-    output += "</checkstyle>";
+    output += "</file>";
+  });
 
-    return output;
+  output += "</checkstyle>";
+
+  return output;
 };

@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.shareCommentsWithSiblings = shareCommentsWithSiblings;
 exports.addComment = addComment;
@@ -9,10 +9,7 @@ exports.addComments = addComments;
 
 var _t = require("@babel/types");
 
-const {
-  addComment: _addComment,
-  addComments: _addComments
-} = _t;
+const { addComment: _addComment, addComments: _addComments } = _t;
 
 function shareCommentsWithSiblings() {
   if (typeof this.key === "string") return;

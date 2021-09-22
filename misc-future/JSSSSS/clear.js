@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
-var parseKeyword = require('../parsers').parseKeyword;
+var parseKeyword = require("../parsers").parseKeyword;
 
-var clear_keywords = ['none', 'left', 'right', 'both', 'inherit'];
+var clear_keywords = ["none", "left", "right", "both", "inherit"];
 
 module.exports.definition = {
-  set: function(v) {
-    this._setProperty('clear', parseKeyword(v, clear_keywords));
+  set: function (v) {
+    this._setProperty("clear", parseKeyword(v, clear_keywords));
   },
-  get: function() {
-    return this.getPropertyValue('clear');
+  get: function () {
+    return this.getPropertyValue("clear");
   },
   enumerable: true,
   configurable: true,

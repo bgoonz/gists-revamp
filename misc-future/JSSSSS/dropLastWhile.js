@@ -1,1 +1,1 @@
-module.exports = require('./dropRightWhile');
+module.exports = require("./dropRightWhile");

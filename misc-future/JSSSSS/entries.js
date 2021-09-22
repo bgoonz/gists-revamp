@@ -1,1 +1,1 @@
-module.exports = require('./toPairs');
+module.exports = require("./toPairs");

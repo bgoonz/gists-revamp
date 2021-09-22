@@ -1,8 +1,8 @@
-var baseDifference = require('./_baseDifference'),
-    baseFlatten = require('./_baseFlatten'),
-    baseRest = require('./_baseRest'),
-    isArrayLikeObject = require('./isArrayLikeObject'),
-    last = require('./last');
+var baseDifference = require("./_baseDifference"),
+  baseFlatten = require("./_baseFlatten"),
+  baseRest = require("./_baseRest"),
+  isArrayLikeObject = require("./isArrayLikeObject"),
+  last = require("./last");
 
 /**
  * This method is like `_.difference` except that it accepts `comparator`
@@ -27,13 +27,18 @@ var baseDifference = require('./_baseDifference'),
  * _.differenceWith(objects, [{ 'x': 1, 'y': 2 }], _.isEqual);
  * // => [{ 'x': 2, 'y': 1 }]
  */
-var differenceWith = baseRest(function(array, values) {
+var differenceWith = baseRest(function (array, values) {
   var comparator = last(values);
   if (isArrayLikeObject(comparator)) {
     comparator = undefined;
   }
   return isArrayLikeObject(array)
-    ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), undefined, comparator)
+    ? baseDifference(
+        array,
+        baseFlatten(values, 1, isArrayLikeObject, true),
+        undefined,
+        comparator
+      )
     : [];
 });
 

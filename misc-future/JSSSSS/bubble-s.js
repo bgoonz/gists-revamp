@@ -1,14 +1,12 @@
 function bubbleSort(array) {
   let swapped = true;
   while (swapped) {
-    swapped = false;  // reset swap to false
+    swapped = false; // reset swap to false
 
     // this for will perform a single pass
     for (let i = 0; i < array.length; i++) {
-
       // if the two value are not ordered...
       if (array[i] > array[i + 1]) {
-
         // swap the two values
         swap(array, i, i + 1);
 

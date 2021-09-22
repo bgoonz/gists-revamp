@@ -1,4 +1,4 @@
-'use strict'; // undocumented cb() API, needed for core, not for public API
+"use strict"; // undocumented cb() API, needed for core, not for public API
 
 function destroy(err, cb) {
   var _this = this;
@@ -9,7 +9,10 @@ function destroy(err, cb) {
   if (readableDestroyed || writableDestroyed) {
     if (cb) {
       cb(err);
-    } else if (err && (!this._writableState || !this._writableState.errorEmitted)) {
+    } else if (
+      err &&
+      (!this._writableState || !this._writableState.errorEmitted)
+    ) {
       process.nextTick(emitErrorNT, this, err);
     }
 
@@ -17,11 +20,9 @@ function destroy(err, cb) {
   } // we set destroyed to true before firing error callbacks in order
   // to make it re-entrance safe in case destroy() is called within callbacks
 
-
   if (this._readableState) {
     this._readableState.destroyed = true;
   } // if this is a duplex stream mark the writable part as destroyed as well
-
 
   if (this._writableState) {
     this._writableState.destroyed = true;
@@ -53,7 +54,7 @@ function emitErrorAndCloseNT(self, err) {
 function emitCloseNT(self) {
   if (self._writableState && !self._writableState.emitClose) return;
   if (self._readableState && !self._readableState.emitClose) return;
-  self.emit('close');
+  self.emit("close");
 }
 
 function undestroy() {
@@ -76,10 +77,10 @@ function undestroy() {
 }
 
 function emitErrorNT(self, err) {
-  self.emit('error', err);
+  self.emit("error", err);
 }
 
 module.exports = {
   destroy: destroy,
-  undestroy: undestroy
+  undestroy: undestroy,
 };

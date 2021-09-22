@@ -1,12 +1,12 @@
-function BrowserslistError (message) {
-  this.name = 'BrowserslistError'
-  this.message = message
-  this.browserslist = true
+function BrowserslistError(message) {
+  this.name = "BrowserslistError";
+  this.message = message;
+  this.browserslist = true;
   if (Error.captureStackTrace) {
-    Error.captureStackTrace(this, BrowserslistError)
+    Error.captureStackTrace(this, BrowserslistError);
   }
 }
 
-BrowserslistError.prototype = Error.prototype
+BrowserslistError.prototype = Error.prototype;
 
-module.exports = BrowserslistError
+module.exports = BrowserslistError;

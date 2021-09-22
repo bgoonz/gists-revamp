@@ -1,27 +1,27 @@
-'use strict';
+"use strict";
 /**
  * `list` type prompt
  */
 
-var _ = require('lodash');
-var chalk = require('chalk');
-var cliCursor = require('cli-cursor');
-var figures = require('figures');
-var { map, takeUntil } = require('rxjs/operators');
-var Base = require('./base');
-var observe = require('../utils/events');
-var Paginator = require('../utils/paginator');
+var _ = require("lodash");
+var chalk = require("chalk");
+var cliCursor = require("cli-cursor");
+var figures = require("figures");
+var { map, takeUntil } = require("rxjs/operators");
+var Base = require("./base");
+var observe = require("../utils/events");
+var Paginator = require("../utils/paginator");
 
 class CheckboxPrompt extends Base {
   constructor(questions, rl, answers) {
     super(questions, rl, answers);
 
     if (!this.opt.choices) {
-      this.throwParamError('choices');
+      this.throwParamError("choices");
     }
 
     if (_.isArray(this.opt.default)) {
-      this.opt.choices.forEach(function(choice) {
+      this.opt.choices.forEach(function (choice) {
         if (this.opt.default.indexOf(choice.value) >= 0) {
           choice.checked = true;
         }
@@ -65,8 +65,12 @@ class CheckboxPrompt extends Base {
     events.spaceKey
       .pipe(takeUntil(validation.success))
       .forEach(this.onSpaceKey.bind(this));
-    events.aKey.pipe(takeUntil(validation.success)).forEach(this.onAllKey.bind(this));
-    events.iKey.pipe(takeUntil(validation.success)).forEach(this.onInverseKey.bind(this));
+    events.aKey
+      .pipe(takeUntil(validation.success))
+      .forEach(this.onAllKey.bind(this));
+    events.iKey
+      .pipe(takeUntil(validation.success))
+      .forEach(this.onInverseKey.bind(this));
 
     // Init the prompt
     cliCursor.hide();
@@ -84,33 +88,34 @@ class CheckboxPrompt extends Base {
   render(error) {
     // Render question
     var message = this.getQuestion();
-    var bottomContent = '';
+    var bottomContent = "";
 
     if (!this.spaceKeyPressed) {
       message +=
-        '(Press ' +
-        chalk.cyan.bold('<space>') +
-        ' to select, ' +
-        chalk.cyan.bold('<a>') +
-        ' to toggle all, ' +
-        chalk.cyan.bold('<i>') +
-        ' to invert selection)';
+        "(Press " +
+        chalk.cyan.bold("<space>") +
+        " to select, " +
+        chalk.cyan.bold("<a>") +
+        " to toggle all, " +
+        chalk.cyan.bold("<i>") +
+        " to invert selection)";
     }
 
     // Render choices or answer depending on the state
-    if (this.status === 'answered') {
-      message += chalk.cyan(this.selection.join(', '));
+    if (this.status === "answered") {
+      message += chalk.cyan(this.selection.join(", "));
     } else {
       var choicesStr = renderChoices(this.opt.choices, this.pointer);
       var indexPosition = this.opt.choices.indexOf(
         this.opt.choices.getChoice(this.pointer)
       );
       message +=
-        '\n' + this.paginator.paginate(choicesStr, indexPosition, this.opt.pageSize);
+        "\n" +
+        this.paginator.paginate(choicesStr, indexPosition, this.opt.pageSize);
     }
 
     if (error) {
-      bottomContent = chalk.red('>> ') + error;
+      bottomContent = chalk.red(">> ") + error;
     }
 
     this.screen.render(message, bottomContent);
@@ -121,7 +126,7 @@ class CheckboxPrompt extends Base {
    */
 
   onEnd(state) {
-    this.status = 'answered';
+    this.status = "answered";
 
     // Rerender prompt (and clean subline error)
     this.render();
@@ -136,12 +141,12 @@ class CheckboxPrompt extends Base {
   }
 
   getCurrentValue() {
-    var choices = this.opt.choices.filter(function(choice) {
+    var choices = this.opt.choices.filter(function (choice) {
       return Boolean(choice.checked) && !choice.disabled;
     });
 
-    this.selection = _.map(choices, 'short');
-    return _.map(choices, 'value');
+    this.selection = _.map(choices, "short");
+    return _.map(choices, "value");
   }
 
   onUpKey() {
@@ -173,13 +178,13 @@ class CheckboxPrompt extends Base {
 
   onAllKey() {
     var shouldBeChecked = Boolean(
-      this.opt.choices.find(function(choice) {
-        return choice.type !== 'separator' && !choice.checked;
+      this.opt.choices.find(function (choice) {
+        return choice.type !== "separator" && !choice.checked;
       })
     );
 
-    this.opt.choices.forEach(function(choice) {
-      if (choice.type !== 'separator') {
+    this.opt.choices.forEach(function (choice) {
+      if (choice.type !== "separator") {
         choice.checked = shouldBeChecked;
       }
     });
@@ -188,8 +193,8 @@ class CheckboxPrompt extends Base {
   }
 
   onInverseKey() {
-    this.opt.choices.forEach(function(choice) {
-      if (choice.type !== 'separator') {
+    this.opt.choices.forEach(function (choice) {
+      if (choice.type !== "separator") {
         choice.checked = !choice.checked;
       }
     });
@@ -212,33 +217,36 @@ class CheckboxPrompt extends Base {
  */
 
 function renderChoices(choices, pointer) {
-  var output = '';
+  var output = "";
   var separatorOffset = 0;
 
-  choices.forEach(function(choice, i) {
-    if (choice.type === 'separator') {
+  choices.forEach(function (choice, i) {
+    if (choice.type === "separator") {
       separatorOffset++;
-      output += ' ' + choice + '\n';
+      output += " " + choice + "\n";
       return;
     }
 
     if (choice.disabled) {
       separatorOffset++;
-      output += ' - ' + choice.name;
-      output += ' (' + (_.isString(choice.disabled) ? choice.disabled : 'Disabled') + ')';
+      output += " - " + choice.name;
+      output +=
+        " (" +
+        (_.isString(choice.disabled) ? choice.disabled : "Disabled") +
+        ")";
     } else {
-      var line = getCheckbox(choice.checked) + ' ' + choice.name;
+      var line = getCheckbox(choice.checked) + " " + choice.name;
       if (i - separatorOffset === pointer) {
         output += chalk.cyan(figures.pointer + line);
       } else {
-        output += ' ' + line;
+        output += " " + line;
       }
     }
 
-    output += '\n';
+    output += "\n";
   });
 
-  return output.replace(/\n$/, '');
+  return output.replace(/\n$/, "");
 }
 
 /**

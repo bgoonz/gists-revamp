@@ -1,5 +1,5 @@
-'use strict';
-var _ = require('lodash');
+"use strict";
+var _ = require("lodash");
 
 /**
  * Choice object
@@ -12,7 +12,7 @@ var _ = require('lodash');
 module.exports = class Choice {
   constructor(val, answers) {
     // Don't process Choice and Separator object
-    if (val instanceof Choice || val.type === 'separator') {
+    if (val instanceof Choice || val.type === "separator") {
       return val;
     }
 
@@ -23,8 +23,8 @@ module.exports = class Choice {
     } else {
       _.extend(this, val, {
         name: val.name || val.value,
-        value: 'value' in val ? val.value : val.name,
-        short: val.short || val.name || val.value
+        value: "value" in val ? val.value : val.name,
+        short: val.short || val.name || val.value,
       });
     }
 
