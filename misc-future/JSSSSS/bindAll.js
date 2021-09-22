@@ -1,8 +1,8 @@
-var arrayEach = require('./_arrayEach'),
-    baseAssignValue = require('./_baseAssignValue'),
-    bind = require('./bind'),
-    flatRest = require('./_flatRest'),
-    toKey = require('./_toKey');
+var arrayEach = require("./_arrayEach"),
+  baseAssignValue = require("./_baseAssignValue"),
+  bind = require("./bind"),
+  flatRest = require("./_flatRest"),
+  toKey = require("./_toKey");
 
 /**
  * Binds methods of an object to the object itself, overwriting the existing
@@ -30,8 +30,8 @@ var arrayEach = require('./_arrayEach'),
  * jQuery(element).on('click', view.click);
  * // => Logs 'clicked docs' when clicked.
  */
-var bindAll = flatRest(function(object, methodNames) {
-  arrayEach(methodNames, function(key) {
+var bindAll = flatRest(function (object, methodNames) {
+  arrayEach(methodNames, function (key) {
     key = toKey(key);
     baseAssignValue(object, key, bind(object[key], object));
   });

@@ -9,7 +9,8 @@ const impl = utils.implSymbol;
 function Blob() {
   if (new.target === undefined) {
     throw new TypeError(
-      "Failed to construct 'Blob'. Please use the 'new' operator; this constructor " + "cannot be called as a function."
+      "Failed to construct 'Blob'. Please use the 'new' operator; this constructor " +
+        "cannot be called as a function."
     );
   }
   const args = [];
@@ -17,7 +18,10 @@ function Blob() {
     let curArg = arguments[0];
     if (curArg !== undefined) {
       if (!utils.isObject(curArg)) {
-        throw new TypeError("Failed to construct 'Blob': parameter 1" + " is not an iterable object.");
+        throw new TypeError(
+          "Failed to construct 'Blob': parameter 1" +
+            " is not an iterable object."
+        );
       } else {
         const V = [];
         const tmp = curArg;
@@ -28,7 +32,7 @@ function Blob() {
           } else if (ArrayBuffer.isView(nextItem)) {
           } else {
             nextItem = conversions["USVString"](nextItem, {
-              context: "Failed to construct 'Blob': parameter 1" + "'s element"
+              context: "Failed to construct 'Blob': parameter 1" + "'s element",
             });
           }
           V.push(nextItem);
@@ -40,7 +44,9 @@ function Blob() {
   }
   {
     let curArg = arguments[1];
-    curArg = convertBlobPropertyBag(curArg, { context: "Failed to construct 'Blob': parameter 2" });
+    curArg = convertBlobPropertyBag(curArg, {
+      context: "Failed to construct 'Blob': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -51,7 +57,7 @@ Object.defineProperty(Blob, "prototype", {
   value: Blob.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Blob.prototype.slice = function slice() {
@@ -64,7 +70,7 @@ Blob.prototype.slice = function slice() {
     if (curArg !== undefined) {
       curArg = conversions["long long"](curArg, {
         context: "Failed to execute 'slice' on 'Blob': parameter 1",
-        clamp: true
+        clamp: true,
       });
     }
     args.push(curArg);
@@ -74,7 +80,7 @@ Blob.prototype.slice = function slice() {
     if (curArg !== undefined) {
       curArg = conversions["long long"](curArg, {
         context: "Failed to execute 'slice' on 'Blob': parameter 2",
-        clamp: true
+        clamp: true,
       });
     }
     args.push(curArg);
@@ -82,7 +88,9 @@ Blob.prototype.slice = function slice() {
   {
     let curArg = arguments[2];
     if (curArg !== undefined) {
-      curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'slice' on 'Blob': parameter 3" });
+      curArg = conversions["DOMString"](curArg, {
+        context: "Failed to execute 'slice' on 'Blob': parameter 3",
+      });
     }
     args.push(curArg);
   }
@@ -99,7 +107,7 @@ Object.defineProperty(Blob.prototype, "size", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Blob.prototype, "type", {
@@ -112,14 +120,14 @@ Object.defineProperty(Blob.prototype, "type", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Blob.prototype, Symbol.toStringTag, {
   value: "Blob",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -183,7 +191,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -195,8 +203,8 @@ const iface = {
   interface: Blob,
   expose: {
     Window: { Blob },
-    Worker: { Blob }
-  }
+    Worker: { Blob },
+  },
 }; // iface
 module.exports = iface;
 

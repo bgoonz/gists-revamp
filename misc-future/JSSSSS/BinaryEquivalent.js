@@ -15,12 +15,12 @@
 
 const binaryEquivalent = (num) => {
   if (num === 0 || num === 1) {
-    return String(num)
+    return String(num);
   }
-  return binaryEquivalent(Math.floor(num / 2)) + String(num % 2)
-}
+  return binaryEquivalent(Math.floor(num / 2)) + String(num % 2);
+};
 
 // Driver Code
-const num = 6
-const ans = binaryEquivalent(num)
-console.log(ans)
+const num = 6;
+const ans = binaryEquivalent(num);
+console.log(ans);
