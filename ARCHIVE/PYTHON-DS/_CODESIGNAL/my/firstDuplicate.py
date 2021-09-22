@@ -15,6 +15,7 @@
 
 # # print(firstDuplicate(arr))
 
+arr = [1,2,3,4,5,6,7,8]
 
 def firstDuplicate(a):
     nums = set()
@@ -26,5 +27,5 @@ def firstDuplicate(a):
     return -1
 
 
-# print(firstDuplicate(arr))
+ print(firstDuplicate(arr))
 
