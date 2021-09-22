@@ -1,14 +1,12 @@
-Patterns and flags
-==================
+# Patterns and flags
 
 Regular expressions are patterns that provide a powerful way to search and replace in text.
 
 In JavaScript, they are available via the [RegExp](mdn:js/RegExp) object, as well as being integrated in methods of strings.
 
-Regular Expressions
--------------------
+## Regular Expressions
 
-A regular expression (also “regexp”, or just “reg”) consists of a *pattern* and optional *flags*.
+A regular expression (also “regexp”, or just “reg”) consists of a _pattern_ and optional _flags_.
 
 There are two syntaxes that can be used to create a regular expression object.
 
@@ -33,8 +31,7 @@ Slashes are used when we know the regular expression at the code writing time �
 
     let regexp = new RegExp(`<${tag}>`); // same as /<h2>/ if answered "h2" in the prompt above
 
-Flags
------
+## Flags
 
 Regular expressions may have flags that affect the search.
 
@@ -60,12 +57,11 @@ Enables full Unicode support. The flag enables correct processing of surrogate p
 
 \`\`\`smart header=“Colors” From here on the color scheme is:
 
--   regexp – `pattern:red`
--   string (where we search) – `subject:blue`
--   result – `match:green` \`\`\`
+- regexp – `pattern:red`
+- string (where we search) – `subject:blue`
+- result – `match:green` \`\`\`
 
-Searching: str.match
---------------------
+## Searching: str.match
 
 As mentioned previously, regular expressions are integrated with string methods.
 
@@ -95,12 +91,11 @@ It has 3 working modes:
 
     If we’d like the result to always be an array, we can write it this way:
 
-    \`\`\`js run let matches = “JavaScript”.match(/HTML/)*!* || \[\]*/!*;
+    \`\`\`js run let matches = “JavaScript”.match(/HTML/)_!_ || \[\]_/!_;
 
     if (!matches.length) { alert(“No matches”); // now it works } \`\`\`
 
-Replacing: str.replace
-----------------------
+## Replacing: str.replace
 
 The method `str.replace(regexp, replacement)` replaces matches found using `regexp` in string `str` with `replacement` (all matches if there’s flag `pattern:g`, otherwise, only the first one).
 
@@ -118,8 +113,7 @@ An example with `pattern:$&`:
 
 `js run alert( "I love HTML".replace(/HTML/, "$& and JavaScript") ); // I love HTML and JavaScript`
 
-Testing: regexp.test
---------------------
+## Testing: regexp.test
 
 The method `regexp.test(str)` looks for at least one match, if found, returns `true`, otherwise `false`.
 
@@ -131,11 +125,10 @@ Later in this chapter we’ll study more regular expressions, walk through more 
 
 Full information about the methods is given in the article <a href="info:regexp-methods" class="uri">info:regexp-methods</a>.
 
-Summary
--------
+## Summary
 
--   A regular expression consists of a pattern and optional flags: `pattern:g`, `pattern:i`, `pattern:m`, `pattern:u`, `pattern:s`, `pattern:y`.
--   Without flags and special symbols (that we’ll study later), the search by a regexp is the same as a substring search.
--   The method `str.match(regexp)` looks for matches: all of them if there’s `pattern:g` flag, otherwise, only the first one.
--   The method `str.replace(regexp, replacement)` replaces matches found using `regexp` with `replacement`: all of them if there’s `pattern:g` flag, otherwise only the first one.
--   The method `regexp.test(str)` returns `true` if there’s at least one match, otherwise, it returns `false`.
+- A regular expression consists of a pattern and optional flags: `pattern:g`, `pattern:i`, `pattern:m`, `pattern:u`, `pattern:s`, `pattern:y`.
+- Without flags and special symbols (that we’ll study later), the search by a regexp is the same as a substring search.
+- The method `str.match(regexp)` looks for matches: all of them if there’s `pattern:g` flag, otherwise, only the first one.
+- The method `str.replace(regexp, replacement)` replaces matches found using `regexp` with `replacement`: all of them if there’s `pattern:g` flag, otherwise only the first one.
+- The method `regexp.test(str)` returns `true` if there’s at least one match, otherwise, it returns `false`.

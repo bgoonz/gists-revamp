@@ -1,17 +1,15 @@
-Scheduling: setTimeout and setInterval
-======================================
+# Scheduling: setTimeout and setInterval
 
 We may decide to execute a function not right now, but at a certain time later. That’s called “scheduling a call”.
 
 There are two methods for it:
 
--   `setTimeout` allows us to run a function once after the interval of time.
--   `setInterval` allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+- `setTimeout` allows us to run a function once after the interval of time.
+- `setInterval` allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
 
 These methods are not a part of JavaScript specification. But most environments have the internal scheduler and provide these methods. In particular, they are supported in all browsers and Node.js.
 
-setTimeout
-----------
+## setTimeout
 
 The syntax:
 
@@ -32,13 +30,13 @@ For instance, this code calls `sayHi()` after one second:
 
 \`\`\`js run function sayHi() { alert(‘Hello’); }
 
-*!* setTimeout(sayHi, 1000); */!* \`\`\`
+_!_ setTimeout(sayHi, 1000); _/!_ \`\`\`
 
 With arguments:
 
 \`\`\`js run function sayHi(phrase, who) { alert( phrase + ‘,’ + who ); }
 
-*!* setTimeout(sayHi, 1000, “Hello”, “John”); // Hello, John */!* \`\`\`
+_!_ setTimeout(sayHi, 1000, “Hello”, “John”); // Hello, John _/!_ \`\`\`
 
 If the first argument is a string, then JavaScript creates a function from it.
 
@@ -50,12 +48,12 @@ But using strings is not recommended, use arrow functions instead of them, like 
 
 `js run no-beautify setTimeout(() => alert('Hello'), 1000);`
 
-\`\`\``smart header="Pass a function, but don't run it" Novice developers         sometimes make a mistake by adding brackets`()\` after the function:
+\`\`\``smart header="Pass a function, but don't run it" Novice developers sometimes make a mistake by adding brackets`()\` after the function:
 
     // wrong!
     setTimeout(sayHi(), 1000);
 
-That doesn’t work, because `setTimeout` expects a reference to a function. And here `sayHi()` runs the function, and the *result of its execution* is passed to `setTimeout`. In our case the result of `sayHi()` is `undefined` (the function returns nothing), so nothing is scheduled. \`\`\`\`
+That doesn’t work, because `setTimeout` expects a reference to a function. And here `sayHi()` runs the function, and the _result of its execution_ is passed to `setTimeout`. In our case the result of `sayHi()` is `undefined` (the function returns nothing), so nothing is scheduled. \`\`\`\`
 
 ### Canceling with clearTimeout
 
@@ -78,8 +76,7 @@ Again, there is no universal specification for these methods, so that’s fine.
 
 For browsers, timers are described in the [timers section](https://www.w3.org/TR/html5/webappapis.html#timers) of HTML5 standard.
 
-setInterval
------------
+## setInterval
 
 The `setInterval` method has the same syntax as `setTimeout`:
 
@@ -95,12 +92,11 @@ The following example will show the message every 2 seconds. After 5 seconds, th
 
 // after 5 seconds stop setTimeout(() =&gt; { clearInterval(timerId); alert(‘stop’); }, 5000); \`\`\`
 
-\`\``smart header="Time goes on while`alert`is shown" In most browsers, including Chrome and Firefox the internal         timer continues "ticking" while showing`alert/confirm/prompt\`.
+\`\``smart header="Time goes on while`alert`is shown" In most browsers, including Chrome and Firefox the internal timer continues "ticking" while showing`alert/confirm/prompt\`.
 
 So if you run the code above and don’t dismiss the `alert` window for some time, then the next `alert` will be shown immediately as you do it. The actual interval between alerts will be shorter than 2 seconds. \`\`\`
 
-Nested setTimeout
------------------
+## Nested setTimeout
 
 There are two ways of running something regularly.
 
@@ -170,7 +166,7 @@ That’s normal, because the time taken by `func`’s execution “consumes” a
 
 It is possible that `func`’s execution turns out to be longer than we expected and takes more than 100ms.
 
-In this case the engine waits for `func` to complete, then checks the scheduler and if the time is up, runs it again *immediately*.
+In this case the engine waits for `func` to complete, then checks the scheduler and if the time is up, runs it again _immediately_.
 
 In the edge case, if the function always executes longer than `delay` ms, then the calls will happen without a pause at all.
 
@@ -182,7 +178,7 @@ And here is the picture for the nested `setTimeout`:
 
 That’s because a new call is planned at the end of the previous one.
 
-\`\`\``smart header="Garbage collection and setInterval/setTimeout callback"         When a function is passed in`setInterval/setTimeout\`, an internal reference is created to it and saved in the scheduler. It prevents the function from being garbage collected, even if there are no other references to it.
+\`\`\``smart header="Garbage collection and setInterval/setTimeout callback" When a function is passed in`setInterval/setTimeout\`, an internal reference is created to it and saved in the scheduler. It prevents the function from being garbage collected, even if there are no other references to it.
 
     // the function stays in memory until the scheduler calls it
     setTimeout(function() {...}, 100);
@@ -191,8 +187,7 @@ For `setInterval` the function stays in memory until `clearInterval` is called.
 
 There’s a side-effect. A function references the outer lexical environment, so, while it lives, outer variables live too. They may take much more memory than the function itself. So when we don’t need the scheduled function anymore, it’s better to cancel it, even if it’s very small. \`\`\`\`
 
-Zero delay setTimeout
----------------------
+## Zero delay setTimeout
 
 There’s a special use case: `setTimeout(func, 0)`, or just `setTimeout(func)`.
 
@@ -230,16 +225,15 @@ if (start + 100 &lt; Date.now()) alert(times); // show the delays after 100ms el
 
     For server-side JavaScript, that limitation does not exist, and there exist other ways to schedule an immediate asynchronous job, like [setImmediate](https://nodejs.org/api/timers.html#timers_setimmediate_callback_args) for Node.js. So this note is browser-specific.
 
-Summary
--------
+## Summary
 
--   Methods `setTimeout(func, delay, ...args)` and `setInterval(func, delay, ...args)` allow us to run the `func` once/regularly after `delay` milliseconds.
--   To cancel the execution, we should call `clearTimeout/clearInterval` with the value returned by `setTimeout/setInterval`.
--   Nested `setTimeout` calls are a more flexible alternative to `setInterval`, allowing us to set the time *between* executions more precisely.
--   Zero delay scheduling with `setTimeout(func, 0)` (the same as `setTimeout(func)`) is used to schedule the call “as soon as possible, but after the current script is complete”.
--   The browser limits the minimal delay for five or more nested calls of `setTimeout` or for `setInterval` (after 5th call) to 4ms. That’s for historical reasons.
+- Methods `setTimeout(func, delay, ...args)` and `setInterval(func, delay, ...args)` allow us to run the `func` once/regularly after `delay` milliseconds.
+- To cancel the execution, we should call `clearTimeout/clearInterval` with the value returned by `setTimeout/setInterval`.
+- Nested `setTimeout` calls are a more flexible alternative to `setInterval`, allowing us to set the time _between_ executions more precisely.
+- Zero delay scheduling with `setTimeout(func, 0)` (the same as `setTimeout(func)`) is used to schedule the call “as soon as possible, but after the current script is complete”.
+- The browser limits the minimal delay for five or more nested calls of `setTimeout` or for `setInterval` (after 5th call) to 4ms. That’s for historical reasons.
 
-Please note that all scheduling methods do not *guarantee* the exact delay.
+Please note that all scheduling methods do not _guarantee_ the exact delay.
 
 For example, the in-browser timer may slow down for a lot of reasons: - The CPU is overloaded. - The browser tab is in the background mode. - The laptop is on battery.
 

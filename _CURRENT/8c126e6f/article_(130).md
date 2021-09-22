@@ -1,5 +1,4 @@
-Blob
-====
+# Blob
 
 `ArrayBuffer` and views are a part of ECMA standard, a part of JavaScript.
 
@@ -13,10 +12,10 @@ The constructor syntax is:
 
     new Blob(blobParts, options);
 
--   **`blobParts`** is an array of `Blob`/`BufferSource`/`String` values.
--   **`options`** optional object:
-    -   **`type`** – `Blob` type, usually MIME-type, e.g. `image/png`,
-    -   **`endings`** – whether to transform end-of-line to make the `Blob` correspond to current OS newlines (`\r\n` or `\n`). By default `"transparent"` (do nothing), but also can be `"native"` (transform).
+- **`blobParts`** is an array of `Blob`/`BufferSource`/`String` values.
+- **`options`** optional object:
+  - **`type`** – `Blob` type, usually MIME-type, e.g. `image/png`,
+  - **`endings`** – whether to transform end-of-line to make the `Blob` correspond to current OS newlines (`\r\n` or `\n`). By default `"transparent"` (do nothing), but also can be `"native"` (transform).
 
 For example:
 
@@ -33,9 +32,9 @@ We can extract `Blob` slices with:
 
     blob.slice([byteStart], [byteEnd], [contentType]);
 
--   **`byteStart`** – the starting byte, by default 0.
--   **`byteEnd`** – the last byte (exclusive, by default till the end).
--   **`contentType`** – the `type` of the new blob, by default the same as the source.
+- **`byteStart`** – the starting byte, by default 0.
+- **`byteEnd`** – the last byte (exclusive, by default till the end).
+- **`contentType`** – the `type` of the new blob, by default the same as the source.
 
 The arguments are similar to `array.slice`, negative numbers are allowed too.
 
@@ -43,8 +42,7 @@ The arguments are similar to `array.slice`, negative numbers are allowed too.
 
 This behavior is similar to JavaScript strings: we can’t change a character in a string, but we can make a new corrected string. \`\`\`
 
-Blob as URL
------------
+## Blob as URL
 
 A Blob can be easily used as a URL for `<a>`, `<img>` or other tags, to show its contents.
 
@@ -92,8 +90,7 @@ In the last example, we intend the `Blob` to be used only once, for instant down
 
 In the previous example with the clickable HTML-link, we don’t call `URL.revokeObjectURL(link.href)`, because that would make the `Blob` url invalid. After the revocation, as the mapping is removed, the URL doesn’t work any more.
 
-Blob to base64
---------------
+## Blob to base64
 
 An alternative to `URL.createObjectURL` is to convert a `Blob` into a base64-encoded string.
 
@@ -115,7 +112,7 @@ Here’s the demo of downloading a blob, now via base-64:
 
 let blob = new Blob(\[‘Hello, world!’\], {type: ‘text/plain’});
 
-*!* let reader = new FileReader(); reader.readAsDataURL(blob); // converts the blob to base64 and calls onload */!*
+_!_ let reader = new FileReader(); reader.readAsDataURL(blob); // converts the blob to base64 and calls onload _/!_
 
 reader.onload = function() { link.href = reader.result; // data url link.click(); }; \`\`\`
 
@@ -123,8 +120,7 @@ Both ways of making a URL of a `Blob` are usable. But usually `URL.createObjectU
 
 `` compare title-plus="URL.createObjectURL(blob)" title-minus="Blob to data url" + We need to revoke them if care about memory. + Direct access to blob, no "encoding/decoding" - No need to revoke anything. - Performance and memory losses on big `Blob` objects for encoding. ``
 
-Image to blob
--------------
+## Image to blob
 
 We can create a `Blob` of an image, an image part, or even make a page screenshot. That’s handy to upload it somewhere.
 
@@ -157,8 +153,7 @@ If we prefer `async/await` instead of callbacks:
 
 For screenshotting a page, we can use a library such as <a href="https://github.com/niklasvh/html2canvas" class="uri">https://github.com/niklasvh/html2canvas</a>. What it does is just walks the page and draws it on `<canvas>`. Then we can get a `Blob` of it the same way as above.
 
-From Blob to ArrayBuffer
-------------------------
+## From Blob to ArrayBuffer
 
 The `Blob` constructor allows to create a blob from almost anything, including any `BufferSource`.
 
@@ -175,8 +170,7 @@ But if we need to perform low-level processing, we can get the lowest-level `Arr
       let arrayBuffer = fileReader.result;
     };
 
-Summary
--------
+## Summary
 
 While `ArrayBuffer`, `Uint8Array` and other `BufferSource` are “binary data”, a [Blob](https://www.w3.org/TR/FileAPI/#dfn-Blob) represents “binary data with type”.
 
@@ -186,5 +180,5 @@ Methods that perform web-requests, such as [XMLHttpRequest](info:xmlhttprequest)
 
 We can easily convert between `Blob` and low-level binary data types:
 
--   We can make a Blob from a typed array using `new Blob(...)` constructor.
--   We can get back `ArrayBuffer` from a Blob using `FileReader`, and then create a view over it for low-level binary processing.
+- We can make a Blob from a typed array using `new Blob(...)` constructor.
+- We can get back `ArrayBuffer` from a Blob using `FileReader`, and then create a view over it for low-level binary processing.

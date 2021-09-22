@@ -1,5 +1,4 @@
-Fetch API
-=========
+# Fetch API
 
 So far, we know quite a bit about `fetch`.
 
@@ -40,8 +39,7 @@ The `signal` option is covered in <a href="info:fetch-abort" class="uri">info:fe
 
 Now let’s explore the remaining capabilities.
 
-referrer, referrerPolicy
-------------------------
+## referrer, referrerPolicy
 
 These options govern how `fetch` sets the HTTP `Referer` header.
 
@@ -79,14 +77,14 @@ Unlike the `referrer` option that allows to set the exact `Referer` value, `refe
 
 Possible values are described in the [Referrer Policy specification](https://w3c.github.io/webappsec-referrer-policy/):
 
--   **`"no-referrer-when-downgrade"`** – the default value: full `Referer` is always sent, unless we send a request from HTTPS to HTTP (to the less secure protocol).
--   **`"no-referrer"`** – never send `Referer`.
--   **`"origin"`** – only send the origin in `Referer`, not the full page URL, e.g. only `http://site.com` instead of `http://site.com/path`.
--   **`"origin-when-cross-origin"`** – send the full `Referer` to the same origin, but only the origin part for cross-origin requests (as above).
--   **`"same-origin"`** – send the full `Referer` to the same origin, but no `Referer` for cross-origin requests.
--   **`"strict-origin"`** – send only the origin, not the `Referer` for HTTPS→HTTP requests.
--   **`"strict-origin-when-cross-origin"`** – for same-origin send the full `Referer`, for cross-origin send only the origin, unless it’s HTTPS→HTTP request, then send nothing.
--   **`"unsafe-url"`** – always send the full url in `Referer`, even for HTTPS→HTTP requests.
+- **`"no-referrer-when-downgrade"`** – the default value: full `Referer` is always sent, unless we send a request from HTTPS to HTTP (to the less secure protocol).
+- **`"no-referrer"`** – never send `Referer`.
+- **`"origin"`** – only send the origin in `Referer`, not the full page URL, e.g. only `http://site.com` instead of `http://site.com/path`.
+- **`"origin-when-cross-origin"`** – send the full `Referer` to the same origin, but only the origin part for cross-origin requests (as above).
+- **`"same-origin"`** – send the full `Referer` to the same origin, but no `Referer` for cross-origin requests.
+- **`"strict-origin"`** – send only the origin, not the `Referer` for HTTPS→HTTP requests.
+- **`"strict-origin-when-cross-origin"`** – for same-origin send the full `Referer`, for cross-origin send only the origin, unless it’s HTTPS→HTTP request, then send nothing.
+- **`"unsafe-url"`** – always send the full url in `Referer`, even for HTTPS→HTTP requests.
 
 Here’s a table with all combinations:
 
@@ -109,57 +107,52 @@ We can put it to all `fetch` calls, maybe integrate into JavaScript library of o
 
 Its only difference compared to the default behavior is that for requests to another origin `fetch` sends only the origin part of the URL (e.g. `https://javascript.info`, without path). For requests to our origin we still get the full `Referer` (maybe useful for debugging purposes).
 
-\`\``smart header="Referrer policy is not only for`fetch`" Referrer policy, described in the         [specification](https://w3c.github.io/webappsec-referrer-policy/), is         not just for`fetch\`, but more global.
+\`\``smart header="Referrer policy is not only for`fetch`" Referrer policy, described in the [specification](https://w3c.github.io/webappsec-referrer-policy/), is not just for`fetch\`, but more global.
 
 In particular, it’s possible to set the default policy for the whole page using the `Referrer-Policy` HTTP header, or per-link, with `<a rel="noreferrer">`. \`\`\`
 
-mode
-----
+## mode
 
 The `mode` option is a safe-guard that prevents occasional cross-origin requests:
 
--   **`"cors"`** – the default, cross-origin requests are allowed, as described in <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a>,
--   **`"same-origin"`** – cross-origin requests are forbidden,
--   **`"no-cors"`** – only safe cross-origin requests are allowed.
+- **`"cors"`** – the default, cross-origin requests are allowed, as described in <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a>,
+- **`"same-origin"`** – cross-origin requests are forbidden,
+- **`"no-cors"`** – only safe cross-origin requests are allowed.
 
 This option may be useful when the URL for `fetch` comes from a 3rd-party, and we want a “power off switch” to limit cross-origin capabilities.
 
-credentials
------------
+## credentials
 
 The `credentials` option specifies whether `fetch` should send cookies and HTTP-Authorization headers with the request.
 
--   **`"same-origin"`** – the default, don’t send for cross-origin requests,
--   **`"include"`** – always send, requires `Accept-Control-Allow-Credentials` from cross-origin server in order for JavaScript to access the response, that was covered in the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a>,
--   **`"omit"`** – never send, even for same-origin requests.
+- **`"same-origin"`** – the default, don’t send for cross-origin requests,
+- **`"include"`** – always send, requires `Accept-Control-Allow-Credentials` from cross-origin server in order for JavaScript to access the response, that was covered in the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a>,
+- **`"omit"`** – never send, even for same-origin requests.
 
-cache
------
+## cache
 
 By default, `fetch` requests make use of standard HTTP-caching. That is, it respects the `Expires` and `Cache-Control` headers, sends `If-Modified-Since` and so on. Just like regular HTTP-requests do.
 
 The `cache` options allows to ignore HTTP-cache or fine-tune its usage:
 
--   **`"default"`** – `fetch` uses standard HTTP-cache rules and headers,
--   **`"no-store"`** – totally ignore HTTP-cache, this mode becomes the default if we set a header `If-Modified-Since`, `If-None-Match`, `If-Unmodified-Since`, `If-Match`, or `If-Range`,
--   **`"reload"`** – don’t take the result from HTTP-cache (if any), but populate the cache with the response (if the response headers permit this action),
--   **`"no-cache"`** – create a conditional request if there is a cached response, and a normal request otherwise. Populate HTTP-cache with the response,
--   **`"force-cache"`** – use a response from HTTP-cache, even if it’s stale. If there’s no response in HTTP-cache, make a regular HTTP-request, behave normally,
--   **`"only-if-cached"`** – use a response from HTTP-cache, even if it’s stale. If there’s no response in HTTP-cache, then error. Only works when `mode` is `"same-origin"`.
+- **`"default"`** – `fetch` uses standard HTTP-cache rules and headers,
+- **`"no-store"`** – totally ignore HTTP-cache, this mode becomes the default if we set a header `If-Modified-Since`, `If-None-Match`, `If-Unmodified-Since`, `If-Match`, or `If-Range`,
+- **`"reload"`** – don’t take the result from HTTP-cache (if any), but populate the cache with the response (if the response headers permit this action),
+- **`"no-cache"`** – create a conditional request if there is a cached response, and a normal request otherwise. Populate HTTP-cache with the response,
+- **`"force-cache"`** – use a response from HTTP-cache, even if it’s stale. If there’s no response in HTTP-cache, make a regular HTTP-request, behave normally,
+- **`"only-if-cached"`** – use a response from HTTP-cache, even if it’s stale. If there’s no response in HTTP-cache, then error. Only works when `mode` is `"same-origin"`.
 
-redirect
---------
+## redirect
 
 Normally, `fetch` transparently follows HTTP-redirects, like 301, 302 etc.
 
 The `redirect` option allows to change that:
 
--   **`"follow"`** – the default, follow HTTP-redirects,
--   **`"error"`** – error in case of HTTP-redirect,
--   **`"manual"`** – allows to process HTTP-redirects manually. In case of redirect, we’ll get a special response object, with `response.type="opaqueredirect"` and zeroed/empty status and most other properies.
+- **`"follow"`** – the default, follow HTTP-redirects,
+- **`"error"`** – error in case of HTTP-redirect,
+- **`"manual"`** – allows to process HTTP-redirects manually. In case of redirect, we’ll get a special response object, with `response.type="opaqueredirect"` and zeroed/empty status and most other properies.
 
-integrity
----------
+## integrity
 
 The `integrity` option allows to check if the response matches the known-ahead checksum.
 
@@ -175,8 +168,7 @@ We can put it in the `integrity` option, like this:
 
 Then `fetch` will calculate SHA-256 on its own and compare it with our string. In case of a mismatch, an error is triggered.
 
-keepalive
----------
+## keepalive
 
 The `keepalive` option indicates that the request may “outlive” the webpage that initiated it.
 
@@ -186,14 +178,14 @@ When the visitor leaves our page – we’d like to save the data to our server.
 
 We can use the `window.onunload` event for that:
 
-`js run window.onunload = function() { fetch('/analytics', { method:         'POST', body: "statistics", *!* keepalive: true */!* }); };`
+`js run window.onunload = function() { fetch('/analytics', { method: 'POST', body: "statistics", *!* keepalive: true */!* }); };`
 
 Normally, when a document is unloaded, all associated network requests are aborted. But the `keepalive` option tells the browser to perform the request in the background, even after it leaves the page. So this option is essential for our request to succeed.
 
 It has a few limitations:
 
--   We can’t send megabytes: the body limit for `keepalive` requests is 64KB.
-    -   If we need to gather a lot of statistics about the visit, we should send it out regularly in packets, so that there won’t be a lot left for the last `onunload` request.
-    -   This limit applies to all `keepalive` requests together. In other words, we can perform multiple `keepalive` requests in parallel, but the sum of their body lengths should not exceed 64KB.
--   We can’t handle the server response if the document is unloaded. So in our example `fetch` will succeed due to `keepalive`, but subsequent functions won’t work.
-    -   In most cases, such as sending out statistics, it’s not a problem, as the server just accepts the data and usually sends an empty response to such requests.
+- We can’t send megabytes: the body limit for `keepalive` requests is 64KB.
+  - If we need to gather a lot of statistics about the visit, we should send it out regularly in packets, so that there won’t be a lot left for the last `onunload` request.
+  - This limit applies to all `keepalive` requests together. In other words, we can perform multiple `keepalive` requests in parallel, but the sum of their body lengths should not exceed 64KB.
+- We can’t handle the server response if the document is unloaded. So in our example `fetch` will succeed due to `keepalive`, but subsequent functions won’t work.
+  - In most cases, such as sending out statistics, it’s not a problem, as the server just accepts the data and usually sends an empty response to such requests.

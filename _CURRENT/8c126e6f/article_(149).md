@@ -1,12 +1,10 @@
-JavaScript animations
-=====================
+# JavaScript animations
 
 JavaScript animations can handle things that CSS can’t.
 
 For instance, moving along a complex path, with a timing function different from Bezier curves, or an animation on a canvas.
 
-Using setInterval
------------------
+## Using setInterval
 
 An animation can be implemented as a sequence of frames – usually small changes to HTML/CSS properties.
 
@@ -47,8 +45,7 @@ Click for the demo:
 
 \[codetabs height=200 src=“move”\]
 
-Using requestAnimationFrame
----------------------------
+## Using requestAnimationFrame
 
 Let’s imagine we have several animations running simultaneously.
 
@@ -99,8 +96,7 @@ The code below shows the time between first 10 runs for `requestAnimationFrame`.
 
 \`\`\`
 
-Structured animation
---------------------
+## Structured animation
 
 Now we can make a more universal animation function based on `requestAnimationFrame`:
 
@@ -176,8 +172,7 @@ The code for it:
 
 Unlike CSS animation, we can make any timing function and any drawing function here. The timing function is not limited by Bezier curves. And `draw` can go beyond properties, create new elements for like fireworks animation or something.
 
-Timing functions
-----------------
+## Timing functions
 
 We saw the simplest, linear timing function above.
 
@@ -277,8 +272,7 @@ In action for `x=1.5`:
 
 \[iframe height=40 src=“elastic” link\]
 
-Reversal: ease\*
-----------------
+## Reversal: ease\*
 
 So we have a collection of timing functions. Their direct application is called “easeIn”.
 
@@ -315,8 +309,8 @@ If there’s an animation effect in the beginning, like bouncing – it will be 
 
 In the graph above the <span style="color: #ee6b47">regular bounce</span> has the red color, and the <span style="color: #62c0dc">easeOut bounce</span> is blue.
 
--   Regular bounce – the object bounces at the bottom, then at the end sharply jumps to the top.
--   After `easeOut` – it first jumps to the top, then bounces there.
+- Regular bounce – the object bounces at the bottom, then at the end sharply jumps to the top.
+- After `easeOut` – it first jumps to the top, then bounces there.
 
 ### easeInOut
 
@@ -353,14 +347,13 @@ The effect is clearly seen if we compare the graphs of `easeIn`, `easeOut` and `
 
 ![](circ-ease.svg)
 
--   <span style="color: #ee6b47">Red</span> is the regular variant of `circ` (`easeIn`).
--   <span style="color: #8db173">Green</span> – `easeOut`.
--   <span style="color: #62c0dc">Blue</span> – `easeInOut`.
+- <span style="color: #ee6b47">Red</span> is the regular variant of `circ` (`easeIn`).
+- <span style="color: #8db173">Green</span> – `easeOut`.
+- <span style="color: #62c0dc">Blue</span> – `easeInOut`.
 
 As we can see, the graph of the first half of the animation is the scaled down `easeIn`, and the second half is the scaled down `easeOut`. As a result, the animation starts and finishes with the same effect.
 
-More interesting “draw”
------------------------
+## More interesting “draw”
 
 Instead of moving the element we can do something else. All we need is to write the proper `draw`.
 
@@ -368,8 +361,7 @@ Here’s the animated “bouncing” text typing:
 
 \[codetabs src=“text”\]
 
-Summary
--------
+## Summary
 
 For animations that CSS can’t handle well, or those that need tight control, JavaScript can help. JavaScript animations should be implemented via `requestAnimationFrame`. That built-in method allows to setup a callback function to run when the browser will be preparing a repaint. Usually that’s very soon, but the exact time depends on the browser.
 
@@ -400,9 +392,9 @@ Here’s the helper `animate` function to setup most animations:
 
 Options:
 
--   `duration` – the total animation time in ms.
--   `timing` – the function to calculate animation progress. Gets a time fraction from 0 to 1, returns the animation progress, usually from 0 to 1.
--   `draw` – the function to draw the animation.
+- `duration` – the total animation time in ms.
+- `timing` – the function to calculate animation progress. Gets a time fraction from 0 to 1, returns the animation progress, usually from 0 to 1.
+- `draw` – the function to draw the animation.
 
 Surely we could improve it, add more bells and whistles, but JavaScript animations are not applied on a daily basis. They are used to do something interesting and non-standard. So you’d want to add the features that you need when you need them.
 

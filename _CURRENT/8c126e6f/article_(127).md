@@ -1,12 +1,10 @@
-The clickjacking attack
-=======================
+# The clickjacking attack
 
-The “clickjacking” attack allows an evil page to click on a “victim site” *on behalf of the visitor*.
+The “clickjacking” attack allows an evil page to click on a “victim site” _on behalf of the visitor_.
 
 Many sites were hacked this way, including Twitter, Facebook, Paypal and other sites. They have all been fixed, of course.
 
-The idea
---------
+## The idea
 
 The idea is very simple.
 
@@ -17,8 +15,7 @@ Here’s how clickjacking was done with Facebook:
 3.  Over that link the evil page positions a transparent `<iframe>` with `src` from facebook.com, in such a way that the “Like” button is right above that link. Usually that’s done with `z-index`.
 4.  In attempting to click the link, the visitor in fact clicks the button.
 
-The demo
---------
+## The demo
 
 Here’s how the evil page looks. To make things clear, the `<iframe>` is half-transparent (in real evil pages it’s fully transparent):
 
@@ -26,11 +23,11 @@ Here’s how the evil page looks. To make things clear, the `<iframe>` is half-t
 
 Click to get rich now:
 
-*!*
+_!_
 
 Click here!
 
-*/!*
+_/!_
 
 …And you’re cool (I’m a cool hacker actually)!
 
@@ -58,8 +55,7 @@ But then there’s a problem. Everything that the visitor types will be hidden, 
 
 People will usually stop typing when they can’t see their new characters printing on the screen. \`\`\`
 
-Old-school defences (weak)
---------------------------
+## Old-school defences (weak)
 
 The oldest defence is a bit of JavaScript which forbids opening the page in a frame (so-called “framebusting”).
 
@@ -103,8 +99,7 @@ Here’s the code:
 
 There are other ways to work around that simple protection too.
 
-X-Frame-Options
----------------
+## X-Frame-Options
 
 The server-side header `X-Frame-Options` can permit or forbid displaying the page inside a frame.
 
@@ -134,8 +129,7 @@ For instance, Twitter uses `X-Frame-Options: SAMEORIGIN`.
 
     Depending on your browser, the `iframe` above is either empty or alerting you that the browser won't permit that page to be navigating in this way.
 
-Showing with disabled functionality
------------------------------------
+## Showing with disabled functionality
 
 The `X-Frame-Options` header has a side-effect. Other sites won’t be able to show our page in a frame, even if they have good reasons to do so.
 
@@ -170,8 +164,7 @@ The demo:
 
 \[codetabs src=“protector”\]
 
-Samesite cookie attribute
--------------------------
+## Samesite cookie attribute
 
 The `samesite` cookie attribute can also prevent clickjacking attacks.
 
@@ -187,8 +180,7 @@ The `samesite` cookie attribute will not have an effect when cookies are not use
 
 However, this may also allow clickjacking attacks to work in a few limited cases. An anonymous polling website that prevents duplicate voting by checking IP addresses, for example, would still be vulnerable to clickjacking because it does not authenticate users using cookies.
 
-Summary
--------
+## Summary
 
 Clickjacking is a way to “trick” users into clicking on a victim site without even knowing what’s happening. That’s dangerous if there are important click-activated actions.
 
@@ -198,5 +190,5 @@ From one perspective – the attack is “not deep”: all a hacker is doing is 
 
 The attack is quite dangerous, because when we engineer the UI we usually don’t anticipate that a hacker may click on behalf of the visitor. So vulnerabilities can be found in totally unexpected places.
 
--   It is recommended to use `X-Frame-Options: SAMEORIGIN` on pages (or whole websites) which are not intended to be viewed inside frames.
--   Use a covering `<div>` if we want to allow our pages to be shown in iframes, but still stay safe.
+- It is recommended to use `X-Frame-Options: SAMEORIGIN` on pages (or whole websites) which are not intended to be viewed inside frames.
+- Use a covering `<div>` if we want to allow our pages to be shown in iframes, but still stay safe.

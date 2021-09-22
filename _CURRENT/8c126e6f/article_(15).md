@@ -1,5 +1,4 @@
-Logical operators
-=================
+# Logical operators
 
 There are four logical operators in JavaScript: `||` (OR), `&&` (AND), `!` (NOT), `??` (Nullish Coalescing). Here we cover the first three, the `??` operator is in the next article.
 
@@ -7,8 +6,7 @@ Although they are called “logical”, they can be applied to values of any typ
 
 Let’s see the details.
 
-|| (OR)
--------
+## || (OR)
 
 The “OR” operator is represented with two vertical line symbols:
 
@@ -20,7 +18,7 @@ In JavaScript, the operator is a little bit trickier and more powerful. But firs
 
 There are four possible logical combinations:
 
-`js run alert( true || true ); // true alert( false || true ); // true         alert( true || false ); // true alert( false || false ); // false`
+`js run alert( true || true ); // true alert( false || true ); // true alert( true || false ); // true alert( false || false ); // false`
 
 As we can see, the result is always `true` except for the case when both operands are `false`.
 
@@ -28,15 +26,15 @@ If an operand is not a boolean, it’s converted to a boolean for the evaluation
 
 For instance, the number `1` is treated as `true`, the number `0` as `false`:
 
-`js run if (1 || 0) { // works just like if( true || false ) alert(         'truthy!' ); }`
+`js run if (1 || 0) { // works just like if( true || false ) alert( 'truthy!' ); }`
 
-Most of the time, OR `||` is used in an `if` statement to test if *any* of the given conditions is `true`.
+Most of the time, OR `||` is used in an `if` statement to test if _any_ of the given conditions is `true`.
 
 For example:
 
 \`\`\`js run let hour = 9;
 
-*!* if (hour &lt; 10 || hour &gt; 18) { */!* alert( ‘The office is closed.’ ); } \`\`\`
+_!_ if (hour &lt; 10 || hour &gt; 18) { _/!_ alert( ‘The office is closed.’ ); } \`\`\`
 
 We can pass more conditions:
 
@@ -44,8 +42,7 @@ We can pass more conditions:
 
 if (hour &lt; 10 || hour &gt; 18 || isWeekend) { alert( ‘The office is closed.’ ); // it is the weekend } \`\`\`
 
-OR “||” finds the first truthy value \[\#or-finds-the-first-truthy-value\]
---------------------------------------------------------------------------
+## OR “||” finds the first truthy value \[\#or-finds-the-first-truthy-value\]
 
 The logic described above is somewhat classical. Now, let’s bring in the “extra” features of JavaScript.
 
@@ -57,9 +54,9 @@ Given multiple OR’ed values:
 
 The OR `||` operator does the following:
 
--   Evaluates operands from left to right.
--   For each operand, converts it to boolean. If the result is `true`, stops and returns the original value of that operand.
--   If all operands have been evaluated (i.e. all were `false`), returns the last operand.
+- Evaluates operands from left to right.
+- For each operand, converts it to boolean. If the result is `true`, stops and returns the original value of that operand.
+- If all operands have been evaluated (i.e. all were `false`), returns the last operand.
 
 A value is returned in its original form, without the conversion.
 
@@ -83,7 +80,7 @@ This leads to some interesting usage compared to a “pure, classical, boolean-o
 
     \`\`\`js run let firstName = "“; let lastName =”“; let nickName =”SuperCoder";
 
-    *!* alert( firstName || lastName || nickName || “Anonymous”); // SuperCoder */!* \`\`\`
+    _!_ alert( firstName || lastName || nickName || “Anonymous”); // SuperCoder _/!_ \`\`\`
 
     If all variables were falsy, `"Anonymous"` would show up.
 
@@ -97,14 +94,13 @@ This leads to some interesting usage compared to a “pure, classical, boolean-o
 
     In the example below, only the second message is printed:
 
-    `js run no-beautify *!*true*/!* || alert("not printed");             *!*false*/!* || alert("printed");`
+    `js run no-beautify *!*true*/!* || alert("not printed"); *!*false*/!* || alert("printed");`
 
     In the first line, the OR `||` operator stops the evaluation immediately upon seeing `true`, so the `alert` isn’t run.
 
     Sometimes, people use this feature to execute commands only if the condition on the left part is falsy.
 
-&& (AND)
---------
+## && (AND)
 
 The AND operator is represented with two ampersands `&&`:
 
@@ -112,7 +108,7 @@ The AND operator is represented with two ampersands `&&`:
 
 In classical programming, AND returns `true` if both operands are truthy and `false` otherwise:
 
-`js run alert( true && true ); // true alert( false &&         true ); // false alert( true && false ); // false alert( false         && false ); // false`
+`js run alert( true && true ); // true alert( false && true ); // false alert( true && false ); // false alert( false && false ); // false`
 
 An example with `if`:
 
@@ -122,10 +118,9 @@ if (hour == 12 && minute == 30) { alert( ‘The time is 12:30’ ); } \`\`\`
 
 Just as with OR, any value is allowed as an operand of AND:
 
-`js run if (1 && 0) { // evaluated as true && false         alert( "won't work, because the result is falsy" ); }`
+`js run if (1 && 0) { // evaluated as true && false alert( "won't work, because the result is falsy" ); }`
 
-AND “&&” finds the first falsy value
-------------------------------------
+## AND “&&” finds the first falsy value
 
 Given multiple AND’ed values:
 
@@ -133,13 +128,13 @@ Given multiple AND’ed values:
 
 The AND `&&` operator does the following:
 
--   Evaluates operands from left to right.
--   For each operand, converts it to a boolean. If the result is `false`, stops and returns the original value of that operand.
--   If all operands have been evaluated (i.e. all were truthy), returns the last operand.
+- Evaluates operands from left to right.
+- For each operand, converts it to a boolean. If the result is `false`, stops and returns the original value of that operand.
+- If all operands have been evaluated (i.e. all were truthy), returns the last operand.
 
 In other words, AND returns the first falsy value or the last value if none were found.
 
-The rules above are similar to OR. The difference is that AND returns the first *falsy* value while OR returns the first *truthy* one.
+The rules above are similar to OR. The difference is that AND returns the first _falsy_ value while OR returns the first _truthy_ one.
 
 Examples:
 
@@ -149,7 +144,7 @@ Examples:
 
 We can also pass several values in a row. See how the first falsy one is returned:
 
-`js run alert( 1 && 2 && null && 3 ); //         null`
+`js run alert( 1 && 2 && null && 3 ); // null`
 
 When all values are truthy, the last value is returned:
 
@@ -177,8 +172,7 @@ if (x &gt; 0) alert( ‘Greater than zero!’ );
 
     Although, the variant with `&&` appears shorter, `if` is more obvious and tends to be a little bit more readable. So we recommend using every construct for its purpose: use `if` if we want `if` and use `&&` if we want AND.
 
-! (NOT)
--------
+## ! (NOT)
 
 The boolean NOT operator is represented with an exclamation sign `!`.
 
@@ -197,12 +191,12 @@ For instance:
 
 A double NOT `!!` is sometimes used for converting a value to boolean type:
 
-`js run alert( !!"non-empty string" ); // true alert( !!null ); //         false`
+`js run alert( !!"non-empty string" ); // true alert( !!null ); // false`
 
 That is, the first NOT converts the value to boolean and returns the inverse, and the second NOT inverses it again. In the end, we have a plain value-to-boolean conversion.
 
 There’s a little more verbose way to do the same thing – a built-in `Boolean` function:
 
-`js run alert( Boolean("non-empty string") ); // true alert(         Boolean(null) ); // false`
+`js run alert( Boolean("non-empty string") ); // true alert( Boolean(null) ); // false`
 
 The precedence of NOT `!` is the highest of all logical operators, so it always executes first, before `&&` or `||`.

@@ -1,5 +1,4 @@
-Template element
-================
+# Template element
 
 A built-in `<template>` element serves as a storage for HTML markup templates. The browser ignores it contents, only checks for syntax validity, but we can access and use it in JavaScript, to create other elements.
 
@@ -32,8 +31,7 @@ The browser considers `<template>` content “out of the document”: styles are
 
 The content becomes live (styles apply, scripts run etc) when we insert it into the document.
 
-Inserting template
-------------------
+## Inserting template
 
 The template content is available in its `content` property as a [DocumentFragment](info:modifying-document#document-fragment) – a special type of DOM node.
 
@@ -65,19 +63,18 @@ They form the shadow DOM:
         <p id="message"></p>
     </div>
 
-Summary
--------
+## Summary
 
 To summarize:
 
--   `<template>` content can be any syntactically correct HTML.
--   `<template>` content is considered “out of the document”, so it doesn’t affect anything.
--   We can access `template.content` from JavaScript, clone it to reuse in a new component.
+- `<template>` content can be any syntactically correct HTML.
+- `<template>` content is considered “out of the document”, so it doesn’t affect anything.
+- We can access `template.content` from JavaScript, clone it to reuse in a new component.
 
 The `<template>` tag is quite unique, because:
 
--   The browser checks HTML syntax inside it (as opposed to using a template string inside a script).
--   …But still allows use of any top-level HTML tags, even those that don’t make sense without proper wrappers (e.g. `<tr>`).
--   The content becomes interactive: scripts run, `<video autoplay>` plays etc, when inserted into the document.
+- The browser checks HTML syntax inside it (as opposed to using a template string inside a script).
+- …But still allows use of any top-level HTML tags, even those that don’t make sense without proper wrappers (e.g. `<tr>`).
+- The content becomes interactive: scripts run, `<video autoplay>` plays etc, when inserted into the document.
 
 The `<template>` element does not feature any iteration mechanisms, data binding or variable substitutions, but we can implement those on top of it.

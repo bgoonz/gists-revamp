@@ -1,5 +1,4 @@
-The old “var”
-=============
+# The old “var”
 
 \`\`\`smart header=“This article is for understanding old scripts” The information in this article is useful for understanding old scripts.
 
@@ -21,8 +20,7 @@ If you don’t plan on meeting such scripts you may even skip this chapter or po
 
 On the other hand, it’s important to understand differences when migrating old scripts from `var` to `let`, to avoid odd errors.
 
-“var” has no block scope
-------------------------
+## “var” has no block scope
 
 Variables, declared with `var`, are either function-scoped or global-scoped. They are visible through blocks.
 
@@ -30,7 +28,7 @@ For instance:
 
 \`\`\`js run if (true) { var test = true; // use “var” instead of “let” }
 
-*!* alert(test); // true, the variable lives after if */!* \`\`\`
+_!_ alert(test); // true, the variable lives after if _/!_ \`\`\`
 
 As `var` ignores code blocks, we’ve got a global variable `test`.
 
@@ -38,7 +36,7 @@ If we used `let test` instead of `var test`, then the variable would only be vis
 
 \`\`\`js run if (true) { let test = true; // use “let” }
 
-*!* alert(test); // ReferenceError: test is not defined */!* \`\`\`
+_!_ alert(test); // ReferenceError: test is not defined _/!_ \`\`\`
 
 The same thing for loops: `var` cannot be block- or loop-local:
 
@@ -62,12 +60,11 @@ sayHi(); alert(phrase); // ReferenceError: phrase is not defined \`\`\`
 
 As we can see, `var` pierces through `if`, `for` or other code blocks. That’s because a long time ago in JavaScript, blocks had no Lexical Environments, and `var` is a remnant of that.
 
-“var” tolerates redeclarations
-------------------------------
+## “var” tolerates redeclarations
 
 If we declare the same variable with `let` twice in the same scope, that’s an error:
 
-`js run let user; let user; // SyntaxError: 'user' has already been         declared`
+`js run let user; let user; // SyntaxError: 'user' has already been declared`
 
 With `var`, we can redeclare a variable any number of times. If we use `var` with an already-declared variable, it’s just ignored:
 
@@ -77,8 +74,7 @@ var user = “John”; // this “var” does nothing (already declared) // …i
 
 alert(user); // John \`\`\`
 
-“var” variables can be declared below their use
------------------------------------------------
+## “var” variables can be declared below their use
 
 `var` declarations are processed when the function starts (or script starts for globals).
 
@@ -90,11 +86,11 @@ So this code:
 
 alert(phrase);
 
-*!* var phrase; */!* } sayHi(); \`\`\`
+_!_ var phrase; _/!_ } sayHi(); \`\`\`
 
 …Is technically the same as this (moved `var phrase` above):
 
-\`\`\`js run function sayHi() { *!* var phrase; */!*
+\`\`\`js run function sayHi() { _!_ var phrase; _/!_
 
 phrase = “Hello”;
 
@@ -104,7 +100,7 @@ alert(phrase); } sayHi(); \`\`\`
 
 \`\`\`js run function sayHi() { phrase = “Hello”; // (\*)
 
-*!* if (false) { var phrase; } */!*
+_!_ if (false) { var phrase; } _/!_
 
 alert(phrase); } sayHi(); \`\`\`
 
@@ -118,7 +114,7 @@ That’s best demonstrated with an example:
 
 \`\`\`js run function sayHi() { alert(phrase);
 
-*!* var phrase = “Hello”; */!* }
+_!_ var phrase = “Hello”; _/!_ }
 
 sayHi(); \`\`\`
 
@@ -129,11 +125,11 @@ The line `var phrase = "Hello"` has two actions in it:
 
 The declaration is processed at the start of function execution (“hoisted”), but the assignment always works at the place where it appears. So the code works essentially like this:
 
-\`\`\`js run function sayHi() { *!* var phrase; // declaration works at the start… */!*
+\`\`\`js run function sayHi() { _!_ var phrase; // declaration works at the start… _/!_
 
 alert(phrase); // undefined
 
-*!* phrase = “Hello”; // …assignment - when the execution reaches it. */!* }
+_!_ phrase = “Hello”; // …assignment - when the execution reaches it. _/!_ }
 
 sayHi(); \`\`\`
 
@@ -141,8 +137,7 @@ Because all `var` declarations are processed at the function start, we can refer
 
 In both examples above, `alert` runs without an error, because the variable `phrase` exists. But its value is not yet assigned, so it shows `undefined`.
 
-IIFE
-----
+## IIFE
 
 In the past, as there was only `var`, and it has no block-level visibility, programmers invented a way to emulate it. What they did was called “immediately-invoked function expressions” (abbreviated as IIFE).
 
@@ -182,18 +177,17 @@ There exist other ways besides parentheses to tell JavaScript that we mean a Fun
 
 \`\`\`js run // Ways to create IIFE
 
-(function() { alert(“Parentheses around the function”); }*!*)*/!*();
+(function() { alert(“Parentheses around the function”); }_!_)_/!_();
 
-(function() { alert(“Parentheses around the whole thing”); }()*!*)*/!*;
+(function() { alert(“Parentheses around the whole thing”); }()_!_)_/!_;
 
-*!*!*/!*function() { alert(“Bitwise NOT operator starts the expression”); }();
+_!_!*/!*function() { alert(“Bitwise NOT operator starts the expression”); }();
 
-*!*+*/!*function() { alert(“Unary plus starts the expression”); }(); \`\`\`
+_!_+*/!*function() { alert(“Unary plus starts the expression”); }(); \`\`\`
 
 In all the above cases we declare a Function Expression and run it immediately. Let’s note again: nowadays there’s no reason to write such code.
 
-Summary
--------
+## Summary
 
 There are two main differences of `var` compared to `let/const`:
 

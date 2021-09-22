@@ -1,5 +1,4 @@
-Alternation (OR) |
-==================
+# Alternation (OR) |
 
 Alternation is the term in regular expression that is actually a simple “OR”.
 

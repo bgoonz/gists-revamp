@@ -1,11 +1,10 @@
-Character classes
-=================
+# Character classes
 
 Consider a practical task – we have a phone number like `"+7(903)-123-45-67"`, and we need to turn it into pure numbers: `79031234567`.
 
 To do so, we can find and remove anything that’s not a number. Character classes can help with that.
 
-A *character class* is a special notation that matches any symbol from a certain set.
+A _character class_ is a special notation that matches any symbol from a certain set.
 
 For the start, let’s explore the “digit” class. It’s written as `pattern:\d` and corresponds to “any single digit”.
 
@@ -54,14 +53,13 @@ alert( str.match(regexp) ); // CSS4 \`\`\`
 
 Also we can use many character classes:
 
-`js run alert( "I love HTML5!".match(/\s\w\w\w\w\d/) ); // '         HTML5'`
+`js run alert( "I love HTML5!".match(/\s\w\w\w\w\d/) ); // ' HTML5'`
 
 The match (each regexp character class has the corresponding result character):
 
 ![](love-html5-classes.svg)
 
-Inverse classes
----------------
+## Inverse classes
 
 For every character class there exists an “inverse class”, denoted with the same letter, but uppercased.
 
@@ -88,8 +86,7 @@ An alternative, shorter way is to find non-digits `pattern:\D` and remove them f
 
 alert( str.replace(//g, "") ); // 79031234567 \`\`\`
 
-A dot is “any character”
-------------------------
+## A dot is “any character”
 
 A dot `pattern:.` is a special character class that matches “any character except a newline”.
 
@@ -105,7 +102,7 @@ alert( “CSS4”.match(regexp) ); // CSS4 alert( “CS-4”.match(regexp) ); //
 
 Please note that a dot means “any character”, but not the “absence of a character”. There must be a character to match it:
 
-`js run alert( "CS4".match(/CS.4/) ); // null, no match because there's         no character for the dot`
+`js run alert( "CS4".match(/CS.4/) ); // null, no match because there's no character for the dot`
 
 ### Dot as literally any character with “s” flag
 
@@ -131,7 +128,7 @@ The pattern `pattern:[\s\S]` literally says: “a space character OR not a space
 
 Also we can use this trick if we want both kind of “dots” in the same pattern: the actual dot `pattern:.` behaving the regular way (“not including a newline”), and also a way to match “any character” with `pattern:[\s\S]` or alike. \`\`\`\`
 
-\`\`\``warn header="Pay attention to spaces" Usually we pay little attention         to spaces. For us strings`subject:1-5`and`subject:1 - 5\` are nearly identical.
+\`\`\``warn header="Pay attention to spaces" Usually we pay little attention to spaces. For us strings`subject:1-5`and`subject:1 - 5\` are nearly identical.
 
 But if a regexp doesn’t take spaces into account, it may fail to work.
 
@@ -141,7 +138,7 @@ Let’s try to find digits separated by a hyphen:
 
 Let’s fix it adding spaces into the regexp `pattern:\d - \d`:
 
-`js run alert( "1 - 5".match(/\d - \d/) ); // 1 - 5, now it works // or         we can use \s class: alert( "1 - 5".match(/\d\s-\s\d/) ); // 1 - 5, also         works`
+`js run alert( "1 - 5".match(/\d - \d/) ); // 1 - 5, now it works // or we can use \s class: alert( "1 - 5".match(/\d\s-\s\d/) ); // 1 - 5, also works`
 
 **A space is a character. Equal in importance with any other character.**
 
@@ -149,18 +146,17 @@ We can’t add or remove spaces from a regular expression and expect it to work 
 
 In other words, in a regular expression all characters matter, spaces too. \`\`\`\`
 
-Summary
--------
+## Summary
 
 There exist following character classes:
 
--   `pattern:\d` – digits.
--   `pattern:\D` – non-digits.
--   `pattern:\s` – space symbols, tabs, newlines.
--   `pattern:\S` – all but `pattern:\s`.
--   `pattern:\w` – Latin letters, digits, underscore `'_'`.
--   `pattern:\W` – all but `pattern:\w`.
--   `pattern:.` – any character if with the regexp `'s'` flag, otherwise any except a newline `\n`.
+- `pattern:\d` – digits.
+- `pattern:\D` – non-digits.
+- `pattern:\s` – space symbols, tabs, newlines.
+- `pattern:\S` – all but `pattern:\s`.
+- `pattern:\w` – Latin letters, digits, underscore `'_'`.
+- `pattern:\W` – all but `pattern:\w`.
+- `pattern:.` – any character if with the regexp `'s'` flag, otherwise any except a newline `\n`.
 
 …But that’s not all!
 

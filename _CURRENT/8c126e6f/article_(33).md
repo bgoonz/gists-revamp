@@ -1,12 +1,10 @@
-Constructor, operator “new”
-===========================
+# Constructor, operator “new”
 
 The regular `{...}` syntax allows to create one object. But often we need to create many similar objects, like multiple users or menu items and so on.
 
 That can be done using constructor functions and the `"new"` operator.
 
-Constructor function
---------------------
+## Constructor function
 
 Constructor functions technically are regular functions. There are two conventions though:
 
@@ -17,7 +15,7 @@ For instance:
 
 \`\`\`js run function User(name) { this.name = name; this.isAdmin = false; }
 
-*!* let user = new User(“Jack”); */!*
+_!_ let user = new User(“Jack”); _/!_
 
 alert(user.name); // Jack alert(user.isAdmin); // false \`\`\`
 
@@ -69,10 +67,9 @@ Let’s note once again – technically, any function can be used as a construct
 
 The constructor can’t be called again, because it is not saved anywhere, just created and called. So this trick aims to encapsulate the code that constructs the single object, without future reuse. \`\`\`\`
 
-Constructor mode test: new.target
----------------------------------
+## Constructor mode test: new.target
 
-`smart header="Advanced stuff" The syntax from this section is rarely         used, skip it unless you want to know everything.`
+`smart header="Advanced stuff" The syntax from this section is rarely used, skip it unless you want to know everything.`
 
 Inside a function, we can check whether it was called with `new` or without it, using a special `new.target` property.
 
@@ -80,9 +77,9 @@ It is undefined for regular calls and equals the function if called with `new`:
 
 \`\`\`js run function User() { alert(new.target); }
 
-// without “new”: *!* User(); // undefined */!*
+// without “new”: _!_ User(); // undefined _/!_
 
-// with “new”: *!* new User(); // function User { … } */!* \`\`\`
+// with “new”: _!_ new User(); // function User { … } _/!_ \`\`\`
 
 That can be used inside the function to know whether it was called with `new`, “in constructor mode”, or without it, “in regular mode”.
 
@@ -98,15 +95,14 @@ This approach is sometimes used in libraries to make the syntax more flexible. S
 
 Probably not a good thing to use everywhere though, because omitting `new` makes it a bit less obvious what’s going on. With `new` we all know that the new object is being created.
 
-Return from constructors
-------------------------
+## Return from constructors
 
 Usually, constructors do not have a `return` statement. Their task is to write all necessary stuff into `this`, and it automatically becomes the result.
 
 But if there is a `return` statement, then the rule is simple:
 
--   If `return` is called with an object, then the object is returned instead of `this`.
--   If `return` is called with a primitive, it’s ignored.
+- If `return` is called with an object, then the object is returned instead of `this`.
+- If `return` is called with a primitive, it’s ignored.
 
 In other words, `return` with an object returns that object, in all other cases `this` is returned.
 
@@ -132,7 +128,7 @@ alert( new SmallUser().name ); // John \`\`\`
 
 Usually constructors don’t have a `return` statement. Here we mention the special behavior with returning objects mainly for the sake of completeness.
 
-\`\`\``smart header="Omitting parentheses" By the way, we can omit parentheses         after`new\`, if it has no arguments:
+\`\`\``smart header="Omitting parentheses" By the way, we can omit parentheses after`new\`, if it has no arguments:
 
     let user = new User; // <-- no parentheses
     // same as
@@ -140,8 +136,7 @@ Usually constructors don’t have a `return` statement. Here we mention the spec
 
 Omitting parentheses here is not considered a “good style”, but the syntax is permitted by specification. \`\`\`\`
 
-Methods in constructor
-----------------------
+## Methods in constructor
 
 Using constructor functions to create objects gives a great deal of flexibility. The constructor function may have parameters that define how to construct the object, and what to put in it.
 
@@ -153,19 +148,18 @@ For instance, `new User(name)` below creates an object with the given `name` and
 
 this.sayHi = function() { alert( “My name is:” + this.name ); }; }
 
-*!* let john = new User(“John”);
+_!_ let john = new User(“John”);
 
-john.sayHi(); // My name is: John */!*
+john.sayHi(); // My name is: John _/!_
 
-/ *john = { name: “John”, sayHi: function() { … } }* / \`\`\`
+/ _john = { name: “John”, sayHi: function() { … } }_ / \`\`\`
 
 To create complex objects, there’s a more advanced syntax, [classes](info:classes), that we’ll cover later.
 
-Summary
--------
+## Summary
 
--   Constructor functions or, briefly, constructors, are regular functions, but there’s a common agreement to name them with capital letter first.
--   Constructor functions should only be called using `new`. Such a call implies a creation of empty `this` at the start and returning the populated one at the end.
+- Constructor functions or, briefly, constructors, are regular functions, but there’s a common agreement to name them with capital letter first.
+- Constructor functions should only be called using `new`. Such a call implies a creation of empty `this` at the start and returning the populated one at the end.
 
 We can use constructor functions to make multiple similar objects.
 

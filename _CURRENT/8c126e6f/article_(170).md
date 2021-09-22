@@ -1,5 +1,4 @@
-Lookahead and lookbehind
-========================
+# Lookahead and lookbehind
 
 Sometimes we need to find only those matches for a pattern that are followed or preceded by another pattern.
 
@@ -7,8 +6,7 @@ There’s a special syntax for that, called “lookahead” and “lookbehind”
 
 For the start, let’s find the price from the string like `subject:1 turkey costs 30€`. That is: a number, followed by `subject:€` sign.
 
-Lookahead
----------
+## Lookahead
 
 The syntax is: `pattern:X(?=Y)`, it means “look for `pattern:X`, but match only if followed by `pattern:Y`”. There may be any pattern instead of `pattern:X` and `pattern:Y`.
 
@@ -41,8 +39,7 @@ alert( str.match(/(?=)(?=.\*30)/) ); // 1 \`\`\`
 
 In our string that exactly matches the number `1`.
 
-Negative lookahead
-------------------
+## Negative lookahead
 
 Let’s say that we want a quantity instead, not a price from the same string. That’s a number `pattern:\d+`, NOT followed by `subject:€`.
 
@@ -54,8 +51,7 @@ The syntax is: `pattern:X(?!Y)`, it means “search `pattern:X`, but only if not
 
 alert( str.match(/?!€)/g) ); // 2 (the price is not matched) \`\`\`
 
-Lookbehind
-----------
+## Lookbehind
 
 Lookahead allows to add a condition for “what follows”.
 
@@ -75,8 +71,7 @@ And, if we need the quantity – a number, not preceded by `subject:$`, then we 
 
 alert( str.match(/(?&lt;!$)/g) ); // 2 (the price is not matched) \`\`\`
 
-Capturing groups
-----------------
+## Capturing groups
 
 Generally, the contents inside lookaround parentheses does not become a part of the result.
 
@@ -96,8 +91,7 @@ And here’s the same for lookbehind:
 
 alert( str.match(regexp) ); // 30, $ \`\`\`
 
-Summary
--------
+## Summary
 
 Lookahead and lookbehind (commonly referred to as “lookaround”) are useful when we’d like to match something depending on the context before/after it.
 

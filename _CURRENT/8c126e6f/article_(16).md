@@ -1,5 +1,4 @@
-Nullish coalescing operator ‘??’
-================================
+# Nullish coalescing operator ‘??’
 
 \[recent browser=“new”\]
 
@@ -43,10 +42,9 @@ Let’s use the `??` operator for that:
 
 \`\`\`js run let firstName = null; let lastName = null; let nickName = “Supercoder”;
 
-// shows the first defined value: *!* alert(firstName ?? lastName ?? nickName ?? “Anonymous”); // Supercoder */!* \`\`\`
+// shows the first defined value: _!_ alert(firstName ?? lastName ?? nickName ?? “Anonymous”); // Supercoder _/!_ \`\`\`
 
-Comparison with ||
-------------------
+## Comparison with ||
 
 The OR `||` operator can be used in the same way as `??`, as it was described in the [previous chapter](info:logical-operators#or-finds-the-first-truthy-value).
 
@@ -54,13 +52,13 @@ For example, in the code above we could replace `??` with `||` and still get the
 
 \`\`\`js run let firstName = null; let lastName = null; let nickName = “Supercoder”;
 
-// shows the first truthy value: *!* alert(firstName || lastName || nickName || “Anonymous”); // Supercoder */!* \`\`\`
+// shows the first truthy value: _!_ alert(firstName || lastName || nickName || “Anonymous”); // Supercoder _/!_ \`\`\`
 
 Historically, the OR `||` operator was there first. It exists since the beginning of JavaScript, so developers were using it for such purposes for a long time.
 
 On the other hand, the nullish coalescing operator `??` was added to JavaScript only recently, and the reason for that was that people weren’t quite happy with `||`.
 
-The important difference between them is that: - `||` returns the first *truthy* value. - `??` returns the first *defined* value.
+The important difference between them is that: - `||` returns the first _truthy_ value. - `??` returns the first _defined_ value.
 
 In other words, `||` doesn’t distinguish between `false`, `0`, an empty string `""` and `null/undefined`. They are all the same – falsy values. If any of these is the first argument of `||`, then we’ll get the second argument as the result.
 
@@ -72,15 +70,14 @@ For example, consider this:
 
 alert(height || 100); // 100 alert(height ?? 100); // 0 \`\`\`
 
--   The `height || 100` checks `height` for being a falsy value, and it’s `0`, falsy indeed.
-    -   so the result of `||` is the second argument, `100`.
--   The `height ?? 100` checks `height` for being `null/undefined`, and it’s not,
-    -   so the result is `height` “as is”, that is `0`.
+- The `height || 100` checks `height` for being a falsy value, and it’s `0`, falsy indeed.
+  - so the result of `||` is the second argument, `100`.
+- The `height ?? 100` checks `height` for being `null/undefined`, and it’s not,
+  - so the result is `height` “as is”, that is `0`.
 
 In practice, the zero height is often a valid value, that shouldn’t be replaced with the default. So `??` does just the right thing.
 
-Precedence
-----------
+## Precedence
 
 The precedence of the `??` operator is about the same as `||`, just a bit lower. It equals `5` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table), while `||` is `6`.
 
@@ -114,19 +111,18 @@ The limitation is surely debatable, it was added to the language specification w
 
 Use explicit parentheses to work around it:
 
-\`\`\`js run *!* let x = (1 && 2) ?? 3; // Works */!*
+\`\`\`js run _!_ let x = (1 && 2) ?? 3; // Works _/!_
 
 alert(x); // 2 \`\`\`
 
-Summary
--------
+## Summary
 
--   The nullish coalescing operator `??` provides a short way to choose the first “defined” value from a list.
+- The nullish coalescing operator `??` provides a short way to choose the first “defined” value from a list.
 
-    It’s used to assign default values to variables:
+  It’s used to assign default values to variables:
 
-        // set height=100, if height is null or undefined
-        height = height ?? 100;
+      // set height=100, if height is null or undefined
+      height = height ?? 100;
 
--   The operator `??` has a very low precedence, only a bit higher than `?` and `=`, so consider adding parentheses when using it in an expression.
--   It’s forbidden to use it with `||` or `&&` without explicit parentheses.
+- The operator `??` has a very low precedence, only a bit higher than `?` and `=`, so consider adding parentheses when using it in an expression.
+- It’s forbidden to use it with `||` or `&&` without explicit parentheses.

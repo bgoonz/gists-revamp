@@ -1,10 +1,8 @@
-Moving the mouse: mouseover/out, mouseenter/leave
-=================================================
+# Moving the mouse: mouseover/out, mouseenter/leave
 
 Let’s dive into more details about events that happen when the mouse moves between elements.
 
-Events mouseover/mouseout, relatedTarget
-----------------------------------------
+## Events mouseover/mouseout, relatedTarget
 
 The `mouseover` event occurs when a mouse pointer comes over an element, and `mouseout` – when it leaves.
 
@@ -14,13 +12,13 @@ These events are special, because they have property `relatedTarget`. This prope
 
 For `mouseover`:
 
--   `event.target` – is the element where the mouse came over.
--   `event.relatedTarget` – is the element from which the mouse came (`relatedTarget` -&gt; `target`).
+- `event.target` – is the element where the mouse came over.
+- `event.relatedTarget` – is the element from which the mouse came (`relatedTarget` -&gt; `target`).
 
 For `mouseout` the reverse:
 
--   `event.target` – is the element that the mouse left.
--   `event.relatedTarget` – is the new under-the-pointer element, that mouse left for (`target` -&gt; `relatedTarget`).
+- `event.target` – is the element that the mouse left.
+- `event.relatedTarget` – is the new under-the-pointer element, that mouse left for (`target` -&gt; `relatedTarget`).
 
 <!-- -->
 
@@ -36,8 +34,7 @@ That’s normal and just means that the mouse came not from another element, but
 
 We should keep that possibility in mind when using `event.relatedTarget` in our code. If we access `event.relatedTarget.tagName`, then there will be an error. \`\`\`
 
-Skipping elements
------------------
+## Skipping elements
 
 The `mousemove` event triggers when the mouse moves. But that doesn’t mean that every pixel leads to an event.
 
@@ -65,10 +62,9 @@ In particular, it’s possible that the pointer jumps right inside the middle of
 
     [codetabs height=360 src="mouseoverout-fast"]
 
-`` smart header="If `mouseover` triggered, there must be `mouseout`" In         case of fast mouse movements, intermediate elements may be ignored, but         one thing we know for sure: if the pointer "officially" entered an         element (`mouseover` event generated), then upon leaving it we always         get `mouseout`. ``
+`` smart header="If `mouseover` triggered, there must be `mouseout`" In case of fast mouse movements, intermediate elements may be ignored, but one thing we know for sure: if the pointer "officially" entered an element (`mouseover` event generated), then upon leaving it we always get `mouseout`. ``
 
-Mouseout when leaving for a child
----------------------------------
+## Mouseout when leaving for a child
 
 An important feature of `mouseout` – it triggers, when the pointer moves from an element to its descendant, e.g. from `#parent` to `#child` in this HTML:
 
@@ -82,7 +78,7 @@ If we’re on `#parent` and then move the pointer deeper into `#child`, we get `
 
 That may seem strange, but can be easily explained.
 
-**According to the browser logic, the mouse cursor may be only over a *single* element at any time – the most nested one and top by z-index.**
+**According to the browser logic, the mouse cursor may be only over a _single_ element at any time – the most nested one and top by z-index.**
 
 So if it goes to another element (even a descendant), then it leaves the previous one.
 
@@ -119,8 +115,7 @@ To avoid it, we can check `relatedTarget` in the handler and, if the mouse is st
 
 Alternatively we can use other events: `mouseenter` and `mouseleave`, that we’ll be covering now, as they don’t have such problems.
 
-Events mouseenter and mouseleave
---------------------------------
+## Events mouseenter and mouseleave
 
 Events `mouseenter/mouseleave` are like `mouseover/mouseout`. They trigger when the mouse pointer enters/leaves the element.
 
@@ -141,8 +136,7 @@ When the pointer leaves an element – `mouseleave` triggers.
 
     [codetabs height=340 src="mouseleave"]
 
-Event delegation
-----------------
+## Event delegation
 
 Events `mouseenter/leave` are very simple and easy to use. But they do not bubble. So we can’t use event delegation with them.
 
@@ -175,9 +169,9 @@ In our case we’d like to handle transitions between table cells `<td>`: enteri
 
 Here’s what we can do:
 
--   Remember the currently highlighted `<td>` in a variable, let’s call it `currentElem`.
--   On `mouseover` – ignore the event if we’re still inside the current `<td>`.
--   On `mouseout` – ignore if we didn’t leave the current `<td>`.
+- Remember the currently highlighted `<td>` in a variable, let’s call it `currentElem`.
+- On `mouseover` – ignore the event if we’re still inside the current `<td>`.
+- On `mouseout` – ignore if we didn’t leave the current `<td>`.
 
 Here’s an example of code that accounts for all possible situations:
 
@@ -191,15 +185,14 @@ Once again, the important features are: 1. It uses event delegation to handle en
 
     Try to move the cursor in and out of table cells and inside them. Fast or slow -- doesn't matter. Only `<td>` as a whole is highlighted, unlike the example before.
 
-Summary
--------
+## Summary
 
 We covered events `mouseover`, `mouseout`, `mousemove`, `mouseenter` and `mouseleave`.
 
 These things are good to note:
 
--   A fast mouse move may skip intermediate elements.
--   Events `mouseover/out` and `mouseenter/leave` have an additional property: `relatedTarget`. That’s the element that we are coming from/to, complementary to `target`.
+- A fast mouse move may skip intermediate elements.
+- Events `mouseover/out` and `mouseenter/leave` have an additional property: `relatedTarget`. That’s the element that we are coming from/to, complementary to `target`.
 
 Events `mouseover/out` trigger even when we go from the parent element to a child element. The browser assumes that the mouse can be only over one element at one time – the deepest one.
 

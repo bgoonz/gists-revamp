@@ -1,14 +1,12 @@
-Loops: while and for
-====================
+# Loops: while and for
 
 We often need to repeat actions.
 
 For example, outputting goods from a list one after another or just running the same code for each number from 1 to 10.
 
-*Loops* are a way to repeat the same code multiple times.
+_Loops_ are a way to repeat the same code multiple times.
 
-The “while” loop
-----------------
+## The “while” loop
 
 The `while` loop has the following syntax:
 
@@ -21,9 +19,9 @@ While the `condition` is truthy, the `code` from the loop body is executed.
 
 For instance, the loop below outputs `i` while `i < 3`:
 
-`js run let i = 0; while (i < 3) { // shows 0, then 1, then 2 alert(         i ); i++; }`
+`js run let i = 0; while (i < 3) { // shows 0, then 1, then 2 alert( i ); i++; }`
 
-A single execution of the loop body is called *an iteration*. The loop in the example above makes three iterations.
+A single execution of the loop body is called _an iteration_. The loop in the example above makes three iterations.
 
 If `i++` was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
 
@@ -31,16 +29,15 @@ Any expression or variable can be a loop condition, not just comparisons: the co
 
 For instance, a shorter way to write `while (i != 0)` is `while (i)`:
 
-`js run let i = 3; *!* while (i) { // when i becomes 0, the condition         becomes falsy, and the loop stops */!* alert( i ); i--; }`
+`js run let i = 3; *!* while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops */!* alert( i ); i--; }`
 
-\`\`\``smart header="Curly braces are not required for a single-line body" If         the loop body has a single statement, we can omit the curly braces`{…}\`:
+\`\`\``smart header="Curly braces are not required for a single-line body" If the loop body has a single statement, we can omit the curly braces`{…}\`:
 
 `js run let i = 3; *!* while (i) alert(i--); */!*` \`\`\`\`
 
-The “do..while” loop
---------------------
+## The “do..while” loop
 
-The condition check can be moved *below* the loop body using the `do..while` syntax:
+The condition check can be moved _below_ the loop body using the `do..while` syntax:
 
     do {
       // loop body
@@ -54,8 +51,7 @@ For example:
 
 This form of syntax should only be used when you want the body of the loop to execute **at least once** regardless of the condition being truthy. Usually, the other form is preferred: `while(…) {…}`.
 
-The “for” loop
---------------
+## The “for” loop
 
 The `for` loop is more complex, but it’s also the most commonly used loop.
 
@@ -67,7 +63,7 @@ It looks like this:
 
 Let’s learn the meaning of these parts by example. The loop below runs `alert(i)` for `i` from `0` up to (but not including) `3`:
 
-`js run for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2         alert(i); }`
+`js run for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2 alert(i); }`
 
 Let’s examine the `for` statement part-by-part:
 
@@ -99,9 +95,9 @@ Here’s exactly what happens in our case:
     if (i < 3) { alert(i); i++ }
     // ...finish, because now i == 3
 
-\`\`\``smart header="Inline variable declaration" Here, the "counter"         variable`i\` is declared right in the loop. This is called an “inline” variable declaration. Such variables are visible only inside the loop.
+\`\`\``smart header="Inline variable declaration" Here, the "counter" variable`i\` is declared right in the loop. This is called an “inline” variable declaration. Such variables are visible only inside the loop.
 
-`js run for (*!*let*/!* i = 0; i < 3; i++) { alert(i); // 0, 1, 2 }         alert(i); // error, no such variable`
+`js run for (*!*let*/!* i = 0; i < 3; i++) { alert(i); // 0, 1, 2 } alert(i); // error, no such variable`
 
 Instead of defining a variable, we could use an existing one:
 
@@ -139,8 +135,7 @@ We can actually remove everything, creating an infinite loop:
 
 Please note that the two `for` semicolons `;` must be present. Otherwise, there would be a syntax error.
 
-Breaking the loop
------------------
+## Breaking the loop
 
 Normally, a loop exits when its condition becomes falsy.
 
@@ -154,7 +149,7 @@ while (true) {
 
 let value = +prompt(“Enter a number”, ’’);
 
-*!* if (!value) break; // (*)* /!\*
+_!_ if (!value) break; // (_)_ /!\*
 
 sum += value;
 
@@ -164,8 +159,7 @@ The `break` directive is activated at the line `(*)` if the user enters an empty
 
 The combination “infinite loop + `break` as needed” is great for situations when a loop’s condition must be checked not in the beginning or end of the loop, but in the middle or even in several places of its body.
 
-Continue to the next iteration \[\#continue\]
----------------------------------------------
+## Continue to the next iteration \[\#continue\]
 
 The `continue` directive is a “lighter version” of `break`. It doesn’t stop the whole loop. Instead, it stops the current iteration and forces the loop to start a new one (if the condition allows).
 
@@ -175,7 +169,7 @@ The loop below uses `continue` to output only odd values:
 
 \`\`\`js run no-beautify for (let i = 0; i &lt; 10; i++) {
 
-// if true, skip the remaining part of the body *!*if (i % 2 == 0) continue;*/!*
+// if true, skip the remaining part of the body *!*if (i % 2 == 0) continue;_/!_
 
 alert(i); // 1, then 3, 5, 7, 9 } \`\`\`
 
@@ -193,7 +187,7 @@ if (i % 2) { alert( i ); }
 
     But as a side-effect, this created one more level of nesting (the `alert` call inside the curly braces). If the code inside of `if` is longer than a few lines, that may decrease the overall readability.
 
-\`\`\``warn header="No`break/continue`to the right side of '?'" Please note that syntax constructs that are         not expressions cannot be used with the ternary operator`?`. In particular, directives such as`break/continue\` aren’t allowed there.
+\`\`\``warn header="No`break/continue`to the right side of '?'" Please note that syntax constructs that are not expressions cannot be used with the ternary operator`?`. In particular, directives such as`break/continue\` aren’t allowed there.
 
 For example, if we take this code:
 
@@ -205,14 +199,13 @@ For example, if we take this code:
 
 …and rewrite it using a question mark:
 
-`js no-beautify (i > 5) ? alert(i) : *!*continue*/!*; // continue         isn't allowed here`
+`js no-beautify (i > 5) ? alert(i) : *!*continue*/!*; // continue isn't allowed here`
 
 …it stops working: there’s a syntax error.
 
 This is just another reason not to use the question mark operator `?` instead of `if`. \`\`\`\`
 
-Labels for break/continue
--------------------------
+## Labels for break/continue
 
 Sometimes we need to break out from multiple nested loops at once.
 
@@ -234,7 +227,7 @@ We need a way to stop the process if the user cancels the input.
 
 The ordinary `break` after `input` would only break the inner loop. That’s not sufficient – labels, come to the rescue!
 
-A *label* is an identifier with a colon before a loop:
+A _label_ is an identifier with a colon before a loop:
 
     labelName: for (...) {
       ...
@@ -242,7 +235,7 @@ A *label* is an identifier with a colon before a loop:
 
 The `break <labelName>` statement in the loop below breaks out to the label:
 
-\`\`\`js run no-beautify *!*outer:*/!* for (let i = 0; i &lt; 3; i++) {
+\`\`\`js run no-beautify *!*outer:_/!_ for (let i = 0; i &lt; 3; i++) {
 
 for (let j = 0; j &lt; 3; j++) {
 
@@ -285,14 +278,13 @@ A `break` directive must be inside a code block. Technically, any labelled code 
 
 A `continue` is only possible from inside a loop. \`\`\`\`
 
-Summary
--------
+## Summary
 
 We covered 3 types of loops:
 
--   `while` – The condition is checked before each iteration.
--   `do..while` – The condition is checked after each iteration.
--   `for (;;)` – The condition is checked before each iteration, additional settings available.
+- `while` – The condition is checked before each iteration.
+- `do..while` – The condition is checked after each iteration.
+- `for (;;)` – The condition is checked before each iteration, additional settings available.
 
 To make an “infinite” loop, usually the `while(true)` construct is used. Such a loop, just like any other, can be stopped with the `break` directive.
 

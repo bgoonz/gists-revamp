@@ -1,5 +1,4 @@
-Forms: event and method submit
-==============================
+# Forms: event and method submit
 
 The `submit` event triggers when the form is submitted, it is usually used to validate the form before sending it to the server or to abort the submission and process it in JavaScript.
 
@@ -7,8 +6,7 @@ The method `form.submit()` allows to initiate form sending from JavaScript. We c
 
 Let’s see more details of them.
 
-Event: submit
--------------
+## Event: submit
 
 There are two main ways to submit a form:
 
@@ -21,18 +19,17 @@ In the form below: 1. Go into the text field and press `key:Enter`. 2. Click `<i
 
 Both actions show `alert` and the form is not sent anywhere due to `return false`:
 
-`html autorun height=60 no-beautify <form         onsubmit="alert('submit!');return false"> First: Enter in the input         field <input type="text" value="text"><br> Second: Click         "submit": <input type="submit" value="Submit"> </form>`
+`html autorun height=60 no-beautify <form onsubmit="alert('submit!');return false"> First: Enter in the input field <input type="text" value="text"><br> Second: Click "submit": <input type="submit" value="Submit"> </form>`
 
 \`\`\``smart header="Relation between`submit`and`click`" When a form is sent using`key:Enter`on an input field, a`click`event triggers on the`\`.
 
 That’s rather funny, because there was no click at all.
 
-Here’s the demo: `html autorun height=60 <form onsubmit="return false"> <input         type="text" size="30" value="Focus here and press enter"> <input         type="submit" value="Submit" *!*onclick="alert('click')"*/!*>         </form>`
+Here’s the demo: `html autorun height=60 <form onsubmit="return false"> <input type="text" size="30" value="Focus here and press enter"> <input type="submit" value="Submit" *!*onclick="alert('click')"*/!*> </form>`
 
 \`\`\`\`
 
-Method: submit
---------------
+## Method: submit
 
 To submit a form to the server manually, we can call `form.submit()`.
 

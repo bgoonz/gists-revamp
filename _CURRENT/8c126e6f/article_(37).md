@@ -1,5 +1,4 @@
-Methods of primitives
-=====================
+# Methods of primitives
 
 JavaScript allows us to work with primitives (strings, numbers, etc.) as if they were objects. They also provide methods to call as such. We will study those soon, but first we’ll see how it works because, of course, primitives are not objects (and here we will make it even clearer).
 
@@ -7,13 +6,13 @@ Let’s look at the key distinctions between primitives and objects.
 
 A primitive
 
--   Is a value of a primitive type.
--   There are 7 primitive types: `string`, `number`, `bigint`, `boolean`, `symbol`, `null` and `undefined`.
+- Is a value of a primitive type.
+- There are 7 primitive types: `string`, `number`, `bigint`, `boolean`, `symbol`, `null` and `undefined`.
 
 An object
 
--   Is capable of storing multiple values as properties.
--   Can be created with `{}`, for instance: `{name: "John", age: 30}`. There are other kinds of objects in JavaScript: functions, for example, are objects.
+- Is capable of storing multiple values as properties.
+- Can be created with `{}`, for instance: `{name: "John", age: 30}`. There are other kinds of objects in JavaScript: functions, for example, are objects.
 
 One of the best things about objects is that we can store a function as one of its properties.
 
@@ -29,13 +28,12 @@ But, these features come with a cost!
 
 Objects are “heavier” than primitives. They require additional resources to support the internal machinery.
 
-A primitive as an object
-------------------------
+## A primitive as an object
 
 Here’s the paradox faced by the creator of JavaScript:
 
--   There are many things one would want to do with a primitive like a string or a number. It would be great to access them as methods.
--   Primitives must be as fast and lightweight as possible.
+- There are many things one would want to do with a primitive like a string or a number. It would be great to access them as methods.
+- Primitives must be as fast and lightweight as possible.
 
 The solution looks a little bit awkward, but here it is:
 
@@ -71,7 +69,7 @@ alert( n.toFixed(2) ); // 1.23 \`\`\`
 
 We’ll see more specific methods in chapters <a href="info:number" class="uri">info:number</a> and <a href="info:string" class="uri">info:string</a>.
 
-\`\`\``warn header="Constructors`String/Number/Boolean`are for internal use only" Some languages like Java allow us to         explicitly create "wrapper objects" for primitives using a syntax         like`new Number(1)`or`new Boolean(false)\`.
+\`\`\``warn header="Constructors`String/Number/Boolean`are for internal use only" Some languages like Java allow us to explicitly create "wrapper objects" for primitives using a syntax like`new Number(1)`or`new Boolean(false)\`.
 
 In JavaScript, that’s also possible for historical reasons, but highly **unrecommended**. Things will go crazy in several places.
 
@@ -95,14 +93,13 @@ For example, this is entirely valid:
 
 \`\`\`\`
 
-\`\`\``warn header="null/undefined have no methods" The special         primitives`null`and`undefined\` are exceptions. They have no corresponding “wrapper objects” and provide no methods. In a sense, they are “the most primitive”.
+\`\`\``warn header="null/undefined have no methods" The special primitives`null`and`undefined\` are exceptions. They have no corresponding “wrapper objects” and provide no methods. In a sense, they are “the most primitive”.
 
 An attempt to access a property of such value would give the error:
 
 \`\`\`js run alert(null.test); // error \`\`\`\`
 
-Summary
--------
+## Summary
 
--   Primitives except `null` and `undefined` provide many helpful methods. We will study those in the upcoming chapters.
--   Formally, these methods work via temporary objects, but JavaScript engines are well tuned to optimize that internally, so they are not expensive to call.
+- Primitives except `null` and `undefined` provide many helpful methods. We will study those in the upcoming chapters.
+- Formally, these methods work via temporary objects, but JavaScript engines are well tuned to optimize that internally, so they are not expensive to call.

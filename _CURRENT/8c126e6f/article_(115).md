@@ -1,16 +1,14 @@
-Form properties and methods
-===========================
+# Form properties and methods
 
 Forms and control elements, such as `<input>` have a lot of special properties and events.
 
 Working with forms will be much more convenient when we learn them.
 
-Navigation: form and elements
------------------------------
+## Navigation: form and elements
 
 Document forms are members of the special collection `document.forms`.
 
-That’s a so-called *“named collection”*: it’s both named and ordered. We can use both the name or the number in the document to get the form.
+That’s a so-called _“named collection”_: it’s both named and ordered. We can use both the name or the number in the document to get the form.
 
 `js no-beautify document.forms.my; // the form with name="my" document.forms[0]; // the first form in the document`
 
@@ -24,11 +22,11 @@ For instance:
 
 There may be multiple elements with the same name. This is typical with radio buttons and checkboxes.
 
-In that case, `form.elements[name]` is a *collection*. For instance:
+In that case, `form.elements[name]` is a _collection_. For instance:
 
 \`\`\`html run height=40
 
-&lt;input type=“radio” *!*name=“age”*/!* value=“10”&gt; &lt;input type=“radio” *!*name=“age”*/!* value=“20”&gt;
+&lt;input type=“radio” *!*name=“age”_/!_ value=“10”&gt; &lt;input type=“radio” *!*name=“age”_/!_ value=“20”&gt;
 
 \`\`\`
 
@@ -56,8 +54,7 @@ That’s easy to see in an example:
 
     That's usually not a problem, however, because we rarely change names of form elements.
 
-Backreference: element.form
----------------------------
+## Backreference: element.form
 
 For any element, the form is available as `element.form`. So a form references all elements, and elements reference the form.
 
@@ -71,8 +68,7 @@ For instance:
 
 \`\`\`
 
-Form elements
--------------
+## Form elements
 
 Let’s talk about form controls.
 
@@ -100,8 +96,8 @@ It stores only the HTML that was initially on the page, not the current value. \
 A `<select>` element has 3 important properties:
 
 1.  `select.options` – the collection of `<option>` subelements,
-2.  `select.value` – the *value* of the currently selected `<option>`,
-3.  `select.selectedIndex` – the *number* of the currently selected `<option>`.
+2.  `select.value` – the _value_ of the currently selected `<option>`,
+3.  `select.selectedIndex` – the _number_ of the currently selected `<option>`.
 
 They provide three different ways of setting a value for a `<select>`:
 
@@ -135,14 +131,14 @@ In the [specification](https://html.spec.whatwg.org/multipage/forms.html#the-opt
 
 This syntax is optional. We can use `document.createElement('option')` and set attributes manually. Still, it may be shorter, so here are the parameters:
 
--   `text` – the text inside the option,
--   `value` – the option value,
--   `defaultSelected` – if `true`, then `selected` HTML-attribute is created,
--   `selected` – if `true`, then the option is selected.
+- `text` – the text inside the option,
+- `value` – the option value,
+- `defaultSelected` – if `true`, then `selected` HTML-attribute is created,
+- `selected` – if `true`, then the option is selected.
 
 The difference between `defaultSelected` and `selected` is that `defaultSelected` sets the HTML-attribute (that we can get using `option.getAttribute('selected')`, while `selected` sets whether the option is selected or not.
 
-In practice, one should usually set *both* values to `true` or `false`. (Or, simply omit them; both default to `false`.)
+In practice, one should usually set _both_ values to `true` or `false`. (Or, simply omit them; both default to `false`.)
 
 For instance, here’s a new “unselected” option:
 
@@ -164,13 +160,11 @@ The number of the option among the others in its `<select>`.
 `option.text`  
 Text content of the option (seen by the visitor).
 
-References
-----------
+## References
 
--   Specification: <a href="https://html.spec.whatwg.org/multipage/forms.html" class="uri">https://html.spec.whatwg.org/multipage/forms.html</a>.
+- Specification: <a href="https://html.spec.whatwg.org/multipage/forms.html" class="uri">https://html.spec.whatwg.org/multipage/forms.html</a>.
 
-Summary
--------
+## Summary
 
 Form navigation:
 

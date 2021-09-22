@@ -1,5 +1,4 @@
-Server Sent Events
-==================
+# Server Sent Events
 
 The [Server-Sent Events](https://html.spec.whatwg.org/multipage/comms.html#the-eventsource-interface) specification describes a built-in class `EventSource`, that keeps connection with the server and allows to receive events from it.
 
@@ -17,8 +16,7 @@ The main reason: it’s simpler. In many applications, the power of `WebSocket` 
 
 We need to receive a stream of data from server: maybe chat messages or market prices, or whatever. That’s what `EventSource` is good at. Also it supports auto-reconnect, something we need to implement manually with `WebSocket`. Besides, it’s a plain old HTTP, not a new protocol.
 
-Getting messages
-----------------
+## Getting messages
 
 To start receiving messages, we just need to create `new EventSource(url)`.
 
@@ -33,9 +31,9 @@ The server should respond with status 200 and the header `Content-Type: text/eve
     data: Message 3
     data: of two lines
 
--   A message text goes after `data:`, the space after the colon is optional.
--   Messages are delimited with double line breaks `\n\n`.
--   To send a line break `\n`, we can immediately send one more `data:` (3rd message above).
+- A message text goes after `data:`, the space after the colon is optional.
+- Messages are delimited with double line breaks `\n\n`.
+- To send a line break `\n`, we can immediately send one more `data:` (3rd message above).
 
 In practice, complex messages are usually sent JSON-encoded. Line-breaks are encoded as `\n` within them, so multiline `data:` messages are not necessary.
 
@@ -72,8 +70,7 @@ To pass credentials, we should set the additional option `withCredentials`, like
 
 Please see the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a> for more details about cross-origin headers.
 
-Reconnection
-------------
+## Reconnection
 
 Upon creation, `new EventSource` connects to the server, and if the connection is broken – reconnects.
 
@@ -90,19 +87,18 @@ The `retry:` may come both together with some data, or as a standalone message.
 
 The browser should wait that many milliseconds before reconnecting. Or longer, e.g. if the browser knows (from OS) that there’s no network connection at the moment, it may wait until the connection appears, and then retry.
 
--   If the server wants the browser to stop reconnecting, it should respond with HTTP status 204.
--   If the browser wants to close the connection, it should call `eventSource.close()`:
+- If the server wants the browser to stop reconnecting, it should respond with HTTP status 204.
+- If the browser wants to close the connection, it should call `eventSource.close()`:
 
-    let eventSource = new EventSource(...);
+  let eventSource = new EventSource(...);
 
-    eventSource.close();
+  eventSource.close();
 
 Also, there will be no reconnection if the response has an incorrect `Content-Type` or its HTTP status differs from 301, 307, 200 and 204. In such cases the `"error"` event will be emitted, and the browser won’t reconnect.
 
     When a connection is finally closed, there's no way to "reopen" it. If we'd like to connect again, just create a new `EventSource`.
 
-Message id
-----------
+## Message id
 
 When a connection breaks due to network problems, either side can’t be sure which messages were received, and which weren’t.
 
@@ -120,30 +116,28 @@ To correctly resume the connection, each message should have an `id` field, like
 
 When a message with `id:` is received, the browser:
 
--   Sets the property `eventSource.lastEventId` to its value.
--   Upon reconnection sends the header `Last-Event-ID` with that `id`, so that the server may re-send following messages.
+- Sets the property `eventSource.lastEventId` to its value.
+- Upon reconnection sends the header `Last-Event-ID` with that `id`, so that the server may re-send following messages.
 
-`` smart header="Put `id:` after `data:`" Please note: the `id` is         appended below message `data` by the server, to ensure that         `lastEventId` is updated after the message is received. ``
+`` smart header="Put `id:` after `data:`" Please note: the `id` is appended below message `data` by the server, to ensure that `lastEventId` is updated after the message is received. ``
 
-Connection status: readyState
------------------------------
+## Connection status: readyState
 
 The `EventSource` object has `readyState` property, that has one of three values:
 
-`js no-beautify EventSource.CONNECTING = 0; // connecting or         reconnecting EventSource.OPEN = 1; // connected EventSource.CLOSED = 2;         // connection closed`
+`js no-beautify EventSource.CONNECTING = 0; // connecting or reconnecting EventSource.OPEN = 1; // connected EventSource.CLOSED = 2; // connection closed`
 
 When an object is created, or the connection is down, it’s always `EventSource.CONNECTING` (equals `0`).
 
 We can query this property to know the state of `EventSource`.
 
-Event types
------------
+## Event types
 
 By default `EventSource` object generates three events:
 
--   `message` – a message received, available as `event.data`.
--   `open` – the connection is open.
--   `error` – the connection could not be established, e.g. the server returned HTTP 500 status.
+- `message` – a message received, available as `event.data`.
+- `open` – the connection is open.
+- `error` – the connection could not be established, e.g. the server returned HTTP 500 status.
 
 The server may specify another type of event with `event: ...` at the event start.
 
@@ -171,8 +165,7 @@ To handle custom events, we must use `addEventListener`, not `onmessage`:
       alert(`Left ${event.data}`);
     });
 
-Full example
-------------
+## Full example
 
 Here’s the server that sends messages with `1`, `2`, `3`, then `bye` and breaks the connection.
 
@@ -180,8 +173,7 @@ Then the browser automatically reconnects.
 
 \[codetabs src=“eventsource”\]
 
-Summary
--------
+## Summary
 
 `EventSource` object automatically establishes a persistent connection and allows the server to send messages over it.
 
@@ -233,9 +225,9 @@ The server sends messages, delimited by `\n\n`.
 
 A message may have following fields:
 
--   `data:` – message body, a sequence of multiple `data` is interpreted as a single message, with `\n` between the parts.
--   `id:` – renews `lastEventId`, sent in `Last-Event-ID` on reconnect.
--   `retry:` – recommends a retry delay for reconnections in ms. There’s no way to set it from JavaScript.
--   `event:` – event name, must precede `data:`.
+- `data:` – message body, a sequence of multiple `data` is interpreted as a single message, with `\n` between the parts.
+- `id:` – renews `lastEventId`, sent in `Last-Event-ID` on reconnect.
+- `retry:` – recommends a retry delay for reconnections in ms. There’s no way to set it from JavaScript.
+- `event:` – event name, must precede `data:`.
 
 A message may include one or more fields in any order, but `id:` usually goes the last.

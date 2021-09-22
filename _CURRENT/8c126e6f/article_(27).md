@@ -1,10 +1,8 @@
-Automated testing with Mocha
-============================
+# Automated testing with Mocha
 
 Automated testing will be used in further tasks, and it’s also widely used in real projects.
 
-Why do we need tests?
----------------------
+## Why do we need tests?
 
 When we write a function, we can usually imagine what it should do: which parameters give which results.
 
@@ -22,8 +20,7 @@ That’s very typical. When we develop something, we keep a lot of possible use 
 
 **Automated testing means that tests are written separately, in addition to the code. They run our functions in various ways and compare results with the expected.**
 
-Behavior Driven Development (BDD)
----------------------------------
+## Behavior Driven Development (BDD)
 
 Let’s start with a technique named [Behavior Driven Development](http://en.wikipedia.org/wiki/Behavior-driven_development) or, in short, BDD.
 
@@ -31,8 +28,7 @@ Let’s start with a technique named [Behavior Driven Development](http://en.wik
 
 To understand BDD, we’ll examine a practical case of development.
 
-Development of “pow”: the spec
-------------------------------
+## Development of “pow”: the spec
 
 Let’s say we want to make a function `pow(x, n)` that raises `x` to an integer power `n`. We assume that `n≥0`.
 
@@ -40,7 +36,7 @@ That task is just an example: there’s the `**` operator in JavaScript that can
 
 Before creating the code of `pow`, we can imagine what the function should do and describe it.
 
-Such description is called a *specification* or, in short, a spec, and contains descriptions of use cases together with tests for them, like this:
+Such description is called a _specification_ or, in short, a spec, and contains descriptions of use cases together with tests for them, like this:
 
     describe("pow", function() {
 
@@ -56,7 +52,7 @@ A spec has three main building blocks that you can see above:
 What functionality we’re describing. In our case we’re describing the function `pow`. Used to group “workers” – the `it` blocks.
 
 `it("use case description", function() { ... })`  
-In the title of `it` we *in a human-readable way* describe the particular use case, and the second argument is a function that tests it.
+In the title of `it` we _in a human-readable way_ describe the particular use case, and the second argument is a function that tests it.
 
 `assert.equal(value1, value2)`  
 The code inside `it` block, if the implementation is correct, should execute without errors.
@@ -65,8 +61,7 @@ Functions `assert.*` are used to check whether `pow` works as expected. Right he
 
 The specification can be executed, and it will run the test specified in `it` block. We’ll see that later.
 
-The development flow
---------------------
+## The development flow
 
 The flow of development usually looks like this:
 
@@ -78,20 +73,19 @@ The flow of development usually looks like this:
 6.  Go to 3, update the implementation till tests give no errors.
 7.  Repeat steps 3-6 till the functionality is ready.
 
-So, the development is *iterative*. We write the spec, implement it, make sure tests pass, then write more tests, make sure they work etc. At the end we have both a working implementation and tests for it.
+So, the development is _iterative_. We write the spec, implement it, make sure tests pass, then write more tests, make sure they work etc. At the end we have both a working implementation and tests for it.
 
 Let’s see this development flow in our practical case.
 
 The first step is already complete: we have an initial spec for `pow`. Now, before making the implementation, let’s use few JavaScript libraries to run the tests, just to see that they are working (they will all fail).
 
-The spec in action
-------------------
+## The spec in action
 
 Here in the tutorial we’ll be using the following JavaScript libraries for tests:
 
--   [Mocha](http://mochajs.org/) – the core framework: it provides common testing functions including `describe` and `it` and the main function that runs tests.
--   [Chai](http://chaijs.com) – the library with many assertions. It allows to use a lot of different assertions, for now we need only `assert.equal`.
--   [Sinon](http://sinonjs.org/) – a library to spy over functions, emulate built-in functions and more, we’ll need it much later.
+- [Mocha](http://mochajs.org/) – the core framework: it provides common testing functions including `describe` and `it` and the main function that runs tests.
+- [Chai](http://chaijs.com) – the library with many assertions. It allows to use a lot of different assertions, for now we need only `assert.equal`.
+- [Sinon](http://sinonjs.org/) – a library to spy over functions, emulate built-in functions and more, we’ll need it much later.
 
 These libraries are suitable for both in-browser and server-side testing. Here we’ll consider the browser variant.
 
@@ -115,8 +109,7 @@ As of now, the test fails, there’s an error. That’s logical: we have an empt
 
 For the future, let’s note that there are more high-level test-runners, like [karma](https://karma-runner.github.io/) and others, that make it easy to autorun many different tests.
 
-Initial implementation
-----------------------
+## Initial implementation
 
 Let’s make a simple implementation of `pow`, for tests to pass:
 
@@ -128,8 +121,7 @@ Wow, now it works!
 
 \[iframe height=250 src=“pow-min” border=1 edit\]
 
-Improving the spec
-------------------
+## Improving the spec
 
 What we’ve done is definitely a cheat. The function does not work: an attempt to calculate `pow(3,4)` would give an incorrect result, but tests pass.
 
@@ -184,8 +176,7 @@ The result:
 
 As we could expect, the second test failed. Sure, our function always returns `8`, while the `assert` expects `81`.
 
-Improving the implementation
-----------------------------
+## Improving the implementation
 
 Let’s write something more real for tests to pass:
 
@@ -220,8 +211,7 @@ The result:
 
 \[iframe height=250 src=“pow-3” edit border=“1”\]
 
-Nested describe
----------------
+## Nested describe
 
 We’re going to add even more tests. But before that let’s note that the helper function `makeTest` and `for` should be grouped together. We won’t need `makeTest` in other tests, it’s needed only in `for`: their common task is to check how `pow` raises into the given power.
 
@@ -279,8 +269,7 @@ Testing started – before all tests (before) Before a test – enter a test (be
 
     Usually, `beforeEach/afterEach` and `before/after` are used to perform initialization, zero out counters or do something else between the tests (or test groups).
 
-Extending the spec
-------------------
+## Extending the spec
 
 The basic functionality of `pow` is complete. The first iteration of the development is done. When we’re done celebrating and drinking champagne – let’s go on and improve it.
 
@@ -302,7 +291,7 @@ Let’s first add the behavior to the spec(!):
 
       it("for non-integer n the result is NaN", function() {
     *!*
-        assert.isNaN(pow(2, 1.5));    
+        assert.isNaN(pow(2, 1.5));
     */!*
       });
 
@@ -318,12 +307,12 @@ The newly added tests fail, because our implementation does not support them. Th
 
 There are other assertions in [Chai](http://chaijs.com) as well, for instance:
 
--   `assert.equal(value1, value2)` – checks the equality `value1 == value2`.
--   `assert.strictEqual(value1, value2)` – checks the strict equality `value1 === value2`.
--   `assert.notEqual`, `assert.notStrictEqual` – inverse checks to the ones above.
--   `assert.isTrue(value)` – checks that `value === true`
--   `assert.isFalse(value)` – checks that `value === false`
--   …the full list is in the [docs](http://chaijs.com/api/assert/) \`\`\`
+- `assert.equal(value1, value2)` – checks the equality `value1 == value2`.
+- `assert.strictEqual(value1, value2)` – checks the strict equality `value1 === value2`.
+- `assert.notEqual`, `assert.notStrictEqual` – inverse checks to the ones above.
+- `assert.isTrue(value)` – checks that `value === true`
+- `assert.isFalse(value)` – checks that `value === false`
+- …the full list is in the [docs](http://chaijs.com/api/assert/) \`\`\`
 
 So we should add a couple of lines to `pow`:
 
@@ -348,8 +337,7 @@ Now it works, all tests pass:
 
 \[edit src=“pow-full” title=“Open the full final example in the sandbox.”\]
 
-Summary
--------
+## Summary
 
 In BDD, the spec goes first, followed by implementation. At the end we have both the spec and the code.
 

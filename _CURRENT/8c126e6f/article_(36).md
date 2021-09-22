@@ -1,5 +1,4 @@
-Object to primitive conversion
-==============================
+# Object to primitive conversion
 
 What happens when objects are added `obj1 + obj2`, subtracted `obj1 - obj2` or printed using `alert(obj)`?
 
@@ -11,8 +10,7 @@ In the chapter <a href="info:type-conversions" class="uri">info:type-conversions
 2.  The numeric conversion happens when we subtract objects or apply mathematical functions. For instance, `Date` objects (to be covered in the chapter <a href="info:date" class="uri">info:date</a>) can be subtracted, and the result of `date1 - date2` is the time difference between two dates.
 3.  As for the string conversion – it usually happens when we output an object like `alert(obj)` and in similar contexts.
 
-ToPrimitive
------------
+## ToPrimitive
 
 We can fine-tune string and numeric conversion, using special object methods.
 
@@ -65,12 +63,11 @@ There is no “boolean” hint (all objects are `true` in boolean context) or an
 
 1.  Call `obj[Symbol.toPrimitive](hint)` - the method with the symbolic key `Symbol.toPrimitive` (system symbol), if such method exists,
 2.  Otherwise if hint is `"string"`
-    -   try `obj.toString()` and `obj.valueOf()`, whatever exists.
+    - try `obj.toString()` and `obj.valueOf()`, whatever exists.
 3.  Otherwise if hint is `"number"` or `"default"`
-    -   try `obj.valueOf()` and `obj.toString()`, whatever exists.
+    - try `obj.valueOf()` and `obj.toString()`, whatever exists.
 
-Symbol.toPrimitive
-------------------
+## Symbol.toPrimitive
 
 Let’s start from the first method. There’s a built-in symbol named `Symbol.toPrimitive` that should be used to name the conversion method, like this:
 
@@ -89,22 +86,21 @@ For instance, here `user` object implements it:
 
 As we can see from the code, `user` becomes a self-descriptive string or a money amount depending on the conversion. The single method `user[Symbol.toPrimitive]` handles all conversion cases.
 
-toString/valueOf
-----------------
+## toString/valueOf
 
 Methods `toString` and `valueOf` come from ancient times. They are not symbols (symbols did not exist that long ago), but rather “regular” string-named methods. They provide an alternative “old-style” way to implement the conversion.
 
 If there’s no `Symbol.toPrimitive` then JavaScript tries to find them and try in the order:
 
--   `toString -> valueOf` for “string” hint.
--   `valueOf -> toString` otherwise.
+- `toString -> valueOf` for “string” hint.
+- `valueOf -> toString` otherwise.
 
 These methods must return a primitive value. If `toString` or `valueOf` returns an object, then it’s ignored (same as if there were no method).
 
 By default, a plain object has following `toString` and `valueOf` methods:
 
--   The `toString` method returns a string `"[object Object]"`.
--   The `valueOf` method returns the object itself.
+- The `toString` method returns a string `"[object Object]"`.
+- The `valueOf` method returns the object itself.
 
 Here’s the demo:
 
@@ -142,8 +138,7 @@ alert(user); // toString -&gt; John alert(user + 500); // toString -&gt; John500
 
 In the absence of `Symbol.toPrimitive` and `valueOf`, `toString` will handle all primitive conversions.
 
-Return types
-------------
+## Return types
 
 The important thing to know about all primitive-conversion methods is that they do not necessarily return the “hinted” primitive.
 
@@ -153,10 +148,9 @@ The only mandatory thing: these methods must return a primitive, not an object.
 
 \`\``smart header="Historical notes" For historical reasons, if`toString`or`valueOf\` returns an object, there’s no error, but such value is ignored (like if the method didn’t exist). That’s because in ancient times there was no good “error” concept in JavaScript.
 
-In contrast, `Symbol.toPrimitive` *must* return a primitive, otherwise there will be an error. \`\`\`
+In contrast, `Symbol.toPrimitive` _must_ return a primitive, otherwise there will be an error. \`\`\`
 
-Further conversions
--------------------
+## Further conversions
 
 As we know already, many operators and functions perform type conversions, e.g. multiplication `*` converts operands to numbers.
 
@@ -177,8 +171,7 @@ Binary plus will concatenate strings in the same situation, as it gladly accepts
 
 alert(obj + 2); // 22 (“2” + 2), conversion to primitive returned a string =&gt; concatenation \`\`\`
 
-Summary
--------
+## Summary
 
 The object-to-primitive conversion is called automatically by many built-in functions and operators that expect a primitive as a value.
 
@@ -190,8 +183,8 @@ The conversion algorithm is:
 
 1.  Call `obj[Symbol.toPrimitive](hint)` if the method exists,
 2.  Otherwise if hint is `"string"`
-    -   try `obj.toString()` and `obj.valueOf()`, whatever exists.
+    - try `obj.toString()` and `obj.valueOf()`, whatever exists.
 3.  Otherwise if hint is `"number"` or `"default"`
-    -   try `obj.valueOf()` and `obj.toString()`, whatever exists.
+    - try `obj.valueOf()` and `obj.toString()`, whatever exists.
 
 In practice, it’s often enough to implement only `obj.toString()` as a “catch-all” method for all conversions that return a “human-readable” representation of an object, for logging or debugging purposes.

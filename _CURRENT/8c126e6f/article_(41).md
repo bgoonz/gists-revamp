@@ -1,17 +1,15 @@
-Array methods
-=============
+# Array methods
 
 Arrays provide a lot of methods. To make things easier, in this chapter they are split into groups.
 
-Add/remove items
-----------------
+## Add/remove items
 
 We already know methods that add and remove items from the beginning or the end:
 
--   `arr.push(...items)` – adds items to the end,
--   `arr.pop()` – extracts an item from the end,
--   `arr.shift()` – extracts an item from the beginning,
--   `arr.unshift(...items)` – adds items to the beginning.
+- `arr.push(...items)` – adds items to the end,
+- `arr.pop()` – extracts an item from the end,
+- `arr.shift()` – extracts an item from the beginning,
+- `arr.unshift(...items)` – adds items to the beginning.
 
 Here are a few others.
 
@@ -49,7 +47,7 @@ Let’s start with the deletion:
 
 \`\`\`js run let arr = \[“I”, “study”, “JavaScript”\];
 
-*!* arr.splice(1, 1); // from index 1 remove 1 element */!*
+_!_ arr.splice(1, 1); // from index 1 remove 1 element _/!_
 
 alert( arr ); // \[“I”, “JavaScript”\] \`\`\`
 
@@ -57,15 +55,15 @@ Easy, right? Starting from the index `1` it removed `1` element.
 
 In the next example we remove 3 elements and replace them with the other two:
 
-\`\`\`js run let arr = \[*!*“I”, “study”, “JavaScript”,*/!* “right”, “now”\];
+\`\`\`js run let arr = \[_!_“I”, “study”, “JavaScript”,_/!_ “right”, “now”\];
 
 // remove 3 first elements and replace them with another arr.splice(0, 3, “Let’s”, “dance”);
 
-alert( arr ) // now \[*!*“Let’s”, “dance”*/!*, “right”, “now”\] \`\`\`
+alert( arr ) // now \[_!_“Let’s”, “dance”_/!_, “right”, “now”\] \`\`\`
 
 Here we can see that `splice` returns the array of removed elements:
 
-\`\`\`js run let arr = \[*!*“I”, “study”,*/!* “JavaScript”, “right”, “now”\];
+\`\`\`js run let arr = \[_!_“I”, “study”,_/!_ “JavaScript”, “right”, “now”\];
 
 // remove 2 first elements let removed = arr.splice(0, 2);
 
@@ -145,12 +143,11 @@ alert( arr.concat(arrayLike) ); // 1,2,\[object Object\] \`\`\`
 
 \`\`\`js run let arr = \[1, 2\];
 
-let arrayLike = { 0: “something”, 1: “else”, *!* \[Symbol.isConcatSpreadable\]: true, */!* length: 2 };
+let arrayLike = { 0: “something”, 1: “else”, _!_ \[Symbol.isConcatSpreadable\]: true, _/!_ length: 2 };
 
 alert( arr.concat(arrayLike) ); // 1,2,something,else \`\`\`
 
-Iterate: forEach
-----------------
+## Iterate: forEach
 
 The [arr.forEach](mdn:js/Array/forEach) method allows to run a function for every element of the array.
 
@@ -162,16 +159,15 @@ The syntax:
 
 For instance, this shows each element of the array:
 
-`js run // for each element call alert ["Bilbo", "Gandalf",         "Nazgul"].forEach(alert);`
+`js run // for each element call alert ["Bilbo", "Gandalf", "Nazgul"].forEach(alert);`
 
 And this code is more elaborate about their positions in the target array:
 
-`` js run ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array)         => { alert(`${item} is at index ${index} in ${array}`); }); ``
+`` js run ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => { alert(`${item} is at index ${index} in ${array}`); }); ``
 
 The result of the function (if it returns any) is thrown away and ignored.
 
-Searching in array
-------------------
+## Searching in array
 
 Now let’s cover methods that search in an array.
 
@@ -179,9 +175,9 @@ Now let’s cover methods that search in an array.
 
 The methods [arr.indexOf](mdn:js/Array/indexOf), [arr.lastIndexOf](mdn:js/Array/lastIndexOf) and [arr.includes](mdn:js/Array/includes) have the same syntax and do essentially the same as their string counterparts, but operate on items instead of characters:
 
--   `arr.indexOf(item, from)` – looks for `item` starting from index `from`, and returns the index where it was found, otherwise `-1`.
--   `arr.lastIndexOf(item, from)` – same, but looks for from right to left.
--   `arr.includes(item, from)` – looks for `item` starting from index `from`, returns `true` if found.
+- `arr.indexOf(item, from)` – looks for `item` starting from index `from`, and returns the index where it was found, otherwise `-1`.
+- `arr.lastIndexOf(item, from)` – same, but looks for from right to left.
+- `arr.includes(item, from)` – looks for `item` starting from index `from`, returns `true` if found.
 
 For instance:
 
@@ -197,7 +193,7 @@ If we want to check for inclusion, and don’t want to know the exact index, the
 
 Also, a very minor difference of `includes` is that it correctly handles `NaN`, unlike `indexOf/lastIndexOf`:
 
-`js run const arr = [NaN]; alert( arr.indexOf(NaN) ); // -1 (should be         0, but === equality doesn't work for NaN) alert( arr.includes(NaN) );//         true (correct)`
+`js run const arr = [NaN]; alert( arr.indexOf(NaN) ); // -1 (should be 0, but === equality doesn't work for NaN) alert( arr.includes(NaN) );// true (correct)`
 
 ### find and findIndex
 
@@ -214,9 +210,9 @@ The syntax is:
 
 The function is called for elements of the array, one after another:
 
--   `item` is the element.
--   `index` is its index.
--   `array` is the array itself.
+- `item` is the element.
+- `index` is its index.
+- `array` is the array itself.
 
 If it returns `true`, the search is stopped, the `item` is returned. If nothing found, `undefined` is returned.
 
@@ -255,8 +251,7 @@ For instance:
 
 alert(someUsers.length); // 2 \`\`\`
 
-Transform an array
-------------------
+## Transform an array
 
 Let’s move on to methods that transform and reorder an array.
 
@@ -274,11 +269,11 @@ The syntax is:
 
 For instance, here we transform each element into its length:
 
-`js run let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item =>         item.length); alert(lengths); // 5,7,6`
+`js run let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length); alert(lengths); // 5,7,6`
 
 ### sort(fn)
 
-The call to [arr.sort()](mdn:js/Array/sort) sorts the array *in place*, changing its element order.
+The call to [arr.sort()](mdn:js/Array/sort) sorts the array _in place_, changing its element order.
 
 It also returns the sorted array, but the returned value is usually ignored, as `arr` itself is modified.
 
@@ -314,19 +309,19 @@ For instance, to sort as numbers:
 
 let arr = \[ 1, 2, 15 \];
 
-*!* arr.sort(compareNumeric); */!*
+_!_ arr.sort(compareNumeric); _/!_
 
 alert(arr); // *!*1, 2, 15*/!* \`\`\`
 
 Now it works as intended.
 
-Let’s step aside and think what’s happening. The `arr` can be array of anything, right? It may contain numbers or strings or objects or whatever. We have a set of *some items*. To sort it, we need an *ordering function* that knows how to compare its elements. The default is a string order.
+Let’s step aside and think what’s happening. The `arr` can be array of anything, right? It may contain numbers or strings or objects or whatever. We have a set of _some items_. To sort it, we need an _ordering function_ that knows how to compare its elements. The default is a string order.
 
 The `arr.sort(fn)` method implements a generic sorting algorithm. We don’t need to care how it internally works (an optimized [quicksort](https://en.wikipedia.org/wiki/Quicksort) or [Timsort](https://en.wikipedia.org/wiki/Timsort) most of the time). It will walk the array, compare its elements using the provided function and reorder them, all we need is to provide the `fn` which does the comparison.
 
 By the way, if we ever want to know which elements are compared – nothing prevents from alerting them:
 
-`js run [1, -2, 15, 2, 0, 8].sort(function(a, b) { alert( a + " <>         " + b ); return a - b; });`
+`js run [1, -2, 15, 2, 0, 8].sort(function(a, b) { alert( a + " <> " + b ); return a - b; });`
 
 The algorithm may compare an element with multiple others in the process, but it tries to make as few comparisons as possible.
 
@@ -424,10 +419,10 @@ The function is applied to all array elements one after another and “carries o
 
 Arguments:
 
--   `accumulator` – is the result of the previous function call, equals `initial` the first time (if `initial` is provided).
--   `item` – is the current array item.
--   `index` – is its position.
--   `array` – is the array.
+- `accumulator` – is the result of the previous function call, equals `initial` the first time (if `initial` is provided).
+- `item` – is the current array item.
+- `index` – is its position.
+- `array` – is the array.
 
 As function is applied, the result of the previous function call is passed to the next one as the first argument.
 
@@ -487,8 +482,7 @@ So it’s advised to always specify the initial value.
 
 The method [arr.reduceRight](mdn:js/Array/reduceRight) does the same, but goes from right to left.
 
-Array.isArray
--------------
+## Array.isArray
 
 Arrays do not form a separate language type. They are based on objects.
 
@@ -502,8 +496,7 @@ So `typeof` does not help to distinguish a plain object from an array:
 
 alert(Array.isArray(\[\])); // true \`\`\`
 
-Most methods support “thisArg”
-------------------------------
+## Most methods support “thisArg”
 
 Almost all array methods that call functions – like `find`, `filter`, `map`, with a notable exception of `sort`, accept an optional additional parameter `thisArg`.
 
@@ -525,7 +518,7 @@ For example, here we use a method of `army` object as a filter, and `thisArg` pa
 
 let users = \[ {age: 16}, {age: 20}, {age: 23}, {age: 30}\];
 
-*!* // find users, for who army.canJoin returns true let soldiers = users.filter(army.canJoin, army); */!*
+_!_ // find users, for who army.canJoin returns true let soldiers = users.filter(army.canJoin, army); _/!_
 
 alert(soldiers.length); // 2 alert(soldiers\[0\].age); // 20 alert(soldiers\[1\].age); // 23 \`\`\`
 
@@ -533,54 +526,53 @@ If in the example above we used `users.filter(army.canJoin)`, then `army.canJoin
 
 A call to `users.filter(army.canJoin, army)` can be replaced with `users.filter(user => army.canJoin(user))`, that does the same. The latter is used more often, as it’s a bit easier to understand for most people.
 
-Summary
--------
+## Summary
 
 A cheat sheet of array methods:
 
--   To add/remove elements:
-    -   `push(...items)` – adds items to the end,
-    -   `pop()` – extracts an item from the end,
-    -   `shift()` – extracts an item from the beginning,
-    -   `unshift(...items)` – adds items to the beginning.
-    -   `splice(pos, deleteCount, ...items)` – at index `pos` deletes `deleteCount` elements and inserts `items`.
-    -   `slice(start, end)` – creates a new array, copies elements from index `start` till `end` (not inclusive) into it.
-    -   `concat(...items)` – returns a new array: copies all members of the current one and adds `items` to it. If any of `items` is an array, then its elements are taken.
--   To search among elements:
-    -   `indexOf/lastIndexOf(item, pos)` – look for `item` starting from position `pos`, return the index or `-1` if not found.
-    -   `includes(value)` – returns `true` if the array has `value`, otherwise `false`.
-    -   `find/filter(func)` – filter elements through the function, return first/all values that make it return `true`.
-    -   `findIndex` is like `find`, but returns the index instead of a value.
--   To iterate over elements:
-    -   `forEach(func)` – calls `func` for every element, does not return anything.
--   To transform the array:
-    -   `map(func)` – creates a new array from results of calling `func` for every element.
-    -   `sort(func)` – sorts the array in-place, then returns it.
-    -   `reverse()` – reverses the array in-place, then returns it.
-    -   `split/join` – convert a string to array and back.
-    -   `reduce/reduceRight(func, initial)` – calculate a single value over the array by calling `func` for each element and passing an intermediate result between the calls.
--   Additionally:
-    -   `Array.isArray(arr)` checks `arr` for being an array.
+- To add/remove elements:
+  - `push(...items)` – adds items to the end,
+  - `pop()` – extracts an item from the end,
+  - `shift()` – extracts an item from the beginning,
+  - `unshift(...items)` – adds items to the beginning.
+  - `splice(pos, deleteCount, ...items)` – at index `pos` deletes `deleteCount` elements and inserts `items`.
+  - `slice(start, end)` – creates a new array, copies elements from index `start` till `end` (not inclusive) into it.
+  - `concat(...items)` – returns a new array: copies all members of the current one and adds `items` to it. If any of `items` is an array, then its elements are taken.
+- To search among elements:
+  - `indexOf/lastIndexOf(item, pos)` – look for `item` starting from position `pos`, return the index or `-1` if not found.
+  - `includes(value)` – returns `true` if the array has `value`, otherwise `false`.
+  - `find/filter(func)` – filter elements through the function, return first/all values that make it return `true`.
+  - `findIndex` is like `find`, but returns the index instead of a value.
+- To iterate over elements:
+  - `forEach(func)` – calls `func` for every element, does not return anything.
+- To transform the array:
+  - `map(func)` – creates a new array from results of calling `func` for every element.
+  - `sort(func)` – sorts the array in-place, then returns it.
+  - `reverse()` – reverses the array in-place, then returns it.
+  - `split/join` – convert a string to array and back.
+  - `reduce/reduceRight(func, initial)` – calculate a single value over the array by calling `func` for each element and passing an intermediate result between the calls.
+- Additionally:
+  - `Array.isArray(arr)` checks `arr` for being an array.
 
 Please note that methods `sort`, `reverse` and `splice` modify the array itself.
 
 These methods are the most used ones, they cover 99% of use cases. But there are few others:
 
--   [arr.some(fn)](mdn:js/Array/some)/[arr.every(fn)](mdn:js/Array/every) check the array.
+- [arr.some(fn)](mdn:js/Array/some)/[arr.every(fn)](mdn:js/Array/every) check the array.
 
-    The function `fn` is called on each element of the array similar to `map`. If any/all results are `true`, returns `true`, otherwise `false`.
+  The function `fn` is called on each element of the array similar to `map`. If any/all results are `true`, returns `true`, otherwise `false`.
 
-    These methods behave sort of like `||` and `&&` operators: if `fn` returns a truthy value, `arr.some()` immediately returns `true` and stops iterating over the rest of items; if `fn` returns a falsy value, `arr.every()` immediately returns `false` and stops iterating over the rest of items as well.
+  These methods behave sort of like `||` and `&&` operators: if `fn` returns a truthy value, `arr.some()` immediately returns `true` and stops iterating over the rest of items; if `fn` returns a falsy value, `arr.every()` immediately returns `false` and stops iterating over the rest of items as well.
 
-    We can use `every` to compare arrays: \`\`\`js run function arraysEqual(arr1, arr2) { return arr1.length === arr2.length && arr1.every((value, index) =&gt; value === arr2\[index\]); }
+  We can use `every` to compare arrays: \`\`\`js run function arraysEqual(arr1, arr2) { return arr1.length === arr2.length && arr1.every((value, index) =&gt; value === arr2\[index\]); }
 
-    alert( arraysEqual(\[1, 2\], \[1, 2\])); // true \`\`\`
+  alert( arraysEqual(\[1, 2\], \[1, 2\])); // true \`\`\`
 
--   [arr.fill(value, start, end)](mdn:js/Array/fill) – fills the array with repeating `value` from index `start` to `end`.
+- [arr.fill(value, start, end)](mdn:js/Array/fill) – fills the array with repeating `value` from index `start` to `end`.
 
--   [arr.copyWithin(target, start, end)](mdn:js/Array/copyWithin) – copies its elements from position `start` till position `end` into *itself*, at position `target` (overwrites existing).
+- [arr.copyWithin(target, start, end)](mdn:js/Array/copyWithin) – copies its elements from position `start` till position `end` into _itself_, at position `target` (overwrites existing).
 
--   [arr.flat(depth)](mdn:js/Array/flat)/[arr.flatMap(fn)](mdn:js/Array/flatMap) create a new flat array from a multidimensional array.
+- [arr.flat(depth)](mdn:js/Array/flat)/[arr.flatMap(fn)](mdn:js/Array/flatMap) create a new flat array from a multidimensional array.
 
 For the full list, see the [manual](mdn:js/Array).
 

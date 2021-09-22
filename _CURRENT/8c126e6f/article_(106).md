@@ -1,7 +1,6 @@
-Event delegation
-================
+# Event delegation
 
-Capturing and bubbling allow us to implement one of most powerful event handling patterns called *event delegation*.
+Capturing and bubbling allow us to implement one of most powerful event handling patterns called _event delegation_.
 
 The idea is that if we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.
 
@@ -91,12 +90,11 @@ Here’s the improved code:
       highlight(td); // (4)
     };
 
-Explanations: 1. The method `elem.closest(selector)` returns the nearest ancestor that matches the selector. In our case we look for `<td>` on the way up from the source element. 2. If `event.target` is not inside any `<td>`, then the call returns immediately, as there’s nothing to do. 3. In case of nested tables, `event.target` may be a `<td>`, but lying outside of the current table. So we check if that’s actually *our table’s* `<td>`. 4. And, if it’s so, then highlight it.
+Explanations: 1. The method `elem.closest(selector)` returns the nearest ancestor that matches the selector. In our case we look for `<td>` on the way up from the source element. 2. If `event.target` is not inside any `<td>`, then the call returns immediately, as there’s nothing to do. 3. In case of nested tables, `event.target` may be a `<td>`, but lying outside of the current table. So we check if that’s actually _our table’s_ `<td>`. 4. And, if it’s so, then highlight it.
 
 As the result, we have a fast, efficient highlighting code, that doesn’t care about the total number of `<td>` in the table.
 
-Delegation example: actions in markup
--------------------------------------
+## Delegation example: actions in markup
 
 There are other uses for event delegation.
 
@@ -123,10 +121,9 @@ So, what advantages does delegation give us here?
 
 We could also use classes `.action-save`, `.action-load`, but an attribute `data-action` is better semantically. And we can use it in CSS rules too.
 
-The “behavior” pattern
-----------------------
+## The “behavior” pattern
 
-We can also use event delegation to add “behaviors” to elements *declaratively*, with special attributes and classes.
+We can also use event delegation to add “behaviors” to elements _declaratively_, with special attributes and classes.
 
 The pattern has two parts: 1. We add a custom attribute to an element that describes its behavior. 2. A document-wide handler tracks events, and if an event happens on an attributed element – performs the action.
 
@@ -150,7 +147,7 @@ For real projects it’s normal that there are many handlers on `document` set b
 
 One more example of behavior. A click on an element with the attribute `data-toggle-id` will show/hide the element with the given `id`:
 
-\`\`\`html autorun run height=60 &lt;button *!*data-toggle-id=“subscribe-mail”*/!*&gt; Show the subscription form
+\`\`\`html autorun run height=60 &lt;button *!*data-toggle-id=“subscribe-mail”_/!_&gt; Show the subscription form
 
 Your mail:
 
@@ -164,8 +161,7 @@ We can combine multiple behaviors on a single element as well.
 
 The “behavior” pattern can be an alternative to mini-fragments of JavaScript.
 
-Summary
--------
+## Summary
 
 Event delegation is really cool! It’s one of the most helpful patterns for DOM events.
 

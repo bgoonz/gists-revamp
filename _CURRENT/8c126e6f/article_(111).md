@@ -1,5 +1,4 @@
-Drag’n’Drop with mouse events
-=============================
+# Drag’n’Drop with mouse events
 
 Drag’n’Drop is a great interface solution. Taking something and dragging and dropping it is a clear and simple way to do many things, from copying and moving documents (as in file managers) to ordering (dropping items into a cart).
 
@@ -11,8 +10,7 @@ But native Drag Events also have limitations. For instance, we can’t prevent d
 
 So here we’ll see how to implement Drag’n’Drop using mouse events.
 
-Drag’n’Drop algorithm
----------------------
+## Drag’n’Drop algorithm
 
 The basic Drag’n’Drop algorithm looks like this:
 
@@ -24,14 +22,14 @@ These are the basics. Later we’ll see how to other features, such as highlight
 
 Here’s the implementation of dragging a ball:
 
-    ball.onmousedown = function(event) { 
+    ball.onmousedown = function(event) {
       // (1) prepare to moving: make absolute and on top by z-index
       ball.style.position = 'absolute';
       ball.style.zIndex = 1000;
 
       // move it out of any current parents directly into body
       // to make it positioned relative to the body
-      document.body.append(ball);  
+      document.body.append(ball);
 
       // centers the ball at (pageX, pageY) coordinates
       function moveAt(pageX, pageY) {
@@ -85,8 +83,7 @@ But as we remember, `mousemove` triggers often, but not for every pixel. So afte
 
 So we should listen on `document` to catch it.
 
-Correct positioning
--------------------
+## Correct positioning
 
 In the examples above the ball is always moved so, that it’s center is under the pointer:
 
@@ -165,8 +162,7 @@ The final code with better positioning:
 
 The difference is especially noticeable if we drag the ball by its right-bottom corner. In the previous example the ball “jumps” under the pointer. Now it fluently follows the pointer from the current position.
 
-Potential drop targets (droppables)
------------------------------------
+## Potential drop targets (droppables)
 
 In previous examples the ball could be dropped just “anywhere” to stay. In real-life we usually take one element and drop it onto another. For instance, a “file” into a “folder” or something else.
 
@@ -184,7 +180,7 @@ The problem is that, while we’re dragging, the draggable element is always abo
 
 For instance, below are two `<div>` elements, red one on top of the blue one (fully covers). There’s no way to catch an event on the blue one, because the red is on top:
 
-`html run autorun height=60 <style> div { width: 50px; height:         50px; position: absolute; top: 0; } </style> <div         style="background:blue" onmouseover="alert('never         works')"></div> <div style="background:red"         onmouseover="alert('over red!')"></div>`
+`html run autorun height=60 <style> div { width: 50px; height: 50px; position: absolute; top: 0; } </style> <div style="background:blue" onmouseover="alert('never works')"></div> <div style="background:red" onmouseover="alert('over red!')"></div>`
 
 The same with a draggable element. The ball is always on top over other elements, so events happen on it. Whatever handlers we set on lower elements, they won’t work.
 
@@ -251,8 +247,7 @@ In the example below when the ball is dragged over the soccer goal, the goal is 
 
 Now we have the current “drop target”, that we’re flying over, in the variable `currentDroppable` during the whole process and can use it to highlight or any other stuff.
 
-Summary
--------
+## Summary
 
 We considered a basic Drag’n’Drop algorithm.
 
@@ -264,10 +259,10 @@ The key components:
 
 We can lay a lot on this foundation.
 
--   On `mouseup` we can intellectually finalize the drop: change data, move elements around.
--   We can highlight the elements we’re flying over.
--   We can limit dragging by a certain area or direction.
--   We can use event delegation for `mousedown/up`. A large-area event handler that checks `event.target` can manage Drag’n’Drop for hundreds of elements.
--   And so on.
+- On `mouseup` we can intellectually finalize the drop: change data, move elements around.
+- We can highlight the elements we’re flying over.
+- We can limit dragging by a certain area or direction.
+- We can use event delegation for `mousedown/up`. A large-area event handler that checks `event.target` can manage Drag’n’Drop for hundreds of elements.
+- And so on.
 
 There are frameworks that build architecture over it: `DragZone`, `Droppable`, `Draggable` and other classes. Most of them do the similar stuff to what’s described above, so it should be easy to understand them now. Or roll your own, as you can see that that’s easy enough to do, sometimes easier than adapting a third-party solution.

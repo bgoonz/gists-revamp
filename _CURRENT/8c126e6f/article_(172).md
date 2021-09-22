@@ -1,5 +1,4 @@
-Sticky flag “y”, searching at position
-======================================
+# Sticky flag “y”, searching at position
 
 The flag `pattern:y` allows to perform the search at the given position in the source string.
 
@@ -13,8 +12,8 @@ E.g. we have a code string `subject:let varName = "value"`, and we need to read 
 
 We’ll look for variable name using regexp `pattern:\w+`. Actually, JavaScript variable names need a bit more complex regexp for accurate matching, but here it doesn’t matter.
 
--   A call to `str.match(/\w+/)` will find only the first word in the line (`let`). That’s not it.
--   We can add the flag `pattern:g`. But then the call `str.match(/\w+/g)` will look for all words in the text, while we need one word at position `4`. Again, not what we need.
+- A call to `str.match(/\w+/)` will find only the first word in the line (`let`). That’s not it.
+- We can add the flag `pattern:g`. But then the call `str.match(/\w+/g)` will look for all words in the text, while we need one word at position `4`. Again, not what we need.
 
 **So, how to search for a regexp exactly at the given position?**
 
@@ -60,7 +59,7 @@ Like this:
 
 let regexp = /+/g; // without flag “g”, property lastIndex is ignored
 
-*!* regexp.lastIndex = 4; */!*
+_!_ regexp.lastIndex = 4; _/!_
 
 let word = regexp.exec(str); alert(word); // varName \`\`\`
 
@@ -78,7 +77,7 @@ Please note: the `regexp.exec` call starts searching at position `lastIndex` and
 
 let regexp = /+/g;
 
-*!* // start the search from position 3 regexp.lastIndex = 3; */!*
+_!_ // start the search from position 3 regexp.lastIndex = 3; _/!_
 
 let word = regexp.exec(str); // found the match at position 4 alert(word\[0\]); // varName alert(word.index); // 4 \`\`\`
 

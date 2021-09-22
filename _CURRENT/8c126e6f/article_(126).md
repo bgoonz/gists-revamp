@@ -1,32 +1,30 @@
-Cross-window communication
-==========================
+# Cross-window communication
 
 The “Same Origin” (same site) policy limits access of windows and frames to each other.
 
 The idea is that if a user has two pages open: one from `john-smith.com`, and another one is `gmail.com`, then they wouldn’t want a script from `john-smith.com` to read our mail from `gmail.com`. So, the purpose of the “Same Origin” policy is to protect users from information theft.
 
-Same Origin \[\#same-origin\]
------------------------------
+## Same Origin \[\#same-origin\]
 
 Two URLs are said to have the “same origin” if they have the same protocol, domain and port.
 
 These URLs all share the same origin:
 
--   `http://site.com`
--   `http://site.com/`
--   `http://site.com/my/page.html`
+- `http://site.com`
+- `http://site.com/`
+- `http://site.com/my/page.html`
 
 These ones do not:
 
--   `http://www.site.com` (another domain: `www.` matters)
--   `http://site.org` (another domain: `.org` matters)
--   `https://site.com` (another protocol: `https`)
--   `http://site.com:8080` (another port: `8080`)
+- `http://www.site.com` (another domain: `www.` matters)
+- `http://site.org` (another domain: `.org` matters)
+- `https://site.com` (another protocol: `https`)
+- `http://site.com:8080` (another port: `8080`)
 
 The “Same Origin” policy states that:
 
--   if we have a reference to another window, e.g. a popup created by `window.open` or a window inside `<iframe>`, and that window comes from the same origin, then we have full access to that window.
--   otherwise, if it comes from another origin, then we can’t access the content of that window: variables, document, anything. The only exception is `location`: we can change it (thus redirecting the user). But we cannot *read* location (so we can’t see where the user is now, no information leak).
+- if we have a reference to another window, e.g. a popup created by `window.open` or a window inside `<iframe>`, and that window comes from the same origin, then we have full access to that window.
+- otherwise, if it comes from another origin, then we can’t access the content of that window: variables, document, anything. The only exception is `location`: we can change it (thus redirecting the user). But we cannot _read_ location (so we can’t see where the user is now, no information leak).
 
 ### In action: iframe
 
@@ -34,8 +32,8 @@ An `<iframe>` tag hosts a separate embedded window, with its own separate `docum
 
 We can access them using properties:
 
--   `iframe.contentWindow` to get the window inside the `<iframe>`.
--   `iframe.contentDocument` to get the document inside the `<iframe>`, shorthand for `iframe.contentWindow.document`.
+- `iframe.contentWindow` to get the window inside the `<iframe>`.
+- `iframe.contentDocument` to get the document inside the `<iframe>`, shorthand for `iframe.contentWindow.document`.
 
 When we access something inside the embedded window, the browser checks if the iframe has the same origin. If that’s not so then the access is denied (writing to `location` is an exception, it’s still permitted).
 
@@ -47,8 +45,8 @@ For instance, let’s try reading and writing to `<iframe>` from another origin:
 
 The code above shows errors for any operations except:
 
--   Getting the reference to the inner window `iframe.contentWindow` - that’s allowed.
--   Writing to `location`.
+- Getting the reference to the inner window `iframe.contentWindow` - that’s allowed.
+- Writing to `location`.
 
 Contrary to that, if the `<iframe>` has the same origin, we can do anything with it:
 
@@ -56,12 +54,11 @@ Contrary to that, if the `<iframe>` has the same origin, we can do anything with
 
 \`\`\`
 
-\`\``smart header="`iframe.onload`vs`iframe.contentWindow.onload`" The`iframe.onload`event (on the``tag) is essentially the same as`iframe.contentWindow.onload\` (on the embedded window object). It triggers when the embedded window fully loads with all resources.
+\`\``smart header="`iframe.onload`vs`iframe.contentWindow.onload`" The`iframe.onload` event (on the``tag) is essentially the same as `iframe.contentWindow.onload\` (on the embedded window object). It triggers when the embedded window fully loads with all resources.
 
 …But we can’t access `iframe.contentWindow.onload` for an iframe from another origin, so using `iframe.onload`. \`\`\`
 
-Windows on subdomains: document.domain
---------------------------------------
+## Windows on subdomains: document.domain
 
 By definition, two URLs with different domains have different origins.
 
@@ -73,8 +70,7 @@ To make it work, each such window should run the code:
 
 That’s all. Now they can interact without limitations. Again, that’s only possible for pages with the same second-level domain.
 
-Iframe: wrong document pitfall
-------------------------------
+## Iframe: wrong document pitfall
 
 When an iframe comes from the same origin, and we may access its `document`, there’s a pitfall. It’s not related to cross-origin things, but important to know.
 
@@ -88,7 +84,7 @@ Here, look:
 
 \`\`\`
 
-We shouldn’t work with the document of a not-yet-loaded iframe, because that’s the *wrong document*. If we set any event handlers on it, they will be ignored.
+We shouldn’t work with the document of a not-yet-loaded iframe, because that’s the _wrong document_. If we set any event handlers on it, they will be ignored.
 
 How to detect the moment when the document is there?
 
@@ -100,13 +96,12 @@ We can try to catch the moment earlier using checks in `setInterval`:
 
 \`\`\`
 
-Collection: window.frames
--------------------------
+## Collection: window.frames
 
 An alternative way to get a window object for `<iframe>` – is to get it from the named collection `window.frames`:
 
--   By number: `window.frames[0]` – the window object for the first frame in the document.
--   By name: `window.frames.iframeName` – the window object for the frame with `name="iframeName"`.
+- By number: `window.frames[0]` – the window object for the first frame in the document.
+- By name: `window.frames.iframeName` – the window object for the frame with `name="iframeName"`.
 
 For instance:
 
@@ -118,9 +113,9 @@ An iframe may have other iframes inside. The corresponding `window` objects form
 
 Navigation links are:
 
--   `window.frames` – the collection of “children” windows (for nested frames).
--   `window.parent` – the reference to the “parent” (outer) window.
--   `window.top` – the reference to the topmost parent window.
+- `window.frames` – the collection of “children” windows (for nested frames).
+- `window.parent` – the reference to the “parent” (outer) window.
+- `window.top` – the reference to the topmost parent window.
 
 For instance:
 
@@ -128,10 +123,9 @@ For instance:
 
 We can use the `top` property to check if the current document is open inside a frame or not:
 
-`js run if (window == top) { // current window == window.top?   alert('The script is in the topmost window, not in a frame'); } else {   alert('The script runs in a frame!'); }`
+`js run if (window == top) { // current window == window.top? alert('The script is in the topmost window, not in a frame'); } else { alert('The script runs in a frame!'); }`
 
-The “sandbox” iframe attribute
-------------------------------
+## The “sandbox” iframe attribute
 
 The `sandbox` attribute allows for the exclusion of certain actions inside an `<iframe>` in order to prevent it executing untrusted code. It “sandboxes” the iframe by treating it as coming from another origin and/or applying other limitations.
 
@@ -166,8 +160,7 @@ Please note that nothing works. So the default set is really harsh:
 
     The purpose of the `"sandbox"` attribute is only to *add more* restrictions. It cannot remove them. In particular, it can't relax same-origin restrictions if the iframe comes from another origin.
 
-Cross-window messaging
-----------------------
+## Cross-window messaging
 
 The `postMessage` interface allows windows to talk to each other no matter which origin they are from.
 
@@ -237,8 +230,7 @@ The full example:
 
 \[codetabs src=“postmessage” height=120\]
 
-Summary
--------
+## Summary
 
 To call methods and access the content of another window, we should first have a reference to it.
 
@@ -257,8 +249,9 @@ The `postMessage` interface allows two windows with any origins to talk:
 1.  The sender calls `targetWin.postMessage(data, targetOrigin)`.
 2.  If `targetOrigin` is not `'*'`, then the browser checks if window `targetWin` has the origin `targetOrigin`.
 3.  If it is so, then `targetWin` triggers the `message` event with special properties:
-    -   `origin` – the origin of the sender window (like `http://my.site.com`)
-    -   `source` – the reference to the sender window.
-    -   `data` – the data, any object in everywhere except IE that supports only strings.
+
+    - `origin` – the origin of the sender window (like `http://my.site.com`)
+    - `source` – the reference to the sender window.
+    - `data` – the data, any object in everywhere except IE that supports only strings.
 
     We should use `addEventListener` to set the handler for this event inside the target window.

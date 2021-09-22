@@ -1,12 +1,10 @@
-CSS-animations
-==============
+# CSS-animations
 
 CSS animations make it possible to do simple animations without JavaScript at all.
 
 JavaScript can be used to control CSS animations and make them even better, with little code.
 
-CSS transitions \[\#css-transition\]
-------------------------------------
+## CSS transitions \[\#css-transition\]
 
 The idea of CSS transitions is simple. We describe a property and how its changes should be animated. When the property changes, the browser paints the animation.
 
@@ -29,10 +27,10 @@ Click the button below to animate the background:
 
 There are 4 properties to describe CSS transitions:
 
--   `transition-property`
--   `transition-duration`
--   `transition-timing-function`
--   `transition-delay`
+- `transition-property`
+- `transition-duration`
+- `transition-timing-function`
+- `transition-delay`
 
 We’ll cover them in a moment, for now let’s note that the common `transition` property allows declaring them together in the order: `property duration timing-function delay`, as well as animating multiple properties at once.
 
@@ -44,22 +42,19 @@ For instance, this button animates both `color` and `font-size`:
 
 Now, let’s cover animation properties one by one.
 
-transition-property
--------------------
+## transition-property
 
 In `transition-property`, we write a list of properties to animate, for instance: `left`, `margin-left`, `height`, `color`. Or we could write `all`, which means “animate all properties”.
 
 Do note that, there are properties which can not be animated. However, [most of the generally used properties are animatable](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties).
 
-transition-duration
--------------------
+## transition-duration
 
 In `transition-duration` we can specify how long the animation should take. The time should be in [CSS time format](http://www.w3.org/TR/css3-values/#time): in seconds `s` or milliseconds `ms`.
 
-transition-delay
-----------------
+## transition-delay
 
-In `transition-delay` we can specify the delay *before* the animation. For instance, if `transition-delay` is `1s` and `transition-duration` is `2s`, then the animation starts 1 second after the property change and the total duration will be 2 seconds.
+In `transition-delay` we can specify the delay _before_ the animation. For instance, if `transition-delay` is `1s` and `transition-duration` is `2s`, then the animation starts 1 second after the property change and the total duration will be 2 seconds.
 
 Negative values are also possible. Then the animation is shown immediately, but the starting point of the animation will be after given value (time). For example, if `transition-delay` is `-1s` and `transition-duration` is `2s`, then animation starts from the halfway point and total duration will be 1 second.
 
@@ -96,8 +91,7 @@ JavaScript does it with an extra line:
       stripe.classList.add('animate');
     };
 
-transition-timing-function
---------------------------
+## transition-timing-function
 
 The timing function describes how the animation process is distributed along its timeline. Will it start slowly and then go fast, or vice versa.
 
@@ -117,8 +111,8 @@ The syntax for a Bezier curve in CSS: `cubic-bezier(x2, y2, x3, y3)`. Here we ne
 
 The timing function describes how fast the animation process goes.
 
--   The `x` axis is the time: `0` – the start, `1` – the end of `transition-duration`.
--   The `y` axis specifies the completion of the process: `0` – the starting value of the property, `1` – the final value.
+- The `x` axis is the time: `0` – the start, `1` – the end of `transition-duration`.
+- The `y` axis specifies the completion of the process: `0` – the starting value of the property, `1` – the final value.
 
 The simplest variant is when the animation goes uniformly, with the same linear speed. That can be specified by the curve `cubic-bezier(0, 0, 1, 1)`.
 
@@ -198,9 +192,9 @@ The property `left` should animate from `100px` to `400px`.
 
 But if you click the train, you’ll see that:
 
--   First, the train goes *back*: `left` becomes less than `100px`.
--   Then it goes forward, a little bit farther than `400px`.
--   And then back again – to `400px`.
+- First, the train goes _back_: `left` becomes less than `100px`.
+- Then it goes forward, a little bit farther than `400px`.
+- And then back again – to `400px`.
 
 \[codetabs src=“train-over”\]
 
@@ -249,21 +243,21 @@ We can observe that during the animation: when we click on the digit it changes 
 
 The process is progressing like this:
 
--   `0s` – `-10%` (first change in the beginning of the 1st second, immediately)
--   `1s` – `-20%`
--   …
--   `8s` – `-80%`
--   (the last second shows the final value).
+- `0s` – `-10%` (first change in the beginning of the 1st second, immediately)
+- `1s` – `-20%`
+- …
+- `8s` – `-80%`
+- (the last second shows the final value).
 
 The alternative value `end` would mean that the change should be applied not in the beginning, but at the end of each second.
 
 So the process would go like this:
 
--   `0s` – `0`
--   `1s` – `-10%` (first change at the end of the 1st second)
--   `2s` – `-20%`
--   …
--   `9s` – `-90%`
+- `0s` – `0`
+- `1s` – `-10%` (first change at the end of the 1st second)
+- `2s` – `-20%`
+- …
+- `9s` – `-90%`
 
 Here’s `steps(9, end)` in action (note the pause between the first digit change):
 
@@ -271,13 +265,12 @@ Here’s `steps(9, end)` in action (note the pause between the first digit chang
 
 There are also shorthand values:
 
--   `step-start` – is the same as `steps(1, start)`. That is, the animation starts immediately and takes 1 step. So it starts and finishes immediately, as if there were no animation.
--   `step-end` – the same as `steps(1, end)`: make the animation in a single step at the end of `transition-duration`.
+- `step-start` – is the same as `steps(1, start)`. That is, the animation starts immediately and takes 1 step. So it starts and finishes immediately, as if there were no animation.
+- `step-end` – the same as `steps(1, end)`: make the animation in a single step at the end of `transition-duration`.
 
 These values are rarely used, because that’s not really animation, but rather a single-step change.
 
-Event transitionend
--------------------
+## Event transitionend
 
 When the CSS animation finishes the `transitionend` event triggers.
 
@@ -322,8 +315,7 @@ The property that has finished animating. Can be good if we animate multiple pro
 `event.elapsedTime`  
 The time (in seconds) that the animation took, without `transition-delay`.
 
-Keyframes
----------
+## Keyframes
 
 We can join multiple simple animations together using the `@keyframes` CSS rule.
 
@@ -339,8 +331,7 @@ There are many articles about `@keyframes` and a [detailed specification](https:
 
 You probably won’t need `@keyframes` often, unless everything is in constant motion on your sites.
 
-Summary
--------
+## Summary
 
 CSS animations allow smoothly (or not) animated changes of one or multiple CSS properties.
 
@@ -348,7 +339,7 @@ They are good for most animation tasks. We’re also able to use JavaScript for 
 
 Limitations of CSS animations compared to JavaScript animations:
 
-`compare plus="CSS animations" minus="JavaScript animations" + Simple         things done simply. + Fast and lightweight for CPU. - JavaScript         animations are flexible. They can implement any animation logic, like an         "explosion" of an element. - Not just property changes. We can create         new elements in JavaScript as part of the animation.`
+`compare plus="CSS animations" minus="JavaScript animations" + Simple things done simply. + Fast and lightweight for CPU. - JavaScript animations are flexible. They can implement any animation logic, like an "explosion" of an element. - Not just property changes. We can create new elements in JavaScript as part of the animation.`
 
 The majority of animations can be implemented using CSS as described in this chapter. And the `transitionend` event allows JavaScript to be run after the animation, so it integrates fine with the code.
 

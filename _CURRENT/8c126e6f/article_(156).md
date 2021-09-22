@@ -1,11 +1,10 @@
-Shadow DOM and events
-=====================
+# Shadow DOM and events
 
 The idea behind shadow tree is to encapsulate internal implementation details of a component.
 
 Let’s say, a click event happens inside a shadow DOM of `<user-card>` component. But scripts in the main document have no idea about the shadow DOM internals, especially if the component comes from a 3rd-party library.
 
-So, to keep the details encapsulated, the browser *retargets* the event.
+So, to keep the details encapsulated, the browser _retargets_ the event.
 
 **Events that happen in shadow DOM have the host element as the target, when caught outside of the component.**
 
@@ -26,7 +25,7 @@ Event retargeting is a great thing to have, because the outer document doesn’t
 
 For example, if a user clicks on `<span slot="username">` in the example below, the event target is exactly this `span` element, for both shadow and light handlers:
 
-\`\`\`html run autorun=“no-epub” untrusted height=60 *!* <span slot="username">John Smith</span> */!*
+\`\`\`html run autorun=“no-epub” untrusted height=60 _!_ <span slot="username">John Smith</span> _/!_
 
 \`\`\`
 
@@ -34,8 +33,7 @@ If a click happens on `"John Smith"`, for both inner and outer handlers the targ
 
 On the other hand, if the click occurs on an element originating from shadow DOM, e.g. on `<b>Name</b>`, then, as it bubbles out of the shadow DOM, its `event.target` is reset to `<user-card>`.
 
-Bubbling, event.composedPath()
-------------------------------
+## Bubbling, event.composedPath()
 
 For purposes of event bubbling, flattened DOM is used.
 
@@ -61,8 +59,7 @@ So, for a click on `<span slot="username">`, a call to `event.composedPath()` re
 
 That’s the similar principle as for other methods that work with shadow DOM. Internals of closed trees are completely hidden. \`\`\`
 
-event.composed
---------------
+## event.composed
 
 Most events successfully bubble through a shadow DOM boundary. There are few events that do not.
 
@@ -70,25 +67,24 @@ This is governed by the `composed` event object property. If it’s `true`, then
 
 If you take a look at [UI Events specification](https://www.w3.org/TR/uievents), most events have `composed: true`:
 
--   `blur`, `focus`, `focusin`, `focusout`,
--   `click`, `dblclick`,
--   `mousedown`, `mouseup` `mousemove`, `mouseout`, `mouseover`,
--   `wheel`,
--   `beforeinput`, `input`, `keydown`, `keyup`.
+- `blur`, `focus`, `focusin`, `focusout`,
+- `click`, `dblclick`,
+- `mousedown`, `mouseup` `mousemove`, `mouseout`, `mouseover`,
+- `wheel`,
+- `beforeinput`, `input`, `keydown`, `keyup`.
 
 All touch events and pointer events also have `composed: true`.
 
 There are some events that have `composed: false` though:
 
--   `mouseenter`, `mouseleave` (they do not bubble at all),
--   `load`, `unload`, `abort`, `error`,
--   `select`,
--   `slotchange`.
+- `mouseenter`, `mouseleave` (they do not bubble at all),
+- `load`, `unload`, `abort`, `error`,
+- `select`,
+- `slotchange`.
 
 These events can be caught only on elements within the same DOM, where the event target resides.
 
-Custom events
--------------
+## Custom events
 
 When we dispatch custom events, we need to set both `bubbles` and `composed` properties to `true` for it to bubble up and out of the component.
 
@@ -98,24 +94,23 @@ For example, here we create `div#inner` in the shadow DOM of `div#outer` and tri
 
 \`\`\`
 
-Summary
--------
+## Summary
 
 Events only cross shadow DOM boundaries if their `composed` flag is set to `true`.
 
 Built-in events mostly have `composed: true`, as described in the relevant specifications:
 
--   UI Events <a href="https://www.w3.org/TR/uievents" class="uri">https://www.w3.org/TR/uievents</a>.
--   Touch Events <a href="https://w3c.github.io/touch-events" class="uri">https://w3c.github.io/touch-events</a>.
--   Pointer Events <a href="https://www.w3.org/TR/pointerevents" class="uri">https://www.w3.org/TR/pointerevents</a>.
--   …And so on.
+- UI Events <a href="https://www.w3.org/TR/uievents" class="uri">https://www.w3.org/TR/uievents</a>.
+- Touch Events <a href="https://w3c.github.io/touch-events" class="uri">https://w3c.github.io/touch-events</a>.
+- Pointer Events <a href="https://www.w3.org/TR/pointerevents" class="uri">https://www.w3.org/TR/pointerevents</a>.
+- …And so on.
 
 Some built-in events that have `composed: false`:
 
--   `mouseenter`, `mouseleave` (also do not bubble),
--   `load`, `unload`, `abort`, `error`,
--   `select`,
--   `slotchange`.
+- `mouseenter`, `mouseleave` (also do not bubble),
+- `load`, `unload`, `abort`, `error`,
+- `select`,
+- `slotchange`.
 
 These events can be caught only on elements within the same DOM.
 

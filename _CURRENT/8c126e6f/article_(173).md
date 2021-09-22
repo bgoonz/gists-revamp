@@ -1,10 +1,8 @@
-Methods of RegExp and String
-============================
+# Methods of RegExp and String
 
 In this article we’ll cover various methods that work with regexps in-depth.
 
-str.match(regexp)
------------------
+## str.match(regexp)
 
 The method `str.match(regexp)` finds matches for `regexp` in the string `str`.
 
@@ -40,8 +38,7 @@ It has 3 modes:
 
         let result = str.match(regexp) || [];
 
-str.matchAll(regexp)
---------------------
+## str.matchAll(regexp)
 
 \[recent browser=“new”\]
 
@@ -59,8 +56,7 @@ Usage example:
 
 \`\`\`js run let str = ’
 
-Hello, world!
-=============
+# Hello, world!
 
 ’; let regexp = /&lt;(.\*?)&gt;/g;
 
@@ -72,18 +68,15 @@ matchAll = Array.from(matchAll); // array now
 
 let firstMatch = matchAll\[0\]; alert( firstMatch\[0\] ); //
 
-alert( firstMatch\[1\] ); // h1 alert( firstMatch.index ); // 0 alert( firstMatch.input ); //
-=============================================================================================
+# alert( firstMatch\[1\] ); // h1 alert( firstMatch.index ); // 0 alert( firstMatch.input ); //
 
-Hello, world!
-=============
+# Hello, world!
 
 \`\`\`
 
 If we use `for..of` to loop over `matchAll` matches, then we don’t need `Array.from` any more.
 
-str.split(regexp|substr, limit)
--------------------------------
+## str.split(regexp|substr, limit)
 
 Splits the string using the regexp (or a substring) as a delimiter.
 
@@ -95,8 +88,7 @@ But we can split by a regular expression, the same way:
 
 `js run alert('12, 34, 56'.split(/,\s*/)) // array of ['12', '34', '56']`
 
-str.search(regexp)
-------------------
+## str.search(regexp)
 
 The method `str.search(regexp)` returns the position of the first match or `-1` if none found:
 
@@ -108,8 +100,7 @@ alert( str.search( /ink/i ) ); // 10 (first match position) \`\`\`
 
 If we need positions of further matches, we should use other means, such as finding them all with `str.matchAll(regexp)`.
 
-str.replace(str|regexp, str|func)
----------------------------------
+## str.replace(str|regexp, str|func)
 
 This is a generic method for searching and replacing, one of most useful ones. The swiss army knife for searching and replacing.
 
@@ -125,7 +116,7 @@ You can see that in the example above: only the first `"-"` is replaced by `":"`
 
 To find all hyphens, we need to use not the string `"-"`, but a regexp `pattern:/-/g`, with the obligatory `pattern:g` flag:
 
-`js run // replace all dashes by a colon alert( '12-34-56'.replace( *!*/-/g*/!*, ":" ) )  // 12:34:56`
+`js run // replace all dashes by a colon alert( '12-34-56'.replace( *!*/-/g*/!*, ":" ) ) // 12:34:56`
 
 The second argument is a replacement string. We can use special characters in it:
 
@@ -191,12 +182,11 @@ alert(result); // Smith, John \`\`\`
 
 Using a function gives us the ultimate replacement power, because it gets all the information about the match, has access to outer variables and can do everything.
 
-str.replaceAll(str|regexp, str|func)
-------------------------------------
+## str.replaceAll(str|regexp, str|func)
 
 This method is essentially the same as `str.replace`, with two major differences:
 
-1.  If the first argument is a string, it replaces *all occurences* of the string, while `replace` replaces only the *first occurence*.
+1.  If the first argument is a string, it replaces _all occurences_ of the string, while `replace` replaces only the _first occurence_.
 2.  If the first argument is a regular expression without the `g` flag, there’ll be an error. With `g` flag, it works the same as `replace`.
 
 The main use case for `replaceAll` is replacing all occurences of a string.
@@ -205,8 +195,7 @@ Like this:
 
 `js run // replace all dashes by a colon alert('12-34-56'.replaceAll("-", ":")) // 12:34:56`
 
-regexp.exec(str)
-----------------
+## regexp.exec(str)
 
 The method `regexp.exec(str)` method returns a match for `regexp` in the string `str`. Unlike previous methods, it’s called on a regexp, not on a string.
 
@@ -250,8 +239,7 @@ alert( regexp.exec(str) ); // null \`\`\`
 
 That’s convenient for situations when we need to “read” something from the string by a regexp at the exact position, not somewhere further.
 
-regexp.test(str)
-----------------
+## regexp.test(str)
 
 The method `regexp.test(str)` looks for a match and returns `true/false` whether it exists.
 
@@ -259,13 +247,13 @@ For instance:
 
 \`\`\`js run let str = “I love JavaScript”;
 
-// these two tests do the same alert( *!*/love/i*/!*.test(str) ); // true alert( str.search(*!*/love/i*/!*) != -1 ); // true \`\`\`
+// these two tests do the same alert( _!_/love/i*/!*.test(str) ); // true alert( str.search(_!_/love/i*/!*) != -1 ); // true \`\`\`
 
 An example with the negative answer:
 
 \`\`\`js run let str = “Bla-bla-bla”;
 
-alert( *!*/love/i*/!*.test(str) ); // false alert( str.search(*!*/love/i*/!*) != -1 ); // false \`\`\`
+alert( _!_/love/i*/!*.test(str) ); // false alert( str.search(_!_/love/i*/!*) != -1 ); // false \`\`\`
 
 If the regexp has flag `pattern:g`, then `regexp.test` looks from `regexp.lastIndex` property and updates this property, just like `regexp.exec`.
 

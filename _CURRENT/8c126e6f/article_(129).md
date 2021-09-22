@@ -1,5 +1,4 @@
-TextDecoder and TextEncoder
-===========================
+# TextDecoder and TextEncoder
 
 What if the binary data is actually a string? For instance, we received a file with textual data.
 
@@ -9,18 +8,18 @@ We first need to create it:
 
     let decoder = new TextDecoder([label], [options]);
 
--   **`label`** – the encoding, `utf-8` by default, but `big5`, `windows-1251` and many other are also supported.
--   **`options`** – optional object:
-    -   **`fatal`** – boolean, if `true` then throw an exception for invalid (non-decodable) characters, otherwise (default) replace them with character `\uFFFD`.
-    -   **`ignoreBOM`** – boolean, if `true` then ignore BOM (an optional byte-order Unicode mark), rarely needed.
+- **`label`** – the encoding, `utf-8` by default, but `big5`, `windows-1251` and many other are also supported.
+- **`options`** – optional object:
+  - **`fatal`** – boolean, if `true` then throw an exception for invalid (non-decodable) characters, otherwise (default) replace them with character `\uFFFD`.
+  - **`ignoreBOM`** – boolean, if `true` then ignore BOM (an optional byte-order Unicode mark), rarely needed.
 
 …And then decode:
 
     let str = decoder.decode([input], [options]);
 
--   **`input`** – `BufferSource` to decode.
--   **`options`** – optional object:
-    -   **`stream`** – true for decoding streams, when `decoder` is called repeatedly with incoming chunks of data. In that case a multi-byte character may occasionally split between chunks. This options tells `TextDecoder` to memorize “unfinished” characters and decode them when the next chunk comes.
+- **`input`** – `BufferSource` to decode.
+- **`options`** – optional object:
+  - **`stream`** – true for decoding streams, when `decoder` is called repeatedly with incoming chunks of data. In that case a multi-byte character may occasionally split between chunks. This options tells `TextDecoder` to memorize “unfinished” characters and decode them when the next chunk comes.
 
 For instance:
 
@@ -40,8 +39,7 @@ We can decode a part of the buffer by creating a subarray view for it:
 
 alert( new TextDecoder().decode(binaryString) ); // Hello \`\`\`
 
-TextEncoder
------------
+## TextEncoder
 
 [TextEncoder](https://encoding.spec.whatwg.org/#interface-textencoder) does the reverse thing – converts a string into bytes.
 

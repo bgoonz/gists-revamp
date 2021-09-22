@@ -1,10 +1,8 @@
-JavaScript specials
-===================
+# JavaScript specials
 
 This chapter briefly recaps the features of JavaScript that we’ve learned by now, paying special attention to subtle moments.
 
-Code structure
---------------
+## Code structure
 
 Statements are delimited with a semicolon:
 
@@ -36,8 +34,7 @@ Semicolons are not required after code blocks `{...}` and syntax constructs with
 
 More in: <a href="info:structure" class="uri">info:structure</a>.
 
-Strict mode
------------
+## Strict mode
 
 To fully enable all features of modern JavaScript, we should start scripts with `"use strict"`.
 
@@ -53,14 +50,13 @@ Some modern features of the language (like classes that we’ll study in the fut
 
 More in: <a href="info:strict-mode" class="uri">info:strict-mode</a>.
 
-Variables
----------
+## Variables
 
 Can be declared using:
 
--   `let`
--   `const` (constant, can’t be changed)
--   `var` (old-style, will see later)
+- `let`
+- `const` (constant, can’t be changed)
+- `var` (old-style, will see later)
 
 A variable name can include: - Letters and digits, but the first character may not be a digit. - Characters `$` and `_` are normal, on par with letters. - Non-Latin alphabets and hieroglyphs are also allowed, but commonly not used.
 
@@ -71,13 +67,13 @@ Variables are dynamically typed. They can store any value:
 
 There are 8 data types:
 
--   `number` for both floating-point and integer numbers,
--   `bigint` for integer numbers of arbitrary length,
--   `string` for strings,
--   `boolean` for logical values: `true/false`,
--   `null` – a type with a single value `null`, meaning “empty” or “does not exist”,
--   `undefined` – a type with a single value `undefined`, meaning “not assigned”,
--   `object` and `symbol` – for complex data structures and unique identifiers, we haven’t learnt them yet.
+- `number` for both floating-point and integer numbers,
+- `bigint` for integer numbers of arbitrary length,
+- `string` for strings,
+- `boolean` for logical values: `true/false`,
+- `null` – a type with a single value `null`, meaning “empty” or “does not exist”,
+- `undefined` – a type with a single value `undefined`, meaning “not assigned”,
+- `object` and `symbol` – for complex data structures and unique identifiers, we haven’t learnt them yet.
 
 The `typeof` operator returns the type for a value, with two exceptions:
 
@@ -86,21 +82,20 @@ The `typeof` operator returns the type for a value, with two exceptions:
 
 More in: <a href="info:variables" class="uri">info:variables</a> and <a href="info:types" class="uri">info:types</a>.
 
-Interaction
------------
+## Interaction
 
 We’re using a browser as a working environment, so basic UI functions will be:
 
- [`prompt(question, [default])`](mdn:api/Window/prompt)   
+[`prompt(question, [default])`](mdn:api/Window/prompt)  
 Ask a `question`, and return either what the visitor entered or `null` if they clicked “cancel”.
 
- [`confirm(question)`](mdn:api/Window/confirm)   
+[`confirm(question)`](mdn:api/Window/confirm)  
 Ask a `question` and suggest to choose between Ok and Cancel. The choice is returned as `true/false`.
 
- [`alert(message)`](mdn:api/Window/alert)   
+[`alert(message)`](mdn:api/Window/alert)  
 Output a `message`.
 
-All these functions are *modal*, they pause the code execution and prevent the visitor from interacting with the page until they answer.
+All these functions are _modal_, they pause the code execution and prevent the visitor from interacting with the page until they answer.
 
 For instance:
 
@@ -110,8 +105,7 @@ alert( “Visitor:” + userName ); // Alice alert( “Tea wanted:” + isTeaWan
 
 More in: <a href="info:alert-prompt-confirm" class="uri">info:alert-prompt-confirm</a>.
 
-Operators
----------
+## Operators
 
 JavaScript supports the following operators:
 
@@ -120,7 +114,7 @@ Regular: `* + - /`, also `%` for the remainder and `**` for power of a number.
 
 The binary plus `+` concatenates strings. And if any of the operands is a string, the other one is converted to string too:
 
-`js run alert( '1' + 2 ); // '12', string alert( 1 + '2' ); // '12',             string`
+`js run alert( '1' + 2 ); // '12', string alert( 1 + '2' ); // '12', string`
 
 Assignments  
 There is a simple assignment: `a = b` and combined ones like `a *= 2`.
@@ -155,35 +149,33 @@ There are few others, like a comma operator.
 
 More in: <a href="info:operators" class="uri">info:operators</a>, <a href="info:comparison" class="uri">info:comparison</a>, <a href="info:logical-operators" class="uri">info:logical-operators</a>, <a href="info:nullish-coalescing-operator" class="uri">info:nullish-coalescing-operator</a>.
 
-Loops
------
+## Loops
 
--   We covered 3 types of loops:
+- We covered 3 types of loops:
 
-        // 1
-        while (condition) {
-          ...
-        }
+      // 1
+      while (condition) {
+        ...
+      }
 
-        // 2
-        do {
-          ...
-        } while (condition);
+      // 2
+      do {
+        ...
+      } while (condition);
 
-        // 3
-        for(let i = 0; i < 10; i++) {
-          ...
-        }
+      // 3
+      for(let i = 0; i < 10; i++) {
+        ...
+      }
 
--   The variable declared in `for(let...)` loop is visible only inside the loop. But we can also omit `let` and reuse an existing variable.
--   Directives `break/continue` allow to exit the whole loop/current iteration. Use labels to break nested loops.
+- The variable declared in `for(let...)` loop is visible only inside the loop. But we can also omit `let` and reuse an existing variable.
+- Directives `break/continue` allow to exit the whole loop/current iteration. Use labels to break nested loops.
 
 Details in: <a href="info:while-for" class="uri">info:while-for</a>.
 
 Later we’ll study more types of loops to deal with objects.
 
-The “switch” construct
-----------------------
+## The “switch” construct
 
 The “switch” construct can replace multiple `if` checks. It uses `===` (strict equality) for comparisons.
 
@@ -199,8 +191,7 @@ default: alert(“Any value not equal to one above”); } \`\`\`
 
 Details in: <a href="info:switch" class="uri">info:switch</a>.
 
-Functions
----------
+## Functions
 
 We covered three ways to create a function in JavaScript:
 
@@ -237,13 +228,12 @@ We covered three ways to create a function in JavaScript:
         // with a single argument
         let double = n => n * 2;
 
--   Functions may have local variables: those declared inside its body or its parameter list. Such variables are only visible inside the function.
--   Parameters can have default values: `function sum(a = 1, b = 2) {...}`.
--   Functions always return something. If there’s no `return` statement, then the result is `undefined`.
+- Functions may have local variables: those declared inside its body or its parameter list. Such variables are only visible inside the function.
+- Parameters can have default values: `function sum(a = 1, b = 2) {...}`.
+- Functions always return something. If there’s no `return` statement, then the result is `undefined`.
 
 Details: see <a href="info:function-basics" class="uri">info:function-basics</a>, <a href="info:arrow-functions-basics" class="uri">info:arrow-functions-basics</a>.
 
-More to come
-------------
+## More to come
 
 That was a brief list of JavaScript features. As of now we’ve studied only basics. Further in the tutorial you’ll find more specials and advanced features of JavaScript.

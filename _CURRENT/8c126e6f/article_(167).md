@@ -1,5 +1,4 @@
-Capturing groups
-================
+# Capturing groups
 
 A part of a pattern can be enclosed in parentheses `pattern:(...)`. This is called a “capturing group”.
 
@@ -8,8 +7,7 @@ That has two effects:
 1.  It allows to get a part of the match as a separate item in the result array.
 2.  If we put a quantifier after the parentheses, it applies to the parentheses as a whole.
 
-Examples
---------
+## Examples
 
 Let’s see how parentheses work in examples.
 
@@ -57,8 +55,7 @@ alert(“my@mail.com @ his@site.com.uk”.match(regexp)); // my@mail.com, his@si
 
 That regexp is not perfect, but mostly works and helps to fix accidental mistypes. The only truly reliable check for an email can only be done by sending a letter.
 
-Parentheses contents in the match
----------------------------------
+## Parentheses contents in the match
 
 Parentheses are numbered from left to right. The search engine memorizes the content matched by each of them and allows to get it in the result.
 
@@ -77,8 +74,7 @@ Now we’ll get both the tag as a whole `match:<h1>` and its contents `match:h1`
 
 \`\`\`js run let str = ’
 
-Hello, world!
-=============
+# Hello, world!
 
 ’;
 
@@ -144,8 +140,7 @@ alert( match.length ); // 3 alert( match\[0\] ); // ac (whole match) alert( matc
 
 The array length is permanent: `3`. But there’s nothing for the group `pattern:(z)?`, so the result is `["ac", undefined, "c"]`.
 
-Searching for all matches with groups: matchAll
------------------------------------------------
+## Searching for all matches with groups: matchAll
 
 \`\``warn header="`matchAll`is a new method, polyfill may be needed" The method`matchAll\` is not supported in old browsers.
 
@@ -163,8 +158,7 @@ let tags = str.match(/&lt;(.\*?)&gt;/g);
 
 alert( tags ); //
 
-,
-=
+# ,
 
 \`\`\`
 
@@ -194,8 +188,7 @@ results = Array.from(results); // let’s turn it into array
 
 alert(results\[0\]); //
 
-,h1 (1st tag) alert(results\[1\]); //
-=====================================
+# ,h1 (1st tag) alert(results\[1\]); //
 
 ,h2 (2nd tag) \`\`\`
 
@@ -209,8 +202,7 @@ There’s no need in `Array.from` if we’re looping over results:
 
 for(let result of results) { alert(result); // first alert:
 
-,h1 // second:
-==============
+# ,h1 // second:
 
 ,h2 } \`\`\`
 
@@ -228,8 +220,7 @@ let \[tag1, tag2\] = results;
 
 alert( tag1\[0\] ); //
 
-alert( tag1\[1\] ); // h1 alert( tag1.index ); // 0 alert( tag1.input ); //
-===========================================================================
+# alert( tag1\[1\] ); // h1 alert( tag1.index ); // 0 alert( tag1.input ); //
 
 \`\`\`
 
@@ -241,8 +232,7 @@ So, there will be found as many results as needed, not more.
 
 E.g. there are potentially 100 matches in the text, but in a `for..of` loop we found 5 of them, then decided it’s enough and made a `break`. Then the engine won’t spend time finding other 95 matches. \`\`\`
 
-Named groups
-------------
+## Named groups
 
 Remembering groups by their numbers is hard. For simple patterns it’s doable, but for more complex ones counting parentheses is inconvenient. We have a much better option: give names to parentheses.
 
@@ -250,7 +240,7 @@ That’s done by putting `pattern:?<name>` immediately after the opening paren.
 
 For example, let’s look for a date in the format “year-month-day”:
 
-\`\`\`js run *!* let dateRegexp = /(?\[0-9\]{4})-(?\[0-9\]{2})-(?\[0-9\]{2})/; */!* let str = “2019-04-30”;
+\`\`\`js run _!_ let dateRegexp = /(?\[0-9\]{4})-(?\[0-9\]{2})-(?\[0-9\]{2})/; _/!_ let str = “2019-04-30”;
 
 let groups = str.match(dateRegexp).groups;
 
@@ -272,8 +262,7 @@ for(let result of results) { let {year, month, day} = result.groups;
 
 alert(`${day}.${month}.${year}`); // first alert: 30.10.2019 // second: 01.01.2020 } \`\`\`
 
-Capturing groups in replacement
--------------------------------
+## Capturing groups in replacement
 
 Method `str.replace(regexp, replacement)` that replaces all matches with `regexp` in `str` allows to use parentheses contents in the `replacement` string. That’s done using `pattern:$n`, where `pattern:n` is the group number.
 
@@ -293,8 +282,7 @@ let str = “2019-10-30, 2020-01-01”;
 
 alert( str.replace(regexp, ‘<span class="math inline"> &lt; *day* &gt; .</span>.$’) ); // 30.10.2019, 01.01.2020 \`\`\`
 
-Non-capturing groups with ?:
-----------------------------
+## Non-capturing groups with ?:
 
 Sometimes we need parentheses to correctly apply a quantifier, but we don’t want their contents in results.
 
@@ -306,14 +294,13 @@ In the example below we only get the name `match:John` as a separate member of t
 
 \`\`\`js run let str = “Gogogo John!”;
 
-*!* // ?: exludes ‘go’ from capturing let regexp = /(?:go)+ (+)/i; */!*
+_!_ // ?: exludes ‘go’ from capturing let regexp = /(?:go)+ (+)/i; _/!_
 
 let result = str.match(regexp);
 
 alert( result\[0\] ); // Gogogo John (full match) alert( result\[1\] ); // John alert( result.length ); // 2 (no more items in the array) \`\`\`
 
-Summary
--------
+## Summary
 
 Parentheses group together a part of the regular expression, so that the quantifier applies to it as a whole.
 
@@ -321,8 +308,8 @@ Parentheses groups are numbered left-to-right, and can optionally be named with 
 
 The content, matched by a group, can be obtained in the results:
 
--   The method `str.match` returns capturing groups only without flag `pattern:g`.
--   The method `str.matchAll` always returns capturing groups.
+- The method `str.match` returns capturing groups only without flag `pattern:g`.
+- The method `str.matchAll` always returns capturing groups.
 
 If the parentheses have no name, then their contents is available in the match array by its number. Named parentheses are also available in the property `groups`.
 

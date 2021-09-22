@@ -1,5 +1,4 @@
-Object.keys, values, entries
-============================
+# Object.keys, values, entries
 
 Let’s step away from the individual data structures and talk about the iterations over them.
 
@@ -9,20 +8,19 @@ These methods are generic, there is a common agreement to use them for data stru
 
 They are supported for:
 
--   `Map`
--   `Set`
--   `Array`
+- `Map`
+- `Set`
+- `Array`
 
 Plain objects also support similar methods, but the syntax is a bit different.
 
-Object.keys, values, entries
-----------------------------
+## Object.keys, values, entries
 
 For plain objects, the following methods are available:
 
--   [Object.keys(obj)](mdn:js/Object/keys) – returns an array of keys.
--   [Object.values(obj)](mdn:js/Object/values) – returns an array of values.
--   [Object.entries(obj)](mdn:js/Object/entries) – returns an array of `[key, value]` pairs.
+- [Object.keys(obj)](mdn:js/Object/keys) – returns an array of keys.
+- [Object.values(obj)](mdn:js/Object/values) – returns an array of values.
+- [Object.entries(obj)](mdn:js/Object/entries) – returns an array of `[key, value]` pairs.
 
 Please note the distinctions (compared to map for example):
 
@@ -41,9 +39,9 @@ For instance:
       age: 30
     };
 
--   `Object.keys(user) = ["name", "age"]`
--   `Object.values(user) = ["John", 30]`
--   `Object.entries(user) = [ ["name","John"], ["age",30] ]`
+- `Object.keys(user) = ["name", "age"]`
+- `Object.values(user) = ["John", 30]`
+- `Object.entries(user) = [ ["name","John"], ["age",30] ]`
 
 Here’s an example of using `Object.values` to loop over property values:
 
@@ -51,12 +49,11 @@ Here’s an example of using `Object.values` to loop over property values:
 
 // loop over values for (let value of Object.values(user)) { alert(value); // John, then 30 } \`\`\`
 
-\`\``warn header="Object.keys/values/entries ignore symbolic properties"         Just like a`for..in`loop, these methods ignore properties that use`Symbol(…)\` as keys.
+\`\``warn header="Object.keys/values/entries ignore symbolic properties" Just like a`for..in`loop, these methods ignore properties that use`Symbol(…)\` as keys.
 
-Usually that’s convenient. But if we want symbolic keys too, then there’s a separate method [Object.getOwnPropertySymbols](mdn:js/Object/getOwnPropertySymbols) that returns an array of only symbolic keys. Also, there exist a method [Reflect.ownKeys(obj)](mdn:js/Reflect/ownKeys) that returns *all* keys. \`\`\`
+Usually that’s convenient. But if we want symbolic keys too, then there’s a separate method [Object.getOwnPropertySymbols](mdn:js/Object/getOwnPropertySymbols) that returns an array of only symbolic keys. Also, there exist a method [Reflect.ownKeys(obj)](mdn:js/Reflect/ownKeys) that returns _all_ keys. \`\`\`
 
-Transforming objects
---------------------
+## Transforming objects
 
 Objects lack many methods that exist for arrays, e.g. `map`, `filter` and others.
 
@@ -70,7 +67,7 @@ For example, we have an object with prices, and would like to double them:
 
 \`\`\`js run let prices = { banana: 1, orange: 2, meat: 4, };
 
-*!* let doublePrices = Object.fromEntries( // convert to array, map, and then fromEntries gives back the object Object.entries(prices).map((\[key, value\]) =&gt; \[key, value \* 2\]) ); */!*
+_!_ let doublePrices = Object.fromEntries( // convert to array, map, and then fromEntries gives back the object Object.entries(prices).map((\[key, value\]) =&gt; \[key, value \* 2\]) ); _/!_
 
 alert(doublePrices.meat); // 8 \`\`\`
 

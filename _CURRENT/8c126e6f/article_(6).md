@@ -1,10 +1,8 @@
-Code structure
-==============
+# Code structure
 
 The first thing we’ll study is the building blocks of code.
 
-Statements
-----------
+## Statements
 
 Statements are syntax constructs and commands that perform actions.
 
@@ -20,8 +18,7 @@ Usually, statements are written on separate lines to make the code more readable
 
 `js run no-beautify alert('Hello'); alert('World');`
 
-Semicolons \[\#semicolon\]
---------------------------
+## Semicolons \[\#semicolon\]
 
 A semicolon may be omitted in most cases when a line break exists.
 
@@ -49,7 +46,7 @@ Errors which occur in such cases are quite hard to find and fix.
 
 No need to think about the meaning of the brackets `[]` and `forEach` yet. We’ll study them later. For now, just remember the result of the code: it shows `1` then `2`.
 
-Now, let’s add an `alert` before the code and *not* finish it with a semicolon:
+Now, let’s add an `alert` before the code and _not_ finish it with a semicolon:
 
 \`\`\`js run no-beautify alert(“There will be an error”)
 
@@ -68,16 +65,15 @@ The error in the no-semicolon variant occurs because JavaScript does not assume 
 
 So, because the semicolon is not auto-inserted, the code in the first example is treated as a single statement. Here’s how the engine sees it:
 
-`js run no-beautify alert("There will be an error")[1,         2].forEach(alert)`
+`js run no-beautify alert("There will be an error")[1, 2].forEach(alert)`
 
 But it should be two separate statements, not one. Such a merging in this case is just wrong, hence the error. This can happen in other situations. \`\`\`\`
 
-We recommend putting semicolons between statements even if they are separated by newlines. This rule is widely adopted by the community. Let’s note once again – *it is possible* to leave out semicolons most of the time. But it’s safer – especially for a beginner – to use them.
+We recommend putting semicolons between statements even if they are separated by newlines. This rule is widely adopted by the community. Let’s note once again – _it is possible_ to leave out semicolons most of the time. But it’s safer – especially for a beginner – to use them.
 
-Comments \[\#code-comments\]
-----------------------------
+## Comments \[\#code-comments\]
 
-As time goes on, programs become more and more complex. It becomes necessary to add *comments* which describe what the code does and why.
+As time goes on, programs become more and more complex. It becomes necessary to add _comments_ which describe what the code does and why.
 
 Comments can be put into any place of a script. They don’t affect its execution because the engine simply ignores them.
 
@@ -93,21 +89,21 @@ alert(‘World’); // This comment follows the statement \`\`\`
 
 Like this:
 
-`js run /* An example with two messages. This is a multiline comment. */         alert('Hello'); alert('World');`
+`js run /* An example with two messages. This is a multiline comment. */ alert('Hello'); alert('World');`
 
 The content of comments is ignored, so if we put code inside `/* … */`, it won’t execute.
 
 Sometimes it can be handy to temporarily disable a part of code:
 
-`js run /* Commenting out the code alert('Hello'); */         alert('World');`
+`js run /* Commenting out the code alert('Hello'); */ alert('World');`
 
-`` smart header="Use hotkeys!" In most editors, a line of code can be         commented out by pressing the `key:Ctrl+/` hotkey for a single-line         comment and something like `key:Ctrl+Shift+/` -- for multiline comments         (select a piece of code and press the hotkey). For Mac, try `key:Cmd`         instead of `key:Ctrl` and `key:Option` instead of `key:Shift`. ``
+`` smart header="Use hotkeys!" In most editors, a line of code can be commented out by pressing the `key:Ctrl+/` hotkey for a single-line comment and something like `key:Ctrl+Shift+/` -- for multiline comments (select a piece of code and press the hotkey). For Mac, try `key:Cmd` instead of `key:Ctrl` and `key:Option` instead of `key:Shift`. ``
 
-\`\`\``warn header="Nested comments are not supported!" There may not be`/*…*/`inside another`/*…*/\`.
+\`\`\``warn header="Nested comments are not supported!" There may not be`/_…_/`inside another`/_…_/\`.
 
 Such code will die with an error:
 
-`js run no-beautify /* /* nested comment ?!? */ */ alert( 'World'         );` \`\`\`\`
+`js run no-beautify /* /* nested comment ?!? */ */ alert( 'World' );` \`\`\`\`
 
 Please, don’t hesitate to comment your code.
 

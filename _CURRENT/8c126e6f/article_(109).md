@@ -1,12 +1,10 @@
-Mouse events
-============
+# Mouse events
 
 In this chapter we’ll get into more details about mouse events and their properties.
 
 Please note: such events may come not only from “mouse devices”, but are also from other devices, such as phones and tablets, where they are emulated for compatibility.
 
-Mouse event types
------------------
+## Mouse event types
 
 We’ve already seen some of these events:
 
@@ -30,8 +28,7 @@ Triggers when the right mouse button is pressed. There are other ways to open a 
 
 …There are several other events too, we’ll cover them later.
 
-Events order
-------------
+## Events order
 
 As you can see from the list above, a user action may trigger multiple events.
 
@@ -47,8 +44,7 @@ In cases when a single action initiates multiple events, their order is fixed. T
 
     <input onmousedown="return logMouse(event)" onmouseup="return logMouse(event)" onclick="return logMouse(event)" oncontextmenu="return logMouse(event)" ondblclick="return logMouse(event)" value="Click me with the right or the left mouse button" type="button"> <input onclick="logClear('test')" value="Clear" type="button"> <form id="testform" name="testform"> <textarea style="font-size:12px;height:150px;width:360px;"></textarea></form>
 
-Mouse button
-------------
+## Mouse button
 
 Click-related events always have the `button` property, which allows to get the exact mouse button.
 
@@ -66,23 +62,22 @@ Also there’s `event.buttons` property that has all currently pressed buttons a
 
 \`\``warn header="The outdated`event.which`" Old code may use`event.which\` property that’s an old non-standard way of getting a button, with possible values:
 
--   `event.which == 1` – left button,
--   `event.which == 2` – middle button,
--   `event.which == 3` – right button.
+- `event.which == 1` – left button,
+- `event.which == 2` – middle button,
+- `event.which == 3` – right button.
 
 As of now, `event.which` is deprecated, we shouldn’t use it. \`\`\`
 
-Modifiers: shift, alt, ctrl and meta
-------------------------------------
+## Modifiers: shift, alt, ctrl and meta
 
 All mouse events include the information about pressed modifier keys.
 
 Event properties:
 
--   `shiftKey`: `key:Shift`
--   `altKey`: `key:Alt` (or `key:Opt` for Mac)
--   `ctrlKey`: `key:Ctrl`
--   `metaKey`: `key:Cmd` for Mac
+- `shiftKey`: `key:Shift`
+- `altKey`: `key:Alt` (or `key:Opt` for Mac)
+- `ctrlKey`: `key:Ctrl`
+- `metaKey`: `key:Cmd` for Mac
 
 They are `true` if the corresponding key was pressed during the event.
 
@@ -100,7 +95,7 @@ That is: where a Windows user presses `key:Ctrl+Enter` or `key:Ctrl+A`, a Mac us
 
 So if we want to support combinations like `key:Ctrl`+click, then for Mac it makes sense to use `key:Cmd`+click. That’s more comfortable for Mac users.
 
-Even if we’d like to force Mac users to `key:Ctrl`+click – that’s kind of difficult. The problem is: a left-click with `key:Ctrl` is interpreted as a *right-click* on MacOS, and it generates the `contextmenu` event, not `click` like Windows/Linux.
+Even if we’d like to force Mac users to `key:Ctrl`+click – that’s kind of difficult. The problem is: a left-click with `key:Ctrl` is interpreted as a _right-click_ on MacOS, and it generates the `contextmenu` event, not `click` like Windows/Linux.
 
 So if we want users of all operating systems to feel comfortable, then together with `ctrlKey` we should check `metaKey`.
 
@@ -110,8 +105,7 @@ For JS-code it means that we should check `if (event.ctrlKey || event.metaKey)`.
 
 But if their device doesn’t have it – then there should be a way to live without modifier keys. \`\`\`
 
-Coordinates: clientX/Y, pageX/Y
--------------------------------
+## Coordinates: clientX/Y, pageX/Y
 
 All mouse events provide coordinates in two flavours:
 
@@ -132,14 +126,13 @@ And if the mouse is in the center, then `clientX` and `clientY` are `250`, no ma
     <input onmousemove="this.value=event.clientX+':'+event.clientY" value="Mouse over me">
     ```
 
-Preventing selection on mousedown
----------------------------------
+## Preventing selection on mousedown
 
 Double mouse click has a side-effect that may be disturbing in some interfaces: it selects text.
 
 For instance, double-clicking on the text below selects it in addition to our handler:
 
-`html autorun height=50 <span         ondblclick="alert('dblclick')">Double-click me</span>`
+`html autorun height=50 <span ondblclick="alert('dblclick')">Double-click me</span>`
 
 If one presses the left mouse button and, without releasing it, moves the mouse, that also makes the selection, often unwanted.
 
@@ -147,28 +140,27 @@ There are multiple ways to prevent the selection, that you can read in the chapt
 
 In this particular case the most reasonable way is to prevent the browser action on `mousedown`. It prevents both these selections:
 
-`html autorun height=50 Before... <b ondblclick="alert('Click!')"         *!*onmousedown="return false"*/!*> Double-click me </b>         ...After`
+`html autorun height=50 Before... <b ondblclick="alert('Click!')" *!*onmousedown="return false"*/!*> Double-click me </b> ...After`
 
 Now the bold element is not selected on double clicks, and pressing the left button on it won’t start the selection.
 
 Please note: the text inside it is still selectable. However, the selection should start not on the text itself, but before or after it. Usually that’s fine for users.
 
-\`\`\``smart header="Preventing copying" If we want to disable selection to         protect our page content from copy-pasting, then we can use another         event:`oncopy\`.
+\`\`\``smart header="Preventing copying" If we want to disable selection to protect our page content from copy-pasting, then we can use another event:`oncopy\`.
 
-`html autorun height=80 no-beautify <div *!*oncopy="alert('Copying         forbidden!');return false"*/!*> Dear user, The copying is forbidden         for you. If you know JS or HTML, then you can get everything from the         page source though. </div>` If you try to copy a piece of text in the `<div>`, that won’t work, because the default action `oncopy` is prevented.
+`html autorun height=80 no-beautify <div *!*oncopy="alert('Copying forbidden!');return false"*/!*> Dear user, The copying is forbidden for you. If you know JS or HTML, then you can get everything from the page source though. </div>` If you try to copy a piece of text in the `<div>`, that won’t work, because the default action `oncopy` is prevented.
 
 Surely the user has access to HTML-source of the page, and can take the content from there, but not everyone knows how to do it. \`\`\`\`
 
-Summary
--------
+## Summary
 
 Mouse events have the following properties:
 
--   Button: `button`.
--   Modifier keys (`true` if pressed): `altKey`, `ctrlKey`, `shiftKey` and `metaKey` (Mac).
-    -   If you want to handle `key:Ctrl`, then don’t forget Mac users, they usually use `key:Cmd`, so it’s better to check `if (e.metaKey || e.ctrlKey)`.
--   Window-relative coordinates: `clientX/clientY`.
--   Document-relative coordinates: `pageX/pageY`.
+- Button: `button`.
+- Modifier keys (`true` if pressed): `altKey`, `ctrlKey`, `shiftKey` and `metaKey` (Mac).
+  - If you want to handle `key:Ctrl`, then don’t forget Mac users, they usually use `key:Cmd`, so it’s better to check `if (e.metaKey || e.ctrlKey)`.
+- Window-relative coordinates: `clientX/clientY`.
+- Document-relative coordinates: `pageX/pageY`.
 
 The default browser action of `mousedown` is text selection, if it’s not good for the interface, then it should be prevented.
 

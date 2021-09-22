@@ -1,5 +1,4 @@
-FormData
-========
+# FormData
 
 This chapter is about sending HTML forms: with or without files, with additional fields and so on.
 
@@ -15,8 +14,7 @@ The special thing about `FormData` is that network methods, such as `fetch`, can
 
 From the server point of view, that looks like a usual form submission.
 
-Sending a simple form
----------------------
+## Sending a simple form
 
 Let’s send a simple form first.
 
@@ -28,23 +26,22 @@ As you can see, that’s almost one-liner:
 
 In this example, the server code is not presented, as it’s beyond our scope. The server accepts the POST request and replies “User saved”.
 
-FormData Methods
-----------------
+## FormData Methods
 
 We can modify fields in `FormData` with methods:
 
--   `formData.append(name, value)` - add a form field with the given `name` and `value`,
--   `formData.append(name, blob, fileName)` - add a field as if it were `<input type="file">`, the third argument `fileName` sets file name (not form field name), as it were a name of the file in user’s filesystem,
--   `formData.delete(name)` - remove the field with the given `name`,
--   `formData.get(name)` - get the value of the field with the given `name`,
--   `formData.has(name)` - if there exists a field with the given `name`, returns `true`, otherwise `false`
+- `formData.append(name, value)` - add a form field with the given `name` and `value`,
+- `formData.append(name, blob, fileName)` - add a field as if it were `<input type="file">`, the third argument `fileName` sets file name (not form field name), as it were a name of the file in user’s filesystem,
+- `formData.delete(name)` - remove the field with the given `name`,
+- `formData.get(name)` - get the value of the field with the given `name`,
+- `formData.has(name)` - if there exists a field with the given `name`, returns `true`, otherwise `false`
 
 A form is technically allowed to have many fields with the same `name`, so multiple calls to `append` add more same-named fields.
 
 There’s also method `set`, with the same syntax as `append`. The difference is that `.set` removes all fields with the given `name`, and then appends a new field. So it makes sure there’s only one field with such `name`, the rest is just like `append`:
 
--   `formData.set(name, value)`,
--   `formData.set(name, blob, fileName)`.
+- `formData.set(name, value)`,
+- `formData.set(name, blob, fileName)`.
 
 Also we can iterate over formData fields using `for..of` loop:
 
@@ -52,8 +49,7 @@ Also we can iterate over formData fields using `for..of` loop:
 
 // List key/value pairs for(let \[name, value\] of formData) { alert(`${name} = ${value}`); // key1 = value1, then key2 = value2 } \`\`\`
 
-Sending a form with a file
---------------------------
+## Sending a form with a file
 
 The form is always sent as `Content-Type: multipart/form-data`, this encoding allows to send files. So, `<input type="file">` fields are sent also, similar to a usual form submission.
 
@@ -65,8 +61,7 @@ Picture:
 
 \`\`\`
 
-Sending a form with Blob data
------------------------------
+## Sending a form with Blob data
 
 As we’ve seen in the chapter <a href="info:fetch" class="uri">info:fetch</a>, it’s easy to send dynamically generated binary data e.g. an image, as `Blob`. We can supply it directly as `fetch` parameter `body`.
 
@@ -88,17 +83,16 @@ That’s same as if there were `<input type="file" name="image">` in the form, a
 
 The server reads form data and the file, as if it were a regular form submission.
 
-Summary
--------
+## Summary
 
 [FormData](https://xhr.spec.whatwg.org/#interface-formdata) objects are used to capture HTML form and submit it using `fetch` or another network method.
 
 We can either create `new FormData(form)` from an HTML form, or create a object without a form at all, and then append fields with methods:
 
--   `formData.append(name, value)`
--   `formData.append(name, blob, fileName)`
--   `formData.set(name, value)`
--   `formData.set(name, blob, fileName)`
+- `formData.append(name, value)`
+- `formData.append(name, blob, fileName)`
+- `formData.set(name, value)`
+- `formData.set(name, blob, fileName)`
 
 Let’s note two peculiarities here:
 
@@ -107,8 +101,8 @@ Let’s note two peculiarities here:
 
 Other methods are:
 
--   `formData.delete(name)`
--   `formData.get(name)`
--   `formData.has(name)`
+- `formData.delete(name)`
+- `formData.get(name)`
+- `formData.has(name)`
 
 That’s it!

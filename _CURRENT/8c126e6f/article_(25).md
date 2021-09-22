@@ -1,5 +1,4 @@
-Comments
-========
+# Comments
 
 As we know from the chapter <a href="info:structure" class="uri">info:structure</a>, comments can be single-line: starting with `//` and multiline: `/* ... */`.
 
@@ -7,8 +6,7 @@ We normally use them to describe how and why the code works.
 
 At first sight, commenting might be obvious, but novices in programming often use them wrongly.
 
-Bad comments
-------------
+## Bad comments
 
 Novices tend to use comments to explain “what is going on in the code”. Like this:
 
@@ -48,7 +46,7 @@ The better variant, with a factored out function `isPrime`:
       for (let i = 2; i < n; i++) {
         *!*if (!isPrime(i)) continue;*/!*
 
-        alert(i);  
+        alert(i);
       }
     }
 
@@ -60,7 +58,7 @@ The better variant, with a factored out function `isPrime`:
       return true;
     }
 
-Now we can understand the code easily. The function itself becomes the comment. Such code is called *self-descriptive*.
+Now we can understand the code easily. The function itself becomes the comment. Such code is called _self-descriptive_.
 
 ### Recipe: create functions
 
@@ -106,8 +104,7 @@ Once again, functions themselves tell what’s going on. There’s nothing to co
 
 In reality, we can’t totally avoid “explanatory” comments. There are complex algorithms. And there are smart “tweaks” for purposes of optimization. But generally we should try to keep the code simple and self-descriptive.
 
-Good comments
--------------
+## Good comments
 
 So, explanatory comments are usually bad. Which comments are good?
 
@@ -137,7 +134,7 @@ By the way, many editors like [WebStorm](https://www.jetbrains.com/webstorm/) ca
 Also, there are tools like [JSDoc 3](https://github.com/jsdoc3/jsdoc) that can generate HTML-documentation from the comments. You can read more information about JSDoc at <a href="http://usejsdoc.org/" class="uri">http://usejsdoc.org/</a>.
 
 Why is the task solved this way?  
-What’s written is important. But what’s *not* written may be even more important to understand what’s going on. Why is the task solved exactly this way? The code gives no answer.
+What’s written is important. But what’s _not_ written may be even more important to understand what’s going on. Why is the task solved exactly this way? The code gives no answer.
 
 If there are many ways to solve the task, why this one? Especially when it’s not the most obvious one.
 
@@ -148,8 +145,7 @@ Comments that explain the solution are very important. They help to continue dev
 Any subtle features of the code? Where they are used?  
 If the code has anything subtle and counter-intuitive, it’s definitely worth commenting.
 
-Summary
--------
+## Summary
 
 An important sign of a good developer is comments: their presence and even their absence.
 
@@ -157,13 +153,13 @@ Good comments allow us to maintain the code well, come back to it after a delay 
 
 **Comment this:**
 
--   Overall architecture, high-level view.
--   Function usage.
--   Important solutions, especially when not immediately obvious.
+- Overall architecture, high-level view.
+- Function usage.
+- Important solutions, especially when not immediately obvious.
 
 **Avoid comments:**
 
--   That tell “how code works” and “what it does”.
--   Put them in only if it’s impossible to make the code so simple and self-descriptive that it doesn’t require them.
+- That tell “how code works” and “what it does”.
+- Put them in only if it’s impossible to make the code so simple and self-descriptive that it doesn’t require them.
 
 Comments are also used for auto-documenting tools like JSDoc3: they read them and generate HTML-docs (or docs in another format).

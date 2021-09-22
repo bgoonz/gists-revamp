@@ -1,5 +1,4 @@
-F.prototype
-===========
+# F.prototype
 
 Remember, new objects can be created with a constructor function, like `new F()`.
 
@@ -17,7 +16,7 @@ Here’s the example:
 
 function Rabbit(name) { this.name = name; }
 
-*!* Rabbit.prototype = animal; */!*
+_!_ Rabbit.prototype = animal; _/!_
 
 let rabbit = new Rabbit(“White Rabbit”); // rabbit.\_\_proto\_\_ == animal
 
@@ -35,8 +34,7 @@ On the picture, `"prototype"` is a horizontal arrow, meaning a regular property,
 
 If, after the creation, `F.prototype` property changes (`F.prototype = <another object>`), then new objects created by `new F` will have another object as `[[Prototype]]`, but already existing objects keep the old one. \`\`\`
 
-Default F.prototype, constructor property
------------------------------------------
+## Default F.prototype, constructor property
 
 Every function has the `"prototype"` property even if we don’t supply it.
 
@@ -76,7 +74,7 @@ Like here:
 
 let rabbit = new Rabbit(“White Rabbit”);
 
-*!* let rabbit2 = new rabbit.constructor(“Black Rabbit”); */!* \`\`\`
+_!_ let rabbit2 = new rabbit.constructor(“Black Rabbit”); _/!_ \`\`\`
 
 That’s handy when we have an object, don’t know which constructor was used for it (e.g. it comes from a 3rd party library), and we need to create another one of the same kind.
 
@@ -92,7 +90,7 @@ For instance:
 
 \`\`\`js run function Rabbit() {} Rabbit.prototype = { jumps: true };
 
-let rabbit = new Rabbit(); *!* alert(rabbit.constructor === Rabbit); // false */!* \`\`\`
+let rabbit = new Rabbit(); _!_ alert(rabbit.constructor === Rabbit); // false _/!_ \`\`\`
 
 So, to keep the right `"constructor"` we can choose to add/remove properties to the default `"prototype"` instead of overwriting it as a whole:
 
@@ -114,16 +112,15 @@ Or, alternatively, recreate the `constructor` property manually:
 
     // now constructor is also correct, because we added it
 
-Summary
--------
+## Summary
 
 In this chapter we briefly described the way of setting a `[[Prototype]]` for objects created via a constructor function. Later we’ll see more advanced programming patterns that rely on it.
 
 Everything is quite simple, just a few notes to make things clear:
 
--   The `F.prototype` property (don’t mistake it for `[[Prototype]]`) sets `[[Prototype]]` of new objects when `new F()` is called.
--   The value of `F.prototype` should be either an object or `null`: other values won’t work.
--   The `"prototype"` property only has such a special effect when set on a constructor function, and invoked with `new`.
+- The `F.prototype` property (don’t mistake it for `[[Prototype]]`) sets `[[Prototype]]` of new objects when `new F()` is called.
+- The value of `F.prototype` should be either an object or `null`: other values won’t work.
+- The `"prototype"` property only has such a special effect when set on a constructor function, and invoked with `new`.
 
 On regular objects the `prototype` is nothing special:
 

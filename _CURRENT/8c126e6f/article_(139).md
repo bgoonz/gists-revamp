@@ -1,5 +1,4 @@
-XMLHttpRequest
-==============
+# XMLHttpRequest
 
 `XMLHttpRequest` is a built-in browser object that allows to make HTTP requests in JavaScript.
 
@@ -15,8 +14,7 @@ In modern web-development `XMLHttpRequest` is used for three reasons:
 
 Does that sound familiar? If yes, then all right, go on with `XMLHttpRequest`. Otherwise, please head on to <a href="info:fetch" class="uri">info:fetch</a>.
 
-The basics
-----------
+## The basics
 
 XMLHttpRequest has two modes of operation: synchronous and asynchronous.
 
@@ -30,10 +28,10 @@ To do the request, we need 3 steps:
 
     This method specifies the main parameters of the request:
 
-    -   `method` – HTTP-method. Usually `"GET"` or `"POST"`.
-    -   `URL` – the URL to request, a string, can be [URL](info:url) object.
-    -   `async` – if explicitly set to `false`, then the request is synchronous, we’ll cover that a bit later.
-    -   `user`, `password` – login and password for basic HTTP auth (if required).
+    - `method` – HTTP-method. Usually `"GET"` or `"POST"`.
+    - `URL` – the URL to request, a string, can be [URL](info:url) object.
+    - `async` – if explicitly set to `false`, then the request is synchronous, we’ll cover that a bit later.
+    - `user`, `password` – login and password for basic HTTP auth (if required).
 
     Please note that `open` call, contrary to its name, does not open the connection. It only configures the request, but the network activity only starts with the call of `send`.
 
@@ -49,24 +47,24 @@ To do the request, we need 3 steps:
 
     These three events are the most widely used:
 
-    -   `load` – when the request is complete (even if HTTP status is like 400 or 500), and the response is fully downloaded.
-    -   `error` – when the request couldn’t be made, e.g. network down or invalid URL.
-    -   `progress` – triggers periodically while the response is being downloaded, reports how much has been downloaded.
+    - `load` – when the request is complete (even if HTTP status is like 400 or 500), and the response is fully downloaded.
+    - `error` – when the request couldn’t be made, e.g. network down or invalid URL.
+    - `progress` – triggers periodically while the response is being downloaded, reports how much has been downloaded.
 
-        xhr.onload = function() {
-          alert(`Loaded: ${xhr.status} ${xhr.response}`);
-        };
+      xhr.onload = function() {
+      alert(`Loaded: ${xhr.status} ${xhr.response}`);
+      };
 
-        xhr.onerror = function() { // only triggers if the request couldn't be made at all
-          alert(`Network Error`);
-        };
+      xhr.onerror = function() { // only triggers if the request couldn't be made at all
+      alert(`Network Error`);
+      };
 
-        xhr.onprogress = function(event) { // triggers periodically
-          // event.loaded - how many bytes downloaded
-          // event.lengthComputable = true if the server sent Content-Length header
-          // event.total - total number of bytes (if lengthComputable)
-          alert(`Received ${event.loaded} of ${event.total}`);
-        };
+      xhr.onprogress = function(event) { // triggers periodically
+      // event.loaded - how many bytes downloaded
+      // event.lengthComputable = true if the server sent Content-Length header
+      // event.total - total number of bytes (if lengthComputable)
+      alert(`Received ${event.loaded} of ${event.total}`);
+      };
 
 Here’s a full example. The code below loads the URL at `/article/xmlhttprequest/example/load` from the server and prints the progress:
 
@@ -92,7 +90,7 @@ HTTP status code (a number): `200`, `404`, `403` and so on, can be `0` in case o
 `statusText`  
 HTTP status message (a string): usually `OK` for `200`, `Not Found` for `404`, `Forbidden` for `403` and so on.
 
- `response` (old scripts may use `responseText`)   
+`response` (old scripts may use `responseText`)  
 The server response body.
 
 We can also specify a timeout using the corresponding property:
@@ -101,7 +99,7 @@ We can also specify a timeout using the corresponding property:
 
 If the request does not succeed within the given time, it gets canceled and `timeout` event triggers.
 
-\`\`\``smart header="URL search parameters" To add parameters to URL,         like`?name=value\`, and ensure the proper encoding, we can use [URL](info:url) object:
+\`\`\``smart header="URL search parameters" To add parameters to URL, like`?name=value\`, and ensure the proper encoding, we can use [URL](info:url) object:
 
     let url = new URL('https://google.com/search');
     url.searchParams.set('q', 'test me!');
@@ -111,17 +109,16 @@ If the request does not succeed within the given time, it gets canceled and `tim
 
 \`\`\`\`
 
-Response Type
--------------
+## Response Type
 
 We can use `xhr.responseType` property to set the response format:
 
--   `""` (default) – get as string,
--   `"text"` – get as string,
--   `"arraybuffer"` – get as `ArrayBuffer` (for binary data, see chapter <a href="info:arraybuffer-binary-arrays" class="uri">info:arraybuffer-binary-arrays</a>),
--   `"blob"` – get as `Blob` (for binary data, see chapter <a href="info:blob" class="uri">info:blob</a>),
--   `"document"` – get as XML document (can use XPath and other XML methods) or HTML document (based on the MIME type of the received data),
--   `"json"` – get as JSON (parsed automatically).
+- `""` (default) – get as string,
+- `"text"` – get as string,
+- `"arraybuffer"` – get as `ArrayBuffer` (for binary data, see chapter <a href="info:arraybuffer-binary-arrays" class="uri">info:arraybuffer-binary-arrays</a>),
+- `"blob"` – get as `Blob` (for binary data, see chapter <a href="info:blob" class="uri">info:blob</a>),
+- `"document"` – get as XML document (can use XPath and other XML methods) or HTML document (based on the MIME type of the received data),
+- `"json"` – get as JSON (parsed automatically).
 
 For example, let’s get the response as JSON:
 
@@ -129,7 +126,7 @@ For example, let’s get the response as JSON:
 
 xhr.open(‘GET’, ‘/article/xmlhttprequest/example/json’);
 
-*!* xhr.responseType = ‘json’; */!*
+_!_ xhr.responseType = ‘json’; _/!_
 
 xhr.send();
 
@@ -139,8 +136,7 @@ xhr.send();
 
     They exist for historical reasons, to get either a string or XML document. Nowadays, we should set the format in `xhr.responseType` and get `xhr.response` as demonstrated above.
 
-Ready states
-------------
+## Ready states
 
 `XMLHttpRequest` changes between states as it progresses. The current state is accessible as `xhr.readyState`.
 
@@ -167,8 +163,7 @@ We can track them using `readystatechange` event:
 
 You can find `readystatechange` listeners in really old code, it’s there for historical reasons, as there was a time when there were no `load` and other events. Nowadays, `load/error/progress` handlers deprecate it.
 
-Aborting request
-----------------
+## Aborting request
 
 We can terminate the request at any time. The call to `xhr.abort()` does that:
 
@@ -176,8 +171,7 @@ We can terminate the request at any time. The call to `xhr.abort()` does that:
 
 That triggers `abort` event, and `xhr.status` becomes `0`.
 
-Synchronous requests
---------------------
+## Synchronous requests
 
 If in the `open` method the third parameter `async` is set to `false`, the request is made synchronously.
 
@@ -206,8 +200,7 @@ Many advanced capabilities of `XMLHttpRequest`, like requesting from another dom
 
 Because of all that, synchronous requests are used very sparingly, almost never. We won’t talk about them any more.
 
-HTTP-headers
-------------
+## HTTP-headers
 
 `XMLHttpRequest` allows both to send custom headers and read headers from the response.
 
@@ -220,7 +213,7 @@ For instance:
 
     xhr.setRequestHeader('Content-Type', 'application/json');
 
-\`\``warn header="Headers limitations" Several headers are managed             exclusively by the browser, e.g.`Referer`and`Host\`. The full list is [in the specification](https://xhr.spec.whatwg.org/#the-setrequestheader()-method).
+\`\``warn header="Headers limitations" Several headers are managed exclusively by the browser, e.g.`Referer`and`Host\`. The full list is [in the specification](<https://xhr.spec.whatwg.org/#the-setrequestheader()-method>).
 
 `XMLHttpRequest` is not allowed to change them, for the sake of user safety and correctness of the request. \`\`\`
 
@@ -272,8 +265,7 @@ Like this (assuming that if two headers have the same name, then the latter one 
 
     // headers['Content-Type'] = 'image/png'
 
-POST, FormData
---------------
+## POST, FormData
 
 To make a POST request, we can use the built-in [FormData](mdn:api/FormData) object.
 
@@ -313,8 +305,7 @@ Just don’t forget to set the header `Content-Type: application/json`, many ser
 
 The `.send(body)` method is pretty omnivore. It can send almost any `body`, including `Blob` and `BufferSource` objects.
 
-Upload progress
----------------
+## Upload progress
 
 The `progress` event triggers only on the downloading stage.
 
@@ -326,13 +317,13 @@ There’s another object, without methods, exclusively to track upload events: `
 
 It generates events, similar to `xhr`, but `xhr.upload` triggers them solely on uploading:
 
--   `loadstart` – upload started.
--   `progress` – triggers periodically during the upload.
--   `abort` – upload aborted.
--   `error` – non-HTTP error.
--   `load` – upload finished successfully.
--   `timeout` – upload timed out (if `timeout` property is set).
--   `loadend` – upload finished with either success or error.
+- `loadstart` – upload started.
+- `progress` – triggers periodically during the upload.
+- `abort` – upload aborted.
+- `error` – non-HTTP error.
+- `load` – upload finished successfully.
+- `timeout` – upload timed out (if `timeout` property is set).
+- `loadend` – upload finished with either success or error.
 
 Example of handlers:
 
@@ -354,8 +345,7 @@ Here’s a real-life example: file upload with progress indication:
 
 \`\`\`
 
-Cross-origin requests
----------------------
+## Cross-origin requests
 
 `XMLHttpRequest` can make cross-origin requests, using the same CORS policy as [fetch](info:fetch-crossorigin).
 
@@ -371,8 +361,7 @@ Just like `fetch`, it doesn’t send cookies and HTTP-authorization to another o
 
 See the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a> for details about cross-origin headers.
 
-Summary
--------
+## Summary
 
 Typical code of the GET-request with `XMLHttpRequest`:
 
@@ -403,13 +392,13 @@ Typical code of the GET-request with `XMLHttpRequest`:
 
 There are actually more events, the [modern specification](https://xhr.spec.whatwg.org/#events) lists them (in the lifecycle order):
 
--   `loadstart` – the request has started.
--   `progress` – a data packet of the response has arrived, the whole response body at the moment is in `response`.
--   `abort` – the request was canceled by the call `xhr.abort()`.
--   `error` – connection error has occurred, e.g. wrong domain name. Doesn’t happen for HTTP-errors like 404.
--   `load` – the request has finished successfully.
--   `timeout` – the request was canceled due to timeout (only happens if it was set).
--   `loadend` – triggers after `load`, `error`, `timeout` or `abort`.
+- `loadstart` – the request has started.
+- `progress` – a data packet of the response has arrived, the whole response body at the moment is in `response`.
+- `abort` – the request was canceled by the call `xhr.abort()`.
+- `error` – connection error has occurred, e.g. wrong domain name. Doesn’t happen for HTTP-errors like 404.
+- `load` – the request has finished successfully.
+- `timeout` – the request was canceled due to timeout (only happens if it was set).
+- `loadend` – triggers after `load`, `error`, `timeout` or `abort`.
 
 The `error`, `abort`, `timeout`, and `load` events are mutually exclusive. Only one of them may happen.
 

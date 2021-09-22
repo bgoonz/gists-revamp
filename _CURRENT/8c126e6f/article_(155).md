@@ -1,12 +1,10 @@
-Shadow DOM styling
-==================
+# Shadow DOM styling
 
 Shadow DOM may include both `<style>` and `<link rel="stylesheet" href="…">` tags. In the latter case, stylesheets are HTTP-cached, so they are not redownloaded for multiple components that use same template.
 
 As a general rule, local styles work only inside the shadow tree, and document styles work outside of it. But there are few exceptions.
 
-:host
------
+## :host
 
 The `:host` selector allows to select the shadow host (the element containing the shadow tree).
 
@@ -18,8 +16,7 @@ That’s exactly what `:host` does:
 
 Hello! \`\`\`
 
-Cascading
----------
+## Cascading
 
 The shadow host (`<custom-dialog>` itself) resides in the light DOM, so it’s affected by document CSS rules.
 
@@ -39,8 +36,7 @@ It’s very convenient, as we can setup “default” component styles in its `:
 
 The exception is when a local property is labelled `!important`, for such properties, local styles take precedence.
 
-:host(selector)
----------------
+## :host(selector)
 
 Same as `:host`, but applied only if the shadow host matches the `selector`.
 
@@ -54,8 +50,7 @@ Not centered. \`\`\`
 
 Now the additional centering styles are only applied to the first dialog: `<custom-dialog centered>`.
 
-:host-context(selector)
------------------------
+## :host-context(selector)
 
 Same as `:host`, but applied only if the shadow host or any of its ancestors in the outer document matches the `selector`.
 
@@ -70,8 +65,7 @@ E.g. `:host-context(.dark-theme)` matches only if there’s `dark-theme` class o
 
 To summarize, we can use `:host`-family of selectors to style the main element of the component, depending on the context. These styles (unless `!important`) can be overridden by the document.
 
-Styling slotted content
------------------------
+## Styling slotted content
 
 Now let’s consider the situation with slots.
 
@@ -122,8 +116,7 @@ Please note, `::slotted` selector can’t descend any further into the slot. The
 
 Also, `::slotted` can only be used in CSS. We can’t use it in `querySelector`.
 
-CSS hooks with custom properties
---------------------------------
+## CSS hooks with custom properties
 
 How do we style internal elements of a component from the main document?
 
@@ -162,8 +155,7 @@ Birthday:
 
 <span slot="username">John Smith</span> <span slot="birthday">01.01.2001</span> \`\`\`
 
-Summary
--------
+## Summary
 
 Shadow DOM can include styles, such as `<style>` or `<link rel="stylesheet">`.
 

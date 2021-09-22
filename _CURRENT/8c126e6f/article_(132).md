@@ -1,14 +1,13 @@
-Fetch
-=====
+# Fetch
 
 JavaScript can send network requests to the server and load new information whenever it’s needed.
 
 For example, we can use a network request to:
 
--   Submit an order,
--   Load user information,
--   Receive latest updates from the server,
--   …etc.
+- Submit an order,
+- Load user information,
+- Receive latest updates from the server,
+- …etc.
 
 …And all of that without reloading the page!
 
@@ -22,8 +21,8 @@ The basic syntax is:
 
     let promise = fetch(url, [options])
 
--   **`url`** – the URL to access.
--   **`options`** – optional parameters: method, headers etc.
+- **`url`** – the URL to access.
+- **`options`** – optional parameters: method, headers etc.
 
 Without `options`, this is a simple GET request, downloading the contents of the `url`.
 
@@ -39,8 +38,8 @@ The promise rejects if the `fetch` was unable to make HTTP-request, e.g. networ
 
 We can see HTTP-status in response properties:
 
--   **`status`** – HTTP status code, e.g. 200.
--   **`ok`** – boolean, `true` if the HTTP status code is 200-299.
+- **`status`** – HTTP status code, e.g. 200.
+- **`ok`** – boolean, `true` if the HTTP status code is 200-299.
 
 For example:
 
@@ -57,24 +56,24 @@ For example:
 
 `Response` provides multiple promise-based methods to access the body in various formats:
 
--   **`response.text()`** – read the response and return as text,
--   **`response.json()`** – parse the response as JSON,
--   **`response.formData()`** – return the response as `FormData` object (explained in the [next chapter](info:formdata)),
--   **`response.blob()`** – return the response as [Blob](info:blob) (binary data with type),
--   **`response.arrayBuffer()`** – return the response as [ArrayBuffer](info:arraybuffer-binary-arrays) (low-level representation of binary data),
--   additionally, `response.body` is a [ReadableStream](https://streams.spec.whatwg.org/#rs-class) object, it allows you to read the body chunk-by-chunk, we’ll see an example later.
+- **`response.text()`** – read the response and return as text,
+- **`response.json()`** – parse the response as JSON,
+- **`response.formData()`** – return the response as `FormData` object (explained in the [next chapter](info:formdata)),
+- **`response.blob()`** – return the response as [Blob](info:blob) (binary data with type),
+- **`response.arrayBuffer()`** – return the response as [ArrayBuffer](info:arraybuffer-binary-arrays) (low-level representation of binary data),
+- additionally, `response.body` is a [ReadableStream](https://streams.spec.whatwg.org/#rs-class) object, it allows you to read the body chunk-by-chunk, we’ll see an example later.
 
 For instance, let’s get a JSON-object with latest commits from GitHub:
 
 \`\`\`js run async let url = ‘https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits’; let response = await fetch(url);
 
-*!* let commits = await response.json(); // read response body and parse as JSON */!*
+_!_ let commits = await response.json(); // read response body and parse as JSON _/!_
 
 alert(commits\[0\].author.login); \`\`\`
 
 Or, the same without `await`, using pure promises syntax:
 
-`js run         fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')         .then(response => response.json()) .then(commits =>         alert(commits[0].author.login));`
+`js run fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits') .then(response => response.json()) .then(commits => alert(commits[0].author.login));`
 
 To get the response text, `await response.text()` instead of `.json()`:
 
@@ -88,7 +87,7 @@ As a show-case for reading in binary format, let’s fetch and show a logo image
 
 \`\`\`js async run let response = await fetch(‘/article/fetch/logo-fetch.svg’);
 
-*!* let blob = await response.blob(); // download as Blob object */!*
+_!_ let blob = await response.blob(); // download as Blob object _/!_
 
 // create for it let img = document.createElement(‘img’); img.style = ‘position:fixed;top:10px;left:10px;width:100px’; document.body.append(img);
 
@@ -105,8 +104,7 @@ setTimeout(() =&gt; { // hide after three seconds img.remove(); URL.revokeObject
     let parsed = await response.json(); // fails (already consumed)
     ```
 
-Response headers
-----------------
+## Response headers
 
 The response headers are available in a Map-like headers object in `response.headers`.
 
@@ -118,8 +116,7 @@ It’s not exactly a Map, but it has similar methods to get individual headers b
 
 // iterate over all headers for (let \[key, value\] of response.headers) { alert(`${key} = ${value}`); } \`\`\`
 
-Request headers
----------------
+## Request headers
 
 To set a request header in `fetch`, we can use the `headers` option. It has an object with outgoing headers, like this:
 
@@ -131,40 +128,39 @@ To set a request header in `fetch`, we can use the `headers` option. It has an o
 
 …But there’s a list of [forbidden HTTP headers](https://fetch.spec.whatwg.org/#forbidden-header-name) that we can’t set:
 
--   `Accept-Charset`, `Accept-Encoding`
--   `Access-Control-Request-Headers`
--   `Access-Control-Request-Method`
--   `Connection`
--   `Content-Length`
--   `Cookie`, `Cookie2`
--   `Date`
--   `DNT`
--   `Expect`
--   `Host`
--   `Keep-Alive`
--   `Origin`
--   `Referer`
--   `TE`
--   `Trailer`
--   `Transfer-Encoding`
--   `Upgrade`
--   `Via`
--   `Proxy-*`
--   `Sec-*`
+- `Accept-Charset`, `Accept-Encoding`
+- `Access-Control-Request-Headers`
+- `Access-Control-Request-Method`
+- `Connection`
+- `Content-Length`
+- `Cookie`, `Cookie2`
+- `Date`
+- `DNT`
+- `Expect`
+- `Host`
+- `Keep-Alive`
+- `Origin`
+- `Referer`
+- `TE`
+- `Trailer`
+- `Transfer-Encoding`
+- `Upgrade`
+- `Via`
+- `Proxy-*`
+- `Sec-*`
 
 These headers ensure proper and safe HTTP, so they are controlled exclusively by the browser.
 
-POST requests
--------------
+## POST requests
 
 To make a `POST` request, or a request with another method, we need to use `fetch` options:
 
--   **`method`** – HTTP-method, e.g. `POST`,
--   **`body`** – the request body, one of:
-    -   a string (e.g. JSON-encoded),
-    -   `FormData` object, to submit the data as `form/multipart`,
-    -   `Blob`/`BufferSource` to send binary data,
-    -   [URLSearchParams](info:url), to submit the data in `x-www-form-urlencoded` encoding, rarely used.
+- **`method`** – HTTP-method, e.g. `POST`,
+- **`body`** – the request body, one of:
+  - a string (e.g. JSON-encoded),
+  - `FormData` object, to submit the data as `form/multipart`,
+  - `Blob`/`BufferSource` to send binary data,
+  - [URLSearchParams](info:url), to submit the data in `x-www-form-urlencoded` encoding, rarely used.
 
 The JSON format is used most of the time.
 
@@ -172,7 +168,7 @@ For example, this code submits `user` object as JSON:
 
 \`\`\`js run async let user = { name: ‘John’, surname: ‘Smith’ };
 
-*!* let response = await fetch(‘/article/fetch/post/user’, { method: ‘POST’, headers: { ‘Content-Type’: ‘application/json;charset=utf-8’ }, body: JSON.stringify(user) }); */!*
+_!_ let response = await fetch(‘/article/fetch/post/user’, { method: ‘POST’, headers: { ‘Content-Type’: ‘application/json;charset=utf-8’ }, body: JSON.stringify(user) }); _/!_
 
 let result = await response.json(); alert(result.message); \`\`\`
 
@@ -180,8 +176,7 @@ Please note, if the request `body` is a string, then `Content-Type` header is se
 
 But, as we’re going to send JSON, we use `headers` option to send `application/json` instead, the correct `Content-Type` for JSON-encoded data.
 
-Sending an image
-----------------
+## Sending an image
 
 We can also submit binary data with `fetch` using `Blob` or `BufferSource` objects.
 
@@ -196,7 +191,7 @@ Please note, here we don’t set `Content-Type` header manually, because a `Blob
 The `submit()` function can be rewritten without `async/await` like this:
 
     function submit() {
-      canvasElem.toBlob(function(blob) {        
+      canvasElem.toBlob(function(blob) {
         fetch('/article/fetch/post/image', {
           method: 'POST',
           body: blob
@@ -206,8 +201,7 @@ The `submit()` function can be rewritten without `async/await` like this:
       }, 'image/png');
     }
 
-Summary
--------
+## Summary
 
 A typical fetch request consists of two `await` calls:
 

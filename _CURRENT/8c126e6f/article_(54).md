@@ -1,5 +1,4 @@
-Function object, NFE
-====================
+# Function object, NFE
 
 As we already know, a function in JavaScript is a value.
 
@@ -9,8 +8,7 @@ In JavaScript, functions are objects.
 
 A good way to imagine functions is as callable “action objects”. We can not only call them, but also treat them as objects: add/remove properties, pass by reference etc.
 
-The “name” property
--------------------
+## The “name” property
 
 Function objects contain some useable properties.
 
@@ -54,8 +52,7 @@ alert( arr\[0\].name ); // // the engine has no way to set up the right name, so
 
 In practice, however, most functions do have a name.
 
-The “length” property
----------------------
+## The “length” property
 
 There is another built-in property “length” that returns the number of function parameters, for instance:
 
@@ -71,8 +68,8 @@ For instance, in the code below the `ask` function accepts a `question` to ask a
 
 Once a user provides their answer, the function calls the handlers. We can pass two kinds of handlers:
 
--   A zero-argument function, which is only called when the user gives a positive answer.
--   A function with arguments, which is called in either case and returns an answer.
+- A zero-argument function, which is only called when the user gives a positive answer.
+- A function with arguments, which is called in either case and returns an answer.
 
 To call `handler` the right way, we examine the `handler.length` property.
 
@@ -86,10 +83,9 @@ for(let handler of handlers) { if (handler.length == 0) { if (isYes) handler(); 
 
 // for positive answer, both handlers are called // for negative answer, only the second one ask(“Question?”, () =&gt; alert(‘You said yes’), result =&gt; alert(result)); \`\`\`
 
-This is a particular case of so-called [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)) – treating arguments differently depending on their type or, in our case depending on the `length`. The idea does have a use in JavaScript libraries.
+This is a particular case of so-called [polymorphism](<https://en.wikipedia.org/wiki/Polymorphism_(computer_science)>) – treating arguments differently depending on their type or, in our case depending on the `length`. The idea does have a use in JavaScript libraries.
 
-Custom properties
------------------
+## Custom properties
 
 We can also add properties of our own.
 
@@ -97,7 +93,7 @@ Here we add the `counter` property to track the total calls count:
 
 \`\`\`js run function sayHi() { alert(“Hi”);
 
-*!* // let’s count how many times we run sayHi.counter++; */!* } sayHi.counter = 0; // initial value
+_!_ // let’s count how many times we run sayHi.counter++; _/!_ } sayHi.counter = 0; // initial value
 
 sayHi(); // Hi sayHi(); // Hi
 
@@ -135,12 +131,11 @@ return counter; }
 
 let counter = makeCounter();
 
-*!* counter.count = 10; alert( counter() ); // 10 */!* \`\`\`
+_!_ counter.count = 10; alert( counter() ); // 10 _/!_ \`\`\`
 
 So the choice of implementation depends on our aims.
 
-Named Function Expression
--------------------------
+## Named Function Expression
 
 Named Function Expression, or NFE, is a term for Function Expressions that have a name.
 
@@ -164,7 +159,7 @@ Adding such a name also did not break anything.
 
 The function is still available as `sayHi()`:
 
-\`\``js run let sayHi = function *!*func*/!*(who) {   alert(`Hello, ${who}\`); };
+\`\``js run let sayHi = function *!*func*/!*(who) { alert(`Hello, ${who}\`); };
 
 sayHi(“John”); // Hello, John \`\`\`
 
@@ -175,7 +170,7 @@ There are two special things about the name `func`, that are the reasons for it:
 
 For instance, the function `sayHi` below calls itself again with `"Guest"` if no `who` is provided:
 
-\`\``js run let sayHi = function *!*func*/!*(who) {   if (who) {     alert(`Hello, ${who}\`); } else { *!* func(“Guest”); // use func to re-call itself */!* } };
+\`\``js run let sayHi = function *!*func*/!*(who) { if (who) { alert(`Hello, ${who}\`); } else { _!_ func(“Guest”); // use func to re-call itself _/!_ } };
 
 sayHi(); // Hello, Guest
 
@@ -197,7 +192,7 @@ Actually, in most cases we can:
 
 The problem with that code is that `sayHi` may change in the outer code. If the function gets assigned to another variable instead, the code will start to give errors:
 
-\`\``js run let sayHi = function(who) {   if (who) {     alert(`Hello, ${who}\`); } else { *!* sayHi(“Guest”); // Error: sayHi is not a function */!* } };
+\`\``js run let sayHi = function(who) { if (who) { alert(`Hello, ${who}\`); } else { _!_ sayHi(“Guest”); // Error: sayHi is not a function _/!_ } };
 
 let welcome = sayHi; sayHi = null;
 
@@ -209,7 +204,7 @@ The optional name which we can put into the Function Expression is meant to solv
 
 Let’s use it to fix our code:
 
-\`\``js run let sayHi = function *!*func*/!*(who) {   if (who) {     alert(`Hello, ${who}\`); } else { *!* func(“Guest”); // Now all fine */!* } };
+\`\``js run let sayHi = function *!*func*/!*(who) { if (who) { alert(`Hello, ${who}\`); } else { _!_ func(“Guest”); // Now all fine _/!_ } };
 
 let welcome = sayHi; sayHi = null;
 
@@ -223,15 +218,14 @@ The outer code still has its variable `sayHi` or `welcome`. And `func` is an “
 
 Sometimes, when we need a reliable internal name, it’s the reason to rewrite a Function Declaration to Named Function Expression form. \`\`\`
 
-Summary
--------
+## Summary
 
 Functions are objects.
 
 Here we covered their properties:
 
--   `name` – the function name. Usually taken from the function definition, but if there’s none, JavaScript tries to guess it from the context (e.g. an assignment).
--   `length` – the number of arguments in the function definition. Rest parameters are not counted.
+- `name` – the function name. Usually taken from the function definition, but if there’s none, JavaScript tries to guess it from the context (e.g. an assignment).
+- `length` – the number of arguments in the function definition. Rest parameters are not counted.
 
 If the function is declared as a Function Expression (not in the main code flow), and it carries the name, then it is called a Named Function Expression. The name can be used inside to reference itself, for recursive calls or such.
 

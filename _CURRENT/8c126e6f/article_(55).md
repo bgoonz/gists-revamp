@@ -1,10 +1,8 @@
-The “new Function” syntax
-=========================
+# The “new Function” syntax
 
 There’s one more way to create a function. It’s rarely used, but sometimes there’s no alternative.
 
-Syntax
-------
+## Syntax
 
 The syntax for creating a function:
 
@@ -37,8 +35,7 @@ But `new Function` allows to turn any string into a function. For example, we ca
 
 It is used in very specific cases, like when we receive code from a server, or to dynamically compile a function from a template, in complex web-applications.
 
-Closure
--------
+## Closure
 
 Usually, a function remembers where it was born in the special property `[[Environment]]`. It references the Lexical Environment from where it’s created (we covered that in the chapter <a href="info:closure" class="uri">info:closure</a>).
 
@@ -48,7 +45,7 @@ So, such function doesn’t have access to outer variables, only to the global o
 
 \`\`\`js run function getFunc() { let value = “test”;
 
-*!* let func = new Function(‘alert(value)’); */!*
+_!_ let func = new Function(‘alert(value)’); _/!_
 
 return func; }
 
@@ -58,11 +55,11 @@ Compare it with the regular behavior:
 
 \`\`\`js run function getFunc() { let value = “test”;
 
-*!* let func = function() { alert(value); }; */!*
+_!_ let func = function() { alert(value); }; _/!_
 
 return func; }
 
-getFunc()(); // *!*“test”*/!*, from the Lexical Environment of getFunc \`\`\`
+getFunc()(); // _!_“test”_/!_, from the Lexical Environment of getFunc \`\`\`
 
 This special feature of `new Function` looks strange, but appears very useful in practice.
 
@@ -72,7 +69,7 @@ Our new function needs to interact with the main script.
 
 What if it could access the outer variables?
 
-The problem is that before JavaScript is published to production, it’s compressed using a *minifier* – a special program that shrinks code by removing extra comments, spaces and – what’s important, renames local variables into shorter ones.
+The problem is that before JavaScript is published to production, it’s compressed using a _minifier_ – a special program that shrinks code by removing extra comments, spaces and – what’s important, renames local variables into shorter ones.
 
 For instance, if a function has `let userName`, minifier replaces it with `let a` (or another letter if this one is occupied), and does it everywhere. That’s usually a safe thing to do, because the variable is local, nothing outside the function can access it. And inside the function, minifier replaces every mention of it. Minifiers are smart, they analyze the code structure, so they don’t break anything. They’re not just a dumb find-and-replace.
 
@@ -84,8 +81,7 @@ Besides, such code would be architecturally bad and prone to errors.
 
 To pass something to a function, created as `new Function`, we should use its arguments.
 
-Summary
--------
+## Summary
 
 The syntax:
 

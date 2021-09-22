@@ -1,5 +1,4 @@
-WeakMap and WeakSet
-===================
+# WeakMap and WeakSet
 
 As we know from the chapter <a href="info:garbage-collection" class="uri">info:garbage-collection</a>, JavaScript engine keeps a value in memory while it is “reachable” and can potentially be used.
 
@@ -54,8 +53,7 @@ For instance:
 
 Let’s see what it means on examples.
 
-WeakMap
--------
+## WeakMap
 
 The first difference between `Map` and `WeakMap` is that keys must be objects, not primitive values:
 
@@ -65,7 +63,7 @@ let obj = {};
 
 weakMap.set(obj, “ok”); // works fine (object key)
 
-*!* // can’t use a string as the key weakMap.set(“test”, “Whoops”); // Error, because “test” is not an object */!* \`\`\`
+_!_ // can’t use a string as the key weakMap.set(“test”, “Whoops”); // Error, because “test” is not an object _/!_ \`\`\`
 
 Now, if we use an object as the key in it, and there are no other references to that object – it will be removed from memory (and from the map) automatically.
 
@@ -84,21 +82,20 @@ Compare it with the regular `Map` example above. Now if `john` only exists as th
 
 `WeakMap` has only the following methods:
 
--   `weakMap.get(key)`
--   `weakMap.set(key, value)`
--   `weakMap.delete(key)`
--   `weakMap.has(key)`
+- `weakMap.get(key)`
+- `weakMap.set(key, value)`
+- `weakMap.delete(key)`
+- `weakMap.has(key)`
 
-Why such a limitation? That’s for technical reasons. If an object has lost all other references (like `john` in the code above), then it is to be garbage-collected automatically. But technically it’s not exactly specified *when the cleanup happens*.
+Why such a limitation? That’s for technical reasons. If an object has lost all other references (like `john` in the code above), then it is to be garbage-collected automatically. But technically it’s not exactly specified _when the cleanup happens_.
 
 The JavaScript engine decides that. It may choose to perform the memory cleanup immediately or to wait and do the cleaning later when more deletions happen. So, technically, the current element count of a `WeakMap` is not known. The engine may have cleaned it up or not, or did it partially. For that reason, methods that access all keys/values are not supported.
 
 Now, where do we need such a data structure?
 
-Use case: additional data
--------------------------
+## Use case: additional data
 
-The main area of application for `WeakMap` is an *additional data storage*.
+The main area of application for `WeakMap` is an _additional data storage_.
 
 If we’re working with an object that “belongs” to another code, maybe even a third-party library, and would like to store some data associated with it, that should only exist while the object is alive - then `WeakMap` is exactly what’s needed.
 
@@ -149,8 +146,7 @@ We can avoid it by switching to `WeakMap` instead:
 
 Now we don’t have to clean `visitsCountMap`. After `john` object becomes unreachable, by all means except as a key of `WeakMap`, it gets removed from memory, along with the information by that key from `WeakMap`.
 
-Use case: caching
------------------
+## Use case: caching
 
 Another common example is caching. We can store (“cache”) results from a function, so that future calls on the same object can reuse it.
 
@@ -166,7 +162,7 @@ To achieve that, we can use `Map` (not optimal scenario):
 
 return cache.get(obj); }
 
-*!* // Now we use process() in another file: */!*
+_!_ // Now we use process() in another file: _/!_
 
 // 📁 main.js let obj = {/\* let’s say we have an object \*/};
 
@@ -182,7 +178,7 @@ For multiple calls of `process(obj)` with the same object, it only calculates th
 
 If we replace `Map` with `WeakMap`, then this problem disappears. The cached result will be removed from memory automatically after the object gets garbage collected.
 
-\`\`\`js run // 📁 cache.js *!* let cache = new WeakMap(); */!*
+\`\`\`js run // 📁 cache.js _!_ let cache = new WeakMap(); _/!_
 
 // calculate and remember the result function process(obj) { if (!cache.has(obj)) { let result = /\* calculate the result for \*/ obj;
 
@@ -200,14 +196,13 @@ let result1 = process(obj); let result2 = process(obj);
 
 // Can’t get cache.size, as it’s a WeakMap, // but it’s 0 or soon be 0 // When obj gets garbage collected, cached data will be removed as well \`\`\`
 
-WeakSet
--------
+## WeakSet
 
 `WeakSet` behaves similarly:
 
--   It is analogous to `Set`, but we may only add objects to `WeakSet` (not primitives).
--   An object exists in the set while it is reachable from somewhere else.
--   Like `Set`, it supports `add`, `has` and `delete`, but not `size`, `keys()` and no iterations.
+- It is analogous to `Set`, but we may only add objects to `WeakSet` (not primitives).
+- An object exists in the set while it is reachable from somewhere else.
+- Like `Set`, it supports `add`, `has` and `delete`, but not `size`, `keys()` and no iterations.
 
 Being “weak”, it also serves as additional storage. But not for arbitrary data, rather for “yes/no” facts. A membership in `WeakSet` may mean something about the object.
 
@@ -231,8 +226,7 @@ john = null;
 
 The most notable limitation of `WeakMap` and `WeakSet` is the absence of iterations, and the inability to get all current content. That may appear inconvenient, but does not prevent `WeakMap/WeakSet` from doing their main job – be an “additional” storage of data for objects which are stored/managed at another place.
 
-Summary
--------
+## Summary
 
 `WeakMap` is `Map`-like collection that allows only objects as keys and removes them together with associated value once they become inaccessible by other means.
 

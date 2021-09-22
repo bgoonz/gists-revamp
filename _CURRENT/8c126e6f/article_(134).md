@@ -1,9 +1,8 @@
-Fetch: Download progress
-========================
+# Fetch: Download progress
 
-The `fetch` method allows to track *download* progress.
+The `fetch` method allows to track _download_ progress.
 
-Please note: there’s currently no way for `fetch` to track *upload* progress. For that purpose, please use [XMLHttpRequest](info:xmlhttprequest), we’ll cover it later.
+Please note: there’s currently no way for `fetch` to track _upload_ progress. For that purpose, please use [XMLHttpRequest](info:xmlhttprequest), we’ll cover it later.
 
 To track download progress, we can use `response.body` property. It’s `ReadableStream` – a special object that provides body chunk-by-chunk, as it comes. Readable streams are described in the [Streams API](https://streams.spec.whatwg.org/#rs-class) specification.
 
@@ -82,6 +81,6 @@ Let’s explain that step-by-step:
 
 At the end we have the result (as a string or a blob, whatever is convenient), and progress-tracking in the process.
 
-Once again, please note, that’s not for *upload* progress (no way now with `fetch`), only for *download* progress.
+Once again, please note, that’s not for _upload_ progress (no way now with `fetch`), only for _download_ progress.
 
 Also, if the size is unknown, we should check `receivedLength` in the loop and break it once it reaches a certain limit. So that the `chunks` won’t overflow the memory.

@@ -1,12 +1,10 @@
-Code editors
-============
+# Code editors
 
 A code editor is the place where programmers spend most of their time.
 
 There are two main types of code editors: IDEs and lightweight editors. Many people use one tool of each type.
 
-IDE
----
+## IDE
 
 The term [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) (Integrated Development Environment) refers to a powerful editor with many features that usually operates on a “whole project.” As the name suggests, it’s not just an editor, but a full-scale “development environment.”
 
@@ -14,15 +12,14 @@ An IDE loads the project (which can be many files), allows navigation between fi
 
 If you haven’t selected an IDE yet, consider the following options:
 
--   [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
--   [WebStorm](http://www.jetbrains.com/webstorm/) (cross-platform, paid).
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [WebStorm](http://www.jetbrains.com/webstorm/) (cross-platform, paid).
 
 For Windows, there’s also “Visual Studio”, not to be confused with “Visual Studio Code”. “Visual Studio” is a paid and mighty Windows-only editor, well-suited for the .NET platform. It’s also good at JavaScript. There’s also a free version [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
 Many IDEs are paid, but have a trial period. Their cost is usually negligible compared to a qualified developer’s salary, so just choose the best one for you.
 
-Lightweight editors
--------------------
+## Lightweight editors
 
 “Lightweight editors” are not as powerful as IDEs, but they’re fast, elegant and simple.
 
@@ -34,14 +31,13 @@ In practice, lightweight editors may have a lot of plugins including directory-l
 
 The following options deserve your attention:
 
--   [Atom](https://atom.io/) (cross-platform, free).
--   [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
--   [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
--   [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
--   [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+- [Atom](https://atom.io/) (cross-platform, free).
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
+- [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
 
-Let’s not argue
----------------
+## Let’s not argue
 
 The editors in the lists above are those that either I or my friends whom I consider good developers have been using for a long time and are happy with.
 

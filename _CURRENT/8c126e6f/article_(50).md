@@ -1,18 +1,16 @@
-Rest parameters and spread syntax
-=================================
+# Rest parameters and spread syntax
 
 Many JavaScript built-in functions support an arbitrary number of arguments.
 
 For instance:
 
--   `Math.max(arg1, arg2, ..., argN)` – returns the greatest of the arguments.
--   `Object.assign(dest, src1, ..., srcN)` – copies properties from `src1..N` into `dest`.
--   …and so on.
+- `Math.max(arg1, arg2, ..., argN)` – returns the greatest of the arguments.
+- `Object.assign(dest, src1, ..., srcN)` – copies properties from `src1..N` into `dest`.
+- …and so on.
 
 In this chapter we’ll learn how to do the same. And also, how to pass arrays to such functions as parameters.
 
-Rest parameters `...`
----------------------
+## Rest parameters `...`
 
 A function can be called with any number of arguments, no matter how it is defined.
 
@@ -52,8 +50,7 @@ showName(“Julius”, “Caesar”, “Consul”, “Imperator”); \`\`\`
 
 The `...rest` must always be last. \`\`\`\`
 
-The “arguments” variable
-------------------------
+## The “arguments” variable
 
 There is also a special array-like object named `arguments` that contains all arguments by their index.
 
@@ -85,8 +82,7 @@ f(1); // 1
 
     As we remember, arrow functions don't have their own `this`. Now we know they don't have the special `arguments` object either.
 
-Spread syntax \[\#spread-syntax\]
----------------------------------
+## Spread syntax \[\#spread-syntax\]
 
 We’ve just seen how to get an array from the list of parameters.
 
@@ -102,11 +98,11 @@ Passing it “as is” won’t work, because `Math.max` expects a list of numeri
 
 \`\`\`js run let arr = \[3, 5, 1\];
 
-*!* alert( Math.max(arr) ); // NaN */!* \`\`\`
+_!_ alert( Math.max(arr) ); // NaN _/!_ \`\`\`
 
 And surely we can’t manually list items in the code `Math.max(arr[0], arr[1], arr[2])`, because we may be unsure how many there are. As our script executes, there could be a lot, or there could be none. And that would get ugly.
 
-*Spread syntax* to the rescue! It looks similar to rest parameters, also using `...`, but does quite the opposite.
+_Spread syntax_ to the rescue! It looks similar to rest parameters, also using `...`, but does quite the opposite.
 
 When `...arr` is used in the function call, it “expands” an iterable object `arr` into the list of arguments.
 
@@ -132,7 +128,7 @@ Also, the spread syntax can be used to merge arrays:
 
 \`\`\`js run let arr = \[3, 5, 1\]; let arr2 = \[8, 9, 15\];
 
-*!* let merged = \[0, …arr, 2, …arr2\]; */!*
+_!_ let merged = \[0, …arr, 2, …arr2\]; _/!_
 
 alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2) \`\`\`
 
@@ -158,13 +154,12 @@ The result is the same as `[...str]`.
 
 But there’s a subtle difference between `Array.from(obj)` and `[...obj]`:
 
--   `Array.from` operates on both array-likes and iterables.
--   The spread syntax works only with iterables.
+- `Array.from` operates on both array-likes and iterables.
+- The spread syntax works only with iterables.
 
 So, for the task of turning something into an array, `Array.from` tends to be more universal.
 
-Copy an array/object
---------------------
+## Copy an array/object
 
 Remember when we talked about `Object.assign()` [in the past](info:object-copy#cloning-and-merging-object-assign)?
 
@@ -172,7 +167,7 @@ It is possible to do the same thing with the spread syntax.
 
 \`\`\`js run let arr = \[1, 2, 3\];
 
-*!* let arrCopy = \[…arr\]; // spread the array into a list of parameters // then put the result into a new array */!*
+_!_ let arrCopy = \[…arr\]; // spread the array into a list of parameters // then put the result into a new array _/!_
 
 // do the arrays have the same contents? alert(JSON.stringify(arr) === JSON.stringify(arrCopy)); // true
 
@@ -184,7 +179,7 @@ Note that it is possible to do the same thing to make a copy of an object:
 
 \`\`\`js run let obj = { a: 1, b: 2, c: 3 };
 
-*!* let objCopy = { …obj }; // spread the object into a list of parameters // then return the result in a new object */!*
+_!_ let objCopy = { …obj }; // spread the object into a list of parameters // then return the result in a new object _/!_
 
 // do the objects have the same contents? alert(JSON.stringify(obj) === JSON.stringify(objCopy)); // true
 
@@ -194,20 +189,19 @@ Note that it is possible to do the same thing to make a copy of an object:
 
 This way of copying an object is much shorter than `let objCopy = Object.assign({}, obj)` or for an array `let arrCopy = Object.assign([], arr)` so we prefer to use it whenever we can.
 
-Summary
--------
+## Summary
 
 When we see `"..."` in the code, it is either rest parameters or the spread syntax.
 
 There’s an easy way to distinguish between them:
 
--   When `...` is at the end of function parameters, it’s “rest parameters” and gathers the rest of the list of arguments into an array.
--   When `...` occurs in a function call or alike, it’s called a “spread syntax” and expands an array into a list.
+- When `...` is at the end of function parameters, it’s “rest parameters” and gathers the rest of the list of arguments into an array.
+- When `...` occurs in a function call or alike, it’s called a “spread syntax” and expands an array into a list.
 
 Use patterns:
 
--   Rest parameters are used to create functions that accept any number of arguments.
--   The spread syntax is used to pass an array to functions that normally require a list of many arguments.
+- Rest parameters are used to create functions that accept any number of arguments.
+- The spread syntax is used to pass an array to functions that normally require a list of many arguments.
 
 Together they help to travel between a list and an array of parameters with ease.
 

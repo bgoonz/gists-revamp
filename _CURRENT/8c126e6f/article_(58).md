@@ -1,16 +1,14 @@
 libs: - lodash
 
-------------------------------------------------------------------------
+---
 
-Function binding
-================
+# Function binding
 
 When passing object methods as callbacks, for instance to `setTimeout`, there’s a known problem: “losing `this`”.
 
 In this chapter we’ll see the ways to fix it.
 
-Losing “this”
--------------
+## Losing “this”
 
 We’ve already seen examples of losing `this`. Once a method is passed somewhere separately from the object – `this` is lost.
 
@@ -18,7 +16,7 @@ Here’s how it may happen with `setTimeout`:
 
 \`\``js run let user = { firstName: "John", sayHi() { alert(`Hello, ${this.firstName}!\`); } };
 
-*!* setTimeout(user.sayHi, 1000); // Hello, undefined! */!* \`\`\`
+_!_ setTimeout(user.sayHi, 1000); // Hello, undefined! _/!_ \`\`\`
 
 As we can see, the output shows not “John” as `this.firstName`, but `undefined`!
 
@@ -31,14 +29,13 @@ The method `setTimeout` in-browser is a little special: it sets `this=window` fo
 
 The task is quite typical – we want to pass an object method somewhere else (here – to the scheduler) where it will be called. How to make sure that it will be called in the right context?
 
-Solution 1: a wrapper
----------------------
+## Solution 1: a wrapper
 
 The simplest solution is to use a wrapping function:
 
 \`\``js run let user = { firstName: "John", sayHi() { alert(`Hello, ${this.firstName}!\`); } };
 
-*!* setTimeout(function() { user.sayHi(); // Hello, John! }, 1000); */!* \`\`\`
+_!_ setTimeout(function() { user.sayHi(); // Hello, John! }, 1000); _/!_ \`\`\`
 
 Now it works, because it receives `user` from the outer lexical environment, and then calls the method normally.
 
@@ -60,8 +57,7 @@ setTimeout(() =&gt; user.sayHi(), 1000);
 
 The next solution guarantees that such thing won’t happen.
 
-Solution 2: bind
-----------------
+## Solution 2: bind
 
 Functions provide a built-in method [bind](mdn:js/Function/bind) that allows to fix `this`.
 
@@ -81,8 +77,8 @@ let user = { firstName: “John” };
 
 function func() { alert(this.firstName); }
 
-*!* let funcUser = func.bind(user); funcUser(); // John  
-*/!* \`\`\`
+_!_ let funcUser = func.bind(user); funcUser(); // John  
+_/!_ \`\`\`
 
 Here `func.bind(user)` as a “bound variant” of `func`, with fixed `this=user`.
 
@@ -95,13 +91,13 @@ function func(phrase) { alert(phrase + ‘,’ + this.firstName); }
 
 // bind this to user let funcUser = func.bind(user);
 
-*!* funcUser(“Hello”); // Hello, John (argument “Hello” is passed, and this=user) */!* \`\`\`
+_!_ funcUser(“Hello”); // Hello, John (argument “Hello” is passed, and this=user) _/!_ \`\`\`
 
 Now let’s try with an object method:
 
 \`\``js run let user = { firstName: "John", sayHi() { alert(`Hello, ${this.firstName}!\`); } };
 
-*!* let sayHi = user.sayHi.bind(user); // (*)* /!\*
+_!_ let sayHi = user.sayHi.bind(user); // (_)_ /!\*
 
 // can run it without an object sayHi(); // Hello, John!
 
@@ -129,8 +125,7 @@ say(“Hello”); // Hello, John (“Hello” argument is passed to say) say(“
 
 JavaScript libraries also provide functions for convenient mass binding , e.g. [\_.bindAll(object, methodNames)](http://lodash.com/docs#bindAll) in lodash. \`\`\`\`
 
-Partial functions
------------------
+## Partial functions
 
 Until now we have only been talking about binding `this`. Let’s take it a step further.
 
@@ -152,7 +147,7 @@ Let’s use `bind` to create a function `double` on its base:
 
 \`\`\`js run function mul(a, b) { return a \* b; }
 
-*!* let double = mul.bind(null, 2); */!*
+_!_ let double = mul.bind(null, 2); _/!_
 
 alert( double(3) ); // = mul(2, 3) = 6 alert( double(4) ); // = mul(2, 4) = 8 alert( double(5) ); // = mul(2, 5) = 10 \`\`\`
 
@@ -166,7 +161,7 @@ The function `triple` in the code below triples the value:
 
 \`\`\`js run function mul(a, b) { return a \* b; }
 
-*!* let triple = mul.bind(null, 3); */!*
+_!_ let triple = mul.bind(null, 3); _/!_
 
 alert( triple(3) ); // = mul(3, 3) = 9 alert( triple(4) ); // = mul(3, 4) = 12 alert( triple(5) ); // = mul(3, 5) = 15 \`\`\`
 
@@ -178,8 +173,7 @@ In other cases, partial application is useful when we have a very generic functi
 
 For instance, we have a function `send(from, to, text)`. Then, inside a `user` object we may want to use a partial variant of it: `sendTo(to, text)` that sends from the current user.
 
-Going partial without context
------------------------------
+## Going partial without context
 
 What if we’d like to fix some arguments, but not the context `this`? For example, for an object method.
 
@@ -189,7 +183,7 @@ Fortunately, a function `partial` for binding only arguments can be easily imple
 
 Like this:
 
-\`\`\`js run *!* function partial(func, …argsBound) { return function(…args) { // (*) return func.call(this, …argsBound, …args); } }* /!\*
+\`\`\`js run _!_ function partial(func, …argsBound) { return function(…args) { // (_) return func.call(this, …argsBound, …args); } }_ /!\*
 
 // Usage: let user = { firstName: “John”, say(time, phrase) { alert(`[${time}] ${this.firstName}: ${phrase}!`); } };
 
@@ -203,13 +197,12 @@ So easy to do it with the spread syntax, right?
 
 Also there’s a ready [\_.partial](https://lodash.com/docs#partial) implementation from lodash library.
 
-Summary
--------
+## Summary
 
 Method `func.bind(context, ...args)` returns a “bound variant” of function `func` that fixes the context `this` and first arguments if given.
 
 Usually we apply `bind` to fix `this` for an object method, so that we can pass it somewhere. For example, to `setTimeout`.
 
-When we fix some arguments of an existing function, the resulting (less universal) function is called *partially applied* or *partial*.
+When we fix some arguments of an existing function, the resulting (less universal) function is called _partially applied_ or _partial_.
 
 Partials are convenient when we don’t want to repeat the same argument over and over again. Like if we have a `send(from, to)` function, and `from` should always be the same for our task, we can get a partial and go on with it.

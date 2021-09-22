@@ -1,12 +1,10 @@
-Long polling
-============
+# Long polling
 
 Long polling is the simplest way of having persistent connection with server, that doesn’t use any specific protocol like WebSocket or Server Side Events.
 
 Being very easy to implement, it’s also good enough in a lot of cases.
 
-Regular Polling
----------------
+## Regular Polling
 
 The simplest way to get new information from the server is periodic polling. That is, regular requests to the server: “Hello, I’m here, do you have any information for me?”. For example, once every 10 seconds.
 
@@ -16,8 +14,7 @@ That works, but there are downsides: 1. Messages are passed with a delay up to 1
 
 So, if we’re talking about a very small service, the approach may be viable, but generally, it needs an improvement.
 
-Long polling
-------------
+## Long polling
 
 So-called “long polling” is a much better way to poll the server.
 
@@ -76,8 +73,7 @@ Servers written using Node.js usually don’t have such problems.
 
 That said, it isn’t a programming language issue. Most modern languages, including PHP and Ruby allow to implement a proper backend. Just please make sure that your server architecture works fine with many simultaneous connections. \`\`\`
 
-Demo: a chat
-------------
+## Demo: a chat
 
 Here’s a demo chat, you can also download it and run locally (if you’re familiar with Node.js and can install modules):
 
@@ -85,8 +81,7 @@ Here’s a demo chat, you can also download it and run locally (if you’re fami
 
 Browser code is in `browser.js`.
 
-Area of usage
--------------
+## Area of usage
 
 Long polling works great in situations when messages are rare.
 

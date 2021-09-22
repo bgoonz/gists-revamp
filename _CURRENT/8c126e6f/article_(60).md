@@ -1,5 +1,4 @@
-Property flags and descriptors
-==============================
+# Property flags and descriptors
 
 As we know, objects can store properties.
 
@@ -7,20 +6,19 @@ Until now, a property was a simple “key-value” pair to us. But an object pro
 
 In this chapter we’ll study additional configuration options, and in the next we’ll see how to invisibly turn them into getter/setter functions.
 
-Property flags
---------------
+## Property flags
 
 Object properties, besides a **`value`**, have three special attributes (so-called “flags”):
 
--   **`writable`** – if `true`, the value can be changed, otherwise it’s read-only.
--   **`enumerable`** – if `true`, then listed in loops, otherwise not listed.
--   **`configurable`** – if `true`, the property can be deleted and these attributes can be modified, otherwise not.
+- **`writable`** – if `true`, the value can be changed, otherwise it’s read-only.
+- **`enumerable`** – if `true`, then listed in loops, otherwise not listed.
+- **`configurable`** – if `true`, the property can be deleted and these attributes can be modified, otherwise not.
 
 We didn’t see them yet, because generally they do not show up. When we create a property “the usual way”, all of them are `true`. But we also can change them anytime.
 
 First, let’s see how to get those flags.
 
-The method [Object.getOwnPropertyDescriptor](mdn:js/Object/getOwnPropertyDescriptor) allows to query the *full* information about a property.
+The method [Object.getOwnPropertyDescriptor](mdn:js/Object/getOwnPropertyDescriptor) allows to query the _full_ information about a property.
 
 The syntax is:
 
@@ -60,41 +58,39 @@ For instance, here a property `name` is created with all falsy flags:
 
 \`\`\`js run let user = {};
 
-*!* Object.defineProperty(user, “name”, { value: “John” }); */!*
+_!_ Object.defineProperty(user, “name”, { value: “John” }); _/!_
 
 let descriptor = Object.getOwnPropertyDescriptor(user, ‘name’);
 
-alert( JSON.stringify(descriptor, null, 2 ) ); / *{ “value”: “John”,* ! *“writable”: false, “enumerable”: false, “configurable”: false* /! *}* / \`\`\`
+alert( JSON.stringify(descriptor, null, 2 ) ); / _{ “value”: “John”,_ ! _“writable”: false, “enumerable”: false, “configurable”: false_ /! _}_ / \`\`\`
 
 Compare it with “normally created” `user.name` above: now all flags are falsy. If that’s not what we want then we’d better set them to `true` in `descriptor`.
 
 Now let’s see effects of the flags by example.
 
-Non-writable
-------------
+## Non-writable
 
 Let’s make `user.name` non-writable (can’t be reassigned) by changing `writable` flag:
 
 \`\`\`js run let user = { name: “John” };
 
-Object.defineProperty(user, “name”, { *!* writable: false */!* });
+Object.defineProperty(user, “name”, { _!_ writable: false _/!_ });
 
-*!* user.name = “Pete”; // Error: Cannot assign to read only property ‘name’ */!* \`\`\`
+_!_ user.name = “Pete”; // Error: Cannot assign to read only property ‘name’ _/!_ \`\`\`
 
 Now no one can change the name of our user, unless they apply their own `defineProperty` to override ours.
 
-`smart header="Errors appear only in strict mode" In the non-strict         mode, no errors occur when writing to non-writable properties and such.         But the operation still won't succeed. Flag-violating actions are just         silently ignored in non-strict.`
+`smart header="Errors appear only in strict mode" In the non-strict mode, no errors occur when writing to non-writable properties and such. But the operation still won't succeed. Flag-violating actions are just silently ignored in non-strict.`
 
 Here’s the same example, but the property is created from scratch:
 
 \`\`\`js run let user = { };
 
-Object.defineProperty(user, “name”, { *!* value: “John”, // for new properties we need to explicitly list what’s true enumerable: true, configurable: true */!* });
+Object.defineProperty(user, “name”, { _!_ value: “John”, // for new properties we need to explicitly list what’s true enumerable: true, configurable: true _/!_ });
 
 alert(user.name); // John user.name = “Pete”; // Error \`\`\`
 
-Non-enumerable
---------------
+## Non-enumerable
 
 Now let’s add a custom `toString` to `user`.
 
@@ -108,16 +104,15 @@ If we don’t like it, then we can set `enumerable:false`. Then it won’t appea
 
 \`\`\`js run let user = { name: “John”, toString() { return this.name; } };
 
-Object.defineProperty(user, “toString”, { *!* enumerable: false */!* });
+Object.defineProperty(user, “toString”, { _!_ enumerable: false _/!_ });
 
-*!* // Now our toString disappears: */!* for (let key in user) alert(key); // name \`\`\`
+_!_ // Now our toString disappears: _/!_ for (let key in user) alert(key); // name \`\`\`
 
 Non-enumerable properties are also excluded from `Object.keys`:
 
     alert(Object.keys(user)); // name
 
-Non-configurable
-----------------
+## Non-configurable
 
 The non-configurable flag (`configurable:false`) is sometimes preset for built-in objects and properties.
 
@@ -127,7 +122,7 @@ For instance, `Math.PI` is non-writable, non-enumerable and non-configurable:
 
 \`\`\`js run let descriptor = Object.getOwnPropertyDescriptor(Math, ‘PI’);
 
-alert( JSON.stringify(descriptor, null, 2 ) ); / *{ “value”: 3.141592653589793, “writable”: false, “enumerable”: false, “configurable”: false }* / \`\``So, a programmer is unable to change the value of`Math.PI\` or overwrite it.
+alert( JSON.stringify(descriptor, null, 2 ) ); / _{ “value”: 3.141592653589793, “writable”: false, “enumerable”: false, “configurable”: false }_ / \`\``So, a programmer is unable to change the value of`Math.PI\` or overwrite it.
 
 \`\`\`js run Math.PI = 3; // Error
 
@@ -155,8 +150,7 @@ Object.defineProperty(user, “name”, { writable: false, configurable: false }
 
 // won’t be able to change user.name or its flags // all this won’t work: user.name = “Pete”; delete user.name; Object.defineProperty(user, “name”, { value: “Pete” }); \`\`\`
 
-Object.defineProperties
------------------------
+## Object.defineProperties
 
 There’s a method [Object.defineProperties(obj, descriptors)](mdn:js/Object/defineProperties) that allows to define many properties at once.
 
@@ -178,8 +172,7 @@ For instance:
 
 So, we can set many properties at once.
 
-Object.getOwnPropertyDescriptors
---------------------------------
+## Object.getOwnPropertyDescriptors
 
 To get all property descriptors at once, we can use the method [Object.getOwnPropertyDescriptors(obj)](mdn:js/Object/getOwnPropertyDescriptors).
 
@@ -195,16 +188,15 @@ Normally when we clone an object, we use an assignment to copy properties, like 
 
 …But that does not copy flags. So if we want a “better” clone then `Object.defineProperties` is preferred.
 
-Another difference is that `for..in` ignores symbolic properties, but `Object.getOwnPropertyDescriptors` returns *all* property descriptors including symbolic ones.
+Another difference is that `for..in` ignores symbolic properties, but `Object.getOwnPropertyDescriptors` returns _all_ property descriptors including symbolic ones.
 
-Sealing an object globally
---------------------------
+## Sealing an object globally
 
 Property descriptors work at the level of individual properties.
 
-There are also methods that limit access to the *whole* object:
+There are also methods that limit access to the _whole_ object:
 
- [Object.preventExtensions(obj)](mdn:js/Object/preventExtensions)   
+[Object.preventExtensions(obj)](mdn:js/Object/preventExtensions)  
 Forbids the addition of new properties to the object.
 
 [Object.seal(obj)](mdn:js/Object/seal)  

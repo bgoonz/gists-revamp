@@ -1,14 +1,12 @@
-Property getters and setters
-============================
+# Property getters and setters
 
 There are two kinds of object properties.
 
-The first kind is *data properties*. We already know how to work with them. All properties that we’ve been using until now were data properties.
+The first kind is _data properties_. We already know how to work with them. All properties that we’ve been using until now were data properties.
 
-The second type of properties is something new. It’s *accessor properties*. They are essentially functions that execute on getting and setting a value, but look like regular properties to an external code.
+The second type of properties is something new. It’s _accessor properties_. They are essentially functions that execute on getting and setting a value, but look like regular properties to an external code.
 
-Getters and setters
--------------------
+## Getters and setters
 
 Accessor properties are represented by “getter” and “setter” methods. In an object literal they are denoted by `get` and `set`:
 
@@ -35,17 +33,17 @@ Now we want to add a `fullName` property, that should be `"John Smith"`. Of cour
 
 \`\`\`js run let user = { name: “John”, surname: “Smith”,
 
-*!* get fullName() { return `${this.name} ${this.surname}`; } */!* };
+_!_ get fullName() { return `${this.name} ${this.surname}`; } _/!_ };
 
-*!* alert(user.fullName); // John Smith */!* \`\`\`
+_!_ alert(user.fullName); // John Smith _/!_ \`\`\`
 
-From the outside, an accessor property looks like a regular one. That’s the idea of accessor properties. We don’t *call* `user.fullName` as a function, we *read* it normally: the getter runs behind the scenes.
+From the outside, an accessor property looks like a regular one. That’s the idea of accessor properties. We don’t _call_ `user.fullName` as a function, we _read_ it normally: the getter runs behind the scenes.
 
 As of now, `fullName` has only a getter. If we attempt to assign `user.fullName=`, there will be an error:
 
 \`\``js run let user = { get fullName() { return`…\`; } };
 
-*!* user.fullName = “Test”; // Error (property has only a getter) */!* \`\`\`
+_!_ user.fullName = “Test”; // Error (property has only a getter) _/!_ \`\`\`
 
 Let’s fix it by adding a setter for `user.fullName`:
 
@@ -53,7 +51,7 @@ Let’s fix it by adding a setter for `user.fullName`:
 
 get fullName() { return `${this.name} ${this.surname}`; },
 
-*!* set fullName(value) { \[this.name, this.surname\] = value.split(" "); } */!* };
+_!_ set fullName(value) { \[this.name, this.surname\] = value.split(" "); } _/!_ };
 
 // set fullName is executed with the given value. user.fullName = “Alice Cooper”;
 
@@ -61,8 +59,7 @@ alert(user.name); // Alice alert(user.surname); // Cooper \`\`\`
 
 As the result, we have a “virtual” property `fullName`. It is readable and writable.
 
-Accessor descriptors
---------------------
+## Accessor descriptors
 
 Descriptors for accessor properties are different from those for data properties.
 
@@ -70,18 +67,18 @@ For accessor properties, there is no `value` or `writable`, but instead there ar
 
 That is, an accessor descriptor may have:
 
--   **`get`** – a function without arguments, that works when a property is read,
--   **`set`** – a function with one argument, that is called when the property is set,
--   **`enumerable`** – same as for data properties,
--   **`configurable`** – same as for data properties.
+- **`get`** – a function without arguments, that works when a property is read,
+- **`set`** – a function with one argument, that is called when the property is set,
+- **`enumerable`** – same as for data properties,
+- **`configurable`** – same as for data properties.
 
 For instance, to create an accessor `fullName` with `defineProperty`, we can pass a descriptor with `get` and `set`:
 
 \`\`\`js run let user = { name: “John”, surname: “Smith” };
 
-*!* Object.defineProperty(user, ‘fullName’, { get() { return `${this.name} ${this.surname}`; },
+_!_ Object.defineProperty(user, ‘fullName’, { get() { return `${this.name} ${this.surname}`; },
 
-set(value) { \[this.name, this.surname\] = value.split(" "); } */!* });
+set(value) { \[this.name, this.surname\] = value.split(" "); } _/!_ });
 
 alert(user.fullName); // John Smith
 
@@ -91,12 +88,11 @@ Please note that a property can be either an accessor (has `get/set` methods) or
 
 If we try to supply both `get` and `value` in the same descriptor, there will be an error:
 
-\`\`\`js run *!* // Error: Invalid property descriptor. */!* Object.defineProperty({}, ‘prop’, { get() { return 1 },
+\`\`\`js run _!_ // Error: Invalid property descriptor. _/!_ Object.defineProperty({}, ‘prop’, { get() { return 1 },
 
 value: 2 }); \`\`\`
 
-Smarter getters/setters
------------------------
+## Smarter getters/setters
 
 Getters/setters can be used as wrappers over “real” property values to gain more control over operations with them.
 
@@ -114,8 +110,7 @@ So, the name is stored in `_name` property, and the access is done via getter an
 
 Technically, external code is able to access the name directly by using `user._name`. But there is a widely known convention that properties starting with an underscore `"_"` are internal and should not be touched from outside the object.
 
-Using for compatibility
------------------------
+## Using for compatibility
 
 One of the great uses of accessors is that they allow to take control over a “regular” data property at any moment by replacing it with a getter and a setter and tweak its behavior.
 
@@ -149,7 +144,7 @@ Adding a getter for `age` solves the problem:
 
 \`\`\`js run no-beautify function User(name, birthday) { this.name = name; this.birthday = birthday;
 
-*!* // age is calculated from the current date and birthday Object.defineProperty(this, “age”, { get() { let todayYear = new Date().getFullYear(); return todayYear - this.birthday.getFullYear(); } }); */!* }
+_!_ // age is calculated from the current date and birthday Object.defineProperty(this, “age”, { get() { let todayYear = new Date().getFullYear(); return todayYear - this.birthday.getFullYear(); } }); _/!_ }
 
 let john = new User(“John”, new Date(1992, 6, 1));
 

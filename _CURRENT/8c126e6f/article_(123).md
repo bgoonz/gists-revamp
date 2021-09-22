@@ -1,9 +1,8 @@
 libs: - d3 - domtree
 
-------------------------------------------------------------------------
+---
 
-Selection and Range
-===================
+# Selection and Range
 
 In this chapter we’ll cover selection in the document, as well as selection in form fields, such as `<input>`.
 
@@ -13,8 +12,7 @@ You can find some recipes for common tasks at the end of the chapter, in “Summ
 
 The underlying `Range` and `Selection` objects are easy to grasp, and then you’ll need no recipes to make them do what you want.
 
-Range
------
+## Range
 
 The basic concept of selection is [Range](https://dom.spec.whatwg.org/#ranges), that is essentially a pair of “boundary points”: range start and range end.
 
@@ -52,7 +50,7 @@ That’s handy for making ranges that contain nodes as a whole, not stop somewhe
 
 For example, we have a more complex document fragment:
 
-`html autorun <p id="p">Example: <i>italic</i> and         <b>bold</b></p>`
+`html autorun <p id="p">Example: <i>italic</i> and <b>bold</b></p>`
 
 Here’s its DOM structure with both element and text nodes:
 
@@ -62,19 +60,19 @@ As we can see, this phrase consists of exactly two children of `<p>`, with index
 
 ![](range-example-p-0-1.svg)
 
--   The starting point has `<p>` as the parent `node`, and `0` as the offset.
+- The starting point has `<p>` as the parent `node`, and `0` as the offset.
 
-    So we can set it as `range.setStart(p, 0)`.
+  So we can set it as `range.setStart(p, 0)`.
 
--   The ending point also has `<p>` as the parent `node`, but `2` as the offset (it specifies the range up to, but not including `offset`).
+- The ending point also has `<p>` as the parent `node`, but `2` as the offset (it specifies the range up to, but not including `offset`).
 
-    So we can set it as `range.setEnd(p, 2)`.
+  So we can set it as `range.setEnd(p, 2)`.
 
 Here’s the demo. If you run it, you can see that the text gets selected:
 
 \`\`\`html run
 
-Example: *italic* and **bold**
+Example: _italic_ and **bold**
 
 \`\`\`
 
@@ -82,7 +80,7 @@ Here’s a more flexible test stand where you can set range start/end numbers an
 
 \`\`\`html run autorun
 
-Example: *italic* and **bold**
+Example: _italic_ and **bold**
 
 From – To
 
@@ -94,7 +92,7 @@ E.g. selecting in the same `<p>` from offset `1` to `4` gives us the range `<i>i
 
 ![](range-example-p-1-3.svg)
 
-`` smart header="Starting and ending nodes can be different" We don't have         to use the same node in `setStart` and `setEnd`. A range may span across         many unrelated nodes. It's only important that the end is after the         start in the document. ``
+`` smart header="Starting and ending nodes can be different" We don't have to use the same node in `setStart` and `setEnd`. A range may span across many unrelated nodes. It's only important that the end is after the start in the document. ``
 
 ### Selecting a bigger fragment
 
@@ -108,7 +106,7 @@ We need to create a range, that: - starts from position 2 in `<p>` first child (
 
 \`\`\`html run
 
-Example: *italic* and **bold**
+Example: _italic_ and **bold**
 
 \`\`\`
 
@@ -116,24 +114,22 @@ As you can see, it’s fairly easy to make a range of whatever we want.
 
 If we’d like to take nodes as a whole, we can pass elements in `setStart/setEnd`. Otherwise, we can work on the text level.
 
-Range properties
-----------------
+## Range properties
 
 The range object that we created in the example above has following properties:
 
 ![](range-example-p-2-b-3-range.svg)
 
--   `startContainer`, `startOffset` – node and offset of the start,
-    -   in the example above: first text node inside `<p>` and `2`.
--   `endContainer`, `endOffset` – node and offset of the end,
-    -   in the example above: first text node inside `<b>` and `3`.
--   `collapsed` – boolean, `true` if the range starts and ends on the same point (so there’s no content inside the range),
-    -   in the example above: `false`
--   `commonAncestorContainer` – the nearest common ancestor of all nodes within the range,
-    -   in the example above: `<p>`
+- `startContainer`, `startOffset` – node and offset of the start,
+  - in the example above: first text node inside `<p>` and `2`.
+- `endContainer`, `endOffset` – node and offset of the end,
+  - in the example above: first text node inside `<b>` and `3`.
+- `collapsed` – boolean, `true` if the range starts and ends on the same point (so there’s no content inside the range),
+  - in the example above: `false`
+- `commonAncestorContainer` – the nearest common ancestor of all nodes within the range,
+  - in the example above: `<p>`
 
-Range selection methods
------------------------
+## Range selection methods
 
 There are many convenience methods to manipulate ranges.
 
@@ -141,15 +137,15 @@ We’ve already seen `setStart` and `setEnd`, here are other similar methods.
 
 Set range start:
 
--   `setStart(node, offset)` set start at: position `offset` in `node`
--   `setStartBefore(node)` set start at: right before `node`
--   `setStartAfter(node)` set start at: right after `node`
+- `setStart(node, offset)` set start at: position `offset` in `node`
+- `setStartBefore(node)` set start at: right before `node`
+- `setStartAfter(node)` set start at: right after `node`
 
 Set range end (similar methods):
 
--   `setEnd(node, offset)` set end at: position `offset` in `node`
--   `setEndBefore(node)` set end at: right before `node`
--   `setEndAfter(node)` set end at: right after `node`
+- `setEnd(node, offset)` set end at: position `offset` in `node`
+- `setEndBefore(node)` set end at: right before `node`
+- `setEndAfter(node)` set end at: right after `node`
 
 Technically, `setStart/setEnd` can do anything, but more methods provide more convenience.
 
@@ -157,16 +153,15 @@ In all these methods, `node` can be both a text or element node: for text nodes 
 
 Even more methods to create ranges: - `selectNode(node)` set range to select the whole `node` - `selectNodeContents(node)` set range to select the whole `node` contents - `collapse(toStart)` if `toStart=true` set end=start, otherwise set start=end, thus collapsing the range - `cloneRange()` creates a new range with the same start/end
 
-Range editing methods
----------------------
+## Range editing methods
 
 Once the range is created, we can manipulate its content using these methods:
 
--   `deleteContents()` – remove range content from the document
--   `extractContents()` – remove range content from the document and return as [DocumentFragment](info:modifying-document#document-fragment)
--   `cloneContents()` – clone range content and return as [DocumentFragment](info:modifying-document#document-fragment)
--   `insertNode(node)` – insert `node` into the document at the beginning of the range
--   `surroundContents(node)` – wrap `node` around range content. For this to work, the range must contain both opening and closing tags for all elements inside it: no partial ranges like `<i>abc`.
+- `deleteContents()` – remove range content from the document
+- `extractContents()` – remove range content from the document and return as [DocumentFragment](info:modifying-document#document-fragment)
+- `cloneContents()` – clone range content and return as [DocumentFragment](info:modifying-document#document-fragment)
+- `insertNode(node)` – insert `node` into the document at the beginning of the range
+- `surroundContents(node)` – wrap `node` around range content. For this to work, the range must contain both opening and closing tags for all elements inside it: no partial ranges like `<i>abc`.
 
 With these methods we can do basically anything with selected nodes.
 
@@ -174,14 +169,13 @@ Here’s the test stand to see them in action:
 
 \`\`\`html run refresh autorun height=260 Click buttons to run methods on the selection, “resetExample” to reset it.
 
-Example: *italic* and **bold**
+Example: _italic_ and **bold**
 
 \`\`\`
 
 There also exist methods to compare ranges, but these are rarely used. When you need them, please refer to the [spec](https://dom.spec.whatwg.org/#interface-range) or [MDN manual](mdn:/api/Range).
 
-Selection
----------
+## Selection
 
 `Range` is a generic object for managing selection ranges. Although, creating a `Range` doesn’t mean that we see a selection on screen.
 
@@ -199,12 +193,11 @@ Here’s a small demo that shows the current selection (select something and cli
 
 alert(document.getSelection())
 
-Selection properties
---------------------
+## Selection properties
 
 As said, a selection may in theory contain multiple ranges. We can get these range objects using the method:
 
--   `getRangeAt(i)` – get i-th range, starting from `0`. In all browsers except Firefox, only `0` is used.
+- `getRangeAt(i)` – get i-th range, starting from `0`. In all browsers except Firefox, only `0` is used.
 
 Also, there exist properties that often provide better convenience.
 
@@ -212,12 +205,12 @@ Similar to a range, a selection object has a start, called “anchor”, and the
 
 The main selection properties are:
 
--   `anchorNode` – the node where the selection starts,
--   `anchorOffset` – the offset in `anchorNode` where the selection starts,
--   `focusNode` – the node where the selection ends,
--   `focusOffset` – the offset in `focusNode` where the selection ends,
--   `isCollapsed` – `true` if selection selects nothing (empty range), or doesn’t exist.
--   `rangeCount` – count of ranges in the selection, maximum `1` in all browsers except Firefox.
+- `anchorNode` – the node where the selection starts,
+- `anchorOffset` – the offset in `anchorNode` where the selection starts,
+- `focusNode` – the node where the selection ends,
+- `focusOffset` – the offset in `focusNode` where the selection ends,
+- `isCollapsed` – `true` if selection selects nothing (empty range), or doesn’t exist.
+- `rangeCount` – count of ranges in the selection, maximum `1` in all browsers except Firefox.
 
 \`\`\`smart header=“Selection end/start vs Range”
 
@@ -239,15 +232,14 @@ E.g. if the user starts selecting with mouse and goes from “Example” to “i
 
 ![](selection-direction-backward.svg) \`\`\`
 
-Selection events
-----------------
+## Selection events
 
 There are events on to keep track of selection:
 
--   `elem.onselectstart` – when a selection *starts* specifically on element `elem` (or inside it). For instance, when the user presses the mouse button on it and starts to move the pointer.
-    -   Preventing the default action cancels the selection start. So starting a selection from this element becomes impossible, but the element is still selectable. The visitor just needs to start the selection from elsewhere.
--   `document.onselectionchange` – whenever a selection changes or starts.
-    -   Please note: this handler can be set only on `document`, it tracks all selections in it.
+- `elem.onselectstart` – when a selection _starts_ specifically on element `elem` (or inside it). For instance, when the user presses the mouse button on it and starts to move the pointer.
+  - Preventing the default action cancels the selection start. So starting a selection from this element becomes impossible, but the element is still selectable. The visitor just needs to start the selection from elsewhere.
+- `document.onselectionchange` – whenever a selection changes or starts.
+  - Please note: this handler can be set only on `document`, it tracks all selections in it.
 
 ### Selection tracking demo
 
@@ -255,7 +247,7 @@ Here’s a small demo. It tracks the current selection on the `document` and sho
 
 \`\`\`html run height=80
 
-Select me: *italic* and **bold**
+Select me: _italic_ and **bold**
 
 From – To
 
@@ -272,35 +264,34 @@ Here’s the demo of copying the selected content both as text and as DOM nodes:
 
 \`\`\`html run height=100
 
-Select me: *italic* and **bold**
+Select me: _italic_ and **bold**
 
 Cloned: <span id="cloned"></span>  
 As text: <span id="astext"></span>
 
 \`\`\`
 
-Selection methods
------------------
+## Selection methods
 
 We can work with the selection by addding/removing ranges:
 
--   `getRangeAt(i)` – get i-th range, starting from `0`. In all browsers except Firefox, only `0` is used.
--   `addRange(range)` – add `range` to selection. All browsers except Firefox ignore the call, if the selection already has an associated range.
--   `removeRange(range)` – remove `range` from the selection.
--   `removeAllRanges()` – remove all ranges.
--   `empty()` – alias to `removeAllRanges`.
+- `getRangeAt(i)` – get i-th range, starting from `0`. In all browsers except Firefox, only `0` is used.
+- `addRange(range)` – add `range` to selection. All browsers except Firefox ignore the call, if the selection already has an associated range.
+- `removeRange(range)` – remove `range` from the selection.
+- `removeAllRanges()` – remove all ranges.
+- `empty()` – alias to `removeAllRanges`.
 
 There are also convenience methods to manipulate the selection range directly, without intermediate `Range` calls:
 
--   `collapse(node, offset)` – replace selected range with a new one that starts and ends at the given `node`, at position `offset`.
--   `setPosition(node, offset)` – alias to `collapse`.
--   `collapseToStart()` - collapse (replace with an empty range) to selection start,
--   `collapseToEnd()` - collapse to selection end,
--   `extend(node, offset)` - move focus of the selection to the given `node`, position `offset`,
--   `setBaseAndExtent(anchorNode, anchorOffset, focusNode,           focusOffset)` - replace selection range with the given start `anchorNode/anchorOffset` and end `focusNode/focusOffset`. All content in-between them is selected.
--   `selectAllChildren(node)` – select all children of the `node`.
--   `deleteFromDocument()` – remove selected content from the document.
--   `containsNode(node, allowPartialContainment = false)` – checks whether the selection contains `node` (partially if the second argument is `true`)
+- `collapse(node, offset)` – replace selected range with a new one that starts and ends at the given `node`, at position `offset`.
+- `setPosition(node, offset)` – alias to `collapse`.
+- `collapseToStart()` - collapse (replace with an empty range) to selection start,
+- `collapseToEnd()` - collapse to selection end,
+- `extend(node, offset)` - move focus of the selection to the given `node`, position `offset`,
+- `setBaseAndExtent(anchorNode, anchorOffset, focusNode, focusOffset)` - replace selection range with the given start `anchorNode/anchorOffset` and end `focusNode/focusOffset`. All content in-between them is selected.
+- `selectAllChildren(node)` – select all children of the `node`.
+- `deleteFromDocument()` – remove selected content from the document.
+- `containsNode(node, allowPartialContainment = false)` – checks whether the selection contains `node` (partially if the second argument is `true`)
 
 For most tasks these methods are just fine, there’s no need to access the underlying `Range` object.
 
@@ -308,7 +299,7 @@ For example, selecting the whole contents of the paragraph `<p>`:
 
 \`\`\`html run
 
-Select me: *italic* and **bold**
+Select me: _italic_ and **bold**
 
 \`\`\`
 
@@ -316,16 +307,15 @@ The same thing using ranges:
 
 \`\`\`html run
 
-Select me: *italic* and **bold**
+Select me: _italic_ and **bold**
 
 \`\`\`
 
-\`\``smart header="To select something, remove the existing selection first"         If a document selection already exists, empty it first with`removeAllRanges()\`. And then add ranges. Otherwise, all browsers except Firefox ignore new ranges.
+\`\``smart header="To select something, remove the existing selection first" If a document selection already exists, empty it first with`removeAllRanges()\`. And then add ranges. Otherwise, all browsers except Firefox ignore new ranges.
 
 The exception is some selection methods, that replace the existing selection, such as `setBaseAndExtent`. \`\`\`
 
-Selection in form controls
---------------------------
+## Selection in form controls
 
 Form elements, such as `input` and `textarea` provide [special API for selection](https://html.spec.whatwg.org/#textFieldSelection), without `Selection` or `Range` objects. As an input value is a pure text, not HTML, there’s no need for such objects, everything’s much simpler.
 
@@ -335,18 +325,18 @@ Events: - `input.onselect` – triggers when something is selected.
 
 Methods:
 
--   `input.select()` – selects everything in the text control (can be `textarea` instead of `input`),
--   `input.setSelectionRange(start, end, [direction])` – change the selection to span from position `start` till `end`, in the given direction (optional).
--   `input.setRangeText(replacement, [start], [end],             [selectionMode])` – replace a range of text with the new text.
+- `input.select()` – selects everything in the text control (can be `textarea` instead of `input`),
+- `input.setSelectionRange(start, end, [direction])` – change the selection to span from position `start` till `end`, in the given direction (optional).
+- `input.setRangeText(replacement, [start], [end], [selectionMode])` – replace a range of text with the new text.
 
-    Optional arguments `start` and `end`, if provided, set the range start and end, otherwise user selection is used.
+  Optional arguments `start` and `end`, if provided, set the range start and end, otherwise user selection is used.
 
-    The last argument, `selectionMode`, determines how the selection will be set after the text has been replaced. The possible values are:
+  The last argument, `selectionMode`, determines how the selection will be set after the text has been replaced. The possible values are:
 
-    -   `"select"` – the newly inserted text will be selected.
-    -   `"start"` – the selection range collapses just before the inserted text (the cursor will be immediately before it).
-    -   `"end"` – the selection range collapses just after the inserted text (the cursor will be right after it).
-    -   `"preserve"` – attempts to preserve the selection. This is the default.
+  - `"select"` – the newly inserted text will be selected.
+  - `"start"` – the selection range collapses just before the inserted text (the cursor will be immediately before it).
+  - `"end"` – the selection range collapses just after the inserted text (the cursor will be right after it).
+  - `"preserve"` – attempts to preserve the selection. This is the default.
 
 Now let’s see these methods in action.
 
@@ -358,7 +348,6 @@ For example, this code uses `onselect` event to track selection:
 
 Selecting in this text updates values below.
 
-  
 From – To
 
 \`\`\`
@@ -389,7 +378,7 @@ That’s a somewhat complex method. In its simplest one-argument form it replace
 
 For example, here the user selection will be wrapped by `*...*`:
 
-\`\`\`html run autorun Wrap selection in stars *…*
+\`\`\`html run autorun Wrap selection in stars _…_
 
 \`\`\`
 
@@ -413,14 +402,13 @@ Here’s a button that inserts `"HELLO"` at the cursor position and puts the cur
 
 \`\`\`
 
-Making unselectable
--------------------
+## Making unselectable
 
 To make something unselectable, there are three ways:
 
 1.  Use CSS property `user-select: none`.
 
-    `html run <style> #elem { user-select: none; } </style>             <div>Selectable <div id="elem">Unselectable</div>             Selectable</div>`
+    `html run <style> #elem { user-select: none; } </style> <div>Selectable <div id="elem">Unselectable</div> Selectable</div>`
 
     This doesn’t allow the selection to start at `elem`. But the user may start the selection elsewhere and include `elem` into it.
 
@@ -443,15 +431,13 @@ To make something unselectable, there are three ways:
 
 3.  We can also clear the selection post-factum after it happens with `document.getSelection().empty()`. That’s rarely used, as this causes unwanted blinking as the selection appears-disappears.
 
-References
-----------
+## References
 
--   [DOM spec: Range](https://dom.spec.whatwg.org/#ranges)
--   [Selection API](https://www.w3.org/TR/selection-api/#dom-globaleventhandlers-onselectstart)
--   [HTML spec: APIs for the text control selections](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#textFieldSelection)
+- [DOM spec: Range](https://dom.spec.whatwg.org/#ranges)
+- [Selection API](https://www.w3.org/TR/selection-api/#dom-globaleventhandlers-onselectstart)
+- [HTML spec: APIs for the text control selections](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#textFieldSelection)
 
-Summary
--------
+## Summary
 
 We covered two different APIs for selections:
 

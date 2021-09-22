@@ -1,16 +1,14 @@
-Bubbling and capturing
-======================
+# Bubbling and capturing
 
 Let’s start with an example.
 
 This handler is assigned to `<div>`, but also runs if you click any nested tag like `<em>` or `<code>`:
 
-`html autorun height=60 <div onclick="alert('The handler!')">         <em>If you click on <code>EM</code>, the handler on         <code>DIV</code> runs.</em> </div>`
+`html autorun height=60 <div onclick="alert('The handler!')"> <em>If you click on <code>EM</code>, the handler on <code>DIV</code> runs.</em> </div>`
 
 Isn’t it a bit strange? Why does the handler on `<div>` run if the actual click was on `<em>`?
 
-Bubbling
---------
+## Bubbling
 
 The bubbling principle is simple.
 
@@ -36,28 +34,27 @@ So if we click on `<p>`, then we’ll see 3 alerts: `p` -&gt; `div` -&gt; `form`
 
 The process is called “bubbling”, because events “bubble” from the inner element up through parents like a bubble in the water.
 
-\`\`\`warn header=“*Almost* all events bubble.” The key word in this phrase is “almost”.
+\`\`\`warn header=“_Almost_ all events bubble.” The key word in this phrase is “almost”.
 
 For instance, a `focus` event does not bubble. There are other examples too, we’ll meet them. But still it’s an exception, rather than a rule, most events do bubble. \`\`\`
 
-event.target
-------------
+## event.target
 
 A handler on a parent element can always get the details about where it actually happened.
 
-**The most deeply nested element that caused the event is called a *target* element, accessible as `event.target`.**
+**The most deeply nested element that caused the event is called a _target_ element, accessible as `event.target`.**
 
 Note the differences from `this` (=`event.currentTarget`):
 
--   `event.target` – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
--   `this` – is the “current” element, the one that has a currently running handler on it.
+- `event.target` – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
+- `this` – is the “current” element, the one that has a currently running handler on it.
 
 For instance, if we have a single handler `form.onclick`, then it can “catch” all clicks inside the form. No matter where the click happened, it bubbles up to `<form>` and runs the handler.
 
 In `form.onclick` handler:
 
--   `this` (=`event.currentTarget`) is the `<form>` element, because the handler runs on it.
--   `event.target` is the actual element inside the form that was clicked.
+- `this` (=`event.currentTarget`) is the `<form>` element, because the handler runs on it.
+- `event.target` is the actual element inside the form that was clicked.
 
 Check it out:
 
@@ -65,8 +62,7 @@ Check it out:
 
 It’s possible that `event.target` could equal `this` – it happens when the click is made directly on the `<form>` element.
 
-Stopping bubbling
------------------
+## Stopping bubbling
 
 A bubbling event goes from the target element straight up. Normally it goes upwards till `<html>`, and then to `document` object, and some events even reach `window`, calling all handlers on the path.
 
@@ -76,7 +72,7 @@ The method for it is `event.stopPropagation()`.
 
 For instance, here `body.onclick` doesn’t work if you click on `<button>`:
 
-`` html run autorun height=60 <body onclick="alert(`the bubbling         doesn't reach here`)"> <button         onclick="event.stopPropagation()">Click me</button>         </body> ``
+`` html run autorun height=60 <body onclick="alert(`the bubbling doesn't reach here`)"> <button onclick="event.stopPropagation()">Click me</button> </body> ``
 
 \`\`\`smart header=“event.stopImmediatePropagation()” If an element has multiple event handlers on a single event, then even if one of them stops the bubbling, the other ones still execute.
 
@@ -96,8 +92,7 @@ For instance:
 
 There’s usually no real need to prevent the bubbling. A task that seemingly requires that may be solved by other means. One of them is to use custom events, we’ll cover them later. Also we can write our data into the `event` object in one handler and read it in another one, so we can pass to handlers on parents information about the processing below. \`\`\`
 
-Capturing
----------
+## Capturing
 
 There’s another phase of event processing called “capturing”. It is rarely used in real code, but sometimes can be useful.
 
@@ -125,8 +120,8 @@ To catch an event on the capturing phase, we need to set the handler `capture` o
 
 There are two possible values of the `capture` option:
 
--   If it’s `false` (default), then the handler is set on the bubbling phase.
--   If it’s `true`, then the handler is set on the capturing phase.
+- If it’s `false` (default), then the handler is set on the bubbling phase.
+- If it’s `true`, then the handler is set on the capturing phase.
 
 Note that while formally there are 3 phases, the 2nd phase (“target phase”: the event reached the element) is not handled separately: handlers on both capturing and bubbling phases trigger at that phase.
 
@@ -142,7 +137,7 @@ P
 
 \`\`\`
 
-The code sets click handlers on *every* element in the document to see which ones are working.
+The code sets click handlers on _every_ element in the document to see which ones are working.
 
 If you click on `<p>`, then the sequence is:
 
@@ -152,29 +147,28 @@ If you click on `<p>`, then the sequence is:
 
 There’s a property `event.eventPhase` that tells us the number of the phase on which the event was caught. But it’s rarely used, because we usually know it in the handler.
 
-`` smart header="To remove the handler, `removeEventListener` needs the         same phase" If we `addEventListener(..., true)`, then we should mention         the same phase in `removeEventListener(..., true)` to correctly remove         the handler. ``
+`` smart header="To remove the handler, `removeEventListener` needs the same phase" If we `addEventListener(..., true)`, then we should mention the same phase in `removeEventListener(..., true)` to correctly remove the handler. ``
 
-\`\`\``smart header="Listeners on same element and same phase run in their set         order" If we have multiple event handlers on the same phase, assigned to         the same element with`addEventListener\`, they run in the same order as they are created:
+\`\`\``smart header="Listeners on same element and same phase run in their set order" If we have multiple event handlers on the same phase, assigned to the same element with`addEventListener\`, they run in the same order as they are created:
 
     elem.addEventListener("click", e => alert(1)); // guaranteed to trigger first
     elem.addEventListener("click", e => alert(2));
 
 \`\`\`\`
 
-Summary
--------
+## Summary
 
 When an event happens – the most nested element where it happens gets labeled as the “target element” (`event.target`).
 
--   Then the event moves down from the document root to `event.target`, calling handlers assigned with `addEventListener(..., true)` on the way (`true` is a shorthand for `{capture: true}`).
--   Then handlers are called on the target element itself.
--   Then the event bubbles up from `event.target` to the root, calling handlers assigned using `on<event>`, HTML attributes and `addEventListener` without the 3rd argument or with the 3rd argument `false/{capture:false}`.
+- Then the event moves down from the document root to `event.target`, calling handlers assigned with `addEventListener(..., true)` on the way (`true` is a shorthand for `{capture: true}`).
+- Then handlers are called on the target element itself.
+- Then the event bubbles up from `event.target` to the root, calling handlers assigned using `on<event>`, HTML attributes and `addEventListener` without the 3rd argument or with the 3rd argument `false/{capture:false}`.
 
 Each handler can access `event` object properties:
 
--   `event.target` – the deepest element that originated the event.
--   `event.currentTarget` (=`this`) – the current element that handles the event (the one that has the handler on it)
--   `event.eventPhase` – the current phase (capturing=1, target=2, bubbling=3).
+- `event.target` – the deepest element that originated the event.
+- `event.currentTarget` (=`this`) – the current element that handles the event (the one that has the handler on it)
+- `event.eventPhase` – the current phase (capturing=1, target=2, bubbling=3).
 
 Any event handler can stop the event by calling `event.stopPropagation()`, but that’s not recommended, because we can’t really be sure we won’t need it above, maybe for completely different things.
 

@@ -1,5 +1,4 @@
-Polyfills and transpilers
-=========================
+# Polyfills and transpilers
 
 The JavaScript language steadily evolves. New proposals to the language appear regularly, they are analyzed and, if considered worthy, are appended to the list at <a href="https://tc39.github.io/ecma262/" class="uri">https://tc39.github.io/ecma262/</a> and then progress to the [specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm).
 
@@ -20,8 +19,7 @@ There are two tools for that:
 
 Here, in this chapter, our purpose is to get the gist of how they work, and their place in web development.
 
-Transpilers
------------
+## Transpilers
 
 A [transpiler](https://en.wikipedia.org/wiki/Source-to-source_compiler) is a special piece of software that can parse (“read and understand”) modern code, and rewrite it using older syntax constructs, so that the result would be the same.
 
@@ -43,8 +41,7 @@ Speaking of names, [Babel](https://babeljs.io) is one of the most prominent tran
 
 Modern project build systems, such as [webpack](http://webpack.github.io/), provide means to run transpiler automatically on every code change, so it’s very easy to integrate into development process.
 
-Polyfills
----------
+## Polyfills
 
 New language features may include not only syntax constructs and operators, but also built-in functions.
 
@@ -71,8 +68,7 @@ JavaScript is a highly dynamic language, scripts may add/modify any functions, e
 
 Two interesting libraries of polyfills are: - [core js](https://github.com/zloirock/core-js) that supports a lot, allows to include only needed features. - [polyfill.io](http://polyfill.io) service that provides a script with polyfills, depending on the features and user’s browser.
 
-Summary
--------
+## Summary
 
 In this chapter we’d like to motivate you to study modern and even “bleeding-edge” language features, even if they aren’t yet well-supported by JavaScript engines.
 

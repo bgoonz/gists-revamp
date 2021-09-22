@@ -1,5 +1,4 @@
-Type Conversions
-================
+# Type Conversions
 
 Most of the time, operators and functions automatically convert the values given to them to the right type.
 
@@ -11,8 +10,7 @@ There are also cases when we need to explicitly convert a value to the expected 
 
 Later, after we learn about objects, in the chapter <a href="info:object-toprimitive" class="uri">info:object-toprimitive</a> we’ll see how objects fit in. \`\`\`
 
-String Conversion
------------------
+## String Conversion
 
 String conversion happens when we need the string form of a value.
 
@@ -22,12 +20,11 @@ We can also call the `String(value)` function to convert a value to a string:
 
 \`\`\`js run let value = true; alert(typeof value); // boolean
 
-*!* value = String(value); // now value is a string “true” alert(typeof value); // string */!* \`\`\`
+_!_ value = String(value); // now value is a string “true” alert(typeof value); // string _/!_ \`\`\`
 
 String conversion is mostly obvious. A `false` becomes `"false"`, `null` becomes `"null"`, etc.
 
-Numeric Conversion
-------------------
+## Numeric Conversion
 
 Numeric conversion happens in mathematical functions and expressions automatically.
 
@@ -57,14 +54,13 @@ Numeric conversion rules:
 
 Examples:
 
-`js run alert( Number(" 123 ") ); // 123 alert( Number("123z") ); // NaN         (error reading a number at "z") alert( Number(true) ); // 1 alert(         Number(false) ); // 0`
+`js run alert( Number(" 123 ") ); // 123 alert( Number("123z") ); // NaN (error reading a number at "z") alert( Number(true) ); // 1 alert( Number(false) ); // 0`
 
 Please note that `null` and `undefined` behave differently here: `null` becomes zero while `undefined` becomes `NaN`.
 
 Most mathematical operators also perform such conversion, we’ll see that in the next chapter.
 
-Boolean Conversion
-------------------
+## Boolean Conversion
 
 Boolean conversion is the simplest one.
 
@@ -72,8 +68,8 @@ It happens in logical operations (later we’ll meet condition tests and other s
 
 The conversion rule:
 
--   Values that are intuitively “empty”, like `0`, an empty string, `null`, `undefined`, and `NaN`, become `false`.
--   Other values become `true`.
+- Values that are intuitively “empty”, like `0`, an empty string, `null`, `undefined`, and `NaN`, become `false`.
+- Other values become `true`.
 
 For instance:
 
@@ -83,10 +79,9 @@ alert( Boolean(“hello”) ); // true alert( Boolean("") ); // false \`\`\`
 
 \`\`\``warn header="Please note: the string with zero`"0"`is`true`" Some languages (namely PHP) treat`“0”`as`false`. But in JavaScript, a non-empty string is always`true\`.
 
-`js run alert( Boolean("0") ); // true alert( Boolean(" ") ); // spaces,         also true (any non-empty string is true)` \`\`\`\`
+`js run alert( Boolean("0") ); // true alert( Boolean(" ") ); // spaces, also true (any non-empty string is true)` \`\`\`\`
 
-Summary
--------
+## Summary
 
 The three most widely used type conversions are to string, to number, and to boolean.
 
@@ -106,7 +101,7 @@ Follows the rules:
 
 Most of these rules are easy to understand and memorize. The notable exceptions where people usually make mistakes are:
 
--   `undefined` is `NaN` as a number, not `0`.
--   `"0"` and space-only strings like `" "` are true as a boolean.
+- `undefined` is `NaN` as a number, not `0`.
+- `"0"` and space-only strings like `" "` are true as a boolean.
 
 Objects aren’t covered here. We’ll return to them later in the chapter <a href="info:object-toprimitive" class="uri">info:object-toprimitive</a> that is devoted exclusively to objects after we learn more basic things about JavaScript.

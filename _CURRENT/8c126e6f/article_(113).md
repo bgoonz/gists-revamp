@@ -1,5 +1,4 @@
-Keyboard: keydown and keyup
-===========================
+# Keyboard: keydown and keyup
 
 Before we get to keyboard, please note that on modern devices there are other ways to “input something”. For instance, people use speech recognition (especially on mobile devices) or copy/paste with the mouse.
 
@@ -7,8 +6,7 @@ So if we want to track any input into an `<input>` field, then keyboard events a
 
 Keyboard events should be used when we want to handle keyboard actions (virtual keyboard also counts). For instance, to react on arrow keys `key:Up` and `key:Down` or hotkeys (including combinations of keys).
 
-Teststand \[\#keyboard-test-stand\]
------------------------------------
+## Teststand \[\#keyboard-test-stand\]
 
     To better understand keyboard events, you can use the [teststand](sandbox:keyboard-dump).
 
@@ -18,8 +16,7 @@ Teststand \[\#keyboard-test-stand\]
 
     [codetabs src="keyboard-dump" height=480]
 
-Keydown and keyup
------------------
+## Keydown and keyup
 
 The `keydown` events happens when a key is pressed down, and then `keyup` – when it’s released.
 
@@ -61,7 +58,7 @@ On one hand, the value of `event.key` is a character, it changes depending on th
 
 Like this:
 
-`js run document.addEventListener('keydown', function(event) { if         (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {         alert('Undo!') } });`
+`js run document.addEventListener('keydown', function(event) { if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) { alert('Undo!') } });`
 
 On the other hand, there’s a problem with `event.code`. For different keyboard layouts, the same key may have different characters.
 
@@ -89,70 +86,65 @@ Do we want to handle layout-dependant keys? Then `event.key` is the way to go.
 
 Or we want a hotkey to work even after a language switch? Then `event.code` may be better.
 
-Auto-repeat
------------
+## Auto-repeat
 
 If a key is being pressed for a long enough time, it starts to “auto-repeat”: the `keydown` triggers again and again, and then when it’s released we finally get `keyup`. So it’s kind of normal to have many `keydown` and a single `keyup`.
 
 For events triggered by auto-repeat, the event object has `event.repeat` property set to `true`.
 
-Default actions
----------------
+## Default actions
 
 Default actions vary, as there are many possible things that may be initiated by the keyboard.
 
 For instance:
 
--   A character appears on the screen (the most obvious outcome).
--   A character is deleted (`key:Delete` key).
--   The page is scrolled (`key:PageDown` key).
--   The browser opens the “Save Page” dialog (`key:Ctrl+S`)
--   …and so on.
+- A character appears on the screen (the most obvious outcome).
+- A character is deleted (`key:Delete` key).
+- The page is scrolled (`key:PageDown` key).
+- The browser opens the “Save Page” dialog (`key:Ctrl+S`)
+- …and so on.
 
 Preventing the default action on `keydown` can cancel most of them, with the exception of OS-based special keys. For instance, on Windows `key:Alt+F4` closes the current browser window. And there’s no way to stop it by preventing the default action in JavaScript.
 
 For instance, the `<input>` below expects a phone number, so it does not accept keys except digits, `+`, `()` or `-`:
 
-`html autorun height=60 run <script> function checkPhoneKey(key) {         return (key >= '0' && key <= '9') || key == '+' || key ==         '(' || key == ')' || key == '-'; } </script> <input         *!*onkeydown="return checkPhoneKey(event.key)"*/!* placeholder="Phone,         please" type="tel">`
+`html autorun height=60 run <script> function checkPhoneKey(key) { return (key >= '0' && key <= '9') || key == '+' || key == '(' || key == ')' || key == '-'; } </script> <input *!*onkeydown="return checkPhoneKey(event.key)"*/!* placeholder="Phone, please" type="tel">`
 
 Please note that special keys, such as `key:Backspace`, `key:Left`, `key:Right`, `key:Ctrl+V`, do not work in the input. That’s a side-effect of the strict filter `checkPhoneKey`.
 
 Let’s relax it a little bit:
 
-`html autorun height=60 run <script> function checkPhoneKey(key) {         return (key >= '0' && key <= '9') || key == '+' || key ==         '(' || key == ')' || key == '-' || key == 'ArrowLeft' || key ==         'ArrowRight' || key == 'Delete' || key == 'Backspace'; } </script>         <input onkeydown="return checkPhoneKey(event.key)"         placeholder="Phone, please" type="tel">`
+`html autorun height=60 run <script> function checkPhoneKey(key) { return (key >= '0' && key <= '9') || key == '+' || key == '(' || key == ')' || key == '-' || key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || key == 'Backspace'; } </script> <input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel">`
 
 Now arrows and deletion works well.
 
 …But we still can enter anything by using a mouse and right-click + Paste. So the filter is not 100% reliable. We can just let it be like that, because most of time it works. Or an alternative approach would be to track the `input` event – it triggers after any modification. There we can check the new value and highlight/modify it when it’s invalid.
 
-Legacy
-------
+## Legacy
 
 In the past, there was a `keypress` event, and also `keyCode`, `charCode`, `which` properties of the event object.
 
 There were so many browser incompatibilities while working with them, that developers of the specification had no way, other than deprecating all of them and creating new, modern events (described above in this chapter). The old code still works, as browsers keep supporting them, but there’s totally no need to use those any more.
 
-Mobile Keyboards
-----------------
+## Mobile Keyboards
 
 When using virtual/mobile keyboards, formally known as IME (Input-Method Editor), the W3C standard states that a KeyboardEvent’s [`e.keyCode` should be `229`](https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode) and [`e.key` should be `"Unidentified"`](https://www.w3.org/TR/uievents-key/#key-attr-values).
 
 While some of these keyboards might still use the right values for `e.key`, `e.code`, `e.keyCode`… when pressing certain keys such as arrows or backspace, there’s no guarantee, so your keyboard logic might not always work on mobile devices.
 
-Summary
--------
+## Summary
 
 Pressing a key always generates a keyboard event, be it symbol keys or special keys like `key:Shift` or `key:Ctrl` and so on. The only exception is `key:Fn` key that sometimes presents on a laptop keyboard. There’s no keyboard event for it, because it’s often implemented on lower level than OS.
 
 Keyboard events:
 
--   `keydown` – on pressing the key (auto-repeats if the key is pressed for long),
--   `keyup` – on releasing the key.
+- `keydown` – on pressing the key (auto-repeats if the key is pressed for long),
+- `keyup` – on releasing the key.
 
 Main keyboard event properties:
 
--   `code` – the “key code” (`"KeyA"`, `"ArrowLeft"` and so on), specific to the physical location of the key on keyboard.
--   `key` – the character (`"A"`, `"a"` and so on), for non-character keys, such as `key:Esc`, usually has the same value as `code`.
+- `code` – the “key code” (`"KeyA"`, `"ArrowLeft"` and so on), specific to the physical location of the key on keyboard.
+- `key` – the character (`"A"`, `"a"` and so on), for non-character keys, such as `key:Esc`, usually has the same value as `code`.
 
 In the past, keyboard events were sometimes used to track user input in form fields. That’s not reliable, because the input can come from various sources. We have `input` and `change` events to handle any input (covered later in the chapter <a href="info:events-change-input" class="uri">info:events-change-input</a>). They trigger after any kind of input, including copy-pasting or speech recognition.
 

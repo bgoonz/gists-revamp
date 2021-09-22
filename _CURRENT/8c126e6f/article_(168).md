@@ -1,10 +1,8 @@
-Backreferences in pattern: and name&gt;
-=======================================
+# Backreferences in pattern: and name&gt;
 
 We can use the contents of capturing groups `pattern:(...)` not only in the result or in the replacement string, but also in the pattern itself.
 
-Backreference by number:
-------------------------
+## Backreference by number:
 
 A group can be referenced in the pattern using `pattern:\N`, where `N` is the group number.
 
@@ -30,7 +28,7 @@ Here’s the correct code:
 
 \`\``js run let str =`He said: “She’s the one!”.\`;
 
-*!* let regexp = /(\[’"\])(.*?)\\1/g;* /!\*
+_!_ let regexp = /(\[’"\])(._?)\\1/g;_ /!\*
 
 alert( str.match(regexp) ); // “She’s the one!” \`\`\`
 
@@ -44,8 +42,7 @@ Similar to that, `pattern:\2` would mean the contents of the second group, `patt
 
 `` warn header="Don't mess up: in the pattern `pattern:\1`, in the replacement: `pattern:$1`" In the replacement string we use a dollar sign: `pattern:$1`, while in the pattern - a backslash `pattern:\1`. ``
 
-Backreference by name: `\k<name>`
----------------------------------
+## Backreference by name: `\k<name>`
 
 If a regexp has many parentheses, it’s convenient to give them names.
 
@@ -55,6 +52,6 @@ In the example below the group with quotes is named `pattern:?<quote>`, so the b
 
 \`\``js run let str =`He said: “She’s the one!”.\`;
 
-*!* let regexp = /(?\[’"\])(.*?)quote&gt;/g;* /!\*
+_!_ let regexp = /(?\[’"\])(._?)quote&gt;/g;_ /!\*
 
 alert( str.match(regexp) ); // “She’s the one!” \`\`\`

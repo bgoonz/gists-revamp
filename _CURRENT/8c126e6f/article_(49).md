@@ -1,18 +1,16 @@
-Recursion and stack
-===================
+# Recursion and stack
 
 Let’s return to functions and study them more in-depth.
 
-Our first topic will be *recursion*.
+Our first topic will be _recursion_.
 
 If you are not new to programming, then it is probably familiar and you could skip this chapter.
 
 Recursion is a programming pattern that is useful in situations when a task can be naturally split into several tasks of the same kind, but simpler. Or when a task can be simplified into an easy action plus a simpler variant of the same task. Or, as we’ll see soon, to deal with certain data structures.
 
-When a function solves a task, in the process it can call many other functions. A partial case of this is when a function calls *itself*. That’s called *recursion*.
+When a function solves a task, in the process it can call many other functions. A partial case of this is when a function calls _itself_. That’s called _recursion_.
 
-Two ways of thinking
---------------------
+## Two ways of thinking
 
 For something simple to start with – let’s write a function `pow(x, n)` that raises `x` to a natural power of `n`. In other words, multiplies `x` by itself `n` times.
 
@@ -45,13 +43,13 @@ When `pow(x, n)` is called, the execution splits into two branches:
                   if n==1  = x
                  /
     pow(x, n) =
-                 \       
+                 \
                   else     = x * pow(x, n - 1)
 
-1.  If `n == 1`, then everything is trivial. It is called *the base* of recursion, because it immediately produces the obvious result: `pow(x, 1)` equals `x`.
-2.  Otherwise, we can represent `pow(x, n)` as `x * pow(x, n - 1)`. In maths, one would write `xn = x * xn-1`. This is called *a recursive step*: we transform the task into a simpler action (multiplication by `x`) and a simpler call of the same task (`pow` with lower `n`). Next steps simplify it further and further until `n` reaches `1`.
+1.  If `n == 1`, then everything is trivial. It is called _the base_ of recursion, because it immediately produces the obvious result: `pow(x, 1)` equals `x`.
+2.  Otherwise, we can represent `pow(x, n)` as `x * pow(x, n - 1)`. In maths, one would write `xn = x * xn-1`. This is called _a recursive step_: we transform the task into a simpler action (multiplication by `x`) and a simpler call of the same task (`pow` with lower `n`). Next steps simplify it further and further until `n` reaches `1`.
 
-We can also say that `pow` *recursively calls itself* till `n == 1`.
+We can also say that `pow` _recursively calls itself_ till `n == 1`.
 
 ![recursive diagram of pow](recursion-pow.svg)
 
@@ -68,20 +66,19 @@ So, the recursion reduces a function call to a simpler one, and then – to even
 
 Here we can rewrite the same using the conditional operator `?` instead of `if` to make `pow(x, n)` more terse and still very readable:
 
-`js run function pow(x, n) { return (n == 1) ? x : (x * pow(x, n - 1));         }` \`\`\`\`
+`js run function pow(x, n) { return (n == 1) ? x : (x * pow(x, n - 1)); }` \`\`\`\`
 
-The maximal number of nested calls (including the first one) is called *recursion depth*. In our case, it will be exactly `n`.
+The maximal number of nested calls (including the first one) is called _recursion depth_. In our case, it will be exactly `n`.
 
 The maximal recursion depth is limited by JavaScript engine. We can rely on it being 10000, some engines allow more, but 100000 is probably out of limit for the majority of them. There are automatic optimizations that help alleviate this (“tail calls optimizations”), but they are not yet supported everywhere and work only in simple cases.
 
 That limits the application of recursion, but it still remains very wide. There are many tasks where recursive way of thinking gives simpler code, easier to maintain.
 
-The execution context and stack
--------------------------------
+## The execution context and stack
 
 Now let’s examine how recursive calls work. For that we’ll look under the hood of functions.
 
-The information about the process of execution of a running function is stored in its *execution context*.
+The information about the process of execution of a running function is stored in its _execution context_.
 
 The [execution context](https://tc39.github.io/ecma262/#sec-execution-contexts) is an internal data structure that contains details about the execution of a function: where the control flow is now, the current variables, the value of `this` (we don’t use it here) and few other internal details.
 
@@ -89,10 +86,10 @@ One function call has exactly one execution context associated with it.
 
 When a function makes a nested call, the following happens:
 
--   The current function is paused.
--   The execution context associated with it is remembered in a special data structure called *execution context stack*.
--   The nested call executes.
--   After it ends, the old execution context is retrieved from the stack, and the outer function is resumed from where it stopped.
+- The current function is paused.
+- The execution context associated with it is remembered in a special data structure called _execution context stack_.
+- The nested call executes.
+- After it ends, the old execution context is retrieved from the stack, and the outer function is resumed from where it stopped.
 
 Let’s see what happens during the `pow(2, 3)` call.
 
@@ -102,23 +99,23 @@ In the beginning of the call `pow(2, 3)` the execution context will store variab
 
 We can sketch it as:
 
--   <span class="function-execution-context">Context: { x: 2, n: 3, at line 1 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 3, at line 1 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
 
 That’s when the function starts to execute. The condition `n == 1` is falsy, so the flow continues into the second branch of `if`:
 
-\`\`\`js run function pow(x, n) { if (n == 1) { return x; } else { *!* return x \* pow(x, n - 1); */!* } }
+\`\`\`js run function pow(x, n) { if (n == 1) { return x; } else { _!_ return x \* pow(x, n - 1); _/!_ } }
 
 alert( pow(2, 3) ); \`\`\`
 
 The variables are same, but the line changes, so the context is now:
 
--   <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
 
 To calculate `x * pow(x, n - 1)`, we need to make a subcall of `pow` with new arguments `pow(2, 2)`.
 
 ### pow(2, 2)
 
-To do a nested call, JavaScript remembers the current execution context in the *execution context stack*.
+To do a nested call, JavaScript remembers the current execution context in the _execution context stack_.
 
 Here we call the same function `pow`, but it absolutely doesn’t matter. The process is the same for all functions:
 
@@ -128,8 +125,8 @@ Here we call the same function `pow`, but it absolutely doesn’t matter. The pr
 
 Here’s the context stack when we entered the subcall `pow(2, 2)`:
 
--   <span class="function-execution-context">Context: { x: 2, n: 2, at line 1 }</span> <span class="function-execution-context-call">pow(2, 2)</span>
--   <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 2, at line 1 }</span> <span class="function-execution-context-call">pow(2, 2)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
 
 The new current execution context is on top (and bold), and previous remembered contexts are below.
 
@@ -145,9 +142,9 @@ The process repeats: a new subcall is made at line `5`, now with arguments `x=2`
 
 A new execution context is created, the previous one is pushed on top of the stack:
 
--   <span class="function-execution-context">Context: { x: 2, n: 1, at line 1 }</span> <span class="function-execution-context-call">pow(2, 1)</span>
--   <span class="function-execution-context">Context: { x: 2, n: 2, at line 5 }</span> <span class="function-execution-context-call">pow(2, 2)</span>
--   <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 1, at line 1 }</span> <span class="function-execution-context-call">pow(2, 1)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 2, at line 5 }</span> <span class="function-execution-context-call">pow(2, 2)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
 
 There are 2 old contexts now and 1 currently running for `pow(2, 1)`.
 
@@ -169,14 +166,14 @@ There are no more nested calls, so the function finishes, returning `2`.
 
 As the function finishes, its execution context is not needed anymore, so it’s removed from the memory. The previous one is restored off the top of the stack:
 
--   <span class="function-execution-context">Context: { x: 2, n: 2, at line 5 }</span> <span class="function-execution-context-call">pow(2, 2)</span>
--   <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 2, at line 5 }</span> <span class="function-execution-context-call">pow(2, 2)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
 
 The execution of `pow(2, 2)` is resumed. It has the result of the subcall `pow(2, 1)`, so it also can finish the evaluation of `x * pow(x, n - 1)`, returning `4`.
 
 Then the previous context is restored:
 
--   <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
+- <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span>
 
 When it finishes, we have a result of `pow(2, 3) = 8`.
 
@@ -206,8 +203,7 @@ The iterative `pow` uses a single context changing `i` and `result` in the proce
 
 Recursion can give a shorter code, easier to understand and support. Optimizations are not required in every place, mostly we need a good code, that’s why it’s used.
 
-Recursive traversals
---------------------
+## Recursive traversals
 
 Another great application of the recursion is a recursive traversal.
 
@@ -240,11 +236,11 @@ Imagine, we have a company. The staff structure can be presented as an object:
 
 In other words, a company has departments.
 
--   A department may have an array of staff. For instance, `sales` department has 2 employees: John and Alice.
--   Or a department may split into subdepartments, like `development` has two branches: `sites` and `internals`. Each of them has their own staff.
--   It is also possible that when a subdepartment grows, it divides into subsubdepartments (or teams).
+- A department may have an array of staff. For instance, `sales` department has 2 employees: John and Alice.
+- Or a department may split into subdepartments, like `development` has two branches: `sites` and `internals`. Each of them has their own staff.
+- It is also possible that when a subdepartment grows, it divides into subsubdepartments (or teams).
 
-    For instance, the `sites` department in the future may be split into teams for `siteA` and `siteB`. And they, potentially, can split even more. That’s not on the picture, just something to have in mind.
+  For instance, the `sites` department in the future may be split into teams for `siteA` and `siteB`. And they, potentially, can split even more. That’s not on the picture, just something to have in mind.
 
 Now let’s say we want a function to get the sum of all salaries. How can we do that?
 
@@ -254,8 +250,8 @@ Let’s try recursion.
 
 As we can see, when our function gets a department to sum, there are two possible cases:
 
-1.  Either it’s a “simple” department with an *array* of people – then we can sum the salaries in a simple loop.
-2.  Or it’s *an object* with `N` subdepartments – then we can make `N` recursive calls to get the sum for each of the subdeps and combine the results.
+1.  Either it’s a “simple” department with an _array_ of people – then we can sum the salaries in a simple loop.
+2.  Or it’s _an object_ with `N` subdepartments – then we can make `N` recursive calls to get the sum for each of the subdeps and combine the results.
 
 The 1st case is the base of recursion, the trivial case, when we get an array.
 
@@ -265,7 +261,7 @@ The algorithm is probably even easier to read from the code:
 
 \`\`\`js run let company = { // the same object, compressed for brevity sales: \[{name: ‘John’, salary: 1000}, {name: ‘Alice’, salary: 1600 }\], development: { sites: \[{name: ‘Peter’, salary: 2000}, {name: ‘Alex’, salary: 1800 }\], internals: \[{name: ‘Jack’, salary: 1300}\] } };
 
-// The function to do the job *!* function sumSalaries(department) { if (Array.isArray(department)) { // case (1) return department.reduce((prev, current) =&gt; prev + current.salary, 0); // sum the array } else { // case (2) let sum = 0; for (let subdep of Object.values(department)) { sum += sumSalaries(subdep); // recursively call for subdepartments, sum the results } return sum; } } */!*
+// The function to do the job _!_ function sumSalaries(department) { if (Array.isArray(department)) { // case (1) return department.reduce((prev, current) =&gt; prev + current.salary, 0); // sum the array } else { // case (2) let sum = 0; for (let subdep of Object.values(department)) { sum += sumSalaries(subdep); // recursively call for subdepartments, sum the results } return sum; } } _/!_
 
 alert(sumSalaries(company)); // 7700 \`\`\`
 
@@ -279,21 +275,20 @@ We can easily see the principle: for an object `{...}` subcalls are made, while 
 
 Note that the code uses smart features that we’ve covered before:
 
--   Method `arr.reduce` explained in the chapter <a href="info:array-methods" class="uri">info:array-methods</a> to get the sum of the array.
--   Loop `for(val of Object.values(obj))` to iterate over object values: `Object.values` returns an array of them.
+- Method `arr.reduce` explained in the chapter <a href="info:array-methods" class="uri">info:array-methods</a> to get the sum of the array.
+- Loop `for(val of Object.values(obj))` to iterate over object values: `Object.values` returns an array of them.
 
-Recursive structures
---------------------
+## Recursive structures
 
 A recursive (recursively-defined) data structure is a structure that replicates itself in parts.
 
 We’ve just seen it in the example of a company structure above.
 
-A company *department* is: - Either an array of people. - Or an object with *departments*.
+A company _department_ is: - Either an array of people. - Or an object with _departments_.
 
 For web-developers there are much better-known examples: HTML and XML documents.
 
-In the HTML document, an *HTML-tag* may contain a list of: - Text pieces. - HTML-comments. - Other *HTML-tags* (that in turn may contain text pieces/comments or other tags etc).
+In the HTML document, an _HTML-tag_ may contain a list of: - Text pieces. - HTML-comments. - Other _HTML-tags_ (that in turn may contain text pieces/comments or other tags etc).
 
 That’s once again a recursive definition.
 
@@ -313,7 +308,7 @@ The only structural modifications that do not require mass-renumbering are those
 
 Alternatively, if we really need fast insertion/deletion, we can choose another data structure called a [linked list](https://en.wikipedia.org/wiki/Linked_list).
 
-The *linked list element* is recursively defined as an object with: - `value`. - `next` property referencing the next *linked list element* or `null` if that’s the end.
+The _linked list element_ is recursively defined as an object with: - `value`. - `next` property referencing the next _linked list element_ or `null` if that’s the end.
 
 For instance:
 
@@ -337,7 +332,7 @@ Graphical representation of the list:
 
 An alternative code for creation:
 
-`js no-beautify let list = { value: 1 }; list.next = { value: 2 };         list.next.next = { value: 3 }; list.next.next.next = { value: 4 };         list.next.next.next.next = null;`
+`js no-beautify let list = { value: 1 }; list.next = { value: 2 }; list.next.next = { value: 3 }; list.next.next.next = { value: 4 }; list.next.next.next.next = null;`
 
 Here we can even more clearly see that there are multiple objects, each one has the `value` and `next` pointing to the neighbour. The `list` variable is the first object in the chain, so following `next` pointers from it we can reach any element.
 
@@ -386,21 +381,20 @@ The main drawback is that we can’t easily access an element by its number. In 
 
 Lists can be enhanced: - We can add property `prev` in addition to `next` to reference the previous element, to move back easily. - We can also add a variable named `tail` referencing the last element of the list (and update it when adding/removing elements from the end). - …The data structure may vary according to our needs.
 
-Summary
--------
+## Summary
 
-Terms: - *Recursion* is a programming term that means calling a function from itself. Recursive functions can be used to solve tasks in elegant ways.
+Terms: - _Recursion_ is a programming term that means calling a function from itself. Recursive functions can be used to solve tasks in elegant ways.
 
     When a function calls itself, that's called a *recursion step*. The *basis* of recursion is function arguments that make the task so simple that the function does not make further calls.
 
--   A [recursively-defined](https://en.wikipedia.org/wiki/Recursive_data_type) data structure is a data structure that can be defined using itself.
+- A [recursively-defined](https://en.wikipedia.org/wiki/Recursive_data_type) data structure is a data structure that can be defined using itself.
 
-    For instance, the linked list can be defined as a data structure consisting of an object referencing a list (or null).
+  For instance, the linked list can be defined as a data structure consisting of an object referencing a list (or null).
 
-        list = { value, next -> list }
+      list = { value, next -> list }
 
-    Trees like HTML elements tree or the department tree from this chapter are also naturally recursive: they branch and every branch can have other branches.
+  Trees like HTML elements tree or the department tree from this chapter are also naturally recursive: they branch and every branch can have other branches.
 
-    Recursive functions can be used to walk them as we’ve seen in the `sumSalary` example.
+  Recursive functions can be used to walk them as we’ve seen in the `sumSalary` example.
 
 Any recursive function can be rewritten into an iterative one. And that’s sometimes required to optimize stuff. But for many tasks a recursive solution is fast enough and easier to write and support.

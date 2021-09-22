@@ -1,10 +1,8 @@
-Manuals and specifications
-==========================
+# Manuals and specifications
 
-This book is a *tutorial*. It aims to help you gradually learn the language. But once you’re familiar with the basics, you’ll need other sources.
+This book is a _tutorial_. It aims to help you gradually learn the language. But once you’re familiar with the basics, you’ll need other sources.
 
-Specification
--------------
+## Specification
 
 [The ECMA-262 specification](https://www.ecma-international.org/publications/standards/Ecma-262.htm) contains the most in-depth, detailed and formalized information about JavaScript. It defines the language.
 
@@ -16,24 +14,22 @@ To read about new bleeding-edge features, including those that are “almost sta
 
 Also, if you’re developing for the browser, then there are other specifications covered in the [second part](info:browser-environment) of the tutorial.
 
-Manuals
--------
+## Manuals
 
--   **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It’s great to get in-depth information about individual language functions, methods etc.
+- **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It’s great to get in-depth information about individual language functions, methods etc.
 
-    One can find it at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a>.
+  One can find it at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a>.
 
 Although, it’s often best to use an internet search instead. Just use “MDN \[term\]” in the query, e.g. <a href="https://google.com/search?q=MDN+parseInt" class="uri">https://google.com/search?q=MDN+parseInt</a> to search for `parseInt` function.
 
-Compatibility tables
---------------------
+## Compatibility tables
 
 JavaScript is a developing language, new features get added regularly.
 
 To see their support among browser-based and other engines, see:
 
--   <a href="http://caniuse.com" class="uri">http://caniuse.com</a> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <a href="http://caniuse.com/#feat=cryptography" class="uri">http://caniuse.com/#feat=cryptography</a>.
--   <a href="https://kangax.github.io/compat-table" class="uri">https://kangax.github.io/compat-table</a> - a table with language features and engines that support those or don’t support.
+- <a href="http://caniuse.com" class="uri">http://caniuse.com</a> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <a href="http://caniuse.com/#feat=cryptography" class="uri">http://caniuse.com/#feat=cryptography</a>.
+- <a href="https://kangax.github.io/compat-table" class="uri">https://kangax.github.io/compat-table</a> - a table with language features and engines that support those or don’t support.
 
 All these resources are useful in real-life development, as they contain valuable information about language details, their support etc.
 

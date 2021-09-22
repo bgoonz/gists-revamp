@@ -1,5 +1,4 @@
-Anchors: string start ^ and end $
-=================================
+# Anchors: string start ^ and end $
 
 The caret `pattern:^` and dollar `pattern:$` characters have special meaning in a regexp. They are called “anchors”.
 
@@ -7,18 +6,17 @@ The caret `pattern:^` matches at the beginning of the text, and the dollar `patt
 
 For instance, let’s test if the text starts with `Mary`:
 
-`js run let str1 = "Mary had a little lamb"; alert( /^Mary/.test(str1)         ); // true`
+`js run let str1 = "Mary had a little lamb"; alert( /^Mary/.test(str1) ); // true`
 
 The pattern `pattern:^Mary` means: “string start and then Mary”.
 
 Similar to this, we can test if the string ends with `snow` using `pattern:snow$`:
 
-`js run let str1 = "it's fleece was white as snow"; alert(         /snow$/.test(str1) ); // true`
+`js run let str1 = "it's fleece was white as snow"; alert( /snow$/.test(str1) ); // true`
 
 In these particular cases we could use string methods `startsWith/endsWith` instead. Regular expressions should be used for more complex tests.
 
-Testing for a full match
-------------------------
+## Testing for a full match
 
 Both anchors together `pattern:^...$` are often used to test whether or not a string fully matches the pattern. For instance, to check if the user input is in the right format.
 

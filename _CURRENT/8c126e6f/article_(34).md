@@ -1,12 +1,10 @@
-Optional chaining ‘?.’
-======================
+# Optional chaining ‘?.’
 
 \[recent browser=“new”\]
 
 The optional chaining `?.` is a safe way to access nested object properties, even if an intermediate property doesn’t exist.
 
-The “non-existing property” problem
------------------------------------
+## The “non-existing property” problem
 
 If you’ve just started to read the tutorial and learn JavaScript, maybe the problem hasn’t touched you yet, but it’s quite common.
 
@@ -26,7 +24,7 @@ In many practical cases we’d prefer to get `undefined` instead of an error her
 
 …And another example. In the web development, we can get an object that corresponds to a web page element using a special method call, such as `document.querySelector('.elem')`, and it returns `null` when there’s no such element.
 
-`js run // document.querySelector('.elem') is null if there's no element         let html = document.querySelector('.elem').innerHTML; // error if it's         null`
+`js run // document.querySelector('.elem') is null if there's no element let html = document.querySelector('.elem').innerHTML; // error if it's null`
 
 Once again, if the element doesn’t exist, we’ll get an error accessing `.innerHTML` of `null`. And in some cases, when the absence of the element is normal, we’d like to avoid the error and just accept `html = null` as the result.
 
@@ -62,8 +60,7 @@ As you can see, property names are still duplicated in the code. E.g. in the cod
 
 That’s why the optional chaining `?.` was added to the language. To solve this problem once and for all!
 
-Optional chaining
------------------
+## Optional chaining
 
 The optional chaining `?.` stops the evaluation if the value before `?.` is `undefined` or `null` and returns `undefined`.
 
@@ -99,8 +96,7 @@ So, if `user` happens to be undefined due to a mistake, we’ll see a programmin
 
 `js run // ReferenceError: user is not defined user?.address;` The variable must be declared (e.g. `let/const/var user` or as a function parameter). The optional chaining works only for declared variables. \`\`\`\`
 
-Short-circuiting
-----------------
+## Short-circuiting
 
 As it was said before, the `?.` immediately stops (“short-circuits”) the evaluation if the left part doesn’t exist.
 
@@ -114,8 +110,7 @@ user?.sayHi(x++); // no “sayHi”, so the execution doesn’t reach x++
 
 alert(x); // 0, value not incremented \`\`\`
 
-Other variants: ?.(), ?.\[\]
-----------------------------
+## Other variants: ?.(), ?.\[\]
 
 The optional chaining `?.` is not an operator, but a special syntax construct, that also works with functions and square brackets.
 
@@ -127,9 +122,9 @@ In the code below, some of our users have `admin` method, and some don’t:
 
 let userGuest = {};
 
-*!* userAdmin.admin?.(); // I am admin */!*
+_!_ userAdmin.admin?.(); // I am admin _/!_
 
-*!* userGuest.admin?.(); // nothing (no such method) */!* \`\`\`
+_!_ userGuest.admin?.(); // nothing (no such method) _/!_ \`\`\`
 
 Here, in both lines we first use the dot (`userAdmin.admin`) to get `admin` property, because we assume that the user object exists, so it’s safe read from it.
 
@@ -149,7 +144,7 @@ Also we can use `?.` with `delete`:
 
 `js run delete user?.name; // delete user.name if user exists`
 
-\`\`\``warn header="We can use`?.`for safe reading and deleting, but not writing" The optional         chaining`?.\` has no use at the left side of an assignment.
+\`\`\``warn header="We can use`?.`for safe reading and deleting, but not writing" The optional chaining`?.\` has no use at the left side of an assignment.
 
 For example: \`\`\`js run let user = null;
 
@@ -157,8 +152,7 @@ user?.name = “John”; // Error, doesn’t work // because it evaluates to und
 
     It's just not that smart.
 
-Summary
--------
+## Summary
 
 The optional chaining `?.` syntax has three forms:
 

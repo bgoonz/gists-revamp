@@ -1,5 +1,4 @@
-Object references and copying
-=============================
+# Object references and copying
 
 One of the fundamental differences of objects versus primitives is that objects are stored and copied “by reference”, whereas primitive values: strings, numbers, booleans, etc – are always copied “as a whole value”.
 
@@ -60,14 +59,13 @@ We can use either variable to access the object and modify its contents:
 
 let admin = user;
 
-*!* admin.name = ‘Pete’; // changed by the “admin” reference */!*
+_!_ admin.name = ‘Pete’; // changed by the “admin” reference _/!_
 
 alert(*!*user.name*/!*); // ‘Pete’, changes are seen from the “user” reference \`\`\`
 
 It’s as if we had a cabinet with two keys and used one of them (`admin`) to get into it and make changes. Then, if we later use another key (`user`), we are still opening the same cabinet and can access the changed contents.
 
-Comparison by reference
------------------------
+## Comparison by reference
 
 Two objects are equal only if they are the same object.
 
@@ -85,8 +83,7 @@ alert( a == b ); // false \`\`\`
 
 For comparisons like `obj1 > obj2` or for a comparison against a primitive `obj == 5`, objects are converted to primitives. We’ll study how object conversions work very soon, but to tell the truth, such comparisons are needed very rarely – usually they appear as a result of a programming mistake.
 
-Cloning and merging, Object.assign \[\#cloning-and-merging-object-assign\]
---------------------------------------------------------------------------
+## Cloning and merging, Object.assign \[\#cloning-and-merging-object-assign\]
 
 So, copying an object variable creates one more reference to the same object.
 
@@ -100,9 +97,9 @@ Like this:
 
 \`\`\`js run let user = { name: “John”, age: 30 };
 
-*!* let clone = {}; // the new empty object
+_!_ let clone = {}; // the new empty object
 
-// let’s copy all user properties into it for (let key in user) { clone\[key\] = user\[key\]; } */!*
+// let’s copy all user properties into it for (let key in user) { clone\[key\] = user\[key\]; } _/!_
 
 // now clone is a fully independent object with the same content clone.name = “Pete”; // changed the data in it
 
@@ -114,10 +111,10 @@ The syntax is:
 
     Object.assign(dest, [src1, src2, src3...])
 
--   The first argument `dest` is a target object.
--   Further arguments `src1, ..., srcN` (can be as many as needed) are source objects.
--   It copies the properties of all source objects `src1, ..., srcN` into the target `dest`. In other words, properties of all arguments starting from the second are copied into the first object.
--   The call returns `dest`.
+- The first argument `dest` is a target object.
+- Further arguments `src1, ..., srcN` (can be as many as needed) are source objects.
+- It copies the properties of all source objects `src1, ..., srcN` into the target `dest`. In other words, properties of all arguments starting from the second are copied into the first object.
+- The call returns `dest`.
 
 For instance, we can use it to merge several objects into one:
 
@@ -156,8 +153,7 @@ It copies all properties of `user` into the empty object and returns it.
 
 There are also other methods of cloning an object, e.g. using the [spread syntax](info:rest-parameters-spread) `clone = {...user}`, covered later in the tutorial.
 
-Nested cloning
---------------
+## Nested cloning
 
 Until now we assumed that all properties of `user` are primitive. But properties can be references to other objects. What to do with them?
 
@@ -181,13 +177,13 @@ To fix that, we should use a cloning loop that examines each value of `user[key]
 
 We can use recursion to implement it. Or, to not reinvent the wheel, take an existing implementation, for instance [\_.cloneDeep(obj)](https://lodash.com/docs#cloneDeep) from the JavaScript library [lodash](https://lodash.com).
 
-\`\`\``smart header="Const objects can be modified" An important side effect         of storing objects as references is that an object declared as`const\` *can* be modified.
+\`\`\``smart header="Const objects can be modified" An important side effect of storing objects as references is that an object declared as`const\` _can_ be modified.
 
 For instance:
 
 \`\`\`js run const user = { name: “John” };
 
-*!* user.name = “Pete”; // (*)* /!\*
+_!_ user.name = “Pete”; // (_)_ /!\*
 
 alert(user.name); // Pete
 
@@ -197,8 +193,7 @@ alert(user.name); // Pete
 
     That said, if we really need to make constant object properties, it's also possible, but using totally different methods. We'll mention that in the chapter <info:property-descriptors>.
 
-Summary
--------
+## Summary
 
 Objects are assigned and copied by reference. In other words, a variable stores not the “object value”, but a “reference” (address in memory) for the value. So copying such a variable or passing it as a function argument copies that reference, not the object itself.
 

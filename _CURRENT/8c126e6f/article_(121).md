@@ -1,15 +1,13 @@
-Resource loading: onload and onerror
-====================================
+# Resource loading: onload and onerror
 
 The browser allows us to track the loading of external resources – scripts, iframes, pictures and so on.
 
 There are two events for it:
 
--   `onload` – successful load,
--   `onerror` – an error occurred.
+- `onload` – successful load,
+- `onerror` – an error occurred.
 
-Loading a script
-----------------
+## Loading a script
 
 Let’s say we need to load a third-party script and call a function that resides there.
 
@@ -34,7 +32,7 @@ For instance:
 
 // can load any script, from any domain script.src = “https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js” document.head.append(script);
 
-*!* script.onload = function() { // the script creates a variable "*" alert(* .VERSION ); // shows library version }; */!* \`\`\`
+_!_ script.onload = function() { // the script creates a variable "_" alert(_ .VERSION ); // shows library version }; _/!_ \`\`\`
 
 So in `onload` we can use script variables, run functions etc.
 
@@ -48,7 +46,7 @@ For instance, let’s request a script that doesn’t exist:
 
 \`\`\`js run let script = document.createElement(‘script’); script.src = “https://example.com/404.js”; // no such script document.head.append(script);
 
-*!* script.onerror = function() { alert(“Error loading” + this.src); // Error loading https://example.com/404.js }; */!* \`\`\`
+_!_ script.onerror = function() { alert(“Error loading” + this.src); // Error loading https://example.com/404.js }; _/!_ \`\`\`
 
 Please note that we can’t get HTTP error details here. We don’t know if it was an error 404 or 500 or something else. Just that the loading failed.
 
@@ -56,8 +54,7 @@ Please note that we can’t get HTTP error details here. We don’t know if it w
 
     Errors that may occur during script processing and execution are out of scope for these events. That is: if a script loaded successfully, then `onload` triggers, even if it has programming errors in it. To track script errors, one can use `window.onerror` global handler.
 
-Other resources
----------------
+## Other resources
 
 The `load` and `error` events also work for other resources, basically for any resource that has an external `src`.
 
@@ -71,13 +68,12 @@ img.onerror = function() { alert(“Error occurred while loading image”); }; \
 
 There are some notes though:
 
--   Most resources start loading when they are added to the document. But `<img>` is an exception. It starts loading when it gets a src `(*)`.
--   For `<iframe>`, the `iframe.onload` event triggers when the iframe loading finished, both for successful load and in case of an error.
+- Most resources start loading when they are added to the document. But `<img>` is an exception. It starts loading when it gets a src `(*)`.
+- For `<iframe>`, the `iframe.onload` event triggers when the iframe loading finished, both for successful load and in case of an error.
 
 That’s for historical reasons.
 
-Crossorigin policy
-------------------
+## Crossorigin policy
 
 There’s a rule: scripts from one site can’t access contents of the other site. So, e.g. a script at `https://facebook.com` can’t read the user’s mailbox at `https://gmail.com`.
 
@@ -94,7 +90,7 @@ For example, let’s take a script `error.js` that consists of a single (bad) fu
 
 Now load it from the same site where it’s located:
 
-`` html run height=0 <script> window.onerror = function(message,         url, line, col, errorObj) { alert(`${message}\n${url}, ${line}:${col}`);         }; </script> <script         src="/article/onload-onerror/crossorigin/error.js"></script> ``
+`` html run height=0 <script> window.onerror = function(message, url, line, col, errorObj) { alert(`${message}\n${url}, ${line}:${col}`); }; </script> <script src="/article/onload-onerror/crossorigin/error.js"></script> ``
 
 We can see a good error report, like this:
 
@@ -103,7 +99,7 @@ We can see a good error report, like this:
 
 Now let’s load the same script from another domain:
 
-`` html run height=0 <script> window.onerror = function(message,         url, line, col, errorObj) { alert(`${message}\n${url}, ${line}:${col}`);         }; </script> <script         src="https://cors.javascript.info/article/onload-onerror/crossorigin/error.js"></script> ``
+`` html run height=0 <script> window.onerror = function(message, url, line, col, errorObj) { alert(`${message}\n${url}, ${line}:${col}`); }; </script> <script src="https://cors.javascript.info/article/onload-onerror/crossorigin/error.js"></script> ``
 
 The report is different, like this:
 
@@ -138,17 +134,16 @@ We can choose between `"anonymous"` (no cookies sent, one server-side header nee
 
 If we don’t care about cookies, then `"anonymous"` is the way to go:
 
-`` html run height=0 <script> window.onerror = function(message,         url, line, col, errorObj) { alert(`${message}\n${url}, ${line}:${col}`);         }; </script> <script *!*crossorigin="anonymous"*/!*         src="https://cors.javascript.info/article/onload-onerror/crossorigin/error.js"></script> ``
+`` html run height=0 <script> window.onerror = function(message, url, line, col, errorObj) { alert(`${message}\n${url}, ${line}:${col}`); }; </script> <script *!*crossorigin="anonymous"*/!* src="https://cors.javascript.info/article/onload-onerror/crossorigin/error.js"></script> ``
 
 Now, assuming that the server provides an `Access-Control-Allow-Origin` header, everything’s fine. We have the full error report.
 
-Summary
--------
+## Summary
 
 Images `<img>`, external styles, scripts and other resources provide `load` and `error` events to track their loading:
 
--   `load` triggers on a successful load,
--   `error` triggers on a failed load.
+- `load` triggers on a successful load,
+- `error` triggers on a failed load.
 
 The only exception is `<iframe>`: for historical reasons it always triggers `load`, for any load completion, even if the page is not found.
 

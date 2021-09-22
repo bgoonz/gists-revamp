@@ -1,5 +1,4 @@
-Unicode: flag “u” and class
-===========================
+# Unicode: flag “u” and class
 
 JavaScript uses [Unicode encoding](https://en.wikipedia.org/wiki/Unicode) for strings. Most characters are encoded with 2 bytes, but that allows to represent at most 65536 characters.
 
@@ -23,8 +22,7 @@ By default, regular expressions also treat 4-byte “long characters” as a pai
 
 Unlike strings, regular expressions have flag `pattern:u` that fixes such problems. With such flag, a regexp handles 4-byte characters correctly. And also Unicode property search becomes available, we’ll get to it next.
 
-Unicode properties
-------------------
+## Unicode properties
 
 Every character in Unicode has a lot of properties. They describe what “category” the character belongs to, contain miscellaneous information about it.
 
@@ -42,43 +40,43 @@ alert( str.match(//gu) ); // A,ბ,ㄱ alert( str.match(//g) ); // null (no matc
 
 Here’s the main character categories and their subcategories:
 
--   Letter `L`:
-    -   lowercase `Ll`
-    -   modifier `Lm`,
-    -   titlecase `Lt`,
-    -   uppercase `Lu`,
-    -   other `Lo`.
--   Number `N`:
-    -   decimal digit `Nd`,
-    -   letter number `Nl`,
-    -   other `No`.
--   Punctuation `P`:
-    -   connector `Pc`,
-    -   dash `Pd`,
-    -   initial quote `Pi`,
-    -   final quote `Pf`,
-    -   open `Ps`,
-    -   close `Pe`,
-    -   other `Po`.
--   Mark `M` (accents etc):
-    -   spacing combining `Mc`,
-    -   enclosing `Me`,
-    -   non-spacing `Mn`.
--   Symbol `S`:
-    -   currency `Sc`,
-    -   modifier `Sk`,
-    -   math `Sm`,
-    -   other `So`.
--   Separator `Z`:
-    -   line `Zl`,
-    -   paragraph `Zp`,
-    -   space `Zs`.
--   Other `C`:
-    -   control `Cc`,
-    -   format `Cf`,
-    -   not assigned `Cn`,
-    -   private use `Co`,
-    -   surrogate `Cs`.
+- Letter `L`:
+  - lowercase `Ll`
+  - modifier `Lm`,
+  - titlecase `Lt`,
+  - uppercase `Lu`,
+  - other `Lo`.
+- Number `N`:
+  - decimal digit `Nd`,
+  - letter number `Nl`,
+  - other `No`.
+- Punctuation `P`:
+  - connector `Pc`,
+  - dash `Pd`,
+  - initial quote `Pi`,
+  - final quote `Pf`,
+  - open `Ps`,
+  - close `Pe`,
+  - other `Po`.
+- Mark `M` (accents etc):
+  - spacing combining `Mc`,
+  - enclosing `Me`,
+  - non-spacing `Mn`.
+- Symbol `S`:
+  - currency `Sc`,
+  - modifier `Sk`,
+  - math `Sm`,
+  - other `So`.
+- Separator `Z`:
+  - line `Zl`,
+  - paragraph `Zp`,
+  - space `Zs`.
+- Other `C`:
+  - control `Cc`,
+  - format `Cf`,
+  - not assigned `Cn`,
+  - private use `Co`,
+  - surrogate `Cs`.
 
 So, e.g. if we need letters in lower case, we can write `pattern:\p{Ll}`, punctuation signs: `pattern:\p{P}` and so on.
 
@@ -86,10 +84,10 @@ There are also other derived categories, like: - `Alphabetic` (`Alpha`), include
 
 Unicode supports many different properties, their full list would require a lot of space, so here are the references:
 
--   List all properties by a character: <a href="https://unicode.org/cldr/utility/character.jsp" class="uri">https://unicode.org/cldr/utility/character.jsp</a>.
--   List all characters by a property: <a href="https://unicode.org/cldr/utility/list-unicodeset.jsp" class="uri">https://unicode.org/cldr/utility/list-unicodeset.jsp</a>.
--   Short aliases for properties: <a href="https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt" class="uri">https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt</a>.
--   A full base of Unicode characters in text format, with all properties, is here: <a href="https://www.unicode.org/Public/UCD/latest/ucd/" class="uri">https://www.unicode.org/Public/UCD/latest/ucd/</a>.
+- List all properties by a character: <a href="https://unicode.org/cldr/utility/character.jsp" class="uri">https://unicode.org/cldr/utility/character.jsp</a>.
+- List all characters by a property: <a href="https://unicode.org/cldr/utility/list-unicodeset.jsp" class="uri">https://unicode.org/cldr/utility/list-unicodeset.jsp</a>.
+- Short aliases for properties: <a href="https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt" class="uri">https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt</a>.
+- A full base of Unicode characters in text format, with all properties, is here: <a href="https://www.unicode.org/Public/UCD/latest/ucd/" class="uri">https://www.unicode.org/Public/UCD/latest/ucd/</a>.
 
 ### Example: hexadecimal numbers
 
@@ -105,7 +103,7 @@ alert(“number: xAF”.match(regexp)); // xAF \`\`\`
 
 Let’s look for Chinese hieroglyphs.
 
-There’s a Unicode property `Script` (a writing system), that may have a value: `Cyrillic`, `Greek`, `Arabic`, `Han` (Chinese) and so on, [here’s the full list](https://en.wikipedia.org/wiki/Script_(Unicode)).
+There’s a Unicode property `Script` (a writing system), that may have a value: `Cyrillic`, `Greek`, `Arabic`, `Han` (Chinese) and so on, [here’s the full list](<https://en.wikipedia.org/wiki/Script_(Unicode)>).
 
 To look for characters in a given writing system we should use `pattern:Script=<value>`, e.g. for Cyrillic letters: `pattern:\p{sc=Cyrillic}`, for Chinese hieroglyphs: `pattern:\p{sc=Han}`, and so on:
 
@@ -129,8 +127,7 @@ alert( str.match(regexp) ); // $2,€1,¥9 \`\`\`
 
 Later, in the article <a href="info:regexp-quantifiers" class="uri">info:regexp-quantifiers</a> we’ll see how to look for numbers that contain many digits.
 
-Summary
--------
+## Summary
 
 Flag `pattern:u` enables the support of Unicode in regular expressions.
 

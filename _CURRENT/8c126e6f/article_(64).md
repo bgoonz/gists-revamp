@@ -1,12 +1,10 @@
-Native prototypes
-=================
+# Native prototypes
 
 The `"prototype"` property is widely used by the core of JavaScript itself. All built-in constructor functions use it.
 
 First we’ll see at the details, and then how to use it for adding new capabilities to built-in objects.
 
-Object.prototype
-----------------
+## Object.prototype
 
 Let’s say we output an empty object:
 
@@ -38,8 +36,7 @@ Please note that there is no more `[[Prototype]]` in the chain above `Object.pro
 
 `js run alert(Object.prototype.__proto__); // null`
 
-Other built-in prototypes
--------------------------
+## Other built-in prototypes
 
 Other built-in objects such as `Array`, `Date`, `Function` and others also keep methods in prototypes.
 
@@ -63,7 +60,7 @@ Let’s check the prototypes manually:
 
 Some methods in prototypes may overlap, for instance, `Array.prototype` has its own `toString` that lists comma-delimited elements:
 
-`js run let arr = [1, 2, 3] alert(arr); // 1,2,3 <-- the result of         Array.prototype.toString`
+`js run let arr = [1, 2, 3] alert(arr); // 1,2,3 <-- the result of Array.prototype.toString`
 
 As we’ve seen before, `Object.prototype` has `toString` as well, but `Array.prototype` is closer in the chain, so the array variant is used.
 
@@ -79,8 +76,7 @@ Other built-in objects also work the same way. Even functions – they are objec
 
 alert(f.\_\_proto\_\_ == Function.prototype); // true alert(f.\_\_proto\_\_.\_\_proto\_\_ == Object.prototype); // true, inherit from objects \`\`\`
 
-Primitives
-----------
+## Primitives
 
 The most intricate thing happens with strings, numbers and booleans.
 
@@ -88,10 +84,9 @@ As we remember, they are not objects. But if we try to access their properties, 
 
 These objects are created invisibly to us and most engines optimize them out, but the specification describes it exactly this way. Methods of these objects also reside in prototypes, available as `String.prototype`, `Number.prototype` and `Boolean.prototype`.
 
-`` warn header="Values `null` and `undefined` have no object wrappers"         Special values `null` and `undefined` stand apart. They have no object         wrappers, so methods and properties are not available for them. And         there are no corresponding prototypes either. ``
+`` warn header="Values `null` and `undefined` have no object wrappers" Special values `null` and `undefined` stand apart. They have no object wrappers, so methods and properties are not available for them. And there are no corresponding prototypes either. ``
 
-Changing native prototypes \[\#native-prototype-change\]
---------------------------------------------------------
+## Changing native prototypes \[\#native-prototype-change\]
 
 Native prototypes can be modified. For instance, if we add a method to `String.prototype`, it becomes available to all strings:
 
@@ -126,8 +121,7 @@ String.prototype.repeat = function(n) { // repeat the string n times
 
 alert( “La”.repeat(3) ); // LaLaLa \`\`\`
 
-Borrowing from prototypes
--------------------------
+## Borrowing from prototypes
 
 In the chapter <a href="info:call-apply-decorators#method-borrowing" class="uri">info:call-apply-decorators#method-borrowing</a> we talked about method borrowing.
 
@@ -141,7 +135,7 @@ E.g.
 
 \`\`\`js run let obj = { 0: “Hello”, 1: “world!”, length: 2, };
 
-*!* obj.join = Array.prototype.join; */!*
+_!_ obj.join = Array.prototype.join; _/!_
 
 alert( obj.join(‘,’) ); // Hello,world! \`\`\`
 
@@ -153,11 +147,10 @@ But that’s impossible if `obj` already inherits from another object. Remember,
 
 Borrowing methods is flexible, it allows to mix functionalities from different objects if needed.
 
-Summary
--------
+## Summary
 
--   All built-in objects follow the same pattern:
-    -   The methods are stored in the prototype (`Array.prototype`, `Object.prototype`, `Date.prototype`, etc.)
-    -   The object itself stores only the data (array items, object properties, the date)
--   Primitives also store methods in prototypes of wrapper objects: `Number.prototype`, `String.prototype` and `Boolean.prototype`. Only `undefined` and `null` do not have wrapper objects
--   Built-in prototypes can be modified or populated with new methods. But it’s not recommended to change them. The only allowable case is probably when we add-in a new standard, but it’s not yet supported by the JavaScript engine
+- All built-in objects follow the same pattern:
+  - The methods are stored in the prototype (`Array.prototype`, `Object.prototype`, `Date.prototype`, etc.)
+  - The object itself stores only the data (array items, object properties, the date)
+- Primitives also store methods in prototypes of wrapper objects: `Number.prototype`, `String.prototype` and `Boolean.prototype`. Only `undefined` and `null` do not have wrapper objects
+- Built-in prototypes can be modified or populated with new methods. But it’s not recommended to change them. The only allowable case is probably when we add-in a new standard, but it’s not yet supported by the JavaScript engine

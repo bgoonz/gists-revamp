@@ -1,12 +1,10 @@
-Conditional branching: if, ‘?’
-==============================
+# Conditional branching: if, ‘?’
 
 Sometimes, we need to perform different actions based on different conditions.
 
 To do that, we can use the `if` statement and the conditional operator `?`, that’s also called a “question mark” operator.
 
-The “if” statement
-------------------
+## The “if” statement
 
 The `if(...)` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
 
@@ -14,7 +12,7 @@ For example:
 
 \`\`\`js run let year = prompt(‘In which year was ECMAScript-2015 specification published?’, ’’);
 
-*!* if (year == 2015) alert( ‘You are right!’ ); */!* \`\`\`
+_!_ if (year == 2015) alert( ‘You are right!’ ); _/!_ \`\`\`
 
 In the example above, the condition is a simple equality check (`year == 2015`), but it can be much more complex.
 
@@ -27,15 +25,14 @@ If we want to execute more than one statement, we have to wrap our code block in
 
 We recommend wrapping your code block with curly braces `{}` every time you use an `if` statement, even if there is only one statement to execute. Doing so improves readability.
 
-Boolean conversion
-------------------
+## Boolean conversion
 
 The `if (…)` statement evaluates the expression in its parentheses and converts the result to a boolean.
 
 Let’s recall the conversion rules from the chapter <a href="info:type-conversions" class="uri">info:type-conversions</a>:
 
--   A number `0`, an empty string `""`, `null`, `undefined`, and `NaN` all become `false`. Because of that they are called “falsy” values.
--   Other values become `true`, so they are called “truthy”.
+- A number `0`, an empty string `""`, `null`, `undefined`, and `NaN` all become `false`. Because of that they are called “falsy” values.
+- Other values become `true`, so they are called “truthy”.
 
 So, the code under this condition would never execute:
 
@@ -57,8 +54,7 @@ We can also pass a pre-evaluated boolean value to `if`, like this:
       ...
     }
 
-The “else” clause
------------------
+## The “else” clause
 
 The `if` statement may contain an optional “else” block. It executes when the condition is falsy.
 
@@ -66,8 +62,7 @@ For example: \`\`\`js run let year = prompt(‘In which year was the ECMAScript-
 
 if (year == 2015) { alert( ‘You guessed it right!’ ); } else { alert( ‘How can you be so wrong?’ ); // any value except 2015 } \`\`\`
 
-Several conditions: “else if”
------------------------------
+## Several conditions: “else if”
 
 Sometimes, we’d like to test several variants of a condition. The `else if` clause lets us do that.
 
@@ -81,8 +76,7 @@ In the code above, JavaScript first checks `year < 2015`. If that is falsy, it g
 
 There can be more `else if` blocks. The final `else` is optional.
 
-Conditional operator ‘?’
-------------------------
+## Conditional operator ‘?’
 
 Sometimes, we need to assign a variable depending on a condition.
 
@@ -90,7 +84,7 @@ For instance:
 
 \`\`\`js run no-beautify let accessAllowed; let age = prompt(‘How old are you?’, ’’);
 
-*!* if (age &gt; 18) { accessAllowed = true; } else { accessAllowed = false; } */!*
+_!_ if (age &gt; 18) { accessAllowed = true; } else { accessAllowed = false; } _/!_
 
 alert(accessAllowed); \`\`\`
 
@@ -125,8 +119,7 @@ But parentheses make the code more readable, so we recommend using them.
     let accessAllowed = age > 18;
     ```
 
-Multiple ‘?’
-------------
+## Multiple ‘?’
 
 A sequence of question mark operators `?` can return a value that depends on more than one condition.
 
@@ -155,14 +148,13 @@ Here’s how this looks using `if..else`:
       message = 'What an unusual age!';
     }
 
-Non-traditional use of ‘?’
---------------------------
+## Non-traditional use of ‘?’
 
 Sometimes the question mark `?` is used as a replacement for `if`:
 
 \`\`\`js run no-beautify let company = prompt(‘Which company created JavaScript?’, ’’);
 
-*!* (company == ‘Netscape’) ? alert(‘Right!’) : alert(‘Wrong.’); */!* \`\`\`
+_!_ (company == ‘Netscape’) ? alert(‘Right!’) : alert(‘Wrong.’); _/!_ \`\`\`
 
 Depending on the condition `company == 'Netscape'`, either the first or the second expression after the `?` gets executed and shows an alert.
 
@@ -176,7 +168,7 @@ Here is the same code using `if` for comparison:
 
 \`\`\`js run no-beautify let company = prompt(‘Which company created JavaScript?’, ’’);
 
-*!* if (company == ‘Netscape’) { alert(‘Right!’); } else { alert(‘Wrong.’); } */!* \`\`\`
+_!_ if (company == ‘Netscape’) { alert(‘Right!’); } else { alert(‘Wrong.’); } _/!_ \`\`\`
 
 Our eyes scan the code vertically. Code blocks which span several lines are easier to understand than a long, horizontal instruction set.
 

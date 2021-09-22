@@ -1,5 +1,4 @@
-Class basic syntax
-==================
+# Class basic syntax
 
 `quote author="Wikipedia" In object-oriented programming, a *class* is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).`
 
@@ -9,8 +8,7 @@ As we already know from the chapter <a href="info:constructor-new" class="uri">i
 
 But in the modern JavaScript, there’s a more advanced “class” construct, that introduces great new features which are useful for object-oriented programming.
 
-The “class” syntax
-------------------
+## The “class” syntax
 
 The basic syntax is:
 
@@ -47,8 +45,7 @@ When `new User("John")` is called: 1. A new object is created. 2. The `construct
 
 The notation here is not to be confused with object literals. Within the class, no commas are required. \`\`\`
 
-What is a class?
-----------------
+## What is a class?
 
 So, what exactly is a `class`? That’s not an entirely new language-level entity, as one might think.
 
@@ -60,7 +57,7 @@ Here, take a look:
 
 \`\`\`js run class User { constructor(name) { this.name = name; } sayHi() { alert(this.name); } }
 
-// proof: User is a function *!* alert(typeof User); // function */!* \`\`\`
+// proof: User is a function _!_ alert(typeof User); // function _/!_ \`\`\`
 
 What `class User {...}` construct really does is:
 
@@ -85,8 +82,7 @@ Here’s the code to introspect it:
 
 // there are exactly two methods in the prototype alert(Object.getOwnPropertyNames(User.prototype)); // constructor, sayHi \`\`\`
 
-Not just a syntactic sugar
---------------------------
+## Not just a syntactic sugar
 
 Sometimes people say that `class` is a “syntactic sugar” (syntax that is designed to make things easier to read, but doesn’t introduce anything new), because we could actually declare the same without `class` keyword at all:
 
@@ -124,8 +120,7 @@ Still, there are important differences.
 
 Besides, `class` syntax brings many other features that we’ll explore later.
 
-Class Expression
-----------------
+## Class Expression
 
 Just like functions, classes can be defined inside another expression, passed around, returned, assigned, etc.
 
@@ -155,8 +150,7 @@ We can even make classes dynamically “on-demand”, like this:
 
 new User().sayHi(); // Hello \`\`\`
 
-Getters/setters
----------------
+## Getters/setters
 
 Just like literal objects, classes may include getters/setters, computed properties etc.
 
@@ -166,9 +160,9 @@ Here’s an example for `user.name` implemented using `get/set`:
 
 constructor(name) { // invokes the setter this.name = name; }
 
-*!* get name() { */!* return this.\_name; }
+_!_ get name() { _/!_ return this.\_name; }
 
-*!* set name(value) { */!* if (value.length &lt; 4) { alert(“Name is too short.”); return; } this.\_name = value; }
+_!_ set name(value) { _/!_ if (value.length &lt; 4) { alert(“Name is too short.”); return; } this.\_name = value; }
 
 }
 
@@ -178,14 +172,13 @@ user = new User(""); // Name is too short. \`\`\`
 
 Technically, such class declaration works by creating getters and setters in `User.prototype`.
 
-Computed names \[…\]
---------------------
+## Computed names \[…\]
 
 Here’s an example with a computed method name using brackets `[...]`:
 
 \`\`\`js run class User {
 
-*!* [‘say’ + ‘Hi’]() { */!* alert(“Hello”); }
+_!_ [‘say’ + ‘Hi’]() { _/!_ alert(“Hello”); }
 
 }
 
@@ -193,8 +186,7 @@ new User().sayHi(); \`\`\`
 
 Such features are easy to remember, as they resemble that of literal objects.
 
-Class fields
-------------
+## Class fields
 
 `warn header="Old browsers may need a polyfill" Class fields are a recent addition to the language.`
 
@@ -204,7 +196,7 @@ Previously, our classes only had methods.
 
 For instance, let’s add `name` property to `class User`:
 
-\`\`\`js run class User { *!* name = “John”; */!*
+\`\`\`js run class User { _!_ name = “John”; _/!_
 
 sayHi() { alert(`Hello, ${this.name}!`); } }
 
@@ -214,13 +206,13 @@ So, we just write “ = ” in the declaration, and that’s it.
 
 The important difference of class fields is that they are set on individual objects, not `User.prototype`:
 
-\`\`\`js run class User { *!* name = “John”; */!* }
+\`\`\`js run class User { _!_ name = “John”; _/!_ }
 
 let user = new User(); alert(user.name); // John alert(User.prototype.name); // undefined \`\`\`
 
 We can also assign values using more complex expressions and function calls:
 
-\`\`\`js run class User { *!* name = prompt(“Name, please?”, “John”); */!* }
+\`\`\`js run class User { _!_ name = prompt(“Name, please?”, “John”); _/!_ }
 
 let user = new User(); alert(user.name); // John \`\`\`
 
@@ -238,7 +230,7 @@ click() { alert(this.value); } }
 
 let button = new Button(“hello”);
 
-*!* setTimeout(button.click, 1000); // undefined */!* \`\`\`
+_!_ setTimeout(button.click, 1000); // undefined _/!_ \`\`\`
 
 The problem is called “losing `this`”.
 
@@ -249,7 +241,7 @@ There are two approaches to fixing it, as discussed in the chapter <a href="info
 
 Class fields provide another, quite elegant syntax:
 
-\`\`\`js run class Button { constructor(value) { this.value = value; } *!* click = () =&gt; { alert(this.value); } */!* }
+\`\`\`js run class Button { constructor(value) { this.value = value; } _!_ click = () =&gt; { alert(this.value); } _/!_ }
 
 let button = new Button(“hello”);
 
@@ -259,8 +251,7 @@ The class field `click = () => {...}` is created on a per-object basis, there’
 
 That’s especially useful in browser environment, for event listeners.
 
-Summary
--------
+## Summary
 
 The basic class syntax looks like this:
 

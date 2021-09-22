@@ -1,5 +1,4 @@
-Dispatching custom events
-=========================
+# Dispatching custom events
 
 We can not only assign handlers, but also generate events from JavaScript.
 
@@ -7,8 +6,7 @@ Custom events can be used to create “graphical components”. For instance, a 
 
 We can generate not only completely new events, that we invent for our own purposes, but also built-in ones, such as `click`, `mousedown` etc. That may be helpful for automated testing.
 
-Event constructor
------------------
+## Event constructor
 
 Built-in event classes form a hierarchy, similar to DOM element classes. The root is the built-in [Event](http://www.w3.org/TR/dom/#event) class.
 
@@ -18,15 +16,15 @@ We can create `Event` objects like this:
 
 Arguments:
 
--   *type* – event type, a string like `"click"` or our own like `"my-event"`.
--   *options* – the object with two optional properties:
-    -   `bubbles: true/false` – if `true`, then the event bubbles.
-    -   `cancelable: true/false` – if `true`, then the “default action” may be prevented. Later we’ll see what it means for custom events.
+- _type_ – event type, a string like `"click"` or our own like `"my-event"`.
+- _options_ – the object with two optional properties:
 
-    By default both are false: `{bubbles: false, cancelable: false}`.
+  - `bubbles: true/false` – if `true`, then the event bubbles.
+  - `cancelable: true/false` – if `true`, then the “default action” may be prevented. Later we’ll see what it means for custom events.
 
-dispatchEvent
--------------
+  By default both are false: `{bubbles: false, cancelable: false}`.
+
+## dispatchEvent
 
 After an event object is created, we should “run” it on an element using the call `elem.dispatchEvent(event)`.
 
@@ -42,8 +40,7 @@ In the example below the `click` event is initiated in JavaScript. The handler w
 
 The property `event.isTrusted` is `true` for events that come from real user actions and `false` for script-generated events. \`\`\`
 
-Bubbling example
-----------------
+## Bubbling example
 
 We can create a bubbling event with the name `"hello"` and catch it on `document`.
 
@@ -51,8 +48,7 @@ All we need is to set `bubbles` to `true`:
 
 \`\`\`html run no-beautify
 
-Hello from the script!
-======================
+# Hello from the script!
 
 \`\`\`
 
@@ -63,17 +59,16 @@ Notes:
 
 The bubbling mechanics is the same for built-in (`click`) and custom (`hello`) events. There are also capturing and bubbling stages.
 
-MouseEvent, KeyboardEvent and others
-------------------------------------
+## MouseEvent, KeyboardEvent and others
 
 Here’s a short list of classes for UI Events from the [UI Event specification](https://www.w3.org/TR/uievents):
 
--   `UIEvent`
--   `FocusEvent`
--   `MouseEvent`
--   `WheelEvent`
--   `KeyboardEvent`
--   …
+- `UIEvent`
+- `FocusEvent`
+- `MouseEvent`
+- `WheelEvent`
+- `KeyboardEvent`
+- …
 
 We should use them instead of `new Event` if we want to create such events. For instance, `new MouseEvent("click")`.
 
@@ -83,7 +78,7 @@ Like `clientX/clientY` for a mouse event:
 
 \`\`\`js run let event = new MouseEvent(“click”, { bubbles: true, cancelable: true, clientX: 100, clientY: 100 });
 
-*!* alert(event.clientX); // 100 */!* \`\`\`
+_!_ alert(event.clientX); // 100 _/!_ \`\`\`
 
 Please note: the generic `Event` constructor does not allow that.
 
@@ -91,14 +86,13 @@ Let’s try:
 
 \`\`\`js run let event = new Event(“click”, { bubbles: true, // only bubbles and cancelable cancelable: true, // work in the Event constructor clientX: 100, clientY: 100 });
 
-*!* alert(event.clientX); // undefined, the unknown property is ignored! */!* \`\`\`
+_!_ alert(event.clientX); // undefined, the unknown property is ignored! _/!_ \`\`\`
 
 Technically, we can work around that by assigning directly `event.clientX=100` after creation. So that’s a matter of convenience and following the rules. Browser-generated events always have the right type.
 
 The full list of properties for different UI events is in the specification, for instance, [MouseEvent](https://www.w3.org/TR/uievents/#mouseevent).
 
-Custom events
--------------
+## Custom events
 
 For our own, completely new events types like `"hello"` we should use `new CustomEvent`. Technically [CustomEvent](https://dom.spec.whatwg.org/#customevent) is the same as `Event`, with one exception.
 
@@ -108,8 +102,7 @@ For instance:
 
 \`\`\`html run refresh
 
-Hello for John!
-===============
+# Hello for John!
 
 \`\`\`
 
@@ -117,8 +110,7 @@ The `detail` property can have any data. Technically we could live without, beca
 
 Besides, the event class describes “what kind of event” it is, and if the event is custom, then we should use `CustomEvent` just to be clear about what it is.
 
-event.preventDefault()
-----------------------
+## event.preventDefault()
 
 Many browser events have a “default action”, such as navigating to a link, starting a selection, and so on.
 
@@ -148,8 +140,7 @@ Hide()
 
 Please note: the event must have the flag `cancelable: true`, otherwise the call `event.preventDefault()` is ignored.
 
-Events-in-events are synchronous
---------------------------------
+## Events-in-events are synchronous
 
 Usually events are processed in a queue. That is: if the browser is processing `onclick` and a new event occurs, e.g. mouse moved, then it’s handling is queued up, corresponding `mousemove` handlers will be called after `onclick` processing is finished.
 
@@ -181,8 +172,7 @@ Now `dispatchEvent` runs asynchronously after the current code execution is fini
 
 The output order becomes: 1 -&gt; 2 -&gt; nested.
 
-Summary
--------
+## Summary
 
 To generate an event from code, we first need to create an event object.
 
@@ -198,7 +188,7 @@ We shouldn’t generate browser events as it’s a hacky way to run handlers. Th
 
 Native events might be generated:
 
--   As a dirty hack to make 3rd-party libraries work the needed way, if they don’t provide other means of interaction.
--   For automated testing, to “click the button” in the script and see if the interface reacts correctly.
+- As a dirty hack to make 3rd-party libraries work the needed way, if they don’t provide other means of interaction.
+- For automated testing, to “click the button” in the script and see if the interface reacts correctly.
 
 Custom events with our own names are often generated for architectural purposes, to signal what happens inside our menus, sliders, carousels etc.

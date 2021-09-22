@@ -1,12 +1,10 @@
-Bezier curve
-============
+# Bezier curve
 
 Bezier curves are used in computer graphics to draw shapes, for CSS animation and in many other places.
 
 They are a very simple thing, worth to study once and then feel comfortable in the world of vector graphics and advanced animations.
 
-Control points
---------------
+## Control points
 
 A [bezier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) is defined by control points.
 
@@ -34,7 +32,7 @@ If you look closely at these curves, you can immediately notice:
 
 Because of that last property, in computer graphics it’s possible to optimize intersection tests. If convex hulls do not intersect, then curves do not either. So checking for the convex hulls intersection first can give a very fast “no intersection” result. Checking the intersection of convex hulls is much easier, because they are rectangles, triangles and so on (see the picture above), much simpler figures than the curve.
 
-**The main value of Bezier curves for drawing – by moving the points the curve is changing *in intuitively obvious way*.**
+**The main value of Bezier curves for drawing – by moving the points the curve is changing _in intuitively obvious way_.**
 
 Try to move control points using a mouse in the example below:
 
@@ -48,8 +46,7 @@ Here are some examples:
 
 ![](bezier-car.svg) ![](bezier-letter.svg) ![](bezier-vase.svg)
 
-De Casteljau’s algorithm
-------------------------
+## De Casteljau’s algorithm
 
 There’s a mathematical formula for Bezier curves, but let’s cover it a bit later, because [De Casteljau’s algorithm](https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm) is identical to the mathematical definition and visually shows how it is constructed.
 
@@ -69,11 +66,11 @@ Control points (1,2 and 3) can be moved by the mouse. Press the “play” butto
 
     For each of these values of `t`:
 
-    -   On each <span style="color: #825e28">brown</span> segment we take a point located on the distance proportional to `t` from its beginning. As there are two segments, we have two points.
+    - On each <span style="color: #825e28">brown</span> segment we take a point located on the distance proportional to `t` from its beginning. As there are two segments, we have two points.
 
-        For instance, for `t=0` – both points will be at the beginning of segments, and for `t=0.25` – on the 25% of segment length from the beginning, for `t=0.5` – 50%(the middle), for `t=1` – in the end of segments.
+      For instance, for `t=0` – both points will be at the beginning of segments, and for `t=0.25` – on the 25% of segment length from the beginning, for `t=0.5` – 50%(the middle), for `t=1` – in the end of segments.
 
-    -   Connect the points. On the picture below the connecting segment is painted <span style="color: #167490">blue</span>.
+    - Connect the points. On the picture below the connecting segment is painted <span style="color: #167490">blue</span>.
 
 <table><thead><tr class="header"><th>For <code>t=0.25</code></th><th>For <code>t=0.5</code></th></tr></thead><tbody><tr class="odd"><td><img src="bezier3-draw1.svg" /></td><td><img src="bezier3-draw2.svg" /></td></tr></tbody></table>
 
@@ -89,12 +86,12 @@ The demo for 4 points (points can be moved by a mouse):
 
 The algorithm for 4 points:
 
--   Connect control points by segments: 1 -&gt; 2, 2 -&gt; 3, 3 -&gt; 4. There will be 3 <span style="color: #825e28">brown</span> segments.
--   For each `t` in the interval from `0` to `1`:
-    -   We take points on these segments on the distance proportional to `t` from the beginning. These points are connected, so that we have two <span style="color: #0a0">green segments</span>.
-    -   On these segments we take points proportional to `t`. We get one <span style="color: #167490">blue segment</span>.
-    -   On the blue segment we take a point proportional to `t`. On the example above it’s <span style="color: red">red</span>.
--   These points together form the curve.
+- Connect control points by segments: 1 -&gt; 2, 2 -&gt; 3, 3 -&gt; 4. There will be 3 <span style="color: #825e28">brown</span> segments.
+- For each `t` in the interval from `0` to `1`:
+  - We take points on these segments on the distance proportional to `t` from the beginning. These points are connected, so that we have two <span style="color: #0a0">green segments</span>.
+  - On these segments we take points proportional to `t`. We get one <span style="color: #167490">blue segment</span>.
+  - On the blue segment we take a point proportional to `t`. On the example above it’s <span style="color: red">red</span>.
+- These points together form the curve.
 
 The algorithm is recursive and can be generalized for any number of control points.
 
@@ -129,14 +126,13 @@ A non-smooth Bezier curve (yeah, that’s possible too):
 
 As the algorithm is recursive, we can build Bezier curves of any order, that is: using 5, 6 or more control points. But in practice many points are less useful. Usually we take 2-3 points, and for complex lines glue several curves together. That’s simpler to develop and calculate.
 
-\`\`\`smart header=“How to draw a curve *through* given points?” To specify a Bezier curve, control points are used. As we can see, they are not on the curve, except the first and the last ones.
+\`\`\`smart header=“How to draw a curve _through_ given points?” To specify a Bezier curve, control points are used. As we can see, they are not on the curve, except the first and the last ones.
 
-Sometimes we have another task: to draw a curve *through several points*, so that all of them are on a single smooth curve. That task is called [interpolation](https://en.wikipedia.org/wiki/Interpolation), and here we don’t cover it.
+Sometimes we have another task: to draw a curve _through several points_, so that all of them are on a single smooth curve. That task is called [interpolation](https://en.wikipedia.org/wiki/Interpolation), and here we don’t cover it.
 
 There are mathematical formulas for such curves, for instance [Lagrange polynomial](https://en.wikipedia.org/wiki/Lagrange_polynomial). In computer graphics [spline interpolation](https://en.wikipedia.org/wiki/Spline_interpolation) is often used to build smooth curves that connect many points. \`\`\`
 
-Maths
------
+## Maths
 
 A Bezier curve can be described using a mathematical formula.
 
@@ -144,36 +140,35 @@ As we saw – there’s actually no need to know it, most people just draw the c
 
 Given the coordinates of control points `Pi`: the first control point has coordinates `P1 = (x1, y1)`, the second: `P2 = (x2, y2)`, and so on, the curve coordinates are described by the equation that depends on the parameter `t` from the segment `[0,1]`.
 
--   The formula for a 2-points curve:
+- The formula for a 2-points curve:
 
-    `P = (1-t)P1 + tP2`
+  `P = (1-t)P1 + tP2`
 
--   For 3 control points:
+- For 3 control points:
 
-    `P = (1−t)2P1 + 2(1−t)tP2 +           t2P3`
+  `P = (1−t)2P1 + 2(1−t)tP2 + t2P3`
 
--   For 4 control points:
+- For 4 control points:
 
-    `P = (1−t)3P1 + 3(1−t)2tP2             +3(1−t)t2P3 + t3P4`
+  `P = (1−t)3P1 + 3(1−t)2tP2 +3(1−t)t2P3 + t3P4`
 
 These are vector equations. In other words, we can put `x` and `y` instead of `P` to get corresponding coordinates.
 
 For instance, the 3-point curve is formed by points `(x,y)` calculated as:
 
--   `x = (1−t)2x1 + 2(1−t)tx2 +           t2x3`
--   `y = (1−t)2y1 + 2(1−t)ty2 +           t2y3`
+- `x = (1−t)2x1 + 2(1−t)tx2 + t2x3`
+- `y = (1−t)2y1 + 2(1−t)ty2 + t2y3`
 
-Instead of `x1, y1, x2, y2,         x3, y3` we should put coordinates of 3 control points, and then as `t` moves from `0` to `1`, for each value of `t` we’ll have `(x,y)` of the curve.
+Instead of `x1, y1, x2, y2, x3, y3` we should put coordinates of 3 control points, and then as `t` moves from `0` to `1`, for each value of `t` we’ll have `(x,y)` of the curve.
 
 For instance, if control points are `(0,0)`, `(0.5, 1)` and `(1, 0)`, the equations become:
 
--   `x = (1−t)2 * 0 + 2(1−t)t * 0.5 + t2 * 1 =           (1-t)t + t2 = t`
--   `y = (1−t)2 * 0 + 2(1−t)t * 1 + t2 * 0 = 2(1-t)t           = –2t2 + 2t`
+- `x = (1−t)2 * 0 + 2(1−t)t * 0.5 + t2 * 1 = (1-t)t + t2 = t`
+- `y = (1−t)2 * 0 + 2(1−t)t * 1 + t2 * 0 = 2(1-t)t = –2t2 + 2t`
 
 Now as `t` runs from `0` to `1`, the set of values `(x,y)` for each `t` forms the curve for such control points.
 
-Summary
--------
+## Summary
 
 Bezier curves are defined by their control points.
 
@@ -184,11 +179,11 @@ We saw two definitions of Bezier curves:
 
 Good properties of Bezier curves:
 
--   We can draw smooth lines with a mouse by moving control points.
--   Complex shapes can be made of several Bezier curves.
+- We can draw smooth lines with a mouse by moving control points.
+- Complex shapes can be made of several Bezier curves.
 
 Usage:
 
--   In computer graphics, modeling, vector graphic editors. Fonts are described by Bezier curves.
--   In web development – for graphics on Canvas and in the SVG format. By the way, “live” examples above are written in SVG. They are actually a single SVG document that is given different points as parameters. You can open it in a separate window and see the source: [demo.svg](demo.svg?p=0,0,1,0.5,0,0.5,1,1&animate=1).
--   In CSS animation to describe the path and speed of animation.
+- In computer graphics, modeling, vector graphic editors. Fonts are described by Bezier curves.
+- In web development – for graphics on Canvas and in the SVG format. By the way, “live” examples above are written in SVG. They are actually a single SVG document that is given different points as parameters. You can open it in a separate window and see the source: [demo.svg](demo.svg?p=0,0,1,0.5,0,0.5,1,1&animate=1).
+- In CSS animation to describe the path and speed of animation.

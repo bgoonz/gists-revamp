@@ -1,5 +1,4 @@
-Focusing: focus/blur
-====================
+# Focusing: focus/blur
 
 An element receives the focus when the user either clicks on it or uses the `key:Tab` key on the keyboard. There’s also an `autofocus` HTML attribute that puts the focus onto an element by default when a page loads and other means of getting the focus.
 
@@ -11,8 +10,7 @@ Losing the focus generally means: “the data has been entered”, so we can run
 
 There are important peculiarities when working with focus events. We’ll do the best to cover them further on.
 
-Events focus/blur
------------------
+## Events focus/blur
 
 The `focus` event is called on focusing, and `blur` – when the element loses the focus.
 
@@ -20,8 +18,8 @@ Let’s use them for validation of an input field.
 
 In the example below:
 
--   The `blur` handler checks if the field has an email entered, and if not – shows an error.
--   The `focus` handler hides the error message (on `blur` it will be checked again):
+- The `blur` handler checks if the field has an email entered, and if not – shows an error.
+- The `focus` handler hides the error message (on `blur` it will be checked again):
 
 \`\`\`html run autorun height=60
 
@@ -31,8 +29,7 @@ Your email please:
 
 Modern HTML allows us to do many validations using input attributes: `required`, `pattern` and so on. And sometimes they are just what we need. JavaScript can be used when we want more flexibility. Also we could automatically send the changed value to the server if it’s correct.
 
-Methods focus/blur
-------------------
+## Methods focus/blur
 
 Methods `elem.focus()` and `elem.blur()` set/unset the focus on the element.
 
@@ -48,14 +45,14 @@ It works in all browsers except Firefox ([bug](https://bugzilla.mozilla.org/show
 
 If we enter something into the input and then try to use `key:Tab` or click away from the `<input>`, then `onblur` returns the focus back.
 
-Please note that we can’t “prevent losing focus” by calling `event.preventDefault()` in `onblur`, because `onblur` works *after* the element lost the focus.
+Please note that we can’t “prevent losing focus” by calling `event.preventDefault()` in `onblur`, because `onblur` works _after_ the element lost the focus.
 
 \`\`\`warn header=“JavaScript-initiated focus loss” A focus loss can occur for many reasons.
 
 One of them is when the visitor clicks somewhere else. But also JavaScript itself may cause it, for instance:
 
--   An `alert` moves focus to itself, so it causes the focus loss at the element (`blur` event), and when the `alert` is dismissed, the focus comes back (`focus` event).
--   If an element is removed from DOM, then it also causes the focus loss. If it is reinserted later, then the focus doesn’t return.
+- An `alert` moves focus to itself, so it causes the focus loss at the element (`blur` event), and when the `alert` is dismissed, the focus comes back (`focus` event).
+- If an element is removed from DOM, then it also causes the focus loss. If it is reinserted later, then the focus doesn’t return.
 
 These features sometimes cause `focus/blur` handlers to misbehave – to trigger when they are not needed.
 
@@ -79,20 +76,20 @@ Elements with matching `tabindex` are switched in the document source order (the
 
 There are two special values:
 
--   `tabindex="0"` puts an element among those without `tabindex`. That is, when we switch elements, elements with `tabindex=0` go after elements with `tabindex ≥ 1`.
+- `tabindex="0"` puts an element among those without `tabindex`. That is, when we switch elements, elements with `tabindex=0` go after elements with `tabindex ≥ 1`.
 
-    Usually it’s used to make an element focusable, but keep the default switching order. To make an element a part of the form on par with `<input>`.
+  Usually it’s used to make an element focusable, but keep the default switching order. To make an element a part of the form on par with `<input>`.
 
--   `tabindex="-1"` allows only programmatic focusing on an element. The `key:Tab` key ignores such elements, but method `elem.focus()` works.
+- `tabindex="-1"` allows only programmatic focusing on an element. The `key:Tab` key ignores such elements, but method `elem.focus()` works.
 
 For instance, here’s a list. Click the first item and press `key:Tab`:
 
 \`\`\`html autorun no-beautify Click the first item and press Tab. Keep track of the order. Please note that many subsequent Tabs can move the focus out of the iframe in the example.
 
--   One
--   Zero
--   Two
--   Minus one
+- One
+- Zero
+- Two
+- Minus one
 
 \`\`\`
 
@@ -100,14 +97,13 @@ The order is like this: `1 - 2 - 0`. Normally, `<li>` does not support focusing,
 
 `` smart header="The property `elem.tabIndex` works too" We can add `tabindex` from JavaScript by using the `elem.tabIndex` property. That has the same effect. ``
 
-Delegation: focusin/focusout
-----------------------------
+## Delegation: focusin/focusout
 
 Events `focus` and `blur` do not bubble.
 
 For instance, we can’t put `onfocus` on the `<form>` to highlight it, like this:
 
-\`\`\`html autorun height=80 &lt;form *!*onfocus=“this.className=‘focused’”*/!*&gt;
+\`\`\`html autorun height=80 &lt;form *!*onfocus=“this.className=‘focused’”_/!_&gt;
 
 \`\`\`
 
@@ -133,8 +129,7 @@ So here’s another working variant:
 
 \`\`\`
 
-Summary
--------
+## Summary
 
 Events `focus` and `blur` trigger on an element focusing/losing focus.
 

@@ -1,12 +1,10 @@
-Strings
-=======
+# Strings
 
 In JavaScript, the textual data is stored as strings. There is no separate type for a single character.
 
 The internal format for strings is always [UTF-16](https://en.wikipedia.org/wiki/UTF-16), it is not tied to the page encoding.
 
-Quotes
-------
+## Quotes
 
 Let’s recall the kinds of quotes.
 
@@ -33,14 +31,13 @@ Looks natural, right? But single or double quotes do not work this way.
 
 If we use them and try to use multiple lines, there’ll be an error:
 
-`js run let guestList = "Guests: // Error: Unexpected token ILLEGAL *         John";`
+`js run let guestList = "Guests: // Error: Unexpected token ILLEGAL * John";`
 
 Single and double quotes come from ancient times of language creation when the need for multiline strings was not taken into account. Backticks appeared much later and thus are more versatile.
 
 Backticks also allow us to specify a “template function” before the first backtick. The syntax is: `` func`string` ``. The function `func` is called automatically, receives the string and embedded expressions and can process them. This is called “tagged templates”. This feature makes it easier to implement custom templating, but is rarely used in practice. You can read more about it in the [manual](mdn:/JavaScript/Reference/Template_literals#Tagged_templates).
 
-Special characters
-------------------
+## Special characters
 
 It is still possible to create multiline strings with single and double quotes by using a so-called “newline character”, written as `\n`, which denotes a line break:
 
@@ -64,7 +61,7 @@ Here’s the full list:
 
 Examples with Unicode:
 
-`js run alert( "\u00A9" ); // © alert( "\u{20331}" ); // 佫, a rare         Chinese hieroglyph (long Unicode) alert( "\u{1F60D}" ); // 😍, a smiling         face symbol (another long Unicode)`
+`js run alert( "\u00A9" ); // © alert( "\u{20331}" ); // 佫, a rare Chinese hieroglyph (long Unicode) alert( "\u{1F60D}" ); // 😍, a smiling face symbol (another long Unicode)`
 
 All special characters start with a backslash character `\`. It is also called an “escape character”.
 
@@ -72,7 +69,7 @@ We might also use it if we wanted to insert a quote into the string.
 
 For instance:
 
-`js run alert( 'I*!*\'*/!*m the Walrus!' ); // *!*I'm*/!* the         Walrus!`
+`js run alert( 'I*!*\'*/!*m the Walrus!' ); // *!*I'm*/!* the Walrus!`
 
 As you can see, we have to prepend the inner quote by the backslash `\'`, because otherwise it would indicate the string end.
 
@@ -88,8 +85,7 @@ That’s possible, but we need to double it like `\\`:
 
 `` js run alert( `The backslash: \\` ); // The backslash: \ ``
 
-String length
--------------
+## String length
 
 The `length` property has the string length:
 
@@ -97,12 +93,11 @@ The `length` property has the string length:
 
 Note that `\n` is a single “special” character, so the length is indeed `3`.
 
-\`\``warn header="`length`is a property" People with a background in some other languages         sometimes mistype by calling`str.length()`instead of just`str.length\`. That doesn’t work.
+\`\``warn header="`length`is a property" People with a background in some other languages sometimes mistype by calling`str.length()`instead of just`str.length\`. That doesn’t work.
 
 Please note that `str.length` is a numeric property, not a function. There is no need to add parenthesis after it. \`\`\`
 
-Accessing characters
---------------------
+## Accessing characters
 
 To get a character at position `pos`, use square brackets `[pos]` or call the method [str.charAt(pos)](mdn:js/String/charAt). The first character starts from the zero position:
 
@@ -122,10 +117,9 @@ alert( str\[1000\] ); // undefined alert( str.charAt(1000) ); // ’’ (an empt
 
 We can also iterate over characters using `for..of`:
 
-`js run for (let char of "Hello") { alert(char); // H,e,l,l,o (char         becomes "H", then "e", then "l" etc) }`
+`js run for (let char of "Hello") { alert(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc) }`
 
-Strings are immutable
----------------------
+## Strings are immutable
 
 Strings can’t be changed in JavaScript. It is impossible to change a character.
 
@@ -147,19 +141,17 @@ alert( str ); // hi \`\`\`
 
 In the following sections we’ll see more examples of this.
 
-Changing the case
------------------
+## Changing the case
 
 Methods [toLowerCase()](mdn:js/String/toLowerCase) and [toUpperCase()](mdn:js/String/toUpperCase) change the case:
 
-`js run alert( 'Interface'.toUpperCase() ); // INTERFACE alert(         'Interface'.toLowerCase() ); // interface`
+`js run alert( 'Interface'.toUpperCase() ); // INTERFACE alert( 'Interface'.toLowerCase() ); // interface`
 
 Or, if we want a single character lowercased:
 
     alert( 'Interface'[0].toLowerCase() ); // 'i'
 
-Searching for a substring
--------------------------
+## Searching for a substring
 
 There are multiple ways to look for a substring within a string.
 
@@ -199,7 +191,7 @@ The same algorithm can be layed out shorter:
 
 \`\`\`js run let str = “As sly as a fox, as strong as an ox”; let target = “as”;
 
-*!* let pos = -1; while ((pos = str.indexOf(target, pos + 1)) != -1) { alert( pos ); } */!* \`\`\`
+_!_ let pos = -1; while ((pos = str.indexOf(target, pos + 1)) != -1) { alert( pos ); } _/!_ \`\`\`
 
 \`\``smart header="`str.lastIndexOf(substr, position)\`" There is also a similar method [str.lastIndexOf(substr, position)](mdn:js/String/lastIndexOf) that searches from the end of a string to its beginning.
 
@@ -217,7 +209,7 @@ So, we should actually check for `-1`, like this:
 
 \`\`\`js run let str = “Widget with id”;
 
-*!* if (str.indexOf(“Widget”) != -1) { */!* alert(“We found it”); // works now! } \`\`\`
+_!_ if (str.indexOf(“Widget”) != -1) { _/!_ alert(“We found it”); // works now! } \`\`\`
 
 #### The bitwise NOT trick
 
@@ -227,7 +219,7 @@ In practice, that means a simple thing: for 32-bit integers `~n` equals `-(n+1)`
 
 For instance:
 
-`js run alert( ~2 ); // -3, the same as -(2+1) alert( ~1 ); // -2, the         same as -(1+1) alert( ~0 ); // -1, the same as -(0+1) *!* alert( ~-1 );         // 0, the same as -(-1+1) */!*`
+`js run alert( ~2 ); // -3, the same as -(2+1) alert( ~1 ); // -2, the same as -(1+1) alert( ~0 ); // -1, the same as -(0+1) *!* alert( ~-1 ); // 0, the same as -(-1+1) */!*`
 
 As we can see, `~n` is zero only if `n == -1` (that’s for any 32-bit signed integer `n`).
 
@@ -259,14 +251,13 @@ alert( “Hello”.includes(“Bye”) ); // false \`\`\`
 
 The optional second argument of `str.includes` is the position to start searching from:
 
-`js run alert( "Widget".includes("id") ); // true alert(         "Widget".includes("id", 3) ); // false, from position 3 there is no         "id"`
+`js run alert( "Widget".includes("id") ); // true alert( "Widget".includes("id", 3) ); // false, from position 3 there is no "id"`
 
 The methods [str.startsWith](mdn:js/String/startsWith) and [str.endsWith](mdn:js/String/endsWith) do exactly what they say:
 
-`js run alert( "Widget".startsWith("Wid") ); // true, "Widget" starts         with "Wid" alert( "Widget".endsWith("get") ); // true, "Widget" ends         with "get"`
+`js run alert( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid" alert( "Widget".endsWith("get") ); // true, "Widget" ends with "get"`
 
-Getting a substring
--------------------
+## Getting a substring
 
 There are 3 methods in JavaScript to get a substring: `substring`, `substr` and `slice`.
 
@@ -275,11 +266,11 @@ Returns the part of the string from `start` to (but not including) `end`.
 
 For instance:
 
-`js run let str = "stringify"; alert( str.slice(0, 5) ); // 'strin',             the substring from 0 to 5 (not including 5) alert( str.slice(0, 1)             ); // 's', from 0 to 1, but not including 1, so only character at             0`
+`js run let str = "stringify"; alert( str.slice(0, 5) ); // 'strin', the substring from 0 to 5 (not including 5) alert( str.slice(0, 1) ); // 's', from 0 to 1, but not including 1, so only character at 0`
 
 If there is no second argument, then `slice` goes till the end of the string:
 
-`js run let str = "st*!*ringify*/!*"; alert( str.slice(2) ); //             'ringify', from the 2nd position till the end`
+`js run let str = "st*!*ringify*/!*"; alert( str.slice(2) ); // 'ringify', from the 2nd position till the end`
 
 Negative values for `start/end` are also possible. They mean the position is counted from the string end:
 
@@ -288,7 +279,7 @@ Negative values for `start/end` are also possible. They mean the position is cou
 // start at the 4th position from the right, end at the 1st from the right alert( str.slice(-4, -1) ); // ‘gif’ \`\`\`
 
 `str.substring(start [, end])`  
-Returns the part of the string *between* `start` and `end`.
+Returns the part of the string _between_ `start` and `end`.
 
 This is almost the same as `slice`, but it allows `start` to be greater than `end`.
 
@@ -309,22 +300,21 @@ Returns the part of the string from `start`, with the given `length`.
 
 In contrast with the previous methods, this one allows us to specify the `length` instead of the ending position:
 
-`js run let str = "st*!*ring*/!*ify"; alert( str.substr(2, 4) ); //             'ring', from the 2nd position get 4 characters`
+`js run let str = "st*!*ring*/!*ify"; alert( str.substr(2, 4) ); // 'ring', from the 2nd position get 4 characters`
 
 The first argument may be negative, to count from the end:
 
-`js run let str = "strin*!*gi*/!*fy"; alert( str.substr(-4, 2) ); //             'gi', from the 4th position get 2 characters`
+`js run let str = "strin*!*gi*/!*fy"; alert( str.substr(-4, 2) ); // 'gi', from the 4th position get 2 characters`
 
 Let’s recap these methods to avoid any confusion:
 
 <table style="width:98%;"><colgroup><col style="width: 26%" /><col style="width: 36%" /><col style="width: 36%" /></colgroup><thead><tr class="header"><th>method</th><th>selects…</th><th>negatives</th></tr></thead><tbody><tr class="odd"><td><code>slice(start, end)</code></td><td>from <code>start</code> to <code>end</code> (not including <code>end</code>)</td><td>allows negatives</td></tr><tr class="even"><td><code>substring(start, end)</code></td><td>between <code>start</code> and <code>end</code></td><td>negative values mean <code>0</code></td></tr><tr class="odd"><td><code>substr(start, length)</code></td><td>from <code>start</code> get <code>length</code> characters</td><td>allows negative <code>start</code></td></tr></tbody></table>
 
-\`\``smart header="Which one to choose?" All of them can do the job.         Formally,`substr\` has a minor drawback: it is described not in the core JavaScript specification, but in Annex B, which covers browser-only features that exist mainly for historical reasons. So, non-browser environments may fail to support it. But in practice it works everywhere.
+\`\``smart header="Which one to choose?" All of them can do the job. Formally,`substr\` has a minor drawback: it is described not in the core JavaScript specification, but in Annex B, which covers browser-only features that exist mainly for historical reasons. So, non-browser environments may fail to support it. But in practice it works everywhere.
 
 Of the other two variants, `slice` is a little bit more flexible, it allows negative arguments and shorter to write. So, it’s enough to remember solely `slice` of these three methods. \`\`\`
 
-Comparing strings
------------------
+## Comparing strings
 
 As we know from the chapter <a href="info:comparison" class="uri">info:comparison</a>, strings are compared character-by-character in alphabetical order.
 
@@ -347,7 +337,7 @@ All strings are encoded using [UTF-16](https://en.wikipedia.org/wiki/UTF-16). Th
 `str.codePointAt(pos)`  
 Returns the code for the character at position `pos`:
 
-`js run // different case letters have different codes alert(             "z".codePointAt(0) ); // 122 alert( "Z".codePointAt(0) ); //             90`
+`js run // different case letters have different codes alert( "z".codePointAt(0) ); // 122 alert( "Z".codePointAt(0) ); // 90`
 
 `String.fromCodePoint(code)`  
 Creates a character by its numeric `code`
@@ -356,7 +346,7 @@ Creates a character by its numeric `code`
 
 We can also add Unicode characters by their codes using `\u` followed by the hex code:
 
-`js run // 90 is 5a in hexadecimal system alert( '\u005a' ); //             Z`
+`js run // 90 is 5a in hexadecimal system alert( '\u005a' ); // Z`
 
 Now let’s see the characters with codes `65..220` (the latin alphabet and a little bit extra) by making a string of them:
 
@@ -370,8 +360,8 @@ Now it becomes obvious why `a > Z`.
 
 The characters are compared by their numeric code. The greater code means that the character is greater. The code for `a` (97) is greater than the code for `Z` (90).
 
--   All lowercase letters go after uppercase letters because their codes are greater.
--   Some letters like `Ö` stand apart from the main alphabet. Here, it’s code is greater than anything from `a` to `z`.
+- All lowercase letters go after uppercase letters because their codes are greater.
+- Some letters like `Ö` stand apart from the main alphabet. Here, it’s code is greater than anything from `a` to `z`.
 
 ### Correct comparisons \[\#correct-comparisons\]
 
@@ -385,9 +375,9 @@ It provides a special method to compare strings in different languages, followin
 
 The call [str.localeCompare(str2)](mdn:js/String/localeCompare) returns an integer indicating whether `str` is less, equal or greater than `str2` according to the language rules:
 
--   Returns a negative number if `str` is less than `str2`.
--   Returns a positive number if `str` is greater than `str2`.
--   Returns `0` if they are equivalent.
+- Returns a negative number if `str` is less than `str2`.
+- Returns a positive number if `str` is greater than `str2`.
+- Returns `0` if they are equivalent.
 
 For instance:
 
@@ -395,8 +385,7 @@ For instance:
 
 This method actually has two additional arguments specified in [the documentation](mdn:js/String/localeCompare), which allows it to specify the language (by default taken from the environment, letter order depends on the language) and setup additional rules like case sensitivity or should `"a"` and `"á"` be treated as the same etc.
 
-Internals, Unicode
-------------------
+## Internals, Unicode
 
 \`\`\`warn header=“Advanced knowledge” The section goes deeper into string internals. This knowledge will be useful for you if you plan to deal with emoji, rare mathematical or hieroglyphic characters or other rare symbols.
 
@@ -410,7 +399,7 @@ But 2 bytes only allow 65536 combinations and that’s not enough for every poss
 
 The length of such symbols is `2`:
 
-`js run alert( '𝒳'.length ); // 2, MATHEMATICAL SCRIPT CAPITAL X alert(         '😂'.length ); // 2, FACE WITH TEARS OF JOY alert( '𩷶'.length ); // 2,         a rare Chinese hieroglyph`
+`js run alert( '𝒳'.length ); // 2, MATHEMATICAL SCRIPT CAPITAL X alert( '😂'.length ); // 2, FACE WITH TEARS OF JOY alert( '𩷶'.length ); // 2, a rare Chinese hieroglyph`
 
 Note that surrogate pairs did not exist at the time when JavaScript was created, and thus are not correctly processed by the language!
 
@@ -420,7 +409,7 @@ We actually have a single symbol in each of the strings above, but the `length` 
 
 Getting a symbol can be tricky, because surrogate pairs are treated as two characters:
 
-`js run alert( '𝒳'[0] ); // strange symbols... alert( '𝒳'[1] ); //         ...pieces of the surrogate pair`
+`js run alert( '𝒳'[0] ); // strange symbols... alert( '𝒳'[1] ); // ...pieces of the surrogate pair`
 
 Note that pieces of the surrogate pair have no meaning without each other. So the alerts in the example above actually display garbage.
 

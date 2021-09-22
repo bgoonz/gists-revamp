@@ -1,16 +1,14 @@
-Arrays
-======
+# Arrays
 
 Objects allow you to store keyed collections of values. That’s fine.
 
-But quite often we find that we need an *ordered collection*, where we have a 1st, a 2nd, a 3rd element and so on. For example, we need that to store a list of something: users, goods, HTML elements etc.
+But quite often we find that we need an _ordered collection_, where we have a 1st, a 2nd, a 3rd element and so on. For example, we need that to store a list of something: users, goods, HTML elements etc.
 
 It is not convenient to use an object here, because it provides no methods to manage the order of elements. We can’t insert a new property “between” the existing ones. Objects are just not meant for such use.
 
 There exists a special data structure named `Array`, to store ordered collections.
 
-Declaration
------------
+## Declaration
 
 There are two syntaxes for creating an empty array:
 
@@ -59,17 +57,16 @@ For instance:
 
 // get the function at index 3 and run it arr[3](); // hello \`\`\`
 
-\``smart header="Trailing comma" An array, just like an object, may end         with a comma:`js let fruits = \[ “Apple”, “Orange”, “Plum”*!*,*/!*\];
+\``smart header="Trailing comma" An array, just like an object, may end with a comma:`js let fruits = \[ “Apple”, “Orange”, “Plum”_!_,_/!_\];
 
     The "trailing comma" style makes it easier to insert/remove items, because all lines become alike.
 
-Methods pop/push, shift/unshift
--------------------------------
+## Methods pop/push, shift/unshift
 
-A [queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) is one of the most common uses of an array. In computer science, this means an ordered collection of elements which supports two operations:
+A [queue](<https://en.wikipedia.org/wiki/Queue_(abstract_data_type)>) is one of the most common uses of an array. In computer science, this means an ordered collection of elements which supports two operations:
 
--   `push` appends an element to the end.
--   `shift` get an element from the beginning, advancing the queue, so that the 2nd element becomes the 1st.
+- `push` appends an element to the end.
+- `shift` get an element from the beginning, advancing the queue, so that the 2nd element becomes the 1st.
 
 ![](queue.svg)
 
@@ -77,12 +74,12 @@ Arrays support both operations.
 
 In practice we need it very often. For example, a queue of messages that need to be shown on-screen.
 
-There’s another use case for arrays – the data structure named [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)).
+There’s another use case for arrays – the data structure named [stack](<https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>).
 
 It supports two operations:
 
--   `push` adds an element to the end.
--   `pop` takes an element from the end.
+- `push` adds an element to the end.
+- `pop` takes an element from the end.
 
 So new elements are added or taken always from the “end”.
 
@@ -146,8 +143,7 @@ fruits.push(“Orange”, “Peach”); fruits.unshift(“Pineapple”, “Lemon
 
 // \[“Pineapple”, “Lemon”, “Apple”, “Orange”, “Peach”\] alert( fruits ); \`\`\`
 
-Internals
----------
+## Internals
 
 An array is a special kind of object. The square brackets used to access a property `arr[0]` actually come from the object syntax. That’s essentially the same as `obj[key]`, where `arr` is the object, while numbers are used as keys.
 
@@ -185,14 +181,13 @@ But the engine will see that we’re working with the array as with a regular ob
 
 The ways to misuse an array:
 
--   Add a non-numeric property like `arr.test = 5`.
--   Make holes, like: add `arr[0]` and then `arr[1000]` (and nothing between them).
--   Fill the array in the reverse order, like `arr[1000]`, `arr[999]` and so on.
+- Add a non-numeric property like `arr.test = 5`.
+- Make holes, like: add `arr[0]` and then `arr[1000]` (and nothing between them).
+- Fill the array in the reverse order, like `arr[1000]`, `arr[999]` and so on.
 
-Please think of arrays as special structures to work with the *ordered data*. They provide special methods for that. Arrays are carefully tuned inside JavaScript engines to work with contiguous ordered data, please use them this way. And if you need arbitrary keys, chances are high that you actually require a regular object `{}`.
+Please think of arrays as special structures to work with the _ordered data_. They provide special methods for that. Arrays are carefully tuned inside JavaScript engines to work with contiguous ordered data, please use them this way. And if you need arbitrary keys, chances are high that you actually require a regular object `{}`.
 
-Performance
------------
+## Performance
 
 Methods `push/pop` run fast, while `shift/unshift` are slow.
 
@@ -228,14 +223,13 @@ The actions for the `pop` operation:
 
 The similar thing with the `push` method.
 
-Loops
------
+## Loops
 
 One of the oldest ways to cycle array items is the `for` loop over indexes:
 
 \`\`\`js run let arr = \[“Apple”, “Orange”, “Pear”\];
 
-*!* for (let i = 0; i &lt; arr.length; i++) { */!* alert( arr\[i\] ); } \`\`\`
+_!_ for (let i = 0; i &lt; arr.length; i++) { _/!_ alert( arr\[i\] ); } \`\`\`
 
 But for arrays there is another form of loop, `for..of`:
 
@@ -249,20 +243,19 @@ Technically, because arrays are objects, it is also possible to use `for..in`:
 
 \`\`\`js run let arr = \[“Apple”, “Orange”, “Pear”\];
 
-*!* for (let key in arr) { */!* alert( arr\[key\] ); // Apple, Orange, Pear } \`\`\`
+_!_ for (let key in arr) { _/!_ alert( arr\[key\] ); // Apple, Orange, Pear } \`\`\`
 
 But that’s actually a bad idea. There are potential problems with it:
 
-1.  The loop `for..in` iterates over *all properties*, not only the numeric ones.
+1.  The loop `for..in` iterates over _all properties_, not only the numeric ones.
 
-    There are so-called “array-like” objects in the browser and in other environments, that *look like arrays*. That is, they have `length` and indexes properties, but they may also have other non-numeric properties and methods, which we usually don’t need. The `for..in` loop will list them though. So if we need to work with array-like objects, then these “extra” properties can become a problem.
+    There are so-called “array-like” objects in the browser and in other environments, that _look like arrays_. That is, they have `length` and indexes properties, but they may also have other non-numeric properties and methods, which we usually don’t need. The `for..in` loop will list them though. So if we need to work with array-like objects, then these “extra” properties can become a problem.
 
 2.  The `for..in` loop is optimized for generic objects, not arrays, and thus is 10-100 times slower. Of course, it’s still very fast. The speedup may only matter in bottlenecks. But still we should be aware of the difference.
 
 Generally, we shouldn’t use `for..in` for arrays.
 
-A word about “length”
----------------------
+## A word about “length”
 
 The `length` property automatically updates when we modify the array. To be precise, it is actually not the count of values in the array, but the greatest numeric index plus one.
 
@@ -286,8 +279,7 @@ arr.length = 5; // return length back alert( arr\[3\] ); // undefined: the value
 
 So, the simplest way to clear the array is: `arr.length = 0;`.
 
-new Array() \[\#new-array\]
----------------------------
+## new Array() \[\#new-array\]
 
 There is one more syntax to create an array:
 
@@ -295,7 +287,7 @@ There is one more syntax to create an array:
 
 It’s rarely used, because square brackets `[]` are shorter. Also there’s a tricky feature with it.
 
-If `new Array` is called with a single argument which is a number, then it creates an array *without items, but with the given length*.
+If `new Array` is called with a single argument which is a number, then it creates an array _without items, but with the given length_.
 
 Let’s see how one can shoot themself in the foot:
 
@@ -309,8 +301,7 @@ In the code above, `new Array(number)` has all elements `undefined`.
 
 To evade such surprises, we usually use square brackets, unless we really know what we’re doing.
 
-Multidimensional arrays
------------------------
+## Multidimensional arrays
 
 Arrays can have items that are also arrays. We can use it for multidimensional arrays, for example to store matrices:
 
@@ -318,8 +309,7 @@ Arrays can have items that are also arrays. We can use it for multidimensional a
 
 alert( matrix\[1\]\[1\] ); // 5, the central element \`\`\`
 
-toString
---------
+## toString
 
 Arrays have their own implementation of `toString` method that returns a comma-separated list of elements.
 
@@ -331,16 +321,15 @@ alert( arr ); // 1,2,3 alert( String(arr) === ‘1,2,3’ ); // true \`\`\`
 
 Also, let’s try this:
 
-`js run alert( [] + 1 ); // "1" alert( [1] + 1 ); // "11" alert( [1,2] +         1 ); // "1,21"`
+`js run alert( [] + 1 ); // "1" alert( [1] + 1 ); // "11" alert( [1,2] + 1 ); // "1,21"`
 
 Arrays do not have `Symbol.toPrimitive`, neither a viable `valueOf`, they implement only `toString` conversion, so here `[]` becomes an empty string, `[1]` becomes `"1"` and `[1,2]` becomes `"1,2"`.
 
 When the binary plus `"+"` operator adds something to a string, it converts it to a string as well, so the next step looks like this:
 
-`js run alert( "" + 1 ); // "1" alert( "1" + 1 ); // "11" alert( "1,2" +         1 ); // "1,21"`
+`js run alert( "" + 1 ); // "1" alert( "1" + 1 ); // "11" alert( "1,2" + 1 ); // "1,21"`
 
-Don’t compare arrays with ==
-----------------------------
+## Don’t compare arrays with ==
 
 Arrays in JavaScript, unlike some other programming languages, shouldn’t be compared with operator `==`.
 
@@ -348,9 +337,9 @@ This operator has no special treatment for arrays, it works with them as with an
 
 Let’s recall the rules:
 
--   Two objects are equal `==` only if they’re references to the same object.
--   If one of the arguments of `==` is an object, and the other one is a primitive, then the object gets converted to primitive, as explained in the chapter <a href="info:object-toprimitive" class="uri">info:object-toprimitive</a>.
--   …With an exception of `null` and `undefined` that equal `==` each other and nothing else.
+- Two objects are equal `==` only if they’re references to the same object.
+- If one of the arguments of `==` is an object, and the other one is a primitive, then the object gets converted to primitive, as explained in the chapter <a href="info:object-toprimitive" class="uri">info:object-toprimitive</a>.
+- …With an exception of `null` and `undefined` that equal `==` each other and nothing else.
 
 The strict comparison `===` is even simpler, as it doesn’t convert types.
 
@@ -378,30 +367,29 @@ So, how to compare arrays?
 
 That’s simple: don’t use the `==` operator. Instead, compare them item-by-item in a loop or using iteration methods explained in the next chapter.
 
-Summary
--------
+## Summary
 
 Array is a special kind of object, suited to storing and managing ordered data items.
 
--   The declaration:
+- The declaration:
 
-        // square brackets (usual)
-        let arr = [item1, item2...];
+      // square brackets (usual)
+      let arr = [item1, item2...];
 
-        // new Array (exceptionally rare)
-        let arr = new Array(item1, item2...);
+      // new Array (exceptionally rare)
+      let arr = new Array(item1, item2...);
 
-    The call to `new Array(number)` creates an array with the given length, but without elements.
+  The call to `new Array(number)` creates an array with the given length, but without elements.
 
--   The `length` property is the array length or, to be precise, its last numeric index plus one. It is auto-adjusted by array methods.
--   If we shorten `length` manually, the array is truncated.
+- The `length` property is the array length or, to be precise, its last numeric index plus one. It is auto-adjusted by array methods.
+- If we shorten `length` manually, the array is truncated.
 
 We can use an array as a deque with the following operations:
 
--   `push(...items)` adds `items` to the end.
--   `pop()` removes the element from the end and returns it.
--   `shift()` removes the element from the beginning and returns it.
--   `unshift(...items)` adds `items` to the beginning.
+- `push(...items)` adds `items` to the end.
+- `pop()` removes the element from the end and returns it.
+- `shift()` removes the element from the beginning and returns it.
+- `unshift(...items)` adds `items` to the beginning.
 
 To loop over the elements of the array: - `for (let i=0; i<arr.length; i++)` – works fastest, old-browser-compatible. - `for (let item of arr)` – the modern syntax for items only, - `for (let i in arr)` – never use.
 

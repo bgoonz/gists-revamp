@@ -1,5 +1,4 @@
-Arrow functions, the basics
-===========================
+# Arrow functions, the basics
 
 There’s another very simple and concise syntax for creating functions, that’s often better than Function Expressions.
 
@@ -27,19 +26,19 @@ alert( sum(1, 2) ); // 3 \`\`\`
 
 As you can, see `(a, b) => a + b` means a function that accepts two arguments named `a` and `b`. Upon the execution, it evaluates the expression `a + b` and returns the result.
 
--   If we have only one argument, then parentheses around parameters can be omitted, making that even shorter.
+- If we have only one argument, then parentheses around parameters can be omitted, making that even shorter.
 
-    For example:
+  For example:
 
-    \`\`\`js run *!* let double = n =&gt; n \* 2; // roughly the same as: let double = function(n) { return n \* 2 } */!*
+  \`\`\`js run _!_ let double = n =&gt; n \* 2; // roughly the same as: let double = function(n) { return n \* 2 } _/!_
 
-    alert( double(3) ); // 6 \`\`\`
+  alert( double(3) ); // 6 \`\`\`
 
--   If there are no arguments, parentheses will be empty (but they should be present):
+- If there are no arguments, parentheses will be empty (but they should be present):
 
-    \`\`\`js run let sayHi = () =&gt; alert(“Hello!”);
+  \`\`\`js run let sayHi = () =&gt; alert(“Hello!”);
 
-    sayHi(); \`\`\`
+  sayHi(); \`\`\`
 
 Arrow functions can be used in the same way as Function Expressions.
 
@@ -55,8 +54,7 @@ Arrow functions may appear unfamiliar and not very readable at first, but that q
 
 They are very convenient for simple one-line actions, when we’re just too lazy to write many words.
 
-Multiline arrow functions
--------------------------
+## Multiline arrow functions
 
 The examples above took arguments from the left of `=>` and evaluated the right-side expression with them.
 
@@ -64,7 +62,7 @@ Sometimes we need something a little bit more complex, like multiple expressions
 
 Like this:
 
-\`\`\`js run let sum = (a, b) =&gt; { // the curly brace opens a multiline function let result = a + b; *!* return result; // if we use curly braces, then we need an explicit “return” */!* };
+\`\`\`js run let sum = (a, b) =&gt; { // the curly brace opens a multiline function let result = a + b; _!_ return result; // if we use curly braces, then we need an explicit “return” _/!_ };
 
 alert( sum(1, 2) ); // 3 \`\`\`
 
@@ -76,8 +74,7 @@ To study them in-depth, we first need to get to know some other aspects of JavaS
 
 For now, we can already use arrow functions for one-line actions and callbacks. \`\`\`
 
-Summary
--------
+## Summary
 
 Arrow functions are handy for one-liners. They come in two flavors:
 

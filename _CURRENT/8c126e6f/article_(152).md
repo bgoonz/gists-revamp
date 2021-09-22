@@ -1,10 +1,8 @@
-Shadow DOM
-==========
+# Shadow DOM
 
 Shadow DOM serves for encapsulation. It allows a component to have its very own “shadow” DOM tree, that can’t be accidentally accessed from the main document, may have local style rules, and more.
 
-Built-in shadow DOM
--------------------
+## Built-in shadow DOM
 
 Did you ever think how complex browser controls are created and styled?
 
@@ -30,8 +28,7 @@ Once again, `pseudo` is a non-standard attribute. Chronologically, browsers firs
 
 Further on, we’ll use the modern shadow DOM standard, covered by [DOM spec](https://dom.spec.whatwg.org/#shadow-trees) and other related specifications.
 
-Shadow tree
------------
+## Shadow tree
 
 A DOM element can have two types of DOM subtrees:
 
@@ -44,7 +41,7 @@ Shadow tree can be used in Custom Elements to hide component internals and apply
 
 For example, this `<show-hello>` element hides its internal DOM in shadow tree:
 
-\`\``html run autorun height=60 <script> customElements.define('show-hello', class extends HTMLElement {   connectedCallback() {     const shadow = this.attachShadow({mode: 'open'});     shadow.innerHTML =`
+\`\``html run autorun height=60 <script> customElements.define('show-hello', class extends HTMLElement { connectedCallback() { const shadow = this.attachShadow({mode: 'open'}); shadow.innerHTML =`
 
 Hello, ${this.getAttribute(‘name’)}
 
@@ -63,11 +60,11 @@ There are two limitations: 1. We can create only one shadow root per element. 2.
 
 The `mode` option sets the encapsulation level. It must have any of two values: - `"open"` – the shadow root is available as `elem.shadowRoot`.
 
-    Any code is able to access the shadow tree of `elem`.   
+    Any code is able to access the shadow tree of `elem`.
 
--   `"closed"` – `elem.shadowRoot` is always `null`.
+- `"closed"` – `elem.shadowRoot` is always `null`.
 
-    We can only access the shadow DOM by the reference returned by `attachShadow` (and probably hidden inside a class). Browser-native shadow trees, such as `<input type="range">`, are closed. There’s no way to access them.
+  We can only access the shadow DOM by the reference returned by `attachShadow` (and probably hidden inside a class). Browser-native shadow trees, such as `<input type="range">`, are closed. There’s no way to access them.
 
 The [shadow root](https://dom.spec.whatwg.org/#shadowroot), returned by `attachShadow`, is like an element: we can use `innerHTML` or DOM methods, such as `append`, to populate it.
 
@@ -76,8 +73,7 @@ The element with a shadow root is called a “shadow tree host”, and is availa
     // assuming {mode: "open"}, otherwise elem.shadowRoot is null
     alert(elem.shadowRoot.host === elem); // true
 
-Encapsulation
--------------
+## Encapsulation
 
 Shadow DOM is strongly delimited from the main document:
 
@@ -94,15 +90,13 @@ For example:
 2.  …But the style from the inside works.
 3.  To get elements in shadow tree, we must query from inside the tree.
 
-References
-----------
+## References
 
--   DOM: <a href="https://dom.spec.whatwg.org/#shadow-trees" class="uri">https://dom.spec.whatwg.org/#shadow-trees</a>
--   Compatibility: <a href="https://caniuse.com/#feat=shadowdomv1" class="uri">https://caniuse.com/#feat=shadowdomv1</a>
--   Shadow DOM is mentioned in many other specifications, e.g. [DOM Parsing](https://w3c.github.io/DOM-Parsing/#the-innerhtml-mixin) specifies that shadow root has `innerHTML`.
+- DOM: <a href="https://dom.spec.whatwg.org/#shadow-trees" class="uri">https://dom.spec.whatwg.org/#shadow-trees</a>
+- Compatibility: <a href="https://caniuse.com/#feat=shadowdomv1" class="uri">https://caniuse.com/#feat=shadowdomv1</a>
+- Shadow DOM is mentioned in many other specifications, e.g. [DOM Parsing](https://w3c.github.io/DOM-Parsing/#the-innerhtml-mixin) specifies that shadow root has `innerHTML`.
 
-Summary
--------
+## Summary
 
 Shadow DOM is a way to create a component-local DOM.
 

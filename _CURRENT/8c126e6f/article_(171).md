@@ -1,5 +1,4 @@
-Catastrophic backtracking
-=========================
+# Catastrophic backtracking
 
 Some regular expressions are looking simple, but can execute a veeeeeery long time, and even “hang” the JavaScript engine.
 
@@ -9,8 +8,7 @@ In such case a web-browser suggests to kill the script and reload the page. Not 
 
 For server-side JavaScript such a regexp may hang the server process, that’s even worse. So we definitely should take a look at it.
 
-Example
--------
+## Example
 
 Let’s say we have a string, and we’d like to check if it consists of words `pattern:\w+` with an optional space `pattern:\s?` after each.
 
@@ -34,8 +32,7 @@ If you run the example below, you probably won’t see anything, as JavaScript w
 
 To be fair, let’s note that some regular expression engines can handle such a search effectively, for example V8 engine version starting from 8.8 can do that (so Google Chrome 88 doesn’t hang here), while Firefox browser does hang.
 
-Simplified example
-------------------
+## Simplified example
 
 What’s the matter? Why does the regular expression hang?
 
@@ -171,8 +168,7 @@ Unfortunately, that won’t help: if we replace `pattern:\w+` with `pattern:\w+?
 
 Some regular expression engines have tricky tests and finite automations that allow to avoid going through all combinations or make it much faster, but most engines don’t, and it doesn’t always help.
 
-How to fix?
------------
+## How to fix?
 
 There are two main approaches to fixing the problem.
 
@@ -238,9 +234,9 @@ That may seem odd, but it’s actually a very simple transform.
 
 Let’s decipher it:
 
--   Lookahead `pattern:?=` looks forward for the longest word `pattern:\w+` starting at the current position.
--   The contents of parentheses with `pattern:?=...` isn’t memorized by the engine, so wrap `pattern:\w+` into parentheses. Then the engine will memorize their contents
--   …And allow us to reference it in the pattern as `pattern:\1`.
+- Lookahead `pattern:?=` looks forward for the longest word `pattern:\w+` starting at the current position.
+- The contents of parentheses with `pattern:?=...` isn’t memorized by the engine, so wrap `pattern:\w+` into parentheses. Then the engine will memorize their contents
+- …And allow us to reference it in the pattern as `pattern:\1`.
 
 That is: we look ahead - and if there’s a word `pattern:\w+`, then match it as `pattern:\1`.
 

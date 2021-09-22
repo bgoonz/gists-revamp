@@ -1,5 +1,4 @@
-Scripts: async, defer
-=====================
+# Scripts: async, defer
 
 In modern websites, scripts are often “heavier” than HTML: their download size is larger, and processing time is also longer.
 
@@ -32,8 +31,7 @@ Such things are invisible for people using very fast connections, but many peopl
 
 Luckily, there are two `<script>` attributes that solve the problem for us: `defer` and `async`.
 
-defer
------
+## defer
 
 The `defer` attribute tells the browser not to wait for the script. Instead, the browser will continue to process the HTML, build DOM. The script loads “in the background”, and then runs when the DOM is fully built.
 
@@ -49,8 +47,8 @@ Here’s the same example as above, but with `defer`:
 
 In other words:
 
--   Scripts with `defer` never block the page.
--   Scripts with `defer` always execute when the DOM is ready (but before `DOMContentLoaded` event).
+- Scripts with `defer` never block the page.
+- Scripts with `defer` always execute when the DOM is ready (but before `DOMContentLoaded` event).
 
 The following example demonstrates the second part:
 
@@ -78,20 +76,19 @@ Browsers scan the page for scripts and download them in parallel, to improve per
 
 That may be important for cases when we need to load a JavaScript library and then a script that depends on it.
 
-`` smart header="The `defer` attribute is only for external scripts" The         `defer` attribute is ignored if the `<script>` tag has no         `src`. ``
+`` smart header="The `defer` attribute is only for external scripts" The `defer` attribute is ignored if the `<script>` tag has no `src`. ``
 
-async
------
+## async
 
 The `async` attribute is somewhat like `defer`. It also makes the script non-blocking. But it has important differences in the behavior.
 
 The `async` attribute means that a script is completely independent:
 
--   The browser doesn’t block on `async` scripts (like `defer`).
--   Other scripts don’t wait for `async` scripts, and `async` scripts don’t wait for them.
--   `DOMContentLoaded` and async scripts don’t wait for each other:
-    -   `DOMContentLoaded` may happen both before an async script (if an async script finishes loading after the page is complete)
-    -   …or after an async script (if an async script is short or was in HTTP-cache)
+- The browser doesn’t block on `async` scripts (like `defer`).
+- Other scripts don’t wait for `async` scripts, and `async` scripts don’t wait for them.
+- `DOMContentLoaded` and async scripts don’t wait for each other:
+  - `DOMContentLoaded` may happen both before an async script (if an async script finishes loading after the page is complete)
+  - …or after an async script (if an async script is short or was in HTTP-cache)
 
 In other words, `async` scripts load in the background and run when ready. The DOM and other scripts don’t wait for them, and they don’t wait for anything. A fully independent script that runs when loaded. As simple, as it can get, right?
 
@@ -107,23 +104,22 @@ They don’t wait for each other. Whatever loads first (probably `small.js`) –
 
 \`\`\`
 
--   The page content shows up immediately: `async` doesn’t block it.
--   `DOMContentLoaded` may happen both before and after `async`, no guarantees here.
--   A smaller script `small.js` goes second, but probably loads before `long.js`, so `small.js` runs first. Although, it might be that `long.js` loads first, if cached, then it runs first. In other words, async scripts run in the “load-first” order.
+- The page content shows up immediately: `async` doesn’t block it.
+- `DOMContentLoaded` may happen both before and after `async`, no guarantees here.
+- A smaller script `small.js` goes second, but probably loads before `long.js`, so `small.js` runs first. Although, it might be that `long.js` loads first, if cached, then it runs first. In other words, async scripts run in the “load-first” order.
 
 Async scripts are great when we integrate an independent third-party script into the page: counters, ads and so on, as they don’t depend on our scripts, and our scripts shouldn’t wait for them:
 
     <!-- Google Analytics is usually added like this -->
     <script async src="https://google-analytics.com/analytics.js"></script>
 
-Dynamic scripts
----------------
+## Dynamic scripts
 
 There’s one more important way of adding a script to the page.
 
 We can create a script and append it to the document dynamically using JavaScript:
 
-`js run let script = document.createElement('script'); script.src =         "/article/script-async-defer/long.js"; document.body.append(script); //         (*)`
+`js run let script = document.createElement('script'); script.src = "/article/script-async-defer/long.js"; document.body.append(script); // (*)`
 
 The script starts loading as soon as it’s appended to the document `(*)`.
 
@@ -145,8 +141,7 @@ Without `script.async=false`, scripts would execute in default, load-first order
 
 Again, as with the `defer`, the order matters if we’d like to load a library and then another script that depends on it.
 
-Summary
--------
+## Summary
 
 Both `async` and `defer` have one common thing: downloading of such scripts doesn’t block page rendering. So the user can read page content and get acquainted with the page immediately.
 
@@ -158,7 +153,7 @@ In practice, `defer` is used for scripts that need the whole DOM and/or their re
 
 And `async` is used for independent scripts, like counters or ads. And their relative execution order does not matter.
 
-\`\``warn header="Page without scripts should be usable" Please note: if         you're using`defer`or`async\`, then user will see the the page *before* the script loads.
+\`\``warn header="Page without scripts should be usable" Please note: if you're using`defer`or`async\`, then user will see the the page _before_ the script loads.
 
 In such case, some graphical components are probably not initialized yet.
 

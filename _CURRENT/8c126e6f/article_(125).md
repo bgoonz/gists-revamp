@@ -1,5 +1,4 @@
-Popups and window methods
-=========================
+# Popups and window methods
 
 A popup window is one of the oldest methods to show additional document to user.
 
@@ -19,8 +18,7 @@ Still, there are tasks where popups are still used, e.g. for OAuth authorizatio
 2.  It’s very easy to open a popup.
 3.  A popup can navigate (change URL) and send messages to the opener window.
 
-Popup blocking
---------------
+## Popup blocking
 
 In the past, evil sites abused popups a lot. A bad page could open tons of popup windows with ads. So now most browsers try to block popups and protect the user.
 
@@ -52,8 +50,7 @@ The popup opens in Chrome, but gets blocked in Firefox.
 
 The difference is that Firefox treats a timeout of 2000ms or less are acceptable, but after it – removes the “trust”, assuming that now it’s “outside of the user action”. So the first one is blocked, and the second one is not.
 
-window.open
------------
+## window.open
 
 The syntax to open a popup is: `window.open(url, name, params)`:
 
@@ -68,21 +65,20 @@ The configuration string for the new window. It contains settings, delimited by 
 
 Settings for `params`:
 
--   Position:
-    -   `left/top` (numeric) – coordinates of the window top-left corner on the screen. There is a limitation: a new window cannot be positioned offscreen.
-    -   `width/height` (numeric) – width and height of a new window. There is a limit on minimal width/height, so it’s impossible to create an invisible window.
--   Window features:
-    -   `menubar` (yes/no) – shows or hides the browser menu on the new window.
-    -   `toolbar` (yes/no) – shows or hides the browser navigation bar (back, forward, reload etc) on the new window.
-    -   `location` (yes/no) – shows or hides the URL field in the new window. FF and IE don’t allow to hide it by default.
-    -   `status` (yes/no) – shows or hides the status bar. Again, most browsers force it to show.
-    -   `resizable` (yes/no) – allows to disable the resize for the new window. Not recommended.
-    -   `scrollbars` (yes/no) – allows to disable the scrollbars for the new window. Not recommended.
+- Position:
+  - `left/top` (numeric) – coordinates of the window top-left corner on the screen. There is a limitation: a new window cannot be positioned offscreen.
+  - `width/height` (numeric) – width and height of a new window. There is a limit on minimal width/height, so it’s impossible to create an invisible window.
+- Window features:
+  - `menubar` (yes/no) – shows or hides the browser menu on the new window.
+  - `toolbar` (yes/no) – shows or hides the browser navigation bar (back, forward, reload etc) on the new window.
+  - `location` (yes/no) – shows or hides the URL field in the new window. FF and IE don’t allow to hide it by default.
+  - `status` (yes/no) – shows or hides the status bar. Again, most browsers force it to show.
+  - `resizable` (yes/no) – allows to disable the resize for the new window. Not recommended.
+  - `scrollbars` (yes/no) – allows to disable the scrollbars for the new window. Not recommended.
 
 There is also a number of less supported browser-specific features, which are usually not used. Check [window.open in MDN](https://developer.mozilla.org/en/DOM/window.open) for examples.
 
-Example: a minimalistic window
-------------------------------
+## Example: a minimalistic window
 
 Let’s open a window with minimal set of features, just to see which of them browser allows to disable:
 
@@ -102,13 +98,12 @@ Most browsers show the example above as required.
 
 Rules for omitted settings:
 
--   If there is no 3rd argument in the `open` call, or it is empty, then the default window parameters are used.
--   If there is a string of params, but some `yes/no` features are omitted, then the omitted features assumed to have `no` value. So if you specify params, make sure you explicitly set all required features to yes.
--   If there is no `left/top` in params, then the browser tries to open a new window near the last opened window.
--   If there is no `width/height`, then the new window will be the same size as the last opened.
+- If there is no 3rd argument in the `open` call, or it is empty, then the default window parameters are used.
+- If there is a string of params, but some `yes/no` features are omitted, then the omitted features assumed to have `no` value. So if you specify params, make sure you explicitly set all required features to yes.
+- If there is no `left/top` in params, then the browser tries to open a new window near the last opened window.
+- If there is no `width/height`, then the new window will be the same size as the last opened.
 
-Accessing popup from window
----------------------------
+## Accessing popup from window
 
 The `open` call returns a reference to the new window. It can be used to manipulate it’s properties, change location and even more.
 
@@ -124,7 +119,7 @@ And here we modify the contents after loading:
 
 alert(newWindow.location.href); // (\*) about:blank, loading hasn’t started yet
 
-newWindow.onload = function() { let html = `<div style="font-size:30px">Welcome!</div>`; *!* newWindow.document.body.insertAdjacentHTML(‘afterbegin’, html); */!* }; \`\`\`
+newWindow.onload = function() { let html = `<div style="font-size:30px">Welcome!</div>`; _!_ newWindow.document.body.insertAdjacentHTML(‘afterbegin’, html); _/!_ }; \`\`\`
 
 Please note: immediately after `window.open`, the new window isn’t loaded yet. That’s demonstrated by `alert` in line `(*)`. So we wait for `onload` to modify it. We could also use `DOMContentLoaded` handler for `newWin.document`.
 
@@ -132,8 +127,7 @@ Please note: immediately after `window.open`, the new window isn’t loaded yet.
 
 Otherwise, e.g. if the main window is from `site.com`, and the popup from `gmail.com`, that’s impossible for user safety reasons. For the details, see chapter <a href="info:cross-window-communication" class="uri">info:cross-window-communication</a>. \`\`\`
 
-Accessing window from popup
----------------------------
+## Accessing window from popup
 
 A popup may access the “opener” window as well using `window.opener` reference. It is `null` for all windows except popups.
 

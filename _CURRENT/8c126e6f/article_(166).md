@@ -1,5 +1,4 @@
-Greedy and lazy quantifiers
-===========================
+# Greedy and lazy quantifiers
 
 Quantifiers are very simple from the first sight, but in fact they can be tricky.
 
@@ -29,14 +28,13 @@ Instead of finding two matches `match:"witch"` and `match:"broom"`, it finds one
 
 That can be described as “greediness is the cause of all evil”.
 
-Greedy search
--------------
+## Greedy search
 
 To find a match, the regular expression engine uses the following algorithm:
 
--   For every position in the string
-    -   Try to match the pattern at that position.
-    -   If there’s no match, go to the next position.
+- For every position in the string
+  - Try to match the pattern at that position.
+  - If there’s no match, go to the next position.
 
 These common words do not make it obvious why the regexp fails, so let’s elaborate how the search works for the pattern `pattern:".+"`.
 
@@ -62,7 +60,7 @@ These common words do not make it obvious why the regexp fails, so let’s elabo
 
 4.  Now the engine finished repeating `pattern:.+` and tries to find the next character of the pattern. It’s the quote `pattern:"`. But there’s a problem: the string has finished, there are no more characters!
 
-    The regular expression engine understands that it took too many `pattern:.+` and starts to *backtrack*.
+    The regular expression engine understands that it took too many `pattern:.+` and starts to _backtrack_.
 
     In other words, it shortens the match for the quantifier by one character:
 
@@ -94,14 +92,13 @@ The regexp engine adds to the match as many characters as it can for `pattern:.+
 
 For our task we want another thing. That’s where a lazy mode can help.
 
-Lazy mode
----------
+## Lazy mode
 
 The lazy mode of quantifiers is an opposite to the greedy mode. It means: “repeat minimal number of times”.
 
 We can enable it by putting a question mark `pattern:'?'` after the quantifier, so that it becomes `pattern:*?` or `pattern:+?` or even `pattern:??` for `pattern:'?'`.
 
-To make things clear: usually a question mark `pattern:?` is a quantifier by itself (zero or one), but if added *after another quantifier (or even itself)* it gets another meaning – it switches the matching mode from greedy to lazy.
+To make things clear: usually a question mark `pattern:?` is a quantifier by itself (zero or one), but if added _after another quantifier (or even itself)_ it gets another meaning – it switches the matching mode from greedy to lazy.
 
 The regexp `pattern:/".+?"/g` works as intended: it finds `match:"witch"` and `match:"broom"`:
 
@@ -165,8 +162,7 @@ But to understand how regular expressions work and to build regular expressions,
 
 Complex regular expressions are hard to optimize, so the search may work exactly as described as well. \`\`\`
 
-Alternative approach
---------------------
+## Alternative approach
 
 With regexps, there’s often more than one way to do the same thing.
 
@@ -261,8 +257,7 @@ A working example:
 
 // Works! alert( str1.match(regexp) ); // null, no matches, that’s correct alert( str2.match(regexp) ); // <a href="link1" class="doc">,</a> \`\`\`
 
-Summary
--------
+## Summary
 
 Quantifiers have two modes of work:
 

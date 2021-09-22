@@ -1,12 +1,10 @@
-Mutation observer
-=================
+# Mutation observer
 
 `MutationObserver` is a built-in object that observes a DOM element and fires a callback when it detects a change.
 
 We’ll first take a look at the syntax, and then explore a real-world use case, to see where such thing may be useful.
 
-Syntax
-------
+## Syntax
 
 `MutationObserver` is easy to use.
 
@@ -26,15 +24,15 @@ Then after any changes, the `callback` is executed: changes are passed in the fi
 
 [MutationRecord](https://dom.spec.whatwg.org/#mutationrecord) objects have properties:
 
--   `type` – mutation type, one of
-    -   `"attributes"`: attribute modified
-    -   `"characterData"`: data modified, used for text nodes,
-    -   `"childList"`: child elements added/removed,
--   `target` – where the change occurred: an element for `"attributes"`, or text node for `"characterData"`, or an element for a `"childList"` mutation,
--   `addedNodes/removedNodes` – nodes that were added/removed,
--   `previousSibling/nextSibling` – the previous and next sibling to added/removed nodes,
--   `attributeName/attributeNamespace` – the name/namespace (for XML) of the changed attribute,
--   `oldValue` – the previous value, only for attribute or text changes, if the corresponding option is set `attributeOldValue`/`characterDataOldValue`.
+- `type` – mutation type, one of
+  - `"attributes"`: attribute modified
+  - `"characterData"`: data modified, used for text nodes,
+  - `"childList"`: child elements added/removed,
+- `target` – where the change occurred: an element for `"attributes"`, or text node for `"characterData"`, or an element for a `"childList"` mutation,
+- `addedNodes/removedNodes` – nodes that were added/removed,
+- `previousSibling/nextSibling` – the previous and next sibling to added/removed nodes,
+- `attributeName/attributeNamespace` – the name/namespace (for XML) of the changed attribute,
+- `oldValue` – the previous value, only for attribute or text changes, if the corresponding option is set `attributeOldValue`/`characterDataOldValue`.
 
 For example, here’s a `<div>` with a `contentEditable` attribute. That attribute allows us to focus on it and edit.
 
@@ -72,8 +70,7 @@ If we make more complex editing operations, e.g. remove the `<b>edit</b>`, the 
 
 So, `MutationObserver` allows to react on any changes within DOM subtree.
 
-Usage for integration
----------------------
+## Usage for integration
 
 When such thing may be useful?
 
@@ -87,8 +84,7 @@ There are other situations when a third-party script adds something into our doc
 
 `MutationObserver` allows to implement this.
 
-Usage for architecture
-----------------------
+## Usage for architecture
 
 There are also situations when `MutationObserver` is good from architectural standpoint.
 
@@ -184,20 +180,19 @@ The following code populates its `innerHTML`, that causes the `MutationObserver`
 
 \`\`\`js run let demoElem = document.getElementById(‘highlight-demo’);
 
-// dynamically insert content with code snippets demoElem.innerHTML = `A code snippet is below: <pre         class="language-javascript"><code> let hello = "world!";         </code></pre> <div>Another one:</div>         <div> <pre class="language-css"><code>.class { margin:         5px; } </code></pre> </div>`; \`\`\`
+// dynamically insert content with code snippets demoElem.innerHTML = `A code snippet is below: <pre class="language-javascript"><code> let hello = "world!"; </code></pre> <div>Another one:</div> <div> <pre class="language-css"><code>.class { margin: 5px; } </code></pre> </div>`; \`\`\`
 
 Now we have `MutationObserver` that can track all highlighting in observed elements or the whole `document`. We can add/remove code snippets in HTML without thinking about it.
 
-Additional methods
-------------------
+## Additional methods
 
 There’s a method to stop observing the node:
 
--   `observer.disconnect()` – stops the observation.
+- `observer.disconnect()` – stops the observation.
 
 When we stop the observing, it might be possible that some changes were not yet processed by the observer. In such cases, we use
 
--   `observer.takeRecords()` – gets a list of unprocessed mutation records - those that happened, but the callback has not handled them.
+- `observer.takeRecords()` – gets a list of unprocessed mutation records - those that happened, but the callback has not handled them.
 
 These methods can be used together, like this:
 
@@ -210,14 +205,13 @@ These methods can be used together, like this:
     observer.disconnect();
     ...
 
-`` smart header="Records returned by `observer.takeRecords()` are removed         from the processing queue" The callback won't be called for records,         returned by `observer.takeRecords()`. ``
+`` smart header="Records returned by `observer.takeRecords()` are removed from the processing queue" The callback won't be called for records, returned by `observer.takeRecords()`. ``
 
 \`\`\`smart header=“Garbage collection interaction” Observers use weak references to nodes internally. That is, if a node is removed from the DOM, and becomes unreachable, then it can be garbage collected.
 
 The mere fact that a DOM node is observed doesn’t prevent the garbage collection. \`\`\`
 
-Summary
--------
+## Summary
 
 `MutationObserver` can react to changes in DOM - attributes, text content and adding/removing elements.
 
