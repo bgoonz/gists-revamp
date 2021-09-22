@@ -30,7 +30,7 @@ Curriculum for RailsBridge workshops
 
 Unstar
 
-freeCodeCamp.org's open-source codebase and curriculum. Learn to code for free.
+freeCodeCamp.org’s open-source codebase and curriculum. Learn to code for free.
 
 [324713](https://github.com/freeCodeCamp/freeCodeCamp/stargazers)[25890](https://github.com/freeCodeCamp/freeCodeCamp/network/members)JavaScript
 
@@ -273,7 +273,7 @@ A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devo
 
 Unstar
 
-"The mother of all demo apps" --- Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more 🏅
+“The mother of all demo apps” — Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more 🏅
 
 [58236](https://github.com/gothinkster/realworld/stargazers)[5204](https://github.com/gothinkster/realworld/network/members)Shell
 

@@ -1,35 +1,29 @@
-```bash 
-
-sudo apt update -y
+    sudo apt update -y
 
 
-sudo apt upgrade -y
+    sudo apt upgrade -y
 
-git config --global user.name  bryan
+    git config --global user.name  bryan
 
-git config --global user.email bryan.guner@gmail.com
+    git config --global user.email bryan.guner@gmail.com
 
-sudo apt update
+    sudo apt update
 
-sudo apt install build-essential
+    sudo apt install build-essential
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-. ./.bashrc
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+    . ./.bashrc
 
-nvm install --lts
+    nvm install --lts
 
-sudo apt install unzip
+    sudo apt install unzip
 
-npm install -g mocha
+    npm install -g mocha
 
 
 
-sudo apt update
+    sudo apt update
 
-sudo apt upgrade
+    sudo apt upgrade
 
-sudo apt install python3
-
-
-
-```
+    sudo apt install python3

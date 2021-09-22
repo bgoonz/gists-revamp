@@ -1,10 +1,12 @@
-# Front-end Frameworks v2.6
+Front-end Frameworks v2.6
+=========================
 
 A collection of best front-end frameworks for faster and easier web development.
 
 You can **Compare** all front-end frameworks here: http://usablica.github.com/front-end-frameworks/compare.html
 
-## IceCream
+IceCream
+--------
 
 > Simple and light responsive grid system
 
@@ -12,26 +14,26 @@ You can **Compare** all front-end frameworks here: http://usablica.github.com/fr
 
 **Website:** http://html5-ninja.com/icecream
 
-## Formee Framework for forms
+Formee Framework for forms
+--------------------------
 
-> Formee is nothing but a framework to help you develop and customize web based forms.
-> Crossbrowser: Don't worry about having your form being rendered differently in the major browsers.
-> Flexible:It fits into your project, it's flexible enough to adapt to the width you have available for the form.
-> Customizable:You can easily change between a stylish form or a minimalist one. It comes with the basic needed for you to put your touch in it.
+> Formee is nothing but a framework to help you develop and customize web based forms. Crossbrowser: Don’t worry about having your form being rendered differently in the major browsers. Flexible:It fits into your project, it’s flexible enough to adapt to the width you have available for the form. Customizable:You can easily change between a stylish form or a minimalist one. It comes with the basic needed for you to put your touch in it.
 
 **Responsive:** No
 
 **Website:** http://www.formee.org/
 
-## 1kb grid
+1kb grid
+--------
 
-Other CSS frameworks try to do everything—grid system, style reset, basic typography, form styles. But complex systems are, well, complex. Looking for a simple, lightweight approach that doesn't require a PhD? Meet The 1KB CSS Grid.
+Other CSS frameworks try to do everything—grid system, style reset, basic typography, form styles. But complex systems are, well, complex. Looking for a simple, lightweight approach that doesn’t require a PhD? Meet The 1KB CSS Grid.
 
 **Responsive:** No
 
 **Website:** http://www.1kbgrid.com/
 
-## 52framework
+52framework
+-----------
 
 With HTML5 support coming so fast, with the tiniest of hacks we are able to use it today in virtually all browsers. Using HTML5 makes for much cleaner mark up. This framework fully uses all the great advantages of HTML5.
 
@@ -39,7 +41,8 @@ With HTML5 support coming so fast, with the tiniest of hacks we are able to use 
 
 **Website:** http://52framework.com/
 
-## Concise
+Concise
+-------
 
 > Lightweight, highly customizable, scalable, Sass-based, OOCSS framework. LESS and Stylus ports also available.
 
@@ -47,7 +50,8 @@ With HTML5 support coming so fast, with the tiniest of hacks we are able to use 
 
 **Website:** http://concisecss.com/
 
-## Bootstrap
+Bootstrap
+---------
 
 > Sleek, intuitive, and powerful front-end framework for faster and easier web development.
 
@@ -55,7 +59,8 @@ With HTML5 support coming so fast, with the tiniest of hacks we are able to use 
 
 **Website:** http://getbootstrap.com/
 
-## 960 Grid System
+960 Grid System
+---------------
 
 > Simple grid system
 
@@ -65,17 +70,19 @@ The 960 Grid System is an effort to streamline web development workflow by provi
 
 **Website:** http://960.gs/
 
-## 99lime HTML KickStart
+99lime HTML KickStart
+---------------------
 
 > Ultra–Lean HTML Building Blocks for Rapid Website Production.
 
-HTML KickStart is an ultra–lean set of HTML5, CSS, and jQuery (javascript) files, layouts, and elements designed to give you a headstart and save you 10's of hours on your next web project.
+HTML KickStart is an ultra–lean set of HTML5, CSS, and jQuery (javascript) files, layouts, and elements designed to give you a headstart and save you 10’s of hours on your next web project.
 
 **Responsive:** Yes
 
 **Website:** http://www.99lime.com/
 
-## Baseline
+Baseline
+--------
 
 > Baseline is a framework built around the idea of a “real” baseline grid.
 
@@ -85,7 +92,8 @@ Built with typographic standards in mind, Baseline makes it easy to develop a we
 
 **Website:** http://www.baselinecss.com/
 
-## Blueprint
+Blueprint
+---------
 
 Blueprint is a CSS framework, which aims to cut down on your development time. It gives you a solid foundation to build your project on top of, with an easy-to-use grid, sensible typography, useful plugins, and even a stylesheet for printing.
 
@@ -93,7 +101,8 @@ Blueprint is a CSS framework, which aims to cut down on your development time. I
 
 **Website:** http://www.blueprintcss.org/
 
-## BlueTrip
+BlueTrip
+--------
 
 A full featured and beautiful CSS framework which originally combined the best of Blueprint, Tripoli (hence the name), Hartija, 960.gs, and Elements, but has now found a life of its own.
 
@@ -101,7 +110,8 @@ A full featured and beautiful CSS framework which originally combined the best o
 
 **Website:** http://bluetrip.org/
 
-## Boilerplate
+Boilerplate
+-----------
 
 > noun standardized pieces of text for use as clauses in contracts or as part of a computer program.
 
@@ -111,7 +121,8 @@ As one of the original authors of Blueprint CSS I’ve decided to re-factor my i
 
 **Website:** http://code.google.com/p/css-boilerplate/
 
-## Cascade Framework
+Cascade Framework
+-----------------
 
 > Powerful OOCSS front-end framework optimised for performance and flexibility.
 
@@ -119,7 +130,8 @@ As one of the original authors of Blueprint CSS I’ve decided to re-factor my i
 
 **Website:** http://cascade-framework.com/
 
-## Cascade Framework Light
+Cascade Framework Light
+-----------------------
 
 > An even more lightweight version of Cascade Framework, containing just the bare essentials.
 
@@ -127,7 +139,8 @@ As one of the original authors of Blueprint CSS I’ve decided to re-factor my i
 
 **Website:** https://github.com/jslegers/cascadeframeworklight/
 
-## Easy Framework
+Easy Framework
+--------------
 
 > Your new starting point for every front-end projects!
 
@@ -137,7 +150,8 @@ Easy is a CSS/HTML/JavaScript framework started as a personal project and then g
 
 **Website:** http://easyframework.com/
 
-## elastiCSS
+elastiCSS
+---------
 
 A simple css framework to layout web-based interfaces, based on the printed layout techniques of 4 columns but with capabilities to unlimited column combinations. and capacity to make elastic, fixed and liquid layout easily
 
@@ -145,7 +159,8 @@ A simple css framework to layout web-based interfaces, based on the printed layo
 
 **Website:** http://elasticss.com/
 
-## Elements
+Elements
+--------
 
 > Elements is a down to earth CSS framework.
 
@@ -155,7 +170,8 @@ It was built to help designers write CSS faster and more efficient. Elements goe
 
 **Website:** http://elements.projectdesigns.org/
 
-## Emastic
+Emastic
+-------
 
 Emastic is a CSS Framework, it’s continuing mission: to explore a strange new world, to seek out new life and new web spaces, to boldly go where no CSS Framework has gone before.
 
@@ -163,7 +179,8 @@ Emastic is a CSS Framework, it’s continuing mission: to explore a strange new 
 
 **Website:** http://code.google.com/p/emastic/
 
-## FEM CSS Framework
+FEM CSS Framework
+-----------------
 
 FEM CSS Framework is a 960px width + 12 column grid system + CSS common styles, to easy and fast develop web layouts. It is based in the 960 Grid System, but with a twist in the philosophy to make it more flexible and faster to play with boxes.
 
@@ -171,7 +188,8 @@ FEM CSS Framework is a 960px width + 12 column grid system + CSS common styles, 
 
 **Website:** http://www.frontendmatters.com/projects/fem-css-framework/
 
-## Flaminwork
+Flaminwork
+----------
 
 > The tiny front-end framework for lazy developers.
 
@@ -179,7 +197,8 @@ FEM CSS Framework is a 960px width + 12 column grid system + CSS common styles, 
 
 **Website:** http://flaminwork.com/
 
-## Fluid
+Fluid
+-----
 
 The Fluid 960 Grid System templates have been built upon the work of Nathan Smith and his 960 Grid System using effects from the MooTools and jQuery JavaScript libraries.
 
@@ -187,7 +206,8 @@ The Fluid 960 Grid System templates have been built upon the work of Nathan Smit
 
 **Website:** http://www.designinfluences.com/fluid960gs/
 
-## Foundation
+Foundation
+----------
 
 > The most advanced responsive front-end framework in the world.
 
@@ -197,7 +217,8 @@ Foundation is built with Sass, a powerful CSS preprocessor, which allows us to m
 
 **Website:** http://foundation.zurb.com/
 
-## G5 Framework
+G5 Framework
+------------
 
 > (X)HTML5, CSS3, PHP & jQuery Front End Framework.
 
@@ -207,15 +228,17 @@ G5 Framework started as a personal project. In an attempt to speed up workflow, 
 
 **Website:** http://framework.gregbabula.info/
 
-## GroundworkCSS
+GroundworkCSS
+-------------
 
-A responsive framework with a fractional, semantic grid system built with Sass &amp; Compass.
+A responsive framework with a fractional, semantic grid system built with Sass & Compass.
 
 **Responsive:** Yes
 
 **Website:** http://groundwork.sidereel.com/
 
-## Gumby
+Gumby
+-----
 
 Gumby is a responsive 960 grid CSS framework. The grid lets you lay out pages quickly and easily in a natural, logical way. The framework is packaged with tons of styles and common interface elements to help you quickly put together functional prototypes.
 
@@ -223,19 +246,21 @@ Gumby is a responsive 960 grid CSS framework. The grid lets you lay out pages qu
 
 **Website:** http://gumbyframework.com
 
-## Helium
+Helium
+------
 
-Helium is a framework for rapid prototyping and production-ready development. In many ways it's similar to both Twitter Bootstrap and ZURB Foundation - in fact, it uses bits of their code. Unlike either of these two frameworks, however, Helium is designed to be much more lightweight and easier to tinker with.
+Helium is a framework for rapid prototyping and production-ready development. In many ways it’s similar to both Twitter Bootstrap and ZURB Foundation - in fact, it uses bits of their code. Unlike either of these two frameworks, however, Helium is designed to be much more lightweight and easier to tinker with.
 
 **Responsive:** Yes
 
 **Website:** https://github.com/cbrauckmuller/helium
 
-## Ink
+Ink
+---
 
 > Ink is a set of tools for quick development of web interfaces.
 
-It offers a fluid and responsive grid, common interface elements, interactive components, a design-first approach with ease of use and simplicity at its core. Start integrating Ink in your projects and remove the hassle of building the basics, staying free to focus on what's important.
+It offers a fluid and responsive grid, common interface elements, interactive components, a design-first approach with ease of use and simplicity at its core. Start integrating Ink in your projects and remove the hassle of building the basics, staying free to focus on what’s important.
 
 **Responsive:** Yes
 
@@ -243,13 +268,14 @@ It offers a fluid and responsive grid, common interface elements, interactive co
 
 **Github:** http://github.com/sapo/ink/
 
-## Kickoff
+Kickoff
+-------
 
 > A lightweight front-end framework for creating scalable, responsive sites
 
 Kickoff is an actively maintained front-end framework, created by Zander Martineau and Ashley Nolan.
 
-The framework is not meant to be too prescriptive - we don't want to force developers into a certain coding style - and so can be used as a starting point for any type of project.
+The framework is not meant to be too prescriptive - we don’t want to force developers into a certain coding style - and so can be used as a starting point for any type of project.
 
 **Responsive:** Yes
 
@@ -257,7 +283,8 @@ The framework is not meant to be too prescriptive - we don't want to force devel
 
 **Github:** https://github.com/tmwagency/kickoff
 
-## Kube
+Kube
+----
 
 > CSS-framework for professional developers.
 
@@ -267,9 +294,10 @@ Minimal and enough. Adaptive and responsive. Revolution grid and beautiful typog
 
 **Website:** http://imperavi.com/kube/
 
-## Layers
+Layers
+------
 
-> Lightweight. Unobtrusive. Style-agnostic. Build your look on the web, not Twitter's – and build it fluid.
+> Lightweight. Unobtrusive. Style-agnostic. Build your look on the web, not Twitter’s – and build it fluid.
 
 Layers CSS is aimed for practical use and comes with zero bullshit.
 
@@ -279,7 +307,8 @@ Layers CSS is aimed for practical use and comes with zero bullshit.
 
 **Bitbucket:** https://bitbucket.org/Eiskis/layers-css/src/tip/source/layers/
 
-## Less Framework
+Less Framework
+--------------
 
 > An adaptive CSS grid system.
 
@@ -289,7 +318,8 @@ Less Framework is a CSS grid system for designing adaptive web­sites. It contai
 
 **Website:** http://lessframework.com/
 
-## Lovely CSS Framework
+Lovely CSS Framework
+--------------------
 
 > The Lovely CSS Framework is a simple and straight forward way to easily deploy an XHTML/CSS site.
 
@@ -299,7 +329,8 @@ Based on a simple 960px wide grid system, featuring multiple column layouts, and
 
 **Website:** http://code.google.com/p/lovely-css/
 
-## Malo
+Malo
+----
 
 > Malo is ultra small css library for building web sites.
 
@@ -309,17 +340,19 @@ Malo is ultra small css library for building web sites. It is meant to be struct
 
 **Website:** http://code.google.com/p/malo/
 
-## PureCSS
+PureCSS
+-------
 
 > A set of small, responsive CSS modules that you can use in every web project, built by the YUI team at Yahoo!.
 
-PureCSS is a collection of responsive 'drop-ins' built with - you guessed it! - pure CSS! The PureCSS website also has a skin builder on their website, so you're restricted by default colors no more.
+PureCSS is a collection of responsive ‘drop-ins’ built with - you guessed it! - pure CSS! The PureCSS website also has a skin builder on their website, so you’re restricted by default colors no more.
 
 **Responsive:** Yes
 
 **Website:** http://purecss.io/
 
-## Ribs
+Ribs
+----
 
 > The evolution of Skeleton: A Beautiful Boilerplate for Responsive, Mobile-Friendly Development.
 
@@ -329,7 +362,8 @@ Ribs is a modernised, maintained and feature rich fork of the original Skeleton 
 
 **Website:** https://github.com/nickpack/Ribs
 
-## RÖCSSTI
+RÖCSSTI
+-------
 
 RÖCSSTI is a CSS micro-framework which includes accessibility notions, typo settings, IE fixes, reusable classes, ect. It is the little brother of [KNACSS](http://www.knacss.com/). It also has LESS and Sass versions.
 
@@ -337,13 +371,14 @@ RÖCSSTI is a CSS micro-framework which includes accessibility notions, typo set
 
 **Website:** http://rocssti.nicolas-hoffmann.net/ & https://github.com/nico3333fr/ROCSSTI
 
-## Semantic UI
+Semantic UI
+-----------
 
 > UI is the vocabulary of the web.
 
 Semantic empowers designers and developers by creating a language for sharing UI.
 
-Pure is ridiculously tiny. The entire set of modules clocks in at 4.5KB\* minified and gzipped. Crafted with mobile devices in mind, it was important to us to keep our file sizes small, and every line of CSS was carefully considered. If you decide to only use a subset of these modules, you'll save even more bytes.
+Pure is ridiculously tiny. The entire set of modules clocks in at 4.5KB\* minified and gzipped. Crafted with mobile devices in mind, it was important to us to keep our file sizes small, and every line of CSS was carefully considered. If you decide to only use a subset of these modules, you’ll save even more bytes.
 
 **Responsive:** Yes
 
@@ -351,7 +386,8 @@ Pure is ridiculously tiny. The entire set of modules clocks in at 4.5KB\* minifi
 
 **Github:** https://github.com/jlukic/Semantic-UI
 
-## Crumpet
+Crumpet
+-------
 
 > A Deliciously Simple SASS/SCSS Responsive Framework
 
@@ -361,7 +397,8 @@ Everything is straight forward, all of the code is commented and gives you instr
 
 **Website:** https://github.com/AdamMarsBar/Crumpet
 
-## Jeet
+Jeet
+----
 
 > A CSS Grid System for Humans
 
@@ -371,7 +408,8 @@ Jeet allows you to express your page grid the same way a human would describe it
 
 **Website:** http://jeet.gs/
 
-## Skeleton
+Skeleton
+--------
 
 > A Beautiful Boilerplate for Responsive, Mobile-Friendly Development.
 
@@ -381,23 +419,26 @@ Skeleton is a small collection of CSS files that can help you rapidly develop si
 
 **Website:** http://www.getskeleton.com/
 
-## The Golden Grid
+The Golden Grid
+---------------
 
-The Golden Grid is a web grid system. It 's a product of the search for the perfect modern grid system. It 's meant to be a CSS tool for grid based web sites.
+The Golden Grid is a web grid system. It ’s a product of the search for the perfect modern grid system. It ’s meant to be a CSS tool for grid based web sites.
 
 **Responsive:** No
 
 **Website:** http://code.google.com/p/the-golden-grid/
 
-## Unsemantic
+Unsemantic
+----------
 
-Unsemantic is a fluid grid system that is the successor to the [960 Grid System](http://960.gs/). It works in a similar way, but instead of being a set number of columns, it's entirely based on percentages.
+Unsemantic is a fluid grid system that is the successor to the [960 Grid System](http://960.gs/). It works in a similar way, but instead of being a set number of columns, it’s entirely based on percentages.
 
 **Responsive:** Yes
 
 **Website:** http://unsemantic.com/
 
-## xCSS
+xCSS
+----
 
 > Object-Oriented CSS Framework
 
@@ -407,7 +448,8 @@ xCSS bases on CSS and empowers a straightforward and object-oriented workflow wh
 
 **Website:** http://xcss.antpaw.org/
 
-## YAML
+YAML
+----
 
 > “Yet Another Multicolumn Layout” (YAML)
 
@@ -417,21 +459,23 @@ YAML is an (X)HTML/CSS framework for creating modern and flexible floated layout
 
 **Website:** http://www.yaml.de/
 
-## YUI CSS
+YUI CSS
+-------
 
 > Simple CSS for the web
 
-The foundational YUI CSS is an extremely lightweight layer of responsive CSS for your projects. It offers a customizable responsive grid , along with styling for forms, tables, menus, popovers, notifications, images and more. Plays nice with YUI's JavaScript Framework.
+The foundational YUI CSS is an extremely lightweight layer of responsive CSS for your projects. It offers a customizable responsive grid , along with styling for forms, tables, menus, popovers, notifications, images and more. Plays nice with YUI’s JavaScript Framework.
 
 **Responsive:** Yes
 
 **Website:** http://yuilibrary.com/
 
-## Susy
+Susy
+----
 
 > Your markup. Your design. Our math.
 
-The web is a responsive place, from your lithe & lively development process to your end-user's super-tablet-multi-magic-lap-phone. You need grids that are powerful yet custom, reliable yet responsive.
+The web is a responsive place, from your lithe & lively development process to your end-user’s super-tablet-multi-magic-lap-phone. You need grids that are powerful yet custom, reliable yet responsive.
 
 **Responsive:** Yes
 
@@ -439,7 +483,8 @@ The web is a responsive place, from your lithe & lively development process to y
 
 **Github:** https://github.com/ericam/susy/
 
-## inuit.css
+inuit.css
+---------
 
 > A powerful, scalable, Sass-based, [BEM](http://bem.info/), OOCSS framework.
 
@@ -451,7 +496,8 @@ inuit.css is a Sass based, Object Oriented framework that is full of objects and
 
 **Github:** https://github.com/csswizardry/inuit.css/
 
-## Bijou
+Bijou
+-----
 
 > A beautiful CSS framework under 2kb
 
@@ -463,7 +509,8 @@ A small, yet beautiful CSS framework that weighs in under 2kb.
 
 **Github:** https://github.com/andhart/bijou
 
-## bootmetro
+bootmetro
+---------
 
 > metro style web framework
 
@@ -475,7 +522,8 @@ simple and flexible web framework to create elegant and modern web applications 
 
 **Github:** https://github.com/aozora/bootmetro
 
-## StackLayout
+StackLayout
+-----------
 
 > A flexible width, component based CSS layout system
 
@@ -487,7 +535,8 @@ StackLayout makes it incredibly easy to use semantic class names for particular 
 
 **Github:** https://github.com/camslice/StackLayout
 
-## IVORY Framework
+IVORY Framework
+---------------
 
 > imple, Flexible, Powerful
 

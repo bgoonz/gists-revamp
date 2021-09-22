@@ -1,8 +1,6 @@
-
-
 Heroku is an web application that makes deploying applications easy for a beginner.
 
-Before you begin deploying, **make sure to remove any `console.log`'s or `debugger`'s in any production code**. You can search your entire project folder if you are using them anywhere.
+Before you begin deploying, **make sure to remove any `console.log`’s or `debugger`’s in any production code**. You can search your entire project folder if you are using them anywhere.
 
 You will set up Heroku to run on a production, not development, version of your application. When a Node.js application like yours is pushed up to Heroku, it is identified as a Node.js application because of the `package.json` file. It runs `npm install` automatically. Then, if there is a `heroku-postbuild` script in the `package.json` file, it will run that script. Afterwards, it will automatically run `npm start`.
 
@@ -11,15 +9,15 @@ In the following phases, you will configure your application to work in producti
 Phase 1: Heroku Connection
 --------------------------
 
-If you haven't created a Heroku account yet, create one [here](https://signup.heroku.com/).
+If you haven’t created a Heroku account yet, create one [here](https://signup.heroku.com/).
 
-Add a new application in your [Heroku dashboard](https://dashboard.heroku.com/) named whatever you want. Under the "Resources" tab in your new application, click "Find more add-ons" and add the "Heroku Postgres" add-on with the free Hobby Dev setting.
+Add a new application in your [Heroku dashboard](https://dashboard.heroku.com/) named whatever you want. Under the “Resources” tab in your new application, click “Find more add-ons” and add the “Heroku Postgres” add-on with the free Hobby Dev setting.
 
 In your terminal, install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line). Afterwards, login to Heroku in your terminal by running the following:
 
     heroku login
 
-Add Heroku as a remote to your project's git repository in the following command and replace `<name-of-Heroku-app>` with the name of the application you created in the [Heroku dashboard](https://dashboard.heroku.com/).
+Add Heroku as a remote to your project’s git repository in the following command and replace `<name-of-Heroku-app>` with the name of the application you created in the [Heroku dashboard](https://dashboard.heroku.com/).
 
     heroku git:remote -a <name-of-Heroku-app>
 
@@ -28,19 +26,19 @@ Next, you will set up your Express + React application to be deployable to Herok
 Phase 2: Setting up your Express + React application
 ----------------------------------------------------
 
-Right now, your React application is on a different localhost port than your Express application. However, since your React application only consists of static files that don't need to bundled continuously with changes in production, your Express application can serve the React assets in production too. These static files live in the `frontend/build` folder after running `npm run build` in the `frontend` folder.
+Right now, your React application is on a different localhost port than your Express application. However, since your React application only consists of static files that don’t need to bundled continuously with changes in production, your Express application can serve the React assets in production too. These static files live in the `frontend/build` folder after running `npm run build` in the `frontend` folder.
 
 Add the following changes into your `backend/routes.index.js` file.
 
-At the root route, serve the React application's static `index.html` file along with `XSRF-TOKEN` cookie. Then serve up all the React application's static files using the `express.static` middleware. Serve the `index.html` and set the `XSRF-TOKEN` cookie again on all routes that don't start in `/api`. You should already have this set up in `backend/routes/index.js` which should now look like this:
+At the root route, serve the React application’s static `index.html` file along with `XSRF-TOKEN` cookie. Then serve up all the React application’s static files using the `express.static` middleware. Serve the `index.html` and set the `XSRF-TOKEN` cookie again on all routes that don’t start in `/api`. You should already have this set up in `backend/routes/index.js` which should now look like this:
 
     // backend/routes/index.js
     const express = require('express');
     const router = express.Router();
     const apiRouter = require('./api');
-    
+
     router.use('/api', apiRouter);
-    
+
     // Static routes
     // Serve React build files in production
     if (process.env.NODE_ENV === 'production') {
@@ -52,10 +50,10 @@ At the root route, serve the React application's static `index.html` file along 
           path.resolve(__dirname, '../../frontend', 'build', 'index.html')
         );
       });
-    
+
       // Serve the static assets in the frontend's build folder
       router.use(express.static(path.resolve("../frontend/build")));
-    
+
       // Serve the frontend's index.html file at all other routes NOT starting with /api
       router.get(/^(?!\/?api).*/, (req, res) => {
         res.cookie('XSRF-TOKEN', req.csrfToken());
@@ -64,7 +62,7 @@ At the root route, serve the React application's static `index.html` file along 
         );
       });
     }
-    
+
     // Add a XSRF-TOKEN cookie in development
     if (process.env.NODE_ENV !== 'production') {
       router.get('/api/csrf/restore', (req, res) => {
@@ -72,12 +70,12 @@ At the root route, serve the React application's static `index.html` file along 
         res.status(201).json({});
       });
     }
-    
+
     module.exports = router;
 
-Your Express backend's `package.json` should include scripts to run the `sequelize` CLI commands.
+Your Express backend’s `package.json` should include scripts to run the `sequelize` CLI commands.
 
-The `backend/package.json`'s scripts should now look like this:
+The `backend/package.json`’s scripts should now look like this:
 
       "scripts": {
         "sequelize": "sequelize",
@@ -101,7 +99,7 @@ Define a `sequelize` script that will run `npm run sequelize` in the `backend` f
 
 Finally, define a `start` that will run `npm start` in the \`backend folder.
 
-The root `package.json`'s scripts should look like this:
+The root `package.json`’s scripts should look like this:
 
       "scripts": {
         "heroku-postbuild": "npm run build --prefix frontend",
@@ -120,7 +118,7 @@ Finally, commit your changes.
 Phase 3: Deploy to Heroku
 -------------------------
 
-Once you're finished setting this up, navigate to your application's Heroku dashboard. Under "Settings" there is a section for "Config Vars". Click the `Reveal Config Vars` button to see all your production environment variables. You should have a `DATABASE_URL` environment variable already from the Heroku Postgres add-on.
+Once you’re finished setting this up, navigate to your application’s Heroku dashboard. Under “Settings” there is a section for “Config Vars”. Click the `Reveal Config Vars` button to see all your production environment variables. You should have a `DATABASE_URL` environment variable already from the Heroku Postgres add-on.
 
 Add environment variables for `JWT_EXPIRES_IN` and `JWT_SECRET` and any other environment variables you need for production.
 
@@ -148,7 +146,7 @@ To seed the production database, run:
 
     heroku run npm run sequelize db:seed:all
 
-Note: You can interact with your database this way as you'd like, but beware that `db:drop` **cannot** be run in the Heroku environment. If you want to drop and create the database, you need to remove and add back the "Heroku Postgres" add-on.
+Note: You can interact with your database this way as you’d like, but beware that `db:drop` **cannot** be run in the Heroku environment. If you want to drop and create the database, you need to remove and add back the “Heroku Postgres” add-on.
 
 Another way to interact with the production application is by opening a bash shell through your terminal by running:
 
@@ -170,5 +168,4 @@ The logs may clue you into why you are experiencing errors or different behavior
 
 ### Wrapping up
 
-You can also open your site in the browser with `heroku open`. If it works, congratulations, you've created a production-ready, dynamic, full-stack website that can be securely accessed anywhere in the world! Give yourself a pat on the back. You're a web developer!
-
+You can also open your site in the browser with `heroku open`. If it works, congratulations, you’ve created a production-ready, dynamic, full-stack website that can be securely accessed anywhere in the world! Give yourself a pat on the back. You’re a web developer!

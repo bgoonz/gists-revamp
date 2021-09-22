@@ -2,7 +2,7 @@ Interactive Spectrogram in the browser!
 
 Same as example in: https://github.com/vlandham/spectrogramJS - but in blocks.
 
-Click 'analyze' to play the sound and create spectrogram.
+Click ‘analyze’ to play the sound and create spectrogram.
 
 Uses web audio api.
 

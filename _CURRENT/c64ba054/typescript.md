@@ -1,16 +1,18 @@
-# React Redux TypeScript Quick Start
+React Redux TypeScript Quick Start
+==================================
 
      tip What You’ll Learn
 
-- How to set up and use Redux Toolkit and React Redux with TypeScript
+-   How to set up and use Redux Toolkit and React Redux with TypeScript
 
-  info Prerequisites
+    info Prerequisites
 
-- Knowledge of React [Hooks](https://reactjs.org/docs/hooks-intro.html)
-- Understanding of [Redux terms and concepts](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
-- Understanding of TypeScript syntax and concepts
+-   Knowledge of React [Hooks](https://reactjs.org/docs/hooks-intro.html)
+-   Understanding of [Redux terms and concepts](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
+-   Understanding of TypeScript syntax and concepts
 
-## Introduction
+Introduction
+------------
 
 Welcome to the React Redux TypeScript Quick Start tutorial! **This tutorial will briefly show how to use TypeScript with Redux Toolkit**.
 
@@ -24,7 +26,8 @@ As of React Redux v7.2.3, the `react-redux` package has a dependency on `@types/
 
 The [Redux+TS template for Create-React-App](https://github.com/reduxjs/cra-template-redux-typescript) comes with a working example of these patterns already configured.
 
-## Project Setup
+Project Setup
+-------------
 
 ### Define Root State and Dispatch Types
 
@@ -32,7 +35,7 @@ The [Redux+TS template for Create-React-App](https://github.com/reduxjs/cra-temp
 
 Since those are types, it’s safe to export them directly from your store setup file such as `app/store.ts` and import them directly into other files.
 
-\`\`\`ts title=“app/store.ts” import { configureStore } from ‘<span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span>’ // …
+\`\`\`ts title=“app/store.ts” import { configureStore } from ‘<span class="citation" data-cites="reduxjs/toolkit"><span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span></span>’ // …
 
 const store = configureStore({ reducer: { posts: postsReducer, comments: commentsReducer, users: usersReducer, }, })
 
@@ -42,8 +45,8 @@ const store = configureStore({ reducer: { posts: postsReducer, comments: comment
 
 While it’s possible to import the `RootState` and `AppDispatch` types into each component, it’s **better to create typed versions of the `useDispatch` and `useSelector` hooks for usage in your application**. . This is important for a couple reasons:
 
-- For `useSelector`, it saves you the need to type `(state: RootState)` every time
-- For `useDispatch`, the default `Dispatch` type does not know about thunks. In order to correctly dispatch thunks, you need to use the specific customized `AppDispatch` type from the store that includes the thunk middleware types, and use that with `useDispatch`. Adding a pre-typed `useDispatch` hook keeps you from forgetting to import `AppDispatch` where it’s needed.
+-   For `useSelector`, it saves you the need to type `(state: RootState)` every time
+-   For `useDispatch`, the default `Dispatch` type does not know about thunks. In order to correctly dispatch thunks, you need to use the specific customized `AppDispatch` type from the store that includes the thunk middleware types, and use that with `useDispatch`. Adding a pre-typed `useDispatch` hook keeps you from forgetting to import `AppDispatch` where it’s needed.
 
 Since these are actual variables, not types, it’s important to define them in a separate file such as `app/hooks.ts`, not the store setup file. This allows you to import them into any component file that needs to use the hooks, and avoids potential circular import dependency issues.
 
@@ -51,7 +54,8 @@ Since these are actual variables, not types, it’s important to define them in 
 
 // highlight-start // Use throughout your app instead of plain `useDispatch` and `useSelector` export const useAppDispatch = () =&gt; useDispatch() export const useAppSelector: TypedUseSelectorHook = useSelector // highlight-end \`\`\`
 
-## Application Usage
+Application Usage
+-----------------
 
 ### Define Slice State and Action Types
 
@@ -61,7 +65,7 @@ All generated actions should be defined using the `PayloadAction<T>` type from R
 
 You can safely import the `RootState` type from the store file here. It’s a circular import, but the TypeScript compiler can correctly handle that for types. This may be needed for use cases like writing selector functions.
 
-\`\`\`ts title=“features/counter/counterSlice.ts” import { createSlice, PayloadAction } from ‘<span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span>’ import type { RootState } from ‘../../app/store’
+\`\`\`ts title=“features/counter/counterSlice.ts” import { createSlice, PayloadAction } from ‘<span class="citation" data-cites="reduxjs/toolkit"><span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span></span>’ import type { RootState } from ‘../../app/store’
 
 // highlight-start // Define a type for the slice state interface CounterState { value: number }
 
@@ -98,6 +102,7 @@ export function Counter() { // highlight-start // The `state` arg is correctly t
 
 // omit rendering logic } \`\`\`
 
-## What’s Next?
+What’s Next?
+------------
 
 See [the “Usage with TypeScript” page](../using-react-redux/usage-with-typescript.md) for extended details on how to use Redux Toolkit’s APIs with TypeScript.

@@ -55,8 +55,8 @@ Mind the last carry.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "Binary Search": <https://leetcode.com/tag/binary-search> "Divide and Conquer": <https://leetcode.com/tag/divide-and-conquer>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a> “Divide and Conquer”: <a href="https://leetcode.com/tag/divide-and-conquer" class="uri">https://leetcode.com/tag/divide-and-conquer</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/description/)
 --------------------------------------------------------------------------------------------------------
@@ -160,8 +160,8 @@ Same goes `nums1[i-1] <= nums2[j] <= nums1[i]`.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "String": <https://leetcode.com/tag/string>
-------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a>
+--------------------------------------------------------------------------------------------------------------------------------------
 
 [6. ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/description/)
 ------------------------------------------------------------------------------------
@@ -268,8 +268,8 @@ If row == 1 or row == numRows, skip the odd columns.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Math": <https://leetcode.com/tag/math> Similar Questions: "String to Integer (atoi)": <https://leetcode.com/problems/string-to-integer-atoi>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> Similar Questions: “String to Integer (atoi)”: <a href="https://leetcode.com/problems/string-to-integer-atoi" class="uri">https://leetcode.com/problems/string-to-integer-atoi</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/description/)
 --------------------------------------------------------------------------------
@@ -333,8 +333,8 @@ Pure mathamatical solution.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Math": <https://leetcode.com/tag/math> "String": <https://leetcode.com/tag/string> Similar Questions: "Reverse Integer": <https://leetcode.com/problems/reverse-integer> "Valid Number": <https://leetcode.com/problems/valid-number>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> Similar Questions: “Reverse Integer”: <a href="https://leetcode.com/problems/reverse-integer" class="uri">https://leetcode.com/problems/reverse-integer</a> “Valid Number”: <a href="https://leetcode.com/problems/valid-number" class="uri">https://leetcode.com/problems/valid-number</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/description/)
 ------------------------------------------------------------------------------------------------
@@ -455,8 +455,8 @@ General solution.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Math": <https://leetcode.com/tag/math> Similar Questions: "Palindrome Linked List": <https://leetcode.com/problems/palindrome-linked-list>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> Similar Questions: “Palindrome Linked List”: <a href="https://leetcode.com/problems/palindrome-linked-list" class="uri">https://leetcode.com/problems/palindrome-linked-list</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/description/)
 ------------------------------------------------------------------------------------
@@ -548,8 +548,8 @@ General solution. Combining [7. Reverse Integer](file:///C:/MY-WEB-DEV/06-DS-ALG
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "String": <https://leetcode.com/tag/string> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Wildcard Matching": <https://leetcode.com/problems/wildcard-matching>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Wildcard Matching”: <a href="https://leetcode.com/problems/wildcard-matching" class="uri">https://leetcode.com/problems/wildcard-matching</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/description/)
 ---------------------------------------------------------------------------------------------------------
@@ -625,7 +625,7 @@ Cheating with real RegExp matching.
 
 #### TWO
 
-Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
+Let f(i, j) be the matching result of s\[0…i) and p\[0…j).
 
     f(0, j) =
         j == 0 || // empty
@@ -682,15 +682,15 @@ Let f(i, j) be the matching result of s\[0...i) and p\[0...j).
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "Trapping Rain Water": <https://leetcode.com/problems/trapping-rain-water>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “Trapping Rain Water”: <a href="https://leetcode.com/problems/trapping-rain-water" class="uri">https://leetcode.com/problems/trapping-rain-water</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [11. Container With Most Water](https://leetcode.com/problems/CONTENT-with-most-water/description/)
 ---------------------------------------------------------------------------------------------------
 
 ### Problem:
 
-Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+Given n non-negative integers a1, a2, …, an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
 
 Note: You may not slant the container and n is at least 2.
 
@@ -702,7 +702,7 @@ If we look at the simple brute force approach, where we choose one point at a ti
 
 Greedy Algorithm can help us skip some of the conditions. It is base on a fact that the area between two columns are determined by the shorter one.
 
-Let's say we have pointer `l` and `r` at the begin and end of a distance, and the area is `area(l, r)`, how should we narrow down the distance?
+Let’s say we have pointer `l` and `r` at the begin and end of a distance, and the area is `area(l, r)`, how should we narrow down the distance?
 
 If `height[l] < height[r]`, we know that the height of the area will never be greater than `height[l]` if we keep `l`. Now if we get rid of `r`, the area can only get smaller since the distance is shorter, and the height is at most `height[l]`.
 
@@ -731,8 +731,8 @@ What if `height[l] == height[r]`? It is safe to get rid of both. We do not need 
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Math": <https://leetcode.com/tag/math> "String": <https://leetcode.com/tag/string> Similar Questions: "Roman to Integer": <https://leetcode.com/problems/roman-to-integer> "Integer to English Words": <https://leetcode.com/problems/integer-to-english-words>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> Similar Questions: “Roman to Integer”: <a href="https://leetcode.com/problems/roman-to-integer" class="uri">https://leetcode.com/problems/roman-to-integer</a> “Integer to English Words”: <a href="https://leetcode.com/problems/integer-to-english-words" class="uri">https://leetcode.com/problems/integer-to-english-words</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/)
 -----------------------------------------------------------------------------------
@@ -750,7 +750,7 @@ Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, 
     D             500
     M             1000
 
-For example, two is written as `II` in Roman numeral, just two one's added together. Twelve is written as, `XII`, which is simply `X` + `II`. The number twenty seven is written as `XXVII`, which is `XX` + `V` + `II`.
+For example, two is written as `II` in Roman numeral, just two one’s added together. Twelve is written as, `XII`, which is simply `X` + `II`. The number twenty seven is written as `XXVII`, which is `XX` + `V` + `II`.
 
 Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
 
@@ -815,8 +815,8 @@ Treat 4, 40, 400 and 9, 90, 900 specially.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Math": <https://leetcode.com/tag/math> "String": <https://leetcode.com/tag/string> Similar Questions: "Integer to Roman": <https://leetcode.com/problems/integer-to-roman>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> Similar Questions: “Integer to Roman”: <a href="https://leetcode.com/problems/integer-to-roman" class="uri">https://leetcode.com/problems/integer-to-roman</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/description/)
 -----------------------------------------------------------------------------------
@@ -834,7 +834,7 @@ Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, 
     D             500
     M             1000
 
-For example, two is written as `II` in Roman numeral, just two one's added together. Twelve is written as, `XII`, which is simply `X` + `II`. The number twenty seven is written as `XXVII`, which is `XX` + `V` + `II`.
+For example, two is written as `II` in Roman numeral, just two one’s added together. Twelve is written as, `XII`, which is simply `X` + `II`. The number twenty seven is written as `XXVII`, which is `XX` + `V` + `II`.
 
 Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
 
@@ -873,7 +873,7 @@ Given a roman numeral, convert it to an integer. Input is guaranteed to be withi
 
 ### Solution:
 
-Normally we just add up the digits, except when the digit is greater than its left (e.g. IV). In that case we need to fallback and remove the last digit then combine the two as new digit. That is why we subtract the last digit twice.
+Normally we just add up the digits, except when the digit is greater than its left (e.g. IV). In that case we need to fallback and remove the last digit then combine the two as new digit. That is why we subtract the last digit twice.
 
     /**
      * @param {string} s
@@ -903,8 +903,8 @@ Normally we just add up the digits, except when the digit is greater than its le
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "String": <https://leetcode.com/tag/string>
-----------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a>
+------------------------------------------------------------------------------------------------------------------------------------
 
 [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/)
 ---------------------------------------------------------------------------------------------
@@ -999,8 +999,8 @@ General solution. Build up the prefix.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "Two Sum": <https://leetcode.com/problems/two-sum> "3Sum Closest": <https://leetcode.com/problems/3sum-closest> "4Sum": <https://leetcode.com/problems/4sum> "3Sum Smaller": <https://leetcode.com/problems/3sum-smaller>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “Two Sum”: <a href="https://leetcode.com/problems/two-sum" class="uri">https://leetcode.com/problems/two-sum</a> “3Sum Closest”: <a href="https://leetcode.com/problems/3sum-closest" class="uri">https://leetcode.com/problems/3sum-closest</a> “4Sum”: <a href="https://leetcode.com/problems/4sum" class="uri">https://leetcode.com/problems/4sum</a> “3Sum Smaller”: <a href="https://leetcode.com/problems/3sum-smaller" class="uri">https://leetcode.com/problems/3sum-smaller</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [15. 3Sum](https://leetcode.com/problems/3sum/description/)
 -----------------------------------------------------------
@@ -1083,8 +1083,8 @@ Skip any duplicate number as we iterate to avoid duplicate triplets.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "3Sum": <https://leetcode.com/problems/3sum> "3Sum Smaller": <https://leetcode.com/problems/3sum-smaller>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “3Sum”: <a href="https://leetcode.com/problems/3sum" class="uri">https://leetcode.com/problems/3sum</a> “3Sum Smaller”: <a href="https://leetcode.com/problems/3sum-smaller" class="uri">https://leetcode.com/problems/3sum-smaller</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [16. 3Sum Closest](https://leetcode.com/problems/3sum-closest/description/)
 ---------------------------------------------------------------------------
@@ -1146,8 +1146,8 @@ Simplified version of [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-A
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "String": <https://leetcode.com/tag/string> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Generate Parentheses": <https://leetcode.com/problems/generate-parentheses> "Combination Sum": <https://leetcode.com/problems/combination-sum> "Binary Watch": <https://leetcode.com/problems/binary-watch>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Generate Parentheses”: <a href="https://leetcode.com/problems/generate-parentheses" class="uri">https://leetcode.com/problems/generate-parentheses</a> “Combination Sum”: <a href="https://leetcode.com/problems/combination-sum" class="uri">https://leetcode.com/problems/combination-sum</a> “Binary Watch”: <a href="https://leetcode.com/problems/binary-watch" class="uri">https://leetcode.com/problems/binary-watch</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
 -----------------------------------------------------------------------------------------------------------------------------
@@ -1243,8 +1243,8 @@ General recursive DFS solution.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Hash Table": <https://leetcode.com/tag/hash-table> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "Two Sum": <https://leetcode.com/problems/two-sum> "3Sum": <https://leetcode.com/problems/3sum> "4Sum II": <https://leetcode.com/problems/4sum-ii>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Hash Table”: <a href="https://leetcode.com/tag/hash-table" class="uri">https://leetcode.com/tag/hash-table</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “Two Sum”: <a href="https://leetcode.com/problems/two-sum" class="uri">https://leetcode.com/problems/two-sum</a> “3Sum”: <a href="https://leetcode.com/problems/3sum" class="uri">https://leetcode.com/problems/3sum</a> “4Sum II”: <a href="https://leetcode.com/problems/4sum-ii" class="uri">https://leetcode.com/problems/4sum-ii</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [18. 4Sum](https://leetcode.com/problems/4sum/description/)
 -----------------------------------------------------------
@@ -1318,8 +1318,8 @@ Like [15. 3Sum](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> "Two Pointers": <https://leetcode.com/tag/two-pointers>
-------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)
 -------------------------------------------------------------------------------------------------------------------
@@ -1389,8 +1389,8 @@ Boundaries that should be awared of:
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "String": <https://leetcode.com/tag/string> "Stack": <https://leetcode.com/tag/stack> Similar Questions: "Generate Parentheses": <https://leetcode.com/problems/generate-parentheses> "Longest Valid Parentheses": <https://leetcode.com/problems/longest-valid-parentheses> "Remove Invalid Parentheses": <https://leetcode.com/problems/remove-invalid-parentheses>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Stack”: <a href="https://leetcode.com/tag/stack" class="uri">https://leetcode.com/tag/stack</a> Similar Questions: “Generate Parentheses”: <a href="https://leetcode.com/problems/generate-parentheses" class="uri">https://leetcode.com/problems/generate-parentheses</a> “Longest Valid Parentheses”: <a href="https://leetcode.com/problems/longest-valid-parentheses" class="uri">https://leetcode.com/problems/longest-valid-parentheses</a> “Remove Invalid Parentheses”: <a href="https://leetcode.com/problems/remove-invalid-parentheses" class="uri">https://leetcode.com/problems/remove-invalid-parentheses</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)
 -------------------------------------------------------------------------------------
@@ -1469,8 +1469,8 @@ And since there is only bracket characters, the last open bracket happens to be 
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> Similar Questions: "Merge k Sorted Lists": <https://leetcode.com/problems/merge-k-sorted-lists> "Merge Sorted Array": <https://leetcode.com/problems/merge-sorted-array> "Sort List": <https://leetcode.com/problems/sort-list> "Shortest Word Distance II": <https://leetcode.com/problems/shortest-word-distance-ii>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> Similar Questions: “Merge k Sorted Lists”: <a href="https://leetcode.com/problems/merge-k-sorted-lists" class="uri">https://leetcode.com/problems/merge-k-sorted-lists</a> “Merge Sorted Array”: <a href="https://leetcode.com/problems/merge-sorted-array" class="uri">https://leetcode.com/problems/merge-sorted-array</a> “Sort List”: <a href="https://leetcode.com/problems/sort-list" class="uri">https://leetcode.com/problems/sort-list</a> “Shortest Word Distance II”: <a href="https://leetcode.com/problems/shortest-word-distance-ii" class="uri">https://leetcode.com/problems/shortest-word-distance-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
 -----------------------------------------------------------------------------------------------
@@ -1527,8 +1527,8 @@ Keep tracking the head of two lists and keep moving the pointer of smaller one t
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "String": <https://leetcode.com/tag/string> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Letter Combinations of a Phone Number": <https://leetcode.com/problems/letter-combinations-of-a-phone-number> "Valid Parentheses": <https://leetcode.com/problems/valid-parentheses>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Letter Combinations of a Phone Number”: <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number" class="uri">https://leetcode.com/problems/letter-combinations-of-a-phone-number</a> “Valid Parentheses”: <a href="https://leetcode.com/problems/valid-parentheses" class="uri">https://leetcode.com/problems/valid-parentheses</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/description/)
 -------------------------------------------------------------------------------------------
@@ -1628,8 +1628,8 @@ BFS.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> "Divide and Conquer": <https://leetcode.com/tag/divide-and-conquer> "Heap": <https://leetcode.com/tag/heap> Similar Questions: "Merge Two Sorted Lists": <https://leetcode.com/problems/merge-two-sorted-lists> "Ugly Number II": <https://leetcode.com/problems/ugly-number-ii>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> “Divide and Conquer”: <a href="https://leetcode.com/tag/divide-and-conquer" class="uri">https://leetcode.com/tag/divide-and-conquer</a> “Heap”: <a href="https://leetcode.com/tag/heap" class="uri">https://leetcode.com/tag/heap</a> Similar Questions: “Merge Two Sorted Lists”: <a href="https://leetcode.com/problems/merge-two-sorted-lists" class="uri">https://leetcode.com/problems/merge-two-sorted-lists</a> “Ugly Number II”: <a href="https://leetcode.com/problems/ugly-number-ii" class="uri">https://leetcode.com/problems/ugly-number-ii</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/description/)
 -------------------------------------------------------------------------------------------
@@ -1725,8 +1725,8 @@ Divide N lists into ceil(N/2) pairs and merge your way up.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> Similar Questions: "Reverse Nodes in k-Group": <https://leetcode.com/problems/reverse-nodes-in-k-group>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> Similar Questions: “Reverse Nodes in k-Group”: <a href="https://leetcode.com/problems/reverse-nodes-in-k-group" class="uri">https://leetcode.com/problems/reverse-nodes-in-k-group</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/description/)
 -----------------------------------------------------------------------------------------
@@ -1742,7 +1742,7 @@ Given a linked list, swap every two adjacent nodes and return its head.
 **Note:**
 
 -   Your algorithm should use only constant extra space.
--   You may **not** modify the values in the list's nodes, only nodes itself may be changed.
+-   You may **not** modify the values in the list’s nodes, only nodes itself may be changed.
 
 ### Solution:
 
@@ -1781,8 +1781,8 @@ Given a linked list, swap every two adjacent nodes and return its head.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> Similar Questions: "Swap Nodes in Pairs": <https://leetcode.com/problems/swap-nodes-in-pairs>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> Similar Questions: “Swap Nodes in Pairs”: <a href="https://leetcode.com/problems/swap-nodes-in-pairs" class="uri">https://leetcode.com/problems/swap-nodes-in-pairs</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [25. Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/description/)
 ---------------------------------------------------------------------------------------------------
@@ -1804,7 +1804,7 @@ For *k* = 3, you should return: `3->2->1->4->5`
 **Note:**
 
 -   Only constant extra memory is allowed.
--   You may not alter the values in the list's nodes, only nodes itself may be changed.
+-   You may not alter the values in the list’s nodes, only nodes itself may be changed.
 
 ### Solution:
 
@@ -1866,8 +1866,8 @@ For *k* = 3, you should return: `3->2->1->4->5`
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "Remove Element": <https://leetcode.com/problems/remove-element> "Remove Duplicates from Sorted Array II": <https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “Remove Element”: <a href="https://leetcode.com/problems/remove-element" class="uri">https://leetcode.com/problems/remove-element</a> “Remove Duplicates from Sorted Array II”: <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii" class="uri">https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
 -------------------------------------------------------------------------------------------------------------------------
@@ -1933,8 +1933,8 @@ The result array can only be shorter. That is why we can build the array in-plac
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "Remove Duplicates from Sorted Array": <https://leetcode.com/problems/remove-duplicates-from-sorted-array> "Remove Linked List Elements": <https://leetcode.com/problems/remove-linked-list-elements> "Move Zeroes": <https://leetcode.com/problems/move-zeroes>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “Remove Duplicates from Sorted Array”: <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array" class="uri">https://leetcode.com/problems/remove-duplicates-from-sorted-array</a> “Remove Linked List Elements”: <a href="https://leetcode.com/problems/remove-linked-list-elements" class="uri">https://leetcode.com/problems/remove-linked-list-elements</a> “Move Zeroes”: <a href="https://leetcode.com/problems/move-zeroes" class="uri">https://leetcode.com/problems/move-zeroes</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [27. Remove Element](https://leetcode.com/problems/remove-element/description/)
 -------------------------------------------------------------------------------
@@ -1945,7 +1945,7 @@ Given an array *nums* and a value *val*, remove all instances of that value [**i
 
 Do not allocate extra space for another array, you must do this by **modifying the input array in-place** with O(1) extra memory.
 
-The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+The order of elements can be changed. It doesn’t matter what you leave beyond the new length.
 
 **Example 1:**
 
@@ -2005,8 +2005,8 @@ The order does not matter. So just take the last number to fill the vacancy.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Math": <https://leetcode.com/tag/math> "Binary Search": <https://leetcode.com/tag/binary-search>
-------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers/description/)
 -----------------------------------------------------------------------------------------
@@ -2080,8 +2080,8 @@ Replace multiplication and division with binary shifting.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> Similar Questions: "Permutations": <https://leetcode.com/problems/permutations> "Permutations II": <https://leetcode.com/problems/permutations-ii> "Permutation Sequence": <https://leetcode.com/problems/permutation-sequence> "Palindrome Permutation II": <https://leetcode.com/problems/palindrome-permutation-ii>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> Similar Questions: “Permutations”: <a href="https://leetcode.com/problems/permutations" class="uri">https://leetcode.com/problems/permutations</a> “Permutations II”: <a href="https://leetcode.com/problems/permutations-ii" class="uri">https://leetcode.com/problems/permutations-ii</a> “Permutation Sequence”: <a href="https://leetcode.com/problems/permutation-sequence" class="uri">https://leetcode.com/problems/permutation-sequence</a> “Palindrome Permutation II”: <a href="https://leetcode.com/problems/palindrome-permutation-ii" class="uri">https://leetcode.com/problems/palindrome-permutation-ii</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [31. Next Permutation](https://leetcode.com/problems/next-permutation/description/)
 -----------------------------------------------------------------------------------
@@ -2149,8 +2149,8 @@ Swap the two.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Binary Search": <https://leetcode.com/tag/binary-search> Similar Questions: "Search in Rotated Sorted Array II": <https://leetcode.com/problems/search-in-rotated-sorted-array-ii> "Find Minimum in Rotated Sorted Array": <https://leetcode.com/problems/find-minimum-in-rotated-sorted-array>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a> Similar Questions: “Search in Rotated Sorted Array II”: <a href="https://leetcode.com/problems/search-in-rotated-sorted-array-ii" class="uri">https://leetcode.com/problems/search-in-rotated-sorted-array-ii</a> “Find Minimum in Rotated Sorted Array”: <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array" class="uri">https://leetcode.com/problems/find-minimum-in-rotated-sorted-array</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
 ---------------------------------------------------------------------------------------------------------------
@@ -2165,7 +2165,7 @@ You are given a target value to search. If found in the array return its index, 
 
 You may assume no duplicate exists in the array.
 
-Your algorithm's runtime complexity must be in the order of *O*(log *n*).
+Your algorithm’s runtime complexity must be in the order of *O*(log *n*).
 
 **Example 1:**
 
@@ -2237,8 +2237,8 @@ Whenever we choose a pivot, it must be in one of the two sorted parts of the rot
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Binary Search": <https://leetcode.com/tag/binary-search> Similar Questions: "First Bad Version": <https://leetcode.com/problems/first-bad-version>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a> Similar Questions: “First Bad Version”: <a href="https://leetcode.com/problems/first-bad-version" class="uri">https://leetcode.com/problems/first-bad-version</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2247,7 +2247,7 @@ Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Bi
 
 Given an array of integers `nums` sorted in ascending order, find the starting and ending position of a given `target` value.
 
-Your algorithm's runtime complexity must be in the order of *O*(log *n*).
+Your algorithm’s runtime complexity must be in the order of *O*(log *n*).
 
 If the target is not found in the array, return `[-1, -1]`.
 
@@ -2329,8 +2329,8 @@ If we want to get the first, we dump the right half. Vice versa.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> "Binary Search": <https://leetcode.com/tag/binary-search> Similar Questions: "First Bad Version": <https://leetcode.com/problems/first-bad-version>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a> Similar Questions: “First Bad Version”: <a href="https://leetcode.com/problems/first-bad-version" class="uri">https://leetcode.com/problems/first-bad-version</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/description/)
 -----------------------------------------------------------------------------------------------
@@ -2393,8 +2393,8 @@ Same as simple binary search except it returns the start index when does not fin
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Hash Table": <https://leetcode.com/tag/hash-table> Similar Questions: "Sudoku Solver": <https://leetcode.com/problems/sudoku-solver>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Hash Table”: <a href="https://leetcode.com/tag/hash-table" class="uri">https://leetcode.com/tag/hash-table</a> Similar Questions: “Sudoku Solver”: <a href="https://leetcode.com/problems/sudoku-solver" class="uri">https://leetcode.com/problems/sudoku-solver</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/)
 ---------------------------------------------------------------------------
@@ -2498,8 +2498,8 @@ Scan the board once.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Hash Table": <https://leetcode.com/tag/hash-table> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Valid Sudoku": <https://leetcode.com/problems/valid-sudoku>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Hash Table”: <a href="https://leetcode.com/tag/hash-table" class="uri">https://leetcode.com/tag/hash-table</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Valid Sudoku”: <a href="https://leetcode.com/problems/valid-sudoku" class="uri">https://leetcode.com/problems/valid-sudoku</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [37. Sudoku Solver](https://leetcode.com/problems/sudoku-solver/description/)
 -----------------------------------------------------------------------------
@@ -2517,10 +2517,10 @@ A sudoku solution must satisfy **all of the following rules**:
 Empty cells are indicated by the character `'.'`.
 
 ![250px-Sudoku-by-L2G-20050714.svg.png](./completeLEETCODE_files/250px-Sudoku-by-L2G-20050714.svg.png)  
-A sudoku puzzle...
+A sudoku puzzle…
 
 ![250px-Sudoku-by-L2G-20050714\_solution.svg.png](./completeLEETCODE_files/250px-Sudoku-by-L2G-20050714_solution.svg.png)  
-...and its solution numbers marked in red.
+…and its solution numbers marked in red.
 
 **Note:**
 
@@ -2601,8 +2601,8 @@ If all possible solutions fail, we just dump the current position and go back to
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "String": <https://leetcode.com/tag/string> Similar Questions: "Encode and Decode Strings": <https://leetcode.com/problems/encode-and-decode-strings> "String Compression": <https://leetcode.com/problems/string-compression>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> Similar Questions: “Encode and Decode Strings”: <a href="https://leetcode.com/problems/encode-and-decode-strings" class="uri">https://leetcode.com/problems/encode-and-decode-strings</a> “String Compression”: <a href="https://leetcode.com/problems/string-compression" class="uri">https://leetcode.com/problems/string-compression</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [38. Count and Say](https://leetcode.com/problems/count-and-say/description/)
 -----------------------------------------------------------------------------
@@ -2686,8 +2686,8 @@ General solution.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Letter Combinations of a Phone Number": <https://leetcode.com/problems/letter-combinations-of-a-phone-number> "Combination Sum II": <https://leetcode.com/problems/combination-sum-ii> "Combinations": <https://leetcode.com/problems/combinations> "Combination Sum III": <https://leetcode.com/problems/combination-sum-iii> "Factor Combinations": <https://leetcode.com/problems/factor-combinations> "Combination Sum IV": <https://leetcode.com/problems/combination-sum-iv>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Letter Combinations of a Phone Number”: <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number" class="uri">https://leetcode.com/problems/letter-combinations-of-a-phone-number</a> “Combination Sum II”: <a href="https://leetcode.com/problems/combination-sum-ii" class="uri">https://leetcode.com/problems/combination-sum-ii</a> “Combinations”: <a href="https://leetcode.com/problems/combinations" class="uri">https://leetcode.com/problems/combinations</a> “Combination Sum III”: <a href="https://leetcode.com/problems/combination-sum-iii" class="uri">https://leetcode.com/problems/combination-sum-iii</a> “Factor Combinations”: <a href="https://leetcode.com/problems/factor-combinations" class="uri">https://leetcode.com/problems/factor-combinations</a> “Combination Sum IV”: <a href="https://leetcode.com/problems/combination-sum-iv" class="uri">https://leetcode.com/problems/combination-sum-iv</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [39. Combination Sum](https://leetcode.com/problems/combination-sum/description/)
 ---------------------------------------------------------------------------------
@@ -2761,8 +2761,8 @@ To prevent duplications, only loop the right side of the candidates.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Combination Sum": <https://leetcode.com/problems/combination-sum>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Combination Sum”: <a href="https://leetcode.com/problems/combination-sum" class="uri">https://leetcode.com/problems/combination-sum</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
 ---------------------------------------------------------------------------------------
@@ -2847,8 +2847,8 @@ Notice the number at `start` is immune by the rule because we assume that the cu
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> Similar Questions: "Missing Number": <https://leetcode.com/problems/missing-number> "Find the Duplicate Number": <https://leetcode.com/problems/find-the-duplicate-number> "Find All Numbers Disappeared in an Array": <https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array> "Couples Holding Hands": <https://leetcode.com/problems/couples-holding-hands>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> Similar Questions: “Missing Number”: <a href="https://leetcode.com/problems/missing-number" class="uri">https://leetcode.com/problems/missing-number</a> “Find the Duplicate Number”: <a href="https://leetcode.com/problems/find-the-duplicate-number" class="uri">https://leetcode.com/problems/find-the-duplicate-number</a> “Find All Numbers Disappeared in an Array”: <a href="https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array" class="uri">https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array</a> “Couples Holding Hands”: <a href="https://leetcode.com/problems/couples-holding-hands" class="uri">https://leetcode.com/problems/couples-holding-hands</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/description/)
 -----------------------------------------------------------------------------------------------
@@ -2878,7 +2878,7 @@ Your algorithm should run in *O*(*n*) time and uses constant extra space.
 
 ### Solution:
 
-The last requirement is why this problem is marked "hard". Though the solution feels like cheating: it modifies the array to mark numbers.
+The last requirement is why this problem is marked “hard”. Though the solution feels like cheating: it modifies the array to mark numbers.
 
 So the algorithm still requires *O*(*n*) space but *O*(*1*) **extra** space.
 
@@ -2920,8 +2920,8 @@ So here we reuse the array and keep trying to put integer `k` into the slot inde
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> "Stack": <https://leetcode.com/tag/stack> Similar Questions: "Container With Most Water": <https://leetcode.com/problems/CONTENT-with-most-water> "Product of Array Except Self": <https://leetcode.com/problems/product-of-array-except-self> "Trapping Rain Water II": <https://leetcode.com/problems/trapping-rain-water-ii> "Pour Water": <https://leetcode.com/problems/pour-water>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> “Stack”: <a href="https://leetcode.com/tag/stack" class="uri">https://leetcode.com/tag/stack</a> Similar Questions: “Container With Most Water”: <a href="https://leetcode.com/problems/CONTENT-with-most-water" class="uri">https://leetcode.com/problems/CONTENT-with-most-water</a> “Product of Array Except Self”: <a href="https://leetcode.com/problems/product-of-array-except-self" class="uri">https://leetcode.com/problems/product-of-array-except-self</a> “Trapping Rain Water II”: <a href="https://leetcode.com/problems/trapping-rain-water-ii" class="uri">https://leetcode.com/problems/trapping-rain-water-ii</a> “Pour Water”: <a href="https://leetcode.com/problems/pour-water" class="uri">https://leetcode.com/problems/pour-water</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/description/)
 -----------------------------------------------------------------------------------------
@@ -2940,7 +2940,7 @@ The above elevation map is represented by array \[0,1,0,2,1,0,1,3,2,1,2,1\]. In 
 
 ### Solution:
 
-Well explained by Leetcode official: <https://leetcode.com/articles/trapping-rain-water/> .
+Well explained by Leetcode official: <a href="https://leetcode.com/articles/trapping-rain-water/" class="uri">https://leetcode.com/articles/trapping-rain-water/</a> .
 
     /**
      * @param {number[]} height
@@ -2980,8 +2980,8 @@ Well explained by Leetcode official: <https://leetcode.com/articles/trapping-rai
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Math": <https://leetcode.com/tag/math> "String": <https://leetcode.com/tag/string> Similar Questions: "Add Two Numbers": <https://leetcode.com/problems/add-two-numbers> "Plus One": <https://leetcode.com/problems/plus-one> "Add Binary": <https://leetcode.com/problems/add-binary> "Add Strings": <https://leetcode.com/problems/add-strings>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> Similar Questions: “Add Two Numbers”: <a href="https://leetcode.com/problems/add-two-numbers" class="uri">https://leetcode.com/problems/add-two-numbers</a> “Plus One”: <a href="https://leetcode.com/problems/plus-one" class="uri">https://leetcode.com/problems/plus-one</a> “Add Binary”: <a href="https://leetcode.com/problems/add-binary" class="uri">https://leetcode.com/problems/add-binary</a> “Add Strings”: <a href="https://leetcode.com/problems/add-strings" class="uri">https://leetcode.com/problems/add-strings</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [43. Multiply Strings](https://leetcode.com/problems/multiply-strings/description/)
 -----------------------------------------------------------------------------------
@@ -3034,8 +3034,8 @@ Same as we do multiplication on a paper.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "Greedy": <https://leetcode.com/tag/greedy> Similar Questions: "Jump Game": <https://leetcode.com/problems/jump-game>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Greedy”: <a href="https://leetcode.com/tag/greedy" class="uri">https://leetcode.com/tag/greedy</a> Similar Questions: “Jump Game”: <a href="https://leetcode.com/problems/jump-game" class="uri">https://leetcode.com/problems/jump-game</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/description/)
 ---------------------------------------------------------------------------
@@ -3088,8 +3088,8 @@ Greedy. Always pick the one that would allow to jump to the rightest.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Next Permutation": <https://leetcode.com/problems/next-permutation> "Permutations II": <https://leetcode.com/problems/permutations-ii> "Permutation Sequence": <https://leetcode.com/problems/permutation-sequence> "Combinations": <https://leetcode.com/problems/combinations>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Next Permutation”: <a href="https://leetcode.com/problems/next-permutation" class="uri">https://leetcode.com/problems/next-permutation</a> “Permutations II”: <a href="https://leetcode.com/problems/permutations-ii" class="uri">https://leetcode.com/problems/permutations-ii</a> “Permutation Sequence”: <a href="https://leetcode.com/problems/permutation-sequence" class="uri">https://leetcode.com/problems/permutation-sequence</a> “Combinations”: <a href="https://leetcode.com/problems/combinations" class="uri">https://leetcode.com/problems/combinations</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [46. Permutations](https://leetcode.com/problems/permutations/description/)
 ---------------------------------------------------------------------------
@@ -3148,8 +3148,8 @@ One position at a time, pick a number from the unused set and put it in that pos
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Next Permutation": <https://leetcode.com/problems/next-permutation> "Permutations": <https://leetcode.com/problems/permutations> "Palindrome Permutation II": <https://leetcode.com/problems/palindrome-permutation-ii>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Next Permutation”: <a href="https://leetcode.com/problems/next-permutation" class="uri">https://leetcode.com/problems/next-permutation</a> “Permutations”: <a href="https://leetcode.com/problems/permutations" class="uri">https://leetcode.com/problems/permutations</a> “Palindrome Permutation II”: <a href="https://leetcode.com/problems/palindrome-permutation-ii" class="uri">https://leetcode.com/problems/palindrome-permutation-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [47. Permutations II](https://leetcode.com/problems/permutations-ii/description/)
 ---------------------------------------------------------------------------------
@@ -3212,8 +3212,8 @@ Same as [46. Permutations](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/ma
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array>
-----------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a>
+-----------------------------------------------------------------------------------------------------------------------------------
 
 [48. Rotate Image](https://leetcode.com/problems/rotate-image/description/)
 ---------------------------------------------------------------------------
@@ -3294,8 +3294,8 @@ Outside-in. Rotate one square at a time.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Hash Table": <https://leetcode.com/tag/hash-table> "String": <https://leetcode.com/tag/string> Similar Questions: "Valid Anagram": <https://leetcode.com/problems/valid-anagram> "Group Shifted Strings": <https://leetcode.com/problems/group-shifted-strings>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Hash Table”: <a href="https://leetcode.com/tag/hash-table" class="uri">https://leetcode.com/tag/hash-table</a> “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> Similar Questions: “Valid Anagram”: <a href="https://leetcode.com/problems/valid-anagram" class="uri">https://leetcode.com/problems/valid-anagram</a> “Group Shifted Strings”: <a href="https://leetcode.com/problems/group-shifted-strings" class="uri">https://leetcode.com/problems/group-shifted-strings</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/description/)
 -------------------------------------------------------------------------------
@@ -3321,7 +3321,7 @@ Given an array of strings, group anagrams together.
 
 ### Solution:
 
-It's all about hashing the words.
+It’s all about hashing the words.
 
 #### ONE
 
@@ -3369,8 +3369,8 @@ Use the product of prime numbers to generate unique keys.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Math": <https://leetcode.com/tag/math> "Binary Search": <https://leetcode.com/tag/binary-search> Similar Questions: "Sqrt(x)": <https://leetcode.com/problems/sqrtx> "Super Pow": <https://leetcode.com/problems/super-pow>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a> Similar Questions: “Sqrt(x)”: <a href="https://leetcode.com/problems/sqrtx" class="uri">https://leetcode.com/problems/sqrtx</a> “Super Pow”: <a href="https://leetcode.com/problems/super-pow" class="uri">https://leetcode.com/problems/super-pow</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [50. Pow(x, n)](https://leetcode.com/problems/powx-n/description/)
 ------------------------------------------------------------------
@@ -3433,8 +3433,8 @@ Note here we can not use any bitwise operator, `n = -2^31` might overflow.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "N-Queens II": <https://leetcode.com/problems/n-queens-ii>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “N-Queens II”: <a href="https://leetcode.com/problems/n-queens-ii" class="uri">https://leetcode.com/problems/n-queens-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [51. N-Queens](https://leetcode.com/problems/n-queens/description/)
 -------------------------------------------------------------------
@@ -3447,7 +3447,7 @@ The *n*-queens puzzle is the problem of placing *n* queens on an *n*×*n* chessb
 
 Given an integer *n*, return all distinct solutions to the *n*-queens puzzle.
 
-Each solution contains a distinct board configuration of the *n*-queens' placement, where `'Q'` and `'.'` both indicate a queen and an empty space respectively.
+Each solution contains a distinct board configuration of the *n*-queens’ placement, where `'Q'` and `'.'` both indicate a queen and an empty space respectively.
 
 **Example:**
 
@@ -3583,8 +3583,8 @@ This is slow because we test diagonal in the end. We can do a tree pruning by mo
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "N-Queens": <https://leetcode.com/problems/n-queens>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “N-Queens”: <a href="https://leetcode.com/problems/n-queens" class="uri">https://leetcode.com/problems/n-queens</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [52. N-Queens II](https://leetcode.com/problems/n-queens-ii/description/)
 -------------------------------------------------------------------------
@@ -3664,8 +3664,8 @@ Just modify [51. N-Queens](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/ma
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> "Divide and Conquer": <https://leetcode.com/tag/divide-and-conquer> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> Similar Questions: "Best Time to Buy and Sell Stock": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock> "Maximum Product Subarray": <https://leetcode.com/problems/maximum-product-subarray> "Degree of an Array": <https://leetcode.com/problems/degree-of-an-array>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Divide and Conquer”: <a href="https://leetcode.com/tag/divide-and-conquer" class="uri">https://leetcode.com/tag/divide-and-conquer</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> Similar Questions: “Best Time to Buy and Sell Stock”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock</a> “Maximum Product Subarray”: <a href="https://leetcode.com/problems/maximum-product-subarray" class="uri">https://leetcode.com/problems/maximum-product-subarray</a> “Degree of an Array”: <a href="https://leetcode.com/problems/degree-of-an-array" class="uri">https://leetcode.com/problems/degree-of-an-array</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
 -----------------------------------------------------------------------------------
@@ -3730,8 +3730,8 @@ We can also compress the dp array:
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> Similar Questions: "Spiral Matrix II": <https://leetcode.com/problems/spiral-matrix-ii>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> Similar Questions: “Spiral Matrix II”: <a href="https://leetcode.com/problems/spiral-matrix-ii" class="uri">https://leetcode.com/problems/spiral-matrix-ii</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/description/)
 -----------------------------------------------------------------------------
@@ -3803,8 +3803,8 @@ Loop outside-in. Break each cycle into four stages. Note that the last two stage
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Greedy": <https://leetcode.com/tag/greedy> Similar Questions: "Jump Game II": <https://leetcode.com/problems/jump-game-ii>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Greedy”: <a href="https://leetcode.com/tag/greedy" class="uri">https://leetcode.com/tag/greedy</a> Similar Questions: “Jump Game II”: <a href="https://leetcode.com/problems/jump-game-ii" class="uri">https://leetcode.com/problems/jump-game-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [55. Jump Game](https://leetcode.com/problems/jump-game/description/)
 ---------------------------------------------------------------------
@@ -3880,8 +3880,8 @@ If `nums[0]` can cover the last destination point, it is good.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Sort": <https://leetcode.com/tag/sort> Similar Questions: "Insert Interval": <https://leetcode.com/problems/insert-interval> "Meeting Rooms": <https://leetcode.com/problems/meeting-rooms> "Meeting Rooms II": <https://leetcode.com/problems/meeting-rooms-ii> "Teemo Attacking": <https://leetcode.com/problems/teemo-attacking> "Add Bold Tag in String": <https://leetcode.com/problems/add-bold-tag-in-string> "Range Module": <https://leetcode.com/problems/range-module> "Employee Free Time": <https://leetcode.com/problems/employee-free-time> "Partition Labels": <https://leetcode.com/problems/partition-labels>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Sort”: <a href="https://leetcode.com/tag/sort" class="uri">https://leetcode.com/tag/sort</a> Similar Questions: “Insert Interval”: <a href="https://leetcode.com/problems/insert-interval" class="uri">https://leetcode.com/problems/insert-interval</a> “Meeting Rooms”: <a href="https://leetcode.com/problems/meeting-rooms" class="uri">https://leetcode.com/problems/meeting-rooms</a> “Meeting Rooms II”: <a href="https://leetcode.com/problems/meeting-rooms-ii" class="uri">https://leetcode.com/problems/meeting-rooms-ii</a> “Teemo Attacking”: <a href="https://leetcode.com/problems/teemo-attacking" class="uri">https://leetcode.com/problems/teemo-attacking</a> “Add Bold Tag in String”: <a href="https://leetcode.com/problems/add-bold-tag-in-string" class="uri">https://leetcode.com/problems/add-bold-tag-in-string</a> “Range Module”: <a href="https://leetcode.com/problems/range-module" class="uri">https://leetcode.com/problems/range-module</a> “Employee Free Time”: <a href="https://leetcode.com/problems/employee-free-time" class="uri">https://leetcode.com/problems/employee-free-time</a> “Partition Labels”: <a href="https://leetcode.com/problems/partition-labels" class="uri">https://leetcode.com/problems/partition-labels</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/description/)
 ---------------------------------------------------------------------------------
@@ -3938,8 +3938,8 @@ Sort then merge.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "Sort": <https://leetcode.com/tag/sort> Similar Questions: "Merge Intervals": <https://leetcode.com/problems/merge-intervals> "Range Module": <https://leetcode.com/problems/range-module>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Sort”: <a href="https://leetcode.com/tag/sort" class="uri">https://leetcode.com/tag/sort</a> Similar Questions: “Merge Intervals”: <a href="https://leetcode.com/problems/merge-intervals" class="uri">https://leetcode.com/problems/merge-intervals</a> “Range Module”: <a href="https://leetcode.com/problems/range-module" class="uri">https://leetcode.com/problems/range-module</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [57. Insert Interval](https://leetcode.com/problems/insert-interval/description/)
 ---------------------------------------------------------------------------------
@@ -4006,8 +4006,8 @@ The logic of the solution is pretty straight forward. Just need to carefully thi
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "String": <https://leetcode.com/tag/string>
-----------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a>
+------------------------------------------------------------------------------------------------------------------------------------
 
 [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/description/)
 -----------------------------------------------------------------------------------------
@@ -4077,8 +4077,8 @@ General solution.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> Similar Questions: "Spiral Matrix": <https://leetcode.com/problems/spiral-matrix>
---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> Similar Questions: “Spiral Matrix”: <a href="https://leetcode.com/problems/spiral-matrix" class="uri">https://leetcode.com/problems/spiral-matrix</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/description/)
 -----------------------------------------------------------------------------------
@@ -4131,8 +4131,8 @@ Straight-forward.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Math": <https://leetcode.com/tag/math> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Next Permutation": <https://leetcode.com/problems/next-permutation> "Permutations": <https://leetcode.com/problems/permutations>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Next Permutation”: <a href="https://leetcode.com/problems/next-permutation" class="uri">https://leetcode.com/problems/next-permutation</a> “Permutations”: <a href="https://leetcode.com/problems/permutations" class="uri">https://leetcode.com/problems/permutations</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [60. Permutation Sequence](https://leetcode.com/problems/permutation-sequence/description/)
 -------------------------------------------------------------------------------------------
@@ -4205,8 +4205,8 @@ We also need `k--` to convert `k` into index so that `k <= (n-1)!` maps `0` (and
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "Rotate Array": <https://leetcode.com/problems/rotate-array> "Split Linked List in Parts": <https://leetcode.com/problems/split-linked-list-in-parts>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “Rotate Array”: <a href="https://leetcode.com/problems/rotate-array" class="uri">https://leetcode.com/problems/rotate-array</a> “Split Linked List in Parts”: <a href="https://leetcode.com/problems/split-linked-list-in-parts" class="uri">https://leetcode.com/problems/split-linked-list-in-parts</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [61. Rotate List](https://leetcode.com/problems/rotate-list/description/)
 -------------------------------------------------------------------------
@@ -4293,17 +4293,17 @@ Locate the right pointer again with `k % len`.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> Similar Questions: "Unique Paths II": <https://leetcode.com/problems/unique-paths-ii> "Minimum Path Sum": <https://leetcode.com/problems/minimum-path-sum> "Dungeon Game": <https://leetcode.com/problems/dungeon-game>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> Similar Questions: “Unique Paths II”: <a href="https://leetcode.com/problems/unique-paths-ii" class="uri">https://leetcode.com/problems/unique-paths-ii</a> “Minimum Path Sum”: <a href="https://leetcode.com/problems/minimum-path-sum" class="uri">https://leetcode.com/problems/minimum-path-sum</a> “Dungeon Game”: <a href="https://leetcode.com/problems/dungeon-game" class="uri">https://leetcode.com/problems/dungeon-game</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [62. Unique Paths](https://leetcode.com/problems/unique-paths/description/)
 ---------------------------------------------------------------------------
 
 ### Problem:
 
-A robot is located at the top-left corner of a *m* x *n* grid (marked 'Start' in the diagram below).
+A robot is located at the top-left corner of a *m* x *n* grid (marked ‘Start’ in the diagram below).
 
-The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).
 
 How many possible unique paths are there?
 
@@ -4359,8 +4359,8 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> Similar Questions: "Unique Paths": <https://leetcode.com/problems/unique-paths> "Dungeon Game": <https://leetcode.com/problems/dungeon-game> "Cherry Pickup": <https://leetcode.com/problems/cherry-pickup>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> Similar Questions: “Unique Paths”: <a href="https://leetcode.com/problems/unique-paths" class="uri">https://leetcode.com/problems/unique-paths</a> “Dungeon Game”: <a href="https://leetcode.com/problems/dungeon-game" class="uri">https://leetcode.com/problems/dungeon-game</a> “Cherry Pickup”: <a href="https://leetcode.com/problems/cherry-pickup" class="uri">https://leetcode.com/problems/cherry-pickup</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/description/)
 -----------------------------------------------------------------------------------
@@ -4419,8 +4419,8 @@ Only two previous states are dependant. Use dynamic array to reduce memory alloc
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Math": <https://leetcode.com/tag/math> "String": <https://leetcode.com/tag/string> Similar Questions: "String to Integer (atoi)": <https://leetcode.com/problems/string-to-integer-atoi>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> Similar Questions: “String to Integer (atoi)”: <a href="https://leetcode.com/problems/string-to-integer-atoi" class="uri">https://leetcode.com/problems/string-to-integer-atoi</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [65. Valid Number](https://leetcode.com/problems/valid-number/description/)
 ---------------------------------------------------------------------------
@@ -4618,8 +4618,8 @@ Now implement the parser. It is much easier now because we have a clear mental m
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> "Math": <https://leetcode.com/tag/math> Similar Questions: "Multiply Strings": <https://leetcode.com/problems/multiply-strings> "Add Binary": <https://leetcode.com/problems/add-binary> "Plus One Linked List": <https://leetcode.com/problems/plus-one-linked-list>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> Similar Questions: “Multiply Strings”: <a href="https://leetcode.com/problems/multiply-strings" class="uri">https://leetcode.com/problems/multiply-strings</a> “Add Binary”: <a href="https://leetcode.com/problems/add-binary" class="uri">https://leetcode.com/problems/add-binary</a> “Plus One Linked List”: <a href="https://leetcode.com/problems/plus-one-linked-list" class="uri">https://leetcode.com/problems/plus-one-linked-list</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [66. Plus One](https://leetcode.com/problems/plus-one/description/)
 -------------------------------------------------------------------
@@ -4694,8 +4694,8 @@ General solution.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "String": <https://leetcode.com/tag/string>
-----------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a>
+------------------------------------------------------------------------------------------------------------------------------------
 
 [68. Text Justification](https://leetcode.com/problems/text-justification/description/)
 ---------------------------------------------------------------------------------------
@@ -4713,7 +4713,7 @@ For the last line of text, it should be left justified and no **extra** space is
 **Note:**
 
 -   A word is defined as a character sequence consisting of non-space characters only.
--   Each word's length is guaranteed to be greater than 0 and not exceed *maxWidth*.
+-   Each word’s length is guaranteed to be greater than 0 and not exceed *maxWidth*.
 -   The input array `words` contains at least one word.
 
 **Example 1:**
@@ -4817,8 +4817,8 @@ For the last line of text, it should be left justified and no **extra** space is
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Math": <https://leetcode.com/tag/math> "Binary Search": <https://leetcode.com/tag/binary-search> Similar Questions: "Pow(x, n)": <https://leetcode.com/problems/powx-n> "Valid Perfect Square": <https://leetcode.com/problems/valid-perfect-square>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Math”: <a href="https://leetcode.com/tag/math" class="uri">https://leetcode.com/tag/math</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a> Similar Questions: “Pow(x, n)”: <a href="https://leetcode.com/problems/powx-n" class="uri">https://leetcode.com/problems/powx-n</a> “Valid Perfect Square”: <a href="https://leetcode.com/problems/valid-perfect-square" class="uri">https://leetcode.com/problems/valid-perfect-square</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [69. Sqrt(x)](https://leetcode.com/problems/sqrtx/description/)
 ---------------------------------------------------------------
@@ -4845,7 +4845,7 @@ Since the return type is an integer, the decimal digits are truncated and only 
 
 ### Solution:
 
-Binary Search. The square root of x is within \[0...(x+1)/2\].
+Binary Search. The square root of x is within \[0…(x+1)/2\].
 
     /**
      * @param {number} x
@@ -4872,8 +4872,8 @@ Binary Search. The square root of x is within \[0...(x+1)/2\].
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "String": <https://leetcode.com/tag/string> "Stack": <https://leetcode.com/tag/stack>
-------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Stack”: <a href="https://leetcode.com/tag/stack" class="uri">https://leetcode.com/tag/stack</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [71. Simplify Path](https://leetcode.com/problems/simplify-path/description/)
 -----------------------------------------------------------------------------
@@ -4954,8 +4954,8 @@ Direct search.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "String": <https://leetcode.com/tag/string> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> Similar Questions: "One Edit Distance": <https://leetcode.com/problems/one-edit-distance> "Delete Operation for Two Strings": <https://leetcode.com/problems/delete-operation-for-two-strings> "Minimum ASCII Delete Sum for Two Strings": <https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> Similar Questions: “One Edit Distance”: <a href="https://leetcode.com/problems/one-edit-distance" class="uri">https://leetcode.com/problems/one-edit-distance</a> “Delete Operation for Two Strings”: <a href="https://leetcode.com/problems/delete-operation-for-two-strings" class="uri">https://leetcode.com/problems/delete-operation-for-two-strings</a> “Minimum ASCII Delete Sum for Two Strings”: <a href="https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings" class="uri">https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [72. Edit Distance](https://leetcode.com/problems/edit-distance/description/)
 -----------------------------------------------------------------------------
@@ -5045,8 +5045,8 @@ Define `f(i, j)` to be the min edit distance from `word1[0...i)` to `word2[0...j
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> Similar Questions: "Game of Life": <https://leetcode.com/problems/game-of-life>
-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> Similar Questions: “Game of Life”: <a href="https://leetcode.com/problems/game-of-life" class="uri">https://leetcode.com/problems/game-of-life</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/description/)
 -------------------------------------------------------------------------------------
@@ -5203,8 +5203,8 @@ Still constant space just a bit slower due to repeatedly setting overlapping `Na
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Binary Search": <https://leetcode.com/tag/binary-search> Similar Questions: "Search a 2D Matrix II": <https://leetcode.com/problems/search-a-2d-matrix-ii>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a> Similar Questions: “Search a 2D Matrix II”: <a href="https://leetcode.com/problems/search-a-2d-matrix-ii" class="uri">https://leetcode.com/problems/search-a-2d-matrix-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [74. Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/description/)
 ---------------------------------------------------------------------------------------
@@ -5311,8 +5311,8 @@ Take the algorithm from [35. Search Insert Position](file:///C:/MY-WEB-DEV/06-DS
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> "Sort": <https://leetcode.com/tag/sort> Similar Questions: "Sort List": <https://leetcode.com/problems/sort-list> "Wiggle Sort": <https://leetcode.com/problems/wiggle-sort> "Wiggle Sort II": <https://leetcode.com/problems/wiggle-sort-ii>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> “Sort”: <a href="https://leetcode.com/tag/sort" class="uri">https://leetcode.com/tag/sort</a> Similar Questions: “Sort List”: <a href="https://leetcode.com/problems/sort-list" class="uri">https://leetcode.com/problems/sort-list</a> “Wiggle Sort”: <a href="https://leetcode.com/problems/wiggle-sort" class="uri">https://leetcode.com/problems/wiggle-sort</a> “Wiggle Sort II”: <a href="https://leetcode.com/problems/wiggle-sort-ii" class="uri">https://leetcode.com/problems/wiggle-sort-ii</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [75. Sort Colors](https://leetcode.com/problems/sort-colors/description/)
 -------------------------------------------------------------------------
@@ -5323,7 +5323,7 @@ Given an array with *n* objects colored red, white or blue, sort them **in-place
 
 Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
 
-**Note:** You are not suppose to use the library's sort function for this problem.
+**Note:** You are not suppose to use the library’s sort function for this problem.
 
 **Example:**
 
@@ -5333,7 +5333,7 @@ Here, we will use the integers 0, 1, and 2 to represent the color red, white, an
 **Follow up:**
 
 -   A rather straight forward solution is a two-pass algorithm using counting sort.  
-    First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
+    First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.
 -   Could you come up with a one-pass algorithm using only constant space?
 
 ### Solution:
@@ -5374,15 +5374,15 @@ Count the number of sorted `0`s and `2`s so that we know where to swap.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Combination Sum": <https://leetcode.com/problems/combination-sum> "Permutations": <https://leetcode.com/problems/permutations>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Combination Sum”: <a href="https://leetcode.com/problems/combination-sum" class="uri">https://leetcode.com/problems/combination-sum</a> “Permutations”: <a href="https://leetcode.com/problems/permutations" class="uri">https://leetcode.com/problems/permutations</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [77. Combinations](https://leetcode.com/problems/combinations/description/)
 ---------------------------------------------------------------------------
 
 ### Problem:
 
-Given two integers *n* and *k*, return all possible combinations of *k* numbers out of 1 ... *n*.
+Given two integers *n* and *k*, return all possible combinations of *k* numbers out of 1 … *n*.
 
 **Example:**
 
@@ -5428,8 +5428,8 @@ Basic DFS + Backtracking.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Backtracking": <https://leetcode.com/tag/backtracking> "Bit Manipulation": <https://leetcode.com/tag/bit-manipulation> Similar Questions: "Subsets II": <https://leetcode.com/problems/subsets-ii> "Generalized Abbreviation": <https://leetcode.com/problems/generalized-abbreviation> "Letter Case Permutation": <https://leetcode.com/problems/letter-case-permutation>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> “Bit Manipulation”: <a href="https://leetcode.com/tag/bit-manipulation" class="uri">https://leetcode.com/tag/bit-manipulation</a> Similar Questions: “Subsets II”: <a href="https://leetcode.com/problems/subsets-ii" class="uri">https://leetcode.com/problems/subsets-ii</a> “Generalized Abbreviation”: <a href="https://leetcode.com/problems/generalized-abbreviation" class="uri">https://leetcode.com/problems/generalized-abbreviation</a> “Letter Case Permutation”: <a href="https://leetcode.com/problems/letter-case-permutation" class="uri">https://leetcode.com/problems/letter-case-permutation</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [78. Subsets](https://leetcode.com/problems/subsets/description/)
 -----------------------------------------------------------------
@@ -5512,8 +5512,8 @@ DFS + Backtracking.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Word Search II": <https://leetcode.com/problems/word-search-ii>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Word Search II”: <a href="https://leetcode.com/problems/word-search-ii" class="uri">https://leetcode.com/problems/word-search-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [79. Word Search](https://leetcode.com/problems/word-search/description/)
 -------------------------------------------------------------------------
@@ -5522,7 +5522,7 @@ Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Ba
 
 Given a 2D board and a word, find if the word exists in the grid.
 
-The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
 
 **Example:**
 
@@ -5592,8 +5592,8 @@ DFS + Backtracking. Replace the cell with `NaN` before proceeding to the next le
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "Remove Duplicates from Sorted Array": <https://leetcode.com/problems/remove-duplicates-from-sorted-array>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “Remove Duplicates from Sorted Array”: <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array" class="uri">https://leetcode.com/problems/remove-duplicates-from-sorted-array</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [80. Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/)
 -------------------------------------------------------------------------------------------------------------------------------
@@ -5659,8 +5659,8 @@ Similar to [26. Remove Duplicates from Sorted Array](file:///C:/MY-WEB-DEV/06-DS
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Binary Search": <https://leetcode.com/tag/binary-search> Similar Questions: "Search in Rotated Sorted Array": <https://leetcode.com/problems/search-in-rotated-sorted-array>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Binary Search”: <a href="https://leetcode.com/tag/binary-search" class="uri">https://leetcode.com/tag/binary-search</a> Similar Questions: “Search in Rotated Sorted Array”: <a href="https://leetcode.com/problems/search-in-rotated-sorted-array" class="uri">https://leetcode.com/problems/search-in-rotated-sorted-array</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [81. Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/)
 ---------------------------------------------------------------------------------------------------------------------
@@ -5733,8 +5733,8 @@ See [33. Search in Rotated Sorted Array](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> Similar Questions: "Remove Duplicates from Sorted List": <https://leetcode.com/problems/remove-duplicates-from-sorted-list>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> Similar Questions: “Remove Duplicates from Sorted List”: <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list" class="uri">https://leetcode.com/problems/remove-duplicates-from-sorted-list</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/)
 -----------------------------------------------------------------------------------------------------------------------------
@@ -5795,8 +5795,8 @@ The list is sorted so we only need `dupVal` to keep the latest duplicate value.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> Similar Questions: "Remove Duplicates from Sorted List II": <https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> Similar Questions: “Remove Duplicates from Sorted List II”: <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii" class="uri">https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/)
 -----------------------------------------------------------------------------------------------------------------------
@@ -5887,15 +5887,15 @@ Just compare the next node. This is way more faster.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "Stack": <https://leetcode.com/tag/stack> Similar Questions: "Maximal Rectangle": <https://leetcode.com/problems/maximal-rectangle>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Stack”: <a href="https://leetcode.com/tag/stack" class="uri">https://leetcode.com/tag/stack</a> Similar Questions: “Maximal Rectangle”: <a href="https://leetcode.com/problems/maximal-rectangle" class="uri">https://leetcode.com/problems/maximal-rectangle</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/description/)
 ---------------------------------------------------------------------------------------------------------------
 
 ### Problem:
 
-Given *n* non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
+Given *n* non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
 
 ![histogram.png](./completeLEETCODE_files/histogram.png)
 
@@ -5922,7 +5922,7 @@ Notice that if we just loop the bars from left to right, `b1` and `b2` of each b
 
 Observe how `i1` and `i2` changes depending on the height.
 
-To reduce O(*n^2*) to O(*n*), we use a stack to store incremental `b`s. Because `b1` and `b2` are both lower than `b`, whenever we reach a bar that is lower than the top of the stack, we know it's a `b2`. So stack top is a `b`. Second top is a `b1`. Keep popping the `b` to calculate areas until `b2` is no longer lower than stack top.
+To reduce O(*n^2*) to O(*n*), we use a stack to store incremental `b`s. Because `b1` and `b2` are both lower than `b`, whenever we reach a bar that is lower than the top of the stack, we know it’s a `b2`. So stack top is a `b`. Second top is a `b1`. Keep popping the `b` to calculate areas until `b2` is no longer lower than stack top.
 
     /**
      * @param {number[]} heights
@@ -5946,15 +5946,15 @@ To reduce O(*n^2*) to O(*n*), we use a stack to store incremental `b`s. Because 
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "Hash Table": <https://leetcode.com/tag/hash-table> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> "Stack": <https://leetcode.com/tag/stack> Similar Questions: "Largest Rectangle in Histogram": <https://leetcode.com/problems/largest-rectangle-in-histogram> "Maximal Square": <https://leetcode.com/problems/maximal-square>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Hash Table”: <a href="https://leetcode.com/tag/hash-table" class="uri">https://leetcode.com/tag/hash-table</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> “Stack”: <a href="https://leetcode.com/tag/stack" class="uri">https://leetcode.com/tag/stack</a> Similar Questions: “Largest Rectangle in Histogram”: <a href="https://leetcode.com/problems/largest-rectangle-in-histogram" class="uri">https://leetcode.com/problems/largest-rectangle-in-histogram</a> “Maximal Square”: <a href="https://leetcode.com/problems/maximal-square" class="uri">https://leetcode.com/problems/maximal-square</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [85. Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/description/)
 -------------------------------------------------------------------------------------
 
 ### Problem:
 
-Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
+Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area.
 
 **Example:**
 
@@ -6106,8 +6106,8 @@ We only need to keep the last state. Use dynamic arrays to reduce space complexi
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> "Two Pointers": <https://leetcode.com/tag/two-pointers>
-------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [86. Partition List](https://leetcode.com/problems/partition-list/description/)
 -------------------------------------------------------------------------------
@@ -6169,8 +6169,8 @@ Take the second part out as a new list and connect it back.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> "Two Pointers": <https://leetcode.com/tag/two-pointers> Similar Questions: "Merge Two Sorted Lists": <https://leetcode.com/problems/merge-two-sorted-lists>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> Similar Questions: “Merge Two Sorted Lists”: <a href="https://leetcode.com/problems/merge-two-sorted-lists" class="uri">https://leetcode.com/problems/merge-two-sorted-lists</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/)
 ---------------------------------------------------------------------------------------
@@ -6214,8 +6214,8 @@ Loop backward and keep picking the larger one. `nums1` is guaranteed longer than
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "1-bit and 2-bit Characters": <https://leetcode.com/problems/1-bit-and-2-bit-characters>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “1-bit and 2-bit Characters”: <a href="https://leetcode.com/problems/1-bit-and-2-bit-characters" class="uri">https://leetcode.com/problems/1-bit-and-2-bit-characters</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [89. Gray Code](https://leetcode.com/problems/gray-code/description/)
 ---------------------------------------------------------------------
@@ -6259,7 +6259,7 @@ Given a non-negative integer *n* representing the total number of bits in the co
     2: [ 00,  01,  11,  10                    ]
     3: [000, 001, 011, 010, 110, 111, 101, 100]
 
-The pattern is self-evident. Reverse the result set and prepend '1' to each item.
+The pattern is self-evident. Reverse the result set and prepend ‘1’ to each item.
 
 Use bitwise shift to speed up the calculation. It is unlikely to overflow since the result set is exponential.
 
@@ -6282,8 +6282,8 @@ Use bitwise shift to speed up the calculation. It is unlikely to overflow since 
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "Subsets": <https://leetcode.com/problems/subsets>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “Subsets”: <a href="https://leetcode.com/problems/subsets" class="uri">https://leetcode.com/problems/subsets</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [90. Subsets II](https://leetcode.com/problems/subsets-ii/description/)
 -----------------------------------------------------------------------
@@ -6342,8 +6342,8 @@ See [78. Subsets](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTEN
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "String": <https://leetcode.com/tag/string> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> Similar Questions: "Decode Ways II": <https://leetcode.com/problems/decode-ways-ii>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> Similar Questions: “Decode Ways II”: <a href="https://leetcode.com/problems/decode-ways-ii" class="uri">https://leetcode.com/problems/decode-ways-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [91. Decode Ways](https://leetcode.com/problems/decode-ways/description/)
 -------------------------------------------------------------------------
@@ -6413,8 +6413,8 @@ Only need to store the last two states. Init `f(-1) = 1` for easy calculation.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Linked List": <https://leetcode.com/tag/linked-list> Similar Questions: "Reverse Linked List": <https://leetcode.com/problems/reverse-linked-list>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Linked List”: <a href="https://leetcode.com/tag/linked-list" class="uri">https://leetcode.com/tag/linked-list</a> Similar Questions: “Reverse Linked List”: <a href="https://leetcode.com/problems/reverse-linked-list" class="uri">https://leetcode.com/problems/reverse-linked-list</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/description/)
 -----------------------------------------------------------------------------------------------
@@ -6479,8 +6479,8 @@ Break the list into 3 parts.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "String": <https://leetcode.com/tag/string> "Backtracking": <https://leetcode.com/tag/backtracking> Similar Questions: "IP to CIDR": <https://leetcode.com/problems/ip-to-cidr>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> Similar Questions: “IP to CIDR”: <a href="https://leetcode.com/problems/ip-to-cidr" class="uri">https://leetcode.com/problems/ip-to-cidr</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [93. Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/description/)
 -------------------------------------------------------------------------------------------
@@ -6540,8 +6540,8 @@ Backtracking. Note that leading `'0'` is not allowed except just `'0'`.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "String": <https://leetcode.com/tag/string> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming>
---------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [97. Interleaving String](https://leetcode.com/problems/interleaving-string/description/)
 -----------------------------------------------------------------------------------------
@@ -6597,8 +6597,8 @@ Dynamic array can be used.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search>
---------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [100. Same Tree](https://leetcode.com/problems/same-tree/description/)
 ----------------------------------------------------------------------
@@ -6664,8 +6664,8 @@ The code should be self-evident.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/)
 --------------------------------------------------------------------------------
@@ -6773,15 +6773,15 @@ Level order traversal. Check symmetry before entering the next level.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Tree": <https://leetcode.com/tag/tree> "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search> Similar Questions: "Binary Tree Zigzag Level Order Traversal": <https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal> "Binary Tree Level Order Traversal II": <https://leetcode.com/problems/binary-tree-level-order-traversal-ii> "Minimum Depth of Binary Tree": <https://leetcode.com/problems/minimum-depth-of-binary-tree> "Binary Tree Vertical Order Traversal": <https://leetcode.com/problems/binary-tree-vertical-order-traversal> "Average of Levels in Binary Tree": <https://leetcode.com/problems/average-of-levels-in-binary-tree> "N-ary Tree Level Order Traversal": <https://leetcode.com/problems/n-ary-tree-level-order-traversal>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a> Similar Questions: “Binary Tree Zigzag Level Order Traversal”: <a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal" class="uri">https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal</a> “Binary Tree Level Order Traversal II”: <a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii" class="uri">https://leetcode.com/problems/binary-tree-level-order-traversal-ii</a> “Minimum Depth of Binary Tree”: <a href="https://leetcode.com/problems/minimum-depth-of-binary-tree" class="uri">https://leetcode.com/problems/minimum-depth-of-binary-tree</a> “Binary Tree Vertical Order Traversal”: <a href="https://leetcode.com/problems/binary-tree-vertical-order-traversal" class="uri">https://leetcode.com/problems/binary-tree-vertical-order-traversal</a> “Average of Levels in Binary Tree”: <a href="https://leetcode.com/problems/average-of-levels-in-binary-tree" class="uri">https://leetcode.com/problems/average-of-levels-in-binary-tree</a> “N-ary Tree Level Order Traversal”: <a href="https://leetcode.com/problems/n-ary-tree-level-order-traversal" class="uri">https://leetcode.com/problems/n-ary-tree-level-order-traversal</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
 ----------------------------------------------------------------------------------------------------------------------
 
 ### Problem:
 
-Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).
 
 For example:  
 Given binary tree `[3,9,20,null,null,15,7]`,
@@ -6838,15 +6838,15 @@ The code should be self-evident.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Stack": <https://leetcode.com/tag/stack> "Tree": <https://leetcode.com/tag/tree> "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search> Similar Questions: "Binary Tree Level Order Traversal": <https://leetcode.com/problems/binary-tree-level-order-traversal>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Stack”: <a href="https://leetcode.com/tag/stack" class="uri">https://leetcode.com/tag/stack</a> “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a> Similar Questions: “Binary Tree Level Order Traversal”: <a href="https://leetcode.com/problems/binary-tree-level-order-traversal" class="uri">https://leetcode.com/problems/binary-tree-level-order-traversal</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/)
 ------------------------------------------------------------------------------------------------------------------------------------
 
 ### Problem:
 
-Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+Given a binary tree, return the zigzag level order traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).
 
 For example:  
 Given binary tree `[3,9,20,null,null,15,7]`,
@@ -6908,8 +6908,8 @@ Reverse the level when pushing to the reuslt.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Balanced Binary Tree": <https://leetcode.com/problems/balanced-binary-tree> "Minimum Depth of Binary Tree": <https://leetcode.com/problems/minimum-depth-of-binary-tree> "Maximum Depth of N-ary Tree": <https://leetcode.com/problems/maximum-depth-of-n-ary-tree>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Balanced Binary Tree”: <a href="https://leetcode.com/problems/balanced-binary-tree" class="uri">https://leetcode.com/problems/balanced-binary-tree</a> “Minimum Depth of Binary Tree”: <a href="https://leetcode.com/problems/minimum-depth-of-binary-tree" class="uri">https://leetcode.com/problems/minimum-depth-of-binary-tree</a> “Maximum Depth of N-ary Tree”: <a href="https://leetcode.com/problems/maximum-depth-of-n-ary-tree" class="uri">https://leetcode.com/problems/maximum-depth-of-n-ary-tree</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
 ------------------------------------------------------------------------------------------------------------
@@ -6959,8 +6959,8 @@ The code should be self-evident.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Construct Binary Tree from Inorder and Postorder Traversal": <https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Construct Binary Tree from Inorder and Postorder Traversal”: <a href="https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal" class="uri">https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -7031,8 +7031,8 @@ Repeat the process on subtrees.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Construct Binary Tree from Preorder and Inorder Traversal": <https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Construct Binary Tree from Preorder and Inorder Traversal”: <a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal" class="uri">https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -7103,15 +7103,15 @@ Repeat the process on subtrees.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Tree": <https://leetcode.com/tag/tree> "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search> Similar Questions: "Binary Tree Level Order Traversal": <https://leetcode.com/problems/binary-tree-level-order-traversal> "Average of Levels in Binary Tree": <https://leetcode.com/problems/average-of-levels-in-binary-tree>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a> Similar Questions: “Binary Tree Level Order Traversal”: <a href="https://leetcode.com/problems/binary-tree-level-order-traversal" class="uri">https://leetcode.com/problems/binary-tree-level-order-traversal</a> “Average of Levels in Binary Tree”: <a href="https://leetcode.com/problems/average-of-levels-in-binary-tree" class="uri">https://leetcode.com/problems/average-of-levels-in-binary-tree</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/)
 ----------------------------------------------------------------------------------------------------------------------------
 
 ### Problem:
 
-Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
+Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).
 
 For example:  
 Given binary tree `[3,9,20,null,null,15,7]`,
@@ -7168,8 +7168,8 @@ See [102. Binary Tree Level Order Traversal](file:///C:/MY-WEB-DEV/06-DS-ALGO-OU
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Maximum Depth of Binary Tree": <https://leetcode.com/problems/maximum-depth-of-binary-tree>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Maximum Depth of Binary Tree”: <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree" class="uri">https://leetcode.com/problems/maximum-depth-of-binary-tree</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [110. Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/description/)
 --------------------------------------------------------------------------------------------
@@ -7240,8 +7240,8 @@ Get the depth of subtrees and compare. Prune the DFS tree by returning `-1`.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search> Similar Questions: "Binary Tree Level Order Traversal": <https://leetcode.com/problems/binary-tree-level-order-traversal> "Maximum Depth of Binary Tree": <https://leetcode.com/problems/maximum-depth-of-binary-tree>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a> Similar Questions: “Binary Tree Level Order Traversal”: <a href="https://leetcode.com/problems/binary-tree-level-order-traversal" class="uri">https://leetcode.com/problems/binary-tree-level-order-traversal</a> “Maximum Depth of Binary Tree”: <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree" class="uri">https://leetcode.com/problems/maximum-depth-of-binary-tree</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/description/)
 ------------------------------------------------------------------------------------------------------------
@@ -7296,8 +7296,8 @@ Ignore `null` children.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Path Sum II": <https://leetcode.com/problems/path-sum-ii> "Binary Tree Maximum Path Sum": <https://leetcode.com/problems/binary-tree-maximum-path-sum> "Sum Root to Leaf Numbers": <https://leetcode.com/problems/sum-root-to-leaf-numbers> "Path Sum III": <https://leetcode.com/problems/path-sum-iii> "Path Sum IV": <https://leetcode.com/problems/path-sum-iv>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Path Sum II”: <a href="https://leetcode.com/problems/path-sum-ii" class="uri">https://leetcode.com/problems/path-sum-ii</a> “Binary Tree Maximum Path Sum”: <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum" class="uri">https://leetcode.com/problems/binary-tree-maximum-path-sum</a> “Sum Root to Leaf Numbers”: <a href="https://leetcode.com/problems/sum-root-to-leaf-numbers" class="uri">https://leetcode.com/problems/sum-root-to-leaf-numbers</a> “Path Sum III”: <a href="https://leetcode.com/problems/path-sum-iii" class="uri">https://leetcode.com/problems/path-sum-iii</a> “Path Sum IV”: <a href="https://leetcode.com/problems/path-sum-iv" class="uri">https://leetcode.com/problems/path-sum-iv</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [112. Path Sum](https://leetcode.com/problems/path-sum/description/)
 --------------------------------------------------------------------
@@ -7348,15 +7348,15 @@ Note that node value could be negative so pruning can not be performed.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Path Sum": <https://leetcode.com/problems/path-sum> "Binary Tree Paths": <https://leetcode.com/problems/binary-tree-paths> "Path Sum III": <https://leetcode.com/problems/path-sum-iii> "Path Sum IV": <https://leetcode.com/problems/path-sum-iv>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Path Sum”: <a href="https://leetcode.com/problems/path-sum" class="uri">https://leetcode.com/problems/path-sum</a> “Binary Tree Paths”: <a href="https://leetcode.com/problems/binary-tree-paths" class="uri">https://leetcode.com/problems/binary-tree-paths</a> “Path Sum III”: <a href="https://leetcode.com/problems/path-sum-iii" class="uri">https://leetcode.com/problems/path-sum-iii</a> “Path Sum IV”: <a href="https://leetcode.com/problems/path-sum-iv" class="uri">https://leetcode.com/problems/path-sum-iv</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [113. Path Sum II](https://leetcode.com/problems/path-sum-ii/description/)
 --------------------------------------------------------------------------
 
 ### Problem:
 
-Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
+Given a binary tree and a sum, find all root-to-leaf paths where each path’s sum equals the given sum.
 
 **Note:** A leaf is a node with no children.
 
@@ -7417,8 +7417,8 @@ Simple backtracking.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Flatten a Multilevel Doubly Linked List": <https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Flatten a Multilevel Doubly Linked List”: <a href="https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list" class="uri">https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/)
 ------------------------------------------------------------------------------------------------------------------------
@@ -7491,8 +7491,8 @@ Return the leaf node of a flattened subtree for concatenation.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "String": <https://leetcode.com/tag/string> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming>
---------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [115. Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/description/)
 ----------------------------------------------------------------------------------------------
@@ -7575,8 +7575,8 @@ Dynamic array can be used.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Populating Next Right Pointers in Each Node II": <https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii> "Binary Tree Right Side View": <https://leetcode.com/problems/binary-tree-right-side-view>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Populating Next Right Pointers in Each Node II”: <a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii" class="uri">https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii</a> “Binary Tree Right Side View”: <a href="https://leetcode.com/problems/binary-tree-right-side-view" class="uri">https://leetcode.com/problems/binary-tree-right-side-view</a>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/)
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -7696,8 +7696,8 @@ Level order traversal.
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Populating Next Right Pointers in Each Node": <https://leetcode.com/problems/populating-next-right-pointers-in-each-node>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Populating Next Right Pointers in Each Node”: <a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node" class="uri">https://leetcode.com/problems/populating-next-right-pointers-in-each-node</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/)
 ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -7822,19 +7822,19 @@ Level order traversal. Exact same as [116. Populating Next Right Pointers in Eac
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> Similar Questions: "Pascal's Triangle II": <https://leetcode.com/problems/pascals-triangle-ii>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> Similar Questions: “Pascal’s Triangle II”: <a href="https://leetcode.com/problems/pascals-triangle-ii" class="uri">https://leetcode.com/problems/pascals-triangle-ii</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-[118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/description/)
+[118. Pascal’s Triangle](https://leetcode.com/problems/pascals-triangle/description/)
 -------------------------------------------------------------------------------------
 
 ### Problem:
 
-Given a non-negative integer *numRows*, generate the first *numRows* of Pascal's triangle.
+Given a non-negative integer *numRows*, generate the first *numRows* of Pascal’s triangle.
 
 ![PascalTriangleAnimated2.gif](./completeLEETCODE_files/PascalTriangleAnimated2.gif)
 
-In Pascal's triangle, each number is the sum of the two numbers directly above it.
+In Pascal’s triangle, each number is the sum of the two numbers directly above it.
 
 **Example:**
 
@@ -7877,21 +7877,21 @@ Dynamic Programming 101.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> Similar Questions: "Pascal's Triangle": <https://leetcode.com/problems/pascals-triangle>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> Similar Questions: “Pascal’s Triangle”: <a href="https://leetcode.com/problems/pascals-triangle" class="uri">https://leetcode.com/problems/pascals-triangle</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-[119. Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/description/)
+[119. Pascal’s Triangle II](https://leetcode.com/problems/pascals-triangle-ii/description/)
 -------------------------------------------------------------------------------------------
 
 ### Problem:
 
-Given a non-negative index *k* where *k* ≤ 33, return the *k*th index row of the Pascal's triangle.
+Given a non-negative index *k* where *k* ≤ 33, return the *k*th index row of the Pascal’s triangle.
 
 Note that the row index starts from 0.
 
 ![PascalTriangleAnimated2.gif](./completeLEETCODE_files/PascalTriangleAnimated2.gif)
 
-In Pascal's triangle, each number is the sum of the two numbers directly above it.
+In Pascal’s triangle, each number is the sum of the two numbers directly above it.
 
 **Example:**
 
@@ -7930,8 +7930,8 @@ State `(i, j)` depends on `(i-1, j)` and `(i-1, j-1)`. So to access `(i-1, j-1)`
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Array": <https://leetcode.com/tag/array> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming>
---------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [120. Triangle](https://leetcode.com/problems/triangle/description/)
 --------------------------------------------------------------------
@@ -7987,8 +7987,8 @@ Dynamic array can be used.
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> Similar Questions: "Maximum Subarray": <https://leetcode.com/problems/maximum-subarray> "Best Time to Buy and Sell Stock II": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii> "Best Time to Buy and Sell Stock III": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii> "Best Time to Buy and Sell Stock IV": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv> "Best Time to Buy and Sell Stock with Cooldown": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> Similar Questions: “Maximum Subarray”: <a href="https://leetcode.com/problems/maximum-subarray" class="uri">https://leetcode.com/problems/maximum-subarray</a> “Best Time to Buy and Sell Stock II”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii</a> “Best Time to Buy and Sell Stock III”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii</a> “Best Time to Buy and Sell Stock IV”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv</a> “Best Time to Buy and Sell Stock with Cooldown”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
 ------------------------------------------------------------------------------------------------------------------
@@ -8042,8 +8042,8 @@ Because `price[j]` is lower that the base, using `j` as new base is guaranteed t
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Array": <https://leetcode.com/tag/array> "Greedy": <https://leetcode.com/tag/greedy> Similar Questions: "Best Time to Buy and Sell Stock": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock> "Best Time to Buy and Sell Stock III": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii> "Best Time to Buy and Sell Stock IV": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv> "Best Time to Buy and Sell Stock with Cooldown": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown> "Best Time to Buy and Sell Stock with Transaction Fee": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Greedy”: <a href="https://leetcode.com/tag/greedy" class="uri">https://leetcode.com/tag/greedy</a> Similar Questions: “Best Time to Buy and Sell Stock”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock</a> “Best Time to Buy and Sell Stock III”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii</a> “Best Time to Buy and Sell Stock IV”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv</a> “Best Time to Buy and Sell Stock with Cooldown”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown</a> “Best Time to Buy and Sell Stock with Transaction Fee”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
 ------------------------------------------------------------------------------------------------------------------------
@@ -8099,8 +8099,8 @@ Sell immediately after the price drops. Or in other perspective, it is the sum o
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "Dynamic Programming": <https://leetcode.com/tag/dynamic-programming> Similar Questions: "Best Time to Buy and Sell Stock": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock> "Best Time to Buy and Sell Stock II": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii> "Best Time to Buy and Sell Stock IV": <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv> "Maximum Sum of 3 Non-Overlapping Subarrays": <https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Dynamic Programming”: <a href="https://leetcode.com/tag/dynamic-programming" class="uri">https://leetcode.com/tag/dynamic-programming</a> Similar Questions: “Best Time to Buy and Sell Stock”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock</a> “Best Time to Buy and Sell Stock II”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii</a> “Best Time to Buy and Sell Stock IV”: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv" class="uri">https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv</a> “Maximum Sum of 3 Non-Overlapping Subarrays”: <a href="https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays" class="uri">https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [123. Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/)
 --------------------------------------------------------------------------------------------------------------------------
@@ -8136,7 +8136,7 @@ Design an algorithm to find the maximum profit. You may complete at most *two* t
 
 ### Solution:
 
-Multiple transactions may not be engaged in at the same time. That means if we view the days that involed in the same transaction as a group, there won't be any intersection. We may complete at most *two* transactions, so divide the days into two groups, `[0...k]` and `[k...n-1]`. Notice `k` exists in both groups because technically we can sell out then immediately buy in at the same day.
+Multiple transactions may not be engaged in at the same time. That means if we view the days that involed in the same transaction as a group, there won’t be any intersection. We may complete at most *two* transactions, so divide the days into two groups, `[0...k]` and `[k...n-1]`. Notice `k` exists in both groups because technically we can sell out then immediately buy in at the same day.
 
 Define `p1(i)` to be the max profit of day `[0...i]`. This is just like the problem of [121. Best Time to Buy and Sell Stock](file:///C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main/CONTENT/DS-n-Algos/SANDBOX/121.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock.md).
 
@@ -8181,8 +8181,8 @@ Define `f(k)` to be `p1(k) + p2(k)`. We need to get `max( f(0), ..., f(n-1) )`.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Path Sum": <https://leetcode.com/problems/path-sum> "Sum Root to Leaf Numbers": <https://leetcode.com/problems/sum-root-to-leaf-numbers> "Path Sum IV": <https://leetcode.com/problems/path-sum-iv> "Longest Univalue Path": <https://leetcode.com/problems/longest-univalue-path>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Path Sum”: <a href="https://leetcode.com/problems/path-sum" class="uri">https://leetcode.com/problems/path-sum</a> “Sum Root to Leaf Numbers”: <a href="https://leetcode.com/problems/sum-root-to-leaf-numbers" class="uri">https://leetcode.com/problems/sum-root-to-leaf-numbers</a> “Path Sum IV”: <a href="https://leetcode.com/problems/path-sum-iv" class="uri">https://leetcode.com/problems/path-sum-iv</a> “Longest Univalue Path”: <a href="https://leetcode.com/problems/longest-univalue-path" class="uri">https://leetcode.com/problems/longest-univalue-path</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [124. Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/)
 ------------------------------------------------------------------------------------------------------------
@@ -8306,8 +8306,8 @@ Just return the later (max sum of a path that ends with `root`). Maintain a glob
 
 ------------------------------------------------------------------------
 
-Difficulty: Easy Related Topics: "Two Pointers": <https://leetcode.com/tag/two-pointers> "String": <https://leetcode.com/tag/string> Similar Questions: "Palindrome Linked List": <https://leetcode.com/problems/palindrome-linked-list> "Valid Palindrome II": <https://leetcode.com/problems/valid-palindrome-ii>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Easy Related Topics: “Two Pointers”: <a href="https://leetcode.com/tag/two-pointers" class="uri">https://leetcode.com/tag/two-pointers</a> “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> Similar Questions: “Palindrome Linked List”: <a href="https://leetcode.com/problems/palindrome-linked-list" class="uri">https://leetcode.com/problems/palindrome-linked-list</a> “Valid Palindrome II”: <a href="https://leetcode.com/problems/valid-palindrome-ii" class="uri">https://leetcode.com/problems/valid-palindrome-ii</a>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/description/)
 ------------------------------------------------------------------------------------
@@ -8395,15 +8395,15 @@ Compare the char codes.
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "String": <https://leetcode.com/tag/string> "Backtracking": <https://leetcode.com/tag/backtracking> "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search> Similar Questions: "Word Ladder": <https://leetcode.com/problems/word-ladder>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “String”: <a href="https://leetcode.com/tag/string" class="uri">https://leetcode.com/tag/string</a> “Backtracking”: <a href="https://leetcode.com/tag/backtracking" class="uri">https://leetcode.com/tag/backtracking</a> “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a> Similar Questions: “Word Ladder”: <a href="https://leetcode.com/problems/word-ladder" class="uri">https://leetcode.com/problems/word-ladder</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [126. Word Ladder II](https://leetcode.com/problems/word-ladder-ii/description/)
 --------------------------------------------------------------------------------
 
 ### Problem:
 
-Given two words (*beginWord* and *endWord*), and a dictionary's word list, find all shortest transformation sequence(s) from *beginWord* to *endWord*, such that:
+Given two words (*beginWord* and *endWord*), and a dictionary’s word list, find all shortest transformation sequence(s) from *beginWord* to *endWord*, such that:
 
 1.  Only one letter can be changed at a time
 2.  Each transformed word must exist in the word list. Note that *beginWord* is *not* a transformed word.
@@ -8510,15 +8510,15 @@ The items in the queue are not just words now. Parent nodes are also kept so tha
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search> Similar Questions: "Word Ladder II": <https://leetcode.com/problems/word-ladder-ii> "Minimum Genetic Mutation": <https://leetcode.com/problems/minimum-genetic-mutation>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a> Similar Questions: “Word Ladder II”: <a href="https://leetcode.com/problems/word-ladder-ii" class="uri">https://leetcode.com/problems/word-ladder-ii</a> “Minimum Genetic Mutation”: <a href="https://leetcode.com/problems/minimum-genetic-mutation" class="uri">https://leetcode.com/problems/minimum-genetic-mutation</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [127. Word Ladder](https://leetcode.com/problems/word-ladder/description/)
 --------------------------------------------------------------------------
 
 ### Problem:
 
-Given two words (*beginWord* and *endWord*), and a dictionary's word list, find the length of shortest transformation sequence from *beginWord* to *endWord*, such that:
+Given two words (*beginWord* and *endWord*), and a dictionary’s word list, find the length of shortest transformation sequence from *beginWord* to *endWord*, such that:
 
 1.  Only one letter can be changed at a time.
 2.  Each transformed word must exist in the word list. Note that *beginWord* is *not* a transformed word.
@@ -8560,7 +8560,7 @@ Think of it as building a tree, with `begineWord` as root and `endWord` as leave
 
 The best way control the depth (length of the shortest transformations) while building the tree is level-order traversal (BFS).
 
-We do not actually build the tree because it is expensive (astronomical if the list is huge). In fact, we only need one shortest path. So just like Dijkstra's algorithm, we say that the first time (level `i`) we encounter a word that turns out to be in a shortest path, then level `i` is the lowest level this word could ever get. We can safely remove it from the `wordList`.
+We do not actually build the tree because it is expensive (astronomical if the list is huge). In fact, we only need one shortest path. So just like Dijkstra’s algorithm, we say that the first time (level `i`) we encounter a word that turns out to be in a shortest path, then level `i` is the lowest level this word could ever get. We can safely remove it from the `wordList`.
 
 To find all the next words, instead of filtering the `wordList`, enumerate all 25 possible words and check if in `wordList`.
 
@@ -8612,8 +8612,8 @@ To find all the next words, instead of filtering the `wordList`, enumerate all 2
 
 ------------------------------------------------------------------------
 
-Difficulty: Hard Related Topics: "Array": <https://leetcode.com/tag/array> "Union Find": <https://leetcode.com/tag/union-find> Similar Questions: "Binary Tree Longest Consecutive Sequence": <https://leetcode.com/problems/binary-tree-longest-consecutive-sequence>
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Hard Related Topics: “Array”: <a href="https://leetcode.com/tag/array" class="uri">https://leetcode.com/tag/array</a> “Union Find”: <a href="https://leetcode.com/tag/union-find" class="uri">https://leetcode.com/tag/union-find</a> Similar Questions: “Binary Tree Longest Consecutive Sequence”: <a href="https://leetcode.com/problems/binary-tree-longest-consecutive-sequence" class="uri">https://leetcode.com/problems/binary-tree-longest-consecutive-sequence</a>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/description/)
 ------------------------------------------------------------------------------------------------------------
@@ -8632,7 +8632,7 @@ Your algorithm should run in O(*n*) complexity.
 
 ### Solution:
 
-Build a Set from the list. Pick a number, find all it's adjacent numbers that are also in the Set. Count them and remove them all from the Set. Repeat until the Set is empty. Time complexity O(n + n) = O(n).
+Build a Set from the list. Pick a number, find all it’s adjacent numbers that are also in the Set. Count them and remove them all from the Set. Repeat until the Set is empty. Time complexity O(n + n) = O(n).
 
     /**
      * @param {number[]} nums
@@ -8662,8 +8662,8 @@ Build a Set from the list. Pick a number, find all it's adjacent numbers that ar
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Tree": <https://leetcode.com/tag/tree> "Depth-first Search": <https://leetcode.com/tag/depth-first-search> Similar Questions: "Path Sum": <https://leetcode.com/problems/path-sum> "Binary Tree Maximum Path Sum": <https://leetcode.com/problems/binary-tree-maximum-path-sum>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Tree”: <a href="https://leetcode.com/tag/tree" class="uri">https://leetcode.com/tag/tree</a> “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> Similar Questions: “Path Sum”: <a href="https://leetcode.com/problems/path-sum" class="uri">https://leetcode.com/problems/path-sum</a> “Binary Tree Maximum Path Sum”: <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum" class="uri">https://leetcode.com/problems/binary-tree-maximum-path-sum</a>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/description/)
 ----------------------------------------------------------------------------------------------------
@@ -8730,8 +8730,8 @@ To write a clean solution for this promblem, use `0` as indicator of leaf node. 
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Depth-first Search": <https://leetcode.com/tag/depth-first-search> "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search> "Union Find": <https://leetcode.com/tag/union-find> Similar Questions: "Number of Islands": <https://leetcode.com/problems/number-of-islands> "Walls and Gates": <https://leetcode.com/problems/walls-and-gates>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a> “Union Find”: <a href="https://leetcode.com/tag/union-find" class="uri">https://leetcode.com/tag/union-find</a> Similar Questions: “Number of Islands”: <a href="https://leetcode.com/problems/number-of-islands" class="uri">https://leetcode.com/problems/number-of-islands</a> “Walls and Gates”: <a href="https://leetcode.com/problems/walls-and-gates" class="uri">https://leetcode.com/problems/walls-and-gates</a>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/)
 ----------------------------------------------------------------------------------------
@@ -8758,7 +8758,7 @@ After running your function, the board should be:
 
 **Explanation:**
 
-Surrounded regions shouldn't be on the border, which means that any `'O'` on the border of the board are not flipped to `'X'`. Any `'O'` that is not on the border and it is not connected to an `'O'` on the border will be flipped to `'X'`. Two cells are connected if they are adjacent cells connected horizontally or vertically.
+Surrounded regions shouldn’t be on the border, which means that any `'O'` on the border of the board are not flipped to `'X'`. Any `'O'` that is not on the border and it is not connected to an `'O'` on the border will be flipped to `'X'`. Two cells are connected if they are adjacent cells connected horizontally or vertically.
 
 ### Solution:
 
@@ -8841,8 +8841,8 @@ So both BFS and DFS are good. I prefer BFS when pruning is not needed in favor o
 
 ------------------------------------------------------------------------
 
-Difficulty: Medium Related Topics: "Depth-first Search": <https://leetcode.com/tag/depth-first-search> "Breadth-first Search": <https://leetcode.com/tag/breadth-first-search> "Graph": <https://leetcode.com/tag/graph> Similar Questions: "Copy List with Random Pointer": <https://leetcode.com/problems/copy-list-with-random-pointer>
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Difficulty: Medium Related Topics: “Depth-first Search”: <a href="https://leetcode.com/tag/depth-first-search" class="uri">https://leetcode.com/tag/depth-first-search</a> “Breadth-first Search”: <a href="https://leetcode.com/tag/breadth-first-search" class="uri">https://leetcode.com/tag/breadth-first-search</a> “Graph”: <a href="https://leetcode.com/tag/graph" class="uri">https://leetcode.com/tag/graph</a> Similar Questions: “Copy List with Random Pointer”: <a href="https://leetcode.com/problems/copy-list-with-random-pointer" class="uri">https://leetcode.com/problems/copy-list-with-random-pointer</a>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [133. Clone Graph](https://leetcode.com/problems/clone-graph/description/)
 --------------------------------------------------------------------------
@@ -8851,7 +8851,7 @@ Difficulty: Medium Related Topics: "Depth-first Search": <https://leetcode.com/t
 
 Given the head of a graph, return a deep copy (clone) of the graph. Each node in the graph contains a `label` (`int`) and a list (`List[UndirectedGraphNode]`) of its `neighbors`. There is an edge between the given node and each of the nodes in its neighbors.
 
-OJ's undirected graph serialization (so you can understand error output):
+OJ’s undirected graph serialization (so you can understand error output):
 
 Nodes are labeled uniquely.
 
@@ -8874,7 +8874,7 @@ Visually, the graph looks like the following:
              / \
              \_/
 
-**Note**: The information about the tree serialization is only meant so that you can understand error output if you get a wrong answer. You don't need to understand the serialization to solve the problem.
+**Note**: The information about the tree serialization is only meant so that you can understand error output if you get a wrong answer. You don’t need to understand the serialization to solve the problem.
 
 ### Solution:
 
@@ -8909,7 +8909,7 @@ DFS. Cache the visited node before entering the next recursion.
 
 *Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
 
-![alt text](./completeLEETCODE_files/binary-tree-upside-down.webp "binary-tree-upside-down")
+alt text
 
     /**
      * Definition for a binary tree node.
@@ -8985,9 +8985,7 @@ For this problem, a height-balanced binary tree is defined as:
 
 ![](./completeLEETCODE_files/balance_1.jpg)
 
-**Input:** root = <span class="katex-display"><span class="katex"><span class="katex-mathml">
-3, 9, 20, *n**u**l**l*, *n**u**l**l*, 15, 7
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+**Input:** root = <span class="katex-display"><span class="katex"><span class="katex-mathml"> 3, 9, 20, *n**u**l**l*, *n**u**l**l*, 15, 7 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">1</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>  
@@ -8997,9 +8995,7 @@ For this problem, a height-balanced binary tree is defined as:
 
 ![](./completeLEETCODE_files/balance_2.jpg)
 
-**Input:** root = <span class="katex-display"><span class="katex"><span class="katex-mathml">
-1, 2, 2, 3, 3, *n**u**l**l*, *n**u**l**l*, 4, 4
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+**Input:** root = <span class="katex-display"><span class="katex"><span class="katex-mathml"> 1, 2, 2, 3, 3, *n**u**l**l*, *n**u**l**l*, 4, 4 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span></span></span></span></span>  
@@ -9025,16 +9021,12 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
 
 **Example:**
 
-Given the sorted array: <span class="katex-display"><span class="katex"><span class="katex-mathml">
- − 10,  − 3, 0, 5, 9
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+Given the sorted array: <span class="katex-display"><span class="katex"><span class="katex-mathml">  − 10,  − 3, 0, 5, 9 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8388800000000001em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">−</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">9</span></span></span></span></span>,
 
-One possible answer is: <span class="katex-display"><span class="katex"><span class="katex-mathml">
-0,  − 3, 9,  − 10, *n**u**l**l*, 5
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+One possible answer is: <span class="katex-display"><span class="katex"><span class="katex-mathml"> 0,  − 3, 9,  − 10, \*n**u**l\*\*l\*, 5 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">−</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">5</span></span></span></span></span>, which represents the following height balanced BST:
@@ -9063,44 +9055,32 @@ Basically, the deletion can be divided into two stages:
 
 ![](./completeLEETCODE_files/del_node_1.jpg)
 
-**Input:** root = <span class="katex-display"><span class="katex"><span class="katex-mathml">
-5, 3, 6, 2, 4, *n**u**l**l*, 7
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+**Input:** root = <span class="katex-display"><span class="katex"><span class="katex-mathml"> 5, 3, 6, 2, 4, \*n**u**l\*\*l\*, 7 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, key = 3  
-**Output:** <span class="katex-display"><span class="katex"><span class="katex-mathml">
-5, 4, 6, 2, *n**u**l**l*, *n**u**l**l*, 7
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+**Output:** <span class="katex-display"><span class="katex"><span class="katex-mathml"> 5, 4, 6, 2, *n**u**l**l*, *n**u**l**l*, 7 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>  
 **Explanation:** Given key to delete is 3. So we find the node with value 3 and delete it.  
-One valid answer is <span class="katex-display"><span class="katex"><span class="katex-mathml">
-5, 4, 6, 2, *n**u**l**l*, *n**u**l**l*, 7
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+One valid answer is <span class="katex-display"><span class="katex"><span class="katex-mathml"> 5, 4, 6, 2, *n**u**l**l*, *n**u**l**l*, 7 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, shown in the above BST.  
-Please notice that another valid answer is <span class="katex-display"><span class="katex"><span class="katex-mathml">
-5, 2, 6, *n**u**l**l*, 4, *n**u**l**l*, 7
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+Please notice that another valid answer is <span class="katex-display"><span class="katex"><span class="katex-mathml"> 5, 2, 6, *n**u**l**l*, 4, *n**u**l**l*, 7 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
-                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span> and it's also accepted.  
+                  "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span> and it’s also accepted.  
 ![](./completeLEETCODE_files/del_node_supp.jpg)
 
 **Example 2:**
 
-**Input:** root = <span class="katex-display"><span class="katex"><span class="katex-mathml">
-5, 3, 6, 2, 4, *n**u**l**l*, 7
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+**Input:** root = <span class="katex-display"><span class="katex"><span class="katex-mathml"> 5, 3, 6, 2, 4, n**u**ll, 7 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>, key = 0  
-**Output:** <span class="katex-display"><span class="katex"><span class="katex-mathml">
-5, 3, 6, 2, 4, *n**u**l**l*, 7
-</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="
+**Output:** <span class="katex-display"><span class="katex"><span class="katex-mathml"> 5, 3, 6, 2, 4, nu**l**l, 7 </span><span class="katex-html" data-aria-hidden="true"><span class="base"><span class="strut" style="
                     height: 0.8888799999999999em;
                     vertical-align: -0.19444em;
                   "></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mord mathnormal" style="margin-right: 0.01968em">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.16666666666666666em"></span><span class="mord">7</span></span></span></span></span>  
