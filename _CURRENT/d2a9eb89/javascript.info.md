@@ -687,7 +687,6 @@ Geometry:
         )
           ;
 
-
 Scrolling:
 
 - Read the current scroll: `window.pageYOffset/pageXOffset`.
@@ -2118,9 +2117,6 @@ Consider a site menu, like this:
 
             </ul>
 
-
-
-
 Here's how it looks with some CSS:
 
 \[iframe height=70 src="menu" link edit\]
@@ -2182,9 +2178,6 @@ Like here:
 
 
             };
-
-
-
 
 If we omit `return false`, then after our code executes the browser will do its "default action" - navigating to the URL in `href`. And we don't need that here, as we're handling the click by ourselves.
 
@@ -2320,9 +2313,6 @@ We can create `Event` objects like this:
               , options])
               ;
 
-
-
-
 Arguments:
 
 - _type_ - event type, a string like `"click"` or our own like `"my-event"`.
@@ -2437,7 +2427,6 @@ run refresh autorun
     =\_Y_/=
     {>o<}
 
-
 Hide()
 
 Please note: the event must have the flag `cancelable: true`, otherwise the call `event.preventDefault()` is ignored.
@@ -2534,7 +2523,6 @@ In cases when a single action initiates multiple events, their order is fixed. T
     Also we can see the `button` property that allows to detect the mouse button, it's explained below.
     <input onmousedown="return logMouse(event)" onmouseup="return logMouse(event)" onclick="return logMouse(event)" oncontextmenu="return logMouse(event)" ondblclick="return logMouse(event)" value="Click me with the right or the left mouse button" type="button"> <input onclick="logClear('test')" value="Clear" type="button"> <form id="testform" name="testform"> <textarea style="font-size:12px;height:150px;width:360px;"></textarea></form>
 
-
 ## Mouse button
 
 Click-related events always have the `button` property, which allows to get the exact mouse button.
@@ -2612,8 +2600,6 @@ And if the mouse is in the center, then `clientX` and `clientY` are `250`, no ma
         Move the mouse over the input field to see `clientX/clientY` (the example is in the `iframe`, so coordinates are relative to that `iframe`):
     autorun height=50
     <input onmousemove="this.value=event.clientX+':'+event.clientY" value="Mouse over me">
-
-
 
 ## Preventing selection on mousedown
 
@@ -2791,7 +2777,6 @@ For `mouseout` the reverse:
     Each event has the information about both `target` and `relatedTarget`:
     [codetabs src="mouseoverout" height=280]
 
-
 \`\` `warn header="`relatedTarget `can be`null `" The`relatedTarget `property can be`null\`.
 
 That's normal and just means that the mouse came not from another element, but from out of the window. Or that it left the window.
@@ -2823,7 +2808,6 @@ In particular, it's possible that the pointer jumps right inside the middle of t
     Also move the pointer into the child `div`, and then move it out quickly down through the parent one. If the movement is fast enough, then the parent element is ignored. The mouse will cross the parent element without noticing it.
     [codetabs height=360 src="mouseoverout-fast"]
 
-
 `` smart header="If `mouseover` triggered, there must be `mouseout`" In case of fast mouse movements, intermediate elements may be ignored, but one thing we know for sure: if the pointer "officially" entered an element (`mouseover` event generated), then upon leaving it we always get `mouseout`. ``
 
 ## Mouseout when leaving for a child
@@ -2844,9 +2828,6 @@ An important feature of `mouseout` - it triggers, when the pointer moves from an
 
 
               </div>
-
-
-
 
 If we're on `#parent` and then move the pointer deeper into `#child`, we get `mouseout` on `#parent`!
 
@@ -2869,7 +2850,6 @@ The `mouseover` event on a descendant bubbles up. So, if `#parent` has `mouseove
     1. `mouseout [target: parent]` (left the parent), then
     2. `mouseover [target: child]` (came to the child, bubbled).
     [codetabs height=360 src="mouseoverout-child"]
-
 
 As shown, when the pointer moves from `#parent` element to `#child`, two handlers trigger on the parent element: `mouseout` and `mouseover`:
 
@@ -2897,9 +2877,6 @@ As shown, when the pointer moves from `#parent` element to `#child`, two handler
 
 
               };
-
-
-
 
 **If we don't examine `event.target` inside the handlers, then it may seem that the mouse pointer left `#parent` element, and then immediately came back over it.**
 
@@ -2929,7 +2906,6 @@ When the pointer leaves an element - `mouseleave` triggers.
         This example is similar to the one above, but now the top element has `mouseenter/mouseleave` instead of `mouseover/mouseout`.
     As you can see, the only generated events are the ones related to moving the pointer in and out of the top element. Nothing happens when the pointer goes to the child and back. Transitions between descendants are ignored
     [codetabs height=340 src="mouseleave"]
-
 
 ## Event delegation
 
@@ -3004,7 +2980,6 @@ Let's start with simple handlers that highlight the element under mouse:
         Here they are in action. As the mouse travels across the elements of this table, the current one is highlighted:
     [codetabs height=480 src="mouseenter-mouseleave-delegation"]
 
-
 In our case we'd like to handle transitions between table cells `<td>`: entering a cell and leaving it. Other transitions, such as inside the cell or outside of any cells, don't interest us. Let's filter them out.
 
 Here's what we can do:
@@ -3022,7 +2997,6 @@ Once again, the important features are: 1. It uses event delegation to handle en
         Here's the full example with all details:
     [codetabs height=460 src="mouseenter-mouseleave-delegation-2"]
     Try to move the cursor in and out of table cells and inside them. Fast or slow -- doesn't matter. Only `<td>` as a whole is highlighted, unlike the example before.
-
 
 ## Summary
 
@@ -3212,15 +3186,11 @@ Here's the implementation of dragging a ball:
 
               };
 
-
-
-
 If we run the code, we can notice something strange. On the beginning of the drag'n'drop, the ball "forks": we start dragging its "clone".
 
         Here's an example in action:
     [iframe src="ball" height=230]
     Try to drag'n'drop with the mouse and you'll see such behavior.
-
 
 That's because the browser has its own drag'n'drop support for images and some other elements. It runs automatically and conflicts with ours.
 
@@ -3240,14 +3210,10 @@ To disable it:
 
               };
 
-
-
-
 Now everything will be all right.
 
         In action:
     [iframe src="ball2" height=230]
-
 
 Another important aspect - we track `mousemove` on `document`, not on `ball`. From the first sight it may seem that the mouse is always over the ball, and we can put `mousemove` on it.
 
@@ -3283,9 +3249,6 @@ In the examples above the ball is always moved so, that it's center is under the
               +
               'px'
               ;
-
-
-
 
 Not bad, but there's a side-effect. To initiate the drag'n'drop, we can `mousedown` anywhere on the ball. But if "take" it from its edge, then the ball suddenly "jumps" to become centered under the mouse pointer.
 
@@ -3325,9 +3288,6 @@ Let's update our algorithm:
                       top
                       ;
 
-
-
-
 2.  Then while dragging we position the ball on the same shift relative to the pointer, like this:
 
                       // onmousemove
@@ -3363,9 +3323,6 @@ Let's update our algorithm:
                       +
                       'px'
                       ;
-
-
-
 
 The final code with better positioning:
 
@@ -3549,7 +3506,6 @@ The final code with better positioning:
         In action (inside `<iframe>`):
     [iframe src="ball3" height=230]
 
-
 The difference is especially noticeable if we drag the ball by its right-bottom corner. In the previous example the ball "jumps" under the pointer. Now it fluently follows the pointer from the current position.
 
 ## Potential drop targets (droppables)
@@ -3615,9 +3571,6 @@ We can use it in any of our mouse event handlers to detect the potential droppab
               =
               false
               ;
-
-
-
 
 Please note: we need to hide the ball before the call `(*)`. Otherwise we'll usually have a ball on these coordinates, as it's the top element under the pointer: `elemBelow=ball`. So we hide it and immediately show again.
 
@@ -3757,9 +3710,6 @@ An extended code of `onMouseMove` to find "droppable" elements:
 
               }
 
-
-
-
 In the example below when the ball is dragged over the soccer goal, the goal is highlighted.
 
 \[codetabs height=250 src="ball4"\]
@@ -3873,7 +3823,6 @@ We can track multiple touching fingers using their `pointerId`. When the user mo
     [iframe src="multitouch" edit height=200]
     Please note: you must be using a touchscreen device, such as a phone or a tablet, to actually see the difference in `pointerId/isPrimary`. For single-touch devices, such as a mouse, there'll be always same `pointerId` with `isPrimary=true`, for all pointer events.
 
-
 ## Event: pointercancel
 
 The `pointercancel` event fires when there's an ongoing pointer interaction, and then something happens that causes it to be aborted, so that no more pointer events are generated.
@@ -3899,7 +3848,6 @@ So the issue is that the browser "hijacks" the interaction: `pointercancel` fire
                 Here's the drag'n'drop demo with loggin of pointer events (only `up/down`, `move` and `cancel`) in the `textarea`:
     [iframe src="ball" height=240 edit]
 
-
 We'd like to implement the drag'n'drop on our own, so let's tell the browser not to take it over.
 
 **Prevent the default browser action to avoid `pointercancel`.**
@@ -3918,7 +3866,6 @@ After we do that, the events will work as intended, the browser won't hijack the
                 This demo adds these lines:
     [iframe src="ball-2" height=240 edit]
     As you can see, there's no `pointercancel` any more.
-
 
 Now we can add the code to actually move the ball, and our drag'n'drop will work for mouse devices and touch devices.
 
@@ -4026,7 +3973,6 @@ Here's the essential code:
                 The full demo:
     [iframe src="slider" height=100 edit]
 
-
 At the end, pointer capturing gives us two benefits: 1. The code becomes cleaner as we don't need to add/remove handlers on the whole `document` any more. The binding is released automatically. 2. If there are any `pointermove` handlers in the document, they won't be accidentally triggered by the pointer while the user is dragging the slider.
 
 ### Pointer capturing events
@@ -4068,7 +4014,6 @@ Keyboard events should be used when we want to handle keyboard actions (virtual 
                 To better understand keyboard events, you can use the teststand below.
     Try different key combinations in the text field.
     [codetabs src="keyboard-dump" height=480]
-
 
 ## Keydown and keyup
 
@@ -4217,7 +4162,6 @@ Here's a small function to show the current scroll:
                 In action:
     Current scroll = <b id="showScroll">scroll the window</b>
 
-
 The `scroll` event works both on the `window` and on scrollable elements.
 
 ## Prevent scrolling
@@ -4286,8 +4230,6 @@ run height=40
 
     That's usually not a problem, however, because we rarely change names of form elements.
 
-
-
 ## Backreference: element.form
 
 For any element, the form is available as `element.form`. So a form references all elements, and elements reference the form.
@@ -4331,9 +4273,6 @@ Like this:
                                           true
                                           ;
                                           // for a checkbox or radio button
-
-
-
 
 \`\` `warn header="Use`textarea.value `, not`textarea.innerHTML `" Please note that even though`
 
@@ -4384,9 +4323,6 @@ In the [specification](https://html.spec.whatwg.org/multipage/forms.html#the-opt
                                         , selected)
                                         ;
 
-
-
-
 This syntax is optional. We can use `document.createElement('option')` and set attributes manually. Still, it may be shorter, so here are the parameters:
 
 - `text` - the text inside the option,
@@ -4412,9 +4348,6 @@ For instance, here's a new "unselected" option:
 
                                         // creates <option value="value">Text</option>
 
-
-
-
 The same option, but selected:
 
                                         let option
@@ -4429,9 +4362,6 @@ The same option, but selected:
                                         ,
                                         true)
                                         ;
-
-
-
 
 Option elements have properties:
 
@@ -4735,9 +4665,6 @@ We must use `addEventListener` to catch it:
 
                                                             // not "document.onDOMContentLoaded = ..."
 
-
-
-
 For instance:
 
 run height=200 refresh
@@ -4836,9 +4763,6 @@ Here's how to use it:
                                                                 })
                                                                 ;
 
-
-
-
 - The request is sent as POST.
 - We can send not only a string, but also forms and other formats, as described in the chapter <a href="info:fetch" class="uri">info:fetch</a>, but usually it's a stringified object.
 - The data is limited by 64kb.
@@ -4926,9 +4850,6 @@ Like this:
 
 
                                                                 }
-
-
-
 
 There's also the `readystatechange` event that triggers when the state changes, so we can print all these states like this:
 
@@ -5021,9 +4942,6 @@ Here's a document with `<iframe>`, `<img>` and handlers that log events:
 
 
                                                                 </script>
-
-
-
 
 The working example is [in the sandbox](sandbox:readystate).
 
@@ -5131,9 +5049,6 @@ But, if the binary `+` is applied to strings, it merges (concatenates) them:
                                                                 ;
                                                                 // mystring
 
-
-
-
 Note that if any of the operands is a string, then the other one is converted to a string too.
 
 For example:
@@ -5229,9 +5144,6 @@ That's why, when we assign a variable, like `x = 2 * 2 + 1`, the calculations ar
                                                                 ;
                                                                 // 5
 
-
-
-
 ### Assignment = returns a value
 
 The fact of `=` being an operator, not a "magical" language construct has an interesting implication.
@@ -5283,9 +5195,6 @@ Once again, for the purposes of readability it's better to split such code into 
                                                                 = c
                                                                 ;
 
-
-
-
 That's easier to read, especially when eye-scanning the code fast.
 
 ## Modify-in-place
@@ -5310,9 +5219,6 @@ For example:
                                                                 *
                                                                 2
                                                                 ;
-
-
-
 
 This notation can be shortened using the operators `+=` and `*=`:
 
@@ -5347,7 +5253,6 @@ So, there are special operators for it:
 <!-- -->
 
                                                           Increment/decrement can only be applied to variables. Trying to use it on a value like `5++` will give an error.
-
 
 The operators `++` and `--` can be placed either before or after a variable.
 
@@ -5476,9 +5381,6 @@ For example:
 
                                                                 }
 
-
-
-
 Such tricks are used in many JavaScript frameworks. That's why we're mentioning them. But usually they don't improve code readability so we should think well before using them.
 
 # Scripts: async, defer
@@ -5512,9 +5414,6 @@ There are some workarounds to that. For instance, we can put a script at the bot
 
 
                                                                 </body>
-
-
-
 
 But this solution is far from perfect. For example, the browser notices the script (and can start downloading it) only after it downloaded the full HTML document. For long HTML documents, that may be a noticeable delay.
 
@@ -5565,9 +5464,6 @@ Let's say, we have two deferred scripts: the `long.js` and then `small.js`:
                                                                 "https://javascript.info/article/script-async-defer/small.js"
                                                                 ></script>
 
-
-
-
 Browsers scan the page for scripts and download them in parallel, to improve performance. So in the example above both scripts download in parallel. The `small.js` probably finishes first.
 
 …But the `defer` attribute, besides telling the browser "not to block", ensures that the relative order is kept. So even though `small.js` loads first, it still waits and runs after `long.js` executes.
@@ -5613,9 +5509,6 @@ Async scripts are great when we integrate an independent third-party script into
                                                                  async src=
                                                                 "https://google-analytics.com/analytics.js"
                                                                 ></script>
-
-
-
 
 ## Dynamic scripts
 
@@ -5699,13 +5592,9 @@ We can load it dynamically, like this:
                                                                 append(script)
                                                                 ;
 
-
-
-
 …But how to run the function that is declared inside that script? We need to wait until the script loads, and only then we can call it.
 
                                                           For our own scripts we could use [JavaScript modules](info:modules) here, but they are not widely adopted by third-party libraries.
-
 
 ### script.onload
 
@@ -5737,7 +5626,6 @@ Please note that we can't get HTTP error details here. We don't know if it was a
 
                                                           Events `onload`/`onerror` track only the loading itself.
     Errors that may occur during script processing and execution are out of scope for these events. That is: if a script loaded successfully, then `onload` triggers, even if it has programming errors in it. To track script errors, one can use `window.onerror` global handler.
-
 
 ## Other resources
 
@@ -5776,9 +5664,6 @@ For example, let's take a script `error.js` that consists of a single (bad) func
                                                                 noSuchFunction()
                                                                 ;
 
-
-
-
 Now load it from the same site where it's located:
 
 `` html run height=0 <script> window.onerror = function(message, url, line, col, errorObj) { alert(`${message}\n${url}, ${line}:${col}`); }; </script> <script src="/article/onload-onerror/crossorigin/error.js"></script> ``
@@ -5788,7 +5673,6 @@ We can see a good error report, like this:
                                                           Uncaught ReferenceError: noSuchFunction is not defined
     https://javascript.info/article/onload-onerror/crossorigin/error.js, 1:1
 
-
 Now let's load the same script from another domain:
 
 `` html run height=0 <script> window.onerror = function(message, url, line, col, errorObj) { alert(`${message}\n${url}, ${line}:${col}`); }; </script> <script src="https://cors.javascript.info/article/onload-onerror/crossorigin/error.js"></script> ``
@@ -5797,7 +5681,6 @@ The report is different, like this:
 
                                                           Script error.
     , 0:0
-
 
 Details may vary depending on the browser, but the idea is the same: any information about the internals of a script, including error stack traces, is hidden. Exactly because it's from another domain.
 
@@ -5819,7 +5702,6 @@ There are three levels of cross-origin access:
 
                                                           You can read more about cross-origin access in the chapter <info:fetch-crossorigin>. It describes the `fetch` method for network requests, but the policy is exactly the same.
     Such thing as "cookies" is out of our current scope, but you can read about them in the chapter <info:cookie>.
-
 
 In our case, we didn't have any crossorigin attribute. So the cross-origin access was prohibited. Let's add it.
 
@@ -5860,18 +5742,12 @@ First, we create an observer with a callback-function:
                                                                 MutationObserver(callback)
                                                                 ;
 
-
-
-
 And then attach it to a DOM node:
 
                                                                 observer.
                                                                 observe(node
                                                                 , config)
                                                                 ;
-
-
-
 
 `config` is an object with boolean options "what kind of changes to react on": - `childList` - changes in the direct children of `node`, - `subtree` - in all descendants of `node`, - `attributes` - attributes of `node`, - `attributeFilter` - an array of attribute names, to observe only selected ones. - `characterData` - whether to observe `node.data` (text content),
 
@@ -5927,9 +5803,6 @@ If we run this code in the browser, then focus on the given `<div>` and change t
 
                                                                 }]
                                                                 ;
-
-
-
 
 If we make more complex editing operations, e.g. remove the `<b>edit</b>`, the mutation event may contain multiple mutation records:
 
@@ -5999,9 +5872,6 @@ If we make more complex editing operations, e.g. remove the `<b>edit</b>`, the 
                                                                 }]
                                                                 ;
 
-
-
-
 So, `MutationObserver` allows to react on any changes within DOM subtree.
 
 ## Usage for integration
@@ -6040,8 +5910,6 @@ Such snippet in an HTML markup looks like this:
 
                                                               ...
 
-
-
 For better readability and at the same time, to beautify it, we'll be using a JavaScript syntax highlighting library on our site, like [Prism.js](https://prismjs.com/). To get syntax highlighting for above snippet in Prism, `Prism.highlightElem(pre)` is called, which examines the contents of such `pre` elements and adds special tags and styles for colored syntax highlighting into those elements, similar to what you see in examples here, on this page.
 
 When exactly should we run that highlighting method? Well, we can do it on `DOMContentLoaded` event, or put the script at the bottom of the page. The moment our DOM is ready, we can search for elements `pre[class*="language"]` and call `Prism.highlightElem` on them:
@@ -6057,9 +5925,6 @@ When exactly should we run that highlighting method? Well, we can do it on `DOMC
                                                                 highlightElem)
                                                                 ;
 
-
-
-
 Everything's simple so far, right? We find code snippets in HTML and highlight them.
 
 Now let's go on. Let's say we're going to dynamically fetch materials from a server. We'll study methods for that [later in the tutorial](info:fetch). For now it only matters that we fetch an HTML article from a webserver and display it on demand:
@@ -6073,9 +5938,6 @@ Now let's go on. Let's say we're going to dynamically fetch materials from a ser
                                                                 innerHTML
                                                                 = article
                                                                 ;
-
-
-
 
 The new `article` HTML may contain code snippets. We need to call `Prism.highlightElem` on them, otherwise they won't get highlighted.
 
@@ -6117,9 +5979,6 @@ We could append that call to the code that loads an article, like this:
                                                                 /!
                                                                 *
 
-
-
-
 …But, imagine if we have many places in the code where we load our content - articles, quizzes, forum posts, etc. Do we need to put the highlighting call everywhere, to highlight the code in content after loading? That's not very convenient.
 
 And what if the content is loaded by a third-party module? For example, we have a forum written by someone else, that loads content dynamically, and we'd like to add syntax highlighting to it. No one likes patching third-party scripts.
@@ -6152,7 +6011,6 @@ for(let mutation of mutations) { // examine new nodes, is there anything to high
     Prism.highlightElement(elem);
     }
     }
-
 
 }
 
@@ -6214,8 +6072,6 @@ These methods can be used together, like this:
 
                                                               ...
 
-
-
 `` smart header="Records returned by `observer.takeRecords()` are removed from the processing queue" The callback won't be called for records, returned by `observer.takeRecords()`. ``
 
 smart header="Garbage collection interaction" Observers use weak references to nodes internally. That is, if a node is removed from the DOM, and becomes unreachable, then it can be garbage collected.
@@ -6255,9 +6111,6 @@ A `Range` object is created without parameters:
                                                                 new
                                                                 Range()
                                                                 ;
-
-
-
 
 Then we can set the selection boundaries using `range.setStart(node, offset)` and `range.setEnd(node, offset)`.
 
@@ -6875,9 +6728,6 @@ In the chapter <a href="info:dispatch-events" class="uri">info:dispatch-events</
 
                                                                                           };
 
-
-
-
 ## Macrotasks and Microtasks
 
 Along with _macrotasks_, described in this chapter, there are _microtasks_, mentioned in the chapter <a href="info:microtask-queue" class="uri">info:microtask-queue</a>.
@@ -6958,9 +6808,6 @@ Basically, you just run:
                                                                                           open(
                                                                                           'https://javascript.info/')
 
-
-
-
 …And it will open a new window with given URL. Most modern browsers are configured to open url in new tabs instead of separate windows.
 
 Popups exist from really ancient times. The initial idea was to show another content without closing the main window. As of now, there are other ways to do that: we can load content dynamically with [fetch](info:fetch) and show it in a dynamically generated `<div>`. So, popups is not something we use everyday.
@@ -7008,9 +6855,6 @@ For example:
 
 
                                                                                           };
-
-
-
 
 This way users are somewhat protected from unwanted popups, but the functionality is not disabled totally.
 
@@ -7106,9 +6950,6 @@ In this example, we generate popup content from JavaScript:
                                                                                           "Hello, world!")
                                                                                           ;
 
-
-
-
 And here we modify the contents after loading:
 
 run let newWindow = open(‘/''', ‘example', ‘width=300,height=300') newWindow.focus();
@@ -7159,9 +7000,6 @@ To make it work, each such window should run the code:
                                                                                               =
                                                                                               'site.com'
                                                                                               ;
-
-
-
 
 That's all. Now they can interact without limitations. Again, that's only possible for pages with the same second-level domain.
 
@@ -7248,7 +7086,6 @@ Please note that nothing works. So the default set is really harsh:
 \[codetabs src="sandbox" height=140\]
 
                                                                                         The purpose of the `"sandbox"` attribute is only to *add more* restrictions. It cannot remove them. In particular, it can't relax same-origin restrictions if the iframe comes from another origin.
-
 
 ## Cross-window messaging
 
@@ -7342,9 +7179,6 @@ Here's an example:
 
                                                                                                   })
                                                                                                   ;
-
-
-
 
 The full example:
 
@@ -7452,9 +7286,6 @@ That looks like this:
 
                                                                                                   }
 
-
-
-
 That is: if the window finds out that it's not on top, then it automatically makes itself the top.
 
 This not a reliable defence, because there are many ways to hack around it. Let's cover a few.
@@ -7478,9 +7309,6 @@ The top page (enclosing one, belonging to the hacker) sets a preventing handler 
 
 
                                                                                                   };
-
-
-
 
 When the `iframe` tries to change `top.location`, the visitor gets a message asking them whether they want to leave.
 
@@ -7508,9 +7336,6 @@ Here's the code:
                                                                                                   "facebook.html"
                                                                                                   ></iframe>
 
-
-
-
 There are other ways to work around that simple protection too.
 
 ## X-Frame-Options
@@ -7537,7 +7362,6 @@ For instance, Twitter uses `X-Frame-Options: SAMEORIGIN`.
     <!-- ebook: prerender/ chrome headless dies and timeouts on this iframe -->
     <iframe src="https://twitter.com"></iframe>
     Depending on your browser, the `iframe` above is either empty or alerting you that the browser won't permit that page to be navigating in this way.
-
 
 ## Showing with disabled functionality
 
@@ -7638,9 +7462,6 @@ Something like this:
 
                                                                                                   </script>
 
-
-
-
 The demo:
 
 \[codetabs src="protector"\]
@@ -7654,7 +7475,6 @@ A cookie with such attribute is only sent to a website if it's opened directly, 
 If the site, such as Facebook, had `samesite` attribute on its authentication cookie, like this:
 
                                                                                             Set-Cookie: authorization=secret; samesite
-
 
 …Then such cookie wouldn't be sent when Facebook is open in iframe from another site. So the attack would fail.
 
@@ -7718,7 +7538,7 @@ run let buffer = new ArrayBuffer(16); // create a buffer of length 16
 
 _!_ let view = new Uint32Array(buffer); // treat buffer as a sequence of 32-bit integers
 
-alert(Uint32Array.BYTES_PER_ELEMENT); // 4 bytes per integer _/!_
+alert(Uint32Array.BYTES*PER_ELEMENT); // 4 bytes per integer */!\_
 
 alert(view.length); // 4, it stores that many integers alert(view.byteLength); // 16, the size in bytes
 
@@ -7766,9 +7586,6 @@ There are 5 variants of arguments:
                                                                                                   TypedArray()
                                                                                                   ;
 
-
-
-
 1.  If an `ArrayBuffer` argument is supplied, the view is created over it. We used that syntax already.
 
     Optionally we can provide `byteOffset` to start from (0 by default) and the `length` (till the end of the buffer by default), then the view will cover only a part of the `buffer`.
@@ -7814,9 +7631,6 @@ So, we can always move from one view to another:
                                                                                                   arr8.
                                                                                                   buffer)
                                                                                                   ;
-
-
-
 
 Here's the list of typed arrays:
 
@@ -7891,9 +7705,6 @@ The syntax:
                                                                                                   , [byteOffset]
                                                                                                   , [byteLength])
 
-
-
-
 - **`buffer`** - the underlying `ArrayBuffer`. Unlike typed arrays, `DataView` doesn't create a buffer on its own. We need to have it ready.
 - **`byteOffset`** - the starting byte position of the view (by default 0).
 - **`byteLength`** - the byte length of the view (by default till the end of `buffer`).
@@ -7952,9 +7763,6 @@ We first need to create it:
                                                                                                   , [options])
                                                                                                   ;
 
-
-
-
 - **`label`** - the encoding, `utf-8` by default, but `big5`, `windows-1251` and many other are also supported.
 - **`options`** - optional object:
   - **`fatal`** - boolean, if `true` then throw an exception for invalid (non-decodable) characters, otherwise (default) replace them with character `\uFFFD`.
@@ -7968,9 +7776,6 @@ We first need to create it:
                                                                                                   decode([input]
                                                                                                   , [options])
                                                                                                   ;
-
-
-
 
 - **`input`** - `BufferSource` to decode.
 - **`options`** - optional object:
@@ -8005,9 +7810,6 @@ The syntax is:
                                                                                                   new
                                                                                                   TextEncoder()
                                                                                                   ;
-
-
-
 
 The only encoding it supports is "utf-8".
 
@@ -8105,7 +7907,6 @@ let b = "0"; alert( Boolean(b) ); // true
 alert(a == b); // true!
 
     From JavaScript's standpoint, this result is quite normal. An equality check converts values using the numeric conversion (hence `"0"` becomes `0`), while the explicit `Boolean` conversion uses another set of rules.
-
 
 ## Strict equality
 
@@ -8209,9 +8010,6 @@ The constructor syntax is:
                                                                                                   , options)
                                                                                                   ;
 
-
-
-
 - **`blobParts`** is an array of `Blob`/ `BufferSource`/ `String` values.
 - **`options`** optional object:
   - **`type`** - `Blob` type, usually MIME-type, e.g.  `image/png`,
@@ -8280,9 +8078,6 @@ For example:
                                                                                                   })
                                                                                                   ;
 
-
-
-
 We can extract `Blob` slices with:
 
                                                                                                   blob.
@@ -8290,9 +8085,6 @@ We can extract `Blob` slices with:
                                                                                                   , [byteEnd]
                                                                                                   , [contentType])
                                                                                                   ;
-
-
-
 
 - **`byteStart`** - the starting byte, by default 0.
 - **`byteEnd`** - the last byte (exclusive, by default till the end).
@@ -8331,8 +8123,6 @@ URL.revokeObjectURL(link.href);
     `URL.createObjectURL` takes a `Blob` and creates a unique URL for it, in the form `blob:<origin>/<uuid>`.
     That's what the value of `link.href` looks like:
 
-
-
 blob:https://javascript.info/1e67e00e-860d-40a5-89ae-6ab0cbee6273
 
 For each URL generated by `URL.createObjectURL` the browser stores a URL -&gt; `Blob` mapping internally. So such URLs are short, but allow to access the `Blob`.
@@ -8365,9 +8155,6 @@ For instance, here's a smiley:
                                                                                                    src=
                                                                                                   "data:image/png;base64,R0lGODlhDAAMAKIFAF5LAP/zxAAAANyuAP/gaP///wAAAAAAACH5BAEAAAUALAAAAAAMAAwAAAMlWLPcGjDKFYi9lxKBOaGcF35DhWHamZUW0K4mAbiwWtuf0uxFAgA7"
                                                                                                   >
-
-
-
 
 The browser will decode the string and show the image: ![](data:image/png;base64,R0lGODlhDAAMAKIFAF5LAP/zxAAAANyuAP/gaP///wAAAAAAACH5BAEAAAUALAAAAAAMAAwAAAMlWLPcGjDKFYi9lxKBOaGcF35DhWHamZUW0K4mAbiwWtuf0uxFAgA7)
 
@@ -8428,9 +8215,6 @@ If we prefer `async/await` instead of callbacks:
                                                                                                       'image/png'))
                                                                                                       ;
 
-
-
-
 For screenshotting a page, we can use a library such as <a href="https://github.com/niklasvh/html2canvas" class="uri">https://github.com/niklasvh/html2canvas</a>. What it does is just walks the page and draws it on `<canvas>`. Then we can get a `Blob` of it the same way as above.
 
 ## From Blob to ArrayBuffer
@@ -8476,9 +8260,6 @@ But if we need to perform low-level processing, we can get the lowest-level `Arr
 
                                                                                                       };
 
-
-
-
 ## Summary
 
 While `ArrayBuffer`, `Uint8Array` and other `BufferSource` are "binary data", a [Blob](https://www.w3.org/TR/FileAPI/#dfn-Blob) represents "binary data with type".
@@ -8505,9 +8286,6 @@ First, there's a constructor, similar to `Blob`:
                                                                                                       , fileName
                                                                                                       , [options])
 
-
-
-
 - **`fileParts`** - is an array of Blob/BufferSource/String values.
 - **`fileName`** - file name string.
 - **`options`** - optional object:
@@ -8523,7 +8301,6 @@ run
 
                                                                                                   The input may select multiple files, so `input.files` is an array-like object with them. Here we have only one file, so we just take `input.files[0]`.
 
-
 ## FileReader
 
 [FileReader](https://www.w3.org/TR/FileAPI/#dfn-filereader) is an object with the sole purpose of reading data from `Blob` (and hence `File` too) objects.
@@ -8538,9 +8315,6 @@ The constructor:
                                                                                                         FileReader()
                                                                                                         ;
                                                                                                         // no arguments
-
-
-
 
 The main methods:
 
@@ -8613,9 +8387,6 @@ The basic syntax is:
                                                                                                           fetch(url
                                                                                                           , [options])
 
-
-
-
 - **`url`** - the URL to access.
 - **`options`** - optional parameters: method, headers etc.
 
@@ -8679,9 +8450,6 @@ For example:
 
                                                                                                           }
 
-
-
-
 **Second, to get the response body, we need to use an additional method call.**
 
 `Response` provides multiple promise-based methods to access the body in various formats:
@@ -8730,8 +8498,6 @@ setTimeout(() =&gt; { // hide after three seconds img.remove(); URL.revokeObject
     let text = await response.text(); // response body consumed
     let parsed = await response.json(); // fails (already consumed)
 
-
-
 ## Response headers
 
 The response headers are available in a Map-like headers object in `response.headers`.
@@ -8770,9 +8536,6 @@ To set a request header in `fetch`, we can use the `headers` option. It has an o
 
                                                                                                             })
                                                                                                             ;
-
-
-
 
 …But there's a list of [forbidden HTTP headers](https://fetch.spec.whatwg.org/#forbidden-header-name) that we can't set:
 
@@ -8890,9 +8653,6 @@ The `submit()` function can be rewritten without `async/await` like this:
 
                                                                                                               }
 
-
-
-
 ## Summary
 
 A typical fetch request consists of two `await` calls:
@@ -8914,9 +8674,6 @@ A typical fetch request consists of two `await` calls:
                                                                                                               ;
                                                                                                               // read body as json
 
-
-
-
 Or, without `await`:
 
                                                                                                               fetch(url
@@ -8932,9 +8689,6 @@ Or, without `await`:
                                                                                                               then(result
                                                                                                               =>
                                                                                                               /* process result */)
-
-
-
 
 Response properties: - `response.status` - HTTP code of the response, - `response.ok` - `true` is the status is 200-299. - `response.headers` - Map-like object with HTTP headers.
 
@@ -8957,9 +8711,6 @@ The constructor is:
                                                                                                               new
                                                                                                               FormData([form])
                                                                                                               ;
-
-
-
 
 If HTML `form` element is provided, it automatically captures its fields.
 
@@ -9031,9 +8782,6 @@ Please note how the image `Blob` is added:
                                                                                                                             ,
                                                                                                                             "image.png")
                                                                                                                             ;
-
-
-
 
 That's same as if there were `<input type="file" name="image">` in the form, and the visitor submitted a file named `"image.png"` (3rd argument) with the data `imageBlob` (2nd argument) from their filesystem.
 
@@ -9137,13 +8885,9 @@ Here's the sketch of code that reads the response from `response.body`:
 
                                                                                                                             }
 
-
-
-
 The result of `await reader.read()` call is an object with two properties: - **`done`** - `true` when the reading is complete, otherwise `false`. - **`value`** - a typed array of bytes: `Uint8Array`.
 
                                                                                                                       Streams API also describes asynchronous iteration over `ReadableStream` with `for await..of` loop, but it's not yet widely supported (see [browser issues](https://github.com/whatwg/streams/issues/778#issuecomment-461341033)), so we use `while` loop.
-
 
 We receive response chunks in the loop, until the loading finishes, that is: until `done` becomes `true`.
 
@@ -9218,9 +8962,6 @@ Create a controller:
                                                                                                                             AbortController()
                                                                                                                             ;
 
-
-
-
 A controller is an extremely simple object.
 
 - It has a single method `abort()`,
@@ -9271,9 +9012,6 @@ To be able to cancel `fetch`, pass the `signal` property of an `AbortController`
                                                                                                                             })
                                                                                                                             ;
 
-
-
-
 The `fetch` method knows how to work with `AbortController`. It will listen to `abort` events on `signal`.
 
 Now, to abort, call `controller.abort()`:
@@ -9281,9 +9019,6 @@ Now, to abort, call `controller.abort()`:
                                                                                                                             controller.
                                                                                                                             abort()
                                                                                                                             ;
-
-
-
 
 We're done: `fetch` gets the event from `signal` and aborts the request.
 
@@ -9353,9 +9088,6 @@ Here's a sketch of code that fetches many `urls` in parallel, and uses a single 
 
 
                                                                                                                             // it aborts all fetches
-
-
-
 
 If we have our own asynchronous tasks, different from `fetch`, we can use a single `AbortController` to stop those, together with fetches.
 
@@ -9439,9 +9171,6 @@ We just need to listen to its `abort` event in our tasks:
 
                                                                                                                             // it aborts all fetches and ourJob
 
-
-
-
 ## Summary
 
 - `AbortController` is a simple object that generates an `abort` event on it's `signal` property when the `abort()` method is called (and also sets `signal.aborted` to `true`).
@@ -9512,9 +9241,6 @@ One way to communicate with another server was to submit a `<form>` there. Peopl
 
                                                                                                                             </form>
 
-
-
-
 So, it was possible to make a GET/POST request to another site, even without networking methods, as forms can send data anywhere. But as it's forbidden to access the content of an `<iframe>` from another site, it wasn't possible to read the response.
 
 To be precise, there were actually tricks for that, they required special scripts at both the iframe and the page. So the communication with the iframe was technically possible. Right now there's no point to go into details, let these dinosaurs rest in peace.
@@ -9555,9 +9281,6 @@ Let's say we, at our site, need to get the data from `http://another.com`, such 
 
                                                                                                                                     }
 
-
-
-
 2.  Then we make a `<script>` tag with `src="http://another.com/weather.json?callback=gotWeather"`, using the name of our function as the `callback` URL-parameter.
 
                                                                                                                                     let script
@@ -9579,9 +9302,6 @@ Let's say we, at our site, need to get the data from `http://another.com`, such 
                                                                                                                                     body.
                                                                                                                                     append(script)
                                                                                                                                     ;
-
-
-
 
 3.  The remote server `another.com` dynamically generates a script that calls `gotWeather(...)` with the data it wants us to receive. `js // The expected answer from the server looks like this: gotWeather({ temperature: 25, humidity: 78 });`
 4.  When the remote script loads and executes, `gotWeather` runs, and, as it's our function, we have the data.
@@ -9637,7 +9357,6 @@ For instance, if we request `https://anywhere.com/request` from `https://javascr
     */!*
     ...
 
-
 As you can see, the `Origin` header contains exactly the origin (domain/protocol/port), without a path.
 
 The server can inspect the `Origin` and, if it agrees to accept such a request, add a special header `Access-Control-Allow-Origin` to the response. That header should contain the allowed origin (in our case `https://javascript.info`), or a star `*`. Then the response is successful, otherwise it's an error.
@@ -9653,7 +9372,6 @@ Here's an example of a permissive server response:
     *!*
     Access-Control-Allow-Origin: https://javascript.info
     */!*
-
 
 ## Response headers
 
@@ -9671,7 +9389,6 @@ Accessing any other response header causes an error.
                                                                                                                       There's no `Content-Length` header in the list!
     This header contains the full response length. So, if we're downloading something and would like to track the percentage of progress, then an additional permission is required to access that header (see below).
 
-
 To grant JavaScript access to any other response header, the server must send the `Access-Control-Expose-Headers` header. It contains a comma-separated list of unsafe header names that should be made accessible.
 
 For example:
@@ -9684,7 +9401,6 @@ For example:
     *!*
     Access-Control-Expose-Headers: Content-Length,API-Key
     */!*
-
 
 With such an `Access-Control-Expose-Headers` header, the script is allowed to read the `Content-Length` and `API-Key` headers of the response.
 
@@ -9749,9 +9465,6 @@ Let's see how it works step-by-step on the example of a cross-origin `PATCH` req
                                                                                                                             })
                                                                                                                             ;
 
-
-
-
 There are three reasons why the request is unsafe (one is enough): - Method `PATCH` - `Content-Type` is not one of: `application/x-www-form-urlencoded`, `multipart/form-data`, `text/plain`. - "Unsafe" `API-Key` header.
 
 ### Step 1 (preflight request)
@@ -9763,7 +9476,6 @@ Prior to sending such a request, the browser, on its own, sends a preflight requ
     Origin: https://javascript.info
     Access-Control-Request-Method: PATCH
     Access-Control-Request-Headers: Content-Type,API-Key
-
 
 - Method: `OPTIONS`.
 - The path - exactly the same as the main request: `/service.json`.
@@ -9788,7 +9500,6 @@ For example, this response also allows `PUT`, `DELETE` and additional headers:
     Access-Control-Allow-Headers: API-Key,Content-Type,If-Modified-Since,Cache-Control
     Access-Control-Max-Age: 86400
 
-
 Now the browser can see that `PATCH` is in `Access-Control-Allow-Methods` and `Content-Type,API-Key` are in the list `Access-Control-Allow-Headers`, so it sends out the main request.
 
 If there's the header `Access-Control-Max-Age` with a number of seconds, then the preflight permissions are cached for the given time. The response above will be cached for 86400 seconds (one day). Within this timeframe, subsequent requests will not cause a preflight. Assuming that they fit the cached allowances, they will be sent directly.
@@ -9805,19 +9516,16 @@ The main request has the `Origin` header (because it's cross-origin):
     API-Key: secret
     Origin: https://javascript.info
 
-
 ### Step 4 (actual response)
 
 The server should not forget to add `Access-Control-Allow-Origin` to the main response. A successful preflight does not relieve from that:
 
                                                                                                                       Access-Control-Allow-Origin: https://javascript.info
 
-
 Then JavaScript is able to read the main server response.
 
                                                                                                                       Preflight request occurs "behind the scenes", it's invisible to JavaScript.
     JavaScript only gets the response to the main request or an error if there's no server permission.
-
 
 ## Credentials
 
@@ -9849,9 +9557,6 @@ To send credentials in `fetch`, we need to add the option `credentials: "include
                                                                                                                             })
                                                                                                                             ;
 
-
-
-
 Now `fetch` sends cookies originating from `another.com` with request to that site.
 
 If the server agrees to accept the request _with credentials_, it should add a header `Access-Control-Allow-Credentials: true` to the response, in addition to `Access-Control-Allow-Origin`.
@@ -9861,7 +9566,6 @@ For example:
                                                                                                                       200 OK
     Access-Control-Allow-Origin: https://javascript.info
     Access-Control-Allow-Credentials: true
-
 
 Please note: `Access-Control-Allow-Origin` is prohibited from using a star `*` for requests with credentials. Like shown above, it must provide the exact origin there. That's an additional safety measure, to ensure that the server really knows who it trusts to make such requests.
 
@@ -9905,7 +9609,6 @@ Let's see the rest of API, to cover all its abilities.
 
                                                                                                                       Please note: most of these options are used rarely. You may skip this chapter and still use `fetch` well.
     Still, it's good to know what `fetch` can do, so if the need arises, you can return and read the details.
-
 
 Here's the full list of all possible `fetch` options with their default values (alternatives in comments):
 
@@ -10022,9 +9725,6 @@ Here's the full list of all possible `fetch` options with their default values (
                                                                                                                             })
                                                                                                                             ;
 
-
-
-
 An impressive list, right?
 
 We fully covered `method`, `headers` and `body` in the chapter <a href="info:fetch" class="uri">info:fetch</a>.
@@ -10067,9 +9767,6 @@ To send no referer, set an empty string:
                                                                                                                             )
                                                                                                                             ;
 
-
-
-
 To set another url within the current origin:
 
                                                                                                                             fetch(
@@ -10100,9 +9797,6 @@ To set another url within the current origin:
                                                                                                                             }
                                                                                                                             )
                                                                                                                             ;
-
-
-
 
 **The `referrerPolicy` option sets general rules for `Referer`.**
 
@@ -10154,9 +9848,6 @@ If we'd like other websites know only the origin part, not the URL-path, we can 
 
                                                                                                                             })
                                                                                                                             ;
-
-
-
 
 We can put it to all `fetch` calls, maybe integrate into JavaScript library of our project that does all requests and uses `fetch` inside.
 
@@ -10231,9 +9922,6 @@ We can put it in the `integrity` option, like this:
                                                                                                                             })
                                                                                                                             ;
 
-
-
-
 Then `fetch` will calculate SHA-256 on its own and compare it with our string. In case of a mismatch, an error is triggered.
 
 ## keepalive
@@ -10272,9 +9960,6 @@ The syntax to create a new `URL` object:
                                                                                                                             URL(url
                                                                                                                             , [base])
 
-
-
-
 - **`url`** - the full URL or only path (if base is set, see below),
 - **`base`** - an optional base URL: if set and `url` argument has only path, then the URL is generated relative to `base`.
 
@@ -10286,9 +9971,6 @@ For example:
                                                                                                                             URL(
                                                                                                                             'https://javascript.info/profile/admin')
                                                                                                                             ;
-
-
-
 
 These two URLs are same:
 
@@ -10331,9 +10013,6 @@ We can provide them in the URL string:
                                                                                                                             new
                                                                                                                             URL(
                                                                                                                             'https://google.com/search?query=JavaScript')
-
-
-
 
 …But parameters need to be encoded if they contain spaces, non-latin letters, etc (more about that below).
 
@@ -10392,8 +10071,6 @@ url.searchParams.set(‘key', ‘ъ'); alert(url); //https://ru.wikipedia.org/wi
     A natural question is: "What's the difference between `encodeURIComponent` and `encodeURI`? When we should use either?"
     That's easy to understand if we look at the URL, that's split into components in the picture above:
 
-
-
 https://site.com:8080/path/page?p1=v1&p2=v2\#hash
 
 As we can see, characters such as `:`, `?`, `=`, `&`, `#` are allowed in URL.
@@ -10438,7 +10115,6 @@ alert(encodeURI(url)); // http://%5B2607:f8b0:4005:802::1007%5D/ alert(new URL(u
     As we can see, `encodeURI` replaced square brackets `[...]`, that's not correct, the reason is: IPv6 urls did not exist at the time of RFC2396 (August 1998).
     Such cases are rare, `encode*` functions work well most of the time.
 
-
 # XMLHttpRequest
 
 `XMLHttpRequest` is a built-in browser object that allows to make HTTP requests in JavaScript.
@@ -10480,9 +10156,6 @@ To do the request, we need 3 steps:
 
                                                                                                                                     xhr.
                                                                                                                                     send([body])
-
-
-
 
     This method opens the connection and sends the request to server. The optional `body` parameter contains the request body.
 
@@ -10573,9 +10246,6 @@ To do the request, we need 3 steps:
 
                                                                                                                                   };
 
-
-
-
 Here's a full example. The code below loads the URL at `/article/xmlhttprequest/example/load` from the server and prints the progress:
 
 run // 1. Create a new XMLHttpRequest object let xhr = new XMLHttpRequest();
@@ -10612,9 +10282,6 @@ We can also specify a timeout using the corresponding property:
                                                                                                                             ;
                                                                                                                             // timeout in ms, 10 seconds
 
-
-
-
 If the request does not succeed within the given time, it gets canceled and `timeout` event triggers.
 
 `smart header="URL search parameters" To add parameters to URL, like`?name=value\`, and ensure the proper encoding, we can use [URL](info:url) object:
@@ -10647,9 +10314,6 @@ If the request does not succeed within the given time, it gets canceled and `tim
                                                                                                                             ;
                                                                                                                             // https://google.com/search?q=test+me%21
 
-
-
-
 ## Response Type
 
 We can use `xhr.responseType` property to set the response format:
@@ -10675,7 +10339,6 @@ xhr.send();
 
                                                                                                                       In the old scripts you may also find `xhr.responseText` and even `xhr.responseXML` properties.
     They exist for historical reasons, to get either a string or XML document. Nowadays, we should set the format in `xhr.responseType` and get `xhr.response` as demonstrated above.
-
 
 ## Ready states
 
@@ -10712,9 +10375,6 @@ All states, as in [the specification](https://xhr.spec.whatwg.org/#states):
                                                                                                                             4
                                                                                                                             ;
                                                                                                                             // request complete
-
-
-
 
 An `XMLHttpRequest` object travels them in the order `0` -&gt; `1` -&gt; `2` -&gt; `3` -&gt; … -&gt; `3` -&gt; `4`. State `3` repeats every time a data packet is received over the network.
 
@@ -10757,9 +10417,6 @@ We can track them using `readystatechange` event:
 
                                                                                                                             };
 
-
-
-
 You can find `readystatechange` listeners in really old code, it's there for historical reasons, as there was a time when there were no `load` and other events. Nowadays, `load/error/progress` handlers deprecate it.
 
 ## Aborting request
@@ -10770,9 +10427,6 @@ We can terminate the request at any time. The call to `xhr.abort()` does that:
                                                                                                                             abort()
                                                                                                                             ;
                                                                                                                             // terminate the request
-
-
-
 
 That triggers `abort` event, and `xhr.status` becomes `0`.
 
@@ -10858,9 +10512,6 @@ Here's the rewritten example, the 3rd parameter of `open` is `false`:
 
                                                                                                                             }
 
-
-
-
 It might look good, but synchronous calls are used rarely, because they block in-page JavaScript till the loading is complete. In some browsers it becomes impossible to scroll. If a synchronous call takes too much time, the browser may suggest to close the "hanging" webpage.
 
 Many advanced capabilities of `XMLHttpRequest`, like requesting from another domain or specifying a timeout, are unavailable for synchronous requests. Also, as you can see, no progress indication.
@@ -10884,9 +10535,6 @@ For instance:
                                                                                                                                 ,
                                                                                                                                 'application/json')
                                                                                                                                 ;
-
-
-
 
 \`\` `warn header="Headers limitations" Several headers are managed exclusively by the browser, e.g.`Referer `and`Host\`. The full list is [in the specification](<https://xhr.spec.whatwg.org/#the-setrequestheader()-method>).
 
@@ -10920,9 +10568,6 @@ For instance:
 
                                                                                                                                 // X-Auth: 123, 456
 
-
-
-
 `getResponseHeader(name)`  
 Gets the response header with the given `name` (except `Set-Cookie` and `Set-Cookie2`).
 
@@ -10931,9 +10576,6 @@ For instance:
                                                                                                                                 xhr.
                                                                                                                                 getResponseHeader(
                                                                                                                                 'Content-Type')
-
-
-
 
 `getAllResponseHeaders()`  
 Returns all response headers, except `Set-Cookie` and `Set-Cookie2`.
@@ -10944,7 +10586,6 @@ Headers are returned as a single line, e.g.:
     Content-Length: 4260
     Content-Type: image/png
     Date: Sat, 08 Sep 2012 16:53:16 GMT
-
 
 The line break between headers is always `"\r\n"` (doesn't depend on OS), so we can easily split it into individual headers. The separator between the name and the value is always a colon followed by a space `": "`. That's fixed in the specification.
 
@@ -10996,9 +10637,6 @@ Like this (assuming that if two headers have the same name, then the latter one 
 
                                                                                                                                 // headers['Content-Type'] = 'image/png'
 
-
-
-
 ## POST, FormData
 
 To make a POST request, we can use the built-in [FormData](mdn:api/FormData) object.
@@ -11018,9 +10656,6 @@ The syntax:
                                                                                                                             , value)
                                                                                                                             ;
                                                                                                                             // appends a field
-
-
-
 
 We create it, optionally fill from a form, `append` more fields if needed, and then:
 
@@ -11087,9 +10722,6 @@ Just don't forget to set the header `Content-Type: application/json`, many serve
                                                                                                                                 xhr.
                                                                                                                                 send(json)
                                                                                                                                 ;
-
-
-
 
 The `.send(body)` method is pretty omnivore. It can send almost any `body`, including `Blob` and `BufferSource` objects.
 
@@ -11179,9 +10811,6 @@ Example of handlers:
 
                                                                                                                                 };
 
-
-
-
 Here's a real-life example: file upload with progress indication:
 
 run
@@ -11221,8 +10850,6 @@ Just like `fetch`, it doesn't send cookies and HTTP-authorization to another ori
                                                                                                                                   ');
 
                                                                                                                                 ...
-
-
 
 See the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a> for details about cross-origin headers.
 
@@ -11336,9 +10963,6 @@ Typical code of the GET-request with `XMLHttpRequest`:
 
                                                                                                                                   };
 
-
-
-
 There are actually more events, the [modern specification](https://xhr.spec.whatwg.org/#events) lists them (in the lifecycle order):
 
 - `loadstart` - the request has started.
@@ -11395,9 +11019,6 @@ If we want to execute more than one statement, we have to wrap our code block in
 
                                                                                                                                   }
 
-
-
-
 We recommend wrapping your code block with curly braces `{}` every time you use an `if` statement, even if there is only one statement to execute. Doing so improves readability.
 
 ## Boolean conversion
@@ -11420,9 +11041,6 @@ So, the code under this condition would never execute:
 
                                                                                                                                   }
 
-
-
-
 …and inside this condition - it always will:
 
                                                                                                                                   if (
@@ -11433,9 +11051,6 @@ So, the code under this condition would never execute:
                                                                                                                                   ...
 
                                                                                                                                   }
-
-
-
 
 We can also pass a pre-evaluated boolean value to `if`, like this:
 
@@ -11454,9 +11069,6 @@ We can also pass a pre-evaluated boolean value to `if`, like this:
                                                                                                                                   ...
 
                                                                                                                                   }
-
-
-
 
 ## The "else" clause
 
@@ -11503,9 +11115,6 @@ The syntax is:
                                                                                                                                   ? value1 : value2
                                                                                                                                   ;
 
-
-
-
 The `condition` is evaluated: if it's truthy then `value1` is returned, otherwise - `value2`.
 
 For example:
@@ -11518,9 +11127,6 @@ For example:
                                                                                                                                   true :
                                                                                                                                   false
                                                                                                                                   ;
-
-
-
 
 Technically, we can omit the parentheses around `age > 18`. The question mark operator has a low precedence, so it executes after the comparison `>`.
 
@@ -11541,16 +11147,11 @@ This example will do the same thing as the previous one:
                                                                                                                                   false
                                                                                                                                   ;
 
-
-
-
 But parentheses make the code more readable, so we recommend using them.
 
                                                                                                                             In the example above, you can avoid using the question mark operator because the comparison itself returns `true/false`:
     // the same
     let accessAllowed = age > 18;
-
-
 
 ## Multiple ‘?'''
 
@@ -11619,9 +11220,6 @@ Here's how this looks using `if..else`:
 
 
                                                                                                                                   }
-
-
-
 
 ## Non-traditional use of ‘?'''
 
@@ -11863,9 +11461,6 @@ A sketch of client-side `subscribe` function that makes long requests:
                                                                                                                                   subscribe()
                                                                                                                                   ;
 
-
-
-
 As you can see, `subscribe` function makes a fetch, then waits for the response, handles it and calls itself again.
 
 warn header="Server should be ok with many pending connections" The server architecture must be able to work with many pending connections.
@@ -11913,9 +11508,6 @@ To open a websocket connection, we need to create `new WebSocket` using the spec
                                                                                                                                   "*!*ws*/!*://javascript.info")
                                                                                                                                   ;
 
-
-
-
 There's also encrypted `wss://` protocol. It's like HTTPS for websockets.
 
 \`\` `smart header="Always prefer`wss:// `" The`wss://\` protocol is not only encrypted, but also more reliable.
@@ -11951,8 +11543,6 @@ socket.onerror = function(error) { alert( `[error] ${error.message}`); };
     ![](websocket-handshake.svg)
     Here's an example of browser headers for request made by `new WebSocket("wss://javascript.info/chat")`.
 
-
-
 GET /chat Host: javascript.info Origin: https://javascript.info Connection: Upgrade Upgrade: websocket Sec-WebSocket-Key: Iv8io/9s+lYFgZWcXczP8Q== Sec-WebSocket-Version: 13
 
 - `Origin` - the origin of the client page, e.g.  `https://javascript.info`. WebSocket objects are cross-origin by nature. There are no special headers or other limitations. Old servers are unable to handle WebSocket anyway, so there are no compatibility issues. But `Origin` header is important, as it allows the server to decide whether or not to talk WebSocket with this website.
@@ -11969,7 +11559,6 @@ If the server agrees to switch to WebSocket, it should send code 101 response:
     Upgrade: websocket
     Connection: Upgrade
     Sec-WebSocket-Accept: hsBlbuDTkk24srzEOTBUlZAlC2g=
-
 
 Here `Sec-WebSocket-Accept` is `Sec-WebSocket-Key`, recoded using a special algorithm. The browser uses it to make sure that the response corresponds to the request.
 
@@ -11998,9 +11587,6 @@ For instance:
                                                                                                                                         "wamp"])
                                                                                                                                         ;
 
-
-
-
 The server should respond with a list of protocols and extensions that it agrees to use.
 
 For example, the request:
@@ -12017,7 +11603,6 @@ For example, the request:
     Sec-WebSocket-Protocol: soap, wamp
     */!*
 
-
 Response:
 
                                                                                                                             101 Switching Protocols
@@ -12028,7 +11613,6 @@ Response:
     Sec-WebSocket-Extensions: deflate-frame
     Sec-WebSocket-Protocol: soap
     */!*
-
 
 Here the server responds that it supports the extension "deflate-frame", and only SOAP of the requested subprotocols.
 
@@ -12072,9 +11656,6 @@ That's set by `socket.binaryType` property, it's `"blob"` by default, so binary 
 
                                                                                                                                   };
 
-
-
-
 ## Rate limiting
 
 Imagine, our app is generating a lot of data to send. But the user has a slow network connection, maybe on a mobile internet, outside of a city.
@@ -12117,9 +11698,6 @@ We can examine it to see whether the socket is actually available for transmissi
                                                                                                                                   100)
                                                                                                                                   ;
 
-
-
-
 ## Connection close
 
 Normally, when a party wants to close the connection (both browser and server have equal rights), they send a "connection close frame" with a numeric code and a textual reason.
@@ -12130,9 +11708,6 @@ The method for that is:
                                                                                                                                   close([code]
                                                                                                                                   , [reason])
                                                                                                                                   ;
-
-
-
 
 - `code` is a special WebSocket closing code (optional)
 - `reason` is a string that describes the reason of closing (optional)
@@ -12172,9 +11747,6 @@ Then the other party in `close` event handler gets the code and the reason, e.g.
 
                                                                                                                                   };
 
-
-
-
 Most common code values:
 
 - `1000` - the default, normal closure (used if no `code` supplied),
@@ -12211,9 +11783,6 @@ WebSocket codes are somewhat like HTTP codes, but different. In particular, any 
 
 
                                                                                                                                   };
-
-
-
 
 ## Connection state
 
@@ -12266,9 +11835,6 @@ HTML: we need a `<form>` to send messages and a `<div>` for incoming messages:
                                                                                                                                    id=
                                                                                                                                   "messages"
                                                                                                                                   ></div>
-
-
-
 
 From JavaScript we want three things: 1. Open the connection. 2. On form submission - `socket.send(message)` for the message. 3. On incoming message - append it to `div#messages`.
 
@@ -12358,9 +11924,6 @@ Here's the code:
 
 
                                                                                                                                   }
-
-
-
 
 Server-side code is a little bit beyond our scope. Here we'll use Node.js, but you don't have to. Other platforms also have their means to work with WebSocket.
 
@@ -12500,9 +12063,6 @@ The server-side algorithm will be:
 
                                                                                                                                   }
 
-
-
-
 Here's the working example:
 
 \[iframe src="chat" height="100" zip\]
@@ -12560,7 +12120,6 @@ The server should respond with status 200 and the header `Content-Type: text/eve
     data: Message 3
     data: of two lines
 
-
 - A message text goes after `data:`, the space after the colon is optional.
 - Messages are delimited with double line breaks `\n\n`.
 - To send a line break `\n`, we can immediately send one more `data:` (3rd message above).
@@ -12582,9 +12141,6 @@ For instance:
                                                                                                                                   \n
                                                                                                                                   */!* Second line"
                                                                                                                                   }
-
-
-
 
 …So we can assume that one `data:` holds exactly one message.
 
@@ -12624,9 +12180,6 @@ For each such message, the `message` event is generated:
 
                                                                                                                                   // or eventSource.addEventListener('message', ...)
 
-
-
-
 ### Cross-origin requests
 
 `EventSource` supports cross-origin requests, like `fetch` and any other networking methods. We can use any URL:
@@ -12637,9 +12190,6 @@ For each such message, the `message` event is generated:
                                                                                                                                   EventSource(
                                                                                                                                   "https://another-site.com/events")
                                                                                                                                   ;
-
-
-
 
 The remote server will get the `Origin` header and must respond with `Access-Control-Allow-Origin` to proceed.
 
@@ -12662,9 +12212,6 @@ To pass credentials, we should set the additional option `withCredentials`, like
                                                                                                                                   })
                                                                                                                                   ;
 
-
-
-
 Please see the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a> for more details about cross-origin headers.
 
 ## Reconnection
@@ -12686,9 +12233,6 @@ The server can set the recommended delay using `retry:` in response (in millisec
                                                                                                                                   , I set the reconnection delay to
                                                                                                                                   15 seconds
 
-
-
-
 The `retry:` may come both together with some data, or as a standalone message.
 
 The browser should wait that many milliseconds before reconnecting. Or longer, e.g. if the browser knows (from OS) that there's no network connection at the moment, it may wait until the connection appears, and then retry.
@@ -12708,13 +12252,9 @@ The browser should wait that many milliseconds before reconnecting. Or longer, e
                                                                                                                                 close()
                                                                                                                                 ;
 
-
-
-
 Also, there will be no reconnection if the response has an incorrect `Content-Type` or its HTTP status differs from 301, 307, 200 and 204. In such cases the `"error"` event will be emitted, and the browser won't reconnect.
 
                                                                                                                             When a connection is finally closed, there's no way to "reopen" it. If we'd like to connect again, just create a new `EventSource`.
-
 
 ## Message id
 
@@ -12729,7 +12269,6 @@ To correctly resume the connection, each message should have an `id` field, like
     data: Message 3
     data: of two lines
     id: 3
-
 
 When a message with `id:` is received, the browser:
 
@@ -12765,7 +12304,6 @@ For example:
     data: Hello
     event: leave
     data: Bob
-
 
 To handle custom events, we must use `addEventListener`, not `onmessage`:
 
@@ -12836,9 +12374,6 @@ To handle custom events, we must use `addEventListener`, not `onmessage`:
                                                                                                                                   })
                                                                                                                                   ;
 
-
-
-
 ## Full example
 
 Here's the server that sends messages with `1`, `2`, `3`, then `bye` and breaks the connection.
@@ -12867,9 +12402,6 @@ The syntax is:
                                                                                                                                   EventSource(url
                                                                                                                                   , [credentials])
                                                                                                                                   ;
-
-
-
 
 The second argument has only one possible option: `{ withCredentials: true }`, it allows sending cross-origin credentials.
 
@@ -12936,7 +12468,6 @@ There are many tricky things about cookies and their options. In this chapter we
 
 
                                                                                                                             Assuming you're on a website, it's possible to see the cookies from it, like this:
-
 
 `js run // At javascript.info, we use Google Analytics for statistics, // so there should be some cookies alert( document.cookie ); // cookie1=value1; cookie2=value2;...`
 
@@ -13013,9 +12544,6 @@ By default, a cookie is accessible only at the domain that set it. So, if the co
                                                                                                                                   ;
                                                                                                                                   // no user
 
-
-
-
 **There's no way to let a cookie be accessible from another 2nd-level domain, so `other.com` will never receive a cookie set at `site.com`.**
 
 It's a safety restriction, to allow us to store sensitive data in cookies, that should be available only on one site.
@@ -13047,9 +12575,6 @@ It's a safety restriction, to allow us to store sensitive data in cookies, that 
                                                                                                                                   cookie)
                                                                                                                                   ;
                                                                                                                                   // has cookie user=John
-
-
-
 
 For historical reasons, `domain=.site.com` (a dot before `site.com`) also works the same way, allowing access to the cookie from subdomains. That's an old notation and should be used if we need to support very old browsers.
 
@@ -13094,9 +12619,6 @@ The date must be exactly in this format, in the GMT timezone. We can use `date.t
                                                                                                                                   + date
                                                                                                                                   ;
 
-
-
-
 If we set `expires` to a date in the past, the cookie is deleted.
 
 - **`max-age=3600`**
@@ -13125,9 +12647,6 @@ If set to zero or a negative value, the cookie is deleted:
                                                                                                                                   "user=John; max-age=0"
                                                                                                                                   ;
 
-
-
-
 ## secure
 
 - **`secure`**
@@ -13151,9 +12670,6 @@ With this option, if a cookie is set by `https://site.com`, then it doesn't appe
                                                                                                                                   =
                                                                                                                                   "user=John; secure"
                                                                                                                                   ;
-
-
-
 
 ## samesite
 
@@ -13208,7 +12724,6 @@ Lax mode, just like `strict`, forbids the browser to send cookies when coming fr
 A `samesite=lax` cookie is sent if both of these conditions are true: 1. The HTTP method is "safe" (e.g. GET, but not POST).
 
                                                                                                                             The full list of safe HTTP methods is in the [RFC7231 specification](https://tools.ietf.org/html/rfc7231). Basically, these are the methods that should be used for reading, but not writing the data. They must not perform any data-changing operations. Following a link is always GET, the safe method.
-
 
 1.  The operation performs a top-level navigation (changes URL in the browser address bar).
 
@@ -13300,9 +12815,6 @@ The function `getCookie(name)` returns the cookie with the given `name`:
 
                                                                                                                                   }
 
-
-
-
 Here `new RegExp` is generated dynamically, to match `; name=<value>`.
 
 Please note that a cookie value is encoded, so `getCookie` uses a built-in `decodeURIComponent` function to decode it.
@@ -13351,9 +12863,6 @@ To delete a cookie, we can call it with a negative expiration date:
 
                                                                                                                                   }
 
-
-
-
 `warn header="Updating or deleting must use same path and domain" Please note: when we update or delete a cookie, we should use exactly the same path and domain options as when we set it.`
 
 Together: [cookie.js](cookie.js).
@@ -13365,7 +12874,6 @@ A cookie is called "third-party" if it's placed by a domain other than the page 
 For instance: 1. A page at `site.com` loads a banner from another site: `<img src="https://ads.com/banner.png">`. 2. Along with the banner, the remote server at `ads.com` may set the `Set-Cookie` header with a cookie like `id=1234`. Such a cookie originates from the `ads.com` domain, and will only be visible at `ads.com`:
 
                                                                                                                             ![](cookie-third-party.svg)
-
 
 1.  Next time when `ads.com` is accessed, the remote server gets the `id` cookie and recognizes the user:
 
@@ -13383,7 +12891,6 @@ Also, some modern browsers employ special policies for such cookies: - Safari do
 
                                                                                                                             If we load a script from a third-party domain, like `<script src="https://google-analytics.com/analytics.js">`, and that script uses `document.cookie` to set a cookie, then such cookie is not third-party.
     If a script sets a cookie, then no matter where the script came from -- the cookie belongs to the domain of the current webpage.
-
 
 ## Appendix: GDPR
 
@@ -13564,7 +13071,6 @@ Imagine, you have two windows with the same site in each. So `localStorage` is s
 
                                                                                                                             You might want to open this page in two browser windows to test the code below.
 
-
 If both windows are listening for `window.onstorage`, then each one will react on updates that happened in the other one.
 
 run // triggers on updates made to the same storage from other documents window.onstorage = event =&gt; { // same as window.addEventListener(‘storage', event =&gt; { if (event.key != ‘now') return; alert(event.key + ‘:''' + event.newValue + " at " + event.url); };
@@ -13637,9 +13143,6 @@ The syntax:
                                                                                                                                   open(name
                                                                                                                                   , version)
                                                                                                                                   ;
-
-
-
 
 - `name` - a string, the database name.
 - `version` - a positive integer version, by default `1` (explained below).
@@ -13719,9 +13222,6 @@ Then we can open the database with version `1` and perform the initialization in
 
                                                                                                                                   };
 
-
-
-
 Then, later, we publish the 2nd version.
 
 We can open it with version `2` and perform the upgrade like this:
@@ -13787,9 +13287,6 @@ We can open it with version `2` and perform the upgrade like this:
 
                                                                                                                                   };
 
-
-
-
 Please note: as our current version is `2`, the `onupgradeneeded` handler has a code branch for version `0`, suitable for users that are accessing for the first time and have no database, and also for version `1`, for upgrades.
 
 And then, only if `onupgradeneeded` handler finishes without errors, `openRequest.onsuccess` triggers, and the database is considered successfully opened.
@@ -13803,9 +13300,6 @@ To delete a database:
 
 
                                                                                                                                   // deleteRequest.onsuccess/onerror tracks the result
-
-
-
 
 \`\` `warn header="We can't open an older version of the database" If the current user database has a higher version than in the`open `call, e.g. the existing DB version is`3 `, and we try to`open(…2) `, then that's an error,`openRequest.onerror\` triggers.
 
@@ -13930,9 +13424,6 @@ Here's the code to correctly handle the parallel upgrade. It installs the `onver
                                                                                                                                   /
                                                                                                                                   !*
 
-
-
-
 …In other words, here we do two things:
 
 1.  The `db.onversionchange` listener informs us about a parallel update attempt, if the current database version becomes outdated.
@@ -13975,9 +13466,6 @@ The syntax to create an object store:
                                                                                                                                   , keyOptions])
                                                                                                                                   ;
 
-
-
-
 Please note, the operation is synchronous, no `await` needed.
 
 - `name` is the store name, e.g.  `"books"` for books,
@@ -13999,9 +13487,6 @@ For instance, this object store uses `id` property as the key:
                                                                                                                                   'id'
                                                                                                                                   })
                                                                                                                                   ;
-
-
-
 
 **An object store can only be created/modified while updating the DB version, in `upgradeneeded` handler.**
 
@@ -14069,17 +13554,11 @@ Here's the demo of the second approach:
 
                                                                                                                                   };
 
-
-
-
 To delete an object store:
 
                                                                                                                                   db.
                                                                                                                                   deleteObjectStore(
                                                                                                                                   'books')
-
-
-
 
 ## Transactions
 
@@ -14101,9 +13580,6 @@ To start a transaction:
                                                                                                                                   transaction(store[
                                                                                                                                   , type])
                                                                                                                                   ;
-
-
-
 
 - `store` is a store name that the transaction is going to access, e.g.  `"books"`. Can be an array of store names if we're going to access multiple stores.
 - `type` - a transaction type, one of:
@@ -14228,9 +13704,6 @@ After the transaction is created, we can add an item to the store, like this:
 
                                                                                                                                   };
 
-
-
-
 There were basically four steps:
 
 1.  Create a transaction, mentioning all the stores it's going to access, at `(1)`.
@@ -14327,9 +13800,6 @@ In the code below, `request2` in the line `(*)` fails, because the transaction i
 
                                                                                                                                   };
 
-
-
-
 That's because `fetch` is an asynchronous operation, a macrotask. Transactions are closed before the browser starts doing macrotasks.
 
 Authors of IndexedDB spec believe that transactions should be short-lived. Mostly for performance reasons.
@@ -14376,9 +13846,6 @@ To detect the moment of successful completion, we can listen to `transaction.onc
 
                                                                                                                                   };
 
-
-
-
 Only `complete` guarantees that the transaction is saved as a whole. Individual requests may succeed, but the final write operation may go wrong (e.g. I/O error or something).
 
 To manually abort the transaction, call:
@@ -14386,9 +13853,6 @@ To manually abort the transaction, call:
                                                                                                                                   transaction.
                                                                                                                                   abort()
                                                                                                                                   ;
-
-
-
 
 That cancels all modification made by the requests in it and triggers `transaction.onabort` event.
 
@@ -14510,9 +13974,6 @@ In the example below a new book is added with the same key ( `id`) as the existi
 
                                                                                                                                   };
 
-
-
-
 ### Event delegation
 
 Do we need onerror/onsuccess for every request? Not every time. We can use event delegation instead.
@@ -14549,9 +14010,6 @@ So we can catch all errors using `db.onerror` handler, for reporting or other pu
 
 
                                                                                                                                   };
-
-
-
 
 …But what if an error is fully handled? We don't want to report it in that case.
 
@@ -14610,9 +14068,6 @@ We can stop the bubbling and hence `db.onerror` by using `event.stopPropagation(
 
 
                                                                                                                                   };
-
-
-
 
 ## Searching
 
@@ -14702,9 +14157,6 @@ Request examples:
                                                                                                                                   ,
                                                                                                                                   true))
 
-
-
-
 smart header="Object store is always sorted" An object store sorts values by key internally.
 
 So requests that return many values always return them in sorted by key order.
@@ -14722,9 +14174,6 @@ The syntax:
                                                                                                                                   , keyPath
                                                                                                                                   , [options])
                                                                                                                                   ;
-
-
-
 
 - **`name`** - index name,
 - **`keyPath`** - path to the object field that the index should track (we're going to search by that field),
@@ -14781,9 +14230,6 @@ First, we need to create an index. It must be done in `upgradeneeded`, just like
 
 
                                                                                                                                   };
-
-
-
 
 - The index will track `price` field.
 - The price is not unique, there may be multiple books with the same price, so we don't set `unique` option.
@@ -14876,9 +14322,6 @@ Now, when we want to search for a given price, we simply apply the same search m
 
                                                                                                                                   };
 
-
-
-
 We can also use `IDBKeyRange` to create ranges and looks for cheap/expensive books:
 
                                                                                                                                   // find books where price <= 5
@@ -14892,9 +14335,6 @@ We can also use `IDBKeyRange` to create ranges and looks for cheap/expensive boo
                                                                                                                                   upperBound(
                                                                                                                                   5))
                                                                                                                                   ;
-
-
-
 
 Indexes are internally sorted by the tracked object field, `price` in our case. So when we do the search, the results are also sorted by `price`.
 
@@ -14913,9 +14353,6 @@ For instance:
                                                                                                                                   delete(
                                                                                                                                   'js')
                                                                                                                                   ;
-
-
-
 
 If we'd like to delete books based on a price or another object field, then we should first find the key in the index, and then call `delete`:
 
@@ -14954,18 +14391,12 @@ If we'd like to delete books based on a price or another object field, then we s
 
                                                                                                                                   };
 
-
-
-
 To delete everything:
 
                                                                                                                                   books.
                                                                                                                                   clear()
                                                                                                                                   ;
                                                                                                                                   // clear the storage.
-
-
-
 
 ## Cursors
 
@@ -14996,9 +14427,6 @@ The syntax:
 
 
                                                                                                                                   // to get keys, not values (like getAllKeys): store.openKeyCursor
-
-
-
 
 - **`query`** is a key or a key range, same as for `getAll`.
 - **`direction`** is an optional argument, which order to use:
@@ -15099,9 +14527,6 @@ Here's an example of how to use a cursor:
 
                                                                                                                                   };
 
-
-
-
 The main cursor methods are:
 
 - `advance(count)` - advance the cursor `count` times, skipping values.
@@ -15197,9 +14622,6 @@ For cursors over indexes, `cursor.key` is the index key (e.g. price), and we sh
 
 
                                                                                                                                   };
-
-
-
 
 ## Promise wrapper
 
@@ -15318,9 +14740,6 @@ Then, instead of `onsuccess/onerror` we can write like this:
 
                                                                                                                                   }
 
-
-
-
 So we have all the sweet "plain async code" and "try..catch" stuff.
 
 ### Error handling
@@ -15361,9 +14780,6 @@ We can handle such errors like this:
 
                                                                                                                                   })
                                                                                                                                   ;
-
-
-
 
 ### "Inactive transaction" pitfall
 
@@ -15440,9 +14856,6 @@ Here's an example of `fetch` in the middle of the transaction:
                                                                                                                                   ;
                                                                                                                                   // Error
 
-
-
-
 The next `inventory.add` after `fetch` `(*)` fails with an "inactive transaction" error, because the transaction is already committed and closed at that time.
 
 The workaround is the same as when working with native IndexedDB: either make a new transaction or just split things apart. 1. Prepare the data and fetch all that's needed first. 2. Then save in the database.
@@ -15490,9 +14903,6 @@ In few rare cases, when we need the original `request` object, we can access it 
                                                                                                                                   await promise
                                                                                                                                   ;
                                                                                                                                   // if still needed
-
-
-
 
 ## Summary
 
@@ -15623,7 +15033,6 @@ These points make the curve.
 
                                                                                                                             **Run and pause examples to clearly see the segments and how the curve is built.**
 
-
 A curve that looks like `y=1/t`:
 
 \[iframe src="demo.svg?p=0,0,0,0.75,0.25,1,1,1&animate=1" height=370\]
@@ -15642,7 +15051,6 @@ A non-smooth Bezier curve (yeah, that's possible too):
 
                                                                                                                             If there's something unclear in the algorithm description, please look at the live examples above to see how
     the curve is built.
-
 
 As the algorithm is recursive, we can build Bezier curves of any order, that is: using 5, 6 or more control points. But in practice many points are less useful. Usually we take 2-3 points, and for complex lines glue several curves together. That's simpler to develop and calculate.
 
@@ -15736,8 +15144,6 @@ For instance, the CSS below animates changes of `background-color` for 3 seconds
 
                                                                                                                                 }
 
-
-
 Now if an element has `.animated` class, any change of `background-color` is animated during 3 seconds.
 
 Click the button below to animate the background:
@@ -15804,8 +15210,6 @@ The `transform` property is animated like this:
 
                                                                                                                                 }
 
-
-
 In the example above JavaScript adds the class `.animate` to the element - and the animation starts:
 
                                                                                                                                   stripe.
@@ -15813,9 +15217,6 @@ In the example above JavaScript adds the class `.animate` to the element - and t
                                                                                                                                   add(
                                                                                                                                   'animate')
                                                                                                                                   ;
-
-
-
 
 We could also start it from somewhere in the middle of the transition, from an exact number, e.g. corresponding to the current second, using a negative `transition-delay`.
 
@@ -15872,9 +15273,6 @@ JavaScript does it with an extra line:
 
 
                                                                                                                                   };
-
-
-
 
 ## transition-timing-function
 
@@ -15941,8 +15339,6 @@ The CSS `transition` is based on that curve:
 
                                                                                                                                 }
 
-
-
 …And how can we show a train slowing down?
 
 We can use another Bezier curve: `cubic-bezier(0.0, 0.5, 0.5 ,1.0)`.
@@ -15987,8 +15383,6 @@ CSS:
 
                                                                                                                                 }
 
-
-
 There are several built-in curves: `linear`, `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 
 The `linear` is a shorthand for `cubic-bezier(0, 0, 1, 1)` - a straight line, which we described above.
@@ -16020,8 +15414,6 @@ So we could use `ease-out` for our slowing down train:
                                                                                                                                   /* transition: left 5s cubic-bezier(0, .5, .5, 1); */
 
                                                                                                                                 }
-
-
 
 But it looks a bit differently.
 
@@ -16059,8 +15451,6 @@ In the example below the animation code is:
                                                                                                                                   /* JavaScript sets left to 400px */
 
                                                                                                                                 }
-
-
 
 The property `left` should animate from `100px` to `400px`.
 
@@ -16122,8 +15512,6 @@ There will be 9 steps, a step-move for each digit:
                                                                                                                                   ;
 
                                                                                                                                 }
-
-
 
 In action:
 
@@ -16291,9 +15679,6 @@ The animation is initiated by the function `go` that re-runs each time the trans
 
                                                                                                                                   };
 
-
-
-
 The event object for `transitionend` has a few specific properties:
 
 `event.propertyName`  
@@ -16365,9 +15750,6 @@ The pseudo-code can look like this:
                                                                                                                                   20)
                                                                                                                                   ;
                                                                                                                                   // change by 2px every 20ms, about 50 frames per second
-
-
-
 
 More complete example of the animation:
 
@@ -16455,9 +15837,6 @@ More complete example of the animation:
 
                                                                                                                                   }
 
-
-
-
 Click for the demo:
 
 \[codetabs height=200 src="move"\]
@@ -16492,9 +15871,6 @@ In other words, this:
                                                                                                                                   },
                                                                                                                                   20)
 
-
-
-
 …Is lighter than three independent calls:
 
                                                                                                                                   setInterval(animate1
@@ -16516,9 +15892,6 @@ In other words, this:
                                                                                                                                   20)
                                                                                                                                   ;
 
-
-
-
 These several independent redraws should be grouped together, to make the redraw easier for the browser and hence load less CPU load and look smoother.
 
 There's one more thing to keep in mind. Sometimes CPU is overloaded, or there are other reasons to redraw less often (like when the browser tab is hidden), so we really shouldn't run it every `20ms`.
@@ -16531,9 +15904,6 @@ The syntax:
                                                                                                                                   =
                                                                                                                                   requestAnimationFrame(callback)
 
-
-
-
 That schedules the `callback` function to run in the closest time when the browser wants to do animation.
 
 If we do changes in elements in `callback` then they will be grouped together with other `requestAnimationFrame` callbacks and with CSS animations. So there will be one geometry recalculation and repaint instead of many.
@@ -16545,9 +15915,6 @@ The returned value `requestId` can be used to cancel the call:
 
                                                                                                                                   cancelAnimationFrame(requestId)
                                                                                                                                   ;
-
-
-
 
 The `callback` gets one argument - the time passed from the beginning of the page load in microseconds. This time can also be obtained by calling [performance.now()](mdn:api/Performance/now).
 
@@ -16638,9 +16005,6 @@ Now we can make a more universal animation function based on `requestAnimationFr
 
                                                                                                                                   }
 
-
-
-
 Function `animate` accepts 3 parameters that essentially describes the animation:
 
 `duration`  
@@ -16661,9 +16025,6 @@ For instance, a linear function means that the animation goes on uniformly with 
 
 
                                                                                                                                       }
-
-
-
 
 It's graph: ![](linear.svg)
 
@@ -16691,9 +16052,6 @@ It can move the element:
 
 
                                                                                                                                       }
-
-
-
 
 …Or do anything else, we can animate anything, in any way.
 
@@ -16747,9 +16105,6 @@ The code for it:
                                                                                                                                   })
                                                                                                                                   ;
 
-
-
-
 Unlike CSS animation, we can make any timing function and any drawing function here. The timing function is not limited by Bezier curves. And `draw` can go beyond properties, create new elements for like fireworks animation or something.
 
 ## Timing functions
@@ -16777,9 +16132,6 @@ For instance, a parabolic curve:
 
 
                                                                                                                                   }
-
-
-
 
 The graph:
 
@@ -16820,9 +16172,6 @@ Function:
 
                                                                                                                                   }
 
-
-
-
 The graph:
 
 ![](circ.svg)
@@ -16856,9 +16205,6 @@ The code:
 
 
                                                                                                                                   }
-
-
-
 
 **The graph for `x = 1.5`:**
 
@@ -16936,9 +16282,6 @@ The `bounce` function does the same, but in the reverse order: "bouncing" starts
 
                                                                                                                                   }
 
-
-
-
 In action:
 
 \[iframe height=40 src="bounce" link\]
@@ -16976,9 +16319,6 @@ One more "elastic" function that accepts an additional parameter `x` for the "in
 
                                                                                                                                   }
 
-
-
-
 **The graph for `x=1.5`:** ![](elastic.svg)
 
 In action for `x=1.5`:
@@ -17002,9 +16342,6 @@ In the "easeOut" mode the `timing` function is put into a wrapper `timingEaseOut
                                                                                                                                   timing(
                                                                                                                                   1
                                                                                                                                   - timeFraction)
-
-
-
 
 In other words, we have a "transform" function `makeEaseOut` that takes a "regular" timing function and returns the wrapper around it:
 
@@ -17035,18 +16372,12 @@ In other words, we have a "transform" function `makeEaseOut` that takes a "regul
 
                                                                                                                                   }
 
-
-
-
 For instance, we can take the `bounce` function described above and apply it:
 
                                                                                                                                   let bounceEaseOut
                                                                                                                                   =
                                                                                                                                   makeEaseOut(bounce)
                                                                                                                                   ;
-
-
-
 
 Then the bounce will be not in the beginning, but at the end of the animation. Looks even better:
 
@@ -17104,9 +16435,6 @@ Given the timing function, we calculate the animation state like this:
 
                                                                                                                                   }
 
-
-
-
 The wrapper code:
 
                                                                                                                                   function
@@ -17157,9 +16485,6 @@ The wrapper code:
                                                                                                                                   =
                                                                                                                                   makeEaseInOut(bounce)
                                                                                                                                   ;
-
-
-
 
 In action, `bounceEaseInOut`:
 
@@ -17271,9 +16596,6 @@ Here's the helper `animate` function to setup most animations:
 
                                                                                                                                   }
 
-
-
-
 Options:
 
 - `duration` - the total animation time in ms.
@@ -17302,9 +16624,6 @@ The "OR" operator is represented with two vertical line symbols:
                                                                                                                                   = a
                                                                                                                                   || b
                                                                                                                                   ;
-
-
-
 
 In classical programming, the logical OR is meant to manipulate boolean values only. If any of its arguments are `true`, it returns `true`, otherwise it returns `false`.
 
@@ -17349,9 +16668,6 @@ Given multiple OR'ed values:
                                                                                                                                   || value2
                                                                                                                                   || value3
                                                                                                                                   ;
-
-
-
 
 The OR `||` operator does the following:
 
@@ -17410,9 +16726,6 @@ The AND operator is represented with two ampersands `&&`:
                                                                                                                                   && b
                                                                                                                                   ;
 
-
-
-
 In classical programming, AND returns `true` if both operands are truthy and `false` otherwise:
 
 `js run alert( true && true ); // true alert( false && true ); // false alert( true && false ); // false alert( false && false ); // false`
@@ -17436,9 +16749,6 @@ Given multiple AND'ed values:
                                                                                                                                   && value2
                                                                                                                                   && value3
                                                                                                                                   ;
-
-
-
 
 The AND `&&` operator does the following:
 
@@ -17486,7 +16796,6 @@ if (x &gt; 0) alert( ‘Greater than zero!''' );
 
     Although, the variant with `&&` appears shorter, `if` is more obvious and tends to be a little bit more readable. So we recommend using every construct for its purpose: use `if` if we want `if` and use `&&` if we want AND.
 
-
 ## ! (NOT)
 
 The boolean NOT operator is represented with an exclamation sign `!`.
@@ -17497,9 +16806,6 @@ The syntax is pretty simple:
                                                                                                                                   =
                                                                                                                                   !value
                                                                                                                                   ;
-
-
-
 
 The operator accepts a single argument and does the following:
 
@@ -17708,9 +17014,6 @@ Here's a sketch with the full list:
 
                                                                                                                                   }
 
-
-
-
 After that, we need to register the element:
 
                                                                                                                                   // let the browser know that <my-element> is served by our new class
@@ -17721,9 +17024,6 @@ After that, we need to register the element:
                                                                                                                                   "my-element"
                                                                                                                                   , MyElement)
                                                                                                                                   ;
-
-
-
 
 Now for any HTML elements with tag `<my-element>`, an instance of `MyElement` is created, and the aforementioned methods are called. We also can `document.createElement('my-element')` in JavaScript.
 
@@ -17846,9 +17146,6 @@ For example, buttons are instances of `HTMLButtonElement`, let's build upon it.
                                                                                                                                         /* custom element methods */
                                                                                                                                         }
 
-
-
-
 2.  Provide the third argument to `customElements.define`, that specifies the tag: `js customElements.define('hello-button', HelloButton, *!*{extends: 'button'}*/!*);`
 
     There may be different tags that share the same DOM-class, that's why specifying `extends` is needed.
@@ -17938,9 +17235,6 @@ Custom elements can be of two types:
 
                                                                                                                                         /* <my-element> */
 
-
-
-
 2.  "Customized built-in elements" - extensions of existing elements.
 
     Requires one more `.define` argument, and `is="..."` in HTML: `js class MyButton extends HTMLButtonElement { /*...*/ } customElements.define('my-button', MyElement, {extends: 'button'}); /* <button is="my-button"> */`
@@ -18007,7 +17301,6 @@ The `mode` option sets the encapsulation level. It must have any of two values: 
 
                                                                                                                             Any code is able to access the shadow tree of `elem`.
 
-
 - `"closed"` - `elem.shadowRoot` is always `null`.
 
   We can only access the shadow DOM by the reference returned by `attachShadow` (and probably hidden inside a class). Browser-native shadow trees, such as `<input type="range">`, are closed. There's no way to access them.
@@ -18026,9 +17319,6 @@ The element with a shadow root is called a "shadow tree host", and is available 
                                                                                                                                   === elem)
                                                                                                                                   ;
                                                                                                                                   // true
-
-
-
 
 ## Encapsulation
 
@@ -18087,9 +17377,6 @@ For example, we can put there a table row `<tr>`:
 
                                                                                                                                     </template>
 
-
-
-
 Usually, if we try to put `<tr>` inside, say, a `<div>`, the browser detects the invalid DOM structure and "fixes" it, adds `<table>` around. That's not what we want. On the other hand, `<template>` keeps exactly what we place there.
 
 We can put styles and scripts into `<template>` as well:
@@ -18120,9 +17407,6 @@ We can put styles and scripts into `<template>` as well:
 
 
                                                                                                                                     </template>
-
-
-
 
 The browser considers `<template>` content "out of the document": styles are not applied, scripts are not executed, `<video autoplay>` is not run, etc.
 
@@ -18172,9 +17456,6 @@ They form the shadow DOM:
 
                                                                                                                                       </div>
 
-
-
-
 ## Summary
 
 To summarize:
@@ -18220,9 +17501,6 @@ The code that makes use of `<custom-menu>` can look like this:
 
                                                                                                                                       </custom-menu>
 
-
-
-
 …Then our component should render it properly, as a nice menu with given title and items, handle menu events, etc.
 
 How to implement it?
@@ -18243,11 +17521,9 @@ Name: _!_ _/!_
 
                                                                                                                                   <div>Birthday:
 
-
 _!_ _/!_
 
                                                                                                                               `;
-
 
 } });
 
@@ -18302,9 +17578,6 @@ Here's the DOM structure after the script, not taking composition into account:
 
 
                                                                                                                               </user-card>
-
-
-
 
 We created the shadow DOM, so here it is, under `#shadow-root`. Now the element has both light and shadow DOM.
 
@@ -18367,9 +17640,6 @@ The result is called "flattened" DOM:
 
                                                                                                                               </user-card>
 
-
-
-
 …But the flattened DOM exists only for rendering and event-handling purposes. It's kind of "virtual". That's how things are shown. But the nodes in the document are actually not moved around!
 
 That can be easily checked if we run `querySelectorAll`: nodes are still at their places.
@@ -18384,9 +17654,6 @@ That can be easily checked if we run `querySelectorAll`: nodes are still at thei
                                                                                                                               length )
                                                                                                                               ;
                                                                                                                               // 2
-
-
-
 
 So, the flattened DOM is derived from shadow DOM by inserting slots. The browser renders it and uses for style inheritance, event propagation (more about that later). But JavaScript still sees the document "as is", before flattening.
 
@@ -18422,9 +17689,6 @@ For example, the second `<span>` here is ignored (as it's not a top-level child 
 
                                                                                                                                 </user-card>
 
-
-
-
 If there are multiple elements in light DOM with the same slot name, they are appended into the slot, one after another.
 
 For example, this:
@@ -18447,9 +17711,6 @@ For example, this:
 
 
                                                                                                                                 </user-card>
-
-
-
 
 Gives this flattened DOM with two elements in `<slot name="username">`:
 
@@ -18500,9 +17761,6 @@ Gives this flattened DOM with two elements in `<slot name="username">`:
 
                                                                                                                                 </user-card>
 
-
-
-
 ## Slot fallback content
 
 If we put something inside a `<slot>`, it becomes the fallback, "default" content. The browser shows it if there's no corresponding filler in light DOM.
@@ -18521,9 +17779,6 @@ For example, in this piece of shadow DOM, `Anonymous` renders if there's no `slo
 
                                                                                                                                 </div>
 
-
-
-
 ## Default slot: first unnamed
 
 The first `<slot>` in shadow DOM that doesn't have a name is a "default" slot. It gets all nodes from the light DOM that aren't slotted elsewhere.
@@ -18540,11 +17795,9 @@ Name:
     <fieldset>
     <legend>Other information</legend>
 
-
 _!_ _/!_
 
                                                                                                                         `;
-
 
 } });
 
@@ -18640,9 +17893,6 @@ The flattened DOM looks like this:
 
                                                                                                                             </user-card>
 
-
-
-
 ## Menu example
 
 Now let's back to `<custom-menu>`, mentioned at the beginning of the chapter.
@@ -18684,9 +17934,6 @@ Here's the markup for `<custom-menu>`:
 
                                                                                                                             </custom-menu>
 
-
-
-
 The shadow DOM template with proper slots:
 
                                                                                                                             <template
@@ -18722,9 +17969,6 @@ The shadow DOM template with proper slots:
 
 
                                                                                                                             </template>
-
-
-
 
 1.  `<span slot="title">` goes into `<slot name="title">`.
 2.  There are many `<li slot="item">` in the template, but only one `<slot name="item">` in the template. So all such `<li slot="item">` are appended to `<slot name="item">` one after another, thus forming the list.
@@ -18803,9 +18047,6 @@ The flattened DOM becomes:
 
                                                                                                                             </custom-menu>
 
-
-
-
 One might notice that, in a valid DOM, `<li>` must be a direct child of `<ul>`. But that's flattened DOM, it describes how the component is rendered, such thing happens naturally here.
 
 We just need to add a `click` handler to open/close the list, and the `<custom-menu>` is ready:
@@ -18882,9 +18123,6 @@ We just need to add a `click` handler to open/close the list, and the `<custom-m
 
                                                                                                                             })
                                                                                                                             ;
-
-
-
 
 Here's the full demo:
 
@@ -19003,9 +18241,6 @@ For instance, if in the document we had:
 
                                                                                                                             </style>
 
-
-
-
 …Then the `<custom-dialog>` would be without padding.
 
 It's very convenient, as we can setup "default" component styles in its `:host` rule, and then easily override them in the document.
@@ -19053,9 +18288,6 @@ E.g. `:host-context(.dark-theme)` matches only if there's `dark-theme` class on 
 
                                                                                                                             </body>
 
-
-
-
 To summarize, we can use `:host`-family of selectors to style the main element of the component, depending on the context. These styles (unless `!important`) can be overridden by the document.
 
 ## Styling slotted content
@@ -19091,7 +18323,6 @@ run autorun="no-epub" untrusted height=80
 
                                                                                                                           <div>John Smith</div>
 
-
 Please note, `::slotted` selector can't descend any further into the slot. These selectors are invalid:
 
                                                                                                                             ::slotted(div span) {
@@ -19108,8 +18339,6 @@ Please note, `::slotted` selector can't descend any further into the slot. These
                                                                                                                             /* can't go inside light DOM */
 
                                                                                                                           }
-
-
 
 Also, `::slotted` can only be used in CSS. We can't use it in `querySelector`.
 
@@ -19166,9 +18395,6 @@ For example, in shadow DOM we can use `--user-card-field-color` CSS variable to 
                                                                                                                             "birthday"
                                                                                                                             ></slot></div>
 
-
-
-
 Then, we can declare this property in the outer document for `<user-card>`:
 
                                                                                                                           user-card {
@@ -19178,8 +18404,6 @@ Then, we can declare this property in the outer document for `<user-card>`:
                                                                                                                             ;
 
                                                                                                                           }
-
-
 
 Custom CSS properties pierce through shadow DOM, they are visible everywhere, so the inner `.field` rule will make use of it.
 
@@ -19286,9 +18510,6 @@ In the example above, the flattened DOM is:
 
                                                                                                                             </user-card>
 
-
-
-
 So, for a click on `<span slot="username">`, a call to `event.composedPath()` returns an array: \[ `span`, `slot`, `div`, `shadow-root`, `user-card`, `body`, `html`, `document`, `window`\]. That's exactly the parent chain from the target element in the flattened DOM, after the composition.
 
 \`\` `warn header="Shadow tree details are only provided for`{mode:‘open'} `trees" If the shadow tree was created with`{mode: ‘closed'} `, then the composed path starts from the host:`user-card\` and upwards.
@@ -19375,9 +18596,6 @@ The "long" syntax:
                                                                                                                             "flags")
                                                                                                                             ;
 
-
-
-
 And the "short" one, using slashes `"/"`:
 
                                                                                                                           regexp
@@ -19391,9 +18609,6 @@ And the "short" one, using slashes `"/"`:
                                                                                                                             /pattern/gmi
                                                                                                                             ;
                                                                                                                             // with flags g,m and i (to be covered soon)
-
-
-
 
 Slashes `pattern:/.../` tell JavaScript that we are creating a regular expression. They play the same role as quotes for strings.
 
@@ -19423,9 +18638,6 @@ Slashes are used when we know the regular expression at the code writing time - 
                                                                                                                             >`)
                                                                                                                             ;
                                                                                                                             // same as /<h2>/ if answered "h2" in the prompt above
-
-
-
 
 ## Flags
 
@@ -19861,9 +19073,6 @@ We can rewrite `result = a ?? b` using the operators that we already know, like 
                                                                                                                                 ? a : b
                                                                                                                                 ;
 
-
-
-
 Now it should be absolutely clear what `??` does. Let's see where it helps.
 
 The common use case for `??` is to provide a default value for a potentially undefined variable.
@@ -19967,9 +19176,6 @@ Otherwise, if we omit parentheses, then as `*` has the higher precedence than `?
                                                                                                                                 50
                                                                                                                                 ;
 
-
-
-
 ### Using ?? with && or ||
 
 Due to safety reasons, JavaScript forbids using `??` together with `&&` and `||` operators, unless the precedence is explicitly specified with parentheses.
@@ -19999,9 +19205,6 @@ alert(x); // 2
                                                                                                                                       ??
                                                                                                                                       100
                                                                                                                                       ;
-
-
-
 
 - The operator `??` has a very low precedence, only a bit higher than `?` and `=`, so consider adding parentheses when using it in an expression.
 - It's forbidden to use it with `||` or `&&` without explicit parentheses.
@@ -20073,7 +19276,6 @@ That's because by default a caret `pattern:^` only matches at the beginning of t
                                                                                                                           "Start of a line" formally means "immediately after a line break": the test  `pattern:^` in multiline mode matches at all positions preceded by a newline character `\n`.
     And at the text start.
 
-
 ## Searching at line end $
 
 The dollar sign `pattern:$` behaves similarly.
@@ -20088,7 +19290,6 @@ Without the flag `pattern:m`, the dollar `pattern:$` would only match the end of
 
                                                                                                                           "End of a line" formally means "immediately before a line break": the test  `pattern:$` in multiline mode matches at all positions succeeded by a newline character `\n`.
     And at the text end.
-
 
 ## Searching for instead of ^ $
 
@@ -20725,9 +19926,6 @@ The match looks like this:
                                                                                                                                                 "doc"
                                                                                                                                                 >
 
-
-
-
 Let's modify the pattern by making the quantifier `pattern:.*?` lazy:
 
 run let str = ‘… <a href="link1" class="doc">…</a> <a href="link2" class="doc">…'; let regexp = /</a> /g;
@@ -20762,9 +19960,6 @@ Now it seems to work, there are two matches:
                                                                                                                                                            class=
                                                                                                                                                           "doc"
                                                                                                                                                           >
-
-
-
 
 …But let's test it on one more text input:
 
@@ -20808,9 +20003,6 @@ Here's the picture of the match aligned with the text:
                                                                                                                                                                      class=
                                                                                                                                                                     "doc"
                                                                                                                                                                     >
-
-
-
 
 So, we need the pattern to look for `<a href="...something..." class="doc">`, but both greedy and lazy variants have problems.
 
@@ -20866,7 +20058,6 @@ For example:
                                                                                                                                                                           mail.com
     users.mail.com
     smith.users.mail.com
-
 
 As we can see, a domain consists of repeated words, a dot after each one except the last one.
 
