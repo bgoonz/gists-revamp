@@ -719,12 +719,11 @@ module.exports = {
              * If `let` is the only thing on the left side of the loop, it's the loop variable: `for ((let) of foo);`
              * Removing it will cause a syntax error, because it will be parsed as the start of a VariableDeclarator.
              */
-            (firstLeftToken.range[1] === node.left.range[1]
-            /*
-             * If `let` is followed by a `[` token, it's a property access on the `let` value: `for ((let[foo]) of bar);`
-             * Removing it will cause the property access to be parsed as a destructuring declaration of `foo` instead.
-             */ ||
-              astUtils.isOpeningBracketToken(
+            (firstLeftToken.range[1] === node.left.range[1] ||
+              /*
+               * If `let` is followed by a `[` token, it's a property access on the `let` value: `for ((let[foo]) of bar);`
+               * Removing it will cause the property access to be parsed as a destructuring declaration of `foo` instead.
+               */ astUtils.isOpeningBracketToken(
                 sourceCode.getTokenAfter(
                   firstLeftToken,
                   astUtils.isNotClosingParenToken
