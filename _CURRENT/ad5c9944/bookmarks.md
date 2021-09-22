@@ -4,7 +4,7 @@
 
 ### My-resource-website
 
-[epiz_27201506 (Website for thegoodkindofaa.freecluster.eu) - InfinityFree](https://app.infinityfree.net/accounts/epiz_27201506)
+[epiz\_27201506 (Website for thegoodkindofaa.freecluster.eu) - InfinityFree](https://app.infinityfree.net/accounts/epiz_27201506)
 
 [Free CSS Website Layouts Page 2 of 21 | Free CSS Layouts (Total: 252) | Free CSS](https://www.free-css.com/free-css-layouts/page2)
 
@@ -28,11 +28,11 @@
 
 [My Dashboard - Microsoft Azure](https://portal.azure.com/?quickstart=true#blade/Microsoft_Azure_Resources/QuickstartCenterBlade)
 
-[Blog Headers For Free Download --- Smashing Magazine](https://www.smashingmagazine.com/2008/03/blog-headers-for-free-download/)
+[Blog Headers For Free Download — Smashing Magazine](https://www.smashingmagazine.com/2008/03/blog-headers-for-free-download/)
 
 ### many-tabs
 
-[127.0.0.1:5500/2-content/core-content/node-npm/npm-reademe-comp/index.html#h4](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5500%2F2-content%2Fcore-content%2Fnode-npm%2Fnpm-reademe-comp%2Findex.html%23h4&pos=46007.40625&uri=http://127.0.0.1:5500/2-content/core-content/node-npm/npm-reademe-comp/index.html#h4)
+[127.0.0.1:5500/2-content/core-content/node-npm/npm-reademe-comp/index.html\#h4](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5500%2F2-content%2Fcore-content%2Fnode-npm%2Fnpm-reademe-comp%2Findex.html%23h4&pos=46007.40625&uri=http://127.0.0.1:5500/2-content/core-content/node-npm/npm-reademe-comp/index.html#h4)
 
 [how to provide a folder on your website - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=how%20to%20provide%20a%20folder%20on%20your%20website%20-%20Google%20Search&pos=1266.6666259765625&uri=https://www.google.com/search?q=how+to+provide+a+folder+on+your+website&rlz=1C1UEAD_enUS928US928&oq=how+to+provide+a+folder+on+your+website&aqs=chrome..69i57j0i22i30i457j0i22i30l2j69i64.9988j1j7&sourceid=chrome&ie=UTF-8)
 
@@ -52,17 +52,17 @@
 
 [The Good AA Meeting](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=The%20Good%20AA%20Meeting&pos=0&uri=http://127.0.0.1:5500/core-site/index.html)
 
-[deferred.always() | jQuery API Documentation](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=deferred.always()%20%7C%20jQuery%20API%20Documentation&pos=333.33331298828125&uri=https://api.jquery.com/deferred.always/>)
+[deferred.always() | jQuery API Documentation](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=deferred.always()%20%7C%20jQuery%20API%20Documentation&pos=333.33331298828125&uri=https://api.jquery.com/deferred.always/)
 
 [is there a way to automatically remove broken links from my website - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=is%20there%20a%20way%20to%20automatically%20remove%20broken%20links%20from%20my%20website%20-%20Google%20Search&pos=800&uri=https://www.google.com/search?q=is+there+a+way+to+automatically+remove+broken+links+from+my+website&rlz=1C1UEAD_enUS928US928&oq=is+there+a+way+to+automatically+remove+broken+links+from+my+website&aqs=chrome..69i57.13578j1j7&sourceid=chrome&ie=UTF-8)
 
-[My Project 18986 -- Jira integration -- Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=My%20Project%2018986%20%E2%80%93%20Jira%20integration%20%E2%80%93%20Firebase%20console&pos=0&uri=https://console.firebase.google.com/u/0/project/striking-retina-295718/settings/integrations/jira)
+[My Project 18986 – Jira integration – Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=My%20Project%2018986%20%E2%80%93%20Jira%20integration%20%E2%80%93%20Firebase%20console&pos=0&uri=https://console.firebase.google.com/u/0/project/striking-retina-295718/settings/integrations/jira)
 
 [How to Find and Remove Broken Links in Your Website](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=How%20to%20Find%20and%20Remove%20Broken%20Links%20in%20Your%20Website&pos=7304.4443359375&uri=https://www.webfx.com/blog/web-design/find-remove-broken-links/#:~:text=1%20Click%20on%20Site%20Configuration,page%20from%20Google%20search%20results.)
 
 [How to Find and Remove Broken Links from Your Website](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=How%20to%20Find%20and%20Remove%20Broken%20Links%20from%20Your%20Website&pos=0&uri=https://www.a2hosting.com/blog/find-and-remove-broken-links/)
 
-[How to Find and Fix Broken Links (to Reclaim Valuable "Link Juice")](https://ahrefs.com/blog/fix-broken-links/)
+[How to Find and Fix Broken Links (to Reclaim Valuable “Link Juice”)](https://ahrefs.com/blog/fix-broken-links/)
 
 [github automremove borken links - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=github%20automremove%20borken%20links%20-%20Google%20Search&pos=1133.3333740234375&uri=https://www.google.com/search?q=github+automremove+borken+links&rlz=1C1UEAD_enUS928US928&oq=github+automremove+borken+links&aqs=chrome..69i57j69i64.9325j1j7&sourceid=chrome&ie=UTF-8)
 
@@ -70,9 +70,9 @@
 
 [Unlimited Scale and Free Web Hosting with GitHub Pages and Cloudflare | Toptal](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Unlimited%20Scale%20and%20Free%20Web%20Hosting%20with%20GitHub%20Pages%20and%20Cloudflare%20%7C%20Toptal&pos=5260&uri=https://www.toptal.com/github/unlimited-scale-web-hosting-github-pages-cloudflare)
 
-[resource -- Storage -- Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=resource%20%E2%80%93%20Storage%20%E2%80%93%20Firebase%20console&pos=0&uri=https://console.firebase.google.com/u/0/project/resource-298820/storage/resource-298820.appspot.com/files)
+[resource – Storage – Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=resource%20%E2%80%93%20Storage%20%E2%80%93%20Firebase%20console&pos=0&uri=https://console.firebase.google.com/u/0/project/resource-298820/storage/resource-298820.appspot.com/files)
 
-[resource -- Authentication -- Firebase console](https://console.firebase.google.com/u/0/project/resource-298820/authentication)
+[resource – Authentication – Firebase console](https://console.firebase.google.com/u/0/project/resource-298820/authentication)
 
 [Add Firebase to your JavaScript project](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Add%20Firebase%20to%20your%20JavaScript%20project&pos=200&uri=https://firebase.google.com/docs/web/setup?authuser=0)
 
@@ -80,7 +80,7 @@
 
 [Add Firebase to your JavaScript project](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Add%20Firebase%20to%20your%20JavaScript%20project&pos=466.6666564941406&uri=https://firebase.google.com/docs/web/setup?authuser=0)
 
-[resource -- Storage -- Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=resource%20%E2%80%93%20Storage%20%E2%80%93%20Firebase%20console&pos=142.2222137451172&uri=https://console.firebase.google.com/u/0/project/resource-298820/storage/resource-298820/rules)
+[resource – Storage – Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=resource%20%E2%80%93%20Storage%20%E2%80%93%20Firebase%20console&pos=142.2222137451172&uri=https://console.firebase.google.com/u/0/project/resource-298820/storage/resource-298820/rules)
 
 [bgoonz/web-dev-notes-backup](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=bgoonz%2Fweb-dev-notes-backup&pos=0&uri=https://github.com/bgoonz/web-dev-notes-backup)
 
@@ -94,7 +94,7 @@
 
 [Download Firebase config file or object - Firebase Help](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Download%20Firebase%20config%20file%20or%20object%20-%20Firebase%20Help&pos=400&uri=https://support.google.com/firebase/answer/7015592?authuser=0)
 
-[My Project 18986 -- Settings -- Firebase console](https://console.firebase.google.com/u/0/project/striking-retina-295718/settings/general/web:ZjdlZDRkNDMtM2NjMi00ZmNkLThiY2EtMzQzNTBmNjU2ZTY5)
+[My Project 18986 – Settings – Firebase console](https://console.firebase.google.com/u/0/project/striking-retina-295718/settings/general/web:ZjdlZDRkNDMtM2NjMi00ZmNkLThiY2EtMzQzNTBmNjU2ZTY5)
 
 [Authenticate with Firebase Using Email Link in iOS](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Authenticate%20with%20Firebase%20Using%20Email%20Link%20in%20iOS&pos=0&uri=https://firebase.google.com/docs/auth/ios/email-link-auth?authuser=0)
 
@@ -138,13 +138,13 @@
 
 [Blogger: Posts](https://draft.blogger.com/blog/posts/2114927300735556507?hl=en)
 
-[Overview -- Google AdSense](https://www.google.com/adsense/new/u/0/pub-7131725540181116/myads/sites)
+[Overview – Google AdSense](https://www.google.com/adsense/new/u/0/pub-7131725540181116/myads/sites)
 
 [Deploy details | Netlify](https://app.netlify.com/sites/resourcerepo2/deploys/60e4106f1d19db0008b50dbc)
 
 [bgoonz/my-gists](https://github.com/bgoonz/my-gists)
 
-[bgoonz/BGOONZ_BLOG_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [Web-Dev-Hub](https://bgoonz-blog.netlify.app/)
 
@@ -172,11 +172,11 @@
 
 [Adding Search with Algolia | Gatsby](https://www.gatsbyjs.com/docs/adding-search-with-algolia/)
 
-[Snapshot of C:\Users\bryan\Downloads\RESOURCE_REPO](file:///C:/Users/bryan/Downloads/RESOURCE_REPO/RESOURCE_REPO.html#C:/Users/bryan/Downloads/RESOURCE_REPO)
+[Snapshot of C:\_REPO](file:///C:/Users/bryan/Downloads/RESOURCE_REPO/RESOURCE_REPO.html#C:/Users/bryan/Downloads/RESOURCE_REPO)
 
 [localhost:9000](http://localhost:9000/)
 
-[version control - How do I force "git pull" to overwrite local files? - Stack Overflow](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files)
+[version control - How do I force “git pull” to overwrite local files? - Stack Overflow](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files)
 
 [github libris theme - Google Search](https://www.google.com/search?q=github+libris+theme&oq=github+libris+theme&aqs=chrome..69i57j69i64.4112j0j7&sourceid=chrome&ie=UTF-8)
 
@@ -190,9 +190,9 @@
 
 [Web-Dev-Hub](https://bgoonz-blog.netlify.app/?stackbit=3482d4890e1b69d678d1f55054a7c556b45321a695dbb1c54140dd6029c46013)
 
-[Editing BGOONZ_BLOG_2.0/index.md at master - bgoonz/BGOONZ_BLOG_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/edit/master/src/pages/index.md)
+[Editing BGOONZ\_BLOG\_2.0/index.md at master - bgoonz/BGOONZ\_BLOG\_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/edit/master/src/pages/index.md)
 
-[BGOONZ_BLOG_2.0/addThisWidget.js at master - bgoonz/BGOONZ_BLOG_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/blob/master/src/utils/addThisWidget.js)
+[BGOONZ\_BLOG\_2.0/addThisWidget.js at master - bgoonz/BGOONZ\_BLOG\_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/blob/master/src/utils/addThisWidget.js)
 
 [Login - LambdaTest](https://accounts.lambdatest.com/login)
 
@@ -206,9 +206,9 @@
 
 [HULL](https://hull.dev/)
 
-[HULL -- Shopify Starter -- Overview | Sanity.io](https://www.sanity.io/manage/personal/project/y2r12zyg)
+[HULL – Shopify Starter – Overview | Sanity.io](https://www.sanity.io/manage/personal/project/y2r12zyg)
 
-[HULL -- Sanity](https://hull-shopify-starter-pearl.vercel.app/studio/desk/__edit__80c8de4a-0eff-4710-8073-3692c509c168%2Ctype%3Dcollection)
+[HULL – Sanity](https://hull-shopify-starter-pearl.vercel.app/studio/desk/__edit__80c8de4a-0eff-4710-8073-3692c509c168%2Ctype%3Dcollection)
 
 [Netlify Crawler | Crawler Admin Console](https://crawler.algolia.com/admin/netlify/a1b7ee1a-11a7-4bd2-a341-2260656e216f)
 
@@ -226,7 +226,7 @@
 
 [Stackbit App](https://app.stackbit.com/studio/609b2d7c71a5dd0016f36326/)
 
-[bgoonz/BGOONZ_BLOG_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [Web-Dev-Hub](https://bgoonz-blog.netlify.app/?stackbit=3482d4890e1b69d678d1f55054a7c556b45321a695dbb1c54140dd6029c46013#/)
 
@@ -260,13 +260,13 @@
 
 [Pull requests - LambdaSchool/React-Insta-Clone](https://github.com/LambdaSchool/React-Insta-Clone/pulls)
 
-[Simulating a Table Using an Unordered List -- Innovative Thought](https://innovativethought.net/2007/06/11/simulating-a-table-using-an-unordered-list/)
+[Simulating a Table Using an Unordered List – Innovative Thought](https://innovativethought.net/2007/06/11/simulating-a-table-using-an-unordered-list/)
 
 [steem-content-renderer/live-demo.html at master - wise-team/steem-content-renderer](https://github.com/wise-team/steem-content-renderer/blob/master/sample/live-demo.html)
 
 [Best HTML Viewer, HTML Beautifier, HTML Formatter and to Test HTML Output](https://codebeautify.org/htmlviewer)
 
-[BGOONZ_BLOG_2.0/web-scraping.md at master - bgoonz/BGOONZ_BLOG_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/blob/master/src/pages/blog/web-scraping.md)
+[BGOONZ\_BLOG\_2.0/web-scraping.md at master - bgoonz/BGOONZ\_BLOG\_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/blob/master/src/pages/blog/web-scraping.md)
 
 [Tools](https://bgoonz-blog.netlify.app/docs/tools/)
 
@@ -288,7 +288,7 @@
 
 [10 CSS Glow Text Effects](https://freefrontend.com/css-glow-text-effects/)
 
-[Building A Node.js Express API To Convert Markdown To HTML --- Smashing Magazine](https://www.smashingmagazine.com/2019/04/nodejs-express-api-markdown-html/)
+[Building A Node.js Express API To Convert Markdown To HTML — Smashing Magazine](https://www.smashingmagazine.com/2019/04/nodejs-express-api-markdown-html/)
 
 [Parsing CSV in node.js](https://gist.github.com/andyj/8d40bc394fb44cec5f92)
 
@@ -302,9 +302,9 @@
 
 [Slack API | Slack](https://api.slack.com/)
 
-<https://cpanel.epizy.com/panel/indexpl.php>
+<a href="https://cpanel.epizy.com/panel/indexpl.php" class="uri">https://cpanel.epizy.com/panel/indexpl.php</a>
 
-<https://cpanel.epizy.com/panel/indexpl.php?id=2acbd01171ded5665837184acbe27dd745c94562>
+<a href="https://cpanel.epizy.com/panel/indexpl.php?id=2acbd01171ded5665837184acbe27dd745c94562" class="uri">https://cpanel.epizy.com/panel/indexpl.php?id=2acbd01171ded5665837184acbe27dd745c94562</a>
 
 [File Manager](https://filemanager.ai/new/#)
 
@@ -312,13 +312,13 @@
 
 [Softaculous - Softaculous - DokuWiki](http://sv1.scriptinstall.rocks:2082/cpsess0546327933/frontend/x3/softaculous/index.live.php?act=software&soft=20#!act=listsoftwares&cat=cms)
 
-[epiz_27994906 (Website for webdevresourcehub.42web.io) - InfinityFree](https://app.infinityfree.net/accounts/epiz_27994906)
+[epiz\_27994906 (Website for webdevresourcehub.42web.io) - InfinityFree](https://app.infinityfree.net/accounts/epiz_27994906)
 
 [Tutorials - Netlify Functions](https://functions.netlify.com/tutorials/)
 
 [Ajenti Core - a Web-UI Toolkit](http://ajenti.org/core/)
 
-[What's Ajenti and how it works --- Ajenti 2.1.37 documentation](http://docs.ajenti.org/en/latest/dev/about.html)
+[What’s Ajenti and how it works — Ajenti 2.1.37 documentation](http://docs.ajenti.org/en/latest/dev/about.html)
 
 [Getting started with a new web hosting account - InfinityFree Knowledge Base](https://support.infinityfree.net/getting-started/getting-started-with-a-new-account/)
 
@@ -356,7 +356,7 @@
 
 [Articles - knowledge](https://bryan-guner.gitbook.io/knowledge/14-pure-education/knowledge-master/knowledge-master/articles/articles)
 
-[node_modules - knowledge](https://app.gitbook.com/@cembre/s/knowledge/archive/benchbnb/node_modules/fsevents/node_modules/~/settings/integrations)
+[node\_modules - knowledge](https://app.gitbook.com/@cembre/s/knowledge/archive/benchbnb/node_modules/fsevents/node_modules/~/settings/integrations)
 
 [Closure-and-Scope - lambda-website](https://bryan-guner.gitbook.io/lambda-website/)
 
@@ -372,7 +372,7 @@
 
 [New Tab](chrome://newtab/)
 
-[bgoonz/BGOONZ_BLOG_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [Stackbit App](https://app.stackbit.com/studio/609b4fbcfbe480001870d75e)
 
@@ -380,7 +380,7 @@
 
 [C:/MY-WEB-DEV/06-DS-ALGO-OUTTER/06-DS-ALGO/main](https://ds-algo-official-c3dw6uapg-bgoonz.vercel.app/directory.html)
 
-[bgoonz/BGOONZ_BLOG_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [Content Model Overview | Contentful help center](https://knowledge-bas42.netlify.app/content-model-overview/)
 
@@ -388,11 +388,11 @@
 
 [https://raw.githubusercontent.com/bgoonz/Knowledge-Bank/master/blog-posts/How to turn any GitHub repo into a CDN \_ Go Make Things.html?token=AP4RFINS2EL5V4EJVE2KCHTATNI6A](https://raw.githubusercontent.com/bgoonz/Knowledge-Bank/master/blog-posts/How%20to%20turn%20any%20GitHub%20repo%20into%20a%20CDN%20_%20Go%20Make%20Things.html?token=AP4RFINS2EL5V4EJVE2KCHTATNI6A)
 
-[bgoonz/BGOONZ_BLOG_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [bgoonz/Consolidated-Downloads-Archive](https://github.com/bgoonz/Consolidated-Downloads-Archive)
 
-[Deploy details | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/builds/609b601fb4e8cf7b2bd2c9b5)
+[Deploy details | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/builds/609b601fb4e8cf7b2bd2c9b5)
 
 [Stackbit Libris Theme](https://best-celery-b2d7c.netlify.app/)
 
@@ -404,7 +404,7 @@
 
 [Stackbit App](https://app.stackbit.com/studio/609b2d7c71a5dd0016f36326#/blog)
 
-[bgoonz/BGOONZ_BLOG_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [Stackbit Libris Theme](https://best-celery-b2d7c.netlify.app/)
 
@@ -494,15 +494,17 @@
 
 [peterpaulorange/node-js-web-scrapper: Scrap, grab website images, create pdf from URL etc using npm puppeteer module](https://github.com/peterpaulorange/node-js-web-scrapper)
 
-[sanusanth/Python-Basic-programs: What is Python? Executive Summary Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed. Often, programmers fall in love with Python because of the increased productivity it provides. Since there is no compilation step, the edit-test-debug cycle is incredibly fast. Debugging Python programs is easy: a bug or bad input will never cause a segmentation fault. Instead, when the interpreter discovers an error, it raises an exception. When the program doesn't catch the exception, the interpreter prints a stack trace. A source level debugger allows inspection of local and global variables, evaluation of arbitrary expressions, setting breakpoints, stepping through the code a line at a time, and so on. The debugger is written in Python itself, testifying to Python's introspective power. On the other hand, often the quickest way to debug a program is to add a few print statements to the source: the fast edit-test-debug cycle makes this simple approach very effective. What is Python? Python is a popular programming language. It was created by Guido van Rossum, and released in 1991. It is used for: web development (server-side), software development, mathematics, system scripting. What can Python do? Python can be used on a server to create web applications. Python can be used alongside software to create workflows. Python can connect to database systems. It can also read and modify files. Python can be used to handle big data and perform complex mathematics. Python can be used for rapid prototyping, or for production-ready software development. Why Python? Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc). Python has a simple syntax similar to the English language. Python has syntax that allows developers to write programs with fewer lines than some other programming languages. Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick. Python can be treated in a procedural way, an object-oriented way or a functional way. Good to know The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular. In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files. Python Syntax compared to other programming languages Python was designed for readability, and has some similarities to the English language with influence from mathematics. Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses. Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose. Applications for Python Python is used in many application domains. Here's a sampling. The Python Package Index lists thousands of third party modules for Python. Web and Internet Development Python offers many choices for web development: Frameworks such as Django and Pyramid. Micro-frameworks such as Flask and Bottle. Advanced content management systems such as Plone and dj](https://github.com/sanusanth/Python-Basic-programs)
+[sanusanth/Python-Basic-programs: What is Python? Executive Summary Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python’s simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed. Often, programmers fall in love with Python because of the increased productivity it provides. Since there is no compilation step, the edit-test-debug cycle is incredibly fast. Debugging Python programs is easy: a bug or bad input will never cause a segmentation fault. Instead, when the interpreter discovers an error, it raises an exception. When the program doesn’t catch the exception, the interpreter prints a stack trace. A source level debugger allows inspection of local and global variables, evaluation of arbitrary expressions, setting breakpoints, stepping through the code a line at a time, and so on. The debugger is written in Python itself, testifying to Python’s introspective power. On the other hand, often the quickest way to debug a program is to add a few print statements to the source: the fast edit-test-debug cycle makes this simple approach very effective. What is Python? Python is a popular programming language. It was created by Guido van Rossum, and released in 1991. It is used for: web development (server-side), software development, mathematics, system scripting. What can Python do? Python can be used on a server to create web applications. Python can be used alongside software to create workflows. Python can connect to database systems. It can also read and modify files. Python can be used to handle big data and perform complex mathematics. Python can be used for rapid prototyping, or for production-ready software development. Why Python? Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc). Python has a simple syntax similar to the English language. Python has syntax that allows developers to write programs with fewer lines than some other programming languages. Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick. Python can be treated in a procedural way, an object-oriented way or a functional way. Good to know The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular. In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files. Python Syntax compared to other programming languages Python was designed for readability, and has some similarities to the English language with influence from mathematics. Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses. Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose. Applications for Python Python is used in many application domains. Here’s a sampling. The Python Package Index lists thousands of third party modules for Python. Web and Internet Development Python offers many choices for web development: Frameworks such as Django and Pyramid. Micro-frameworks such as Flask and Bottle. Advanced content management systems such as Plone and dj](https://github.com/sanusanth/Python-Basic-programs)
 
-[sanusanth/java-all-basic-programs: What is Java? Java is a popular programming language, created in 1995. It is owned by Oracle, and more than 3 billion devices run Java. It is used for: Mobile applications (specially Android apps) Desktop applications Web applications Web servers and application servers Games Database connection And much, much more! Why Use Java? Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.) It is one of the most popular programming language in the world It is easy to learn and simple to use It is open-source and free It is secure, fast and powerful It has a huge community support (tens of millions of developers) Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa Setup for Windows To install Java on Windows: Go to "System Properties" (Can be found on Control Panel > System and Security > System > Advanced System Settings) Click on the "Environment variables" button under the "Advanced" tab Then, select the "Path" variable in System variables and click on the "Edit" button Click on the "New" button and add the path where Java is installed, followed by \bin. By default, Java is installed in C:\Program Files\Java\jdk-11.0.1 (If nothing else was specified when you installed it). In that case, You will have to add a new path with: C:\Program Files\Java\jdk-11.0.1\bin Then, click "OK", and save the settings At last, open Command Prompt (cmd.exe) and type java -version to see if Java is running on your machine](https://github.com/sanusanth/java-all-basic-programs)
+[sanusanth/java-all-basic-programs: What is Java? Java is a popular programming language, created in 1995. It is owned by Oracle, and more than 3 billion devices run Java. It is used for: Mobile applications (specially Android apps) Desktop applications Web applications Web servers and application servers Games Database connection And much, much more! Why Use Java? Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.) It is one of the most popular programming language in the world It is easy to learn and simple to use It is open-source and free It is secure, fast and powerful It has a huge community support (tens of millions of developers) Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs As Java is close to C++ and C\#, it makes it easy for programmers to switch to Java or vice versa Setup for Windows To install Java on Windows: Go to “System Properties” (Can be found on Control Panel &gt; System and Security &gt; System &gt; Advanced System Settings) Click on the “Environment variables” button under the “Advanced” tab Then, select the “Path” variable in System variables and click on the “Edit” button Click on the “New” button and add the path where Java is installed, followed by . By default, Java is installed in C:Files-11.0.1 (If nothing else was specified when you installed it). In that case, You will have to add a new path with: C:Files-11.0.1Then, click “OK”, and save the settings At last, open Command Prompt (cmd.exe) and type java -version to see if Java is running on your machine](https://github.com/sanusanth/java-all-basic-programs)
 
-[sanusanth/HTML-Menu-design-: The HTML <menu> element represents a group of commands that a user can perform or activate. This includes both list menus, which might appear across the top of a screen, as well as context menus, such as those that might appear underneath a button after it has been clicked.](https://github.com/sanusanth/HTML-Menu-design-)
+\[sanusanth/HTML-Menu-design-: The HTML
+
+element represents a group of commands that a user can perform or activate. This includes both list menus, which might appear across the top of a screen, as well as context menus, such as those that might appear underneath a button after it has been clicked.\](https://github.com/sanusanth/HTML-Menu-design-)
 
 [sanusanth/Form-parts-design: A webform, web form or HTML form on a web page allows a user to enter data that is sent to a server for processing. Forms can resemble paper or database forms because web users fill out the forms using checkboxes, radio buttons, or text fields. For example, forms can be used to enter shipping or credit card data to order a product, or can be used to retrieve search results from a search engine.](https://github.com/sanusanth/Form-parts-design)
 
-[sanusanth/HTML-Bottuns: <input> elements of type button are rendered as simple push buttons, which can be programmed to control custom functionality anywhere on a webpage as required when assigned an event handler function (typically for the click event).](https://github.com/sanusanth/HTML-Bottuns)
+[sanusanth/HTML-Bottuns: elements of type button are rendered as simple push buttons, which can be programmed to control custom functionality anywhere on a webpage as required when assigned an event handler function (typically for the click event).](https://github.com/sanusanth/HTML-Bottuns)
 
 [127.0.0.1](http://127.0.0.1:5500/javascript%20A%20Counter%20Dilemma.html)
 
@@ -514,15 +516,15 @@
 
 [PDF Conversion Results](https://www.pdfconvertonline.com/results.php)
 
-[127.0.0.1:5501/javascript-basic-program-main.html/The setFullYear() Method.html](<http://127.0.0.1:5501/javascript-basic-program-main.html/The%20setFullYear()%20Method.html>)
+[127.0.0.1:5501/javascript-basic-program-main.html/The setFullYear() Method.html](http://127.0.0.1:5501/javascript-basic-program-main.html/The%20setFullYear()%20Method.html)
 
 [javascript display all other html files as iframes - Google Search](https://www.google.com/search?q=javascript+display+all+other+html+files+as+iframes&oq=javascript+display+all+other+html+files+as+iframes&aqs=chrome..69i57j69i64.9519j0j7&sourceid=chrome&ie=UTF-8)
 
 [The ultimate guide to iframes - LogRocket Blog](https://blog.logrocket.com/the-ultimate-guide-to-iframes/)
 
-[From object to iframe --- other embedding technologies - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies)
+[From object to iframe — other embedding technologies - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies)
 
-[From object to iframe --- other embedding technologies - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies#security_concerns)
+[From object to iframe — other embedding technologies - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies#security_concerns)
 
 [Iframe with basic details](https://mdn.github.io/learning-area/html/multimedia-and-embedding/other-embedding-technologies/iframe-detail.html)
 
@@ -532,9 +534,9 @@
 
 [Paste to Markdown](https://euangoddard.github.io/clipboard2markdown/)
 
-[Data -- Firestore -- social-media42 -- Google Cloud Platform](https://console.cloud.google.com/firestore/data?authuser=3&project=social-media42)
+[Data – Firestore – social-media42 – Google Cloud Platform](https://console.cloud.google.com/firestore/data?authuser=3&project=social-media42)
 
-[Home -- fullstack-social-app -- Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=fullstack-social-app&organizationId=0)
+[Home – fullstack-social-app – Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=fullstack-social-app&organizationId=0)
 
 [Projects | Snyk](https://app.snyk.io/org/bgoonz/projects)
 
@@ -550,9 +552,9 @@
 
 [1adcdca2-c004-11eb-a59c-0242ac130002 - Custom Site Search](https://cse-demo.expertrec.com/demo/gcs.html?mid=1adcdca2-c004-11eb-a59c-0242ac130002)
 
-[Full Text Search --- How to install, configure and use it with SQL Server (and Outsystems) | by João Duro | ITNEXT](https://itnext.io/full-text-search-how-to-install-configure-and-use-it-with-sql-server-and-outsystems-23fcf316e870)
+[Full Text Search — How to install, configure and use it with SQL Server (and Outsystems) | by João Duro | ITNEXT](https://itnext.io/full-text-search-how-to-install-configure-and-use-it-with-sql-server-and-outsystems-23fcf316e870)
 
-[N|Solid --- Node.js that's Secure, Reliable, and Extensible from NodeSource](https://nodesource.com/products/nsolid)
+[N|Solid — Node.js that’s Secure, Reliable, and Extensible from NodeSource](https://nodesource.com/products/nsolid)
 
 ### MEDIUM
 
@@ -562,7 +564,7 @@
 
 [Adding search to a JAMstack site](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/)
 
-[Introducing Zero-Bundle-Size React Server Components -- React Blog](https://reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html)
+[Introducing Zero-Bundle-Size React Server Components – React Blog](https://reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html)
 
 [Search](https://www.raymondcamden.com/search/)
 
@@ -580,7 +582,7 @@
 
 [RingCentral Engage Voice Widget demo page](https://ringcentral.github.io/engage-voice-embeddable/#environment)
 
-[Web-Dev-Collaborative/handsfree-for-website: Turn on voice control in your website. Demo ->](https://github.com/Web-Dev-Collaborative/handsfree-for-website)
+[Web-Dev-Collaborative/handsfree-for-website: Turn on voice control in your website. Demo -&gt;](https://github.com/Web-Dev-Collaborative/handsfree-for-website)
 
 [Web-Dev-Collaborative/annyang: Speech recognition for your site](https://github.com/Web-Dev-Collaborative/annyang)
 
@@ -602,7 +604,7 @@
 
 [wasm-event-loop-1nzxlp - StackBlitz](https://stackblitz.com/edit/wasm-event-loop-1nzxlp?file=index.js)
 
-[webcontainer-core/Supported_frameworks.md at main - stackblitz/webcontainer-core](https://github.com/stackblitz/webcontainer-core/blob/main/Supported_frameworks.md)
+[webcontainer-core/Supported\_frameworks.md at main - stackblitz/webcontainer-core](https://github.com/stackblitz/webcontainer-core/blob/main/Supported_frameworks.md)
 
 [stackblitz/template-nextjs](https://github.com/stackblitz/template-nextjs)
 
@@ -610,7 +612,7 @@
 
 [react-vnwzhh - StackBlitz](https://stackblitz.com/edit/react-vnwzhh?file=src%2FApp.js)
 
-[@bgoonz11/repoutils - npm](https://www.npmjs.com/package/@bgoonz11/repoutils/access)
+<span class="citation" data-cites="bgoonz11/repoutils">\[@bgoonz11/repoutils - npm\]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="bgoonz11/repoutils/access">@bgoonz11/repoutils/access</span>)
 
 [Web-Dev-Collaborative/gatsby: Build blazing fast, modern apps and websites with React](https://github.com/Web-Dev-Collaborative/gatsby?organization=Web-Dev-Collaborative&organization=Web-Dev-Collaborative)
 
@@ -636,7 +638,7 @@
 
 [RegExp - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 
-[Editing Bash Commands That Save Me Time and Frustration -- Medium](https://medium.com/p/920fb6ab9d0a/edit)
+[Editing Bash Commands That Save Me Time and Frustration – Medium](https://medium.com/p/920fb6ab9d0a/edit)
 
 [StackEdit](https://stackedit.io/app#)
 
@@ -684,7 +686,7 @@
 
 [Inbox (7,224) - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/#inbox)
 
-[bgoonz's gists](https://gist.github.com/bgoonz)
+[bgoonz’s gists](https://gist.github.com/bgoonz)
 
 [links](http://127.0.0.1:5501/_RESOURCES/links.html)
 
@@ -702,7 +704,7 @@
 
 [What You Can Do With Gists on Github? - Digital Inspiration](https://www.labnol.org/internet/github-gist-tutorial/28499/)
 
-[fredrick's gists](https://gist.github.com/fredrick?page=6)
+[fredrick’s gists](https://gist.github.com/fredrick?page=6)
 
 [kumar-abhishek/CS229-Fall-2018-Problem-Solutions: Problem sets solutions of Stanford CS229 Fall 2018.](https://github.com/kumar-abhishek/CS229-Fall-2018-Problem-Solutions)
 
@@ -720,7 +722,7 @@
 
 [Get List of all files in a directory in Node.js | by VithalReddy | stackFAME | Medium](https://medium.com/stackfame/get-list-of-all-files-in-a-directory-in-node-js-befd31677ec5)
 
-[VithalReddy -- Medium](https://medium.com/@vithalreddy)
+[VithalReddy – Medium](https://medium.com/@vithalreddy)
 
 [bgoonz/UsefulResourceRepo2.0](https://github.com/bgoonz/UsefulResourceRepo2.0)
 
@@ -742,7 +744,7 @@
 
 [How I analyzed a million Medium articles to learn how many claps great stories get](https://www.freecodecamp.org/news/how-i-analyzed-a-million-medium-articles-to-learn-how-many-claps-great-stories-get-d688cf92759f/)
 
-[harrisonjansma/2020_Notes: A collection of notes regarding various topics. (Bash, PyTorch, Spark, etc.)](https://github.com/harrisonjansma/2020_Notes)
+[harrisonjansma/2020\_Notes: A collection of notes regarding various topics. (Bash, PyTorch, Spark, etc.)](https://github.com/harrisonjansma/2020_Notes)
 
 [Medium](https://medium.com/search/tags?q=Web)
 
@@ -756,7 +758,7 @@
 
 ### New folder
 
-[bgoonz/BGOONZ_BLOG_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [Stackbit App](https://app.stackbit.com/studio/609b2d7c71a5dd0016f36326)
 
@@ -770,7 +772,7 @@
 
 [react youtube slider - Google Search](https://www.google.com/search?q=react+youtube+slider&oq=react+youtube+slider&aqs=chrome..69i57j69i64.6060j0j7&sourceid=chrome&ie=UTF-8)
 
-[@u-wave/react-youtube example](https://u-wave.net/react-youtube/)
+<span class="citation" data-cites="u-wave/react-youtube">\[@u-wave/react-youtube example\]</span>(https://u-wave.net/react-youtube/)
 
 [Page not found - Stack Overflow](https://stackoverflow.com/questions/65447468/create-youtube-thumb-with-react-responsive-carousel)
 
@@ -786,11 +788,11 @@
 
 [Stackbit App](https://app.stackbit.com/studio/609b2d7c71a5dd0016f36326#/docs/about/)
 
-[bgoonz/BGOONZ_BLOG_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [bgoonz (Bryan C Guner)](https://github.com/bgoonz)
 
-[Branches - bgoonz/BGOONZ_BLOG_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/branches)
+[Branches - bgoonz/BGOONZ\_BLOG\_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/branches)
 
 [bg-portfolio | Netlify](https://app.netlify.com/sites/bg-portfolio/overview)
 
@@ -806,9 +808,9 @@
 
 [Gatsby Node APIs | Gatsby](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/)
 
-[How To Unstage Files on Git -- devconnected](https://devconnected.com/how-to-unstage-files-on-git/)
+[How To Unstage Files on Git – devconnected](https://devconnected.com/how-to-unstage-files-on-git/)
 
-[@bgoonz11/repoutils - npm](https://www.npmjs.com/package/@bgoonz11/repoutils)
+<span class="citation" data-cites="bgoonz11/repoutils">\[@bgoonz11/repoutils - npm\]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="bgoonz11/repoutils">@bgoonz11/repoutils</span>)
 
 [Convert all .docx in directory and subdirectories (recursive?) to .md using Pandoc bash - Stack Overflow](https://stackoverflow.com/questions/40344543/convert-all-docx-in-directory-and-subdirectories-recursive-to-md-using-pand)
 
@@ -816,9 +818,9 @@
 
 [Stackbit App](https://app.stackbit.com/studio/60c354becb12a800170c8ab8/#/introduction)
 
-[Merge pull request #7 from side-projects-42/preview by bgoonz - Pull Request #8 - side-projects-42/Pure-Documentation](https://github.com/side-projects-42/Pure-Documentation/pull/8)
+[Merge pull request \#7 from side-projects-42/preview by bgoonz - Pull Request \#8 - side-projects-42/Pure-Documentation](https://github.com/side-projects-42/Pure-Documentation/pull/8)
 
-[Merge pull request #6 from side-projects-42/master by bgoonz - Pull Request #7 - side-projects-42/Pure-Documentation](https://github.com/side-projects-42/Pure-Documentation/pull/7)
+[Merge pull request \#6 from side-projects-42/master by bgoonz - Pull Request \#7 - side-projects-42/Pure-Documentation](https://github.com/side-projects-42/Pure-Documentation/pull/7)
 
 [Intro](https://rainy-tiger-354be.netlify.app/introduction)
 
@@ -866,7 +868,7 @@
 
 [My Drive - Google Drive](https://drive.google.com/drive/u/4/my-drive)
 
-[WEBDEVHUB_2 - Google Drive](https://drive.google.com/drive/u/1/folders/1JxZtwBiuuDBOd12d2cJZOc5mmaDg_8OG)
+[WEBDEVHUB\_2 - Google Drive](https://drive.google.com/drive/u/1/folders/1JxZtwBiuuDBOd12d2cJZOc5mmaDg_8OG)
 
 [My Drive - Google Drive](https://drive.google.com/drive/u/4/my-drive)
 
@@ -890,7 +892,7 @@
 
 [danielleye/simple-react-clock: simple clock display time using react. Clock1 is a class component and Clock2 is a function component using hooks](https://github.com/danielleye/simple-react-clock)
 
-[javascript - When to use ES6 class based React components vs. functional ES6 React components? - Stack Overflow](https://stackoverflow.com/questions/36097965/when-to-use-es6-class-based-react-components-vs-functional-es6-react-components)
+[javascript - When to use ES6 class based React components vs. functional ES6 React components? - Stack Overflow](https://stackoverflow.com/questions/36097965/when-to-use-es6-class-based-react-components-vs-functional-es6-react-components)
 
 [Listening is everything - Spotify](https://www.spotify.com/us/)
 
@@ -906,7 +908,7 @@
 
 [bgoonz/DS-ALGO-OFFICIAL: The final Iteration](https://github.com/bgoonz/DS-ALGO-OFFICIAL)
 
-[BGOONZ_BLOG_2.0/makefile at master - bgoonz/BGOONZ_BLOG_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/blob/master/makefile)
+[BGOONZ\_BLOG\_2.0/makefile at master - bgoonz/BGOONZ\_BLOG\_2.0](https://github.com/bgoonz/BGOONZ_BLOG_2.0/blob/master/makefile)
 
 [Deploy details | Netlify](https://app.netlify.com/sites/oval-cabbage-354f6/deploys/60ca12a1b0a10200070c63c5)
 
@@ -930,7 +932,7 @@
 
 [Pull requests - side-projects-42/Pure-Documentation](https://github.com/side-projects-42/Pure-Documentation/pulls)
 
-[Preview by bgoonz - Pull Request #2 - side-projects-42/Pure-Documentation](https://github.com/side-projects-42/Pure-Documentation/pull/2)
+[Preview by bgoonz - Pull Request \#2 - side-projects-42/Pure-Documentation](https://github.com/side-projects-42/Pure-Documentation/pull/2)
 
 [Showcase](https://bgoonz-blog.netlify.app/showcase/)
 
@@ -952,7 +954,7 @@
 
 [Stackbit App](https://app.stackbit.com/studio/60c354f64acba00017dcbc71#/projects)
 
-[Merge pull request #2 from side-projects-42/preview by bgoonz - Pull Request #4 - bgoonz/picture-man-bob-v2](https://github.com/bgoonz/picture-man-bob-v2/pull/4)
+[Merge pull request \#2 from side-projects-42/preview by bgoonz - Pull Request \#4 - bgoonz/picture-man-bob-v2](https://github.com/bgoonz/picture-man-bob-v2/pull/4)
 
 [rainy-tiger-354be | Netlify](https://app.netlify.com/sites/rainy-tiger-354be/overview)
 
@@ -980,7 +982,7 @@
 
 [Your Repositories](https://github.com/bgoonz?tab=repositories)
 
-[[ImgBot] Optimize images by imgbot - Pull Request #6 - bgoonz/friendly-amaranth](https://github.com/bgoonz/friendly-amaranth/pull/6)
+[\[ImgBot\] Optimize images by imgbot - Pull Request \#6 - bgoonz/friendly-amaranth](https://github.com/bgoonz/friendly-amaranth/pull/6)
 
 [Workspace Port Not Found - Gitpod](https://3000-gold-guppy-m134z6gv.ws-us09.gitpod.io/)
 
@@ -998,13 +1000,13 @@
 
 [weathered-glade-lwy3p - CodeSandbox](https://codesandbox.io/s/weathered-glade-lwy3p?file=/index.js)
 
-[bgoonz/BGOONZ_BLOG_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: The new home of my blog/resource sharing website.](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [Page Not Found](https://bgoonz-blog.netlify.app/WebDevHub)
 
 [Stackbit Web-Dev-HubTheme](https://bgoonz-blog.netlify.app/)
 
-[Team builds status for Bryan C Guner's team Plan type: Pro | Builds](https://app.netlify.com/teams/bgoonz/builds)
+[Team builds status for Bryan C Guner’s team Plan type: Pro | Builds](https://app.netlify.com/teams/bgoonz/builds)
 
 [bgoonz/cv](https://github.com/bgoonz/cv)
 
@@ -1026,7 +1028,7 @@
 
 [bgoonz/cv](https://github.com/bgoonz/cv)
 
-[Dribbble - Discover the World's Top Designers & Creative Professionals](https://dribbble.com/account/authentications/new)
+[Dribbble - Discover the World’s Top Designers & Creative Professionals](https://dribbble.com/account/authentications/new)
 
 [My Favorite VSCode Themes. Themes | by Bryan Guner | Level Up Coding](https://levelup.gitconnected.com/my-favorite-vscode-themes-9bab65af3f0f)
 
@@ -1034,29 +1036,29 @@
 
 [Inbox (15,023) - gunerb1@tcnj.edu - The College of New Jersey Mail](https://mail.google.com/mail/u/3/?ogbl#inbox)
 
-[[Netlify] :: deploy timeout - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/#inbox/FMfcgzGkXvztDTksHLzrmfQbtPTsKnGb)
+[\[Netlify\] :: deploy timeout - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/#inbox/FMfcgzGkXvztDTksHLzrmfQbtPTsKnGb)
 
 [Sites | Netlify](https://app.netlify.com/teams/bgoonz/sites)
 
-[Comparing main...preview - bgoonz/blog-w-comments](https://github.com/bgoonz/blog-w-comments/compare/preview?expand=1)
+[Comparing main…preview - bgoonz/blog-w-comments](https://github.com/bgoonz/blog-w-comments/compare/preview?expand=1)
 
 [bgoonz (Bryan C Guner)](https://github.com/bgoonz)
 
-[nervous-parsley-081d3 -- Settings | Sanity.io](https://www.sanity.io/manage/personal/project/8tkcsm6a/settings#details)
+[nervous-parsley-081d3 – Settings | Sanity.io](https://www.sanity.io/manage/personal/project/8tkcsm6a/settings#details)
 
 [Content Lake](https://www.sanity.io/docs/datastore)
 
 [Document](https://www.sanity.io/docs/document-type)
 
-[Blog-W-Comments -- Datasets | Sanity.io](https://www.sanity.io/manage/personal/project/ke5fae8i/datasets)
+[Blog-W-Comments – Datasets | Sanity.io](https://www.sanity.io/manage/personal/project/ke5fae8i/datasets)
 
-[Next.js Comment-enabled blog -- Sanity](https://blog-w-comments.vercel.app/studio/desk/post;efbda291-deb0-4ca6-9d80-9d29dbd5e9a0)
+[Next.js Comment-enabled blog – Sanity](https://blog-w-comments.vercel.app/studio/desk/post;efbda291-deb0-4ca6-9d80-9d29dbd5e9a0)
 
-[learning-nextjs-repo-test -- Overview | Sanity.io](https://www.sanity.io/manage/personal/project/7ol4ct3s)
+[learning-nextjs-repo-test – Overview | Sanity.io](https://www.sanity.io/manage/personal/project/7ol4ct3s)
 
-[Next.js Comment-enabled blog -- Sanity](https://blog-w-comments.vercel.app/studio/desk)
+[Next.js Comment-enabled blog – Sanity](https://blog-w-comments.vercel.app/studio/desk)
 
-[Next.js Comment-enabled blog -- Sanity](https://blog-w-comments.vercel.app/studio/desk)
+[Next.js Comment-enabled blog – Sanity](https://blog-w-comments.vercel.app/studio/desk)
 
 [bgoonz/blog-w-comments at 392b0937b910235b5eac2b96e97ae37dd61e515e](https://github.com/bgoonz/blog-w-comments/tree/392b0937b910235b5eac2b96e97ae37dd61e515e)
 
@@ -1074,7 +1076,7 @@
 
 [Simple Browser - BlogV2.0Exp - Gitpod Code](https://violet-crow-e4wt202g.ws-us08.gitpod.io/)
 
-[Blogv2Sanity -- Sanity](https://3333-violet-crow-e4wt202g.ws-us08.gitpod.io/desk)
+[Blogv2Sanity – Sanity](https://3333-violet-crow-e4wt202g.ws-us08.gitpod.io/desk)
 
 [Stackbit App](https://app.stackbit.com/studio/60d50e6c7cca550016e542d4)
 
@@ -1082,15 +1084,15 @@
 
 [bgoonz/node-express-course: An introduction to Node.js and Express.js servers](https://github.com/bgoonz/node-express-course)
 
-[Configure Renovate by renovate - Pull Request #5 - bgoonz/node-express-course](https://github.com/bgoonz/node-express-course/pull/5)
+[Configure Renovate by renovate - Pull Request \#5 - bgoonz/node-express-course](https://github.com/bgoonz/node-express-course/pull/5)
 
 [bgoonz (Bryan C Guner)](https://github.com/bgoonz)
 
-[Blogv2Sanity -- Overview | Sanity.io](https://www.sanity.io/manage/personal/project/508b8ebj)
+[Blogv2Sanity – Overview | Sanity.io](https://www.sanity.io/manage/personal/project/508b8ebj)
 
 [RunKit + npm: react-scripts](https://npm.runkit.com/react-scripts)
 
-[What Is create-react-app and what are it's alternatives : reactjs](https://www.reddit.com/r/reactjs/comments/7kyjjy/what_is_createreactapp_and_what_are_its/)
+[What Is create-react-app and what are it’s alternatives : reactjs](https://www.reddit.com/r/reactjs/comments/7kyjjy/what_is_createreactapp_and_what_are_its/)
 
 [Resource List](chrome-extension://abdkkegmcbiomijcbdaodaflgehfffed/ui/main.html#panel-1)
 
@@ -1116,15 +1118,15 @@ Drag to Bookmarks to add to Bookmarks!
 
 ### New folder
 
-[Deploy details | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/builds/607b62ee00743749d76d235e)
+[Deploy details | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/builds/607b62ee00743749d76d235e)
 
 [bgoonz/Useful-Snippets-js: A collection of snippets that might come in handy, inspired by 30 seconds of code and similar projects](https://github.com/bgoonz/Useful-Snippets-js)
 
 [DavidWells/markdown-magic: 💫  Automatically format markdown files, sync external docs/src code & make better docs](https://github.com/DavidWells/markdown-magic)
 
-[bgoonz/Lambda: password: 'whatissleep' Learning tool for Lambda Students By Lambda Students Latest Stable Build : 81c2322](https://github.com/bgoonz/Lambda)
+[bgoonz/Lambda: password: ‘whatissleep’ Learning tool for Lambda Students By Lambda Students Latest Stable Build : 81c2322](https://github.com/bgoonz/Lambda)
 
-[Edit Page ‹ Web-Dev-Hub --- WordPress.com](https://wordpress.com/page/navbar982556129.wordpress.com/home)
+[Edit Page ‹ Web-Dev-Hub — WordPress.com](https://wordpress.com/page/navbar982556129.wordpress.com/home)
 
 [objective-c](http://127.0.0.1:5500/2-resources/_GENERAL-RESOURCES/Skills-Quiz/objective-c/left.html)
 
@@ -1166,13 +1168,13 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Understanding Private Variables (Closure?) in Javascript with specific example - Stack Overflow](https://stackoverflow.com/questions/31454474/understanding-private-variables-closure-in-javascript-with-specific-example)
 
-[pr2_whiteboarding-closures.md - OneDrive](https://onedrive.live.com/?cid=D21009FDD967A241&id=D21009FDD967A241%21337463&parId=D21009FDD967A241%21336808&o=OneUp)
+[pr2\_whiteboarding-closures.md - OneDrive](https://onedrive.live.com/?cid=D21009FDD967A241&id=D21009FDD967A241%21337463&parId=D21009FDD967A241%21336808&o=OneUp)
 
-[increment - ++someVariable vs. someVariable++ in JavaScript - Stack Overflow](https://stackoverflow.com/questions/3469885/somevariable-vs-somevariable-in-javascript)
+[increment - ++someVariable vs. someVariable++ in JavaScript - Stack Overflow](https://stackoverflow.com/questions/3469885/somevariable-vs-somevariable-in-javascript)
 
 [closure.pdf](file:///C:/0-a-A-October/00-weeks-container/00-weeks/_CONTAINER/02-mod1-a-2--/NOTES/week-2/W2D5/closure.pdf)
 
-[web-module-challenge-scope-and-closure/index.js a... - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox/FMfcgxwLtZrBDbHnHnjmssrRKcFNTWhN)
+[web-module-challenge-scope-and-closure/index.js a… - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox/FMfcgxwLtZrBDbHnHnjmssrRKcFNTWhN)
 
 [web-module-challenge-scope-and-closure/index.js at marshal-wahl - mwahl1/web-module-challenge-scope-and-closure](https://github.com/mwahl1/web-module-challenge-scope-and-closure/blob/marshal-wahl/index.js)
 
@@ -1218,7 +1220,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Simple template](http://127.0.0.1:5500/7-assets/Reusable-Components/simple-template/index.html)
 
-[bgoonz's gists](https://gist.github.com/bgoonz)
+[bgoonz’s gists](https://gist.github.com/bgoonz)
 
 [Expanding list web component](http://127.0.0.1:5500/7-assets/Reusable-Components/expanding-list-web-component/index.html)
 
@@ -1258,7 +1260,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [www.jetbrains.com](https://www.jetbrains.com/webstorm/download/download-thanks.html?platform=windows)
 
-[Web-Dev-Collaborative/model_search](https://github.com/Web-Dev-Collaborative/model_search)
+[Web-Dev-Collaborative/model\_search](https://github.com/Web-Dev-Collaborative/model_search)
 
 [Your Repositories](https://github.com/bgoonz?tab=repositories)
 
@@ -1284,7 +1286,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Feed | LinkedIn](https://www.linkedin.com/feed/)
 
-[New story -- Medium](https://medium.com/p/c00551ac5d0/edit)
+[New story – Medium](https://medium.com/p/c00551ac5d0/edit)
 
 [BIGOOOO - DEV Community 👩‍💻👨‍💻](https://dev.to/bgoonz/bigoooo-1fpd)
 
@@ -1296,7 +1298,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Download Splice | Splice](https://splice.com/download)
 
-[Splice (platform) - Wikipedia](<https://en.wikipedia.org/wiki/Splice_(platform)#:~:text=Splice%20is%20a%20cloud%2Dbased,well%20as%20visualization%20of%20the>)
+[Splice (platform) - Wikipedia](https://en.wikipedia.org/wiki/Splice_(platform)#:~:text=Splice%20is%20a%20cloud%2Dbased,well%20as%20visualization%20of%20the)
 
 [jupyter/notebook: Jupyter Interactive Notebook](https://github.com/jupyter/notebook)
 
@@ -1316,7 +1318,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [bgoonz (Bryan C Guner)](https://github.com/bgoonz)
 
-[windows - env: bash\r: No such file or directory - Stack Overflow](https://stackoverflow.com/questions/29045140/env-bash-r-no-such-file-or-directory/29045187)
+[windows - env: bash No such file or directory - Stack Overflow](https://stackoverflow.com/questions/29045140/env-bash-r-no-such-file-or-directory/29045187)
 
 [bgoonz/My-Web-Dev-Archive](https://github.com/bgoonz/My-Web-Dev-Archive)
 
@@ -1336,9 +1338,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Lambda/.gitignore at master - bgoonz/Lambda](https://github.com/bgoonz/Lambda/blob/master/.gitignore)
 
-[Web-Dev-Collaborative/ARCHIVE_MAIN](https://github.com/Web-Dev-Collaborative/ARCHIVE_MAIN)
+[Web-Dev-Collaborative/ARCHIVE\_MAIN](https://github.com/Web-Dev-Collaborative/ARCHIVE_MAIN)
 
-[Message 'src refspec master does not match any' when pushing commits in Git - Stack Overflow](https://stackoverflow.com/questions/4181861/message-src-refspec-master-does-not-match-any-when-pushing-commits-in-git)
+[Message ‘src refspec master does not match any’ when pushing commits in Git - Stack Overflow](https://stackoverflow.com/questions/4181861/message-src-refspec-master-does-not-match-any-when-pushing-commits-in-git)
 
 [QuickSort.gif (608×272)](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/quick_sort/images/QuickSort.gif)
 
@@ -1348,7 +1350,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 ### New folder
 
-[/NEW_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS](http://127.0.0.1:5500/left.html)
+[/NEW\_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS](http://127.0.0.1:5500/left.html)
 
 [bgoonz/embedable-repl-and-integrated-code-space-playground: What the title sounds like](https://github.com/bgoonz/embedable-repl-and-integrated-code-space-playground)
 
@@ -1362,7 +1364,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Lunr text search](https://simpl.info/search/lunr/)
 
-<https://simpl.info/search/lunr/data/index.json>
+<a href="https://simpl.info/search/lunr/data/index.json" class="uri">https://simpl.info/search/lunr/data/index.json</a>
 
 [15 Open-source Full-Text Search Engine Solutions for developers](https://medevel.com/os-fulltext-search-solutions/)
 
@@ -1434,7 +1436,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [11 Web Certifications That Are Worth Looking Into || The Art Career Project](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=11%20Web%20Certifications%20That%20Are%20Worth%20Looking%20Into%20%7C%7C%20The%20Art%20Career%20Project&pos=2866.66650390625&uri=https://www.theartcareerproject.com/11-best-web-certifications/)
 
-[Learn to Code for Free -- Coding Courses for Busy People](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Learn%20to%20Code%20for%20Free%20%E2%80%93%20Coding%20Courses%20for%20Busy%20People&pos=0&uri=https://www.freecodecamp.org/learn)
+[Learn to Code for Free – Coding Courses for Busy People](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Learn%20to%20Code%20for%20Free%20%E2%80%93%20Coding%20Courses%20for%20Busy%20People&pos=0&uri=https://www.freecodecamp.org/learn)
 
 [Stack Overflow Developer Survey 2019](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Stack%20Overflow%20Developer%20Survey%202019&pos=449.6296081542969&uri=https://insights.stackoverflow.com/survey/2019#overview)
 
@@ -1444,9 +1446,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [D3.js Boxplot with Axes and Labels - bl.ocks.org](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=D3.js%20Boxplot%20with%20Axes%20and%20Labels%20-%20bl.ocks.org&pos=0&uri=http://bl.ocks.org/anaeliaovalle/60a7ed1f4e55a9052caab3c69668a306)
 
-[127.0.0.1:5501/D3-graph-gallery-master/html_chunk/menu.html](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5501%2FD3-graph-gallery-master%2Fhtml_chunk%2Fmenu.html&pos=0&uri=http://127.0.0.1:5501/D3-graph-gallery-master/html_chunk/menu.html)
+[127.0.0.1:5501/D3-graph-gallery-master/html\_chunk/menu.html](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5501%2FD3-graph-gallery-master%2Fhtml_chunk%2Fmenu.html&pos=0&uri=http://127.0.0.1:5501/D3-graph-gallery-master/html_chunk/menu.html)
 
-[127.0.0.1:5501/D3-graph-gallery-master/html_chunk/menu_modal.html](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5501%2FD3-graph-gallery-master%2Fhtml_chunk%2Fmenu_modal.html&pos=266.6666564941406&uri=http://127.0.0.1:5501/D3-graph-gallery-master/html_chunk/menu_modal.html)
+[127.0.0.1:5501/D3-graph-gallery-master/html\_chunk/menu\_modal.html](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5501%2FD3-graph-gallery-master%2Fhtml_chunk%2Fmenu_modal.html&pos=266.6666564941406&uri=http://127.0.0.1:5501/D3-graph-gallery-master/html_chunk/menu_modal.html)
 
 [Start Confirmation | Font Awesome](https://fontawesome.com/start/confirm)
 
@@ -1464,11 +1466,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Free Bootstrap Themes, Templates, Snippets, and Guides - Start Bootstrap](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Free%20Bootstrap%20Themes%2C%20Templates%2C%20Snippets%2C%20and%20Guides%20-%20Start%20Bootstrap&pos=0&uri=https://startbootstrap.com/)
 
-[127.0.0.1:5501/02-cloned-repos/\_web_dev_tools/\_Html-Templates/startbootstrap-master/templates/admin-dashboard.html](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5501%2F02-cloned-repos%2F_web_dev_tools%2F_Html-Templates%2Fstartbootstrap-master%2Ftemplates%2Fadmin-dashboard.html&pos=0&uri=http://127.0.0.1:5501/02-cloned-repos/_web_dev_tools/_Html-Templates/startbootstrap-master/templates/admin-dashboard.html)
+[127.0.0.1:5501/02-cloned-repos/\_web\_dev\_tools/\_Html-Templates/startbootstrap-master/templates/admin-dashboard.html](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=127.0.0.1%3A5501%2F02-cloned-repos%2F_web_dev_tools%2F_Html-Templates%2Fstartbootstrap-master%2Ftemplates%2Fadmin-dashboard.html&pos=0&uri=http://127.0.0.1:5501/02-cloned-repos/_web_dev_tools/_Html-Templates/startbootstrap-master/templates/admin-dashboard.html)
 
 [Mongodb - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Mongodb%20-%20Google%20Search&pos=0&uri=https://www.google.com/search?rlz=1C1UEAD_enUS928US928&sxsrf=ALeKk03jA2xWewWzMXp36sg1DiEghNxcjw%3A1610735181489&ei=Td4BYIWBHbGl_QaqsbvACA&q=Mongodb&oq=Mongodb&gs_lcp=CgZwc3ktYWIQAzIICAAQyQMQkQIyBwgAELEDEEMyBwgAEEMQiwMyCggAELEDEEMQiwMyCggAELEDEEMQiwMyCAgAELEDEIsDMgUIABCLAzILCAAQsQMQgwEQiwMyCAgAELEDEIsDMggIABCxAxCLAzoECAAQRzoECCMQJzoECAAQQzoICC4QxwEQowI6CAgAELEDEIMBOgsILhCxAxDHARCjAjoCCAA6BQgAEJECOgsILhCLAxCoAxCjAzoFCC4QiwM6EQguEMcBEKMCEIsDEKgDEKcDOggILhCxAxCLAzoOCC4QsQMQiwMQqAMQnwM6DgguELEDEIsDEKgDEJ0DUPdXWNJoYMJxaABwBXgAgAFhiAHNBJIBATeYAQCgAQGqAQdnd3Mtd2l6yAEIuAEDwAEB&sclient=psy-ab&ved=0ahUKEwjF28aSyJ7uAhWxUt8KHarYDogQ4dUDCA0&uact=5)
 
-[Elasticsearch: What it is, How it works, and what it's used for](https://www.knowi.com/blog/what-is-elastic-search/)
+[Elasticsearch: What it is, How it works, and what it’s used for](https://www.knowi.com/blog/what-is-elastic-search/)
 
 [elastic/elasticsearch: Open Source, Distributed, RESTful Search Engine](https://github.com/elastic/elasticsearch)
 
@@ -1476,11 +1478,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [how to run a bat file from cmd - Google Search](https://www.google.com/search?q=how+to+run+a+bat+file+from+cmd&rlz=1C1UEAD_enUS928US928&oq=how+to+run+a+bat+file+&aqs=chrome.1.69i57j0i457j0l4j0i395l4.7136j1j7&sourceid=chrome&ie=UTF-8)
 
-[Get Elasticsearch up and running | Elasticsearch Reference [7.10] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html)
+[Get Elasticsearch up and running | Elasticsearch Reference \[7.10\] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html)
 
-[[d13f36] Overview --- Elastic Cloud](https://cloud.elastic.co/deployments/d13f360dd89346b3bcdad11d3e611b91)
+[\[d13f36\] Overview — Elastic Cloud](https://cloud.elastic.co/deployments/d13f360dd89346b3bcdad11d3e611b91)
 
-[Enable Elasticsearch security features | Elasticsearch Reference [6.8] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/get-started-enable-security.html)
+[Enable Elasticsearch security features | Elasticsearch Reference \[6.8\] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/get-started-enable-security.html)
 
 ### New folder
 
@@ -1490,7 +1492,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Generic - Hyperspace by HTML5 UP](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Generic%20-%20Hyperspace%20by%20HTML5%20UP&pos=0&uri=http://127.0.0.1:5500/05-misc/repo/ALW93.github.io-master/generic.html)
 
-[(1) Bryan Guner | LinkedIn](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=(1)%20Bryan%20Guner%20%7C%20LinkedIn&pos=499.9999694824219&uri=https://www.linkedin.com/in/bryan-guner-046199128/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAB9Z4fYBOjR8mPtiKIcZgX-UFNh5WtKvONE,1607836837160)/>)
+[(1) Bryan Guner | LinkedIn](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=(1)%20Bryan%20Guner%20%7C%20LinkedIn&pos=499.9999694824219&uri=https://www.linkedin.com/in/bryan-guner-046199128/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAB9Z4fYBOjR8mPtiKIcZgX-UFNh5WtKvONE,1607836837160)/)
 
 [1607836819225](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=1607836819225&pos=0&uri=https://media-exp1.licdn.com/dms/document/C562DAQFpcTxXb0OwDQ/profile-treasury-document-pdf-analyzed/0/1607836819225?e=1610848800&v=beta&t=2FsPvNAAutzhgmPcJDS9QyVb2l-WNzViJMRejmrcG40)
 
@@ -1514,9 +1516,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Analytics | Home](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Analytics%20%7C%20Home&pos=0&uri=https://analytics.google.com/analytics/web/#/p258860576/reports/defaulthome?params=_u..nav%3Ddefault)
 
-[(1) Bryan Guner | Facebook](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=(1)%20Bryan%20Guner%20%7C%20Facebook&pos=0&uri=https://www.facebook.com/bryan.guner/>)
+[(1) Bryan Guner | Facebook](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=(1)%20Bryan%20Guner%20%7C%20Facebook&pos=0&uri=https://www.facebook.com/bryan.guner/)
 
-[Bryan Guner Music (@bgoonz) - Instagram photos and videos](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Bryan%20Guner%20Music%20(%40bgoonz)%20%E2%80%A2%20Instagram%20photos%20and%20videos&pos=0&uri=https://www.instagram.com/bgoonz/>)
+<span class="citation" data-cites="bgoonz">\[Bryan Guner Music (@bgoonz) - Instagram photos and videos\]</span>(chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html\#ttl=Bryan%20Guner%20Music%20(%40bgoonz)%20%E2%80%A2%20Instagram%20photos%20and%20videos&pos=0&uri=https://www.instagram.com/bgoonz/)
 
 [Bryan Guner](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Bryan%20Guner&pos=2400&uri=http://127.0.0.1:5500/02-portfolios/bgoonz.github.io-master/index.html)
 
@@ -1532,7 +1534,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Bryan Guner](http://127.0.0.1:5500/02-portfolios/bgoonz.github.io-master/index.html)
 
-[[LiveForm] New submission for portfolio - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/#inbox/FMfcgxwKkbdjWXWBlvxXHjzcGRJSkzTr)
+[\[LiveForm\] New submission for portfolio - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/#inbox/FMfcgxwKkbdjWXWBlvxXHjzcGRJSkzTr)
 
 [Build awesome online forms, for web designers and developers](https://liveformhq.com/forms/6770d1cb-bd6b-43b8-b2d1-e0f3aa9c8d89/setup)
 
@@ -1542,7 +1544,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [How to Transform Your Static Site into a Responsive Website - business.com](https://www.business.com/articles/how-to-transform-static-site-into-responsive-website/)
 
-[Fluid Grids -- A List Apart](https://alistapart.com/article/fluidgrids/)
+[Fluid Grids – A List Apart](https://alistapart.com/article/fluidgrids/)
 
 [Open Source Project Index - Yahoo Developer Network](https://developer.yahoo.com/opensource/projectindex/)
 
@@ -1568,9 +1570,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 ### Lots-of-website-job-stuff
 
-[README.md -- entertaining-night-garment](https://glitch.com/edit/#!/entertaining-night-garment)
+[README.md – entertaining-night-garment](https://glitch.com/edit/#!/entertaining-night-garment)
 
-[Sites | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/sites)
+[Sites | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/sites)
 
 [Site overview | tender-bartik-074feb](https://app.netlify.com/sites/tender-bartik-074feb/overview)
 
@@ -1578,7 +1580,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [a/A-Student-Resources](https://goofy-euclid-1cd736.netlify.app/)
 
-[Team overview | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/overview)
+[Team overview | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/overview)
 
 [Site overview | serene-rosalind-3f429a](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Site%20overview%20%7C%20serene-rosalind-3f429a&pos=0&uri=https://app.netlify.com/sites/serene-rosalind-3f429a/overview)
 
@@ -1604,7 +1606,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Example to showcase the add, get and remove methods. - List.js](https://listjs.com/examples/add-get-remove/)
 
-[Uploading Large Files to GitHub. 3 ways to avoid getting error messages... | by Eden Au | Towards Data Science](https://towardsdatascience.com/uploading-large-files-to-github-dbef518fa1a)
+[Uploading Large Files to GitHub. 3 ways to avoid getting error messages… | by Eden Au | Towards Data Science](https://towardsdatascience.com/uploading-large-files-to-github-dbef518fa1a)
 
 [BFG Repo-Cleaner by rtyley](https://rtyley.github.io/bfg-repo-cleaner/)
 
@@ -1630,7 +1632,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Connect and visualize all your data in Data Studio](https://codelabs.developers.google.com/codelabs/community-connectors#5)
 
-[[Opportunity]: Be a Community Visualizations Launch Partner](https://groups.google.com/g/data-studio-developers/c/p9xSxN_O8GM)
+[\[Opportunity\]: Be a Community Visualizations Launch Partner](https://groups.google.com/g/data-studio-developers/c/p9xSxN_O8GM)
 
 [Community Visualizations Developer Preview  |  Google Developers](https://developers.google.com/datastudio/visualization/developer-preview/)
 
@@ -1640,11 +1642,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Build your first WebAuthn app](https://codelabs.developers.google.com/codelabs/webauthn-reauth#1)
 
-[Glitch :･ﾟ ✧](https://glitch.com/edit/#!/entertaining-night-garment)
+[Glitch :･ﾟ✧](https://glitch.com/edit/#!/entertaining-night-garment)
 
-[Glitch :･ﾟ ✧](https://glitch.com/edit/#!/planet-sore-dragon?path=.env%3A1%3A0)
+[Glitch :･ﾟ✧](https://glitch.com/edit/#!/planet-sore-dragon?path=.env%3A1%3A0)
 
-[Glitch :･ﾟ ✧](https://glitch.com/edit/#!/planet-sore-dragon?path=README.md%3A1%3A0)
+[Glitch :･ﾟ✧](https://glitch.com/edit/#!/planet-sore-dragon?path=README.md%3A1%3A0)
 
 [How do I store secrets, credentials or private data? - Glitch Support](https://glitch.com/help/kb/article/18-how-do-i-store-secrets-credentials-or-private-data/)
 
@@ -1658,7 +1660,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [How do I store secrets, credentials or private data? - Glitch Support](https://glitch.com/help/kb/article/18-how-do-i-store-secrets-credentials-or-private-data/)
 
-[README.md -- hello-express](https://glitch.com/edit/#!/hello-express)
+[README.md – hello-express](https://glitch.com/edit/#!/hello-express)
 
 [(1) Glitch Support](https://support.glitch.com/)
 
@@ -1668,7 +1670,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Learn React: Define an HTML Class in JSX | freeCodeCamp.org](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Learn%20React%3A%20Define%20an%20HTML%20Class%20in%20JSX%20%7C%20freeCodeCamp.org&pos=0&uri=https://www.freecodecamp.org/learn/front-end-libraries/react/define-an-html-class-in-jsx)
 
-[Learn to Code --- For Free --- Coding Courses for Busy People](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Learn%20to%20Code%20%E2%80%94%20For%20Free%20%E2%80%94%20Coding%20Courses%20for%20Busy%20People&pos=0&uri=https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3DSuccess%2521%2520You%2520have%2520signed%2520in%2520to%2520your%2520account.%2520Happy%2520Coding%2521)
+[Learn to Code — For Free — Coding Courses for Busy People](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Learn%20to%20Code%20%E2%80%94%20For%20Free%20%E2%80%94%20Coding%20Courses%20for%20Busy%20People&pos=0&uri=https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3DSuccess%2521%2520You%2520have%2520signed%2520in%2520to%2520your%2520account.%2520Happy%2520Coding%2521)
 
 [bgoonz/excel2html-table](https://github.com/bgoonz/excel2html-table)
 
@@ -1696,7 +1698,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [index.html](file:///C:/MY-WEB-DEV/04-Personal-Projects/_source-repos/_ALL/index.html)
 
-[css <code> text wrap - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=css%20%3Ccode%3E%20text%20wrap%20-%20Google%20Search&pos=0&uri=https://www.google.com/search?q=css+%3Ccode%3E+text+wrap&oq=css+%3Ccode%3E+text+wrap&aqs=chrome..69i57j0i22i30l2.13287j1j7&sourceid=chrome&ie=UTF-8)
+[css ` text wrap - Google Search`](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=css%20%3Ccode%3E%20text%20wrap%20-%20Google%20Search&pos=0&uri=https://www.google.com/search?q=css+%3Ccode%3E+text+wrap&oq=css+%3Ccode%3E+text+wrap&aqs=chrome..69i57j0i22i30l2.13287j1j7&sourceid=chrome&ie=UTF-8)
 
 [Prism](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prism&pos=7415.5556640625&uri=https://prismjs.com/#basic-usage)
 
@@ -1716,7 +1718,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Black Mirror Cracked Text Effect](https://codepen.io/GeorgePark/pen/jeBbGN)
 
-[html - How to make <div> resizeable? - Stack Overflow](https://stackoverflow.com/questions/391440/how-to-make-div-resizeable)
+\[html - How to make
+
+resizeable? - Stack Overflow\](https://stackoverflow.com/questions/391440/how-to-make-div-resizeable)
 
 [Repl.it - excel2html-table](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Repl.it%20-%20excel2html-table&pos=0&uri=https://repl.it/@bgoonz/excel2html-table#SampleData.html)
 
@@ -1730,7 +1734,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Your Projects](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Your%20Projects&pos=0&uri=https://glitch.com/dashboard?group=owned&sortColumn=boost&sortDirection=DESC&page=1&showAll=false&filterDomain=)
 
-[andyj's gists](https://gist.github.com/andyj?page=2)
+[andyj’s gists](https://gist.github.com/andyj?page=2)
 
 [andyj (Andy Jarrett)](https://github.com/andyj)
 
@@ -1748,7 +1752,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 ### check-later
 
-[From Design To Developer-Friendly React Code In Minutes With Anima --- Smashing Magazine](https://www.smashingmagazine.com/2021/01/design-developer-friendly-react-code-animaapp/)
+[From Design To Developer-Friendly React Code In Minutes With Anima — Smashing Magazine](https://www.smashingmagazine.com/2021/01/design-developer-friendly-react-code-animaapp/)
 
 [Getting Started | Create React App](https://create-react-app.dev/docs/getting-started)
 
@@ -1778,7 +1782,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Example Projects - Gitpod](https://www.gitpod.io/docs/examples/)
 
-[Design Patterns in Open Source Projects - Part I - Minko Gechev's blog](https://blog.mgechev.com/2021/01/18/design-pattens-in-open-source-projects-part-i/)
+[Design Patterns in Open Source Projects - Part I - Minko Gechev’s blog](https://blog.mgechev.com/2021/01/18/design-pattens-in-open-source-projects-part-i/)
 
 [JavaScript configuration variables | Disqus](https://help.disqus.com/en/articles/1717084-javascript-configuration-variables)
 
@@ -1812,17 +1816,17 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Norwex Info - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/1/#search/norwex/FMfcgxwLsSczRCmHfsHFnbGxpVTRPJfk)
 
-[@ToxicFreeSimplyClean | Linktree](https://linktr.ee/ToxicFreeSimplyClean)
+<span class="citation" data-cites="ToxicFreeSimplyClean">\[@ToxicFreeSimplyClean | Linktree\]</span>(https://linktr.ee/ToxicFreeSimplyClean)
 
 [Shop - Norwex USA](https://kathyguner.norwex.biz/en_US/customer/shop/Household)
 
-[@ToxicFreeSimplyClean | Linktree](https://linktr.ee/ToxicFreeSimplyClean)
+<span class="citation" data-cites="ToxicFreeSimplyClean">\[@ToxicFreeSimplyClean | Linktree\]</span>(https://linktr.ee/ToxicFreeSimplyClean)
 
 [Convert HTML CSS Code into React App using React Fundamentals Knowledge - DEV Community](https://dev.to/alidhuniya/convert-html-css-code-into-react-app-using-react-fundamentals-knowledge-hl)
 
-<https://raw.githubusercontent.com/bgoonz/styling-templates/master/bootstrap3/assets/css/bootstrap.min.css>
+<a href="https://raw.githubusercontent.com/bgoonz/styling-templates/master/bootstrap3/assets/css/bootstrap.min.css" class="uri">https://raw.githubusercontent.com/bgoonz/styling-templates/master/bootstrap3/assets/css/bootstrap.min.css</a>
 
-<https://gist.githubusercontent.com/bgoonz/37bca66ce8441c688900b6f082f10560/raw/2e9a5966431d89b8ce6355e7b8039ba42554978b/CSS-Styling-for-Pandoc-generated-html.css>
+<a href="https://gist.githubusercontent.com/bgoonz/37bca66ce8441c688900b6f082f10560/raw/2e9a5966431d89b8ce6355e7b8039ba42554978b/CSS-Styling-for-Pandoc-generated-html.css" class="uri">https://gist.githubusercontent.com/bgoonz/37bca66ce8441c688900b6f082f10560/raw/2e9a5966431d89b8ce6355e7b8039ba42554978b/CSS-Styling-for-Pandoc-generated-html.css</a>
 
 [Convert HTML to React components](https://roman01la.github.io/html-to-react-components/)
 
@@ -1832,7 +1836,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [html-to-react - npm](https://www.npmjs.com/package/html-to-react)
 
-[@ToxicFreeSimplyClean | Linktree](http://127.0.0.1:5500/Resources/linktree/linktr.ee/ToxicFreeSimplyClean.html)
+<span class="citation" data-cites="ToxicFreeSimplyClean">\[@ToxicFreeSimplyClean | Linktree\]</span>(http://127.0.0.1:5500/Resources/linktree/linktr.ee/ToxicFreeSimplyClean.html)
 
 [HTML to JSX](https://magic.reactjs.net/htmltojsx.htm)
 
@@ -1904,7 +1908,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [invited you to join Instagram! - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/?ogbl#inbox/FMfcgxwLsmgFCHVwLtJQfHPGnlhJGWXt)
 
-[@kguner.norbiz - Instagram photos and videos](https://www.instagram.com/kguner.norbiz/)
+<span class="citation" data-cites="kguner.norbiz">\[@kguner.norbiz - Instagram photos and videos\]</span>(https://www.instagram.com/kguner.norbiz/)
 
 [Inbox (136) - bryan.guner.dev@gmail.com - Gmail](https://mail.google.com/mail/u/1/#inbox)
 
@@ -1914,25 +1918,25 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Session Timed Out | AWS Training & Certification](https://www.aws.training/Account/SessionTimedOut?returnUrl=https%3A%2F%2Fwww.aws.training%2FDetails%2FeLearning%3Fid%3D60697)
 
-[SCORM Launch Page](https://lrs.aws.training/defaultui/launch.aspx?configuration=&package=cecpeb_en_x3_1.0.0&registration=TranscriptId|nqlKqtRb00aLtGnxPyYXaA2!UserId|h4Ce1FMTQkOC-n8U56YAHA2!SaveCompletion|1!PackageId|cecpeb_en_x3_1.0.0!CompletionThresholdPercent|100!RegistrationTimestampTicks|16148909431862312&auth=637504880437398052-MRYXOp2y4KXfPRrHd3i6EGeVDlmsaJGv3T6s3QYVQVmvEG56R-7TR3l2eWDPdDnAHf65NoC1b7WXXCMDFreXL1TvbDrN_7I33PjwAbif-j1qojeD8aL9H-T2SMjzD0vzW_ZLEt5goMQdr8bA0oEoqtGP46jQ4ODdpIG8vMX81GVPRhRkdJTIZSA6QNKSiCXM9TTLmJn4MY34QLH4iBgV7ApEFy0l9hZon0Ll0OjR2GT5JG9Yg3JGcp1lsyXBTe3xRxPuXNWieV6USLH_ElQgxVn1QZ3Aex1r-IAoUNcoYeeulrdQSNqrE9IhE5_wvXnAx_uPv6fJmNfhClxO0AmlIw2&cc=en-US&redirectOnExitUrl=https:%2f%2fwww.aws.training%2fDetails%2feLearning%3fid%3d60697)
+[SCORM Launch Page](https://lrs.aws.training/defaultui/launch.aspx?configuration=&package=cecpeb_en_x3_1.0.0&registration=TranscriptId%7CnqlKqtRb00aLtGnxPyYXaA2!UserId%7Ch4Ce1FMTQkOC-n8U56YAHA2!SaveCompletion%7C1!PackageId%7Ccecpeb_en_x3_1.0.0!CompletionThresholdPercent%7C100!RegistrationTimestampTicks%7C16148909431862312&auth=637504880437398052-MRYXOp2y4KXfPRrHd3i6EGeVDlmsaJGv3T6s3QYVQVmvEG56R-7TR3l2eWDPdDnAHf65NoC1b7WXXCMDFreXL1TvbDrN_7I33PjwAbif-j1qojeD8aL9H-T2SMjzD0vzW_ZLEt5goMQdr8bA0oEoqtGP46jQ4ODdpIG8vMX81GVPRhRkdJTIZSA6QNKSiCXM9TTLmJn4MY34QLH4iBgV7ApEFy0l9hZon0Ll0OjR2GT5JG9Yg3JGcp1lsyXBTe3xRxPuXNWieV6USLH_ElQgxVn1QZ3Aex1r-IAoUNcoYeeulrdQSNqrE9IhE5_wvXnAx_uPv6fJmNfhClxO0AmlIw2&cc=en-US&redirectOnExitUrl=https:%2f%2fwww.aws.training%2fDetails%2feLearning%3fid%3d60697)
 
 [Pathways](https://www.awseducate.com/student/s/pathways)
 
 [Software Development: DevOps: Web Development Engineer](https://awseducate.instructure.com/courses/193/pages/software-development-devops?module_item_id=4615)
 
-<https://www.udacity.com/wiki/saad/software#virtual-machine-vm>
+<a href="https://www.udacity.com/wiki/saad/software#virtual-machine-vm" class="uri">https://www.udacity.com/wiki/saad/software#virtual-machine-vm</a>
 
 [PHP: Hypertext Preprocessor](https://www.php.net/)
 
-<https://www.apachelounge.com/profile.php>
+<a href="https://www.apachelounge.com/profile.php" class="uri">https://www.apachelounge.com/profile.php</a>
 
-[What is Continuous Integration? -- Amazon Web Services](https://aws.amazon.com/devops/continuous-integration/)
+[What is Continuous Integration? – Amazon Web Services](https://aws.amazon.com/devops/continuous-integration/)
 
-<https://www.awseducate.com/ConfirmEmail?ref=83327344f503f45ee1a92dab0bfcafce>
+<a href="https://www.awseducate.com/ConfirmEmail?ref=83327344f503f45ee1a92dab0bfcafce" class="uri">https://www.awseducate.com/ConfirmEmail?ref=83327344f503f45ee1a92dab0bfcafce</a>
 
 [The Good AA](https://goofy-euclid-1cd736.netlify.app/core-site/page-contact)
 
-[Sites | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/sites)
+[Sites | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/sites)
 
 [Heroku | Login](https://id.heroku.com/login)
 
@@ -1942,11 +1946,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Seeker Dashboard - Profile](https://www.dice.com/dashboard)
 
-[Personal Cloud Storage -- Microsoft OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)
+[Personal Cloud Storage – Microsoft OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage)
 
 [JOB-SEARCH-OFFICIAL - OneDrive](https://onedrive.live.com/?id=D21009FDD967A241%21538638&cid=D21009FDD967A241)
 
-[Greg Garzon's Portfolio Page](http://localhost:3000/#home)
+[Greg Garzon’s Portfolio Page](http://localhost:3000/#home)
 
 [README](file:///C:/Users/bryan/AppData/Local/Temp/mume202124-10212-1gxilth.8pey.html)
 
@@ -1962,7 +1966,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [(47) Bryan Guner | LinkedIn](https://www.linkedin.com/in/bryan-guner-046199128/)
 
-[Medium -- Where good ideas find you.](https://medium.com/#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6ImU4NzMyZGIwNjI4NzUxNTU1NjIxM2I4MGFjYmNmZDA4Y2ZiMzAyYTkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2MTQ4NzcwNjAsImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwNzI3NTI1NjA3OTc3NzU3NTA4NyIsImVtYWlsIjoiYnJ5YW4uZ3VuZXJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJCcnlhbiBHdW5lciIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaEZoY2xpZVhfN2NUbks2TDM3MWJjYmI3Y0FsRnV1aDEzUzlFRDdLQT1zOTYtYyIsImdpdmVuX25hbWUiOiJCcnlhbiIsImZhbWlseV9uYW1lIjoiR3VuZXIiLCJpYXQiOjE2MTQ4NzczNjAsImV4cCI6MTYxNDg4MDk2MCwianRpIjoiNGEyMjllMGNiNmFlMWNlYTU2MTBkYjZhMTExNGY0MzdkZGQ0MTFkMSJ9.PP5TYq9ZDMSV-B6Ls_YtJVjKZ7u2mz6EuWf5WyBnvLj_M2BhWHKJC6-sZXKN9znNXFJMINiejDvACBSsT5xmf9e1bzW4elzRG5Xtv1TFS8XjSF8pplBVvjNRcZxExBcLYOLksuU-7xPDVrmvrScSQ37_7zuL9Mqzfyd00ttX_1d5wmPeiizqCC-myXos0ZNciwtJ-iLCMn1ssaUFD3zC-0mMaVDT2wt0vFZQrQwIMk6EA5vzSg7nBndJeWgbbh006BzsDUpjPclSsBZcThoLPEyzGpiE5Rv-9816GkFBa7RZ2jhnzLSZcOiAKizEZ_W0pI0cLclI1XSAPBXUPKbtSA)
+[Medium – Where good ideas find you.](https://medium.com/#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6ImU4NzMyZGIwNjI4NzUxNTU1NjIxM2I4MGFjYmNmZDA4Y2ZiMzAyYTkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2MTQ4NzcwNjAsImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwNzI3NTI1NjA3OTc3NzU3NTA4NyIsImVtYWlsIjoiYnJ5YW4uZ3VuZXJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJCcnlhbiBHdW5lciIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaEZoY2xpZVhfN2NUbks2TDM3MWJjYmI3Y0FsRnV1aDEzUzlFRDdLQT1zOTYtYyIsImdpdmVuX25hbWUiOiJCcnlhbiIsImZhbWlseV9uYW1lIjoiR3VuZXIiLCJpYXQiOjE2MTQ4NzczNjAsImV4cCI6MTYxNDg4MDk2MCwianRpIjoiNGEyMjllMGNiNmFlMWNlYTU2MTBkYjZhMTExNGY0MzdkZGQ0MTFkMSJ9.PP5TYq9ZDMSV-B6Ls_YtJVjKZ7u2mz6EuWf5WyBnvLj_M2BhWHKJC6-sZXKN9znNXFJMINiejDvACBSsT5xmf9e1bzW4elzRG5Xtv1TFS8XjSF8pplBVvjNRcZxExBcLYOLksuU-7xPDVrmvrScSQ37_7zuL9Mqzfyd00ttX_1d5wmPeiizqCC-myXos0ZNciwtJ-iLCMn1ssaUFD3zC-0mMaVDT2wt0vFZQrQwIMk6EA5vzSg7nBndJeWgbbh006BzsDUpjPclSsBZcThoLPEyzGpiE5Rv-9816GkFBa7RZ2jhnzLSZcOiAKizEZ_W0pI0cLclI1XSAPBXUPKbtSA)
 
 [I got tired of writing cover letters so I built a cover letter generator! : cscareerquestions](https://www.reddit.com/r/cscareerquestions/comments/855maw/i_got_tired_of_writing_cover_letters_so_i_built_a/)
 
@@ -1984,13 +1988,13 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Social Responsibility | Norwex USA](https://kathyguner.norwex.biz/en_US/customer/pages/social-responsibility)
 
-[CSS from https://shopus.norwex.biz/en_US/customer/shop/Best_Sellers](chrome-extension://bfbameneiokkgbdmiekhjnmfkcnldhhm/generated/view-css.html#style-sheet-1)
+[CSS from https://shopus.norwex.biz/en\_US/customer/shop/Best\_Sellers](chrome-extension://bfbameneiokkgbdmiekhjnmfkcnldhhm/generated/view-css.html#style-sheet-1)
 
 [Stripe: Sign in](https://dashboard.stripe.com/login?redirect=%2Fauth_stripecli)
 
 [Stripe](https://dashboard.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_J3UACZzTZyhrGvaUrKF9wBwCM2NmtDpM&scope=read_write)
 
-<https://console.aws.amazon.com/billing/home#/credits/redeemCredits>
+<a href="https://console.aws.amazon.com/billing/home#/credits/redeemCredits" class="uri">https://console.aws.amazon.com/billing/home#/credits/redeemCredits</a>
 
 [Billing Management Console](https://console.aws.amazon.com/billing/home#/credits)
 
@@ -2010,7 +2014,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Getting started - Bootstrap](https://getbootstrap.com/docs/3.4/getting-started/)
 
-<https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css>
+<a href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" class="uri">https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css</a>
 
 [Analytics | Home](https://analytics.google.com/analytics/web/#/p260159780/reports/defaulthome)
 
@@ -2020,11 +2024,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Simply Clean](file:///C:/MY-WEB-DEV/__Projects/NORWEX_STATIC/home.html)
 
-[Backing up your Squarespace website: here's what you need to know --- Charlotte O'Hara](https://www.charlotteohara.ca/blog/backing-up-website)
+[Backing up your Squarespace website: here’s what you need to know — Charlotte O’Hara](https://www.charlotteohara.ca/blog/backing-up-website)
 
 [Simply Clean](http://127.0.0.1:5501/flounder-flower-xpaw.squarespace.com/index.html)
 
-[Events --- Simply Clean](http://127.0.0.1:5501/flounder-flower-xpaw.squarespace.com/events-one.html)
+[Events — Simply Clean](http://127.0.0.1:5501/flounder-flower-xpaw.squarespace.com/events-one.html)
 
 [Simply Clean](http://127.0.0.1:5501/flounder-flower-xpaw.squarespace.com/index.html)
 
@@ -2048,9 +2052,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Build a Node.js, Express, & PostgreSQL REST API | Tania Rascia](https://www.taniarascia.com/node-express-postgresql-heroku/)
 
-[Best of... - The Portable Freeware Collection](https://www.portablefreeware.com/bestof.php)
+[Best of… - The Portable Freeware Collection](https://www.portablefreeware.com/bestof.php)
 
-[Webflow - Bryan's Initial Project](https://webflow.com/design/bryans-initial-project-4a02db?t=1&b=0&t_nux=1&t_nux_v=2)
+[Webflow - Bryan’s Initial Project](https://webflow.com/design/bryans-initial-project-4a02db?t=1&b=0&t_nux=1&t_nux_v=2)
 
 [fergiemcdowall (Fergus McDowall) / Repositories](https://github.com/fergiemcdowall?tab=repositories)
 
@@ -2082,7 +2086,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Bryan Guner](https://bgoonz.github.io/)
 
-<https://eloquent-sammet-ba1810.netlify.app/index.html>
+<a href="https://eloquent-sammet-ba1810.netlify.app/index.html" class="uri">https://eloquent-sammet-ba1810.netlify.app/index.html</a>
 
 [a/A-Student-Resources](https://goofy-euclid-1cd736.netlify.app/)
 
@@ -2146,13 +2150,13 @@ Drag to Bookmarks to add to Bookmarks!
 
 [blakeembrey/array-flatten: Flatten a multi-dimensional array in JavaScript.](https://github.com/blakeembrey/array-flatten)
 
-[A simple pandoc/markdown cheat sheet -- DSPACE](https://darrengoossens.wordpress.com/2020/02/17/a-simple-pandoc-markdown-cheat-sheet/)
+[A simple pandoc/markdown cheat sheet – DSPACE](https://darrengoossens.wordpress.com/2020/02/17/a-simple-pandoc-markdown-cheat-sheet/)
 
-[Newest 'pandoc' Questions - Stack Overflow](https://stackoverflow.com/questions/tagged/pandoc)
+[Newest ‘pandoc’ Questions - Stack Overflow](https://stackoverflow.com/questions/tagged/pandoc)
 
-[Pandoc: Convert Markdown to HTML _without_ any HTML attributes - Stack Overflow](https://stackoverflow.com/questions/53403041/pandoc-convert-markdown-to-html-without-any-html-attributes)
+[Pandoc: Convert Markdown to HTML *without* any HTML attributes - Stack Overflow](https://stackoverflow.com/questions/53403041/pandoc-convert-markdown-to-html-without-any-html-attributes)
 
-[Hottest 'pandoc' Answers - Super User](https://superuser.com/tags/pandoc/hot)
+[Hottest ‘pandoc’ Answers - Super User](https://superuser.com/tags/pandoc/hot)
 
 [learnbyexample - Customizing pandoc to generate beautiful pdf and epub from markdown](https://learnbyexample.github.io/customizing-pandoc/)
 
@@ -2170,11 +2174,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [C:/MY-WEB-DEV/\_0-KNOWLEDGE/knowledge-master](file:///C:/MY-WEB-DEV/_0-KNOWLEDGE/knowledge-master/directory.html)
 
-[‎Nikita Voloboev's profile - Letterboxd](https://letterboxd.com/nikitavoloboev/)
+[‎Nikita Voloboev’s profile - Letterboxd](https://letterboxd.com/nikitavoloboev/)
 
 [Google Cloud Platform: A cheat sheet - TechRepublic](https://www.techrepublic.com/article/google-cloud-platform-the-smart-persons-guide/)
 
-[ShellCheck -- shell script analysis tool](https://www.shellcheck.net/#)
+[ShellCheck – shell script analysis tool](https://www.shellcheck.net/#)
 
 [Welcome | node-postgres](https://node-postgres.com/)
 
@@ -2274,7 +2278,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Online Video Cutter - Cut Video, Cut MP4, AVI, MPG, 3GP -](https://online-video-cutter.com/)
 
-[New Page ‹ Web Development Resources Site --- WordPress.com](https://wordpress.com/page/web-dev-hub.com?site=5)
+[New Page ‹ Web Development Resources Site — WordPress.com](https://wordpress.com/page/web-dev-hub.com?site=5)
 
 [1534 Programming Cheat Sheets - Cheatography.com: Cheat Sheets For Every Occasion](https://cheatography.com/programming/)
 
@@ -2316,7 +2320,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [bgoonz/embedable-repl-and-integrated-code-space-playground](https://github.com/bgoonz/embedable-repl-and-integrated-code-space-playground)
 
-[Learn to Code --- For Free --- Coding Courses for Busy People](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success)
+[Learn to Code — For Free — Coding Courses for Busy People](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success)
 
 [Coding Interview Prep | freeCodeCamp.org](https://www.freecodecamp.org/learn/coding-interview-prep/)
 
@@ -2328,7 +2332,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Document](https://code-playground.netlify.app/)
 
-[C:/MY-WEB-DEV/\_\_Projects/Medium_Articles](https://modest-booth-4e17df.netlify.app/directory.html)
+[C:/MY-WEB-DEV/\_\_Projects/Medium\_Articles](https://modest-booth-4e17df.netlify.app/directory.html)
 
 [(4) LinkedIn](https://www.linkedin.com/mynetwork/)
 
@@ -2358,7 +2362,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [CSS Animation](file:///C:/MY-WEB-DEV/__Projects/Medium_Articles/temp/background.html)
 
-[bgoonz/Medium_Articles](https://github.com/bgoonz/Medium_Articles)
+[bgoonz/Medium\_Articles](https://github.com/bgoonz/Medium_Articles)
 
 [link button styling - Yahoo Search Results](https://search.yahoo.com/yhs/search?hspart=dcola&hsimp=yhs-005&type=gsp_dimensions_00_00_--x1-114-x2-24--&param1=1&param2=cat%3Dweb%26sesid%3D1426835008e3cd4eadb4b6b4452cab46%26ip%3D173.70.97.51%26b%3DChrome%26bv%3D89.0.4389.82%26os%3DWindows-10%26os_ver%3D10.0%26pa%3Dgencoll05%26sid%3D41e8bf4292de97ad3c9b7818adf3c19c%26abid%3D%26abg%3D%26a%3Dgsp_dimensions_00_00_--x1-114-x2-24--%26sdk_ver%3D%26cd%3D%26cr%3D%26uid%3D%26uref%3D&p=link+button+styling)
 
@@ -2388,11 +2392,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [PostgreSQL Exercises](https://pgexercises.com/gettingstarted.html)
 
-[bgoonz/python (draw_chirp.py)](https://codedown.io/bgoonz/python/?document=draw_chirp.py)
+[bgoonz/python (draw\_chirp.py)](https://codedown.io/bgoonz/python/?document=draw_chirp.py)
 
 [web.dev](https://web.dev/)
 
-[PyTorch documentation --- PyTorch 1.8.0 documentation](https://pytorch.org/docs/stable/index.html)
+[PyTorch documentation — PyTorch 1.8.0 documentation](https://pytorch.org/docs/stable/index.html)
 
 [Collection: Learn to Code](https://github.com/collections/learn-to-code)
 
@@ -2408,7 +2412,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 ### wordpress
 
-[Customize Your Site -- Support --- WordPress.com](https://wordpress.com/support/video-tutorials/customize-your-site/)
+[Customize Your Site – Support — WordPress.com](https://wordpress.com/support/video-tutorials/customize-your-site/)
 
 [Combine JS Files | Bear File Converter - Online & Free](https://www.ofoct.com/combine-js-files)
 
@@ -2444,13 +2448,13 @@ Drag to Bookmarks to add to Bookmarks!
 
 [My Links](https://links4242.netlify.app/)
 
-[My Home ‹ Site Title --- WordPress.com](https://wordpress.com/home/gunerb12.wordpress.com)
+[My Home ‹ Site Title — WordPress.com](https://wordpress.com/home/gunerb12.wordpress.com)
 
 [jekyll/jekyll: Jekyll is a blog-aware static site generator in Ruby](https://github.com/jekyll/jekyll)
 
 [The Fastest Frontend for the Modern Web | Gatsby](https://www.gatsbyjs.com/)
 
-[React -- A JavaScript library for building user interfaces](https://reactjs.org/)
+[React – A JavaScript library for building user interfaces](https://reactjs.org/)
 
 [Web Developer Wallpapers - Top Free Web Developer Backgrounds - WallpaperAccess](https://wallpaperaccess.com/web-developer)
 
@@ -2468,7 +2472,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [file-icons/atom: Atom file-specific icons for improved visual grepping.](https://github.com/file-icons/atom)
 
-<https://eloquent-sammet-ba1810.netlify.app/gallery.html>
+<a href="https://eloquent-sammet-ba1810.netlify.app/gallery.html" class="uri">https://eloquent-sammet-ba1810.netlify.app/gallery.html</a>
 
 [a/A-Student-Resources](https://web-dev-resource-hub.netlify.app/)
 
@@ -2476,7 +2480,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Site overview | eloquent-sammet-ba1810](https://app.netlify.com/sites/eloquent-sammet-ba1810/overview)
 
-[bgoonz/Mihir_Beg_Final](https://github.com/bgoonz/Mihir_Beg_Final)
+[bgoonz/Mihir\_Beg\_Final](https://github.com/bgoonz/Mihir_Beg_Final)
 
 [16 website templates for musicians and bands | Bandzoogle Blog](https://bandzoogle.com/blog/16-website-templates-for-musicians-and-bands)
 
@@ -2492,7 +2496,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Search | Academo.org - Free, interactive, education.](https://academo.org/search/?q=audio)
 
-[How To Make A Dynamic Website Become Static Through A Content CDN --- Smashing Magazine](https://www.smashingmagazine.com/2018/02/dynamic-website-static-content-cdn/)
+[How To Make A Dynamic Website Become Static Through A Content CDN — Smashing Magazine](https://www.smashingmagazine.com/2018/02/dynamic-website-static-content-cdn/)
 
 [Image CDN | Dynamic image resizing | imageOpt](https://imageopt.com/dashboard)
 
@@ -2504,7 +2508,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Intro to HTML/CSS: Making webpages | Computer programming | Khan Academy](https://www.khanacademy.org/computing/computer-programming/html-css/css-layout-properties/pt/css-floating-elements)
 
-[StackEdit -- In-browser Markdown editor](https://stackedit.io/)
+[StackEdit – In-browser Markdown editor](https://stackedit.io/)
 
 [Learn Git Branching](https://learngitbranching.js.org/?demo)
 
@@ -2514,15 +2518,15 @@ Drag to Bookmarks to add to Bookmarks!
 
 [TIMEZONZ / Bryan C Guner / Observable](https://next.observablehq.com/@bgoonz/timezonz)
 
-[djmitche's gists](https://gist.github.com/djmitche)
+[djmitche’s gists](https://gist.github.com/djmitche)
 
 [Set Your Text in Motion with These Dazzling Effects](https://speckyboy.com/text-in-motion-effects/)
 
 [Word to HTML - Easy to use & Instant Conversions](https://wordtohtml.net/site/index?tour=1)
 
-[8 Books That Got Me Through 2020. And how they continue to guide me to a... | by Israel Miles | Curious | Feb, 2021 | Medium](https://medium.com/curious/8-books-that-got-me-through-2020-7fb41ff7173c)
+[8 Books That Got Me Through 2020. And how they continue to guide me to a… | by Israel Miles | Curious | Feb, 2021 | Medium](https://medium.com/curious/8-books-that-got-me-through-2020-7fb41ff7173c)
 
-[Roland's portfolio 👨‍💻](https://rolandlevy.co.uk/)
+[Roland’s portfolio 👨‍💻](https://rolandlevy.co.uk/)
 
 [SuperAnnotate | Annotation Automation Platform for Computer Vision](https://app.superannotate.com/project/43352/images)
 
@@ -2566,7 +2570,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Free Clocks for Your Website](https://www.timeanddate.com/clocks/free.html)
 
-[FiftyOne Environments --- FiftyOne 0.8.0 documentation](https://voxel51.com/docs/fiftyone/environments/index.html)
+[FiftyOne Environments — FiftyOne 0.8.0 documentation](https://voxel51.com/docs/fiftyone/environments/index.html)
 
 [Packt](https://github.com/PacktPublishing)
 
@@ -2574,7 +2578,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Releases - electron/electron-api-demos](https://github.com/electron/electron-api-demos/releases)
 
-[General settings --- Bryan Guner --- webdevhub](https://webdevhub.jetbrains.space/m/bryan.guner.dev/edit?tab=Contacts)
+[General settings — Bryan Guner — webdevhub](https://webdevhub.jetbrains.space/m/bryan.guner.dev/edit?tab=Contacts)
 
 ### New folder
 
@@ -2588,7 +2592,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 ### New folder
 
-[bgoonz (Bryan C Guner)](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=bgoonz%20(Bryan%20C%20Guner)&pos=3000&uri=https://github.com/bgoonz>)
+[bgoonz (Bryan C Guner)](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=bgoonz%20(Bryan%20C%20Guner)&pos=3000&uri=https://github.com/bgoonz)
 
 [github serve markdown as website - Google Search](https://www.google.com/search?q=github+serve+markdown+as+website&oq=github+serve+markdown+as+website&aqs=chrome..69i57j69i64.8142j1j7&sourceid=chrome&ie=UTF-8)
 
@@ -2596,15 +2600,15 @@ Drag to Bookmarks to add to Bookmarks!
 
 [nicolas-van/easy-markdown-to-github-pages: Convert Markdown files in Github to a full website using Github Pages](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=nicolas-van%2Feasy-markdown-to-github-pages%3A%20Convert%20Markdown%20files%20in%20Github%20to%20a%20full%20website%20using%20Github%20Pages&pos=0&uri=https://github.com/nicolas-van/easy-markdown-to-github-pages)
 
-[markserv/markserv: 🏁 serve markdown as html (GitHub style), index directories, live-reload as you edit](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=markserv%2Fmarkserv%3A%20%F0%9F%8F%81%20serve%20markdown%20as%20html%20(GitHub%20style)%2C%20index%20directories%2C%20live-reload%20as%20you%20edit&pos=0&uri=https://github.com/markserv/markserv>)
+[markserv/markserv: 🏁 serve markdown as html (GitHub style), index directories, live-reload as you edit](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=markserv%2Fmarkserv%3A%20%F0%9F%8F%81%20serve%20markdown%20as%20html%20(GitHub%20style)%2C%20index%20directories%2C%20live-reload%20as%20you%20edit&pos=0&uri=https://github.com/markserv/markserv)
 
 [bgoonz/Express-basic-server-template](https://github.com/bgoonz/Express-basic-server-template)
 
-[Building A Node.js Express API To Convert Markdown To HTML --- Smashing Magazine](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Building%20A%20Node.js%20Express%20API%20To%20Convert%20Markdown%20To%20HTML%20%E2%80%94%20Smashing%20Magazine&pos=0&uri=https://www.smashingmagazine.com/2019/04/nodejs-express-api-markdown-html/)
+[Building A Node.js Express API To Convert Markdown To HTML — Smashing Magazine](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Building%20A%20Node.js%20Express%20API%20To%20Convert%20Markdown%20To%20HTML%20%E2%80%94%20Smashing%20Magazine&pos=0&uri=https://www.smashingmagazine.com/2019/04/nodejs-express-api-markdown-html/)
 
-[Articles --- Smashing Magazine](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Articles%20%E2%80%94%20Smashing%20Magazine&pos=266.6666564941406&uri=https://www.smashingmagazine.com/articles/)
+[Articles — Smashing Magazine](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Articles%20%E2%80%94%20Smashing%20Magazine&pos=266.6666564941406&uri=https://www.smashingmagazine.com/articles/)
 
-[From Design To Developer-Friendly React Code In Minutes With Anima --- Smashing Magazine](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=From%20Design%20To%20Developer-Friendly%20React%20Code%20In%20Minutes%20With%20Anima%20%E2%80%94%20Smashing%20Magazine&pos=1666.6666259765625&uri=https://www.smashingmagazine.com/2021/01/design-developer-friendly-react-code-animaapp/)
+[From Design To Developer-Friendly React Code In Minutes With Anima — Smashing Magazine](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=From%20Design%20To%20Developer-Friendly%20React%20Code%20In%20Minutes%20With%20Anima%20%E2%80%94%20Smashing%20Magazine&pos=1666.6666259765625&uri=https://www.smashingmagazine.com/2021/01/design-developer-friendly-react-code-animaapp/)
 
 [Anima](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Anima&pos=0&uri=https://projects.animaapp.com/plugins)
 
@@ -2668,7 +2672,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [HTML Tidy - Online Markup Corrector](https://htmltidy.net/)
 
-[Dribbble - Discover the World's Top Designers & Creative Professionals](https://dribbble.com/)
+[Dribbble - Discover the World’s Top Designers & Creative Professionals](https://dribbble.com/)
 
 [Create your Google Sitemap Online - XML Sitemaps Generator](https://www.xml-sitemaps.com/)
 
@@ -2676,11 +2680,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [HTTP Headers Viewer - XML Sitemaps Generator](https://www.xml-sitemaps.com/http-headers-viewer.html?op=http-headers-viewer&go=1&pageurl=https%3A%2F%2Fgoofy-euclid-1cd736.netlify.app%2F&se=googlebot&submit=View+Headers)
 
-[Confirm Your Email -- Semrush](https://www.semrush.com/signup/confirm/)
+[Confirm Your Email – Semrush](https://www.semrush.com/signup/confirm/)
 
 [Document](http://127.0.0.1:5502/core-site/testing/code-mirror/mirror.html)
 
-[How to Fix ERR_SSL_PROTOCOL_ERROR on Google Chrome](https://www.thesslstore.com/blog/fix-err-ssl-protocol-error/)
+[How to Fix ERR\_SSL\_PROTOCOL\_ERROR on Google Chrome](https://www.thesslstore.com/blog/fix-err-ssl-protocol-error/)
 
 [Settings - Clean up computer](chrome://settings/cleanup)
 
@@ -2718,9 +2722,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [James Edwards, Author at SitePoint - Page 2](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=James%20Edwards%2C%20Author%20at%20SitePoint%20-%20Page%202&pos=1925.9259033203125&uri=https://www.sitepoint.com/author/brothercake/page/2/)
 
-[web-dev-resource-hub -- Overview -- Firebase console](https://console.firebase.google.com/u/0/project/resource-298820/overview)
+[web-dev-resource-hub – Overview – Firebase console](https://console.firebase.google.com/u/0/project/resource-298820/overview)
 
-[web-dev-resource-hub -- Authentication -- Firebase console](https://console.firebase.google.com/u/0/project/resource-298820/authentication)
+[web-dev-resource-hub – Authentication – Firebase console](https://console.firebase.google.com/u/0/project/resource-298820/authentication)
 
 [Best Practice for Code Examples](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Best%20Practice%20for%20Code%20Examples&pos=3045.267333984375&uri=https://www.sitepoint.com/best-practice-for-code-examples/)
 
@@ -2774,9 +2778,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Xml Sitemap Generator - Download sitemap](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Xml%20Sitemap%20Generator%20%E2%80%A2%20Download%20sitemap&pos=666.6666259765625&uri=https://xmlsitemapgenerator.org/Free/download.aspx?job=052a55c6-80a2-4de4-aac9-02e3281bf576)
 
-<https://raw.githubusercontent.com/bgoonz/styling-templates/master/bootstrap3/assets/js/bootstrap.min.js>
+<a href="https://raw.githubusercontent.com/bgoonz/styling-templates/master/bootstrap3/assets/js/bootstrap.min.js" class="uri">https://raw.githubusercontent.com/bgoonz/styling-templates/master/bootstrap3/assets/js/bootstrap.min.js</a>
 
-[50 New CSS Techniques For Your Next Web Design --- Smashing Magazine](https://www.smashingmagazine.com/2009/07/50-new-css-techniques-for-your-next-web-design/)
+[50 New CSS Techniques For Your Next Web Design — Smashing Magazine](https://www.smashingmagazine.com/2009/07/50-new-css-techniques-for-your-next-web-design/)
 
 [Where do I start with Firebase Authentication?](https://firebase.google.com/docs/auth/where-to-start?authuser=0)
 
@@ -2796,7 +2800,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Share Buttons - AddToAny](https://www.addtoany.com/buttons/)
 
-[Share "https://goofy-euclid-1cd736.netlify.app/" - AddToAny](https://www.addtoany.com/share#url=https%3A%2F%2Fgoofy-euclid-1cd736.netlify.app%2F)
+[Share “https://goofy-euclid-1cd736.netlify.app/” - AddToAny](https://www.addtoany.com/share#url=https%3A%2F%2Fgoofy-euclid-1cd736.netlify.app%2F)
 
 [How Javascript Implementation Adds Dynamic Interactivity | Pluralsight](https://www.pluralsight.com/guides/how-javascript-implementation-adds-dynamic-interactivity)
 
@@ -2804,15 +2808,15 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Editing bgoonz/README.md at master - bgoonz/bgoonz](https://github.com/bgoonz/bgoonz/edit/master/README.md)
 
-[Add a 'Like' Button to Your Blogposts Using This Simple JavaScript Technique | London Academy of IT](https://www.londonacademyofit.co.uk/blog/add-like-button-blogposts-simple-javascript)
+[Add a ‘Like’ Button to Your Blogposts Using This Simple JavaScript Technique | London Academy of IT](https://www.londonacademyofit.co.uk/blog/add-like-button-blogposts-simple-javascript)
 
-[Add a 'Like' Button to Your Blogposts Using This Simple JavaScript Technique | London Academy of IT](https://www.londonacademyofit.co.uk/blog/add-like-button-blogposts-simple-javascript#create-firebase)
+[Add a ‘Like’ Button to Your Blogposts Using This Simple JavaScript Technique | London Academy of IT](https://www.londonacademyofit.co.uk/blog/add-like-button-blogposts-simple-javascript#create-firebase)
 
 [londonacademyofit/like-button](https://github.com/londonacademyofit/like-button)
 
 ### New folder
 
-<https://raw.githubusercontent.com/bgoonz/bgoonz/master/README.md>
+<a href="https://raw.githubusercontent.com/bgoonz/bgoonz/master/README.md" class="uri">https://raw.githubusercontent.com/bgoonz/bgoonz/master/README.md</a>
 
 [Chapter 33 Make a GitHub repo browsable | Happy Git and GitHub for the useR](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Chapter%2033%20Make%20a%20GitHub%20repo%20browsable%20%7C%20Happy%20Git%20and%20GitHub%20for%20the%20useR&pos=0&uri=https://happygitwithr.com/workflows-browsability.html)
 
@@ -2838,7 +2842,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [glob - npm](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=glob%20-%20npm&pos=0&uri=https://www.npmjs.com/package/glob)
 
-[Directory List With Collapsible Nested Folders and Files -- CodeMyUI](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Directory%20List%20With%20Collapsible%20Nested%20Folders%20and%20Files%20%E2%80%93%20CodeMyUI&pos=0&uri=https://codemyui.com/directory-list-with-collapsible-nested-folders-and-files/)
+[Directory List With Collapsible Nested Folders and Files – CodeMyUI](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Directory%20List%20With%20Collapsible%20Nested%20Folders%20and%20Files%20%E2%80%93%20CodeMyUI&pos=0&uri=https://codemyui.com/directory-list-with-collapsible-nested-folders-and-files/)
 
 [Settings - CodePen](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Settings%20-%20CodePen&pos=0&uri=https://codepen.io/settings/account)
 
@@ -2850,9 +2854,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Windows-Backup/backup.py at master - aravenel/Windows-Backup](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Windows-Backup%2Fbackup.py%20at%20master%20%C2%B7%20aravenel%2FWindows-Backup&pos=0&uri=https://github.com/aravenel/Windows-Backup/blob/master/backup.py)
 
-[Multi-Level Folder Structure with Click to Drill Down Layout -- CodeMyUI](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Multi-Level%20Folder%20Structure%20with%20Click%20to%20Drill%20Down%20Layout%20%E2%80%93%20CodeMyUI&pos=0&uri=https://codemyui.com/multi-level-folder-structure-with-click-to-drill-down-layout/)
+[Multi-Level Folder Structure with Click to Drill Down Layout – CodeMyUI](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Multi-Level%20Folder%20Structure%20with%20Click%20to%20Drill%20Down%20Layout%20%E2%80%93%20CodeMyUI&pos=0&uri=https://codemyui.com/multi-level-folder-structure-with-click-to-drill-down-layout/)
 
-[CSS Only File Tree Structure with Folder, File Icons and Size Info -- CodeMyUI](https://codemyui.com/css-only-file-tree-structure-with-folder-file-icons-and-size-info/)
+[CSS Only File Tree Structure with Folder, File Icons and Size Info – CodeMyUI](https://codemyui.com/css-only-file-tree-structure-with-folder-file-icons-and-size-info/)
 
 [https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Ffont-awesome%2F5.8.1%2Fcss%2Fall.min.css&pos=0&uri=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css)
 
@@ -2860,17 +2864,17 @@ Drag to Bookmarks to add to Bookmarks!
 
 [https://www.microsoft.com/en-gb/search/shop/apps?q=wsl&devicetype=pc&category=Developer+tools&Price=0](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=https%3A%2F%2Fwww.microsoft.com%2Fen-gb%2Fsearch%2Fshop%2Fapps%3Fq%3Dwsl%26devicetype%3Dpc%26category%3DDeveloper%2Btools%26Price%3D0&pos=0&uri=https://www.microsoft.com/en-gb/search/shop/apps?q=wsl&devicetype=pc&category=Developer+tools&Price=0)
 
-[web-dev-resource-hub -- Authentication -- Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=web-dev-resource-hub%20%E2%80%93%20Authentication%20%E2%80%93%20Firebase%20console&pos=0&uri=https://console.firebase.google.com/u/0/project/resource-298820/authentication/providers)
+[web-dev-resource-hub – Authentication – Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=web-dev-resource-hub%20%E2%80%93%20Authentication%20%E2%80%93%20Firebase%20console&pos=0&uri=https://console.firebase.google.com/u/0/project/resource-298820/authentication/providers)
 
 [Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Firebase%20console&pos=0&uri=https://console.firebase.google.com/u/0/project/resource-298820/database/resource-298820-default-rtdb/data)
 
 [Cloud Firestore locations  |  Firebase](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Cloud%20Firestore%20locations%20%C2%A0%7C%C2%A0%20Firebase&pos=497.9423828125&uri=https://firebase.google.com/docs/firestore/locations?authuser=0#default-cloud-location)
 
-[Data -- Firestore -- web-dev-resource-hub -- Google Cloud Platform](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Data%20%E2%80%93%20Firestore%20%E2%80%93%20web-dev-resource-hub%20%E2%80%93%20Google%20Cloud%20Platform&pos=0&uri=https://console.cloud.google.com/firestore/data?authuser=0&project=resource-298820)
+[Data – Firestore – web-dev-resource-hub – Google Cloud Platform](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Data%20%E2%80%93%20Firestore%20%E2%80%93%20web-dev-resource-hub%20%E2%80%93%20Google%20Cloud%20Platform&pos=0&uri=https://console.cloud.google.com/firestore/data?authuser=0&project=resource-298820)
 
 [html-progressbar - Visual Studio Marketplace](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=html-progressbar%20-%20Visual%20Studio%20Marketplace&pos=0&uri=https://marketplace.visualstudio.com/items?itemName=congnguyendinh0.html-progressbar)
 
-[iamshipon1988 (Sazzad Hossain)](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=iamshipon1988%20(Sazzad%20Hossain)&pos=0&uri=https://github.com/iamshipon1988>)
+[iamshipon1988 (Sazzad Hossain)](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=iamshipon1988%20(Sazzad%20Hossain)&pos=0&uri=https://github.com/iamshipon1988)
 
 [iamshipon1988/crossway: An open-source block-based template system.](https://github.com/iamshipon1988/crossway)
 
@@ -2884,9 +2888,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [jQuery Resizable Columns](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=jQuery%20Resizable%20Columns&pos=0&uri=http://dobtco.github.io/jquery-resizable-columns/)
 
-[Prinzhorn/skrollr: Stand-alone parallax scrolling library for mobile (Android + iOS) and desktop. No jQuery. Just plain JavaScript (and some love).](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prinzhorn%2Fskrollr%3A%20Stand-alone%20parallax%20scrolling%20library%20for%20mobile%20(Android%20%2B%20iOS)%20and%20desktop.%20No%20jQuery.%20Just%20plain%20JavaScript%20(and%20some%20love).&pos=0&uri=https://github.com/Prinzhorn/skrollr>)
+[Prinzhorn/skrollr: Stand-alone parallax scrolling library for mobile (Android + iOS) and desktop. No jQuery. Just plain JavaScript (and some love).](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prinzhorn%2Fskrollr%3A%20Stand-alone%20parallax%20scrolling%20library%20for%20mobile%20(Android%20%2B%20iOS)%20and%20desktop.%20No%20jQuery.%20Just%20plain%20JavaScript%20(and%20some%20love).&pos=0&uri=https://github.com/Prinzhorn/skrollr)
 
-[Prinzhorn (Alexander Prinzhorn) / Repositories](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prinzhorn%20(Alexander%20Prinzhorn)%20%2F%20Repositories&pos=4296.29638671875&uri=https://github.com/Prinzhorn?tab=repositories>)
+[Prinzhorn (Alexander Prinzhorn) / Repositories](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Prinzhorn%20(Alexander%20Prinzhorn)%20%2F%20Repositories&pos=4296.29638671875&uri=https://github.com/Prinzhorn?tab=repositories)
 
 [Classic parallax page](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Classic%20parallax%20page&pos=1979.423828125&uri=http://prinzhorn.github.io/skrollr/examples/classic.html)
 
@@ -2896,7 +2900,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [styled-components](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=styled-components&pos=1777.7777099609375&uri=https://styled-components.com/)
 
-[<img>: The Image Embed element - HTML: HyperText Markup Language | MDN](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%3Cimg%3E%3A%20The%20Image%20Embed%20element%20-%20HTML%3A%20HyperText%20Markup%20Language%20%7C%20MDN&pos=11834.5673828125&uri=https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#styling_with_css)
+[: The Image Embed element - HTML: HyperText Markup Language | MDN](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%3Cimg%3E%3A%20The%20Image%20Embed%20element%20-%20HTML%3A%20HyperText%20Markup%20Language%20%7C%20MDN&pos=11834.5673828125&uri=https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#styling_with_css)
 
 [xaprb-src/content/blog/2018 at master - xaprb/xaprb-src](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=xaprb-src%2Fcontent%2Fblog%2F2018%20at%20master%20%C2%B7%20xaprb%2Fxaprb-src&pos=152.26336669921875&uri=https://github.com/xaprb/xaprb-src/tree/master/content/blog/2018)
 
@@ -2920,7 +2924,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [How To Install Development Tools In Linux - OSTechNix](https://ostechnix.com/install-development-tools-linux/)
 
-<https://raw.githubusercontent.com/sojharo/mangi-script/master/my_ubuntu_setup.sh>
+<a href="https://raw.githubusercontent.com/sojharo/mangi-script/master/my_ubuntu_setup.sh" class="uri">https://raw.githubusercontent.com/sojharo/mangi-script/master/my_ubuntu_setup.sh</a>
 
 [Useful shell scripts for web design/web dev? : webdev](https://www.reddit.com/r/webdev/comments/3csye3/useful_shell_scripts_for_web_designweb_dev/)
 
@@ -2954,13 +2958,13 @@ Drag to Bookmarks to add to Bookmarks!
 
 [App Academy Open](https://open.appacademy.io/learn/js-py---sep-2020-online/week-1-sep-2020-online/setup---installations--windows-)
 
-[0x80080005 while installing Kali - Issue #5003 - microsoft/WSL - GitHub](https://github.com/microsoft/WSL/issues/5003)
+[0x80080005 while installing Kali - Issue \#5003 - microsoft/WSL - GitHub](https://github.com/microsoft/WSL/issues/5003)
 
 [8 Tips To Follow Before Erasing Your Computer | Online file conversion blog](https://blog.online-convert.com/8-tips-to-follow-before-erasing-your-computer/)
 
 [7 Ways To Generate a List of Installed Programs in Windows](https://helpdeskgeek.com/how-to/generate-a-list-of-installed-programs-in-windows/#:~:text=To%20access%20this%20menu%2C%20right,visible%20in%20a%20scrollable%20list.)
 
-[Doc Idea: when you need to restart LxssManager service - Issue #634 - microsoft/WSL - GitHub](https://github.com/microsoft/WSL/issues/634)
+[Doc Idea: when you need to restart LxssManager service - Issue \#634 - microsoft/WSL - GitHub](https://github.com/microsoft/WSL/issues/634)
 
 ### heroku
 
@@ -2976,7 +2980,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [New Tab](chrome://newtab/)
 
-<https://git.heroku.com/fierce-journey-69961.git>
+<a href="https://git.heroku.com/fierce-journey-69961.git" class="uri">https://git.heroku.com/fierce-journey-69961.git</a>
 
 [Node.js Getting Started on Heroku](https://fierce-journey-69961.herokuapp.com/)
 
@@ -3028,7 +3032,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [127.0.0.1](https://127.0.0.1:5500/JS-Tools-n-Resources/html-css-js.com-84/editor.html)
 
-[How to Fix ERR_SSL_PROTOCOL_ERROR on Google Chrome](https://www.thesslstore.com/blog/fix-err-ssl-protocol-error/)
+[How to Fix ERR\_SSL\_PROTOCOL\_ERROR on Google Chrome](https://www.thesslstore.com/blog/fix-err-ssl-protocol-error/)
 
 ### New AWS
 
@@ -3048,7 +3052,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Deploy Storybook | Storybook Tutorials](https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/)
 
-[Publish web-dev-notes-resource-site's Storybook](https://www.chromatic.com/setup?appId=603000b7cd9c1b00234e443b)
+[Publish web-dev-notes-resource-site’s Storybook](https://www.chromatic.com/setup?appId=603000b7cd9c1b00234e443b)
 
 [README](file:///C:/Users/bryan/AppData/Local/Temp/mume2021119-68484-q15dip.bkbu.html)
 
@@ -3144,7 +3148,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Home](https://www.awseducate.com/student/s/)
 
-### soooo many tabs...aws
+### soooo many tabs…aws
 
 [VPC Management Console](https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId=vpc-1b832d66)
 
@@ -3172,7 +3176,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Heroku Postgres | Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup)
 
-[ubuntu - Postgresql: password authentication failed for user "postgres" - Stack Overflow](https://stackoverflow.com/questions/7695962/postgresql-password-authentication-failed-for-user-postgres)
+[ubuntu - Postgresql: password authentication failed for user “postgres” - Stack Overflow](https://stackoverflow.com/questions/7695962/postgresql-password-authentication-failed-for-user-postgres)
 
 [Bash-Snippets - Useful BASH Scripts For Heavy Commandline Users](https://ostechnix.com/collection-useful-bash-scripts-heavy-commandline-users/)
 
@@ -3182,7 +3186,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Featured asciicasts - asciinema](https://asciinema.org/explore)
 
-[(2) What's your coolest Javascript code in 3 lines or less? - Quora](https://www.quora.com/Whats-your-coolest-Javascript-code-in-3-lines-or-less)
+[(2) What’s your coolest Javascript code in 3 lines or less? - Quora](https://www.quora.com/Whats-your-coolest-Javascript-code-in-3-lines-or-less)
 
 [The difference between Event Handlers & addEventListener | by Twan Mulder | DailyJS](https://medium.com/dailyjs/whats-the-difference-between-event-handlers-addeventlistener-in-js-963431f05c34)
 
@@ -3202,11 +3206,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 [what are aws lambda functions and what are they used for - Google Search](https://www.google.com/search?ei=pUUyYOK5EKSP9PwPka6TsAg&q=what+are+aws+lambda+functions+and+what+are+they+used+for&oq=what+are+aws+lambda+functions+and+what+are+they+used+for&gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsANQv0ZYgkxg01hoAXACeACAAU-IAd8CkgEBNZgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwiioNS58fruAhWkB50JHRHXBIYQ4dUDCA0&uact=5)
 
-[AWS Lambda -- Serverless Compute - Amazon Web Services](https://aws.amazon.com/lambda/)
+[AWS Lambda – Serverless Compute - Amazon Web Services](https://aws.amazon.com/lambda/)
 
 [github lambda functions aws - Google Search](https://www.google.com/search?q=github+lambda+functions+aws&oq=github+lambda+functions+aws&aqs=chrome..69i57j69i64.22039j0j7&sourceid=chrome&ie=UTF-8)
 
-[serverless/examples: Serverless Examples -- A collection of boilerplates and examples of serverless architectures built with the Serverless Framework on AWS Lambda, Microsoft Azure, Google Cloud Functions, and more.](https://github.com/serverless/examples)
+[serverless/examples: Serverless Examples – A collection of boilerplates and examples of serverless architectures built with the Serverless Framework on AWS Lambda, Microsoft Azure, Google Cloud Functions, and more.](https://github.com/serverless/examples)
 
 [How to set up an AWS Lambda and auto deployments with Github Actions | blog.jakoblind.no](https://blog.jakoblind.no/aws-lambda-github-actions/)
 
@@ -3218,7 +3222,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [AWS Serverless Application Model - Amazon Web Services](https://aws.amazon.com/serverless/sam/)
 
-[Developer Tools -- Amazon Web Services (AWS)](https://aws.amazon.com/products/developer-tools/)
+[Developer Tools – Amazon Web Services (AWS)](https://aws.amazon.com/products/developer-tools/)
 
 [AWS Cloud9 Amazon Web Services](https://aws.amazon.com/cloud9/?c=dv&sec=srv)
 
@@ -3252,9 +3256,9 @@ Drag to Bookmarks to add to Bookmarks!
 
 [mout/mout: Modular JavaScript Utilities](https://github.com/mout/mout)
 
-["docker daemon -H fd://" fails with message "No sockets found" under Ubuntu 15.10 - Issue #22847 - moby/moby](https://github.com/moby/moby/issues/22847)
+[“docker daemon -H fd://” fails with message “No sockets found” under Ubuntu 15.10 - Issue \#22847 - moby/moby](https://github.com/moby/moby/issues/22847)
 
-<https://raw.githubusercontent.com/docker/docker-ce/18.06/components/packaging/deb/systemd/docker.socket>
+<a href="https://raw.githubusercontent.com/docker/docker-ce/18.06/components/packaging/deb/systemd/docker.socket" class="uri">https://raw.githubusercontent.com/docker/docker-ce/18.06/components/packaging/deb/systemd/docker.socket</a>
 
 [Explore](https://hub.docker.com/search?q=&type=image&image_filter=store&category=tools%2Clanguages%2Cstorage&operating_system=linux%2Cwindows)
 
@@ -3276,7 +3280,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Detect And Remove PUP (Potentially Unwanted Programs) | Kid Safe](https://www.safesearchkids.com/how-to-detect-and-remove-pup-potentially-unwanted-programs/#.YFsF569KhiI)
 
-<https://raw.githubusercontent.com/bgoonz/Markdown-Templates/master/README.md>
+<a href="https://raw.githubusercontent.com/bgoonz/Markdown-Templates/master/README.md" class="uri">https://raw.githubusercontent.com/bgoonz/Markdown-Templates/master/README.md</a>
 
 [Download the BitTorrent Classic Torrent Client](https://www.bittorrent.com/downloads/complete/classic/)
 
@@ -3294,13 +3298,13 @@ Drag to Bookmarks to add to Bookmarks!
 
 [My Links](https://links4242.netlify.app/)
 
-[My Home ‹ Site Title --- WordPress.com](https://wordpress.com/home/gunerb12.wordpress.com)
+[My Home ‹ Site Title — WordPress.com](https://wordpress.com/home/gunerb12.wordpress.com)
 
 [jekyll/jekyll: Jekyll is a blog-aware static site generator in Ruby](https://github.com/jekyll/jekyll)
 
 [The Fastest Frontend for the Modern Web | Gatsby](https://www.gatsbyjs.com/)
 
-[React -- A JavaScript library for building user interfaces](https://reactjs.org/)
+[React – A JavaScript library for building user interfaces](https://reactjs.org/)
 
 [Web Developer Wallpapers - Top Free Web Developer Backgrounds - WallpaperAccess](https://wallpaperaccess.com/web-developer)
 
@@ -3318,7 +3322,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [file-icons/atom: Atom file-specific icons for improved visual grepping.](https://github.com/file-icons/atom)
 
-<https://eloquent-sammet-ba1810.netlify.app/gallery.html>
+<a href="https://eloquent-sammet-ba1810.netlify.app/gallery.html" class="uri">https://eloquent-sammet-ba1810.netlify.app/gallery.html</a>
 
 [a/A-Student-Resources](https://web-dev-resource-hub.netlify.app/)
 
@@ -3326,7 +3330,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Site overview | eloquent-sammet-ba1810](https://app.netlify.com/sites/eloquent-sammet-ba1810/overview)
 
-[bgoonz/Mihir_Beg_Final](https://github.com/bgoonz/Mihir_Beg_Final)
+[bgoonz/Mihir\_Beg\_Final](https://github.com/bgoonz/Mihir_Beg_Final)
 
 [16 website templates for musicians and bands | Bandzoogle Blog](https://bandzoogle.com/blog/16-website-templates-for-musicians-and-bands)
 
@@ -3336,7 +3340,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Idle Wave](file:///C:/Users/bryan/Downloads/band/Idle%20Wave.html)
 
-[Mihir Beg (@mihirbeg) - Instagram photos and videos](https://www.instagram.com/mihirbeg/?hl=en)
+<span class="citation" data-cites="mihirbeg">\[Mihir Beg (@mihirbeg) - Instagram photos and videos\]</span>(https://www.instagram.com/mihirbeg/?hl=en)
 
 [Getting There by Mihir Beg - DistroKid](https://distrokid.com/hyperfollow/mihirbeg/getting-there)
 
@@ -3364,7 +3368,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Tryit Editor v3.6](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_badges&stacked=h)
 
-[The 20 Best HTML Web Fonts To Use In 2021 -- Hostinger Tutorials](https://www.hostinger.com/tutorials/best-html-web-fonts)
+[The 20 Best HTML Web Fonts To Use In 2021 – Hostinger Tutorials](https://www.hostinger.com/tutorials/best-html-web-fonts)
 
 [Status badge for branch deploys - Features - Netlify Support Forums](https://answers.netlify.com/t/status-badge-for-branch-deploys/4094)
 
@@ -3384,7 +3388,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Imgur: The magic of the Internet](https://imgur.com/a/Cnv8XAU)
 
-[CSS dark mode | @mdo](https://markdotto.com/2018/11/05/css-dark-mode/)
+<span class="citation" data-cites="mdo">\[CSS dark mode | @mdo\]</span>(https://markdotto.com/2018/11/05/css-dark-mode/)
 
 [Letter Case Converter](http://127.0.0.1:5503/letter-case-converter.html)
 
@@ -3404,21 +3408,21 @@ Drag to Bookmarks to add to Bookmarks!
 
 [My Links](https://lambda-april.github.io/Links/)
 
-<https://lambda-april.github.io/Links/>
+<a href="https://lambda-april.github.io/Links/" class="uri">https://lambda-april.github.io/Links/</a>
 
-<https://lambda-april.github.io/Links/>
+<a href="https://lambda-april.github.io/Links/" class="uri">https://lambda-april.github.io/Links/</a>
 
-<https://lambda-april.github.io/Links/>
+<a href="https://lambda-april.github.io/Links/" class="uri">https://lambda-april.github.io/Links/</a>
 
-<https://lambda-april.github.io/Links/>
+<a href="https://lambda-april.github.io/Links/" class="uri">https://lambda-april.github.io/Links/</a>
 
-<https://lambda-april.github.io/Links/>
+<a href="https://lambda-april.github.io/Links/" class="uri">https://lambda-april.github.io/Links/</a>
 
 [directory](https://lambda-w-1-notes.netlify.app/)
 
 [| bgoonz | GistLog - Your dev blog delivered - lambda-week1](https://app.gitbook.com/@bryan-guner/s/lambda-week1/~/settings/teams)
 
-[DevURLs -- World's simplest developer news aggregator](https://devurls.com/)
+[DevURLs – World’s simplest developer news aggregator](https://devurls.com/)
 
 [lambda-prep/index.html at master - bgoonz/lambda-prep](https://github.com/bgoonz/lambda-prep/blob/master/index.html)
 
@@ -3436,7 +3440,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Exploring-Promises/AUXnotes.md at master - bgoonz/Exploring-Promises](https://github.com/bgoonz/Exploring-Promises/blob/master/AUXnotes.md)
 
-<https://raw.githubusercontent.com/sindresorhus/awesome/main/readme.md>
+<a href="https://raw.githubusercontent.com/sindresorhus/awesome/main/readme.md" class="uri">https://raw.githubusercontent.com/sindresorhus/awesome/main/readme.md</a>
 
 [sindresorhus (Sindre Sorhus) / Repositories](https://github.com/sindresorhus?after=Y3Vyc29yOnYyOpK5MjAyMS0wNC0wNVQwNDoyMDo1OC0wNDowMM4EZA-L&tab=repositories)
 
@@ -3458,13 +3462,13 @@ Drag to Bookmarks to add to Bookmarks!
 
 [New Tab](chrome://newtab/)
 
-<file:///C:/MY-WEB-DEV/__Projects/TOOLS/_FINAL/index.html>
+<a href="file:///C:/MY-WEB-DEV/__Projects/TOOLS/_FINAL/index.html" class="uri">file:///C:/MY-WEB-DEV/__Projects/TOOLS/_FINAL/index.html</a>
 
 [10 Amazing Animated Text CSS & JavaScript Code Snippets](https://speckyboy.com/css-javascript-text-animation-snippets/)
 
 [Simple Typing Carousel](https://codepen.io/bgoonz/pen/ExZvGoZ)
 
-[C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/w-01](file:///C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/w-01/directory.html)
+[C:/NEW\_BOOTCAMP/Lambda/CIRRICULUMN/w-01](file:///C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/w-01/directory.html)
 
 [Codex](http://127.0.0.1:5500/applied-js-1.html)
 
@@ -3574,13 +3578,13 @@ Drag to Bookmarks to add to Bookmarks!
 
 [js: speech-to-text-app - Replit](https://replit.com/@RolandJLevy/js-speech-to-text-app)
 
-[Roland's portfolio 👨‍💻](https://rolandlevy.co.uk/#projects)
+[Roland’s portfolio 👨‍💻](https://rolandlevy.co.uk/#projects)
 
 [Web-Dev-Collaborative/js-all-in-one-search-with-autocomplete](https://github.com/Web-Dev-Collaborative/js-all-in-one-search-with-autocomplete)
 
 [All-in-one Search 🔍](https://js-all-in-one-search-with-autocomplete.rolandjlevy.repl.co/)
 
-[Roland's portfolio 👨‍💻](https://rolandlevy.co.uk/#projects)
+[Roland’s portfolio 👨‍💻](https://rolandlevy.co.uk/#projects)
 
 [Forks - Web-Dev-Collaborative/portfolio-website](https://github.com/Web-Dev-Collaborative/portfolio-website/network/members)
 
@@ -3590,11 +3594,11 @@ Drag to Bookmarks to add to Bookmarks!
 
 ### New folder
 
-[Sites | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/sites)
+[Sites | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/sites)
 
 [DOM Tips and Techniques: Parent, Child, and Siblings - SitePoint](https://www.sitepoint.com/dom-tips-techniques-parent-child-siblings/)
 
-[C:/MY-WEB-DEV/\_\_Projects/Medium_Articles](https://modest-booth-4e17df.netlify.app/directory.html)
+[C:/MY-WEB-DEV/\_\_Projects/Medium\_Articles](https://modest-booth-4e17df.netlify.app/directory.html)
 
 [bgoonz (Bryan C Guner)](https://github.com/bgoonz)
 
@@ -3604,7 +3608,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Emmet Cheat Sheet](https://modest-booth-4e17df.netlify.app/originals/2021-03-06_emmet-cheat-sheet-24758e628d37)
 
-[Loading... - CodeSandbox](https://codesandbox.io/s/github/carbon-design-system/ibm-dotcom-library/tree/master/packages/react/examples/codesandbox/components/ButtonGroup)
+[Loading… - CodeSandbox](https://codesandbox.io/s/github/carbon-design-system/ibm-dotcom-library/tree/master/packages/react/examples/codesandbox/components/ButtonGroup)
 
 [carbon-components-react-example-fully-customized-data-table - CodeSandbox](https://codesandbox.io/s/github/carbon-design-system/carbon/tree/main/packages/react/examples/custom-data-table-state-manager)
 
@@ -3618,19 +3622,19 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/organization/f9296337-b3bc-4dfc-8a42-2af2b6425579/sites/provision/organization)
 
-[dani california --- Content --- Contentful Apps --- Contentful](https://app.contentful.com/spaces/8bi3kosknnn4/entries/5UxuJGeP3irgQmFkPhDFK1?previousEntries=3prNQrzzp00phXBxPut7jb,2XNR9ZPfpYxTxDIsWPGZZU,7rAwllcIgfMmDotTDmTlVZ)
+[dani california — Content — Contentful Apps — Contentful](https://app.contentful.com/spaces/8bi3kosknnn4/entries/5UxuJGeP3irgQmFkPhDFK1?previousEntries=3prNQrzzp00phXBxPut7jb,2XNR9ZPfpYxTxDIsWPGZZU,7rAwllcIgfMmDotTDmTlVZ)
 
 [Contentful](https://app.contentful.com/spaces/8bi3kosknnn4/entries/4rjEnhW5Rge0lcYk0Jw6Yk?previousEntries=3prNQrzzp00phXBxPut7jb,2XNR9ZPfpYxTxDIsWPGZZU)
 
 [Content - Contentful Apps - Contentful Compose](https://compose.contentful.com/spaces/8bi3kosknnn4/page/4FEkMRmbdbCGwslxwdeefn)
 
-[Space home --- mywebdev --- Contentful](https://app.contentful.com/spaces/i31un640bs1z/home)
+[Space home — mywebdev — Contentful](https://app.contentful.com/spaces/i31un640bs1z/home)
 
 [Contentful Launch](https://launch.contentful.com/spaces/i31un640bs1z)
 
 [Contentful Compose](https://compose.contentful.com/spaces/i31un640bs1z/setup/getting-started)
 
-[Space home --- mywebdev --- Contentful](https://app.contentful.com/spaces/i31un640bs1z/home)
+[Space home — mywebdev — Contentful](https://app.contentful.com/spaces/i31un640bs1z/home)
 
 [Gatsby | The Fastest Frontend for the Modern Web | Gatsby](https://www.gatsbyjs.com/)
 
@@ -3648,17 +3652,17 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Welcome to the Contentful help center | Contentful help center](https://knowledge-bas42.netlify.app/)
 
-[APIs --- mywebdev --- master-2021-05-07 --- Contentful](https://app.contentful.com/spaces/i31un640bs1z/api/keys/1aDtx7CNJhiz4tzYU0vAO9)
+[APIs — mywebdev — master-2021-05-07 — Contentful](https://app.contentful.com/spaces/i31un640bs1z/api/keys/1aDtx7CNJhiz4tzYU0vAO9)
 
 [issues downloading zip files from github - Google Search](https://www.google.com/search?q=issues+downloading+zip+files+from+github&oq=issues+downloading+zip+files+from+github&aqs=chrome..69i57j33i22i29i30l4.8940j1j15&sourceid=chrome&ie=UTF-8)
 
 [Coding Rooms](https://app.codingrooms.com/management/courses/1811/questions)
 
-[Using as a command line tool --- nbconvert 6.0.8.dev0 documentation](https://nbconvert.readthedocs.io/en/latest/usage.html#convert-html)
+[Using as a command line tool — nbconvert 6.0.8.dev0 documentation](https://nbconvert.readthedocs.io/en/latest/usage.html#convert-html)
 
 ### New folder
 
-[Team overview | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/overview)
+[Team overview | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/overview)
 
 [Netlify DNS | Netlify Docs](https://docs.netlify.com/domains-https/netlify-dns/?_ga=2.62273577.467205373.1622769350-706151009.1622769350)
 
@@ -3714,7 +3718,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [adding google search bar to netlify website - Google Search](https://www.google.com/search?q=adding+google+search+bar+to+netlify+website&oq=adding+google+search+bar+to+netlify+website&aqs=chrome..69i57.11145j1j7&sourceid=chrome&ie=UTF-8)
 
-[Making Netlify's website fully searchable | Netlify](https://www.netlify.com/blog/2016/09/22/making-netlifys-website-fully-searchable/)
+[Making Netlify’s website fully searchable | Netlify](https://www.netlify.com/blog/2016/09/22/making-netlifys-website-fully-searchable/)
 
 [Programmable Search - Advanced](https://cse.google.com/cse/setup/advanced?cx=07d4440552681e18d)
 
@@ -3760,7 +3764,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [RegExp - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 
-[Editing Bash Commands That Save Me Time and Frustration -- Medium](https://medium.com/p/920fb6ab9d0a/edit)
+[Editing Bash Commands That Save Me Time and Frustration – Medium](https://medium.com/p/920fb6ab9d0a/edit)
 
 [StackEdit](https://stackedit.io/app#)
 
@@ -3808,7 +3812,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Inbox (7,224) - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/#inbox)
 
-[bgoonz's gists](https://gist.github.com/bgoonz)
+[bgoonz’s gists](https://gist.github.com/bgoonz)
 
 [links](http://127.0.0.1:5501/_RESOURCES/links.html)
 
@@ -3826,7 +3830,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [What You Can Do With Gists on Github? - Digital Inspiration](https://www.labnol.org/internet/github-gist-tutorial/28499/)
 
-[fredrick's gists](https://gist.github.com/fredrick?page=6)
+[fredrick’s gists](https://gist.github.com/fredrick?page=6)
 
 [kumar-abhishek/CS229-Fall-2018-Problem-Solutions: Problem sets solutions of Stanford CS229 Fall 2018.](https://github.com/kumar-abhishek/CS229-Fall-2018-Problem-Solutions)
 
@@ -3844,7 +3848,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Get List of all files in a directory in Node.js | by VithalReddy | stackFAME | Medium](https://medium.com/stackfame/get-list-of-all-files-in-a-directory-in-node-js-befd31677ec5)
 
-[VithalReddy -- Medium](https://medium.com/@vithalreddy)
+[VithalReddy – Medium](https://medium.com/@vithalreddy)
 
 [bgoonz/UsefulResourceRepo2.0](https://github.com/bgoonz/UsefulResourceRepo2.0)
 
@@ -3866,7 +3870,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [How I analyzed a million Medium articles to learn how many claps great stories get](https://www.freecodecamp.org/news/how-i-analyzed-a-million-medium-articles-to-learn-how-many-claps-great-stories-get-d688cf92759f/)
 
-[harrisonjansma/2020_Notes: A collection of notes regarding various topics. (Bash, PyTorch, Spark, etc.)](https://github.com/harrisonjansma/2020_Notes)
+[harrisonjansma/2020\_Notes: A collection of notes regarding various topics. (Bash, PyTorch, Spark, etc.)](https://github.com/harrisonjansma/2020_Notes)
 
 [Medium](https://medium.com/search/tags?q=Web)
 
@@ -3904,7 +3908,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [freeCodeCamp Publication Contributor Application](https://docs.google.com/forms/d/e/1FAIpQLSdvbv9jd7hlgIsHZWJGfnldLo2hLdlputw3hJ42JWpv3ctL1w/viewform)
 
-[Editing A Quick Guide to Big-O Notation, Memoization, Tabulation, and Sorting Algorithms by Example -- Medium](https://medium.com/p/803ff193c522/edit)
+[Editing A Quick Guide to Big-O Notation, Memoization, Tabulation, and Sorting Algorithms by Example – Medium](https://medium.com/p/803ff193c522/edit)
 
 [Your stories](https://medium.com/me/stories/drafts)
 
@@ -3934,7 +3938,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [web-dev-hub](https://bgoonz.blogspot.com/)
 
-[Sites -- Google AdSense](https://www.google.com/adsense/new/u/0/pub-7131725540181116/sites/my-sites/new)
+[Sites – Google AdSense](https://www.google.com/adsense/new/u/0/pub-7131725540181116/sites/my-sites/new)
 
 [bgoonz/My-Medium-Blog](https://github.com/bgoonz/My-Medium-Blog)
 
@@ -3986,9 +3990,9 @@ AddToAny
 
 [Projects | Cloud: MongoDB Cloud](https://cloud.mongodb.com/v2#/org/602fce78f7612354fa1876dd/projects)
 
-[JSON Expressions --- MongoDB Realm](https://docs.mongodb.com/realm/services/json-expressions/)
+[JSON Expressions — MongoDB Realm](https://docs.mongodb.com/realm/services/json-expressions/)
 
-[45 Incredibly Useful Web Design Checklists and Questionnaires --- Smashing Magazine](https://www.smashingmagazine.com/2009/06/45-incredibly-useful-web-design-checklists-and-questionnaires/)
+[45 Incredibly Useful Web Design Checklists and Questionnaires — Smashing Magazine](https://www.smashingmagazine.com/2009/06/45-incredibly-useful-web-design-checklists-and-questionnaires/)
 
 [Lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fgoofy-euclid-1cd736.netlify.app%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext)
 
@@ -4010,7 +4014,7 @@ AddToAny
 
 [Web Design Best Practices Checklist](https://terrymorris.net/bestpractices/)
 
-[25-point Website Usability Checklist -- DrPete.co](http://drpete.co/?topic=25-point-website-usability-checklist)
+[25-point Website Usability Checklist – DrPete.co](http://drpete.co/?topic=25-point-website-usability-checklist)
 
 [Usability.Edu: 25 Incredibly Useful Usability Cheat Sheets & Checklists | Designer City, USA](http://www.bestwebdesignschools.com/2009/usabilityedu-25-incredibly-useful-usability-cheat-sheets-checklists/)
 
@@ -4036,9 +4040,9 @@ AddToAny
 
 [link - Parse Dashboard](https://parse-dashboard.back4app.com/apps/9e5db051-bc0a-483a-8404-3ffbcf985372/browser/link)
 
-<about:blank#blocked>
+<a href="about:blank#blocked" class="uri">about:blank#blocked</a>
 
-<about:blank#blocked>
+<a href="about:blank#blocked" class="uri">about:blank#blocked</a>
 
 [Complete User Registration | Database Hub](https://www.back4app.com/database/back4app/user-registration-template)
 
@@ -4056,7 +4060,7 @@ AddToAny
 
 [Norwex USA](https://norwex.biz/en_US/blog/biobased)
 
-[Resources ---](https://flounder-flower-xpaw.squarespace.com/config/settings/advanced/import-export)
+[Resources —](https://flounder-flower-xpaw.squarespace.com/config/settings/advanced/import-export)
 
 [Dashboard](https://app.snipcart.com/dashboard/discounts)
 
@@ -4066,7 +4070,7 @@ AddToAny
 
 [Oct-JSX and React Router Intro October on Vimeo](https://vimeo.com/499765814/af0e465cbd)
 
-### JOB_SEARCH
+### JOB\_SEARCH
 
 [Data Structures and Algorithm: Towers of Hanoi](http://www.dsalgo.com/2013/02/towers-of-hanoi.html)
 
@@ -4078,7 +4082,7 @@ AddToAny
 
 [Swagger UI](http://www.employee-at-will.com/swagger-ui.html#/web-mvc-links-handler)
 
-### AWESOME_BLOGS
+### AWESOME\_BLOGS
 
 [Implementing OAuth 2.0 with Node.js 🔐](https://www.sohamkamani.com/blog/javascript/2018-06-24-oauth-with-node-js/)
 
@@ -4098,13 +4102,13 @@ AddToAny
 
 [laravel - VScode unable to save files inside my WSL2 home folder - Stack Overflow](https://stackoverflow.com/questions/61973385/vscode-unable-to-save-files-inside-my-wsl2-home-folder)
 
-<https://raw.githubusercontent.com/bgoonz/INTERVIEW-PREP-COMPLETE/main/README.md>
+<a href="https://raw.githubusercontent.com/bgoonz/INTERVIEW-PREP-COMPLETE/main/README.md" class="uri">https://raw.githubusercontent.com/bgoonz/INTERVIEW-PREP-COMPLETE/main/README.md</a>
 
 [bgoonz (Bryan C Guner)](https://github.com/bgoonz)
 
 [This is my technical interview cheat sheet. Feel free to fork it or do whatever you want with it. PLEASE let me know if there are any errors or if anything crucial is missing. I will add more links soon.](https://gist.github.com/TSiege/cbb0507082bb18ff7e4b)
 
-<https://raw.githubusercontent.com/TSiege/Tech-Interview-Cheat-Sheet/master/README.md>
+<a href="https://raw.githubusercontent.com/TSiege/Tech-Interview-Cheat-Sheet/master/README.md" class="uri">https://raw.githubusercontent.com/TSiege/Tech-Interview-Cheat-Sheet/master/README.md</a>
 
 [Search - Khan academy datastructures](https://github.com/search?q=Khan+academy+datastructures&type=code)
 
@@ -4128,7 +4132,7 @@ AddToAny
 
 [SWAPI - The Star Wars API](https://swapi.dev/documentation)
 
-[@wcd/bgoonz.02-using-effects-fork-klwaxmkx - npm](https://www.npmjs.com/package/@wcd/bgoonz.02-using-effects-fork-klwaxmkx)
+<span class="citation" data-cites="wcd/bgoonz.02-using-effects-fork-klwaxmkx">\[@wcd/bgoonz.02-using-effects-fork-klwaxmkx - npm\]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="wcd/bgoonz.02-using-effects-fork-klwaxmkx">@wcd/bgoonz.02-using-effects-fork-klwaxmkx</span>)
 
 ### Bootcamp-Applications
 
@@ -4176,9 +4180,9 @@ AddToAny
 
 [denial of service attack - Google Search](https://www.google.com/search?q=denial+of+service+attack&oq=dENIAL+OF+SERvice+attack&aqs=chrome.0.0i433j0l9.4712j0j7&sourceid=chrome&ie=UTF-8)
 
-<https://dog.ceo/api/breed/chow/images/random/6>
+<a href="https://dog.ceo/api/breed/chow/images/random/6" class="uri">https://dog.ceo/api/breed/chow/images/random/6</a>
 
-<https://dog.ceo/api/breed/mix/images/random/9>
+<a href="https://dog.ceo/api/breed/mix/images/random/9" class="uri">https://dog.ceo/api/breed/mix/images/random/9</a>
 
 [MDN Web Docs](https://github.com/mdn?q=&type=&language=&sort=)
 
@@ -4210,11 +4214,11 @@ AddToAny
 
 [april12backup.txt](file:///C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS/10-miscellaneous/april12backup.txt)
 
-[/NEW_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS](file:///C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS/right.html)
+[/NEW\_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS](file:///C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS/right.html)
 
 [code.png (2372×304)](file:///C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS/code.png)
 
-[How to solve "filename too long" error in git (Powershell and GitHub Application) for windows | Our Code World](https://ourcodeworld.com/articles/read/109/how-to-solve-filename-too-long-error-in-git-powershell-and-github-application-for-windows#:~:text=As%20you%20can%20see%2C%20indeed,there's%20a%20limit%20of%20260)
+[How to solve “filename too long” error in git (Powershell and GitHub Application) for windows | Our Code World](https://ourcodeworld.com/articles/read/109/how-to-solve-filename-too-long-error-in-git-powershell-and-github-application-for-windows#:~:text=As%20you%20can%20see%2C%20indeed,there's%20a%20limit%20of%20260)
 
 [sheet.best - Turn your google sheets into a REST API](https://sheet.best/)
 
@@ -4228,7 +4232,7 @@ AddToAny
 
 [Meratas](https://app.meratas.com/dashboard)
 
-[Learn to "think like a Software Engineer" -- Lambda School](http://127.0.0.1:5500/apply.lambdaschool.com/courses/web/lessons/introduction-to-web-development-fundamentals/topic/learn-to-think-like-a-software-engineer/index.html)
+[Learn to “think like a Software Engineer” – Lambda School](http://127.0.0.1:5500/apply.lambdaschool.com/courses/web/lessons/introduction-to-web-development-fundamentals/topic/learn-to-think-like-a-software-engineer/index.html)
 
 ### New folder
 
@@ -4242,7 +4246,7 @@ AddToAny
 
 [GitHub - bgoonz/INTERVIEW-PREP-COMPLETE: INTERVIEW-PREP-ARCHIVE](https://github.com/bgoonz/INTERVIEW-PREP-COMPLETE)
 
-[Welcome to Lambda School's Admissions Process! - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/#inbox/FMfcgxwLswLjSTtmtXkMJCzTlzTNwxfq)
+[Welcome to Lambda School’s Admissions Process! - bryan.guner@gmail.com - Gmail](https://mail.google.com/mail/u/0/#inbox/FMfcgxwLswLjSTtmtXkMJCzTlzTNwxfq)
 
 [Inbox (231) - bryan.guner.dev@gmail.com - Gmail](https://mail.google.com/mail/u/1/#inbox)
 
@@ -4254,7 +4258,7 @@ AddToAny
 
 [https://learn.lambdaschool.com](https://learn.lambdaschool.com/)
 
-[Notion -- The all-in-one workspace for your notes, tasks, wikis, and databases.](https://www.notion.so/FrontDesk-88c67be0382d4f2e91a1950b6c55dee8#3982e139136e4fdb97a93e1e4fc38be3)
+[Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.](https://www.notion.so/FrontDesk-88c67be0382d4f2e91a1950b6c55dee8#3982e139136e4fdb97a93e1e4fc38be3)
 
 [Microsoft Office Home](https://www.office.com/?auth=1)
 
@@ -4264,7 +4268,7 @@ AddToAny
 
 [Lambda School Student Guide](https://www.notion.so/Lambda-School-Student-Guide-74b6ce15355f41b488f6643c31636480)
 
-[Notion -- The all-in-one workspace for your notes, tasks, wikis, and databases.](https://www.notion.so/lambdaschool/Full-Stack-Web-Self-Study-Resources-cb10780fa4c14f3a90b8835956e7f2a4)
+[Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.](https://www.notion.so/lambdaschool/Full-Stack-Web-Self-Study-Resources-cb10780fa4c14f3a90b8835956e7f2a4)
 
 [Lambda School | Prepare Yourself for Success by Attending Lambda Launch](https://lambdaschool.com/the-commons/prepare-yourself-for-success-by-attending-lambda-launch)
 
@@ -4276,9 +4280,9 @@ AddToAny
 
 [Slack | general | Jumpstart | 1 new item](https://app.slack.com/client/TC3RJK1PT/CC4CG549G)
 
-[Medium -- Where good ideas find you.](https://medium.com/)
+[Medium – Where good ideas find you.](https://medium.com/)
 
-[Editing The Web Developer's Technical Interview -- Medium](https://medium.com/p/e347d7db3822/edit)
+[Editing The Web Developer’s Technical Interview – Medium](https://medium.com/p/e347d7db3822/edit)
 
 [npm](https://www.npmjs.com/~bgoonz11)
 
@@ -4294,7 +4298,7 @@ AddToAny
 
 [Wallaby.js Webinar (HD): Accelerated Distraction-free JavaScript Testing - YouTube](https://www.youtube.com/watch?v=HmWefc-8X8c)
 
-[Automatic Jest configuration error: Module jest-cli is not found in '.'. - Issue #2254 - wallabyjs/public](https://github.com/wallabyjs/public/issues/2254)
+[Automatic Jest configuration error: Module jest-cli is not found in ‘.’. - Issue \#2254 - wallabyjs/public](https://github.com/wallabyjs/public/issues/2254)
 
 [Math - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
@@ -4312,7 +4316,7 @@ AddToAny
 
 [New Tab](chrome://newtab/)
 
-[lambda-prep -- Functions -- Firebase console](https://console.firebase.google.com/u/1/project/lambda-prep/functions)
+[lambda-prep – Functions – Firebase console](https://console.firebase.google.com/u/1/project/lambda-prep/functions)
 
 [Firebase Quickstart](https://fireship.io/lessons/firebase-quickstart/)
 
@@ -4338,13 +4342,13 @@ AddToAny
 
 [Top 10 JavaScript Snippets for Common Tasks](https://www.htmlgoodies.com/beyond/javascript/article.php/3887346/Top-10-JavaScript-Snippets-for-Common-Tasks.htm)
 
-[20 Useful Websites For Javascript & CSS Snippets -- Bashooka](https://bashooka.com/coding/20-useful-websites-for-javascript-css-snippets/)
+[20 Useful Websites For Javascript & CSS Snippets – Bashooka](https://bashooka.com/coding/20-useful-websites-for-javascript-css-snippets/)
 
 [Social Network for Programmers and Developers](https://morioh.com/p/5b34d9858cb5)
 
 [Document](http://127.0.0.1:5500/2-resources/_Snippets/snip.html)
 
-[html - How to define a default value for "input type=text" without using attribute 'value'? - Stack Overflow](https://stackoverflow.com/questions/3610540/how-to-define-a-default-value-for-input-type-text-without-using-attribute-val)
+[html - How to define a default value for “input type=text” without using attribute ‘value’? - Stack Overflow](https://stackoverflow.com/questions/3610540/how-to-define-a-default-value-for-input-type-text-without-using-attribute-val)
 
 [Your Repositories](https://github.com/bgoonz?tab=repositories)
 
@@ -4372,7 +4376,7 @@ AddToAny
 
 [React App](http://localhost:3000/)
 
-[AudioToText/audio_to_text.py at main - Web-Dev-Collaborative/AudioToText](https://github.com/Web-Dev-Collaborative/AudioToText/blob/main/src/audio_to_text.py)
+[AudioToText/audio\_to\_text.py at main - Web-Dev-Collaborative/AudioToText](https://github.com/Web-Dev-Collaborative/AudioToText/blob/main/src/audio_to_text.py)
 
 [Trello Auth Success | GitKraken](https://api.gitkraken.com/trello-auth/callback#token=2190a1808aa3b39fef026db98c2be3ec8b11f5654914eeb8b72d7bc72a395c13)
 
@@ -4388,7 +4392,7 @@ AddToAny
 
 [BetterExplained Fourier Example](https://gist.github.com/kazad/8bb682da198db597558c)
 
-[kazad's gists](https://gist.github.com/kazad)
+[kazad’s gists](https://gist.github.com/kazad)
 
 [bgoonz/My-Notes-Compilation: This is just a running list of notes without any unifying theme or structure, however it will generally be somewhere in the realm of web development.](https://github.com/bgoonz/My-Notes-Compilation)
 
@@ -4436,7 +4440,7 @@ AddToAny
 
 [GWSL Downloads | gwsl](https://opticos.github.io/gwsl/tutorials/download.html)
 
-[apt - What is difference between the options "autoclean", "autoremove" and "clean"? - Ask Ubuntu](https://askubuntu.com/questions/3167/what-is-difference-between-the-options-autoclean-autoremove-and-clean)
+[apt - What is difference between the options “autoclean”, “autoremove” and “clean”? - Ask Ubuntu](https://askubuntu.com/questions/3167/what-is-difference-between-the-options-autoclean-autoremove-and-clean)
 
 [what is microsoft .net sdk - Google Search](https://www.google.com/search?q=what+is+microsoft+.net+sdk&oq=what+is+microsoft+.net+sdk&aqs=chrome..69i57j0i22i30l3j0i10i22i30j0i22i30j0i390l2.6264j0j7&sourceid=chrome&ie=UTF-8)
 
@@ -4448,7 +4452,7 @@ AddToAny
 
 [Bookmarks](chrome://bookmarks/?id=1313)
 
-[Showcase Slider -- Just another bim Sites site](https://bim.smartinnovates.com/demo4/)
+[Showcase Slider – Just another bim Sites site](https://bim.smartinnovates.com/demo4/)
 
 [colab-github-demo.ipynb - Colaboratory](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=wKJ4bd5rt1wy)
 
@@ -4462,7 +4466,7 @@ AddToAny
 
 [Yandex.Disk](https://disk.yandex.com/client/disk)
 
-[Shepherd --- Guide your users through a tour of your app.](https://shepherdjs.dev/)
+[Shepherd — Guide your users through a tour of your app.](https://shepherdjs.dev/)
 
 [Pillar - Free Bootstrap 4 Resume/CV Template for Developers | UX & Bootstrap](https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap4-resume-cv-template-for-developers-pillar/)
 
@@ -4482,11 +4486,11 @@ AddToAny
 
 [React App](https://front-end-tau-seven.vercel.app/add-event)
 
-[Billing health checks -- Billing -- Google Cloud Platform](https://console.cloud.google.com/billing/01C41E-01F515-656A27/health?organizationId=0)
+[Billing health checks – Billing – Google Cloud Platform](https://console.cloud.google.com/billing/01C41E-01F515-656A27/health?organizationId=0)
 
 [Enable, disable, or change billing for a project  |  Cloud Billing](https://cloud.google.com/billing/docs/how-to/modify-project?&_ga=2.99091550.-1164462789.1624423132#enable_billing_for_a_new_project)
 
-[Metrics -- Google Maps Platform -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/google/maps-apis/metrics?project=studious-pulsar-298821)
+[Metrics – Google Maps Platform – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/google/maps-apis/metrics?project=studious-pulsar-298821)
 
 [JSFiddle - Code Playground](https://jsfiddle.net/bgoonz/b2p7yxws/1/)
 
@@ -4496,43 +4500,43 @@ AddToAny
 
 [Error Messages  |  Maps JavaScript API  |  Google Developers](https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=places_js&utm_medium=degraded&utm_campaign=keyless#api-key-and-billing-errors)
 
-<https://fiddle.jshell.net/bgoonz/4dk3fj58/show/light/>
+<a href="https://fiddle.jshell.net/bgoonz/4dk3fj58/show/light/" class="uri">https://fiddle.jshell.net/bgoonz/4dk3fj58/show/light/</a>
 
 [potluck-landing/src at master - ft-potluck-planer-05-units3-4/potluck-landing](https://github.com/ft-potluck-planer-05-units3-4/potluck-landing/tree/master/src)
 
-[potluckLanding -- Overview | Sanity.io](https://www.sanity.io/manage/personal/project/ykw3edr8)
+[potluckLanding – Overview | Sanity.io](https://www.sanity.io/manage/personal/project/ykw3edr8)
 
-[terrific-dolphin-103fc -- Sanity](https://terrific-dolphin-103fc.sanity.studio/desk/post;a7fe77f8-1458-4179-9ce8-7942f4c9c4f8)
+[terrific-dolphin-103fc – Sanity](https://terrific-dolphin-103fc.sanity.studio/desk/post;a7fe77f8-1458-4179-9ce8-7942f4c9c4f8)
 
 [The Maps Embed API quickstart  |  Google Developers](https://developers.google.com/maps/documentation/embed/map-generator#enable-api-sdk)
 
-[Maps Embed API -- APIs & Services -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/apis/library/maps-embed-backend.googleapis.com?_ga=2.96297756.1628426608.1624423132-1164462789.1624423132&project=studious-pulsar-298821&folder=&organizationId=)
+[Maps Embed API – APIs & Services – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/apis/library/maps-embed-backend.googleapis.com?_ga=2.96297756.1628426608.1624423132-1164462789.1624423132&project=studious-pulsar-298821&folder=&organizationId=)
 
-[Maps Embed API -- APIs & Services -- social-media42 -- Google Cloud Platform](https://console.cloud.google.com/apis/library/maps-embed-backend.googleapis.com?_ga=2.96297756.1628426608.1624423132-1164462789.1624423132&authuser=1&project=social-media42)
+[Maps Embed API – APIs & Services – social-media42 – Google Cloud Platform](https://console.cloud.google.com/apis/library/maps-embed-backend.googleapis.com?_ga=2.96297756.1628426608.1624423132-1164462789.1624423132&authuser=1&project=social-media42)
 
 [The Maps Embed API overview  |  Google Developers](https://developers.google.com/maps/documentation/embed/get-started?hl=en_US)
 
 [Overview  |  Maps JavaScript API  |  Google Developers](https://developers.google.com/maps/documentation/javascript/overview)
 
-[Edit app registration -- APIs & Services -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/apis/credentials/consent/edit;newAppInternalUser=false?project=studious-pulsar-298821)
+[Edit app registration – APIs & Services – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/apis/credentials/consent/edit;newAppInternalUser=false?project=studious-pulsar-298821)
 
 [Domain Limit Exceeded FAQ - Google Cloud Platform Console Help](https://support.google.com/cloud/answer/7650096#zippy=%2Cwhy-am-i-seeing-the-domain-limit-exceeded-exception%2Cwhat-is-a-domain%2Chow-do-i-fix-this)
 
-[Set up your organization resource -- Getting started -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/getting-started/enterprise?project=studious-pulsar-298821)
+[Set up your organization resource – Getting started – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/getting-started/enterprise?project=studious-pulsar-298821)
 
 [Sign up for Google Workspace](https://workspace.google.com/u/5/signup/businessstarter/checkout)
 
 [Google Cloud Platform/API Project: Request Project Quota Increase - Google Developers Help](https://support.google.com/code/contact/project_quota_increase)
 
-[Prepare for verification -- APIs & Services -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/apis/credentials/consent/edit;verificationMode=true?project=studious-pulsar-298821)
+[Prepare for verification – APIs & Services – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/apis/credentials/consent/edit;verificationMode=true?project=studious-pulsar-298821)
 
-[Getting started -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/getting-started/enterprise?project=studious-pulsar-298821)
+[Getting started – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/getting-started/enterprise?project=studious-pulsar-298821)
 
 [Manage domains - Admin Console](https://admin.google.com/u/5/ac/domains/manage?hl=en)
 
 [Getting started with Google Maps Platform  |  Google Developers](https://developers.google.com/maps/gmp-get-started)
 
-[APIs -- Google Maps Platform -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/google/maps-apis/api-list?project=studious-pulsar-298821)
+[APIs – Google Maps Platform – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/google/maps-apis/api-list?project=studious-pulsar-298821)
 
 [JSFiddle - Code Playground](https://jsfiddle.net/bgoonz/h6wezn5k/2/)
 
@@ -4540,7 +4544,7 @@ AddToAny
 
 [Verify your account - Google Account Help](https://support.google.com/accounts/answer/114129?hl=en)
 
-[Quick Builder -- Google Maps Platform -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/google/maps-apis/solution-builder/locator_plus?project=studious-pulsar-298821)
+[Quick Builder – Google Maps Platform – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/google/maps-apis/solution-builder/locator_plus?project=studious-pulsar-298821)
 
 [JSFiddle - Code Playground](https://jsfiddle.net/bgoonz/4dk3fj58/)
 
@@ -4548,7 +4552,7 @@ AddToAny
 
 [JSFiddle - Code Playground](https://jsfiddle.net/)
 
-[Register a domain -- Network services -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/net-services/domains/registrations/create?folder=&organizationId=&project=studious-pulsar-298821)
+[Register a domain – Network services – My Project 78672 – Google Cloud Platform](https://console.cloud.google.com/net-services/domains/registrations/create?folder=&organizationId=&project=studious-pulsar-298821)
 
 [ft-potluck-planer-05-units3-4/front-end: Potluck](https://github.com/ft-potluck-planer-05-units3-4/front-end)
 
@@ -4558,13 +4562,13 @@ AddToAny
 
 ### New folder
 
-[Webflow - Bryan's Spectacular Project](https://webflow.com/design/bryans-spectacular-project-fae067)
+[Webflow - Bryan’s Spectacular Project](https://webflow.com/design/bryans-spectacular-project-fae067)
 
 [Webflow - Section Scroll Interaction](https://preview.webflow.com/preview/section-scroll-interaction?utm_medium=preview_link&utm_source=showcase_slider&utm_content=section-scroll-interaction&preview=c958906377274cc9d25a9c596fb2983d)
 
-[ruby on rails - How to fix: error: '<filename>' does not have a commit checked out fatal: adding files failed when inputting "git add ." in command prompt - Stack Overflow](https://stackoverflow.com/questions/56873278/how-to-fix-error-filename-does-not-have-a-commit-checked-out-fatal-adding)
+[ruby on rails - How to fix: error: ‘’ does not have a commit checked out fatal: adding files failed when inputting “git add .” in command prompt - Stack Overflow](https://stackoverflow.com/questions/56873278/how-to-fix-error-filename-does-not-have-a-commit-checked-out-fatal-adding)
 
-[Web Development Projects --- Web-Dev-Resource-Hub(Bryan Guner)](https://soybean-tulip-em56.squarespace.com/config/pages/6056ff2af2e79040b7b58956)
+[Web Development Projects — Web-Dev-Resource-Hub(Bryan Guner)](https://soybean-tulip-em56.squarespace.com/config/pages/6056ff2af2e79040b7b58956)
 
 [Crop a circle in image online - free tool](https://crop-circle.imageonline.co/)
 
@@ -4652,7 +4656,7 @@ AddToAny
 
 [tiangolo/full-stack-flask-couchdb: Full stack, modern web application generator. Using Flask, CouchDB as database, Docker, Swagger, automatic HTTPS and more.](https://github.com/tiangolo/full-stack-flask-couchdb)
 
-[Web-Dev-Collaborative/blog-posts: Blog posts and related code by Sebastián Ramírez (@tiangolo)](https://github.com/Web-Dev-Collaborative/blog-posts)
+<span class="citation" data-cites="tiangolo">\[Web-Dev-Collaborative/blog-posts: Blog posts and related code by Sebastián Ramírez (@tiangolo)\]</span>(https://github.com/Web-Dev-Collaborative/blog-posts)
 
 [Web-Dev-Collaborative/node-frontend: Node.js Docker image with all Puppeteer dependencies installed for frontend Chrome Headless testing and default Nginx config, for multi-stage Docker building](https://github.com/Web-Dev-Collaborative/node-frontend)
 
@@ -4690,9 +4694,9 @@ AddToAny
 
 [bgoonz/Potluck-Planner at preview](https://github.com/bgoonz/Potluck-Planner/tree/preview)
 
-[Comparing preview...master - bgoonz/Potluck-Planner](https://github.com/bgoonz/Potluck-Planner/compare/preview...master)
+[Comparing preview…master - bgoonz/Potluck-Planner](https://github.com/bgoonz/Potluck-Planner/compare/preview...master)
 
-[bgoonz/Potluck-Planner: Jamstack site ...landing page for potluck planner](https://github.com/bgoonz/Potluck-Planner)
+[bgoonz/Potluck-Planner: Jamstack site …landing page for potluck planner](https://github.com/bgoonz/Potluck-Planner)
 
 [bgoonz/My-Notes-Compilation: This is just a running list of notes without any unifying theme or structure, however it will generally be somewhere in the realm of web development.](https://github.com/bgoonz/My-Notes-Compilation)
 
@@ -4700,7 +4704,7 @@ AddToAny
 
 [Deploy details | potluck-planner-landing](https://app.netlify.com/sites/potluck-planner-landing/deploys/60ad29f09433ab0007aad117)
 
-[chore(deps): update dependency xmlhttprequest-ssl to 1.6.2 [security] - bgoonz/Potluck-Planner@9ccca68](https://github.com/bgoonz/Potluck-Planner/commit/9ccca68d727fb167abf96d56da3c4daa2340e3e4)
+[chore(deps): update dependency xmlhttprequest-ssl to 1.6.2 \[security\] - bgoonz/Potluck-Planner@9ccca68](https://github.com/bgoonz/Potluck-Planner/commit/9ccca68d727fb167abf96d56da3c4daa2340e3e4)
 
 [Stackbit Starter Theme](https://deploy-preview-12--potluck-planner-landing.netlify.app/)
 
@@ -4710,7 +4714,7 @@ AddToAny
 
 [wds9601/react-signup-form](https://github.com/wds9601/react-signup-form)
 
-[Devhints --- TL;DR for developer documentation](https://devhints.io/)
+[Devhints — TL;DR for developer documentation](https://devhints.io/)
 
 [Create basic login forms using react.js hooks and bootstrap | by Saurabh Mhatre | CodeClassifiers | Medium](https://medium.com/technoetics/create-basic-login-forms-using-react-js-hooks-and-bootstrap-2ae36c15e551)
 
@@ -4718,7 +4722,7 @@ AddToAny
 
 [cornflourblue/react-redux-registration-login-example: React + Redux - User Registration and Login Tutorial & Example](https://github.com/cornflourblue/react-redux-registration-login-example)
 
-[React + Redux - User Registration and Login Tutorial & Example | Jason Watmore's Blog](https://jasonwatmore.com/post/2017/09/16/react-redux-user-registration-and-login-tutorial-example)
+[React + Redux - User Registration and Login Tutorial & Example | Jason Watmore’s Blog](https://jasonwatmore.com/post/2017/09/16/react-redux-user-registration-and-login-tutorial-example)
 
 [react-redux-registration-login-example-uugbjr - StackBlitz](https://stackblitz.com/edit/react-redux-registration-login-example-uugbjr?file=_actions%2Fuser.actions.js)
 
@@ -4728,7 +4732,7 @@ AddToAny
 
 [Post Attendee - Zoom](https://us04web.zoom.us/postattendee?id=45)
 
-[demo --- Pagedraw](https://pagedraw.io/tutorials/basics)
+[demo — Pagedraw](https://pagedraw.io/tutorials/basics)
 
 [prod | SEED](https://console.seed.run/bgoonz/BGOONZ-BLOG-2-0/stages/prod)
 
@@ -4736,7 +4740,7 @@ AddToAny
 
 [Homepage - ThemeSINE](https://www.themesine.com/)
 
-[Music making on the Web browser (a collection of tool URLs) - ...Loops multiplayer music performances](http://solam.co/loops/music-making-web-browser.htm)
+[Music making on the Web browser (a collection of tool URLs) - …Loops multiplayer music performances](http://solam.co/loops/music-making-web-browser.htm)
 
 [Using Fetch with Github API V3 | Pluralsight](https://www.pluralsight.com/guides/using-fetch-with-github-api-v3)
 
@@ -4806,7 +4810,7 @@ AddToAny
 
 [gsuiOscilloscope](https://codepen.io/bgoonz/pen/eYvrgpe)
 
-[gridsound/export: ( this project's code is temporarily deprecated, we have to use daw-core here) Render and download a GridSound file in .wav](https://github.com/gridsound/export)
+[gridsound/export: ( this project’s code is temporarily deprecated, we have to use daw-core here) Render and download a GridSound file in .wav](https://github.com/gridsound/export)
 
 [GridSound - Export](https://gridsound.github.io/export/#)
 
@@ -4826,7 +4830,7 @@ AddToAny
 
 [GitbookIO/gitbook: 📝 Modern documentation format and toolchain using Git and Markdown](https://github.com/GitbookIO/gitbook)
 
-[Deploy details | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/builds/60bb6115a63d1e000737aacf)
+[Deploy details | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/builds/60bb6115a63d1e000737aacf)
 
 [directory](https://master--embedable-content.netlify.app/)
 
@@ -4876,15 +4880,15 @@ AddToAny
 
 [Stackbit App](https://app.stackbit.com/edit/60bce5258de8ff001726fd17/summary)
 
-[Content --- Gatsby Starter for Contentful --- master-2021-06-06 --- Contentful](https://app.contentful.com/spaces/z5u5myu3wvyl/entries?id=JpalPD0FPcPN0NFq&order.fieldId=updatedAt&order.direction=descending&displayedFieldIds=contentType&displayedFieldIds=updatedAt&displayedFieldIds=author)
+[Content — Gatsby Starter for Contentful — master-2021-06-06 — Contentful](https://app.contentful.com/spaces/z5u5myu3wvyl/entries?id=JpalPD0FPcPN0NFq&order.fieldId=updatedAt&order.direction=descending&displayedFieldIds=contentType&displayedFieldIds=updatedAt&displayedFieldIds=author)
 
-[Bryan Guner --- Content --- mywebdev --- master-2021-05-07 --- Contentful](https://app.contentful.com/spaces/i31un640bs1z/entries/TPWm5AaWTabpjVt92OV9j)
+[Bryan Guner — Content — mywebdev — master-2021-05-07 — Contentful](https://app.contentful.com/spaces/i31un640bs1z/entries/TPWm5AaWTabpjVt92OV9j)
 
 [Discovery App](https://discovery.contentful.com/entries/by-content-type/person/TPWm5AaWTabpjVt92OV9j/?space_id=i31un640bs1z&delivery_access_token=YcM7PlQyzkEb9u5srqiVTXBJIMqZYOVYKmeWbxnIZcw)
 
 [Gatsby Cloud | bgoonz | Sites](https://www.gatsbyjs.com/dashboard/organization/f9296337-b3bc-4dfc-8a42-2af2b6425579/sites)
 
-[APIs --- Gatsby Starter for Contentful --- master-2021-06-06 --- Contentful](https://app.contentful.com/spaces/z5u5myu3wvyl/api/keys/6v4youAWjf3lvpvHmi44fy)
+[APIs — Gatsby Starter for Contentful — master-2021-06-06 — Contentful](https://app.contentful.com/spaces/z5u5myu3wvyl/api/keys/6v4youAWjf3lvpvHmi44fy)
 
 [API basics | Contentful](https://www.contentful.com/developers/docs/concepts/apis/?utm_source=webapp&utm_medium=knowledge-base-content_apis&utm_campaign=in-app-help)
 
@@ -4892,7 +4896,7 @@ AddToAny
 
 [Support | Contentful](https://www.contentful.com/support/?upgrade-teams=true)
 
-[Environments --- Gatsby Starter for Contentful --- master-2021-06-06 --- Contentful](https://app.contentful.com/spaces/z5u5myu3wvyl/settings/environments)
+[Environments — Gatsby Starter for Contentful — master-2021-06-06 — Contentful](https://app.contentful.com/spaces/z5u5myu3wvyl/settings/environments)
 
 [Site overview | best-celery-b2d7c](https://app.netlify.com/sites/best-celery-b2d7c/overview)
 
@@ -4904,7 +4908,7 @@ AddToAny
 
 [contentful/contentful-import: Node module that uses the data provided by contentful-export to import it to contentful space](https://github.com/contentful/contentful-import)
 
-[contentful/contentful.js: JavaScript library for Contentful's Delivery API (node & browser)](https://github.com/contentful/contentful.js)
+[contentful/contentful.js: JavaScript library for Contentful’s Delivery API (node & browser)](https://github.com/contentful/contentful.js)
 
 [contentful/markdown-to-jsx: 🏭 The most lightweight, customizable React markdown component.](https://github.com/contentful/markdown-to-jsx)
 
@@ -4918,7 +4922,7 @@ AddToAny
 
 [Getting Started | JetBrains Space](https://www.jetbrains.com/help/space/getting-started.html#first-steps)
 
-[Add a domain to Netlify DNS | Bryan C Guner's team](https://app.netlify.com/teams/bgoonz/dns/setup)
+[Add a domain to Netlify DNS | Bryan C Guner’s team](https://app.netlify.com/teams/bgoonz/dns/setup)
 
 [Deploy details | lambda-static-server](https://app.netlify.com/sites/lambda-static-server/deploys/60bd6f9ad4b3f69ed849c560)
 
@@ -4964,7 +4968,7 @@ AddToAny
 
 [Web-Dev-Collaborative/manticoresearch: Database for search](https://github.com/Web-Dev-Collaborative/manticoresearch)
 
-[Cheatsheets -- Manticore Search](https://manticoresearch.com/cheatsheets/)
+[Cheatsheets – Manticore Search](https://manticoresearch.com/cheatsheets/)
 
 [Web-Dev-Collaborative/elasticlunr.js: Based on lunr.js, but more flexible and customized.](https://github.com/Web-Dev-Collaborative/elasticlunr.js)
 
@@ -4982,7 +4986,7 @@ AddToAny
 
 [Login Verification | Mailchimp](https://us6.admin.mailchimp.com/login/verify/)
 
-### BUILD_WEEK
+### BUILD\_WEEK
 
 [React App](https://painlesspotlucks.vercel.app/login)
 
@@ -5046,7 +5050,7 @@ AddToAny
 
 [Stack trace API - V8](https://v8.dev/docs/stack-trace-api)
 
-["Failed to load jshint library" - Issue #3 - microsoft/vscode-jshint](https://github.com/microsoft/vscode-jshint/issues/3)
+[“Failed to load jshint library” - Issue \#3 - microsoft/vscode-jshint](https://github.com/microsoft/vscode-jshint/issues/3)
 
 [How to move the Visual Studio Code extensions folder on Windows | benwong.me](https://benwong.me/how-to-move-the-visual-studio-code-extensions-folder-on-windows/)
 
@@ -5102,7 +5106,7 @@ AddToAny
 
 [The Good AA Meeting](https://vigilant-easley-8b8c4c.netlify.app/public/)
 
-[@WilliamVincent](https://discord.com/channels/@me/764569676780929024)
+<span class="citation" data-cites="WilliamVincent">\[@WilliamVincent\]</span>(https://discord.com/channels/<span class="citation" data-cites="me/764569676780929024">@me/764569676780929024</span>)
 
 [Page Not Found](https://vigilant-easley-8b8c4c.netlify.app/public/other-pages/weeks/week-14.html)
 
@@ -5116,7 +5120,7 @@ AddToAny
 
 [W10SAT - YouTube](https://www.youtube.com/watch?v=Meho-rTWLFU&ab_channel=BryanGuner&t=130s)
 
-[Top 9 "best" free Photoshop alternatives that are actually GOOD](https://wp-modula.com/free-photoshop-alternatives/)
+[Top 9 “best” free Photoshop alternatives that are actually GOOD](https://wp-modula.com/free-photoshop-alternatives/)
 
 [GIMP - Downloads](https://www.gimp.org/downloads/)
 
@@ -5124,7 +5128,7 @@ AddToAny
 
 [Settings - Passwords](chrome://settings/passwords)
 
-[What is VDI? -- Virtual Desktop Infrastructure Definition - Citrix](https://www.citrix.com/glossary/vdi.html#:~:text=The%20virtual%20desktops%20live%20within,system%20image%2C%20typically%20Microsoft%20Windows&text=Meanwhile%2C%20a%20hypervisor%20creates%2C%20runs,the%20individual%20virtual%20desktop%20environments)
+[What is VDI? – Virtual Desktop Infrastructure Definition - Citrix](https://www.citrix.com/glossary/vdi.html#:~:text=The%20virtual%20desktops%20live%20within,system%20image%2C%20typically%20Microsoft%20Windows&text=Meanwhile%2C%20a%20hypervisor%20creates%2C%20runs,the%20individual%20virtual%20desktop%20environments)
 
 [Welcome to Remote Desktop Services in Windows Server 2016 | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/welcome-to-rds)
 
@@ -5136,13 +5140,13 @@ AddToAny
 
 [Microsoft account | Order history](https://account.microsoft.com/billing/orders/)
 
-[#just-typin](https://discord.com/channels/724736182650667132/724736183439065173)
+[\#just-typin](https://discord.com/channels/724736182650667132/724736183439065173)
 
-[(1) Bryan Guner | LinkedIn](<https://www.linkedin.com/in/bryan-guner-046199128/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAB9Z4fYBOjR8mPtiKIcZgX-UFNh5WtKvONE,1607836837160)/>)
+[(1) Bryan Guner | LinkedIn](https://www.linkedin.com/in/bryan-guner-046199128/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAB9Z4fYBOjR8mPtiKIcZgX-UFNh5WtKvONE,1607836837160)/)
 
 [Stop Using console.log() In JavaScript | by Harsha Vardhan | JavaScript In Plain English | Oct, 2020 | Medium](https://medium.com/javascript-in-plain-english/stop-using-console-log-in-javascript-d29d6c24dc26)
 
-[0\*t6SE511h7v_N1ask (1200×900)](https://miro.medium.com/max/1200/0*t6SE511h7v_N1ask)
+[0\*t6SE511h7v\_N1ask (1200×900)](https://miro.medium.com/max/1200/0*t6SE511h7v_N1ask)
 
 [New Tab](chrome://newtab/)
 
@@ -5170,7 +5174,7 @@ AddToAny
 
 ### week-14
 
-[@appacademy/cra-template-simple - npm](https://www.npmjs.com/package/@appacademy/cra-template-simple)
+<span class="citation" data-cites="appacademy/cra-template-simple">\[@appacademy/cra-template-simple - npm\]</span>(https://www.npmjs.com/package/<span class="citation" data-cites="appacademy/cra-template-simple">@appacademy/cra-template-simple</span>)
 
 [Custom Templates](https://create-react-app.dev/docs/custom-templates/)
 
@@ -5204,11 +5208,11 @@ AddToAny
 
 [JavaScript Weekly: Using a Structured Problem-Solving Approach | by Severin Perez | Launch School | Medium](https://medium.com/launch-school/javascript-weekly-using-a-structured-problem-solving-approach-fb9cce41ba5a)
 
-[Hello Alonso Ahmetaj, while I agree that Colt Steele's JavaScript Algorithms and Data Structures... | by javinpaul | Medium](https://medium.com/@javinpaul/hello-alonso-ahmetaj-while-i-agree-that-colt-steeles-javascript-algorithms-and-data-structures-fa5a33d22ae3)
+[Hello Alonso Ahmetaj, while I agree that Colt Steele’s JavaScript Algorithms and Data Structures… | by javinpaul | Medium](https://medium.com/@javinpaul/hello-alonso-ahmetaj-while-i-agree-that-colt-steeles-javascript-algorithms-and-data-structures-fa5a33d22ae3)
 
-[**\_\_**🚗******\_\_******](https://bruno-simon.com/)
+[\_\_\_\_\_\_🚗\_\_\_\_\_\_\_\_\_\_\_\_\_\_](https://bruno-simon.com/)
 
-[The Hash Table data structure - Ben's Blog](https://blog.benoitvallon.com/data-structures-in-javascript/the-hash-table-data-structure/)
+[The Hash Table data structure - Ben’s Blog](https://blog.benoitvallon.com/data-structures-in-javascript/the-hash-table-data-structure/)
 
 [joedotjs (Joseph Alves) / Repositories](https://github.com/joedotjs?tab=repositories)
 
@@ -5222,7 +5226,7 @@ AddToAny
 
 [Pure Data is running in the browser, for free Web-based sound patching - CDM Create Digital Music](https://cdm.link/2020/10/pure-data-is-running-in-the-browser-for-free-web-based-sound-patching/)
 
-[Jack Routing (multichannel and browser audio) --- Pd Community Site](https://puredata.info/docs/JackRoutingMultichannelAndBrowserAudio/)
+[Jack Routing (multichannel and browser audio) — Pd Community Site](https://puredata.info/docs/JackRoutingMultichannelAndBrowserAudio/)
 
 [Postgresql - Cheatsheets](https://karloespiritu.github.io/cheatsheets/postgresql/)
 
@@ -5238,7 +5242,7 @@ AddToAny
 
 [aa - OneDrive](https://onedrive.live.com/?authkey=%21AOZ4VcHpVkP%5F0qM&id=87D8B8560BFDB191%21272283&cid=87D8B8560BFDB191)
 
-[ALW93/App-Academy: Notes taken from Homework Reading & Lectures + Objectives for App Academy's July 13th Cohort, feel free to use as needed. Will be updated as often as possible!](https://github.com/ALW93/App-Academy)
+[ALW93/App-Academy: Notes taken from Homework Reading & Lectures + Objectives for App Academy’s July 13th Cohort, feel free to use as needed. Will be updated as often as possible!](https://github.com/ALW93/App-Academy)
 
 ### week5
 
@@ -5272,7 +5276,7 @@ AddToAny
 
 [Cheatsheets and Snippets - Markdown Powered Gatsby Mini Site](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Cheatsheets%20and%20Snippets%20-%20Markdown%20Powered%20Gatsby%20Mini%20Site&pos=0&uri=https://joshuatz.com/projects/web-stuff/cheatsheets-and-snippets-markdown-powered-gatsby-mini-site/)
 
-[cheatsheets/security | Joshua's Docs](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=cheatsheets%2Fsecurity%20%7C%20Joshua's%20Docs&pos=0&uri=https://docs.joshuatz.com/cheatsheets/security)
+[cheatsheets/security | Joshua’s Docs](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=cheatsheets%2Fsecurity%20%7C%20Joshua's%20Docs&pos=0&uri=https://docs.joshuatz.com/cheatsheets/security)
 
 [Relative Path - Visual Studio Marketplace](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Relative%20Path%20-%20Visual%20Studio%20Marketplace&pos=0&uri=https://marketplace.visualstudio.com/items?itemName=jakob101.RelativePath)
 
@@ -5292,11 +5296,11 @@ AddToAny
 
 [delete zzbots account - Google Search](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=delete%20zzbots%20account%20-%20Google%20Search&pos=0&uri=https://www.google.com/search?rlz=1C1UEAD_enUS928US928&biw=1424&bih=604&sxsrf=ALeKk02McgXWfmHMCixRYelZ3UzwpEQvdg%3A1609829610512&ei=6gz0X83eHsqQ5gLgl4bIBA&q=delete+zzbots+account&oq=delete+zzbots+account&gs_lcp=CgZwc3ktYWIQAzIFCCEQqwI6BAgAEEc6BAgjECc6BAgAEEM6BQguEJECOgUIABCRAjoFCAAQsQM6CwguELEDEMcBEKMCOggILhDJAxCRAjoHCAAQsQMQQzoFCAAQyQM6AggAOgYIABAWEB46CwgAEMkDEBYQChAeOgUIIRCgAToJCAAQyQMQFhAeOggIABAWEAoQHjoHCAAQyQMQDToECAAQDToGCAAQDRAKOgcIIRAKEKABUK8MWNo-YP4_aANwBXgAgAGRAYgBsQ6SAQQyMy4xmAEAoAEBqgEHZ3dzLXdpesgBCMABAQ&sclient=psy-ab&ved=0ahUKEwjN-9TQmoTuAhVKiFkKHeCLAUkQ4dUDCA0&uact=5)
 
-[Inbox (5,059) - bryan.guner@gmail.com - Gmail](<chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Inbox%20(5%2C059)%20-%20bryan.guner%40gmail.com%20-%20Gmail&pos=0&uri=https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox>)
+[Inbox (5,059) - bryan.guner@gmail.com - Gmail](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Inbox%20(5%2C059)%20-%20bryan.guner%40gmail.com%20-%20Gmail&pos=0&uri=https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox)
 
-[Welcome to zzBots :) - gunerb1@tcnj.edu - The College of New Jersey Mail](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Welcome%20to%20zzBots%20%3A)%20-%20gunerb1%40tcnj.edu%20-%20The%20College%20of%20New%20Jersey%20Mail&pos=0&uri=https://mail.google.com/mail/u/1/#inbox/FMfcgxwKkRBWKLqFDGPdrGJDZpKLKTDq)
+[Welcome to zzBots :) - gunerb1@tcnj.edu - The College of New Jersey Mail](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Welcome%20to%20zzBots%20%3A)%20-%20gunerb1%40tcnj.edu%20-%20The%20College%20of%20New%20Jersey%20Mail&pos=0&uri=https://mail.google.com/mail/u/1/\#inbox/FMfcgxwKkRBWKLqFDGPdrGJDZpKLKTDq)
 
-[Datalad publish ERROR: stderr: 'error: RPC failed; curl 55 Failed sending data to the peer | fatal: the remote end hung up unexpectedly - Issue #3632 - datalad/datalad](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Datalad%20publish%20ERROR%3A%20stderr%3A%20'error%3A%20RPC%20failed%3B%20curl%2055%20Failed%20sending%20data%20to%20the%20peer%20%7C%20fatal%3A%20the%20remote%20end%20hung%20up%20unexpectedly%20%C2%B7%20Issue%20%233632%20%C2%B7%20datalad%2Fdatalad&pos=6410.3701171875&uri=https://github.com/datalad/datalad/issues/3632)
+[Datalad publish ERROR: stderr: ’error: RPC failed; curl 55 Failed sending data to the peer | fatal: the remote end hung up unexpectedly - Issue \#3632 - datalad/datalad](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Datalad%20publish%20ERROR%3A%20stderr%3A%20'error%3A%20RPC%20failed%3B%20curl%2055%20Failed%20sending%20data%20to%20the%20peer%20%7C%20fatal%3A%20the%20remote%20end%20hung%20up%20unexpectedly%20%C2%B7%20Issue%20%233632%20%C2%B7%20datalad%2Fdatalad&pos=6410.3701171875&uri=https://github.com/datalad/datalad/issues/3632)
 
 [Tutorial - Concatenate and convert multiple markdown files to a single HTML | PinguDev](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Tutorial%20-%20Concatenate%20and%20convert%20multiple%20markdown%20files%20to%20a%20single%20HTML%20%7C%20PinguDev&pos=3534.814697265625&uri=https://www.pingudev.com/tutorials/markdown-node-tutorial/)
 
@@ -5306,21 +5310,21 @@ AddToAny
 
 [Pandoc - Demos](https://pandoc.org/demos.html)
 
-[pandoc: command not found - Issue #21 - dfinke/vscode-pandoc](https://github.com/dfinke/vscode-pandoc/issues/21)
+[pandoc: command not found - Issue \#21 - dfinke/vscode-pandoc](https://github.com/dfinke/vscode-pandoc/issues/21)
 
-[tsertkov/exec-sh: npm package with >500M downloads](https://github.com/tsertkov/exec-sh)
+[tsertkov/exec-sh: npm package with &gt;500M downloads](https://github.com/tsertkov/exec-sh)
 
-[bash - How can I resolve this error in shell scripting: "read: Illegal option -t"? - Stack Overflow](https://stackoverflow.com/questions/18308913/how-can-i-resolve-this-error-in-shell-scripting-read-illegal-option-t)
+[bash - How can I resolve this error in shell scripting: “read: Illegal option -t”? - Stack Overflow](https://stackoverflow.com/questions/18308913/how-can-i-resolve-this-error-in-shell-scripting-read-illegal-option-t)
 
 [Processing command line options with multiple arguments in Bash - Stack Overflow](https://stackoverflow.com/questions/46394825/processing-command-line-options-with-multiple-arguments-in-bash)
 
 [Build A Markdown To HTML Conversion Pipeline Using Python - Blog - Florian Dahlitz](https://florian-dahlitz.de/blog/build-a-markdown-to-html-conversion-pipeline-using-python#markdown-to-html-converter)
 
-[DahlitzFlorian/markdown-to-html-generator-article-snippets: Supporting material for the "Markdown To HTML Generator" article series](https://github.com/DahlitzFlorian/markdown-to-html-generator-article-snippets)
+[DahlitzFlorian/markdown-to-html-generator-article-snippets: Supporting material for the “Markdown To HTML Generator” article series](https://github.com/DahlitzFlorian/markdown-to-html-generator-article-snippets)
 
 [pythonhosted.org](https://pythonhosted.org/Markdown/)
 
-[Welcome! --- Pygments](https://pygments.org/)
+[Welcome! — Pygments](https://pygments.org/)
 
 [npm WARN tar EPERM: operation not permitted, futime - Google Search](https://www.google.com/search?q=npm+WARN+tar+EPERM%3A+operation+not+permitted%2C+futime&rlz=1C1UEAD_enUS928US928&oq=npm+WARN+tar+EPERM%3A+operation+not+permitted%2C+futime&aqs=chrome..69i57j69i64l2.804j0j7&sourceid=chrome&ie=UTF-8)
 
@@ -5350,9 +5354,9 @@ AddToAny
 
 ### week17
 
-[WTForms --- WTForms Documentation (2.3.x)](https://wtforms.readthedocs.io/en/2.3.x/)
+[WTForms — WTForms Documentation (2.3.x)](https://wtforms.readthedocs.io/en/2.3.x/)
 
-[Flask-WTF --- Flask-WTF 0.14](https://flask-wtf.readthedocs.io/en/stable/)
+[Flask-WTF — Flask-WTF 0.14](https://flask-wtf.readthedocs.io/en/stable/)
 
 AddToAny
 
@@ -5386,7 +5390,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [bgoonz/mini-project-showcase](https://github.com/bgoonz/mini-project-showcase)
 
-[Hooks at a Glance -- React.md](file:///C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS/WEEKS/wk6/0-notes/Hooks%20at%20a%20Glance%20%E2%80%93%20React.md)
+[Hooks at a Glance – React.md](file:///C:/NEW_BOOTCAMP/Lambda/CIRRICULUMN/Lambda-Student-Resource-Site/WEEKS/WEEKS/wk6/0-notes/Hooks%20at%20a%20Glance%20%E2%80%93%20React.md)
 
 [Site overview | project-showcase-bgoonz](https://app.netlify.com/teams/bgoonz)
 
@@ -5400,7 +5404,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [facebook/react-native-website: The site and docs for React Native](https://github.com/facebook/react-native-website)
 
-[massoudmaboudi/datagit_v2.docusaurus](https://github.com/massoudmaboudi/datagit_v2.docusaurus)
+[massoudmaboudi/datagit\_v2.docusaurus](https://github.com/massoudmaboudi/datagit_v2.docusaurus)
 
 [infinum/eightshift-docs: A documentation website for Eightshift open source projects](https://github.com/infinum/eightshift-docs)
 
@@ -5408,7 +5412,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [docsearch-website/index.js at master - algolia/docsearch-website](https://github.com/algolia/docsearch-website/blob/master/src/pages/index.js)
 
-[bgoonz/BGOONZ_BLOG_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
+[bgoonz/BGOONZ\_BLOG\_2.0: Jamstack site created with Stackbit](https://github.com/bgoonz/BGOONZ_BLOG_2.0)
 
 [Stackbit App](https://app.stackbit.com/studio/609b2d7c71a5dd0016f36326/?utm_campaign=First+Site+Created+Email&utm_content=Welcome+to+Stackbit&utm_medium=email_action&utm_source=customer.io#/docs)
 

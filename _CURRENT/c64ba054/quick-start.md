@@ -1,16 +1,18 @@
-# React Redux Quick Start
+React Redux Quick Start
+=======================
 
      tip What You’ll Learn
 
-- How to set up and use Redux Toolkit with React Redux
+-   How to set up and use Redux Toolkit with React Redux
 
-  info Prerequisites
+    info Prerequisites
 
-- Familiarity with [ES6 syntax and features](https://www.taniarascia.com/es6-syntax-and-feature-overview/)
-- Knowledge of React terminology: [JSX](https://reactjs.org/docs/introducing-jsx.html), [State](https://reactjs.org/docs/state-and-lifecycle.html), [Function Components, Props](https://reactjs.org/docs/components-and-props.html), and [Hooks](https://reactjs.org/docs/hooks-intro.html)
-- Understanding of [Redux terms and concepts](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
+-   Familiarity with [ES6 syntax and features](https://www.taniarascia.com/es6-syntax-and-feature-overview/)
+-   Knowledge of React terminology: [JSX](https://reactjs.org/docs/introducing-jsx.html), [State](https://reactjs.org/docs/state-and-lifecycle.html), [Function Components, Props](https://reactjs.org/docs/components-and-props.html), and [Hooks](https://reactjs.org/docs/hooks-intro.html)
+-   Understanding of [Redux terms and concepts](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
 
-## Introduction
+Introduction
+------------
 
 Welcome to the React Redux Quick Start tutorial! **This tutorial will briefly introduce you to React Redux and teach you how to start using it correctly**.
 
@@ -22,7 +24,8 @@ For this tutorial, we assume that you’re using Redux Toolkit and React Redux t
 
 The [Redux+JS template for Create-React-App](https://github.com/reduxjs/cra-template-redux) comes with this same project setup already configured.
 
-## Usage Summary
+Usage Summary
+-------------
 
 ### Install Redux Toolkit and React Redux
 
@@ -34,7 +37,7 @@ Add the Redux Toolkit and React Redux packages to your project:
 
 Create a file named `src/app/store.js`. Import the `configureStore` API from Redux Toolkit. We’ll start by creating an empty Redux store, and exporting it:
 
-\`\`\`js title=“app/store.js” import { configureStore } from ‘<span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span>’
+\`\`\`js title=“app/store.js” import { configureStore } from ‘<span class="citation" data-cites="reduxjs/toolkit"><span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span></span>’
 
 export default configureStore({ reducer: {}, }) \`\`\`
 
@@ -56,7 +59,7 @@ Creating a slice requires a string name to identify the slice, an initial state 
 
 Redux requires that [we write all state updates immutably, by making copies of data and updating the copies](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow#immutability). However, Redux Toolkit’s `createSlice` and `createReducer` APIs use [Immer](https://immerjs.github.io/immer/) inside to allow us to [write “mutating” update logic that becomes correct immutable updates](https://redux.js.org/tutorials/fundamentals/part-8-modern-redux#immutable-updates-with-immer).
 
-\`\`\`js title=“features/counter/counterSlice.js” import { createSlice } from ‘<span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span>’
+\`\`\`js title=“features/counter/counterSlice.js” import { createSlice } from ‘<span class="citation" data-cites="reduxjs/toolkit"><span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span></span>’
 
 export const counterSlice = createSlice({ name: ‘counter’, initialState: { value: 0, }, reducers: { increment: (state) =&gt; { // Redux Toolkit allows us to write “mutating” logic in reducers. It // doesn’t actually mutate the state because it uses the Immer library, // which detects changes to a “draft state” and produces a brand new // immutable state based off those changes state.value += 1 }, decrement: (state) =&gt; { state.value -= 1 }, incrementByAmount: (state, action) =&gt; { state.value += action.payload }, }, })
 
@@ -68,7 +71,7 @@ export default counterSlice.reducer \`\`\`
 
 Next, we need to import the reducer function from the counter slice and add it to our store. By defining a field inside the `reducers` parameter, we tell the store to use this slice reducer function to handle all updates to that state.
 
-\`\`\`js title=“app/store.js” import { configureStore } from ‘<span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span>’ // highlight-next-line import counterReducer from ‘../features/counter/counterSlice’
+\`\`\`js title=“app/store.js” import { configureStore } from ‘<span class="citation" data-cites="reduxjs/toolkit"><span class="citation" data-cites="reduxjs/toolkit">@reduxjs/toolkit</span></span>’ // highlight-next-line import counterReducer from ‘../features/counter/counterSlice’
 
 export default configureStore({ reducer: { // highlight-next-line counter: counterReducer, }, }) \`\`\`
 
@@ -103,29 +106,30 @@ return (
 
 Now, any time you click the “Increment” and "Decrement buttons:
 
-- The corresponding Redux action will be dispatched to the store
-- The counter slice reducer will see the actions and update its state
-- The `<Counter>` component will see the new state value from the store and re-render itself with the new data
+-   The corresponding Redux action will be dispatched to the store
+-   The counter slice reducer will see the actions and update its state
+-   The `<Counter>` component will see the new state value from the store and re-render itself with the new data
 
-## What You’ve Learned
+What You’ve Learned
+-------------------
 
 That was a brief overview of how to set up and use Redux Toolkit with React. Recapping the details:
 
      tip Summary
 
-- **Create a Redux store with `configureStore`**
-  - `configureStore` accepts a `reducer` function as a named argument
-  - `configureStore` automatically sets up the store with good default settings
-- **Provide the Redux store to the React application components**
-  - Put a React Redux `<Provider>` component around your `<App />`
-  - Pass the Redux store as `<Provider store={store}>`
-- **Create a Redux “slice” reducer with `createSlice`**
-  - Call `createSlice` with a string name, an initial state, and named reducer functions
-  - Reducer functions may “mutate” the state using Immer
-  - Export the generated slice reducer and action creators
-- **Use the React Redux `useSelector/useDispatch` hooks in React components**
-  - Read data from the store with the `useSelector` hook
-  - Get the `dispatch` function with the `useDispatch` hook, and dispatch actions as needed
+-   **Create a Redux store with `configureStore`**
+    -   `configureStore` accepts a `reducer` function as a named argument
+    -   `configureStore` automatically sets up the store with good default settings
+-   **Provide the Redux store to the React application components**
+    -   Put a React Redux `<Provider>` component around your `<App />`
+    -   Pass the Redux store as `<Provider store={store}>`
+-   **Create a Redux “slice” reducer with `createSlice`**
+    -   Call `createSlice` with a string name, an initial state, and named reducer functions
+    -   Reducer functions may “mutate” the state using Immer
+    -   Export the generated slice reducer and action creators
+-   **Use the React Redux `useSelector/useDispatch` hooks in React components**
+    -   Read data from the store with the `useSelector` hook
+    -   Get the `dispatch` function with the `useDispatch` hook, and dispatch actions as needed
 
 ### Full Counter App Example
 
@@ -133,6 +137,7 @@ The counter example app shown here is also the
 
 Here’s the complete counter application as a running CodeSandbox:
 
-## What’s Next?
+What’s Next?
+------------
 
 We recommend going through [**the “Redux Essentials” and “Redux Fundamentals” tutorials in the Redux core docs**](https://redux.js.org/tutorials/index), which will give you a complete understanding of how Redux works, what Redux Toolkit and React Redux do, and how to use it correctly.

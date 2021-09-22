@@ -1,8 +1,10 @@
-# Expressions and operators
+Expressions and operators
+=========================
 
 This chapter documents all the JavaScript language operators, expressions and keywords.
 
-## [Expressions and operators by category](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#expressions_and_operators_by_category "Permalink to Expressions and operators by category")
+[Expressions and operators by category](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#expressions_and_operators_by_category "Permalink to Expressions and operators by category")
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 For an alphabetical listing see the sidebar on the left.
 
@@ -40,7 +42,7 @@ The `async function` defines an async function expression.
 
 [`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
-Pause and resume an async function and wait for the promise's resolution/rejection.
+Pause and resume an async function and wait for the promise’s resolution/rejection.
 
 [`[]`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
@@ -116,7 +118,7 @@ The `delete` operator deletes a property from an object.
 
 [`void`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
 
-The `void` operator discards an expression's return value.
+The `void` operator discards an expression’s return value.
 
 [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
 
