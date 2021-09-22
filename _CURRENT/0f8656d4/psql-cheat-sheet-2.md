@@ -231,7 +231,7 @@ Get sizes of tables, indexes and full DBs:
 - [Unix-like reverse search in psql](https://dba.stackexchange.com/questions/63453/is-there-a-psql-equivalent-of-bashs-reverse-search-history):
 
   $ echo "bind "^R" em-inc-search-prev" > $HOME/.editrc
-    $ source $HOME/.editrc
+  $ source $HOME/.editrc
 
 - Show IP of the DB Instance: `SELECT inet_server_addr();`
 - File to save PostgreSQL credentials and permissions (format: `hostname:port:database:username:password`): `chmod 600 ~/.pgpass`

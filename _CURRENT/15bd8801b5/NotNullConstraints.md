@@ -1,7 +1,6 @@
 #### Not Null Constraints
 
-"Required" Columns
-==================
+# "Required" Columns
 
 To identify a URL in the table you use the key, but it is currently possible to insert rows without a key.
 
