@@ -42,13 +42,13 @@
 
     21Array.prototype.reverse()
 
-In JavaScript, an Array represents an ordered collection of values.
--------------------------------------------------------------------
+## In JavaScript, an Array represents an ordered collection of values.
 
 > The array consists of one or more elements, each having a numbered position inside of the array. This is also called the index. Any given array element can hold any type offered by the JavaScript language. In other words, you can mix and match the various types inside of the same array. Just like most programming languages, arrays in JavaScript are zero based. This means they start at 0 and move up from there. Arrays in JavaScript grow and shrink like magic. That is to say, you do not have to specify the array size ahead of time before placing values in the array. As you add elements, the array dynamically grows for you. The same happens when you remove elements. All JavaScript arrays have a link to Array.prototype which is how we get access to all of the very useful functions we’ll cover here in this tutorial. In true JavaScript style, these functions work not only on any array, but also any “array-like” object.
 
 2. Array.prototype.push()
--------------------------
+
+---
 
 > array.push(element1, …, elementN)
 
@@ -288,7 +288,7 @@ let wisdom = wisdom.join(’ &lt;=\*\*\*=&gt; ’);
 
 console.log(wisdom);
 
-// Do. Or do not. There is no try &lt;=***=&gt; Luminous beings are we…not this crude matter &lt;=***=&gt; Wars not make one great &lt;=***=&gt; Judge me by my size, do you? &lt;=***=&gt; Truly wonderful, the mind of a child is
+// Do. Or do not. There is no try &lt;=**_=&gt; Luminous beings are we…not this crude matter &lt;=_**=&gt; Wars not make one great &lt;=**_=&gt; Judge me by my size, do you? &lt;=_**=&gt; Truly wonderful, the mind of a child is
 
 years = \[1977, 1980, 1983, 1999, 2002, 2005, 2015\];
 
@@ -314,148 +314,147 @@ array.splice() function examples
 
     let darkSide = ['Darth Vader', 'Grand Moff Tarkin', 'Boba Fett', 'Emperor Palpatine'];
 
-      
+
 
     //-----------------------------------------------------//
 
-      
+
 
     // removes 0 elements from index 2, and inserts 'Jabba the Hutt'
 
-      
+
 
     let removed = darkSide.splice(2, 0, 'Jabba the Hutt');
 
-      
+
 
     console.log(darkSide);
 
-      
+
 
     // ['Darth Vader', 'Grand Moff Tarkin', 'Jabba the Hutt', 'Boba Fett', 'Emperor Palpatine']
 
-      
+
 
     console.log(removed);
 
-      
+
 
     // [], no elements removed
 
-      
+
 
     //-----------------------------------------------------//
 
-      
+
 
     // removes 1 element from index 3
 
-      
+
 
     removed = darkSide.splice(3, 1);
 
-      
+
 
     console.log(darkSide);
 
-      
+
 
     // ['Darth Vader', 'Grand Moff Tarkin', 'Jabba the Hutt', 'Emperor Palpatine']
 
-      
+
 
     console.log(removed);
 
-      
+
 
     // ['Boba Fett']
 
-      
+
 
     //-----------------------------------------------------//
 
-      
+
 
     // removes 1 element from index 2, and inserts 'Darth Maul'
 
-      
+
 
     removed = darkSide.splice(2, 1, 'Darth Maul');
 
-      
+
 
     console.log(darkSide);
 
-      
+
 
     // ['Darth Vader', 'Grand Moff Tarkin', 'Darth Maul', 'Emperor Palpatine']
 
-      
+
 
     console.log(removed);
 
-      
+
 
     // ['Jabba the Hutt']
 
-      
+
 
     //-----------------------------------------------------//
 
-      
+
 
     // removes 2 elements from index 0, and inserts 'Count Dooku', 'General Grievous' and 'Asajj Ventress'
 
-      
+
 
     removed = darkSide.splice(0, 2, 'Count Dooku', 'General Grievous', 'Asajj Ventress');
 
-      
+
 
     console.log(darkSide);
 
-      
+
 
     // ['Count Dooku', 'General Grievous', 'Asajj Ventress', 'Darth Maul', 'Emperor Palpatine']
 
-      
+
 
     console.log(removed);
 
-      
+
 
     // ['Darth Vader', 'Grand Moff Tarkin']
 
-      
+
 
     //-----------------------------------------------------//
 
-      
+
 
     // removes 2 elements from index 3
 
-      
+
 
     removed = darkSide.splice(3, darkSide.length);
 
-      
+
 
     console.log(darkSide);
 
-      
+
 
     // ['Count Dooku', 'General Grievous', 'Asajj Ventress']
 
-      
+
 
     console.log(removed);
 
-      
+
 
     // ['Darth Maul', 'Emperor Palpatine']
 
-9. Array.prototype.forEach()
-============================
+9. # Array.prototype.forEach()
 
 array.forEach(callback, thisArg,thisArg)
 
@@ -571,7 +570,7 @@ numbers.forEach(listNumbers);
 
 1.  Array.prototype.concat()
 
-let new\_array = old\_array.concat(value1ParseError: KaTeX parse error: Undefined control sequence: \[ at position 9: , value2\\̲\[̲, …\[, valueN\]\])
+let new_array = old_array.concat(value1ParseError: KaTeX parse error: Undefined control sequence: \[ at position 9: , value2\\̲\[̲, …\[, valueN\]\])
 
 Overview
 
@@ -1105,9 +1104,9 @@ return groupedByCategory;
 
 console.log(‘Our workers have’ + categoryExperienceTotals\[‘Web Design’\] + ’ years of Web Design Experience, ’
 
--   categoryExperienceTotals\[‘Web Development’\] + ’ years of Web Development Experience, and ’
+- categoryExperienceTotals\[‘Web Development’\] + ’ years of Web Development Experience, and ’
 
--   categoryExperienceTotals\[‘Content’\] + ’ years of Content production Experience!’
+- categoryExperienceTotals\[‘Content’\] + ’ years of Content production Experience!’
 
 );
 
@@ -1131,9 +1130,9 @@ return groupedByWorkers;
 
 console.log(‘We have’ + workersByCategory\[‘Web Design’\] + ’ employees in Web Design, ’
 
--   workersByCategory\[‘Web Development’\] + ’ in Web Development, and ’
+- workersByCategory\[‘Web Development’\] + ’ in Web Development, and ’
 
--   workersByCategory\[‘Content’\] + ’ working in Content production!’
+- workersByCategory\[‘Content’\] + ’ working in Content production!’
 
 );
 

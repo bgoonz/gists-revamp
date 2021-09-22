@@ -2,123 +2,122 @@
 
 <a href="https://redux.js.org/introduction/getting-started" class="navbar__item navbar__link">Getting Started</a><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="navbar__item navbar__link">Tutorial</a><a href="https://redux.js.org/api/api-reference" class="navbar__item navbar__link">API</a><a href="https://redux.js.org/faq" class="navbar__item navbar__link">FAQ</a><a href="https://redux.js.org/style-guide/style-guide" class="navbar__item navbar__link">Best Practices</a><a href="https://www.github.com/reduxjs/redux" class="navbar__item navbar__link">GitHub</a><a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="https://redux.js.org/" class="navbar__brand"><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /><strong>Redux</strong></a>
 
--   <a href="https://redux.js.org/introduction/getting-started" class="menu__link">Getting Started</a>
--   <a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="menu__link">Tutorial</a>
--   <a href="https://redux.js.org/api/api-reference" class="menu__link">API</a>
--   <a href="https://redux.js.org/faq" class="menu__link">FAQ</a>
--   <a href="https://redux.js.org/style-guide/style-guide" class="menu__link">Best Practices</a>
--   <a href="https://www.github.com/reduxjs/redux" class="menu__link">GitHub</a>
--   <a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="menu__link">Need help?</a>
+- <a href="https://redux.js.org/introduction/getting-started" class="menu__link">Getting Started</a>
+- <a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="menu__link">Tutorial</a>
+- <a href="https://redux.js.org/api/api-reference" class="menu__link">API</a>
+- <a href="https://redux.js.org/faq" class="menu__link">FAQ</a>
+- <a href="https://redux.js.org/style-guide/style-guide" class="menu__link">Best Practices</a>
+- <a href="https://www.github.com/reduxjs/redux" class="menu__link">GitHub</a>
+- <a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="menu__link">Need help?</a>
 
--   <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
-    -   <a href="https://redux.js.org/introduction/getting-started" class="menu__link">Getting Started with Redux</a>
-    -   <a href="https://redux.js.org/introduction/installation" class="menu__link">Installation</a>
-    -   <a href="https://redux.js.org/introduction/core-concepts" class="menu__link">Core Concepts</a>
-    -   <a href="https://redux.js.org/introduction/learning-resources" class="menu__link">Learning Resources</a>
-    -   <a href="https://redux.js.org/introduction/ecosystem" class="menu__link">Ecosystem</a>
-    -   <a href="https://redux.js.org/introduction/examples" class="menu__link">Examples</a>
--   <a href="#!" class="menu__link menu__link--sublist">Tutorials</a>
+- <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+  - <a href="https://redux.js.org/introduction/getting-started" class="menu__link">Getting Started with Redux</a>
+  - <a href="https://redux.js.org/introduction/installation" class="menu__link">Installation</a>
+  - <a href="https://redux.js.org/introduction/core-concepts" class="menu__link">Core Concepts</a>
+  - <a href="https://redux.js.org/introduction/learning-resources" class="menu__link">Learning Resources</a>
+  - <a href="https://redux.js.org/introduction/ecosystem" class="menu__link">Ecosystem</a>
+  - <a href="https://redux.js.org/introduction/examples" class="menu__link">Examples</a>
+- <a href="#!" class="menu__link menu__link--sublist">Tutorials</a>
 
-    -   <a href="https://redux.js.org/tutorials/index" class="menu__link">Tutorials Index</a>
-    -   <a href="https://redux.js.org/tutorials/quick-start" class="menu__link">Quick Start</a>
-    -   <a href="https://redux.js.org/tutorials/typescript-quick-start" class="menu__link">TypeScript Quick Start</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a>
+  - <a href="https://redux.js.org/tutorials/index" class="menu__link">Tutorials Index</a>
+  - <a href="https://redux.js.org/tutorials/quick-start" class="menu__link">Quick Start</a>
+  - <a href="https://redux.js.org/tutorials/typescript-quick-start" class="menu__link">TypeScript Quick Start</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a>
 
-        -   <a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="menu__link">Redux Overview and Concepts</a>
-        -   <a href="https://redux.js.org/tutorials/essentials/part-2-app-structure" class="menu__link">Redux App Structure</a>
-        -   <a href="https://redux.js.org/tutorials/essentials/part-3-data-flow" class="menu__link">Basic Redux Data Flow</a>
-        -   <a href="https://redux.js.org/tutorials/essentials/part-4-using-data" class="menu__link">Using Redux Data</a>
-        -   <a href="https://redux.js.org/tutorials/essentials/part-5-async-logic" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="https://redux.js.org/tutorials/essentials/part-6-performance-normalization" class="menu__link">Performance and Normalizing Data</a>
+    - <a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="menu__link">Redux Overview and Concepts</a>
+    - <a href="https://redux.js.org/tutorials/essentials/part-2-app-structure" class="menu__link">Redux App Structure</a>
+    - <a href="https://redux.js.org/tutorials/essentials/part-3-data-flow" class="menu__link">Basic Redux Data Flow</a>
+    - <a href="https://redux.js.org/tutorials/essentials/part-4-using-data" class="menu__link">Using Redux Data</a>
+    - <a href="https://redux.js.org/tutorials/essentials/part-5-async-logic" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="https://redux.js.org/tutorials/essentials/part-6-performance-normalization" class="menu__link">Performance and Normalizing Data</a>
 
-        -   <a href="https://redux.js.org/tutorials/fundamentals/part-1-overview" class="menu__link">Redux Overview</a>
-        -   <a href="https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow" class="menu__link">Redux Concepts and Data Flow</a>
-        -   <a href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers" class="menu__link">State, Actions, and Reducers</a>
-        -   <a href="https://redux.js.org/tutorials/fundamentals/part-4-store" class="menu__link">Store</a>
-        -   <a href="https://redux.js.org/tutorials/fundamentals/part-5-ui-react" class="menu__link">UI and React</a>
-        -   <a href="https://redux.js.org/tutorials/fundamentals/part-6-async-logic" class="menu__link">Async Logic and Data Fetching</a>
-        -   <a href="https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns" class="menu__link">Standard Redux Patterns</a>
-        -   <a href="https://redux.js.org/tutorials/fundamentals/part-8-modern-redux" class="menu__link">Modern Redux with Redux Toolkit</a>
+    - <a href="https://redux.js.org/tutorials/fundamentals/part-1-overview" class="menu__link">Redux Overview</a>
+    - <a href="https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow" class="menu__link">Redux Concepts and Data Flow</a>
+    - <a href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers" class="menu__link">State, Actions, and Reducers</a>
+    - <a href="https://redux.js.org/tutorials/fundamentals/part-4-store" class="menu__link">Store</a>
+    - <a href="https://redux.js.org/tutorials/fundamentals/part-5-ui-react" class="menu__link">UI and React</a>
+    - <a href="https://redux.js.org/tutorials/fundamentals/part-6-async-logic" class="menu__link">Async Logic and Data Fetching</a>
+    - <a href="https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns" class="menu__link">Standard Redux Patterns</a>
+    - <a href="https://redux.js.org/tutorials/fundamentals/part-8-modern-redux" class="menu__link">Modern Redux with Redux Toolkit</a>
 
-    -   <a href="https://redux.js.org/recipes/recipe-index" class="menu__link">Recipes: Index</a>
-    -   <a href="https://redux.js.org/recipes/configuring-your-store" class="menu__link">Configuring Your Store</a>
-    -   <a href="https://redux.js.org/recipes/usage-with-typescript" class="menu__link">Usage With TypeScript</a>
-    -   <a href="https://redux.js.org/recipes/migrating-to-redux" class="menu__link">Migrating to Redux</a>
-    -   <a href="https://redux.js.org/recipes/using-object-spread-operator" class="menu__link">Using Object Spread Operator</a>
-    -   <a href="https://redux.js.org/recipes/reducing-boilerplate" class="menu__link">Reducing Boilerplate</a>
-    -   <a href="https://redux.js.org/recipes/server-rendering" class="menu__link">Server Rendering</a>
-    -   <a href="https://redux.js.org/recipes/writing-tests" class="menu__link">Writing Tests</a>
-    -   <a href="https://redux.js.org/recipes/computing-derived-data" class="menu__link">Computing Derived Data</a>
-    -   <a href="https://redux.js.org/recipes/implementing-undo-history" class="menu__link">Implementing Undo History</a>
-    -   <a href="https://redux.js.org/recipes/isolating-redux-sub-apps" class="menu__link">Isolating Redux Sub-Apps</a>
-    -   <a href="https://redux.js.org/recipes/code-splitting" class="menu__link">Code Splitting</a>
-    -   <a href="https://redux.js.org/recipes/troubleshooting" class="menu__link">Troubleshooting</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/structuring-reducers" class="menu__link">Structuring Reducers</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/prerequisite-concepts" class="menu__link">Prerequisite Concepts</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/basic-reducer-structure" class="menu__link">Basic Reducer Structure</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/splitting-reducer-logic" class="menu__link">Splitting Reducer Logic</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/refactoring-reducer-example" class="menu__link">Refactoring Reducers Example</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/using-combinereducers" class="menu__link">Using combineReducers</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers" class="menu__link">Beyond combineReducers</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape" class="menu__link">Normalizing State Shape</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/updating-normalized-data" class="menu__link">Updating Normalized Data</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/reusing-reducer-logic" class="menu__link">Reusing Reducer Logic</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns" class="menu__link">Immutable Update Patterns</a>
-        -   <a href="https://redux.js.org/recipes/structuring-reducers/initializing-state" class="menu__link">Initializing State</a>
+  - <a href="https://redux.js.org/recipes/recipe-index" class="menu__link">Recipes: Index</a>
+  - <a href="https://redux.js.org/recipes/configuring-your-store" class="menu__link">Configuring Your Store</a>
+  - <a href="https://redux.js.org/recipes/usage-with-typescript" class="menu__link">Usage With TypeScript</a>
+  - <a href="https://redux.js.org/recipes/migrating-to-redux" class="menu__link">Migrating to Redux</a>
+  - <a href="https://redux.js.org/recipes/using-object-spread-operator" class="menu__link">Using Object Spread Operator</a>
+  - <a href="https://redux.js.org/recipes/reducing-boilerplate" class="menu__link">Reducing Boilerplate</a>
+  - <a href="https://redux.js.org/recipes/server-rendering" class="menu__link">Server Rendering</a>
+  - <a href="https://redux.js.org/recipes/writing-tests" class="menu__link">Writing Tests</a>
+  - <a href="https://redux.js.org/recipes/computing-derived-data" class="menu__link">Computing Derived Data</a>
+  - <a href="https://redux.js.org/recipes/implementing-undo-history" class="menu__link">Implementing Undo History</a>
+  - <a href="https://redux.js.org/recipes/isolating-redux-sub-apps" class="menu__link">Isolating Redux Sub-Apps</a>
+  - <a href="https://redux.js.org/recipes/code-splitting" class="menu__link">Code Splitting</a>
+  - <a href="https://redux.js.org/recipes/troubleshooting" class="menu__link">Troubleshooting</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Structuring Reducers</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/structuring-reducers" class="menu__link">Structuring Reducers</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/prerequisite-concepts" class="menu__link">Prerequisite Concepts</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/basic-reducer-structure" class="menu__link">Basic Reducer Structure</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/splitting-reducer-logic" class="menu__link">Splitting Reducer Logic</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/refactoring-reducer-example" class="menu__link">Refactoring Reducers Example</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/using-combinereducers" class="menu__link">Using combineReducers</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers" class="menu__link">Beyond combineReducers</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape" class="menu__link">Normalizing State Shape</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/updating-normalized-data" class="menu__link">Updating Normalized Data</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/reusing-reducer-logic" class="menu__link">Reusing Reducer Logic</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns" class="menu__link">Immutable Update Patterns</a>
+    - <a href="https://redux.js.org/recipes/structuring-reducers/initializing-state" class="menu__link">Initializing State</a>
 
--   <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
-        -   <a href="https://redux.js.org/understanding/thinking-in-redux/motivation" class="menu__link">Motivation</a>
-        -   <a href="https://redux.js.org/understanding/thinking-in-redux/three-principles" class="menu__link">Three Principles</a>
-        -   <a href="https://redux.js.org/understanding/thinking-in-redux/glossary" class="menu__link">Glossary</a>
-    -   <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
-        -   <a href="https://redux.js.org/understanding/history-and-design/prior-art" class="menu__link">Prior Art</a>
-        -   <a href="https://redux.js.org/understanding/history-and-design/middleware" class="menu__link">Middleware</a>
--   <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
-    -   <a href="https://redux.js.org/faq" class="menu__link">FAQ Index</a>
-    -   <a href="https://redux.js.org/faq/general" class="menu__link">General</a>
-    -   <a href="https://redux.js.org/faq/reducers" class="menu__link">Reducers</a>
-    -   <a href="https://redux.js.org/faq/organizing-state" class="menu__link">Organizing State</a>
-    -   <a href="https://redux.js.org/faq/store-setup" class="menu__link">Store Setup</a>
-    -   <a href="https://redux.js.org/faq/actions" class="menu__link">Actions</a>
-    -   <a href="https://redux.js.org/faq/immutable-data" class="menu__link">Immutable Data</a>
-    -   <a href="https://redux.js.org/faq/code-structure" class="menu__link">Code Structure</a>
-    -   <a href="https://redux.js.org/faq/performance" class="menu__link">Performance</a>
-    -   <a href="https://redux.js.org/faq/design-decisions" class="menu__link">Design Decisions</a>
-    -   <a href="https://redux.js.org/faq/react-redux" class="menu__link">React Redux</a>
-    -   <a href="https://redux.js.org/faq/miscellaneous" class="menu__link">Miscellaneous</a>
--   <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
-    -   <a href="https://redux.js.org/style-guide/style-guide" class="menu__link">Style Guide: Best Practices</a>
--   <a href="#!" class="menu__link menu__link--sublist menu__link--active">API Reference</a>
-    -   <a href="https://redux.js.org/api/api-reference" class="menu__link">API Reference</a>
-    -   <a href="https://redux.js.org/api/createstore" class="menu__link">createStore</a>
-    -   <a href="https://redux.js.org/api/store" class="menu__link">Store</a>
-    -   <a href="https://redux.js.org/api/combinereducers" class="menu__link">combineReducers</a>
-    -   <a href="https://redux.js.org/api/applymiddleware" class="menu__link menu__link--active active">applyMiddleware</a>
-    -   <a href="https://redux.js.org/api/bindactioncreators" class="menu__link">bindActionCreators</a>
-    -   <a href="https://redux.js.org/api/compose" class="menu__link">compose</a>
--   <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
-    -   <a href="https://redux.js.org/redux-toolkit/overview" class="menu__link">Redux Toolkit: Overview</a>
+- <a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+  - <a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+    - <a href="https://redux.js.org/understanding/thinking-in-redux/motivation" class="menu__link">Motivation</a>
+    - <a href="https://redux.js.org/understanding/thinking-in-redux/three-principles" class="menu__link">Three Principles</a>
+    - <a href="https://redux.js.org/understanding/thinking-in-redux/glossary" class="menu__link">Glossary</a>
+  - <a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+    - <a href="https://redux.js.org/understanding/history-and-design/prior-art" class="menu__link">Prior Art</a>
+    - <a href="https://redux.js.org/understanding/history-and-design/middleware" class="menu__link">Middleware</a>
+- <a href="#!" class="menu__link menu__link--sublist">FAQ</a>
+  - <a href="https://redux.js.org/faq" class="menu__link">FAQ Index</a>
+  - <a href="https://redux.js.org/faq/general" class="menu__link">General</a>
+  - <a href="https://redux.js.org/faq/reducers" class="menu__link">Reducers</a>
+  - <a href="https://redux.js.org/faq/organizing-state" class="menu__link">Organizing State</a>
+  - <a href="https://redux.js.org/faq/store-setup" class="menu__link">Store Setup</a>
+  - <a href="https://redux.js.org/faq/actions" class="menu__link">Actions</a>
+  - <a href="https://redux.js.org/faq/immutable-data" class="menu__link">Immutable Data</a>
+  - <a href="https://redux.js.org/faq/code-structure" class="menu__link">Code Structure</a>
+  - <a href="https://redux.js.org/faq/performance" class="menu__link">Performance</a>
+  - <a href="https://redux.js.org/faq/design-decisions" class="menu__link">Design Decisions</a>
+  - <a href="https://redux.js.org/faq/react-redux" class="menu__link">React Redux</a>
+  - <a href="https://redux.js.org/faq/miscellaneous" class="menu__link">Miscellaneous</a>
+- <a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
+  - <a href="https://redux.js.org/style-guide/style-guide" class="menu__link">Style Guide: Best Practices</a>
+- <a href="#!" class="menu__link menu__link--sublist menu__link--active">API Reference</a>
+  - <a href="https://redux.js.org/api/api-reference" class="menu__link">API Reference</a>
+  - <a href="https://redux.js.org/api/createstore" class="menu__link">createStore</a>
+  - <a href="https://redux.js.org/api/store" class="menu__link">Store</a>
+  - <a href="https://redux.js.org/api/combinereducers" class="menu__link">combineReducers</a>
+  - <a href="https://redux.js.org/api/applymiddleware" class="menu__link menu__link--active active">applyMiddleware</a>
+  - <a href="https://redux.js.org/api/bindactioncreators" class="menu__link">bindActionCreators</a>
+  - <a href="https://redux.js.org/api/compose" class="menu__link">compose</a>
+- <a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+  - <a href="https://redux.js.org/redux-toolkit/overview" class="menu__link">Redux Toolkit: Overview</a>
 
-<span id="applymiddlewaremiddleware" class="anchor enhancedAnchor_2LWZ"></span>`applyMiddleware(...middleware)`<a href="#applymiddlewaremiddleware" class="hash-link" title="Direct link to heading">#</a>
-==========================================================================================================================================================================================================
+# <span id="applymiddlewaremiddleware" class="anchor enhancedAnchor_2LWZ"></span>`applyMiddleware(...middleware)`<a href="#applymiddlewaremiddleware" class="hash-link" title="Direct link to heading">#</a>
 
 Middleware is the suggested way to extend Redux with custom functionality. Middleware lets you wrap the store’s [`dispatch`](https://redux.js.org/api/store#dispatchaction) method for fun and profit. The key feature of middleware is that it is composable. Multiple middleware can be combined together, where each middleware requires no knowledge of what comes before or after it in the chain.
 
 The most common use case for middleware is to support asynchronous actions without much boilerplate code or a dependency on a library like [Rx](https://github.com/Reactive-Extensions/RxJS). It does so by letting you dispatch [async actions](https://redux.js.org/understanding/thinking-in-redux/glossary#async-action) in addition to normal actions.
 
-For example, [redux-thunk](https://github.com/gaearon/redux-thunk) lets the action creators invert control by dispatching functions. They would receive [`dispatch`](https://redux.js.org/api/store#dispatchaction) as an argument and may call it asynchronously. Such functions are called *thunks*. Another example of middleware is [redux-promise](https://github.com/acdlite/redux-promise). It lets you dispatch a [Promise](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise) async action, and dispatches a normal action when the Promise resolves.
+For example, [redux-thunk](https://github.com/gaearon/redux-thunk) lets the action creators invert control by dispatching functions. They would receive [`dispatch`](https://redux.js.org/api/store#dispatchaction) as an argument and may call it asynchronously. Such functions are called _thunks_. Another example of middleware is [redux-promise](https://github.com/acdlite/redux-promise). It lets you dispatch a [Promise](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise) async action, and dispatches a normal action when the Promise resolves.
 
 Middleware is not baked into [`createStore`](https://redux.js.org/api/createstore) and is not a fundamental part of the Redux architecture, but we consider it useful enough to be supported right in the core. This way, there is a single standard way to extend [`dispatch`](https://redux.js.org/api/store#dispatchaction) in the ecosystem, and different middleware may compete in expressiveness and utility.
 
 #### <span id="arguments" class="anchor enhancedAnchor_2LWZ"></span>Arguments<a href="#arguments" class="hash-link" title="Direct link to heading">#</a>
 
--   `...middleware` (*arguments*): Functions that conform to the Redux *middleware API*. Each middleware receives [`Store`](https://redux.js.org/api/store)’s [`dispatch`](https://redux.js.org/api/store#dispatchaction) and [`getState`](https://redux.js.org/api/store#getState) functions as named arguments, and returns a function. That function will be given the `next` middleware’s dispatch method, and is expected to return a function of `action` calling `next(action)` with a potentially different argument, or at a different time, or maybe not calling it at all. The last middleware in the chain will receive the real store’s [`dispatch`](https://redux.js.org/api/store#dispatchaction) method as the `next` parameter, thus ending the chain. So, the middleware signature is `({ getState, dispatch }) => next => action`.
+- `...middleware` (_arguments_): Functions that conform to the Redux _middleware API_. Each middleware receives [`Store`](https://redux.js.org/api/store)’s [`dispatch`](https://redux.js.org/api/store#dispatchaction) and [`getState`](https://redux.js.org/api/store#getState) functions as named arguments, and returns a function. That function will be given the `next` middleware’s dispatch method, and is expected to return a function of `action` calling `next(action)` with a potentially different argument, or at a different time, or maybe not calling it at all. The last middleware in the chain will receive the real store’s [`dispatch`](https://redux.js.org/api/store#dispatchaction) method as the `next` parameter, thus ending the chain. So, the middleware signature is `({ getState, dispatch }) => next => action`.
 
 #### <span id="returns" class="anchor enhancedAnchor_2LWZ"></span>Returns<a href="#returns" class="hash-link" title="Direct link to heading">#</a>
 
-(*Function*) A store enhancer that applies the given middleware. The store enhancer signature is `createStore => createStore` but the easiest way to apply it is to pass it to [`createStore()`](https://redux.js.org/api/createstore) as the last `enhancer` argument.
+(_Function_) A store enhancer that applies the given middleware. The store enhancer signature is `createStore => createStore` but the easiest way to apply it is to pass it to [`createStore()`](https://redux.js.org/api/createstore) as the last `enhancer` argument.
 
 #### <span id="example-custom-logger-middleware" class="anchor enhancedAnchor_2LWZ"></span>Example: Custom Logger Middleware<a href="#example-custom-logger-middleware" class="hash-link" title="Direct link to heading">#</a>
 
@@ -164,7 +163,7 @@ Middleware is not baked into [`createStore`](https://redux.js.org/api/createstor
 
 <span class="token plain">store</span><span class="token punctuation" style="color: #f8f8f2">.</span><span style="color: #e6d874">dispatch</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD\_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘ADD_TODO’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> text</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘Understand the middleware’</span><span class="token plain"></span>
 
@@ -172,7 +171,7 @@ Middleware is not baked into [`createStore`](https://redux.js.org/api/createstor
 
 <span class="token plain"></span><span class="token comment" style="color: #c6cad2">// (These lines will be logged by the middleware:)</span><span class="token plain"></span>
 
-<span class="token plain"></span><span class="token comment" style="color: #c6cad2">// will dispatch: { type: ‘ADD\_TODO’, text: ‘Understand the middleware’ }</span><span class="token plain"></span>
+<span class="token plain"></span><span class="token comment" style="color: #c6cad2">// will dispatch: { type: ‘ADD_TODO’, text: ‘Understand the middleware’ }</span><span class="token plain"></span>
 
 <span class="token plain"></span><span class="token comment" style="color: #c6cad2">// state after dispatch: \[ ‘Use Redux’, ‘Understand the middleware’ \]</span>\#\#\#\# <span id="example-using-thunk-middleware-for-async-actions" class="anchor enhancedAnchor_2LWZ"></span>Example: Using Thunk Middleware for Async Actions<a href="#example-using-thunk-middleware-for-async-actions" class="hash-link" title="Direct link to heading">#</a>
 
@@ -210,7 +209,7 @@ Middleware is not baked into [`createStore`](https://redux.js.org/api/createstor
 
 <span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘MAKE\_SANDWICH’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+<span class="token plain"> type</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘MAKE_SANDWICH’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
 <span class="token plain"> forPerson</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
@@ -446,45 +445,45 @@ Middleware is not baked into [`createStore`](https://redux.js.org/api/createstor
 
 <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token maybe-class-name">SandwichShop</span><span class="token punctuation" style="color: #f8f8f2">)</span>\#\#\#\# <span id="tips" class="anchor enhancedAnchor_2LWZ"></span>Tips<a href="#tips" class="hash-link" title="Direct link to heading">#</a>
 
--   Middleware only wraps the store’s [`dispatch`](https://redux.js.org/api/store#dispatchaction) function. Technically, anything a middleware can do, you can do manually by wrapping every `dispatch` call, but it’s easier to manage this in a single place and define action transformations on the scale of the whole project.
+- Middleware only wraps the store’s [`dispatch`](https://redux.js.org/api/store#dispatchaction) function. Technically, anything a middleware can do, you can do manually by wrapping every `dispatch` call, but it’s easier to manage this in a single place and define action transformations on the scale of the whole project.
 
--   If you use other store enhancers in addition to `applyMiddleware`, make sure to put `applyMiddleware` before them in the composition chain because the middleware is potentially asynchronous. For example, it should go before [redux-devtools](https://github.com/reduxjs/redux-devtools) because otherwise the DevTools won’t see the raw actions emitted by the Promise middleware and such.
+- If you use other store enhancers in addition to `applyMiddleware`, make sure to put `applyMiddleware` before them in the composition chain because the middleware is potentially asynchronous. For example, it should go before [redux-devtools](https://github.com/reduxjs/redux-devtools) because otherwise the DevTools won’t see the raw actions emitted by the Promise middleware and such.
 
--   If you want to conditionally apply a middleware, make sure to only import it when it’s needed:
+- If you want to conditionally apply a middleware, make sure to only import it when it’s needed:
 
-    <span class="token keyword" style="color: #f92672">let</span><span class="token plain"> middleware </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token plain">a</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> b</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token plain"></span>
+  <span class="token keyword" style="color: #f92672">let</span><span class="token plain"> middleware </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token plain">a</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> b</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token plain"></span>
 
-    <span class="token plain"></span><span class="token keyword control-flow" style="color: #f92672">if</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">process</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">env</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token constant" style="color: #f92672">NODE\_ENV</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">!==</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘production’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
+  <span class="token plain"></span><span class="token keyword control-flow" style="color: #f92672">if</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">process</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">env</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token constant" style="color: #f92672">NODE_ENV</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">!==</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘production’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span>
 
-    <span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> c </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">require</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token string" style="color: #a6e22e">‘some-debug-middleware’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
+  <span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> c </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">require</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token string" style="color: #a6e22e">‘some-debug-middleware’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
-    <span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> d </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">require</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token string" style="color: #a6e22e">‘another-debug-middleware’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
+  <span class="token plain"> </span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> d </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">require</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token string" style="color: #a6e22e">‘another-debug-middleware’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
-    <span class="token plain"> middleware </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token spread operator" style="color: #f8f8f2">…</span><span class="token plain">middleware</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> c</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> d</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token plain"></span>
+  <span class="token plain"> middleware </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">\[</span><span class="token spread operator" style="color: #f8f8f2">…</span><span class="token plain">middleware</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> c</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"> d</span><span class="token punctuation" style="color: #f8f8f2">\]</span><span class="token plain"></span>
 
-    <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span>
+  <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span>
 
-    <span class="token plain" style="display: inline-block"> </span>
+  <span class="token plain" style="display: inline-block"> </span>
 
-    <span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> store </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">createStore</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain"></span>
+  <span class="token plain"></span><span class="token keyword" style="color: #f92672">const</span><span class="token plain"> store </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">createStore</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain"></span>
 
-    <span class="token plain"> reducer</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+  <span class="token plain"> reducer</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
-    <span class="token plain"> preloadedState</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
+  <span class="token plain"> preloadedState</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span>
 
-    <span class="token plain"> </span><span class="token function" style="color: #e6d874">applyMiddleware</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token spread operator" style="color: #f8f8f2">…</span><span class="token plain">middleware</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
+  <span class="token plain"> </span><span class="token function" style="color: #e6d874">applyMiddleware</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token spread operator" style="color: #f8f8f2">…</span><span class="token plain">middleware</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"></span>
 
-    <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">)</span>
+  <span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">)</span>
 
-    Copy
+  Copy
 
-    This makes it easier for bundling tools to cut out unneeded modules and reduces the size of your builds.
+  This makes it easier for bundling tools to cut out unneeded modules and reduces the size of your builds.
 
--   Ever wondered what `applyMiddleware` itself is? It ought to be an extension mechanism more powerful than the middleware itself. Indeed, `applyMiddleware` is an example of the most powerful Redux extension mechanism called [store enhancers](https://redux.js.org/understanding/thinking-in-redux/glossary#store-enhancer). It is highly unlikely you’ll ever want to write a store enhancer yourself. Another example of a store enhancer is [redux-devtools](https://github.com/reduxjs/redux-devtools). Middleware is less powerful than a store enhancer, but it is easier to write.
+- Ever wondered what `applyMiddleware` itself is? It ought to be an extension mechanism more powerful than the middleware itself. Indeed, `applyMiddleware` is an example of the most powerful Redux extension mechanism called [store enhancers](https://redux.js.org/understanding/thinking-in-redux/glossary#store-enhancer). It is highly unlikely you’ll ever want to write a store enhancer yourself. Another example of a store enhancer is [redux-devtools](https://github.com/reduxjs/redux-devtools). Middleware is less powerful than a store enhancer, but it is easier to write.
 
--   Middleware sounds much more complicated than it really is. The only way to really understand middleware is to see how the existing middleware works, and try to write your own. The function nesting can be intimidating, but most of the middleware you’ll find are, in fact, 10-liners, and the nesting and composability is what makes the middleware system powerful.
+- Middleware sounds much more complicated than it really is. The only way to really understand middleware is to see how the existing middleware works, and try to write your own. The function nesting can be intimidating, but most of the middleware you’ll find are, in fact, 10-liners, and the nesting and composability is what makes the middleware system powerful.
 
--   To apply multiple store enhancers, you may use [`compose()`](https://redux.js.org/api/compose).
+- To apply multiple store enhancers, you may use [`compose()`](https://redux.js.org/api/compose).
 
 <a href="https://redux.js.org/api/combinereducers" class="pagination-nav__link"></a>
 
@@ -498,20 +497,20 @@ bindActionCreators »
 
 #### Docs
 
--   <a href="https://redux.js.org/introduction/getting-started" class="footer__link-item">Getting Started</a>
--   <a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="footer__link-item">Tutorial</a>
--   <a href="https://redux.js.org/faq" class="footer__link-item">FAQ</a>
--   <a href="https://redux.js.org/api/api-reference" class="footer__link-item">API Reference</a>
+- <a href="https://redux.js.org/introduction/getting-started" class="footer__link-item">Getting Started</a>
+- <a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts" class="footer__link-item">Tutorial</a>
+- <a href="https://redux.js.org/faq" class="footer__link-item">FAQ</a>
+- <a href="https://redux.js.org/api/api-reference" class="footer__link-item">API Reference</a>
 
 #### Community
 
--   <a href="https://discord.gg/0ZcbPKXt5bZ6au5t" class="footer__link-item">Reactiflux Discord</a>
--   <a href="http://stackoverflow.com/questions/tagged/redux" class="footer__link-item">Stack Overflow</a>
--   <a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="footer__link-item">Feedback</a>
+- <a href="https://discord.gg/0ZcbPKXt5bZ6au5t" class="footer__link-item">Reactiflux Discord</a>
+- <a href="http://stackoverflow.com/questions/tagged/redux" class="footer__link-item">Stack Overflow</a>
+- <a href="https://redux.js.org/introduction/getting-started#help-and-discussion" class="footer__link-item">Feedback</a>
 
 #### More
 
--   <a href="https://github.com/reduxjs/redux" class="footer__link-item">GitHub</a>
--   [![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-color-accent.svg)](https://www.netlify.com/)
+- <a href="https://github.com/reduxjs/redux" class="footer__link-item">GitHub</a>
+- [![Deploys by Netlify](https://www.netlify.com/img/global/badges/netlify-color-accent.svg)](https://www.netlify.com/)
 
 <a href="https://redux.js.org/" class="footerLogoLink_MyFc"><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" /><img src="https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--dark_hz6m footer__logo" /></a>
