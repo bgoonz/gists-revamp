@@ -16,7 +16,7 @@ firstNotRepeatingCharacter(s) = '_'.
 There are no characters in this string that do not repeat.
 """
 
-s1 = "abacabad"
+
 
 
 # 1. We iterate over the string.
@@ -24,7 +24,7 @@ s1 = "abacabad"
 # 3. If it’s not, we return it.
 # 4. If it is, we continue to the next character.
 
-
+s1 = "abacabad"
 
 def firstNotRepeatingCharacter(s):
     for i in range(len(s)):
@@ -34,4 +34,4 @@ def firstNotRepeatingCharacter(s):
     return "_"
 
 
-print(firstNotRepeatingCharacter(s1))    
+print(firstNotRepeatingCharacter(s1)) # C
