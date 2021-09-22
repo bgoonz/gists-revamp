@@ -1,172 +1,162 @@
-Analytics Dashboard
-===================
+# Analytics Dashboard
 
--   <a href="#" class="selected">Visits</a>
--   [Pageviews](#)
--   [Conversions](#)
+- <a href="#" class="selected">Visits</a>
+- [Pageviews](#)
+- [Conversions](#)
 
--   Total Visits
+- Total Visits
 
-    356
+  356
 
--   Average
+- Average
 
-    50.9
+  50.9
 
--   Change
+- Change
 
-    +122.2%
-
-<!-- -->
-
--   Total Pageviews
-
-    468
-
--   Average
-
-    66.9
-
--   Change
-
-    +16.7%
+  +122.2%
 
 <!-- -->
 
--   Total Conversions
+- Total Pageviews
 
-    456
+  468
 
--   Average
+- Average
 
-    65.1
+  66.9
 
--   Change
+- Change
 
-    -47.4%
+  +16.7%
 
--   Range
+<!-- -->
 
-    7 days
+- Total Conversions
 
--   Timezone
+  456
 
-    PDT
+- Average
 
--   Spirit Animal
+  65.1
 
-    Duck
+- Change
 
--   
+  -47.4%
 
-    3/8  
-    36
+- Range
 
-    <!-- -->
+  7 days
 
-    3/9  
-    44
+- Timezone
 
-    <!-- -->
+  PDT
 
-    3/10  
-    52
+- Spirit Animal
 
-    <!-- -->
+  Duck
 
-    3/11  
-    32
+- 3/8  
+  36
 
-    <!-- -->
+  <!-- -->
 
-    3/12  
-    44
+  3/9  
+  44
 
-    <!-- -->
+  <!-- -->
 
-    3/13  
-    68
+  3/10  
+  52
 
-    <!-- -->
+  <!-- -->
 
-    3/14  
-    80
+  3/11  
+  32
 
-    Visits
-    ======
+  <!-- -->
 
--   
+  3/12  
+  44
 
-    3/8  
-    72
+  <!-- -->
 
-    <!-- -->
+  3/13  
+  68
 
-    3/9  
-    56
+  <!-- -->
 
-    <!-- -->
+  3/14  
+  80
 
-    3/10  
-    64
+  # Visits
 
-    <!-- -->
+- 3/8  
+  72
 
-    3/11  
-    48
+  <!-- -->
 
-    <!-- -->
+  3/9  
+  56
 
-    3/12  
-    64
+  <!-- -->
 
-    <!-- -->
+  3/10  
+  64
 
-    3/13  
-    80
+  <!-- -->
 
-    <!-- -->
+  3/11  
+  48
 
-    3/14  
-    84
+  <!-- -->
 
-    Pageviews
-    =========
+  3/12  
+  64
 
--   
+  <!-- -->
 
-    3/8  
-    76
+  3/13  
+  80
 
-    <!-- -->
+  <!-- -->
 
-    3/9  
-    88
+  3/14  
+  84
 
-    <!-- -->
+  # Pageviews
 
-    3/10  
-    72
+- 3/8  
+  76
 
-    <!-- -->
+  <!-- -->
 
-    3/11  
-    68
+  3/9  
+  88
 
-    <!-- -->
+  <!-- -->
 
-    3/12  
-    52
+  3/10  
+  72
 
-    <!-- -->
+  <!-- -->
 
-    3/13  
-    60
+  3/11  
+  68
 
-    <!-- -->
+  <!-- -->
 
-    3/14  
-    40
+  3/12  
+  52
 
-    Conversions
-    ===========
+  <!-- -->
+
+  3/13  
+  60
+
+  <!-- -->
+
+  3/14  
+  40
+
+  # Conversions
