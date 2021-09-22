@@ -1,6 +1,6 @@
-var Anakin = Skywalker("Anakin");
-var Luke = Anakin.map((x) => "Luke");
-var Leia = Anakin.map((x) => "Leia");
+const Anakin = Skywalker("Anakin");
+const Luke = Anakin.map((x) => "Luke");
+const Leia = Anakin.map((x) => "Leia");
 
 function nonJedi(who) {
   if (who == "Rey") return Force.of(who);

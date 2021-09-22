@@ -1,6 +1,6 @@
 // these `xx` parameters are all used, so no "unused parameter" errors should be reported
 
-var f;
+let f;
 
 f = (xx) => xx;
 f = (xx) => () => xx;

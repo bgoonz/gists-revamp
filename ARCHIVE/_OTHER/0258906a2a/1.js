@@ -1,4 +1,4 @@
-var Force = { Skywalker, RegularFolk, of: Skywalker };
+const Force = { Skywalker, RegularFolk, of: Skywalker };
 
 function Skywalker(v) {
   return { map, chain, ap };

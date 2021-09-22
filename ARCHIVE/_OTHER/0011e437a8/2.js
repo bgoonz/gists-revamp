@@ -2,7 +2,7 @@
 //   xx, yy, zz, ww, rr, kk, aa, ss, dd, gg
 // so "unused parameter" errors should be reported for all of them
 
-var f;
+let f;
 
 f = (xx) => 3;
 f = (yy = 3) => {
@@ -28,19 +28,19 @@ f = (
 f = (
   ss,
   tt = () => {
-    var ss;
+    let ss;
   }
 ) => tt;
 f = (
   dd,
   ee = () => {
-    var dd = 3;
+    const dd = 3;
   }
 ) => ee;
 f = (
   gg,
   hh = () => {
-    var gg;
+    let gg;
     gg = 3;
   }
 ) => hh;
