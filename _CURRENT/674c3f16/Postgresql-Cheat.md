@@ -1,9 +1,8 @@
-Postgresql Cheat Sheet
-======================
+# Postgresql Cheat Sheet
 
 PostgreSQL commands
 
-------------------------------------------------------------------------
+---
 
 #### <a href="http://medium.com/codex" class="markup--anchor markup--h4-anchor">CODEX</a>
 
@@ -297,7 +296,7 @@ Collect statistics:
 
     ANALYZE table_name;
 
-------------------------------------------------------------------------
+---
 
 ### Postgres & JSON:
 
@@ -436,14 +435,14 @@ Output:
 
 Using the JSON operators, combined with traditional PostgreSQL aggregate functions, we can pull out whatever we want. You have the full might of an RDBMS at your disposal.
 
--   <span id="4ffd">Lets see browser usage:</span>
--   <span id="261c">`SELECT browser->>'name' AS browser, count(browser) FROM             events GROUP BY browser->>'name';`</span>
+- <span id="4ffd">Lets see browser usage:</span>
+- <span id="261c">`SELECT browser->>'name' AS browser, count(browser) FROM events GROUP BY browser->>'name';`</span>
 
 Output:
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*4lEv2DgUk33FeUgo" class="graf-image" /></figure>-   <span id="946c">Total revenue per visitor:</span>
 
-`SELECT visitor_id, SUM(CAST(properties->>'amount' AS integer)) AS         total FROM events WHERE CAST(properties->>'amount' AS integer)         > 0 GROUP BY visitor_id;`
+`SELECT visitor_id, SUM(CAST(properties->>'amount' AS integer)) AS total FROM events WHERE CAST(properties->>'amount' AS integer) > 0 GROUP BY visitor_id;`
 
 Output:
 

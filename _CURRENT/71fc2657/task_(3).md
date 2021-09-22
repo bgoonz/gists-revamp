@@ -1,9 +1,8 @@
 importance: 2
 
-------------------------------------------------------------------------
+---
 
-Working with variables
-======================
+# Working with variables
 
 1.  Declare two variables: `admin` and `name`.
 2.  Assign the value `"John"` to `name`.

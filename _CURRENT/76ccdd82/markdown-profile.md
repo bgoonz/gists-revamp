@@ -1,9 +1,8 @@
 \`\`\`md
 
-Hi 👋, I’m Bryan
-===============
+# Hi 👋, I’m Bryan
 
-------------------------------------------------------------------------
+---
 
 ![Profile views](https://views.whatilearened.today/views/github/bgoonz/views.svg)
 
@@ -13,7 +12,7 @@ Hi 👋, I’m Bryan
 
 [![—————————————————–](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#_email_)
 
- ![bgoonz](https://github-readme-stats.vercel.app/api?username=bgoonz&show_icons=true&locale=en)
+![bgoonz](https://github-readme-stats.vercel.app/api?username=bgoonz&show_icons=true&locale=en)
 
 ![bgoonz](https://github-readme-streak-stats.herokuapp.com/?user=bgoonz&)
 
@@ -23,43 +22,40 @@ Hi 👋, I’m Bryan
 
 [![—————————————————–](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#_email_)
 
-➤ *Email*
----------
+## ➤ _Email_
 
 #### [bryan.guner@gmail.com](#)
 
 [![—————————————————–](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#_phone_)
 
-➤ *Phone*
----------
+## ➤ _Phone_
 
 #### [551-254-5505](551-254-5505)
 
-------------------------------------------------------------------------
+---
 
-➤ Connect with me:
-------------------
+## ➤ Connect with me:
 
 [![email](https://img.icons8.com/color/96/000000/gmail.png)](mailto:bryan.guner@gmail.com)[![facebook](https://img.icons8.com/color/96/000000/facebook.png)](https://www.facebook.com/bryan.guner/)[![twitter](https://img.icons8.com/color/96/000000/twitter-squared.png)](https://twitter.com/bgooonz)[![youtube](https://img.icons8.com/color/96/000000/youtube.png)](https://www.youtube.com/channel/UC9-rYyUMsnEBK8G8fCyrXXA/videos)[![instagram](https://img.icons8.com/color/96/000000/instagram-new.png)](https://www.instagram.com/bgoonz/?hl=en)[![pinterest](https://img.icons8.com/color/96/000000/pinterest--v1.png)](https://www.pinterest.com/bryanguner/_saved/)[![linkedin](https://img.icons8.com/color/96/000000/linkedin.png)](https://www.linkedin.com/in/bryan-guner-046199128/) [![medium](https://img.icons8.com/color/96/000000/medium-logo.png)](https://bryanguner.medium.com/)[![spotify](https://img.icons8.com/color/96/000000/spotify--v1.png)](https://open.spotify.com/user/bgoonz?si=ShH9wYbIQWab5Jz_30BKFw)
 
--   [GitHub](https://github.com/bgoonz)
--   [Gitlab](https://gitlab.com/bryan.guner.dev)
--   [Bitbucket](https://bitbucket.org/bgoonz/)
--   [code pen](https://codepen.io/bgoonz)
--   [Glitch](https://glitch.com/@bgoonz)
--   [Replit](https://repl.it/@bgoonz/)
--   [Redit](https://www.reddit.com/user/bgoonz1)
--   [runkit](https://runkit.com/bgoonz)
--   [stack-exchange](https://meta.stackexchange.com/users/936785/bryan-guner)
--   [Netlify](https://app.netlify.com/user/settings#profile)
--   [Medium](https://bryanguner.medium.com/)
--   [webcomponents.dev](https://webcomponents.dev/user/bgoonz)
--   [npm](https://www.npmjs.com/~bgoonz11)
--   [Upwork](https://www.upwork.com/freelancers/~01bb1a3627e1e9c630?viewMode=1&s=1110580755057594368)
--   [AngelList](https://angel.co/u/bryan-guner)
--   [Quora](https://www.quora.com/q/webdevresourcehub?invite_code=qwZOqbpAhgQ6hjjGl8NN)  
--   [dev.to](https://dev.to/bgoonz)
--   [Observable Notebooks](https://observablehq.com/@bgoonz?tab=profile)
+- [GitHub](https://github.com/bgoonz)
+- [Gitlab](https://gitlab.com/bryan.guner.dev)
+- [Bitbucket](https://bitbucket.org/bgoonz/)
+- [code pen](https://codepen.io/bgoonz)
+- [Glitch](https://glitch.com/@bgoonz)
+- [Replit](https://repl.it/@bgoonz/)
+- [Redit](https://www.reddit.com/user/bgoonz1)
+- [runkit](https://runkit.com/bgoonz)
+- [stack-exchange](https://meta.stackexchange.com/users/936785/bryan-guner)
+- [Netlify](https://app.netlify.com/user/settings#profile)
+- [Medium](https://bryanguner.medium.com/)
+- [webcomponents.dev](https://webcomponents.dev/user/bgoonz)
+- [npm](https://www.npmjs.com/~bgoonz11)
+- [Upwork](https://www.upwork.com/freelancers/~01bb1a3627e1e9c630?viewMode=1&s=1110580755057594368)
+- [AngelList](https://angel.co/u/bryan-guner)
+- [Quora](https://www.quora.com/q/webdevresourcehub?invite_code=qwZOqbpAhgQ6hjjGl8NN)
+- [dev.to](https://dev.to/bgoonz)
+- [Observable Notebooks](https://observablehq.com/@bgoonz?tab=profile)
 
 [![—————————————————–](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#blog)
 
@@ -99,23 +95,23 @@ About Me
 
 ### A passionate Web Developer, Electrical Engineer, Musician & Producer
 
--   🔭 Contract Web Development **Relational Concepts**
+- 🔭 Contract Web Development **Relational Concepts**
 
--   🌱 I’m currently learning **React/Redux, Python, Java, Express, jQuery**
+- 🌱 I’m currently learning **React/Redux, Python, Java, Express, jQuery**
 
--   👯 I’m looking to collaborate on [Any web audio or open source educational tools.](https://goofy-euclid-1cd736.netlify.app/core-site/index.html)
+- 👯 I’m looking to collaborate on [Any web audio or open source educational tools.](https://goofy-euclid-1cd736.netlify.app/core-site/index.html)
 
--   🤝 I’m looking for help with [Learning React](https://github.com/bgoonz/React-Practice)
+- 🤝 I’m looking for help with [Learning React](https://github.com/bgoonz/React-Practice)
 
--   👨‍💻 All of my projects are available at <https://bgoonz.github.io/>
+- 👨‍💻 All of my projects are available at <https://bgoonz.github.io/>
 
--   📝 I regularly write articles on [medium](https://bryanguner.medium.com/) && [Web-Dev-Resource-Hub](https://web-dev-resource-hub.netlify.app/)
+- 📝 I regularly write articles on [medium](https://bryanguner.medium.com/) && [Web-Dev-Resource-Hub](https://web-dev-resource-hub.netlify.app/)
 
--   💬 Ask me about **Anything:**
+- 💬 Ask me about **Anything:**
 
--   📫 How to reach me **bryan.guner@gmail.com**
+- 📫 How to reach me **bryan.guner@gmail.com**
 
--   ⚡ Fun fact **I played Bamboozle Music Festival at the Meadowlands Stadium Complex when I was 14.**
+- ⚡ Fun fact **I played Bamboozle Music Festival at the Meadowlands Stadium Complex when I was 14.**
 
 ### i really like music :headphones:
 
@@ -169,7 +165,7 @@ Creating things that change my every day life.
 
 > ― Mahatma Gandhi
 
-🤖 **My Programming Stats**:  
+🤖 **My Programming Stats**:
 
 [![bgoonz’s wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=bgoonz)](https://github.com/bgoonz/github-readme-stats)
 
@@ -185,55 +181,52 @@ See More
 
 Resume
 
-➤ Technical Skills­­­
-=====================
+# ➤ Technical Skills­­­
 
 <table style="width:99%;"><colgroup><col style="width: 20%" /><col style="width: 79%" /></colgroup><thead><tr class="header"><th><strong>Programming</strong>** Languages:**</th><th>JavaScript ES-6, NodeJS, React, HTML5, CSS3, SCSS, Bash Shell, Excel, SQL, NoSQL, MATLAB, Python, C++</th></tr></thead><tbody><tr class="odd"><td><strong>Databases:</strong></td><td>PostgreSQL, MongoDB</td></tr><tr class="even"><td><strong>Cloud:</strong></td><td>Docker, AWS, Google App Engine, Netlify, Digital Ocean, Heroku, Azure Cloud Services</td></tr><tr class="odd"><td><strong>OS:</strong></td><td>Linux, Windows (WSL), IOS</td></tr><tr class="even"><td><strong>Agile:</strong></td><td>GitHub, BitBucket, Jira, Confluence</td></tr><tr class="odd"><td><strong>IDEs:</strong></td><td>VSCode, Visual Studio, Atom, Code Blocks, Sublime Text 3, Brackets</td></tr></tbody></table>
 
-------------------------------------------------------------------------
+---
 
 [![—————————————————–](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#experience)
 
-➤ Experience
-============
+# ➤ Experience
 
 <table><thead><tr class="header"><th><strong>Relational Concepts:</strong> Hallandale Beach, FL</th><th>March 2020 - Present</th></tr></thead><tbody><tr class="odd"><td><strong>Front End Web Developer</strong></td><td></td></tr><tr class="even"><td></td><td></td></tr></tbody></table>
 
--   Responsible for front-end development for a custom real estate application which provides sophisticated and fully customizable filtering to allow investors and real estate professionals to narrow in on exact search targets.
--   Designed mock-up screens, wireframes, and workflows for intuitive user experience.
--   Migrated existing multi-page user experience into singular page interfaces using React components.
--   Participated in every stage of the design from conception through development and iterative improvement.
--   Produced user stories and internal documentation for future site development and maintenance.
--   Implemented modern frameworks including Bootstrap and Font-Awesome to give the site an aesthetic overhaul.
--   Managed all test deployments using a combination of Digital Ocean and Netlify.
--   Produced unit tests using a combination of Mocha and Chai.
--   Injected Google Analytics to capture pertinent usage data to produce an insightful dashboard experience.
+- Responsible for front-end development for a custom real estate application which provides sophisticated and fully customizable filtering to allow investors and real estate professionals to narrow in on exact search targets.
+- Designed mock-up screens, wireframes, and workflows for intuitive user experience.
+- Migrated existing multi-page user experience into singular page interfaces using React components.
+- Participated in every stage of the design from conception through development and iterative improvement.
+- Produced user stories and internal documentation for future site development and maintenance.
+- Implemented modern frameworks including Bootstrap and Font-Awesome to give the site an aesthetic overhaul.
+- Managed all test deployments using a combination of Digital Ocean and Netlify.
+- Produced unit tests using a combination of Mocha and Chai.
+- Injected Google Analytics to capture pertinent usage data to produce an insightful dashboard experience.
 
 <table style="width:99%;"><colgroup><col style="width: 14%" /><col style="width: 85%" /></colgroup><thead><tr class="header"><th><strong>Environment:</strong></th><th><strong>JavaScript, JQuery, React, HTML5 &amp; CSS, Bootstrap, DOJO, Google Cloud, Bash Script</strong></th></tr></thead><tbody></tbody></table>
 
 <table><thead><tr class="header"><th><strong>Cembre:</strong> Edison, NJ</th><th>Nov 2019 – Mar 2020</th></tr></thead><tbody><tr class="odd"><td><strong>Product Development Engineer</strong></td><td></td></tr><tr class="even"><td></td><td></td></tr></tbody></table>
 
--   Converted client's product needs into technical specs to be sent to the development team in Italy.
--   Reorganized internal file server structure.
--   Conducted remote / in person system integration and product demonstrations.
--   Presided over internal and end user software trainings in addition to producing the corresponding documentation.
--   Served as the primary point of contact for troubleshooting railroad hardware and software in the North America.
+- Converted client's product needs into technical specs to be sent to the development team in Italy.
+- Reorganized internal file server structure.
+- Conducted remote / in person system integration and product demonstrations.
+- Presided over internal and end user software trainings in addition to producing the corresponding documentation.
+- Served as the primary point of contact for troubleshooting railroad hardware and software in the North America.
 
 <table><thead><tr class="header"><th><strong>Environment:</strong></th><th><strong>Excel, AutoCAD, PowerPoint, Word</strong></th></tr></thead><tbody></tbody></table>
 
-------------------------------------------------------------------------
+---
 
 [![—————————————————–](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#education)
 
-➤ Education
-===========
+# ➤ Education
 
 <table><thead><tr class="header"><th><strong>B.S. Electrical Engineering, TCNJ,</strong> Ewing NJ</th><th>2014 – 2019</th></tr></thead><tbody></tbody></table>
 
 **Capstone Project – Team Lead**
 
--   Successfully completed and delivered a platform to digitize a guitar signal and perform filtering before executing frequency & time domain analysis to track a current performance against prerecorded performance.
--   Implemented the Dynamic Time Warping algorithm in C++ and Python to autonomously activate or adjust guitar effect at multiple pre-designated section of performance.
+- Successfully completed and delivered a platform to digitize a guitar signal and perform filtering before executing frequency & time domain analysis to track a current performance against prerecorded performance.
+- Implemented the Dynamic Time Warping algorithm in C++ and Python to autonomously activate or adjust guitar effect at multiple pre-designated section of performance.
 
 <table><thead><tr class="header"><th><strong>Environment:</strong></th><th><strong>C++, Python, MATLAB, PureData</strong></th></tr></thead><tbody></tbody></table>
 
@@ -241,32 +234,27 @@ My Projects
 
 <table><thead><tr class="header"><th>Project Name</th><th>Skills used</th><th>Description</th></tr></thead><tbody><tr class="odd"><td><a href="https://web-dev-resource-hub.netlify.app/">Web-Dev-Resource-Hub (blog)</a></td><td>Html, Css, javascript, Python, jQuery, React, FireBase, AWS S3, Netlify, Heroku, NodeJS, PostgreSQL, C++, Web Audio API</td><td>My blog site contains my resource sharing and blog site … centered mostly on web development and just a bit of audio production / generally nerdy things I find interesting.</td></tr><tr class="even"><td><a href="https://project-showcase-bgoonz.netlify.app/">Dynamic Guitar Effects Triggering Using A Modified Dynamic Time Warping Algorithm</a></td><td>C, C++, Python, Java, Pure Data, Matlab</td><td>Successfully completed and delivered a platform to digitize a guitar signal and perform filtering before executing frequency &amp; time domain analysis to track a current performance against prerecorded performance.Implemented the Dynamic Time Warping algorithm in C++ and Python to autonomously activate or adjust guitar effect at multiple pre-designated section of performance.</td></tr><tr class="odd"><td><a href="https://trusting-dijkstra-4d3b17.netlify.app/">Data Structures &amp; Algorithms Interactive Learning Site</a></td><td>HTML, CSS, Javascript, Python, Java, jQuery, Repl.it-Database API</td><td>A interactive and comprehensive guide and learning tool for DataStructures and Algorithms … concentrated on JS but with some examples in Python, C++ and Java as well</td></tr><tr class="even"><td><a href="https://mihirbegmusic.netlify.app/">MihirBeg.com</a></td><td>Html, Css, Javascript, Bootstrap, FontAwesome, jQuery</td><td>A responsive and mobile friendly content promotion site for an Audio Engineer to engage with fans and potential clients</td></tr><tr class="odd"><td><a href="https://tetris42.netlify.app/">Tetris-JS</a></td><td>Html, Css, Javascript</td><td>The classic game of tetris implemented in plain javascipt and styled with a retro-futureistic theme</td></tr><tr class="even"><td><a href="https://githtmlpreview.netlify.app/">Git Html Preview Tool</a></td><td>Git, Javascript, CSS3, HTML5, Bootstrap, BitBucket</td><td>Loads HTML using CORS proxy, then process all links, frames, scripts and styles, and load each of them using CORS proxy, so they can be evaluated by the browser.</td></tr><tr class="odd"><td><a href="https://project-showcase-bgoonz.netlify.app/">Mini Project Showcase</a></td><td>HTML, HTML5, CSS, CSS3, Javascript, jQuery</td><td>add songs and play music, it also uses to store data in INDEXEDB Database by which we can play songs, if we not clear the catch then song will remain stored in database.</td></tr></tbody></table>
 
-------------------------------------------------------------------------
+---
 
-[![Foo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/embed/zealous-microservice-ti7em?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&moduleview=1&theme=dark)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## [![Foo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/embed/zealous-microservice-ti7em?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&moduleview=1&theme=dark)
 
 <img src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/23b9b236-746e-409c-8e86-30b4385e3b72/hr1-raypham.gif" alt="hr-line" style="width:100.0%" height="22" />
 
-[react-documentation-site](https://documentation-site-react2-peitff669-bgoonz.vercel.app/)
-==========================================================================================
+# [react-documentation-site](https://documentation-site-react2-peitff669-bgoonz.vercel.app/)
 
 [![Edit magical-stallman-ov0d1](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/magical-stallman-ov0d1?autoresize=1&expanddevtools=1&fontsize=12&hidenavigation=1&moduleview=1&theme=dark)
 
 <img src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/23b9b236-746e-409c-8e86-30b4385e3b72/hr1-raypham.gif" alt="hr-line" style="width:100.0%" height="22" />
 
-------------------------------------------------------------------------
+---
 
-➤ Codepens (mostly embeded animations)
---------------------------------------
+## ➤ Codepens (mostly embeded animations)
 
-[code-pens-embedded](https://embedable-content.netlify.app/)
-============================================================
+# [code-pens-embedded](https://embedable-content.netlify.app/)
 
 [![—————————————————–](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#weekly-quick-snips)
 
-\#\# ➤ Weekly-Quick-Snips:
---------------------------
+## \#\# ➤ Weekly-Quick-Snips:
 
 #### Snippet of the Day:
 
@@ -276,7 +264,7 @@ My Projects
             return l
         # If we have a left list, a pivot point and a right list...
         # assigns the return values of the partition() function
-        left, pivot, right = partition(l) 
+        left, pivot, right = partition(l)
         # Our sorted list looks like left + pivot + right, but sorted.
         # Pivot has to be in brackets to be a list, so python can concatenate all the elements to a single list
         return quicksort(left) + [pivot] + quicksort(right)
@@ -311,7 +299,7 @@ My Projects
 
     /*
      function named intersection(firstArr) that takes in an array and
-    returns a function. 
+    returns a function.
     When the function returned by intersection is invoked
     passing in an array (secondArr) it returns a new array containing the elements
     common to both firstArr and secondArr.
@@ -351,7 +339,7 @@ My Projects
         let v2 = 0
         if (l1 != null) v1 = l1.val
         if (l2 != null) v2 = l2.val
-        
+
         let sum =  v1 + v2 + carryOver
         carryOver = Math.floor(sum / 10)
         sum = sum % 10
@@ -361,15 +349,15 @@ My Projects
         if (l1 != null) l1 = l1.next
         if (l2 != null) l2 = l2.next
       }
-      
+
       if (carryOver > 0) {
         currentNode.next = new ListNode(carryOver)
       }
-      
+
       return result.next
     };
 
-------------------------------------------------------------------------
+---
 
 \#\#\# fast-is-alpha-numeric.js
 
@@ -419,23 +407,21 @@ My Projects
       return prefix
     }
 
-------------------------------------------------------------------------
+---
 
-------------------------------------------------------------------------
+---
 
-------------------------------------------------------------------------
+---
 
 [![—————————————————–](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#github-gists)
 
-➤ Github Gists
-==============
+# ➤ Github Gists
 
-[Github Gists](https://gist.github.com/bgoonz)
-----------------------------------------------
+## [Github Gists](https://gist.github.com/bgoonz)
 
 See More Gists!
 
-------------------------------------------------------------------------
+---
 
 ### Find Duplicate Files in Working Directory
 
@@ -502,7 +488,7 @@ See More Gists!
     hashDirIn( pathA );
     hashDirIn( pathB );
 
-------------------------------------------------------------------------
+---
 
 ### Node Cheat Sheet
 
@@ -623,7 +609,7 @@ See More Gists!
     child_process.spawn(command, [args], [options]);              // Launches a new process with the given command, with command line arguments in args. If omitted, args defaults to an empty Array.
     child_process.exec(command, [options], callback);             // Runs a command in a shell and buffers the output.
     child_process.execFile(file, [args], [options], [callback]);  // Runs a command in a shell and buffers the output.
-    child_process.fork(modulePath, [args], [options]);            // This is a special case of the spawn() functionality for spawning Node processes. In addition to having all the methods in a normal ChildProcess instance, the returned object has a communication channel built-in. 
+    child_process.fork(modulePath, [args], [options]);            // This is a special case of the spawn() functionality for spawning Node processes. In addition to having all the methods in a normal ChildProcess instance, the returned object has a communication channel built-in.
     * UTIL
     * http://nodejs.org/api/util.html
     // These functions are in the module 'util'. Use require('util') to access them.
@@ -715,7 +701,7 @@ See More Gists!
     fs.fchmodSync(fd, mode);                // Synchronous fchmod.
     fs.lchmod(path, mode, callback);        // Asynchronous lchmod. No arguments other than a possible exception are given to the completion callback.
     fs.lchmodSync(path, mode);              // Synchronous lchmod.
-    fs.stat(path, callback);                // Asynchronous stat. The callback gets two arguments (err, stats) where stats is a fs.Stats object. 
+    fs.stat(path, callback);                // Asynchronous stat. The callback gets two arguments (err, stats) where stats is a fs.Stats object.
     fs.statSync(path);                      // Synchronous stat. Returns an instance of fs.Stats.
     fs.lstat(path, callback);               // Asynchronous lstat. The callback gets two arguments (err, stats) where stats is a fs.Stats object. lstat() is identical to stat(), except that if path is a symbolic link, then the link itself is stat-ed, not the file that it refers to.
     fs.lstatSync(path);                     // Synchronous lstat. Returns an instance of fs.Stats.
@@ -794,7 +780,7 @@ See More Gists!
     server.listen(port, [hostname], [backlog], [callback]);        // Begin accepting connections on the specified port and hostname.
     server.listen(path, [callback]);                               // Start a UNIX socket server listening for connections on the given path.
     server.listen(handle, [callback]);                             // The handle object can be set to either a server or socket (anything with an underlying _handle member), or a {fd: <n>} object.
-    server.close([callback]);                                      // Stops the server from accepting new connections. 
+    server.close([callback]);                                      // Stops the server from accepting new connections.
     server.setTimeout(msecs, callback);                            // Sets the timeout value for sockets, and emits a 'timeout' event on the Server object, passing the socket as an argument, if a timeout occurs.
 
     [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#node-js-quick-reference)
@@ -833,7 +819,7 @@ See More Gists!
     response.headersSent;                                          // Boolean (read-only). True if headers were sent, false otherwise.
     response.sendDate;                                             // When true, the Date header will be automatically generated and sent in the response if it is not already present in the headers. Defaults to true.
     response.on('close', function () { });  // Indicates that the underlying connection was terminated before response.end() was called or able to flush.
-    response.on('finish', function() { });  // Emitted when the response has been sent. 
+    response.on('finish', function() { });  // Emitted when the response has been sent.
     message.httpVersion;                    // In case of server request, the HTTP version sent by the client. In the case of client response, the HTTP version of the connected-to server.
     message.headers;                        // The request/response headers object.
     message.trailers;                       // The request/response trailers object. Only populated after the 'end' event.
@@ -900,13 +886,13 @@ See More Gists!
     buf.toString([encoding], [start], [end]);                           // Decodes and returns a string from buffer data encoded with encoding (defaults to 'utf8') beginning at start (defaults to 0) and ending at end (defaults to buffer.length).
     buf.toJSON();                                                       // Returns a JSON-representation of the Buffer instance, which is identical to the output for JSON Arrays
     buf.copy(targetBuffer, [targetStart], [sourceStart], [sourceEnd]);  // Does copy between buffers. The source and target regions can be overlapped
-    buf.slice([start], [end]);                                          // Returns a new buffer which references the same memory as the old, but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes. Negative indexes start from the end of the buffer.   
+    buf.slice([start], [end]);                                          // Returns a new buffer which references the same memory as the old, but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes. Negative indexes start from the end of the buffer.
     buf.fill(value, [offset], [end]);                                   // Fills the buffer with the specified value
     buf[index];                                                         // Get and set the octet at index
     buf.length;                                                         // The size of the buffer in bytes, Note that this is not necessarily the size of the contents
     buffer.INSPECT_MAX_BYTES;                                           // How many bytes will be returned when buffer.inspect() is called. This can be overridden by user modules.
 
-------------------------------------------------------------------------
+---
 
 ### Trello Board Json to HTML Converter
 
@@ -952,7 +938,7 @@ See More Gists!
                     <h4>name}}</h4>{{{desc}
                 </div>
                 <!--div class="panel-body" >
-                    
+
                   </div-->
                 <ul class="list-group">
 
@@ -1047,11 +1033,11 @@ See More Gists!
 
 
             data = null;
-            
+
                data = {?* PASTE JSON DATA HERE!!!!*?
                }
 
-     
+
         </script>
     </body>
 

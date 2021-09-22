@@ -1,9 +1,8 @@
 importance: 5
 
-------------------------------------------------------------------------
+---
 
-if (a string with zero)
-=======================
+# if (a string with zero)
 
 Will `alert` be shown?
 

@@ -6,6 +6,6 @@ let shoppingCart = fruits;
 
 shoppingCart.push(“Banana”);
 
-*!* alert( fruits.length ); // 4 */!* \`\`\`
+_!_ alert( fruits.length ); // 4 _/!_ \`\`\`
 
 That’s because arrays are objects. So both `shoppingCart` and `fruits` are the references to the same array.

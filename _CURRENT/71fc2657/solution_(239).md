@@ -18,6 +18,6 @@ alert( regexp.test(‘01:32:54:67:89’) ); // false (5 numbers, need 6)
 
 alert( regexp.test(‘01:32:54:67:89:ZZ’) ) // false (ZZ in the end) \`\`\`
 
-------------------------------------------------------------------------
+---
 
 1.  0-9a-fA-F<a href="#fnref1" class="footnote-back">↩</a>

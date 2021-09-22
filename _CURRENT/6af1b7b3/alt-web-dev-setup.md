@@ -4,8 +4,7 @@ Here at App Academy we work with a Ruby on Rails, JavaScript, React, Redux, and 
 
 As we progress through the course you will be prompted to complete a few installation and configuration steps to get your personal machine ready for the next phase.
 
-Phase 0: Preparing your machine
--------------------------------
+## Phase 0: Preparing your machine
 
 Here we will install basic developer tools, such as [homebrew](https://brew.sh/) (a 3rd party package manager for MacOS), Xcode (a library of developer tools provided by Apple), git (a version control system we will be using throughout the course), and VS Code (a full-featured text-editor).
 
@@ -71,8 +70,7 @@ To verify that the shell commands were installed correctly, run `which code` in 
 
 Next, we’ll want to install a few useful VS Code extensions and configure VS Code to play nice with these extensions. Download [this zip file](https://assets.aaonline.io/fullstack/setup_vscode_master.zip), which contains a scripts that will do the work for you. Unzip the file and open the `setup_vscode` directory. Then open that directory in the terminal (drag and drop it over the terminal icon on macOS or right click in the directory and select `Open in Terminal` on most Linux distributions). To run the script, type `./setup_vscode.sh`. The script will do the rest. Simply restart VS Code and you’ll be good to go. (Note that there’s a second script, called `setup_vscode_linter.sh`. We can’t run this script yet but will do so in due time.)
 
-Phase 1: Ruby
--------------
+## Phase 1: Ruby
 
 Here we will be setting up Ruby with the help of [rbenv](https://github.com/rbenv/rbenv), a Ruby environment manager. We like rbenv because it allows us to switch between versions of Ruby easily and setup default versions to use within project directories. This will install instances of Ruby in addition to the system version, which comes pre-installed.
 
@@ -116,16 +114,15 @@ First we will install rbenv, then use it to install our desired version of Ruby.
 
 There are a few gems we will want to access globally.
 
--   Bundler allows us to define project dependencies inside a `Gemfile` and gives us a bunch of commands to update, remove and install them. Check out the [Bundler docs](http://bundler.io/docs.html) for more info.
--   Pry is an alternative to the Irb (the default Ruby REPL). It is not only more powerful, but also easier to use than Irb and should be your go-to for running and debugging Ruby code. Check out the [Pry website](http://pryrepl.org/) for more info and a super useful tutorial.
--   Byebug is feature-rich debugging tool for Ruby. With Byebug you can halt the execution of your code and inspect/track variables and the flow of execution. Lots of cool features in here, so check out the [Byebug docs](https://github.com/deivid-rodriguez/byebug)!
+- Bundler allows us to define project dependencies inside a `Gemfile` and gives us a bunch of commands to update, remove and install them. Check out the [Bundler docs](http://bundler.io/docs.html) for more info.
+- Pry is an alternative to the Irb (the default Ruby REPL). It is not only more powerful, but also easier to use than Irb and should be your go-to for running and debugging Ruby code. Check out the [Pry website](http://pryrepl.org/) for more info and a super useful tutorial.
+- Byebug is feature-rich debugging tool for Ruby. With Byebug you can halt the execution of your code and inspect/track variables and the flow of execution. Lots of cool features in here, so check out the [Byebug docs](https://github.com/deivid-rodriguez/byebug)!
 
 Let’s install them.
 
     gem install bundler pry byebug
 
-Phase 2: Backend Development
-----------------------------
+## Phase 2: Backend Development
 
 For backend development we will need a database application, a server, and a web-application framework.
 
@@ -202,8 +199,7 @@ Fortunately for us, Rails is available as a gem in the Ruby ecosystem. Let’s i
     # verify installation
     which rails # => /Users/username/.rbenv/shims/rails
 
-Phase 3: Frontend Development
------------------------------
+## Phase 3: Frontend Development
 
 ### Node.js & NPM
 

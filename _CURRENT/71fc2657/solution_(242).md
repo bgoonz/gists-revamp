@@ -20,12 +20,12 @@ alert( “1.2 + 12”.match(regexp) ); \`\`\`
 
 The result includes:
 
--   `result[0] == "1.2 + 12"` (full match)
--   `result[1] == "1.2"` (first group `(-?\d+(\.\d+)?)` – the first number, including the decimal part)
--   `result[2] == ".2"` (second group`(\.\d+)?` – the first decimal part)
--   `result[3] == "+"` (third group `([-+*\/])` – the operator)
--   `result[4] == "12"` (forth group `(-?\d+(\.\d+)?)` – the second number)
--   `result[5] == undefined` (fifth group `(\.\d+)?` – the last decimal part is absent, so it’s undefined)
+- `result[0] == "1.2 + 12"` (full match)
+- `result[1] == "1.2"` (first group `(-?\d+(\.\d+)?)` – the first number, including the decimal part)
+- `result[2] == ".2"` (second group`(\.\d+)?` – the first decimal part)
+- `result[3] == "+"` (third group `([-+*\/])` – the operator)
+- `result[4] == "12"` (forth group `(-?\d+(\.\d+)?)` – the second number)
+- `result[5] == undefined` (fifth group `(\.\d+)?` – the last decimal part is absent, so it’s undefined)
 
 We only want the numbers and the operator, without the full match or the decimal parts, so let’s “clean” the result a bit.
 

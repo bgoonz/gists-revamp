@@ -8,15 +8,13 @@ Here’s how we can do it:
 
 …’; str = str.replace(/&lt;body.\*?&gt;/, ’$&
 
-Hello
-=====
+# Hello
 
 ’);
 
 alert(str); // …
 
-Hello
-=====
+# Hello
 
 … \`\`\`
 
@@ -26,15 +24,13 @@ An alternative is to use lookbehind:
 
 \`\``js run let str = '...<body style="...">...'; str = str.replace(/(?<=<body.*?>)/,`
 
-Hello
-=====
+# Hello
 
 \`);
 
 alert(str); // …
 
-Hello
-=====
+# Hello
 
 … \`\`\`
 

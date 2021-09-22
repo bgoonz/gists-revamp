@@ -1,9 +1,8 @@
 importance: 3
 
-------------------------------------------------------------------------
+---
 
-Assignment result
-=================
+# Assignment result
 
 What are the values of `a` and `x` after the code below?
 

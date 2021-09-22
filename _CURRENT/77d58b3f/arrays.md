@@ -1,48 +1,45 @@
-Arrayzing - The JavaScript array cheatsheet
-===========================================
+# Arrayzing - The JavaScript array cheatsheet
 
 This is a work-in-progress cheatsheet for JS arrays. Please feel free to leave a comment if this has helped you or you would like to suggest anything.
 
--   [Create an array](#user-content-create-an-array)
--   [Empty an array](#user-content-empty-an-array)
--   [Clone an array](#user-content-clone-an-array)
--   [Get last item](#user-content-get-last-item)
--   [Remove first item](#user-content-remove-first-item)
--   [Remove last item](#user-content-remove-last-item)
--   [Add new item(s) to beginning](#user-content-add-new-items-to-beginning)
--   [Add new item(s) to end](#user-content-add-new-items-to-end)
--   [Overwrite item at a specific index](#user-content-overwrite-item-at-a-specific-index)
--   [Add new item(s) at a specific index](#user-content-add-new-items-at-a-specific-index)
--   [Remove single item at a specific index](#user-content-remove-single-item-at-a-specific-index)
--   [Remove several items](#user-content-remove-several-items)
--   [Reverse an array](#user-content-reverse-an-array)
--   [Delimit an array](#user-content-delimit-an-array)
--   [Sort in numerical order](#user-content-sort-in-numerical-order)
--   [Sort in alphabetical order](#user-content-sort-in-alphabetical-order)
--   [Join two arrays together](#user-content-join-two-arrays-together)
--   [Copy specific item(s)](#user-content-copy-specific-items)
--   [Augment items within an array](#user-content-augment-items-within-an-array)
--   [Return true if every item meets a condition](#user-content-return-true-if-every-item-meets-a-condition)
--   [Return true if at least one item matches a condition](#user-content-return-true-if-at-least-one-item-matches-a-condition)
--   [Execute a function once per array item](#user-content-execute-a-function-once-per-array-item)
--   [Filter an array](#user-content-filter-an-array)
--   [Detect an array](#user-content-detect-an-array)
--   [ES5 and above](#user-content-es5-and-above)
--   [ES4 and below](#user-content-es4-and-below)
--   [Simple FIFO queue](#user-content-simple-fifo-queue)
--   [Find index of an item](#user-content-find-index-of-an-item)
--   [ES5 and above](#user-content-es5-and-above-1)
--   [ES4 and below](#user-content-es4-and-below-1)
--   [Randomise an array](#user-content-randomise-an-array)
--   [Chaining Methods](#chaining-methods)
+- [Create an array](#user-content-create-an-array)
+- [Empty an array](#user-content-empty-an-array)
+- [Clone an array](#user-content-clone-an-array)
+- [Get last item](#user-content-get-last-item)
+- [Remove first item](#user-content-remove-first-item)
+- [Remove last item](#user-content-remove-last-item)
+- [Add new item(s) to beginning](#user-content-add-new-items-to-beginning)
+- [Add new item(s) to end](#user-content-add-new-items-to-end)
+- [Overwrite item at a specific index](#user-content-overwrite-item-at-a-specific-index)
+- [Add new item(s) at a specific index](#user-content-add-new-items-at-a-specific-index)
+- [Remove single item at a specific index](#user-content-remove-single-item-at-a-specific-index)
+- [Remove several items](#user-content-remove-several-items)
+- [Reverse an array](#user-content-reverse-an-array)
+- [Delimit an array](#user-content-delimit-an-array)
+- [Sort in numerical order](#user-content-sort-in-numerical-order)
+- [Sort in alphabetical order](#user-content-sort-in-alphabetical-order)
+- [Join two arrays together](#user-content-join-two-arrays-together)
+- [Copy specific item(s)](#user-content-copy-specific-items)
+- [Augment items within an array](#user-content-augment-items-within-an-array)
+- [Return true if every item meets a condition](#user-content-return-true-if-every-item-meets-a-condition)
+- [Return true if at least one item matches a condition](#user-content-return-true-if-at-least-one-item-matches-a-condition)
+- [Execute a function once per array item](#user-content-execute-a-function-once-per-array-item)
+- [Filter an array](#user-content-filter-an-array)
+- [Detect an array](#user-content-detect-an-array)
+- [ES5 and above](#user-content-es5-and-above)
+- [ES4 and below](#user-content-es4-and-below)
+- [Simple FIFO queue](#user-content-simple-fifo-queue)
+- [Find index of an item](#user-content-find-index-of-an-item)
+- [ES5 and above](#user-content-es5-and-above-1)
+- [ES4 and below](#user-content-es4-and-below-1)
+- [Randomise an array](#user-content-randomise-an-array)
+- [Chaining Methods](#chaining-methods)
 
-Create an array
----------------
+## Create an array
 
     var meals = ['breakfast', 'lunch', 'dinner'] ;
 
-Empty an array
---------------
+## Empty an array
 
 Keeping references intact.
 
@@ -54,16 +51,14 @@ or
     var meals = ['breakfast', 'lunch', 'dinner'];
     meals.length = 0
 
-Clone an array
---------------
+## Clone an array
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
     var copy = meals.slice();
     // ['breakfast', 'lunch', 'dinner']
 
-Get last item
--------------
+## Get last item
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
@@ -76,8 +71,7 @@ Or
     meals.slice(-1)[0];
     // 'dinner'
 
-Remove first item
------------------
+## Remove first item
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
@@ -87,8 +81,7 @@ Remove first item
     meals;
     // ['lunch', 'dinner']
 
-Remove last item
-----------------
+## Remove last item
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
@@ -98,8 +91,7 @@ Remove last item
     meals;
     // ['breakfast', 'lunch'];
 
-Add new item(s) to beginning
-----------------------------
+## Add new item(s) to beginning
 
     var meals = ['lunch', 'dinner'];
 
@@ -109,8 +101,7 @@ Add new item(s) to beginning
     meals;
     // ['breakfast', 'lunch', 'dinner']
 
-Add new item(s) to end
-----------------------
+## Add new item(s) to end
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
@@ -120,8 +111,7 @@ Add new item(s) to end
     meals;
     // ['breakfast', 'lunch', 'dinner', 'supper'];
 
-Overwrite item at a specific index
-----------------------------------
+## Overwrite item at a specific index
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
@@ -134,16 +124,14 @@ Or
 
     meals.splice(1, 1, 'brunch');
 
-Add new item(s) at a specific index
------------------------------------
+## Add new item(s) at a specific index
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
     meals.splice(1, 0, 'brunch', 'more brunch');
     // ['breakfast', 'brunch', 'more brunch', 'lunch', 'dinner']
 
-Remove single item at a specific index
---------------------------------------
+## Remove single item at a specific index
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
@@ -153,8 +141,7 @@ Remove single item at a specific index
     meals;
     // ['breakfast', 'dinner']
 
-Remove several items
---------------------
+## Remove several items
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
@@ -164,32 +151,28 @@ Remove several items
     meals;
     // ['breakfast']
 
-Reverse an array
-----------------
+## Reverse an array
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
     meals.reverse();
     // ['dinner', 'lunch', 'breakfast'];
 
-Delimit an array
-----------------
+## Delimit an array
 
     var meals = ['breakfast', 'lunch', 'dinner'];
 
     meals.join(' AND ');
     // 'breakfast AND lunch AND dinner'
 
-Sort in alphabetical order
---------------------------
+## Sort in alphabetical order
 
     var meals = ['dinner', 'supper', 'breakfast', 'lunch'];
 
     meals.sort();
     // ['breakfast', 'dinner', 'lunch', 'supper']
 
-Sort in numerical order
------------------------
+## Sort in numerical order
 
     var numbers = [1438,2605,794,3947,6241,11745,2585];
 
@@ -198,8 +181,7 @@ Sort in numerical order
     });
     // [794,1438,2585,2605,3947,6241,11745]
 
-Join two arrays together
-------------------------
+## Join two arrays together
 
     var dayTimeMeals = ['breakfast', 'lunch'];
     var nightTimeMeals = ['merienda', 'dinner'];
@@ -207,16 +189,14 @@ Join two arrays together
     var allTheMeals = dayTimeMeals.concat(nightTimeMeals);
     // ['breakfast', 'lunch', 'merienda', 'dinner']
 
-Copy specific item(s)
----------------------
+## Copy specific item(s)
 
     var meals = ['breakfast', 'lunch', 'dinner', 'supper'];
 
     nightTimeMeals = meals.slice(2,4);
     // ['dinner', 'supper']
 
-Augment items within an array
------------------------------
+## Augment items within an array
 
     var meals = ['breakfast', 'lunch', 'dinner'];
     var type = ['king', 'prince', 'pauper'];
@@ -226,8 +206,7 @@ Augment items within an array
     });
     // ["breakfast like a king", "lunch like a prince", "dinner like a pauper"]
 
-Return true if every item meets a condition
--------------------------------------------
+## Return true if every item meets a condition
 
     var meals = ['breakfast', 'lunch', 'dinner', 'supper'];
 
@@ -237,8 +216,7 @@ Return true if every item meets a condition
     meals.every(function(item){ return item.length > 6 });
     // false
 
-Return true if at least one item matches a condition
-----------------------------------------------------
+## Return true if at least one item matches a condition
 
     var meals = ['breakfast', 'lunch', 'dinner', 'supper'];
 
@@ -248,8 +226,7 @@ Return true if at least one item matches a condition
     meals.some(function(item){ return item === 'burgers!!';});
     //false
 
-Execute a function once per array item
---------------------------------------
+## Execute a function once per array item
 
     var meals = ['breakfast', 'lunch', 'dinner', 'supper'];
 
@@ -257,8 +234,7 @@ Execute a function once per array item
       console.log(index, currentValue, arr);
     });
 
-Filter an array
----------------
+## Filter an array
 
     var meals = ['breakfast', 'lunch', 'dinner', 'supper'];
 
@@ -267,8 +243,7 @@ Filter an array
     });
     // ['lunch', 'dinner', 'supper'];
 
-Detect an array
----------------
+## Detect an array
 
 ### ES5 and above
 
@@ -288,12 +263,11 @@ Detect an array
     isArray(meals);
     // true
 
-Simple FIFO queue
------------------
+## Simple FIFO queue
 
     var meals = ['breakfast', 'elevenses', 'brunch'];
 
-    meals.shift(); 
+    meals.shift();
     meals.push('lunch');
 
     // ['elevenses', 'brunch', 'lunch']
@@ -304,11 +278,9 @@ Simple FIFO queue
     // ['brunch', 'lunch', 'afternoon tea']
     // ... and so on ...
 
-Find index of an item
----------------------
+## Find index of an item
 
-ES5 and above
--------------
+## ES5 and above
 
     var meals = ['breakfast', 'elevenses', 'brunch'];
     meals.indexOf('brunch');
@@ -319,8 +291,8 @@ ES5 and above
     var meals = ['breakfast', 'elevenses', 'brunch'];
 
     function inArray(arr, item){
-      var found = -1, 
-          i = arr.length; 
+      var found = -1,
+          i = arr.length;
 
       while(--i >= 0) {
         if(arr[i] === item){
@@ -337,8 +309,7 @@ ES5 and above
     inArray(meals, 'dinner');
     // -1
 
-Randomise an array
-------------------
+## Randomise an array
 
     function randomiseArray(arr) {
         var buffer = [], start;
@@ -360,8 +331,7 @@ Randomise an array
     randomiseArray([0,1,2,3,4]);
     // [1,2,4,0,3]
 
-Chaining methods
-================
+# Chaining methods
 
     var meals = [
       {type: 'breakfast', name: 'Full English', calories: 1500},
@@ -387,7 +357,7 @@ Chaining methods
             }
         });
     }
-        
+
     getMealsByMaxCalories(meals, 850, 2000);
 
     /*

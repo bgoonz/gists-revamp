@@ -1,9 +1,8 @@
 importance: 3
 
-------------------------------------------------------------------------
+---
 
-Output prime numbers
-====================
+# Output prime numbers
 
 An integer number greater than `1` is called a [prime](https://en.wikipedia.org/wiki/Prime_number) if it cannot be divided without a remainder by anything except `1` and itself.
 

@@ -1,5 +1,4 @@
-The variable for our planet
----------------------------
+## The variable for our planet
 
 That’s simple:
 
@@ -7,8 +6,7 @@ That’s simple:
 
 Note, we could use a shorter name `planet`, but it might not be obvious what planet it refers to. It’s nice to be more verbose. At least until the variable isNotTooLong.
 
-The name of the current visitor
--------------------------------
+## The name of the current visitor
 
     let currentUserName = "John";
 

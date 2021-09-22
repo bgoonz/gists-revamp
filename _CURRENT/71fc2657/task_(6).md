@@ -1,9 +1,8 @@
 importance: 5
 
-------------------------------------------------------------------------
+---
 
-String quotes
-=============
+# String quotes
 
 What is the output of the script?
 

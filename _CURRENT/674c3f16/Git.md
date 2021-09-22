@@ -1,9 +1,8 @@
-Git-Tricks
-==========
+# Git-Tricks
 
 Refs
 
-------------------------------------------------------------------------
+---
 
 ### Awesome GitHub Commands Reference Sheet (Quick Reference)
 

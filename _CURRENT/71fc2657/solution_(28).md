@@ -14,7 +14,7 @@ The task demonstrates how postfix/prefix forms can lead to different results whe
 
     `js run let i = 0; while (i++ < 5) alert( i );`
 
-    The first value is again `i = 1`. The postfix form of `i++` increments `i` and then returns the *old* value, so the comparison `i++ < 5` will use `i = 0` (contrary to `++i < 5`).
+    The first value is again `i = 1`. The postfix form of `i++` increments `i` and then returns the _old_ value, so the comparison `i++ < 5` will use `i = 0` (contrary to `++i < 5`).
 
     But the `alert` call is separate. It’s another statement which executes after the increment and the comparison. So it gets the current `i = 1`.
 

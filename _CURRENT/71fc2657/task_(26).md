@@ -1,9 +1,8 @@
 importance: 3
 
-------------------------------------------------------------------------
+---
 
-Check the login
-===============
+# Check the login
 
 Write the code which asks for a login with `prompt`.
 
@@ -11,9 +10,9 @@ If the visitor enters `"Admin"`, then `prompt` for a password, if the input is a
 
 The password is checked as follows:
 
--   If it equals “TheMaster”, then show “Welcome!”,
--   Another string – show “Wrong password”,
--   For an empty string or cancelled input, show “Canceled”
+- If it equals “TheMaster”, then show “Welcome!”,
+- Another string – show “Wrong password”,
+- For an empty string or cancelled input, show “Canceled”
 
 The schema:
 

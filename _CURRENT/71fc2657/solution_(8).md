@@ -1,9 +1,9 @@
 The answer is:
 
--   `a = 2`
--   `b = 2`
--   `c = 2`
--   `d = 1`
+- `a = 2`
+- `b = 2`
+- `c = 2`
+- `d = 1`
 
 \`\`\`js run no-beautify let a = 1, b = 1;
 

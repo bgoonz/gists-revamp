@@ -22,7 +22,7 @@ alert( makeUser().name ); // Error: Cannot read property ‘name’ of undefined
 
 Here’s the opposite case:
 
-\`\`\`js run function makeUser() { return { name: “John”, *!* ref() { return this; } */!* }; }
+\`\`\`js run function makeUser() { return { name: “John”, _!_ ref() { return this; } _/!_ }; }
 
 let user = makeUser();
 

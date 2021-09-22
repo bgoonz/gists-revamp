@@ -11,21 +11,21 @@ shopt -s extglob;
 
 filename=$(basename “<span class="math inline">$1")\\ directory=$</span>(dirname”$1")
 
-filename\_clean=<span class="math inline">$(echo "$</span>filename" | sed -e ‘s/\[\\/:\*?"&lt;&gt;|01-1F7F\]//g’ -e ‘s/^(nul|prn|con|lpt\[0-9\]|com\[0-9\]|aux)(.|<span class="math inline">$\\)//i' -e 's/^\\.\*$</span>//’ -e ‘s/^$/NONAME/’)
+filename_clean=<span class="math inline">$(echo "$</span>filename" | sed -e ‘s/\[\\/:\*?"&lt;&gt;|01-1F7F\]//g’ -e ‘s/^(nul|prn|con|lpt\[0-9\]|com\[0-9\]|aux)(.|<span class="math inline">$\\)//i' -e 's/^\\.\*$</span>//’ -e ‘s/^$/NONAME/’)
 
-if (test “<span class="math inline">$filename" != "$</span>filename\_clean”)  
+if (test “<span class="math inline">$filename" != "$</span>filename_clean”)  
 then  
-mv -v “<span class="math inline">$1" "$</span>directory/$filename\_clean”  
+mv -v “<span class="math inline">$1" "$</span>directory/$filename_clean”  
 fi  
 }
 
 export -f sanitize
 
-sanitize\_dir() {  
+sanitize_dir() {  
 find “$1” -depth -exec bash -c ‘sanitize “$0”’ {} ;  
 }
 
-sanitize\_dir ‘/path/to/somewhere’ `sh ### 2.)Recursively Delete Node Modules:`sh find . -name ‘node\_modules’ -type d -prune -exec rm -rf ‘{}’ +
+sanitize_dir ‘/path/to/somewhere’ `sh ### 2.)Recursively Delete Node Modules:`sh find . -name ‘node_modules’ -type d -prune -exec rm -rf ‘{}’ +
 
     ### 3.)Remove trailing whitespace from filenames:
 
@@ -90,8 +90,7 @@ rename ’s/ \*<span class="math inline">$//' \* \`\`\` \#\#\# 4.)Remove string 
 
     for x in "./"/*/; do  (cd "$x"   files=(*)   printf '%s\n' "${files[@]}" > deleteme.txt  )done
 
-PANDOC
-======
+# PANDOC
 
 ### 19.) Convert from Markdown==⇒ HTML
 

@@ -1,9 +1,8 @@
 importance: 4
 
-------------------------------------------------------------------------
+---
 
-Which values get shown by the “for” loop?
-=========================================
+# Which values get shown by the “for” loop?
 
 For each loop write down which values it is going to show. Then compare with the answer.
 

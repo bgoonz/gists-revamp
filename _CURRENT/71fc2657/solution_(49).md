@@ -1,6 +1,6 @@
 The solution is to return the object itself from every call.
 
-\`\`\`js run demo let ladder = { step: 0, up() { this.step++; *!* return this; */!* }, down() { this.step–; *!* return this; */!* }, showStep() { alert( this.step ); *!* return this; */!* } };
+\`\`\`js run demo let ladder = { step: 0, up() { this.step++; _!_ return this; _/!_ }, down() { this.step–; _!_ return this; _/!_ }, showStep() { alert( this.step ); _!_ return this; _/!_ } };
 
 ladder.up().up().down().up().down().showStep(); // 1 \`\`\`
 

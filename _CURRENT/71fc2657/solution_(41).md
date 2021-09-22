@@ -2,7 +2,7 @@ You could note the following:
 
 \`\`\`js no-beautify function pow(x,n) // &lt;- no space between arguments { // &lt;- figure bracket on a separate line let result=1; // &lt;- no spaces before or after = for(let i=0;i&lt;n;i++) {result\*=x;} // &lt;- no spaces // the contents of { … } should be on a new line return result; }
 
-let x=prompt(“x?”,’‘), n=prompt(“n?”,’’) // &lt;– technically possible, // but better make it 2 lines, also there’s no spaces and missing ; if (n&lt;=0) // &lt;- no spaces inside (n &lt;= 0), and should be extra line above it { // &lt;- figure bracket on a separate line // below - long lines can be split into multiple lines for improved readability alert(`Power ${n} is not supported, please enter an integer number greater         than zero`); } else // &lt;- could write it on a single line like “} else {” { alert(pow(x,n)) // no spaces and missing ; } \`\`\`
+let x=prompt(“x?”,’‘), n=prompt(“n?”,’’) // &lt;– technically possible, // but better make it 2 lines, also there’s no spaces and missing ; if (n&lt;=0) // &lt;- no spaces inside (n &lt;= 0), and should be extra line above it { // &lt;- figure bracket on a separate line // below - long lines can be split into multiple lines for improved readability alert(`Power ${n} is not supported, please enter an integer number greater than zero`); } else // &lt;- could write it on a single line like “} else {” { alert(pow(x,n)) // no spaces and missing ; } \`\`\`
 
 The fixed variant:
 

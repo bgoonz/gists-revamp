@@ -1,9 +1,8 @@
 importance: 5
 
-------------------------------------------------------------------------
+---
 
-Rewrite ‘if’ into ‘?’
-=====================
+# Rewrite ‘if’ into ‘?’
 
 Rewrite this `if` using the conditional operator `'?'`:
 

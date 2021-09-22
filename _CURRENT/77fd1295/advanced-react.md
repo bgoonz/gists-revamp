@@ -1,10 +1,8 @@
-Overview
---------
+## Overview
 
 Stateful logic is logic that is built into a component. It can be a function that handles a click event or maybe a function that sets toggle state, or even a function that formats data before it gets displayed. Usually, this kind of logic deals with state in the component. Thus the moniker “stateful logic.”
 
-Follow Along
-------------
+## Follow Along
 
 Look at this component. Can you spot the stateful logic built into it?
 
@@ -51,8 +49,7 @@ Look at this component. Can you spot the stateful logic built into it?
 
 You are probably looking at the two functions - `handleChanges` and `changeTitle`. If so, that is correct! And we can probably also count the `title` and `inputText` state in there as well. Those are all great examples of stateful logic. And really, the sky’s the limit on what could be considered stateful logic in a React component.
 
-Challenge
----------
+## Challenge
 
 Now that you can identify stateful logic, go through a few of the React components you’ve built this week. Try to point out examples of different stateful logic. How many different examples did you find? \#\# Overview
 
@@ -67,64 +64,62 @@ As you can see, the three React lifestyle phases are 1) Birth/Mounting, 2) Growt
 This is the phase when the component is being built out from the ground up. A few things are happening here:  
 Whatever initial data you want access to will be defined on the constructor of this phase
 
--   Your render method is invoked.
--   `componentDidMount` gets called as well.
+- Your render method is invoked.
+- `componentDidMount` gets called as well.
 
 ### Growth/Updating Phase
 
 In the Growth/Updating phase you’re updating compnent data.
 
--   `setState` can be used to change the component’s state data, forcing a call to `render`.
--   `shouldComponentUpdate` is a method one could use here to stop a component from calling render if necessary.
+- `setState` can be used to change the component’s state data, forcing a call to `render`.
+- `shouldComponentUpdate` is a method one could use here to stop a component from calling render if necessary.
 
 ### Death/Un-mounting Phase
 
 Again, self-explanatory, but the unmounting phase includes removing the component from the screen.
 
--   Component is removed from the screen.
--   `componentWillUnmount` is called and can be used for any clean up you may need to do.
+- Component is removed from the screen.
+- `componentWillUnmount` is called and can be used for any clean up you may need to do.
 
-Follow Along
-------------
+## Follow Along
 
 Dive into the documentation at [ReactJS (Links to an external site.)](https://reactjs.org/docs/react-component.html#the-component-lifecycle)and look into some of the key pieces of the LifeCycle API.
 
 The methods that we’re going to look at are:
 
--   `constructor`
--   `render`
--   `componentDidMount`
--   `componentDidUpdate`
--   `componentWillUnmount`
+- `constructor`
+- `render`
+- `componentDidMount`
+- `componentDidUpdate`
+- `componentWillUnmount`
 
 Let’s also compare where each of these methods belong within the react lifecycle by taking a look at [this diagram (Links to an external site.)](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).
 
 We will explore these in depth later on but for now, focus on warming up to the documentation and the idea that components have a lifecycle.
 
-Challenge
----------
+## Challenge
 
 Read [this medium article (Links to an external site.)](https://medium.com/@baphemot/understanding-reactjs-component-life-cycle-823a640b3e8d){:target=“\_blank”} about the component lifecycle. Take notes and share what you learned in a paragraph to your Project Manager via Slack.\#\# Overview
 
-React gave us the idea of components as independent pieces of UI. And thus far, you have learned how to build out `functional components` for use in making multiple DOM elements. Now, we’re going to be learning about the `React.Component` base class that allows us to use some of the methods that the React team has curated to tap into what we call the `Component Lifecycle`. These methods (known as life cycle hooks *more on these to come*) give us control over how our components work, and if we’d like to use them, we have to build out a class component that `extends` the `React.Component` parent class. Any time you see a line of code that looks like the following, you’re using the React.Component parent class, and you have the ability to tap into these methods.
+React gave us the idea of components as independent pieces of UI. And thus far, you have learned how to build out `functional components` for use in making multiple DOM elements. Now, we’re going to be learning about the `React.Component` base class that allows us to use some of the methods that the React team has curated to tap into what we call the `Component Lifecycle`. These methods (known as life cycle hooks _more on these to come_) give us control over how our components work, and if we’d like to use them, we have to build out a class component that `extends` the `React.Component` parent class. Any time you see a line of code that looks like the following, you’re using the React.Component parent class, and you have the ability to tap into these methods.
 
     class FooComponent extends React.Component {}
 
 By creating components as classes, you can set up a data object that your component is concerned with. This is done using `state` and setting up that object on our constructor method. Once we have some data that we can render out to the DOM, we need a vehicle that will allow us to render that data. This is achieved with the JSX method `render()` from within the life-cycle hook. We’ll walk you through the steps below.
 
 Declare your `class component` by extending the `React.Component` parent class. `class FooComponent extends React.Component {}`.  
-Use the `constructor` function to set up some state. *because we’re calling extends, we also need to call `super();` otherwise we won’t have access the `this`*  
+Use the `constructor` function to set up some state. _because we’re calling extends, we also need to call `super();` otherwise we won’t have access the `this`_  
 We need to render some sort of UI to the DOM. We do this by calling the life-cycle method `render`.
 
 I like to remember these steps by referencing one of my favorite bands: Creedence Clearwater Revival (CCR), which stands for class, constructor, and render/return.
 
-1.  Declare your *class*, and extend the `React.Component` Base class.
+1.  Declare your _class_, and extend the `React.Component` Base class.
 
 <!-- -->
 
     class FooComponent extends React.Component {
 
-1.  Now we’ll set up our *constructor* and add state.
+1.  Now we’ll set up our _constructor_ and add state.
 
 <!-- -->
 
@@ -133,7 +128,7 @@ I like to remember these steps by referencing one of my favorite bands: Creedenc
       this.state = {};
     }
 
-1.  *Render* some UI and *return* some `JSX.`
+1.  _Render_ some UI and _return_ some `JSX.`
 
 <!-- -->
 
@@ -159,8 +154,7 @@ Components built out extending the Base `React.Component` class come with a bunc
 
 For now, let’s focus on a component caring about its own state (data) and managing that state in a reactive way. The `state` object that we set up on our `constructor` has a very React-specific way of doing things. It allows us to drive our UI using data. Again, think about Facebook here. You see a LOT of data and interact with it all of the time when you’re using the Facebook app. Because of the way we work with social media today, we expect this data the UI to represent that data in close to real-time. This is one reason why React is really good and how reactivity can be achieved.
 
-Follow Along
-------------
+## Follow Along
 
 Let’s work together to build out a class component that prints a message to the screen using a few DOM elements. We will hold a message on state, and print that message to the screen by selecting it an assigning it to a DOM element. Then we will take it a step further and pass that message down to another component using props.
 
@@ -194,20 +188,18 @@ Now that we have the message on our component’s state, we can use it through i
 
 Hooray! You’ve now built your first class component, and you’re ready to rock n’ roll.
 
-Challenge
----------
+## Challenge
 
 Let’s take the functionality of this class component that we built earlier and extend it just a little bit. Declare a `Functional Component` called `RenderMessage` inside [this CodeSandbox (Links to an external site.)](https://codesandbox.io/s/103jkor46q).
 
--   Make sure you declare your Props Object that will be passed into this component.
--   Return a `div` who’s child is `props.message`
--   Now inside of the `App` class pass in that `RenderMessage` component and pass down a message prop to `RenderMessage`. This message prop should be set equal to the message property on the state object.
--   Once it’s all wired up properly you’ve done it! \#\# Overview
+- Make sure you declare your Props Object that will be passed into this component.
+- Return a `div` who’s child is `props.message`
+- Now inside of the `App` class pass in that `RenderMessage` component and pass down a message prop to `RenderMessage`. This message prop should be set equal to the message property on the state object.
+- Once it’s all wired up properly you’ve done it! \#\# Overview
 
 `Custom Hooks`, are so-called because you are building the hook yourself (customizing it), to apply non-visual behavior and stateful logic throughout your components. This way, you can reuse the same hook over and over again. Custom hooks follow the same patterns of naming that you’ve already learned (i.e. prefacing the function name with `use`, as in `useState`). You can build a reusable custom hook for anything from handling controlled inputs, to managing event listeners, or watching for key presses.
 
-Follow Along
-------------
+## Follow Along
 
 Let’s start with the same component that we evaluated in the objective above. Go ahead and look over it one more time, this time making sure to understand what the various parts are doing.
 
@@ -379,15 +371,13 @@ Here they are again for your reference:
       setEmail("");
     };
 
-By building out a custom hook, we can skip writing out all of the stateful logic for our non-visual behavior. Custom hooks produce beautiful, `DRY` code that is easy to read *and* use. You have built a *reusable* piece of code that makes it easy for you to import anywhere in your application and build out stateful logic in any of your components.
+By building out a custom hook, we can skip writing out all of the stateful logic for our non-visual behavior. Custom hooks produce beautiful, `DRY` code that is easy to read _and_ use. You have built a _reusable_ piece of code that makes it easy for you to import anywhere in your application and build out stateful logic in any of your components.
 
-Challenge
----------
+## Challenge
 
 Now that you can identify custom hook logic and how you might both create and use it in your components, go back to several components you’ve built over the last week and refactor the state in some forms you made to use the `useInput` custom hook from the component in the examples above. [Click here (Links to an external site.)](https://codesandbox.io/s/yk37ykmyrz) to access the code within this video’s follow-along exercise.
 
-Overview
---------
+## Overview
 
 Up until this point, our applications have been fairly simple. One or two components with a bit of state to allow for interaction. As our applications grow, so to do the complexity way components relate to each other. To do this, it helps to see our components as being structure in a `parent / child` relationship.
 
@@ -407,8 +397,7 @@ What if we want to modify that data? Well, just as we can pass parent state down
 
 We have already seen how to pass state through props using functional components. Now, let’s take a look at how we work with state in class based components.
 
-Follow Along
-------------
+## Follow Along
 
 Consider the following component:
 
@@ -453,9 +442,9 @@ Great! We are sharing data between a component’s state and a component’s pro
 
 Now let’s add in the ability to modify that state. To do this we will need to:
 
--   Connect a state change method to an event listener in our child component.
--   Create the substance of that method in our parent.
--   Pass that method to the child through props.
+- Connect a state change method to an event listener in our child component.
+- Create the substance of that method in our parent.
+- Pass that method to the child through props.
 
 Let’s start at bottom, our child component. Let’s say that we want use a form to dynamically update our message statement. This small component should do nicely:
 
@@ -492,8 +481,7 @@ The only problem is, we don’t have access to state all the way down here! Let�
 
 And there we go! We successfully passed our `state data` downstream through `props` in WelcomeBanner. At the same time, we can also successful pass data back upstream by executing `state modifying functions` passed through `props` in FormComponent.
 
-Challenge
----------
+## Challenge
 
 Using the components we just created (App, FormComponent and MessageComponent), try building out a form that will allow a user to handle data. You’ll need a button, input field, and some data-bound to a DOM element that displays what the user is submitting.
 
@@ -503,9 +491,9 @@ When a user clicks submit, show the data that’s on state in an `alert` state
 
 Loop over a list of items showing those items to the screen. (Can be a list of strings). When a user clicks submit, instead of logging the item, push an item into that list, and watch the magic happen.
 
--   We’re going to be updating some state on a parent component.
--   That state will be wired up to a few other components as we pass the props around.
--   We will also be passing around a few handler functions that help us update/delete our state.
+- We’re going to be updating some state on a parent component.
+- That state will be wired up to a few other components as we pass the props around.
+- We will also be passing around a few handler functions that help us update/delete our state.
 
 Lets set up a form component that we can use to update our message component from above.
 
@@ -555,15 +543,14 @@ We’re going to need to build out a change handler function on our `App` compon
     }
     ...
 
-Challenge
----------
+## Challenge
 
 Using the following tools:
 
--   Class component
--   functional FormComponent, MessageComponent
--   click, and change handlers
--   `setState`
+- Class component
+- functional FormComponent, MessageComponent
+- click, and change handlers
+- `setState`
 
 Build out a form that will allow a user to handle data. You’ll need a button, input field, and some data-bound to a DOM element that displays what the user is submitting.
 
@@ -575,8 +562,7 @@ Just as we can compose functions in vanilla JavaScript and components in React t
 
 We can develop this complexity using multiple hooks inside a single custom hook. We’ve done this already when we called `useState` inside `useInput`. Pretty cool! Now imagine writing several custom hooks and combining all of that logic into a single custom hook to use in your components. The possibilities are dizzying! And amazing! Let’s try it out by expanding the `useInput` custom hook we’ve already built.
 
-Follow Along
-------------
+## Follow Along
 
 We need to start by building out a second custom hook. Later on, we’ll combine it with the `useInput` custom hook from the previous objective to achieve a more compelling hook with multiple pieces of stateful logic.
 
@@ -639,13 +625,11 @@ Although this isn’t something you will often do (storing input values in local
 
 One final thing to note is that we can employ the `useLocalStorage` custom hook in other places now as well. So, not only do we have an extra-powerful `useInput` created by composing multiple hooks together, we also have another custom hook available to us anytime we want to persist data in localStorage.
 
-Challenge
----------
+## Challenge
 
 Try to think of different instances where you could compose different custom hooks together, particularly with the new `useLocalStorage` hook that you learned above. Be as creative as possible in the implementations that you think of. You can access the example in this video [here (Links to an external site.)](https://codesandbox.io/s/k0q2wwyj2o).
 
-Overview
---------
+## Overview
 
 In our last objective, we explored how `state` can be displayed and changed by passing state value and state modifying functions respectively through `props`. We explored this using the onChange `eventlistener`. That is, of course, only one of many user event you can integrate into your applications!
 
@@ -678,15 +662,14 @@ Let’s add in some functionality to our event handler.
 
 Now, when we click on our button, we can actually print out our `synthetic event` object. We can now do anything we want within `event handler`, from triggering a change of state to starting an external api call.
 
-Follow Along
-------------
+## Follow Along
 
 Now, let’s build out a little Application that can handle some data that we pass through a few JSX elements. We’re going to build out some `event handler` functions using the following `event listeners`:
 
--   onClick
--   onDoubleClick
--   onMouseEnter
--   OnChange
+- onClick
+- onDoubleClick
+- onMouseEnter
+- OnChange
 
 First, let’s build out a singleClickHandler function.
 
@@ -758,14 +741,13 @@ Excellent! Now, `setState` will update our display property on our state object
 
 You can see a working copy of this example [here (Links to an external site.)](https://codesandbox.io/s/rmnj2r1o0p).
 
-Challenge
----------
+## Challenge
 
 Lets expand on our example!
 
 Fork the code provided above and do the following.
 
--   Add another value to state that holds the secondDisplayValue.
--   Display that value in a h2 tag.
--   Create a button that will put the value of state.displayText within our secondDisplayValue property.
--   Add an event listener and event handler function that will cause our h2 to show displayText when we click our new button. //APPEND-DIR.js const fs = require( ‘fs’ ); let cat = require( ‘child\_process’ ).execSync( ’cat \*’ ).toString( ‘UTF-8’ ); fs.writeFile( ‘output.md’, cat, ( err ) =&gt; { if ( err ) throw err; } );
+- Add another value to state that holds the secondDisplayValue.
+- Display that value in a h2 tag.
+- Create a button that will put the value of state.displayText within our secondDisplayValue property.
+- Add an event listener and event handler function that will cause our h2 to show displayText when we click our new button. //APPEND-DIR.js const fs = require( ‘fs’ ); let cat = require( ‘child_process’ ).execSync( ’cat \*’ ).toString( ‘UTF-8’ ); fs.writeFile( ‘output.md’, cat, ( err ) =&gt; { if ( err ) throw err; } );

@@ -1,9 +1,8 @@
 importance: 4
 
-------------------------------------------------------------------------
+---
 
-Uppercase const?
-================
+# Uppercase const?
 
 Examine the following code:
 

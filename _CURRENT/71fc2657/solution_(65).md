@@ -1,5 +1,4 @@
-Slow solution
-=============
+# Slow solution
 
 We can calculate all possible subsums.
 
@@ -31,8 +30,7 @@ The solution has a time complexity of [O(n<sup>2</sup>)](https://en.wikipedia.or
 
 For big arrays (1000, 10000 or more items) such algorithms can lead to a serious sluggishness.
 
-Fast solution
-=============
+# Fast solution
 
 Let’s walk the array and keep the current partial sum of elements in the variable `s`. If `s` becomes negative at some point, then assign `s=0`. The maximum of all such `s` will be the answer.
 

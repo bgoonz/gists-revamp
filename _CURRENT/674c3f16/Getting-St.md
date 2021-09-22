@@ -1,16 +1,15 @@
-Getting Started With PostgreSQL
-===============================
+# Getting Started With PostgreSQL
 
 In database jargon, PostgreSQL uses a client/server model. A PostgreSQL session consists of the following cooperating processes (programs):
 
-------------------------------------------------------------------------
+---
 
 ### Getting Started With PostgreSQL
 
 #### In database jargon, PostgreSQL uses a client/server model. A PostgreSQL session consists of the following cooperating processes (programs):
 
--   <span id="d5d8">A server process, which manages the database files, accepts connections to the database from client applications, and performs database actions on behalf of the clients. The database server program is called `postgres`.</span>
--   <span id="91d1">The user’s client (frontend) application that wants to perform database operations. Client applications can be very diverse in nature: a client could be a text-oriented tool, a graphical application, a web server that accesses the database to display web pages, or a specialized database maintenance tool. Some client applications are supplied with the PostgreSQL distribution; most are developed by users.</span>
+- <span id="d5d8">A server process, which manages the database files, accepts connections to the database from client applications, and performs database actions on behalf of the clients. The database server program is called `postgres`.</span>
+- <span id="91d1">The user’s client (frontend) application that wants to perform database operations. Client applications can be very diverse in nature: a client could be a text-oriented tool, a graphical application, a web server that accesses the database to display web pages, or a specialized database maintenance tool. Some client applications are supplied with the PostgreSQL distribution; most are developed by users.</span>
 
 As is typical of client/server applications, the client and the server can be on different hosts. In that case they communicate over a TCP/IP network connection. You should keep this in mind, because the files that can be accessed on a client machine might not be accessible (or might only be accessible using a different file name) on the database server machine.
 
@@ -18,22 +17,22 @@ The PostgreSQL server can handle multiple concurrent connections from clients. T
 
 ### What is SQL?
 
-### 
+###
 
 SQL is short for Structured Query Language. Originally, it used to be called SEQUEL (Structured English Query Language) and was used for storing and manipulating data in databases. Today SQL is used to perform all types of data operations in relational database management systems (RDBMS).
 
 SQL is a powerful language where we can perform a wide range of operations:
 
--   <span id="7f0b">execute queries</span>
--   <span id="d14a">fetch data</span>
--   <span id="5389">insert, update, and delete records in a database (DML operations)</span>
--   <span id="f62e">create new objects in a database (DDL operations)</span>
--   <span id="d790">set permissions on tables, procedures, functions, and views</span>
--   <span id="ebab">and much, much more…</span>
+- <span id="7f0b">execute queries</span>
+- <span id="d14a">fetch data</span>
+- <span id="5389">insert, update, and delete records in a database (DML operations)</span>
+- <span id="f62e">create new objects in a database (DDL operations)</span>
+- <span id="d790">set permissions on tables, procedures, functions, and views</span>
+- <span id="ebab">and much, much more…</span>
 
 ### What is the ANSI SQL standard?
 
-### 
+###
 
 The American National Standards Institute (ANSI) created a standard for SQL in 1986, and it was adopted by the International Organization for Standardization (ISO) in 1987. For each RDBMS to be compliant with the ANSI standard, they all have to support the major commands, like DML, in a similar manner as closely as possible. More information about the ANSI standard can be found on the <a href="https://en.wikipedia.org/wiki/SQL" class="markup--anchor markup--p-anchor">SQL Wikipedia page</a>.
 
@@ -56,30 +55,30 @@ But to be compliant with the ANSI standard, all databases support commands (like
 
 If we check the <a href="https://www.postgresql.org/docs/12/sql-insert.html" class="markup--anchor markup--p-anchor">PostgreSQL documentation of the INSERT statement</a>, its conformity to the SQL standard is discussed in the page’s Compatibility section:
 
-> *Compatibility*
+> _Compatibility_
 
-> *INSERT conforms to the SQL standard, except that the RETURNING clause is a PostgreSQL extension, as is the ability to use WITH with INSERT, and the ability to specify an alternative action with ON CONFLICT. Also, the case in which a column name list is omitted, but not all the columns are filled from the VALUES clause or query, is disallowed by the standard.*
+> _INSERT conforms to the SQL standard, except that the RETURNING clause is a PostgreSQL extension, as is the ability to use WITH with INSERT, and the ability to specify an alternative action with ON CONFLICT. Also, the case in which a column name list is omitted, but not all the columns are filled from the VALUES clause or query, is disallowed by the standard._
 
-> *The SQL standard specifies that OVERRIDING SYSTEM VALUE can only be specified if an identity column that is generated always exists. PostgreSQL allows the clause in any case and ignores it if it is not applicable.*
+> _The SQL standard specifies that OVERRIDING SYSTEM VALUE can only be specified if an identity column that is generated always exists. PostgreSQL allows the clause in any case and ignores it if it is not applicable._
 
 The PostgreSQL documentation includes clear descriptions of any differences from the SQL standard for any command, including:
 
--   <span id="a637">DML (INSERT, SELECT, DELETE)</span>
--   <span id="f912">DDL (CREATE, ALTER, TRUNCATE, DROP, RENAME)</span>
--   <span id="292c">TCL (COMMIT, ROLLBACK, SAVEPOINT)</span>
--   <span id="20cf">DCL (GRANT, REVOKE)</span>
+- <span id="a637">DML (INSERT, SELECT, DELETE)</span>
+- <span id="f912">DDL (CREATE, ALTER, TRUNCATE, DROP, RENAME)</span>
+- <span id="292c">TCL (COMMIT, ROLLBACK, SAVEPOINT)</span>
+- <span id="20cf">DCL (GRANT, REVOKE)</span>
 
 under each command’s Compatibility section.
 
 ### SQL query examples
 
-### 
+###
 
 Now let’s explore some examples of common and useful PostgreSQL queries that can be used in various situations.
 
 ### 1. CREATE TABLE query in PostgreSQL
 
-### 
+###
 
 <a href="https://www.postgresql.org/docs/12/sql-createtable.html" class="markup--anchor markup--p-anchor">CREATE TABLE</a> is a keyword that will create a new, initially empty table in the database. The table will be owned by the user who has issued this command.
 
@@ -88,7 +87,7 @@ Now let’s explore some examples of common and useful PostgreSQL queries that c
 
 ### 2. INSERT query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/sql-insert.html" class="markup--anchor markup--p-anchor">INSERT command</a> is used to insert data into a table:
 
@@ -103,7 +102,7 @@ The <a href="https://www.postgresql.org/docs/12/sql-insert.html" class="markup--
 
 ### 3. SELECT query without WHERE condition in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/sql-select.html" class="markup--anchor markup--p-anchor">SELECT command</a> (when used without the optional WHERE condition) is used to fetch all data from a database table:
 
@@ -118,7 +117,7 @@ The <a href="https://www.postgresql.org/docs/12/sql-select.html" class="markup--
 
 ### 4. UPDATE query in PostgreSQL
 
-### 
+###
 
 <a href="https://www.postgresql.org/docs/12/sql-update.html" class="markup--anchor markup--p-anchor">UPDATE</a> is used to make updates to the data or row(s) of a database table. In the example below we use UPDATE to change the age of a person whose name is ‘PQR’:
 
@@ -148,7 +147,7 @@ Next, we’ll use the UPDATE command to change the name and age of a person whos
 
     postgres=#
 
-If we want to modify all the values in the address and age columns in dummy\_table, then we do not need to use the WHERE clause. The UPDATE query would look like this:
+If we want to modify all the values in the address and age columns in dummy_table, then we do not need to use the WHERE clause. The UPDATE query would look like this:
 
     postgres=# update dummy_table set age=54,address='location-X';
     UPDATE 4
@@ -179,7 +178,7 @@ It is always recommended to perform such operations under transaction blocks (i.
 
 ### 5. DELETE query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/sql-delete.html" class="markup--anchor markup--p-anchor">DELETE command</a> is used to delete row(s). It can be used with or without the optional WHERE condition, but take note: if the WHERE condition is missing, the command will delete all rows, leaving you with an empty table.
 
@@ -191,13 +190,13 @@ In this example, we are deleting one row whose age column has the value 65:
 
 ### 6. Comparison Operators in PostgreSQL queries
 
-### 
+###
 
 In PostgreSQL, with the help of <a href="https://www.postgresql.org/docs/12/functions-comparison.html" class="markup--anchor markup--p-anchor">comparison operators</a> we can find results where the value in a column is not equal to the specified condition or value.
 
 ### Less than or equal to query:
 
-### 
+###
 
     postgres=# select * from dummy_table where age <=50;
      name |  address   | age
@@ -210,7 +209,7 @@ In PostgreSQL, with the help of <a href="https://www.postgresql.org/docs/12/func
 
 ### Greater than or equal to query:
 
-### 
+###
 
     postgres=# select * from dummy_table where age>=50;
      name |  address   | age
@@ -220,7 +219,7 @@ In PostgreSQL, with the help of <a href="https://www.postgresql.org/docs/12/func
 
 ### Not equal to query:
 
-### 
+###
 
     postgres=# select * from dummy_table where age<>50;
      name |  address   | age
@@ -232,7 +231,7 @@ In PostgreSQL, with the help of <a href="https://www.postgresql.org/docs/12/func
 
 ### Equal to query:
 
-### 
+###
 
     postgres=# select * from dummy_table where age=50;
      name |  address   | age
@@ -242,13 +241,13 @@ In PostgreSQL, with the help of <a href="https://www.postgresql.org/docs/12/func
 
 ### 7. SELECT DISTINCT query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/sql-select.html#SQL-DISTINCT" class="markup--anchor markup--p-anchor">SELECT DISTINCT</a> statement is used to return only distinct values from the table. It removes any duplicate values.
 
 ### SELECT query without DISTINCT clause
 
-### 
+###
 
     postgres=# select age from dummy_table order by 1;
      age
@@ -262,7 +261,7 @@ The <a href="https://www.postgresql.org/docs/12/sql-select.html#SQL-DISTINCT" cl
 
 ### SELECT query with DISTINCT clause
 
-### 
+###
 
     postgres=# select distinct age from dummy_table order by 1;
      age
@@ -274,7 +273,7 @@ The <a href="https://www.postgresql.org/docs/12/sql-select.html#SQL-DISTINCT" cl
 
 ### 8. TRUNCATE query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/sql-truncate.html" class="markup--anchor markup--p-anchor">TRUNCATE command</a> is used to empty a table:
 
@@ -283,7 +282,7 @@ The <a href="https://www.postgresql.org/docs/12/sql-truncate.html" class="markup
 
 ### 9. DROP TABLE query in PostgreSQL
 
-### 
+###
 
 This <a href="https://www.postgresql.org/docs/12/sql-droptable.html" class="markup--anchor markup--p-anchor">DROP TABLE command</a> is used to drop a table from the database:
 
@@ -295,7 +294,7 @@ This command has removed the full table, including any associated data, indexes,
 
 ### 10. CREATE VIEW query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/sql-createview.html" class="markup--anchor markup--p-anchor">CREATE VIEW</a> command is used to generate views. Views are pseudo-tables, which are used to present a full table, subset, or select columns from the underlying table:
 
@@ -304,7 +303,7 @@ The <a href="https://www.postgresql.org/docs/12/sql-createview.html" class="mark
 
 ### 11. Create a table in Postgresql using the SELECT statement
 
-### 
+###
 
 Using the syntax in the example below, we can create a table using a SELECT statement:
 
@@ -318,9 +317,9 @@ Using the syntax in the example below, we can create a table using a SELECT stat
 
 ### 12. Query timeout in PostgreSQL
 
-### 
+###
 
-We can command a query to timeout after a certain period with the help of <a href="https://www.enterprisedb.com/postgres-tutorials/how-tune-postgresql-guc-parameters" class="markup--anchor markup--p-anchor">GUC parameters</a> (short for grand unified configuration) like statement\_timeout, which aborts any statement that takes more than the specified number of milliseconds:
+We can command a query to timeout after a certain period with the help of <a href="https://www.enterprisedb.com/postgres-tutorials/how-tune-postgresql-guc-parameters" class="markup--anchor markup--p-anchor">GUC parameters</a> (short for grand unified configuration) like statement_timeout, which aborts any statement that takes more than the specified number of milliseconds:
 
     postgresql=# set statement_timeout=10;
     SET
@@ -329,7 +328,7 @@ We can command a query to timeout after a certain period with the help of <a hre
 
 ### 13. Using CREATE SEQUENCE with the INSERT query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/sql-createsequence.html" class="markup--anchor markup--p-anchor">CREATE SEQUENCE</a> command is a sequential number generator. Once the sequence is created, we can use the sequence’s nextval and currval functions to insert values into a table:
 
@@ -353,7 +352,7 @@ The <a href="https://www.postgresql.org/docs/12/sql-createsequence.html" class="
 
 ### 14. Importing BLOB data types into PostgreSQL
 
-### 
+###
 
 PostgreSQL doesn’t directly support BLOBs (binary large objects), but we can work with them using the following methods:
 
@@ -371,11 +370,11 @@ Go to the bin folder of your PostgreSQL installation and connect to the psql ter
     postgres=# insert into testing values (1,lo_import('/home/edb/mypic.png'));
     INSERT 0 1
 
-The lo\_import() function loads the named file into pg\_largeobject and returns an OID (object identifier) value that will refer to the large object. Selecting the testing table will show just the OID and not the bits that have made up this photo.
+The lo_import() function loads the named file into pg_largeobject and returns an OID (object identifier) value that will refer to the large object. Selecting the testing table will show just the OID and not the bits that have made up this photo.
 
 ### 15. ILIKE query in PostgreSQL
 
-### 
+###
 
 The ILIKE operator is a <a href="https://www.postgresql.org/docs/12/functions-matching.html" class="markup--anchor markup--p-anchor">matching function</a> similar to the LIKE operator, but with the advantage that it matches valus case-insensitively.
 
@@ -390,7 +389,7 @@ The ILIKE operator is a <a href="https://www.postgresql.org/docs/12/functions-ma
 
 ### Using ILIKE in a WHERE condition
 
-### 
+###
 
     postgres=# select * from ted where n ilike 'TAR%';
       n
@@ -403,7 +402,7 @@ The ILIKE operator is a <a href="https://www.postgresql.org/docs/12/functions-ma
 
 ### 16. Hierarchical queries in PostgreSQL
 
-### 
+###
 
 <a href="https://www.enterprisedb.com/postgres-tutorials/how-run-hierarchical-queries-oracle-and-postgresql" class="markup--anchor markup--p-anchor">Hierarchical queries</a> are ones where the results have a structured or parent-child relationship and are displayed in a tree structure. To see how hierarchical queries work, create a dummy table:
 
@@ -414,7 +413,7 @@ The ILIKE operator is a <a href="https://www.postgresql.org/docs/12/functions-ma
       manager_no        int
     );
 
-Insert data into ‘test\_table’:
+Insert data into ‘test_table’:
 
     insert into test_table values(10,'A1','CEO',null);
     insert into test_table values(11, 'B1', 'VP', 10);
@@ -430,13 +429,13 @@ We can perform hierarchical queries on this table using the methods below.
 
 ### 17. Length function in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/9.1/functions-string.html" class="markup--anchor markup--p-anchor">length function</a> returns the number of characters or number of bytes in a specified string variable.
 
 ### Basic SELECT query
 
-### 
+###
 
     postgres=# select name,age from dummy_table;
      name | age
@@ -450,7 +449,7 @@ The <a href="https://www.postgresql.org/docs/9.1/functions-string.html" class="m
 
 ### Query with length function for column name and age
 
-### 
+###
 
     postgres=# select length(name),length(age) from dummy_table;
      length | length
@@ -464,7 +463,7 @@ The <a href="https://www.postgresql.org/docs/9.1/functions-string.html" class="m
 
 ### 18. When a query has no destination for result data in PostgreSQL
 
-### 
+###
 
 Say that while selecting a given function, we receive the error message below:
 
@@ -486,7 +485,7 @@ To avoid such errors, we can either use PERFORM or declare a variable and use it
 
 ### Using PERFORM
 
-### 
+###
 
     postgres=# create or replace function f(n int)
     returns int
@@ -507,7 +506,7 @@ To avoid such errors, we can either use PERFORM or declare a variable and use it
 
 ### Declaring a variable and using it in a SELECT INTO statement
 
-### 
+###
 
     postgres=# create or replace function f(n int)
     returns int
@@ -533,13 +532,13 @@ To avoid such errors, we can either use PERFORM or declare a variable and use it
 
 ### 19. Exporting query result to a text file in PostgreSQL
 
-### 
+###
 
 With the help of the <a href="https://www.postgresql.org/docs/12/sql-copy.html" class="markup--anchor markup--p-anchor">COPY command</a>, we can export data from a table to an outside text file as well as import data from a text file into a table.
 
 ### Exporting data from a table to a text file
 
-### 
+###
 
     postgres=#  copy dummy_table to '/tmp/abc.txt';
     COPY 5
@@ -553,47 +552,47 @@ With the help of the <a href="https://www.postgresql.org/docs/12/sql-copy.html" 
 
 ### Importing data from a text file into a table
 
-### 
+###
 
     postgres=# copy dummy_table from '/tmp/abc.txt';
     COPY 5
 
-### 
+###
 
--   <span id="8e52">With the help of common table expressions (CTE):</span>
+- <span id="8e52">With the help of common table expressions (CTE):</span>
 
-### 
+###
 
-### 
+###
 
--   <span id="ddbe">`postgres=#WITH RECURSIVE cte AS ( SELECT emp_no, ename, manager_no,             1 AS level FROM test_table where manager_no is null UNION ALL SELECT             e.emp_no, e.ename, e.manager_no, c.level + 1 FROM cte c JOIN             test_table e ON e.manager_no = c.emp_no ) SELECT * FROM cte; emp_no             | ename | manager_no | level             -----------+----------+------------------+------- 10 | A1 | | 1 11 |             B1 | 10 | 2 12 | B2 | 10 | 2 13 | B3 | 10 | 2 14 | C1 | 13 | 3 17 |             E1 | 11 | 3 18 | E2 | 11 | 3 15 | C2 | 13 | 3 16 | D1 | 15 | 4 (9             rows) postgres=#`</span>
+- <span id="ddbe">`postgres=#WITH RECURSIVE cte AS ( SELECT emp_no, ename, manager_no, 1 AS level FROM test_table where manager_no is null UNION ALL SELECT e.emp_no, e.ename, e.manager_no, c.level + 1 FROM cte c JOIN test_table e ON e.manager_no = c.emp_no ) SELECT * FROM cte; emp_no | ename | manager_no | level -----------+----------+------------------+------- 10 | A1 | | 1 11 | B1 | 10 | 2 12 | B2 | 10 | 2 13 | B3 | 10 | 2 14 | C1 | 13 | 3 17 | E1 | 11 | 3 18 | E2 | 11 | 3 15 | C2 | 13 | 3 16 | D1 | 15 | 4 (9 rows) postgres=#`</span>
 
 1.  <span id="a513">  
     </span>
 
-### 
+###
 
--   <span id="b6ad">Using the tablefunc extension:</span>
+- <span id="b6ad">Using the tablefunc extension:</span>
 
-### 
+###
 
-### 
+###
 
 1.  <span id="c6e2">The <a href="https://www.postgresql.org/docs/8.3/tablefunc.html" class="markup--anchor markup--li-anchor">tablefunc extension</a> is a contrib module that resides in the contrib/ folder in PostgreSQL sources.</span>
 2.  <span id="2847">First, create the tablefunc extension:</span>
 
--   <span id="3505">`postgres=# CREATE EXTENSION tablefunc; CREATE EXTENSION             postgres=#`</span>
+- <span id="3505">`postgres=# CREATE EXTENSION tablefunc; CREATE EXTENSION postgres=#`</span>
 
 1.  <span id="b334">Then, use tablefunc’s connectby function to display results hierarchically:</span>
 
--   <span id="e7f5">`postgres=# SELECT * FROM connectby('dummy_table', 'emp_no',             'manager_no', '10', 0, '->') AS t(emp_no int, manager_no int,             level int, ord text) order by emp_no; emp_no | manager_no | level |             ord --------+------------+-------+---------------- 10 | | 0 | 10 11             | 10 | 1 | 10->11 12 | 10 | 1 | 10->12 13 | 10 | 1 | 10->13             14 | 13 | 2 | 10->13->14 15 | 13 | 2 | 10->13->15 16 |             15 | 3 | 10->13->15->16 17 | 11 | 2 | 10->11->17 18 |             11 | 2 | 10->11->18 (9 rows) postgres=#`</span>
+- <span id="e7f5">`postgres=# SELECT * FROM connectby('dummy_table', 'emp_no', 'manager_no', '10', 0, '->') AS t(emp_no int, manager_no int, level int, ord text) order by emp_no; emp_no | manager_no | level | ord --------+------------+-------+---------------- 10 | | 0 | 10 11 | 10 | 1 | 10->11 12 | 10 | 1 | 10->12 13 | 10 | 1 | 10->13 14 | 13 | 2 | 10->13->14 15 | 13 | 2 | 10->13->15 16 | 15 | 3 | 10->13->15->16 17 | 11 | 2 | 10->11->17 18 | 11 | 2 | 10->11->18 (9 rows) postgres=#`</span>
 
 1.  <span id="8781">  
     </span>
 
 ### 20. Listing databases query in PostgreSQL
 
-### 
+###
 
 The following query can be used to show all the databases created:
 
@@ -609,7 +608,7 @@ We can also list out all the database names using the \\l command at the psql pr
 
 ### 21. Checking query execution time in PostgreSQL
 
-### 
+###
 
 We can check the time needed for a query to execute by enabling \\timing at the psql prompt:
 
@@ -633,7 +632,7 @@ The SELECT query will now show the execution time:
 
 ### 22. Dynamic SQL query in PostgreSQL
 
-### 
+###
 
 <a href="https://www.postgresql.org/docs/9.1/ecpg-dynamic.html" class="markup--anchor markup--p-anchor">Dynamic SQL</a> is used to reduce repetitive tasks when it comes to querying.  
 Dynamic SQL queries are not cached in memory.
@@ -648,7 +647,7 @@ Dynamic SQL queries are not cached in memory.
 
 ### 23. COUNT query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/8.2/functions-aggregate.html" class="markup--anchor markup--p-anchor">COUNT query</a> returns the number of rows in a table. If we use (\*) this will include null values; otherwise null values will be excluded.
 
@@ -666,7 +665,7 @@ The <a href="https://www.postgresql.org/docs/8.2/functions-aggregate.html" class
 
 ### 24. LIMIT and OFFSET query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/queries-limit.html" class="markup--anchor markup--p-anchor">LIMIT clause</a> is used to limit the data amount returned by the SELECT statement. The query below will display only 1 row:
 
@@ -686,7 +685,7 @@ The <a href="https://www.postgresql.org/docs/12/queries-limit.html" class="marku
 
 ### 25. IF … ELSE expression in PostgreSQL
 
-### 
+###
 
 We can use <a href="https://www.postgresql.org/docs/9.1/plpgsql-control-structures.html" class="markup--anchor markup--p-anchor">conditional statements</a> like IF … ELSE in an anonymous block. The example below checks if the values of variables abc and xyz are matching and prints the result— i.e., 150:
 
@@ -711,7 +710,7 @@ We can use <a href="https://www.postgresql.org/docs/9.1/plpgsql-control-structur
 
 ### 26. UPDATE with JOIN query in PostgreSQL
 
-### 
+###
 
 We can use UPDATE with a JOIN and WHERE clause when we want to update the values from one table (table X) based on values from another table (table Y):
 
@@ -749,7 +748,7 @@ We can use UPDATE with a JOIN and WHERE clause when we want to update the values
 
 ### 27. INNER JOIN query in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/current/tutorial-join.html" class="markup--anchor markup--p-anchor">INNER JOIN</a> command will find rows from two (or more) tables where the specified columns data in the tables match:
 
@@ -764,7 +763,7 @@ The <a href="https://www.postgresql.org/docs/current/tutorial-join.html" class="
 
 ### 28. CASE expression in PostgreSQL
 
-### 
+###
 
 The <a href="https://www.postgresql.org/docs/12/functions-conditional.html" class="markup--anchor markup--p-anchor">CASE expression</a> is a generic conditional expression, similar to the IF … ELSE statement.
 
@@ -785,7 +784,7 @@ The <a href="https://www.postgresql.org/docs/12/functions-conditional.html" clas
 
 ### 29. PostgreSQL recursive query
 
-### 
+###
 
 Recursive queries are used to deal with hierarchical queries or tree-structured data. The structure of a WITH RECURSIVE query is always: a) Non-recursive term  
   b) UNION (or UNION ALL), then a recursive term
@@ -832,9 +831,9 @@ The recursive query below will give all the reports in a certain order:
 
 ### 30. PostgreSQL log queries
 
-### 
+###
 
-Using the <a href="https://www.postgresql.org/docs/12/pgstatstatements.html" class="markup--anchor markup--p-anchor">pg_stat_statements module</a>, we can track execution statistics for all SQL statements. To do this, we need to create an extension and add in shared\_preload\_libraries inside the postgresql.conf file:
+Using the <a href="https://www.postgresql.org/docs/12/pgstatstatements.html" class="markup--anchor markup--p-anchor">pg_stat_statements module</a>, we can track execution statistics for all SQL statements. To do this, we need to create an extension and add in shared_preload_libraries inside the postgresql.conf file:
 
     postgres=# create extension pg_stat_statements;
     CREATE EXTENSION
@@ -867,7 +866,7 @@ Queries will be recorded in these files.
 
 ### 31. Using a variable in a PostgreSQL query
 
-### 
+###
 
 We can declare a variable in PostgreSQL at the psql prompt:
 
@@ -875,7 +874,7 @@ We can declare a variable in PostgreSQL at the psql prompt:
 
 ### Using a variable in a WHERE condition
 
-### 
+###
 
     postgres=# select * from dummy_table where age=:cond;
      name |  address   | age
@@ -894,7 +893,7 @@ OR
 
 ### 32. Date query in PostgreSQL
 
-### 
+###
 
 PostgreSQL offers <a href="https://www.postgresql.org/docs/12/functions-datetime.html" class="markup--anchor markup--p-anchor">functions for date and time</a> that can be used in queries.
 
@@ -936,7 +935,7 @@ We can also perform a date range query to find rows with values between two time
 
 ### 33. PostgreSQL function RETURN QUERY result
 
-### 
+###
 
 When a PL/pgSQL function is declared to return a SETOF some data type, the return is specified by a <a href="https://www.postgresql.org/docs/12/plpgsql-control-structures.html" class="markup--anchor markup--p-anchor">RETURN QUERY</a> command:
 
@@ -963,7 +962,7 @@ When a PL/pgSQL function is declared to return a SETOF some data type, the retur
 
 ### 34. PostgreSQL parallel query performance
 
-### 
+###
 
 <a href="https://www.postgresql.org/docs/12/parallel-query.html" class="markup--anchor markup--p-anchor">Parallel queries</a> in PostgreSQL allow you to finish queries faster by utilizing many CPUs. These GUCs parameters are set in postgresql.conf file:
 
@@ -994,7 +993,7 @@ When a PL/pgSQL function is declared to return a SETOF some data type, the retur
 
 ### 35. Logical operators in PostgreSQL
 
-### 
+###
 
 There are three basic <a href="https://www.postgresql.org/docs/12/functions-logical.html" class="markup--anchor markup--p-anchor">logical operators</a> available in PostgreSQL: AND, OR, and NOT.
 
@@ -1006,15 +1005,15 @@ These operators are used to match conditions in SQL statements—e.g., in WHERE 
 
 ### Some logical operator examples
 
-### 
+###
 
--   <span id="d614">`If both expressions are true, then the result is TRUE. postgresql=#             select 1=1/1 and 200=2+198 as result_and_operator;             result_and_operator --------------------- t (1 row)             postgresql=#`</span>
--   <span id="c7c1">`If one expression is true and another expression is NULL, then the             result is NULL. postgresql=# select 4=4 and null; ?column?             ---------- (1 row)`</span>
--   <span id="8c12">`If one expression is true and another expression is false, then the             result is TRUE. postgres=# select 1=100 OR 2=2; ?column? ----------             t (1 row)`</span>
+- <span id="d614">`If both expressions are true, then the result is TRUE. postgresql=# select 1=1/1 and 200=2+198 as result_and_operator; result_and_operator --------------------- t (1 row) postgresql=#`</span>
+- <span id="c7c1">`If one expression is true and another expression is NULL, then the result is NULL. postgresql=# select 4=4 and null; ?column? ---------- (1 row)`</span>
+- <span id="8c12">`If one expression is true and another expression is false, then the result is TRUE. postgres=# select 1=100 OR 2=2; ?column? ---------- t (1 row)`</span>
 
 ### 36. Catching duplicate rows in a PostgreSQL table
 
-### 
+###
 
 In the following SQL query, there are two records with the value 50:
 
@@ -1038,7 +1037,7 @@ We can use the following SELECT … HAVING query to find the duplicate rows:
 
 ### 37. Enum query in PostgreSQL
 
-### 
+###
 
 <a href="https://www.postgresql.org/docs/12/datatype-enum.html" class="markup--anchor markup--p-anchor">Enumerated (enum) types</a> are data types that comprise a static, ordered set of values.
 
@@ -1060,7 +1059,7 @@ If the enum has not been specified, it will give an error:
 
 ### 38. Pivot query in PostgreSQL
 
-### 
+###
 
 A pivot table is a useful way to analyze large quantities of data by organizing it into a more manageable format.
 
@@ -1094,7 +1093,7 @@ To create a pivot table you need to install the <a href="https://www.postgresql.
 
 ### 39. SELF JOIN query in PostgreSQL
 
-### 
+###
 
 When we join a table against itself, this is called a SELF JOIN. This can be done using INNER JOIN or LEFT JOIN. SELF JOINs are useful when comparing the columns of rows within the same table:
 
@@ -1130,7 +1129,7 @@ When we join a table against itself, this is called a SELF JOIN. This can be don
 
 ### 40. Parent-child recursive query in PostgreSQL
 
-### 
+###
 
 With the help of <a href="https://www.postgresql.org/docs/12/queries-with.html" class="markup--anchor markup--p-anchor">common table expressions</a> (CTE) we can perform parent-child recursive queries:
 
@@ -1164,7 +1163,7 @@ With the help of <a href="https://www.postgresql.org/docs/12/queries-with.html" 
 
 ### 41. Defining a variable in a query in PostgreSQL
 
-### 
+###
 
 Using an <a href="https://www.postgresql.org/docs/12/sql-do.html" class="markup--anchor markup--p-anchor">anonymous block</a>, we can define a variable that can be passed to in a query:
 
@@ -1183,7 +1182,7 @@ Using an <a href="https://www.postgresql.org/docs/12/sql-do.html" class="markup-
 
 ### 42. PREPARE statement in PostgreSQL
 
-### 
+###
 
 A prepared statement is used to optimize performance. When the <a href="https://www.postgresql.org/docs/12/sql-prepare.html" class="markup--anchor markup--p-anchor">PREPARE statement</a> is executed, it is not only parsed but analyzed too, and when we fire the EXECUTE command the prepared statement is planned and executed.
 
@@ -1202,7 +1201,7 @@ Prepared statements can accept parameters.
 
 ### 43. Checking NULL values in PostgreSQL
 
-### 
+###
 
 To Identify or select rows that have NULL values, the <a href="https://www.postgresql.org/docs/12/functions-comparison.html" class="markup--anchor markup--p-anchor">IS NULL</a> condition can be used in the WHERE clause.
 

@@ -1,9 +1,8 @@
 importance: 5
 
-------------------------------------------------------------------------
+---
 
-Repeat until the input is correct
-=================================
+# Repeat until the input is correct
 
 Write a loop which prompts for a number greater than `100`. If the visitor enters another number – ask them to input again.
 

@@ -1,9 +1,8 @@
 importance: 5
 
-------------------------------------------------------------------------
+---
 
-Fix the addition
-================
+# Fix the addition
 
 Here’s a code that asks the user for two numbers and shows their sum.
 

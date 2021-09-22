@@ -1,9 +1,8 @@
 importance: 4
 
-------------------------------------------------------------------------
+---
 
-Is “else” required?
-===================
+# Is “else” required?
 
 The following function returns `true` if the parameter `age` is greater than `18`.
 
