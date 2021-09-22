@@ -1,5 +1,4 @@
-Web Developer Job Interview Questions
--------------------------------------
+## Web Developer Job Interview Questions
 
 ### 1\. DESCRIBE A WEB DEVELOPMENT PROJECT YOU WORKED ON FROM START TO FINISH. WHAT APPROACH DID YOU TAKE, WHAT CHALLENGES DID YOU FACE, AND HOW WERE YOU SUCCESSFUL?
 

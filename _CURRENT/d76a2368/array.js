@@ -6,17 +6,17 @@ module.exports = array = {
   	Tries to turn anything into an array.
   */
 
-  from: function(r) {
+  from: function (r) {
     return Array.prototype.slice.call(r);
   },
   /*
   	Clone of an array. Properties will be shallow copies.
   */
 
-  simpleClone: function(a) {
+  simpleClone: function (a) {
     return a.slice(0);
   },
-  shallowEqual: function(a1, a2) {
+  shallowEqual: function (a1, a2) {
     var i, val, _i, _len;
     if (!(Array.isArray(a1) && Array.isArray(a2) && a1.length === a2.length)) {
       return false;
@@ -29,7 +29,7 @@ module.exports = array = {
     }
     return true;
   },
-  pluck: function(a, i) {
+  pluck: function (a, i) {
     var index, value, _i, _len;
     if (a.length < 1) {
       return a;
@@ -43,7 +43,7 @@ module.exports = array = {
     a.length = a.length - 1;
     return a;
   },
-  pluckItem: function(a, item) {
+  pluckItem: function (a, item) {
     var index, removed, value, _i, _len;
     if (a.length < 1) {
       return a;
@@ -64,7 +64,7 @@ module.exports = array = {
     }
     return a;
   },
-  pluckOneItem: function(a, item) {
+  pluckOneItem: function (a, item) {
     var index, reached, value, _i, _len;
     if (a.length < 1) {
       return a;
@@ -86,7 +86,7 @@ module.exports = array = {
     }
     return a;
   },
-  pluckByCallback: function(a, cb) {
+  pluckByCallback: function (a, cb) {
     var index, removed, value, _i, _len;
     if (a.length < 1) {
       return a;
@@ -107,7 +107,7 @@ module.exports = array = {
     }
     return a;
   },
-  pluckMultiple: function(array, indexesToRemove) {
+  pluckMultiple: function (array, indexesToRemove) {
     var i, removedSoFar, _i, _len;
     if (array.length < 1) {
       return array;
@@ -121,7 +121,7 @@ module.exports = array = {
     }
     return array;
   },
-  injectByCallback: function(a, toInject, shouldInject) {
+  injectByCallback: function (a, toInject, shouldInject) {
     var i, len, val, valA, valB, _i, _len;
     valA = null;
     valB = null;
@@ -141,7 +141,7 @@ module.exports = array = {
     a.push(toInject);
     return a;
   },
-  injectInIndex: function(a, index, toInject) {
+  injectInIndex: function (a, index, toInject) {
     var i, len, toPut, toPutNext;
     len = a.length;
     i = index;
@@ -151,15 +151,13 @@ module.exports = array = {
     }
     toPut = toInject;
     toPutNext = null;
-    for(; i <= len; i++){
+    for (; i <= len; i++) {
+      toPutNext = a[i];
 
-			toPutNext = a[i];
+      a[i] = toPut;
 
-			a[i] = toPut;
-
-			toPut = toPutNext;
-
-		};
+      toPut = toPutNext;
+    }
     return null;
-  }
+  },
 };
