@@ -1,3 +1,5 @@
+```py
+
 """
 Climbing Staircase
 
@@ -1719,3 +1721,4 @@ print(
     )
 )
 
+```
