@@ -23,7 +23,7 @@ reader and the writer.
 Pandoc supports two kinds of filters:
 
 - **Lua filters** use the Lua language to
-  define transformations on the pandoc AST.  They are
+  define transformations on the pandoc AST. They are
   described in a [separate document](lua-filters.html).
 
 - **JSON filters**, described here, are pipes that read from
@@ -44,10 +44,10 @@ Pandoc supports two kinds of filters:
                                   ↓
                             target format
 
-Lua filters have a couple of advantages.  They use a Lua
+Lua filters have a couple of advantages. They use a Lua
 interpreter that is embedded in pandoc, so you don't need
-to have any external software installed.  And they are
-usually faster than JSON filters.  But if you wish to
+to have any external software installed. And they are
+usually faster than JSON filters. But if you wish to
 write your filter in a language other than Lua, you may
 prefer to use a JSON filter. JSON filters may be written
 in any programming language.
@@ -67,7 +67,6 @@ For a gentle introduction into writing your own filters,
 continue this guide. There’s also a [list of third party filters
 on the wiki](https://github.com/jgm/pandoc/wiki/Pandoc-Filters).
 
-
 # A simple example
 
 Suppose you wanted to replace all level 2+ headings in a markdown
@@ -79,7 +78,7 @@ like this:
 
     perl -pe 's/^##+ (.*)$/\*\1\*/' source.txt
 
-This should work most of the time.  But don't forget
+This should work most of the time. But don't forget
 that ATX style headings can end with a sequence of `#`s
 that is not part of the heading text:
 
@@ -96,13 +95,13 @@ comment or delimited code block?
     ### A third level heading in standard markdown
     ~~~~
 
-We don't want to touch *these* lines.  Moreover, what about Setext
+We don't want to touch _these_ lines. Moreover, what about Setext
 style second-level heading?
 
     A heading
     ---------
 
-We need to handle those too.  Finally, can we be sure that adding
+We need to handle those too. Finally, can we be sure that adding
 asterisks to each side of our string will put it in italics?
 What if the string already contains asterisks around it? Then we'll
 end up with bold text, which is not what we want. And what if it contains
@@ -118,7 +117,7 @@ we can use a filter.
 To see what sort of AST is produced when pandoc parses our text,
 we can use pandoc's `native` output format:
 
-~~~~
+```
 % cat test.txt
 ## my heading
 
@@ -127,21 +126,21 @@ text with *italics*
 Pandoc (Meta {unMeta = fromList []})
 [Header 2 ("my-heading",[],[]) [Str "My",Space,Str "heading"]
 , Para [Str "text",Space,Str "with",Space,Emph [Str "italics"]] ]
-~~~~
+```
 
 A `Pandoc` document consists of a `Meta` block (containing
 metadata like title, authors, and date) and a list of `Block`
- elements.  In this case, we have two `Block`s, a `Header` and a `Para`.
-Each has as its content a list of `Inline` elements.  For more details on
+elements. In this case, we have two `Block`s, a `Header` and a `Para`.
+Each has as its content a list of `Inline` elements. For more details on
 the pandoc AST, see the [haddock documentation for `Text.Pandoc.Definition`].
 
-[haddock documentation for `Text.Pandoc.Definition`]: https://hackage.haskell.org/package/pandoc-types
+[haddock documentation for `text.pandoc.definition`]: https://hackage.haskell.org/package/pandoc-types
 
 We can use Haskell to create a JSON filter that transforms this
 AST, replacing each `Header` block with level >= 2 with a `Para`
 with its contents wrapped inside an `Emph` inline:
 
-~~~~                          {.haskell}
+```{.haskell}
 #!/usr/bin/env runhaskell
 -- behead.hs
 import Text.Pandoc.JSON
@@ -152,13 +151,12 @@ main = toJSONFilter behead
 behead :: Block -> Block
 behead (Header n _ xs) | n >= 2 = Para [Emph xs]
 behead x = x
-~~~~
+```
 
-The `toJSONFilter` function does two things.  First, it lifts
+The `toJSONFilter` function does two things. First, it lifts
 the `behead` function (which maps `Block -> Block`) onto a
 transformation of the entire `Pandoc` AST, walking the AST
-and transforming each block.  Second, it wraps this `Pandoc ->
-Pandoc` transformation with the necessary JSON serialization
+and transforming each block. Second, it wraps this `Pandoc -> Pandoc` transformation with the necessary JSON serialization
 and deserialization, producing an executable that consumes
 JSON from stdin and produces JSON to stdout.
 
@@ -180,25 +178,24 @@ Alternatively, we could compile the filter:
     pandoc -f SOURCEFORMAT -t TARGETFORMAT --filter ./behead
 
 Note that if the filter is placed in the system PATH, then the initial
-`./` is not needed.  Note also that the command line can include
-multiple instances of `--filter`:  the filters will be applied in
+`./` is not needed. Note also that the command line can include
+multiple instances of `--filter`: the filters will be applied in
 sequence.
-
 
 # LaTeX for WordPress
 
 Another easy example. WordPress blogs require a special format for
-LaTeX math.  Instead of `$e=mc^2$`, you need: `$LaTeX e=mc^2$`.
+LaTeX math. Instead of `$e=mc^2$`, you need: `$LaTeX e=mc^2$`.
 How can we convert a markdown document accordingly?
 
 Again, it's difficult to do the job reliably with regexes.
 A `$` might be a regular currency indicator, or it might occur in
-a comment or code block or inline code span.  We just want to find
+a comment or code block or inline code span. We just want to find
 the `$`s that begin LaTeX math. If only we had a parser...
 
-We do.  Pandoc already extracts LaTeX math, so:
+We do. Pandoc already extracts LaTeX math, so:
 
-~~~~                          {.haskell}
+```{.haskell}
 #!/usr/bin/env runhaskell
 -- wordpressify.hs
 import Text.Pandoc.JSON
@@ -206,22 +203,20 @@ import Text.Pandoc.JSON
 main = toJSONFilter wordpressify
   where wordpressify (Math x y) = Math x ("LaTeX " ++ y)
         wordpressify x = x
-~~~~
+```
 
 Mission accomplished. (I've omitted type signatures here,
 just to show it can be done.)
-
 
 # But I don't want to learn Haskell!
 
 While it's easiest to write pandoc filters in Haskell, it is fairly
 easy to write them in python using the `pandocfilters` package.
-The package is in PyPI and can be installed using `pip install
-pandocfilters` or `easy_install pandocfilters`.
+The package is in PyPI and can be installed using `pip install pandocfilters` or `easy_install pandocfilters`.
 
 Here's our "beheading" filter in python:
 
-~~~ {.python}
+```{.python}
 #!/usr/bin/env python
 
 """
@@ -237,10 +232,10 @@ def behead(key, value, format, meta):
 
 if __name__ == "__main__":
   toJSONFilter(behead)
-~~~
+```
 
 `toJSONFilter(behead)` walks the AST and applies the `behead` action
-to each element.  If `behead` returns nothing, the node is unchanged;
+to each element. If `behead` returns nothing, the node is unchanged;
 if it returns an object, the node is replaced; if it returns a list,
 the new list is spliced in.
 
@@ -264,9 +259,9 @@ Don't like Python? There are also ports of pandocfilters in
 - [Ruby](https://heerdebeer.org/Software/markdown/paru/).
 
 Starting with pandoc 2.0, pandoc includes built-in support for
-writing filters in lua.  The lua interpreter is built in to
+writing filters in lua. The lua interpreter is built in to
 pandoc, so a lua filter does not require any additional software
-to run.  See the [documentation on lua
+to run. See the [documentation on lua
 filters](https://pandoc.org/lua-filters.html).
 
 # Include files
@@ -276,7 +271,7 @@ reads a markdown document, finds all the inline code blocks with
 attribute `include`, and replaces their contents with the contents of
 the file given?
 
-~~~~                          {.haskell}
+```{.haskell}
 #!/usr/bin/env runhaskell
 -- includes.hs
 import Text.Pandoc.JSON
@@ -293,7 +288,7 @@ doInclude x = return x
 
 main :: IO ()
 main = toJSONFilter doInclude
-~~~~
+```
 
 Try this on the following:
 
@@ -308,7 +303,7 @@ Try this on the following:
 What if we want to remove every link from a document, retaining
 the link's text?
 
-~~~~                          {.haskell}
+```{.haskell}
 #!/usr/bin/env runhaskell
 -- delink.hs
 import Text.Pandoc.JSON
@@ -318,7 +313,7 @@ main = toJSONFilter delink
 delink :: Inline -> [Inline]
 delink (Link _ txt _) = txt
 delink x              = [x]
-~~~~
+```
 
 Note that `delink` can't be a function of type `Inline -> Inline`,
 because the thing we want to replace the link with is not a single
@@ -330,7 +325,7 @@ from an `Inline` element to a list of `Inline` elements.
 # A filter for ruby text
 
 Finally, here's a nice real-world example, developed on the
-[pandoc-discuss](https://groups.google.com/group/pandoc-discuss/browse_thread/thread/7baea325565878c8) list.  Qubyte wrote:
+[pandoc-discuss](https://groups.google.com/group/pandoc-discuss/browse_thread/thread/7baea325565878c8) list. Qubyte wrote:
 
 > I'm interested in using pandoc to turn my markdown notes on Japanese
 > into nicely set HTML and (Xe)LaTeX. With HTML5, ruby (typically used to
@@ -346,13 +341,13 @@ Finally, here's a nice real-world example, developed on the
 > conversion is to HTML, but it's ugly and uses a lot of keystrokes, for
 > example
 >
-> ~~~ {.xml}
+> ```{.xml}
 > <ruby>ご<rt></rt>飯<rp>（</rp><rt>はん</rt><rp>）</rp></ruby>
-> ~~~
+> ```
 >
 > sets ご飯 "gohan" with "han" spelt phonetically above the second
 > character, or to the right of it in brackets if the browser does not
-> support ruby.  I'd like to have something more like
+> support ruby. I'd like to have something more like
 >
 >     r[はん](飯)
 >
@@ -363,7 +358,7 @@ markdown link with a URL beginning with a hyphen is interpreted as ruby:
 
     [はん](-飯)
 
-~~~ {.haskell}
+```{.haskell}
 {-# LANGUAGE OverloadedStrings #-}
 -- handleruby.hs
 import Text.Pandoc.JSON
@@ -385,10 +380,10 @@ handleRuby _ x = x
 
 main :: IO ()
 main = toJSONFilter handleRuby
-~~~
+```
 
 Note that, when a script is called using `--filter`, pandoc passes
-it the target format as the first argument.  When a function's
+it the target format as the first argument. When a function's
 first argument is of type `Maybe Format`, `toJSONFilter` will
 automatically assign it `Just` the target format or `Nothing`.
 
@@ -409,7 +404,7 @@ Then run it:
     ^D
     \ruby{飯}{はん}
 
-Note:  to use this to generate PDFs via LaTeX, you'll need
+Note: to use this to generate PDFs via LaTeX, you'll need
 to use `--pdf-engine=xelatex`, specify a `mainfont` that has
 the Japanese characters (e.g. "Noto Sans CJK TC"), and add
 `\usepackage{ruby}` to your template or header-includes.
@@ -451,12 +446,12 @@ Pandoc sets additional environment variables before calling a
 filter.
 
 `PANDOC_VERSION`
-:   The version of the pandoc binary used to process the document.
-    Example: `2.11.1`.
+: The version of the pandoc binary used to process the document.
+Example: `2.11.1`.
 
 `PANDOC_READER_OPTIONS`
-:   JSON object representation of the options passed to the input
-    parser.
+: JSON object representation of the options passed to the input
+parser.
 
     Object fields:
 
@@ -501,12 +496,14 @@ executable. However, if the executable bit is not set, then
 pandoc tries to guess a suitable interpreter from the file
 extension.
 
-  file extension   interpreter
-  ---------------- --------------
-  .py              `python`
-  .hs              `runhaskell`
-  .pl              `perl`
-  .rb              `ruby`
-  .php             `php`
-  .js              `node`
-  .r               `Rscript`
+file extension interpreter
+
+---
+
+.py `python`
+.hs `runhaskell`
+.pl `perl`
+.rb `ruby`
+.php `php`
+.js `node`
+.r `Rscript`

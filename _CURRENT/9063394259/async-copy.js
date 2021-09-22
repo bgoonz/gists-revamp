@@ -21,8 +21,8 @@
  *
  */
 
-const babel = require('babel-core');
-const path = require('path');
+const babel = require("babel-core");
+const path = require("path");
 
 const t = babel.types;
 const Transformer = babel.Transformer;
@@ -34,13 +34,10 @@ const Transformer = babel.Transformer;
  */
 function buildCallTo(delegateName, functionName, args) {
   return t.returnStatement(
-    t.callExpression(
-      t.identifier(delegateName),
-      [
-        t.literal(functionName),
-        t.arrayExpression(args)
-      ]
-    )
+    t.callExpression(t.identifier(delegateName), [
+      t.literal(functionName),
+      t.arrayExpression(args),
+    ])
   );
 }
 
@@ -66,13 +63,12 @@ function createAsyncCopy(node, scope) {
   const asyncName = `gen${name[0].toUpperCase()}${name.substr(1)}`;
   // The function doesn't actually have to be marked as async, since the
   // delegate function returns a promise anyway.
-  const params = node.params.map(param => {
+  const params = node.params.map((param) => {
     if (t.isAssignmentPattern(param)) {
       param = param.left;
     }
     // convert patters to single variables
-    if (t.isObjectPattern(param) ||
-        t.isArrayPattern(param)) {
+    if (t.isObjectPattern(param) || t.isArrayPattern(param)) {
       return scope.generateUidIdentifierBasedOnNode(param);
     }
     return t.identifier(param.name);
@@ -81,19 +77,17 @@ function createAsyncCopy(node, scope) {
     t.functionDeclaration(
       t.identifier(asyncName),
       params,
-      t.blockStatement([
-        buildCallTo(delegateName, node.id.name, params)
-      ])
+      t.blockStatement([buildCallTo(delegateName, node.id.name, params)])
     )
   );
   return exportDeclaration;
 }
 
-var delegateName = 'delegate';
-const delegatePath = './src/_internals';
+var delegateName = "delegate";
+const delegatePath = "./src/_internals";
 let insertAsync = false;
 
-module.exports = new Transformer('async-to-sync', {
+module.exports = new Transformer("async-to-sync", {
   Program: {
     enter() {
       insertAsync = false;
@@ -103,10 +97,13 @@ module.exports = new Transformer('async-to-sync', {
       if (insertAsync) {
         // If we found any async functions, we have to require the delegate
         // method.
-        const resolvedDelegatePath = path.join(path.relative(
-          path.dirname(file.log.filename),
-          path.resolve(delegatePath)
-        ), delegateName);
+        const resolvedDelegatePath = path.join(
+          path.relative(
+            path.dirname(file.log.filename),
+            path.resolve(delegatePath)
+          ),
+          delegateName
+        );
 
         const moduleBody = node.body;
         moduleBody.unshift(
@@ -126,7 +123,7 @@ module.exports = new Transformer('async-to-sync', {
   },
 
   ExportNamedDeclaration(node, parent, scope) {
-    if (t.isFunctionDeclaration(node.declaration, {async: true})) {
+    if (t.isFunctionDeclaration(node.declaration, { async: true })) {
       // If the function is async and at the top level, we make it
       // sync and insert an async version after it.
       const ex = createAsyncCopy(node.declaration, scope);

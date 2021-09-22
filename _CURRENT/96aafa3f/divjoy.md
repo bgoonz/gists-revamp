@@ -104,8 +104,6 @@ Component Library
                                       opacity: 0.8;
                                     "></span>
 
-
-
 Saved
 
 <span class="rowTitle"><span style="
