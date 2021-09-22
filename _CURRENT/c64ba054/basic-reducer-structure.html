@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>basic-reducer-structure</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p><a href="../official/index.html" class="navbar__brand"><strong>Redux</strong></a></p>
+<p><a href="../official/introduction/getting-started.html" class="navbar__item navbar__link">Getting Started</a><a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="navbar__item navbar__link">Tutorial</a><a href="../official/api/api-reference.html" class="navbar__item navbar__link">API</a><a href="../official/faq.html" class="navbar__item navbar__link">FAQ</a><a href="../official/style-guide/style-guide.html" class="navbar__item navbar__link">Best Practices</a><a href="../official/../github.com/reduxjs/redux.html" class="navbar__item navbar__link">GitHub</a><a href="../official/introduction/getting-started.html#help-and-discussion" class="navbar__item navbar__link">Need help?</a> <a href="../official/index.html" class="navbar__brand"><strong>Redux</strong></a></p>
+<ul>
+<li><a href="../official/introduction/getting-started.html" class="menu__link">Getting Started</a></li>
+<li><a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Tutorial</a></li>
+<li><a href="../official/api/api-reference.html" class="menu__link">API</a></li>
+<li><a href="../official/faq.html" class="menu__link">FAQ</a></li>
+<li><a href="../official/style-guide/style-guide.html" class="menu__link">Best Practices</a></li>
+<li><a href="../official/../github.com/reduxjs/redux.html" class="menu__link">GitHub</a></li>
+<li><p><a href="../official/introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a></p></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Introduction</a>
+<ul>
+<li><a href="../official/introduction/getting-started.html" class="menu__link">Getting Started with Redux</a></li>
+<li><a href="../official/introduction/installation.html" class="menu__link">Installation</a></li>
+<li><a href="../official/introduction/core-concepts.html" class="menu__link">Core Concepts</a></li>
+<li><a href="../official/introduction/learning-resources.html" class="menu__link">Learning Resources</a></li>
+<li><a href="../official/introduction/ecosystem.html" class="menu__link">Ecosystem</a></li>
+<li><a href="../official/introduction/examples.html" class="menu__link">Examples</a></li>
+</ul></li>
+<li><p><a href="#!" class="menu__link menu__link--sublist">Tutorials</a></p>
+<ul>
+<li><a href="../official/tutorials/index.html" class="menu__link">Tutorials Index</a></li>
+<li><a href="../official/tutorials/quick-start.html" class="menu__link">Quick Start</a></li>
+<li><a href="../official/tutorials/typescript-quick-start.html" class="menu__link">TypeScript Quick Start</a></li>
+<li><p><a href="#!" class="menu__link menu__link--sublist">Redux Essentials</a></p>
+<ul>
+<li><a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="menu__link">Redux Overview and Concepts</a></li>
+<li><a href="../official/tutorials/essentials/part-2-app-structure.html" class="menu__link">Redux App Structure</a></li>
+<li><a href="../official/tutorials/essentials/part-3-data-flow.html" class="menu__link">Basic Redux Data Flow</a></li>
+<li><a href="../official/tutorials/essentials/part-4-using-data.html" class="menu__link">Using Redux Data</a></li>
+<li><a href="../official/tutorials/essentials/part-5-async-logic.html" class="menu__link">Async Logic and Data Fetching</a></li>
+<li><p><a href="../official/tutorials/essentials/part-6-performance-normalization.html" class="menu__link">Performance and Normalizing Data</a></p></li>
+<li><a href="../official/tutorials/fundamentals/part-1-overview.html" class="menu__link">Redux Overview</a></li>
+<li><a href="../official/tutorials/fundamentals/part-2-concepts-data-flow.html" class="menu__link">Redux Concepts and Data Flow</a></li>
+<li><a href="../official/tutorials/fundamentals/part-3-state-actions-reducers.html" class="menu__link">State, Actions, and Reducers</a></li>
+<li><a href="../official/tutorials/fundamentals/part-4-store.html" class="menu__link">Store</a></li>
+<li><a href="../official/tutorials/fundamentals/part-5-ui-react.html" class="menu__link">UI and React</a></li>
+<li><a href="../official/tutorials/fundamentals/part-6-async-logic.html" class="menu__link">Async Logic and Data Fetching</a></li>
+<li><a href="../official/tutorials/fundamentals/part-7-standard-patterns.html" class="menu__link">Standard Redux Patterns</a></li>
+<li><p><a href="../official/tutorials/fundamentals/part-8-modern-redux.html" class="menu__link">Modern Redux with Redux Toolkit</a></p></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist menu__link--active">Recipes</a>
+<ul>
+<li><a href="basic-reducer-structure.html" class="menu__link menu__link--active active">Basic Reducer Structure</a>
+<ul>
+<li><a href="splitting-reducer-logic.html" class="menu__link">Splitting Reducer Logic</a></li>
+<li><a href="refactoring-reducer-example.html" class="menu__link">Refactoring Reducers Example</a></li>
+<li><a href="using-combinereducers.html" class="menu__link">Using combineReducers</a></li>
+<li><a href="beyond-combinereducers.html" class="menu__link">Beyond combineReducers</a></li>
+<li><a href="normalizing-state-shape.html" class="menu__link">Normalizing State Shape</a></li>
+<li><a href="updating-normalized-data.html" class="menu__link">Updating Normalized Data</a></li>
+<li><a href="reusing-reducer-logic.html" class="menu__link">Reusing Reducer Logic</a></li>
+<li><a href="immutable-update-patterns.html" class="menu__link">Immutable Update Patterns</a></li>
+<li><a href="initializing-state.html" class="menu__link">Initializing State</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Understanding Redux</a>
+<ul>
+<li><a href="#!" class="menu__link menu__link--sublist">Thinking in Redux</a>
+<ul>
+<li><a href="../official/understanding/thinking-in-redux/motivation.html" class="menu__link">Motivation</a></li>
+<li><a href="../official/understanding/thinking-in-redux/three-principles.html" class="menu__link">Three Principles</a></li>
+<li><a href="../official/understanding/thinking-in-redux/glossary.html" class="menu__link">Glossary</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">History and Design</a>
+<ul>
+<li><a href="../official/understanding/history-and-design/prior-art.html" class="menu__link">Prior Art</a></li>
+<li><a href="../official/understanding/history-and-design/middleware.html" class="menu__link">Middleware</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">FAQ</a>
+<ul>
+<li><a href="../official/faq.html" class="menu__link">FAQ Index</a></li>
+<li><a href="../official/faq/general.html" class="menu__link">General</a></li>
+<li><a href="../official/faq/reducers.html" class="menu__link">Reducers</a></li>
+<li><a href="../official/faq/organizing-state.html" class="menu__link">Organizing State</a></li>
+<li><a href="../official/faq/store-setup.html" class="menu__link">Store Setup</a></li>
+<li><a href="../official/faq/actions.html" class="menu__link">Actions</a></li>
+<li><a href="../official/faq/immutable-data.html" class="menu__link">Immutable Data</a></li>
+<li><a href="../official/faq/code-structure.html" class="menu__link">Code Structure</a></li>
+<li><a href="../official/faq/performance.html" class="menu__link">Performance</a></li>
+<li><a href="../official/faq/design-decisions.html" class="menu__link">Design Decisions</a></li>
+<li><a href="../official/faq/react-redux.html" class="menu__link">React Redux</a></li>
+<li><a href="../official/faq/miscellaneous.html" class="menu__link">Miscellaneous</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Style Guide</a>
+<ul>
+<li><a href="../official/style-guide/style-guide.html" class="menu__link">Style Guide: Best Practices</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">API Reference</a>
+<ul>
+<li><a href="../official/api/api-reference.html" class="menu__link">API Reference</a></li>
+<li><a href="../official/api/createstore.html" class="menu__link">createStore</a></li>
+<li><a href="../official/api/store.html" class="menu__link">Store</a></li>
+<li><a href="../official/api/combinereducers.html" class="menu__link">combineReducers</a></li>
+<li><a href="../official/api/applymiddleware.html" class="menu__link">applyMiddleware</a></li>
+<li><a href="../official/api/bindactioncreators.html" class="menu__link">bindActionCreators</a></li>
+<li><a href="../official/api/compose.html" class="menu__link">compose</a></li>
+</ul></li>
+<li><a href="#!" class="menu__link menu__link--sublist">Redux Toolkit</a>
+<ul>
+<li><a href="../official/redux-toolkit/overview.html" class="menu__link">Redux Toolkit: Overview</a></li>
+</ul></li>
+</ul>
+<h1 id="basic-reducer-structure-and-state-shape"><span id="basic-reducer-structure-and-state-shape" class="anchor enhancedAnchor_2LWZ"></span>Basic Reducer Structure and State Shape<a href="#basic-reducer-structure-and-state-shape" class="hash-link" title="Direct link to heading">#</a></h1>
+<h2 id="basic-reducer-structure"><span id="basic-reducer-structure" class="anchor enhancedAnchor_2LWZ"></span>Basic Reducer Structure<a href="#basic-reducer-structure" class="hash-link" title="Direct link to heading">#</a></h2>
+<p>First and foremost, it’s important to understand that your entire application really only has <strong>one single reducer function</strong>: the function that you’ve passed into <code>createStore</code> as the first argument. That one single reducer function ultimately needs to do several things:</p>
+<ul>
+<li>The first time the reducer is called, the <code>state</code> value will be <code>undefined</code>. The reducer needs to handle this case by supplying a default state value before handling the incoming action.</li>
+<li>It needs to look at the previous state and the dispatched action, and determine what kind of work needs to be done</li>
+<li>Assuming actual changes need to occur, it needs to create new objects and arrays with the updated data and return those</li>
+<li>If no changes are needed, it should return the existing state as-is.</li>
+</ul>
+<p>The simplest possible approach to writing reducer logic is to put everything into a single function declaration, like this:</p>
+<p><span class="token keyword" style="color: #f92672">function</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">counter</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">state</span><span class="token parameter punctuation" style="color: #f8f8f2">,</span><span class="token parameter"> action</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">if</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token keyword" style="color: #f92672">typeof</span><span class="token plain"> state </span><span class="token operator" style="color: #f8f8f2">===</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘undefined’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> state </span><span class="token operator" style="color: #f8f8f2">=</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">0</span><span class="token plain"> </span><span class="token comment" style="color: #c6cad2">// If state is undefined, initialize it with a default value</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span></p>
+<p><span class="token plain" style="display: inline-block"> </span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">if</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">type</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">===</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘INCREMENT’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> state </span><span class="token operator" style="color: #f8f8f2">+</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">1</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">else</span><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">if</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">type</span><span class="token plain"> </span><span class="token operator" style="color: #f8f8f2">===</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘DECREMENT’</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> state </span><span class="token operator" style="color: #f8f8f2">-</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">1</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">else</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> state </span><span class="token comment" style="color: #c6cad2">// In case an action is passed in we don’t understand</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span></p>
+<p><span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>Notice that this simple function fulfills all the basic requirements. It returns a default value if none exists, initializing the store; it determines what sort of update needs to be done based on the type of the action, and returns new values; and it returns the previous state if no work needs to be done.</p>
+<p>There are some simple tweaks that can be made to this reducer. First, repeated <code>if</code>/<code>else</code> statements quickly grow tiresome, so it’s very common to use <code>switch</code> statements instead. Second, we can use ES6’s default parameter values to handle the initial “no existing data” case. With those changes, the reducer would look like:</p>
+<p><span class="token keyword" style="color: #f92672">function</span><span class="token plain"> </span><span class="token function" style="color: #e6d874">counter</span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token parameter">state </span><span class="token parameter operator" style="color: #f8f8f2">=</span><span class="token parameter"> </span><span class="token parameter number" style="color: #ae81ff">0</span><span class="token parameter punctuation" style="color: #f8f8f2">,</span><span class="token parameter"> action</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">switch</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">(</span><span class="token plain">action</span><span class="token punctuation" style="color: #f8f8f2">.</span><span class="token property-access">type</span><span class="token punctuation" style="color: #f8f8f2">)</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword" style="color: #f92672">case</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘INCREMENT’</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> state </span><span class="token operator" style="color: #f8f8f2">+</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">1</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword" style="color: #f92672">case</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘DECREMENT’</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> state </span><span class="token operator" style="color: #f8f8f2">-</span><span class="token plain"> </span><span class="token number" style="color: #ae81ff">1</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword module" style="color: #f92672">default</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token keyword control-flow" style="color: #f92672">return</span><span class="token plain"> state</span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span></p>
+<p><span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>This is the basic structure that a typical Redux reducer function uses.</p>
+<h2 id="basic-state-shape"><span id="basic-state-shape" class="anchor enhancedAnchor_2LWZ"></span>Basic State Shape<a href="#basic-state-shape" class="hash-link" title="Direct link to heading">#</a></h2>
+<p>Redux encourages you to think about your application in terms of the data you need to manage. The data at any given point in time is the “<em>state</em>” of your application, and the structure and organization of that state is typically referred to as its “<em>shape</em>”. The shape of your state plays a major role in how you structure your reducer logic.</p>
+<p>A Redux state usually has a plain Javascript object as the top of the state tree. (It is certainly possible to have another type of data instead, such as a single number, an array, or a specialized data structure, but most libraries assume that the top-level value is a plain object.) The most common way to organize data within that top-level object is to further divide data into sub-trees, where each top-level key represents some “domain” or “slice” of related data. For example, a basic Todo app’s state might look like:</p>
+<p><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> visibilityFilter</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘SHOW_ALL’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> todos</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">[</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> text</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘Consider using Redux’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> completed</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token boolean" style="color: #ae81ff">true</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> text</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token string" style="color: #a6e22e">‘Keep all state in a single tree’</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> completed</span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token boolean" style="color: #ae81ff">false</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">]</span><span class="token plain"></span></p>
+<p><span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span>In this example, <code>todos</code> and <code>visibilityFilter</code> are both top-level keys in the state, and each represents a “slice” of data for some particular concept.</p>
+<p>Most applications deal with multiple types of data, which can be broadly divided into three categories:</p>
+<ul>
+<li><em>Domain data</em>: data that the application needs to show, use, or modify (such as “all of the Todos retrieved from the server”)</li>
+<li><em>App state</em>: data that is specific to the application’s behavior (such as “Todo #5 is currently selected”, or “there is a request in progress to fetch Todos”)</li>
+<li><em>UI state</em>: data that represents how the UI is currently displayed (such as “The EditTodo modal dialog is currently open”)</li>
+</ul>
+<p>Because the store represents the core of your application, you should <strong>define your state shape in terms of your domain data and app state, not your UI component tree</strong>. As an example, a shape of <code>state.leftPane.todoList.todos</code> would be a bad idea, because the idea of “todos” is central to the whole application, not just a single part of the UI. The <code>todos</code> slice should be at the top of the state tree instead.</p>
+<p>There will <em>rarely</em> be a 1-to-1 correspondence between your UI tree and your state shape. The exception to that might be if you are explicitly tracking various aspects of UI data in your Redux store as well, but even then the shape of the UI data and the shape of the domain data would likely be different.</p>
+<p>A typical app’s state shape might look roughly like:</p>
+<p><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> domainData1 </span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> domainData2 </span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> appState1 </span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> appState2 </span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> ui </span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token plain"></span></p>
+<p><span class="token plain"> uiState1 </span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> uiState2 </span><span class="token operator" style="color: #f8f8f2">:</span><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">{</span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token punctuation" style="color: #f8f8f2">,</span><span class="token plain"></span></p>
+<p><span class="token plain"> </span><span class="token punctuation" style="color: #f8f8f2">}</span><span class="token plain"></span></p>
+<p><span class="token plain"></span><span class="token punctuation" style="color: #f8f8f2">}</span><a href="prerequisite-concepts.html" class="pagination-nav__link"></a></p>
+<p>« Prerequisite Concepts</p>
+<p><a href="splitting-reducer-logic.html" class="pagination-nav__link"></a></p>
+<p>Next</p>
+<p>Splitting Reducer Logic »</p>
+<ul>
+<li><a href="#basic-reducer-structure" class="table-of-contents__link">Basic Reducer Structure</a></li>
+<li><a href="#basic-state-shape" class="table-of-contents__link">Basic State Shape</a></li>
+</ul>
+<h4 id="docs">Docs</h4>
+<ul>
+<li><a href="../official/introduction/getting-started.html" class="footer__link-item">Getting Started</a></li>
+<li><a href="../official/tutorials/essentials/part-1-overview-concepts.html" class="footer__link-item">Tutorial</a></li>
+<li><a href="../official/faq.html" class="footer__link-item">FAQ</a></li>
+<li><a href="../official/api/api-reference.html" class="footer__link-item">API Reference</a></li>
+</ul>
+<h4 id="community">Community</h4>
+<ul>
+<li><a href="../official/../discord.com/invite/0ZcbPKXt5bZ6au5t.html" class="footer__link-item">Reactiflux Discord</a></li>
+<li><a href="../official/../stackoverflow.com/questions/tagged/redux.html" class="footer__link-item">Stack Overflow</a></li>
+<li><a href="../official/introduction/getting-started.html#help-and-discussion" class="footer__link-item">Feedback</a></li>
+</ul>
+<h4 id="more">More</h4>
+<ul>
+<li><a href="../official/../github.com/reduxjs/redux.html" class="footer__link-item">GitHub</a></li>
+<li><a href="../../../www.netlify.com/index.html"><img src="../../../www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" /></a></li>
+</ul>
+<p><a href="../official/index.html" class="footerLogoLink_MyFc"><img src="../official/../d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ footer__logo" /></p>
+</body>
+</html>

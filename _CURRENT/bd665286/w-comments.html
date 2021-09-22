@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>w-comments</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="st">&#39;use strict&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co"> * Doubly-linked list</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"> */</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="kw">class</span> LinkedList <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-8" title="8">  <span class="at">constructor</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">this</span>.<span class="at">_length</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="kw">this</span>.<span class="at">head</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="kw">this</span>.<span class="at">tail</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14">    <span class="co">// Read-only length property</span></a>
+<a class="sourceLine" id="cb1-15" title="15">    <span class="va">Object</span>.<span class="at">defineProperty</span>(<span class="kw">this</span><span class="op">,</span> <span class="st">&#39;length&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-16" title="16">      <span class="dt">get</span><span class="op">:</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-17" title="17">        <span class="cf">return</span> <span class="kw">this</span>.<span class="at">_length</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-18" title="18">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-19" title="19">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-20" title="20">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-21" title="21"></a>
+<a class="sourceLine" id="cb1-22" title="22">  <span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-23" title="23"><span class="co">   * Whether the list is empty</span></a>
+<a class="sourceLine" id="cb1-24" title="24"><span class="co">   *</span></a>
+<a class="sourceLine" id="cb1-25" title="25"><span class="co">   * </span><span class="an">@return</span><span class="co"> Boolean</span></a>
+<a class="sourceLine" id="cb1-26" title="26"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb1-27" title="27">  <span class="at">isEmpty</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-28" title="28">    <span class="cf">return</span> <span class="kw">this</span>.<span class="at">length</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-29" title="29">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-30" title="30"></a>
+<a class="sourceLine" id="cb1-31" title="31">  <span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-32" title="32"><span class="co">   * Adds the element to the end of the list or to the desired index</span></a>
+<a class="sourceLine" id="cb1-33" title="33"><span class="co">   *</span></a>
+<a class="sourceLine" id="cb1-34" title="34"><span class="co">   * </span><span class="an">@param</span><span class="co"> </span><span class="cv">{</span><span class="co"> Object } n</span></a>
+<a class="sourceLine" id="cb1-35" title="35"><span class="co">   * </span><span class="an">@param</span><span class="co"> </span><span class="cv">{</span><span class="co"> Number } index</span></a>
+<a class="sourceLine" id="cb1-36" title="36"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb1-37" title="37">  <span class="at">add</span>(n<span class="op">,</span> index) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-38" title="38">    <span class="cf">if</span> (index <span class="op">&gt;</span> <span class="kw">this</span>.<span class="at">length</span> <span class="op">||</span> index <span class="op">&lt;</span> <span class="dv">0</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-39" title="39">      <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;Index out of bounds&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-40" title="40">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-41" title="41"></a>
+<a class="sourceLine" id="cb1-42" title="42">    <span class="kw">const</span> node <span class="op">=</span> <span class="kw">new</span> <span class="at">Node</span>(n)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-43" title="43"></a>
+<a class="sourceLine" id="cb1-44" title="44">    <span class="cf">if</span> (index <span class="op">!==</span> <span class="kw">undefined</span> <span class="op">&amp;&amp;</span> index <span class="op">&lt;</span> <span class="kw">this</span>.<span class="at">length</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-45" title="45">      <span class="kw">let</span> prevNode<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-46" title="46">      <span class="kw">let</span> nextNode<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-47" title="47"></a>
+<a class="sourceLine" id="cb1-48" title="48">      <span class="cf">if</span> (index <span class="op">===</span> <span class="dv">0</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-49" title="49">        <span class="co">// Insert in the beginning</span></a>
+<a class="sourceLine" id="cb1-50" title="50">        nextNode <span class="op">=</span> <span class="kw">this</span>.<span class="at">head</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-51" title="51">        <span class="kw">this</span>.<span class="at">head</span> <span class="op">=</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-52" title="52">      <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-53" title="53">        nextNode <span class="op">=</span> <span class="kw">this</span>.<span class="at">getNode</span>(index)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-54" title="54">        prevNode <span class="op">=</span> <span class="va">nextNode</span>.<span class="at">prev</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-55" title="55">        <span class="va">prevNode</span>.<span class="at">next</span> <span class="op">=</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-56" title="56">        <span class="va">node</span>.<span class="at">prev</span> <span class="op">=</span> prevNode<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-57" title="57">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-58" title="58">      <span class="va">nextNode</span>.<span class="at">prev</span> <span class="op">=</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-59" title="59">      <span class="va">node</span>.<span class="at">next</span> <span class="op">=</span> nextNode<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-60" title="60">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-61" title="61">      <span class="co">// Insert at the end</span></a>
+<a class="sourceLine" id="cb1-62" title="62">      <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">head</span>) <span class="kw">this</span>.<span class="at">head</span> <span class="op">=</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-63" title="63"></a>
+<a class="sourceLine" id="cb1-64" title="64">      <span class="cf">if</span> (<span class="kw">this</span>.<span class="at">tail</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-65" title="65">        <span class="kw">this</span>.<span class="va">tail</span>.<span class="at">next</span> <span class="op">=</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-66" title="66">        <span class="va">node</span>.<span class="at">prev</span> <span class="op">=</span> <span class="kw">this</span>.<span class="at">tail</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-67" title="67">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-68" title="68">      <span class="kw">this</span>.<span class="at">tail</span> <span class="op">=</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-69" title="69">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-70" title="70"></a>
+<a class="sourceLine" id="cb1-71" title="71">    <span class="kw">this</span>.<span class="at">_length</span><span class="op">++;</span></a>
+<a class="sourceLine" id="cb1-72" title="72">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-73" title="73"></a>
+<a class="sourceLine" id="cb1-74" title="74">  <span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-75" title="75"><span class="co">   * Return the value associated to the Node on the given index</span></a>
+<a class="sourceLine" id="cb1-76" title="76"><span class="co">   *</span></a>
+<a class="sourceLine" id="cb1-77" title="77"><span class="co">   * </span><span class="an">@param</span><span class="co"> </span><span class="cv">{</span><span class="co"> Number } index</span></a>
+<a class="sourceLine" id="cb1-78" title="78"><span class="co">   * </span><span class="an">@return</span><span class="co"> misc</span></a>
+<a class="sourceLine" id="cb1-79" title="79"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb1-80" title="80">  <span class="at">get</span>(index) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-81" title="81">    <span class="cf">return</span> <span class="kw">this</span>.<span class="at">getNode</span>(index).<span class="at">value</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-82" title="82">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-83" title="83"></a>
+<a class="sourceLine" id="cb1-84" title="84">  <span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-85" title="85"><span class="co">   * O(n) get</span></a>
+<a class="sourceLine" id="cb1-86" title="86"><span class="co">   *</span></a>
+<a class="sourceLine" id="cb1-87" title="87"><span class="co">   * </span><span class="an">@param</span><span class="co"> </span><span class="cv">{</span><span class="co"> Number } index</span></a>
+<a class="sourceLine" id="cb1-88" title="88"><span class="co">   * </span><span class="an">@return</span><span class="co"> Node</span></a>
+<a class="sourceLine" id="cb1-89" title="89"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb1-90" title="90">  <span class="at">getNode</span>(index) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-91" title="91">    <span class="cf">if</span> (index <span class="op">&gt;=</span> <span class="kw">this</span>.<span class="at">length</span> <span class="op">||</span> index <span class="op">&lt;</span> <span class="dv">0</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-92" title="92">      <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;Index out of bounds&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-93" title="93">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-94" title="94"></a>
+<a class="sourceLine" id="cb1-95" title="95">    <span class="kw">let</span> node <span class="op">=</span> <span class="kw">this</span>.<span class="at">head</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-96" title="96">    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> index<span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-97" title="97">      node <span class="op">=</span> <span class="va">node</span>.<span class="at">next</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-98" title="98">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-99" title="99"></a>
+<a class="sourceLine" id="cb1-100" title="100">    <span class="cf">return</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-101" title="101">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-102" title="102"></a>
+<a class="sourceLine" id="cb1-103" title="103">  <span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-104" title="104"><span class="co">   * Delete the element in the indexth position</span></a>
+<a class="sourceLine" id="cb1-105" title="105"><span class="co">   *</span></a>
+<a class="sourceLine" id="cb1-106" title="106"><span class="co">   * </span><span class="an">@param</span><span class="co"> </span><span class="cv">{</span><span class="co"> Number } index</span></a>
+<a class="sourceLine" id="cb1-107" title="107"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb1-108" title="108">  <span class="at">del</span>(index) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-109" title="109">    <span class="cf">if</span> (index <span class="op">&gt;=</span> <span class="kw">this</span>.<span class="at">length</span> <span class="op">||</span> index <span class="op">&lt;</span> <span class="dv">0</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-110" title="110">      <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;Index out of bounds&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-111" title="111">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-112" title="112"></a>
+<a class="sourceLine" id="cb1-113" title="113">    <span class="kw">this</span>.<span class="at">delNode</span>(<span class="kw">this</span>.<span class="at">getNode</span>(index))<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-114" title="114">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-115" title="115"></a>
+<a class="sourceLine" id="cb1-116" title="116">  <span class="at">delNode</span>(node) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-117" title="117">    <span class="cf">if</span> (node <span class="op">===</span> <span class="kw">this</span>.<span class="at">tail</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-118" title="118">      <span class="co">// node is the last element</span></a>
+<a class="sourceLine" id="cb1-119" title="119">      <span class="kw">this</span>.<span class="at">tail</span> <span class="op">=</span> <span class="va">node</span>.<span class="at">prev</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-120" title="120">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-121" title="121">      <span class="va">node</span>.<span class="va">next</span>.<span class="at">prev</span> <span class="op">=</span> <span class="va">node</span>.<span class="at">prev</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-122" title="122">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-123" title="123">    <span class="cf">if</span> (node <span class="op">===</span> <span class="kw">this</span>.<span class="at">head</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-124" title="124">      <span class="co">// node is the first element</span></a>
+<a class="sourceLine" id="cb1-125" title="125">      <span class="kw">this</span>.<span class="at">head</span> <span class="op">=</span> <span class="va">node</span>.<span class="at">next</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-126" title="126">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-127" title="127">      <span class="va">node</span>.<span class="va">prev</span>.<span class="at">next</span> <span class="op">=</span> <span class="va">node</span>.<span class="at">next</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-128" title="128">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-129" title="129"></a>
+<a class="sourceLine" id="cb1-130" title="130">    <span class="kw">this</span>.<span class="at">_length</span><span class="op">--;</span></a>
+<a class="sourceLine" id="cb1-131" title="131">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-132" title="132"></a>
+<a class="sourceLine" id="cb1-133" title="133">  <span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-134" title="134"><span class="co">   * Performs the fn function with each element in the list</span></a>
+<a class="sourceLine" id="cb1-135" title="135"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb1-136" title="136">  <span class="at">forEach</span>(fn) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-137" title="137">    <span class="kw">let</span> node <span class="op">=</span> <span class="kw">this</span>.<span class="at">head</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-138" title="138">    <span class="cf">while</span> (node) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-139" title="139">      <span class="at">fn</span>(<span class="va">node</span>.<span class="at">value</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-140" title="140">      node <span class="op">=</span> <span class="va">node</span>.<span class="at">next</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-141" title="141">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-142" title="142">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-143" title="143"><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-144" title="144"></a>
+<a class="sourceLine" id="cb1-145" title="145"><span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-146" title="146"><span class="co"> * A linked list node</span></a>
+<a class="sourceLine" id="cb1-147" title="147"><span class="co"> */</span></a>
+<a class="sourceLine" id="cb1-148" title="148"><span class="kw">function</span> <span class="at">Node</span>(value) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-149" title="149">  <span class="kw">this</span>.<span class="at">value</span> <span class="op">=</span> value<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-150" title="150">  <span class="kw">this</span>.<span class="at">prev</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-151" title="151">  <span class="kw">this</span>.<span class="at">next</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-152" title="152"><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-153" title="153"></a>
+<a class="sourceLine" id="cb1-154" title="154"><span class="kw">class</span> HashTable <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-155" title="155">  <span class="at">constructor</span>(initialCapacity) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-156" title="156">    <span class="kw">this</span>.<span class="at">_table</span> <span class="op">=</span> <span class="kw">new</span> <span class="at">Array</span>(initialCapacity <span class="op">||</span> <span class="dv">64</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-157" title="157">    <span class="kw">this</span>.<span class="at">_items</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-158" title="158"></a>
+<a class="sourceLine" id="cb1-159" title="159">    <span class="va">Object</span>.<span class="at">defineProperty</span>(<span class="kw">this</span><span class="op">,</span> <span class="st">&#39;capacity&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-160" title="160">      <span class="at">get</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-161" title="161">        <span class="cf">return</span> <span class="kw">this</span>.<span class="va">_table</span>.<span class="at">length</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-162" title="162">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-163" title="163">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-164" title="164"></a>
+<a class="sourceLine" id="cb1-165" title="165">    <span class="va">Object</span>.<span class="at">defineProperty</span>(<span class="kw">this</span><span class="op">,</span> <span class="st">&#39;size&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-166" title="166">      <span class="at">get</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-167" title="167">        <span class="cf">return</span> <span class="kw">this</span>.<span class="at">_items</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-168" title="168">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-169" title="169">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-170" title="170">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-171" title="171"></a>
+<a class="sourceLine" id="cb1-172" title="172">  <span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-173" title="173"><span class="co">   * (Same algorithm as Java&#39;s String.hashCode)</span></a>
+<a class="sourceLine" id="cb1-174" title="174"><span class="co">   * Returns a hash code for this string. The hash code for a String object is</span></a>
+<a class="sourceLine" id="cb1-175" title="175"><span class="co">   * computed as: s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]</span></a>
+<a class="sourceLine" id="cb1-176" title="176"><span class="co">   * using int arithmetic, where s[i] is the ith character of the string,</span></a>
+<a class="sourceLine" id="cb1-177" title="177"><span class="co">   * n is the length of the string, and ^ indicates exponentiation.</span></a>
+<a class="sourceLine" id="cb1-178" title="178"><span class="co">   * (The hash value of the empty string is zero.)</span></a>
+<a class="sourceLine" id="cb1-179" title="179"><span class="co">   */</span></a>
+<a class="sourceLine" id="cb1-180" title="180">  <span class="at">hash</span>(s) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-181" title="181">    <span class="cf">if</span> (<span class="kw">typeof</span> s <span class="op">!==</span> <span class="st">&#39;string&#39;</span>) s <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(s)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-182" title="182">    <span class="kw">let</span> hash <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-183" title="183">    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">s</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-184" title="184">      hash <span class="op">=</span> ((hash <span class="op">&lt;&lt;</span> <span class="dv">5</span>) <span class="op">-</span> hash) <span class="op">+</span> <span class="va">s</span>.<span class="at">charCodeAt</span>(i)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-185" title="185">      hash <span class="op">&amp;=</span> hash<span class="op">;</span> <span class="co">// Keep it a 32bit int</span></a>
+<a class="sourceLine" id="cb1-186" title="186">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-187" title="187">    <span class="cf">return</span> hash<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-188" title="188">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-189" title="189"></a>
+<a class="sourceLine" id="cb1-190" title="190">  <span class="at">get</span>(key) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-191" title="191">    <span class="kw">const</span> i <span class="op">=</span> <span class="kw">this</span>.<span class="at">_position</span>(key)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-192" title="192">    <span class="kw">let</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-193" title="193">    <span class="cf">if</span> ((node <span class="op">=</span> <span class="kw">this</span>.<span class="at">_findInList</span>(<span class="kw">this</span>.<span class="at">_table</span>[i]<span class="op">,</span> key))) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-194" title="194">      <span class="cf">return</span> <span class="va">node</span>.<span class="va">value</span>.<span class="at">v</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-195" title="195">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-196" title="196">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-197" title="197"></a>
+<a class="sourceLine" id="cb1-198" title="198">  <span class="at">put</span>(key<span class="op">,</span> value) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-199" title="199">    <span class="kw">const</span> i <span class="op">=</span> <span class="kw">this</span>.<span class="at">_position</span>(key)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-200" title="200">    <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">_table</span>[i]) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-201" title="201">      <span class="co">// Hashing with chaining</span></a>
+<a class="sourceLine" id="cb1-202" title="202">      <span class="kw">this</span>.<span class="at">_table</span>[i] <span class="op">=</span> <span class="kw">new</span> <span class="at">LinkedList</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-203" title="203">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-204" title="204">    <span class="kw">const</span> item <span class="op">=</span> <span class="op">{</span><span class="dt">k</span><span class="op">:</span> key<span class="op">,</span> <span class="dt">v</span><span class="op">:</span> value<span class="op">};</span></a>
+<a class="sourceLine" id="cb1-205" title="205"></a>
+<a class="sourceLine" id="cb1-206" title="206">    <span class="kw">const</span> node <span class="op">=</span> <span class="kw">this</span>.<span class="at">_findInList</span>(<span class="kw">this</span>.<span class="at">_table</span>[i]<span class="op">,</span> key)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-207" title="207">    <span class="cf">if</span> (node) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-208" title="208">      <span class="co">// if the key already exists in the list, replace</span></a>
+<a class="sourceLine" id="cb1-209" title="209">      <span class="co">// by the current item</span></a>
+<a class="sourceLine" id="cb1-210" title="210">      <span class="va">node</span>.<span class="at">value</span> <span class="op">=</span> item<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-211" title="211">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-212" title="212">      <span class="kw">this</span>.<span class="at">_table</span>[i].<span class="at">add</span>(item)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-213" title="213">      <span class="kw">this</span>.<span class="at">_items</span><span class="op">++;</span></a>
+<a class="sourceLine" id="cb1-214" title="214"></a>
+<a class="sourceLine" id="cb1-215" title="215">      <span class="cf">if</span> (<span class="kw">this</span>.<span class="at">_items</span> <span class="op">===</span> <span class="kw">this</span>.<span class="at">capacity</span>) <span class="kw">this</span>.<span class="at">_increaseCapacity</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-216" title="216">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-217" title="217">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-218" title="218"></a>
+<a class="sourceLine" id="cb1-219" title="219">  <span class="at">del</span>(key) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-220" title="220">    <span class="kw">const</span> i <span class="op">=</span> <span class="kw">this</span>.<span class="at">_position</span>(key)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-221" title="221">    <span class="kw">let</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-222" title="222"></a>
+<a class="sourceLine" id="cb1-223" title="223">    <span class="cf">if</span> ((node <span class="op">=</span> <span class="kw">this</span>.<span class="at">_findInList</span>(<span class="kw">this</span>.<span class="at">_table</span>[i]<span class="op">,</span> key))) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-224" title="224">      <span class="kw">this</span>.<span class="at">_table</span>[i].<span class="at">delNode</span>(node)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-225" title="225">      <span class="kw">this</span>.<span class="at">_items</span><span class="op">--;</span></a>
+<a class="sourceLine" id="cb1-226" title="226">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-227" title="227">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-228" title="228"></a>
+<a class="sourceLine" id="cb1-229" title="229">  <span class="at">_position</span>(key) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-230" title="230">    <span class="cf">return</span> <span class="va">Math</span>.<span class="at">abs</span>(<span class="kw">this</span>.<span class="at">hash</span>(key)) <span class="op">%</span> <span class="kw">this</span>.<span class="at">capacity</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-231" title="231">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-232" title="232"></a>
+<a class="sourceLine" id="cb1-233" title="233">  <span class="at">_findInList</span>(list<span class="op">,</span> key) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-234" title="234">    <span class="kw">let</span> node <span class="op">=</span> list <span class="op">&amp;&amp;</span> <span class="va">list</span>.<span class="at">head</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-235" title="235">    <span class="cf">while</span> (node) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-236" title="236">      <span class="cf">if</span> (<span class="va">node</span>.<span class="va">value</span>.<span class="at">k</span> <span class="op">===</span> key) <span class="cf">return</span> node<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-237" title="237">      node <span class="op">=</span> <span class="va">node</span>.<span class="at">next</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-238" title="238">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-239" title="239">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-240" title="240"></a>
+<a class="sourceLine" id="cb1-241" title="241">  <span class="at">_increaseCapacity</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-242" title="242">    <span class="kw">const</span> oldTable <span class="op">=</span> <span class="kw">this</span>.<span class="at">_table</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-243" title="243">    <span class="kw">this</span>.<span class="at">_table</span> <span class="op">=</span> <span class="kw">new</span> <span class="at">Array</span>(<span class="dv">2</span> <span class="op">*</span> <span class="kw">this</span>.<span class="at">capacity</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-244" title="244">    <span class="kw">this</span>.<span class="at">_items</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-245" title="245"></a>
+<a class="sourceLine" id="cb1-246" title="246">    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">oldTable</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-247" title="247">      <span class="kw">let</span> node <span class="op">=</span> oldTable[i] <span class="op">&amp;&amp;</span> oldTable[i].<span class="at">head</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-248" title="248">      <span class="cf">while</span> (node) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-249" title="249">        <span class="kw">this</span>.<span class="at">put</span>(<span class="va">node</span>.<span class="va">value</span>.<span class="at">k</span><span class="op">,</span> <span class="va">node</span>.<span class="va">value</span>.<span class="at">v</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-250" title="250">        node <span class="op">=</span> <span class="va">node</span>.<span class="at">next</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-251" title="251">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-252" title="252">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-253" title="253">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-254" title="254"></a>
+<a class="sourceLine" id="cb1-255" title="255">  <span class="at">forEach</span>(fn) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-256" title="256">    <span class="kw">const</span> applyFunction <span class="op">=</span> linkedList <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-257" title="257">      <span class="va">linkedList</span>.<span class="at">forEach</span>((<span class="op">{</span>k<span class="op">,</span> v<span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-258" title="258">        <span class="at">fn</span>(k<span class="op">,</span> v)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-259" title="259">      <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-260" title="260">    <span class="op">};</span></a>
+<a class="sourceLine" id="cb1-261" title="261"></a>
+<a class="sourceLine" id="cb1-262" title="262">    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">this</span>.<span class="va">_table</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-263" title="263">      <span class="cf">if</span> (<span class="kw">this</span>.<span class="at">_table</span>[i]) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-264" title="264">        <span class="at">applyFunction</span>(<span class="kw">this</span>.<span class="at">_table</span>[i])<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-265" title="265">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-266" title="266">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-267" title="267">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-268" title="268"><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-269" title="269"><span class="co">/**</span></a>
+<a class="sourceLine" id="cb1-270" title="270"><span class="co"> * Typical representation of a mathematical set</span></a>
+<a class="sourceLine" id="cb1-271" title="271"><span class="co"> * No restriction on element types</span></a>
+<a class="sourceLine" id="cb1-272" title="272"><span class="co"> *   i.e. set.add(1,&#39;a&#39;, &quot;b&quot;, { &quot;foo&quot; : &quot;bar&quot; })</span></a>
+<a class="sourceLine" id="cb1-273" title="273"><span class="co"> */</span></a>
+<a class="sourceLine" id="cb1-274" title="274"><span class="kw">class</span> HashSet <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-275" title="275">  <span class="at">constructor</span>(...<span class="at">args</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-276" title="276">    <span class="kw">this</span>.<span class="at">_elements</span> <span class="op">=</span> <span class="kw">new</span> <span class="at">HashTable</span>(<span class="va">args</span>.<span class="at">length</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-277" title="277">    <span class="kw">this</span>.<span class="at">add</span>(...<span class="at">args</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-278" title="278"></a>
+<a class="sourceLine" id="cb1-279" title="279">    <span class="va">Object</span>.<span class="at">defineProperty</span>(<span class="kw">this</span><span class="op">,</span> <span class="st">&#39;size&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-280" title="280">      <span class="at">get</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-281" title="281">        <span class="cf">return</span> <span class="kw">this</span>.<span class="va">_elements</span>.<span class="at">size</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-282" title="282">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-283" title="283">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-284" title="284">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-285" title="285"></a>
+<a class="sourceLine" id="cb1-286" title="286">  <span class="at">add</span>(...<span class="at">args</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-287" title="287">    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">args</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-288" title="288">      <span class="kw">this</span>.<span class="va">_elements</span>.<span class="at">put</span>(args[i]<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-289" title="289">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-290" title="290">    <span class="cf">return</span> <span class="kw">this</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-291" title="291">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-292" title="292"></a>
+<a class="sourceLine" id="cb1-293" title="293">  <span class="at">remove</span>(...<span class="at">args</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-294" title="294">    <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">args</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-295" title="295">      <span class="kw">this</span>.<span class="va">_elements</span>.<span class="at">del</span>(args[i])<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-296" title="296">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-297" title="297">    <span class="cf">return</span> <span class="kw">this</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-298" title="298">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-299" title="299"></a>
+<a class="sourceLine" id="cb1-300" title="300">  <span class="at">contains</span>(e) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-301" title="301">    <span class="cf">return</span> <span class="kw">this</span>.<span class="va">_elements</span>.<span class="at">get</span>(e) <span class="op">!==</span> <span class="kw">undefined</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-302" title="302">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-303" title="303"></a>
+<a class="sourceLine" id="cb1-304" title="304">  <span class="at">forEach</span>(fn) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-305" title="305">    <span class="kw">this</span>.<span class="va">_elements</span>.<span class="at">forEach</span>(fn)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-306" title="306">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-307" title="307"><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-308" title="308"></a>
+<a class="sourceLine" id="cb1-309" title="309"></a>
+<a class="sourceLine" id="cb1-310" title="310"><span class="co">/* Adjacency list representation of a graph * @param {bool} directed */</span></a>
+<a class="sourceLine" id="cb1-311" title="311"><span class="kw">class</span> Graph <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-312" title="312">  <span class="at">constructor</span>(directed) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-313" title="313">    <span class="kw">this</span>.<span class="at">directed</span> <span class="op">=</span> (directed <span class="op">===</span> <span class="kw">undefined</span> <span class="op">?</span> <span class="kw">true</span> : <span class="op">!!</span>directed)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-314" title="314">    <span class="kw">this</span>.<span class="at">adjList</span> <span class="op">=</span> <span class="va">Object</span>.<span class="at">create</span>(<span class="kw">null</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-315" title="315">    <span class="kw">this</span>.<span class="at">vertices</span> <span class="op">=</span> <span class="kw">new</span> <span class="at">HashSet</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-316" title="316">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-317" title="317"></a>
+<a class="sourceLine" id="cb1-318" title="318">  <span class="at">addVertex</span>(v) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-319" title="319">    v <span class="op">=</span> <span class="at">_</span>(v)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-320" title="320">    <span class="cf">if</span> (<span class="kw">this</span>.<span class="va">vertices</span>.<span class="at">contains</span>(v)) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-321" title="321">      <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="vs">`Vertex &quot;</span><span class="sc">${</span>v<span class="sc">}</span><span class="vs">&quot; has already been added`</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-322" title="322">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-323" title="323">    <span class="kw">this</span>.<span class="va">vertices</span>.<span class="at">add</span>(v)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-324" title="324">    <span class="kw">this</span>.<span class="at">adjList</span>[v] <span class="op">=</span> <span class="va">Object</span>.<span class="at">create</span>(<span class="kw">null</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-325" title="325">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-326" title="326"></a>
+<a class="sourceLine" id="cb1-327" title="327">  <span class="at">addEdge</span>(a<span class="op">,</span> b<span class="op">,</span> w) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-328" title="328">    a <span class="op">=</span> <span class="at">_</span>(a)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-329" title="329">    b <span class="op">=</span> <span class="at">_</span>(b)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-330" title="330">    <span class="co">// If no weight is assigned to the edge, 1 is the default</span></a>
+<a class="sourceLine" id="cb1-331" title="331">    w <span class="op">=</span> (w <span class="op">===</span> <span class="kw">undefined</span> <span class="op">?</span> <span class="dv">1</span> : w)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-332" title="332"></a>
+<a class="sourceLine" id="cb1-333" title="333">    <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">adjList</span>[a]) <span class="kw">this</span>.<span class="at">addVertex</span>(a)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-334" title="334">    <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">adjList</span>[b]) <span class="kw">this</span>.<span class="at">addVertex</span>(b)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-335" title="335"></a>
+<a class="sourceLine" id="cb1-336" title="336">    <span class="co">// If there&#39;s already another edge with the same origin and destination</span></a>
+<a class="sourceLine" id="cb1-337" title="337">    <span class="co">// sum with the current one</span></a>
+<a class="sourceLine" id="cb1-338" title="338">    <span class="kw">this</span>.<span class="at">adjList</span>[a][b] <span class="op">=</span> (<span class="kw">this</span>.<span class="at">adjList</span>[a][b] <span class="op">||</span> <span class="dv">0</span>) <span class="op">+</span> w<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-339" title="339"></a>
+<a class="sourceLine" id="cb1-340" title="340">    <span class="co">// If the graph is not directed add the edge in both directions</span></a>
+<a class="sourceLine" id="cb1-341" title="341">    <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="at">directed</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-342" title="342">      <span class="kw">this</span>.<span class="at">adjList</span>[b][a] <span class="op">=</span> (<span class="kw">this</span>.<span class="at">adjList</span>[b][a] <span class="op">||</span> <span class="dv">0</span>) <span class="op">+</span> w<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-343" title="343">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-344" title="344">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-345" title="345"></a>
+<a class="sourceLine" id="cb1-346" title="346">  <span class="at">neighbors</span>(v) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-347" title="347">    <span class="cf">return</span> <span class="va">Object</span>.<span class="at">keys</span>(<span class="kw">this</span>.<span class="at">adjList</span>[<span class="at">_</span>(v)])<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-348" title="348">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-349" title="349"></a>
+<a class="sourceLine" id="cb1-350" title="350">  <span class="at">edge</span>(a<span class="op">,</span> b) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-351" title="351">    <span class="cf">return</span> <span class="kw">this</span>.<span class="at">adjList</span>[<span class="at">_</span>(a)][<span class="at">_</span>(b)]<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-352" title="352">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-353" title="353"><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-354" title="354"></a>
+<a class="sourceLine" id="cb1-355" title="355"><span class="co">// Normalize vertex labels as strings</span></a>
+<a class="sourceLine" id="cb1-356" title="356"><span class="kw">let</span> _ <span class="op">=</span> v <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-357" title="357">  <span class="cf">return</span> <span class="vs">`</span><span class="sc">${</span>v<span class="sc">}</span><span class="vs">`</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-358" title="358"><span class="op">};</span></a>
+<a class="sourceLine" id="cb1-359" title="359"></a>
+<a class="sourceLine" id="cb1-360" title="360"><span class="im">export</span> <span class="im">default</span> Graph<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-361" title="361"></a></code></pre></div>
+</body>
+</html>
