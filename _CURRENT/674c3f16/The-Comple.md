@@ -1,8 +1,9 @@
-# The Complete JavaScript Reference Guide
+The Complete JavaScript Reference Guide
+=======================================
 
 You will want to bookmark this
 
----
+------------------------------------------------------------------------
 
 ### The Complete JavaScript Reference Guide
 
@@ -12,29 +13,29 @@ You will want to bookmark this
 
 **What makes an Effective learner?**
 
-- <span id="7504">They are active listeners.</span>
-- <span id="179b">They are engaged with the material.</span>
-- <span id="3193">They are receptive of feedback.</span>
-- <span id="17d8">They are open to difficulty.</span>
+-   <span id="7504">They are active listeners.</span>
+-   <span id="179b">They are engaged with the material.</span>
+-   <span id="3193">They are receptive of feedback.</span>
+-   <span id="17d8">They are open to difficulty.</span>
 
 **Why do active learning techniques feel difficult?**
 
-- <span id="7848">It feels difficult because you are constantly receiving feedback, and so you are constantly adapting and perfecting the material.</span>
+-   <span id="7848">It feels difficult because you are constantly receiving feedback, and so you are constantly adapting and perfecting the material.</span>
 
 **Desirable Difficulty**
 
-- <span id="67c9">The skills we wish to obtain is often a difficult one.</span>
-- <span id="c939">We want challenging but possible lessons based on current level of skill.</span>
+-   <span id="67c9">The skills we wish to obtain is often a difficult one.</span>
+-   <span id="c939">We want challenging but possible lessons based on current level of skill.</span>
 
 **Effective learners space their practice**
 
-- <span id="59a4">Consistent effort &gt; cramming =&gt; for **durable knowledge**</span>
+-   <span id="59a4">Consistent effort &gt; cramming =&gt; for **durable knowledge**</span>
 
----
+------------------------------------------------------------------------
 
 ### Getting visual feedback in your programs
 
-The first command we’ll learn in JavaScript is `console.log`. This command is used to _print_ something onto the screen. As we write our first lines of code, we’ll be using `console.log` frequently as a way to visually see the output of our programs. Let’s write our first program:
+The first command we’ll learn in JavaScript is `console.log`. This command is used to *print* something onto the screen. As we write our first lines of code, we’ll be using `console.log` frequently as a way to visually see the output of our programs. Let’s write our first program:
 
     console.log("hello world");
     console.log("how are you?");
@@ -46,7 +47,7 @@ Executing the program above would print out the following:
 
 Nothing too ground breaking here, but pay close attention to the exact way we wrote the program. In particular, notice how we lay out the periods, parentheses, and quotation marks. We’ll also terminate lines with semicolons (;).
 
-> _Depending on how you structure your code, sometimes you’ll be able to omit semicolons at the end of lines. For now, you’ll want to include them just as we do._
+> *Depending on how you structure your code, sometimes you’ll be able to omit semicolons at the end of lines. For now, you’ll want to include them just as we do.*
 
 ### Syntax
 
@@ -58,7 +59,7 @@ Additionally, one of the best things about programming is that we can get such i
 
 ### Code comments
 
-Occasionally we’ll want to leave **comments** or notes in our code. Commented lines will be ignored by our computer. This means that we can use comments to write plain english or temporarily avoid execution of some JavaScript lines. The proper _syntax_ for writing a comment is to begin the line with double forward slashes (`//`):
+Occasionally we’ll want to leave **comments** or notes in our code. Commented lines will be ignored by our computer. This means that we can use comments to write plain english or temporarily avoid execution of some JavaScript lines. The proper *syntax* for writing a comment is to begin the line with double forward slashes (`//`):
 
     // let's write another program!!!
     console.log("hello world");
@@ -82,60 +83,63 @@ The **number** data type in JS is used to represent any numerical values, includ
 
 Operators are the symbols that perform particular operations.
 
-- <span id="f533">**+** (addition)</span>
-- <span id="5b9f">**-** (subtraction)</span>
-- <span id="b98b">**asterisk** (multiplication)</span>
-- <span id="9a15">**/** (division)</span>
-- <span id="c752">**%** (modulo)</span>
+-   <span id="f533">**+** (addition)</span>
+-   <span id="5b9f">**-** (subtraction)</span>
+-   <span id="b98b">**asterisk** (multiplication)</span>
+-   <span id="9a15">**/** (division)</span>
+-   <span id="c752">**%** (modulo)</span>
 
 JS evaluates more complex expressions using the general math order of operations aka PEMDAS.
 
-- <span id="b6e3">**PEMDAS** : Parentheses, Exponents, Multiplication, Division, Modulo, Addition, Subtraction.</span>
-- <span id="9c25">_To force a specific order of operation, use the group operator ( ) around a part of the expression._</span>
+-   <span id="b6e3">**PEMDAS** : Parentheses, Exponents, Multiplication, Division, Modulo, Addition, Subtraction.</span>
+-   <span id="9c25">*To force a specific order of operation, use the group operator ( ) around a part of the expression.*</span>
 
-**Modulo** : Very useful operation to check divisibility of numbers, check for even & odd, whether a number is prime, and much more! _(Discrete Math concept, circular problems can be solved with modulo)_
+**Modulo** : Very useful operation to check divisibility of numbers, check for even & odd, whether a number is prime, and much more! *(Discrete Math concept, circular problems can be solved with modulo)*
 
-- <span id="cf5b">Whenever you have a smaller number % a larger number, the answer will just be the initial small number.   
-   console.log(7 % 10) // =&gt; 7;</span>
+-   <span id="cf5b">Whenever you have a smaller number % a larger number, the answer will just be the initial small number.   
+     console.log(7 % 10) // =&gt; 7;</span>
 
 **The String Data Type**
 
 The **string** data type is a primitive data type that used to represent textual data.
 
-- <span id="e1b0">can be wrapped by either **single** or **double** quotation marks, _best to choose one and stick with it for consistency_.</span>
-- <span id="f8ad">If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.  
-   “That’s a great string”; (valid)
-  ‘Shakespeare wrote, “To be or not to be”’; (valid)
-  ‘That’s a bad string’; (invalid)</span>
-- <span id="b2cb">Alt. way to add other quotes within strings is to use template literals.  
-   \`This is a temp’l’ate literal ${function}\` // use ${} to invoke functions within.</span>
-- <span id="7b1a">**.length** : property that can be appended to data to return the length.</span>
-- <span id="f633">empty strings have a length of zero.</span>
-- <span id="0a07">**indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].  
-   console.log(“bootcamp”\[0\]); // =&gt; “b”  
-   console.log(“bootcamp”\[10\]); // =&gt; “undefined”  
-   console.log(“boots”\[1 \* 2\]); // =&gt; “o”  
-   console.log(“boots”\[“boot”.length-1\]); // =&gt; “t”</span>
-- <span id="6482">we can pass expressions through the brackets as well since JS always evaluates expressions first.</span>
-- <span id="e2f5">The index of the last character of a string is always one less than it’s length.</span>
-- <span id="2271">**indexOf()** : method used to find the first index of a given character within a string.  
-   console.log(“bagel”.indexOf(“b”)); // =&gt; 0  
-   console.log(“bagel”.indexOf(“z”)); // =&gt; -1</span>
-- <span id="8d68">if the character inside the indexOf() search does not exist in the string, the output will be -1.</span>
-- <span id="d15e">the indexOf() search will return the first instanced index of the the char in the string.</span>
-- <span id="a275">**concatenate** : word to describe joining strings together into a single string.</span>
+-   <span id="e1b0">can be wrapped by either **single** or **double** quotation marks, *best to choose one and stick with it for consistency*.</span>
+-   If your string contains quotation marks inside, can layer single or double quotation marks to allow it to work.  
+     “That’s a great string”; (valid)
+
+     ‘Shakespeare wrote, “To be or not to be”’; (valid)
+
+     ‘That’s a bad string’; (invalid)
+
+-   <span id="b2cb">Alt. way to add other quotes within strings is to use template literals.  
+     \`This is a temp’l’ate literal ${function}\` // use ${} to invoke functions within.</span>
+-   <span id="7b1a">**.length** : property that can be appended to data to return the length.</span>
+-   <span id="f633">empty strings have a length of zero.</span>
+-   <span id="0a07">**indices** : indexes of data that begin at 0, can call upon index by using the bracket notation \[ \].  
+     console.log(“bootcamp”\[0\]); // =&gt; “b”  
+     console.log(“bootcamp”\[10\]); // =&gt; “undefined”  
+     console.log(“boots”\[1 \* 2\]); // =&gt; “o”  
+     console.log(“boots”\[“boot”.length-1\]); // =&gt; “t”</span>
+-   <span id="6482">we can pass expressions through the brackets as well since JS always evaluates expressions first.</span>
+-   <span id="e2f5">The index of the last character of a string is always one less than it’s length.</span>
+-   <span id="2271">**indexOf()** : method used to find the first index of a given character within a string.  
+     console.log(“bagel”.indexOf(“b”)); // =&gt; 0  
+     console.log(“bagel”.indexOf(“z”)); // =&gt; -1</span>
+-   <span id="8d68">if the character inside the indexOf() search does not exist in the string, the output will be -1.</span>
+-   <span id="d15e">the indexOf() search will return the first instanced index of the the char in the string.</span>
+-   <span id="a275">**concatenate** : word to describe joining strings together into a single string.</span>
 
 **The Boolean Data Type**
 
 The **Boolean** data type is the simplest data type since there are only two values: **true** and **false**.
 
-- <span id="60da">**Logical Operators** (B*oolean Operators*) are used to establish logic in our code.</span>
-- <span id="139b">**!** (not) : reverses a Boolean value.  
-   console.log(!true); // =&gt; false  
-   console.log(!!false); // =&gt; false</span>
-- <span id="e412">**Logical Order of Operations** : JS will evaluate !, then &&, then ||.</span>
-- <span id="99ad">**Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.  
-   console.log(true || !false) // =&gt; stops after it sees “true ||”</span>
+-   <span id="60da">**Logical Operators** (B*oolean Operators*) are used to establish logic in our code.</span>
+-   <span id="139b">**!** (not) : reverses a Boolean value.  
+     console.log(!true); // =&gt; false  
+     console.log(!!false); // =&gt; false</span>
+-   <span id="e412">**Logical Order of Operations** : JS will evaluate !, then &&, then ||.</span>
+-   <span id="99ad">**Short-Circuit Evaluation** : Because JS evalutes from left to right, expressions can “short-circuit”. For example if we have true on the left of an || logical comparison, it will stop evaluating and yield true instead of wasting resources on processing the rest of the statement.  
+     console.log(true || !false) // =&gt; stops after it sees “true ||”</span>
 
 **Comparison Operators**
 
@@ -143,16 +147,16 @@ All comparison operators will result in a boolean output.
 
 **The relative comparators**
 
-- <span id="6fee">**&gt;** (greater than)</span>
-- <span id="0437">**&lt;** (less than)</span>
-- <span id="17ff">**&gt;=** (greater than or equal to)</span>
-- <span id="b2b4">**&lt;=** (less than or equal to)</span>
-- <span id="0c13">**===** (equal to)</span>
-- <span id="b73a">**!==** (not equal to)</span>
+-   <span id="6fee">**&gt;** (greater than)</span>
+-   <span id="0437">**&lt;** (less than)</span>
+-   <span id="17ff">**&gt;=** (greater than or equal to)</span>
+-   <span id="b2b4">**&lt;=** (less than or equal to)</span>
+-   <span id="0c13">**===** (equal to)</span>
+-   <span id="b73a">**!==** (not equal to)</span>
 
 Fun Fact: “a” &lt; “b” is considered valid JS Code because string comparisons are compared lexicographically (meaning dictionary order), so “a” is less than “b” because it appears earlier!
 
-If there is ever a standstill comparison of two string lexicographically (i.e. app vs apple) the comparison will deem the shorter string lesser.
+If there is ever a standstill comparison of two string lexicographically (i.e. app vs apple) the comparison will deem the shorter string lesser.
 
 **Difference between == and ===**
 
@@ -168,15 +172,15 @@ Loose Equality, will return true even if the values are of a different type, due
 
 Variables are used to store information to be referenced and manipulated in a program.
 
-- <span id="c73d">We initialize a variable by using the **let** keyword and a **=** single equals sign (assignment operator).   
-   let bootcamp = “App Academy”;  
-   console.log(bootcamp); // “App Academy”</span>
-- <span id="7849">JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot being with a number).</span>
-- <span id="ad76">If you do not declare a value for a variable, undefined is automatically set.   
-   let bootcamp;  
-   console.log(bootcamp); // undefined</span>
-- <span id="2188">We can change the value of a previously declared variable (let, not const) by re-assigning it another value.</span>
-- <span id="47ca">**let** is the updated version of **var**; there are some differences in terms of hoisting and global/block scope</span>
+-   <span id="c73d">We initialize a variable by using the **let** keyword and a **=** single equals sign (assignment operator).   
+     let bootcamp = “App Academy”;  
+     console.log(bootcamp); // “App Academy”</span>
+-   <span id="7849">JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot being with a number).</span>
+-   <span id="ad76">If you do not declare a value for a variable, undefined is automatically set.   
+     let bootcamp;  
+     console.log(bootcamp); // undefined</span>
+-   <span id="2188">We can change the value of a previously declared variable (let, not const) by re-assigning it another value.</span>
+-   <span id="47ca">**let** is the updated version of **var**; there are some differences in terms of hoisting and global/block scope</span>
 
 **Assignment Shorthand**
 
@@ -186,32 +190,32 @@ let num = 0;
  num /= 4; // same as num = num / 4  
  num \*= 7; // same as num = num \* 7
 
-- <span id="9c05">In general, any nonsensical arithmetic will result in **NaN** ; usually operations that include undefined.</span>
+-   <span id="9c05">In general, any nonsensical arithmetic will result in **NaN** ; usually operations that include undefined.</span>
 
 **Functions**
 
 A function is a procedure of code that will run when called. Functions are used so that we do not have to rewrite code to do the same thing over and over. (Think of them as ‘subprograms’)
 
-- <span id="366f">**Function Declaration** : Process when we first initially write our function.</span>
-- <span id="676f">Includes three things:</span>
-- <span id="80c2">Name of the function.</span>
-- <span id="f3a4">A list of _parameters_ ()</span>
-- <span id="2b0e">The code to execute {}</span>
-- <span id="6879">**Function Calls** : We can call upon our function whenever and wherever\* we want. (\*wherever is only after the initial declaration)</span>
-- <span id="8374">JS evaluates code top down, left to right.</span>
-- <span id="2687">When we execute a declared function later on in our program we refer to this as **invoking** our function.</span>
-- <span id="0c3a">Every function in JS returns undefined unless otherwise specified.</span>
-- <span id="4207">When we hit a **return** statement in a function we immediately exit the function and return to where we called the function.</span>
-- <span id="e39f">When naming functions in JS always use camelCase and name it something appropriate.</span>
+-   <span id="366f">**Function Declaration** : Process when we first initially write our function.</span>
+-   <span id="676f">Includes three things:</span>
+-   <span id="80c2">Name of the function.</span>
+-   <span id="f3a4">A list of *parameters* ()</span>
+-   <span id="2b0e">The code to execute {}</span>
+-   <span id="6879">**Function Calls** : We can call upon our function whenever and wherever\* we want. (\*wherever is only after the initial declaration)</span>
+-   <span id="8374">JS evaluates code top down, left to right.</span>
+-   <span id="2687">When we execute a declared function later on in our program we refer to this as **invoking** our function.</span>
+-   <span id="0c3a">Every function in JS returns undefined unless otherwise specified.</span>
+-   <span id="4207">When we hit a **return** statement in a function we immediately exit the function and return to where we called the function.</span>
+-   <span id="e39f">When naming functions in JS always use camelCase and name it something appropriate.</span>
 
 Greate code reads like English and almost explains itself. Think: Elegant, readable, and maintainable!
 
 **Parameters and Arguments**
 
-- <span id="e94e">**Parameters** : Comma seperated variables specified as part of a function’s declaration.</span>
-- <span id="6740">**Arguments** : Values passed to the function when it is invoked.</span>
-- <span id="004c">_If the number of arguments passed during a function invocation is different than the number of paramters listed, it will still work._</span>
-- <span id="7da5">However, is there are not enough arguments provided for parameters our function will likely yield **Nan**.</span>
+-   <span id="e94e">**Parameters** : Comma seperated variables specified as part of a function’s declaration.</span>
+-   <span id="6740">**Arguments** : Values passed to the function when it is invoked.</span>
+-   <span id="004c">*If the number of arguments passed during a function invocation is different than the number of paramters listed, it will still work.*</span>
+-   <span id="7da5">However, is there are not enough arguments provided for parameters our function will likely yield **Nan**.</span>
 
 ### Including Comments
 
@@ -219,8 +223,8 @@ Comments are important because they help other people understand what is going o
 
 In JavaScript you have two different options:
 
-- <span id="356d">Single-line comments — To include a comment that is limited to a single line, precede it with `//`</span>
-- <span id="ee3a">Multi-line comments — In case you want to write longer comments between several lines, wrap it in `/*` and `*/` to avoid it from being executed</span>
+-   <span id="356d">Single-line comments — To include a comment that is limited to a single line, precede it with `//`</span>
+-   <span id="ee3a">Multi-line comments — In case you want to write longer comments between several lines, wrap it in `/*` and `*/` to avoid it from being executed</span>
 
 ### Variables in JavaScript
 
@@ -230,21 +234,21 @@ Variables are stand-in values that you can use to perform operations. You should
 
 You have three different possibilities for declaring a variable in JavaScript, each with their own specialties:
 
-- <span id="4b29">`var` — The most common variable. It can be reassigned but only accessed within a function. Variables defined with `var` move to the top when the code is executed.</span>
-- <span id="d234">`const` — Can not be reassigned and not accessible before they appear within the code.</span>
-- <span id="0e3b">`let` — Similar to `const`, the `let` variable can be reassigned but not re-declared.</span>
+-   <span id="4b29">`var` — The most common variable. It can be reassigned but only accessed within a function. Variables defined with `var` move to the top when the code is executed.</span>
+-   <span id="d234">`const` — Can not be reassigned and not accessible before they appear within the code.</span>
+-   <span id="0e3b">`let` — Similar to `const`, the `let` variable can be reassigned but not re-declared.</span>
 
 ### Data Types
 
 Variables can contain different types of values and data types. You use `=` to assign them:
 
-- <span id="b276">Numbers — `var age = 23`</span>
-- <span id="5571">Variables — `var x`</span>
-- <span id="e26c">Text (strings) — `var a = "init"`</span>
-- <span id="1312">Operations — `var b = 1 + 2 + 3`</span>
-- <span id="9880">True or false statements — `var c = true`</span>
-- <span id="335a">Constant numbers — `const PI = 3.14`</span>
-- <span id="7221">Objects — `var name = {firstName:"John", lastName:"Doe"}`</span>
+-   <span id="b276">Numbers — `var age = 23`</span>
+-   <span id="5571">Variables — `var x`</span>
+-   <span id="e26c">Text (strings) — `var a = "init"`</span>
+-   <span id="1312">Operations — `var b = 1 + 2 + 3`</span>
+-   <span id="9880">True or false statements — `var c = true`</span>
+-   <span id="335a">Constant numbers — `const PI = 3.14`</span>
+-   <span id="7221">Objects — `var name = {firstName:"John", lastName:"Doe"}`</span>
 
 There are more possibilities. Note that variables are case sensitive. That means `lastname` and `lastName` will be handled as two different variables.
 
@@ -276,20 +280,20 @@ Now you have an array called `fruit` which contains three items that you can use
 
 Once you have created arrays, there are a few things you can do with them:
 
-- <span id="4e4b">`concat()` — Join several arrays into one</span>
-- <span id="5c02">`indexOf()` — Returns the first position at which a given element appears in an array</span>
-- <span id="45cd">`join()` — Combine elements of an array into a single string and return the string</span>
-- <span id="3a4e">`lastIndexOf()` — Gives the last position at which a given element appears in an array</span>
-- <span id="8fbb">`pop()` — Removes the last element of an array</span>
-- <span id="28e4">`push()` — Add a new element at the end</span>
-- <span id="0be2">`reverse()` — Sort elements in a descending order</span>
-- <span id="775e">`shift()` — Remove the first element of an array</span>
-- <span id="1063">`slice()` — Pulls a copy of a portion of an array into a new array</span>
-- <span id="53fd">`sort()` — Sorts elements alphabetically</span>
-- <span id="f551">`splice()` — Adds elements in a specified way and position</span>
-- <span id="c46b">`toString()` — Converts elements to strings</span>
-- <span id="ef66">`unshift()` —Adds a new element to the beginning</span>
-- <span id="4598">`valueOf()` — Returns the primitive value of the specified object</span>
+-   <span id="4e4b">`concat()` — Join several arrays into one</span>
+-   <span id="5c02">`indexOf()` — Returns the first position at which a given element appears in an array</span>
+-   <span id="45cd">`join()` — Combine elements of an array into a single string and return the string</span>
+-   <span id="3a4e">`lastIndexOf()` — Gives the last position at which a given element appears in an array</span>
+-   <span id="8fbb">`pop()` — Removes the last element of an array</span>
+-   <span id="28e4">`push()` — Add a new element at the end</span>
+-   <span id="0be2">`reverse()` — Sort elements in a descending order</span>
+-   <span id="775e">`shift()` — Remove the first element of an array</span>
+-   <span id="1063">`slice()` — Pulls a copy of a portion of an array into a new array</span>
+-   <span id="53fd">`sort()` — Sorts elements alphabetically</span>
+-   <span id="f551">`splice()` — Adds elements in a specified way and position</span>
+-   <span id="c46b">`toString()` — Converts elements to strings</span>
+-   <span id="ef66">`unshift()` —Adds a new element to the beginning</span>
+-   <span id="4598">`valueOf()` — Returns the primitive value of the specified object</span>
 
 ### Operators
 
@@ -297,42 +301,42 @@ If you have variables, you can use them to perform different kinds of operations
 
 ### Basic Operators
 
-- <span id="5d34">`+` — Addition</span>
-- <span id="5fd9">`-` — Subtraction</span>
-- <span id="3b13">`*` — Multiplication</span>
-- <span id="521a">`/` — Division</span>
-- <span id="cf0f">`(...)` — Grouping operator, operations within brackets are executed earlier than those outside</span>
-- <span id="bb2a">`%` — Modulus (remainder )</span>
-- <span id="e837">`++` — Increment numbers</span>
-- <span id="71ea">`--` — Decrement numbers</span>
+-   <span id="5d34">`+` — Addition</span>
+-   <span id="5fd9">`-` — Subtraction</span>
+-   <span id="3b13">`*` — Multiplication</span>
+-   <span id="521a">`/` — Division</span>
+-   <span id="cf0f">`(...)` — Grouping operator, operations within brackets are executed earlier than those outside</span>
+-   <span id="bb2a">`%` — Modulus (remainder )</span>
+-   <span id="e837">`++` — Increment numbers</span>
+-   <span id="71ea">`--` — Decrement numbers</span>
 
 ### Comparison Operators
 
-- <span id="a2b0">`==` — Equal to</span>
-- <span id="5105">`===` — Equal value and equal type</span>
-- <span id="c79c">`!=` — Not equal</span>
-- <span id="1f7f">`!==` — Not equal value or not equal type</span>
-- <span id="78c3">`>` — Greater than</span>
-- <span id="d40b">`<` — Less than</span>
-- <span id="081b">`>=` — Greater than or equal to</span>
-- <span id="d065">`<=` — Less than or equal to</span>
-- <span id="174d">`?` — Ternary operator</span>
+-   <span id="a2b0">`==` — Equal to</span>
+-   <span id="5105">`===` — Equal value and equal type</span>
+-   <span id="c79c">`!=` — Not equal</span>
+-   <span id="1f7f">`!==` — Not equal value or not equal type</span>
+-   <span id="78c3">`>` — Greater than</span>
+-   <span id="d40b">`<` — Less than</span>
+-   <span id="081b">`>=` — Greater than or equal to</span>
+-   <span id="d065">`<=` — Less than or equal to</span>
+-   <span id="174d">`?` — Ternary operator</span>
 
 ### Logical Operators
 
-- <span id="cb7b">`&&` — Logical and</span>
-- <span id="b1ee">`||` — Logical or</span>
-- <span id="96d4">`!` — Logical not</span>
+-   <span id="cb7b">`&&` — Logical and</span>
+-   <span id="b1ee">`||` — Logical or</span>
+-   <span id="96d4">`!` — Logical not</span>
 
 ### Bitwise Operators
 
-- <span id="8cf7">`&` — AND statement</span>
-- <span id="02d5">`|` — OR statement</span>
-- <span id="e576">`~` — NOT</span>
-- <span id="9c66">`^` — XOR</span>
-- <span id="b343">`<<` — Left shift</span>
-- <span id="52b1">`>>` — Right shift</span>
-- <span id="1b5c">`>>>` — Zero fill right shift</span>
+-   <span id="8cf7">`&` — AND statement</span>
+-   <span id="02d5">`|` — OR statement</span>
+-   <span id="e576">`~` — NOT</span>
+-   <span id="9c66">`^` — XOR</span>
+-   <span id="b343">`<<` — Left shift</span>
+-   <span id="52b1">`>>` — Right shift</span>
+-   <span id="1b5c">`>>>` — Zero fill right shift</span>
 
 ### Functions
 
@@ -350,26 +354,26 @@ As you can see, it consists of the `function` keyword plus a name. The function�
 
 A common application for functions is the output of data. For the output, you have the following options:
 
-- <span id="a7a7">`alert()` — Output data in an alert box in the browser window</span>
-- <span id="0c44">`confirm()` — Opens up a yes/no dialog and returns true/false depending on user click</span>
-- <span id="9690">`console.log()` — Writes information to the browser console, good for debugging purposes</span>
-- <span id="0d4d">`document.write()` — Write directly to the HTML document</span>
-- <span id="16aa">`prompt()` — Creates a dialogue for user input</span>
+-   <span id="a7a7">`alert()` — Output data in an alert box in the browser window</span>
+-   <span id="0c44">`confirm()` — Opens up a yes/no dialog and returns true/false depending on user click</span>
+-   <span id="9690">`console.log()` — Writes information to the browser console, good for debugging purposes</span>
+-   <span id="0d4d">`document.write()` — Write directly to the HTML document</span>
+-   <span id="16aa">`prompt()` — Creates a dialogue for user input</span>
 
 ### Global Functions
 
 Global functions are functions built into every browser capable of running JavaScript.
 
-- <span id="f4f1">`decodeURI()` — Decodes a <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" class="markup--anchor markup--li-anchor">Uniform Resource Identifier (URI)</a> created by `encodeURI` or similar</span>
-- <span id="c203">`decodeURIComponent()` — Decodes a URI component</span>
-- <span id="176a">`encodeURI()` — Encodes a URI into UTF-8</span>
-- <span id="6720">`encodeURIComponent()` — Same but for URI components</span>
-- <span id="e97b">`eval()` — Evaluates JavaScript code represented as a string</span>
-- <span id="390b">`isFinite()` — Determines whether a passed value is a finite number</span>
-- <span id="5d46">`isNaN()` — Determines whether a value is NaN or not</span>
-- <span id="f668">`Number()` —- Returns a number converted from its argument</span>
-- <span id="a5ff">`parseFloat()` — Parses an argument and returns a floating-point number</span>
-- <span id="a666">`parseInt()` — Parses its argument and returns an integer</span>
+-   <span id="f4f1">`decodeURI()` — Decodes a <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" class="markup--anchor markup--li-anchor">Uniform Resource Identifier (URI)</a> created by `encodeURI` or similar</span>
+-   <span id="c203">`decodeURIComponent()` — Decodes a URI component</span>
+-   <span id="176a">`encodeURI()` — Encodes a URI into UTF-8</span>
+-   <span id="6720">`encodeURIComponent()` — Same but for URI components</span>
+-   <span id="e97b">`eval()` — Evaluates JavaScript code represented as a string</span>
+-   <span id="390b">`isFinite()` — Determines whether a passed value is a finite number</span>
+-   <span id="5d46">`isNaN()` — Determines whether a value is NaN or not</span>
+-   <span id="f668">`Number()` —- Returns a number converted from its argument</span>
+-   <span id="a5ff">`parseFloat()` — Parses an argument and returns a floating-point number</span>
+-   <span id="a666">`parseInt()` — Parses its argument and returns an integer</span>
 
 ### JavaScript Loops
 
@@ -383,11 +387,11 @@ for (before loop; condition **for** loop; execute after loop) {
 
 You have several parameters to create loops:
 
-- <span id="ff62">`for` — The most common way to create a loop in JavaScript</span>
-- <span id="7ad1">`while` — Sets up conditions under which a loop executes</span>
-- <span id="c2f4">`do while` — Similar to the `while` loop but it executes at least once and performs a check at the end to see if the condition is met to execute again</span>
-- <span id="7157">`break` —Used to stop and exit the cycle at certain conditions</span>
-- <span id="f5c0">`continue` — Skip parts of the cycle if certain conditions are met</span>
+-   <span id="ff62">`for` — The most common way to create a loop in JavaScript</span>
+-   <span id="7ad1">`while` — Sets up conditions under which a loop executes</span>
+-   <span id="c2f4">`do while` — Similar to the `while` loop but it executes at least once and performs a check at the end to see if the condition is met to execute again</span>
+-   <span id="7157">`break` —Used to stop and exit the cycle at certain conditions</span>
+-   <span id="f5c0">`continue` — Skip parts of the cycle if certain conditions are met</span>
 
 ### If — Else Statements
 
@@ -417,39 +421,39 @@ In this case, `John Doe` is the string.
 
 In JavaScript, strings are marked with single or double-quotes. If you want to use quotation marks in a string, you need to use special characters:
 
-- <span id="b4b1">`\'` — Single quote</span>
-- <span id="3b22">`\"` — Double quote</span>
+-   <span id="b4b1">`\'` — Single quote</span>
+-   <span id="3b22">`\"` — Double quote</span>
 
 Aside from that you also have additional escape characters:
 
-- <span id="b412">`\\` — Backslash</span>
-- <span id="1592">`\b` — Backspace</span>
-- <span id="3a72">`\f` — Form feed</span>
-- <span id="145a">`\n` — New line</span>
-- <span id="1416">`\r` — Carriage return</span>
-- <span id="95d4">`\t` — Horizontal tabulator</span>
-- <span id="d962">`\v` — Vertical tabulator</span>
+-   <span id="b412">`\\` — Backslash</span>
+-   <span id="1592">`\b` — Backspace</span>
+-   <span id="3a72">`\f` — Form feed</span>
+-   <span id="145a">`\n` — New line</span>
+-   <span id="1416">`\r` — Carriage return</span>
+-   <span id="95d4">`\t` — Horizontal tabulator</span>
+-   <span id="d962">`\v` — Vertical tabulator</span>
 
 ### String Methods
 
 There are many different ways to work with strings:
 
-- <span id="2021">`charAt()` — Returns a character at a specified position inside a string</span>
-- <span id="d3e5">`charCodeAt()` — Gives you the Unicode of a character at that position</span>
-- <span id="fdd1">`concat()` — Concatenates (joins) two or more strings into one</span>
-- <span id="009c">`fromCharCode()` — Returns a string created from the specified sequence of UTF-16 code units</span>
-- <span id="7ed3">`indexOf()` — Provides the position of the first occurrence of a specified text within a string</span>
-- <span id="2937">`lastIndexOf()` — Same as `indexOf()` but with the last occurrence, searching backward</span>
-- <span id="142d">`match()` — Retrieves the matches of a string against a search pattern</span>
-- <span id="6c18">`replace()` — Find and replace specified text in a string</span>
-- <span id="e279">`search()` — Executes a search for a matching text and returns its position</span>
-- <span id="6bcd">`slice()` — Extracts a section of a string and returns it as a new string</span>
-- <span id="e4ee">`split()` — Splits a string object into an array of strings at a specified position</span>
-- <span id="3a27">`substr()` — Similar to `slice()` but extracts a substring depending on a specified number of characters</span>
-- <span id="3d14">`substring()` — Also similar to `slice()` but can’t accept negative indices</span>
-- <span id="fa33">`toLowerCase()` — Convert strings to lower case</span>
-- <span id="3485">`toUpperCase()` — Convert strings to upper case</span>
-- <span id="4f96">`valueOf()` — Returns the primitive value (that has no properties or methods) of a string object</span>
+-   <span id="2021">`charAt()` — Returns a character at a specified position inside a string</span>
+-   <span id="d3e5">`charCodeAt()` — Gives you the Unicode of a character at that position</span>
+-   <span id="fdd1">`concat()` — Concatenates (joins) two or more strings into one</span>
+-   <span id="009c">`fromCharCode()` — Returns a string created from the specified sequence of UTF-16 code units</span>
+-   <span id="7ed3">`indexOf()` — Provides the position of the first occurrence of a specified text within a string</span>
+-   <span id="2937">`lastIndexOf()` — Same as `indexOf()` but with the last occurrence, searching backward</span>
+-   <span id="142d">`match()` — Retrieves the matches of a string against a search pattern</span>
+-   <span id="6c18">`replace()` — Find and replace specified text in a string</span>
+-   <span id="e279">`search()` — Executes a search for a matching text and returns its position</span>
+-   <span id="6bcd">`slice()` — Extracts a section of a string and returns it as a new string</span>
+-   <span id="e4ee">`split()` — Splits a string object into an array of strings at a specified position</span>
+-   <span id="3a27">`substr()` — Similar to `slice()` but extracts a substring depending on a specified number of characters</span>
+-   <span id="3d14">`substring()` — Also similar to `slice()` but can’t accept negative indices</span>
+-   <span id="fa33">`toLowerCase()` — Convert strings to lower case</span>
+-   <span id="3485">`toUpperCase()` — Convert strings to upper case</span>
+-   <span id="4f96">`valueOf()` — Returns the primitive value (that has no properties or methods) of a string object</span>
 
 ### Regular Expression Syntax
 
@@ -457,55 +461,55 @@ Regular expressions are search patterns used to match character combinations in 
 
 ### Pattern Modifiers
 
-- <span id="bb29">`e` — Evaluate replacement</span>
-- <span id="b6b8">`i` — Perform case-insensitive matching</span>
-- <span id="4f50">`g` — Perform global matching</span>
-- <span id="4add">`m` — Perform multiple line matching</span>
-- <span id="a073">`s` — Treat strings as a single line</span>
-- <span id="482b">`x` — Allow comments and whitespace in the pattern</span>
-- <span id="f6ad">`U` — Ungreedy pattern</span>
+-   <span id="bb29">`e` — Evaluate replacement</span>
+-   <span id="b6b8">`i` — Perform case-insensitive matching</span>
+-   <span id="4f50">`g` — Perform global matching</span>
+-   <span id="4add">`m` — Perform multiple line matching</span>
+-   <span id="a073">`s` — Treat strings as a single line</span>
+-   <span id="482b">`x` — Allow comments and whitespace in the pattern</span>
+-   <span id="f6ad">`U` — Ungreedy pattern</span>
 
 ### Brackets
 
-- <span id="aae1">`[abc]` — Find any of the characters between the brackets</span>
-- <span id="e048">`[^abc]` — Find any character which is not in the brackets</span>
-- <span id="f9b5">`[0-9]` — Used to find any digit from 0 to 9</span>
-- <span id="ac71">`[A-z]` — Find any character from uppercase A to lowercase z</span>
-- <span id="6fce">`(a|b|c)` — Find any of the alternatives separated with `|`</span>
+-   <span id="aae1">`[abc]` — Find any of the characters between the brackets</span>
+-   <span id="e048">`[^abc]` — Find any character which is not in the brackets</span>
+-   <span id="f9b5">`[0-9]` — Used to find any digit from 0 to 9</span>
+-   <span id="ac71">`[A-z]` — Find any character from uppercase A to lowercase z</span>
+-   <span id="6fce">`(a|b|c)` — Find any of the alternatives separated with `|`</span>
 
 ### Metacharacters
 
-- <span id="dcd6">`.` — Find a single character, except newline or line terminator</span>
-- <span id="e944">`\w` — Word character</span>
-- <span id="c4bf">`\W` — Non-word character</span>
-- <span id="7b81">`\d` — A digit</span>
-- <span id="a533">`\D` — A non-digit character</span>
-- <span id="1fcc">`\s` — Whitespace character</span>
-- <span id="374c">`\S` — Non-whitespace character</span>
-- <span id="72d0">`\b` — Find a match at the beginning/end of a word</span>
-- <span id="2d38">`\B` — A match not at the beginning/end of a word</span>
-- <span id="859b">`\0` — NUL character</span>
-- <span id="df4d">`\n` — A new line character</span>
-- <span id="5acd">`\f` — Form feed character</span>
-- <span id="833f">`\r` — Carriage return character</span>
-- <span id="4f31">`\t` — Tab character</span>
-- <span id="e618">`\v` — Vertical tab character</span>
-- <span id="dcfc">`\xxx` — The character specified by an octal number xxx</span>
-- <span id="cf5e">`\xdd` — Character specified by a hexadecimal number dd</span>
-- <span id="978f">`\uxxxx` — The Unicode character specified by a hexadecimal number XXXX</span>
+-   <span id="dcd6">`.` — Find a single character, except newline or line terminator</span>
+-   <span id="e944">`\w` — Word character</span>
+-   <span id="c4bf">`\W` — Non-word character</span>
+-   <span id="7b81">`\d` — A digit</span>
+-   <span id="a533">`\D` — A non-digit character</span>
+-   <span id="1fcc">`\s` — Whitespace character</span>
+-   <span id="374c">`\S` — Non-whitespace character</span>
+-   <span id="72d0">`\b` — Find a match at the beginning/end of a word</span>
+-   <span id="2d38">`\B` — A match not at the beginning/end of a word</span>
+-   <span id="859b">`\0` — NUL character</span>
+-   <span id="df4d">`\n` — A new line character</span>
+-   <span id="5acd">`\f` — Form feed character</span>
+-   <span id="833f">`\r` — Carriage return character</span>
+-   <span id="4f31">`\t` — Tab character</span>
+-   <span id="e618">`\v` — Vertical tab character</span>
+-   <span id="dcfc">`\xxx` — The character specified by an octal number xxx</span>
+-   <span id="cf5e">`\xdd` — Character specified by a hexadecimal number dd</span>
+-   <span id="978f">`\uxxxx` — The Unicode character specified by a hexadecimal number XXXX</span>
 
 ### Quantifiers
 
-- <span id="e4cf">`n+` — Matches any string that contains at least one n</span>
-- <span id="be07">`n*` — Any string that contains zero or more occurrences of n</span>
-- <span id="4a93">`n?` — A string that contains zero or one occurrence of n</span>
-- <span id="91f0">`n{X}` — String that contains a sequence of X n’s</span>
-- <span id="097b">`n{X,Y}` — Strings that contain a sequence of X to Y n’s</span>
-- <span id="e9f2">`n{X,}` — Matches any string that contains a sequence of at least X n’s</span>
-- <span id="15b3">`n$` — Any string with n at the end of it</span>
-- <span id="5fc9">`^n` — String with n at the beginning of it</span>
-- <span id="2b42">`?=n` — Any string that is followed by a specific string n</span>
-- <span id="6ffa">`?!n` — String that is not followed by a specific string ni</span>
+-   <span id="e4cf">`n+` — Matches any string that contains at least one n</span>
+-   <span id="be07">`n*` — Any string that contains zero or more occurrences of n</span>
+-   <span id="4a93">`n?` — A string that contains zero or one occurrence of n</span>
+-   <span id="91f0">`n{X}` — String that contains a sequence of X n’s</span>
+-   <span id="097b">`n{X,Y}` — Strings that contain a sequence of X to Y n’s</span>
+-   <span id="e9f2">`n{X,}` — Matches any string that contains a sequence of at least X n’s</span>
+-   <span id="15b3">`n$` — Any string with n at the end of it</span>
+-   <span id="5fc9">`^n` — String with n at the beginning of it</span>
+-   <span id="2b42">`?=n` — Any string that is followed by a specific string n</span>
+-   <span id="6ffa">`?!n` — String that is not followed by a specific string ni</span>
 
 ### Numbers and Math
 
@@ -513,51 +517,51 @@ In JavaScript, you can also work with numbers, constants and perform mathematica
 
 ### Number Properties
 
-- <span id="3554">`MAX_VALUE` — The maximum numeric value representable in JavaScript</span>
-- <span id="c55d">`MIN_VALUE` — Smallest positive numeric value representable in JavaScript</span>
-- <span id="49e0">`NaN` — The “Not-a-Number” value</span>
-- <span id="3024">`NEGATIVE_INFINITY` — The negative Infinity value</span>
-- <span id="0bf4">`POSITIVE_INFINITY` — Positive Infinity value</span>
+-   <span id="3554">`MAX_VALUE` — The maximum numeric value representable in JavaScript</span>
+-   <span id="c55d">`MIN_VALUE` — Smallest positive numeric value representable in JavaScript</span>
+-   <span id="49e0">`NaN` — The “Not-a-Number” value</span>
+-   <span id="3024">`NEGATIVE_INFINITY` — The negative Infinity value</span>
+-   <span id="0bf4">`POSITIVE_INFINITY` — Positive Infinity value</span>
 
 ### Number Methods
 
-- <span id="9478">`toExponential()` — Returns the string with a rounded number written as exponential notation</span>
-- <span id="2ad0">`toFixed()` — Returns the string of a number with a specified number of decimals</span>
-- <span id="d464">`toPrecision()` — String of a number written with a specified length</span>
-- <span id="2244">`toString()` — Returns a number as a string</span>
-- <span id="bc1e">`valueOf()` — Returns a number as a number</span>
+-   <span id="9478">`toExponential()` — Returns the string with a rounded number written as exponential notation</span>
+-   <span id="2ad0">`toFixed()` — Returns the string of a number with a specified number of decimals</span>
+-   <span id="d464">`toPrecision()` — String of a number written with a specified length</span>
+-   <span id="2244">`toString()` — Returns a number as a string</span>
+-   <span id="bc1e">`valueOf()` — Returns a number as a number</span>
 
 ### Math Properties
 
-- <span id="9f68">`E` — Euler’s number</span>
-- <span id="a4df">`LN2` — The natural logarithm of 2</span>
-- <span id="0f06">`LN10` — Natural logarithm of 10</span>
-- <span id="1a92">`LOG2E` — Base 2 logarithm of E</span>
-- <span id="42e7">`LOG10E` — Base 10 logarithm of E</span>
-- <span id="1fbe">`PI` — The number PI</span>
-- <span id="2a56">`SQRT1_2` — Square root of 1/2</span>
-- <span id="aab4">`SQRT2` — The square root of 2</span>
+-   <span id="9f68">`E` — Euler’s number</span>
+-   <span id="a4df">`LN2` — The natural logarithm of 2</span>
+-   <span id="0f06">`LN10` — Natural logarithm of 10</span>
+-   <span id="1a92">`LOG2E` — Base 2 logarithm of E</span>
+-   <span id="42e7">`LOG10E` — Base 10 logarithm of E</span>
+-   <span id="1fbe">`PI` — The number PI</span>
+-   <span id="2a56">`SQRT1_2` — Square root of 1/2</span>
+-   <span id="aab4">`SQRT2` — The square root of 2</span>
 
 ### Math Methods
 
-- <span id="8836">`abs(x)` — Returns the absolute (positive) value of x</span>
-- <span id="ddb9">`acos(x)` — The arccosine of x, in radians</span>
-- <span id="a0c3">`asin(x)` — Arcsine of x, in radians</span>
-- <span id="c2ca">`atan(x)` — The arctangent of x as a numeric value</span>
-- <span id="8b93">`atan2(y,x)` — Arctangent of the quotient of its arguments</span>
-- <span id="b103">`ceil(x)` — Value of x rounded up to its nearest integer</span>
-- <span id="c68a">`cos(x)` — The cosine of x (x is in radians)</span>
-- <span id="d480">`exp(x)` — Value of Ex</span>
-- <span id="2954">`floor(x)` — The value of x rounded down to its nearest integer</span>
-- <span id="ff4d">`log(x)` — The natural logarithm (base E) of x</span>
-- <span id="b6a9">`max(x,y,z,...,n)` — Returns the number with the highest value</span>
-- <span id="dfb0">`min(x,y,z,...,n)` — Same for the number with the lowest value</span>
-- <span id="a6f1">`pow(x,y)` — X to the power of y</span>
-- <span id="8851">`random()` — Returns a random number between 0 and 1</span>
-- <span id="d32e">`round(x)` — The value of x rounded to its nearest integer</span>
-- <span id="fe9a">`sin(x)` — The sine of x (x is in radians)</span>
-- <span id="c244">`sqrt(x)` — Square root of x</span>
-- <span id="b5ef">`tan(x)` — The tangent of an angle</span>
+-   <span id="8836">`abs(x)` — Returns the absolute (positive) value of x</span>
+-   <span id="ddb9">`acos(x)` — The arccosine of x, in radians</span>
+-   <span id="a0c3">`asin(x)` — Arcsine of x, in radians</span>
+-   <span id="c2ca">`atan(x)` — The arctangent of x as a numeric value</span>
+-   <span id="8b93">`atan2(y,x)` — Arctangent of the quotient of its arguments</span>
+-   <span id="b103">`ceil(x)` — Value of x rounded up to its nearest integer</span>
+-   <span id="c68a">`cos(x)` — The cosine of x (x is in radians)</span>
+-   <span id="d480">`exp(x)` — Value of Ex</span>
+-   <span id="2954">`floor(x)` — The value of x rounded down to its nearest integer</span>
+-   <span id="ff4d">`log(x)` — The natural logarithm (base E) of x</span>
+-   <span id="b6a9">`max(x,y,z,...,n)` — Returns the number with the highest value</span>
+-   <span id="dfb0">`min(x,y,z,...,n)` — Same for the number with the lowest value</span>
+-   <span id="a6f1">`pow(x,y)` — X to the power of y</span>
+-   <span id="8851">`random()` — Returns a random number between 0 and 1</span>
+-   <span id="d32e">`round(x)` — The value of x rounded to its nearest integer</span>
+-   <span id="fe9a">`sin(x)` — The sine of x (x is in radians)</span>
+-   <span id="c244">`sqrt(x)` — Square root of x</span>
+-   <span id="b5ef">`tan(x)` — The tangent of an angle</span>
 
 ### Dealing with Dates in JavaScript
 
@@ -565,35 +569,35 @@ You can also work with and modify dates and time with JavaScript. This is the ne
 
 ### Setting Dates
 
-- <span id="b187">`Date()` — Creates a new date object with the current date and time</span>
-- <span id="42f8">`Date(2017, 5, 21, 3, 23, 10, 0)` — Create a custom date object. The numbers represent a year, month, day, hour, minutes, seconds, milliseconds. You can omit anything you want except for a year and month.</span>
-- <span id="4e80">`Date("2017-06-23")` — Date declaration as a string</span>
+-   <span id="b187">`Date()` — Creates a new date object with the current date and time</span>
+-   <span id="42f8">`Date(2017, 5, 21, 3, 23, 10, 0)` — Create a custom date object. The numbers represent a year, month, day, hour, minutes, seconds, milliseconds. You can omit anything you want except for a year and month.</span>
+-   <span id="4e80">`Date("2017-06-23")` — Date declaration as a string</span>
 
 ### Pulling Date and Time Values
 
-- <span id="465e">`getDate()` — Get the day of the month as a number (1-31)</span>
-- <span id="1b08">`getDay()` — The weekday as a number (0-6)</span>
-- <span id="6d9e">`getFullYear()` — Year as a four-digit number (yyyy)</span>
-- <span id="a216">`getHours()` — Get the hour (0-23)</span>
-- <span id="388a">`getMilliseconds()` — The millisecond (0-999)</span>
-- <span id="a97f">`getMinutes()` — Get the minute (0-59)</span>
-- <span id="2427">`getMonth()` — Month as a number (0-11)</span>
-- <span id="b964">`getSeconds()` — Get the second (0-59)</span>
-- <span id="505d">`getTime()` — Get the milliseconds since January 1, 1970</span>
-- <span id="7c14">`getUTCDate()` — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)</span>
-- <span id="d6b6">`parse` — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970</span>
+-   <span id="465e">`getDate()` — Get the day of the month as a number (1-31)</span>
+-   <span id="1b08">`getDay()` — The weekday as a number (0-6)</span>
+-   <span id="6d9e">`getFullYear()` — Year as a four-digit number (yyyy)</span>
+-   <span id="a216">`getHours()` — Get the hour (0-23)</span>
+-   <span id="388a">`getMilliseconds()` — The millisecond (0-999)</span>
+-   <span id="a97f">`getMinutes()` — Get the minute (0-59)</span>
+-   <span id="2427">`getMonth()` — Month as a number (0-11)</span>
+-   <span id="b964">`getSeconds()` — Get the second (0-59)</span>
+-   <span id="505d">`getTime()` — Get the milliseconds since January 1, 1970</span>
+-   <span id="7c14">`getUTCDate()` — The day (date) of the month in the specified date according to universal time (also available for day, month, full year, hours, minutes etc.)</span>
+-   <span id="d6b6">`parse` — Parses a string representation of a date and returns the number of milliseconds since January 1, 1970</span>
 
 ### Set Part of a Date
 
-- <span id="9a97">`setDate()` — Set the day as a number (1-31)</span>
-- <span id="d4f0">`setFullYear()` — Sets the year (optionally month and day)</span>
-- <span id="1a45">`setHours()` — Set the hour (0-23)</span>
-- <span id="8020">`setMilliseconds()` — Set milliseconds (0-999)</span>
-- <span id="7feb">`setMinutes()` — Sets the minutes (0-59)</span>
-- <span id="d7ca">`setMonth()` — Set the month (0-11)</span>
-- <span id="795d">`setSeconds()` — Sets the seconds (0-59)</span>
-- <span id="1d7f">`setTime()` — Set the time (milliseconds since January 1, 1970)</span>
-- <span id="78e1">`setUTCDate()` — Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)</span>
+-   <span id="9a97">`setDate()` — Set the day as a number (1-31)</span>
+-   <span id="d4f0">`setFullYear()` — Sets the year (optionally month and day)</span>
+-   <span id="1a45">`setHours()` — Set the hour (0-23)</span>
+-   <span id="8020">`setMilliseconds()` — Set milliseconds (0-999)</span>
+-   <span id="7feb">`setMinutes()` — Sets the minutes (0-59)</span>
+-   <span id="d7ca">`setMonth()` — Set the month (0-11)</span>
+-   <span id="795d">`setSeconds()` — Sets the seconds (0-59)</span>
+-   <span id="1d7f">`setTime()` — Set the time (milliseconds since January 1, 1970)</span>
+-   <span id="78e1">`setUTCDate()` — Sets the day of the month for a specified date according to universal time (also available for day, month, full year, hours, minutes etc.)</span>
 
 ### DOM Mode
 
@@ -601,56 +605,56 @@ The DOM is the <a href="https://en.wikipedia.org/wiki/Document_Object_Model" cla
 
 ### Node Properties
 
-- <span id="cfb7">`attributes` — Returns a live collection of all attributes registered to an element</span>
-- <span id="6138">`baseURI` — Provides the absolute base URL of an HTML element</span>
-- <span id="34da">`childNodes` — Gives a collection of an element’s child nodes</span>
-- <span id="58ec">`firstChild` — Returns the first child node of an element</span>
-- <span id="2f34">`lastChild` — The last child node of an element</span>
-- <span id="fdea">`nextSibling` — Gives you the next node at the same node tree level</span>
-- <span id="1ca4">`nodeName` —Returns the name of a node</span>
-- <span id="d4ee">`nodeType` — Returns the type of a node</span>
-- <span id="cd22">`nodeValue` — Sets or returns the value of a node</span>
-- <span id="a9a3">`ownerDocument` — The top-level document object for this node</span>
-- <span id="51b4">`parentNode` — Returns the parent node of an element</span>
-- <span id="31ef">`previousSibling` — Returns the node immediately preceding the current one</span>
-- <span id="ec40">`textContent` — Sets or returns the textual content of a node and its descendants</span>
+-   <span id="cfb7">`attributes` — Returns a live collection of all attributes registered to an element</span>
+-   <span id="6138">`baseURI` — Provides the absolute base URL of an HTML element</span>
+-   <span id="34da">`childNodes` — Gives a collection of an element’s child nodes</span>
+-   <span id="58ec">`firstChild` — Returns the first child node of an element</span>
+-   <span id="2f34">`lastChild` — The last child node of an element</span>
+-   <span id="fdea">`nextSibling` — Gives you the next node at the same node tree level</span>
+-   <span id="1ca4">`nodeName` —Returns the name of a node</span>
+-   <span id="d4ee">`nodeType` — Returns the type of a node</span>
+-   <span id="cd22">`nodeValue` — Sets or returns the value of a node</span>
+-   <span id="a9a3">`ownerDocument` — The top-level document object for this node</span>
+-   <span id="51b4">`parentNode` — Returns the parent node of an element</span>
+-   <span id="31ef">`previousSibling` — Returns the node immediately preceding the current one</span>
+-   <span id="ec40">`textContent` — Sets or returns the textual content of a node and its descendants</span>
 
 ### Node Methods
 
-- <span id="7f05">`appendChild()` — Adds a new child node to an element as the last child node</span>
-- <span id="3b3a">`cloneNode()` — Clones an HTML element</span>
-- <span id="661c">`compareDocumentPosition()` — Compares the document position of two elements</span>
-- <span id="86d2">`getFeature()` — Returns an object which implements the APIs of a specified feature</span>
-- <span id="059c">`hasAttributes()` — Returns true if an element has any attributes, otherwise false</span>
-- <span id="5d0d">`hasChildNodes()` — Returns true if an element has any child nodes, otherwise false</span>
-- <span id="4c86">`insertBefore()` — Inserts a new child node before a specified, existing child node</span>
-- <span id="4b38">`isDefaultNamespace()` — Returns true if a specified namespaceURI is the default, otherwise false</span>
-- <span id="8c4e">`isEqualNode()` — Checks if two elements are equal</span>
-- <span id="2f6a">`isSameNode()` — Checks if two elements are the same node</span>
-- <span id="944e">`isSupported()` — Returns true if a specified feature is supported on the element</span>
-- <span id="b7ef">`lookupNamespaceURI()` — Returns the namespace URI associated with a given node</span>
-- <span id="5f59">`lookupPrefix()` — Returns a DOMString containing the prefix for a given namespace URI if present</span>
-- <span id="6670">`normalize()` — Joins adjacent text nodes and removes empty text nodes in an element</span>
-- <span id="c80a">`removeChild()` — Removes a child node from an element</span>
-- <span id="8108">`replaceChild()` — Replaces a child node in an element</span>
+-   <span id="7f05">`appendChild()` — Adds a new child node to an element as the last child node</span>
+-   <span id="3b3a">`cloneNode()` — Clones an HTML element</span>
+-   <span id="661c">`compareDocumentPosition()` — Compares the document position of two elements</span>
+-   <span id="86d2">`getFeature()` — Returns an object which implements the APIs of a specified feature</span>
+-   <span id="059c">`hasAttributes()` — Returns true if an element has any attributes, otherwise false</span>
+-   <span id="5d0d">`hasChildNodes()` — Returns true if an element has any child nodes, otherwise false</span>
+-   <span id="4c86">`insertBefore()` — Inserts a new child node before a specified, existing child node</span>
+-   <span id="4b38">`isDefaultNamespace()` — Returns true if a specified namespaceURI is the default, otherwise false</span>
+-   <span id="8c4e">`isEqualNode()` — Checks if two elements are equal</span>
+-   <span id="2f6a">`isSameNode()` — Checks if two elements are the same node</span>
+-   <span id="944e">`isSupported()` — Returns true if a specified feature is supported on the element</span>
+-   <span id="b7ef">`lookupNamespaceURI()` — Returns the namespace URI associated with a given node</span>
+-   <span id="5f59">`lookupPrefix()` — Returns a DOMString containing the prefix for a given namespace URI if present</span>
+-   <span id="6670">`normalize()` — Joins adjacent text nodes and removes empty text nodes in an element</span>
+-   <span id="c80a">`removeChild()` — Removes a child node from an element</span>
+-   <span id="8108">`replaceChild()` — Replaces a child node in an element</span>
 
 ### Element Methods
 
-- <span id="9530">`getAttribute()` — Returns the specified attribute value of an element node</span>
-- <span id="0dd1">`getAttributeNS()` — Returns string value of the attribute with the specified namespace and name</span>
-- <span id="8a0d">`getAttributeNode()` — Gets the specified attribute node</span>
-- <span id="fc41">`getAttributeNodeNS()` — Returns the attribute node for the attribute with the given namespace and name</span>
-- <span id="2a3e">`getElementsByTagName()` — Provides a collection of all child elements with the specified tag name</span>
-- <span id="11a4">`getElementsByTagNameNS()` — Returns a live HTMLCollection of elements with a certain tag name belonging to the given namespace</span>
-- <span id="e2ae">`hasAttribute()` — Returns true if an element has any attributes, otherwise false</span>
-- <span id="17dd">`hasAttributeNS()` — Provides a true/false value indicating whether the current element in a given namespace has the specified attribute</span>
-- <span id="f28c">`removeAttribute()` — Removes a specified attribute from an element</span>
-- <span id="8cd0">`removeAttributeNS()` — Removes the specified attribute from an element within a certain namespace</span>
-- <span id="e6c3">`removeAttributeNode()` — Takes away a specified attribute node and returns the removed node</span>
-- <span id="a7b9">`setAttribute()` — Sets or changes the specified attribute to a specified value</span>
-- <span id="bf42">`setAttributeNS()` — Adds a new attribute or changes the value of an attribute with the given namespace and name</span>
-- <span id="2322">`setAttributeNode()` — Sets or changes the specified attribute node</span>
-- <span id="0540">`setAttributeNodeNS()` — Adds a new namespaced attribute node to an element</span>
+-   <span id="9530">`getAttribute()` — Returns the specified attribute value of an element node</span>
+-   <span id="0dd1">`getAttributeNS()` — Returns string value of the attribute with the specified namespace and name</span>
+-   <span id="8a0d">`getAttributeNode()` — Gets the specified attribute node</span>
+-   <span id="fc41">`getAttributeNodeNS()` — Returns the attribute node for the attribute with the given namespace and name</span>
+-   <span id="2a3e">`getElementsByTagName()` — Provides a collection of all child elements with the specified tag name</span>
+-   <span id="11a4">`getElementsByTagNameNS()` — Returns a live HTMLCollection of elements with a certain tag name belonging to the given namespace</span>
+-   <span id="e2ae">`hasAttribute()` — Returns true if an element has any attributes, otherwise false</span>
+-   <span id="17dd">`hasAttributeNS()` — Provides a true/false value indicating whether the current element in a given namespace has the specified attribute</span>
+-   <span id="f28c">`removeAttribute()` — Removes a specified attribute from an element</span>
+-   <span id="8cd0">`removeAttributeNS()` — Removes the specified attribute from an element within a certain namespace</span>
+-   <span id="e6c3">`removeAttributeNode()` — Takes away a specified attribute node and returns the removed node</span>
+-   <span id="a7b9">`setAttribute()` — Sets or changes the specified attribute to a specified value</span>
+-   <span id="bf42">`setAttributeNS()` — Adds a new attribute or changes the value of an attribute with the given namespace and name</span>
+-   <span id="2322">`setAttributeNode()` — Sets or changes the specified attribute node</span>
+-   <span id="0540">`setAttributeNodeNS()` — Adds a new namespaced attribute node to an element</span>
 
 ### Working with the User Browser
 
@@ -658,62 +662,62 @@ Besides HTML elements, JavaScript is also able to take into account the user bro
 
 ### Window Properties
 
-- <span id="1b1f">`closed` — Checks whether a window has been closed or not and returns true or false</span>
-- <span id="805f">`defaultStatus` — Sets or returns the default text in the status bar of a window</span>
-- <span id="458e">`document` — Returns the document object for the window</span>
-- <span id="93ee">`frames` — Returns all `<iframe>` elements in the current window</span>
-- <span id="c42a">`history` — Provides the History object for the window</span>
-- <span id="3a5d">`innerHeight` — The inner height of a window’s content area</span>
-- <span id="c609">`innerWidth` — The inner width of the content area</span>
-- <span id="5167">`length` — Find out the number of `<iframe>` elements in the window</span>
-- <span id="4f05">`location` — Returns the location object for the window</span>
-- <span id="4125">`name` — Sets or returns the name of a window</span>
-- <span id="3d7f">`navigator` — Returns the Navigator object for the window</span>
-- <span id="c601">`opener` — Returns a reference to the window that created the window</span>
-- <span id="734e">`outerHeight` — The outer height of a window, including toolbars/scrollbars</span>
-- <span id="9b0a">`outerWidth` — The outer width of a window, including toolbars/scrollbars</span>
-- <span id="3140">`pageXOffset` — Number of pixels the current document has been scrolled horizontally</span>
-- <span id="0bcc">`pageYOffset` — Number of pixels the document has been scrolled vertically</span>
-- <span id="a2af">`parent` — The parent window of the current window</span>
-- <span id="3634">`screen` — Returns the Screen object for the window</span>
-- <span id="9566">`screenLeft` — The horizontal coordinate of the window (relative to the screen)</span>
-- <span id="1245">`screenTop` — The vertical coordinate of the window</span>
-- <span id="5656">`screenX` — Same as `screenLeft` but needed for some browsers</span>
-- <span id="21e7">`screenY` — Same as `screenTop` but needed for some browsers</span>
-- <span id="d000">`self` — Returns the current window</span>
-- <span id="99af">`status` — Sets or returns the text in the status bar of a window</span>
-- <span id="0a0f">`top` — Returns the topmost browser window</span>
+-   <span id="1b1f">`closed` — Checks whether a window has been closed or not and returns true or false</span>
+-   <span id="805f">`defaultStatus` — Sets or returns the default text in the status bar of a window</span>
+-   <span id="458e">`document` — Returns the document object for the window</span>
+-   <span id="93ee">`frames` — Returns all `<iframe>` elements in the current window</span>
+-   <span id="c42a">`history` — Provides the History object for the window</span>
+-   <span id="3a5d">`innerHeight` — The inner height of a window’s content area</span>
+-   <span id="c609">`innerWidth` — The inner width of the content area</span>
+-   <span id="5167">`length` — Find out the number of `<iframe>` elements in the window</span>
+-   <span id="4f05">`location` — Returns the location object for the window</span>
+-   <span id="4125">`name` — Sets or returns the name of a window</span>
+-   <span id="3d7f">`navigator` — Returns the Navigator object for the window</span>
+-   <span id="c601">`opener` — Returns a reference to the window that created the window</span>
+-   <span id="734e">`outerHeight` — The outer height of a window, including toolbars/scrollbars</span>
+-   <span id="9b0a">`outerWidth` — The outer width of a window, including toolbars/scrollbars</span>
+-   <span id="3140">`pageXOffset` — Number of pixels the current document has been scrolled horizontally</span>
+-   <span id="0bcc">`pageYOffset` — Number of pixels the document has been scrolled vertically</span>
+-   <span id="a2af">`parent` — The parent window of the current window</span>
+-   <span id="3634">`screen` — Returns the Screen object for the window</span>
+-   <span id="9566">`screenLeft` — The horizontal coordinate of the window (relative to the screen)</span>
+-   <span id="1245">`screenTop` — The vertical coordinate of the window</span>
+-   <span id="5656">`screenX` — Same as `screenLeft` but needed for some browsers</span>
+-   <span id="21e7">`screenY` — Same as `screenTop` but needed for some browsers</span>
+-   <span id="d000">`self` — Returns the current window</span>
+-   <span id="99af">`status` — Sets or returns the text in the status bar of a window</span>
+-   <span id="0a0f">`top` — Returns the topmost browser window</span>
 
 ### Window Methods
 
-- <span id="5715">`alert()` — Displays an alert box with a message and an OK button</span>
-- <span id="4afc">`blur()` — Removes focus from the current window</span>
-- <span id="ef9a">`clearInterval()` — Clears a timer set with `setInterval()`</span>
-- <span id="fa72">`clearTimeout()` — Clears a timer set with `setTimeout()`</span>
-- <span id="7bce">`close()` — Closes the current window</span>
-- <span id="ccbf">`confirm()` — Displays a dialogue box with a message and an _OK_ and _Cancel_ button</span>
-- <span id="e6f2">`focus()` — Sets focus to the current window</span>
-- <span id="5eb7">`moveBy()` — Moves a window relative to its current position</span>
-- <span id="16b6">`moveTo()` — Moves a window to a specified position</span>
-- <span id="32d8">`open()` — Opens a new browser window</span>
-- <span id="4198">`print()` — Prints the content of the current window</span>
-- <span id="3bec">`prompt()` — Displays a dialogue box that prompts the visitor for input</span>
-- <span id="e16a">`resizeBy()` — Resizes the window by the specified number of pixels</span>
-- <span id="31c8">`resizeTo()` — Resizes the window to a specified width and height</span>
-- <span id="6c44">`scrollBy()` — Scrolls the document by a specified number of pixels</span>
-- <span id="959f">`scrollTo()` — Scrolls the document to specified coordinates</span>
-- <span id="704a">`setInterval()` — Calls a function or evaluates an expression at specified intervals</span>
-- <span id="87c3">`setTimeout()` — Calls a function or evaluates an expression after a specified interval</span>
-- <span id="1cde">`stop()` — Stops the window from loading</span>
+-   <span id="5715">`alert()` — Displays an alert box with a message and an OK button</span>
+-   <span id="4afc">`blur()` — Removes focus from the current window</span>
+-   <span id="ef9a">`clearInterval()` — Clears a timer set with `setInterval()`</span>
+-   <span id="fa72">`clearTimeout()` — Clears a timer set with `setTimeout()`</span>
+-   <span id="7bce">`close()` — Closes the current window</span>
+-   <span id="ccbf">`confirm()` — Displays a dialogue box with a message and an *OK* and *Cancel* button</span>
+-   <span id="e6f2">`focus()` — Sets focus to the current window</span>
+-   <span id="5eb7">`moveBy()` — Moves a window relative to its current position</span>
+-   <span id="16b6">`moveTo()` — Moves a window to a specified position</span>
+-   <span id="32d8">`open()` — Opens a new browser window</span>
+-   <span id="4198">`print()` — Prints the content of the current window</span>
+-   <span id="3bec">`prompt()` — Displays a dialogue box that prompts the visitor for input</span>
+-   <span id="e16a">`resizeBy()` — Resizes the window by the specified number of pixels</span>
+-   <span id="31c8">`resizeTo()` — Resizes the window to a specified width and height</span>
+-   <span id="6c44">`scrollBy()` — Scrolls the document by a specified number of pixels</span>
+-   <span id="959f">`scrollTo()` — Scrolls the document to specified coordinates</span>
+-   <span id="704a">`setInterval()` — Calls a function or evaluates an expression at specified intervals</span>
+-   <span id="87c3">`setTimeout()` — Calls a function or evaluates an expression after a specified interval</span>
+-   <span id="1cde">`stop()` — Stops the window from loading</span>
 
 ### Screen Properties
 
-- <span id="7e50">`availHeight` — Returns the height of the screen (excluding the Windows Taskbar)</span>
-- <span id="d7ea">`availWidth` — Returns the width of the screen (excluding the Windows Taskbar)</span>
-- <span id="4feb">`colorDepth` — Returns the bit depth of the color palette for displaying images</span>
-- <span id="f2f7">`height` — The total height of the screen</span>
-- <span id="8e22">`pixelDepth` — The color resolution of the screen in bits per pixel</span>
-- <span id="bc5a">`width` — The total width of the screen</span>
+-   <span id="7e50">`availHeight` — Returns the height of the screen (excluding the Windows Taskbar)</span>
+-   <span id="d7ea">`availWidth` — Returns the width of the screen (excluding the Windows Taskbar)</span>
+-   <span id="4feb">`colorDepth` — Returns the bit depth of the color palette for displaying images</span>
+-   <span id="f2f7">`height` — The total height of the screen</span>
+-   <span id="8e22">`pixelDepth` — The color resolution of the screen in bits per pixel</span>
+-   <span id="bc5a">`width` — The total width of the screen</span>
 
 ### JavaScript Events
 
@@ -721,142 +725,142 @@ Events are things that can happen to HTML elements and are performed by the user
 
 ### Mouse
 
-- <span id="9546">`onclick` — The event occurs when the user clicks on an element</span>
-- <span id="9b50">`oncontextmenu` — User right-clicks on an element to open a context menu</span>
-- <span id="147a">`ondblclick` — The user double-clicks on an element</span>
-- <span id="3720">`onmousedown` — User presses a mouse button over an element</span>
-- <span id="a40a">`onmouseenter` — The pointer moves onto an element</span>
-- <span id="345e">`onmouseleave` — Pointer moves out of an element</span>
-- <span id="79b1">`onmousemove` — The pointer is moving while it is over an element</span>
-- <span id="fa70">`onmouseover` — When the pointer is moved onto an element or one of its children</span>
-- <span id="94f8">`onmouseout` — User moves the mouse pointer out of an element or one of its children</span>
-- <span id="486e">`onmouseup` — The user releases a mouse button while over an element</span>
+-   <span id="9546">`onclick` — The event occurs when the user clicks on an element</span>
+-   <span id="9b50">`oncontextmenu` — User right-clicks on an element to open a context menu</span>
+-   <span id="147a">`ondblclick` — The user double-clicks on an element</span>
+-   <span id="3720">`onmousedown` — User presses a mouse button over an element</span>
+-   <span id="a40a">`onmouseenter` — The pointer moves onto an element</span>
+-   <span id="345e">`onmouseleave` — Pointer moves out of an element</span>
+-   <span id="79b1">`onmousemove` — The pointer is moving while it is over an element</span>
+-   <span id="fa70">`onmouseover` — When the pointer is moved onto an element or one of its children</span>
+-   <span id="94f8">`onmouseout` — User moves the mouse pointer out of an element or one of its children</span>
+-   <span id="486e">`onmouseup` — The user releases a mouse button while over an element</span>
 
 ### Keyboard
 
-- <span id="6a8f">`onkeydown` — When the user is pressing a key down</span>
-- <span id="0647">`onkeypress` — The moment the user starts pressing a key</span>
-- <span id="ff0f">`onkeyup` — The user releases a key</span>
+-   <span id="6a8f">`onkeydown` — When the user is pressing a key down</span>
+-   <span id="0647">`onkeypress` — The moment the user starts pressing a key</span>
+-   <span id="ff0f">`onkeyup` — The user releases a key</span>
 
 ### Frame
 
-- <span id="9d29">`onabort` — The loading of a media is aborted</span>
-- <span id="baa4">`onbeforeunload` — Event occurs before the document is about to be unloaded</span>
-- <span id="740e">`onerror` — An error occurs while loading an external file</span>
-- <span id="be95">`onhashchange` — There have been changes to the anchor part of a URL</span>
-- <span id="d0fd">`onload` — When an object has loaded</span>
-- <span id="65e5">`onpagehide` — The user navigates away from a webpage</span>
-- <span id="aae6">`onpageshow` — When the user navigates to a webpage</span>
-- <span id="e3dc">`onresize` — The document view is resized</span>
-- <span id="96c8">`onscroll` — An element’s scrollbar is being scrolled</span>
-- <span id="f2fa">`onunload` — Event occurs when a page has unloaded</span>
+-   <span id="9d29">`onabort` — The loading of a media is aborted</span>
+-   <span id="baa4">`onbeforeunload` — Event occurs before the document is about to be unloaded</span>
+-   <span id="740e">`onerror` — An error occurs while loading an external file</span>
+-   <span id="be95">`onhashchange` — There have been changes to the anchor part of a URL</span>
+-   <span id="d0fd">`onload` — When an object has loaded</span>
+-   <span id="65e5">`onpagehide` — The user navigates away from a webpage</span>
+-   <span id="aae6">`onpageshow` — When the user navigates to a webpage</span>
+-   <span id="e3dc">`onresize` — The document view is resized</span>
+-   <span id="96c8">`onscroll` — An element’s scrollbar is being scrolled</span>
+-   <span id="f2fa">`onunload` — Event occurs when a page has unloaded</span>
 
 ### Form
 
-- <span id="731a">`onblur` — When an element loses focus</span>
-- <span id="facf">`onchange` — The content of a form element changes (for `<input>`, `<select>` and `<textarea>`)</span>
-- <span id="7a0a">`onfocus` — An element gets focus</span>
-- <span id="5188">`onfocusin` — When an element is about to get focus</span>
-- <span id="594a">`onfocusout` — The element is about to lose focus</span>
-- <span id="700e">`oninput` — User input on an element</span>
-- <span id="dd0f">`oninvalid` — An element is invalid</span>
-- <span id="6cad">`onreset` — A form is reset</span>
-- <span id="f4f2">`onsearch` — The user writes something in a search field (for `<input="search">`)</span>
-- <span id="32a9">`onselect` — The user selects some text (for `<input>` and `<textarea>`)</span>
-- <span id="3e1d">`onsubmit` — A form is submitted</span>
+-   <span id="731a">`onblur` — When an element loses focus</span>
+-   <span id="facf">`onchange` — The content of a form element changes (for `<input>`, `<select>` and `<textarea>`)</span>
+-   <span id="7a0a">`onfocus` — An element gets focus</span>
+-   <span id="5188">`onfocusin` — When an element is about to get focus</span>
+-   <span id="594a">`onfocusout` — The element is about to lose focus</span>
+-   <span id="700e">`oninput` — User input on an element</span>
+-   <span id="dd0f">`oninvalid` — An element is invalid</span>
+-   <span id="6cad">`onreset` — A form is reset</span>
+-   <span id="f4f2">`onsearch` — The user writes something in a search field (for `<input="search">`)</span>
+-   <span id="32a9">`onselect` — The user selects some text (for `<input>` and `<textarea>`)</span>
+-   <span id="3e1d">`onsubmit` — A form is submitted</span>
 
 ### Drag
 
-- <span id="912c">`ondrag` — An element is dragged</span>
-- <span id="6897">`ondragend` — The user has finished dragging the element</span>
-- <span id="8225">`ondragenter` — The dragged element enters a drop target</span>
-- <span id="cf37">`ondragleave` — A dragged element leaves the drop target</span>
-- <span id="5bc3">`ondragover` — The dragged element is on top of the drop target</span>
-- <span id="2b0c">`ondragstart` — User starts to drag an element</span>
-- <span id="8e24">`ondrop` — Dragged element is dropped on the drop target</span>
+-   <span id="912c">`ondrag` — An element is dragged</span>
+-   <span id="6897">`ondragend` — The user has finished dragging the element</span>
+-   <span id="8225">`ondragenter` — The dragged element enters a drop target</span>
+-   <span id="cf37">`ondragleave` — A dragged element leaves the drop target</span>
+-   <span id="5bc3">`ondragover` — The dragged element is on top of the drop target</span>
+-   <span id="2b0c">`ondragstart` — User starts to drag an element</span>
+-   <span id="8e24">`ondrop` — Dragged element is dropped on the drop target</span>
 
 ### Clipboard
 
-- <span id="c299">`oncopy` — User copies the content of an element</span>
-- <span id="267c">`oncut` — The user cuts an element’s content</span>
-- <span id="e33c">`onpaste` — A user pastes the content in an element</span>
+-   <span id="c299">`oncopy` — User copies the content of an element</span>
+-   <span id="267c">`oncut` — The user cuts an element’s content</span>
+-   <span id="e33c">`onpaste` — A user pastes the content in an element</span>
 
 ### Media
 
-- <span id="e0ab">`onabort` — Media loading is aborted</span>
-- <span id="0758">`oncanplay` — The browser can start playing media (e.g. a file has buffered enough)</span>
-- <span id="0bc2">`oncanplaythrough` — The browser can play through media without stopping</span>
-- <span id="4c27">`ondurationchange` — The duration of the media changes</span>
-- <span id="aa9a">`onended` — The media has reached its end</span>
-- <span id="25b8">`onerror` — Happens when an error occurs while loading an external file</span>
-- <span id="cdf4">`onloadeddata` — Media data is loaded</span>
-- <span id="edce">`onloadedmetadata` — Metadata (like dimensions and duration) are loaded</span>
-- <span id="7928">`onloadstart` — The browser starts looking for specified media</span>
-- <span id="159c">`onpause` — Media is paused either by the user or automatically</span>
-- <span id="057f">`onplay` — The media has been started or is no longer paused</span>
-- <span id="ce2a">`onplaying` — Media is playing after having been paused or stopped for buffering</span>
-- <span id="2655">`onprogress` — The browser is in the process of downloading the media</span>
-- <span id="a11c">`onratechange` — The playing speed of the media changes</span>
-- <span id="f8bb">`onseeked` — User is finished moving/skipping to a new position in the media</span>
-- <span id="9895">`onseeking` — The user starts moving/skipping</span>
-- <span id="c636">`onstalled` — The browser is trying to load the media but it is not available</span>
-- <span id="6480">`onsuspend` — The browser is intentionally not loading media</span>
-- <span id="f94b">`ontimeupdate` — The playing position has changed (e.g. because of fast forward)</span>
-- <span id="e96b">`onvolumechange` — Media volume has changed (including mute)</span>
-- <span id="9fe8">`onwaiting` — Media paused but expected to resume (for example, buffering)</span>
+-   <span id="e0ab">`onabort` — Media loading is aborted</span>
+-   <span id="0758">`oncanplay` — The browser can start playing media (e.g. a file has buffered enough)</span>
+-   <span id="0bc2">`oncanplaythrough` — The browser can play through media without stopping</span>
+-   <span id="4c27">`ondurationchange` — The duration of the media changes</span>
+-   <span id="aa9a">`onended` — The media has reached its end</span>
+-   <span id="25b8">`onerror` — Happens when an error occurs while loading an external file</span>
+-   <span id="cdf4">`onloadeddata` — Media data is loaded</span>
+-   <span id="edce">`onloadedmetadata` — Metadata (like dimensions and duration) are loaded</span>
+-   <span id="7928">`onloadstart` — The browser starts looking for specified media</span>
+-   <span id="159c">`onpause` — Media is paused either by the user or automatically</span>
+-   <span id="057f">`onplay` — The media has been started or is no longer paused</span>
+-   <span id="ce2a">`onplaying` — Media is playing after having been paused or stopped for buffering</span>
+-   <span id="2655">`onprogress` — The browser is in the process of downloading the media</span>
+-   <span id="a11c">`onratechange` — The playing speed of the media changes</span>
+-   <span id="f8bb">`onseeked` — User is finished moving/skipping to a new position in the media</span>
+-   <span id="9895">`onseeking` — The user starts moving/skipping</span>
+-   <span id="c636">`onstalled` — The browser is trying to load the media but it is not available</span>
+-   <span id="6480">`onsuspend` — The browser is intentionally not loading media</span>
+-   <span id="f94b">`ontimeupdate` — The playing position has changed (e.g. because of fast forward)</span>
+-   <span id="e96b">`onvolumechange` — Media volume has changed (including mute)</span>
+-   <span id="9fe8">`onwaiting` — Media paused but expected to resume (for example, buffering)</span>
 
 ### Animation
 
-- <span id="4497">`animationend` — A CSS animation is complete</span>
-- <span id="fc16">`animationiteration` — CSS animation is repeated</span>
-- <span id="0f40">`animationstart` — CSS animation has started</span>
+-   <span id="4497">`animationend` — A CSS animation is complete</span>
+-   <span id="fc16">`animationiteration` — CSS animation is repeated</span>
+-   <span id="0f40">`animationstart` — CSS animation has started</span>
 
 ### Other
 
-- <span id="614b">`transitionend` — Fired when a CSS transition has completed</span>
-- <span id="5a40">`onmessage` — A message is received through the event source</span>
-- <span id="0dad">`onoffline` — The browser starts to work offline</span>
-- <span id="058e">`ononline` — The browser starts to work online</span>
-- <span id="090a">`onpopstate` — When the window’s history changes</span>
-- <span id="d940">`onshow` — A `<menu>` element is shown as a context menu</span>
-- <span id="3062">`onstorage` — A Web Storage area is updated</span>
-- <span id="2681">`ontoggle` — The user opens or closes the `<details>` element</span>
-- <span id="6a40">`onwheel` — Mouse wheel rolls up or down over an element</span>
-- <span id="7178">`ontouchcancel` — Screen-touch is interrupted</span>
-- <span id="bec5">`ontouchend` — User’s finger is removed from a touch-screen</span>
-- <span id="3b60">`ontouchmove` — A finger is dragged across the screen</span>
-- <span id="3c0e">`ontouchstart` — A finger is placed on the touch-screen</span>
+-   <span id="614b">`transitionend` — Fired when a CSS transition has completed</span>
+-   <span id="5a40">`onmessage` — A message is received through the event source</span>
+-   <span id="0dad">`onoffline` — The browser starts to work offline</span>
+-   <span id="058e">`ononline` — The browser starts to work online</span>
+-   <span id="090a">`onpopstate` — When the window’s history changes</span>
+-   <span id="d940">`onshow` — A `<menu>` element is shown as a context menu</span>
+-   <span id="3062">`onstorage` — A Web Storage area is updated</span>
+-   <span id="2681">`ontoggle` — The user opens or closes the `<details>` element</span>
+-   <span id="6a40">`onwheel` — Mouse wheel rolls up or down over an element</span>
+-   <span id="7178">`ontouchcancel` — Screen-touch is interrupted</span>
+-   <span id="bec5">`ontouchend` — User’s finger is removed from a touch-screen</span>
+-   <span id="3b60">`ontouchmove` — A finger is dragged across the screen</span>
+-   <span id="3c0e">`ontouchstart` — A finger is placed on the touch-screen</span>
 
 ### Errors
 
 When working with JavaScript, different errors can occur. There are several ways of handling them:
 
-- <span id="54c9">`try` — Lets you define a block of code to test for errors</span>
-- <span id="cb14">`catch` — Set up a block of code to execute in case of an error</span>
-- <span id="6a5b">`throw` — Create custom error messages instead of the standard JavaScript errors</span>
-- <span id="6aea">`finally` — Lets you execute code, after try and catch, regardless of the result</span>
+-   <span id="54c9">`try` — Lets you define a block of code to test for errors</span>
+-   <span id="cb14">`catch` — Set up a block of code to execute in case of an error</span>
+-   <span id="6a5b">`throw` — Create custom error messages instead of the standard JavaScript errors</span>
+-   <span id="6aea">`finally` — Lets you execute code, after try and catch, regardless of the result</span>
 
 ### Error Name Values
 
 JavaScript also has a built-in error object. It has two properties:
 
-- <span id="ca3b">`name` — Sets or returns the error name</span>
-- <span id="7047">`message` — Sets or returns an error message in a string from</span>
+-   <span id="ca3b">`name` — Sets or returns the error name</span>
+-   <span id="7047">`message` — Sets or returns an error message in a string from</span>
 
 The error property can return six different values as its name:
 
-- <span id="b389">`EvalError` — An error has occurred in the `eval()` function</span>
-- <span id="570c">`RangeError` — A number is “out of range”</span>
-- <span id="2352">`ReferenceError` — An illegal reference has occurred</span>
-- <span id="5019">`SyntaxError` — A syntax error has occurred</span>
-- <span id="0527">`TypeError` — A type error has occurred</span>
-- <span id="02a3">`URIError` — An `encodeURI()` error has occurred</span>
+-   <span id="b389">`EvalError` — An error has occurred in the `eval()` function</span>
+-   <span id="570c">`RangeError` — A number is “out of range”</span>
+-   <span id="2352">`ReferenceError` — An illegal reference has occurred</span>
+-   <span id="5019">`SyntaxError` — A syntax error has occurred</span>
+-   <span id="0527">`TypeError` — A type error has occurred</span>
+-   <span id="02a3">`URIError` — An `encodeURI()` error has occurred</span>
 
 ### Explicit Conversions
 
 The simplest way to perform an explicit type conversion is to use the `Boolean(), Number()`, and `String()` functions.
 
-Any value other than `null `or `undefined `has a` toString()` method.
+Any value other than `null`or `undefined`has a`toString()` method.
 
 `n.toString(2);`
 
@@ -928,7 +932,7 @@ Run Snippets
 
 The simplest way to perform an explicit type conversion is to use the `Boolean(), Number()`, and `String()` functions.
 
-Any value other than `null `or `undefined `has a` toString()` method.
+Any value other than `null`or `undefined`has a`toString()` method.
 
 `n.toString(2);`
 
@@ -1066,7 +1070,7 @@ Variable destructuring in loops:
 
     }
 
-**Note**: The `Object.entries()` method returns an array of a given object's own enumerable string-keyed property `[key, value]` pairs, in the same order as that provided by a `for...in` loop. (The only important difference is that a `for...in` loop enumerates properties in the prototype chain as well).
+**Note**: The `Object.entries()` method returns an array of a given object’s own enumerable string-keyed property `[key, value]` pairs, in the same order as that provided by a `for...in` loop. (The only important difference is that a `for...in` loop enumerates properties in the prototype chain as well).
 
 The list of variables on the left can include extra commas to skip certain values on the right
 
@@ -1076,7 +1080,7 @@ x == 2; y == 4
 
 **Note**: the last comma does not stand for a value.
 
-To collect all unused or remaining values into a single variable when destructuring an array, use three dots `(...) `before the last variable name on the left-hand side
+To collect all unused or remaining values into a single variable when destructuring an array, use three dots `(...)`before the last variable name on the left-hand side
 
 `let [x, ...y] = [1,2,3,4];`
 
@@ -1100,11 +1104,11 @@ sin=Math.sin, cos=Math.cos, tan=Math.tan
 
 ### Expressions and Operators
 
-In JavaScript, the values `null `and `undefined `are the only two values that do not have properties. In a regular property access expression using . or \[\], you get a `TypeError` if the expression on the left evaluates to `null `or `undefined`. You can use `?.` and `?.[]` syntax to guard against errors of this type.
+In JavaScript, the values `null`and `undefined`are the only two values that do not have properties. In a regular property access expression using . or \[\], you get a `TypeError` if the expression on the left evaluates to `null`or `undefined`. You can use `?.` and `?.[]` syntax to guard against errors of this type.
 
 You can also invoke a function using `?.()` instead of `()`.
 
-With the `new ?.()` invocation syntax, if the expression to the left of the `?.` evaluates to `null` or `undefined`, then the entire invocation expression evaluates to `undefined `and no exception is thrown.
+With the `new ?.()` invocation syntax, if the expression to the left of the `?.` evaluates to `null` or `undefined`, then the entire invocation expression evaluates to `undefined`and no exception is thrown.
 
 Write the function invocation using `?.(),` knowing that invocation will only happen if there is actually a value to be invoked
 
@@ -1116,11 +1120,11 @@ Write the function invocation using `?.(),` knowing that invocation will only h
 
     }
 
-Note that expression `x++` is not always the same as `x = x + 1`.The `++` operator never performs string concatenation: it always converts its operand to a number and increments it. If x is the string "1", `++x` is the number 2, but` x + 1` is the string "11".
+Note that expression `x++` is not always the same as `x = x + 1`.The `++` operator never performs string concatenation: it always converts its operand to a number and increments it. If x is the string “1”, `++x` is the number 2, but`x + 1` is the string “11”.
 
 JavaScript objects are compared by reference, not by value. An object is equal to itself, but not to any other object. If two distinct objects have the same number of properties, with the same names and values, they are still not equal. Similarly, two arrays that have the same elements in the same order are not equal to each other.
 
-`NaN `value is never equal to any other value, including itself! To check whether a value `x` is `NaN`, use `x !== `, or the global `isNaN()` function.
+`NaN`value is never equal to any other value, including itself! To check whether a value `x` is `NaN`, use `x !==`, or the global `isNaN()` function.
 
 If both values refer to the same object, array, or function, they are equal. If they refer to different objects, they are not equal, even if both objects have identical properties.
 
@@ -1130,7 +1134,7 @@ JavaScript has the ability to interpret strings of JavaScript source code, evalu
 
 `eval("3+2")`
 
-Because of security issues, some web servers use the HTTP “Content-Security-Policy” header to disable` eval()` for an entire website.
+Because of security issues, some web servers use the HTTP “Content-Security-Policy” header to disable`eval()` for an entire website.
 
 ### First-Defined (??)
 
@@ -1138,7 +1142,7 @@ The first-defined operator `??` evaluates to its first defined operand: if its 
 
 `a ?? b` is equivalent to `(a !== null && a !== undefined) ? a : b`
 
-`??` is a useful alternative to `||.` The problem with this idiomatic use is that zero, the empty string, and false are all `falsy `values that may be perfectly valid in some circumstances. In this code example, if `maxWidth `is zero, that value will be ignored. But if we change the `||` operator to `??`, we end up with an expression where zero is a valid value.
+`??` is a useful alternative to `||.` The problem with this idiomatic use is that zero, the empty string, and false are all `falsy`values that may be perfectly valid in some circumstances. In this code example, if `maxWidth`is zero, that value will be ignored. But if we change the `||` operator to `??`, we end up with an expression where zero is a valid value.
 
 `let max = maxWidth || preferences.maxWidth || 500;`
 
@@ -1258,7 +1262,7 @@ The `for/in` loop does not actually enumerate all properties of an object. It do
 
 The with statement runs a block of code as if the properties of a specified object were variables in scope for that code.
 
-The `with `statement is forbidden in strict mode and should be considered deprecated in non-strict mode: avoid using it whenever possible.
+The `with`statement is forbidden in strict mode and should be considered deprecated in non-strict mode: avoid using it whenever possible.
 
     document.forms[0].address.value
 
@@ -1286,23 +1290,23 @@ Strict mode is a restricted subset of the language that fixes important language
 
 The differences between strict mode and non-strict mode are the following:
 
-· The `with `statement is not allowed in strict mode.
+· The `with`statement is not allowed in strict mode.
 
-· In strict mode, all variables must be declared: a `ReferenceError `is thrown if you assign a value to an identifier that is not a declared variable, function, function parameter, catch clause parameter, or property of the global object.
+· In strict mode, all variables must be declared: a `ReferenceError`is thrown if you assign a value to an identifier that is not a declared variable, function, function parameter, catch clause parameter, or property of the global object.
 
 · In non-strict mode, this implicitly declares a global variable by adding a new property to the global object.
 
-· In strict mode, functions invoked as functions (rather than as methods) have a `this `value of undefined. (In non-strict mode, functions invoked as functions are always passed the global object as their `this `value.)
+· In strict mode, functions invoked as functions (rather than as methods) have a `this`value of undefined. (In non-strict mode, functions invoked as functions are always passed the global object as their `this`value.)
 
-· A function is invoked with `call() `or `apply()` , the `this `value is exactly the value passed as the first argument to `call()` or `apply()`. (In non-strict mode, `null `and `undefined `values are replaced with the global object and non-object values are converted to objects.)
+· A function is invoked with `call()`or `apply()` , the `this`value is exactly the value passed as the first argument to `call()` or `apply()`. (In non-strict mode, `null`and `undefined`values are replaced with the global object and non-object values are converted to objects.)
 
 · In strict mode, assignments to non-writable properties and attempts to create new properties on non-extensible objects throw a `TypeError`. (In non-strict mode, these attempts fail silently.)
 
-· In strict mode, code passed to `eval() `cannot declare variables or define functions in the caller’s scope as it can in non-strict mode. Instead, variable and function definitions live in a new scope created for the `eval()`. This scope is discarded when the `eval()` returns.
+· In strict mode, code passed to `eval()`cannot declare variables or define functions in the caller’s scope as it can in non-strict mode. Instead, variable and function definitions live in a new scope created for the `eval()`. This scope is discarded when the `eval()` returns.
 
 · In strict mode, the Arguments object in a function holds a static copy of the values passed to the function. In non-strict mode, the Arguments object has “magical” behavior in which elements of the array and named function parameters both refer to the same value.
 
-· In strict mode, a `SyntaxError `is thrown if the `delete `operator is followed by an unqualified identifier such as a variable, function, or function parameter. (In non-strict mode, such a `delete `expression does nothing and evaluates to false.)
+· In strict mode, a `SyntaxError`is thrown if the `delete`operator is followed by an unqualified identifier such as a variable, function, or function parameter. (In non-strict mode, such a `delete`expression does nothing and evaluates to false.)
 
 · In strict mode, an attempt to delete a non-configurable property throws a `TypeError`. (In non-strict mode, the attempt fails and the delete expression evaluates to false.)
 
@@ -1312,21 +1316,21 @@ The differences between strict mode and non-strict mode are the following:
 
 In addition to its name and value, each property has three property attributes:
 
-· The `writable `attribute specifies whether the value of the property can be set.
+· The `writable`attribute specifies whether the value of the property can be set.
 
-· The `enumerable `attribute specifies whether the property name is returned by a `for/in` loop.
+· The `enumerable`attribute specifies whether the property name is returned by a `for/in` loop.
 
-· The `configurable `attribute specifies whether the property can be deleted and whether its attributes can be altered.
+· The `configurable`attribute specifies whether the property can be deleted and whether its attributes can be altered.
 
 ### Prototypes
 
 All objects created by object literals have the same prototype object, `Object.prototype.`
 
-Objects created using the `new `keyword and a constructor invocation use the value of the prototype property of the constructor function as their prototype.
+Objects created using the `new`keyword and a constructor invocation use the value of the prototype property of the constructor function as their prototype.
 
-Object created by `new Object()` inherits from `Object.prototype`, just as the object created by `{}` does. Similarly, the object created by `new Array()` uses `Array.prototype` as its prototype, and the object created by` new Date()` uses `Date.prototype` as its prototype.
+Object created by `new Object()` inherits from `Object.prototype`, just as the object created by `{}` does. Similarly, the object created by `new Array()` uses `Array.prototype` as its prototype, and the object created by`new Date()` uses `Date.prototype` as its prototype.
 
-Almost all objects have a prototype, but only a relatively small number of objects have a `prototype `property. It is these objects with prototype properties that define the prototypes for all the other objects.
+Almost all objects have a prototype, but only a relatively small number of objects have a `prototype`property. It is these objects with prototype properties that define the prototypes for all the other objects.
 
 Most built-in constructors (and most user-defined constructors) have a prototype that inherits from `Object.prototype`.
 
@@ -1362,9 +1366,9 @@ Literal
 
 `new`
 
-`let o = new Object(); `  
- `let a = new Array(); `  
- `let d = new Date(); `  
+`let o = new Object();`  
+ `let a = new Array();`  
+ `let d = new Date();`  
  `let r = new Map();`
 
 `Object.create`
@@ -1417,7 +1421,7 @@ Property `x` and `y` available on object `q`
 
 The `delete` operator only deletes own properties, not inherited ones. (To delete an inherited property, you must delete it from the prototype object in which it is defined. Doing this affects every object that inherits from that prototype.)
 
-`delete` does not remove properties that have a `configurable `attribute of false.
+`delete` does not remove properties that have a `configurable`attribute of false.
 
 Certain properties of built-in objects are non-configurable, as are properties of the global object created by variable declaration and function declaration.
 
@@ -1429,7 +1433,7 @@ false: property is non-configurable
 
 `delete globalThis.x`
 
-false: can’t delete `this `property
+false: can’t delete `this`property
 
 `function f() {}`
 
@@ -1467,7 +1471,7 @@ false
 
 `"toString" in o`
 
-true: o inherits a `toString `property
+true: o inherits a `toString`property
 
 `o.toString !== undefined`
 
@@ -1525,7 +1529,7 @@ Functions you can use to get an array of property names
 
 · `Object.keys()` returns an array of the names of the enumerable own properties of an object. It does not include non-enumerable properties, inherited properties, or properties whose name is a Symbol.
 
-· `Object.getOwnPropertyNames()` works like `Object.keys() `but returns an array of the names of nonenumerable own properties as well.
+· `Object.getOwnPropertyNames()` works like `Object.keys()`but returns an array of the names of nonenumerable own properties as well.
 
 · `Object.getOwnPropertySymbols()` returns own properties whose names are Symbols, whether or not they are enumerable.
 
@@ -1557,7 +1561,7 @@ Instead, use one of the following:,
 
 ### Serializing Objects
 
-The functions `JSON.stringify()` and` JSON.parse()` serialize and restore JavaScript objects.
+The functions `JSON.stringify()` and`JSON.parse()` serialize and restore JavaScript objects.
 
 `let o = {x: 1, y: {z: [false, null, ""]}};`
 
@@ -1751,7 +1755,7 @@ create a copy of an array — modifying the copy does not change the origina
 
 `let digits = [..."0123456789ABCDEF"];`
 
-\[“0”,”1",”2",”3",”4",”5",”6",”7",”8",”9",”A”,”B”,”C”,”D”,”E”,”F”\]
+\[“0”,”1“,”2“,”3“,”4“,”5“,”6“,”7“,”8“,”9“,”A”,”B”,”C”,”D”,”E”,”F”\]
 
 `let letters = [..."hello world"];`
 
@@ -1857,7 +1861,7 @@ add elements to it.
 
 You can also use the `push()` method to add one or more values to the end of an array.
 
-You can use the` unshift()` method to insert a value at the beginning of an array, shifting the existing array elements to higher indexes.
+You can use the`unshift()` method to insert a value at the beginning of an array, shifting the existing array elements to higher indexes.
 
 The `pop()` method is the opposite of `push()`: it removes the last element of the array and returns it, reducing the length of an array by 1.
 
@@ -1981,7 +1985,7 @@ MAP()
 FILTER()
 
 `let a = [5, 4, 3, 2, 1];`  
- `a.filter(x => x < 3) `  
+ `a.filter(x => x < 3)`  
  `a.filter((x,i) => i % 2 === 0)`
 
 \[2, 1\];
@@ -2052,7 +2056,7 @@ And to close gaps and remove undefined and null elements, you can use filter, li
 
 `a = a.filter(x => x !== undefined && x !== null);`
 
-Unlike `filter()`, however,` find()` and `findIndex()` stop iterating the first time the predicate finds an element. When that happens, `find()` returns the matching element, and `findIndex()` returns the index of the matching element. If no matching element is found,` find()` returns `undefined` and` findIndex()`returns -1.
+Unlike `filter()`, however,`find()` and `findIndex()` stop iterating the first time the predicate finds an element. When that happens, `find()` returns the matching element, and `findIndex()` returns the index of the matching element. If no matching element is found,`find()` returns `undefined` and`findIndex()`returns -1.
 
 When you invoke `reduce()` with no initial value, it uses the first element of the array as the initial value.
 
@@ -2107,11 +2111,11 @@ Calling `a.flatMap(f)` is the same as (but more efficient than) `a.map(f).flat()
 
 ### Stacks and Queues with push(), pop(), shift(), and unshift()
 
-The `push()` and` pop()` methods allow you to work with arrays as if they were stacks. The `push()` method appends one or more new elements to the end of an array and returns the new length of the array.
+The `push()` and`pop()` methods allow you to work with arrays as if they were stacks. The `push()` method appends one or more new elements to the end of an array and returns the new length of the array.
 
-The `unshift()` and `shift()` methods behave much like `push()` and` pop()`, except that they insert and remove elements from the beginning of an array rather than from the end.
+The `unshift()` and `shift()` methods behave much like `push()` and`pop()`, except that they insert and remove elements from the beginning of an array rather than from the end.
 
-You can implement a queue data structure by using `push()` to add elements at the end of an array and `shift()` to remove them from the start of the array. Note differences in `unshift `with single and multiple values.
+You can implement a queue data structure by using `push()` to add elements at the end of an array and `shift()` to remove them from the start of the array. Note differences in `unshift`with single and multiple values.
 
 `let a = [];`
 
@@ -2209,7 +2213,7 @@ COPYWITHIN()
 
 \[4,4,3,4,4\]
 
-`splice()` is a general-purpose method for inserting or removing elements from an array.` splice()` can delete elements from an array, insert new elements into an array, or perform both operations at the same time.
+`splice()` is a general-purpose method for inserting or removing elements from an array.`splice()` can delete elements from an array, insert new elements into an array, or perform both operations at the same time.
 
 The first argument to `splice()` specifies the array position at which the insertion and/or deletion is to begin. The second argument specifies the number of elements that should be deleted from (spliced out of) the array.
 
@@ -2493,7 +2497,7 @@ A constructor invocation creates a new, empty object that inherits from the obje
 
 ### Indirect invocation
 
-JavaScript functions are objects, and like all JavaScript objects, they have methods. Two of these methods, `call()` and `apply()`, invoke the function indirectly. Both methods allow you to explicitly specify the `this `value for the invocation, which means you can invoke any function as a method of any object, even if it is not actually a method of that object.
+JavaScript functions are objects, and like all JavaScript objects, they have methods. Two of these methods, `call()` and `apply()`, invoke the function indirectly. Both methods allow you to explicitly specify the `this`value for the invocation, which means you can invoke any function as a method of any object, even if it is not actually a method of that object.
 
 ### Function Arguments and Parameters
 
@@ -2731,7 +2735,7 @@ Functions don’t even require names at all, as when they’re assigned to array
 
 400
 
-`a[0]` accesses first element of the array, which is "`x => x*x`", `(a[1])` passes parameter, which is 20.
+`a[0]` accesses first element of the array, which is “`x => x*x`”, `(a[1])` passes parameter, which is 20.
 
 ### Examples of using functions as data
 
@@ -3073,7 +3077,7 @@ When a function is used as a constructor, the newly created object inherits prop
 
 `call()` and `apply()` allow you to indirectly invoke a function as if it were a method of some other object. The first argument to both `call()` and `apply()` is the object on which the function is to be invoked; this argument is the invocation context and becomes the value of the `this` keyword within the body of the function.
 
-To invoke the function` f()` as a method of the object o (passing no arguments),
+To invoke the function`f()` as a method of the object o (passing no arguments),
 
 `f.call(o);`
 
@@ -3087,7 +3091,7 @@ The `apply()` method is like the `call()` method, except that the arguments to b
 
     f.apply(o, [1,2]);
 
-The `trace() `function defined uses the `apply() `method instead of a spread operator, and by doing that, it is able to invoke the wrapped method with the same arguments and the same this value as the wrapper method
+The `trace()`function defined uses the `apply()`method instead of a spread operator, and by doing that, it is able to invoke the wrapped method with the same arguments and the same this value as the wrapper method
 
     function trace(o, m) {
 
@@ -3317,7 +3321,7 @@ true
 
 \[1, 2, 3\]
 
-Because the `Range() `constructor is invoked with `new`, it does not have to call `Object.create()` or take any action to create a new object.
+Because the `Range()`constructor is invoked with `new`, it does not have to call `Object.create()` or take any action to create a new object.
 
 In the first example, the prototype was `range.methods`. This was a convenient and descriptive name, but arbitrary. In the second example, the prototype is `Range.prototype`, and this name is mandatory.
 
@@ -3819,7 +3823,7 @@ When importing from a module that defines many exports, however, you can easily 
 
     import * as stats from "./stats.js";
 
-With the wildcard import shown in the previous example, the importing module would use the imported `mean()` and` stddev()` functions through the stats object, invoking them as `stats.mean()` and `stats.stddev()`.
+With the wildcard import shown in the previous example, the importing module would use the imported `mean()` and`stddev()` functions through the stats object, invoking them as `stats.mean()` and `stats.stddev()`.
 
 Note: not finished.
 
@@ -3889,7 +3893,7 @@ use `has()` to check whether a map includes the specified key; use `delete()` to
 
 `set()` method of Map can be chained.
 
-Any JavaScript value can be used as a key or a value in a Map. This includes` null, undefined`, and `NaN`, as well as reference types like objects and arrays.
+Any JavaScript value can be used as a key or a value in a Map. This includes`null, undefined`, and `NaN`, as well as reference types like objects and arrays.
 
 Map compares keys by identity, not by equality.
 
@@ -3944,11 +3948,11 @@ Note that the value parameter comes before the key parameter.
 
 ### WeakMap and WeakSet
 
-The `WeakMap `class is a variant (but not an actual subclass) of the Map class that does not prevent its key values from being garbage collected.
+The `WeakMap`class is a variant (but not an actual subclass) of the Map class that does not prevent its key values from being garbage collected.
 
-`WeakMap `keys must be objects or arrays; primitive values are not subject to garbage collection and cannot be used as keys.
+`WeakMap`keys must be objects or arrays; primitive values are not subject to garbage collection and cannot be used as keys.
 
-WeakMap implements only the` get(), set(), has(),` and `delete()` methods. In particular, `WeakMap` is not iterable and does not define `keys(), values(),` or `forEach()`. If WeakMap was iterable, then its keys would be reachable and it wouldn’t be weak.
+WeakMap implements only the`get(), set(), has(),` and `delete()` methods. In particular, `WeakMap` is not iterable and does not define `keys(), values(),` or `forEach()`. If WeakMap was iterable, then its keys would be reachable and it wouldn’t be weak.
 
 Similarly, WeakMap does not implement the size property because the `size` of a WeakMap could change at any time as objects are garbage collected
 
@@ -4012,7 +4016,7 @@ Typed arrays are not true arrays, but they re-implement most array methods, so y
 
 “9999999999”
 
-Remember that typed arrays have fixed lengths, so the length property is read-only, and methods that change the length of the array (such as` push(), pop(), unshift(), shift(),` and `splice()`) are not implemented for typed arrays. Methods that alter the contents of an array without changing the length (such as `sort(), reverse()`, and `fill()`) are implemented.
+Remember that typed arrays have fixed lengths, so the length property is read-only, and methods that change the length of the array (such as`push(), pop(), unshift(), shift(),` and `splice()`) are not implemented for typed arrays. Methods that alter the contents of an array without changing the length (such as `sort(), reverse()`, and `fill()`) are implemented.
 
 ### Determine Endianess and DataView
 
@@ -4038,7 +4042,7 @@ Regular expressions can also have one or more flag characters that affect how th
 
 i = case insensitive
 
-Punctuation characters have special meanings in regular expressions: `^ $ . * + ? = ! : | \ / ( ) [ ] { }. `Other punctuation characters, such as quotation marks and @, do not have special meaning and simply match themselves literally in a regular expression.
+Punctuation characters have special meanings in regular expressions: `^ $ . * + ? = ! : | \ / ( ) [ ] { }.`Other punctuation characters, such as quotation marks and @, do not have special meaning and simply match themselves literally in a regular expression.
 
 If you use the `RegExp()` constructor, keep in mind that any backslashes in your regular expression need to be doubled, since strings also use backslashes as an escape character.
 
@@ -4223,8 +4227,6 @@ To require the quotes to match,use a reference
 
 **Meaning**
 
-|
-
 match either the subexpression to the left or the subexpression to the right.
 
 (…)
@@ -4235,13 +4237,13 @@ Grouping: group items into a single unit that can be used with \*, +, ?, |, and
 
 group items into a single unit, but do not remember the characters that match this group.
 
-Note` (?:...)` syntax:
+Note`(?:...)` syntax:
 
-In pattern` "/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/`" `\2` refers to the text matched by `(fun\w*)` since `(?:[Ss]cript)?)` in not remembered.
+In pattern`"/([Jj]ava(?:[Ss]cript)?)\sis\s(fun\w*)/`" `\2` refers to the text matched by `(fun\w*)` since `(?:[Ss]cript)?)` in not remembered.
 
 ### SPECIFYING MATCH POSITION
 
-_regular expression anchors_ because they anchor the pattern to a specific position in the search string. The most commonly used anchor elements are ^, which ties the pattern to the beginning of the string, and $, which anchors the pattern to the end of the string.
+*regular expression anchors* because they anchor the pattern to a specific position in the search string. The most commonly used anchor elements are ^, which ties the pattern to the beginning of the string, and $, which anchors the pattern to the end of the string.
 
 **Example**
 
@@ -4251,9 +4253,9 @@ match the word “JavaScript” on a line by itself
 
 `/^JavaScript$/`
 
-To search for “Java” as a word by itself you can try the pattern `/\sJava\s/`, which requires a space before and after the word. But there are two problems with this solution. First, it does not match "Java" at the beginning or the end of a string, but only if it appears with space on either side. Second, when this pattern does find a match, the matched string it returns has leading and trailing spaces, which is not quite what’s needed. So instead of matching actual space characters with \\s, match (or anchor to) word boundaries with \\b. The resulting expression is `/\bJava\b/`.
+To search for “Java” as a word by itself you can try the pattern `/\sJava\s/`, which requires a space before and after the word. But there are two problems with this solution. First, it does not match “Java” at the beginning or the end of a string, but only if it appears with space on either side. Second, when this pattern does find a match, the matched string it returns has leading and trailing spaces, which is not quite what’s needed. So instead of matching actual space characters with \\s, match (or anchor to) word boundaries with \\b. The resulting expression is `/\bJava\b/`.
 
-The element `\B` anchors the match to a location that is not a word boundary. Thus, the pattern `/\B[Ss]cript/` matches "JavaScript" and "postscript", but not "script" or "Scripting".
+The element `\B` anchors the match to a location that is not a word boundary. Thus, the pattern `/\B[Ss]cript/` matches “JavaScript” and “postscript”, but not “script” or “Scripting”.
 
 You can also use arbitrary regular expressions as anchor conditions.
 
@@ -4303,7 +4305,7 @@ u
 
 Unicode.
 
-Setting the u flag on a RegExp also allows you to use the new `\u{...}` escape sequence for Unicode character and also enables the \\p{...} notation for Unicode character classes.
+Setting the u flag on a RegExp also allows you to use the new `\u{...}` escape sequence for Unicode character and also enables the \\p{…} notation for Unicode character classes.
 
 y
 
@@ -4381,7 +4383,7 @@ Thus, if `match()` returns an array a, a\[0\] contains the complete match, a\[1\
 
     fullurl = match[0];
 
-<a href="http://www.example.com/~david" class="markup--anchor markup--p-anchor">“http://www.example.com/~david</a>"
+<a href="http://www.example.com/~david" class="markup--anchor markup--p-anchor">“http://www.example.com/~david</a>”
 
     protocol = match[1];
 
@@ -4389,7 +4391,7 @@ Thus, if `match()` returns an array a, a\[0\] contains the complete match, a\[1\
 
     host = match[2];
 
-<a href="http://www.example.com/" class="markup--anchor markup--p-anchor">“www.example.com</a>"
+<a href="http://www.example.com/" class="markup--anchor markup--p-anchor">“www.example.com</a>”
 
     path = match[3];
 
@@ -4411,7 +4413,7 @@ if the regular expression contains named capture groups, then the returned array
 
 `match[0]`
 
-<a href="http://www.example.com/~david" class="markup--anchor markup--p-anchor">“http://www.example.com/~david</a>"
+<a href="http://www.example.com/~david" class="markup--anchor markup--p-anchor">“http://www.example.com/~david</a>”
 
 `match.input`
 
@@ -4427,7 +4429,7 @@ text
 
 `match.groups.host`
 
-<a href="http://www.example.com/" class="markup--anchor markup--p-anchor">“www.example.com</a>"
+<a href="http://www.example.com/" class="markup--anchor markup--p-anchor">“www.example.com</a>”
 
 `match.groups.path`
 
@@ -4524,7 +4526,7 @@ On the other hand, sometimes reusing a RegExp object is the wrong thing to do. S
 
 \[“apple”, “coffee”\]: “book” is missing!
 
-Because we set the g flag on the RegExp, the `lastIndex` property is changed after successful matches, and the `test()` method (which is based on `exec()`) starts searching for a match at the position specified by `lastIndex`. After matching the "pp" in "apple", `lastIndex` is 3, and so we start searching the word "book" at position 3 and do not see the "oo" that it contains.
+Because we set the g flag on the RegExp, the `lastIndex` property is changed after successful matches, and the `test()` method (which is based on `exec()`) starts searching for a match at the position specified by `lastIndex`. After matching the “pp” in “apple”, `lastIndex` is 3, and so we start searching the word “book” at position 3 and do not see the “oo” that it contains.
 
 ### Dates and Times
 
@@ -4556,7 +4558,7 @@ January
 
 Midnight in GMT, January 1, 2100
 
-If you print a date (with console.log(century), for example), it will, by default, be printed in your local time zone. If you want to display a date in UTC, you should explicitly convert it to a string with `toUTCString()` or` toISOString()`.
+If you print a date (with console.log(century), for example), it will, by default, be printed in your local time zone. If you want to display a date in UTC, you should explicitly convert it to a string with `toUTCString()` or`toISOString()`.
 
 if you pass a string to the Date() constructor, it will attempt to parse that string as a date and time specification
 
@@ -4615,13 +4617,13 @@ adds three months and two weeks to the current date:
 
 “2020–01–02T01:10:30.000Z”
 
-there is also a static Date.parse() method that takes a string as its argument, attempts to parse it as a date and time, and returns a timestamp representing that date. `Date.parse()` is able to parse the same strings that the `Date()` constructor can and is guaranteed to be able to parse the output of` toISOString(), toUTCString()`, and` toString()`.
+there is also a static Date.parse() method that takes a string as its argument, attempts to parse it as a date and time, and returns a timestamp representing that date. `Date.parse()` is able to parse the same strings that the `Date()` constructor can and is guaranteed to be able to parse the output of`toISOString(), toUTCString()`, and`toString()`.
 
 ### Error Classes
 
 One good reason to use an Error object is that, when you create an Error, it captures the state of the JavaScript stack, and if the exception is uncaught, the stack trace will be displayed with the error message, which will help you debug the issue.
 
-Error objects have two properties: `message` and `name`, and a` toString()` method. Node and all modern browsers also define a `stack` property on Error objects.
+Error objects have two properties: `message` and `name`, and a`toString()` method. Node and all modern browsers also define a `stack` property on Error objects.
 
 Subclasses are `EvalError, RangeError, ReferenceError, SyntaxError, TypeError,` and `URIError`.
 
@@ -4653,7 +4655,7 @@ You should feel free to define your own Error subclasses that best encapsulate t
 
     error.message
 
-“404 Not Found:<a href="http://example.com/" class="markup--anchor markup--p-anchor">http://example.com/</a>"
+“404 Not Found:<a href="http://example.com/" class="markup--anchor markup--p-anchor">http://example.com/</a>”
 
     error.name
 
@@ -4683,7 +4685,7 @@ Inefficient way of creating a deep copy of an object
 
 Typically, you pass only a single argument to `JSON.stringify()` and `JSON.parse()`. Both functions accept an optional second argument that allows us to extend the JSON format.
 
-`JSON.stringify()` also takes an optional third argument. If you would like your JSONformatted string to be human-readable (if it is being used as a configuration file, for example), then you should pass null as the second argument and pass a number or string as the third argument. If the third argument is a number, then it will use that number of spaces for each indentation level. If the third argument is a string of whitespace (such as '\\t'), it will use that string for each level of indent.
+`JSON.stringify()` also takes an optional third argument. If you would like your JSONformatted string to be human-readable (if it is being used as a configuration file, for example), then you should pass null as the second argument and pass a number or string as the third argument. If the third argument is a number, then it will use that number of spaces for each indentation level. If the third argument is a string of whitespace (such as ‘\\t’), it will use that string for each level of indent.
 
 ### JSON Customizations
 
@@ -4715,11 +4717,11 @@ Console functions that print their arguments like console.log() have a little-kn
 
     url.href
 
-<a href="https://example.com:8000/path/name" class="markup--anchor markup--p-anchor">“https://example.com:8000/path/name</a>?q=term\#fragment"
+<a href="https://example.com:8000/path/name" class="markup--anchor markup--p-anchor">“https://example.com:8000/path/name</a>?q=term\#fragment”
 
     url.origin
 
-<a href="https://example.com:8000/" class="markup--anchor markup--p-anchor">“https://example.com:8000</a>"
+<a href="https://example.com:8000/" class="markup--anchor markup--p-anchor">“https://example.com:8000</a>”
 
     url.protocol
 
@@ -4761,7 +4763,7 @@ Add a query parameter
 
     url.toString()
 
-<a href="https://example.com/api/search?q=test" class="markup--anchor markup--p-anchor">“https://example.com/api/search?q=test</a>"
+<a href="https://example.com/api/search?q=test" class="markup--anchor markup--p-anchor">“https://example.com/api/search?q=test</a>”
 
 One of the important features of the URL class is that it correctly adds punctuation and escapes special characters in URLs when that is needed
 
@@ -4781,7 +4783,7 @@ One of the important features of the URL class is that it correctly adds punctua
 
     url.href
 
-<a href="https://example.com/path%20with%20spaces?q=foo%23bar" class="markup--anchor markup--p-anchor">“https://example.com/path%20with%20spaces?q=foo%23bar</a>"
+<a href="https://example.com/path%20with%20spaces?q=foo%23bar" class="markup--anchor markup--p-anchor">“https://example.com/path%20with%20spaces?q=foo%23bar</a>”
 
 Often, however, HTTP requests encode the values of multiple form fields or multiple API parameters into the query portion of a URL. In this format, the query portion of the URL is a question mark followed by one or more name/value pairs, which are separated from one another by ampersands.
 
@@ -4829,11 +4831,11 @@ The value of the searchParams property is a URLSearchParams object.
 
 `url.href`
 
-<a href="http://example.com/" class="markup--anchor markup--p-anchor">“http://example.com/</a>?q=term&opts=exact"
+<a href="http://example.com/" class="markup--anchor markup--p-anchor">“http://example.com/</a>?q=term&opts=exact”
 
 ### Timers
 
-`setTimeout()` and` setInterval()`—that allow programs to ask the browser to invoke a function after a specified amount of time has elapsed or to invoke the function repeatedly at a specified interval.
+`setTimeout()` and`setInterval()`—that allow programs to ask the browser to invoke a function after a specified amount of time has elapsed or to invoke the function repeatedly at a specified interval.
 
     setTimeout(() => { console.log("Ready..."); }, 1000);
 
@@ -5180,7 +5182,7 @@ This kind of infinite generator becomes more useful with a `take()` generator li
 
 The keywords `async` and `await` were introduced in ES2017 and provide new syntax that simplifies asynchronous programming by allowing you to structure your Promise based code as if it was synchronous.
 
-Asynchronous iterators and the` for/await` loop were introduced in ES2018 and allow you to work with streams of asynchronous events using simple loops that appear synchronous.
+Asynchronous iterators and the`for/await` loop were introduced in ES2018 and allow you to work with streams of asynchronous events using simple loops that appear synchronous.
 
 ### Asynchronous Programming with Callbacks
 
@@ -5298,7 +5300,7 @@ To understand it, first consider what happens if `getJSON()` completes normally 
 
     getJSON("/api/user/profile").then(displayUserProfile).catch(handleProfileError);
 
-With this code, a normal result from` getJSON()` is still passed to `displayUserProfile()`, but any error in `getJSON()` or in `displayUserProfile()` (including any exceptions thrown by `displayUserProfile`) get passed to `handleProfileError()`.
+With this code, a normal result from`getJSON()` is still passed to `displayUserProfile()`, but any error in `getJSON()` or in `displayUserProfile()` (including any exceptions thrown by `displayUserProfile`) get passed to `handleProfileError()`.
 
 ### Chaining Promises
 
@@ -5328,7 +5330,7 @@ has largely been replaced by the newer, Promise-based Fetch API. In its simplest
 
     });
 
-But although the initial Promise is fulfilled, the body of the response may not yet have arrived. So these `text()` and` json()` methods for accessing the body of the response themselves return Promises.
+But although the initial Promise is fulfilled, the body of the response may not yet have arrived. So these `text()` and`json()` methods for accessing the body of the response themselves return Promises.
 
     fetch("/api/user/profile")
 
@@ -5552,7 +5554,7 @@ The returned Promise will be rejected if any of the input Promises are rejected.
     .catch(e => console.error(e));
 
 The Promise returned by `Promise.all()` rejects when any of the input Promises is rejected. This happens immediately upon the first rejection and can happen while other input Promises are still pending. In ES2020, `Promise.allSettled()` takes an array of input  
- Promises and returns a Promise, just like Promise.all() does. But `Promise.allSettled()` never rejects the returned Promise, and it does not fulfill that Promise until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each input Promise. Each of these returned objects has a status property set to "fulfilled" or "rejected." If the status is "fulfilled", then the object will also have a value property that gives the fulfillment value. And if the status is "rejected", then the object will also have a reason property that gives the error or rejection value of the corresponding Promise.
+ Promises and returns a Promise, just like Promise.all() does. But `Promise.allSettled()` never rejects the returned Promise, and it does not fulfill that Promise until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each input Promise. Each of these returned objects has a status property set to “fulfilled” or “rejected.” If the status is “fulfilled”, then the object will also have a value property that gives the fulfillment value. And if the status is “rejected”, then the object will also have a reason property that gives the error or rejection value of the corresponding Promise.
 
     Promise.allSettled([Promise.resolve(1), Promise.reject(2),3]).then(results => {
 
@@ -5578,7 +5580,7 @@ Asynchronous code can’t return a value or throw an exception the way that regu
 
 `async` and `await` take efficient, Promise-based code and hide the Promises so that your asynchronous code can be as easy to read and as easy to reason about as inefficient, blocking, synchronous code.
 
-Given a Promise object p, the expression await p waits until p settles. If p fulfills, then the value of await p is the fulfillment value of p. On the other hand, if p is rejected, then the await p expression throws the rejection value of p.
+Given a Promise object p, the expression await p waits until p settles. If p fulfills, then the value of await p is the fulfillment value of p. On the other hand, if p is rejected, then the await p expression throws the rejection value of p.
 
     let response = await fetch("/api/user/profile");
 
@@ -5640,7 +5642,7 @@ You can call fetch() on each URL to get an array of Promises:
 
     const promises = urls.map(url => fetch(url));
 
-We could now use` Promise.all()` to wait for all the Promises in the array to be fulfilled. But suppose we want the results of the first fetch as soon as they become available and don’t want to wait for all the URLs to be fetched.
+We could now use`Promise.all()` to wait for all the Promises in the array to be fulfilled. But suppose we want the results of the first fetch as soon as they become available and don’t want to wait for all the URLs to be fetched.
 
     for(const promise of promises) {
 

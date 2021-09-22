@@ -1,8 +1,9 @@
-# An Introduction to Markdown (Bonus Markdown Templates Included)
+An Introduction to Markdown (Bonus Markdown Templates Included)
+===============================================================
 
 Basic Syntax Guide
 
----
+------------------------------------------------------------------------
 
 ### An Introduction to Markdown (Bonus Markdown Templates Included)
 
@@ -31,7 +32,7 @@ The following are a few examples of the most common things you are likely to do 
     This text *is italic*.
 
 This text is bold.  
-This text _is italic_.
+This text *is italic*.
 
 ### Header Text
 
@@ -106,9 +107,9 @@ Block quotes are callouts that are great for adding notes or warnings into docum
     as they are block elements and automatically break. Only text
     lines require the double spaces for single line breaks.
 
-> _Headers break on their own_
+> *Headers break on their own*
 
-> _Note that headers don’t need line continuation characters as they are block elements and automatically break. Only text lines require the double spaces for single line breaks._
+> *Note that headers don’t need line continuation characters as they are block elements and automatically break. Only text lines require the double spaces for single line breaks.*
 
 ### Fontawesome Icons
 
@@ -143,10 +144,10 @@ This text can be embedded into Markdown:
 
     A double line break, breaks out of the list.
 
-- <span id="7904">Item 1</span>
-- <span id="1cf1">Item 2</span>
-- <span id="ded6">Item 3  
-  This text is part of the third item. Use two spaces at end of the the list item to break the line.</span>
+-   <span id="7904">Item 1</span>
+-   <span id="1cf1">Item 2</span>
+-   <span id="ded6">Item 3  
+    This text is part of the third item. Use two spaces at end of the the list item to break the line.</span>
 
 A double line break, breaks out of the list.
 

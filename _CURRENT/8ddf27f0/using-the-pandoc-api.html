@@ -1,101 +1,278 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="John MacFarlane" />
-  <title>Using the pandoc API</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Using the pandoc API</h1>
-<p class="author">John MacFarlane</p>
-</header>
-<p>Pandoc can be used as a Haskell library, to write your own conversion tools or power a web application. This document offers an introduction to using the pandoc API.</p>
-<p>Detailed API documentation at the level of individual functions and types is available at <a href="https://hackage.haskell.org/package/pandoc" class="uri">https://hackage.haskell.org/package/pandoc</a>.</p>
-<h1 id="pandocs-architecture">Pandoc’s architecture</h1>
-<p>Pandoc is structured as a set of <em>readers</em>, which translate various input formats into an abstract syntax tree (the Pandoc AST) representing a structured document, and a set of <em>writers</em>, which render this AST into various output formats. Pictorially:</p>
-<pre><code>[input format] ==reader==&gt; [Pandoc AST] ==writer==&gt; [output format]</code></pre>
-<p>This architecture allows pandoc to perform <span class="math inline"><em>M</em> × <em>N</em></span> conversions with <span class="math inline"><em>M</em></span> readers and <span class="math inline"><em>N</em></span> writers.</p>
-<p>The Pandoc AST is defined in the <a href="https://hackage.haskell.org/package/pandoc-types">pandoc-types</a> package. You should start by looking at the Haddock documentation for <a href="https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Definition.html">Text.Pandoc.Definition</a>. As you’ll see, a <code>Pandoc</code> is composed of some metadata and a list of <code>Block</code>s. There are various kinds of <code>Block</code>, including <code>Para</code> (paragraph), <code>Header</code> (section heading), and <code>BlockQuote</code>. Some of the <code>Block</code>s (like <code>BlockQuote</code>) contain lists of <code>Block</code>s, while others (like <code>Para</code>) contain lists of <code>Inline</code>s, and still others (like <code>CodeBlock</code>) contain plain text or nothing. <code>Inline</code>s are the basic elements of paragraphs. The distinction between <code>Block</code> and <code>Inline</code> in the type system makes it impossible to represent, for example, a link (<code>Inline</code>) whose link text is a block quote (<code>Block</code>). This expressive limitation is mostly a help rather than a hindrance, since many of the formats pandoc supports have similar limitations.</p>
-<p>The best way to explore the pandoc AST is to use <code>pandoc -t native</code>, which will display the AST corresponding to some Markdown input:</p>
-<pre><code>% echo -e &quot;1. *foo*\n2. bar&quot; | pandoc -t native
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="author" content="John MacFarlane" />
+    <title>Using the pandoc API</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <header id="title-block-header">
+      <h1 class="title">Using the pandoc API</h1>
+      <p class="author">John MacFarlane</p>
+    </header>
+    <p>
+      Pandoc can be used as a Haskell library, to write your own conversion
+      tools or power a web application. This document offers an introduction to
+      using the pandoc API.
+    </p>
+    <p>
+      Detailed API documentation at the level of individual functions and types
+      is available at
+      <a href="https://hackage.haskell.org/package/pandoc" class="uri"
+        >https://hackage.haskell.org/package/pandoc</a
+      >.
+    </p>
+    <h1 id="pandocs-architecture">Pandoc’s architecture</h1>
+    <p>
+      Pandoc is structured as a set of <em>readers</em>, which translate various
+      input formats into an abstract syntax tree (the Pandoc AST) representing a
+      structured document, and a set of <em>writers</em>, which render this AST
+      into various output formats. Pictorially:
+    </p>
+    <pre><code>[input format] ==reader==&gt; [Pandoc AST] ==writer==&gt; [output format]</code></pre>
+    <p>
+      This architecture allows pandoc to perform
+      <span class="math inline"><em>M</em> × <em>N</em></span> conversions with
+      <span class="math inline"><em>M</em></span> readers and
+      <span class="math inline"><em>N</em></span> writers.
+    </p>
+    <p>
+      The Pandoc AST is defined in the
+      <a href="https://hackage.haskell.org/package/pandoc-types"
+        >pandoc-types</a
+      >
+      package. You should start by looking at the Haddock documentation for
+      <a
+        href="https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Definition.html"
+        >Text.Pandoc.Definition</a
+      >. As you’ll see, a <code>Pandoc</code> is composed of some metadata and a
+      list of <code>Block</code>s. There are various kinds of
+      <code>Block</code>, including <code>Para</code> (paragraph),
+      <code>Header</code> (section heading), and <code>BlockQuote</code>. Some
+      of the <code>Block</code>s (like <code>BlockQuote</code>) contain lists of
+      <code>Block</code>s, while others (like <code>Para</code>) contain lists
+      of <code>Inline</code>s, and still others (like <code>CodeBlock</code>)
+      contain plain text or nothing. <code>Inline</code>s are the basic elements
+      of paragraphs. The distinction between <code>Block</code> and
+      <code>Inline</code> in the type system makes it impossible to represent,
+      for example, a link (<code>Inline</code>) whose link text is a block quote
+      (<code>Block</code>). This expressive limitation is mostly a help rather
+      than a hindrance, since many of the formats pandoc supports have similar
+      limitations.
+    </p>
+    <p>
+      The best way to explore the pandoc AST is to use
+      <code>pandoc -t native</code>, which will display the AST corresponding to
+      some Markdown input:
+    </p>
+    <pre><code>% echo -e &quot;1. *foo*\n2. bar&quot; | pandoc -t native
 [OrderedList (1,Decimal,Period)
  [[Plain [Emph [Str &quot;foo&quot;]]]
  ,[Plain [Str &quot;bar&quot;]]]]</code></pre>
-<h1 id="a-simple-example">A simple example</h1>
-<p>Here is a simple example of the use of a pandoc reader and writer to perform a conversion:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">import</span> <span class="dt">Text.Pandoc</span></a>
+    <h1 id="a-simple-example">A simple example</h1>
+    <p>
+      Here is a simple example of the use of a pandoc reader and writer to
+      perform a conversion:
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">import</span> <span class="dt">Text.Pandoc</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">import</span> <span class="kw">qualified</span> <span class="dt">Data.Text</span> <span class="kw">as</span> <span class="dt">T</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="kw">import</span> <span class="kw">qualified</span> <span class="dt">Data.Text.IO</span> <span class="kw">as</span> <span class="dt">TIO</span></a>
 <a class="sourceLine" id="cb3-4" title="4"></a>
@@ -105,26 +282,81 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb3-8" title="8">    doc <span class="ot">&lt;-</span> readMarkdown def (T.pack <span class="st">&quot;[testing](url)&quot;</span>)</a>
 <a class="sourceLine" id="cb3-9" title="9">    writeRST def doc</a>
 <a class="sourceLine" id="cb3-10" title="10">  rst <span class="ot">&lt;-</span> handleError result</a>
-<a class="sourceLine" id="cb3-11" title="11">  TIO.putStrLn rst</a></code></pre></div>
-<p>Some notes:</p>
-<ol type="1">
-<li><p>The first part constructs a conversion pipeline: the input string is passed to <code>readMarkdown</code>, and the resulting Pandoc AST (<code>doc</code>) is then rendered by <code>writeRST</code>. The conversion pipeline is “run” by <code>runIO</code>—more on that below.</p></li>
-<li><p><code>result</code> has the type <code>Either PandocError Text</code>. We could pattern-match on this manually, but it’s simpler in this context to use the <code>handleError</code> function from Text.Pandoc.Error. This exits with an appropriate error code and message if the value is a <code>Left</code>, and returns the <code>Text</code> if the value is a <code>Right</code>.</p></li>
-</ol>
-<h1 id="the-pandocmonad-class">The PandocMonad class</h1>
-<p>Let’s look at the types of <code>readMarkdown</code> and <code>writeRST</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb4-1" title="1"><span class="ot">readMarkdown ::</span> (<span class="dt">PandocMonad</span> m, <span class="dt">ToSources</span> a)</a>
+<a class="sourceLine" id="cb3-11" title="11">  TIO.putStrLn rst</a></code></pre>
+    </div>
+    <p>Some notes:</p>
+    <ol type="1">
+      <li>
+        <p>
+          The first part constructs a conversion pipeline: the input string is
+          passed to <code>readMarkdown</code>, and the resulting Pandoc AST
+          (<code>doc</code>) is then rendered by <code>writeRST</code>. The
+          conversion pipeline is “run” by <code>runIO</code>—more on that below.
+        </p>
+      </li>
+      <li>
+        <p>
+          <code>result</code> has the type <code>Either PandocError Text</code>.
+          We could pattern-match on this manually, but it’s simpler in this
+          context to use the <code>handleError</code> function from
+          Text.Pandoc.Error. This exits with an appropriate error code and
+          message if the value is a <code>Left</code>, and returns the
+          <code>Text</code> if the value is a <code>Right</code>.
+        </p>
+      </li>
+    </ol>
+    <h1 id="the-pandocmonad-class">The PandocMonad class</h1>
+    <p>
+      Let’s look at the types of <code>readMarkdown</code> and
+      <code>writeRST</code>:
+    </p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb4-1" title="1"><span class="ot">readMarkdown ::</span> (<span class="dt">PandocMonad</span> m, <span class="dt">ToSources</span> a)</a>
 <a class="sourceLine" id="cb4-2" title="2">             <span class="ot">=&gt;</span> <span class="dt">ReaderOptions</span></a>
 <a class="sourceLine" id="cb4-3" title="3">             <span class="ot">-&gt;</span> a</a>
 <a class="sourceLine" id="cb4-4" title="4">             <span class="ot">-&gt;</span> m <span class="dt">Pandoc</span></a>
 <a class="sourceLine" id="cb4-5" title="5"><span class="ot">writeRST     ::</span> <span class="dt">PandocMonad</span> m</a>
 <a class="sourceLine" id="cb4-6" title="6">             <span class="ot">=&gt;</span> <span class="dt">WriterOptions</span></a>
 <a class="sourceLine" id="cb4-7" title="7">             <span class="ot">-&gt;</span> <span class="dt">Pandoc</span></a>
-<a class="sourceLine" id="cb4-8" title="8">             <span class="ot">-&gt;</span> m <span class="dt">Text</span></a></code></pre></div>
-<p>The <code>PandocMonad m =&gt;</code> part is a typeclass constraint. It says that <code>readMarkdown</code> and <code>writeRST</code> define computations that can be used in any instance of the <code>PandocMonad</code> type class. <code>PandocMonad</code> is defined in the module <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html">Text.Pandoc.Class</a>.</p>
-<p>Two instances of <code>PandocMonad</code> are provided: <code>PandocIO</code> and <code>PandocPure</code>. The difference is that computations run in <code>PandocIO</code> are allowed to do IO (for example, read a file), while computations in <code>PandocPure</code> are free of any side effects. <code>PandocPure</code> is useful for sandboxed environments, when you want to prevent users from doing anything malicious. To run the conversion in <code>PandocIO</code>, use <code>runIO</code> (as above). To run it in <code>PandocPure</code>, use <code>runPure</code>.</p>
-<p>As you can see from the Haddocks, <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html">Text.Pandoc.Class</a> exports many auxiliary functions that can be used in any instance of <code>PandocMonad</code>. For example:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb5-1" title="1"><span class="co">-- | Get the verbosity level.</span></a>
+<a class="sourceLine" id="cb4-8" title="8">             <span class="ot">-&gt;</span> m <span class="dt">Text</span></a></code></pre>
+    </div>
+    <p>
+      The <code>PandocMonad m =&gt;</code> part is a typeclass constraint. It
+      says that <code>readMarkdown</code> and <code>writeRST</code> define
+      computations that can be used in any instance of the
+      <code>PandocMonad</code> type class. <code>PandocMonad</code> is defined
+      in the module
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html"
+        >Text.Pandoc.Class</a
+      >.
+    </p>
+    <p>
+      Two instances of <code>PandocMonad</code> are provided:
+      <code>PandocIO</code> and <code>PandocPure</code>. The difference is that
+      computations run in <code>PandocIO</code> are allowed to do IO (for
+      example, read a file), while computations in <code>PandocPure</code> are
+      free of any side effects. <code>PandocPure</code> is useful for sandboxed
+      environments, when you want to prevent users from doing anything
+      malicious. To run the conversion in <code>PandocIO</code>, use
+      <code>runIO</code> (as above). To run it in <code>PandocPure</code>, use
+      <code>runPure</code>.
+    </p>
+    <p>
+      As you can see from the Haddocks,
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html"
+        >Text.Pandoc.Class</a
+      >
+      exports many auxiliary functions that can be used in any instance of
+      <code>PandocMonad</code>. For example:
+    </p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb5-1" title="1"><span class="co">-- | Get the verbosity level.</span></a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="ot">getVerbosity ::</span> <span class="dt">PandocMonad</span> m <span class="ot">=&gt;</span> m <span class="dt">Verbosity</span></a>
 <a class="sourceLine" id="cb5-3" title="3"></a>
 <a class="sourceLine" id="cb5-4" title="4"><span class="co">-- | Set the verbosity level.</span></a>
@@ -147,39 +379,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-21" title="21">          <span class="ot">-&gt;</span> m (<span class="dt">B.ByteString</span>, <span class="dt">Maybe</span> <span class="dt">MimeType</span>)</a>
 <a class="sourceLine" id="cb5-22" title="22"></a>
 <a class="sourceLine" id="cb5-23" title="23"><span class="co">-- Set the resource path searched by &#39;fetchItem&#39;.</span></a>
-<a class="sourceLine" id="cb5-24" title="24"><span class="ot">setResourcePath ::</span> <span class="dt">PandocMonad</span> m <span class="ot">=&gt;</span> [<span class="dt">FilePath</span>] <span class="ot">-&gt;</span> m ()</a></code></pre></div>
-<p>If we wanted more verbose informational messages during the conversion we defined in the previous section, we could do this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb6-1" title="1">  result <span class="ot">&lt;-</span> runIO <span class="op">$</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb5-24" title="24"><span class="ot">setResourcePath ::</span> <span class="dt">PandocMonad</span> m <span class="ot">=&gt;</span> [<span class="dt">FilePath</span>] <span class="ot">-&gt;</span> m ()</a></code></pre>
+    </div>
+    <p>
+      If we wanted more verbose informational messages during the conversion we
+      defined in the previous section, we could do this:
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb6-1" title="1">  result <span class="ot">&lt;-</span> runIO <span class="op">$</span> <span class="kw">do</span></a>
 <a class="sourceLine" id="cb6-2" title="2">    setVerbosity <span class="dt">INFO</span></a>
 <a class="sourceLine" id="cb6-3" title="3">    doc <span class="ot">&lt;-</span> readMarkdown def (T.pack <span class="st">&quot;[testing](url)&quot;</span>)</a>
-<a class="sourceLine" id="cb6-4" title="4">    writeRST def doc</a></code></pre></div>
-<p>Note that <code>PandocIO</code> is an instance of <code>MonadIO</code>, so you can use <code>liftIO</code> to perform arbitrary IO operations inside a pandoc conversion chain.</p>
-<p><code>readMarkdown</code> is polymorphic in its second argument, which can be any type that is an instance of the <code>ToSources</code> typeclass. You can use <code>Text</code>, as in the example above. But you can also use <code>[(FilePath, Text)]</code>, if the input comes from multiple files and you want to track source positions accurately.</p>
-<h1 id="options">Options</h1>
-<p>The first argument of each reader or writer is for options controlling the behavior of the reader or writer: <code>ReaderOptions</code> for readers and <code>WriterOptions</code> for writers. These are defined in <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Options.html">Text.Pandoc.Options</a>. It is a good idea to study these options to see what can be adjusted.</p>
-<p><code>def</code> (from Data.Default) denotes a default value for each kind of option. (You can also use <code>defaultWriterOptions</code> and <code>defaultReaderOptions</code>.) Generally you’ll want to use the defaults and modify them only when needed, for example:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb7-1" title="1">    writeRST def{ writerReferenceLinks <span class="ot">=</span> <span class="dt">True</span> }</a></code></pre></div>
-<p>Some particularly important options to know about:</p>
-<ol type="1">
-<li><p><code>writerTemplate</code>: By default, this is <code>Nothing</code>, which means that a document fragment will be produced. If you want a full document, you need to specify <code>Just template</code>, where <code>template</code> is a <code>Template Text</code> from <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Templates.html">Text.Pandoc.Templates</a> containing the template’s contents (not the path).</p></li>
-<li><p><code>readerExtensions</code> and <code>writerExtensions</code>: These specify the extensions to be used in parsing and rendering. Extensions are defined in <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Extensions.html">Text.Pandoc.Extensions</a>.</p></li>
-</ol>
-<h1 id="builder">Builder</h1>
-<p>Sometimes it’s useful to construct a Pandoc document programmatically. To make this easier we provide the module <a href="https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Builder.html">Text.Pandoc.Builder</a> <code>pandoc-types</code>.</p>
-<p>Because concatenating lists is slow, we use special types <code>Inlines</code> and <code>Blocks</code> that wrap a <code>Sequence</code> of <code>Inline</code> and <code>Block</code> elements. These are instances of the Monoid typeclass and can easily be concatenated:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">import</span> <span class="dt">Text.Pandoc.Builder</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    writeRST def doc</a></code></pre>
+    </div>
+    <p>
+      Note that <code>PandocIO</code> is an instance of <code>MonadIO</code>, so
+      you can use <code>liftIO</code> to perform arbitrary IO operations inside
+      a pandoc conversion chain.
+    </p>
+    <p>
+      <code>readMarkdown</code> is polymorphic in its second argument, which can
+      be any type that is an instance of the <code>ToSources</code> typeclass.
+      You can use <code>Text</code>, as in the example above. But you can also
+      use <code>[(FilePath, Text)]</code>, if the input comes from multiple
+      files and you want to track source positions accurately.
+    </p>
+    <h1 id="options">Options</h1>
+    <p>
+      The first argument of each reader or writer is for options controlling the
+      behavior of the reader or writer: <code>ReaderOptions</code> for readers
+      and <code>WriterOptions</code> for writers. These are defined in
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Options.html"
+        >Text.Pandoc.Options</a
+      >. It is a good idea to study these options to see what can be adjusted.
+    </p>
+    <p>
+      <code>def</code> (from Data.Default) denotes a default value for each kind
+      of option. (You can also use <code>defaultWriterOptions</code> and
+      <code>defaultReaderOptions</code>.) Generally you’ll want to use the
+      defaults and modify them only when needed, for example:
+    </p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb7-1" title="1">    writeRST def{ writerReferenceLinks <span class="ot">=</span> <span class="dt">True</span> }</a></code></pre>
+    </div>
+    <p>Some particularly important options to know about:</p>
+    <ol type="1">
+      <li>
+        <p>
+          <code>writerTemplate</code>: By default, this is <code>Nothing</code>,
+          which means that a document fragment will be produced. If you want a
+          full document, you need to specify <code>Just template</code>, where
+          <code>template</code> is a <code>Template Text</code> from
+          <a
+            href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Templates.html"
+            >Text.Pandoc.Templates</a
+          >
+          containing the template’s contents (not the path).
+        </p>
+      </li>
+      <li>
+        <p>
+          <code>readerExtensions</code> and <code>writerExtensions</code>: These
+          specify the extensions to be used in parsing and rendering. Extensions
+          are defined in
+          <a
+            href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Extensions.html"
+            >Text.Pandoc.Extensions</a
+          >.
+        </p>
+      </li>
+    </ol>
+    <h1 id="builder">Builder</h1>
+    <p>
+      Sometimes it’s useful to construct a Pandoc document programmatically. To
+      make this easier we provide the module
+      <a
+        href="https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Builder.html"
+        >Text.Pandoc.Builder</a
+      >
+      <code>pandoc-types</code>.
+    </p>
+    <p>
+      Because concatenating lists is slow, we use special types
+      <code>Inlines</code> and <code>Blocks</code> that wrap a
+      <code>Sequence</code> of <code>Inline</code> and
+      <code>Block</code> elements. These are instances of the Monoid typeclass
+      and can easily be concatenated:
+    </p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">import</span> <span class="dt">Text.Pandoc.Builder</span></a>
 <a class="sourceLine" id="cb8-2" title="2"></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="ot">mydoc ::</span> <span class="dt">Pandoc</span></a>
 <a class="sourceLine" id="cb8-4" title="4">mydoc <span class="ot">=</span> doc <span class="op">$</span> header <span class="dv">1</span> (text (T.pack <span class="st">&quot;Hello!&quot;</span>))</a>
 <a class="sourceLine" id="cb8-5" title="5">           <span class="op">&lt;&gt;</span> para (emph (text (T.pack <span class="st">&quot;hello world&quot;</span>)) <span class="op">&lt;&gt;</span> text (T.pack <span class="st">&quot;.&quot;</span>))</a>
 <a class="sourceLine" id="cb8-6" title="6"></a>
 <a class="sourceLine" id="cb8-7" title="7"><span class="ot">main ::</span> <span class="dt">IO</span> ()</a>
-<a class="sourceLine" id="cb8-8" title="8">main <span class="ot">=</span> <span class="fu">print</span> mydoc</a></code></pre></div>
-<p>If you use the <code>OverloadedStrings</code> pragma, you can simplify this further:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb9-1" title="1">mydoc <span class="ot">=</span> doc <span class="op">$</span> header <span class="dv">1</span> <span class="st">&quot;Hello!&quot;</span></a>
-<a class="sourceLine" id="cb9-2" title="2">           <span class="op">&lt;&gt;</span> para (emph <span class="st">&quot;hello world&quot;</span> <span class="op">&lt;&gt;</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
-<p>Here’s a more realistic example. Suppose your boss says: write me a letter in Word listing all the filling stations in Chicago that take the Voyager card. You find some JSON data in this format (<code>fuel.json</code>):</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb10-1" title="1"><span class="ot">[</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb8-8" title="8">main <span class="ot">=</span> <span class="fu">print</span> mydoc</a></code></pre>
+    </div>
+    <p>
+      If you use the <code>OverloadedStrings</code> pragma, you can simplify
+      this further:
+    </p>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb9-1" title="1">mydoc <span class="ot">=</span> doc <span class="op">$</span> header <span class="dv">1</span> <span class="st">&quot;Hello!&quot;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">           <span class="op">&lt;&gt;</span> para (emph <span class="st">&quot;hello world&quot;</span> <span class="op">&lt;&gt;</span> <span class="st">&quot;.&quot;</span>)</a></code></pre>
+    </div>
+    <p>
+      Here’s a more realistic example. Suppose your boss says: write me a letter
+      in Word listing all the filling stations in Chicago that take the Voyager
+      card. You find some JSON data in this format (<code>fuel.json</code>):
+    </p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode json"
+      ><code class="sourceCode json"><a class="sourceLine" id="cb10-1" title="1"><span class="ot">[</span> <span class="fu">{</span></a>
 <a class="sourceLine" id="cb10-2" title="2">  <span class="dt">&quot;state&quot;</span> <span class="fu">:</span> <span class="st">&quot;IL&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb10-3" title="3">  <span class="dt">&quot;city&quot;</span> <span class="fu">:</span> <span class="st">&quot;Chicago&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb10-4" title="4">  <span class="dt">&quot;fuel_type_code&quot;</span> <span class="fu">:</span> <span class="st">&quot;CNG&quot;</span><span class="fu">,</span></a>
@@ -187,9 +508,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb10-6" title="6">  <span class="dt">&quot;station_name&quot;</span> <span class="fu">:</span> <span class="st">&quot;Clean Energy - Yellow Cab&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb10-7" title="7">  <span class="dt">&quot;cards_accepted&quot;</span> <span class="fu">:</span> <span class="st">&quot;A D M V Voyager Wright_Exp CleanEnergy&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb10-8" title="8">  <span class="dt">&quot;street_address&quot;</span> <span class="fu">:</span> <span class="st">&quot;540 W Grenshaw&quot;</span></a>
-<a class="sourceLine" id="cb10-9" title="9"><span class="fu">}</span><span class="ot">,</span> <span class="er">...</span></a></code></pre></div>
-<p>And then use aeson and pandoc to parse the JSON and create the Word document:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb11-1" title="1"><span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></a>
+<a class="sourceLine" id="cb10-9" title="9"><span class="fu">}</span><span class="ot">,</span> <span class="er">...</span></a></code></pre>
+    </div>
+    <p>
+      And then use aeson and pandoc to parse the JSON and create the Word
+      document:
+    </p>
+    <div class="sourceCode" id="cb11">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb11-1" title="1"><span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></a>
 <a class="sourceLine" id="cb11-2" title="2"><span class="kw">import</span> <span class="dt">Text.Pandoc.Builder</span></a>
 <a class="sourceLine" id="cb11-3" title="3"><span class="kw">import</span> <span class="dt">Text.Pandoc</span></a>
 <a class="sourceLine" id="cb11-4" title="4"><span class="kw">import</span> <span class="dt">Data.Monoid</span> ((&lt;&gt;), mempty, mconcat)</a>
@@ -238,21 +566,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb11-47" title="47">                    <span class="dt">Nothing</span>       <span class="ot">-&gt;</span> <span class="fu">error</span> <span class="st">&quot;Could not decode JSON&quot;</span></a>
 <a class="sourceLine" id="cb11-48" title="48">  docx <span class="ot">&lt;-</span> runIO (writeDocx def letter) <span class="op">&gt;&gt;=</span> handleError</a>
 <a class="sourceLine" id="cb11-49" title="49">  BL.writeFile <span class="st">&quot;letter.docx&quot;</span> docx</a>
-<a class="sourceLine" id="cb11-50" title="50">  <span class="fu">putStrLn</span> <span class="st">&quot;Created letter.docx&quot;</span></a></code></pre></div>
-<p>Voila! You’ve written the letter without using Word and without looking at the data.</p>
-<h1 id="data-files">Data files</h1>
-<p>Pandoc has a number of data files, which can be found in the <code>data/</code> subdirectory of the repository. These are installed with pandoc (or, if pandoc was compiled with the <code>embed_data_files</code> flag, they are embedded in the binary). You can retrieve data files using <code>readDataFile</code> from Text.Pandoc.Class. <code>readDataFile</code> will first look for the file in the “user data directory” (<code>setUserDataDir</code>, <code>getUserDataDir</code>), and if it is not found there, it will return the default installed with the system. To force the use of the default, <code>setUserDataDir Nothing</code>.</p>
-<h1 id="templates">Templates</h1>
-<p>Pandoc has its own template system, described in the User’s Guide. To retrieve the default template for a system, use <code>getDefaultTemplate</code> from <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Templates.html">Text.Pandoc.Templates</a>. Note that this looks first in the <code>templates</code> subdirectory of the user data directory, allowing users to override the system defaults. If you want to disable this behavior, use <code>setUserDataDir Nothing</code>.</p>
-<p>To render a template, use <code>renderTemplate'</code>, which takes two arguments, a template (Text) and a context (any instance of ToJSON). If you want to create a context from the metadata part of a Pandoc document, use <code>metaToJSON'</code> from <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Writers-Shared.html">Text.Pandoc.Writers.Shared</a>. If you also want to incorporate values from variables, use <code>metaToJSON</code> instead, and make sure <code>writerVariables</code> is set in <code>WriterOptions</code>.</p>
-<h1 id="handling-errors-and-warnings">Handling errors and warnings</h1>
-<p><code>runIO</code> and <code>runPure</code> return an <code>Either PandocError a</code>. All errors raised in running a <code>PandocMonad</code> computation will be trapped and returned as a <code>Left</code> value, so they can be handled by the calling program. To see the constructors for <code>PandocError</code>, see the documentation for <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Error.html">Text.Pandoc.Error</a>.</p>
-<p>To raise a <code>PandocError</code> from inside a <code>PandocMonad</code> computation, use <code>throwError</code>.</p>
-<p>In addition to errors, which stop execution of the conversion pipeline, one can generate informational messages. Use <code>report</code> from <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html">Text.Pandoc.Class</a> to issue a <code>LogMessage</code>. For a list of constructors for <code>LogMessage</code>, see <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Logging.html">Text.Pandoc.Logging</a>. Note that each type of log message is associated with a verbosity level. The verbosity level (<code>setVerbosity</code>/<code>getVerbosity</code>) determines whether the report will be printed to stderr (when running in <code>PandocIO</code>), but regardless of verbosity level, all reported messages are stored internally and may be retrieved using <code>getLog</code>.</p>
-<h1 id="walking-the-ast">Walking the AST</h1>
-<p>It is often useful to walk the Pandoc AST either to extract information (e.g., what are all the URLs linked to in this document?, do all the code samples compile?) or to transform a document (e.g., increase the level of every section header, remove emphasis, or replace specially marked code blocks with images). To make this easier and more efficient, <code>pandoc-types</code> includes a module <a href="https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Walk.html">Text.Pandoc.Walk</a>.</p>
-<p>Here’s the essential documentation:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">class</span> <span class="dt">Walkable</span> a b <span class="kw">where</span></a>
+<a class="sourceLine" id="cb11-50" title="50">  <span class="fu">putStrLn</span> <span class="st">&quot;Created letter.docx&quot;</span></a></code></pre>
+    </div>
+    <p>
+      Voila! You’ve written the letter without using Word and without looking at
+      the data.
+    </p>
+    <h1 id="data-files">Data files</h1>
+    <p>
+      Pandoc has a number of data files, which can be found in the
+      <code>data/</code> subdirectory of the repository. These are installed
+      with pandoc (or, if pandoc was compiled with the
+      <code>embed_data_files</code> flag, they are embedded in the binary). You
+      can retrieve data files using <code>readDataFile</code> from
+      Text.Pandoc.Class. <code>readDataFile</code> will first look for the file
+      in the “user data directory” (<code>setUserDataDir</code>,
+      <code>getUserDataDir</code>), and if it is not found there, it will return
+      the default installed with the system. To force the use of the default,
+      <code>setUserDataDir Nothing</code>.
+    </p>
+    <h1 id="templates">Templates</h1>
+    <p>
+      Pandoc has its own template system, described in the User’s Guide. To
+      retrieve the default template for a system, use
+      <code>getDefaultTemplate</code> from
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Templates.html"
+        >Text.Pandoc.Templates</a
+      >. Note that this looks first in the <code>templates</code> subdirectory
+      of the user data directory, allowing users to override the system
+      defaults. If you want to disable this behavior, use
+      <code>setUserDataDir Nothing</code>.
+    </p>
+    <p>
+      To render a template, use <code>renderTemplate'</code>, which takes two
+      arguments, a template (Text) and a context (any instance of ToJSON). If
+      you want to create a context from the metadata part of a Pandoc document,
+      use <code>metaToJSON'</code> from
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Writers-Shared.html"
+        >Text.Pandoc.Writers.Shared</a
+      >. If you also want to incorporate values from variables, use
+      <code>metaToJSON</code> instead, and make sure
+      <code>writerVariables</code> is set in <code>WriterOptions</code>.
+    </p>
+    <h1 id="handling-errors-and-warnings">Handling errors and warnings</h1>
+    <p>
+      <code>runIO</code> and <code>runPure</code> return an
+      <code>Either PandocError a</code>. All errors raised in running a
+      <code>PandocMonad</code> computation will be trapped and returned as a
+      <code>Left</code> value, so they can be handled by the calling program. To
+      see the constructors for <code>PandocError</code>, see the documentation
+      for
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Error.html"
+        >Text.Pandoc.Error</a
+      >.
+    </p>
+    <p>
+      To raise a <code>PandocError</code> from inside a
+      <code>PandocMonad</code> computation, use <code>throwError</code>.
+    </p>
+    <p>
+      In addition to errors, which stop execution of the conversion pipeline,
+      one can generate informational messages. Use <code>report</code> from
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html"
+        >Text.Pandoc.Class</a
+      >
+      to issue a <code>LogMessage</code>. For a list of constructors for
+      <code>LogMessage</code>, see
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Logging.html"
+        >Text.Pandoc.Logging</a
+      >. Note that each type of log message is associated with a verbosity
+      level. The verbosity level
+      (<code>setVerbosity</code>/<code>getVerbosity</code>) determines whether
+      the report will be printed to stderr (when running in
+      <code>PandocIO</code>), but regardless of verbosity level, all reported
+      messages are stored internally and may be retrieved using
+      <code>getLog</code>.
+    </p>
+    <h1 id="walking-the-ast">Walking the AST</h1>
+    <p>
+      It is often useful to walk the Pandoc AST either to extract information
+      (e.g., what are all the URLs linked to in this document?, do all the code
+      samples compile?) or to transform a document (e.g., increase the level of
+      every section header, remove emphasis, or replace specially marked code
+      blocks with images). To make this easier and more efficient,
+      <code>pandoc-types</code> includes a module
+      <a
+        href="https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Walk.html"
+        >Text.Pandoc.Walk</a
+      >.
+    </p>
+    <p>Here’s the essential documentation:</p>
+    <div class="sourceCode" id="cb12">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">class</span> <span class="dt">Walkable</span> a b <span class="kw">where</span></a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="co">-- | @walk f x@ walks the structure @x@ (bottom up) and replaces every</span></a>
 <a class="sourceLine" id="cb12-3" title="3">  <span class="co">-- occurrence of an @a@ with the result of applying @f@ to it.</span></a>
 <a class="sourceLine" id="cb12-4" title="4"><span class="ot">  walk  ::</span> (a <span class="ot">-&gt;</span> a) <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> b</a>
@@ -261,35 +673,108 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb12-7" title="7"><span class="ot">  walkM ::</span> (<span class="dt">Monad</span> m, <span class="dt">Functor</span> m) <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> m a) <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> m b</a>
 <a class="sourceLine" id="cb12-8" title="8">  <span class="co">-- | @query f x@ walks the structure @x@ (bottom up) and applies @f@</span></a>
 <a class="sourceLine" id="cb12-9" title="9">  <span class="co">-- to every @a@, appending the results.</span></a>
-<a class="sourceLine" id="cb12-10" title="10"><span class="ot">  query ::</span> <span class="dt">Monoid</span> c <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> c) <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> c</a></code></pre></div>
-<p><code>Walkable</code> instances are defined for most combinations of Pandoc types. For example, the <code>Walkable Inline Block</code> instance allows you to take a function <code>Inline -&gt; Inline</code> and apply it over every inline in a <code>Block</code>. And <code>Walkable [Inline] Pandoc</code> allows you to take a function <code>[Inline] -&gt; [Inline]</code> and apply it over every maximal list of <code>Inline</code>s in a <code>Pandoc</code>.</p>
-<p>Here’s a simple example of a function that promotes the levels of headers:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb13-1" title="1"><span class="ot">promoteHeaderLevels ::</span> <span class="dt">Pandoc</span> <span class="ot">-&gt;</span> <span class="dt">Pandoc</span></a>
+<a class="sourceLine" id="cb12-10" title="10"><span class="ot">  query ::</span> <span class="dt">Monoid</span> c <span class="ot">=&gt;</span> (a <span class="ot">-&gt;</span> c) <span class="ot">-&gt;</span> b <span class="ot">-&gt;</span> c</a></code></pre>
+    </div>
+    <p>
+      <code>Walkable</code> instances are defined for most combinations of
+      Pandoc types. For example, the <code>Walkable Inline Block</code> instance
+      allows you to take a function <code>Inline -&gt; Inline</code> and apply
+      it over every inline in a <code>Block</code>. And
+      <code>Walkable [Inline] Pandoc</code> allows you to take a function
+      <code>[Inline] -&gt; [Inline]</code> and apply it over every maximal list
+      of <code>Inline</code>s in a <code>Pandoc</code>.
+    </p>
+    <p>
+      Here’s a simple example of a function that promotes the levels of headers:
+    </p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb13-1" title="1"><span class="ot">promoteHeaderLevels ::</span> <span class="dt">Pandoc</span> <span class="ot">-&gt;</span> <span class="dt">Pandoc</span></a>
 <a class="sourceLine" id="cb13-2" title="2">promoteHeaderLevels <span class="ot">=</span> walk promote</a>
 <a class="sourceLine" id="cb13-3" title="3">  <span class="kw">where</span><span class="ot"> promote ::</span> <span class="dt">Block</span> <span class="ot">-&gt;</span> <span class="dt">Block</span></a>
 <a class="sourceLine" id="cb13-4" title="4">        promote (<span class="dt">Header</span> lev attr ils) <span class="ot">=</span> <span class="dt">Header</span> (lev <span class="op">+</span> <span class="dv">1</span>) attr ils</a>
-<a class="sourceLine" id="cb13-5" title="5">        promote x <span class="ot">=</span> x</a></code></pre></div>
-<p><code>walkM</code> is a monadic version of <code>walk</code>; it can be used, for example, when you need your transformations to perform IO operations, use PandocMonad operations, or update internal state. Here’s an example using the State monad to add unique identifiers to each code block:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb14-1" title="1"><span class="ot">addCodeIdentifiers ::</span> <span class="dt">Pandoc</span> <span class="ot">-&gt;</span> <span class="dt">Pandoc</span></a>
+<a class="sourceLine" id="cb13-5" title="5">        promote x <span class="ot">=</span> x</a></code></pre>
+    </div>
+    <p>
+      <code>walkM</code> is a monadic version of <code>walk</code>; it can be
+      used, for example, when you need your transformations to perform IO
+      operations, use PandocMonad operations, or update internal state. Here’s
+      an example using the State monad to add unique identifiers to each code
+      block:
+    </p>
+    <div class="sourceCode" id="cb14">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb14-1" title="1"><span class="ot">addCodeIdentifiers ::</span> <span class="dt">Pandoc</span> <span class="ot">-&gt;</span> <span class="dt">Pandoc</span></a>
 <a class="sourceLine" id="cb14-2" title="2">addCodeIdentifiers doc <span class="ot">=</span> evalState (walkM addCodeId doc) <span class="dv">1</span></a>
 <a class="sourceLine" id="cb14-3" title="3">  <span class="kw">where</span><span class="ot"> addCodeId ::</span> <span class="dt">Block</span> <span class="ot">-&gt;</span> <span class="dt">State</span> <span class="dt">Int</span> <span class="dt">Block</span></a>
 <a class="sourceLine" id="cb14-4" title="4">        addCodeId (<span class="dt">CodeBlock</span> (_,classes,kvs) code) <span class="ot">=</span> <span class="kw">do</span></a>
 <a class="sourceLine" id="cb14-5" title="5">          curId <span class="ot">&lt;-</span> get</a>
 <a class="sourceLine" id="cb14-6" title="6">          put (curId <span class="op">+</span> <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb14-7" title="7">          <span class="fu">return</span> <span class="op">$</span> <span class="dt">CodeBlock</span> (<span class="fu">show</span> curId,classes,kvs) code</a>
-<a class="sourceLine" id="cb14-8" title="8">        addCodeId x <span class="ot">=</span> <span class="fu">return</span> x</a></code></pre></div>
-<p><code>query</code> is used to collect information from the AST. Its argument is a query function that produces a result in some monoidal type (e.g. a list). The results are concatenated together. Here’s an example that returns a list of the URLs linked to in a document:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb15-1" title="1"><span class="ot">listURLs ::</span> <span class="dt">Pandoc</span> <span class="ot">-&gt;</span> [<span class="dt">Text</span>]</a>
+<a class="sourceLine" id="cb14-8" title="8">        addCodeId x <span class="ot">=</span> <span class="fu">return</span> x</a></code></pre>
+    </div>
+    <p>
+      <code>query</code> is used to collect information from the AST. Its
+      argument is a query function that produces a result in some monoidal type
+      (e.g. a list). The results are concatenated together. Here’s an example
+      that returns a list of the URLs linked to in a document:
+    </p>
+    <div class="sourceCode" id="cb15">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb15-1" title="1"><span class="ot">listURLs ::</span> <span class="dt">Pandoc</span> <span class="ot">-&gt;</span> [<span class="dt">Text</span>]</a>
 <a class="sourceLine" id="cb15-2" title="2">listURLs <span class="ot">=</span> query urls</a>
 <a class="sourceLine" id="cb15-3" title="3">  <span class="kw">where</span> urls (<span class="dt">Link</span> _ _ (src, _)) <span class="ot">=</span> [src]</a>
-<a class="sourceLine" id="cb15-4" title="4">        urls _                   <span class="ot">=</span> []</a></code></pre></div>
-<h1 id="creating-a-front-end">Creating a front-end</h1>
-<p>All of the functionality of the command-line program <code>pandoc</code> has been abstracted out in <code>convertWithOpts</code> in the module <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-App.html">Text.Pandoc.App</a>. Creating a GUI front-end for pandoc is thus just a matter of populating the <code>Opts</code> structure and calling this function.</p>
-<h1 id="notes-on-using-pandoc-in-web-applications">Notes on using pandoc in web applications</h1>
-<ol type="1">
-<li><p>Pandoc’s parsers can exhibit pathological behavior on some inputs. So it is always a good idea to wrap uses of pandoc in a timeout function (e.g. <code>System.Timeout.timeout</code> from <code>base</code>) to prevent DoS attacks.</p></li>
-<li><p>If pandoc generates HTML from untrusted user input, it is always a good idea to filter the generated HTML through a sanitizer (such as <code>xss-sanitize</code>) to avoid security problems.</p></li>
-<li><p>Using <code>runPure</code> rather than <code>runIO</code> will ensure that pandoc’s functions perform no IO operations (e.g. writing files). If some resources need to be made available, a “fake environment” is provided inside the state available to <code>runPure</code> (see <code>PureState</code> and its associated functions in <a href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html">Text.Pandoc.Class</a>). It is also possible to write a custom instance of <code>PandocMonad</code> that, for example, makes wiki resources available as files in the fake environment, while isolating pandoc from the rest of the system.</p></li>
-</ol>
-</body>
+<a class="sourceLine" id="cb15-4" title="4">        urls _                   <span class="ot">=</span> []</a></code></pre>
+    </div>
+    <h1 id="creating-a-front-end">Creating a front-end</h1>
+    <p>
+      All of the functionality of the command-line program
+      <code>pandoc</code> has been abstracted out in
+      <code>convertWithOpts</code> in the module
+      <a
+        href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-App.html"
+        >Text.Pandoc.App</a
+      >. Creating a GUI front-end for pandoc is thus just a matter of populating
+      the <code>Opts</code> structure and calling this function.
+    </p>
+    <h1 id="notes-on-using-pandoc-in-web-applications">
+      Notes on using pandoc in web applications
+    </h1>
+    <ol type="1">
+      <li>
+        <p>
+          Pandoc’s parsers can exhibit pathological behavior on some inputs. So
+          it is always a good idea to wrap uses of pandoc in a timeout function
+          (e.g. <code>System.Timeout.timeout</code> from <code>base</code>) to
+          prevent DoS attacks.
+        </p>
+      </li>
+      <li>
+        <p>
+          If pandoc generates HTML from untrusted user input, it is always a
+          good idea to filter the generated HTML through a sanitizer (such as
+          <code>xss-sanitize</code>) to avoid security problems.
+        </p>
+      </li>
+      <li>
+        <p>
+          Using <code>runPure</code> rather than <code>runIO</code> will ensure
+          that pandoc’s functions perform no IO operations (e.g. writing files).
+          If some resources need to be made available, a “fake environment” is
+          provided inside the state available to <code>runPure</code> (see
+          <code>PureState</code> and its associated functions in
+          <a
+            href="https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html"
+            >Text.Pandoc.Class</a
+          >). It is also possible to write a custom instance of
+          <code>PandocMonad</code> that, for example, makes wiki resources
+          available as files in the fake environment, while isolating pandoc
+          from the rest of the system.
+        </p>
+      </li>
+    </ol>
+  </body>
 </html>

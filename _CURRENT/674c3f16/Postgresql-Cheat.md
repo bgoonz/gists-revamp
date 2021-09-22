@@ -1,8 +1,9 @@
-# Postgresql Cheat Sheet
+Postgresql Cheat Sheet
+======================
 
 PostgreSQL commands
 
----
+------------------------------------------------------------------------
 
 #### <a href="http://medium.com/codex" class="markup--anchor markup--h4-anchor">CODEX</a>
 
@@ -168,12 +169,12 @@ Query data using the `LIKE` operator:
     SELECT * FROM table_name
     WHERE column LIKE '%value%'
 
-Query data using the `BETWEEN `operator:
+Query data using the `BETWEEN`operator:
 
     SELECT * FROM table_name
     WHERE column BETWEEN low AND high;
 
-Query data using the `IN `operator:
+Query data using the `IN`operator:
 
     SELECT * FROM table_name
     WHERE column IN (value1, value2,...);
@@ -296,7 +297,7 @@ Collect statistics:
 
     ANALYZE table_name;
 
----
+------------------------------------------------------------------------
 
 ### Postgres & JSON:
 
@@ -392,7 +393,7 @@ Output:
       browser json
     );
 
-We’re going to store events in this table, like pageviews. Each event has properties, which could be anything (e.g. current page) and also sends information about the browser (like OS, screen resolution, etc). Both of these are completely free form and could change over time (as we think of extra stuff to track).
+We’re going to store events in this table, like pageviews. Each event has properties, which could be anything (e.g. current page) and also sends information about the browser (like OS, screen resolution, etc). Both of these are completely free form and could change over time (as we think of extra stuff to track).
 
     INSERT INTO events VALUES (
       'pageview', '1',
@@ -435,19 +436,19 @@ Output:
 
 Using the JSON operators, combined with traditional PostgreSQL aggregate functions, we can pull out whatever we want. You have the full might of an RDBMS at your disposal.
 
-- <span id="4ffd">Lets see browser usage:</span>
-- <span id="261c">`SELECT browser->>'name' AS browser, count(browser) FROM events GROUP BY browser->>'name';`</span>
+-   <span id="4ffd">Lets see browser usage:</span>
+-   <span id="261c">`SELECT browser->>'name' AS browser, count(browser) FROM             events GROUP BY browser->>'name';`</span>
 
 Output:
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*4lEv2DgUk33FeUgo" class="graf-image" /></figure>-   <span id="946c">Total revenue per visitor:</span>
 
-`SELECT visitor_id, SUM(CAST(properties->>'amount' AS integer)) AS total FROM events WHERE CAST(properties->>'amount' AS integer) > 0 GROUP BY visitor_id;`
+`SELECT visitor_id, SUM(CAST(properties->>'amount' AS integer)) AS         total FROM events WHERE CAST(properties->>'amount' AS integer)         > 0 GROUP BY visitor_id;`
 
 Output:
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*HxOS3CgwXBJ6A2FP" class="graf-image" /></figure>-   <span id="9850">Average screen resolution</span>
--   <span id="132f">`SELECT                     AVG(CAST(browser->'resolution'->>'x'                     AS integer)) AS width,                     AVG(CAST(browser->'resolution'->>'y'                     AS integer)) AS height FROM events;`</span>
+-   <span id="132f">`SELECT AVG(CAST(browser->'resolution'->>'x' AS integer))             AS width, AVG(CAST(browser->'resolution'->>'y' AS integer))             AS height FROM events;`</span>
 
 Output:
 

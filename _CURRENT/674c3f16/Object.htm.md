@@ -1,16 +1,17 @@
-# Object Methods
+Object Methods
+==============
 
 Iterating Through Objects
 
----
+------------------------------------------------------------------------
 
 ### Object Methods
 
 ### Iterating Through Objects
 
-Objects store _unordered_  
+Objects store *unordered*  
 `key`-`value` pairs. With Objects we can not rely on indices to access values.  
-Meaning - we'll have to iterate through objects in new ways to access the keys  
+Meaning - we’ll have to iterate through objects in new ways to access the keys  
 and values within.
 
 This article will cover:
@@ -81,17 +82,17 @@ into the mix:
 
 ### What’s a method?
 
-A **method** is essentially a function that _belongs to_ an object.
+A **method** is essentially a function that *belongs to* an object.
 
-That means that every _method is a function_, but **not** every function  
+That means that every *method is a function*, but **not** every function  
 is a method.
 
-- <span id="cb33">`myFunc` is a function</span>
-- <span id="2c47">`myObject.myFunc` is a _method_ of the object `myObject`</span>
-- <span id="14fe">`myObject["myFunc"]` is a _method_ of the object `myObject`  
-  A method is just a key-value pair where the **key is the function name and the  
-  value is the function definition**! Let's use what we learned earlier to teach  
-  our dog some new tricks:</span>
+-   <span id="cb33">`myFunc` is a function</span>
+-   <span id="2c47">`myObject.myFunc` is a *method* of the object `myObject`</span>
+-   <span id="14fe">`myObject["myFunc"]` is a *method* of the object `myObject`  
+    A method is just a key-value pair where the **key is the function name and the  
+    value is the function definition**! Let’s use what we learned earlier to teach  
+    our dog some new tricks:</span>
 
 <!-- -->
 
@@ -126,13 +127,13 @@ Additionally, we can give objects methods when we initialize them:
     dog2.bark(); // prints `bork bork!`
     dog2.speak("burrito"); // prints `BORK burrito BORK!!!`
 
-To invoke, or call, a method we need to specify **which** object is calling that method. In the example above the `dog2` object had the `bark` method so to invoke `bark` we had to specify it was `dog2`'s method: `dog2.bark()`.
+To invoke, or call, a method we need to specify **which** object is calling that method. In the example above the `dog2` object had the `bark` method so to invoke `bark` we had to specify it was `dog2`’s method: `dog2.bark()`.
 
 ### Useful Object Methods
 
 ### Iterating through keys using `Object.keys`
 
-The `Object.keys` method accepts an object as the argument and returns an array of the _keys_ within that Object.
+The `Object.keys` method accepts an object as the argument and returns an array of the *keys* within that Object.
 
     > let dog = {name: "Fido", age: "2"}
     undefined
@@ -149,7 +150,7 @@ for iterating!
 ### Iterating through keys using `Object.values`
 
 The `Object.values` method accepts an object as the argument and returns an  
-array of the _values_ within that Object.
+array of the *values* within that Object.
 
     > let dog = {name: "Fido", age: "2"}
     undefined

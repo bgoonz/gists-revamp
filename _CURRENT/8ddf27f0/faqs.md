@@ -8,12 +8,11 @@ On linux or OSX:
 
     for f in *.txt; do pandoc "$f" -s -o "${f%.txt}.rtf"; done
 
-
 In Windows Powershell:
 
     gci -r -i *.txt |foreach{$rtf=$_.directoryname+"\"+$_.basename+".rtf";pandoc -f markdown -s $_.name -o $rtf}
 
-## I used pandoc to convert a document to ICML (or OPML or RTF), and when I try to open it I'm told it's invalid.  What have I done wrong?
+## I used pandoc to convert a document to ICML (or OPML or RTF), and when I try to open it I'm told it's invalid. What have I done wrong?
 
 Be sure to use the `-s` or `--standalone` flag, or you just get a
 fragment, not a full document with the required header:
@@ -25,7 +24,7 @@ fragment, not a full document with the required header:
 By default, pandoc uses pdflatex to generate the PDF, and pdflatex
 doesn't handle Chinese characters. But you can change the default to
 use xelatex instead. You should also make sure you're using a font
-with Chinese glyphs.  For example:
+with Chinese glyphs. For example:
 
     pandoc -o c.pdf --pdf-engine=xelatex -V mainfont='Adobe Ming Std'
 
@@ -47,7 +46,7 @@ The option
 
     -V geometry:margin=1in
 
-will set the margins to one inch on each side.  If you don't want uniform
+will set the margins to one inch on each side. If you don't want uniform
 margins, you can do something like
 
     -V geometry:"top=2cm, bottom=1.5cm, left=1cm, right=1cm"
@@ -81,7 +80,7 @@ template:
 ```
 
 If you don't have this in your custom template, you should
-add it.  If we didn't set the `height` explicitly in this way,
+add it. If we didn't set the `height` explicitly in this way,
 the image would not be resized correctly unless it was
 being resized to smaller than its original size.
 
@@ -94,13 +93,13 @@ memory error will be issued.
 ## When using `--include-in-header` with PDF or LaTeX output, how do I reference tex declarations coming after `$header-includes$` in the default template?
 
 For various reasons, the `$header-includes$` are not at the very
-end of the LaTeX preamble.  This poses a problem when the code
+end of the LaTeX preamble. This poses a problem when the code
 you are inserting depends on declarations in the preamble coming
 after the `$header-includes$` location. For example, you might
 want to reference the `\author` and `\title` metadata values
 (set at the very bottom of the preamble) and present them in
 margins. In that case you can wrap your code in `etoolbox`'s
-`\AtEndPreamble`.  The technique is demonstrated in [this
+`\AtEndPreamble`. The technique is demonstrated in [this
 gist](https://gist.github.com/JohnLukeBentley/9dda6166b9ee5c4127afd2b8cd16b70a).
 When using `\AtEndPreamble`, keep any `makeatletter` or
 `makeatother` outside of the `\AtEndPreamble`, as shown in the
@@ -113,16 +112,15 @@ and saving in a format from which pandoc can convert directly.
 
 ## Do I really need to install a 1 GB TeX installation to produce a PDF using pandoc?
 
-No.  You can get by with a relatively small TeX installation,
+No. You can get by with a relatively small TeX installation,
 for example, by starting with MacTeX's Basic TeX distribution
 and using the `tlmgr` tool to install a few packages required by pandoc
 (see https://pandoc.org/MANUAL.html#creating-a-pdf).
 
 Or, you can produce PDFs via HTML and `wkhtmltopdf`,
-or via groff ms and `pdfroff`.  (These don't produce as nice
+or via groff ms and `pdfroff`. (These don't produce as nice
 topography as TeX, particularly when it comes to math, but they
 may be fine for many purposes.)
-
 
 ## Converting to PDF on an M1 Mac, I get a "Cannot allocate memory" error.
 
@@ -133,4 +131,3 @@ example,
     pandoc -o my.pdf --pdf-engine=/Library/TeX/texbin/pdflatex
 
 :::
-

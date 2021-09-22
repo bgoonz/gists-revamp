@@ -1,8 +1,9 @@
-# A Collection of my most useful Gist Entries
+A Collection of my most useful Gist Entries
+===========================================
 
 This list is in no particular order!
 
----
+------------------------------------------------------------------------
 
 ### A Collection of my most useful Gist Entries
 

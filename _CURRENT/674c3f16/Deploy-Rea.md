@@ -1,14 +1,15 @@
-# Deploy React App To Heroku Using Postgres & Express
+Deploy React App To Heroku Using Postgres & Express
+===================================================
 
 Heroku is an web application that makes deploying applications easy for a beginner.
 
----
+------------------------------------------------------------------------
 
 ### Deploy React App To Heroku Using Postgres & Express
 
 Heroku is an web application that makes deploying applications easy for a beginner.
 
-Before you begin deploying, make sure to remove any `console.log`'s or `debugger`'s in any production code. You can search your entire project folder if you are using them anywhere.
+Before you begin deploying, make sure to remove any `console.log`’s or `debugger`’s in any production code. You can search your entire project folder if you are using them anywhere.
 
 You will set up Heroku to run on a production, not development, version of your application. When a Node.js application like yours is pushed up to Heroku, it is identified as a Node.js application because of the `package.json` file. It runs `npm install` automatically. Then, if there is a `heroku-postbuild` script in the `package.json` file, it will run that script. Afterwards, it will automatically run `npm start`.
 
@@ -36,7 +37,7 @@ Right now, your React application is on a different localhost port than your Exp
 
 Add the following changes into your `backend/routes.index.js` file.
 
-At the root route, serve the React application’s static `index.html` file along with `XSRF-TOKEN` cookie. Then serve up all the React application's static files using the `express.static` middleware. Serve the `index.html` and set the `XSRF-TOKEN` cookie again on all routes that don't start in `/api`. You should already have this set up in `backend/routes/index.js` which should now look like this:
+At the root route, serve the React application’s static `index.html` file along with `XSRF-TOKEN` cookie. Then serve up all the React application’s static files using the `express.static` middleware. Serve the `index.html` and set the `XSRF-TOKEN` cookie again on all routes that don’t start in `/api`. You should already have this set up in `backend/routes/index.js` which should now look like this:
 
     // backend/routes/index.js
     const express = require('express');
@@ -81,7 +82,7 @@ At the root route, serve the React application’s static `index.html` file alon
 
 Your Express backend’s `package.json` should include scripts to run the `sequelize` CLI commands.
 
-The `backend/package.json`'s scripts should now look like this:
+The `backend/package.json`’s scripts should now look like this:
 
     "scripts": {
         "sequelize": "sequelize",
@@ -105,7 +106,7 @@ Define a `sequelize` script that will run `npm run sequelize` in the `backend` f
 
 Finally, define a `start` that will run `npm start` in the \`backend folder.
 
-The root `package.json`'s scripts should look like this:
+The root `package.json`’s scripts should look like this:
 
     "scripts": {
         "heroku-postbuild": "npm run build --prefix frontend",
@@ -151,7 +152,7 @@ To seed the production database, run:
 
     heroku run npm run sequelize db:seed:all
 
-Note: You can interact with your database this way as you’d like, but beware that `db:drop` cannot be run in the Heroku environment. If you want to drop and create the database, you need to remove and add back the "Heroku Postgres" add-on.
+Note: You can interact with your database this way as you’d like, but beware that `db:drop` cannot be run in the Heroku environment. If you want to drop and create the database, you need to remove and add back the “Heroku Postgres” add-on.
 
 Another way to interact with the production application is by opening a bash shell through your terminal by running:
 

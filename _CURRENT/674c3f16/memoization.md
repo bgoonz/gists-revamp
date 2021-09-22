@@ -1,8 +1,9 @@
-# What is Memoization?
+What is Memoization?
+====================
 
 And why this programming paradigm shouldn’t make you cringe.
 
----
+------------------------------------------------------------------------
 
 ### What is Memoization?
 
@@ -13,7 +14,7 @@ And why this programming paradigm shouldn’t make you cringe.
 #### <a href="https://www.deadcoderising.com/2017-06-13-why-pure-functions-4-benefits-to-embrace-2/" class="markup--anchor markup--h4-anchor">Source</a>
 
 <a href="https://www.deadcoderising.com/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://www.deadcoderising.com/"><strong>Dead Code Rising</strong><br />
-<em>The last couple of weeks I've been using a lot of hours playing around with GatsbyJS, and it's been a blast! Gatsby is…</em>www.deadcoderising.com</a><a href="https://www.deadcoderising.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
+<em>The last couple of weeks I’ve been using a lot of hours playing around with GatsbyJS, and it’s been a blast! Gatsby is…</em>www.deadcoderising.com</a><a href="https://www.deadcoderising.com/" class="js-mixtapeImage mixtapeImage u-ignoreBlock"></a>
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/1*Ey6rNclUY-Rp3iqM9Ytnag.gif" class="graf-image" /></figure><figure><img src="https://cdn-images-1.medium.com/max/800/0*w0txnjkmBo2z0COv.png" class="graf-image" /></figure>**Memoization** is a design paradigm used to reduce the overall number of  
 calculations that can occur in algorithms that use recursive algorithms.
@@ -27,9 +28,9 @@ This approach is near synonymous with another computer science term you may have
 
 There are two features that comprise memoization:
 
-- <span id="0b0b">The function is recursive.</span>
-- <span id="65a0">The additional data structure used is typically an object (we refer to this as  
-  the memo).</span>
+-   <span id="0b0b">The function is recursive.</span>
+-   <span id="65a0">The additional data structure used is typically an object (we refer to this as  
+    the memo).</span>
 
 This is a trade-off between the time it takes to run an algorithm (without  
 memoization) and the memory used to run the algorithm (with memoization).
@@ -66,17 +67,17 @@ value. That is, the keys will be arguments and their values will be the
 corresponding results returned. By using the memo, you are able to avoid  
 duplicate recursive calls!
 
-By the time your first call to `factorial(6) `returns, you will not have just the argument `6` stored in the memo. Rather, y**ou will have _all_ arguments 2 to 6 stored in the memo.**
+By the time your first call to `factorial(6)`returns, you will not have just the argument `6` stored in the memo. Rather, y**ou will have *all* arguments 2 to 6 stored in the memo.**
 
 Perhaps you’re not convinced because:
 
-- <span id="9fd5">You didn’t improve the speed of the algorithm by an order of Big-O (it is  
-  still O(n)).</span>
-- <span id="3867">The code uses some global variable, so it’s kind of ugly.</span>
+-   <span id="9fd5">You didn’t improve the speed of the algorithm by an order of Big-O (it is  
+    still O(n)).</span>
+-   <span id="3867">The code uses some global variable, so it’s kind of ugly.</span>
 
 ### Memoizing the Fibonacci generator
 
-Here’s a _naive_ implementation of a function that calculates the Fibonacci  
+Here’s a *naive* implementation of a function that calculates the Fibonacci  
 number for a given input.
 
     function fib(n) {
@@ -93,10 +94,10 @@ visualize the calls needed to do this with a tree. When reasoning about the time
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*fS_yOCDL-4NyBLyj.png" class="graf-image" /></figure>-   <span id="47ea">*n *, the height of this tree will be `n`. You derive this by following  
     the path going straight down the left side of the tree.</span>
 -   <span id="855a">each internal node leads to two more nodes. Overall, this means that the tree will have roughly 2n nodes.</span>
--   <span id="df50">which is the same as saying that the `fib `function has an exponential time complexity of 2n.</span>
+-   <span id="df50">which is the same as saying that the `fib`function has an exponential time complexity of 2n.</span>
 -   <span id="42df">That is very slow!</span>
 
-See for yourself, try running `fib(50)` - you'll be waiting for quite a lot longer than you’ve gotten used to waiting for a program to run in the last decade.
+See for yourself, try running `fib(50)` - you’ll be waiting for quite a lot longer than you’ve gotten used to waiting for a program to run in the last decade.
 
 The green regions highlighted above are repetitive.
 
@@ -127,7 +128,7 @@ rules you can use to memoize a slow algorithm:
 
 Here’s the solution to the aforementioned coin problem:
 
-_More content at_ <a href="http://plainenglish.io/" class="markup--anchor markup--p-anchor"><em>plainenglish.io</em></a>
+*More content at* <a href="http://plainenglish.io/" class="markup--anchor markup--p-anchor"><em>plainenglish.io</em></a>
 
 ### Discover More:
 

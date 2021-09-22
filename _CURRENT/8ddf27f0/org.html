@@ -1,132 +1,413 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Albert Krewinkel" />
-  <title>Org-mode features and differences</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Org-mode features and differences</h1>
-<p class="author">Albert Krewinkel</p>
-</header>
-<p>Pandoc’s handling of org files is similar to that of Emacs org-mode. This document aims to highlight the cases where this is not possible or just not the case yet.</p>
-<h1 id="export-options">Export options</h1>
-<p>The following export keywords are supported:</p>
-<ul>
-<li><p>AUTHOR: comma-separated list of author(s); fully supported.</p></li>
-<li><p>CREATOR: output generator; passed as plain-text metadata entry <code>creator</code>, but not used by any default templates.</p></li>
-<li><p>DATE: creation or publication date; well supported by pandoc.</p></li>
-<li><p>EMAIL: author email address; passed as plain-text metadata field <code>email</code>, but not used by any default templates.</p></li>
-<li><p>LANGUAGE: document language; included as plain-text metadata field <code>lang</code>. The value should be a <a href="https://tools.ietf.org/html/bcp47">BCP47 language tag</a>.</p></li>
-<li><p>SELECT_TAGS: tags which select a tree for export.</p></li>
-<li><p>EXCLUDE_TAGS: tags which prevent a subtree from being exported. Fully supported.</p></li>
-<li><p>TITLE: document title; fully supported.</p></li>
-<li><p>EXPORT_FILE_NAME: target filename; <em>unsupported</em>, the output defaults to stdout unless a target has to be given as a command line option.</p></li>
-</ul>
-<div class="alert alert-info">
-<p>Pandoc tries to be compatible with org-mode when exporting an org document. If you find some behavior confusing, please do refer to org-mode <a href="https://orgmode.org/manual/Export-Settings.html">Export-Settings</a> documentation. For example, a common confusion (<a href="https://github.com/jgm/pandoc/issues/3214" title="Problem with headers lower then 3 in org-mode reader">#3214</a>, <a href="https://github.com/jgm/pandoc/issues/5169%20%22org%20mode%20headings%20past%20level%20three%20converted%20to%20numbered%20outline%20list%22">#5169</a>, <a href="https://github.com/jgm/pandoc/issues/6145" title="Headers 4 levels deep render differently">#6145</a>, <a href="https://github.com/jgm/pandoc/issues/7236" title="In Org mode, Header with level &gt; 3 are not recognized as headers">#7236</a>) is treatment of headers with level &gt; 3 differently because org-mode sets <code>org-export-headline-levels</code> (configurable with <code>#+OPTIONS: H:3</code>) to 3 by default.</p>
-</div>
-<h2 id="format-specific-options">Format-specific options</h2>
-<p>Emacs Org-mode supports additional export options which work for specific export formats. Some of these options’ behavior differs in Org-mode depending on the output format, while pandoc is format-agnostic when parsing; differences are noted where they occur.</p>
-<ul>
-<li><p>DESCRIPTION: the document’s description; pandoc parses this option as text with markup into the <code>description</code> metadata field. The field is not used in default templates.</p>
-<p>Pandoc follows the LaTeX exporter in that it allows markup in the description. In contrast, the Org-mode HTML exporter treats the description as plain text.</p></li>
-<li><p>LATEX_HEADER and LATEX_HEADER_EXTRA: arbitrary lines to add to the document’s preamble. Contrary to Org-mode, these lines are not inserted before the hyperref settings, but close to the end of the preamble.</p>
-<p>The contents of this option are stored as a list of raw LaTeX lines in the <code>header-includes</code> metadata field.</p></li>
-<li><p>LATEX_CLASS: the LaTeX document class; like Org-mode, pandoc uses <code>article</code> as the default class.</p>
-<p>The contents of this option are stored as plain text in the <code>documentclass</code> metadata field.</p></li>
-<li><p>LATEX_CLASS_OPTIONS: Options for the LaTeX document class; fully supported.</p>
-<p>The contents of this option are stored as plain text in the <code>classoption</code> metadata field.</p></li>
-<li><p>SUBTITLE: the document’s subtitle; fully supported.</p>
-<p>The content of this option is stored as inlines in the <code>subtitle</code> metadata field.</p></li>
-<li><p>HTML_HEAD and HTML_HEAD_EXTRA: arbitrary lines to add to the HTML document’s head; fully supported.</p>
-<p>The contents of these options are stored as a list of raw HTML lines in the <code>header-includes</code> metadata field.</p></li>
-</ul>
-<h2 id="pandoc-specific-options">Pandoc-specific options</h2>
-<p>Pandoc recognizes some export options not used by Emacs Org.</p>
-<ul>
-<li><p>NOCITE: this field adds the listed citations to the bibliography, without the need to mention them to the text. The special value <code>@*</code> causes all available references to be added the bibliography.</p></li>
-<li><p>HEADER-INCLUDES: like HTML_HEAD and, LATEX_HEADER, but treats the option’s value as normal text with markup.</p></li>
-<li><p>INSTITUTE: Affiliation of the author; the value is read as text with markup and is stored in the <code>institute</code> metadata field. The field is included by default on the title slide of beamer presentations.</p></li>
-</ul>
-<h2 id="other-options">Other options</h2>
-<p>Any export option or directive not listed above has no effect when parsing with pandoc. However, the information is retained as a <em>raw block</em>. It can be accessed through a <a href="https://pandoc.org/filters.html">filter</a> and will be included in org output.</p>
-<h3 id="directives-as-metadata">Directives as metadata</h3>
-<p>As an example, we will restore an old behavior of pandoc versions prior to 2.10. Unknown keywords were treated as variable definitions, and were added the document’s metadata. Typing <code>#+key: value</code> in the org-file used to have the same effect as running pandoc with the <code>--metadata key=value</code> option.</p>
-<p>Since pandoc 2.10, each unhandled line starting with <code>#+</code> is kept internally as a raw block with format <code>org</code>. This block can be inspected and processed by a filter. Below is a <a href="https://pandoc.org/lua-filters.html">Lua filter</a> which converts these unhandled lines into metadata key-value pairs.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode lua"><code class="sourceCode lua"><a class="sourceLine" id="cb1-1" title="1"><span class="co">-- intermediate store for variables and their values</span></a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="author" content="Albert Krewinkel" />
+    <title>Org-mode features and differences</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <header id="title-block-header">
+      <h1 class="title">Org-mode features and differences</h1>
+      <p class="author">Albert Krewinkel</p>
+    </header>
+    <p>
+      Pandoc’s handling of org files is similar to that of Emacs org-mode. This
+      document aims to highlight the cases where this is not possible or just
+      not the case yet.
+    </p>
+    <h1 id="export-options">Export options</h1>
+    <p>The following export keywords are supported:</p>
+    <ul>
+      <li>
+        <p>AUTHOR: comma-separated list of author(s); fully supported.</p>
+      </li>
+      <li>
+        <p>
+          CREATOR: output generator; passed as plain-text metadata entry
+          <code>creator</code>, but not used by any default templates.
+        </p>
+      </li>
+      <li>
+        <p>DATE: creation or publication date; well supported by pandoc.</p>
+      </li>
+      <li>
+        <p>
+          EMAIL: author email address; passed as plain-text metadata field
+          <code>email</code>, but not used by any default templates.
+        </p>
+      </li>
+      <li>
+        <p>
+          LANGUAGE: document language; included as plain-text metadata field
+          <code>lang</code>. The value should be a
+          <a href="https://tools.ietf.org/html/bcp47">BCP47 language tag</a>.
+        </p>
+      </li>
+      <li><p>SELECT_TAGS: tags which select a tree for export.</p></li>
+      <li>
+        <p>
+          EXCLUDE_TAGS: tags which prevent a subtree from being exported. Fully
+          supported.
+        </p>
+      </li>
+      <li><p>TITLE: document title; fully supported.</p></li>
+      <li>
+        <p>
+          EXPORT_FILE_NAME: target filename; <em>unsupported</em>, the output
+          defaults to stdout unless a target has to be given as a command line
+          option.
+        </p>
+      </li>
+    </ul>
+    <div class="alert alert-info">
+      <p>
+        Pandoc tries to be compatible with org-mode when exporting an org
+        document. If you find some behavior confusing, please do refer to
+        org-mode
+        <a href="https://orgmode.org/manual/Export-Settings.html"
+          >Export-Settings</a
+        >
+        documentation. For example, a common confusion (<a
+          href="https://github.com/jgm/pandoc/issues/3214"
+          title="Problem with headers lower then 3 in org-mode reader"
+          >#3214</a
+        >,
+        <a
+          href="https://github.com/jgm/pandoc/issues/5169%20%22org%20mode%20headings%20past%20level%20three%20converted%20to%20numbered%20outline%20list%22"
+          >#5169</a
+        >,
+        <a
+          href="https://github.com/jgm/pandoc/issues/6145"
+          title="Headers 4 levels deep render differently"
+          >#6145</a
+        >,
+        <a
+          href="https://github.com/jgm/pandoc/issues/7236"
+          title="In Org mode, Header with level &gt; 3 are not recognized as headers"
+          >#7236</a
+        >) is treatment of headers with level &gt; 3 differently because
+        org-mode sets <code>org-export-headline-levels</code> (configurable with
+        <code>#+OPTIONS: H:3</code>) to 3 by default.
+      </p>
+    </div>
+    <h2 id="format-specific-options">Format-specific options</h2>
+    <p>
+      Emacs Org-mode supports additional export options which work for specific
+      export formats. Some of these options’ behavior differs in Org-mode
+      depending on the output format, while pandoc is format-agnostic when
+      parsing; differences are noted where they occur.
+    </p>
+    <ul>
+      <li>
+        <p>
+          DESCRIPTION: the document’s description; pandoc parses this option as
+          text with markup into the <code>description</code> metadata field. The
+          field is not used in default templates.
+        </p>
+        <p>
+          Pandoc follows the LaTeX exporter in that it allows markup in the
+          description. In contrast, the Org-mode HTML exporter treats the
+          description as plain text.
+        </p>
+      </li>
+      <li>
+        <p>
+          LATEX_HEADER and LATEX_HEADER_EXTRA: arbitrary lines to add to the
+          document’s preamble. Contrary to Org-mode, these lines are not
+          inserted before the hyperref settings, but close to the end of the
+          preamble.
+        </p>
+        <p>
+          The contents of this option are stored as a list of raw LaTeX lines in
+          the <code>header-includes</code> metadata field.
+        </p>
+      </li>
+      <li>
+        <p>
+          LATEX_CLASS: the LaTeX document class; like Org-mode, pandoc uses
+          <code>article</code> as the default class.
+        </p>
+        <p>
+          The contents of this option are stored as plain text in the
+          <code>documentclass</code> metadata field.
+        </p>
+      </li>
+      <li>
+        <p>
+          LATEX_CLASS_OPTIONS: Options for the LaTeX document class; fully
+          supported.
+        </p>
+        <p>
+          The contents of this option are stored as plain text in the
+          <code>classoption</code> metadata field.
+        </p>
+      </li>
+      <li>
+        <p>SUBTITLE: the document’s subtitle; fully supported.</p>
+        <p>
+          The content of this option is stored as inlines in the
+          <code>subtitle</code> metadata field.
+        </p>
+      </li>
+      <li>
+        <p>
+          HTML_HEAD and HTML_HEAD_EXTRA: arbitrary lines to add to the HTML
+          document’s head; fully supported.
+        </p>
+        <p>
+          The contents of these options are stored as a list of raw HTML lines
+          in the <code>header-includes</code> metadata field.
+        </p>
+      </li>
+    </ul>
+    <h2 id="pandoc-specific-options">Pandoc-specific options</h2>
+    <p>Pandoc recognizes some export options not used by Emacs Org.</p>
+    <ul>
+      <li>
+        <p>
+          NOCITE: this field adds the listed citations to the bibliography,
+          without the need to mention them to the text. The special value
+          <code>@*</code> causes all available references to be added the
+          bibliography.
+        </p>
+      </li>
+      <li>
+        <p>
+          HEADER-INCLUDES: like HTML_HEAD and, LATEX_HEADER, but treats the
+          option’s value as normal text with markup.
+        </p>
+      </li>
+      <li>
+        <p>
+          INSTITUTE: Affiliation of the author; the value is read as text with
+          markup and is stored in the <code>institute</code> metadata field. The
+          field is included by default on the title slide of beamer
+          presentations.
+        </p>
+      </li>
+    </ul>
+    <h2 id="other-options">Other options</h2>
+    <p>
+      Any export option or directive not listed above has no effect when parsing
+      with pandoc. However, the information is retained as a <em>raw block</em>.
+      It can be accessed through a
+      <a href="https://pandoc.org/filters.html">filter</a> and will be included
+      in org output.
+    </p>
+    <h3 id="directives-as-metadata">Directives as metadata</h3>
+    <p>
+      As an example, we will restore an old behavior of pandoc versions prior to
+      2.10. Unknown keywords were treated as variable definitions, and were
+      added the document’s metadata. Typing <code>#+key: value</code> in the
+      org-file used to have the same effect as running pandoc with the
+      <code>--metadata key=value</code> option.
+    </p>
+    <p>
+      Since pandoc 2.10, each unhandled line starting with <code>#+</code> is
+      kept internally as a raw block with format <code>org</code>. This block
+      can be inspected and processed by a filter. Below is a
+      <a href="https://pandoc.org/lua-filters.html">Lua filter</a> which
+      converts these unhandled lines into metadata key-value pairs.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode lua"
+      ><code class="sourceCode lua"><a class="sourceLine" id="cb1-1" title="1"><span class="co">-- intermediate store for variables and their values</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">local</span> variables <span class="op">=</span> <span class="op">{}</span></a>
 <a class="sourceLine" id="cb1-3" title="3"></a>
 <a class="sourceLine" id="cb1-4" title="4"><span class="co">--- Function called for each raw block element.</span></a>
@@ -147,69 +428,190 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-19" title="19">    meta<span class="op">[</span>name<span class="op">]</span> <span class="op">=</span> value</a>
 <a class="sourceLine" id="cb1-20" title="20">  <span class="cf">end</span></a>
 <a class="sourceLine" id="cb1-21" title="21">  <span class="cf">return</span> meta</a>
-<a class="sourceLine" id="cb1-22" title="22"><span class="cf">end</span></a></code></pre></div>
-<h1 id="citations">Citations</h1>
-<p>Emacs org-mode lacks an official citation syntax, leading to multiple syntaxes coexisting. Pandoc recognizes four different syntaxes for citations.</p>
-<p>Citation support for org-mode is enabled by default. Support can be toggled off by disabling the <code>citation</code> extension; e.g. <code>pandoc --from=org-citations</code>.</p>
-<h2 id="berkeley-style-citations">Berkeley-style citations</h2>
-<p>The semi-official Org-mode citation syntax was designed by Richard Lawrence with additions by contributors on the <a href="https://lists.gnu.org/archive/html/emacs-orgmode/2015-02/msg00932.html">emacs-orgmode mailing list</a>. It is based on John MacFarlane’s pandoc Markdown syntax. It’s dubbed Berkeley syntax due the place of activity of its creators, both philosophers at UC Berkeley.</p>
-<h3 id="simple-in-text-citation">Simple in-text citation</h3>
-<p>This is the simplest form of citation. It consists of the citation ID prefixed by ‘@’.</p>
-<p>Example:</p>
-<pre><code>@WatsonCrick1953 showed that DNA forms a double-helix.</code></pre>
-<h3 id="in-text-citation-list">In-text citation list</h3>
-<p>Citations presented in the text unparenthesized are called <em>in-text citations</em>. The syntax for these citations is</p>
-<pre><code>[cite: PREFIX; INDIVIDUAL-REFERENCE; ... INDIVIDUAL-REFERENCE; SUFFIX]</code></pre>
-<p>where the initial PREFIX and final SUFFIX are optional. At least one INDIVIDUAL-REFERENCE must be present. The colon and semicolons here are literal and indicate the end of the TAG and the end of a PREFIX or INDIVIDUAL-REFERENCE respectively.</p>
-<p>An INDIVIDUAL-REFERENCE has the format:</p>
-<pre><code>PREFIX KEY SUFFIX</code></pre>
-<p>The KEY is obligatory, and the prefix and suffix are optional.</p>
-<p>A PREFIX or SUFFIX is arbitrary text (except <code>;</code>, <code>]</code>, and citation keys).</p>
-<p>Example:</p>
-<pre><code>[cite: See; @Mandelkern1981; and @Watson1953]</code></pre>
-<h3 id="parenthetical-citation">Parenthetical citation</h3>
-<p>Citations surrounded by parentheses. The syntax is identical to in-text citations, except for the additional parentheses enclosing the initial <code>cite</code> tag.</p>
-<pre><code>[(cite): See; @Mandelkern1981; and @Watson1953]</code></pre>
-<h2 id="org-ref-citations">org-ref citations</h2>
-<p>The <a href="https://github.com/jkitchin/org-ref">org-ref</a> package by <a href="https://kitchingroup.cheme.cmu.edu/">John Kitchen</a> is in wide use to handle citations and has excellent tooling support in Emacs. Its citation syntax is geared towards users in the natural sciences but still very flexible regardless.</p>
-<pre><code>cite:doe_john_2000
+<a class="sourceLine" id="cb1-22" title="22"><span class="cf">end</span></a></code></pre>
+    </div>
+    <h1 id="citations">Citations</h1>
+    <p>
+      Emacs org-mode lacks an official citation syntax, leading to multiple
+      syntaxes coexisting. Pandoc recognizes four different syntaxes for
+      citations.
+    </p>
+    <p>
+      Citation support for org-mode is enabled by default. Support can be
+      toggled off by disabling the <code>citation</code> extension; e.g.
+      <code>pandoc --from=org-citations</code>.
+    </p>
+    <h2 id="berkeley-style-citations">Berkeley-style citations</h2>
+    <p>
+      The semi-official Org-mode citation syntax was designed by Richard
+      Lawrence with additions by contributors on the
+      <a
+        href="https://lists.gnu.org/archive/html/emacs-orgmode/2015-02/msg00932.html"
+        >emacs-orgmode mailing list</a
+      >. It is based on John MacFarlane’s pandoc Markdown syntax. It’s dubbed
+      Berkeley syntax due the place of activity of its creators, both
+      philosophers at UC Berkeley.
+    </p>
+    <h3 id="simple-in-text-citation">Simple in-text citation</h3>
+    <p>
+      This is the simplest form of citation. It consists of the citation ID
+      prefixed by ‘@’.
+    </p>
+    <p>Example:</p>
+    <pre><code>@WatsonCrick1953 showed that DNA forms a double-helix.</code></pre>
+    <h3 id="in-text-citation-list">In-text citation list</h3>
+    <p>
+      Citations presented in the text unparenthesized are called
+      <em>in-text citations</em>. The syntax for these citations is
+    </p>
+    <pre><code>[cite: PREFIX; INDIVIDUAL-REFERENCE; ... INDIVIDUAL-REFERENCE; SUFFIX]</code></pre>
+    <p>
+      where the initial PREFIX and final SUFFIX are optional. At least one
+      INDIVIDUAL-REFERENCE must be present. The colon and semicolons here are
+      literal and indicate the end of the TAG and the end of a PREFIX or
+      INDIVIDUAL-REFERENCE respectively.
+    </p>
+    <p>An INDIVIDUAL-REFERENCE has the format:</p>
+    <pre><code>PREFIX KEY SUFFIX</code></pre>
+    <p>The KEY is obligatory, and the prefix and suffix are optional.</p>
+    <p>
+      A PREFIX or SUFFIX is arbitrary text (except <code>;</code>,
+      <code>]</code>, and citation keys).
+    </p>
+    <p>Example:</p>
+    <pre><code>[cite: See; @Mandelkern1981; and @Watson1953]</code></pre>
+    <h3 id="parenthetical-citation">Parenthetical citation</h3>
+    <p>
+      Citations surrounded by parentheses. The syntax is identical to in-text
+      citations, except for the additional parentheses enclosing the initial
+      <code>cite</code> tag.
+    </p>
+    <pre><code>[(cite): See; @Mandelkern1981; and @Watson1953]</code></pre>
+    <h2 id="org-ref-citations">org-ref citations</h2>
+    <p>
+      The <a href="https://github.com/jkitchin/org-ref">org-ref</a> package by
+      <a href="https://kitchingroup.cheme.cmu.edu/">John Kitchen</a> is in wide
+      use to handle citations and has excellent tooling support in Emacs. Its
+      citation syntax is geared towards users in the natural sciences but still
+      very flexible regardless.
+    </p>
+    <pre><code>cite:doe_john_2000
 citep:doe_jane_1989
 [[citep:Dominik201408][See page 20 of::, for example]]</code></pre>
-<h2 id="pandoc-markdown-like-syntax">Pandoc-Markdown-like syntax</h2>
-<p>Historically, Markdown-style citations syntax was the first that was added to pandoc’s org reader. It is close to Markdown’s citation syntax.</p>
-<p>Citations go inside square brackets and are separated by semicolons. Each citation must have a key, composed of ‘@’ plus the citation identifier from the database, and may optionally have a prefix, a locator, and a suffix. The citation key must begin with a letter, digit, or <code>_</code>, and may contain alphanumerics, <code>_</code>, and internal punctuation characters (<code>:.#$%&amp;-+?&lt;&gt;~/</code>). Here are some examples:</p>
-<h3 id="simple-citation">Simple citation</h3>
-<p>The simplest method to insert a citation is to write the citation ID prefixed by ‘@’.</p>
-<p>Example:</p>
-<pre><code>[prefix @citekey suffix]
+    <h2 id="pandoc-markdown-like-syntax">Pandoc-Markdown-like syntax</h2>
+    <p>
+      Historically, Markdown-style citations syntax was the first that was added
+      to pandoc’s org reader. It is close to Markdown’s citation syntax.
+    </p>
+    <p>
+      Citations go inside square brackets and are separated by semicolons. Each
+      citation must have a key, composed of ‘@’ plus the citation identifier
+      from the database, and may optionally have a prefix, a locator, and a
+      suffix. The citation key must begin with a letter, digit, or
+      <code>_</code>, and may contain alphanumerics, <code>_</code>, and
+      internal punctuation characters (<code>:.#$%&amp;-+?&lt;&gt;~/</code>).
+      Here are some examples:
+    </p>
+    <h3 id="simple-citation">Simple citation</h3>
+    <p>
+      The simplest method to insert a citation is to write the citation ID
+      prefixed by ‘@’.
+    </p>
+    <p>Example:</p>
+    <pre><code>[prefix @citekey suffix]
 [see @doe2000 pp. 23-42]
 [@doe2000 p. 5; to a lesser extend @doe2005]</code></pre>
-<h2 id="latex-syntax">LaTeX-Syntax</h2>
-<p>Use normal latex citation commands like <code>\cite{x}</code> or <code>\citet{y}</code>.</p>
-<h1 id="tables">Tables</h1>
-<p>Pandoc supports normal org tables (sometimes called “pipe tables”) and grid tables (tables created by <a href="http://table.sourceforge.net/">table.el</a>).</p>
-<h2 id="column-widths">Column widths</h2>
-<p>Org mode tables don’t allow line-breaks within cells, and lines which contain text can get very long. This often leads to tables which run off the page when exporting, especially when exporting to PDF via LaTeX. Overlong lines in the source text are this is usually hidden by setting a <a href="https://orgmode.org/manual/Column-Width-and-Alignment.html">column width</a>, but the default Emacs exporters ignore that setting. Pandoc deviates from Emacs’s behavior and uses this information to resize the table columns when exporting.</p>
-<h2 id="limitations">Limitations</h2>
-<p>There is no support yet for cells spanning multiple columns or rows. The table.el grid tables allows rowspans and colspans and so does pandoc’s internal structure since 2.10, but the parser has not been updated yet.</p>
-<h1 id="emphasis-rules">Emphasis rules</h1>
-<p>Org-mode uses complex rules to decide whether a string represents emphasized text. In Emacs, this can be customized via the variable <code>org-emphasis-regexp-components</code>. A variable like this doesn’t fit well with pandoc’s model. Instead, it is possible to use special lines to change these values:</p>
-<pre><code>#+pandoc-emphasis-pre: &quot;-\t (&#39;\&quot;{&quot;
+    <h2 id="latex-syntax">LaTeX-Syntax</h2>
+    <p>
+      Use normal latex citation commands like <code>\cite{x}</code> or
+      <code>\citet{y}</code>.
+    </p>
+    <h1 id="tables">Tables</h1>
+    <p>
+      Pandoc supports normal org tables (sometimes called “pipe tables”) and
+      grid tables (tables created by
+      <a href="http://table.sourceforge.net/">table.el</a>).
+    </p>
+    <h2 id="column-widths">Column widths</h2>
+    <p>
+      Org mode tables don’t allow line-breaks within cells, and lines which
+      contain text can get very long. This often leads to tables which run off
+      the page when exporting, especially when exporting to PDF via LaTeX.
+      Overlong lines in the source text are this is usually hidden by setting a
+      <a href="https://orgmode.org/manual/Column-Width-and-Alignment.html"
+        >column width</a
+      >, but the default Emacs exporters ignore that setting. Pandoc deviates
+      from Emacs’s behavior and uses this information to resize the table
+      columns when exporting.
+    </p>
+    <h2 id="limitations">Limitations</h2>
+    <p>
+      There is no support yet for cells spanning multiple columns or rows. The
+      table.el grid tables allows rowspans and colspans and so does pandoc’s
+      internal structure since 2.10, but the parser has not been updated yet.
+    </p>
+    <h1 id="emphasis-rules">Emphasis rules</h1>
+    <p>
+      Org-mode uses complex rules to decide whether a string represents
+      emphasized text. In Emacs, this can be customized via the variable
+      <code>org-emphasis-regexp-components</code>. A variable like this doesn’t
+      fit well with pandoc’s model. Instead, it is possible to use special lines
+      to change these values:
+    </p>
+    <pre><code>#+pandoc-emphasis-pre: &quot;-\t (&#39;\&quot;{&quot;
 #+pandoc-emphasis-post: &quot;-\t\n .,:!?;&#39;\&quot;)}[&quot;</code></pre>
-<p>The above describes the default values of these variables. The arguments must be valid (Haskell) strings. If interpretation of the argument as string fails, the default is restored.</p>
-<p>Changing emphasis rules only affect the part of the document following the special lines. They must be some of the first lines to alter parsing behavior for the whole document. It is also possible to change the values temporarily for selected sections only. The string <code>test</code> in the following snippet will be read as emphasized text, while the rest of the document will be parsed using default emphasis rules:</p>
-<pre><code>#+pandoc-emphasis-pre: &quot;[&quot;
+    <p>
+      The above describes the default values of these variables. The arguments
+      must be valid (Haskell) strings. If interpretation of the argument as
+      string fails, the default is restored.
+    </p>
+    <p>
+      Changing emphasis rules only affect the part of the document following the
+      special lines. They must be some of the first lines to alter parsing
+      behavior for the whole document. It is also possible to change the values
+      temporarily for selected sections only. The string <code>test</code> in
+      the following snippet will be read as emphasized text, while the rest of
+      the document will be parsed using default emphasis rules:
+    </p>
+    <pre><code>#+pandoc-emphasis-pre: &quot;[&quot;
 #+pandoc-emphasis-post: &quot;]&quot;
 [/test/]
 #+pandoc-emphasis-pre:
 #+pandoc-emphasis-post:</code></pre>
-<h1 id="smart-extension"><code>smart</code> extension</h1>
-<p>Org-mode allows to insert certain characters via special character sequences. For example, instead of typing the Unicode /HORIZONTAL ELLISPIS/ character <code>…</code> by hand, one can instead type tree dots <code>...</code>. En dashes and em dashes can be written as <code>--</code> and <code>---</code> respectively. Furthermore, quotation marks (<code>"</code>) and apostrophe-quotes (<code>'</code>) can be treated in a “smart” way, potentially replacing them with proper, language specific unicode quotation characters.</p>
-<p>Like in Markdown, these behaviors can be turned on all-at-once by enabling the <code>smart</code> extension. However, disabling <code>smart</code> (the default) will <em>not</em> necessarily disable smart quotes and special strings. Instead, it will just result in the default Org mode behavior.</p>
-<p>The special string feature can be turned off via the <code>#+OPTIONS: -:nil</code> <a href="https://orgmode.org/manual/Export-Settings.html">export setting</a>. There are currently no command line flags which control these features. As a workaround, one can use process substitution, a feature supported by most shells. It allows to provide the options line on the command line:</p>
-<pre><code>pandoc -f org &lt;(printf &quot;#+OPTIONS: -:nil\n&quot;) …</code></pre>
-<h1 id="currently-unsupported-features">Currently unsupported features</h1>
-<h2 id="library-of-babel">Library of babel</h2>
-<p>The library of babel translates between various programming languages. This is out-of-scope for pandoc. Use Emacs to run code, then feed the resulting org file to pandoc.</p>
-</body>
+    <h1 id="smart-extension"><code>smart</code> extension</h1>
+    <p>
+      Org-mode allows to insert certain characters via special character
+      sequences. For example, instead of typing the Unicode /HORIZONTAL
+      ELLISPIS/ character <code>…</code> by hand, one can instead type tree dots
+      <code>...</code>. En dashes and em dashes can be written as
+      <code>--</code> and <code>---</code> respectively. Furthermore, quotation
+      marks (<code>"</code>) and apostrophe-quotes (<code>'</code>) can be
+      treated in a “smart” way, potentially replacing them with proper, language
+      specific unicode quotation characters.
+    </p>
+    <p>
+      Like in Markdown, these behaviors can be turned on all-at-once by enabling
+      the <code>smart</code> extension. However, disabling
+      <code>smart</code> (the default) will <em>not</em> necessarily disable
+      smart quotes and special strings. Instead, it will just result in the
+      default Org mode behavior.
+    </p>
+    <p>
+      The special string feature can be turned off via the
+      <code>#+OPTIONS: -:nil</code>
+      <a href="https://orgmode.org/manual/Export-Settings.html"
+        >export setting</a
+      >. There are currently no command line flags which control these features.
+      As a workaround, one can use process substitution, a feature supported by
+      most shells. It allows to provide the options line on the command line:
+    </p>
+    <pre><code>pandoc -f org &lt;(printf &quot;#+OPTIONS: -:nil\n&quot;) …</code></pre>
+    <h1 id="currently-unsupported-features">Currently unsupported features</h1>
+    <h2 id="library-of-babel">Library of babel</h2>
+    <p>
+      The library of babel translates between various programming languages.
+      This is out-of-scope for pandoc. Use Emacs to run code, then feed the
+      resulting org file to pandoc.
+    </p>
+  </body>
 </html>

@@ -51,15 +51,16 @@ and released under a [Creative Commons] license. (If you use the book,
 please consider [buying a copy] to help support his excellent work.)
 
 You can find the markdown source for the book on its
-[github site].  Let's get a copy of the whole repository:[^1]
+[github site]. Let's get a copy of the whole repository:[^1]
 
     git clone https://github.com/progit/progit.git
 
-[^1]: If you don't have [git], you can browse to the [github site] and
-click "Download Source" to get the same files in a zip or tar archive.
+[^1]:
+    If you don't have [git], you can browse to the [github site] and
+    click "Download Source" to get the same files in a zip or tar archive.
 
 This command will create a working directory called `progit` on
-your machine.  The actual markdown sources for the English version
+your machine. The actual markdown sources for the English version
 of the book are in the `en` subdirectory, so start by changing
 to that directory:
 
@@ -76,7 +77,7 @@ The actual image file is called `18333fig0101-tn.png` and lives in
 the `figures` subdirectory of the repository, as you can verify.
 
 For demonstration purposes, we want pure markdown files, so let's
-change this placeholder into a markdown image link.  Pandoc will
+change this placeholder into a markdown image link. Pandoc will
 treat a paragraph containing a single image as a figure with
 a caption, which is what we want:
 
@@ -92,7 +93,7 @@ This will modify the files in place. (We won't worry about backing
 them up; if we mess up, we can get the original files back with
 `git reset --hard`.)
 
-OK! Now we're almost ready to make an ebook.  We have the chapters,
+OK! Now we're almost ready to make an ebook. We have the chapters,
 each in its own file, but we still need a title. Create a file,
 `title.txt`, with a pandoc YAML metadata block:
 
@@ -122,12 +123,12 @@ chapter files as sources:
       08-git-and-other-scms/01-chapter8.markdown \
       09-git-internals/01-chapter9.markdown
 
-That's it!  The ebook, `progit.epub`, is ready to be uploaded to your reader.
+That's it! The ebook, `progit.epub`, is ready to be uploaded to your reader.
 
 ## Changing the format
 
 You can use the `--css` option to specify a CSS file
-for the book.  The default CSS is minimal and can be found
+for the book. The default CSS is minimal and can be found
 [on GitHub](https://github.com/jgm/pandoc/blob/master/data/epub.css)
 or in the `epub.css` file in your data directory
 (see `--data-dir` in the [User's Guide]).
@@ -137,7 +138,7 @@ under `--epub-embed-font` for instructions.
 
 ## Math
 
-Pandoc has an EPUB3 writer.  It renders LaTeX math into MathML, which
+Pandoc has an EPUB3 writer. It renders LaTeX math into MathML, which
 EPUB3 readers are supposed to support (but unfortunately few do).
 
 Of course, this isn't much help if you want EPUB2 output (`pandoc -t epub2`)
@@ -149,15 +150,14 @@ or target readers that don't support MathML. Then you have two options:
     to convert maths into SVG images on your local machine.
 
 Both GladTeX and WebTeX add the LaTeX source of the formula as alternative text
-of the image,  increasing accessibility for blind users.
+of the image, increasing accessibility for blind users.
 
-[KindleGen]: https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211
-[EPUB]:  https://en.wikipedia.org/wiki/EPUB
-[Pro Git]: https://git-scm.com/book/en/v2
-[Creative Commons]: https://creativecommons.org/
+[kindlegen]: https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211
+[epub]: https://en.wikipedia.org/wiki/EPUB
+[pro git]: https://git-scm.com/book/en/v2
+[creative commons]: https://creativecommons.org/
 [buying a copy]: https://git-scm.com/book/en/v2
 [github site]: https://github.com/progit/progit
 [git]: https://git-scm.com
-[Dublin Core metadata elements]: https://dublincore.org/documents/dces/
-[User's Guide]: https://pandoc.org/MANUAL.html
-
+[dublin core metadata elements]: https://dublincore.org/documents/dces/
+[user's guide]: https://pandoc.org/MANUAL.html

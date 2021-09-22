@@ -1,96 +1,248 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="John MacFarlane" />
-  <title>Pandoc filters</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Pandoc filters</h1>
-<p class="author">John MacFarlane</p>
-</header>
-<h1 id="summary">Summary</h1>
-<p>Pandoc provides an interface for users to write programs (known as filters) which act on pandoc’s AST.</p>
-<p>Pandoc consists of a set of readers and writers. When converting a document from one format to another, text is parsed by a reader into pandoc’s intermediate representation of the document—an “abstract syntax tree” or AST—which is then converted by the writer into the target format. The pandoc AST format is defined in the module <a href="https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Definition.html"><code>Text.Pandoc.Definition</code> in the <code>pandoc-types</code> package</a>.</p>
-<p>A “filter” is a program that modifies the AST, between the reader and the writer.</p>
-<pre><code>INPUT --reader--&gt; AST --filter--&gt; AST --writer--&gt; OUTPUT</code></pre>
-<p>Pandoc supports two kinds of filters:</p>
-<ul>
-<li><p><strong>Lua filters</strong> use the Lua language to define transformations on the pandoc AST. They are described in a <a href="lua-filters.html">separate document</a>.</p></li>
-<li><p><strong>JSON filters</strong>, described here, are pipes that read from standard input and write to standard output, consuming and producing a JSON representation of the pandoc AST:</p>
-<pre><code>                       source format
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="author" content="John MacFarlane" />
+    <title>Pandoc filters</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <header id="title-block-header">
+      <h1 class="title">Pandoc filters</h1>
+      <p class="author">John MacFarlane</p>
+    </header>
+    <h1 id="summary">Summary</h1>
+    <p>
+      Pandoc provides an interface for users to write programs (known as
+      filters) which act on pandoc’s AST.
+    </p>
+    <p>
+      Pandoc consists of a set of readers and writers. When converting a
+      document from one format to another, text is parsed by a reader into
+      pandoc’s intermediate representation of the document—an “abstract syntax
+      tree” or AST—which is then converted by the writer into the target format.
+      The pandoc AST format is defined in the module
+      <a
+        href="https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Definition.html"
+        ><code>Text.Pandoc.Definition</code> in the
+        <code>pandoc-types</code> package</a
+      >.
+    </p>
+    <p>
+      A “filter” is a program that modifies the AST, between the reader and the
+      writer.
+    </p>
+    <pre><code>INPUT --reader--&gt; AST --filter--&gt; AST --writer--&gt; OUTPUT</code></pre>
+    <p>Pandoc supports two kinds of filters:</p>
+    <ul>
+      <li>
+        <p>
+          <strong>Lua filters</strong> use the Lua language to define
+          transformations on the pandoc AST. They are described in a
+          <a href="lua-filters.html">separate document</a>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>JSON filters</strong>, described here, are pipes that read
+          from standard input and write to standard output, consuming and
+          producing a JSON representation of the pandoc AST:
+        </p>
+        <pre><code>                       source format
                             ↓
                          (pandoc)
                             ↓
@@ -102,38 +254,85 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
                             ↓
                          (pandoc)
                             ↓
-                      target format</code></pre></li>
-</ul>
-<p>Lua filters have a couple of advantages. They use a Lua interpreter that is embedded in pandoc, so you don’t need to have any external software installed. And they are usually faster than JSON filters. But if you wish to write your filter in a language other than Lua, you may prefer to use a JSON filter. JSON filters may be written in any programming language.</p>
-<p>You can use a JSON filter directly in a pipeline:</p>
-<pre><code>pandoc -s input.txt -t json | \
+                      target format</code></pre>
+      </li>
+    </ul>
+    <p>
+      Lua filters have a couple of advantages. They use a Lua interpreter that
+      is embedded in pandoc, so you don’t need to have any external software
+      installed. And they are usually faster than JSON filters. But if you wish
+      to write your filter in a language other than Lua, you may prefer to use a
+      JSON filter. JSON filters may be written in any programming language.
+    </p>
+    <p>You can use a JSON filter directly in a pipeline:</p>
+    <pre><code>pandoc -s input.txt -t json | \
  pandoc-citeproc | \
  pandoc -s -f json -o output.html</code></pre>
-<p>But it is more convenient to use the <code>--filter</code> option, which handles the plumbing automatically:</p>
-<pre><code>pandoc -s input.txt --filter pandoc-citeproc -o output.html</code></pre>
-<p>For a gentle introduction into writing your own filters, continue this guide. There’s also a <a href="https://github.com/jgm/pandoc/wiki/Pandoc-Filters">list of third party filters on the wiki</a>.</p>
-<h1 id="a-simple-example">A simple example</h1>
-<p>Suppose you wanted to replace all level 2+ headings in a markdown document with regular paragraphs, with text in italics. How would you go about doing this?</p>
-<p>A first thought would be to use regular expressions. Something like this:</p>
-<pre><code>perl -pe &#39;s/^##+ (.*)$/\*\1\*/&#39; source.txt</code></pre>
-<p>This should work most of the time. But don’t forget that ATX style headings can end with a sequence of <code>#</code>s that is not part of the heading text:</p>
-<pre><code>## My heading ##</code></pre>
-<p>And what if your document contains a line starting with <code>##</code> in an HTML comment or delimited code block?</p>
-<pre><code>&lt;!--
+    <p>
+      But it is more convenient to use the <code>--filter</code> option, which
+      handles the plumbing automatically:
+    </p>
+    <pre><code>pandoc -s input.txt --filter pandoc-citeproc -o output.html</code></pre>
+    <p>
+      For a gentle introduction into writing your own filters, continue this
+      guide. There’s also a
+      <a href="https://github.com/jgm/pandoc/wiki/Pandoc-Filters"
+        >list of third party filters on the wiki</a
+      >.
+    </p>
+    <h1 id="a-simple-example">A simple example</h1>
+    <p>
+      Suppose you wanted to replace all level 2+ headings in a markdown document
+      with regular paragraphs, with text in italics. How would you go about
+      doing this?
+    </p>
+    <p>
+      A first thought would be to use regular expressions. Something like this:
+    </p>
+    <pre><code>perl -pe &#39;s/^##+ (.*)$/\*\1\*/&#39; source.txt</code></pre>
+    <p>
+      This should work most of the time. But don’t forget that ATX style
+      headings can end with a sequence of <code>#</code>s that is not part of
+      the heading text:
+    </p>
+    <pre><code>## My heading ##</code></pre>
+    <p>
+      And what if your document contains a line starting with <code>##</code> in
+      an HTML comment or delimited code block?
+    </p>
+    <pre><code>&lt;!--
 ## This is just a comment
 --&gt;
 
 ~~~~
 ### A third level heading in standard markdown
 ~~~~</code></pre>
-<p>We don’t want to touch <em>these</em> lines. Moreover, what about Setext style second-level heading?</p>
-<pre><code>A heading
+    <p>
+      We don’t want to touch <em>these</em> lines. Moreover, what about Setext
+      style second-level heading?
+    </p>
+    <pre><code>A heading
 ---------</code></pre>
-<p>We need to handle those too. Finally, can we be sure that adding asterisks to each side of our string will put it in italics? What if the string already contains asterisks around it? Then we’ll end up with bold text, which is not what we want. And what if it contains a regular unescaped asterisk?</p>
-<p>How would you modify your regular expression to handle these cases? It would be hairy, to say the least.</p>
-<p>A better approach is to let pandoc handle the parsing, and then modify the AST before the document is written. For this, we can use a filter.</p>
-<p>To see what sort of AST is produced when pandoc parses our text, we can use pandoc’s <code>native</code> output format:</p>
-<pre><code>% cat test.txt
+    <p>
+      We need to handle those too. Finally, can we be sure that adding asterisks
+      to each side of our string will put it in italics? What if the string
+      already contains asterisks around it? Then we’ll end up with bold text,
+      which is not what we want. And what if it contains a regular unescaped
+      asterisk?
+    </p>
+    <p>
+      How would you modify your regular expression to handle these cases? It
+      would be hairy, to say the least.
+    </p>
+    <p>
+      A better approach is to let pandoc handle the parsing, and then modify the
+      AST before the document is written. For this, we can use a filter.
+    </p>
+    <p>
+      To see what sort of AST is produced when pandoc parses our text, we can
+      use pandoc’s <code>native</code> output format:
+    </p>
+    <pre><code>% cat test.txt
 ## my heading
 
 text with *italics*
@@ -141,9 +340,27 @@ text with *italics*
 Pandoc (Meta {unMeta = fromList []})
 [Header 2 (&quot;my-heading&quot;,[],[]) [Str &quot;My&quot;,Space,Str &quot;heading&quot;]
 , Para [Str &quot;text&quot;,Space,Str &quot;with&quot;,Space,Emph [Str &quot;italics&quot;]] ]</code></pre>
-<p>A <code>Pandoc</code> document consists of a <code>Meta</code> block (containing metadata like title, authors, and date) and a list of <code>Block</code> elements. In this case, we have two <code>Block</code>s, a <code>Header</code> and a <code>Para</code>. Each has as its content a list of <code>Inline</code> elements. For more details on the pandoc AST, see the <a href="https://hackage.haskell.org/package/pandoc-types">haddock documentation for <code>Text.Pandoc.Definition</code></a>.</p>
-<p>We can use Haskell to create a JSON filter that transforms this AST, replacing each <code>Header</code> block with level &gt;= 2 with a <code>Para</code> with its contents wrapped inside an <code>Emph</code> inline:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb10-1" title="1"><span class="pp">#!/usr/bin/env runhaskell</span></a>
+    <p>
+      A <code>Pandoc</code> document consists of a <code>Meta</code> block
+      (containing metadata like title, authors, and date) and a list of
+      <code>Block</code> elements. In this case, we have two
+      <code>Block</code>s, a <code>Header</code> and a <code>Para</code>. Each
+      has as its content a list of <code>Inline</code> elements. For more
+      details on the pandoc AST, see the
+      <a href="https://hackage.haskell.org/package/pandoc-types"
+        >haddock documentation for <code>Text.Pandoc.Definition</code></a
+      >.
+    </p>
+    <p>
+      We can use Haskell to create a JSON filter that transforms this AST,
+      replacing each <code>Header</code> block with level &gt;= 2 with a
+      <code>Para</code> with its contents wrapped inside an
+      <code>Emph</code> inline:
+    </p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb10-1" title="1"><span class="pp">#!/usr/bin/env runhaskell</span></a>
 <a class="sourceLine" id="cb10-2" title="2"><span class="co">-- behead.hs</span></a>
 <a class="sourceLine" id="cb10-3" title="3"><span class="kw">import</span> <span class="dt">Text.Pandoc.JSON</span></a>
 <a class="sourceLine" id="cb10-4" title="4"></a>
@@ -152,33 +369,80 @@ Pandoc (Meta {unMeta = fromList []})
 <a class="sourceLine" id="cb10-7" title="7"></a>
 <a class="sourceLine" id="cb10-8" title="8"><span class="ot">behead ::</span> <span class="dt">Block</span> <span class="ot">-&gt;</span> <span class="dt">Block</span></a>
 <a class="sourceLine" id="cb10-9" title="9">behead (<span class="dt">Header</span> n _ xs) <span class="op">|</span> n <span class="op">&gt;=</span> <span class="dv">2</span> <span class="ot">=</span> <span class="dt">Para</span> [<span class="dt">Emph</span> xs]</a>
-<a class="sourceLine" id="cb10-10" title="10">behead x <span class="ot">=</span> x</a></code></pre></div>
-<p>The <code>toJSONFilter</code> function does two things. First, it lifts the <code>behead</code> function (which maps <code>Block -&gt; Block</code>) onto a transformation of the entire <code>Pandoc</code> AST, walking the AST and transforming each block. Second, it wraps this <code>Pandoc -&gt; Pandoc</code> transformation with the necessary JSON serialization and deserialization, producing an executable that consumes JSON from stdin and produces JSON to stdout.</p>
-<p>To use the filter, make it executable:</p>
-<pre><code>chmod +x behead.hs</code></pre>
-<p>and then</p>
-<pre><code>pandoc -f SOURCEFORMAT -t TARGETFORMAT --filter ./behead.hs</code></pre>
-<p>(It is also necessary that <code>pandoc-types</code> be installed in the local package repository. To do this using cabal-install, <code>cabal v2-update &amp;&amp; cabal v2-install --lib pandoc-types</code>.)</p>
-<p>Alternatively, we could compile the filter:</p>
-<pre><code>ghc -package-env=default --make behead.hs
+<a class="sourceLine" id="cb10-10" title="10">behead x <span class="ot">=</span> x</a></code></pre>
+    </div>
+    <p>
+      The <code>toJSONFilter</code> function does two things. First, it lifts
+      the <code>behead</code> function (which maps
+      <code>Block -&gt; Block</code>) onto a transformation of the entire
+      <code>Pandoc</code> AST, walking the AST and transforming each block.
+      Second, it wraps this <code>Pandoc -&gt; Pandoc</code> transformation with
+      the necessary JSON serialization and deserialization, producing an
+      executable that consumes JSON from stdin and produces JSON to stdout.
+    </p>
+    <p>To use the filter, make it executable:</p>
+    <pre><code>chmod +x behead.hs</code></pre>
+    <p>and then</p>
+    <pre><code>pandoc -f SOURCEFORMAT -t TARGETFORMAT --filter ./behead.hs</code></pre>
+    <p>
+      (It is also necessary that <code>pandoc-types</code> be installed in the
+      local package repository. To do this using cabal-install,
+      <code>cabal v2-update &amp;&amp; cabal v2-install --lib pandoc-types</code
+      >.)
+    </p>
+    <p>Alternatively, we could compile the filter:</p>
+    <pre><code>ghc -package-env=default --make behead.hs
 pandoc -f SOURCEFORMAT -t TARGETFORMAT --filter ./behead</code></pre>
-<p>Note that if the filter is placed in the system PATH, then the initial <code>./</code> is not needed. Note also that the command line can include multiple instances of <code>--filter</code>: the filters will be applied in sequence.</p>
-<h1 id="latex-for-wordpress">LaTeX for WordPress</h1>
-<p>Another easy example. WordPress blogs require a special format for LaTeX math. Instead of <code>$e=mc^2$</code>, you need: <code>$LaTeX e=mc^2$</code>. How can we convert a markdown document accordingly?</p>
-<p>Again, it’s difficult to do the job reliably with regexes. A <code>$</code> might be a regular currency indicator, or it might occur in a comment or code block or inline code span. We just want to find the <code>$</code>s that begin LaTeX math. If only we had a parser…</p>
-<p>We do. Pandoc already extracts LaTeX math, so:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb14-1" title="1"><span class="pp">#!/usr/bin/env runhaskell</span></a>
+    <p>
+      Note that if the filter is placed in the system PATH, then the initial
+      <code>./</code> is not needed. Note also that the command line can include
+      multiple instances of <code>--filter</code>: the filters will be applied
+      in sequence.
+    </p>
+    <h1 id="latex-for-wordpress">LaTeX for WordPress</h1>
+    <p>
+      Another easy example. WordPress blogs require a special format for LaTeX
+      math. Instead of <code>$e=mc^2$</code>, you need:
+      <code>$LaTeX e=mc^2$</code>. How can we convert a markdown document
+      accordingly?
+    </p>
+    <p>
+      Again, it’s difficult to do the job reliably with regexes. A
+      <code>$</code> might be a regular currency indicator, or it might occur in
+      a comment or code block or inline code span. We just want to find the
+      <code>$</code>s that begin LaTeX math. If only we had a parser…
+    </p>
+    <p>We do. Pandoc already extracts LaTeX math, so:</p>
+    <div class="sourceCode" id="cb14">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb14-1" title="1"><span class="pp">#!/usr/bin/env runhaskell</span></a>
 <a class="sourceLine" id="cb14-2" title="2"><span class="co">-- wordpressify.hs</span></a>
 <a class="sourceLine" id="cb14-3" title="3"><span class="kw">import</span> <span class="dt">Text.Pandoc.JSON</span></a>
 <a class="sourceLine" id="cb14-4" title="4"></a>
 <a class="sourceLine" id="cb14-5" title="5">main <span class="ot">=</span> toJSONFilter wordpressify</a>
 <a class="sourceLine" id="cb14-6" title="6">  <span class="kw">where</span> wordpressify (<span class="dt">Math</span> x y) <span class="ot">=</span> <span class="dt">Math</span> x (<span class="st">&quot;LaTeX &quot;</span> <span class="op">++</span> y)</a>
-<a class="sourceLine" id="cb14-7" title="7">        wordpressify x <span class="ot">=</span> x</a></code></pre></div>
-<p>Mission accomplished. (I’ve omitted type signatures here, just to show it can be done.)</p>
-<h1 id="but-i-dont-want-to-learn-haskell">But I don’t want to learn Haskell!</h1>
-<p>While it’s easiest to write pandoc filters in Haskell, it is fairly easy to write them in python using the <code>pandocfilters</code> package. The package is in PyPI and can be installed using <code>pip install pandocfilters</code> or <code>easy_install pandocfilters</code>.</p>
-<p>Here’s our “beheading” filter in python:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="co">#!/usr/bin/env python</span></a>
+<a class="sourceLine" id="cb14-7" title="7">        wordpressify x <span class="ot">=</span> x</a></code></pre>
+    </div>
+    <p>
+      Mission accomplished. (I’ve omitted type signatures here, just to show it
+      can be done.)
+    </p>
+    <h1 id="but-i-dont-want-to-learn-haskell">
+      But I don’t want to learn Haskell!
+    </h1>
+    <p>
+      While it’s easiest to write pandoc filters in Haskell, it is fairly easy
+      to write them in python using the <code>pandocfilters</code> package. The
+      package is in PyPI and can be installed using
+      <code>pip install pandocfilters</code> or
+      <code>easy_install pandocfilters</code>.
+    </p>
+    <p>Here’s our “beheading” filter in python:</p>
+    <div class="sourceCode" id="cb15">
+      <pre
+        class="sourceCode python"
+      ><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="co">#!/usr/bin/env python</span></a>
 <a class="sourceLine" id="cb15-2" title="2"></a>
 <a class="sourceLine" id="cb15-3" title="3"><span class="co">&quot;&quot;&quot;</span></a>
 <a class="sourceLine" id="cb15-4" title="4"><span class="co">Pandoc filter to convert all level 2+ headings to paragraphs with</span></a>
@@ -192,26 +456,74 @@ pandoc -f SOURCEFORMAT -t TARGETFORMAT --filter ./behead</code></pre>
 <a class="sourceLine" id="cb15-12" title="12">    <span class="cf">return</span> Para([Emph(value[<span class="dv">2</span>])])</a>
 <a class="sourceLine" id="cb15-13" title="13"></a>
 <a class="sourceLine" id="cb15-14" title="14"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</a>
-<a class="sourceLine" id="cb15-15" title="15">  toJSONFilter(behead)</a></code></pre></div>
-<p><code>toJSONFilter(behead)</code> walks the AST and applies the <code>behead</code> action to each element. If <code>behead</code> returns nothing, the node is unchanged; if it returns an object, the node is replaced; if it returns a list, the new list is spliced in.</p>
-<p>Note that, although these parameters are not used in this example, <code>format</code> provides access to the target format, and <code>meta</code> provides access to the document’s metadata.</p>
-<p>There are many examples of python filters in <a href="https://github.com/jgm/pandocfilters">the pandocfilters repository</a>.</p>
-<p>For a more Pythonic alternative to pandocfilters, see the <a href="https://pypi.org/project/panflute">panflute</a> library. Don’t like Python? There are also ports of pandocfilters in</p>
-<ul>
-<li><a href="https://github.com/vinai/pandocfilters-php">PHP</a>,</li>
-<li><a href="https://metacpan.org/pod/Pandoc::Filter">perl</a>,</li>
-<li>TypeScript/JavaScript via Node.js
-<ul>
-<li><a href="https://github.com/mvhenderson/pandoc-filter-node">pandoc-filter</a>,</li>
-<li><a href="https://github.com/mu-io/node-pandoc-filter">node-pandoc-filter</a>,</li>
-</ul></li>
-<li><a href="https://github.com/dfrommi/groovy-pandoc">Groovy</a>, and</li>
-<li><a href="https://heerdebeer.org/Software/markdown/paru/">Ruby</a>.</li>
-</ul>
-<p>Starting with pandoc 2.0, pandoc includes built-in support for writing filters in lua. The lua interpreter is built in to pandoc, so a lua filter does not require any additional software to run. See the <a href="https://pandoc.org/lua-filters.html">documentation on lua filters</a>.</p>
-<h1 id="include-files">Include files</h1>
-<p>So none of our transforms have involved IO. How about a script that reads a markdown document, finds all the inline code blocks with attribute <code>include</code>, and replaces their contents with the contents of the file given?</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb16-1" title="1"><span class="pp">#!/usr/bin/env runhaskell</span></a>
+<a class="sourceLine" id="cb15-15" title="15">  toJSONFilter(behead)</a></code></pre>
+    </div>
+    <p>
+      <code>toJSONFilter(behead)</code> walks the AST and applies the
+      <code>behead</code> action to each element. If <code>behead</code> returns
+      nothing, the node is unchanged; if it returns an object, the node is
+      replaced; if it returns a list, the new list is spliced in.
+    </p>
+    <p>
+      Note that, although these parameters are not used in this example,
+      <code>format</code> provides access to the target format, and
+      <code>meta</code> provides access to the document’s metadata.
+    </p>
+    <p>
+      There are many examples of python filters in
+      <a href="https://github.com/jgm/pandocfilters"
+        >the pandocfilters repository</a
+      >.
+    </p>
+    <p>
+      For a more Pythonic alternative to pandocfilters, see the
+      <a href="https://pypi.org/project/panflute">panflute</a> library. Don’t
+      like Python? There are also ports of pandocfilters in
+    </p>
+    <ul>
+      <li><a href="https://github.com/vinai/pandocfilters-php">PHP</a>,</li>
+      <li><a href="https://metacpan.org/pod/Pandoc::Filter">perl</a>,</li>
+      <li>
+        TypeScript/JavaScript via Node.js
+        <ul>
+          <li>
+            <a href="https://github.com/mvhenderson/pandoc-filter-node"
+              >pandoc-filter</a
+            >,
+          </li>
+          <li>
+            <a href="https://github.com/mu-io/node-pandoc-filter"
+              >node-pandoc-filter</a
+            >,
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://github.com/dfrommi/groovy-pandoc">Groovy</a>, and
+      </li>
+      <li>
+        <a href="https://heerdebeer.org/Software/markdown/paru/">Ruby</a>.
+      </li>
+    </ul>
+    <p>
+      Starting with pandoc 2.0, pandoc includes built-in support for writing
+      filters in lua. The lua interpreter is built in to pandoc, so a lua filter
+      does not require any additional software to run. See the
+      <a href="https://pandoc.org/lua-filters.html"
+        >documentation on lua filters</a
+      >.
+    </p>
+    <h1 id="include-files">Include files</h1>
+    <p>
+      So none of our transforms have involved IO. How about a script that reads
+      a markdown document, finds all the inline code blocks with attribute
+      <code>include</code>, and replaces their contents with the contents of the
+      file given?
+    </p>
+    <div class="sourceCode" id="cb16">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb16-1" title="1"><span class="pp">#!/usr/bin/env runhaskell</span></a>
 <a class="sourceLine" id="cb16-2" title="2"><span class="co">-- includes.hs</span></a>
 <a class="sourceLine" id="cb16-3" title="3"><span class="kw">import</span> <span class="dt">Text.Pandoc.JSON</span></a>
 <a class="sourceLine" id="cb16-4" title="4"><span class="kw">import</span> <span class="kw">qualified</span> <span class="dt">Data.Text.IO</span> <span class="kw">as</span> <span class="dt">TIO</span></a>
@@ -226,16 +538,23 @@ pandoc -f SOURCEFORMAT -t TARGETFORMAT --filter ./behead</code></pre>
 <a class="sourceLine" id="cb16-13" title="13">doInclude x <span class="ot">=</span> <span class="fu">return</span> x</a>
 <a class="sourceLine" id="cb16-14" title="14"></a>
 <a class="sourceLine" id="cb16-15" title="15"><span class="ot">main ::</span> <span class="dt">IO</span> ()</a>
-<a class="sourceLine" id="cb16-16" title="16">main <span class="ot">=</span> toJSONFilter doInclude</a></code></pre></div>
-<p>Try this on the following:</p>
-<pre><code>Here&#39;s the pandoc README:
+<a class="sourceLine" id="cb16-16" title="16">main <span class="ot">=</span> toJSONFilter doInclude</a></code></pre>
+    </div>
+    <p>Try this on the following:</p>
+    <pre><code>Here&#39;s the pandoc README:
 
 ~~~~ {include=&quot;README&quot;}
 this will be replaced by contents of README
 ~~~~</code></pre>
-<h1 id="removing-links">Removing links</h1>
-<p>What if we want to remove every link from a document, retaining the link’s text?</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb18-1" title="1"><span class="pp">#!/usr/bin/env runhaskell</span></a>
+    <h1 id="removing-links">Removing links</h1>
+    <p>
+      What if we want to remove every link from a document, retaining the link’s
+      text?
+    </p>
+    <div class="sourceCode" id="cb18">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb18-1" title="1"><span class="pp">#!/usr/bin/env runhaskell</span></a>
 <a class="sourceLine" id="cb18-2" title="2"><span class="co">-- delink.hs</span></a>
 <a class="sourceLine" id="cb18-3" title="3"><span class="kw">import</span> <span class="dt">Text.Pandoc.JSON</span></a>
 <a class="sourceLine" id="cb18-4" title="4"></a>
@@ -243,21 +562,65 @@ this will be replaced by contents of README
 <a class="sourceLine" id="cb18-6" title="6"></a>
 <a class="sourceLine" id="cb18-7" title="7"><span class="ot">delink ::</span> <span class="dt">Inline</span> <span class="ot">-&gt;</span> [<span class="dt">Inline</span>]</a>
 <a class="sourceLine" id="cb18-8" title="8">delink (<span class="dt">Link</span> _ txt _) <span class="ot">=</span> txt</a>
-<a class="sourceLine" id="cb18-9" title="9">delink x              <span class="ot">=</span> [x]</a></code></pre></div>
-<p>Note that <code>delink</code> can’t be a function of type <code>Inline -&gt; Inline</code>, because the thing we want to replace the link with is not a single <code>Inline</code> element, but a list of them. So we make <code>delink</code> a function from an <code>Inline</code> element to a list of <code>Inline</code> elements. <code>toJSONFilter</code> can still lift this function to a transformation of type <code>Pandoc -&gt; Pandoc</code>.</p>
-<h1 id="a-filter-for-ruby-text">A filter for ruby text</h1>
-<p>Finally, here’s a nice real-world example, developed on the <a href="https://groups.google.com/group/pandoc-discuss/browse_thread/thread/7baea325565878c8">pandoc-discuss</a> list. Qubyte wrote:</p>
-<blockquote>
-<p>I’m interested in using pandoc to turn my markdown notes on Japanese into nicely set HTML and (Xe)LaTeX. With HTML5, ruby (typically used to phonetically read chinese characters by placing text above or to the side) is standard, and support from browsers is emerging (Webkit based browsers appear to fully support it). For those browsers that don’t support it yet (notably Firefox) the feature falls back in a nice way by placing the phonetic reading inside brackets to the side of each Chinese character, which is suitable for other output formats too. As for (Xe)LaTeX, ruby is not an issue.</p>
-<p>At the moment, I use inline HTML to achieve the result when the conversion is to HTML, but it’s ugly and uses a lot of keystrokes, for example</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">&lt;ruby&gt;</span>ご<span class="kw">&lt;rt&gt;&lt;/rt&gt;</span>飯<span class="kw">&lt;rp&gt;</span>（&lt;/rp&gt;<span class="kw">&lt;rt&gt;</span>はん<span class="kw">&lt;/rt&gt;&lt;rp&gt;</span>）&lt;/rp&gt;<span class="kw">&lt;/ruby&gt;</span></a></code></pre></div>
-<p>sets ご飯 “gohan” with “han” spelt phonetically above the second character, or to the right of it in brackets if the browser does not support ruby. I’d like to have something more like</p>
-<pre><code>r[はん](飯)</code></pre>
-<p>or any keystroke saving convention would be welcome.</p>
-</blockquote>
-<p>We came up with the following script, which uses the convention that a markdown link with a URL beginning with a hyphen is interpreted as ruby:</p>
-<pre><code>[はん](-飯)</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb22-1" title="1"><span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></a>
+<a class="sourceLine" id="cb18-9" title="9">delink x              <span class="ot">=</span> [x]</a></code></pre>
+    </div>
+    <p>
+      Note that <code>delink</code> can’t be a function of type
+      <code>Inline -&gt; Inline</code>, because the thing we want to replace the
+      link with is not a single <code>Inline</code> element, but a list of them.
+      So we make <code>delink</code> a function from an
+      <code>Inline</code> element to a list of <code>Inline</code> elements.
+      <code>toJSONFilter</code> can still lift this function to a transformation
+      of type <code>Pandoc -&gt; Pandoc</code>.
+    </p>
+    <h1 id="a-filter-for-ruby-text">A filter for ruby text</h1>
+    <p>
+      Finally, here’s a nice real-world example, developed on the
+      <a
+        href="https://groups.google.com/group/pandoc-discuss/browse_thread/thread/7baea325565878c8"
+        >pandoc-discuss</a
+      >
+      list. Qubyte wrote:
+    </p>
+    <blockquote>
+      <p>
+        I’m interested in using pandoc to turn my markdown notes on Japanese
+        into nicely set HTML and (Xe)LaTeX. With HTML5, ruby (typically used to
+        phonetically read chinese characters by placing text above or to the
+        side) is standard, and support from browsers is emerging (Webkit based
+        browsers appear to fully support it). For those browsers that don’t
+        support it yet (notably Firefox) the feature falls back in a nice way by
+        placing the phonetic reading inside brackets to the side of each Chinese
+        character, which is suitable for other output formats too. As for
+        (Xe)LaTeX, ruby is not an issue.
+      </p>
+      <p>
+        At the moment, I use inline HTML to achieve the result when the
+        conversion is to HTML, but it’s ugly and uses a lot of keystrokes, for
+        example
+      </p>
+      <div class="sourceCode" id="cb19">
+        <pre
+          class="sourceCode xml"
+        ><code class="sourceCode xml"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">&lt;ruby&gt;</span>ご<span class="kw">&lt;rt&gt;&lt;/rt&gt;</span>飯<span class="kw">&lt;rp&gt;</span>（&lt;/rp&gt;<span class="kw">&lt;rt&gt;</span>はん<span class="kw">&lt;/rt&gt;&lt;rp&gt;</span>）&lt;/rp&gt;<span class="kw">&lt;/ruby&gt;</span></a></code></pre>
+      </div>
+      <p>
+        sets ご飯 “gohan” with “han” spelt phonetically above the second
+        character, or to the right of it in brackets if the browser does not
+        support ruby. I’d like to have something more like
+      </p>
+      <pre><code>r[はん](飯)</code></pre>
+      <p>or any keystroke saving convention would be welcome.</p>
+    </blockquote>
+    <p>
+      We came up with the following script, which uses the convention that a
+      markdown link with a URL beginning with a hyphen is interpreted as ruby:
+    </p>
+    <pre><code>[はん](-飯)</code></pre>
+    <div class="sourceCode" id="cb22">
+      <pre
+        class="sourceCode haskell"
+      ><code class="sourceCode haskell"><a class="sourceLine" id="cb22-1" title="1"><span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></a>
 <a class="sourceLine" id="cb22-2" title="2"><span class="co">-- handleruby.hs</span></a>
 <a class="sourceLine" id="cb22-3" title="3"><span class="kw">import</span> <span class="dt">Text.Pandoc.JSON</span></a>
 <a class="sourceLine" id="cb22-4" title="4"><span class="kw">import</span> <span class="dt">System.Environment</span> (getArgs)</a>
@@ -277,14 +640,21 @@ this will be replaced by contents of README
 <a class="sourceLine" id="cb22-18" title="18">handleRuby _ x <span class="ot">=</span> x</a>
 <a class="sourceLine" id="cb22-19" title="19"></a>
 <a class="sourceLine" id="cb22-20" title="20"><span class="ot">main ::</span> <span class="dt">IO</span> ()</a>
-<a class="sourceLine" id="cb22-21" title="21">main <span class="ot">=</span> toJSONFilter handleRuby</a></code></pre></div>
-<p>Note that, when a script is called using <code>--filter</code>, pandoc passes it the target format as the first argument. When a function’s first argument is of type <code>Maybe Format</code>, <code>toJSONFilter</code> will automatically assign it <code>Just</code> the target format or <code>Nothing</code>.</p>
-<p>We compile our script:</p>
-<pre><code># first, make sure pandoc-types is installed:
+<a class="sourceLine" id="cb22-21" title="21">main <span class="ot">=</span> toJSONFilter handleRuby</a></code></pre>
+    </div>
+    <p>
+      Note that, when a script is called using <code>--filter</code>, pandoc
+      passes it the target format as the first argument. When a function’s first
+      argument is of type <code>Maybe Format</code>,
+      <code>toJSONFilter</code> will automatically assign it
+      <code>Just</code> the target format or <code>Nothing</code>.
+    </p>
+    <p>We compile our script:</p>
+    <pre><code># first, make sure pandoc-types is installed:
 cabal install --lib pandoc-types --package-env .
 ghc --make handleRuby</code></pre>
-<p>Then run it:</p>
-<pre><code>% pandoc -F ./handleRuby -t html
+    <p>Then run it:</p>
+    <pre><code>% pandoc -F ./handleRuby -t html
 [はん](-飯)
 ^D
 &lt;p&gt;&lt;ruby&gt;飯&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;はん&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;/p&gt;
@@ -292,100 +662,145 @@ ghc --make handleRuby</code></pre>
 [はん](-飯)
 ^D
 \ruby{飯}{はん}</code></pre>
-<p>Note: to use this to generate PDFs via LaTeX, you’ll need to use <code>--pdf-engine=xelatex</code>, specify a <code>mainfont</code> that has the Japanese characters (e.g. “Noto Sans CJK TC”), and add <code>\usepackage{ruby}</code> to your template or header-includes.</p>
-<h1 id="exercises">Exercises</h1>
-<ol type="1">
-<li><p>Put all the regular text in a markdown document in ALL CAPS (without touching text in URLs or link titles).</p></li>
-<li><p>Remove all horizontal rules from a document.</p></li>
-<li><p>Renumber all enumerated lists with roman numerals.</p></li>
-<li><p>Replace each delimited code block with class <code>dot</code> with an image generated by running <code>dot -Tpng</code> (from graphviz) on the contents of the code block.</p></li>
-<li><p>Find all code blocks with class <code>python</code> and run them using the python interpreter, printing the results to the console.</p></li>
-</ol>
-<h1 id="technical-details-of-json-filters">Technical details of JSON filters</h1>
-<p>A JSON filter is any program which can consume and produce a valid pandoc JSON document representation. This section describes the technical details surrounding the invocation of filters.</p>
-<h2 id="arguments">Arguments</h2>
-<p>The program will always be called with the target format as the only argument. A pandoc invocation like</p>
-<pre><code>pandoc --filter demo --to=html</code></pre>
-<p>will cause pandoc to call the program <code>demo</code> with argument <code>html</code>.</p>
-<h2 id="environment-variables">Environment variables</h2>
-<p>Pandoc sets additional environment variables before calling a filter.</p>
-<dl>
-<dt><code>PANDOC_VERSION</code></dt>
-<dd>The version of the pandoc binary used to process the document. Example: <code>2.11.1</code>.
-</dd>
-<dt><code>PANDOC_READER_OPTIONS</code></dt>
-<dd><p>JSON object representation of the options passed to the input parser.</p>
-<p>Object fields:</p>
-<dl>
-<dt><code>readerAbbreviations</code></dt>
-<dd>set of known abbreviations (array of strings).
-</dd>
-<dt><code>readerColumns</code></dt>
-<dd>number of columns in terminal; an integer.
-</dd>
-<dt><code>readerDefaultImageExtension</code></dt>
-<dd>default extension for images; a string.
-</dd>
-<dt><code>readerExtensions</code></dt>
-<dd>integer representation of the syntax extensions bit field.
-</dd>
-<dt><code>readerIndentedCodeClasses</code></dt>
-<dd>default classes for indented code blocks; array of strings.
-</dd>
-<dt><code>readerStandalone</code></dt>
-<dd>whether the input was a standalone document with header; either <code>true</code> or <code>false</code>.
-</dd>
-<dt><code>readerStripComments</code></dt>
-<dd>HTML comments are stripped instead of parsed as raw HTML; either <code>true</code> or <code>false</code>.
-</dd>
-<dt><code>readerTabStop</code></dt>
-<dd>width (i.e. equivalent number of spaces) of tab stops; integer.
-</dd>
-<dt><code>readerTrackChanges</code></dt>
-<dd>track changes setting for docx; one of <code>"accept-changes"</code>, <code>"reject-changes"</code>, and <code>"all-changes"</code>.
-</dd>
-</dl>
-</dd>
-</dl>
-<h2 id="supported-interpreters">Supported interpreters</h2>
-<p>Files passed to the <code>--filter</code>/<code>-F</code> parameter are expected to be executable. However, if the executable bit is not set, then pandoc tries to guess a suitable interpreter from the file extension.</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">file extension</th>
-<th style="text-align: left;">interpreter</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">.py</td>
-<td style="text-align: left;"><code>python</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">.hs</td>
-<td style="text-align: left;"><code>runhaskell</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">.pl</td>
-<td style="text-align: left;"><code>perl</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">.rb</td>
-<td style="text-align: left;"><code>ruby</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">.php</td>
-<td style="text-align: left;"><code>php</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">.js</td>
-<td style="text-align: left;"><code>node</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">.r</td>
-<td style="text-align: left;"><code>Rscript</code></td>
-</tr>
-</tbody>
-</table>
-</body>
+    <p>
+      Note: to use this to generate PDFs via LaTeX, you’ll need to use
+      <code>--pdf-engine=xelatex</code>, specify a <code>mainfont</code> that
+      has the Japanese characters (e.g. “Noto Sans CJK TC”), and add
+      <code>\usepackage{ruby}</code> to your template or header-includes.
+    </p>
+    <h1 id="exercises">Exercises</h1>
+    <ol type="1">
+      <li>
+        <p>
+          Put all the regular text in a markdown document in ALL CAPS (without
+          touching text in URLs or link titles).
+        </p>
+      </li>
+      <li><p>Remove all horizontal rules from a document.</p></li>
+      <li><p>Renumber all enumerated lists with roman numerals.</p></li>
+      <li>
+        <p>
+          Replace each delimited code block with class <code>dot</code> with an
+          image generated by running <code>dot -Tpng</code> (from graphviz) on
+          the contents of the code block.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find all code blocks with class <code>python</code> and run them using
+          the python interpreter, printing the results to the console.
+        </p>
+      </li>
+    </ol>
+    <h1 id="technical-details-of-json-filters">
+      Technical details of JSON filters
+    </h1>
+    <p>
+      A JSON filter is any program which can consume and produce a valid pandoc
+      JSON document representation. This section describes the technical details
+      surrounding the invocation of filters.
+    </p>
+    <h2 id="arguments">Arguments</h2>
+    <p>
+      The program will always be called with the target format as the only
+      argument. A pandoc invocation like
+    </p>
+    <pre><code>pandoc --filter demo --to=html</code></pre>
+    <p>
+      will cause pandoc to call the program <code>demo</code> with argument
+      <code>html</code>.
+    </p>
+    <h2 id="environment-variables">Environment variables</h2>
+    <p>Pandoc sets additional environment variables before calling a filter.</p>
+    <dl>
+      <dt><code>PANDOC_VERSION</code></dt>
+      <dd>
+        The version of the pandoc binary used to process the document. Example:
+        <code>2.11.1</code>.
+      </dd>
+      <dt><code>PANDOC_READER_OPTIONS</code></dt>
+      <dd>
+        <p>
+          JSON object representation of the options passed to the input parser.
+        </p>
+        <p>Object fields:</p>
+        <dl>
+          <dt><code>readerAbbreviations</code></dt>
+          <dd>set of known abbreviations (array of strings).</dd>
+          <dt><code>readerColumns</code></dt>
+          <dd>number of columns in terminal; an integer.</dd>
+          <dt><code>readerDefaultImageExtension</code></dt>
+          <dd>default extension for images; a string.</dd>
+          <dt><code>readerExtensions</code></dt>
+          <dd>integer representation of the syntax extensions bit field.</dd>
+          <dt><code>readerIndentedCodeClasses</code></dt>
+          <dd>default classes for indented code blocks; array of strings.</dd>
+          <dt><code>readerStandalone</code></dt>
+          <dd>
+            whether the input was a standalone document with header; either
+            <code>true</code> or <code>false</code>.
+          </dd>
+          <dt><code>readerStripComments</code></dt>
+          <dd>
+            HTML comments are stripped instead of parsed as raw HTML; either
+            <code>true</code> or <code>false</code>.
+          </dd>
+          <dt><code>readerTabStop</code></dt>
+          <dd>
+            width (i.e. equivalent number of spaces) of tab stops; integer.
+          </dd>
+          <dt><code>readerTrackChanges</code></dt>
+          <dd>
+            track changes setting for docx; one of
+            <code>"accept-changes"</code>, <code>"reject-changes"</code>, and
+            <code>"all-changes"</code>.
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+    <h2 id="supported-interpreters">Supported interpreters</h2>
+    <p>
+      Files passed to the <code>--filter</code>/<code>-F</code> parameter are
+      expected to be executable. However, if the executable bit is not set, then
+      pandoc tries to guess a suitable interpreter from the file extension.
+    </p>
+    <table>
+      <thead>
+        <tr class="header">
+          <th style="text-align: left">file extension</th>
+          <th style="text-align: left">interpreter</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td style="text-align: left">.py</td>
+          <td style="text-align: left"><code>python</code></td>
+        </tr>
+        <tr class="even">
+          <td style="text-align: left">.hs</td>
+          <td style="text-align: left"><code>runhaskell</code></td>
+        </tr>
+        <tr class="odd">
+          <td style="text-align: left">.pl</td>
+          <td style="text-align: left"><code>perl</code></td>
+        </tr>
+        <tr class="even">
+          <td style="text-align: left">.rb</td>
+          <td style="text-align: left"><code>ruby</code></td>
+        </tr>
+        <tr class="odd">
+          <td style="text-align: left">.php</td>
+          <td style="text-align: left"><code>php</code></td>
+        </tr>
+        <tr class="even">
+          <td style="text-align: left">.js</td>
+          <td style="text-align: left"><code>node</code></td>
+        </tr>
+        <tr class="odd">
+          <td style="text-align: left">.r</td>
+          <td style="text-align: left"><code>Rscript</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>

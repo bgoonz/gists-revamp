@@ -1,33 +1,24 @@
-// --------------------------- install node packages --------------------------- \\
+// ————————— install node packages ————————— \\
 
-// initial project initilization and generation of package.json file
-npm init
+// initial project initilization and generation of package.json file npm init
 
-// install without dependency in package.json file
-npm install grunt
+// install without dependency in package.json file npm install grunt
 
-// install with adding dependency in package.json file
-npm install grunt --save
+// install with adding dependency in package.json file npm install grunt –save
 
-// install with adding development dependency in package.json file
-npm install grunt --save-dev
+// install with adding development dependency in package.json file npm install grunt –save-dev
 
-// install ejs templating engine
-npm install ejs --save
+// install ejs templating engine npm install ejs –save
 
-// --------------------------- install/switch nodejs versions --------------------------- \\
+// ————————— install/switch nodejs versions ————————— \\
 
-// check nodejs version
-node --version
+// check nodejs version node –version
 
-// install specific version of nodejs
-nvm install 0.12
+// install specific version of nodejs nvm install 0.12
 
-// activate specific version of nodejs
-nvm use 0.10
+// activate specific version of nodejs nvm use 0.10
 
-// make specific nodejs version default
-nvm alias default 0.12
+// make specific nodejs version default nvm alias default 0.12
 
 //install express framework  
-npm install express --save
+npm install express –save

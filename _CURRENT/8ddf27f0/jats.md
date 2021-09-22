@@ -5,18 +5,17 @@ author: Albert Krewinkel
 
 This document describes pandoc's handling of JATS.
 
-Metadata Values
-===============
+# Metadata Values
 
 `abstract`
-:   Article summary. Added via the document's front matter via the
-    [`<abstract>`][elem:abstract] element.
+: Article summary. Added via the document's front matter via the
+[`<abstract>`][elem:abstract] element.
 
 `author`
-:   list of article contributors. Each author should have a surname
-    and a given name listed in the entry; if the author has no
-    `surname` value, then the item will be used as the contributors
-    [`string-name`][elem:string-name].
+: list of article contributors. Each author should have a surname
+and a given name listed in the entry; if the author has no
+`surname` value, then the item will be used as the contributors
+[`string-name`][elem:string-name].
 
     `orcid`
     :   the contributor's ORCID identifier.
@@ -67,9 +66,9 @@ Metadata Values
         `<ID>` is the stringified value of this attribute.
 
 `affiliation`
-:   the list of organizations with which contributors are
-    affiliated. Each institution is added as an [`<aff>`] element to
-    the author's contrib-group.
+: the list of organizations with which contributors are
+affiliated. Each institution is added as an [`<aff>`] element to
+the author's contrib-group.
 
     The fields are given in the order in which they are included in
     the output.
@@ -141,8 +140,8 @@ Metadata Values
         (if the latter is present).
 
 `copyright`
-:   Licensing and copyright information. This information is
-    rendered via the [`<permissions>`][elem:permissions] element.
+: Licensing and copyright information. This information is
+rendered via the [`<permissions>`][elem:permissions] element.
 
     The variables `type`, `link`, and `text` should always be used
     together.
@@ -173,10 +172,10 @@ Metadata Values
         `xlink:href` attribute in the `<license>` element.
 
 `date`
-:   publication date. This value should usually be a string
-    representation of a date. Pandoc will parse and deconstruct the
-    date into the components given below. It is also possible to
-    pass these components directly.
+: publication date. This value should usually be a string
+representation of a date. Pandoc will parse and deconstruct the
+date into the components given below. It is also possible to
+pass these components directly.
 
     The publication date is recorded in the document via the
     [`<pub-date>`] element and its sub-elements. The
@@ -206,9 +205,9 @@ Metadata Values
         specified.
 
 `article`
-:   information concerning the article that identifies or describes
-    it. The key-value pairs within this map are typically used
-    within the [`<article-meta>`][elem:article-meta] element.
+: information concerning the article that identifies or describes
+it. The key-value pairs within this map are typically used
+within the [`<article-meta>`][elem:article-meta] element.
 
     `publisher-id`
     :   external article identifier assigned by the publisher. Used
@@ -280,9 +279,9 @@ Metadata Values
         [`funding-statement`][elem:funding-statement] element.
 
 `journal`
-:   information on the journal in which the article is published.
-    This must be a map; the following key/value pairs are
-    recognized.
+: information on the journal in which the article is published.
+This must be a map; the following key/value pairs are
+recognized.
 
     `publisher-id`
     :   journal identifier assigned by the publisher. Used as
@@ -333,17 +332,16 @@ Metadata Values
         [`<publisher-loc>`][elem:publisher-loc] element.
 
 `notes`
-:   Additional notes concerning the whole article. Added to the
-    article's frontmatter via the [`<notes>`][elem:notes] element.
+: Additional notes concerning the whole article. Added to the
+article's frontmatter via the [`<notes>`][elem:notes] element.
 
 `tags`
-:   list of keywords. Items are used as contents of the
-    [`<kwd>`][elem:kwd] element; the elements are grouped in a
-    [`<kwd-group>`][elem:kwd-group] with the
-    [`kwd-group-type`][attr:kwd-group-type] value `author`.
+: list of keywords. Items are used as contents of the
+[`<kwd>`][elem:kwd] element; the elements are grouped in a
+[`<kwd-group>`][elem:kwd-group] with the
+[`kwd-group-type`][attr:kwd-group-type] value `author`.
 
-Required Metadata
------------------
+## Required Metadata
 
 Pandoc will try to generate a valid JATS document even when
 information is missing, filling in placeholders or using empty
@@ -359,7 +357,7 @@ Required metadata values:
   `journal.pmc`.
 - One or more of `journal.pissn`, `journal.eissn`.
 
-[Ringgold]: https://ringgold.com/
+[ringgold]: https://ringgold.com/
 [attr:content-type]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/attribute/content-type.html
 [attr:date-type]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/attribute/date-type.html
 [attr:equal-contrib]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/attribute/equal-contrib.html
@@ -402,7 +400,6 @@ Required metadata values:
 [elem:subject]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/subject.html
 [elem:surname]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/surname.html
 [elem:xref]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/xref.html
-
 [`<addr-line>`]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/addr-line.html
 [`<aff>`]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/aff.html
 [`<city>`]: https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/city.html
