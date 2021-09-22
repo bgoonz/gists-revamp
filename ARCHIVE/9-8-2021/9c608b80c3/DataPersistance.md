@@ -6,7 +6,7 @@
 
 ## A **database is a collection of data organized for easy retrieval and manipulation**.
 
- We're concerned only with digital databases, those that run on computers or other electronic devices. Digital databases have been around since the 1960s. Relational databases, those which store "related" data, are the oldest and most common type of database in use today.
+We're concerned only with digital databases, those that run on computers or other electronic devices. Digital databases have been around since the 1960s. Relational databases, those which store "related" data, are the oldest and most common type of database in use today.
 
 ### **Data Persistence**
 
@@ -40,7 +40,7 @@ These kinds of databases are relational because a *relation* is a mathematical
 
 SQL is a standard language, which means that it almost certainly will be supported, no matter how your database is managed. That said, be aware that the SQL language can vary depending on database management tools. This lesson focuses on a set of core commands that never change. Learning the standard commands is an excellent introduction since the knowledge transfers between database products.
 
-The syntax for SQL is English-like and requires fewer symbols than programming languages like C, Java, and JavaScript. 
+The syntax for SQL is English-like and requires fewer symbols than programming languages like C, Java, and JavaScript.
 
 It is declarative and concise, which means there is a lot less to learn to use it effectively.
 
@@ -687,14 +687,12 @@ This command will generate a file in your root folder called `knexfile.js`. It 
 
 ```js
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    client: "sqlite3",
     connection: {
-      filename: './dev.sqlite3'
-    }
-  }
-
+      filename: "./dev.sqlite3",
+    },
+  },
 };
 ```
 
@@ -702,27 +700,25 @@ We'll need to update the location (or desired location) of the database as well 
 
 ```js
 module.exports = {
-
   development: {
     // our DBMS driver
-    client: 'sqlite3',
+    client: "sqlite3",
     // the location of our db
     connection: {
-      filename: './data/database_file.db3',
+      filename: "./data/database_file.db3",
     },
     // necessary when using sqlite3
-    useNullAsDefault: true
-  }
-
+    useNullAsDefault: true,
+  },
 };
 ```
 
 Now, wherever we configure our database, we may use the following syntax instead of hardcoding in a config object.
 
 ```js
-const knex = require('knex');
+const knex = require("knex");
 
-const config = require('../knexfile.js');
+const config = require("../knexfile.js");
 
 // we must select the development object from our knexfile
 const db = knex(config.development);
@@ -762,21 +758,21 @@ Note that inside `data/migrations/` a new file has appeared. Migrations have a
 The migration file should have both an `up` and a `down` function. Within the `up` function, we write the ended database changes. Within the `down` function, we write the code to undo the `up` functions. This allows us to undo any changes made to the schema if necessary.
 
 ```js
-exports.up = function(knex, Promise) {
+exports.up = function (knex, Promise) {
   // don't forget the return statement
-  return knex.schema.createTable('accounts', tbl => {
+  return knex.schema.createTable("accounts", (tbl) => {
     // creates a primary key called id
     tbl.increments();
     // creates a text field called name which is both required and unique
-    tbl.text('name', 128).unique().notNullable();
+    tbl.text("name", 128).unique().notNullable();
     // creates a numeric field called budget which is required
-    tbl.decimal('budget').notNullable();
+    tbl.decimal("budget").notNullable();
   });
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function (knex, Promise) {
   // drops the entire table
-  return knex.schema.dropTableIfExists('accounts');
+  return knex.schema.dropTableIfExists("accounts");
 };
 ```
 
@@ -844,15 +840,16 @@ We want to create seeds for our accounts table:
 A file will appear in the designated seed folder.
 
 ```js
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // we want to remove all data before seeding
   // truncate will reset the primary key each time
-  return knex('accounts').truncate()
+  return knex("accounts")
+    .truncate()
     .then(function () {
       // add data into insert
-      return knex('accounts').insert([
-        { name: 'Stephenson', budget: 10000 },
-        { name: 'Gordon & Gale', budget: 40400 },
+      return knex("accounts").insert([
+        { name: "Stephenson", budget: 10000 },
+        { name: "Gordon & Gale", budget: 40400 },
       ]);
     });
 };
@@ -907,7 +904,7 @@ select * from employees
 join departments on employees.department_id = departments.id
 ```
 
-This query will return the data from both tables for every instance where the `ON` condition is true. If there are employees with no value for department*id or where the value stored in the field does not correspond to an existing id in the* departments *table, then that record will NOT be returned. In a similar fashion, any records from the* departments *table that don't have an employee associated with them will also be omitted from the results. Basically, if the* id* does not show as the value of department_id for an employee, it won't be able to join.
+This query will return the data from both tables for every instance where the `ON` condition is true. If there are employees with no value for department*id or where the value stored in the field does not correspond to an existing id in the* departments *table, then that record will NOT be returned. In a similar fashion, any records from the* departments *table that don't have an employee associated with them will also be omitted from the results. Basically, if the* id\* does not show as the value of department_id for an employee, it won't be able to join.
 
 We can shorten the condition by giving the table names an alias. This is a common practice. Below is the same example using aliases, picking which fields to return and sorting the results:
 
@@ -926,9 +923,9 @@ There are several ways of writing joins, but the one shown here should work on a
 The syntax for performing a similar join using Knex is as follows:
 
 ```js
-db('employees as e')
-  .join('departments as d', 'e.department_id', 'd.id')
-  .select('d.id', 'd.name', 'e.first_name', 'e.last_name', 'e.salary')
+db("employees as e")
+  .join("departments as d", "e.department_id", "d.id")
+  .select("d.id", "d.name", "e.first_name", "e.last_name", "e.salary");
 ```
 
 ## **Follow Along**
@@ -956,11 +953,11 @@ JOIN keeps the base tables (structure and data) unchanged.
 
 The are two types of SQL JOINS - EQUI JOIN and NON EQUI JOIN
 
-1) SQL EQUI JOIN :
+1. SQL EQUI JOIN :
 
 The SQL EQUI JOIN is a simple SQL join uses the equal sign(=) as the comparison operator for the condition. It has two types - SQL Outer join and SQL Inner join.
 
-2) SQL NON EQUI JOIN :
+2. SQL NON EQUI JOIN :
 
 The **SQL NON EQUI JOIN** is a join uses comparison operator other than the equal sign like >, <, >=, <= with the condition.
 
@@ -1055,27 +1052,22 @@ While we can write database code directly into our endpoints, best practices dic
 To handle CRUD operations for a single resource, we would want to create a **model** (or database access file) containing the following methods:
 
 ```js
-function find() {
-}
+function find() {}
 
-function findById(id) {
-}
+function findById(id) {}
 
-function add(user) {
-}
+function add(user) {}
 
-function update(changes, id) {
-}
+function update(changes, id) {}
 
-function remove(id) {
-}
+function remove(id) {}
 ```
 
 Each of these functions would use Knex logic to perform the necessary database operation.
 
 ```js
 function find() {
-  return db('users');
+  return db("users");
 }
 ```
 
@@ -1092,8 +1084,9 @@ We can also use existing methods like `findById()` to help `add()` return th
 
 ```js
 function add(user) {
-  db('users').insert(user)
-    .then(ids => {
+  db("users")
+    .insert(user)
+    .then((ids) => {
       return findById(ids[0]);
     });
 }
@@ -1288,25 +1281,27 @@ development: {
 Let's look at how we might track our `farms` and `ranchers` using Knex. In our migration file's `up` function, we would want to create two tables:
 
 ```js
-exports.up = function(knex, Promise) {
-  return knex.schema
-    .createTable('farms', tbl => {
-      tbl.increments();
-      tbl.string('farm_name', 128)
-        .notNullable();
-    })
-    // we can chain together createTable
-    .createTable('ranchers', tbl => {
-      tbl.increments();
-      tbl.string('rancher_name', 128);
-      tbl.integer('farm_id')
-        // forces integer to be positive
-        .unsigned()
-        .notNullable()
-        .references('id')
-        // this table must exist already
-        .inTable('farms')
-    })
+exports.up = function (knex, Promise) {
+  return (
+    knex.schema
+      .createTable("farms", (tbl) => {
+        tbl.increments();
+        tbl.string("farm_name", 128).notNullable();
+      })
+      // we can chain together createTable
+      .createTable("ranchers", (tbl) => {
+        tbl.increments();
+        tbl.string("rancher_name", 128);
+        tbl
+          .integer("farm_id")
+          // forces integer to be positive
+          .unsigned()
+          .notNullable()
+          .references("id")
+          // this table must exist already
+          .inTable("farms");
+      })
+  );
 };
 ```
 
@@ -1315,11 +1310,9 @@ Note that the foreign key can only be created *after* the reference table.
 In the down function, the opposite is true. We always want to drop a table with a foreign key *before* dropping the table it references.
 
 ```js
-exports.down = function(knex, Promise) {
+exports.down = function (knex, Promise) {
   // drop in the opposite order
-  return knex.schema
-    .dropTableIfExists('ranchers')
-    .dropTableIfExists('farms')
+  return knex.schema.dropTableIfExists("ranchers").dropTableIfExists("farms");
 };
 ```
 
