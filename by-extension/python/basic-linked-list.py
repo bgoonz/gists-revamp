@@ -1,3 +1,11 @@
+
+# 1. Create a linked list with three nodes.
+# 2. Iterate through the linked list and print the value of each node.
+# 3. Insert a new node with value of 5 between the secondNode and thirdNode.
+# 4. Remove the node with value of 5.
+
+
+
 class ListNode:
     def _init_(self, val):
         self.val = val
