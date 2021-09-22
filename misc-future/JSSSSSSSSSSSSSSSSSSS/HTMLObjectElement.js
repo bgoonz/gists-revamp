@@ -10,14 +10,17 @@ function HTMLObjectElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLObjectElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLObjectElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLObjectElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLObjectElement, "prototype", {
   value: HTMLObjectElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLObjectElement.prototype.checkValidity = function checkValidity() {
@@ -36,7 +39,9 @@ HTMLObjectElement.prototype.reportValidity = function reportValidity() {
   return this[impl].reportValidity();
 };
 
-HTMLObjectElement.prototype.setCustomValidity = function setCustomValidity(error) {
+HTMLObjectElement.prototype.setCustomValidity = function setCustomValidity(
+  error
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -52,7 +57,8 @@ HTMLObjectElement.prototype.setCustomValidity = function setCustomValidity(error
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setCustomValidity' on 'HTMLObjectElement': parameter 1"
+      context:
+        "Failed to execute 'setCustomValidity' on 'HTMLObjectElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -74,14 +80,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "data", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'data' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'data' property on 'HTMLObjectElement': The provided value",
     });
 
     this[impl]["data"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "type", {
@@ -100,14 +107,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "name", {
@@ -126,14 +134,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "useMap", {
@@ -152,14 +161,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "useMap", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'useMap' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'useMap' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("useMap", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "form", {
@@ -172,7 +182,7 @@ Object.defineProperty(HTMLObjectElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "width", {
@@ -191,14 +201,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "width", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'width' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("width", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "height", {
@@ -217,14 +228,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "height", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'height' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'height' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("height", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "contentDocument", {
@@ -237,7 +249,7 @@ Object.defineProperty(HTMLObjectElement.prototype, "contentDocument", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "willValidate", {
@@ -250,7 +262,7 @@ Object.defineProperty(HTMLObjectElement.prototype, "willValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "validity", {
@@ -263,7 +275,7 @@ Object.defineProperty(HTMLObjectElement.prototype, "validity", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "validationMessage", {
@@ -276,7 +288,7 @@ Object.defineProperty(HTMLObjectElement.prototype, "validationMessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "align", {
@@ -295,14 +307,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "archive", {
@@ -321,14 +334,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "archive", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'archive' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'archive' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("archive", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "code", {
@@ -347,14 +361,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "code", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'code' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'code' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("code", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "declare", {
@@ -372,7 +387,8 @@ Object.defineProperty(HTMLObjectElement.prototype, "declare", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'declare' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'declare' property on 'HTMLObjectElement': The provided value",
     });
 
     if (V) {
@@ -383,7 +399,7 @@ Object.defineProperty(HTMLObjectElement.prototype, "declare", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "hspace", {
@@ -402,14 +418,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "hspace", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'hspace' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'hspace' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("hspace", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "standby", {
@@ -428,14 +445,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "standby", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'standby' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'standby' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("standby", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "vspace", {
@@ -454,14 +472,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "vspace", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'vspace' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'vspace' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("vspace", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "codeBase", {
@@ -479,14 +498,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "codeBase", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'codeBase' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'codeBase' property on 'HTMLObjectElement': The provided value",
     });
 
     this[impl]["codeBase"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "codeType", {
@@ -505,14 +525,15 @@ Object.defineProperty(HTMLObjectElement.prototype, "codeType", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'codeType' property on 'HTMLObjectElement': The provided value"
+      context:
+        "Failed to set the 'codeType' property on 'HTMLObjectElement': The provided value",
     });
 
     this.setAttribute("codeType", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, "border", {
@@ -531,22 +552,23 @@ Object.defineProperty(HTMLObjectElement.prototype, "border", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'border' property on 'HTMLObjectElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'border' property on 'HTMLObjectElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("border", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLObjectElement.prototype, Symbol.toStringTag, {
   value: "HTMLObjectElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -612,7 +634,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -623,8 +645,8 @@ const iface = {
   },
   interface: HTMLObjectElement,
   expose: {
-    Window: { HTMLObjectElement }
-  }
+    Window: { HTMLObjectElement },
+  },
 }; // iface
 module.exports = iface;
 

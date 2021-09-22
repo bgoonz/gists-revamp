@@ -10,21 +10,24 @@ function HTMLHeadElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLHeadElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLHeadElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLHeadElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLHeadElement, "prototype", {
   value: HTMLHeadElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLHeadElement.prototype, Symbol.toStringTag, {
   value: "HTMLHeadElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +93,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -101,8 +104,8 @@ const iface = {
   },
   interface: HTMLHeadElement,
   expose: {
-    Window: { HTMLHeadElement }
-  }
+    Window: { HTMLHeadElement },
+  },
 }; // iface
 module.exports = iface;
 

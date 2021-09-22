@@ -10,14 +10,17 @@ function HTMLEmbedElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLEmbedElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLEmbedElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLEmbedElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLEmbedElement, "prototype", {
   value: HTMLEmbedElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLEmbedElement.prototype, "src", {
@@ -35,14 +38,15 @@ Object.defineProperty(HTMLEmbedElement.prototype, "src", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'src' property on 'HTMLEmbedElement': The provided value"
+      context:
+        "Failed to set the 'src' property on 'HTMLEmbedElement': The provided value",
     });
 
     this[impl]["src"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLEmbedElement.prototype, "type", {
@@ -61,14 +65,15 @@ Object.defineProperty(HTMLEmbedElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLEmbedElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLEmbedElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLEmbedElement.prototype, "width", {
@@ -87,14 +92,15 @@ Object.defineProperty(HTMLEmbedElement.prototype, "width", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'width' property on 'HTMLEmbedElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLEmbedElement': The provided value",
     });
 
     this.setAttribute("width", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLEmbedElement.prototype, "height", {
@@ -113,14 +119,15 @@ Object.defineProperty(HTMLEmbedElement.prototype, "height", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'height' property on 'HTMLEmbedElement': The provided value"
+      context:
+        "Failed to set the 'height' property on 'HTMLEmbedElement': The provided value",
     });
 
     this.setAttribute("height", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLEmbedElement.prototype, "align", {
@@ -139,14 +146,15 @@ Object.defineProperty(HTMLEmbedElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLEmbedElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLEmbedElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLEmbedElement.prototype, "name", {
@@ -165,21 +173,22 @@ Object.defineProperty(HTMLEmbedElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLEmbedElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLEmbedElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLEmbedElement.prototype, Symbol.toStringTag, {
   value: "HTMLEmbedElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -245,7 +254,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -256,8 +265,8 @@ const iface = {
   },
   interface: HTMLEmbedElement,
   expose: {
-    Window: { HTMLEmbedElement }
-  }
+    Window: { HTMLEmbedElement },
+  },
 }; // iface
 module.exports = iface;
 

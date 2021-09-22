@@ -10,14 +10,17 @@ function HTMLDListElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLDListElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLDListElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLDListElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLDListElement, "prototype", {
   value: HTMLDListElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLDListElement.prototype, "compact", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLDListElement.prototype, "compact", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'compact' property on 'HTMLDListElement': The provided value"
+      context:
+        "Failed to set the 'compact' property on 'HTMLDListElement': The provided value",
     });
 
     if (V) {
@@ -46,14 +50,14 @@ Object.defineProperty(HTMLDListElement.prototype, "compact", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLDListElement.prototype, Symbol.toStringTag, {
   value: "HTMLDListElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -119,7 +123,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -130,8 +134,8 @@ const iface = {
   },
   interface: HTMLDListElement,
   expose: {
-    Window: { HTMLDListElement }
-  }
+    Window: { HTMLDListElement },
+  },
 }; // iface
 module.exports = iface;
 

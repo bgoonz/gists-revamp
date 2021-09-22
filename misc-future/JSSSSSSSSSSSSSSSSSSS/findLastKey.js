@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('findLastKey', require('../findLastKey'));
+var convert = require("./convert"),
+  func = convert("findLastKey", require("../findLastKey"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

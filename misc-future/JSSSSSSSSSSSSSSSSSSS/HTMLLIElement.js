@@ -17,7 +17,7 @@ Object.defineProperty(HTMLLIElement, "prototype", {
   value: HTMLLIElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLLIElement.prototype, "value", {
@@ -27,7 +27,9 @@ Object.defineProperty(HTMLLIElement.prototype, "value", {
     }
 
     const value = parseInt(this.getAttribute("value"));
-    return isNaN(value) || value < -2147483648 || value > 2147483647 ? 0 : value;
+    return isNaN(value) || value < -2147483648 || value > 2147483647
+      ? 0
+      : value;
   },
 
   set(V) {
@@ -36,14 +38,15 @@ Object.defineProperty(HTMLLIElement.prototype, "value", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'value' property on 'HTMLLIElement': The provided value"
+      context:
+        "Failed to set the 'value' property on 'HTMLLIElement': The provided value",
     });
 
     this.setAttribute("value", String(V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLIElement.prototype, "type", {
@@ -62,21 +65,22 @@ Object.defineProperty(HTMLLIElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLLIElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLLIElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLIElement.prototype, Symbol.toStringTag, {
   value: "HTMLLIElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -142,7 +146,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -153,8 +157,8 @@ const iface = {
   },
   interface: HTMLLIElement,
   expose: {
-    Window: { HTMLLIElement }
-  }
+    Window: { HTMLLIElement },
+  },
 }; // iface
 module.exports = iface;
 

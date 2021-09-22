@@ -10,14 +10,17 @@ function HTMLImageElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLImageElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLImageElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLImageElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLImageElement, "prototype", {
   value: HTMLImageElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "alt", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLImageElement.prototype, "alt", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'alt' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'alt' property on 'HTMLImageElement': The provided value",
     });
 
     this.setAttribute("alt", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "src", {
@@ -61,14 +65,15 @@ Object.defineProperty(HTMLImageElement.prototype, "src", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'src' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'src' property on 'HTMLImageElement': The provided value",
     });
 
     this[impl]["src"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "srcset", {
@@ -86,14 +91,15 @@ Object.defineProperty(HTMLImageElement.prototype, "srcset", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'srcset' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'srcset' property on 'HTMLImageElement': The provided value",
     });
 
     this[impl]["srcset"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "sizes", {
@@ -112,14 +118,15 @@ Object.defineProperty(HTMLImageElement.prototype, "sizes", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'sizes' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'sizes' property on 'HTMLImageElement': The provided value",
     });
 
     this.setAttribute("sizes", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "crossOrigin", {
@@ -141,14 +148,15 @@ Object.defineProperty(HTMLImageElement.prototype, "crossOrigin", {
       V = null;
     } else {
       V = conversions["DOMString"](V, {
-        context: "Failed to set the 'crossOrigin' property on 'HTMLImageElement': The provided value"
+        context:
+          "Failed to set the 'crossOrigin' property on 'HTMLImageElement': The provided value",
       });
     }
     this.setAttribute("crossOrigin", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "useMap", {
@@ -167,14 +175,15 @@ Object.defineProperty(HTMLImageElement.prototype, "useMap", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'useMap' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'useMap' property on 'HTMLImageElement': The provided value",
     });
 
     this.setAttribute("useMap", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "isMap", {
@@ -192,7 +201,8 @@ Object.defineProperty(HTMLImageElement.prototype, "isMap", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'isMap' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'isMap' property on 'HTMLImageElement': The provided value",
     });
 
     if (V) {
@@ -203,7 +213,7 @@ Object.defineProperty(HTMLImageElement.prototype, "isMap", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "width", {
@@ -221,14 +231,15 @@ Object.defineProperty(HTMLImageElement.prototype, "width", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'width' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLImageElement': The provided value",
     });
 
     this[impl]["width"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "height", {
@@ -246,14 +257,15 @@ Object.defineProperty(HTMLImageElement.prototype, "height", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'height' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'height' property on 'HTMLImageElement': The provided value",
     });
 
     this[impl]["height"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "naturalWidth", {
@@ -266,7 +278,7 @@ Object.defineProperty(HTMLImageElement.prototype, "naturalWidth", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "naturalHeight", {
@@ -279,7 +291,7 @@ Object.defineProperty(HTMLImageElement.prototype, "naturalHeight", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "complete", {
@@ -292,7 +304,7 @@ Object.defineProperty(HTMLImageElement.prototype, "complete", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "currentSrc", {
@@ -305,7 +317,7 @@ Object.defineProperty(HTMLImageElement.prototype, "currentSrc", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "name", {
@@ -324,14 +336,15 @@ Object.defineProperty(HTMLImageElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLImageElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "lowsrc", {
@@ -349,14 +362,15 @@ Object.defineProperty(HTMLImageElement.prototype, "lowsrc", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'lowsrc' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'lowsrc' property on 'HTMLImageElement': The provided value",
     });
 
     this[impl]["lowsrc"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "align", {
@@ -375,14 +389,15 @@ Object.defineProperty(HTMLImageElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLImageElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "hspace", {
@@ -401,14 +416,15 @@ Object.defineProperty(HTMLImageElement.prototype, "hspace", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'hspace' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'hspace' property on 'HTMLImageElement': The provided value",
     });
 
     this.setAttribute("hspace", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "vspace", {
@@ -427,14 +443,15 @@ Object.defineProperty(HTMLImageElement.prototype, "vspace", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'vspace' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'vspace' property on 'HTMLImageElement': The provided value",
     });
 
     this.setAttribute("vspace", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "longDesc", {
@@ -452,14 +469,15 @@ Object.defineProperty(HTMLImageElement.prototype, "longDesc", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'longDesc' property on 'HTMLImageElement': The provided value"
+      context:
+        "Failed to set the 'longDesc' property on 'HTMLImageElement': The provided value",
     });
 
     this[impl]["longDesc"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, "border", {
@@ -478,22 +496,23 @@ Object.defineProperty(HTMLImageElement.prototype, "border", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'border' property on 'HTMLImageElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'border' property on 'HTMLImageElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("border", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLImageElement.prototype, Symbol.toStringTag, {
   value: "HTMLImageElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -559,7 +578,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -570,8 +589,8 @@ const iface = {
   },
   interface: HTMLImageElement,
   expose: {
-    Window: { HTMLImageElement }
-  }
+    Window: { HTMLImageElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = getBindingIdentifiers;
 
@@ -18,7 +18,7 @@ function getBindingIdentifiers(node, duplicates, outerOnly) {
 
     if ((0, _generated.isIdentifier)(id)) {
       if (duplicates) {
-        const _ids = ids[id.name] = ids[id.name] || [];
+        const _ids = (ids[id.name] = ids[id.name] || []);
 
         _ids.push(id);
       } else {
@@ -28,7 +28,10 @@ function getBindingIdentifiers(node, duplicates, outerOnly) {
       continue;
     }
 
-    if ((0, _generated.isExportDeclaration)(id) && !(0, _generated.isExportAllDeclaration)(id)) {
+    if (
+      (0, _generated.isExportDeclaration)(id) &&
+      !(0, _generated.isExportAllDeclaration)(id)
+    ) {
       if ((0, _generated.isDeclaration)(id.declaration)) {
         search.push(id.declaration);
       }
@@ -100,5 +103,5 @@ getBindingIdentifiers.keys = {
   ArrayPattern: ["elements"],
   ObjectPattern: ["properties"],
   VariableDeclaration: ["declarations"],
-  VariableDeclarator: ["id"]
+  VariableDeclarator: ["id"],
 };

@@ -11,18 +11,26 @@ const Blob = require("./Blob.js");
 function File(fileBits, fileName) {
   if (new.target === undefined) {
     throw new TypeError(
-      "Failed to construct 'File'. Please use the 'new' operator; this constructor " + "cannot be called as a function."
+      "Failed to construct 'File'. Please use the 'new' operator; this constructor " +
+        "cannot be called as a function."
     );
   }
 
   if (arguments.length < 2) {
-    throw new TypeError("Failed to construct 'File': 2 arguments required, but only " + arguments.length + " present.");
+    throw new TypeError(
+      "Failed to construct 'File': 2 arguments required, but only " +
+        arguments.length +
+        " present."
+    );
   }
   const args = [];
   {
     let curArg = arguments[0];
     if (!utils.isObject(curArg)) {
-      throw new TypeError("Failed to construct 'File': parameter 1" + " is not an iterable object.");
+      throw new TypeError(
+        "Failed to construct 'File': parameter 1" +
+          " is not an iterable object."
+      );
     } else {
       const V = [];
       const tmp = curArg;
@@ -33,7 +41,7 @@ function File(fileBits, fileName) {
         } else if (ArrayBuffer.isView(nextItem)) {
         } else {
           nextItem = conversions["USVString"](nextItem, {
-            context: "Failed to construct 'File': parameter 1" + "'s element"
+            context: "Failed to construct 'File': parameter 1" + "'s element",
           });
         }
         V.push(nextItem);
@@ -44,12 +52,16 @@ function File(fileBits, fileName) {
   }
   {
     let curArg = arguments[1];
-    curArg = conversions["USVString"](curArg, { context: "Failed to construct 'File': parameter 2" });
+    curArg = conversions["USVString"](curArg, {
+      context: "Failed to construct 'File': parameter 2",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[2];
-    curArg = convertFilePropertyBag(curArg, { context: "Failed to construct 'File': parameter 3" });
+    curArg = convertFilePropertyBag(curArg, {
+      context: "Failed to construct 'File': parameter 3",
+    });
     args.push(curArg);
   }
 
@@ -63,7 +75,7 @@ Object.defineProperty(File, "prototype", {
   value: File.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(File.prototype, "name", {
@@ -76,7 +88,7 @@ Object.defineProperty(File.prototype, "name", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(File.prototype, "lastModified", {
@@ -89,14 +101,14 @@ Object.defineProperty(File.prototype, "lastModified", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(File.prototype, Symbol.toStringTag, {
   value: "File",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -162,7 +174,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -174,8 +186,8 @@ const iface = {
   interface: File,
   expose: {
     Window: { File },
-    Worker: { File }
-  }
+    Worker: { File },
+  },
 }; // iface
 module.exports = iface;
 

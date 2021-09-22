@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.UnaryExpression = UnaryExpression;
 exports.DoExpression = DoExpression;
@@ -20,7 +20,10 @@ exports.Import = Import;
 exports.EmptyStatement = EmptyStatement;
 exports.ExpressionStatement = ExpressionStatement;
 exports.AssignmentPattern = AssignmentPattern;
-exports.LogicalExpression = exports.BinaryExpression = exports.AssignmentExpression = AssignmentExpression;
+exports.LogicalExpression =
+  exports.BinaryExpression =
+  exports.AssignmentExpression =
+    AssignmentExpression;
 exports.BindExpression = BindExpression;
 exports.MemberExpression = MemberExpression;
 exports.MetaProperty = MetaProperty;
@@ -33,15 +36,15 @@ var _t = require("@babel/types");
 
 var n = require("../node");
 
-const {
-  isCallExpression,
-  isLiteral,
-  isMemberExpression,
-  isNewExpression
-} = _t;
+const { isCallExpression, isLiteral, isMemberExpression, isNewExpression } = _t;
 
 function UnaryExpression(node) {
-  if (node.operator === "void" || node.operator === "delete" || node.operator === "typeof" || node.operator === "throw") {
+  if (
+    node.operator === "void" ||
+    node.operator === "delete" ||
+    node.operator === "typeof" ||
+    node.operator === "throw"
+  ) {
     this.word(node.operator);
     this.space();
   } else {
@@ -97,9 +100,16 @@ function NewExpression(node, parent) {
   this.space();
   this.print(node.callee, node);
 
-  if (this.format.minified && node.arguments.length === 0 && !node.optional && !isCallExpression(parent, {
-    callee: node
-  }) && !isMemberExpression(parent) && !isNewExpression(parent)) {
+  if (
+    this.format.minified &&
+    node.arguments.length === 0 &&
+    !node.optional &&
+    !isCallExpression(parent, {
+      callee: node,
+    }) &&
+    !isMemberExpression(parent) &&
+    !isNewExpression(parent)
+  ) {
     return;
   }
 
@@ -232,7 +242,10 @@ function AssignmentPattern(node) {
 }
 
 function AssignmentExpression(node, parent) {
-  const parens = this.inForStatementInitCounter && node.operator === "in" && !n.needsParens(node, parent);
+  const parens =
+    this.inForStatementInitCounter &&
+    node.operator === "in" &&
+    !n.needsParens(node, parent);
 
   if (parens) {
     this.token("(");
@@ -310,7 +323,7 @@ function ModuleExpression(node) {
   } else {
     this.newline();
     this.printSequence(node.body.body, node, {
-      indent: true
+      indent: true,
     });
     this.rightBrace();
   }

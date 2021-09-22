@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -58,31 +58,24 @@ var _default = _gensync()(function* loadFullConfig(inputOpts) {
     return null;
   }
 
-  const {
-    options,
-    context,
-    fileHandling
-  } = result;
+  const { options, context, fileHandling } = result;
 
   if (fileHandling === "ignored") {
     return null;
   }
 
   const optionDefaults = {};
-  const {
-    plugins,
-    presets
-  } = options;
+  const { plugins, presets } = options;
 
   if (!plugins || !presets) {
     throw new Error("Assertion failure - plugins and presets exist");
   }
 
   const presetContext = Object.assign({}, context, {
-    targets: options.targets
+    targets: options.targets,
   });
 
-  const toDescriptor = item => {
+  const toDescriptor = (item) => {
     const desc = (0, _item.getItemDescriptor)(item);
 
     if (!desc) {
@@ -96,57 +89,69 @@ var _default = _gensync()(function* loadFullConfig(inputOpts) {
   const initialPluginsDescriptors = plugins.map(toDescriptor);
   const pluginDescriptorsByPass = [[]];
   const passes = [];
-  const ignored = yield* enhanceError(context, function* recursePresetDescriptors(rawPresets, pluginDescriptorsPass) {
-    const presets = [];
+  const ignored = yield* enhanceError(
+    context,
+    function* recursePresetDescriptors(rawPresets, pluginDescriptorsPass) {
+      const presets = [];
 
-    for (let i = 0; i < rawPresets.length; i++) {
-      const descriptor = rawPresets[i];
+      for (let i = 0; i < rawPresets.length; i++) {
+        const descriptor = rawPresets[i];
 
-      if (descriptor.options !== false) {
-        try {
-          if (descriptor.ownPass) {
-            presets.push({
-              preset: yield* loadPresetDescriptor(descriptor, presetContext),
-              pass: []
-            });
-          } else {
-            presets.unshift({
-              preset: yield* loadPresetDescriptor(descriptor, presetContext),
-              pass: pluginDescriptorsPass
-            });
+        if (descriptor.options !== false) {
+          try {
+            if (descriptor.ownPass) {
+              presets.push({
+                preset: yield* loadPresetDescriptor(descriptor, presetContext),
+                pass: [],
+              });
+            } else {
+              presets.unshift({
+                preset: yield* loadPresetDescriptor(descriptor, presetContext),
+                pass: pluginDescriptorsPass,
+              });
+            }
+          } catch (e) {
+            if (e.code === "BABEL_UNKNOWN_OPTION") {
+              (0, _options.checkNoUnwrappedItemOptionPairs)(
+                rawPresets,
+                i,
+                "preset",
+                e
+              );
+            }
+
+            throw e;
           }
-        } catch (e) {
-          if (e.code === "BABEL_UNKNOWN_OPTION") {
-            (0, _options.checkNoUnwrappedItemOptionPairs)(rawPresets, i, "preset", e);
-          }
+        }
+      }
 
-          throw e;
+      if (presets.length > 0) {
+        pluginDescriptorsByPass.splice(
+          1,
+          0,
+          ...presets
+            .map((o) => o.pass)
+            .filter((p) => p !== pluginDescriptorsPass)
+        );
+
+        for (const { preset, pass } of presets) {
+          if (!preset) return true;
+          pass.push(...preset.plugins);
+          const ignored = yield* recursePresetDescriptors(preset.presets, pass);
+          if (ignored) return true;
+          preset.options.forEach((opts) => {
+            (0, _util.mergeOptions)(optionDefaults, opts);
+          });
         }
       }
     }
-
-    if (presets.length > 0) {
-      pluginDescriptorsByPass.splice(1, 0, ...presets.map(o => o.pass).filter(p => p !== pluginDescriptorsPass));
-
-      for (const {
-        preset,
-        pass
-      } of presets) {
-        if (!preset) return true;
-        pass.push(...preset.plugins);
-        const ignored = yield* recursePresetDescriptors(preset.presets, pass);
-        if (ignored) return true;
-        preset.options.forEach(opts => {
-          (0, _util.mergeOptions)(optionDefaults, opts);
-        });
-      }
-    }
-  })(presetsDescriptors, pluginDescriptorsByPass[0]);
+  )(presetsDescriptors, pluginDescriptorsByPass[0]);
   if (ignored) return null;
   const opts = optionDefaults;
   (0, _util.mergeOptions)(opts, options);
   const pluginContext = Object.assign({}, presetContext, {
-    assumptions: (_opts$assumptions = opts.assumptions) != null ? _opts$assumptions : {}
+    assumptions:
+      (_opts$assumptions = opts.assumptions) != null ? _opts$assumptions : {},
   });
   yield* enhanceError(context, function* loadPluginDescriptors() {
     pluginDescriptorsByPass[0].unshift(...initialPluginsDescriptors);
@@ -163,7 +168,12 @@ var _default = _gensync()(function* loadFullConfig(inputOpts) {
             pass.push(yield* loadPluginDescriptor(descriptor, pluginContext));
           } catch (e) {
             if (e.code === "BABEL_UNKNOWN_PLUGIN_PROPERTY") {
-              (0, _options.checkNoUnwrappedItemOptionPairs)(descs, i, "plugin", e);
+              (0, _options.checkNoUnwrappedItemOptionPairs)(
+                descs,
+                i,
+                "plugin",
+                e
+              );
             }
 
             throw e;
@@ -173,13 +183,16 @@ var _default = _gensync()(function* loadFullConfig(inputOpts) {
     }
   })();
   opts.plugins = passes[0];
-  opts.presets = passes.slice(1).filter(plugins => plugins.length > 0).map(plugins => ({
-    plugins
-  }));
+  opts.presets = passes
+    .slice(1)
+    .filter((plugins) => plugins.length > 0)
+    .map((plugins) => ({
+      plugins,
+    }));
   opts.passPerPreset = opts.presets.length > 0;
   return {
     options: opts,
-    passes: passes
+    passes: passes,
   };
 });
 
@@ -199,47 +212,56 @@ function enhanceError(context, fn) {
   };
 }
 
-const makeDescriptorLoader = apiFactory => (0, _caching.makeWeakCache)(function* ({
-  value,
-  options,
-  dirname,
-  alias
-}, cache) {
-  if (options === false) throw new Error("Assertion failure");
-  options = options || {};
-  let item = value;
+const makeDescriptorLoader = (apiFactory) =>
+  (0, _caching.makeWeakCache)(function* (
+    { value, options, dirname, alias },
+    cache
+  ) {
+    if (options === false) throw new Error("Assertion failure");
+    options = options || {};
+    let item = value;
 
-  if (typeof value === "function") {
-    const factory = (0, _async.maybeAsync)(value, `You appear to be using an async plugin/preset, but Babel has been called synchronously`);
-    const api = Object.assign({}, context, apiFactory(cache));
+    if (typeof value === "function") {
+      const factory = (0, _async.maybeAsync)(
+        value,
+        `You appear to be using an async plugin/preset, but Babel has been called synchronously`
+      );
+      const api = Object.assign({}, context, apiFactory(cache));
 
-    try {
-      item = yield* factory(api, options, dirname);
-    } catch (e) {
-      if (alias) {
-        e.message += ` (While processing: ${JSON.stringify(alias)})`;
+      try {
+        item = yield* factory(api, options, dirname);
+      } catch (e) {
+        if (alias) {
+          e.message += ` (While processing: ${JSON.stringify(alias)})`;
+        }
+
+        throw e;
       }
-
-      throw e;
     }
-  }
 
-  if (!item || typeof item !== "object") {
-    throw new Error("Plugin/Preset did not return an object.");
-  }
+    if (!item || typeof item !== "object") {
+      throw new Error("Plugin/Preset did not return an object.");
+    }
 
-  if ((0, _async.isThenable)(item)) {
-    yield* [];
-    throw new Error(`You appear to be using a promise as a plugin, ` + `which your current version of Babel does not support. ` + `If you're using a published plugin, ` + `you may need to upgrade your @babel/core version. ` + `As an alternative, you can prefix the promise with "await". ` + `(While processing: ${JSON.stringify(alias)})`);
-  }
+    if ((0, _async.isThenable)(item)) {
+      yield* [];
+      throw new Error(
+        `You appear to be using a promise as a plugin, ` +
+          `which your current version of Babel does not support. ` +
+          `If you're using a published plugin, ` +
+          `you may need to upgrade your @babel/core version. ` +
+          `As an alternative, you can prefix the promise with "await". ` +
+          `(While processing: ${JSON.stringify(alias)})`
+      );
+    }
 
-  return {
-    value: item,
-    options,
-    dirname,
-    alias
-  };
-});
+    return {
+      value: item,
+      options,
+      dirname,
+      alias,
+    };
+  });
 
 const pluginDescriptorLoader = makeDescriptorLoader(_configApi.makePluginAPI);
 const presetDescriptorLoader = makeDescriptorLoader(_configApi.makePresetAPI);
@@ -247,26 +269,31 @@ const presetDescriptorLoader = makeDescriptorLoader(_configApi.makePresetAPI);
 function* loadPluginDescriptor(descriptor, context) {
   if (descriptor.value instanceof _plugin.default) {
     if (descriptor.options) {
-      throw new Error("Passed options to an existing Plugin instance will not work.");
+      throw new Error(
+        "Passed options to an existing Plugin instance will not work."
+      );
     }
 
     return descriptor.value;
   }
 
-  return yield* instantiatePlugin(yield* pluginDescriptorLoader(descriptor, context), context);
+  return yield* instantiatePlugin(
+    yield* pluginDescriptorLoader(descriptor, context),
+    context
+  );
 }
 
-const instantiatePlugin = (0, _caching.makeWeakCache)(function* ({
-  value,
-  options,
-  dirname,
-  alias
-}, cache) {
+const instantiatePlugin = (0, _caching.makeWeakCache)(function* (
+  { value, options, dirname, alias },
+  cache
+) {
   const pluginObj = (0, _plugins.validatePluginObject)(value);
   const plugin = Object.assign({}, pluginObj);
 
   if (plugin.visitor) {
-    plugin.visitor = _traverse().default.explode(Object.assign({}, plugin.visitor));
+    plugin.visitor = _traverse().default.explode(
+      Object.assign({}, plugin.visitor)
+    );
   }
 
   if (plugin.inherits) {
@@ -275,15 +302,24 @@ const instantiatePlugin = (0, _caching.makeWeakCache)(function* ({
       alias: `${alias}$inherits`,
       value: plugin.inherits,
       options,
-      dirname
+      dirname,
     };
-    const inherits = yield* (0, _async.forwardAsync)(loadPluginDescriptor, run => {
-      return cache.invalidate(data => run(inheritsDescriptor, data));
-    });
+    const inherits = yield* (0, _async.forwardAsync)(
+      loadPluginDescriptor,
+      (run) => {
+        return cache.invalidate((data) => run(inheritsDescriptor, data));
+      }
+    );
     plugin.pre = chain(inherits.pre, plugin.pre);
     plugin.post = chain(inherits.post, plugin.post);
-    plugin.manipulateOptions = chain(inherits.manipulateOptions, plugin.manipulateOptions);
-    plugin.visitor = _traverse().default.visitors.merge([inherits.visitor || {}, plugin.visitor || {}]);
+    plugin.manipulateOptions = chain(
+      inherits.manipulateOptions,
+      plugin.manipulateOptions
+    );
+    plugin.visitor = _traverse().default.visitors.merge([
+      inherits.visitor || {},
+      plugin.visitor || {},
+    ]);
   }
 
   return new _plugin.default(plugin, options, alias);
@@ -291,41 +327,51 @@ const instantiatePlugin = (0, _caching.makeWeakCache)(function* ({
 
 const validateIfOptionNeedsFilename = (options, descriptor) => {
   if (options.test || options.include || options.exclude) {
-    const formattedPresetName = descriptor.name ? `"${descriptor.name}"` : "/* your preset */";
-    throw new Error([`Preset ${formattedPresetName} requires a filename to be set when babel is called directly,`, `\`\`\``, `babel.transform(code, { filename: 'file.ts', presets: [${formattedPresetName}] });`, `\`\`\``, `See https://babeljs.io/docs/en/options#filename for more information.`].join("\n"));
+    const formattedPresetName = descriptor.name
+      ? `"${descriptor.name}"`
+      : "/* your preset */";
+    throw new Error(
+      [
+        `Preset ${formattedPresetName} requires a filename to be set when babel is called directly,`,
+        `\`\`\``,
+        `babel.transform(code, { filename: 'file.ts', presets: [${formattedPresetName}] });`,
+        `\`\`\``,
+        `See https://babeljs.io/docs/en/options#filename for more information.`,
+      ].join("\n")
+    );
   }
 };
 
 const validatePreset = (preset, context, descriptor) => {
   if (!context.filename) {
-    const {
-      options
-    } = preset;
+    const { options } = preset;
     validateIfOptionNeedsFilename(options, descriptor);
 
     if (options.overrides) {
-      options.overrides.forEach(overrideOptions => validateIfOptionNeedsFilename(overrideOptions, descriptor));
+      options.overrides.forEach((overrideOptions) =>
+        validateIfOptionNeedsFilename(overrideOptions, descriptor)
+      );
     }
   }
 };
 
 function* loadPresetDescriptor(descriptor, context) {
-  const preset = instantiatePreset(yield* presetDescriptorLoader(descriptor, context));
+  const preset = instantiatePreset(
+    yield* presetDescriptorLoader(descriptor, context)
+  );
   validatePreset(preset, context, descriptor);
   return yield* (0, _configChain.buildPresetChain)(preset, context);
 }
 
-const instantiatePreset = (0, _caching.makeWeakCacheSync)(({
-  value,
-  dirname,
-  alias
-}) => {
-  return {
-    options: (0, _options.validate)("preset", value),
-    alias,
-    dirname
-  };
-});
+const instantiatePreset = (0, _caching.makeWeakCacheSync)(
+  ({ value, dirname, alias }) => {
+    return {
+      options: (0, _options.validate)("preset", value),
+      alias,
+      dirname,
+    };
+  }
+);
 
 function chain(a, b) {
   const fns = [a, b].filter(Boolean);

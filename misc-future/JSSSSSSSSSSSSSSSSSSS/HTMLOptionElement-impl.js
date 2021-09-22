@@ -113,5 +113,5 @@ class HTMLOptionElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLOptionElementImpl
+  implementation: HTMLOptionElementImpl,
 };

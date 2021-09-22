@@ -10,14 +10,17 @@ function HTMLPreElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLPreElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLPreElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLPreElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLPreElement, "prototype", {
   value: HTMLPreElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLPreElement.prototype, "width", {
@@ -27,7 +30,9 @@ Object.defineProperty(HTMLPreElement.prototype, "width", {
     }
 
     const value = parseInt(this.getAttribute("width"));
-    return isNaN(value) || value < -2147483648 || value > 2147483647 ? 0 : value;
+    return isNaN(value) || value < -2147483648 || value > 2147483647
+      ? 0
+      : value;
   },
 
   set(V) {
@@ -36,21 +41,22 @@ Object.defineProperty(HTMLPreElement.prototype, "width", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'width' property on 'HTMLPreElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLPreElement': The provided value",
     });
 
     this.setAttribute("width", String(V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLPreElement.prototype, Symbol.toStringTag, {
   value: "HTMLPreElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +122,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +133,8 @@ const iface = {
   },
   interface: HTMLPreElement,
   expose: {
-    Window: { HTMLPreElement }
-  }
+    Window: { HTMLPreElement },
+  },
 }; // iface
 module.exports = iface;
 

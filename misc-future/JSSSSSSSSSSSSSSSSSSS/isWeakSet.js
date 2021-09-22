@@ -1,5 +1,9 @@
-var convert = require('./convert'),
-    func = convert('isWeakSet', require('../isWeakSet'), require('./_falseOptions'));
+var convert = require("./convert"),
+  func = convert(
+    "isWeakSet",
+    require("../isWeakSet"),
+    require("./_falseOptions")
+  );
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

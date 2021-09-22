@@ -1,1 +1,1 @@
-module.exports = require('./assignInAllWith');
+module.exports = require("./assignInAllWith");

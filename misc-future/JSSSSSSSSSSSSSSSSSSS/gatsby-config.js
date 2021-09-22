@@ -1,23 +1,23 @@
-const config = require('./config');
+const config = require("./config");
 
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
-    siteTitle: 'Bryan Guner Resume', // <title>
-    firstName: 'Bryan',
-    lastName: 'Guner',
+    siteTitle: "Bryan Guner Resume", // <title>
+    firstName: "Bryan",
+    lastName: "Guner",
     // social
     socialLinks: [
       {
-        icon: 'fa-github',
-        name: 'Github',
-        url: 'https://github.com/bgoonz',
+        icon: "fa-github",
+        name: "Github",
+        url: "https://github.com/bgoonz",
       },
     ],
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -30,7 +30,7 @@ module.exports = {
         icon: config.manifestIcon, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
+    "gatsby-plugin-sass",
+    "gatsby-plugin-offline",
   ],
 };

@@ -1,40 +1,53 @@
-import style from './style';
-import compose from './compose';
+import style from "./style";
+import compose from "./compose";
 export var gridGap = style({
-    prop: 'gridGap'
+  prop: "gridGap",
 });
 export var gridColumnGap = style({
-    prop: 'gridColumnGap'
+  prop: "gridColumnGap",
 });
 export var gridRowGap = style({
-    prop: 'gridRowGap'
+  prop: "gridRowGap",
 });
 export var gridColumn = style({
-    prop: 'gridColumn'
+  prop: "gridColumn",
 });
 export var gridRow = style({
-    prop: 'gridRow'
+  prop: "gridRow",
 });
 export var gridAutoFlow = style({
-    prop: 'gridAutoFlow'
+  prop: "gridAutoFlow",
 });
 export var gridAutoColumns = style({
-    prop: 'gridAutoColumns'
+  prop: "gridAutoColumns",
 });
 export var gridAutoRows = style({
-    prop: 'gridAutoRows'
+  prop: "gridAutoRows",
 });
 export var gridTemplateColumns = style({
-    prop: 'gridTemplateColumns'
+  prop: "gridTemplateColumns",
 });
 export var gridTemplateRows = style({
-    prop: 'gridTemplateRows'
+  prop: "gridTemplateRows",
 });
 export var gridTemplateAreas = style({
-    prop: 'gridTemplateAreas'
+  prop: "gridTemplateAreas",
 });
 export var gridArea = style({
-    prop: 'gridArea'
+  prop: "gridArea",
 });
-var grid = compose(gridGap, gridColumnGap, gridRowGap, gridColumn, gridRow, gridAutoFlow, gridAutoColumns, gridAutoRows, gridTemplateColumns, gridTemplateRows, gridTemplateAreas, gridArea);
+var grid = compose(
+  gridGap,
+  gridColumnGap,
+  gridRowGap,
+  gridColumn,
+  gridRow,
+  gridAutoFlow,
+  gridAutoColumns,
+  gridAutoRows,
+  gridTemplateColumns,
+  gridTemplateRows,
+  gridTemplateAreas,
+  gridArea
+);
 export default grid;

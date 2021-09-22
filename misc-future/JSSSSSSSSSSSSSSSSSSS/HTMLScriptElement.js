@@ -10,14 +10,17 @@ function HTMLScriptElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLScriptElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLScriptElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLScriptElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLScriptElement, "prototype", {
   value: HTMLScriptElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "src", {
@@ -35,14 +38,15 @@ Object.defineProperty(HTMLScriptElement.prototype, "src", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'src' property on 'HTMLScriptElement': The provided value"
+      context:
+        "Failed to set the 'src' property on 'HTMLScriptElement': The provided value",
     });
 
     this[impl]["src"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "type", {
@@ -61,14 +65,15 @@ Object.defineProperty(HTMLScriptElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLScriptElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLScriptElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "defer", {
@@ -86,7 +91,8 @@ Object.defineProperty(HTMLScriptElement.prototype, "defer", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'defer' property on 'HTMLScriptElement': The provided value"
+      context:
+        "Failed to set the 'defer' property on 'HTMLScriptElement': The provided value",
     });
 
     if (V) {
@@ -97,7 +103,7 @@ Object.defineProperty(HTMLScriptElement.prototype, "defer", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "crossOrigin", {
@@ -119,14 +125,15 @@ Object.defineProperty(HTMLScriptElement.prototype, "crossOrigin", {
       V = null;
     } else {
       V = conversions["DOMString"](V, {
-        context: "Failed to set the 'crossOrigin' property on 'HTMLScriptElement': The provided value"
+        context:
+          "Failed to set the 'crossOrigin' property on 'HTMLScriptElement': The provided value",
       });
     }
     this.setAttribute("crossOrigin", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "text", {
@@ -144,14 +151,15 @@ Object.defineProperty(HTMLScriptElement.prototype, "text", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'text' property on 'HTMLScriptElement': The provided value"
+      context:
+        "Failed to set the 'text' property on 'HTMLScriptElement': The provided value",
     });
 
     this[impl]["text"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "nonce", {
@@ -170,14 +178,15 @@ Object.defineProperty(HTMLScriptElement.prototype, "nonce", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'nonce' property on 'HTMLScriptElement': The provided value"
+      context:
+        "Failed to set the 'nonce' property on 'HTMLScriptElement': The provided value",
     });
 
     this.setAttribute("nonce", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "charset", {
@@ -196,14 +205,15 @@ Object.defineProperty(HTMLScriptElement.prototype, "charset", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'charset' property on 'HTMLScriptElement': The provided value"
+      context:
+        "Failed to set the 'charset' property on 'HTMLScriptElement': The provided value",
     });
 
     this.setAttribute("charset", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "event", {
@@ -222,14 +232,15 @@ Object.defineProperty(HTMLScriptElement.prototype, "event", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'event' property on 'HTMLScriptElement': The provided value"
+      context:
+        "Failed to set the 'event' property on 'HTMLScriptElement': The provided value",
     });
 
     this.setAttribute("event", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, "htmlFor", {
@@ -248,21 +259,22 @@ Object.defineProperty(HTMLScriptElement.prototype, "htmlFor", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'htmlFor' property on 'HTMLScriptElement': The provided value"
+      context:
+        "Failed to set the 'htmlFor' property on 'HTMLScriptElement': The provided value",
     });
 
     this.setAttribute("for", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLScriptElement.prototype, Symbol.toStringTag, {
   value: "HTMLScriptElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -328,7 +340,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -339,8 +351,8 @@ const iface = {
   },
   interface: HTMLScriptElement,
   expose: {
-    Window: { HTMLScriptElement }
-  }
+    Window: { HTMLScriptElement },
+  },
 }; // iface
 module.exports = iface;
 

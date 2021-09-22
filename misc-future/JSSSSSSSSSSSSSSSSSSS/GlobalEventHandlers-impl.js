@@ -1,38 +1,74 @@
 "use strict";
 
-const { appendHandler, createEventAccessor } = require("../helpers/create-event-accessor");
+const {
+  appendHandler,
+  createEventAccessor,
+} = require("../helpers/create-event-accessor");
 
 const events = new Set([
-  "abort", "autocomplete",
-  "autocompleteerror", "blur",
-  "cancel", "canplay", "canplaythrough",
-  "change", "click",
-  "close", "contextmenu",
-  "cuechange", "dblclick",
-  "drag", "dragend",
-  "dragenter", "dragexit",
-  "dragleave", "dragover",
-  "dragstart", "drop",
-  "durationchange", "emptied",
-  "ended", "error", "focus",
-  "input", "invalid",
-  "keydown", "keypress",
-  "keyup", "load", "loadeddata",
-  "loadedmetadata", "loadstart",
-  "mousedown", "mouseenter",
-  "mouseleave", "mousemove",
-  "mouseout", "mouseover",
-  "mouseup", "wheel",
-  "pause", "play",
-  "playing", "progress",
-  "ratechange", "reset",
-  "resize", "scroll",
+  "abort",
+  "autocomplete",
+  "autocompleteerror",
+  "blur",
+  "cancel",
+  "canplay",
+  "canplaythrough",
+  "change",
+  "click",
+  "close",
+  "contextmenu",
+  "cuechange",
+  "dblclick",
+  "drag",
+  "dragend",
+  "dragenter",
+  "dragexit",
+  "dragleave",
+  "dragover",
+  "dragstart",
+  "drop",
+  "durationchange",
+  "emptied",
+  "ended",
+  "error",
+  "focus",
+  "input",
+  "invalid",
+  "keydown",
+  "keypress",
+  "keyup",
+  "load",
+  "loadeddata",
+  "loadedmetadata",
+  "loadstart",
+  "mousedown",
+  "mouseenter",
+  "mouseleave",
+  "mousemove",
+  "mouseout",
+  "mouseover",
+  "mouseup",
+  "wheel",
+  "pause",
+  "play",
+  "playing",
+  "progress",
+  "ratechange",
+  "reset",
+  "resize",
+  "scroll",
   "securitypolicyviolation",
-  "seeked", "seeking",
-  "select", "sort", "stalled",
-  "submit", "suspend",
-  "timeupdate", "toggle",
-  "volumechange", "waiting"
+  "seeked",
+  "seeking",
+  "select",
+  "sort",
+  "stalled",
+  "submit",
+  "suspend",
+  "timeupdate",
+  "toggle",
+  "volumechange",
+  "waiting",
 ]);
 
 class GlobalEventHandlersImpl {
@@ -75,7 +111,10 @@ class GlobalEventHandlersImpl {
 
     // Only translate attribute changes into properties when runScripts: "dangerously" is set.
     // Documents without a browsing context (i.e. without a _defaultView) never run scripts.
-    const runScripts = "_runScripts" in this ? this._runScripts : (this._ownerDocument._defaultView || {})._runScripts;
+    const runScripts =
+      "_runScripts" in this
+        ? this._runScripts
+        : (this._ownerDocument._defaultView || {})._runScripts;
     if (runScripts !== "dangerously") {
       return;
     }
@@ -91,5 +130,5 @@ for (const event of events) {
 }
 
 module.exports = {
-  implementation: GlobalEventHandlersImpl
+  implementation: GlobalEventHandlersImpl,
 };

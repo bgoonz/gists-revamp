@@ -1,2 +1,2 @@
-var convert = require('./convert');
-module.exports = convert(require('../lang'));
+var convert = require("./convert");
+module.exports = convert(require("../lang"));

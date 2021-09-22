@@ -10,14 +10,17 @@ function HTMLProgressElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLProgressElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLProgressElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLProgressElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLProgressElement, "prototype", {
   value: HTMLProgressElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLProgressElement.prototype, "labels", {
@@ -30,14 +33,14 @@ Object.defineProperty(HTMLProgressElement.prototype, "labels", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLProgressElement.prototype, Symbol.toStringTag, {
   value: "HTMLProgressElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -103,7 +106,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -114,8 +117,8 @@ const iface = {
   },
   interface: HTMLProgressElement,
   expose: {
-    Window: { HTMLProgressElement }
-  }
+    Window: { HTMLProgressElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('isEqualWith', require('../isEqualWith'));
+var convert = require("./convert"),
+  func = convert("isEqualWith", require("../isEqualWith"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

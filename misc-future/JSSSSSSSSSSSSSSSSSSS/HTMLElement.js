@@ -20,7 +20,7 @@ Object.defineProperty(HTMLElement, "prototype", {
   value: HTMLElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLElement.prototype.click = function click() {
@@ -63,14 +63,15 @@ Object.defineProperty(HTMLElement.prototype, "title", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'title' property on 'HTMLElement': The provided value"
+      context:
+        "Failed to set the 'title' property on 'HTMLElement': The provided value",
     });
 
     this.setAttribute("title", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "lang", {
@@ -89,14 +90,15 @@ Object.defineProperty(HTMLElement.prototype, "lang", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'lang' property on 'HTMLElement': The provided value"
+      context:
+        "Failed to set the 'lang' property on 'HTMLElement': The provided value",
     });
 
     this.setAttribute("lang", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "dir", {
@@ -114,14 +116,15 @@ Object.defineProperty(HTMLElement.prototype, "dir", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'dir' property on 'HTMLElement': The provided value"
+      context:
+        "Failed to set the 'dir' property on 'HTMLElement': The provided value",
     });
 
     this[impl]["dir"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "dataset", {
@@ -136,7 +139,7 @@ Object.defineProperty(HTMLElement.prototype, "dataset", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "hidden", {
@@ -154,7 +157,8 @@ Object.defineProperty(HTMLElement.prototype, "hidden", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'hidden' property on 'HTMLElement': The provided value"
+      context:
+        "Failed to set the 'hidden' property on 'HTMLElement': The provided value",
     });
 
     if (V) {
@@ -165,7 +169,7 @@ Object.defineProperty(HTMLElement.prototype, "hidden", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "tabIndex", {
@@ -183,14 +187,15 @@ Object.defineProperty(HTMLElement.prototype, "tabIndex", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'tabIndex' property on 'HTMLElement': The provided value"
+      context:
+        "Failed to set the 'tabIndex' property on 'HTMLElement': The provided value",
     });
 
     this[impl]["tabIndex"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "accessKey", {
@@ -209,14 +214,15 @@ Object.defineProperty(HTMLElement.prototype, "accessKey", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'accessKey' property on 'HTMLElement': The provided value"
+      context:
+        "Failed to set the 'accessKey' property on 'HTMLElement': The provided value",
     });
 
     this.setAttribute("accessKey", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "offsetParent", {
@@ -229,7 +235,7 @@ Object.defineProperty(HTMLElement.prototype, "offsetParent", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "offsetTop", {
@@ -242,7 +248,7 @@ Object.defineProperty(HTMLElement.prototype, "offsetTop", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "offsetLeft", {
@@ -255,7 +261,7 @@ Object.defineProperty(HTMLElement.prototype, "offsetLeft", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "offsetWidth", {
@@ -268,7 +274,7 @@ Object.defineProperty(HTMLElement.prototype, "offsetWidth", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "offsetHeight", {
@@ -281,7 +287,7 @@ Object.defineProperty(HTMLElement.prototype, "offsetHeight", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "style", {
@@ -304,7 +310,7 @@ Object.defineProperty(HTMLElement.prototype, "style", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onabort", {
@@ -327,7 +333,7 @@ Object.defineProperty(HTMLElement.prototype, "onabort", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onauxclick", {
@@ -350,7 +356,7 @@ Object.defineProperty(HTMLElement.prototype, "onauxclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onblur", {
@@ -373,7 +379,7 @@ Object.defineProperty(HTMLElement.prototype, "onblur", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "oncancel", {
@@ -396,7 +402,7 @@ Object.defineProperty(HTMLElement.prototype, "oncancel", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "oncanplay", {
@@ -419,7 +425,7 @@ Object.defineProperty(HTMLElement.prototype, "oncanplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "oncanplaythrough", {
@@ -442,7 +448,7 @@ Object.defineProperty(HTMLElement.prototype, "oncanplaythrough", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onchange", {
@@ -465,7 +471,7 @@ Object.defineProperty(HTMLElement.prototype, "onchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onclick", {
@@ -488,7 +494,7 @@ Object.defineProperty(HTMLElement.prototype, "onclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onclose", {
@@ -511,7 +517,7 @@ Object.defineProperty(HTMLElement.prototype, "onclose", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "oncontextmenu", {
@@ -534,7 +540,7 @@ Object.defineProperty(HTMLElement.prototype, "oncontextmenu", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "oncuechange", {
@@ -557,7 +563,7 @@ Object.defineProperty(HTMLElement.prototype, "oncuechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondblclick", {
@@ -580,7 +586,7 @@ Object.defineProperty(HTMLElement.prototype, "ondblclick", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondrag", {
@@ -603,7 +609,7 @@ Object.defineProperty(HTMLElement.prototype, "ondrag", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondragend", {
@@ -626,7 +632,7 @@ Object.defineProperty(HTMLElement.prototype, "ondragend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondragenter", {
@@ -649,7 +655,7 @@ Object.defineProperty(HTMLElement.prototype, "ondragenter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondragexit", {
@@ -672,7 +678,7 @@ Object.defineProperty(HTMLElement.prototype, "ondragexit", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondragleave", {
@@ -695,7 +701,7 @@ Object.defineProperty(HTMLElement.prototype, "ondragleave", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondragover", {
@@ -718,7 +724,7 @@ Object.defineProperty(HTMLElement.prototype, "ondragover", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondragstart", {
@@ -741,7 +747,7 @@ Object.defineProperty(HTMLElement.prototype, "ondragstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondrop", {
@@ -764,7 +770,7 @@ Object.defineProperty(HTMLElement.prototype, "ondrop", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ondurationchange", {
@@ -787,7 +793,7 @@ Object.defineProperty(HTMLElement.prototype, "ondurationchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onemptied", {
@@ -810,7 +816,7 @@ Object.defineProperty(HTMLElement.prototype, "onemptied", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onended", {
@@ -833,7 +839,7 @@ Object.defineProperty(HTMLElement.prototype, "onended", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onerror", {
@@ -856,7 +862,7 @@ Object.defineProperty(HTMLElement.prototype, "onerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onfocus", {
@@ -879,7 +885,7 @@ Object.defineProperty(HTMLElement.prototype, "onfocus", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "oninput", {
@@ -902,7 +908,7 @@ Object.defineProperty(HTMLElement.prototype, "oninput", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "oninvalid", {
@@ -925,7 +931,7 @@ Object.defineProperty(HTMLElement.prototype, "oninvalid", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onkeydown", {
@@ -948,7 +954,7 @@ Object.defineProperty(HTMLElement.prototype, "onkeydown", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onkeypress", {
@@ -971,7 +977,7 @@ Object.defineProperty(HTMLElement.prototype, "onkeypress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onkeyup", {
@@ -994,7 +1000,7 @@ Object.defineProperty(HTMLElement.prototype, "onkeyup", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onload", {
@@ -1017,7 +1023,7 @@ Object.defineProperty(HTMLElement.prototype, "onload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onloadeddata", {
@@ -1040,7 +1046,7 @@ Object.defineProperty(HTMLElement.prototype, "onloadeddata", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onloadedmetadata", {
@@ -1063,7 +1069,7 @@ Object.defineProperty(HTMLElement.prototype, "onloadedmetadata", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onloadend", {
@@ -1086,7 +1092,7 @@ Object.defineProperty(HTMLElement.prototype, "onloadend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onloadstart", {
@@ -1109,7 +1115,7 @@ Object.defineProperty(HTMLElement.prototype, "onloadstart", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onmousedown", {
@@ -1132,7 +1138,7 @@ Object.defineProperty(HTMLElement.prototype, "onmousedown", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onmouseenter", {
@@ -1147,7 +1153,7 @@ Object.defineProperty(HTMLElement.prototype, "onmouseenter", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onmouseleave", {
@@ -1162,7 +1168,7 @@ Object.defineProperty(HTMLElement.prototype, "onmouseleave", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onmousemove", {
@@ -1185,7 +1191,7 @@ Object.defineProperty(HTMLElement.prototype, "onmousemove", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onmouseout", {
@@ -1208,7 +1214,7 @@ Object.defineProperty(HTMLElement.prototype, "onmouseout", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onmouseover", {
@@ -1231,7 +1237,7 @@ Object.defineProperty(HTMLElement.prototype, "onmouseover", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onmouseup", {
@@ -1254,7 +1260,7 @@ Object.defineProperty(HTMLElement.prototype, "onmouseup", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onwheel", {
@@ -1277,7 +1283,7 @@ Object.defineProperty(HTMLElement.prototype, "onwheel", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onpause", {
@@ -1300,7 +1306,7 @@ Object.defineProperty(HTMLElement.prototype, "onpause", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onplay", {
@@ -1323,7 +1329,7 @@ Object.defineProperty(HTMLElement.prototype, "onplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onplaying", {
@@ -1346,7 +1352,7 @@ Object.defineProperty(HTMLElement.prototype, "onplaying", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onprogress", {
@@ -1369,7 +1375,7 @@ Object.defineProperty(HTMLElement.prototype, "onprogress", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onratechange", {
@@ -1392,7 +1398,7 @@ Object.defineProperty(HTMLElement.prototype, "onratechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onreset", {
@@ -1415,7 +1421,7 @@ Object.defineProperty(HTMLElement.prototype, "onreset", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onresize", {
@@ -1438,7 +1444,7 @@ Object.defineProperty(HTMLElement.prototype, "onresize", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onscroll", {
@@ -1461,7 +1467,7 @@ Object.defineProperty(HTMLElement.prototype, "onscroll", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onsecuritypolicyviolation", {
@@ -1484,7 +1490,7 @@ Object.defineProperty(HTMLElement.prototype, "onsecuritypolicyviolation", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onseeked", {
@@ -1507,7 +1513,7 @@ Object.defineProperty(HTMLElement.prototype, "onseeked", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onseeking", {
@@ -1530,7 +1536,7 @@ Object.defineProperty(HTMLElement.prototype, "onseeking", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onselect", {
@@ -1553,7 +1559,7 @@ Object.defineProperty(HTMLElement.prototype, "onselect", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onstalled", {
@@ -1576,7 +1582,7 @@ Object.defineProperty(HTMLElement.prototype, "onstalled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onsubmit", {
@@ -1599,7 +1605,7 @@ Object.defineProperty(HTMLElement.prototype, "onsubmit", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onsuspend", {
@@ -1622,7 +1628,7 @@ Object.defineProperty(HTMLElement.prototype, "onsuspend", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ontimeupdate", {
@@ -1645,7 +1651,7 @@ Object.defineProperty(HTMLElement.prototype, "ontimeupdate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "ontoggle", {
@@ -1668,7 +1674,7 @@ Object.defineProperty(HTMLElement.prototype, "ontoggle", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onvolumechange", {
@@ -1691,7 +1697,7 @@ Object.defineProperty(HTMLElement.prototype, "onvolumechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, "onwaiting", {
@@ -1714,14 +1720,14 @@ Object.defineProperty(HTMLElement.prototype, "onwaiting", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLElement.prototype, Symbol.toStringTag, {
   value: "HTMLElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -1787,7 +1793,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -1798,8 +1804,8 @@ const iface = {
   },
   interface: HTMLElement,
   expose: {
-    Window: { HTMLElement }
-  }
+    Window: { HTMLElement },
+  },
 }; // iface
 module.exports = iface;
 

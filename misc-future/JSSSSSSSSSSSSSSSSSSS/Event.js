@@ -15,17 +15,25 @@ function Event(type) {
   }
 
   if (arguments.length < 1) {
-    throw new TypeError("Failed to construct 'Event': 1 argument required, but only " + arguments.length + " present.");
+    throw new TypeError(
+      "Failed to construct 'Event': 1 argument required, but only " +
+        arguments.length +
+        " present."
+    );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'Event': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'Event': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertEventInit(curArg, { context: "Failed to construct 'Event': parameter 2" });
+    curArg = convertEventInit(curArg, {
+      context: "Failed to construct 'Event': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -36,7 +44,7 @@ Object.defineProperty(Event, "prototype", {
   value: Event.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Event.prototype.stopPropagation = function stopPropagation() {
@@ -70,19 +78,25 @@ Event.prototype.initEvent = function initEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'initEvent' on 'Event': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'initEvent' on 'Event': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'initEvent' on 'Event': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'initEvent' on 'Event': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     if (curArg !== undefined) {
-      curArg = conversions["boolean"](curArg, { context: "Failed to execute 'initEvent' on 'Event': parameter 2" });
+      curArg = conversions["boolean"](curArg, {
+        context: "Failed to execute 'initEvent' on 'Event': parameter 2",
+      });
     } else {
       curArg = false;
     }
@@ -91,7 +105,9 @@ Event.prototype.initEvent = function initEvent(type) {
   {
     let curArg = arguments[2];
     if (curArg !== undefined) {
-      curArg = conversions["boolean"](curArg, { context: "Failed to execute 'initEvent' on 'Event': parameter 3" });
+      curArg = conversions["boolean"](curArg, {
+        context: "Failed to execute 'initEvent' on 'Event': parameter 3",
+      });
     } else {
       curArg = false;
     }
@@ -110,7 +126,7 @@ Object.defineProperty(Event.prototype, "type", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "target", {
@@ -123,7 +139,7 @@ Object.defineProperty(Event.prototype, "target", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "srcElement", {
@@ -136,7 +152,7 @@ Object.defineProperty(Event.prototype, "srcElement", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "currentTarget", {
@@ -149,7 +165,7 @@ Object.defineProperty(Event.prototype, "currentTarget", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "eventPhase", {
@@ -162,7 +178,7 @@ Object.defineProperty(Event.prototype, "eventPhase", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "cancelBubble", {
@@ -180,14 +196,15 @@ Object.defineProperty(Event.prototype, "cancelBubble", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'cancelBubble' property on 'Event': The provided value"
+      context:
+        "Failed to set the 'cancelBubble' property on 'Event': The provided value",
     });
 
     this[impl]["cancelBubble"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "bubbles", {
@@ -200,7 +217,7 @@ Object.defineProperty(Event.prototype, "bubbles", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "cancelable", {
@@ -213,7 +230,7 @@ Object.defineProperty(Event.prototype, "cancelable", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "returnValue", {
@@ -231,14 +248,15 @@ Object.defineProperty(Event.prototype, "returnValue", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'returnValue' property on 'Event': The provided value"
+      context:
+        "Failed to set the 'returnValue' property on 'Event': The provided value",
     });
 
     this[impl]["returnValue"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "defaultPrevented", {
@@ -251,7 +269,7 @@ Object.defineProperty(Event.prototype, "defaultPrevented", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event.prototype, "timeStamp", {
@@ -264,50 +282,50 @@ Object.defineProperty(Event.prototype, "timeStamp", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(Event, "NONE", {
   value: 0,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(Event.prototype, "NONE", {
   value: 0,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(Event, "CAPTURING_PHASE", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(Event.prototype, "CAPTURING_PHASE", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(Event, "AT_TARGET", {
   value: 2,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(Event.prototype, "AT_TARGET", {
   value: 2,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(Event, "BUBBLING_PHASE", {
   value: 3,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(Event.prototype, "BUBBLING_PHASE", {
   value: 3,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(Event.prototype, Symbol.toStringTag, {
   value: "Event",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -371,7 +389,7 @@ const iface = {
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
   },
   setup(obj, constructorArgs, privateData) {
@@ -384,7 +402,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -397,8 +415,8 @@ const iface = {
   expose: {
     Window: { Event },
     Worker: { Event },
-    AudioWorklet: { Event }
-  }
+    AudioWorklet: { Event },
+  },
 }; // iface
 module.exports = iface;
 

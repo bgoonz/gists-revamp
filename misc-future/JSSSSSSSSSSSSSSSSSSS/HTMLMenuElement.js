@@ -10,14 +10,17 @@ function HTMLMenuElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLMenuElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLMenuElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLMenuElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLMenuElement, "prototype", {
   value: HTMLMenuElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLMenuElement.prototype, "compact", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLMenuElement.prototype, "compact", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'compact' property on 'HTMLMenuElement': The provided value"
+      context:
+        "Failed to set the 'compact' property on 'HTMLMenuElement': The provided value",
     });
 
     if (V) {
@@ -46,14 +50,14 @@ Object.defineProperty(HTMLMenuElement.prototype, "compact", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMenuElement.prototype, Symbol.toStringTag, {
   value: "HTMLMenuElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -119,7 +123,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -130,8 +134,8 @@ const iface = {
   },
   interface: HTMLMenuElement,
   expose: {
-    Window: { HTMLMenuElement }
-  }
+    Window: { HTMLMenuElement },
+  },
 }; // iface
 module.exports = iface;
 

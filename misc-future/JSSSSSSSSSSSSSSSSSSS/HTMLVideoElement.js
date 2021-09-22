@@ -10,14 +10,17 @@ function HTMLVideoElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLVideoElement.prototype, HTMLMediaElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLVideoElement.prototype,
+  HTMLMediaElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLVideoElement, HTMLMediaElement.interface);
 
 Object.defineProperty(HTMLVideoElement, "prototype", {
   value: HTMLVideoElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLVideoElement.prototype, "width", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLVideoElement.prototype, "width", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'width' property on 'HTMLVideoElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLVideoElement': The provided value",
     });
 
     this.setAttribute("width", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLVideoElement.prototype, "height", {
@@ -62,14 +66,15 @@ Object.defineProperty(HTMLVideoElement.prototype, "height", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'height' property on 'HTMLVideoElement': The provided value"
+      context:
+        "Failed to set the 'height' property on 'HTMLVideoElement': The provided value",
     });
 
     this.setAttribute("height", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLVideoElement.prototype, "videoWidth", {
@@ -82,7 +87,7 @@ Object.defineProperty(HTMLVideoElement.prototype, "videoWidth", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLVideoElement.prototype, "videoHeight", {
@@ -95,7 +100,7 @@ Object.defineProperty(HTMLVideoElement.prototype, "videoHeight", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLVideoElement.prototype, "poster", {
@@ -113,14 +118,15 @@ Object.defineProperty(HTMLVideoElement.prototype, "poster", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'poster' property on 'HTMLVideoElement': The provided value"
+      context:
+        "Failed to set the 'poster' property on 'HTMLVideoElement': The provided value",
     });
 
     this[impl]["poster"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLVideoElement.prototype, "playsInline", {
@@ -138,7 +144,8 @@ Object.defineProperty(HTMLVideoElement.prototype, "playsInline", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'playsInline' property on 'HTMLVideoElement': The provided value"
+      context:
+        "Failed to set the 'playsInline' property on 'HTMLVideoElement': The provided value",
     });
 
     if (V) {
@@ -149,14 +156,14 @@ Object.defineProperty(HTMLVideoElement.prototype, "playsInline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLVideoElement.prototype, Symbol.toStringTag, {
   value: "HTMLVideoElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -222,7 +229,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -233,8 +240,8 @@ const iface = {
   },
   interface: HTMLVideoElement,
   expose: {
-    Window: { HTMLVideoElement }
-  }
+    Window: { HTMLVideoElement },
+  },
 }; // iface
 module.exports = iface;
 

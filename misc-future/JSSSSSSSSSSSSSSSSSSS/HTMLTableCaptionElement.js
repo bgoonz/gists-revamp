@@ -10,14 +10,17 @@ function HTMLTableCaptionElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTableCaptionElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTableCaptionElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTableCaptionElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTableCaptionElement, "prototype", {
   value: HTMLTableCaptionElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLTableCaptionElement.prototype, "align", {
@@ -36,21 +39,22 @@ Object.defineProperty(HTMLTableCaptionElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLTableCaptionElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLTableCaptionElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableCaptionElement.prototype, Symbol.toStringTag, {
   value: "HTMLTableCaptionElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +120,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +131,8 @@ const iface = {
   },
   interface: HTMLTableCaptionElement,
   expose: {
-    Window: { HTMLTableCaptionElement }
-  }
+    Window: { HTMLTableCaptionElement },
+  },
 }; // iface
 module.exports = iface;
 

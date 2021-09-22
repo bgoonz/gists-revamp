@@ -10,14 +10,17 @@ function HTMLTableColElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTableColElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTableColElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTableColElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTableColElement, "prototype", {
   value: HTMLTableColElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLTableColElement.prototype, "span", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLTableColElement.prototype, "span", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'span' property on 'HTMLTableColElement': The provided value"
+      context:
+        "Failed to set the 'span' property on 'HTMLTableColElement': The provided value",
     });
 
     this.setAttribute("span", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableColElement.prototype, "align", {
@@ -62,14 +66,15 @@ Object.defineProperty(HTMLTableColElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLTableColElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLTableColElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableColElement.prototype, "ch", {
@@ -88,14 +93,15 @@ Object.defineProperty(HTMLTableColElement.prototype, "ch", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'ch' property on 'HTMLTableColElement': The provided value"
+      context:
+        "Failed to set the 'ch' property on 'HTMLTableColElement': The provided value",
     });
 
     this.setAttribute("char", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableColElement.prototype, "chOff", {
@@ -114,14 +120,15 @@ Object.defineProperty(HTMLTableColElement.prototype, "chOff", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'chOff' property on 'HTMLTableColElement': The provided value"
+      context:
+        "Failed to set the 'chOff' property on 'HTMLTableColElement': The provided value",
     });
 
     this.setAttribute("charoff", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableColElement.prototype, "vAlign", {
@@ -140,14 +147,15 @@ Object.defineProperty(HTMLTableColElement.prototype, "vAlign", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'vAlign' property on 'HTMLTableColElement': The provided value"
+      context:
+        "Failed to set the 'vAlign' property on 'HTMLTableColElement': The provided value",
     });
 
     this.setAttribute("vAlign", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableColElement.prototype, "width", {
@@ -166,21 +174,22 @@ Object.defineProperty(HTMLTableColElement.prototype, "width", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'width' property on 'HTMLTableColElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLTableColElement': The provided value",
     });
 
     this.setAttribute("width", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableColElement.prototype, Symbol.toStringTag, {
   value: "HTMLTableColElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -246,7 +255,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -257,8 +266,8 @@ const iface = {
   },
   interface: HTMLTableColElement,
   expose: {
-    Window: { HTMLTableColElement }
-  }
+    Window: { HTMLTableColElement },
+  },
 }; // iface
 module.exports = iface;
 

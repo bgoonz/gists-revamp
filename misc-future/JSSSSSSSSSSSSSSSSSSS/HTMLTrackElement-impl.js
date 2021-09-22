@@ -17,5 +17,5 @@ class HTMLTrackElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLTrackElementImpl
+  implementation: HTMLTrackElementImpl,
 };

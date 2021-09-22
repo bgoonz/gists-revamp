@@ -11,14 +11,17 @@ function HTMLMediaElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLMediaElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLMediaElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLMediaElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLMediaElement, "prototype", {
   value: HTMLMediaElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLMediaElement.prototype.load = function load() {
@@ -45,7 +48,8 @@ HTMLMediaElement.prototype.canPlayType = function canPlayType(type) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'canPlayType' on 'HTMLMediaElement': parameter 1"
+      context:
+        "Failed to execute 'canPlayType' on 'HTMLMediaElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -84,7 +88,8 @@ HTMLMediaElement.prototype.addTextTrack = function addTextTrack(kind) {
   {
     let curArg = arguments[0];
     curArg = convertTextTrackKind(curArg, {
-      context: "Failed to execute 'addTextTrack' on 'HTMLMediaElement': parameter 1"
+      context:
+        "Failed to execute 'addTextTrack' on 'HTMLMediaElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -92,7 +97,8 @@ HTMLMediaElement.prototype.addTextTrack = function addTextTrack(kind) {
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'addTextTrack' on 'HTMLMediaElement': parameter 2"
+        context:
+          "Failed to execute 'addTextTrack' on 'HTMLMediaElement': parameter 2",
       });
     } else {
       curArg = "";
@@ -103,7 +109,8 @@ HTMLMediaElement.prototype.addTextTrack = function addTextTrack(kind) {
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'addTextTrack' on 'HTMLMediaElement': parameter 3"
+        context:
+          "Failed to execute 'addTextTrack' on 'HTMLMediaElement': parameter 3",
       });
     } else {
       curArg = "";
@@ -128,14 +135,15 @@ Object.defineProperty(HTMLMediaElement.prototype, "src", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'src' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'src' property on 'HTMLMediaElement': The provided value",
     });
 
     this[impl]["src"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "currentSrc", {
@@ -148,7 +156,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "currentSrc", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "crossOrigin", {
@@ -170,14 +178,15 @@ Object.defineProperty(HTMLMediaElement.prototype, "crossOrigin", {
       V = null;
     } else {
       V = conversions["DOMString"](V, {
-        context: "Failed to set the 'crossOrigin' property on 'HTMLMediaElement': The provided value"
+        context:
+          "Failed to set the 'crossOrigin' property on 'HTMLMediaElement': The provided value",
       });
     }
     this.setAttribute("crossOrigin", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "networkState", {
@@ -190,7 +199,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "networkState", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "preload", {
@@ -209,14 +218,15 @@ Object.defineProperty(HTMLMediaElement.prototype, "preload", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'preload' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'preload' property on 'HTMLMediaElement': The provided value",
     });
 
     this.setAttribute("preload", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "buffered", {
@@ -229,7 +239,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "buffered", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "readyState", {
@@ -242,7 +252,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "readyState", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "seeking", {
@@ -255,7 +265,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "seeking", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "currentTime", {
@@ -273,14 +283,15 @@ Object.defineProperty(HTMLMediaElement.prototype, "currentTime", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'currentTime' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'currentTime' property on 'HTMLMediaElement': The provided value",
     });
 
     this[impl]["currentTime"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "duration", {
@@ -293,7 +304,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "duration", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "paused", {
@@ -306,7 +317,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "paused", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "defaultPlaybackRate", {
@@ -324,14 +335,15 @@ Object.defineProperty(HTMLMediaElement.prototype, "defaultPlaybackRate", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'defaultPlaybackRate' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'defaultPlaybackRate' property on 'HTMLMediaElement': The provided value",
     });
 
     this[impl]["defaultPlaybackRate"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "playbackRate", {
@@ -349,14 +361,15 @@ Object.defineProperty(HTMLMediaElement.prototype, "playbackRate", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'playbackRate' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'playbackRate' property on 'HTMLMediaElement': The provided value",
     });
 
     this[impl]["playbackRate"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "played", {
@@ -369,7 +382,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "played", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "seekable", {
@@ -382,7 +395,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "seekable", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "ended", {
@@ -395,7 +408,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "ended", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "autoplay", {
@@ -413,7 +426,8 @@ Object.defineProperty(HTMLMediaElement.prototype, "autoplay", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'autoplay' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'autoplay' property on 'HTMLMediaElement': The provided value",
     });
 
     if (V) {
@@ -424,7 +438,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "autoplay", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "loop", {
@@ -442,7 +456,8 @@ Object.defineProperty(HTMLMediaElement.prototype, "loop", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'loop' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'loop' property on 'HTMLMediaElement': The provided value",
     });
 
     if (V) {
@@ -453,7 +468,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "loop", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "controls", {
@@ -471,7 +486,8 @@ Object.defineProperty(HTMLMediaElement.prototype, "controls", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'controls' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'controls' property on 'HTMLMediaElement': The provided value",
     });
 
     if (V) {
@@ -482,7 +498,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "controls", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "volume", {
@@ -500,14 +516,15 @@ Object.defineProperty(HTMLMediaElement.prototype, "volume", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'volume' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'volume' property on 'HTMLMediaElement': The provided value",
     });
 
     this[impl]["volume"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "muted", {
@@ -525,14 +542,15 @@ Object.defineProperty(HTMLMediaElement.prototype, "muted", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'muted' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'muted' property on 'HTMLMediaElement': The provided value",
     });
 
     this[impl]["muted"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "defaultMuted", {
@@ -550,7 +568,8 @@ Object.defineProperty(HTMLMediaElement.prototype, "defaultMuted", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'defaultMuted' property on 'HTMLMediaElement': The provided value"
+      context:
+        "Failed to set the 'defaultMuted' property on 'HTMLMediaElement': The provided value",
     });
 
     if (V) {
@@ -561,7 +580,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "defaultMuted", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "audioTracks", {
@@ -576,7 +595,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "audioTracks", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "videoTracks", {
@@ -591,7 +610,7 @@ Object.defineProperty(HTMLMediaElement.prototype, "videoTracks", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, "textTracks", {
@@ -606,95 +625,95 @@ Object.defineProperty(HTMLMediaElement.prototype, "textTracks", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "NETWORK_EMPTY", {
   value: 0,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "NETWORK_EMPTY", {
   value: 0,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "NETWORK_IDLE", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "NETWORK_IDLE", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "NETWORK_LOADING", {
   value: 2,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "NETWORK_LOADING", {
   value: 2,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "NETWORK_NO_SOURCE", {
   value: 3,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "NETWORK_NO_SOURCE", {
   value: 3,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "HAVE_NOTHING", {
   value: 0,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "HAVE_NOTHING", {
   value: 0,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "HAVE_METADATA", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "HAVE_METADATA", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "HAVE_CURRENT_DATA", {
   value: 2,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "HAVE_CURRENT_DATA", {
   value: 2,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "HAVE_FUTURE_DATA", {
   value: 3,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "HAVE_FUTURE_DATA", {
   value: 3,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement, "HAVE_ENOUGH_DATA", {
   value: 4,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLMediaElement.prototype, "HAVE_ENOUGH_DATA", {
   value: 4,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLMediaElement.prototype, Symbol.toStringTag, {
   value: "HTMLMediaElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -760,7 +779,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -771,8 +790,8 @@ const iface = {
   },
   interface: HTMLMediaElement,
   expose: {
-    Window: { HTMLMediaElement }
-  }
+    Window: { HTMLMediaElement },
+  },
 }; // iface
 module.exports = iface;
 

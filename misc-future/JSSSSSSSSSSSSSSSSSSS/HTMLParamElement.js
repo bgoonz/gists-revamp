@@ -10,14 +10,17 @@ function HTMLParamElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLParamElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLParamElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLParamElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLParamElement, "prototype", {
   value: HTMLParamElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLParamElement.prototype, "name", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLParamElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLParamElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLParamElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLParamElement.prototype, "value", {
@@ -62,14 +66,15 @@ Object.defineProperty(HTMLParamElement.prototype, "value", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'value' property on 'HTMLParamElement': The provided value"
+      context:
+        "Failed to set the 'value' property on 'HTMLParamElement': The provided value",
     });
 
     this.setAttribute("value", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLParamElement.prototype, "type", {
@@ -88,14 +93,15 @@ Object.defineProperty(HTMLParamElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLParamElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLParamElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLParamElement.prototype, "valueType", {
@@ -114,21 +120,22 @@ Object.defineProperty(HTMLParamElement.prototype, "valueType", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'valueType' property on 'HTMLParamElement': The provided value"
+      context:
+        "Failed to set the 'valueType' property on 'HTMLParamElement': The provided value",
     });
 
     this.setAttribute("valueType", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLParamElement.prototype, Symbol.toStringTag, {
   value: "HTMLParamElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -194,7 +201,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -205,8 +212,8 @@ const iface = {
   },
   interface: HTMLParamElement,
   expose: {
-    Window: { HTMLParamElement }
-  }
+    Window: { HTMLParamElement },
+  },
 }; // iface
 module.exports = iface;
 

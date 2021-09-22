@@ -35,7 +35,7 @@ class HTMLSelectElementImpl extends HTMLElementImpl {
           }
         }
         return array;
-      }
+      },
     });
     this._selectedOptions = null; // lazy
 
@@ -57,7 +57,7 @@ class HTMLSelectElementImpl extends HTMLElementImpl {
       return;
     }
 
-    const selected = this.options.filter(opt => opt._selectedness);
+    const selected = this.options.filter((opt) => opt._selectedness);
 
     const size = this._displaySize;
     if (size === 1 && !selected.length) {
@@ -65,9 +65,11 @@ class HTMLSelectElementImpl extends HTMLElementImpl {
       for (const option of this.options) {
         let disabled = option.hasAttribute("disabled");
         const parentNode = domSymbolTree.parent(option);
-        if (parentNode &&
+        if (
+          parentNode &&
           parentNode.nodeName.toUpperCase() === "OPTGROUP" &&
-          parentNode.hasAttribute("disabled")) {
+          parentNode.hasAttribute("disabled")
+        ) {
           disabled = true;
         }
 
@@ -128,9 +130,11 @@ class HTMLSelectElementImpl extends HTMLElementImpl {
   get selectedOptions() {
     return HTMLCollection.createImpl([], {
       element: this,
-      query: () => domSymbolTree.treeToArray(this, {
-        filter: node => node._localName === "option" && node._selectedness === true
-      })
+      query: () =>
+        domSymbolTree.treeToArray(this, {
+          filter: (node) =>
+            node._localName === "option" && node._selectedness === true,
+        }),
     });
   }
 
@@ -155,7 +159,7 @@ class HTMLSelectElementImpl extends HTMLElementImpl {
 
   get value() {
     let i = this.selectedIndex;
-    if (this.options.length && (i === -1)) {
+    if (this.options.length && i === -1) {
       i = 0;
     }
     if (i === -1) {
@@ -218,7 +222,8 @@ class HTMLSelectElementImpl extends HTMLElementImpl {
   remove(index) {
     if (arguments.length > 0) {
       index = conversions.long(index, {
-        context: "Failed to execute 'remove' on 'HTMLSelectElement': parameter 1"
+        context:
+          "Failed to execute 'remove' on 'HTMLSelectElement': parameter 1",
       });
       this.options.remove(index);
     } else {
@@ -243,8 +248,11 @@ class HTMLSelectElementImpl extends HTMLElementImpl {
             return false;
           }
           const selectedOptionIndex = this.selectedIndex;
-          return selectedOptionIndex < 0 || (selectedOptionIndex === 0 && this._hasPlaceholderOption);
-        }
+          return (
+            selectedOptionIndex < 0 ||
+            (selectedOptionIndex === 0 && this._hasPlaceholderOption)
+          );
+        },
       });
     }
     return this._validity;
@@ -257,14 +265,22 @@ class HTMLSelectElementImpl extends HTMLElementImpl {
   // element's placeholder label option.
   // https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option
   get _hasPlaceholderOption() {
-    return this.hasAttribute("required") && !this.hasAttribute("multiple") &&
-      this._displaySize === 1 && this.options.length > 0 && this.options.item(0).value === "" &&
-      this.options.item(0).parentNode._localName !== "optgroup";
+    return (
+      this.hasAttribute("required") &&
+      !this.hasAttribute("multiple") &&
+      this._displaySize === 1 &&
+      this.options.length > 0 &&
+      this.options.item(0).value === "" &&
+      this.options.item(0).parentNode._localName !== "optgroup"
+    );
   }
 }
 
-mixin(HTMLSelectElementImpl.prototype, DefaultConstraintValidationImpl.prototype);
+mixin(
+  HTMLSelectElementImpl.prototype,
+  DefaultConstraintValidationImpl.prototype
+);
 
 module.exports = {
-  implementation: HTMLSelectElementImpl
+  implementation: HTMLSelectElementImpl,
 };

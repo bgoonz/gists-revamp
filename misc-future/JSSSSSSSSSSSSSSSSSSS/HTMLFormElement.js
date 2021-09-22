@@ -10,14 +10,17 @@ function HTMLFormElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLFormElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLFormElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLFormElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLFormElement, "prototype", {
   value: HTMLFormElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLFormElement.prototype.submit = function submit() {
@@ -68,14 +71,15 @@ Object.defineProperty(HTMLFormElement.prototype, "acceptCharset", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'acceptCharset' property on 'HTMLFormElement': The provided value"
+      context:
+        "Failed to set the 'acceptCharset' property on 'HTMLFormElement': The provided value",
     });
 
     this.setAttribute("accept-charset", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, "action", {
@@ -93,14 +97,15 @@ Object.defineProperty(HTMLFormElement.prototype, "action", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'action' property on 'HTMLFormElement': The provided value"
+      context:
+        "Failed to set the 'action' property on 'HTMLFormElement': The provided value",
     });
 
     this[impl]["action"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, "enctype", {
@@ -118,14 +123,15 @@ Object.defineProperty(HTMLFormElement.prototype, "enctype", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'enctype' property on 'HTMLFormElement': The provided value"
+      context:
+        "Failed to set the 'enctype' property on 'HTMLFormElement': The provided value",
     });
 
     this[impl]["enctype"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, "method", {
@@ -143,14 +149,15 @@ Object.defineProperty(HTMLFormElement.prototype, "method", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'method' property on 'HTMLFormElement': The provided value"
+      context:
+        "Failed to set the 'method' property on 'HTMLFormElement': The provided value",
     });
 
     this[impl]["method"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, "name", {
@@ -169,14 +176,15 @@ Object.defineProperty(HTMLFormElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLFormElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLFormElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, "noValidate", {
@@ -194,7 +202,8 @@ Object.defineProperty(HTMLFormElement.prototype, "noValidate", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'noValidate' property on 'HTMLFormElement': The provided value"
+      context:
+        "Failed to set the 'noValidate' property on 'HTMLFormElement': The provided value",
     });
 
     if (V) {
@@ -205,7 +214,7 @@ Object.defineProperty(HTMLFormElement.prototype, "noValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, "target", {
@@ -224,14 +233,15 @@ Object.defineProperty(HTMLFormElement.prototype, "target", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'target' property on 'HTMLFormElement': The provided value"
+      context:
+        "Failed to set the 'target' property on 'HTMLFormElement': The provided value",
     });
 
     this.setAttribute("target", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, "elements", {
@@ -246,7 +256,7 @@ Object.defineProperty(HTMLFormElement.prototype, "elements", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, "length", {
@@ -259,14 +269,14 @@ Object.defineProperty(HTMLFormElement.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFormElement.prototype, Symbol.toStringTag, {
   value: "HTMLFormElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -332,7 +342,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -343,8 +353,8 @@ const iface = {
   },
   interface: HTMLFormElement,
   expose: {
-    Window: { HTMLFormElement }
-  }
+    Window: { HTMLFormElement },
+  },
 }; // iface
 module.exports = iface;
 

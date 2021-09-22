@@ -1,20 +1,18 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.findSuggestion = findSuggestion;
-const {
-  min
-} = Math;
+const { min } = Math;
 
 function levenshtein(a, b) {
   let t = [],
-      u = [],
-      i,
-      j;
+    u = [],
+    i,
+    j;
   const m = a.length,
-        n = b.length;
+    n = b.length;
 
   if (!m) {
     return n;
@@ -30,7 +28,8 @@ function levenshtein(a, b) {
 
   for (i = 1; i <= m; i++) {
     for (u = [i], j = 1; j <= n; j++) {
-      u[j] = a[i - 1] === b[j - 1] ? t[j - 1] : min(t[j - 1], t[j], u[j - 1]) + 1;
+      u[j] =
+        a[i - 1] === b[j - 1] ? t[j - 1] : min(t[j - 1], t[j], u[j - 1]) + 1;
     }
 
     t = u;
@@ -40,6 +39,6 @@ function levenshtein(a, b) {
 }
 
 function findSuggestion(str, arr) {
-  const distances = arr.map(el => levenshtein(el, str));
+  const distances = arr.map((el) => levenshtein(el, str));
   return arr[distances.indexOf(min(...distances))];
 }

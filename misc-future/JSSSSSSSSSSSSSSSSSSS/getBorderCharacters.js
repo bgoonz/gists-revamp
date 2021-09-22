@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -30,84 +30,84 @@ exports.default = void 0;
  * @param {string} name
  * @returns {border}
  */
-const getBorderCharacters = name => {
-  if (name === 'honeywell') {
+const getBorderCharacters = (name) => {
+  if (name === "honeywell") {
     return {
-      topBody: '═',
-      topJoin: '╤',
-      topLeft: '╔',
-      topRight: '╗',
-      bottomBody: '═',
-      bottomJoin: '╧',
-      bottomLeft: '╚',
-      bottomRight: '╝',
-      bodyLeft: '║',
-      bodyRight: '║',
-      bodyJoin: '│',
-      joinBody: '─',
-      joinLeft: '╟',
-      joinRight: '╢',
-      joinJoin: '┼'
+      topBody: "═",
+      topJoin: "╤",
+      topLeft: "╔",
+      topRight: "╗",
+      bottomBody: "═",
+      bottomJoin: "╧",
+      bottomLeft: "╚",
+      bottomRight: "╝",
+      bodyLeft: "║",
+      bodyRight: "║",
+      bodyJoin: "│",
+      joinBody: "─",
+      joinLeft: "╟",
+      joinRight: "╢",
+      joinJoin: "┼",
     };
   }
 
-  if (name === 'norc') {
+  if (name === "norc") {
     return {
-      topBody: '─',
-      topJoin: '┬',
-      topLeft: '┌',
-      topRight: '┐',
-      bottomBody: '─',
-      bottomJoin: '┴',
-      bottomLeft: '└',
-      bottomRight: '┘',
-      bodyLeft: '│',
-      bodyRight: '│',
-      bodyJoin: '│',
-      joinBody: '─',
-      joinLeft: '├',
-      joinRight: '┤',
-      joinJoin: '┼'
+      topBody: "─",
+      topJoin: "┬",
+      topLeft: "┌",
+      topRight: "┐",
+      bottomBody: "─",
+      bottomJoin: "┴",
+      bottomLeft: "└",
+      bottomRight: "┘",
+      bodyLeft: "│",
+      bodyRight: "│",
+      bodyJoin: "│",
+      joinBody: "─",
+      joinLeft: "├",
+      joinRight: "┤",
+      joinJoin: "┼",
     };
   }
 
-  if (name === 'ramac') {
+  if (name === "ramac") {
     return {
-      topBody: '-',
-      topJoin: '+',
-      topLeft: '+',
-      topRight: '+',
-      bottomBody: '-',
-      bottomJoin: '+',
-      bottomLeft: '+',
-      bottomRight: '+',
-      bodyLeft: '|',
-      bodyRight: '|',
-      bodyJoin: '|',
-      joinBody: '-',
-      joinLeft: '|',
-      joinRight: '|',
-      joinJoin: '|'
+      topBody: "-",
+      topJoin: "+",
+      topLeft: "+",
+      topRight: "+",
+      bottomBody: "-",
+      bottomJoin: "+",
+      bottomLeft: "+",
+      bottomRight: "+",
+      bodyLeft: "|",
+      bodyRight: "|",
+      bodyJoin: "|",
+      joinBody: "-",
+      joinLeft: "|",
+      joinRight: "|",
+      joinJoin: "|",
     };
   }
 
-  if (name === 'void') {
+  if (name === "void") {
     return {
-      topBody: '',
-      topJoin: '',
-      topLeft: '',
-      topRight: '',
-      bottomBody: '',
-      bottomJoin: '',
-      bottomLeft: '',
-      bottomRight: '',
-      bodyLeft: '',
-      bodyRight: '',
-      bodyJoin: '',
-      joinBody: '',
-      joinLeft: '',
-      joinRight: '',
-      joinJoin: ''
+      topBody: "",
+      topJoin: "",
+      topLeft: "",
+      topRight: "",
+      bottomBody: "",
+      bottomJoin: "",
+      bottomLeft: "",
+      bottomRight: "",
+      bodyLeft: "",
+      bodyRight: "",
+      bodyJoin: "",
+      joinBody: "",
+      joinLeft: "",
+      joinRight: "",
+      joinJoin: "",
     };
   }
 

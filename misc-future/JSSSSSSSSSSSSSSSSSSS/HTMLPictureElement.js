@@ -10,21 +10,24 @@ function HTMLPictureElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLPictureElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLPictureElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLPictureElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLPictureElement, "prototype", {
   value: HTMLPictureElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLPictureElement.prototype, Symbol.toStringTag, {
   value: "HTMLPictureElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +93,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -101,8 +104,8 @@ const iface = {
   },
   interface: HTMLPictureElement,
   expose: {
-    Window: { HTMLPictureElement }
-  }
+    Window: { HTMLPictureElement },
+  },
 }; // iface
 module.exports = iface;
 

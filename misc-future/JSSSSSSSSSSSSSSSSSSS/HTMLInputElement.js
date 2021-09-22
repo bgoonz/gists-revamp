@@ -12,14 +12,17 @@ function HTMLInputElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLInputElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLInputElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLInputElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLInputElement, "prototype", {
   value: HTMLInputElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLInputElement.prototype.checkValidity = function checkValidity() {
@@ -38,7 +41,9 @@ HTMLInputElement.prototype.reportValidity = function reportValidity() {
   return this[impl].reportValidity();
 };
 
-HTMLInputElement.prototype.setCustomValidity = function setCustomValidity(error) {
+HTMLInputElement.prototype.setCustomValidity = function setCustomValidity(
+  error
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -54,7 +59,8 @@ HTMLInputElement.prototype.setCustomValidity = function setCustomValidity(error)
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setCustomValidity' on 'HTMLInputElement': parameter 1"
+      context:
+        "Failed to execute 'setCustomValidity' on 'HTMLInputElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -87,35 +93,41 @@ HTMLInputElement.prototype.setRangeText = function setRangeText(replacement) {
       {
         let curArg = arguments[0];
         curArg = conversions["DOMString"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 1"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 1",
         });
         args.push(curArg);
       }
       break;
     case 2:
       throw new TypeError(
-        "Failed to execute 'setRangeText' on 'HTMLInputElement': only " + arguments.length + " arguments present."
+        "Failed to execute 'setRangeText' on 'HTMLInputElement': only " +
+          arguments.length +
+          " arguments present."
       );
       break;
     case 3:
       {
         let curArg = arguments[0];
         curArg = conversions["DOMString"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 1"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 1",
         });
         args.push(curArg);
       }
       {
         let curArg = arguments[1];
         curArg = conversions["unsigned long"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 2"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 2",
         });
         args.push(curArg);
       }
       {
         let curArg = arguments[2];
         curArg = conversions["unsigned long"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 3"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 3",
         });
         args.push(curArg);
       }
@@ -124,21 +136,24 @@ HTMLInputElement.prototype.setRangeText = function setRangeText(replacement) {
       {
         let curArg = arguments[0];
         curArg = conversions["DOMString"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 1"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 1",
         });
         args.push(curArg);
       }
       {
         let curArg = arguments[1];
         curArg = conversions["unsigned long"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 2"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 2",
         });
         args.push(curArg);
       }
       {
         let curArg = arguments[2];
         curArg = conversions["unsigned long"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 3"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 3",
         });
         args.push(curArg);
       }
@@ -146,7 +161,8 @@ HTMLInputElement.prototype.setRangeText = function setRangeText(replacement) {
         let curArg = arguments[3];
         if (curArg !== undefined) {
           curArg = convertSelectionMode(curArg, {
-            context: "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 4"
+            context:
+              "Failed to execute 'setRangeText' on 'HTMLInputElement': parameter 4",
           });
         } else {
           curArg = "preserve";
@@ -157,7 +173,10 @@ HTMLInputElement.prototype.setRangeText = function setRangeText(replacement) {
   return this[impl].setRangeText(...args);
 };
 
-HTMLInputElement.prototype.setSelectionRange = function setSelectionRange(start, end) {
+HTMLInputElement.prototype.setSelectionRange = function setSelectionRange(
+  start,
+  end
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -173,14 +192,16 @@ HTMLInputElement.prototype.setSelectionRange = function setSelectionRange(start,
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'setSelectionRange' on 'HTMLInputElement': parameter 1"
+      context:
+        "Failed to execute 'setSelectionRange' on 'HTMLInputElement': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'setSelectionRange' on 'HTMLInputElement': parameter 2"
+      context:
+        "Failed to execute 'setSelectionRange' on 'HTMLInputElement': parameter 2",
     });
     args.push(curArg);
   }
@@ -188,7 +209,8 @@ HTMLInputElement.prototype.setSelectionRange = function setSelectionRange(start,
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'setSelectionRange' on 'HTMLInputElement': parameter 3"
+        context:
+          "Failed to execute 'setSelectionRange' on 'HTMLInputElement': parameter 3",
       });
     }
     args.push(curArg);
@@ -212,14 +234,15 @@ Object.defineProperty(HTMLInputElement.prototype, "accept", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'accept' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'accept' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("accept", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "alt", {
@@ -238,14 +261,15 @@ Object.defineProperty(HTMLInputElement.prototype, "alt", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'alt' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'alt' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("alt", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "autocomplete", {
@@ -264,14 +288,15 @@ Object.defineProperty(HTMLInputElement.prototype, "autocomplete", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'autocomplete' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'autocomplete' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("autocomplete", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "autofocus", {
@@ -289,7 +314,8 @@ Object.defineProperty(HTMLInputElement.prototype, "autofocus", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'autofocus' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'autofocus' property on 'HTMLInputElement': The provided value",
     });
 
     if (V) {
@@ -300,7 +326,7 @@ Object.defineProperty(HTMLInputElement.prototype, "autofocus", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "defaultChecked", {
@@ -318,7 +344,8 @@ Object.defineProperty(HTMLInputElement.prototype, "defaultChecked", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'defaultChecked' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'defaultChecked' property on 'HTMLInputElement': The provided value",
     });
 
     if (V) {
@@ -329,7 +356,7 @@ Object.defineProperty(HTMLInputElement.prototype, "defaultChecked", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "checked", {
@@ -347,14 +374,15 @@ Object.defineProperty(HTMLInputElement.prototype, "checked", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'checked' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'checked' property on 'HTMLInputElement': The provided value",
     });
 
     this[impl]["checked"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "dirName", {
@@ -373,14 +401,15 @@ Object.defineProperty(HTMLInputElement.prototype, "dirName", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'dirName' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'dirName' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("dirName", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "disabled", {
@@ -398,7 +427,8 @@ Object.defineProperty(HTMLInputElement.prototype, "disabled", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'disabled' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'disabled' property on 'HTMLInputElement': The provided value",
     });
 
     if (V) {
@@ -409,7 +439,7 @@ Object.defineProperty(HTMLInputElement.prototype, "disabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "form", {
@@ -422,7 +452,7 @@ Object.defineProperty(HTMLInputElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "files", {
@@ -443,14 +473,15 @@ Object.defineProperty(HTMLInputElement.prototype, "files", {
       V = null;
     } else {
       V = convertFileList(V, {
-        context: "Failed to set the 'files' property on 'HTMLInputElement': The provided value"
+        context:
+          "Failed to set the 'files' property on 'HTMLInputElement': The provided value",
       });
     }
     this[impl]["files"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "formNoValidate", {
@@ -468,7 +499,8 @@ Object.defineProperty(HTMLInputElement.prototype, "formNoValidate", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'formNoValidate' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'formNoValidate' property on 'HTMLInputElement': The provided value",
     });
 
     if (V) {
@@ -479,7 +511,7 @@ Object.defineProperty(HTMLInputElement.prototype, "formNoValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "formTarget", {
@@ -498,14 +530,15 @@ Object.defineProperty(HTMLInputElement.prototype, "formTarget", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'formTarget' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'formTarget' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("formTarget", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "indeterminate", {
@@ -523,14 +556,15 @@ Object.defineProperty(HTMLInputElement.prototype, "indeterminate", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'indeterminate' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'indeterminate' property on 'HTMLInputElement': The provided value",
     });
 
     this[impl]["indeterminate"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "inputMode", {
@@ -549,14 +583,15 @@ Object.defineProperty(HTMLInputElement.prototype, "inputMode", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'inputMode' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'inputMode' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("inputMode", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "max", {
@@ -575,14 +610,15 @@ Object.defineProperty(HTMLInputElement.prototype, "max", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'max' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'max' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("max", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "maxLength", {
@@ -600,14 +636,15 @@ Object.defineProperty(HTMLInputElement.prototype, "maxLength", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'maxLength' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'maxLength' property on 'HTMLInputElement': The provided value",
     });
 
     this[impl]["maxLength"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "min", {
@@ -626,14 +663,15 @@ Object.defineProperty(HTMLInputElement.prototype, "min", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'min' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'min' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("min", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "minLength", {
@@ -651,14 +689,15 @@ Object.defineProperty(HTMLInputElement.prototype, "minLength", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'minLength' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'minLength' property on 'HTMLInputElement': The provided value",
     });
 
     this[impl]["minLength"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "multiple", {
@@ -676,7 +715,8 @@ Object.defineProperty(HTMLInputElement.prototype, "multiple", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'multiple' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'multiple' property on 'HTMLInputElement': The provided value",
     });
 
     if (V) {
@@ -687,7 +727,7 @@ Object.defineProperty(HTMLInputElement.prototype, "multiple", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "name", {
@@ -706,14 +746,15 @@ Object.defineProperty(HTMLInputElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "pattern", {
@@ -732,14 +773,15 @@ Object.defineProperty(HTMLInputElement.prototype, "pattern", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'pattern' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'pattern' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("pattern", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "placeholder", {
@@ -758,14 +800,15 @@ Object.defineProperty(HTMLInputElement.prototype, "placeholder", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'placeholder' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'placeholder' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("placeholder", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "readOnly", {
@@ -783,7 +826,8 @@ Object.defineProperty(HTMLInputElement.prototype, "readOnly", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'readOnly' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'readOnly' property on 'HTMLInputElement': The provided value",
     });
 
     if (V) {
@@ -794,7 +838,7 @@ Object.defineProperty(HTMLInputElement.prototype, "readOnly", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "required", {
@@ -812,7 +856,8 @@ Object.defineProperty(HTMLInputElement.prototype, "required", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'required' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'required' property on 'HTMLInputElement': The provided value",
     });
 
     if (V) {
@@ -823,7 +868,7 @@ Object.defineProperty(HTMLInputElement.prototype, "required", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "size", {
@@ -841,14 +886,15 @@ Object.defineProperty(HTMLInputElement.prototype, "size", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'size' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'size' property on 'HTMLInputElement': The provided value",
     });
 
     this[impl]["size"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "src", {
@@ -866,14 +912,15 @@ Object.defineProperty(HTMLInputElement.prototype, "src", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'src' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'src' property on 'HTMLInputElement': The provided value",
     });
 
     this[impl]["src"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "step", {
@@ -892,14 +939,15 @@ Object.defineProperty(HTMLInputElement.prototype, "step", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'step' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'step' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("step", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "type", {
@@ -917,14 +965,15 @@ Object.defineProperty(HTMLInputElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLInputElement': The provided value",
     });
 
     this[impl]["type"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "defaultValue", {
@@ -943,14 +992,15 @@ Object.defineProperty(HTMLInputElement.prototype, "defaultValue", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'defaultValue' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'defaultValue' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("value", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "value", {
@@ -968,15 +1018,16 @@ Object.defineProperty(HTMLInputElement.prototype, "value", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'value' property on 'HTMLInputElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'value' property on 'HTMLInputElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this[impl]["value"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "willValidate", {
@@ -989,7 +1040,7 @@ Object.defineProperty(HTMLInputElement.prototype, "willValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "validity", {
@@ -1002,7 +1053,7 @@ Object.defineProperty(HTMLInputElement.prototype, "validity", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "validationMessage", {
@@ -1015,7 +1066,7 @@ Object.defineProperty(HTMLInputElement.prototype, "validationMessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "labels", {
@@ -1028,7 +1079,7 @@ Object.defineProperty(HTMLInputElement.prototype, "labels", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "selectionStart", {
@@ -1049,14 +1100,15 @@ Object.defineProperty(HTMLInputElement.prototype, "selectionStart", {
       V = null;
     } else {
       V = conversions["unsigned long"](V, {
-        context: "Failed to set the 'selectionStart' property on 'HTMLInputElement': The provided value"
+        context:
+          "Failed to set the 'selectionStart' property on 'HTMLInputElement': The provided value",
       });
     }
     this[impl]["selectionStart"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "selectionEnd", {
@@ -1077,14 +1129,15 @@ Object.defineProperty(HTMLInputElement.prototype, "selectionEnd", {
       V = null;
     } else {
       V = conversions["unsigned long"](V, {
-        context: "Failed to set the 'selectionEnd' property on 'HTMLInputElement': The provided value"
+        context:
+          "Failed to set the 'selectionEnd' property on 'HTMLInputElement': The provided value",
       });
     }
     this[impl]["selectionEnd"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "selectionDirection", {
@@ -1105,14 +1158,15 @@ Object.defineProperty(HTMLInputElement.prototype, "selectionDirection", {
       V = null;
     } else {
       V = conversions["DOMString"](V, {
-        context: "Failed to set the 'selectionDirection' property on 'HTMLInputElement': The provided value"
+        context:
+          "Failed to set the 'selectionDirection' property on 'HTMLInputElement': The provided value",
       });
     }
     this[impl]["selectionDirection"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "align", {
@@ -1131,14 +1185,15 @@ Object.defineProperty(HTMLInputElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, "useMap", {
@@ -1157,21 +1212,22 @@ Object.defineProperty(HTMLInputElement.prototype, "useMap", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'useMap' property on 'HTMLInputElement': The provided value"
+      context:
+        "Failed to set the 'useMap' property on 'HTMLInputElement': The provided value",
     });
 
     this.setAttribute("useMap", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLInputElement.prototype, Symbol.toStringTag, {
   value: "HTMLInputElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -1237,7 +1293,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -1248,8 +1304,8 @@ const iface = {
   },
   interface: HTMLInputElement,
   expose: {
-    Window: { HTMLInputElement }
-  }
+    Window: { HTMLInputElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -17,18 +17,24 @@ function HashChangeEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'HashChangeEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'HashChangeEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'HashChangeEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'HashChangeEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertHashChangeEventInit(curArg, { context: "Failed to construct 'HashChangeEvent': parameter 2" });
+    curArg = convertHashChangeEventInit(curArg, {
+      context: "Failed to construct 'HashChangeEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(HashChangeEvent, "prototype", {
   value: HashChangeEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HashChangeEvent.prototype, "oldURL", {
@@ -55,7 +61,7 @@ Object.defineProperty(HashChangeEvent.prototype, "oldURL", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HashChangeEvent.prototype, "newURL", {
@@ -68,14 +74,14 @@ Object.defineProperty(HashChangeEvent.prototype, "newURL", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HashChangeEvent.prototype, Symbol.toStringTag, {
   value: "HashChangeEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -141,7 +147,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -152,8 +158,8 @@ const iface = {
   },
   interface: HashChangeEvent,
   expose: {
-    Window: { HashChangeEvent }
-  }
+    Window: { HashChangeEvent },
+  },
 }; // iface
 module.exports = iface;
 

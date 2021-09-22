@@ -14,21 +14,24 @@ function HTMLOptionsCollection() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLOptionsCollection.prototype, HTMLCollection.interface.prototype);
+Object.setPrototypeOf(
+  HTMLOptionsCollection.prototype,
+  HTMLCollection.interface.prototype
+);
 Object.setPrototypeOf(HTMLOptionsCollection, HTMLCollection.interface);
 
 Object.defineProperty(HTMLOptionsCollection, "prototype", {
   value: HTMLOptionsCollection.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLOptionsCollection.prototype, Symbol.iterator, {
   writable: true,
   enumerable: false,
   configurable: true,
-  value: Array.prototype[Symbol.iterator]
+  value: Array.prototype[Symbol.iterator],
 });
 
 HTMLOptionsCollection.prototype.add = function add(element) {
@@ -50,7 +53,8 @@ HTMLOptionsCollection.prototype.add = function add(element) {
       curArg = utils.implForWrapper(curArg);
     } else {
       throw new TypeError(
-        "Failed to execute 'add' on 'HTMLOptionsCollection': parameter 1" + " is not of any supported type."
+        "Failed to execute 'add' on 'HTMLOptionsCollection': parameter 1" +
+          " is not of any supported type."
       );
     }
     args.push(curArg);
@@ -65,11 +69,13 @@ HTMLOptionsCollection.prototype.add = function add(element) {
           curArg = utils.implForWrapper(curArg);
         } else if (typeof curArg === "number") {
           curArg = conversions["long"](curArg, {
-            context: "Failed to execute 'add' on 'HTMLOptionsCollection': parameter 2"
+            context:
+              "Failed to execute 'add' on 'HTMLOptionsCollection': parameter 2",
           });
         } else {
           curArg = conversions["long"](curArg, {
-            context: "Failed to execute 'add' on 'HTMLOptionsCollection': parameter 2"
+            context:
+              "Failed to execute 'add' on 'HTMLOptionsCollection': parameter 2",
           });
         }
       }
@@ -97,7 +103,8 @@ HTMLOptionsCollection.prototype.remove = function remove(index) {
   {
     let curArg = arguments[0];
     curArg = conversions["long"](curArg, {
-      context: "Failed to execute 'remove' on 'HTMLOptionsCollection': parameter 1"
+      context:
+        "Failed to execute 'remove' on 'HTMLOptionsCollection': parameter 1",
     });
     args.push(curArg);
   }
@@ -119,14 +126,15 @@ Object.defineProperty(HTMLOptionsCollection.prototype, "length", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'length' property on 'HTMLOptionsCollection': The provided value"
+      context:
+        "Failed to set the 'length' property on 'HTMLOptionsCollection': The provided value",
     });
 
     this[impl]["length"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionsCollection.prototype, "selectedIndex", {
@@ -144,21 +152,22 @@ Object.defineProperty(HTMLOptionsCollection.prototype, "selectedIndex", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'selectedIndex' property on 'HTMLOptionsCollection': The provided value"
+      context:
+        "Failed to set the 'selectedIndex' property on 'HTMLOptionsCollection': The provided value",
     });
 
     this[impl]["selectedIndex"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionsCollection.prototype, Symbol.toStringTag, {
   value: "HTMLOptionsCollection",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -224,7 +233,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -298,7 +307,7 @@ const iface = {
               writable: true,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
           ignoreNamedProps = true;
@@ -311,7 +320,7 @@ const iface = {
             writable: false,
             enumerable: true,
             configurable: true,
-            value: utils.tryWrapperForImpl(namedValue)
+            value: utils.tryWrapperForImpl(namedValue),
           };
         }
 
@@ -331,7 +340,10 @@ const iface = {
               indexedValue = null;
             } else {
               indexedValue = convertHTMLOptionElement(indexedValue, {
-                context: "Failed to set the " + index + " property on 'HTMLOptionsCollection': The provided value"
+                context:
+                  "Failed to set the " +
+                  index +
+                  " property on 'HTMLOptionsCollection': The provided value",
               });
             }
 
@@ -357,7 +369,7 @@ const iface = {
               writable: true,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
         }
@@ -370,7 +382,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -389,7 +406,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -411,7 +433,10 @@ const iface = {
             indexedValue = null;
           } else {
             indexedValue = convertHTMLOptionElement(indexedValue, {
-              context: "Failed to set the " + index + " property on 'HTMLOptionsCollection': The provided value"
+              context:
+                "Failed to set the " +
+                index +
+                " property on 'HTMLOptionsCollection': The provided value",
             });
           }
 
@@ -452,7 +477,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -463,8 +488,8 @@ const iface = {
   },
   interface: HTMLOptionsCollection,
   expose: {
-    Window: { HTMLOptionsCollection }
-  }
+    Window: { HTMLOptionsCollection },
+  },
 }; // iface
 module.exports = iface;
 

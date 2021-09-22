@@ -10,14 +10,17 @@ function HTMLDetailsElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLDetailsElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLDetailsElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLDetailsElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLDetailsElement, "prototype", {
   value: HTMLDetailsElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLDetailsElement.prototype, "open", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLDetailsElement.prototype, "open", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'open' property on 'HTMLDetailsElement': The provided value"
+      context:
+        "Failed to set the 'open' property on 'HTMLDetailsElement': The provided value",
     });
 
     if (V) {
@@ -46,14 +50,14 @@ Object.defineProperty(HTMLDetailsElement.prototype, "open", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLDetailsElement.prototype, Symbol.toStringTag, {
   value: "HTMLDetailsElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -119,7 +123,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -130,8 +134,8 @@ const iface = {
   },
   interface: HTMLDetailsElement,
   expose: {
-    Window: { HTMLDetailsElement }
-  }
+    Window: { HTMLDetailsElement },
+  },
 }; // iface
 module.exports = iface;
 

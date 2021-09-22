@@ -10,14 +10,17 @@ function HTMLMeterElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLMeterElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLMeterElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLMeterElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLMeterElement, "prototype", {
   value: HTMLMeterElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLMeterElement.prototype, "value", {
@@ -35,14 +38,15 @@ Object.defineProperty(HTMLMeterElement.prototype, "value", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'value' property on 'HTMLMeterElement': The provided value"
+      context:
+        "Failed to set the 'value' property on 'HTMLMeterElement': The provided value",
     });
 
     this[impl]["value"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMeterElement.prototype, "min", {
@@ -60,14 +64,15 @@ Object.defineProperty(HTMLMeterElement.prototype, "min", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'min' property on 'HTMLMeterElement': The provided value"
+      context:
+        "Failed to set the 'min' property on 'HTMLMeterElement': The provided value",
     });
 
     this[impl]["min"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMeterElement.prototype, "max", {
@@ -85,14 +90,15 @@ Object.defineProperty(HTMLMeterElement.prototype, "max", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'max' property on 'HTMLMeterElement': The provided value"
+      context:
+        "Failed to set the 'max' property on 'HTMLMeterElement': The provided value",
     });
 
     this[impl]["max"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMeterElement.prototype, "low", {
@@ -110,14 +116,15 @@ Object.defineProperty(HTMLMeterElement.prototype, "low", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'low' property on 'HTMLMeterElement': The provided value"
+      context:
+        "Failed to set the 'low' property on 'HTMLMeterElement': The provided value",
     });
 
     this[impl]["low"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMeterElement.prototype, "high", {
@@ -135,14 +142,15 @@ Object.defineProperty(HTMLMeterElement.prototype, "high", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'high' property on 'HTMLMeterElement': The provided value"
+      context:
+        "Failed to set the 'high' property on 'HTMLMeterElement': The provided value",
     });
 
     this[impl]["high"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMeterElement.prototype, "optimum", {
@@ -160,14 +168,15 @@ Object.defineProperty(HTMLMeterElement.prototype, "optimum", {
     }
 
     V = conversions["double"](V, {
-      context: "Failed to set the 'optimum' property on 'HTMLMeterElement': The provided value"
+      context:
+        "Failed to set the 'optimum' property on 'HTMLMeterElement': The provided value",
     });
 
     this[impl]["optimum"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMeterElement.prototype, "labels", {
@@ -180,14 +189,14 @@ Object.defineProperty(HTMLMeterElement.prototype, "labels", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMeterElement.prototype, Symbol.toStringTag, {
   value: "HTMLMeterElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -253,7 +262,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -264,8 +273,8 @@ const iface = {
   },
   interface: HTMLMeterElement,
   expose: {
-    Window: { HTMLMeterElement }
-  }
+    Window: { HTMLMeterElement },
+  },
 }; // iface
 module.exports = iface;
 

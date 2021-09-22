@@ -9,12 +9,11 @@
 //------------------------------------------------------------------------------
 
 const lodash = require("lodash"),
-    fs = require("fs"),
-    path = require("path"),
-    GlobSync = require("./glob"),
-
-    pathUtils = require("./path-utils"),
-    IgnoredPaths = require("./ignored-paths");
+  fs = require("fs"),
+  path = require("path"),
+  GlobSync = require("./glob"),
+  pathUtils = require("./path-utils"),
+  IgnoredPaths = require("./ignored-paths");
 
 const debug = require("debug")("eslint:glob-utils");
 
@@ -28,7 +27,7 @@ const debug = require("debug")("eslint:glob-utils");
  * @returns {boolean} `true` if a directory exists
  */
 function directoryExists(resolvedPath) {
-    return fs.existsSync(resolvedPath) && fs.statSync(resolvedPath).isDirectory();
+  return fs.existsSync(resolvedPath) && fs.statSync(resolvedPath).isDirectory();
 }
 
 /**
@@ -49,72 +48,69 @@ function directoryExists(resolvedPath) {
  *                     pathname is a directory.
  */
 function processPath(options) {
-    const cwd = (options && options.cwd) || process.cwd();
-    let extensions = (options && options.extensions) || [".js"];
+  const cwd = (options && options.cwd) || process.cwd();
+  let extensions = (options && options.extensions) || [".js"];
 
-    extensions = extensions.map(ext => ext.replace(/^\./u, ""));
+  extensions = extensions.map((ext) => ext.replace(/^\./u, ""));
 
-    let suffix = "/**";
+  let suffix = "/**";
 
-    if (extensions.length === 1) {
-        suffix += `/*.${extensions[0]}`;
-    } else {
-        suffix += `/*.{${extensions.join(",")}}`;
+  if (extensions.length === 1) {
+    suffix += `/*.${extensions[0]}`;
+  } else {
+    suffix += `/*.{${extensions.join(",")}}`;
+  }
+
+  /**
+   * A function that converts a directory name to a glob pattern
+   *
+   * @param {string} pathname The directory path to be modified
+   * @returns {string} The glob path or the file path itself
+   * @private
+   */
+  return function (pathname) {
+    if (pathname === "") {
+      return "";
     }
 
-    /**
-     * A function that converts a directory name to a glob pattern
-     *
-     * @param {string} pathname The directory path to be modified
-     * @returns {string} The glob path or the file path itself
-     * @private
-     */
-    return function(pathname) {
-        if (pathname === "") {
-            return "";
-        }
+    let newPath = pathname;
+    const resolvedPath = path.resolve(cwd, pathname);
 
-        let newPath = pathname;
-        const resolvedPath = path.resolve(cwd, pathname);
+    if (directoryExists(resolvedPath)) {
+      newPath = pathname.replace(/[/\\]$/u, "") + suffix;
+    }
 
-        if (directoryExists(resolvedPath)) {
-            newPath = pathname.replace(/[/\\]$/u, "") + suffix;
-        }
-
-        return pathUtils.convertPathToPosix(newPath);
-    };
+    return pathUtils.convertPathToPosix(newPath);
+  };
 }
 
 /**
  * The error type when no files match a glob.
  */
 class NoFilesFoundError extends Error {
+  /**
+   * @param {string} pattern - The glob pattern which was not found.
+   */
+  constructor(pattern) {
+    super(`No files matching '${pattern}' were found.`);
 
-    /**
-     * @param {string} pattern - The glob pattern which was not found.
-     */
-    constructor(pattern) {
-        super(`No files matching '${pattern}' were found.`);
-
-        this.messageTemplate = "file-not-found";
-        this.messageData = { pattern };
-    }
-
+    this.messageTemplate = "file-not-found";
+    this.messageData = { pattern };
+  }
 }
 
 /**
  * The error type when there are files matched by a glob, but all of them have been ignored.
  */
 class AllFilesIgnoredError extends Error {
-
-    /**
-     * @param {string} pattern - The glob pattern which was not found.
-     */
-    constructor(pattern) {
-        super(`All files matched by '${pattern}' are ignored.`);
-        this.messageTemplate = "all-files-ignored";
-        this.messageData = { pattern };
-    }
+  /**
+   * @param {string} pattern - The glob pattern which was not found.
+   */
+  constructor(pattern) {
+    super(`All files matched by '${pattern}' are ignored.`);
+    this.messageTemplate = "all-files-ignored";
+    this.messageData = { pattern };
+  }
 }
 
 const NORMAL_LINT = {};
@@ -135,21 +131,34 @@ const IGNORE_AND_WARN = {};
  * file should be processed (either linted normally, or silently ignored, or ignored
  * with a warning that it is being ignored)
  */
-function testFileAgainstIgnorePatterns(filename, options, isDirectPath, ignoredPaths) {
-    const shouldProcessCustomIgnores = options.ignore !== false;
-    const shouldLintIgnoredDirectPaths = options.ignore === false;
-    const fileMatchesIgnorePatterns = ignoredPaths.contains(filename, "default") ||
-        (shouldProcessCustomIgnores && ignoredPaths.contains(filename, "custom"));
+function testFileAgainstIgnorePatterns(
+  filename,
+  options,
+  isDirectPath,
+  ignoredPaths
+) {
+  const shouldProcessCustomIgnores = options.ignore !== false;
+  const shouldLintIgnoredDirectPaths = options.ignore === false;
+  const fileMatchesIgnorePatterns =
+    ignoredPaths.contains(filename, "default") ||
+    (shouldProcessCustomIgnores && ignoredPaths.contains(filename, "custom"));
 
-    if (fileMatchesIgnorePatterns && isDirectPath && !shouldLintIgnoredDirectPaths) {
-        return IGNORE_AND_WARN;
-    }
+  if (
+    fileMatchesIgnorePatterns &&
+    isDirectPath &&
+    !shouldLintIgnoredDirectPaths
+  ) {
+    return IGNORE_AND_WARN;
+  }
 
-    if (!fileMatchesIgnorePatterns || (isDirectPath && shouldLintIgnoredDirectPaths)) {
-        return NORMAL_LINT;
-    }
+  if (
+    !fileMatchesIgnorePatterns ||
+    (isDirectPath && shouldLintIgnoredDirectPaths)
+  ) {
+    return NORMAL_LINT;
+  }
 
-    return SILENTLY_IGNORE;
+  return SILENTLY_IGNORE;
 }
 
 //------------------------------------------------------------------------------
@@ -164,13 +173,13 @@ function testFileAgainstIgnorePatterns(filename, options, isDirectPath, ignoredP
  * @returns {string[]} The equivalent glob patterns and filepath strings.
  */
 function resolveFileGlobPatterns(patterns, options) {
-    if (options.globInputPaths === false) {
-        return patterns;
-    }
+  if (options.globInputPaths === false) {
+    return patterns;
+  }
 
-    const processPathExtensions = processPath(options);
+  const processPathExtensions = processPath(options);
 
-    return patterns.map(processPathExtensions);
+  return patterns.map(processPathExtensions);
 }
 
 const dotfilesPattern = /(?:(?:^\.)|(?:[/\\]\.))[^/\\.].*/u;
@@ -189,97 +198,142 @@ const dotfilesPattern = /(?:(?:^\.)|(?:[/\\]\.))[^/\\.].*/u;
  * @returns {string[]} Resolved absolute filenames.
  */
 function listFilesToProcess(globPatterns, providedOptions) {
-    const options = providedOptions || { ignore: true };
-    const cwd = options.cwd || process.cwd();
+  const options = providedOptions || { ignore: true };
+  const cwd = options.cwd || process.cwd();
 
-    const getIgnorePaths = lodash.memoize(
-        optionsObj =>
-            new IgnoredPaths(optionsObj)
-    );
+  const getIgnorePaths = lodash.memoize(
+    (optionsObj) => new IgnoredPaths(optionsObj)
+  );
 
-    /*
-     * The test "should use default options if none are provided" (source-code-utils.js) checks that 'module.exports.resolveFileGlobPatterns' was called.
-     * So it cannot use the local function "resolveFileGlobPatterns".
-     */
-    const resolvedGlobPatterns = module.exports.resolveFileGlobPatterns(globPatterns, options);
+  /*
+   * The test "should use default options if none are provided" (source-code-utils.js) checks that 'module.exports.resolveFileGlobPatterns' was called.
+   * So it cannot use the local function "resolveFileGlobPatterns".
+   */
+  const resolvedGlobPatterns = module.exports.resolveFileGlobPatterns(
+    globPatterns,
+    options
+  );
 
-    debug("Creating list of files to process.");
-    const resolvedPathsByGlobPattern = resolvedGlobPatterns.map(pattern => {
-        if (pattern === "") {
-            return [{
-                filename: "",
-                behavior: SILENTLY_IGNORE
-            }];
-        }
+  debug("Creating list of files to process.");
+  const resolvedPathsByGlobPattern = resolvedGlobPatterns.map((pattern) => {
+    if (pattern === "") {
+      return [
+        {
+          filename: "",
+          behavior: SILENTLY_IGNORE,
+        },
+      ];
+    }
 
-        const file = path.resolve(cwd, pattern);
+    const file = path.resolve(cwd, pattern);
 
-        if (options.globInputPaths === false || (fs.existsSync(file) && fs.statSync(file).isFile())) {
-            const ignoredPaths = getIgnorePaths(options);
-            const fullPath = options.globInputPaths === false ? file : fs.realpathSync(file);
+    if (
+      options.globInputPaths === false ||
+      (fs.existsSync(file) && fs.statSync(file).isFile())
+    ) {
+      const ignoredPaths = getIgnorePaths(options);
+      const fullPath =
+        options.globInputPaths === false ? file : fs.realpathSync(file);
 
-            return [{
-                filename: fullPath,
-                behavior: testFileAgainstIgnorePatterns(fullPath, options, true, ignoredPaths)
-            }];
-        }
+      return [
+        {
+          filename: fullPath,
+          behavior: testFileAgainstIgnorePatterns(
+            fullPath,
+            options,
+            true,
+            ignoredPaths
+          ),
+        },
+      ];
+    }
 
-        // regex to find .hidden or /.hidden patterns, but not ./relative or ../relative
-        const globIncludesDotfiles = dotfilesPattern.test(pattern);
-        let newOptions = options;
+    // regex to find .hidden or /.hidden patterns, but not ./relative or ../relative
+    const globIncludesDotfiles = dotfilesPattern.test(pattern);
+    let newOptions = options;
 
-        if (!options.dotfiles) {
-            newOptions = Object.assign({}, options, { dotfiles: globIncludesDotfiles });
-        }
+    if (!options.dotfiles) {
+      newOptions = Object.assign({}, options, {
+        dotfiles: globIncludesDotfiles,
+      });
+    }
 
-        const ignoredPaths = getIgnorePaths(newOptions);
-        const shouldIgnore = ignoredPaths.getIgnoredFoldersGlobChecker();
-        const globOptions = {
-            nodir: true,
-            dot: true,
-            cwd
+    const ignoredPaths = getIgnorePaths(newOptions);
+    const shouldIgnore = ignoredPaths.getIgnoredFoldersGlobChecker();
+    const globOptions = {
+      nodir: true,
+      dot: true,
+      cwd,
+    };
+
+    return new GlobSync(pattern, globOptions, shouldIgnore).found.map(
+      (globMatch) => {
+        const relativePath = path.resolve(cwd, globMatch);
+
+        return {
+          filename: relativePath,
+          behavior: testFileAgainstIgnorePatterns(
+            relativePath,
+            options,
+            false,
+            ignoredPaths
+          ),
         };
+      }
+    );
+  });
 
-        return new GlobSync(pattern, globOptions, shouldIgnore).found.map(globMatch => {
-            const relativePath = path.resolve(cwd, globMatch);
+  const allPathDescriptors = resolvedPathsByGlobPattern.reduce(
+    (pathsForAllGlobs, pathsForCurrentGlob, index) => {
+      if (
+        pathsForCurrentGlob.every(
+          (pathDescriptor) =>
+            pathDescriptor.behavior === SILENTLY_IGNORE &&
+            pathDescriptor.filename !== ""
+        )
+      ) {
+        throw new (
+          pathsForCurrentGlob.length ? AllFilesIgnoredError : NoFilesFoundError
+        )(globPatterns[index]);
+      }
 
-            return {
-                filename: relativePath,
-                behavior: testFileAgainstIgnorePatterns(relativePath, options, false, ignoredPaths)
-            };
-        });
-    });
+      pathsForCurrentGlob.forEach((pathDescriptor) => {
+        switch (pathDescriptor.behavior) {
+          case NORMAL_LINT:
+            pathsForAllGlobs.push({
+              filename: pathDescriptor.filename,
+              ignored: false,
+            });
+            break;
+          case IGNORE_AND_WARN:
+            pathsForAllGlobs.push({
+              filename: pathDescriptor.filename,
+              ignored: true,
+            });
+            break;
+          case SILENTLY_IGNORE:
+            // do nothing
+            break;
 
-    const allPathDescriptors = resolvedPathsByGlobPattern.reduce((pathsForAllGlobs, pathsForCurrentGlob, index) => {
-        if (pathsForCurrentGlob.every(pathDescriptor => pathDescriptor.behavior === SILENTLY_IGNORE && pathDescriptor.filename !== "")) {
-            throw new (pathsForCurrentGlob.length ? AllFilesIgnoredError : NoFilesFoundError)(globPatterns[index]);
+          default:
+            throw new Error(
+              `Unexpected file behavior for ${pathDescriptor.filename}`
+            );
         }
+      });
 
-        pathsForCurrentGlob.forEach(pathDescriptor => {
-            switch (pathDescriptor.behavior) {
-                case NORMAL_LINT:
-                    pathsForAllGlobs.push({ filename: pathDescriptor.filename, ignored: false });
-                    break;
-                case IGNORE_AND_WARN:
-                    pathsForAllGlobs.push({ filename: pathDescriptor.filename, ignored: true });
-                    break;
-                case SILENTLY_IGNORE:
+      return pathsForAllGlobs;
+    },
+    []
+  );
 
-                    // do nothing
-                    break;
-
-                default:
-                    throw new Error(`Unexpected file behavior for ${pathDescriptor.filename}`);
-            }
-        });
-
-        return pathsForAllGlobs;
-    }, []);
-
-    return lodash.uniqBy(allPathDescriptors, pathDescriptor => pathDescriptor.filename);
+  return lodash.uniqBy(
+    allPathDescriptors,
+    (pathDescriptor) => pathDescriptor.filename
+  );
 }
 
 module.exports = {
-    resolveFileGlobPatterns,
-    listFilesToProcess
+  resolveFileGlobPatterns,
+  listFilesToProcess,
 };

@@ -10,14 +10,17 @@ function HTMLDataElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLDataElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLDataElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLDataElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLDataElement, "prototype", {
   value: HTMLDataElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLDataElement.prototype, "value", {
@@ -36,21 +39,22 @@ Object.defineProperty(HTMLDataElement.prototype, "value", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'value' property on 'HTMLDataElement': The provided value"
+      context:
+        "Failed to set the 'value' property on 'HTMLDataElement': The provided value",
     });
 
     this.setAttribute("value", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLDataElement.prototype, Symbol.toStringTag, {
   value: "HTMLDataElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +120,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +131,8 @@ const iface = {
   },
   interface: HTMLDataElement,
   expose: {
-    Window: { HTMLDataElement }
-  }
+    Window: { HTMLDataElement },
+  },
 }; // iface
 module.exports = iface;
 

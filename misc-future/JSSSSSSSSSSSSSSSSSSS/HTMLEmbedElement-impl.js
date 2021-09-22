@@ -13,5 +13,5 @@ class HTMLEmbedElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLEmbedElementImpl
+  implementation: HTMLEmbedElementImpl,
 };

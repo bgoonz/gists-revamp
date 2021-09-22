@@ -11,14 +11,17 @@ function HTMLBodyElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLBodyElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLBodyElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLBodyElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLBodyElement, "prototype", {
   value: HTMLBodyElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "text", {
@@ -37,15 +40,16 @@ Object.defineProperty(HTMLBodyElement.prototype, "text", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'text' property on 'HTMLBodyElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'text' property on 'HTMLBodyElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("text", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "link", {
@@ -64,15 +68,16 @@ Object.defineProperty(HTMLBodyElement.prototype, "link", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'link' property on 'HTMLBodyElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'link' property on 'HTMLBodyElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("link", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "vLink", {
@@ -91,15 +96,16 @@ Object.defineProperty(HTMLBodyElement.prototype, "vLink", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'vLink' property on 'HTMLBodyElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'vLink' property on 'HTMLBodyElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("vLink", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "aLink", {
@@ -118,15 +124,16 @@ Object.defineProperty(HTMLBodyElement.prototype, "aLink", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'aLink' property on 'HTMLBodyElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'aLink' property on 'HTMLBodyElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("aLink", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "bgColor", {
@@ -145,15 +152,16 @@ Object.defineProperty(HTMLBodyElement.prototype, "bgColor", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'bgColor' property on 'HTMLBodyElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'bgColor' property on 'HTMLBodyElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("bgColor", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "background", {
@@ -172,14 +180,15 @@ Object.defineProperty(HTMLBodyElement.prototype, "background", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'background' property on 'HTMLBodyElement': The provided value"
+      context:
+        "Failed to set the 'background' property on 'HTMLBodyElement': The provided value",
     });
 
     this.setAttribute("background", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onafterprint", {
@@ -202,7 +211,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onafterprint", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onbeforeprint", {
@@ -225,7 +234,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onbeforeprint", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onbeforeunload", {
@@ -248,7 +257,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onbeforeunload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onhashchange", {
@@ -271,7 +280,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onhashchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onlanguagechange", {
@@ -294,7 +303,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onlanguagechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onmessage", {
@@ -317,7 +326,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onmessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onmessageerror", {
@@ -340,7 +349,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onmessageerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onoffline", {
@@ -363,7 +372,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onoffline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "ononline", {
@@ -386,7 +395,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "ononline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onpagehide", {
@@ -409,7 +418,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onpagehide", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onpageshow", {
@@ -432,7 +441,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onpageshow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onpopstate", {
@@ -455,7 +464,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onpopstate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onrejectionhandled", {
@@ -478,7 +487,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onrejectionhandled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onstorage", {
@@ -501,7 +510,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onstorage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onunhandledrejection", {
@@ -524,7 +533,7 @@ Object.defineProperty(HTMLBodyElement.prototype, "onunhandledrejection", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, "onunload", {
@@ -547,14 +556,14 @@ Object.defineProperty(HTMLBodyElement.prototype, "onunload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBodyElement.prototype, Symbol.toStringTag, {
   value: "HTMLBodyElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -620,7 +629,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -631,8 +640,8 @@ const iface = {
   },
   interface: HTMLBodyElement,
   expose: {
-    Window: { HTMLBodyElement }
-  }
+    Window: { HTMLBodyElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -6,12 +6,14 @@ const querystring = require("querystring");
 const DOMException = require("domexception");
 const EventTargetImpl = require("../events/EventTarget-impl").implementation;
 const ProgressEvent = require("../generated/ProgressEvent");
-const { setupForSimpleEventAccessors } = require("../helpers/create-event-accessor");
+const {
+  setupForSimpleEventAccessors,
+} = require("../helpers/create-event-accessor");
 
 const READY_STATES = Object.freeze({
   EMPTY: 0,
   LOADING: 1,
-  DONE: 2
+  DONE: 2,
 });
 
 const events = ["loadstart", "progress", "load", "abort", "error", "loadend"];
@@ -38,11 +40,18 @@ class FileReaderImpl extends EventTargetImpl {
     this._readFile(file, "dataURL");
   }
   readAsText(file, encoding) {
-    this._readFile(file, "text", whatwgEncoding.labelToName(encoding) || "UTF-8");
+    this._readFile(
+      file,
+      "text",
+      whatwgEncoding.labelToName(encoding) || "UTF-8"
+    );
   }
 
   abort() {
-    if (this.readyState === READY_STATES.EMPTY || this.readyState === READY_STATES.DONE) {
+    if (
+      this.readyState === READY_STATES.EMPTY ||
+      this.readyState === READY_STATES.DONE
+    ) {
       this.result = null;
       return;
     }
@@ -58,13 +67,19 @@ class FileReaderImpl extends EventTargetImpl {
   }
 
   _fireProgressEvent(name, props) {
-    const event = ProgressEvent.createImpl([name, Object.assign({ bubbles: false, cancelable: false }, props)], {});
+    const event = ProgressEvent.createImpl(
+      [name, Object.assign({ bubbles: false, cancelable: false }, props)],
+      {}
+    );
     this.dispatchEvent(event);
   }
 
   _readFile(file, format, encoding) {
     if (this.readyState === READY_STATES.LOADING) {
-      throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      throw new DOMException(
+        "The object is in an invalid state.",
+        "InvalidStateError"
+      );
     }
 
     this.readyState = READY_STATES.LOADING;
@@ -84,7 +99,7 @@ class FileReaderImpl extends EventTargetImpl {
       this._fireProgressEvent("progress", {
         lengthComputable: !isNaN(file.size),
         total: file.size,
-        loaded: data.length
+        loaded: data.length,
       });
 
       setImmediate(() => {
@@ -96,7 +111,7 @@ class FileReaderImpl extends EventTargetImpl {
         switch (format) {
           default:
           case "buffer": {
-            this.result = (new Uint8Array(data)).buffer;
+            this.result = new Uint8Array(data).buffer;
             break;
           }
           case "binaryString": {
@@ -108,8 +123,12 @@ class FileReaderImpl extends EventTargetImpl {
             let dataUrl = "data:";
             const contentType = MIMEType.parse(file.type);
             if (contentType && contentType.type === "text") {
-              const fallbackEncoding = whatwgEncoding.getBOMEncoding(data) ||
-                whatwgEncoding.labelToName(contentType.parameters.get("charset")) || "UTF-8";
+              const fallbackEncoding =
+                whatwgEncoding.getBOMEncoding(data) ||
+                whatwgEncoding.labelToName(
+                  contentType.parameters.get("charset")
+                ) ||
+                "UTF-8";
               const decoded = whatwgEncoding.decode(data, fallbackEncoding);
 
               contentType.parameters.set("charset", encoding);

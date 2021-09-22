@@ -1,1 +1,1 @@
-module.exports = require('./invert');
+module.exports = require("./invert");

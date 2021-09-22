@@ -103,5 +103,5 @@ class EventImpl {
 EventImpl.defaultInit = EventInit.convert(undefined);
 
 module.exports = {
-  implementation: EventImpl
+  implementation: EventImpl,
 };

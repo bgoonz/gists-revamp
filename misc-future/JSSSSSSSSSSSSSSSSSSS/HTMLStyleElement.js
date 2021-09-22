@@ -11,14 +11,17 @@ function HTMLStyleElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLStyleElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLStyleElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLStyleElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLStyleElement, "prototype", {
   value: HTMLStyleElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLStyleElement.prototype, "media", {
@@ -37,14 +40,15 @@ Object.defineProperty(HTMLStyleElement.prototype, "media", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'media' property on 'HTMLStyleElement': The provided value"
+      context:
+        "Failed to set the 'media' property on 'HTMLStyleElement': The provided value",
     });
 
     this.setAttribute("media", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLStyleElement.prototype, "nonce", {
@@ -63,14 +67,15 @@ Object.defineProperty(HTMLStyleElement.prototype, "nonce", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'nonce' property on 'HTMLStyleElement': The provided value"
+      context:
+        "Failed to set the 'nonce' property on 'HTMLStyleElement': The provided value",
     });
 
     this.setAttribute("nonce", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLStyleElement.prototype, "type", {
@@ -89,14 +94,15 @@ Object.defineProperty(HTMLStyleElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLStyleElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLStyleElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLStyleElement.prototype, "sheet", {
@@ -109,14 +115,14 @@ Object.defineProperty(HTMLStyleElement.prototype, "sheet", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLStyleElement.prototype, Symbol.toStringTag, {
   value: "HTMLStyleElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -182,7 +188,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -193,8 +199,8 @@ const iface = {
   },
   interface: HTMLStyleElement,
   expose: {
-    Window: { HTMLStyleElement }
-  }
+    Window: { HTMLStyleElement },
+  },
 }; // iface
 module.exports = iface;
 

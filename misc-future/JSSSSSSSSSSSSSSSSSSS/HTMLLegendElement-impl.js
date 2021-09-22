@@ -9,5 +9,5 @@ class HTMLLegendElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLLegendElementImpl
+  implementation: HTMLLegendElementImpl,
 };

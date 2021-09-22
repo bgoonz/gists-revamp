@@ -10,7 +10,7 @@ class HTMLTableSectionElementImpl extends HTMLElementImpl {
     if (!this._rows) {
       this._rows = HTMLCollection.createImpl([], {
         element: this,
-        query: () => childrenByHTMLLocalName(this, "tr")
+        query: () => childrenByHTMLLocalName(this, "tr"),
       });
     }
     return this._rows;
@@ -18,8 +18,11 @@ class HTMLTableSectionElementImpl extends HTMLElementImpl {
 
   insertRow(index) {
     if (index < -1 || index > this.rows.length) {
-      throw new DOMException("Cannot insert a row at an index that is less than -1 or greater than the number of " +
-        "existing rows", "IndexSizeError");
+      throw new DOMException(
+        "Cannot insert a row at an index that is less than -1 or greater than the number of " +
+          "existing rows",
+        "IndexSizeError"
+      );
     }
 
     const tr = this._ownerDocument.createElement("tr");
@@ -36,7 +39,10 @@ class HTMLTableSectionElementImpl extends HTMLElementImpl {
 
   deleteRow(index) {
     if (index < -1 || index >= this.rows.length) {
-      throw new DOMException(`Cannot delete a row at index ${index}, where no row exists`, "IndexSizeError");
+      throw new DOMException(
+        `Cannot delete a row at index ${index}, where no row exists`,
+        "IndexSizeError"
+      );
     }
 
     if (index === -1) {
@@ -52,5 +58,5 @@ class HTMLTableSectionElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLTableSectionElementImpl
+  implementation: HTMLTableSectionElementImpl,
 };

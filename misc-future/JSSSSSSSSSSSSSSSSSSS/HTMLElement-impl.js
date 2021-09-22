@@ -2,9 +2,12 @@
 const { mixin } = require("../../utils");
 const ElementImpl = require("./Element-impl").implementation;
 const MouseEvent = require("../generated/MouseEvent");
-const ElementCSSInlineStyleImpl = require("./ElementCSSInlineStyle-impl").implementation;
-const GlobalEventHandlersImpl = require("./GlobalEventHandlers-impl").implementation;
-const HTMLAndSVGElementSharedImpl = require("./HTMLAndSVGElementShared-impl").implementation;
+const ElementCSSInlineStyleImpl =
+  require("./ElementCSSInlineStyle-impl").implementation;
+const GlobalEventHandlersImpl =
+  require("./GlobalEventHandlers-impl").implementation;
+const HTMLAndSVGElementSharedImpl =
+  require("./HTMLAndSVGElementShared-impl").implementation;
 const { isDisabled } = require("../helpers/form-controls");
 
 class HTMLElementImpl extends ElementImpl {
@@ -56,21 +59,23 @@ class HTMLElementImpl extends ElementImpl {
       return;
     }
 
-    const event = MouseEvent.createImpl([
-      "click",
-      {
-        bubbles: true,
-        cancelable: true,
-        view: this.ownerDocument.defaultView
-      }
-    ], {});
+    const event = MouseEvent.createImpl(
+      [
+        "click",
+        {
+          bubbles: true,
+          cancelable: true,
+          view: this.ownerDocument.defaultView,
+        },
+      ],
+      {}
+    );
 
     // Run synthetic click activation steps. According to the spec,
     // this should not be calling dispatchEvent, but it matches browser behavior.
     // See: https://www.w3.org/Bugs/Public/show_bug.cgi?id=12230
     // See also: https://github.com/whatwg/html/issues/805
     this.dispatchEvent(event);
-
 
     this._clickInProgress = false;
   }
@@ -137,5 +142,5 @@ mixin(HTMLElementImpl.prototype, GlobalEventHandlersImpl.prototype);
 mixin(HTMLElementImpl.prototype, HTMLAndSVGElementSharedImpl.prototype);
 
 module.exports = {
-  implementation: HTMLElementImpl
+  implementation: HTMLElementImpl,
 };

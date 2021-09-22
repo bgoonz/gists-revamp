@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = gatherSequenceExpressions;
 
@@ -35,21 +35,29 @@ function gatherSequenceExpressions(nodes, scope, declars) {
         for (const key of Object.keys(bindings)) {
           declars.push({
             kind: node.kind,
-            id: (0, _cloneNode.default)(bindings[key])
+            id: (0, _cloneNode.default)(bindings[key]),
           });
         }
 
         if (declar.init) {
-          exprs.push((0, _generated2.assignmentExpression)("=", declar.id, declar.init));
+          exprs.push(
+            (0, _generated2.assignmentExpression)("=", declar.id, declar.init)
+          );
         }
       }
 
       ensureLastUndefined = true;
     } else if ((0, _generated.isIfStatement)(node)) {
-      const consequent = node.consequent ? gatherSequenceExpressions([node.consequent], scope, declars) : scope.buildUndefinedNode();
-      const alternate = node.alternate ? gatherSequenceExpressions([node.alternate], scope, declars) : scope.buildUndefinedNode();
+      const consequent = node.consequent
+        ? gatherSequenceExpressions([node.consequent], scope, declars)
+        : scope.buildUndefinedNode();
+      const alternate = node.alternate
+        ? gatherSequenceExpressions([node.alternate], scope, declars)
+        : scope.buildUndefinedNode();
       if (!consequent || !alternate) return;
-      exprs.push((0, _generated2.conditionalExpression)(node.test, consequent, alternate));
+      exprs.push(
+        (0, _generated2.conditionalExpression)(node.test, consequent, alternate)
+      );
     } else if ((0, _generated.isBlockStatement)(node)) {
       const body = gatherSequenceExpressions(node.body, scope, declars);
       if (!body) return;

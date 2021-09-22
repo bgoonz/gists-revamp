@@ -3,7 +3,10 @@ const DOMException = require("domexception");
 const HTMLElementImpl = require("./HTMLElement-impl").implementation;
 const { HTML_NS } = require("../helpers/namespaces");
 const { domSymbolTree } = require("../helpers/internal-constants");
-const { firstChildWithHTMLLocalName, childrenByHTMLLocalName } = require("../helpers/traversal");
+const {
+  firstChildWithHTMLLocalName,
+  childrenByHTMLLocalName,
+} = require("../helpers/traversal");
 const HTMLCollection = require("../generated/HTMLCollection");
 const NODE_TYPE = require("../node-type");
 
@@ -14,7 +17,10 @@ function tHeadInsertionPoint(table) {
       continue;
     }
 
-    if (child._namespaceURI !== HTML_NS || (child._localName !== "caption" && child._localName !== "colgroup")) {
+    if (
+      child._namespaceURI !== HTML_NS ||
+      (child._localName !== "caption" && child._localName !== "colgroup")
+    ) {
       return child;
     }
   }
@@ -46,7 +52,10 @@ class HTMLTableElementImpl extends HTMLElementImpl {
 
   set tHead(value) {
     if (value !== null && value._localName !== "thead") {
-      throw new DOMException("Cannot set a non-thead element as a table header", "HierarchyRequestError");
+      throw new DOMException(
+        "Cannot set a non-thead element as a table header",
+        "HierarchyRequestError"
+      );
     }
 
     const currentHead = this.tHead;
@@ -66,7 +75,10 @@ class HTMLTableElementImpl extends HTMLElementImpl {
 
   set tFoot(value) {
     if (value !== null && value._localName !== "tfoot") {
-      throw new DOMException("Cannot set a non-tfoot element as a table footer", "HierarchyRequestError");
+      throw new DOMException(
+        "Cannot set a non-tfoot element as a table footer",
+        "HierarchyRequestError"
+      );
     }
 
     const currentFoot = this.tFoot;
@@ -90,7 +102,10 @@ class HTMLTableElementImpl extends HTMLElementImpl {
 
           const iterator = domSymbolTree.childrenIterator(this);
           for (const child of iterator) {
-            if (child.nodeType !== NODE_TYPE.ELEMENT_NODE || child._namespaceURI !== HTML_NS) {
+            if (
+              child.nodeType !== NODE_TYPE.ELEMENT_NODE ||
+              child._namespaceURI !== HTML_NS
+            ) {
               continue;
             }
 
@@ -106,7 +121,7 @@ class HTMLTableElementImpl extends HTMLElementImpl {
           }
 
           return [...headerRows, ...bodyRows, ...footerRows];
-        }
+        },
       });
     }
     return this._rows;
@@ -116,7 +131,7 @@ class HTMLTableElementImpl extends HTMLElementImpl {
     if (!this._tBodies) {
       this._tBodies = HTMLCollection.createImpl([], {
         element: this,
-        query: () => childrenByHTMLLocalName(this, "tbody")
+        query: () => childrenByHTMLLocalName(this, "tbody"),
       });
     }
     return this._tBodies;
@@ -177,8 +192,11 @@ class HTMLTableElementImpl extends HTMLElementImpl {
 
   insertRow(index) {
     if (index < -1 || index > this.rows.length) {
-      throw new DOMException("Cannot insert a row at an index that is less than -1 or greater than the number of " +
-        "existing rows", "IndexSizeError");
+      throw new DOMException(
+        "Cannot insert a row at an index that is less than -1 or greater than the number of " +
+          "existing rows",
+        "IndexSizeError"
+      );
     }
 
     const tr = this._ownerDocument.createElement("tr");
@@ -205,7 +223,10 @@ class HTMLTableElementImpl extends HTMLElementImpl {
   deleteRow(index) {
     const rowLength = this.rows.length;
     if (index < -1 || index >= rowLength) {
-      throw new DOMException(`Cannot delete a row at index ${index}, where no row exists`, "IndexSizeError");
+      throw new DOMException(
+        `Cannot delete a row at index ${index}, where no row exists`,
+        "IndexSizeError"
+      );
     }
 
     if (index === -1) {
@@ -222,5 +243,5 @@ class HTMLTableElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLTableElementImpl
+  implementation: HTMLTableElementImpl,
 };

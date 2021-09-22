@@ -33,7 +33,7 @@ function prescanMetaCharset(buffer) {
   const l = Math.min(buffer.length, 1024);
   for (let i = 0; i < l; i++) {
     let c = buffer[i];
-    if (c === 0x3C) {
+    if (c === 0x3c) {
       // "<"
       let c1 = buffer[i + 1];
       let c2 = buffer[i + 2];
@@ -41,23 +41,25 @@ function prescanMetaCharset(buffer) {
       const c4 = buffer[i + 4];
       const c5 = buffer[i + 5];
       // !-- (comment start)
-      if (c1 === 0x21 && c2 === 0x2D && c3 === 0x2D) {
+      if (c1 === 0x21 && c2 === 0x2d && c3 === 0x2d) {
         i += 4;
         for (; i < l; i++) {
           c = buffer[i];
           c1 = buffer[i + 1];
           c2 = buffer[i + 2];
           // --> (comment end)
-          if (c === 0x2D && c1 === 0x2D && c2 === 0x3E) {
+          if (c === 0x2d && c1 === 0x2d && c2 === 0x3e) {
             i += 2;
             break;
           }
         }
-      } else if ((c1 === 0x4D || c1 === 0x6D) &&
-         (c2 === 0x45 || c2 === 0x65) &&
-         (c3 === 0x54 || c3 === 0x74) &&
-         (c4 === 0x41 || c4 === 0x61) &&
-         (isSpaceCharacter(c5) || c5 === 0x2F)) {
+      } else if (
+        (c1 === 0x4d || c1 === 0x6d) &&
+        (c2 === 0x45 || c2 === 0x65) &&
+        (c3 === 0x54 || c3 === 0x74) &&
+        (c4 === 0x41 || c4 === 0x61) &&
+        (isSpaceCharacter(c5) || c5 === 0x2f)
+      ) {
         // "meta" + space or /
         i += 6;
         let gotPragma = false;
@@ -101,12 +103,12 @@ function prescanMetaCharset(buffer) {
         }
 
         return charset;
-      } else if ((c1 >= 0x41 && c1 <= 0x5A) || (c1 >= 0x61 && c1 <= 0x7A)) {
+      } else if ((c1 >= 0x41 && c1 <= 0x5a) || (c1 >= 0x61 && c1 <= 0x7a)) {
         // a-z or A-Z
         for (i += 2; i < l; i++) {
           c = buffer[i];
           // space or >
-          if (isSpaceCharacter(c) || c === 0x3E) {
+          if (isSpaceCharacter(c) || c === 0x3e) {
             break;
           }
         }
@@ -115,12 +117,12 @@ function prescanMetaCharset(buffer) {
           attrRes = getAttribute(buffer, i, l);
           i = attrRes.i;
         } while (attrRes.attr);
-      } else if (c1 === 0x21 || c1 === 0x2F || c1 === 0x3F) {
+      } else if (c1 === 0x21 || c1 === 0x2f || c1 === 0x3f) {
         // ! or / or ?
         for (i += 2; i < l; i++) {
           c = buffer[i];
           // >
-          if (c === 0x3E) {
+          if (c === 0x3e) {
             break;
           }
         }
@@ -135,20 +137,20 @@ function getAttribute(buffer, i, l) {
   for (; i < l; i++) {
     let c = buffer[i];
     // space or /
-    if (isSpaceCharacter(c) || c === 0x2F) {
+    if (isSpaceCharacter(c) || c === 0x2f) {
       continue;
     }
     // ">"
-    if (c === 0x3E) {
+    if (c === 0x3e) {
       i++;
       break;
     }
     let name = "";
     let value = "";
-    nameLoop:for (; i < l; i++) {
+    nameLoop: for (; i < l; i++) {
       c = buffer[i];
       // "="
-      if (c === 0x3D && name !== "") {
+      if (c === 0x3d && name !== "") {
         i++;
         break;
       }
@@ -161,7 +163,7 @@ function getAttribute(buffer, i, l) {
             continue;
           }
           // not "="
-          if (c !== 0x3D) {
+          if (c !== 0x3d) {
             return { attr: { name, value }, i };
           }
 
@@ -171,11 +173,11 @@ function getAttribute(buffer, i, l) {
         break;
       }
       // / or >
-      if (c === 0x2F || c === 0x3E) {
+      if (c === 0x2f || c === 0x3e) {
         return { attr: { name, value }, i };
       }
       // A-Z
-      if (c >= 0x41 && c <= 0x5A) {
+      if (c >= 0x41 && c <= 0x5a) {
         name += String.fromCharCode(c + 0x20); // lowercase
       } else {
         name += String.fromCharCode(c);
@@ -206,7 +208,7 @@ function getAttribute(buffer, i, l) {
         }
 
         // A-Z
-        if (c >= 0x41 && c <= 0x5A) {
+        if (c >= 0x41 && c <= 0x5a) {
           value += String.fromCharCode(c + 0x20); // lowercase
         } else {
           value += String.fromCharCode(c);
@@ -215,12 +217,12 @@ function getAttribute(buffer, i, l) {
     }
 
     // >
-    if (c === 0x3E) {
+    if (c === 0x3e) {
       return { attr: { name, value }, i };
     }
 
     // A-Z
-    if (c >= 0x41 && c <= 0x5A) {
+    if (c >= 0x41 && c <= 0x5a) {
       value += String.fromCharCode(c + 0x20); // lowercase
     } else {
       value += String.fromCharCode(c);
@@ -230,12 +232,12 @@ function getAttribute(buffer, i, l) {
       c = buffer[i];
 
       // space or >
-      if (isSpaceCharacter(c) || c === 0x3E) {
+      if (isSpaceCharacter(c) || c === 0x3e) {
         return { attr: { name, value }, i };
       }
 
       // A-Z
-      if (c >= 0x41 && c <= 0x5A) {
+      if (c >= 0x41 && c <= 0x5a) {
         value += String.fromCharCode(c + 0x20); // lowercase
       } else {
         value += String.fromCharCode(c);
@@ -275,11 +277,13 @@ function extractCharacterEncodingFromMeta(string) {
     break;
   }
 
-  if (string[position] === "\"" || string[position] === "'") {
+  if (string[position] === '"' || string[position] === "'") {
     const nextIndex = string.indexOf(string[position], position + 1);
 
     if (nextIndex !== -1) {
-      return whatwgEncoding.labelToName(string.substring(position + 1, nextIndex));
+      return whatwgEncoding.labelToName(
+        string.substring(position + 1, nextIndex)
+      );
     }
 
     // It is an unmatched quotation mark
@@ -298,5 +302,5 @@ function extractCharacterEncodingFromMeta(string) {
 }
 
 function isSpaceCharacter(c) {
-  return c === 0x09 || c === 0x0A || c === 0x0C || c === 0x0D || c === 0x20;
+  return c === 0x09 || c === 0x0a || c === 0x0c || c === 0x0d || c === 0x20;
 }

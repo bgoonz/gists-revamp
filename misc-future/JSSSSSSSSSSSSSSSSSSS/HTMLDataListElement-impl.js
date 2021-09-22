@@ -2,8 +2,8 @@
 
 const HTMLElementImpl = require("./HTMLElement-impl").implementation;
 
-class HTMLDataListElementImpl extends HTMLElementImpl { }
+class HTMLDataListElementImpl extends HTMLElementImpl {}
 
 module.exports = {
-  implementation: HTMLDataListElementImpl
+  implementation: HTMLDataListElementImpl,
 };

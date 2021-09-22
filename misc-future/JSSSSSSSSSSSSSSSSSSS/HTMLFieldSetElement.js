@@ -10,14 +10,17 @@ function HTMLFieldSetElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLFieldSetElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLFieldSetElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLFieldSetElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLFieldSetElement, "prototype", {
   value: HTMLFieldSetElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLFieldSetElement.prototype.checkValidity = function checkValidity() {
@@ -36,7 +39,9 @@ HTMLFieldSetElement.prototype.reportValidity = function reportValidity() {
   return this[impl].reportValidity();
 };
 
-HTMLFieldSetElement.prototype.setCustomValidity = function setCustomValidity(error) {
+HTMLFieldSetElement.prototype.setCustomValidity = function setCustomValidity(
+  error
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -52,7 +57,8 @@ HTMLFieldSetElement.prototype.setCustomValidity = function setCustomValidity(err
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setCustomValidity' on 'HTMLFieldSetElement': parameter 1"
+      context:
+        "Failed to execute 'setCustomValidity' on 'HTMLFieldSetElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -74,7 +80,8 @@ Object.defineProperty(HTMLFieldSetElement.prototype, "disabled", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'disabled' property on 'HTMLFieldSetElement': The provided value"
+      context:
+        "Failed to set the 'disabled' property on 'HTMLFieldSetElement': The provided value",
     });
 
     if (V) {
@@ -85,7 +92,7 @@ Object.defineProperty(HTMLFieldSetElement.prototype, "disabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFieldSetElement.prototype, "form", {
@@ -98,7 +105,7 @@ Object.defineProperty(HTMLFieldSetElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFieldSetElement.prototype, "name", {
@@ -117,14 +124,15 @@ Object.defineProperty(HTMLFieldSetElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLFieldSetElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLFieldSetElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFieldSetElement.prototype, "willValidate", {
@@ -137,7 +145,7 @@ Object.defineProperty(HTMLFieldSetElement.prototype, "willValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFieldSetElement.prototype, "validity", {
@@ -152,7 +160,7 @@ Object.defineProperty(HTMLFieldSetElement.prototype, "validity", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFieldSetElement.prototype, "validationMessage", {
@@ -165,14 +173,14 @@ Object.defineProperty(HTMLFieldSetElement.prototype, "validationMessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFieldSetElement.prototype, Symbol.toStringTag, {
   value: "HTMLFieldSetElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -238,7 +246,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -249,8 +257,8 @@ const iface = {
   },
   interface: HTMLFieldSetElement,
   expose: {
-    Window: { HTMLFieldSetElement }
-  }
+    Window: { HTMLFieldSetElement },
+  },
 }; // iface
 module.exports = iface;
 

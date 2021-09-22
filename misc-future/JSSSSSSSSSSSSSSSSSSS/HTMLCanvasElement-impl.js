@@ -68,7 +68,7 @@ class HTMLCanvasElementImpl extends HTMLElementImpl {
         case "image/jpg":
         case "image/jpeg":
           stream = canvas.createJPEGStream({
-            quality: Math.max(0, Math.min(1, qualityArgument)) * 100
+            quality: Math.max(0, Math.min(1, qualityArgument)) * 100,
           });
           break;
         default:
@@ -77,7 +77,7 @@ class HTMLCanvasElementImpl extends HTMLElementImpl {
           stream = canvas.createPNGStream();
       }
       const buffers = [];
-      stream.on("data", chunk => {
+      stream.on("data", (chunk) => {
         buffers.push(chunk);
       });
       stream.on("end", () => {
@@ -127,5 +127,5 @@ function wrapNodeCanvasMethod(ctx, name) {
 }
 
 module.exports = {
-  implementation: HTMLCanvasElementImpl
+  implementation: HTMLCanvasElementImpl,
 };

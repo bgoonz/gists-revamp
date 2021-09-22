@@ -18,12 +18,12 @@ class CharacterStats extends GameObject {
     this.hp = characterStatsOptions.hp;
     this.name = characterStatsOptions.name;
     this.isAlive = true;
-  };
+  }
 
   takeDamage() {
     return `${this.name} took damage.`;
-  };
-};
+  }
+}
 
 // Item stats abstract interface class for items to derive from
 class ItemStats extends GameObject {
@@ -36,18 +36,17 @@ class ItemStats extends GameObject {
   }
 }
 
-
 class Humanoid extends CharacterStats {
-  constructor(humanoidOptions){
+  constructor(humanoidOptions) {
     super(humanoidOptions);
     this.faction = humanoidOptions.faction;
     this.weapons = humanoidOptions.weapons;
     this.language = humanoidOptions.language;
-  };
+  }
   greet() {
     return `${this.name} offers a greeting in ${this.language}.`;
-  };
-};
+  }
+}
 
 // generic Player class
 class Player extends Humanoid {
@@ -61,35 +60,36 @@ class Player extends Humanoid {
     this.uiStatus = attr.uiStatus;
   }
 
-
-  /* 
-  * takes in a weapon object and a enemy calculates 
-  * the damage and calls the enemies hurt function
-  *  passing on the damage 
-  */
+  /*
+   * takes in a weapon object and a enemy calculates
+   * the damage and calls the enemies hurt function
+   *  passing on the damage
+   */
 
   attack(weapon, enemy) {
     let damage = weapon.power * (Math.floor(Math.random(2)) + 1);
     enemy.hurt(damage);
   }
   // takes in an enemy object, a weaponID and updates the UI
-  uiAttack(enemy, weaponID){
-    let damage = Math.floor((Math.random() * 100) + 1)
+  uiAttack(enemy, weaponID) {
+    let damage = Math.floor(Math.random() * 100 + 1);
     this.domObj.getElementById(enemy.uiStatus).innerHTML = enemy.hurt(damage);
     this.domObj.getElementById(enemy.uiHP).innerHTML = enemy.hp;
-    window.document.getElementById(this.uiAtkTxt).innerHTML = `${this.name} uses his ${this.weapons[weaponID]} to harm ${enemy.name} doing ${damage} damage.`;
+    window.document.getElementById(
+      this.uiAtkTxt
+    ).innerHTML = `${this.name} uses his ${this.weapons[weaponID]} to harm ${enemy.name} doing ${damage} damage.`;
     return `${this.name} uses his ${this.weapons[weaponID]} to harm ${enemy.name} doing ${damage} damage.`;
-}
+  }
 
-  /* 
-  * takes in damage as a parameter decrements hp 
-  * by damage and checks if the player has hit 0 or 
-  * less hp if they have the isAlive stat is set to false
-  */
+  /*
+   * takes in damage as a parameter decrements hp
+   * by damage and checks if the player has hit 0 or
+   * less hp if they have the isAlive stat is set to false
+   */
 
   hurt(damage) {
     this.hp -= damage;
-    if(this.hp <= 0) {
+    if (this.hp <= 0) {
       this.hp = 0;
       this.isAlive = false;
       console.log(`${this.name} has died!`);
@@ -98,7 +98,6 @@ class Player extends Humanoid {
     console.log(`${this.name} is alive!`);
     return `${this.name} is alive!`;
   }
-
 }
 
 class Hero extends Player {
@@ -107,19 +106,18 @@ class Hero extends Player {
   }
 }
 
-
 const mage = new Humanoid({
   createdAt: new Date(),
   dimensions: {
     length: 2,
     width: 1,
-    height: 1
+    height: 1,
   },
   hp: 5,
   name: "Bruce",
   faction: "Mage Guild",
   weapons: ["Staff of Shamalama"],
-  language: "Common Toungue"
+  language: "Common Toungue",
 });
 
 const swordsman = new Humanoid({
@@ -127,13 +125,13 @@ const swordsman = new Humanoid({
   dimensions: {
     length: 2,
     width: 2,
-    height: 2
+    height: 2,
   },
   hp: 15,
   name: "Sir Mustachio",
   faction: "The Round Table",
   weapons: ["Giant Sword", "Shield"],
-  language: "Common Toungue"
+  language: "Common Toungue",
 });
 
 const archer = new Humanoid({
@@ -141,13 +139,13 @@ const archer = new Humanoid({
   dimensions: {
     length: 1,
     width: 2,
-    height: 4
+    height: 4,
   },
   hp: 10,
   name: "Lilith",
   faction: "Forest Kingdom",
   weapons: ["Bow", "Dagger"],
-  language: "Elvish"
+  language: "Elvish",
 });
 
 const p1 = new Hero({
@@ -155,7 +153,7 @@ const p1 = new Hero({
   dimensions: {
     length: 1,
     width: 2,
-    height: 4
+    height: 4,
   },
   hp: 300,
   name: "Bob",
@@ -164,7 +162,7 @@ const p1 = new Hero({
   language: "Brummie",
   uiAtkTxt: "p1-attack-message",
   uiHP: "p1-hp",
-  uiStatus: "p1-status"
+  uiStatus: "p1-status",
 });
 
 const p2 = new Hero({
@@ -172,7 +170,7 @@ const p2 = new Hero({
   dimensions: {
     length: 1,
     width: 2,
-    height: 4
+    height: 4,
   },
   hp: 300,
   name: "Dave",
@@ -181,7 +179,7 @@ const p2 = new Hero({
   language: "Brummie",
   uiAtkTxt: "p2-attack-message",
   uiHP: "p2-hp",
-  uiStatus: "p2-status"
+  uiStatus: "p2-status",
 });
 
 console.log(mage.createdAt); // Today's date

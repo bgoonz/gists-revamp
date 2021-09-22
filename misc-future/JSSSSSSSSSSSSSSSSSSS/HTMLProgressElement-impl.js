@@ -15,5 +15,5 @@ class HTMLProgressElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLProgressElementImpl
+  implementation: HTMLProgressElementImpl,
 };

@@ -10,6 +10,7 @@ exports.implementation = class FileImpl extends BlobImpl {
     super([fileBits, options], privateData);
 
     this.name = fileName.replace(/\//g, ":");
-    this.lastModified = "lastModified" in options ? options.lastModified : Date.now();
+    this.lastModified =
+      "lastModified" in options ? options.lastModified : Date.now();
   }
 };

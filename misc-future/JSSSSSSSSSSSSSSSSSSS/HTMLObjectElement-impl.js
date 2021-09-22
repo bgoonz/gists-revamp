@@ -36,8 +36,11 @@ class HTMLObjectElementImpl extends HTMLElementImpl {
   }
 }
 
-mixin(HTMLObjectElementImpl.prototype, DefaultConstraintValidationImpl.prototype);
+mixin(
+  HTMLObjectElementImpl.prototype,
+  DefaultConstraintValidationImpl.prototype
+);
 
 module.exports = {
-  implementation: HTMLObjectElementImpl
+  implementation: HTMLObjectElementImpl,
 };

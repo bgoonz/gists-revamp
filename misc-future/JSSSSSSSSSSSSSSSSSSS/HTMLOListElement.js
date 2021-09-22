@@ -10,14 +10,17 @@ function HTMLOListElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLOListElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLOListElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLOListElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLOListElement, "prototype", {
   value: HTMLOListElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLOListElement.prototype, "reversed", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLOListElement.prototype, "reversed", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'reversed' property on 'HTMLOListElement': The provided value"
+      context:
+        "Failed to set the 'reversed' property on 'HTMLOListElement': The provided value",
     });
 
     if (V) {
@@ -46,7 +50,7 @@ Object.defineProperty(HTMLOListElement.prototype, "reversed", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOListElement.prototype, "start", {
@@ -56,7 +60,9 @@ Object.defineProperty(HTMLOListElement.prototype, "start", {
     }
 
     const value = parseInt(this.getAttribute("start"));
-    return isNaN(value) || value < -2147483648 || value > 2147483647 ? 0 : value;
+    return isNaN(value) || value < -2147483648 || value > 2147483647
+      ? 0
+      : value;
   },
 
   set(V) {
@@ -65,14 +71,15 @@ Object.defineProperty(HTMLOListElement.prototype, "start", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'start' property on 'HTMLOListElement': The provided value"
+      context:
+        "Failed to set the 'start' property on 'HTMLOListElement': The provided value",
     });
 
     this.setAttribute("start", String(V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOListElement.prototype, "type", {
@@ -91,14 +98,15 @@ Object.defineProperty(HTMLOListElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLOListElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLOListElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOListElement.prototype, "compact", {
@@ -116,7 +124,8 @@ Object.defineProperty(HTMLOListElement.prototype, "compact", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'compact' property on 'HTMLOListElement': The provided value"
+      context:
+        "Failed to set the 'compact' property on 'HTMLOListElement': The provided value",
     });
 
     if (V) {
@@ -127,14 +136,14 @@ Object.defineProperty(HTMLOListElement.prototype, "compact", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOListElement.prototype, Symbol.toStringTag, {
   value: "HTMLOListElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -200,7 +209,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -211,8 +220,8 @@ const iface = {
   },
   interface: HTMLOListElement,
   expose: {
-    Window: { HTMLOListElement }
-  }
+    Window: { HTMLOListElement },
+  },
 }; // iface
 module.exports = iface;
 

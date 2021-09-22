@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.matchesPattern = matchesPattern;
 exports.has = has;
@@ -9,15 +9,18 @@ exports.isStatic = isStatic;
 exports.isnt = isnt;
 exports.equals = equals;
 exports.isNodeType = isNodeType;
-exports.canHaveVariableDeclarationOrExpression = canHaveVariableDeclarationOrExpression;
-exports.canSwapBetweenExpressionAndStatement = canSwapBetweenExpressionAndStatement;
+exports.canHaveVariableDeclarationOrExpression =
+  canHaveVariableDeclarationOrExpression;
+exports.canSwapBetweenExpressionAndStatement =
+  canSwapBetweenExpressionAndStatement;
 exports.isCompletionRecord = isCompletionRecord;
 exports.isStatementOrBlock = isStatementOrBlock;
 exports.referencesImport = referencesImport;
 exports.getSource = getSource;
 exports.willIMaybeExecuteBefore = willIMaybeExecuteBefore;
 exports._guessExecutionStatusRelativeTo = _guessExecutionStatusRelativeTo;
-exports._guessExecutionStatusRelativeToDifferentFunctions = _guessExecutionStatusRelativeToDifferentFunctions;
+exports._guessExecutionStatusRelativeToDifferentFunctions =
+  _guessExecutionStatusRelativeToDifferentFunctions;
 exports.resolve = resolve;
 exports._resolve = _resolve;
 exports.isConstantExpression = isConstantExpression;
@@ -35,7 +38,7 @@ const {
   isLiteral,
   isStringLiteral,
   isType,
-  matchesPattern: _matchesPattern
+  matchesPattern: _matchesPattern,
 } = _t;
 
 function matchesPattern(pattern, allowPartial) {
@@ -72,7 +75,9 @@ function isNodeType(type) {
 }
 
 function canHaveVariableDeclarationOrExpression() {
-  return (this.key === "init" || this.key === "left") && this.parentPath.isFor();
+  return (
+    (this.key === "init" || this.key === "left") && this.parentPath.isFor()
+  );
 }
 
 function canSwapBetweenExpressionAndStatement(replacement) {
@@ -111,7 +116,10 @@ function isCompletionRecord(allowInsideFunction) {
 }
 
 function isStatementOrBlock() {
-  if (this.parentPath.isLabeledStatement() || isBlockStatement(this.container)) {
+  if (
+    this.parentPath.isLabeledStatement() ||
+    isBlockStatement(this.container)
+  ) {
     return false;
   } else {
     return STATEMENT_OR_BLOCK_KEYS.includes(this.key);
@@ -120,11 +128,19 @@ function isStatementOrBlock() {
 
 function referencesImport(moduleSource, importName) {
   if (!this.isReferencedIdentifier()) {
-    if ((this.isMemberExpression() || this.isOptionalMemberExpression()) && (this.node.computed ? isStringLiteral(this.node.property, {
-      value: importName
-    }) : this.node.property.name === importName)) {
+    if (
+      (this.isMemberExpression() || this.isOptionalMemberExpression()) &&
+      (this.node.computed
+        ? isStringLiteral(this.node.property, {
+            value: importName,
+          })
+        : this.node.property.name === importName)
+    ) {
       const object = this.get("object");
-      return object.isReferencedIdentifier() && object.referencesImport(moduleSource, "*");
+      return (
+        object.isReferencedIdentifier() &&
+        object.referencesImport(moduleSource, "*")
+      );
     }
 
     return false;
@@ -150,9 +166,12 @@ function referencesImport(moduleSource, importName) {
     return true;
   }
 
-  if (path.isImportSpecifier() && isIdentifier(path.node.imported, {
-    name: importName
-  })) {
+  if (
+    path.isImportSpecifier() &&
+    isIdentifier(path.node.imported, {
+      name: importName,
+    })
+  ) {
     return true;
   }
 
@@ -231,23 +250,25 @@ function isExecutionUncertainInList(paths, maxIndex) {
 function _guessExecutionStatusRelativeTo(target) {
   const funcParent = {
     this: getOuterFunction(this),
-    target: getOuterFunction(target)
+    target: getOuterFunction(target),
   };
 
   if (funcParent.target.node !== funcParent.this.node) {
-    return this._guessExecutionStatusRelativeToDifferentFunctions(funcParent.target);
+    return this._guessExecutionStatusRelativeToDifferentFunctions(
+      funcParent.target
+    );
   }
 
   const paths = {
     target: target.getAncestry(),
-    this: this.getAncestry()
+    this: this.getAncestry(),
   };
   if (paths.target.indexOf(this) >= 0) return "after";
   if (paths.this.indexOf(target) >= 0) return "before";
   let commonPath;
   const commonIndex = {
     target: 0,
-    this: 0
+    this: 0,
   };
 
   while (!commonPath && commonIndex.this < paths.this.length) {
@@ -262,26 +283,36 @@ function _guessExecutionStatusRelativeTo(target) {
   }
 
   if (!commonPath) {
-    throw new Error("Internal Babel error - The two compared nodes" + " don't appear to belong to the same program.");
+    throw new Error(
+      "Internal Babel error - The two compared nodes" +
+        " don't appear to belong to the same program."
+    );
   }
 
-  if (isExecutionUncertainInList(paths.this, commonIndex.this - 1) || isExecutionUncertainInList(paths.target, commonIndex.target - 1)) {
+  if (
+    isExecutionUncertainInList(paths.this, commonIndex.this - 1) ||
+    isExecutionUncertainInList(paths.target, commonIndex.target - 1)
+  ) {
     return "unknown";
   }
 
   const divergence = {
     this: paths.this[commonIndex.this - 1],
-    target: paths.target[commonIndex.target - 1]
+    target: paths.target[commonIndex.target - 1],
   };
 
-  if (divergence.target.listKey && divergence.this.listKey && divergence.target.container === divergence.this.container) {
+  if (
+    divergence.target.listKey &&
+    divergence.this.listKey &&
+    divergence.target.container === divergence.this.container
+  ) {
     return divergence.target.key > divergence.this.key ? "before" : "after";
   }
 
   const keys = VISITOR_KEYS[commonPath.type];
   const keyPosition = {
     this: keys.indexOf(divergence.this.parentKey),
-    target: keys.indexOf(divergence.target.parentKey)
+    target: keys.indexOf(divergence.target.parentKey),
   };
   return keyPosition.target > keyPosition.this ? "before" : "after";
 }
@@ -289,7 +320,10 @@ function _guessExecutionStatusRelativeTo(target) {
 const executionOrderCheckedNodes = new WeakSet();
 
 function _guessExecutionStatusRelativeToDifferentFunctions(target) {
-  if (!target.isFunctionDeclaration() || target.parentPath.isExportDeclaration()) {
+  if (
+    !target.isFunctionDeclaration() ||
+    target.parentPath.isExportDeclaration()
+  ) {
     return "unknown";
   }
 
@@ -299,7 +333,7 @@ function _guessExecutionStatusRelativeToDifferentFunctions(target) {
   let allStatus;
 
   for (const path of referencePaths) {
-    const childOfFunction = !!path.find(path => path.node === target.node);
+    const childOfFunction = !!path.find((path) => path.node === target.node);
     if (childOfFunction) continue;
 
     if (path.key !== "callee" || !path.parentPath.isCallExpression()) {
@@ -335,7 +369,8 @@ function _resolve(dangerous, resolved) {
   if (this.isVariableDeclarator()) {
     if (this.get("id").isIdentifier()) {
       return this.get("init").resolve(dangerous, resolved);
-    } else {}
+    } else {
+    }
   } else if (this.isReferencedIdentifier()) {
     const binding = this.scope.getBinding(this.node.name);
     if (!binding) return;
@@ -344,7 +379,7 @@ function _resolve(dangerous, resolved) {
 
     if (binding.path !== this) {
       const ret = binding.path.resolve(dangerous, resolved);
-      if (this.find(parent => parent.node === ret.node)) return;
+      if (this.find((parent) => parent.node === ret.node)) return;
       return ret;
     }
   } else if (this.isTypeCastExpression()) {
@@ -361,12 +396,16 @@ function _resolve(dangerous, resolved) {
       for (const prop of props) {
         if (!prop.isProperty()) continue;
         const key = prop.get("key");
-        let match = prop.isnt("computed") && key.isIdentifier({
-          name: targetName
-        });
-        match = match || key.isLiteral({
-          value: targetName
-        });
+        let match =
+          prop.isnt("computed") &&
+          key.isIdentifier({
+            name: targetName,
+          });
+        match =
+          match ||
+          key.isLiteral({
+            value: targetName,
+          });
         if (match) return prop.get("value").resolve(dangerous, resolved);
       }
     } else if (target.isArrayExpression() && !isNaN(+targetName)) {
@@ -390,7 +429,9 @@ function isConstantExpression() {
     }
 
     if (this.isTemplateLiteral()) {
-      return this.get("expressions").every(expression => expression.isConstantExpression());
+      return this.get("expressions").every((expression) =>
+        expression.isConstantExpression()
+      );
     }
 
     return true;
@@ -405,7 +446,10 @@ function isConstantExpression() {
   }
 
   if (this.isBinaryExpression()) {
-    return this.get("left").isConstantExpression() && this.get("right").isConstantExpression();
+    return (
+      this.get("left").isConstantExpression() &&
+      this.get("right").isConstantExpression()
+    );
   }
 
   return false;
@@ -413,14 +457,20 @@ function isConstantExpression() {
 
 function isInStrictMode() {
   const start = this.isProgram() ? this : this.parentPath;
-  const strictParent = start.find(path => {
-    if (path.isProgram({
-      sourceType: "module"
-    })) return true;
+  const strictParent = start.find((path) => {
+    if (
+      path.isProgram({
+        sourceType: "module",
+      })
+    )
+      return true;
     if (path.isClass()) return true;
     if (!path.isProgram() && !path.isFunction()) return false;
 
-    if (path.isArrowFunctionExpression() && !path.get("body").isBlockStatement()) {
+    if (
+      path.isArrowFunctionExpression() &&
+      !path.get("body").isBlockStatement()
+    ) {
       return false;
     }
 

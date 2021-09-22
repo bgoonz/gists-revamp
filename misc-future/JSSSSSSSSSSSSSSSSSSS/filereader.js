@@ -8,7 +8,7 @@ const impl = utils.implSymbol;
 const EventTarget = require("./EventTarget.js");
 
 module.exports = {
-  createInterface: function(defaultPrivateData = {}) {
+  createInterface: function (defaultPrivateData = {}) {
     function FileReader() {
       if (new.target === undefined) {
         throw new TypeError(
@@ -20,14 +20,17 @@ module.exports = {
       iface.setup(this);
     }
 
-    Object.setPrototypeOf(FileReader.prototype, EventTarget.interface.prototype);
+    Object.setPrototypeOf(
+      FileReader.prototype,
+      EventTarget.interface.prototype
+    );
     Object.setPrototypeOf(FileReader, EventTarget.interface);
 
     Object.defineProperty(FileReader, "prototype", {
       value: FileReader.prototype,
       writable: false,
       enumerable: false,
-      configurable: false
+      configurable: false,
     });
 
     FileReader.prototype.readAsArrayBuffer = function readAsArrayBuffer(blob) {
@@ -45,13 +48,18 @@ module.exports = {
       const args = [];
       {
         let curArg = arguments[0];
-        curArg = convertBlob(curArg, { context: "Failed to execute 'readAsArrayBuffer' on 'FileReader': parameter 1" });
+        curArg = convertBlob(curArg, {
+          context:
+            "Failed to execute 'readAsArrayBuffer' on 'FileReader': parameter 1",
+        });
         args.push(curArg);
       }
       return this[impl].readAsArrayBuffer(...args);
     };
 
-    FileReader.prototype.readAsBinaryString = function readAsBinaryString(blob) {
+    FileReader.prototype.readAsBinaryString = function readAsBinaryString(
+      blob
+    ) {
       if (!this || !module.exports.is(this)) {
         throw new TypeError("Illegal invocation");
       }
@@ -67,7 +75,8 @@ module.exports = {
       {
         let curArg = arguments[0];
         curArg = convertBlob(curArg, {
-          context: "Failed to execute 'readAsBinaryString' on 'FileReader': parameter 1"
+          context:
+            "Failed to execute 'readAsBinaryString' on 'FileReader': parameter 1",
         });
         args.push(curArg);
       }
@@ -89,14 +98,18 @@ module.exports = {
       const args = [];
       {
         let curArg = arguments[0];
-        curArg = convertBlob(curArg, { context: "Failed to execute 'readAsText' on 'FileReader': parameter 1" });
+        curArg = convertBlob(curArg, {
+          context:
+            "Failed to execute 'readAsText' on 'FileReader': parameter 1",
+        });
         args.push(curArg);
       }
       {
         let curArg = arguments[1];
         if (curArg !== undefined) {
           curArg = conversions["DOMString"](curArg, {
-            context: "Failed to execute 'readAsText' on 'FileReader': parameter 2"
+            context:
+              "Failed to execute 'readAsText' on 'FileReader': parameter 2",
           });
         }
         args.push(curArg);
@@ -119,7 +132,10 @@ module.exports = {
       const args = [];
       {
         let curArg = arguments[0];
-        curArg = convertBlob(curArg, { context: "Failed to execute 'readAsDataURL' on 'FileReader': parameter 1" });
+        curArg = convertBlob(curArg, {
+          context:
+            "Failed to execute 'readAsDataURL' on 'FileReader': parameter 1",
+        });
         args.push(curArg);
       }
       return this[impl].readAsDataURL(...args);
@@ -143,7 +159,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader.prototype, "result", {
@@ -156,7 +172,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader.prototype, "error", {
@@ -169,7 +185,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader.prototype, "onloadstart", {
@@ -192,7 +208,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader.prototype, "onprogress", {
@@ -215,7 +231,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader.prototype, "onload", {
@@ -238,7 +254,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader.prototype, "onabort", {
@@ -261,7 +277,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader.prototype, "onerror", {
@@ -284,7 +300,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader.prototype, "onloadend", {
@@ -307,41 +323,41 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(FileReader, "EMPTY", {
       value: 0,
-      enumerable: true
+      enumerable: true,
     });
     Object.defineProperty(FileReader.prototype, "EMPTY", {
       value: 0,
-      enumerable: true
+      enumerable: true,
     });
 
     Object.defineProperty(FileReader, "LOADING", {
       value: 1,
-      enumerable: true
+      enumerable: true,
     });
     Object.defineProperty(FileReader.prototype, "LOADING", {
       value: 1,
-      enumerable: true
+      enumerable: true,
     });
 
     Object.defineProperty(FileReader, "DONE", {
       value: 2,
-      enumerable: true
+      enumerable: true,
     });
     Object.defineProperty(FileReader.prototype, "DONE", {
       value: 2,
-      enumerable: true
+      enumerable: true,
     });
 
     Object.defineProperty(FileReader.prototype, Symbol.toStringTag, {
       value: "FileReader",
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     const iface = {
@@ -374,7 +390,7 @@ module.exports = {
           value: new Impl.implementation(constructorArgs, privateData),
           writable: false,
           enumerable: false,
-          configurable: true
+          configurable: true,
         });
 
         obj[impl][utils.wrapperSymbol] = obj;
@@ -386,8 +402,8 @@ module.exports = {
       interface: FileReader,
       expose: {
         Window: { FileReader },
-        Worker: { FileReader }
-      }
+        Worker: { FileReader },
+      },
     }; // iface
     return iface;
   }, // createInterface
@@ -429,7 +445,7 @@ module.exports = {
       return utils.implForWrapper(obj);
     }
     throw new TypeError(`${context} is not of type 'FileReader'.`);
-  }
+  },
 }; // module.exports
 
 const Impl = require("../file-api/FileReader-impl.js");

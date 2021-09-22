@@ -14,21 +14,24 @@ function HTMLSelectElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLSelectElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLSelectElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLSelectElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLSelectElement, "prototype", {
   value: HTMLSelectElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, Symbol.iterator, {
   writable: true,
   enumerable: false,
   configurable: true,
-  value: Array.prototype[Symbol.iterator]
+  value: Array.prototype[Symbol.iterator],
 });
 
 HTMLSelectElement.prototype.item = function item(index) {
@@ -38,14 +41,16 @@ HTMLSelectElement.prototype.item = function item(index) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'item' on 'HTMLSelectElement': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'item' on 'HTMLSelectElement': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'item' on 'HTMLSelectElement': parameter 1"
+      context: "Failed to execute 'item' on 'HTMLSelectElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -68,7 +73,8 @@ HTMLSelectElement.prototype.namedItem = function namedItem(name) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'namedItem' on 'HTMLSelectElement': parameter 1"
+      context:
+        "Failed to execute 'namedItem' on 'HTMLSelectElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -82,7 +88,9 @@ HTMLSelectElement.prototype.add = function add(element) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'add' on 'HTMLSelectElement': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'add' on 'HTMLSelectElement': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
@@ -92,7 +100,8 @@ HTMLSelectElement.prototype.add = function add(element) {
       curArg = utils.implForWrapper(curArg);
     } else {
       throw new TypeError(
-        "Failed to execute 'add' on 'HTMLSelectElement': parameter 1" + " is not of any supported type."
+        "Failed to execute 'add' on 'HTMLSelectElement': parameter 1" +
+          " is not of any supported type."
       );
     }
     args.push(curArg);
@@ -107,11 +116,13 @@ HTMLSelectElement.prototype.add = function add(element) {
           curArg = utils.implForWrapper(curArg);
         } else if (typeof curArg === "number") {
           curArg = conversions["long"](curArg, {
-            context: "Failed to execute 'add' on 'HTMLSelectElement': parameter 2"
+            context:
+              "Failed to execute 'add' on 'HTMLSelectElement': parameter 2",
           });
         } else {
           curArg = conversions["long"](curArg, {
-            context: "Failed to execute 'add' on 'HTMLSelectElement': parameter 2"
+            context:
+              "Failed to execute 'add' on 'HTMLSelectElement': parameter 2",
           });
         }
       }
@@ -134,7 +145,8 @@ HTMLSelectElement.prototype.remove = function remove() {
     default: {
       let curArg = arguments[0];
       curArg = conversions["long"](curArg, {
-        context: "Failed to execute 'remove' on 'HTMLSelectElement': parameter 1"
+        context:
+          "Failed to execute 'remove' on 'HTMLSelectElement': parameter 1",
       });
       args.push(curArg);
     }
@@ -158,7 +170,9 @@ HTMLSelectElement.prototype.reportValidity = function reportValidity() {
   return this[impl].reportValidity();
 };
 
-HTMLSelectElement.prototype.setCustomValidity = function setCustomValidity(error) {
+HTMLSelectElement.prototype.setCustomValidity = function setCustomValidity(
+  error
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -174,7 +188,8 @@ HTMLSelectElement.prototype.setCustomValidity = function setCustomValidity(error
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setCustomValidity' on 'HTMLSelectElement': parameter 1"
+      context:
+        "Failed to execute 'setCustomValidity' on 'HTMLSelectElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -196,7 +211,8 @@ Object.defineProperty(HTMLSelectElement.prototype, "autofocus", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'autofocus' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'autofocus' property on 'HTMLSelectElement': The provided value",
     });
 
     if (V) {
@@ -207,7 +223,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "autofocus", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "disabled", {
@@ -225,7 +241,8 @@ Object.defineProperty(HTMLSelectElement.prototype, "disabled", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'disabled' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'disabled' property on 'HTMLSelectElement': The provided value",
     });
 
     if (V) {
@@ -236,7 +253,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "disabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "form", {
@@ -249,7 +266,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "multiple", {
@@ -267,7 +284,8 @@ Object.defineProperty(HTMLSelectElement.prototype, "multiple", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'multiple' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'multiple' property on 'HTMLSelectElement': The provided value",
     });
 
     if (V) {
@@ -278,7 +296,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "multiple", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "name", {
@@ -297,14 +315,15 @@ Object.defineProperty(HTMLSelectElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLSelectElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "required", {
@@ -322,7 +341,8 @@ Object.defineProperty(HTMLSelectElement.prototype, "required", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'required' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'required' property on 'HTMLSelectElement': The provided value",
     });
 
     if (V) {
@@ -333,7 +353,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "required", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "size", {
@@ -352,14 +372,15 @@ Object.defineProperty(HTMLSelectElement.prototype, "size", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'size' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'size' property on 'HTMLSelectElement': The provided value",
     });
 
     this.setAttribute("size", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "type", {
@@ -372,7 +393,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "type", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "options", {
@@ -387,7 +408,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "options", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "length", {
@@ -405,14 +426,15 @@ Object.defineProperty(HTMLSelectElement.prototype, "length", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'length' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'length' property on 'HTMLSelectElement': The provided value",
     });
 
     this[impl]["length"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "selectedOptions", {
@@ -427,7 +449,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "selectedOptions", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "selectedIndex", {
@@ -445,14 +467,15 @@ Object.defineProperty(HTMLSelectElement.prototype, "selectedIndex", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'selectedIndex' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'selectedIndex' property on 'HTMLSelectElement': The provided value",
     });
 
     this[impl]["selectedIndex"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "value", {
@@ -470,14 +493,15 @@ Object.defineProperty(HTMLSelectElement.prototype, "value", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'value' property on 'HTMLSelectElement': The provided value"
+      context:
+        "Failed to set the 'value' property on 'HTMLSelectElement': The provided value",
     });
 
     this[impl]["value"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "willValidate", {
@@ -490,7 +514,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "willValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "validity", {
@@ -503,7 +527,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "validity", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "validationMessage", {
@@ -516,7 +540,7 @@ Object.defineProperty(HTMLSelectElement.prototype, "validationMessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, "labels", {
@@ -529,14 +553,14 @@ Object.defineProperty(HTMLSelectElement.prototype, "labels", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSelectElement.prototype, Symbol.toStringTag, {
   value: "HTMLSelectElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -602,7 +626,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj = new Proxy(obj, {
@@ -670,7 +694,7 @@ const iface = {
               writable: true,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
           ignoreNamedProps = true;
@@ -692,7 +716,10 @@ const iface = {
               indexedValue = null;
             } else {
               indexedValue = convertHTMLOptionElement(indexedValue, {
-                context: "Failed to set the " + index + " property on 'HTMLSelectElement': The provided value"
+                context:
+                  "Failed to set the " +
+                  index +
+                  " property on 'HTMLSelectElement': The provided value",
               });
             }
 
@@ -716,7 +743,7 @@ const iface = {
               writable: true,
               enumerable: true,
               configurable: true,
-              value: utils.tryWrapperForImpl(indexedValue)
+              value: utils.tryWrapperForImpl(indexedValue),
             };
           }
         }
@@ -729,7 +756,12 @@ const iface = {
           if (parent !== null) {
             return Reflect.set(parent, P, V, receiver);
           }
-          ownDesc = { writable: true, enumerable: true, configurable: true, value: undefined };
+          ownDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: undefined,
+          };
         }
         if (!ownDesc.writable) {
           return false;
@@ -748,7 +780,12 @@ const iface = {
           }
           valueDesc = { value: V };
         } else {
-          valueDesc = { writable: true, enumerable: true, configurable: true, value: V };
+          valueDesc = {
+            writable: true,
+            enumerable: true,
+            configurable: true,
+            value: V,
+          };
         }
         return Reflect.defineProperty(receiver, P, valueDesc);
       },
@@ -770,7 +807,10 @@ const iface = {
             indexedValue = null;
           } else {
             indexedValue = convertHTMLOptionElement(indexedValue, {
-              context: "Failed to set the " + index + " property on 'HTMLSelectElement': The provided value"
+              context:
+                "Failed to set the " +
+                index +
+                " property on 'HTMLSelectElement': The provided value",
             });
           }
 
@@ -802,7 +842,7 @@ const iface = {
 
       preventExtensions() {
         return false;
-      }
+      },
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -813,8 +853,8 @@ const iface = {
   },
   interface: HTMLSelectElement,
   expose: {
-    Window: { HTMLSelectElement }
-  }
+    Window: { HTMLSelectElement },
+  },
 }; // iface
 module.exports = iface;
 

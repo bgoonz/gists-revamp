@@ -13,7 +13,7 @@ Object.defineProperty(LinkStyle, "prototype", {
   value: LinkStyle.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(LinkStyle.prototype, "sheet", {
@@ -26,14 +26,14 @@ Object.defineProperty(LinkStyle.prototype, "sheet", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(LinkStyle.prototype, Symbol.toStringTag, {
   value: "LinkStyle",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -97,7 +97,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -107,7 +107,7 @@ const iface = {
     return obj;
   },
   interface: LinkStyle,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 

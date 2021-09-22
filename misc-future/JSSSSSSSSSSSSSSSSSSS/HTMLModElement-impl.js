@@ -14,5 +14,5 @@ class HTMLModElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLModElementImpl
+  implementation: HTMLModElementImpl,
 };

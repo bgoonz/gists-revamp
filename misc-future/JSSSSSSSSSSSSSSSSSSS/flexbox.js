@@ -1,43 +1,57 @@
-import style from './style';
-import compose from './compose';
+import style from "./style";
+import compose from "./compose";
 export var flexBasis = style({
-    prop: 'flexBasis'
+  prop: "flexBasis",
 });
 export var flexDirection = style({
-    prop: 'flexDirection'
+  prop: "flexDirection",
 });
 export var flexWrap = style({
-    prop: 'flexWrap'
+  prop: "flexWrap",
 });
 export var justifyContent = style({
-    prop: 'justifyContent'
+  prop: "justifyContent",
 });
 export var alignItems = style({
-    prop: 'alignItems'
+  prop: "alignItems",
 });
 export var alignContent = style({
-    prop: 'alignContent'
+  prop: "alignContent",
 });
 export var order = style({
-    prop: 'order'
+  prop: "order",
 });
 export var flex = style({
-    prop: 'flex'
+  prop: "flex",
 });
 export var flexGrow = style({
-    prop: 'flexGrow'
+  prop: "flexGrow",
 });
 export var flexShrink = style({
-    prop: 'flexShrink'
+  prop: "flexShrink",
 });
 export var alignSelf = style({
-    prop: 'alignSelf'
+  prop: "alignSelf",
 });
 export var justifyItems = style({
-    prop: 'justifyItems'
+  prop: "justifyItems",
 });
 export var justifySelf = style({
-    prop: 'justifySelf'
+  prop: "justifySelf",
 });
-var flexbox = compose(flexBasis, flexDirection, flexWrap, justifyContent, alignItems, alignContent, order, flex, flexGrow, flexShrink, alignSelf, justifyItems, justifySelf);
+var flexbox = compose(
+  flexBasis,
+  flexDirection,
+  flexWrap,
+  justifyContent,
+  alignItems,
+  alignContent,
+  order,
+  flex,
+  flexGrow,
+  flexShrink,
+  alignSelf,
+  justifyItems,
+  justifySelf
+);
 export default flexbox;

@@ -8,7 +8,10 @@ class HTMLImageElementImpl extends HTMLElementImpl {
   _attrModified(name, value, oldVal) {
     if (name === "src" && value !== oldVal) {
       const document = this._ownerDocument;
-      if (Canvas && document.implementation._hasFeature("FetchExternalResources", "img")) {
+      if (
+        Canvas &&
+        document.implementation._hasFeature("FetchExternalResources", "img")
+      ) {
         let error;
         if (!this._image) {
           this._image = new Canvas.Image();
@@ -21,7 +24,11 @@ class HTMLImageElementImpl extends HTMLElementImpl {
         this._currentSrc = null;
         if (this.hasAttribute("src")) {
           resourceLoader.load(this, this.src, {}, (data, url, response) => {
-            if (response && response.statusCode !== undefined && response.statusCode !== 200) {
+            if (
+              response &&
+              response.statusCode !== undefined &&
+              response.statusCode !== 200
+            ) {
               throw new Error("Status code: " + response.statusCode);
             }
             error = null;
@@ -63,9 +70,9 @@ class HTMLImageElementImpl extends HTMLElementImpl {
   get height() {
     // Just like on browsers, if no width / height is defined, we fall back on the
     // dimensions of the internal image data.
-    return this.hasAttribute("height") ?
-           conversions["unsigned long"](this.getAttribute("height")) :
-           this.naturalHeight;
+    return this.hasAttribute("height")
+      ? conversions["unsigned long"](this.getAttribute("height"))
+      : this.naturalHeight;
   }
 
   set height(V) {
@@ -73,9 +80,9 @@ class HTMLImageElementImpl extends HTMLElementImpl {
   }
 
   get width() {
-    return this.hasAttribute("width") ?
-           conversions["unsigned long"](this.getAttribute("width")) :
-           this.naturalWidth;
+    return this.hasAttribute("width")
+      ? conversions["unsigned long"](this.getAttribute("width"))
+      : this.naturalWidth;
   }
 
   set width(V) {
@@ -116,5 +123,5 @@ class HTMLImageElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLImageElementImpl
+  implementation: HTMLImageElementImpl,
 };

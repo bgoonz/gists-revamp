@@ -10,14 +10,17 @@ function HTMLOptGroupElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLOptGroupElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLOptGroupElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLOptGroupElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLOptGroupElement, "prototype", {
   value: HTMLOptGroupElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLOptGroupElement.prototype, "disabled", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLOptGroupElement.prototype, "disabled", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'disabled' property on 'HTMLOptGroupElement': The provided value"
+      context:
+        "Failed to set the 'disabled' property on 'HTMLOptGroupElement': The provided value",
     });
 
     if (V) {
@@ -46,7 +50,7 @@ Object.defineProperty(HTMLOptGroupElement.prototype, "disabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptGroupElement.prototype, "label", {
@@ -65,21 +69,22 @@ Object.defineProperty(HTMLOptGroupElement.prototype, "label", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'label' property on 'HTMLOptGroupElement': The provided value"
+      context:
+        "Failed to set the 'label' property on 'HTMLOptGroupElement': The provided value",
     });
 
     this.setAttribute("label", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptGroupElement.prototype, Symbol.toStringTag, {
   value: "HTMLOptGroupElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -145,7 +150,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -156,8 +161,8 @@ const iface = {
   },
   interface: HTMLOptGroupElement,
   expose: {
-    Window: { HTMLOptGroupElement }
-  }
+    Window: { HTMLOptGroupElement },
+  },
 }; // iface
 module.exports = iface;
 

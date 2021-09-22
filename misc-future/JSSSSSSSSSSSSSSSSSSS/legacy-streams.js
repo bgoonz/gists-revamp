@@ -1,14 +1,14 @@
-var Stream = require('stream').Stream
+var Stream = require("stream").Stream;
 
-module.exports = legacy
+module.exports = legacy;
 
-function legacy (fs) {
+function legacy(fs) {
   return {
     ReadStream: ReadStream,
-    WriteStream: WriteStream
-  }
+    WriteStream: WriteStream,
+  };
 
-  function ReadStream (path, options) {
+  function ReadStream(path, options) {
     if (!(this instanceof ReadStream)) return new ReadStream(path, options);
 
     Stream.call(this);
@@ -20,7 +20,7 @@ function legacy (fs) {
     this.readable = true;
     this.paused = false;
 
-    this.flags = 'r';
+    this.flags = "r";
     this.mode = 438; /*=0666*/
     this.bufferSize = 64 * 1024;
 
@@ -36,24 +36,24 @@ function legacy (fs) {
     if (this.encoding) this.setEncoding(this.encoding);
 
     if (this.start !== undefined) {
-      if ('number' !== typeof this.start) {
-        throw TypeError('start must be a Number');
+      if ("number" !== typeof this.start) {
+        throw TypeError("start must be a Number");
       }
       if (this.end === undefined) {
         this.end = Infinity;
-      } else if ('number' !== typeof this.end) {
-        throw TypeError('end must be a Number');
+      } else if ("number" !== typeof this.end) {
+        throw TypeError("end must be a Number");
       }
 
       if (this.start > this.end) {
-        throw new Error('start must be <= end');
+        throw new Error("start must be <= end");
       }
 
       this.pos = this.start;
     }
 
     if (this.fd !== null) {
-      process.nextTick(function() {
+      process.nextTick(function () {
         self._read();
       });
       return;
@@ -61,18 +61,18 @@ function legacy (fs) {
 
     fs.open(this.path, this.flags, this.mode, function (err, fd) {
       if (err) {
-        self.emit('error', err);
+        self.emit("error", err);
         self.readable = false;
         return;
       }
 
       self.fd = fd;
-      self.emit('open', fd);
+      self.emit("open", fd);
       self._read();
-    })
+    });
   }
 
-  function WriteStream (path, options) {
+  function WriteStream(path, options) {
     if (!(this instanceof WriteStream)) return new WriteStream(path, options);
 
     Stream.call(this);
@@ -81,8 +81,8 @@ function legacy (fs) {
     this.fd = null;
     this.writable = true;
 
-    this.flags = 'w';
-    this.encoding = 'binary';
+    this.flags = "w";
+    this.encoding = "binary";
     this.mode = 438; /*=0666*/
     this.bytesWritten = 0;
 
@@ -96,11 +96,11 @@ function legacy (fs) {
     }
 
     if (this.start !== undefined) {
-      if ('number' !== typeof this.start) {
-        throw TypeError('start must be a Number');
+      if ("number" !== typeof this.start) {
+        throw TypeError("start must be a Number");
       }
       if (this.start < 0) {
-        throw new Error('start must be >= zero');
+        throw new Error("start must be >= zero");
       }
 
       this.pos = this.start;
@@ -111,7 +111,13 @@ function legacy (fs) {
 
     if (this.fd === null) {
       this._open = fs.open;
-      this._queue.push([this._open, this.path, this.flags, this.mode, undefined]);
+      this._queue.push([
+        this._open,
+        this.path,
+        this.flags,
+        this.mode,
+        undefined,
+      ]);
       this.flush();
     }
   }

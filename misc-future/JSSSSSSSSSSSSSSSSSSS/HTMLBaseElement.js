@@ -10,14 +10,17 @@ function HTMLBaseElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLBaseElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLBaseElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLBaseElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLBaseElement, "prototype", {
   value: HTMLBaseElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLBaseElement.prototype, "href", {
@@ -35,14 +38,15 @@ Object.defineProperty(HTMLBaseElement.prototype, "href", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'href' property on 'HTMLBaseElement': The provided value"
+      context:
+        "Failed to set the 'href' property on 'HTMLBaseElement': The provided value",
     });
 
     this[impl]["href"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBaseElement.prototype, "target", {
@@ -61,21 +65,22 @@ Object.defineProperty(HTMLBaseElement.prototype, "target", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'target' property on 'HTMLBaseElement': The provided value"
+      context:
+        "Failed to set the 'target' property on 'HTMLBaseElement': The provided value",
     });
 
     this.setAttribute("target", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLBaseElement.prototype, Symbol.toStringTag, {
   value: "HTMLBaseElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -141,7 +146,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -152,8 +157,8 @@ const iface = {
   },
   interface: HTMLBaseElement,
   expose: {
-    Window: { HTMLBaseElement }
-  }
+    Window: { HTMLBaseElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -1,1 +1,1 @@
-module.exports = require('./keyBy');
+module.exports = require("./keyBy");

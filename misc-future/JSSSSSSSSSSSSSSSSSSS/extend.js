@@ -1,1 +1,1 @@
-module.exports = require('./assignIn');
+module.exports = require("./assignIn");

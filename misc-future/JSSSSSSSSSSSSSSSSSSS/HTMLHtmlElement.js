@@ -10,14 +10,17 @@ function HTMLHtmlElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLHtmlElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLHtmlElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLHtmlElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLHtmlElement, "prototype", {
   value: HTMLHtmlElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLHtmlElement.prototype, "version", {
@@ -36,21 +39,22 @@ Object.defineProperty(HTMLHtmlElement.prototype, "version", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'version' property on 'HTMLHtmlElement': The provided value"
+      context:
+        "Failed to set the 'version' property on 'HTMLHtmlElement': The provided value",
     });
 
     this.setAttribute("version", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHtmlElement.prototype, Symbol.toStringTag, {
   value: "HTMLHtmlElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +120,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +131,8 @@ const iface = {
   },
   interface: HTMLHtmlElement,
   expose: {
-    Window: { HTMLHtmlElement }
-  }
+    Window: { HTMLHtmlElement },
+  },
 }; // iface
 module.exports = iface;
 

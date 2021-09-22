@@ -10,14 +10,17 @@ function HTMLFontElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLFontElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLFontElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLFontElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLFontElement, "prototype", {
   value: HTMLFontElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLFontElement.prototype, "color", {
@@ -36,15 +39,16 @@ Object.defineProperty(HTMLFontElement.prototype, "color", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'color' property on 'HTMLFontElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'color' property on 'HTMLFontElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("color", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFontElement.prototype, "face", {
@@ -63,14 +67,15 @@ Object.defineProperty(HTMLFontElement.prototype, "face", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'face' property on 'HTMLFontElement': The provided value"
+      context:
+        "Failed to set the 'face' property on 'HTMLFontElement': The provided value",
     });
 
     this.setAttribute("face", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFontElement.prototype, "size", {
@@ -89,21 +94,22 @@ Object.defineProperty(HTMLFontElement.prototype, "size", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'size' property on 'HTMLFontElement': The provided value"
+      context:
+        "Failed to set the 'size' property on 'HTMLFontElement': The provided value",
     });
 
     this.setAttribute("size", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFontElement.prototype, Symbol.toStringTag, {
   value: "HTMLFontElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -169,7 +175,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -180,8 +186,8 @@ const iface = {
   },
   interface: HTMLFontElement,
   expose: {
-    Window: { HTMLFontElement }
-  }
+    Window: { HTMLFontElement },
+  },
 }; // iface
 module.exports = iface;
 

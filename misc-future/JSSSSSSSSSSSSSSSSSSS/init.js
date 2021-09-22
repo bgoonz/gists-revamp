@@ -1,1 +1,1 @@
-module.exports = require('./initial');
+module.exports = require("./initial");

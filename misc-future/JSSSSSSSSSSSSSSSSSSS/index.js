@@ -3,10 +3,10 @@ const initialState = {
     {
       id: 1,
       value: "Learn at Lambda School",
-      completed: false
-    }
+      completed: false,
+    },
   ],
-  input: ""
+  input: "",
 };
 
 export default (state = initialState, action) => {
@@ -33,13 +33,13 @@ export default (state = initialState, action) => {
 
       // update the store using object assign
       return Object.assign({}, state, { todos: addTodos, input: "" });
-    
+
     case "TOGGLE_TODO":
       // slice up the todos
       let toggleTodos = state.todos.slice();
 
       // map over the todos and toggle the completed state of each one with the id from payload
-      toggleTodos.map(todo => {
+      toggleTodos.map((todo) => {
         if (todo.id === action.payload) {
           todo.completed = !todo.completed;
           return todo;
@@ -48,10 +48,11 @@ export default (state = initialState, action) => {
       });
       // return the toggled state of todos back to the caller
       return Object.assign({}, state, { todos: toggleTodos });
-    
-      
-    case 'DELETE_TODO':
-      let deleteTodos = state.todos.slice().filter(todo => todo.id !== action.payload);
+
+    case "DELETE_TODO":
+      let deleteTodos = state.todos
+        .slice()
+        .filter((todo) => todo.id !== action.payload);
       return Object.assign({}, state, { todos: deleteTodos });
 
     default:

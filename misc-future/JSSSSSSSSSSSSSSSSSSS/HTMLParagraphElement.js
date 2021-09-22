@@ -10,14 +10,17 @@ function HTMLParagraphElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLParagraphElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLParagraphElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLParagraphElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLParagraphElement, "prototype", {
   value: HTMLParagraphElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLParagraphElement.prototype, "align", {
@@ -36,21 +39,22 @@ Object.defineProperty(HTMLParagraphElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLParagraphElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLParagraphElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLParagraphElement.prototype, Symbol.toStringTag, {
   value: "HTMLParagraphElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +120,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +131,8 @@ const iface = {
   },
   interface: HTMLParagraphElement,
   expose: {
-    Window: { HTMLParagraphElement }
-  }
+    Window: { HTMLParagraphElement },
+  },
 }; // iface
 module.exports = iface;
 

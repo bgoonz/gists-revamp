@@ -9,13 +9,18 @@
 // that parent has a higher specificity.
 var indexCounter = -1e9;
 export function increment() {
-    indexCounter += 1;
+  indexCounter += 1;
 
-    if (process.env.NODE_ENV !== 'production') {
-        if (indexCounter >= 0) {
-            console.warn(['Material-UI: You might have a memory leak.', 'The indexCounter is not supposed to grow that much.'].join('\n'));
-        }
+  if (process.env.NODE_ENV !== "production") {
+    if (indexCounter >= 0) {
+      console.warn(
+        [
+          "Material-UI: You might have a memory leak.",
+          "The indexCounter is not supposed to grow that much.",
+        ].join("\n")
+      );
     }
+  }
 
-    return indexCounter;
+  return indexCounter;
 }

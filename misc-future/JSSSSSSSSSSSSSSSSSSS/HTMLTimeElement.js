@@ -10,14 +10,17 @@ function HTMLTimeElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTimeElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTimeElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTimeElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTimeElement, "prototype", {
   value: HTMLTimeElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLTimeElement.prototype, "dateTime", {
@@ -36,21 +39,22 @@ Object.defineProperty(HTMLTimeElement.prototype, "dateTime", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'dateTime' property on 'HTMLTimeElement': The provided value"
+      context:
+        "Failed to set the 'dateTime' property on 'HTMLTimeElement': The provided value",
     });
 
     this.setAttribute("dateTime", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTimeElement.prototype, Symbol.toStringTag, {
   value: "HTMLTimeElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +120,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +131,8 @@ const iface = {
   },
   interface: HTMLTimeElement,
   expose: {
-    Window: { HTMLTimeElement }
-  }
+    Window: { HTMLTimeElement },
+  },
 }; // iface
 module.exports = iface;
 

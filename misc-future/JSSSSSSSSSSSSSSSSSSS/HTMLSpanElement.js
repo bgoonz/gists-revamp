@@ -10,21 +10,24 @@ function HTMLSpanElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLSpanElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLSpanElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLSpanElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLSpanElement, "prototype", {
   value: HTMLSpanElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLSpanElement.prototype, Symbol.toStringTag, {
   value: "HTMLSpanElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +93,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -101,8 +104,8 @@ const iface = {
   },
   interface: HTMLSpanElement,
   expose: {
-    Window: { HTMLSpanElement }
-  }
+    Window: { HTMLSpanElement },
+  },
 }; // iface
 module.exports = iface;
 

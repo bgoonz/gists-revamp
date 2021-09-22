@@ -13,7 +13,7 @@ Object.defineProperty(History, "prototype", {
   value: History.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 History.prototype.go = function go() {
@@ -24,7 +24,9 @@ History.prototype.go = function go() {
   {
     let curArg = arguments[0];
     if (curArg !== undefined) {
-      curArg = conversions["long"](curArg, { context: "Failed to execute 'go' on 'History': parameter 1" });
+      curArg = conversions["long"](curArg, {
+        context: "Failed to execute 'go' on 'History': parameter 1",
+      });
     } else {
       curArg = 0;
     }
@@ -56,18 +58,24 @@ History.prototype.pushState = function pushState(data, title) {
 
   if (arguments.length < 2) {
     throw new TypeError(
-      "Failed to execute 'pushState' on 'History': 2 arguments required, but only " + arguments.length + " present."
+      "Failed to execute 'pushState' on 'History': 2 arguments required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["any"](curArg, { context: "Failed to execute 'pushState' on 'History': parameter 1" });
+    curArg = conversions["any"](curArg, {
+      context: "Failed to execute 'pushState' on 'History': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to execute 'pushState' on 'History': parameter 2" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to execute 'pushState' on 'History': parameter 2",
+    });
     args.push(curArg);
   }
   {
@@ -77,7 +85,7 @@ History.prototype.pushState = function pushState(data, title) {
         curArg = null;
       } else {
         curArg = conversions["USVString"](curArg, {
-          context: "Failed to execute 'pushState' on 'History': parameter 3"
+          context: "Failed to execute 'pushState' on 'History': parameter 3",
         });
       }
     } else {
@@ -95,19 +103,23 @@ History.prototype.replaceState = function replaceState(data, title) {
 
   if (arguments.length < 2) {
     throw new TypeError(
-      "Failed to execute 'replaceState' on 'History': 2 arguments required, but only " + arguments.length + " present."
+      "Failed to execute 'replaceState' on 'History': 2 arguments required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["any"](curArg, { context: "Failed to execute 'replaceState' on 'History': parameter 1" });
+    curArg = conversions["any"](curArg, {
+      context: "Failed to execute 'replaceState' on 'History': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'replaceState' on 'History': parameter 2"
+      context: "Failed to execute 'replaceState' on 'History': parameter 2",
     });
     args.push(curArg);
   }
@@ -118,7 +130,7 @@ History.prototype.replaceState = function replaceState(data, title) {
         curArg = null;
       } else {
         curArg = conversions["USVString"](curArg, {
-          context: "Failed to execute 'replaceState' on 'History': parameter 3"
+          context: "Failed to execute 'replaceState' on 'History': parameter 3",
         });
       }
     } else {
@@ -139,7 +151,7 @@ Object.defineProperty(History.prototype, "length", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(History.prototype, "state", {
@@ -152,14 +164,14 @@ Object.defineProperty(History.prototype, "state", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(History.prototype, Symbol.toStringTag, {
   value: "History",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -223,7 +235,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -234,8 +246,8 @@ const iface = {
   },
   interface: History,
   expose: {
-    Window: { History }
-  }
+    Window: { History },
+  },
 }; // iface
 module.exports = iface;
 

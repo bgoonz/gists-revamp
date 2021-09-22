@@ -10,14 +10,17 @@ function HTMLDivElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLDivElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLDivElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLDivElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLDivElement, "prototype", {
   value: HTMLDivElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLDivElement.prototype, "align", {
@@ -36,21 +39,22 @@ Object.defineProperty(HTMLDivElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLDivElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLDivElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLDivElement.prototype, Symbol.toStringTag, {
   value: "HTMLDivElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +120,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +131,8 @@ const iface = {
   },
   interface: HTMLDivElement,
   expose: {
-    Window: { HTMLDivElement }
-  }
+    Window: { HTMLDivElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -1,14 +1,19 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = isNodesEquivalent;
 
 var _definitions = require("../definitions");
 
 function isNodesEquivalent(a, b) {
-  if (typeof a !== "object" || typeof b !== "object" || a == null || b == null) {
+  if (
+    typeof a !== "object" ||
+    typeof b !== "object" ||
+    a == null ||
+    b == null
+  ) {
     return a === b;
   }
 
@@ -48,7 +53,10 @@ function isNodesEquivalent(a, b) {
       continue;
     }
 
-    if (typeof a[field] === "object" && !(visitorKeys != null && visitorKeys.includes(field))) {
+    if (
+      typeof a[field] === "object" &&
+      !(visitorKeys != null && visitorKeys.includes(field))
+    ) {
       for (const key of Object.keys(a[field])) {
         if (a[field][key] !== b[field][key]) {
           return false;

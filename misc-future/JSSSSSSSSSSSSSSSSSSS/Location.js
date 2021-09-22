@@ -13,14 +13,14 @@ Object.defineProperty(Location, "prototype", {
   value: Location.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(Location.prototype, Symbol.toStringTag, {
   value: "Location",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -81,13 +81,17 @@ const iface = {
 
       if (arguments.length < 1) {
         throw new TypeError(
-          "Failed to execute 'assign' on 'Location': 1 argument required, but only " + arguments.length + " present."
+          "Failed to execute 'assign' on 'Location': 1 argument required, but only " +
+            arguments.length +
+            " present."
         );
       }
       const args = [];
       {
         let curArg = arguments[0];
-        curArg = conversions["USVString"](curArg, { context: "Failed to execute 'assign' on 'Location': parameter 1" });
+        curArg = conversions["USVString"](curArg, {
+          context: "Failed to execute 'assign' on 'Location': parameter 1",
+        });
         args.push(curArg);
       }
       return this[impl].assign(...args);
@@ -100,14 +104,16 @@ const iface = {
 
       if (arguments.length < 1) {
         throw new TypeError(
-          "Failed to execute 'replace' on 'Location': 1 argument required, but only " + arguments.length + " present."
+          "Failed to execute 'replace' on 'Location': 1 argument required, but only " +
+            arguments.length +
+            " present."
         );
       }
       const args = [];
       {
         let curArg = arguments[0];
         curArg = conversions["USVString"](curArg, {
-          context: "Failed to execute 'replace' on 'Location': parameter 1"
+          context: "Failed to execute 'replace' on 'Location': parameter 1",
         });
         args.push(curArg);
       }
@@ -137,14 +143,15 @@ const iface = {
         }
 
         V = conversions["USVString"](V, {
-          context: "Failed to set the 'href' property on 'Location': The provided value"
+          context:
+            "Failed to set the 'href' property on 'Location': The provided value",
         });
 
         obj[impl]["href"] = V;
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(obj, "toString", {
@@ -156,7 +163,7 @@ const iface = {
           throw new TypeError("Illegal invocation");
         }
         return obj[impl]["href"];
-      }
+      },
     });
 
     Object.defineProperty(obj, "origin", {
@@ -169,7 +176,7 @@ const iface = {
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(obj, "protocol", {
@@ -187,14 +194,15 @@ const iface = {
         }
 
         V = conversions["USVString"](V, {
-          context: "Failed to set the 'protocol' property on 'Location': The provided value"
+          context:
+            "Failed to set the 'protocol' property on 'Location': The provided value",
         });
 
         obj[impl]["protocol"] = V;
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(obj, "host", {
@@ -212,14 +220,15 @@ const iface = {
         }
 
         V = conversions["USVString"](V, {
-          context: "Failed to set the 'host' property on 'Location': The provided value"
+          context:
+            "Failed to set the 'host' property on 'Location': The provided value",
         });
 
         obj[impl]["host"] = V;
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(obj, "hostname", {
@@ -237,14 +246,15 @@ const iface = {
         }
 
         V = conversions["USVString"](V, {
-          context: "Failed to set the 'hostname' property on 'Location': The provided value"
+          context:
+            "Failed to set the 'hostname' property on 'Location': The provided value",
         });
 
         obj[impl]["hostname"] = V;
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(obj, "port", {
@@ -262,14 +272,15 @@ const iface = {
         }
 
         V = conversions["USVString"](V, {
-          context: "Failed to set the 'port' property on 'Location': The provided value"
+          context:
+            "Failed to set the 'port' property on 'Location': The provided value",
         });
 
         obj[impl]["port"] = V;
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(obj, "pathname", {
@@ -287,14 +298,15 @@ const iface = {
         }
 
         V = conversions["USVString"](V, {
-          context: "Failed to set the 'pathname' property on 'Location': The provided value"
+          context:
+            "Failed to set the 'pathname' property on 'Location': The provided value",
         });
 
         obj[impl]["pathname"] = V;
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(obj, "search", {
@@ -312,14 +324,15 @@ const iface = {
         }
 
         V = conversions["USVString"](V, {
-          context: "Failed to set the 'search' property on 'Location': The provided value"
+          context:
+            "Failed to set the 'search' property on 'Location': The provided value",
         });
 
         obj[impl]["search"] = V;
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(obj, "hash", {
@@ -337,14 +350,15 @@ const iface = {
         }
 
         V = conversions["USVString"](V, {
-          context: "Failed to set the 'hash' property on 'Location': The provided value"
+          context:
+            "Failed to set the 'hash' property on 'Location': The provided value",
         });
 
         obj[impl]["hash"] = V;
       },
 
       enumerable: true,
-      configurable: false
+      configurable: false,
     });
   },
   setup(obj, constructorArgs, privateData) {
@@ -357,7 +371,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -368,8 +382,8 @@ const iface = {
   },
   interface: Location,
   expose: {
-    Window: { Location }
-  }
+    Window: { Location },
+  },
 }; // iface
 module.exports = iface;
 

@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = literalTemplate;
 
@@ -12,27 +12,31 @@ var _parse = require("./parse");
 var _populate = require("./populate");
 
 function literalTemplate(formatter, tpl, opts) {
-  const {
-    metadata,
-    names
-  } = buildLiteralData(formatter, tpl, opts);
-  return arg => {
+  const { metadata, names } = buildLiteralData(formatter, tpl, opts);
+  return (arg) => {
     const defaultReplacements = {};
     arg.forEach((replacement, i) => {
       defaultReplacements[names[i]] = replacement;
     });
-    return arg => {
+    return (arg) => {
       const replacements = (0, _options.normalizeReplacements)(arg);
 
       if (replacements) {
-        Object.keys(replacements).forEach(key => {
+        Object.keys(replacements).forEach((key) => {
           if (Object.prototype.hasOwnProperty.call(defaultReplacements, key)) {
             throw new Error("Unexpected replacement overlap.");
           }
         });
       }
 
-      return formatter.unwrap((0, _populate.default)(metadata, replacements ? Object.assign(replacements, defaultReplacements) : defaultReplacements));
+      return formatter.unwrap(
+        (0, _populate.default)(
+          metadata,
+          replacements
+            ? Object.assign(replacements, defaultReplacements)
+            : defaultReplacements
+        )
+      );
     };
   };
 }
@@ -50,16 +54,24 @@ function buildLiteralData(formatter, tpl, opts) {
     nameSet = new Set(names);
     metadata = (0, _parse.default)(formatter, formatter.code(result.code), {
       parser: opts.parser,
-      placeholderWhitelist: new Set(result.names.concat(opts.placeholderWhitelist ? Array.from(opts.placeholderWhitelist) : [])),
+      placeholderWhitelist: new Set(
+        result.names.concat(
+          opts.placeholderWhitelist ? Array.from(opts.placeholderWhitelist) : []
+        )
+      ),
       placeholderPattern: opts.placeholderPattern,
       preserveComments: opts.preserveComments,
-      syntacticPlaceholders: opts.syntacticPlaceholders
+      syntacticPlaceholders: opts.syntacticPlaceholders,
     });
-  } while (metadata.placeholders.some(placeholder => placeholder.isDuplicate && nameSet.has(placeholder.name)));
+  } while (
+    metadata.placeholders.some(
+      (placeholder) => placeholder.isDuplicate && nameSet.has(placeholder.name)
+    )
+  );
 
   return {
     metadata,
-    names
+    names,
   };
 }
 
@@ -75,6 +87,6 @@ function buildTemplateCode(tpl, prefix) {
 
   return {
     names,
-    code
+    code,
   };
 }

@@ -10,14 +10,17 @@ function HTMLHeadingElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLHeadingElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLHeadingElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLHeadingElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLHeadingElement, "prototype", {
   value: HTMLHeadingElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLHeadingElement.prototype, "align", {
@@ -36,21 +39,22 @@ Object.defineProperty(HTMLHeadingElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLHeadingElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLHeadingElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHeadingElement.prototype, Symbol.toStringTag, {
   value: "HTMLHeadingElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -116,7 +120,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -127,8 +131,8 @@ const iface = {
   },
   interface: HTMLHeadingElement,
   expose: {
-    Window: { HTMLHeadingElement }
-  }
+    Window: { HTMLHeadingElement },
+  },
 }; // iface
 module.exports = iface;
 

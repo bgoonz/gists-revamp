@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.findConfigUpwards = findConfigUpwards;
 exports.findPackageData = findPackageData;
@@ -24,14 +24,14 @@ function* findPackageData(filepath) {
     filepath,
     directories: [],
     pkg: null,
-    isPackage: false
+    isPackage: false,
   };
 }
 
 function* findRelativeConfig(pkgData, envName, caller) {
   return {
     config: null,
-    ignore: null
+    ignore: null,
   };
 }
 
@@ -59,9 +59,13 @@ function resolvePreset(name, dirname) {
 }
 
 function loadPlugin(name, dirname) {
-  throw new Error(`Cannot load plugin ${name} relative to ${dirname} in a browser`);
+  throw new Error(
+    `Cannot load plugin ${name} relative to ${dirname} in a browser`
+  );
 }
 
 function loadPreset(name, dirname) {
-  throw new Error(`Cannot load preset ${name} relative to ${dirname} in a browser`);
+  throw new Error(
+    `Cannot load preset ${name} relative to ${dirname} in a browser`
+  );
 }

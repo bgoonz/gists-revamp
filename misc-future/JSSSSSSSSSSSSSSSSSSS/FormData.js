@@ -39,14 +39,14 @@ const IteratorPrototype = Object.create(utils.IteratorPrototype, {
     },
     writable: true,
     enumerable: true,
-    configurable: true
+    configurable: true,
   },
   [Symbol.toStringTag]: {
     value: "FormDataIterator",
     writable: false,
     enumerable: false,
-    configurable: true
-  }
+    configurable: true,
+  },
 });
 
 function FormData() {
@@ -60,7 +60,9 @@ function FormData() {
   {
     let curArg = arguments[0];
     if (curArg !== undefined) {
-      curArg = convertHTMLFormElement(curArg, { context: "Failed to construct 'FormData': parameter 1" });
+      curArg = convertHTMLFormElement(curArg, {
+        context: "Failed to construct 'FormData': parameter 1",
+      });
     }
     args.push(curArg);
   }
@@ -72,7 +74,7 @@ Object.defineProperty(FormData, "prototype", {
   value: FormData.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(FormData.prototype, Symbol.iterator, {
@@ -84,18 +86,22 @@ Object.defineProperty(FormData.prototype, Symbol.iterator, {
       throw new TypeError("Illegal invocation");
     }
     return module.exports.createDefaultIterator(this, "key+value");
-  }
+  },
 });
 FormData.prototype.forEach = function forEach(callback) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
   if (arguments.length < 1) {
-    throw new TypeError("Failed to execute 'forEach' on 'FormData': 1 argument required, " + "but only 0 present.");
+    throw new TypeError(
+      "Failed to execute 'forEach' on 'FormData': 1 argument required, " +
+        "but only 0 present."
+    );
   }
   if (typeof callback !== "function") {
     throw new TypeError(
-      "Failed to execute 'forEach' on 'FormData': The callback provided " + "as parameter 1 is not a function."
+      "Failed to execute 'forEach' on 'FormData': The callback provided " +
+        "as parameter 1 is not a function."
     );
   }
   const thisArg = arguments[1];
@@ -115,7 +121,9 @@ FormData.prototype.append = function append(name, value) {
 
   if (arguments.length < 2) {
     throw new TypeError(
-      "Failed to execute 'append' on 'FormData': 2 arguments required, but only " + arguments.length + " present."
+      "Failed to execute 'append' on 'FormData': 2 arguments required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
@@ -123,7 +131,9 @@ FormData.prototype.append = function append(name, value) {
     case 2:
       {
         let curArg = arguments[0];
-        curArg = conversions["USVString"](curArg, { context: "Failed to execute 'append' on 'FormData': parameter 1" });
+        curArg = conversions["USVString"](curArg, {
+          context: "Failed to execute 'append' on 'FormData': parameter 1",
+        });
         args.push(curArg);
       }
       {
@@ -131,14 +141,16 @@ FormData.prototype.append = function append(name, value) {
         if (isBlob(curArg)) {
           {
             let curArg = arguments[1];
-            curArg = convertBlob(curArg, { context: "Failed to execute 'append' on 'FormData': parameter 2" });
+            curArg = convertBlob(curArg, {
+              context: "Failed to execute 'append' on 'FormData': parameter 2",
+            });
             args.push(curArg);
           }
         } else {
           {
             let curArg = arguments[1];
             curArg = conversions["USVString"](curArg, {
-              context: "Failed to execute 'append' on 'FormData': parameter 2"
+              context: "Failed to execute 'append' on 'FormData': parameter 2",
             });
             args.push(curArg);
           }
@@ -148,19 +160,23 @@ FormData.prototype.append = function append(name, value) {
     default:
       {
         let curArg = arguments[0];
-        curArg = conversions["USVString"](curArg, { context: "Failed to execute 'append' on 'FormData': parameter 1" });
+        curArg = conversions["USVString"](curArg, {
+          context: "Failed to execute 'append' on 'FormData': parameter 1",
+        });
         args.push(curArg);
       }
       {
         let curArg = arguments[1];
-        curArg = convertBlob(curArg, { context: "Failed to execute 'append' on 'FormData': parameter 2" });
+        curArg = convertBlob(curArg, {
+          context: "Failed to execute 'append' on 'FormData': parameter 2",
+        });
         args.push(curArg);
       }
       {
         let curArg = arguments[2];
         if (curArg !== undefined) {
           curArg = conversions["USVString"](curArg, {
-            context: "Failed to execute 'append' on 'FormData': parameter 3"
+            context: "Failed to execute 'append' on 'FormData': parameter 3",
           });
         }
         args.push(curArg);
@@ -176,13 +192,17 @@ FormData.prototype.delete = function _delete(name) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'delete' on 'FormData': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'delete' on 'FormData': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["USVString"](curArg, { context: "Failed to execute 'delete' on 'FormData': parameter 1" });
+    curArg = conversions["USVString"](curArg, {
+      context: "Failed to execute 'delete' on 'FormData': parameter 1",
+    });
     args.push(curArg);
   }
   return this[impl].delete(...args);
@@ -195,13 +215,17 @@ FormData.prototype.get = function get(name) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'get' on 'FormData': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'get' on 'FormData': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["USVString"](curArg, { context: "Failed to execute 'get' on 'FormData': parameter 1" });
+    curArg = conversions["USVString"](curArg, {
+      context: "Failed to execute 'get' on 'FormData': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].get(...args));
@@ -214,13 +238,17 @@ FormData.prototype.getAll = function getAll(name) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'getAll' on 'FormData': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'getAll' on 'FormData': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["USVString"](curArg, { context: "Failed to execute 'getAll' on 'FormData': parameter 1" });
+    curArg = conversions["USVString"](curArg, {
+      context: "Failed to execute 'getAll' on 'FormData': parameter 1",
+    });
     args.push(curArg);
   }
   return utils.tryWrapperForImpl(this[impl].getAll(...args));
@@ -233,13 +261,17 @@ FormData.prototype.has = function has(name) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to execute 'has' on 'FormData': 1 argument required, but only " + arguments.length + " present."
+      "Failed to execute 'has' on 'FormData': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["USVString"](curArg, { context: "Failed to execute 'has' on 'FormData': parameter 1" });
+    curArg = conversions["USVString"](curArg, {
+      context: "Failed to execute 'has' on 'FormData': parameter 1",
+    });
     args.push(curArg);
   }
   return this[impl].has(...args);
@@ -252,7 +284,9 @@ FormData.prototype.set = function set(name, value) {
 
   if (arguments.length < 2) {
     throw new TypeError(
-      "Failed to execute 'set' on 'FormData': 2 arguments required, but only " + arguments.length + " present."
+      "Failed to execute 'set' on 'FormData': 2 arguments required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
@@ -260,7 +294,9 @@ FormData.prototype.set = function set(name, value) {
     case 2:
       {
         let curArg = arguments[0];
-        curArg = conversions["USVString"](curArg, { context: "Failed to execute 'set' on 'FormData': parameter 1" });
+        curArg = conversions["USVString"](curArg, {
+          context: "Failed to execute 'set' on 'FormData': parameter 1",
+        });
         args.push(curArg);
       }
       {
@@ -268,14 +304,16 @@ FormData.prototype.set = function set(name, value) {
         if (isBlob(curArg)) {
           {
             let curArg = arguments[1];
-            curArg = convertBlob(curArg, { context: "Failed to execute 'set' on 'FormData': parameter 2" });
+            curArg = convertBlob(curArg, {
+              context: "Failed to execute 'set' on 'FormData': parameter 2",
+            });
             args.push(curArg);
           }
         } else {
           {
             let curArg = arguments[1];
             curArg = conversions["USVString"](curArg, {
-              context: "Failed to execute 'set' on 'FormData': parameter 2"
+              context: "Failed to execute 'set' on 'FormData': parameter 2",
             });
             args.push(curArg);
           }
@@ -285,18 +323,24 @@ FormData.prototype.set = function set(name, value) {
     default:
       {
         let curArg = arguments[0];
-        curArg = conversions["USVString"](curArg, { context: "Failed to execute 'set' on 'FormData': parameter 1" });
+        curArg = conversions["USVString"](curArg, {
+          context: "Failed to execute 'set' on 'FormData': parameter 1",
+        });
         args.push(curArg);
       }
       {
         let curArg = arguments[1];
-        curArg = convertBlob(curArg, { context: "Failed to execute 'set' on 'FormData': parameter 2" });
+        curArg = convertBlob(curArg, {
+          context: "Failed to execute 'set' on 'FormData': parameter 2",
+        });
         args.push(curArg);
       }
       {
         let curArg = arguments[2];
         if (curArg !== undefined) {
-          curArg = conversions["USVString"](curArg, { context: "Failed to execute 'set' on 'FormData': parameter 3" });
+          curArg = conversions["USVString"](curArg, {
+            context: "Failed to execute 'set' on 'FormData': parameter 3",
+          });
         }
         args.push(curArg);
       }
@@ -324,7 +368,7 @@ Object.defineProperty(FormData.prototype, Symbol.toStringTag, {
   value: "FormData",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -373,7 +417,7 @@ const iface = {
       value: { target, kind, index: 0 },
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
     return iterator;
   },
@@ -399,7 +443,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -411,8 +455,8 @@ const iface = {
   interface: FormData,
   expose: {
     Window: { FormData },
-    Worker: { FormData }
-  }
+    Worker: { FormData },
+  },
 }; // iface
 module.exports = iface;
 

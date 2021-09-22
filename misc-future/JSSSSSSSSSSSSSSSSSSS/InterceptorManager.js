@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var utils = require('./../utils');
+var utils = require("./../utils");
 
 function InterceptorManager() {
   this.handlers = [];
@@ -17,7 +17,7 @@ function InterceptorManager() {
 InterceptorManager.prototype.use = function use(fulfilled, rejected) {
   this.handlers.push({
     fulfilled: fulfilled,
-    rejected: rejected
+    rejected: rejected,
   });
   return this.handlers.length - 1;
 };

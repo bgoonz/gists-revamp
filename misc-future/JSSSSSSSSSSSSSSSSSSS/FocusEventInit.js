@@ -17,7 +17,9 @@ module.exports = {
         if (value === null || value === undefined) {
           value = null;
         } else {
-          value = convertEventTarget(value, { context: context + " has member relatedTarget that" });
+          value = convertEventTarget(value, {
+            context: context + " has member relatedTarget that",
+          });
         }
         ret[key] = value;
       } else {
@@ -27,12 +29,16 @@ module.exports = {
   },
 
   convert(obj, { context = "The provided value" } = {}) {
-    if (obj !== undefined && typeof obj !== "object" && typeof obj !== "function") {
+    if (
+      obj !== undefined &&
+      typeof obj !== "object" &&
+      typeof obj !== "function"
+    ) {
       throw new TypeError(`${context} is not an object.`);
     }
 
     const ret = Object.create(null);
     module.exports.convertInherit(obj, ret, { context });
     return ret;
-  }
+  },
 };

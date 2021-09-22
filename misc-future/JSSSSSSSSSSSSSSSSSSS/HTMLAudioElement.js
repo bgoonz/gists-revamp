@@ -10,21 +10,24 @@ function HTMLAudioElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLAudioElement.prototype, HTMLMediaElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLAudioElement.prototype,
+  HTMLMediaElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLAudioElement, HTMLMediaElement.interface);
 
 Object.defineProperty(HTMLAudioElement, "prototype", {
   value: HTMLAudioElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLAudioElement.prototype, Symbol.toStringTag, {
   value: "HTMLAudioElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +93,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -101,8 +104,8 @@ const iface = {
   },
   interface: HTMLAudioElement,
   expose: {
-    Window: { HTMLAudioElement }
-  }
+    Window: { HTMLAudioElement },
+  },
 }; // iface
 module.exports = iface;
 

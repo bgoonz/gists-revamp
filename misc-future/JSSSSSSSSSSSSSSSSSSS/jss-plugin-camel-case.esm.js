@@ -1,4 +1,4 @@
-import hyphenate from 'hyphenate-style-name';
+import hyphenate from "hyphenate-style-name";
 
 /**
  * Convert camel cased property names to dash separated.
@@ -8,19 +8,20 @@ import hyphenate from 'hyphenate-style-name';
  */
 
 function convertCase(style) {
-    var converted = {};
+  var converted = {};
 
-    for (var prop in style) {
-        var key = prop.indexOf('--') === 0 ? prop : hyphenate(prop);
-        converted[key] = style[prop];
-    }
+  for (var prop in style) {
+    var key = prop.indexOf("--") === 0 ? prop : hyphenate(prop);
+    converted[key] = style[prop];
+  }
 
-    if (style.fallbacks) {
-        if (Array.isArray(style.fallbacks)) converted.fallbacks = style.fallbacks.map(convertCase);
-        else converted.fallbacks = convertCase(style.fallbacks);
-    }
+  if (style.fallbacks) {
+    if (Array.isArray(style.fallbacks))
+      converted.fallbacks = style.fallbacks.map(convertCase);
+    else converted.fallbacks = convertCase(style.fallbacks);
+  }
 
-    return converted;
+  return converted;
 }
 /**
  * Allow camel cased property names by converting them back to dasherized.
@@ -28,38 +29,37 @@ function convertCase(style) {
  * @param {Rule} rule
  */
 
-
 function camelCase() {
-    function onProcessStyle(style) {
-        if (Array.isArray(style)) {
-            // Handle rules like @font-face, which can have multiple styles in an array
-            for (var index = 0; index < style.length; index++) {
-                style[index] = convertCase(style[index]);
-            }
+  function onProcessStyle(style) {
+    if (Array.isArray(style)) {
+      // Handle rules like @font-face, which can have multiple styles in an array
+      for (var index = 0; index < style.length; index++) {
+        style[index] = convertCase(style[index]);
+      }
 
-            return style;
-        }
-
-        return convertCase(style);
+      return style;
     }
 
-    function onChangeValue(value, prop, rule) {
-        if (prop.indexOf('--') === 0) {
-            return value;
-        }
+    return convertCase(style);
+  }
 
-        var hyphenatedProp = hyphenate(prop); // There was no camel case in place
-
-        if (prop === hyphenatedProp) return value;
-        rule.prop(hyphenatedProp, value); // Core will ignore that property value we set the proper one above.
-
-        return null;
+  function onChangeValue(value, prop, rule) {
+    if (prop.indexOf("--") === 0) {
+      return value;
     }
 
-    return {
-        onProcessStyle: onProcessStyle,
-        onChangeValue: onChangeValue
-    };
+    var hyphenatedProp = hyphenate(prop); // There was no camel case in place
+
+    if (prop === hyphenatedProp) return value;
+    rule.prop(hyphenatedProp, value); // Core will ignore that property value we set the proper one above.
+
+    return null;
+  }
+
+  return {
+    onProcessStyle: onProcessStyle,
+    onChangeValue: onChangeValue,
+  };
 }
 
 export default camelCase;

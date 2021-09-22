@@ -11,14 +11,17 @@ function HTMLLinkElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLLinkElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLLinkElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLLinkElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLLinkElement, "prototype", {
   value: HTMLLinkElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "href", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "href", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'href' property on 'HTMLLinkElement': The provided value"
+      context:
+        "Failed to set the 'href' property on 'HTMLLinkElement': The provided value",
     });
 
     this[impl]["href"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "crossOrigin", {
@@ -65,14 +69,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "crossOrigin", {
       V = null;
     } else {
       V = conversions["DOMString"](V, {
-        context: "Failed to set the 'crossOrigin' property on 'HTMLLinkElement': The provided value"
+        context:
+          "Failed to set the 'crossOrigin' property on 'HTMLLinkElement': The provided value",
       });
     }
     this.setAttribute("crossOrigin", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "rel", {
@@ -91,14 +96,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "rel", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'rel' property on 'HTMLLinkElement': The provided value"
+      context:
+        "Failed to set the 'rel' property on 'HTMLLinkElement': The provided value",
     });
 
     this.setAttribute("rel", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "media", {
@@ -117,14 +123,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "media", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'media' property on 'HTMLLinkElement': The provided value"
+      context:
+        "Failed to set the 'media' property on 'HTMLLinkElement': The provided value",
     });
 
     this.setAttribute("media", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "hreflang", {
@@ -143,14 +150,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "hreflang", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'hreflang' property on 'HTMLLinkElement': The provided value"
+      context:
+        "Failed to set the 'hreflang' property on 'HTMLLinkElement': The provided value",
     });
 
     this.setAttribute("hreflang", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "type", {
@@ -169,14 +177,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLLinkElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLLinkElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "charset", {
@@ -195,14 +204,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "charset", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'charset' property on 'HTMLLinkElement': The provided value"
+      context:
+        "Failed to set the 'charset' property on 'HTMLLinkElement': The provided value",
     });
 
     this.setAttribute("charset", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "rev", {
@@ -221,14 +231,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "rev", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'rev' property on 'HTMLLinkElement': The provided value"
+      context:
+        "Failed to set the 'rev' property on 'HTMLLinkElement': The provided value",
     });
 
     this.setAttribute("rev", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "target", {
@@ -247,14 +258,15 @@ Object.defineProperty(HTMLLinkElement.prototype, "target", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'target' property on 'HTMLLinkElement': The provided value"
+      context:
+        "Failed to set the 'target' property on 'HTMLLinkElement': The provided value",
     });
 
     this.setAttribute("target", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, "sheet", {
@@ -267,14 +279,14 @@ Object.defineProperty(HTMLLinkElement.prototype, "sheet", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLinkElement.prototype, Symbol.toStringTag, {
   value: "HTMLLinkElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -340,7 +352,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -351,8 +363,8 @@ const iface = {
   },
   interface: HTMLLinkElement,
   expose: {
-    Window: { HTMLLinkElement }
-  }
+    Window: { HTMLLinkElement },
+  },
 }; // iface
 module.exports = iface;
 

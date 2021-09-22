@@ -12,7 +12,7 @@ function getTimeRangeDummy() {
     },
     end() {
       return 0;
-    }
+    },
   };
 }
 
@@ -40,7 +40,10 @@ class HTMLMediaElementImpl extends HTMLElementImpl {
   // Implemented accoring to W3C Draft 22 August 2012
   set defaultPlaybackRate(v) {
     if (v === 0.0) {
-      throw new DOMException("The operation is not supported.", "NotSupportedError");
+      throw new DOMException(
+        "The operation is not supported.",
+        "NotSupportedError"
+      );
     }
     if (this._defaultPlaybackRate !== v) {
       this._defaultPlaybackRate = v;
@@ -100,7 +103,10 @@ class HTMLMediaElementImpl extends HTMLElementImpl {
   }
   set volume(v) {
     if (v < 0 || v > 1) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
     if (this._volume !== v) {
       this._volume = v;
@@ -111,19 +117,31 @@ class HTMLMediaElementImpl extends HTMLElementImpl {
   // Not (yet) implemented according to spec
   // Should return sane default values
   load() {
-    notImplemented("HTMLMediaElement.prototype.load", this._ownerDocument._defaultView);
+    notImplemented(
+      "HTMLMediaElement.prototype.load",
+      this._ownerDocument._defaultView
+    );
   }
   canPlayType() {
     return "";
   }
   play() {
-    notImplemented("HTMLMediaElement.prototype.play", this._ownerDocument._defaultView);
+    notImplemented(
+      "HTMLMediaElement.prototype.play",
+      this._ownerDocument._defaultView
+    );
   }
   pause() {
-    notImplemented("HTMLMediaElement.prototype.pause", this._ownerDocument._defaultView);
+    notImplemented(
+      "HTMLMediaElement.prototype.pause",
+      this._ownerDocument._defaultView
+    );
   }
   addTextTrack() {
-    notImplemented("HTMLMediaElement.prototype.addNextTrack", this._ownerDocument._defaultView);
+    notImplemented(
+      "HTMLMediaElement.prototype.addNextTrack",
+      this._ownerDocument._defaultView
+    );
   }
 
   get src() {
@@ -136,5 +154,5 @@ class HTMLMediaElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLMediaElementImpl
+  implementation: HTMLMediaElementImpl,
 };

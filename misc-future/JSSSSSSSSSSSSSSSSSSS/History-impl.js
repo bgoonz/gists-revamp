@@ -1,6 +1,9 @@
 "use strict";
 const DOMException = require("domexception");
-const { documentBaseURLSerialized, parseURLToResultingURLRecord } = require("../helpers/document-base-url.js");
+const {
+  documentBaseURLSerialized,
+  parseURLToResultingURLRecord,
+} = require("../helpers/document-base-url.js");
 
 // https://html.spec.whatwg.org/#history-3
 exports.implementation = class HistoryImpl {
@@ -13,7 +16,10 @@ exports.implementation = class HistoryImpl {
 
   _guardAgainstInactiveDocuments() {
     if (!this._window) {
-      throw new DOMException("History object is associated with a document that is not fully active.", "SecurityError");
+      throw new DOMException(
+        "History object is associated with a document that is not fully active.",
+        "SecurityError"
+      );
     }
   }
 
@@ -70,18 +76,26 @@ exports.implementation = class HistoryImpl {
       newURL = parseURLToResultingURLRecord(url, this._document);
 
       if (newURL === null) {
-        throw new DOMException(`Could not parse url argument "${url}" to ${methodName} ` +
-          `against base URL "${documentBaseURLSerialized(this._document)}".`, "SecurityError");
+        throw new DOMException(
+          `Could not parse url argument "${url}" to ${methodName} ` +
+            `against base URL "${documentBaseURLSerialized(this._document)}".`,
+          "SecurityError"
+        );
       }
 
-      if (newURL.scheme !== this._document._URL.scheme ||
-          newURL.username !== this._document._URL.username ||
-          newURL.password !== this._document._URL.password ||
-          newURL.host !== this._document._URL.host ||
-          newURL.port !== this._document._URL.port ||
-          newURL.cannotBeABaseURL !== this._document._URL.cannotBeABaseURL) {
-        throw new DOMException(`${methodName} cannot update history to a URL which ` +
-          `differs in components other than in path, query, or fragment.`, "SecurityError");
+      if (
+        newURL.scheme !== this._document._URL.scheme ||
+        newURL.username !== this._document._URL.username ||
+        newURL.password !== this._document._URL.password ||
+        newURL.host !== this._document._URL.host ||
+        newURL.port !== this._document._URL.port ||
+        newURL.cannotBeABaseURL !== this._document._URL.cannotBeABaseURL
+      ) {
+        throw new DOMException(
+          `${methodName} cannot update history to a URL which ` +
+            `differs in components other than in path, query, or fragment.`,
+          "SecurityError"
+        );
       }
 
       // Not implemented: origin check (seems to only apply to documents with weird origins, e.g. sandboxed ones)
@@ -98,7 +112,7 @@ exports.implementation = class HistoryImpl {
         document: this._document,
         stateObject: data,
         title,
-        url: newURL
+        url: newURL,
       };
       this._window._sessionHistory.addEntryAfterCurrentEntry(newEntry);
       this._window._sessionHistory.updateCurrentEntry(newEntry);

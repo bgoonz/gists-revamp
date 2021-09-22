@@ -22,17 +22,17 @@
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-'use strict';
+"use strict";
 
-var gulp = require('gulp'),
-    git = require('gulp-git'),
-    bump = require('gulp-bump'),
-    filter = require('gulp-filter'),
-    tagVersion = require('gulp-tag-version');
+var gulp = require("gulp"),
+  git = require("gulp-git"),
+  bump = require("gulp-bump"),
+  filter = require("gulp-filter"),
+  tagVersion = require("gulp-tag-version");
 
-var TEST = [ 'test/*.js' ];
-var POWERED = [ 'powered-test/*.js' ];
-var SOURCE = [ 'src/**/*.js' ];
+var TEST = ["test/*.js"];
+var POWERED = ["powered-test/*.js"];
+var SOURCE = ["src/**/*.js"];
 
 /**
  * Bumping version number and tagging the repository with it.
@@ -49,22 +49,33 @@ var SOURCE = [ 'src/**/*.js' ];
  */
 
 function inc(importance) {
-    // get all the files to bump version in
-    return gulp.src(['./package.json'])
-        // bump the version number in those files
-        .pipe(bump({type: importance}))
-        // save it back to filesystem
-        .pipe(gulp.dest('./'))
-        // commit the changed version number
-        .pipe(git.commit('Bumps package version'))
-        // read only one file to get the version number
-        .pipe(filter('package.json'))
-        // **tag it in the repository**
-        .pipe(tagVersion({
-            prefix: ''
-        }));
+  // get all the files to bump version in
+  return (
+    gulp
+      .src(["./package.json"])
+      // bump the version number in those files
+      .pipe(bump({ type: importance }))
+      // save it back to filesystem
+      .pipe(gulp.dest("./"))
+      // commit the changed version number
+      .pipe(git.commit("Bumps package version"))
+      // read only one file to get the version number
+      .pipe(filter("package.json"))
+      // **tag it in the repository**
+      .pipe(
+        tagVersion({
+          prefix: "",
+        })
+      )
+  );
 }
 
-gulp.task('patch', [ ], function () { return inc('patch'); })
-gulp.task('minor', [ ], function () { return inc('minor'); })
-gulp.task('major', [ ], function () { return inc('major'); })
+gulp.task("patch", [], function () {
+  return inc("patch");
+});
+gulp.task("minor", [], function () {
+  return inc("minor");
+});
+gulp.task("major", [], function () {
+  return inc("major");
+});

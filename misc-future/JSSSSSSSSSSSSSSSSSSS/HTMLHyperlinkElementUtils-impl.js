@@ -1,6 +1,8 @@
 "use strict";
 const whatwgURL = require("whatwg-url");
-const { parseURLToResultingURLRecord } = require("../helpers/document-base-url");
+const {
+  parseURLToResultingURLRecord,
+} = require("../helpers/document-base-url");
 
 exports.implementation = class HTMLHyperlinkElementUtilsImpl {
   _htmlHyperlinkElementUtilsSetup() {
@@ -54,7 +56,10 @@ exports.implementation = class HTMLHyperlinkElementUtilsImpl {
       return;
     }
 
-    whatwgURL.basicURLParse(v + ":", { url: this.url, stateOverride: "scheme start" });
+    whatwgURL.basicURLParse(v + ":", {
+      url: this.url,
+      stateOverride: "scheme start",
+    });
     updateHref(this);
   }
 
@@ -72,7 +77,13 @@ exports.implementation = class HTMLHyperlinkElementUtilsImpl {
     reinitializeURL(this);
     const { url } = this;
 
-    if (url === null || url.host === null || url.host === "" || url.cannotBeABaseURL || url.scheme === "file") {
+    if (
+      url === null ||
+      url.host === null ||
+      url.host === "" ||
+      url.cannotBeABaseURL ||
+      url.scheme === "file"
+    ) {
       return;
     }
 
@@ -95,7 +106,13 @@ exports.implementation = class HTMLHyperlinkElementUtilsImpl {
     reinitializeURL(this);
     const { url } = this;
 
-    if (url === null || url.host === null || url.host === "" || url.cannotBeABaseURL || url.scheme === "file") {
+    if (
+      url === null ||
+      url.host === null ||
+      url.host === "" ||
+      url.cannotBeABaseURL ||
+      url.scheme === "file"
+    ) {
       return;
     }
 
@@ -115,7 +132,11 @@ exports.implementation = class HTMLHyperlinkElementUtilsImpl {
       return whatwgURL.serializeHost(url.host);
     }
 
-    return whatwgURL.serializeHost(url.host) + ":" + whatwgURL.serializeInteger(url.port);
+    return (
+      whatwgURL.serializeHost(url.host) +
+      ":" +
+      whatwgURL.serializeInteger(url.port)
+    );
   }
 
   set host(v) {
@@ -168,7 +189,13 @@ exports.implementation = class HTMLHyperlinkElementUtilsImpl {
     reinitializeURL(this);
     const { url } = this;
 
-    if (url === null || url.host === null || url.host === "" || url.cannotBeABaseURL || url.scheme === "file") {
+    if (
+      url === null ||
+      url.host === null ||
+      url.host === "" ||
+      url.cannotBeABaseURL ||
+      url.scheme === "file"
+    ) {
       return;
     }
 
@@ -235,7 +262,7 @@ exports.implementation = class HTMLHyperlinkElementUtilsImpl {
       whatwgURL.basicURLParse(input, {
         url,
         stateOverride: "query",
-        encodingOverride: this._ownerDocument.charset
+        encodingOverride: this._ownerDocument.charset,
       });
     }
     updateHref(this);
@@ -272,7 +299,11 @@ exports.implementation = class HTMLHyperlinkElementUtilsImpl {
 };
 
 function reinitializeURL(hheu) {
-  if (hheu.url !== null && hheu.url.scheme === "blob" && hheu.url.cannotBeABaseURL) {
+  if (
+    hheu.url !== null &&
+    hheu.url.scheme === "blob" &&
+    hheu.url.cannotBeABaseURL
+  ) {
     return;
   }
 

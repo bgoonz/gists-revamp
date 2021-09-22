@@ -1,8 +1,8 @@
-import React from 'react';
-import './Header.css';
-import moment from 'moment';
+import React from "react";
+import "./Header.css";
+import moment from "moment";
 
-const HeaderTitle = props => {
+const HeaderTitle = (props) => {
   return (
     <div className="header-title-wrapper">
       <div className="header-user-name">{props.name}</div>
