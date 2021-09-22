@@ -29,7 +29,6 @@ Selecting 1 column:
         data->'title' AS title
         FROM books;
 
-
 Output:
 
 ![enter image description here](http://i.imgur.com/Pab2puE.png)
@@ -39,7 +38,6 @@ Selecting 2 columns:
     SELECT client,
        data->'title' AS title, data->'author' AS author
        FROM books;
-
 
 Output:
 
@@ -56,7 +54,6 @@ You can use the `->` to return a nested object and thus chain the operators:
     SELECT client,
        data->'author'->'last_name' AS author
        FROM books;
-
 
 Output:
 

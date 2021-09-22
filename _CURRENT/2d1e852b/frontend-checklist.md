@@ -280,7 +280,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 - \[ \] **CSS Print:** \[Medium\]\[medium_img\] A print stylesheet is provided and is correct on each page.
 - \[ \] **Preprocessors:** \[Low\]\[low_img\] Your project is using a CSS preprocessor (e.g [Sass](http://sass-lang.com/), [Less](http://lesscss.org/), [Stylus](http://stylus-lang.com/)).
 - \[ \] **Unique ID:** \[High\]\[high_img\] If IDs are used, they are unique to a page.
-- \[ \] **Reset CSS:** \[High\]\[high_img\] A CSS reset (reset, normalize or reboot) is used and up to date. _(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)_
+- \[ \] **Reset CSS:** \[High\]\[high*img\] A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)\_
 
 > - 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 > - 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
@@ -299,7 +299,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 ### Performance
 
-- \[ \] **Concatenation:** \[High\]\[high_img\] CSS files are concatenated in a single file _(Not for HTTP/2)_.
+- \[ \] **Concatenation:** \[High\]\[high*img\] CSS files are concatenated in a single file *(Not for HTTP/2)\_.
 - \[ \] **Minification:** \[High\]\[high_img\] All CSS files are minified.
 - \[ \] **Non-blocking:** \[Medium\]\[medium_img\] CSS files need to be non-blocking to prevent the DOM from taking time to load.
 
