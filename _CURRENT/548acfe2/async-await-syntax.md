@@ -1,5 +1,4 @@
-Async functions:
-================
+# Async functions:
 
 Let’s start with the `async` keyword. It can be placed before a function, like this:
 
@@ -27,8 +26,7 @@ For instance, this function returns a resolved promise with the result of `1`; 
 
 So, `async` ensures that the function returns a promise, and wraps non-promises in it. Simple enough, right? But not only that. There’s another keyword, `await`, that works only inside `async` functions, and it’s pretty cool.
 
-[Await](#await)
----------------
+## [Await](#await)
 
 The syntax:
 
@@ -76,26 +74,26 @@ Let’s take the `showAvatar()` example from the chapter [Promises chaining](
 
     async function showAvatar() {
 
-      // read our JSON
-      let response = await fetch('/article/promise-chaining/user.json');
-      let user = await response.json();
+    // read our JSON
+    let response = await fetch('/article/promise-chaining/user.json');
+    let user = await response.json();
 
-      // read github user
-      let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
-      let githubUser = await githubResponse.json();
+    // read github user
+    let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+    let githubUser = await githubResponse.json();
 
-      // show the avatar
-      let img = document.createElement('img');
-      img.src = githubUser.avatar_url;
-      img.className = "promise-avatar-example";
-      document.body.append(img);
+    // show the avatar
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
 
-      // wait 3 seconds
-      await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+    // wait 3 seconds
+    await new Promise((resolve, reject) => setTimeout(resolve, 3000));
 
-      img.remove();
+    img.remove();
 
-      return githubUser;
+    return githubUser;
     }
 
     showAvatar();
@@ -159,8 +157,7 @@ To declare an async class method, just prepend it with `async`:
 
 The meaning is the same: it ensures that the returned value is a promise and enables `await`.
 
-\[Error handling\]
-------------------
+## \[Error handling\]
 
 If a promise resolves normally, then `await promise` returns the result. But in the case of a rejection, it throws the error, just as if there were a `throw` statement at that line.
 
@@ -236,8 +233,7 @@ When we need to wait for multiple promises, we can wrap them in `Promise.all` 
 
 In the case of an error, it propagates as usual, from the failed promise to `Promise.all`, and then becomes an exception that we can catch using `try..catch` around the call.
 
-[Summary](#summary)
--------------------
+## [Summary](#summary)
 
 The `async` keyword before a function has two effects:
 

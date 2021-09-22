@@ -70,8 +70,7 @@ David's birthday party
 
 bar “Tailor's John”
 
-CSS-only Colorful Calendar Concept
-==================================
+# CSS-only Colorful Calendar Concept
 
 Dribbble Rework  
 Original Shot by [Ludmila Shevchenko](https://dribbble.com/shots/2335073-Calendar-App-Animation)

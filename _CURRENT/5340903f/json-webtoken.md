@@ -1,5 +1,4 @@
-jsonwebtoken
-============
+# jsonwebtoken
 
 <table><thead><tr class="header"><th><strong>Build</strong></th><th><strong>Dependency</strong></th></tr></thead><tbody><tr class="odd"><td><a href="http://travis-ci.org/auth0/node-jsonwebtoken"><img src="https://secure.travis-ci.org/auth0/node-jsonwebtoken.svg?branch=master" alt="Build Status" /></a></td><td><a href="https://david-dm.org/auth0/node-jsonwebtoken"><img src="https://david-dm.org/auth0/node-jsonwebtoken.svg" alt="Dependency Status" /></a></td></tr></tbody></table>
 
@@ -7,18 +6,15 @@ An implementation of [JSON Web Tokens](https://tools.ietf.org/html/rfc7519).
 
 This was developed against `draft-ietf-oauth-json-web-token-08`. It makes use of [node-jws](https://github.com/brianloveswords/node-jws)
 
-Install
-=======
+# Install
 
     $ npm install jsonwebtoken
 
-Migration notes
-===============
+# Migration notes
 
--   [From v7 to v8](https://github.com/auth0/node-jsonwebtoken/wiki/Migration-Notes:-v7-to-v8)
+- [From v7 to v8](https://github.com/auth0/node-jsonwebtoken/wiki/Migration-Notes:-v7-to-v8)
 
-Usage
-=====
+# Usage
 
 ### jwt.sign(payload, secretOrPrivateKey, \[options, callback\])
 
@@ -26,7 +22,7 @@ Usage
 
 (Synchronous) Returns the JsonWebToken as string
 
-`payload` could be an object literal, buffer or string representing valid JSON. &gt; **Please *note* that** `exp` or any other claim is only set if the payload is an object literal. Buffer or string payloads are not checked for JSON validity.
+`payload` could be an object literal, buffer or string representing valid JSON. &gt; **Please _note_ that** `exp` or any other claim is only set if the payload is an object literal. Buffer or string payloads are not checked for JSON validity.
 
 > If `payload` is not a buffer or a string, it will be coerced into a string using `JSON.stringify`.
 
@@ -34,19 +30,19 @@ Usage
 
 `options`:
 
--   `algorithm` (default: `HS256`)
--   `expiresIn`: expressed in seconds or a string describing a time span [vercel/ms](https://github.com/vercel/ms). &gt; Eg: `60`, `"2 days"`, `"10h"`, `"7d"`. A numeric value is interpreted as a seconds count. If you use a string be sure you provide the time units (days, hours, etc), otherwise milliseconds unit is used by default (`"120"` is equal to `"120ms"`).
--   `notBefore`: expressed in seconds or a string describing a time span [vercel/ms](https://github.com/vercel/ms). &gt; Eg: `60`, `"2 days"`, `"10h"`, `"7d"`. A numeric value is interpreted as a seconds count. If you use a string be sure you provide the time units (days, hours, etc), otherwise milliseconds unit is used by default (`"120"` is equal to `"120ms"`).
--   `audience`
--   `issuer`
--   `jwtid`
--   `subject`
--   `noTimestamp`
--   `header`
--   `keyid`
--   `mutatePayload`: if true, the sign function will modify the payload object directly. This is useful if you need a raw reference to the payload after claims have been applied to it but before it has been encoded into a token.
+- `algorithm` (default: `HS256`)
+- `expiresIn`: expressed in seconds or a string describing a time span [vercel/ms](https://github.com/vercel/ms). &gt; Eg: `60`, `"2 days"`, `"10h"`, `"7d"`. A numeric value is interpreted as a seconds count. If you use a string be sure you provide the time units (days, hours, etc), otherwise milliseconds unit is used by default (`"120"` is equal to `"120ms"`).
+- `notBefore`: expressed in seconds or a string describing a time span [vercel/ms](https://github.com/vercel/ms). &gt; Eg: `60`, `"2 days"`, `"10h"`, `"7d"`. A numeric value is interpreted as a seconds count. If you use a string be sure you provide the time units (days, hours, etc), otherwise milliseconds unit is used by default (`"120"` is equal to `"120ms"`).
+- `audience`
+- `issuer`
+- `jwtid`
+- `subject`
+- `noTimestamp`
+- `header`
+- `keyid`
+- `mutatePayload`: if true, the sign function will modify the payload object directly. This is useful if you need a raw reference to the payload after claims have been applied to it but before it has been encoded into a token.
 
-> There are no default values for `expiresIn`, `notBefore`, `audience`, `subject`, `issuer`. These claims can also be provided in the payload directly with `exp`, `nbf`, `aud`, `sub` and `iss` respectively, but you ***can’t*** include in both places.
+> There are no default values for `expiresIn`, `notBefore`, `audience`, `subject`, `issuer`. These claims can also be provided in the payload directly with `exp`, `nbf`, `aud`, `sub` and `iss` respectively, but you **_can’t_** include in both places.
 
 Remember that `exp`, `nbf` and `iat` are **NumericDate**, see related [Token Expiration (exp claim)](#token-expiration-exp-claim)
 
@@ -118,93 +114,93 @@ As mentioned in [this comment](https://github.com/auth0/node-jsonwebtoken/issues
 
 `options`
 
--   `algorithms`: List of strings with the names of the allowed algorithms. For instance, `["HS256", "HS384"]`.
--   `audience`: if you want to check audience (`aud`), provide a value here. The audience can be checked against a string, a regular expression or a list of strings and/or regular expressions. &gt; Eg: `"urn:foo"`, `/urn:f[o]{2}/`, `[/urn:f[o]{2}/, "urn:bar"]`
--   `complete`: return an object with the decoded `{ payload, header, signature }` instead of only the usual content of the payload.
--   `issuer` (optional): string or array of strings of valid values for the `iss` field.
--   `jwtid` (optional): if you want to check JWT ID (`jti`), provide a string value here.
--   `ignoreExpiration`: if `true` do not validate the expiration of the token.
--   `ignoreNotBefore`…
--   `subject`: if you want to check subject (`sub`), provide a value here
--   `clockTolerance`: number of seconds to tolerate when checking the `nbf` and `exp` claims, to deal with small clock differences among different servers
--   `maxAge`: the maximum allowed age for tokens to still be valid. It is expressed in seconds or a string describing a time span [vercel/ms](https://github.com/vercel/ms). &gt; Eg: `1000`, `"2 days"`, `"10h"`, `"7d"`. A numeric value is interpreted as a seconds count. If you use a string be sure you provide the time units (days, hours, etc), otherwise milliseconds unit is used by default (`"120"` is equal to `"120ms"`).
--   `clockTimestamp`: the time in seconds that should be used as the current time for all necessary comparisons.
--   `nonce`: if you want to check `nonce` claim, provide a string value here. It is used on Open ID for the ID Tokens. ([Open ID implementation notes](https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes))
+- `algorithms`: List of strings with the names of the allowed algorithms. For instance, `["HS256", "HS384"]`.
+- `audience`: if you want to check audience (`aud`), provide a value here. The audience can be checked against a string, a regular expression or a list of strings and/or regular expressions. &gt; Eg: `"urn:foo"`, `/urn:f[o]{2}/`, `[/urn:f[o]{2}/, "urn:bar"]`
+- `complete`: return an object with the decoded `{ payload, header, signature }` instead of only the usual content of the payload.
+- `issuer` (optional): string or array of strings of valid values for the `iss` field.
+- `jwtid` (optional): if you want to check JWT ID (`jti`), provide a string value here.
+- `ignoreExpiration`: if `true` do not validate the expiration of the token.
+- `ignoreNotBefore`…
+- `subject`: if you want to check subject (`sub`), provide a value here
+- `clockTolerance`: number of seconds to tolerate when checking the `nbf` and `exp` claims, to deal with small clock differences among different servers
+- `maxAge`: the maximum allowed age for tokens to still be valid. It is expressed in seconds or a string describing a time span [vercel/ms](https://github.com/vercel/ms). &gt; Eg: `1000`, `"2 days"`, `"10h"`, `"7d"`. A numeric value is interpreted as a seconds count. If you use a string be sure you provide the time units (days, hours, etc), otherwise milliseconds unit is used by default (`"120"` is equal to `"120ms"`).
+- `clockTimestamp`: the time in seconds that should be used as the current time for all necessary comparisons.
+- `nonce`: if you want to check `nonce` claim, provide a string value here. It is used on Open ID for the ID Tokens. ([Open ID implementation notes](https://openid.net/specs/openid-connect-core-1_0.html#NonceNotes))
 
-    // verify a token symmetric - synchronous
-    var decoded = jwt.verify(token, 'shhhhh');
-    console.log(decoded.foo) // bar
+  // verify a token symmetric - synchronous
+  var decoded = jwt.verify(token, 'shhhhh');
+  console.log(decoded.foo) // bar
 
-    // verify a token symmetric
-    jwt.verify(token, 'shhhhh', function(err, decoded) {
-      console.log(decoded.foo) // bar
-    });
+  // verify a token symmetric
+  jwt.verify(token, 'shhhhh', function(err, decoded) {
+  console.log(decoded.foo) // bar
+  });
 
-    // invalid token - synchronous
-    try {
-      var decoded = jwt.verify(token, 'wrong-secret');
-    } catch(err) {
-      // err
-    }
+  // invalid token - synchronous
+  try {
+  var decoded = jwt.verify(token, 'wrong-secret');
+  } catch(err) {
+  // err
+  }
 
-    // invalid token
-    jwt.verify(token, 'wrong-secret', function(err, decoded) {
-      // err
-      // decoded undefined
-    });
+  // invalid token
+  jwt.verify(token, 'wrong-secret', function(err, decoded) {
+  // err
+  // decoded undefined
+  });
 
-    // verify a token asymmetric
-    var cert = fs.readFileSync('public.pem');  // get public key
-    jwt.verify(token, cert, function(err, decoded) {
-      console.log(decoded.foo) // bar
-    });
+  // verify a token asymmetric
+  var cert = fs.readFileSync('public.pem'); // get public key
+  jwt.verify(token, cert, function(err, decoded) {
+  console.log(decoded.foo) // bar
+  });
 
-    // verify audience
-    var cert = fs.readFileSync('public.pem');  // get public key
-    jwt.verify(token, cert, { audience: 'urn:foo' }, function(err, decoded) {
-      // if audience mismatch, err == invalid audience
-    });
+  // verify audience
+  var cert = fs.readFileSync('public.pem'); // get public key
+  jwt.verify(token, cert, { audience: 'urn:foo' }, function(err, decoded) {
+  // if audience mismatch, err == invalid audience
+  });
 
-    // verify issuer
-    var cert = fs.readFileSync('public.pem');  // get public key
-    jwt.verify(token, cert, { audience: 'urn:foo', issuer: 'urn:issuer' }, function(err, decoded) {
-      // if issuer mismatch, err == invalid issuer
-    });
+  // verify issuer
+  var cert = fs.readFileSync('public.pem'); // get public key
+  jwt.verify(token, cert, { audience: 'urn:foo', issuer: 'urn:issuer' }, function(err, decoded) {
+  // if issuer mismatch, err == invalid issuer
+  });
 
-    // verify jwt id
-    var cert = fs.readFileSync('public.pem');  // get public key
-    jwt.verify(token, cert, { audience: 'urn:foo', issuer: 'urn:issuer', jwtid: 'jwtid' }, function(err, decoded) {
-      // if jwt id mismatch, err == invalid jwt id
-    });
+  // verify jwt id
+  var cert = fs.readFileSync('public.pem'); // get public key
+  jwt.verify(token, cert, { audience: 'urn:foo', issuer: 'urn:issuer', jwtid: 'jwtid' }, function(err, decoded) {
+  // if jwt id mismatch, err == invalid jwt id
+  });
 
-    // verify subject
-    var cert = fs.readFileSync('public.pem');  // get public key
-    jwt.verify(token, cert, { audience: 'urn:foo', issuer: 'urn:issuer', jwtid: 'jwtid', subject: 'subject' }, function(err, decoded) {
-      // if subject mismatch, err == invalid subject
-    });
+  // verify subject
+  var cert = fs.readFileSync('public.pem'); // get public key
+  jwt.verify(token, cert, { audience: 'urn:foo', issuer: 'urn:issuer', jwtid: 'jwtid', subject: 'subject' }, function(err, decoded) {
+  // if subject mismatch, err == invalid subject
+  });
 
-    // alg mismatch
-    var cert = fs.readFileSync('public.pem'); // get public key
-    jwt.verify(token, cert, { algorithms: ['RS256'] }, function (err, payload) {
-      // if token alg != RS256,  err == invalid signature
-    });
+  // alg mismatch
+  var cert = fs.readFileSync('public.pem'); // get public key
+  jwt.verify(token, cert, { algorithms: ['RS256'] }, function (err, payload) {
+  // if token alg != RS256, err == invalid signature
+  });
 
-    // Verify using getKey callback
-    // Example uses https://github.com/auth0/node-jwks-rsa as a way to fetch the keys.
-    var jwksClient = require('jwks-rsa');
-    var client = jwksClient({
-      jwksUri: 'https://sandrino.auth0.com/.well-known/jwks.json'
-    });
-    function getKey(header, callback){
-      client.getSigningKey(header.kid, function(err, key) {
-        var signingKey = key.publicKey || key.rsaPublicKey;
-        callback(null, signingKey);
-      });
-    }
+  // Verify using getKey callback
+  // Example uses https://github.com/auth0/node-jwks-rsa as a way to fetch the keys.
+  var jwksClient = require('jwks-rsa');
+  var client = jwksClient({
+  jwksUri: 'https://sandrino.auth0.com/.well-known/jwks.json'
+  });
+  function getKey(header, callback){
+  client.getSigningKey(header.kid, function(err, key) {
+  var signingKey = key.publicKey || key.rsaPublicKey;
+  callback(null, signingKey);
+  });
+  }
 
-    jwt.verify(token, getKey, options, function(err, decoded) {
-      console.log(decoded.foo) // bar
-    });
+  jwt.verify(token, getKey, options, function(err, decoded) {
+  console.log(decoded.foo) // bar
+  });
 
 Need to peek into a JWT without verifying it? (Click to expand)
 
@@ -220,8 +216,8 @@ Need to peek into a JWT without verifying it? (Click to expand)
 
 `options`:
 
--   `json`: force JSON.parse on the payload even if the header doesn’t contain `"typ":"JWT"`.
--   `complete`: return an object with the decoded payload and header.
+- `json`: force JSON.parse on the payload even if the header doesn’t contain `"typ":"JWT"`.
+- `complete`: return an object with the decoded payload and header.
 
 Example
 
@@ -233,8 +229,7 @@ Example
     console.log(decoded.header);
     console.log(decoded.payload)
 
-Errors & Codes
---------------
+## Errors & Codes
 
 Possible thrown errors during verification. Error is the first argument of the verification callback.
 
@@ -244,47 +239,48 @@ Thrown error if the token is expired.
 
 Error object:
 
--   name: ‘TokenExpiredError’
--   message: ‘jwt expired’
--   expiredAt: \[ExpDate\]
+- name: ‘TokenExpiredError’
+- message: ‘jwt expired’
+- expiredAt: \[ExpDate\]
 
-    jwt.verify(token, 'shhhhh', function(err, decoded) {
-      if (err) {
-        /*
-          err = {
-            name: 'TokenExpiredError',
-            message: 'jwt expired',
-            expiredAt: 1408621000
-          }
-        */
-      }
-    });
+  jwt.verify(token, 'shhhhh', function(err, decoded) {
+  if (err) {
+  /_
+  err = {
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 1408621000
+  }
+  _/
+  }
+  });
 
 ### JsonWebTokenError
 
 Error object:
 
--   name: ‘JsonWebTokenError’
--   message:
-    -   ‘invalid token’ - the header or payload could not be parsed
-    -   ‘jwt malformed’ - the token does not have three components (delimited by a `.`)
-    -   ‘jwt signature is required’
-    -   ‘invalid signature’
-    -   ‘jwt audience invalid. expected: \[OPTIONS AUDIENCE\]’
-    -   ‘jwt issuer invalid. expected: \[OPTIONS ISSUER\]’
-    -   ‘jwt id invalid. expected: \[OPTIONS JWT ID\]’
-    -   ‘jwt subject invalid. expected: \[OPTIONS SUBJECT\]’
+- name: ‘JsonWebTokenError’
+- message:
 
-    jwt.verify(token, 'shhhhh', function(err, decoded) {
-      if (err) {
-        /*
-          err = {
-            name: 'JsonWebTokenError',
-            message: 'jwt malformed'
-          }
-        */
-      }
-    });
+  - ‘invalid token’ - the header or payload could not be parsed
+  - ‘jwt malformed’ - the token does not have three components (delimited by a `.`)
+  - ‘jwt signature is required’
+  - ‘invalid signature’
+  - ‘jwt audience invalid. expected: \[OPTIONS AUDIENCE\]’
+  - ‘jwt issuer invalid. expected: \[OPTIONS ISSUER\]’
+  - ‘jwt id invalid. expected: \[OPTIONS JWT ID\]’
+  - ‘jwt subject invalid. expected: \[OPTIONS SUBJECT\]’
+
+  jwt.verify(token, 'shhhhh', function(err, decoded) {
+  if (err) {
+  /_
+  err = {
+  name: 'JsonWebTokenError',
+  message: 'jwt malformed'
+  }
+  _/
+  }
+  });
 
 ### NotBeforeError
 
@@ -292,52 +288,46 @@ Thrown if current time is before the nbf claim.
 
 Error object:
 
--   name: ‘NotBeforeError’
--   message: ‘jwt not active’
--   date: 2018-10-04T16:10:44.000Z
+- name: ‘NotBeforeError’
+- message: ‘jwt not active’
+- date: 2018-10-04T16:10:44.000Z
 
-    jwt.verify(token, 'shhhhh', function(err, decoded) {
-      if (err) {
-        /*
-          err = {
-            name: 'NotBeforeError',
-            message: 'jwt not active',
-            date: 2018-10-04T16:10:44.000Z
-          }
-        */
-      }
-    });
+  jwt.verify(token, 'shhhhh', function(err, decoded) {
+  if (err) {
+  /_
+  err = {
+  name: 'NotBeforeError',
+  message: 'jwt not active',
+  date: 2018-10-04T16:10:44.000Z
+  }
+  _/
+  }
+  });
 
-Algorithms supported
---------------------
+## Algorithms supported
 
 Array of supported algorithms. The following algorithms are currently supported.
 
 <table style="width:99%;"><colgroup><col style="width: 36%" /><col style="width: 63%" /></colgroup><thead><tr class="header"><th>alg Parameter Value</th><th>Digital Signature or MAC Algorithm</th></tr></thead><tbody><tr class="odd"><td>HS256</td><td>HMAC using SHA-256 hash algorithm</td></tr><tr class="even"><td>HS384</td><td>HMAC using SHA-384 hash algorithm</td></tr><tr class="odd"><td>HS512</td><td>HMAC using SHA-512 hash algorithm</td></tr><tr class="even"><td>RS256</td><td>RSASSA-PKCS1-v1_5 using SHA-256 hash algorithm</td></tr><tr class="odd"><td>RS384</td><td>RSASSA-PKCS1-v1_5 using SHA-384 hash algorithm</td></tr><tr class="even"><td>RS512</td><td>RSASSA-PKCS1-v1_5 using SHA-512 hash algorithm</td></tr><tr class="odd"><td>PS256</td><td>RSASSA-PSS using SHA-256 hash algorithm (only node ^6.12.0 OR &gt;=8.0.0)</td></tr><tr class="even"><td>PS384</td><td>RSASSA-PSS using SHA-384 hash algorithm (only node ^6.12.0 OR &gt;=8.0.0)</td></tr><tr class="odd"><td>PS512</td><td>RSASSA-PSS using SHA-512 hash algorithm (only node ^6.12.0 OR &gt;=8.0.0)</td></tr><tr class="even"><td>ES256</td><td>ECDSA using P-256 curve and SHA-256 hash algorithm</td></tr><tr class="odd"><td>ES384</td><td>ECDSA using P-384 curve and SHA-384 hash algorithm</td></tr><tr class="even"><td>ES512</td><td>ECDSA using P-521 curve and SHA-512 hash algorithm</td></tr><tr class="odd"><td>none</td><td>No digital signature or MAC value included</td></tr></tbody></table>
 
-Refreshing JWTs
----------------
+## Refreshing JWTs
 
 First of all, we recommend you to think carefully if auto-refreshing a JWT will not introduce any vulnerability in your system.
 
 We are not comfortable including this as part of the library, however, you can take a look at [this example](https://gist.github.com/ziluvatar/a3feb505c4c0ec37059054537b38fc48) to show how this could be accomplished. Apart from that example there are [an issue](https://github.com/auth0/node-jsonwebtoken/issues/122) and [a pull request](https://github.com/auth0/node-jsonwebtoken/pull/172) to get more knowledge about this topic.
 
-TODO
-====
+# TODO
 
--   X.509 certificate chain is not checked
+- X.509 certificate chain is not checked
 
-Issue Reporting
----------------
+## Issue Reporting
 
 If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
 
-Author
-------
+## Author
 
 [Auth0](https://auth0.com)
 
-License
--------
+## License
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
