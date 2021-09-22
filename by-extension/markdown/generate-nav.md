@@ -1,7 +1,6 @@
-This works wonders!
-===================
+# This works wonders!
 
-------------------------------------------------------------------------
+---
 
 It produces a moc directory structure layout:
 
@@ -177,12 +176,12 @@ It produces a moc directory structure layout:
         .icon {
             margin-right: 5px;
         }
-        tr.clickable { 
-            cursor: pointer; 
-        } 
-        tr.clickable a { 
-            display: block; 
-        } 
+        tr.clickable {
+            cursor: pointer;
+        }
+        tr.clickable a {
+            display: block;
+        }
         @media (max-width: 600px) {
             * {
                 font-size: 1.06rem;
@@ -426,10 +425,9 @@ It produces a moc directory structure layout:
         config = parser.parse_args(sys.argv[1:])
         process_dir(config.top_dir, config)
 
-------------------------------------------------------------------------
+---
 
-Alternatively here’s a more simple script:
-------------------------------------------
+## Alternatively here’s a more simple script:
 
 #### The result looks like this:
 
@@ -479,23 +477,19 @@ Alternatively here’s a more simple script:
     #Indexing root directory (Script position)
     index_folder('.')
 
-------------------------------------------------------------------------
+---
 
-You could also use
-------------------
+## You could also use
 
 1.) [dirhtml](https://www.portablefreeware.com/index.php?id=308) 2.) [Snap2Html](https://www.rlvision.com/snap2html/about.php)
 
 ##### to get roughly the same effect.
 
-------------------------------------------------------------------------
+---
 
-------------------------------------------------------------------------
+---
 
-Lastly you could also use this bash script if you want a simple unordered list of files:
-----------------------------------------------------------------------------------------
-
-
+## Lastly you could also use this bash script if you want a simple unordered list of files:
 
     #!/bin/sh
 
