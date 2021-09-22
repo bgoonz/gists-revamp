@@ -3,7 +3,9 @@ import getRawTag from "./_getRawTag";
 import objectToString from "./_objectToString";
 
 /** `Object#toString` result references. */
-const nullTag = "[object Null]", undefinedTag = "[object Undefined]";
+const nullTag = "[object Null]";
+
+const undefinedTag = "[object Undefined]";
 
 /** Built-in value references. */
 const symToStringTag = Symbol ? Symbol.toStringTag : undefined;

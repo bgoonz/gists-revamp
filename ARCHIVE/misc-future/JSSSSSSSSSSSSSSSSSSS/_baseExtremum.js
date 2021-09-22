@@ -15,7 +15,8 @@ function baseExtremum(array, iteratee, comparator) {
   const length = array.length;
 
   while (++index < length) {
-    const value = array[index], current = iteratee(value);
+    const value = array[index];
+    const current = iteratee(value);
 
     if (
       current != null &&
@@ -23,8 +24,8 @@ function baseExtremum(array, iteratee, comparator) {
         ? current === current && !isSymbol(current)
         : comparator(current, computed))
     ) {
-      var computed = current,
-        result = value;
+      var computed = current;
+      var result = value;
     }
   }
   return result;

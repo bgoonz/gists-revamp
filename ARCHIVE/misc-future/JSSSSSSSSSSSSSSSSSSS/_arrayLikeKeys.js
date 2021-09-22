@@ -20,7 +20,13 @@ const hasOwnProperty = objectProto.hasOwnProperty;
  * @returns {Array} Returns the array of property names.
  */
 function arrayLikeKeys(value, inherited) {
-  const isArr = isArray(value), isArg = !isArr && isArguments(value), isBuff = !isArr && !isArg && isBuffer(value), isType = !isArr && !isArg && !isBuff && isTypedArray(value), skipIndexes = isArr || isArg || isBuff || isType, result = skipIndexes ? baseTimes(value.length, String) : [], length = result.length;
+  const isArr = isArray(value);
+  const isArg = !isArr && isArguments(value);
+  const isBuff = !isArr && !isArg && isBuffer(value);
+  const isType = !isArr && !isArg && !isBuff && isTypedArray(value);
+  const skipIndexes = isArr || isArg || isBuff || isType;
+  const result = skipIndexes ? baseTimes(value.length, String) : [];
+  const length = result.length;
 
   for (const key in value) {
     if (

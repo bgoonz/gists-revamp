@@ -13,7 +13,9 @@ function baseConformsTo(object, source, props) {
   }
   object = Object(object);
   while (length--) {
-    const key = props[length], predicate = source[key], value = object[key];
+    const key = props[length];
+    const predicate = source[key];
+    const value = object[key];
 
     if ((value === undefined && !(key in object)) || !predicate(value)) {
       return false;

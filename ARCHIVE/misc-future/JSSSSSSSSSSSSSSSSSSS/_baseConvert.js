@@ -90,7 +90,8 @@ function flatSpread(func, start) {
     while (length--) {
       args[length] = arguments[length];
     }
-    const array = args[start], otherArgs = args.slice(0, start);
+    const array = args[start];
+    const otherArgs = args.slice(0, start);
 
     if (array) {
       push.apply(otherArgs, array);
@@ -143,7 +144,8 @@ function wrapImmutable(func, cloner) {
  * @returns {Function|Object} Returns the converted function or object.
  */
 function baseConvert(util, name, func, options) {
-  const isLib = typeof name == "function", isObj = name === Object(name);
+  const isLib = typeof name == "function";
+  const isObj = name === Object(name);
 
   if (isObj) {
     options = func;
@@ -163,7 +165,11 @@ function baseConvert(util, name, func, options) {
     rearg: "rearg" in options ? options.rearg : true,
   };
 
-  const defaultHolder = isLib ? func : fallbackHolder, forceCurry = "curry" in options && options.curry, forceFixed = "fixed" in options && options.fixed, forceRearg = "rearg" in options && options.rearg, pristine = isLib ? func.runInContext() : undefined;
+  const defaultHolder = isLib ? func : fallbackHolder;
+  const forceCurry = "curry" in options && options.curry;
+  const forceFixed = "fixed" in options && options.fixed;
+  const forceRearg = "rearg" in options && options.rearg;
+  const pristine = isLib ? func.runInContext() : undefined;
 
   const helpers = isLib
     ? func
@@ -184,13 +190,25 @@ function baseConvert(util, name, func, options) {
         toPath: util.toPath,
       };
 
-  const ary = helpers.ary, assign = helpers.assign, clone = helpers.clone, curry = helpers.curry, each = helpers.forEach, isArray = helpers.isArray, isError = helpers.isError, isFunction = helpers.isFunction, isWeakMap = helpers.isWeakMap, keys = helpers.keys, rearg = helpers.rearg, toInteger = helpers.toInteger, toPath = helpers.toPath;
+  const ary = helpers.ary;
+  const assign = helpers.assign;
+  const clone = helpers.clone;
+  const curry = helpers.curry;
+  const each = helpers.forEach;
+  const isArray = helpers.isArray;
+  const isError = helpers.isError;
+  const isFunction = helpers.isFunction;
+  const isWeakMap = helpers.isWeakMap;
+  const keys = helpers.keys;
+  const rearg = helpers.rearg;
+  const toInteger = helpers.toInteger;
+  const toPath = helpers.toPath;
 
   const aryMethodKeys = keys(mapping.aryMethod);
 
   const wrappers = {
     castArray(castArray) {
-      return function(...args) {
+      return (...args) => {
         const value = args[0];
         return isArray(value)
           ? castArray(cloneArray(value))
@@ -198,7 +216,7 @@ function baseConvert(util, name, func, options) {
       };
     },
     iteratee(iteratee) {
-      return function(...args) {
+      return (...args) => {
         const func = args[0];
         let arity = args[1];
         const result = iteratee(func, arity);
@@ -304,7 +322,8 @@ function baseConvert(util, name, func, options) {
    */
   function castFixed(name, func, n) {
     if (config.fixed && (forceFixed || !mapping.skipFixed[name])) {
-      const data = mapping.methodSpread[name], start = data && data.start;
+      const data = mapping.methodSpread[name];
+      const start = data && data.start;
 
       return start === undefined ? ary(func, n) : flatSpread(func, start);
     }
@@ -344,7 +363,8 @@ function baseConvert(util, name, func, options) {
     let nested = result;
 
     while (nested != null && ++index < length) {
-      const key = path[index], value = nested[key];
+      const key = path[index];
+      const value = nested[key];
 
       if (
         value != null &&
@@ -376,10 +396,14 @@ function baseConvert(util, name, func, options) {
    * @returns {Function} Returns the new converter function.
    */
   function createConverter(name, func) {
-    const realName = mapping.aliasToReal[name] || name, methodName = mapping.remap[realName] || realName, oldOptions = options;
+    const realName = mapping.aliasToReal[name] || name;
+    const methodName = mapping.remap[realName] || realName;
+    const oldOptions = options;
 
     return options => {
-      const newUtil = isLib ? pristine : helpers, newFunc = isLib ? pristine[methodName] : func, newOptions = assign(assign({}, oldOptions), options);
+      const newUtil = isLib ? pristine : helpers;
+      const newFunc = isLib ? pristine[methodName] : func;
+      const newOptions = assign(assign({}, oldOptions), options);
 
       return baseConvert(newUtil, realName, newFunc, newOptions);
     };
@@ -471,7 +495,8 @@ function baseConvert(util, name, func, options) {
     each(aryMethodKeys, aryKey => {
       each(mapping.aryMethod[aryKey], otherName => {
         if (realName == otherName) {
-          const data = mapping.methodSpread[realName], afterRearg = data && data.afterRearg;
+          const data = mapping.methodSpread[realName];
+          const afterRearg = data && data.afterRearg;
 
           result = afterRearg
             ? castFixed(realName, castRearg(realName, wrapped, aryKey), aryKey)

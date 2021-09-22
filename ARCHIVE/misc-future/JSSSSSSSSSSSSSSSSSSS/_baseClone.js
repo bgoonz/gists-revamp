@@ -21,12 +21,39 @@ import isSet from "./isSet";
 import keys from "./keys";
 
 /** Used to compose bitmasks for cloning. */
-const CLONE_DEEP_FLAG = 1, CLONE_FLAT_FLAG = 2, CLONE_SYMBOLS_FLAG = 4;
+const CLONE_DEEP_FLAG = 1;
+
+const CLONE_FLAT_FLAG = 2;
+const CLONE_SYMBOLS_FLAG = 4;
 
 /** `Object#toString` result references. */
-const argsTag = "[object Arguments]", arrayTag = "[object Array]", boolTag = "[object Boolean]", dateTag = "[object Date]", errorTag = "[object Error]", funcTag = "[object Function]", genTag = "[object GeneratorFunction]", mapTag = "[object Map]", numberTag = "[object Number]", objectTag = "[object Object]", regexpTag = "[object RegExp]", setTag = "[object Set]", stringTag = "[object String]", symbolTag = "[object Symbol]", weakMapTag = "[object WeakMap]";
+const argsTag = "[object Arguments]";
 
-const arrayBufferTag = "[object ArrayBuffer]", dataViewTag = "[object DataView]", float32Tag = "[object Float32Array]", float64Tag = "[object Float64Array]", int8Tag = "[object Int8Array]", int16Tag = "[object Int16Array]", int32Tag = "[object Int32Array]", uint8Tag = "[object Uint8Array]", uint8ClampedTag = "[object Uint8ClampedArray]", uint16Tag = "[object Uint16Array]", uint32Tag = "[object Uint32Array]";
+const arrayTag = "[object Array]";
+const boolTag = "[object Boolean]";
+const dateTag = "[object Date]";
+const errorTag = "[object Error]";
+const funcTag = "[object Function]";
+const genTag = "[object GeneratorFunction]";
+const mapTag = "[object Map]";
+const numberTag = "[object Number]";
+const objectTag = "[object Object]";
+const regexpTag = "[object RegExp]";
+const setTag = "[object Set]";
+const stringTag = "[object String]";
+const symbolTag = "[object Symbol]";
+const weakMapTag = "[object WeakMap]";
+const arrayBufferTag = "[object ArrayBuffer]";
+const dataViewTag = "[object DataView]";
+const float32Tag = "[object Float32Array]";
+const float64Tag = "[object Float64Array]";
+const int8Tag = "[object Int8Array]";
+const int16Tag = "[object Int16Array]";
+const int32Tag = "[object Int32Array]";
+const uint8Tag = "[object Uint8Array]";
+const uint8ClampedTag = "[object Uint8ClampedArray]";
+const uint16Tag = "[object Uint16Array]";
+const uint32Tag = "[object Uint32Array]";
 
 /** Used to identify `toStringTag` values supported by `_.clone`. */
 const cloneableTags = {};
@@ -96,7 +123,8 @@ function baseClone(value, bitmask, customizer, key, object, stack) {
       return copyArray(value, result);
     }
   } else {
-    const tag = getTag(value), isFunc = tag == funcTag || tag == genTag;
+    const tag = getTag(value);
+    const isFunc = tag == funcTag || tag == genTag;
 
     if (isBuffer(value)) {
       return cloneBuffer(value, isDeep);
