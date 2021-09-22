@@ -1,5 +1,4 @@
-How to revert an existing commit
-================================
+# How to revert an existing commit
 
 ### HOW TO revert the change in the ‘master’
 

@@ -10,12 +10,12 @@
 
 ### COMPILATION & EXECUTING JAVA CODE
 
--   Goto your program directory in terminal (Assumed JAVA Path is set)
--   After for compile your code
+- Goto your program directory in terminal (Assumed JAVA Path is set)
+- After for compile your code
 
 > **javac HelloWorld.java (your program file name)**
 
--   For run program
+- For run program
 
 > **java HelloWorld (main class name)**
 
@@ -82,11 +82,11 @@
       if (x>y) { // x > y is the boolean expression
        //Sequence of statements
        x = y;
-      } 
+      }
 
 > IF-ELSE STATEMENT
 
-       if (BOOLEAN EXPRESSION) { 
+       if (BOOLEAN EXPRESSION) {
        //Sequence of statements
        } else {
        //Sequence of statements
@@ -94,7 +94,7 @@
 
 > NESTED IF STATEMENT
 
-       if (BOOLEAN EXPRESSION) { 
+       if (BOOLEAN EXPRESSION) {
        //Sequence of statements
        } else if {
        //Sequence of statements
@@ -167,7 +167,7 @@
 > WHILE LOOP STATEMENT
 
         while(condition){  //till condition will be true.
-        //code to be executed 
+        //code to be executed
         }
 
 **Example:**
@@ -188,11 +188,11 @@
 
 **Example:**
 
-        int i=1;  
-        do{  
-          System.out.println(i);  
-          i++;  
-        }while(i<=10); 
+        int i=1;
+        do{
+          System.out.println(i);
+          i++;
+        }while(i<=10);
 
 ### ARRAY
 
@@ -230,8 +230,7 @@
 5.  synchronized
 6.  volatile
 
-Object Oriented Programming (OOPs) Concept :clipboard:
-------------------------------------------------------
+## Object Oriented Programming (OOPs) Concept :clipboard:
 
 ### OBJECT
 
@@ -263,7 +262,7 @@ Object Oriented Programming (OOPs) Concept :clipboard:
 ### CLASS DECLARATION
 
     class MyClass {
-        // field, constructor, and 
+        // field, constructor, and
         // method declarations
     }
 
@@ -286,13 +285,13 @@ Object Oriented Programming (OOPs) Concept :clipboard:
             // four methods
             public void setCadence(int newValue) {
                 cadence = newValue;
-            }   
+            }
             public void setGear(int newValue) {
                 gear = newValue;
-            }   
+            }
             public void applyBrake(int decrement) {
                 speed -= decrement;
-            }  
+            }
             public void speedUp(int increment) {
                 speed += increment;
             }
@@ -305,16 +304,16 @@ Object Oriented Programming (OOPs) Concept :clipboard:
         // method declarations
     }
 
--   MyClass is a subclass of MySuperClass and that it implements the YourInterface interface.
+- MyClass is a subclass of MySuperClass and that it implements the YourInterface interface.
 
 > CONSTRUCTORS \* A class contains constructors that are invoked to create objects from the class blueprint. \* Constructor declarations look like method declarations—except that they use the name of the class and have no return type \* Each and every class has defualt No-args constructor.
 
       public class Bicycle{
-          
+
           private int gear;
           private int cadence;
           private int speed;
-         
+
           public Bicycle(int startCadence, int startSpeed, int startGear) { //args-constructor
             gear = startGear;
             cadence = startCadence;
@@ -328,224 +327,225 @@ Object Oriented Programming (OOPs) Concept :clipboard:
 
 ### POLYMORPHISM
 
--   Polymorphism is the concept where an object behaves differently in different situations.
--   There are two types of polymorphism
-    1.  compile time polymorphism
-    2.  runtime polymorphism.
+- Polymorphism is the concept where an object behaves differently in different situations.
+- There are two types of polymorphism
+  1.  compile time polymorphism
+  2.  runtime polymorphism.
 
 #### 1. Compile Time Polymorphism
 
--   Compile-time polymorphism is achieved by method overloading.
--   method overloading is creating multiple method with methods name is same and arguments are different.
+- Compile-time polymorphism is achieved by method overloading.
+- method overloading is creating multiple method with methods name is same and arguments are different.
 
-      public class Circle {
+  public class Circle {
 
-        public void draw(){
-          System.out.println("Drwaing circle with default color Black and diameter 1 cm.");
-        }
-
-        public void draw(int diameter){ //method draw() overloaded.
-          System.out.println("Drwaing circle with default color Black and diameter"+diameter+" cm.");
-        }
-
-        public void draw(int diameter, String color){ //method draw() overloaded.
-          System.out.println("Drwaing circle with color"+color+" and diameter"+diameter+" cm.");
-        }
+      public void draw(){
+        System.out.println("Drwaing circle with default color Black and diameter 1 cm.");
       }
+
+      public void draw(int diameter){ //method draw() overloaded.
+        System.out.println("Drwaing circle with default color Black and diameter"+diameter+" cm.");
+      }
+
+      public void draw(int diameter, String color){ //method draw() overloaded.
+        System.out.println("Drwaing circle with color"+color+" and diameter"+diameter+" cm.");
+      }
+
+  }
 
 #### 2. Run Time Polymorphism
 
--   Run-time polymorphism is achieved by method overriding.
--   Runtime polymorphism is implemented when we have an **“IS-A”** relationship between objects.
--   method overriding is the subclass has to override the superclass method.
+- Run-time polymorphism is achieved by method overriding.
+- Runtime polymorphism is implemented when we have an **“IS-A”** relationship between objects.
+- method overriding is the subclass has to override the superclass method.
 
-        public interface Shape {
+      public interface Shape {
 
-            public void draw();
+          public void draw();
+      }
+
+      public class Circle implements Shape{
+
+        @Override
+        public void draw(){
+          System.out.println("Drwaing circle");
         }
 
-        public class Circle implements Shape{
+      }
 
-          @Override
-          public void draw(){
-            System.out.println("Drwaing circle");
-          }
+      public class Square implements Shape {
 
+        @Override
+        public void draw() {
+          System.out.println("Drawing Square");
         }
 
-        public class Square implements Shape {
+      }
 
-          @Override
-          public void draw() {
-            System.out.println("Drawing Square");
-          }
+- `Shape` is the superclass and there are two subclasses `Circle` and `Square`
+- Below is an example of runtime polymorphism.
 
-        }
+      Shape sh = new Circle();
+      sh.draw();
 
--   `Shape` is the superclass and there are two subclasses `Circle` and `Square`
--   Below is an example of runtime polymorphism.
-
-        Shape sh = new Circle();
-        sh.draw();
-
-        Shape sh1 = getShape(); //some third party logic to determine shape
-        sh1.draw();
+      Shape sh1 = getShape(); //some third party logic to determine shape
+      sh1.draw();
 
 ### INHERITANCE
 
--   Inheritance is the mechanism of code reuse.
--   The object that is getting inherited is called the superclass and the object that inherits the superclass is called a subclass.
--   We use `extends` keyword in java to implement inheritance from class.
--   We use `implements` keyword in java to implement inheritance from interface.
+- Inheritance is the mechanism of code reuse.
+- The object that is getting inherited is called the superclass and the object that inherits the superclass is called a subclass.
+- We use `extends` keyword in java to implement inheritance from class.
+- We use `implements` keyword in java to implement inheritance from interface.
 
-        public class Superclass{
-          // methods and fields
-        }
+      public class Superclass{
+        // methods and fields
+      }
 
-        public interface Superinterface{
-          // methods and fields
-        }
+      public interface Superinterface{
+        // methods and fields
+      }
 
-        public class Subclass extends Superclass implements Superinterface{
-          // methods and fields
-        }
+      public class Subclass extends Superclass implements Superinterface{
+        // methods and fields
+      }
 
 ### Abstraction
 
--   Abstraction is the concept of hiding the internal details and describing things in simple terms.
--   Abstraction can be achieved by two ways.
-    1.  Abstract Class
-    2.  Interface
+- Abstraction is the concept of hiding the internal details and describing things in simple terms.
+- Abstraction can be achieved by two ways.
+  1.  Abstract Class
+  2.  Interface
 
 #### 1. Abstract Class
 
--   An abstract class must be declared with an `abstract` keyword.
--   It can have abstract and non-abstract methods.
--   It cannot be instantiated.
--   It can have constructors and static methods also.
--   It can have final methods which will force the subclass not to change the body of the method.
+- An abstract class must be declared with an `abstract` keyword.
+- It can have abstract and non-abstract methods.
+- It cannot be instantiated.
+- It can have constructors and static methods also.
+- It can have final methods which will force the subclass not to change the body of the method.
 
-        abstract class Flower{
-            abstract String Smell(); //abstract method.
-            String Oil(){  // non-abstract method. 
-               System.out.println("Flower Oil is good.");
-             }
-        }
+      abstract class Flower{
+          abstract String Smell(); //abstract method.
+          String Oil(){  // non-abstract method.
+             System.out.println("Flower Oil is good.");
+           }
+      }
 
-        public class Lily extends Flower{
-            private String Smell(){ // implementation of abstarct method.
-              System.out.println("Lily smell's lovender.");
-            }
-        }
+      public class Lily extends Flower{
+          private String Smell(){ // implementation of abstarct method.
+            System.out.println("Lily smell's lovender.");
+          }
+      }
 
 #### 2. Interface
 
--   Interface is a blueprint of a **class**.
--   It can have only abstract methods. \[Except Java 8 and next versions.\]
--   Since Java 8, we can have **default and static** methods in an interface.
+- Interface is a blueprint of a **class**.
+- It can have only abstract methods. \[Except Java 8 and next versions.\]
+- Since Java 8, we can have **default and static** methods in an interface.
 
-        interface print{  
-            void printPaper();  
-        }  
-        public class A4 implements print{  
-            public void printPaper(){
-              System.out.println("A4 Page Printed. ");
-            }  
-        }
+      interface print{
+          void printPaper();
+      }
+      public class A4 implements print{
+          public void printPaper(){
+            System.out.println("A4 Page Printed. ");
+          }
+      }
 
 ### Encapsulation
 
--   Encapsulation is used for access restriction to class members and methods.
--   Encapsulation is the technique used to implement abstraction in OOP.
--   As in encapsulation, the data in a class is hidden from other classes, so it is also known as **data-hiding**.
--   Encapsulation can be achieved by Declaring all the variables in the class as private and writing public methods in the class to set and get the values of variables.
--   Best example of Encapsulation is POJO (Plain-Java-Object-Class).
+- Encapsulation is used for access restriction to class members and methods.
+- Encapsulation is the technique used to implement abstraction in OOP.
+- As in encapsulation, the data in a class is hidden from other classes, so it is also known as **data-hiding**.
+- Encapsulation can be achieved by Declaring all the variables in the class as private and writing public methods in the class to set and get the values of variables.
+- Best example of Encapsulation is POJO (Plain-Java-Object-Class).
 
-       public class User {
-           private String username;
-           private String password;
+  public class User {
+  private String username;
+  private String password;
 
-           public String getUsername() {
-             return username;
-           }
+         public String getUsername() {
+           return username;
+         }
 
-           public void setUsername(String username) {
-             this.username = username;
-           }
+         public void setUsername(String username) {
+           this.username = username;
+         }
 
-           public String getPassword() {
-             return password;
-           }
+         public String getPassword() {
+           return password;
+         }
 
-           public void setPassword(String password) {
-             this.password = password;
-           }
-       }
+         public void setPassword(String password) {
+           this.password = password;
+         }
 
-ADVANCE DATA TYPE
------------------
+  }
 
--   **STACK DATA TYPE**
+## ADVANCE DATA TYPE
 
-      public class Stack<Item> implements Iterable <Item>
+- **STACK DATA TYPE**
 
-      Stack()   //create an empty stack
-      boolean isEmpty() //return if the stack empty
-      void push(Item item) // push an item onto the stack
-      Item pop() //return and remove the item that was inserted most recently
-      int size() //number of item on stack
+  public class Stack<Item> implements Iterable <Item>
 
--   **QUEUE DATA TYPE**
+  Stack() //create an empty stack
+  boolean isEmpty() //return if the stack empty
+  void push(Item item) // push an item onto the stack
+  Item pop() //return and remove the item that was inserted most recently
+  int size() //number of item on stack
 
-      public class Queue<Item> implements Iterable<Item>
+- **QUEUE DATA TYPE**
 
-      Queue()  //create an emptyh queue
-      boolean isEmpthy()  //return if the queue empthy
-      void enqueue(Item item) // insert an item onto queue
-      Item dequeue()  //return and remove the item that was inserted least recently
-      int size() //number of item on queue
+  public class Queue<Item> implements Iterable<Item>
 
--   **ITERABLE**
+  Queue() //create an emptyh queue
+  boolean isEmpthy() //return if the queue empthy
+  void enqueue(Item item) // insert an item onto queue
+  Item dequeue() //return and remove the item that was inserted least recently
+  int size() //number of item on queue
 
-    //import Iterator
-    import java.util.Iterator;
+- **ITERABLE**
 
-    public class Queue<Item> implements Iterable <Item> { 
+  //import Iterator
+  import java.util.Iterator;
 
-    //FIFO queue
-      private Node first;
-      private Node last;
-      private class Node {
-        Item item;
-        Node next;
-      }
+  public class Queue<Item> implements Iterable <Item> {
 
-      public void enqueue (Item item)
-      ...
+  //FIFO queue
+  private Node first;
+  private Node last;
+  private class Node {
+  Item item;
+  Node next;
+  }
 
-      public Item dequeue()
-      ...
+  public void enqueue (Item item)
+  ...
 
-    }
+  public Item dequeue()
+  ...
 
--   **SYMBOL TABLE DATA TYPE**
+  }
 
-      public class ST<Key extends Comparable<Key>, Value>
+- **SYMBOL TABLE DATA TYPE**
 
-      ST()  //create and empty symbol table
-      void put(Key key, Value val)  //associate val with key
-      Value get(Key key)  //value associated with key
-      void remove(Key key) //remove key (and its associated value)
-      boolean contains (Key key)  //return if there is a value associated with key
-      int size()  //number of key-value pairs
-      Iterable<Key> keys()  // all keys in the symbol table
+  public class ST<Key extends Comparable<Key>, Value>
 
--   **SET DATA TYPE**
+  ST() //create and empty symbol table
+  void put(Key key, Value val) //associate val with key
+  Value get(Key key) //value associated with key
+  void remove(Key key) //remove key (and its associated value)
+  boolean contains (Key key) //return if there is a value associated with key
+  int size() //number of key-value pairs
+  Iterable<Key> keys() // all keys in the symbol table
 
-      public class SET<Key extends Comparable<Key>> implements Iterable<Key>
-      SET() //create an empthy set
-      boolean isEmpthy()  //return if the set is empthy
-      void add (Key key)  //add key to the set
-      void remove(Key key)  //remove key from set
-      boolean contains(Key key) //return if the key is in the set
-      int size() //number of elements in set
+- **SET DATA TYPE**
+
+  public class SET<Key extends Comparable<Key>> implements Iterable<Key>
+  SET() //create an empthy set
+  boolean isEmpthy() //return if the set is empthy
+  void add (Key key) //add key to the set
+  void remove(Key key) //remove key from set
+  boolean contains(Key key) //return if the key is in the set
+  int size() //number of elements in set

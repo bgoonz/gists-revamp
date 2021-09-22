@@ -4,8 +4,7 @@ search:
 
 ?
 
-\[TITLE\]
-=========
+# \[TITLE\]
 
 \[NUM FILES\] files in \[NUM DIRS\] folders (<span id="tot_size">\[TOT SIZE\]</span>)  
 Generated \[GEN DATE\] \[GEN TIME\] by [\[APP NAME\]](%5BAPP%20LINK%5D)
@@ -24,6 +23,6 @@ Export this View
 
 Plain JSON CSV <span id="export_options_columns"> Columns: Path Type Size Date </span>
 
- <a href="#" id="export_save">Save</a>
+<a href="#" id="export_save">Save</a>
 
 Tip: Search for \* to export all files and folders

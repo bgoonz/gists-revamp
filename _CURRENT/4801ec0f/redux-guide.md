@@ -1,6 +1,6 @@
 // Step 1: Setup Folders // Create an actions and a reducers folder. Then add an index.js file in both folders. // Required dependency installs: axios, redux, react-redux, redux-thunk
 
-------------------------------------------------------------------------
+---
 
 // Step 2: Create Redux Config File // @ Root of application create a .js file.
 
@@ -18,7 +18,7 @@ const configRedux = () =&gt; createStore(reducer, applyMiddleware(thunk));
 
 export default configRedux;
 
-------------------------------------------------------------------------
+---
 
 // Step 3: Setup root index.js, or App.js // Import configRedux() into index.js and wrap
 
@@ -30,41 +30,41 @@ const store = configRedux();
 
 // Don’t worry… The app is freaking out because we haven’t built the reducer yet.
 
-------------------------------------------------------------------------
+---
 
 // Step 4: Create ../actions/index.js File // @/actions/index.js // You’ll want to export const any actions then wrap that variable into a function.
 
-export const ACTION\_NAME = “ACTION\_NAME”;
+export const ACTION_NAME = “ACTION_NAME”;
 
-// This is known as the action creator. export const actionName = payload =&gt; ({ type: ACTION\_NAME, payload: payload });
+// This is known as the action creator. export const actionName = payload =&gt; ({ type: ACTION_NAME, payload: payload });
 
-!!——————————-!! // If application requires Asyncronous actions import axios from ‘axios’; export const ACTION\_NAME = “ACTION\_NAME”; export const FETCH\_SUCCESS = “FETCH\_SUCCESS”; export const FETCH\_TOGGLE = “FETCH\_TOGGLE”;
+!!——————————-!! // If application requires Asyncronous actions import axios from ‘axios’; export const ACTION_NAME = “ACTION_NAME”; export const FETCH_SUCCESS = “FETCH_SUCCESS”; export const FETCH_TOGGLE = “FETCH_TOGGLE”;
 
-// This is known as the action creator. export const actionName = () =&gt; dispatch =&gt; { dispatch({ type: FETCH\_TOGGLE }); axios.get(‘https://api.kanye.rest/’) .then(res =&gt; dispatch({ type: FETCH\_SUCCESS, payload: res.data.quote })) .catch(err =&gt; dispatch({ type: FETCH\_TOGGLE, payload: err })) };
+// This is known as the action creator. export const actionName = () =&gt; dispatch =&gt; { dispatch({ type: FETCH_TOGGLE }); axios.get(‘https://api.kanye.rest/’) .then(res =&gt; dispatch({ type: FETCH_SUCCESS, payload: res.data.quote })) .catch(err =&gt; dispatch({ type: FETCH_TOGGLE, payload: err })) };
 
-------------------------------------------------------------------------
+---
 
 // Step 5: Create a newReducer // @/reducers/newReducer // Create a new reducer and import actions from appropriate action file; in this case it’s index.js
 
-import { ACTION\_NAME } from “../actions/”;
+import { ACTION_NAME } from “../actions/”;
 
 const initialState = { date: Date.now() };
 
-const newReducer = (state = initialState, action) =&gt; { switch (action.type) { case ACTION\_NAME: return { …state, date: action.payload }; default: return state; } };
+const newReducer = (state = initialState, action) =&gt; { switch (action.type) { case ACTION_NAME: return { …state, date: action.payload }; default: return state; } };
 
 export default newReducer;
 
 !!——————————-!!
 
-// Create a new reducer and import actions from appropriate action file; in this case it’s index.js import { FETCH\_TOGGLE, FETCH\_SUCCESS } from ’../actions/;
+// Create a new reducer and import actions from appropriate action file; in this case it’s index.js import { FETCH_TOGGLE, FETCH_SUCCESS } from ’../actions/;
 
 const initialState = { kanyeism: ’‘, error:’’, isFetching: false }
 
-const asyncReducer = (state = initialState, action) =&gt; { switch(action.type){ case FETCH\_TOGGLE: return { …state, isFetching: !state.isFetching, error: action.payload ? action.payload : ’’ } case FETCH\_SUCCESS: return { …state, kanyeism: action.payload, isFetching: false, error: ’’ default: return state; } }
+const asyncReducer = (state = initialState, action) =&gt; { switch(action.type){ case FETCH_TOGGLE: return { …state, isFetching: !state.isFetching, error: action.payload ? action.payload : ’’ } case FETCH_SUCCESS: return { …state, kanyeism: action.payload, isFetching: false, error: ’’ default: return state; } }
 
 export default asyncReducer;
 
-------------------------------------------------------------------------
+---
 
 // Step 6: Create ../reducers/index.js File
 
@@ -72,7 +72,7 @@ import { combineReducers } from ‘redux’; import newReducer from ‘../reduce
 
 export default combineReducers({ newReducer // Include any other reducers required by your application. });
 
-------------------------------------------------------------------------
+---
 
 // Step 7: Consume Data with Hooks // How to consume the data using hooks within a functional component.
 
