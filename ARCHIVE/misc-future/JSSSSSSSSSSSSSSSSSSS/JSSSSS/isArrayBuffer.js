@@ -1,6 +1,6 @@
-var baseIsArrayBuffer = require('./_baseIsArrayBuffer'),
-    baseUnary = require('./_baseUnary'),
-    nodeUtil = require('./_nodeUtil');
+var baseIsArrayBuffer = require("./_baseIsArrayBuffer"),
+  baseUnary = require("./_baseUnary"),
+  nodeUtil = require("./_nodeUtil");
 
 /* Node.js helper references. */
 var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer;
@@ -22,6 +22,8 @@ var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer;
  * _.isArrayBuffer(new Array(2));
  * // => false
  */
-var isArrayBuffer = nodeIsArrayBuffer ? baseUnary(nodeIsArrayBuffer) : baseIsArrayBuffer;
+var isArrayBuffer = nodeIsArrayBuffer
+  ? baseUnary(nodeIsArrayBuffer)
+  : baseIsArrayBuffer;
 
 module.exports = isArrayBuffer;

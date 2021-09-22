@@ -1,6 +1,6 @@
-var baseExtremum = require('./_baseExtremum'),
-    baseGt = require('./_baseGt'),
-    baseIteratee = require('./_baseIteratee');
+var baseExtremum = require("./_baseExtremum"),
+  baseGt = require("./_baseGt"),
+  baseIteratee = require("./_baseIteratee");
 
 /**
  * This method is like `_.max` except that it accepts `iteratee` which is
@@ -26,7 +26,7 @@ var baseExtremum = require('./_baseExtremum'),
  * // => { 'n': 2 }
  */
 function maxBy(array, iteratee) {
-  return (array && array.length)
+  return array && array.length
     ? baseExtremum(array, baseIteratee(iteratee, 2), baseGt)
     : undefined;
 }

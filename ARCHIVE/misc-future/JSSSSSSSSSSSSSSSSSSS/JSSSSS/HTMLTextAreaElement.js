@@ -11,14 +11,17 @@ function HTMLTextAreaElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTextAreaElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTextAreaElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTextAreaElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTextAreaElement, "prototype", {
   value: HTMLTextAreaElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLTextAreaElement.prototype.checkValidity = function checkValidity() {
@@ -37,7 +40,9 @@ HTMLTextAreaElement.prototype.reportValidity = function reportValidity() {
   return this[impl].reportValidity();
 };
 
-HTMLTextAreaElement.prototype.setCustomValidity = function setCustomValidity(error) {
+HTMLTextAreaElement.prototype.setCustomValidity = function setCustomValidity(
+  error
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -53,7 +58,8 @@ HTMLTextAreaElement.prototype.setCustomValidity = function setCustomValidity(err
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setCustomValidity' on 'HTMLTextAreaElement': parameter 1"
+      context:
+        "Failed to execute 'setCustomValidity' on 'HTMLTextAreaElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -68,7 +74,9 @@ HTMLTextAreaElement.prototype.select = function select() {
   return this[impl].select();
 };
 
-HTMLTextAreaElement.prototype.setRangeText = function setRangeText(replacement) {
+HTMLTextAreaElement.prototype.setRangeText = function setRangeText(
+  replacement
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -86,35 +94,41 @@ HTMLTextAreaElement.prototype.setRangeText = function setRangeText(replacement) 
       {
         let curArg = arguments[0];
         curArg = conversions["DOMString"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 1"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 1",
         });
         args.push(curArg);
       }
       break;
     case 2:
       throw new TypeError(
-        "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': only " + arguments.length + " arguments present."
+        "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': only " +
+          arguments.length +
+          " arguments present."
       );
       break;
     case 3:
       {
         let curArg = arguments[0];
         curArg = conversions["DOMString"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 1"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 1",
         });
         args.push(curArg);
       }
       {
         let curArg = arguments[1];
         curArg = conversions["unsigned long"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 2"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 2",
         });
         args.push(curArg);
       }
       {
         let curArg = arguments[2];
         curArg = conversions["unsigned long"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 3"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 3",
         });
         args.push(curArg);
       }
@@ -123,21 +137,24 @@ HTMLTextAreaElement.prototype.setRangeText = function setRangeText(replacement) 
       {
         let curArg = arguments[0];
         curArg = conversions["DOMString"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 1"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 1",
         });
         args.push(curArg);
       }
       {
         let curArg = arguments[1];
         curArg = conversions["unsigned long"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 2"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 2",
         });
         args.push(curArg);
       }
       {
         let curArg = arguments[2];
         curArg = conversions["unsigned long"](curArg, {
-          context: "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 3"
+          context:
+            "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 3",
         });
         args.push(curArg);
       }
@@ -145,7 +162,8 @@ HTMLTextAreaElement.prototype.setRangeText = function setRangeText(replacement) 
         let curArg = arguments[3];
         if (curArg !== undefined) {
           curArg = convertSelectionMode(curArg, {
-            context: "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 4"
+            context:
+              "Failed to execute 'setRangeText' on 'HTMLTextAreaElement': parameter 4",
           });
         } else {
           curArg = "preserve";
@@ -156,7 +174,10 @@ HTMLTextAreaElement.prototype.setRangeText = function setRangeText(replacement) 
   return this[impl].setRangeText(...args);
 };
 
-HTMLTextAreaElement.prototype.setSelectionRange = function setSelectionRange(start, end) {
+HTMLTextAreaElement.prototype.setSelectionRange = function setSelectionRange(
+  start,
+  end
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -172,14 +193,16 @@ HTMLTextAreaElement.prototype.setSelectionRange = function setSelectionRange(sta
   {
     let curArg = arguments[0];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'setSelectionRange' on 'HTMLTextAreaElement': parameter 1"
+      context:
+        "Failed to execute 'setSelectionRange' on 'HTMLTextAreaElement': parameter 1",
     });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
     curArg = conversions["unsigned long"](curArg, {
-      context: "Failed to execute 'setSelectionRange' on 'HTMLTextAreaElement': parameter 2"
+      context:
+        "Failed to execute 'setSelectionRange' on 'HTMLTextAreaElement': parameter 2",
     });
     args.push(curArg);
   }
@@ -187,7 +210,8 @@ HTMLTextAreaElement.prototype.setSelectionRange = function setSelectionRange(sta
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'setSelectionRange' on 'HTMLTextAreaElement': parameter 3"
+        context:
+          "Failed to execute 'setSelectionRange' on 'HTMLTextAreaElement': parameter 3",
       });
     }
     args.push(curArg);
@@ -211,14 +235,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "autocomplete", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'autocomplete' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'autocomplete' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this.setAttribute("autocomplete", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "autofocus", {
@@ -236,7 +261,8 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "autofocus", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'autofocus' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'autofocus' property on 'HTMLTextAreaElement': The provided value",
     });
 
     if (V) {
@@ -247,7 +273,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "autofocus", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "cols", {
@@ -265,14 +291,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "cols", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'cols' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'cols' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this[impl]["cols"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "dirName", {
@@ -291,14 +318,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "dirName", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'dirName' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'dirName' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this.setAttribute("dirName", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "disabled", {
@@ -316,7 +344,8 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "disabled", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'disabled' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'disabled' property on 'HTMLTextAreaElement': The provided value",
     });
 
     if (V) {
@@ -327,7 +356,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "disabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "form", {
@@ -340,7 +369,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "inputMode", {
@@ -359,14 +388,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "inputMode", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'inputMode' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'inputMode' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this.setAttribute("inputMode", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "maxLength", {
@@ -376,7 +406,9 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "maxLength", {
     }
 
     const value = parseInt(this.getAttribute("maxLength"));
-    return isNaN(value) || value < -2147483648 || value > 2147483647 ? 0 : value;
+    return isNaN(value) || value < -2147483648 || value > 2147483647
+      ? 0
+      : value;
   },
 
   set(V) {
@@ -385,14 +417,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "maxLength", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'maxLength' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'maxLength' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this.setAttribute("maxLength", String(V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "minLength", {
@@ -402,7 +435,9 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "minLength", {
     }
 
     const value = parseInt(this.getAttribute("minLength"));
-    return isNaN(value) || value < -2147483648 || value > 2147483647 ? 0 : value;
+    return isNaN(value) || value < -2147483648 || value > 2147483647
+      ? 0
+      : value;
   },
 
   set(V) {
@@ -411,14 +446,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "minLength", {
     }
 
     V = conversions["long"](V, {
-      context: "Failed to set the 'minLength' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'minLength' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this.setAttribute("minLength", String(V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "name", {
@@ -437,14 +473,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "placeholder", {
@@ -463,14 +500,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "placeholder", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'placeholder' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'placeholder' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this.setAttribute("placeholder", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "readOnly", {
@@ -488,7 +526,8 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "readOnly", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'readOnly' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'readOnly' property on 'HTMLTextAreaElement': The provided value",
     });
 
     if (V) {
@@ -499,7 +538,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "readOnly", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "required", {
@@ -517,7 +556,8 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "required", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'required' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'required' property on 'HTMLTextAreaElement': The provided value",
     });
 
     if (V) {
@@ -528,7 +568,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "required", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "rows", {
@@ -546,14 +586,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "rows", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'rows' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'rows' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this[impl]["rows"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "wrap", {
@@ -572,14 +613,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "wrap", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'wrap' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'wrap' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this.setAttribute("wrap", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "type", {
@@ -592,7 +634,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "type", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "defaultValue", {
@@ -610,14 +652,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "defaultValue", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'defaultValue' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'defaultValue' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this[impl]["defaultValue"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "value", {
@@ -635,15 +678,16 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "value", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'value' property on 'HTMLTextAreaElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'value' property on 'HTMLTextAreaElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this[impl]["value"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "textLength", {
@@ -656,7 +700,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "textLength", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "willValidate", {
@@ -669,7 +713,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "willValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "validity", {
@@ -682,7 +726,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "validity", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "validationMessage", {
@@ -695,7 +739,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "validationMessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "labels", {
@@ -708,7 +752,7 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "labels", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "selectionStart", {
@@ -726,14 +770,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "selectionStart", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'selectionStart' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'selectionStart' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this[impl]["selectionStart"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "selectionEnd", {
@@ -751,14 +796,15 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "selectionEnd", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'selectionEnd' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'selectionEnd' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this[impl]["selectionEnd"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, "selectionDirection", {
@@ -776,21 +822,22 @@ Object.defineProperty(HTMLTextAreaElement.prototype, "selectionDirection", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'selectionDirection' property on 'HTMLTextAreaElement': The provided value"
+      context:
+        "Failed to set the 'selectionDirection' property on 'HTMLTextAreaElement': The provided value",
     });
 
     this[impl]["selectionDirection"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTextAreaElement.prototype, Symbol.toStringTag, {
   value: "HTMLTextAreaElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -856,7 +903,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -867,8 +914,8 @@ const iface = {
   },
   interface: HTMLTextAreaElement,
   expose: {
-    Window: { HTMLTextAreaElement }
-  }
+    Window: { HTMLTextAreaElement },
+  },
 }; // iface
 module.exports = iface;
 

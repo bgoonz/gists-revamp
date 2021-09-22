@@ -5,14 +5,16 @@
  * @api private
  */
 
-module.exports = Object.keys || function keys(obj) {
+module.exports =
+  Object.keys ||
+  function keys(obj) {
     var arr = [];
     var has = Object.prototype.hasOwnProperty;
 
     for (var i in obj) {
-        if (has.call(obj, i)) {
-            arr.push(i);
-        }
+      if (has.call(obj, i)) {
+        arr.push(i);
+      }
     }
     return arr;
-};
+  };

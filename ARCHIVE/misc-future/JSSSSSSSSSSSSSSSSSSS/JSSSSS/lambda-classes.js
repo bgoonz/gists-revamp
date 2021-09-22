@@ -61,7 +61,7 @@ class Student extends Person {
   }
 
   listsSubjects() {
-    this.favSubjects.forEach(subject => {
+    this.favSubjects.forEach((subject) => {
       console.log(subject);
     });
   }
@@ -98,24 +98,24 @@ class ProjectManager extends Instructor {
 
 // student to test on
 const tom = new Student({
-    name: "Tom Tarpey",
-    location: "Prestatyn",
-    age: 39,
-    previousBackground: "Network Security",
-    className: "CS13",
-    favSubjects: ["C++", "Assembly", "JuJitSu"],
-    grade: 70
-  });
+  name: "Tom Tarpey",
+  location: "Prestatyn",
+  age: 39,
+  previousBackground: "Network Security",
+  className: "CS13",
+  favSubjects: ["C++", "Assembly", "JuJitSu"],
+  grade: 70,
+});
 
-  const bambam = new Student({
-    name: "Bam Bam",
-    location: "Bedrock",
-    age: 39,
-    previousBackground: "Construction",
-    className: "CS13",
-    favSubjects: ["Rock Climbing", "JavaScript", "Saying Bam Bam!"],
-    grade: 30
-  });
+const bambam = new Student({
+  name: "Bam Bam",
+  location: "Bedrock",
+  age: 39,
+  previousBackground: "Construction",
+  className: "CS13",
+  favSubjects: ["Rock Climbing", "JavaScript", "Saying Bam Bam!"],
+  grade: 30,
+});
 
 // instructor to test on
 const fred = new Instructor({
@@ -125,7 +125,7 @@ const fred = new Instructor({
   gender: "male",
   favLanguage: "JavaScript",
   specialty: "Front-end",
-  catchPhrase: `Don't forget the homies`
+  catchPhrase: `Don't forget the homies`,
 });
 
 const josh = new Instructor({
@@ -135,25 +135,25 @@ const josh = new Instructor({
   gender: "male",
   favLanguage: "JavaScript",
   specialty: "Front-end",
-  catchPhrase: `I have a particular set of skills!`
+  catchPhrase: `I have a particular set of skills!`,
 });
 
 // project manager to test on
 const barney = new ProjectManager({
-    name: "Barney Rubble",
-    location: "Bedrock",
-    age: 26,
-    gradClassName: "CS13",
-    favInstructor: "Fred"
-  });
+  name: "Barney Rubble",
+  location: "Bedrock",
+  age: 26,
+  gradClassName: "CS13",
+  favInstructor: "Fred",
+});
 
-  const charletta = new ProjectManager({
-    name: "Charletta Bullard",
-    location: "Lambda",
-    age: 26,
-    gradClassName: "CS13",
-    favInstructor: "Josh"
-  });
+const charletta = new ProjectManager({
+  name: "Charletta Bullard",
+  location: "Lambda",
+  age: 26,
+  gradClassName: "CS13",
+  favInstructor: "Josh",
+});
 
 fred.speak(); // --> Hello my name is Fred, I am from Bedrock
 tom.listsSubjects(); // --> C++ Assembly JuJitSu
@@ -166,4 +166,4 @@ tom.graduate(fred);
 bambam.graduate(charletta);
 console.log(charletta.name); // --> Charletta Bullard
 tom.graduate(josh);
-console.log(josh.name) // --> Josh Knell
+console.log(josh.name); // --> Josh Knell

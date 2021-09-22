@@ -13,7 +13,9 @@ module.exports = {
       const key = "charCode";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["unsigned long"](value, { context: context + " has member charCode that" });
+        value = conversions["unsigned long"](value, {
+          context: context + " has member charCode that",
+        });
 
         ret[key] = value;
       } else {
@@ -25,7 +27,9 @@ module.exports = {
       const key = "code";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["DOMString"](value, { context: context + " has member code that" });
+        value = conversions["DOMString"](value, {
+          context: context + " has member code that",
+        });
 
         ret[key] = value;
       } else {
@@ -37,7 +41,9 @@ module.exports = {
       const key = "isComposing";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["boolean"](value, { context: context + " has member isComposing that" });
+        value = conversions["boolean"](value, {
+          context: context + " has member isComposing that",
+        });
 
         ret[key] = value;
       } else {
@@ -49,7 +55,9 @@ module.exports = {
       const key = "key";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["DOMString"](value, { context: context + " has member key that" });
+        value = conversions["DOMString"](value, {
+          context: context + " has member key that",
+        });
 
         ret[key] = value;
       } else {
@@ -61,7 +69,9 @@ module.exports = {
       const key = "keyCode";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["unsigned long"](value, { context: context + " has member keyCode that" });
+        value = conversions["unsigned long"](value, {
+          context: context + " has member keyCode that",
+        });
 
         ret[key] = value;
       } else {
@@ -73,7 +83,9 @@ module.exports = {
       const key = "location";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["unsigned long"](value, { context: context + " has member location that" });
+        value = conversions["unsigned long"](value, {
+          context: context + " has member location that",
+        });
 
         ret[key] = value;
       } else {
@@ -85,7 +97,9 @@ module.exports = {
       const key = "repeat";
       let value = obj === undefined || obj === null ? undefined : obj[key];
       if (value !== undefined) {
-        value = conversions["boolean"](value, { context: context + " has member repeat that" });
+        value = conversions["boolean"](value, {
+          context: context + " has member repeat that",
+        });
 
         ret[key] = value;
       } else {
@@ -95,12 +109,16 @@ module.exports = {
   },
 
   convert(obj, { context = "The provided value" } = {}) {
-    if (obj !== undefined && typeof obj !== "object" && typeof obj !== "function") {
+    if (
+      obj !== undefined &&
+      typeof obj !== "object" &&
+      typeof obj !== "function"
+    ) {
       throw new TypeError(`${context} is not an object.`);
     }
 
     const ret = Object.create(null);
     module.exports.convertInherit(obj, ret, { context });
     return ret;
-  }
+  },
 };

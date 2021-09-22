@@ -10,14 +10,17 @@ function HTMLTrackElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTrackElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTrackElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTrackElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTrackElement, "prototype", {
   value: HTMLTrackElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLTrackElement.prototype, "kind", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLTrackElement.prototype, "kind", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'kind' property on 'HTMLTrackElement': The provided value"
+      context:
+        "Failed to set the 'kind' property on 'HTMLTrackElement': The provided value",
     });
 
     this.setAttribute("kind", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTrackElement.prototype, "src", {
@@ -61,14 +65,15 @@ Object.defineProperty(HTMLTrackElement.prototype, "src", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'src' property on 'HTMLTrackElement': The provided value"
+      context:
+        "Failed to set the 'src' property on 'HTMLTrackElement': The provided value",
     });
 
     this[impl]["src"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTrackElement.prototype, "srclang", {
@@ -87,14 +92,15 @@ Object.defineProperty(HTMLTrackElement.prototype, "srclang", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'srclang' property on 'HTMLTrackElement': The provided value"
+      context:
+        "Failed to set the 'srclang' property on 'HTMLTrackElement': The provided value",
     });
 
     this.setAttribute("srclang", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTrackElement.prototype, "label", {
@@ -113,14 +119,15 @@ Object.defineProperty(HTMLTrackElement.prototype, "label", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'label' property on 'HTMLTrackElement': The provided value"
+      context:
+        "Failed to set the 'label' property on 'HTMLTrackElement': The provided value",
     });
 
     this.setAttribute("label", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTrackElement.prototype, "default", {
@@ -138,7 +145,8 @@ Object.defineProperty(HTMLTrackElement.prototype, "default", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'default' property on 'HTMLTrackElement': The provided value"
+      context:
+        "Failed to set the 'default' property on 'HTMLTrackElement': The provided value",
     });
 
     if (V) {
@@ -149,7 +157,7 @@ Object.defineProperty(HTMLTrackElement.prototype, "default", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTrackElement.prototype, "readyState", {
@@ -162,50 +170,50 @@ Object.defineProperty(HTMLTrackElement.prototype, "readyState", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTrackElement, "NONE", {
   value: 0,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLTrackElement.prototype, "NONE", {
   value: 0,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLTrackElement, "LOADING", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLTrackElement.prototype, "LOADING", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLTrackElement, "LOADED", {
   value: 2,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLTrackElement.prototype, "LOADED", {
   value: 2,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLTrackElement, "ERROR", {
   value: 3,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(HTMLTrackElement.prototype, "ERROR", {
   value: 3,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(HTMLTrackElement.prototype, Symbol.toStringTag, {
   value: "HTMLTrackElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -271,7 +279,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -282,8 +290,8 @@ const iface = {
   },
   interface: HTMLTrackElement,
   expose: {
-    Window: { HTMLTrackElement }
-  }
+    Window: { HTMLTrackElement },
+  },
 }; // iface
 module.exports = iface;
 

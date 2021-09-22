@@ -45,11 +45,15 @@ module.exports = class HTMLToDOM {
   }
 
   _doParse(...args) {
-    return this.parser === parse5 ? this._parseWithParse5(...args) : this._parseWithSax(...args);
+    return this.parser === parse5
+      ? this._parseWithParse5(...args)
+      : this._parseWithSax(...args);
   }
 
   _parseWithParse5(html, isFragment, contextNode, options = {}) {
-    const adapter = new JSDOMParse5Adapter(contextNode._ownerDocument || contextNode);
+    const adapter = new JSDOMParse5Adapter(
+      contextNode._ownerDocument || contextNode
+    );
     options.treeAdapter = adapter;
 
     if (isFragment) {
@@ -69,24 +73,27 @@ module.exports = class HTMLToDOM {
 
   _parseWithSax(html, isFragment, contextNode) {
     const SaxParser = this.parser.parser;
-    const parser = new SaxParser(/* strict = */true, { xmlns: true, strictEntities: true });
+    const parser = new SaxParser(/* strict = */ true, {
+      xmlns: true,
+      strictEntities: true,
+    });
     parser.noscript = false;
     parser.looseCase = "toString";
     const openStack = [contextNode];
-    parser.ontext = text => {
+    parser.ontext = (text) => {
       setChildForSax(openStack[openStack.length - 1], {
         type: "text",
-        data: text
+        data: text,
       });
     };
-    parser.oncdata = cdata => {
+    parser.oncdata = (cdata) => {
       setChildForSax(openStack[openStack.length - 1], {
         type: "cdata",
-        data: cdata
+        data: cdata,
       });
     };
-    parser.onopentag = arg => {
-      const attrs = Object.keys(arg.attributes).map(key => {
+    parser.onopentag = (arg) => {
+      const attrs = Object.keys(arg.attributes).map((key) => {
         const rawAttribute = arg.attributes[key];
 
         let { prefix } = rawAttribute;
@@ -103,14 +110,20 @@ module.exports = class HTMLToDOM {
 
         const namespace = rawAttribute.uri === "" ? null : rawAttribute.uri;
 
-        return { name: rawAttribute.name, value: rawAttribute.value, prefix, localName, namespace };
+        return {
+          name: rawAttribute.name,
+          value: rawAttribute.value,
+          prefix,
+          localName,
+          namespace,
+        };
       });
       const tag = {
         type: "tag",
         name: arg.local,
         prefix: arg.prefix,
         namespace: arg.uri,
-        attributes: attrs
+        attributes: attrs,
       };
 
       if (arg.local === "script" && arg.uri === HTML_NS) {
@@ -122,34 +135,35 @@ module.exports = class HTMLToDOM {
     };
     parser.onclosetag = () => {
       const elem = openStack.pop();
-      if (elem.constructor.name === "Object") { // we have an empty script tag
+      if (elem.constructor.name === "Object") {
+        // we have an empty script tag
         setChildForSax(openStack[openStack.length - 1], elem);
       }
     };
-    parser.onscript = scriptText => {
+    parser.onscript = (scriptText) => {
       const tag = openStack.pop();
       tag.children = [{ type: "text", data: scriptText }];
       const elem = setChildForSax(openStack[openStack.length - 1], tag);
       openStack.push(elem);
     };
-    parser.oncomment = comment => {
+    parser.oncomment = (comment) => {
       setChildForSax(openStack[openStack.length - 1], {
         type: "comment",
-        data: comment
+        data: comment,
       });
     };
-    parser.onprocessinginstruction = pi => {
+    parser.onprocessinginstruction = (pi) => {
       setChildForSax(openStack[openStack.length - 1], {
         type: "directive",
         name: "?" + pi.name,
-        data: "?" + pi.name + " " + pi.body + "?"
+        data: "?" + pi.name + " " + pi.body + "?",
       });
     };
-    parser.ondoctype = dt => {
+    parser.ondoctype = (dt) => {
       setChildForSax(openStack[openStack.length - 1], {
         type: "directive",
         name: "!doctype",
-        data: "!doctype " + dt
+        data: "!doctype " + dt,
       });
 
       const entityMatcher = /<!ENTITY ([^ ]+) "([^"]+)">/g;
@@ -162,7 +176,7 @@ module.exports = class HTMLToDOM {
       }
     };
 
-    parser.onerror = err => {
+    parser.onerror = (err) => {
       throw err;
     };
     parser.write(html).close();
@@ -170,7 +184,8 @@ module.exports = class HTMLToDOM {
 };
 
 function setChildForSax(parentImpl, node) {
-  const currentDocument = (parentImpl && parentImpl._ownerDocument) || parentImpl;
+  const currentDocument =
+    (parentImpl && parentImpl._ownerDocument) || parentImpl;
 
   let newNode;
   let isTemplateContents = false;
@@ -178,14 +193,20 @@ function setChildForSax(parentImpl, node) {
     case "tag":
     case "script":
     case "style":
-      newNode = currentDocument._createElementWithCorrectElementInterface(node.name, node.namespace);
+      newNode = currentDocument._createElementWithCorrectElementInterface(
+        node.name,
+        node.namespace
+      );
       newNode._prefix = node.prefix || null;
       newNode._namespaceURI = node.namespace || null;
       break;
 
     case "root":
       // If we are in <template> then add all children to the parent's _templateContents; skip this virtual root node.
-      if (parentImpl.tagName === "TEMPLATE" && parentImpl._namespaceURI === HTML_NS) {
+      if (
+        parentImpl.tagName === "TEMPLATE" &&
+        parentImpl._namespaceURI === HTML_NS
+      ) {
         newNode = parentImpl._templateContents;
         isTemplateContents = true;
       }
@@ -207,7 +228,10 @@ function setChildForSax(parentImpl, node) {
     case "directive":
       if (node.name[0] === "?" && node.name.toLowerCase() !== "?xml") {
         const data = node.data.slice(node.name.length + 1, -1);
-        newNode = currentDocument.createProcessingInstruction(node.name.substring(1), data);
+        newNode = currentDocument.createProcessingInstruction(
+          node.name.substring(1),
+          data
+        );
       } else if (node.name.toLowerCase() === "!doctype") {
         newNode = parseDocType(currentDocument, "<" + node.data + ">");
       }
@@ -220,7 +244,13 @@ function setChildForSax(parentImpl, node) {
 
   if (node.attributes) {
     for (const a of node.attributes) {
-      attributes.setAttributeValue(newNode, a.localName, a.value, a.prefix, a.namespace);
+      attributes.setAttributeValue(
+        newNode,
+        a.localName,
+        a.value,
+        a.prefix,
+        a.namespace
+      );
     }
   }
 
@@ -253,12 +283,22 @@ function parseDocType(doc, html) {
 
   const publicPieces = PUBLIC_DOCTYPE.exec(html);
   if (publicPieces) {
-    return createDocumentTypeInternal(doc, publicPieces[1], publicPieces[2], publicPieces[3]);
+    return createDocumentTypeInternal(
+      doc,
+      publicPieces[1],
+      publicPieces[2],
+      publicPieces[3]
+    );
   }
 
   const systemPieces = SYSTEM_DOCTYPE.exec(html);
   if (systemPieces) {
-    return createDocumentTypeInternal(doc, systemPieces[1], "", systemPieces[2]);
+    return createDocumentTypeInternal(
+      doc,
+      systemPieces[1],
+      "",
+      systemPieces[2]
+    );
   }
 
   // Shouldn't get here (the parser shouldn't let us know about invalid doctypes), but our logic likely isn't
@@ -267,5 +307,10 @@ function parseDocType(doc, html) {
 }
 
 function createDocumentTypeInternal(ownerDocument, name, publicId, systemId) {
-  return DocumentType.createImpl([], { ownerDocument, name, publicId, systemId });
+  return DocumentType.createImpl([], {
+    ownerDocument,
+    name,
+    publicId,
+    systemId,
+  });
 }

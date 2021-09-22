@@ -10,14 +10,17 @@ function HTMLLegendElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLLegendElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLLegendElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLLegendElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLLegendElement, "prototype", {
   value: HTMLLegendElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLLegendElement.prototype, "form", {
@@ -30,7 +33,7 @@ Object.defineProperty(HTMLLegendElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLegendElement.prototype, "align", {
@@ -49,21 +52,22 @@ Object.defineProperty(HTMLLegendElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLLegendElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLLegendElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLegendElement.prototype, Symbol.toStringTag, {
   value: "HTMLLegendElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -129,7 +133,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -140,8 +144,8 @@ const iface = {
   },
   interface: HTMLLegendElement,
   expose: {
-    Window: { HTMLLegendElement }
-  }
+    Window: { HTMLLegendElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -1,6 +1,6 @@
-var constant = require('./constant'),
-    createInverter = require('./_createInverter'),
-    identity = require('./identity');
+var constant = require("./constant"),
+  createInverter = require("./_createInverter"),
+  identity = require("./identity");
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -30,9 +30,8 @@ var nativeObjectToString = objectProto.toString;
  * _.invert(object);
  * // => { '1': 'c', '2': 'b' }
  */
-var invert = createInverter(function(result, value, key) {
-  if (value != null &&
-      typeof value.toString != 'function') {
+var invert = createInverter(function (result, value, key) {
+  if (value != null && typeof value.toString != "function") {
     value = nativeObjectToString.call(value);
   }
 

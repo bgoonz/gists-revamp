@@ -17,18 +17,24 @@ function KeyboardEvent(type) {
 
   if (arguments.length < 1) {
     throw new TypeError(
-      "Failed to construct 'KeyboardEvent': 1 argument required, but only " + arguments.length + " present."
+      "Failed to construct 'KeyboardEvent': 1 argument required, but only " +
+        arguments.length +
+        " present."
     );
   }
   const args = [];
   {
     let curArg = arguments[0];
-    curArg = conversions["DOMString"](curArg, { context: "Failed to construct 'KeyboardEvent': parameter 1" });
+    curArg = conversions["DOMString"](curArg, {
+      context: "Failed to construct 'KeyboardEvent': parameter 1",
+    });
     args.push(curArg);
   }
   {
     let curArg = arguments[1];
-    curArg = convertKeyboardEventInit(curArg, { context: "Failed to construct 'KeyboardEvent': parameter 2" });
+    curArg = convertKeyboardEventInit(curArg, {
+      context: "Failed to construct 'KeyboardEvent': parameter 2",
+    });
     args.push(curArg);
   }
 
@@ -42,7 +48,7 @@ Object.defineProperty(KeyboardEvent, "prototype", {
   value: KeyboardEvent.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 KeyboardEvent.prototype.getModifierState = function getModifierState(keyArg) {
@@ -61,14 +67,17 @@ KeyboardEvent.prototype.getModifierState = function getModifierState(keyArg) {
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'getModifierState' on 'KeyboardEvent': parameter 1"
+      context:
+        "Failed to execute 'getModifierState' on 'KeyboardEvent': parameter 1",
     });
     args.push(curArg);
   }
   return this[impl].getModifierState(...args);
 };
 
-KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) {
+KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(
+  typeArg
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -84,7 +93,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 1"
+      context:
+        "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 1",
     });
     args.push(curArg);
   }
@@ -92,7 +102,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
     let curArg = arguments[1];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 2"
+        context:
+          "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 2",
       });
     } else {
       curArg = false;
@@ -103,7 +114,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
     let curArg = arguments[2];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 3"
+        context:
+          "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 3",
       });
     } else {
       curArg = false;
@@ -127,7 +139,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
     let curArg = arguments[4];
     if (curArg !== undefined) {
       curArg = conversions["DOMString"](curArg, {
-        context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 5"
+        context:
+          "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 5",
       });
     } else {
       curArg = "";
@@ -138,7 +151,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
     let curArg = arguments[5];
     if (curArg !== undefined) {
       curArg = conversions["unsigned long"](curArg, {
-        context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 6"
+        context:
+          "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 6",
       });
     } else {
       curArg = 0;
@@ -149,7 +163,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
     let curArg = arguments[6];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 7"
+        context:
+          "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 7",
       });
     } else {
       curArg = false;
@@ -160,7 +175,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
     let curArg = arguments[7];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 8"
+        context:
+          "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 8",
       });
     } else {
       curArg = false;
@@ -171,7 +187,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
     let curArg = arguments[8];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 9"
+        context:
+          "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 9",
       });
     } else {
       curArg = false;
@@ -182,7 +199,8 @@ KeyboardEvent.prototype.initKeyboardEvent = function initKeyboardEvent(typeArg) 
     let curArg = arguments[9];
     if (curArg !== undefined) {
       curArg = conversions["boolean"](curArg, {
-        context: "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 10"
+        context:
+          "Failed to execute 'initKeyboardEvent' on 'KeyboardEvent': parameter 10",
       });
     } else {
       curArg = false;
@@ -202,7 +220,7 @@ Object.defineProperty(KeyboardEvent.prototype, "key", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "code", {
@@ -215,7 +233,7 @@ Object.defineProperty(KeyboardEvent.prototype, "code", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "location", {
@@ -228,7 +246,7 @@ Object.defineProperty(KeyboardEvent.prototype, "location", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "ctrlKey", {
@@ -241,7 +259,7 @@ Object.defineProperty(KeyboardEvent.prototype, "ctrlKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "shiftKey", {
@@ -254,7 +272,7 @@ Object.defineProperty(KeyboardEvent.prototype, "shiftKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "altKey", {
@@ -267,7 +285,7 @@ Object.defineProperty(KeyboardEvent.prototype, "altKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "metaKey", {
@@ -280,7 +298,7 @@ Object.defineProperty(KeyboardEvent.prototype, "metaKey", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "repeat", {
@@ -293,7 +311,7 @@ Object.defineProperty(KeyboardEvent.prototype, "repeat", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "isComposing", {
@@ -306,7 +324,7 @@ Object.defineProperty(KeyboardEvent.prototype, "isComposing", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "charCode", {
@@ -319,7 +337,7 @@ Object.defineProperty(KeyboardEvent.prototype, "charCode", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, "keyCode", {
@@ -332,50 +350,50 @@ Object.defineProperty(KeyboardEvent.prototype, "keyCode", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(KeyboardEvent, "DOM_KEY_LOCATION_STANDARD", {
   value: 0x00,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(KeyboardEvent.prototype, "DOM_KEY_LOCATION_STANDARD", {
   value: 0x00,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(KeyboardEvent, "DOM_KEY_LOCATION_LEFT", {
   value: 0x01,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(KeyboardEvent.prototype, "DOM_KEY_LOCATION_LEFT", {
   value: 0x01,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(KeyboardEvent, "DOM_KEY_LOCATION_RIGHT", {
   value: 0x02,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(KeyboardEvent.prototype, "DOM_KEY_LOCATION_RIGHT", {
   value: 0x02,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(KeyboardEvent, "DOM_KEY_LOCATION_NUMPAD", {
   value: 0x03,
-  enumerable: true
+  enumerable: true,
 });
 Object.defineProperty(KeyboardEvent.prototype, "DOM_KEY_LOCATION_NUMPAD", {
   value: 0x03,
-  enumerable: true
+  enumerable: true,
 });
 
 Object.defineProperty(KeyboardEvent.prototype, Symbol.toStringTag, {
   value: "KeyboardEvent",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -441,7 +459,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -452,8 +470,8 @@ const iface = {
   },
   interface: KeyboardEvent,
   expose: {
-    Window: { KeyboardEvent }
-  }
+    Window: { KeyboardEvent },
+  },
 }; // iface
 module.exports = iface;
 

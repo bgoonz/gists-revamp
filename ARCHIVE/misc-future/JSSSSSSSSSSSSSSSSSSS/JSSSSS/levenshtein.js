@@ -1,16 +1,19 @@
-(function() {
-  'use strict';
-  
+(function () {
+  "use strict";
+
   var collator;
   try {
-    collator = (typeof Intl !== "undefined" && typeof Intl.Collator !== "undefined") ? Intl.Collator("generic", { sensitivity: "base" }) : null;
-  } catch (err){
+    collator =
+      typeof Intl !== "undefined" && typeof Intl.Collator !== "undefined"
+        ? Intl.Collator("generic", { sensitivity: "base" })
+        : null;
+  } catch (err) {
     console.log("Collator could not be initialized and wouldn't be used");
   }
   // arrays to re-use
   var prevRow = [],
     str2Char = [];
-  
+
   /**
    * Based on the algorithm at http://en.wikipedia.org/wiki/Levenshtein_distance.
    */
@@ -24,12 +27,12 @@
      * @param [options.useCollator] Use `Intl.Collator` for locale-sensitive string comparison.
      * @return Integer the levenshtein distance (0 and above).
      */
-    get: function(str1, str2, options) {
-      var useCollator = (options && collator && options.useCollator);
-      
+    get: function (str1, str2, options) {
+      var useCollator = options && collator && options.useCollator;
+
       var str1Len = str1.length,
         str2Len = str2.length;
-      
+
       // base cases
       if (str1Len === 0) return str2Len;
       if (str2Len === 0) return str1Len;
@@ -38,7 +41,7 @@
       var curCol, nextCol, i, j, tmp;
 
       // initialise previous row
-      for (i=0; i<str2Len; ++i) {
+      for (i = 0; i < str2Len; ++i) {
         prevRow[i] = i;
         str2Char[i] = str2.charCodeAt(i);
       }
@@ -54,7 +57,12 @@
             curCol = nextCol;
 
             // substution
-            strCmp = 0 === collator.compare(str1.charAt(i), String.fromCharCode(str2Char[j]));
+            strCmp =
+              0 ===
+              collator.compare(
+                str1.charAt(i),
+                String.fromCharCode(str2Char[j])
+              );
 
             nextCol = prevRow[j] + (strCmp ? 0 : 1);
 
@@ -76,8 +84,7 @@
           // copy last col value into previous (in preparation for next iteration)
           prevRow[j] = nextCol;
         }
-      }
-      else {
+      } else {
         // calculate current row distance from previous row without collator
         for (i = 0; i < str1Len; ++i) {
           nextCol = i + 1;
@@ -110,27 +117,34 @@
         }
       }
       return nextCol;
-    }
-
+    },
   };
 
   // amd
   if (typeof define !== "undefined" && define !== null && define.amd) {
-    define(function() {
+    define(function () {
       return Levenshtein;
     });
   }
   // commonjs
-  else if (typeof module !== "undefined" && module !== null && typeof exports !== "undefined" && module.exports === exports) {
+  else if (
+    typeof module !== "undefined" &&
+    module !== null &&
+    typeof exports !== "undefined" &&
+    module.exports === exports
+  ) {
     module.exports = Levenshtein;
   }
   // web worker
-  else if (typeof self !== "undefined" && typeof self.postMessage === 'function' && typeof self.importScripts === 'function') {
+  else if (
+    typeof self !== "undefined" &&
+    typeof self.postMessage === "function" &&
+    typeof self.importScripts === "function"
+  ) {
     self.Levenshtein = Levenshtein;
   }
   // browser main thread
   else if (typeof window !== "undefined" && window !== null) {
     window.Levenshtein = Levenshtein;
   }
-}());
-
+})();

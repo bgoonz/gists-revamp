@@ -14,5 +14,5 @@ class HTMLQuoteElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLQuoteElementImpl
+  implementation: HTMLQuoteElementImpl,
 };

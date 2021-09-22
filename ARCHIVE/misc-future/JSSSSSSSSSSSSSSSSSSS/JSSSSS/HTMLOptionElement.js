@@ -10,14 +10,17 @@ function HTMLOptionElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLOptionElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLOptionElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLOptionElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLOptionElement, "prototype", {
   value: HTMLOptionElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, "disabled", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLOptionElement.prototype, "disabled", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'disabled' property on 'HTMLOptionElement': The provided value"
+      context:
+        "Failed to set the 'disabled' property on 'HTMLOptionElement': The provided value",
     });
 
     if (V) {
@@ -46,7 +50,7 @@ Object.defineProperty(HTMLOptionElement.prototype, "disabled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, "form", {
@@ -59,7 +63,7 @@ Object.defineProperty(HTMLOptionElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, "label", {
@@ -77,14 +81,15 @@ Object.defineProperty(HTMLOptionElement.prototype, "label", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'label' property on 'HTMLOptionElement': The provided value"
+      context:
+        "Failed to set the 'label' property on 'HTMLOptionElement': The provided value",
     });
 
     this[impl]["label"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, "defaultSelected", {
@@ -102,7 +107,8 @@ Object.defineProperty(HTMLOptionElement.prototype, "defaultSelected", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'defaultSelected' property on 'HTMLOptionElement': The provided value"
+      context:
+        "Failed to set the 'defaultSelected' property on 'HTMLOptionElement': The provided value",
     });
 
     if (V) {
@@ -113,7 +119,7 @@ Object.defineProperty(HTMLOptionElement.prototype, "defaultSelected", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, "selected", {
@@ -131,14 +137,15 @@ Object.defineProperty(HTMLOptionElement.prototype, "selected", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'selected' property on 'HTMLOptionElement': The provided value"
+      context:
+        "Failed to set the 'selected' property on 'HTMLOptionElement': The provided value",
     });
 
     this[impl]["selected"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, "value", {
@@ -156,14 +163,15 @@ Object.defineProperty(HTMLOptionElement.prototype, "value", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'value' property on 'HTMLOptionElement': The provided value"
+      context:
+        "Failed to set the 'value' property on 'HTMLOptionElement': The provided value",
     });
 
     this[impl]["value"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, "text", {
@@ -181,14 +189,15 @@ Object.defineProperty(HTMLOptionElement.prototype, "text", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'text' property on 'HTMLOptionElement': The provided value"
+      context:
+        "Failed to set the 'text' property on 'HTMLOptionElement': The provided value",
     });
 
     this[impl]["text"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, "index", {
@@ -201,14 +210,14 @@ Object.defineProperty(HTMLOptionElement.prototype, "index", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOptionElement.prototype, Symbol.toStringTag, {
   value: "HTMLOptionElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -274,7 +283,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -285,8 +294,8 @@ const iface = {
   },
   interface: HTMLOptionElement,
   expose: {
-    Window: { HTMLOptionElement }
-  }
+    Window: { HTMLOptionElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -14,7 +14,7 @@ class HTMLTableRowElementImpl extends HTMLElementImpl {
     if (!this._cells) {
       this._cells = HTMLCollection.createImpl([], {
         element: this,
-        query: () => childrenByHTMLLocalNames(this, cellLocalNames)
+        query: () => childrenByHTMLLocalNames(this, cellLocalNames),
       });
     }
     return this._cells;
@@ -27,10 +27,18 @@ class HTMLTableRowElementImpl extends HTMLElementImpl {
     }
 
     let tableElement = parent;
-    if (parent.localName === "thead" || parent.localName === "tbody" || parent.localName === "tfoot") {
+    if (
+      parent.localName === "thead" ||
+      parent.localName === "tbody" ||
+      parent.localName === "tfoot"
+    ) {
       tableElement = parent.parentElement;
     }
-    if (tableElement === null || tableElement.namespaceURI !== HTML_NS || tableElement.localName !== "table") {
+    if (
+      tableElement === null ||
+      tableElement.namespaceURI !== HTML_NS ||
+      tableElement.localName !== "table"
+    ) {
       return -1;
     }
 
@@ -55,7 +63,10 @@ class HTMLTableRowElementImpl extends HTMLElementImpl {
     const td = this._ownerDocument.createElement("TD");
     const { cells } = this;
     if (index < -1 || index > cells.length) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
     if (index === -1 || index === cells.length) {
       this.appendChild(td);
@@ -69,7 +80,10 @@ class HTMLTableRowElementImpl extends HTMLElementImpl {
   deleteCell(index) {
     const { cells } = this;
     if (index < -1 || index >= cells.length) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
     if (index === -1) {
       if (cells.length === 0) {
@@ -84,5 +98,5 @@ class HTMLTableRowElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLTableRowElementImpl
+  implementation: HTMLTableRowElementImpl,
 };

@@ -10,14 +10,17 @@ function HTMLQuoteElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLQuoteElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLQuoteElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLQuoteElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLQuoteElement, "prototype", {
   value: HTMLQuoteElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLQuoteElement.prototype, "cite", {
@@ -35,21 +38,22 @@ Object.defineProperty(HTMLQuoteElement.prototype, "cite", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'cite' property on 'HTMLQuoteElement': The provided value"
+      context:
+        "Failed to set the 'cite' property on 'HTMLQuoteElement': The provided value",
     });
 
     this[impl]["cite"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLQuoteElement.prototype, Symbol.toStringTag, {
   value: "HTMLQuoteElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -115,7 +119,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -126,8 +130,8 @@ const iface = {
   },
   interface: HTMLQuoteElement,
   expose: {
-    Window: { HTMLQuoteElement }
-  }
+    Window: { HTMLQuoteElement },
+  },
 }; // iface
 module.exports = iface;
 

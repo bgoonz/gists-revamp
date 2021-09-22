@@ -22,5 +22,5 @@ class HTMLSourceElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLSourceElementImpl
+  implementation: HTMLSourceElementImpl,
 };

@@ -11,112 +11,124 @@
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "enforce minimum and maximum identifier lengths",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/id-length"
-        },
-
-        schema: [
-            {
-                type: "object",
-                properties: {
-                    min: {
-                        type: "integer",
-                        default: 2
-                    },
-                    max: {
-                        type: "integer"
-                    },
-                    exceptions: {
-                        type: "array",
-                        uniqueItems: true,
-                        items: {
-                            type: "string"
-                        }
-                    },
-                    properties: {
-                        enum: ["always", "never"]
-                    }
-                },
-                additionalProperties: false
-            }
-        ],
-        messages: {
-            tooShort: "Identifier name '{{name}}' is too short (< {{min}}).",
-            tooLong: "Identifier name '{{name}}' is too long (> {{max}})."
-        }
+    docs: {
+      description: "enforce minimum and maximum identifier lengths",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/id-length",
     },
 
-    create(context) {
-        const options = context.options[0] || {};
-        const minLength = typeof options.min !== "undefined" ? options.min : 2;
-        const maxLength = typeof options.max !== "undefined" ? options.max : Infinity;
-        const properties = options.properties !== "never";
-        const exceptions = (options.exceptions ? options.exceptions : [])
-            .reduce((obj, item) => {
-                obj[item] = true;
-
-                return obj;
-            }, {});
-
-        const SUPPORTED_EXPRESSIONS = {
-            MemberExpression: properties && function(parent) {
-                return !parent.computed && (
-
-                    // regular property assignment
-                    (parent.parent.left === parent && parent.parent.type === "AssignmentExpression" ||
-
-                    // or the last identifier in an ObjectPattern destructuring
-                    parent.parent.type === "Property" && parent.parent.value === parent &&
-                    parent.parent.parent.type === "ObjectPattern" && parent.parent.parent.parent.left === parent.parent.parent)
-                );
+    schema: [
+      {
+        type: "object",
+        properties: {
+          min: {
+            type: "integer",
+            default: 2,
+          },
+          max: {
+            type: "integer",
+          },
+          exceptions: {
+            type: "array",
+            uniqueItems: true,
+            items: {
+              type: "string",
             },
-            AssignmentPattern(parent, node) {
-                return parent.left === node;
-            },
-            VariableDeclarator(parent, node) {
-                return parent.id === node;
-            },
-            Property: properties && function(parent, node) {
-                return parent.key === node;
-            },
-            ImportDefaultSpecifier: true,
-            RestElement: true,
-            FunctionExpression: true,
-            ArrowFunctionExpression: true,
-            ClassDeclaration: true,
-            FunctionDeclaration: true,
-            MethodDefinition: true,
-            CatchClause: true
-        };
+          },
+          properties: {
+            enum: ["always", "never"],
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
+    messages: {
+      tooShort: "Identifier name '{{name}}' is too short (< {{min}}).",
+      tooLong: "Identifier name '{{name}}' is too long (> {{max}}).",
+    },
+  },
 
-        return {
-            Identifier(node) {
-                const name = node.name;
-                const parent = node.parent;
+  create(context) {
+    const options = context.options[0] || {};
+    const minLength = typeof options.min !== "undefined" ? options.min : 2;
+    const maxLength =
+      typeof options.max !== "undefined" ? options.max : Infinity;
+    const properties = options.properties !== "never";
+    const exceptions = (options.exceptions ? options.exceptions : []).reduce(
+      (obj, item) => {
+        obj[item] = true;
 
-                const isShort = name.length < minLength;
-                const isLong = name.length > maxLength;
+        return obj;
+      },
+      {}
+    );
 
-                if (!(isShort || isLong) || exceptions[name]) {
-                    return; // Nothing to report
-                }
+    const SUPPORTED_EXPRESSIONS = {
+      MemberExpression:
+        properties &&
+        function (parent) {
+          return (
+            !parent.computed &&
+            // regular property assignment
+            ((parent.parent.left === parent &&
+              parent.parent.type === "AssignmentExpression") ||
+              // or the last identifier in an ObjectPattern destructuring
+              (parent.parent.type === "Property" &&
+                parent.parent.value === parent &&
+                parent.parent.parent.type === "ObjectPattern" &&
+                parent.parent.parent.parent.left === parent.parent.parent))
+          );
+        },
+      AssignmentPattern(parent, node) {
+        return parent.left === node;
+      },
+      VariableDeclarator(parent, node) {
+        return parent.id === node;
+      },
+      Property:
+        properties &&
+        function (parent, node) {
+          return parent.key === node;
+        },
+      ImportDefaultSpecifier: true,
+      RestElement: true,
+      FunctionExpression: true,
+      ArrowFunctionExpression: true,
+      ClassDeclaration: true,
+      FunctionDeclaration: true,
+      MethodDefinition: true,
+      CatchClause: true,
+    };
 
-                const isValidExpression = SUPPORTED_EXPRESSIONS[parent.type];
+    return {
+      Identifier(node) {
+        const name = node.name;
+        const parent = node.parent;
 
-                if (isValidExpression && (isValidExpression === true || isValidExpression(parent, node))) {
-                    context.report({
-                        node,
-                        messageId: isShort ? "tooShort" : "tooLong",
-                        data: { name, min: minLength, max: maxLength }
-                    });
-                }
-            }
-        };
-    }
+        const isShort = name.length < minLength;
+        const isLong = name.length > maxLength;
+
+        if (!(isShort || isLong) || exceptions[name]) {
+          return; // Nothing to report
+        }
+
+        const isValidExpression = SUPPORTED_EXPRESSIONS[parent.type];
+
+        if (
+          isValidExpression &&
+          (isValidExpression === true || isValidExpression(parent, node))
+        ) {
+          context.report({
+            node,
+            messageId: isShort ? "tooShort" : "tooLong",
+            data: { name, min: minLength, max: maxLength },
+          });
+        }
+      },
+    };
+  },
 };

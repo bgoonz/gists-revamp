@@ -1,4 +1,4 @@
-var baseSlice = require('./_baseSlice');
+var baseSlice = require("./_baseSlice");
 
 /**
  * Gets all but the last element of `array`.

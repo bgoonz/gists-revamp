@@ -1,7 +1,10 @@
 "use strict";
 const whatwgURL = require("whatwg-url");
 const DOMException = require("domexception");
-const { documentBaseURL, parseURLToResultingURLRecord } = require("../helpers/document-base-url");
+const {
+  documentBaseURL,
+  parseURLToResultingURLRecord,
+} = require("../helpers/document-base-url");
 const { navigate } = require("./navigation");
 
 // Not implemented: use of entry settings object's API base URL in href setter, assign, and replace. Instead we just
@@ -26,7 +29,10 @@ exports.implementation = class LocationImpl {
   _locationObjectNavigate(url, { replacement = false } = {}) {
     // Not implemented: the setup for calling navigate, which doesn't apply to our stub navigate anyway.
 
-    navigate(this._relevantDocument._defaultView, url, { replacement, exceptionsEnabled: true });
+    navigate(this._relevantDocument._defaultView, url, {
+      replacement,
+      exceptionsEnabled: true,
+    });
   }
 
   toString() {
@@ -37,7 +43,9 @@ exports.implementation = class LocationImpl {
     return whatwgURL.serializeURL(this._url);
   }
   set href(v) {
-    const newURL = whatwgURL.parseURL(v, { baseURL: documentBaseURL(this._relevantDocument) });
+    const newURL = whatwgURL.parseURL(v, {
+      baseURL: documentBaseURL(this._relevantDocument),
+    });
     if (newURL === null) {
       throw new TypeError(`Could not parse "${v}" as a URL`);
     }
@@ -55,9 +63,14 @@ exports.implementation = class LocationImpl {
   set protocol(v) {
     const copyURL = Object.assign({}, this._url);
 
-    const possibleFailure = whatwgURL.basicURLParse(v + ":", { url: copyURL, stateOverride: "scheme start" });
+    const possibleFailure = whatwgURL.basicURLParse(v + ":", {
+      url: copyURL,
+      stateOverride: "scheme start",
+    });
     if (possibleFailure === null) {
-      throw new TypeError(`Could not parse the URL after setting the procol to "${v}"`);
+      throw new TypeError(
+        `Could not parse the URL after setting the procol to "${v}"`
+      );
     }
 
     if (copyURL.scheme !== "http" && copyURL.scheme !== "https") {
@@ -77,7 +90,11 @@ exports.implementation = class LocationImpl {
       return whatwgURL.serializeHost(url.host);
     }
 
-    return whatwgURL.serializeHost(url.host) + ":" + whatwgURL.serializeInteger(url.port);
+    return (
+      whatwgURL.serializeHost(url.host) +
+      ":" +
+      whatwgURL.serializeInteger(url.port)
+    );
   }
   set host(v) {
     const copyURL = Object.assign({}, this._url);
@@ -120,7 +137,11 @@ exports.implementation = class LocationImpl {
   set port(v) {
     const copyURL = Object.assign({}, this._url);
 
-    if (copyURL.host === null || copyURL.cannotBeABaseURL || copyURL.scheme === "file") {
+    if (
+      copyURL.host === null ||
+      copyURL.cannotBeABaseURL ||
+      copyURL.scheme === "file"
+    ) {
       return;
     }
 
@@ -169,7 +190,7 @@ exports.implementation = class LocationImpl {
       whatwgURL.basicURLParse(input, {
         url: copyURL,
         stateOverride: "query",
-        encodingOverride: this._relevantDocument.charset
+        encodingOverride: this._relevantDocument.charset,
       });
     }
 
@@ -195,7 +216,10 @@ exports.implementation = class LocationImpl {
     } else {
       const input = v[0] === "#" ? v.substring(1) : v;
       copyURL.fragment = "";
-      whatwgURL.basicURLParse(input, { url: copyURL, stateOverride: "fragment" });
+      whatwgURL.basicURLParse(input, {
+        url: copyURL,
+        stateOverride: "fragment",
+      });
     }
 
     this._locationObjectSetterNavigate(copyURL);
@@ -206,8 +230,11 @@ exports.implementation = class LocationImpl {
     const parsedURL = parseURLToResultingURLRecord(url, this._relevantDocument);
 
     if (parsedURL === null) {
-      throw new DOMException(`Could not resolve the given string "${url}" relative to the ` +
-        `base URL "${this._relevantDocument.URL}"`, "SyntaxError");
+      throw new DOMException(
+        `Could not resolve the given string "${url}" relative to the ` +
+          `base URL "${this._relevantDocument.URL}"`,
+        "SyntaxError"
+      );
     }
 
     this._locationObjectNavigate(parsedURL);
@@ -218,15 +245,22 @@ exports.implementation = class LocationImpl {
     const parsedURL = parseURLToResultingURLRecord(url, this._relevantDocument);
 
     if (parsedURL === null) {
-      throw new DOMException(`Could not resolve the given string "${url}" relative to the ` +
-        `base URL "${this._relevantDocument.URL}"`, "SyntaxError");
+      throw new DOMException(
+        `Could not resolve the given string "${url}" relative to the ` +
+          `base URL "${this._relevantDocument.URL}"`,
+        "SyntaxError"
+      );
     }
 
     this._locationObjectNavigate(parsedURL, { replacement: true });
   }
 
   reload() {
-    const flags = { replace: true, reloadTriggered: true, exceptionsEnabled: true };
+    const flags = {
+      replace: true,
+      reloadTriggered: true,
+      exceptionsEnabled: true,
+    };
     navigate(this._relevantDocument._defaultView, this._url, flags);
   }
 };

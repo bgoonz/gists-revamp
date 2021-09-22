@@ -3,7 +3,9 @@ const { reflectURLAttribute } = require("../../utils");
 const HTMLElementImpl = require("./HTMLElement-impl").implementation;
 const idlUtils = require("../generated/utils");
 const { fetchStylesheet } = require("../helpers/stylesheets");
-const { parseURLToResultingURLRecord } = require("../helpers/document-base-url");
+const {
+  parseURLToResultingURLRecord,
+} = require("../helpers/document-base-url");
 const whatwgURL = require("whatwg-url");
 
 // Important reading: "appropriate times to obtain the resource" in
@@ -46,7 +48,7 @@ class HTMLLinkElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLLinkElementImpl
+  implementation: HTMLLinkElementImpl,
 };
 
 function obtainTheResource(el) {

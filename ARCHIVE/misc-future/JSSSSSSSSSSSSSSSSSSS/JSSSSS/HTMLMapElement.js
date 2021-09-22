@@ -10,14 +10,17 @@ function HTMLMapElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLMapElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLMapElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLMapElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLMapElement, "prototype", {
   value: HTMLMapElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLMapElement.prototype, "name", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLMapElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLMapElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLMapElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMapElement.prototype, "areas", {
@@ -58,14 +62,14 @@ Object.defineProperty(HTMLMapElement.prototype, "areas", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMapElement.prototype, Symbol.toStringTag, {
   value: "HTMLMapElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -131,7 +135,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -142,8 +146,8 @@ const iface = {
   },
   interface: HTMLMapElement,
   expose: {
-    Window: { HTMLMapElement }
-  }
+    Window: { HTMLMapElement },
+  },
 }; // iface
 module.exports = iface;
 

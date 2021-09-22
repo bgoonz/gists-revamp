@@ -1,24 +1,24 @@
-'use strict';
+"use strict";
 /**
  * `list` type prompt
  */
 
-var _ = require('lodash');
-var chalk = require('chalk');
-var figures = require('figures');
-var cliCursor = require('cli-cursor');
-var runAsync = require('run-async');
-var { flatMap, map, take, takeUntil } = require('rxjs/operators');
-var Base = require('./base');
-var observe = require('../utils/events');
-var Paginator = require('../utils/paginator');
+var _ = require("lodash");
+var chalk = require("chalk");
+var figures = require("figures");
+var cliCursor = require("cli-cursor");
+var runAsync = require("run-async");
+var { flatMap, map, take, takeUntil } = require("rxjs/operators");
+var Base = require("./base");
+var observe = require("../utils/events");
+var Paginator = require("../utils/paginator");
 
 class ListPrompt extends Base {
   constructor(questions, rl, answers) {
     super(questions, rl, answers);
 
     if (!this.opt.choices) {
-      this.throwParamError('choices');
+      this.throwParamError("choices");
     }
 
     this.firstRender = true;
@@ -30,7 +30,10 @@ class ListPrompt extends Base {
     if (_.isNumber(def) && def >= 0 && def < this.opt.choices.realLength) {
       this.selected = def;
     } else if (!_.isNumber(def) && def != null) {
-      let index = _.findIndex(this.opt.choices.realChoices, ({ value }) => value === def);
+      let index = _.findIndex(
+        this.opt.choices.realChoices,
+        ({ value }) => value === def
+      );
       this.selected = Math.max(index, 0);
     }
 
@@ -52,16 +55,20 @@ class ListPrompt extends Base {
     var self = this;
 
     var events = observe(this.rl);
-    events.normalizedUpKey.pipe(takeUntil(events.line)).forEach(this.onUpKey.bind(this));
+    events.normalizedUpKey
+      .pipe(takeUntil(events.line))
+      .forEach(this.onUpKey.bind(this));
     events.normalizedDownKey
       .pipe(takeUntil(events.line))
       .forEach(this.onDownKey.bind(this));
-    events.numberKey.pipe(takeUntil(events.line)).forEach(this.onNumberKey.bind(this));
+    events.numberKey
+      .pipe(takeUntil(events.line))
+      .forEach(this.onNumberKey.bind(this));
     events.line
       .pipe(
         take(1),
         map(this.getCurrentValue.bind(this)),
-        flatMap(value => runAsync(self.opt.filter)(value).catch(err => err))
+        flatMap((value) => runAsync(self.opt.filter)(value).catch((err) => err))
       )
       .forEach(this.onSubmit.bind(this));
 
@@ -82,11 +89,11 @@ class ListPrompt extends Base {
     var message = this.getQuestion();
 
     if (this.firstRender) {
-      message += chalk.dim('(Use arrow keys)');
+      message += chalk.dim("(Use arrow keys)");
     }
 
     // Render choices or answer depending on the state
-    if (this.status === 'answered') {
+    if (this.status === "answered") {
       message += chalk.cyan(this.opt.choices.getChoice(this.selected).short);
     } else {
       var choicesStr = listRender(this.opt.choices, this.selected);
@@ -94,7 +101,8 @@ class ListPrompt extends Base {
         this.opt.choices.getChoice(this.selected)
       );
       message +=
-        '\n' + this.paginator.paginate(choicesStr, indexPosition, this.opt.pageSize);
+        "\n" +
+        this.paginator.paginate(choicesStr, indexPosition, this.opt.pageSize);
     }
 
     this.firstRender = false;
@@ -107,7 +115,7 @@ class ListPrompt extends Base {
    */
 
   onSubmit(value) {
-    this.status = 'answered';
+    this.status = "answered";
 
     // Rerender prompt
     this.render();
@@ -151,34 +159,37 @@ class ListPrompt extends Base {
  * @return {String}         Rendered content
  */
 function listRender(choices, pointer) {
-  var output = '';
+  var output = "";
   var separatorOffset = 0;
 
   choices.forEach((choice, i) => {
-    if (choice.type === 'separator') {
+    if (choice.type === "separator") {
       separatorOffset++;
-      output += '  ' + choice + '\n';
+      output += "  " + choice + "\n";
       return;
     }
 
     if (choice.disabled) {
       separatorOffset++;
-      output += '  - ' + choice.name;
-      output += ' (' + (_.isString(choice.disabled) ? choice.disabled : 'Disabled') + ')';
-      output += '\n';
+      output += "  - " + choice.name;
+      output +=
+        " (" +
+        (_.isString(choice.disabled) ? choice.disabled : "Disabled") +
+        ")";
+      output += "\n";
       return;
     }
 
     var isSelected = i - separatorOffset === pointer;
-    var line = (isSelected ? figures.pointer + ' ' : '  ') + choice.name;
+    var line = (isSelected ? figures.pointer + " " : "  ") + choice.name;
     if (isSelected) {
       line = chalk.cyan(line);
     }
 
-    output += line + ' \n';
+    output += line + " \n";
   });
 
-  return output.replace(/\n$/, '');
+  return output.replace(/\n$/, "");
 }
 
 module.exports = ListPrompt;

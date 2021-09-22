@@ -10,21 +10,24 @@ function HTMLUnknownElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLUnknownElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLUnknownElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLUnknownElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLUnknownElement, "prototype", {
   value: HTMLUnknownElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLUnknownElement.prototype, Symbol.toStringTag, {
   value: "HTMLUnknownElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -90,7 +93,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -101,8 +104,8 @@ const iface = {
   },
   interface: HTMLUnknownElement,
   expose: {
-    Window: { HTMLUnknownElement }
-  }
+    Window: { HTMLUnknownElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -1,1 +1,1 @@
-module.exports = require('./eq');
+module.exports = require("./eq");

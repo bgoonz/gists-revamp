@@ -1,5 +1,5 @@
-var baseIsMatch = require('./_baseIsMatch'),
-    getMatchData = require('./_getMatchData');
+var baseIsMatch = require("./_baseIsMatch"),
+  getMatchData = require("./_getMatchData");
 
 /**
  * Performs a partial deep comparison between `object` and `source` to

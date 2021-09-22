@@ -17,7 +17,7 @@ Object.defineProperty(HTMLHRElement, "prototype", {
   value: HTMLHRElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLHRElement.prototype, "align", {
@@ -36,14 +36,15 @@ Object.defineProperty(HTMLHRElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLHRElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLHRElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHRElement.prototype, "color", {
@@ -62,14 +63,15 @@ Object.defineProperty(HTMLHRElement.prototype, "color", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'color' property on 'HTMLHRElement': The provided value"
+      context:
+        "Failed to set the 'color' property on 'HTMLHRElement': The provided value",
     });
 
     this.setAttribute("color", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHRElement.prototype, "noShade", {
@@ -87,7 +89,8 @@ Object.defineProperty(HTMLHRElement.prototype, "noShade", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'noShade' property on 'HTMLHRElement': The provided value"
+      context:
+        "Failed to set the 'noShade' property on 'HTMLHRElement': The provided value",
     });
 
     if (V) {
@@ -98,7 +101,7 @@ Object.defineProperty(HTMLHRElement.prototype, "noShade", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHRElement.prototype, "size", {
@@ -117,14 +120,15 @@ Object.defineProperty(HTMLHRElement.prototype, "size", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'size' property on 'HTMLHRElement': The provided value"
+      context:
+        "Failed to set the 'size' property on 'HTMLHRElement': The provided value",
     });
 
     this.setAttribute("size", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHRElement.prototype, "width", {
@@ -143,21 +147,22 @@ Object.defineProperty(HTMLHRElement.prototype, "width", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'width' property on 'HTMLHRElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLHRElement': The provided value",
     });
 
     this.setAttribute("width", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHRElement.prototype, Symbol.toStringTag, {
   value: "HTMLHRElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -223,7 +228,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -234,8 +239,8 @@ const iface = {
   },
   interface: HTMLHRElement,
   expose: {
-    Window: { HTMLHRElement }
-  }
+    Window: { HTMLHRElement },
+  },
 }; // iface
 module.exports = iface;
 

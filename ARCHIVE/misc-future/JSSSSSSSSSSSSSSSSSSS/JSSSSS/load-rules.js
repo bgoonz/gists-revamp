@@ -10,7 +10,7 @@
 //------------------------------------------------------------------------------
 
 const fs = require("fs"),
-    path = require("path");
+  path = require("path");
 
 const rulesDirCache = {};
 
@@ -24,23 +24,23 @@ const rulesDirCache = {};
  * @param {string} cwd Current working directory
  * @returns {Object} Loaded rule modules by rule ids (file names).
  */
-module.exports = function(relativeRulesDir, cwd) {
-    const rulesDir = path.resolve(cwd, relativeRulesDir);
+module.exports = function (relativeRulesDir, cwd) {
+  const rulesDir = path.resolve(cwd, relativeRulesDir);
 
-    // cache will help performance as IO operation are expensive
-    if (rulesDirCache[rulesDir]) {
-        return rulesDirCache[rulesDir];
+  // cache will help performance as IO operation are expensive
+  if (rulesDirCache[rulesDir]) {
+    return rulesDirCache[rulesDir];
+  }
+
+  const rules = Object.create(null);
+
+  fs.readdirSync(rulesDir).forEach((file) => {
+    if (path.extname(file) !== ".js") {
+      return;
     }
+    rules[file.slice(0, -3)] = path.join(rulesDir, file);
+  });
+  rulesDirCache[rulesDir] = rules;
 
-    const rules = Object.create(null);
-
-    fs.readdirSync(rulesDir).forEach(file => {
-        if (path.extname(file) !== ".js") {
-            return;
-        }
-        rules[file.slice(0, -3)] = path.join(rulesDir, file);
-    });
-    rulesDirCache[rulesDir] = rules;
-
-    return rules;
+  return rules;
 };

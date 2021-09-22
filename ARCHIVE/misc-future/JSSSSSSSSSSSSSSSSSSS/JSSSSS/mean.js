@@ -1,5 +1,5 @@
-var baseMean = require('./_baseMean'),
-    identity = require('./identity');
+var baseMean = require("./_baseMean"),
+  identity = require("./identity");
 
 /**
  * Computes the mean of the values in `array`.

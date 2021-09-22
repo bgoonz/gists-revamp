@@ -10,14 +10,17 @@ function HTMLIFrameElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLIFrameElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLIFrameElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLIFrameElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLIFrameElement, "prototype", {
   value: HTMLIFrameElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLIFrameElement.prototype.getSVGDocument = function getSVGDocument() {
@@ -43,14 +46,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "src", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'src' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'src' property on 'HTMLIFrameElement': The provided value",
     });
 
     this[impl]["src"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "srcdoc", {
@@ -69,14 +73,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "srcdoc", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'srcdoc' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'srcdoc' property on 'HTMLIFrameElement': The provided value",
     });
 
     this.setAttribute("srcdoc", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "name", {
@@ -95,14 +100,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLIFrameElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "allowFullscreen", {
@@ -120,7 +126,8 @@ Object.defineProperty(HTMLIFrameElement.prototype, "allowFullscreen", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'allowFullscreen' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'allowFullscreen' property on 'HTMLIFrameElement': The provided value",
     });
 
     if (V) {
@@ -131,7 +138,7 @@ Object.defineProperty(HTMLIFrameElement.prototype, "allowFullscreen", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "width", {
@@ -150,14 +157,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "width", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'width' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLIFrameElement': The provided value",
     });
 
     this.setAttribute("width", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "height", {
@@ -176,14 +184,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "height", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'height' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'height' property on 'HTMLIFrameElement': The provided value",
     });
 
     this.setAttribute("height", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "contentDocument", {
@@ -196,7 +205,7 @@ Object.defineProperty(HTMLIFrameElement.prototype, "contentDocument", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "contentWindow", {
@@ -209,7 +218,7 @@ Object.defineProperty(HTMLIFrameElement.prototype, "contentWindow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "align", {
@@ -228,14 +237,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLIFrameElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "scrolling", {
@@ -254,14 +264,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "scrolling", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'scrolling' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'scrolling' property on 'HTMLIFrameElement': The provided value",
     });
 
     this.setAttribute("scrolling", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "frameBorder", {
@@ -280,14 +291,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "frameBorder", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'frameBorder' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'frameBorder' property on 'HTMLIFrameElement': The provided value",
     });
 
     this.setAttribute("frameBorder", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "longDesc", {
@@ -305,14 +317,15 @@ Object.defineProperty(HTMLIFrameElement.prototype, "longDesc", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'longDesc' property on 'HTMLIFrameElement': The provided value"
+      context:
+        "Failed to set the 'longDesc' property on 'HTMLIFrameElement': The provided value",
     });
 
     this[impl]["longDesc"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "marginHeight", {
@@ -331,15 +344,16 @@ Object.defineProperty(HTMLIFrameElement.prototype, "marginHeight", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'marginHeight' property on 'HTMLIFrameElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'marginHeight' property on 'HTMLIFrameElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("marginHeight", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, "marginWidth", {
@@ -358,22 +372,23 @@ Object.defineProperty(HTMLIFrameElement.prototype, "marginWidth", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'marginWidth' property on 'HTMLIFrameElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'marginWidth' property on 'HTMLIFrameElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("marginWidth", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLIFrameElement.prototype, Symbol.toStringTag, {
   value: "HTMLIFrameElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -439,7 +454,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -450,8 +465,8 @@ const iface = {
   },
   interface: HTMLIFrameElement,
   expose: {
-    Window: { HTMLIFrameElement }
-  }
+    Window: { HTMLIFrameElement },
+  },
 }; // iface
 module.exports = iface;
 

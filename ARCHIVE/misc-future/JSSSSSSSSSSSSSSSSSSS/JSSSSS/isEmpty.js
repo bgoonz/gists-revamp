@@ -1,15 +1,15 @@
-var baseKeys = require('./_baseKeys'),
-    getTag = require('./_getTag'),
-    isArguments = require('./isArguments'),
-    isArray = require('./isArray'),
-    isArrayLike = require('./isArrayLike'),
-    isBuffer = require('./isBuffer'),
-    isPrototype = require('./_isPrototype'),
-    isTypedArray = require('./isTypedArray');
+var baseKeys = require("./_baseKeys"),
+  getTag = require("./_getTag"),
+  isArguments = require("./isArguments"),
+  isArray = require("./isArray"),
+  isArrayLike = require("./isArrayLike"),
+  isBuffer = require("./isBuffer"),
+  isPrototype = require("./_isPrototype"),
+  isTypedArray = require("./isTypedArray");
 
 /** `Object#toString` result references. */
-var mapTag = '[object Map]',
-    setTag = '[object Set]';
+var mapTag = "[object Map]",
+  setTag = "[object Set]";
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -54,9 +54,15 @@ function isEmpty(value) {
   if (value == null) {
     return true;
   }
-  if (isArrayLike(value) &&
-      (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
-        isBuffer(value) || isTypedArray(value) || isArguments(value))) {
+  if (
+    isArrayLike(value) &&
+    (isArray(value) ||
+      typeof value == "string" ||
+      typeof value.splice == "function" ||
+      isBuffer(value) ||
+      isTypedArray(value) ||
+      isArguments(value))
+  ) {
     return !value.length;
   }
   var tag = getTag(value);

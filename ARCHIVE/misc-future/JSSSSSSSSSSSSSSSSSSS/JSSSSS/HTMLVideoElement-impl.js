@@ -22,5 +22,5 @@ class HTMLVideoElementImpl extends HTMLMediaElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLVideoElementImpl
+  implementation: HTMLVideoElementImpl,
 };

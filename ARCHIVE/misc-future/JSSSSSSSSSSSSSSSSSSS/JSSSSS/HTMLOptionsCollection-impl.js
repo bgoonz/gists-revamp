@@ -2,12 +2,17 @@
 
 const idlUtils = require("../generated/utils.js");
 const DOMException = require("domexception");
-const { DOCUMENT_POSITION_CONTAINS, DOCUMENT_POSITION_CONTAINED_BY } = require("../node-document-position");
+const {
+  DOCUMENT_POSITION_CONTAINS,
+  DOCUMENT_POSITION_CONTAINED_BY,
+} = require("../node-document-position");
 const Element = require("../generated/Element");
 const Node = require("../generated/Node");
 const HTMLCollectionImpl = require("./HTMLCollection-impl").implementation;
 
-exports.implementation = class HTMLOptionsCollectionImpl extends HTMLCollectionImpl {
+exports.implementation = class HTMLOptionsCollectionImpl extends (
+  HTMLCollectionImpl
+) {
   // inherits supported property indices
   get length() {
     this._update();
@@ -66,11 +71,26 @@ exports.implementation = class HTMLOptionsCollectionImpl extends HTMLCollectionI
     return this[idlUtils.indexedSetNew](index, value);
   }
   add(element, before) {
-    if (this._element.compareDocumentPosition(element) & DOCUMENT_POSITION_CONTAINS) {
-      throw new DOMException("The operation would yield an incorrect node tree.", "HierarchyRequestError");
+    if (
+      this._element.compareDocumentPosition(element) &
+      DOCUMENT_POSITION_CONTAINS
+    ) {
+      throw new DOMException(
+        "The operation would yield an incorrect node tree.",
+        "HierarchyRequestError"
+      );
     }
-    if (Element.isImpl(before) && !(this._element.compareDocumentPosition(before) & DOCUMENT_POSITION_CONTAINED_BY)) {
-      throw new DOMException("The object can not be found here.", "NotFoundError");
+    if (
+      Element.isImpl(before) &&
+      !(
+        this._element.compareDocumentPosition(before) &
+        DOCUMENT_POSITION_CONTAINED_BY
+      )
+    ) {
+      throw new DOMException(
+        "The object can not be found here.",
+        "NotFoundError"
+      );
     }
     if (element === before) {
       return;

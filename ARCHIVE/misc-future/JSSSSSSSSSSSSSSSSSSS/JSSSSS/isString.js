@@ -1,9 +1,9 @@
-var baseGetTag = require('./_baseGetTag'),
-    isArray = require('./isArray'),
-    isObjectLike = require('./isObjectLike');
+var baseGetTag = require("./_baseGetTag"),
+  isArray = require("./isArray"),
+  isObjectLike = require("./isObjectLike");
 
 /** `Object#toString` result references. */
-var stringTag = '[object String]';
+var stringTag = "[object String]";
 
 /**
  * Checks if `value` is classified as a `String` primitive or object.
@@ -23,8 +23,10 @@ var stringTag = '[object String]';
  * // => false
  */
 function isString(value) {
-  return typeof value == 'string' ||
-    (!isArray(value) && isObjectLike(value) && baseGetTag(value) == stringTag);
+  return (
+    typeof value == "string" ||
+    (!isArray(value) && isObjectLike(value) && baseGetTag(value) == stringTag)
+  );
 }
 
 module.exports = isString;

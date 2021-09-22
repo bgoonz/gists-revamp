@@ -5,7 +5,12 @@ const HTMLElementImpl = require("./HTMLElement-impl").implementation;
 const { asciiLowercase } = require("../helpers/strings");
 const { closest } = require("../helpers/traversal");
 
-function reflectedAttributeClampedToRange(attrValue, min, max, defaultValue = 0) {
+function reflectedAttributeClampedToRange(
+  attrValue,
+  min,
+  max,
+  defaultValue = 0
+) {
   if (attrValue === null) {
     return defaultValue;
   }
@@ -26,7 +31,12 @@ function reflectedAttributeClampedToRange(attrValue, min, max, defaultValue = 0)
 
 class HTMLTableCellElementImpl extends HTMLElementImpl {
   get colSpan() {
-    return reflectedAttributeClampedToRange(this.getAttribute("colspan"), 1, 1000, 1);
+    return reflectedAttributeClampedToRange(
+      this.getAttribute("colspan"),
+      1,
+      1000,
+      1
+    );
   }
 
   set colSpan(V) {
@@ -34,7 +44,12 @@ class HTMLTableCellElementImpl extends HTMLElementImpl {
   }
 
   get rowSpan() {
-    return reflectedAttributeClampedToRange(this.getAttribute("rowspan"), 0, 65534, 1);
+    return reflectedAttributeClampedToRange(
+      this.getAttribute("rowspan"),
+      0,
+      65534,
+      1
+    );
   }
 
   set rowSpan(V) {
@@ -58,7 +73,12 @@ class HTMLTableCellElementImpl extends HTMLElementImpl {
 
     // Enumerated attribute is matched ASCII-case-insensitively.
     value = asciiLowercase(value);
-    if (value === "row" || value === "col" || value === "rowgroup" || value === "colgroup") {
+    if (
+      value === "row" ||
+      value === "col" ||
+      value === "rowgroup" ||
+      value === "colgroup"
+    ) {
       return value;
     }
 
@@ -71,5 +91,5 @@ class HTMLTableCellElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLTableCellElementImpl
+  implementation: HTMLTableCellElementImpl,
 };

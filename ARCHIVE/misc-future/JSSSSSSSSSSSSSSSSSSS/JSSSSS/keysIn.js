@@ -1,6 +1,6 @@
-var arrayLikeKeys = require('./_arrayLikeKeys'),
-    baseKeysIn = require('./_baseKeysIn'),
-    isArrayLike = require('./isArrayLike');
+var arrayLikeKeys = require("./_arrayLikeKeys"),
+  baseKeysIn = require("./_baseKeysIn"),
+  isArrayLike = require("./isArrayLike");
 
 /**
  * Creates an array of the own and inherited enumerable property names of `object`.

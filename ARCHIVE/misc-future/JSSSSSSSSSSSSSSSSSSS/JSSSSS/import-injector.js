@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -13,10 +13,7 @@ var _importBuilder = require("./import-builder");
 
 var _isModule = require("./is-module");
 
-const {
-  numericLiteral,
-  sequenceExpression
-} = _t;
+const { numericLiteral, sequenceExpression } = _t;
 
 class ImportInjector {
   constructor(path, importedSource, opts) {
@@ -27,9 +24,9 @@ class ImportInjector {
       importingInterop: "babel",
       ensureLiveReference: false,
       ensureNoContext: false,
-      importPosition: "before"
+      importPosition: "before",
     };
-    const programPath = path.find(p => p.isProgram());
+    const programPath = path.find((p) => p.isProgram());
     this._programPath = programPath;
     this._programScope = programPath.scope;
     this._hub = programPath.hub;
@@ -43,15 +40,24 @@ class ImportInjector {
   addNamed(importName, importedSourceIn, opts) {
     _assert(typeof importName === "string");
 
-    return this._generateImport(this._applyDefaults(importedSourceIn, opts), importName);
+    return this._generateImport(
+      this._applyDefaults(importedSourceIn, opts),
+      importName
+    );
   }
 
   addNamespace(importedSourceIn, opts) {
-    return this._generateImport(this._applyDefaults(importedSourceIn, opts), null);
+    return this._generateImport(
+      this._applyDefaults(importedSourceIn, opts),
+      null
+    );
   }
 
   addSideEffect(importedSourceIn, opts) {
-    return this._generateImport(this._applyDefaults(importedSourceIn, opts), false);
+    return this._generateImport(
+      this._applyDefaults(importedSourceIn, opts),
+      false
+    );
   }
 
   _applyDefaults(importedSource, opts, isInit = false) {
@@ -59,7 +65,7 @@ class ImportInjector {
 
     if (typeof importedSource === "string") {
       optsList.push({
-        importedSource
+        importedSource,
       });
       optsList.push(opts);
     } else {
@@ -72,7 +78,7 @@ class ImportInjector {
 
     for (const opts of optsList) {
       if (!opts) continue;
-      Object.keys(newOpts).forEach(key => {
+      Object.keys(newOpts).forEach((key) => {
         if (opts[key] !== undefined) newOpts[key] = opts[key];
       });
 
@@ -98,7 +104,7 @@ class ImportInjector {
       ensureNoContext,
       nameHint,
       importPosition,
-      blockHoist
+      blockHoist,
     } = opts;
     let name = nameHint || importName;
     const isMod = (0, _isModule.default)(this._programPath);
@@ -109,7 +115,11 @@ class ImportInjector {
       throw new Error(`"importPosition": "after" is only supported in modules`);
     }
 
-    const builder = new _importBuilder.default(importedSource, this._programScope, this._hub);
+    const builder = new _importBuilder.default(
+      importedSource,
+      this._programScope,
+      this._hub
+    );
 
     if (importedType === "es6") {
       if (!isModuleForNode && !isModuleForBabel) {
@@ -132,12 +142,23 @@ class ImportInjector {
         builder.import();
 
         if (isNamespace) {
-          builder.default(es6Default).var(name || importedSource).wildcardInterop();
+          builder
+            .default(es6Default)
+            .var(name || importedSource)
+            .wildcardInterop();
         } else if (isDefault) {
           if (ensureLiveReference) {
-            builder.default(es6Default).var(name || importedSource).defaultInterop().read("default");
+            builder
+              .default(es6Default)
+              .var(name || importedSource)
+              .defaultInterop()
+              .read("default");
           } else {
-            builder.default(es6Default).var(name).defaultInterop().prop(importName);
+            builder
+              .default(es6Default)
+              .var(name)
+              .defaultInterop()
+              .prop(importName);
           }
         } else if (isNamed) {
           builder.default(es6Default).read(importName);
@@ -243,14 +264,15 @@ class ImportInjector {
       throw new Error(`Unknown importedInterop "${importedInterop}".`);
     }
 
-    const {
-      statements,
-      resultName
-    } = builder.done();
+    const { statements, resultName } = builder.done();
 
     this._insertStatements(statements, importPosition, blockHoist);
 
-    if ((isDefault || isNamed) && ensureNoContext && resultName.type !== "Identifier") {
+    if (
+      (isDefault || isNamed) &&
+      ensureNoContext &&
+      resultName.type !== "Identifier"
+    ) {
       return sequenceExpression([numericLiteral(0), resultName]);
     }
 
@@ -268,10 +290,10 @@ class ImportInjector {
         }
       }
     } else {
-      statements.forEach(node => {
+      statements.forEach((node) => {
         node._blockHoist = blockHoist;
       });
-      const targetPath = body.find(p => {
+      const targetPath = body.find((p) => {
         const val = p.node._blockHoist;
         return Number.isFinite(val) && val < 4;
       });
@@ -284,7 +306,6 @@ class ImportInjector {
 
     this._programPath.unshiftContainer("body", statements);
   }
-
 }
 
 exports.default = ImportInjector;

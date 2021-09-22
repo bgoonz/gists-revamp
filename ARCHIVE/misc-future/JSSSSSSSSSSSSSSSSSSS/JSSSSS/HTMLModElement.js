@@ -10,14 +10,17 @@ function HTMLModElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLModElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLModElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLModElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLModElement, "prototype", {
   value: HTMLModElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLModElement.prototype, "cite", {
@@ -35,14 +38,15 @@ Object.defineProperty(HTMLModElement.prototype, "cite", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'cite' property on 'HTMLModElement': The provided value"
+      context:
+        "Failed to set the 'cite' property on 'HTMLModElement': The provided value",
     });
 
     this[impl]["cite"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLModElement.prototype, "dateTime", {
@@ -61,21 +65,22 @@ Object.defineProperty(HTMLModElement.prototype, "dateTime", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'dateTime' property on 'HTMLModElement': The provided value"
+      context:
+        "Failed to set the 'dateTime' property on 'HTMLModElement': The provided value",
     });
 
     this.setAttribute("dateTime", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLModElement.prototype, Symbol.toStringTag, {
   value: "HTMLModElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -141,7 +146,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -152,8 +157,8 @@ const iface = {
   },
   interface: HTMLModElement,
   expose: {
-    Window: { HTMLModElement }
-  }
+    Window: { HTMLModElement },
+  },
 }; // iface
 module.exports = iface;
 

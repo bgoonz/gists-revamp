@@ -1,8 +1,8 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObjectLike = require('./isObjectLike');
+var baseGetTag = require("./_baseGetTag"),
+  isObjectLike = require("./isObjectLike");
 
 /** `Object#toString` result references. */
-var numberTag = '[object Number]';
+var numberTag = "[object Number]";
 
 /**
  * Checks if `value` is classified as a `Number` primitive or object.
@@ -31,8 +31,10 @@ var numberTag = '[object Number]';
  * // => false
  */
 function isNumber(value) {
-  return typeof value == 'number' ||
-    (isObjectLike(value) && baseGetTag(value) == numberTag);
+  return (
+    typeof value == "number" ||
+    (isObjectLike(value) && baseGetTag(value) == numberTag)
+  );
 }
 
 module.exports = isNumber;

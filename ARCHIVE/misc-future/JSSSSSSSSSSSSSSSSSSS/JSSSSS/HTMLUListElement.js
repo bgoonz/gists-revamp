@@ -10,14 +10,17 @@ function HTMLUListElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLUListElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLUListElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLUListElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLUListElement, "prototype", {
   value: HTMLUListElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLUListElement.prototype, "compact", {
@@ -35,7 +38,8 @@ Object.defineProperty(HTMLUListElement.prototype, "compact", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'compact' property on 'HTMLUListElement': The provided value"
+      context:
+        "Failed to set the 'compact' property on 'HTMLUListElement': The provided value",
     });
 
     if (V) {
@@ -46,7 +50,7 @@ Object.defineProperty(HTMLUListElement.prototype, "compact", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLUListElement.prototype, "type", {
@@ -65,21 +69,22 @@ Object.defineProperty(HTMLUListElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLUListElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLUListElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLUListElement.prototype, Symbol.toStringTag, {
   value: "HTMLUListElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -145,7 +150,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -156,8 +161,8 @@ const iface = {
   },
   interface: HTMLUListElement,
   expose: {
-    Window: { HTMLUListElement }
-  }
+    Window: { HTMLUListElement },
+  },
 }; // iface
 module.exports = iface;
 

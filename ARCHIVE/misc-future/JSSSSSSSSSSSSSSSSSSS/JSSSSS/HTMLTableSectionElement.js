@@ -10,14 +10,17 @@ function HTMLTableSectionElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTableSectionElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTableSectionElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTableSectionElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTableSectionElement, "prototype", {
   value: HTMLTableSectionElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLTableSectionElement.prototype.insertRow = function insertRow() {
@@ -29,7 +32,8 @@ HTMLTableSectionElement.prototype.insertRow = function insertRow() {
     let curArg = arguments[0];
     if (curArg !== undefined) {
       curArg = conversions["long"](curArg, {
-        context: "Failed to execute 'insertRow' on 'HTMLTableSectionElement': parameter 1"
+        context:
+          "Failed to execute 'insertRow' on 'HTMLTableSectionElement': parameter 1",
       });
     } else {
       curArg = -1;
@@ -55,7 +59,8 @@ HTMLTableSectionElement.prototype.deleteRow = function deleteRow(index) {
   {
     let curArg = arguments[0];
     curArg = conversions["long"](curArg, {
-      context: "Failed to execute 'deleteRow' on 'HTMLTableSectionElement': parameter 1"
+      context:
+        "Failed to execute 'deleteRow' on 'HTMLTableSectionElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -74,7 +79,7 @@ Object.defineProperty(HTMLTableSectionElement.prototype, "rows", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableSectionElement.prototype, "align", {
@@ -93,14 +98,15 @@ Object.defineProperty(HTMLTableSectionElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLTableSectionElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLTableSectionElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableSectionElement.prototype, "ch", {
@@ -119,14 +125,15 @@ Object.defineProperty(HTMLTableSectionElement.prototype, "ch", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'ch' property on 'HTMLTableSectionElement': The provided value"
+      context:
+        "Failed to set the 'ch' property on 'HTMLTableSectionElement': The provided value",
     });
 
     this.setAttribute("char", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableSectionElement.prototype, "chOff", {
@@ -145,14 +152,15 @@ Object.defineProperty(HTMLTableSectionElement.prototype, "chOff", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'chOff' property on 'HTMLTableSectionElement': The provided value"
+      context:
+        "Failed to set the 'chOff' property on 'HTMLTableSectionElement': The provided value",
     });
 
     this.setAttribute("charoff", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableSectionElement.prototype, "vAlign", {
@@ -171,21 +179,22 @@ Object.defineProperty(HTMLTableSectionElement.prototype, "vAlign", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'vAlign' property on 'HTMLTableSectionElement': The provided value"
+      context:
+        "Failed to set the 'vAlign' property on 'HTMLTableSectionElement': The provided value",
     });
 
     this.setAttribute("vAlign", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableSectionElement.prototype, Symbol.toStringTag, {
   value: "HTMLTableSectionElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -251,7 +260,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -262,8 +271,8 @@ const iface = {
   },
   interface: HTMLTableSectionElement,
   expose: {
-    Window: { HTMLTableSectionElement }
-  }
+    Window: { HTMLTableSectionElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -1,5 +1,5 @@
-var baseIteratee = require('./_baseIteratee'),
-    baseMean = require('./_baseMean');
+var baseIteratee = require("./_baseIteratee"),
+  baseMean = require("./_baseMean");
 
 /**
  * This method is like `_.mean` except that it accepts `iteratee` which is

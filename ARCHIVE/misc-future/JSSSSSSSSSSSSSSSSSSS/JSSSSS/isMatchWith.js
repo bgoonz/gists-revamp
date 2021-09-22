@@ -1,5 +1,5 @@
-var baseIsMatch = require('./_baseIsMatch'),
-    getMatchData = require('./_getMatchData');
+var baseIsMatch = require("./_baseIsMatch"),
+  getMatchData = require("./_getMatchData");
 
 /**
  * This method is like `_.isMatch` except that it accepts `customizer` which
@@ -34,7 +34,7 @@ var baseIsMatch = require('./_baseIsMatch'),
  * // => true
  */
 function isMatchWith(object, source, customizer) {
-  customizer = typeof customizer == 'function' ? customizer : undefined;
+  customizer = typeof customizer == "function" ? customizer : undefined;
   return baseIsMatch(object, source, getMatchData(source), customizer);
 }
 

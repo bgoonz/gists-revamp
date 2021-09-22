@@ -10,32 +10,32 @@ const xmlEscape = require("../util/xml-escape");
 // Public Interface
 //------------------------------------------------------------------------------
 
-module.exports = function(results) {
+module.exports = function (results) {
+  let output = "";
 
-    let output = "";
+  output += '<?xml version="1.0" encoding="utf-8"?>';
+  output += "<jslint>";
 
-    output += "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-    output += "<jslint>";
+  results.forEach((result) => {
+    const messages = result.messages;
 
-    results.forEach(result => {
-        const messages = result.messages;
+    output += `<file name="${result.filePath}">`;
 
-        output += `<file name="${result.filePath}">`;
-
-        messages.forEach(message => {
-            output += [
-                `<issue line="${message.line}"`,
-                `char="${message.column}"`,
-                `evidence="${xmlEscape(message.source || "")}"`,
-                `reason="${xmlEscape(message.message || "")}${message.ruleId ? ` (${message.ruleId})` : ""}" />`
-            ].join(" ");
-        });
-
-        output += "</file>";
-
+    messages.forEach((message) => {
+      output += [
+        `<issue line="${message.line}"`,
+        `char="${message.column}"`,
+        `evidence="${xmlEscape(message.source || "")}"`,
+        `reason="${xmlEscape(message.message || "")}${
+          message.ruleId ? ` (${message.ruleId})` : ""
+        }" />`,
+      ].join(" ");
     });
 
-    output += "</jslint>";
+    output += "</file>";
+  });
 
-    return output;
+  output += "</jslint>";
+
+  return output;
 };

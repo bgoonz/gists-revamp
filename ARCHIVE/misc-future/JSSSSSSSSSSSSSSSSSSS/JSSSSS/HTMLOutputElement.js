@@ -10,14 +10,17 @@ function HTMLOutputElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLOutputElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLOutputElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLOutputElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLOutputElement, "prototype", {
   value: HTMLOutputElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLOutputElement.prototype.checkValidity = function checkValidity() {
@@ -36,7 +39,9 @@ HTMLOutputElement.prototype.reportValidity = function reportValidity() {
   return this[impl].reportValidity();
 };
 
-HTMLOutputElement.prototype.setCustomValidity = function setCustomValidity(error) {
+HTMLOutputElement.prototype.setCustomValidity = function setCustomValidity(
+  error
+) {
   if (!this || !module.exports.is(this)) {
     throw new TypeError("Illegal invocation");
   }
@@ -52,7 +57,8 @@ HTMLOutputElement.prototype.setCustomValidity = function setCustomValidity(error
   {
     let curArg = arguments[0];
     curArg = conversions["DOMString"](curArg, {
-      context: "Failed to execute 'setCustomValidity' on 'HTMLOutputElement': parameter 1"
+      context:
+        "Failed to execute 'setCustomValidity' on 'HTMLOutputElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -75,14 +81,15 @@ Object.defineProperty(HTMLOutputElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLOutputElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLOutputElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOutputElement.prototype, "willValidate", {
@@ -95,7 +102,7 @@ Object.defineProperty(HTMLOutputElement.prototype, "willValidate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOutputElement.prototype, "validity", {
@@ -108,7 +115,7 @@ Object.defineProperty(HTMLOutputElement.prototype, "validity", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOutputElement.prototype, "validationMessage", {
@@ -121,7 +128,7 @@ Object.defineProperty(HTMLOutputElement.prototype, "validationMessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOutputElement.prototype, "labels", {
@@ -134,14 +141,14 @@ Object.defineProperty(HTMLOutputElement.prototype, "labels", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLOutputElement.prototype, Symbol.toStringTag, {
   value: "HTMLOutputElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -207,7 +214,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -218,8 +225,8 @@ const iface = {
   },
   interface: HTMLOutputElement,
   expose: {
-    Window: { HTMLOutputElement }
-  }
+    Window: { HTMLOutputElement },
+  },
 }; // iface
 module.exports = iface;
 

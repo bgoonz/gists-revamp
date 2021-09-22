@@ -9,45 +9,75 @@ const DefaultConstraintValidationImpl =
   require("../constraint-validation/DefaultConstraintValidation-impl").implementation;
 const ValidityState = require("../generated/ValidityState");
 const { mixin } = require("../../utils");
-const { domSymbolTree, cloningSteps } = require("../helpers/internal-constants");
+const {
+  domSymbolTree,
+  cloningSteps,
+} = require("../helpers/internal-constants");
 const { closest } = require("../helpers/traversal");
 const { getLabelsForLabelable } = require("../helpers/form-controls");
 const {
   isDisabled,
   isValidEmailAddress,
   isValidAbsoluteURL,
-  sanitizeValueByType
+  sanitizeValueByType,
 } = require("../helpers/form-controls");
 const {
   parseFloatingPointNumber,
   asciiCaseInsensitiveMatch,
-  splitOnCommas
+  splitOnCommas,
 } = require("../helpers/strings");
 const {
   parseDateString,
   parseLocalDateAndTimeString,
   parseMonthString,
   parseTimeString,
-  parseWeekString
+  parseWeekString,
 } = require("../helpers/dates-and-times");
 
 const filesSymbol = Symbol("files");
 
 const selectAllowedTypes = new Set([
-  "text", "search", "tel", "url", "password", "email", "date", "month", "week",
-  "time", "datetime-local", "color", "file", "number"
+  "text",
+  "search",
+  "tel",
+  "url",
+  "password",
+  "email",
+  "date",
+  "month",
+  "week",
+  "time",
+  "datetime-local",
+  "color",
+  "file",
+  "number",
 ]);
 
-const variableLengthSelectionAllowedTypes = new Set(["text", "search", "tel", "url", "password"]);
+const variableLengthSelectionAllowedTypes = new Set([
+  "text",
+  "search",
+  "tel",
+  "url",
+  "password",
+]);
 
-const maxMinStepTypes = new Set(["date", "month", "week", "time", "datetime-local", "number", "range", "datetime"]);
+const maxMinStepTypes = new Set([
+  "date",
+  "month",
+  "week",
+  "time",
+  "datetime-local",
+  "number",
+  "range",
+  "datetime",
+]);
 
 // https://html.spec.whatwg.org/multipage/input.html#concept-input-apply
 const applicableTypesForAttribute = {
   max: maxMinStepTypes,
   min: maxMinStepTypes,
   step: maxMinStepTypes,
-  pattern: new Set(["text", "search", "tel", "url", "email", "password"])
+  pattern: new Set(["text", "search", "tel", "url", "email", "password"]),
 };
 
 function allowSelect(type) {
@@ -58,7 +88,13 @@ function allowVariableLengthSelection(type) {
   return variableLengthSelectionAllowedTypes.has(type.toLowerCase());
 }
 
-const valueAttributeDefaultMode = new Set(["hidden", "submit", "image", "reset", "button"]);
+const valueAttributeDefaultMode = new Set([
+  "hidden",
+  "submit",
+  "image",
+  "reset",
+  "button",
+]);
 const valueAttributeDefaultOnMode = new Set(["checkbox", "radio"]);
 
 function valueAttributeMode(type) {
@@ -75,7 +111,15 @@ function valueAttributeMode(type) {
 }
 
 // Necessary because Date.UTC() treats year within [0, 99] as [1900, 1999].
-function getUTCMs(year, month = 1, day = 1, hour = 0, minute = 0, second = 0, millisecond = 0) {
+function getUTCMs(
+  year,
+  month = 1,
+  day = 1,
+  hour = 0,
+  minute = 0,
+  second = 0,
+  millisecond = 0
+) {
   if (year > 99 || year < 0) {
     return Date.UTC(year, month - 1, day, hour, minute, second, millisecond);
   }
@@ -94,27 +138,30 @@ const dayOfWeekRelMondayLUT = [-1, 0, 1, 2, 3, -3, -2];
 const convertStringToNumberByTypeMap = new Map([
   [
     // https://html.spec.whatwg.org/multipage/input.html#date-state-(type=date):concept-input-value-string-number
-    "date", input => {
+    "date",
+    (input) => {
       const date = parseDateString(input);
       if (date === null) {
         return NaN;
       }
       return getUTCMs(date.year, date.month, date.day);
-    }
+    },
   ],
   [
     // https://html.spec.whatwg.org/multipage/input.html#month-state-(type=month):concept-input-value-string-number
-    "month", input => {
+    "month",
+    (input) => {
       const date = parseMonthString(input);
       if (date === null) {
         return NaN;
       }
       return (date.year - 1970) * 12 + (date.month - 1);
-    }
+    },
   ],
   [
     // https://html.spec.whatwg.org/multipage/input.html#week-state-(type=week):concept-input-value-string-number
-    "week", input => {
+    "week",
+    (input) => {
       const date = parseWeekString(input);
       if (date === null) {
         return NaN;
@@ -123,34 +170,42 @@ const convertStringToNumberByTypeMap = new Map([
       // An HTML week starts on Monday, while 0 represents Sunday. Account for such.
       const dayOfWeekRelMonday = dayOfWeekRelMondayLUT[dateObj.getUTCDay()];
       return dateObj.setUTCDate(1 + 7 * (date.week - 1) - dayOfWeekRelMonday);
-    }
+    },
   ],
   [
     // https://html.spec.whatwg.org/multipage/input.html#time-state-(type=time):concept-input-value-string-number
-    "time", input => {
+    "time",
+    (input) => {
       const time = parseTimeString(input);
       if (time === null) {
         return NaN;
       }
-      return ((time.hour * 60 + time.minute) * 60 + time.second) * 1000 + time.millisecond;
-    }
+      return (
+        ((time.hour * 60 + time.minute) * 60 + time.second) * 1000 +
+        time.millisecond
+      );
+    },
   ],
   [
     // https://html.spec.whatwg.org/multipage/input.html#local-date-and-time-state-(type=datetime-local):concept-input-value-string-number
-    "datetime-local", input => {
+    "datetime-local",
+    (input) => {
       const dateAndTime = parseLocalDateAndTimeString(input);
       if (dateAndTime === null) {
         return NaN;
       }
-      const { date: { year, month, day }, time: { hour, minute, second, millisecond } } = dateAndTime;
+      const {
+        date: { year, month, day },
+        time: { hour, minute, second, millisecond },
+      } = dateAndTime;
       // Doesn't quite matter whether or not UTC is used, since the offset from 1970-01-01 local time is returned.
       return getUTCMs(year, month, day, hour, minute, second, millisecond);
-    }
+    },
   ],
   // https://html.spec.whatwg.org/multipage/input.html#number-state-(type=number):concept-input-value-string-number
   ["number", parseFloatingPointNumber],
   // https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range):concept-input-value-string-number
-  ["range", parseFloatingPointNumber]
+  ["range", parseFloatingPointNumber],
 ]);
 
 class HTMLInputElementImpl extends HTMLElementImpl {
@@ -210,11 +265,20 @@ class HTMLInputElementImpl extends HTMLElementImpl {
       return;
     }
 
-    if (this.type === "checkbox" || (this.type === "radio" && !this._preCheckedRadioState)) {
-      const inputEvent = Event.createImpl(["input", { isTrusted: true, bubbles: true, cancelable: true }], {});
+    if (
+      this.type === "checkbox" ||
+      (this.type === "radio" && !this._preCheckedRadioState)
+    ) {
+      const inputEvent = Event.createImpl(
+        ["input", { isTrusted: true, bubbles: true, cancelable: true }],
+        {}
+      );
       this.dispatchEvent(inputEvent);
 
-      const changeEvent = Event.createImpl(["change", { bubbles: true, cancelable: true }], {});
+      const changeEvent = Event.createImpl(
+        ["change", { bubbles: true, cancelable: true }],
+        {}
+      );
       this.dispatchEvent(changeEvent);
     } else if (this.type === "submit") {
       const { form } = this;
@@ -280,7 +344,10 @@ class HTMLInputElementImpl extends HTMLElementImpl {
       }
 
       const candidateWrapper = idlUtils.wrapperForImpl(candidate);
-      if (!candidateWrapper.name || candidateWrapper.name.toLowerCase() !== name) {
+      if (
+        !candidateWrapper.name ||
+        candidateWrapper.name.toLowerCase() !== name
+      ) {
         continue;
       }
 
@@ -319,7 +386,9 @@ class HTMLInputElementImpl extends HTMLElementImpl {
     if (this.checked) {
       return true;
     }
-    return this._otherRadioGroupElements.some(radioGroupElement => radioGroupElement.checked);
+    return this._otherRadioGroupElements.some(
+      (radioGroupElement) => radioGroupElement.checked
+    );
   }
 
   get labels() {
@@ -397,8 +466,11 @@ class HTMLInputElementImpl extends HTMLElementImpl {
         if (val === "") {
           this.files.length = 0;
         } else {
-          throw new DOMException("This input element accepts a filename, which may only be programmatically set to " +
-            "the empty string.", "InvalidStateError");
+          throw new DOMException(
+            "This input element accepts a filename, which may only be programmatically set to " +
+              "the empty string.",
+            "InvalidStateError"
+          );
         }
         break;
 
@@ -462,10 +534,17 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   set selectionStart(start) {
     if (!allowVariableLengthSelection(this.type)) {
-      throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      throw new DOMException(
+        "The object is in an invalid state.",
+        "InvalidStateError"
+      );
     }
 
-    this.setSelectionRange(start, Math.max(start, this._selectionEnd), this._selectionDirection);
+    this.setSelectionRange(
+      start,
+      Math.max(start, this._selectionEnd),
+      this._selectionDirection
+    );
   }
 
   get selectionEnd() {
@@ -478,7 +557,10 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   set selectionEnd(end) {
     if (!allowVariableLengthSelection(this.type)) {
-      throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      throw new DOMException(
+        "The object is in an invalid state.",
+        "InvalidStateError"
+      );
     }
 
     this.setSelectionRange(this._selectionStart, end, this._selectionDirection);
@@ -494,7 +576,10 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   set selectionDirection(dir) {
     if (!allowVariableLengthSelection(this.type)) {
-      throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      throw new DOMException(
+        "The object is in an invalid state.",
+        "InvalidStateError"
+      );
     }
 
     this.setSelectionRange(this._selectionStart, this._selectionEnd, dir);
@@ -502,25 +587,35 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   setSelectionRange(start, end, dir) {
     if (!allowVariableLengthSelection(this.type)) {
-      throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      throw new DOMException(
+        "The object is in an invalid state.",
+        "InvalidStateError"
+      );
     }
 
     this._selectionEnd = Math.min(end, this._getValueLength());
     this._selectionStart = Math.min(start, this._selectionEnd);
-    this._selectionDirection = dir === "forward" || dir === "backward" ? dir : "none";
+    this._selectionDirection =
+      dir === "forward" || dir === "backward" ? dir : "none";
     this._dispatchSelectEvent();
   }
 
   setRangeText(repl, start, end, selectionMode = "preserve") {
     if (!allowVariableLengthSelection(this.type)) {
-      throw new DOMException("The object is in an invalid state.", "InvalidStateError");
+      throw new DOMException(
+        "The object is in an invalid state.",
+        "InvalidStateError"
+      );
     }
 
     if (arguments.length < 2) {
       start = this._selectionStart;
       end = this._selectionEnd;
     } else if (start > end) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
 
     start = Math.min(start, this._getValueLength());
@@ -540,7 +635,8 @@ class HTMLInputElementImpl extends HTMLElementImpl {
       this.setSelectionRange(start, start);
     } else if (selectionMode === "end") {
       this.setSelectionRange(newEnd, newEnd);
-    } else { // preserve
+    } else {
+      // preserve
       const delta = repl.length - (end - start);
 
       if (selStart > end) {
@@ -561,7 +657,10 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   set maxLength(value) {
     if (value < 0) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
     this.setAttribute("maxlength", String(value));
   }
@@ -575,7 +674,10 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   set minLength(value) {
     if (value < 0) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
     this.setAttribute("minlength", String(value));
   }
@@ -596,7 +698,10 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   set size(value) {
     if (value <= 0) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
     this.setAttribute("size", String(value));
   }
@@ -661,7 +766,10 @@ class HTMLInputElementImpl extends HTMLElementImpl {
   // https://html.spec.whatwg.org/multipage/input.html#attr-input-step
   get _step() {
     let step = this._defaultStep;
-    if (this.hasAttribute("step") && !asciiCaseInsensitiveMatch(this.getAttribute("step"), "any")) {
+    if (
+      this.hasAttribute("step") &&
+      !asciiCaseInsensitiveMatch(this.getAttribute("step"), "any")
+    ) {
       const parsedStep = parseFloatingPointNumber(this.getAttribute("step"));
       if (!isNaN(parsedStep) && parsedStep > 0) {
         step = parsedStep;
@@ -688,7 +796,11 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   // https://html.spec.whatwg.org/multipage/input.html#concept-input-step-default
   get _defaultStep() {
-    if (this.type === "datetime-local" || this.type === "datetime" || this.type === "time") {
+    if (
+      this.type === "datetime-local" ||
+      this.type === "datetime" ||
+      this.type === "time"
+    ) {
       return 60;
     }
     return 1;
@@ -696,7 +808,8 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
   // https://html.spec.whatwg.org/multipage/input.html#concept-input-min-zero
   get _stepBase() {
-    const parseAttribute = attributeName => parseFloatingPointNumber(this.getAttribute(attributeName));
+    const parseAttribute = (attributeName) =>
+      parseFloatingPointNumber(this.getAttribute(attributeName));
     if (this.hasAttribute("min")) {
       const min = parseAttribute("min");
       if (!isNaN(min)) {
@@ -740,7 +853,6 @@ class HTMLInputElementImpl extends HTMLElementImpl {
   get validity() {
     if (!this._validity) {
       this._validity = ValidityState.createImpl(this, {
-
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#suffering-from-being-missing
         valueMissing: () => {
           if (!this.hasAttribute("required")) {
@@ -773,17 +885,25 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#suffering-from-an-overflow
         // https://html.spec.whatwg.org/multipage/input.html#attr-input-max
-        rangeOverflow: () => this._attributeApplies("max") && this._maximum !== null &&
+        rangeOverflow: () =>
+          this._attributeApplies("max") &&
+          this._maximum !== null &&
           this._parsedValue > this._maximum,
 
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#suffering-from-an-underflow
         // https://html.spec.whatwg.org/multipage/input.html#attr-input-min
-        rangeUnderflow: () => this._attributeApplies("min") && this._minimum !== null &&
+        rangeUnderflow: () =>
+          this._attributeApplies("min") &&
+          this._minimum !== null &&
           this._parsedValue < this._minimum,
 
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#suffering-from-a-pattern-mismatch
         patternMismatch: () => {
-          if (!this.hasAttribute("pattern") || !this._attributeApplies("pattern") || this.value === "") {
+          if (
+            !this.hasAttribute("pattern") ||
+            !this._attributeApplies("pattern") ||
+            this.value === ""
+          ) {
             return false;
           }
           let regExp;
@@ -793,7 +913,9 @@ class HTMLInputElementImpl extends HTMLElementImpl {
             return false;
           }
           if (this.type === "email" && this.hasAttribute("multiple")) {
-            return splitOnCommas(this.value).every(value => regExp.test(value));
+            return splitOnCommas(this.value).every((value) =>
+              regExp.test(value)
+            );
           }
           return !regExp.test(this.value);
         },
@@ -820,7 +942,9 @@ class HTMLInputElementImpl extends HTMLElementImpl {
           if (this._type === "month") {
             number = parseMonthString(this.value).month - 1;
           }
-          return number % (this._stepBase - (this._step * this._stepScaleFactor)) !== 0;
+          return (
+            number % (this._stepBase - this._step * this._stepScaleFactor) !== 0
+          );
         },
 
         // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#suffering-from-a-type-mismatch
@@ -835,7 +959,10 @@ class HTMLInputElementImpl extends HTMLElementImpl {
 
             // Constraint validation [multiple=true]: While the value of the element is not a valid e-mail address list,
             // the element is suffering from a type mismatch.
-            return !isValidEmailAddress(this.value, this.hasAttribute("multiple"));
+            return !isValidEmailAddress(
+              this.value,
+              this.hasAttribute("multiple")
+            );
           } else if (this.type === "url") {
             // https://html.spec.whatwg.org/multipage/input.html#url-state-(type=url)
             // Constraint validation: While the value of the element is neither the empty string
@@ -843,7 +970,7 @@ class HTMLInputElementImpl extends HTMLElementImpl {
             return !isValidAbsoluteURL(this.value);
           }
           return false;
-        }
+        },
       });
     }
     return this._validity;
@@ -857,8 +984,11 @@ class HTMLInputElementImpl extends HTMLElementImpl {
   }
 }
 
-mixin(HTMLInputElementImpl.prototype, DefaultConstraintValidationImpl.prototype);
+mixin(
+  HTMLInputElementImpl.prototype,
+  DefaultConstraintValidationImpl.prototype
+);
 
 module.exports = {
-  implementation: HTMLInputElementImpl
+  implementation: HTMLInputElementImpl,
 };

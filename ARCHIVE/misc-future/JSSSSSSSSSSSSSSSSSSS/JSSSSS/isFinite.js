@@ -1,4 +1,4 @@
-var root = require('./_root');
+var root = require("./_root");
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeIsFinite = root.isFinite;
@@ -30,7 +30,7 @@ var nativeIsFinite = root.isFinite;
  * // => false
  */
 function isFinite(value) {
-  return typeof value == 'number' && nativeIsFinite(value);
+  return typeof value == "number" && nativeIsFinite(value);
 }
 
 module.exports = isFinite;

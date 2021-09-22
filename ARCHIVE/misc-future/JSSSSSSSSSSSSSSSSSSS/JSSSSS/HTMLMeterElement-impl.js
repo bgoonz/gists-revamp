@@ -177,5 +177,5 @@ class HTMLMeterElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLMeterElementImpl
+  implementation: HTMLMeterElementImpl,
 };

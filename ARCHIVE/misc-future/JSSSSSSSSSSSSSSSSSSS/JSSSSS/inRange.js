@@ -1,6 +1,6 @@
-var baseInRange = require('./_baseInRange'),
-    toFinite = require('./toFinite'),
-    toNumber = require('./toNumber');
+var baseInRange = require("./_baseInRange"),
+  toFinite = require("./toFinite"),
+  toNumber = require("./toNumber");
 
 /**
  * Checks if `n` is between `start` and up to, but not including, `end`. If

@@ -1,11 +1,11 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObject = require('./isObject');
+var baseGetTag = require("./_baseGetTag"),
+  isObject = require("./isObject");
 
 /** `Object#toString` result references. */
-var asyncTag = '[object AsyncFunction]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]',
-    proxyTag = '[object Proxy]';
+var asyncTag = "[object AsyncFunction]",
+  funcTag = "[object Function]",
+  genTag = "[object GeneratorFunction]",
+  proxyTag = "[object Proxy]";
 
 /**
  * Checks if `value` is classified as a `Function` object.

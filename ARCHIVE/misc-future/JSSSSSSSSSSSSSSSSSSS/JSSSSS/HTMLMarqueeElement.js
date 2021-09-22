@@ -10,14 +10,17 @@ function HTMLMarqueeElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLMarqueeElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLMarqueeElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLMarqueeElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLMarqueeElement, "prototype", {
   value: HTMLMarqueeElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "behavior", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "behavior", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'behavior' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'behavior' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("behavior", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "bgColor", {
@@ -62,14 +66,15 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "bgColor", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'bgColor' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'bgColor' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("bgcolor", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "direction", {
@@ -88,14 +93,15 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "direction", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'direction' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'direction' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("direction", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "height", {
@@ -114,14 +120,15 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "height", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'height' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'height' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("height", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "hspace", {
@@ -140,14 +147,15 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "hspace", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'hspace' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'hspace' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("hspace", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "scrollAmount", {
@@ -166,14 +174,15 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "scrollAmount", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'scrollAmount' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'scrollAmount' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("scrollamount", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "scrollDelay", {
@@ -192,14 +201,15 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "scrollDelay", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'scrollDelay' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'scrollDelay' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("scrolldelay", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "trueSpeed", {
@@ -217,7 +227,8 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "trueSpeed", {
     }
 
     V = conversions["boolean"](V, {
-      context: "Failed to set the 'trueSpeed' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'trueSpeed' property on 'HTMLMarqueeElement': The provided value",
     });
 
     if (V) {
@@ -228,7 +239,7 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "trueSpeed", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "vspace", {
@@ -247,14 +258,15 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "vspace", {
     }
 
     V = conversions["unsigned long"](V, {
-      context: "Failed to set the 'vspace' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'vspace' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("vspace", String(V > 2147483647 ? 0 : V));
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, "width", {
@@ -273,21 +285,22 @@ Object.defineProperty(HTMLMarqueeElement.prototype, "width", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'width' property on 'HTMLMarqueeElement': The provided value"
+      context:
+        "Failed to set the 'width' property on 'HTMLMarqueeElement': The provided value",
     });
 
     this.setAttribute("width", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMarqueeElement.prototype, Symbol.toStringTag, {
   value: "HTMLMarqueeElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -353,7 +366,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -364,8 +377,8 @@ const iface = {
   },
   interface: HTMLMarqueeElement,
   expose: {
-    Window: { HTMLMarqueeElement }
-  }
+    Window: { HTMLMarqueeElement },
+  },
 }; // iface
 module.exports = iface;
 

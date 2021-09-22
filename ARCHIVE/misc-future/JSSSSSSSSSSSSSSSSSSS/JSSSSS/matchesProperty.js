@@ -1,5 +1,5 @@
-var baseClone = require('./_baseClone'),
-    baseMatchesProperty = require('./_baseMatchesProperty');
+var baseClone = require("./_baseClone"),
+  baseMatchesProperty = require("./_baseMatchesProperty");
 
 /** Used to compose bitmasks for cloning. */
 var CLONE_DEEP_FLAG = 1;

@@ -1,9 +1,9 @@
-var arrayMap = require('./_arrayMap'),
-    baseIntersection = require('./_baseIntersection'),
-    baseIteratee = require('./_baseIteratee'),
-    baseRest = require('./_baseRest'),
-    castArrayLikeObject = require('./_castArrayLikeObject'),
-    last = require('./last');
+var arrayMap = require("./_arrayMap"),
+  baseIntersection = require("./_baseIntersection"),
+  baseIteratee = require("./_baseIteratee"),
+  baseRest = require("./_baseRest"),
+  castArrayLikeObject = require("./_castArrayLikeObject"),
+  last = require("./last");
 
 /**
  * This method is like `_.intersection` except that it accepts `iteratee`
@@ -28,16 +28,16 @@ var arrayMap = require('./_arrayMap'),
  * _.intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
  * // => [{ 'x': 1 }]
  */
-var intersectionBy = baseRest(function(arrays) {
+var intersectionBy = baseRest(function (arrays) {
   var iteratee = last(arrays),
-      mapped = arrayMap(arrays, castArrayLikeObject);
+    mapped = arrayMap(arrays, castArrayLikeObject);
 
   if (iteratee === last(mapped)) {
     iteratee = undefined;
   } else {
     mapped.pop();
   }
-  return (mapped.length && mapped[0] === arrays[0])
+  return mapped.length && mapped[0] === arrays[0]
     ? baseIntersection(mapped, baseIteratee(iteratee, 2))
     : [];
 });

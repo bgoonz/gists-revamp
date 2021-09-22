@@ -1,7 +1,10 @@
 "use strict";
 
 const HTMLElementImpl = require("./HTMLElement-impl").implementation;
-const { isConnected, descendantsByHTMLLocalNames } = require("../helpers/traversal");
+const {
+  isConnected,
+  descendantsByHTMLLocalNames,
+} = require("../helpers/traversal");
 const { domSymbolTree } = require("../helpers/internal-constants");
 const HTMLCollection = require("../generated/HTMLCollection");
 const notImplemented = require("../../browser/not-implemented");
@@ -9,22 +12,32 @@ const { reflectURLAttribute } = require("../../utils");
 const Event = require("../generated/Event");
 
 // http://www.whatwg.org/specs/web-apps/current-work/#category-listed
-const listedElements = new Set(["button", "fieldset", "input", "keygen", "object", "select", "textarea"]);
+const listedElements = new Set([
+  "button",
+  "fieldset",
+  "input",
+  "keygen",
+  "object",
+  "select",
+  "textarea",
+]);
 
 // https://html.spec.whatwg.org/multipage/forms.html#category-submit
-const submittableElements = new Set(["button", "input", "object", "select", "textarea"]);
+const submittableElements = new Set([
+  "button",
+  "input",
+  "object",
+  "select",
+  "textarea",
+]);
 
 const encTypes = new Set([
   "application/x-www-form-urlencoded",
   "multipart/form-data",
-  "text/plain"
+  "text/plain",
 ]);
 
-const methods = new Set([
-  "get",
-  "post",
-  "dialog"
-]);
+const methods = new Set(["get", "post", "dialog"]);
 
 const constraintValidationPositiveResult = Symbol("positive");
 const constraintValidationNegativeResult = Symbol("negative");
@@ -54,7 +67,7 @@ class HTMLFormElementImpl extends HTMLElementImpl {
   get elements() {
     return HTMLCollection.createImpl([], {
       element: this,
-      query: () => descendantsByHTMLLocalNames(this, listedElements)
+      query: () => descendantsByHTMLLocalNames(this, listedElements),
     });
   }
 
@@ -74,7 +87,10 @@ class HTMLFormElementImpl extends HTMLElementImpl {
   }
 
   submit() {
-    notImplemented("HTMLFormElement.prototype.submit", this._ownerDocument._defaultView);
+    notImplemented(
+      "HTMLFormElement.prototype.submit",
+      this._ownerDocument._defaultView
+    );
   }
 
   reset() {
@@ -134,7 +150,10 @@ class HTMLFormElementImpl extends HTMLElementImpl {
   // constraints of the form element, and return true if the constraint validation returned
   // a positive result, and false if it returned a negative result.
   checkValidity() {
-    return this._staticallyValidateConstraints().result === constraintValidationPositiveResult;
+    return (
+      this._staticallyValidateConstraints().result ===
+      constraintValidationPositiveResult
+    );
   }
 
   // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#interactively-validate-the-constraints
@@ -146,7 +165,10 @@ class HTMLFormElementImpl extends HTMLElementImpl {
   _staticallyValidateConstraints() {
     const controls = [];
     for (const el of domSymbolTree.treeIterator(this)) {
-      if (el.form === this && submittableElements.has(el.nodeName.toLowerCase())) {
+      if (
+        el.form === this &&
+        submittableElements.has(el.nodeName.toLowerCase())
+      ) {
         controls.push(el);
       }
     }
@@ -154,7 +176,10 @@ class HTMLFormElementImpl extends HTMLElementImpl {
     const invalidControls = [];
 
     for (const control of controls) {
-      if (control._isCandidateForConstraintValidation() && !control._satisfiesConstraints()) {
+      if (
+        control._isCandidateForConstraintValidation() &&
+        !control._satisfiesConstraints()
+      ) {
         invalidControls.push(control);
       }
     }
@@ -165,16 +190,21 @@ class HTMLFormElementImpl extends HTMLElementImpl {
 
     const unhandledInvalidControls = [];
     for (const invalidControl of invalidControls) {
-      const notCancelled = invalidControl.dispatchEvent(Event.createImpl(["invalid", { cancelable: true }]));
+      const notCancelled = invalidControl.dispatchEvent(
+        Event.createImpl(["invalid", { cancelable: true }])
+      );
       if (notCancelled) {
         unhandledInvalidControls.push(invalidControl);
       }
     }
 
-    return { result: constraintValidationNegativeResult, unhandledInvalidControls };
+    return {
+      result: constraintValidationNegativeResult,
+      unhandledInvalidControls,
+    };
   }
 }
 
 module.exports = {
-  implementation: HTMLFormElementImpl
+  implementation: HTMLFormElementImpl,
 };

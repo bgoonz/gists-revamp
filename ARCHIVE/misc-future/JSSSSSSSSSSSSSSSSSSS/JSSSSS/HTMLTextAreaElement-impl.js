@@ -9,7 +9,10 @@ const { mixin } = require("../../utils");
 
 const DOMException = require("domexception");
 const { closest } = require("../helpers/traversal");
-const { normalizeToCRLF, getLabelsForLabelable } = require("../helpers/form-controls");
+const {
+  normalizeToCRLF,
+  getLabelsForLabelable,
+} = require("../helpers/form-controls");
 const { childTextContent } = require("../helpers/text");
 
 class HTMLTextAreaElementImpl extends HTMLElementImpl {
@@ -103,7 +106,11 @@ class HTMLTextAreaElementImpl extends HTMLElementImpl {
   }
 
   set selectionStart(start) {
-    this.setSelectionRange(start, Math.max(start, this._selectionEnd), this._selectionDirection);
+    this.setSelectionRange(
+      start,
+      Math.max(start, this._selectionEnd),
+      this._selectionDirection
+    );
   }
 
   get selectionEnd() {
@@ -125,7 +132,8 @@ class HTMLTextAreaElementImpl extends HTMLElementImpl {
   setSelectionRange(start, end, dir) {
     this._selectionEnd = Math.min(end, this._getValueLength());
     this._selectionStart = Math.min(start, this._selectionEnd);
-    this._selectionDirection = dir === "forward" || dir === "backward" ? dir : "none";
+    this._selectionDirection =
+      dir === "forward" || dir === "backward" ? dir : "none";
     this._dispatchSelectEvent();
   }
 
@@ -134,7 +142,10 @@ class HTMLTextAreaElementImpl extends HTMLElementImpl {
       start = this._selectionStart;
       end = this._selectionEnd;
     } else if (start > end) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
 
     start = Math.min(start, this._getValueLength());
@@ -154,7 +165,8 @@ class HTMLTextAreaElementImpl extends HTMLElementImpl {
       this.setSelectionRange(start, start);
     } else if (selectionMode === "end") {
       this.setSelectionRange(newEnd, newEnd);
-    } else { // preserve
+    } else {
+      // preserve
       const delta = repl.length - (end - start);
 
       if (selStart > end) {
@@ -182,7 +194,10 @@ class HTMLTextAreaElementImpl extends HTMLElementImpl {
 
   set cols(value) {
     if (value <= 0) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
     this.setAttribute("cols", String(value));
   }
@@ -196,7 +211,10 @@ class HTMLTextAreaElementImpl extends HTMLElementImpl {
 
   set rows(value) {
     if (value <= 0) {
-      throw new DOMException("The index is not in the allowed range.", "IndexSizeError");
+      throw new DOMException(
+        "The index is not in the allowed range.",
+        "IndexSizeError"
+      );
     }
     this.setAttribute("rows", String(value));
   }
@@ -209,15 +227,18 @@ class HTMLTextAreaElementImpl extends HTMLElementImpl {
   get validity() {
     if (!this._validity) {
       this._validity = ValidityState.createImpl(this, {
-        valueMissing: () => this.hasAttribute("required") && this.value === ""
+        valueMissing: () => this.hasAttribute("required") && this.value === "",
       });
     }
     return this._validity;
   }
 }
 
-mixin(HTMLTextAreaElementImpl.prototype, DefaultConstraintValidationImpl.prototype);
+mixin(
+  HTMLTextAreaElementImpl.prototype,
+  DefaultConstraintValidationImpl.prototype
+);
 
 module.exports = {
-  implementation: HTMLTextAreaElementImpl
+  implementation: HTMLTextAreaElementImpl,
 };

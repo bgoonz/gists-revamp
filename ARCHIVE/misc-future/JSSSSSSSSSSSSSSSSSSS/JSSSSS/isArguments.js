@@ -1,5 +1,5 @@
-var baseIsArguments = require('./_baseIsArguments'),
-    isObjectLike = require('./isObjectLike');
+var baseIsArguments = require("./_baseIsArguments"),
+  isObjectLike = require("./isObjectLike");
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -28,9 +28,18 @@ var propertyIsEnumerable = objectProto.propertyIsEnumerable;
  * _.isArguments([1, 2, 3]);
  * // => false
  */
-var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsArguments : function(value) {
-  return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
-    !propertyIsEnumerable.call(value, 'callee');
-};
+var isArguments = baseIsArguments(
+  (function () {
+    return arguments;
+  })()
+)
+  ? baseIsArguments
+  : function (value) {
+      return (
+        isObjectLike(value) &&
+        hasOwnProperty.call(value, "callee") &&
+        !propertyIsEnumerable.call(value, "callee")
+      );
+    };
 
 module.exports = isArguments;

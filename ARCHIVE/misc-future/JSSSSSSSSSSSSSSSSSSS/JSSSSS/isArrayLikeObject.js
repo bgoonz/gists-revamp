@@ -1,5 +1,5 @@
-var isArrayLike = require('./isArrayLike'),
-    isObjectLike = require('./isObjectLike');
+var isArrayLike = require("./isArrayLike"),
+  isObjectLike = require("./isObjectLike");
 
 /**
  * This method is like `_.isArrayLike` except that it also checks if `value`

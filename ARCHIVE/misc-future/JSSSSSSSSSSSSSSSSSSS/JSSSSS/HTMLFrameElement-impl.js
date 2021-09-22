@@ -28,14 +28,20 @@ function loadFrame(frame) {
   if (srcAttribute === "") {
     url = parseURL("about:blank");
   } else {
-    url = parseURL(srcAttribute, { baseURL: documentBaseURL(parentDoc) || undefined }) || parseURL("about:blank");
+    url =
+      parseURL(srcAttribute, {
+        baseURL: documentBaseURL(parentDoc) || undefined,
+      }) || parseURL("about:blank");
   }
   const serializedURL = serializeURL(url);
 
   // This is not great, but prevents a require cycle during webidl2js generation
   const wnd = new parentDoc._defaultView.constructor({
     parsingMode: "html",
-    url: url.scheme === "javascript" || serializedURL === "about:blank" ? parentDoc.URL : serializedURL,
+    url:
+      url.scheme === "javascript" || serializedURL === "about:blank"
+        ? parentDoc.URL
+        : serializedURL,
     resourceLoader: parentDoc._customResourceLoader,
     userAgent: parentDoc._defaultView.navigator.userAgent,
     referrer: parentDoc.URL,
@@ -46,9 +52,11 @@ function loadFrame(frame) {
     strictSSL: parentDoc._strictSSL,
     proxy: parentDoc._proxy,
     runScripts: parentDoc._defaultView._runScripts,
-    commonForOrigin: parentDoc._defaultView._commonForOrigin
+    commonForOrigin: parentDoc._defaultView._commonForOrigin,
   });
-  const contentDoc = frame._contentDocument = idlUtils.implForWrapper(wnd._document);
+  const contentDoc = (frame._contentDocument = idlUtils.implForWrapper(
+    wnd._document
+  ));
   applyDocumentFeatures(contentDoc, parentDoc._implementation._features);
 
   const parent = parentDoc._defaultView;
@@ -181,6 +189,5 @@ class HTMLFrameElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLFrameElementImpl
+  implementation: HTMLFrameElementImpl,
 };
-

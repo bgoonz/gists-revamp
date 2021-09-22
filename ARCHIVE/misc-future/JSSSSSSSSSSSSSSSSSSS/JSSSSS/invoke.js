@@ -1,5 +1,5 @@
-var baseInvoke = require('./_baseInvoke'),
-    baseRest = require('./_baseRest');
+var baseInvoke = require("./_baseInvoke"),
+  baseRest = require("./_baseRest");
 
 /**
  * Invokes the method at `path` of `object`.

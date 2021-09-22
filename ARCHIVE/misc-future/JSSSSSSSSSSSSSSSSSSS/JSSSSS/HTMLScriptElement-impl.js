@@ -27,7 +27,7 @@ const jsMIMETypes = new Set([
   "text/jscript",
   "text/livescript",
   "text/x-ecmascript",
-  "text/x-javascript"
+  "text/x-javascript",
 ]);
 
 class HTMLScriptElementImpl extends HTMLElementImpl {
@@ -40,7 +40,6 @@ class HTMLScriptElementImpl extends HTMLElementImpl {
   _attach() {
     super._attach();
 
-
     // In our current terribly-hacky document.write() implementation, we parse in a div them move elements into the main
     // document. Thus _eval() will bail early when it gets in _poppedOffStackOfOpenElements(), since we're not attached
     // then. Instead, we'll let it eval here.
@@ -52,11 +51,21 @@ class HTMLScriptElementImpl extends HTMLElementImpl {
   _attrModified(name, value, oldValue) {
     super._attrModified(name, value, oldValue);
 
-    if (this._attached && !this._startedEval && name === "src" && oldValue === null && value !== null) {
+    if (
+      this._attached &&
+      !this._startedEval &&
+      name === "src" &&
+      oldValue === null &&
+      value !== null
+    ) {
       resourceLoader.load(
         this,
         this.src,
-        { defaultEncoding: whatwgEncoding.labelToName(this.getAttribute("charset")) || this._ownerDocument._encoding },
+        {
+          defaultEncoding:
+            whatwgEncoding.labelToName(this.getAttribute("charset")) ||
+            this._ownerDocument._encoding,
+        },
         this._innerEval
       );
     }
@@ -97,7 +106,10 @@ class HTMLScriptElementImpl extends HTMLElementImpl {
     this._alreadyStarted = true;
 
     // Equivalent to the spec's "scripting is disabled" check.
-    if (!this._ownerDocument._defaultView || this._ownerDocument._defaultView._runScripts !== "dangerously") {
+    if (
+      !this._ownerDocument._defaultView ||
+      this._ownerDocument._defaultView._runScripts !== "dangerously"
+    ) {
       return;
     }
 
@@ -109,11 +121,19 @@ class HTMLScriptElementImpl extends HTMLElementImpl {
       resourceLoader.load(
         this,
         this.src,
-        { defaultEncoding: whatwgEncoding.labelToName(this.getAttribute("charset")) || this._ownerDocument._encoding },
+        {
+          defaultEncoding:
+            whatwgEncoding.labelToName(this.getAttribute("charset")) ||
+            this._ownerDocument._encoding,
+        },
         this._innerEval
       );
     } else {
-      resourceLoader.enqueue(this, this._ownerDocument.URL, this._innerEval)(null, this.text);
+      resourceLoader.enqueue(
+        this,
+        this._ownerDocument.URL,
+        this._innerEval
+      )(null, this.text);
     }
   }
 
@@ -187,7 +207,11 @@ function processJavaScript(element, code, filename) {
     }
 
     try {
-      vm.runInContext(code, window, { filename, lineOffset, displayErrors: false });
+      vm.runInContext(code, window, {
+        filename,
+        lineOffset,
+        displayErrors: false,
+      });
     } catch (e) {
       reportException(window, e, filename);
     } finally {
@@ -210,5 +234,5 @@ function getType(typeString) {
 }
 
 module.exports = {
-  implementation: HTMLScriptElementImpl
+  implementation: HTMLScriptElementImpl,
 };

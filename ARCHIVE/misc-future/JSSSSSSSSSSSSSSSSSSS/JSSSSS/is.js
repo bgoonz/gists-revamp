@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = is;
 
@@ -18,7 +18,11 @@ function is(type, node, opts) {
   const matches = (0, _isType.default)(node.type, type);
 
   if (!matches) {
-    if (!opts && node.type === "Placeholder" && type in _definitions.FLIPPED_ALIAS_KEYS) {
+    if (
+      !opts &&
+      node.type === "Placeholder" &&
+      type in _definitions.FLIPPED_ALIAS_KEYS
+    ) {
       return (0, _isPlaceholderType.default)(node.expectedNode, type);
     }
 

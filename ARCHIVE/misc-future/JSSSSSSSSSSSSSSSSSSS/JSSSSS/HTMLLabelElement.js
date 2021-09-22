@@ -10,14 +10,17 @@ function HTMLLabelElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLLabelElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLLabelElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLLabelElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLLabelElement, "prototype", {
   value: HTMLLabelElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLLabelElement.prototype, "form", {
@@ -30,7 +33,7 @@ Object.defineProperty(HTMLLabelElement.prototype, "form", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLabelElement.prototype, "htmlFor", {
@@ -49,14 +52,15 @@ Object.defineProperty(HTMLLabelElement.prototype, "htmlFor", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'htmlFor' property on 'HTMLLabelElement': The provided value"
+      context:
+        "Failed to set the 'htmlFor' property on 'HTMLLabelElement': The provided value",
     });
 
     this.setAttribute("for", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLabelElement.prototype, "control", {
@@ -69,14 +73,14 @@ Object.defineProperty(HTMLLabelElement.prototype, "control", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLLabelElement.prototype, Symbol.toStringTag, {
   value: "HTMLLabelElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -142,7 +146,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -153,8 +157,8 @@ const iface = {
   },
   interface: HTMLLabelElement,
   expose: {
-    Window: { HTMLLabelElement }
-  }
+    Window: { HTMLLabelElement },
+  },
 }; // iface
 module.exports = iface;
 

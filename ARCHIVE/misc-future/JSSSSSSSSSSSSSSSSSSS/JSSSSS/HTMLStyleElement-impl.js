@@ -1,6 +1,9 @@
 "use strict";
 const HTMLElementImpl = require("./HTMLElement-impl").implementation;
-const { removeStylesheet, createStylesheet } = require("../helpers/stylesheets");
+const {
+  removeStylesheet,
+  createStylesheet,
+} = require("../helpers/stylesheets");
 const { documentBaseURL } = require("../helpers/document-base-url");
 const { childTextContent } = require("../helpers/text");
 const { asciiCaseInsensitiveMatch } = require("../helpers/strings");
@@ -56,7 +59,11 @@ class HTMLStyleElementImpl extends HTMLElementImpl {
     }
 
     const type = this.getAttribute("type");
-    if (type !== null && type !== "" && !asciiCaseInsensitiveMatch(type, "text/css")) {
+    if (
+      type !== null &&
+      type !== "" &&
+      !asciiCaseInsensitiveMatch(type, "text/css")
+    ) {
       return;
     }
 
@@ -69,5 +76,5 @@ class HTMLStyleElementImpl extends HTMLElementImpl {
 }
 
 module.exports = {
-  implementation: HTMLStyleElementImpl
+  implementation: HTMLStyleElementImpl,
 };

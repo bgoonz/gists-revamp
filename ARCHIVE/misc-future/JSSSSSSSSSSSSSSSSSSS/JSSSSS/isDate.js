@@ -1,6 +1,6 @@
-var baseIsDate = require('./_baseIsDate'),
-    baseUnary = require('./_baseUnary'),
-    nodeUtil = require('./_nodeUtil');
+var baseIsDate = require("./_baseIsDate"),
+  baseUnary = require("./_baseUnary"),
+  nodeUtil = require("./_nodeUtil");
 
 /* Node.js helper references. */
 var nodeIsDate = nodeUtil && nodeUtil.isDate;

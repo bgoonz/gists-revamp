@@ -1,3 +1,3 @@
-module.exports = function isPromise (maybePromise) {
-  return maybePromise instanceof Promise
-}
+module.exports = function isPromise(maybePromise) {
+  return maybePromise instanceof Promise;
+};

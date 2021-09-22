@@ -10,14 +10,17 @@ function HTMLSourceElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLSourceElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLSourceElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLSourceElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLSourceElement, "prototype", {
   value: HTMLSourceElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLSourceElement.prototype, "src", {
@@ -35,14 +38,15 @@ Object.defineProperty(HTMLSourceElement.prototype, "src", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'src' property on 'HTMLSourceElement': The provided value"
+      context:
+        "Failed to set the 'src' property on 'HTMLSourceElement': The provided value",
     });
 
     this[impl]["src"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSourceElement.prototype, "type", {
@@ -61,14 +65,15 @@ Object.defineProperty(HTMLSourceElement.prototype, "type", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'type' property on 'HTMLSourceElement': The provided value"
+      context:
+        "Failed to set the 'type' property on 'HTMLSourceElement': The provided value",
     });
 
     this.setAttribute("type", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSourceElement.prototype, "srcset", {
@@ -86,14 +91,15 @@ Object.defineProperty(HTMLSourceElement.prototype, "srcset", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'srcset' property on 'HTMLSourceElement': The provided value"
+      context:
+        "Failed to set the 'srcset' property on 'HTMLSourceElement': The provided value",
     });
 
     this[impl]["srcset"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSourceElement.prototype, "sizes", {
@@ -112,14 +118,15 @@ Object.defineProperty(HTMLSourceElement.prototype, "sizes", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'sizes' property on 'HTMLSourceElement': The provided value"
+      context:
+        "Failed to set the 'sizes' property on 'HTMLSourceElement': The provided value",
     });
 
     this.setAttribute("sizes", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSourceElement.prototype, "media", {
@@ -138,21 +145,22 @@ Object.defineProperty(HTMLSourceElement.prototype, "media", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'media' property on 'HTMLSourceElement': The provided value"
+      context:
+        "Failed to set the 'media' property on 'HTMLSourceElement': The provided value",
     });
 
     this.setAttribute("media", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLSourceElement.prototype, Symbol.toStringTag, {
   value: "HTMLSourceElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -218,7 +226,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -229,8 +237,8 @@ const iface = {
   },
   interface: HTMLSourceElement,
   expose: {
-    Window: { HTMLSourceElement }
-  }
+    Window: { HTMLSourceElement },
+  },
 }; // iface
 module.exports = iface;
 

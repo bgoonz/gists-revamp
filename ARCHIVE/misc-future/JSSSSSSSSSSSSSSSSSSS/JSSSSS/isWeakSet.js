@@ -1,8 +1,8 @@
-var baseGetTag = require('./_baseGetTag'),
-    isObjectLike = require('./isObjectLike');
+var baseGetTag = require("./_baseGetTag"),
+  isObjectLike = require("./isObjectLike");
 
 /** `Object#toString` result references. */
-var weakSetTag = '[object WeakSet]';
+var weakSetTag = "[object WeakSet]";
 
 /**
  * Checks if `value` is classified as a `WeakSet` object.

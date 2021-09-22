@@ -1,3 +1,3 @@
 export default function log(s) {
-    console.info('[react-ga]', s);
+  console.info("[react-ga]", s);
 }

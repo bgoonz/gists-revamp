@@ -10,14 +10,17 @@ function HTMLTemplateElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTemplateElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTemplateElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTemplateElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTemplateElement, "prototype", {
   value: HTMLTemplateElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLTemplateElement.prototype, "content", {
@@ -30,14 +33,14 @@ Object.defineProperty(HTMLTemplateElement.prototype, "content", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTemplateElement.prototype, Symbol.toStringTag, {
   value: "HTMLTemplateElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -103,7 +106,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -114,8 +117,8 @@ const iface = {
   },
   interface: HTMLTemplateElement,
   expose: {
-    Window: { HTMLTemplateElement }
-  }
+    Window: { HTMLTemplateElement },
+  },
 }; // iface
 module.exports = iface;
 

@@ -16,20 +16,20 @@ const astUtils = require("../util/ast-utils");
 //------------------------------------------------------------------------------
 
 const QUOTE_SETTINGS = {
-    "prefer-double": {
-        quote: "\"",
-        description: "singlequote",
-        convert(str) {
-            return str.replace(/'/gu, "\"");
-        }
+  "prefer-double": {
+    quote: '"',
+    description: "singlequote",
+    convert(str) {
+      return str.replace(/'/gu, '"');
     },
-    "prefer-single": {
-        quote: "'",
-        description: "doublequote",
-        convert(str) {
-            return str.replace(/"/gu, "'");
-        }
-    }
+  },
+  "prefer-single": {
+    quote: "'",
+    description: "doublequote",
+    convert(str) {
+      return str.replace(/"/gu, "'");
+    },
+  },
 };
 
 //------------------------------------------------------------------------------
@@ -37,59 +37,70 @@ const QUOTE_SETTINGS = {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "layout",
+  meta: {
+    type: "layout",
 
-        docs: {
-            description: "enforce the consistent use of either double or single quotes in JSX attributes",
-            category: "Stylistic Issues",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/jsx-quotes"
-        },
-
-        fixable: "whitespace",
-
-        schema: [
-            {
-                enum: ["prefer-single", "prefer-double"]
-            }
-        ],
-        messages: {
-            unexpected: "Unexpected usage of {{description}}."
-        }
+    docs: {
+      description:
+        "enforce the consistent use of either double or single quotes in JSX attributes",
+      category: "Stylistic Issues",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/jsx-quotes",
     },
 
-    create(context) {
-        const quoteOption = context.options[0] || "prefer-double",
-            setting = QUOTE_SETTINGS[quoteOption];
+    fixable: "whitespace",
 
-        /**
-         * Checks if the given string literal node uses the expected quotes
-         * @param {ASTNode} node - A string literal node.
-         * @returns {boolean} Whether or not the string literal used the expected quotes.
-         * @public
-         */
-        function usesExpectedQuotes(node) {
-            return node.value.indexOf(setting.quote) !== -1 || astUtils.isSurroundedBy(node.raw, setting.quote);
-        }
+    schema: [
+      {
+        enum: ["prefer-single", "prefer-double"],
+      },
+    ],
+    messages: {
+      unexpected: "Unexpected usage of {{description}}.",
+    },
+  },
 
-        return {
-            JSXAttribute(node) {
-                const attributeValue = node.value;
+  create(context) {
+    const quoteOption = context.options[0] || "prefer-double",
+      setting = QUOTE_SETTINGS[quoteOption];
 
-                if (attributeValue && astUtils.isStringLiteral(attributeValue) && !usesExpectedQuotes(attributeValue)) {
-                    context.report({
-                        node: attributeValue,
-                        messageId: "unexpected",
-                        data: {
-                            description: setting.description
-                        },
-                        fix(fixer) {
-                            return fixer.replaceText(attributeValue, setting.convert(attributeValue.raw));
-                        }
-                    });
-                }
-            }
-        };
+    /**
+     * Checks if the given string literal node uses the expected quotes
+     * @param {ASTNode} node - A string literal node.
+     * @returns {boolean} Whether or not the string literal used the expected quotes.
+     * @public
+     */
+    function usesExpectedQuotes(node) {
+      return (
+        node.value.indexOf(setting.quote) !== -1 ||
+        astUtils.isSurroundedBy(node.raw, setting.quote)
+      );
     }
+
+    return {
+      JSXAttribute(node) {
+        const attributeValue = node.value;
+
+        if (
+          attributeValue &&
+          astUtils.isStringLiteral(attributeValue) &&
+          !usesExpectedQuotes(attributeValue)
+        ) {
+          context.report({
+            node: attributeValue,
+            messageId: "unexpected",
+            data: {
+              description: setting.description,
+            },
+            fix(fixer) {
+              return fixer.replaceText(
+                attributeValue,
+                setting.convert(attributeValue.raw)
+              );
+            },
+          });
+        }
+      },
+    };
+  },
 };

@@ -1,11 +1,11 @@
-var baseFindIndex = require('./_baseFindIndex'),
-    baseIsNaN = require('./_baseIsNaN'),
-    strictLastIndexOf = require('./_strictLastIndexOf'),
-    toInteger = require('./toInteger');
+var baseFindIndex = require("./_baseFindIndex"),
+  baseIsNaN = require("./_baseIsNaN"),
+  strictLastIndexOf = require("./_strictLastIndexOf"),
+  toInteger = require("./toInteger");
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max,
-    nativeMin = Math.min;
+  nativeMin = Math.min;
 
 /**
  * This method is like `_.indexOf` except that it iterates over elements of
@@ -36,7 +36,8 @@ function lastIndexOf(array, value, fromIndex) {
   var index = length;
   if (fromIndex !== undefined) {
     index = toInteger(fromIndex);
-    index = index < 0 ? nativeMax(length + index, 0) : nativeMin(index, length - 1);
+    index =
+      index < 0 ? nativeMax(length + index, 0) : nativeMin(index, length - 1);
   }
   return value === value
     ? strictLastIndexOf(array, value, index)

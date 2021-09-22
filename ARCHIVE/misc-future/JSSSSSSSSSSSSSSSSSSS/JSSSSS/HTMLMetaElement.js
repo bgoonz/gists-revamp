@@ -10,14 +10,17 @@ function HTMLMetaElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLMetaElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLMetaElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLMetaElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLMetaElement, "prototype", {
   value: HTMLMetaElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLMetaElement.prototype, "name", {
@@ -36,14 +39,15 @@ Object.defineProperty(HTMLMetaElement.prototype, "name", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'name' property on 'HTMLMetaElement': The provided value"
+      context:
+        "Failed to set the 'name' property on 'HTMLMetaElement': The provided value",
     });
 
     this.setAttribute("name", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMetaElement.prototype, "httpEquiv", {
@@ -62,14 +66,15 @@ Object.defineProperty(HTMLMetaElement.prototype, "httpEquiv", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'httpEquiv' property on 'HTMLMetaElement': The provided value"
+      context:
+        "Failed to set the 'httpEquiv' property on 'HTMLMetaElement': The provided value",
     });
 
     this.setAttribute("http-equiv", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMetaElement.prototype, "content", {
@@ -88,14 +93,15 @@ Object.defineProperty(HTMLMetaElement.prototype, "content", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'content' property on 'HTMLMetaElement': The provided value"
+      context:
+        "Failed to set the 'content' property on 'HTMLMetaElement': The provided value",
     });
 
     this.setAttribute("content", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMetaElement.prototype, "scheme", {
@@ -114,21 +120,22 @@ Object.defineProperty(HTMLMetaElement.prototype, "scheme", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'scheme' property on 'HTMLMetaElement': The provided value"
+      context:
+        "Failed to set the 'scheme' property on 'HTMLMetaElement': The provided value",
     });
 
     this.setAttribute("scheme", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLMetaElement.prototype, Symbol.toStringTag, {
   value: "HTMLMetaElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -194,7 +201,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -205,8 +212,8 @@ const iface = {
   },
   interface: HTMLMetaElement,
   expose: {
-    Window: { HTMLMetaElement }
-  }
+    Window: { HTMLMetaElement },
+  },
 }; // iface
 module.exports = iface;
 

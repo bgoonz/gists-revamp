@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -17,7 +17,6 @@ class Hub {
   buildError(node, msg, Error = TypeError) {
     return new Error(msg);
   }
-
 }
 
 exports.default = Hub;

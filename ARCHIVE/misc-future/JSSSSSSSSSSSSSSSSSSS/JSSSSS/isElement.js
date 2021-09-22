@@ -1,5 +1,5 @@
-var isObjectLike = require('./isObjectLike'),
-    isPlainObject = require('./isPlainObject');
+var isObjectLike = require("./isObjectLike"),
+  isPlainObject = require("./isPlainObject");
 
 /**
  * Checks if `value` is likely a DOM element.

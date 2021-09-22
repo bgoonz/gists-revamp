@@ -1,17 +1,17 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = isModule;
 
 function isModule(path) {
-  const {
-    sourceType
-  } = path.node;
+  const { sourceType } = path.node;
 
   if (sourceType !== "module" && sourceType !== "script") {
-    throw path.buildCodeFrameError(`Unknown sourceType "${sourceType}", cannot transform.`);
+    throw path.buildCodeFrameError(
+      `Unknown sourceType "${sourceType}", cannot transform.`
+    );
   }
 
   return path.node.sourceType === "module";

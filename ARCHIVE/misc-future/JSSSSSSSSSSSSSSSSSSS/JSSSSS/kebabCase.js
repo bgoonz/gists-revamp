@@ -1,4 +1,4 @@
-var createCompounder = require('./_createCompounder');
+var createCompounder = require("./_createCompounder");
 
 /**
  * Converts `string` to
@@ -21,8 +21,8 @@ var createCompounder = require('./_createCompounder');
  * _.kebabCase('__FOO_BAR__');
  * // => 'foo-bar'
  */
-var kebabCase = createCompounder(function(result, word, index) {
-  return result + (index ? '-' : '') + word.toLowerCase();
+var kebabCase = createCompounder(function (result, word, index) {
+  return result + (index ? "-" : "") + word.toLowerCase();
 });
 
 module.exports = kebabCase;

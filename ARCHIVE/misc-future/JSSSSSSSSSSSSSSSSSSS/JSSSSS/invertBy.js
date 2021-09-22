@@ -1,5 +1,5 @@
-var baseIteratee = require('./_baseIteratee'),
-    createInverter = require('./_createInverter');
+var baseIteratee = require("./_baseIteratee"),
+  createInverter = require("./_createInverter");
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -40,9 +40,8 @@ var nativeObjectToString = objectProto.toString;
  * });
  * // => { 'group1': ['a', 'c'], 'group2': ['b'] }
  */
-var invertBy = createInverter(function(result, value, key) {
-  if (value != null &&
-      typeof value.toString != 'function') {
+var invertBy = createInverter(function (result, value, key) {
+  if (value != null && typeof value.toString != "function") {
     value = nativeObjectToString.call(value);
   }
 

@@ -10,14 +10,17 @@ function HTMLTitleElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTitleElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTitleElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTitleElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTitleElement, "prototype", {
   value: HTMLTitleElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLTitleElement.prototype, "text", {
@@ -35,21 +38,22 @@ Object.defineProperty(HTMLTitleElement.prototype, "text", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'text' property on 'HTMLTitleElement': The provided value"
+      context:
+        "Failed to set the 'text' property on 'HTMLTitleElement': The provided value",
     });
 
     this[impl]["text"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTitleElement.prototype, Symbol.toStringTag, {
   value: "HTMLTitleElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -115,7 +119,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -126,8 +130,8 @@ const iface = {
   },
   interface: HTMLTitleElement,
   expose: {
-    Window: { HTMLTitleElement }
-  }
+    Window: { HTMLTitleElement },
+  },
 }; // iface
 module.exports = iface;
 

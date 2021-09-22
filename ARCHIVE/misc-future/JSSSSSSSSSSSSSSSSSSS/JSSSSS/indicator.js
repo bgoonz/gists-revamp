@@ -1,40 +1,40 @@
-import React from "react"
-import Portal from "./portal"
-import Style from "./style"
-import { isLoadingIndicatorEnabled } from "$virtual/loading-indicator"
-import { debugLog } from "../debug-log"
+import React from "react";
+import Portal from "./portal";
+import Style from "./style";
+import { isLoadingIndicatorEnabled } from "$virtual/loading-indicator";
+import { debugLog } from "../debug-log";
 
 if (typeof window === `undefined`) {
   throw new Error(
     `Loading indicator should never be imported in code that doesn't target only browsers`
-  )
+  );
 }
 
 if (module.hot) {
   module.hot.accept(`$virtual/loading-indicator`, () => {
     // isLoadingIndicatorEnabled is imported with ES import so no need
     // for dedicated handling as HMR just replace it in that case
-  })
+  });
 }
 
 // HMR can rerun this, so check if it was set before
 // we also set it on window and not just in module scope because of HMR resetting
 // module scope
 if (typeof window.___gatsbyDidShowLoadingIndicatorBefore === `undefined`) {
-  window.___gatsbyDidShowLoadingIndicatorBefore = false
+  window.___gatsbyDidShowLoadingIndicatorBefore = false;
 }
 
 export function Indicator({ visible = true }) {
   if (!isLoadingIndicatorEnabled()) {
-    return null
+    return null;
   }
 
   if (!window.___gatsbyDidShowLoadingIndicatorBefore) {
     // not ideal to this in render function, but that's just console info
     debugLog(
       `A loading indicator is displayed in-browser whenever content is being requested upon navigation (Query On Demand).\n\nYou can disable the loading indicator for your current session by visiting ${window.location.origin}/___loading-indicator/disable`
-    )
-    window.___gatsbyDidShowLoadingIndicatorBefore = true
+    );
+    window.___gatsbyDidShowLoadingIndicatorBefore = true;
   }
 
   return (
@@ -61,5 +61,5 @@ export function Indicator({ visible = true }) {
         </div>
       </div>
     </Portal>
-  )
+  );
 }

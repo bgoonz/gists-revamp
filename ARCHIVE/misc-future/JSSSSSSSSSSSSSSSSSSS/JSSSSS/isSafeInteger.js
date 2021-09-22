@@ -1,4 +1,4 @@
-var isInteger = require('./isInteger');
+var isInteger = require("./isInteger");
 
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
@@ -31,7 +31,9 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * // => false
  */
 function isSafeInteger(value) {
-  return isInteger(value) && value >= -MAX_SAFE_INTEGER && value <= MAX_SAFE_INTEGER;
+  return (
+    isInteger(value) && value >= -MAX_SAFE_INTEGER && value <= MAX_SAFE_INTEGER
+  );
 }
 
 module.exports = isSafeInteger;

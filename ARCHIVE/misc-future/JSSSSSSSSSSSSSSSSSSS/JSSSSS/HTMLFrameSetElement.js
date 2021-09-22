@@ -11,14 +11,17 @@ function HTMLFrameSetElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLFrameSetElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLFrameSetElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLFrameSetElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLFrameSetElement, "prototype", {
   value: HTMLFrameSetElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "cols", {
@@ -37,14 +40,15 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "cols", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'cols' property on 'HTMLFrameSetElement': The provided value"
+      context:
+        "Failed to set the 'cols' property on 'HTMLFrameSetElement': The provided value",
     });
 
     this.setAttribute("cols", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "rows", {
@@ -63,14 +67,15 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "rows", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'rows' property on 'HTMLFrameSetElement': The provided value"
+      context:
+        "Failed to set the 'rows' property on 'HTMLFrameSetElement': The provided value",
     });
 
     this.setAttribute("rows", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onafterprint", {
@@ -93,7 +98,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onafterprint", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onbeforeprint", {
@@ -116,7 +121,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onbeforeprint", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onbeforeunload", {
@@ -139,7 +144,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onbeforeunload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onhashchange", {
@@ -162,7 +167,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onhashchange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onlanguagechange", {
@@ -185,7 +190,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onlanguagechange", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onmessage", {
@@ -208,7 +213,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onmessage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onmessageerror", {
@@ -231,7 +236,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onmessageerror", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onoffline", {
@@ -254,7 +259,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onoffline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "ononline", {
@@ -277,7 +282,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "ononline", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onpagehide", {
@@ -300,7 +305,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onpagehide", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onpageshow", {
@@ -323,7 +328,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onpageshow", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onpopstate", {
@@ -346,7 +351,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onpopstate", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onrejectionhandled", {
@@ -369,7 +374,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onrejectionhandled", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onstorage", {
@@ -392,7 +397,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onstorage", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onunhandledrejection", {
@@ -415,7 +420,7 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onunhandledrejection", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, "onunload", {
@@ -438,14 +443,14 @@ Object.defineProperty(HTMLFrameSetElement.prototype, "onunload", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLFrameSetElement.prototype, Symbol.toStringTag, {
   value: "HTMLFrameSetElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -511,7 +516,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -522,8 +527,8 @@ const iface = {
   },
   interface: HTMLFrameSetElement,
   expose: {
-    Window: { HTMLFrameSetElement }
-  }
+    Window: { HTMLFrameSetElement },
+  },
 }; // iface
 module.exports = iface;
 

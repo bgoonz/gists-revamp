@@ -1,6 +1,6 @@
-var baseIsRegExp = require('./_baseIsRegExp'),
-    baseUnary = require('./_baseUnary'),
-    nodeUtil = require('./_nodeUtil');
+var baseIsRegExp = require("./_baseIsRegExp"),
+  baseUnary = require("./_baseUnary"),
+  nodeUtil = require("./_nodeUtil");
 
 /* Node.js helper references. */
 var nodeIsRegExp = nodeUtil && nodeUtil.isRegExp;

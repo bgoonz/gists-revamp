@@ -1,19 +1,25 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
 var _lodash = _interopRequireDefault(require("lodash"));
 
-var _getBorderCharacters = _interopRequireDefault(require("./getBorderCharacters"));
+var _getBorderCharacters = _interopRequireDefault(
+  require("./getBorderCharacters")
+);
 
 var _validateConfig = _interopRequireDefault(require("./validateConfig"));
 
-var _calculateMaximumColumnWidthIndex = _interopRequireDefault(require("./calculateMaximumColumnWidthIndex"));
+var _calculateMaximumColumnWidthIndex = _interopRequireDefault(
+  require("./calculateMaximumColumnWidthIndex")
+);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * Merges user provided border characters with the default border ("honeywell") characters.
@@ -22,7 +28,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @returns {Object}
  */
 const makeBorder = (border = {}) => {
-  return Object.assign({}, (0, _getBorderCharacters.default)('honeywell'), border);
+  return Object.assign(
+    {},
+    (0, _getBorderCharacters.default)("honeywell"),
+    border
+  );
 };
 /**
  * Creates a configuration for every column using default
@@ -34,23 +44,27 @@ const makeBorder = (border = {}) => {
  * @returns {Object}
  */
 
-
 const makeColumns = (rows, columns = {}, columnDefault = {}) => {
-  const maximumColumnWidthIndex = (0, _calculateMaximumColumnWidthIndex.default)(rows);
+  const maximumColumnWidthIndex = (0,
+  _calculateMaximumColumnWidthIndex.default)(rows);
 
-  _lodash.default.times(rows[0].length, index => {
+  _lodash.default.times(rows[0].length, (index) => {
     if (_lodash.default.isUndefined(columns[index])) {
       columns[index] = {};
     }
 
-    columns[index] = Object.assign({
-      alignment: 'left',
-      paddingLeft: 1,
-      paddingRight: 1,
-      truncate: Infinity,
-      width: maximumColumnWidthIndex[index],
-      wrapWord: false
-    }, columnDefault, columns[index]);
+    columns[index] = Object.assign(
+      {
+        alignment: "left",
+        paddingLeft: 1,
+        paddingRight: 1,
+        truncate: Infinity,
+        width: maximumColumnWidthIndex[index],
+        wrapWord: false,
+      },
+      columnDefault,
+      columns[index]
+    );
   });
 
   return columns;
@@ -64,9 +78,8 @@ const makeColumns = (rows, columns = {}, columnDefault = {}) => {
  * @returns {Object}
  */
 
-
 const makeConfig = (rows, userConfig = {}) => {
-  (0, _validateConfig.default)('config.json', userConfig);
+  (0, _validateConfig.default)("config.json", userConfig);
 
   const config = _lodash.default.cloneDeep(userConfig);
 
@@ -75,8 +88,8 @@ const makeConfig = (rows, userConfig = {}) => {
 
   if (!config.drawHorizontalLine) {
     /**
-         * @returns {boolean}
-         */
+     * @returns {boolean}
+     */
     config.drawHorizontalLine = () => {
       return true;
     };

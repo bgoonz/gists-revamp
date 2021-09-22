@@ -10,14 +10,17 @@ function HTMLTableRowElement() {
   throw new TypeError("Illegal constructor");
 }
 
-Object.setPrototypeOf(HTMLTableRowElement.prototype, HTMLElement.interface.prototype);
+Object.setPrototypeOf(
+  HTMLTableRowElement.prototype,
+  HTMLElement.interface.prototype
+);
 Object.setPrototypeOf(HTMLTableRowElement, HTMLElement.interface);
 
 Object.defineProperty(HTMLTableRowElement, "prototype", {
   value: HTMLTableRowElement.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 HTMLTableRowElement.prototype.insertCell = function insertCell() {
@@ -29,7 +32,8 @@ HTMLTableRowElement.prototype.insertCell = function insertCell() {
     let curArg = arguments[0];
     if (curArg !== undefined) {
       curArg = conversions["long"](curArg, {
-        context: "Failed to execute 'insertCell' on 'HTMLTableRowElement': parameter 1"
+        context:
+          "Failed to execute 'insertCell' on 'HTMLTableRowElement': parameter 1",
       });
     } else {
       curArg = -1;
@@ -55,7 +59,8 @@ HTMLTableRowElement.prototype.deleteCell = function deleteCell(index) {
   {
     let curArg = arguments[0];
     curArg = conversions["long"](curArg, {
-      context: "Failed to execute 'deleteCell' on 'HTMLTableRowElement': parameter 1"
+      context:
+        "Failed to execute 'deleteCell' on 'HTMLTableRowElement': parameter 1",
     });
     args.push(curArg);
   }
@@ -72,7 +77,7 @@ Object.defineProperty(HTMLTableRowElement.prototype, "rowIndex", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableRowElement.prototype, "sectionRowIndex", {
@@ -85,7 +90,7 @@ Object.defineProperty(HTMLTableRowElement.prototype, "sectionRowIndex", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableRowElement.prototype, "cells", {
@@ -100,7 +105,7 @@ Object.defineProperty(HTMLTableRowElement.prototype, "cells", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableRowElement.prototype, "align", {
@@ -119,14 +124,15 @@ Object.defineProperty(HTMLTableRowElement.prototype, "align", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'align' property on 'HTMLTableRowElement': The provided value"
+      context:
+        "Failed to set the 'align' property on 'HTMLTableRowElement': The provided value",
     });
 
     this.setAttribute("align", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableRowElement.prototype, "ch", {
@@ -145,14 +151,15 @@ Object.defineProperty(HTMLTableRowElement.prototype, "ch", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'ch' property on 'HTMLTableRowElement': The provided value"
+      context:
+        "Failed to set the 'ch' property on 'HTMLTableRowElement': The provided value",
     });
 
     this.setAttribute("char", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableRowElement.prototype, "chOff", {
@@ -171,14 +178,15 @@ Object.defineProperty(HTMLTableRowElement.prototype, "chOff", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'chOff' property on 'HTMLTableRowElement': The provided value"
+      context:
+        "Failed to set the 'chOff' property on 'HTMLTableRowElement': The provided value",
     });
 
     this.setAttribute("charoff", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableRowElement.prototype, "vAlign", {
@@ -197,14 +205,15 @@ Object.defineProperty(HTMLTableRowElement.prototype, "vAlign", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'vAlign' property on 'HTMLTableRowElement': The provided value"
+      context:
+        "Failed to set the 'vAlign' property on 'HTMLTableRowElement': The provided value",
     });
 
     this.setAttribute("vAlign", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableRowElement.prototype, "bgColor", {
@@ -223,22 +232,23 @@ Object.defineProperty(HTMLTableRowElement.prototype, "bgColor", {
     }
 
     V = conversions["DOMString"](V, {
-      context: "Failed to set the 'bgColor' property on 'HTMLTableRowElement': The provided value",
-      treatNullAsEmptyString: true
+      context:
+        "Failed to set the 'bgColor' property on 'HTMLTableRowElement': The provided value",
+      treatNullAsEmptyString: true,
     });
 
     this.setAttribute("bgColor", V);
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLTableRowElement.prototype, Symbol.toStringTag, {
   value: "HTMLTableRowElement",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -304,7 +314,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -315,8 +325,8 @@ const iface = {
   },
   interface: HTMLTableRowElement,
   expose: {
-    Window: { HTMLTableRowElement }
-  }
+    Window: { HTMLTableRowElement },
+  },
 }; // iface
 module.exports = iface;
 

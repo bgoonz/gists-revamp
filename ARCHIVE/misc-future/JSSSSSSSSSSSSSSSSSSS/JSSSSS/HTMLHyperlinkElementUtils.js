@@ -13,7 +13,7 @@ Object.defineProperty(HTMLHyperlinkElementUtils, "prototype", {
   value: HTMLHyperlinkElementUtils.prototype,
   writable: false,
   enumerable: false,
-  configurable: false
+  configurable: false,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "href", {
@@ -31,14 +31,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "href", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'href' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'href' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["href"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 HTMLHyperlinkElementUtils.prototype.toString = function toString() {
@@ -58,7 +59,7 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "origin", {
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "protocol", {
@@ -76,14 +77,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "protocol", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'protocol' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'protocol' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["protocol"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "username", {
@@ -101,14 +103,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "username", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'username' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'username' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["username"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "password", {
@@ -126,14 +129,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "password", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'password' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'password' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["password"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "host", {
@@ -151,14 +155,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "host", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'host' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'host' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["host"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "hostname", {
@@ -176,14 +181,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "hostname", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'hostname' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'hostname' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["hostname"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "port", {
@@ -201,14 +207,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "port", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'port' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'port' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["port"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "pathname", {
@@ -226,14 +233,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "pathname", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'pathname' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'pathname' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["pathname"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "search", {
@@ -251,14 +259,15 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "search", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'search' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'search' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["search"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "hash", {
@@ -276,21 +285,22 @@ Object.defineProperty(HTMLHyperlinkElementUtils.prototype, "hash", {
     }
 
     V = conversions["USVString"](V, {
-      context: "Failed to set the 'hash' property on 'HTMLHyperlinkElementUtils': The provided value"
+      context:
+        "Failed to set the 'hash' property on 'HTMLHyperlinkElementUtils': The provided value",
     });
 
     this[impl]["hash"] = V;
   },
 
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 
 Object.defineProperty(HTMLHyperlinkElementUtils.prototype, Symbol.toStringTag, {
   value: "HTMLHyperlinkElementUtils",
   writable: false,
   enumerable: false,
-  configurable: true
+  configurable: true,
 });
 
 const iface = {
@@ -330,7 +340,9 @@ const iface = {
     if (module.exports.is(obj)) {
       return utils.implForWrapper(obj);
     }
-    throw new TypeError(`${context} is not of type 'HTMLHyperlinkElementUtils'.`);
+    throw new TypeError(
+      `${context} is not of type 'HTMLHyperlinkElementUtils'.`
+    );
   },
 
   create(constructorArgs, privateData) {
@@ -354,7 +366,7 @@ const iface = {
       value: new Impl.implementation(constructorArgs, privateData),
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     obj[impl][utils.wrapperSymbol] = obj;
@@ -364,7 +376,7 @@ const iface = {
     return obj;
   },
   interface: HTMLHyperlinkElementUtils,
-  expose: {}
+  expose: {},
 }; // iface
 module.exports = iface;
 
