@@ -1,12 +1,12 @@
-var store = createStore({
+const store = createStore({
   // The same as #componentDidMount
-  initialize: function () {
+  initialize() {
     this.listenTo(actionSet.a); // (actionSet.a, this.onA)
     this.listenToAll(actionSet2);
   },
 
   // Event listenter
-  onA: function (data) {
+  onA(data) {
     // the same as #setState
     this.set({
       a: this.state.a.concat(data.item),
@@ -15,7 +15,7 @@ var store = createStore({
   },
 
   // The same as #getInitialState
-  defaults: function () {
+  defaults() {
     return {
       a: [],
       b: 2,
@@ -23,7 +23,7 @@ var store = createStore({
   },
 
   // Same as #render() but for data
-  emit: function () {
+  emit() {
     return {
       a: this.state.a,
       isEmpty: this.state.a.length === 0,

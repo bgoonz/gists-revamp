@@ -1,13 +1,14 @@
-const { readdirSync, readFileSync } = require("fs");
-const { join, parse } = require("path");
-const ts = require("typescript");
+import {readdirSync, readFileSync} from "fs";
+import {join, parse} from "path";
+import ts from "typescript";
 
 const fileToParse = join(__dirname, "../", "src", "index.ts");
 let program = ts.createProgram([fileToParse], {});
 program.getTypeChecker({});
 
 const sourceFile = program.getSourceFile(fileToParse);
-let optionsInterface, mainExport;
+let optionsInterface;
+let mainExport;
 
 ts.forEachChild(sourceFile, (node) => {
   if (

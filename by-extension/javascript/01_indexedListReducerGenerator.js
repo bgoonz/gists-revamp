@@ -63,7 +63,7 @@ export default function indexedListReducerGenerator(
 ) {
   const byId = byIdReducerGenerator(itemReducer, initialState.byId);
 
-  return function (state = initialState, action) {
+  return (state = initialState, action) => {
     switch (action.type) {
       case LIST_UPSERT:
       case LIST_DELETE: {
