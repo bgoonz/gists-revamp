@@ -16,8 +16,9 @@
 # # print(firstDuplicate(arr))
 
 
-arr = [1,2,3,4,5,6,7,8,8]
 
+arr = [1,2,3,4,5,6,7,8]
+arr2 = [1,2,3,4,5,6,7,8,8]
 def firstDuplicate(a):
     nums = set()
     for i in range(len(a)):
