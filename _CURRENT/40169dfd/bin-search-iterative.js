@@ -1,4 +1,3 @@
-
 // Returns simply true/false for presence
 function binarySearchIterative(array, target) {
   // Get a reference to our lower and upper bounds that we would like to search
