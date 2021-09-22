@@ -2,7 +2,7 @@
  * @flow
  */
 
-import React from 'react';
+import React from "react";
 import {
   AppRegistry,
   AsyncStorage,
@@ -10,56 +10,40 @@ import {
   StyleSheet,
   Text,
   View,
-} from 'react-native';
+} from "react-native";
 import {
   NavigationActions,
   addNavigationHelpers,
   StackNavigator,
-} from 'react-navigation';
-import {
-  Provider,
-  connect,
-} from 'react-redux';
-import {
-  createStore,
-  combineReducers,
-} from 'redux';
-import {
-  persistStore,
-  autoRehydrate,
-} from 'redux-persist';
+} from "react-navigation";
+import { Provider, connect } from "react-redux";
+import { createStore, combineReducers } from "redux";
+import { persistStore, autoRehydrate } from "redux-persist";
 
 const ProfileScreen = ({ navigation }) => (
   <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Profile Screen
-    </Text>
+    <Text style={styles.welcome}>Profile Screen</Text>
   </View>
 );
 ProfileScreen.navigationOptions = {
-  title: 'Profile',
+  title: "Profile",
 };
 
 const LoginScreen = ({ navigation }) => (
   <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Screen A
-    </Text>
-    <Text style={styles.instructions}>
-      This is great
-    </Text>
+    <Text style={styles.welcome}>Screen A</Text>
+    <Text style={styles.instructions}>This is great</Text>
     <Button
-      onPress={() => navigation.dispatch({ type: 'Login' })}
+      onPress={() => navigation.dispatch({ type: "Login" })}
       title="Log in"
     />
   </View>
 );
 LoginScreen.navigationOptions = {
-  title: 'Log In',
+  title: "Log In",
 };
 
-
-const LoginStatusMessage = connect(state => ({
+const LoginStatusMessage = connect((state) => ({
   isLoggedIn: state.auth.isLoggedIn,
 }))(({ isLoggedIn, dispatch }) => {
   if (!isLoggedIn) {
@@ -67,25 +51,28 @@ const LoginStatusMessage = connect(state => ({
   }
   return (
     <View>
-      <Text style={styles.welcome}>
-        {'You are "logged in" right now'}
-      </Text>
+      <Text style={styles.welcome}>{'You are "logged in" right now'}</Text>
       <Button
-        onPress={() => dispatch(NavigationActions.navigate({ routeName: 'Profile' }))}
+        onPress={() =>
+          dispatch(NavigationActions.navigate({ routeName: "Profile" }))
+        }
         title="Profile"
       />
     </View>
   );
 });
 
-const AuthButton = connect(state => ({
-  isLoggedIn: state.auth.isLoggedIn,
-}), dispatch => ({
-  logout: () => dispatch({ type: 'Logout' }),
-  login: () => dispatch(NavigationActions.navigate({ routeName: 'Login' })),
-}))(({ logout, login, isLoggedIn }) => (
+const AuthButton = connect(
+  (state) => ({
+    isLoggedIn: state.auth.isLoggedIn,
+  }),
+  (dispatch) => ({
+    logout: () => dispatch({ type: "Logout" }),
+    login: () => dispatch(NavigationActions.navigate({ routeName: "Login" })),
+  })
+)(({ logout, login, isLoggedIn }) => (
   <Button
-    title={isLoggedIn ? 'Log Out' : 'Log In'}
+    title={isLoggedIn ? "Log Out" : "Log In"}
     onPress={isLoggedIn ? logout : login}
   />
 ));
@@ -97,7 +84,7 @@ const MainScreen = () => (
   </View>
 );
 MainScreen.navigationOptions = {
-  title: 'Home Screen',
+  title: "Home Screen",
 };
 
 const AppNavigator = StackNavigator({
@@ -106,7 +93,7 @@ const AppNavigator = StackNavigator({
   Profile: { screen: ProfileScreen },
 });
 
-const AppWithNavigationState = connect(state => ({
+const AppWithNavigationState = connect((state) => ({
   nav: state.nav,
 }))(({ dispatch, nav }) => (
   <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
@@ -115,8 +102,8 @@ const AppWithNavigationState = connect(state => ({
 const initialNavState = {
   index: 1,
   routes: [
-    { key: 'InitA', routeName: 'Main' },
-    { key: 'InitB', routeName: 'Login' },
+    { key: "InitA", routeName: "Main" },
+    { key: "InitB", routeName: "Login" },
   ],
 };
 
@@ -124,19 +111,25 @@ const initialAuthState = { isLoggedIn: false };
 
 const AppReducer = combineReducers({
   nav: (state = initialNavState, action) => {
-    if (action.type === 'Login') {
-      return AppNavigator.router.getStateForAction(NavigationActions.back(), state);
+    if (action.type === "Login") {
+      return AppNavigator.router.getStateForAction(
+        NavigationActions.back(),
+        state
+      );
     }
-    if (action.type === 'Logout') {
-      return AppNavigator.router.getStateForAction(NavigationActions.navigate({ routeName: 'Login' }), state);
+    if (action.type === "Logout") {
+      return AppNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: "Login" }),
+        state
+      );
     }
     return AppNavigator.router.getStateForAction(action, state);
   },
   auth: (state = initialAuthState, action) => {
-    if (action.type === 'Login') {
+    if (action.type === "Login") {
       return { ...state, isLoggedIn: true };
     }
-    if (action.type === 'Logout') {
+    if (action.type === "Logout") {
       return { ...state, isLoggedIn: false };
     }
     return state;
@@ -162,20 +155,20 @@ class ReduxExampleApp extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF",
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: "center",
     margin: 10,
   },
   instructions: {
-    textAlign: 'center',
-    color: '#333333',
+    textAlign: "center",
+    color: "#333333",
     marginBottom: 5,
   },
 });
 
-AppRegistry.registerComponent('ReduxExample', () => ReduxExampleApp);
+AppRegistry.registerComponent("ReduxExample", () => ReduxExampleApp);
