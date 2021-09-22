@@ -1,178 +1,47 @@
 **SYSTEMS**  
-<img src="docs/icons/windows.svg" alt="Windows icon" title="Windows">
-<img src="docs/icons/powershell.svg" alt="Powershell icon" title="Powershell">
-<img src="docs/icons/linux.svg" alt="Linux icon" title="Linux">
-<img src="docs/icons/ubuntu.svg" alt="Ubuntu icon" title="Ubuntu">
-<img src="docs/icons/gnubash.svg" alt="GNU Bash icon" title="GNU Bash">
-<img src="docs/icons/ios.svg" alt="iOS icon" title="iOS">
-<img src="docs/icons/android.svg" alt="Android icon" title="Android">
+![Windows icon](docs/icons/windows.svg "Windows") ![Powershell icon](docs/icons/powershell.svg "Powershell") ![Linux icon](docs/icons/linux.svg "Linux") ![Ubuntu icon](docs/icons/ubuntu.svg "Ubuntu") ![GNU Bash icon](docs/icons/gnubash.svg "GNU Bash") ![iOS icon](docs/icons/ios.svg "iOS") ![Android icon](docs/icons/android.svg "Android")
 
 **BROWSERS**  
-<img src="docs/icons/googlechrome.svg" alt="Google Chrome icon" title="Google Chrome">
-<img src="docs/icons/firefoxbrowser.svg" alt="Firefox Browser icon" title="Firefox Browser">
-<img src="docs/icons/internetexplorer.svg" alt="Internet Explorer icon" title="Internet Explorer">
-<img src="docs/icons/microsoftedge.svg" alt="Microsoft Edge icon" title="Microsoft Edge">
-<img src="docs/icons/safari.svg" alt="Safari icon" title="Safari">
-<img src="docs/icons/opera.svg" alt="Opera icon" title="Opera">
+![Google Chrome icon](docs/icons/googlechrome.svg "Google Chrome") ![Firefox Browser icon](docs/icons/firefoxbrowser.svg "Firefox Browser") ![Internet Explorer icon](docs/icons/internetexplorer.svg "Internet Explorer") ![Microsoft Edge icon](docs/icons/microsoftedge.svg "Microsoft Edge") ![Safari icon](docs/icons/safari.svg "Safari") ![Opera icon](docs/icons/opera.svg "Opera")
 
 **LANGUAGES**  
-<img src="docs/icons/html5.svg" alt="HTML5 icon" title="HTML5">
-<img src="docs/icons/css3.svg" alt="CSS3 icon" title="CSS3">
-<img src="docs/icons/sass.svg" alt="SASS icon" title="SASS">
-<img src="docs/icons/python.svg" alt="Python icon" title="Python">
-<img src="docs/icons/javascript.svg" alt="JavaScript icon" title="JavaScript">
-<img src="docs/icons/typescript.svg" alt="TypeScript icon" title="TypeScript">
-<img src="docs/icons/ruby.svg" alt="Ruby icon" title="Ruby">
-<img src="docs/icons/rubyonrails.svg" alt="Ruby On Rails icon" title="Ruby On Rails">
-<img src="docs/icons/c.svg" alt="C icon" title="C">
-<img src="docs/icons/cplusplus.svg" alt="C++ icon" title="C++">
-<img src="docs/icons/csharp.svg" alt="C# icon" title="C#">
-<img src="docs/icons/java.svg" alt="Java icon" title="Java">
-<img src="docs/icons/kotlin.svg" alt="Kotlin icon" title="Kotlin">
-<img src="docs/icons/swift.svg" alt="Swift icon" title="Swift">
-<img src="docs/icons/go.svg" alt="Go icon" title="Go">
-<img src="docs/icons/php.svg" alt="PHP icon" title="PHP">
-<img src="docs/icons/dart.svg" alt="Dart icon" title="Dart">
-<img src="docs/icons/perl.svg" alt="Perl icon" title="Perl">
-<img src="docs/icons/scala.svg" alt="Scala icon" title="Scala">
-<img src="docs/icons/rust.svg" alt="Rust icon" title="Rust">
-<img src="docs/icons/json.svg" alt="JSON icon" title="JSON">
-<img src="docs/icons/markdown.svg" alt="Markdown icon" title="Markdown">
+![HTML5 icon](docs/icons/html5.svg "HTML5") ![CSS3 icon](docs/icons/css3.svg "CSS3") ![SASS icon](docs/icons/sass.svg "SASS") ![Python icon](docs/icons/python.svg "Python") ![JavaScript icon](docs/icons/javascript.svg "JavaScript") ![TypeScript icon](docs/icons/typescript.svg "TypeScript") ![Ruby icon](docs/icons/ruby.svg "Ruby") ![Ruby On Rails icon](docs/icons/rubyonrails.svg "Ruby On Rails") ![C icon](docs/icons/c.svg "C") ![C++ icon](docs/icons/cplusplus.svg "C++") ![C\# icon](docs/icons/csharp.svg "C#") ![Java icon](docs/icons/java.svg "Java") ![Kotlin icon](docs/icons/kotlin.svg "Kotlin") ![Swift icon](docs/icons/swift.svg "Swift") ![Go icon](docs/icons/go.svg "Go") ![PHP icon](docs/icons/php.svg "PHP") ![Dart icon](docs/icons/dart.svg "Dart") ![Perl icon](docs/icons/perl.svg "Perl") ![Scala icon](docs/icons/scala.svg "Scala") ![Rust icon](docs/icons/rust.svg "Rust") ![JSON icon](docs/icons/json.svg "JSON") ![Markdown icon](docs/icons/markdown.svg "Markdown")
 
 **FRONTEND**  
-<img src="docs/icons/react.svg" alt="React icon" title="React">
-<img src="docs/icons/redux.svg" alt="Redux icon" title="Redux">
-<img src="docs/icons/reactrouter.svg" alt="React Router icon" title="React Router">
-<img src="docs/icons/jinja.svg" alt="Jinja2 icon" title="Jinja2">
-<img src="docs/icons/angular.svg" alt="Angular icon" title="Angular">
-<img src="docs/icons/angularjs.svg" alt="AngularJS icon" title="AngularJS">
-<img src="docs/icons/jquery.svg" alt="jQuery icon" title="jQuery">
-<img src="docs/icons/materialui.svg" alt="Material-UI icon" title="Material-UI">
-<img src="docs/icons/bootstrap.svg" alt="Bootstrap icon" title="Bootstrap">
-<img src="docs/icons/tailwindcss.svg" alt="Tailwind CSS icon" title="Tailwind CSS">
+![React icon](docs/icons/react.svg "React") ![Redux icon](docs/icons/redux.svg "Redux") ![React Router icon](docs/icons/reactrouter.svg "React Router") ![Jinja2 icon](docs/icons/jinja.svg "Jinja2") ![Angular icon](docs/icons/angular.svg "Angular") ![AngularJS icon](docs/icons/angularjs.svg "AngularJS") ![jQuery icon](docs/icons/jquery.svg "jQuery") ![Material-UI icon](docs/icons/materialui.svg "Material-UI") ![Bootstrap icon](docs/icons/bootstrap.svg "Bootstrap") ![Tailwind CSS icon](docs/icons/tailwindcss.svg "Tailwind CSS")
 
 **BACKEND**  
-<img src="docs/icons/express.svg" alt="Express icon" title="Express">
-<img src="docs/icons/nodejs.svg" alt="Node.js icon" title="Node.js">
-<img src="docs/icons/postgresql.svg" alt="PostgreSQL icon" title="PostgreSQL">
-<img src="docs/icons/mysql.svg" alt="MySQL icon" title="MySQL">
-<img src="docs/icons/sqlite.svg" alt="SQLite icon" title="SQLite">
-<img src="docs/icons/mongodb.svg" alt="MongoDB icon" title="MongoDB">
-<img src="docs/icons/flask.svg" alt="Flask icon" title="Flask">
-<img src="docs/icons/django.svg" alt="Django icon" title="Django">
+![Express icon](docs/icons/express.svg "Express") ![Node.js icon](docs/icons/nodejs.svg "Node.js") ![PostgreSQL icon](docs/icons/postgresql.svg "PostgreSQL") ![MySQL icon](docs/icons/mysql.svg "MySQL") ![SQLite icon](docs/icons/sqlite.svg "SQLite") ![MongoDB icon](docs/icons/mongodb.svg "MongoDB") ![Flask icon](docs/icons/flask.svg "Flask") ![Django icon](docs/icons/django.svg "Django")
 
 **IDES & TOOLS**  
-<img src="docs/icons/visualstudiocode.svg" alt="Visual Studio Code icon" title="Visual Studio Code">
-<img src="docs/icons/pycharm.svg" alt="PyCharm icon" title="PyCharm">
-<img src="docs/icons/eclipse.svg" alt="Eclipse icon" title="Eclipse">
-<img src="docs/icons/jetbrains.svg" alt="JetBrains icon" title="JetBrains">
-<img src="docs/icons/insomnia.svg" alt="Insomnia icon" title="Insomnia">
-<img src="docs/icons/postman.svg" alt="Postman icon" title="Postman">
-<img src="docs/icons/gitkraken.svg" alt="GitKraken icon" title="GitKraken">
+![Visual Studio Code icon](docs/icons/visualstudiocode.svg "Visual Studio Code") ![PyCharm icon](docs/icons/pycharm.svg "PyCharm") ![Eclipse icon](docs/icons/eclipse.svg "Eclipse") ![JetBrains icon](docs/icons/jetbrains.svg "JetBrains") ![Insomnia icon](docs/icons/insomnia.svg "Insomnia") ![Postman icon](docs/icons/postman.svg "Postman") ![GitKraken icon](docs/icons/gitkraken.svg "GitKraken")
 
 **GAME ENGINES**  
-<img src="docs/icons/renpy.svg" alt="Ren'Py icon" title="Ren'Py">
-<img src="docs/icons/stencyl.svg" alt="Stencyl icon" title="Stencyl">
-<img src="docs/icons/unity.svg" alt="Unity icon" title="Unity">
-<img src="docs/icons/scratch.svg" alt="Scratch icon" title="Scratch">
-<img src="docs/icons/unreal.svg" alt="Unreal icon" title="Unreal">
-<img src="docs/icons/godot.svg" alt="Godot Engine icon" title="Godot Engine">
-<img src="docs/icons/gamemaker.svg" alt="GameMaker icon" title="GameMaker">
+![Ren'Py icon](docs/icons/renpy.svg "Ren'Py") ![Stencyl icon](docs/icons/stencyl.svg "Stencyl") ![Unity icon](docs/icons/unity.svg "Unity") ![Scratch icon](docs/icons/scratch.svg "Scratch") ![Unreal icon](docs/icons/unreal.svg "Unreal") ![Godot Engine icon](docs/icons/godot.svg "Godot Engine") ![GameMaker icon](docs/icons/gamemaker.svg "GameMaker")
 
 **RESOURCES**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
 
 **SERVICES & PLATFORMS**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
 
 **GAME PLATFORMS**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
 
 **COLLABORATIVE**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
 
 **CREATIVE (VISUAL)**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
 
 **MICROSOFT**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
 
 **ADOBE**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
 
 **SOCIALS**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
 
 **OTHER**  
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
-<img src="docs/icons/.svg" alt=" icon" title="">
+![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg) ![ icon](docs/icons/.svg)
