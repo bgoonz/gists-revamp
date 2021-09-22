@@ -1,5 +1,4 @@
-Phresh ’n Clean
-===============
+# Phresh ’n Clean
 
 Wipe your hard drive clean and install your apps quickly.
 
@@ -13,8 +12,7 @@ Wipe your hard drive clean and install your apps quickly.
 
 [**Tasty Treats**](https://github.com/naoki-evan-hisamoto/phresh-n-clean/blob/master/README.md#tasty-treats) section will tell you some of our Liferay team members’ top picks for applications and extensions.
 
-Preparation
------------
+## Preparation
 
 The Preparation section will prevent you from losing important files, documents, and application keys upon reinstalling OSX. The hard drive is completely erased during this process and taking the time to back up files and deauthorizing applications will ensure you have zero regrets after your phresh install.
 
@@ -36,10 +34,9 @@ Your computer will be viewed as a new machine after the phresh install, which me
 > [Make Your Mac Feel Like New Again With a Fresh Install of OSX](https://fieldguide.gizmodo.com/make-your-mac-feel-like-new-again-with-a-fresh-install-1697926482)  
 > Information from [Field Guide—Gizmodo](https://fieldguide.gizmodo.com/make-your-mac-feel-like-new-again-with-a-fresh-install-1697926482)
 
-------------------------------------------------------------------------
+---
 
-Wipe + Reinstall
-----------------
+## Wipe + Reinstall
 
 The Wipe + Reinstall section will walk you through installing a phresh copy of OSX. When you are ready, you’ll erase your hard drive and install the latest version of OSX. Once you are at this point, double-check that all necessary files, documents, pictures, and videos are backed up and all applications are deauthorized (as mentioned in the previous steps) because there is no going back after this step.
 
@@ -63,7 +60,7 @@ You will be erasing your hard drive at this point. Once you have completed this 
 > [Disk Utility Help—Erase a volume](https://support.apple.com/guide/disk-utility/erase-a-volume-dskutl14079/mac)  
 > Information from [Apple Support](https://support.apple.com/guide/disk-utility/erase-a-volume-dskutl14079/mac)
 
-------------------------------------------------------------------------
+---
 
 ### 2. Reinstall
 
@@ -79,8 +76,7 @@ Now that you have a reformatted hard drive, you will be installing a phresh copy
 > [How To Clean Install MacOS High Sierra](http://osxdaily.com/2017/10/02/clean-install-macos-high-sierra/)  
 > Information from [OSXDaily](http://osxdaily.com/2017/10/02/clean-install-macos-high-sierra/)
 
-Set Up
-------
+## Set Up
 
 The Set Up section will walk you through getting your phresh machine up and running as quickly as possible. We will set up the computer with Homebrew, Node, NPM, Gulp, Homebrew Cask, Git, and Github. This will prepare your computer for future processes such as installing applications quickly.
 
@@ -156,8 +152,7 @@ GitHub is a development platform inspired by the way you work. From open source 
 > [Getting Started - Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics) &gt; [Github Guides](https://guides.github.com/)  
 > Description from [Github](https://github.com/)
 
-Application Installation
-------------------------
+## Application Installation
 
 The Application Installation section will walk you through installing your applications. Using Homebrew Cask, you can download and install the necessary applications, and clean the download files with just a few lines of code.
 
@@ -211,10 +206,9 @@ To install all of the following applications with a single line of code:
 >
 > [Homebrew Cask Documentation](https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md) Description from [Homebrew Cask](https://caskroom.github.io/)
 
-------------------------------------------------------------------------
+---
 
-Tasty Treats
-------------
+## Tasty Treats
 
 The Tasty Treats section will tell you some of our Liferay team members’ top picks for applications and extensions.
 

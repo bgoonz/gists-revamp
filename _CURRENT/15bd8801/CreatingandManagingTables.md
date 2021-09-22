@@ -12,22 +12,21 @@ URL shorteners are very common in text-constrained platforms such as SMS message
 
 In the next step, you are going to create a table of short URLs.
 
-------------------------------------------------------------------------
+---
 
 #### Tables
 
-A Short URL Table
-=================
+# A Short URL Table
 
 Data in relational databases is stored in tables. So, to store the data about short URLs in your system, you are going to create a `shorturl` table.
 
 Create a table `shorturl` with the following fields:
 
--   `id`: An auto-incrementing number
--   `key`: Short string that uniquely identifies a URL
--   `url`: URL to redirect to
--   `hits`: Counter of the number of times the URL was redirected to
--   `created_at`: When the short URL was created
+- `id`: An auto-incrementing number
+- `key`: Short string that uniquely identifies a URL
+- `url`: URL to redirect to
+- `hits`: Counter of the number of times the URL was redirected to
+- `created_at`: When the short URL was created
 
 To create the table, execute the following command in the terminal:
 

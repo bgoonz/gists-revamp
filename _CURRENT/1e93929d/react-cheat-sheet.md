@@ -1,22 +1,18 @@
-React.js cheatsheet
-===================
+# React.js cheatsheet
 
 > React.Component · render() · componentDidMount() · props/state · dangerouslySetInnerHTML · React is a JavaScript library for building user interfaces. This guide targets React v15 to v16.
 
 [React](https://reactjs.org/) is a JavaScript library for building user interfaces. This guide targets React v15 to v16.
 
-React Cheat Sheet
-=================
+# React Cheat Sheet
 
-render
-------
+## render
 
     render() {
       return <div />;
     }
 
-constructor
------------
+## constructor
 
         constructor(props) {
           super(props);
@@ -34,16 +30,14 @@ constructor
           };
         }
 
-componentWillMount
-------------------
+## componentWillMount
 
         componentWillMount() {
           // invoked once.
           // fires before initial 'render'
         }
 
-componentDidMount
------------------
+## componentDidMount
 
         componentDidMount() {
           // good for AJAX: fetch, ajax, or subscriptions.
@@ -52,24 +46,21 @@ componentDidMount
           // fires before initial 'render'
         }
 
-componentWillReceiveProps
--------------------------
+## componentWillReceiveProps
 
         componentWillReceiveProps(nextProps) {
           // invoked every time component recieves new props.
           // does not before initial 'render'
         }
 
-shouldComponentUpdate
----------------------
+## shouldComponentUpdate
 
         shouldComponentUpdate(nextProps, nextState) {
           // invoked before every update (new props or state).
           // does not fire before initial 'render'.
         }
 
-componentWillUpdate
--------------------
+## componentWillUpdate
 
         componentWillUpdate(nextProps, nextState) {
           // invoked immediately before update (new props or state).
@@ -80,23 +71,20 @@ componentWillUpdate
 
 **✖ this.setState**
 
-componentDidUpdate
-------------------
+## componentDidUpdate
 
         componentDidUpdate(prevProps, prevState) {
           // invoked immediately after DOM updates
           // does not fire after initial 'render'
         }
 
-componentWillUnmount
---------------------
+## componentWillUnmount
 
         componentWillUnmount() {
           // invoked immediately before a component is unmounted.
         }
 
-setState (function)
--------------------
+## setState (function)
 
     // good for state transitions
 
@@ -104,8 +92,7 @@ setState (function)
       return { count: prevState.count + props.step };
     });
 
-setState (object)
------------------
+## setState (object)
 
         // good for static values
 
@@ -124,15 +111,13 @@ setState (object)
           () => console.log(this.state.count)
         );
 
-forceUpdate
------------
+## forceUpdate
 
     // forces a re-render; AVOID if possible
 
     this.forceUpdate();
 
-displayName
------------
+## displayName
 
         displayName: "MyComponent"
 
@@ -152,37 +137,31 @@ displayName
               name: 'guest'
             };
 
-Children.map
-------------
+## Children.map
 
     React.Children.map(this.props.children, (child, i) => {
       return child;
     });
 
-Children.forEach
-----------------
+## Children.forEach
 
     React.Children.forEach(this.props.children, (child, i) => {
       console.log(child + " at index: " + i);
     });
 
-Children.count
---------------
+## Children.count
 
     React.Children.count(this.props.children);
 
-Children.only
--------------
+## Children.only
 
     React.Children.only(this.props.children);
 
-Children.toArray
-----------------
+## Children.toArray
 
     React.Children.toArray(this.props.children);
 
-Context (example)
------------------
+## Context (example)
 
     // requires 'prop-types' library
 
@@ -218,8 +197,7 @@ Context (example)
     // <Cowboy><Greeting name="Michael" /></Cowboy>
     // => Howdy Michael.
 
-contextTypes
-------------
+## contextTypes
 
         // add to the context-aware component
         // requires 'prop-types' library
@@ -228,8 +206,7 @@ contextTypes
           color: PropTypes.string
         },
 
-childContextTypes
------------------
+## childContextTypes
 
         // add to the context provider
         // requires 'prop-types' library
@@ -238,8 +215,7 @@ childContextTypes
           color: PropTypes.string
         },
 
-getChildContext
----------------
+## getChildContext
 
         // add to the context provider
 
@@ -247,8 +223,7 @@ getChildContext
           return {color: "purple"};
         }
 
-[\#](#components)Components
----------------------------
+## [\#](#components)Components
 
 ### Components
 
@@ -369,8 +344,7 @@ See: [Composing Components](https://reactjs.org/docs/components-and-props.html#c
 
 Children are passed as the `children` property.
 
-[\#](#defaults)Defaults
------------------------
+## [\#](#defaults)Defaults
 
 ### Setting default props
 
@@ -399,8 +373,7 @@ And without constructor using [Babel](https://babeljs.io/) with [proposal-class-
 
 See: [Setting the default state](https://reactjs.org/docs/react-without-es6.html#setting-the-initial-state)
 
-[\#](#other-components)Other components
----------------------------------------
+## [\#](#other-components)Other components
 
 ### Functional components
 
@@ -440,8 +413,7 @@ These methods and properties are available for `Component` instances.
 
 See: [Component API](https://facebook.github.io/react/docs/component-api.html)
 
-[\#](#lifecycle)Lifecycle
--------------------------
+## [\#](#lifecycle)Lifecycle
 
 ### Mounting
 
@@ -457,8 +429,7 @@ Called when parents change properties and `.setState()`. These are not called fo
 
 See: [Component specs](https://facebook.github.io/react/docs/component-specs.html#updating-componentwillreceiveprops)
 
-[\#](#hooks-new)Hooks (New)
----------------------------
+## [\#](#hooks-new)Hooks (New)
 
 ### State Hook
 
@@ -567,8 +538,7 @@ Full details: [Basic Hooks](https://reactjs.org/docs/hooks-reference.html#basic-
 
 Full details: [Additional Hooks](https://reactjs.org/docs/hooks-reference.html#additional-hooks)
 
-[\#](#dom-nodes)DOM nodes
--------------------------
+## [\#](#dom-nodes)DOM nodes
 
 ### References
 
@@ -610,8 +580,7 @@ Pass functions to attributes like `onChange`.
 
 See: [Events](https://reactjs.org/docs/events.html)
 
-[\#](#other-features)Other features
------------------------------------
+## [\#](#other-features)Other features
 
 ### Transferring props
 
@@ -644,8 +613,7 @@ There are more, but these are most common.
 
 See: [React top-level API](https://reactjs.org/docs/react-api.html)
 
-[\#](#jsx-patterns)JSX patterns
--------------------------------
+## [\#](#jsx-patterns)JSX patterns
 
 ### Style shorthand
 
@@ -694,8 +662,7 @@ Always supply a `key` property.
       ...
     </Fragment>
 
-[\#](#new-features)New features
--------------------------------
+## [\#](#new-features)New features
 
 ### Returning multiple elements
 
@@ -770,8 +737,7 @@ Use `ReactDOM.hydrate` instead of using `ReactDOM.render` if you’re rendering 
 
 See: [Hydrate](https://reactjs.org/docs/react-dom.html#hydrate)
 
-[\#](#property-validation)Property validation
----------------------------------------------
+## [\#](#property-validation)Property validation
 
 ### PropTypes
 

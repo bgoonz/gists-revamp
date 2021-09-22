@@ -1,7 +1,6 @@
 #### Unique Constraint
 
-Ensuring Data Uniqueness
-========================
+# Ensuring Data Uniqueness
 
 To identify the full URL, you use a key. To make sure you identify at most *one* URL for a given key, you want to make sure the keys are unique. In other words, you want to make sure there are not two similar keys in the table.
 

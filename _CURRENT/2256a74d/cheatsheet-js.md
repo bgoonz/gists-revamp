@@ -1,5 +1,4 @@
-JavaScript Cheat Sheet
-======================
+# JavaScript Cheat Sheet
 
 > JavaScript methods and functions, a guide to regular expressions and the XMLHttpRequest object.
 
@@ -99,7 +98,7 @@ min()
 
 acos()
 
-NEGATI­VE\_­INF­INITY
+NEGATI­VE_­INF­INITY
 
 asin()
 
@@ -107,7 +106,7 @@ PI
 
 atan()
 
-POSITI­VE\_­INF­INITY
+POSITI­VE_­INF­INITY
 
 atan2()
 
@@ -131,7 +130,7 @@ sqrt()
 
 floor()
 
-SQRT1\_2
+SQRT1_2
 
 LN10
 
@@ -157,11 +156,11 @@ max()
 
 toPrec­ision()
 
-MAX\_VALUE
+MAX_VALUE
 
 toString()
 
-MIN\_VALUE
+MIN_VALUE
 
 valueOf()
 

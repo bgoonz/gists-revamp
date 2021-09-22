@@ -1,63 +1,41 @@
-This is: <span class="txt-rotate" data-period="2000" data-rotate="[ &quot; Lambda Student Resources&quot;, &quot;created by Bryan Guner&quot; ]"></span>
-========================================================================================================================================================
+# This is: <span class="txt-rotate" data-period="2000" data-rotate="[ &quot; Lambda Student Resources&quot;, &quot;created by Bryan Guner&quot; ]"></span>
 
-One-Drive-File-Storage!
------------------------
+## One-Drive-File-Storage!
 
 <img src="./giphy.gif" class="loading-overlay-img" />
 
-  
-  
-
--   [🧭NAVIGATION🧭 ](./directory.html)
--   [🧭External Links (most used websites)🧭 ](.link.html)
--   [🧰Tools🔨 ](./7-assets/web-dev-utils/lambda-prep/directory.html)
--   [📖Lambda Prep-Resource Site📗 ](https://lambda-prep.netlify.app/)
--   [🖥️Code Playground🖲️ ](.RESOURCES.html)
--   [✨applied-js-1.html✨ ](./WEEKS/wk1/0-notes/d2/applied-js-1.html)
--   [🧱HTML\_PATTERNS🕸️  ](./WEEKS/wk1/0-notes/d2/HTML_PATTERNS)
--   [✨js-fundamentals✨ ](./WEEKS/wk1/0-notes/d2/js-fundamentals.html)
--   [✨styling-n-js✨ ](./WEEKS/wk1/0-notes/d2/styling-n-js.html)
--   [😺using-git😺 ](./WEEKS/wk1/0-notes/d2/using-git.html)
--   [🎄DATA STRUCTURES🌐 ](https://trusting-dijkstra-4d3b17.netlify.app/)
--   [📗Agenda📗 ](WEEKS\wk1\2-resources\agenda.html)
--   [📼Video Previewer📹 ](WEEKS\wk1\2-resources\agenda.html)
--   [📊Using Canvas📊 ](about\Using_Canvas.html)
--   [🖋️Brit's Code Pens✏️ ](about\Using_Canvas.html)
--   [Cheat Sheets ](2-resources/__CHEAT-SHEETS/right.html)
-
-  
+- [🧭NAVIGATION🧭 ](./directory.html)
+- [🧭External Links (most used websites)🧭 ](.link.html)
+- [🧰Tools🔨 ](./7-assets/web-dev-utils/lambda-prep/directory.html)
+- [📖Lambda Prep-Resource Site📗 ](https://lambda-prep.netlify.app/)
+- [🖥️Code Playground🖲️ ](.RESOURCES.html)
+- [✨applied-js-1.html✨ ](./WEEKS/wk1/0-notes/d2/applied-js-1.html)
+- [🧱HTML_PATTERNS🕸️  ](./WEEKS/wk1/0-notes/d2/HTML_PATTERNS)
+- [✨js-fundamentals✨ ](./WEEKS/wk1/0-notes/d2/js-fundamentals.html)
+- [✨styling-n-js✨ ](./WEEKS/wk1/0-notes/d2/styling-n-js.html)
+- [😺using-git😺 ](./WEEKS/wk1/0-notes/d2/using-git.html)
+- [🎄DATA STRUCTURES🌐 ](https://trusting-dijkstra-4d3b17.netlify.app/)
+- [📗Agenda📗 ](WEEKS\wk1\2-resources\agenda.html)
+- [📼Video Previewer📹 ](WEEKS\wk1\2-resources\agenda.html)
+- [📊Using Canvas📊 ](about\Using_Canvas.html)
+- [🖋️Brit's Code Pens✏️ ](about\Using_Canvas.html)
+- [Cheat Sheets ](2-resources/__CHEAT-SHEETS/right.html)
 
 Mute
 
-Announcements
--------------
+## Announcements
 
-  
-  
+## General Resources:
 
-General Resources:
-------------------
+## Demo's
 
-  
+## Comments
 
-Demo's
-------
+---
 
-  
+## World Clock(Click To See Localized Time)
 
-  
-
-Comments
---------
-
-------------------------------------------------------------------------
-
-World Clock(Click To See Localized Time)
-----------------------------------------
-
-Contact
--------
+## Contact
 
 Your Name:
 

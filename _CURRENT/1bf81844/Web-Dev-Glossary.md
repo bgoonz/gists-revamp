@@ -4,7 +4,7 @@
 
 **ANCHOR TEXT** : The text a link (hyperlink) uses to refer to your web page. These make a difference in your search engine results.
 
-**BACKLINKS** : Links from other website pages to yours. Backlinks are used to increase a site’s popularity with search engines and to get more people to visit your site. The quality of a backlink and its *anchor text* is factored into Google’s algorithm when deciding how much importance to place on it.
+**BACKLINKS** : Links from other website pages to yours. Backlinks are used to increase a site’s popularity with search engines and to get more people to visit your site. The quality of a backlink and its _anchor text_ is factored into Google’s algorithm when deciding how much importance to place on it.
 
 **BANDWIDTH** : It may help if you read “traffic” first, but very simply, bandwidth relates to how much a resource is used. An analogy would be a freeway. The wider the freeway, the more traffic (users) it can handle. The narrower it is, the less people can use it at once (without problems). When a website gets a lot of visitors, it will use a lot of bandwidth.
 
@@ -14,11 +14,9 @@
 
 **BOUNCE** : When you send an email to someone and it comes straight back to you with an error message, it is said to have bounced. It’s like the internet version of “return to sender” except it is a computer or piece of software automatically sending it back to you, not a person. Emails can bounce for many reasons. The most common are: you made a spelling or typing error in the address, making the address invalid; the person you are sending to
 
-Website, Content, and
-=====================
+# Website, Content, and
 
-Design Terminology
-==================
+# Design Terminology
 
 no longer has that email address; the person you are sending to has let their mailbox become too full to accept new emails; a piece of software on the receiving end thinks that your email is spam or that it includes a virus and sends it back to you.
 
@@ -144,7 +142,7 @@ that Google places on that particular page in relation to its subject matter and
 
 **SUB PAGE:** Any page on a website that isn’t the home page. Depending upon context, it could refer to pages “underneath” one of the pages in the main navigation.
 
-**TAG** : A tag is a set of markup characters that are used around an *element* to indicate where it starts &lt; &gt; and ends &lt;/ &gt;. Tags can also include HTML or other code to specify how that element should look or behave on the page.
+**TAG** : A tag is a set of markup characters that are used around an _element_ to indicate where it starts &lt; &gt; and ends &lt;/ &gt;. Tags can also include HTML or other code to specify how that element should look or behave on the page.
 
 **TYPOGRAPHY:** The artistic arrangement of type in a readable and visually appealing way. Typography usually concerns the design and use of various typefaces in a way that helps to better visually communicate ideas. **SERIF TYPEFACE:** A typeface with small decorative strokes (called ‘serifs’) found at the end of horizontal and vertical lines. Serif typefaces tend to look professional, authoritative, and traditional in appearance.
 

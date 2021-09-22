@@ -1,5 +1,4 @@
-DOM vs BOM
-----------
+## DOM vs BOM
 
     - the `Document Object Model` is the hierarchy/representation of the objects that comprise a document on the web (i.e. how all elements in a document are organized). The DOM is a part of the `Browser Object Model`, the hierarchy/representation of all browser objects associated with the web browser.
 
@@ -19,91 +18,90 @@ DOM vs BOM
 
 **Window API**
 
--   the `Window API` includes the methods and properties that you can use on the `window object`, the core of the `BOM`.
--   using the `Window API` to resize the browser window:
+- the `Window API` includes the methods and properties that you can use on the `window object`, the core of the `BOM`.
+- using the `Window API` to resize the browser window:
 
-        //opens a new window
-        newWindow = window.open("url", "name", "width=100, height=100");
-        //resizes new window
-        newWindow.resizeTo(500, 500);
-        //also resizes by given amount; use `-` to shrink
-        newWindow.resizeBy(xDelta, yDelta);
+      //opens a new window
+      newWindow = window.open("url", "name", "width=100, height=100");
+      //resizes new window
+      newWindow.resizeTo(500, 500);
+      //also resizes by given amount; use `-` to shrink
+      newWindow.resizeBy(xDelta, yDelta);
 
--   the `context` of an `anonymous function` fun in the browser will be the `window object`. Remember that every function has a context, which we can think of as which object OWNS the function, and context is most often determined by how a function is invoked.
+- the `context` of an `anonymous function` fun in the browser will be the `window object`. Remember that every function has a context, which we can think of as which object OWNS the function, and context is most often determined by how a function is invoked.
 
 **Running Scripts**
 
--   Insert a script via a .js document into an .html document:
+- Insert a script via a .js document into an .html document:
 
-        <html>
-          <head>
-            <script type="text/javascript" src="dom-ready-script.js"></script>
-          </head>
-          <body></body>
-          <html></html>
-        </html>
+      <html>
+        <head>
+          <script type="text/javascript" src="dom-ready-script.js"></script>
+        </head>
+        <body></body>
+        <html></html>
+      </html>
 
--   Run the script on DOMContentLoaded (when the doc has been loaded, but without waiting for stylesheets, images, and subframes):
+- Run the script on DOMContentLoaded (when the doc has been loaded, but without waiting for stylesheets, images, and subframes):
 
-        window.addEventListener("DOMContentLoaded", (event) => {
-          console.log("This script loaded when the DOM was ready.");
-        });
+      window.addEventListener("DOMContentLoaded", (event) => {
+        console.log("This script loaded when the DOM was ready.");
+      });
 
--   Run the script on page load using window.onload (wait for EVERYTHING to load):
+- Run the script on page load using window.onload (wait for EVERYTHING to load):
 
-        window.onload = () => {
-          console.log(
-            "This script loaded when all the resources and the DOM were ready."
-          );
-        };
+      window.onload = () => {
+        console.log(
+          "This script loaded when all the resources and the DOM were ready."
+        );
+      };
 
--   Three ways to prevent script from running until page loads:
-    1.  Use `DOMContentLoaded`
-    2.  Place `script tag` at very bottom of HTML file
-    3.  Add attribute like `async` or `defer`
+- Three ways to prevent script from running until page loads:
+  1.  Use `DOMContentLoaded`
+  2.  Place `script tag` at very bottom of HTML file
+  3.  Add attribute like `async` or `defer`
 
 **async vs defer** - `<script>` without any attributes will pause HTML parsing, and a request will be made to fetch the file (if it is external). The script will be executed before parsing is resumed. - `async` downloads the file during HTML parsing and will pause the HTML parser to execute it once it has downloaded. - `defer` downloads the file during HTML parsing, but will only execute it after the parser has completed. - the standard is to use `async`, then `defer`.
 
 **Cookies vs Web Storage API**
 
--   Cookies - stores stateful info about a user, transfers data to server, under 4KB storage limit
--   `sessionStorage` - stores data only for a session, until browser window/tab is closed, does not transfer data to server, 5MB storage limit.
--   `localStorage` - stores data w/no expiration date, does not transfer data to server, deleted when browser cache is cleared; maximum storage limit
+- Cookies - stores stateful info about a user, transfers data to server, under 4KB storage limit
+- `sessionStorage` - stores data only for a session, until browser window/tab is closed, does not transfer data to server, 5MB storage limit.
+- `localStorage` - stores data w/no expiration date, does not transfer data to server, deleted when browser cache is cleared; maximum storage limit
 
--   Create a cookie:
+- Create a cookie:
 
-        const firstCookie = "favoriteCat=million";
-        document.cookie = firstCookie;
-        const secondCookie = "favoriteDog=bambi";
-        document.cookie = secondCookie;
-        document.cookie; // Returns "favoriteCat=million; favoriteDog=bambi"
+      const firstCookie = "favoriteCat=million";
+      document.cookie = firstCookie;
+      const secondCookie = "favoriteDog=bambi";
+      document.cookie = secondCookie;
+      document.cookie; // Returns "favoriteCat=million; favoriteDog=bambi"
 
--   Delete a cookie by setting a cookie’s expiration date to the past (or delete in Developer Tools):
+- Delete a cookie by setting a cookie’s expiration date to the past (or delete in Developer Tools):
 
-        document.cookie = "favoriteCat=; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-        document.cookie; // Returns "favoriteDog=bambi"
+      document.cookie = "favoriteCat=; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+      document.cookie; // Returns "favoriteDog=bambi"
 
--   Create localStorage data:
+- Create localStorage data:
 
-        //set new localStorage item
-        localStorage.setItem("firstThing", "firstValue");
-        //retrieve that localStorage item
-        localSTorage.getItem("firstThing");
+      //set new localStorage item
+      localStorage.setItem("firstThing", "firstValue");
+      //retrieve that localStorage item
+      localSTorage.getItem("firstThing");
 
--   When to use the Web Storage API?
-    -   shopping cart
-    -   input data on forms
-    -   info on user i.e. preferences or buying habits
--   When to use cookies:
+- When to use the Web Storage API?
+  - shopping cart
+  - input data on forms
+  - info on user i.e. preferences or buying habits
+- When to use cookies:
 
-    -   Session cookie, stores session info on user login/validation (lost once browser is closed unless you use a persistent cookie)
+  - Session cookie, stores session info on user login/validation (lost once browser is closed unless you use a persistent cookie)
 
--   You can view cookies and web storage info with Developer Tools (inspect -&gt; Application tab).
+- You can view cookies and web storage info with Developer Tools (inspect -&gt; Application tab).
 
-Objectives
-----------
+## Objectives
 
-*BROWSER BASICS & STORAGE*
+_BROWSER BASICS & STORAGE_
 
 1.  ✓ Explain the difference between BOM (browser object model) and the DOM (document object model).
 2.  ✓ Given a diagram of all the different parts of the Browser, identify each part.
@@ -119,7 +117,7 @@ Objectives
 12. ✓ Write JS to store the value “I &lt;3 falafel” with the eky “eatz” in the browser’s local storage.
 13. ✓ Write JS to read the value stored in local storage for the key “paper-trail”.
 
-*ELEMENT SELECTION*
+_ELEMENT SELECTION_
 
 1.  Given HTML that includes `<div id="catch-me-if-you-can>HI!</div>`, write a JS statement that stores a reference to the HTMLDivElement with the id “catch-me-if-you-can” in a variable named “divOfInterest”.
 
@@ -199,7 +197,7 @@ Objectives
         };
         setInterval(time, 1000);
 
-*EVENT HANDLING*
+_EVENT HANDLING_
 
 1.  Given an HTML page that includes `<button id="increment-count">I have been clicked <span id="clicked-count">0</span> times</button>`, write JS that increases the value of the content of `span#clicked-count` by 1 every time `button#increment-count` is clicked.
 
@@ -273,14 +271,14 @@ Objectives
 
     When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
 
-*JSON*
+_JSON_
 
 1.  Identify and generate valid JSON-formatted strings.
 
     String in JS: `'this is "text"'` String in JSON: `"this is \"text\""`
 
-    -   use for line breaks
-    -   keys in JSON objects must be surrounded by " quotes
+    - use for line breaks
+    - keys in JSON objects must be surrounded by " quotes
 
 2.  Use `JSON.parse` to deserialize JSON-formatted strings.
 

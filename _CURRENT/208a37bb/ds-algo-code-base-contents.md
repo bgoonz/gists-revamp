@@ -1,5 +1,4 @@
-Contents
-========
+# Contents
 
     .
     ├── 0-TESTING-RESOURCES

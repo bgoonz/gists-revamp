@@ -1,18 +1,15 @@
-Python Cheat Sheet
-==================
+# Python Cheat Sheet
 
 Basic cheatsheet for Python mostly based on the book written by Al Sweigart, [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) under the [Creative Commons license](https://creativecommons.org/licenses/by-nc-sa/3.0/) and many other sources.
 
-Read It
--------
+## Read It
 
--   [Website](https://www.pythoncheatsheet.org)
--   [Github](https://github.com/wilfredinni/python-cheatsheet)
--   [PDF](https://github.com/wilfredinni/Python-cheatsheet/raw/master/python_cheat_sheet.pdf)
--   [Jupyter Notebook](https://mybinder.org/v2/gh/wilfredinni/python-cheatsheet/master?filepath=jupyter_notebooks)
+- [Website](https://www.pythoncheatsheet.org)
+- [Github](https://github.com/wilfredinni/python-cheatsheet)
+- [PDF](https://github.com/wilfredinni/Python-cheatsheet/raw/master/python_cheat_sheet.pdf)
+- [Jupyter Notebook](https://mybinder.org/v2/gh/wilfredinni/python-cheatsheet/master?filepath=jupyter_notebooks)
 
-The Zen of Python
------------------
+## The Zen of Python
 
 From the [PEP 20 – The Zen of Python](https://www.python.org/dev/peps/pep-0020/):
 
@@ -20,8 +17,7 @@ From the [PEP 20 – The Zen of Python](https://www.python.org/dev/peps/pep-0020
 
     import this
 
-Python Basics
--------------
+## Python Basics
 
 ### Math Operators
 
@@ -145,8 +141,7 @@ Float to Integer:
 
     int(7.7) + 1
 
-Flow Control
-------------
+## Flow Control
 
 ### Comparison Operators
 
@@ -208,15 +203,15 @@ And these as well:
 
 There are three Boolean operators: and, or, and not.
 
-The *and* Operator’s *Truth* Table:
+The _and_ Operator’s _Truth_ Table:
 
 <table><thead><tr class="header"><th>Expression</th><th>Evaluates to</th></tr></thead><tbody><tr class="odd"><td>True and True</td><td>True</td></tr><tr class="even"><td>True and False</td><td>False</td></tr><tr class="odd"><td>False and True</td><td>False</td></tr><tr class="even"><td>False and False</td><td>False</td></tr></tbody></table>
 
-The *or* Operator’s *Truth* Table:
+The _or_ Operator’s _Truth_ Table:
 
 <table><thead><tr class="header"><th>Expression</th><th>Evaluates to</th></tr></thead><tbody><tr class="odd"><td>True or True</td><td>True</td></tr><tr class="even"><td>True or False</td><td>True</td></tr><tr class="odd"><td>False or True</td><td>True</td></tr><tr class="even"><td>False or False</td><td>False</td></tr></tbody></table>
 
-The *not* Operator’s *Truth* Table:
+The _not_ Operator’s _Truth_ Table:
 
 <table><thead><tr class="header"><th>Expression</th><th>Evaluates to</th></tr></thead><tbody><tr class="odd"><td>not True</td><td>False</td></tr><tr class="even"><td>not False</td><td>True</td></tr></tbody></table>
 
@@ -308,7 +303,7 @@ When the program execution reaches a continue statement, the program execution i
     for i in range(5):
         print('Jimmy Five Times ({})'.format(str(i)))
 
-The *range()* function can also be called with three arguments. The first two arguments will be the start and stop values, and the third will be the step argument. The step is the amount that the variable is increased by after each iteration.
+The _range()_ function can also be called with three arguments. The first two arguments will be the start and stop values, and the third will be the step argument. The step is the amount that the variable is increased by after each iteration.
 
     for i in range(0, 10, 2):
        print(i)
@@ -350,8 +345,7 @@ This allows to specify a statement to execute in case of the full loop has been 
             sys.exit()
         print('You typed {}.'.format(response))
 
-Functions
----------
+## Functions
 
     def hello(name):
         print('Hello {}'.format(name))
@@ -360,34 +354,34 @@ Functions
 
 When creating a function using the def statement, you can specify what the return value should be with a return statement. A return statement consists of the following:
 
--   The return keyword.
+- The return keyword.
 
--   The value or expression that the function should return.
+- The value or expression that the function should return.
 
-    import random
-    def getAnswer(answerNumber):
-        if answerNumber == 1:
-            return 'It is certain'
-        elif answerNumber == 2:
-            return 'It is decidedly so'
-        elif answerNumber == 3:
-            return 'Yes'
-        elif answerNumber == 4:
-            return 'Reply hazy try again'
-        elif answerNumber == 5:
-            return 'Ask again later'
-        elif answerNumber == 6:
-            return 'Concentrate and ask again'
-        elif answerNumber == 7:
-            return 'My reply is no'
-        elif answerNumber == 8:
-            return 'Outlook not so good'
-        elif answerNumber == 9:
-            return 'Very doubtful'
+  import random
+  def getAnswer(answerNumber):
+  if answerNumber == 1:
+  return 'It is certain'
+  elif answerNumber == 2:
+  return 'It is decidedly so'
+  elif answerNumber == 3:
+  return 'Yes'
+  elif answerNumber == 4:
+  return 'Reply hazy try again'
+  elif answerNumber == 5:
+  return 'Ask again later'
+  elif answerNumber == 6:
+  return 'Concentrate and ask again'
+  elif answerNumber == 7:
+  return 'My reply is no'
+  elif answerNumber == 8:
+  return 'Outlook not so good'
+  elif answerNumber == 9:
+  return 'Very doubtful'
 
-    r = random.randint(1, 9)
-    fortune = getAnswer(r)
-    print(fortune)
+  r = random.randint(1, 9)
+  fortune = getAnswer(r)
+  print(fortune)
 
 ### The None Value
 
@@ -407,13 +401,13 @@ Note: never compare to `None` with the `==` operator. Always use `is`.
 
 ### Local and Global Scope
 
--   Code in the global scope cannot use any local variables.
+- Code in the global scope cannot use any local variables.
 
--   However, a local scope can access global variables.
+- However, a local scope can access global variables.
 
--   Code in a function’s local scope cannot use variables in any other local scope.
+- Code in a function’s local scope cannot use variables in any other local scope.
 
--   You can use the same name for different variables if they are in different scopes. That is, there can be a local variable named spam and a global variable also named spam.
+- You can use the same name for different variables if they are in different scopes. That is, there can be a local variable named spam and a global variable also named spam.
 
 ### The global Statement
 
@@ -437,8 +431,7 @@ There are four rules to tell whether a variable is in a local scope or global sc
 
 4.  But if the variable is not used in an assignment statement, it is a global variable.
 
-Exception Handling
-------------------
+## Exception Handling
 
 ### Basic exception handling
 
@@ -468,8 +461,7 @@ Code inside the `finally` section is always executed, no matter if an exception 
     print(spam(12))
     print(spam(0))
 
-Lists
------
+## Lists
 
     ['cat', 'bat', 'rat', 'elephant']
 
@@ -660,8 +652,7 @@ You can use the built-in function `sorted` to return a new list:
     spam = ['ants', 'cats', 'dogs', 'badgers', 'elephants']
     sorted(spam)
 
-Tuple Data Type
----------------
+## Tuple Data Type
 
     eggs = ('hello', 42, 0.5)
     eggs[0]
@@ -672,8 +663,7 @@ Tuple Data Type
 
 The main way that tuples are different from lists is that tuples, like strings, are immutable.
 
-Converting Types with the list and tuple Functions
---------------------------------------------------
+## Converting Types with the list and tuple Functions
 
     tuple(['cat', 'dog', 5])
 
@@ -681,8 +671,7 @@ Converting Types with the list and tuple Functions
 
     list('hello')
 
-Dictionaries and Structuring Data
----------------------------------
+## Dictionaries and Structuring Data
 
 Example Dictionary:
 
@@ -775,8 +764,7 @@ Using `setdefault` we could make the same code more shortly:
     z = {**x, **y}
     z
 
-sets
-----
+## sets
 
 From the Python 3 [documentation](https://docs.python.org/3/tutorial/datastructures.html)
 
@@ -863,7 +851,7 @@ Both methods will remove an element from the set, but `remove()` will raise a `k
     s2 = {2, 3, 4}
     s1.difference(s2)  # or 's1 - s2'
 
-### set symetric\_difference
+### set symetric_difference
 
 `symetric_difference` or `^` will return all the elements that are not common between them.
 
@@ -871,16 +859,15 @@ Both methods will remove an element from the set, but `remove()` will raise a `k
     s2 = {2, 3, 4}
     s1.symmetric_difference(s2)  # or 's1 ^ s2'
 
-itertools Module
-----------------
+## itertools Module
 
-The *itertools* module is a collection of tools intented to be fast and use memory efficiently when handling iterators (like [lists](#lists) or [dictionaries](#dictionaries-and-structuring-data)).
+The _itertools_ module is a collection of tools intented to be fast and use memory efficiently when handling iterators (like [lists](#lists) or [dictionaries](#dictionaries-and-structuring-data)).
 
 From the official [Python 3.x documentation](https://docs.python.org/3/library/itertools.html):
 
 > The module standardizes a core set of fast, memory efficient tools that are useful by themselves or in combination. Together, they form an “iterator algebra” making it possible to construct specialized tools succinctly and efficiently in pure Python.
 
-The *itertools* module comes in the standard library and must be imported.
+The _itertools_ module comes in the standard library and must be imported.
 
 The [operator](https://docs.python.org/3/library/operator.html) module will also be used. This module is not necessary when using itertools, but needed for some of the examples below.
 
@@ -942,7 +929,7 @@ Example:
     for each in result:
        print(each)
 
-### combinations\_with\_replacement
+### combinations_with_replacement
 
 Just like combinations(), but allows individual elements to be repeated more than once.
 
@@ -1169,7 +1156,7 @@ Example:
     for each in beta_colors:
        print(each)
 
-### zip\_longest
+### zip_longest
 
 Makes an iterator that aggregates elements from each of the iterables. If the iterables are of uneven length, missing values are filled-in with fillvalue. Iteration continues until the longest iterable is exhausted.
 
@@ -1183,8 +1170,7 @@ Example:
     for each in itertools.zip_longest(colors, data, fillvalue=None):
        print(each)
 
-Comprehensions
---------------
+## Comprehensions
 
 ### List comprehension
 
@@ -1206,8 +1192,7 @@ A List comprehension can be generated from a dictionary:
     c = {'name': 'Pooka', 'first_name': 'Oooka'}
     ["{}:{}".format(k.upper(), v.upper()) for k, v in c.items()]
 
-Manipulating Strings
---------------------
+## Manipulating Strings
 
 ### Escape Characters
 
@@ -1329,11 +1314,11 @@ isupper() and islower():
 
 ### The isX String Methods
 
--   **isalpha()** returns True if the string consists only of letters and is not blank.
--   **isalnum()** returns True if the string consists only of lettersand numbers and is not blank.
--   **isdecimal()** returns True if the string consists only ofnumeric characters and is not blank.
--   **isspace()** returns True if the string consists only of spaces,tabs, and new-lines and is not blank.
--   **istitle()** returns True if the string consists only of wordsthat begin with an uppercase letter followed by onlylowercase letters.
+- **isalpha()** returns True if the string consists only of letters and is not blank.
+- **isalnum()** returns True if the string consists only of lettersand numbers and is not blank.
+- **isdecimal()** returns True if the string consists only ofnumeric characters and is not blank.
+- **isspace()** returns True if the string consists only of spaces,tabs, and new-lines and is not blank.
+- **istitle()** returns True if the string consists only of wordsthat begin with an uppercase letter followed by onlylowercase letters.
 
 ### The startswith and endswith String Methods
 
@@ -1414,8 +1399,7 @@ First, install `pypeerclip` with pip:
     pyperclip.copy('Hello world!')
     pyperclip.paste()
 
-String Formatting
------------------
+## String Formatting
 
 ### % operator
 
@@ -1484,8 +1468,7 @@ A simpler and less powerful mechanism, but it is recommended when handling forma
     t = Template('Hey $name!')
     t.substitute(name=name)
 
-Regular Expressions
--------------------
+## Regular Expressions
 
 1.  Import the regex module with `import re`.
 2.  Create a Regex object with the `re.compile()` function. (Remember to use a raw string.)
@@ -1615,9 +1598,9 @@ In addition to the search() method, Regex objects also have a findall() method. 
 
 To summarize what the findall() method returns, remember the following:
 
--   When called on a regex with no groups, such as the method findall() returns a list of ng matches, such as \[‘415-555-9999’, ‘212-555-0000’\].
+- When called on a regex with no groups, such as the method findall() returns a list of ng matches, such as \[‘415-555-9999’, ‘212-555-0000’\].
 
--   When called on a regex that has groups, such as (-d-(d, the method findall() returns a list of es of strings (one string for each group), such as \[(‘415’, ‘, ’9999’), (‘212’, ‘555’, ‘0000’)\].
+- When called on a regex that has groups, such as (-d-(d, the method findall() returns a list of es of strings (one string for each group), such as \[(‘415’, ‘, ’9999’), (‘212’, ‘555’, ‘0000’)\].
 
 ### Making Your Own Character Classes
 
@@ -1635,11 +1618,11 @@ By placing a caret character (^) just after the character class’s opening brac
 
 ### The Caret and Dollar Sign Characters
 
--   You can also use the caret symbol (^) at the start of a regex to indicate that a match must occur at the beginning of the searched text.
+- You can also use the caret symbol (^) at the start of a regex to indicate that a match must occur at the beginning of the searched text.
 
--   Likewise, you can put a dollar sign ($) at the end of the regex to indicate the string must end with this regex pattern.
+- Likewise, you can put a dollar sign ($) at the end of the regex to indicate the string must end with this regex pattern.
 
--   And you can use the ^ and $ together to indicate that the entire string must match the regex—that is, it’s not enough for a match to be made on some subset of the string.
+- And you can use the ^ and $ together to indicate that the entire string must match the regex—that is, it’s not enough for a match to be made on some subset of the string.
 
 The r’^Hello’ regular expression string matches strings that begin with ‘Hello’:
 
@@ -1743,8 +1726,7 @@ you can spread the regular expression over multiple lines with comments like thi
         (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
         )''', re.VERBOSE)
 
-Handling File and Directory Paths
----------------------------------
+## Handling File and Directory Paths
 
 There are two main modules in Python that deals with path manipulation. One is the `os.path` module and the other is the `pathlib` module. The `pathlib` module was added in Python 3.4, offering an object-oriented way to handle file system paths.
 
@@ -1837,8 +1819,8 @@ And all is good :)
 
 There are two ways to specify a file path.
 
--   An absolute path, which always begins with the root folder
--   A relative path, which is relative to the program’s current working directory
+- An absolute path, which always begins with the root folder
+- A relative path, which is relative to the program’s current working directory
 
 There are also the dot (.) and dot-dot (..) folders. These are not real folders but special names that can be used in a path. A single period (“dot”) for a folder name is shorthand for “this directory.” Two periods (“dot-dot”) means “the parent folder.”
 
@@ -2052,11 +2034,11 @@ If there is no eggs folder, then move() will rename bacon.txt to a file named eg
 
 ### Permanently Deleting Files and Folders
 
--   Calling os.unlink(path) or Path.unlink() will delete the file at path.
+- Calling os.unlink(path) or Path.unlink() will delete the file at path.
 
--   Calling os.rmdir(path) or Path.rmdir() will delete the folder at path. This folder must be empty of any files or folders.
+- Calling os.rmdir(path) or Path.rmdir() will delete the folder at path. This folder must be empty of any files or folders.
 
--   Calling shutil.rmtree(path) will remove the folder at path, and all files and folders it contains will also be deleted.
+- Calling shutil.rmtree(path) will remove the folder at path, and all files and folders it contains will also be deleted.
 
 ### Safe Deletes with the send2trash Module
 
@@ -2085,8 +2067,7 @@ You can install this module by running pip install send2trash from a Terminal wi
 
 `pathlib` provides a lot more functionality than the ones listed above, like getting file name, getting file extension, reading/writing a file without manually opening it, etc. Check out the [official documentation](https://docs.python.org/3/library/pathlib.html) if you want to know more!
 
-Reading and Writing Files
--------------------------
+## Reading and Writing Files
 
 ### The File Reading/Writing Process
 
@@ -2099,7 +2080,7 @@ To read/write to a file in Python, you will want to use the `with` statement, wh
 
     hello_content
 
-Alternatively, you can use the *readlines()* method to get a list of string values from the file, one string for each line of text:
+Alternatively, you can use the _readlines()_ method to get a list of string values from the file, one string for each line of text:
 
     with open('sonnet29.txt') as sonnet_file:
         sonnet_file.readlines()
@@ -2193,8 +2174,7 @@ The extract() method for ZipFile objects will extract a single file from the ZIP
 
 This code will create a new ZIP file named new.zip that has the compressed contents of spam.txt.
 
-JSON, YAML and configuration files
-----------------------------------
+## JSON, YAML and configuration files
 
 ### JSON
 
@@ -2218,8 +2198,8 @@ Compared to JSON, YAML allows a much better humain maintainance and gives abilit
 
 There are two main librairies allowing to access to YAML files:
 
--   [PyYaml](https://pypi.python.org/pypi/PyYAML)
--   [Ruamel.yaml](https://pypi.python.org/pypi/ruamel.yaml)
+- [PyYaml](https://pypi.python.org/pypi/PyYAML)
+- [Ruamel.yaml](https://pypi.python.org/pypi/ruamel.yaml)
 
 Install them using `pip install` in your virtual environment.
 
@@ -2247,22 +2227,21 @@ Usage:
 
     conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")
 
-Debugging
----------
+## Debugging
 
 ### Raising Exceptions
 
 Exceptions are raised with a raise statement. In code, a raise statement consists of the following:
 
--   The raise keyword
--   A call to the Exception() function
--   A string with a helpful error message passed to the Exception() function
+- The raise keyword
+- A call to the Exception() function
+- A string with a helpful error message passed to the Exception() function
 
-    raise Exception('This is the error message.')
-    Traceback (most recent call last):
-      File "<pyshell#191>", line 1, in <module>
-        raise Exception('This is the error message.')
-    Exception: This is the error message.
+  raise Exception('This is the error message.')
+  Traceback (most recent call last):
+  File "<pyshell#191>", line 1, in <module>
+  raise Exception('This is the error message.')
+  Exception: This is the error message.
 
 Often it’s the code that calls the function, not the function itself, that knows how to handle an expection. So you will commonly see a raise statement inside a function and the try and except statements in the code calling the function.
 
@@ -2285,7 +2264,7 @@ Often it’s the code that calls the function, not the function itself, that kno
 
 ### Getting the Traceback as a String
 
-The traceback is displayed by Python whenever a raised exception goes unhandled. But can also obtain it as a string by calling traceback.format\_exc(). This function is useful if you want the information from an exception’s traceback but also want an except statement to gracefully handle the exception. You will need to import Python’s traceback module before calling this function.
+The traceback is displayed by Python whenever a raised exception goes unhandled. But can also obtain it as a string by calling traceback.format_exc(). This function is useful if you want the information from an exception’s traceback but also want an except statement to gracefully handle the exception. You will need to import Python’s traceback module before calling this function.
 
     import traceback
 
@@ -2306,18 +2285,18 @@ The 116 is the return value from the write() method, since 116 characters were w
 
 An assertion is a sanity check to make sure your code isn’t doing something obviously wrong. These sanity checks are performed by assert statements. If the sanity check fails, then an AssertionError exception is raised. In code, an assert statement consists of the following:
 
--   The assert keyword
--   A condition (that is, an expression that evaluates to True or False)
--   A comma
--   A string to display when the condition is False
+- The assert keyword
+- A condition (that is, an expression that evaluates to True or False)
+- A comma
+- A string to display when the condition is False
 
-    pod_bay_door_status = 'open'
+  pod_bay_door_status = 'open'
 
-    assert pod_bay_door_status == 'open', 'The pod bay doors need to be "open".'
+  assert pod_bay_door_status == 'open', 'The pod bay doors need to be "open".'
 
-    pod_bay_door_status = 'I\'m sorry, Dave. I\'m afraid I can\'t do that.'
+  pod_bay_door_status = 'I\'m sorry, Dave. I\'m afraid I can\'t do that.'
 
-    assert pod_bay_door_status == 'open', 'The pod bay doors need to be "open".'
+  assert pod_bay_door_status == 'open', 'The pod bay doors need to be "open".'
 
 In plain English, an assert statement says, “I assert that this condition holds true, and if not, there is a bug somewhere in the program.” Unlike exceptions, your code should not handle assert statements with try and except; if an assert fails, your program should crash. By failing fast like this, you shorten the time between the original cause of the bug and when you first notice the bug. This will reduce the amount of code you will have to check before finding the code that’s causing the bug.
 
@@ -2383,8 +2362,7 @@ Instead of displaying the log messages to the screen, you can write them to a te
 
     logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-Lambda Functions
-----------------
+## Lambda Functions
 
 This function:
 
@@ -2393,7 +2371,7 @@ This function:
 
     add(5, 3)
 
-Is equivalent to the *lambda* function:
+Is equivalent to the _lambda_ function:
 
     add = lambda x, y: x + y
     add(5, 3)
@@ -2412,8 +2390,7 @@ Like regular nested functions, lambdas also work as lexical closures:
 
 Note: lambda can only evaluate an expression, like a single line of code.
 
-Ternary Conditional Operator
-----------------------------
+## Ternary Conditional Operator
 
 Many programming languages have a ternary operator, which define a conditional expression. The most common usage is to make a terse simple conditional assignment statement. In other words, it offers one-line code to evaluate the first expression if the condition is true, otherwise it evaluates the second expression.
 
@@ -2440,8 +2417,7 @@ The code above is equivalent to:
     else:
         print('adult')
 
-args and kwargs
----------------
+## args and kwargs
 
 The names `args and kwargs` are arbitrary - the important thing are the `*` and `**` operators. They can mean:
 
@@ -2506,8 +2482,7 @@ If you do not specify \*\* for kwargs
 3.  Keyword arguments with default values make it easy to add new behaviors to a function, especially when the function has existing callers.
 4.  Optional keyword arguments should always be passed by keyword instead of by position.
 
-Context Manager
----------------
+## Context Manager
 
 While Python’s context managers are widely used, few understand the purpose behind their use. These statements, commonly used with reading and writing files, assist the application in conserving system memory and improve resource management by ensuring specific resources are only in use for certain processes.
 
@@ -2541,8 +2516,7 @@ It is also possible to write a context manager using generator syntax thanks to 
         # 'cm' will have the value that was yielded
         print('Right in the middle with cm = {}'.format(cm))
 
-`__main__` Top-level script environment
----------------------------------------
+## `__main__` Top-level script environment
 
 `__main__` is the name of the scope in which top-level code executes. A module’s **name** is set equal to `__main__` when read from standard input, a script, or from an interactive prompt.
 
@@ -2578,8 +2552,7 @@ For example we are developing script which is designed to be used as module, we 
 3.  Python files can act as either reusable modules, or as standalone programs.
 4.  if `__name__ == “main”:` is used to execute some code only if the file was run directly, and not imported.
 
-setup.py
---------
+## setup.py
 
 The setup script is the centre of all activity in building, distributing, and installing modules using the Distutils. The main purpose of the setup script is to describe your module distribution to the Distutils, so that the various commands that operate on your modules do the right thing.
 
@@ -2591,7 +2564,7 @@ This allows you to easily install Python packages. Often it’s enough to write:
 
 and module will install itself.
 
-Our initial setup.py will also include information about the license and will re-use the README.txt file for the long\_description field. This will look like:
+Our initial setup.py will also include information about the license and will re-use the README.txt file for the long_description field. This will look like:
 
     from distutils.core import setup
     setup(
@@ -2604,8 +2577,7 @@ Our initial setup.py will also include information about the license and will re
 
 Find more information visit <http://docs.python.org/install/index.html>.
 
-Dataclasses
------------
+## Dataclasses
 
 `Dataclasses` are python classes but are suited for storing data objects. This module provides a decorator and functions for automatically adding generated special methods such as `__init__()` and `__repr__()` to user-defined classes.
 

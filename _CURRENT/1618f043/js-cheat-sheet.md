@@ -1,8 +1,6 @@
-Modern JavaScript cheatsheet
-============================
+# Modern JavaScript cheatsheet
 
-Introduction
-------------
+## Introduction
 
 ### Motivation
 
@@ -18,78 +16,76 @@ Besides, I will sometimes provide personal tips that may be debatable, but will 
 
 When you struggle to understand a notion, I suggest you look for answers on the following resources:
 
--   [MDN (Mozilla Developer Network)](https://developer.mozilla.org/fr/search?q=)
--   [You don’t know JS (book)](https://github.com/getify/You-Dont-Know-JS)
--   [ES6 Features with examples](http://es6-features.org)
--   [WesBos blog (ES6)](http://wesbos.com/category/es6/)
--   [Reddit (JavaScript)](https://www.reddit.com/r/javascript/)
--   [Google](https://www.google.com/) to find specific blog and resources
+- [MDN (Mozilla Developer Network)](https://developer.mozilla.org/fr/search?q=)
+- [You don’t know JS (book)](https://github.com/getify/You-Dont-Know-JS)
+- [ES6 Features with examples](http://es6-features.org)
+- [WesBos blog (ES6)](http://wesbos.com/category/es6/)
+- [Reddit (JavaScript)](https://www.reddit.com/r/javascript/)
+- [Google](https://www.google.com/) to find specific blog and resources
 
-Table of contents
------------------
+## Table of contents
 
--   [Modern JavaScript cheatsheet](#modern-javascript-cheatsheet)
-    -   [Introduction](#introduction)
-        -   [Motivation](#motivation)
-        -   [Complementary resources](#complementary-resources)
-    -   [Table of contents](#table-of-contents)
-    -   [Notions](#notions)
-        -   [Variable declaration: var, const, let](#variable-declaration-var-const-let)
-            -   [Short explanation](#short-explanation)
-            -   [Sample code](#sample-code)
-            -   [Detailed explanation](#detailed-explanation)
-            -   [External resource](#external-resource)
-        -   [Arrow function](#-arrow-function)
-            -   [Sample code](#sample-code-1)
-            -   [Detailed explanation](#detailed-explanation-1)
-                -   [Concision](#concision)
-                -   [*this* reference](#this-reference)
-            -   [Useful resources](#useful-resources)
-        -   [Function default parameter value](#function-default-parameter-value)
-            -   [External resource](#external-resource-1)
-        -   [Destructuring objects and arrays](#destructuring-objects-and-arrays)
-            -   [Explanation with sample code](#explanation-with-sample-code)
-            -   [Useful resources](#useful-resources-1)
-        -   [Array methods - map / filter / reduce](#array-methods---map--filter--reduce)
-            -   [Sample code](#sample-code-2)
-            -   [Explanation](#explanation)
-                -   [Array.prototype.map()](#arrayprototypemap)
-                -   [Array.prototype.filter()](#arrayprototypefilter)
-                -   [Array.prototype.reduce()](#arrayprototypereduce)
-            -   [External Resource](#external-resource)
-        -   [Spread operator “…”](#spread-operator-)
-            -   [Sample code](#sample-code-3)
-            -   [Explanation](#explanation-1)
-                -   [In iterables (like array)](#in-iterables-like-array)
-                -   [Function rest parameter](#function-rest-parameter)
-                -   [Object properties spreading](#object-properties-spreading)
-            -   [External resources](#external-resources)
-        -   [Object property shorthand](#object-property-shorthand)
-            -   [Explanation](#explanation-2)
-            -   [External resources](#external-resources-1)
-        -   [Promises](#promises)
-            -   [Sample code](#sample-code-4)
-            -   [Explanation](#explanation-3)
-                -   [Create the promise](#create-the-promise)
-                -   [Use the promise](#use-the-promise)
-            -   [External Resources](#external-resources)
-        -   [Template literals](#template-literals)
-            -   [Sample code](#sample-code-5)
-            -   [External resources](#external-resources-2)
-        -   [Imports / Exports](#imports--exports)
-            -   [Explanation with sample code](#explanation-with-sample-code-1)
-            -   [External resources](#external-resources-3)
-        -   [JavaScript *this*](#-javascript-this)
-            -   [External resources](#external-resources-4)
-        -   [Class](#class)
-            -   [Samples](#samples)
-            -   [External resources](#external-resources-5)
-    -   [Glossary](#glossary)
-        -   [Scope](#-scope)
-        -   [Variable mutation](#-variable-mutation)
+- [Modern JavaScript cheatsheet](#modern-javascript-cheatsheet)
+  - [Introduction](#introduction)
+    - [Motivation](#motivation)
+    - [Complementary resources](#complementary-resources)
+  - [Table of contents](#table-of-contents)
+  - [Notions](#notions)
+    - [Variable declaration: var, const, let](#variable-declaration-var-const-let)
+      - [Short explanation](#short-explanation)
+      - [Sample code](#sample-code)
+      - [Detailed explanation](#detailed-explanation)
+      - [External resource](#external-resource)
+    - [Arrow function](#-arrow-function)
+      - [Sample code](#sample-code-1)
+      - [Detailed explanation](#detailed-explanation-1)
+        - [Concision](#concision)
+        - [_this_ reference](#this-reference)
+      - [Useful resources](#useful-resources)
+    - [Function default parameter value](#function-default-parameter-value)
+      - [External resource](#external-resource-1)
+    - [Destructuring objects and arrays](#destructuring-objects-and-arrays)
+      - [Explanation with sample code](#explanation-with-sample-code)
+      - [Useful resources](#useful-resources-1)
+    - [Array methods - map / filter / reduce](#array-methods---map--filter--reduce)
+      - [Sample code](#sample-code-2)
+      - [Explanation](#explanation)
+        - [Array.prototype.map()](#arrayprototypemap)
+        - [Array.prototype.filter()](#arrayprototypefilter)
+        - [Array.prototype.reduce()](#arrayprototypereduce)
+      - [External Resource](#external-resource)
+    - [Spread operator “…”](#spread-operator-)
+      - [Sample code](#sample-code-3)
+      - [Explanation](#explanation-1)
+        - [In iterables (like array)](#in-iterables-like-array)
+        - [Function rest parameter](#function-rest-parameter)
+        - [Object properties spreading](#object-properties-spreading)
+      - [External resources](#external-resources)
+    - [Object property shorthand](#object-property-shorthand)
+      - [Explanation](#explanation-2)
+      - [External resources](#external-resources-1)
+    - [Promises](#promises)
+      - [Sample code](#sample-code-4)
+      - [Explanation](#explanation-3)
+        - [Create the promise](#create-the-promise)
+        - [Use the promise](#use-the-promise)
+      - [External Resources](#external-resources)
+    - [Template literals](#template-literals)
+      - [Sample code](#sample-code-5)
+      - [External resources](#external-resources-2)
+    - [Imports / Exports](#imports--exports)
+      - [Explanation with sample code](#explanation-with-sample-code-1)
+      - [External resources](#external-resources-3)
+    - [JavaScript _this_](#-javascript-this)
+      - [External resources](#external-resources-4)
+    - [Class](#class)
+      - [Samples](#samples)
+      - [External resources](#external-resources-5)
+  - [Glossary](#glossary)
+    - [Scope](#-scope)
+    - [Variable mutation](#-variable-mutation)
 
-Notions
--------
+## Notions
 
 ### Variable declaration: var, const, let
 
@@ -99,7 +95,7 @@ In JavaScript, there are three keywords available to declare a variable, and eac
 
 Variables declared with `const` keyword can’t be reassigned, while `let` and `var` can.
 
-I recommend always declaring your variables with `const` by default, and with `let` if you need to *mutate* it or reassign it later.
+I recommend always declaring your variables with `const` by default, and with `let` if you need to _mutate_ it or reassign it later.
 
 <table><thead><tr class="header"><th></th><th>Scope</th><th>Reassignable</th><th>Mutable</th><th><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting">Hoisting</a></th></tr></thead><tbody><tr class="odd"><td>const</td><td>Block</td><td>No</td><td><a href="#const_mutable_sample">Yes</a></td><td>No</td></tr><tr class="even"><td>let</td><td>Block</td><td>Yes</td><td>Yes</td><td>No</td></tr><tr class="odd"><td>var</td><td>Function</td><td>Yes</td><td>Yes</td><td>Yes</td></tr></tbody></table>
 
@@ -114,13 +110,13 @@ I recommend always declaring your variables with `const` by default, and with `l
 
 #### Detailed explanation
 
-The [*scope*](#scope_def) of a variable roughly means “where is this variable available in the code”.
+The [_scope_](#scope_def) of a variable roughly means “where is this variable available in the code”.
 
--   **var**
+- **var**
 
-`var` declared variables are *function scoped*, meaning that when a variable is created in a function, everything in that function can access that variable. Conversely, a *block scoped* variable created in a function can’t be accessed outside this function.
+`var` declared variables are _function scoped_, meaning that when a variable is created in a function, everything in that function can access that variable. Conversely, a _block scoped_ variable created in a function can’t be accessed outside this function.
 
-I recommend you to picture it as if an *X scoped* variable meant that this variable was a property of X.
+I recommend you to picture it as if an _X scoped_ variable meant that this variable was a property of X.
 
     function myFunction() {
       var myVar = "Nick";
@@ -141,7 +137,7 @@ Still focusing on the variable scope, here is a more subtle example:
     }
     console.log(myVar); // Undefined, myVar is not accessible outside the function.
 
-Besides, *var* declared variables are moved to the top of the scope at execution. This is what we call [var hoisting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting).
+Besides, _var_ declared variables are moved to the top of the scope at execution. This is what we call [var hoisting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting).
 
 This portion of code:
 
@@ -154,9 +150,9 @@ is understood at execution like:
     console.log(myVar); // undefined -- no error raised
     myVar = 2;
 
--   **let**
+- **let**
 
-`var` and `let` are about the same, but `let` declared variables are *block scoped* and they are **not** hoisted.
+`var` and `let` are about the same, but `let` declared variables are _block scoped_ and they are **not** hoisted.
 
 Let’s see the impact of block-scoping taking our previous example:
 
@@ -173,14 +169,14 @@ Let’s see the impact of block-scoping taking our previous example:
     }
     console.log(myVar); // Undefined, myVar is not accessible outside the function.
 
-Now, what it means for *let* (and *const*) variables for not being hoisted:
+Now, what it means for _let_ (and _const_) variables for not being hoisted:
 
     console.log(myVar); // raises an error !
     let myVar = 2;
 
--   **const**
+- **const**
 
-A `const`, as well as `let`, declared variables are *block scoped* and not hoisted, but they can’t be reassigned nor re-declared afterwards.
+A `const`, as well as `let`, declared variables are _block scoped_ and not hoisted, but they can’t be reassigned nor re-declared afterwards.
 
     const myVar = "Nick";
     myVar = "John"; // raises an error, reassignment is not allowed
@@ -188,7 +184,7 @@ A `const`, as well as `let`, declared variables are *block scoped* and not hoist
     const myVar = "Nick";
     const myVar = "John"; // raises an error, re-declaration is not allowed
 
-<span id="const_mutable_sample"></span> But there is a subtlety : `const` variables are not [**immutable**](#mutation_def) ! Concretely, it means that *object* and *array* `const` declared variables **can** be mutated.
+<span id="const_mutable_sample"></span> But there is a subtlety : `const` variables are not [**immutable**](#mutation_def) ! Concretely, it means that _object_ and _array_ `const` declared variables **can** be mutated.
 
 For objects:
 
@@ -208,32 +204,32 @@ For arrays:
 
 #### External resource
 
--   [How let and const are scoped in JavaScript - WesBos](http://wesbos.com/javascript-scoping/)
--   [Temporal Dead Zone (TDZ) Demystified](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified)
+- [How let and const are scoped in JavaScript - WesBos](http://wesbos.com/javascript-scoping/)
+- [Temporal Dead Zone (TDZ) Demystified](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified)
 
 ### <span id="arrow_func_concept"></span> Arrow function
 
-The ES6 JavaScript update has introduced *arrow functions*, which are another way to declare and use functions. Here are the benefits they bring:
+The ES6 JavaScript update has introduced _arrow functions_, which are another way to declare and use functions. Here are the benefits they bring:
 
--   More concise
--   *this* is picked up from surroundings
--   implicit return
+- More concise
+- _this_ is picked up from surroundings
+- implicit return
 
 #### Sample code
 
--   Concision and implicit return
+- Concision and implicit return
 
-    function double(x) {
-      return x * 2;
-    } // Traditional way
-    console.log(double(2)); // 4
+  function double(x) {
+  return x \* 2;
+  } // Traditional way
+  console.log(double(2)); // 4
 
-    const double = (x) => x * 2; // Same function written as an arrow function with implicit return
-    console.log(double(2)); // 4
+  const double = (x) => x \* 2; // Same function written as an arrow function with implicit return
+  console.log(double(2)); // 4
 
--   *this* reference
+- _this_ reference
 
-In an arrow function, *this* is equal to the *this* value of the enclosing execution context. Basically, with arrow functions you don’t have to do the “that = this” trick before calling a function inside a function anymore.
+In an arrow function, _this_ is equal to the _this_ value of the enclosing execution context. Basically, with arrow functions you don’t have to do the “that = this” trick before calling a function inside a function anymore.
 
     function myFunc() {
       this.myVar = 0;
@@ -249,15 +245,15 @@ In an arrow function, *this* is equal to the *this* value of the enclosing execu
 
 Arrow functions are more concise than traditional functions in many ways. Let’s review all the possible cases:
 
--   Implicit VS Explicit return
+- Implicit VS Explicit return
 
-An **explicit return** is a function where the *return* keyword is used in its body.
+An **explicit return** is a function where the _return_ keyword is used in its body.
 
     function double(x) {
       return x * 2; // this function explicitly returns x * 2, *return* keyword is used
     }
 
-In the traditional way of writing functions, the return was always explicit. But with arrow functions, you can do *implicit return* which means that you don’t need to use the keyword *return* to return a value.
+In the traditional way of writing functions, the return was always explicit. But with arrow functions, you can do _implicit return_ which means that you don’t need to use the keyword _return_ to return a value.
 
 To do an implicit return, the code must be written in a one-line sentence.
 
@@ -269,13 +265,13 @@ Since there only is a return value here, we can do an implicit return.
 
     const double = (x) => x * 2;
 
-To do so, we only need to **remove the brackets** and the **return** keyword. That’s why it’s called an *implicit* return, the *return* keyword is not there but this function will indeed return `x * 2`.
+To do so, we only need to **remove the brackets** and the **return** keyword. That’s why it’s called an _implicit_ return, the _return_ keyword is not there but this function will indeed return `x * 2`.
 
-> **Note :** If your function does not return a value (with *side effects*), it doesn’t do an explicit nor an implicit return.
+> **Note :** If your function does not return a value (with _side effects_), it doesn’t do an explicit nor an implicit return.
 
--   Only one argument
+- Only one argument
 
-If your function only takes one parameter, you can omit the parenthesis around it. If we take back the above *double* code:
+If your function only takes one parameter, you can omit the parenthesis around it. If we take back the above _double_ code:
 
     const double = (x) => x * 2; // this arrow function only takes one parameter
 
@@ -283,7 +279,7 @@ Parenthesis around the parameter can be avoided:
 
     const double = (x) => x * 2; // this arrow function only takes one parameter
 
--   No arguments
+- No arguments
 
 When there is no argument provided to an arrow function, you need to provide parentheses or it won’t be valid syntax.
 
@@ -298,13 +294,13 @@ When there is no argument provided to an arrow function, you need to provide par
         return x;
       }
 
-##### *this* reference
+##### _this_ reference
 
 To understand this subtlety introduced with arrow functions, you must understand how [this](#this_def) behaves in JavaScript.
 
-In an arrow function, *this* is equal to the *this* value of the enclosing execution context. What it means is that an arrow function doesn’t create a new *this*, it grabs it from its surrounding instead.
+In an arrow function, _this_ is equal to the _this_ value of the enclosing execution context. What it means is that an arrow function doesn’t create a new _this_, it grabs it from its surrounding instead.
 
-Without arrow function, if you wanted to access a variable from *this* in a function inside a function, you had to use the *that = this* or *self = this* trick.
+Without arrow function, if you wanted to access a variable from _this_ in a function inside a function, you had to use the _that = this_ or _self = this_ trick.
 
 For instance, using setTimeout function inside myFunc:
 
@@ -320,7 +316,7 @@ For instance, using setTimeout function inside myFunc:
       }, 0);
     }
 
-But with arrow function, *this* is taken from its surrounding:
+But with arrow function, _this_ is taken from its surrounding:
 
     function myFunc() {
       this.myVar = 0;
@@ -333,9 +329,9 @@ But with arrow function, *this* is taken from its surrounding:
 
 #### Useful resources
 
--   [Arrow functions introduction - WesBos](http://wesbos.com/arrow-functions/)
--   [JavaScript arrow function - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
--   [Arrow function and lexical *this*](https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e8c4)
+- [Arrow functions introduction - WesBos](http://wesbos.com/arrow-functions/)
+- [JavaScript arrow function - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [Arrow function and lexical _this_](https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e8c4)
 
 ### Function default parameter value
 
@@ -352,27 +348,27 @@ Starting from ES2015 JavaScript update, you can set default value to your functi
 
 The default parameter is applied in two and only two situations:
 
--   No parameter provided
--   *undefined* parameter provided
+- No parameter provided
+- _undefined_ parameter provided
 
-In other words, if you pass in *null* the default parameter **won’t be applied**.
+In other words, if you pass in _null_ the default parameter **won’t be applied**.
 
 > **Note :** Default value assignment can be used with destructured parameters as well (see next notion to see an example)
 
 #### External resource
 
--   [Default parameter value - ES6 Features](http://es6-features.org/#DefaultParameterValues)
--   [Default parameters - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+- [Default parameter value - ES6 Features](http://es6-features.org/#DefaultParameterValues)
+- [Default parameters - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
 ### Destructuring objects and arrays
 
-*Destructuring* is a convenient way of creating new variables by extracting some values from data stored in objects or arrays.
+_Destructuring_ is a convenient way of creating new variables by extracting some values from data stored in objects or arrays.
 
-To name a few useful cases, *destructuring* can be used to destructure function parameters or *this.props* in React projects for instance.
+To name a few useful cases, _destructuring_ can be used to destructure function parameters or _this.props_ in React projects for instance.
 
 #### Explanation with sample code
 
--   Object
+- Object
 
 Lets consider the following object for all the samples:
 
@@ -398,11 +394,11 @@ With destructuring, all in one line:
     console.log(firstName); // Undefined -- person.firstName exists BUT the new variable created is named first
     console.log(city); // "Paris" -- A new variable city is created and since person.city is undefined, city is equal to the default value provided "Paris".
 
-**Note :** In `const { age } = person;`, the brackets after *const* keyword are not used to declare an object nor a block but is the *destructuring* syntax.
+**Note :** In `const { age } = person;`, the brackets after _const_ keyword are not used to declare an object nor a block but is the _destructuring_ syntax.
 
--   Function parameters
+- Function parameters
 
-*Destructuring* is often used to destructure objects parameters in functions.
+_Destructuring_ is often used to destructure objects parameters in functions.
 
 Without destructuring
 
@@ -414,7 +410,7 @@ Without destructuring
 
     joinFirstLastName(person); // "Nick-Anderson"
 
-In destructuring the object parameter *person*, we get a more concise function:
+In destructuring the object parameter _person_, we get a more concise function:
 
     function joinFirstLastName({ firstName, lastName }) {
       // we create firstName and lastName variables by destructuring person parameter
@@ -430,7 +426,7 @@ Destructuring is even more pleasant to use with [arrow functions](#arrow_func_co
 
     joinFirstLastName(person); // "Nick-Anderson"
 
--   Array
+- Array
 
 Lets consider the following array:
 
@@ -450,23 +446,23 @@ With destructuring
 
 #### Useful resources
 
--   [ES6 Features - Destructuring Assignment](http://es6-features.org/#ArrayMatching)
--   [Destructuring Objects - WesBos](http://wesbos.com/destructuring-objects/)
--   [ExploringJS - Destructuring](http://exploringjs.com/es6/ch_destructuring.html)
+- [ES6 Features - Destructuring Assignment](http://es6-features.org/#ArrayMatching)
+- [Destructuring Objects - WesBos](http://wesbos.com/destructuring-objects/)
+- [ExploringJS - Destructuring](http://exploringjs.com/es6/ch_destructuring.html)
 
 ### Array methods - map / filter / reduce
 
-*Map*, *filter* and *reduce* are array methods that are coming from a programming paradigm named [*functional programming*](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0).
+_Map_, _filter_ and _reduce_ are array methods that are coming from a programming paradigm named [_functional programming_](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0).
 
 To sum it up:
 
--   **Array.prototype.map()** takes an array, does something on its elements and returns an array with the transformed elements.
--   **Array.prototype.filter()** takes an array, decides element by element if it should keep it or not and returns an array with the kept elements only
--   **Array.prototype.reduce()** takes an array and aggregates the elements into a single value (which is returned)
+- **Array.prototype.map()** takes an array, does something on its elements and returns an array with the transformed elements.
+- **Array.prototype.filter()** takes an array, decides element by element if it should keep it or not and returns an array with the kept elements only
+- **Array.prototype.reduce()** takes an array and aggregates the elements into a single value (which is returned)
 
 I recommend to use them as much as possible in following the principles of functional programming, because they are composable, concise and elegant.
 
-With those three methods you can avoid the use of *for* and *forEach* loops in must situations. When you are tempted to do a *for* loop, try to do it with *map*, *filter* and *reduce* composed. You might struggle to do it at first because it requires you to learn a new way of thinking, but once you’ve got it things gets easier.
+With those three methods you can avoid the use of _for_ and _forEach_ loops in must situations. When you are tempted to do a _for_ loop, try to do it with _map_, _filter_ and _reduce_ composed. You might struggle to do it at first because it requires you to learn a new way of thinking, but once you’ve got it things gets easier.
 
 #### Sample code
 
@@ -504,7 +500,7 @@ Let’s consider the following array of numbers for our examples:
     });
     console.log(doubledNumbers); // [0, 2, 4, 6, 8, 10, 12]
 
-What’s happening here ? We are using .map on the *numbers* array, map is iterating on each element of the array and passes it to our function. The goal of the function is to produce and return a new value from the one passed so that map can replace it.
+What’s happening here ? We are using .map on the _numbers_ array, map is iterating on each element of the array and passes it to our function. The goal of the function is to produce and return a new value from the one passed so that map can replace it.
 
 Lets extract this function to make it more clear, just for this once:
 
@@ -525,11 +521,11 @@ Lets extract this function to make it more clear, just for this once:
     });
     console.log(parNumbers); // [0, 2, 4, 6]
 
-We are using .filter on the *numbers* array, filter is iterating on each element of the array and passes it to our function. The goal of the function is to return a boolean that will determine whether the current value will be kept or not. Filter then returns the array with only the kept values.
+We are using .filter on the _numbers_ array, filter is iterating on each element of the array and passes it to our function. The goal of the function is to return a boolean that will determine whether the current value will be kept or not. Filter then returns the array with only the kept values.
 
 ##### Array.prototype.reduce()
 
-The reduce method goal is to *reduce* all elements of the array it iterates on into a single value. How it aggregates those elements is up to you.
+The reduce method goal is to _reduce_ all elements of the array it iterates on into a single value. How it aggregates those elements is up to you.
 
     const sum = numbers.reduce(
       function (acc, n) {
@@ -544,63 +540,63 @@ Just like for .map and .filter methods, .reduce is applied on an array and takes
 
 This time though, there are changes:
 
--   .reduce takes two parameters
+- .reduce takes two parameters
 
 The first parameter is a function that will be called at each iteration step.
 
-The second parameter is the value of the accumulator variable (*acc* here) at the first iteration step (read next point to understand).
+The second parameter is the value of the accumulator variable (_acc_ here) at the first iteration step (read next point to understand).
 
--   Function parameters
+- Function parameters
 
-The function you pass as the first parameter of .reduce takes two parameters. The first one (*acc* here) is the accumulator variable, whereas the second parameter (*n*) is the current element.
+The function you pass as the first parameter of .reduce takes two parameters. The first one (_acc_ here) is the accumulator variable, whereas the second parameter (_n_) is the current element.
 
-The accumulator variable is equal to the return value of your function at the **previous** iteration step. At the first step of the iteration, *acc* is equal to the value you passed as .reduce second parameter.
+The accumulator variable is equal to the return value of your function at the **previous** iteration step. At the first step of the iteration, _acc_ is equal to the value you passed as .reduce second parameter.
 
 ###### At first iteration step
 
 `acc = 0` because we passed in 0 as second parameter for reduce
 
-`n = 0` first element of the *number* array
+`n = 0` first element of the _number_ array
 
-Function returns *acc* + *n* –&gt; 0 + 0 –&gt; 0
+Function returns _acc_ + _n_ –&gt; 0 + 0 –&gt; 0
 
 ###### At second iteration step
 
 `acc = 0` because its the value the function returned at the previous iteration step
 
-`n = 1` second element of the *number* array
+`n = 1` second element of the _number_ array
 
-Function returns *acc* + *n* –&gt; 0 + 1 –&gt; 1
+Function returns _acc_ + _n_ –&gt; 0 + 1 –&gt; 1
 
 ###### At third iteration step
 
 `acc = 1` because its the value the function returned at the previous iteration step
 
-`n = 2` third element of the *number* array
+`n = 2` third element of the _number_ array
 
-Function returns *acc* + *n* –&gt; 1 + 2 –&gt; 3
+Function returns _acc_ + _n_ –&gt; 1 + 2 –&gt; 3
 
 ###### At fourth iteration step
 
 `acc = 3` because it’s the value the function returned at the previous iteration step
 
-`n = 3` fourth element of the *number* array
+`n = 3` fourth element of the _number_ array
 
-Function returns *acc* + *n* –&gt; 3 + 3 –&gt; 6
+Function returns _acc_ + _n_ –&gt; 3 + 3 –&gt; 6
 
 ###### \[…\] At last iteration step
 
 `acc = 15` because it’s the value the function returned at the previous iteration step
 
-`n = 6` last element of the *number* array
+`n = 6` last element of the _number_ array
 
-Function returns *acc* + *n* –&gt; 15 + 6 –&gt; 21
+Function returns _acc_ + _n_ –&gt; 15 + 6 –&gt; 21
 
 As it is the last iteration step, **.reduce** returns 21.
 
 #### External Resource
 
--   [Understanding map / filter / reduce in JS](https://hackernoon.com/understanding-map-filter-and-reduce-in-javascript-5df1c7eee464)
+- [Understanding map / filter / reduce in JS](https://hackernoon.com/understanding-map-filter-and-reduce-in-javascript-5df1c7eee464)
 
 ### Spread operator “…”
 
@@ -639,7 +635,7 @@ If we have the two following arrays:
     const arr1 = ["a", "b", "c"];
     const arr2 = [arr1, "d", "e", "f"]; // [["a", "b", "c"], "d", "e", "f"]
 
-*arr2* first element is an array, because *arr1* is injected as is into *arr2*. But what we want is *arr2* to be an array of letters. To do so, we can *spread* the elements of *arr1* into *arr2*.
+_arr2_ first element is an array, because _arr1_ is injected as is into _arr2_. But what we want is _arr2_ to be an array of letters. To do so, we can _spread_ the elements of _arr1_ into _arr2_.
 
 With spread operator
 
@@ -712,10 +708,10 @@ For this one I recommend you read previous explanations about the rest operator 
 
 #### External resources
 
--   [TC39 - Object rest/spread](https://github.com/tc39/proposal-object-rest-spread)
--   [Spread operator introduction - WesBos](https://github.com/wesbos/es6-articles/blob/master/28%20-%20Spread%20Operator%20Introduction.md)
--   [JavaScript & the spread operator](https://codeburst.io/javascript-the-spread-operator-a867a71668ca)
--   [6 Great uses of the spread operator](https://davidwalsh.name/spread-operator)
+- [TC39 - Object rest/spread](https://github.com/tc39/proposal-object-rest-spread)
+- [Spread operator introduction - WesBos](https://github.com/wesbos/es6-articles/blob/master/28%20-%20Spread%20Operator%20Introduction.md)
+- [JavaScript & the spread operator](https://codeburst.io/javascript-the-spread-operator-a867a71668ca)
+- [6 Great uses of the spread operator](https://davidwalsh.name/spread-operator)
 
 ### Object property shorthand
 
@@ -727,7 +723,7 @@ When assigning a variable to an object property, if the variable name is equal t
 
 #### Explanation
 
-Usually (pre-ES2015) when you declare a new *object literal* and want to use variables as object properties values, you would write this kind of code:
+Usually (pre-ES2015) when you declare a new _object literal_ and want to use variables as object properties values, you would write this kind of code:
 
     const x = 10;
     const y = 20;
@@ -757,7 +753,7 @@ With ES2015, when the variable name is the same as the property name, you can do
 
 #### External resources
 
--   [Property shorthand - ES6 Features](http://es6-features.org/#PropertyShorthand)
+- [Property shorthand - ES6 Features](http://es6-features.org/#PropertyShorthand)
 
 ### Promises
 
@@ -779,13 +775,13 @@ Promises can be used to avoid [callback hell](http://callbackhell.com/) and they
 
 #### Explanation
 
-When you do an *AJAX request* the response is not synchronous because you want a resource that takes some time to come. It even may never come if the resource you have requested is unavailable for some reason (404).
+When you do an _AJAX request_ the response is not synchronous because you want a resource that takes some time to come. It even may never come if the resource you have requested is unavailable for some reason (404).
 
-To handle that kind of situations, ES2015 has given us *promises*. Promises can have three different states:
+To handle that kind of situations, ES2015 has given us _promises_. Promises can have three different states:
 
--   Pending
--   Resolved
--   Rejected
+- Pending
+- Resolved
+- Rejected
 
 Let’s say we want to use promises to handle an AJAX request to fetch the resource X.
 
@@ -806,9 +802,9 @@ We firstly are going to create a promise. We will use the jQuery get method to d
         });
     });
 
-As seen in the above sample, the Promise object takes a function which takes two parameters **resolve** and **reject**. Those parameters are functions which when called are going to move the promise *pending* state to respectively a *resolved* and *rejected* state.
+As seen in the above sample, the Promise object takes a function which takes two parameters **resolve** and **reject**. Those parameters are functions which when called are going to move the promise _pending_ state to respectively a _resolved_ and _rejected_ state.
 
-But at the moment, the promise has not been used but only has been declared and stored into *xFetcherPromise* variable! So it doesn’t have a current state.
+But at the moment, the promise has not been used but only has been declared and stored into _xFetcherPromise_ variable! So it doesn’t have a current state.
 
 ##### Use the promise
 
@@ -824,22 +820,22 @@ To use the promise, we do the following:
 
 `.then` is a method that once called will put the xFetcherPromise in **pending** state. When called, the promise body runs and in this case an AJAX call is being done.
 
-If it succeeds, *resolve* is called and the function passed as `.then` parameter is executed.
+If it succeeds, _resolve_ is called and the function passed as `.then` parameter is executed.
 
-If it fails, *reject* is called and the function passed as `.catch` parameter is executed.
+If it fails, _reject_ is called and the function passed as `.catch` parameter is executed.
 
 #### External Resources
 
--   [JavaScript Promises for dummies - Jecelyn Yeen](https://scotch.io/tutorials/javascript-promises-for-dummies)
--   [JavaScript Promise API - David Walsh](https://davidwalsh.name/promises)
--   [Using promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
--   [What is a promise - Eric Elliott](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
--   [JavaScript Promises: an Introduction - Jake Archibald](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
--   [Promise documentation - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [JavaScript Promises for dummies - Jecelyn Yeen](https://scotch.io/tutorials/javascript-promises-for-dummies)
+- [JavaScript Promise API - David Walsh](https://davidwalsh.name/promises)
+- [Using promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [What is a promise - Eric Elliott](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+- [JavaScript Promises: an Introduction - Jake Archibald](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
+- [Promise documentation - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 ### Template literals
 
-Template literals is an [*expression interpolation*](https://en.wikipedia.org/wiki/String_interpolation) for single and multiple-line strings.
+Template literals is an [_expression interpolation_](https://en.wikipedia.org/wiki/String_interpolation) for single and multiple-line strings.
 
 In other words, it is a new string syntax in which you can conveniently use any JavaScript expressions (variables for instance).
 
@@ -852,8 +848,8 @@ In other words, it is a new string syntax in which you can conveniently use any 
 
 #### External resources
 
--   [String interpolation - ES6 Features](http://es6-features.org/#StringInterpolation)
--   [ES6 Template Strings - Addy Osmani](https://developers.google.com/web/updates/2015/01/ES6-Template-Strings)
+- [String interpolation - ES6 Features](http://es6-features.org/#StringInterpolation)
+- [ES6 Template Strings - Addy Osmani](https://developers.google.com/web/updates/2015/01/ES6-Template-Strings)
 
 ### Imports / Exports
 
@@ -863,7 +859,7 @@ I highly recommend to take a look at MDN resources on import / export (see exter
 
 #### Explanation with sample code
 
--   Named exports
+- Named exports
 
 Named exports are useful to export several values from a module. You can only name-export variables (not functions or class), so if you want to name-export a function, you have to store it in a variable before.
 
@@ -886,7 +882,7 @@ Named exports are useful to export several values from a module. You can only na
     console.log(constants.pi); // 3.14
     console.log(constants.exp); // 2.7
 
--   Default import / export
+- Default import / export
 
 Concerning the default export, there is only a single default export per module. A default export can be a function, a class, an object or anything else. This value is considered the “main” exported value since it will be the simplest to import. [Ref: MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#Description)
 
@@ -916,16 +912,16 @@ Function exporting:
 
 #### External resources
 
--   [Export - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
--   [Import - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
--   [Understanding ES6 Modules](https://www.sitepoint.com/understanding-es6-modules/)
--   [Modules in JavaScript](http://exploringjs.com/es6/ch_modules.html#sec_modules-in-javascript)
+- [Export - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+- [Import - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+- [Understanding ES6 Modules](https://www.sitepoint.com/understanding-es6-modules/)
+- [Modules in JavaScript](http://exploringjs.com/es6/ch_modules.html#sec_modules-in-javascript)
 
-### <span id="this_def"></span> JavaScript *this*
+### <span id="this_def"></span> JavaScript _this_
 
-*this* operator behaves differently than in other languages and is in most cases determined by how a function is called. ([Ref: MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)).
+_this_ operator behaves differently than in other languages and is in most cases determined by how a function is called. ([Ref: MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)).
 
-This notion having many subtleties and being quite hard, I highly suggest you to deep dive in the external resources below. Thus, I will provide what I personally have in mind to determine what *this* is equal to. I have learned this tip from [this article written by Yehuda Katz](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/).
+This notion having many subtleties and being quite hard, I highly suggest you to deep dive in the external resources below. Thus, I will provide what I personally have in mind to determine what _this_ is equal to. I have learned this tip from [this article written by Yehuda Katz](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/).
 
     function myFunc() {
       ...
@@ -954,20 +950,20 @@ This notion having many subtleties and being quite hard, I highly suggest you to
 
 #### External resources
 
--   [Understanding JavaScript Function Invocation and “this” - Yehuda Katz](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
--   [JavaScript this - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+- [Understanding JavaScript Function Invocation and “this” - Yehuda Katz](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
+- [JavaScript this - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 ### Class
 
 JavaScript is a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) language (whereas Java is [class-based](https://en.wikipedia.org/wiki/Class-based_programming) language, for instance). ES6 has introduced JavaScript classes which are meant to be a syntactic sugar for prototype-based inheritance and **not** a new class-based inheritance model ([ref](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)).
 
-The word *class* is indeed error prone if you are familiar with classes in other languages. If you do, avoid assuming how JavaScript classes work on this basis and consider it an entirely different notion.
+The word _class_ is indeed error prone if you are familiar with classes in other languages. If you do, avoid assuming how JavaScript classes work on this basis and consider it an entirely different notion.
 
 Since this document is not an attempt to teach you the language from the ground up, I will consider you know what prototypes are and how they behave. But here are some links I found great to understand this notion:
 
--   [Understanding Prototypes in JS - Yehuda Katz](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)
--   [A plain english guide to JS prototypes - Sebastian Porto](http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/)
--   [Inheritance and the prototype chain - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+- [Understanding Prototypes in JS - Yehuda Katz](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)
+- [A plain english guide to JS prototypes - Sebastian Porto](http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/)
+- [Inheritance and the prototype chain - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 
 #### Samples
 
@@ -1002,18 +998,17 @@ With ES6 class syntax:
 
 For prototype understanding:
 
--   [Understanding Prototypes in JS - Yehuda Katz](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)
--   [A plain english guide to JS prototypes - Sebastian Porto](http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/)
--   [Inheritance and the prototype chain - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+- [Understanding Prototypes in JS - Yehuda Katz](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)
+- [A plain english guide to JS prototypes - Sebastian Porto](http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/)
+- [Inheritance and the prototype chain - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 
 For classes understanding:
 
--   [ES6 Classes in Depth - Nicolas Bevacqua](https://ponyfoo.com/articles/es6-classes-in-depth)
--   [ES6 Features - Classes](http://es6-features.org/#ClassDefinition)
--   [JavaScript Classes - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+- [ES6 Classes in Depth - Nicolas Bevacqua](https://ponyfoo.com/articles/es6-classes-in-depth)
+- [ES6 Features - Classes](http://es6-features.org/#ClassDefinition)
+- [JavaScript Classes - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
-Glossary
---------
+## Glossary
 
 ### <span id="scope_def"></span> Scope
 
@@ -1028,6 +1023,6 @@ A variable is said to have been mutated when its initial value has changed after
     var myArray = [];
     myArray.push("firstEl"); // myArray is being mutated
 
-A variable is said to be *immutable* if it can’t be mutated.
+A variable is said to be _immutable_ if it can’t be mutated.
 
 [Check MDN Mutable article](https://developer.mozilla.org/en-US/docs/Glossary/Mutable) for more details.

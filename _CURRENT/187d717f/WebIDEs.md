@@ -1,5 +1,4 @@
-Web IDEs
-========
+# Web IDEs
 
 [ideone](https://ideone.com/) Ideone is an online compiler and debugging tool which allows youto compile source code and execute it online in more than 60 programming languages and share links to the code.  
 [repl.it](https://repl.it) Like ideaone, can also install missing Python packages.  
@@ -11,11 +10,9 @@ Dedicated: [JSFiddle](https://jsfiddle.net/) Online JavaScript, CSS, HTML or Cof
 
 (Cloud workspaces: https://codenvy.com/, https://codeanywhere.com/)
 
-RegEx
-=====
+# RegEx
 
-Online Tester & Code Generator
-------------------------------
+## Online Tester & Code Generator
 
 [regex101](https:/regex101.com) Online regex tester for PHP, PCRE, JavaScript and Python that highlights pattern and matches on the fly.  
 https://regexr.com/ Online regex tester with gut regex replace and explain functionality.  
@@ -65,56 +62,48 @@ http://www.analyticsmarket.com/freetools/regex-tester (and a general [GA RE usag
 
 ### Regex Reverse Pattern generator
 
-[sre\_yield](https://github.com/google/sre_yield): generate all values that can match a given regular expression, or count possible matches efficiently  
+[sre_yield](https://github.com/google/sre_yield): generate all values that can match a given regular expression, or count possible matches efficiently  
 [Xeger](https://github.com/bluezio/xeger): Java library for generating strings that match a specific regular expression.  
 [PyXeger](https://github.com/bluezio/xeger): Java library for generating strings that match a specific regular expression.
 
-General Languages
-=================
+# General Languages
 
 https://www.tutorialspoint.com/codingground.htm
 
-.NET
-----
+## .NET
 
 https://dotnetfiddle.net/
 
-PHP
----
+## PHP
 
 [PHP Sandbox](http://sandbox.onlinephpfunctions.com/): Allows to test PHP code on many php versions.  
 https://3v4l.org/ allows to run over 200 different PHP versions (including HHVM, etc.) in parallel - excellent for version compatibility tests  
 http://c9.io An online IDE that supports many languages (free for personal use).  
 http://phpfiddle.org/ A PHP online IDE with some extra resources like code search (saved, external code).
 
-Python
-------
+## Python
 
 https://www.onlinegdb.com/online\_python\_debugger  
 [EXREX](https://github.com/asciimoo/exrex) is a command line tool and python module that generates all - or random - matching strings to a given regular expression and more.
 
-Perl
-----
+## Perl
 
 http://rextester.com/l/perl\_online\_compiler  
 https://www.jdoodle.com/execute-perl-online  
 https://www.tutorialspoint.com/execute\_perl\_online.php
 
-HTML
-----
+## HTML
 
 https://html-cleaner.com/ HTML/CSS/JS Cleaner
 
-JSON:
------
+## JSON:
 
 Query test: http://www.jsonquerytool.com/\#/JavaScript  
 Sort array: https://aruljohn.com/jsonsort/  
 Generate C\# classes from JSON: http://json2csharp.com/ (Desktop tool: http://jsonclassgenerator.codeplex.com/)  
 [ConvertJson.com](http://convertjson.com/) FromJson(to XML, HTML, CSV, SQL, YAML), ToJson, JsonTools (Lint, Viewer, Format, Path Analyzer)
 
-SQL
----
+## SQL
 
 http://sqlfiddle.com/ (MySQL, Oracle, PosgreSQL, SQLite, MS SQL 2014)  
 https://sqltest.net/ (MySQL, Oracle)  
@@ -125,11 +114,9 @@ https://sqlizer.io/
 https://sqlformat.org/ (online formatting service)  
 http://poorsql.com/ (Poor Man’s SQL Formatter online, [download for VS, SMSS, Np++, etc.](http://architectshack.com/PoorMansTSqlFormatter.ashx#Download_4)).
 
-Utilities
-=========
+# Utilities
 
-Code beautifier & Syntax Highlither
------------------------------------
+## Code beautifier & Syntax Highlither
 
 https://codebeautify.org/  
 https://tohtml.com/ Syntax Highlither for varius languages (useful for HTML & RTF text)
@@ -138,8 +125,7 @@ https://tohtml.com/ Syntax Highlither for varius languages (useful for HTML & RT
 
 http://www.fileformat.info/convert/text/charset.htm
 
-Other
------
+## Other
 
 Arul’s network and other technical utilities: View your IP, country, ISP name, OS, browser/UA.  
 Convert IP address to hostname and vice versa, text case convert, UNIX timestamp to date, hash generator  

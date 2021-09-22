@@ -1,5 +1,4 @@
-`.gitignore`
-------------
+## `.gitignore`
 
 Before discussing how to configure webpack, be aware that running webpack and using npm creates many redundant, large files in your local project directory. To avoid this use a `.gitignore` file in your project’s root directory to prevent these files from being pushed to and pulled from your remote Git repositories. Create a `.gitignore` file in your project’s root directory and list the files or directories you want to ignore, one per line. Use a trailing `/` to indicate a directory to ignore. To re-fetch the NPM modules, we can run `npm install`, which fetches all the modules specified in `package.json`. Then run `webpack` to regenerate the `bundle.js` and `bundle.js.map` files.
 
@@ -13,8 +12,7 @@ For example:
 
 You can view a full collection of useful `.gitignore` templates [here](https://github.com/github/gitignore).
 
-Configuring Webpack
--------------------
+## Configuring Webpack
 
 Just like with NPM, you can use a configuration file to set up your webpack options. You’ll have to create this file by hand. It should live in your project’s root directory, be named `webpack.config.js`, and export a single object.
 
