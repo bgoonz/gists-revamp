@@ -1,16 +1,14 @@
-**NOTE: pipenv is *optional*! We don’t use it in CS.** But it’s a neat package manager if you get into more complex Python projects. It can be a headache of an install for some people. You can safely ignore anything about pipenv below if you don’t want to mess with it.
+**NOTE: pipenv is _optional_! We don’t use it in CS.** But it’s a neat package manager if you get into more complex Python projects. It can be a headache of an install for some people. You can safely ignore anything about pipenv below if you don’t want to mess with it.
 
 We’ll want to install Python 3 (version 3.x), which is the runtime for the language itself. The runtime is what allows you to execute Python code and files by typing `python [file_or_code_to_execute]` in your terminal. You can also open up a Python REPL (Read-Eval-Print Loop) to quickly and easily mess around with Python code once you’ve gotten the runtime installed. If you recall how Node let’s you execute and run JavaScript code locally on your machine instead of having to rely on the browser, the Python runtime pretty much let’s you do the same thing but with Python code.
 
 Additionally, we’ll be talking about how to install the (optional) pipenv virtual environment manager. Think of it as the `npm` of Python (though pipenv is also capable of performing a bunch of other tasks as well, most notably running your Python projects in an isolated virtual environment).
 
-Note for Anaconda users
------------------------
+## Note for Anaconda users
 
 Unfortunately, we haven’t found a way to get Anaconda to play nicely with pipenv. If you get them working together, please let your instructor know how you did it.
 
-Testing the Install
--------------------
+## Testing the Install
 
 If you can run `python` or `python3` and see a 3.7 or later version, you’re good to go:
 
@@ -29,8 +27,7 @@ And optionally try `pipenv`:
 
 Otherwise, keep reading. :)
 
-macOS
------
+## macOS
 
 While macOS comes with Python 2, we need to get Python 3 in there as well.
 
@@ -40,10 +37,9 @@ Use Brew to install Python and pipenv at the Terminal prompt:
 
     brew install python pipenv
 
-Windows
--------
+## Windows
 
-***Note**:* Git Bash doesn’t seem to cooperate if you’re trying to install Python on Windows. Try another terminal like Powershell.
+**\*Note**:\* Git Bash doesn’t seem to cooperate if you’re trying to install Python on Windows. Try another terminal like Powershell.
 
 Recommend updating Windows to the latest version.
 
@@ -134,8 +130,8 @@ If you run into trouble with the above, try the following:
         3.  Otherwise, update Ubuntu:
             1.  `sudo apt-get update`
             2.  `sudo apt-get upgrade`
-    2.  Repeat 2.1 above to determine if you should use `Python` or `Python3` when using Python. *Note:* inside the shell, you will always use *Python* as the command.
-2.  Make sure pip is installed for *Python 3*
+    2.  Repeat 2.1 above to determine if you should use `Python` or `Python3` when using Python. _Note:_ inside the shell, you will always use _Python_ as the command.
+2.  Make sure pip is installed for _Python 3_
     1.  `pip --version` and `pip3 --version`. One of these needs to respond with a version that has a version of Python 3 at the end of the line.
     2.  If you only have it for 2.7, you will need to install for 3 with:
         1.  `sudo apt update && sudo apt upgrade`
@@ -150,10 +146,9 @@ If you run into trouble with the above, try the following:
     1.  If the error does refer to 3.6:
         1.  Confirm that `python --version` refers to 2.7.something
         2.  Confirm that `/usr/bin/python3 --version` refers to 3.6.8
-        3.  `pipenv --three --python=`which python3\``*NOTE* that there are backticks (`) around *which python3*
+        3.  `pipenv --three --python=`which python3\``*NOTE* that there are backticks (`) around _which python3_
         4.  This should create the shell forcing it to use 3.6.8
 
-Linux
------
+## Linux
 
 Consult the documentation for your distribution.

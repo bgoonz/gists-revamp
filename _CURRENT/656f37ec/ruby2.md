@@ -2,8 +2,7 @@
 
 **Objectives** \* If Statements \* Each Loops \* While Loops \* Exercises!
 
-Quick Review of Expressions
----------------------------
+## Quick Review of Expressions
 
 What’s the difference?
 
@@ -79,12 +78,11 @@ Write a calculator program that takes a number, an operation +,-,/,\*, then anot
 
     Enter a number, a +,-,/,*, then another number.
     7
-    / 
+    /
     2
     Result: 3.5
 
-Loops
------
+## Loops
 
 Loops are essential to programming. They allow us to repeat an operation many times. Typically, execution of a loop lasts as long as a certain value holds true or as long as a set of data is being iterated over. Below is an example of printing the values from 0 to 10 done using many different methods. Note that 0..10 is a Range type, which was discussed earlier.
 
@@ -108,18 +106,15 @@ Loops are essential to programming. They allow us to repeat an operation many ti
       puts "Take one down, pass it around #{count} bottles of beer on the wall"
     end
 
-Iteration using a block
-=======================
+# Iteration using a block
 
 (0..10).each do |i| puts “The value of i is now \#{i}” end
 
-A more condensed way to iterate using a block.
-==============================================
+# A more condensed way to iterate using a block.
 
 (0..10).each { |i| puts “The value of i is now \#{i}” }
 
-Iterating with a while loop
-===========================
+# Iterating with a while loop
 
 i = 0 num = 10
 
@@ -133,8 +128,7 @@ while command != ‘bye’ puts command command = gets.chomp end
 
 puts ‘Come again soon!’
 
-Iterating until a value is true
-===============================
+# Iterating until a value is true
 
 i = 0 num = 10
 
@@ -144,9 +138,6 @@ until i &gt; num puts “The value of i is now \#{i}” i += 1 end
     Break is a keyword that stops iteration of a loop.  In the example below, if i is equal to 6, then break is called. The output of the program will be 1 4 (each on separate lines).
 
 arr = \[1,4,6,9,24\] for i in arr break if i == 6 puts i end
-
-
-
 
     ***
 
@@ -177,20 +168,17 @@ Hello, Jordan. I’m Tim. Nice to meet you. I see you have completed 14 assignme
 
 \#!/usr/bin/env ruby
 
-Saving my friends name
-======================
+# Saving my friends name
 
-puts “Hello, what is your name?” friends\_name = gets.chomp
+puts “Hello, what is your name?” friends_name = gets.chomp
 
-Saving the number of completed assignments
-==========================================
+# Saving the number of completed assignments
 
-puts “How many prework assignments have you completed?” completed\_assignments = gets.chomp
+puts “How many prework assignments have you completed?” completed_assignments = gets.chomp
 
-Putting to STDOUT
-=================
+# Putting to STDOUT
 
-puts “Hello, \#{friends\_name}. I’m Tim. Nice to meet you” puts “I see you have completed \#{completed\_assignments} assignments. I have completed 1 assignment” puts “In my free time, I enjoy playing ultimate frisbee”
+puts “Hello, \#{friends_name}. I’m Tim. Nice to meet you” puts “I see you have completed \#{completed_assignments} assignments. I have completed 1 assignment” puts “In my free time, I enjoy playing ultimate frisbee”
 
     ## Odd Or Even
     Write a program that decides if a number is odd or even.
@@ -199,7 +187,7 @@ puts “Hello, \#{friends\_name}. I’m Tim. Nice to meet you” puts “I see y
 
 \#!/usr/bin/env ruby
 
-puts “Please enter a number” num = gets.to\_i
+puts “Please enter a number” num = gets.to_i
 
 if num % 2 == 0 puts “\#{num} is even” else puts “\#{num} is odd” end
 
@@ -221,19 +209,17 @@ Enter a number, a + or - sign, then another number 5 - 3 Result: 2
 
 \#!/usr/bin/env ruby
 
-A calculator program that only understands addition and subtraction
-===================================================================
+# A calculator program that only understands addition and subtraction
 
 puts “Enter a number, a + or - sign, then another number”
 
-Getting our input. The program only supports simple 2 term expressions
-======================================================================
+# Getting our input. The program only supports simple 2 term expressions
 
-num1 = gets.to\_i
+num1 = gets.to_i
 
 sign = gets.chomp
 
-num2 = gets.to\_i
+num2 = gets.to_i
 
 if sign == “+” puts “Result: \#{num1 + num2}” elsif sign == “-” puts “Result: \#{num1 - num2}” else puts “Please re-read the instructions” end
 

@@ -6,9 +6,9 @@ In C, C++, and Go (and probably a pile of other languages), converting from sign
         number += MAX_UNSIGNED_INT + 1
     }
 
-This looks really weird (*WHY* would they do this??!!), but what’s actually happening is a little bit simpler.
+This looks really weird (_WHY_ would they do this??!!), but what’s actually happening is a little bit simpler.
 
-Deep down, the computer represents numbers as bits in sequential bytes. Using something called *[2’s complement](https://en.wikipedia.org/wiki/Two%27s_complement)* representation, signed numbers are stored like so (using a 4-bit number for the sake of example simplicity–but it could be 64 bits, or whatever):
+Deep down, the computer represents numbers as bits in sequential bytes. Using something called _[2’s complement](https://en.wikipedia.org/wiki/Two%27s_complement)_ representation, signed numbers are stored like so (using a 4-bit number for the sake of example simplicity–but it could be 64 bits, or whatever):
 
 Signed:
 
@@ -21,10 +21,10 @@ But compare that to how *un*signed numbers are stored:
 
     binary 0001 = decimal  1    unsigned
     binary 0000 = decimal  0
-    binary 1111 = decimal 15 
+    binary 1111 = decimal 15
     binary 1110 = decimal 14
 
-*The bit pattern for 15 is the same as the bit pattern for -1*. When you convert from signed to unsigned, all it does is change how it’s interprets the exact same bit pattern.
+_The bit pattern for 15 is the same as the bit pattern for -1_. When you convert from signed to unsigned, all it does is change how it’s interprets the exact same bit pattern.
 
 binary `1111` == signed decimal `-1` == unsigned decimal `15`
 

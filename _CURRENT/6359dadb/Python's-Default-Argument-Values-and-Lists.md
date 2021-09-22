@@ -4,7 +4,7 @@ Have you ever written a function that used a list for a default argument value, 
         # ... do something with `a` here ...
         return a
 
-And it’s not just with lists–the problem manifests with any *mutable* data type when it is used as a default argument value.
+And it’s not just with lists–the problem manifests with any _mutable_ data type when it is used as a default argument value.
 
 Here’s what happening, and here’s how to fix it.
 
@@ -57,11 +57,11 @@ and look at the output of Python, which is not expected!
 
 What’s going on?
 
-This all has to do with *when* the default value is created.
+This all has to do with _when_ the default value is created.
 
-Javascript creates the default empty `[]` *when the function is called*. So each time you call it, it makes a new empty array. Every call returns a different array.
+Javascript creates the default empty `[]` _when the function is called_. So each time you call it, it makes a new empty array. Every call returns a different array.
 
-Python creates the default empty `[]` *when the function is *loaded**. So it gets created once only when the program is first read into memory, and that’s it. There’s only one default list no matter how many times you call the function. And so `foo()` is returning *the same list* every time you call it with no arguments. This is why another `1` gets added on each call–`.append(1)` is happening to the same list every time.
+Python creates the default empty `[]` *when the function is *loaded\**. So it gets created once only when the program is first read into memory, and that’s it. There’s only one default list no matter how many times you call the function. And so `foo()` is returning *the same list\* every time you call it with no arguments. This is why another `1` gets added on each call–`.append(1)` is happening to the same list every time.
 
 Indeed, if you run this in Python:
 
@@ -83,9 +83,9 @@ x is y \# False, they’re different lists, like we wanted y is z \# False, they
 
     And then we get good output:
 
-$ python3 default\_good.py \[1\] \[1\] \[1\] \`\`\`
+$ python3 default_good.py \[1\] \[1\] \[1\] \`\`\`
 
-Now, if we had a function that used an *immutable* value as a default argument, we have no problem even though the same process is happening.
+Now, if we had a function that used an _immutable_ value as a default argument, we have no problem even though the same process is happening.
 
     def foo(a="hello!"):
         return a

@@ -1,10 +1,9 @@
 Goal: determine how runtime/number of operations scales up as the input scales up. How much longer does it take to run as the size of the data to process gets bigger?
 
-Steps to compute Big O
-----------------------
+## Steps to compute Big O
 
--   Things in sequence that *aren’t* loops add together
--   A single thing inside a loop gets multiplied by the loop
+- Things in sequence that _aren’t_ loops add together
+- A single thing inside a loop gets multiplied by the loop
 
 1.  Go a line at a time, only looking at lines that are executable
 2.  Add all the things in sequence that you can first
@@ -13,34 +12,30 @@ Steps to compute Big O
 5.  Then keep the dominant term from the resulting sum(s)
 6.  Then drop constants
 
-Hints
------
+## Hints
 
--   If you have something that’s `O(number_of_elements_in_the_data)`, we use `n` as shorthand for `number_of_elements_in_the_data`, so `O(n)`.
--   Individual statements tend to be `O(1)`.
--   Loop statements tend to be `O(how-many-times-they-loop)`.
--   Anything that doubles the runtime each step is `O(2^n)` (e.g. naive Fibonacci).
--   Anything that triples the runtime each step is `O(3^n)`.
--   Anything that halves the runtime each step is `O(log n)` (e.g. binary search).
--   By *dominant term* we mean, “thing which is largest given some large value of *n*, like 10000”. `O(n)` dominates `O(1)`. `O(n^2)` dominates `O(n)` and `O(1)`.
--   Loops that iterate over entire lists are `O(n)`, where `n` is the size of the list.
--   But loops that binary search over a list are `O(log n)`!
+- If you have something that’s `O(number_of_elements_in_the_data)`, we use `n` as shorthand for `number_of_elements_in_the_data`, so `O(n)`.
+- Individual statements tend to be `O(1)`.
+- Loop statements tend to be `O(how-many-times-they-loop)`.
+- Anything that doubles the runtime each step is `O(2^n)` (e.g. naive Fibonacci).
+- Anything that triples the runtime each step is `O(3^n)`.
+- Anything that halves the runtime each step is `O(log n)` (e.g. binary search).
+- By _dominant term_ we mean, “thing which is largest given some large value of _n_, like 10000”. `O(n)` dominates `O(1)`. `O(n^2)` dominates `O(n)` and `O(1)`.
+- Loops that iterate over entire lists are `O(n)`, where `n` is the size of the list.
+- But loops that binary search over a list are `O(log n)`!
 
-Recursion
----------
+## Recursion
 
--   Recursive functions are like loops, where the body of the function is the body of the loop.
--   You need to figure out how many times the function will call itself, and that’s the Big O that you need to multiply against the Big O of the function body.
--   Keep in mind that recursion comes with an inherent memory cost that loops don’t incur, since each recursive call adds an additional execution frame to the stack; in other words, calling a function is not free!
+- Recursive functions are like loops, where the body of the function is the body of the loop.
+- You need to figure out how many times the function will call itself, and that’s the Big O that you need to multiply against the Big O of the function body.
+- Keep in mind that recursion comes with an inherent memory cost that loops don’t incur, since each recursive call adds an additional execution frame to the stack; in other words, calling a function is not free!
 
-Gotchas
--------
+## Gotchas
 
--   Built in functions might incur significant Big O without you noticing. Python’s list `.copy()` might seem like just a simple `O(1)` line, but [it’s `O(n)` under the hood](https://wiki.python.org/moin/TimeComplexity).
--   Beware of loops that modify their index in weird ways.
+- Built in functions might incur significant Big O without you noticing. Python’s list `.copy()` might seem like just a simple `O(1)` line, but [it’s `O(n)` under the hood](https://wiki.python.org/moin/TimeComplexity).
+- Beware of loops that modify their index in weird ways.
 
-Example
--------
+## Example
 
 Label all statements by their time complexities. Individual statements get their Big O, while loops get the number of times they loop.
 
@@ -151,10 +146,9 @@ Break out your algebra.
 
 `O(n^3)` is the time complexity of this function.
 
-With practice, you can do this in your head. Looking back, the nested loop *must* have been where the function spent the most of its time; an experienced dev would see that and just quickly compute the Big O for that function from that nested loop alone.
+With practice, you can do this in your head. Looking back, the nested loop _must_ have been where the function spent the most of its time; an experienced dev would see that and just quickly compute the Big O for that function from that nested loop alone.
 
-Example with two variables
---------------------------
+## Example with two variables
 
     def foo(m, n):
         for i in range(m * n):
@@ -164,8 +158,7 @@ When you have two inputs like this, there’s no way to reduce it farther than `
 
 Sometimes when `m` and `n` tend to be roughly similar, developers will casually say this is `O(n^2)`, but it’s really `O(m*n)`.
 
-Example with lists
-------------------
+## Example with lists
 
     def foo(x):  # x is a list
         for i in x:    # O(n)
@@ -188,8 +181,7 @@ Here we’ve used `n` to represent the number of elements in list `x`, and `m` t
 
 We can use our simplification rules and see that the entire function is `O(n*m*1)`, or `O(n*m)`. (Or `O(n^2)` if we’re speaking informally, and assuming that `n` and `m` are very similar.)
 
-Example with trivial recursion
-------------------------------
+## Example with trivial recursion
 
     def foo(x):   # x is a list
         if len(x) == 0:
@@ -202,18 +194,17 @@ The above function prints out every element in a list. But it’s trickier to se
 
 The secret is that recursive functions are like loops on steroids. So you know it’s similar to a loop in that it’s going to perform a number of operations. But how many? `n`? `n^2`? We have to figure it out.
 
-In the above example, each call to `foo()` results in *one* more call to `foo()`. (Because we look in the body of the function and we see it only calls itself once.) And it’s going to keep calling itself a number of times. *How many times will `foo()` call itself?*
+In the above example, each call to `foo()` results in _one_ more call to `foo()`. (Because we look in the body of the function and we see it only calls itself once.) And it’s going to keep calling itself a number of times. _How many times will `foo()` call itself?_
 
 Here, if we declare that `n` is the number of elements in list `x`, `foo()` calls itself `n` times, once for each element in `x`.
 
 So the recursion itself, acting like a loop, is `O(n)`.
 
-We still have to look at the things *inside* `foo()` to see what else is going on. The body of `foo()` becomes like the body of the loop.
+We still have to look at the things _inside_ `foo()` to see what else is going on. The body of `foo()` becomes like the body of the loop.
 
 But it looks like in there we only have a couple `O(1)` things, so the whole thing becomes `O(n * (1 + 1))`, aka `O(2n)` AKA `O(n)`. Final answer.
 
-Example with Fibonacci
-----------------------
+## Example with Fibonacci
 
     def fib(n):   # Give me the nth Fibonacci number
         if n < 2:
@@ -221,7 +212,7 @@ Example with Fibonacci
 
         return fib(n-2) + fib(n-1)  # Calls itself twice per call!
 
-Again, think loop on steroids. `fib()` calls itself… but it calls itself *two* times per call. …*ish*.
+Again, think loop on steroids. `fib()` calls itself… but it calls itself _two_ times per call. …_ish_.
 
 We call it `1` time, it calls itself `2` times. Those `2` times call it `4` times, which call it `8` times, which call it `16` times, etc. If you recognize those numbers, you’ll know those are powers of 2. `2^0=1`, `2^1=2`, `2^2=4`, `2^3=8`, and all the way up to `2^n`.
 

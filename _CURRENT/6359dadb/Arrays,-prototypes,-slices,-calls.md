@@ -2,8 +2,7 @@ What’s going on with JS prototypes and with the [argument](https://developer.m
 
     var args = Array.prototype.slice.call(arguments);
 
-Question 1
-----------
+## Question 1
 
 **Why in MDN are things described as `Array.prototype.slice()` and then used as `var sliced = a.slice(1, 3);`? What’s the deal with `Array.prototype`?**
 
@@ -17,13 +16,13 @@ The answer gets into prototypal inheritance, a JS feature. A new `Array` is an `
 
 What gives? I asked if it had the property, it said no, and then I asked what the property was, and it told me it was a function.
 
-*“Do you, or do you not, have that property? May I remind you that you’re under oath.”*
+_“Do you, or do you not, have that property? May I remind you that you’re under oath.”_
 
-The answer is that `a` doesn’t have a `slice`, but `Array`’s `prototype` object *does*.
+The answer is that `a` doesn’t have a `slice`, but `Array`’s `prototype` object _does_.
 
 And if a property can’t be found on an object (like `a`), then it looks for it in that object’s prototype, which is found in its constructor’s `prototype` property, namely `Array.prototype`.
 
-When you make a new array with `new` or just in an expression like `a = [];`, it makes the new array object and sets `a` to reference it. But it doesn’t attach any of the methods like `slice` to it. What it *does* do is set `a`’s prototype to reference the object in `Array.prototype`.
+When you make a new array with `new` or just in an expression like `a = [];`, it makes the new array object and sets `a` to reference it. But it doesn’t attach any of the methods like `slice` to it. What it _does_ do is set `a`’s prototype to reference the object in `Array.prototype`.
 
 Let’s have a quick look to see if we can find `slice` there:
 
@@ -33,7 +32,7 @@ Let’s have a quick look to see if we can find `slice` there:
 
 Bingo.
 
-Then, the magic. If you say `a.slice`, JS first looks to see if `a` has a `slice` property. If it does, great, use it. If it doesn’t, *look at a’s prototype object to see if it’s there*.
+Then, the magic. If you say `a.slice`, JS first looks to see if `a` has a `slice` property. If it does, great, use it. If it doesn’t, _look at a’s prototype object to see if it’s there_.
 
 And remember, `a`’s prototype object is pointed to by `Array.prototype`.
 
@@ -43,8 +42,7 @@ And that’s why `a.slice` is valid even though `a` doesn’t have its own `slic
 
 If that’s still a bit mysterious, [check out my blog on prototypal inheritance](http://beej.us/blog/data/javascript-prototypes-inheritance/) in JavaScript.
 
-Question 2
-----------
+## Question 2
 
 **I get that `Array.prototype.slice.call(obj);` is used to convert an array-like object into an array, but I’m not getting the function of `Array`, `prototype`, `call`. I know that `call` changes what `this` refers to, but…**
 
@@ -62,7 +60,7 @@ You can take any function and call it with the `call()` method.
 
     myFunction.call();
 
-Why would you do that? *Because `call()` allows you to specify what `this` will be inside the function*. If you don’t pass anything as the first argument to `call()`, `this` will be `undefined` inside the function. If you pass an object, `this` will refer to that object.
+Why would you do that? _Because `call()` allows you to specify what `this` will be inside the function_. If you don’t pass anything as the first argument to `call()`, `this` will be `undefined` inside the function. If you pass an object, `this` will refer to that object.
 
     let myObj = {"name": "myobject"};
 

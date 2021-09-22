@@ -41,7 +41,7 @@ m Mark the current top line with . M Mark the current bottom line with . ‘ Go 
 
 -w …….. –hilite-unread Highlight first new line after forward-screen. -W …….. –HILITE-UNREAD Highlight first new line after any forward movement. -x \[N\[,…\]\] –tabs=\[N\[,…\]\] Set tab stops. -X …….. –no-init Don’t use termcap init/deinit strings. -y \[N\] …. –max-forw-scroll=\[N\] Forward scroll limit. -z \[N\] …. –window=\[N\] Set size of window. -" \[c\[c\]\] . –quotes=\[c\[c\]\] Set shell quote characters. -~ …….. –tilde Don’t display tildes after end of file. -\# \[N\] …. –shift=\[N\] Horizontal scroll amount (0 = one half screen width) –follow-name The F command changes files if the input file is renamed. –mouse Enable mouse input. –no-keypad Don’t send termcap keypad init/deinit strings. –no-histdups Remove duplicates from command history. –rscroll=C Set the character used to mark truncated lines. –save-marks Retain marks across invocations of less. –use-backslash Subsequent options use backslash as escape char. –wheel-lines=N Each click of the mouse wheel moves N lines.
 
-------------------------------------------------------------------------
+---
 
                           LINE EDITING
 

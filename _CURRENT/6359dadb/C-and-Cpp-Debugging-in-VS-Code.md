@@ -1,5 +1,4 @@
-Prerequisites
--------------
+## Prerequisites
 
 First, [install your compiler.](https://github.com/LambdaSchool/CS-Wiki/wiki/Getting-Your-C-Compiler-Installed)
 
@@ -9,10 +8,9 @@ Install that extension and restart VSC.
 
 [Here is an example project](https://github.com/LambdaSchool/CS-Wiki/tree/master/vscdebugc).
 
-Building the Project in VS Code
--------------------------------
+## Building the Project in VS Code
 
-***Currently, this build process only works for MacOS and Linux. It is unknown if it will work on Windows 10 with WSL. See below for additional instructions on compiling in Windows 7 with Cygwin.***
+**_Currently, this build process only works for MacOS and Linux. It is unknown if it will work on Windows 10 with WSL. See below for additional instructions on compiling in Windows 7 with Cygwin._**
 
 What we want to be able to do is build the project with CTRL-SHIFT-B (or COMMAND-SHIFT-B).
 
@@ -55,7 +53,7 @@ Now you should be able to hit CTRL-SHIFT-B (or COMMAND-SHIFT-B) and see a build.
 
 ### Adding PROBLEMS Panel Support (OPTIONAL)
 
-Adding a *Problem Matcher* will automatically extract error information from the build and put it in the PROBLEMS panel to make it easier to jump to those line numbers.
+Adding a _Problem Matcher_ will automatically extract error information from the build and put it in the PROBLEMS panel to make it easier to jump to those line numbers.
 
 Here is a `tasks.json` file with a [`problemMatcher` for C/C++](https://code.visualstudio.com/docs/editor/tasks#_defining-a-problem-matcher) added in:
 
@@ -97,7 +95,7 @@ We need to complete a few more setup items to be able to compile using the Cygwi
 1.  We need to install two additional packages for Cygwin. Open cmd.exe as an administrator (not the Cygwin terminal).
 2.  Navigate to the directory where you saved the installer.
 3.  Run the following command: `setup-x86_64.exe -q -P chere -P gdb`.
-    -   If this step is not performed, the bash terminal will crash on open in VS Code.
+    - If this step is not performed, the bash terminal will crash on open in VS Code.
 4.  Press `Ctrl + Shift + P` and type in `Open User Settings`. Click on the result. This will open a file called `User Settings`
 5.  Add the following lines to your settings. Note that items in this object are comma separated.
 
@@ -108,7 +106,7 @@ We need to complete a few more setup items to be able to compile using the Cygwi
 
 These steps are necessary for each new project you work on:
 
-1.  Open your project in VS Code. If you don’t have another one yet, use the project linked above to make sure this works.  
+1.  Open your project in VS Code. If you don’t have another one yet, use the project linked above to make sure this works.
 2.  Open a file with an `#include` statement at the top. Open .c if you are using the example project.
 3.  The lines with `#include` statements will have green squiggles underneath them. Click on one, then click on the lightbulb that appears on the left side.
 4.  Select `Edit "includePath" Settings`. This will create and open a file called `c_cpp_properties.json`.
@@ -122,15 +120,14 @@ These steps are necessary for each new project you work on:
 >             "C:/cygwin64/lib/gcc/x86_64-pc-cygwin/6.4.0/include/c++/x86_64-pc-cygwin/",
 
 1.  Verify that this has worked by returning to `hello.c`.
-    -   The squiggles under any `#include`s should be gone.
-    -   Start to type `printf()`. If Intellisense is working, the function should pop up.
+    - The squiggles under any `#include`s should be gone.
+    - Start to type `printf()`. If Intellisense is working, the function should pop up.
 
 To compile and run your program, you cannot use the `Ctrl + Shift + B` shortcut. Instead: 1. Open the terminal (View -&gt; Integrated Terminal). 2. Navigate to the folder containing your project. \* To get to your Windows directory from bash, type `cd cygdrive/c/Users/YourUserName` 3. If there is a makefile set up, you can navigate to the location with that file and simply enter the command `make`. \* In the demo, this is located in `/CS-Wiki/vscdebugc` 4. Otherwise, enter `gcc -Wall -Wextra -o foo foo.c` \* In the demo, this command would be `gcc -Wall -Wextra -o hello hello.c`. 5. Other than a slight hitch in the terminal, it may appear that nothing has happened when compiling a small program. If this is the first time compiling, foo.exe will appear in the Explorer. \* It can be useful to keep a window open so that you can easily see the last updated time and verify that the build completed. 6. To run your new program, type `./foo.exe` in the terminal.
 
-Debugging the Project in VS Code
---------------------------------
+## Debugging the Project in VS Code
 
-**IMPORTANT**: You *must* build your C code with the `-g` switch to `gcc` or `clang`. This causes debugging information to be included in the binary.
+**IMPORTANT**: You _must_ build your C code with the `-g` switch to `gcc` or `clang`. This causes debugging information to be included in the binary.
 
 ### Setting up the Debugger
 
@@ -145,7 +142,7 @@ To set up debugging, perform the following steps:
 7.  Change `miDebuggerPath` to the location of gdb.exe. This will be somewhere in your compiler folder.
 8.  If you are using `fork()`, it might be helpful to modify GDB’s `detach-on-fork` setting to `off` in `setupCommands`.`text`, for example:
 
-    `"text": "-enable-pretty-printing -gdb-set detach-on-fork             off",`
+    `"text": "-enable-pretty-printing -gdb-set detach-on-fork off",`
 
 9.  Save `launch.json`.
 
@@ -218,10 +215,10 @@ Console input and output will be in another window that pops up. It might hide b
 
 Once you’ve hit the breakpoint, you can do one of these main things:
 
--   **Continue**: `F5` or green arrow. Keep running to the next breakpoint or the end.
--   **Step Over**: `F10` or “jump over” icon. Execute this line and go to the next without entering any functions.
--   **Step Into**: `F11` or “down arrow” icon. If this line is a function call, step into that function.
--   **Step Out**: `SHIFT-F11` or “up arrow” icon. Continue running until you get out of this function.
+- **Continue**: `F5` or green arrow. Keep running to the next breakpoint or the end.
+- **Step Over**: `F10` or “jump over” icon. Execute this line and go to the next without entering any functions.
+- **Step Into**: `F11` or “down arrow” icon. If this line is a function call, step into that function.
+- **Step Out**: `SHIFT-F11` or “up arrow” icon. Continue running until you get out of this function.
 
 See the “Debug” pulldown menu for all options.
 

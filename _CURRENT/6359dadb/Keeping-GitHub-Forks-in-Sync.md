@@ -4,16 +4,15 @@ This is normal, and can be handled from the command line with a little bit of se
 
 Unfortunately, as of now, [you can’t do this from the GitHub web UI](https://github.com/isaacs/github/issues/121) and, given how old that feature request is, it might never happen.
 
-A Bit of Perspective
---------------------
+## A Bit of Perspective
 
 Before we begin, it’s useful to know what repos are at play and how they interact.
 
 There are three, and we’re going to give them all names:
 
--   `origin`: this is your fork on GitHub (of the original repo on GitHub, the `upstream`)
--   `local`: this is your clone on your local computer (of your fork on GitHub, the `origin`)
--   `upstream`: this is the original repo on GitHub that you forked
+- `origin`: this is your fork on GitHub (of the original repo on GitHub, the `upstream`)
+- `local`: this is your clone on your local computer (of your fork on GitHub, the `origin`)
+- `upstream`: this is the original repo on GitHub that you forked
 
 When we bring our `origin` into sync with the `upstream`, there are two possible approaches:
 
@@ -23,25 +22,24 @@ When we bring our `origin` into sync with the `upstream`, there are two possible
 
 ![Syncing the fork repo](https://github.com/LambdaSchool/BeejWiki/blob/master/wiki-images/repo-fork-sync.svg)
 
-What is `upstream`?
--------------------
+## What is `upstream`?
 
 **This is important one-time setup! Once you set the `upstream`, you don’t need to do it again for this repo!**
 
-`upstream` is what we call a *remote* in git. It’s a nice human-readable name for a repo URL. You could use the full URL every time you wanted to refer to a repo, but that’s a pain, so we make these aliases.
+`upstream` is what we call a _remote_ in git. It’s a nice human-readable name for a repo URL. You could use the full URL every time you wanted to refer to a repo, but that’s a pain, so we make these aliases.
 
 `origin` is a remote name you might already have seen. It’s “the URL this repo was cloned from”. This gets set up for you automatically by git.
 
 For example, if I have a local repo that’s a clone of one of my forks, I can see the remotes for the repo with `git remote -v`:
 
     $ git clone git@github.com:MyName/My-Forked-Repo.git
-    [...cloning output...] 
+    [...cloning output...]
 
     $ git remote -v
     origin  git@github.com:MyName/My-Forked-Repo.git (fetch)
     origin  git@github.com:MyName/My-Forked-Repo.git (push)
 
-But you can have as many remotes as you want; they’re just names for other repos. So let’s add another remote that *refers to the original repo we forked from*, and let’s call it `upstream`.
+But you can have as many remotes as you want; they’re just names for other repos. So let’s add another remote that _refers to the original repo we forked from_, and let’s call it `upstream`.
 
     $ git remote add upstream https://github.com/LambdaSchool/Original-Repo.git
 
@@ -55,8 +53,7 @@ Now we have two remotes listed.
 
 Note that we used the HTTPS URL for the original repo for `upstream`. This is because we presumably don’t have SSH access to that repo, but that’s OK–we only need to read from it, not write to it.
 
-Syncing Your Fork
------------------
+## Syncing Your Fork
 
 As shown in the diagram up above, we’re going to grab commits from `upstream`, merge them into our `local`, and then push them to our `origin`. After that, all repos should be in sync.
 
@@ -93,7 +90,7 @@ Second, make sure you’re on your local `master` branch (the branch with the `*
     $ git branch
     * master
 
-You need to be on your `master` branch because that’s the one you’re *merging into*.
+You need to be on your `master` branch because that’s the one you’re _merging into_.
 
 Third, merge! In the following example, `upstream/master` refers to the `master` branch on the `upstream` remote. (As opposed to `master` on your local.)
 
@@ -102,7 +99,7 @@ Third, merge! In the following example, `upstream/master` refers to the `master`
 
 Note that the above will most likely ask you to create a message for this commit. Just say you merged or whatever you wish. (If it does a [fast-forward merge](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging), it won’t ask for a commit message.)
 
-This is the *interesting* part since it’s the only place you can get into trouble with merging. Unfortunately, [how to deal with merge conflicts](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) is beyond the scope of this tutorial, but it’s not the end of the world if you have to do it.
+This is the _interesting_ part since it’s the only place you can get into trouble with merging. Unfortunately, [how to deal with merge conflicts](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) is beyond the scope of this tutorial, but it’s not the end of the world if you have to do it.
 
 If you don’t see anything about conflicts on the merge output, you’re good to go. Otherwise [resolve them](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) before proceeding to the next step.
 
@@ -120,11 +117,10 @@ After fetching and merging, the `upstream` and your `local` are in sync. To get 
 
 And then you should be in sync!
 
-References
-----------
+## References
 
--   [GitHub help on syncing a fork](https://help.github.com/articles/syncing-a-fork/)
--   [GitHub help on setting a remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
--   [Perpetual GitHub feature request to get this in their UI](https://github.com/isaacs/github/issues/121)
--   [Resolving merge conflicts](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
--   [`git stash`](https://git-scm.com/book/en/v1/Git-Tools-Stashing)
+- [GitHub help on syncing a fork](https://help.github.com/articles/syncing-a-fork/)
+- [GitHub help on setting a remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
+- [Perpetual GitHub feature request to get this in their UI](https://github.com/isaacs/github/issues/121)
+- [Resolving merge conflicts](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+- [`git stash`](https://git-scm.com/book/en/v1/Git-Tools-Stashing)

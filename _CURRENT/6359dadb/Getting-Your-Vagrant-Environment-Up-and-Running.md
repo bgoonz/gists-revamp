@@ -1,16 +1,14 @@
-What is Vagrant?
-================
+# What is Vagrant?
 
 In a nutshell, Vagrant is an isolated environment that runs locally on your machine. When you set up Vagrant and start it up in a directory that contains a Vagrantfile, your Vagrant environment gets shared access to everything in that directory.
 
-The biggest win from using Vagrant though is the fact that it standardizes everyone’s environment to be the same thing, regardless of whether you’re on a Mac, a Windows, or another Linux distro. This ensures that everyone is working in the same environment, meaning there’s essentially no chance that you’ll see an error that is unique to you because it was caused by some environment issue. If you encounter an issue, *everyone* else using the same virtual environment should be able to replicate that issue.
+The biggest win from using Vagrant though is the fact that it standardizes everyone’s environment to be the same thing, regardless of whether you’re on a Mac, a Windows, or another Linux distro. This ensures that everyone is working in the same environment, meaning there’s essentially no chance that you’ll see an error that is unique to you because it was caused by some environment issue. If you encounter an issue, _everyone_ else using the same virtual environment should be able to replicate that issue.
 
 The other important thing that Vagrant provides is seamless synchronization of directories. At the root level directory where you place your `Vagrantfile`, any files and subdirectories will be mirrored between both your local machine and the virtual environment. This is great because it means that most of your workflow doesn’t need to change. Continue using whatever text editor you’ve been using up to this point to make changes to files. The only thing that does change is that you’ll need to test your changes within the virtual environment (seeing if your code compiles, running tests, etc.).
 
 And that’s about it! It might like seem like much right now, but trust me when I say that having everyone work in the same environment is a huge boon to both you as a student as well as to the instructors (no more having to figure out if some issue is being caused by some obscure environmental factor). It’s also nice that you’re getting some experience with virtual environment now, because they are a tool used in the software development workflows of many companies!
 
-Getting Vagrant Up and Running
-==============================
+# Getting Vagrant Up and Running
 
 1.  Head to <https://www.vagrantup.com/downloads.html> and grab the installer for your particular operating system.
 
@@ -39,26 +37,24 @@ Getting Vagrant Up and Running
     New release '18.04.2 LTS' available.
     Run 'do-release-upgrade' to upgrade to it.
 
-*DON’T* run this command. We want everyone to be on the same Ubuntu version, so we’ll all be sticking with version 16.04.
+_DON’T_ run this command. We want everyone to be on the same Ubuntu version, so we’ll all be sticking with version 16.04.
 
 From here, execute `cd /vagrant` to `cd` into the mirror of the root-level directory that will contain all of your local CS repositories. Any changes to files/directories you make in the virtual environment will be mirrored in your local environment and vice versa.
 
 In order to exit out of the virtual environment, simply type `exit` at the prompt.
 
-What’s In the Box?
-==================
+# What’s In the Box?
 
 Here’s what’s included in the box when you first boot up your shiny new virtual environment:
 
--   Ubuntu 16.04.6 LTS
--   Python 2.7.12 (old version of Python that’s still used quite a lot)
--   Python 3.5.2 (newer version of Python, but not new enough for our purposes)
--   Pip 8.1.1 (Python package manager)
--   GDB 7.11.1 (a C debugger)
--   GCC 5.4.0 (a C compiler)
+- Ubuntu 16.04.6 LTS
+- Python 2.7.12 (old version of Python that’s still used quite a lot)
+- Python 3.5.2 (newer version of Python, but not new enough for our purposes)
+- Pip 8.1.1 (Python package manager)
+- GDB 7.11.1 (a C debugger)
+- GCC 5.4.0 (a C compiler)
 
-Installing Some Additional Tools
-================================
+# Installing Some Additional Tools
 
 We’ll need to install some additional tools in preparation for the CS curriculum.
 
@@ -78,8 +74,8 @@ Let’s map Python 3.7 to the `python3` command (we’re going to leave Python 2
 
 In order to do this, run the following:
 
-1.  `sudo update-alternatives --install /usr/bin/python3 python3           /usr/bin/python3.5 1`
-2.  `sudo update-alternatives --install /usr/bin/python3 python3           /usr/bin/python3.7 2`
+1.  `sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1`
+2.  `sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2`
 3.  `sudo update-alternatives --config python3`
 
 A little menu will be brought up and you can just hit ENTER/RETURN at the prompt. At this point, Python 3.7 should be mapped to the `python3` command. Test it out with `python3 -V` to confirm if it worked.

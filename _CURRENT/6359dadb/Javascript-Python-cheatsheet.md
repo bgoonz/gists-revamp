@@ -1,33 +1,31 @@
-Contents
---------
+## Contents
 
--   [Versions](#versions)
--   [Development Environments](#development-environments)
--   [Running Programs](#running-programs)
--   [Comments](#comments)
--   [Semicolons](#semicolons)
--   [Whitespace, Blocks](#whitespace-blocks)
--   [Functions](#functions)
--   [Arithmetic Operators](#arithmetic-operators)
--   [Variables](#variables)
--   [Data Types](#data-types)
--   [Arrays/Lists](#arrayslists)
--   [Slices](#slices)
--   [Objects/Dicts](#objectsdicts)
--   [String Formatting](#string-formatting)
--   [Booleans and Conditionals](#booleans-and-conditionals)
--   [`for` Loops](#for-loops)
--   [`while` Loops](#while-loops)
--   [`switch` Statement](#switch-statement)
--   [`if` Conditionals](#if-conditionals)
--   [Classes](#classes)
+- [Versions](#versions)
+- [Development Environments](#development-environments)
+- [Running Programs](#running-programs)
+- [Comments](#comments)
+- [Semicolons](#semicolons)
+- [Whitespace, Blocks](#whitespace-blocks)
+- [Functions](#functions)
+- [Arithmetic Operators](#arithmetic-operators)
+- [Variables](#variables)
+- [Data Types](#data-types)
+- [Arrays/Lists](#arrayslists)
+- [Slices](#slices)
+- [Objects/Dicts](#objectsdicts)
+- [String Formatting](#string-formatting)
+- [Booleans and Conditionals](#booleans-and-conditionals)
+- [`for` Loops](#for-loops)
+- [`while` Loops](#while-loops)
+- [`switch` Statement](#switch-statement)
+- [`if` Conditionals](#if-conditionals)
+- [Classes](#classes)
 
-Versions
---------
+## Versions
 
 ### JavaScript
 
-The standard defining JavaScript (JS) is *ECMAScript* (ES). Modern browsers and NodeJS support ES6, which has a rich feature set. Older browsers might not support all ES6 features.
+The standard defining JavaScript (JS) is _ECMAScript_ (ES). Modern browsers and NodeJS support ES6, which has a rich feature set. Older browsers might not support all ES6 features.
 
 The website [caniuse.com](https://caniuse.com/) will show which browsers support specific JS features.
 
@@ -46,8 +44,7 @@ On some systems, you might have to be explicit when you invoke Python about whic
 
 Using `virtualenv` or `pipenv` can really ease development painpoints surrounding the version. See [Development Environments](#development-environments), below.
 
-Development Environments
-------------------------
+## Development Environments
 
 ### JavaScript
 
@@ -57,8 +54,7 @@ For managing project packages, the classic tool is `npm`. This is slowly being s
 
 For managing project packages and Python versions, the classic tool is `virtualenv`. This is slowly being superseded by the newer `pipenv` tool.
 
-Running Programs
-----------------
+## Running Programs
 
 ### JavaScript
 
@@ -76,8 +72,7 @@ Running from the command line:
 
     python program.py arg1 arg2 etc
 
-Comments
---------
+## Comments
 
 ### JavaScript
 
@@ -110,8 +105,7 @@ Python doesn’t directly support multi-line comments, but you can effectively d
     print(1)
     print(2)
 
-Semicolons
-----------
+## Semicolons
 
 ### JavaScript
 
@@ -129,8 +123,7 @@ Python can separate statements by semicolons, though this is rare in practice.
 
     print(1); print(2)   # prints 1, then 2
 
-Whitespace, blocks
-------------------
+## Whitespace, blocks
 
 ### JavaScript
 
@@ -158,8 +151,7 @@ Indentation level is how blocks are declared. The preferred method is to use spa
       else:
         print("x must be something else")
 
-Functions
----------
+## Functions
 
 ### JavaScript
 
@@ -170,7 +162,7 @@ Define functions as follows:
       return 12;
     }
 
-An alternate syntax for functions is growing increasingly common, called *arrow functions*:
+An alternate syntax for functions is growing increasingly common, called _arrow functions_:
 
     let hello = () => {
       console.log("hello");
@@ -201,14 +193,13 @@ Define functions as follows:
       print(x, y, z)
       return 12
 
-Python also supports the concept of *lambda functions*, which are simple functions that can do basic operations.
+Python also supports the concept of _lambda functions_, which are simple functions that can do basic operations.
 
     add = lambda x, y: x + y
 
     print(add(4, 5)) # prints 9
 
-Arithmetic Operators
---------------------
+## Arithmetic Operators
 
 ### JavaScript
 
@@ -220,8 +211,7 @@ The pre- and post-increment and decrement are notably absent.
 
 <table><thead><tr class="header"><th>Operator</th><th>Description</th></tr></thead><tbody><tr class="odd"><td><code>+</code></td><td>Addition</td></tr><tr class="even"><td><code>-</code></td><td>Subtraction</td></tr><tr class="odd"><td><code>*</code></td><td>Multiplication</td></tr><tr class="even"><td><code>/</code></td><td>Division</td></tr><tr class="odd"><td><code>%</code></td><td>Modulo (remainder)</td></tr><tr class="even"><td><code>**</code></td><td>Exponentiation (power)</td></tr><tr class="odd"><td><code>=</code></td><td>Assignment</td></tr><tr class="even"><td><code>+=</code></td><td>Addition assignment</td></tr><tr class="odd"><td><code>-=</code></td><td>Subtraction assignment</td></tr><tr class="even"><td><code>*=</code></td><td>Multiplication assignment</td></tr><tr class="odd"><td><code>/=</code></td><td>Division assignment</td></tr><tr class="even"><td><code>%=</code></td><td>Modulo assignment</td></tr></tbody></table>
 
-Variables
----------
+## Variables
 
 ### Javascript
 
@@ -238,15 +228,14 @@ Variables are created upon use.
 
     x = 10
 
-Data Types
-----------
+## Data Types
 
 ### JavaScript
 
     let a = 12;        // number
     let b = 1.2;       // number
     let c = 'hello';   // string
-    let d = "world";   // string 
+    let d = "world";   // string
     let e = true;      // boolean
     let f = null;      // null value
     let g = undefined; // undefined value
@@ -261,7 +250,7 @@ Parameterized strings:
     let x = 12;
     console.log(`x is ${x}`); // prints "x is 12"
 
-JS is *weakly typed* so it supports operations on multiple types of data at once.
+JS is _weakly typed_ so it supports operations on multiple types of data at once.
 
     "2" + 4;           // string "24"
     parseInt("2") + 4; // number 6
@@ -286,18 +275,17 @@ Parameterized strings:
     x = 12
     print(f'x is {x}')   # prints "x is 12"
 
-Python is generally *strongly typed* so it it will often complain if you try to mix and match types. You can coerce a type with the `int()`, `float()`, `str()`, and `bool()` functions.
+Python is generally _strongly typed_ so it it will often complain if you try to mix and match types. You can coerce a type with the `int()`, `float()`, `str()`, and `bool()` functions.
 
     "2" + 4        # ERROR: can't mix types
     int("2") + 4   # integer 6
     "2" + str(4)   # string 24
 
-Arrays/Lists
-------------
+## Arrays/Lists
 
 ### JavaScript
 
-In JS, lists are called *arrays*.
+In JS, lists are called _arrays_.
 
 Arrays are zero-based.
 
@@ -322,7 +310,7 @@ Length/number of elements:
 
 ### Python
 
-In Python, arrays are called *lists*.
+In Python, arrays are called _lists_.
 
 Lists are zero-based.
 
@@ -364,7 +352,7 @@ Starting from the end: We can also use negative numbers when creating slices, wh
 
 #### Tuples
 
-Python supports a read-only type of list called a *tuple*.
+Python supports a read-only type of list called a _tuple_.
 
     x = (1, 2, 3)
     print(x[1])  # prints 2
@@ -373,7 +361,7 @@ Python supports a read-only type of list called a *tuple*.
 
 #### List Comprehensions
 
-Python supports building lists with *list comprehensions*. This is often useful for filtering lists.
+Python supports building lists with _list comprehensions_. This is often useful for filtering lists.
 
     a = [1, 2, 3, 4, 5]
 
@@ -384,12 +372,11 @@ Python supports building lists with *list comprehensions*. This is often useful 
     # even elements of a:
     c = [i for i in a if i % 2 == 0]
 
-Objects/Dicts
--------------
+## Objects/Dicts
 
 ### JavaScript
 
-*Objects* hold data which can be found by a specific key called a *property*.
+_Objects_ hold data which can be found by a specific key called a _property_.
 
 Creation:
 
@@ -410,7 +397,7 @@ Access:
 
 ### Python
 
-*Dicts* hold information that can be accessed by a *key*.
+_Dicts_ hold information that can be accessed by a _key_.
 
 Unlike objects in JS, a `dict` is its own beast, and is not the same as an object obtained by instantiating a Python class.
 
@@ -435,8 +422,7 @@ Access:
 
 Dot notation does not work with Python dicts.
 
-String Formatting
------------------
+## String Formatting
 
 ### JavaScript
 
@@ -454,10 +440,10 @@ Controlling floating point precision:
 Padding and justification:
 
     let s = "Hello!";
-    let t = s.padStart(10, ' '); // string '    Hello!' 
+    let t = s.padStart(10, ' '); // string '    Hello!'
     let u = s.padEnd(10, ' ');   // string 'Hello!    '
 
-    let v = s.padStart(10, '*'); // string '****Hello!' 
+    let v = s.padStart(10, '*'); // string '****Hello!'
 
     // Pad with leading zeroes
     (12).toString(2).padStart(8, '0'); // string '00001100'
@@ -481,8 +467,7 @@ But even `%` is being superseded by the `format` function.
 
 Also see [printf-style String Formatting](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting) for a reference.
 
-Booleans and Conditionals
--------------------------
+## Booleans and Conditionals
 
 ### JavaScript
 
@@ -552,8 +537,7 @@ Example:
     if a == 2 and b != "":
       # Something complicated
 
-`for` Loops
------------
+## `for` Loops
 
 ### JavaScript
 
@@ -589,7 +573,7 @@ C-style `for` loops:
 
 ### Python
 
-`for`-`in` loops over an *iteratable*. This can be a list, object, or other type of iterable item.
+`for`-`in` loops over an _iteratable_. This can be a list, object, or other type of iterable item.
 
 Counting loops:
 
@@ -619,8 +603,7 @@ Iterating over other types:
     for i in b:
       print(i)
 
-`while` Loops
--------------
+## `while` Loops
 
 ### JavaScript
 
@@ -651,8 +634,7 @@ Python has a `while` loop:
       print(x)
       x -= 1
 
-`switch` Statement
-------------------
+## `switch` Statement
 
 ### JavaScript
 
@@ -693,8 +675,7 @@ A somewhat clumsy approximation of a `switch` can be constructed with a `dict` o
     x = "bravo"
     funcs[x]()  # calls func2
 
-`if` Conditionals
------------------
+## `if` Conditionals
 
 ### JavaScript
 
@@ -719,8 +700,7 @@ Python notably uses `elif` instead of `else if`.
     else:
       print("x is something else")
 
-Classes
--------
+## Classes
 
 ### JavaScript
 
@@ -777,7 +757,7 @@ Modern JS introduced the `class` keyword and a syntax more familiar to most othe
     g.type;   // "mammal"
     g.jump(); // "I'm jumping! Yay!"
 
-JS does not support multiple inheritance since each object can only have one prototype object. You have to use a *mix-in* if you want to achieve similar functionality.
+JS does not support multiple inheritance since each object can only have one prototype object. You have to use a _mix-in_ if you want to achieve similar functionality.
 
 ### Python
 
@@ -794,7 +774,7 @@ Python 2 syntax:
         # call super constructor
         Creature.__init__(self, "mammal")
         self.color = color
-      
+
       def jump(self):
         print("I'm jumping! Yay!")
 
@@ -813,7 +793,7 @@ Python 3 syntax includes the new `super()` keyword to make life easier.
         # call super constructor
         super().__init__("mammal")  # <-- Nicer!
         self.color = color
-      
+
       def jump(self):
         print("I'm jumping! Yay!")
 

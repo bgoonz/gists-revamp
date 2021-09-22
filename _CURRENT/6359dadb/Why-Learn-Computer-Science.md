@@ -1,13 +1,12 @@
 After working on React and practical stuff, getting to be better JS devs, we suddenly plunge into a breadth of all kinds of computer science-y topics. At first, these might seemingly be unrelated to anything that you might use in the field.
 
-So *why* do we teach it?
+So _why_ do we teach it?
 
-> Although the entire program at Lambda School is called *The CS Program*, six weeks of the program is dedicated to [Computer Science](https://en.wikipedia.org/wiki/Computer_science) topics. That is what this article is about.
+> Although the entire program at Lambda School is called _The CS Program_, six weeks of the program is dedicated to [Computer Science](https://en.wikipedia.org/wiki/Computer_science) topics. That is what this article is about.
 
 This article is a more complete version of the information given in [this short video](https://youtu.be/3WoJ5MSZBJ4).
 
-Why We Teach Computer Science
------------------------------
+## Why We Teach Computer Science
 
 ### To Generally Improve Problem-Solving Skills
 
@@ -17,7 +16,7 @@ It’s a normal feeling to be presented by a problem from your supervisor or cli
 
 ### To Practice Solving Really Hard Problems
 
-Sometimes in the course of work, you’ll be presented with truly giant and intimidating problem to solve. Flight instincts take over and you just *know* you *can’t do it*. But this is false.
+Sometimes in the course of work, you’ll be presented with truly giant and intimidating problem to solve. Flight instincts take over and you just _know_ you _can’t do it_. But this is false.
 
 Big, difficult problems are virtually always composed of a lot of small, surmountable problems. (The ones that are not tend to become famous in computer science, like the [Halting Problem](https://en.wikipedia.org/wiki/Halting_problem).)
 
@@ -25,11 +24,11 @@ Take a deep breath, relax, and start breaking the problem into subproblems. Even
 
 The more you practice this, the better at it you will become.
 
-And, more importantly, the problems that *used* to be hard, will retrospectively seem to be relatively easy compared to the monsters you’ve been taking on.
+And, more importantly, the problems that _used_ to be hard, will retrospectively seem to be relatively easy compared to the monsters you’ve been taking on.
 
 ### Sharpen Your Programming Chops
 
-Everything you write, even if it’s something you’ve written before, will help you improve as a programmer. *Practice!*
+Everything you write, even if it’s something you’ve written before, will help you improve as a programmer. _Practice!_
 
 And we do a lot of programming in the CS portion of the curriculum. The more you do, the better you become.
 
@@ -43,19 +42,19 @@ The first language you learn is the hardest. The second one is about half as har
 
 Why Python? Python is a very popular, well-formed, and useful language. Although the syntax is farther from JavaScript than C is, it’s an easy language to step into. There are a lot of Python shops out there.
 
-*Why C?* Although C was at one time considered a high-level language, it’s now considered a low-level language as so many more higher-level languages have been invented since its creation. We teach it because it gives you near-maximal perspective across the spectrum of languages. Low-level, high control, high speed, and minimal room for programming errors defines C programming. After learning it, JavaScript seems (and is) easy to program with.
+_Why C?_ Although C was at one time considered a high-level language, it’s now considered a low-level language as so many more higher-level languages have been invented since its creation. We teach it because it gives you near-maximal perspective across the spectrum of languages. Low-level, high control, high speed, and minimal room for programming errors defines C programming. After learning it, JavaScript seems (and is) easy to program with.
 
-*Why not C++?* Short answer: there’s not enough time. While a really popular language, the nuances of the language are so many that giving adequate coverage to C++ in even three weeks is not possible.
+_Why not C++?_ Short answer: there’s not enough time. While a really popular language, the nuances of the language are so many that giving adequate coverage to C++ in even three weeks is not possible.
 
 > C gives you enough rope to hang yourself. C++ gives you enough to hang yourself and all your friends.
 
-That said, after learning JS, Python, and C, C++ will be a *lot* easier to pick up than it would be as a first language.
+That said, after learning JS, Python, and C, C++ will be a _lot_ easier to pick up than it would be as a first language.
 
 ### Broaden Knowledge
 
 Many solutions to problems will come to you as being related to other problems that you’ve already solved, even if they’re not identical.
 
-> Maybe you want to select random numbers in a range, but never select the same number twice. And you want to get new random numbers in *O(1)* time. If you’d already implemented an efficient card shuffling algorithm in the past, you might recognize these as the same problem.
+> Maybe you want to select random numbers in a range, but never select the same number twice. And you want to get new random numbers in _O(1)_ time. If you’d already implemented an efficient card shuffling algorithm in the past, you might recognize these as the same problem.
 
 As you build the breadth of your knowledge, more and more of these connections will become apparent, and you will find them coming to indirectly apply to many challenges your daily work.
 
@@ -63,7 +62,7 @@ And this part of the program is absolutely about breadth. With the web curriculu
 
 ### Learn the Language of Computer Science
 
-Jargon and acronyms abound in Computer Science. While many of these are *du jour*, the deeper concepts survive for decades (and centuries). If you want to operate in the field and communicate effectively with your peers, it’s important to know some of the mathematical and theoretical underpinnings of what makes software actually work.
+Jargon and acronyms abound in Computer Science. While many of these are _du jour_, the deeper concepts survive for decades (and centuries). If you want to operate in the field and communicate effectively with your peers, it’s important to know some of the mathematical and theoretical underpinnings of what makes software actually work.
 
 ### Learn Computer Architecture
 
@@ -83,7 +82,7 @@ Sometimes, especially for multi-stage processes in which you don’t know which 
 
 > Just about everything you do in dev will be a state machine, but the language usually abstracts the gritty details away from you behind functions, loops, and other constructs you have at your disposal.
 
-In what might be a surprise, state machines are closely related to [*regular expressions*](https://en.wikipedia.org/wiki/Regular_expression). These are extremely commonly used to match patterns in strings, and are doubly common in JavaScript.
+In what might be a surprise, state machines are closely related to [_regular expressions_](https://en.wikipedia.org/wiki/Regular_expression). These are extremely commonly used to match patterns in strings, and are doubly common in JavaScript.
 
 ### Learn Algorithms, Data Structures, and Time Complexity
 
@@ -93,14 +92,13 @@ Knowing how to analyze an algorithm can help you figure out what about the proce
 
 And knowing the right algorithmic or data structure tool for the job can help you implement the right thing to get the runtime down.
 
-Time complexity also helps you to *not* overengineer a solution. If you know the difference between *O(n^2)* and *O(n)*, that’s really useful. And if you know that *n* will never be more than 3, you’ll know you might be OK with the easier *O(n^2)* solution.
+Time complexity also helps you to _not_ overengineer a solution. If you know the difference between _O(n^2)_ and _O(n)_, that’s really useful. And if you know that _n_ will never be more than 3, you’ll know you might be OK with the easier _O(n^2)_ solution.
 
-How to Learn Computer Science
------------------------------
+## How to Learn Computer Science
 
 ### It’s A Big Playground
 
-There is a *lot* to learn in Computer Science. You can’t learn it all since field knowledge is being created faster than any one person can learn it; for all intents and purposes, the amount of knowledge you stand to gain is infinite.
+There is a _lot_ to learn in Computer Science. You can’t learn it all since field knowledge is being created faster than any one person can learn it; for all intents and purposes, the amount of knowledge you stand to gain is infinite.
 
 But you shouldn’t find this to be a daunting task because you get to pick and choose from this larger-than-life selection what it is you want to study next. And you will never run out of options.
 
@@ -110,7 +108,7 @@ And if you ever feel lost in the infinite ocean of topics out there, remember th
 
 ### You’ll Get Out What You Put In
 
-There are some subjects where you need to learn a vast collection of facts and then apply them in a systematic way. Although that statement sounds *computer-y* on the surface, it does not reflect working in the computer field in the least.
+There are some subjects where you need to learn a vast collection of facts and then apply them in a systematic way. Although that statement sounds _computer-y_ on the surface, it does not reflect working in the computer field in the least.
 
 A lot of people new to programming are somewhat surprised to find that software development is a very creative process, and a lot of thought goes into how to design and write your code.
 
@@ -140,21 +138,20 @@ It can be useful to get a newsreader and follow feeds on your favorite sites (re
 
 Remember: it’s a big computing world out there, yours to pursue as you choose!
 
-Mission Statement
-=================
+# Mission Statement
 
 ### The goal of Computer Science is to de-mystify computers and computing and to help students write better code.
 
 #### De-mystify computers and computing:
 
--   Breadth of Technical Knowledge Students should understand how code works, how computers work, how the internet works, and how they all work together.
+- Breadth of Technical Knowledge Students should understand how code works, how computers work, how the internet works, and how they all work together.
 
--   Sense of Scale Students should be comfortable identifying and measuring complexity and understand techniques for refactoring code for scalability.
+- Sense of Scale Students should be comfortable identifying and measuring complexity and understand techniques for refactoring code for scalability.
 
 #### Write better code:
 
--   Quality Students code with a consistent eye toward scalability and readability, i.e. code that is efficient and easily maintained.
+- Quality Students code with a consistent eye toward scalability and readability, i.e. code that is efficient and easily maintained.
 
--   Quantity Students write large quantities of code every day, building the reps needed to overcome difficult challenges and build confidence.
+- Quantity Students write large quantities of code every day, building the reps needed to overcome difficult challenges and build confidence.
 
--   Diversity Students tackle a variety of challenges, picking up a versatile set of skills and building comfort with the unknown.
+- Diversity Students tackle a variety of challenges, picking up a versatile set of skills and building comfort with the unknown.

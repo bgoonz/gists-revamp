@@ -1,5 +1,4 @@
-Code
-----
+## Code
 
 Syntax highlighting:
 
@@ -15,8 +14,7 @@ Pages written in markdown.
 
 Can clone the wiki and edit markdown in the editor of your choice.
 
-Searching
----------
+## Searching
 
 ### By Page Title
 
@@ -28,8 +26,7 @@ Enter the search text in the top-of-page search bar. On the results page, click 
 
 This link gets you to the Wikis subtab directly, after which you have to type a search term up top: https://github.com/LambdaSchool/CS-Wiki/search?utf8=%E2%9C%93&q=&type=Wikis
 
-Cloning the Wiki Repo
----------------------
+## Cloning the Wiki Repo
 
 1.  Go back to the main repo page (the `<> Code` tab).
 2.  Copy the clone ssh URL
@@ -41,24 +38,21 @@ Although the wiki displays as flat, you can have subdirectories. However, you mu
 
 Even though it’s possible to add custom sidebars and footers in subdirectories, it’s not recommended. The web UI is hardcoded to overwrite the root header/sidebar file, even if you edit one in a subdirectory.
 
-Inserting Images
-----------------
+## Inserting Images
 
 [Adding Images to Wikis](https://help.github.com/articles/adding-images-to-wikis/) (GitHub help)
 
 ![Are you sure about that?](https://github.com/LambdaSchool/CS-Wiki/blob/master/wiki-images/cypher-disbelief.jpg)
 
-`![Are you sure about         that?](https://github.com/LambdaSchool/CS-Wiki/blob/master/wiki-images/cypher-disbelief.jpg)`
+`![Are you sure about that?](https://github.com/LambdaSchool/CS-Wiki/blob/master/wiki-images/cypher-disbelief.jpg)`
 
 There’s a general-purpose [`wiki-images` subdirectory](https://github.com/LambdaSchool/CS-Wiki/tree/master/wiki-images) in the repo that can be used as an image dump.
 
-Home page
----------
+## Home page
 
 The page titled “Home” has special meaning as your root page. Things work better if you don’t rename “Home”.
 
-References
-----------
+## References
 
 [GitHub wiki help](https://help.github.com/articles/about-github-wikis/)
 
