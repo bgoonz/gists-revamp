@@ -191,7 +191,6 @@
         // <Cowboy><Greeting name="Michael" /></Cowboy>
         // => Howdy Michael.
 
-
 ## contextTypes
 
         // add to the context-aware component
@@ -238,7 +237,6 @@
         const el = document.body
         ReactDOM.render(<Hello name='John' />, el)
 
-
 Use the [React.js jsfiddle](https://jsfiddle.net/reactjs/69z2wepo/) to start hacking. (or the unofficial [jsbin](http://jsbin.com/yafixat/edit?js,output))
 
 ### Import multiple exports
@@ -251,7 +249,6 @@ Use the [React.js jsfiddle](https://jsfiddle.net/reactjs/69z2wepo/) to start hac
           ...
         }
 
-
 ### Properties
 
         <Video fullscreen={true} autoplay={false} />
@@ -262,7 +259,6 @@ Use the [React.js jsfiddle](https://jsfiddle.net/reactjs/69z2wepo/) to start hac
           const { fullscreen, autoplay } = this.props
           ···
         }
-
 
 Use `this.props` to access properties passed to the component.
 
@@ -284,7 +280,6 @@ See: [Properties](https://reactjs.org/docs/tutorial.html#using-props)
           const { username } = this.state
           ···
         }
-
 
 Use states (`this.state`) to manage dynamic data.
 
@@ -330,7 +325,6 @@ As of React v16.2.0, fragments can be used to return multiple children without a
           }
         }
 
-
 Nest components to separate concerns.
 
 See: [Composing Components](https://reactjs.org/docs/components-and-props.html#composing-components)
@@ -350,7 +344,6 @@ See: [Composing Components](https://reactjs.org/docs/components-and-props.html#c
           }
         }
 
-
 Children are passed as the `children` property.
 
 ## [\#](#defaults)Defaults
@@ -360,7 +353,6 @@ Children are passed as the `children` property.
         Hello.defaultProps = {
           color: 'blue'
         }
-
 
 See: [defaultProps](https://reactjs.org/docs/react-component.html#defaultprops)
 
@@ -372,7 +364,6 @@ See: [defaultProps](https://reactjs.org/docs/react-component.html#defaultprops)
             this.state = { visible: true }
           }
         }
-
 
 Set the default state in the `constructor()`.
 
@@ -394,7 +385,6 @@ See: [Setting the default state](https://reactjs.org/docs/react-without-es6.html
           </div>
         }
 
-
 Functional components have no state. Also, their `props` are passed as the first parameter to a function.
 
 See: [Function and Class Components](https://reactjs.org/docs/components-and-props.html#functional-and-class-components)
@@ -406,7 +396,6 @@ See: [Function and Class Components](https://reactjs.org/docs/components-and-pro
         class MessageBox extends PureComponent {
           ···
         }
-
 
 Performance-optimized version of `React.Component`. Doesn’t rerender if props/state hasn’t changed.
 
@@ -423,7 +412,6 @@ See: [Pure components](https://reactjs.org/docs/react-api.html#react.purecompone
 
         this.state
         this.props
-
 
 These methods and properties are available for `Component` instances.
 
@@ -465,7 +453,6 @@ See: [Component specs](https://facebook.github.io/react/docs/component-specs.htm
           );
         }
 
-
 Hooks are a new addition in React 16.8.
 
 See: [Hooks at a Glance](https://reactjs.org/docs/hooks-overview.html)
@@ -479,7 +466,6 @@ See: [Hooks at a Glance](https://reactjs.org/docs/hooks-overview.html)
           const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
 
         }
-
 
 ### Effect hook
 
@@ -503,7 +489,6 @@ See: [Hooks at a Glance](https://reactjs.org/docs/hooks-overview.html)
             </div>
           );
         }
-
 
 If you’re familiar with React class lifecycle methods, you can think of `useEffect` Hook as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` combined.
 
@@ -535,7 +520,6 @@ By default, React runs the effects after every render — including the first re
           return isOnline ? 'Online' : 'Offline';
         }
 
-
 Effects may also optionally specify how to “clean up” after them by returning a function.
 
 #### Use FriendStatus
@@ -548,7 +532,6 @@ Effects may also optionally specify how to “clean up” after them by returnin
           }
           return isOnline ? 'Online' : 'Offline';
         }
-
 
 See: [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html)
 
@@ -584,7 +567,6 @@ Full details: [Additional Hooks](https://reactjs.org/docs/hooks-reference.html#a
           }
         }
 
-
 Allows access to DOM nodes.
 
 See: [Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)
@@ -603,7 +585,6 @@ See: [Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)
           }
         }
 
-
 Pass functions to attributes like `onChange`.
 
 See: [Events](https://reactjs.org/docs/events.html)
@@ -620,7 +601,6 @@ See: [Events](https://reactjs.org/docs/events.html)
             return <VideoEmbed {...this.props} />
           }
         }
-
 
 Propagates `src="..."` down to the sub-component.
 
@@ -639,7 +619,6 @@ See [Transferring props](https://facebook.github.io/react/docs/transferring-prop
         ReactDOMServer.renderToString(<Component />)
         ReactDOMServer.renderToStaticMarkup(<Component />)
 
-
 There are more, but these are most common.
 
 See: [React top-level API](https://reactjs.org/docs/react-api.html)
@@ -654,14 +633,12 @@ See: [React top-level API](https://reactjs.org/docs/react-api.html)
 
         return <div style={{ margin: 0, padding: 0 }}></div>
 
-
 See: [Inline styles](https://reactjs.org/tips/inline-styles.html)
 
 ### Inner HTML
 
         function markdownify() { return "<p>...</p>"; }
         <div dangerouslySetInnerHTML={{__html: markdownify()}} />
-
 
 See: [Dangerously set innerHTML](https://reactjs.org/tips/dangerously-set-inner-html.html)
 
@@ -678,7 +655,6 @@ See: [Dangerously set innerHTML](https://reactjs.org/tips/dangerously-set-inner-
           }
         }
 
-
 Always supply a `key` property.
 
 ### Conditionals
@@ -689,14 +665,12 @@ Always supply a `key` property.
             : <OtherComponent />}
         </Fragment>
 
-
 ### Short-circuit evaluation
 
         <Fragment>
           {showPopup && <Popup />}
           ...
         </Fragment>
-
 
 ## [\#](#new-features)New features
 
@@ -714,7 +688,6 @@ You can return multiple elements as arrays or fragments.
           ]
         }
 
-
 #### Fragments
 
         render () {
@@ -727,7 +700,6 @@ You can return multiple elements as arrays or fragments.
           )
         }
 
-
 See: [Fragments and strings](https://reactjs.org/blog/2017/09/26/react-v16.0.html#new-render-return-types-fragments-and-strings)
 
 ### Returning strings
@@ -735,7 +707,6 @@ See: [Fragments and strings](https://reactjs.org/blog/2017/09/26/react-v16.0.htm
         render() {
           return 'Look ma, no spans!';
         }
-
 
 You can return just a string.
 
@@ -750,7 +721,6 @@ See: [Fragments and strings](https://reactjs.org/blog/2017/09/26/react-v16.0.htm
           }
         }
 
-
 Catch errors via `componentDidCatch`. (React 16+)
 
 See: [Error handling in React 16](https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html)
@@ -764,7 +734,6 @@ See: [Error handling in React 16](https://reactjs.org/blog/2017/07/26/error-hand
           )
         }
 
-
 This renders `this.props.children` into any location in the DOM.
 
 See: [Portals](https://reactjs.org/docs/portals.html)
@@ -773,7 +742,6 @@ See: [Portals](https://reactjs.org/docs/portals.html)
 
         const el = document.getElementById('app')
         ReactDOM.hydrate(<App />, el)
-
 
 Use `ReactDOM.hydrate` instead of using `ReactDOM.render` if you’re rendering over the output of [ReactDOMServer](https://reactjs.org/docs/react-dom-server.html).
 
@@ -784,7 +752,6 @@ See: [Hydrate](https://reactjs.org/docs/react-dom.html#hydrate)
 ### PropTypes
 
         import PropTypes from 'prop-types'
-
 
 See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html)
 
@@ -824,13 +791,11 @@ See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-pr
           any:        PropTypes.any
         }
 
-
 ### Required types
 
         MyCo.propTypes = {
           name:  PropTypes.string.isRequired
         }
-
 
 ### Elements
 
@@ -842,7 +807,6 @@ See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-pr
           node: PropTypes.node
         }
 
-
 ### Enumerables (oneOf)
 
         MyCo.propTypes = {
@@ -850,7 +814,6 @@ See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-pr
             'left', 'right'
           ])
         }
-
 
 ### Arrays and objects
 
@@ -869,7 +832,6 @@ See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-pr
             age:  PropTypes.number
           })
         }
-
 
 Use `.array[Of]`, `.object[Of]`, `.instanceOf`, `.shape`.
 
