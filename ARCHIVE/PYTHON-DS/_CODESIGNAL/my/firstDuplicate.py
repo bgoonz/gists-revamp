@@ -31,4 +31,9 @@ def firstDuplicate(a):
 
 
 print('firstDuplicate(arr):',firstDuplicate(arr))
-print('firstDuplicate(arr2):',firstDuplicate(arr))
+print('firstDuplicate(arr2):',firstDuplicate(arr2))
+
+
+
+# firstDuplicate(arr): -1
+# firstDuplicate(arr2): 8
