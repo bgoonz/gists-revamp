@@ -1,19 +1,18 @@
-'use strict';
+"use strict";
 
-var traverse = module.exports = function (schema, opts, cb) {
+var traverse = (module.exports = function (schema, opts, cb) {
   // Legacy support for v0.3.1 and earlier.
-  if (typeof opts == 'function') {
+  if (typeof opts == "function") {
     cb = opts;
     opts = {};
   }
 
   cb = opts.cb || cb;
-  var pre = (typeof cb == 'function') ? cb : cb.pre || function() {};
-  var post = cb.post || function() {};
+  var pre = typeof cb == "function" ? cb : cb.pre || function () {};
+  var post = cb.post || function () {};
 
-  _traverse(opts, pre, post, schema, '', schema);
-};
-
+  _traverse(opts, pre, post, schema, "", schema);
+});
 
 traverse.keywords = {
   additionalItems: true,
@@ -21,21 +20,21 @@ traverse.keywords = {
   contains: true,
   additionalProperties: true,
   propertyNames: true,
-  not: true
+  not: true,
 };
 
 traverse.arrayKeywords = {
   items: true,
   allOf: true,
   anyOf: true,
-  oneOf: true
+  oneOf: true,
 };
 
 traverse.propsKeywords = {
   definitions: true,
   properties: true,
   patternProperties: true,
-  dependencies: true
+  dependencies: true,
 };
 
 traverse.skipKeywords = {
@@ -56,34 +55,94 @@ traverse.skipKeywords = {
   minItems: true,
   uniqueItems: true,
   maxProperties: true,
-  minProperties: true
+  minProperties: true,
 };
 
-
-function _traverse(opts, pre, post, schema, jsonPtr, rootSchema, parentJsonPtr, parentKeyword, parentSchema, keyIndex) {
-  if (schema && typeof schema == 'object' && !Array.isArray(schema)) {
-    pre(schema, jsonPtr, rootSchema, parentJsonPtr, parentKeyword, parentSchema, keyIndex);
+function _traverse(
+  opts,
+  pre,
+  post,
+  schema,
+  jsonPtr,
+  rootSchema,
+  parentJsonPtr,
+  parentKeyword,
+  parentSchema,
+  keyIndex
+) {
+  if (schema && typeof schema == "object" && !Array.isArray(schema)) {
+    pre(
+      schema,
+      jsonPtr,
+      rootSchema,
+      parentJsonPtr,
+      parentKeyword,
+      parentSchema,
+      keyIndex
+    );
     for (var key in schema) {
       var sch = schema[key];
       if (Array.isArray(sch)) {
         if (key in traverse.arrayKeywords) {
-          for (var i=0; i<sch.length; i++)
-            _traverse(opts, pre, post, sch[i], jsonPtr + '/' + key + '/' + i, rootSchema, jsonPtr, key, schema, i);
+          for (var i = 0; i < sch.length; i++)
+            _traverse(
+              opts,
+              pre,
+              post,
+              sch[i],
+              jsonPtr + "/" + key + "/" + i,
+              rootSchema,
+              jsonPtr,
+              key,
+              schema,
+              i
+            );
         }
       } else if (key in traverse.propsKeywords) {
-        if (sch && typeof sch == 'object') {
+        if (sch && typeof sch == "object") {
           for (var prop in sch)
-            _traverse(opts, pre, post, sch[prop], jsonPtr + '/' + key + '/' + escapeJsonPtr(prop), rootSchema, jsonPtr, key, schema, prop);
+            _traverse(
+              opts,
+              pre,
+              post,
+              sch[prop],
+              jsonPtr + "/" + key + "/" + escapeJsonPtr(prop),
+              rootSchema,
+              jsonPtr,
+              key,
+              schema,
+              prop
+            );
         }
-      } else if (key in traverse.keywords || (opts.allKeys && !(key in traverse.skipKeywords))) {
-        _traverse(opts, pre, post, sch, jsonPtr + '/' + key, rootSchema, jsonPtr, key, schema);
+      } else if (
+        key in traverse.keywords ||
+        (opts.allKeys && !(key in traverse.skipKeywords))
+      ) {
+        _traverse(
+          opts,
+          pre,
+          post,
+          sch,
+          jsonPtr + "/" + key,
+          rootSchema,
+          jsonPtr,
+          key,
+          schema
+        );
       }
     }
-    post(schema, jsonPtr, rootSchema, parentJsonPtr, parentKeyword, parentSchema, keyIndex);
+    post(
+      schema,
+      jsonPtr,
+      rootSchema,
+      parentJsonPtr,
+      parentKeyword,
+      parentSchema,
+      keyIndex
+    );
   }
 }
 
-
 function escapeJsonPtr(str) {
-  return str.replace(/~/g, '~0').replace(/\//g, '~1');
+  return str.replace(/~/g, "~0").replace(/\//g, "~1");
 }

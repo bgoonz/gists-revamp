@@ -14,8 +14,7 @@ We can see it traverses an array and inserts non-duplicate elements into a new a
 
 We needed to check 5 pieces of information to determine what was going on. And this is a single `for` loop!
 
-A Functional Approach
-=====================
+# A Functional Approach
 
 This same effect could be written using JavaScript’s built-in `filter()` method.
 
@@ -28,16 +27,15 @@ Simple and elegant.
 
 Seeing `filter` communicates code behavior so I know exactly what it’s doing. Compared to the looping approach above:
 
--   Checking \#1, \#2, \#3 is unnecessary because `filter()` does these automatically.
--   \#4 is the same but without the additional `if(...)` block.
--   A big hurdle was \#5. I had to search thru the code base to find what `models` even was. Did it already have data? Was it targeting specific data types? `map`, `reduce`, and `filter` solves this problem by not depending on code outside the callbacks, called side-effects.
+- Checking \#1, \#2, \#3 is unnecessary because `filter()` does these automatically.
+- \#4 is the same but without the additional `if(...)` block.
+- A big hurdle was \#5. I had to search thru the code base to find what `models` even was. Did it already have data? Was it targeting specific data types? `map`, `reduce`, and `filter` solves this problem by not depending on code outside the callbacks, called side-effects.
 
 In sum, `map`, `reduce` and `filter` makes code less complex, without side effects, and often more readable.
 
 Let’s look at each.
 
-map()
-=====
+# map()
 
 **Use it when**: You want to translate/map all elements in an array to another set of values.
 
@@ -64,8 +62,7 @@ Example: convert Fahrenheit temps to Celsius.
 
 <table><thead><tr class="header"><th>param</th><th>meaning</th></tr></thead><tbody><tr class="odd"><td>elem</td><td>element value</td></tr><tr class="even"><td>index</td><td>index in each traversal, moving from left to right</td></tr><tr class="odd"><td>array</td><td>original array invoking the method</td></tr><tr class="even"><td>thisArg</td><td>(Optional) object that will be referred to as <code>this</code> in callback</td></tr></tbody></table>
 
-filter()
-========
+# filter()
 
 **Use it when**: You want to remove unwanted elements based on a condition.
 
@@ -91,8 +88,7 @@ It has the same parameters as `map()`
 
 <table><thead><tr class="header"><th>param</th><th>meaning</th></tr></thead><tbody><tr class="odd"><td>elem</td><td>element value</td></tr><tr class="even"><td>index</td><td>index in each traversal, moving from left to right</td></tr><tr class="odd"><td>array</td><td>original array invoking the method</td></tr><tr class="even"><td>thisArg</td><td>(Optional) object that will be referred to as <code>this</code> in callback</td></tr></tbody></table>
 
-reduce()
-========
+# reduce()
 
 **Use it when**: You want to find a cumulative or concatenated value based on elements across the array.
 
@@ -126,11 +122,10 @@ Example: Sum up orbital rocket launches in 2014.
 
 <table style="width:99%;"><colgroup><col style="width: 13%" /><col style="width: 86%" /></colgroup><thead><tr class="header"><th>param</th><th>meaning</th></tr></thead><tbody><tr class="odd"><td>prevValue</td><td>cumulative value returned thru each callback</td></tr><tr class="even"><td>elem</td><td>element value</td></tr><tr class="odd"><td>index</td><td>index of the traversal, moving from left to right</td></tr><tr class="even"><td>array</td><td>original array invoking the method</td></tr><tr class="odd"><td>initialValue</td><td>(Optional) object used as first argument in the first (leftmost) callback.</td></tr></tbody></table>
 
-Misc
-====
+# Misc
 
--   Each are methods on the Array’s prototype object.
--   Changing an element in the `array` parameter in any callback will persist across all remaining callbacks but has no effect on the returned array.
--   Callback functions are invoked on indexes with any value, even `undefined`, but not ones deleted or never assigned a value.
+- Each are methods on the Array’s prototype object.
+- Changing an element in the `array` parameter in any callback will persist across all remaining callbacks but has no effect on the returned array.
+- Callback functions are invoked on indexes with any value, even `undefined`, but not ones deleted or never assigned a value.
 
 It’s worth noting `for` loops still definitely have a place when working with large arrays (e.g. over 1,000 elements) or needing to break the traversal if a condition is met.
