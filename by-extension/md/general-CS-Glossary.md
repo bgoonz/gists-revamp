@@ -784,45 +784,45 @@ A method used to determine if an IP address is accessible. Ping works by sending
 
 The central hardware and/or software of a computer. For example, the software platform of the average PC is Windows, while its hardware platform is Intel X86. In web terms, platform refers only to the central software of a computer ( its operating system ), such as Windows, Linux, or Mac. The term platform is sometimes used synonomously with operating system.
 
--   Car tracking devices
+- Car tracking devices
 
--   Machine
+- Machine
 
--   Chatroom
+- Chatroom
 
--   Auto parts international
+- Auto parts international
 
--   Database management system
+- Database management system
 
--   Download
+- Download
 
--   Security System
+- Security System
 
--   8 Bits
+- 8 Bits
 
--   Abbreviations
+- Abbreviations
 
--   Activex
+- Activex
 
--   Car tracking devices
+- Car tracking devices
 
--   Machine
+- Machine
 
--   Chatroom
+- Chatroom
 
--   Auto parts international
+- Auto parts international
 
--   Database management system
+- Database management system
 
--   Download
+- Download
 
--   Security System
+- Security System
 
--   8 Bits
+- 8 Bits
 
--   Abbreviations
+- Abbreviations
 
--   Activex
+- Activex
 
 ### Plug-In
 
@@ -1188,7 +1188,7 @@ See Web Spider.
 
 ### Wildcard
 
-A special character that means any and all characters. The wildcard character is often used to select a large amount of files at once. For example, in Windows and DOS, the wildcard character is *. Suppose you are using Windows and you want to see a list of all of the files in a directory that have a.txt extension, for this task you would use the wildcard character * in the form *.txt. This will return all the files in the directory that have a.txt extension.
+A special character that means any and all characters. The wildcard character is often used to select a large amount of files at once. For example, in Windows and DOS, the wildcard character is _. Suppose you are using Windows and you want to see a list of all of the files in a directory that have a.txt extension, for this task you would use the wildcard character _ in the form \*.txt. This will return all the files in the directory that have a.txt extension.
 
 ### Windows 2000, Windows NT, Windows 95/98, Windows XP
 

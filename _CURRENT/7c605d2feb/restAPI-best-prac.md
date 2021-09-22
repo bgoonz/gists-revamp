@@ -10,8 +10,7 @@ _Catch the essence of what an API is._
 
 Similar to waiters who take orders and bring drinks and food in a restaurant, APIs accept requests from apps and return desired data or functionality. More often than not, they do their job in REST style. This article outlines what REST is, why it is so widespread, and what makes an API truly RESTful.
 
-What is REST API and how does it work
--------------------------------------
+## What is REST API and how does it work
 
 REST is short for **Representational State Transfer,** an architectural style for building web services that interact via an HTTP protocol. Its principles were formulated in 2000 by computer scientist Roy Fielding and gained popularity as a scalable and flexible alternative to older methods of machine-to-machine communication. It still remains the gold standard for public APIs.
 
@@ -21,9 +20,9 @@ _A REST client can interact with each resource by sending an HTTP request._
 
 The key elements of the REST API paradigm are
 
-*   a **client** or software that runs on a user’s computer or smartphone and initiates communication;
-*   a **server** that offers an API as a means of access to its data or features; and
-*   a **resource**, which is any piece of content that the server can provide to the client (for example, a video or a text file).
+- a **client** or software that runs on a user’s computer or smartphone and initiates communication;
+- a **server** that offers an API as a means of access to its data or features; and
+- a **resource**, which is any piece of content that the server can provide to the client (for example, a video or a text file).
 
 To get access to a resource, the client sends an **HTTP request**. In return, the server generates an **HTTP response** with encoded data on the resource. Both types of REST messages are _self-descriptive,_ meaning they contain information on how to interpret and process them.
 
@@ -33,10 +32,10 @@ Any REST request includes four essential parts: an HTTP method, an endpoint, hea
 
 An **HTTP method** describes what is to be done with a _resource_. There are four basic methods also named CRUD operations:
 
-*   POST to Create a resource,
-*   GET to Retrieve a resource,
-*   PUT to Update a resource, and
-*   DELETE to Delete a resource.
+- POST to Create a resource,
+- GET to Retrieve a resource,
+- PUT to Update a resource, and
+- DELETE to Delete a resource.
 
 An **endpoint** contains a _Uniform Resource Identifier (URI)_ indicating where and how to find the resource on the Internet. The most common type of URI is a _Unique Resource Location_ (URL), serving as a complete web address.
 
@@ -58,8 +57,7 @@ Whenever relevant, a server includes in the response hyperlinks or **hypermedia*
 
 _An example of a self-descriptive server response with hypermedia. Source:_ [_Lauren Long_](https://codewords.recurse.com/issues/five/what-restful-actually-means)
 
-REST best practices: what makes an API RESTful
-----------------------------------------------
+## REST best practices: what makes an API RESTful
 
 REST isn’t linked to any particular technology or platform. Nor does it dictate exactly how to build an API. Instead, it introduces best practices known as _constraints_. They describe how the server processes requests and responds to them. Operating within these constraints, the system gains desirable properties.
 
@@ -75,16 +73,16 @@ In the REST API system, the client and server work independently, using differen
 
 Uniform interface is a key attribute that distinguishes REST APIS from non-REST APIs. It dictates a standardized way to communicate with a given server, no matter the client app or device that runs it. We already mentioned some fundamentals supporting this practice, which are
 
-*   a unique identifier (URI) assigned to each resource,
-*   self-descriptive messages explaining how to interpret them and what to do next,
-*   the ability to manipulate a resource through its representation in JSON or XML, and
-*   hypermedia linking to related resources.
+- a unique identifier (URI) assigned to each resource,
+- self-descriptive messages explaining how to interpret them and what to do next,
+- the ability to manipulate a resource through its representation in JSON or XML, and
+- hypermedia linking to related resources.
 
 ![Uniform interface in REST design](https://content.altexsoft.com/media/2021/03/word-image-3.png)
 
 _The server uses the same interface, no matter the client. Source:_ [_Sugandha Lahoti_](https://hub.packtpub.com/defining-rest-and-its-various-architectural-styles/)
 
-Uniform interface helps developers easily grasp the logic of an API. [Todd Main](https://www.linkedin.com/in/todd-main-a956a51/), Director of Software Development at [Envysion](https://envysion.com/) admits being relieved if a partner company has chosen a REST approach: “_I know that I can just browse a list of objects, which I am usually already familiar with, and see what properties I can get or supply.”_ Todd adds that code implementation with a RESTful API is also easy_: “The objects passed around translate directly into data structures in my programming language.”_
+Uniform interface helps developers easily grasp the logic of an API. [Todd Main](https://www.linkedin.com/in/todd-main-a956a51/), Director of Software Development at [Envysion](https://envysion.com/) admits being relieved if a partner company has chosen a REST approach: “_I know that I can just browse a list of objects, which I am usually already familiar with, and see what properties I can get or supply.”_ Todd adds that code implementation with a RESTful API is also easy*: “The objects passed around translate directly into data structures in my programming language.”*
 
 ### Layered architecture
 
@@ -112,7 +110,7 @@ The word _stateless_ indicates that an API doesn’t store any information relat
 
 Being stateless, REST APIs don’t have to deal with the server-side state synchronization logic. Another advantage of session independence is that any server can process requests. This improves the performance of the application and reduces the risk of going down.
 
-_“Going stateless means fewer side effects,”_ Pál Váradi Nagy, a developer at [Hanna Instruments](https://www.hannainst.com/), argues. _“In FTP for example, we have an ongoing session with commands that modify the state of the session. This state can and sometimes will be lost. So, for REST it was a decision to go as pure as possible. Meaning that it relies on PURE functions that always return the same output when given the same input, and doesn’t affect anything else.”_
+*“Going stateless means fewer side effects,”* Pál Váradi Nagy, a developer at [Hanna Instruments](https://www.hannainst.com/), argues. _“In FTP for example, we have an ongoing session with commands that modify the state of the session. This state can and sometimes will be lost. So, for REST it was a decision to go as pure as possible. Meaning that it relies on PURE functions that always return the same output when given the same input, and doesn’t affect anything else.”_
 
 ### Code on Demand (CoD)
 
@@ -120,8 +118,7 @@ _“Going stateless means fewer side effects,”_ Pál Váradi Nagy, a develope
 
 Instead of sending back JSON representations, the server may return a piece of executable code on the client’s demand. The CoD practice gives the client more control over the features and allows for extended functionality.
 
-Priority of business needs
---------------------------
+## Priority of business needs
 
 **Property gained:** flexibility
 
@@ -131,8 +128,7 @@ That’s why you can hear people say that practically no REST APIs actually foll
 
 _“For me, some of the constraints (stuff like client-server architecture, or statelessness) are just good but pretty standard application design, and others are stuff I’d avoid like the plague!”_ says [Garry Taylor](https://www.linkedin.com/in/garrytaylormelbourne/), a Senior Software Developer and technical consultant. In particular, Garry speaks of code on demand as a bad idea: “_The security implications are awful, plus the server must make assumptions about the nature of the client and its ability to execute whatever code is passed.”_
 
-REST API examples
------------------
+## REST API examples
 
 REST API concepts and principles may feel like something abstract — until you try working with them. Below, we give examples of real-life APIs that will help make sense of the RESTful approach.
 
@@ -174,8 +170,7 @@ Twilio provides a free [trial account](https://www.twilio.com/try-twilio?_ga=2.1
 
 _Text explanation on how to send SMS is illustrated with examples of an API request and JSON API response._
 
-REST compared to other API paradigms
-------------------------------------
+## REST compared to other API paradigms
 
 A direct comparison among approaches to building APIs is debatable. That’s why we chose we chose to review the key features that make REST stand out against command-oriented Remote Procedure Call, standardized SOAP, and schema-based [GraphQL](https://www.altexsoft.com/blog/engineering/graphql-core-features-architecture-pros-and-cons/).
 
@@ -219,8 +214,7 @@ For a more consistent [overview of the four major API paradigms](https://www.alt
 
 _Comparing web API types_
 
-RESTful or RESTish, that is the question
-----------------------------------------
+## RESTful or RESTish, that is the question
 
 The basic ideas and semantics of machine-to-machine interactions have been around for a very long time. But when REST showed up, it brought order to web APIs.
 
