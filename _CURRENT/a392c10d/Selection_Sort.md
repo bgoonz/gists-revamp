@@ -1,5 +1,4 @@
-Selection Sort
-==============
+# Selection Sort
 
 #### Problem Statement
 
@@ -7,12 +6,12 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Approach
 
--   select the smallest element from the array
--   put it at the beginning of the array
--   then select the smallest array from the remaining unsorted list
--   append it to the sorted array at the beginning
--   keep doing this for every element of the array
--   repeat the above process n times
+- select the smallest element from the array
+- put it at the beginning of the array
+- then select the smallest array from the remaining unsorted list
+- append it to the sorted array at the beginning
+- keep doing this for every element of the array
+- repeat the above process n times
 
 #### Time Complexity
 
@@ -29,7 +28,7 @@ Given an unsorted array of n elements, write a function to sort the array
 #### Example
 
     arr[] = {80, 10, 40, 30}
-    Indexes: 0   1   2   3    
+    Indexes: 0   1   2   3
 
     1. Index = 0
         Select the minimum number from the array (between index 0-3), ie, 10
@@ -50,14 +49,14 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Code Implementation Links
 
--   [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/SelectionSort.java)
--   [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Sorting/Selection%20Sort.cpp)
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/selection_sort.py)
--   [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/selection_sort.go)
--   [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/Sorting/selection_sort.rb)
--   [C](https://github.com/TheAlgorithms/C/blob/master/sorting/SelectionSort.c)
--   [Scala](https://github.com/TheAlgorithms/Scala/blob/master/src/main/scala/Sort/SelectionSort.scala)
--   [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/selectionSort.js)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/SelectionSort.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Sorting/Selection%20Sort.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/selection_sort.py)
+- [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/selection_sort.go)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/Sorting/selection_sort.rb)
+- [C](https://github.com/TheAlgorithms/C/blob/master/sorting/SelectionSort.c)
+- [Scala](https://github.com/TheAlgorithms/Scala/blob/master/src/main/scala/Sort/SelectionSort.scala)
+- [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/selectionSort.js)
 
 #### Video Explanation
 
@@ -65,4 +64,4 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Animation Explanation
 
--   [Tute Board](https://boardhub.github.io/tute/?wd=selectSortAlgo2)
+- [Tute Board](https://boardhub.github.io/tute/?wd=selectSortAlgo2)

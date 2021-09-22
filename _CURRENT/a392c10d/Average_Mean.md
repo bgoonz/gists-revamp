@@ -1,21 +1,18 @@
-Average (Mean)
-==============
+# Average (Mean)
 
 Calculate the average of a list of numbers using mean.
 
-Applications
-------------
+## Applications
 
 Calculating the mean of a list of numbers is one of the most common ways to determine the average of those numbers.
 
 Calculating a mean would be useful in these situations:
 
--   Determining the average score for all players of a video game level.
--   Finding the average grade for tests that a student took this semester.
--   Determining the average size of all files in a directory/folder.
+- Determining the average score for all players of a video game level.
+- Finding the average grade for tests that a student took this semester.
+- Determining the average size of all files in a directory/folder.
 
-Steps
------
+## Steps
 
 1.  Input a list of numbers.
 2.  Calculate the sum of all numbers in the list.
@@ -23,8 +20,7 @@ Steps
 4.  Divide the sum by the total count of numbers in the list.
 5.  Return mean.
 
-Example
--------
+## Example
 
 Given the list `[2, 4, 6, 8, 20, 50, 70]`, let’s calculate the average.
 
@@ -59,17 +55,14 @@ If we properly consider significant digits: `sum / count = 23`
 
 Return the value of 22.<span class="underline">857142</span> or `23`.
 
-Implementation
---------------
+## Implementation
 
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/maths/average_mean.py)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/maths/average_mean.py)
 
-Video URL
----------
+## Video URL
 
--   [Mean on Khan Academy](https://www.khanacademy.org/math/ap-statistics/summarizing-quantitative-data-ap/measuring-center-quantitative/v/mean-median-and-mode)
+- [Mean on Khan Academy](https://www.khanacademy.org/math/ap-statistics/summarizing-quantitative-data-ap/measuring-center-quantitative/v/mean-median-and-mode)
 
-Others
-------
+## Others
 
--   [Mean on Wikipedia](https://en.wikipedia.org/wiki/Mean)
+- [Mean on Wikipedia](https://en.wikipedia.org/wiki/Mean)

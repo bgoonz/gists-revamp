@@ -499,7 +499,7 @@
 [**How To Work with Prototypes and Inheritance in JavaScript | DigitalOcean**  
 *JavaScript is a prototype-based language, meaning object properties and methods can be shared through generalized…*www.digitalocean.com](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript "https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript")[](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
 
-[**Master JavaScript Prototypes & *Inheritance***  
+[**Master JavaScript Prototypes & _Inheritance_**  
 Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inheritance-d0a9a5a75c4e "https://codeburst.io/master-javascript-prototypes-inheritance-d0a9a5a75c4e")[](https://codeburst.io/master-javascript-prototypes-inheritance-d0a9a5a75c4e)
 
 [**JavaScript’s Prototypal Inheritance Explained Using CSS**  

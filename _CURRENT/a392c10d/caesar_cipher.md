@@ -1,5 +1,4 @@
-Caesar Cipher
-=============
+# Caesar Cipher
 
 The Caesar cipher is a simple cipher and one of the best known encryption algorithms. It is very simple to encrypt, decrypt and intercept. The Caesar cipher is a substitution cipher where each letter in the plain-text (decoded text) is replaced by a letter a certain number of spaces to the right of the letter in the alphabet. (The amount of spaces is called the key or shift and is only known by the sender and intended receiver).
 
@@ -9,8 +8,7 @@ The Caesar cipher is a simple cipher and one of the best known encryption algori
 2.  No real applications exist for the cipher as it is the most insecure out there.
 3.  This cipher was invented by Julius Caesar as a way to send messages of high military significance.
 
-Steps
------
+## Steps
 
 ### Encryption
 
@@ -26,22 +24,20 @@ Steps
 3.  For every letter in the cipher-text, replace it by a letter of the alphabet that is `n` letters behind in the alphabet from the letter. `c` would be `b`, `a` would be `z` with a key of `1`.
 4.  The message should now be decoded
 
-Example
--------
+## Example
 
 ### An example of encryption
 
 Let us say we are sending a secret message to a friend.
 
--   We first write out our message. In this case: `The Caesar cipher is a fun substitution cipher`
--   Our alphabet will be: `abcdefghijklmnopqrstuvwxyz`. For the uses of this tutorial, case doesn’t matter. (On a shift of `1`: `A` will become `B`, `a` will become `b`)
--   Let our key be 6.
--   Starting with the first letter: `T`. The letter 6 letters away is `Z`. We add `Z` to the message.
--   The second letter is `h`. The letter 6 letters away is `n`. Our message is now `Zn`
--   We continue like that until the end. Our final message is: `Znk Igkygx iovnkx oy g lat yahyzozazout iovnkx.`
--   Decryption is the same way, except instead of going to the right in the alphabet, we go backwards.
+- We first write out our message. In this case: `The Caesar cipher is a fun substitution cipher`
+- Our alphabet will be: `abcdefghijklmnopqrstuvwxyz`. For the uses of this tutorial, case doesn’t matter. (On a shift of `1`: `A` will become `B`, `a` will become `b`)
+- Let our key be 6.
+- Starting with the first letter: `T`. The letter 6 letters away is `Z`. We add `Z` to the message.
+- The second letter is `h`. The letter 6 letters away is `n`. Our message is now `Zn`
+- We continue like that until the end. Our final message is: `Znk Igkygx iovnkx oy g lat yahyzozazout iovnkx.`
+- Decryption is the same way, except instead of going to the right in the alphabet, we go backwards.
 
-Implementation
---------------
+## Implementation
 
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/ciphers/caesar_cipher.py)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/ciphers/caesar_cipher.py)

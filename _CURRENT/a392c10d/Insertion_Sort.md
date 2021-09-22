@@ -1,5 +1,4 @@
-Insertion Sort
-==============
+# Insertion Sort
 
 #### Problem Statement
 
@@ -7,16 +6,16 @@ Given an array of n elements, write a function to sort the array in increasing o
 
 #### Approach
 
--   Define a “key” index, the subarray to the left of which is sorted.
--   Initiate “key” as 1, ie. the second element of array(as there is only one element to left of the second element, which can be considered as sorted array with one element).
--   If value of element at (key - 1) position is less than value of element at (key) position; increment “key”.
--   Else move elements of sorted subarray that are greater than value of element at “key” to one position ahead of their current position. Put the value of element at “key” in the newly created void.
+- Define a “key” index, the subarray to the left of which is sorted.
+- Initiate “key” as 1, ie. the second element of array(as there is only one element to left of the second element, which can be considered as sorted array with one element).
+- If value of element at (key - 1) position is less than value of element at (key) position; increment “key”.
+- Else move elements of sorted subarray that are greater than value of element at “key” to one position ahead of their current position. Put the value of element at “key” in the newly created void.
 
 #### Time Complexity
 
--   `О(n^2)` comparisons, `О(n^2)` swaps – Worst Case
+- `О(n^2)` comparisons, `О(n^2)` swaps – Worst Case
 
--   `O(n)` comparisons, `O(1)` swaps – Best Case
+- `O(n)` comparisons, `O(1)` swaps – Best Case
 
 #### Space Complexity
 
@@ -48,13 +47,13 @@ Given an array of n elements, write a function to sort the array in increasing o
 
 #### Code Implementation Links
 
--   [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/InsertionSort.java)
--   [C](https://github.com/TheAlgorithms/C/blob/master/sorting/insertion_sort.c)
--   [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/insertion_sort.cpp)
--   [C\#](https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Sorters/Comparison/InsertionSorter.cs)
--   [Scala](https://github.com/TheAlgorithms/Scala/blob/master/src/main/scala/Sort/InsertionSort.scala)
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/insertion_sort.py)
--   [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/insertion_sort.rb)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/InsertionSort.java)
+- [C](https://github.com/TheAlgorithms/C/blob/master/sorting/insertion_sort.c)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/insertion_sort.cpp)
+- [C\#](https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Sorters/Comparison/InsertionSorter.cs)
+- [Scala](https://github.com/TheAlgorithms/Scala/blob/master/src/main/scala/Sort/InsertionSort.scala)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/insertion_sort.py)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/insertion_sort.rb)
 
 #### Video Explanation
 

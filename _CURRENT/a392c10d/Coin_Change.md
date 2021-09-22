@@ -1,5 +1,4 @@
-Coin Change
-===========
+# Coin Change
 
 #### Problem Statement
 
@@ -35,13 +34,13 @@ Let’s say we have 3 coin types `[1,2,3]` and we want to change for `7` cents. 
 
 0th column will store 1 since there is only one way to get 0 cents.
 
--   For the first iteration we take a coin that has a value of 1. Then for all sub problems, there is only one way to make change. For 7 cents, the only way is `{1,1,1,1,1,1,1}`. On the final iteration, our table be like:
+- For the first iteration we take a coin that has a value of 1. Then for all sub problems, there is only one way to make change. For 7 cents, the only way is `{1,1,1,1,1,1,1}`. On the final iteration, our table be like:
 
 <!-- -->
 
     [1, 1, 1, 1, 1, 1, 1, 1]
 
--   For the second iteration, we take a coin that has a value of 2. From here, all sub problems that can be divided by 2 will store another new way to make change. So, when the iteration stopped at 2nd column it will be like `dp[2] += dp[0]`. We know that `dp[0]` stored a value of 1. Thus, dp\[2\] will store the value of `1 + 1 = 2`. From here we know that for 2 cents, there are 2 ways `{1,1}` and `{2}`. And this operation will continue. Now our table be like:
+- For the second iteration, we take a coin that has a value of 2. From here, all sub problems that can be divided by 2 will store another new way to make change. So, when the iteration stopped at 2nd column it will be like `dp[2] += dp[0]`. We know that `dp[0]` stored a value of 1. Thus, dp\[2\] will store the value of `1 + 1 = 2`. From here we know that for 2 cents, there are 2 ways `{1,1}` and `{2}`. And this operation will continue. Now our table be like:
 
 <!-- -->
 
@@ -49,13 +48,13 @@ Let’s say we have 3 coin types `[1,2,3]` and we want to change for `7` cents. 
 
 4 ways to make 7 cents using value of 1 and 2. `{{1,1,1,1,1,1,1}, {1,1,1,1,1,2}, {1,1,1,2,2}, {1,2,2,2}}`
 
--   For the final iteration (3rd iteration), we take a coin that has a value of 3. Like before, now all the columns that can be devided by 3 will store another new way. And the final result will be like:
+- For the final iteration (3rd iteration), we take a coin that has a value of 3. Like before, now all the columns that can be devided by 3 will store another new way. And the final result will be like:
 
 <!-- -->
 
     [1, 1, 2, 3, 4, 5, 7, 8]
 
-So the final answer is **8**. 8 ways to make change of 7 cents using all coin types. `{{1,1,1,1,1,1,1}, {1,1,1,1,1,2}, {1,1,1,2,2}, {1,2,2,2}, {1,1,1,1,3},         {1,3,3}, {2,2,3}, {1,1,2,3}}`
+So the final answer is **8**. 8 ways to make change of 7 cents using all coin types. `{{1,1,1,1,1,1,1}, {1,1,1,1,1,2}, {1,1,1,2,2}, {1,2,2,2}, {1,1,1,1,3}, {1,3,3}, {2,2,3}, {1,1,2,3}}`
 
 #### Code Implementation Link
 

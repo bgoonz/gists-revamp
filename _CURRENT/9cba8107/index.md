@@ -2,7 +2,6 @@
 
 Show Popup
 
-Let me tell you about this thing!!
-----------------------------------
+## Let me tell you about this thing!!
 
 Close Popup!

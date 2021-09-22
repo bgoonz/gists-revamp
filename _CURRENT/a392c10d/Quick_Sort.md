@@ -1,20 +1,19 @@
-Quick Sort
-==========
+# Quick Sort
 
 #### Problem Statement
 
 Given an unsorted array of n elements, write a function to sort the array \#\#\#\# Approach
 
--   Make the right-most index value pivot
--   partition the array using pivot value
--   quicksort left partition recursively
--   quicksort right partition recursively
+- Make the right-most index value pivot
+- partition the array using pivot value
+- quicksort left partition recursively
+- quicksort right partition recursively
 
 #### Time Complexity
 
--   `O(n^2)` Worst case performance
--   `O(n log n)` Best-case performance
--   `O(n log n)` Average performance
+- `O(n^2)` Worst case performance
+- `O(n log n)` Best-case performance
+- `O(n log n)` Average performance
 
 #### Space Complexity
 
@@ -66,10 +65,10 @@ Tony Hoare in 1959
 
 #### Code Implementation Links
 
--   [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/QuickSort.java)
--   [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Sorting/Quick%20Sort.cpp)
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/quick_sort.py)
--   [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/quicksort.rb)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/QuickSort.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Sorting/Quick%20Sort.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/quick_sort.py)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/quicksort.rb)
 
 #### Video Explanation
 

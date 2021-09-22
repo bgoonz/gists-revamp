@@ -1,5 +1,4 @@
-Bubble Sort
-===========
+# Bubble Sort
 
 #### Problem Statement
 
@@ -7,12 +6,12 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Approach
 
--   select the first element of the array
--   compare it with its next element
--   if it is larger than the next element then swap them
--   else do nothing
--   keep doing this for every index of the array
--   repeat the above process n times.
+- select the first element of the array
+- compare it with its next element
+- if it is larger than the next element then swap them
+- else do nothing
+- keep doing this for every index of the array
+- repeat the above process n times.
 
 #### Time Complexity
 
@@ -28,12 +27,12 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Founder’s Name
 
--   The term “Bubble Sort” was first used by Iverson, K in 1962.
+- The term “Bubble Sort” was first used by Iverson, K in 1962.
 
 #### Example
 
     arr[] = {10, 80, 40, 30}
-    Indexes: 0   1   2   3    
+    Indexes: 0   1   2   3
 
     1. Index = 0, Number = 10
     2. 10 < 80, do nothing and continue
@@ -49,7 +48,7 @@ Given an unsorted array of n elements, write a function to sort the array
     Repeat the Above Steps again
 
     arr[] = {10, 40, 30, 80}
-    Indexes: 0   1   2   3   
+    Indexes: 0   1   2   3
 
     1. Index = 0, Number = 10
     2. 10 < 40, do nothing and continue
@@ -65,7 +64,7 @@ Given an unsorted array of n elements, write a function to sort the array
     Repeat the Above Steps again
 
     arr[] = {10, 30, 40, 80}
-    Indexes: 0   1   2   3   
+    Indexes: 0   1   2   3
 
     1. Index = 0, Number = 10
     2. 10 < 30, do nothing and continue
@@ -80,15 +79,15 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Code Implementation Links
 
--   [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/BubbleSort.java)
--   [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/bubble_sort.cpp)
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/bubble_sort.py)
--   [C-Sharp](https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Sorters/Comparison/BubbleSorter.cs)
--   [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/bubblesort.go)
--   [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/bubble_sort.rb)
--   [C](https://github.com/TheAlgorithms/C/blob/master/sorting/bubble_sort.c)
--   [Scala](https://github.com/TheAlgorithms/Scala/blob/master/src/main/scala/Sort/BubbleSort.scala)
--   [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/BubbleSort.js)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/BubbleSort.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/bubble_sort.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/bubble_sort.py)
+- [C-Sharp](https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Sorters/Comparison/BubbleSorter.cs)
+- [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/bubblesort.go)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/bubble_sort.rb)
+- [C](https://github.com/TheAlgorithms/C/blob/master/sorting/bubble_sort.c)
+- [Scala](https://github.com/TheAlgorithms/Scala/blob/master/src/main/scala/Sort/BubbleSort.scala)
+- [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/BubbleSort.js)
 
 #### Video Explanation
 
@@ -100,4 +99,4 @@ Bubble sort is also known as Sinking sort.
 
 #### Animation Explanation
 
--   [Tute Board](https://boardhub.github.io/tute/?wd=bubbleSortAlgo2)
+- [Tute Board](https://boardhub.github.io/tute/?wd=bubbleSortAlgo2)

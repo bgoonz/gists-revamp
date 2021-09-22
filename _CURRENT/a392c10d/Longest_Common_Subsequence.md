@@ -1,5 +1,4 @@
-Longest Common Subsequence
-==========================
+# Longest Common Subsequence
 
 #### Problem Statement
 
@@ -17,9 +16,9 @@ But what if `S[1..i] = *A` and `T[1..j] = *A`? We could say that the LCS of our 
 
 We could see that we can fill our `dp` table row by row, column by column. So our algorithm will be like:
 
--   Let’s say that we have strings `S` of the length N and `T` of the length M (numbered from 1). Let’s create the table `dp` of size `(N + 1) x (M + 1)` numbered from 0.
--   Let’s fill the 0th row and the 0th column of `dp` with 0.
--   Then, we follow the algorithm:
+- Let’s say that we have strings `S` of the length N and `T` of the length M (numbered from 1). Let’s create the table `dp` of size `(N + 1) x (M + 1)` numbered from 0.
+- Let’s fill the 0th row and the 0th column of `dp` with 0.
+- Then, we follow the algorithm:
 
 <!-- -->
 
@@ -71,9 +70,9 @@ So the length of LCS is `dp[4][4] = 3`.
 
 #### Code Implementation Links
 
--   [Java](https://github.com/TheAlgorithms/Java/blob/master/Dynamic%20Programming/LongestCommonSubsequence.java)
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/dynamic_programming/longest_common_subsequence.py)
--   [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Dynamic%20Programming/Longest%20Common%20Subsequence.cpp)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Dynamic%20Programming/LongestCommonSubsequence.java)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/dynamic_programming/longest_common_subsequence.py)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Dynamic%20Programming/Longest%20Common%20Subsequence.cpp)
 
 #### Video Explanation
 

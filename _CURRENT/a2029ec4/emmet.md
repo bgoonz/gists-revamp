@@ -1,27 +1,22 @@
-EMMET
-=====
+# EMMET
 
-*The essential toolkit for web-developers*
+_The essential toolkit for web-developers_
 
-Introduction
-------------
+## Introduction
 
 Emmet is a productivity toolkit for web developers that uses expressions to generate HTML snippets.
 
-Installation
-------------
+## Installation
 
 Normally, installation for Emmet should be a straight-forward process from the package-manager, as most of the modern text editors support Emmet. If you have difficulty setting up emmet with your editor and wish to check Emmet is supported by your favourite editor or not, you can check it from here. [Emmet Installation instructions](https://?emmet.io/download/)
 
-Usage
------
+## Usage
 
 You can use Emmet in two ways: \* Tab Expand Way: Type your emmet code and press `Tab` key \* Interactive Method: Press `alt + ctrl + Enter` and start typing your expressions. This should automatically generate HTML snippets on the fly.
 
 **This cheatsheet will assume that you press `Tab` after each expressions.**
 
-HTML
-----
+## HTML
 
 ### Generating HTML 5 DOCTYPE
 
@@ -124,7 +119,7 @@ ID and Class can also be combined together
 
 Contents inside tags can be added using `{}`
 
-`h1{Emmet is awesome}+h2{Every front end developers should use         this}+p{This is paragraph}*2`
+`h1{Emmet is awesome}+h2{Every front end developers should use this}+p{This is paragraph}*2`
 
     <h1>Emmet is awesome</h1>
     <h2>Every front end developers should use this</h2>
@@ -172,10 +167,9 @@ To start the numbering from specific number, use this way
     <img src="emmet103.jpg" alt="">
     <img src="emmet104.jpg" alt="">
 
-Tips
-----
+## Tips
 
--   Use `:` to expand known abbreviations
+- Use `:` to expand known abbreviations
 
 `input:date`
 
@@ -189,7 +183,7 @@ Tips
 
     <link rel="stylesheet" href="style.css">
 
--   Building Navbar
+- Building Navbar
 
 `.navbar>ul>li*3>a[href=#]{Item $@-}`
 
@@ -201,41 +195,40 @@ Tips
       </ul>
     </div>
 
-CSS
----
+## CSS
 
 Emmet works surprisingly well with css as well.
 
--   `f:l`
+- `f:l`
 
-    float: left;
+  float: left;
 
 You can also use any options n/r/l
 
--   `pos:a­`
+- `pos:a­`
 
-    position: absolute;
+  position: absolute;
 
 Also use any options, pos:a/r/f
 
--   `d:n/b­/f/­i/ib`
+- `d:n/b­/f/­i/ib`
 
 `d:ib`
 
     display: inline-block;
 
--   You can use `m` for margin and `p` for padding followed by direction
+- You can use `m` for margin and `p` for padding followed by direction
 
 `mr` -&gt; `margin-right`
 
 `pr` -&gt; `padding-right`
 
--   `@f` will result in
+- `@f` will result in
 
-    @font-face {
-      font-family:;
-      src:url();
-    }
+  @font-face {
+  font-family:;
+  src:url();
+  }
 
 You can also use these shorthands
 

@@ -1,5 +1,4 @@
-Getting started
----------------
+## Getting started
 
 {: .-three-column}
 
@@ -9,8 +8,8 @@ Getting started
 
 This is a quick reference to getting started with Bash scripting.
 
--   [Learn bash in y minutes](https://learnxinyminutes.com/docs/bash/) *(learnxinyminutes.com)*
--   [Bash Guide](http://mywiki.wooledge.org/BashGuide) *(mywiki.wooledge.org)*
+- [Learn bash in y minutes](https://learnxinyminutes.com/docs/bash/) _(learnxinyminutes.com)_
+- [Bash Guide](http://mywiki.wooledge.org/BashGuide) _(mywiki.wooledge.org)_
 
 ### Example
 
@@ -84,8 +83,7 @@ See: [Unofficial bash strict mode](http://redsymbol.net/articles/unofficial-bash
 
 See: [Brace expansion](http://wiki.bash-hackers.org/syntax/expansion/brace)
 
-Parameter expansions
---------------------
+## Parameter expansions
 
 {: .-three-column}
 
@@ -165,8 +163,7 @@ See: [Parameter expansion](http://wiki.bash-hackers.org/syntax/pe)
 
 Omitting the `:` removes the (non)nullity checks, e.g. `${FOO-val}` expands to `val` if unset otherwise `$FOO`.
 
-Loops
------
+## Loops
 
 {: .-three-column}
 
@@ -206,8 +203,7 @@ Loops
       ···
     done
 
-Functions
----------
+## Functions
 
 {: .-three-column}
 
@@ -253,8 +249,7 @@ Functions
 
 See [Special parameters](http://wiki.bash-hackers.org/syntax/shellvars#special_parameters_and_shell_variables).
 
-Conditionals
-------------
+## Conditionals
 
 {: .-three-column}
 
@@ -302,8 +297,7 @@ Note that `[[` is actually a command/program that returns either `0` (true) or `
       echo "file exists"
     fi
 
-Arrays
-------
+## Arrays
 
 ### Defining arrays
 
@@ -340,8 +334,7 @@ Arrays
       echo $i
     done
 
-Dictionaries
-------------
+## Dictionaries
 
 {: .-three-column}
 
@@ -378,8 +371,7 @@ Declares `sound` as a Dictionary object (aka associative array).
       echo $key
     done
 
-Options
--------
+## Options
 
 ### Options
 
@@ -398,8 +390,7 @@ Options
 
 Set `GLOBIGNORE` as a colon-separated list of patterns to be removed from glob matches.
 
-History
--------
+## History
 
 ### Commands
 
@@ -421,8 +412,7 @@ History
 
 `!!` can be replaced with any valid expansion i.e. `!cat`, `!-2`, `!42`, etc.
 
-Miscellaneous
--------------
+## Miscellaneous
 
 ### Numeric calculations
 
@@ -551,13 +541,12 @@ See [Special parameters](http://wiki.bash-hackers.org/syntax/shellvars#special_p
       echo "You appear to have typed 'foo' in the past"
     fi
 
-Also see
---------
+## Also see
 
 {: .-one-column}
 
--   [Bash-hackers wiki](http://wiki.bash-hackers.org/) *(bash-hackers.org)*
--   [Shell vars](http://wiki.bash-hackers.org/syntax/shellvars) *(bash-hackers.org)*
--   [Learn bash in y minutes](https://learnxinyminutes.com/docs/bash/) *(learnxinyminutes.com)*
--   [Bash Guide](http://mywiki.wooledge.org/BashGuide) *(mywiki.wooledge.org)*
--   [ShellCheck](https://www.shellcheck.net/) *(shellcheck.net)*
+- [Bash-hackers wiki](http://wiki.bash-hackers.org/) _(bash-hackers.org)_
+- [Shell vars](http://wiki.bash-hackers.org/syntax/shellvars) _(bash-hackers.org)_
+- [Learn bash in y minutes](https://learnxinyminutes.com/docs/bash/) _(learnxinyminutes.com)_
+- [Bash Guide](http://mywiki.wooledge.org/BashGuide) _(mywiki.wooledge.org)_
+- [ShellCheck](https://www.shellcheck.net/) _(shellcheck.net)_

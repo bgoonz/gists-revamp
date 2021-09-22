@@ -1,18 +1,16 @@
-Installation
-------------
+## Installation
 
 1.  Install Postgres and a simple UI
 
         brew install postgresql
         # https://youtu.be/xaWlS9HtWYw?list=PL-osiE80TeTsKOdPrKeSOp4rN3mza8VHN&t=192
-        brew cask install psequel 
+        brew cask install psequel
 
-2.  Start Postgres `bash  brew services start postgresql`
+2.  Start Postgres `bash brew services start postgresql`
 
-3.  Initialize the database `bash  createdb sample_db  psql sample_db`
+3.  Initialize the database `bash createdb sample_db psql sample_db`
 
-Creating the first table
-------------------------
+## Creating the first table
 
 https://youtu.be/w4HEVY\_GjqY?list=PL-osiE80TeTsKOdPrKeSOp4rN3mza8VHN&t=317
 
@@ -20,13 +18,11 @@ https://youtu.be/w4HEVY\_GjqY?list=PL-osiE80TeTsKOdPrKeSOp4rN3mza8VHN&t=317
 
     VARCHAR(N) /*Where n is maximum amount of characters that will be stored in the field*/
 
-Delete a table
---------------
+## Delete a table
 
     DROP TABLE people
 
-Populate data
--------------
+## Populate data
 
 https://youtu.be/fA0jpjwi4J8?list=PL-osiE80TeTsKOdPrKeSOp4rN3mza8VHN
 
@@ -35,8 +31,7 @@ It is possible to insert data with or without fieldnames.
     INSERT INTO people VALUES (3, 'Dave')
     INSERT INTO people (id, name) VALUES (3, 'Dave')
 
-SELECT DATA
------------
+## SELECT DATA
 
 https://youtu.be/-FPVPcq28r4?list=PL-osiE80TeTsKOdPrKeSOp4rN3mza8VHN&t=68
 
@@ -66,7 +61,7 @@ The order will be ascending by default. To revert the order add the `DESC` keywo
     WHERE age < 35
     ORDER BY age DESC;
 
-SELECT \* FROM PEOPLE WHERE age &lt; 35 ORDER BY Last\_name, first\_name;
+SELECT \* FROM PEOPLE WHERE age &lt; 35 ORDER BY Last_name, first_name;
 
 ### Update
 

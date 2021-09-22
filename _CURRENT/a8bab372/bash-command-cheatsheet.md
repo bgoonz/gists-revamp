@@ -1,10 +1,8 @@
-Resources:
-==========
+# Resources:
 
--   [holy grail](https://gist.github.com/bgoonz/df74dfa73bb5edd239ac738a14104eee)
+- [holy grail](https://gist.github.com/bgoonz/df74dfa73bb5edd239ac738a14104eee)
 
-1. Remove spaces from file and folder names and then remove numbers from files and folder names….
-=================================================================================================
+1. # Remove spaces from file and folder names and then remove numbers from files and folder names….
 
 ### Description: need to : `sudo apt install rename`
 
@@ -12,21 +10,20 @@ Resources:
 
 ###### code:
 
-    find . -name "* *" -type d | rename 's/ /_/g'   
+    find . -name "* *" -type d | rename 's/ /_/g'
     find . -name "* *" -type f | rename 's/ /_/g'
 
 \`\`\`sh
 
-\`\`\`sh find $dir -type f | sed ’s|(.*/)\[^A-Z\]*(\[A-Z\].\*)|mv "&" "\\1\\2"|’ | sh
+\`\`\`sh find $dir -type f | sed ’s|(._/)\[^A-Z\]_(\[A-Z\].\*)|mv "&" "\\1\\2"|’ | sh
 
-find $dir -type d | sed ’s|(.*/)\[^A-Z\]*(\[A-Z\].\*)|mv "&" "\\1\\2"|’ | sh
+find $dir -type d | sed ’s|(._/)\[^A-Z\]_(\[A-Z\].\*)|mv "&" "\\1\\2"|’ | sh
 
-for i in *.html; do mv "<span class="math inline">$i" "$</span>{i%-*}.html"; done
+for i in _.html; do mv "<span class="math inline">$i" "$</span>{i%-_}.html"; done
 
-for i in *.*; do mv “<span class="math inline">$i" "$</span>{i%-*}.${i\#\#*.}”; done
+for i in _._; do mv “<span class="math inline">$i" "$</span>{i%-_}.${i\#\#_.}”; done
 
-2. Download Website Using Wget:
-===============================
+2. # Download Website Using Wget:
 
 ### Description:
 
@@ -36,8 +33,7 @@ for i in *.*; do mv “<span class="math inline">$i" "$</span>{i%-*}.${i\#\#*.}�
 
     wget --limit-rate=200k --no-clobber --convert-links --random-wait -r -p -E -e robots=off -U mozilla https://bootcamp42.gitbook.io/python/
 
-4. clone all of a user’s git repositories
-=========================================
+4. # clone all of a user’s git repositories
 
 ### Description: clone all of a user or organization’s git repositories.
 
@@ -45,10 +41,7 @@ for i in *.*; do mv “<span class="math inline">$i" "$</span>{i%-*}.${i\#\#*.}�
 
 ###### code:
 
-Generalized:
-============
-
-
+# Generalized:
 
     CNTX={users|orgs}; NAME={username|orgname}; PAGE=1
     curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
@@ -56,8 +49,7 @@ Generalized:
       cut -d \" -f 4 |
       xargs -L1 git clone
 
-Clone all Git User
-==================
+# Clone all Git User
 
     CNTX={users}; NAME={bgoonz}; PAGE=1
     curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=200"?branch=master |
@@ -65,8 +57,7 @@ Clone all Git User
       cut -d \" -f 4 |
       xargs -L1 git clone
 
-Clone all Git Organization:
-===========================
+# Clone all Git Organization:
 
     CNTX={organizations}; NAME={TheAlgorithms}; PAGE=1
     curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=200"?branch=master |
@@ -74,8 +65,7 @@ Clone all Git Organization:
       cut -d \" -f 4 |
       xargs -L1 git clone
 
-6. Recursive Unzip In Place
-===========================
+6. # Recursive Unzip In Place
 
 ### Description: recursively unzips folders and then deletes the zip file by the same name.
 
@@ -89,8 +79,7 @@ Clone all Git Organization:
 
     find . -name "*.zip" -type f -print -delete
 
-8. Prettier Code Formatter:
-===========================
+8. # Prettier Code Formatter:
 
 ### Description:
 
@@ -102,8 +91,7 @@ Clone all Git Organization:
 
     prettier --write .
 
-10. Gitpod Installs
-===================
+10. # Gitpod Installs
 
 ### Description:
 
@@ -111,7 +99,7 @@ Clone all Git Organization:
 
 ###### code:
 
-    sudo apt install tree 
+    sudo apt install tree
     sudo apt install pandoc -y
     sudo apt install rename -y
     sudo apt install black -y
@@ -125,8 +113,7 @@ Clone all Git Organization:
     prettier --write .
     npm-recursive-install
 
-12. Unix Tree Package Usage:
-============================
+12. # Unix Tree Package Usage:
 
 ### Description:
 
@@ -149,8 +136,7 @@ Clone all Git Organization:
 
     tree -f >README.md
 
-14. Remove double extensions :
-==============================
+14. # Remove double extensions :
 
 ### Description:
 
@@ -185,8 +171,7 @@ Clone all Git Organization:
         mv "${file}" "${file%.png}"
     done
 
-16.Appendir.js
-==============
+# 16.Appendir.js
 
 ### Description: combine the contents of every file in the contaning directory.
 
@@ -203,8 +188,7 @@ Clone all Git Organization:
       if (err) throw err;
     });
 
-18. Filter & delete files by name and extension
-===============================================
+18. # Filter & delete files by name and extension
 
 ### Description:
 
@@ -226,8 +210,7 @@ Clone all Git Organization:
 
     find . -name 'left.html' -type f -prune -exec rm -rf '{}' +
 
-20. Remove duplicate lines from a text file
-===========================================
+20. # Remove duplicate lines from a text file
 
 ### Description:
 
@@ -240,18 +223,17 @@ Now, let’s understand the use of this with the help of an example. Suppose you
     sudo apt install uniq
     uniq -u input.txt output.txt
 
-title: add\_days tags: date,intermediate firstSeen: 2020-10-28T16:19:04+02:00 lastUpdated: 2020-10-28T16:19:04+02:00 —
+title: add_days tags: date,intermediate firstSeen: 2020-10-28T16:19:04+02:00 lastUpdated: 2020-10-28T16:19:04+02:00 —
 
 sudo sed -i ‘/title:/d’ ./*output.md sudo sed -i ‘/firstSeen/d’ ./*output.md sudo sed -i ‘/lastUpdated/d’ ./*output.md sudo sed -i ‘/tags:/d’ ./*output.md
 
 sudo sed -i ‘/badstring/d’ ./\*
 
-sudo sed -i ‘/stargazers/d’ ./repo.txt sudo sed -i ‘/node\_modules/d’ ./index.html sudo sed -i ‘/right.html/d’ ./index.html sudo sed -i ‘/right.html/d’ ./right.html
+sudo sed -i ‘/stargazers/d’ ./repo.txt sudo sed -i ‘/node_modules/d’ ./index.html sudo sed -i ‘/right.html/d’ ./index.html sudo sed -i ‘/right.html/d’ ./right.html
 
 \`\`\`
 
-23. Delete files containing a certain string:
-=============================================
+23. # Delete files containing a certain string:
 
 ### Description:
 
@@ -263,16 +245,13 @@ sudo sed -i ‘/stargazers/d’ ./repo.txt sudo sed -i ‘/node\_modules/d’ ./
     vi doit.sh // check for murphy and his law
     source doit.sh
 
-25. Index of Iframes
-====================
+25. # Index of Iframes
 
 ### Description: Creates an index.html file that contains all the files in the working directory or any of it’s sub folders as iframes instead of anchor tags.
 
 > Notes: Useful Follow up Code:
 
-
 ###### code:
-
 
     #!/bin/sh
 
@@ -369,8 +348,7 @@ sudo sed -i ‘/stargazers/d’ ./repo.txt sudo sed -i ‘/node\_modules/d’ ./
 
     cmd $listing --sort=extension >>$html
 
-27. OVERWRITE LOCAL CHANGES:
-============================
+27. # OVERWRITE LOCAL CHANGES:
 
 ### Description:
 
@@ -397,8 +375,7 @@ Important: If you have any local changes, they will be lost. With or without –
     git fetch --all
     git reset --hard origin/master
 
-29. GET GISTS
-=============
+29. # GET GISTS
 
 ### Description:
 
@@ -420,8 +397,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
     wget -q -O - https://api.github.com/users/thomasmb/gists | grep raw_url | awk -F\" '{print $4}' | xargs -n1 wget
 
-31. just clone .git folder:
-===========================
+31. # just clone .git folder:
 
 ### Description:
 
@@ -429,11 +405,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-
     git clone --bare --branch=master --single-branch https://github.com/bgoonz/My-Web-Dev-Archive.git
 
-33. Lebab
-=========
+33. # Lebab
 
 ### Description: ES5 –&gt; ES6
 
@@ -465,12 +439,12 @@ Important: If you have any local changes, they will be lost. With or without –
     lebab --replace ./ --transform arg-rest
     lebab --replace ./ --transform for-each
     lebab --replace ./ --transform for-of
-    lebab --replace ./ --transform commonjs 
+    lebab --replace ./ --transform commonjs
     lebab --replace ./ --transform exponent
     lebab --replace ./ --transform multi-var
     lebab --replace ./ --transform template
     lebab --replace ./ --transform default-param
-    lebab --replace ./ --transform  destruct-param 
+    lebab --replace ./ --transform  destruct-param
     lebab --replace ./ --transform includes
     lebab --replace ./ --transform obj-method
     lebab --replace ./ --transform class
@@ -479,16 +453,15 @@ Important: If you have any local changes, they will be lost. With or without –
     lebab --replace ./ --transform arg-rest
     lebab --replace ./ --transform for-each
     lebab --replace ./ --transform for-of
-    lebab --replace ./ --transform commonjs 
+    lebab --replace ./ --transform commonjs
     lebab --replace ./ --transform exponent
     lebab --replace ./ --transform multi-var
     lebab --replace ./ --transform template
     lebab --replace ./ --transform default-param
-    lebab --replace ./ --transform  destruct-param 
+    lebab --replace ./ --transform  destruct-param
     lebab --replace ./ --transform includes
 
-35. Export Medium as Markdown
-=============================
+35. # Export Medium as Markdown
 
 ### Description:
 
@@ -501,8 +474,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
     mediumexporter https://medium.com/codex/fundamental-data-structures-in-javascript-8f9f709c15b4 >ds.md
 
-37. download all links of given file type
-=========================================
+37. # download all links of given file type
 
 ### Description:
 
@@ -510,11 +482,9 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-
     wget -r -A.pdf https://overapi.com/git
 
-39. Remove string from file names recursively
-=============================================
+39. # Remove string from file names recursively
 
 ### Description: In the example below I am using this command to remove the string “-master” from all file names in the working directory and all of it’s sub directories.
 
@@ -527,7 +497,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
     find . -type f -exec rename 's/-master//g' {} +
 
-> Notes: The same could be done for folder names by changing the *-type f* flag (for file) to a *-type d* flag (for directory)
+> Notes: The same could be done for folder names by changing the _-type f_ flag (for file) to a _-type d_ flag (for directory)
 
     find <mydir> -type d -exec sed -i 's/<string1>/<string2>/g' {} +
 
@@ -536,8 +506,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
     find . -type d -exec rename 's/-master//g' {} +
 
-41.
-===
+41. ===
 
 ### Description:
 
@@ -545,8 +514,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-43.
-===
+43. ===
 
 ### Description:
 
@@ -554,8 +522,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-45.
-===
+45. ===
 
 ### Description:
 
@@ -563,8 +530,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-47.
-===
+47. ===
 
 ### Description:
 
@@ -572,8 +538,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-49.
-===
+49. ===
 
 ### Description:
 
@@ -581,8 +546,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-51.
-===
+51. ===
 
 ### Description:
 
@@ -590,8 +554,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-53.
-===
+53. ===
 
 ### Description:
 
@@ -599,8 +562,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-55.
-===
+55. ===
 
 ### Description:
 
@@ -608,8 +570,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-57.
-===
+57. ===
 
 ### Description:
 
@@ -617,8 +578,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-59.
-===
+59. ===
 
 ### Description:
 
@@ -626,8 +586,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-61.
-===
+61. ===
 
 ### Description:
 
@@ -635,8 +594,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-63.
-===
+63. ===
 
 ### Description:
 
@@ -644,8 +602,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-65.
-===
+65. ===
 
 ### Description:
 
@@ -653,8 +610,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-67.
-===
+67. ===
 
 ### Description:
 
@@ -662,8 +618,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-69.
-===
+69. ===
 
 ### Description:
 
@@ -671,8 +626,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-71.
-===
+71. ===
 
 ### Description:
 
@@ -680,8 +634,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-73.
-===
+73. ===
 
 ### Description:
 
@@ -689,8 +642,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-75.
-===
+75. ===
 
 ### Description:
 
@@ -698,8 +650,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-77.
-===
+77. ===
 
 ### Description:
 
@@ -707,8 +658,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-79.
-===
+79. ===
 
 ### Description:
 
@@ -716,8 +666,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-81.
-===
+81. ===
 
 ### Description:
 
@@ -725,8 +674,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-83.
-===
+83. ===
 
 ### Description:
 
@@ -734,8 +682,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-85.
-===
+85. ===
 
 ### Description:
 
@@ -743,8 +690,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-87.
-===
+87. ===
 
 ### Description:
 
@@ -752,8 +698,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-89.
-===
+89. ===
 
 ### Description:
 
@@ -761,8 +706,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
 ###### code:
 
-91. Unzip PowerShell
-====================
+91. # Unzip PowerShell
 
 ### Description:
 
@@ -774,24 +718,23 @@ Important: If you have any local changes, they will be lost. With or without –
         [string] $ZipFilesPath = "./",
         [string] $UnzipPath = "./RESULT"
     )
-     
+
     $Shell = New-Object -com Shell.Application
     $Location = $Shell.NameSpace($UnzipPath)
-     
+
     $ZipFiles = Get-Childitem $ZipFilesPath -Recurse -Include *.ZIP
-     
+
     $progress = 1
     foreach ($ZipFile in $ZipFiles) {
         Write-Progress -Activity "Unzipping to $($UnzipPath)" -PercentComplete (($progress / ($ZipFiles.Count + 1)) * 100) -CurrentOperation $ZipFile.FullName -Status "File $($Progress) of $($ZipFiles.Count)"
         $ZipFolder = $Shell.NameSpace($ZipFile.fullname)
-     
-     
+
+
         $Location.Copyhere($ZipFolder.items(), 1040) # 1040 - No msgboxes to the user - http://msdn.microsoft.com/en-us/library/bb787866%28VS.85%29.aspx
         $progress++
     }
 
-93. Symbolic Link
-=================
+93. # Symbolic Link
 
 ### Description: to working directory
 
@@ -803,8 +746,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
     ln -s "$(pwd)" ~/Downloads
 
-95. Log into postgres:
-======================
+95. # Log into postgres:
 
 ### Description:
 
@@ -814,8 +756,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
     sudo -u postgres psql
 
-97. Embed Repl.it In Medium Post:
-=================================
+97. # Embed Repl.it In Medium Post:
 
 ###### code:
 
@@ -829,8 +770,7 @@ Important: If you have any local changes, they will be lost. With or without –
 
     https://repl.it/@bgoonz/Database-Prac?lite=true&amp;referrer=https%3A%2F%2Fbryanguner.medium.com
 
-99. Cheat Sheet
-===============
+99. # Cheat Sheet
 
 ### Description:
 
@@ -1027,7 +967,7 @@ Important: If you have any local changes, they will be lost. With or without –
     echo $!                      # prints process ID of the most recently invoked background job
     echo $?                      # displays the exit status of the last command
     read <varname>               # reads a string from the input and assigns it to a variable
-    read -p "prompt" <varname>   # same as above but outputs a prompt to ask user for value 
+    read -p "prompt" <varname>   # same as above but outputs a prompt to ask user for value
     column -t <filename>         # display info in pretty columns (often used with pipe)
     let <varname> = <equation>   # performs mathematical calculation using operators like +, -, *, /, %
     export VARNAME=value         # defines an environment variable (will be available in subprocesses)
@@ -1324,9 +1264,9 @@ Important: If you have any local changes, they will be lost. With or without –
     trap returntrap RETURN  # is executed each time a shell function or a script executed with the . or source commands finishes executing
 
     ##############################################################################
-    # COLORS AND BACKGROUNDS 
+    # COLORS AND BACKGROUNDS
     ##############################################################################
-    # note: \e or \x1B also work instead of \033 
+    # note: \e or \x1B also work instead of \033
     # Reset
     Color_Off='\033[0m' # Text Reset
 
@@ -1383,8 +1323,8 @@ Important: If you have any local changes, they will be lost. With or without –
 
     # Example of usage
     echo -e "${Green}This is GREEN text${Color_Off} and normal text"
-    echo -e "${Red}${On_White}This is Red test on White background${Color_Off}" 
+    echo -e "${Red}${On_White}This is Red test on White background${Color_Off}"
     # option -e is mandatory, it enable interpretation of backslash escapes
     printf "${Red} This is red \n"
 
-------------------------------------------------------------------------
+---

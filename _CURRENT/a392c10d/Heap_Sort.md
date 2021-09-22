@@ -1,5 +1,4 @@
-Heap Sort
-=========
+# Heap Sort
 
 #### Problem Statement
 
@@ -7,9 +6,9 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Approach
 
--   Build a max heap from the input data.
--   At this point, the largest item is stored at the root of the heap. Replace it with the last item of the heap followed by reducing the size of heap by 1. Finally, heapify the root of tree.
--   Repeat above steps while size of heap is greater than 1.
+- Build a max heap from the input data.
+- At this point, the largest item is stored at the root of the heap. Replace it with the last item of the heap followed by reducing the size of heap by 1. Finally, heapify the root of tree.
+- Repeat above steps while size of heap is greater than 1.
 
 #### Time Complexity
 
@@ -55,14 +54,14 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Code Implementation Links
 
--   [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/HeapSort.java)
--   [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/heap_sort.cpp)
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/heap_sort.py)
--   [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/heapsort.go)
--   [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/heap_sort.rb)
--   [C-sharp](https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Sorters/Comparison/HeapSorter.cs)
--   [C](https://github.com/TheAlgorithms/C/blob/master/sorting/heap_sort.c)
--   [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/HeapSort.js)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/HeapSort.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/sorting/heap_sort.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/heap_sort.py)
+- [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/heapsort.go)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/sorting/heap_sort.rb)
+- [C-sharp](https://github.com/TheAlgorithms/C-Sharp/blob/master/Algorithms/Sorters/Comparison/HeapSorter.cs)
+- [C](https://github.com/TheAlgorithms/C/blob/master/sorting/heap_sort.c)
+- [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/HeapSort.js)
 
 #### Video Explanation
 

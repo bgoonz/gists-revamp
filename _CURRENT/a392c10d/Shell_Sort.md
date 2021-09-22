@@ -1,5 +1,4 @@
-Shell Sort
-==========
+# Shell Sort
 
 #### Problem Statement
 
@@ -7,11 +6,11 @@ Given an unsorted array of n elements, write a function to sort the array
 
 #### Approach
 
--   start with the initial gap, g
--   go through the first (n - g) elements in the array  
--   compare the element with the next element that is g distance away
--   swap the two elements if the first element is bigger
--   decrease the gap and repeat until gap = 1
+- start with the initial gap, g
+- go through the first (n - g) elements in the array
+- compare the element with the next element that is g distance away
+- swap the two elements if the first element is bigger
+- decrease the gap and repeat until gap = 1
 
 #### Time Complexity
 
@@ -34,7 +33,7 @@ Donald Shell
 #### Example
 
     arr[] = {61, 109, 149, 111, 34, 2, 24, 119}
-    Initial Gap: 4   
+    Initial Gap: 4
 
     1.  Index = 0, Next element index = 4
     2.  61 > 34, swap 61 and 34
@@ -55,14 +54,14 @@ Donald Shell
 
 #### Code Implementation Links
 
--   [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/ShellSort.java)
--   [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Sorting/Shell%20Sort.cpp)
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/shell_sort.py)
--   [C-Sharp](https://github.com/TheAlgorithms/C-Sharp/blob/master/sorts/shell_sort.cs)
--   [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/shell_sort.go)
--   [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/Sorting/shell_sort.rb)
--   [C](https://github.com/TheAlgorithms/C/blob/master/sorting/shellSort.c)
--   [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/shellSort.js)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/Sorts/ShellSort.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Sorting/Shell%20Sort.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/sorts/shell_sort.py)
+- [C-Sharp](https://github.com/TheAlgorithms/C-Sharp/blob/master/sorts/shell_sort.cs)
+- [Go](https://github.com/TheAlgorithms/Go/blob/master/sorts/shell_sort.go)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/Sorting/shell_sort.rb)
+- [C](https://github.com/TheAlgorithms/C/blob/master/sorting/shellSort.c)
+- [Javascript](https://github.com/TheAlgorithms/Javascript/blob/master/Sorts/shellSort.js)
 
 #### Video Explanation
 

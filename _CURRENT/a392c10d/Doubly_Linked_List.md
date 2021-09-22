@@ -1,5 +1,4 @@
-Doubly Linked List
-==================
+# Doubly Linked List
 
 Singly Linked List is a linear and connected data structure made of Nodes. Each node is composed of a variable `data` where its content is stored and a pointer to the next Node on the list. The Linked List has a pointer to the first element of this Node sequence and may also have another pointer to the last Node to make operations at the far end less time-consuming. You can also store a `length` variable to store the total length.
 
@@ -7,21 +6,20 @@ A **Doubly Linked List (DLL)** contains an extra pointer, typically called previ
 
 ### Advantages over singly linked list
 
--   A DLL can be traversed in both forward and backward direction.
--   The delete operation in DLL is more efficient if pointer to the node to be deleted is given.
--   We can quickly insert a new node before a given node. In singly linked list, to delete a node, pointer to the previous node is needed. To get this previous node, sometimes the list is traversed. In DLL, we can get the previous node using previous pointer.
+- A DLL can be traversed in both forward and backward direction.
+- The delete operation in DLL is more efficient if pointer to the node to be deleted is given.
+- We can quickly insert a new node before a given node. In singly linked list, to delete a node, pointer to the previous node is needed. To get this previous node, sometimes the list is traversed. In DLL, we can get the previous node using previous pointer.
 
 ### Disadvantages over singly linked list
 
--   Every node of DLL Require extra space for an previous pointer. It is possible to implement DLL with single pointer though (See this and this).
--   All operations require an extra pointer previous to be maintained. For example, in insertion, we need to modify previous pointers together with next pointers. For example in following functions for insertions at different positions, we need 1 or 2 extra steps to set previous pointer.
+- Every node of DLL Require extra space for an previous pointer. It is possible to implement DLL with single pointer though (See this and this).
+- All operations require an extra pointer previous to be maintained. For example, in insertion, we need to modify previous pointers together with next pointers. For example in following functions for insertions at different positions, we need 1 or 2 extra steps to set previous pointer.
 
 ### Time Complexity
 
 <table><thead><tr class="header"><th>Operation</th><th>Average</th><th>Worst</th></tr></thead><tbody><tr class="odd"><td>Access</td><td>Θ(n)</td><td>O(n)</td></tr><tr class="even"><td>Search</td><td>Θ(n)</td><td>O(n)</td></tr><tr class="odd"><td>Insertion</td><td>Θ(1)</td><td>O(1)</td></tr><tr class="even"><td>Deletion</td><td>Θ(1)</td><td>O(1)</td></tr></tbody></table>
 
-Example
--------
+## Example
 
     class LinkedList {
 
@@ -96,16 +94,14 @@ Example
 
 ![Tracing of algorithm](https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/03/DLL_add_middle1.png)
 
-Code Implementation Links
--------------------------
+## Code Implementation Links
 
--   [Java](https://github.com/TheAlgorithms/Java/blob/master/DataStructures/Lists/DoublyLinkedList.java)
--   [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Data%20Structure/Doubly%20Linked%20List.cpp)
--   [Python](https://github.com/TheAlgorithms/Python/blob/master/data_structures/linked_list/doubly_linked_list.py)
--   [Go](https://github.com/TheAlgorithms/Go/blob/master/data-structures/linked-list/double-linkedlist.go)
--   [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/data_structures/linked_lists/double_list.rb)
+- [Java](https://github.com/TheAlgorithms/Java/blob/master/DataStructures/Lists/DoublyLinkedList.java)
+- [C++](https://github.com/TheAlgorithms/C-Plus-Plus/blob/master/Data%20Structure/Doubly%20Linked%20List.cpp)
+- [Python](https://github.com/TheAlgorithms/Python/blob/master/data_structures/linked_list/doubly_linked_list.py)
+- [Go](https://github.com/TheAlgorithms/Go/blob/master/data-structures/linked-list/double-linkedlist.go)
+- [Ruby](https://github.com/TheAlgorithms/Ruby/blob/master/data_structures/linked_lists/double_list.rb)
 
-Video Explanation
------------------
+## Video Explanation
 
 [A CS50 video explaining the Doubly Linked List Data Structure](https://www.youtube.com/watch?v=FHMPswJDCvU)
