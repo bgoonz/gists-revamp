@@ -248,8 +248,8 @@ JavaScript has a C-like syntax, so if you’ve used languages like C or Java, a 
         description += person[x] + " ";
     } // description = 'Paul Ken 18 '
 
-    // The for/of statement allows iteration over iterable objects (including the built-in String, 
-    // Array, e.g. the Array-like arguments or NodeList objects, TypedArray, Map and Set, 
+    // The for/of statement allows iteration over iterable objects (including the built-in String,
+    // Array, e.g. the Array-like arguments or NodeList objects, TypedArray, Map and Set,
     // and user-defined iterables).
     var myPets = "";
     var pets = ["cat", "dog", "hamster", "hedgehog"];
@@ -571,7 +571,7 @@ JavaScript has a C-like syntax, so if you’ve used languages like C or Java, a 
 
     // ES6 Additions
 
-    // The "let" keyword allows you to define variables in a lexical scope, 
+    // The "let" keyword allows you to define variables in a lexical scope,
     // as opposed to a block scope like the var keyword does.
     let name = "Billy";
 
@@ -587,7 +587,7 @@ JavaScript has a C-like syntax, so if you’ve used languages like C or Java, a 
 
     // There is a new syntax for functions in ES6 known as "lambda syntax".
     // This allows functions to be defined in a lexical scope like with variables
-    // defined by const and let. 
+    // defined by const and let.
 
     const isEven = (number) => {
         return number % 2 === 0;
@@ -611,8 +611,7 @@ JavaScript has a C-like syntax, so if you’ve used languages like C or Java, a 
         return firstNumber + secondNumber;
     };
 
-Further Reading
----------------
+## Further Reading
 
 The [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript) provides excellent documentation for JavaScript as it’s used in browsers. Plus, it’s a wiki, so as you learn more you can help others out by sharing your own knowledge.
 

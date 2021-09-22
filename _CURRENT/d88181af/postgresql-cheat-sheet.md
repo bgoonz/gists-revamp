@@ -248,8 +248,7 @@ Delete specific rows based on a condition:
     DELETE FROM table_name
     WHERE condition;
 
-Performance
------------
+## Performance
 
 Show the query plan for a query:
 
@@ -259,4 +258,4 @@ Show and execute the query plan for a query:
 
     EXPLAIN ANALYZE query;
 
-Collect statistics: \`\`\` ANALYZE table\_name;
+Collect statistics: \`\`\` ANALYZE table_name;

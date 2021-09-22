@@ -1,20 +1,19 @@
-JS Documentation
-================
+# JS Documentation
 
--   [Introduction](#introduction)
--   [What you should already know](#what-you)
--   [JavaScript and Java](#javaScript-and-java)
--   [Hello world](#hello-world)
--   [Variables](#variables)
--   [Declaring variables](#declaring-variables)
--   [Variable scope](#variable-scope)
--   [Global variables](#global-variables)
--   [Constants](#constants)
--   [Data types](#data-types)
--   [if...else statement](#if-else)
--   [while statement](#while-statement)
--   [Function declarations](#function-declarations)
--   [Reference](#reference)
+- [Introduction](#introduction)
+- [What you should already know](#what-you)
+- [JavaScript and Java](#javaScript-and-java)
+- [Hello world](#hello-world)
+- [Variables](#variables)
+- [Declaring variables](#declaring-variables)
+- [Variable scope](#variable-scope)
+- [Global variables](#global-variables)
+- [Constants](#constants)
+- [Data types](#data-types)
+- [if...else statement](#if-else)
+- [while statement](#while-statement)
+- [Function declarations](#function-declarations)
+- [Reference](#reference)
 
 Introduction
 
@@ -22,16 +21,16 @@ JavaScript is a cross-platform, object-oriented scripting language. It is a smal
 
 JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language elements such as operators, control structures, and statements. Core JavaScript can be extended for a variety of purposes by supplementing it with additional objects; for example:
 
--   Client-side JavaScript extends the core language by supplying objects to control a browser and its Document Object Model (DOM). For example, client-side extensions allow an application to place elements on an HTML form and respond to user events such as mouse clicks, form input, and page navigation.
--   Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. For example, server-side extensions allow an application to communicate with a database, provide continuity of information from one invocation to another of the application or perform file manipulations on a server....
+- Client-side JavaScript extends the core language by supplying objects to control a browser and its Document Object Model (DOM). For example, client-side extensions allow an application to place elements on an HTML form and respond to user events such as mouse clicks, form input, and page navigation.
+- Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. For example, server-side extensions allow an application to communicate with a database, provide continuity of information from one invocation to another of the application or perform file manipulations on a server....
 
 What you should already know
 
 This guide assumes you have the following basic background:
 
--   A general understanding of the Internet and the World Wide Web (WWW).
--   Good working knowledge of HyperText Markup Language (HTML).
--   Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about JavaScript.
+- A general understanding of the Internet and the World Wide Web (WWW).
+- Good working knowledge of HyperText Markup Language (HTML).
+- Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about JavaScript.
 
 JavaScript and Java
 
@@ -45,7 +44,7 @@ Hello world
 
 To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:
 
-`function greetMe(yourName) { alert("Hello " + yourName); }           greetMe("World");`
+`function greetMe(yourName) { alert("Hello " + yourName); } greetMe("World");`
 
 Select the code in the pad and hit Ctrl+R to watch it unfold in your browser!
 
@@ -55,7 +54,7 @@ You use variables as symbolic names for values in your application. The names of
 
 A JavaScript identifier must start with a letter, underscore (\_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).
 
-You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can also use the Unicode escape sequences as characters in identifiers. Some examples of legal names are Number\_hits, temp99, and \_name.
+You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can also use the Unicode escape sequences as characters in identifiers. Some examples of legal names are Number_hits, temp99, and \_name.
 
 Declaring variables
 
@@ -89,7 +88,7 @@ JavaScript before ECMAScript 2015 does not have block statement scope; rather, a
 
 This behavior changes, when using the let declaration introduced in ECMAScript 2015
 
-`if (true) { let y = 5; } console.log(y); // ReferenceError: y is not           defined`
+`if (true) { let y = 5; } console.log(y); // ReferenceError: y is not defined`
 
 Global variables
 
@@ -109,7 +108,7 @@ The scope rules for constants are the same as those for let block scope variable
 
 You cannot declare a constant with the same name as a function or variable in the same scope. For example:
 
-`// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS WILL           CAUSE AN ERROR ALSO function f() { const g = 5; var g; //statements           }`
+`// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g; //statements }`
 
 However, object attributes are not protected, so the following statement is executed without problems.
 
@@ -119,16 +118,16 @@ Data types
 
 The latest ECMAScript standard defines seven data types:
 
--   Six data types that are primitives:
+- Six data types that are primitives:
 
-    -   Boolean. true and false.
-    -   null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.
-    -   undefined. A top-level property whose value is undefined.
-    -   Number. 42 or 3.14159.
-    -   String. "Howdy"
-    -   Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.
+  - Boolean. true and false.
+  - null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.
+  - undefined. A top-level property whose value is undefined.
+  - Number. 42 or 3.14159.
+  - String. "Howdy"
+  - Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.
 
--   and Object
+- and Object
 
 if...else statement
 
@@ -136,15 +135,15 @@ Use the if statement to execute a statement if a logical condition is true. Use 
 
 `if (condition) { statement_1; } else { statement_2; }`
 
-condition can be any expression that evaluates to true or false. See Boolean for an explanation of what evaluates to true and false. If condition evaluates to true, statement\_1 is executed; otherwise, statement\_2 is executed. statement\_1 and statement\_2 can be any statement, including further nested if statements.
+condition can be any expression that evaluates to true or false. See Boolean for an explanation of what evaluates to true and false. If condition evaluates to true, statement_1 is executed; otherwise, statement_2 is executed. statement_1 and statement_2 can be any statement, including further nested if statements.
 
 You may also compound the statements using else if to have multiple conditions tested in sequence, as follows:
 
-`if (condition_1) { statement_1; } else if (condition_2) { statement_2;           } else if (condition_n) { statement_n; } else { statement_last; }`
+`if (condition_1) { statement_1; } else if (condition_2) { statement_2; } else if (condition_n) { statement_n; } else { statement_last; }`
 
 In the case of multiple conditions only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement ({ ... }) . In general, it's good practice to always use block statements, especially when nesting if statements:
 
-`if (condition) { statement_1_runs_if_condition_is_true;           statement_2_runs_if_condition_is_true; } else {           statement_3_runs_if_condition_is_false;           statement_4_runs_if_condition_is_false; }`
+`if (condition) { statement_1_runs_if_condition_is_true; statement_2_runs_if_condition_is_true; } else { statement_3_runs_if_condition_is_false; statement_4_runs_if_condition_is_false; }`
 
 It is advisable to not use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code. For example, do not use the following code:
 
@@ -174,9 +173,9 @@ The following while loop iterates as long as n is less than three:
 
 With each iteration, the loop increments n and adds that value to x. Therefore, x and n take on the following values:
 
--   After the first pass: n = 1 and x = 1
--   After the second pass: n = 2 and x = 3
--   After the third pass: n = 3 and x = 6
+- After the first pass: n = 1 and x = 1
+- After the second pass: n = 2 and x = 3
+- After the third pass: n = 3 and x = 6
 
 After completing the third pass, the condition n &lt; 3 is no longer true, so the loop terminates.
 
@@ -184,9 +183,9 @@ Function declarations
 
 A function definition (also called a function declaration, or function statement) consists of the function keyword, followed by:
 
--   The name of the function.
--   A list of arguments to the function, enclosed in parentheses and separated by commas.
--   The JavaScript statements that define the function, enclosed in curly brackets, { }.
+- The name of the function.
+- A list of arguments to the function, enclosed in parentheses and separated by commas.
+- The JavaScript statements that define the function, enclosed in curly brackets, { }.
 
 For example, the following code defines a simple function named square:
 
@@ -200,6 +199,6 @@ Primitive parameters (such as a number) are passed to functions by value; the va
 
 Reference
 
--   All the documentation in this page is taken from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+- All the documentation in this page is taken from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 
 This page Recreated by [FreeCodeCamp-Solutions](https://github.com/FreeCodeCamp-Solutions)

@@ -1,5 +1,4 @@
-potluck-planner
----------------
+## potluck-planner
 
 <span class="studio-status__text">Saved</span>
 
@@ -23,9 +22,9 @@ Deliverables & Project Definitions
 
 SEO
 
--   <span class="editor-field-title">Deliverables & Project Definitions (Page)</span>
+- <span class="editor-field-title">Deliverables & Project Definitions (Page)</span>
 
--   <span class="editor-field-title">Potluck Planner (Site Configuration)</span>
+- <span class="editor-field-title">Potluck Planner (Site Configuration)</span>
 
 Upload
 

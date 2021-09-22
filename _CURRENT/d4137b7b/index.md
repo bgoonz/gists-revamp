@@ -1,5 +1,4 @@
-Properties for the flex container
----------------------------------
+## Properties for the flex container
 
 #### [flex-direction](http://w3.unpocodetodo.info/css3/flex-direction.php) <span class="small">( property of the flex container )</span>
 
@@ -101,8 +100,7 @@ flex-start: flex-end: center: space-between: space-around: stretch:
 
 20
 
-Properties for the flex items
------------------------------
+## Properties for the flex items
 
 #### [align-self](http://w3.unpocodetodo.info/css3/flex-align-self.php) <span class="small">( property for flex items )</span>
 

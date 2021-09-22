@@ -1,28 +1,26 @@
 Markdown also varies in implementation from one parser to a next. This guide will attempt to clarify when features are universal or when they are specific to a certain parser.
 
--   [HTML Elements](#html-elements)
--   [Headings](#headings)
--   [Simple Text Styles](#simple-text-styles)
--   [Paragraphs](#paragraphs)
--   [Lists](#lists)
--   [Code blocks](#code-blocks)
--   [Horizontal rule](#horizontal-rule)
--   [Links](#links)
--   [Images](#images)
--   [Miscellany](#miscellany)
+- [HTML Elements](#html-elements)
+- [Headings](#headings)
+- [Simple Text Styles](#simple-text-styles)
+- [Paragraphs](#paragraphs)
+- [Lists](#lists)
+- [Code blocks](#code-blocks)
+- [Horizontal rule](#horizontal-rule)
+- [Links](#links)
+- [Images](#images)
+- [Miscellany](#miscellany)
 
-HTML Elements
--------------
+## HTML Elements
 
 Markdown is a superset of HTML, so any HTML file is valid Markdown.
 
-    <!--This means we can use HTML elements in Markdown, such as the comment 
-    element, and they won't be affected by a markdown parser. However, if you 
-    create an HTML element in your markdown file, you cannot use markdown syntax 
+    <!--This means we can use HTML elements in Markdown, such as the comment
+    element, and they won't be affected by a markdown parser. However, if you
+    create an HTML element in your markdown file, you cannot use markdown syntax
     within that element's contents.-->
 
-Headings
---------
+## Headings
 
 You can create HTML elements `<h1>` through `<h6>` easily by prepending the text you want to be in that element by a number of hashes (\#).
 
@@ -41,8 +39,7 @@ Markdown also provides us with two alternative ways of indicating h1 and h2.
     This is an h2
     -------------
 
-Simple text styles
-------------------
+## Simple text styles
 
 Text can be easily styled as italic or bold using markdown.
 
@@ -60,8 +57,7 @@ In GitHub Flavored Markdown, which is used to render markdown files on GitHub, w
 
     ~~This text is rendered with strikethrough.~~
 
-Paragraphs
-----------
+## Paragraphs
 
 Paragraphs are a one or multiple adjacent lines of text separated by one or multiple blank lines.
 
@@ -89,8 +85,7 @@ Block quotes are easy and done with the &gt; character.
     >> of indentation?
     > How neat is that?
 
-Lists
------
+## Lists
 
 Unordered lists can be made using asterisks, pluses, or hyphens.
 
@@ -141,8 +136,7 @@ There are even task lists. This creates HTML checkboxes.
     This checkbox below will be a checked HTML checkbox.
     - [x] This task has been completed
 
-Code blocks
------------
+## Code blocks
 
 You can indicate a code block (which uses the `<code>` element) by indenting a line with four spaces or a tab.
 
@@ -169,8 +163,7 @@ In GitHub Flavored Markdown, you can use a special syntax for code
 
 The above text doesn’t require indenting, plus GitHub will use syntax highlighting of the language you specify after the \`\`\`
 
-Horizontal rule
----------------
+## Horizontal rule
 
 Horizontal rules (`<hr/>`) are easily added with three or more asterisks or hyphens, with or without spaces.
 
@@ -179,8 +172,7 @@ Horizontal rules (`<hr/>`) are easily added with three or more asterisks or hyph
     - - -
     ****************
 
-Links
------
+## Links
 
 One of the best things about markdown is how easy it is to make links. Put the text to display in hard brackets \[\] followed by the url in parentheses ()
 
@@ -212,8 +204,7 @@ There is also “implicit naming” which lets you use the link text as the id.
 
 But it’s not that commonly used.
 
-Images
-------
+## Images
 
 Images are done the same way as links but with an exclamation point in front!
 
@@ -225,8 +216,7 @@ And reference style works as expected.
 
     [myimage]: relative/urls/cool/image.jpg "if you need a title, it's here"
 
-Miscellany
-----------
+## Miscellany
 
 ### Auto-links
 

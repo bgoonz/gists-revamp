@@ -1,11 +1,10 @@
-Ways to Reference Graph Nodes
------------------------------
+## Ways to Reference Graph Nodes
 
-------------------------------------------------------------------------
+---
 
 ### Node Class
 
-------------------------------------------------------------------------
+---
 
 Uses a class to define the neighbors as properties of each node.
 
@@ -27,17 +26,17 @@ Uses a class to define the neighbors as properties of each node.
     e.neighbors = [a];
     f.neighbors = [e];
 
-------------------------------------------------------------------------
+---
 
 ### Adjacency Matrix
 
-------------------------------------------------------------------------
+---
 
 The row index will corespond to the source of an edge and the column index will correspond to the edges destination.
 
--   When the edges have a direction, `matrix[i][j]` may not be the same as `matrix[j][i]`
--   It is common to say that a node is adjacent to itself so `matrix[x][x]` is true for any node
--   Will be O(n^2) space complexity
+- When the edges have a direction, `matrix[i][j]` may not be the same as `matrix[j][i]`
+- It is common to say that a node is adjacent to itself so `matrix[x][x]` is true for any node
+- Will be O(n^2) space complexity
 
 let matrix = \[
 
@@ -45,11 +44,11 @@ let matrix = \[
 
 \];
 
-------------------------------------------------------------------------
+---
 
 ### Adjacency List
 
-------------------------------------------------------------------------
+---
 
 Seeks to solve the shortcomings of the matrix implementation. It uses an object where keys represent node labels and values associated with that key are the adjacent node keys held in an array.
 
@@ -62,14 +61,13 @@ Seeks to solve the shortcomings of the matrix implementation. It uses an object 
       f: ["e"],
     };
 
-------------------------------------------------------------------------
+---
 
-------------------------------------------------------------------------
+---
 
-Code Examples
--------------
+## Code Examples
 
-------------------------------------------------------------------------
+---
 
 ### Basic Graph Class
 
@@ -142,7 +140,7 @@ Code Examples
         return [...vertices];
       }
 
-------------------------------------------------------------------------
+---
 
 ### Node Class Examples
 
@@ -192,7 +190,7 @@ Code Examples
       return maxValue;
     }
 
-------------------------------------------------------------------------
+---
 
 ### Traversal Examples
 

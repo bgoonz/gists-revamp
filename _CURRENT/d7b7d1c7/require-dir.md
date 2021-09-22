@@ -1,10 +1,8 @@
-require-directory
-=================
+# require-directory
 
 Recursively iterates over specified directory, `require()`’ing each file, and returning a nested hash structure containing those modules.
 
-How To Use
-----------
+## How To Use
 
 ### Installation (via [npm](https://npmjs.org/package/require-directory))
 
@@ -14,14 +12,14 @@ How To Use
 
 A common pattern in node.js is to include an index file which creates a hash of the files in its current directory. Given a directory structure like so:
 
--   app.js
--   routes/
-    -   index.js
-    -   home.js
-    -   auth/
-        -   login.js
-        -   logout.js
-        -   register.js
+- app.js
+- routes/
+  - index.js
+  - home.js
+  - auth/
+    - login.js
+    - logout.js
+    - register.js
 
 `routes/index.js` uses `require-directory` to build the hash (rather than doing so manually) like so:
 
@@ -50,7 +48,7 @@ The `routes` variable above is the equivalent of this:
       }
     };
 
-*Note that `routes.index` will be `undefined` as you would hope.*
+_Note that `routes.index` will be `undefined` as you would hope._
 
 ### Specifying Another Directory
 
@@ -64,8 +62,7 @@ For example, in the [example in the Usage section](#usage) we could have avoided
     var requireDirectory = require('require-directory');
     var routes = requireDirectory(module, './routes');
 
-Options
--------
+## Options
 
 You can pass an options hash to `require-directory` as the 2nd parameter (or 3rd if you’re passing the path to another directory as the 2nd parameter already). Here are the available options:
 
@@ -136,8 +133,7 @@ The visitor can also transform the objects by returning a value:
     var requireDirectory = require('require-directory'),
       hash = requireDirectory(module, {recurse: false});
 
-Run Unit Tests
---------------
+## Run Unit Tests
 
     $ npm run lint
     $ npm test

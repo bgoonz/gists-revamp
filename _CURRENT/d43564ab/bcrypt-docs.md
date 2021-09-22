@@ -1,12 +1,10 @@
-bcrypt.js
-=========
+# bcrypt.js
 
 Optimized bcrypt in JavaScript with zero dependencies. Compatible to the C++ [bcrypt](https://npmjs.org/package/bcrypt) binding on node.js and also working in the browser.
 
 [![build static](https://travis-ci.org/dcodeIO/bcrypt.js.svg?branch=master)](https://travis-ci.org/dcodeIO/bcrypt.js) [![](https://img.shields.io/npm/v/bcryptjs.svg)](https://npmjs.org/package/bcryptjs) [![](https://img.shields.io/npm/dm/bcryptjs.svg)](https://npmjs.org/package/bcryptjs) [![donate ❤](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dcode%40dcode.io&item_name=Open%20Source%20Software%20Donation&item_number=dcodeIO%2Fbcrypt.js)
 
-Security considerations
------------------------
+## Security considerations
 
 Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power. ([see](http://en.wikipedia.org/wiki/Bcrypt))
 
@@ -14,8 +12,7 @@ While bcrypt.js is compatible to the C++ bcrypt binding, it is written in pure J
 
 The maximum input length is 72 bytes (note that UTF8 encoded characters use up to 4 bytes) and the length of generated hashes is 60 characters.
 
-Usage
------
+## Usage
 
 The library is compatible with CommonJS and AMD loaders and is exposed globally as `dcodeIO.bcrypt` if neither is available.
 
@@ -44,8 +41,7 @@ or
         ...
     });
 
-Usage - Sync
-------------
+## Usage - Sync
 
 To hash a password:
 
@@ -64,8 +60,7 @@ Auto-gen a salt and hash:
 
     var hash = bcrypt.hashSync('bacon', 8);
 
-Usage - Async
--------------
+## Usage - Async
 
 To hash a password:
 
@@ -98,8 +93,7 @@ Auto-gen a salt and hash:
 
 **Note:** Under the hood, asynchronisation splits a crypto operation into small chunks. After the completion of a chunk, the execution of the next chunk is placed on the back of [JS event loop queue](https://developer.mozilla.org/en/docs/Web/JavaScript/EventLoop), thus efficiently sharing the computational resources with the other operations in the queue.
 
-API
----
+## API
 
 ### setRandomFallback(random)
 
@@ -109,13 +103,13 @@ Sets the pseudo random number generator to use as a fallback if neither node’s
 
 **Hint:** You might use [isaac.js](https://github.com/rubycon/isaac.js) as a CSPRNG but you still have to make sure to seed it properly.
 
-### genSaltSync(rounds=, seed\_length=)
+### genSaltSync(rounds=, seed_length=)
 
 Synchronously generates a salt.
 
 <table><thead><tr class="header"><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr class="odd"><td>rounds</td><td><em>number</em></td><td>Number of rounds to use, defaults to 10 if omitted</td></tr><tr class="even"><td>seed_length</td><td><em>number</em></td><td>Not supported.</td></tr><tr class="odd"><td><strong><span class="citation" data-cites="returns">@returns</span></strong></td><td><em>string</em></td><td>Resulting salt</td></tr><tr class="even"><td><strong><span class="citation" data-cites="throws">@throws</span></strong></td><td><em>Error</em></td><td>If a random fallback is required but not set</td></tr></tbody></table>
 
-### genSalt(rounds=, seed\_length=, callback)
+### genSalt(rounds=, seed_length=, callback)
 
 Asynchronously generates a salt.
 
@@ -157,26 +151,22 @@ Gets the salt portion from a hash. Does not validate the hash.
 
 <table><thead><tr class="header"><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr class="odd"><td>hash</td><td><em>string</em></td><td>Hash to extract the salt from</td></tr><tr class="even"><td><strong><span class="citation" data-cites="returns">@returns</span></strong></td><td><em>string</em></td><td>Extracted salt part</td></tr><tr class="odd"><td><strong><span class="citation" data-cites="throws">@throws</span></strong></td><td><em>Error</em></td><td>If <code>hash</code> is not a string or otherwise invalid</td></tr></tbody></table>
 
-Command line
-------------
+## Command line
 
 `Usage: bcrypt <input> [salt]`
 
 If the input has spaces inside, simply surround it with quotes.
 
-Downloads
----------
+## Downloads
 
--   [Distributions](https://github.com/dcodeIO/bcrypt.js/tree/master/dist)
--   [ZIP-Archive](https://github.com/dcodeIO/bcrypt.js/archive/master.zip)
--   [Tarball](https://github.com/dcodeIO/bcrypt.js/tarball/master)
+- [Distributions](https://github.com/dcodeIO/bcrypt.js/tree/master/dist)
+- [ZIP-Archive](https://github.com/dcodeIO/bcrypt.js/archive/master.zip)
+- [Tarball](https://github.com/dcodeIO/bcrypt.js/tarball/master)
 
-Credits
--------
+## Credits
 
 Based on work started by Shane Girish at [bcrypt-nodejs](https://github.com/shaneGirish/bcrypt-nodejs) (MIT-licensed), which is itself based on [javascript-bcrypt](http://code.google.com/p/javascript-bcrypt/) (New BSD-licensed).
 
-License
--------
+## License
 
 New-BSD / MIT ([see](https://github.com/dcodeIO/bcrypt.js/blob/master/LICENSE))
