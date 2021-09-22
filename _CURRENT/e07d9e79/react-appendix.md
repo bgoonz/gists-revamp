@@ -14,7 +14,7 @@ Use `const` in cases where a variable is never re-assigned. Using `const` makes 
 
 If the variable will be re-assigned, use `let`.
 
-We encourage the use of `const` and `let` instead of `var`. In addition to the restriction introduced by `const`, both `const` and `let` are *block scoped* as opposed to *function scoped*. This scoping can help avoid unexpected bugs.
+We encourage the use of `const` and `let` instead of `var`. In addition to the restriction introduced by `const`, both `const` and `let` are _block scoped_ as opposed to _function scoped_. This scoping can help avoid unexpected bugs.
 
 ### Arrow functions
 
@@ -75,9 +75,9 @@ The traditional JavaScript function declaration syntax (`function () {}`) will b
         console.log(song.title + " - " + song.artist);
       },
       printSongs: function () {
-        
+
         this.songs.forEach(function(song) {
-          
+
           this.printSong(song);
         });
       },
@@ -85,13 +85,13 @@ The traditional JavaScript function declaration syntax (`function () {}`) will b
 
     jukebox.printSongs();
 
-The method `printSongs()` iterates over `this.songs` with `forEach()`. In this context, `this` is bound to the object (`jukebox`) as expected. However, the anonymous function passed to `forEach()` binds its internal `this` to the global object. As such, `this.printSong(song)` calls the function declared at the top of the example, *not* the method on `jukebox`.
+The method `printSongs()` iterates over `this.songs` with `forEach()`. In this context, `this` is bound to the object (`jukebox`) as expected. However, the anonymous function passed to `forEach()` binds its internal `this` to the global object. As such, `this.printSong(song)` calls the function declared at the top of the example, _not_ the method on `jukebox`.
 
 JavaScript developers have traditionally used workarounds for this behavior, but arrow functions solve the problem by **capturing the `this` value of the enclosing context**. Using an arrow function for `printSongs()` has the expected result:
 
       printSongs: function () {
         this.songs.forEach((song) => {
-          
+
           this.printSong(song);
         });
       },
@@ -109,7 +109,6 @@ ES6 formally supports modules using the `import`/`export` syntax.
 
 Inside any file, you can use `export` to specify a variable the module should expose. Here’s an example of a file that exports two functions:
 
-
     export const sayHi = () => (console.log('Hi!'));
     export const sayBye = () => (console.log('Bye!'));
 
@@ -117,18 +116,16 @@ Inside any file, you can use `export` to specify a variable the module should ex
 
 Now, anywhere we wanted to use these functions we could use `import`. We need to specify which functions we want to import. A common way of doing this is using ES6’s destructuring assignment syntax to list them out like this:
 
-
     import { sayHi, sayBye } from './greetings';
 
-    sayHi(); 
-    sayBye(); 
+    sayHi();
+    sayBye();
 
-Importantly, the function that was *not* exported (`saySomething`) is unavailable outside of the module.
+Importantly, the function that was _not_ exported (`saySomething`) is unavailable outside of the module.
 
 Also note that we supply a **relative path** to `from`, indicating that the ES6 module is a local file as opposed to an npm package.
 
 Instead of inserting an `export` before each variable you’d like to export, you can use this syntax to list off all the exposed variables in one area:
-
 
     const sayHi = () => (console.log('Hi!'));
     const sayBye = () => (console.log('Bye!'));
@@ -139,20 +136,18 @@ Instead of inserting an `export` before each variable you’d like to export, yo
 
 We can also specify that we’d like to import all of a module’s functionality underneath a given namespace with the `import * as <Namespace>` syntax:
 
-
     import * as Greetings from './greetings';
 
     Greetings.sayHi();
-      
+
     Greetings.sayBye();
-      
+
     Greetings.saySomething();
-      
+
 
 **Default export**
 
 The other type of export is a default export. A module can only contain one default export:
-
 
     const sayHi = () => (console.log('Hi!'));
     const sayBye = () => (console.log('Bye!'));
@@ -165,18 +160,17 @@ The other type of export is a default export. A module can only contain one defa
 
 This is a common pattern for libraries. It means you can easily import the library wholesale without specifying what individual functions you want:
 
-
     import Greetings from './greetings';
 
-    Greetings.sayHi(); 
-    Greetings.sayBye(); 
+    Greetings.sayHi();
+    Greetings.sayBye();
 
 It’s not uncommon for a module to use a mix of both named exports and default exports. For instance, with `react-dom`, you can import `ReactDOM` (a default export) like this:
 
     import ReactDOM from 'react-dom';
 
     ReactDOM.render(
-      
+
     );
 
 Or, if you’re only going to use the `render()` function, you can import the named `render()` function like this:
@@ -184,19 +178,18 @@ Or, if you’re only going to use the `render()` function, you can import the na
     import { render } from 'react-dom';
 
     render(
-      
+
     );
 
 To achieve this flexibility, the export implementation for `react-dom` looks something like this:
 
-
     export const render = (component, target) => {
-      
+
     };
 
     const ReactDOM = {
       render,
-      
+
     };
 
     export default ReactDOM;
@@ -209,7 +202,7 @@ For more reading on ES6 modules, see this article from Mozilla: “[ES6 in Depth
 
 We use `Object.assign()` often throughout the book. We use it in areas where we want to create a modified version of an existing object.
 
-`Object.assign()` accepts any number of objects as arguments. When the function receives two arguments, it *copies* the properties of the second object onto the first, like so:
+`Object.assign()` accepts any number of objects as arguments. When the function receives two arguments, it _copies_ the properties of the second object onto the first, like so:
 
     onst coffee = { };
     const noCream = { cream: false };
@@ -234,7 +227,7 @@ With ES6 template literals, we can create the same string like this:
 
 ### The spread operator (`...`)
 
-In arrays, the ellipsis `...` operator will *expand* the array that follows into the parent array. The spread operator enables us to succinctly construct new arrays as a composite of existing arrays.
+In arrays, the ellipsis `...` operator will _expand_ the array that follows into the parent array. The spread operator enables us to succinctly construct new arrays as a composite of existing arrays.
 
 Here is an example:
 
@@ -242,12 +235,12 @@ Here is an example:
     const b = [ 4, 5, 6 ];
     const c = [ ...a, ...b, 7, 8, 9 ];
 
-    console.log(c);  
+    console.log(c);
 
 Notice how this is different than if we wrote:
 
     const d = [ a, b, 7, 8, 9 ];
-    console.log(d); 
+    console.log(d);
 
 ### Enhanced object literals
 
@@ -274,7 +267,7 @@ With ES6, you can specify a default value for an argument in the case that it is
 This:
 
     unction divide(a, b) {
-      
+
       const divisor = typeof b === 'undefined' ? 1 : b;
 
       return a / divisor;
@@ -296,7 +289,7 @@ In both cases, using the function looks like this:
 
 Whenever the argument `b` in the example above is `undefined`, the default argument is used. Note that `null` will not use the default argument:
 
-    divide(14, null); 
+    divide(14, null);
 
 ### Destructuring assignments
 
@@ -311,8 +304,8 @@ In ES5, extracting and assigning multiple elements from an array looked like thi
 In ES6, we can use the destructuring syntax to accomplish the same task like this:
 
     const [ veg1, veg2 ] = [ 'asparagus', 'broccoli', 'onion' ];
-    console.log(veg1); 
-    console.log(veg2); 
+    console.log(veg1);
+    console.log(veg2);
 
 The variables in the array on the left are “matched” and assigned to the corresponding elements in the array on the right. Note that `'onion'` is ignored and has no variable bound to it.
 
@@ -329,8 +322,8 @@ We can do something similar for extracting object properties into variables:
 
     const { liquids, fruits } = smoothie;
 
-    console.log(liquids); 
-    console.log(fruits); 
+    console.log(liquids);
+    console.log(fruits);
 
 #### Parameter context matching
 
@@ -344,7 +337,7 @@ We can use these same principles to bind arguments inside a function to properti
       }
     };
 
-    containsSpinach(smoothie); 
+    containsSpinach(smoothie);
 
 We do this often with functional React components:
 

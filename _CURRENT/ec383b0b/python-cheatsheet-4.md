@@ -1,23 +1,20 @@
-Contents
---------
+## Contents
 
-**   ** **1. Collections:** ** ** **[`List`](#list)**\_\_, ****[`Dictionary`](#dictionary)****, ****[`Set`](#set)****, ****[`Tuple`](#tuple)****, ****[`Range`](#range)****, ****[`Enumerate`](#enumerate)****, ****[`Iterator`](#iterator)****, ****[`Generator`](#generator)****.**  
-**   ** **2. Types:** **          ** **[`Type`](#type)****, ****[`String`](#string)****, ****[`Regular_Exp`](#regex)****, ****[`Format`](#format)****, ****[`Numbers`](#numbers)****, ****[`Combinatorics`](#combinatorics)****, ****[`Datetime`](#datetime)****.**  
-**   ** **3. Syntax:** **         ** **[`Args`](#arguments)****, ****[`Inline`](#inline)****, ****[`Closure`](#closure)****, ****[`Decorator`](#decorator)****, ****[`Class`](#class)****, ****[`Duck_Type`](#duck-types)****, ****[`Enum`](#enum)****, ****[`Exception`](#exceptions)****.**  
-**   ** **4. System:** **        ** **[`Exit`](#exit)****, ****[`Print`](#print)****, ****[`Input`](#input)****, ****[`Command_Line_Arguments`](#command-line-arguments)****, ****[`Open`](#open)****, ****[`Path`](#path)****, ****[`OS_Commands`](#oscommands)****.**  
-**   ** **5. Data:** **             ** **[`JSON`](#json)****, ****[`Pickle`](#pickle)****, ****[`CSV`](#csv)****, ****[`SQLite`](#sqlite)****, ****[`Bytes`](#bytes)****, ****[`Struct`](#struct)****, ****[`Array`](#array)****, ****[`Memory_View`](#memory-view)****, ****[`Deque`](#deque)****.**  
-**   ** **6. Advanced:** **   ** **[`Threading`](#threading)****, ****[`Operator`](#operator)****, ****[`Introspection`](#introspection)****, ****[`Metaprograming`](#metaprograming)****, ****[`Eval`](#eval)****, ****[`Coroutines`](#coroutines)****.**  
-**   ** **7. Libraries:** **      ** **[`Progress_Bar`](#progress-bar)****, ****[`Plot`](#plot)****, ****[`Table`](#table)****, ****[`Curses`](#curses)****, ****[`Logging`](#logging)****, ****[`Scraping`](#scraping)****, ****[`Web`](#web)****, ****[`Profile`](#profiling)****,**  
-**                                 ** **[`NumPy`](#numpy)****, ****[`Image`](#image)****, ****[`Audio`](#audio)****, ****[`Games`](#pygame)****, ****[`Data`](#pandas)****, ****[`Cython`](#cython)****.\_\_
+\*\*   \*\* **1. Collections:** \*\* \*\* **[`List`](#list)**\_\_, \***\*[`Dictionary`](#dictionary)\*\***, \***\*[`Set`](#set)\*\***, \***\*[`Tuple`](#tuple)\*\***, \***\*[`Range`](#range)\*\***, \***\*[`Enumerate`](#enumerate)\*\***, \***\*[`Iterator`](#iterator)\*\***, \***\*[`Generator`](#generator)\*\***.\*\*  
+\*\*   \*\* **2. Types:** \*\*          \*\* **[`Type`](#type)\*\***, \***\*[`String`](#string)\*\***, \***\*[`Regular_Exp`](#regex)\*\***, \***\*[`Format`](#format)\*\***, \***\*[`Numbers`](#numbers)\*\***, \***\*[`Combinatorics`](#combinatorics)\*\***, \***\*[`Datetime`](#datetime)\*\***.\*\*  
+\*\*   \*\* **3. Syntax:** \*\*         \*\* **[`Args`](#arguments)\*\***, \***\*[`Inline`](#inline)\*\***, \***\*[`Closure`](#closure)\*\***, \***\*[`Decorator`](#decorator)\*\***, \***\*[`Class`](#class)\*\***, \***\*[`Duck_Type`](#duck-types)\*\***, \***\*[`Enum`](#enum)\*\***, \***\*[`Exception`](#exceptions)\*\***.\*\*  
+\*\*   \*\* **4. System:** \*\*        \*\* **[`Exit`](#exit)\*\***, \***\*[`Print`](#print)\*\***, \***\*[`Input`](#input)\*\***, \***\*[`Command_Line_Arguments`](#command-line-arguments)\*\***, \***\*[`Open`](#open)\*\***, \***\*[`Path`](#path)\*\***, \***\*[`OS_Commands`](#oscommands)\*\***.\*\*  
+\*\*   \*\* **5. Data:** \*\*             \*\* **[`JSON`](#json)\*\***, \***\*[`Pickle`](#pickle)\*\***, \***\*[`CSV`](#csv)\*\***, \***\*[`SQLite`](#sqlite)\*\***, \***\*[`Bytes`](#bytes)\*\***, \***\*[`Struct`](#struct)\*\***, \***\*[`Array`](#array)\*\***, \***\*[`Memory_View`](#memory-view)\*\***, \***\*[`Deque`](#deque)\*\***.\*\*  
+\*\*   \*\* **6. Advanced:** \*\*   \*\* **[`Threading`](#threading)\*\***, \***\*[`Operator`](#operator)\*\***, \***\*[`Introspection`](#introspection)\*\***, \***\*[`Metaprograming`](#metaprograming)\*\***, \***\*[`Eval`](#eval)\*\***, \***\*[`Coroutines`](#coroutines)\*\***.\*\*  
+\*\*   \*\* **7. Libraries:** \*\*      \*\* **[`Progress_Bar`](#progress-bar)\*\***, \***\*[`Plot`](#plot)\*\***, \***\*[`Table`](#table)\*\***, \***\*[`Curses`](#curses)\*\***, \***\*[`Logging`](#logging)\*\***, \***\*[`Scraping`](#scraping)\*\***, \***\*[`Web`](#web)\*\***, \***\*[`Profile`](#profiling)\*\***,\*\*  
+\*\*                                 \*\* **[`NumPy`](#numpy)\*\***, \***\*[`Image`](#image)\*\***, \***\*[`Audio`](#audio)\*\***, \***\*[`Games`](#pygame)\*\***, \***\*[`Data`](#pandas)\*\***, \***\*[`Cython`](#cython)\*\***.\_\_
 
-Main
-----
+## Main
 
     if __name__ == '__main__':     # Runs main() if file wasn't imported.
         main()
 
-List
-----
+## List
 
     <list> = <list>[from_inclusive : to_exclusive : ±step_size]
 
@@ -37,17 +34,16 @@ List
     product_of_elems = functools.reduce(lambda out, el: out * el, <collection>)
     list_of_chars    = list(<str>)
 
--   **Module [operator](#operator) provides functions itemgetter() and mul() that offer the same functionality as [lambda](#lambda) expressions above.**
+- **Module [operator](#operator) provides functions itemgetter() and mul() that offer the same functionality as [lambda](#lambda) expressions above.**
 
-    <int> = <list>.count(<el>)     # Returns number of occurrences. Also works on strings.
-    index = <list>.index(<el>)     # Returns index of first occurrence or raises ValueError.
-    <list>.insert(index, <el>)     # Inserts item at index and moves the rest to the right.
-    <el> = <list>.pop([index])     # Removes and returns item at index or from the end.
-    <list>.remove(<el>)            # Removes first occurrence of item or raises ValueError.
-    <list>.clear()                 # Removes all items. Also works on dictionary and set.
+  <int> = <list>.count(<el>) # Returns number of occurrences. Also works on strings.
+  index = <list>.index(<el>) # Returns index of first occurrence or raises ValueError.
+  <list>.insert(index, <el>) # Inserts item at index and moves the rest to the right.
+  <el> = <list>.pop([index]) # Removes and returns item at index or from the end.
+  <list>.remove(<el>) # Removes first occurrence of item or raises ValueError.
+  <list>.clear() # Removes all items. Also works on dictionary and set.
 
-Dictionary
-----------
+## Dictionary
 
     <view> = <dict>.keys()                          # Coll. of keys that reflects changes.
     <view> = <dict>.values()                        # Coll. of values that reflects changes.
@@ -77,8 +73,7 @@ Dictionary
     >>> counter.most_common()[0]
     ('blue', 3)
 
-Set
----
+## Set
 
     <set> = set()
 
@@ -98,13 +93,12 @@ Set
 
 ### Frozen Set
 
--   **Is immutable and hashable.**
--   **That means it can be used as a key in a dictionary or as an element in a set.**
+- **Is immutable and hashable.**
+- **That means it can be used as a key in a dictionary or as an element in a set.**
 
-    <frozenset> = frozenset(<collection>)
+  <frozenset> = frozenset(<collection>)
 
-Tuple
------
+## Tuple
 
 **Tuple is an immutable and hashable list.**
 
@@ -129,8 +123,7 @@ Tuple
     >>> p._fields  # Or: Point._fields
     ('x', 'y')
 
-Range
------
+## Range
 
     <range> = range(to_exclusive)
     <range> = range(from_inclusive, to_exclusive)
@@ -139,14 +132,12 @@ Range
     from_inclusive = <range>.start
     to_exclusive   = <range>.stop
 
-Enumerate
----------
+## Enumerate
 
     for i, el in enumerate(<collection> [, i_start]):
         ...
 
-Iterator
---------
+## Iterator
 
     <iter> = iter(<collection>)                 # `iter(<iter>)` returns unmodified iterator.
     <iter> = iter(<function>, to_exclusive)     # A sequence of return values until 'to_exclusive'.
@@ -167,33 +158,31 @@ Iterator
     <iter> = islice(<coll>, to_exclusive)       # Only returns first 'to_exclusive' elements.
     <iter> = islice(<coll>, from_inclusive, …)  # `to_exclusive, step_size`.
 
-Generator
----------
+## Generator
 
--   **Any function that contains a yield statement returns a generator.**
--   **Generators and iterators are interchangeable.**
+- **Any function that contains a yield statement returns a generator.**
+- **Generators and iterators are interchangeable.**
 
-    def count(start, step):
-        while True:
-            yield start
-            start += step
+  def count(start, step):
+  while True:
+  yield start
+  start += step
 
-    >>> counter = count(10, 2)
-    >>> next(counter), next(counter), next(counter)
-    (10, 12, 14)
+  > > > counter = count(10, 2)
+  > > > next(counter), next(counter), next(counter)
+  > > > (10, 12, 14)
 
-Type
-----
+## Type
 
--   **Everything is an object.**
--   **Every object has a type.**
--   **Type and class are synonymous.**
+- **Everything is an object.**
+- **Every object has a type.**
+- **Type and class are synonymous.**
 
-    <type> = type(<el>)                          # Or: <el>.__class__
-    <bool> = isinstance(<el>, <type>)            # Or: issubclass(type(<el>), <type>)
+  <type> = type(<el>) # Or: <el>.**class**
+  <bool> = isinstance(<el>, <type>) # Or: issubclass(type(<el>), <type>)
 
-    >>> type('a'), 'a'.__class__, str
-    (<class 'str'>, <class 'str'>, <class 'str'>)
+  > > > type('a'), 'a'.**class**, str
+  > > > (<class 'str'>, <class 'str'>, <class 'str'>)
 
 #### Some types do not have built-in names, so they must be imported:
 
@@ -229,8 +218,7 @@ Type
     | decimal.Decimal    |          |          |          |          |   yes    |
     +--------------------+----------+----------+----------+----------+----------+
 
-String
-------
+## String
 
     <str>  = <str>.strip()                       # Strips all whitespace characters from both ends.
     <str>  = <str>.strip('<chars>')              # Strips all passed characters from both ends.
@@ -252,8 +240,8 @@ String
     <str>  = chr(<int>)                          # Converts int to Unicode char.
     <int>  = ord(<str>)                          # Converts Unicode char to int.
 
--   **Also: `'lstrip()'`, `'rstrip()'`.**
--   **Also: `'lower()'`, `'upper()'`, `'capitalize()'` and `'title()'`.**
+- **Also: `'lstrip()'`, `'rstrip()'`.**
+- **Also: `'lower()'`, `'upper()'`, `'capitalize()'` and `'title()'`.**
 
 ### Property Methods
 
@@ -267,10 +255,9 @@ String
     | isdecimal()   |          |          |          |          |   yes    |
     +---------------+----------+----------+----------+----------+----------+
 
--   **Also: `'isspace()'` checks for `'[ \t\n\r\f\v…]'`.**
+- **Also: `'isspace()'` checks for `'[ \t\n\r\f\v…]'`.**
 
-Regex
------
+## Regex
 
     import re
     <str>   = re.sub(<regex>, new, text, count=0)  # Substitutes all occurrences with 'new'.
@@ -280,12 +267,12 @@ Regex
     <Match> = re.match(<regex>, text)              # Searches only at the beginning of the text.
     <iter>  = re.finditer(<regex>, text)           # Returns all occurrences as match objects.
 
--   **Search() and match() return None if they can’t find a match.**
--   **Argument `'flags=re.IGNORECASE'` can be used with all functions.**
--   **Argument `'flags=re.MULTILINE'` makes `'^'` and `'$'` match the start/end of each line.**
--   **Argument `'flags=re.DOTALL'` makes dot also accept the `'\n'`.**
--   **Use `r'\1'` or `'\\1'` for backreference.**
--   **Add `'?'` after an operator to make it non-greedy.**
+- **Search() and match() return None if they can’t find a match.**
+- **Argument `'flags=re.IGNORECASE'` can be used with all functions.**
+- **Argument `'flags=re.MULTILINE'` makes `'^'` and `'$'` match the start/end of each line.**
+- **Argument `'flags=re.DOTALL'` makes dot also accept the `'\n'`.**
+- **Use `r'\1'` or `'\\1'` for backreference.**
+- **Add `'?'` after an operator to make it non-greedy.**
 
 ### Match Object
 
@@ -297,15 +284,14 @@ Regex
 
 ### Special Sequences
 
--   **By default digits, alphanumerics and whitespaces from all alphabets are matched, unless `'flags=re.ASCII'` argument is used.**
--   **Use a capital letter for negation.**
+- **By default digits, alphanumerics and whitespaces from all alphabets are matched, unless `'flags=re.ASCII'` argument is used.**
+- **Use a capital letter for negation.**
 
-    '\d' == '[0-9]'                                # Matches any digit.
-    '\w' == '[a-zA-Z0-9_]'                         # Matches any alphanumeric.
-    '\s' == '[ \t\n\r\f\v]'                        # Matches any whitespace.
+  '\d' == '[0-9]' # Matches any digit.
+  '\w' == '[a-zA-Z0-9_]' # Matches any alphanumeric.
+  '\s' == '[ \t\n\r\f\v]' # Matches any whitespace.
 
-Format
-------
+## Format
 
     <str> = f'{<el_1>}, {<el_2>}'
     <str> = '{}, {}'.format(<el_1>, <el_2>)
@@ -386,8 +372,7 @@ Format
     {90:b}                                   # '1011010'
     {90:X}                                   # '5A'
 
-Numbers
--------
+## Numbers
 
 ### Types
 
@@ -397,9 +382,9 @@ Numbers
     <Fraction> = fractions.Fraction(0, 1)    # Or: Fraction(numerator=0, denominator=1)
     <Decimal>  = decimal.Decimal(<str/int>)  # Or: Decimal((sign, digits, exponent))
 
--   **`'int(<str>)'` and `'float(<str>)'` raise ValueError on malformed strings.**
--   **Decimal numbers can be represented exactly, unlike floats where `'1.1 + 2.2 != 3.3'`.**
--   **Precision of decimal operations is set with: `'decimal.getcontext().prec = <int>'`.**
+- **`'int(<str>)'` and `'float(<str>)'` raise ValueError on malformed strings.**
+- **Decimal numbers can be represented exactly, unlike floats where `'1.1 + 2.2 != 3.3'`.**
+- **Precision of decimal operations is set with: `'decimal.getcontext().prec = <int>'`.**
 
 ### Basic Functions
 
@@ -440,45 +425,43 @@ Numbers
     <int> = <int> << n_bits                  # Shift left (>> for right)
     <int> = ~<int>                           # Not (also: -<int> - 1)
 
-Combinatorics
--------------
+## Combinatorics
 
--   **Every function returns an iterator.**
--   **If you want to print the iterator, you need to pass it to the list() function first!**
+- **Every function returns an iterator.**
+- **If you want to print the iterator, you need to pass it to the list() function first!**
 
-    from itertools import product, combinations, combinations_with_replacement, permutations
+  from itertools import product, combinations, combinations_with_replacement, permutations
 
-    >>> product([0, 1], repeat=3)
-    [(0, 0, 0), (0, 0, 1), (0, 1, 0), (0, 1, 1), ..., (1, 1, 1)]
+  > > > product([0, 1], repeat=3)
+  > > > [(0, 0, 0), (0, 0, 1), (0, 1, 0), (0, 1, 1), ..., (1, 1, 1)]
 
-    >>> product('abc', 'abc')                    #   a  b  c
-    [('a', 'a'), ('a', 'b'), ('a', 'c'),         # a x  x  x
-     ('b', 'a'), ('b', 'b'), ('b', 'c'),         # b x  x  x
-     ('c', 'a'), ('c', 'b'), ('c', 'c')]         # c x  x  x
+  > > > product('abc', 'abc') # a b c
+  > > > [('a', 'a'), ('a', 'b'), ('a', 'c'), # a x x x
+  > > > ('b', 'a'), ('b', 'b'), ('b', 'c'), # b x x x
+  > > > ('c', 'a'), ('c', 'b'), ('c', 'c')] # c x x x
 
-    >>> combinations('abc', 2)                   #   a  b  c
-    [('a', 'b'), ('a', 'c'),                     # a .  x  x
-     ('b', 'c')]                                 # b .  .  x
+  > > > combinations('abc', 2) # a b c
+  > > > [('a', 'b'), ('a', 'c'), # a . x x
+  > > > ('b', 'c')] # b . . x
 
-    >>> combinations_with_replacement('abc', 2)  #   a  b  c
-    [('a', 'a'), ('a', 'b'), ('a', 'c'),         # a x  x  x
-     ('b', 'b'), ('b', 'c'),                     # b .  x  x
-     ('c', 'c')]                                 # c .  .  x
+  > > > combinations_with_replacement('abc', 2) # a b c
+  > > > [('a', 'a'), ('a', 'b'), ('a', 'c'), # a x x x
+  > > > ('b', 'b'), ('b', 'c'), # b . x x
+  > > > ('c', 'c')] # c . . x
 
-    >>> permutations('abc', 2)                   #   a  b  c
-    [('a', 'b'), ('a', 'c'),                     # a .  x  x
-     ('b', 'a'), ('b', 'c'),                     # b x  .  x
-     ('c', 'a'), ('c', 'b')]                     # c x  x  .
+  > > > permutations('abc', 2) # a b c
+  > > > [('a', 'b'), ('a', 'c'), # a . x x
+  > > > ('b', 'a'), ('b', 'c'), # b x . x
+  > > > ('c', 'a'), ('c', 'b')] # c x x .
 
-Datetime
---------
+## Datetime
 
--   **Module ‘datetime’ provides ‘date’ `<D>`, ‘time’ `<T>`, ‘datetime’ `<DT>` and ‘timedelta’ `<TD>` classes. All are immutable and hashable.**
--   **Time and datetime objects can be ‘aware’ `<a>`, meaning they have defined timezone, or ‘naive’ `<n>`, meaning they don’t.**
--   **If object is naive, it is presumed to be in the system’s timezone.**
+- **Module ‘datetime’ provides ‘date’ `<D>`, ‘time’ `<T>`, ‘datetime’ `<DT>` and ‘timedelta’ `<TD>` classes. All are immutable and hashable.**
+- **Time and datetime objects can be ‘aware’ `<a>`, meaning they have defined timezone, or ‘naive’ `<n>`, meaning they don’t.**
+- **If object is naive, it is presumed to be in the system’s timezone.**
 
-    from datetime import date, time, datetime, timedelta
-    from dateutil.tz import UTC, tzlocal, gettz, resolve_imaginary
+  from datetime import date, time, datetime, timedelta
+  from dateutil.tz import UTC, tzlocal, gettz, resolve_imaginary
 
 ### Constructors
 
@@ -488,9 +471,9 @@ Datetime
     <TD> = timedelta(days=0, seconds=0, microseconds=0, milliseconds=0,
                      minutes=0, hours=0, weeks=0)
 
--   **Use `'<D/DT>.weekday()'` to get the day of the week (Mon == 0).**
--   **`'fold=1'` means the second pass in case of time jumping back for one hour.**
--   **`'<DTa> = resolve_imaginary(<DTa>)'` fixes DTs that fall into the missing hour.**
+- **Use `'<D/DT>.weekday()'` to get the day of the week (Mon == 0).**
+- **`'fold=1'` means the second pass in case of time jumping back for one hour.**
+- **`'<DTa> = resolve_imaginary(<DTa>)'` fixes DTs that fall into the missing hour.**
 
 ### Now
 
@@ -498,7 +481,7 @@ Datetime
     <DTn>    = DT.utcnow()                      # Naive datetime from current UTC time.
     <DTa>    = DT.now(<tzinfo>)                 # Aware datetime from current tz time.
 
--   **To extract time use `'<DTn>.time()'`, `'<DTa>.time()'` or `'<DTa>.timetz()'`.**
+- **To extract time use `'<DTn>.time()'`, `'<DTa>.time()'` or `'<DTa>.timetz()'`.**
 
 ### Timezone
 
@@ -516,8 +499,8 @@ Datetime
     <DTn>    = DT.fromtimestamp(<real>)         # Local time DTn from seconds since Epoch.
     <DTa>    = DT.fromtimestamp(<real>, <tz.>)  # Aware datetime from seconds since Epoch.
 
--   **ISO strings come in following forms: `'YYYY-MM-DD'`, `'HH:MM:SS.ffffff[±<offset>]'`, or both separated by an arbitrary character. Offset is formatted as: `'HH:MM'`.**
--   **Epoch on Unix systems is: `'1970-01-01 00:00 UTC'`, `'1970-01-01 01:00 CET'`, …**
+- **ISO strings come in following forms: `'YYYY-MM-DD'`, `'HH:MM:SS.ffffff[±<offset>]'`, or both separated by an arbitrary character. Offset is formatted as: `'HH:MM'`.**
+- **Epoch on Unix systems is: `'1970-01-01 00:00 UTC'`, `'1970-01-01 01:00 CET'`, …**
 
 ### Decode
 
@@ -534,8 +517,8 @@ Datetime
     >>> dt.strftime("%A, %dth of %B '%y, %I:%M%p %Z")
     "Thursday, 14th of May '15, 11:39PM UTC+02:00"
 
--   **When parsing, `'%z'` also accepts `'±HH:MM'`.**
--   **For abbreviated weekday and month use `'%a'` and `'%b'`.**
+- **When parsing, `'%z'` also accepts `'±HH:MM'`.**
+- **For abbreviated weekday and month use `'%a'` and `'%b'`.**
 
 ### Arithmetics
 
@@ -544,8 +527,7 @@ Datetime
     <TD>     = <DTa>    - <DTa>                 # Ignores time jumps if they share tzinfo object.
     <TD>     = <DT_UTC> - <DT_UTC>              # Convert DTs to UTC to get the actual delta.
 
-Arguments
----------
+## Arguments
 
 ### Inside Function Call
 
@@ -559,8 +541,7 @@ Arguments
     def f(<default_args>):                         # def f(x=0, y=0):
     def f(<nondefault_args>, <default_args>):      # def f(x, y=0):
 
-Splat Operator
---------------
+## Splat Operator
 
 ### Inside Function Call
 
@@ -614,8 +595,7 @@ Splat Operator
 
     head, *body, tail = <collection>
 
-Inline
-------
+## Inline
 
 ### Lambda
 
@@ -671,8 +651,7 @@ Inline
     Creature  = make_dataclass('Creature', ['location', 'direction'])
     creature  = Creature(Point(0, 0), Direction.n)
 
-Closure
--------
+## Closure
 
 **We have a closure in Python when:** \* **A nested function references a value of its enclosing function and then** \* **the enclosing function returns the nested function.**
 
@@ -685,8 +664,8 @@ Closure
     >>> multiply_by_3(10)
     30
 
--   **If multiple nested functions within enclosing function reference the same value, that value gets shared.**
--   **To dynamically access function’s first free variable use `'<function>.__closure__[0].cell_contents'`.**
+- **If multiple nested functions within enclosing function reference the same value, that value gets shared.**
+- **To dynamically access function’s first free variable use `'<function>.__closure__[0].cell_contents'`.**
 
 ### Partial
 
@@ -698,8 +677,8 @@ Closure
     >>> multiply_by_3(10)
     30
 
--   **Partial is also useful in cases when function needs to be passed as an argument, because it enables us to set its arguments beforehand.**
--   **A few examples being: `'defaultdict(<function>)'`, `'iter(<function>, to_exclusive)'` and dataclass’s `'field(default_factory=<function>)'`.**
+- **Partial is also useful in cases when function needs to be passed as an argument, because it enables us to set its arguments beforehand.**
+- **A few examples being: `'defaultdict(<function>)'`, `'iter(<function>, to_exclusive)'` and dataclass’s `'field(default_factory=<function>)'`.**
 
 ### Non-Local
 
@@ -717,8 +696,7 @@ Closure
     >>> counter(), counter(), counter()
     (1, 2, 3)
 
-Decorator
----------
+## Decorator
 
 **A decorator takes a function, adds some functionality and returns it.**
 
@@ -743,8 +721,8 @@ Decorator
     def add(x, y):
         return x + y
 
--   **Wraps is a helper decorator that copies the metadata of the passed function (func) to the function it is wrapping (out).**
--   **Without it `'add.__name__'` would return `'out'`.**
+- **Wraps is a helper decorator that copies the metadata of the passed function (func) to the function it is wrapping (out).**
+- **Without it `'add.__name__'` would return `'out'`.**
 
 ### LRU Cache
 
@@ -756,7 +734,7 @@ Decorator
     def fib(n):
         return n if n < 2 else fib(n-2) + fib(n-1)
 
--   **CPython interpreter limits recursion depth to 1000 by default. To increase it use `'sys.setrecursionlimit(<depth>)'`.**
+- **CPython interpreter limits recursion depth to 1000 by default. To increase it use `'sys.setrecursionlimit(<depth>)'`.**
 
 ### Parametrized Decorator
 
@@ -778,8 +756,7 @@ Decorator
     def add(x, y):
         return x + y
 
-Class
------
+## Class
 
     class <name>:
         def __init__(self, a):
@@ -794,8 +771,8 @@ Class
         def get_class_name(cls):
             return cls.__name__
 
--   **Return value of repr() should be unambiguous and of str() readable.**
--   **If only repr() is defined, it will also be used for str().**
+- **Return value of repr() should be unambiguous and of str() readable.**
+- **If only repr() is defined, it will also be used for str().**
 
 #### Str() use cases:
 
@@ -872,10 +849,10 @@ Class
         <attr_name_2>: <type> = <default_value>
         <attr_name_3>: list/dict/set = field(default_factory=list/dict/set)
 
--   **Objects can be made sortable with `'order=True'` and immutable with `'frozen=True'`.**
--   **For object to be hashable, all attributes must be hashable and frozen must be True.**
--   **Function field() is needed because `'<attr_name>: list = []'` would make a list that is shared among all instances.**
--   **Default\_factory can be any [callable](#callable).**
+- **Objects can be made sortable with `'order=True'` and immutable with `'frozen=True'`.**
+- **For object to be hashable, all attributes must be hashable and frozen must be True.**
+- **Function field() is needed because `'<attr_name>: list = []'` would make a list that is shared among all instances.**
+- **Default_factory can be any [callable](#callable).**
 
 #### Inline:
 
@@ -899,201 +876,199 @@ Class
     <object> = copy(<object>)
     <object> = deepcopy(<object>)
 
-Duck Types
-----------
+## Duck Types
 
 **A duck type is an implicit type that prescribes a set of special methods. Any object that has those methods defined is considered a member of that duck type.**
 
 ### Comparable
 
--   **If eq() method is not overridden, it returns `'id(self) == id(other)'`, which is the same as `'self is other'`.**
--   **That means all objects compare not equal by default.**
--   **Only the left side object has eq() method called, unless it returns NotImplemented, in which case the right object is consulted.**
+- **If eq() method is not overridden, it returns `'id(self) == id(other)'`, which is the same as `'self is other'`.**
+- **That means all objects compare not equal by default.**
+- **Only the left side object has eq() method called, unless it returns NotImplemented, in which case the right object is consulted.**
 
-    class MyComparable:
-        def __init__(self, a):
-            self.a = a
-        def __eq__(self, other):
-            if isinstance(other, type(self)):
-                return self.a == other.a
-            return NotImplemented
+  class MyComparable:
+  def **init**(self, a):
+  self.a = a
+  def **eq**(self, other):
+  if isinstance(other, type(self)):
+  return self.a == other.a
+  return NotImplemented
 
 ### Hashable
 
--   **Hashable object needs both hash() and eq() methods and its hash value should never change.**
--   **Hashable objects that compare equal must have the same hash value, meaning default hash() that returns `'id(self)'` will not do.**
--   **That is why Python automatically makes classes unhashable if you only implement eq().**
+- **Hashable object needs both hash() and eq() methods and its hash value should never change.**
+- **Hashable objects that compare equal must have the same hash value, meaning default hash() that returns `'id(self)'` will not do.**
+- **That is why Python automatically makes classes unhashable if you only implement eq().**
 
-    class MyHashable:
-        def __init__(self, a):
-            self._a = a
-        @property
-        def a(self):
-            return self._a
-        def __eq__(self, other):
-            if isinstance(other, type(self)):
-                return self.a == other.a
-            return NotImplemented
-        def __hash__(self):
-            return hash(self.a)
+  class MyHashable:
+  def **init**(self, a):
+  self.\_a = a
+  @property
+  def a(self):
+  return self.\_a
+  def **eq**(self, other):
+  if isinstance(other, type(self)):
+  return self.a == other.a
+  return NotImplemented
+  def **hash**(self):
+  return hash(self.a)
 
 ### Sortable
 
--   **With total\_ordering decorator, you only need to provide eq() and one of lt(), gt(), le() or ge() special methods.**
+- **With total_ordering decorator, you only need to provide eq() and one of lt(), gt(), le() or ge() special methods.**
 
-    from functools import total_ordering
+  from functools import total_ordering
 
-    @total_ordering
-    class MySortable:
-        def __init__(self, a):
-            self.a = a
-        def __eq__(self, other):
-            if isinstance(other, type(self)):
-                return self.a == other.a
-            return NotImplemented
-        def __lt__(self, other):
-            if isinstance(other, type(self)):
-                return self.a < other.a
-            return NotImplemented
+  @total_ordering
+  class MySortable:
+  def **init**(self, a):
+  self.a = a
+  def **eq**(self, other):
+  if isinstance(other, type(self)):
+  return self.a == other.a
+  return NotImplemented
+  def **lt**(self, other):
+  if isinstance(other, type(self)):
+  return self.a < other.a
+  return NotImplemented
 
 ### Iterator
 
--   **Any object that has methods next() and iter() is an iterator.**
--   **Next() should return next item or raise StopIteration.**
--   **Iter() should return ‘self’.**
+- **Any object that has methods next() and iter() is an iterator.**
+- **Next() should return next item or raise StopIteration.**
+- **Iter() should return ‘self’.**
 
-    class Counter:
-        def __init__(self):
-            self.i = 0
-        def __next__(self):
-            self.i += 1
-            return self.i
-        def __iter__(self):
-            return self
+  class Counter:
+  def **init**(self):
+  self.i = 0
+  def **next**(self):
+  self.i += 1
+  return self.i
+  def **iter**(self):
+  return self
 
-    >>> counter = Counter()
-    >>> next(counter), next(counter), next(counter)
-    (1, 2, 3)
+  > > > counter = Counter()
+  > > > next(counter), next(counter), next(counter)
+  > > > (1, 2, 3)
 
 #### Python has many different iterator objects:
 
--   **Iterators returned by the [iter()](#iterator) function, such as list\_iterator and set\_iterator.**
--   **Objects returned by the [itertools](#itertools) module, such as count, repeat and cycle.**
--   **Generators returned by the [generator functions](#generator) and [generator expressions](#comprehensions).**
--   **File objects returned by the [open()](#open) function, etc.**
+- **Iterators returned by the [iter()](#iterator) function, such as list_iterator and set_iterator.**
+- **Objects returned by the [itertools](#itertools) module, such as count, repeat and cycle.**
+- **Generators returned by the [generator functions](#generator) and [generator expressions](#comprehensions).**
+- **File objects returned by the [open()](#open) function, etc.**
 
 ### Callable
 
--   **All functions and classes have a call() method, hence are callable.**
--   **When this cheatsheet uses `'<function>'` as an argument, it actually means `'<callable>'`.**
+- **All functions and classes have a call() method, hence are callable.**
+- **When this cheatsheet uses `'<function>'` as an argument, it actually means `'<callable>'`.**
 
-    class Counter:
-        def __init__(self):
-            self.i = 0
-        def __call__(self):
-            self.i += 1
-            return self.i
+  class Counter:
+  def **init**(self):
+  self.i = 0
+  def **call**(self):
+  self.i += 1
+  return self.i
 
-    >>> counter = Counter()
-    >>> counter(), counter(), counter()
-    (1, 2, 3)
+  > > > counter = Counter()
+  > > > counter(), counter(), counter()
+  > > > (1, 2, 3)
 
 ### Context Manager
 
--   **Enter() should lock the resources and optionally return an object.**
--   **Exit() should release the resources.**
--   **Any exception that happens inside the with block is passed to the exit() method.**
--   **If it wishes to suppress the exception it must return a true value.**
+- **Enter() should lock the resources and optionally return an object.**
+- **Exit() should release the resources.**
+- **Any exception that happens inside the with block is passed to the exit() method.**
+- **If it wishes to suppress the exception it must return a true value.**
 
-    class MyOpen:
-        def __init__(self, filename):
-            self.filename = filename
-        def __enter__(self):
-            self.file = open(self.filename)
-            return self.file
-        def __exit__(self, exc_type, exception, traceback):
-            self.file.close()
+  class MyOpen:
+  def **init**(self, filename):
+  self.filename = filename
+  def **enter**(self):
+  self.file = open(self.filename)
+  return self.file
+  def **exit**(self, exc_type, exception, traceback):
+  self.file.close()
 
-    >>> with open('test.txt', 'w') as file:
-    ...     file.write('Hello World!')
-    >>> with MyOpen('test.txt') as file:
-    ...     print(file.read())
-    Hello World!
+  > > > with open('test.txt', 'w') as file:
+  > > > ... file.write('Hello World!')
+  > > > with MyOpen('test.txt') as file:
+  > > > ... print(file.read())
+  > > > Hello World!
 
-Iterable Duck Types
--------------------
+## Iterable Duck Types
 
 ### Iterable
 
--   **Only required method is iter(). It should return an iterator of object’s items.**
--   **Contains() automatically works on any object that has iter() defined.**
+- **Only required method is iter(). It should return an iterator of object’s items.**
+- **Contains() automatically works on any object that has iter() defined.**
 
-    class MyIterable:
-        def __init__(self, a):
-            self.a = a
-        def __iter__(self):
-            return iter(self.a)
-        def __contains__(self, el):
-            return el in self.a
+  class MyIterable:
+  def **init**(self, a):
+  self.a = a
+  def **iter**(self):
+  return iter(self.a)
+  def **contains**(self, el):
+  return el in self.a
 
-    >>> obj = MyIterable([1, 2, 3])
-    >>> [el for el in obj]
-    [1, 2, 3]
-    >>> 1 in obj
-    True
+  > > > obj = MyIterable([1, 2, 3])
+  > > > [el for el in obj]
+  > > > [1, 2, 3]
+  > > > 1 in obj
+  > > > True
 
 ### Collection
 
--   **Only required methods are iter() and len().**
--   **This cheatsheet actually means `'<iterable>'` when it uses `'<collection>'`.**
--   **I chose not to use the name ‘iterable’ because it sounds scarier and more vague than ‘collection’.**
+- **Only required methods are iter() and len().**
+- **This cheatsheet actually means `'<iterable>'` when it uses `'<collection>'`.**
+- **I chose not to use the name ‘iterable’ because it sounds scarier and more vague than ‘collection’.**
 
-    class MyCollection:
-        def __init__(self, a):
-            self.a = a
-        def __iter__(self):
-            return iter(self.a)
-        def __contains__(self, el):
-            return el in self.a
-        def __len__(self):
-            return len(self.a)
+  class MyCollection:
+  def **init**(self, a):
+  self.a = a
+  def **iter**(self):
+  return iter(self.a)
+  def **contains**(self, el):
+  return el in self.a
+  def **len**(self):
+  return len(self.a)
 
 ### Sequence
 
--   **Only required methods are len() and getitem().**
--   **Getitem() should return an item at index or raise IndexError.**
--   **Iter() and contains() automatically work on any object that has getitem() defined.**
--   **Reversed() automatically works on any object that has getitem() and len() defined.**
+- **Only required methods are len() and getitem().**
+- **Getitem() should return an item at index or raise IndexError.**
+- **Iter() and contains() automatically work on any object that has getitem() defined.**
+- **Reversed() automatically works on any object that has getitem() and len() defined.**
 
-    class MySequence:
-        def __init__(self, a):
-            self.a = a
-        def __iter__(self):
-            return iter(self.a)
-        def __contains__(self, el):
-            return el in self.a
-        def __len__(self):
-            return len(self.a)
-        def __getitem__(self, i):
-            return self.a[i]
-        def __reversed__(self):
-            return reversed(self.a)
+  class MySequence:
+  def **init**(self, a):
+  self.a = a
+  def **iter**(self):
+  return iter(self.a)
+  def **contains**(self, el):
+  return el in self.a
+  def **len**(self):
+  return len(self.a)
+  def **getitem**(self, i):
+  return self.a[i]
+  def **reversed**(self):
+  return reversed(self.a)
 
 ### ABC Sequence
 
--   **It’s a richer interface than the basic sequence.**
--   **Extending it generates iter(), contains(), reversed(), index() and count().**
--   **Unlike `'abc.Iterable'` and `'abc.Collection'`, it is not a duck type. That is why `'issubclass(MySequence, abc.Sequence)'` would return False even if MySequence had all the methods defined.**
+- **It’s a richer interface than the basic sequence.**
+- **Extending it generates iter(), contains(), reversed(), index() and count().**
+- **Unlike `'abc.Iterable'` and `'abc.Collection'`, it is not a duck type. That is why `'issubclass(MySequence, abc.Sequence)'` would return False even if MySequence had all the methods defined.**
 
-    from collections import abc
+  from collections import abc
 
-    class MyAbcSequence(abc.Sequence):
-        def __init__(self, a):
-            self.a = a
-        def __len__(self):
-            return len(self.a)
-        def __getitem__(self, i):
-            return self.a[i]
+  class MyAbcSequence(abc.Sequence):
+  def **init**(self, a):
+  self.a = a
+  def **len**(self):
+  return len(self.a)
+  def **getitem**(self, i):
+  return self.a[i]
 
 #### Table of required and automatically available special methods:
 
@@ -1109,11 +1084,10 @@ Iterable Duck Types
     | count()    |            |            |            |     Yes      |
     +------------+------------+------------+------------+--------------+
 
--   **Other ABCs that generate missing methods are: MutableSequence, Set, MutableSet, Mapping and MutableMapping.**
--   **Names of their required methods are stored in `'<abc>.__abstractmethods__'`.**
+- **Other ABCs that generate missing methods are: MutableSequence, Set, MutableSet, Mapping and MutableMapping.**
+- **Names of their required methods are stored in `'<abc>.__abstractmethods__'`.**
 
-Enum
-----
+## Enum
 
     from enum import Enum, auto
 
@@ -1122,24 +1096,24 @@ Enum
         <member_name_2> = <value_2_a>, <value_2_b>
         <member_name_3> = auto()
 
--   **If there are no numeric values before auto(), it returns 1.**
--   **Otherwise it returns an increment of the last numeric value.**
+- **If there are no numeric values before auto(), it returns 1.**
+- **Otherwise it returns an increment of the last numeric value.**
 
-    <member> = <enum>.<member_name>                 # Returns a member.
-    <member> = <enum>['<member_name>']              # Returns a member or raises KeyError.
-    <member> = <enum>(<value>)                      # Returns a member or raises ValueError.
-    <str>    = <member>.name                        # Returns member's name.
-    <obj>    = <member>.value                       # Returns member's value.
+  <member> = <enum>.<member_name> # Returns a member.
+  <member> = <enum>['<member_name>'] # Returns a member or raises KeyError.
+  <member> = <enum>(<value>) # Returns a member or raises ValueError.
+  <str> = <member>.name # Returns member's name.
+  <obj> = <member>.value # Returns member's value.
 
-    list_of_members = list(<enum>)
-    member_names    = [a.name for a in <enum>]
-    member_values   = [a.value for a in <enum>]
-    random_member   = random.choice(list(<enum>))
+  list_of_members = list(<enum>)
+  member_names = [a.name for a in <enum>]
+  member_values = [a.value for a in <enum>]
+  random_member = random.choice(list(<enum>))
 
-    def get_next_member(member):
-        members = list(member.__class__)
-        index   = (members.index(member) + 1) % len(members)
-        return members[index]
+  def get_next_member(member):
+  members = list(member.**class**)
+  index = (members.index(member) + 1) % len(members)
+  return members[index]
 
 ### Inline
 
@@ -1153,10 +1127,9 @@ Enum
     LogicOp = Enum('LogicOp', {'AND': partial(lambda l, r: l and r),
                                'OR' : partial(lambda l, r: l or r)})
 
--   **Another solution in this particular case is to use built-in functions and\_() and or\_() from the module [operator](#operator).**
+- **Another solution in this particular case is to use built-in functions and\_() and or\_() from the module [operator](#operator).**
 
-Exceptions
-----------
+## Exceptions
 
 ### Basic Example
 
@@ -1178,8 +1151,8 @@ Exceptions
     finally:
         <code_3>
 
--   **Code inside the `'else'` block will only be executed if `'try'` block had no exception.**
--   **Code inside the `'finally'` block will always be executed.**
+- **Code inside the `'else'` block will only be executed if `'try'` block had no exception.**
+- **Code inside the `'finally'` block will always be executed.**
 
 ### Catching Exceptions
 
@@ -1188,8 +1161,8 @@ Exceptions
     except (<exception>, [...]):
     except (<exception>, [...]) as <name>:
 
--   **Also catches subclasses of the exception.**
--   **Use `'traceback.print_exc()'` to print the error message to stderr.**
+- **Also catches subclasses of the exception.**
+- **Use `'traceback.print_exc()'` to print the error message to stderr.**
 
 ### Raising Exceptions
 
@@ -1260,8 +1233,7 @@ Exceptions
     class MyInputError(MyError):
         pass
 
-Exit
-----
+## Exit
 
 **Exits the interpreter by raising SystemExit exception.**
 
@@ -1270,34 +1242,31 @@ Exit
     sys.exit(<el>)                    # Prints to stderr and exits with 1.
     sys.exit(<int>)                   # Exits with passed exit code.
 
-Print
------
+## Print
 
     print(<el_1>, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
 
--   **Use `'file=sys.stderr'` for messages about errors.**
--   **Use `'flush=True'` to forcibly flush the stream.**
+- **Use `'file=sys.stderr'` for messages about errors.**
+- **Use `'flush=True'` to forcibly flush the stream.**
 
 ### Pretty Print
 
     from pprint import pprint
     pprint(<collection>, width=80, depth=None, compact=False, sort_dicts=True)
 
--   **Levels deeper than ‘depth’ get replaced by ‘…’.**
+- **Levels deeper than ‘depth’ get replaced by ‘…’.**
 
-Input
------
+## Input
 
 **Reads a line from user input or pipe if present.**
 
     <str> = input(prompt=None)
 
--   **Trailing newline gets stripped.**
--   **Prompt string is printed to the standard output before reading input.**
--   **Raises EOFError when user hits EOF (ctrl-d/z) or input stream gets exhausted.**
+- **Trailing newline gets stripped.**
+- **Prompt string is printed to the standard output before reading input.**
+- **Raises EOFError when user hits EOF (ctrl-d/z) or input stream gets exhausted.**
 
-Command Line Arguments
-----------------------
+## Command Line Arguments
 
     import sys
     script_name = sys.argv[0]
@@ -1315,39 +1284,38 @@ Command Line Arguments
     args  = p.parse_args()                                            # Exits on error.
     value = args.<name>
 
--   **Use `'help=<str>'` to set argument description.**
--   **Use `'default=<el>'` to set the default value.**
--   **Use `'type=FileType(<mode>)'` for files.**
+- **Use `'help=<str>'` to set argument description.**
+- **Use `'default=<el>'` to set the default value.**
+- **Use `'type=FileType(<mode>)'` for files.**
 
-Open
-----
+## Open
 
 **Opens the file and returns a corresponding file object.**
 
     <file> = open('<path>', mode='r', encoding=None, newline=None)
 
--   **`'encoding=None'` means that the default encoding is used, which is platform dependent. Best practice is to use `'encoding="utf-8"'` whenever possible.**
--   **`'newline=None'` means all different end of line combinations are converted to ‘’ on read, while on write all ‘’ characters are converted to system’s default line separator.**
--   **`'newline=""'` means no conversions take place, but input is still broken into chunks by readline() and readlines() on either ‘’, ‘ or’’.**
+- **`'encoding=None'` means that the default encoding is used, which is platform dependent. Best practice is to use `'encoding="utf-8"'` whenever possible.**
+- **`'newline=None'` means all different end of line combinations are converted to ‘’ on read, while on write all ‘’ characters are converted to system’s default line separator.**
+- **`'newline=""'` means no conversions take place, but input is still broken into chunks by readline() and readlines() on either ‘’, ‘ or’’.**
 
 ### Modes
 
--   **`'r'` - Read (default).**
--   **`'w'` - Write (truncate).**
--   **`'x'` - Write or fail if the file already exists.**
--   **`'a'` - Append.**
--   **`'w+'` - Read and write (truncate).**
--   **`'r+'` - Read and write from the start.**
--   **`'a+'` - Read and write from the end.**
--   **`'t'` - Text mode (default).**
--   **`'b'` - Binary mode.**
+- **`'r'` - Read (default).**
+- **`'w'` - Write (truncate).**
+- **`'x'` - Write or fail if the file already exists.**
+- **`'a'` - Append.**
+- **`'w+'` - Read and write (truncate).**
+- **`'r+'` - Read and write from the start.**
+- **`'a+'` - Read and write from the end.**
+- **`'t'` - Text mode (default).**
+- **`'b'` - Binary mode.**
 
 ### Exceptions
 
--   **`'FileNotFoundError'` can be raised when reading with `'r'` or `'r+'`.**
--   **`'FileExistsError'` can be raised when writing with `'x'`.**
--   **`'IsADirectoryError'` and `'PermissionError'` can be raised by any.**
--   **`'OSError'` is the parent class of all listed exceptions.**
+- **`'FileNotFoundError'` can be raised when reading with `'r'` or `'r+'`.**
+- **`'FileExistsError'` can be raised when writing with `'x'`.**
+- **`'IsADirectoryError'` and `'PermissionError'` can be raised by any.**
+- **`'OSError'` is the parent class of all listed exceptions.**
 
 ### File Object
 
@@ -1365,7 +1333,7 @@ Open
     <file>.writelines(<collection>)     # Writes a coll. of strings or bytes objects.
     <file>.flush()                      # Flushes write buffer.
 
--   **Methods do not add or strip trailing newlines, even writelines().**
+- **Methods do not add or strip trailing newlines, even writelines().**
 
 ### Read Text from File
 
@@ -1379,8 +1347,7 @@ Open
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(text)
 
-Path
-----
+## Path
 
     from os import getcwd, path, listdir
     from glob import glob
@@ -1434,28 +1401,27 @@ Path
     <str>  = str(<Path>)                # Returns path as a string.
     <file> = open(<Path>)               # Opens the file and returns file object.
 
-OS Commands
------------
+## OS Commands
 
 ### Files and Directories
 
--   **Paths can be either strings, Paths or DirEntry objects.**
--   **Functions report OS related errors by raising either OSError or one of its [subclasses](#exceptions-1).**
+- **Paths can be either strings, Paths or DirEntry objects.**
+- **Functions report OS related errors by raising either OSError or one of its [subclasses](#exceptions-1).**
 
-    import os, shutil
+  import os, shutil
 
-    os.chdir(<path>)                    # Changes the current working directory.
-    os.mkdir(<path>, mode=0o777)        # Creates a directory. Mode is in octal.
+  os.chdir(<path>) # Changes the current working directory.
+  os.mkdir(<path>, mode=0o777) # Creates a directory. Mode is in octal.
 
-    shutil.copy(from, to)               # Copies the file. 'to' can exist or be a dir.
-    shutil.copytree(from, to)           # Copies the directory. 'to' must not exist.
+  shutil.copy(from, to) # Copies the file. 'to' can exist or be a dir.
+  shutil.copytree(from, to) # Copies the directory. 'to' must not exist.
 
-    os.rename(from, to)                 # Renames/moves the file or directory.
-    os.replace(from, to)                # Same, but overwrites 'to' if it exists.
+  os.rename(from, to) # Renames/moves the file or directory.
+  os.replace(from, to) # Same, but overwrites 'to' if it exists.
 
-    os.remove(<path>)                   # Deletes the file.
-    os.rmdir(<path>)                    # Deletes the empty directory.
-    shutil.rmtree(<path>)               # Deletes the directory.
+  os.remove(<path>) # Deletes the file.
+  os.rmdir(<path>) # Deletes the empty directory.
+  shutil.rmtree(<path>) # Deletes the directory.
 
 ### Shell Commands
 
@@ -1477,8 +1443,7 @@ OS Commands
     >>> open('test.out').read()
     '2\n'
 
-JSON
-----
+## JSON
 
 **Text file format for storing collections of strings and numbers.**
 
@@ -1498,8 +1463,7 @@ JSON
         with open(filename, 'w', encoding='utf-8') as file:
             json.dump(an_object, file, ensure_ascii=False, indent=2)
 
-Pickle
-------
+## Pickle
 
 **Binary file format for storing objects.**
 
@@ -1519,8 +1483,7 @@ Pickle
         with open(filename, 'wb') as file:
             pickle.dump(an_object, file)
 
-CSV
----
+## CSV
 
 **Text file format for storing spreadsheets.**
 
@@ -1532,7 +1495,7 @@ CSV
     <list>   = next(<reader>)           # Returns next row as a list of strings.
     <list>   = list(<reader>)           # Returns list of remaining rows.
 
--   **File must be opened with `'newline=""'` argument, or newlines embedded inside quoted fields will not be interpreted correctly!**
+- **File must be opened with `'newline=""'` argument, or newlines embedded inside quoted fields will not be interpreted correctly!**
 
 ### Write
 
@@ -1540,18 +1503,18 @@ CSV
     <writer>.writerow(<collection>)     # Encodes objects using `str(<el>)`.
     <writer>.writerows(<coll_of_coll>)  # Appends multiple rows.
 
--   **File must be opened with `'newline=""'` argument, or ‘ will be added in front of every’’ on platforms that use ‘’ line endings!**
+- **File must be opened with `'newline=""'` argument, or ‘ will be added in front of every’’ on platforms that use ‘’ line endings!**
 
 ### Parameters
 
--   **`'dialect'` - Master parameter that sets the default values.**
--   **`'delimiter'` - A one-character string used to separate fields.**
--   **`'quotechar'` - Character for quoting fields that contain special characters.**
--   **`'doublequote'` - Whether quotechars inside fields get doubled or escaped.**
--   **`'skipinitialspace'` - Whether whitespace after delimiter gets stripped.**
--   **`'lineterminator'` - Specifies how writer terminates rows.**
--   **`'quoting'` - Controls the amount of quoting: 0 - as necessary, 1 - all.**
--   **`'escapechar'` - Character for escaping ‘quotechar’ if ‘doublequote’ is False.**
+- **`'dialect'` - Master parameter that sets the default values.**
+- **`'delimiter'` - A one-character string used to separate fields.**
+- **`'quotechar'` - Character for quoting fields that contain special characters.**
+- **`'doublequote'` - Whether quotechars inside fields get doubled or escaped.**
+- **`'skipinitialspace'` - Whether whitespace after delimiter gets stripped.**
+- **`'lineterminator'` - Specifies how writer terminates rows.**
+- **`'quoting'` - Controls the amount of quoting: 0 - as necessary, 1 - all.**
+- **`'escapechar'` - Character for escaping ‘quotechar’ if ‘doublequote’ is False.**
 
 ### Dialects
 
@@ -1580,8 +1543,7 @@ CSV
             writer = csv.writer(file)
             writer.writerows(rows)
 
-SQLite
-------
+## SQLite
 
 **Server-less database engine that stores each database into a separate file.**
 
@@ -1613,12 +1575,12 @@ SQLite
 
 ### Placeholders
 
--   **Passed values can be of type str, int, float, bytes, None, bool, datetime.date or datetime.datetme.**
--   **Bools will be stored and returned as ints and dates as [ISO formatted strings](#encode).**
+- **Passed values can be of type str, int, float, bytes, None, bool, datetime.date or datetime.datetme.**
+- **Bools will be stored and returned as ints and dates as [ISO formatted strings](#encode).**
 
-    <con>.execute('<query>', <list/tuple>)          # Replaces '?'s in query with values.
-    <con>.execute('<query>', <dict/namedtuple>)     # Replaces ':<key>'s with values.
-    <con>.executemany('<query>', <coll_of_above>)   # Runs execute() multiple times.
+  <con>.execute('<query>', <list/tuple>) # Replaces '?'s in query with values.
+  <con>.execute('<query>', <dict/namedtuple>) # Replaces ':<key>'s with values.
+  <con>.executemany('<query>', <coll_of_above>) # Runs execute() multiple times.
 
 ### Example
 
@@ -1643,8 +1605,7 @@ SQLite
     <cursor>.execute('<query>', <list/tuple>)       # Replaces '%s's in query with values.
     <cursor>.execute('<query>', <dict/namedtuple>)  # Replaces '%(<key>)s's with values.
 
-Bytes
------
+## Bytes
 
 **Bytes object is an immutable sequence of single bytes. Mutable version is called bytearray.**
 
@@ -1679,16 +1640,15 @@ Bytes
         with open(filename, 'wb') as file:
             file.write(bytes_obj)
 
-Struct
-------
+## Struct
 
--   **Module that performs conversions between a sequence of numbers and a bytes object.**
--   **Machine’s native type sizes and byte order are used by default.**
+- **Module that performs conversions between a sequence of numbers and a bytes object.**
+- **Machine’s native type sizes and byte order are used by default.**
 
-    from struct import pack, unpack, iter_unpack
-    <bytes>  = pack('<format>', <num_1> [, <num_2>, ...])
-    <tuple>  = unpack('<format>', <bytes>)
-    <tuples> = iter_unpack('<format>', <bytes>)
+  from struct import pack, unpack, iter_unpack
+  <bytes> = pack('<format>', <num_1> [, <num_2>, ...])
+  <tuple> = unpack('<format>', <bytes>)
+  <tuples> = iter_unpack('<format>', <bytes>)
 
 ### Example
 
@@ -1701,26 +1661,25 @@ Struct
 
 #### For standard type sizes start format string with:
 
--   **`'='` - native byte order (usually little-endian)**
--   **`'<'` - little-endian**
--   **`'>'` - big-endian (also `'!'`)**
+- **`'='` - native byte order (usually little-endian)**
+- **`'<'` - little-endian**
+- **`'>'` - big-endian (also `'!'`)**
 
 #### Integer types. Use a capital letter for unsigned type. Minimum and standard sizes are in brackets:
 
--   **`'x'` - pad byte**
--   **`'b'` - char (1/1)**
--   **`'h'` - short (2/2)**
--   **`'i'` - int (2/4)**
--   **`'l'` - long (4/4)**
--   **`'q'` - long long (8/8)**
+- **`'x'` - pad byte**
+- **`'b'` - char (1/1)**
+- **`'h'` - short (2/2)**
+- **`'i'` - int (2/4)**
+- **`'l'` - long (4/4)**
+- **`'q'` - long long (8/8)**
 
 #### Floating point types:
 
--   **`'f'` - float (4/4)**
--   **`'d'` - double (8/8)**
+- **`'f'` - float (4/4)**
+- **`'d'` - double (8/8)**
 
-Array
------
+## Array
 
 **List that can only hold numbers of a predefined type. Available types and their minimum sizes in bytes are listed above. Sizes and byte order are always determined by the system.**
 
@@ -1730,18 +1689,17 @@ Array
     <array> = array('<typecode>', <array>)         # Treats array as a sequence of numbers.
     <bytes> = bytes(<array>)                       # Or: <array>.tobytes()
 
-Memory View
------------
+## Memory View
 
--   **A sequence object that points to the memory of another object.**
--   **Each element can reference a single or multiple consecutive bytes, depending on format.**
--   **Order and number of elements can be changed with slicing.**
+- **A sequence object that points to the memory of another object.**
+- **Each element can reference a single or multiple consecutive bytes, depending on format.**
+- **Order and number of elements can be changed with slicing.**
 
-    <mview> = memoryview(<bytes/bytearray/array>)  # Immutable if bytes, else mutable.
-    <real>  = <mview>[<index>]                     # Returns an int or a float.
-    <mview> = <mview>[<slice>]                     # Mview with rearranged elements.
-    <mview> = <mview>.cast('<typecode>')           # Casts memoryview to the new format.
-    <mview>.release()                              # Releases the object's memory buffer.
+  <mview> = memoryview(<bytes/bytearray/array>) # Immutable if bytes, else mutable.
+  <real> = <mview>[<index>] # Returns an int or a float.
+  <mview> = <mview>[<slice>] # Mview with rearranged elements.
+  <mview> = <mview>.cast('<typecode>') # Casts memoryview to the new format.
+  <mview>.release() # Releases the object's memory buffer.
 
 ### Decode
 
@@ -1755,8 +1713,7 @@ Memory View
     <int>   = int.from_bytes(<mview>, …)           # `byteorder='big/little', signed=False`.
     '<hex>' = <mview>.hex()                        # Treats mview as a bytes object.
 
-Deque
------
+## Deque
 
 **A thread-safe list with efficient appends and pops from either side. Pronounced “deck”.**
 
@@ -1768,13 +1725,12 @@ Deque
     <el> = <deque>.popleft()                       # Raises IndexError if empty.
     <deque>.rotate(n=1)                            # Rotates elements to the right.
 
-Threading
----------
+## Threading
 
--   **CPython interpreter can only run a single thread at a time.**
--   **That is why using multiple threads won’t result in a faster execution, unless at least one of the threads contains an I/O operation.**
+- **CPython interpreter can only run a single thread at a time.**
+- **That is why using multiple threads won’t result in a faster execution, unless at least one of the threads contains an I/O operation.**
 
-    from threading import Thread, RLock, Semaphore, Event, Barrier
+  from threading import Thread, RLock, Semaphore, Event, Barrier
 
 ### Thread
 
@@ -1783,8 +1739,8 @@ Threading
     <bool> = <Thread>.is_alive()          # Checks if thread has finished executing.
     <Thread>.join()                       # Waits for thread to finish.
 
--   **Use `'kwargs=<dict>'` to pass keyword arguments to the function.**
--   **Use `'daemon=True'`, or the program will not be able to exit while the thread is alive.**
+- **Use `'kwargs=<dict>'` to pass keyword arguments to the function.**
+- **Use `'daemon=True'`, or the program will not be able to exit while the thread is alive.**
 
 ### Lock
 
@@ -1829,8 +1785,7 @@ Threading
     <el> = <Queue>.get()                  # Blocks until queue stops being empty.
     <el> = <Queue>.get_nowait()           # Raises queue.Empty exception if empty.
 
-Operator
---------
+## Operator
 
 **Module of functions that provide the functionality of operators.**
 
@@ -1847,8 +1802,7 @@ Operator
     LogicOp          = enum.Enum('LogicOp', {'AND': op.and_, 'OR' : op.or_})
     last_el          = op.methodcaller('pop')(<list>)
 
-Introspection
--------------
+## Introspection
 
 **Inspecting code at runtime.**
 
@@ -1875,8 +1829,7 @@ Introspection
     param_names  = list(<sig>.parameters.keys())
     param_kinds  = [a.kind for a in <sig>.parameters.values()]
 
-Metaprograming
---------------
+## Metaprograming
 
 **Code that generates code.**
 
@@ -1904,10 +1857,10 @@ Metaprograming
             attrs['a'] = 'abcde'
             return type.__new__(cls, name, parents, attrs)
 
--   **New() is a class method that gets called before init(). If it returns an instance of its class, then that instance gets passed to init() as a ‘self’ argument.**
--   **It receives the same arguments as init(), except for the first one that specifies the desired type of the returned instance (MyMetaClass in our case).**
--   **Like in our case, new() can also be called directly, usually from a new() method of a child class (**`def __new__(cls): return super().__new__(cls)`**).**
--   **The only difference between the examples above is that my\_meta\_class() returns a class of type type, while MyMetaClass() returns a class of type MyMetaClass.**
+- **New() is a class method that gets called before init(). If it returns an instance of its class, then that instance gets passed to init() as a ‘self’ argument.**
+- **It receives the same arguments as init(), except for the first one that specifies the desired type of the returned instance (MyMetaClass in our case).**
+- **Like in our case, new() can also be called directly, usually from a new() method of a child class (**`def __new__(cls): return super().__new__(cls)`**).**
+- **The only difference between the examples above is that my_meta_class() returns a class of type type, while MyMetaClass() returns a class of type MyMetaClass.**
 
 ### Metaclass Attribute
 
@@ -1949,8 +1902,7 @@ Metaprograming
     |     str     |             |
     +-------------+-------------+
 
-Eval
-----
+## Eval
 
     >>> from ast import literal_eval
     >>> literal_eval('1 + 2')
@@ -1960,14 +1912,13 @@ Eval
     >>> literal_eval('abs(1)')
     ValueError: malformed node or string
 
-Coroutines
-----------
+## Coroutines
 
--   **Coroutines have a lot in common with threads, but unlike threads, they only give up control when they call another coroutine and they don’t use as much memory.**
--   **Coroutine definition starts with `'async'` and its call with `'await'`.**
--   **`'asyncio.run(<coroutine>)'` is the main entry point for asynchronous programs.**
--   **Functions wait(), gather() and as\_completed() can be used when multiple coroutines need to be started at the same time.**
--   **Asyncio module also provides its own [Queue](#queue), [Event](#semaphore-event-barrier), [Lock](#lock) and [Semaphore](#semaphore-event-barrier) classes.**
+- **Coroutines have a lot in common with threads, but unlike threads, they only give up control when they call another coroutine and they don’t use as much memory.**
+- **Coroutine definition starts with `'async'` and its call with `'await'`.**
+- **`'asyncio.run(<coroutine>)'` is the main entry point for asynchronous programs.**
+- **Functions wait(), gather() and as_completed() can be used when multiple coroutines need to be started at the same time.**
+- **Asyncio module also provides its own [Queue](#queue), [Event](#semaphore-event-barrier), [Lock](#lock) and [Semaphore](#semaphore-event-barrier) classes.**
 
 #### Runs a terminal game where you control an asterisk that must avoid numbers:
 
@@ -2001,7 +1952,7 @@ Coroutines
             key_mappings = {259: D.n, 261: D.e, 258: D.s, 260: D.w}
             if ch in key_mappings:
                 moves.put_nowait(('*', key_mappings[ch]))
-            await asyncio.sleep(0.01)  
+            await asyncio.sleep(0.01)
 
     async def model(moves, state, height, width):
         while state['*'] not in {p for id_, p in state.items() if id_ != '*'}:
@@ -2017,17 +1968,13 @@ Coroutines
             screen.clear()
             for id_, p in state.items():
                 screen.addstr(p.y, p.x, str(id_))
-            await asyncio.sleep(0.01)  
+            await asyncio.sleep(0.01)
 
     curses.wrapper(main)
 
-  
+# Libraries
 
-Libraries
-=========
-
-Progress Bar
-------------
+## Progress Bar
 
     # $ pip3 install tqdm
     from tqdm import tqdm
@@ -2035,8 +1982,7 @@ Progress Bar
     for el in tqdm([1, 2, 3]):
         sleep(0.2)
 
-Plot
-----
+## Plot
 
     # $ pip3 install matplotlib
     from matplotlib import pyplot
@@ -2047,8 +1993,7 @@ Plot
     pyplot.show()                                  # Displays the figure.
     pyplot.clf()                                   # Clears the figure.
 
-Table
------
+## Table
 
 #### Prints a CSV file as an ASCII table:
 
@@ -2060,8 +2005,7 @@ Table
         table  = tabulate.tabulate(rows, header)
         print(table)
 
-Curses
-------
+## Curses
 
 #### Clears the terminal, prints a message and waits for the ESC key press:
 
@@ -2088,8 +2032,7 @@ Curses
     if __name__ == '__main__':
         main()
 
-Logging
--------
+## Logging
 
     # $ pip3 install loguru
     from loguru import logger
@@ -2098,7 +2041,7 @@ Logging
     logger.add('error_{time}.log', level='ERROR')  # Another file for errors or higher.
     logger.<level>('A logging message.')
 
--   **Levels: `'debug'`, `'info'`, `'success'`, `'warning'`, `'error'`, `'critical'`.**
+- **Levels: `'debug'`, `'info'`, `'success'`, `'warning'`, `'error'`, `'critical'`.**
 
 ### Exceptions
 
@@ -2115,10 +2058,10 @@ Logging
 
     rotation=<int>|<datetime.timedelta>|<datetime.time>|<str>
 
--   **`'<int>'` - Max file size in bytes.**
--   **`'<timedelta>'` - Max age of a file.**
--   **`'<time>'` - Time of day.**
--   **`'<str>'` - Any of above as a string: `'100 MB'`, `'1 month'`, `'monday at 12:00'`, …**
+- **`'<int>'` - Max file size in bytes.**
+- **`'<timedelta>'` - Max age of a file.**
+- **`'<time>'` - Time of day.**
+- **`'<str>'` - Any of above as a string: `'100 MB'`, `'1 month'`, `'monday at 12:00'`, …**
 
 ### Retention
 
@@ -2126,12 +2069,11 @@ Logging
 
     retention=<int>|<datetime.timedelta>|<str>
 
--   **`'<int>'` - Max number of files.**
--   **`'<timedelta>'` - Max age of a file.**
--   **`'<str>'` - Max age as a string: `'1 week, 3 days'`, `'2 months'`, …**
+- **`'<int>'` - Max number of files.**
+- **`'<timedelta>'` - Max age of a file.**
+- **`'<str>'` - Max age as a string: `'1 week, 3 days'`, `'2 months'`, …**
 
-Scraping
---------
+## Scraping
 
 #### Scrapes Python’s URL, version number and logo from its Wikipedia page:
 
@@ -2154,8 +2096,7 @@ Scraping
     except requests.exceptions.ConnectionError:
         print("You've got problems with connection.", file=sys.stderr)
 
-Web
----
+## Web
 
     # $ pip3 install bottle
     from bottle import run, route, static_file, template, post, request, response
@@ -2198,8 +2139,7 @@ Web
     >>> response.json()
     ['arsenal f.c.', 2.44, 3.29]
 
-Profiling
----------
+## Profiling
 
 ### Stopwatch
 
@@ -2260,8 +2200,7 @@ Profiling
     with PyCallGraph(drawer):
         <code_to_be_profiled>
 
-NumPy
------
+## NumPy
 
 **Array manipulation mini-language. It can run up to one hundred times faster than the equivalent Python code. An even faster alternative that runs on a GPU is called CuPy.**
 
@@ -2280,8 +2219,8 @@ NumPy
     <array> = <array>.sum(axis)
     indexes = <array>.argmin(axis)
 
--   **Shape is a tuple of dimension sizes.**
--   **Axis is the index of a dimension that gets collapsed. The leftmost dimension has index 0.**
+- **Shape is a tuple of dimension sizes.**
+- **Axis is the index of a dimension that gets collapsed. The leftmost dimension has index 0.**
 
 ### Indexing
 
@@ -2296,7 +2235,7 @@ NumPy
     <2d_bools> = <2d_array> > 0
     <1d_array> = <2d_array>[<2d_bools>]
 
--   **If row and column indexes differ in shape, they are combined with broadcasting.**
+- **If row and column indexes differ in shape, they are combined with broadcasting.**
 
 ### Broadcasting
 
@@ -2344,8 +2283,7 @@ NumPy
     >>> distances.argmin(1)
     [1, 2, 1]
 
-Image
------
+## Image
 
     # $ pip3 install pillow
     from PIL import Image
@@ -2368,11 +2306,11 @@ Image
 
 ### Modes
 
--   **`'1'` - 1-bit pixels, black and white, stored with one pixel per byte.**
--   **`'L'` - 8-bit pixels, greyscale.**
--   **`'RGB'` - 3x8-bit pixels, true color.**
--   **`'RGBA'` - 4x8-bit pixels, true color with transparency mask.**
--   **`'HSV'` - 3x8-bit pixels, Hue, Saturation, Value color space.**
+- **`'1'` - 1-bit pixels, black and white, stored with one pixel per byte.**
+- **`'L'` - 8-bit pixels, greyscale.**
+- **`'RGB'` - 3x8-bit pixels, true color.**
+- **`'RGBA'` - 4x8-bit pixels, true color with transparency mask.**
+- **`'HSV'` - 3x8-bit pixels, Hue, Saturation, Value color space.**
 
 ### Examples
 
@@ -2399,18 +2337,17 @@ Image
 
     <ImageDraw> = ImageDraw.Draw(<Image>)
     <ImageDraw>.point((x, y), fill=None)
-    <ImageDraw>.line((x1, y1, x2, y2 [, ...]), fill=None, width=0, joint=None) 
+    <ImageDraw>.line((x1, y1, x2, y2 [, ...]), fill=None, width=0, joint=None)
     <ImageDraw>.arc((x1, y1, x2, y2), from_deg, to_deg, fill=None, width=0)
     <ImageDraw>.rectangle((x1, y1, x2, y2), fill=None, outline=None, width=0)
     <ImageDraw>.polygon((x1, y1, x2, y2 [, ...]), fill=None, outline=None)
     <ImageDraw>.ellipse((x1, y1, x2, y2), fill=None, outline=None, width=0)
 
--   **Use `'fill=<color>'` to set the primary color.**
--   **Use `'outline=<color>'` to set the secondary color.**
--   **Color can be specified as a tuple, int, `'#rrggbb'` string or a color name.**
+- **Use `'fill=<color>'` to set the primary color.**
+- **Use `'outline=<color>'` to set the secondary color.**
+- **Color can be specified as a tuple, int, `'#rrggbb'` string or a color name.**
 
-Animation
----------
+## Animation
 
 #### Creates a GIF of a bouncing ball:
 
@@ -2428,8 +2365,7 @@ Animation
     frames += reversed(frames[1:-1])
     imageio.mimsave('test.gif', frames, duration=0.03)
 
-Audio
------
+## Audio
 
     import wave
 
@@ -2448,11 +2384,11 @@ Audio
     <Wave_write>.setparams(<params>)                # Sets all parameters.
     <Wave_write>.writeframes(<bytes>)               # Appends frames to the file.
 
--   **Bytes object contains a sequence of frames, each consisting of one or more samples.**
--   **In a stereo signal, the first sample of a frame belongs to the left channel.**
--   **Each sample consists of one or more bytes that, when converted to an integer, indicate the displacement of a speaker membrane at a given moment.**
--   **If sample width is one, then the integer should be encoded unsigned.**
--   **For all other sizes, the integer should be encoded signed with little-endian byte order.**
+- **Bytes object contains a sequence of frames, each consisting of one or more samples.**
+- **In a stereo signal, the first sample of a frame belongs to the left channel.**
+- **Each sample consists of one or more bytes that, when converted to an integer, indicate the displacement of a speaker membrane at a given moment.**
+- **If sample width is one, then the integer should be encoded unsigned.**
+- **For all other sizes, the integer should be encoded signed with little-endian byte order.**
 
 ### Sample Values
 
@@ -2484,7 +2420,7 @@ Audio
             a_float = max(-1, min(1 - 2e-16, a_float))
             a_float += sampwidth == 1
             a_float *= pow(2, sampwidth * 8 - 1)
-            return int(a_float).to_bytes(sampwidth, 'little', signed=sampwidth!=1) 
+            return int(a_float).to_bytes(sampwidth, 'little', signed=sampwidth!=1)
         with wave.open(filename, 'wb') as file:
             file.setnchannels(nchannels)
             file.setsampwidth(sampwidth)
@@ -2523,8 +2459,7 @@ Audio
     engine.say('Sally sells seashells by the seashore.')
     engine.runAndWait()
 
-Synthesizer
------------
+## Synthesizer
 
 #### Plays Popcorn by Gershon Kingsley:
 
@@ -2544,8 +2479,7 @@ Synthesizer
     samples_b   = b''.join(struct.pack('<h', int(f * 30000)) for f in samples_f)
     simpleaudio.play_buffer(samples_b, 1, 2, F)
 
-Pygame
-------
+## Pygame
 
 ### Basic Example
 
@@ -2686,8 +2620,7 @@ Pygame
     if __name__ == '__main__':
         main()
 
-Pandas
-------
+## Pandas
 
     # $ pip3 install pandas
     import pandas as pd
@@ -2727,28 +2660,28 @@ Pandas
     <Sr> = <Sr>.rank/diff/cumsum/ffill/interpl()  # Or: <Sr>.agg/transform(<trans_func>)
     <Sr> = <Sr>.fillna(<el>)                      # Or: <Sr>.apply/agg/transform/map(<map_func>)
 
--   **The way `'aggregate()'` and `'transform()'` find out whether the passed function accepts an element or the whole Series is by passing it a single value at first and if it raises an error, then they pass it the whole Series.**
+- **The way `'aggregate()'` and `'transform()'` find out whether the passed function accepts an element or the whole Series is by passing it a single value at first and if it raises an error, then they pass it the whole Series.**
 
-    >>> sr = Series([1, 2], index=['x', 'y'])
-    x    1
-    y    2
+  > > > sr = Series([1, 2], index=['x', 'y'])
+  > > > x 1
+  > > > y 2
 
-    +-------------+-------------+-------------+---------------+
-    |             |    'sum'    |   ['sum']   | {'s': 'sum'}  |
-    +-------------+-------------+-------------+---------------+
-    | sr.apply(…) |      3      |    sum  3   |     s  3      |
-    | sr.agg(…)   |             |             |               |
-    +-------------+-------------+-------------+---------------+
+  +-------------+-------------+-------------+---------------+
+  | | 'sum' | ['sum'] | {'s': 'sum'} |
+  +-------------+-------------+-------------+---------------+
+  | sr.apply(…) | 3 | sum 3 | s 3 |
+  | sr.agg(…) | | | |
+  +-------------+-------------+-------------+---------------+
 
-    +-------------+-------------+-------------+---------------+
-    |             |    'rank'   |   ['rank']  | {'r': 'rank'} |
-    +-------------+-------------+-------------+---------------+
-    | sr.apply(…) |             |      rank   |               |
-    | sr.agg(…)   |     x  1    |   x     1   |    r  x  1    |
-    | sr.trans(…) |     y  2    |   y     2   |       y  2    |
-    +-------------+-------------+-------------+---------------+
+  +-------------+-------------+-------------+---------------+
+  | | 'rank' | ['rank'] | {'r': 'rank'} |
+  +-------------+-------------+-------------+---------------+
+  | sr.apply(…) | | rank | |
+  | sr.agg(…) | x 1 | x 1 | r x 1 |
+  | sr.trans(…) | y 2 | y 2 | y 2 |
+  +-------------+-------------+-------------+---------------+
 
--   **Last result has a hierarchical index. Use `'<Sr>[key_1, key_2]'` to get its values.**
+- **Last result has a hierarchical index. Use `'<Sr>[key_1, key_2]'` to get its values.**
 
 ### DataFrame
 
@@ -2782,9 +2715,9 @@ Pandas
 #### Merge, Join, Concat:
 
     >>> l = DataFrame([[1, 2], [3, 4]], index=['a', 'b'], columns=['x', 'y'])
-       x  y 
-    a  1  2 
-    b  3  4 
+       x  y
+    a  1  2
+    b  3  4
     >>> r = DataFrame([[4, 5], [6, 7]], index=['b', 'c'], columns=['y', 'z'])
        y  z
     b  4  5
@@ -2826,31 +2759,31 @@ Pandas
     <DF> = <DF>.rank/diff/cumsum/ffill/interpl()  # Or: <DF>.apply/agg/transform(<trans_func>)
     <DF> = <DF>.fillna(<el>)                      # Or: <DF>.applymap(<map_func>)
 
--   **All operations operate on columns by default. Use `'axis=1'` parameter to process the rows instead.**
+- **All operations operate on columns by default. Use `'axis=1'` parameter to process the rows instead.**
 
-    >>> df = DataFrame([[1, 2], [3, 4]], index=['a', 'b'], columns=['x', 'y'])
-       x  y
-    a  1  2
-    b  3  4
+  > > > df = DataFrame([[1, 2], [3, 4]], index=['a', 'b'], columns=['x', 'y'])
+  > > > x y
+  > > > a 1 2
+  > > > b 3 4
 
-    +-------------+-------------+-------------+---------------+
-    |             |    'sum'    |   ['sum']   | {'x': 'sum'}  |
-    +-------------+-------------+-------------+---------------+
-    | df.apply(…) |             |       x  y  |               |
-    | df.agg(…)   |     x  4    |  sum  4  6  |     x  4      |
-    |             |     y  6    |             |               |
-    +-------------+-------------+-------------+---------------+
+  +-------------+-------------+-------------+---------------+
+  | | 'sum' | ['sum'] | {'x': 'sum'} |
+  +-------------+-------------+-------------+---------------+
+  | df.apply(…) | | x y | |
+  | df.agg(…) | x 4 | sum 4 6 | x 4 |
+  | | y 6 | | |
+  +-------------+-------------+-------------+---------------+
 
-    +-------------+-------------+-------------+---------------+
-    |             |    'rank'   |   ['rank']  | {'x': 'rank'} |
-    +-------------+-------------+-------------+---------------+
-    | df.apply(…) |      x  y   |      x    y |        x      |
-    | df.agg(…)   |   a  1  1   |   rank rank |     a  1      |
-    | df.trans(…) |   b  2  2   | a    1    1 |     b  2      |
-    |             |             | b    2    2 |               |
-    +-------------+-------------+-------------+---------------+
+  +-------------+-------------+-------------+---------------+
+  | | 'rank' | ['rank'] | {'x': 'rank'} |
+  +-------------+-------------+-------------+---------------+
+  | df.apply(…) | x y | x y | x |
+  | df.agg(…) | a 1 1 | rank rank | a 1 |
+  | df.trans(…) | b 2 2 | a 1 1 | b 2 |
+  | | | b 2 2 | |
+  +-------------+-------------+-------------+---------------+
 
--   **Use `'<DF>[col_key_1, col_key_2][row_key]'` to get the fifth result’s values.**
+- **Use `'<DF>[col_key_1, col_key_2][row_key]'` to get the fifth result’s values.**
 
 #### Encode, Decode:
 
@@ -2883,7 +2816,7 @@ Pandas
 #### Aggregate, Transform, Map:
 
     <DF> = <GB>.sum/max/mean/idxmax/all()         # Or: <GB>.apply/agg(<agg_func>)
-    <DF> = <GB>.rank/diff/cumsum/ffill()          # Or: <GB>.aggregate(<trans_func>)  
+    <DF> = <GB>.rank/diff/cumsum/ffill()          # Or: <GB>.aggregate(<trans_func>)
     <DF> = <GB>.fillna(<el>)                      # Or: <GB>.transform(<map_func>)
 
     >>> gb = df.groupby('z')
@@ -2915,8 +2848,7 @@ Pandas
     <R_Sr/R_DF>      = <R_DF/R_GB>[column_key/s]        # Or: <R>.column_key
     <Sr/DF/DF>       = <R_Sr/R_DF/R_GB>.sum/max/mean()  # Or: <R>.apply/agg(<agg_func/str>)
 
-Plotly
-------
+## Plotly
 
 ### Covid Deaths by Continent
 
@@ -2926,7 +2858,7 @@ Plotly
     import pandas as pd
     import plotly.express
 
-    covid = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv', 
+    covid = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv',
                         usecols=['iso_code', 'date', 'total_deaths', 'population'])
     continents = pd.read_csv('https://datahub.io/JohnSnowLabs/country-and-continent-codes-' + \
                              'list/r/country-and-continent-codes-list-csv.csv',
@@ -2989,8 +2921,7 @@ Plotly
     if __name__ == '__main__':
         main()
 
-Cython
-------
+## Cython
 
 **Library that compiles Python code into C.**
 
@@ -3001,22 +2932,21 @@ Cython
 
 ### Definitions
 
--   **All `'cdef'` definitions are optional, but they contribute to the speed-up.**
--   **Script needs to be saved with a `'pyx'` extension.**
+- **All `'cdef'` definitions are optional, but they contribute to the speed-up.**
+- **Script needs to be saved with a `'pyx'` extension.**
 
-    cdef <type> <var_name> = <el>
-    cdef <type>[n_elements] <var_name> = [<el_1>, <el_2>, ...]
-    cdef <type/void> <func_name>(<type> <arg_name_1>, ...):
+  cdef <type> <var_name> = <el>
+  cdef <type>[n_elements] <var_name> = [<el_1>, <el_2>, ...]
+  cdef <type/void> <func_name>(<type> <arg_name_1>, ...):
 
-    cdef class <class_name>:
-        cdef public <type> <attr_name>
-        def __init__(self, <type> <arg_name>):
-            self.<attr_name> = <arg_name>
+  cdef class <class_name>:
+  cdef public <type> <attr_name>
+  def **init**(self, <type> <arg_name>):
+  self.<attr_name> = <arg_name>
 
-    cdef enum <enum_name>: <member_name_1>, <member_name_2>, ...
+  cdef enum <enum_name>: <member_name_1>, <member_name_2>, ...
 
-Appendix
---------
+## Appendix
 
 ### PyInstaller
 
@@ -3026,7 +2956,7 @@ Appendix
     $ pyinstaller script.py --windowed             # Compiles into './dist/script' windowed app.
     $ pyinstaller script.py --add-data '<path>:.'  # Adds file to the root of the executable.
 
--   **File paths need to be updated to `'os.path.join(sys._MEIPASS, <path>)'`.**
+- **File paths need to be updated to `'os.path.join(sys._MEIPASS, <path>)'`.**
 
 ### Basic Script Template
 

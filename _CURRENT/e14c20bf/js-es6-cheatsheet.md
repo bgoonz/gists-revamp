@@ -1,5 +1,4 @@
-var versus let / const
-----------------------
+## var versus let / const
 
 > Besides `var`, we now have access to two new identifiers for storing values —`let` and `const`. Unlike `var`, `let` and `const` statements are not hoisted to the top of their enclosing scope.
 
@@ -43,8 +42,7 @@ This change in behavior highlights that we need to be careful when refactoring l
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Replacing IIFEs with Blocks
----------------------------
+## Replacing IIFEs with Blocks
 
 > A common use of **Immediately Invoked Function Expressions** is to enclose values within its scope. In ES6, we now have the ability to create block-based scopes and therefore are not limited purely to function-based scope.
 
@@ -64,8 +62,7 @@ Using ES6 Blocks:
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Arrow Functions
----------------
+## Arrow Functions
 
 Often times we have nested functions in which we would like to preserve the context of `this` from its lexical scope. An example is shown below:
 
@@ -139,8 +136,7 @@ Arrow Functions are also more concise when used in function expressions which si
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Strings
--------
+## Strings
 
 With ES6, the standard library has grown immensely. Along with these changes are new methods which can be used on strings, such as `.includes()` and `.repeat()`.
 
@@ -225,8 +221,7 @@ Or:
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Destructuring
--------------
+## Destructuring
 
 Destructuring allows us to extract values from arrays and objects (even deeply nested) and store them in variables with a more convenient syntax.
 
@@ -257,8 +252,7 @@ Destructuring allows us to extract values from arrays and objects (even deeply n
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Modules
--------
+## Modules
 
 Prior to ES6, we used libraries such as [Browserify](http://browserify.org/) to create modules on the client-side, and [require](https://nodejs.org/api/modules.html#modules_module_require_id) in **Node.js**. With ES6, we can now directly use modules of all types (AMD and CommonJS).
 
@@ -376,8 +370,7 @@ This can also be simplified further, using:
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Parameters
-----------
+## Parameters
 
 In ES5, we had varying ways to handle functions which needed **default values**, **indefinite arguments**, and **named parameters**. With ES6, we can accomplish all of this and more using more concise syntax.
 
@@ -458,8 +451,7 @@ We can concat array literals easily with this intuitive syntax:
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Classes
--------
+## Classes
 
 Prior to ES6, we implemented Classes by creating a constructor function and adding properties by extending the prototype:
 
@@ -523,8 +515,7 @@ And extend them using the `extends` keyword:
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Symbols
--------
+## Symbols
 
 Symbols have existed prior to ES6, but now we have a public interface to using them directly. Symbols are immutable and unique and can be used as keys in any hash.
 
@@ -573,8 +564,7 @@ And then in another library:
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Maps
-----
+## Maps
 
 **Maps** is a much needed data structure in JavaScript. Prior to ES6, we created **hash** maps through objects:
 
@@ -619,8 +609,7 @@ We can also iterate over maps using `.entries()`:
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-WeakMaps
---------
+## WeakMaps
 
 In order to store private data versions &lt; ES6, we had various ways of doing this. One such method was using naming conventions:
 
@@ -680,8 +669,7 @@ As shown above, once the object is destroyed by the garbage collector, the WeakM
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Promises
---------
+## Promises
 
 Promises allow us to turn our horizontal code (callback hell):
 
@@ -758,8 +746,7 @@ We can also **parallelize** Promises to handle an array of asynchronous operatio
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Generators
-----------
+## Generators
 
 Similar to how [Promises](https://github.com/DrkSephy/es6-cheatsheet#promises) allow us to avoid [callback hell](http://callbackhell.com/), Generators allow us to flatten our code - giving our asynchronous code a synchronous feel. Generators are essentially functions which we can [pause their execution](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield) and subsequently return the value of an expression.
 
@@ -832,8 +819,7 @@ We were able to reuse our implementation to use our Generator as before, which s
 
 <sup>[(back\ to\ table\ of\ contents)](#table-of-contents)</sup>
 
-Async Await
------------
+## Async Await
 
 While this is actually an upcoming ES2016 feature, `async await` allows us to perform the same thing we accomplished using Generators and Promises with less effort:
 
@@ -868,10 +854,10 @@ ES6 has started supporting getter and setter functions within classes. Using the
 
         get name() {
           if(this._name) {
-            return 'Mr. ' + this._name.toUpperCase();  
+            return 'Mr. ' + this._name.toUpperCase();
           } else {
             return undefined;
-          }  
+          }
         }
 
         set name(newName) {
@@ -894,7 +880,7 @@ ES6 has started supporting getter and setter functions within classes. Using the
 
     // uses the setter in the background
     emp.name = "Bond 007";
-    console.log(emp.name);  // Mr. BOND 007  
+    console.log(emp.name);  // Mr. BOND 007
 
 Latest browsers are also supporting getter/setter functions in Objects and we can use them for computed properties, adding listeners and preprocessing before setting/getting:
 

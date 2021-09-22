@@ -209,7 +209,7 @@ To test TypeScript’s compiler, head to the [Playground](https://www.typescript
     numbers = moreNumbers; // Error, mutating methods are missing
 
     // Tagged Union Types for modelling state that can be in one of many shapes
-    type State = 
+    type State =
       | { type: "loading" }
       | { type: "success", value: number }
       | { type: "error", message: string };
@@ -247,11 +247,11 @@ To test TypeScript’s compiler, head to the [Playground](https://www.typescript
     foo.bar = 123 // Error: property 'bar' does not exist on `{}`
     foo.baz = 'hello world' // Error: property 'baz' does not exist on `{}`
 
-    // Because the inferred type of foo is `{}` (an object with 0 properties), you 
+    // Because the inferred type of foo is `{}` (an object with 0 properties), you
     // are not allowed to add bar and baz to it. However with type assertion,
     // the following will pass:
 
-    interface Foo { 
+    interface Foo {
       bar: number;
       baz: string;
     }
@@ -260,11 +260,10 @@ To test TypeScript’s compiler, head to the [Playground](https://www.typescript
     foo.bar = 123;
     foo.baz = 'hello world'
 
-Further Reading
----------------
+## Further Reading
 
--   \[TypeScript Official website\] (http://www.typescriptlang.org/)
--   \[TypeScript language specifications\] (https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md)
--   \[Anders Hejlsberg - Introducing TypeScript on Channel 9\] (http://channel9.msdn.com/posts/Anders-Hejlsberg-Introducing-TypeScript)
--   \[Source Code on GitHub\] (https://github.com/Microsoft/TypeScript)
--   \[Definitely Typed - repository for type definitions\] (http://definitelytyped.org/)
+- \[TypeScript Official website\] (http://www.typescriptlang.org/)
+- \[TypeScript language specifications\] (https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md)
+- \[Anders Hejlsberg - Introducing TypeScript on Channel 9\] (http://channel9.msdn.com/posts/Anders-Hejlsberg-Introducing-TypeScript)
+- \[Source Code on GitHub\] (https://github.com/Microsoft/TypeScript)
+- \[Definitely Typed - repository for type definitions\] (http://definitelytyped.org/)

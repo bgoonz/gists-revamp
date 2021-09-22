@@ -1,5 +1,4 @@
-Lessons
--------
+## Lessons
 
 1.  [Navigate the filesystem in bash](#navigate-the-file-system)
 2.  [View files and folders in bash](#view-files-and-folders-in-bash)
@@ -15,8 +14,7 @@ Lessons
 12. [Use Conditional Statements in bash](#use-conditional-statements-in-bash)
 13. [Chain Commands with Pipes and Redirect Output in bash](#chain-commands-with-pipes-and-redirect-output-in-bash)
 
-[Navigate the file system](https://egghead.io/lessons/bash-navigate-the-filesystem-in-bash)
--------------------------------------------------------------------------------------------
+## [Navigate the file system](https://egghead.io/lessons/bash-navigate-the-filesystem-in-bash)
 
 #### Change bash’s current working directory
 
@@ -45,8 +43,7 @@ Lessons
     # Note, flags can be combined like so
     ls -la
 
-[View files and folders in bash](https://egghead.io/lessons/bash-view-files-and-folders-in-bash)
-------------------------------------------------------------------------------------------------
+## [View files and folders in bash](https://egghead.io/lessons/bash-view-files-and-folders-in-bash)
 
 #### Output a file to the screen (stdout)
 
@@ -72,8 +69,7 @@ Lessons
     # specify an application to use
     open <file name> -a TextEdit
 
-[Create and delete files and folders](https://egghead.io/lessons/bash-create-and-delete-files-and-folders-in-bash)
-------------------------------------------------------------------------------------------------------------------
+## [Create and delete files and folders](https://egghead.io/lessons/bash-create-and-delete-files-and-folders-in-bash)
 
 #### Create a file
 
@@ -100,8 +96,7 @@ Lessons
     # Remove a folder and it's contents, recursively
     rm -rf <folder name>
 
-[Move and Copy Files and Folders with bash](https://egghead.io/lessons/bash-move-and-copy-files-and-folders-with-bash)
-----------------------------------------------------------------------------------------------------------------------
+## [Move and Copy Files and Folders with bash](https://egghead.io/lessons/bash-move-and-copy-files-and-folders-with-bash)
 
 #### Move a file
 
@@ -117,8 +112,7 @@ Lessons
     # copy everything recursively from one folder to another
     cp -R src/* lib
 
-[Find Files and Folders with `find` in bash](https://egghead.io/lessons/bash-find-files-and-folders-with-find-in-bash)
-----------------------------------------------------------------------------------------------------------------------
+## [Find Files and Folders with `find` in bash](https://egghead.io/lessons/bash-find-files-and-folders-with-find-in-bash)
 
     # find all the PNGs in a folder
     find <path> -name "*.png"
@@ -132,8 +126,7 @@ Lessons
     # remember `{}` will be replaced with the file name
     find <path> -name "*.png" -exec pngquant {} \;
 
-[Search for text with `grep`](https://egghead.io/lessons/grep-search-for-text-with-grep)
-----------------------------------------------------------------------------------------
+## [Search for text with `grep`](https://egghead.io/lessons/grep-search-for-text-with-grep)
 
     # Basic usage
     grep <pattern> <target file or glob>
@@ -143,8 +136,7 @@ Lessons
     # -C <number> (show N lines above/below match for context)
     # -e          (regex search)
 
-[Make HTTP requests in bash with `curl`](https://egghead.io/lessons/http-make-http-requests-in-bash-with-curl)
---------------------------------------------------------------------------------------------------------------
+## [Make HTTP requests in bash with `curl`](https://egghead.io/lessons/http-make-http-requests-in-bash-with-curl)
 
 The test server is available in the `curl-practice-server` directory. Run `npm install && npm start` to run it.
 
@@ -175,8 +167,7 @@ The test server is available in the `curl-practice-server` directory. Run `npm i
 
 Here’s the [jsome](https://www.npmjs.com/package/jsome) package that pretty prints JSON
 
-[Create and run bash scripts](https://egghead.io/lessons/bash-create-and-run-bash-scripts)
-------------------------------------------------------------------------------------------
+## [Create and run bash scripts](https://egghead.io/lessons/bash-create-and-run-bash-scripts)
 
     echo 'echo Hello World' > script.sh
     chmod u+x script.sh
@@ -195,8 +186,7 @@ One way to add that script to your `$PATH`:
 
     cp init-js.sh /usr/local/bin/init-js
 
-[Store and Use Values with bash Variables](https://egghead.io/lessons/bash-store-and-use-values-with-bash-variables)
---------------------------------------------------------------------------------------------------------------------
+## [Store and Use Values with bash Variables](https://egghead.io/lessons/bash-store-and-use-values-with-bash-variables)
 
     # no spaces between name, =, and value
     var=123
@@ -217,8 +207,7 @@ To see all environment variables
     echo "branch $1 cloned to $temp"
     # run some tasks, tests, etc here
 
-[Understand and use functions in bash](https://egghead.io/lessons/bash-understand-and-use-functions-in-bash)
-------------------------------------------------------------------------------------------------------------
+## [Understand and use functions in bash](https://egghead.io/lessons/bash-understand-and-use-functions-in-bash)
 
     greet() {
       echo "$1 world"
@@ -241,8 +230,7 @@ To see all environment variables
     echo "global = $global"
     echo "local_var = $local_var" # will be empty because it's out of scope
 
-[Understand exit statuses in bash](https://egghead.io/lessons/bash-understand-exit-statuses-in-bash)
-----------------------------------------------------------------------------------------------------
+## [Understand exit statuses in bash](https://egghead.io/lessons/bash-understand-exit-statuses-in-bash)
 
 Get the last run command’s exit status
 
@@ -266,8 +254,7 @@ Exit statuses and functions. `script.sh`
     ./script.sh
     echo $? # exit status is same as the last run function/command
 
-[Use Conditional Statements in bash](https://egghead.io/lessons/bash-use-conditional-statements-in-bash)
---------------------------------------------------------------------------------------------------------
+## [Use Conditional Statements in bash](https://egghead.io/lessons/bash-use-conditional-statements-in-bash)
 
 Basic form
 
@@ -303,8 +290,7 @@ Conditionals can be used inline in a more ternary-like format
     check_status https://example.org
     check_status https://example.org/404
 
-[Chain Commands with Pipes and Redirect Output in bash](https://egghead.io/lessons/bash-chain-commands-with-pipes-and-redirect-output-in-bash)
-----------------------------------------------------------------------------------------------------------------------------------------------
+## [Chain Commands with Pipes and Redirect Output in bash](https://egghead.io/lessons/bash-chain-commands-with-pipes-and-redirect-output-in-bash)
 
 Pipes
 
@@ -320,10 +306,9 @@ Redirection
     # append stdout to a file
     echo "hi" >> ls.txt
 
-Additional learning resources
-=============================
+# Additional learning resources
 
--   You can view a command’s documentation right in bash with `man <command name>`.
--   [Official bash manual](https://www.gnu.org/software/bash/manual/bash.html)
--   [TLDP bash programming intro, basic](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
--   [TLDP bash programming intro, advanced](http://www.tldp.org/LDP/abs/html/)
+- You can view a command’s documentation right in bash with `man <command name>`.
+- [Official bash manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [TLDP bash programming intro, basic](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+- [TLDP bash programming intro, advanced](http://www.tldp.org/LDP/abs/html/)

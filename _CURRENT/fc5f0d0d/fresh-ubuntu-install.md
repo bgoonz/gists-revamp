@@ -1,4 +1,3 @@
-
     Installing, this may take a few minutes...
     Please create a default UNIX user account. The username does not need to match your Windows username.
     For more information visit: https://aka.ms/wslusers

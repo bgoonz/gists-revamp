@@ -1,43 +1,40 @@
-Markdown Badges
-===============
+# Markdown Badges
 
 Add badges to your Profile and Projects.
 
-How to Use
-----------
+## How to Use
 
--   Copy the appropriate `<img>` element and paste it in your Markdown file (e.g., `README.md`)
+- Copy the appropriate `<img>` element and paste it in your Markdown file (e.g., `README.md`)
 
-Shortcuts
----------
+## Shortcuts
 
--   [Markdown Badges](#markdown-badges)
-    -   [How to Use](#how-to-use)
-    -   [Shortcuts](#shortcuts)
-        -   [Programming Languages](#programming-languages)
-        -   [Frameworks](#frameworks)
-        -   [Design](#design)
-        -   [Version Control](#version-control)
-        -   [Social](#social)
-            -   [Education](#education)
-            -   [Developer/Forums](#developerforums)
-        -   [Hosting/SaaS](#hostingsaas)
-        -   [Servers](#servers)
-        -   [Databases](#databases)
-        -   [CI](#ci)
-        -   [Testing](#testing)
-        -   [ML/DL](#mldl)
-        -   [Gaming](#gaming)
-        -   [Store](#store)
-        -   [Music](#music)
-        -   [Funding](#funding)
-        -   [Operating System](#operating-system)
-        -   [Blog](#blog)
-        -   [Other](#other)
-        -   [Design](#design)
-    -   [Contribution](#contribution)
-    -   [Contact](#contact)
-    -   [License](#license)
+- [Markdown Badges](#markdown-badges)
+  - [How to Use](#how-to-use)
+  - [Shortcuts](#shortcuts)
+    - [Programming Languages](#programming-languages)
+    - [Frameworks](#frameworks)
+    - [Design](#design)
+    - [Version Control](#version-control)
+    - [Social](#social)
+      - [Education](#education)
+      - [Developer/Forums](#developerforums)
+    - [Hosting/SaaS](#hostingsaas)
+    - [Servers](#servers)
+    - [Databases](#databases)
+    - [CI](#ci)
+    - [Testing](#testing)
+    - [ML/DL](#mldl)
+    - [Gaming](#gaming)
+    - [Store](#store)
+    - [Music](#music)
+    - [Funding](#funding)
+    - [Operating System](#operating-system)
+    - [Blog](#blog)
+    - [Other](#other)
+    - [Design](#design)
+  - [Contribution](#contribution)
+  - [Contact](#contact)
+  - [License](#license)
 
 ### Programming Languages
 

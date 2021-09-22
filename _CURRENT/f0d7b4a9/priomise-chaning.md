@@ -1,5 +1,4 @@
-Promises chaining
-=================
+# Promises chaining
 
 It looks like this:
 
@@ -74,8 +73,7 @@ All `.then` on the same promise get the same result – the result of that pro
 
 In practice we rarely need multiple handlers for one promise. Chaining is used much more often.
 
-Returning promises:
-===================
+# Returning promises:
 
 A handler, used in `.then(handler)` may create and return a promise.
 
@@ -119,8 +117,7 @@ So the output is the same as in the previous example: 1 → 2 → 4, but now wit
 
 Returning promises allows us to build chains of asynchronous actions.
 
-Example: loadScript
-===================
+# Example: loadScript
 
 Let’s use this feature with the promisified `loadScript`, defined in the [previous chapter](https://javascript.info/promise-basics#loadscript), to load scripts one by one, in sequence:
 
@@ -152,7 +149,7 @@ Let’s use this feature with the promisified `loadScript`, defined in the [pr
         two();
         three();
       });
-      
+
 
 Here each `loadScript` call returns a promise, and the next `.then` runs when it resolves. Then it initiates the loading of the next script. So scripts are loaded one after another.
 
@@ -206,8 +203,7 @@ JavaScript checks the object returned by the `.then` handler in line `(*)`: i
 
 This feature allows us to integrate custom objects with promise chains without having to inherit from `Promise`.
 
-[Bigger example: fetch](https://javascript.info/promise-chaining#bigger-example-fetch)
---------------------------------------------------------------------------------------
+## [Bigger example: fetch](https://javascript.info/promise-chaining#bigger-example-fetch)
 
 In frontend programming promises are often used for network requests. So let’s see an extended example of that.
 
@@ -267,7 +263,7 @@ We’ll also use arrow functions for brevity:
 
         setTimeout(() => img.remove(), 3000); // (*)
       });
-      
+
 
 The code works; see comments about the details. However, there’s a potential problem in it, a typical error for those who begin to use promises.
 

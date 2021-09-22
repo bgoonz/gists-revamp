@@ -168,10 +168,10 @@ Wood Street: We present our designs to clients as a flat JPG file at first. Som
 
 Definition: There are a few here to define…
 
--   TrueType Fonts: TrueType is an outline font standard developed by Apple and Microsoft in the late 1980s as a competitor to Adobe’s Type 1 fonts used in PostScript. It has become the most common format for fonts on the classic Mac OS, macOS, and Microsoft Windows operating systems.5
--   PostScript Fonts: PostScript fonts are font files encoded in outline font specifications developed by Adobe Systems for professional digital typesetting. This system uses the PostScript file format to encode font information. “PostScript fonts” may also separately be used to refer to a basic set of fonts included as standards in the PostScript system, such as Times, Helvetica and Avant-Garde.5
--   OpenType Fonts: OpenType is a file format for scalable (outline) font files that extends the existing TrueType font file format used by Microsoft Windows and Apple Macintosh operating systems. OpenType was developed jointly by Microsoft and Adobe and allows an Adobe postscript file to be part of a TrueType font file.5
--   Serif and San Serif: In typography, a serif is a small line or stroke regularly attached to the end of a larger stroke in a letter or symbol within a particular font or family of fonts. Times New Roman is a serif font. Arial is a sans serif font.6
+- TrueType Fonts: TrueType is an outline font standard developed by Apple and Microsoft in the late 1980s as a competitor to Adobe’s Type 1 fonts used in PostScript. It has become the most common format for fonts on the classic Mac OS, macOS, and Microsoft Windows operating systems.5
+- PostScript Fonts: PostScript fonts are font files encoded in outline font specifications developed by Adobe Systems for professional digital typesetting. This system uses the PostScript file format to encode font information. “PostScript fonts” may also separately be used to refer to a basic set of fonts included as standards in the PostScript system, such as Times, Helvetica and Avant-Garde.5
+- OpenType Fonts: OpenType is a file format for scalable (outline) font files that extends the existing TrueType font file format used by Microsoft Windows and Apple Macintosh operating systems. OpenType was developed jointly by Microsoft and Adobe and allows an Adobe postscript file to be part of a TrueType font file.5
+- Serif and San Serif: In typography, a serif is a small line or stroke regularly attached to the end of a larger stroke in a letter or symbol within a particular font or family of fonts. Times New Roman is a serif font. Arial is a sans serif font.6
 
 Wood Street: We included all of these different definitions so you understand how complex typography can be. This is just scratching the surface. For most of our websites, we use Google Fonts unless the client has a specific request. Some clients will have purchased the rights to use a specific group of fonts so that their website can [stay on brand](https://www.woodst.com/graphic-design-marketing/do-all-businesses-need-a-branding-guide/).
 
@@ -223,7 +223,7 @@ Wood Street – Website security is super important these days, so much so that
 
 ### Header
 
-Definition: "On a web page, the header is the top portion of a web page that contains the company name and logos. Contained between opening and closing 
+Definition: "On a web page, the header is the top portion of a web page that contains the company name and logos. Contained between opening and closing
 
 tags, this section also often contains a navigation bar to help users move between common areas on the site."8
 

@@ -6,8 +6,7 @@ You will set up Heroku to run on a production, not development, version of your 
 
 In the following phases, you will configure your application to work in production, not just in development, and configure the `package.json` scripts for `install`, `heroku-postbuild` and `start` scripts to install, build your React application, and start the Express production server.
 
-Phase 1: Heroku Connection
---------------------------
+## Phase 1: Heroku Connection
 
 If you haven’t created a Heroku account yet, create one [here](https://signup.heroku.com/).
 
@@ -23,8 +22,7 @@ Add Heroku as a remote to your project’s git repository in the following comma
 
 Next, you will set up your Express + React application to be deployable to Heroku.
 
-Phase 2: Setting up your Express + React application
-----------------------------------------------------
+## Phase 2: Setting up your Express + React application
 
 Right now, your React application is on a different localhost port than your Express application. However, since your React application only consists of static files that don’t need to bundled continuously with changes in production, your Express application can serve the React assets in production too. These static files live in the `frontend/build` folder after running `npm run build` in the `frontend` folder.
 
@@ -115,8 +113,7 @@ The `dev:backend` and `dev:frontend` scripts are optional and will not be used f
 
 Finally, commit your changes.
 
-Phase 3: Deploy to Heroku
--------------------------
+## Phase 3: Deploy to Heroku
 
 Once you’re finished setting this up, navigate to your application’s Heroku dashboard. Under “Settings” there is a section for “Config Vars”. Click the `Reveal Config Vars` button to see all your production environment variables. You should have a `DATABASE_URL` environment variable already from the Heroku Postgres add-on.
 

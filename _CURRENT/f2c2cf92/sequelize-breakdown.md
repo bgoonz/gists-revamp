@@ -1,5 +1,4 @@
-Sequelize: Step-By-Step
-=======================
+# Sequelize: Step-By-Step
 
 Sequelize is a powerful library in Javascript that makes it easy to manage a SQL database. Sequelize can layer over different protocols, but here we’ll use PostgreSQL. At its core, Sequelize is an Object-Relational Mapper – meaning that it maps an object syntax onto our database schemas. Sequelize uses Node.JS and Javascript’s object syntax to accomplish its mapping.
 
@@ -31,9 +30,9 @@ This line creates a new instance of Sequelize, which we have called `db`. We’l
 
 ### Defining Your Models
 
-Sequelize is all about *models*. In database-speak, these are our *schemas* – the shape that our data takes. Your models are both the objects that you’ll interact with in your application and the primary tables that you’ll create and manage in your database.
+Sequelize is all about _models_. In database-speak, these are our _schemas_ – the shape that our data takes. Your models are both the objects that you’ll interact with in your application and the primary tables that you’ll create and manage in your database.
 
-Here’s how to define a new model called *Album*.
+Here’s how to define a new model called _Album_.
 
     db.define('Album', {
       title: {
@@ -51,7 +50,7 @@ Here’s how to define a new model called *Album*.
 
 Inside this object, our properties create the names of our columns. Now, our Album table will have a `title`, `price`, and `tracks` column.
 
-For each column, we specify *another* object that instructs Sequelize how to create and manage that column.
+For each column, we specify _another_ object that instructs Sequelize how to create and manage that column.
 
 In our example, we specify the `type` of each column using [Sequelize’s data types](http://docs.sequelizejs.com/en/latest/docs/models-definition/#data-types). This constrains our schemas, allowing attributes to be assigned only certain types of data.
 
@@ -94,7 +93,7 @@ Let’s also add an Artist model.
 
 Once we have our second model, we should associate Artists with Albums. After all, each album will be created by an artist!
 
-In SQL, we would normally need to create and specify a *join table*. In our join table the primary key (an id number) of our artist would be tied to the primary key of an album. This would allow us to know that an album ‘belongs to’ an artist.
+In SQL, we would normally need to create and specify a _join table_. In our join table the primary key (an id number) of our artist would be tied to the primary key of an album. This would allow us to know that an album ‘belongs to’ an artist.
 
 Sequelize makes this simple. Rather than building new tables manually, we can just call `.belongsTo()` on our models to set up an association.
 
@@ -102,7 +101,7 @@ So below our model definitions, we can write:
 
     Album.belongsTo(Artist, {as: 'artist'});
 
-Just like that, Sequelize creates our join table. The `{as: 'artist'}` allows us to set an *alias* for our association. By default, Sequelize adds an id field to associate our Albums and Artists. Now we can refer to that field just by its alias: ‘artist’.
+Just like that, Sequelize creates our join table. The `{as: 'artist'}` allows us to set an _alias_ for our association. By default, Sequelize adds an id field to associate our Albums and Artists. Now we can refer to that field just by its alias: ‘artist’.
 
 ### Synchronizing Your Models
 
@@ -116,8 +115,7 @@ When testing, it’s sometimes easier to start with fresh tables every time you 
 
 That’s all you need to get your SQL database set up and going.
 
-Methods, Hooks, Getters, and Setters
-------------------------------------
+## Methods, Hooks, Getters, and Setters
 
 Sequelize models have loads of helpful functionality to make your life easier.
 
@@ -129,7 +127,7 @@ Sequelize lets us do even more to enhance our models with getters and setters.
 
 Getters and setters are commonly used in traditional object-oriented languages like C\# or Java. Getters are methods that help you retrieve (get) the value. Setters help you, well, set the value.
 
-Both are considered *virtuals*, meaning that they are not actually part of your model’s schema. Getters and setters are just ways to supplement your model with logic of their own.
+Both are considered _virtuals_, meaning that they are not actually part of your model’s schema. Getters and setters are just ways to supplement your model with logic of their own.
 
 First, let’s add a getter to help us get a nicely formatted string of an album title and its price.
 
@@ -188,8 +186,7 @@ Now, let’s add a setter for our tracks.
       }
     );
 
-TBC HERE
---------
+## TBC HERE
 
 To create an complete tracks list from an array, we need only call `albumInstance.setTrackList(arrayOfTracks)` with an `arrayOfTracks`.
 
@@ -204,7 +201,7 @@ To create an complete tracks list from an array, we need only call `albumInstanc
 
 ### Class Methods
 
-Class methods exist on the *class* of the object. Don’t confuse them with methods on an object’s prototype or in an object’s constructor. Methods on an object’s `.prototype` and added via .thismethod are both instance methods,
+Class methods exist on the _class_ of the object. Don’t confuse them with methods on an object’s prototype or in an object’s constructor. Methods on an object’s `.prototype` and added via .thismethod are both instance methods,
 
 Class methods are added to a class directly. For example, if we had a Users class, we would add a method as follows:
 
@@ -242,8 +239,7 @@ For example, if we wanted to associate Users and Accounts, we might want a table
 
 Associating models, e.g. hasOne, belongsTo, etc. Which model has the foreignKey Which Sequelize model is given new methods
 
-Promises and Sequelize
-======================
+# Promises and Sequelize
 
 Sequelize operates with Promises.
 
