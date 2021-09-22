@@ -8650,10 +8650,9 @@
               } else if (this._state === IN_SELF_CLOSING_TAG) {
                 this._stateInSelfClosingTag(c);
               } else if (this._state === BEFORE_ATTRIBUTE_NAME) {
-
-              /*
-               *	attributes
-               */
+                /*
+                 *	attributes
+                 */
                 this._stateBeforeAttributeName(c);
               } else if (this._state === IN_ATTRIBUTE_NAME) {
                 this._stateInAttributeName(c);
@@ -8668,24 +8667,21 @@
               } else if (this._state === IN_ATTRIBUTE_VALUE_NQ) {
                 this._stateInAttributeValueNoQuotes(c);
               } else if (this._state === BEFORE_DECLARATION) {
-
-              /*
-               *	declarations
-               */
+                /*
+                 *	declarations
+                 */
                 this._stateBeforeDeclaration(c);
               } else if (this._state === IN_DECLARATION) {
                 this._stateInDeclaration(c);
               } else if (this._state === IN_PROCESSING_INSTRUCTION) {
-
-              /*
-               *	processing instructions
-               */
+                /*
+                 *	processing instructions
+                 */
                 this._stateInProcessingInstruction(c);
               } else if (this._state === BEFORE_COMMENT) {
-
-              /*
-               *	comments
-               */
+                /*
+                 *	comments
+                 */
                 this._stateBeforeComment(c);
               } else if (this._state === IN_COMMENT) {
                 this._stateInComment(c);
@@ -8694,10 +8690,9 @@
               } else if (this._state === AFTER_COMMENT_2) {
                 this._stateAfterComment2(c);
               } else if (this._state === BEFORE_CDATA_1) {
-
-              /*
-               *	cdata
-               */
+                /*
+                 *	cdata
+                 */
                 this._stateBeforeCdata1(c);
               } else if (this._state === BEFORE_CDATA_2) {
                 this._stateBeforeCdata2(c);
@@ -8716,18 +8711,16 @@
               } else if (this._state === AFTER_CDATA_2) {
                 this._stateAfterCdata2(c);
               } else if (this._state === BEFORE_SPECIAL) {
-
-              /*
-               * special tags
-               */
+                /*
+                 * special tags
+                 */
                 this._stateBeforeSpecial(c);
               } else if (this._state === BEFORE_SPECIAL_END) {
                 this._stateBeforeSpecialEnd(c);
               } else if (this._state === BEFORE_SCRIPT_1) {
-
-              /*
-               * script
-               */
+                /*
+                 * script
+                 */
                 this._stateBeforeScript1(c);
               } else if (this._state === BEFORE_SCRIPT_2) {
                 this._stateBeforeScript2(c);
@@ -8748,10 +8741,9 @@
               } else if (this._state === AFTER_SCRIPT_5) {
                 this._stateAfterScript5(c);
               } else if (this._state === BEFORE_STYLE_1) {
-
-              /*
-               * style
-               */
+                /*
+                 * style
+                 */
                 this._stateBeforeStyle1(c);
               } else if (this._state === BEFORE_STYLE_2) {
                 this._stateBeforeStyle2(c);
@@ -8768,10 +8760,9 @@
               } else if (this._state === AFTER_STYLE_4) {
                 this._stateAfterStyle4(c);
               } else if (this._state === BEFORE_ENTITY) {
-
-              /*
-               * entities
-               */
+                /*
+                 * entities
+                 */
                 this._stateBeforeEntity(c);
               } else if (this._state === BEFORE_NUMERIC_ENTITY) {
                 this._stateBeforeNumericEntity(c);
