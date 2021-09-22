@@ -9,19 +9,19 @@
 //------------------------------------------------------------------------------
 
 const Ajv = require("ajv"),
-    metaSchema = require("ajv/lib/refs/json-schema-draft-04.json");
+  metaSchema = require("ajv/lib/refs/json-schema-draft-04.json");
 
 //------------------------------------------------------------------------------
 // Public Interface
 //------------------------------------------------------------------------------
 
 const ajv = new Ajv({
-    meta: false,
-    useDefaults: true,
-    validateSchema: false,
-    missingRefs: "ignore",
-    verbose: true,
-    schemaId: "auto"
+  meta: false,
+  useDefaults: true,
+  validateSchema: false,
+  missingRefs: "ignore",
+  verbose: true,
+  schemaId: "auto",
 });
 
 ajv.addMetaSchema(metaSchema);

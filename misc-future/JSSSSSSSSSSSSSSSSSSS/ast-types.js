@@ -60,7 +60,7 @@ export type Node = ${t.TYPES.sort().join(" | ")};\n\n`;
     const fieldNames = sortFieldNames(Object.keys(t.NODE_FIELDS[type]), type);
     const struct = [];
 
-    fieldNames.forEach(fieldName => {
+    fieldNames.forEach((fieldName) => {
       const field = fields[fieldName];
       // Future / annoying TODO:
       // MemberExpression.property, ObjectProperty.key and ObjectMethod.key need special cases; either:
@@ -105,7 +105,7 @@ export interface ${deprecatedAlias[type]} extends BaseNode {
   for (const type in t.FLIPPED_ALIAS_KEYS) {
     const types = t.FLIPPED_ALIAS_KEYS[type];
     code += `export type ${type} = ${types
-      .map(type => `${type}`)
+      .map((type) => `${type}`)
       .join(" | ")};\n`;
   }
   code += "\n";

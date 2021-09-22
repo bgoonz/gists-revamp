@@ -13,15 +13,22 @@ const idlUtils = require("./jsdom/living/generated/utils.js");
 const VirtualConsole = require("./jsdom/virtual-console.js");
 const Window = require("./jsdom/browser/Window.js");
 const { domToHtml } = require("./jsdom/browser/domtohtml.js");
-const { applyDocumentFeatures } = require("./jsdom/browser/documentfeatures.js");
-const { wrapCookieJarForRequest } = require("./jsdom/browser/resource-loader.js");
+const {
+  applyDocumentFeatures,
+} = require("./jsdom/browser/documentfeatures.js");
+const {
+  wrapCookieJarForRequest,
+} = require("./jsdom/browser/resource-loader.js");
 const { version: packageVersion } = require("../package.json");
 
-const DEFAULT_USER_AGENT = `Mozilla/5.0 (${process.platform}) AppleWebKit/537.36 (KHTML, like Gecko) ` +
-                           `jsdom/${packageVersion}`;
+const DEFAULT_USER_AGENT =
+  `Mozilla/5.0 (${process.platform}) AppleWebKit/537.36 (KHTML, like Gecko) ` +
+  `jsdom/${packageVersion}`;
 
 // This symbol allows us to smuggle a non-public option through to the JSDOM constructor, for use by JSDOM.fromURL.
-const transportLayerEncodingLabelHiddenOption = Symbol("transportLayerEncodingLabel");
+const transportLayerEncodingLabelHiddenOption = Symbol(
+  "transportLayerEncodingLabel"
+);
 
 class CookieJar extends toughCookie.CookieJar {
   constructor(store, options) {
@@ -35,7 +42,10 @@ let sharedFragmentDocument = null;
 
 class JSDOM {
   constructor(input, options = {}) {
-    const { html, encoding } = normalizeHTML(input, options[transportLayerEncodingLabelHiddenOption]);
+    const { html, encoding } = normalizeHTML(
+      input,
+      options[transportLayerEncodingLabelHiddenOption]
+    );
     options = transformOptions(options, encoding);
 
     this[window] = new Window(options.windowOptions);
@@ -45,7 +55,7 @@ class JSDOM {
     // ugly, internal API.
     const features = {
       FetchExternalResources: [],
-      SkipExternalResources: false
+      SkipExternalResources: false,
     };
 
     if (options.resources === "usable") {
@@ -88,8 +98,13 @@ class JSDOM {
   }
 
   nodeLocation(node) {
-    if (!idlUtils.implForWrapper(this[window]._document)._parseOptions.locationInfo) {
-      throw new Error("Location information was not saved for this jsdom. Use includeNodeLocations during creation.");
+    if (
+      !idlUtils.implForWrapper(this[window]._document)._parseOptions
+        .locationInfo
+    ) {
+      throw new Error(
+        "Location information was not saved for this jsdom. Use includeNodeLocations during creation."
+      );
     }
 
     return idlUtils.implForWrapper(node).__location;
@@ -97,8 +112,10 @@ class JSDOM {
 
   runVMScript(script) {
     if (!vm.isContext(this[window])) {
-      throw new TypeError("This jsdom was not configured to allow script running. " +
-        "Use the runScripts option during creation.");
+      throw new TypeError(
+        "This jsdom was not configured to allow script running. " +
+          "Use the runScripts option during creation."
+      );
     }
 
     return script.runInContext(this[window]);
@@ -124,7 +141,7 @@ class JSDOM {
 
   static fragment(string) {
     if (!sharedFragmentDocument) {
-      sharedFragmentDocument = (new JSDOM()).window.document;
+      sharedFragmentDocument = new JSDOM().window.document;
     }
 
     const template = sharedFragmentDocument.createElement("template");
@@ -145,13 +162,14 @@ class JSDOM {
         headers: {
           "User-Agent": options.userAgent,
           Referer: options.referrer,
-          Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-          "Accept-Language": "en"
+          Accept:
+            "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+          "Accept-Language": "en",
         },
-        jar: wrapCookieJarForRequest(options.cookieJar)
+        jar: wrapCookieJarForRequest(options.cookieJar),
       };
 
-      return request(url, requestOptions).then(res => {
+      return request(url, requestOptions).then((res) => {
         let transportLayerEncodingLabel;
         if ("content-type" in res.headers) {
           const mimeType = new MIMEType(res.headers["content-type"]);
@@ -162,7 +180,8 @@ class JSDOM {
           url: res.request.href + parsedURL.hash,
           contentType: res.headers["content-type"],
           referrer: res.request.getHeader("referer"),
-          [transportLayerEncodingLabelHiddenOption]: transportLayerEncodingLabel
+          [transportLayerEncodingLabelHiddenOption]:
+            transportLayerEncodingLabel,
         });
 
         return new JSDOM(res.body, options);
@@ -174,7 +193,7 @@ class JSDOM {
     return Promise.resolve().then(() => {
       options = normalizeFromFileOptions(filename, options);
 
-      return fs.readFile(filename).then(buffer => {
+      return fs.readFile(filename).then((buffer) => {
         return new JSDOM(buffer, options);
       });
     });
@@ -187,7 +206,9 @@ function normalizeFromURLOptions(options) {
     throw new TypeError("Cannot supply a url option when using fromURL");
   }
   if (options.contentType !== undefined) {
-    throw new TypeError("Cannot supply a contentType option when using fromURL");
+    throw new TypeError(
+      "Cannot supply a contentType option when using fromURL"
+    );
   }
 
   // Normalization of options which must be done before the rest of the fromURL code can use them, because they are
@@ -198,7 +219,7 @@ function normalizeFromURLOptions(options) {
   }
 
   if (options.referrer !== undefined) {
-    normalized.referrer = (new URL(options.referrer)).href;
+    normalized.referrer = new URL(options.referrer).href;
   }
 
   if (options.cookieJar === undefined) {
@@ -245,19 +266,21 @@ function transformOptions(options, encoding) {
 
       // Defaults filled in later
       virtualConsole: undefined,
-      cookieJar: undefined
+      cookieJar: undefined,
     },
 
     // Defaults
     resources: undefined,
-    beforeParse() { }
+    beforeParse() {},
   };
 
   if (options.contentType !== undefined) {
     const mimeType = new MIMEType(options.contentType);
 
     if (!mimeType.isHTML() && !mimeType.isXML()) {
-      throw new RangeError(`The given content type of "${options.contentType}" was not a HTML or XML content type`);
+      throw new RangeError(
+        `The given content type of "${options.contentType}" was not a HTML or XML content type`
+      );
     }
 
     transformed.windowOptions.contentType = mimeType.essence;
@@ -265,11 +288,11 @@ function transformOptions(options, encoding) {
   }
 
   if (options.url !== undefined) {
-    transformed.windowOptions.url = (new URL(options.url)).href;
+    transformed.windowOptions.url = new URL(options.url).href;
   }
 
   if (options.referrer !== undefined) {
-    transformed.windowOptions.referrer = (new URL(options.referrer)).href;
+    transformed.windowOptions.referrer = new URL(options.referrer).href;
   }
 
   if (options.userAgent !== undefined) {
@@ -278,19 +301,21 @@ function transformOptions(options, encoding) {
 
   if (options.includeNodeLocations) {
     if (transformed.windowOptions.parsingMode === "xml") {
-      throw new TypeError("Cannot set includeNodeLocations to true with an XML content type");
+      throw new TypeError(
+        "Cannot set includeNodeLocations to true with an XML content type"
+      );
     }
 
     transformed.windowOptions.parseOptions = { locationInfo: true };
   }
 
-  transformed.windowOptions.cookieJar = options.cookieJar === undefined ?
-                                       new CookieJar() :
-                                       options.cookieJar;
+  transformed.windowOptions.cookieJar =
+    options.cookieJar === undefined ? new CookieJar() : options.cookieJar;
 
-  transformed.windowOptions.virtualConsole = options.virtualConsole === undefined ?
-                                            (new VirtualConsole()).sendTo(console) :
-                                            options.virtualConsole;
+  transformed.windowOptions.virtualConsole =
+    options.virtualConsole === undefined
+      ? new VirtualConsole().sendTo(console)
+      : options.virtualConsole;
 
   if (options.resources !== undefined) {
     transformed.resources = String(options.resources);
@@ -301,9 +326,13 @@ function transformOptions(options, encoding) {
 
   if (options.runScripts !== undefined) {
     transformed.windowOptions.runScripts = String(options.runScripts);
-    if (transformed.windowOptions.runScripts !== "dangerously" &&
-        transformed.windowOptions.runScripts !== "outside-only") {
-      throw new RangeError(`runScripts must be undefined, "dangerously", or "outside-only"`);
+    if (
+      transformed.windowOptions.runScripts !== "dangerously" &&
+      transformed.windowOptions.runScripts !== "outside-only"
+    ) {
+      throw new RangeError(
+        `runScripts must be undefined, "dangerously", or "outside-only"`
+      );
     }
   }
 
@@ -312,7 +341,9 @@ function transformOptions(options, encoding) {
   }
 
   if (options.pretendToBeVisual !== undefined) {
-    transformed.windowOptions.pretendToBeVisual = Boolean(options.pretendToBeVisual);
+    transformed.windowOptions.pretendToBeVisual = Boolean(
+      options.pretendToBeVisual
+    );
   }
 
   if (options.storageQuota !== undefined) {
@@ -334,7 +365,10 @@ function normalizeHTML(html = "", transportLayerEncodingLabel) {
   }
 
   if (Buffer.isBuffer(html)) {
-    encoding = sniffHTMLEncoding(html, { defaultEncoding: "windows-1252", transportLayerEncodingLabel });
+    encoding = sniffHTMLEncoding(html, {
+      defaultEncoding: "windows-1252",
+      transportLayerEncodingLabel,
+    });
     html = whatwgEncoding.decode(html, encoding);
   } else {
     html = String(html);

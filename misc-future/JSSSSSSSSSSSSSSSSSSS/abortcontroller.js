@@ -6,7 +6,7 @@ const utils = require("./utils.js");
 const impl = utils.implSymbol;
 
 module.exports = {
-  createInterface: function(defaultPrivateData = {}) {
+  createInterface: function (defaultPrivateData = {}) {
     function AbortController() {
       if (new.target === undefined) {
         throw new TypeError(
@@ -22,7 +22,7 @@ module.exports = {
       value: AbortController.prototype,
       writable: false,
       enumerable: false,
-      configurable: false
+      configurable: false,
     });
 
     AbortController.prototype.abort = function abort() {
@@ -45,14 +45,14 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(AbortController.prototype, Symbol.toStringTag, {
       value: "AbortController",
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     const iface = {
@@ -83,7 +83,7 @@ module.exports = {
           value: new Impl.implementation(constructorArgs, privateData),
           writable: false,
           enumerable: false,
-          configurable: true
+          configurable: true,
         });
 
         obj[impl][utils.wrapperSymbol] = obj;
@@ -95,8 +95,8 @@ module.exports = {
       interface: AbortController,
       expose: {
         Window: { AbortController },
-        Worker: { AbortController }
-      }
+        Worker: { AbortController },
+      },
     }; // iface
     return iface;
   }, // createInterface
@@ -138,7 +138,7 @@ module.exports = {
       return utils.implForWrapper(obj);
     }
     throw new TypeError(`${context} is not of type 'AbortController'.`);
-  }
+  },
 }; // module.exports
 
 const Impl = require("../aborting/AbortController-impl.js");

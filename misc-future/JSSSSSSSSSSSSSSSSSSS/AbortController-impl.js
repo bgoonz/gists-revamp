@@ -11,5 +11,5 @@ class AbortControllerImpl {
 }
 
 module.exports = {
-  implementation: AbortControllerImpl
+  implementation: AbortControllerImpl,
 };

@@ -1,2 +1,2 @@
-var convert = require('./convert');
-module.exports = convert(require('../array'));
+var convert = require("./convert");
+module.exports = convert(require("../array"));

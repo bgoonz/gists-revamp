@@ -7,19 +7,22 @@ const impl = utils.implSymbol;
 const EventTarget = require("./EventTarget.js");
 
 module.exports = {
-  createInterface: function(defaultPrivateData = {}) {
+  createInterface: function (defaultPrivateData = {}) {
     function AbortSignal() {
       throw new TypeError("Illegal constructor");
     }
 
-    Object.setPrototypeOf(AbortSignal.prototype, EventTarget.interface.prototype);
+    Object.setPrototypeOf(
+      AbortSignal.prototype,
+      EventTarget.interface.prototype
+    );
     Object.setPrototypeOf(AbortSignal, EventTarget.interface);
 
     Object.defineProperty(AbortSignal, "prototype", {
       value: AbortSignal.prototype,
       writable: false,
       enumerable: false,
-      configurable: false
+      configurable: false,
     });
 
     Object.defineProperty(AbortSignal.prototype, "aborted", {
@@ -32,7 +35,7 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(AbortSignal.prototype, "onabort", {
@@ -55,14 +58,14 @@ module.exports = {
       },
 
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
 
     Object.defineProperty(AbortSignal.prototype, Symbol.toStringTag, {
       value: "AbortSignal",
       writable: false,
       enumerable: false,
-      configurable: true
+      configurable: true,
     });
 
     const iface = {
@@ -95,7 +98,7 @@ module.exports = {
           value: new Impl.implementation(constructorArgs, privateData),
           writable: false,
           enumerable: false,
-          configurable: true
+          configurable: true,
         });
 
         obj[impl][utils.wrapperSymbol] = obj;
@@ -107,8 +110,8 @@ module.exports = {
       interface: AbortSignal,
       expose: {
         Window: { AbortSignal },
-        Worker: { AbortSignal }
-      }
+        Worker: { AbortSignal },
+      },
     }; // iface
     return iface;
   }, // createInterface
@@ -150,7 +153,7 @@ module.exports = {
       return utils.implForWrapper(obj);
     }
     throw new TypeError(`${context} is not of type 'AbortSignal'.`);
-  }
+  },
 }; // module.exports
 
 const Impl = require("../aborting/AbortSignal-impl.js");

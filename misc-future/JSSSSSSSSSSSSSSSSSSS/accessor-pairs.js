@@ -16,7 +16,7 @@
  * @returns {boolean} `true` if the node is an `Identifier` node which was named as expected.
  */
 function isIdentifier(node, name) {
-    return node.type === "Identifier" && node.name === name;
+  return node.type === "Identifier" && node.name === name;
 }
 
 /**
@@ -28,16 +28,16 @@ function isIdentifier(node, name) {
  * @returns {boolean} `true` if the node is an argument of the specified method call.
  */
 function isArgumentOfMethodCall(node, index, object, property) {
-    const parent = node.parent;
+  const parent = node.parent;
 
-    return (
-        parent.type === "CallExpression" &&
-        parent.callee.type === "MemberExpression" &&
-        parent.callee.computed === false &&
-        isIdentifier(parent.callee.object, object) &&
-        isIdentifier(parent.callee.property, property) &&
-        parent.arguments[index] === node
-    );
+  return (
+    parent.type === "CallExpression" &&
+    parent.callee.type === "MemberExpression" &&
+    parent.callee.computed === false &&
+    isIdentifier(parent.callee.object, object) &&
+    isIdentifier(parent.callee.property, property) &&
+    parent.arguments[index] === node
+  );
 }
 
 /**
@@ -46,24 +46,25 @@ function isArgumentOfMethodCall(node, index, object, property) {
  * @returns {boolean} `true` if the node is a property descriptor.
  */
 function isPropertyDescriptor(node) {
+  // Object.defineProperty(obj, "foo", {set: ...})
+  if (
+    isArgumentOfMethodCall(node, 2, "Object", "defineProperty") ||
+    isArgumentOfMethodCall(node, 2, "Reflect", "defineProperty")
+  ) {
+    return true;
+  }
 
-    // Object.defineProperty(obj, "foo", {set: ...})
-    if (isArgumentOfMethodCall(node, 2, "Object", "defineProperty") ||
-        isArgumentOfMethodCall(node, 2, "Reflect", "defineProperty")
-    ) {
-        return true;
-    }
+  /*
+   * Object.defineProperties(obj, {foo: {set: ...}})
+   * Object.create(proto, {foo: {set: ...}})
+   */
+  const grandparent = node.parent.parent;
 
-    /*
-     * Object.defineProperties(obj, {foo: {set: ...}})
-     * Object.create(proto, {foo: {set: ...}})
-     */
-    const grandparent = node.parent.parent;
-
-    return grandparent.type === "ObjectExpression" && (
-        isArgumentOfMethodCall(grandparent, 1, "Object", "create") ||
-        isArgumentOfMethodCall(grandparent, 1, "Object", "defineProperties")
-    );
+  return (
+    grandparent.type === "ObjectExpression" &&
+    (isArgumentOfMethodCall(grandparent, 1, "Object", "create") ||
+      isArgumentOfMethodCall(grandparent, 1, "Object", "defineProperties"))
+  );
 }
 
 //------------------------------------------------------------------------------
@@ -71,97 +72,99 @@ function isPropertyDescriptor(node) {
 //------------------------------------------------------------------------------
 
 module.exports = {
-    meta: {
-        type: "suggestion",
+  meta: {
+    type: "suggestion",
 
-        docs: {
-            description: "enforce getter and setter pairs in objects",
-            category: "Best Practices",
-            recommended: false,
-            url: "https://eslint.org/docs/rules/accessor-pairs"
-        },
-
-        schema: [{
-            type: "object",
-            properties: {
-                getWithoutSet: {
-                    type: "boolean",
-                    default: false
-                },
-                setWithoutGet: {
-                    type: "boolean",
-                    default: true
-                }
-            },
-            additionalProperties: false
-        }],
-
-        messages: {
-            getter: "Getter is not present.",
-            setter: "Setter is not present."
-        }
+    docs: {
+      description: "enforce getter and setter pairs in objects",
+      category: "Best Practices",
+      recommended: false,
+      url: "https://eslint.org/docs/rules/accessor-pairs",
     },
-    create(context) {
-        const config = context.options[0] || {};
-        const checkGetWithoutSet = config.getWithoutSet === true;
-        const checkSetWithoutGet = config.setWithoutGet !== false;
 
-        /**
-         * Checks a object expression to see if it has setter and getter both present or none.
-         * @param {ASTNode} node The node to check.
-         * @returns {void}
-         * @private
-         */
-        function checkLonelySetGet(node) {
-            let isSetPresent = false;
-            let isGetPresent = false;
-            const isDescriptor = isPropertyDescriptor(node);
+    schema: [
+      {
+        type: "object",
+        properties: {
+          getWithoutSet: {
+            type: "boolean",
+            default: false,
+          },
+          setWithoutGet: {
+            type: "boolean",
+            default: true,
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
 
-            for (let i = 0, end = node.properties.length; i < end; i++) {
-                const property = node.properties[i];
+    messages: {
+      getter: "Getter is not present.",
+      setter: "Setter is not present.",
+    },
+  },
+  create(context) {
+    const config = context.options[0] || {};
+    const checkGetWithoutSet = config.getWithoutSet === true;
+    const checkSetWithoutGet = config.setWithoutGet !== false;
 
-                let propToCheck = "";
+    /**
+     * Checks a object expression to see if it has setter and getter both present or none.
+     * @param {ASTNode} node The node to check.
+     * @returns {void}
+     * @private
+     */
+    function checkLonelySetGet(node) {
+      let isSetPresent = false;
+      let isGetPresent = false;
+      const isDescriptor = isPropertyDescriptor(node);
 
-                if (property.kind === "init") {
-                    if (isDescriptor && !property.computed) {
-                        propToCheck = property.key.name;
-                    }
-                } else {
-                    propToCheck = property.kind;
-                }
+      for (let i = 0, end = node.properties.length; i < end; i++) {
+        const property = node.properties[i];
 
-                switch (propToCheck) {
-                    case "set":
-                        isSetPresent = true;
-                        break;
+        let propToCheck = "";
 
-                    case "get":
-                        isGetPresent = true;
-                        break;
-
-                    default:
-
-                        // Do nothing
-                }
-
-                if (isSetPresent && isGetPresent) {
-                    break;
-                }
-            }
-
-            if (checkSetWithoutGet && isSetPresent && !isGetPresent) {
-                context.report({ node, messageId: "getter" });
-            } else if (checkGetWithoutSet && isGetPresent && !isSetPresent) {
-                context.report({ node, messageId: "setter" });
-            }
+        if (property.kind === "init") {
+          if (isDescriptor && !property.computed) {
+            propToCheck = property.key.name;
+          }
+        } else {
+          propToCheck = property.kind;
         }
 
-        return {
-            ObjectExpression(node) {
-                if (checkSetWithoutGet || checkGetWithoutSet) {
-                    checkLonelySetGet(node);
-                }
-            }
-        };
+        switch (propToCheck) {
+          case "set":
+            isSetPresent = true;
+            break;
+
+          case "get":
+            isGetPresent = true;
+            break;
+
+          default:
+
+          // Do nothing
+        }
+
+        if (isSetPresent && isGetPresent) {
+          break;
+        }
+      }
+
+      if (checkSetWithoutGet && isSetPresent && !isGetPresent) {
+        context.report({ node, messageId: "getter" });
+      } else if (checkGetWithoutSet && isGetPresent && !isSetPresent) {
+        context.report({ node, messageId: "setter" });
+      }
     }
+
+    return {
+      ObjectExpression(node) {
+        if (checkSetWithoutGet || checkGetWithoutSet) {
+          checkLonelySetGet(node);
+        }
+      },
+    };
+  },
 };

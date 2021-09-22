@@ -9,7 +9,7 @@ let inventory = [
     id: 3,
     car_make: "Land Rover",
     car_model: "Defender Ice Edition",
-    car_year: 2010
+    car_year: 2010,
   },
   { id: 4, car_make: "Honda", car_model: "Accord", car_year: 1983 },
   { id: 5, car_make: "Mitsubishi", car_model: "Galant", car_year: 1990 },
@@ -27,7 +27,7 @@ let inventory = [
     id: 16,
     car_make: "Mitsubishi",
     car_model: "Montero Sport",
-    car_year: 2001
+    car_year: 2001,
   },
   { id: 17, car_make: "Buick", car_model: "Skylark", car_year: 1987 },
   { id: 18, car_make: "Geo", car_model: "Prizm", car_year: 1995 },
@@ -62,7 +62,7 @@ let inventory = [
   { id: 47, car_make: "Volkswagen", car_model: "Jetta", car_year: 2007 },
   { id: 48, car_make: "Dodge", car_model: "Magnum", car_year: 2008 },
   { id: 49, car_make: "Chrysler", car_model: "Sebring", car_year: 1996 },
-  { id: 50, car_make: "Lincoln", car_model: "Town Car", car_year: 1999 }
+  { id: 50, car_make: "Lincoln", car_model: "Town Car", car_year: 1999 },
 ];
 
 // PROJECT RESTRICTION: You can't use map, reduce, or filter to solve these problems.  Only use native JavaScript for loops.
@@ -76,9 +76,7 @@ let inventory = [
 // ==== Challenge 1 ====
 // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log provided to you below:
 console.log(
-  `Car 33 is a ${inventory[32]["car_year"]} ${inventory[32]["car_make"]} ${
-    inventory[32]["car_model"]
-  }`
+  `Car 33 is a ${inventory[32]["car_year"]} ${inventory[32]["car_make"]} ${inventory[32]["car_model"]}`
 );
 
 // ==== Challenge 2 ====
@@ -112,9 +110,9 @@ function arraySorter(arr) {
 let modelArray = [];
 
 for (let i = 0; i < inventory.length; i++) {
-    modelArray[i] = inventory[i].car_model;
+  modelArray[i] = inventory[i].car_model;
 }
-  arraySorter(modelArray);
+arraySorter(modelArray);
 
 let carModels = modelArray;
 for (let i = 0; i < carModels.length; i++) {
@@ -155,18 +153,21 @@ console.log(carYears.length);
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
-// make a new array to put the results in 
+// make a new array to put the results in
 let makeArr = [];
-    // itterate over the inventory and select only BMW and Audi cars
-  for (let i = 0; i < inventory.length; i++) {
-    if (inventory[i]["car_make"] === "BMW" ||inventory[i]["car_make"] === "Audi") {
-        //push the bmw or audi car on to the makeArr array
-     makeArr.push(inventory[i]);
-    }
+// itterate over the inventory and select only BMW and Audi cars
+for (let i = 0; i < inventory.length; i++) {
+  if (
+    inventory[i]["car_make"] === "BMW" ||
+    inventory[i]["car_make"] === "Audi"
+  ) {
+    //push the bmw or audi car on to the makeArr array
+    makeArr.push(inventory[i]);
   }
+}
 
 let BMWAndAudi = [];
-BMWAndAudi =  makeArr; // set the results in to the BMWAndAudi array
+BMWAndAudi = makeArr; // set the results in to the BMWAndAudi array
 
 // console log the aoutput using JSON.stringify();
 console.log(JSON.stringify(BMWAndAudi));

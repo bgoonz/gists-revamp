@@ -10,35 +10,38 @@
  */
 const AlternativeStringArrange = (str1, str2) => {
   // firstly, check that both inputs are strings.
-  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-    return 'Not string(s)'
+  if (typeof str1 !== "string" || typeof str2 !== "string") {
+    return "Not string(s)";
   }
 
   // output string vlaue.
-  let outStr = ''
+  let outStr = "";
 
   // get first string length.
-  const firstStringLength = str1.length
+  const firstStringLength = str1.length;
   // get second string length.
-  const secondStringLength = str2.length
+  const secondStringLength = str2.length;
   // absolute length for oparetion.
-  const absLenght = firstStringLength > secondStringLength ? firstStringLength : secondStringLength
+  const absLenght =
+    firstStringLength > secondStringLength
+      ? firstStringLength
+      : secondStringLength;
 
   // Iterate the character count until the absolute count is reached.
   for (let charCount = 0; charCount < absLenght; charCount++) {
     // If firstStringLength is lesser than the charCount it means they are able to re-arange.
     if (charCount < firstStringLength) {
-      outStr += str1[charCount]
+      outStr += str1[charCount];
     }
 
     // If secondStringLength is lesser than the charCount it means they are able to re-arange.
     if (charCount < secondStringLength) {
-      outStr += str2[charCount]
+      outStr += str2[charCount];
     }
   }
 
   // return the output string.
-  return outStr
-}
+  return outStr;
+};
 
-module.exports = AlternativeStringArrange
+module.exports = AlternativeStringArrange;

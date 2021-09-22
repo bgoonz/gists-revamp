@@ -5,11 +5,13 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 exports.__esModule = true;
 exports.default = void 0;
 
-var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/inheritsLoose"));
+var _inheritsLoose2 = _interopRequireDefault(
+  require("@babel/runtime/helpers/inheritsLoose")
+);
 
 var _react = _interopRequireDefault(require("react"));
 
-var AppShell = /*#__PURE__*/function (_React$Component) {
+var AppShell = /*#__PURE__*/ (function (_React$Component) {
   (0, _inheritsLoose2.default)(AppShell, _React$Component);
 
   function AppShell() {
@@ -19,11 +21,14 @@ var AppShell = /*#__PURE__*/function (_React$Component) {
   var _proto = AppShell.prototype;
 
   _proto.render = function render() {
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null);
+    return /*#__PURE__*/ _react.default.createElement(
+      _react.default.Fragment,
+      null
+    );
   };
 
   return AppShell;
-}(_react.default.Component);
+})(_react.default.Component);
 
 var _default = AppShell;
 exports.default = _default;

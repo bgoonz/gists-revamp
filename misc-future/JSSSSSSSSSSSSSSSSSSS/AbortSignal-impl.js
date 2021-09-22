@@ -1,6 +1,8 @@
 "use strict";
 
-const { setupForSimpleEventAccessors } = require("../helpers/create-event-accessor");
+const {
+  setupForSimpleEventAccessors,
+} = require("../helpers/create-event-accessor");
 const EventTargetImpl = require("../events/EventTarget-impl").implementation;
 
 const Event = require("../generated/Event");
@@ -27,13 +29,11 @@ class AbortSignalImpl extends EventTargetImpl {
     }
     this.abortAlgorithms.clear();
 
-    this._dispatch(Event.createImpl(
-      [
-        "abort",
-        { bubbles: false, cancelable: false }
-      ],
-      { isTrusted: true }
-    ));
+    this._dispatch(
+      Event.createImpl(["abort", { bubbles: false, cancelable: false }], {
+        isTrusted: true,
+      })
+    );
   }
 
   _addAlgorithm(algorithm) {
@@ -51,5 +51,5 @@ class AbortSignalImpl extends EventTargetImpl {
 setupForSimpleEventAccessors(AbortSignalImpl.prototype, ["abort"]);
 
 module.exports = {
-  implementation: AbortSignalImpl
+  implementation: AbortSignalImpl,
 };

@@ -30,15 +30,15 @@ function assert(type: string, node: any, opts?: any): void {
   }
 }\n\n`;
 
-  Object.keys(definitions.VISITOR_KEYS).forEach(type => {
+  Object.keys(definitions.VISITOR_KEYS).forEach((type) => {
     output += addAssertHelper(type);
   });
 
-  Object.keys(definitions.FLIPPED_ALIAS_KEYS).forEach(type => {
+  Object.keys(definitions.FLIPPED_ALIAS_KEYS).forEach((type) => {
     output += addAssertHelper(type);
   });
 
-  Object.keys(definitions.DEPRECATED_KEYS).forEach(type => {
+  Object.keys(definitions.DEPRECATED_KEYS).forEach((type) => {
     const newType = definitions.DEPRECATED_KEYS[type];
     output += `export function assert${type}(node: any, opts: any): void {
   console.trace("The node type ${type} has been renamed to ${newType}");

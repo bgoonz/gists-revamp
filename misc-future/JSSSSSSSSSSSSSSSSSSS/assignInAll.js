@@ -1,5 +1,5 @@
-var convert = require('./convert'),
-    func = convert('assignInAll', require('../assignIn'));
+var convert = require("./convert"),
+  func = convert("assignInAll", require("../assignIn"));
 
-func.placeholder = require('./placeholder');
+func.placeholder = require("./placeholder");
 module.exports = func;

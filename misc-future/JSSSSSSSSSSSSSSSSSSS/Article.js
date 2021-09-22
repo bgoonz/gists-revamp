@@ -4,7 +4,7 @@ class Article {
   constructor(element) {
     // assign this.element to the passed in article element
     this.element = element;
-    // create a reference to the ".expandButton" class. 
+    // create a reference to the ".expandButton" class.
     this.expandButton = element.querySelector(".expandButton");
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.innerHTML = "expand";
@@ -18,10 +18,10 @@ class Article {
     if (menuOpen === false) {
       this.element.classList.toggle("article-open");
       this.expandButton.innerHTML = "close";
-      TweenMax.fromTo(this.element, 0.3, {height:50}, {height:500});
+      TweenMax.fromTo(this.element, 0.3, { height: 50 }, { height: 500 });
       menuOpen = true;
-    } else if(menuOpen === true) {
-      TweenMax.fromTo(this.element, 0.3, {height:500}, {height:50});
+    } else if (menuOpen === true) {
+      TweenMax.fromTo(this.element, 0.3, { height: 500 }, { height: 50 });
       this.expandButton.innerHTML = "expand";
       menuOpen = false;
     }
@@ -75,18 +75,27 @@ function createArticle(heading, date, p1, p2, p3) {
 }
 
 // lets create a new article component from the data we provide
-createArticle("This new Heading", "Dec 5th, 2017", " This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. "," This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. "," This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. ");
-
+createArticle(
+  "This new Heading",
+  "Dec 5th, 2017",
+  " This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. ",
+  " This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. ",
+  " This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. "
+);
 
 // lets try to add a few aka 200 articles
-for(let i = 0; i < 200; i++) {
-  createArticle(`for loop heading ${i + 1}.`, "Dec 5th, 2017", " This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. "," This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. "," This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. ");
+for (let i = 0; i < 200; i++) {
+  createArticle(
+    `for loop heading ${i + 1}.`,
+    "Dec 5th, 2017",
+    " This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. ",
+    " This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. ",
+    " This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool.This is some filler text that i have writter lorem ipsom mordor dolor sit on a toadstool. "
+  );
 }
 
 // START HERE: Select all classes named ".article" and assign that value to the articles variable
 let articles = document.querySelectorAll(".article");
 
-
 // Use .map() to iterate over the articles array and create a new instance of Article by passing in each article element as a parameter to the constructor.
-articles = Array.from(articles).map(article => new Article(article));
-
+articles = Array.from(articles).map((article) => new Article(article));

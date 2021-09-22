@@ -1,13 +1,32 @@
-var plugins = [{
-      plugin: require('C:/Users/bryan/Downloads/gatsby-starter-resume-master/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
-      plugin: require('C:/Users/bryan/Downloads/gatsby-starter-resume-master/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Resume","short_name":"Landing","start_url":"/gatsby-starter-resume/","background_color":"#663399","theme_color":"#663399","display":"standalone","icon":"src/assets/img/website-icon.png","legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":"8b8c11595e531cd02a36c2310402617f"},
-    },{
-      plugin: require('C:/Users/bryan/Downloads/gatsby-starter-resume-master/node_modules/gatsby-plugin-offline/gatsby-ssr'),
-      options: {"plugins":[]},
-    }]
+var plugins = [
+  {
+    plugin: require("C:/Users/bryan/Downloads/gatsby-starter-resume-master/node_modules/gatsby-plugin-react-helmet/gatsby-ssr"),
+    options: { plugins: [] },
+  },
+  {
+    plugin: require("C:/Users/bryan/Downloads/gatsby-starter-resume-master/node_modules/gatsby-plugin-manifest/gatsby-ssr"),
+    options: {
+      plugins: [],
+      name: "Resume",
+      short_name: "Landing",
+      start_url: "/gatsby-starter-resume/",
+      background_color: "#663399",
+      theme_color: "#663399",
+      display: "standalone",
+      icon: "src/assets/img/website-icon.png",
+      legacy: true,
+      theme_color_in_head: true,
+      cache_busting_mode: "query",
+      crossOrigin: "anonymous",
+      include_favicon: true,
+      cacheDigest: "8b8c11595e531cd02a36c2310402617f",
+    },
+  },
+  {
+    plugin: require("C:/Users/bryan/Downloads/gatsby-starter-resume-master/node_modules/gatsby-plugin-offline/gatsby-ssr"),
+    options: { plugins: [] },
+  },
+];
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
 //   {
@@ -20,33 +39,33 @@ var plugins = [{
 //   },
 // ]
 
-const apis = require(`./api-ssr-docs`)
+const apis = require(`./api-ssr-docs`);
 
 // Run the specified API in any plugins that have implemented it
 module.exports = (api, args, defaultReturn, argTransform) => {
   if (!apis[api]) {
-    console.log(`This API doesn't exist`, api)
+    console.log(`This API doesn't exist`, api);
   }
 
   // Run each plugin in series.
   // eslint-disable-next-line no-undef
-  let results = plugins.map(plugin => {
+  let results = plugins.map((plugin) => {
     if (!plugin.plugin[api]) {
-      return undefined
+      return undefined;
     }
-    const result = plugin.plugin[api](args, plugin.options)
+    const result = plugin.plugin[api](args, plugin.options);
     if (result && argTransform) {
-      args = argTransform({ args, result })
+      args = argTransform({ args, result });
     }
-    return result
-  })
+    return result;
+  });
 
   // Filter out undefined results.
-  results = results.filter(result => typeof result !== `undefined`)
+  results = results.filter((result) => typeof result !== `undefined`);
 
   if (results.length > 0) {
-    return results
+    return results;
   } else {
-    return [defaultReturn]
+    return [defaultReturn];
   }
-}
+};
