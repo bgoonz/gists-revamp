@@ -1,12 +1,10 @@
-Window sizes and scrolling
-==========================
+# Window sizes and scrolling
 
 How do we find the width and height of the browser window? How do we get the full width and height of the document, including the scrolled out part? How do we scroll the page using JavaScript?
 
 For this type of information, we can use the root document element `document.documentElement`, that corresponds to the `<html>` tag. But there are additional methods and peculiarities to consider.
 
-Width/height of the window
---------------------------
+## Width/height of the window
 
 To get window width and height, we can use the `clientWidth/clientHeight` of `document.documentElement`:
 
@@ -22,16 +20,15 @@ If there exists a scrollbar, and it occupies some space, `clientWidth/clientHeig
 
 `window.innerWidth/innerHeight` includes the scrollbar.
 
-If there’s a scrollbar, and it occupies some space, then these two lines show different values: `js run alert( window.innerWidth ); // full window width alert(         document.documentElement.clientWidth ); // window width minus the         scrollbar`
+If there’s a scrollbar, and it occupies some space, then these two lines show different values: `js run alert( window.innerWidth ); // full window width alert( document.documentElement.clientWidth ); // window width minus the scrollbar`
 
-In most cases, we need the *available* window width in order to draw or position something within scrollbars (if there are any), so we should use `documentElement.clientHeight/clientWidth`. \`\`\`\`
+In most cases, we need the _available_ window width in order to draw or position something within scrollbars (if there are any), so we should use `documentElement.clientHeight/clientWidth`. \`\`\`\`
 
-\`\``warn header="`DOCTYPE`is important" Please note: top-level geometry properties may work a         little bit differently when there's no`&lt;!DOCTYPE HTML&gt;\` in HTML. Odd things are possible.
+\`\``warn header="`DOCTYPE`is important" Please note: top-level geometry properties may work a little bit differently when there's no`&lt;!DOCTYPE HTML&gt;\` in HTML. Odd things are possible.
 
 In modern HTML we should always write `DOCTYPE`. \`\`\`
 
-Width/height of the document
-----------------------------
+## Width/height of the document
 
 Theoretically, as the root document element is `document.documentElement`, and it encloses all the content, we could measure the document’s full size as `document.documentElement.scrollWidth/scrollHeight`.
 
@@ -45,8 +42,7 @@ alert(‘Full document height, with scrolled out part:’ + scrollHeight); \`\`\
 
 Why so? Better don’t ask. These inconsistencies come from ancient times, not a “smart” logic.
 
-Get the current scroll \[\#page-scroll\]
-----------------------------------------
+## Get the current scroll \[\#page-scroll\]
 
 DOM elements have their current scroll state in their `scrollLeft/scrollTop` properties.
 
@@ -54,14 +50,13 @@ For document scroll, `document.documentElement.scrollLeft/scrollTop` works in mo
 
 Luckily, we don’t have to remember these peculiarities at all, because the scroll is available in the special properties, `window.pageXOffset/pageYOffset`:
 
-`js run alert('Current scroll from the top: ' + window.pageYOffset);         alert('Current scroll from the left: ' + window.pageXOffset);`
+`js run alert('Current scroll from the top: ' + window.pageYOffset); alert('Current scroll from the left: ' + window.pageXOffset);`
 
 These properties are read-only.
 
-`` smart header="Also available as `window` properties `scrollX` and         `scrollY`" For historical reasons, both properties exist, but they are         the same: - `window.pageXOffset` is an alias of `window.scrollX`. -         `window.pageYOffset` is an alias of `window.scrollY`. ``
+`` smart header="Also available as `window` properties `scrollX` and `scrollY`" For historical reasons, both properties exist, but they are the same: - `window.pageXOffset` is an alias of `window.scrollX`. - `window.pageYOffset` is an alias of `window.scrollY`. ``
 
-Scrolling: scrollTo, scrollBy, scrollIntoView \[\#window-scroll\]
------------------------------------------------------------------
+## Scrolling: scrollTo, scrollBy, scrollIntoView \[\#window-scroll\]
 
     To scroll the page with JavaScript, its DOM must be fully built.
 
@@ -73,29 +68,28 @@ We can do the same for the page using `document.documentElement.scrollTop/scroll
 
 Alternatively, there’s a simpler, universal solution: special methods [window.scrollBy(x,y)](mdn:api/Window/scrollBy) and [window.scrollTo(pageX,pageY)](mdn:api/Window/scrollTo).
 
--   The method `scrollBy(x,y)` scrolls the page *relative to its current position*. For instance, `scrollBy(0,10)` scrolls the page `10px` down.
+- The method `scrollBy(x,y)` scrolls the page _relative to its current position_. For instance, `scrollBy(0,10)` scrolls the page `10px` down.
 
-        The button below demonstrates this:
+      The button below demonstrates this:
 
-        <button onclick="window.scrollBy(0,10)">window.scrollBy(0,10)</button>
+      <button onclick="window.scrollBy(0,10)">window.scrollBy(0,10)</button>
 
--   The method `scrollTo(pageX,pageY)` scrolls the page *to absolute coordinates*, so that the top-left corner of the visible part has coordinates `(pageX, pageY)` relative to the document’s top-left corner. It’s like setting `scrollLeft/scrollTop`.
+- The method `scrollTo(pageX,pageY)` scrolls the page _to absolute coordinates_, so that the top-left corner of the visible part has coordinates `(pageX, pageY)` relative to the document’s top-left corner. It’s like setting `scrollLeft/scrollTop`.
 
-    To scroll to the very beginning, we can use `scrollTo(0,0)`.
+  To scroll to the very beginning, we can use `scrollTo(0,0)`.
 
-        <button onclick="window.scrollTo(0,0)">window.scrollTo(0,0)</button>
+      <button onclick="window.scrollTo(0,0)">window.scrollTo(0,0)</button>
 
 These methods work for all browsers the same way.
 
-scrollIntoView
---------------
+## scrollIntoView
 
 For completeness, let’s cover one more method: [elem.scrollIntoView(top)](mdn:api/Element/scrollIntoView).
 
 The call to `elem.scrollIntoView(top)` scrolls the page to make `elem` visible. It has one argument:
 
--   If `top=true` (that’s the default), then the page will be scrolled to make `elem` appear on the top of the window. The upper edge of the element will be aligned with the window top.
--   If `top=false`, then the page scrolls to make `elem` appear at the bottom. The bottom edge of the element will be aligned with the window bottom.
+- If `top=true` (that’s the default), then the page will be scrolled to make `elem` appear on the top of the window. The upper edge of the element will be aligned with the window top.
+- If `top=false`, then the page scrolls to make `elem` appear at the bottom. The bottom edge of the element will be aligned with the window bottom.
 
 <!-- -->
 
@@ -107,8 +101,7 @@ The call to `elem.scrollIntoView(top)` scrolls the page to make `elem` visible. 
 
     <button onclick="this.scrollIntoView(false)">this.scrollIntoView(false)</button>
 
-Forbid the scrolling
---------------------
+## Forbid the scrolling
 
 Sometimes we need to make the document “unscrollable”. For instance, when we need to cover the page with a large message requiring immediate attention, and we want the visitor to interact with that message, not with the document.
 
@@ -128,25 +121,24 @@ The drawback of the method is that the scrollbar disappears. If it occupied some
 
 That looks a bit odd, but can be worked around if we compare `clientWidth` before and after the freeze. If it increased (the scrollbar disappeared), then add `padding` to `document.body` in place of the scrollbar to keep the content width the same.
 
-Summary
--------
+## Summary
 
 Geometry:
 
--   Width/height of the visible part of the document (content area width/height): `document.documentElement.clientWidth/clientHeight`
--   Width/height of the whole document, with the scrolled out part:
+- Width/height of the visible part of the document (content area width/height): `document.documentElement.clientWidth/clientHeight`
+- Width/height of the whole document, with the scrolled out part:
 
-        let scrollHeight = Math.max(
-          document.body.scrollHeight, document.documentElement.scrollHeight,
-          document.body.offsetHeight, document.documentElement.offsetHeight,
-          document.body.clientHeight, document.documentElement.clientHeight
-        );
+      let scrollHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+      );
 
 Scrolling:
 
--   Read the current scroll: `window.pageYOffset/pageXOffset`.
--   Change the current scroll:
+- Read the current scroll: `window.pageYOffset/pageXOffset`.
+- Change the current scroll:
 
-    -   `window.scrollTo(pageX,pageY)` – absolute coordinates,
-    -   `window.scrollBy(x,y)` – scroll relative the current place,
-    -   `elem.scrollIntoView(top)` – scroll to make `elem` visible (align with the top/bottom of the window).
+  - `window.scrollTo(pageX,pageY)` – absolute coordinates,
+  - `window.scrollBy(x,y)` – scroll relative the current place,
+  - `elem.scrollIntoView(top)` – scroll to make `elem` visible (align with the top/bottom of the window).

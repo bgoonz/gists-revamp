@@ -2,13 +2,13 @@ Converting md files to html w/highlighting 0a) Create a root directory to pull i
 
 ’ &gt;&gt; index.html $&gt; echo ’
 
-’ &gt;&gt; index.html $&gt; ls &gt;&gt; temp.html $&gt; sed -n ‘/./s/[($1)](($1))/p’ temp.html &gt;&gt; index.html $&gt; echo ’
+’ &gt;&gt; index.html $&gt; ls &gt;&gt; temp.html $&gt; sed -n ‘/./s/[($1)](<($1)>)/p’ temp.html &gt;&gt; index.html $&gt; echo ’
 
 ’ &gt;&gt; index.html $&gt; rm temp.html
 
 1.  Recursively convert each md file to html using pandoc: <span class="math inline">$&gt; find . -name "\*.md" | while read i; do pandoc -f markdown -t html "$</span>i" -o "${i%.\*}.html"; done
 
-2.  Change all internal file urls from pointing to *.md links and instead point to the local* .html file
+2.  Change all internal file urls from pointing to _.md links and instead point to the local_ .html file
     1.  recursively run this sed command (programatically replace FILENAME) sed -n -i.bak ‘/href="./s/.md/.html/’ FILENAME.html
     2.  alternatively, run the following command instead (programatically replace FILENAME) sed -e ‘/href="./s/.md/.html/’ FILENAME.html &gt; FILENAME.html.tmp && mv FILENAME.html.tmp FILENAME.html
 3.  Add code highlighting to all pages with highlight.js library using the following:
@@ -18,7 +18,7 @@ Converting md files to html w/highlighting 0a) Create a root directory to pull i
         ’ &gt;&gt; temp.html $&gt; echo ’
         ’ &gt;&gt; temp.html $&gt; cat FILENAME.html &gt;&gt; temp.html $&gt; cat temp.html &gt; FILENAME.html $&gt; echo ’
         ’ &gt;&gt; FILENAME.html $&gt; rm temp.html
-4.  Recursively delete all *.md files <span class="math inline">$&gt; find . -name "\*.md" | while read i; do pandoc -f markdown -t html "$</span>i" -o "${i%.*}.html"; done
+4.  Recursively delete all _.md files <span class="math inline">$&gt; find . -name "\*.md" | while read i; do pandoc -f markdown -t html "$</span>i" -o "${i%._}.html"; done
 
 5.  Fire up a simple static server to serve these files:
     1.  use python:
@@ -27,12 +27,11 @@ Converting md files to html w/highlighting 0a) Create a root directory to pull i
     2.  use Node:
         1.  install http-server: npm install http-server -g
         2.  cd /path/to/files
-        3.  http-server -p \[port\] ==&gt; default\_port=8080
+        3.  http-server -p \[port\] ==&gt; default_port=8080
 
-\*\*\*\*\* EXTRAS: 1) From each file, extract ‘Goals’, ‘Exercises’, and ‘Resources’ if they exist \*\*\* Write a Ruby script to split out the Goals/Exercises/Resources sections \*\*\* Use File.open to work on the file: http://www.tutorialspoint.com/ruby/ruby\_input\_output.htm \*\*\* Use “string”.include?(other\_string) to break up sections on
+\*\*\*\*\* EXTRAS: 1) From each file, extract ‘Goals’, ‘Exercises’, and ‘Resources’ if they exist \*\*\* Write a Ruby script to split out the Goals/Exercises/Resources sections \*\*\* Use File.open to work on the file: http://www.tutorialspoint.com/ruby/ruby\_input\_output.htm \*\*\* Use “string”.include?(other_string) to break up sections on
 
-headers http://www.ruby-doc.org/core-2.1.2/String.html\#method-i-include-3F \*\*\* Insert
------------------------------------------------------------------------------------------
+## headers http://www.ruby-doc.org/core-2.1.2/String.html\#method-i-include-3F \*\*\* Insert
 
 ….
 

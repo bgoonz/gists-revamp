@@ -1,5 +1,4 @@
-Styles and classes
-==================
+# Styles and classes
 
 Before we get into JavaScript’s ways of dealing with styles and classes – here’s an important rule. Hopefully it’s obvious enough, but we still have to mention it.
 
@@ -22,8 +21,7 @@ For example, `style` is acceptable if we calculate coordinates of an element dyn
 
 For other cases, like making the text red, adding a background icon – describe that in CSS and then add the class (JavaScript can do that). That’s more flexible and easier to support.
 
-className and classList
------------------------
+## className and classList
 
 Changing a class is one of the most often used actions in scripts.
 
@@ -33,7 +31,7 @@ So for classes the similar-looking property `"className"` was introduced: the `e
 
 For instance:
 
-`html run <body class="main page">   <script>     alert(document.body.className); // main page   </script> </body>`
+`html run <body class="main page"> <script> alert(document.body.className); // main page </script> </body>`
 
 If we assign something to `elem.className`, it replaces the whole string of classes. Sometimes that’s what we need, but often we want to add/remove a single class.
 
@@ -51,22 +49,21 @@ So we can operate both on the full class string using `className` or on individu
 
 Methods of `classList`:
 
--   `elem.classList.add/remove("class")` – adds/removes the class.
--   `elem.classList.toggle("class")` – adds the class if it doesn’t exist, otherwise removes it.
--   `elem.classList.contains("class")` – checks for the given class, returns `true/false`.
+- `elem.classList.add/remove("class")` – adds/removes the class.
+- `elem.classList.toggle("class")` – adds the class if it doesn’t exist, otherwise removes it.
+- `elem.classList.contains("class")` – checks for the given class, returns `true/false`.
 
 Besides, `classList` is iterable, so we can list all classes with `for..of`, like this:
 
-`html run <body class="main page">   <script>     for (let name of document.body.classList) {       alert(name); // main, and then page     }   </script> </body>`
+`html run <body class="main page"> <script> for (let name of document.body.classList) { alert(name); // main, and then page } </script> </body>`
 
-Element style
--------------
+## Element style
 
 The property `elem.style` is an object that corresponds to what’s written in the `"style"` attribute. Setting `elem.style.width="100px"` works the same as if we had in the attribute `style` a string `width:100px`.
 
 For multi-word property the camelCase is used:
 
-`js no-beautify background-color  => elem.style.backgroundColor z-index           => elem.style.zIndex border-left-width => elem.style.borderLeftWidth`
+`js no-beautify background-color => elem.style.backgroundColor z-index => elem.style.zIndex border-left-width => elem.style.borderLeftWidth`
 
 For instance:
 
@@ -81,8 +78,7 @@ For instance:
 
 \`\`\`\`
 
-Resetting the style property
-----------------------------
+## Resetting the style property
 
 Sometimes we want to assign a style property, and later remove it.
 
@@ -110,8 +106,7 @@ Button
 
     The same can be accomplished by setting an attribute: `div.setAttribute('style', 'color: red...')`.
 
-Mind the units
---------------
+## Mind the units
 
 Don’t forget to add CSS units to values.
 
@@ -123,10 +118,9 @@ For instance, we should not set `elem.style.top` to `10`, but rather to `10px`. 
 
 Please note: the browser “unpacks” the property `style.margin` in the last lines and infers `style.marginLeft` and `style.marginTop` from it.
 
-Computed styles: getComputedStyle
----------------------------------
+## Computed styles: getComputedStyle
 
-So, modifying a style is easy. But how to *read* it?
+So, modifying a style is easy. But how to _read_ it?
 
 For instance, we want to know the size, margins, the color of an element. How to do it?
 
@@ -166,8 +160,8 @@ For instance:
 
 \`\`\`smart header=“Computed and resolved values” There are two concepts in [CSS](https://drafts.csswg.org/cssom/#resolved-values):
 
-1.  A *computed* style value is the value after all CSS rules and CSS inheritance is applied, as the result of the CSS cascade. It can look like `height:1em` or `font-size:125%`.
-2.  A *resolved* style value is the one finally applied to the element. Values like `1em` or `125%` are relative. The browser takes the computed value and makes all units fixed and absolute, for instance: `height:20px` or `font-size:16px`. For geometry properties resolved values may have a floating point, like `width:50.5px`.
+1.  A _computed_ style value is the value after all CSS rules and CSS inheritance is applied, as the result of the CSS cascade. It can look like `height:1em` or `font-size:125%`.
+2.  A _resolved_ style value is the one finally applied to the element. Values like `1em` or `125%` are relative. The browser takes the computed value and makes all units fixed and absolute, for instance: `height:20px` or `font-size:16px`. For geometry properties resolved values may have a floating point, like `width:50.5px`.
 
 A long time ago `getComputedStyle` was created to get computed values, but it turned out that resolved values are much more convenient, and the standard changed.
 
@@ -179,7 +173,7 @@ For instance, if there are properties `paddingLeft/paddingTop`, then what should
 
 There are other inconsistencies. As an example, some browsers (Chrome) show `10px` in the document below, and some of them (Firefox) – do not:
 
-`html run <style>   body {     margin: 10px;   } </style> <script>   let style = getComputedStyle(document.body);   alert(style.margin); // empty string in Firefox </script>` \`\`\`\`
+`html run <style> body { margin: 10px; } </style> <script> let style = getComputedStyle(document.body); alert(style.margin); // empty string in Firefox </script>` \`\`\`\`
 
 \`\``smart header="Styles applied to`:visited`links are hidden!" Visited links may be colored using`:visited\` CSS pseudoclass.
 
@@ -187,20 +181,19 @@ But `getComputedStyle` does not give access to that color, because otherwise an 
 
 JavaScript may not see the styles applied by `:visited`. And also, there’s a limitation in CSS that forbids applying geometry-changing styles in `:visited`. That’s to guarantee that there’s no side way for an evil page to test if a link was visited and hence to break the privacy. \`\`\`
 
-Summary
--------
+## Summary
 
 To manage classes, there are two DOM properties:
 
--   `className` – the string value, good to manage the whole set of classes.
--   `classList` – the object with methods `add/remove/toggle/contains`, good for individual classes.
+- `className` – the string value, good to manage the whole set of classes.
+- `classList` – the object with methods `add/remove/toggle/contains`, good for individual classes.
 
 To change the styles:
 
--   The `style` property is an object with camelCased styles. Reading and writing to it has the same meaning as modifying individual properties in the `"style"` attribute. To see how to apply `important` and other rare stuff – there’s a list of methods at [MDN](mdn:api/CSSStyleDeclaration).
+- The `style` property is an object with camelCased styles. Reading and writing to it has the same meaning as modifying individual properties in the `"style"` attribute. To see how to apply `important` and other rare stuff – there’s a list of methods at [MDN](mdn:api/CSSStyleDeclaration).
 
--   The `style.cssText` property corresponds to the whole `"style"` attribute, the full string of styles.
+- The `style.cssText` property corresponds to the whole `"style"` attribute, the full string of styles.
 
 To read the resolved styles (with respect to all classes, after all CSS is applied and final values are calculated):
 
--   The `getComputedStyle(elem, [pseudo])` returns the style-like object with them. Read-only.
+- The `getComputedStyle(elem, [pseudo])` returns the style-like object with them. Read-only.

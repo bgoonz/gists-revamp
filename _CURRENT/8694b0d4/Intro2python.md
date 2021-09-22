@@ -1,5 +1,4 @@
-Python Programming For Beginners
-================================
+# Python Programming For Beginners
 
 Welcome to this book on **“Learning Python In 100 Steps”**.
 
@@ -13,25 +12,23 @@ In this book, you will learn to write **structural** and **object** **oriented**
 
 We would be using **Python 3**, with **PyCharm** as the IDE.
 
-Table of Contents
------------------
+## Table of Contents
 
--   [Chapter 01 - Getting Ready with Python](#chapter-01---getting-ready-with-python)
--   [Chapter 02 - Introduction To Python Programming](#chapter-02---introduction-to-python-programming)
--   [Chapter 03 - Introducing Methods](#chapter-03---introducing-methods)
--   [Chapter 04 - Introduction To Python Platform](#chapter-04---introduction-to-python-platform)
--   [Chapter 05 - Introduction To PyCharm](#chapter-05---introduction-to-pycharm)
--   [Chapter 06 - Introducing Data Types and Conditionals](#chapter-06---introducing-data-types-and-conditionals)
--   [Chapter 07 - Introducing Loops](#chapter-07---introducing-loops)
--   [Chapter 08 - Python Tips](#chapter-08---python-tips)
--   [Chapter 09 - Introducing Object Oriented Programming](#chapter-09---introducing-object-oriented-programming)
--   [Chapter 10 : Python Data Structures](#chapter-10---python-data-structures)
--   [Chapter 11 - Object Oriented Programming Revisited](#chapter-11---object-oriented-programming-revisited)
--   [Chapter 12 - Error Handling](#chapter-12---error-handling)
--   [Chapter 13 - More Python Tips](#chapter-13---more-python-tips)
+- [Chapter 01 - Getting Ready with Python](#chapter-01---getting-ready-with-python)
+- [Chapter 02 - Introduction To Python Programming](#chapter-02---introduction-to-python-programming)
+- [Chapter 03 - Introducing Methods](#chapter-03---introducing-methods)
+- [Chapter 04 - Introduction To Python Platform](#chapter-04---introduction-to-python-platform)
+- [Chapter 05 - Introduction To PyCharm](#chapter-05---introduction-to-pycharm)
+- [Chapter 06 - Introducing Data Types and Conditionals](#chapter-06---introducing-data-types-and-conditionals)
+- [Chapter 07 - Introducing Loops](#chapter-07---introducing-loops)
+- [Chapter 08 - Python Tips](#chapter-08---python-tips)
+- [Chapter 09 - Introducing Object Oriented Programming](#chapter-09---introducing-object-oriented-programming)
+- [Chapter 10 : Python Data Structures](#chapter-10---python-data-structures)
+- [Chapter 11 - Object Oriented Programming Revisited](#chapter-11---object-oriented-programming-revisited)
+- [Chapter 12 - Error Handling](#chapter-12---error-handling)
+- [Chapter 13 - More Python Tips](#chapter-13---more-python-tips)
 
-Chapter 01 - Getting Ready with Python
---------------------------------------
+## Chapter 01 - Getting Ready with Python
 
 ### Installing Python 3, And Launching Python Shell
 
@@ -53,12 +50,11 @@ You can execute the code, and the shell would immediately give you output.
 
 Using the the Python Shell is an awesome way to learn Python.
 
-Chapter 02 - Introduction To Python Programming
------------------------------------------------
+## Chapter 02 - Introduction To Python Programming
 
 Most programmers find programming a lot of fun, and besides, it also gets their work done.
 
-Programming mainly involves *problem solving*, where one makes use of a computer to solve a real world problem.
+Programming mainly involves _problem solving_, where one makes use of a computer to solve a real world problem.
 
 During our journey here, we will approach programming in a very different way. We will not only introduce you to the Python language, but also help you pick up essential problem solving skills.
 
@@ -74,12 +70,12 @@ Are you ready for your first programming challenge? Let’s get going now! We wi
 
 In this step, we:
 
--   Were introduced to the concept of problem solving
--   Understood how good programmers approach problem solving
+- Were introduced to the concept of problem solving
+- Understood how good programmers approach problem solving
 
 ### Step 01: Our First Programming Challenge
 
-Our first *programming challenge* aims to do, what every kid does in math class: read out a multiplication table. We now want to give this task to the computer. Here is the statement of our problem:
+Our first _programming challenge_ aims to do, what every kid does in math class: read out a multiplication table. We now want to give this task to the computer. Here is the statement of our problem:
 
 #### The **Print Multiplication Table Challenge (PMT-Challenge)**
 
@@ -88,54 +84,54 @@ Our first *programming challenge* aims to do, what every kid does in math class:
 
 The display needs to be:
 
-***5 \* 1 = 5***
+**_5 \* 1 = 5_**
 
-***5 \* 2 = 10***
+**_5 \* 2 = 10_**
 
-***5 \* 3 = 15***
+**_5 \* 3 = 15_**
 
-***5 \* 4 = 20***
+**_5 \* 4 = 20_**
 
-***5 \* 5 = 25***
+**_5 \* 5 = 25_**
 
-***5 \* 6 = 30***
+**_5 \* 6 = 30_**
 
-***5 \* 7 = 35***
+**_5 \* 7 = 35_**
 
-***5 \* 8 = 40***
+**_5 \* 8 = 40_**
 
-***5 \* 9 = 45***
+**_5 \* 9 = 45_**
 
-***5 \* 10 = 50***
+**_5 \* 10 = 50_**
 
-This is the challenge. For convenience, let’s give it a label, say *PMT-Challenge*. What would be the important concepts we need to learn, to solve this challenge? The following list of concepts would be a good starting point:
+This is the challenge. For convenience, let’s give it a label, say _PMT-Challenge_. What would be the important concepts we need to learn, to solve this challenge? The following list of concepts would be a good starting point:
 
--   **Statements**
--   **Expressions**
--   **Variables**
--   **Literals**
--   **Conditionals**
--   **Loops**
--   **Methods**
+- **Statements**
+- **Expressions**
+- **Variables**
+- **Literals**
+- **Conditionals**
+- **Loops**
+- **Methods**
 
-In the rest of this chapter, we will introduce these concepts to you, one-by-one. We will also show you how learning each concept, takes us closer to a solution to *PMT-Challenge*.
+In the rest of this chapter, we will introduce these concepts to you, one-by-one. We will also show you how learning each concept, takes us closer to a solution to _PMT-Challenge_.
 
 #### Summary
 
 In this step, we:
 
--   Stated our first programming challenge
--   Identified what programming concepts we need to learn, to solve this challenge
+- Stated our first programming challenge
+- Identified what programming concepts we need to learn, to solve this challenge
 
-### Step 02: Breaking Down *PMT-Challenge*
+### Step 02: Breaking Down _PMT-Challenge_
 
 Typically when we do programming, we have problems. Solving the problem typically need a step-by -step approach. Common sense tells us that to solve a complex problem, we break it into smaller parts, and solve each part one by one. Here is how any good programmer worth her salt, would solve a problem:
 
--   Simplify the problem, by breaking it into sub-problems
--   Solve the sub-problems in stages (in some order), using the language
--   Combine these solutions to get a final solution
+- Simplify the problem, by breaking it into sub-problems
+- Solve the sub-problems in stages (in some order), using the language
+- Combine these solutions to get a final solution
 
-The *PMT-Challenge* is no different! Now how do we break it down, and where do we really start? Once again, your common sense will reveal a solution. As a first step, we could get the computer to calculate say, `5 * 3`. The second thing we can do, is to try and print the calculated value, in a manner similar to `5 * 3 = 15`. Then, we could repeat what we just did, to print out all the entries of the `5` multiplication table. Let’s put it down a little more formally:
+The _PMT-Challenge_ is no different! Now how do we break it down, and where do we really start? Once again, your common sense will reveal a solution. As a first step, we could get the computer to calculate say, `5 * 3`. The second thing we can do, is to try and print the calculated value, in a manner similar to `5 * 3 = 15`. Then, we could repeat what we just did, to print out all the entries of the `5` multiplication table. Let’s put it down a little more formally:
 
 Here is how our draft steps look like \* Calculate `5 * 3` and print result as `15` \* Print `5 * 3 = 15` (`15` is result of previous calculation) \* Do this ten times, once for each table entry (going from `1` to `10`)
 
@@ -145,12 +141,12 @@ Let’s start with that kind of a game plan, and see where it takes us.
 
 In this step, we:
 
--   Learned that breaking down a problem into sub-problems is a great help
--   Found a way to break down the *PMT-Challenge* problem
+- Learned that breaking down a problem into sub-problems is a great help
+- Found a way to break down the _PMT-Challenge_ problem
 
 ### Step 03: Introducing Operators And Expressions
 
-Let’s focus on solving the first sub-problem of *PMT-Challenge*, the numeric computation. We want the computer to calculate `5 * 5` for example, and print `25` for us. How do we get it to do that? That’s what we would be looking at in this step.
+Let’s focus on solving the first sub-problem of _PMT-Challenge_, the numeric computation. We want the computer to calculate `5 * 5` for example, and print `25` for us. How do we get it to do that? That’s what we would be looking at in this step.
 
 #### Snippet-01: Introducing Operators
 
@@ -164,26 +160,26 @@ Using our knowledge of school math, let’s try `5 X 5`.
           ^
         SyntaxError: invalid syntax
 
-The Python Shell hits back at us, saying “*invalid syntax*”. This is how Python complains, when it doesn’t fully understand the code you type in. Here, it says our code has a “**SyntaxError**”.
+The Python Shell hits back at us, saying “_invalid syntax_”. This is how Python complains, when it doesn’t fully understand the code you type in. Here, it says our code has a “**SyntaxError**”.
 
 The reason why it complains, is because ‘`X`’ is not a valid **operator** in Python.
 
-The way you can do multiplication is by using the ‘`*`’ *operator* .
+The way you can do multiplication is by using the ‘`*`’ _operator_ .
 
-“*5 into 5*” is achieved by the code `5 * 5`, and you can see the result `25` being printed. Similarly, `5 * 6` gives us `30`.
+“_5 into 5_” is achieved by the code `5 * 5`, and you can see the result `25` being printed. Similarly, `5 * 6` gives us `30`.
 
         >>> 5 * 6
         30
 
 There are a wide range of other operators in Python:
 
--   `5 + 6` gives a result of `11`.
--   `5 - 6` leads to `-1`.
+- `5 + 6` gives a result of `11`.
+- `5 - 6` leads to `-1`.
 
-        >>> 5 + 6
-        11
-        >>> 5 - 6
-        -1
+      >>> 5 + 6
+      11
+      >>> 5 - 6
+      -1
 
 `10 / 2`, gives an output of `5.0` . There is one interesting operator, `**`. Let’s try `10 ** 3`. We ran this code, and the result we get is `1000`. Yes you guessed right, the operator performs “to the power of”. “`10` to the power of `3`” is `10 * 10 * 10`, or `1000`.
 
@@ -192,13 +188,13 @@ There are a wide range of other operators in Python:
         >>> 10 ** 3
         1000
 
-Another interesting operator is `%`, called “*modulo*”, which computes the remainder on integer division. If we do `10 % 3`, what is the remainder when `10` is divided by `3`? `3 * 3` is `9`, and `10 - 9` is `1`, which is what `%` returns in this case.
+Another interesting operator is `%`, called “_modulo_”, which computes the remainder on integer division. If we do `10 % 3`, what is the remainder when `10` is divided by `3`? `3 * 3` is `9`, and `10 - 9` is `1`, which is what `%` returns in this case.
 
 Let’s look at some terminology:
 
--   Whatever pieces of code we gave Python shell to run, are called **expressions**. So, `5 * 5`, `5 * 6` and `5 - 6` are all *expressions*. An expression is composed of *operators* and **operands**.
--   In the expression `5 * 6`, the two values `5` and `6` are called operands, and the `*` operator *operates* on them.
--   The values `5` and `6` are **literals**, because those are constants which cannot be changed.
+- Whatever pieces of code we gave Python shell to run, are called **expressions**. So, `5 * 5`, `5 * 6` and `5 - 6` are all _expressions_. An expression is composed of _operators_ and **operands**.
+- In the expression `5 * 6`, the two values `5` and `6` are called operands, and the `*` operator _operates_ on them.
+- The values `5` and `6` are **literals**, because those are constants which cannot be changed.
 
 The cool thing about Python, is that you can even have expressions with multiple operators. Therefore, you can form an expression with `5 + 5 + 5`, which evaluates to `15`. This is an expression which has three operands, and two `+` operators. You can even have expressions with different types of operators, such as in `5 + 5 * 5`.
 
@@ -213,9 +209,9 @@ Try and play around with the expressions, and understand the output which result
 
 In this step, we:
 
--   Learned how to give code input to the Python Shell
--   Understood that Python has a predefined set of operators
--   Used a few types of basic operators and their operands, to form expressions
+- Learned how to give code input to the Python Shell
+- Understood that Python has a predefined set of operators
+- Used a few types of basic operators and their operands, to form expressions
 
 ### Step 04: Programming Exercise IN-PE-01
 
@@ -240,9 +236,9 @@ You need to solve these problems by yourself. If you are able to work them out, 
 
 We wanted to calculate the number of minutes in a day. How do we do that? Think about this…
 
--   How many number of hours are there in a day? `24`.
--   And how many minutes does each hour have? It’s `60`.
--   So if you want to find out the number of minutes in a day, it’s `24 * 60`, which is `1440`.
+- How many number of hours are there in a day? `24`.
+- And how many minutes does each hour have? It’s `60`.
+- So if you want to find out the number of minutes in a day, it’s `24 * 60`, which is `1440`.
 
 #### Solution 2
 
@@ -252,19 +248,19 @@ We wanted to calculate the number of minutes in a day. How do we do that? Think 
 
 How many seconds are there in a day?
 
--   Let’s start with the number of hours, `24`.
--   The number of minutes in an hour is `60`, and
--   The number of seconds in a minute is `60` as well.
--   So it’s `24 * 60 * 60`, or `86400`.
+- Let’s start with the number of hours, `24`.
+- The number of minutes in an hour is `60`, and
+- The number of seconds in a minute is `60` as well.
+- So it’s `24 * 60 * 60`, or `86400`.
 
 #### Summary
 
 In this step, we:
 
--   Solved a Programming Exercise involving common scenarios, using Python code involving:
-    -   Expressions
-    -   Operators
-    -   Literals
+- Solved a Programming Exercise involving common scenarios, using Python code involving:
+  - Expressions
+  - Operators
+  - Literals
 
 ### Step 05: Puzzles On Expressions
 
@@ -391,12 +387,12 @@ Let’s try `print ("Hello")`
 
 `print("Hello")` finally results in `"Hello"` being printed out. To be able to print `"Hello"`, the things we need to do are:
 
--   Typing the method name print ,
--   open parentheses ( ,
--   Followed by a double quote " ,
--   The text Hello,
--   and another double quote " ,
--   finished off with a closed parentheses ).
+- Typing the method name print ,
+- open parentheses ( ,
+- Followed by a double quote " ,
+- The text Hello,
+- and another double quote " ,
+- finished off with a closed parentheses ).
 
 What we have written here is called a **statement**, a simple piece of code to execute. As part of this statement, we are **calling** a **function**, named `print()`.
 
@@ -417,9 +413,9 @@ In a later step, we will look at how to actually calculate the value and pass it
 
 In this step, we:
 
--   Understood that displaying text on the console is not the same as printing an expression value
--   Learned about the `print()` function, that is used to print text in Python.
--   Found a way to print the text `"5 * 6 = 30"` on the console, by hard-coding values in a string
+- Understood that displaying text on the console is not the same as printing an expression value
+- Learned about the `print()` function, that is used to print text in Python.
+- Found a way to print the text `"5 * 6 = 30"` on the console, by hard-coding values in a string
 
 ### Step 07: Puzzles On Utility Methods, And Strings
 
@@ -518,18 +514,18 @@ The only things not case-sensitive in Python, are string values. Earlier we saw 
         hello
         >>> print("hellO")
         hellO
-        >>> print ( "hellO" ) 
+        >>> print ( "hellO" )
         hellO
 
 However inside your code, you need to be very particular about the case of function names, class names, variable names, and the like.
 
 In your code, whitespace does not really matter. You can add space here and here, and you would still get the same output. However, in case of strings, whitespace does matter.
 
-If we say `print("hellO World")`, it would print `"hellO World"`, with a space in between. And if you do `print("hellO   World")` with three spaces, it would print the same. In expressions, white-space does not affect the output.
+If we say `print("hellO World")`, it would print `"hellO World"`, with a space in between. And if you do `print("hellO World")` with three spaces, it would print the same. In expressions, white-space does not affect the output.
 
-        >>> print ( "hellO World" ) 
+        >>> print ( "hellO World" )
         hellO World
-        >>> print ( "hellO     World" ) 
+        >>> print ( "hellO     World" )
         hellO     World
 
 The last thing we want to look at, is an **escape sequence**. Let’s say you want to print a double quote, `"`, in the code. If we were to do this: `print("Hello"")`, what would happen? The compiler says error!
@@ -540,7 +536,7 @@ The last thing we want to look at, is an **escape sequence**. Let’s say you wa
                           ^
         SyntaxError: EOL while scanning string literal
 
-If you want to print a `"` inside a string, use an escape sequence. In Python, the symbol `'\'` is used as an **escape character**. On using `'\'` adjacent to the `"`, it prints `Hello"` (notice the trailing `"`). We have used the `'\'` to **escape** the `"`, by forming an *escape sequence* `\"`.
+If you want to print a `"` inside a string, use an escape sequence. In Python, the symbol `'\'` is used as an **escape character**. On using `'\'` adjacent to the `"`, it prints `Hello"` (notice the trailing `"`). We have used the `'\'` to **escape** the `"`, by forming an _escape sequence_ `\"`.
 
     >>> print("Hello\"")
     Hello"
@@ -582,13 +578,13 @@ The above two examples can be used as a tip by newbie programmers when they form
 
 In this step, we:
 
--   Explored a number of puzzles related to code involving:
-    -   Built-in functions for numeric calculations
-    -   The `print()` function to display expressions and strings
--   Covered the following aspects of the above utilities:
-    -   Case-sensitive aspects of names and strings
-    -   The role played by whitespace
-    -   The escape character, and common escape sequences
+- Explored a number of puzzles related to code involving:
+  - Built-in functions for numeric calculations
+  - The `print()` function to display expressions and strings
+- Covered the following aspects of the above utilities:
+  - Case-sensitive aspects of names and strings
+  - The role played by whitespace
+  - The escape character, and common escape sequences
 
 ### Step 08: Formatted Output With print()
 
@@ -661,9 +657,9 @@ The great thing about this, is now we can replace the values we passed to `print
 
 In this step, we:
 
--   Discovered that Python provides a way to do formatted printing of string values
--   Looked at the `format()` function, and saw how to call it within `print()`
--   Observed how we could work only with the indexes of parameters to `format()`, and change the parameters we pass without changing the code
+- Discovered that Python provides a way to do formatted printing of string values
+- Looked at the `format()` function, and saw how to call it within `print()`
+- Observed how we could work only with the indexes of parameters to `format()`, and change the parameters we pass without changing the code
 
 ### Step 09: Puzzles On format() and print()
 
@@ -712,10 +708,10 @@ Index `0` will be replaced with the first parameter to `format()`.
 
 In this step, we:
 
--   Understood the behavior when the parameters passed to `format()`:
-    -   Exceed the indexes accessed by `print()`
-    -   Are less than the indexes accessed by `print()`
-    -   Are of type integer, floating-point or string
+- Understood the behavior when the parameters passed to `format()`:
+  - Exceed the indexes accessed by `print()`
+  - Are less than the indexes accessed by `print()`
+  - Are of type integer, floating-point or string
 
 ### Step 10: Introducing Variables
 
@@ -897,15 +893,15 @@ After the first symbol, you can also use a numeral in variable names.
 
 To summarize the rules for naming variables.
 
--   This should start with an alphabet (a capital or a small alphabet) or underscore.
--   Starting the second character, it can be alphabet, or underscore, or a numeric value.
+- This should start with an alphabet (a capital or a small alphabet) or underscore.
+- Starting the second character, it can be alphabet, or underscore, or a numeric value.
 
 #### Summary
 
 In this step, we:
 
--   Understood that a variable needs to be defined before it is used
--   Learned that there are certain rules to be followed while giving names to variables
+- Understood that a variable needs to be defined before it is used
+- Learned that there are certain rules to be followed while giving names to variables
 
 ### Step 12: Introducing Assignment
 
@@ -982,7 +978,7 @@ Python has the concept of formatted strings. The syntax to use a formatted strin
 
 If we want to print the value of a variable `a`, we can use `{a}` in the text.
 
-        >>> print(f"")  
+        >>> print(f"")
         >>> print(f"value of a is {a}")
         value of a is 1
         >>> print(f"value of b is {b}")
@@ -1052,7 +1048,7 @@ The syntax of the `for` loop is: `for i in range(1, 10): ...`. Here, `i` is the 
 
         >>> for i in range(1,10):
         ...   print(i)
-        ... 
+        ...
         1
         2
         3
@@ -1065,11 +1061,11 @@ The syntax of the `for` loop is: `for i in range(1, 10): ...`. Here, `i` is the 
 
 You would see that it prints from `1` to `9`.
 
-When we run a loop in `range(1, 10)`, `1` is *inclusive* and `10` is **exclusive**.The loop runs from `1` to the value before `10`, which is `9`.
+When we run a loop in `range(1, 10)`, `1` is _inclusive_ and `10` is **exclusive**.The loop runs from `1` to the value before `10`, which is `9`.
 
 The leading whitespace before `print(i)` is called **indentation**. We’ll talk about indentation later, when we talk about puzzles related to the `for` loop.
 
-How can you extend this concept to solving our *PMT-Challenge* problem?
+How can you extend this concept to solving our _PMT-Challenge_ problem?
 
         >>> print(f"{5} * {index} = {5*index}")
         5 * 7 = 35
@@ -1082,7 +1078,7 @@ Let’s start with a simple example.
 
         >>> for i in range(1,11):
         ...   print(f"{i}")
-        ... 
+        ...
         1
         2
         3
@@ -1100,7 +1096,7 @@ Now, how do we get it to print `5 * 1 = 5` to `5 * 10 = 50`?
 
         >>> for i in range(1,11):
         ...   print(f"5 * {i} = {5 * i}")
-        ... 
+        ...
         5 * 1 = 5
         5 * 2 = 10
         5 * 3 = 15
@@ -1150,7 +1146,7 @@ Most other programming languages use open brace `{` and closed brace `}` as deli
 
         >>> for i in range(1,10):
         ...   print(i)
-        ... 
+        ...
         1
         2
         3
@@ -1166,7 +1162,7 @@ How do we execute two lines of code as part of the `for` loop?
         >>> for i in range(1,10):
         ...  print(i)
         ...  print(2*i)
-        ... 
+        ...
         1
         2
         2
@@ -1191,7 +1187,7 @@ We are indenting both statements with a space - `print(i)` and `print(2*i)`.
 When for loop has only one line of code, you can specify it right after the `:`
 
         >>> for i in range(2,5): print(i)
-        ... 
+        ...
         2
         3
         4
@@ -1202,7 +1198,7 @@ Another best practice is to use four `<SPACE>`s for indentation, instead of just
 
         >>> for i in range(2,5):
         ...     print(i)
-        ... 
+        ...
         2
         3
         4
@@ -1213,23 +1209,23 @@ Let’s say you only want to print the odd numbers till `10`, which are `1`, `3`
 
         >>> for i in range (1,11,2):
         ...   print(i)
-        ... 
+        ...
         1
         3
         5
         7
         9
 
-In `for i in range(1, 11, 2)`, we pass in a third argument, called a *step*. After each iteration, the value of `i` is increment by `step`.
+In `for i in range(1, 11, 2)`, we pass in a third argument, called a _step_. After each iteration, the value of `i` is increment by `step`.
 
 #### Summary
 
 In this step, we:
 
--   Looked at a few puzzles about the `for` loop, which lay emphasis on the following aspects of for:
-    -   The importance of syntax elements such as the colon
-    -   Indentation
-    -   Variations of the `range()` function
+- Looked at a few puzzles about the `for` loop, which lay emphasis on the following aspects of for:
+  - The importance of syntax elements such as the colon
+  - Indentation
+  - Variations of the `range()` function
 
 ### Step 16: Programming Exercise PE-BA-02
 
@@ -1252,7 +1248,7 @@ Instead of starting with `1`, we need to start with `2`. Each time, `i` it would
 
         >>> for i in range (2,11,2):
         ...   print(i)
-        ... 
+        ...
         2
         4
         6
@@ -1265,7 +1261,7 @@ We would want to print the numbers in reverse. Think about how you would do that
 
         >>> for i in range (10,0,-1):
         ...   print(i)
-        ... 
+        ...
         10
         9
         8
@@ -1287,7 +1283,7 @@ Now, let’s print the first `10` even numbers in reverse.
 
         >>> for i in range (20,0,-2):
         ...   print(i)
-        ... 
+        ...
         20
         18
         16
@@ -1305,7 +1301,7 @@ Next, we would want to print the squares of the first 10 numbers.
 
         >>> for i in range (1,11):
         ...     print(i * i)
-        ... 
+        ...
         1
         4
         9
@@ -1323,7 +1319,7 @@ Let’s print the squares in the reverse order.
 
         >>> for i in range (10,0,-1):
         ...     print(i*i)
-        ... 
+        ...
         100
         81
         64
@@ -1341,7 +1337,7 @@ Print the squares of the even numbers. How to do that?
 
         >>> for i in range (10,0,-2):
         ...     print(i*i)
-        ... 
+        ...
         100
         64
         36
@@ -1354,7 +1350,7 @@ We leave it as an exercise for you, to print squares of odd numbers.
 
 #### Summary
 
-In this video, we: \* Tried out a few exercises involving the for loop, by playing around with printing sequences of numbers. \* Used the for loop to simplify the solution to the *PMT-Challenge* problem.
+In this video, we: \* Tried out a few exercises involving the for loop, by playing around with printing sequences of numbers. \* Used the for loop to simplify the solution to the _PMT-Challenge_ problem.
 
 ### Step 17: Review: The Basics Of Python
 
@@ -1362,20 +1358,19 @@ It must have been a roller-coaster ride to solve the multiplication table challe
 
 Let’s quickly revise the important concepts we have learned during this small journey.
 
--   `1`, `11`, `5`, … are all called literals because these are constant values. Their values don’t really change. \*Consider `5 * 4 * 50`. This is an expression. `*` is an operator, and `5`, `4` and `50` are operands.  
--   The name `i` in `i = 1`, is called a variable. It can refer to different values, at different points in time.
--   `range()` and `print()` are in-built Python functions.
--   Every complete line of code is called statement. The specific statement `print()`, is invoking a method. The other statement which we looked at earlier, was an assignment statement. `index = index + 1` would evaluate `index + 1`, and have the `index` variable refer to that value.
--   The syntax of the `for` loop was very simple. `for var in range(1, 10) : ...`, followed by statements you would want to execute in a loop, with indentation. For the sake of indentation we left four `<SPACE>`s in front of each statement inside the `for` loop.
+- `1`, `11`, `5`, … are all called literals because these are constant values. Their values don’t really change. \*Consider `5 * 4 * 50`. This is an expression. `*` is an operator, and `5`, `4` and `50` are operands.
+- The name `i` in `i = 1`, is called a variable. It can refer to different values, at different points in time.
+- `range()` and `print()` are in-built Python functions.
+- Every complete line of code is called statement. The specific statement `print()`, is invoking a method. The other statement which we looked at earlier, was an assignment statement. `index = index + 1` would evaluate `index + 1`, and have the `index` variable refer to that value.
+- The syntax of the `for` loop was very simple. `for var in range(1, 10) : ...`, followed by statements you would want to execute in a loop, with indentation. For the sake of indentation we left four `<SPACE>`s in front of each statement inside the `for` loop.
 
 So that, in a nutshell, is what we have learned over the course of our first section.
 
-Chapter 03 - Introducing Methods
---------------------------------
+## Chapter 03 - Introducing Methods
 
-In the last section, we introduced you to the basics of python. We learned those concepts by applying them to solve the *PMT-Challenge* problem. The code below is what we ended up with as we solved that chellenge.
+In the last section, we introduced you to the basics of python. We learned those concepts by applying them to solve the _PMT-Challenge_ problem. The code below is what we ended up with as we solved that chellenge.
 
-#### Snippet-01: Current Solution To *PMT-Challenge*
+#### Snippet-01: Current Solution To _PMT-Challenge_
 
         >>> for i in range (1,11):
         ...   print(f"8 * {i} = {8 * i}")
@@ -1398,7 +1393,7 @@ To print a `7` table, it would be awesome if could say `print_multiplication_tab
 
 Similarly, `print_multiplication_table(8)`, could print the multiplication table for `8`!
 
-To be able to do this, we need to create a **method**, or a **function**. Creating a method makes the code *reusable*, and we can invoke that method very easily by passing *arguments*.
+To be able to do this, we need to create a **method**, or a **function**. Creating a method makes the code _reusable_, and we can invoke that method very easily by passing _arguments_.
 
 In this section, we take an in-depth look at methods.
 
@@ -1423,7 +1418,7 @@ The syntax to create a method in Python is straightforward: \* At the start, use
         >>> def print_hello_world_twice():
         ...     print("Hello World")
         ...     print("Hello World")
-        ... 
+        ...
 
 All statements in a method should be indented. The two `print("Hello World")` are indented. So, they are part of the method body.
 
@@ -1451,9 +1446,9 @@ Now, we are able to run the method.
 
 In this step, we:
 
--   Learned we can define our own methods in the code we write
--   Understood how to define a method, and all its syntax elements
--   Saw how we can invoke a method we write
+- Learned we can define our own methods in the code we write
+- Understood how to define a method, and all its syntax elements
+- Saw how we can invoke a method we write
 
 ### Step 02: Programming Exercise PE-MD-01
 
@@ -1477,7 +1472,7 @@ We will now leave you with two exercises, based on what we have learned about me
         ...     print("Hello World")
         ...     print("Hello World")
         ...     print("Hello World")
-        ... 
+        ...
         >>> print_hello_world_thrice()
         Hello World
         Hello World
@@ -1490,7 +1485,7 @@ We will now leave you with two exercises, based on what we have learned about me
         ...     print("Statement 2")
         ...     print("Statement 3")
         ...     print("Statement 4")
-        ... 
+        ...
         >>> print_your_progress()
         Statement 1
         Statement 2
@@ -1498,10 +1493,10 @@ We will now leave you with two exercises, based on what we have learned about me
         Statement 4
 
         def print_your_progress():
-            print("Statement 1") 
-            print("Statement 2") 
-            print("Statement 3") 
-            print("Statement 4") 
+            print("Statement 1")
+            print("Statement 2")
+            print("Statement 3")
+            print("Statement 4")
 
 For convenience, we have changed the exact text we need to print. Call this method with the syntax `print_your_progress()`, and you’re able to execute its code.
 
@@ -1509,7 +1504,7 @@ Now try another exercise. We want to print `"Statement 1"`, `"Statement 2"`, `"S
 
         >>> def print_your_progress():
         ...     print("Statement 1\nStatement 2\nStatement 3\nStatement 4")
-        ... 
+        ...
         >>> print_your_progress()
         Statement 1
         Statement 2
@@ -1530,18 +1525,17 @@ A definition by itself cannot cause the code in its body to be executed.
 
 In this step, we:
 
--   Implemented solutions to a few exercises that test our understanding of Python methods. We touched concepts such as:
-    -   Defining a method body
-    -   The way to invoke a method, to run its code
-    -   The difference between the two
+- Implemented solutions to a few exercises that test our understanding of Python methods. We touched concepts such as:
+  - Defining a method body
+  - The way to invoke a method, to run its code
+  - The difference between the two
 
 ### Step 03: Passing Parameters To Methods
 
-In the previous step,we created methods. We defined `print_hello_world_twice()`, and this printed `"Hello World"` twice. In this step, let’s talk about *method arguments*, or *parameters*.
+In the previous step,we created methods. We defined `print_hello_world_twice()`, and this printed `"Hello World"` twice. In this step, let’s talk about _method arguments_, or _parameters_.
 
 #### Snippet-01:
 
-     
         >>> print_hello_world_twice()
         Hello World
         Hello World
@@ -1569,7 +1563,6 @@ Let’s call our argument `no_of_times`. If you have any experience with other p
 
 Although we are not doing exactly what we set out to, let’s see what would happen. What would happen if we say `print_hello_world()` ?
 
-     
         >>> print_hello_world()
         Traceback (most recent call last):
           File "<stdin>", line 1, in <module>
@@ -1600,7 +1593,7 @@ For now, what we are doing is we are printing `"Hello World"` `10` times.
         >>> def print_hello_world(no_of_times):
         ...    for i in range(1,10):
         ...       print("Hello World")
-        ... 
+        ...
 
         >>> print_hello_world(5)
         Hello World
@@ -1620,7 +1613,7 @@ However just print the message `5` times. We need to make use of the parameter `
         >>> def print_hello_world(no_of_times):
         ...    for i in range(1,no_of_times):
         ...       print("Hello World")
-        ... 
+        ...
 
         >>> print_hello_world(5)
         Hello World
@@ -1637,7 +1630,7 @@ That’s because `no_of_times` as a second parameter to `range()` is exclusive.
         >>> def print_hello_world(no_of_times):
         ...    for i in range(1,no_of_times+1):
         ...       print("Hello World")
-        ... 
+        ...
         >>> print_hello_world(5)
         Hello World
         Hello World
@@ -1664,9 +1657,9 @@ Something you need to always be cautious about in Python, is the indentation. Ov
 
 In this step, we:
 
--   Learned how to pass arguments to a method
--   Understood that the method definition needs to have parameters coded in
--   Observed that arguments passed during a method call can be accessed inside a methods body
+- Learned how to pass arguments to a method
+- Understood that the method definition needs to have parameters coded in
+- Observed that arguments passed during a method call can be accessed inside a methods body
 
 ### Step 04: Classroom Exercise CE-MD-01
 
@@ -1685,14 +1678,14 @@ In this step, Let’s look at a few exercises related to the method parameter.
         >>> def print_numbers(n):
         ...    for i in range(1, n+1):
         ...       print(i)
-        ... 
+        ...
         >>> print_numbers(5)
         1
         2
         3
         4
         5
-        >>> 
+        >>>
 
 If you are programming in other languages such as Java, you are used to naming methods in this way: `printNumbers()`. This convention is popularly known as “Camel Case”.
 
@@ -1705,7 +1698,7 @@ Let’s define `print_squares_of_numbers()`. This would be very similar to `prin
         >>> def print_squares_of_numbers(n):
         ...    for i in range(1, n+1):
         ...       print(i*i)
-        ... 
+        ...
         >>> print_squares_of_numbers(5)
         1
         4
@@ -1715,11 +1708,11 @@ Let’s define `print_squares_of_numbers()`. This would be very similar to `prin
 
 How is a parameter different from an argument?
 
--   Inside the definition of the method, the name within parentheses is referred to as a **parameter**. In our recent exercise, `n` is a parameter, because it’s used in the definition of `print_squares_of_numbers`.
--   When you are passing a value to a method during a method call, say `5`, that value is called an **argument**.  
--   Don’t worry too much about it. Just follow this convention for now:
-    -   In the method call, call it an *argument*.
-    -   In a method definition, call it a *parameter*.
+- Inside the definition of the method, the name within parentheses is referred to as a **parameter**. In our recent exercise, `n` is a parameter, because it’s used in the definition of `print_squares_of_numbers`.
+- When you are passing a value to a method during a method call, say `5`, that value is called an **argument**.
+- Don’t worry too much about it. Just follow this convention for now:
+  - In the method call, call it an _argument_.
+  - In a method definition, call it a _parameter_.
 
 #### Summary
 
@@ -1736,7 +1729,7 @@ In this step, let’s look at creating a method with multiple parameters.
         >>> def print_hello_world(no_of_times):
         ...    for i in range(1,no_of_times+1):
         ...       print("Hello World")
-        ... 
+        ...
 
 Let’s say we want to print another piece of text `Welcome To Python`, a specified number of times. How do you do that?
 
@@ -1749,7 +1742,7 @@ A good programmer tries to create a more generic solution.
         >>> def print_string(str, no_of_times):
         ...    for i in range(1,no_of_times+1):
         ...       print(str)
-        ... 
+        ...
         >>> print_string("Hello World", 3)
         Hello World
         Hello World
@@ -1771,7 +1764,7 @@ The Python language makes this very easy. `def print_string(str = "Hello World",
         >>> def print_string(str="Hello World", no_of_times=5):
         ...    for i in range(1,no_of_times+1):
         ...       print(str)
-        ... 
+        ...
 
 Now you can call `print_string()`, and `"Hello World"` is displayed `5` times.
 
@@ -1809,9 +1802,9 @@ Isn’t that cool!
 
 In this step, we:
 
--   Looked at how to pass multiple parameters to a method, starting with two arguments
--   Learned how you can define default values for those parameters
--   Observed we could pass default arguments for none, some or all of those parameters
+- Looked at how to pass multiple parameters to a method, starting with two arguments
+- Learned how you can define default values for those parameters
+- Observed we could pass default arguments for none, some or all of those parameters
 
 ### Step 06: Back To Multiplication Table - Using Methods
 
@@ -1829,7 +1822,7 @@ Let’s define a method called `print_multiplication_table()`, and pass in a par
         >>> def print_multiplication_table(table):
         ...    for i in range(1,11):
         ...       print(f"{table} * {i} = {table * i}")
-        ... 
+        ...
         >>> print_multiplication_table(7)
         7 * 1 = 7
         7 * 2 = 14
@@ -1853,7 +1846,7 @@ We want to control the start point, as well as the end point, in the call to `ra
         >>> def print_multiplication_table(table, start, end):
         ...    for i in range(start, end+1):
         ...       print(f"{table} * {i} = {table * i}")
-        ... 
+        ...
         >>> print_multiplication_table(7, 1 , 6)
         7 * 1 = 7
         7 * 2 = 14
@@ -1869,7 +1862,7 @@ The other thing we can obviously do, is have default values for the `start`, and
         >>> def print_multiplication_table(table, start=1, end=10):
         ...    for i in range(start, end+1):
         ...       print(f"{table} * {i} = {table * i}")
-        ... 
+        ...
 
         >>> print_multiplication_table(7)
         7 * 1 = 7
@@ -1891,9 +1884,9 @@ Now you can actually send out this method, to your friends, who would find it ea
 
 In this step, we:
 
--   Learned how to define a method to print the multiplication table for a number
--   Looked at how to enhance this method to make table printing more flexible
--   Further enhanced that method to accept default arguments while printing a table
+- Learned how to define a method to print the multiplication table for a number
+- Looked at how to enhance this method to make table printing more flexible
+- Further enhanced that method to accept default arguments while printing a table
 
 ### Step 07: Indentation Is King
 
@@ -1904,7 +1897,7 @@ In Python, indentation denote blocks of code. So if you want to put something in
         >>> def method_to_understand_indentation():
         ...     for i in range(1,11) :
         ...        print(i)
-        ... 
+        ...
         >>> method_to_understand_indentation()
         1
         2
@@ -1923,7 +1916,7 @@ Consider the code below: `print(5)` is indented at the same level as `for loop`.
         ...     for i in range(1,11) :
         ...        print(i)
         ...     print(5)
-        ... 
+        ...
 
 You can see that `print(5)` is called only once. It is not part of the `for loop`.
 
@@ -1946,7 +1939,7 @@ Let’s change the code in this method a bit. `print(5)` is indented the same wa
         ...     for i in range(1,11) :
         ...        print(i)
         ...        print(5)
-        ... 
+        ...
 
 `print(5)` is part of the for loop. It is executed 10 times.
 
@@ -1980,7 +1973,7 @@ We indicate a block of code, by having all lines of that block at the same inden
 
 In this step, we:
 
--   Ran through a few examples to see how indentation works in Python
+- Ran through a few examples to see how indentation works in Python
 
 ### Step 08: Puzzles on Methods - Named Parameters
 
@@ -1993,7 +1986,7 @@ Consider the following method: I would want to print the default string 6 times.
         >>> def print_string(str="Hello World", no_of_times=5):
         ...     for i in range(1,no_of_times+1):
         ...        print(str)
-        ... 
+        ...
         >>> print_string()
         Hello World
         Hello World
@@ -2068,7 +2061,7 @@ What would be the result of this - `print_string(7.5, "eight")`?
 
 Note how `no_of_times` is used inside the method… as an argument to `range()`. `range()` only accepts integers, nothing else. When you run the code with `print_string(7.5, "eight")`, we get an error.
 
-It says: ```` TypeError: ```no_of_times``` must be ```int```, not string ````.
+It says: ` TypeError: ```no_of_times``` must be ```int```, not string `.
 
 A simple rule of thumb is, if you have a parameter, you can pass any type of data to it. That could be an integer, a floating point value a string, or a boolean value. The Python language does not check for the type of a parameter. However, Python will throw an error if the function which is using that parameter, expects it to be of a specific type. The `range()` function expects that the `no_of_times` is an integer value.
 
@@ -2092,18 +2085,18 @@ One of the important rules is also related to variable names. We observed that a
 
 Similarly, `1_print` will not be accepted as a method name.
 
--   You can start a name with an alphabet, or with an underscore.
--   From the second character onward, you are allowed to use numeric symbols.
+- You can start a name with an alphabet, or with an underscore.
+- From the second character onward, you are allowed to use numeric symbols.
 
 Methods and variables cannot be named using Python keywords.
 
 Now, what is a keyword? For example, when we talked about `for` loop, as in:
 
-    ```for i in range(1, 11): print(i)```... 
+    ```for i in range(1, 11): print(i)```...
 
--   **`for`** is a keyword
--   **`in`** is a keyword
--   **`def`** is a keyword.
+- **`for`** is a keyword
+- **`in`** is a keyword
+- **`def`** is a keyword.
 
 Later we will look at a few other keywords, such as **`while`**, **`return`**, **`if`**, **`else`**, **`elif`**, and many more.
 
@@ -2127,9 +2120,9 @@ Later we will look at a few other keywords, such as **`while`**, **`return`**, *
 
 In this step, we:
 
--   Were introduced to the concept of named parameters
--   Explored the typical naming rules and conventions for methods in Python
--   Observed that reserved keywords cannot be used to name variables or methods
+- Were introduced to the concept of named parameters
+- Explored the typical naming rules and conventions for methods in Python
+- Observed that reserved keywords cannot be used to name variables or methods
 
 ### Step 09: Methods - Return Values
 
@@ -2141,7 +2134,7 @@ Let’s name our method as `product_of_two_numbers()`, and let’s have paramete
 
         >>> def product_of_two_numbers(a,b):
         ...     print(a * b)
-        ... 
+        ...
         >>> product_of_two_numbers(1,2)
         2
 
@@ -2180,7 +2173,7 @@ So instead of just printing `a*b`, if this function could return a value, that w
         >>> def product_of_two_numbers(a,b):
         ...      product = a * b;
         ...      return product
-        ... 
+        ...
         >>> product_of_two_numbers(2,3)
         6
 
@@ -2200,8 +2193,8 @@ You can see how simple it is to return values from a method!
 
 In this step, we:
 
--   Learned how to return values from inside a method
--   Observed how we can store the values returned by a method call
+- Learned how to return values from inside a method
+- Observed how we can store the values returned by a method call
 
 ### Step 10: Programming Exercise PE-MD-02
 
@@ -2220,7 +2213,7 @@ Hint: The sum of the angles in a triangle is `180` degrees. So if I am passing `
         >>>def sum_of_three_numbers(a, b, c):
         ...     sum = a + b + c
         ...     return sum
-        ... 
+        ...
 
         >>> sum_of_three_numbers(1,2,3)
         6
@@ -2232,7 +2225,7 @@ The shorter way of doing that would have been to have a temporary variable calle
 
         >>> def sum_of_three_numbers(a, b, c):
         ...     return a + b + c
-        ... 
+        ...
         >>> something = sum_of_three_numbers(1,2,3)
         >>> something * 5
         30
@@ -2245,7 +2238,7 @@ The second is to write a method to take two integers, representing two angles of
 
         >>> def calculate_third_angle(first, second) :
         ...     return 180 - ( first + second )
-        ... 
+        ...
         >>> calculate_third_angle(50, 20)
         110
 
@@ -2257,11 +2250,10 @@ That’s the reason why we’re creating a lot of examples involving method call
 
 In this step, we:
 
--   Looked at a couple of exercises related to returning values from methods
--   Observed that returning expressions avoids creating unnecessary variables, and shortens method definitions
+- Looked at a couple of exercises related to returning values from methods
+- Observed that returning expressions avoids creating unnecessary variables, and shortens method definitions
 
-Chapter 04 - Introduction To Python Platform
---------------------------------------------
+## Chapter 04 - Introduction To Python Platform
 
 Until now we had been using Python Shell to execute all our code.
 
@@ -2283,7 +2275,7 @@ We want to type in a simple Python script, or a piece of Python code, such as `p
 
 We’ll save this into any folder on our hard disk, with a name ‘first.py’ .
 
-***first.py***
+**_first.py_**
 
     print("Hello world")
 
@@ -2331,8 +2323,7 @@ It’s very important for you to understand the process. What’s happening is y
 
 The idea behind this quick section, is to give you a little bit of background on what’s happening behind the scenes. I’ll see you in the next section. Until then, bye-bye!
 
-Chapter 05 - Introduction To PyCharm
-------------------------------------
+## Chapter 05 - Introduction To PyCharm
 
 Let’s start using the IDE PyCharm to write our Python Code
 
@@ -2378,11 +2369,11 @@ Right now there are no files in the project.
 
 Let’s create our first Python file, using the IDE.
 
-The way you can do that is by saying ‘right-click’ -&gt; ‘new’ -&gt; ‘Python file’, and then we’ll give this a name of ‘hello\_world’, and click OK.
+The way you can do that is by saying ‘right-click’ -&gt; ‘new’ -&gt; ‘Python file’, and then we’ll give this a name of ‘hello_world’, and click OK.
 
 Now you can go ahead and write your first Python program. Let’s write some simple code, like `print("Hello World")`, and save it.
 
-You can do a right-click here, and say ‘Run hello\_world’.
+You can do a right-click here, and say ‘Run hello_world’.
 
 A small window comes up below, which shows the output. It says `'Hello World'`.
 
@@ -2392,8 +2383,7 @@ Let’s start with a simple exercise. We created the multiplication table method
 
 Here’s the video guide for this step: - [Write Your First Python Program with PyCharm](https://www.youtube.com/watch?v=PvYSlWbXuCw)
 
-Chapter 06 - Introducing Data Types and Conditionals
-----------------------------------------------------
+## Chapter 06 - Introducing Data Types and Conditionals
 
 Welcome to this section, where we will talk about numeric data types, and conditional program execution. After looking at the numeric and boolean data types, we will turn our attention to executing code, based on logical conditions.
 
@@ -2456,7 +2446,7 @@ Operations can also be performed between `int` and `float`.
         5.5
         >>> i / value1
         2.2222222222222223
-        >>> 
+        >>>
 
 Result of an operation between a `int` and a `float`, is always a `float`.
 
@@ -2464,8 +2454,8 @@ Result of an operation between a `int` and a `float`, is always a `float`.
 
 In this step, we:
 
--   Looked at the two basic numeric types: `int` and `float`.
--   Saw the basic operations you can do among `int`s, among `float`s, and also between `int`s and `float`s.
+- Looked at the two basic numeric types: `int` and `float`.
+- Saw the basic operations you can do among `int`s, among `float`s, and also between `int`s and `float`s.
 
 ### Step 02: Programming Exercise PE-DT-01
 
@@ -2481,14 +2471,14 @@ For example, if you want to call `simple_interest` with `10000`, with an interes
 
         def calculate_simple_interest(principal, interest, duration) :
                 return principal * (1 + interest * 0.01 * duration)
-        
+
         print(calculate_simple_interest(10000,5,5))
 
 #### Summary
 
 In this step, we:
 
--   Wrote a very simple method to do a simple interest calculation
+- Wrote a very simple method to do a simple interest calculation
 
 ### Step 03: Puzzles On Numeric Types
 
@@ -2595,9 +2585,9 @@ You can also convert `int` to `float`, by using the function `float()`.
 
 In this step, we:
 
--   Looked at a few corner cases related to your numeric types.
--   Examined the different operators available for use with values of numeric types
--   Learned about the usage of type conversion functions
+- Looked at a few corner cases related to your numeric types.
+- Examined the different operators available for use with values of numeric types
+- Learned about the usage of type conversion functions
 
 ### Step 04: Introducing Boolean Type
 
@@ -2661,8 +2651,8 @@ Let’s look at other operations that can result in `bool` values. We looked at 
 
 In this step, we:
 
--   Were introduced to the `bool` data type
--   Learned that `bool` variables are useful handy while testing logical conditions
+- Were introduced to the `bool` data type
+- Learned that `bool` variables are useful handy while testing logical conditions
 
 ### Step 05: Introducing Conditionals
 
@@ -2677,7 +2667,7 @@ Let’s say `i` has a value of `5`. You want to print something, only if `i` has
         >>> i = 5
         >>> if i>3:
         ...     print(f"{i} is greater than 3")
-        ... 
+        ...
         5 is greater than 3
 
 The syntax of the `if` is very simple: `if` followed by a condition; with the condition you want to check. It looks like: `if i>3: ...` You need to indent the body of the `if` with `<SPACE>`s as usual.
@@ -2687,7 +2677,7 @@ Let’s say `i` has a value of `2`. What would happen if we execute the same cod
         >>> i = 2
         >>> if i>3:
         ...     print(f"{i} is greater than 3")
-        ... 
+        ...
 
 You would see that nothing is printed to the console. Based on the value of `i` , either the statement is executed, or it’s not. That’s what an `if` helps us to do.
 
@@ -2695,10 +2685,10 @@ The way you can think about an `if`, is the body of code under the `if` is execu
 
         >>> if(False):
         ...   print("False")
-        ... 
+        ...
         >>> if(True):
         ...   print("True")
-        ... 
+        ...
         True
 
 Let’s take two different numbers, say `a = 5`, and `b = 7`. We want to compare them, and predict if `a` is greater that `b` .
@@ -2712,15 +2702,15 @@ Let’s take two different numbers, say `a = 5`, and `b = 7`. We want to compare
         >>> a = 9
         >>> if(a>b):
         ...   print("a is greater than b")
-        ... 
+        ...
         a is greater than b
 
 #### Summary
 
 In this step, we:
 
--   Were introduced to the `if` statement, the simplest Python conditional
--   Understood how an `if` helps in implementing conditional program logic
+- Were introduced to the `if` statement, the simplest Python conditional
+- Understood how an `if` helps in implementing conditional program logic
 
 ### Step 06: Classroom Exercise CE-DT-01
 
@@ -2736,11 +2726,11 @@ Let’s say we define four variables: `a = 1`, `b = 2` , `c = 3` and `d = 5`. we
         >>> d = 5
         >>> if a+b > c+d :
         ...    print("a+b > c +d")
-        ... 
+        ...
         >>> a = 9
         >>> if a+b > c+d :
         ...    print("a+b > c +d")
-        ... 
+        ...
         a+b > c +d
 
 Let’s say we are given three values meant to be the angles of a triangle. Their values are `angle1 = 30`, `angle2 = 20` and `angle3 = 60`. You want to find out if these three angles actually form a valid triangle. You know that the sum of the angles of a triangle is always `180` degrees.
@@ -2750,11 +2740,11 @@ Let’s say we are given three values meant to be the angles of a triangle. Thei
         >>> angle3 = 60
         >>> if(angle1 + angle2 + angle3 == 180):
         ...      print("Valid Triangle")
-        ... 
+        ...
         >>> angle2 = 90
         >>> if(angle1 + angle2 + angle3 == 180):
         ...      print("Valid Triangle")
-        ... 
+        ...
         Valid Triangle
 
 The last exercise is to check if a number is even or not.
@@ -2762,21 +2752,21 @@ The last exercise is to check if a number is even or not.
 Hint L you need to use one of the operators we talked about earlier. That’s right, use the modulo operator `%`.
 
         >>> i = 2
-        >>> if(i%2==0): 
+        >>> if(i%2==0):
         ...   print("i is even")
-        ... 
+        ...
         i is even
 
         >>> i = 3
-        >>> if(i%2==0): 
+        >>> if(i%2==0):
         ...   print("i is even")
-        ... 
+        ...
 
 #### Summary
 
 In this step, we:
 
--   Looked at a few exercises related to the if statement, for writing and testing conditions.
+- Looked at a few exercises related to the if statement, for writing and testing conditions.
 
 ### Step 07 - Logical Operators - and or not
 
@@ -2834,8 +2824,8 @@ The XOR operation, denoted by the `^` operator, is `True` when operands have dif
 
 In this step, we:
 
--   Looked at the logical operators that act on boolean values, such as `and`, `or`, `not` and `^`
--   Explored each of these operators, finding out when they return `True`, and when `False`.
+- Looked at the logical operators that act on boolean values, such as `and`, `or`, `not` and `^`
+- Explored each of these operators, finding out when they return `True`, and when `False`.
 
 ### Step 08: Puzzles On Logical Operators
 
@@ -2849,21 +2839,21 @@ Let’s say `i` has a value of `10`, and `j` has a value of `15`. You want to fi
         >>> j = 15
         >>> if i%2==0 and j%2==0:
         ...   print("i and j are even")
-        ... 
+        ...
         >>> j = 14
         >>> if i%2==0 and j%2==0:
         ...   print("i and j are even")
-        ... 
+        ...
         i and j are even
 
         >>> if i%2==0 or j%2==0:
-        ... 
-          File "<stdin>", line 2    
+        ...
+          File "<stdin>", line 2
             ^
         IndentationError: expected an indented block
         >>> if i%2==0 or j%2==0:
         ...   print("atleast one of i and j are even")
-        ... 
+        ...
         atleast one of i and j are even
 
 If we want to find out if at least one of `i` and `j` is even, we can use the `or` operator.
@@ -2873,12 +2863,12 @@ If we want to find out if at least one of `i` and `j` is even, we can use the `o
         14
         >>> if i%2==0 or j%2==0:
         ...   print("atleast one of i and j are even")
-        ... 
+        ...
         atleast one of i and j are even
         >>> j = 23
         >>> if i%2==0 or j%2==0:
         ...   print("atleast one of i and j are even")
-        ... 
+        ...
         >>> i
         15
 
@@ -2886,15 +2876,15 @@ Now try and guess the value of this. `if(True ^ False): print("Message")`
 
         >>> if(True ^ False):
         ...     print("This will Print")
-        ... 
+        ...
         This will Print
         >>> if(False ^ True):
         ...     print("This will Print")
-        ... 
+        ...
         This will Print
         >>> if(True ^ True):
         ...     print("This will Print")
-        ... 
+        ...
 
 Xor operation using `^` - message will get printed if the operands are different.
 
@@ -2907,22 +2897,22 @@ Let’s say, `x = 5`, and you want to check `if not x == 6: print("This")`. What
         >>> x = 5
         >>> if not x == 6:
         ...   print("This")
-        ... 
+        ...
         This
         >>> x = 6
         >>> if not x == 6:
         ...   print("This")
-        ... 
+        ...
 
 Actually, there is a shortcut for such a condition: `if x != 6 : print("This")`.
 
         >>> if x!=6:
         ...   print("This")
-        ... 
+        ...
         >>> x=5
         >>> if x!=6:
         ...   print("This")
-        ... 
+        ...
         This
 
 `int()` is a conversion function, which when given say a `float` value, returns an `int` value. Consider `int(True)`, what would happen?
@@ -2937,7 +2927,7 @@ Actually, there is a shortcut for such a condition: `if x != 6 : print("This")`.
         >>> x = -6
         >>> if x:
         ...   print("something")
-        ... 
+        ...
         something
 
 One of the most interesting facts about boolean stuff, is anything which is non-zero, is considered to be `True`.
@@ -2950,7 +2940,7 @@ One of the most interesting facts about boolean stuff, is anything which is non-
         True
         >>> bool(0)
         False
-        >>> 
+        >>>
 
 So, if I have a value of `x = -6`, and execute `if x: print("something")` what do you think will happen?
 
@@ -2964,8 +2954,8 @@ Except for `bool(0)`, all the other results would be `True`.
 
 In this step, we:
 
--   Looked at a few puzzles related to the logical operators
--   Looked at conversion functions such as `bool()` and `int()` to convert between boolean and integer data
+- Looked at a few puzzles related to the logical operators
+- Looked at conversion functions such as `bool()` and `int()` to convert between boolean and integer data
 
 ### Step 09:
 
@@ -2982,7 +2972,7 @@ Earlier we wrote code along these lines: `if i % 2 == 0 : print("i is even")`. H
         ...   print("i is even");
         ... else:
         ...   print("i is odd");
-        ... 
+        ...
         i is even
 
 An `else` clause provides an alternative code body to execute, if the `if` condition is `False`.
@@ -2992,7 +2982,7 @@ An `else` clause provides an alternative code body to execute, if the `if` condi
         ...   print("i is even");
         ... else:
         ...   print("i is odd");
-        ... 
+        ...
         i is odd
 
 Let’s look at `elif`.
@@ -3007,9 +2997,9 @@ In short, we want to specify 2 alternatives to the `if` condition. How can that 
         ...   print("i is 2")
         ... else:
         ...   print("i is not 1 or 2")
-        ... 
+        ...
         i is not 1 or 2
-        >>> 
+        >>>
 
 That’s where the **`elif`** clause comes into the picture. The code in `elif` is executed if the previous conditions are false and the current `elif` condition is true.
 
@@ -3017,8 +3007,8 @@ That’s where the **`elif`** clause comes into the picture. The code in `elif` 
 
 In this step, we:
 
--   Looked at two important components of the `if` statement: `else` and `elif`.
--   Understood that the `elif` clauses and the final `else` clause provide alternative conditions to check, when earlier if conditions are true.
+- Looked at two important components of the `if` statement: `else` and `elif`.
+- Understood that the `elif` clauses and the final `else` clause provide alternative conditions to check, when earlier if conditions are true.
 
 ### Step 10: Classroom Exercise CE-DT-02
 
@@ -3066,15 +3056,15 @@ Let’s run our code once again.
 
 #### Design a menu
 
--   Ask the User for input:
-    -   Enter two numbers
-    -   Choose the Option:
-        -   1 - Add
-        -   2 - Subtract
-        -   3 - Multiply
-        -   4 - Divide
--   Perform the Operation
--   Publish the Result
+- Ask the User for input:
+  - Enter two numbers
+  - Choose the Option:
+    - 1 - Add
+    - 2 - Subtract
+    - 3 - Multiply
+    - 4 - Divide
+- Perform the Operation
+- Publish the Result
 
 Let’s design a menu, and then ask the user for input.
 
@@ -3105,9 +3095,9 @@ We will continue this exercise to complete it, in the next step.
 
 In this step, we:
 
--   Looked at the in-built `input()` function that can read console input
--   Learned that `input()` always returns what the user enters, as a string
--   We can convert the string from `input()`, to the data type we expect by invoking conversion functions
+- Looked at the in-built `input()` function that can read console input
+- Learned that `input()` always returns what the user enters, as a string
+- We can convert the string from `input()`, to the data type we expect by invoking conversion functions
 
 ### Step 11: Continued - Classroom Exercise CE-DT-02
 
@@ -3153,8 +3143,8 @@ We added the following code to account for invalid input.
 
 In this step, we:
 
--   Augmented the Menu Exercise to get all the input from the console, and compute a value from them
--   Corrected the logic to handle incorrect input
+- Augmented the Menu Exercise to get all the input from the console, and compute a value from them
+- Corrected the logic to handle incorrect input
 
 ### Step 12: Puzzles On Conditionals
 
@@ -3223,7 +3213,7 @@ What would be the output?
     if number < 0:
       number = number + 10
     number = number + 5
-    print(number) 
+    print(number)
 
 `10` is printed.
 
@@ -3241,7 +3231,7 @@ What would be the output?
     if number < 0:
       number = number + 10
       number = number + 5
-    print(number) 
+    print(number)
 
 `5` is printed.
 
@@ -3251,8 +3241,8 @@ Both the statements `number = number + 10` and `number = number + 5` are part of
 
 In this step, we:
 
--   Looked at a few puzzles related to `if`, `elif` and `else`
--   Explored the importance of indentation and the different condition clauses inside an `if` statement
+- Looked at a few puzzles related to `if`, `elif` and `else`
+- Explored the importance of indentation and the different condition clauses inside an `if` statement
 
 ### Step 01: The Python Type To Denote Text
 
@@ -3318,7 +3308,7 @@ To find if a piece of text contains only upper case alphabets.
         False
         >>> 'HELLO'.isupper()
         True
-        
+
 
 `isdigit()` checks if a string is a numeric value.
 
@@ -3640,7 +3630,7 @@ There was a small clue at the start of the previous step, regarding importing th
         'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         >>> for char in string.ascii_uppercase:
         ...   print(char)
-        ... 
+        ...
         A
         B
         C
@@ -3672,7 +3662,7 @@ Try another easy exercise: print all the lower characters. Instead of `string.as
 
         >>> for char in string.ascii_lowercase:
         ...   print(char)
-        ... 
+        ...
         a
         b
         c
@@ -3709,7 +3699,7 @@ An even easier exercise, would be to print all the digits.
         string.ascii_lowercase  string.hexdigits        string.whitespace
         >>> for char in string.digits:
         ...   print(char)
-        ... 
+        ...
         0
         1
         2
@@ -3720,7 +3710,7 @@ An even easier exercise, would be to print all the digits.
         7
         8
         9
-        >>> 
+        >>>
 
 The last exercise which we want to leave you with, is to check if something is a consonant.
 
@@ -3733,7 +3723,7 @@ A consonant is an alphabet which is not a vowel, so any alphabet which is not in
 
 ### Step 06: More Exercises On Strings
 
-In the step, let’s look at a few more puzzles and exercises related to strings. Let’s say we have a simple string, `string_example`, and this is contains an English sentence. `'This is a  great thing.'`
+In the step, let’s look at a few more puzzles and exercises related to strings. Let’s say we have a simple string, `string_example`, and this is contains an English sentence. `'This is a great thing.'`
 
 Let’s try to to print each of the words present in this string, on a separate line.
 
@@ -3772,7 +3762,7 @@ One of the methods in the list is the `split()` method.
         ['This', 'is', 'a', 'great', 'thing']
         >>> for word in string_example.split():
         ...    print(word)
-        ... 
+        ...
         This
         is
         a
@@ -3785,7 +3775,7 @@ One of the methods in the list is the `split()` method.
         >>> print(string_example)
         This
         is
-        
+
         great
         thing
         >>> string_example = "This\nis\na\ngreat\nthing"
@@ -3797,7 +3787,7 @@ One of the methods in the list is the `split()` method.
         thing
         >>> string_example.splitlines()
         ['This', 'is', 'a', 'great', 'thing']
-        >>> 
+        >>>
 
 The last thing which we look at, is **concatenation operator**.
 
@@ -3843,13 +3833,12 @@ You can compare strings using the `==` operator.
 
 In this step, we explored a few exercises on strings, covering areas such as:
 
--   Splitting a given sentence into individual words
--   The concatenation operator, `+`
--   The string multiplication pattern, `*`
--   The use of the `==` operator to compare strings
+- Splitting a given sentence into individual words
+- The concatenation operator, `+`
+- The string multiplication pattern, `*`
+- The use of the `==` operator to compare strings
 
-Chapter 07 - Introducing Loops
-------------------------------
+## Chapter 07 - Introducing Loops
 
 Welcome to the section on Loops. In this section, we will look at a variety of loops that are available in Python. We will look mainly at the **`for`** loop, and the **`while`** loop.
 
@@ -3873,7 +3862,7 @@ In the call to the `range()` function, the second parameter is exclusive. We are
 
         >>> for i in range(1,11):
         ...   print(i)
-        ... 
+        ...
         1
         2
         3
@@ -3889,12 +3878,12 @@ In the call to the `range()` function, the second parameter is exclusive. We are
 
         >>> for ch in "Hello World":
         ...   print(ch)
-        ... 
+        ...
         H
         e
         l
         l
-        o 
+        o
         W
         o
         r
@@ -3905,7 +3894,7 @@ In the call to the `range()` function, the second parameter is exclusive. We are
 
         >>> for word in "Hello World".split():
         ...   print(word)
-        ... 
+        ...
         Hello
         World
 
@@ -3913,7 +3902,7 @@ In the call to the `range()` function, the second parameter is exclusive. We are
 
         >>> for item in (3, 6, 9):
         ...   print(item)
-        ... 
+        ...
         3
         6
         9
@@ -3939,11 +3928,11 @@ Welcome back to this step, where we would do a lot of exercises with the `for` l
 
 Hint: Given an input `5`, we would want to print the number triangle of these kind:
 
-    1  
-    1 2  
-    1 2 3  
+    1
+    1 2
+    1 2 3
     1 2 3 4
-    1 2 3 4 5. 
+    1 2 3 4 5.
 
 These are the exercises for the `for` loop. We also test our skills, with creating method and executing them, in our IDE.
 
@@ -4010,7 +3999,7 @@ In the previous step, we looked at solving the `is_prime()` exercise. In this st
 
 In this step, we:
 
--   Wrote a Python function to compute the sum of all integers, from `1`, up to the input integer `n`.
+- Wrote a Python function to compute the sum of all integers, from `1`, up to the input integer `n`.
 
 ### Step 04: Continued - Programming Exercise PE-LO-01
 
@@ -4037,25 +4026,25 @@ In this step, Let’s look at the last exercise - `print_a_number_triangle`.
 
 For example, if we call such a function with input `5`, the output needs to be:
 
-    1  
-        
-    1 2  
-        
-    1 2 3  
-        
-    1 2 3 4  
-        
-    1 2 3 4 5 
+    1
+
+    1 2
+
+    1 2 3
+
+    1 2 3 4
+
+    1 2 3 4 5
 
 Let start with a simple thing. Let’s try and print `1 2 3 4 5` first, and then we would look at how to print the rest of the output. Lets proceed with defining this method.
 
 We can say `def print_a_number_triangle(number): ...` that takes a number as an input. You want to print a sequence of integers starting from `1`, up to that specific `number`. How can you do that? Let’s try this: `for i in range(1,number+1): print(i)` What would happen? Let’s call `print_a_number_triangle(5)` now. It prints:
 
-        1 
-        2 
-        3 
-        4 
-        5 
+        1
+        2
+        3
+        4
+        5
 
 on individual lines.
 
@@ -4070,7 +4059,7 @@ To solve our exercise, we want to repeat this again and again.
 Yes, we need another for loop around it!
 
     for j in range(1, number+1):
-        for i in range(1, number + 1): 
+        for i in range(1, number + 1):
             print(i, end=" ")
 
 Make sure that you have the indentation right. This is called `loop within a loop`.
@@ -4082,17 +4071,17 @@ The output of above program is
 Let’s add `print("\n")`, so we have a new line at the end of each outer loop iteration.
 
     for j in range(1, number+1):
-        for i in range(1, number + 1): 
+        for i in range(1, number + 1):
             print(i, end=" ")
         print("\n")
 
 Output
 
-    1 2 3 4 5 
-    1 2 3 4 5 
-    1 2 3 4 5 
-    1 2 3 4 5 
-    1 2 3 4 5 
+    1 2 3 4 5
+    1 2 3 4 5
+    1 2 3 4 5
+    1 2 3 4 5
+    1 2 3 4 5
 
 We are printing a square, not a triangle.
 
@@ -4107,21 +4096,21 @@ Instead of `number+1`, let’s say `j + 1`.
 When `j` has a value of `1`, `for` will print from `1` to `1`. When `j` has a value of `2`, print from `1` to `2`, literally printing `1 2`. When j has a value of `3`, I’ll print from `1` to `3`. Let’s try this and see what would happen.
 
     for j in range(1, number+1):
-        for i in range(1, j + 1): 
+        for i in range(1, j + 1):
             print(i, end=" ")
         print("\n")
 
 You can see that our number triangle is ready!
 
-    1  
-        
-    1 2  
-        
-    1 2 3  
-        
-    1 2 3 4  
-        
-    1 2 3 4 5 
+    1
+
+    1 2
+
+    1 2 3
+
+    1 2 3 4
+
+    1 2 3 4 5
 
 Here is the entire code for you:
 
@@ -4138,7 +4127,7 @@ An important point to note is, a couple of these things can be done in a much si
 
 In this step, we:
 
--   Presented a solution to the exercise for printing a number triangle.
+- Presented a solution to the exercise for printing a number triangle.
 
 ### Step 06: Introducing The while Loop
 
@@ -4157,7 +4146,7 @@ Let’s see how to use a simple `while` loop.
         >>> i = 5
         >>> if i == 5:
         ...   print("i is 5")
-        ... 
+        ...
         i is 5
 
 Let’s say `i` has a value of `0`, and we then do: `while i < 5: print(i)`.
@@ -4165,7 +4154,7 @@ Let’s say `i` has a value of `0`, and we then do: `while i < 5: print(i)`.
         >>> i = 0
         >>> while i < 5:
         ...   print(i)
-        ... 
+        ...
         0
         0
         0
@@ -4177,7 +4166,7 @@ Let’s say `i` has a value of `0`, and we then do: `while i < 5: print(i)`.
         ^CTraceback (most recent call last):
           File "<stdin>", line 2, in <module>
         KeyboardInterrupt
-        >>> 
+        >>>
         KeyboardInterrupt
 
 If we leave it to run, you’d see that it continuously prints `0` again, and again. Let’s do a `<CTRL-C>` or `<COMMAND-C>` to interrupt this.
@@ -4191,20 +4180,19 @@ One of the important things to make sure in a `while` loop, is to increment the 
         >>> while i < 5:
         ...   print(i)
         ...   i = i + 1
-        ... 
+        ...
         0
         1
         2
         3
         4
 
-So how does it work? *`i` initially had a value of `0`. First the condition is checked. It’s `True`, so `0` is printed and then the value of `i` is incremented to `1`.* `i` is still less than `5`, so the loop continues to execute, and this happens until `4` is printed. `i` again gets incremented to `4 + 1`, or `5`. \* Then we check the condition `i < 5`. This is now `False`. Control goes out of the `while` loop, and terminates it.
+So how does it work? _`i` initially had a value of `0`. First the condition is checked. It’s `True`, so `0` is printed and then the value of `i` is incremented to `1`._ `i` is still less than `5`, so the loop continues to execute, and this happens until `4` is printed. `i` again gets incremented to `4 + 1`, or `5`. \* Then we check the condition `i < 5`. This is now `False`. Control goes out of the `while` loop, and terminates it.
 
 When executing a `while`, control flow is just based on a condition. As long as the condition is `True`, we keep executing the code. An important thing to remember, is to make sure the control variable is updated.
 
-     
         >>> for i in range(0,5): print(i)
-        ... 
+        ...
         0
         1
         2
@@ -4221,9 +4209,9 @@ We will look at that very soon.
 
 In this video, we:
 
--   Were introduced to the concept of a `while` loop in Python
--   Understood the importance of a control variable being incremented inside the loop
--   Observed differences between the working of a `while`, and a `for` loop
+- Were introduced to the concept of a `while` loop in Python
+- Understood the importance of a control variable being incremented inside the loop
+- Observed differences between the working of a `while`, and a `for` loop
 
 ### Step 07: Programming Exercise PE-LO-02
 
@@ -4268,17 +4256,17 @@ Earlier we used `if` statement to implement a solution for this: \* Ask the User
 
 We would want to enhance it to execute in a loop multiple times, until the user chooses to exit. We will add an option 5 - Exit.
 
--   Ask the User for input:
-    -   Enter two numbers
-    -   Choose the Option:
-        -   1 - Add
-        -   2 - Subtract
-        -   3 - Multiply
-        -   4 - Divide
-        -   5 - Exit
--   Perform the Operation
--   Publish the Result
--   Repeat until Option 5 is chosen.
+- Ask the User for input:
+  - Enter two numbers
+  - Choose the Option:
+    - 1 - Add
+    - 2 - Subtract
+    - 3 - Multiply
+    - 4 - Divide
+    - 5 - Exit
+- Perform the Operation
+- Publish the Result
+- Repeat until Option 5 is chosen.
 
 #### Snippet-01 Explained
 
@@ -4349,8 +4337,8 @@ These are the kind of situations where `while` loop is good. W
 
 In this step, we:
 
--   Enhanced the menu exercise done earlier, to allow the user to give operation choices repeatedly
--   Found that a `while` loop was ideal to solve this exercise
+- Enhanced the menu exercise done earlier, to allow the user to give operation choices repeatedly
+- Found that a `while` loop was ideal to solve this exercise
 
 ### Step 09 - Loops - Puzzles - break and continue
 
@@ -4380,15 +4368,15 @@ On to the next puzzle.
     while i*i < 10:
         print(i)
     print("done")
-        
+
 
 Output : `done`
 
 On to the next puzzle.
 
-    i = 2 
-    while i * i < 10: 
-      print(i, end=" ") 
+    i = 2
+    while i * i < 10:
+      print(i, end=" ")
     print('done')
 
 Output : `222222222222....`
@@ -4475,8 +4463,7 @@ The last puzzle we’ll be looking at is exactly a modification of the earlier o
 
 What do you think will be the output? Yes you’re right. No change in output, because `if i % 2 !=0` is the same as a `if i % 2`. That’s because if `i % 2` is `0`, then `i % 2` will be `False`. If `i % 2` is `0`, then `i % 2 != 0` also will be `False`.
 
-Chapter 08 - Python Tips
-------------------------
+## Chapter 08 - Python Tips
 
 ### Tip 1 - Using Predefined Python Modules
 
@@ -4496,8 +4483,8 @@ Let’s talk about the `math` `module` to start off with. Import it by saying `i
         math.ceil(       math.fmod(       math.log(        math.tanh(
         math.copysign(   math.frexp(      math.log10(      math.tau
         math.cos(        math.fsum(       math.log1p(      math.trunc(
-        math.cosh(       math.gamma(      math.log2(       
-        math.degrees(    math.gcd(        math.modf(       
+        math.cosh(       math.gamma(      math.log2(
+        math.degrees(    math.gcd(        math.modf(
         math.e           math.hypot(      math.nan
 
 `math.floor(4.5)` gives you back `4`.
@@ -4509,7 +4496,7 @@ This command would show you the documentation for this `floor()` function. It sa
         >>> math.floor(4.5)
         4
         >>> help(math.floor)
-        >>> help(math)  
+        >>> help(math)
 
 You can import all the members from the entire module by using `from math import *`.
 
@@ -4523,7 +4510,6 @@ For help, You can use `help(gcd)`, and it responds with the documentation.
 
 An important things to remember, is when you do `import * from math`, you are importing everything from there. This means if you have any local variable with the names as these functions, they might get shadowed.
 
-     
         >>> from math import *
         >>> floor(5)
         5
@@ -4547,7 +4533,7 @@ Let’s say we have a list `numbers = [1, 4, 6, 3, 4]`. Looping through this wil
         >>> numbers = [1,4,6,3,4]
         >>> for number in numbers:
         ...   print(number)
-        ... 
+        ...
         1
         4
         6
@@ -4562,7 +4548,7 @@ We can now print a formatted string, by accessing `{index}` and `{number}`.
 
         >>> for index,number in enumerate(numbers):
         ...    print(f'{index} - {number}')
-        ... 
+        ...
         0 - 1
         1 - 4
         2 - 6
@@ -4577,7 +4563,7 @@ This would also work for strings, consider `'aeiou'`. This contain all the vowel
 
         >>> for index, vowel in enumerate(values):
         ...     print(f'{index} - {vowel}')
-        ... 
+        ...
         0 - a
         1 - e
         2 - i
@@ -4599,7 +4585,6 @@ Let’s say you have a number, `number = 5`. You want to find out, if it’s eve
 
 You can use `isEven = True if number % 2 == 0 else isEven = False` . You can see what it contains.
 
-     
         >>> isEven = True if number%2==0 else False
         >>> isEven
         False
@@ -4714,8 +4699,8 @@ What about `boolean` values? It’s `bool`. So everything that you see in a Pyth
 
 The two important things we have learned over here are:
 
--   Python is strongly typed. You cannot do anything that is not allowed by a specific type on an instance of that specific type. And if you do, so you would get an error.
--   The second thing which we looked at, was the fact that everything in Python is an object.
+- Python is strongly typed. You cannot do anything that is not allowed by a specific type on an instance of that specific type. And if you do, so you would get an error.
+- The second thing which we looked at, was the fact that everything in Python is an object.
 
 The other important concept over here is, we have `str` binding to `'value'`. What is the value of `type(str)` right now? It’s a `str`, a string.
 
@@ -4798,8 +4783,8 @@ If you are lazy like us, and you don’t want to go to Internet to read the Zen 
     If the implementation is hard to explain, it's a bad idea.
     If the implementation is easy to explain, it may be a good idea.
     Namespaces are one honking great idea -- let's do more of those!
-    >>> 
-        
+    >>>
+
 
 As a beginning programmer, a lot of these might not really make sense.
 
@@ -4807,8 +4792,7 @@ This is a document we would recommend you to visit, every once in a while to gai
 
 An important thing to realize, is that the basic idea behind all these 19 principles is very simple. Whatever code you write, should be understandable for other programmers.
 
-Chapter 09 - Introducing Object Oriented Programming
-----------------------------------------------------
+## Chapter 09 - Introducing Object Oriented Programming
 
 Welcome to section on object oriented programming. The way you think in structured or procedural programming, is completely different from how you would think in **object oriented programming**, or **OOP**. In this chapter, you’ll be introduced to thinking in terms of objects. We will discuss about: what is a class, what is an object, what is state, what is behavior, and also discuss about a few basic and important OOP concepts, such as encapsulation and abstraction. Of course, we will use a lot of examples to discuss these aspects of OOP, and the different terminology which is used with respect to the same. We are excited to bring this section to you.
 
@@ -4816,7 +4800,7 @@ Welcome to section on object oriented programming. The way you think in structur
 
 Object oriented programming is all about thinking in terms of objects. Before we get into depth with this, we’ll talk a little bit about structured programming.
 
-If you have written programs in a language such as C or Pascal, you’d be doing *procedural* or *structured* programming. Such programming involves thinking in terms of procedures. These are also popularly known as methods or functions.
+If you have written programs in a language such as C or Pascal, you’d be doing _procedural_ or _structured_ programming. Such programming involves thinking in terms of procedures. These are also popularly known as methods or functions.
 
 Let’s say you have a problem to solve. The first thing you would try and do, is to split the problem into multiple functions, or multiple procedures. You would start thinking in terms of: OK, what are the functions I would need to write? What are the different steps involved in doing this?
 
@@ -4824,16 +4808,16 @@ Humans think in a step by step process.
 
 Let’s say I’ve to take a flight from London to New York. This is how I would think:
 
--   Take a cab to London Airport
--   Check in
--   Pass Security
--   Board the flight
--   Wish the Hostess
--   Take Off
--   Cruise
--   Land
--   Get off the plane
--   Take a cab to ..
+- Take a cab to London Airport
+- Check in
+- Pass Security
+- Board the flight
+- Wish the Hostess
+- Take Off
+- Cruise
+- Land
+- Get off the plane
+- Take a cab to ..
 
 Procedural programming is just a reflection of this thought process. A procedural program for above process would look something like this:
 
@@ -4879,7 +4863,7 @@ It’s now time to introduce you to some core **OOP** terms, which will make our
 
 Let’s visit and enhance the `Planet` example we had written a few sections ago. This time, let’s also explore the conceptual angle.
 
-***Planet***
+**_Planet_**
 
         class Planet
             name, location, distanceFromSun // data / state / fields
@@ -4902,8 +4886,8 @@ Each has its own unique behavior: \* `rotate()` : They rotate at different rates
 
 In this step, we:
 
--   Understood how OOP is different from Prodedural Programming
--   Learned about a few basic OOP terms
+- Understood how OOP is different from Prodedural Programming
+- Learned about a few basic OOP terms
 
 ### Step 03: Programming Exercise PE-01
 
@@ -4944,9 +4928,9 @@ The syntax is very simple. Let’s say you want to create a `Country` `class`, `
 
 `pass` helps us to create an empty `class`. `pass` can also be used to create an empty method. `class` is the key word and colon is part of the syntax. `Country` is the name of the `class`.
 
-        >>> class Country: 
+        >>> class Country:
         ...     pass
-        ... 
+        ...
 
 `class` acts as a template. It’s a blueprint, and based on this blueprint, we can create instances of the `class`.
 
@@ -5004,7 +4988,7 @@ Let’s see what would happen when we run this code.
     class MotorBike:pass
 
     honda = MotorBike()
-    ducati = MotorBike()    
+    ducati = MotorBike()
 
     print(honda)
     print(ducati)
@@ -5021,7 +5005,7 @@ We can also add a little bit of state to these motor bikes.
     class MotorBike:pass
 
     honda = MotorBike()
-    ducati = MotorBike()    
+    ducati = MotorBike()
     honda.speed = 50
     ducati.speed = 250
 
@@ -5071,7 +5055,7 @@ In this quick step, we will look at a few puzzles related to what we have learne
 Let’s create a new class, and call it `class Planet`, and we’ll have it as an empty class.
 
         >>> class Planet: pass
-        ...     
+        ...
 
 How do you create instances of the `Planet` class?
 
@@ -5140,7 +5124,7 @@ How do you define a constructor for a `MotorBike` class? Once we decide to have 
             print("MotorBike instance created")
 
     honda = MotorBike()
-    ducati = MotorBike()    
+    ducati = MotorBike()
 
 A constructor is a special method. Syntax is `def __init__(self)` .
 
@@ -5169,7 +5153,7 @@ Here’s the syntax - `def __init__(self, speed)`
             print(speed)
 
     honda = MotorBike(50)
-    ducati = MotorBike(250) 
+    ducati = MotorBike(250)
 
 Output
 
@@ -5182,7 +5166,7 @@ How can we set the value into an instance of the object?
 
     class MotorBike:
         def __init__(self, speed):
-            self.speed = speed 
+            self.speed = speed
 
     honda = MotorBike(50)
     ducati = MotorBike(250)
@@ -5215,7 +5199,6 @@ Let’s create the `Planet` `class` again, this time with a constructor. We’re
 
 What would happen When we execute `Planet()`?
 
-     
         >>> Planet()
         Traceback (most recent call last):
           File "<stdin>", line 1, in <module>
@@ -5231,7 +5214,7 @@ Whenever you’re creating an object, we are calling the constructor and by defa
 
         >>> class Planet:
         ...    def __init__(self): pass
-        ... 
+        ...
         >>> Planet()
         <__main__.Planet object at 0x10426bc88>
 
@@ -5269,7 +5252,7 @@ You can use, `def __init__(self, name = 'Earth')`. By default, `Planet` instance
 
         >>> class Planet:
         ...    def __init__(self, name="Earth"): pass
-        ... 
+        ...
         >>> Planet()
         <__main__.Planet object at 0x10426beb8>
         >>> Planet("Jupiter")
@@ -5286,7 +5269,6 @@ Let’s consider the code below: a real constructor
 
 If we now create a new object `earth = Planet()`, and execute `earth.name`, what would be the value?
 
-     
         >>> earth = Planet()
         >>> earth.name
         'Earth'
@@ -5380,7 +5362,7 @@ We want to have a method called `increase_copies()`, which we define and call it
 
     def increase_copies(self, how_much):
             self.copies += how_much
-        
+
 
 We also want a method to decrease the `copies`, to be used as `learning_python.decrease_copies()`.
 
@@ -5429,7 +5411,7 @@ Consider the steps below. What would be the result of `earth.revolve()`?
 
         >>> class Planet:
         ...    def revolve(): pass
-        ... 
+        ...
         >>> earth = Planet()
         >>> earth.revolve()
 
@@ -5535,7 +5517,7 @@ This is possible because everything in Python is an object of some class!
 The interesting part comes when we talk about methods. We have created methods earlier. Let’s say `def do_something()`, an empty method.If you type in `do_something()` on the prompt, it says: ‘function `do_something` at ’. a method is also an object.
 
         >>> def do_something(): pass
-        ... 
+        ...
         >>> do_something
         <function do_something at 0x104275488>
 
@@ -5543,20 +5525,20 @@ You can actually define a method `do_something()`, let’s say `print('something
 
         >>> def do_something():
         ...    print("something")
-        ... 
+        ...
         >>> do_something
         <function do_something at 0x104275510>
         >>> do_something()
         something
 
-Let’s try `test =  do_something`.
+Let’s try `test = do_something`.
 
         >>> test = do_something
         >>> test
         <function do_something at 0x104275510>
         >>> test()
         something
-        >>> 
+        >>>
 
 `test` refers to the same function and you can run it using `test()`.
 
@@ -5566,8 +5548,7 @@ This is possible, because even a function is an object in Python.
 
 The most important thing to understand from this step, is in Python, everything is an object. The constant values that you create are objects of specific classes, and methods are objects as well.
 
-Chapter 10 : Python Data Structures
------------------------------------
+## Chapter 10 : Python Data Structures
 
 Welcome to this section on data structures in Python. Here, we’ll discuss why we need data structures, and what are the important in-built data structures that Python provides.
 
@@ -5696,7 +5677,7 @@ The next thing you can do, is loop around the elements in the list. You can use 
 
         >>> for mark in marks:
         ...   print(mark)
-        ... 
+        ...
         23
         56
         67
@@ -5755,10 +5736,10 @@ We’ll print out these values one by one to complete the program functionality.
 One of the features you can make use of to print strings that have content split over distinct lines, is to use the triple quote `"""`.
 
     print(f"""Student[
-        number_of_marks-{number} 
+        number_of_marks-{number}
         sum_of_marks-{sum_of_marks}
-        max-{maximum_mark} 
-        min-{minimum_mark} 
+        max-{maximum_mark}
+        min-{minimum_mark}
         avg-{average} ] """)
 
 What it allows us to do, is split the console output of the string into multiple lines.
@@ -5806,22 +5787,22 @@ Here is the code for your reference:
     print(student.marks)
 
     print(f"""Student[
-        number_of_marks-{number} 
+        number_of_marks-{number}
         sum_of_marks-{sum_of_marks}
-        max-{maximum_mark} 
-        min-{minimum_mark} 
+        max-{maximum_mark}
+        min-{minimum_mark}
         avg-{average} ] """)
-        
+
 
 Output
 
     [23, 45, 75, 35]
     Student[
-        number_of_marks-4 
+        number_of_marks-4
         sum_of_marks-199
-        max-75 
-        min-23 
-        avg-49.75 ] 
+        max-75
+        min-23
+        avg-49.75 ]
 
 #### Summary
 
@@ -5910,14 +5891,14 @@ There is another way you can actually do the `extend()`. `animals = animals + ['
 
         >>> animals = animals + ['Jackal','Kangaroo']
         >>> animals
-        ['Cat', 'Elephant', 'F', 'i', 's', 'h', 'Fish', 'Giraffe', 'Horse', 'Jackal', 
+        ['Cat', 'Elephant', 'F', 'i', 's', 'h', 'Fish', 'Giraffe', 'Horse', 'Jackal',
         'Kangaroo']
 
 With a list, you can also use `+=` ! `animals += ['Lion', 'Monkey']` !
 
         >>> animals += ['Lion','Monkey']
         >>> animals
-        ['Cat', 'Elephant', 'F', 'i', 's', 'h', 'Fish', 'Giraffe', 'Horse', 'Jackal', 
+        ['Cat', 'Elephant', 'F', 'i', 's', 'h', 'Fish', 'Giraffe', 'Horse', 'Jackal',
         'Kangaroo', 'Lion', 'Monkey']
 
 In Python, is there is no restriction on what you can have in a list.
@@ -5926,7 +5907,7 @@ You can easily say `animals.append(10)`, and `animals` would have now include a 
 
         >>> animals.append(10)
         >>> animals
-        ['Cat', 'Elephant', 'F', 'i', 's', 'h', 'Fish', 'Giraffe', 'Horse', 'Jackal', 
+        ['Cat', 'Elephant', 'F', 'i', 's', 'h', 'Fish', 'Giraffe', 'Horse', 'Jackal',
             'Kangaroo', 'Lion', 'Monkey', 10]
 
 ### Step 05: List Slicing
@@ -6034,7 +6015,7 @@ In this step, we looked at how you can use slicing to retrieve values from a lis
 
 We have been talking about different features of lists, in the last few steps. And there are still a few more steps to come.
 
-In this step, let’s focus on a few simple pieces of code to **sort**, to **reverse**, and also a few other tips related to **looping** around a list, using an *index*.
+In this step, let’s focus on a few simple pieces of code to **sort**, to **reverse**, and also a few other tips related to **looping** around a list, using an _index_.
 
 Let’s get started with initializing `numbers` again. We allow `numbers` to have values from `'Zero'` to `'Nine'`, so we have something to play with.
 
@@ -6057,7 +6038,7 @@ Let’s re-initialize `numbers` again, so we have the original `list` back. If y
         <list_reverseiterator object at 0x109560ba8>
         >>> for number in reversed(numbers):
         ...    print(number)
-        ... 
+        ...
         Nine
         Eight
         Seven
@@ -6088,7 +6069,7 @@ Iterating is simple: `for number in sorted(numbers): print number`.
         >>> numbers = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine']
         >>> for number in sorted(numbers):
         ...   print(number)
-        ... 
+        ...
         Eight
         Five
         Four
@@ -6108,7 +6089,7 @@ We are passing in `len` , length of the string, or the number of characters pres
         ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
         >>> for number in sorted(numbers, key=len):
         ...   print(number)
-        ... 
+        ...
         One
         Two
         Six
@@ -6126,7 +6107,7 @@ What would happen?
 
         >>> for number in sorted(numbers, key=len, reverse=True):
         ...   print(number)
-        ... 
+        ...
         Three
         Seven
         Eight
@@ -6248,7 +6229,7 @@ In this step, let’s look at using instances of custom classes inside a list. L
     countries = [Country('India',1200,100),
                  Country('China', 1400, 200),
                  Country('USA', 120, 300)]
-        
+
 
 Most of the class is self explanatory.
 
@@ -6259,7 +6240,7 @@ Some of the operations you can perform are shown below:
     countries.append(Country('Russia',80,900))
 
 
-    print(countries[0]) 
+    print(countries[0])
     print(countries[0:2])
     print(countries[2:])
 
@@ -6277,26 +6258,26 @@ In this step, we looked at how to create lists using custom classes in Python. I
 
 In the previous step, we created a `Country` `class`, and we created a list of countries. In this step, Let’s focus on trying to find the:
 
--   country with the maximum population
--   country with the maximum area
--   country with the minimum area
--   sorted list of countries, in a specific order
+- country with the maximum population
+- country with the maximum area
+- country with the minimum area
+- sorted list of countries, in a specific order
 
-    from operator import attrgetter
+  from operator import attrgetter
 
-    class Country:
-        def __init__(self, name, population, area):
-            self.name = name
-            self.population = population
-            self.area = area
-        def __repr__(self):
-            return repr((self.name,self.population,self.area))
+  class Country:
+  def **init**(self, name, population, area):
+  self.name = name
+  self.population = population
+  self.area = area
+  def **repr**(self):
+  return repr((self.name,self.population,self.area))
 
-    countries = [Country('India',1200,100),
-                 Country('China', 1400, 200),
-                 Country('USA', 120, 300)]
+  countries = [Country('India',1200,100),
+  Country('China', 1400, 200),
+  Country('USA', 120, 300)]
 
-    countries.append(Country('Russia',80,900))
+  countries.append(Country('Russia',80,900))
 
 Now what we want to do is sort countries. Can we do this, `countries.sort()`? You get an error
 
@@ -6375,13 +6356,12 @@ We want filter elements that have length `4`.
 
 Let’s look at the traditional approach:
 
-        
         >>> numbers = ['Zero', 'One','Two','Three','Four','Five','Six','Seven', 'Eight','Nine']
         >>> numbers_length_four=[]
         >>> for number in numbers:
         ...    if len(number)== 4:
         ...      numbers_length_four.append(number)
-        ... 
+        ...
 
 Lot of code. Isn’t it?
 
@@ -6427,11 +6407,11 @@ To extract only the odd numbers instead, use the condition `value % 2 == 1`.
         >>> values_odd = [ value for value in values if value%2==1]
         >>> values_odd
         [3, 9, 1, 15, 3]
-        
+
 
 ### Step 12: Introduction To `set`
 
-A `list` can contain duplicates. So if we create a **list** `numbers = [1, 2, 3, 2, 1]`, it is a valid `list`. A list is more based on the index, or position of elements. So in `numbers`, at **index** `[0]` is element 1, the element at **index** `[1]` is `2`,and so on. A `list` is a *positional* data structure. You can add things at the end, or anywhere in-between.
+A `list` can contain duplicates. So if we create a **list** `numbers = [1, 2, 3, 2, 1]`, it is a valid `list`. A list is more based on the index, or position of elements. So in `numbers`, at **index** `[0]` is element 1, the element at **index** `[1]` is `2`,and so on. A `list` is a _positional_ data structure. You can add things at the end, or anywhere in-between.
 
 A set, on the other hand, does not contain duplicates.
 
@@ -6478,7 +6458,7 @@ You can check if an element is in a set, or not. You can use `1 in numbers_set`,
 
         >>> 1 in numbers_set
         True
-        >>> 5 in numbers_set    
+        >>> 5 in numbers_set
         False
 
 You can do aggregate operations - `min`, `max`, `sum` and `len`.
@@ -6593,7 +6573,7 @@ There are a number of useful methods which are present in a dictionary. Let’s 
         dict_items([('a', 5), ('b', 6), ('c', 8), ('d', 10)])
         >>> for (key,value) in occurances.items():
         ...    print(f"{key} {value}")
-        ... 
+        ...
         a 5
         b 6
         c 8
@@ -6615,8 +6595,8 @@ In this step, let’s do a simple exercise with a dictionary. We have a simple s
 
 With this string, we want to do two things:
 
--   Compute how many times has each word is present in the string.
--   Find out how many times each character is present in this string.
+- Compute how many times has each word is present in the string.
+- Find out how many times each character is present in this string.
 
 #### Solution 1
 
@@ -6699,13 +6679,13 @@ You can create `tuple` by using `()`, We will look at `tuple` in the next step.
         <class 'tuple'>
         >>> type((1,2,3))
         <class 'tuple'>
-        >>> 
+        >>>
 
 #### Summary
 
 These are all pretty nuanced but these are powerful things you would need to understand to make complete use of the power of Python. I think understanding all the things we are discussing in this specific step, are key to making great use of all Python data structures.
 
-`()` represents tuples, `[]` represents a list, and `{}` might be a set or a dictionary. If `{}` does not contain anything it’s a dictionary. If the `{]` contain a set of elements, it’s a set. If the `{}` contains key-value pairs, then it’s a dictionary. *Make sure that you understand every word of this*.
+`()` represents tuples, `[]` represents a list, and `{}` might be a set or a dictionary. If `{}` does not contain anything it’s a dictionary. If the `{]` contain a set of elements, it’s a set. If the `{}` contains key-value pairs, then it’s a dictionary. _Make sure that you understand every word of this_.
 
 ### Step 16: Introducing `tuple`
 
@@ -6823,8 +6803,7 @@ How do you create a tuple with just one value? The way you can do that, is by pu
 
 It’s typically an interesting piece of code, for people who come from other languages. They would be worrying: `Oh!! what does it really mean?` Time for Python programmers to have some fun!
 
-Chapter 11 - Object Oriented Programming Revisited
---------------------------------------------------
+## Chapter 11 - Object Oriented Programming Revisited
 
 Welcome to this section, a continuation on Object-Oriented Programming. In an earlier section, we understood the basics of object oriented programming.
 
@@ -6840,9 +6819,9 @@ In this first step, we will revise the concepts we learned earlier: **class**, *
 
 In the previous step, we talked about a few important questions that you need to ask when you are talking about your classes:
 
--   What is the state? That means, what are the member variables you need to have.
--   How do you want to allow creation of a specific object? That is, what is the kind of constructor that you want to allow?
--   What is what is the behavior you want? That would be the member method definitions.
+- What is the state? That means, what are the member variables you need to have.
+- How do you want to allow creation of a specific object? That is, what is the kind of constructor that you want to allow?
+- What is what is the behavior you want? That would be the member method definitions.
 
 Let’s consider the example of a ceiling fan. For this `Fan` `class`, you can think about the different elements that represent the state of a specific `Fan` object. You can think about how you want to allow construction of a `Fan` object, and how to define its behavior. In other words, what kind of changes you want to allow in the state of a `Fan` class.
 
@@ -6894,7 +6873,6 @@ Now let’s go ahead and represent the behavior we wanted to have, for this spec
 
 Here is the full code so far, for your reference:
 
-        
     class Fan:
         def __init__(self, make, radius, color):
             self.make = make
@@ -7047,7 +7025,7 @@ Let’s create a simple class called `Animal` with a method `bark` and create an
 
         >>> class Animal:
         ...   def bark(self):
-        ...     print("bark") 
+        ...     print("bark")
         >>> animal = Animal()
         >>> animal.bark()
         bark
@@ -7074,7 +7052,7 @@ Look at this class definition: `class Pet(Animal)` indicates that `Pet` extends 
         >>> class Pet(Animal):
         ...   def groom(self):
         ...     print("groom")
-        ... 
+        ...
         >>> dog = Pet()
 
 You can obviously do `pet.groom()` on the `Pet`.
@@ -7248,7 +7226,6 @@ Error from above code - `TypeError: Can't instantiate abstract class AbstractAni
 
 You can create a sub class implementing the abstract methods in the abstract class.
 
-        
     class Dog(AbstractAnimal):
         def bark(self):
             print("Bow Bow")
@@ -7302,7 +7279,6 @@ We are defining an algorithm, and leaving the implementation of individual steps
 
 Let’s create `Recipe1` .
 
-        
     class Recipe1(AbstractRecipe):
 
         def prepare(self):
@@ -7313,7 +7289,7 @@ Let’s create `Recipe1` .
             print('execute the steps')
 
         def cleanup(self): pass
-        
+
 
 When you run this:
 
@@ -7356,14 +7332,13 @@ You get
 
 In this section, we looked at a wide variety of object oriented concepts.
 
--   We started with revising the basic concepts - classes, objects - state and behavior. We created a couple of simple object oriented programming examples. We designed a Fan and Book classes with state and behavior.
--   We looked at object composition. We created a Book class having a number of Reviews.
--   We looked at inheritance. We created multiple examples of inheritance, and we looked at an example of multiple inheritance as well. Inheritance helps us to design a class hierarchy, and to use properties from the super-class.
--   We looked at a specific type of a class called abstract class, for which you’ll not be able to create instances. We looked at examples where abstract classes are really useful.
--   We looked at the Template Method design pattern, where you define a template, and leave specific implementation details to the subclass. We saw how abstract classes help us to implement Template Method design pattern.
+- We started with revising the basic concepts - classes, objects - state and behavior. We created a couple of simple object oriented programming examples. We designed a Fan and Book classes with state and behavior.
+- We looked at object composition. We created a Book class having a number of Reviews.
+- We looked at inheritance. We created multiple examples of inheritance, and we looked at an example of multiple inheritance as well. Inheritance helps us to design a class hierarchy, and to use properties from the super-class.
+- We looked at a specific type of a class called abstract class, for which you’ll not be able to create instances. We looked at examples where abstract classes are really useful.
+- We looked at the Template Method design pattern, where you define a template, and leave specific implementation details to the subclass. We saw how abstract classes help us to implement Template Method design pattern.
 
-Chapter 12 - Error Handling
----------------------------
+## Chapter 12 - Error Handling
 
 ### Step 01: Introduction To Error Handling - Your Thought Process
 
@@ -7636,7 +7611,7 @@ Output
 
 If a divide by zero exception happens, it is not handled, and will get thrown out.
 
-The block says *OK! I only know how to handle a `TypeError`. I don’t know how to handle the `ZeroDivisionError`*.
+The block says _OK! I only know how to handle a `TypeError`. I don’t know how to handle the `ZeroDivisionError`_.
 
 How can you handle this?
 
@@ -7737,7 +7712,6 @@ Output is `'Exception'`
 
 The last puzzle shows how you can print the exception details. You would want to get the details of the error, and print them out.
 
-        
     try:
         sum([1,'1'])
     except TypeError as error:
@@ -7893,7 +7867,6 @@ Output
 
 Here is the entire code of the program, for your reference:
 
-        
     class Currency:
         def __init__(self, currency, amount):
             self.currency = currency
@@ -7942,7 +7915,6 @@ You can also pass in the values of `self.currency` and `other.currency`, so that
 
 Here is the entire code for your reference:
 
-        
     class CurrenciesDoNotMatchError(Exception):
         def __init__(self,message):
             super().__init__(message)
@@ -7995,8 +7967,7 @@ We know some of these are not easy to implement, but the most important thing is
 
 Once you have the attitude of to think about the end user, your support team, and the calling method, that’s all you would need to make sure that you have some exception handling.
 
-Chapter 13 - More Python Tips
------------------------------
+## Chapter 13 - More Python Tips
 
 ### Tip-1: `math` Module And `Decimal` Class
 
@@ -8037,13 +8008,12 @@ Let’s look more closely at the `math` module, and other components present wit
         math.ceil(       math.fmod(       math.log(        math.tanh(
         math.copysign(   math.frexp(      math.log10(      math.tau
         math.cos(        math.fsum(       math.log1p(      math.trunc(
-        math.cosh(       math.gamma(      math.log2(       
-        math.degrees(    math.gcd(        math.modf(       
+        math.cosh(       math.gamma(      math.log2(
+        math.degrees(    math.gcd(        math.modf(
         math.e           math.hypot(      math.nan
 
 You can also find out the value of `math.pi`, which a constant, and `math.e`.
 
-             
         >>> math.pi
         3.141592653589793
         >>> math.e
@@ -8067,7 +8037,7 @@ Let’s look at a simple example using `None`.
 
 Let’s create a simple method, and call it `email()`. We would put the `subject`, `content`, `to`, `cc`, `bcc` as parameters to this method. Let’s say this is the definition of `email`, and it’s just simply print everything in the body, using a formatted string. We are printing upto `{cc}` among the parameters.
 
-        >>> def email(subject, content, to , cc , bcc): 
+        >>> def email(subject, content, to , cc , bcc):
         ...    print(f" {subject}, {content}, {to}, {cc}, "
         ... )
         ...
@@ -8083,9 +8053,9 @@ You can to see that `email` is missing required positional arguments, which are 
 
 The solution is: set `cc = None` and `bcc = None`. Also, print the `cc` and `bcc` inside the method for display.
 
-        >>> def email(subject, content, to , cc=None , bcc=None): 
+        >>> def email(subject, content, to , cc=None , bcc=None):
         ...    print(f" {subject}, {content}, {to}, {cc}, {bcc}");
-        ... 
+        ...
 
 We can now call the method again. This time we see the right result.
 
@@ -8103,12 +8073,12 @@ Here’s an example:
 
         >>> var = "123"
         >>> if var is None : print ("do something");
-        ... 
+        ...
         >>> var = None
         >>> if var is None : print ("do something");
-        ... 
+        ...
         do something
-        >>> 
+        >>>
 
 ### Tip-2: `statistics` Module - Find Mean And Median
 
@@ -8184,7 +8154,7 @@ You can even append at the start of the queue. The way you can do it is to call 
           File "<stdin>", line 1, in <module>
         AttributeError: 'collections.deque' object has no attribute 'appendLeft'
         >>> queue.append
-        queue.append(      queue.appendleft(  
+        queue.append(      queue.appendleft(
         >>> queue.appendleft('Minus One')
         >>> queue
 
@@ -8368,7 +8338,7 @@ In this step, let’s focus on the last argument: `kwargs` or keyword arguments.
 
     def example_method(mandatory_parameter, default_parameter="Default"
                        , *args, **kwargs):
-            
+
 
 Let’s pass a few key-value pairs to the method.
 
@@ -8482,13 +8452,13 @@ The first thing to do is to **import** it, by saying `import module_1` . Now, yo
     module_1.method_1()
     module_1.ClassA().class_method_1()
 
-When this code is run, you would see that the messages are shown twice. - Once from module\_1 import - Once from module\_2 execution
+When this code is run, you would see that the messages are shown twice. - Once from module_1 import - Once from module_2 execution
 
 **If you have any code that’s not within a class or a method, then that code is executed automatically.**
 
 How can we prevent code outside a class or a method from executing when it is imported?
 
-You can update module\_1 with an if condition
+You can update module_1 with an if condition
 
     if __name__ == '__main__':
         method_1()
@@ -8501,7 +8471,7 @@ In this tip, we will be looking at how to compare objects in Python.
 Let’s create a simple class, `Student`, and and let’s say it’s an empty class. Let’s create a couple of instances of it, `student1` and `student2`. Are these two `Student`s equal?
 
         >>> class Student: pass
-        ... 
+        ...
         >>> student1 = Student()
         >>> student2 = Student()
 
@@ -8549,7 +8519,6 @@ Let’s create the `Student` `class` again, but this time with a constructor. We
 
 Let’s update the definitions of our students. If you look at these objects, `student4` and `student1` are referring to the same object, aren’t they!
 
-     
         >>> student1 = Student(1)
         >>> student2 = Student(2)
         >>> student3 = Student(1)
