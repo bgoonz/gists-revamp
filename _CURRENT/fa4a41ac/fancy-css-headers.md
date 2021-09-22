@@ -1,4 +1,5 @@
-# 9 fancy title design in CSS you need to learn now
+9 fancy title design in CSS you need to learn now
+=================================================
 
 > Learn how to EASILY create fancy looking title with only CSS
 
@@ -16,7 +17,7 @@ Let jump into the code.
 
 HTML (as promise, one div):
 
-<div class='line-text'>foreign terrace</div>
+foreign terrace
 
 SCSS:
 
@@ -48,7 +49,7 @@ I believe you have guessed, we would apply `-webkit-text-stroke-width` and `-web
 
 HTML:
 
-<div class='neon-text'>underlying wire</div>
+underlying wire
 
 SCSS:
 
@@ -76,7 +77,7 @@ We would also use another font family to complement the overall style. The one I
 
 HTML:
 
-<div class='stripe-text'>quick turnover</div>
+quick turnover
 
 SCSS:
 
@@ -102,7 +103,7 @@ And then we just add a little bit offset for the upper part element to the right
 
 HTML:
 
-<div class='cut-text'>stolen hour</div>
+stolen hour
 
 SCSS:
 
@@ -118,7 +119,7 @@ Despite the fancy name, this style is the easiest. We will be using :before and 
 
 HTML:
 
-<div class='cyber-text'>digital highway</div>
+digital highway
 
 SCSS:
 
@@ -136,7 +137,7 @@ One little twist of this style is the inner “shadow” of the text. It is in f
 
 HTML:
 
-<div class='wood-text'>suitable villa</div>
+suitable villa
 
 SCSS:
 
@@ -158,7 +159,7 @@ For the style itself, we will use our old friend `-webkit-text-stroke-width` ,`-
 
 HTML:
 
-<div class='comic-text'>square tube!</div>
+square tube!
 
 SCSS:
 
@@ -176,11 +177,11 @@ On top of the text, we would also add a text-shadow, to give more shape to it. U
 
 HTML:
 
-<div class='horizontal-cut-text'>vague minority</div>
+vague minority
 
 SCSS:
 
-> Again, another one without any after and before element. In case you don’t know already, you can stack background color as much as you want to. Using background property alone could already give us a lot of stunning pattern. If you are interested and want to learn more, you can check out this CSS3 Pattern Gallery: [https://leaverou.github.io/css3patterns/](https://leaverou.github.io/css3patterns/)
+> Again, another one without any after and before element. In case you don’t know already, you can stack background color as much as you want to. Using background property alone could already give us a lot of stunning pattern. If you are interested and want to learn more, you can check out this CSS3 Pattern Gallery: <https://leaverou.github.io/css3patterns/>
 
 **Style 9: Double-border-text**
 
@@ -194,7 +195,7 @@ Since it is very similar, I will jump into the code right now.
 
 HTML:
 
-<div class='double-border-text'>entire volume</div>
+entire volume
 
 SCSS:
 
@@ -205,6 +206,5 @@ SCSS:
 ![Image for post](https://miro.medium.com/max/724/1*8D039RUBG9sKBsWt7wA6tw.png)
 
 the edge is coming from the middle stroke of the “E”
-
 
 [Source](https://medium.com/front-end-weekly/9-fancy-title-design-in-css-you-need-to-learn-now-75dd24b48ca)

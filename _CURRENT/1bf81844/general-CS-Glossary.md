@@ -98,13 +98,13 @@ Stands for ASF Streaming Redirector. ASX is a technology developed by Microsft f
 
 Stands for Audi Video Interleave. AVI is a file format for compressed video files developed by Microsoft that is part of the Video for Windows technology.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 B
 
 ### Banner Ad
 
-An advertisement placed on a webpage which links to the advertiser's website. Banner ads can contain text, graphical images, animation, and sound.
+An advertisement placed on a webpage which links to the advertiser’s website. Banner ads can contain text, graphical images, animation, and sound.
 
 ### Bandwidth
 
@@ -112,7 +112,7 @@ The amount of data that can be transmitted over an internet connection in a spec
 
 ### Baud
 
-The number of signals that can be sent over a data channel per second. The term 'baud' is named after the inventor of the Baudot telegraph code, J.M.E. Baudot.
+The number of signals that can be sent over a data channel per second. The term ‘baud’ is named after the inventor of the Baudot telegraph code, J.M.E. Baudot.
 
 ### BBS
 
@@ -150,17 +150,17 @@ Same as Web Browser.
 
 A unit of data containing 8 bits. A byte can store one text character.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 C
 
-An advanced high-level computer programming language used for application development. C was originally developed by Dennis Ritchie at Bell Labs in the 1970's and was originally designed to be a systems programming language but since then has proven itself to be able to be used for various software applications such as business programs, engineering programs, and even games. The UNIX operating system is written in C.
+An advanced high-level computer programming language used for application development. C was originally developed by Dennis Ritchie at Bell Labs in the 1970’s and was originally designed to be a systems programming language but since then has proven itself to be able to be used for various software applications such as business programs, engineering programs, and even games. The UNIX operating system is written in C.
 
 ### C++
 
 A descendant of C. The C++ language is an advanced high-level computer programming language used for application development . However C++ unlike C, is object-oriented. C++ was originally developed by Bjarne Stroustrup at Bell Labs.
 
-### C#
+### C
 
 A language developed by Microsft that is a version of C++ and contains functions similar to the Java language.
 
@@ -214,7 +214,7 @@ A malicious program whose purpose is to harm a computer by deleting files, preve
 
 ### Cookie
 
-A small text file that a web server may store on a user's computer for the purpose of uniquely identifying the user during future visits to the website.
+A small text file that a web server may store on a user’s computer for the purpose of uniquely identifying the user during future visits to the website.
 
 ### ColdFusion
 
@@ -224,7 +224,7 @@ A web development software tool used to integrate databases and webpages. ColdFu
 
 Stands for Cascading Style Sheets. CSS is a language used for declaring stylesheets that describe how the content on webpages will appear. CSS is recommended by the World Wide Web Consortium (W3C) and can be used to define various styles for webpages including font size, font color, spacing between elements, and a background color/image.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 D
 
@@ -300,7 +300,7 @@ Stands for Document Type Definition. A DTD specifies a set of rules that are use
 
 An IP address that changes every time a device is connected to the internet. In some cases, an IP address of a device can change while it is connected.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 E
 
@@ -324,7 +324,7 @@ The process by which data is converted into a secret code from its original form
 
 A type of LAN architecture.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 F
 
@@ -334,7 +334,7 @@ A system used to prevent access to a network or certain devices on a network. Th
 
 ### Flash
 
-A vector based animation technology originally developed by FutureWave Software. Flash was known as FutureSplash until 1997, when FutureWave Software was bought by MacroMedia Inc. Flash is used to create various animations and graphics that can be displayed in any modern web browser that contains the necessary plug-in.
+A vector based animation technology originally developed by FutureWave Software. Flash was known as FutureSplash until 1997, when FutureWave Software was bought by MacroMedia Inc. Flash is used to create various animations and graphics that can be displayed in any modern web browser that contains the necessary plug-in.
 
 ### Form
 
@@ -350,7 +350,7 @@ In web terms, a frame is a part of the browsers display area which actually cont
 
 ### FrontPage
 
-A software tool used for web development. FrontPage was originally created by Vermeer Technologies Inc. The company was later bought by Microsoft, at which point Frontpage became Microsoft Frontpage.
+A software tool used for web development. FrontPage was originally created by Vermeer Technologies Inc. The company was later bought by Microsoft, at which point Frontpage became Microsoft Frontpage.
 
 ### FTP
 
@@ -364,7 +364,7 @@ A software tool installed on a computer so that users can log in, upload files t
 
 A system used to prevent access to a network or certain devices on a network. There are software as well as hardware firewalls.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 G
 
@@ -400,7 +400,7 @@ A printer that is capable of printing graphics.
 
 A Banner Ad that contains graphical elements instead of just text.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 H
 
@@ -472,7 +472,7 @@ An extension to hypertext which includes graphics, audio, and video.
 
 Text that is linked to other documents in a way that makes it pssobile for readers to read related documents by clicking on a highlighted word or symbol.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 I
 
@@ -530,7 +530,7 @@ A server that serves connections to IRC.
 
 ### ISAPI
 
-Stands for Internet Server Application Programming Interface. ISAPI is an API for Microsoft's IIS web server.
+Stands for Internet Server Application Programming Interface. ISAPI is an API for Microsoft’s IIS web server.
 
 ### ISDN
 
@@ -540,7 +540,7 @@ Stands for Integrated Services Digital Network. ISDN is a telecommunications sta
 
 Stands for Internet Service Provider. An Internet Service Provider is a company that provides individuals and companies with internet access. ISP is synonomous with IAP.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 J
 
@@ -550,7 +550,7 @@ A high level, object-oriented, platform independent programming language develop
 
 ### Java Applet
 
-A Java program that can run within a webpage and can be downloaded to the user's computer from a webserver.
+A Java program that can run within a webpage and can be downloaded to the user’s computer from a webserver.
 
 ### JavaScript
 
@@ -572,7 +572,7 @@ A version of Javascript developed by Microsoft.
 
 Stands for Java Server Pages. JSP is a server-side technology that allows for dynamic scripts to work with HTML code.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 K
 
@@ -588,13 +588,13 @@ In the world wide web, a keyword is a word used by search engines to search for 
 
 A unit of data consisting of 1024 bytes. Kilobyte is abbreviated as KB.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 L
 
 ### LAN
 
-Stands for Local Area Network. A LAN is a network spanning a relatively small area, usually limited to one building or a group of buildings. LAN's are often used by organizations that need their own network such as offices and educational institutions. Two or more LAN's connected together make up a WAN.
+Stands for Local Area Network. A LAN is a network spanning a relatively small area, usually limited to one building or a group of buildings. LAN’s are often used by organizations that need their own network such as offices and educational institutions. Two or more LAN’s connected together make up a WAN.
 
 ### Link
 
@@ -602,9 +602,9 @@ In general programming, the execution of a linker. In spreadsheet software, when
 
 ### Linux
 
-A free open source operating system based on Unix. Linux gets its name from the man responsible for developing most of the operating system's kernel - Linus Trovalds.
+A free open source operating system based on Unix. Linux gets its name from the man responsible for developing most of the operating system’s kernel - Linus Trovalds.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 M
 
@@ -626,7 +626,7 @@ A unit of data consisting of 1024 kilobytes. Megabyte is abbreviated as MB.
 
 ### Meta
 
-The word meta when used in computer science is a prefix that means "about".
+The word meta when used in computer science is a prefix that means “about”.
 
 ### Meta Data
 
@@ -654,7 +654,7 @@ Document types that are defined by MIME. Some MIME types include text/plain, tex
 
 ### Modem
 
-An abbreviation for modulator-demodulator. A modem is a piece of computer hardware (could be internal or external) used to send data through telephone or cable lines. While data on a computer is stored digitally, data on telephone and cable lines is stored in an analog form. Other than sending data, it is the modem's job to convert between digital and analog data. This is how modem gets its name - it modulates a digital signal into an analog signal, and then demodulates an analog signal into a digital signal.
+An abbreviation for modulator-demodulator. A modem is a piece of computer hardware (could be internal or external) used to send data through telephone or cable lines. While data on a computer is stored digitally, data on telephone and cable lines is stored in an analog form. Other than sending data, it is the modem’s job to convert between digital and analog data. This is how modem gets its name - it modulates a digital signal into an analog signal, and then demodulates an analog signal into a digital signal.
 
 ### Mosaic
 
@@ -662,7 +662,7 @@ A web browser released in 1993 by the NCSA. Mosaic became the first commonly ava
 
 ### MOV
 
-A file extension used for multimedia files played on Apple's QuickTime. A video codec developed by Apple.
+A file extension used for multimedia files played on Apple’s QuickTime. A video codec developed by Apple.
 
 ### MP3
 
@@ -696,7 +696,7 @@ The integration of text, graphics, video, animation, and/or sound in a presentab
 
 A free open source database system commonly used for interaction with web applications.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 N
 
@@ -706,7 +706,7 @@ Stands for NetBios Extended User Interface. NetBEUI is an extended version of Ne
 
 ### NetBIOS
 
-Stands for Network Basic Input Output System. NetBIOS is an API that contains special functions for commmunication between computers on LAN's. NetBIOS is used by DOS and Windows.
+Stands for Network Basic Input Output System. NetBIOS is an API that contains special functions for commmunication between computers on LAN’s. NetBIOS is used by DOS and Windows.
 
 ### Navigate
 
@@ -732,7 +732,7 @@ A server that serves newsgroups to users.
 
 Any computer or device on a network.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 O
 
@@ -742,9 +742,9 @@ A web browser developed by the company Opera. Opera is available for various ope
 
 ### OS
 
-Stands for Operating System. An OS is the central program on a computer. An OS is responsible for running other programs, getting input from the user, sending output to the screen, keeping track of files and directories, and communicating with hardware. Some OS's include Windows, Linux, Unix, Mac, and Solaris.
+Stands for Operating System. An OS is the central program on a computer. An OS is responsible for running other programs, getting input from the user, sending output to the screen, keeping track of files and directories, and communicating with hardware. Some OS’s include Windows, Linux, Unix, Mac, and Solaris.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 P
 
@@ -784,45 +784,45 @@ A method used to determine if an IP address is accessible. Ping works by sending
 
 The central hardware and/or software of a computer. For example, the software platform of the average PC is Windows, while its hardware platform is Intel X86. In web terms, platform refers only to the central software of a computer ( its operating system ), such as Windows, Linux, or Mac. The term platform is sometimes used synonomously with operating system.
 
-- Car tracking devices
+-   Car tracking devices
 
-- Machine
+-   Machine
 
-- Chatroom
+-   Chatroom
 
-- Auto parts international
+-   Auto parts international
 
-- Database management system
+-   Database management system
 
-- Download
+-   Download
 
-- Security System
+-   Security System
 
-- 8 Bits
+-   8 Bits
 
-- Abbreviations
+-   Abbreviations
 
-- Activex
+-   Activex
 
-- Car tracking devices
+-   Car tracking devices
 
-- Machine
+-   Machine
 
-- Chatroom
+-   Chatroom
 
-- Auto parts international
+-   Auto parts international
 
-- Database management system
+-   Database management system
 
-- Download
+-   Download
 
-- Security System
+-   Security System
 
-- 8 Bits
+-   8 Bits
 
-- Abbreviations
+-   Abbreviations
 
-- Activex
+-   Activex
 
 ### Plug-In
 
@@ -834,7 +834,7 @@ Stands for Portable Network Graphics. PNG is a graphics format that uses lossles
 
 ### POP
 
-Stands for Post Office Protocol. POP is a protocol used for receiving and reading e-mail from an e-mail server. The first version of the POP protocol named POP2 was a standard in the mid-80's and required SMTP to send messages. The second version of the POP protocol named POP3 does not require SMTP to send messages, and can be used with or without it.
+Stands for Post Office Protocol. POP is a protocol used for receiving and reading e-mail from an e-mail server. The first version of the POP protocol named POP2 was a standard in the mid-80’s and required SMTP to send messages. The second version of the POP protocol named POP3 does not require SMTP to send messages, and can be used with or without it.
 
 ### Port
 
@@ -842,31 +842,31 @@ In terms of hardware, a port is the physical interface on a computer to which de
 
 ### Protocol
 
-A set of rules dictating how programs, computers, and devices communicate with each other over the internet. For Example, the Hyper Text Transfer Protocol (HTTP) specifies how data is sent over the world wide web between the web server and the user's web browser.
+A set of rules dictating how programs, computers, and devices communicate with each other over the internet. For Example, the Hyper Text Transfer Protocol (HTTP) specifies how data is sent over the world wide web between the web server and the user’s web browser.
 
 ### PPP
 
-Stands for Point to Point Protocol. PPP is used to establish a direct connection between two computers. Often times, a connection between a user's computer and that of an ISP's server, so that the user can connect to the internet through the server.
+Stands for Point to Point Protocol. PPP is used to establish a direct connection between two computers. Often times, a connection between a user’s computer and that of an ISP’s server, so that the user can connect to the internet through the server.
 
 ### Proxy Server
 
 A server that acts as a middle man in a connection between two computers. A proxy server can be used to improve performance by saving the results of various requests, and consequently loading such data faster when it is requested again. A proxy server can also be used to filter out content by checking what information is requested, and potentially blocking that information from reaching the user who requests it.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 Q
 
 ### QuickTime
 
-A multimedia format developed by Apple. Mac's as well as PC's can run video and animation in a QuickTime format. For Mac's , the QuickTime technology is built into the operating system. For PC's, a special QuickTime driver is required. Various encoding formats are supported by QuickTime including Cinepak, JPEG, and MPEG.
+A multimedia format developed by Apple. Mac’s as well as PC’s can run video and animation in a QuickTime format. For Mac’s , the QuickTime technology is built into the operating system. For PC’s, a special QuickTime driver is required. Various encoding formats are supported by QuickTime including Cinepak, JPEG, and MPEG.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 R
 
 ### Router
 
-A software tool or hardware device that transfers data to different devices across networks. Since a router transfters data across networks, it has to be connected to at least two networks. These two networks can be two LANs, two WANs, or a LAN and its ISP'S network.
+A software tool or hardware device that transfers data to different devices across networks. Since a router transfters data across networks, it has to be connected to at least two networks. These two networks can be two LANs, two WANs, or a LAN and its ISP’S network.
 
 ### RAID
 
@@ -896,7 +896,7 @@ Stands for Red Green Blue. RGB is an acronym for the three primary colors that w
 
 In computer terms, a robot is a program that runs by itself. Three types of robots are agents, spiders, and daemons.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 S
 
@@ -922,7 +922,7 @@ Software that is free of charge, however the author(s) of the software request a
 
 ### Shockwave
 
-A technology created by Macromedia, Inc. for including multimedia in web pages.
+A technology created by Macromedia, Inc. for including multimedia in web pages.
 
 ### Search Engine
 
@@ -970,7 +970,7 @@ Forging an online identity in some way. With e-mail spoofing, someone can forge 
 
 ### Spyware
 
-Hidden software whose purpose is to gather data about a user's web surfing habits. Spyware can come built in to various software that is downloadable from the internet, from software that comes pre-installed with a computer, or can secretly install itself from the web. Spyware usually gathers data about a user's surfing habits for advertising purposes.
+Hidden software whose purpose is to gather data about a user’s web surfing habits. Spyware can come built in to various software that is downloadable from the internet, from software that comes pre-installed with a computer, or can secretly install itself from the web. Spyware usually gathers data about a user’s surfing habits for advertising purposes.
 
 ### SQL
 
@@ -986,7 +986,7 @@ Stands for Server Side Include. An SSI is a special type of HTML comment that wh
 
 ### SSL
 
-Stands for Secure Socket Layer. SSL is a protocol developed by Netscape which encrypts data transmitted over the web. SSL is used by websites that obtain confidential information about users such as a user's address or credit card number.
+Stands for Secure Socket Layer. SSL is a protocol developed by Netscape which encrypts data transmitted over the web. SSL is used by websites that obtain confidential information about users such as a user’s address or credit card number.
 
 ### Static IP address
 
@@ -1004,7 +1004,7 @@ The standard format used for files that are being streamed over the internet.
 
 Stands for Scalable Vector Graphics. SVG is a file format for vector graphics which allows images to be displayed in XML pages. These images are created through the use of text based commands that are formatted to comply with XML specifications. SVG images are scalable to the size of the window in which a web page is viewed and will adjust in size and resolution based on the window in which they are displayed, unlike JPEG and GIF images which always remain a specific size. Other benefits of SVG include being a smaller file size than JPEG and GIF image files, being resolution independent - so an SVG image can scale up or down on any type of web device, accordingly, being able to link to parts of an image, and containing complex animation.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 T
 
@@ -1030,9 +1030,9 @@ A data packet that is sent over a network running TCP/IP.
 
 ### Trojan Horse
 
-A program that appears harmless, but its true purpose is malicious. Trojan horses are used for various purposes including allowing someone remote access to a victim's computer (remote access trojan), providing an attacker with sensitive information such as usernames and passwords (data sending trojan), destroying files (destructive trojan), and using the victims computer as a proxy server (proxy trojan), among others.
+A program that appears harmless, but its true purpose is malicious. Trojan horses are used for various purposes including allowing someone remote access to a victim’s computer (remote access trojan), providing an attacker with sensitive information such as usernames and passwords (data sending trojan), destroying files (destructive trojan), and using the victims computer as a proxy server (proxy trojan), among others.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 U
 
@@ -1042,7 +1042,7 @@ Stands for Universal Description Discovery and Integration. UDDI is a web based 
 
 ### Unix
 
-An operating system developed by Bell Laboratories in the early 1970's. Unix is written in C, and is used primarily for servers.
+An operating system developed by Bell Laboratories in the early 1970’s. Unix is written in C, and is used primarily for servers.
 
 ### UNZIP
 
@@ -1070,7 +1070,7 @@ A string of text that identifies the web browser and operating system used by a 
 
 Your user-agent string is **Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36**.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 V
 
@@ -1080,7 +1080,7 @@ See Visual Basic.
 
 ### VBScript
 
-Stands for Visual Basic Scripting Edition. VBScript is a scripting language developed by Microsoft that works only in Microsoft's Internet Explorer web browser and browsers based on Internet Explorer's engine such as Flashpeak's SlimBrowser. VBScript can be used to print dates, make calculations, interact with the user, and more. VBScript is based on Visual Basic , but it is much simpler.
+Stands for Visual Basic Scripting Edition. VBScript is a scripting language developed by Microsoft that works only in Microsoft’s Internet Explorer web browser and browsers based on Internet Explorer’s engine such as Flashpeak’s SlimBrowser. VBScript can be used to print dates, make calculations, interact with the user, and more. VBScript is based on Visual Basic , but it is much simpler.
 
 ### Virus
 
@@ -1106,7 +1106,7 @@ Stands for Virtual Private Network. A VPN is a private network that uses encrypt
 
 Stands for Virtual Reality Modeling Language. VRML is a standard used for displaying 3-dimensional graphics on the world wide web.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 W
 
@@ -1116,7 +1116,7 @@ Stands for World Wide Web Consortium. The W3C develops and maintains standards f
 
 ### WAN
 
-Stands for Wide Area Network. A WAN is a network that connects various computers and devices in a network larger than a LAN (in terms of geographical area). A WAN can also be used to connect together two or more LAN's. The largest WAN in the world is the internet.
+Stands for Wide Area Network. A WAN is a network that connects various computers and devices in a network larger than a LAN (in terms of geographical area). A WAN can also be used to connect together two or more LAN’s. The largest WAN in the world is the internet.
 
 ### WAP
 
@@ -1188,7 +1188,7 @@ See Web Spider.
 
 ### Wildcard
 
-A special character that means any and all characters. The wildcard character is often used to select a large amount of files at once. For example, in Windows and DOS, the wildcard character is _. Suppose you are using Windows and you want to see a list of all of the files in a directory that have a.txt extension, for this task you would use the wildcard character _ in the form \*.txt. This will return all the files in the directory that have a.txt extension.
+A special character that means any and all characters. The wildcard character is often used to select a large amount of files at once. For example, in Windows and DOS, the wildcard character is *. Suppose you are using Windows and you want to see a list of all of the files in a directory that have a.txt extension, for this task you would use the wildcard character* in the form \*.txt. This will return all the files in the directory that have a.txt extension.
 
 ### Windows 2000, Windows NT, Windows 95/98, Windows XP
 
@@ -1238,7 +1238,7 @@ See Web Server.
 
 Stands for What You see Is What You Get. WYSIWYG is an acronym used to refer to seeing a document exactly how it will be displayed when it is published or printed.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 X
 
@@ -1248,7 +1248,7 @@ The next generation of HTML/XHTML forms. XForms will separate data definition an
 
 ### XHTML
 
-Stands for Extensible Hyper Text Markup Language. XHTML is the next step in the evolution of HTML. It's syntax is stricter and more verbose.
+Stands for Extensible Hyper Text Markup Language. XHTML is the next step in the evolution of HTML. It’s syntax is stricter and more verbose.
 
 ### XPath
 
@@ -1290,7 +1290,7 @@ Stands for XSL Formatting Objects. XSL-FO is an XML language used to format docu
 
 Stands for XSL Transformations. XSLT is an XML language used to transform XSML documents into other XML documents. XSLT is part of XSL along with XSL-FO and XPath.
 
-[^Back to top](http://www.landofcode.com/web-computer-terms-glossary.php#)
+\[^Back to top\](http://www.landofcode.com/web-computer-terms-glossary.php\#)
 
 Z
 
