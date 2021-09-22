@@ -1,12 +1,10 @@
-Searching: getElement*, querySelector*
-======================================
+# Searching: getElement*, querySelector*
 
 DOM navigation properties are great when elements are close to each other. What if they are not? How to get an arbitrary element of the page?
 
 There are additional searching methods for that.
 
-document.getElementById or just id
-----------------------------------
+## document.getElementById or just id
 
 If an element has the `id` attribute, we can get the element using the method `document.getElementById(id)`, no matter where it is.
 
@@ -40,14 +38,13 @@ Here in the tutorial we use `id` to directly reference an element for brevity, w
 
 In real life `document.getElementById` is the preferred method. \`\`\`
 
-\`\``smart header="The`id`must be unique" The`id`must be unique. There can be only one element in the document with the         given`id\`.
+\`\``smart header="The`id`must be unique" The`id`must be unique. There can be only one element in the document with the given`id\`.
 
 If there are multiple elements with the same `id`, then the behavior of methods that use it is unpredictable, e.g. `document.getElementById` may return any of such elements at random. So please stick to the rule and keep `id` unique. \`\`\`
 
-`` warn header="Only `document.getElementById`, not         `anyElem.getElementById`" The method `getElementById` can be called only         on `document` object. It looks for the given `id` in the whole         document. ``
+`` warn header="Only `document.getElementById`, not `anyElem.getElementById`" The method `getElementById` can be called only on `document` object. It looks for the given `id` in the whole document. ``
 
-querySelectorAll \[\#querySelectorAll\]
----------------------------------------
+## querySelectorAll \[\#querySelectorAll\]
 
 By far, the most versatile method, `elem.querySelectorAll(css)` returns all elements inside `elem` matching the given CSS selector.
 
@@ -55,29 +52,27 @@ Here we look for all `<li>` elements that are last children:
 
 \`\`\`html run
 
--   The
--   test
+- The
+- test
 
 <!-- -->
 
--   has
--   passed
+- has
+- passed
 
 \`\`\`
 
 This method is indeed powerful, because any CSS selector can be used.
 
-`` smart header="Can use pseudo-classes as well" Pseudo-classes in the CSS         selector like `:hover` and `:active` are also supported. For instance,         `document.querySelectorAll(':hover')` will return the collection with         elements that the pointer is over now (in nesting order: from the         outermost `<html>` to the most nested one). ``
+`` smart header="Can use pseudo-classes as well" Pseudo-classes in the CSS selector like `:hover` and `:active` are also supported. For instance, `document.querySelectorAll(':hover')` will return the collection with elements that the pointer is over now (in nesting order: from the outermost `<html>` to the most nested one). ``
 
-querySelector \[\#querySelector\]
----------------------------------
+## querySelector \[\#querySelector\]
 
 The call to `elem.querySelector(css)` returns the first element for the given CSS selector.
 
-In other words, the result is the same as `elem.querySelectorAll(css)[0]`, but the latter is looking for *all* elements and picking one, while `elem.querySelector` just looks for one. So it’s faster and also shorter to write.
+In other words, the result is the same as `elem.querySelectorAll(css)[0]`, but the latter is looking for _all_ elements and picking one, while `elem.querySelector` just looks for one. So it’s faster and also shorter to write.
 
-matches
--------
+## matches
 
 Previous methods were searching the DOM.
 
@@ -91,10 +86,9 @@ For instance:
 
 \`\`\`
 
-closest
--------
+## closest
 
-*Ancestors* of an element are: parent, the parent of parent, its parent and so on. The ancestors together form the chain of parents from the element to the top.
+_Ancestors_ of an element are: parent, the parent of parent, its parent and so on. The ancestors together form the chain of parents from the element to the top.
 
 The method `elem.closest(css)` looks for the nearest ancestor that matches the CSS-selector. The `elem` itself is also included in the search.
 
@@ -104,16 +98,14 @@ For instance:
 
 \`\`\`html run
 
-Contents
-========
+# Contents
 
--   Chapter 1
--   Chapter 1
+- Chapter 1
+- Chapter 1
 
 \`\`\`
 
-getElementsBy\*
----------------
+## getElementsBy\*
 
 There are also other methods to look for nodes by a tag, class, etc.
 
@@ -121,9 +113,9 @@ Today, they are mostly history, as `querySelector` is more powerful and shorter 
 
 So here we cover them mainly for completeness, while you can still find them in the old scripts.
 
--   `elem.getElementsByTagName(tag)` looks for elements with the given tag and returns the collection of them. The `tag` parameter can also be a star `"*"` for “any tags”.
--   `elem.getElementsByClassName(className)` returns elements that have the given CSS class.
--   `document.getElementsByName(name)` returns elements with the given `name` attribute, document-wide. Very rarely used.
+- `elem.getElementsByTagName(tag)` looks for elements with the given tag and returns the collection of them. The `tag` parameter can also be a star `"*"` for “any tags”.
+- `elem.getElementsByClassName(className)` returns elements that have the given CSS class.
+- `document.getElementsByName(name)` returns elements with the given `name` attribute, document-wide. Very rarely used.
 
 For instance:
 
@@ -147,7 +139,7 @@ The `"s"` letter is absent in `getElementById`, because it returns a single elem
     // doesn't work
     document.getElementsByTagName('input').value = 5;
 
-That won’t work, because it takes a *collection* of inputs and assigns the value to it rather than to elements inside it.
+That won’t work, because it takes a _collection_ of inputs and assigns the value to it rather than to elements inside it.
 
 We should either iterate over the collection or get an element by its index, and then assign, like this:
 
@@ -166,10 +158,9 @@ Long article
 
 \`\`\`
 
-Live collections
-----------------
+## Live collections
 
-All methods `"getElementsBy*"` return a *live* collection. Such collections always reflect the current state of the document and “auto-update” when it changes.
+All methods `"getElementsBy*"` return a _live_ collection. Such collections always reflect the current state of the document and “auto-update” when it changes.
 
 In the example below, there are two scripts.
 
@@ -184,7 +175,7 @@ Second div
 
 \`\`\`
 
-In contrast, `querySelectorAll` returns a *static* collection. It’s like a fixed array of elements.
+In contrast, `querySelectorAll` returns a _static_ collection. It’s like a fixed array of elements.
 
 If we use it instead, then both scripts output `1`:
 
@@ -198,8 +189,7 @@ Second div
 
 Now we can easily see the difference. The static collection did not increase after the appearance of a new `div` in the document.
 
-Summary
--------
+## Summary
 
 There are 6 main methods to search for nodes in DOM:
 
@@ -209,7 +199,7 @@ By far the most used are `querySelector` and `querySelectorAll`, but `getElement
 
 Besides that:
 
--   There is `elem.matches(css)` to check if `elem` matches the given CSS selector.
--   There is `elem.closest(css)` to look for the nearest ancestor that matches the given CSS-selector. The `elem` itself is also checked.
+- There is `elem.matches(css)` to check if `elem` matches the given CSS selector.
+- There is `elem.closest(css)` to look for the nearest ancestor that matches the given CSS-selector. The `elem` itself is also checked.
 
 And let’s mention one more method here to check for the child-parent relationship, as it’s sometimes useful: - `elemA.contains(elemB)` returns true if `elemB` is inside `elemA` (a descendant of `elemA`) or when `elemA==elemB`.

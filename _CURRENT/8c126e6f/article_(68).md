@@ -1,11 +1,10 @@
-Static properties and methods
-=============================
+# Static properties and methods
 
-We can also assign a method to the class function itself, not to its `"prototype"`. Such methods are called *static*.
+We can also assign a method to the class function itself, not to its `"prototype"`. Such methods are called _static_.
 
 In a class, they are prepended by `static` keyword, like this:
 
-\`\`\`js run class User { *!* static staticMethod() { */!* alert(this === User); } }
+\`\`\`js run class User { _!_ static staticMethod() { _/!_ alert(this === User); } }
 
 User.staticMethod(); // true \`\`\`
 
@@ -25,11 +24,11 @@ For instance, we have `Article` objects and need a function to compare them. A n
 
 \`\`\`js run class Article { constructor(title, date) { this.title = title; this.date = date; }
 
-*!* static compare(articleA, articleB) { return articleA.date - articleB.date; } */!* }
+_!_ static compare(articleA, articleB) { return articleA.date - articleB.date; } _/!_ }
 
 // usage let articles = \[ new Article(“HTML”, new Date(2019, 1, 1)), new Article(“CSS”, new Date(2019, 0, 1)), new Article(“JavaScript”, new Date(2019, 11, 1))\];
 
-*!* articles.sort(Article.compare); */!*
+_!_ articles.sort(Article.compare); _/!_
 
 alert( articles\[0\].title ); // CSS \`\`\`
 
@@ -47,7 +46,7 @@ Like `Article.createTodays()` here:
 
 \`\`\`js run class Article { constructor(title, date) { this.title = title; this.date = date; }
 
-*!* static createTodays() { // remember, this = Article return new this(“Today’s digest”, new Date()); } */!* }
+_!_ static createTodays() { // remember, this = Article return new this(“Today’s digest”, new Date()); } _/!_ }
 
 let article = Article.createTodays();
 
@@ -61,8 +60,7 @@ Static methods are also used in database-related classes to search/save/remove e
     // static method to remove the article:
     Article.remove({id: 12345});
 
-Static properties
------------------
+## Static properties
 
 \[recent browser=Chrome\]
 
@@ -76,8 +74,7 @@ That is the same as a direct assignment to `Article`:
 
     Article.publisher = "Ilya Kantor";
 
-Inheritance of static properties and methods \[\#statics-and-inheritance\]
---------------------------------------------------------------------------
+## Inheritance of static properties and methods \[\#statics-and-inheritance\]
 
 Static properties and methods are inherited.
 
@@ -89,7 +86,7 @@ constructor(name, speed) { this.speed = speed; this.name = name; }
 
 run(speed = 0) { this.speed += speed; alert(`${this.name} runs with speed ${this.speed}.`); }
 
-*!* static compare(animalA, animalB) { return animalA.speed - animalB.speed; } */!*
+_!_ static compare(animalA, animalB) { return animalA.speed - animalB.speed; } _/!_
 
 }
 
@@ -97,7 +94,7 @@ run(speed = 0) { this.speed += speed; alert(`${this.name} runs with speed ${this
 
 let rabbits = \[ new Rabbit(“White Rabbit”, 10), new Rabbit(“Black Rabbit”, 5)\];
 
-*!* rabbits.sort(Rabbit.compare); */!*
+_!_ rabbits.sort(Rabbit.compare); _/!_
 
 rabbits\[0\].run(); // Black Rabbit runs with speed 5.
 
@@ -124,8 +121,7 @@ Here, let’s check that by code:
 
 // for regular methods alert(Rabbit.prototype.\_\_proto\_\_ === Animal.prototype); // true \`\`\`
 
-Summary
--------
+## Summary
 
 Static methods are used for the functionality that belongs to the class “as a whole”. It doesn’t relate to a concrete class instance.
 

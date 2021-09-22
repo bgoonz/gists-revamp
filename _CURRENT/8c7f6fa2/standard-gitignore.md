@@ -1,12 +1,11 @@
-compiled from github.com/github/gitignore
-=========================================
+# compiled from github.com/github/gitignore
 
 ### Custom
 
-*.db* .sqlite
+_.db_ .sqlite
 
 ### OSX
 
-.DS\_Store .AppleDouble .LSOverride
+.DS_Store .AppleDouble .LSOverride
 
 \# Icon must end with two

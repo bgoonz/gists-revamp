@@ -1,5 +1,4 @@
-Data types
-==========
+# Data types
 
 A value in JavaScript is always of a certain type. For example, a string or a number.
 
@@ -13,37 +12,36 @@ We can put any type in a variable. For example, a variable can at one moment be 
 
 Programming languages that allow such things, such as JavaScript, are called “dynamically typed”, meaning that there exist data types, but variables are not bound to any of them.
 
-Number
-------
+## Number
 
     let n = 123;
     n = 12.345;
 
-The *number* type represents both integer and floating point numbers.
+The _number_ type represents both integer and floating point numbers.
 
 There are many operations for numbers, e.g. multiplication `*`, division `/`, addition `+`, subtraction `-`, and so on.
 
 Besides regular numbers, there are so-called “special numeric values” which also belong to this data type: `Infinity`, `-Infinity` and `NaN`.
 
--   `Infinity` represents the mathematical [Infinity](https://en.wikipedia.org/wiki/Infinity) ∞. It is a special value that’s greater than any number.
+- `Infinity` represents the mathematical [Infinity](https://en.wikipedia.org/wiki/Infinity) ∞. It is a special value that’s greater than any number.
 
-    We can get it as a result of division by zero:
+  We can get it as a result of division by zero:
 
-    `js run alert( 1 / 0 ); // Infinity`
+  `js run alert( 1 / 0 ); // Infinity`
 
-    Or just reference it directly:
+  Or just reference it directly:
 
-    `js run alert( Infinity ); // Infinity`
+  `js run alert( Infinity ); // Infinity`
 
--   `NaN` represents a computational error. It is a result of an incorrect or an undefined mathematical operation, for instance:
+- `NaN` represents a computational error. It is a result of an incorrect or an undefined mathematical operation, for instance:
 
-    `js run alert( "not a number" / 2 ); // NaN, such division is             erroneous`
+  `js run alert( "not a number" / 2 ); // NaN, such division is erroneous`
 
-    `NaN` is sticky. Any further operation on `NaN` returns `NaN`:
+  `NaN` is sticky. Any further operation on `NaN` returns `NaN`:
 
-    `js run alert( "not a number" / 2 + 5 ); // NaN`
+  `js run alert( "not a number" / 2 + 5 ); // NaN`
 
-    So, if there’s a `NaN` somewhere in a mathematical expression, it propagates to the whole result.
+  So, if there’s a `NaN` somewhere in a mathematical expression, it propagates to the whole result.
 
 \`\`\`smart header=“Mathematical operations are safe” Doing maths is “safe” in JavaScript. We can do anything: divide by zero, treat non-numeric strings as numbers, etc.
 
@@ -53,8 +51,7 @@ Special numeric values formally belong to the “number” type. Of course they 
 
 We’ll see more about working with numbers in the chapter <a href="info:number" class="uri">info:number</a>.
 
-BigInt
-------
+## BigInt
 
 In JavaScript, the “number” type cannot represent integer values larger than `(253-1)` (that’s `9007199254740991`), or less than `-(253-1)` for negatives. It’s a technical limitation caused by their internal representation.
 
@@ -69,12 +66,11 @@ A `BigInt` value is created by appending `n` to the end of an integer:
 
 As `BigInt` numbers are rarely needed, we don’t cover them here, but devoted them a separate chapter <a href="info:bigint" class="uri">info:bigint</a>. Read it when you need such big numbers.
 
-`` smart header="Compatibility issues" Right now, `BigInt` is supported in         Firefox/Chrome/Edge/Safari, but not in IE. ``
+`` smart header="Compatibility issues" Right now, `BigInt` is supported in Firefox/Chrome/Edge/Safari, but not in IE. ``
 
-You can check [*MDN* BigInt compatibility table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#Browser_compatibility) to know which versions of a browser are supported.
+You can check [_MDN_ BigInt compatibility table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#Browser_compatibility) to know which versions of a browser are supported.
 
-String
-------
+## String
 
 A string in JavaScript must be surrounded by quotes.
 
@@ -100,16 +96,15 @@ Backticks are “extended functionality” quotes. They allow us to embed variab
 
 The expression inside `${…}` is evaluated and the result becomes a part of the string. We can put anything in there: a variable like `name` or an arithmetical expression like `1 + 2` or something more complex.
 
-Please note that this can only be done in backticks. Other quotes don’t have this embedding functionality! `js run alert( "the result is ${1 + 2}" ); // the result is ${1 + 2}         (double quotes do nothing)`
+Please note that this can only be done in backticks. Other quotes don’t have this embedding functionality! `js run alert( "the result is ${1 + 2}" ); // the result is ${1 + 2} (double quotes do nothing)`
 
 We’ll cover strings more thoroughly in the chapter <a href="info:string" class="uri">info:string</a>.
 
-\`\`\`smart header=“There is no *character* type.” In some languages, there is a special “character” type for a single character. For example, in the C language and in Java it is called “char”.
+\`\`\`smart header=“There is no _character_ type.” In some languages, there is a special “character” type for a single character. For example, in the C language and in Java it is called “char”.
 
 In JavaScript, there is no such type. There’s only one type: `string`. A string may consist of zero characters (be empty), one character or many of them. \`\`\`
 
-Boolean (logical type)
-----------------------
+## Boolean (logical type)
 
 The boolean type has only two values: `true` and `false`.
 
@@ -128,8 +123,7 @@ alert( isGreater ); // true (the comparison result is “yes”) \`\`\`
 
 We’ll cover booleans more deeply in the chapter <a href="info:logical-operators" class="uri">info:logical-operators</a>.
 
-The “null” value
-----------------
+## The “null” value
 
 The special `null` value does not belong to any of the types described above.
 
@@ -143,8 +137,7 @@ It’s just a special value which represents “nothing”, “empty” or “va
 
 The code above states that `age` is unknown.
 
-The “undefined” value
----------------------
+## The “undefined” value
 
 The special value `undefined` also stands apart. It makes a type of its own, just like `null`.
 
@@ -166,8 +159,7 @@ alert(age); // “undefined” \`\`\`
 
 …But we don’t recommend doing that. Normally, one uses `null` to assign an “empty” or “unknown” value to a variable, while `undefined` is reserved as a default initial value for unassigned things.
 
-Objects and Symbols
--------------------
+## Objects and Symbols
 
 The `object` type is special.
 
@@ -177,8 +169,7 @@ Being that important, objects deserve a special treatment. We’ll deal with the
 
 The `symbol` type is used to create unique identifiers for objects. We have to mention it here for the sake of completeness, but also postpone the details till we know objects.
 
-The typeof operator \[\#type-typeof\]
--------------------------------------
+## The typeof operator \[\#type-typeof\]
 
 The `typeof` operator returns the type of the argument. It’s useful when we want to process values of different types differently or just want to do a quick check.
 
@@ -221,24 +212,23 @@ The last three lines may need additional explanation:
 2.  The result of `typeof null` is `"object"`. That’s an officially recognized error in `typeof` behavior, coming from the early days of JavaScript and kept for compatibility. Definitely, `null` is not an object. It is a special value with a separate type of its own.
 3.  The result of `typeof alert` is `"function"`, because `alert` is a function. We’ll study functions in the next chapters where we’ll also see that there’s no special “function” type in JavaScript. Functions belong to the object type. But `typeof` treats them differently, returning `"function"`. That also comes from the early days of JavaScript. Technically, such behavior isn’t correct, but can be convenient in practice.
 
-Summary
--------
+## Summary
 
 There are 8 basic data types in JavaScript.
 
--   `number` for numbers of any kind: integer or floating-point, integers are limited by `±(253-1)`.
--   `bigint` is for integer numbers of arbitrary length.
--   `string` for strings. A string may have zero or more characters, there’s no separate single-character type.
--   `boolean` for `true`/`false`.
--   `null` for unknown values – a standalone type that has a single value `null`.
--   `undefined` for unassigned values – a standalone type that has a single value `undefined`.
--   `object` for more complex data structures.
--   `symbol` for unique identifiers.
+- `number` for numbers of any kind: integer or floating-point, integers are limited by `±(253-1)`.
+- `bigint` is for integer numbers of arbitrary length.
+- `string` for strings. A string may have zero or more characters, there’s no separate single-character type.
+- `boolean` for `true`/`false`.
+- `null` for unknown values – a standalone type that has a single value `null`.
+- `undefined` for unassigned values – a standalone type that has a single value `undefined`.
+- `object` for more complex data structures.
+- `symbol` for unique identifiers.
 
 The `typeof` operator allows us to see which type is stored in a variable.
 
--   Two forms: `typeof x` or `typeof(x)`.
--   Returns a string with the name of the type, like `"string"`.
--   For `null` returns `"object"` – this is an error in the language, it’s not actually an object.
+- Two forms: `typeof x` or `typeof(x)`.
+- Returns a string with the name of the type, like `"string"`.
+- For `null` returns `"object"` – this is an error in the language, it’s not actually an object.
 
 In the next chapters, we’ll concentrate on primitive values and once we’re familiar with them, we’ll move on to objects.

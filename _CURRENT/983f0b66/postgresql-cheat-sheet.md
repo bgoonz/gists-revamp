@@ -1,10 +1,8 @@
-Postgresql · Cheatsheets
-========================
+# Postgresql · Cheatsheets
 
 > source
 
-Basic Commands
---------------
+## Basic Commands
 
 ### Login to postgresql
 
@@ -147,8 +145,7 @@ Source: <http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-dat
     WHERE pg_stat_activity.datname = 'TARGET_DB'
     AND procpid <> pg_backend_pid();
 
-Handy Queries
--------------
+## Handy Queries
 
     -- List procedure/function
     SELECT * FROM pg_proc WHERE proname='__procedurename__';
@@ -209,8 +206,7 @@ Handy Queries
     -- Collect statistics
     ANALYZE [__table__]
 
-Querying Data
--------------
+## Querying Data
 
 ### From a Single Table
 
@@ -321,9 +317,8 @@ Querying Data
     SELECT c1, c2 FROM t
     WHERE c1 IS [NOT] NULL;
 
-Source:
--------
+## Source:
 
--   [PostgreSQL 9.6.0 Documentation](https://www.postgresql.org/docs/9.6/static/app-psql.html)
--   [PostgreSQL Exercises](https://pgexercises.com/)
--   [PostgreSQL Tutorial](http://www.postgresqltutorial.com/postgresql-cheat-sheets)
+- [PostgreSQL 9.6.0 Documentation](https://www.postgresql.org/docs/9.6/static/app-psql.html)
+- [PostgreSQL Exercises](https://pgexercises.com/)
+- [PostgreSQL Tutorial](http://www.postgresqltutorial.com/postgresql-cheat-sheets)

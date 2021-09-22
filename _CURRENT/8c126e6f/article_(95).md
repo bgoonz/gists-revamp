@@ -1,9 +1,8 @@
 libs: - d3 - domtree
 
-------------------------------------------------------------------------
+---
 
-Walking the DOM
-===============
+# Walking the DOM
 
 The DOM allows us to do anything with elements and their contents, but first we need to reach the corresponding DOM object.
 
@@ -15,8 +14,7 @@ Here’s a picture of links that allow for travel between DOM nodes:
 
 Let’s discuss them in more detail.
 
-On top: documentElement and body
---------------------------------
+## On top: documentElement and body
 
 The topmost tree nodes are available directly as `document` properties:
 
@@ -39,13 +37,12 @@ So, in the example below the first `alert` shows `null`:
 
 `` smart header="In the DOM world `null` means \"doesn't exist\"" In the DOM, the `null` value means "doesn't exist" or "no such node". ``
 
-Children: childNodes, firstChild, lastChild
--------------------------------------------
+## Children: childNodes, firstChild, lastChild
 
 There are two terms that we’ll use from now on:
 
--   **Child nodes (or children)** – elements that are direct children. In other words, they are nested exactly in the given one. For instance, `<head>` and `<body>` are children of `<html>` element.
--   **Descendants** – all elements that are nested in the given one, including children, their children and so on.
+- **Child nodes (or children)** – elements that are direct children. In other words, they are nested exactly in the given one. For instance, `<head>` and `<body>` are children of `<html>` element.
+- **Descendants** – all elements that are nested in the given one, including children, their children and so on.
 
 For instance, here `<body>` has children `<div>` and `<ul>` (and few blank text nodes):
 
@@ -53,7 +50,7 @@ For instance, here `<body>` has children `<div>` and `<ul>` (and few blank text 
 
 Begin
 
--   **Information**
+- **Information**
 
 \`\`\`
 
@@ -67,7 +64,7 @@ The example below shows children of `document.body`:
 
 Begin
 
--   Information
+- Information
 
 End
 
@@ -88,31 +85,31 @@ There’s also a special function `elem.hasChildNodes()` to check whether there 
 
 ### DOM collections
 
-As we can see, `childNodes` looks like an array. But actually it’s not an array, but rather a *collection* – a special array-like iterable object.
+As we can see, `childNodes` looks like an array. But actually it’s not an array, but rather a _collection_ – a special array-like iterable object.
 
 There are two important consequences:
 
 1.  We can use `for..of` to iterate over it:
 
-      for (let node of document.body.childNodes) {
-        alert(node); // shows all nodes from the collection
-      }
+    for (let node of document.body.childNodes) {
+    alert(node); // shows all nodes from the collection
+    }
 
 That’s because it’s iterable (provides the `Symbol.iterator` property, as required).
 
-1.  Array methods won’t work, because it’s not an array: `js run   alert(document.body.childNodes.filter); // undefined (there's no filter method!)`
+1.  Array methods won’t work, because it’s not an array: `js run alert(document.body.childNodes.filter); // undefined (there's no filter method!)`
 
 The first thing is nice. The second is tolerable, because we can use `Array.from` to create a “real” array from the collection, if we want array methods:
 
-`js run   alert( Array.from(document.body.childNodes).filter ); // function`
+`js run alert( Array.from(document.body.childNodes).filter ); // function`
 
-\`\`\`warn header=“DOM collections are read-only” DOM collections, and even more – *all* navigation properties listed in this chapter are read-only.
+\`\`\`warn header=“DOM collections are read-only” DOM collections, and even more – _all_ navigation properties listed in this chapter are read-only.
 
 We can’t replace a child by something else by assigning `childNodes[i] = ...`.
 
 Changing DOM needs other methods. We will see them in the next chapter. \`\`\`
 
-\`\`\`warn header=“DOM collections are live” Almost all DOM collections with minor exceptions are *live*. In other words, they reflect the current state of DOM.
+\`\`\`warn header=“DOM collections are live” Almost all DOM collections with minor exceptions are _live_. In other words, they reflect the current state of DOM.
 
 If we keep a reference to `elem.childNodes`, and add/remove nodes into DOM, then they appear in the collection automatically. \`\`\`
 
@@ -124,10 +121,9 @@ Please, don’t. The `for..in` loop iterates over all enumerable properties. And
 
 \`\`\`\`
 
-Siblings and the parent
------------------------
+## Siblings and the parent
 
-*Siblings* are nodes that are children of the same parent.
+_Siblings_ are nodes that are children of the same parent.
 
 For instance, here `<head>` and `<body>` are siblings:
 
@@ -135,8 +131,8 @@ For instance, here `<head>` and `<body>` are siblings:
       <head>...</head><body>...</body>
     </html>
 
--   `<body>` is said to be the “next” or “right” sibling of `<head>`,
--   `<head>` is said to be the “previous” or “left” sibling of `<body>`.
+- `<body>` is said to be the “next” or “right” sibling of `<head>`,
+- `<head>` is said to be the “previous” or “left” sibling of `<body>`.
 
 The next sibling is in `nextSibling` property, and the previous one - in `previousSibling`.
 
@@ -160,7 +156,7 @@ goes
 
 Begin
 
--   Information
+- Information
 
 End
 
@@ -168,8 +164,7 @@ End
 
 \`\`\`
 
-More links: tables \[\#dom-navigation-tables\]
-----------------------------------------------
+## More links: tables \[\#dom-navigation-tables\]
 
 Till now we described the basic navigation properties.
 
@@ -197,14 +192,13 @@ The specification: [tabular data](https://html.spec.whatwg.org/multipage/tables.
 
 There are also additional navigation properties for HTML forms. We’ll look at them later when we start working with forms.
 
-Summary
--------
+## Summary
 
 Given a DOM node, we can go to its immediate neighbors using navigation properties.
 
 There are two main sets of them:
 
--   For all nodes: `parentNode`, `childNodes`, `firstChild`, `lastChild`, `previousSibling`, `nextSibling`.
--   For element nodes only: `parentElement`, `children`, `firstElementChild`, `lastElementChild`, `previousElementSibling`, `nextElementSibling`.
+- For all nodes: `parentNode`, `childNodes`, `firstChild`, `lastChild`, `previousSibling`, `nextSibling`.
+- For element nodes only: `parentElement`, `children`, `firstElementChild`, `lastElementChild`, `previousElementSibling`, `nextElementSibling`.
 
 Some types of DOM elements, e.g. tables, provide additional properties and collections to access their content.

@@ -1,4 +1,3 @@
-CSS for JS developers
-=====================
+# CSS for JS developers
 
--   Outline
+- Outline

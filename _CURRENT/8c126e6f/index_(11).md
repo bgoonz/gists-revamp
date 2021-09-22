@@ -1,2 +1,1 @@
-Error handling
-==============
+# Error handling

@@ -1,5 +1,4 @@
-Content-Security-Policy (CSP) Bypass Techniques
-===============================================
+# Content-Security-Policy (CSP) Bypass Techniques
 
 > Hello readers, this writeup is a contribution towards our cyber community from where I have gained every bit of my knowledge. I will try…
 
@@ -43,7 +42,7 @@ Administrators can track which kind of attack scripts or techniques are used by 
 
 Analyze the CSP policy properly. There are few online tools that are very helpful.
 
-1. <https://csp-evaluator.withgoogle.com/>  
+1. <https://csp-evaluator.withgoogle.com/>
 2. [https://cspvalidator.org/](https://cspvalidator.org/#url=https://cspvalidator.org/)
 
 Below is the screenshot of how they evaluate and provide you results.
@@ -110,7 +109,7 @@ In such scenarios where script-src is set to self and a javascript library domai
 
 working payloads :
 
-{{ x = $on.curry.call().eval(“fetch(‘http://localhost/index.php’).then(d =&gt; {})”) }}  
+{{ x = $on.curry.call().eval(“fetch(‘http://localhost/index.php’).then(d =&gt; {})”) }}
 
 "&gt;
 
@@ -152,6 +151,6 @@ I hope you enjoyed reading this. Special thanks to <span class="citation" data-c
 
 Thank You!
 
-For any feedback or suggestions reach out to me @[Bhavesh\_Thakur\_](https://twitter.com/Bhavesh_Thakur_)
+For any feedback or suggestions reach out to me @[Bhavesh_Thakur\_](https://twitter.com/Bhavesh_Thakur_)
 
 [Source](https://medium.com/@bhaveshthakur2015/content-security-policy-csp-bypass-techniques-e3fa475bfe5d)

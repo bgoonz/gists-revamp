@@ -1,2 +1,1 @@
-Prototypes, inheritance
-=======================
+# Prototypes, inheritance

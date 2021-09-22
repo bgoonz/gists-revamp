@@ -1,18 +1,16 @@
-Variables
-=========
+# Variables
 
 Most of the time, a JavaScript application needs to work with information. Here are two examples: 1. An online shop – the information might include goods being sold and a shopping cart. 2. A chat application – the information might include users, messages, and much more.
 
 Variables are used to store this information.
 
-A variable
-----------
+## A variable
 
-A [variable](https://en.wikipedia.org/wiki/Variable_(computer_science)) is a “named storage” for data. We can use variables to store goodies, visitors, and other data.
+A [variable](<https://en.wikipedia.org/wiki/Variable_(computer_science)>) is a “named storage” for data. We can use variables to store goodies, visitors, and other data.
 
 To create a variable in JavaScript, use the `let` keyword.
 
-The statement below creates (in other words: *declares*) a variable with the name “message”:
+The statement below creates (in other words: _declares_) a variable with the name “message”:
 
     let message;
 
@@ -28,7 +26,7 @@ The string is now saved into the memory area associated with the variable. We ca
 
 \`\`\`js run let message; message = ‘Hello!’;
 
-*!* alert(message); // shows the variable content */!* \`\`\`
+_!_ alert(message); // shows the variable content _/!_ \`\`\`
 
 To be concise, we can combine the variable declaration and assignment into a single line:
 
@@ -60,12 +58,11 @@ Technically, all these variants do the same thing. So, it’s a matter of person
 
     *!*var*/!* message = 'Hello';
 
-The `var` keyword is *almost* the same as `let`. It also declares a variable, but in a slightly different, “old-school” way.
+The `var` keyword is _almost_ the same as `let`. It also declares a variable, but in a slightly different, “old-school” way.
 
 There are subtle differences between `let` and `var`, but they do not matter for us yet. We’ll cover them in detail in the chapter <a href="info:var" class="uri">info:var</a>. \`\`\`\`
 
-A real-life analogy
--------------------
+## A real-life analogy
 
 We can easily grasp the concept of a “variable” if we imagine it as a “box” for data, with a uniquely-named sticker on it.
 
@@ -93,7 +90,7 @@ We can also declare two variables and copy data from one into the other.
 
 let message;
 
-*!* // copy ‘Hello world’ from hello into message message = hello; */!*
+_!_ // copy ‘Hello world’ from hello into message message = hello; _/!_
 
 // now two variables hold the same data alert(hello); // Hello world! alert(message); // Hello world! \`\`\`
 
@@ -113,8 +110,7 @@ In such languages, once the value is stored “in the box”, it’s there forev
 
 Though it may seem a little odd at first sight, these languages are quite capable of serious development. More than that, there are areas like parallel computations where this limitation confers certain benefits. Studying such a language (even if you’re not planning to use it soon) is recommended to broaden the mind. \`\`\`
 
-Variable naming \[\#variable-naming\]
--------------------------------------
+## Variable naming \[\#variable-naming\]
 
 There are two limitations on variable names in JavaScript:
 
@@ -142,7 +138,7 @@ Examples of incorrect variable names:
 
 let my-name; // hyphens ‘-’ aren’t allowed in the name \`\`\`
 
-`` smart header="Case matters" Variables named `apple` and `AppLE` are two         different variables. ``
+`` smart header="Case matters" Variables named `apple` and `AppLE` are two different variables. ``
 
 \`\`\`\`smart header=“Non-Latin letters are allowed, but not recommended” It is possible to use any language, including cyrillic letters or even hieroglyphs, like this:
 
@@ -157,7 +153,7 @@ For example: `let`, `class`, `return`, and `function` are reserved.
 
 The code below gives a syntax error:
 
-`js run no-beautify let let = 5; // can't name a variable "let", error!         let return = 5; // also can't name it "return", error!` \`\`\`\`
+`js run no-beautify let let = 5; // can't name a variable "let", error! let return = 5; // also can't name it "return", error!` \`\`\`\`
 
 \`\`\``warn header="An assignment without`use strict\`"
 
@@ -179,8 +175,7 @@ This is a bad practice and would cause an error in strict mode:
 
 \`\`\`\`
 
-Constants
----------
+## Constants
 
 To declare a constant (unchanging) variable, use `const` instead of `let`:
 
@@ -202,19 +197,19 @@ Such constants are named using capital letters and underscores.
 
 For instance, let’s make constants for colors in so-called “web” (hexadecimal) format:
 
-\`\`\`js run const COLOR\_RED = “\#F00”; const COLOR\_GREEN = “\#0F0”; const COLOR\_BLUE = “\#00F”; const COLOR\_ORANGE = “\#FF7F00”;
+\`\`\`js run const COLOR_RED = “\#F00”; const COLOR_GREEN = “\#0F0”; const COLOR_BLUE = “\#00F”; const COLOR_ORANGE = “\#FF7F00”;
 
-// …when we need to pick a color let color = COLOR\_ORANGE; alert(color); // \#FF7F00 \`\`\`
+// …when we need to pick a color let color = COLOR_ORANGE; alert(color); // \#FF7F00 \`\`\`
 
 Benefits:
 
--   `COLOR_ORANGE` is much easier to remember than `"#FF7F00"`.
--   It is much easier to mistype `"#FF7F00"` than `COLOR_ORANGE`.
--   When reading the code, `COLOR_ORANGE` is much more meaningful than `#FF7F00`.
+- `COLOR_ORANGE` is much easier to remember than `"#FF7F00"`.
+- It is much easier to mistype `"#FF7F00"` than `COLOR_ORANGE`.
+- When reading the code, `COLOR_ORANGE` is much more meaningful than `#FF7F00`.
 
 When should we use capitals for a constant and when should we name it normally? Let’s make that clear.
 
-Being a “constant” just means that a variable’s value never changes. But there are constants that are known prior to execution (like a hexadecimal value for red) and there are constants that are *calculated* in run-time, during the execution, but do not change after their initial assignment.
+Being a “constant” just means that a variable’s value never changes. But there are constants that are known prior to execution (like a hexadecimal value for red) and there are constants that are _calculated_ in run-time, during the execution, but do not change after their initial assignment.
 
 For instance:
 
@@ -224,8 +219,7 @@ The value of `pageLoadTime` is not known prior to the page load, so it’s named
 
 In other words, capital-named constants are only used as aliases for “hard-coded” values.
 
-Name things right
------------------
+## Name things right
 
 Talking about variables, there’s one more extremely important thing.
 
@@ -239,10 +233,10 @@ Please spend time thinking about the right name for a variable before declaring 
 
 Some good-to-follow rules are:
 
--   Use human-readable names like `userName` or `shoppingCart`.
--   Stay away from abbreviations or short names like `a`, `b`, `c`, unless you really know what you’re doing.
--   Make names maximally descriptive and concise. Examples of bad names are `data` and `value`. Such names say nothing. It’s only okay to use them if the context of the code makes it exceptionally obvious which data or value the variable is referencing.
--   Agree on terms within your team and in your own mind. If a site visitor is called a “user” then we should name related variables `currentUser` or `newUser` instead of `currentVisitor` or `newManInTown`.
+- Use human-readable names like `userName` or `shoppingCart`.
+- Stay away from abbreviations or short names like `a`, `b`, `c`, unless you really know what you’re doing.
+- Make names maximally descriptive and concise. Examples of bad names are `data` and `value`. Such names say nothing. It’s only okay to use them if the context of the code makes it exceptionally obvious which data or value the variable is referencing.
+- Agree on terms within your team and in your own mind. If a site visitor is called a “user” then we should name related variables `currentUser` or `newUser` instead of `currentVisitor` or `newManInTown`.
 
 Sounds simple? Indeed it is, but creating descriptive and concise variable names in practice is not. Go for it.
 
@@ -256,13 +250,12 @@ An extra variable is good, not evil.
 
 Modern JavaScript minifiers and browsers optimize code well enough, so it won’t create performance issues. Using different variables for different values can even help the engine optimize your code. \`\`\`
 
-Summary
--------
+## Summary
 
 We can declare variables to store data by using the `var`, `let`, or `const` keywords.
 
--   `let` – is a modern variable declaration.
--   `var` – is an old-school variable declaration. Normally we don’t use it at all, but we’ll cover subtle differences from `let` in the chapter <a href="info:var" class="uri">info:var</a>, just in case you need them.
--   `const` – is like `let`, but the value of the variable can’t be changed.
+- `let` – is a modern variable declaration.
+- `var` – is an old-school variable declaration. Normally we don’t use it at all, but we’ll cover subtle differences from `let` in the chapter <a href="info:var" class="uri">info:var</a>, just in case you need them.
+- `const` – is like `let`, but the value of the variable can’t be changed.
 
 Variables should be named in a way that allows us to easily understand what’s inside them.

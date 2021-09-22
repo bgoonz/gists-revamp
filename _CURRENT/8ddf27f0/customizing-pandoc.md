@@ -4,8 +4,7 @@ John MacFarlane
 
 This document provides a quick overview over the various ways to customize pandoc’s output, with links to fuller documentation and some examples.
 
-Templates
----------
+## Templates
 
 When the `-s`/`--standalone` option is used, pandoc will generate a standalone document rather than a fragment. For example, in HTML output this will include the `<head>` element; in LaTeX output, it will include the preamble.
 
@@ -31,8 +30,7 @@ TODO
 
 TODO
 
-Reference docx/pptx/odt
------------------------
+## Reference docx/pptx/odt
 
 For `docx`, `pptx` or `odt` documents, things are a bit more complicated. Instead of a single template file, you need to provide a customized `reference.docx/pptx/odt`. See the manual for the [`--reference-doc`](https://pandoc.org/MANUAL.html#option--reference-doc) option.
 
@@ -40,8 +38,7 @@ For `docx`, `pptx` or `odt` documents, things are a bit more complicated. Instea
 
 TODO
 
-Filters
--------
+## Filters
 
 Templates are very powerful, but they are only a sort of scaffold to place your document’s body text in. You cannot directly change the body text using the template.
 
@@ -61,8 +58,7 @@ TODO
 
 TODO
 
-Generic Divs and Spans
-----------------------
+## Generic Divs and Spans
 
 TODO [Divs and Spans](https://pandoc.org/MANUAL.html#divs-and-spans): generic blocks that can be transformed with filters
 
@@ -72,18 +68,15 @@ TODO [Divs and Spans](https://pandoc.org/MANUAL.html#divs-and-spans): generic bl
 
 [Custom Styles in Docx](https://pandoc.org/MANUAL.html#custom-styles-in-docx)
 
-Raw attributes
---------------
+## Raw attributes
 
 TODO [Generic raw attributes](https://pandoc.org/MANUAL.html#generic-raw-attribute): to include raw snippets
 
-Custom writers
---------------
+## Custom writers
 
 TODO [Custom writers](https://pandoc.org/MANUAL.html#custom-writers)
 
-Custom syntax highlighting
---------------------------
+## Custom syntax highlighting
 
 TODO [Custom syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting), provided by the [skylighting library](https://github.com/jgm/skylighting)
 

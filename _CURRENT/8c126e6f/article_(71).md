@@ -1,12 +1,10 @@
-Class checking: “instanceof”
-============================
+# Class checking: “instanceof”
 
 The `instanceof` operator allows to check whether an object belongs to a certain class. It also takes inheritance into account.
 
-Such a check may be necessary in many cases. For example, it can be used for building a *polymorphic* function, the one that treats arguments differently depending on their type.
+Such a check may be necessary in many cases. For example, it can be used for building a _polymorphic_ function, the one that treats arguments differently depending on their type.
 
-The instanceof operator \[\#ref-instanceof\]
---------------------------------------------
+## The instanceof operator \[\#ref-instanceof\]
 
 The syntax is:
 
@@ -18,17 +16,17 @@ For instance:
 
 \`\`\`js run class Rabbit {} let rabbit = new Rabbit();
 
-// is it an object of Rabbit class? *!* alert( rabbit instanceof Rabbit ); // true */!* \`\`\`
+// is it an object of Rabbit class? _!_ alert( rabbit instanceof Rabbit ); // true _/!_ \`\`\`
 
 It also works with constructor functions:
 
-\`\`\`js run *!* // instead of class function Rabbit() {} */!*
+\`\`\`js run _!_ // instead of class function Rabbit() {} _/!_
 
 alert( new Rabbit() instanceof Rabbit ); // true \`\`\`
 
 …And with built-in classes like `Array`:
 
-`js run let arr = [1, 2, 3]; alert( arr instanceof Array ); // true         alert( arr instanceof Object ); // true`
+`js run let arr = [1, 2, 3]; alert( arr instanceof Array ); // true alert( arr instanceof Object ); // true`
 
 Please note that `arr` also belongs to the `Object` class. That’s because `Array` prototypically inherits from `Object`.
 
@@ -48,7 +46,7 @@ The algorithm of `obj instanceof Class` works roughly as follows:
 
 2.  Most classes do not have `Symbol.hasInstance`. In that case, the standard logic is used: `obj instanceOf Class` checks whether `Class.prototype` is equal to one of the prototypes in the `obj` prototype chain.
 
-    In other words, compare one after another: `js obj.__proto__ === Class.prototype? obj.__proto__.__proto__ ===             Class.prototype? obj.__proto__.__proto__.__proto__ ===             Class.prototype? ... // if any answer is true, return true //             otherwise, if we reached the end of the chain, return false`
+    In other words, compare one after another: `js obj.__proto__ === Class.prototype? obj.__proto__.__proto__ === Class.prototype? obj.__proto__.__proto__.__proto__ === Class.prototype? ... // if any answer is true, return true // otherwise, if we reached the end of the chain, return false`
 
     In the example above `rabbit.__proto__ === Rabbit.prototype`, so that gives the answer immediately.
 
@@ -56,9 +54,9 @@ The algorithm of `obj instanceof Class` works roughly as follows:
 
     \`\`\`js run class Animal {} class Rabbit extends Animal {}
 
-    let rabbit = new Rabbit(); *!* alert(rabbit instanceof Animal); // true */!*
+    let rabbit = new Rabbit(); _!_ alert(rabbit instanceof Animal); // true _/!_
 
-    // rabbit.\_\_proto\_\_ === Rabbit.prototype *!* // rabbit.\_\_proto\_\_.\_\_proto\_\_ === Animal.prototype (match!) */!* \`\`\`
+    // rabbit.\_\_proto\_\_ === Rabbit.prototype _!_ // rabbit.\_\_proto\_\_.\_\_proto\_\_ === Animal.prototype (match!) _/!_ \`\`\`
 
 Here’s the illustration of what `rabbit instanceof Animal` compares with `Animal.prototype`:
 
@@ -76,10 +74,9 @@ Like here:
 
 // changed the prototype Rabbit.prototype = {};
 
-// …not a rabbit any more! *!* alert( rabbit instanceof Rabbit ); // false */!* \`\`\`
+// …not a rabbit any more! _!_ alert( rabbit instanceof Rabbit ); // false _/!_ \`\`\`
 
-Bonus: Object.prototype.toString for the type
----------------------------------------------
+## Bonus: Object.prototype.toString for the type
 
 We already know that plain objects are converted to string as `[object Object]`:
 
@@ -93,12 +90,12 @@ Sounds strange? Indeed. Let’s demystify.
 
 By [specification](https://tc39.github.io/ecma262/#sec-object.prototype.tostring), the built-in `toString` can be extracted from the object and executed in the context of any other value. And its result depends on that value.
 
--   For a number, it will be `[object Number]`
--   For a boolean, it will be `[object Boolean]`
--   For `null`: `[object Null]`
--   For `undefined`: `[object Undefined]`
--   For arrays: `[object Array]`
--   …etc (customizable).
+- For a number, it will be `[object Number]`
+- For a boolean, it will be `[object Boolean]`
+- For `null`: `[object Null]`
+- For `undefined`: `[object Undefined]`
+- For arrays: `[object Array]`
+- …etc (customizable).
 
 Let’s demonstrate:
 
@@ -138,8 +135,7 @@ At the end we have “typeof on steroids” that not only works for primitive da
 
 We can use `{}.toString.call` instead of `instanceof` for built-in objects when we want to get the type as a string rather than just to check.
 
-Summary
--------
+## Summary
 
 Let’s summarize the type-checking methods that we know:
 

@@ -4,8 +4,7 @@ John MacFarlane
 
 January 10, 2020
 
-Introduction
-============
+# Introduction
 
 Pandoc has long supported filters, which allow the pandoc abstract syntax tree (AST) to be manipulated between the parsing and the writing phase. [Traditional pandoc filters](https://pandoc.org/filters.html) accept a JSON representation of the pandoc AST and produce an altered JSON representation of the AST. They may be written in any programming language, and invoked from pandoc using the `--filter` option.
 
@@ -39,8 +38,7 @@ Here’s a quick performance comparison, converting the pandoc manual (MANUAL.tx
 
 As you can see, the Lua filter avoids the substantial overhead associated with marshaling to and from JSON over a pipe.
 
-Lua filter structure
-====================
+# Lua filter structure
 
 Lua filters are tables with element names as keys and values consisting of functions acting on those elements.
 
@@ -56,9 +54,9 @@ For each filter, the document is traversed and each element subjected to the fil
 
 The return of a filter function must be one of the following:
 
--   nil: this means that the object should remain unchanged.
--   a pandoc object: this must be of the same type as the input and will replace the original object.
--   a list of pandoc objects: these will replace the original object; the list is merged with the neighbors of the original objects (spliced into the list the original object belongs to); returning an empty list deletes the object.
+- nil: this means that the object should remain unchanged.
+- a pandoc object: this must be of the same type as the input and will replace the original object.
+- a list of pandoc objects: these will replace the original object; the list is merged with the neighbors of the original objects (spliced into the list the original object belongs to); returning an empty list deletes the object.
 
 The function’s output must result in an element of the same type as the input. This means a filter function acting on an inline element must return either nil, an inline, or a list of inlines, and a function filtering a block element must return one of nil, a block, or a list of block elements. Pandoc will throw an error if this condition is violated.
 
@@ -68,17 +66,16 @@ Elements without matching functions are left untouched.
 
 See [module documentation](#module-pandoc) for a list of pandoc elements.
 
-Filters on element sequences
-----------------------------
+## Filters on element sequences
 
 For some filtering tasks, it is necessary to know the order in which elements occur in the document. It is not enough then to inspect a single element at a time.
 
 There are two special function names, which can be used to define filters on lists of blocks or lists of inlines.
 
- <span id="inlines-filter">`Inlines (inlines)`</span>   
+<span id="inlines-filter">`Inlines (inlines)`</span>  
 If present in a filter, this function will be called on all lists of inline elements, like the content of a [Para](#type-para) (paragraph) block, or the description of an [Image](#type-image). The `inlines` argument passed to the function will be a [List](#type-list) of [Inlines](#type-inline) for each call.
 
- <span id="blocks-filter">`Blocks (blocks)`</span>   
+<span id="blocks-filter">`Blocks (blocks)`</span>  
 If present in a filter, this function will be called on all lists of block elements, like the content of a [MetaBlocks](#type-metablocks) meta element block, on each item of a list, and the main content of the [Pandoc](#type-pandoc) document. The `blocks` argument passed to the function will be a [List](#type-list) of [Blocks](#type-block) for each call.
 
 These filter functions are special in that the result must either be nil, in which case the list is left unchanged, or must be a list of the correct type, i.e., the same type as the input argument. Single elements are **not** allowed as return values, as a single element in this context usually hints at a bug.
@@ -87,19 +84,18 @@ See [“Remove spaces before normal citations”](#remove-spaces-before-citation
 
 This functionality has been added in pandoc 2.9.2.
 
-Execution Order
----------------
+## Execution Order
 
 Element filter functions within a filter set are called in a fixed order, skipping any which are not present:
 
-1.  functions for [*Inline* elements](#type-inline),
+1.  functions for [_Inline_ elements](#type-inline),
 2.  the [`Inlines`](#inlines-filter) filter function,
-3.  functions for [*Block* elements](#type-block) ,
+3.  functions for [_Block_ elements](#type-block) ,
 4.  the [`Blocks`](#inlines-filter) filter function,
 5.  the [`Meta`](#type-meta) filter function, and last
 6.  the [`Pandoc`](#type-pandoc) filter function.
 
-It is still possible to force a different order by explicitly returning multiple filter sets. For example, if the filter for *Meta* is to be run before that for *Str*, one can write
+It is still possible to force a different order by explicitly returning multiple filter sets. For example, if the filter for _Meta_ is to be run before that for _Str_, one can write
 
     -- ... filter definitions ...
 
@@ -108,10 +104,9 @@ It is still possible to force a different order by explicitly returning multiple
       { Str = Str }     -- (2)
     }
 
-Filter sets are applied in the order in which they are returned. All functions in set (1) are thus run before those in (2), causing the filter function for *Meta* to be run before the filtering of *Str* elements is started.
+Filter sets are applied in the order in which they are returned. All functions in set (1) are thus run before those in (2), causing the filter function for _Meta_ to be run before the filtering of _Str_ elements is started.
 
-Global variables
-----------------
+## Global variables
 
 Pandoc passes additional data to Lua filters by setting global variables.
 
@@ -133,31 +128,27 @@ The name used to involve the filter. This value can be used to find files relati
 `PANDOC_STATE`  
 The state shared by all readers and writers. It is used by pandoc to collect and pass information. The value of this variable is of type [CommonState](#type-commonstate) and is read-only.
 
-Pandoc Module
-=============
+# Pandoc Module
 
 The `pandoc` Lua module is loaded into the filter’s Lua environment and provides a set of functions and constants to make creation and manipulation of elements easier. The global variable `pandoc` is bound to the module and should generally not be overwritten for this reason.
 
 Two major functionalities are provided by the module: element creator functions and access to some of pandoc’s main functionalities.
 
-Element creation
-----------------
+## Element creation
 
 Element creator functions like `Str`, `Para`, and `Pandoc` are designed to allow easy creation of new elements that are simple to use and can be read back from the Lua environment. Internally, pandoc uses these functions to create the Lua objects which are passed to element filter functions. This means that elements created via this module will behave exactly as those elements accessible through the filter function parameter.
 
-Exposed pandoc functionality
-----------------------------
+## Exposed pandoc functionality
 
 Some pandoc functions have been made available in Lua:
 
--   [`walk_block`](#pandoc.walk_block) and [`walk_inline`](#pandoc.walk_inline) allow filters to be applied inside specific block or inline elements;
--   [`read`](#pandoc.read) allows filters to parse strings into pandoc documents;
--   [`pipe`](#pandoc.pipe) runs an external command with input from and output to strings;
--   the [`pandoc.mediabag`](#module-pandoc.mediabag) module allows access to the “mediabag,” which stores binary content such as images that may be included in the final document;
--   the [`pandoc.utils`](#module-pandoc.utils) module contains various utility functions.
+- [`walk_block`](#pandoc.walk_block) and [`walk_inline`](#pandoc.walk_inline) allow filters to be applied inside specific block or inline elements;
+- [`read`](#pandoc.read) allows filters to parse strings into pandoc documents;
+- [`pipe`](#pandoc.pipe) runs an external command with input from and output to strings;
+- the [`pandoc.mediabag`](#module-pandoc.mediabag) module allows access to the “mediabag,” which stores binary content such as images that may be included in the final document;
+- the [`pandoc.utils`](#module-pandoc.utils) module contains various utility functions.
 
-Lua interpreter initialization
-==============================
+# Lua interpreter initialization
 
 Initialization of pandoc’s Lua interpreter can be controlled by placing a file `init.lua` in pandoc’s data directory. A common use-case would be to load additional modules, or even to alter default modules.
 
@@ -169,20 +160,17 @@ The following snippet is an example of code that might be useful when added to `
 
 This makes it possible to apply these functions on strings using colon syntax (`mystring:uc_upper()`).
 
-Debugging Lua filters
-=====================
+# Debugging Lua filters
 
 It is possible to use a debugging interface to halt execution and step through a Lua filter line by line as it is run inside Pandoc. This is accomplished using the remote-debugging interface of the package [`mobdebug`](https://github.com/pkulchenko/MobDebug). Although mobdebug can be run from the terminal, it is more useful run within the donation-ware Lua editor and IDE, [ZeroBrane](https://studio.zerobrane.com/). ZeroBrane offers a REPL console and UI to step-through and view all variables and state.
 
 If you already have Lua 5.3 installed, you can add [`mobdebug`](https://luarocks.org/modules/paulclinger/mobdebug) and its dependency [`luasocket`](https://luarocks.org/modules/luasocket/luasocket) using [`luarocks`](https://luarocks.org), which should then be available on the path. ZeroBrane also includes both of these in its package, so if you don’t want to install Lua separately, you should add/modify your `LUA_PATH` and `LUA_CPATH` to include the correct locations; [see detailed instructions here](https://studio.zerobrane.com/doc-remote-debugging).
 
-Examples
-========
+# Examples
 
 The following filters are presented as examples. A repository of useful Lua filters (which may also serve as good examples) is available at <a href="https://github.com/pandoc/lua-filters" class="uri">https://github.com/pandoc/lua-filters</a>.
 
-Macro substitution
-------------------
+## Macro substitution
 
 The following filter converts the string `{{helloworld}}` into emphasized text “Hello, World”.
 
@@ -198,8 +186,7 @@ The following filter converts the string `{{helloworld}}` into emphasized text �
       }
     }
 
-Center images in LaTeX and HTML output
---------------------------------------
+## Center images in LaTeX and HTML output
 
 For LaTeX, wrap an image in LaTeX snippets which cause the image to be centered horizontally. In HTML, the image element’s style attribute is used to achieve centering.
 
@@ -224,8 +211,7 @@ For LaTeX, wrap an image in LaTeX snippets which cause the image to be centered 
       end
     end
 
-Setting the date in the metadata
---------------------------------
+## Setting the date in the metadata
 
 This filter sets the date in the document’s metadata to the current date, if a date isn’t already set:
 
@@ -236,8 +222,7 @@ This filter sets the date in the document’s metadata to the current date, if a
       end
     end
 
-Remove spaces before citations
-------------------------------
+## Remove spaces before citations
 
 This filter removes all spaces preceding an “author-in-text” citation. In Markdown, author-in-text citations (e.g., `@citekey`), must be preceded by a space. If these spaces are undesired, they must be removed with a filter.
 
@@ -260,12 +245,11 @@ This filter removes all spaces preceding an “author-in-text” citation. In Ma
       return inlines
     end
 
-Replacing placeholders with their metadata value
-------------------------------------------------
+## Replacing placeholders with their metadata value
 
 Lua filter functions are run in the order
 
-> *Inlines → Blocks → Meta → Pandoc*.
+> _Inlines → Blocks → Meta → Pandoc_.
 
 Passing information from a higher level (e.g., metadata) to a lower level (e.g., inlines) is still possible by using two filters living in the same file:
 
@@ -315,8 +299,7 @@ then running `pandoc --lua-filter=meta-vars.lua occupations.md` will output:
     </dd>
     </dl>
 
-Modifying pandoc’s `MANUAL.txt` for man pages
----------------------------------------------
+## Modifying pandoc’s `MANUAL.txt` for man pages
 
 This is the filter we use when converting `MANUAL.txt` to man pages. It converts level-1 headers to uppercase (using `walk_block` to transform inline elements inside headers), removes footnotes, and replaces links with regular text.
 
@@ -340,8 +323,7 @@ This is the filter we use when converting `MANUAL.txt` to man pages. It converts
         return {}
     end
 
-Creating a handout from a paper
--------------------------------
+## Creating a handout from a paper
 
 This filter extracts all the numbered examples, section headers, block quotes, and figures from a document, in addition to any divs with class `handout`. (Note that only blocks at the “outer level” are included; this ignores blocks inside nested constructs, like list items.)
 
@@ -363,8 +345,7 @@ This filter extracts all the numbered examples, section headers, block quotes, a
         return pandoc.Pandoc(hblocks, doc.meta)
     end
 
-Counting words in a document
-----------------------------
+## Counting words in a document
 
 This filter counts the words in the body of a document (omitting metadata like titles and abstracts), including words in code. It should be more accurate than `wc -w` run directly on a Markdown document, since the latter will count markup characters, like the `#` in front of an ATX header, or tags in HTML documents, as words. To run it, `pandoc --lua-filter wordcount.lua myfile.md`.
 
@@ -398,8 +379,7 @@ This filter counts the words in the body of a document (omitting metadata like t
         os.exit(0)
     end
 
-Converting ABC code to music notation
--------------------------------------
+## Converting ABC code to music notation
 
 This filter replaces code blocks with class `abc` with images created by running their contents through `abcm2ps` and ImageMagick’s `convert`. (For more on ABC notation, see <a href="https://abcnotation.com" class="uri">https://abcnotation.com</a>.)
 
@@ -433,8 +413,7 @@ Images are added to the mediabag. For output to binary formats, pandoc will use 
         end
     end
 
-Building images with Ti*k*Z
----------------------------
+## Building images with Ti*k*Z
 
 This filter converts raw LaTeX Ti*k*Z environments into images. It works with both PDF and HTML output. The Ti*k*Z code is compiled to an image using `pdflatex`, and the image is converted from pdf to svg format using [`pdf2svg`](https://github.com/dawbarton/pdf2svg), so both of these must be in the system path. Converted images are cached in the working directory and given filenames based on a hash of the source, so that they need not be regenerated each time the document is built. (A more sophisticated version of this might put these in a special cache directory.)
 
@@ -522,13 +501,11 @@ Example of use:
     \end{tikzpicture}
     EOF
 
-Lua type reference
-==================
+# Lua type reference
 
 This section describes the types of objects available to Lua filters. See the [pandoc module](#module-pandoc) for functions to create these objects.
 
-Shared Properties
------------------
+## Shared Properties
 
 ### `clone`
 
@@ -541,8 +518,7 @@ Usage:
     local emph = pandoc.Emph {pandoc.Str 'important'}
     local cloned_emph = emph:clone()  -- note the colon
 
-Pandoc
-------
+## Pandoc
 
 Pandoc document
 
@@ -554,15 +530,13 @@ document content ([List](#type-list) of [Blocks](#type-block))
 `meta`  
 document meta information ([Meta](#type-meta) object)
 
-Meta
-----
+## Meta
 
 Meta information on a document; string-indexed collection of [MetaValues](#type-metavalue).
 
 Values of this type can be created with the [`pandoc.Meta`](#pandoc.meta) constructor. Object equality is determined via [`pandoc.utils.equals`](#pandoc.utils.equals).
 
-MetaValue
----------
+## MetaValue
 
 Document meta information items.
 
@@ -616,14 +590,13 @@ Fields:
 `tag`, `t`  
 the literal `MetaMap` (string)
 
-*Note*: The fields will be shadowed if the map contains a field with the same name as those listed.
+_Note_: The fields will be shadowed if the map contains a field with the same name as those listed.
 
 ### MetaString
 
 Plain Lua string value (string).
 
-Block
------
+## Block
 
 Object equality is determined via [`pandoc.utils.equals`](#pandoc.utils.equals).
 
@@ -895,10 +868,9 @@ the literal `Table` (string)
 
 A <span id="type-table-cell">table cell</span> is a list of blocks.
 
-*<span id="type-alignment">Alignment</span>* is a string value indicating the horizontal alignment of a table column. `AlignLeft`, `AlignRight`, and `AlignCenter` leads cell content to be left-aligned, right-aligned, and centered, respectively. The default alignment is `AlignDefault` (often equivalent to centered).
+_<span id="type-alignment">Alignment</span>_ is a string value indicating the horizontal alignment of a table column. `AlignLeft`, `AlignRight`, and `AlignCenter` leads cell content to be left-aligned, right-aligned, and centered, respectively. The default alignment is `AlignDefault` (often equivalent to centered).
 
-Inline
-------
+## Inline
 
 Object equality is determined via [`pandoc.utils.equals`](#pandoc.utils.equals).
 
@@ -1245,8 +1217,7 @@ inline content ([List](#type-list) of [Inlines](#type-inline))
 `tag`, `t`  
 the literal `Underline` (string)
 
-Element components
-------------------
+## Element components
 
 ### Attr
 
@@ -1410,8 +1381,7 @@ This is a pair with the following components:
 1.  attributes
 2.  head rows ([Rows](#type-row))
 
-ReaderOptions
--------------
+## ReaderOptions
 
 Pandoc reader options
 
@@ -1444,8 +1414,7 @@ width (i.e. equivalent number of spaces) of tab stops (integer)
 `track_changes`  
 track changes setting for docx; one of `AcceptChanges`, `RejectChanges`, and `AllChanges` (string)
 
-CommonState
------------
+## CommonState
 
 The state used by pandoc to collect information and make it available to readers and writers.
 
@@ -1478,22 +1447,19 @@ Whether tracing messages are issued (boolean)
 `verbosity`  
 Verbosity level; one of `INFO`, `WARNING`, `ERROR` (string)
 
-List
-----
+## List
 
 A list is any Lua table with integer indices. Indices start at one, so if `alist = {'value'}` then `alist[1] == 'value'`.
 
-Lists, when part of an element, or when generated during marshaling, are made instances of the `pandoc.List` type for convenience. The `pandoc.List` type is defined in the [*pandoc.List*](#module-pandoc.list) module. See there for available methods.
+Lists, when part of an element, or when generated during marshaling, are made instances of the `pandoc.List` type for convenience. The `pandoc.List` type is defined in the [_pandoc.List_](#module-pandoc.list) module. See there for available methods.
 
 Values of this type can be created with the [`pandoc.List`](#pandoc.list) constructor, turning a normal Lua table into a List.
 
-LogMessage
-----------
+## LogMessage
 
 A pandoc log message. Objects have no fields, but can be converted to a string via `tostring`.
 
-SimpleTable
------------
+## SimpleTable
 
 A simple table is a table structure which resembles the old (pre pandoc 2.10) Table type. Bi-directional conversion from and to [Tables](#type-table) is possible with the [`pandoc.utils.to_simple_table`](#pandoc.utils.to_simple_table) and [`pandoc.utils.from_simple_table`](#pandoc.utils.from_simple_table) function, respectively. Instances of this type can also be created directly with the [`pandoc.SimpleTable`](#pandoc.simpletable) constructor.
 
@@ -1514,8 +1480,7 @@ table header row ([List](#type-list) of lists of [Blocks](#type-block))
 `rows`:  
 table rows ([List](#type-list) of rows, where a row is a list of lists of [Blocks](#type-block))
 
-Version
--------
+## Version
 
 A version object. This represents a software version like “2.7.3”. The object behaves like a numerically indexed table, i.e., if `version` represents the version `2.7.3`, then
 
@@ -1555,8 +1520,7 @@ Usage:
       'pandoc-types is too old: expected version %s, got %s'
     )
 
-Module text
-===========
+# Module text
 
 UTF-8 aware text manipulation functions, implemented in Haskell. The module is made available as part of the `pandoc` module via `pandoc.text`. The text module can also be loaded explicitly:
 
@@ -1597,15 +1561,13 @@ Returns the length of a UTF-8 string.
 
 Returns a substring of a UTF-8 string, using Lua’s string indexing rules.
 
-Module pandoc
-=============
+# Module pandoc
 
 Lua functions for pandoc scripts; includes constructors for document tree elements, functions to parse text in a given format, and functions to filter and modify a subtree.
 
-Pandoc
-------
+## Pandoc
 
- <span id="pandoc.pandoc">`Pandoc (blocks[, meta])`</span>   
+<span id="pandoc.pandoc">`Pandoc (blocks[, meta])`</span>  
 A complete pandoc document
 
 Parameters:
@@ -1618,10 +1580,9 @@ document meta data
 
 Returns: [Pandoc](#type-pandoc) object
 
-Meta
-----
+## Meta
 
- <span id="pandoc.meta">`Meta (table)`</span>   
+<span id="pandoc.meta">`Meta (table)`</span>  
 Create a new Meta object.
 
 Parameters:
@@ -1631,10 +1592,9 @@ table containing document meta information
 
 Returns: [Meta](#type-meta) object
 
-MetaValue
----------
+## MetaValue
 
- <span id="pandoc.metablocks">`MetaBlocks (blocks)`</span>   
+<span id="pandoc.metablocks">`MetaBlocks (blocks)`</span>  
 Meta blocks
 
 Parameters:
@@ -1644,7 +1604,7 @@ blocks
 
 Returns: [MetaBlocks](#type-metablocks) object
 
- <span id="pandoc.metainlines">`MetaInlines (inlines)`</span>   
+<span id="pandoc.metainlines">`MetaInlines (inlines)`</span>  
 Meta inlines
 
 Parameters:
@@ -1654,7 +1614,7 @@ inlines
 
 Returns: [MetaInlines](#type-metainlines) object
 
- <span id="pandoc.metalist">`MetaList (meta_values)`</span>   
+<span id="pandoc.metalist">`MetaList (meta_values)`</span>  
 Meta list
 
 Parameters:
@@ -1664,7 +1624,7 @@ list of meta values
 
 Returns: [MetaList](#type-metalist) object
 
- <span id="pandoc.metamap">`MetaMap (key_value_map)`</span>   
+<span id="pandoc.metamap">`MetaMap (key_value_map)`</span>  
 Meta map
 
 Parameters:
@@ -1674,7 +1634,7 @@ a string-indexed map of meta values
 
 Returns: [MetaMap](#type-metamap) object
 
- <span id="pandoc.metastring">`MetaString (str)`</span>   
+<span id="pandoc.metastring">`MetaString (str)`</span>  
 Creates string to be used in meta data.
 
 Parameters:
@@ -1684,7 +1644,7 @@ string value
 
 Returns: [MetaString](#type-metastring) object
 
- <span id="pandoc.metabool">`MetaBool (bool)`</span>   
+<span id="pandoc.metabool">`MetaBool (bool)`</span>  
 Creates boolean to be used in meta data.
 
 Parameters:
@@ -1694,10 +1654,9 @@ boolean value
 
 Returns: [MetaBool](#type-metabool) object
 
-Blocks
-------
+## Blocks
 
- <span id="pandoc.blockquote">`BlockQuote (content)`</span>   
+<span id="pandoc.blockquote">`BlockQuote (content)`</span>  
 Creates a block quote element
 
 Parameters:
@@ -1707,7 +1666,7 @@ block content
 
 Returns: [BlockQuote](#type-blockquote) object
 
- <span id="pandoc.bulletlist">`BulletList (items)`</span>   
+<span id="pandoc.bulletlist">`BulletList (items)`</span>  
 Creates a bullet list.
 
 Parameters:
@@ -1717,7 +1676,7 @@ list items
 
 Returns: [BulletList](#type-bulletlist) object
 
- <span id="pandoc.codeblock">`CodeBlock (text[, attr])`</span>   
+<span id="pandoc.codeblock">`CodeBlock (text[, attr])`</span>  
 Creates a code block element
 
 Parameters:
@@ -1730,7 +1689,7 @@ element attributes
 
 Returns: [CodeBlock](#type-codeblock) object
 
- <span id="pandoc.definitionlist">`DefinitionList (content)`</span>   
+<span id="pandoc.definitionlist">`DefinitionList (content)`</span>  
 Creates a definition list, containing terms and their explanation.
 
 Parameters:
@@ -1740,7 +1699,7 @@ list of items
 
 Returns: [DefinitionList](#type-definitionlist) object
 
- <span id="pandoc.div">`Div (content[, attr])`</span>   
+<span id="pandoc.div">`Div (content[, attr])`</span>  
 Creates a div element
 
 Parameters:
@@ -1753,7 +1712,7 @@ element attributes
 
 Returns: [Div](#type-div) object
 
- <span id="pandoc.header">`Header (level, content[, attr])`</span>   
+<span id="pandoc.header">`Header (level, content[, attr])`</span>  
 Creates a header element.
 
 Parameters:
@@ -1769,12 +1728,12 @@ element attributes
 
 Returns: [Header](#type-header) object
 
- <span id="pandoc.horizontalrule">`HorizontalRule ()`</span>   
+<span id="pandoc.horizontalrule">`HorizontalRule ()`</span>  
 Creates a horizontal rule.
 
 Returns: [HorizontalRule](#type-horizontalrule) object
 
- <span id="pandoc.lineblock">`LineBlock (content)`</span>   
+<span id="pandoc.lineblock">`LineBlock (content)`</span>  
 Creates a line block element.
 
 Parameters:
@@ -1784,12 +1743,12 @@ inline content
 
 Returns: [LineBlock](#type-lineblock) object
 
- <span id="pandoc.null">`Null ()`</span>   
+<span id="pandoc.null">`Null ()`</span>  
 Creates a null element.
 
 Returns: [Null](#type-null) object
 
- <span id="pandoc.orderedlist">`OrderedList (items[, listAttributes])`</span>   
+<span id="pandoc.orderedlist">`OrderedList (items[, listAttributes])`</span>  
 Creates an ordered list.
 
 Parameters:
@@ -1802,7 +1761,7 @@ list parameters
 
 Returns: [OrderedList](#type-orderedlist) object
 
- <span id="pandoc.para">`Para (content)`</span>   
+<span id="pandoc.para">`Para (content)`</span>  
 Creates a para element.
 
 Parameters:
@@ -1812,7 +1771,7 @@ inline content
 
 Returns: [Para](#type-para) object
 
- <span id="pandoc.plain">`Plain (content)`</span>   
+<span id="pandoc.plain">`Plain (content)`</span>  
 Creates a plain element.
 
 Parameters:
@@ -1822,7 +1781,7 @@ inline content
 
 Returns: [Plain](#type-plain) object
 
- <span id="pandoc.rawblock">`RawBlock (format, text)`</span>   
+<span id="pandoc.rawblock">`RawBlock (format, text)`</span>  
 Creates a raw content block of the specified format.
 
 Parameters:
@@ -1835,7 +1794,7 @@ string content
 
 Returns: [RawBlock](#type-rawblock) object
 
- <span id="pandoc.table">`Table (caption, colspecs, head, bodies, foot[, attr])`</span>   
+<span id="pandoc.table">`Table (caption, colspecs, head, bodies, foot[, attr])`</span>  
 Creates a table element.
 
 Parameters:
@@ -1860,10 +1819,9 @@ element attributes
 
 Returns: [Table](#type-table) object
 
-Inline
-------
+## Inline
 
- <span id="pandoc.cite">`Cite (content, citations)`</span>   
+<span id="pandoc.cite">`Cite (content, citations)`</span>  
 Creates a Cite inline element
 
 Parameters:
@@ -1876,7 +1834,7 @@ List of citations
 
 Returns: [Cite](#type-cite) object
 
- <span id="pandoc.code">`Code (text[, attr])`</span>   
+<span id="pandoc.code">`Code (text[, attr])`</span>  
 Creates a Code inline element
 
 Parameters:
@@ -1889,7 +1847,7 @@ additional attributes
 
 Returns: [Code](#type-code) object
 
- <span id="pandoc.emph">`Emph (content)`</span>   
+<span id="pandoc.emph">`Emph (content)`</span>  
 Creates an inline element representing emphasized text.
 
 Parameters:
@@ -1899,7 +1857,7 @@ inline content
 
 Returns: [Emph](#type-emph) object
 
- <span id="pandoc.image">`Image (caption, src[, title[, attr]])`</span>   
+<span id="pandoc.image">`Image (caption, src[, title[, attr]])`</span>  
 Creates a Image inline element
 
 Parameters:
@@ -1918,12 +1876,12 @@ additional attributes
 
 Returns: [Image](#type-image) object
 
- <span id="pandoc.linebreak">`LineBreak ()`</span>   
+<span id="pandoc.linebreak">`LineBreak ()`</span>  
 Create a LineBreak inline element
 
 Returns: [LineBreak](#type-linebreak) object
 
- <span id="pandoc.link">`Link (content, target[, title[, attr]])`</span>   
+<span id="pandoc.link">`Link (content, target[, title[, attr]])`</span>  
 Creates a link inline element, usually a hyperlink.
 
 Parameters:
@@ -1942,7 +1900,7 @@ additional attributes
 
 Returns: [Link](#type-link) object
 
- <span id="pandoc.math">`Math (mathtype, text)`</span>   
+<span id="pandoc.math">`Math (mathtype, text)`</span>  
 Creates a Math element, either inline or displayed.
 
 Parameters:
@@ -1955,7 +1913,7 @@ Math content
 
 Returns: [Math](#type-math) object
 
- <span id="pandoc.displaymath">`DisplayMath (text)`</span>   
+<span id="pandoc.displaymath">`DisplayMath (text)`</span>  
 Creates a math element of type “DisplayMath” (DEPRECATED).
 
 Parameters:
@@ -1965,7 +1923,7 @@ Math content
 
 Returns: [Math](#type-math) object
 
- <span id="pandoc.inlinemath">`InlineMath (text)`</span>   
+<span id="pandoc.inlinemath">`InlineMath (text)`</span>  
 Creates a math element of type “InlineMath” (DEPRECATED).
 
 Parameters:
@@ -1975,7 +1933,7 @@ Math content
 
 Returns: [Math](#type-math) object
 
- <span id="pandoc.note">`Note (content)`</span>   
+<span id="pandoc.note">`Note (content)`</span>  
 Creates a Note inline element
 
 Parameters:
@@ -1985,7 +1943,7 @@ footnote block content
 
 Returns: [Note](#type-note) object
 
- <span id="pandoc.quoted">`Quoted (quotetype, content)`</span>   
+<span id="pandoc.quoted">`Quoted (quotetype, content)`</span>  
 Creates a Quoted inline element given the quote type and quoted content.
 
 Parameters:
@@ -1998,7 +1956,7 @@ inline content
 
 Returns: [Quoted](#type-quoted) object
 
- <span id="pandoc.singlequoted">`SingleQuoted (content)`</span>   
+<span id="pandoc.singlequoted">`SingleQuoted (content)`</span>  
 Creates a single-quoted inline element (DEPRECATED).
 
 Parameters:
@@ -2008,7 +1966,7 @@ inline content
 
 Returns: [Quoted](#type-quoted)
 
- <span id="pandoc.doublequoted">`DoubleQuoted (content)`</span>   
+<span id="pandoc.doublequoted">`DoubleQuoted (content)`</span>  
 Creates a single-quoted inline element (DEPRECATED).
 
 Parameters:
@@ -2018,7 +1976,7 @@ inline content
 
 Returns: [Quoted](#type-quoted)
 
- <span id="pandoc.rawinline">`RawInline (format, text)`</span>   
+<span id="pandoc.rawinline">`RawInline (format, text)`</span>  
 Creates a raw inline element
 
 Parameters:
@@ -2031,7 +1989,7 @@ string content
 
 Returns: [RawInline](#type-rawinline) object
 
- <span id="pandoc.smallcaps">`SmallCaps (content)`</span>   
+<span id="pandoc.smallcaps">`SmallCaps (content)`</span>  
 Creates text rendered in small caps
 
 Parameters:
@@ -2041,17 +1999,17 @@ inline content
 
 Returns: [SmallCaps](#type-smallcaps) object
 
- <span id="pandoc.softbreak">`SoftBreak ()`</span>   
+<span id="pandoc.softbreak">`SoftBreak ()`</span>  
 Creates a SoftBreak inline element.
 
 Returns: [SoftBreak](#type-softbreak) object
 
- <span id="pandoc.space">`Space ()`</span>   
+<span id="pandoc.space">`Space ()`</span>  
 Create a Space inline element
 
 Returns: [Space](#type-space) object
 
- <span id="pandoc.span">`Span (content[, attr])`</span>   
+<span id="pandoc.span">`Span (content[, attr])`</span>  
 Creates a Span inline element
 
 Parameters:
@@ -2064,7 +2022,7 @@ additional attributes
 
 Returns: [Span](#type-span) object
 
- <span id="pandoc.str">`Str (text)`</span>   
+<span id="pandoc.str">`Str (text)`</span>  
 Creates a Str inline element
 
 Parameters:
@@ -2074,7 +2032,7 @@ content
 
 Returns: [Str](#type-str) object
 
- <span id="pandoc.strikeout">`Strikeout (content)`</span>   
+<span id="pandoc.strikeout">`Strikeout (content)`</span>  
 Creates text which is struck out.
 
 Parameters:
@@ -2084,7 +2042,7 @@ inline content
 
 Returns: [Strikeout](#type-strikeout) object
 
- <span id="pandoc.strong">`Strong (content)`</span>   
+<span id="pandoc.strong">`Strong (content)`</span>  
 Creates a Strong element, whose text is usually displayed in a bold font.
 
 Parameters:
@@ -2094,7 +2052,7 @@ inline content
 
 Returns: [Strong](#type-strong) object
 
- <span id="pandoc.subscript">`Subscript (content)`</span>   
+<span id="pandoc.subscript">`Subscript (content)`</span>  
 Creates a Subscript inline element
 
 Parameters:
@@ -2104,7 +2062,7 @@ inline content
 
 Returns: [Subscript](#type-subscript) object
 
- <span id="pandoc.superscript">`Superscript (content)`</span>   
+<span id="pandoc.superscript">`Superscript (content)`</span>  
 Creates a Superscript inline element
 
 Parameters:
@@ -2114,7 +2072,7 @@ inline content
 
 Returns: [Superscript](#type-superscript) object
 
- <span id="pandoc.underline">`Underline (content)`</span>   
+<span id="pandoc.underline">`Underline (content)`</span>  
 Creates an Underline inline element
 
 Parameters:
@@ -2124,10 +2082,9 @@ inline content
 
 Returns: [Underline](#type-underline) object
 
-Element components
-------------------
+## Element components
 
- <span id="pandoc.attr">`Attr ([identifier[, classes[, attributes]]])`</span>   
+<span id="pandoc.attr">`Attr ([identifier[, classes[, attributes]]])`</span>  
 Create a new set of attributes (Attr).
 
 Parameters:
@@ -2143,7 +2100,7 @@ table containing string keys and values
 
 Returns: [Attr](#type-attr) object
 
- <span id="pandoc.citation">`Citation (id, mode[, prefix[, suffix[, note_num[, hash]]]])`</span>   
+<span id="pandoc.citation">`Citation (id, mode[, prefix[, suffix[, note_num[, hash]]]])`</span>  
 Creates a single citation.
 
 Parameters:
@@ -2168,7 +2125,7 @@ hash number
 
 Returns: [Citation](#type-citation) object
 
- <span id="pandoc.listattributes">`ListAttributes ([start[, style[, delimiter]]])`</span>   
+<span id="pandoc.listattributes">`ListAttributes ([start[, style[, delimiter]]])`</span>  
 Creates a set of list attributes.
 
 Parameters:
@@ -2184,10 +2141,9 @@ delimiter of list numbers
 
 Returns: [ListAttributes](#type-listattributes) object
 
-Legacy types
-------------
+## Legacy types
 
- <span id="pandoc.simpletable">`SimpleTable (caption, aligns, widths, headers, rows)`</span>   
+<span id="pandoc.simpletable">`SimpleTable (caption, aligns, widths, headers, rows)`</span>  
 Creates a simple table resembling the old (pre pandoc 2.10) table type.
 
 Parameters:
@@ -2228,104 +2184,102 @@ Usage:
       rows
     )
 
-Constants
----------
+## Constants
 
- <span id="pandoc.authorintext">`AuthorInText`</span>   
+<span id="pandoc.authorintext">`AuthorInText`</span>  
 Author name is mentioned in the text.
 
 See also: [Citation](#type-citation)
 
- <span id="pandoc.suppressauthor">`SuppressAuthor`</span>   
+<span id="pandoc.suppressauthor">`SuppressAuthor`</span>  
 Author name is suppressed.
 
 See also: [Citation](#type-citation)
 
- <span id="pandoc.normalcitation">`NormalCitation`</span>   
+<span id="pandoc.normalcitation">`NormalCitation`</span>  
 Default citation style is used.
 
 See also: [Citation](#type-citation)
 
- <span id="pandoc.alignleft">`AlignLeft`</span>   
+<span id="pandoc.alignleft">`AlignLeft`</span>  
 Table cells aligned left.
 
 See also: [Table](#type-alignment)
 
- <span id="pandoc.alignright">`AlignRight`</span>   
+<span id="pandoc.alignright">`AlignRight`</span>  
 Table cells right-aligned.
 
 See also: [Table](#type-alignment)
 
- <span id="pandoc.aligncenter">`AlignCenter`</span>   
+<span id="pandoc.aligncenter">`AlignCenter`</span>  
 Table cell content is centered.
 
 See also: [Table](#type-alignment)
 
- <span id="pandoc.aligndefault">`AlignDefault`</span>   
+<span id="pandoc.aligndefault">`AlignDefault`</span>  
 Table cells are alignment is unaltered.
 
 See also: [Table](#type-alignment)
 
- <span id="pandoc.defaultdelim">`DefaultDelim`</span>   
+<span id="pandoc.defaultdelim">`DefaultDelim`</span>  
 Default list number delimiters are used.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.period">`Period`</span>   
+<span id="pandoc.period">`Period`</span>  
 List numbers are delimited by a period.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.oneparen">`OneParen`</span>   
+<span id="pandoc.oneparen">`OneParen`</span>  
 List numbers are delimited by a single parenthesis.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.twoparens">`TwoParens`</span>   
+<span id="pandoc.twoparens">`TwoParens`</span>  
 List numbers are delimited by a double parentheses.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.defaultstyle">`DefaultStyle`</span>   
+<span id="pandoc.defaultstyle">`DefaultStyle`</span>  
 List are numbered in the default style
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.example">`Example`</span>   
+<span id="pandoc.example">`Example`</span>  
 List items are numbered as examples.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.decimal">`Decimal`</span>   
+<span id="pandoc.decimal">`Decimal`</span>  
 List are numbered using decimal integers.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.lowerroman">`LowerRoman`</span>   
+<span id="pandoc.lowerroman">`LowerRoman`</span>  
 List are numbered using lower-case roman numerals.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.upperroman">`UpperRoman`</span>   
+<span id="pandoc.upperroman">`UpperRoman`</span>  
 List are numbered using upper-case roman numerals
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.loweralpha">`LowerAlpha`</span>   
+<span id="pandoc.loweralpha">`LowerAlpha`</span>  
 List are numbered using lower-case alphabetic characters.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.upperalpha">`UpperAlpha`</span>   
+<span id="pandoc.upperalpha">`UpperAlpha`</span>  
 List are numbered using upper-case alphabetic characters.
 
 See also: [ListAttributes](#type-listattributes)
 
- <span id="pandoc.sha1">`sha1`</span>   
+<span id="pandoc.sha1">`sha1`</span>  
 Alias for [`pandoc.utils.sha1`](#pandoc.utils.sha1) (DEPRECATED).
 
-Helper functions
-----------------
+## Helper functions
 
 ### pipe
 
@@ -2346,17 +2300,17 @@ data which is piped into the program via stdin (string).
 
 Returns:
 
--   Output of command, i.e. data printed to stdout (string)
+- Output of command, i.e. data printed to stdout (string)
 
 Raises:
 
--   A table containing the keys `command`, `error_code`, and `output` is thrown if the command exits with a non-zero error code.
+- A table containing the keys `command`, `error_code`, and `output` is thrown if the command exits with a non-zero error code.
 
 Usage:
 
     local output = pandoc.pipe("sed", {"-e","s/a/b/"}, "abc")
 
-### walk\_block
+### walk_block
 
 `walk_block (element, filter)`
 
@@ -2372,7 +2326,7 @@ a Lua filter (table of functions) to be applied within the block element
 
 Returns: the transformed block element
 
-### walk\_inline
+### walk_inline
 
 `walk_inline (element, filter)`
 
@@ -2413,8 +2367,7 @@ Usage:
     -- The inline element in that block is an `Emph`
     assert(block.content[1].t == "Emph")
 
-Module pandoc.utils
-===================
+# Module pandoc.utils
 
 This module exposes internal pandoc functions and utility functions.
 
@@ -2424,7 +2377,7 @@ The module is loaded as part of the `pandoc` module and available as `pandoc.uti
 
 Use the above for backwards compatibility.
 
-### blocks\_to\_inlines
+### blocks_to_inlines
 
 `blocks_to_inlines (blocks[, sep])`
 
@@ -2440,7 +2393,7 @@ List of [Inlines](#type-inline) inserted as separator between two consecutive bl
 
 Returns:
 
--   [List](#type-list) of [Inlines](#type-inline)
+- [List](#type-list) of [Inlines](#type-inline)
 
 Usage:
 
@@ -2468,9 +2421,9 @@ Objects to be compared. Acceptable input types are [Pandoc](#type-pandoc), [Meta
 
 Returns:
 
--   Whether the two objects represent the same element (boolean)
+- Whether the two objects represent the same element (boolean)
 
-### from\_simple\_table
+### from_simple_table
 
 `from_simple_table (table)`
 
@@ -2478,7 +2431,7 @@ Creates a [Table](#type-table) block element from a [SimpleTable](#type-simpleta
 
 Returns:
 
--   table block element ([Table](#type-table))
+- table block element ([Table](#type-table))
 
 Usage:
 
@@ -2488,7 +2441,7 @@ Usage:
     -- create normal table block again
     table = pandoc.utils.from_simple_table(simple)
 
-### make\_sections
+### make_sections
 
 `make_sections (number_sections, base_level, blocks)`
 
@@ -2496,7 +2449,7 @@ Converts list of [Blocks](#type-block) into sections. `Div`s will be created beg
 
 Returns:
 
--   List of [Blocks](#type-block).
+- List of [Blocks](#type-block).
 
 Usage:
 
@@ -2506,7 +2459,7 @@ Usage:
     }
     local newblocks = pandoc.utils.make_sections(true, 1, blocks)
 
-### run\_json\_filter
+### run_json_filter
 
 `run_json_filter (doc, filter[, args])`
 
@@ -2525,7 +2478,7 @@ list of arguments passed to the filter. Defaults to `{FORMAT}`.
 
 Returns:
 
--   ([Pandoc](#type-pandoc)) Filtered document
+- ([Pandoc](#type-pandoc)) Filtered document
 
 Usage:
 
@@ -2538,7 +2491,7 @@ Usage:
     )
     some_blocks = sub_doc.blocks -- some blocks with bib
 
-### normalize\_date
+### normalize_date
 
 `normalize_date (date_string)`
 
@@ -2546,7 +2499,7 @@ Parse a date and convert (if possible) to “YYYY-MM-DD” format. We limit year
 
 Returns:
 
--   A date string, or nil when the conversion failed.
+- A date string, or nil when the conversion failed.
 
 ### sha1
 
@@ -2556,7 +2509,7 @@ Returns the SHA1 has of the contents.
 
 Returns:
 
--   SHA1 hash of the contents.
+- SHA1 hash of the contents.
 
 Usage:
 
@@ -2570,7 +2523,7 @@ Converts the given element (Pandoc, Meta, Block, or Inline) into a string with a
 
 Returns:
 
--   A plain string representation of the given element.
+- A plain string representation of the given element.
 
 Usage:
 
@@ -2578,7 +2531,7 @@ Usage:
     -- outputs "Moin"
     print(pandoc.utils.stringify(inline))
 
-### to\_roman\_numeral
+### to_roman_numeral
 
 `to_roman_numeral (integer)`
 
@@ -2586,7 +2539,7 @@ Converts an integer &lt; 4000 to uppercase roman numeral.
 
 Returns:
 
--   A roman numeral string.
+- A roman numeral string.
 
 Usage:
 
@@ -2594,7 +2547,7 @@ Usage:
     local pandoc_birth_year = to_roman_numeral(2006)
     -- pandoc_birth_year == 'MMVI'
 
-### to\_simple\_table
+### to_simple_table
 
 `to_simple_table (table)`
 
@@ -2602,7 +2555,7 @@ Creates a [SimpleTable](#type-simpletable) out of a [Table](#type-table) block.
 
 Returns:
 
--   a simple table object ([SimpleTable](#type-simpletable))
+- a simple table object ([SimpleTable](#type-simpletable))
 
 Usage:
 
@@ -2612,8 +2565,7 @@ Usage:
     -- create normal table block again
     table = pandoc.utils.from_simple_table(simple)
 
-Module pandoc.mediabag
-======================
+# Module pandoc.mediabag
 
 The `pandoc.mediabag` module allows accessing pandoc’s media storage. The “media bag” is used when pandoc is called with the `--extract-media` or (for HTML only) `--self-contained` option.
 
@@ -2672,9 +2624,9 @@ This function should be used only when full access to all items, including their
 
 Returns:
 
--   The iterator function; must be called with the iterator state and the current iterator value.
--   Iterator state – an opaque value to be passed to the iterator function.
--   Initial iterator value.
+- The iterator function; must be called with the iterator state and the current iterator value.
+- Iterator state – an opaque value to be passed to the iterator function.
+- Initial iterator value.
 
 Usage:
 
@@ -2713,8 +2665,8 @@ name of the file to look up.
 
 Returns:
 
--   the entry’s MIME type, or nil if the file was not found.
--   contents of the file, or nil if the file was not found.
+- the entry’s MIME type, or nil if the file was not found.
+- contents of the file, or nil if the file was not found.
 
 Usage:
 
@@ -2736,29 +2688,26 @@ path to a resource; either a local file path or URI
 
 Returns:
 
--   the entries MIME type, or nil if the file was not found.
--   contents of the file, or nil if the file was not found.
+- the entries MIME type, or nil if the file was not found.
+- contents of the file, or nil if the file was not found.
 
 Usage:
 
     local diagram_url = "https://pandoc.org/diagram.jpg"
     local mt, contents = pandoc.mediabag.fetch(diagram_url)
 
-Module pandoc.List
-==================
+# Module pandoc.List
 
 This module defines pandoc’s list type. It comes with useful methods and convenience functions.
 
-Constructor
------------
+## Constructor
 
- <span id="pandoc.list">`pandoc.List([table])`</span>   
+<span id="pandoc.list">`pandoc.List([table])`</span>  
 Create a new List. If the optional argument `table` is given, set the metatable of that value to `pandoc.List`. This is an alias for [`pandoc.List:new([table])`](#pandoc.list:new).
 
-Metamethods
------------
+## Metamethods
 
- <span id="pandoc.list:__concat">`pandoc.List:__concat (list)`</span>   
+<span id="pandoc.list:__concat">`pandoc.List:__concat (list)`</span>  
 Concatenates two lists.
 
 Parameters:
@@ -2768,13 +2717,12 @@ second list concatenated to the first
 
 Returns: a new list containing all elements from list1 and list2
 
-Methods
--------
+## Methods
 
- <span id="pandoc.list:clone">`pandoc.List:clone ()`</span>   
+<span id="pandoc.list:clone">`pandoc.List:clone ()`</span>  
 Returns a (shallow) copy of the list.
 
- <span id="pandoc.list:extend">`pandoc.List:extend (list)`</span>   
+<span id="pandoc.list:extend">`pandoc.List:extend (list)`</span>  
 Adds the given list to the end of this list.
 
 Parameters:
@@ -2782,7 +2730,7 @@ Parameters:
 `list`:  
 list to appended
 
- <span id="pandoc.list:find">`pandoc.List:find (needle, init)`</span>   
+<span id="pandoc.list:find">`pandoc.List:find (needle, init)`</span>  
 Returns the value and index of the first occurrence of the given item.
 
 Parameters:
@@ -2795,7 +2743,7 @@ index at which the search is started
 
 Returns: first item equal to the needle, or nil if no such item exists.
 
- <span id="pandoc.list:find_if">`pandoc.List:find_if (pred, init)`</span>   
+<span id="pandoc.list:find_if">`pandoc.List:find_if (pred, init)`</span>  
 Returns the value and index of the first element for which the predicate holds true.
 
 Parameters:
@@ -2808,7 +2756,7 @@ index at which the search is started
 
 Returns: first item for which \`test\` succeeds, or nil if no such item exists.
 
- <span id="pandoc.list:filter">`pandoc.List:filter (pred)`</span>   
+<span id="pandoc.list:filter">`pandoc.List:filter (pred)`</span>  
 Returns a new list containing all items satisfying a given condition.
 
 Parameters:
@@ -2818,7 +2766,7 @@ condition items must satisfy.
 
 Returns: a new list containing all items for which \`test\` was true.
 
- <span id="pandoc.list:includes">`pandoc.List:includes (needle, init)`</span>   
+<span id="pandoc.list:includes">`pandoc.List:includes (needle, init)`</span>  
 Checks if the list has an item equal to the given needle.
 
 Parameters:
@@ -2831,7 +2779,7 @@ index at which the search is started
 
 Returns: true if a list item is equal to the needle, false otherwise
 
- <span id="pandoc.list:insert">`pandoc.List:insert ([pos], value)`</span>   
+<span id="pandoc.list:insert">`pandoc.List:insert ([pos], value)`</span>  
 Inserts element `value` at position `pos` in list, shifting elements to the next-greater index if necessary.
 
 This function is identical to [`table.insert`](https://www.lua.org/manual/5.3/manual.html#6.6).
@@ -2844,7 +2792,7 @@ index of the new value; defaults to length of the list + 1
 `value`:  
 value to insert into the list
 
- <span id="pandoc.list:map">`pandoc.List:map (fn)`</span>   
+<span id="pandoc.list:map">`pandoc.List:map (fn)`</span>  
 Returns a copy of the current list by applying the given function to all elements.
 
 Parameters:
@@ -2852,7 +2800,7 @@ Parameters:
 `fn`:  
 function which is applied to all list items.
 
- <span id="pandoc.list:new">`pandoc.List:new([table])`</span>   
+<span id="pandoc.list:new">`pandoc.List:new([table])`</span>  
 Create a new List. If the optional argument `table` is given, set the metatable of that value to `pandoc.List`.
 
 Parameters:
@@ -2862,7 +2810,7 @@ table which should be treatable as a list; defaults to an empty table
 
 Returns: the updated input value
 
- <span id="pandoc.list:remove">`pandoc.List:remove ([pos])`</span>   
+<span id="pandoc.list:remove">`pandoc.List:remove ([pos])`</span>  
 Removes the element at position `pos`, returning the value of the removed element.
 
 This function is identical to [`table.remove`](https://www.lua.org/manual/5.3/manual.html#6.6).
@@ -2874,7 +2822,7 @@ position of the list value that will be removed; defaults to the index of the la
 
 Returns: the removed element
 
- <span id="pandoc.list:sort">`pandoc.List:sort ([comp])`</span>   
+<span id="pandoc.list:sort">`pandoc.List:sort ([comp])`</span>  
 Sorts list elements in a given order, in-place. If `comp` is given, then it must be a function that receives two list elements and returns true when the first element must come before the second in the final order (so that, after the sort, `i < j` implies `not comp(list[j],list[i]))`. If comp is not given, then the standard Lua operator `<` is used instead.
 
 Note that the comp function must define a strict partial order over the elements in the list; that is, it must be asymmetric and transitive. Otherwise, no valid sort may be possible.
@@ -2888,24 +2836,21 @@ Parameters:
 `comp`:  
 Comparison function as described above.
 
-Module pandoc.path
-==================
+# Module pandoc.path
 
 Module for file path manipulations.
 
-Static Fields
--------------
+## Static Fields
 
 ### separator
 
 The character that separates directories.
 
-### search\_path\_separator
+### search_path_separator
 
 The character that is used to separate the entries in the `PATH` environment variable.
 
-Functions
----------
+## Functions
 
 ### directory (filepath)
 
@@ -2918,7 +2863,7 @@ path (string)
 
 Returns:
 
--   The filepath up to the last directory separator. (string)
+- The filepath up to the last directory separator. (string)
 
 ### filename (filepath)
 
@@ -2931,9 +2876,9 @@ path (string)
 
 Returns:
 
--   File name part of the input path. (string)
+- File name part of the input path. (string)
 
-### is\_absolute (filepath)
+### is_absolute (filepath)
 
 Checks whether a path is absolute, i.e. not fixed to a root.
 
@@ -2944,9 +2889,9 @@ path (string)
 
 Returns:
 
--   `true` if `filepath` is an absolute path, `false` otherwise. (boolean)
+- `true` if `filepath` is an absolute path, `false` otherwise. (boolean)
 
-### is\_relative (filepath)
+### is_relative (filepath)
 
 Checks whether a path is relative or fixed to a root.
 
@@ -2957,7 +2902,7 @@ path (string)
 
 Returns:
 
--   `true` if `filepath` is a relative path, `false` otherwise. (boolean)
+- `true` if `filepath` is a relative path, `false` otherwise. (boolean)
 
 ### join (filepaths)
 
@@ -2970,9 +2915,9 @@ path components (list of strings)
 
 Returns:
 
--   The joined path. (string)
+- The joined path. (string)
 
-### make\_relative (path, root\[, unsafe\])
+### make_relative (path, root\[, unsafe\])
 
 Contract a filename, based on a relative path. Note that the resulting path will usually not introduce `..` paths, as the presence of symlinks means `../b` may not reach `a/b` if it starts from `a/c`. For a worked example see [this blog post](https://neilmitchell.blogspot.co.uk/2015/10/filepaths-are-subtle-symlinks-are-hard.html).
 
@@ -2991,16 +2936,16 @@ whether to allow `..` in the result. (boolean)
 
 Returns:
 
--   contracted filename (string)
+- contracted filename (string)
 
 ### normalize (filepath)
 
 Normalizes a path.
 
--   `//` makes sense only as part of a (Windows) network drive; elsewhere, multiple slashes are reduced to a single `path.separator` (platform dependent).
--   `/` becomes `path.separator` (platform dependent)
--   `./` -&gt; ’’
--   an empty path becomes `.`
+- `//` makes sense only as part of a (Windows) network drive; elsewhere, multiple slashes are reduced to a single `path.separator` (platform dependent).
+- `/` becomes `path.separator` (platform dependent)
+- `./` -&gt; ’’
+- an empty path becomes `.`
 
 Parameters:
 
@@ -3009,7 +2954,7 @@ path (string)
 
 Returns:
 
--   The normalized path. (string)
+- The normalized path. (string)
 
 ### split (filepath)
 
@@ -3022,9 +2967,9 @@ path (string)
 
 Returns:
 
--   List of all path components. (list of strings)
+- List of all path components. (list of strings)
 
-### split\_extension (filepath)
+### split_extension (filepath)
 
 Splits the last extension from a file path and returns the parts. The extension, if present, includes the leading separator; if the path has no extension, then the empty string is returned as the extension.
 
@@ -3035,30 +2980,28 @@ path (string)
 
 Returns:
 
--   filepath without extension (string)
+- filepath without extension (string)
 
--   extension or empty string (string)
+- extension or empty string (string)
 
-### split\_search\_path (search\_path)
+### split_search_path (search_path)
 
 Takes a string and splits it on the `search_path_separator` character. Blank items are ignored on Windows, and converted to `.` on Posix. On Windows path elements are stripped of quotes.
 
 Parameters:
 
-search\_path  
+search_path  
 platform-specific search path (string)
 
 Returns:
 
--   list of directories in search path (list of strings)
+- list of directories in search path (list of strings)
 
-Module pandoc.system
-====================
+# Module pandoc.system
 
 Access to system information and functionality.
 
-Static Fields
--------------
+## Static Fields
 
 ### arch
 
@@ -3068,8 +3011,7 @@ The machine architecture on which the program is running.
 
 The operating system on which the program is running.
 
-Functions
----------
+## Functions
 
 ### environment
 
@@ -3079,9 +3021,9 @@ Retrieve the entire environment as a string-indexed table.
 
 Returns:
 
--   A table mapping environment variables names to their string value (table).
+- A table mapping environment variables names to their string value (table).
 
-### get\_working\_directory
+### get_working_directory
 
 `get_working_directory ()`
 
@@ -3089,9 +3031,9 @@ Obtain the current working directory as an absolute path.
 
 Returns:
 
--   The current working directory (string).
+- The current working directory (string).
 
-### with\_environment
+### with_environment
 
 `with_environment (environment, callback)`
 
@@ -3107,9 +3049,9 @@ Action to execute in the custom environment (function)
 
 Returns:
 
--   The result(s) of the call to `callback`
+- The result(s) of the call to `callback`
 
-### with\_temporary\_directory
+### with_temporary_directory
 
 `with_temporary_directory ([parent_dir,] templ, callback)`
 
@@ -3128,9 +3070,9 @@ Function which takes the name of the temporary directory as its first argument (
 
 Returns:
 
--   The result of the call to `callback`.
+- The result of the call to `callback`.
 
-### with\_working\_directory
+### with_working_directory
 
 `with_working_directory (directory, callback)`
 
@@ -3146,10 +3088,9 @@ Action to execute in the given directory (function)
 
 Returns:
 
--   The result(s) of the call to `callback`
+- The result(s) of the call to `callback`
 
-Module pandoc.types
-===================
+# Module pandoc.types
 
 Constructors for types which are not part of the pandoc AST.
 
@@ -3166,4 +3107,4 @@ Version specifier: this can be a version string like `'2.7.3'`, a list of intege
 
 Returns:
 
--   A new [Version](#type-version) object.
+- A new [Version](#type-version) object.

@@ -1,5 +1,4 @@
-Connect to PostgreSQL Database
-==============================
+# Connect to PostgreSQL Database
 
 > This tutorial shows you different ways to connect to PostgreSQL database by using interactive terminal program called psql and pgAdmin GUI application.
 
@@ -7,15 +6,16 @@ Connect to PostgreSQL Database
 
 When you [installed the PostgreSQL database server](https://www.postgresqltutorial.com/install-postgresql/ "Install PostgreSQL"), the PostgreSQL installer also installed some useful tools for working with the PostgreSQL database server. In this tutorial, you will learn how to connect to the PostgreSQL database server via the following tools:
 
--   psql – a terminal-based front-end to PostgreSQL database server.
--   pgAdmin – a web-based front-end to PostgreSQL database server.
+- psql – a terminal-based front-end to PostgreSQL database server.
+- pgAdmin – a web-based front-end to PostgreSQL database server.
 
-1) Connect to PostgreSQL database server using psql
----------------------------------------------------
+1. Connect to PostgreSQL database server using psql
+
+---
 
 psql is an interactive terminal program provided by PostgreSQL. It allows you to interact with the PostgreSQL database server such as executing SQL statements and managing database objects.
 
-The following steps show you how to connect to the PostgreSQL database server via the *psql* program:
+The following steps show you how to connect to the PostgreSQL database server via the _psql_ program:
 
 First, launch the **psql** program and connect to the PostgreSQL Database Server using the **postgres** user:
 
@@ -25,8 +25,9 @@ Third, interact with the PostgreSQL Database Server by issuing an SQL statement.
 
 Please do not forget to end the statement with a semicolon (;). After pressing **Enter**, psql will return the current PostgreSQL version on your system.
 
-2) Connect to PostgreSQL database server using pgAdmin
-------------------------------------------------------
+2. Connect to PostgreSQL database server using pgAdmin
+
+---
 
 The second way to connect to a database is by using a pgAdmin application. The pgAdmin application allows you to interact with the PostgreSQL database server via an intuitive user interface.
 

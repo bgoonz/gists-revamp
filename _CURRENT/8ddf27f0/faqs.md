@@ -1,5 +1,4 @@
-How can I convert a whole directory of files from Markdown to RTF?
-------------------------------------------------------------------
+## How can I convert a whole directory of files from Markdown to RTF?
 
 On linux or OSX:
 
@@ -9,22 +8,19 @@ In Windows Powershell:
 
     gci -r -i *.txt |foreach{$rtf=$_.directoryname+"\"+$_.basename+".rtf";pandoc -f markdown -s $_.name -o $rtf}
 
-I used pandoc to convert a document to ICML (or OPML or RTF), and when I try to open it I’m told it’s invalid. What have I done wrong?
---------------------------------------------------------------------------------------------------------------------------------------
+## I used pandoc to convert a document to ICML (or OPML or RTF), and when I try to open it I’m told it’s invalid. What have I done wrong?
 
 Be sure to use the `-s` or `--standalone` flag, or you just get a fragment, not a full document with the required header:
 
     pandoc -s -f markdown -t icml -o my.icml my.md
 
-I get a blank document when I try to convert a markdown document in Chinese to PDF.
------------------------------------------------------------------------------------
+## I get a blank document when I try to convert a markdown document in Chinese to PDF.
 
 By default, pandoc uses pdflatex to generate the PDF, and pdflatex doesn’t handle Chinese characters. But you can change the default to use xelatex instead. You should also make sure you’re using a font with Chinese glyphs. For example:
 
     pandoc -o c.pdf --pdf-engine=xelatex -V mainfont='Adobe Ming Std'
 
-The Windows installer does a single user install, rather than installing pandoc for all users. How can I install pandoc for all users?
---------------------------------------------------------------------------------------------------------------------------------------
+## The Windows installer does a single user install, rather than installing pandoc for all users. How can I install pandoc for all users?
 
 Run the following command as admin:
 
@@ -34,8 +30,7 @@ This will put pandoc in `C:\Program Files\Pandoc`. You can install Pandoc to a d
 
     msiexec /i pandoc-1.11.1.msi ALLUSERS=1 APPLICATIONFOLDER="C:\Pandoc"
 
-How do I change the margins in PDF output?
-------------------------------------------
+## How do I change the margins in PDF output?
 
 The option
 
@@ -51,13 +46,11 @@ Or
 
 For more options, see the documentation for the LaTeX [geometry package](https://www.ctan.org/pkg/geometry).
 
-How does pandoc compare to multimarkdown?
------------------------------------------
+## How does pandoc compare to multimarkdown?
 
 Here is a [wiki page](https://github.com/jgm/pandoc/wiki/Pandoc-vs-Multimarkdown) comparing the two.
 
-When I specify an image width of 50% and convert to LaTeX, pandoc sets the height to textheight and the aspect ratio isn’t preserved. How can I prevent this?
--------------------------------------------------------------------------------------------------------------------------------------------------------------
+## When I specify an image width of 50% and convert to LaTeX, pandoc sets the height to textheight and the aspect ratio isn’t preserved. How can I prevent this?
 
 For example, if you convert an image with `{width="50%"}`, the LaTeX produced will be `\includegraphics[width=0.5\textwidth,height=\textheight]`.
 
@@ -70,30 +63,25 @@ This output presupposes the following code in pandoc’s default latex template:
 
 If you don’t have this in your custom template, you should add it. If we didn’t set the `height` explicitly in this way, the image would not be resized correctly unless it was being resized to smaller than its original size.
 
-Pandoc sometimes uses too much memory. How can I limit the memory used by pandoc?
----------------------------------------------------------------------------------
+## Pandoc sometimes uses too much memory. How can I limit the memory used by pandoc?
 
 `pandoc +RTS -M30m -RTS` will limit heap memory to 30MB. When converting a document requires more than this, an out of memory error will be issued.
 
-When using `--include-in-header` with PDF or LaTeX output, how do I reference tex declarations coming after `$header-includes$` in the default template?
---------------------------------------------------------------------------------------------------------------------------------------------------------
+## When using `--include-in-header` with PDF or LaTeX output, how do I reference tex declarations coming after `$header-includes$` in the default template?
 
 For various reasons, the `$header-includes$` are not at the very end of the LaTeX preamble. This poses a problem when the code you are inserting depends on declarations in the preamble coming after the `$header-includes$` location. For example, you might want to reference the `\author` and `\title` metadata values (set at the very bottom of the preamble) and present them in margins. In that case you can wrap your code in `etoolbox`’s `\AtEndPreamble`. The technique is demonstrated in [this gist](https://gist.github.com/JohnLukeBentley/9dda6166b9ee5c4127afd2b8cd16b70a). When using `\AtEndPreamble`, keep any `makeatletter` or `makeatother` outside of the `\AtEndPreamble`, as shown in the example.
 
-How can I convert PDFs to other formats using pandoc?
------------------------------------------------------
+## How can I convert PDFs to other formats using pandoc?
 
 You can’t. You can try opening the PDF in Word or Google Docs and saving in a format from which pandoc can convert directly.
 
-Do I really need to install a 1 GB TeX installation to produce a PDF using pandoc?
-----------------------------------------------------------------------------------
+## Do I really need to install a 1 GB TeX installation to produce a PDF using pandoc?
 
 No. You can get by with a relatively small TeX installation, for example, by starting with MacTeX’s Basic TeX distribution and using the `tlmgr` tool to install a few packages required by pandoc (see https://pandoc.org/MANUAL.html\#creating-a-pdf).
 
 Or, you can produce PDFs via HTML and `wkhtmltopdf`, or via groff ms and `pdfroff`. (These don’t produce as nice topography as TeX, particularly when it comes to math, but they may be fine for many purposes.)
 
-Converting to PDF on an M1 Mac, I get a “Cannot allocate memory” error.
------------------------------------------------------------------------
+## Converting to PDF on an M1 Mac, I get a “Cannot allocate memory” error.
 
 We are not sure why this happens, but we have found that fully specifying the `pdflatex` path avoids the error. For example,
 

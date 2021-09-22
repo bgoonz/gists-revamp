@@ -1,12 +1,10 @@
-Node properties: type, tag and contents
-=======================================
+# Node properties: type, tag and contents
 
 Let’s get a more in-depth look at DOM nodes.
 
 In this chapter we’ll see more into what they are and learn their most used properties.
 
-DOM node classes
-----------------
+## DOM node classes
 
 Different DOM nodes may have different properties. For instance, an element node corresponding to tag `<a>` has link-related properties, and the one corresponding to `<input>` has input-related properties and so on. Text nodes are not the same as element nodes. But there are also common properties and methods between all of them, because all classes of DOM nodes form a single hierarchy.
 
@@ -20,14 +18,14 @@ Here’s the picture, explanations to follow:
 
 The classes are:
 
--   [EventTarget](https://dom.spec.whatwg.org/#eventtarget) – is the root “abstract” class. Objects of that class are never created. It serves as a base, so that all DOM nodes support so-called “events”, we’ll study them later.
--   [Node](http://dom.spec.whatwg.org/#interface-node) – is also an “abstract” class, serving as a base for DOM nodes. It provides the core tree functionality: `parentNode`, `nextSibling`, `childNodes` and so on (they are getters). Objects of `Node` class are never created. But there are concrete node classes that inherit from it, namely: `Text` for text nodes, `Element` for element nodes and more exotic ones like `Comment` for comment nodes.
--   [Element](http://dom.spec.whatwg.org/#interface-element) – is a base class for DOM elements. It provides element-level navigation like `nextElementSibling`, `children` and searching methods like `getElementsByTagName`, `querySelector`. A browser supports not only HTML, but also XML and SVG. The `Element` class serves as a base for more specific classes: `SVGElement`, `XMLElement` and `HTMLElement`.
--   [HTMLElement](https://html.spec.whatwg.org/multipage/dom.html#htmlelement) – is finally the basic class for all HTML elements. It is inherited by concrete HTML elements:
-    -   [HTMLInputElement](https://html.spec.whatwg.org/multipage/forms.html#htmlinputelement) – the class for `<input>` elements,
-    -   [HTMLBodyElement](https://html.spec.whatwg.org/multipage/semantics.html#htmlbodyelement) – the class for `<body>` elements,
-    -   [HTMLAnchorElement](https://html.spec.whatwg.org/multipage/semantics.html#htmlanchorelement) – the class for `<a>` elements,
-    -   …and so on, each tag has its own class that may provide specific properties and methods.
+- [EventTarget](https://dom.spec.whatwg.org/#eventtarget) – is the root “abstract” class. Objects of that class are never created. It serves as a base, so that all DOM nodes support so-called “events”, we’ll study them later.
+- [Node](http://dom.spec.whatwg.org/#interface-node) – is also an “abstract” class, serving as a base for DOM nodes. It provides the core tree functionality: `parentNode`, `nextSibling`, `childNodes` and so on (they are getters). Objects of `Node` class are never created. But there are concrete node classes that inherit from it, namely: `Text` for text nodes, `Element` for element nodes and more exotic ones like `Comment` for comment nodes.
+- [Element](http://dom.spec.whatwg.org/#interface-element) – is a base class for DOM elements. It provides element-level navigation like `nextElementSibling`, `children` and searching methods like `getElementsByTagName`, `querySelector`. A browser supports not only HTML, but also XML and SVG. The `Element` class serves as a base for more specific classes: `SVGElement`, `XMLElement` and `HTMLElement`.
+- [HTMLElement](https://html.spec.whatwg.org/multipage/dom.html#htmlelement) – is finally the basic class for all HTML elements. It is inherited by concrete HTML elements:
+  - [HTMLInputElement](https://html.spec.whatwg.org/multipage/forms.html#htmlinputelement) – the class for `<input>` elements,
+  - [HTMLBodyElement](https://html.spec.whatwg.org/multipage/semantics.html#htmlbodyelement) – the class for `<body>` elements,
+  - [HTMLAnchorElement](https://html.spec.whatwg.org/multipage/semantics.html#htmlanchorelement) – the class for `<a>` elements,
+  - …and so on, each tag has its own class that may provide specific properties and methods.
 
 So, the full set of properties and methods of a given node comes as the result of the inheritance.
 
@@ -35,16 +33,16 @@ For example, let’s consider the DOM object for an `<input>` element. It belong
 
 It gets properties and methods as a superposition of (listed in inheritance order):
 
--   `HTMLInputElement` – this class provides input-specific properties,
--   `HTMLElement` – it provides common HTML element methods (and getters/setters),
--   `Element` – provides generic element methods,
--   `Node` – provides common DOM node properties,
--   `EventTarget` – gives the support for events (to be covered),
--   …and finally it inherits from `Object`, so “plain object” methods like `hasOwnProperty` are also available.
+- `HTMLInputElement` – this class provides input-specific properties,
+- `HTMLElement` – it provides common HTML element methods (and getters/setters),
+- `Element` – provides generic element methods,
+- `Node` – provides common DOM node properties,
+- `EventTarget` – gives the support for events (to be covered),
+- …and finally it inherits from `Object`, so “plain object” methods like `hasOwnProperty` are also available.
 
 To see the DOM node class name, we can recall that an object usually has the `constructor` property. It references the class constructor, and `constructor.name` is its name:
 
-`js run alert( document.body.constructor.name ); //         HTMLBodyElement`
+`js run alert( document.body.constructor.name ); // HTMLBodyElement`
 
 …Or we can just `toString` it:
 
@@ -52,7 +50,7 @@ To see the DOM node class name, we can recall that an object usually has the `co
 
 We also can use `instanceof` to check the inheritance:
 
-`js run alert( document.body instanceof HTMLBodyElement ); // true         alert( document.body instanceof HTMLElement ); // true alert(         document.body instanceof Element ); // true alert( document.body         instanceof Node ); // true alert( document.body instanceof EventTarget         ); // true`
+`js run alert( document.body instanceof HTMLBodyElement ); // true alert( document.body instanceof HTMLElement ); // true alert( document.body instanceof Element ); // true alert( document.body instanceof Node ); // true alert( document.body instanceof EventTarget ); // true`
 
 As we can see, DOM nodes are regular JavaScript objects. They use prototype-based classes for inheritance.
 
@@ -62,8 +60,8 @@ That’s also easy to see by outputting an element with `console.dir(elem)` in a
 
 But for DOM elements they are different:
 
--   `console.log(elem)` shows the element DOM tree.
--   `console.dir(elem)` shows the element as a DOM object, good to explore its properties.
+- `console.log(elem)` shows the element DOM tree.
+- `console.dir(elem)` shows the element as a DOM object, good to explore its properties.
 
 Try it on `document.body`. \`\`\`
 
@@ -102,8 +100,7 @@ Here’s an excerpt from it, with comments:
 
 \`\`\`\`
 
-The “nodeType” property
------------------------
+## The “nodeType” property
 
 The `nodeType` property provides one more, “old-fashioned” way to get the “type” of a DOM node.
 
@@ -117,23 +114,22 @@ For instance:
 
 In modern scripts, we can use `instanceof` and other class-based tests to see the node type, but sometimes `nodeType` may be simpler. We can only read `nodeType`, not change it.
 
-Tag: nodeName and tagName
--------------------------
+## Tag: nodeName and tagName
 
 Given a DOM node, we can read its tag name from `nodeName` or `tagName` properties:
 
 For instance:
 
-`js run alert( document.body.nodeName ); // BODY alert(         document.body.tagName ); // BODY`
+`js run alert( document.body.nodeName ); // BODY alert( document.body.tagName ); // BODY`
 
 Is there any difference between `tagName` and `nodeName`?
 
 Sure, the difference is reflected in their names, but is indeed a bit subtle.
 
--   The `tagName` property exists only for `Element` nodes.
--   The `nodeName` is defined for any `Node`:
-    -   for elements it means the same as `tagName`.
-    -   for other node types (text, comment, etc.) it has a string with the node type.
+- The `tagName` property exists only for `Element` nodes.
+- The `nodeName` is defined for any `Node`:
+  - for elements it means the same as `tagName`.
+  - for other node types (text, comment, etc.) it has a string with the node type.
 
 In other words, `tagName` is only supported by element nodes (as it originates from `Element` class), while `nodeName` can say something about other node types.
 
@@ -145,14 +141,13 @@ For instance, let’s compare `tagName` and `nodeName` for the `document` and a 
 
 If we only deal with elements, then we can use both `tagName` and `nodeName` - there’s no difference.
 
-\`\``smart header="The tag name is always uppercase except in XML mode" The         browser has two modes of processing documents: HTML and XML. Usually the         HTML-mode is used for webpages. XML-mode is enabled when the browser         receives an XML-document with the header:`Content-Type: application/xml+xhtml\`.
+\`\``smart header="The tag name is always uppercase except in XML mode" The browser has two modes of processing documents: HTML and XML. Usually the HTML-mode is used for webpages. XML-mode is enabled when the browser receives an XML-document with the header:`Content-Type: application/xml+xhtml\`.
 
 In HTML mode `tagName/nodeName` is always uppercased: it’s `BODY` either for `<body>` or `<BoDy>`.
 
 In XML mode the case is kept “as is”. Nowadays XML mode is rarely used. \`\`\`
 
-innerHTML: the contents
------------------------
+## innerHTML: the contents
 
 The [innerHTML](https://w3c.github.io/DOM-Parsing/#the-innerhtml-mixin) property allows to get the HTML inside the element as a string.
 
@@ -174,7 +169,7 @@ We can try to insert invalid HTML, the browser will fix our errors:
 
 \`\`\`
 
-`` smart header="Scripts don't execute" If `innerHTML` inserts a         `<script>` tag into the document -- it becomes a part of HTML, but         doesn't execute. ``
+`` smart header="Scripts don't execute" If `innerHTML` inserts a `<script>` tag into the document -- it becomes a part of HTML, but doesn't execute. ``
 
 ### Beware: “innerHTML+=” does a full overwrite
 
@@ -185,7 +180,7 @@ Like this:
     chatDiv.innerHTML += "<div>Hello<img src='smile.gif'/> !</div>";
     chatDiv.innerHTML += "How goes?";
 
-But we should be very careful about doing it, because what’s going on is *not* an addition, but a full overwrite.
+But we should be very careful about doing it, because what’s going on is _not_ an addition, but a full overwrite.
 
 Technically, these two lines do the same:
 
@@ -208,8 +203,7 @@ There are other side-effects as well. For instance, if the existing text was sel
 
 Luckily, there are other ways to add HTML besides `innerHTML`, and we’ll study them soon.
 
-outerHTML: full HTML of the element
------------------------------------
+## outerHTML: full HTML of the element
 
 The `outerHTML` property contains the full HTML of the element. That’s like `innerHTML` plus the element itself.
 
@@ -245,8 +239,7 @@ It’s so easy to make an error here: modify `div.outerHTML` and then continue t
 
 We can write to `elem.outerHTML`, but should keep in mind that it doesn’t change the element we’re writing to (‘elem’). It puts the new HTML in its place instead. We can get references to the new elements by querying the DOM.
 
-nodeValue/data: text node content
----------------------------------
+## nodeValue/data: text node content
 
 The `innerHTML` property is only valid for element nodes.
 
@@ -270,17 +263,15 @@ Sometimes developers embed information or template instructions into HTML in the
 
 …Then JavaScript can read it from `data` property and process embedded instructions.
 
-textContent: pure text
-----------------------
+## textContent: pure text
 
-The `textContent` provides access to the *text* inside the element: only text, minus all `<tags>`.
+The `textContent` provides access to the _text_ inside the element: only text, minus all `<tags>`.
 
 For instance:
 
 \`\`\`html run
 
-Headline!
-=========
+# Headline!
 
 Martians attack people!
 
@@ -294,8 +285,8 @@ In practice, reading such text is rarely needed.
 
 Let’s say we have an arbitrary string, for instance entered by a user, and want to show it.
 
--   With `innerHTML` we’ll have it inserted “as HTML”, with all HTML tags.
--   With `textContent` we’ll have it inserted “as text”, all symbols are treated literally.
+- With `innerHTML` we’ll have it inserted “as HTML”, with all HTML tags.
+- With `textContent` we’ll have it inserted “as text”, all symbols are treated literally.
 
 Compare the two:
 
@@ -308,8 +299,7 @@ Compare the two:
 
 In most cases, we expect the text from a user, and want to treat it as text. We don’t want unexpected HTML in our site. An assignment to `textContent` does exactly that.
 
-The “hidden” property
----------------------
+## The “hidden” property
 
 The “hidden” attribute and the DOM property specifies whether the element is visible or not.
 
@@ -335,15 +325,14 @@ A blinking element
 
 \`\`\`
 
-More properties
----------------
+## More properties
 
 DOM elements also have additional properties, in particular those that depend on the class:
 
--   `value` – the value for `<input>`, `<select>` and `<textarea>` (`HTMLInputElement`, `HTMLSelectElement`…).
--   `href` – the “href” for `<a href="...">` (`HTMLAnchorElement`).
--   `id` – the value of “id” attribute, for all elements (`HTMLElement`).
--   …and much more…
+- `value` – the value for `<input>`, `<select>` and `<textarea>` (`HTMLInputElement`, `HTMLSelectElement`…).
+- `href` – the “href” for `<a href="...">` (`HTMLAnchorElement`).
+- `id` – the value of “id” attribute, for all elements (`HTMLElement`).
+- …and much more…
 
 For instance:
 
@@ -357,8 +346,7 @@ If we want to know the full list of supported properties for a given class, we c
 
 Or if we’d like to get them fast or are interested in a concrete browser specification – we can always output the element using `console.dir(elem)` and read the properties. Or explore “DOM properties” in the Elements tab of the browser developer tools.
 
-Summary
--------
+## Summary
 
 Each DOM node belongs to a certain class. The classes form a hierarchy. The full set of properties and methods come as the result of inheritance.
 

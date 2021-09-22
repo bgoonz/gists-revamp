@@ -1,5 +1,4 @@
-Creating gists - GitHub Docs
-============================
+# Creating gists - GitHub Docs
 
 > You can create two kinds of gists: public and secret. Create a public gist if you’re ready to share your ideas with the world or a secret gist if you’re not.
 
@@ -17,9 +16,9 @@ After creating a gist, you cannot convert it from public to secret.
 
 You’ll receive a notification when:
 
--   You are the author of a gist.
--   Someone mentions you in a gist.
--   You subscribe to a gist, by clicking **Subscribe** at the top of any gist.
+- You are the author of a gist.
+- Someone mentions you in a gist.
+- You subscribe to a gist, by clicking **Subscribe** at the top of any gist.
 
 You can pin gists to your profile so other people can see them easily. For more information, see “[Pinning items to your profile](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en/articles/pinning-items-to-your-profile).”
 

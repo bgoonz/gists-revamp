@@ -2,26 +2,24 @@ John MacFarlane
 
 This document is for people who are unfamiliar with command line tools. Command-line experts can go straight to the [User’s Guide](https://pandoc.org/MANUAL.html) or the pandoc man page.
 
-Step 1: Install pandoc
-======================
+# Step 1: Install pandoc
 
 First, install pandoc, following the [instructions for your platform](https://pandoc.org/installing.html).
 
-Step 2: Open a terminal
-=======================
+# Step 2: Open a terminal
 
 Pandoc is a command-line tool. There is no graphic user interface. So, to use it, you’ll need to open a terminal window:
 
--   On OS X, the Terminal application can be found in `/Applications/Utilities`. Open a Finder window and go to `Applications`, then `Utilities`. Then double click on `Terminal`. (Or, click the spotlight icon in the upper right hand corner of your screen and type `Terminal` – you should see `Terminal` under `Applications`.)
+- On OS X, the Terminal application can be found in `/Applications/Utilities`. Open a Finder window and go to `Applications`, then `Utilities`. Then double click on `Terminal`. (Or, click the spotlight icon in the upper right hand corner of your screen and type `Terminal` – you should see `Terminal` under `Applications`.)
 
--   On Windows, you can use either the classic command prompt or the more modern PowerShell terminal. If you use Windows in desktop mode, run the `cmd` or `powershell` command from the Start menu. If you use the Windows 8 start screen instead, simply type `cmd` or `powershell`, and then run either the “Command Prompt” or “Windows Powershell” application. If you are using `cmd`, type `chcp 65001` before using pandoc, to set the encoding to UTF-8.
+- On Windows, you can use either the classic command prompt or the more modern PowerShell terminal. If you use Windows in desktop mode, run the `cmd` or `powershell` command from the Start menu. If you use the Windows 8 start screen instead, simply type `cmd` or `powershell`, and then run either the “Command Prompt” or “Windows Powershell” application. If you are using `cmd`, type `chcp 65001` before using pandoc, to set the encoding to UTF-8.
 
--   On Linux, there are many possible configurations, depending on what desktop environment you’re using:
+- On Linux, there are many possible configurations, depending on what desktop environment you’re using:
 
-    -   In Unity, use the search function on the `Dash`, and search for `Terminal`. Or, use the keyboard shortcut `Ctrl-Alt-T`.
-    -   In Gnome, go to `Applications`, then `Accessories`, and select `Terminal`, or use `Ctrl-Alt-T`.
-    -   In XFCE, go to `Applications`, then `System`, then `Terminal`, or use `Super-T`.
-    -   In KDE, go to `KMenu`, then `System`, then `Terminal Program (Konsole)`.
+  - In Unity, use the search function on the `Dash`, and search for `Terminal`. Or, use the keyboard shortcut `Ctrl-Alt-T`.
+  - In Gnome, go to `Applications`, then `Accessories`, and select `Terminal`, or use `Ctrl-Alt-T`.
+  - In XFCE, go to `Applications`, then `System`, then `Terminal`, or use `Super-T`.
+  - In KDE, go to `KMenu`, then `System`, then `Terminal Program (Konsole)`.
 
 You should now see a rectangle with a “prompt” (possibly just a symbol like `%`, but probably including more information, such as your username and directory), and a blinking cursor.
 
@@ -31,8 +29,7 @@ Let’s verify that pandoc is installed. Type
 
 and hit enter. You should see a message telling you which version of pandoc is installed, and giving you some additional information.
 
-Step 3: Changing directories
-============================
+# Step 3: Changing directories
 
 First, let’s see where we are. Type
 
@@ -86,15 +83,14 @@ and hit the tab key instead of enter. Your terminal should fill in the rest (`te
 
 To review:
 
--   `pwd` (or `echo %cd%` on Windows) to see what the current working directory is.
--   `cd foo` to change to the `foo` subdirectory of your working directory.
--   `cd ..` to move up to the parent of the working directory.
--   `mkdir foo` to create a subdirectory called `foo` in the working directory.
--   up-arrow to go back through your command history.
--   tab to complete directories and file names.
+- `pwd` (or `echo %cd%` on Windows) to see what the current working directory is.
+- `cd foo` to change to the `foo` subdirectory of your working directory.
+- `cd ..` to move up to the parent of the working directory.
+- `mkdir foo` to create a subdirectory called `foo` in the working directory.
+- up-arrow to go back through your command history.
+- tab to complete directories and file names.
 
-Step 4: Using pandoc as a filter
-================================
+# Step 4: Using pandoc as a filter
 
 Type
 
@@ -117,7 +113,7 @@ When you’re finished (the cursor should be at the beginning of the line), type
 
 What just happened? When pandoc is invoked without specifying any input files, it operates as a “filter,” taking input from the terminal and sending its output back to the terminal. You can use this feature to play around with pandoc.
 
-By default, input is interpreted as pandoc markdown, and output is HTML. But we can change that. Let’s try converting *from* HTML *to* markdown:
+By default, input is interpreted as pandoc markdown, and output is HTML. But we can change that. Let’s try converting _from_ HTML _to_ markdown:
 
     pandoc -f html -t markdown
 
@@ -131,12 +127,11 @@ and hit `Ctrl-D` (or `Ctrl-Z` followed by `Enter` on Windows). You should see:
 
 Now try converting something from markdown to LaTeX. What command do you think you should use?
 
-Step 5: Text editor basics
-==========================
+# Step 5: Text editor basics
 
 You’ll probably want to use pandoc to convert a file, not to read text from the terminal. That’s easy, but first we need to create a text file in our `pandoc-test` subdirectory.
 
-**Important:** To create a text file, you’ll need to use a text editor, *not* a word processor like Microsoft Word. On Windows, you can use Notepad (in `Accessories`). On OS X, you can use `TextEdit` (in `Applications`). On Linux, different platforms come with different text editors: Gnome has `GEdit`, and KDE has `Kate`.
+**Important:** To create a text file, you’ll need to use a text editor, _not_ a word processor like Microsoft Word. On Windows, you can use Notepad (in `Accessories`). On OS X, you can use `TextEdit` (in `Applications`). On Linux, different platforms come with different text editors: Gnome has `GEdit`, and KDE has `Kate`.
 
 Start up your text editor. Type the following:
 
@@ -155,8 +150,7 @@ Now save your file as `test1.md` in the directory `Documents/pandoc-test`.
 
 Note: If you use plain text a lot, you’ll want a better editor than `Notepad` or `TextEdit`. You might want to look at [Sublime Text](https://www.sublimetext.com/) or (if you’re willing to put in some time learning an unfamiliar interface) [Vim](https://www.vim.org) or [Emacs](https://www.gnu.org/software/emacs).
 
-Step 6: Converting a file
-=========================
+# Step 6: Converting a file
 
 Go back to your terminal. We should still be in the `Documents/pandoc-test` directory. Verify that with `pwd`.
 
@@ -200,8 +194,7 @@ If you want to create a PDF, you’ll need to have LaTeX installed. (See [MacTeX
 
     pandoc test1.md -s -o test1.pdf
 
-Step 7: Command-line options
-============================
+# Step 7: Command-line options
 
 You now know the basics. Pandoc has a lot of options. At this point you can start to learn more about them by reading the [User’s Guide](https://pandoc.org/MANUAL.html).
 

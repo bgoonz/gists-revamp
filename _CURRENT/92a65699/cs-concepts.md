@@ -1,10 +1,8 @@
-Core Concepts of Computer Programming
-=====================================
+# Core Concepts of Computer Programming
 
 TOC 1. [Intro](#intro) 2. [Input / Output](#input-and-output) 1. [Hello World Program](#hello-world-program) 3. [Variables & Data Types](#variables-and-data-types) 1. [Sample Program for Variables and Data Types](#sample-program-for-variables-and-data-types) 4. [Operators](#operators) 1. [Assignment Operators Sample Program](#assignment-operators-sample-program) 2. [Arithmetic Operators Sample Program](#arithmetic-operators-sample-program) 3. [Comparison Operators Sample Program](#comparison-operators-sample-program) 5. [Conditionals](#conditionals) 1. [Sample Program Using IF](#sample-program-using-if) 2. [Sample Program Using IF/ELSE](#sample-program-using-if-else) 6. [Functions](#functions) 1. [Sample Program Creating And Using Functions](#sample-program-creating-and-using-functions)
 
-Intro
------
+## Intro
 
 Of all the inventions in the field of electronics like the radio and telephone, the programmable computer was the most significant one. It changed the world forever.
 
@@ -20,10 +18,9 @@ And if you are a beginner, you might be discouraged from all the things you need
 
 And since almost every programming language nowadays directly and indirectly inherits concepts from the C language, we’ll be using it to demonstrate the core concepts of programming.
 
-*Take note: we don’t want to discuss every detail of the code in terms of the C language, rather we just want to get the core concepts of computer programming that are common in different programming languages.*
+_Take note: we don’t want to discuss every detail of the code in terms of the C language, rather we just want to get the core concepts of computer programming that are common in different programming languages._
 
-Input And Output
-----------------
+## Input And Output
 
 As was mentioned, a programmable computer is very important but the way you interact with the computer is through input and output: you as the user will have an input, the computer will process it (the way it is processed is programmed also), then the computer will output something. The very first demonstration is the “Hello World” program. The programmer will tell the computer to simply display the message on the screen.
 
@@ -48,8 +45,7 @@ In this small program, the `#include` tells the computer to include a certain so
 
 As simple as that, you have now the complete idea of what a programmable computer is all about. It’s you telling the computer to do things it can handle in terms of binary data.
 
-Variables And Data Types
-------------------------
+## Variables And Data Types
 
 In computer programming, a **variable** is just like a container to store digital data. A **data type** is the way you tell the computer how that data will be interpreted. Should the computer interpret that as letters? or numbers? or words? or simply raw binary data? The computer does not know that, you must tell it exactly.
 
@@ -78,8 +74,7 @@ In this simple program, we declare and assign 3 variables with different data ty
 
 After that, the program is telling the computer to display these values.
 
-Operators
----------
+## Operators
 
 In programming just like in mathematics, there are operators and the most common in computer programming are assignment, arithmetic and comparison operators.
 
@@ -137,10 +132,10 @@ Since these are arithmetic operators, they will do the basic arithmetic operatio
 
 The result is:
 
-    where a = 10 & b = 5 
-    a+b = 15 
-    a-b = 5 
-    a*b = 50 
+    where a = 10 & b = 5
+    a+b = 15
+    a-b = 5
+    a*b = 50
     a/b = 2
 
 ### Comparison Operators Sample Program
@@ -161,14 +156,13 @@ Since these are comparison operators, they are comparing the left and right side
 
 The result is:
 
-    10 == 10 is 1 
-    10 == 20 is 0 
-    10 > 10 is 0 
+    10 == 10 is 1
+    10 == 20 is 0
+    10 > 10 is 0
 
 The result is either 0 or 1 and remember, 0 is FALSE and 1 is TRUE.
 
-Conditionals
-------------
+## Conditionals
 
 In a comprehensive program, the computer must decide based on the condition/s given. Of course, the computer cannot do that alone, you must instruct it exactly. The most common is the IF statement with the extended IF/ELSE.
 
@@ -205,8 +199,7 @@ Sometimes, just an IF will not be sufficient, particularly when you want to catc
 
 Not only the statement in the ELSE branch will be printed, you can do a lot of things just like correct an error, go to a certain part of a program, etc. That’s the power of catching the FALSE result.
 
-Loops
------
+## Loops
 
 There are commands or portions of your program to be repeated several times. Loops are there to do that. Now, there are simple loops and loops based on a given condition, much like a repeated IF statement. Simple loops are like repeat 10 times or repeat forever. Conditional loops are loops with specific conditions other than simple iteration just like in robot programming: repeat until color red, repeat until the distance is less than 50mm, etc.
 
@@ -253,46 +246,45 @@ The most common that we see in computer programming: the `for` loop, `while` loo
 
 the result:
 
-    the `for` loop: 
-    iteration: 1 | Hello World. 
-    iteration: 2 | Hello World. 
-    iteration: 3 | Hello World. 
-    iteration: 4 | Hello World. 
-    iteration: 5 | Hello World. 
-    iteration: 6 | Hello World. 
-    iteration: 7 | Hello World. 
-    iteration: 8 | Hello World. 
-    iteration: 9 | Hello World. 
-    iteration: 10 | Hello World. 
-    ------ 
-    the `while` loop: 
-    iteration: 1 | Hello World. 
-    iteration: 2 | Hello World. 
-    iteration: 3 | Hello World. 
-    iteration: 4 | Hello World. 
-    iteration: 5 | Hello World. 
-    iteration: 6 | Hello World. 
-    iteration: 7 | Hello World. 
-    iteration: 8 | Hello World. 
-    iteration: 9 | Hello World. 
-    iteration: 10 | Hello World. 
-    ------ 
-    the `do while` loop: 
-    iteration: 1 | Hello World. 
-    iteration: 2 | Hello World. 
-    iteration: 3 | Hello World. 
-    iteration: 4 | Hello World. 
-    iteration: 5 | Hello World. 
-    iteration: 6 | Hello World. 
-    iteration: 7 | Hello World. 
-    iteration: 8 | Hello World. 
-    iteration: 9 | Hello World. 
+    the `for` loop:
+    iteration: 1 | Hello World.
+    iteration: 2 | Hello World.
+    iteration: 3 | Hello World.
+    iteration: 4 | Hello World.
+    iteration: 5 | Hello World.
+    iteration: 6 | Hello World.
+    iteration: 7 | Hello World.
+    iteration: 8 | Hello World.
+    iteration: 9 | Hello World.
+    iteration: 10 | Hello World.
+    ------
+    the `while` loop:
+    iteration: 1 | Hello World.
+    iteration: 2 | Hello World.
+    iteration: 3 | Hello World.
+    iteration: 4 | Hello World.
+    iteration: 5 | Hello World.
+    iteration: 6 | Hello World.
+    iteration: 7 | Hello World.
+    iteration: 8 | Hello World.
+    iteration: 9 | Hello World.
+    iteration: 10 | Hello World.
+    ------
+    the `do while` loop:
+    iteration: 1 | Hello World.
+    iteration: 2 | Hello World.
+    iteration: 3 | Hello World.
+    iteration: 4 | Hello World.
+    iteration: 5 | Hello World.
+    iteration: 6 | Hello World.
+    iteration: 7 | Hello World.
+    iteration: 8 | Hello World.
+    iteration: 9 | Hello World.
     iteration: 10 | Hello World.
 
 As you can see here, it’s just printing the Hello World ten times, whether it’s `for` loop, `while` loop or `do-while` loop.
 
-Functions
----------
+## Functions
 
 A function is a group of statements (commands) that together perform a task. There are built-in functions and functions that a programmer will create according to his/her needs.
 

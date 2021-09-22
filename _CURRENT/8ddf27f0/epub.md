@@ -4,8 +4,7 @@ Starting with version 1.6, pandoc can produce output in the [EPUB](https://en.wi
 
 This means that it’s now very easy to produce an electronic book! Let’s try it.
 
-A toy example
-=============
+# A toy example
 
 Use your text editor to create a file `mybook.txt`, with the following contents:
 
@@ -34,8 +33,7 @@ Note that if your markdown file contains links to local images, for example
 
 pandoc will automatically include the images in the generated epub.
 
-A real book
-===========
+# A real book
 
 To see what this would look like for a real book, let’s convert Scott Chacon’s book [Pro Git](https://git-scm.com/book/en/v2), which he wrote using pandoc’s markdown variant and released under a [Creative Commons](https://creativecommons.org/) license. (If you use the book, please consider [buying a copy](https://git-scm.com/book/en/v2) to help support his excellent work.)
 
@@ -92,15 +90,13 @@ Now run pandoc to make the ebook, using our title page and modified chapter file
 
 That’s it! The ebook, `progit.epub`, is ready to be uploaded to your reader.
 
-Changing the format
--------------------
+## Changing the format
 
 You can use the `--css` option to specify a CSS file for the book. The default CSS is minimal and can be found [on GitHub](https://github.com/jgm/pandoc/blob/master/data/epub.css) or in the `epub.css` file in your data directory (see `--data-dir` in the [User’s Guide](https://pandoc.org/MANUAL.html)).
 
 You can even embed fonts in the EPUB if you want; see the [User’s Guide](https://pandoc.org/MANUAL.html) under `--epub-embed-font` for instructions.
 
-Math
-----
+## Math
 
 Pandoc has an EPUB3 writer. It renders LaTeX math into MathML, which EPUB3 readers are supposed to support (but unfortunately few do).
 
@@ -111,6 +107,6 @@ Of course, this isn’t much help if you want EPUB2 output (`pandoc -t epub2`) o
 
 Both GladTeX and WebTeX add the LaTeX source of the formula as alternative text of the image, increasing accessibility for blind users.
 
-------------------------------------------------------------------------
+---
 
 1.  If you don’t have [git](https://git-scm.com), you can browse to the [github site](https://github.com/progit/progit) and click “Download Source” to get the same files in a zip or tar archive.<a href="#fnref1" class="footnote-back">↩</a>

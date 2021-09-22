@@ -104,7 +104,7 @@ Component Library
                                       opacity: 0.8;
                                     "></span>
 
- 
+
 
 Saved
 
@@ -228,7 +228,7 @@ Edit
                                                       padding-left: 7px;
                                                       font-size: 14px;
                                                       font-weight: normal;
-                                                    ">*!auth.user*</span>
+                                                    ">_!auth.user_</span>
 
 Edit
 
@@ -270,7 +270,7 @@ Edit
                                                       padding-left: 7px;
                                                       font-size: 14px;
                                                       font-weight: normal;
-                                                    ">*Sign in*</span>
+                                                    ">_Sign in_</span>
 
 Edit
 
@@ -291,7 +291,7 @@ Edit
                                                       padding-left: 7px;
                                                       font-size: 14px;
                                                       font-weight: normal;
-                                                    ">*auth.user*</span>
+                                                    ">_auth.user_</span>
 
 Edit
 
@@ -333,7 +333,7 @@ Edit
                                                       padding-left: 7px;
                                                       font-size: 14px;
                                                       font-weight: normal;
-                                                    ">*Account*</span>
+                                                    ">_Account_</span>
 
 Edit
 
@@ -417,7 +417,7 @@ Edit
                                                       padding-left: 7px;
                                                       font-size: 14px;
                                                       font-weight: normal;
-                                                    ">*Dashboard*</span>
+                                                    ">_Dashboard_</span>
 
 Edit
 
@@ -459,7 +459,7 @@ Edit
                                                       padding-left: 7px;
                                                       font-size: 14px;
                                                       font-weight: normal;
-                                                    ">*Settings*</span>
+                                                    ">_Settings_</span>
 
 Edit
 
@@ -522,7 +522,7 @@ Edit
                                                       padding-left: 7px;
                                                       font-size: 14px;
                                                       font-weight: normal;
-                                                    ">*Signout*</span>
+                                                    ">_Signout_</span>
 
 Edit
 
@@ -564,7 +564,7 @@ Edit
                                                       padding-left: 7px;
                                                       font-size: 14px;
                                                       font-weight: normal;
-                                                    ">*darkMode.value*</span>
+                                                    ">_darkMode.value_</span>
 
 Edit
 
@@ -582,7 +582,7 @@ Code
 
     xxxxxxxxxx
 
- 
+
 
     ​
 

@@ -1,12 +1,10 @@
-Class inheritance
-=================
+# Class inheritance
 
 Class inheritance is a way for one class to extend another class.
 
 So we can create new functionality on top of the existing.
 
-The “extends” keyword
----------------------
+## The “extends” keyword
 
 Let’s say we have class `Animal`:
 
@@ -62,13 +60,13 @@ For instance, to find `rabbit.run` method, the engine checks (bottom-up on the p
 
 As we can recall from the chapter <a href="info:native-prototypes" class="uri">info:native-prototypes</a>, JavaScript itself uses prototypal inheritance for built-in objects. E.g. `Date.prototype.[[Prototype]]` is `Object.prototype`. That’s why dates have access to generic object methods.
 
-\`\`\``smart header="Any expression is allowed after`extends`" Class syntax allows to specify not just a class, but any expression         after`extends\`.
+\`\`\``smart header="Any expression is allowed after`extends`" Class syntax allows to specify not just a class, but any expression after`extends\`.
 
 For instance, a function call that generates the parent class:
 
 \`\`\`js run function f(phrase) { return class { sayHi() { alert(phrase); } }; }
 
-*!* class User extends f(“Hello”) {} */!*
+_!_ class User extends f(“Hello”) {} _/!_
 
 new User().sayHi(); // Hello
 
@@ -76,8 +74,7 @@ new User().sayHi(); // Hello
 
     That may be useful for advanced programming patterns when we use functions to generate classes depending on many conditions and can inherit from them.
 
-Overriding a method
--------------------
+## Overriding a method
 
 Now let’s move forward and override a method. By default, all methods that are not specified in `class Rabbit` are taken directly “as is” from `class Animal`.
 
@@ -94,8 +91,8 @@ Usually we don’t want to totally replace a parent method, but rather to build 
 
 Classes provide `"super"` keyword for that.
 
--   `super.method(...)` to call a parent method.
--   `super(...)` to call a parent constructor (inside our constructor only).
+- `super.method(...)` to call a parent method.
+- `super(...)` to call a parent constructor (inside our constructor only).
 
 For instance, let our rabbit autohide when stopped:
 
@@ -111,7 +108,7 @@ stop() { this.speed = 0; alert(`${this.name} stands still.`); }
 
 class Rabbit extends Animal { hide() { alert(`${this.name} hides!`); }
 
-*!* stop() { super.stop(); // call parent stop this.hide(); // and then hide } */!* }
+_!_ stop() { super.stop(); // call parent stop this.hide(); // and then hide } _/!_ }
 
 let rabbit = new Rabbit(“White Rabbit”);
 
@@ -119,7 +116,7 @@ rabbit.run(5); // White Rabbit runs with speed 5. rabbit.stop(); // White Rabbit
 
 Now `Rabbit` has the `stop` method that calls the parent `super.stop()` in the process.
 
-\`\`\``smart header="Arrow functions have no`super`" As was mentioned in the chapter <info:arrow-functions>, arrow         functions do not have`super\`.
+\`\`\``smart header="Arrow functions have no`super`" As was mentioned in the chapter <info:arrow-functions>, arrow functions do not have`super\`.
 
 If accessed, it’s taken from the outer function. For instance:
 
@@ -136,8 +133,7 @@ The `super` in the arrow function is the same as in `stop()`, so it works as int
 
 \`\`\`\`
 
-Overriding constructor
-----------------------
+## Overriding constructor
 
 With constructors it gets a little bit tricky.
 
@@ -162,17 +158,17 @@ Now let’s add a custom constructor to `Rabbit`. It will specify the `earLength
 
 class Rabbit extends Animal {
 
-*!* constructor(name, earLength) { this.speed = 0; this.name = name; this.earLength = earLength; } */!*
+_!_ constructor(name, earLength) { this.speed = 0; this.name = name; this.earLength = earLength; } _/!_
 
 // … }
 
-*!* // Doesn’t work! let rabbit = new Rabbit(“White Rabbit”, 10); // Error: this is not defined. */!* \`\`\`
+_!_ // Doesn’t work! let rabbit = new Rabbit(“White Rabbit”, 10); // Error: this is not defined. _/!_ \`\`\`
 
 Whoops! We’ve got an error. Now we can’t create rabbits. What went wrong?
 
 The short answer is:
 
--   **Constructors in inheriting classes must call `super(...)`, and (!) do it before using `this`.**
+- **Constructors in inheriting classes must call `super(...)`, and (!) do it before using `this`.**
 
 …But why? What’s going on here? Indeed, the requirement seems strange.
 
@@ -182,8 +178,8 @@ In JavaScript, there’s a distinction between a constructor function of an inhe
 
 That label affects its behavior with `new`.
 
--   When a regular function is executed with `new`, it creates an empty object and assigns it to `this`.
--   But when a derived constructor runs, it doesn’t do this. It expects the parent constructor to do this job.
+- When a regular function is executed with `new`, it creates an empty object and assigns it to `this`.
+- But when a derived constructor runs, it doesn’t do this. It expects the parent constructor to do this job.
 
 So a derived constructor must call `super` in order to execute its parent (base) constructor, otherwise the object for `this` won’t be created. And we’ll get an error.
 
@@ -197,11 +193,11 @@ constructor(name) { this.speed = 0; this.name = name; }
 
 class Rabbit extends Animal {
 
-constructor(name, earLength) { *!* super(name); */!* this.earLength = earLength; }
+constructor(name, earLength) { _!_ super(name); _/!_ this.earLength = earLength; }
 
 // … }
 
-*!* // now fine let rabbit = new Rabbit(“White Rabbit”, 10); alert(rabbit.name); // White Rabbit alert(rabbit.earLength); // 10 */!* \`\`\`
+_!_ // now fine let rabbit = new Rabbit(“White Rabbit”, 10); alert(rabbit.name); // White Rabbit alert(rabbit.earLength); // 10 _/!_ \`\`\`
 
 ### Overriding class fields: a tricky note
 
@@ -223,7 +219,7 @@ constructor() { alert(this.name); // (\*) } }
 
 class Rabbit extends Animal { name = ‘rabbit’; }
 
-new Animal(); // animal *!* new Rabbit(); // animal */!* \`\`\`
+new Animal(); // animal _!_ new Rabbit(); // animal _/!_ \`\`\`
 
 Here, class `Rabbit` extends `Animal` and overrides `name` field with its own value.
 
@@ -245,7 +241,7 @@ constructor() { this.showName(); // instead of alert(this.name); } }
 
 class Rabbit extends Animal { showName() { alert(‘rabbit’); } }
 
-new Animal(); // animal *!* new Rabbit(); // rabbit */!* \`\`\`
+new Animal(); // animal _!_ new Rabbit(); // rabbit _/!_ \`\`\`
 
 Please note: now the output is different.
 
@@ -267,8 +263,7 @@ Luckily, this behavior only reveals itself if an overridden field is used in the
 
 If it becomes a problem, one can fix it by using methods or getters/setters instead of fields.
 
-Super: internals, \[\[HomeObject\]\]
-------------------------------------
+## Super: internals, \[\[HomeObject\]\]
 
 \`\`\`warn header=“Advanced information” If you’re reading the tutorial for the first time - this section may be skipped.
 
@@ -290,7 +285,7 @@ In the example below, `rabbit.__proto__ = animal`. Now let’s try: in `rabbit.e
 
 \`\``js run let animal = { name: "Animal", eat() { alert(`${this.name} eats.\`); } };
 
-let rabbit = { **proto**: animal, name: “Rabbit”, eat() { *!* // that’s how super.eat() could presumably work this.\_\_proto\_\_.eat.call(this); // (*)* /!\* } };
+let rabbit = { **proto**: animal, name: “Rabbit”, eat() { _!_ // that’s how super.eat() could presumably work this.\_\_proto\_\_.eat.call(this); // (_)_ /!\* } };
 
 rabbit.eat(); // Rabbit eats. \`\`\`
 
@@ -306,7 +301,7 @@ let rabbit = { **proto**: animal, eat() { // …bounce around rabbit-style and c
 
 let longEar = { **proto**: rabbit, eat() { // …do something with long ears and call parent (rabbit) method this.\_\_proto\_\_.eat.call(this); // (\*\*) } };
 
-*!* longEar.eat(); // Error: Maximum call stack size exceeded */!* \`\`\`
+_!_ longEar.eat(); // Error: Maximum call stack size exceeded _/!_ \`\`\`
 
 The code doesn’t work anymore! We can see the error trying to call `longEar.eat()`.
 
@@ -318,7 +313,7 @@ Here’s the picture of what happens:
 
 ![](this-super-loop.svg)
 
-1.  Inside `longEar.eat()`, the line `(**)` calls `rabbit.eat` providing it with `this=longEar`. `js // inside longEar.eat() we have this = longEar           this.__proto__.eat.call(this) // (**) // becomes           longEar.__proto__.eat.call(this) // that is           rabbit.eat.call(this);`
+1.  Inside `longEar.eat()`, the line `(**)` calls `rabbit.eat` providing it with `this=longEar`. `js // inside longEar.eat() we have this = longEar this.__proto__.eat.call(this) // (**) // becomes longEar.__proto__.eat.call(this) // that is rabbit.eat.call(this);`
 2.  Then in the line `(*)` of `rabbit.eat`, we’d like to pass the call even higher in the chain, but `this=longEar`, so `this.__proto__.eat` is again `rabbit.eat`!
 
         // inside rabbit.eat() we also have this = longEar
@@ -342,13 +337,13 @@ Then `super` uses it to resolve the parent prototype and its methods.
 
 Let’s see how it works, first with plain objects:
 
-\`\``js run let animal = { name: "Animal", eat() { //         animal.eat.[[HomeObject]] == animal alert(`${this.name} eats.\`); } };
+\`\``js run let animal = { name: "Animal", eat() { // animal.eat.[[HomeObject]] == animal alert(`${this.name} eats.\`); } };
 
 let rabbit = { **proto**: animal, name: “Rabbit”, eat() { // rabbit.eat.\[\[HomeObject\]\] == rabbit super.eat(); } };
 
 let longEar = { **proto**: rabbit, name: “Long Ear”, eat() { // longEar.eat.\[\[HomeObject\]\] == longEar super.eat(); } };
 
-*!* // works correctly longEar.eat(); // Long Ear eats. */!* \`\`\`
+_!_ // works correctly longEar.eat(); // Long Ear eats. _/!_ \`\`\`
 
 It works as intended, due to `[[HomeObject]]` mechanics. A method, such as `longEar.eat`, knows its `[[HomeObject]]` and takes the parent method from its prototype. Without any use of `this`.
 
@@ -368,9 +363,9 @@ Here’s the demo of a wrong `super` result after copying:
 
 let plant = { sayHi() { alert(“I’m a plant”); } };
 
-// tree inherits from plant let tree = { **proto**: plant, *!* sayHi: rabbit.sayHi // (*)* /!\* };
+// tree inherits from plant let tree = { **proto**: plant, _!_ sayHi: rabbit.sayHi // (_)_ /!\* };
 
-*!* tree.sayHi(); // I’m an animal (?!?) */!* \`\`\`
+_!_ tree.sayHi(); // I’m an animal (?!?) _/!_ \`\`\`
 
 A call to `tree.sayHi()` shows “I’m an animal”. Definitely wrong.
 
@@ -392,19 +387,18 @@ In the example below a non-method syntax is used for comparison. `[[HomeObject]]
 
 let rabbit = { **proto**: animal, eat: function() { super.eat(); } };
 
-*!* rabbit.eat(); // Error calling super (because there’s no \[\[HomeObject\]\]) */!* \`\`\`
+_!_ rabbit.eat(); // Error calling super (because there’s no \[\[HomeObject\]\]) _/!_ \`\`\`
 
-Summary
--------
+## Summary
 
 1.  To extend a class: `class Child extends Parent`:
-    -   That means `Child.prototype.__proto__` will be `Parent.prototype`, so methods are inherited.
+    - That means `Child.prototype.__proto__` will be `Parent.prototype`, so methods are inherited.
 2.  When overriding a constructor:
-    -   We must call parent constructor as `super()` in `Child` constructor before using `this`.
+    - We must call parent constructor as `super()` in `Child` constructor before using `this`.
 3.  When overriding another method:
-    -   We can use `super.method()` in a `Child` method to call `Parent` method.
+    - We can use `super.method()` in a `Child` method to call `Parent` method.
 4.  Internals:
-    -   Methods remember their class/object in the internal `[[HomeObject]]` property. That’s how `super` resolves parent methods.
-    -   So it’s not safe to copy a method with `super` from one object to another.
+    - Methods remember their class/object in the internal `[[HomeObject]]` property. That’s how `super` resolves parent methods.
+    - So it’s not safe to copy a method with `super` from one object to another.
 
 Also: - Arrow functions don’t have their own `this` or `super`, so they transparently fit into the surrounding context.

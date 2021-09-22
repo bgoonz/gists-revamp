@@ -1,7 +1,6 @@
 John MacFarlane
 
-Summary
-=======
+# Summary
 
 Pandoc provides an interface for users to write programs (known as filters) which act on pandoc’s AST.
 
@@ -13,23 +12,23 @@ A “filter” is a program that modifies the AST, between the reader and the wr
 
 Pandoc supports two kinds of filters:
 
--   **Lua filters** use the Lua language to define transformations on the pandoc AST. They are described in a [separate document](lua-filters.html).
+- **Lua filters** use the Lua language to define transformations on the pandoc AST. They are described in a [separate document](lua-filters.html).
 
--   **JSON filters**, described here, are pipes that read from standard input and write to standard output, consuming and producing a JSON representation of the pandoc AST:
+- **JSON filters**, described here, are pipes that read from standard input and write to standard output, consuming and producing a JSON representation of the pandoc AST:
 
-                               source format
-                                    ↓
-                                 (pandoc)
-                                    ↓
-                            JSON-formatted AST
-                                    ↓
-                              (JSON filter)
-                                    ↓
-                            JSON-formatted AST
-                                    ↓
-                                 (pandoc)
-                                    ↓
-                              target format
+                             source format
+                                  ↓
+                               (pandoc)
+                                  ↓
+                          JSON-formatted AST
+                                  ↓
+                            (JSON filter)
+                                  ↓
+                          JSON-formatted AST
+                                  ↓
+                               (pandoc)
+                                  ↓
+                            target format
 
 Lua filters have a couple of advantages. They use a Lua interpreter that is embedded in pandoc, so you don’t need to have any external software installed. And they are usually faster than JSON filters. But if you wish to write your filter in a language other than Lua, you may prefer to use a JSON filter. JSON filters may be written in any programming language.
 
@@ -45,8 +44,7 @@ But it is more convenient to use the `--filter` option, which handles the plumbi
 
 For a gentle introduction into writing your own filters, continue this guide. There’s also a [list of third party filters on the wiki](https://github.com/jgm/pandoc/wiki/Pandoc-Filters).
 
-A simple example
-================
+# A simple example
 
 Suppose you wanted to replace all level 2+ headings in a markdown document with regular paragraphs, with text in italics. How would you go about doing this?
 
@@ -68,7 +66,7 @@ And what if your document contains a line starting with `##` in an HTML comment 
     ### A third level heading in standard markdown
     ~~~~
 
-We don’t want to touch *these* lines. Moreover, what about Setext style second-level heading?
+We don’t want to touch _these_ lines. Moreover, what about Setext style second-level heading?
 
     A heading
     ---------
@@ -124,8 +122,7 @@ Alternatively, we could compile the filter:
 
 Note that if the filter is placed in the system PATH, then the initial `./` is not needed. Note also that the command line can include multiple instances of `--filter`: the filters will be applied in sequence.
 
-LaTeX for WordPress
-===================
+# LaTeX for WordPress
 
 Another easy example. WordPress blogs require a special format for LaTeX math. Instead of `$e=mc^2$`, you need: `$LaTeX e=mc^2$`. How can we convert a markdown document accordingly?
 
@@ -143,8 +140,7 @@ We do. Pandoc already extracts LaTeX math, so:
 
 Mission accomplished. (I’ve omitted type signatures here, just to show it can be done.)
 
-But I don’t want to learn Haskell!
-==================================
+# But I don’t want to learn Haskell!
 
 While it’s easiest to write pandoc filters in Haskell, it is fairly easy to write them in python using the `pandocfilters` package. The package is in PyPI and can be installed using `pip install pandocfilters` or `easy_install pandocfilters`.
 
@@ -174,18 +170,17 @@ There are many examples of python filters in [the pandocfilters repository](http
 
 For a more Pythonic alternative to pandocfilters, see the [panflute](https://pypi.org/project/panflute) library. Don’t like Python? There are also ports of pandocfilters in
 
--   [PHP](https://github.com/vinai/pandocfilters-php),
--   [perl](https://metacpan.org/pod/Pandoc::Filter),
--   TypeScript/JavaScript via Node.js
-    -   [pandoc-filter](https://github.com/mvhenderson/pandoc-filter-node),
-    -   [node-pandoc-filter](https://github.com/mu-io/node-pandoc-filter),
--   [Groovy](https://github.com/dfrommi/groovy-pandoc), and
--   [Ruby](https://heerdebeer.org/Software/markdown/paru/).
+- [PHP](https://github.com/vinai/pandocfilters-php),
+- [perl](https://metacpan.org/pod/Pandoc::Filter),
+- TypeScript/JavaScript via Node.js
+  - [pandoc-filter](https://github.com/mvhenderson/pandoc-filter-node),
+  - [node-pandoc-filter](https://github.com/mu-io/node-pandoc-filter),
+- [Groovy](https://github.com/dfrommi/groovy-pandoc), and
+- [Ruby](https://heerdebeer.org/Software/markdown/paru/).
 
 Starting with pandoc 2.0, pandoc includes built-in support for writing filters in lua. The lua interpreter is built in to pandoc, so a lua filter does not require any additional software to run. See the [documentation on lua filters](https://pandoc.org/lua-filters.html).
 
-Include files
-=============
+# Include files
 
 So none of our transforms have involved IO. How about a script that reads a markdown document, finds all the inline code blocks with attribute `include`, and replaces their contents with the contents of the file given?
 
@@ -214,8 +209,7 @@ Try this on the following:
     this will be replaced by contents of README
     ~~~~
 
-Removing links
-==============
+# Removing links
 
 What if we want to remove every link from a document, retaining the link’s text?
 
@@ -231,8 +225,7 @@ What if we want to remove every link from a document, retaining the link’s tex
 
 Note that `delink` can’t be a function of type `Inline -> Inline`, because the thing we want to replace the link with is not a single `Inline` element, but a list of them. So we make `delink` a function from an `Inline` element to a list of `Inline` elements. `toJSONFilter` can still lift this function to a transformation of type `Pandoc -> Pandoc`.
 
-A filter for ruby text
-======================
+# A filter for ruby text
 
 Finally, here’s a nice real-world example, developed on the [pandoc-discuss](https://groups.google.com/group/pandoc-discuss/browse_thread/thread/7baea325565878c8) list. Qubyte wrote:
 
@@ -295,8 +288,7 @@ Then run it:
 
 Note: to use this to generate PDFs via LaTeX, you’ll need to use `--pdf-engine=xelatex`, specify a `mainfont` that has the Japanese characters (e.g. “Noto Sans CJK TC”), and add `\usepackage{ruby}` to your template or header-includes.
 
-Exercises
-=========
+# Exercises
 
 1.  Put all the regular text in a markdown document in ALL CAPS (without touching text in URLs or link titles).
 
@@ -308,13 +300,11 @@ Exercises
 
 5.  Find all code blocks with class `python` and run them using the python interpreter, printing the results to the console.
 
-Technical details of JSON filters
-=================================
+# Technical details of JSON filters
 
 A JSON filter is any program which can consume and produce a valid pandoc JSON document representation. This section describes the technical details surrounding the invocation of filters.
 
-Arguments
----------
+## Arguments
 
 The program will always be called with the target format as the only argument. A pandoc invocation like
 
@@ -322,8 +312,7 @@ The program will always be called with the target format as the only argument. A
 
 will cause pandoc to call the program `demo` with argument `html`.
 
-Environment variables
----------------------
+## Environment variables
 
 Pandoc sets additional environment variables before calling a filter.
 
@@ -362,8 +351,7 @@ width (i.e. equivalent number of spaces) of tab stops; integer.
 `readerTrackChanges`  
 track changes setting for docx; one of `"accept-changes"`, `"reject-changes"`, and `"all-changes"`.
 
-Supported interpreters
-----------------------
+## Supported interpreters
 
 Files passed to the `--filter`/`-F` parameter are expected to be executable. However, if the executable bit is not set, then pandoc tries to guess a suitable interpreter from the file extension.
 

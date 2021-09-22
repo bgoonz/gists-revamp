@@ -4,14 +4,13 @@ Pandoc can be used as a Haskell library, to write your own conversion tools or p
 
 Detailed API documentation at the level of individual functions and types is available at <a href="https://hackage.haskell.org/package/pandoc" class="uri">https://hackage.haskell.org/package/pandoc</a>.
 
-Pandoc’s architecture
-=====================
+# Pandoc’s architecture
 
-Pandoc is structured as a set of *readers*, which translate various input formats into an abstract syntax tree (the Pandoc AST) representing a structured document, and a set of *writers*, which render this AST into various output formats. Pictorially:
+Pandoc is structured as a set of _readers_, which translate various input formats into an abstract syntax tree (the Pandoc AST) representing a structured document, and a set of _writers_, which render this AST into various output formats. Pictorially:
 
     [input format] ==reader==> [Pandoc AST] ==writer==> [output format]
 
-This architecture allows pandoc to perform <span class="math inline">*M* × *N*</span> conversions with <span class="math inline">*M*</span> readers and <span class="math inline">*N*</span> writers.
+This architecture allows pandoc to perform <span class="math inline">*M* × *N*</span> conversions with <span class="math inline">_M_</span> readers and <span class="math inline">_N_</span> writers.
 
 The Pandoc AST is defined in the [pandoc-types](https://hackage.haskell.org/package/pandoc-types) package. You should start by looking at the Haddock documentation for [Text.Pandoc.Definition](https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Definition.html). As you’ll see, a `Pandoc` is composed of some metadata and a list of `Block`s. There are various kinds of `Block`, including `Para` (paragraph), `Header` (section heading), and `BlockQuote`. Some of the `Block`s (like `BlockQuote`) contain lists of `Block`s, while others (like `Para`) contain lists of `Inline`s, and still others (like `CodeBlock`) contain plain text or nothing. `Inline`s are the basic elements of paragraphs. The distinction between `Block` and `Inline` in the type system makes it impossible to represent, for example, a link (`Inline`) whose link text is a block quote (`Block`). This expressive limitation is mostly a help rather than a hindrance, since many of the formats pandoc supports have similar limitations.
 
@@ -22,8 +21,7 @@ The best way to explore the pandoc AST is to use `pandoc -t native`, which will 
      [[Plain [Emph [Str "foo"]]]
      ,[Plain [Str "bar"]]]]
 
-A simple example
-================
+# A simple example
 
 Here is a simple example of the use of a pandoc reader and writer to perform a conversion:
 
@@ -45,8 +43,7 @@ Some notes:
 
 2.  `result` has the type `Either PandocError Text`. We could pattern-match on this manually, but it’s simpler in this context to use the `handleError` function from Text.Pandoc.Error. This exits with an appropriate error code and message if the value is a `Left`, and returns the `Text` if the value is a `Right`.
 
-The PandocMonad class
-=====================
+# The PandocMonad class
 
 Let’s look at the types of `readMarkdown` and `writeRST`:
 
@@ -101,8 +98,7 @@ Note that `PandocIO` is an instance of `MonadIO`, so you can use `liftIO` to per
 
 `readMarkdown` is polymorphic in its second argument, which can be any type that is an instance of the `ToSources` typeclass. You can use `Text`, as in the example above. But you can also use `[(FilePath, Text)]`, if the input comes from multiple files and you want to track source positions accurately.
 
-Options
-=======
+# Options
 
 The first argument of each reader or writer is for options controlling the behavior of the reader or writer: `ReaderOptions` for readers and `WriterOptions` for writers. These are defined in [Text.Pandoc.Options](https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Options.html). It is a good idea to study these options to see what can be adjusted.
 
@@ -116,8 +112,7 @@ Some particularly important options to know about:
 
 2.  `readerExtensions` and `writerExtensions`: These specify the extensions to be used in parsing and rendering. Extensions are defined in [Text.Pandoc.Extensions](https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Extensions.html).
 
-Builder
-=======
+# Builder
 
 Sometimes it’s useful to construct a Pandoc document programmatically. To make this easier we provide the module [Text.Pandoc.Builder](https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Builder.html) `pandoc-types`.
 
@@ -204,20 +199,17 @@ And then use aeson and pandoc to parse the JSON and create the Word document:
 
 Voila! You’ve written the letter without using Word and without looking at the data.
 
-Data files
-==========
+# Data files
 
 Pandoc has a number of data files, which can be found in the `data/` subdirectory of the repository. These are installed with pandoc (or, if pandoc was compiled with the `embed_data_files` flag, they are embedded in the binary). You can retrieve data files using `readDataFile` from Text.Pandoc.Class. `readDataFile` will first look for the file in the “user data directory” (`setUserDataDir`, `getUserDataDir`), and if it is not found there, it will return the default installed with the system. To force the use of the default, `setUserDataDir Nothing`.
 
-Templates
-=========
+# Templates
 
 Pandoc has its own template system, described in the User’s Guide. To retrieve the default template for a system, use `getDefaultTemplate` from [Text.Pandoc.Templates](https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Templates.html). Note that this looks first in the `templates` subdirectory of the user data directory, allowing users to override the system defaults. If you want to disable this behavior, use `setUserDataDir Nothing`.
 
 To render a template, use `renderTemplate'`, which takes two arguments, a template (Text) and a context (any instance of ToJSON). If you want to create a context from the metadata part of a Pandoc document, use `metaToJSON'` from [Text.Pandoc.Writers.Shared](https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Writers-Shared.html). If you also want to incorporate values from variables, use `metaToJSON` instead, and make sure `writerVariables` is set in `WriterOptions`.
 
-Handling errors and warnings
-============================
+# Handling errors and warnings
 
 `runIO` and `runPure` return an `Either PandocError a`. All errors raised in running a `PandocMonad` computation will be trapped and returned as a `Left` value, so they can be handled by the calling program. To see the constructors for `PandocError`, see the documentation for [Text.Pandoc.Error](https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Error.html).
 
@@ -225,8 +217,7 @@ To raise a `PandocError` from inside a `PandocMonad` computation, use `throwErro
 
 In addition to errors, which stop execution of the conversion pipeline, one can generate informational messages. Use `report` from [Text.Pandoc.Class](https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Class.html) to issue a `LogMessage`. For a list of constructors for `LogMessage`, see [Text.Pandoc.Logging](https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-Logging.html). Note that each type of log message is associated with a verbosity level. The verbosity level (`setVerbosity`/`getVerbosity`) determines whether the report will be printed to stderr (when running in `PandocIO`), but regardless of verbosity level, all reported messages are stored internally and may be retrieved using `getLog`.
 
-Walking the AST
-===============
+# Walking the AST
 
 It is often useful to walk the Pandoc AST either to extract information (e.g., what are all the URLs linked to in this document?, do all the code samples compile?) or to transform a document (e.g., increase the level of every section header, remove emphasis, or replace specially marked code blocks with images). To make this easier and more efficient, `pandoc-types` includes a module [Text.Pandoc.Walk](https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Walk.html).
 
@@ -271,13 +262,11 @@ Here’s a simple example of a function that promotes the levels of headers:
       where urls (Link _ _ (src, _)) = [src]
             urls _                   = []
 
-Creating a front-end
-====================
+# Creating a front-end
 
 All of the functionality of the command-line program `pandoc` has been abstracted out in `convertWithOpts` in the module [Text.Pandoc.App](https://hackage.haskell.org/package/pandoc/docs/Text-Pandoc-App.html). Creating a GUI front-end for pandoc is thus just a matter of populating the `Opts` structure and calling this function.
 
-Notes on using pandoc in web applications
-=========================================
+# Notes on using pandoc in web applications
 
 1.  Pandoc’s parsers can exhibit pathological behavior on some inputs. So it is always a good idea to wrap uses of pandoc in a timeout function (e.g. `System.Timeout.timeout` from `base`) to prevent DoS attacks.
 

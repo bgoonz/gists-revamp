@@ -2,8 +2,7 @@ Albert Krewinkel
 
 This document describes pandoc’s handling of JATS.
 
-Metadata Values
-===============
+# Metadata Values
 
 `abstract`  
 Article summary. Added via the document’s front matter via the [`<abstract>`](https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/abstract.html) element.
@@ -198,8 +197,7 @@ Additional notes concerning the whole article. Added to the article’s frontmat
 `tags`  
 list of keywords. Items are used as contents of the [`<kwd>`](https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/kwd.html) element; the elements are grouped in a [`<kwd-group>`](https://jats.nlm.nih.gov/publishing/tag-library/1.2/element/kwd-group.html) with the [`kwd-group-type`](https://jats.nlm.nih.gov/publishing/tag-library/1.2/attribute/kwd-group-type.html) value `author`.
 
-Required Metadata
------------------
+## Required Metadata
 
 Pandoc will try to generate a valid JATS document even when information is missing, filling in placeholders or using empty values. This circumvents the intend to ensure a minimum set of information being present in documents of a certain tag set. It is hence recommended to always provide the information listed below.
 
@@ -207,5 +205,5 @@ Pandoc will try to generate a valid JATS document even when information is missi
 
 Required metadata values:
 
--   One or more of `journal.publisher-id`, `journal.nlm-ta`, `journal.pmc`.
--   One or more of `journal.pissn`, `journal.eissn`.
+- One or more of `journal.publisher-id`, `journal.nlm-ta`, `journal.pmc`.
+- One or more of `journal.pissn`, `journal.eissn`.

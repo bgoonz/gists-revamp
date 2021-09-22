@@ -1,9 +1,8 @@
 libs: - d3 - domtree
 
-------------------------------------------------------------------------
+---
 
-DOM tree
-========
+# DOM tree
 
 The backbone of an HTML document is tags.
 
@@ -21,18 +20,17 @@ setTimeout(() =&gt; document.body.style.background = ’’, 3000); // return ba
 
 Here we used `style.background` to change the background color of `document.body`, but there are many other properties, such as:
 
--   `innerHTML` – HTML contents of the node.
--   `offsetWidth` – the node width (in pixels)
--   …and so on.
+- `innerHTML` – HTML contents of the node.
+- `offsetWidth` – the node width (in pixels)
+- …and so on.
 
 Soon we’ll learn more ways to manipulate the DOM, but first we need to know about its structure.
 
-An example of the DOM
----------------------
+## An example of the DOM
 
 Let’s start with the following simple document:
 
-`html run no-beautify <!DOCTYPE HTML> <html> <head>         <title>About elk</title> </head> <body> The         truth about elk. </body> </html>`
+`html run no-beautify <!DOCTYPE HTML> <html> <head> <title>About elk</title> </head> <body> The truth about elk. </body> </html>`
 
 The DOM represents HTML as a tree structure of tags. Here’s how it looks:
 
@@ -40,16 +38,16 @@ The DOM represents HTML as a tree structure of tags. Here’s how it looks:
 
 Every tree node is an object.
 
-Tags are *element nodes* (or just elements) and form the tree structure: `<html>` is at the root, then `<head>` and `<body>` are its children, etc.
+Tags are _element nodes_ (or just elements) and form the tree structure: `<html>` is at the root, then `<head>` and `<body>` are its children, etc.
 
-The text inside elements forms *text nodes*, labelled as `#text`. A text node contains only a string. It may not have children and is always a leaf of the tree.
+The text inside elements forms _text nodes_, labelled as `#text`. A text node contains only a string. It may not have children and is always a leaf of the tree.
 
 For instance, the `<title>` tag has the text `"About elk"`.
 
 Please note the special characters in text nodes:
 
--   a newline: `↵` (in JavaScript known as `\n`)
--   a space: `␣`
+- a newline: `↵` (in JavaScript known as `\n`)
+- a space: `␣`
 
 Spaces and newlines are totally valid characters, like letters and digits. They form text nodes and become a part of the DOM. So, for instance, in the example above the `<head>` tag contains some spaces before `<title>`, and that text becomes a `#text` node (it contains a newline and some spaces only).
 
@@ -59,7 +57,7 @@ In other cases everything’s straightforward – if there are spaces (just like
 
 Here are no space-only text nodes:
 
-`html no-beautify <!DOCTYPE HTML>         <html><head><title>About         elk</title></head><body>The truth about         elk.</body></html>`
+`html no-beautify <!DOCTYPE HTML> <html><head><title>About elk</title></head><body>The truth about elk.</body></html>`
 
 \`\`\`smart header=“Spaces at string start/end and space-only text nodes are usually hidden in tools” Browser tools (to be covered soon) that work with DOM usually do not show spaces at the start/end of the text and empty text nodes (line-breaks) between tags.
 
@@ -67,8 +65,7 @@ Developer tools save screen space this way.
 
 On further DOM pictures we’ll sometimes omit them when they are irrelevant. Such spaces usually do not affect how the document is displayed. \`\`\`
 
-Autocorrection
---------------
+## Autocorrection
 
 If the browser encounters malformed HTML, it automatically corrects it when making the DOM.
 
@@ -80,13 +77,13 @@ While generating the DOM, browsers automatically process errors in the document,
 
 A document with unclosed tags:
 
-`html no-beautify <p>Hello <li>Mom <li>and         <li>Dad`
+`html no-beautify <p>Hello <li>Mom <li>and <li>Dad`
 
 …will become a normal DOM as the browser reads tags and restores the missing parts:
 
 \`\`\``warn header="Tables always have`
 
-`" An interesting "special case" is tables. By DOM specification they         must have`
+`" An interesting "special case" is tables. By DOM specification they must have`
 
 `tag, but HTML text may omit it. Then the browser creates`
 
@@ -94,14 +91,13 @@ A document with unclosed tags:
 
 For the HTML:
 
-`html no-beautify <table           id="table"><tr><td>1</td></tr></table>`
+`html no-beautify <table id="table"><tr><td>1</td></tr></table>`
 
 DOM-structure will be:
 
 You see? The `<tbody>` appeared out of nowhere. We should keep this in mind while working with tables to avoid surprises. \`\`\`\`
 
-Other node types
-----------------
+## Other node types
 
 There are some other node types besides elements and text nodes.
 
@@ -121,7 +117,7 @@ For example, comments:
     </body>
     </html>
 
-We can see here a new tree node type – *comment node*, labeled as `#comment`, between two text nodes.
+We can see here a new tree node type – _comment node_, labeled as `#comment`, between two text nodes.
 
 We may think – why is a comment added to the DOM? It doesn’t affect the visual representation in any way. But there’s a rule – if something’s in HTML, then it also must be in the DOM tree.
 
@@ -138,8 +134,7 @@ There are [12 node types](https://dom.spec.whatwg.org/#node). In practice we usu
 3.  text nodes – contain text.
 4.  comments – sometimes we can put information there, it won’t be shown, but JS can read it from the DOM.
 
-See it for yourself
--------------------
+## See it for yourself
 
 To see the DOM structure in real-time, try [Live DOM Viewer](http://software.hixie.ch/utilities/js/live-dom-viewer/). Just type in the document, and it will show up as a DOM at an instant.
 
@@ -165,8 +160,7 @@ At the right part of the tools there are the following subtabs: - **Styles** –
 
 The best way to study them is to click around. Most values are editable in-place.
 
-Interaction with console
-------------------------
+## Interaction with console
 
 As we work the DOM, we also may want to apply JavaScript to it. Like: get a node and run some code to modify it, to see the result. Here are few tips to travel between the Elements tab and the console.
 
@@ -193,14 +187,13 @@ That’s for debugging purposes of course. From the next chapter on we’ll acce
 
 The browser developer tools are a great help in development: we can explore the DOM, try things and see what goes wrong.
 
-Summary
--------
+## Summary
 
 An HTML/XML document is represented inside the browser as the DOM tree.
 
--   Tags become element nodes and form the structure.
--   Text becomes text nodes.
--   …etc, everything in HTML has its place in DOM, even comments.
+- Tags become element nodes and form the structure.
+- Text becomes text nodes.
+- …etc, everything in HTML has its place in DOM, even comments.
 
 We can use developer tools to inspect DOM and modify it manually.
 
