@@ -4,8 +4,7 @@ Please enable JavaScript to view this page properly.
 
 ### HTML &lttable&gt; Generator Tool
 
-HTML Table Generator Tool <img src="../images/theme/html-table-generator-tool.png" title="HTML Table Generator Tool" alt="HTML Table Generator Tool" width="58" height="23" />
-==============================================================================================================================================================================
+# HTML Table Generator Tool <img src="../images/theme/html-table-generator-tool.png" title="HTML Table Generator Tool" alt="HTML Table Generator Tool" width="58" height="23" />
 
 Use this tool to generate an HTML table code for your website or blog. Its simple, fast and free!
 
@@ -15,7 +14,7 @@ Rows:   Columns:   Table Width:   (%) Background Color:   Text Color:   Hea
 
 #### Border
 
-Style: Solid Dashed Dotted Double Groove Ridge Inset Outset Width: px (pixels) Color:   Collapse    
+Style: Solid Dashed Dotted Double Groove Ridge Inset Outset Width: px (pixels) Color:   Collapse
 
 #### Here's the sample table!
 
@@ -29,4 +28,4 @@ Place the HTML <span style="color:#fff;background-color:#9b58b5;padding:2px 3px;
 
 <img src="../images/theme/html-table-generator.png" title="HTML Table Generator Tool" alt="HTML Table Generator Tool" id="imgtable" style="width:100.0%" />
 
-------------------------------------------------------------------------
+---
