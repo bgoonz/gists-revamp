@@ -1,5 +1,4 @@
-Links:
-======
+# Links:
 
 [sourcegraph-search-your-code](https://sourcegraph.com/search)
 

@@ -1,21 +1,18 @@
-Data Types
-----------
+## Data Types
 
 Both MySQL and PostgreSQL support many data types, ranging from traditional ones (e.g., Integer, Date, Timestamp) to complex ones (e.g., JSON, XML, TEXT). However, there is a difference between these two database products when it comes to the capability of catering to complex, real-time data search requirements. Let’s take a look at both.
 
-PostgreSQL not only supports traditional SQL data types (e.g., Numeric, Strings, Date, Decimal, etc.) but also supports unstructured data types (e.g., JSON, XML, and HSTORE) as well as network data types, bit strings, etc. What makes PostgreSQL stand out is its support for a wider range of data types, such as ARRAYs, NETWORK types, and Geometric data types (including advanced spatial data functions) to store and process spatial data. Supported data types can be found [here](https://www.postgresql.org/docs/11/datatype.html). The support for spatial data types and functions comes from an external module called PostGIS, which is an open-source extension. 
+PostgreSQL not only supports traditional SQL data types (e.g., Numeric, Strings, Date, Decimal, etc.) but also supports unstructured data types (e.g., JSON, XML, and HSTORE) as well as network data types, bit strings, etc. What makes PostgreSQL stand out is its support for a wider range of data types, such as ARRAYs, NETWORK types, and Geometric data types (including advanced spatial data functions) to store and process spatial data. Supported data types can be found [here](https://www.postgresql.org/docs/11/datatype.html). The support for spatial data types and functions comes from an external module called PostGIS, which is an open-source extension.
 
 MySQL supports [various data types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html) that help a variety of applications store and process data in different formats, including the following: traditional data types to store Integers, Characters or Strings, Date with Timestamps and Time Zones, Boolean, Float, Decimal, Large Text, and BLOB  to store binary data (like images). There is no support for geometric data types in MySQL.
 
-JSON: PostgreSQL vs. MySQL 
----------------------------
+## JSON: PostgreSQL vs. MySQL 
 
 PostgreSQL started supporting JSON data types from version 9.2. The JSON data support in PostgreSQL is much more advanced compared to MySQL. There are several JSON-specific operators and functions, making data searches in JSON documents very efficient. The JSONB feature from PostgreSQL-9.4, which stores JSON in a binary format, started supporting Full-Text Indexing (known as GIN Indexing), and this really makes Full-Text searching on JSON documents much faster.
 
 MySQL just started supporting JSON data types recently (from Version 5.7), years later than PostgreSQL. The JSON data columns can be queried using SQL queries, and JSON attributes can be indexed as well. However, the support for JSON-specific functions is limited compared to PostgreSQL. Another limitation of MySQL is that there is no support for Full-Text Indexing on JSON columns. Since MySQL is not fully SQL compliant, it may not be a great choice for storing and processing JSON data.
 
-Replication & Clustering 
--------------------------
+## Replication & Clustering 
 
 Both MySQL and PostgreSQL have replication and clustering capabilities and can ensure data operations are distributed horizontally. Let’s take a more detailed look.
 
@@ -29,21 +26,19 @@ PostgreSQL replication is very popular and reliable. Unlike MySQL, PostgreSQL�
 
 By default, replication is asynchronous, and replicas can cater to read requests. If the application (like a web application) demands the data snapshot on replicas to be the same as the primary, then synchronous replication will help. The caveat would be that the primary will hang if the transactions are not committed to the replica.
 
-Replication at the table level can be achieved using external open-source tools such as Slony, Bucardo, Londiste, RubyRep, etc. All of them perform trigger-based replication. PostgreSQL also supports logical replication, which performs table-level replication using WAL records and removes the complexity brought in by trigger-based replication. Initially, logical replication was supported by an extension called pglogical and has been part of the PostgreSQL core from version 10. 
+Replication at the table level can be achieved using external open-source tools such as Slony, Bucardo, Londiste, RubyRep, etc. All of them perform trigger-based replication. PostgreSQL also supports logical replication, which performs table-level replication using WAL records and removes the complexity brought in by trigger-based replication. Initially, logical replication was supported by an extension called pglogical and has been part of the PostgreSQL core from version 10.
 
-Views
------
+## Views
 
 MySQL supports views; the number of tables used by the SQLs underneath the view is limited to 61. Views are like virtual tables that do not store data physically, and materialized views are not supported in MySQL. Views created with simple SQLs can be updated, while views created with complex SQLs cannot.
 
 PostgreSQL supports views that are partially similar to MySQL. While views created with simple SQLs can be updated, the views created with complex SQLs cannot be updated. But there is a work-around to update complex views using RULES. Also, if the data is to be stored physically, PostgreSQL supports Materialized Views, which can be REFRESHED, and Indexes as well.
 
-Triggers
---------
+## Triggers
 
 MySQL supports Triggers for AFTER and BEFORE events for INSERT, UPDATE, and DELETE statements. Triggers cannot execute dynamic SQL statements or stored procedures.
 
-PostgreSQL triggers are advanced; the supported triggering events are AFTER, BEFORE, and INSTEAD OF triggers for INSERT, UPDATE, and DELETE events. If you need to execute a complex SQL when the trigger gets invoked, you can do this using functions. Yes, the triggers in PostgreSQL can also execute functions dynamically. 
+PostgreSQL triggers are advanced; the supported triggering events are AFTER, BEFORE, and INSTEAD OF triggers for INSERT, UPDATE, and DELETE events. If you need to execute a complex SQL when the trigger gets invoked, you can do this using functions. Yes, the triggers in PostgreSQL can also execute functions dynamically.
 
     CREATE TRIGGER audit
 
@@ -51,21 +46,19 @@ PostgreSQL triggers are advanced; the supported triggering events are AFTER, BE
 
         FOR EACH ROW EXECUTE FUNCTION employee_audit_func();
 
-Stored Procedures
------------------
+## Stored Procedures
 
 Stored Procedures are an important part of databases and cater to complex data-extraction requirements. Developers often use stored procedures as part of their database development process. Both MySQL and PostgreSQL databases support stored procedures, but [MySQL](https://dev.mysql.com/doc/refman/8.0/en/stored-program-restrictions.html) only supports standard SQL syntaxes, while PostgreSQL supports very advanced procedures.
 
 Stored Procedures are implemented in the form of functions in PostgreSQL with a RETURN VOID clause. The part of this feature that developers love is the support it has for various languages that are not supported by MySQL, such as Ruby, Perl (PlPerl), Python (PlPython), TCL, Pl/PgSQL, SQL, and JavaScript.
 
-Query 
-------
+## Query 
 
-As mentioned earlier, MySQL is not a fully SQL-compliant database and does not support all SQL features, making it a tough choice for developers and not a great choice for data warehousing applications, as there will be a need here for advanced and complex SQLs. 
+As mentioned earlier, MySQL is not a fully SQL-compliant database and does not support all SQL features, making it a tough choice for developers and not a great choice for data warehousing applications, as there will be a need here for advanced and complex SQLs.
 
 Here are some limitations to be considered when choosing MySQL:
 
--   Certain UPDATE SQL results can be surprising and not per the SQL standard, as seen below:
+- Certain UPDATE SQL results can be surprising and not per the SQL standard, as seen below:
 
 <!-- -->
 
@@ -117,7 +110,7 @@ The SQL standard expected results are supposed to be as shown here:
 
     +------+------+
 
--   Cannot UPDATE or DELETE statements; cannot SELECT from the same table. Below is an example of a DELETE:
+- Cannot UPDATE or DELETE statements; cannot SELECT from the same table. Below is an example of a DELETE:
 
 <!-- -->
 
@@ -125,7 +118,7 @@ The SQL standard expected results are supposed to be as shown here:
 
     ERROR 1093 (HY000): 
 
--   LIMIT clause is not allowed in the subqueries:
+- LIMIT clause is not allowed in the subqueries:
 
 <!-- -->
 
@@ -139,16 +132,15 @@ Also, MySQL does not support standard SQL clauses such as FULL OUTER JOINS, INTE
 
 PostgreSQL, on the other hand, is a fully SQL-compliant database and supports all SQL standard features. Applications of pretty much any nature from any domain can use PostgreSQL as their database, which makes it a popular choice for OLTP, OLAP, and DWH environments. PostgreSQL is the best choice for developers who have to write complex SQLs.
 
-Partitioning 
--------------
+## Partitioning 
 
-MySQL and PostgreSQL both support table partitioning to improve the performance of queries that hit large-size Tables. However, there are certain limitations in both the databases. 
+MySQL and PostgreSQL both support table partitioning to improve the performance of queries that hit large-size Tables. However, there are certain limitations in both the databases.
 
 MySQL supports declarative table partitioning; supported partition types are RANGE, LIST, HASH, KEY, and COLUMNS (RANGE and LIST). SUBPARTITIONING is also supported. However, this feature may not be very flexible for DBAs because of certain limitations. Let’s take a look at them:
 
--   From MySQL version 8.0, table partitioning is only possible with InnoDB and NDB storage engines, not with any other storage engines like MyISAM.
--   If the partition key column is not part of all the PRIMARY and UNIQUE KEY constraints of the table, then it is not possible to partition the table at all. The only other option is to partition a table with no PRIMARY or UNIQUE KEYs, which is a rare occurrence in the RDBMS world.
--   Support for placing the table partitions on tablespaces was phased out from MySQL-5.7.24. This means, DBAs cannot leverage the benefit of disk I/O balancing from table partitioning.
+- From MySQL version 8.0, table partitioning is only possible with InnoDB and NDB storage engines, not with any other storage engines like MyISAM.
+- If the partition key column is not part of all the PRIMARY and UNIQUE KEY constraints of the table, then it is not possible to partition the table at all. The only other option is to partition a table with no PRIMARY or UNIQUE KEYs, which is a rare occurrence in the RDBMS world.
+- Support for placing the table partitions on tablespaces was phased out from MySQL-5.7.24. This means, DBAs cannot leverage the benefit of disk I/O balancing from table partitioning.
 
 <!-- -->
 
@@ -158,16 +150,15 @@ MySQL supports declarative table partitioning; supported partition types are RA
 
     mysql>
 
-PostgreSQL supports two types of table partitioning: table partitioning by inheritance and declarative partitioning. Declarative partitioning was introduced in Version 10 and is similar to MySQL, whereas partitioning by inheritance is performed using triggers or rules. Performance benefits are significantly higher when an accurate partitioning strategy is implemented on tables with large volumes of data. Partitioning types supported are RANGE, LIST, and HASH. With the introduction of declarative partitioning, complexity and performance challenges due to triggers and rules are eradicated. 
+PostgreSQL supports two types of table partitioning: table partitioning by inheritance and declarative partitioning. Declarative partitioning was introduced in Version 10 and is similar to MySQL, whereas partitioning by inheritance is performed using triggers or rules. Performance benefits are significantly higher when an accurate partitioning strategy is implemented on tables with large volumes of data. Partitioning types supported are RANGE, LIST, and HASH. With the introduction of declarative partitioning, complexity and performance challenges due to triggers and rules are eradicated.
 
 Both types of partitioning for PostgreSQL have their benefits and limitations:
 
--   Similar to MySQL, declarative partitions in PostgreSQL can only be implemented if the partition key column is part of all the primary and UNIQUE KEY constraints.
--   When partitioning a table by inheritance, child tables cannot inherit primary key or UNIQUE KEY constraints from the primary table.
--   INSERTs and UPDATEs on the primary table are not automatically redirected to child tables; to do so, triggers or rules must be implemented, and the same needs to be done for automatically creating new partitions.
+- Similar to MySQL, declarative partitions in PostgreSQL can only be implemented if the partition key column is part of all the primary and UNIQUE KEY constraints.
+- When partitioning a table by inheritance, child tables cannot inherit primary key or UNIQUE KEY constraints from the primary table.
+- INSERTs and UPDATEs on the primary table are not automatically redirected to child tables; to do so, triggers or rules must be implemented, and the same needs to be done for automatically creating new partitions.
 
-Table Scalability 
-------------------
+## Table Scalability 
 
 Table segments growing bigger in size can pose performance problems, and queries hitting those tables take more resources and time to complete. Efficient table design is thus important for good performance. MySQL and PostgreSQL have different options for this.
 
@@ -177,26 +168,23 @@ PostgreSQL has several indexing and two types of partitioning options to improv
 
 To achieve horizontal table-level scalability in Postgres (horizontal table partitioning), commercially developed products based on Postgres, such as CitusDB, Greenplum, and IBM Netezza, are the way to go. Open-source Postgres itself does not support horizontal table partitioning; PostgresXC is an option but is not popular due to its performance and maintenance overhead.
 
-Storage
--------
+## Storage
 
-Data storage is a critical capability of any database. PostgreSQL and MySQL provide various options for storing data. Storing data means storing the physical database objects, such as Tables and Indexes, on a disk. This section focuses on two types of storage options: common storage and pluggable storage. 
+Data storage is a critical capability of any database. PostgreSQL and MySQL provide various options for storing data. Storing data means storing the physical database objects, such as Tables and Indexes, on a disk. This section focuses on two types of storage options: common storage and pluggable storage.
 
-PostgreSQL has a common storage feature called tablespaces, which can accommodate physical objects like Tables, Indexes, and Materialized Views. With the help of tablespaces, the objects can be grouped and stored across multiple physical locations, which helps distribute I/O in an efficient way. PostgreSQL does not support pluggable storage engines, although this is expected in future releases. 
+PostgreSQL has a common storage feature called tablespaces, which can accommodate physical objects like Tables, Indexes, and Materialized Views. With the help of tablespaces, the objects can be grouped and stored across multiple physical locations, which helps distribute I/O in an efficient way. PostgreSQL does not support pluggable storage engines, although this is expected in future releases.
 
 MySQL, similar to PostgreSQL, has a tablespaces feature (part of InnoDB engine) that can help DBAs group and store physical objects (Tables, Indexes, etc.), and this can help distribute I/O. MySQL also supports pluggable storage engines, which can help the database meet specific storage requirements for various types of applications such as OLTP, Data Warehousing, etc. This is one of the biggest advantages of using MySQL as a database. The pluggable storage feature can be enabled by installing plugins, and although configuring pluggable storage involves complexity, applications are completely oblivious to this.
 
-Data Models Supported
----------------------
+## Data Models Supported
 
-NoSQL capabilities in an RDBMS database can help deal with unstructured data, for example, JSON, XML, and other TEXT data types. 
+NoSQL capabilities in an RDBMS database can help deal with unstructured data, for example, JSON, XML, and other TEXT data types.
 
 MySQL has limited NoSQL capabilities. JSON data types have been introduced in MySQL from Version 5.7 and have a long way to go to become more mature.
 
 PostgreSQL has become a very popular NoSQL choice for developers in the last three years and has enormous JSON capabilities. With JSON and JSONB data types, JSON-based data operations can be significantly faster and more efficient. JSON data can also be Indexed with B-Tree and GIN for improved searches, and XML and HSTORE data types can handle XML formats and other complex text-format data as well. With the support for spatial data types, PostgreSQL is no doubt a complete multi-model database.
 
-Security
---------
+## Security
 
 Database security plays a vital role in securing data from unauthorized access. Secured access is implemented at various levels in the database, including the object level and connection level.
 
@@ -214,25 +202,25 @@ Every time the privilege is granted, a password must be specified; otherwise, th
 
 MySQL also supports SSL-based connections over the network and provides security based on SE-Linux modules. Integration with external authentication systems, such as LDAP and PAM, is part of the MySQL enterprise edition.
 
-PostgreSQL provides access to database objects and data via ROLES and PRIVILEGES using GRANT commands. Connection authentication is done in a simpler way, via a pg\_hba.conf authentication file that contains the list of IP addresses along with username and type of access. This is much more reliable and simpler. Below is a sample entry from a pg\_hba.conf file:
+PostgreSQL provides access to database objects and data via ROLES and PRIVILEGES using GRANT commands. Connection authentication is done in a simpler way, via a pg_hba.conf authentication file that contains the list of IP addresses along with username and type of access. This is much more reliable and simpler. Below is a sample entry from a pg_hba.conf file:
 
     host   database  user  address  auth-method  [md5 or trust or reject]
 
-Postgres open-source version supports SSL-based connections and can also be integrated with external authentication systems, including LDAP, Kerberos, and PAM, which are efficient and reliable. 
+Postgres open-source version supports SSL-based connections and can also be integrated with external authentication systems, including LDAP, Kerberos, and PAM, which are efficient and reliable.
 
 Analytical functions perform aggregation on a set of rows. There are two types of analytical functions: window functions and aggregate functions. Aggregate functions perform aggregation and return a single aggregate value for a set of rows (like sum, avg, min, max, etc.), whereas analytical functions return a single aggregate value for each of the rows. Both MySQL and PostgreSQL support various analytical functions. MySQL has lately come up with some window functions in Version 8.0, whereas PostgreSQL has been supporting the same for a long time now.
 
-PostgreSQL supports the window functions below: 
+PostgreSQL supports the window functions below:
 
-Name of the function           
+Name of the function
 
 |
 
-  Description
+Description
 
 | |
 
-CUME\_DIST
+CUME_DIST
 
 |
 
@@ -240,7 +228,7 @@ Return the relative rank of the current row.
 
 | |
 
-DENSE\_RANK
+DENSE_RANK
 
 |
 
@@ -248,7 +236,7 @@ Rank the current row within its partition without gaps.
 
 | |
 
-FIRST\_VALUE
+FIRST_VALUE
 
 |
 
@@ -264,7 +252,7 @@ Return a value evaluated at the row that is at a specified physical offset row b
 
 | |
 
-LAST\_VALUE
+LAST_VALUE
 
 |
 
@@ -288,7 +276,7 @@ Divide rows in a partition as equally as possible and assign each row an integer
 
 | |
 
-NTH\_VALUE
+NTH_VALUE
 
 |
 
@@ -296,7 +284,7 @@ Return a value evaluated against the nth row in an ordered partition.
 
 | |
 
-PERCENT\_RANK
+PERCENT_RANK
 
 |
 
@@ -312,7 +300,7 @@ Rank the current row within its partition with gaps.
 
 | |
 
-ROW\_NUMBER
+ROW_NUMBER
 
 |
 
@@ -322,33 +310,29 @@ Number the current row within its partition starting from 1.
 
 MySQL supports pretty much all the window functions that PostgreSQL supports, with the following limitations:
 
--   Window functions cannot be used as part of UPDATE or DELETE.
--   DISTINCT is not supported with Window functions.
--   NESTED window functions are not supported.=
+- Window functions cannot be used as part of UPDATE or DELETE.
+- DISTINCT is not supported with Window functions.
+- NESTED window functions are not supported.=
 
-Administration (GUI Tools)
---------------------------
+## Administration (GUI Tools)
 
 MySQL database can be remotely accessed using Oracle’s SQL Developer, MySQL Workbench, DBeaver, OmniDB, and so on. For monitoring database performance and health, tools such as Nagios, Cacti, and Zabbix are popular.
 
 PostgreSQL can be GUI-managed using Oracle’s SQL Developer, pgAdmin, OmniDB, and DBeaver. Tools popular for monitoring PostgreSQL health and performance are Nagios, Zabbix, and Cacti.
 
-Performance
------------
+## Performance
 
 MySQL database performance-optimization options are very limited, and many Indexes are also not supported. Without full SQL compliance, writing efficient and well-performing SQL queries can be a challenge. MySQL is also not the best choice for large volumes of data. Tablespaces for spreading data across multiple disks are a challenge, since tablespaces are only supported in InnoDB and cannot accommodate table partitions. Simple queries to hit tables can be made to complete faster by creating B-TREE Indexes.
 
 PostgreSQL database is a highly suitable database for any kind of workload: OLTP, OLAP, Data warehousing, and more. It also fully complies with SQL standards, so it is possible to write efficient queries and pl/pgsql programs. With its support for a wide range of Indexes, including B-Tree, Bitmap, Partial, and Full-Text, performance can be greatly improved. Re-indexing and re-organization of tables to remove bloats can also be performed online. Postgres has several configuration options for allocating memory to a database and queries, and partitioned tables can be placed across multiple tablespaces to balance disk I/O.
 
-Adoption
---------
+## Adoption
 
 PostgreSQL is the world’s most advanced open source database. Businesses around the world are using PostgreSQL for mission critical workloads. The PostgreSQL community and a few companies such as EnterpriseDB and 2ndQuadrant are making sure that PostgreSQL adoption continues to expand on a global level.
 
-MySQL is definitely not the best choice for RDBMS or ORDBMS applications. Since Oracle’s acquisition of MySQL, adoption of MySQL has significantly declined, and development progress in the open-source space has taken a hit as well, inviting criticism from MySQL users. 
+MySQL is definitely not the best choice for RDBMS or ORDBMS applications. Since Oracle’s acquisition of MySQL, adoption of MySQL has significantly declined, and development progress in the open-source space has taken a hit as well, inviting criticism from MySQL users.
 
-Best Environments / Stacks
---------------------------
+## Best Environments / Stacks
 
 A stack is a packaged collection of various applications, operating systems, and database technologies that help you easily build web applications.
 
@@ -356,38 +340,37 @@ Both PostgreSQL and MySQL are part of different stacks used by various organizat
 
 LAMP stack stands for Linux Apache MySQL/MongoDB and Php/Python.
 
-The LAPP stack is an option if the requirement is to use PostgreSQL. Developers can leverage both the NoSQL and RDBMS capabilities of PostgreSQL. Large-platform service providers, such as Amazon and VMware, are also providing services with readily installed LAPP stack modules. 
+The LAPP stack is an option if the requirement is to use PostgreSQL. Developers can leverage both the NoSQL and RDBMS capabilities of PostgreSQL. Large-platform service providers, such as Amazon and VMware, are also providing services with readily installed LAPP stack modules.
 
-Conclusion
-----------
+## Conclusion
 
-Undoubtedly, PostgreSQL stands as the best-choice database due to its rich features and aggressive development efforts by PostgreSQL developers. Most every organization uses PostgreSQL today, and most domains are adopting PostgreSQL for their applications as well as looking to migrate their legacy applications to it. If you are migrating away from legacy oracle database and want to accomplish this task in days instead of months, see [EDB Postgres Advanced Server](https://www.enterprisedb.com/enterprise-postgres/edb-postgres-advanced-server). EDB Postgres Advanced Server is an enhanced Postgres database with Oracle compatibility and enterprise security features. 
+Undoubtedly, PostgreSQL stands as the best-choice database due to its rich features and aggressive development efforts by PostgreSQL developers. Most every organization uses PostgreSQL today, and most domains are adopting PostgreSQL for their applications as well as looking to migrate their legacy applications to it. If you are migrating away from legacy oracle database and want to accomplish this task in days instead of months, see [EDB Postgres Advanced Server](https://www.enterprisedb.com/enterprise-postgres/edb-postgres-advanced-server). EDB Postgres Advanced Server is an enhanced Postgres database with Oracle compatibility and enterprise security features.
 
 ​
 
 ##### Popular Links
 
--   [Connecting PostgreSQL using psql and pgAdmin](https://www.enterprisedb.com/postgres-tutorials/connecting-postgresql-using-psql-and-pgadmin)
--   [How to use PostgreSQL with Django](https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-django)
--   [10 Examples of PostgreSQL Stored Procedures](https://www.enterprisedb.com/postgres-tutorials/10-examples-postgresql-stored-procedures)
--   [How to use PostgreSQL with Laravel](https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-laravel)
--   [How to use tables and column aliases…](https://www.enterprisedb.com/postgres-tutorials/how-use-tables-and-column-aliases-when-building-postgresql-query)
+- [Connecting PostgreSQL using psql and pgAdmin](https://www.enterprisedb.com/postgres-tutorials/connecting-postgresql-using-psql-and-pgadmin)
+- [How to use PostgreSQL with Django](https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-django)
+- [10 Examples of PostgreSQL Stored Procedures](https://www.enterprisedb.com/postgres-tutorials/10-examples-postgresql-stored-procedures)
+- [How to use PostgreSQL with Laravel](https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-laravel)
+- [How to use tables and column aliases…](https://www.enterprisedb.com/postgres-tutorials/how-use-tables-and-column-aliases-when-building-postgresql-query)
 
 ##### Featured Links
 
--   [PostgreSQL vs. SQL Server (MSSQL)…](https://www.enterprisedb.com/blog/microsoft-sql-server-mssql-vs-postgresql-comparison-details-what-differences)
--   [The Complete Oracle to PostgreSQL Migration…](https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative)
--   [PostgreSQL vs. MySQL: A 360-degree Comparison…](https://www.enterprisedb.com/blog/postgresql-vs-mysql-360-degree-comparison-syntax-performance-scalability-and-features)
--   [PostgreSQL Replication and Automatic Failover…](https://www.enterprisedb.com/postgres-tutorials/postgresql-replication-and-automatic-failover-tutorial)
--   [Postgres on Kubernetes or VMs: A Guide…](https://www.enterprisedb.com/blog/blog/postgres-kubernetes-or-vms-guide-framework-running-databases-best-way)
+- [PostgreSQL vs. SQL Server (MSSQL)…](https://www.enterprisedb.com/blog/microsoft-sql-server-mssql-vs-postgresql-comparison-details-what-differences)
+- [The Complete Oracle to PostgreSQL Migration…](https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative)
+- [PostgreSQL vs. MySQL: A 360-degree Comparison…](https://www.enterprisedb.com/blog/postgresql-vs-mysql-360-degree-comparison-syntax-performance-scalability-and-features)
+- [PostgreSQL Replication and Automatic Failover…](https://www.enterprisedb.com/postgres-tutorials/postgresql-replication-and-automatic-failover-tutorial)
+- [Postgres on Kubernetes or VMs: A Guide…](https://www.enterprisedb.com/blog/blog/postgres-kubernetes-or-vms-guide-framework-running-databases-best-way)
 
 ##### Resources
 
--   [Postgres Tutorials](https://www.enterprisedb.com/postgres-tutorials)
--   [The EDB Blog](https://www.enterprisedb.com/blog)
--   [White Papers](https://www.enterprisedb.com/white-papers)
--   [The EDB Docs](https://www.enterprisedb.com/docs/)
--   [Webinars](https://www.enterprisedb.com/webinars)
+- [Postgres Tutorials](https://www.enterprisedb.com/postgres-tutorials)
+- [The EDB Blog](https://www.enterprisedb.com/blog)
+- [White Papers](https://www.enterprisedb.com/white-papers)
+- [The EDB Docs](https://www.enterprisedb.com/docs/)
+- [Webinars](https://www.enterprisedb.com/webinars)
 
 ![](https://www.enterprisedb.com/sites/default/files/styles/thumbnail/public/pictures/picture-537347-1576096705.jpg?itok=cd1Po5tl)
 
@@ -395,11 +378,10 @@ Undoubtedly, PostgreSQL stands as the best-choice database due to its rich fea
 
 A proud parent of a mischevious Golden Retriever, [Pankil Shah](http://pankilshah.net/) is a Marketing Manager, SaaS Products for EnterpriseDB. Pankil co-founded [Vclassrooming](https://www.vclassrooming.com/), a saas platform to improve the learning outcomes of K12 students.
 
-Popular Posts
--------------
+## Popular Posts
 
--   [Connecting PostgreSQL using psql and pgAdmin](https://www.enterprisedb.com/postgres-tutorials/connecting-postgresql-using-psql-and-pgadmin)
--   [How to use PostgreSQL with Django](https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-django)
--   [Microsoft SQL Server (MSSQL) vs. PostgreSQL Comparison in Details - What are the Differences? \[2020\]](https://www.enterprisedb.com/blog/microsoft-sql-server-mssql-vs-postgresql-comparison-details-what-differences)
--   [10 Examples of PostgreSQL Stored Procedures](https://www.enterprisedb.com/postgres-tutorials/10-examples-postgresql-stored-procedures)
--   [How to import and export data using CSV files in ](https://www.enterprisedb.com/postgres-tutorials/how-import-and-export-data-using-csv-files-postgresql)
+- [Connecting PostgreSQL using psql and pgAdmin](https://www.enterprisedb.com/postgres-tutorials/connecting-postgresql-using-psql-and-pgadmin)
+- [How to use PostgreSQL with Django](https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-django)
+- [Microsoft SQL Server (MSSQL) vs. PostgreSQL Comparison in Details - What are the Differences? \[2020\]](https://www.enterprisedb.com/blog/microsoft-sql-server-mssql-vs-postgresql-comparison-details-what-differences)
+- [10 Examples of PostgreSQL Stored Procedures](https://www.enterprisedb.com/postgres-tutorials/10-examples-postgresql-stored-procedures)
+- [How to import and export data using CSV files in ](https://www.enterprisedb.com/postgres-tutorials/how-import-and-export-data-using-csv-files-postgresql)

@@ -19,20 +19,17 @@
 
 **VS Code…** \#\#Basic Editing Home / End &gt;&gt;&gt; Go to beginning/end of line Ctrl+Home &gt;&gt;&gt; Go to beginning of file
 
-Cursor and Selection
---------------------
+## Cursor and Selection
 
 Alt+Click &gt;&gt;&gt; Insert cursor
 
-Display
--------
+## Display
 
 Ctrl+Shift+V &gt;&gt;&gt; Open Markdown preview Ctrl+K , V &gt;&gt;&gt; Open Markdown preview to the side
 
 \#Windows Terminal Alt + direction &gt;&gt; resizes pane Ctrl + direction &gt;&gt; changes focus
 
-Capture2Text
-============
+# Capture2Text
 
 win + q &gt;&gt; perform ocr capture
 

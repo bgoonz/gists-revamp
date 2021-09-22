@@ -1,5 +1,4 @@
-Table of Contents
------------------
+## Table of Contents
 
 ###### The None value
 
@@ -108,8 +107,7 @@ Table of Contents
 
 ###### List comprehensions
 
-The None value
---------------
+## The None value
 
 ###### This is the same as null in javaScript. It represents the lack of existence
 
@@ -126,8 +124,7 @@ The None value
 
     value = print_hello('Bob') # value will be `None`
 
-Boolean values
---------------
+## Boolean values
 
 ###### These work the same as in JavaScript, but you must capitalize True and False.
 
@@ -580,8 +577,7 @@ Boolean values
     average( 1 , 2 , 3 )
     # => TypeError: average() takes 2 positional arguments but 3 were given
 
-Python Learning Objectives (Day 2)
-----------------------------------
+## Python Learning Objectives (Day 2)
 
 ### Functions
 
@@ -912,8 +908,7 @@ Python Learning Objectives (Day 2)
 
     print(addSomeNumbers( 1 , 2 )) # => 3
 
-Python Learning Objectives (Day 3)
-----------------------------------
+## Python Learning Objectives (Day 3)
 
 ### Classes, methods, and properties
 
@@ -1028,11 +1023,9 @@ newList = \[value loop condition\]
     newPerson = { key.title(): value for key, value in person.items() }
     # Prints {'Name': 'Corina', 'Age': 32, 'Height': 1.4}
 
-Part 2:
-=======
+# Part 2:
 
-Table of Contents
------------------
+## Table of Contents
 
 ##### Python Unit Testing Objectives
 
@@ -1104,7 +1097,7 @@ Table of Contents
 
 ##### Configure and use sessions in Flask
 
-##### Use a Jinja template as return for a Flask route with render\_template
+##### Use a Jinja template as return for a Flask route with render_template
 
 ##### Add variables to a Jinja template with {{ }}
 
@@ -1224,8 +1217,7 @@ Table of Contents
 
 ##### Instead of alembic migrate…
 
-Python Unit Testing Objectives
-------------------------------
+## Python Unit Testing Objectives
 
 ### Use the built-in unittest package to write unit tests
 
@@ -1251,8 +1243,7 @@ Python Unit Testing Objectives
 
 ##### Uses python built in assert keyword
 
-Python Environment Management Objectives
-----------------------------------------
+## Python Environment Management Objectives
 
 ##### pyenv
 
@@ -1306,7 +1297,7 @@ Python Environment Management Objectives
 
 ##### Locks packages to specific versions with a Pipfile.lock.
 
-##### Uses an environment variable named PIPENV\_VENV\_IN\_PROJECT. When set to  1 
+##### Uses an environment variable named PIPENV_VENV_IN_PROJECT. When set to  1 
 
 ##### it causes pipenv to create the virtualenv inside your project directory in
 
@@ -1364,7 +1355,7 @@ Python Environment Management Objectives
 
 ##### You can inspect the python path from python by printing sys.path
 
-##### You can add directories to the python path by setting the PYTHON\_PATH
+##### You can add directories to the python path by setting the PYTHON_PATH
 
 ##### environment variable.
 
@@ -1430,8 +1421,7 @@ Python Environment Management Objectives
 
 ##### to execute a directory as if it was a python program.
 
-Flask Objectives
-----------------
+## Flask Objectives
 
 ### Setup a new Flask project
 
@@ -1452,7 +1442,7 @@ Flask Objectives
     from flask import Flask
     app = Flask(__name__)
 
-##### Flask requires that you set an environment variable called FLASK\_APP before
+##### Flask requires that you set an environment variable called FLASK_APP before
 
 ##### it will run. It needs to be set to the name of your flask application script
 
@@ -1462,7 +1452,7 @@ Flask Objectives
 
 ##### Often you might use the .flaskenv file to load environment variables like
 
-##### FLASK\_APP and checking it into source control, and reserve the .env file for
+##### FLASK_APP and checking it into source control, and reserve the .env file for
 
 ##### secret information like passwords or database configurations.
 
@@ -1480,7 +1470,7 @@ Flask Objectives
 
 ##### configuration class in it. This class just needs properties for each
 
-##### configuration variable. Then you can import the class, and use the from\_object()
+##### configuration variable. Then you can import the class, and use the from_object()
 
 ##### method to load it into the app’s config dictionary.
 
@@ -1539,7 +1529,7 @@ Flask Objectives
 
 ### Use decorators run code before and after requests
 
-##### The <span class="citation" data-cites="app.before_request">@app.before\_request</span> and <span class="citation" data-cites="app.after_request">@app.after\_request</span> happen before and after
+##### The <span class="citation" data-cites="app.before_request">@app.before_request</span> and <span class="citation" data-cites="app.after_request">@app.after_request</span> happen before and after
 
 ##### every request to the server. Use them to do any initialization or cleanup
 
@@ -1555,7 +1545,7 @@ Flask Objectives
     print("after_request is running")
     return response
 
-##### <span class="citation" data-cites="app.before_first_request">@app.before\_first\_request</span> only happens once before the very first request
+##### <span class="citation" data-cites="app.before_first_request">@app.before_first_request</span> only happens once before the very first request
 
 ##### to the server
 
@@ -1649,7 +1639,7 @@ Flask Objectives
 
 ### Use WTForms to validate data in a POST with the built-in validators
 
-##### To validate a form with Flask-WTF you can call the validate\_on\_submit method
+##### To validate a form with Flask-WTF you can call the validate_on_submit method
 
 ##### on your form instance. This must be done inside of a route that handles POST
 
@@ -1666,7 +1656,7 @@ Flask Objectives
     # the form again.
     return
 
-##### It should be noted that validate\_on\_submit automatically reads the incoming
+##### It should be noted that validate_on_submit automatically reads the incoming
 
 ##### parameters from the request object in Flask, so there’s no reason to import it
 
@@ -1769,7 +1759,7 @@ Flask Objectives
 
 ### Configure and use sessions in Flask
 
-##### You must set a SECRET\_KEY property in your flask config for sessions to work.
+##### You must set a SECRET_KEY property in your flask config for sessions to work.
 
 ##### You can import session from flask.
 
@@ -1784,9 +1774,9 @@ Flask Objectives
     # to remove something from the session
     session.pop('key')
 
-### Use a Jinja template as return for a Flask route with render\_template
+### Use a Jinja template as return for a Flask route with render_template
 
-##### Use the render\_template method to render the template into a string,
+##### Use the render_template method to render the template into a string,
 
 ##### and then return it from your route. You can give it the HTML file and keyword
 
@@ -1810,8 +1800,7 @@ Flask Objectives
 
     {% include 'file.html' %}
 
-Psycopg Objectives
-------------------
+## Psycopg Objectives
 
 ### Connect to a PostgreSQL RDBMS using Psycopg
 
@@ -1883,8 +1872,7 @@ Psycopg Objectives
 
 ##### date date
 
-SQLAlchemy Objectives
----------------------
+## SQLAlchemy Objectives
 
 ### Describe how to create an “engine” that you will use to connect to a PostgreSQL database instance
 
@@ -2196,7 +2184,7 @@ SQLAlchemy Objectives
 
 ##### one - returns a single object or raises an exception
 
-##### one\_or\_none - returns a single object or None
+##### one_or_none - returns a single object or None
 
     ponies = Pony.query.all()
     for pony in ponies:
@@ -2239,7 +2227,7 @@ SQLAlchemy Objectives
 
 ### Configure SQLAlchemy using Flask-SQLAlchemy
 
-##### Create a SQLALCHEMYDATABASE\_URI property in your Flask app config
+##### Create a SQLALCHEMYDATABASE_URI property in your Flask app config
 
 ##### Then you can pass your app to SQLAlchemy for super simple apps
 
@@ -2253,7 +2241,7 @@ SQLAlchemy Objectives
     # So we can just pass our app to SQLAlchemy
     db = SQLAlchemy(app)
 
-##### However, if you’ve defined your db object BEFORE your app is created in another module, you must use the init\_app method on db to configure Flask-SQLAlchemy
+##### However, if you’ve defined your db object BEFORE your app is created in another module, you must use the init_app method on db to configure Flask-SQLAlchemy
 
     # models.py
     from flask_sqlalchemy import SQLAlchemy
@@ -2279,9 +2267,9 @@ SQLAlchemy Objectives
 
     Pony.query.get( 4 )
 
-##### It has some Flask specific things such as get\_or\_404 , which just throws a
+##### It has some Flask specific things such as get_or_404 , which just throws a
 
-##### 404 error if there’s no Pony coming back from the database. There is also a similar first\_or\_404 method.
+##### 404 error if there’s no Pony coming back from the database. There is also a similar first_or_404 method.
 
     Pony.query.get_or_404( 4 )
 
@@ -2290,8 +2278,7 @@ SQLAlchemy Objectives
     db.session.add(owner)
     db.session.commit()
 
-Alembic Learning Objectives
----------------------------
+## Alembic Learning Objectives
 
 ### Install Alembic into your project
 
@@ -2306,7 +2293,7 @@ Alembic Learning Objectives
 
     import os
 
-##### before run\_migrations\_offline add this line
+##### before run_migrations_offline add this line
 
     config.set_main_option("sqlalchemy.url", os.environ.get("DATABASE_URL"))
 
@@ -2344,9 +2331,9 @@ Alembic Learning Objectives
 
 ##### filenames to decide which migrations to run and which order they get run.
 
-##### Instead each revision has a revision hash, and each revision has a ‘down\_revision’
+##### Instead each revision has a revision hash, and each revision has a ‘down_revision’
 
-##### property that points at the previous revision. (except for the first revision which of course will have it’s down\_revision set to None)
+##### property that points at the previous revision. (except for the first revision which of course will have it’s down_revision set to None)
 
     revision = 'ddbf30c38165'
     down_revision = 'e363377eb6d7'
@@ -2355,7 +2342,7 @@ Alembic Learning Objectives
 
 ##### If two teammates both commit new revisions, then you will end up with a conflict
 
-##### in the down\_revisions. Your revision linked list might look like this:
+##### in the down_revisions. Your revision linked list might look like this:
 
     -- ae1027a6acf (Team A's most recent)
     /

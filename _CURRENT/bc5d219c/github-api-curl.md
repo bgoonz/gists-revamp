@@ -1,21 +1,18 @@
-Getting started with the REST API
-=================================
+# Getting started with the REST API
 
 Learn the foundations for using the REST API, starting with authentication and some endpoint examples.
 
-[In this article](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#in-this-article)
------------------------------------------------------------------------------------------------------------
+## [In this article](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#in-this-article)
 
--   [Overview](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#overview)
--   [Authentication](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication)
--   [Repositories](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#repositories)
--   [Issues](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#issues)
--   [Conditional requests](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#conditional-requests)
+- [Overview](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#overview)
+- [Authentication](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication)
+- [Repositories](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#repositories)
+- [Issues](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#issues)
+- [Conditional requests](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#conditional-requests)
 
 Let’s walk through core API concepts as we tackle some everyday use cases.
 
-[Overview](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#overview)
----------------------------------------------------------------------------------------------
+## [Overview](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#overview)
 
 Most applications will use an existing [wrapper library](https://docs.github.com/en/libraries) in the language of your choice, but it’s important to familiarize yourself with the underlying API HTTP methods first.
 
@@ -93,11 +90,10 @@ There are a few interesting bits in the response headers. As expected, the `Con
 
 Any headers beginning with `X-` are custom headers, and are not included in the HTTP spec. For example:
 
--   `X-GitHub-Media-Type` has a value of `github.v3`. This lets us know the [media type](https://docs.github.com/en/rest/overview/media-types) for the response. Media types have helped us version our output in API v3. We’ll talk more about that later.
--   Take note of the `X-RateLimit-Limit` and `X-RateLimit-Remaining` headers. This pair of headers indicate [how many requests a client can make](https://docs.github.com/en/rest#rate-limiting) in a rolling time period (typically an hour) and how many of those requests the client has already spent.
+- `X-GitHub-Media-Type` has a value of `github.v3`. This lets us know the [media type](https://docs.github.com/en/rest/overview/media-types) for the response. Media types have helped us version our output in API v3. We’ll talk more about that later.
+- Take note of the `X-RateLimit-Limit` and `X-RateLimit-Remaining` headers. This pair of headers indicate [how many requests a client can make](https://docs.github.com/en/rest#rate-limiting) in a rolling time period (typically an hour) and how many of those requests the client has already spent.
 
-[Authentication](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication)
----------------------------------------------------------------------------------------------------------
+## [Authentication](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication)
 
 Unauthenticated clients can make 60 requests per hour. To get more requests per hour, we’ll need to *authenticate*. In fact, doing anything interesting with the GitHub API requires [authentication](https://docs.github.com/en/rest#authentication).
 
@@ -150,8 +146,8 @@ Apps that need to read or write private information using the API on behalf of a
 
 OAuth uses *tokens*. Tokens provide two big features:
 
--   Revokable access: users can revoke authorization to third party apps at any time
--   Limited access: users can review the specific access that a token will provide before authorizing a third party app
+- Revokable access: users can revoke authorization to third party apps at any time
+- Limited access: users can review the specific access that a token will provide before authorizing a third party app
 
 Tokens should be created via a [web flow](https://docs.github.com/en/apps/building-oauth-apps/authorizing-oauth-apps). An application sends users to GitHub to log in. GitHub then presents a dialog indicating the name of the app, as well as the level of access the app has once it’s authorized by the user. After a user authorizes access, GitHub redirects the user back to the application:
 
@@ -161,8 +157,7 @@ Treat OAuth tokens like passwords! Don’t share them with other users or store
 
 Now that we’ve got the hang of making authenticated calls, let’s move along to the [Repositories API](https://docs.github.com/en/rest/reference/repos).
 
-[Repositories](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#repositories)
------------------------------------------------------------------------------------------------------
+## [Repositories](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#repositories)
 
 Almost any meaningful use of the GitHub API will involve some level of Repository information. We can [`GET` repository details](https://docs.github.com/en/rest/reference/repos#get-a-repository) in the same way we fetched user details earlier:
 
@@ -183,8 +178,8 @@ Or, we can [list repositories for an organization](https://docs.github.com/en/r
 
 The information returned from these calls will depend on which scopes our token has when we authenticate:
 
--   A token with `public_repo` [scope](https://docs.github.com/en/apps/building-oauth-apps/understanding-scopes-for-oauth-apps) returns a response that includes all public repositories we have access to see on github.com.
--   A token with `repo` [scope](https://docs.github.com/en/apps/building-oauth-apps/understanding-scopes-for-oauth-apps) returns a response that includes all public and private repositories we have access to see on GitHub.
+- A token with `public_repo` [scope](https://docs.github.com/en/apps/building-oauth-apps/understanding-scopes-for-oauth-apps) returns a response that includes all public repositories we have access to see on github.com.
+- A token with `repo` [scope](https://docs.github.com/en/apps/building-oauth-apps/understanding-scopes-for-oauth-apps) returns a response that includes all public and private repositories we have access to see on GitHub.
 
 As the [docs](https://docs.github.com/en/rest/reference/repos) indicate, these methods take a `type` parameter that can filter the repositories returned based on what type of access the user has for the repository. In this way, we can fetch only directly-owned repositories, organization repositories, or repositories the user collaborates on via a team.
 
@@ -221,8 +216,7 @@ Next, let’s fetch our newly created repository:
 
 Oh noes! Where did it go? Since we created the repository as *private*, we need to authenticate in order to see it. If you’re a grizzled HTTP user, you might expect a `403` instead. Since we don’t want to leak information about private repositories, the GitHub API returns a `404` in this case, as if to say “we can neither confirm nor deny the existence of this repository.”
 
-[Issues](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#issues)
------------------------------------------------------------------------------------------
+## [Issues](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#issues)
 
 The UI for Issues on GitHub aims to provide ‘just enough’ workflow while staying out of your way. With the GitHub [Issues API](https://docs.github.com/en/rest/reference/issues), you can pull data out or create issues from other tools to create a workflow that works for your team.
 
@@ -310,8 +304,7 @@ To create an issue, we need to be authenticated, so we’ll pass an OAuth token 
 
 The response gives us a couple of pointers to the newly created issue, both in the `Location` response header and the `url` field of the JSON response.
 
-[Conditional requests](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#conditional-requests)
----------------------------------------------------------------------------------------------------------------------
+## [Conditional requests](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#conditional-requests)
 
 A big part of being a good API citizen is respecting rate limits by caching information that hasn’t changed. The API supports [conditional requests](https://docs.github.com/en/rest#conditional-requests) and helps you do the right thing. Consider the first call we made to get defunkt’s profile:
 
@@ -331,8 +324,8 @@ The `304` status indicates that the resource hasn’t changed since the last t
 
 Woot! Now you know the basics of the GitHub API!
 
--   Basic & OAuth authentication
--   Fetching and creating repositories and issues
--   Conditional requests
+- Basic & OAuth authentication
+- Fetching and creating repositories and issues
+- Conditional requests
 
 Keep learning with the next API guide [Basics of Authentication](https://docs.github.com/en/guides/basics-of-authentication)!

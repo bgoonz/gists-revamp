@@ -1,24 +1,23 @@
-Table of Contents
------------------
+## Table of Contents
 
--   [Learning the Skills](#learning-the-skills)
--   [YouTube Channels](#youtube-channels)
-    -   [Companies](#Companies)
-    -   [Conferences](#Conferences)
-    -   [NEWS](#NEWS)
--   [Sharpening Your Skills](#sharpening-your-skills)
--   [Reverse Engineering, Buffer Overflow and Exploit Development](#reverse-engineering-buffer-overflow-and-exploit-development)
--   [Privilege Escalation](#privilege-escalation)
--   [Network Scanning / Reconnaissance](#network-scanning--reconnaissance)
--   [Malware Analysis](#malware-analysis)
--   [Vulnerable Web Application](#vulnerable-web-application)
--   [Vulnerable OS](#vulnerable-os)
--   [Exploits](#exploits)
--   [Forums](#forums)
--   [Archived Security Conference Videos](#archived-security-conference-videos)
--   [Online Communities](#online-communities)
--   [Online News Sources](#online-news-sources)
--   [Linux Penetration Testing OS](#linux-penetration-testing-os)
+- [Learning the Skills](#learning-the-skills)
+- [YouTube Channels](#youtube-channels)
+  - [Companies](#Companies)
+  - [Conferences](#Conferences)
+  - [NEWS](#NEWS)
+- [Sharpening Your Skills](#sharpening-your-skills)
+- [Reverse Engineering, Buffer Overflow and Exploit Development](#reverse-engineering-buffer-overflow-and-exploit-development)
+- [Privilege Escalation](#privilege-escalation)
+- [Network Scanning / Reconnaissance](#network-scanning--reconnaissance)
+- [Malware Analysis](#malware-analysis)
+- [Vulnerable Web Application](#vulnerable-web-application)
+- [Vulnerable OS](#vulnerable-os)
+- [Exploits](#exploits)
+- [Forums](#forums)
+- [Archived Security Conference Videos](#archived-security-conference-videos)
+- [Online Communities](#online-communities)
+- [Online News Sources](#online-news-sources)
+- [Linux Penetration Testing OS](#linux-penetration-testing-os)
 
 ### Learning the Skills
 

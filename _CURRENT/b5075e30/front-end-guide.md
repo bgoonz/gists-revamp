@@ -1,37 +1,35 @@
-Grab Front End Guide
-====================
+# Grab Front End Guide
 
 **Pre-requisites**
 
--   Good understanding of core programming concepts.
--   Comfortable with basic command line actions and familiarity with source code version control systems such as Git.
--   Experience in web development. Have built server-side rendered web apps using frameworks like Ruby on Rails, Django, Express, etc.
--   Understanding of how the web works. Familiarity with web protocols and conventions like HTTP and RESTful APIs.
+- Good understanding of core programming concepts.
+- Comfortable with basic command line actions and familiarity with source code version control systems such as Git.
+- Experience in web development. Have built server-side rendered web apps using frameworks like Ruby on Rails, Django, Express, etc.
+- Understanding of how the web works. Familiarity with web protocols and conventions like HTTP and RESTful APIs.
 
 ### Table of Contents
 
--   [Single-page Apps (SPAs)](#single-page-apps-spas)
--   [New-age JavaScript](#new-age-javascript)
--   [User Interface](#user-interface---react)
--   [State Management](#state-management---fluxredux)
--   [Coding with Style](#coding-with-style---css-modules)
--   [Maintainability](#maintainability)
-    -   [Testing](#testing---jest--enzyme)
-    -   [Linting JavaScript](#linting-javascript---eslint)
-    -   [Linting CSS](#linting-css---stylelint)
-    -   [Formatting Code](#formatting-code---prettier)
-    -   [Types](#types---flow)
--   [Build System](#build-system---webpack)
--   [Package Management](#package-management---yarn)
--   [Continuous Integration](#continuous-integration)
--   [Hosting and CDN](#hosting-and-cdn)
--   [Deployment](#deployment)
--   [Monitoring](#monitoring)
+- [Single-page Apps (SPAs)](#single-page-apps-spas)
+- [New-age JavaScript](#new-age-javascript)
+- [User Interface](#user-interface---react)
+- [State Management](#state-management---fluxredux)
+- [Coding with Style](#coding-with-style---css-modules)
+- [Maintainability](#maintainability)
+  - [Testing](#testing---jest--enzyme)
+  - [Linting JavaScript](#linting-javascript---eslint)
+  - [Linting CSS](#linting-css---stylelint)
+  - [Formatting Code](#formatting-code---prettier)
+  - [Types](#types---flow)
+- [Build System](#build-system---webpack)
+- [Package Management](#package-management---yarn)
+- [Continuous Integration](#continuous-integration)
+- [Hosting and CDN](#hosting-and-cdn)
+- [Deployment](#deployment)
+- [Monitoring](#monitoring)
 
 Certain topics can be skipped if you have prior experience in them.
 
-Single-page Apps (SPAs)
------------------------
+## Single-page Apps (SPAs)
 
 Web developers these days refer to the products they build as web apps, rather than websites. While there is no strict difference between the two terms, web apps tend to be highly interactive and dynamic, allowing the user to perform actions and receive a response for their action. Traditionally, the browser receives HTML from the server and renders it. When the user navigates to another URL, a full-page refresh is required and the server sends fresh new HTML for the new page. This is called server-side rendering.
 
@@ -39,15 +37,15 @@ However in modern SPAs, client-side rendering is used instead. The browser loads
 
 The benefits:
 
--   The app feels more responsive and users do not see the flash between page navigations due to full-page refreshes.
--   Fewer HTTP requests are made to the server, as the same assets do not have to be downloaded again for each page load.
--   Clear separation of the concerns between the client and the server; you can easily build new clients for different platforms (e.g. mobile, chatbots, smart watches) without having to modify the server code. You can also modify the technology stack on the client and server independently, as long as the API contract is not broken.
+- The app feels more responsive and users do not see the flash between page navigations due to full-page refreshes.
+- Fewer HTTP requests are made to the server, as the same assets do not have to be downloaded again for each page load.
+- Clear separation of the concerns between the client and the server; you can easily build new clients for different platforms (e.g. mobile, chatbots, smart watches) without having to modify the server code. You can also modify the technology stack on the client and server independently, as long as the API contract is not broken.
 
 The downsides:
 
--   Heavier initial page load due to loading of framework, app code, and assets required for multiple pages.<sup><a href="#fn1" id="ref1">1</a></sup>
--   There’s an additional step to be done on your server which is to configure it to route all requests to a single entry point and allow client-side routing to take over from there.
--   SPAs are reliant on JavaScript to render content, but not all search engines execute JavaScript during crawling, and they may see empty content on your page. This inadvertently hurts the Search Engine Optimization (SEO) of your app. <sup><a href="#fn2" id="ref2">2</a></sup>. However, most of the time, when you are building apps, SEO is not the most important factor, as not all the content needs to be indexable by search engines. To overcome this, you can either server-side render your app or use services such as [Prerender](https://prerender.io/) to “render your javascript in a browser, save the static HTML, and return that to the crawlers”.
+- Heavier initial page load due to loading of framework, app code, and assets required for multiple pages.<sup><a href="#fn1" id="ref1">1</a></sup>
+- There’s an additional step to be done on your server which is to configure it to route all requests to a single entry point and allow client-side routing to take over from there.
+- SPAs are reliant on JavaScript to render content, but not all search engines execute JavaScript during crawling, and they may see empty content on your page. This inadvertently hurts the Search Engine Optimization (SEO) of your app. <sup><a href="#fn2" id="ref2">2</a></sup>. However, most of the time, when you are building apps, SEO is not the most important factor, as not all the content needs to be indexable by search engines. To overcome this, you can either server-side render your app or use services such as [Prerender](https://prerender.io/) to “render your javascript in a browser, save the static HTML, and return that to the crawlers”.
 
 While traditional server-side rendered apps are still a viable option, a clear client-server separation scales better for larger engineering teams, as the client and server code can be developed and released independently. This is especially so at Grab when we have multiple client apps hitting the same API server.
 
@@ -57,12 +55,11 @@ JavaScript frameworks have been created to provide higher-level abstractions ove
 
 #### Study Links
 
--   [Single Page App: advantages and disadvantages](http://stackoverflow.com/questions/21862054/single-page-app-advantages-and-disadvantages)
--   [The (R)Evolution of Web Development](http://blog.isquaredsoftware.com/presentations/2016-10-revolution-of-web-dev/)
--   [Here’s Why Client Side Rendering Won](https://medium.freecodecamp.com/heres-why-client-side-rendering-won-46a349fadb52)
+- [Single Page App: advantages and disadvantages](http://stackoverflow.com/questions/21862054/single-page-app-advantages-and-disadvantages)
+- [The (R)Evolution of Web Development](http://blog.isquaredsoftware.com/presentations/2016-10-revolution-of-web-dev/)
+- [Here’s Why Client Side Rendering Won](https://medium.freecodecamp.com/heres-why-client-side-rendering-won-46a349fadb52)
 
-New-age JavaScript
-------------------
+## New-age JavaScript
 
 Before you dive into the various aspects of building a JavaScript web app, it is important to get familiar with the language of the web - JavaScript, or ECMAScript. JavaScript is an incredibly versatile language which you can also use to build [web servers](https://nodejs.org/en/), [native mobile apps](https://facebook.github.io/react-native/) and [desktop apps](https://electron.atom.io/).
 
@@ -76,15 +73,14 @@ Spend a day or two revising ES5 and exploring ES2015. The more heavily used feat
 
 #### Study Links
 
--   [Learn ES5 on Codecademy](https://www.codecademy.com/learn/learn-javascript)
--   [Learn ES6 on Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
--   [Learn ES2015 on Babel](https://babeljs.io/learn-es2015/)
--   [ES6 Katas](http://es6katas.org/)
--   [You Don’t Know JS](https://github.com/getify/You-Dont-Know-JS) (Advanced content, optional for beginners)
--   [Answers to Front End Job Interview Questions — JavaScript](https://github.com/yangshun/front-end-interview-handbook/blob/master/questions/javascript-questions.md)
+- [Learn ES5 on Codecademy](https://www.codecademy.com/learn/learn-javascript)
+- [Learn ES6 on Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
+- [Learn ES2015 on Babel](https://babeljs.io/learn-es2015/)
+- [ES6 Katas](http://es6katas.org/)
+- [You Don’t Know JS](https://github.com/getify/You-Dont-Know-JS) (Advanced content, optional for beginners)
+- [Answers to Front End Job Interview Questions — JavaScript](https://github.com/yangshun/front-end-interview-handbook/blob/master/questions/javascript-questions.md)
 
-User Interface - React
-----------------------
+## User Interface - React
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/react-logo.svg" alt="React Logo" width="256" />
 
@@ -92,18 +88,18 @@ If any JavaScript project has taken the front end ecosystem by storm in recent y
 
 React brings about many radical ideas and encourages developers to [rethink best practices](https://www.youtube.com/watch?v=DgVS-zXgMTk). For many years, web developers were taught that it was a good practice to write HTML, JavaScript and CSS separately. React does the exact opposite, and encourages that you write your HTML and [CSS in your JavaScript](https://speakerdeck.com/vjeux/react-css-in-js) instead. This sounds like a crazy idea at first, but after trying it out, it actually isn’t as weird as it sounds initially. Reason being the front end development scene is shifting towards a paradigm of component-based development. The features of React:
 
--   **Declarative** - You describe what you want to see in your view and not how to achieve it. In the jQuery days, developers would have to come up with a series of steps to manipulate the DOM to get from one app state to the next. In React, you simply change the state within the component and the view will update itself according to the state. It is also easy to determine how the component will look like just by looking at the markup in the `render()` method.
+- **Declarative** - You describe what you want to see in your view and not how to achieve it. In the jQuery days, developers would have to come up with a series of steps to manipulate the DOM to get from one app state to the next. In React, you simply change the state within the component and the view will update itself according to the state. It is also easy to determine how the component will look like just by looking at the markup in the `render()` method.
 
--   **Functional** - The view is a pure function of `props` and `state`. In most cases, a React component is defined by `props` (external parameters) and `state` (internal data). For the same `props` and `state`, the same view is produced. Pure functions are easy to test, and the same goes for functional components. Testing in React is made easy because a component’s interfaces are well-defined and you can test the component by supplying different `props` and `state` to it and comparing the rendered output.
+- **Functional** - The view is a pure function of `props` and `state`. In most cases, a React component is defined by `props` (external parameters) and `state` (internal data). For the same `props` and `state`, the same view is produced. Pure functions are easy to test, and the same goes for functional components. Testing in React is made easy because a component’s interfaces are well-defined and you can test the component by supplying different `props` and `state` to it and comparing the rendered output.
 
--   **Maintainable** - Writing your view in a component-based fashion encourages reusability. We find that defining a component’s `propTypes` make React code self-documenting as the reader can know clearly what is needed to use that component. Lastly, your view and logic is self-contained within the component, and should not be affected nor affect other components. That makes it easy to shift components around during large-scale refactoring, as long as the same `props` are supplied to the component.
+- **Maintainable** - Writing your view in a component-based fashion encourages reusability. We find that defining a component’s `propTypes` make React code self-documenting as the reader can know clearly what is needed to use that component. Lastly, your view and logic is self-contained within the component, and should not be affected nor affect other components. That makes it easy to shift components around during large-scale refactoring, as long as the same `props` are supplied to the component.
 
--   **High Performance** - You might have heard that React uses a virtual DOM (not to be confused with [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM)) and it re-renders everything when there is a change in state. Why is there a need for a virtual DOM? While modern JavaScript engines are fast, reading from and writing to the DOM is slow. React keeps a lightweight virtual representation of the DOM in memory. Re-rendering everything is a misleading term. In React it actually refers to re-rendering the in-memory representation of the DOM, not the actual DOM itself. When there’s a change in the underlying data of the component, a new virtual representation is created, and compared against the previous representation. The difference (minimal set of changes required) is then patched to the real browser DOM.
+- **High Performance** - You might have heard that React uses a virtual DOM (not to be confused with [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM)) and it re-renders everything when there is a change in state. Why is there a need for a virtual DOM? While modern JavaScript engines are fast, reading from and writing to the DOM is slow. React keeps a lightweight virtual representation of the DOM in memory. Re-rendering everything is a misleading term. In React it actually refers to re-rendering the in-memory representation of the DOM, not the actual DOM itself. When there’s a change in the underlying data of the component, a new virtual representation is created, and compared against the previous representation. The difference (minimal set of changes required) is then patched to the real browser DOM.
 
--   **Ease of Learning** - Learning React is pretty simple. The React API surface is relatively small compared to [this](https://angular.io/docs/ts/latest/api/); there are only a few APIs to learn and they do not change often. The React community is one of the largest, and along with that comes a vibrant ecosystem of tools, open-sourced UI components, and a ton of great resources online to get you started on learning React.
+- **Ease of Learning** - Learning React is pretty simple. The React API surface is relatively small compared to [this](https://angular.io/docs/ts/latest/api/); there are only a few APIs to learn and they do not change often. The React community is one of the largest, and along with that comes a vibrant ecosystem of tools, open-sourced UI components, and a ton of great resources online to get you started on learning React.
 
--   **Developer Experience** - There are a number of tools that improves the development experience with React. [React Developer Tools](https://github.com/facebook/react-devtools) is a browser extension that allows you to inspect your component, view and manipulate its `props` and `state`. [Hot reloading](https://github.com/gaearon/react-hot-loader) with webpack allows you to view changes to your code in your browser, without you having to refresh the browser. Front end development involves a lot of tweaking code, saving and then refreshing the browser. Hot reloading helps you by eliminating the last step. When there are library updates, Facebook provides [codemod scripts](https://github.com/reactjs/react-codemod) to help you migrate your code to the new APIs. This makes the upgrading process relatively pain-free. Kudos to the Facebook team for their dedication in making the development experience with React great.  
-    ![React Devtools Demo](images/react-devtools-demo.gif)
+- **Developer Experience** - There are a number of tools that improves the development experience with React. [React Developer Tools](https://github.com/facebook/react-devtools) is a browser extension that allows you to inspect your component, view and manipulate its `props` and `state`. [Hot reloading](https://github.com/gaearon/react-hot-loader) with webpack allows you to view changes to your code in your browser, without you having to refresh the browser. Front end development involves a lot of tweaking code, saving and then refreshing the browser. Hot reloading helps you by eliminating the last step. When there are library updates, Facebook provides [codemod scripts](https://github.com/reactjs/react-codemod) to help you migrate your code to the new APIs. This makes the upgrading process relatively pain-free. Kudos to the Facebook team for their dedication in making the development experience with React great.  
+  ![React Devtools Demo](images/react-devtools-demo.gif)
 
 Over the years, new view libraries that are even more performant than React have emerged. React may not be the fastest library out there, but in terms of the ecosystem, overall usage experience and benefits, it is still one of the greatest. Facebook is also channeling efforts into making React even faster with a [rewrite of the underlying reconciliation algorithm](https://github.com/acdlite/react-fiber-architecture). The concepts that React introduced has taught us how to write better code, more maintainable web apps and made us better engineers. We like that.
 
@@ -115,40 +111,39 @@ React is a library, not a framework, and does not deal with the layers below the
 
 #### Study Links
 
--   [React Official Tutorial](https://facebook.github.io/react/tutorial/tutorial.html)
--   [Egghead Course - Build Your First Production Quality React App](https://egghead.io/courses/build-your-first-production-quality-react-app)
--   [Simple React Development in 2017](https://hackernoon.com/simple-react-development-in-2017-113bd563691f)
--   [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.5iexphyg5)
+- [React Official Tutorial](https://facebook.github.io/react/tutorial/tutorial.html)
+- [Egghead Course - Build Your First Production Quality React App](https://egghead.io/courses/build-your-first-production-quality-react-app)
+- [Simple React Development in 2017](https://hackernoon.com/simple-react-development-in-2017-113bd563691f)
+- [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.5iexphyg5)
 
 #### Alternatives
 
--   [Angular](https://angular.io/)
--   [Ember](https://www.emberjs.com/)
--   [Vue](https://vuejs.org/)
--   [Cycle](https://cycle.js.org/)
+- [Angular](https://angular.io/)
+- [Ember](https://www.emberjs.com/)
+- [Vue](https://vuejs.org/)
+- [Cycle](https://cycle.js.org/)
 
-State Management - Flux/Redux
------------------------------
+## State Management - Flux/Redux
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/redux-logo.svg" alt="Redux Logo" width="256" />
 
 As your app grows bigger, you may find that the app structure becomes a little messy. Components throughout the app may have to share and display common data but there is no elegant way to handle that in React. After all, React is just the view layer, it does not dictate how you structure the other layers of your app, such as the model and the controller, in traditional MVC paradigms. In an effort to solve this, Facebook invented Flux, an app architecture that complements React’s composable view components by utilizing a unidirectional data flow. Read more about how Flux works [here](https://facebook.github.io/flux/docs/in-depth-overview.html). In summary, the Flux pattern has the following characteristics:
 
--   **Unidirectional data flow** - Makes the app more predictable as updates can be tracked easily.
--   **Separation of concerns** - Each part in the Flux architecture has clear responsibilities and are highly decoupled.
--   **Works well with declarative programming** - The store can send updates to the view without specifying how to transition views between states.
+- **Unidirectional data flow** - Makes the app more predictable as updates can be tracked easily.
+- **Separation of concerns** - Each part in the Flux architecture has clear responsibilities and are highly decoupled.
+- **Works well with declarative programming** - The store can send updates to the view without specifying how to transition views between states.
 
 As Flux is not a framework per se, developers have tried to come up with many implementations of the Flux pattern. Eventually, a clear winner emerged, which was [Redux](http://redux.js.org/). Redux combines the ideas from Flux, [Command pattern](https://www.wikiwand.com/en/Command_pattern) and [Elm architecture](https://guide.elm-lang.org/architecture/) and is the de facto state management library developers use with React these days. Its core concepts are:
 
--   App **state** is described by a single plain old JavaScript object (POJO).
--   Dispatch an **action** (also a POJO) to modify the state.
--   **Reducer** is a pure function that takes in current state and action to produce a new state.
+- App **state** is described by a single plain old JavaScript object (POJO).
+- Dispatch an **action** (also a POJO) to modify the state.
+- **Reducer** is a pure function that takes in current state and action to produce a new state.
 
 The concepts sound simple, but they are really powerful as they enable apps to:
 
--   Have their state rendered on the server, booted up on the client.
--   Trace, log and backtrack changes in the whole app.
--   Implement undo/redo functionality easily.
+- Have their state rendered on the server, booted up on the client.
+- Trace, log and backtrack changes in the whole app.
+- Implement undo/redo functionality easily.
 
 The creator of Redux, [Dan Abramov](https://github.com/gaearon), has taken great care in writing up detailed documentation for Redux, along with creating comprehensive video tutorials for learning [basic](https://egghead.io/courses/getting-started-with-redux) and [advanced](https://egghead.io/courses/building-react-applications-with-idiomatic-redux) Redux. They are extremely helpful resources for learning Redux.
 
@@ -156,11 +151,11 @@ The creator of Redux, [Dan Abramov](https://github.com/gaearon), has taken great
 
 While Redux does not necessarily have to be used with React, it is highly recommended as they play very well with each other. React and Redux have a lot of ideas and traits in common:
 
--   **Functional composition paradigm** - React composes views (pure functions) while Redux composes pure reducers (also pure functions). Output is predictable given the same set of input.
--   **Easy To Reason About** - You may have heard this term many times but what does it actually mean? We interpret it as having control and understanding over our code - Our code behaves in ways we expect it to, and when there are problems, we can find them easily. Through our experience, React and Redux makes debugging simpler. As the data flow is unidirectional, tracing the flow of data (server responses, user input events) is easier and it is straightforward to determine which layer the problem occurs in.
--   **Layered Structure** - Each layer in the app / Flux architecture is a pure function, and has clear responsibilities. It is relatively easy to write tests for pure functions. You have to centralize changes to your app within the reducer, and the only way to trigger a change is to dispatch an action.
--   **Development Experience** - A lot of effort has gone into creating tools to help in debugging and inspecting the app while development, such as [Redux DevTools](https://github.com/gaearon/redux-devtools).  
-    ![Redux Devtools Demo](images/redux-devtools-demo.gif)
+- **Functional composition paradigm** - React composes views (pure functions) while Redux composes pure reducers (also pure functions). Output is predictable given the same set of input.
+- **Easy To Reason About** - You may have heard this term many times but what does it actually mean? We interpret it as having control and understanding over our code - Our code behaves in ways we expect it to, and when there are problems, we can find them easily. Through our experience, React and Redux makes debugging simpler. As the data flow is unidirectional, tracing the flow of data (server responses, user input events) is easier and it is straightforward to determine which layer the problem occurs in.
+- **Layered Structure** - Each layer in the app / Flux architecture is a pure function, and has clear responsibilities. It is relatively easy to write tests for pure functions. You have to centralize changes to your app within the reducer, and the only way to trigger a change is to dispatch an action.
+- **Development Experience** - A lot of effort has gone into creating tools to help in debugging and inspecting the app while development, such as [Redux DevTools](https://github.com/gaearon/redux-devtools).  
+  ![Redux Devtools Demo](images/redux-devtools-demo.gif)
 
 Your app will likely have to deal with async calls like making remote API requests. [redux-thunk](https://github.com/gaearon/redux-thunk) and [redux-saga](https://github.com/redux-saga/redux-saga) were created to solve those problems. They may take some time to understand as they require understanding of functional programming and generators. Our advice is to deal with it only when you need it.
 
@@ -170,19 +165,18 @@ Your app will likely have to deal with async calls like making remote API reques
 
 #### Study Links
 
--   [Flux Homepage](http://facebook.github.io/flux)
--   [Redux Homepage](http://redux.js.org/)
--   [Egghead Course - Getting Started with Redux](https://egghead.io/courses/getting-started-with-redux)
--   [Egghead Course - Build React Apps with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux)
--   [React Redux Links](https://github.com/markerikson/react-redux-links)
--   [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+- [Flux Homepage](http://facebook.github.io/flux)
+- [Redux Homepage](http://redux.js.org/)
+- [Egghead Course - Getting Started with Redux](https://egghead.io/courses/getting-started-with-redux)
+- [Egghead Course - Build React Apps with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux)
+- [React Redux Links](https://github.com/markerikson/react-redux-links)
+- [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
 
 #### Alternatives
 
--   [MobX](https://github.com/mobxjs/mobx)
+- [MobX](https://github.com/mobxjs/mobx)
 
-Coding with Style - CSS Modules
--------------------------------
+## Coding with Style - CSS Modules
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/css-modules-logo.svg" alt="CSS Modules Logo" width="256" />
 
@@ -198,28 +192,26 @@ If you are a total beginner to CSS, Codecademy’s [HTML & CSS course](https://w
 
 #### Study Links
 
--   [Learn HTML & CSS course on Codecademy](https://www.codecademy.com/learn/learn-html-css)
--   [Intro to HTML/CSS on Khan Academy](https://www.khanacademy.org/computing/computer-programming/html-css)
--   [SMACSS](https://smacss.com/)
--   [BEM](http://getbem.com/introduction/)
--   [SUIT CSS](http://suitcss.github.io/)
--   [CSS Modules Specification](https://github.com/css-modules/css-modules)
--   [Sass Homepage](http://sass-lang.com/)
--   [Answers to Front End Job Interview Questions — HTML](https://github.com/yangshun/tech-interview-handbook/blob/master/front-end/interview-questions.md#html-questions)
--   [Answers to Front End Job Interview Questions — CSS](https://github.com/yangshun/tech-interview-handbook/blob/master/front-end/interview-questions.md#css-questions)
+- [Learn HTML & CSS course on Codecademy](https://www.codecademy.com/learn/learn-html-css)
+- [Intro to HTML/CSS on Khan Academy](https://www.khanacademy.org/computing/computer-programming/html-css)
+- [SMACSS](https://smacss.com/)
+- [BEM](http://getbem.com/introduction/)
+- [SUIT CSS](http://suitcss.github.io/)
+- [CSS Modules Specification](https://github.com/css-modules/css-modules)
+- [Sass Homepage](http://sass-lang.com/)
+- [Answers to Front End Job Interview Questions — HTML](https://github.com/yangshun/tech-interview-handbook/blob/master/front-end/interview-questions.md#html-questions)
+- [Answers to Front End Job Interview Questions — CSS](https://github.com/yangshun/tech-interview-handbook/blob/master/front-end/interview-questions.md#css-questions)
 
 #### Alternatives
 
--   [JSS](https://github.com/cssinjs/jss)
--   [Styled Components](https://github.com/styled-components/styled-components)
+- [JSS](https://github.com/cssinjs/jss)
+- [Styled Components](https://github.com/styled-components/styled-components)
 
-Maintainability
----------------
+## Maintainability
 
 Code is read more frequently than it is written. This is especially true at Grab, where the team size is large and we have multiple engineers working across multiple projects. We highly value readability, maintainability and stability of the code and there are a few ways to achieve that: “Extensive testing”, “Consistent coding style” and “Typechecking”. Also when you are in a team, sharing same practices becomes really important. Check out these [JavaScript Project Guidelines](https://github.com/wearehive/project-guidelines) for instance.
 
-Testing - Jest + Enzyme
------------------------
+## Testing - Jest + Enzyme
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/jest-logo.svg" alt="Jest Logo" width="164" />
 
@@ -237,18 +229,17 @@ The documentation for Jest and Enzyme are pretty concise, and it should be suffi
 
 #### Study Links
 
--   [Jest Homepage](http://facebook.github.io/jest/)
--   [Testing React Applications with Jest](https://auth0.com/blog/testing-react-applications-with-jest/)
--   [Enzyme Homepage](http://airbnb.io/enzyme/)
--   [Enzyme: JavaScript Testing utilities for React](https://medium.com/airbnb-engineering/enzyme-javascript-testing-utilities-for-react-a417e5e5090f)
+- [Jest Homepage](http://facebook.github.io/jest/)
+- [Testing React Applications with Jest](https://auth0.com/blog/testing-react-applications-with-jest/)
+- [Enzyme Homepage](http://airbnb.io/enzyme/)
+- [Enzyme: JavaScript Testing utilities for React](https://medium.com/airbnb-engineering/enzyme-javascript-testing-utilities-for-react-a417e5e5090f)
 
 #### Alternatives
 
--   [AVA](https://github.com/avajs/ava)
--   [Karma](https://karma-runner.github.io/)
+- [AVA](https://github.com/avajs/ava)
+- [Karma](https://karma-runner.github.io/)
 
-Linting JavaScript - ESLint
----------------------------
+## Linting JavaScript - ESLint
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/eslint-logo.svg" alt="ESLint Logo" width="256" />
 
@@ -260,17 +251,16 @@ For the most part, using ESLint is as simple as tweaking a configuration file in
 
 #### Study Links
 
--   [ESLint Homepage](http://eslint.org/)
--   [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [ESLint Homepage](http://eslint.org/)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
 #### Alternatives
 
--   [Standard](https://github.com/standard/standard)
--   [JSHint](http://jshint.com/)
--   [XO](https://github.com/xojs/xo)
+- [Standard](https://github.com/standard/standard)
+- [JSHint](http://jshint.com/)
+- [XO](https://github.com/xojs/xo)
 
-Linting CSS - stylelint
------------------------
+## Linting CSS - stylelint
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/stylelint-logo.svg" alt="stylelint Logo" width="256" />
 
@@ -286,16 +276,15 @@ One downside of stylelint is that the autofix feature is not fully mature yet, a
 
 #### Study Links
 
--   [stylelint Homepage](https://stylelint.io/)
--   [Lint your CSS with stylelint](https://css-tricks.com/stylelint/)
+- [stylelint Homepage](https://stylelint.io/)
+- [Lint your CSS with stylelint](https://css-tricks.com/stylelint/)
 
 #### Alternatives
 
--   [Sass Lint](https://github.com/sasstools/sass-lint)
--   [CSS Lint](http://csslint.net/)
+- [Sass Lint](https://github.com/sasstools/sass-lint)
+- [CSS Lint](http://csslint.net/)
 
-Formatting Code - Prettier
---------------------------
+## Formatting Code - Prettier
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/prettier-logo.png" alt="Prettier Logo" width="256" />
 
@@ -309,12 +298,11 @@ Note that Prettier only enforces coding style, but does not check for logic erro
 
 #### Study Links
 
--   [Prettier Homepage](https://prettier.io/)
--   [Prettier GitHub repo](https://github.com/prettier/prettier)
--   [Comparison between tools that allow you to use ESLint and Prettier together](https://gist.github.com/yangshun/318102f525ec68033bf37ac4a010eb0c)
+- [Prettier Homepage](https://prettier.io/)
+- [Prettier GitHub repo](https://github.com/prettier/prettier)
+- [Comparison between tools that allow you to use ESLint and Prettier together](https://gist.github.com/yangshun/318102f525ec68033bf37ac4a010eb0c)
 
-Types - Flow
-------------
+## Types - Flow
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/flow-logo.png" alt="Flow Logo" width="256" />
 
@@ -334,15 +322,14 @@ Flow recently revamped their homepage and it’s pretty neat now!
 
 #### Study Links
 
--   [Flow Homepage](https://flow.org/)
--   [TypeScript vs Flow](https://github.com/niieani/typescript-vs-flowtype)
+- [Flow Homepage](https://flow.org/)
+- [TypeScript vs Flow](https://github.com/niieani/typescript-vs-flowtype)
 
 #### Alternatives
 
--   [TypeScript](https://www.typescriptlang.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-Build System - webpack
-----------------------
+## Build System - webpack
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/webpack-logo.svg" alt="webpack Logo" width="256" />
 
@@ -354,17 +341,16 @@ We have found the [webpack walkthrough](https://survivejs.com/webpack/foreword/)
 
 #### Study Links
 
--   [webpack Homepage](https://webpack.js.org/)
--   [SurviveJS - Webpack: From apprentice to master](https://survivejs.com/webpack/foreword/)
+- [webpack Homepage](https://webpack.js.org/)
+- [SurviveJS - Webpack: From apprentice to master](https://survivejs.com/webpack/foreword/)
 
 #### Alternatives
 
--   [Rollup](https://rollupjs.org/)
--   [Browserify](http://browserify.org/)
--   [Parcel](https://parceljs.org/)
+- [Rollup](https://rollupjs.org/)
+- [Browserify](http://browserify.org/)
+- [Parcel](https://parceljs.org/)
 
-Package Management - Yarn
--------------------------
+## Package Management - Yarn
 
 <img src="https://cdn.rawgit.com/grab/front-end-guide/master/images/yarn-logo.png" alt="Yarn Logo" width="256" />
 
@@ -382,39 +368,37 @@ npm@5.0.0 was [released in May 2017](https://github.com/npm/npm/releases/tag/v5.
 
 #### Study Links
 
--   [Yarn Homepage](https://yarnpkg.com/)
--   [Yarn: A new package manager for JavaScript](https://code.facebook.com/posts/1840075619545360)
+- [Yarn Homepage](https://yarnpkg.com/)
+- [Yarn: A new package manager for JavaScript](https://code.facebook.com/posts/1840075619545360)
 
 #### Alternatives
 
--   [Good old npm](https://github.com/npm/npm/releases/tag/v5.0.0)
+- [Good old npm](https://github.com/npm/npm/releases/tag/v5.0.0)
 
-Continuous Integration
-----------------------
+## Continuous Integration
 
 We used [Travis CI](https://travis-ci.com/) for our continuous integration (CI) pipeline. Travis is a highly popular CI on Github and its [build matrix](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix) feature is useful for repositories which contain multiple projects like Grab’s. We configured Travis to do the following:
 
--   Run linting for the project.
--   Run unit tests for the project.
--   If the tests pass:
-    -   Test coverage generated by Jest is uploaded to [Codecov](https://codecov.io/).
-    -   Generate a production bundle with webpack into a `build` directory.
-    -   `tar` the `build` directory as `<hash>.tar` and upload it to an S3 bucket which stores all our tar builds.
--   Post a notification to Slack to inform about the Travis build result.
+- Run linting for the project.
+- Run unit tests for the project.
+- If the tests pass:
+  - Test coverage generated by Jest is uploaded to [Codecov](https://codecov.io/).
+  - Generate a production bundle with webpack into a `build` directory.
+  - `tar` the `build` directory as `<hash>.tar` and upload it to an S3 bucket which stores all our tar builds.
+- Post a notification to Slack to inform about the Travis build result.
 
 #### Study Links
 
--   [Travis Homepage](https://travis-ci.com/)
--   [Codecov Homepage](https://codecov.io/)
+- [Travis Homepage](https://travis-ci.com/)
+- [Codecov Homepage](https://codecov.io/)
 
 #### Alternatives
 
--   [Jenkins](https://jenkins.io/)
--   [CircleCI](https://circleci.com/)
--   [GitLab CI/CD](https://about.gitlab.com/product/continuous-integration/)
+- [Jenkins](https://jenkins.io/)
+- [CircleCI](https://circleci.com/)
+- [GitLab CI/CD](https://about.gitlab.com/product/continuous-integration/)
 
-Hosting and CDN
----------------
+## Hosting and CDN
 
 Traditionally, web servers that receive a request for a webpage will render the contents on the server, and return a HTML page with dynamic content meant for the requester. This is known as server-side rendering. As mentioned earlier in the section on Single-page Apps, modern web applications do not involve server-side rendering, and it is sufficient to use a web server that serves static asset files. Nginx and Apache are possible options and not much configuration is required to get things up and runnning. The caveat is that the web server will have to be configured to route all requests to a single entry point and allow client-side routing to take over. The flow for front end routing goes like this:
 
@@ -434,16 +418,15 @@ Other than hosting the website, we also use S3 to host the build `.tar` files ge
 
 #### Study Links
 
--   [Amazon S3 Homepage](https://aws.amazon.com/s3/)
--   [Hosting a Static Website on Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
+- [Amazon S3 Homepage](https://aws.amazon.com/s3/)
+- [Hosting a Static Website on Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
 
 #### Alternatives
 
--   [Google Cloud Platform](https://cloud.google.com/storage/docs/hosting-static-website)
--   [Now](https://zeit.co/now)
+- [Google Cloud Platform](https://cloud.google.com/storage/docs/hosting-static-website)
+- [Now](https://zeit.co/now)
 
-Deployment
-----------
+## Deployment
 
 The last step in shipping the product to our users is deployment. We used [Ansible Tower](https://www.ansible.com/tower) which is a powerful automation software that enables us to deploy our builds easily.
 
@@ -460,14 +443,13 @@ This whole process is done under 30 seconds and using Tower has made deployments
 
 #### Study Links
 
--   [Ansible Tower Homepage](https://www.ansible.com/tower)
+- [Ansible Tower Homepage](https://www.ansible.com/tower)
 
 #### Alternatives
 
--   [Jenkins](https://jenkins.io/)
+- [Jenkins](https://jenkins.io/)
 
-Monitoring
-----------
+## Monitoring
 
 After shipping the product, you would also want to monitor it for any errors.
 
@@ -475,4 +457,4 @@ Apart from network level monitoring from our CDN service provider and hosting pr
 
 #### Study Links
 
--   [Sentry Homepage](https://sentry.io/)
+- [Sentry Homepage](https://sentry.io/)

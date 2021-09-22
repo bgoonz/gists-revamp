@@ -1,4 +1,4 @@
-Unlike the lifecycle methods above (which React calls for you), the methods below are the methods *you* can call from your components.
+Unlike the lifecycle methods above (which React calls for you), the methods below are the methods _you_ can call from your components.
 
 There are just two of them: `setState()` and `forceUpdate()`.
 
@@ -8,7 +8,7 @@ There are just two of them: `setState()` and `forceUpdate()`.
 
 `setState()` enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses.
 
-Think of `setState()` as a *request* rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. React does not guarantee that the state changes are applied immediately.
+Think of `setState()` as a _request_ rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. React does not guarantee that the state changes are applied immediately.
 
 `setState()` does not always immediately update the component. It may batch or defer the update until later. This makes reading `this.state` right after calling `setState()` a potential pitfall. Instead, use `componentDidUpdate` or a `setState` callback (`setState(updater, callback)`), either of which are guaranteed to fire after the update has been applied. If you need to set the state based on the previous state, read about the `updater` argument below.
 

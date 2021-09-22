@@ -1,72 +1,70 @@
-Ultimate Resource List
-======================
+# Ultimate Resource List
 
--   **[CLI Tools](#cli-tools-toc)**
--   **[GUI Tools](#gui-tools-toc)**
--   **[Web Tools](#web-tools-toc)**
--   **[Systems/Services](#systemsservices-toc)**
--   **[Networks](#networks-toc)**
--   **[Containers/Orchestration](#containersorchestration-toc)**
--   **[Manuals/Howtos/Tutorials](#manualshowtostutorials-toc)**
--   **[Inspiring Lists](#inspiring-lists-toc)**
--   **[Blogs/Podcasts/Videos](#blogspodcastsvideos-toc)**
--   **[Hacking/Penetration Testing](#hackingpenetration-testing-toc)**
--   **[Your daily knowledge and news](#your-daily-knowledge-and-news-toc)**
--   **[Other Cheat Sheets](#other-cheat-sheets-toc)**
--   **[One-liners](#one-liners-toc)**
--   **[Shell functions](#shell-functions-toc)**
+- **[CLI Tools](#cli-tools-toc)**
+- **[GUI Tools](#gui-tools-toc)**
+- **[Web Tools](#web-tools-toc)**
+- **[Systems/Services](#systemsservices-toc)**
+- **[Networks](#networks-toc)**
+- **[Containers/Orchestration](#containersorchestration-toc)**
+- **[Manuals/Howtos/Tutorials](#manualshowtostutorials-toc)**
+- **[Inspiring Lists](#inspiring-lists-toc)**
+- **[Blogs/Podcasts/Videos](#blogspodcastsvideos-toc)**
+- **[Hacking/Penetration Testing](#hackingpenetration-testing-toc)**
+- **[Your daily knowledge and news](#your-daily-knowledge-and-news-toc)**
+- **[Other Cheat Sheets](#other-cheat-sheets-toc)**
+- **[One-liners](#one-liners-toc)**
+- **[Shell functions](#shell-functions-toc)**
 
-:trident:  
------------
+## :trident:  
 
 #### CLI Tools  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: Shells
+##### :black_small_square: Shells
 
-  ✅ [**GNU Bash**](https://www.gnu.org/software/bash/) - is an sh-compatible shell that incorporates useful features from the Korn shell and C shell.  
+✅ [**GNU Bash**](https://www.gnu.org/software/bash/) - is an sh-compatible shell that incorporates useful features from the Korn shell and C shell.  
   ✅ [**Zsh**](https://www.zsh.org/) - is a shell designed for interactive use, although it is also a powerful scripting language.  
   ✅ [**tclsh**](https://tcl-lang.org/) - is a very powerful cross-platform shell, suitable for a huge range of uses.  
   ✅ [**bash-it**](https://github.com/Bash-it/bash-it) - is a framework for using, developing and maintaining shell scripts and custom commands.  
   ✅ [**Oh My ZSH!**](https://ohmyz.sh/) - is the best framework for managing your Zsh configuration.  
   ✅ [**Oh My Fish**](https://github.com/oh-my-fish/oh-my-fish) - the Fishshell framework.  
   ✅ [**Starship**](https://github.com/starship/starship) - the cross-shell prompt written in Rust.  
-  ✅ [**powerlevel10k**](https://github.com/romkatv/powerlevel10k) - is a fast reimplementation of Powerlevel9k ZSH theme.  
+  ✅ [**powerlevel10k**](https://github.com/romkatv/powerlevel10k) - is a fast reimplementation of Powerlevel9k ZSH theme.
 
-##### :black\_small\_square: Shell plugins
+##### :black_small_square: Shell plugins
 
-  ✅ [**z**](https://github.com/rupa/z) - tracks the folder you use the most and allow you to jump, without having to type the whole path.  
+✅ [**z**](https://github.com/rupa/z) - tracks the folder you use the most and allow you to jump, without having to type the whole path.  
   ✅ [**fzf**](https://github.com/junegunn/fzf) - is a general-purpose command-line fuzzy finder.  
   ✅ [**zsh-autosuggestions**](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for Zsh.  
   ✅ [**zsh-syntax-highlighting**](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for Zsh.  
-  ✅ [**Awesome ZSH Plugins**](https://github.com/unixorn/awesome-zsh-plugins) - A list of frameworks, plugins, themes and tutorials for ZSH.  
+  ✅ [**Awesome ZSH Plugins**](https://github.com/unixorn/awesome-zsh-plugins) - A list of frameworks, plugins, themes and tutorials for ZSH.
 
-##### :black\_small\_square: Managers
+##### :black_small_square: Managers
 
-  ✅ [**Midnight Commander**](https://midnight-commander.org/) - is a visual file manager, licensed under GNU General Public License.  
+✅ [**Midnight Commander**](https://midnight-commander.org/) - is a visual file manager, licensed under GNU General Public License.  
   ✅ [**ranger**](https://github.com/ranger/ranger) - is a VIM-inspired filemanager for the console.  
   ✅ [**nnn**](https://github.com/jarun/nnn) - is a tiny, lightning fast, feature-packed file manager.  
   ✅ [**screen**](https://www.gnu.org/software/screen/) - is a full-screen window manager that multiplexes a physical terminal.  
   ✅ [**tmux**](https://github.com/tmux/tmux/wiki) - is a terminal multiplexer, lets you switch easily between several programs in one terminal.  
-  ✅ [**tmux-cssh**](https://github.com/peikk0/tmux-cssh) - is a tool to set comfortable and easy to use functionality, clustering and synchronizing tmux-sessions.  
+  ✅ [**tmux-cssh**](https://github.com/peikk0/tmux-cssh) - is a tool to set comfortable and easy to use functionality, clustering and synchronizing tmux-sessions.
 
-##### :black\_small\_square: Text editors
+##### :black_small_square: Text editors
 
-  ✅ [**vi**](http://ex-vi.sourceforge.net/) - is one of the most common text editors on Unix.  
+✅ [**vi**](http://ex-vi.sourceforge.net/) - is one of the most common text editors on Unix.  
   ✅ [**vim**](https://www.vim.org/) - is a highly configurable text editor.  
   ✅ [**emacs**](https://www.gnu.org/software/emacs/) - is an extensible, customizable, free/libre text editor, and more.  
   ✅ [**micro**](https://github.com/zyedidia/micro) - is a modern and intuitive terminal-based text editor.  
   ✅ [**neovim**](https://neovim.io/) - is a free open source, powerful, extensible and usable code editor.  
   ✅ [**spacemacs**](https://www.spacemacs.org/) - a community-driven Emacs distribution.  
-  ✅ [**spacevim**](https://spacevim.org/) - a community-driven vim distribution.  
+  ✅ [**spacevim**](https://spacevim.org/) - a community-driven vim distribution.
 
-##### :black\_small\_square: Files and directories
+##### :black_small_square: Files and directories
 
-  ✅ [**fd**](https://github.com/sharkdp/fd) - is a simple, fast and user-friendly alternative to find.  
-  ✅ [**ncdu**](https://dev.yorhel.nl/ncdu) - is an easy to use, fast disk usage analyzer.  
+✅ [**fd**](https://github.com/sharkdp/fd) - is a simple, fast and user-friendly alternative to find.  
+  ✅ [**ncdu**](https://dev.yorhel.nl/ncdu) - is an easy to use, fast disk usage analyzer.
 
-##### :black\_small\_square: Network
+##### :black_small_square: Network
 
-  ✅ [**PuTTY**](https://www.putty.org/) - is an SSH and telnet client, developed originally by Simon Tatham.  
+✅ [**PuTTY**](https://www.putty.org/) - is an SSH and telnet client, developed originally by Simon Tatham.  
   ✅ [**Mosh**](https://mosh.org/) - is a SSH wrapper designed to keep a SSH session alive over a volatile connection.  
   ✅ [**Eternal Terminal**](https://eternalterminal.dev/) - enables mouse-scrolling and tmux commands inside the SSH session.  
   ✅ [**nmap**](https://nmap.org/) - is a free and open source (license) utility for network discovery and security auditing.  
@@ -101,11 +99,11 @@ Ultimate Resource List
   ✅ [**ssh-audit**](https://github.com/arthepsy/ssh-audit) - is a tool for SSH server auditing.  
   ✅ [**aria2**](https://aria2.github.io/) - is a lightweight multi-protocol & multi-source command-line download utility.  
   ✅ [**iptables-tracer**](https://github.com/x-way/iptables-tracer) - observe the path of packets through the iptables chains.  
-  ✅ [**inception**](https://github.com/proabiral/inception) - a highly configurable tool to check for whatever you like against any number of hosts.  
+  ✅ [**inception**](https://github.com/proabiral/inception) - a highly configurable tool to check for whatever you like against any number of hosts.
 
-##### :black\_small\_square: Network (DNS)
+##### :black_small_square: Network (DNS)
 
-  ✅ [**dnsdiag**](https://github.com/farrokhi/dnsdiag) - is a DNS diagnostics and performance measurement tools.  
+✅ [**dnsdiag**](https://github.com/farrokhi/dnsdiag) - is a DNS diagnostics and performance measurement tools.  
   ✅ [**fierce**](https://github.com/mschwager/fierce) - is a DNS reconnaissance tool for locating non-contiguous IP space.  
   ✅ [**subfinder**](https://github.com/subfinder/subfinder) - is a subdomain discovery tool that discovers valid subdomains for websites.  
   ✅ [**sublist3r**](https://github.com/aboul3la/Sublist3r) - is a fast subdomains enumeration tool for penetration testers.  
@@ -116,11 +114,11 @@ Ultimate Resource List
   ✅ [**dnsperf**](https://github.com/DNS-OARC/dnsperf) - DNS performance testing tools.  
   ✅ [**dnscrypt-proxy 2**](https://github.com/jedisct1/dnscrypt-proxy) - a flexible DNS proxy, with support for encrypted DNS protocols.  
   ✅ [**dnsdbq**](https://github.com/dnsdb/dnsdbq) - API client providing access to passive DNS database systems.  
-  ✅ [**grimd**](https://github.com/looterz/grimd) - fast dns proxy, built to black-hole internet advertisements and malware servers.  
+  ✅ [**grimd**](https://github.com/looterz/grimd) - fast dns proxy, built to black-hole internet advertisements and malware servers.
 
-##### :black\_small\_square: Network (HTTP)
+##### :black_small_square: Network (HTTP)
 
-  ✅ [**curl**](https://curl.haxx.se/) - is a command line tool and library for transferring data with URLs.  
+✅ [**curl**](https://curl.haxx.se/) - is a command line tool and library for transferring data with URLs.  
   ✅ [**kurly**](https://gitlab.com/davidjpeacock/kurly) - is an alternative to the widely popular curl program, written in Golang.  
   ✅ [**HTTPie**](https://github.com/jakubroztocil/httpie) - is an user-friendly HTTP client.  
   ✅ [**wuzz**](https://github.com/asciimoo/wuzz) - is an interactive cli tool for HTTP inspection.  
@@ -144,11 +142,11 @@ Ultimate Resource List
   ✅ [**SlowHTTPTest**](https://github.com/shekyan/slowhttptest) - is a tool that simulates some Application Layer Denial of Service attacks by prolonging HTTP.  
   ✅ [**gobuster**](https://github.com/OJ/gobuster) - is a free and open source directory/file & DNS busting tool written in Go.  
   ✅ [**ssllabs-scan**](https://github.com/ssllabs/ssllabs-scan) - command-line reference-implementation client for SSL Labs APIs.  
-  ✅ [**http-observatory**](https://github.com/mozilla/http-observatory) - Mozilla HTTP Observatory cli version.  
+  ✅ [**http-observatory**](https://github.com/mozilla/http-observatory) - Mozilla HTTP Observatory cli version.
 
-##### :black\_small\_square: SSL
+##### :black_small_square: SSL
 
-  ✅ [**openssl**](https://www.openssl.org/) - is a robust, commercial-grade, and full-featured toolkit for the TLS and SSL protocols.  
+✅ [**openssl**](https://www.openssl.org/) - is a robust, commercial-grade, and full-featured toolkit for the TLS and SSL protocols.  
   ✅ [**gnutls-cli**](https://gnutls.org/manual/html_node/gnutls_002dcli-Invocation.html) - client program to set up a TLS connection to some other computer.  
   ✅ [**sslyze**](https://github.com/nabla-c0d3/sslyze) - fast and powerful SSL/TLS server scanning library.  
   ✅ [**sslscan**](https://github.com/rbsec/sslscan) - tests SSL/TLS enabled services to discover supported cipher suites.  
@@ -159,32 +157,32 @@ Ultimate Resource List
   ✅ [**mkcert**](https://github.com/FiloSottile/mkcert) - simple zero-config tool to make locally trusted development certificates with any names you’d like.  
   ✅ [**certstrap**](https://github.com/square/certstrap) - tools to bootstrap CAs, certificate requests, and signed certificates.  
   ✅ [**Sublert**](https://github.com/yassineaboukir/sublert) - is a security and reconnaissance tool to automatically monitor new subdomains.  
-  ✅ [**mkchain**](https://github.com/trimstray/mkchain) - open source tool to help you build a valid SSL certificate chain.  
+  ✅ [**mkchain**](https://github.com/trimstray/mkchain) - open source tool to help you build a valid SSL certificate chain.
 
-##### :black\_small\_square: Security
+##### :black_small_square: Security
 
-  ✅ [**SELinux**](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/ch-selinux) - provides a flexible Mandatory Access Control (MAC) system built into the Linux kernel.  
+✅ [**SELinux**](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/ch-selinux) - provides a flexible Mandatory Access Control (MAC) system built into the Linux kernel.  
   ✅ [**AppArmor**](https://wiki.ubuntu.com/AppArmor) - proactively protects the operating system and applications from external or internal threats.  
   ✅ [**grapheneX**](https://github.com/grapheneX/grapheneX) - Automated System Hardening Framework.  
-  ✅ [**DevSec Hardening Framework**](https://github.com/dev-sec/) - Security + DevOps: Automatic Server Hardening.  
+  ✅ [**DevSec Hardening Framework**](https://github.com/dev-sec/) - Security + DevOps: Automatic Server Hardening.
 
-##### :black\_small\_square: Auditing Tools
+##### :black_small_square: Auditing Tools
 
-  ✅ [**ossec**](https://www.ossec.net/) - actively monitoring all aspects of system activity with file integrity monitoring.  
+✅ [**ossec**](https://www.ossec.net/) - actively monitoring all aspects of system activity with file integrity monitoring.  
   ✅ [**auditd**](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/chap-system_auditing) - provides a way to track security-relevant information on your system.  
   ✅ [**Tiger**](https://www.nongnu.org/tiger/) - is a security tool that can be use both as a security audit and intrusion detection system.  
   ✅ [**Lynis**](https://cisofy.com/lynis/) - battle-tested security tool for systems running Linux, macOS, or Unix-based operating system.  
   ✅ [**LinEnum**](https://github.com/rebootuser/LinEnum) - scripted Local Linux Enumeration & Privilege Escalation Checks.  
   ✅ [**Rkhunter**](https://github.com/installation/rkhunter) - scanner tool for Linux systems that scans backdoors, rootkits and local exploits on your systems.  
-  ✅ [**PE-sieve**](https://github.com/hasherezade/pe-sieve) - is a light-weight tool that helps to detect malware running on the system.  
+  ✅ [**PE-sieve**](https://github.com/hasherezade/pe-sieve) - is a light-weight tool that helps to detect malware running on the system.
 
-##### :black\_small\_square: System Diagnostics/Debuggers
+##### :black_small_square: System Diagnostics/Debuggers
 
-  ✅ [**strace**](https://github.com/strace/strace) - diagnostic, debugging and instructional userspace utility for Linux.  
+✅ [**strace**](https://github.com/strace/strace) - diagnostic, debugging and instructional userspace utility for Linux.  
   ✅ [**DTrace**](http://dtrace.org/blogs/about/) - is a performance analysis and troubleshooting tool.  
   ✅ [**ltrace**](https://en.wikipedia.org/wiki/Ltrace) - is a library call tracer, used to trace calls made by programs to library functions.  
   ✅ [**ptrace-burrito**](https://github.com/brainsmoke/ptrace-burrito) - is a friendly wrapper around ptrace.  
-  ✅ [**perf-tools**](https://github.com/brendangregg/perf-tools) - performance analysis tools based on Linux perf\_events (aka perf) and ftrace.  
+  ✅ [**perf-tools**](https://github.com/brendangregg/perf-tools) - performance analysis tools based on Linux perf_events (aka perf) and ftrace.  
   ✅ [**bpftrace**](https://github.com/iovisor/bpftrace) - high-level tracing language for Linux eBPF.  
   ✅ [**sysdig**](https://github.com/draios/sysdig) - system exploration and troubleshooting tool with first class support for containers.  
   ✅ [**Valgrind**](http://www.valgrind.org/) - is an instrumentation framework for building dynamic analysis tools.  
@@ -199,43 +197,43 @@ Ultimate Resource List
   ✅ [**lsofgraph**](https://github.com/zevv/lsofgraph) - convert Unix lsof output to a graph showing FIFO and UNIX interprocess communication.  
   ✅ [**rr**](https://github.com/mozilla/rr) - is a lightweight tool for recording, replaying and debugging execution of applications.  
   ✅ [**Performance Co-Pilot**](https://pcp.io/index.html) - a system performance analysis toolkit.  
-  ✅ [**hexyl**](https://github.com/sharkdp/hexyl) - a command-line hex viewer.  
+  ✅ [**hexyl**](https://github.com/sharkdp/hexyl) - a command-line hex viewer.
 
-##### :black\_small\_square: Log Analyzers
+##### :black_small_square: Log Analyzers
 
-  ✅ [**angle-grinder**](https://github.com/rcoh/angle-grinder) - slice and dice log files on the command line.  
+✅ [**angle-grinder**](https://github.com/rcoh/angle-grinder) - slice and dice log files on the command line.  
   ✅ [**lnav**](https://lnav.org) - log file navigator with search and automatic refresh.  
   ✅ [**GoAccess**](https://goaccess.io/) - real-time web log analyzer and interactive viewer that runs in a terminal.  
-  ✅ [**ngxtop**](https://github.com/lebinh/ngxtop) - real-time metrics for nginx server.  
+  ✅ [**ngxtop**](https://github.com/lebinh/ngxtop) - real-time metrics for nginx server.
 
-##### :black\_small\_square: Databases
+##### :black_small_square: Databases
 
-  ✅ [**usql**](https://github.com/xo/usql) - universal command-line interface for SQL databases.  
+✅ [**usql**](https://github.com/xo/usql) - universal command-line interface for SQL databases.  
   ✅ [**pgcli**](https://github.com/dbcli/pgcli) - postgres CLI with autocompletion and syntax highlighting.  
   ✅ [**mycli**](https://github.com/dbcli/mycli) - terminal client for MySQL with autocompletion and syntax highlighting.  
   ✅ [**litecli**](https://github.com/dbcli/litecli) - SQLite CLI with autocompletion and syntax highlighting.  
   ✅ [**mssql-cli**](https://github.com/dbcli/mssql-cli) - SQL Server CLI with autocompletion and syntax highlighting.  
   ✅ [**OSQuery**](https://github.com/osquery/osquery) - is a SQL powered operating system instrumentation, monitoring, and analytics framework.  
   ✅ [**pgsync**](https://github.com/ankane/pgsync) - sync data from one Postgres database to another.  
-  ✅ [**iredis**](https://github.com/laixintao/iredis) - a terminal client for redis with autocompletion and syntax highlighting.  
+  ✅ [**iredis**](https://github.com/laixintao/iredis) - a terminal client for redis with autocompletion and syntax highlighting.
 
-##### :black\_small\_square: TOR
+##### :black_small_square: TOR
 
-  ✅ [**Nipe**](https://github.com/GouveaHeitor/nipe) - script to make Tor Network your default gateway.  
-  ✅ [**multitor**](https://github.com/trimstray/multitor) - a tool that lets you create multiple TOR instances with a load-balancing.  
+✅ [**Nipe**](https://github.com/GouveaHeitor/nipe) - script to make Tor Network your default gateway.  
+  ✅ [**multitor**](https://github.com/trimstray/multitor) - a tool that lets you create multiple TOR instances with a load-balancing.
 
-##### :black\_small\_square: Messengers/IRC Clients
+##### :black_small_square: Messengers/IRC Clients
 
-  ✅ [**Irssi**](https://irssi.org) - is a free open source terminal based IRC client.  
-  ✅ [**WeeChat**](https://weechat.org/) - is an extremely extensible and lightweight IRC client.  
+✅ [**Irssi**](https://irssi.org) - is a free open source terminal based IRC client.  
+  ✅ [**WeeChat**](https://weechat.org/) - is an extremely extensible and lightweight IRC client.
 
-##### :black\_small\_square: Productivity
+##### :black_small_square: Productivity
 
-  ✅ [**taskwarrior**](https://taskwarrior.org) - task management system, todo list  
+✅ [**taskwarrior**](https://taskwarrior.org) - task management system, todo list
 
-##### :black\_small\_square: Other
+##### :black_small_square: Other
 
-  ✅ [**sysadmin-util**](https://github.com/skx/sysadmin-util) - tools for Linux/Unix sysadmins.  
+✅ [**sysadmin-util**](https://github.com/skx/sysadmin-util) - tools for Linux/Unix sysadmins.  
   ✅ [**incron**](http://inotify.aiken.cz/) - is an inode-based filesystem notification technology.  
   ✅ [**lsyncd**](https://github.com/axkibe/lsyncd) - synchronizes local directories with remote targets (Live Syncing Daemon).  
   ✅ [**GRV**](https://github.com/rgburke/grv) - is a terminal based interface for viewing Git repositories.  
@@ -244,69 +242,69 @@ Ultimate Resource List
   ✅ [**archiver**](https://github.com/mholt/archiver) - easily create and extract .zip, .tar, .tar.gz, .tar.bz2, .tar.xz, .tar.lz4, .tar.sz, and .rar.  
   ✅ [**commander.js**](https://github.com/tj/commander.js) - minimal CLI creator in JavaScript.  
   ✅ [**gron**](https://github.com/tomnomnom/gron) - make JSON greppable!  
-  ✅ [**bed**](https://github.com/itchyny/bed) - binary editor written in Go.  
+  ✅ [**bed**](https://github.com/itchyny/bed) - binary editor written in Go.
 
 #### GUI Tools  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: Terminal emulators
+##### :black_small_square: Terminal emulators
 
-  ✅ [**Guake**](https://github.com/Guake/guake) - is a dropdown terminal made for the GNOME desktop environment.  
+✅ [**Guake**](https://github.com/Guake/guake) - is a dropdown terminal made for the GNOME desktop environment.  
   ✅ [**Terminator**](https://gnometerminator.blogspot.com/p/introduction.html) - is based on GNOME Terminal, useful features for sysadmins and other users.  
   ✅ [**Kitty**](https://sw.kovidgoyal.net/kitty/) - is a GPU based terminal emulator that supports smooth scrolling and images.  
-  ✅ [**Alacritty**](https://github.com/alacritty/alacritty) - is a fast, cross-platform, OpenGL terminal emulator.  
+  ✅ [**Alacritty**](https://github.com/alacritty/alacritty) - is a fast, cross-platform, OpenGL terminal emulator.
 
-##### :black\_small\_square: Network
+##### :black_small_square: Network
 
-  ✅ [**Wireshark**](https://www.wireshark.org/) - is the world’s foremost and widely-used network protocol analyzer.  
+✅ [**Wireshark**](https://www.wireshark.org/) - is the world’s foremost and widely-used network protocol analyzer.  
   ✅ [**Ettercap**](https://www.ettercap-project.org/) - is a comprehensive network monitor tool.  
   ✅ [**EtherApe**](https://etherape.sourceforge.io/) - is a graphical network monitoring solution.  
   ✅ [**Packet Sender**](https://packetsender.com/) - is a networking utility for packet generation and built-in UDP/TCP/SSL client and servers.  
   ✅ [**Ostinato**](https://ostinato.org/) - is a packet crafter and traffic generator.  
   ✅ [**JMeter™**](https://jmeter.apache.org/) - open source software to load test functional behavior and measure performance.  
-  ✅ [**locust**](https://github.com/locustio/locust) - scalable user load testing tool written in Python.  
+  ✅ [**locust**](https://github.com/locustio/locust) - scalable user load testing tool written in Python.
 
-##### :black\_small\_square: Browsers
+##### :black_small_square: Browsers
 
-  ✅ [**TOR Browser**](https://www.torproject.org/) - protect your privacy and defend yourself against network surveillance and traffic analysis.  
+✅ [**TOR Browser**](https://www.torproject.org/) - protect your privacy and defend yourself against network surveillance and traffic analysis.
 
-##### :black\_small\_square: Password Managers
+##### :black_small_square: Password Managers
 
-  ✅ [**KeePassXC**](https://keepassxc.org/) - store your passwords safely and auto-type them into your everyday websites and apps.  
-  ✅ [**Bitwarden**](https://bitwarden.com/) - open source password manager with built-in sync.  
+✅ [**KeePassXC**](https://keepassxc.org/) - store your passwords safely and auto-type them into your everyday websites and apps.  
+  ✅ [**Bitwarden**](https://bitwarden.com/) - open source password manager with built-in sync.
 
-##### :black\_small\_square: Messengers/IRC Clients
+##### :black_small_square: Messengers/IRC Clients
 
-  ✅ [**HexChat**](https://hexchat.github.io/index.html) - is an IRC client based on XChat.  
-  ✅ [**Pidgin**](https://pidgin.im/) - is an easy to use and free chat client used by millions.  
+✅ [**HexChat**](https://hexchat.github.io/index.html) - is an IRC client based on XChat.  
+  ✅ [**Pidgin**](https://pidgin.im/) - is an easy to use and free chat client used by millions.
 
-##### :black\_small\_square: Messengers (end-to-end encryption)
+##### :black_small_square: Messengers (end-to-end encryption)
 
-  ✅ [**Signal**](https://www.signal.org/) - is an encrypted communications app.  
+✅ [**Signal**](https://www.signal.org/) - is an encrypted communications app.  
   ✅ [**Wire**](https://wire.com/en/) - secure messaging, file sharing, voice calls and video conferences. All protected with end-to-end encryption.  
   ✅ [**TorChat**](https://github.com/prof7bit/TorChat) - decentralized anonymous instant messenger on top of Tor Hidden Services.  
-  ✅ [**Matrix**](https://matrix.org/) - an open network for secure, decentralized, real-time communication.  
+  ✅ [**Matrix**](https://matrix.org/) - an open network for secure, decentralized, real-time communication.
 
-##### :black\_small\_square: Text editors
+##### :black_small_square: Text editors
 
-  ✅ [**Sublime Text**](https://www.sublimetext.com/3) - is a lightweight, cross-platform code editor known for its speed, ease of use.  
+✅ [**Sublime Text**](https://www.sublimetext.com/3) - is a lightweight, cross-platform code editor known for its speed, ease of use.  
   ✅ [**Visual Studio Code**](https://code.visualstudio.com/) - an open-source and free source code editor developed by Microsoft.  
-  ✅ [**Atom**](https://atom.io/) - a hackable text editor for the 21st Century.  
+  ✅ [**Atom**](https://atom.io/) - a hackable text editor for the 21st Century.
 
 #### Web Tools  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: Browsers
+##### :black_small_square: Browsers
 
-  ✅ [**SSL/TLS Capabilities of Your Browser**](https://www.ssllabs.com/ssltest/viewMyClient.html) - test your browser’s SSL implementation.  
+✅ [**SSL/TLS Capabilities of Your Browser**](https://www.ssllabs.com/ssltest/viewMyClient.html) - test your browser’s SSL implementation.  
   ✅ [**Can I use**](https://caniuse.com/) - provides up-to-date browser support tables for support of front-end web technologies.  
   ✅ [**Panopticlick 3.0**](https://panopticlick.eff.org/) - is your browser safe against tracking?  
   ✅ [**Privacy Analyzer**](https://privacy.net/analyzer/) - see what data is exposed from your browser.  
   ✅ [**Web Browser Security**](https://browserleaks.com/) - it’s all about Web Browser fingerprinting.  
   ✅ [**How’s My SSL?**](https://www.howsmyssl.com/) - help a web server developer learn what real world TLS clients were capable of.  
-  ✅ [**sslClientInfo**](https://suche.org/sslClientInfo) - client test (incl TLSv1.3 information).  
+  ✅ [**sslClientInfo**](https://suche.org/sslClientInfo) - client test (incl TLSv1.3 information).
 
-##### :black\_small\_square: SSL/Security
+##### :black_small_square: SSL/Security
 
-  ✅ [**SSLLabs Server Test**](https://www.ssllabs.com/ssltest/) - performs a deep analysis of the configuration of any SSL web server.  
+✅ [**SSLLabs Server Test**](https://www.ssllabs.com/ssltest/) - performs a deep analysis of the configuration of any SSL web server.  
   ✅ [**SSLLabs Server Test (DEV)**](https://dev.ssllabs.com/ssltest/) - performs a deep analysis of the configuration of any SSL web server.  
   ✅ [**ImmuniWeb® SSLScan**](https://www.immuniweb.com/ssl/) - test SSL/TLS (PCI DSS, HIPAA and NIST).  
   ✅ [**SSL Check**](https://www.jitbit.com/sslcheck/) - scan your website for non-secure content.  
@@ -330,17 +328,17 @@ Ultimate Resource List
   ✅ [**Cipher suite compatibility**](https://cryptcheck.fr/suite/) - test TLS cipher suite compatibility.  
   ✅ [**urlvoid**](https://www.urlvoid.com/) - this service helps you detect potentially malicious websites.  
   ✅ [**security.txt**](https://securitytxt.org/) - a proposed standard (generator) which allows websites to define security policies.  
-  ✅ [**ssl-config-generator**](https://github.com/mozilla/ssl-config-generator) - help you follow the Mozilla Server Side TLS configuration guidelines.  
+  ✅ [**ssl-config-generator**](https://github.com/mozilla/ssl-config-generator) - help you follow the Mozilla Server Side TLS configuration guidelines.
 
-##### :black\_small\_square: HTTP Headers & Web Linters
+##### :black_small_square: HTTP Headers & Web Linters
 
-  ✅ [**Security Headers**](https://securityheaders.com/) - analyse the HTTP response headers (with rating system to the results).  
+✅ [**Security Headers**](https://securityheaders.com/) - analyse the HTTP response headers (with rating system to the results).  
   ✅ [**Observatory by Mozilla**](https://observatory.mozilla.org/) - set of tools to analyze your website.  
-  ✅ [**webhint**](https://webhint.io/) - is a linting tool that will help you with your site’s accessibility, speed, security, and more.  
+  ✅ [**webhint**](https://webhint.io/) - is a linting tool that will help you with your site’s accessibility, speed, security, and more.
 
-##### :black\_small\_square: DNS
+##### :black_small_square: DNS
 
-  ✅ [**ViewDNS**](http://viewdns.info/) - one source for free DNS related tools and information.  
+✅ [**ViewDNS**](http://viewdns.info/) - one source for free DNS related tools and information.  
   ✅ [**DNSLookup**](https://dnslookup.org/) - is an advanced DNS lookup tool.  
   ✅ [**DNSlytics**](https://dnslytics.com/) - online DNS investigation tool.  
   ✅ [**DNS Spy**](https://dnsspy.io/) - monitor, validate and verify your DNS configurations.  
@@ -358,30 +356,30 @@ Ultimate Resource List
   ✅ [**nip.io**](https://nip.io/) - dead simple wildcard DNS for any IP Address.  
   ✅ [**dnslookup (ceipam)**](https://ceipam.eu/en/dnslookup.php) - one of the best DNS propagation checker (and not only).  
   ✅ [**What’s My DNS**](https://whatsmydns.com) - DNS propagation checking tool.  
-  ✅ [**DNSGrep**](https://blog.erbbysam.com/index.php/2019/02/09/dnsgrep/) - quickly searching large DNS datasets.  
+  ✅ [**DNSGrep**](https://blog.erbbysam.com/index.php/2019/02/09/dnsgrep/) - quickly searching large DNS datasets.
 
-##### :black\_small\_square: Mail
+##### :black_small_square: Mail
 
-  ✅ [**smtp-tls-checker**](https://luxsci.com/smtp-tls-checker) - check an email domain for SMTP TLS support.  
+✅ [**smtp-tls-checker**](https://luxsci.com/smtp-tls-checker) - check an email domain for SMTP TLS support.  
   ✅ [**MX Toolbox**](https://mxtoolbox.com/SuperTool.aspx) - all of your MX record, DNS, blacklist and SMTP diagnostics in one integrated tool.  
   ✅ [**Secure Email**](https://www.checktls.com/index.html) - complete email test tools for email technicians.  
   ✅ [**blacklistalert**](http://www.blacklistalert.org/) - checks to see if your domain is on a Real Time Spam Blacklist.  
   ✅ [**MultiRBL**](http://multirbl.valli.org/) - complete IP check for sending Mailservers.  
-  ✅ [**DKIM SPF & Spam Assassin Validator**](https://dkimvalidator.com/) - checks mail authentication and scores messages with Spam Assassin.  
+  ✅ [**DKIM SPF & Spam Assassin Validator**](https://dkimvalidator.com/) - checks mail authentication and scores messages with Spam Assassin.
 
-##### :black\_small\_square: Encoders/Decoders and Regex testing
+##### :black_small_square: Encoders/Decoders and Regex testing
 
-  ✅ [**URL Encode/Decode**](https://www.url-encode-decode.com/) - tool from above to either encode or decode a string of text.  
+✅ [**URL Encode/Decode**](https://www.url-encode-decode.com/) - tool from above to either encode or decode a string of text.  
   ✅ [**Uncoder**](https://uncoder.io/) - the online translator for search queries on log data.  
   ✅ [**Regex101**](https://regex101.com/) - online regex tester and debugger: PHP, PCRE, Python, Golang and JavaScript.  
   ✅ [**RegExr**](https://regexr.com/) - online tool to learn, build, & test Regular Expressions (RegEx / RegExp).  
   ✅ [**RegEx Testing**](https://www.regextester.com/) - online regex testing tool.  
   ✅ [**RegEx Pal**](https://www.regexpal.com/) - online regex testing tool + other tools.  
-  ✅ [**The Cyber Swiss Army Knife**](https://gchq.github.io/CyberChef/) - a web app for encryption, encoding, compression and data analysis.  
+  ✅ [**The Cyber Swiss Army Knife**](https://gchq.github.io/CyberChef/) - a web app for encryption, encoding, compression and data analysis.
 
-##### :black\_small\_square: Net-tools
+##### :black_small_square: Net-tools
 
-  ✅ [**Netcraft**](https://toolbar.netcraft.com/site_report) - detailed report about the site, helping you to make informed choices about their integrity.**\***  
+✅ [**Netcraft**](https://toolbar.netcraft.com/site_report) - detailed report about the site, helping you to make informed choices about their integrity.**\***  
   ✅ [**RIPE NCC Atlas**](https://atlas.ripe.net/) - a global, open, distributed Internet measurement platform.  
   ✅ [**Robtex**](https://www.robtex.com/) - uses various sources to gather public information about IP numbers, domain names, host names, etc.  
   ✅ [**Security Trails**](https://securitytrails.com/) - APIs for Security Companies, Researchers and Teams.  
@@ -392,36 +390,36 @@ Ultimate Resource List
   ✅ [**BGPview**](https://bgpview.io/) - search for any ASN, IP, Prefix or Resource name.  
   ✅ [**Is BGP safe yet?**](https://isbgpsafeyet.com/) - check BGP (RPKI) security of ISPs and other major Internet players.  
   ✅ [**Riseup**](https://riseup.net/) - provides online communication tools for people and groups working on liberatory social change.  
-  ✅ [**VirusTotal**](https://www.virustotal.com/gui/home/upload) - analyze suspicious files and URLs to detect types of malware.  
+  ✅ [**VirusTotal**](https://www.virustotal.com/gui/home/upload) - analyze suspicious files and URLs to detect types of malware.
 
-##### :black\_small\_square: Privacy
+##### :black_small_square: Privacy
 
-  ✅ [**privacytools.io**](https://www.privacytools.io/) - provides knowledge and tools to protect your privacy against global mass surveillance.  
-  ✅ [**DNS Privacy Test Servers**](https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Test+Servers) - DNS privacy recursive servers list (with a ‘no logging’ policy).  
+✅ [**privacytools.io**](https://www.privacytools.io/) - provides knowledge and tools to protect your privacy against global mass surveillance.  
+  ✅ [**DNS Privacy Test Servers**](https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Test+Servers) - DNS privacy recursive servers list (with a ‘no logging’ policy).
 
-##### :black\_small\_square: Code parsers/playgrounds
+##### :black_small_square: Code parsers/playgrounds
 
-  ✅ [**ShellCheck**](https://www.shellcheck.net/) - finds bugs in your shell scripts.  
+✅ [**ShellCheck**](https://www.shellcheck.net/) - finds bugs in your shell scripts.  
   ✅ [**explainshell**](https://explainshell.com/) - get interactive help texts for shell commands.  
   ✅ [**jsbin**](https://jsbin.com/?html,output) - live pastebin for HTML, CSS & JavaScript, and more.  
   ✅ [**CodeSandbox**](https://codesandbox.io/) - online code editor for web application development.  
   ✅ [**PHP Sandbox**](http://sandbox.onlinephpfunctions.com/) - test your PHP code with this code tester.  
   ✅ [**Repl.it**](https://www.repl.it/) - an instant IDE to learn, build, collaborate, and host all in one place.  
-  ✅ [**vclFiddle**](http://www.vclfiddle.net/) - is an online tool for experimenting with the Varnish Cache VCL.  
+  ✅ [**vclFiddle**](http://www.vclfiddle.net/) - is an online tool for experimenting with the Varnish Cache VCL.
 
-##### :black\_small\_square: Performance
+##### :black_small_square: Performance
 
-  ✅ [**GTmetrix**](https://gtmetrix.com/) - analyze your site’s speed and make it faster.  
+✅ [**GTmetrix**](https://gtmetrix.com/) - analyze your site’s speed and make it faster.  
   ✅ [**Sucuri loadtimetester**](https://performance.sucuri.net/) - test here the performance of any of your sites from across the globe.  
   ✅ [**Pingdom Tools**](https://tools.pingdom.com/) - analyze your site’s speed around the world.  
   ✅ [**PingMe.io**](https://pingme.io/) - run website latency tests across multiple geographic regions.  
   ✅ [**PageSpeed Insights**](https://developers.google.com/speed/pagespeed/insights/) - analyze your site’s speed and make it faster.  
   ✅ [**web.dev**](https://web.dev/) - helps developers like you learn and apply the web’s modern capabilities to your own sites and apps.  
-  ✅ [**Lighthouse**](https://github.com/GoogleChrome/lighthouse) - automated auditing, performance metrics, and best practices for the web.  
+  ✅ [**Lighthouse**](https://github.com/GoogleChrome/lighthouse) - automated auditing, performance metrics, and best practices for the web.
 
-##### :black\_small\_square: Mass scanners (search engines)
+##### :black_small_square: Mass scanners (search engines)
 
-  ✅ [**Censys**](https://censys.io/) - platform that helps information security practitioners discover, monitor, and analyze devices.  
+✅ [**Censys**](https://censys.io/) - platform that helps information security practitioners discover, monitor, and analyze devices.  
   ✅ [**Shodan**](https://www.shodan.io/) - the world’s first search engine for Internet-connected devices.  
   ✅ [**Shodan 2000**](https://2000.shodan.io/#/) - this tool looks for randomly generated data from Shodan.  
   ✅ [**GreyNoise**](https://viz.greynoise.io/table) - mass scanner such as Shodan and Censys.  
@@ -459,70 +457,70 @@ Ultimate Resource List
   ✅ [**Insecam**](http://www.insecam.org/) - the world biggest directory of online surveillance security cameras.  
   ✅ [**index-of**](http://index-of.es/) - contains great stuff like: security, hacking, reverse engineering, cryptography, programming etc.  
   ✅ [**Rapid7 Labs Open Data**](https://opendata.rapid7.com/) - is a great resources of datasets from Project Sonar.  
-  ✅ [**Common Response Headers**](https://webtechsurvey.com/common-response-headers) - the largest database of HTTP response headers.  
+  ✅ [**Common Response Headers**](https://webtechsurvey.com/common-response-headers) - the largest database of HTTP response headers.
 
-##### :black\_small\_square: Generators
+##### :black_small_square: Generators
 
-  ✅ [**thispersondoesnotexist**](https://thispersondoesnotexist.com/) - generate fake faces in one click - endless possibilities.  
+✅ [**thispersondoesnotexist**](https://thispersondoesnotexist.com/) - generate fake faces in one click - endless possibilities.  
   ✅ [**AI Generated Photos**](https://generated.photos) - 100.000 AI generated faces.  
   ✅ [**fakenamegenerator**](https://www.fakenamegenerator.com/) - your randomly generated identity.  
-  ✅ [**Intigriti Redirector**](https://tools.intigriti.io/redirector/) - open redirect/SSRF payload generator.  
+  ✅ [**Intigriti Redirector**](https://tools.intigriti.io/redirector/) - open redirect/SSRF payload generator.
 
-##### :black\_small\_square: Passwords
+##### :black_small_square: Passwords
 
-  ✅ [**have i been pwned?**](https://haveibeenpwned.com/) - check if you have an account that has been compromised in a data breach.  
+✅ [**have i been pwned?**](https://haveibeenpwned.com/) - check if you have an account that has been compromised in a data breach.  
   ✅ [**dehashed**](https://www.dehashed.com/) - is a hacked database search engine.  
-  ✅ [**Leaked Source**](https://leakedsource.ru/) - is a collaboration of data found online in the form of a lookup.  
+  ✅ [**Leaked Source**](https://leakedsource.ru/) - is a collaboration of data found online in the form of a lookup.
 
-##### :black\_small\_square: CVE/Exploits databases
+##### :black_small_square: CVE/Exploits databases
 
-  ✅ [**CVE Mitre**](https://cve.mitre.org/) - list of publicly known cybersecurity vulnerabilities.  
+✅ [**CVE Mitre**](https://cve.mitre.org/) - list of publicly known cybersecurity vulnerabilities.  
   ✅ [**CVE Details**](https://www.cvedetails.com/) - CVE security vulnerability advanced database.  
   ✅ [**Exploit DB**](https://www.exploit-db.com/) - CVE compliant archive of public exploits and corresponding vulnerable software.  
   ✅ [**0day.today**](https://0day.today/) - exploits market provides you the possibility to buy/sell zero-day exploits.  
   ✅ [**sploitus**](https://sploitus.com/) - the exploit and tools database.  
   ✅ [**cxsecurity**](https://cxsecurity.com/exploit/) - free vulnerability database.  
   ✅ [**Vulncode-DB**](https://www.vulncode-db.com/) - is a database for vulnerabilities and their corresponding source code if available.  
-  ✅ [**cveapi**](https://cveapi.com/) - free API for CVE data.  
+  ✅ [**cveapi**](https://cveapi.com/) - free API for CVE data.
 
-##### :black\_small\_square: Mobile apps scanners
+##### :black_small_square: Mobile apps scanners
 
-  ✅ [**ImmuniWeb® Mobile App Scanner**](https://www.immuniweb.com/mobile/) - test security and privacy of mobile apps (iOS & Android).  
+✅ [**ImmuniWeb® Mobile App Scanner**](https://www.immuniweb.com/mobile/) - test security and privacy of mobile apps (iOS & Android).  
   ✅ [**Quixxi**](https://vulnerabilitytest.quixxi.com/) - free Mobile App Vulnerability Scanner for Android & iOS.  
-  ✅ [**Ostorlab**](https://www.ostorlab.co/scan/mobile/) - analyzes mobile application to identify vulnerabilities and potential weaknesses.  
+  ✅ [**Ostorlab**](https://www.ostorlab.co/scan/mobile/) - analyzes mobile application to identify vulnerabilities and potential weaknesses.
 
-##### :black\_small\_square: Private Search Engines
+##### :black_small_square: Private Search Engines
 
-  ✅ [**Startpage**](https://www.startpage.com/) - the world’s most private search engine.  
+✅ [**Startpage**](https://www.startpage.com/) - the world’s most private search engine.  
   ✅ [**searX**](https://searx.me/) - a privacy-respecting, hackable metasearch engine.  
   ✅ [**darksearch**](https://darksearch.io/) - the 1st real Dark Web search engine.  
   ✅ [**Qwant**](https://www.qwant.com/) - the search engine that respects your privacy.  
   ✅ [**DuckDuckGo**](https://duckduckgo.com/) - the search engine that doesn’t track you.  
   ✅ [**Swisscows**](https://swisscows.com/) - privacy safe web search  
   ✅ [**Disconnect**](https://search.disconnect.me/) - the search engine that anonymizes your searches.  
-  ✅ [**MetaGer**](https://metager.org/) - the search engine that uses anonymous proxy and hidden Tor branches.  
+  ✅ [**MetaGer**](https://metager.org/) - the search engine that uses anonymous proxy and hidden Tor branches.
 
-##### :black\_small\_square: Secure Webmail Providers
+##### :black_small_square: Secure Webmail Providers
 
-  ✅ [**CounterMail**](https://countermail.com/) - online email service, designed to provide maximum security and privacy.  
+✅ [**CounterMail**](https://countermail.com/) - online email service, designed to provide maximum security and privacy.  
   ✅ [**Mail2Tor**](http://mail2tor.com/) - is a Tor Hidden Service that allows anyone to send and receive emails anonymously.  
   ✅ [**Tutanota**](https://tutanota.com/) - is the world’s most secure email service and amazingly easy to use.  
   ✅ [**Protonmail**](https://protonmail.com/) - is the world’s largest secure email service, developed by CERN and MIT scientists.  
-  ✅ [**Startmail**](https://www.startmail.com/en/) - private & encrypted email made easy.  
+  ✅ [**Startmail**](https://www.startmail.com/en/) - private & encrypted email made easy.
 
-##### :black\_small\_square: Crypto
+##### :black_small_square: Crypto
 
-  ✅ [**Keybase**](https://keybase.io/) - it’s open source and powered by public-key cryptography.  
+✅ [**Keybase**](https://keybase.io/) - it’s open source and powered by public-key cryptography.
 
-##### :black\_small\_square: PGP Keyservers
+##### :black_small_square: PGP Keyservers
 
-  ✅ [**SKS OpenPGP Key server**](https://keyserver.ubuntu.com/) - services for the SKS keyservers used by OpenPGP.  
+✅ [**SKS OpenPGP Key server**](https://keyserver.ubuntu.com/) - services for the SKS keyservers used by OpenPGP.
 
 #### Systems/Services  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: Operating Systems
+##### :black_small_square: Operating Systems
 
-  ✅ [**Slackware**](http://www.slackware.com/) - the most “Unix-like” Linux distribution.  
+✅ [**Slackware**](http://www.slackware.com/) - the most “Unix-like” Linux distribution.  
   ✅ [**OpenBSD**](https://www.openbsd.org/) - multi-platform 4.4BSD-based UNIX-like operating system.  
   ✅ [**HardenedBSD**](https://hardenedbsd.org/) - HardenedBSD aims to implement innovative exploit mitigation and security solutions.  
   ✅ [**Kali Linux**](https://www.kali.org/) - Linux distribution used for Penetration Testing, Ethical Hacking and network security assessments.  
@@ -533,78 +531,78 @@ Ultimate Resource List
   ✅ [**Security Onion**](https://securityonion.net/) - Linux distro for intrusion detection, enterprise security monitoring, and log management.  
   ✅ [**Tails**](https://tails.boum.org/) - is a live system that aims to preserve your privacy and anonymity.  
   ✅ [**vedetta**](https://github.com/vedetta-com/vedetta) - OpenBSD router boilerplate.  
-  ✅ [**Qubes OS**](https://www.qubes-os.org) - is a security-oriented OS that uses Xen-based virtualization.  
+  ✅ [**Qubes OS**](https://www.qubes-os.org) - is a security-oriented OS that uses Xen-based virtualization.
 
-##### :black\_small\_square: HTTP(s) Services
+##### :black_small_square: HTTP(s) Services
 
-  ✅ [**Varnish Cache**](https://varnish-cache.org/) - HTTP accelerator designed for content-heavy dynamic web sites.  
+✅ [**Varnish Cache**](https://varnish-cache.org/) - HTTP accelerator designed for content-heavy dynamic web sites.  
   ✅ [**Nginx**](https://nginx.org/) - open source web and reverse proxy server that is similar to Apache, but very light weight.  
   ✅ [**OpenResty**](https://openresty.org/en/) - is a dynamic web platform based on NGINX and LuaJIT.  
   ✅ [**Tengine**](https://github.com/alibaba/tengine) - a distribution of Nginx with some advanced features.  
   ✅ [**Caddy Server**](https://caddyserver.com/) - is an open source, HTTP/2-enabled web server with HTTPS by default.  
-  ✅ [**HAProxy**](https://www.haproxy.org/) - the reliable, high performance TCP/HTTP load balancer.  
+  ✅ [**HAProxy**](https://www.haproxy.org/) - the reliable, high performance TCP/HTTP load balancer.
 
-##### :black\_small\_square: DNS Services
+##### :black_small_square: DNS Services
 
-  ✅ [**Unbound**](https://nlnetlabs.nl/projects/unbound/about/) - validating, recursive, and caching DNS resolver (with TLS).  
+✅ [**Unbound**](https://nlnetlabs.nl/projects/unbound/about/) - validating, recursive, and caching DNS resolver (with TLS).  
   ✅ [**Knot Resolver**](https://www.knot-resolver.cz/) - caching full resolver implementation, including both a resolver library and a daemon.  
-  ✅ [**PowerDNS**](https://www.powerdns.com/) - is an open source authoritative DNS server, written in C++ and licensed under the GPL.  
+  ✅ [**PowerDNS**](https://www.powerdns.com/) - is an open source authoritative DNS server, written in C++ and licensed under the GPL.
 
-##### :black\_small\_square: Other Services
+##### :black_small_square: Other Services
 
-  ✅ [**3proxy**](https://github.com/z3APA3A/3proxy) - tiny free proxy server.  
+✅ [**3proxy**](https://github.com/z3APA3A/3proxy) - tiny free proxy server.
 
-##### :black\_small\_square: Security/hardening
+##### :black_small_square: Security/hardening
 
-  ✅ [**Emerald Onion**](https://twitter.com/EmeraldOnion) - is a 501(c)(3) nonprofit organization and transit internet service provider (ISP).  
+✅ [**Emerald Onion**](https://twitter.com/EmeraldOnion) - is a 501(c)(3) nonprofit organization and transit internet service provider (ISP).  
   ✅ [**pi-hole**](https://github.com/pi-hole/pi-hole) - the Pi-hole® is a DNS sinkhole that protects your devices from unwanted content.  
   ✅ [**maltrail**](https://github.com/stamparm/maltrail) - malicious traffic detection system.  
-  ✅ [**security\_monkey**](https://github.com/Netflix/security_monkey) - monitors AWS, GCP, OpenStack, and GitHub orgs for assets and their changes over time.  
+  ✅ [**security_monkey**](https://github.com/Netflix/security_monkey) - monitors AWS, GCP, OpenStack, and GitHub orgs for assets and their changes over time.  
   ✅ [**firecracker**](https://github.com/firecracker-microvm/firecracker) - secure and fast microVMs for serverless computing.  
-  ✅ [**streisand**](https://github.com/StreisandEffect/streisand) - sets up a new server running your choice of WireGuard, OpenSSH, OpenVPN, and more.  
+  ✅ [**streisand**](https://github.com/StreisandEffect/streisand) - sets up a new server running your choice of WireGuard, OpenSSH, OpenVPN, and more.
 
 #### Networks  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: Tools
+##### :black_small_square: Tools
 
-  ✅ [**CapAnalysis**](https://www.capanalysis.net/ca/) - web visual tool to analyze large amounts of captured network traffic (PCAP analyzer).  
-  ✅ [**netbox**](https://github.com/digitalocean/netbox) - IP address management (IPAM) and data center infrastructure management (DCIM) tool.  
+✅ [**CapAnalysis**](https://www.capanalysis.net/ca/) - web visual tool to analyze large amounts of captured network traffic (PCAP analyzer).  
+  ✅ [**netbox**](https://github.com/digitalocean/netbox) - IP address management (IPAM) and data center infrastructure management (DCIM) tool.
 
-##### :black\_small\_square: Labs
+##### :black_small_square: Labs
 
-  ✅ [**NRE Labs**](https://labs.networkreliability.engineering/) - learn automation by doing it. Right now, right here, in your browser.  
+✅ [**NRE Labs**](https://labs.networkreliability.engineering/) - learn automation by doing it. Right now, right here, in your browser.
 
-##### :black\_small\_square: Other
+##### :black_small_square: Other
 
-  ✅ [**LBNL’s Network Research Group**](https://ee.lbl.gov/) - home page of the Network Research Group (NRG).  
+✅ [**LBNL’s Network Research Group**](https://ee.lbl.gov/) - home page of the Network Research Group (NRG).
 
 #### Containers/Orchestration  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: CLI Tools
+##### :black_small_square: CLI Tools
 
-  ✅ [**gvisor**](https://github.com/google/gvisor) - container runtime sandbox.  
-  ✅ [**ctop**](https://github.com/bcicen/ctop) - top-like interface for container metrics.  
+✅ [**gvisor**](https://github.com/google/gvisor) - container runtime sandbox.  
+  ✅ [**ctop**](https://github.com/bcicen/ctop) - top-like interface for container metrics.
 
-##### :black\_small\_square: Web Tools
+##### :black_small_square: Web Tools
 
-  ✅ [**Moby**](https://github.com/moby/moby) - a collaborative project for the container ecosystem to assemble container-based system.  
+✅ [**Moby**](https://github.com/moby/moby) - a collaborative project for the container ecosystem to assemble container-based system.  
   ✅ [**Traefik**](https://traefik.io/) - open source reverse proxy/load balancer provides easier integration with Docker and Let’s encrypt.  
   ✅ [**kong**](https://github.com/Kong/kong) - The Cloud-Native API Gateway.  
   ✅ [**rancher**](https://github.com/rancher/rancher) - complete container management platform.  
   ✅ [**portainer**](https://github.com/portainer/portainer) - making Docker management easy.  
-  ✅ [**nginx-proxy**](https://github.com/jwilder/nginx-proxy) - automated nginx proxy for Docker containers using docker-gen.  
+  ✅ [**nginx-proxy**](https://github.com/jwilder/nginx-proxy) - automated nginx proxy for Docker containers using docker-gen.
 
-##### :black\_small\_square: Security
+##### :black_small_square: Security
 
-  ✅ [**docker-bench-security**](https://github.com/docker/docker-bench-security) - checks for dozens of common best-practices around deploying Docker.  
+✅ [**docker-bench-security**](https://github.com/docker/docker-bench-security) - checks for dozens of common best-practices around deploying Docker.  
   ✅ [**trivy**](https://github.com/aquasecurity/trivy) - vulnerability scanner for containers, suitable for CI.  
-  ✅ [**Harbor**](https://goharbor.io/) - cloud native registry project that stores, signs, and scans content.  
+  ✅ [**Harbor**](https://goharbor.io/) - cloud native registry project that stores, signs, and scans content.
 
-##### :black\_small\_square: Manuals/Tutorials/Best Practices
+##### :black_small_square: Manuals/Tutorials/Best Practices
 
-  ✅ [**docker-cheat-sheet**](https://github.com/wsargent/docker-cheat-sheet) - a quick reference cheat sheet on Docker.  
+✅ [**docker-cheat-sheet**](https://github.com/wsargent/docker-cheat-sheet) - a quick reference cheat sheet on Docker.  
   ✅ [**awesome-docker**](https://github.com/veggiemonk/awesome-docker) - a curated list of Docker resources and projects.  
-  ✅ [**docker\_practice**](https://github.com/yeasy/docker_practice) - learn and understand Docker technologies, with real DevOps practice!  
+  ✅ [**docker_practice**](https://github.com/yeasy/docker_practice) - learn and understand Docker technologies, with real DevOps practice!  
   ✅ [**labs**](https://github.com/docker/labs) - is a collection of tutorials for learning how to use Docker with various tools.  
   ✅ [**dockerfiles**](https://github.com/jessfraz/dockerfiles) - various Dockerfiles I use on the desktop and on servers.  
   ✅ [**kubernetes-the-hard-way**](https://github.com/kelseyhightower/kubernetes-the-hard-way) - bootstrap Kubernetes the hard way on Google Cloud Platform. No scripts.  
@@ -613,38 +611,38 @@ Ultimate Resource List
   ✅ [**k8s-security**](https://github.com/kabachook/k8s-security) - kubernetes security notes and best practices.  
   ✅ [**kubernetes-production-best-practices**](https://learnk8s.io/production-best-practices/) - checklists with best-practices for production-ready Kubernetes.  
   ✅ [**kubernetes-production-best-practices**](https://github.com/freach/kubernetes-security-best-practice) - kubernetes security - best practice guide.  
-  ✅ [**kubernetes-failure-stories**](https://github.com/hjacobs/kubernetes-failure-stories) - is a compilation of public failure/horror stories related to Kubernetes.  
+  ✅ [**kubernetes-failure-stories**](https://github.com/hjacobs/kubernetes-failure-stories) - is a compilation of public failure/horror stories related to Kubernetes.
 
 #### Manuals/Howtos/Tutorials  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: Shell/Command line
+##### :black_small_square: Shell/Command line
 
-  ✅ [**pure-bash-bible**](https://github.com/dylanaraps/pure-bash-bible) - is a collection of pure bash alternatives to external processes.  
+✅ [**pure-bash-bible**](https://github.com/dylanaraps/pure-bash-bible) - is a collection of pure bash alternatives to external processes.  
   ✅ [**pure-sh-bible**](https://github.com/dylanaraps/pure-sh-bible) - is a collection of pure POSIX sh alternatives to external processes.  
   ✅ [**bash-guide**](https://github.com/Idnan/bash-guide) - is a guide to learn bash.  
   ✅ [**bash-handbook**](https://github.com/denysdovhan/bash-handbook) - for those who wanna learn Bash.  
   ✅ [**The Bash Hackers Wiki**](https://wiki.bash-hackers.org/start) - hold documentation of any kind about GNU Bash.  
   ✅ [**Shell & Utilities**](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/contents.html) - describes the commands offered to application programs by POSIX-conformant systems.  
   ✅ [**the-art-of-command-line**](https://github.com/jlevy/the-art-of-command-line) - master the command line, in one page.  
-  ✅ [**Shell Style Guide**](https://google.github.io/styleguide/shellguide.html) - a shell style guide for Google-originated open-source projects.  
+  ✅ [**Shell Style Guide**](https://google.github.io/styleguide/shellguide.html) - a shell style guide for Google-originated open-source projects.
 
-##### :black\_small\_square: Text Editors
+##### :black_small_square: Text Editors
 
-  ✅ [**Vim Cheat Sheet**](https://vim.rtorr.com/) - great multi language vim guide.  
+✅ [**Vim Cheat Sheet**](https://vim.rtorr.com/) - great multi language vim guide.
 
-##### :black\_small\_square: Python
+##### :black_small_square: Python
 
-  ✅ [**Awesome Python**](https://awesome-python.com/) - a curated list of awesome Python frameworks, libraries, software and resources.  
+✅ [**Awesome Python**](https://awesome-python.com/) - a curated list of awesome Python frameworks, libraries, software and resources.  
   ✅ [**python-cheatsheet**](https://github.com/gto76/python-cheatsheet) - comprehensive Python cheatsheet.  
-  ✅ [**pythoncheatsheet.org**](https://www.pythoncheatsheet.org/) - basic reference for beginner and advanced developers.  
+  ✅ [**pythoncheatsheet.org**](https://www.pythoncheatsheet.org/) - basic reference for beginner and advanced developers.
 
-##### :black\_small\_square: Sed & Awk & Other
+##### :black_small_square: Sed & Awk & Other
 
-  ✅ [**F’Awk Yeah!**](https://posts.specterops.io/fawk-yeah-advanced-sed-and-awk-usage-parsing-for-pentesters-3-e5727e11a8ad?gi=c8f9506b26b6) - advanced sed and awk usage (Parsing for Pentesters 3).  
+✅ [**F’Awk Yeah!**](https://posts.specterops.io/fawk-yeah-advanced-sed-and-awk-usage-parsing-for-pentesters-3-e5727e11a8ad?gi=c8f9506b26b6) - advanced sed and awk usage (Parsing for Pentesters 3).
 
-##### :black\_small\_square: \*nix & Network
+##### :black_small_square: \*nix & Network
 
-  ✅ [**nixCraft**](https://www.cyberciti.biz/) - linux and unix tutorials for new and seasoned sysadmin.  
+✅ [**nixCraft**](https://www.cyberciti.biz/) - linux and unix tutorials for new and seasoned sysadmin.  
   ✅ [**TecMint**](https://www.tecmint.com/) - the ideal Linux blog for Sysadmins & Geeks.  
   ✅ [**Omnisecu**](http://www.omnisecu.com/index.php) - free Networking, System Administration and Security tutorials.  
   ✅ [**linux-cheat**](https://github.com/cirosantilli/linux-cheat) - Linux tutorials and cheatsheets. Minimal examples. Mostly user-land CLI utilities.  
@@ -664,30 +662,30 @@ Ultimate Resource List
   ✅ [**openssh guideline**](https://infosec.mozilla.org/guidelines/openssh) - is to help operational teams with the configuration of OpenSSH server and client.  
   ✅ [**SSH Handshake Explained**](https://gravitational.com/blog/ssh-handshake-explained/) - is a relatively brief description of the SSH handshake.  
   ✅ [**ISC’s Knowledgebase**](https://kb.isc.org/docs/using-this-knowledgebase) - you’ll find some general information about BIND 9, ISC DHCP, and Kea DHCP.  
-  ✅ [**PacketLife.net**](https://packetlife.net/) - a place to record notes while studying for Cisco’s CCNP certification.  
+  ✅ [**PacketLife.net**](https://packetlife.net/) - a place to record notes while studying for Cisco’s CCNP certification.
 
-##### :black\_small\_square: Microsoft
+##### :black_small_square: Microsoft
 
-  ✅ [**AD-Attack-Defense**](https://github.com/infosecn1nja/AD-Attack-Defense) - attack and defend active directory using modern post exploitation activity.  
+✅ [**AD-Attack-Defense**](https://github.com/infosecn1nja/AD-Attack-Defense) - attack and defend active directory using modern post exploitation activity.
 
-##### :black\_small\_square: Large-scale systems
+##### :black_small_square: Large-scale systems
 
-  ✅ [**The System Design Primer**](https://github.com/donnemartin/system-design-primer) - learn how to design large-scale systems.  
+✅ [**The System Design Primer**](https://github.com/donnemartin/system-design-primer) - learn how to design large-scale systems.  
   ✅ [**Awesome Scalability**](https://github.com/binhnguyennus/awesome-scalability) - best practices in building High Scalability, High Availability, High Stability, and more.  
-  ✅ [**Web Architecture 101**](https://engineering.videoblocks.com/web-architecture-101-a3224e126947?gi=a896808d22a) - the basic architecture concepts.  
+  ✅ [**Web Architecture 101**](https://engineering.videoblocks.com/web-architecture-101-a3224e126947?gi=a896808d22a) - the basic architecture concepts.
 
-##### :black\_small\_square: System hardening
+##### :black_small_square: System hardening
 
-  ✅ [**CIS Benchmarks**](https://www.cisecurity.org/cis-benchmarks/) - secure configuration settings for over 100 technologies, available as a free PDF.  
+✅ [**CIS Benchmarks**](https://www.cisecurity.org/cis-benchmarks/) - secure configuration settings for over 100 technologies, available as a free PDF.  
   ✅ [**Security Harden CentOS 7**](https://highon.coffee/blog/security-harden-centos-7/) - this walks you through the steps required to security harden CentOS.  
   ✅ [**CentOS 7 Server Hardening Guide**](https://www.lisenet.com/2017/centos-7-server-hardening-guide/) - great guide for hardening CentOS; familiar with OpenSCAP.  
   ✅ [**awesome-security-hardening**](https://github.com/decalage2/awesome-security-hardening) - is a collection of security hardening guides, tools and other resources.  
   ✅ [**The Practical Linux Hardening Guide**](https://github.com/trimstray/the-practical-linux-hardening-guide) - provides a high-level overview of hardening GNU/Linux systems.  
-  ✅ [**Linux Hardening Guide**](https://madaidans-insecurities.github.io/guides/linux-hardening.html) - how to harden Linux as much as possible for security and privacy.  
+  ✅ [**Linux Hardening Guide**](https://madaidans-insecurities.github.io/guides/linux-hardening.html) - how to harden Linux as much as possible for security and privacy.
 
-##### :black\_small\_square: Security & Privacy
+##### :black_small_square: Security & Privacy
 
-  ✅ [**Hacking Articles**](https://www.hackingarticles.in/) - LRaj Chandel’s Security & Hacking Blog.  
+✅ [**Hacking Articles**](https://www.hackingarticles.in/) - LRaj Chandel’s Security & Hacking Blog.  
   ✅ [**AWS security tools**](https://github.com/toniblyx/my-arsenal-of-aws-security-tools) - make your AWS cloud environment more secure.  
   ✅ [**Rawsec’s CyberSecurity Inventory**](https://inventory.rawsec.ml/index.html) - an inventory of tools and resources about CyberSecurity.  
   ✅ [**The Illustrated TLS Connection**](https://tls.ulfheim.net/) - every byte of a TLS connection explained and reproduced.  
@@ -695,11 +693,11 @@ Ultimate Resource List
   ✅ [**SELinux Game**](http://selinuxgame.org/index.html) - learn SELinux by doing. Solve Puzzles, show skillz.  
   ✅ [**Certificates and PKI**](https://smallstep.com/blog/everything-pki.html) - everything you should know about certificates and PKI but are too afraid to ask.  
   ✅ [**The Art of Subdomain Enumeration**](https://appsecco.com/books/subdomain-enumeration/) - a reference for subdomain enumeration techniques.  
-  ✅ [**Quitting Google**](https://lifehacker.com/the-comprehensive-guide-to-quitting-google-1830001964) - the comprehensive guide to quitting Google.  
+  ✅ [**Quitting Google**](https://lifehacker.com/the-comprehensive-guide-to-quitting-google-1830001964) - the comprehensive guide to quitting Google.
 
-##### :black\_small\_square: Web Apps
+##### :black_small_square: Web Apps
 
-  ✅ [**OWASP**](https://www.owasp.org/index.php/Main_Page) - worldwide not-for-profit charitable organization focused on improving the security of software.  
+✅ [**OWASP**](https://www.owasp.org/index.php/Main_Page) - worldwide not-for-profit charitable organization focused on improving the security of software.  
   ✅ [**OWASP ASVS 3.0.1**](https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project) - OWASP Application Security Verification Standard Project.  
   ✅ [**OWASP ASVS 3.0.1 Web App**](https://github.com/Santandersecurityresearch/asvs) - simple web app that helps developers understand the ASVS requirements.  
   ✅ [**OWASP ASVS 4.0**](https://github.com/OWASP/ASVS/tree/master/4.0) - is a list of application security requirements or tests.  
@@ -718,25 +716,25 @@ Ultimate Resource List
   ✅ [**Hidden directories and files**](https://github.com/bl4de/research/tree/master/hidden_directories_leaks) - as a source of sensitive information about web application.  
   ✅ [**Explosive blog**](https://bo0om.ru/en/) - great blog about cybersec and pentests.  
   ✅ [**Security Cookies**](https://www.netsparker.com/security-cookies-whitepaper/) - this paper will take a close look at cookie security.  
-  ✅ [**APISecurityBestPractices**](https://github.com/GitGuardian/APISecurityBestPractices) - help you keep secrets (API keys, db credentials, certificates) out of source code.  
+  ✅ [**APISecurityBestPractices**](https://github.com/GitGuardian/APISecurityBestPractices) - help you keep secrets (API keys, db credentials, certificates) out of source code.
 
-##### :black\_small\_square: All-in-one
+##### :black_small_square: All-in-one
 
-  ✅ [**LZone Cheat Sheets**](https://lzone.de/cheat-sheet/) - all cheat sheets.  
+✅ [**LZone Cheat Sheets**](https://lzone.de/cheat-sheet/) - all cheat sheets.  
   ✅ [**Dan’s Cheat Sheets’s**](https://github.com/rstacruz/cheatsheets) - massive cheat sheets documentation.  
   ✅ [**Rico’s cheatsheets**](https://devhints.io/) - this is a modest collection of cheatsheets.  
   ✅ [**DevDocs API**](https://devdocs.io/) - combines multiple API documentations in a fast, organized, and searchable interface.  
   ✅ [**cheat.sh**](https://cheat.sh/) - the only cheat sheet you need.  
-  ✅ [**gnulinux.guru**](https://gnulinux.guru/) - collection of cheat sheets about bash, vim and networking.  
+  ✅ [**gnulinux.guru**](https://gnulinux.guru/) - collection of cheat sheets about bash, vim and networking.
 
-##### :black\_small\_square: Ebooks
+##### :black_small_square: Ebooks
 
-  ✅ [**free-programming-books**](https://github.com/EbookFoundation/free-programming-books) - list of free learning resources in many languages.  
+✅ [**free-programming-books**](https://github.com/EbookFoundation/free-programming-books) - list of free learning resources in many languages.
 
-##### :black\_small\_square: Other
+##### :black_small_square: Other
 
-  ✅ [**CTF Series : Vulnerable Machines**](https://bitvijays.github.io/LFC-VulnerableMachines.html) - the steps below could be followed to find vulnerabilities and exploits.  
-  ✅ [**50M\_CTF\_Writeup**](https://github.com/manoelt/50M_CTF_Writeup) - $50 million CTF from Hackerone - writeup.  
+✅ [**CTF Series : Vulnerable Machines**](https://bitvijays.github.io/LFC-VulnerableMachines.html) - the steps below could be followed to find vulnerabilities and exploits.  
+  ✅ [**50M_CTF_Writeup**](https://github.com/manoelt/50M_CTF_Writeup) - $50 million CTF from Hackerone - writeup.  
   ✅ [**ctf-tasks**](https://github.com/j00ru/ctf-tasks) - an archive of low-level CTF challenges developed over the years.  
   ✅ [**How to start RE/malware analysis?**](https://hshrzd.wordpress.com/how-to-start/) - collection of some hints and useful links for the beginners.  
   ✅ [**The C10K problem**](http://www.kegel.com/c10k.html) - it’s time for web servers to handle ten thousand clients simultaneously, don’t you think?  
@@ -767,13 +765,13 @@ Ultimate Resource List
   ✅ [**Maersk, me & notPetya**](https://gvnshtn.com/maersk-me-notpetya/) - how did ransomware successfully hijack hundreds of domain controllers?  
   ✅ [**howhttps.works**](https://howhttps.works/) - how HTTPS works …in a comic!  
   ✅ [**howdns.works**](https://howdns.works/) - a fun and colorful explanation of how DNS works.  
-  ✅ [**POSTGRESQLCO.NF**](https://postgresqlco.nf/en/doc/param/) - your postgresql.conf documentation and recommendations.  
+  ✅ [**POSTGRESQLCO.NF**](https://postgresqlco.nf/en/doc/param/) - your postgresql.conf documentation and recommendations.
 
 #### Inspiring Lists  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: SysOps/DevOps
+##### :black_small_square: SysOps/DevOps
 
-  ✅ [**Awesome Sysadmin**](https://github.com/kahun/awesome-sysadmin) - amazingly awesome open source sysadmin resources.  
+✅ [**Awesome Sysadmin**](https://github.com/kahun/awesome-sysadmin) - amazingly awesome open source sysadmin resources.  
   ✅ [**Awesome Shell**](https://github.com/alebcay/awesome-shell) - awesome command-line frameworks, toolkits, guides and gizmos.  
   ✅ [**Command-line-text-processing**](https://github.com/learnbyexample/Command-line-text-processing) - finding text to search and replace, sorting to beautifying, and more.  
   ✅ [**Awesome Pcaptools**](https://github.com/caesar0301/awesome-pcaptools) - collection of tools developed by other researchers to process network traces.  
@@ -786,21 +784,21 @@ Ultimate Resource List
   ✅ [**CS-Interview-Knowledge-Map**](https://github.com/InterviewMap/CS-Interview-Knowledge-Map) - build the best interview map.  
   ✅ [**DevOps-Guide**](https://github.com/Tikam02/DevOps-Guide) - DevOps Guide from basic to advanced with Interview Questions and Notes.  
   ✅ [**FreeBSD Journal**](https://issue.freebsdfoundation.org/publication/?m=33057&l=1&view=issuelistBrowser) - it is a great list of periodical magazines about FreeBSD and other important things.  
-  ✅ [**devops-interview-questions**](https://github.com/bregman-arie/devops-interview-questions) - contains interview questions on various DevOps and SRE related topics.  
+  ✅ [**devops-interview-questions**](https://github.com/bregman-arie/devops-interview-questions) - contains interview questions on various DevOps and SRE related topics.
 
-##### :black\_small\_square: Developers
+##### :black_small_square: Developers
 
-  ✅ [**Web Developer Roadmap**](https://github.com/kamranahmedse/developer-roadmap) - roadmaps, articles and resources to help you choose your path, learn and improve.  
+✅ [**Web Developer Roadmap**](https://github.com/kamranahmedse/developer-roadmap) - roadmaps, articles and resources to help you choose your path, learn and improve.  
   ✅ [**Front-End-Checklist**](https://github.com/thedaviddias/Front-End-Checklist) - the perfect Front-End Checklist for modern websites and meticulous developers.  
   ✅ [**Front-End-Performance-Checklist**](https://github.com/thedaviddias/Front-End-Performance-Checklist) - Front-End Performance Checklist that runs faster than the others.  
   ✅ [**Python’s Magic Methods**](https://rszalski.github.io/magicmethods/) - what are magic methods? They’re everything in object-oriented Python.  
   ✅ [**wtfpython**](https://github.com/satwikkansal/wtfpython) - a collection of surprising Python snippets and lesser-known features.  
   ✅ [**js-dev-reads**](https://github.com/twhite96/js-dev-reads) - a list of books and articles for the discerning web developer to read.  
-  ✅ [**Commit messages guide**](https://github.com/RomuloOliveira/commit-messages-guide) - a guide to understand the importance of commit messages.  
+  ✅ [**Commit messages guide**](https://github.com/RomuloOliveira/commit-messages-guide) - a guide to understand the importance of commit messages.
 
-##### :black\_small\_square: Security/Pentesting
+##### :black_small_square: Security/Pentesting
 
-  ✅ [**Awesome Web Security**](https://github.com/qazbnm456/awesome-web-security) - a curated list of Web Security materials and resources.  
+✅ [**Awesome Web Security**](https://github.com/qazbnm456/awesome-web-security) - a curated list of Web Security materials and resources.  
   ✅ [**awesome-cyber-skills**](https://github.com/joe-shenouda/awesome-cyber-skills) - a curated list of hacking environments where you can train your cyber skills.  
   ✅ [**awesome-devsecops**](https://github.com/devsecops/awesome-devsecops) - an authoritative list of awesome devsecops tools.  
   ✅ [**awesome-osint**](https://github.com/jivoi/awesome-osint) - is a curated list of amazingly awesome OSINT.  
@@ -822,15 +820,15 @@ Ultimate Resource List
   ✅ [**Don’t use VPN services**](https://gist.github.com/joepie91/5a9909939e6ce7d09e29) - which is what every third-party “VPN provider” does.  
   ✅ [**awesome-yara**](https://github.com/InQuest/awesome-yara) - a curated list of awesome YARA rules, tools, and people.  
   ✅ [**macOS-Security-and-Privacy-Guide**](https://github.com/drduh/macOS-Security-and-Privacy-Guide) - guide to securing and improving privacy on macOS.  
-  ✅ [**macos\_security**](https://github.com/usnistgov/macos_security) - macOS Security Compliance Project.  
+  ✅ [**macos_security**](https://github.com/usnistgov/macos_security) - macOS Security Compliance Project.  
   ✅ [**awesome-sec-talks**](https://github.com/PaulSec/awesome-sec-talks) - is a collected list of awesome security talks.  
   ✅ [**Movies for Hackers**](https://github.com/k4m4/movies-for-hackers) - list of movies every hacker & cyberpunk must watch.  
-  ✅ [**Cryptography\_1**](https://github.com/danieldizzy/Cryptography_1) - materials used whilst taking Prof. Dan Boneh Stanford Crypto course.  
-  ✅ [**Crypton**](https://github.com/ashutosh1206/Crypton) - library to learn and practice Offensive and Defensive Cryptography.  
+  ✅ [**Cryptography_1**](https://github.com/danieldizzy/Cryptography_1) - materials used whilst taking Prof. Dan Boneh Stanford Crypto course.  
+  ✅ [**Crypton**](https://github.com/ashutosh1206/Crypton) - library to learn and practice Offensive and Defensive Cryptography.
 
-##### :black\_small\_square: Other
+##### :black_small_square: Other
 
-  ✅ [**Cheatography**](https://www.cheatography.com/) - over 3,000 free cheat sheets, revision aids and quick references.  
+✅ [**Cheatography**](https://www.cheatography.com/) - over 3,000 free cheat sheets, revision aids and quick references.  
   ✅ [**awesome-static-analysis**](https://github.com/mre/awesome-static-analysis) - static analysis tools for all programming languages.  
   ✅ [**computer-science**](https://github.com/ossu/computer-science) - path to a free self-taught education in Computer Science.  
   ✅ [**post-mortems**](https://github.com/danluu/post-mortems) - is a collection of postmortems (config errors, hardware failures, and more).  
@@ -839,22 +837,22 @@ Ultimate Resource List
   ✅ [**The-Documentation-Compendium**](https://github.com/kylelobo/The-Documentation-Compendium) - various README templates & tips on writing high-quality documentation.  
   ✅ [**awesome-python-applications**](https://github.com/mahmoud/awesome-python-applications) - free software that works great, and also happens to be open-source Python.  
   ✅ [**awesome-public-datasets**](https://github.com/awesomedata/awesome-public-datasets) - a topic-centric list of HQ open datasets.  
-  ✅ [**machine-learning-algorithms**](https://github.com/Sahith02/machine-learning-algorithms) - a curated list of all machine learning algorithms and concepts.  
+  ✅ [**machine-learning-algorithms**](https://github.com/Sahith02/machine-learning-algorithms) - a curated list of all machine learning algorithms and concepts.
 
 #### Blogs/Podcasts/Videos  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: SysOps/DevOps
+##### :black_small_square: SysOps/DevOps
 
-  ✅ [**Varnish for PHP developers**](https://www.youtube.com/watch?v=nAFpkV5-vuI) - very interesting presentation of Varnish by Mattias Geniar.  
-  ✅ [**A Netflix Guide to Microservices**](https://www.youtube.com/watch?v=CZ3wIuvmHeM) - talks about the chaotic and vibrant world of microservices at Netflix.  
+✅ [**Varnish for PHP developers**](https://www.youtube.com/watch?v=nAFpkV5-vuI) - very interesting presentation of Varnish by Mattias Geniar.  
+  ✅ [**A Netflix Guide to Microservices**](https://www.youtube.com/watch?v=CZ3wIuvmHeM) - talks about the chaotic and vibrant world of microservices at Netflix.
 
-##### :black\_small\_square: Developers
+##### :black_small_square: Developers
 
-  ✅ [**Comparing C to machine lang**](https://www.youtube.com/watch?v=yOyaJXpAYZQ) - compare a simple C app with the compiled machine code of that program.  
+✅ [**Comparing C to machine lang**](https://www.youtube.com/watch?v=yOyaJXpAYZQ) - compare a simple C app with the compiled machine code of that program.
 
-##### :black\_small\_square: Geeky Persons
+##### :black_small_square: Geeky Persons
 
-  ✅ [**Brendan Gregg’s Blog**](http://www.brendangregg.com/) - is an industry expert in computing performance and cloud computing.  
+✅ [**Brendan Gregg’s Blog**](http://www.brendangregg.com/) - is an industry expert in computing performance and cloud computing.  
   ✅ [**Gynvael “GynDream” Coldwind**](https://gynvael.coldwind.pl/) - is a IT security engineer at Google.  
   ✅ [**Michał “lcamtuf” Zalewski**](http://lcamtuf.coredump.cx/) - white hat hacker, computer security expert.  
   ✅ [**Mattias Geniar**](https://ma.ttias.be/) - developer, sysadmin, blogger, podcaster and public speaker.  
@@ -871,51 +869,51 @@ Ultimate Resource List
   ✅ [**Kacper Szurek**](https://security.szurek.pl/) - detection engineer at ESET.  
   ✅ [**Troy Hunt**](https://www.troyhunt.com/) - web security expert known for public education and outreach on security topics.  
   ✅ [**raymii.org**](https://raymii.org/s/index.html) - sysadmin specializing in building high availability cloud environments.  
-  ✅ [**Robert Penz**](https://robert.penz.name/) - IT security expert.  
+  ✅ [**Robert Penz**](https://robert.penz.name/) - IT security expert.
 
-##### :black\_small\_square: Geeky Blogs
+##### :black_small_square: Geeky Blogs
 
-  ✅ [**Linux Audit**](https://linux-audit.com/) - the Linux security blog about auditing, hardening and compliance by Michael Boelen.  
+✅ [**Linux Audit**](https://linux-audit.com/) - the Linux security blog about auditing, hardening and compliance by Michael Boelen.  
   ✅ [**Linux Security Expert**](https://linuxsecurity.expert/) - trainings, howtos, checklists, security tools, and more.  
   ✅ [**The Grymoire**](http://www.grymoire.com/) - collection of useful incantations for wizards, be you computer wizards, magicians, or whatever.  
   ✅ [**Secjuice**](https://www.secjuice.com) - is the only non-profit, independent and volunteer led publication in the information security space.  
-  ✅ [**Decipher**](https://duo.com/decipher) - security news that informs and inspires.  
+  ✅ [**Decipher**](https://duo.com/decipher) - security news that informs and inspires.
 
-##### :black\_small\_square: Geeky Vendor Blogs
+##### :black_small_square: Geeky Vendor Blogs
 
-  ✅ [**Tenable Podcast**](https://www.tenable.com/podcast) - conversations and interviews related to Cyber Exposure, and more.  
+✅ [**Tenable Podcast**](https://www.tenable.com/podcast) - conversations and interviews related to Cyber Exposure, and more.  
   ✅ [**Sophos**](https://nakedsecurity.sophos.com/) - threat news room, giving you news, opinion, advice and research on computer security issues.  
   ✅ [**Tripwire State of Security**](https://www.tripwire.com/state-of-security/) - blog featuring the latest news, trends and insights on current security issues.  
   ✅ [**Malwarebytes Labs Blog**](https://blog.malwarebytes.com/) - security blog aims to provide insider news about cybersecurity.  
   ✅ [**TrustedSec**](https://www.trustedsec.com/category/articles/) - latest news, and trends about cybersecurity.  
   ✅ [**PortSwigger Web Security Blog**](https://portswigger.net/blog) - about web app security vulns and top tips from our team of web security.  
   ✅ [**AT&T Cybersecurity blog**](https://www.alienvault.com/blogs) - news on emerging threats and practical advice to simplify threat detection.  
-  ✅ [**Thycotic**](https://thycotic.com/company/blog/) - where CISOs and IT Admins come to learn about industry trends, IT security, and more.  
+  ✅ [**Thycotic**](https://thycotic.com/company/blog/) - where CISOs and IT Admins come to learn about industry trends, IT security, and more.
 
-##### :black\_small\_square: Geeky Cybersecurity Podcasts
+##### :black_small_square: Geeky Cybersecurity Podcasts
 
-  ✅ [**Risky Business**](https://risky.biz/netcasts/risky-business/) - is a weekly information security podcast featuring news and in-depth interviews.  
+✅ [**Risky Business**](https://risky.biz/netcasts/risky-business/) - is a weekly information security podcast featuring news and in-depth interviews.  
   ✅ [**Cyber, by Motherboard**](https://www.vice.com/en_us/topic/cyber) - stories, and focus on the ideas about cybersecurity.  
   ✅ [**Tenable Podcast**](https://www.tenable.com/podcast) - conversations and interviews related to Cyber Exposure, and more.  
   ✅ [**Cybercrime Investigations**](https://podcasts.apple.com/gb/podcast/cybercrime-investigations/id1428801405) - podcast by Geoff White about cybercrimes.  
   ✅ [**The many hats club**](https://themanyhats.club/tag/episodes/) - featuring stories from a wide range of Infosec people (Whitehat, Greyhat and Blackhat).  
   ✅ [**Darknet Diaries**](https://darknetdiaries.com/) - true stories from the dark side of the Internet.  
   ✅ [**OSINTCurious Webcasts**](https://www.youtube.com/playlist?list=PL423I_gHbWUXah3dmt_q_XNp0NlGAKjis) - is the investigative curiosity that helps people be successful in OSINT.  
-  ✅ [**Security Weekly**](https://www.youtube.com/user/SecurityWeeklyTV) - the latest information security and hacking news.  
+  ✅ [**Security Weekly**](https://www.youtube.com/user/SecurityWeeklyTV) - the latest information security and hacking news.
 
-##### :black\_small\_square: Geeky Cybersecurity Video Blogs
+##### :black_small_square: Geeky Cybersecurity Video Blogs
 
-  ✅ [**rev3rse security**](https://www.youtube.com/channel/UCzvJStjySZVvOBsPl-Vgj0g) - offensive, binary exploitation, web app security, hardening, red team, blue team.  
+✅ [**rev3rse security**](https://www.youtube.com/channel/UCzvJStjySZVvOBsPl-Vgj0g) - offensive, binary exploitation, web app security, hardening, red team, blue team.  
   ✅ [**LiveOverflow**](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w) - a lot more advanced topics than what is typically offered in paid online courses - but for free.  
   ✅ [**J4vv4D**](https://www.youtube.com/infoseccynic) - the important information regarding our internet security.  
-  ✅ [**CyberTalks**](https://cybertalks.co.uk/) - talks, interviews, and article about cybersecurity.  
+  ✅ [**CyberTalks**](https://cybertalks.co.uk/) - talks, interviews, and article about cybersecurity.
 
-##### :black\_small\_square: Best Personal Twitter Accounts
+##### :black_small_square: Best Personal Twitter Accounts
 
-  ✅ [**<span class="citation" data-cites="blackroomsec">@blackroomsec</span>**](https://twitter.com/blackroomsec) - a white-hat hacker/pentester. Intergalactic Minesweeper Champion 1990.  
+✅ [**<span class="citation" data-cites="blackroomsec">@blackroomsec</span>**](https://twitter.com/blackroomsec) - a white-hat hacker/pentester. Intergalactic Minesweeper Champion 1990.  
   ✅ [**<span class="citation" data-cites="MarcoCiappelli">@MarcoCiappelli</span>**](https://twitter.com/MarcoCiappelli) - Co-Founder <span class="citation" data-cites="ITSPmagazine">@ITSPmagazine</span>, at the intersection of IT security and society.  
   ✅ [**<span class="citation" data-cites="binitamshah">@binitamshah</span>**](https://twitter.com/binitamshah) - Linux Evangelist. Malwares. Kernel Dev. Security Enthusiast.  
-  ✅ [**<span class="citation" data-cites="joe_carson">@joe\_carson</span>**](https://twitter.com/joe_carson) - an InfoSec Professional and Tech Geek.  
+  ✅ [**<span class="citation" data-cites="joe_carson">@joe_carson</span>**](https://twitter.com/joe_carson) - an InfoSec Professional and Tech Geek.  
   ✅ [**<span class="citation" data-cites="mikko">@mikko</span>**](https://twitter.com/mikko) - CRO at F-Secure, Reverse Engineer, TED Speaker, Supervillain.  
   ✅ [**<span class="citation" data-cites="esrtweet">@esrtweet</span>**](https://twitter.com/esrtweet) - often referred to as ESR, is an American software developer, and open-source software advocate.  
   ✅ [**<span class="citation" data-cites="gynvael">@gynvael</span>**](https://twitter.com/gynvael) - security researcher/programmer, <span class="citation" data-cites="DragonSectorCTF">@DragonSectorCTF</span> founder/player, technical streamer.  
@@ -927,13 +925,13 @@ Ultimate Resource List
   ✅ [**<span class="citation" data-cites="dakami">@dakami</span>**](https://twitter.com/dakami) - is one of just seven people with the authority to restore the DNS root keys.  
   ✅ [**<span class="citation" data-cites="samykamkar">@samykamkar</span>**](https://twitter.com/samykamkar) - is a famous “grey hat” hacker, security researcher, creator of the MySpace “Samy” worm.  
   ✅ [**<span class="citation" data-cites="securityweekly">@securityweekly</span>**](https://twitter.com/securityweekly) - founder & CTO of Security Weekly podcast network.  
-  ✅ [**<span class="citation" data-cites="jack_daniel">@jack\_daniel</span>**](https://twitter.com/jack_daniel) - <span class="citation" data-cites="SecurityBSides">@SecurityBSides</span> co-founder.  
+  ✅ [**<span class="citation" data-cites="jack_daniel">@jack_daniel</span>**](https://twitter.com/jack_daniel) - <span class="citation" data-cites="SecurityBSides">@SecurityBSides</span> co-founder.  
   ✅ [**<span class="citation" data-cites="thegrugq">@thegrugq</span>**](https://twitter.com/thegrugq) - Security Researcher.  
-  ✅ [**<span class="citation" data-cites="matthew_d_green">@matthew\_d\_green</span>**](https://twitter.com/matthew_d_green) - a cryptographer and professor at Johns Hopkins University.  
+  ✅ [**<span class="citation" data-cites="matthew_d_green">@matthew_d_green</span>**](https://twitter.com/matthew_d_green) - a cryptographer and professor at Johns Hopkins University.
 
-##### :black\_small\_square: Best Commercial Twitter Accounts
+##### :black_small_square: Best Commercial Twitter Accounts
 
-  ✅ [**<span class="citation" data-cites="haveibeenpwned">@haveibeenpwned</span>**](https://twitter.com/haveibeenpwned) - check if you have an account that has been compromised in a data breach.  
+✅ [**<span class="citation" data-cites="haveibeenpwned">@haveibeenpwned</span>**](https://twitter.com/haveibeenpwned) - check if you have an account that has been compromised in a data breach.  
   ✅ [**<span class="citation" data-cites="bugcrowd">@bugcrowd</span>**](https://twitter.com/bugcrowd) - trusted by more of the Fortune 500 than any other crowdsourced security platform.  
   ✅ [**<span class="citation" data-cites="Malwarebytes">@Malwarebytes</span>**](https://twitter.com/Malwarebytes) - most trusted security company. Unmatched threat visibility.  
   ✅ [**<span class="citation" data-cites="sansforensics">@sansforensics</span>**](https://twitter.com/sansforensics) - the world’s leading Digital Forensics and Incident Response provider.  
@@ -941,21 +939,21 @@ Ultimate Resource List
   ✅ [**<span class="citation" data-cites="TheManyHatsClub">@TheManyHatsClub</span>**](https://twitter.com/TheManyHatsClub) - an information security focused podcast and group of individuals from all walks of life.  
   ✅ [**<span class="citation" data-cites="hedgehogsec">@hedgehogsec</span>**](https://twitter.com/hedgehogsec) - Hedgehog Cyber. Gibraltar and Manchester’s top boutique information security firm.  
   ✅ [**<span class="citation" data-cites="NCSC">@NCSC</span>**](https://twitter.com/NCSC) - the National Cyber Security Centre. Helping to make the UK the safest place to live and work online.  
-  ✅ [**<span class="citation" data-cites="Synacktiv">@Synacktiv</span>**](https://twitter.com/Synacktiv) - IT security experts.  
+  ✅ [**<span class="citation" data-cites="Synacktiv">@Synacktiv</span>**](https://twitter.com/Synacktiv) - IT security experts.
 
-##### :black\_small\_square: A piece of history
+##### :black_small_square: A piece of history
 
-  ✅ [**How to Do Things at ARL**](http://ftp.arl.army.mil/~mike/howto/) - how to configure modems, scan images, record CD-ROMs, and other.**\***  
+✅ [**How to Do Things at ARL**](http://ftp.arl.army.mil/~mike/howto/) - how to configure modems, scan images, record CD-ROMs, and other.**\***
 
-##### :black\_small\_square: Other
+##### :black_small_square: Other
 
-  ✅ [**Diffie-Hellman Key Exchange (short version)**](https://www.youtube.com/watch?v=3QnD2c4Xovk) - how Diffie-Hellman Key Exchange worked.  
+✅ [**Diffie-Hellman Key Exchange (short version)**](https://www.youtube.com/watch?v=3QnD2c4Xovk) - how Diffie-Hellman Key Exchange worked.
 
 #### Hacking/Penetration Testing  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: Pentesters arsenal tools
+##### :black_small_square: Pentesters arsenal tools
 
-  ✅ [**Sandcat Browser**](http://www.syhunt.com/sandcat/) - a penetration-oriented browser with plenty of advanced functionality already built in.  
+✅ [**Sandcat Browser**](http://www.syhunt.com/sandcat/) - a penetration-oriented browser with plenty of advanced functionality already built in.  
   ✅ [**Metasploit**](https://www.metasploit.com/) - tool and framework for pentesting system, web and many more, contains a lot a ready to use exploit.  
   ✅ [**Burp Suite**](https://portswigger.net/burp) - tool for testing web app security, intercepting proxy to replay, inject, scan and fuzz.  
   ✅ [**OWASP Zed Attack Proxy**](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) - intercepting proxy to replay, inject, scan and fuzz HTTP requests.  
@@ -980,7 +978,7 @@ Ultimate Resource List
   ✅ [**John The Ripper**](https://www.openwall.com/john/) - is a fast password cracker, currently available for many flavors of Unix, Windows, and other.  
   ✅ [**hashcat**](https://hashcat.net/hashcat/) - world’s fastest and most advanced password recovery utility.  
   ✅ [**p0f**](http://lcamtuf.coredump.cx/p0f3/) - is a tool to identify the players behind any incidental TCP/IP communications.  
-  ✅ [**ssh\_scan**](https://github.com/mozilla/ssh_scan) - a prototype SSH configuration and policy scanner.  
+  ✅ [**ssh_scan**](https://github.com/mozilla/ssh_scan) - a prototype SSH configuration and policy scanner.  
   ✅ [**LeakLooker**](https://github.com/woj-ciech/LeakLooker) - find open databases - powered by Binaryedge.io  
   ✅ [**exploitdb**](https://github.com/offensive-security/exploitdb) - searchable archive from The Exploit Database.  
   ✅ [**getsploit**](https://github.com/vulnersCom/getsploit) - is a command line utility for searching and downloading exploits.  
@@ -1006,15 +1004,15 @@ Ultimate Resource List
   ✅ [**Osmedeus**](https://github.com/j3ssie/Osmedeus) - fully automated offensive security tool for reconnaissance and vulnerability scanning.  
   ✅ [**beef**](https://github.com/beefproject/beef) - the browser exploitation framework project.  
   ✅ [**AutoSploit**](https://github.com/NullArray/AutoSploit) - automated mass exploiter.  
-  ✅ [**SUDO\_KILLER**](https://github.com/TH3xACE/SUDO_KILLER) - is a tool to identify and exploit sudo rules’ misconfigurations and vulnerabilities.  
+  ✅ [**SUDO_KILLER**](https://github.com/TH3xACE/SUDO_KILLER) - is a tool to identify and exploit sudo rules’ misconfigurations and vulnerabilities.  
   ✅ [**yara**](https://github.com/VirusTotal/yara) - the pattern matching swiss knife.  
   ✅ [**mimikatz**](https://github.com/gentilkiwi/mimikatz) - a little tool to play with Windows security.  
   ✅ [**sherlock**](https://github.com/sherlock-project/sherlock) - hunt down social media accounts by username across social networks.  
-  ✅ [**OWASP Threat Dragon**](https://owasp.org/www-project-threat-dragon/) - is a tool used to create threat model diagrams and to record possible threats.  
+  ✅ [**OWASP Threat Dragon**](https://owasp.org/www-project-threat-dragon/) - is a tool used to create threat model diagrams and to record possible threats.
 
-##### :black\_small\_square: Pentests bookmarks collection
+##### :black_small_square: Pentests bookmarks collection
 
-  ✅ [**PTES**](http://www.pentest-standard.org/index.php/Main_Page) - the penetration testing execution standard.  
+✅ [**PTES**](http://www.pentest-standard.org/index.php/Main_Page) - the penetration testing execution standard.  
   ✅ [**Pentests MindMap**](https://www.amanhardikar.com/mindmaps/Practice.html) - amazing mind map with vulnerable apps and systems.  
   ✅ [**WebApps Security Tests MindMap**](https://www.amanhardikar.com/mindmaps/webapptest.html) - incredible mind map for WebApps security tests.  
   ✅ [**Brute XSS**](https://brutelogic.com.br/blog/) - master the art of Cross Site Scripting.  
@@ -1068,35 +1066,35 @@ Ultimate Resource List
   ✅ [**bug-bounty-reference**](https://github.com/ngalongc/bug-bounty-reference) - is a list of bug bounty write-ups.  
   ✅ [**Awesome-Bugbounty-Writeups**](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups) - is a curated list of bugbounty writeups.  
   ✅ [**Bug bounty writeups**](https://pentester.land/list-of-bug-bounty-writeups.html) - list of bug bounty writeups (2012-2020).  
-  ✅ [**hackso.me**](https://hackso.me/) - a great journey into security.  
+  ✅ [**hackso.me**](https://hackso.me/) - a great journey into security.
 
-##### :black\_small\_square: Backdoors/exploits
+##### :black_small_square: Backdoors/exploits
 
-  ✅ [**PHP-backdoors**](https://github.com/bartblaze/PHP-backdoors) - a collection of PHP backdoors. For educational or testing purposes only.  
+✅ [**PHP-backdoors**](https://github.com/bartblaze/PHP-backdoors) - a collection of PHP backdoors. For educational or testing purposes only.
 
-##### :black\_small\_square: Wordlists and Weak passwords
+##### :black_small_square: Wordlists and Weak passwords
 
-  ✅ [**Weakpass**](https://weakpass.com/) - for any kind of bruteforce find wordlists or unleash the power of them all at once!  
+✅ [**Weakpass**](https://weakpass.com/) - for any kind of bruteforce find wordlists or unleash the power of them all at once!  
   ✅ [**Hashes.org**](https://hashes.org/) - is a free online hash resolving service incorporating many unparalleled techniques.  
   ✅ [**SecLists**](https://github.com/danielmiessler/SecLists) - collection of multiple types of lists used during security assessments, collected in one place.  
   ✅ [**Probable-Wordlists**](https://github.com/berzerk0/Probable-Wordlists) - sorted by probability originally created for password generation and testing.  
   ✅ [**skullsecurity passwords**](https://wiki.skullsecurity.org/index.php?title=Passwords) - password dictionaries and leaked passwords repository.  
   ✅ [**Polish PREMIUM Dictionary**](https://bezpieka.org/polski-slownik-premium-polish-wordlist) - official dictionary created by the team on the forum bezpieka.org.**\*** [1  
-  ✅](https://sourceforge.net/projects/kali-linux/files/Wordlist/) [**statistically-likely-usernames**](https://github.com/insidetrust/statistically-likely-usernames) - wordlists for creating statistically likely username lists.  
+  ✅](https://sourceforge.net/projects/kali-linux/files/Wordlist/) [**statistically-likely-usernames**](https://github.com/insidetrust/statistically-likely-usernames) - wordlists for creating statistically likely username lists.
 
-##### :black\_small\_square: Bounty platforms
+##### :black_small_square: Bounty platforms
 
-  ✅ [**YesWeHack**](https://www.yeswehack.com/) - bug bounty platform with infosec jobs.  
+✅ [**YesWeHack**](https://www.yeswehack.com/) - bug bounty platform with infosec jobs.  
   ✅ [**Openbugbounty**](https://www.openbugbounty.org/) - allows any security researcher reporting a vulnerability on any website.  
   ✅ [**hackerone**](https://www.hackerone.com/) - global hacker community to surface the most relevant security issues.  
   ✅ [**bugcrowd**](https://www.bugcrowd.com/) - crowdsourced cybersecurity for the enterprise.  
   ✅ [**Crowdshield**](https://crowdshield.com/) - crowdsourced security & bug bounty management.  
   ✅ [**Synack**](https://www.synack.com/) - crowdsourced security & bug bounty programs, crowd security intelligence platform, and more.  
-  ✅ [**Hacktrophy**](https://hacktrophy.com/en/) - bug bounty platform.  
+  ✅ [**Hacktrophy**](https://hacktrophy.com/en/) - bug bounty platform.
 
-##### :black\_small\_square: Web Training Apps (local installation)
+##### :black_small_square: Web Training Apps (local installation)
 
-  ✅ [**OWASP-VWAD**](https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project) - comprehensive and well maintained registry of all known vulnerable web applications.  
+✅ [**OWASP-VWAD**](https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project) - comprehensive and well maintained registry of all known vulnerable web applications.  
   ✅ [**DVWA**](http://www.dvwa.co.uk/) - PHP/MySQL web application that is damn vulnerable.  
   ✅ [**metasploitable2**](https://metasploit.help.rapid7.com/docs/metasploitable-2) - vulnerable web application amongst security researchers.  
   ✅ [**metasploitable3**](https://github.com/rapid7/metasploitable3) - is a VM that is built from the ground up with a large amount of security vulnerabilities.  
@@ -1118,11 +1116,11 @@ Ultimate Resource List
   ✅ [**secDevLabs**](https://github.com/globocom/secDevLabs) - is a laboratory for learning secure web development in a practical manner.  
   ✅ [**CORS-vulnerable-Lab**](https://github.com/incredibleindishell/CORS-vulnerable-Lab) - sample vulnerable code and its exploit code.  
   ✅ [**RootTheBox**](https://github.com/moloch--/RootTheBox) - a Game of Hackers (CTF Scoreboard & Game Manager).  
-  ✅ [**KONTRA**](https://application.security/) - application security training (OWASP Top Web & Api).  
+  ✅ [**KONTRA**](https://application.security/) - application security training (OWASP Top Web & Api).
 
-##### :black\_small\_square: Labs (ethical hacking platforms/trainings/CTFs)
+##### :black_small_square: Labs (ethical hacking platforms/trainings/CTFs)
 
-  ✅ [**Offensive Security**](https://www.offensive-security.com/) - true performance-based penetration testing training for over a decade.  
+✅ [**Offensive Security**](https://www.offensive-security.com/) - true performance-based penetration testing training for over a decade.  
   ✅ [**Hack The Box**](https://www.hackthebox.eu/) - online platform allowing you to test your penetration testing skills.  
   ✅ [**Hacking-Lab**](https://www.hacking-lab.com/index.html) - online ethical hacking, computer network and security challenge platform.  
   ✅ [**pwnable.kr**](http://pwnable.kr/index.php) - non-commercial wargame site which provides various pwn challenges.  
@@ -1167,35 +1165,35 @@ Ultimate Resource List
   ✅ [**Hack This Site**](https://www.hackthissite.org/pages/index/index.php) - is a free, safe and legal training ground for hackers.  
   ✅ [**Attack & Defense**](https://attackdefense.com) - is a browser-based cloud labs.  
   ✅ [**Cryptohack**](https://cryptohack.org/) - a fun platform for learning modern cryptography.  
-  ✅ [**Cryptopals**](https://cryptopals.com/) - the cryptopals crypto challenges.  
+  ✅ [**Cryptopals**](https://cryptopals.com/) - the cryptopals crypto challenges.
 
-##### :black\_small\_square: CTF platforms
+##### :black_small_square: CTF platforms
 
-  ✅ [**fbctf**](https://github.com/facebook/fbctf) - platform to host Capture the Flag competitions.  
-  ✅ [**ctfscoreboard**](https://github.com/google/ctfscoreboard) - scoreboard for Capture The Flag competitions.  
+✅ [**fbctf**](https://github.com/facebook/fbctf) - platform to host Capture the Flag competitions.  
+  ✅ [**ctfscoreboard**](https://github.com/google/ctfscoreboard) - scoreboard for Capture The Flag competitions.
 
-##### :black\_small\_square: Other resources
+##### :black_small_square: Other resources
 
-  ✅ [**Bugcrowd University**](https://github.com/bugcrowd/bugcrowd_university) - open source education content for the researcher community.  
+✅ [**Bugcrowd University**](https://github.com/bugcrowd/bugcrowd_university) - open source education content for the researcher community.  
   ✅ [**OSCPRepo**](https://github.com/rewardone/OSCPRepo) - a list of resources and scripts that I have been gathering in preparation for the OSCP.  
   ✅ [**OWASP Top 10: Real-World Examples**](https://medium.com/@cxosmo/owasp-top-10-real-world-examples-part-1-a540c4ea2df5) - test your web apps with real-world examples (two-part series).  
   ✅ [**phrack.org**](http://phrack.org/index.html) - an awesome collection of articles from several respected hackers and other thinkers.  
-  ✅ [**Practical-Ethical-Hacking-Resources**](https://github.com/Gr1mmie/Practical-Ethical-Hacking-Resources) - compilation of resources from TCM’s Udemy Course.  
+  ✅ [**Practical-Ethical-Hacking-Resources**](https://github.com/Gr1mmie/Practical-Ethical-Hacking-Resources) - compilation of resources from TCM’s Udemy Course.
 
 #### Your daily knowledge and news  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
-##### :black\_small\_square: RSS Readers
+##### :black_small_square: RSS Readers
 
-  ✅ [**Feedly**](https://feedly.com/) - organize, read and share what matters to you.  
-  ✅ [**Inoreader**](https://www.inoreader.com/) - similar to feedly with a support for filtering what you fetch from rss.  
+✅ [**Feedly**](https://feedly.com/) - organize, read and share what matters to you.  
+  ✅ [**Inoreader**](https://www.inoreader.com/) - similar to feedly with a support for filtering what you fetch from rss.
 
-##### :black\_small\_square: IRC Channels
+##### :black_small_square: IRC Channels
 
-  ✅ [**\#hackerspaces**](https://wiki.hackerspaces.org/IRC_Channel) - hackerspace IRC channels.  
+✅ [**\#hackerspaces**](https://wiki.hackerspaces.org/IRC_Channel) - hackerspace IRC channels.
 
-##### :black\_small\_square: Security
+##### :black_small_square: Security
 
-  ✅ [**The Hacker News**](https://thehackernews.com/) - leading news source dedicated to promoting awareness for security experts and hackers.  
+✅ [**The Hacker News**](https://thehackernews.com/) - leading news source dedicated to promoting awareness for security experts and hackers.  
   ✅ [**Latest Hacking News**](https://latesthackingnews.com/) - provides the latest hacking news, exploits and vulnerabilities for ethical hackers.  
   ✅ [**Security Newsletter**](https://securitynewsletter.co/) - security news as a weekly digest (email notifications).  
   ✅ [**Google Online Security Blog**](https://security.googleblog.com/) - the latest news and insights from Google on security and safety on the Internet.  
@@ -1206,35 +1204,35 @@ Ultimate Resource List
   ✅ [**Reddit - Hacking**](https://www.reddit.com/r/hacking/) - a subreddit dedicated to hacking and hackers.  
   ✅ [**Packet Storm**](https://packetstormsecurity.com/) - information security services, news, files, tools, exploits, advisories and whitepapers.  
   ✅ [**Sekurak**](https://sekurak.pl/) - about security, penetration tests, vulnerabilities and many others (PL/EN).  
-  ✅ [**nf.sec**](https://nfsec.pl/) - basic aspects and mechanisms of Linux operating system security (PL).  
+  ✅ [**nf.sec**](https://nfsec.pl/) - basic aspects and mechanisms of Linux operating system security (PL).
 
-##### :black\_small\_square: Other/All-in-one
+##### :black_small_square: Other/All-in-one
 
-  ✅ [**Changelog**](https://changelog.com/) - is a community of hackers; news & podcasts for developers and hackers.  
+✅ [**Changelog**](https://changelog.com/) - is a community of hackers; news & podcasts for developers and hackers.
 
 #### Other Cheat Sheets  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
 ###### Build your own DNS Servers
 
-  ✅ [**Unbound DNS Tutorial**](https://calomel.org/unbound_dns.html) - a validating, recursive, and caching DNS server.  
+✅ [**Unbound DNS Tutorial**](https://calomel.org/unbound_dns.html) - a validating, recursive, and caching DNS server.  
   ✅ [**Knot Resolver on Fedora**](https://www.ctrl.blog/entry/knot-dns-resolver-tutorial.html) - how to get faster and more secure DNS resolution with Knot Resolver on Fedora.  
   ✅ [**DNS-over-HTTPS**](https://www.aaflalo.me/2018/10/tutorial-setup-dns-over-https-server/) - tutorial to setup your own DNS-over-HTTPS (DoH) server.  
   ✅ [**dns-over-https**](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/) - a cartoon intro to DNS over HTTPS.  
   ✅ [**DNS-over-TLS**](https://www.aaflalo.me/2019/03/dns-over-tls/) - following to your DoH server, setup your DNS-over-TLS (DoT) server.  
-  ✅ [**DNS Servers**](https://zwischenzugs.com/2018/01/26/how-and-why-i-run-my-own-dns-servers/) - how (and why) i run my own DNS Servers.  
+  ✅ [**DNS Servers**](https://zwischenzugs.com/2018/01/26/how-and-why-i-run-my-own-dns-servers/) - how (and why) i run my own DNS Servers.
 
 ###### Build your own Certificate Authority
 
-  ✅ [**OpenSSL Certificate Authority**](https://jamielinux.com/docs/openssl-certificate-authority/) - build your own certificate authority (CA) using the OpenSSL tools.  
-  ✅ [**step-ca Certificate Authority**](https://github.com/smallstep/certificates) - build your own certificate authority (CA) using open source step-ca.  
+✅ [**OpenSSL Certificate Authority**](https://jamielinux.com/docs/openssl-certificate-authority/) - build your own certificate authority (CA) using the OpenSSL tools.  
+  ✅ [**step-ca Certificate Authority**](https://github.com/smallstep/certificates) - build your own certificate authority (CA) using open source step-ca.
 
 ###### Build your own System/Virtual Machine
 
-  ✅ [**os-tutorial**](https://github.com/cfenollosa/os-tutorial) - how to create an OS from scratch.  
+✅ [**os-tutorial**](https://github.com/cfenollosa/os-tutorial) - how to create an OS from scratch.  
   ✅ [**Write your Own Virtual Machine**](https://justinmeiners.github.io/lc3-vm/) - how to write your own virtual machine (VM).  
   ✅ [**x86 Bare Metal Examples**](https://github.com/cirosantilli/x86-bare-metal-examples) - dozens of minimal operating systems to learn x86 system programming.  
   ✅ [**simple-computer**](https://github.com/djhworld/simple-computer) - the scott CPU from “But How Do It Know?” by J. Clark Scott.  
-  ✅ [**littleosbook**](https://littleosbook.github.io/) - the little book about OS development.  
+  ✅ [**littleosbook**](https://littleosbook.github.io/) - the little book about OS development.
 
 ###### DNS Servers list (privacy)
 
@@ -1252,25 +1250,25 @@ Ultimate Resource List
 
 In Firefox’s address bar, you can limit results by typing special characters before or after your term:
 
--   `^` - for matches in your browsing history
--   `*` - for matches in your bookmarks.
--   `%` - for matches in your currently open tabs.
--   `#` - for matches in page titles.
--   `@` - for matches in web addresses.
+- `^` - for matches in your browsing history
+- `*` - for matches in your bookmarks.
+- `%` - for matches in your currently open tabs.
+- `#` - for matches in page titles.
+- `@` - for matches in web addresses.
 
 ###### Chrome hidden commands
 
--   `chrome://chrome-urls` - list of all commands
--   `chrome://flags` - enable experiments and development features
--   `chrome://interstitials` - errors and warnings
--   `chrome://net-internals` - network internals (events, dns, cache)
--   `chrome://network-errors` - network errors
--   `chrome://net-export` - start logging future network activity to a file
--   `chrome://safe-browsing` - safe browsing options
--   `chrome://user-actions` - record all user actions
--   `chrome://restart` - restart chrome
--   `chrome://dino` - ERR\_INTERNET\_DISCONNECTED…
--   `cache:<website-address>` - view the cached version of the web page
+- `chrome://chrome-urls` - list of all commands
+- `chrome://flags` - enable experiments and development features
+- `chrome://interstitials` - errors and warnings
+- `chrome://net-internals` - network internals (events, dns, cache)
+- `chrome://network-errors` - network errors
+- `chrome://net-export` - start logging future network activity to a file
+- `chrome://safe-browsing` - safe browsing options
+- `chrome://user-actions` - record all user actions
+- `chrome://restart` - restart chrome
+- `chrome://dino` - ERR_INTERNET_DISCONNECTED…
+- `cache:<website-address>` - view the cached version of the web page
 
 ###### Bypass WAFs by Shortening IP Address (by [0xInfection](https://twitter.com/0xInfection))
 
@@ -1290,86 +1288,86 @@ For more information please see [How to Obscure Any URL](http://www.pc-help.org/
 
 ###### Hashing, encryption and encoding (by [Michal Špaček](https://twitter.com/spazef0rze))
 
-*Hashing*
+_Hashing_
 
-plaintext :arrow\_right: hash  
-hash :no\_entry: plaintext
+plaintext :arrow_right: hash  
+hash :no_entry: plaintext
 
-*Symmetric encryption*
+_Symmetric encryption_
 
-plaintext :arrow\_right: :key: :arrow\_right: ciphertext  
-plaintext :arrow\_left: :key: :arrow\_left: ciphertext  
+plaintext :arrow_right: :key: :arrow_right: ciphertext  
+plaintext :arrow_left: :key: :arrow_left: ciphertext  
 (:key: shared key)
 
-*Asymmetric encryption*
+_Asymmetric encryption_
 
-plaintext :arrow\_right: :key: :arrow\_right: ciphertext  
-plaintext :arrow\_left: :part\_alternation\_mark: :arrow\_left: ciphertext  
-(:key: public key, :part\_alternation\_mark: private key)  
+plaintext :arrow_right: :key: :arrow_right: ciphertext  
+plaintext :arrow_left: :part_alternation_mark: :arrow_left: ciphertext  
+(:key: public key, :part_alternation_mark: private key)
 
-*Encoding*
+_Encoding_
 
-text :arrow\_right: encoded  
-text :arrow\_left: encoded
+text :arrow_right: encoded  
+text :arrow_left: encoded
 
 #### One-liners  [<sup>\[TOC\]</sup>](#anger-table-of-contents)
 
 ##### Table of Contents
 
--   [terminal](#tool-terminal)
--   [busybox](#tool-busybox)
--   [mount](#tool-mount)
--   [fuser](#tool-fuser)
--   [lsof](#tool-lsof)
--   [ps](#tool-ps)
--   [top](#tool-top)
--   [vmstat](#tool-vmstat)
--   [iostat](#tool-iostat)
--   [strace](#tool-strace)
--   [kill](#tool-kill)
--   [find](#tool-find)
--   [diff](#tool-diff)
--   [vimdiff](#tool-vimdiff)
--   [tail](#tool-tail)
--   [cpulimit](#tool-cpulimit)
--   [pwdx](#tool-pwdx)
--   [tr](#tool-tr)
--   [chmod](#tool-chmod)
--   [who](#tool-who)
--   [last](#tool-last)
--   [screen](#tool-screen)
--   [script](#tool-script)
--   [du](#tool-du)
--   [inotifywait](#tool-inotifywait)
--   [openssl](#tool-openssl)
--   [secure-delete](#tool-secure-delete)
--   [dd](#tool-dd)
--   [gpg](#tool-gpg)
--   [system-other](#tool-system-other)
--   [curl](#tool-curl)
--   [httpie](#tool-httpie)
--   [ssh](#tool-ssh)
--   [linux-dev](#tool-linux-dev)
--   [tcpdump](#tool-tcpdump)
--   [tcpick](#tool-tcpick)
--   [ngrep](#tool-ngrep)
--   [hping3](#tool-hping3)
--   [nmap](#tool-nmap)
--   [netcat](#tool-netcat)
--   [socat](#tool-socat)
--   [p0f](#tool-p0f)
--   [gnutls-cli](#tool-gnutls-cli)
--   [netstat](#tool-netstat)
--   [rsync](#tool-rsync)
--   [host](#tool-host)
--   [dig](#tool-dig)
--   [certbot](#tool-certbot)
--   [network-other](#tool-network-other)
--   [git](#tool-git)
--   [awk](#tool-awk)
--   [sed](#tool-sed)
--   [grep](#tool-grep)
--   [perl](#tool-perl)
+- [terminal](#tool-terminal)
+- [busybox](#tool-busybox)
+- [mount](#tool-mount)
+- [fuser](#tool-fuser)
+- [lsof](#tool-lsof)
+- [ps](#tool-ps)
+- [top](#tool-top)
+- [vmstat](#tool-vmstat)
+- [iostat](#tool-iostat)
+- [strace](#tool-strace)
+- [kill](#tool-kill)
+- [find](#tool-find)
+- [diff](#tool-diff)
+- [vimdiff](#tool-vimdiff)
+- [tail](#tool-tail)
+- [cpulimit](#tool-cpulimit)
+- [pwdx](#tool-pwdx)
+- [tr](#tool-tr)
+- [chmod](#tool-chmod)
+- [who](#tool-who)
+- [last](#tool-last)
+- [screen](#tool-screen)
+- [script](#tool-script)
+- [du](#tool-du)
+- [inotifywait](#tool-inotifywait)
+- [openssl](#tool-openssl)
+- [secure-delete](#tool-secure-delete)
+- [dd](#tool-dd)
+- [gpg](#tool-gpg)
+- [system-other](#tool-system-other)
+- [curl](#tool-curl)
+- [httpie](#tool-httpie)
+- [ssh](#tool-ssh)
+- [linux-dev](#tool-linux-dev)
+- [tcpdump](#tool-tcpdump)
+- [tcpick](#tool-tcpick)
+- [ngrep](#tool-ngrep)
+- [hping3](#tool-hping3)
+- [nmap](#tool-nmap)
+- [netcat](#tool-netcat)
+- [socat](#tool-socat)
+- [p0f](#tool-p0f)
+- [gnutls-cli](#tool-gnutls-cli)
+- [netstat](#tool-netstat)
+- [rsync](#tool-rsync)
+- [host](#tool-host)
+- [dig](#tool-dig)
+- [certbot](#tool-certbot)
+- [network-other](#tool-network-other)
+- [git](#tool-git)
+- [awk](#tool-awk)
+- [sed](#tool-sed)
+- [grep](#tool-grep)
+- [perl](#tool-perl)
 
 ##### Tool: [terminal](https://en.wikipedia.org/wiki/Linux_console)
 
@@ -1499,7 +1497,7 @@ text :arrow\_left: encoded
 
     unset MAIL; export MAILCHECK=1; export MAILPATH='$FILE_TO_WATCH?$MESSAGE'
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [busybox](https://www.busybox.net/)
 
@@ -1507,24 +1505,24 @@ text :arrow\_left: encoded
 
     busybox httpd -p $PORT -h $HOME [-c httpd.conf]
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [mount](https://en.wikipedia.org/wiki/Mount_(Unix))
+##### Tool: [mount](<https://en.wikipedia.org/wiki/Mount_(Unix)>)
 
 ###### Mount a temporary ram partition
 
     mount -t tmpfs tmpfs /mnt -o size=64M
 
--   `-t` - filesystem type
--   `-o` - mount options
+- `-t` - filesystem type
+- `-o` - mount options
 
 ###### Remount a filesystem as read/write
 
     mount -o remount,rw /
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [fuser](https://en.wikipedia.org/wiki/Fuser_(Unix))
+##### Tool: [fuser](<https://en.wikipedia.org/wiki/Fuser_(Unix)>)
 
 ###### Show which processes use the files/directories
 
@@ -1535,13 +1533,13 @@ text :arrow\_left: encoded
 
     fuser -ki filename
 
--   `-i` - interactive option
+- `-i` - interactive option
 
 ###### Kills a process that is locking a file with specific signal
 
     fuser -k -HUP filename
 
--   `--list-signals` - list available signal names
+- `--list-signals` - list available signal names
 
 ###### Show what PID is listening on specific port
 
@@ -1551,7 +1549,7 @@ text :arrow\_left: encoded
 
     fuser -mv /var/www
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [lsof](https://en.wikipedia.org/wiki/Lsof)
 
@@ -1597,9 +1595,9 @@ text :arrow\_left: encoded
 
     lsof -p <PID> | grep cwd
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [ps](https://en.wikipedia.org/wiki/Ps_(Unix))
+##### Tool: [ps](<https://en.wikipedia.org/wiki/Ps_(Unix)>)
 
 ###### Show a 4-way scrollable process tree with full details
 
@@ -1613,9 +1611,9 @@ text :arrow\_left: encoded
 
     ps -lfC nginx
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [find](https://en.wikipedia.org/wiki/Find_(Unix))
+##### Tool: [find](<https://en.wikipedia.org/wiki/Find_(Unix)>)
 
 ###### Find files that have been modified on your system in the past 60 minutes
 
@@ -1694,17 +1692,17 @@ text :arrow\_left: encoded
 
     find / \( -perm -4000 -o -perm -2000 \) -type f -exec ls -la {} \;
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [top](https://en.wikipedia.org/wiki/Top_(software))
+##### Tool: [top](<https://en.wikipedia.org/wiki/Top_(software)>)
 
 ###### Use top to monitor only all processes with the specific string
 
     top -p $(pgrep -d , <str>)
 
--   `<str>` - process containing string (eg. nginx, worker)
+- `<str>` - process containing string (eg. nginx, worker)
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [vmstat](https://en.wikipedia.org/wiki/Vmstat)
 
@@ -1712,11 +1710,11 @@ text :arrow\_left: encoded
 
     vmstat 2 20 -t -w
 
--   `2` - number of times with a defined time interval (delay)
--   `20` - each execution of the command (count)
--   `-t` - show timestamp
--   `-w` - wide output
--   `-S M` - output of the fields in megabytes instead of kilobytes
+- `2` - number of times with a defined time interval (delay)
+- `20` - each execution of the command (count)
+- `-t` - show timestamp
+- `-w` - wide output
+- `-S M` - output of the fields in megabytes instead of kilobytes
 
 ###### Show current system utilization will get refreshed every 5 seconds
 
@@ -1740,10 +1738,10 @@ text :arrow\_left: encoded
 
     iostat 2 10 -t -m
 
--   `2` - number of times with a defined time interval (delay)
--   `10` - each execution of the command (count)
--   `-t` - show timestamp
--   `-m` - fields in megabytes (`-k` - in kilobytes, default)
+- `2` - number of times with a defined time interval (delay)
+- `10` - each execution of the command (count)
+- `-t` - show timestamp
+- `-m` - fields in megabytes (`-k` - in kilobytes, default)
 
 ###### Show information only about the CPU utilization
 
@@ -1757,7 +1755,7 @@ text :arrow\_left: encoded
 
     iostat -N
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [strace](https://en.wikipedia.org/wiki/Strace)
 
@@ -1791,15 +1789,15 @@ text :arrow\_left: encoded
 
     strace -f -e trace=network nc -lu 80
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [kill](https://en.wikipedia.org/wiki/Kill_(command))
+##### Tool: [kill](<https://en.wikipedia.org/wiki/Kill_(command)>)
 
 ###### Kill a process running on port
 
     kill -9 $(lsof -i :<port> | awk '{l=$2} END {print l}')
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [diff](https://en.wikipedia.org/wiki/Diff)
 
@@ -1811,7 +1809,7 @@ text :arrow\_left: encoded
 
     diff <(cat /etc/passwd) <(cut -f2 /etc/passwd)
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [vimdiff](http://vimdoc.sourceforge.net/htmldoc/diff.html)
 
@@ -1835,13 +1833,13 @@ Click `F7` to switch between diff modes
 
 Usefull `vimdiff` commands:
 
--   `qa` to exit all windows
--   `:vertical resize 70` to resize window
--   set window width `Ctrl+W [N columns]+(Shift+)<\>`
+- `qa` to exit all windows
+- `:vertical resize 70` to resize window
+- set window width `Ctrl+W [N columns]+(Shift+)<\>`
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [tail](https://en.wikipedia.org/wiki/Tail_(Unix))
+##### Tool: [tail](<https://en.wikipedia.org/wiki/Tail_(Unix)>)
 
 ###### Annotate tail -f with timestamps
 
@@ -1855,9 +1853,9 @@ Usefull `vimdiff` commands:
 
     tail -n 100 -f /path/to/logfile | grep "HTTP/[1-2].[0-1]\" [5]"
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [tar](https://en.wikipedia.org/wiki/Tar_(computing))
+##### Tool: [tar](<https://en.wikipedia.org/wiki/Tar_(computing)>)
 
 ###### System backup with exclude specific directories
 
@@ -1872,9 +1870,9 @@ Usefull `vimdiff` commands:
     --exclude=proc/* --exclude=sys/* --exclude=dev/* \
     --exclude=mnt/* --exclude=tmp/* --use-compress-program=pigz .
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [dump](https://en.wikipedia.org/wiki/Dump_(program))
+##### Tool: [dump](<https://en.wikipedia.org/wiki/Dump_(program)>)
 
 ###### System backup to file
 
@@ -1885,7 +1883,7 @@ Usefull `vimdiff` commands:
     cd /
     restore -rf /backup/system$(date +%d%m%Y%s).lzo
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [cpulimit](http://cpulimit.sourceforge.net/)
 
@@ -1893,7 +1891,7 @@ Usefull `vimdiff` commands:
 
     cpulimit -p pid -l 50
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [pwdx](https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/)
 
@@ -1901,7 +1899,7 @@ Usefull `vimdiff` commands:
 
     pwdx <pid>
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [taskset](https://www.cyberciti.biz/faq/taskset-cpu-affinity-command/)
 
@@ -1909,15 +1907,15 @@ Usefull `vimdiff` commands:
 
     taskset -c 0 <command>
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [tr](https://en.wikipedia.org/wiki/Tr_(Unix))
+##### Tool: [tr](<https://en.wikipedia.org/wiki/Tr_(Unix)>)
 
 ###### Show directories in the PATH, one per line
 
     tr : '\n' <<<$PATH
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [chmod](https://en.wikipedia.org/wiki/Chmod)
 
@@ -1938,9 +1936,9 @@ Usefull `vimdiff` commands:
     # 3:
     setfacl --set u::rwx,g::---,o::--- /bin/chmod
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [who](https://en.wikipedia.org/wiki/Who_(Unix))
+##### Tool: [who](<https://en.wikipedia.org/wiki/Who_(Unix)>)
 
 ###### Find last reboot time
 
@@ -1950,7 +1948,7 @@ Usefull `vimdiff` commands:
 
     [[ $(who -m | awk '{ print $1 }') == $(whoami) ]] || echo "You are su-ed to $(whoami)"
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [last](https://www.howtoforge.com/linux-last-command/)
 
@@ -1959,7 +1957,7 @@ Usefull `vimdiff` commands:
     (last -x -f $(ls -1t /var/log/wtmp* | head -2 | tail -1); last -x -f /var/log/wtmp) | \
     grep -A1 reboot | head -2 | grep -q shutdown && echo "Expected reboot" || echo "Panic reboot"
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [screen](https://en.wikipedia.org/wiki/GNU_Screen)
 
@@ -1971,9 +1969,9 @@ Usefull `vimdiff` commands:
 
     screen -r -d <pid>
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [script](https://en.wikipedia.org/wiki/Script_(Unix))
+##### Tool: [script](<https://en.wikipedia.org/wiki/Script_(Unix)>)
 
 ###### Record and replay terminal session
 
@@ -1987,7 +1985,7 @@ Usefull `vimdiff` commands:
     ### Replay session
     scriptreplay --timing=session.time session.log
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [du](https://en.wikipedia.org/wiki/GNU_Screen)
 
@@ -1998,7 +1996,7 @@ Usefull `vimdiff` commands:
     awk '{split("K M G",v); s=1; while($1>1024){$1/=1024; s++} print int($1)" "v[s]"\t"$2}' | \
     head -n 20
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [inotifywait](https://en.wikipedia.org/wiki/GNU_Screen)
 
@@ -2006,7 +2004,7 @@ Usefull `vimdiff` commands:
 
     while true ; do inotifywait -r -e MODIFY dir/ && ls dir/ ; done;
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [openssl](https://www.openssl.org/)
 
@@ -2150,11 +2148,11 @@ Example of `oids` (you’ll probably also have to make OpenSSL know about the ne
 
 For more information please look at these great explanations:
 
--   [RFC 5280](https://tools.ietf.org/html/rfc5280)
--   [How to create multidomain certificates using config files](https://apfelboymchen.net/gnu/notes/openssl%20multidomain%20with%20config%20files.html)
--   [Generate a multi domains certificate using config files](https://gist.github.com/romainnorberg/464758a6620228b977212a3cf20c3e08)
--   [Your OpenSSL CSR command is out of date](https://expeditedsecurity.com/blog/openssl-csr-command/)
--   [OpenSSL example configuration file](https://www.tbs-certificats.com/openssl-dem-server-cert.cnf)
+- [RFC 5280](https://tools.ietf.org/html/rfc5280)
+- [How to create multidomain certificates using config files](https://apfelboymchen.net/gnu/notes/openssl%20multidomain%20with%20config%20files.html)
+- [Generate a multi domains certificate using config files](https://gist.github.com/romainnorberg/464758a6620228b977212a3cf20c3e08)
+- [Your OpenSSL CSR command is out of date](https://expeditedsecurity.com/blog/openssl-csr-command/)
+- [OpenSSL example configuration file](https://www.tbs-certificats.com/openssl-dem-server-cert.cnf)
 
 ###### List available EC curves
 
@@ -2280,7 +2278,7 @@ For more information please look at these great explanations:
     (openssl rsa -noout -modulus -in private.key | openssl md5 ; \
     openssl req -noout -modulus -in request.csr | openssl md5) | uniq
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [secure-delete](https://wiki.archlinux.org/index.php/Securely_wipe_disk)
 
@@ -2306,9 +2304,9 @@ For more information please look at these great explanations:
     sdmem -v
     swapoff /dev/sda5 && sswap -vz /dev/sda5
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [dd](https://en.wikipedia.org/wiki/Dd_(Unix))
+##### Tool: [dd](<https://en.wikipedia.org/wiki/Dd_(Unix)>)
 
 ###### Show dd status every so often
 
@@ -2319,7 +2317,7 @@ For more information please look at these great explanations:
 
     echo "string" | dd of=filename
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [gpg](https://www.gnupg.org/)
 
@@ -2327,36 +2325,36 @@ For more information please look at these great explanations:
 
     gpg --export --armor "<username>" > username.pkey
 
--   `--export` - export all keys from all keyrings or specific key
--   `-a|--armor` - create ASCII armored output
+- `--export` - export all keys from all keyrings or specific key
+- `-a|--armor` - create ASCII armored output
 
 ###### Encrypt file
 
     gpg -e -r "<username>" dump.sql
 
--   `-e|--encrypt` - encrypt data
--   `-r|--recipient` - encrypt for specific
+- `-e|--encrypt` - encrypt data
+- `-r|--recipient` - encrypt for specific
 
 ###### Decrypt file
 
     gpg -o dump.sql -d dump.sql.gpg
 
--   `-o|--output` - use as output file
--   `-d|--decrypt` - decrypt data (default)
+- `-o|--output` - use as output file
+- `-d|--decrypt` - decrypt data (default)
 
 ###### Search recipient
 
     gpg --keyserver hkp://keyserver.ubuntu.com --search-keys "<username>"
 
--   `--keyserver` - set specific key server
--   `--search-keys` - search for keys on a key server
+- `--keyserver` - set specific key server
+- `--search-keys` - search for keys on a key server
 
 ###### List all of the packets in an encrypted file
 
     gpg --batch --list-packets archive.gpg
     gpg2 --batch --list-packets archive.gpg
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [system-other](https://github.com/trimstray/the-book-of-secret-knowledge#tool-system-other)
 
@@ -2380,24 +2378,24 @@ For more information please look at these great explanations:
 
     curl -Iks https://www.google.com
 
--   `-I` - show response headers only
--   `-k` - insecure connection when using ssl
--   `-s` - silent mode (not display body)
+- `-I` - show response headers only
+- `-k` - insecure connection when using ssl
+- `-s` - silent mode (not display body)
 
-    curl -Iks --location -X GET -A "x-agent" https://www.google.com
+  curl -Iks --location -X GET -A "x-agent" https://www.google.com
 
--   `--location` - follow redirects
--   `-X` - set method
--   `-A` - set user-agent
+- `--location` - follow redirects
+- `-X` - set method
+- `-A` - set user-agent
 
-    curl -Iks --location -X GET -A "x-agent" --proxy http://127.0.0.1:16379 https://www.google.com
+  curl -Iks --location -X GET -A "x-agent" --proxy http://127.0.0.1:16379 https://www.google.com
 
--   `--proxy [socks5://|http://]` - set proxy server
+- `--proxy [socks5://|http://]` - set proxy server
 
-    curl -o file.pdf -C - https://example.com/Aiju2goo0Ja2.pdf
+  curl -o file.pdf -C - https://example.com/Aiju2goo0Ja2.pdf
 
--   `-o` - write output to file
--   `-C` - resume the transfer
+- `-o` - write output to file
+- `-C` - resume the transfer
 
 ###### Find your external IP address (external services)
 
@@ -2451,27 +2449,28 @@ For more information please look at these great explanations:
 
     unset _domain_list _dns_list
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [httpie](https://httpie.org/)
 
     http -p Hh https://www.google.com
 
--   `-p` - print request and response headers
-    -   `H` - request headers
-    -   `B` - request body
-    -   `h` - response headers
-    -   `b` - response body
+- `-p` - print request and response headers
 
-    http -p Hh https://www.google.com --follow --verify no
+  - `H` - request headers
+  - `B` - request body
+  - `h` - response headers
+  - `b` - response body
 
--   `-F, --follow` - follow redirects
--   `--verify no` - skip SSL verification
+  http -p Hh https://www.google.com --follow --verify no
 
-    http -p Hh https://www.google.com --follow --verify no \
-    --proxy http:http://127.0.0.1:16379
+- `-F, --follow` - follow redirects
+- `--verify no` - skip SSL verification
 
--   `--proxy [http:]` - set proxy server
+  http -p Hh https://www.google.com --follow --verify no \
+  --proxy http:http://127.0.0.1:16379
+
+- `--proxy [http:]` - set proxy server
 
 ##### Tool: [ssh](https://www.openssh.com/)
 
@@ -2573,9 +2572,9 @@ Example 2:
     # Connect to the service:
     host1> psql -U db_user -d db_dev -p 9051 -h localhost
 
--   `-n` - redirects stdin from `/dev/null`
--   `-N` - do not execute a remote command
--   `-T` - disable pseudo-terminal allocation
+- `-n` - redirects stdin from `/dev/null`
+- `-N` - do not execute a remote command
+- `-T` - disable pseudo-terminal allocation
 
 ###### SSH remote port forwarding
 
@@ -2585,7 +2584,7 @@ Example 2:
     # Connect to the service:
     host2> psql -U postgres -d postgres -p 8000 -h localhost
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [linux-dev](https://www.tldp.org/LDP/abs/html/devref1.html)
 
@@ -2593,15 +2592,15 @@ Example 2:
 
     timeout 1 bash -c "</dev/<proto>/<host>/<port>" >/dev/null 2>&1 ; echo $?
 
--   `<proto` - set protocol (tcp/udp)
--   `<host>` - set remote host
--   `<port>` - set destination port
+- `<proto` - set protocol (tcp/udp)
+- `<host>` - set remote host
+- `<port>` - set destination port
 
 ###### Read and write to TCP or UDP sockets with common bash tools
 
     exec 5<>/dev/tcp/<host>/<port>; cat <&5 & cat >&5; exec 5>&-
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [tcpdump](http://www.tcpdump.org/)
 
@@ -2609,20 +2608,20 @@ Example 2:
 
     tcpdump -ne -i eth0 -Q in host 192.168.252.1 and port 443
 
--   `-n` - don’t convert addresses (`-nn` will not resolve hostnames or ports)
--   `-e` - print the link-level headers
--   `-i [iface|any]` - set interface
--   `-Q|-D [in|out|inout]` - choose send/receive direction (`-D` - for old tcpdump versions)
--   `host [ip|hostname]` - set host, also `[host not]`
--   `[and|or]` - set logic
--   `port [1-65535]` - set port number, also `[port not]`
+- `-n` - don’t convert addresses (`-nn` will not resolve hostnames or ports)
+- `-e` - print the link-level headers
+- `-i [iface|any]` - set interface
+- `-Q|-D [in|out|inout]` - choose send/receive direction (`-D` - for old tcpdump versions)
+- `host [ip|hostname]` - set host, also `[host not]`
+- `[and|or]` - set logic
+- `port [1-65535]` - set port number, also `[port not]`
 
 ###### Filter incoming (on interface) traffic (specific ) and write to a file
 
     tcpdump -ne -i eth0 -Q in host 192.168.252.1 and port 443 -c 5 -w tcpdump.pcap
 
--   `-c [num]` - capture only num number of packets
--   `-w [filename]` - write packets to file, `-r [filename]` - reading from file
+- `-c [num]` - capture only num number of packets
+- `-w [filename]` - write packets to file, `-r [filename]` - reading from file
 
 ###### Capture all ICMP packets
 
@@ -2663,8 +2662,8 @@ or simply:
 
     tcpdump -ei eth0 -w /tmp/capture-%H.pcap -G 3600 -C 200
 
--   `-G <num>` - pcap will be created every `<num>` seconds
--   `-C <size>` - close the current pcap and open a new one if is larger than `<size>`
+- `-G <num>` - pcap will be created every `<num>` seconds
+- `-C <size>` - close the current pcap and open a new one if is larger than `<size>`
 
 ###### Top hosts by packets
 
@@ -2674,7 +2673,7 @@ or simply:
 
     tcpdump -nei eth0 'not (src net (10 or 172.16/12 or 192.168/16) and dst net (10 or 172.16/12 or 192.168/16))'
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [tcpick](http://tcpick.sourceforge.net/)
 
@@ -2682,70 +2681,71 @@ or simply:
 
     while true ; do tcpick -a -C -r dump.pcap ; sleep 2 ; clear ; done
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [ngrep](http://ngrep.sourceforge.net/usage.html)
 
     ngrep -d eth0 "www.domain.com" port 443
 
--   `-d [iface|any]` - set interface
--   `[domain]` - set hostname
--   `port [1-65535]` - set port number
+- `-d [iface|any]` - set interface
+- `[domain]` - set hostname
+- `port [1-65535]` - set port number
 
-    ngrep -d eth0 "www.domain.com" src host 10.240.20.2 and port 443
+  ngrep -d eth0 "www.domain.com" src host 10.240.20.2 and port 443
 
--   `(host [ip|hostname])` - filter by ip or hostname
--   `(port [1-65535])` - filter by port number
+- `(host [ip|hostname])` - filter by ip or hostname
+- `(port [1-65535])` - filter by port number
 
-    ngrep -d eth0 -qt -O ngrep.pcap "www.domain.com" port 443
+  ngrep -d eth0 -qt -O ngrep.pcap "www.domain.com" port 443
 
--   `-q` - quiet mode (only payloads)
--   `-t` - added timestamps
--   `-O [filename]` - save output to file, `-I [filename]` - reading from file
+- `-q` - quiet mode (only payloads)
+- `-t` - added timestamps
+- `-O [filename]` - save output to file, `-I [filename]` - reading from file
 
-    ngrep -d eth0 -qt 'HTTP' 'tcp'
+  ngrep -d eth0 -qt 'HTTP' 'tcp'
 
--   `HTTP` - show http headers
--   `tcp|udp` - set protocol
--   `[src|dst] host [ip|hostname]` - set direction for specific node
+- `HTTP` - show http headers
+- `tcp|udp` - set protocol
+- `[src|dst] host [ip|hostname]` - set direction for specific node
 
-    ngrep -l -q -d eth0 -i "User-Agent: curl*"
+  ngrep -l -q -d eth0 -i "User-Agent: curl\*"
 
--   `-l` - stdout line buffered
--   `-i` - case-insensitive search
+- `-l` - stdout line buffered
+- `-i` - case-insensitive search
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [hping3](http://www.hping.org/)
 
     hping3 -V -p 80 -s 5050 <scan_type> www.google.com
 
--   `-V|--verbose` - verbose mode
--   `-p|--destport` - set destination port
--   `-s|--baseport` - set source port
--   `<scan_type>` - set scan type
-    -   `-F|--fin` - set FIN flag, port open if no reply
-    -   `-S|--syn` - set SYN flag
-    -   `-P|--push` - set PUSH flag
-    -   `-A|--ack` - set ACK flag (use when ping is blocked, RST response back if the port is open)
-    -   `-U|--urg` - set URG flag
-    -   `-Y|--ymas` - set Y unused flag (0x80 - nullscan), port open if no reply
-    -   `-M 0 -UPF` - set TCP sequence number and scan type (URG+PUSH+FIN), port open if no reply
+- `-V|--verbose` - verbose mode
+- `-p|--destport` - set destination port
+- `-s|--baseport` - set source port
+- `<scan_type>` - set scan type
 
-    hping3 -V -c 1 -1 -C 8 www.google.com
+  - `-F|--fin` - set FIN flag, port open if no reply
+  - `-S|--syn` - set SYN flag
+  - `-P|--push` - set PUSH flag
+  - `-A|--ack` - set ACK flag (use when ping is blocked, RST response back if the port is open)
+  - `-U|--urg` - set URG flag
+  - `-Y|--ymas` - set Y unused flag (0x80 - nullscan), port open if no reply
+  - `-M 0 -UPF` - set TCP sequence number and scan type (URG+PUSH+FIN), port open if no reply
 
--   `-c [num]` - packet count
--   `-1` - set ICMP mode
--   `-C|--icmptype [icmp-num]` - set icmp type (default icmp-echo = 8)
+  hping3 -V -c 1 -1 -C 8 www.google.com
 
-    hping3 -V -c 1000000 -d 120 -S -w 64 -p 80 --flood --rand-source <remote_host>
+- `-c [num]` - packet count
+- `-1` - set ICMP mode
+- `-C|--icmptype [icmp-num]` - set icmp type (default icmp-echo = 8)
 
--   `--flood` - sent packets as fast as possible (don’t show replies)
--   `--rand-source` - random source address mode
--   `-d --data` - data size
--   `-w|--win` - winsize (default 64)
+  hping3 -V -c 1000000 -d 120 -S -w 64 -p 80 --flood --rand-source <remote_host>
 
-------------------------------------------------------------------------
+- `--flood` - sent packets as fast as possible (don’t show replies)
+- `--rand-source` - random source address mode
+- `-d --data` - data size
+- `-w|--win` - winsize (default 64)
+
+---
 
 ##### Tool: [nmap](https://nmap.org/)
 
@@ -2815,28 +2815,28 @@ or simply:
     # Perform scan:
     nmap --script="$_nmap_nse_scripts" --script-args="$_nmap_nse_scripts_args" -p "$_ports" "$_hosts"
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [netcat](http://netcat.sourceforge.net/)
 
     nc -kl 5000
 
--   `-l` - listen for an incoming connection
--   `-k` - listening after client has disconnected
--   `>filename.out` - save receive data to file (optional)
+- `-l` - listen for an incoming connection
+- `-k` - listening after client has disconnected
+- `>filename.out` - save receive data to file (optional)
 
-    nc 192.168.0.1 5051 < filename.in
+  nc 192.168.0.1 5051 < filename.in
 
--   `< filename.in` - send data to remote host
+- `< filename.in` - send data to remote host
 
-    nc -vz 10.240.30.3 5000
+  nc -vz 10.240.30.3 5000
 
--   `-v` - verbose output
--   `-z` - scan for listening daemons
+- `-v` - verbose output
+- `-z` - scan for listening daemons
 
-    nc -vzu 10.240.30.3 1-65535
+  nc -vzu 10.240.30.3 1-65535
 
--   `-u` - scan only udp ports
+- `-u` - scan only udp ports
 
 ###### Transfer data file (archive)
 
@@ -2892,7 +2892,7 @@ or simply:
     nc -l -p 5000 \
     ; done
 
--   `-p` - port number
+- `-p` - port number
 
 ###### Simple HTTP Proxy (single connection)
 
@@ -2955,7 +2955,7 @@ or simply:
     ### UDP -> TCP
     nc -l -u -p 2000 -c "nc [ip|hostname] 3000"
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [gnutls-cli](https://gnutls.org/manual/html_node/gnutls_002dcli-Invocation.html)
 
@@ -2967,7 +2967,7 @@ or simply:
 
     gnutls-cli --disable-sni -p 443 google.com
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [socat](http://www.dest-unreach.org/socat/doc/socat.html)
 
@@ -2975,26 +2975,26 @@ or simply:
 
     socat - TCP4:10.240.30.3:22
 
--   `-` - standard input (STDIO)
--   `TCP4:<params>` - set tcp4 connection with specific params
-    -   `[hostname|ip]` - set hostname/ip
-    -   `[1-65535]` - set port number
+- `-` - standard input (STDIO)
+- `TCP4:<params>` - set tcp4 connection with specific params
+  - `[hostname|ip]` - set hostname/ip
+  - `[1-65535]` - set port number
 
 ###### Redirecting TCP-traffic to a UNIX domain socket under Linux
 
     socat TCP-LISTEN:1234,bind=127.0.0.1,reuseaddr,fork,su=nobody,range=127.0.0.0/8 UNIX-CLIENT:/tmp/foo
 
--   `TCP-LISTEN:<params>` - set tcp listen with specific params
-    -   `[1-65535]` - set port number
-    -   `bind=[hostname|ip]` - set bind hostname/ip
-    -   `reuseaddr` - allows other sockets to bind to an address
-    -   `fork` - keeps the parent process attempting to produce more connections
-    -   `su=nobody` - set user
-    -   `range=[ip-range]` - ip range
--   `UNIX-CLIENT:<params>` - communicates with the specified peer socket
-    -   `filename` - define socket
+- `TCP-LISTEN:<params>` - set tcp listen with specific params
+  - `[1-65535]` - set port number
+  - `bind=[hostname|ip]` - set bind hostname/ip
+  - `reuseaddr` - allows other sockets to bind to an address
+  - `fork` - keeps the parent process attempting to produce more connections
+  - `su=nobody` - set user
+  - `range=[ip-range]` - ip range
+- `UNIX-CLIENT:<params>` - communicates with the specified peer socket
+  - `filename` - define socket
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [p0f](http://lcamtuf.coredump.cx/p0f3/)
 
@@ -3002,12 +3002,12 @@ or simply:
 
     p0f -i enp0s25 -p -d -o /dump/enp0s25.log
 
--   `-i` - listen on the specified interface
--   `-p` - set interface in promiscuous mode
--   `-d` - fork into background
--   `-o` - output file
+- `-i` - listen on the specified interface
+- `-p` - set interface in promiscuous mode
+- `-d` - fork into background
+- `-o` - output file
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [netstat](https://en.wikipedia.org/wiki/Netstat)
 
@@ -3024,7 +3024,7 @@ or simply:
 
     netstat -nlt | grep 'tcp ' | grep -Eo "[1-9][0-9]*" | xargs -I {} sh -c "echo "" | nc -v -n -w1 127.0.0.1 {}"
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [rsync](https://en.wikipedia.org/wiki/Rsync)
 
@@ -3032,9 +3032,9 @@ or simply:
 
     rsync --rsync-path 'sudo rsync' username@hostname:/path/to/dir/ /local/
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [host](https://en.wikipedia.org/wiki/Host_(Unix))
+##### Tool: [host](<https://en.wikipedia.org/wiki/Host_(Unix)>)
 
 ###### Resolves the domain name (using external dns server)
 
@@ -3044,9 +3044,9 @@ or simply:
 
     host -t soa google.com 9.9.9.9
 
-------------------------------------------------------------------------
+---
 
-##### Tool: [dig](https://en.wikipedia.org/wiki/Dig_(command))
+##### Tool: [dig](<https://en.wikipedia.org/wiki/Dig_(command)>)
 
 ###### Resolves the domain name (short output)
 
@@ -3068,7 +3068,7 @@ or simply:
 
     dig -x 172.217.16.14 +short
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [certbot](https://certbot.eff.org/)
 
@@ -3084,7 +3084,7 @@ or simply:
 
     certbot certonly -d example.com -d www.example.com --rsa-key-size 4096
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [network-other](https://github.com/trimstray/the-book-of-secret-knowledge#tool-network-other)
 
@@ -3117,7 +3117,7 @@ or simply:
     --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
     --abbrev-commit
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [python](https://www.python.org/)
 
@@ -3259,7 +3259,7 @@ or simply:
     awk '/'$(date -d "1 hours ago" "+%d\\/%b\\/%Y:%H:%M")'/,/'$(date "+%d\\/%b\\/%Y:%H:%M")'/ { print $0 }' \
     /var/log/httpd/access_log
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [sed](http://www.grymoire.com/Unix/Sed.html)
 
@@ -3283,10 +3283,10 @@ or simply:
     # cross-platform compatible syntax:
     sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g' /path/to/file
 
--   `:a` create a label `a`
--   `N` append the next line to the pattern space
--   `$!` if not the last line, ba branch (go to) label `a`
--   `s` substitute, `/\n/` regex for new line, `/ /` by a space, `/g` global match (as many times as it can)
+- `:a` create a label `a`
+- `N` append the next line to the pattern space
+- `$!` if not the last line, ba branch (go to) label `a`
+- `s` substitute, `/\n/` regex for new line, `/ /` by a space, `/g` global match (as many times as it can)
 
 Alternatives:
 
@@ -3300,7 +3300,7 @@ Alternatives:
 
     sed '/start/,+4d' /path/to/file
 
-------------------------------------------------------------------------
+---
 
 ##### Tool: [grep](http://www.grymoire.com/Unix/Grep.html)
 
@@ -3382,8 +3382,8 @@ Alternatives:
 
 ##### Table of Contents
 
--   [Domain resolve](#domain-resolve)
--   [Get ASN](#get-asn)
+- [Domain resolve](#domain-resolve)
+- [Get ASN](#get-asn)
 
 ###### Domain resolve
 
