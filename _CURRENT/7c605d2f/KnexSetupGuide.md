@@ -1,8 +1,6 @@
-Knex Setup Guide
-================
+# Knex Setup Guide
 
-Create your project directory
------------------------------
+## Create your project directory
 
 Create and initialize your a directory for your Express application.
 
@@ -10,8 +8,7 @@ Create and initialize your a directory for your Express application.
     $ cd node-knex-demo
     $ npm init
 
-Knex
-----
+## Knex
 
 Knex is a SQL query builder, mainly used for Node.js applications with built in model schema creation, table migrations, connection pooling and seeding.
 
@@ -27,8 +24,7 @@ In addition, you will need to also install the `knex` module **locally** to use 
 
     $ npm install knex --save
 
-Configuring your database
--------------------------
+## Configuring your database
 
 For our example, we’re going to be connecting to a PostgreSQL database, we’ll need to install the `pg` module.
 
@@ -121,7 +117,7 @@ At this point, our project structure should look like this:
     └── knexfile.js
     └── package.json
 
-*For more information on migrations and seeds with knex, checkout the **[knex migrations and seeds guide](https://gist.github.com/NigelEarle/70db130cc040cc2868555b29a0278261)**.*
+_For more information on migrations and seeds with knex, checkout the **[knex migrations and seeds guide](https://gist.github.com/NigelEarle/70db130cc040cc2868555b29a0278261)**._
 
 **Example `knex.js`**
 
@@ -129,8 +125,7 @@ At this point, our project structure should look like this:
     const config = require('../knexfile.js')[environment];
     module.exports = require('knex')(config);
 
-Create your Express application
--------------------------------
+## Create your Express application
 
     $ npm install express --save
 
