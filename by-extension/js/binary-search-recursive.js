@@ -1,5 +1,3 @@
-
-
 // Returns simply true/false for presence
 function binarySearchRecursive(array, target) {
   // Our base case
