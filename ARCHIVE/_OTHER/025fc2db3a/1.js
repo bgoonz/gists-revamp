@@ -1,5 +1,5 @@
 function whateverYouCallIt(obj) {
-  function F(){};
+  function F() {}
   F.prototype = obj;
   return F;
 }

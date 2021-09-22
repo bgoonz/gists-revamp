@@ -9,15 +9,14 @@ module.exports = {
   [`${prefix}1`]: 42,
   [`${prefix}2`]: 100,
   foo,
-  bar
+  bar,
 };
-
 
 // all my private implementation details for my module
 // ******************************
 
 var prefix;
-var privStuff = [1,5,4];
+var privStuff = [1, 5, 4];
 
 function foo() {
   return privStuff[1];
@@ -25,4 +24,3 @@ function foo() {
 function bar() {
   return privStuff[2];
 }
-  

@@ -1,5 +1,5 @@
-for (var v=0; v<4; v++) {
-	console.log(v);
+for (var v = 0; v < 4; v++) {
+  console.log(v);
 }
 // 1 2 3
 
