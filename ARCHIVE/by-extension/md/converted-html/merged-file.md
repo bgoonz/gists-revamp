@@ -1,7 +1,6 @@
 ;
 
-Internal links
---------------
+## Internal links
 
 All tutorial links should start from the root, not including the domain.
 
@@ -23,8 +22,7 @@ Becomes:
 
 The title is auto-inserted from the referenced article. That has the benefit of keeping the right title if the article gets renamed.
 
-TODO
-----
+## TODO
 
 Ask <span class="citation" data-cites="iliakan">@iliakan</span> to for more details.
 
@@ -34,8 +32,7 @@ If you’d like to do something else with it, please get a permission from Ilya 
 
 As of now, we license the tutorial to almost everyone for free under the terms of an open license. Just please be so kind to contact me.
 
-License (Short)
----------------
+## License (Short)
 
 The license is basically [CC-BY-NC](https://creativecommons.org/licenses/by-nc/4.0/legalcode), revocable and exclusive.
 
@@ -43,11 +40,10 @@ It gives the right to: - **Share** – copy and redistribute the tutorial in any
 
 Under the following terms:
 
--   **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
--   **NonCommercial** — You may not use the material for commercial purposes.
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- **NonCommercial** — You may not use the material for commercial purposes.
 
-License (Legal)
----------------
+## License (Legal)
 
 By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this license (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.
 
@@ -75,7 +71,7 @@ By exercising the Licensed Rights (defined below), You accept and agree to be bo
 
 ### Section 2 – Scope.
 
-1.  ***License grant.***
+1.  **_License grant._**
 
     1.  Subject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:
 
@@ -95,7 +91,7 @@ By exercising the Licensed Rights (defined below), You accept and agree to be bo
 
     5.  **No endorsement.** Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).
 
-2.  ***Other rights.***
+2.  **_Other rights._**
 
     1.  Moral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.
 
@@ -107,7 +103,7 @@ By exercising the Licensed Rights (defined below), You accept and agree to be bo
 
 Your exercise of the Licensed Rights is expressly made subject to the following conditions.
 
-1.  ***Attribution.***
+1.  **_Attribution._**
 
     1.  If You Share the Licensed Material (including in modified form), You must:
 
@@ -185,15 +181,13 @@ For the avoidance of doubt, this Section 4 supplements and does not replace Your
 
 This repository hosts the English content of the Modern JavaScript Tutorial, published in <https://javascript.info>.
 
-Translations
-------------
+## Translations
 
 We’d like to make the tutorial available in many languages. Please help us to translate.
 
 See <a href="https://javascript.info/translate" class="uri">https://javascript.info/translate</a> for the details.
 
-Contributions
--------------
+## Contributions
 
 We’d also like to collaborate on the tutorial with other people.
 
@@ -203,8 +197,7 @@ Something’s wrong? A topic is missing? Explain it to people, add as PR 👏
 
 The list of contributors is available at <a href="https://javascript.info/about#contributors" class="uri">https://javascript.info/about#contributors</a>.
 
-Structure
----------
+## Structure
 
 Every chapter, article or a task has its folder.
 
@@ -212,9 +205,9 @@ The folder is named like `N-url`, where `N` is a number for the sorting purposes
 
 The type of the material is defined by the file inside the folder:
 
--   `index.md` stands for a chapter
--   `article.md` stands for an article
--   `task.md` stands for a task (solution must be provided in `solution.md` file as well)
+- `index.md` stands for a chapter
+- `article.md` stands for an article
+- `task.md` stands for a task (solution must be provided in `solution.md` file as well)
 
 Each of these files starts from the `# Main header`.
 
@@ -306,20 +299,19 @@ The following code populates its `innerHTML`, that causes the `MutationObserver`
 
 \`\`\`js run let demoElem = document.getElementById(‘highlight-demo’);
 
-// dynamically insert content with code snippets demoElem.innerHTML = `A code snippet is below:   <pre class="language-javascript"><code> let hello = "world!"; </code></pre>   <div>Another one:</div>   <div>     <pre class="language-css"><code>.class { margin: 5px; } </code></pre>   </div>`; \`\`\`
+// dynamically insert content with code snippets demoElem.innerHTML = `A code snippet is below: <pre class="language-javascript"><code> let hello = "world!"; </code></pre> <div>Another one:</div> <div> <pre class="language-css"><code>.class { margin: 5px; } </code></pre> </div>`; \`\`\`
 
 Now we have `MutationObserver` that can track all highlighting in observed elements or the whole `document`. We can add/remove code snippets in HTML without thinking about it.
 
-Additional methods
-------------------
+## Additional methods
 
 There’s a method to stop observing the node:
 
--   `observer.disconnect()` – stops the observation.
+- `observer.disconnect()` – stops the observation.
 
 When we stop the observing, it might be possible that some changes were not yet processed by the observer. In such cases, we use
 
--   `observer.takeRecords()` – gets a list of unprocessed mutation records - those that happened, but the callback has not handled them.
+- `observer.takeRecords()` – gets a list of unprocessed mutation records - those that happened, but the callback has not handled them.
 
 These methods can be used together, like this:
 
@@ -338,8 +330,7 @@ These methods can be used together, like this:
 
 The mere fact that a DOM node is observed doesn’t prevent the garbage collection. \`\`\`
 
-Summary
--------
+## Summary
 
 `MutationObserver` can react to changes in DOM - attributes, text content and adding/removing elements.
 
@@ -347,10 +338,9 @@ We can use it to track changes introduced by other parts of our code, as well as
 
 `MutationObserver` can track any changes. The config “what to observe” options are used for optimizations, not to spend resources on unneeded callback invocations. libs: - d3 - domtree
 
-------------------------------------------------------------------------
+---
 
-Selection and Range
-===================
+# Selection and Range
 
 In this chapter we’ll cover selection in the document, as well as selection in form fields, such as `<input>`.
 
@@ -360,8 +350,7 @@ You can find some recipes for common tasks at the end of the chapter, in “Summ
 
 The underlying `Range` and `Selection` objects are easy to grasp, and then you’ll need no recipes to make them do what you want.
 
-Range
------
+## Range
 
 The basic concept of selection is [Range](https://dom.spec.whatwg.org/#ranges), that is essentially a pair of “boundary points”: range start and range end.
 
@@ -409,19 +398,19 @@ As we can see, this phrase consists of exactly two children of `<p>`, with index
 
 ![](range-example-p-0-1.svg)
 
--   The starting point has `<p>` as the parent `node`, and `0` as the offset.
+- The starting point has `<p>` as the parent `node`, and `0` as the offset.
 
-    So we can set it as `range.setStart(p, 0)`.
+  So we can set it as `range.setStart(p, 0)`.
 
--   The ending point also has `<p>` as the parent `node`, but `2` as the offset (it specifies the range up to, but not including `offset`).
+- The ending point also has `<p>` as the parent `node`, but `2` as the offset (it specifies the range up to, but not including `offset`).
 
-    So we can set it as `range.setEnd(p, 2)`.
+  So we can set it as `range.setEnd(p, 2)`.
 
 Here’s the demo. If you run it, you can see that the text gets selected:
 
 \`\`\`html run
 
-Example: *italic* and **bold**
+Example: _italic_ and **bold**
 
 \`\`\`
 
@@ -429,7 +418,7 @@ Here’s a more flexible test stand where you can set range start/end numbers an
 
 \`\`\`html run autorun
 
-Example: *italic* and **bold**
+Example: _italic_ and **bold**
 
 From – To
 
@@ -455,7 +444,7 @@ We need to create a range, that: - starts from position 2 in `<p>` first child (
 
 \`\`\`html run
 
-Example: *italic* and **bold**
+Example: _italic_ and **bold**
 
 \`\`\`
 
@@ -463,24 +452,22 @@ As you can see, it’s fairly easy to make a range of whatever we want.
 
 If we’d like to take nodes as a whole, we can pass elements in `setStart/setEnd`. Otherwise, we can work on the text level.
 
-Range properties
-----------------
+## Range properties
 
 The range object that we created in the example above has following properties:
 
 ![](range-example-p-2-b-3-range.svg)
 
--   `startContainer`, `startOffset` – node and offset of the start,
-    -   in the example above: first text node inside `<p>` and `2`.
--   `endContainer`, `endOffset` – node and offset of the end,
-    -   in the example above: first text node inside `<b>` and `3`.
--   `collapsed` – boolean, `true` if the range starts and ends on the same point (so there’s no content inside the range),
-    -   in the example above: `false`
--   `commonAncestorContainer` – the nearest common ancestor of all nodes within the range,
-    -   in the example above: `<p>`
+- `startContainer`, `startOffset` – node and offset of the start,
+  - in the example above: first text node inside `<p>` and `2`.
+- `endContainer`, `endOffset` – node and offset of the end,
+  - in the example above: first text node inside `<b>` and `3`.
+- `collapsed` – boolean, `true` if the range starts and ends on the same point (so there’s no content inside the range),
+  - in the example above: `false`
+- `commonAncestorContainer` – the nearest common ancestor of all nodes within the range,
+  - in the example above: `<p>`
 
-Range selection methods
------------------------
+## Range selection methods
 
 There are many convenience methods to manipulate ranges.
 
@@ -488,15 +475,15 @@ We’ve already seen `setStart` and `setEnd`, here are other similar methods.
 
 Set range start:
 
--   `setStart(node, offset)` set start at: position `offset` in `node`
--   `setStartBefore(node)` set start at: right before `node`
--   `setStartAfter(node)` set start at: right after `node`
+- `setStart(node, offset)` set start at: position `offset` in `node`
+- `setStartBefore(node)` set start at: right before `node`
+- `setStartAfter(node)` set start at: right after `node`
 
 Set range end (similar methods):
 
--   `setEnd(node, offset)` set end at: position `offset` in `node`
--   `setEndBefore(node)` set end at: right before `node`
--   `setEndAfter(node)` set end at: right after `node`
+- `setEnd(node, offset)` set end at: position `offset` in `node`
+- `setEndBefore(node)` set end at: right before `node`
+- `setEndAfter(node)` set end at: right after `node`
 
 Technically, `setStart/setEnd` can do anything, but more methods provide more convenience.
 
@@ -504,16 +491,15 @@ In all these methods, `node` can be both a text or element node: for text nodes 
 
 Even more methods to create ranges: - `selectNode(node)` set range to select the whole `node` - `selectNodeContents(node)` set range to select the whole `node` contents - `collapse(toStart)` if `toStart=true` set end=start, otherwise set start=end, thus collapsing the range - `cloneRange()` creates a new range with the same start/end
 
-Range editing methods
----------------------
+## Range editing methods
 
 Once the range is created, we can manipulate its content using these methods:
 
--   `deleteContents()` – remove range content from the document
--   `extractContents()` – remove range content from the document and return as [DocumentFragment](info:modifying-document#document-fragment)
--   `cloneContents()` – clone range content and return as [DocumentFragment](info:modifying-document#document-fragment)
--   `insertNode(node)` – insert `node` into the document at the beginning of the range
--   `surroundContents(node)` – wrap `node` around range content. For this to work, the range must contain both opening and closing tags for all elements inside it: no partial ranges like `<i>abc`.
+- `deleteContents()` – remove range content from the document
+- `extractContents()` – remove range content from the document and return as [DocumentFragment](info:modifying-document#document-fragment)
+- `cloneContents()` – clone range content and return as [DocumentFragment](info:modifying-document#document-fragment)
+- `insertNode(node)` – insert `node` into the document at the beginning of the range
+- `surroundContents(node)` – wrap `node` around range content. For this to work, the range must contain both opening and closing tags for all elements inside it: no partial ranges like `<i>abc`.
 
 With these methods we can do basically anything with selected nodes.
 
@@ -521,14 +507,13 @@ Here’s the test stand to see them in action:
 
 \`\`\`html run refresh autorun height=260 Click buttons to run methods on the selection, “resetExample” to reset it.
 
-Example: *italic* and **bold**
+Example: _italic_ and **bold**
 
 \`\`\`
 
 There also exist methods to compare ranges, but these are rarely used. When you need them, please refer to the [spec](https://dom.spec.whatwg.org/#interface-range) or [MDN manual](mdn:/api/Range).
 
-Selection
----------
+## Selection
 
 `Range` is a generic object for managing selection ranges. Although, creating a `Range` doesn’t mean that we see a selection on screen.
 
@@ -546,12 +531,11 @@ Here’s a small demo that shows the current selection (select something and cli
 
 alert(document.getSelection())
 
-Selection properties
---------------------
+## Selection properties
 
 As said, a selection may in theory contain multiple ranges. We can get these range objects using the method:
 
--   `getRangeAt(i)` – get i-th range, starting from `0`. In all browsers except Firefox, only `0` is used.
+- `getRangeAt(i)` – get i-th range, starting from `0`. In all browsers except Firefox, only `0` is used.
 
 Also, there exist properties that often provide better convenience.
 
@@ -559,12 +543,12 @@ Similar to a range, a selection object has a start, called “anchor”, and the
 
 The main selection properties are:
 
--   `anchorNode` – the node where the selection starts,
--   `anchorOffset` – the offset in `anchorNode` where the selection starts,
--   `focusNode` – the node where the selection ends,
--   `focusOffset` – the offset in `focusNode` where the selection ends,
--   `isCollapsed` – `true` if selection selects nothing (empty range), or doesn’t exist.
--   `rangeCount` – count of ranges in the selection, maximum `1` in all browsers except Firefox.
+- `anchorNode` – the node where the selection starts,
+- `anchorOffset` – the offset in `anchorNode` where the selection starts,
+- `focusNode` – the node where the selection ends,
+- `focusOffset` – the offset in `focusNode` where the selection ends,
+- `isCollapsed` – `true` if selection selects nothing (empty range), or doesn’t exist.
+- `rangeCount` – count of ranges in the selection, maximum `1` in all browsers except Firefox.
 
 \`\`\`smart header=“Selection end/start vs Range”
 
@@ -586,15 +570,14 @@ E.g. if the user starts selecting with mouse and goes from “Example” to “i
 
 ![](selection-direction-backward.svg) \`\`\`
 
-Selection events
-----------------
+## Selection events
 
 There are events on to keep track of selection:
 
--   `elem.onselectstart` – when a selection *starts* specifically on element `elem` (or inside it). For instance, when the user presses the mouse button on it and starts to move the pointer.
-    -   Preventing the default action cancels the selection start. So starting a selection from this element becomes impossible, but the element is still selectable. The visitor just needs to start the selection from elsewhere.
--   `document.onselectionchange` – whenever a selection changes or starts.
-    -   Please note: this handler can be set only on `document`, it tracks all selections in it.
+- `elem.onselectstart` – when a selection _starts_ specifically on element `elem` (or inside it). For instance, when the user presses the mouse button on it and starts to move the pointer.
+  - Preventing the default action cancels the selection start. So starting a selection from this element becomes impossible, but the element is still selectable. The visitor just needs to start the selection from elsewhere.
+- `document.onselectionchange` – whenever a selection changes or starts.
+  - Please note: this handler can be set only on `document`, it tracks all selections in it.
 
 ### Selection tracking demo
 
@@ -602,7 +585,7 @@ Here’s a small demo. It tracks the current selection on the `document` and sho
 
 \`\`\`html run height=80
 
-Select me: *italic* and **bold**
+Select me: _italic_ and **bold**
 
 From – To
 
@@ -619,35 +602,34 @@ Here’s the demo of copying the selected content both as text and as DOM nodes:
 
 \`\`\`html run height=100
 
-Select me: *italic* and **bold**
+Select me: _italic_ and **bold**
 
 Cloned: <span id="cloned"></span>  
 As text: <span id="astext"></span>
 
 \`\`\`
 
-Selection methods
------------------
+## Selection methods
 
 We can work with the selection by addding/removing ranges:
 
--   `getRangeAt(i)` – get i-th range, starting from `0`. In all browsers except Firefox, only `0` is used.
--   `addRange(range)` – add `range` to selection. All browsers except Firefox ignore the call, if the selection already has an associated range.
--   `removeRange(range)` – remove `range` from the selection.
--   `removeAllRanges()` – remove all ranges.
--   `empty()` – alias to `removeAllRanges`.
+- `getRangeAt(i)` – get i-th range, starting from `0`. In all browsers except Firefox, only `0` is used.
+- `addRange(range)` – add `range` to selection. All browsers except Firefox ignore the call, if the selection already has an associated range.
+- `removeRange(range)` – remove `range` from the selection.
+- `removeAllRanges()` – remove all ranges.
+- `empty()` – alias to `removeAllRanges`.
 
 There are also convenience methods to manipulate the selection range directly, without intermediate `Range` calls:
 
--   `collapse(node, offset)` – replace selected range with a new one that starts and ends at the given `node`, at position `offset`.
--   `setPosition(node, offset)` – alias to `collapse`.
--   `collapseToStart()` - collapse (replace with an empty range) to selection start,
--   `collapseToEnd()` - collapse to selection end,
--   `extend(node, offset)` - move focus of the selection to the given `node`, position `offset`,
--   `setBaseAndExtent(anchorNode, anchorOffset, focusNode, focusOffset)` - replace selection range with the given start `anchorNode/anchorOffset` and end `focusNode/focusOffset`. All content in-between them is selected.
--   `selectAllChildren(node)` – select all children of the `node`.
--   `deleteFromDocument()` – remove selected content from the document.
--   `containsNode(node, allowPartialContainment = false)` – checks whether the selection contains `node` (partially if the second argument is `true`)
+- `collapse(node, offset)` – replace selected range with a new one that starts and ends at the given `node`, at position `offset`.
+- `setPosition(node, offset)` – alias to `collapse`.
+- `collapseToStart()` - collapse (replace with an empty range) to selection start,
+- `collapseToEnd()` - collapse to selection end,
+- `extend(node, offset)` - move focus of the selection to the given `node`, position `offset`,
+- `setBaseAndExtent(anchorNode, anchorOffset, focusNode, focusOffset)` - replace selection range with the given start `anchorNode/anchorOffset` and end `focusNode/focusOffset`. All content in-between them is selected.
+- `selectAllChildren(node)` – select all children of the `node`.
+- `deleteFromDocument()` – remove selected content from the document.
+- `containsNode(node, allowPartialContainment = false)` – checks whether the selection contains `node` (partially if the second argument is `true`)
 
 For most tasks these methods are just fine, there’s no need to access the underlying `Range` object.
 
@@ -655,7 +637,7 @@ For example, selecting the whole contents of the paragraph `<p>`:
 
 \`\`\`html run
 
-Select me: *italic* and **bold**
+Select me: _italic_ and **bold**
 
 \`\`\`
 
@@ -663,7 +645,7 @@ The same thing using ranges:
 
 \`\`\`html run
 
-Select me: *italic* and **bold**
+Select me: _italic_ and **bold**
 
 \`\`\`
 
@@ -671,8 +653,7 @@ Select me: *italic* and **bold**
 
 The exception is some selection methods, that replace the existing selection, such as `setBaseAndExtent`. \`\`\`
 
-Selection in form controls
---------------------------
+## Selection in form controls
 
 Form elements, such as `input` and `textarea` provide [special API for selection](https://html.spec.whatwg.org/#textFieldSelection), without `Selection` or `Range` objects. As an input value is a pure text, not HTML, there’s no need for such objects, everything’s much simpler.
 
@@ -682,18 +663,18 @@ Events: - `input.onselect` – triggers when something is selected.
 
 Methods:
 
--   `input.select()` – selects everything in the text control (can be `textarea` instead of `input`),
--   `input.setSelectionRange(start, end, [direction])` – change the selection to span from position `start` till `end`, in the given direction (optional).
--   `input.setRangeText(replacement, [start], [end], [selectionMode])` – replace a range of text with the new text.
+- `input.select()` – selects everything in the text control (can be `textarea` instead of `input`),
+- `input.setSelectionRange(start, end, [direction])` – change the selection to span from position `start` till `end`, in the given direction (optional).
+- `input.setRangeText(replacement, [start], [end], [selectionMode])` – replace a range of text with the new text.
 
-    Optional arguments `start` and `end`, if provided, set the range start and end, otherwise user selection is used.
+  Optional arguments `start` and `end`, if provided, set the range start and end, otherwise user selection is used.
 
-    The last argument, `selectionMode`, determines how the selection will be set after the text has been replaced. The possible values are:
+  The last argument, `selectionMode`, determines how the selection will be set after the text has been replaced. The possible values are:
 
-    -   `"select"` – the newly inserted text will be selected.
-    -   `"start"` – the selection range collapses just before the inserted text (the cursor will be immediately before it).
-    -   `"end"` – the selection range collapses just after the inserted text (the cursor will be right after it).
-    -   `"preserve"` – attempts to preserve the selection. This is the default.
+  - `"select"` – the newly inserted text will be selected.
+  - `"start"` – the selection range collapses just before the inserted text (the cursor will be immediately before it).
+  - `"end"` – the selection range collapses just after the inserted text (the cursor will be right after it).
+  - `"preserve"` – attempts to preserve the selection. This is the default.
 
 Now let’s see these methods in action.
 
@@ -705,7 +686,6 @@ For example, this code uses `onselect` event to track selection:
 
 Selecting in this text updates values below.
 
-  
 From – To
 
 \`\`\`
@@ -736,7 +716,7 @@ That’s a somewhat complex method. In its simplest one-argument form it replace
 
 For example, here the user selection will be wrapped by `*...*`:
 
-\`\`\`html run autorun Wrap selection in stars *…*
+\`\`\`html run autorun Wrap selection in stars _…_
 
 \`\`\`
 
@@ -760,14 +740,13 @@ Here’s a button that inserts `"HELLO"` at the cursor position and puts the cur
 
 \`\`\`
 
-Making unselectable
--------------------
+## Making unselectable
 
 To make something unselectable, there are three ways:
 
 1.  Use CSS property `user-select: none`.
 
-    `html run  <style>  #elem {    user-select: none;  }  </style>  <div>Selectable <div id="elem">Unselectable</div> Selectable</div>`
+    `html run <style> #elem { user-select: none; } </style> <div>Selectable <div id="elem">Unselectable</div> Selectable</div>`
 
     This doesn’t allow the selection to start at `elem`. But the user may start the selection elsewhere and include `elem` into it.
 
@@ -790,15 +769,13 @@ To make something unselectable, there are three ways:
 
 3.  We can also clear the selection post-factum after it happens with `document.getSelection().empty()`. That’s rarely used, as this causes unwanted blinking as the selection appears-disappears.
 
-References
-----------
+## References
 
--   [DOM spec: Range](https://dom.spec.whatwg.org/#ranges)
--   [Selection API](https://www.w3.org/TR/selection-api/#dom-globaleventhandlers-onselectstart)
--   [HTML spec: APIs for the text control selections](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#textFieldSelection)
+- [DOM spec: Range](https://dom.spec.whatwg.org/#ranges)
+- [Selection API](https://www.w3.org/TR/selection-api/#dom-globaleventhandlers-onselectstart)
+- [HTML spec: APIs for the text control selections](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#textFieldSelection)
 
-Summary
--------
+## Summary
 
 We covered two different APIs for selections:
 
@@ -823,34 +800,32 @@ The most used recipes are probably:
 
 And finally, about the cursor. The cursor position in editable elements, like `<textarea>` is always at the start or the end of the selection. We can use it to get cursor position or to move the cursor by setting `elem.selectionStart` and `elem.selectionEnd`.
 
-Event loop: microtasks and macrotasks
-=====================================
+# Event loop: microtasks and macrotasks
 
-Browser JavaScript execution flow, as well as in Node.js, is based on an *event loop*.
+Browser JavaScript execution flow, as well as in Node.js, is based on an _event loop_.
 
 Understanding how event loop works is important for optimizations, and sometimes for the right architecture.
 
 In this chapter we first cover theoretical details about how things work, and then see practical applications of that knowledge.
 
-Event Loop
-----------
+## Event Loop
 
-The *event loop* concept is very simple. There’s an endless loop, where the JavaScript engine waits for tasks, executes them and then sleeps, waiting for more tasks.
+The _event loop_ concept is very simple. There’s an endless loop, where the JavaScript engine waits for tasks, executes them and then sleeps, waiting for more tasks.
 
 The general algorithm of the engine:
 
 1.  While there are tasks:
-    -   execute them, starting with the oldest task.
+    - execute them, starting with the oldest task.
 2.  Sleep until a task appears, then go to 1.
 
 That’s a formalization for what we see when browsing a page. The JavaScript engine does nothing most of the time, it only runs if a script/handler/event activates.
 
 Examples of tasks:
 
--   When an external script `<script src="...">` loads, the task is to execute it.
--   When a user moves their mouse, the task is to dispatch `mousemove` event and execute handlers.
--   When the time is due for a scheduled `setTimeout`, the task is to run its callback.
--   …and so on.
+- When an external script `<script src="...">` loads, the task is to execute it.
+- When a user moves their mouse, the task is to dispatch `mousemove` event and execute handlers.
+- When the time is due for a scheduled `setTimeout`, the task is to run its callback.
+- …and so on.
 
 Tasks are set – the engine handles them – then waits for more tasks (while sleeping and consuming close to zero CPU).
 
@@ -870,8 +845,7 @@ Two more details: 1. Rendering never happens while the engine executes a task. I
 
 That was the theory. Now let’s see how we can apply that knowledge.
 
-Use-case 1: splitting CPU-hungry tasks
---------------------------------------
+## Use-case 1: splitting CPU-hungry tasks
 
 Let’s say we have a CPU-hungry task.
 
@@ -957,8 +931,7 @@ That’s simple: as you remember, there’s the in-browser minimal delay of 4ms 
 
 Finally, we’ve split a CPU-hungry task into parts - now it doesn’t block the user interface. And its overall execution time isn’t much longer.
 
-Use case 2: progress indication
--------------------------------
+## Use case 2: progress indication
 
 Another benefit of splitting heavy tasks for browser scripts is that we can show progress indication.
 
@@ -984,8 +957,7 @@ This looks prettier:
 
 Now the `<div>` shows increasing values of `i`, a kind of a progress bar.
 
-Use case 3: doing something after the event
--------------------------------------------
+## Use case 3: doing something after the event
 
 In an event handler we may decide to postpone some actions until the event bubbled up and was handled on all levels. We can do that by wrapping the code in zero delay `setTimeout`.
 
@@ -1003,16 +975,15 @@ In the chapter <a href="info:dispatch-events" class="uri">info:dispatch-events</
       setTimeout(() => menu.dispatchEvent(customEvent));
     };
 
-Macrotasks and Microtasks
--------------------------
+## Macrotasks and Microtasks
 
-Along with *macrotasks*, described in this chapter, there are *microtasks*, mentioned in the chapter <a href="info:microtask-queue" class="uri">info:microtask-queue</a>.
+Along with _macrotasks_, described in this chapter, there are _microtasks_, mentioned in the chapter <a href="info:microtask-queue" class="uri">info:microtask-queue</a>.
 
 Microtasks come solely from our code. They are usually created by promises: an execution of `.then/catch/finally` handler becomes a microtask. Microtasks are used “under the cover” of `await` as well, as it’s another form of promise handling.
 
 There’s also a special function `queueMicrotask(func)` that queues `func` for execution in the microtask queue.
 
-**Immediately after every *macrotask*, the engine executes all tasks from *microtask* queue, prior to running any other macrotasks or rendering or anything else.**
+**Immediately after every _macrotask_, the engine executes all tasks from _microtask_ queue, prior to running any other macrotasks or rendering or anything else.**
 
 For instance, take a look:
 
@@ -1044,26 +1015,25 @@ Here’s an example with “counting progress bar”, similar to the one shown p
 
 \`\`\`
 
-Summary
--------
+## Summary
 
 A more detailed event loop algorithm (though still simplified compared to the [specification](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model)):
 
-1.  Dequeue and run the oldest task from the *macrotask* queue (e.g. “script”).
-2.  Execute all *microtasks*:
-    -   While the microtask queue is not empty:
-        -   Dequeue and run the oldest microtask.
+1.  Dequeue and run the oldest task from the _macrotask_ queue (e.g. “script”).
+2.  Execute all _microtasks_:
+    - While the microtask queue is not empty:
+      - Dequeue and run the oldest microtask.
 3.  Render changes if any.
 4.  If the macrotask queue is empty, wait till a macrotask appears.
 5.  Go to step 1.
 
-To schedule a new *macrotask*: - Use zero delayed `setTimeout(f)`.
+To schedule a new _macrotask_: - Use zero delayed `setTimeout(f)`.
 
 That may be used to split a big calculation-heavy task into pieces, for the browser to be able to react to user events and show progress between them.
 
 Also, used in event handlers to schedule an action after the event is fully handled (bubbling done).
 
-To schedule a new *microtask* - Use `queueMicrotask(f)`. - Also promise handlers go through the microtask queue.
+To schedule a new _microtask_ - Use `queueMicrotask(f)`. - Also promise handlers go through the microtask queue.
 
 There’s no UI or network event handling between microtasks: they run immediately one after another.
 
@@ -1093,8 +1063,7 @@ Also, popups are tricky on mobile devices, that don’t show multiple windows si
 2.  It’s very easy to open a popup.
 3.  A popup can navigate (change URL) and send messages to the opener window.
 
-Popup blocking
---------------
+## Popup blocking
 
 In the past, evil sites abused popups a lot. A bad page could open tons of popup windows with ads. So now most browsers try to block popups and protect the user.
 
@@ -1126,8 +1095,7 @@ The popup opens in Chrome, but gets blocked in Firefox.
 
 The difference is that Firefox treats a timeout of 2000ms or less are acceptable, but after it – removes the “trust”, assuming that now it’s “outside of the user action”. So the first one is blocked, and the second one is not.
 
-window.open
------------
+## window.open
 
 The syntax to open a popup is: `window.open(url, name, params)`:
 
@@ -1142,21 +1110,20 @@ The configuration string for the new window. It contains settings, delimited by 
 
 Settings for `params`:
 
--   Position:
-    -   `left/top` (numeric) – coordinates of the window top-left corner on the screen. There is a limitation: a new window cannot be positioned offscreen.
-    -   `width/height` (numeric) – width and height of a new window. There is a limit on minimal width/height, so it’s impossible to create an invisible window.
--   Window features:
-    -   `menubar` (yes/no) – shows or hides the browser menu on the new window.
-    -   `toolbar` (yes/no) – shows or hides the browser navigation bar (back, forward, reload etc) on the new window.
-    -   `location` (yes/no) – shows or hides the URL field in the new window. FF and IE don’t allow to hide it by default.
-    -   `status` (yes/no) – shows or hides the status bar. Again, most browsers force it to show.
-    -   `resizable` (yes/no) – allows to disable the resize for the new window. Not recommended.
-    -   `scrollbars` (yes/no) – allows to disable the scrollbars for the new window. Not recommended.
+- Position:
+  - `left/top` (numeric) – coordinates of the window top-left corner on the screen. There is a limitation: a new window cannot be positioned offscreen.
+  - `width/height` (numeric) – width and height of a new window. There is a limit on minimal width/height, so it’s impossible to create an invisible window.
+- Window features:
+  - `menubar` (yes/no) – shows or hides the browser menu on the new window.
+  - `toolbar` (yes/no) – shows or hides the browser navigation bar (back, forward, reload etc) on the new window.
+  - `location` (yes/no) – shows or hides the URL field in the new window. FF and IE don’t allow to hide it by default.
+  - `status` (yes/no) – shows or hides the status bar. Again, most browsers force it to show.
+  - `resizable` (yes/no) – allows to disable the resize for the new window. Not recommended.
+  - `scrollbars` (yes/no) – allows to disable the scrollbars for the new window. Not recommended.
 
 There is also a number of less supported browser-specific features, which are usually not used. Check [window.open in MDN](https://developer.mozilla.org/en/DOM/window.open) for examples.
 
-Example: a minimalistic window
-------------------------------
+## Example: a minimalistic window
 
 Let’s open a window with minimal set of features, just to see which of them browser allows to disable:
 
@@ -1176,13 +1143,12 @@ Most browsers show the example above as required.
 
 Rules for omitted settings:
 
--   If there is no 3rd argument in the `open` call, or it is empty, then the default window parameters are used.
--   If there is a string of params, but some `yes/no` features are omitted, then the omitted features assumed to have `no` value. So if you specify params, make sure you explicitly set all required features to yes.
--   If there is no `left/top` in params, then the browser tries to open a new window near the last opened window.
--   If there is no `width/height`, then the new window will be the same size as the last opened.
+- If there is no 3rd argument in the `open` call, or it is empty, then the default window parameters are used.
+- If there is a string of params, but some `yes/no` features are omitted, then the omitted features assumed to have `no` value. So if you specify params, make sure you explicitly set all required features to yes.
+- If there is no `left/top` in params, then the browser tries to open a new window near the last opened window.
+- If there is no `width/height`, then the new window will be the same size as the last opened.
 
-Accessing popup from window
----------------------------
+## Accessing popup from window
 
 The `open` call returns a reference to the new window. It can be used to manipulate it’s properties, change location and even more.
 
@@ -1198,7 +1164,7 @@ And here we modify the contents after loading:
 
 alert(newWindow.location.href); // (\*) about:blank, loading hasn’t started yet
 
-newWindow.onload = function() { let html = `<div style="font-size:30px">Welcome!</div>`; *!* newWindow.document.body.insertAdjacentHTML(‘afterbegin’, html); */!* }; \`\`\`
+newWindow.onload = function() { let html = `<div style="font-size:30px">Welcome!</div>`; _!_ newWindow.document.body.insertAdjacentHTML(‘afterbegin’, html); _/!_ }; \`\`\`
 
 Please note: immediately after `window.open`, the new window isn’t loaded yet. That’s demonstrated by `alert` in line `(*)`. So we wait for `onload` to modify it. We could also use `DOMContentLoaded` handler for `newWin.document`.
 
@@ -1206,8 +1172,7 @@ Please note: immediately after `window.open`, the new window isn’t loaded yet.
 
 Otherwise, e.g. if the main window is from `site.com`, and the popup from `gmail.com`, that’s impossible for user safety reasons. For the details, see chapter <a href="info:cross-window-communication" class="uri">info:cross-window-communication</a>. \`\`\`
 
-Accessing window from popup
----------------------------
+## Accessing window from popup
 
 A popup may access the “opener” window as well using `window.opener` reference. It is `null` for all windows except popups.
 
@@ -1221,8 +1186,8 @@ newWin.document.write( "
 
 The code above shows errors for any operations except:
 
--   Getting the reference to the inner window `iframe.contentWindow` - that’s allowed.
--   Writing to `location`.
+- Getting the reference to the inner window `iframe.contentWindow` - that’s allowed.
+- Writing to `location`.
 
 Contrary to that, if the `<iframe>` has the same origin, we can do anything with it:
 
@@ -1230,12 +1195,11 @@ Contrary to that, if the `<iframe>` has the same origin, we can do anything with
 
 \`\`\`
 
-\`\``smart header="`iframe.onload`vs`iframe.contentWindow.onload`" The`iframe.onload`event (on the``tag) is essentially the same as`iframe.contentWindow.onload\` (on the embedded window object). It triggers when the embedded window fully loads with all resources.
+\`\``smart header="`iframe.onload`vs`iframe.contentWindow.onload`" The`iframe.onload` event (on the``tag) is essentially the same as `iframe.contentWindow.onload\` (on the embedded window object). It triggers when the embedded window fully loads with all resources.
 
 …But we can’t access `iframe.contentWindow.onload` for an iframe from another origin, so using `iframe.onload`. \`\`\`
 
-Windows on subdomains: document.domain
---------------------------------------
+## Windows on subdomains: document.domain
 
 By definition, two URLs with different domains have different origins.
 
@@ -1247,8 +1211,7 @@ To make it work, each such window should run the code:
 
 That’s all. Now they can interact without limitations. Again, that’s only possible for pages with the same second-level domain.
 
-Iframe: wrong document pitfall
-------------------------------
+## Iframe: wrong document pitfall
 
 When an iframe comes from the same origin, and we may access its `document`, there’s a pitfall. It’s not related to cross-origin things, but important to know.
 
@@ -1262,7 +1225,7 @@ Here, look:
 
 \`\`\`
 
-We shouldn’t work with the document of a not-yet-loaded iframe, because that’s the *wrong document*. If we set any event handlers on it, they will be ignored.
+We shouldn’t work with the document of a not-yet-loaded iframe, because that’s the _wrong document_. If we set any event handlers on it, they will be ignored.
 
 How to detect the moment when the document is there?
 
@@ -1274,13 +1237,12 @@ We can try to catch the moment earlier using checks in `setInterval`:
 
 \`\`\`
 
-Collection: window.frames
--------------------------
+## Collection: window.frames
 
 An alternative way to get a window object for `<iframe>` – is to get it from the named collection `window.frames`:
 
--   By number: `window.frames[0]` – the window object for the first frame in the document.
--   By name: `window.frames.iframeName` – the window object for the frame with `name="iframeName"`.
+- By number: `window.frames[0]` – the window object for the first frame in the document.
+- By name: `window.frames.iframeName` – the window object for the frame with `name="iframeName"`.
 
 For instance:
 
@@ -1292,9 +1254,9 @@ An iframe may have other iframes inside. The corresponding `window` objects form
 
 Navigation links are:
 
--   `window.frames` – the collection of “children” windows (for nested frames).
--   `window.parent` – the reference to the “parent” (outer) window.
--   `window.top` – the reference to the topmost parent window.
+- `window.frames` – the collection of “children” windows (for nested frames).
+- `window.parent` – the reference to the “parent” (outer) window.
+- `window.top` – the reference to the topmost parent window.
 
 For instance:
 
@@ -1302,10 +1264,9 @@ For instance:
 
 We can use the `top` property to check if the current document is open inside a frame or not:
 
-`js run if (window == top) { // current window == window.top?   alert('The script is in the topmost window, not in a frame'); } else {   alert('The script runs in a frame!'); }`
+`js run if (window == top) { // current window == window.top? alert('The script is in the topmost window, not in a frame'); } else { alert('The script runs in a frame!'); }`
 
-The “sandbox” iframe attribute
-------------------------------
+## The “sandbox” iframe attribute
 
 The `sandbox` attribute allows for the exclusion of certain actions inside an `<iframe>` in order to prevent it executing untrusted code. It “sandboxes” the iframe by treating it as coming from another origin and/or applying other limitations.
 
@@ -1340,8 +1301,7 @@ Please note that nothing works. So the default set is really harsh:
 
     The purpose of the `"sandbox"` attribute is only to *add more* restrictions. It cannot remove them. In particular, it can't relax same-origin restrictions if the iframe comes from another origin.
 
-Cross-window messaging
-----------------------
+## Cross-window messaging
 
 The `postMessage` interface allows windows to talk to each other no matter which origin they are from.
 
@@ -1411,8 +1371,7 @@ The full example:
 
 \[codetabs src=“postmessage” height=120\]
 
-Summary
--------
+## Summary
 
 To call methods and access the content of another window, we should first have a reference to it.
 
@@ -1431,18 +1390,18 @@ The `postMessage` interface allows two windows with any origins to talk:
 1.  The sender calls `targetWin.postMessage(data, targetOrigin)`.
 2.  If `targetOrigin` is not `'*'`, then the browser checks if window `targetWin` has the origin `targetOrigin`.
 3.  If it is so, then `targetWin` triggers the `message` event with special properties:
-    -   `origin` – the origin of the sender window (like `http://my.site.com`)
-    -   `source` – the reference to the sender window.
-    -   `data` – the data, any object in everywhere except IE that supports only strings.
+
+    - `origin` – the origin of the sender window (like `http://my.site.com`)
+    - `source` – the reference to the sender window.
+    - `data` – the data, any object in everywhere except IE that supports only strings.
 
     We should use `addEventListener` to set the handler for this event inside the target window. \# The clickjacking attack
 
-The “clickjacking” attack allows an evil page to click on a “victim site” *on behalf of the visitor*.
+The “clickjacking” attack allows an evil page to click on a “victim site” _on behalf of the visitor_.
 
 Many sites were hacked this way, including Twitter, Facebook, Paypal and other sites. They have all been fixed, of course.
 
-The idea
---------
+## The idea
 
 The idea is very simple.
 
@@ -1453,8 +1412,7 @@ Here’s how clickjacking was done with Facebook:
 3.  Over that link the evil page positions a transparent `<iframe>` with `src` from facebook.com, in such a way that the “Like” button is right above that link. Usually that’s done with `z-index`.
 4.  In attempting to click the link, the visitor in fact clicks the button.
 
-The demo
---------
+## The demo
 
 Here’s how the evil page looks. To make things clear, the `<iframe>` is half-transparent (in real evil pages it’s fully transparent):
 
@@ -1462,11 +1420,11 @@ Here’s how the evil page looks. To make things clear, the `<iframe>` is half-t
 
 Click to get rich now:
 
-*!*
+_!_
 
 Click here!
 
-*/!*
+_/!_
 
 …And you’re cool (I’m a cool hacker actually)!
 
@@ -1492,8 +1450,7 @@ But then there’s a problem. Everything that the visitor types will be hidden, 
 
 People will usually stop typing when they can’t see their new characters printing on the screen. \`\`\`
 
-Old-school defences (weak)
---------------------------
+## Old-school defences (weak)
 
 The oldest defence is a bit of JavaScript which forbids opening the page in a frame (so-called “framebusting”).
 
@@ -1537,8 +1494,7 @@ Here’s the code:
 
 There are other ways to work around that simple protection too.
 
-X-Frame-Options
----------------
+## X-Frame-Options
 
 The server-side header `X-Frame-Options` can permit or forbid displaying the page inside a frame.
 
@@ -1568,8 +1524,7 @@ For instance, Twitter uses `X-Frame-Options: SAMEORIGIN`.
 
     Depending on your browser, the `iframe` above is either empty or alerting you that the browser won't permit that page to be navigating in this way.
 
-Showing with disabled functionality
------------------------------------
+## Showing with disabled functionality
 
 The `X-Frame-Options` header has a side-effect. Other sites won’t be able to show our page in a frame, even if they have good reasons to do so.
 
@@ -1604,8 +1559,7 @@ The demo:
 
 \[codetabs src=“protector”\]
 
-Samesite cookie attribute
--------------------------
+## Samesite cookie attribute
 
 The `samesite` cookie attribute can also prevent clickjacking attacks.
 
@@ -1619,8 +1573,7 @@ The `samesite` cookie attribute will not have an effect when cookies are not use
 
 However, this may also allow clickjacking attacks to work in a few limited cases. An anonymous polling website that prevents duplicate voting by checking IP addresses, for example, would still be vulnerable to clickjacking because it does not authenticate users using cookies.
 
-Summary
--------
+## Summary
 
 Clickjacking is a way to “trick” users into clicking on a victim site without even knowing what’s happening. That’s dangerous if there are important click-activated actions.
 
@@ -1630,8 +1583,8 @@ From one perspective – the attack is “not deep”: all a hacker is doing is 
 
 The attack is quite dangerous, because when we engineer the UI we usually don’t anticipate that a hacker may click on behalf of the visitor. So vulnerabilities can be found in totally unexpected places.
 
--   It is recommended to use `X-Frame-Options: SAMEORIGIN` on pages (or whole websites) which are not intended to be viewed inside frames.
--   Use a covering `<div>` if we want to allow our pages to be shown in iframes, but still stay safe. \# ArrayBuffer, binary arrays
+- It is recommended to use `X-Frame-Options: SAMEORIGIN` on pages (or whole websites) which are not intended to be viewed inside frames.
+- Use a covering `<div>` if we want to allow our pages to be shown in iframes, but still stay safe. \# ArrayBuffer, binary arrays
 
 In web-development we meet binary data mostly while dealing with files (create, upload, download). Another typical use case is image processing.
 
@@ -1657,10 +1610,10 @@ A view object does not store anything on it’s own. It’s the “eyeglasses”
 
 For instance:
 
--   **`Uint8Array`** – treats each byte in `ArrayBuffer` as a separate number, with possible values from 0 to 255 (a byte is 8-bit, so it can hold only that much). Such value is called a “8-bit unsigned integer”.
--   **`Uint16Array`** – treats every 2 bytes as an integer, with possible values from 0 to 65535. That’s called a “16-bit unsigned integer”.
--   **`Uint32Array`** – treats every 4 bytes as an integer, with possible values from 0 to 4294967295. That’s called a “32-bit unsigned integer”.
--   **`Float64Array`** – treats every 8 bytes as a floating point number with possible values from `5.0x10-324` to `1.8x10308`.
+- **`Uint8Array`** – treats each byte in `ArrayBuffer` as a separate number, with possible values from 0 to 255 (a byte is 8-bit, so it can hold only that much). Such value is called a “8-bit unsigned integer”.
+- **`Uint16Array`** – treats every 2 bytes as an integer, with possible values from 0 to 65535. That’s called a “16-bit unsigned integer”.
+- **`Uint32Array`** – treats every 4 bytes as an integer, with possible values from 0 to 4294967295. That’s called a “32-bit unsigned integer”.
+- **`Float64Array`** – treats every 8 bytes as a floating point number with possible values from `5.0x10-324` to `1.8x10308`.
 
 So, the binary data in an `ArrayBuffer` of 16 bytes can be interpreted as 16 “tiny numbers”, or 8 bigger numbers (2 bytes each), or 4 even bigger (4 bytes each), or 2 floating-point values with high precision (8 bytes each).
 
@@ -1672,9 +1625,9 @@ But if we’re going to write into it, or iterate over it, basically for almost 
 
 \`\`\`js run let buffer = new ArrayBuffer(16); // create a buffer of length 16
 
-*!* let view = new Uint32Array(buffer); // treat buffer as a sequence of 32-bit integers
+_!_ let view = new Uint32Array(buffer); // treat buffer as a sequence of 32-bit integers
 
-alert(Uint32Array.BYTES\_PER\_ELEMENT); // 4 bytes per integer */!*
+alert(Uint32Array.BYTES_PER_ELEMENT); // 4 bytes per integer _/!_
 
 alert(view.length); // 4, it stores that many integers alert(view.byteLength); // 16, the size in bytes
 
@@ -1684,8 +1637,7 @@ alert(view.length); // 4, it stores that many integers alert(view.byteLength); /
 
 \`\`\`
 
-TypedArray
-----------
+## TypedArray
 
 The common term for all these views (`Uint8Array`, `Uint32Array`, etc) is [TypedArray](https://tc39.github.io/ecma262/#sec-typedarray-objects). They share the same set of methods and properities.
 
@@ -1711,11 +1663,11 @@ There are 5 variants of arguments:
 
 2.  If an `Array`, or any array-like object is given, it creates a typed array of the same length and copies the content.
 
-    We can use it to pre-fill the array with the data: `js run  *!*  let arr = new Uint8Array([0, 1, 2, 3]);  */!*  alert( arr.length ); // 4, created binary array of the same length  alert( arr[1] ); // 1, filled with 4 bytes (unsigned 8-bit integers) with given values`
+    We can use it to pre-fill the array with the data: `js run *!* let arr = new Uint8Array([0, 1, 2, 3]); */!* alert( arr.length ); // 4, created binary array of the same length alert( arr[1] ); // 1, filled with 4 bytes (unsigned 8-bit integers) with given values`
 
-3.  If another `TypedArray` is supplied, it does the same: creates a typed array of the same length and copies values. Values are converted to the new type in the process, if needed. `js run  let arr16 = new Uint16Array([1, 1000]);  *!*  let arr8 = new Uint8Array(arr16);  */!*  alert( arr8[0] ); // 1  alert( arr8[1] ); // 232, tried to copy 1000, but can't fit 1000 into 8 bits (explanations below)`
+3.  If another `TypedArray` is supplied, it does the same: creates a typed array of the same length and copies values. Values are converted to the new type in the process, if needed. `js run let arr16 = new Uint16Array([1, 1000]); *!* let arr8 = new Uint8Array(arr16); */!* alert( arr8[0] ); // 1 alert( arr8[1] ); // 232, tried to copy 1000, but can't fit 1000 into 8 bits (explanations below)`
 
-4.  For a numeric argument `length` – creates the typed array to contain that many elements. Its byte length will be `length` multiplied by the number of bytes in a single item `TypedArray.BYTES_PER_ELEMENT`: `js run  let arr = new Uint16Array(4); // create typed array for 4 integers  alert( Uint16Array.BYTES_PER_ELEMENT ); // 2 bytes per integer  alert( arr.byteLength ); // 8 (size in bytes)`
+4.  For a numeric argument `length` – creates the typed array to contain that many elements. Its byte length will be `length` multiplied by the number of bytes in a single item `TypedArray.BYTES_PER_ELEMENT`: `js run let arr = new Uint16Array(4); // create typed array for 4 integers alert( Uint16Array.BYTES_PER_ELEMENT ); // 2 bytes per integer alert( arr.byteLength ); // 8 (size in bytes)`
 
 5.  Without arguments, creates an zero-length typed array.
 
@@ -1732,10 +1684,10 @@ So, we can always move from one view to another:
 
 Here’s the list of typed arrays:
 
--   `Uint8Array`, `Uint16Array`, `Uint32Array` – for integer numbers of 8, 16 and 32 bits.
-    -   `Uint8ClampedArray` – for 8-bit integers, “clamps” them on assignment (see below).
--   `Int8Array`, `Int16Array`, `Int32Array` – for signed integer numbers (can be negative).
--   `Float32Array`, `Float64Array` – for signed floating-point numbers of 32 and 64 bits.
+- `Uint8Array`, `Uint16Array`, `Uint32Array` – for integer numbers of 8, 16 and 32 bits.
+  - `Uint8ClampedArray` – for 8-bit integers, “clamps” them on assignment (see below).
+- `Int8Array`, `Int16Array`, `Int32Array` – for signed integer numbers (can be negative).
+- `Float32Array`, `Float64Array` – for signed floating-point numbers of 32 and 64 bits.
 
 \`\``warn header="No`int8`or similar single-valued types" Please note, despite of the names like`Int8Array`, there's no single-value type like`int`, or`int8\` in JavaScript.
 
@@ -1771,8 +1723,7 @@ alert(uint8array\[0\]); // 0 alert(uint8array\[1\]); // 1 \`\`\`
 
 `Uint8ClampedArray` is special in this aspect, its behavior is different. It saves 255 for any number that is greater than 255, and 0 for any negative number. That behavior is useful for image processing.
 
-TypedArray methods
-------------------
+## TypedArray methods
 
 `TypedArray` has regular `Array` methods, with notable exceptions.
 
@@ -1780,31 +1731,30 @@ We can iterate, `map`, `slice`, `find`, `reduce` etc.
 
 There are few things we can’t do though:
 
--   No `splice` – we can’t “delete” a value, because typed arrays are views on a buffer, and these are fixed, contiguous areas of memory. All we can do is to assign a zero.
--   No `concat` method.
+- No `splice` – we can’t “delete” a value, because typed arrays are views on a buffer, and these are fixed, contiguous areas of memory. All we can do is to assign a zero.
+- No `concat` method.
 
 There are two additional methods:
 
--   `arr.set(fromArr, [offset])` copies all elements from `fromArr` to the `arr`, starting at position `offset` (0 by default).
--   `arr.subarray([begin, end])` creates a new view of the same type from `begin` to `end` (exclusive). That’s similar to `slice` method (that’s also supported), but doesn’t copy anything – just creates a new view, to operate on the given piece of data.
+- `arr.set(fromArr, [offset])` copies all elements from `fromArr` to the `arr`, starting at position `offset` (0 by default).
+- `arr.subarray([begin, end])` creates a new view of the same type from `begin` to `end` (exclusive). That’s similar to `slice` method (that’s also supported), but doesn’t copy anything – just creates a new view, to operate on the given piece of data.
 
 These methods allow us to copy typed arrays, mix them, create new arrays from existing ones, and so on.
 
-DataView
---------
+## DataView
 
 [DataView](mdn:/JavaScript/Reference/Global_Objects/DataView) is a special super-flexible “untyped” view over `ArrayBuffer`. It allows to access the data on any offset in any format.
 
--   For typed arrays, the constructor dictates what the format is. The whole array is supposed to be uniform. The i-th number is `arr[i]`.
--   With `DataView` we access the data with methods like `.getUint8(i)` or `.getUint16(i)`. We choose the format at method call time instead of the construction time.
+- For typed arrays, the constructor dictates what the format is. The whole array is supposed to be uniform. The i-th number is `arr[i]`.
+- With `DataView` we access the data with methods like `.getUint8(i)` or `.getUint16(i)`. We choose the format at method call time instead of the construction time.
 
 The syntax:
 
     new DataView(buffer, [byteOffset], [byteLength])
 
--   **`buffer`** – the underlying `ArrayBuffer`. Unlike typed arrays, `DataView` doesn’t create a buffer on its own. We need to have it ready.
--   **`byteOffset`** – the starting byte position of the view (by default 0).
--   **`byteLength`** – the byte length of the view (by default till the end of `buffer`).
+- **`buffer`** – the underlying `ArrayBuffer`. Unlike typed arrays, `DataView` doesn’t create a buffer on its own. We need to have it ready.
+- **`byteOffset`** – the starting byte position of the view (by default 0).
+- **`byteLength`** – the byte length of the view (by default till the end of `buffer`).
 
 For instance, here we extract numbers in different formats from the same buffer:
 
@@ -1822,19 +1772,18 @@ dataView.setUint32(0, 0); // set 4-byte number to zero, thus setting all bytes t
 
 `DataView` is great when we store mixed-format data in the same buffer. For example, when we store a sequence of pairs (16-bit integer, 32-bit float), `DataView` allows to access them easily.
 
-Summary
--------
+## Summary
 
 `ArrayBuffer` is the core object, a reference to the fixed-length contiguous memory area.
 
 To do almost any operation on `ArrayBuffer`, we need a view.
 
--   It can be a `TypedArray`:
-    -   `Uint8Array`, `Uint16Array`, `Uint32Array` – for unsigned integers of 8, 16, and 32 bits.
-    -   `Uint8ClampedArray` – for 8-bit integers, “clamps” them on assignment.
-    -   `Int8Array`, `Int16Array`, `Int32Array` – for signed integer numbers (can be negative).
-    -   `Float32Array`, `Float64Array` – for signed floating-point numbers of 32 and 64 bits.
--   Or a `DataView` – the view that uses methods to specify a format, e.g. `getUint8(offset)`.
+- It can be a `TypedArray`:
+  - `Uint8Array`, `Uint16Array`, `Uint32Array` – for unsigned integers of 8, 16, and 32 bits.
+  - `Uint8ClampedArray` – for 8-bit integers, “clamps” them on assignment.
+  - `Int8Array`, `Int16Array`, `Int32Array` – for signed integer numbers (can be negative).
+  - `Float32Array`, `Float64Array` – for signed floating-point numbers of 32 and 64 bits.
+- Or a `DataView` – the view that uses methods to specify a format, e.g. `getUint8(offset)`.
 
 In most cases we create and operate directly on typed arrays, leaving `ArrayBuffer` under cover, as a “common denominator”. We can access it as `.buffer` and make another view if needed.
 
@@ -1854,18 +1803,18 @@ We first need to create it:
 
     let decoder = new TextDecoder([label], [options]);
 
--   **`label`** – the encoding, `utf-8` by default, but `big5`, `windows-1251` and many other are also supported.
--   **`options`** – optional object:
-    -   **`fatal`** – boolean, if `true` then throw an exception for invalid (non-decodable) characters, otherwise (default) replace them with character `\uFFFD`.
-    -   **`ignoreBOM`** – boolean, if `true` then ignore BOM (an optional byte-order Unicode mark), rarely needed.
+- **`label`** – the encoding, `utf-8` by default, but `big5`, `windows-1251` and many other are also supported.
+- **`options`** – optional object:
+  - **`fatal`** – boolean, if `true` then throw an exception for invalid (non-decodable) characters, otherwise (default) replace them with character `\uFFFD`.
+  - **`ignoreBOM`** – boolean, if `true` then ignore BOM (an optional byte-order Unicode mark), rarely needed.
 
 …And then decode:
 
     let str = decoder.decode([input], [options]);
 
--   **`input`** – `BufferSource` to decode.
--   **`options`** – optional object:
-    -   **`stream`** – true for decoding streams, when `decoder` is called repeatedly with incoming chunks of data. In that case a multi-byte character may occasionally split between chunks. This options tells `TextDecoder` to memorize “unfinished” characters and decode them when the next chunk comes.
+- **`input`** – `BufferSource` to decode.
+- **`options`** – optional object:
+  - **`stream`** – true for decoding streams, when `decoder` is called repeatedly with incoming chunks of data. In that case a multi-byte character may occasionally split between chunks. This options tells `TextDecoder` to memorize “unfinished” characters and decode them when the next chunk comes.
 
 For instance:
 
@@ -1885,8 +1834,7 @@ We can decode a part of the buffer by creating a subarray view for it:
 
 alert( new TextDecoder().decode(binaryString) ); // Hello \`\`\`
 
-TextEncoder
------------
+## TextEncoder
 
 [TextEncoder](https://encoding.spec.whatwg.org/#interface-textencoder) does the reverse thing – converts a string into bytes.
 
@@ -1906,33 +1854,31 @@ We know many comparison operators from maths.
 
 In JavaScript they are written like this:
 
--   Greater/less than: `a > b`, `a < b`.
--   Greater/less than or equals: `a >= b`, `a <= b`.
--   Equals: `a == b`, please note the double equality sign `==` means the equality test, while a single one `a = b` means an assignment.
--   Not equals. In maths the notation is `≠`, but in JavaScript it’s written as `a != b`.
+- Greater/less than: `a > b`, `a < b`.
+- Greater/less than or equals: `a >= b`, `a <= b`.
+- Equals: `a == b`, please note the double equality sign `==` means the equality test, while a single one `a = b` means an assignment.
+- Not equals. In maths the notation is `≠`, but in JavaScript it’s written as `a != b`.
 
 In this article we’ll learn more about different types of comparisons, how JavaScript makes them, including important peculiarities.
 
 At the end you’ll find a good recipe to avoid “JavaScript quirks”-related issues.
 
-Boolean is the result
----------------------
+## Boolean is the result
 
 All comparison operators return a boolean value:
 
--   `true` – means “yes”, “correct” or “the truth”.
--   `false` – means “no”, “wrong” or “not the truth”.
+- `true` – means “yes”, “correct” or “the truth”.
+- `false` – means “no”, “wrong” or “not the truth”.
 
 For example:
 
-`js run alert( 2 > 1 );  // true (correct) alert( 2 == 1 ); // false (wrong) alert( 2 != 1 ); // true (correct)`
+`js run alert( 2 > 1 ); // true (correct) alert( 2 == 1 ); // false (wrong) alert( 2 != 1 ); // true (correct)`
 
 A comparison result can be assigned to a variable, just like any value:
 
 `js run let result = 5 > 4; // assign the result of the comparison alert( result ); // true`
 
-String comparison
------------------
+## String comparison
 
 To see whether a string is greater than another, JavaScript uses the so-called “dictionary” or “lexicographical” order.
 
@@ -1962,8 +1908,7 @@ The second comparison `'Glow'` and `'Glee'` needs more steps as strings are comp
 
 For instance, case matters. A capital letter `"A"` is not equal to the lowercase `"a"`. Which one is greater? The lowercase `"a"`. Why? Because the lowercase character has a greater index in the internal encoding table JavaScript uses (Unicode). We’ll get back to specific details and consequences of this in the chapter <a href="info:string" class="uri">info:string</a>. \`\`\`
 
-Comparison of different types
------------------------------
+## Comparison of different types
 
 When comparing values of different types, JavaScript converts the values to numbers.
 
@@ -1979,8 +1924,8 @@ For example:
 
 \`\`\`\`smart header=“A funny consequence” It is possible that at the same time:
 
--   Two values are equal.
--   One of them is `true` as a boolean and the other one is `false` as a boolean.
+- Two values are equal.
+- One of them is `true` as a boolean and the other one is `false` as a boolean.
 
 For example:
 
@@ -1992,8 +1937,7 @@ alert(a == b); // true!
 
     From JavaScript's standpoint, this result is quite normal. An equality check converts values using the numeric conversion (hence `"0"` becomes `0`), while the explicit `Boolean` conversion uses another set of rules.
 
-Strict equality
----------------
+## Strict equality
 
 A regular equality check `==` has a problem. It cannot differentiate `0` from `false`:
 
@@ -2019,8 +1963,7 @@ There is also a “strict non-equality” operator `!==` analogous to `!=`.
 
 The strict equality operator is a bit longer to write, but makes it obvious what’s going on and leaves less room for errors.
 
-Comparison with null and undefined
-----------------------------------
+## Comparison with null and undefined
 
 There’s a non-intuitive behavior when `null` or `undefined` are compared to other values.
 
@@ -2043,7 +1986,7 @@ Now let’s see some funny things that happen when we apply these rules. And, wh
 
 Let’s compare `null` with a zero:
 
-`js run alert( null > 0 );  // (1) false alert( null == 0 ); // (2) false alert( null >= 0 ); // (3) *!*true*/!*`
+`js run alert( null > 0 ); // (1) false alert( null == 0 ); // (2) false alert( null >= 0 ); // (3) *!*true*/!*`
 
 Mathematically, that’s strange. The last result states that “`null` is greater than or equal to zero”, so in one of the comparisons above it must be `true`, but they are both false.
 
@@ -2061,24 +2004,23 @@ Why does it dislike zero so much? Always false!
 
 We get these results because:
 
--   Comparisons `(1)` and `(2)` return `false` because `undefined` gets converted to `NaN` and `NaN` is a special numeric value which returns `false` for all comparisons.
--   The equality check `(3)` returns `false` because `undefined` only equals `null`, `undefined`, and no other value.
+- Comparisons `(1)` and `(2)` return `false` because `undefined` gets converted to `NaN` and `NaN` is a special numeric value which returns `false` for all comparisons.
+- The equality check `(3)` returns `false` because `undefined` only equals `null`, `undefined`, and no other value.
 
 ### Avoid problems
 
 Why did we go over these examples? Should we remember these peculiarities all the time? Well, not really. Actually, these tricky things will gradually become familiar over time, but there’s a solid way to avoid problems with them:
 
--   Treat any comparison with `undefined/null` except the strict equality `===` with exceptional care.
--   Don’t use comparisons `>= > < <=` with a variable which may be `null/undefined`, unless you’re really sure of what you’re doing. If a variable can have these values, check for them separately.
+- Treat any comparison with `undefined/null` except the strict equality `===` with exceptional care.
+- Don’t use comparisons `>= > < <=` with a variable which may be `null/undefined`, unless you’re really sure of what you’re doing. If a variable can have these values, check for them separately.
 
-Summary
--------
+## Summary
 
--   Comparison operators return a boolean value.
--   Strings are compared letter-by-letter in the “dictionary” order.
--   When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
--   The values `null` and `undefined` equal `==` each other and do not equal any other value.
--   Be careful when using comparisons like `>` or `<` with variables that can occasionally be `null/undefined`. Checking for `null/undefined` separately is a good idea. \# Blob
+- Comparison operators return a boolean value.
+- Strings are compared letter-by-letter in the “dictionary” order.
+- When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
+- The values `null` and `undefined` equal `==` each other and do not equal any other value.
+- Be careful when using comparisons like `>` or `<` with variables that can occasionally be `null/undefined`. Checking for `null/undefined` separately is a good idea. \# Blob
 
 `ArrayBuffer` and views are a part of ECMA standard, a part of JavaScript.
 
@@ -2092,10 +2034,10 @@ The constructor syntax is:
 
     new Blob(blobParts, options);
 
--   **`blobParts`** is an array of `Blob`/`BufferSource`/`String` values.
--   **`options`** optional object:
-    -   **`type`** – `Blob` type, usually MIME-type, e.g. `image/png`,
-    -   **`endings`** – whether to transform end-of-line to make the `Blob` correspond to current OS newlines (`\r\n` or `\n`). By default `"transparent"` (do nothing), but also can be `"native"` (transform).
+- **`blobParts`** is an array of `Blob`/`BufferSource`/`String` values.
+- **`options`** optional object:
+  - **`type`** – `Blob` type, usually MIME-type, e.g. `image/png`,
+  - **`endings`** – whether to transform end-of-line to make the `Blob` correspond to current OS newlines (`\r\n` or `\n`). By default `"transparent"` (do nothing), but also can be `"native"` (transform).
 
 For example:
 
@@ -2112,9 +2054,9 @@ We can extract `Blob` slices with:
 
     blob.slice([byteStart], [byteEnd], [contentType]);
 
--   **`byteStart`** – the starting byte, by default 0.
--   **`byteEnd`** – the last byte (exclusive, by default till the end).
--   **`contentType`** – the `type` of the new blob, by default the same as the source.
+- **`byteStart`** – the starting byte, by default 0.
+- **`byteEnd`** – the last byte (exclusive, by default till the end).
+- **`contentType`** – the `type` of the new blob, by default the same as the source.
 
 The arguments are similar to `array.slice`, negative numbers are allowed too.
 
@@ -2122,8 +2064,7 @@ The arguments are similar to `array.slice`, negative numbers are allowed too.
 
 This behavior is similar to JavaScript strings: we can’t change a character in a string, but we can make a new corrected string. \`\`\`
 
-Blob as URL
------------
+## Blob as URL
 
 A Blob can be easily used as a URL for `<a>`, `<img>` or other tags, to show its contents.
 
@@ -2171,8 +2112,7 @@ In the last example, we intend the `Blob` to be used only once, for instant down
 
 In the previous example with the clickable HTML-link, we don’t call `URL.revokeObjectURL(link.href)`, because that would make the `Blob` url invalid. After the revocation, as the mapping is removed, the URL doesn’t work any more.
 
-Blob to base64
---------------
+## Blob to base64
 
 An alternative to `URL.createObjectURL` is to convert a `Blob` into a base64-encoded string.
 
@@ -2194,7 +2134,7 @@ Here’s the demo of downloading a blob, now via base-64:
 
 let blob = new Blob(\[‘Hello, world!’\], {type: ‘text/plain’});
 
-*!* let reader = new FileReader(); reader.readAsDataURL(blob); // converts the blob to base64 and calls onload */!*
+_!_ let reader = new FileReader(); reader.readAsDataURL(blob); // converts the blob to base64 and calls onload _/!_
 
 reader.onload = function() { link.href = reader.result; // data url link.click(); }; \`\`\`
 
@@ -2202,8 +2142,7 @@ Both ways of making a URL of a `Blob` are usable. But usually `URL.createObjectU
 
 `` compare title-plus="URL.createObjectURL(blob)" title-minus="Blob to data url" + We need to revoke them if care about memory. + Direct access to blob, no "encoding/decoding" - No need to revoke anything. - Performance and memory losses on big `Blob` objects for encoding. ``
 
-Image to blob
--------------
+## Image to blob
 
 We can create a `Blob` of an image, an image part, or even make a page screenshot. That’s handy to upload it somewhere.
 
@@ -2236,8 +2175,7 @@ If we prefer `async/await` instead of callbacks:
 
 For screenshotting a page, we can use a library such as <a href="https://github.com/niklasvh/html2canvas" class="uri">https://github.com/niklasvh/html2canvas</a>. What it does is just walks the page and draws it on `<canvas>`. Then we can get a `Blob` of it the same way as above.
 
-From Blob to ArrayBuffer
-------------------------
+## From Blob to ArrayBuffer
 
 The `Blob` constructor allows to create a blob from almost anything, including any `BufferSource`.
 
@@ -2254,8 +2192,7 @@ But if we need to perform low-level processing, we can get the lowest-level `Arr
       let arrayBuffer = fileReader.result;
     };
 
-Summary
--------
+## Summary
 
 While `ArrayBuffer`, `Uint8Array` and other `BufferSource` are “binary data”, a [Blob](https://www.w3.org/TR/FileAPI/#dfn-Blob) represents “binary data with type”.
 
@@ -2265,8 +2202,8 @@ Methods that perform web-requests, such as [XMLHttpRequest](info:xmlhttprequest)
 
 We can easily convert between `Blob` and low-level binary data types:
 
--   We can make a Blob from a typed array using `new Blob(...)` constructor.
--   We can get back `ArrayBuffer` from a Blob using `FileReader`, and then create a view over it for low-level binary processing. \# File and FileReader
+- We can make a Blob from a typed array using `new Blob(...)` constructor.
+- We can get back `ArrayBuffer` from a Blob using `FileReader`, and then create a view over it for low-level binary processing. \# File and FileReader
 
 A [File](https://www.w3.org/TR/FileAPI/#dfn-file) object inherits from `Blob` and is extended with filesystem-related capabilities.
 
@@ -2276,10 +2213,10 @@ First, there’s a constructor, similar to `Blob`:
 
     new File(fileParts, fileName, [options])
 
--   **`fileParts`** – is an array of Blob/BufferSource/String values.
--   **`fileName`** – file name string.
--   **`options`** – optional object:
-    -   **`lastModified`** – the timestamp (integer date) of last modification.
+- **`fileParts`** – is an array of Blob/BufferSource/String values.
+- **`fileName`** – file name string.
+- **`options`** – optional object:
+  - **`lastModified`** – the timestamp (integer date) of last modification.
 
 Second, more often we get a file from `<input type="file">` or drag’n’drop or other browser interfaces. In that case, the file gets this information from OS.
 
@@ -2293,8 +2230,7 @@ That’s how we can get a `File` object from `<input type="file">`:
 
     The input may select multiple files, so `input.files` is an array-like object with them. Here we have only one file, so we just take `input.files[0]`.
 
-FileReader
-----------
+## FileReader
 
 [FileReader](https://www.w3.org/TR/FileAPI/#dfn-filereader) is an object with the sole purpose of reading data from `Blob` (and hence `File` too) objects.
 
@@ -2306,16 +2242,16 @@ The constructor:
 
 The main methods:
 
--   **`readAsArrayBuffer(blob)`** – read the data in binary format `ArrayBuffer`.
--   **`readAsText(blob, [encoding])`** – read the data as a text string with the given encoding (`utf-8` by default).
--   **`readAsDataURL(blob)`** – read the binary data and encode it as base64 data url.
--   **`abort()`** – cancel the operation.
+- **`readAsArrayBuffer(blob)`** – read the data in binary format `ArrayBuffer`.
+- **`readAsText(blob, [encoding])`** – read the data as a text string with the given encoding (`utf-8` by default).
+- **`readAsDataURL(blob)`** – read the binary data and encode it as base64 data url.
+- **`abort()`** – cancel the operation.
 
 The choice of `read*` method depends on which format we prefer, how we’re going to use the data.
 
--   `readAsArrayBuffer` – for binary files, to do low-level binary operations. For high-level operations, like slicing, `File` inherits from `Blob`, so we can call them directly, without reading.
--   `readAsText` – for text files, when we’d like to get a string.
--   `readAsDataURL` – when we’d like to use this data in `src` for `img` or another tag. There’s an alternative to reading a file for that, as discussed in chapter <a href="info:blob" class="uri">info:blob</a>: `URL.createObjectURL(file)`.
+- `readAsArrayBuffer` – for binary files, to do low-level binary operations. For high-level operations, like slicing, `File` inherits from `Blob`, so we can call them directly, without reading.
+- `readAsText` – for text files, when we’d like to get a string.
+- `readAsDataURL` – when we’d like to use this data in `src` for `img` or another tag. There’s an alternative to reading a file for that, as discussed in chapter <a href="info:blob" class="uri">info:blob</a>: `URL.createObjectURL(file)`.
 
 As the reading proceeds, there are events: - `loadstart` – loading started. - `progress` – occurs during reading. - `load` – no errors, reading complete. - `abort` – `abort()` called. - `error` – error has occurred. - `loadend` – reading finished with either success or failure.
 
@@ -2339,8 +2275,7 @@ Its reading methods `read*` do not generate events, but rather return a result, 
 
 That’s only inside a Web Worker though, because delays in synchronous calls, that are possible while reading from files, in Web Workers are less important. They do not affect the page. \`\`\`
 
-Summary
--------
+## Summary
 
 `File` objects inherit from `Blob`.
 
@@ -2352,17 +2287,16 @@ In many cases though, we don’t have to read the file contents. Just as we did 
 
 And if we’re going to send a `File` over a network, that’s also easy: network API like `XMLHttpRequest` or `fetch` natively accepts `File` objects.
 
-Fetch
-=====
+# Fetch
 
 JavaScript can send network requests to the server and load new information whenever it’s needed.
 
 For example, we can use a network request to:
 
--   Submit an order,
--   Load user information,
--   Receive latest updates from the server,
--   …etc.
+- Submit an order,
+- Load user information,
+- Receive latest updates from the server,
+- …etc.
 
 …And all of that without reloading the page!
 
@@ -2376,8 +2310,8 @@ The basic syntax is:
 
     let promise = fetch(url, [options])
 
--   **`url`** – the URL to access.
--   **`options`** – optional parameters: method, headers etc.
+- **`url`** – the URL to access.
+- **`options`** – optional parameters: method, headers etc.
 
 Without `options`, this is a simple GET request, downloading the contents of the `url`.
 
@@ -2393,8 +2327,8 @@ The promise rejects if the `fetch` was unable to make HTTP-request, e.g. networ
 
 We can see HTTP-status in response properties:
 
--   **`status`** – HTTP status code, e.g. 200.
--   **`ok`** – boolean, `true` if the HTTP status code is 200-299.
+- **`status`** – HTTP status code, e.g. 200.
+- **`ok`** – boolean, `true` if the HTTP status code is 200-299.
 
 For example:
 
@@ -2411,18 +2345,18 @@ For example:
 
 `Response` provides multiple promise-based methods to access the body in various formats:
 
--   **`response.text()`** – read the response and return as text,
--   **`response.json()`** – parse the response as JSON,
--   **`response.formData()`** – return the response as `FormData` object (explained in the [next chapter](info:formdata)),
--   **`response.blob()`** – return the response as [Blob](info:blob) (binary data with type),
--   **`response.arrayBuffer()`** – return the response as [ArrayBuffer](info:arraybuffer-binary-arrays) (low-level representation of binary data),
--   additionally, `response.body` is a [ReadableStream](https://streams.spec.whatwg.org/#rs-class) object, it allows you to read the body chunk-by-chunk, we’ll see an example later.
+- **`response.text()`** – read the response and return as text,
+- **`response.json()`** – parse the response as JSON,
+- **`response.formData()`** – return the response as `FormData` object (explained in the [next chapter](info:formdata)),
+- **`response.blob()`** – return the response as [Blob](info:blob) (binary data with type),
+- **`response.arrayBuffer()`** – return the response as [ArrayBuffer](info:arraybuffer-binary-arrays) (low-level representation of binary data),
+- additionally, `response.body` is a [ReadableStream](https://streams.spec.whatwg.org/#rs-class) object, it allows you to read the body chunk-by-chunk, we’ll see an example later.
 
 For instance, let’s get a JSON-object with latest commits from GitHub:
 
 \`\`\`js run async let url = ‘https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits’; let response = await fetch(url);
 
-*!* let commits = await response.json(); // read response body and parse as JSON */!*
+_!_ let commits = await response.json(); // read response body and parse as JSON _/!_
 
 Or, the same without `await`, using pure promises syntax:
 
@@ -2438,7 +2372,7 @@ As a show-case for reading in binary format, let’s fetch and show a logo image
 
 \`\`\`js async run let response = await fetch(‘/article/fetch/logo-fetch.svg’);
 
-*!* let blob = await response.blob(); // download as Blob object */!*
+_!_ let blob = await response.blob(); // download as Blob object _/!_
 
 // create for it let img = document.createElement(‘img’); img.style = ‘position:fixed;top:10px;left:10px;width:100px’; document.body.append(img);
 
@@ -2455,8 +2389,7 @@ setTimeout(() =&gt; { // hide after three seconds img.remove(); URL.revokeObject
     let parsed = await response.json(); // fails (already consumed)
     ```
 
-Response headers
-----------------
+## Response headers
 
 The response headers are available in a Map-like headers object in `response.headers`.
 
@@ -2468,8 +2401,7 @@ It’s not exactly a Map, but it has similar methods to get individual headers b
 
 // iterate over all headers for (let \[key, value\] of response.headers) { alert(`${key} = ${value}`); } \`\`\`
 
-Request headers
----------------
+## Request headers
 
 To set a request header in `fetch`, we can use the `headers` option. It has an object with outgoing headers, like this:
 
@@ -2481,40 +2413,39 @@ To set a request header in `fetch`, we can use the `headers` option. It has an o
 
 …But there’s a list of [forbidden HTTP headers](https://fetch.spec.whatwg.org/#forbidden-header-name) that we can’t set:
 
--   `Accept-Charset`, `Accept-Encoding`
--   `Access-Control-Request-Headers`
--   `Access-Control-Request-Method`
--   `Connection`
--   `Content-Length`
--   `Cookie`, `Cookie2`
--   `Date`
--   `DNT`
--   `Expect`
--   `Host`
--   `Keep-Alive`
--   `Origin`
--   `Referer`
--   `TE`
--   `Trailer`
--   `Transfer-Encoding`
--   `Upgrade`
--   `Via`
--   `Proxy-*`
--   `Sec-*`
+- `Accept-Charset`, `Accept-Encoding`
+- `Access-Control-Request-Headers`
+- `Access-Control-Request-Method`
+- `Connection`
+- `Content-Length`
+- `Cookie`, `Cookie2`
+- `Date`
+- `DNT`
+- `Expect`
+- `Host`
+- `Keep-Alive`
+- `Origin`
+- `Referer`
+- `TE`
+- `Trailer`
+- `Transfer-Encoding`
+- `Upgrade`
+- `Via`
+- `Proxy-*`
+- `Sec-*`
 
 These headers ensure proper and safe HTTP, so they are controlled exclusively by the browser.
 
-POST requests
--------------
+## POST requests
 
 To make a `POST` request, or a request with another method, we need to use `fetch` options:
 
--   **`method`** – HTTP-method, e.g. `POST`,
--   **`body`** – the request body, one of:
-    -   a string (e.g. JSON-encoded),
-    -   `FormData` object, to submit the data as `form/multipart`,
-    -   `Blob`/`BufferSource` to send binary data,
-    -   [URLSearchParams](info:url), to submit the data in `x-www-form-urlencoded` encoding, rarely used.
+- **`method`** – HTTP-method, e.g. `POST`,
+- **`body`** – the request body, one of:
+  - a string (e.g. JSON-encoded),
+  - `FormData` object, to submit the data as `form/multipart`,
+  - `Blob`/`BufferSource` to send binary data,
+  - [URLSearchParams](info:url), to submit the data in `x-www-form-urlencoded` encoding, rarely used.
 
 The JSON format is used most of the time.
 
@@ -2522,7 +2453,7 @@ For example, this code submits `user` object as JSON:
 
 \`\`\`js run async let user = { name: ‘John’, surname: ‘Smith’ };
 
-*!* let response = await fetch(‘/article/fetch/post/user’, { method: ‘POST’, headers: { ‘Content-Type’: ‘application/json;charset=utf-8’ }, body: JSON.stringify(user) }); */!*
+_!_ let response = await fetch(‘/article/fetch/post/user’, { method: ‘POST’, headers: { ‘Content-Type’: ‘application/json;charset=utf-8’ }, body: JSON.stringify(user) }); _/!_
 
 let result = await response.json(); alert(result.message); \`\`\`
 
@@ -2530,8 +2461,7 @@ Please note, if the request `body` is a string, then `Content-Type` header is se
 
 But, as we’re going to send JSON, we use `headers` option to send `application/json` instead, the correct `Content-Type` for JSON-encoded data.
 
-Sending an image
-----------------
+## Sending an image
 
 We can also submit binary data with `fetch` using `Blob` or `BufferSource` objects.
 
@@ -2546,7 +2476,7 @@ Please note, here we don’t set `Content-Type` header manually, because a `Blob
 The `submit()` function can be rewritten without `async/await` like this:
 
     function submit() {
-      canvasElem.toBlob(function(blob) {        
+      canvasElem.toBlob(function(blob) {
         fetch('/article/fetch/post/image', {
           method: 'POST',
           body: blob
@@ -2556,8 +2486,7 @@ The `submit()` function can be rewritten without `async/await` like this:
       }, 'image/png');
     }
 
-Summary
--------
+## Summary
 
 A typical fetch request consists of two `await` calls:
 
@@ -2578,8 +2507,7 @@ Fetch options so far: - `method` – HTTP-method, - `headers` – an object with
 
 In the next chapters we’ll see more options and use cases of `fetch`.
 
-FormData
-========
+# FormData
 
 This chapter is about sending HTML forms: with or without files, with additional fields and so on.
 
@@ -2595,8 +2523,7 @@ The special thing about `FormData` is that network methods, such as `fetch`, can
 
 From the server point of view, that looks like a usual form submission.
 
-Sending a simple form
----------------------
+## Sending a simple form
 
 Let’s send a simple form first.
 
@@ -2608,23 +2535,22 @@ As you can see, that’s almost one-liner:
 
 In this example, the server code is not presented, as it’s beyond our scope. The server accepts the POST request and replies “User saved”.
 
-FormData Methods
-----------------
+## FormData Methods
 
 We can modify fields in `FormData` with methods:
 
--   `formData.append(name, value)` - add a form field with the given `name` and `value`,
--   `formData.append(name, blob, fileName)` - add a field as if it were `<input type="file">`, the third argument `fileName` sets file name (not form field name), as it were a name of the file in user’s filesystem,
--   `formData.delete(name)` - remove the field with the given `name`,
--   `formData.get(name)` - get the value of the field with the given `name`,
--   `formData.has(name)` - if there exists a field with the given `name`, returns `true`, otherwise `false`
+- `formData.append(name, value)` - add a form field with the given `name` and `value`,
+- `formData.append(name, blob, fileName)` - add a field as if it were `<input type="file">`, the third argument `fileName` sets file name (not form field name), as it were a name of the file in user’s filesystem,
+- `formData.delete(name)` - remove the field with the given `name`,
+- `formData.get(name)` - get the value of the field with the given `name`,
+- `formData.has(name)` - if there exists a field with the given `name`, returns `true`, otherwise `false`
 
 A form is technically allowed to have many fields with the same `name`, so multiple calls to `append` add more same-named fields.
 
 There’s also method `set`, with the same syntax as `append`. The difference is that `.set` removes all fields with the given `name`, and then appends a new field. So it makes sure there’s only one field with such `name`, the rest is just like `append`:
 
--   `formData.set(name, value)`,
--   `formData.set(name, blob, fileName)`.
+- `formData.set(name, value)`,
+- `formData.set(name, blob, fileName)`.
 
 Also we can iterate over formData fields using `for..of` loop:
 
@@ -2632,8 +2558,7 @@ Also we can iterate over formData fields using `for..of` loop:
 
 // List key/value pairs for(let \[name, value\] of formData) { alert(`${name} = ${value}`); // key1 = value1, then key2 = value2 } \`\`\`
 
-Sending a form with a file
---------------------------
+## Sending a form with a file
 
 The form is always sent as `Content-Type: multipart/form-data`, this encoding allows to send files. So, `<input type="file">` fields are sent also, similar to a usual form submission.
 
@@ -2645,8 +2570,7 @@ Picture:
 
 \`\`\`
 
-Sending a form with Blob data
------------------------------
+## Sending a form with Blob data
 
 As we’ve seen in the chapter <a href="info:fetch" class="uri">info:fetch</a>, it’s easy to send dynamically generated binary data e.g. an image, as `Blob`. We can supply it directly as `fetch` parameter `body`.
 
@@ -2668,17 +2592,16 @@ That’s same as if there were `<input type="file" name="image">` in the form, a
 
 The server reads form data and the file, as if it were a regular form submission.
 
-Summary
--------
+## Summary
 
 [FormData](https://xhr.spec.whatwg.org/#interface-formdata) objects are used to capture HTML form and submit it using `fetch` or another network method.
 
 We can either create `new FormData(form)` from an HTML form, or create a object without a form at all, and then append fields with methods:
 
--   `formData.append(name, value)`
--   `formData.append(name, blob, fileName)`
--   `formData.set(name, value)`
--   `formData.set(name, blob, fileName)`
+- `formData.append(name, value)`
+- `formData.append(name, blob, fileName)`
+- `formData.set(name, value)`
+- `formData.set(name, blob, fileName)`
 
 Let’s note two peculiarities here:
 
@@ -2687,18 +2610,17 @@ Let’s note two peculiarities here:
 
 Other methods are:
 
--   `formData.delete(name)`
--   `formData.get(name)`
--   `formData.has(name)`
+- `formData.delete(name)`
+- `formData.get(name)`
+- `formData.has(name)`
 
 That’s it!
 
-Fetch: Download progress
-========================
+# Fetch: Download progress
 
-The `fetch` method allows to track *download* progress.
+The `fetch` method allows to track _download_ progress.
 
-Please note: there’s currently no way for `fetch` to track *upload* progress. For that purpose, please use [XMLHttpRequest](info:xmlhttprequest), we’ll cover it later.
+Please note: there’s currently no way for `fetch` to track _upload_ progress. For that purpose, please use [XMLHttpRequest](info:xmlhttprequest), we’ll cover it later.
 
 To track download progress, we can use `response.body` property. It’s `ReadableStream` – a special object that provides body chunk-by-chunk, as it comes. Readable streams are described in the [Streams API](https://streams.spec.whatwg.org/#rs-class) specification.
 
@@ -2771,16 +2693,15 @@ Let’s explain that step-by-step:
 
     To create a string, we need to interpret these bytes. The built-in [TextDecoder](info:text-decoder) does exactly that. Then we can `JSON.parse` it, if necessary.
 
-    What if we need binary content instead of a string? That’s even simpler. Replace steps 4 and 5 with a single line that creates a `Blob` from all chunks: `js  let blob = new Blob(chunks);`
+    What if we need binary content instead of a string? That’s even simpler. Replace steps 4 and 5 with a single line that creates a `Blob` from all chunks: `js let blob = new Blob(chunks);`
 
 At the end we have the result (as a string or a blob, whatever is convenient), and progress-tracking in the process.
 
-Once again, please note, that’s not for *upload* progress (no way now with `fetch`), only for *download* progress.
+Once again, please note, that’s not for _upload_ progress (no way now with `fetch`), only for _download_ progress.
 
 Also, if the size is unknown, we should check `receivedLength` in the loop and break it once it reaches a certain limit. So that the `chunks` won’t overflow the memory.
 
-Fetch: Abort
-============
+# Fetch: Abort
 
 As we know, `fetch` returns a promise. And JavaScript generally has no concept of “aborting” a promise. So how can we cancel an ongoing `fetch`? E.g. if the user actions on our site indicate that the `fetch` isn’t needed any more.
 
@@ -2788,8 +2709,7 @@ There’s a special built-in object for such purposes: `AbortController`. It can
 
 The usage is very straightforward:
 
-The AbortController object
---------------------------
+## The AbortController object
 
 Create a controller:
 
@@ -2797,8 +2717,8 @@ Create a controller:
 
 A controller is an extremely simple object.
 
--   It has a single method `abort()`,
--   And a single property `signal` that allows to set event listeners on it.
+- It has a single method `abort()`,
+- And a single property `signal` that allows to set event listeners on it.
 
 When `abort()` is called: - `controller.signal` emits the `"abort"` event. - `controller.signal.aborted` property becomes `true`.
 
@@ -2820,8 +2740,7 @@ We could implement the same kind of event listening in our code on our own, with
 
 But what’s valuable is that `fetch` knows how to work with the `AbortController` object. It’s integrated in it.
 
-Using with fetch
-----------------
+## Using with fetch
 
 To be able to cancel `fetch`, pass the `signal` property of an `AbortController` as a `fetch` option:
 
@@ -2846,8 +2765,7 @@ Here’s the full example with `fetch` aborted after 1 second:
 
 try { let response = await fetch(‘/article/fetch-abort/demo/hang’, { signal: controller.signal }); } catch(err) { if (err.name == ‘AbortError’) { // handle abort() alert(“Aborted!”); } else { throw err; } } \`\`\`
 
-AbortController is scalable
----------------------------
+## AbortController is scalable
 
 `AbortController` is scalable. It allows to cancel multiple fetches at once.
 
@@ -2889,29 +2807,27 @@ We just need to listen to its `abort` event in our tasks:
     // if controller.abort() is called from anywhere,
     // it aborts all fetches and ourJob
 
-Summary
--------
+## Summary
 
--   `AbortController` is a simple object that generates an `abort` event on it’s `signal` property when the `abort()` method is called (and also sets `signal.aborted` to `true`).
--   `fetch` integrates with it: we pass the `signal` property as the option, and then `fetch` listens to it, so it’s possible to abort the `fetch`.
--   We can use `AbortController` in our code. The “call `abort()`” -&gt; “listen to `abort` event” interaction is simple and universal. We can use it even without `fetch`. \# Fetch: Cross-Origin Requests
+- `AbortController` is a simple object that generates an `abort` event on it’s `signal` property when the `abort()` method is called (and also sets `signal.aborted` to `true`).
+- `fetch` integrates with it: we pass the `signal` property as the option, and then `fetch` listens to it, so it’s possible to abort the `fetch`.
+- We can use `AbortController` in our code. The “call `abort()`” -&gt; “listen to `abort` event” interaction is simple and universal. We can use it even without `fetch`. \# Fetch: Cross-Origin Requests
 
 If we send a `fetch` request to another web-site, it will probably fail.
 
 For instance, let’s try fetching `http://example.com`:
 
-`js run async try {   await fetch('http://example.com'); } catch(err) {   alert(err); // Failed to fetch }`
+`js run async try { await fetch('http://example.com'); } catch(err) { alert(err); // Failed to fetch }`
 
 Fetch fails, as expected.
 
-The core concept here is *origin* – a domain/port/protocol triplet.
+The core concept here is _origin_ – a domain/port/protocol triplet.
 
 Cross-origin requests – those sent to another domain (even a subdomain) or protocol or port – require special headers from the remote side.
 
 That policy is called “CORS”: Cross-Origin Resource Sharing.
 
-Why is CORS needed? A brief history
------------------------------------
+## Why is CORS needed? A brief history
 
 CORS exists to protect the internet from evil hackers.
 
@@ -2968,7 +2884,7 @@ Let’s say we, at our site, need to get the data from `http://another.com`, suc
         script.src = `http://another.com/weather.json?callback=gotWeather`;
         document.body.append(script);
 
-3.  The remote server `another.com` dynamically generates a script that calls `gotWeather(...)` with the data it wants us to receive. `js  // The expected answer from the server looks like this:  gotWeather({    temperature: 25,    humidity: 78  });`
+3.  The remote server `another.com` dynamically generates a script that calls `gotWeather(...)` with the data it wants us to receive. `js // The expected answer from the server looks like this: gotWeather({ temperature: 25, humidity: 78 });`
 4.  When the remote script loads and executes, `gotWeather` runs, and, as it’s our function, we have the data.
 
 That works, and doesn’t violate security, because both sides agreed to pass the data this way. And, when both sides agree, it’s definitely not a hack. There are still services that provide such access, as it works even for very old browsers.
@@ -2977,8 +2893,7 @@ After a while, networking methods appeared in browser JavaScript.
 
 At first, cross-origin requests were forbidden. But as a result of long discussions, cross-origin requests were allowed, but with any new capabilities requiring an explicit allowance by the server, expressed in special headers.
 
-Safe requests
--------------
+## Safe requests
 
 There are two types of cross-origin requests:
 
@@ -2991,10 +2906,10 @@ A request is safe if it satisfies two conditions:
 
 1.  [Safe method](https://fetch.spec.whatwg.org/#cors-safelisted-method): GET, POST or HEAD
 2.  [Safe headers](https://fetch.spec.whatwg.org/#cors-safelisted-request-header) – the only allowed custom headers are:
-    -   `Accept`,
-    -   `Accept-Language`,
-    -   `Content-Language`,
-    -   `Content-Type` with the value `application/x-www-form-urlencoded`, `multipart/form-data` or `text/plain`.
+    - `Accept`,
+    - `Accept-Language`,
+    - `Content-Language`,
+    - `Content-Type` with the value `application/x-www-form-urlencoded`, `multipart/form-data` or `text/plain`.
 
 Any other request is considered “unsafe”. For instance, a request with `PUT` method or with an `API-Key` HTTP-header does not fit the limitations.
 
@@ -3010,8 +2925,7 @@ And, unless the server explicitly confirms that with headers, an unsafe request 
 
 Now we’ll go into details.
 
-CORS for safe requests
-----------------------
+## CORS for safe requests
 
 If a request is cross-origin, the browser always adds the `Origin` header to it.
 
@@ -3040,17 +2954,16 @@ Here’s an example of a permissive server response:
     Access-Control-Allow-Origin: https://javascript.info
     */!*
 
-Response headers
-----------------
+## Response headers
 
 For cross-origin request, by default JavaScript may only access so-called “safe” response headers:
 
--   `Cache-Control`
--   `Content-Language`
--   `Content-Type`
--   `Expires`
--   `Last-Modified`
--   `Pragma`
+- `Cache-Control`
+- `Content-Language`
+- `Content-Type`
+- `Expires`
+- `Last-Modified`
+- `Pragma`
 
 Accessing any other response header causes an error.
 
@@ -3073,8 +2986,7 @@ For example:
 
 With such an `Access-Control-Expose-Headers` header, the script is allowed to read the `Content-Length` and `API-Key` headers of the response.
 
-“Unsafe” requests
------------------
+## “Unsafe” requests
 
 We can use any HTTP-method: not just `GET/POST`, but also `PATCH`, `DELETE` and others.
 
@@ -3084,15 +2996,15 @@ So, to avoid misunderstandings, any “unsafe” request – that couldn’t be 
 
 A preflight request uses the method `OPTIONS`, no body and two headers:
 
--   `Access-Control-Request-Method` header has the method of the unsafe request.
--   `Access-Control-Request-Headers` header provides a comma-separated list of its unsafe HTTP-headers.
+- `Access-Control-Request-Method` header has the method of the unsafe request.
+- `Access-Control-Request-Headers` header provides a comma-separated list of its unsafe HTTP-headers.
 
 If the server agrees to serve the requests, then it should respond with empty body, status 200 and headers:
 
--   `Access-Control-Allow-Origin` must be either `*` or the requesting origin, such as `https://javascript.info`, to allow it.
--   `Access-Control-Allow-Methods` must have the allowed method.
--   `Access-Control-Allow-Headers` must have a list of allowed headers.
--   Additionally, the header `Access-Control-Max-Age` may specify a number of seconds to cache the permissions. So the browser won’t have to send a preflight for subsequent requests that satisfy given permissions.
+- `Access-Control-Allow-Origin` must be either `*` or the requesting origin, such as `https://javascript.info`, to allow it.
+- `Access-Control-Allow-Methods` must have the allowed method.
+- `Access-Control-Allow-Headers` must have a list of allowed headers.
+- Additionally, the header `Access-Control-Max-Age` may specify a number of seconds to cache the permissions. So the browser won’t have to send a preflight for subsequent requests that satisfy given permissions.
 
 ![](xhr-preflight.svg)
 
@@ -3118,12 +3030,12 @@ Prior to sending such a request, the browser, on its own, sends a preflight requ
     Access-Control-Request-Method: PATCH
     Access-Control-Request-Headers: Content-Type,API-Key
 
--   Method: `OPTIONS`.
--   The path – exactly the same as the main request: `/service.json`.
--   Cross-origin special headers:
-    -   `Origin` – the source origin.
-    -   `Access-Control-Request-Method` – requested method.
-    -   `Access-Control-Request-Headers` – a comma-separated list of “unsafe” headers.
+- Method: `OPTIONS`.
+- The path – exactly the same as the main request: `/service.json`.
+- Cross-origin special headers:
+  - `Origin` – the source origin.
+  - `Access-Control-Request-Method` – requested method.
+  - `Access-Control-Request-Headers` – a comma-separated list of “unsafe” headers.
 
 ### Step 2 (preflight response)
 
@@ -3169,8 +3081,7 @@ Then JavaScript is able to read the main server response.
 
     JavaScript only gets the response to the main request or an error if there's no server permission.
 
-Credentials
------------
+## Credentials
 
 A cross-origin request initiated by JavaScript code by default does not bring any credentials (cookies or HTTP authentication).
 
@@ -3192,7 +3103,7 @@ To send credentials in `fetch`, we need to add the option `credentials: "include
 
 Now `fetch` sends cookies originating from `another.com` with request to that site.
 
-If the server agrees to accept the request *with credentials*, it should add a header `Access-Control-Allow-Credentials: true` to the response, in addition to `Access-Control-Allow-Origin`.
+If the server agrees to accept the request _with credentials_, it should add a header `Access-Control-Allow-Credentials: true` to the response, in addition to `Access-Control-Allow-Origin`.
 
 For example:
 
@@ -3202,8 +3113,7 @@ For example:
 
 Please note: `Access-Control-Allow-Origin` is prohibited from using a star `*` for requests with credentials. Like shown above, it must provide the exact origin there. That’s an additional safety measure, to ensure that the server really knows who it trusts to make such requests.
 
-Summary
--------
+## Summary
 
 From the browser point of view, there are two kinds of cross-origin requests: “safe” and all the others.
 
@@ -3215,28 +3125,27 @@ So, the practical difference is that safe requests are sent right away, with the
 
 **For safe requests:**
 
--   → The browser sends the `Origin` header with the origin.
--   ← For requests without credentials (not sent by default), the server should set:
-    -   `Access-Control-Allow-Origin` to `*` or same value as `Origin`
--   ← For requests with credentials, the server should set:
-    -   `Access-Control-Allow-Origin` to same value as `Origin`
-    -   `Access-Control-Allow-Credentials` to `true`
+- → The browser sends the `Origin` header with the origin.
+- ← For requests without credentials (not sent by default), the server should set:
+  - `Access-Control-Allow-Origin` to `*` or same value as `Origin`
+- ← For requests with credentials, the server should set:
+  - `Access-Control-Allow-Origin` to same value as `Origin`
+  - `Access-Control-Allow-Credentials` to `true`
 
 Additionally, to grant JavaScript access to any response headers except `Cache-Control`, `Content-Language`, `Content-Type`, `Expires`, `Last-Modified` or `Pragma`, the server should list the allowed ones in `Access-Control-Expose-Headers` header.
 
 **For unsafe requests, a preliminary “preflight” request is issued before the requested one:**
 
--   → The browser sends an `OPTIONS` request to the same URL, with the headers:
-    -   `Access-Control-Request-Method` has requested method.
-    -   `Access-Control-Request-Headers` lists unsafe requested headers.
--   ← The server should respond with status 200 and the headers:
-    -   `Access-Control-Allow-Methods` with a list of allowed methods,
-    -   `Access-Control-Allow-Headers` with a list of allowed headers,
-    -   `Access-Control-Max-Age` with a number of seconds to cache the permissions.
--   Then the actual request is sent, and the previous “safe” scheme is applied.
+- → The browser sends an `OPTIONS` request to the same URL, with the headers:
+  - `Access-Control-Request-Method` has requested method.
+  - `Access-Control-Request-Headers` lists unsafe requested headers.
+- ← The server should respond with status 200 and the headers:
+  - `Access-Control-Allow-Methods` with a list of allowed methods,
+  - `Access-Control-Allow-Headers` with a list of allowed headers,
+  - `Access-Control-Max-Age` with a number of seconds to cache the permissions.
+- Then the actual request is sent, and the previous “safe” scheme is applied.
 
-Fetch API
-=========
+# Fetch API
 
 So far, we know quite a bit about `fetch`.
 
@@ -3277,8 +3186,7 @@ The `signal` option is covered in <a href="info:fetch-abort" class="uri">info:fe
 
 Now let’s explore the remaining capabilities.
 
-referrer, referrerPolicy
-------------------------
+## referrer, referrerPolicy
 
 These options govern how `fetch` sets the HTTP `Referer` header.
 
@@ -3316,14 +3224,14 @@ Unlike the `referrer` option that allows to set the exact `Referer` value, `refe
 
 Possible values are described in the [Referrer Policy specification](https://w3c.github.io/webappsec-referrer-policy/):
 
--   **`"no-referrer-when-downgrade"`** – the default value: full `Referer` is always sent, unless we send a request from HTTPS to HTTP (to the less secure protocol).
--   **`"no-referrer"`** – never send `Referer`.
--   **`"origin"`** – only send the origin in `Referer`, not the full page URL, e.g. only `http://site.com` instead of `http://site.com/path`.
--   **`"origin-when-cross-origin"`** – send the full `Referer` to the same origin, but only the origin part for cross-origin requests (as above).
--   **`"same-origin"`** – send the full `Referer` to the same origin, but no `Referer` for cross-origin requests.
--   **`"strict-origin"`** – send only the origin, not the `Referer` for HTTPS→HTTP requests.
--   **`"strict-origin-when-cross-origin"`** – for same-origin send the full `Referer`, for cross-origin send only the origin, unless it’s HTTPS→HTTP request, then send nothing.
--   **`"unsafe-url"`** – always send the full url in `Referer`, even for HTTPS→HTTP requests.
+- **`"no-referrer-when-downgrade"`** – the default value: full `Referer` is always sent, unless we send a request from HTTPS to HTTP (to the less secure protocol).
+- **`"no-referrer"`** – never send `Referer`.
+- **`"origin"`** – only send the origin in `Referer`, not the full page URL, e.g. only `http://site.com` instead of `http://site.com/path`.
+- **`"origin-when-cross-origin"`** – send the full `Referer` to the same origin, but only the origin part for cross-origin requests (as above).
+- **`"same-origin"`** – send the full `Referer` to the same origin, but no `Referer` for cross-origin requests.
+- **`"strict-origin"`** – send only the origin, not the `Referer` for HTTPS→HTTP requests.
+- **`"strict-origin-when-cross-origin"`** – for same-origin send the full `Referer`, for cross-origin send only the origin, unless it’s HTTPS→HTTP request, then send nothing.
+- **`"unsafe-url"`** – always send the full url in `Referer`, even for HTTPS→HTTP requests.
 
 Here’s a table with all combinations:
 
@@ -3350,53 +3258,48 @@ Its only difference compared to the default behavior is that for requests to ano
 
 In particular, it’s possible to set the default policy for the whole page using the `Referrer-Policy` HTTP header, or per-link, with `<a rel="noreferrer">`. \`\`\`
 
-mode
-----
+## mode
 
 The `mode` option is a safe-guard that prevents occasional cross-origin requests:
 
--   **`"cors"`** – the default, cross-origin requests are allowed, as described in <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a>,
--   **`"same-origin"`** – cross-origin requests are forbidden,
--   **`"no-cors"`** – only safe cross-origin requests are allowed.
+- **`"cors"`** – the default, cross-origin requests are allowed, as described in <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a>,
+- **`"same-origin"`** – cross-origin requests are forbidden,
+- **`"no-cors"`** – only safe cross-origin requests are allowed.
 
 This option may be useful when the URL for `fetch` comes from a 3rd-party, and we want a “power off switch” to limit cross-origin capabilities.
 
-credentials
------------
+## credentials
 
 The `credentials` option specifies whether `fetch` should send cookies and HTTP-Authorization headers with the request.
 
--   **`"same-origin"`** – the default, don’t send for cross-origin requests,
--   **`"include"`** – always send, requires `Accept-Control-Allow-Credentials` from cross-origin server in order for JavaScript to access the response, that was covered in the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a>,
--   **`"omit"`** – never send, even for same-origin requests.
+- **`"same-origin"`** – the default, don’t send for cross-origin requests,
+- **`"include"`** – always send, requires `Accept-Control-Allow-Credentials` from cross-origin server in order for JavaScript to access the response, that was covered in the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a>,
+- **`"omit"`** – never send, even for same-origin requests.
 
-cache
------
+## cache
 
 By default, `fetch` requests make use of standard HTTP-caching. That is, it respects the `Expires` and `Cache-Control` headers, sends `If-Modified-Since` and so on. Just like regular HTTP-requests do.
 
 The `cache` options allows to ignore HTTP-cache or fine-tune its usage:
 
--   **`"default"`** – `fetch` uses standard HTTP-cache rules and headers,
--   **`"no-store"`** – totally ignore HTTP-cache, this mode becomes the default if we set a header `If-Modified-Since`, `If-None-Match`, `If-Unmodified-Since`, `If-Match`, or `If-Range`,
--   **`"reload"`** – don’t take the result from HTTP-cache (if any), but populate the cache with the response (if the response headers permit this action),
--   **`"no-cache"`** – create a conditional request if there is a cached response, and a normal request otherwise. Populate HTTP-cache with the response,
--   **`"force-cache"`** – use a response from HTTP-cache, even if it’s stale. If there’s no response in HTTP-cache, make a regular HTTP-request, behave normally,
--   **`"only-if-cached"`** – use a response from HTTP-cache, even if it’s stale. If there’s no response in HTTP-cache, then error. Only works when `mode` is `"same-origin"`.
+- **`"default"`** – `fetch` uses standard HTTP-cache rules and headers,
+- **`"no-store"`** – totally ignore HTTP-cache, this mode becomes the default if we set a header `If-Modified-Since`, `If-None-Match`, `If-Unmodified-Since`, `If-Match`, or `If-Range`,
+- **`"reload"`** – don’t take the result from HTTP-cache (if any), but populate the cache with the response (if the response headers permit this action),
+- **`"no-cache"`** – create a conditional request if there is a cached response, and a normal request otherwise. Populate HTTP-cache with the response,
+- **`"force-cache"`** – use a response from HTTP-cache, even if it’s stale. If there’s no response in HTTP-cache, make a regular HTTP-request, behave normally,
+- **`"only-if-cached"`** – use a response from HTTP-cache, even if it’s stale. If there’s no response in HTTP-cache, then error. Only works when `mode` is `"same-origin"`.
 
-redirect
---------
+## redirect
 
 Normally, `fetch` transparently follows HTTP-redirects, like 301, 302 etc.
 
 The `redirect` option allows to change that:
 
--   **`"follow"`** – the default, follow HTTP-redirects,
--   **`"error"`** – error in case of HTTP-redirect,
--   **`"manual"`** – allows to process HTTP-redirects manually. In case of redirect, we’ll get a special response object, with `response.type="opaqueredirect"` and zeroed/empty status and most other properies.
+- **`"follow"`** – the default, follow HTTP-redirects,
+- **`"error"`** – error in case of HTTP-redirect,
+- **`"manual"`** – allows to process HTTP-redirects manually. In case of redirect, we’ll get a special response object, with `response.type="opaqueredirect"` and zeroed/empty status and most other properies.
 
-integrity
----------
+## integrity
 
 The `integrity` option allows to check if the response matches the known-ahead checksum.
 
@@ -3412,8 +3315,7 @@ We can put it in the `integrity` option, like this:
 
 Then `fetch` will calculate SHA-256 on its own and compare it with our string. In case of a mismatch, an error is triggered.
 
-keepalive
----------
+## keepalive
 
 The `keepalive` option indicates that the request may “outlive” the webpage that initiated it.
 
@@ -3423,34 +3325,32 @@ When the visitor leaves our page – we’d like to save the data to our server.
 
 We can use the `window.onunload` event for that:
 
-`js run window.onunload = function() {   fetch('/analytics', {     method: 'POST',     body: "statistics", *!*     keepalive: true */!*   }); };`
+`js run window.onunload = function() { fetch('/analytics', { method: 'POST', body: "statistics", *!* keepalive: true */!* }); };`
 
 Normally, when a document is unloaded, all associated network requests are aborted. But the `keepalive` option tells the browser to perform the request in the background, even after it leaves the page. So this option is essential for our request to succeed.
 
 It has a few limitations:
 
--   We can’t send megabytes: the body limit for `keepalive` requests is 64KB.
-    -   If we need to gather a lot of statistics about the visit, we should send it out regularly in packets, so that there won’t be a lot left for the last `onunload` request.
-    -   This limit applies to all `keepalive` requests together. In other words, we can perform multiple `keepalive` requests in parallel, but the sum of their body lengths should not exceed 64KB.
--   We can’t handle the server response if the document is unloaded. So in our example `fetch` will succeed due to `keepalive`, but subsequent functions won’t work.
-    -   In most cases, such as sending out statistics, it’s not a problem, as the server just accepts the data and usually sends an empty response to such requests.
+- We can’t send megabytes: the body limit for `keepalive` requests is 64KB.
+  - If we need to gather a lot of statistics about the visit, we should send it out regularly in packets, so that there won’t be a lot left for the last `onunload` request.
+  - This limit applies to all `keepalive` requests together. In other words, we can perform multiple `keepalive` requests in parallel, but the sum of their body lengths should not exceed 64KB.
+- We can’t handle the server response if the document is unloaded. So in our example `fetch` will succeed due to `keepalive`, but subsequent functions won’t work.
+  - In most cases, such as sending out statistics, it’s not a problem, as the server just accepts the data and usually sends an empty response to such requests.
 
-URL objects
-===========
+# URL objects
 
 The built-in [URL](https://url.spec.whatwg.org/#api) class provides a convenient interface for creating and parsing URLs.
 
 There are no networking methods that require exactly a `URL` object, strings are good enough. So technically we don’t have to use `URL`. But sometimes it can be really helpful.
 
-Creating a URL
---------------
+## Creating a URL
 
 The syntax to create a new `URL` object:
 
     new URL(url, [base])
 
--   **`url`** – the full URL or only path (if base is set, see below),
--   **`base`** – an optional base URL: if set and `url` argument has only path, then the URL is generated relative to `base`.
+- **`url`** – the full URL or only path (if base is set, see below),
+- **`base`** – an optional base URL: if set and `url` argument has only path, then the URL is generated relative to `base`.
 
 For example:
 
@@ -3478,18 +3378,17 @@ Here’s the cheatsheet for URL components:
 
 ![](url-object.svg)
 
--   `href` is the full url, same as `url.toString()`
--   `protocol` ends with the colon character `:`
--   `search` - a string of parameters, starts with the question mark `?`
--   `hash` starts with the hash character `#`
--   there may be also `user` and `password` properties if HTTP authentication is present: `http://login:password@site.com` (not painted above, rarely used).
+- `href` is the full url, same as `url.toString()`
+- `protocol` ends with the colon character `:`
+- `search` - a string of parameters, starts with the question mark `?`
+- `hash` starts with the hash character `#`
+- there may be also `user` and `password` properties if HTTP authentication is present: `http://login:password@site.com` (not painted above, rarely used).
 
 \`\``smart header="We can pass`URL`objects to networking (and most other) methods instead of a string" We can use a`URL`object in`fetch`or`XMLHttpRequest\`, almost everywhere where a URL-string is expected.
 
 Generally, the `URL` object can be passed to any method instead of a string, as most methods will perform the string conversion, that turns a `URL` object into a string with full URL. \`\`\`
 
-SearchParams “?…”
------------------
+## SearchParams “?…”
 
 Let’s say we want to create a url with given search params, for instance, `https://google.com/search?query=JavaScript`.
 
@@ -3503,14 +3402,14 @@ So there’s a URL property for that: `url.searchParams`, an object of type [URL
 
 It provides convenient methods for search parameters:
 
--   **`append(name, value)`** – add the parameter by `name`,
--   **`delete(name)`** – remove the parameter by `name`,
--   **`get(name)`** – get the parameter by `name`,
--   **`getAll(name)`** – get all parameters with the same `name` (that’s possible, e.g. `?user=John&user=Pete`),
--   **`has(name)`** – check for the existence of the parameter by `name`,
--   **`set(name, value)`** – set/replace the parameter,
--   **`sort()`** – sort parameters by name, rarely needed,
--   …and it’s also iterable, similar to `Map`.
+- **`append(name, value)`** – add the parameter by `name`,
+- **`delete(name)`** – remove the parameter by `name`,
+- **`get(name)`** – get the parameter by `name`,
+- **`getAll(name)`** – get all parameters with the same `name` (that’s possible, e.g. `?user=John&user=Pete`),
+- **`has(name)`** – check for the existence of the parameter by `name`,
+- **`set(name, value)`** – set/replace the parameter,
+- **`sort()`** – sort parameters by name, rarely needed,
+- …and it’s also iterable, similar to `Map`.
 
 An example with parameters that contain spaces and punctuation marks:
 
@@ -3526,8 +3425,7 @@ url.searchParams.set(‘tbs’, ‘qdr:y’); // added parameter with a colon :
 
 // iterate over search parameters (decoded) for(let \[name, value\] of url.searchParams) { alert(`${name}=${value}`); // q=test me!, then tbs=qdr:y } \`\`\`
 
-Encoding
---------
+## Encoding
 
 There’s a standard [RFC3986](https://tools.ietf.org/html/rfc3986) that defines which characters are allowed in URLs and which are not.
 
@@ -3570,8 +3468,8 @@ As we can see, characters such as `:`, `?`, `=`, `&`, `#` are allowed in URL.
 
 …On the other hand, if we look at a single URL component, such as a search parameter, these characters must be encoded, not to break the formatting.
 
--   `encodeURI` encodes only characters that are totally forbidden in URL.
--   `encodeURIComponent` encodes same characters, and, in addition to them, characters `#`, `$`, `&`, `+`, `,`, `/`, `:`, `;`, `=`, `?` and `@`.
+- `encodeURI` encodes only characters that are totally forbidden in URL.
+- `encodeURIComponent` encodes same characters, and, in addition to them, characters `#`, `$`, `&`, `+`, `,`, `/`, `:`, `;`, `=`, `?` and `@`.
 
 So, for a whole URL we can use `encodeURI`:
 
@@ -3609,8 +3507,7 @@ alert(encodeURI(url)); // http://%5B2607:f8b0:4005:802::1007%5D/ alert(new URL(u
 
     Such cases are rare, `encode*` functions work well most of the time.
 
-XMLHttpRequest
-==============
+# XMLHttpRequest
 
 `XMLHttpRequest` is a built-in browser object that allows to make HTTP requests in JavaScript.
 
@@ -3626,8 +3523,7 @@ In modern web-development `XMLHttpRequest` is used for three reasons:
 
 Does that sound familiar? If yes, then all right, go on with `XMLHttpRequest`. Otherwise, please head on to <a href="info:fetch" class="uri">info:fetch</a>.
 
-The basics
-----------
+## The basics
 
 XMLHttpRequest has two modes of operation: synchronous and asynchronous.
 
@@ -3635,16 +3531,16 @@ Let’s see the asynchronous first, as it’s used in the majority of cases.
 
 To do the request, we need 3 steps:
 
-1.  Create `XMLHttpRequest`: `js  let xhr = new XMLHttpRequest();` The constructor has no arguments.
+1.  Create `XMLHttpRequest`: `js let xhr = new XMLHttpRequest();` The constructor has no arguments.
 
-2.  Initialize it, usually right after `new XMLHttpRequest`: `js  xhr.open(method, URL, [async, user, password])`
+2.  Initialize it, usually right after `new XMLHttpRequest`: `js xhr.open(method, URL, [async, user, password])`
 
     This method specifies the main parameters of the request:
 
-    -   `method` – HTTP-method. Usually `"GET"` or `"POST"`.
-    -   `URL` – the URL to request, a string, can be [URL](info:url) object.
-    -   `async` – if explicitly set to `false`, then the request is synchronous, we’ll cover that a bit later.
-    -   `user`, `password` – login and password for basic HTTP auth (if required).
+    - `method` – HTTP-method. Usually `"GET"` or `"POST"`.
+    - `URL` – the URL to request, a string, can be [URL](info:url) object.
+    - `async` – if explicitly set to `false`, then the request is synchronous, we’ll cover that a bit later.
+    - `user`, `password` – login and password for basic HTTP auth (if required).
 
     Please note that `open` call, contrary to its name, does not open the connection. It only configures the request, but the network activity only starts with the call of `send`.
 
@@ -3660,24 +3556,24 @@ To do the request, we need 3 steps:
 
     These three events are the most widely used:
 
-    -   `load` – when the request is complete (even if HTTP status is like 400 or 500), and the response is fully downloaded.
-    -   `error` – when the request couldn’t be made, e.g. network down or invalid URL.
-    -   `progress` – triggers periodically while the response is being downloaded, reports how much has been downloaded.
+    - `load` – when the request is complete (even if HTTP status is like 400 or 500), and the response is fully downloaded.
+    - `error` – when the request couldn’t be made, e.g. network down or invalid URL.
+    - `progress` – triggers periodically while the response is being downloaded, reports how much has been downloaded.
 
-        xhr.onload = function() {
-          alert(`Loaded: ${xhr.status} ${xhr.response}`);
-        };
+      xhr.onload = function() {
+      alert(`Loaded: ${xhr.status} ${xhr.response}`);
+      };
 
-        xhr.onerror = function() { // only triggers if the request couldn't be made at all
-          alert(`Network Error`);
-        };
+      xhr.onerror = function() { // only triggers if the request couldn't be made at all
+      alert(`Network Error`);
+      };
 
-        xhr.onprogress = function(event) { // triggers periodically
-          // event.loaded - how many bytes downloaded
-          // event.lengthComputable = true if the server sent Content-Length header
-          // event.total - total number of bytes (if lengthComputable)
-          alert(`Received ${event.loaded} of ${event.total}`);
-        };
+      xhr.onprogress = function(event) { // triggers periodically
+      // event.loaded - how many bytes downloaded
+      // event.lengthComputable = true if the server sent Content-Length header
+      // event.total - total number of bytes (if lengthComputable)
+      alert(`Received ${event.loaded} of ${event.total}`);
+      };
 
 Here’s a full example. The code below loads the URL at `/article/xmlhttprequest/example/load` from the server and prints the progress:
 
@@ -3722,17 +3618,16 @@ If the request does not succeed within the given time, it gets canceled and `tim
 
 \`\`\`\`
 
-Response Type
--------------
+## Response Type
 
 We can use `xhr.responseType` property to set the response format:
 
--   `""` (default) – get as string,
--   `"text"` – get as string,
--   `"arraybuffer"` – get as `ArrayBuffer` (for binary data, see chapter <a href="info:arraybuffer-binary-arrays" class="uri">info:arraybuffer-binary-arrays</a>),
--   `"blob"` – get as `Blob` (for binary data, see chapter <a href="info:blob" class="uri">info:blob</a>),
--   `"document"` – get as XML document (can use XPath and other XML methods) or HTML document (based on the MIME type of the received data),
--   `"json"` – get as JSON (parsed automatically).
+- `""` (default) – get as string,
+- `"text"` – get as string,
+- `"arraybuffer"` – get as `ArrayBuffer` (for binary data, see chapter <a href="info:arraybuffer-binary-arrays" class="uri">info:arraybuffer-binary-arrays</a>),
+- `"blob"` – get as `Blob` (for binary data, see chapter <a href="info:blob" class="uri">info:blob</a>),
+- `"document"` – get as XML document (can use XPath and other XML methods) or HTML document (based on the MIME type of the received data),
+- `"json"` – get as JSON (parsed automatically).
 
 For example, let’s get the response as JSON:
 
@@ -3740,7 +3635,7 @@ For example, let’s get the response as JSON:
 
 xhr.open(‘GET’, ‘/article/xmlhttprequest/example/json’);
 
-*!* xhr.responseType = ‘json’; */!*
+_!_ xhr.responseType = ‘json’; _/!_
 
 xhr.send();
 
@@ -3750,8 +3645,7 @@ xhr.send();
 
     They exist for historical reasons, to get either a string or XML document. Nowadays, we should set the format in `xhr.responseType` and get `xhr.response` as demonstrated above.
 
-Ready states
-------------
+## Ready states
 
 `XMLHttpRequest` changes between states as it progresses. The current state is accessible as `xhr.readyState`.
 
@@ -3778,8 +3672,7 @@ We can track them using `readystatechange` event:
 
 You can find `readystatechange` listeners in really old code, it’s there for historical reasons, as there was a time when there were no `load` and other events. Nowadays, `load/error/progress` handlers deprecate it.
 
-Aborting request
-----------------
+## Aborting request
 
 We can terminate the request at any time. The call to `xhr.abort()` does that:
 
@@ -3787,8 +3680,7 @@ We can terminate the request at any time. The call to `xhr.abort()` does that:
 
 That triggers `abort` event, and `xhr.status` becomes `0`.
 
-Synchronous requests
---------------------
+## Synchronous requests
 
 If in the `open` method the third parameter `async` is set to `false`, the request is made synchronously.
 
@@ -3817,8 +3709,7 @@ Many advanced capabilities of `XMLHttpRequest`, like requesting from another dom
 
 Because of all that, synchronous requests are used very sparingly, almost never. We won’t talk about them any more.
 
-HTTP-headers
-------------
+## HTTP-headers
 
 `XMLHttpRequest` allows both to send custom headers and read headers from the response.
 
@@ -3831,7 +3722,7 @@ For instance:
 
     xhr.setRequestHeader('Content-Type', 'application/json');
 
-\`\``warn header="Headers limitations" Several headers are managed exclusively by the browser, e.g.`Referer`and`Host\`. The full list is [in the specification](https://xhr.spec.whatwg.org/#the-setrequestheader()-method).
+\`\``warn header="Headers limitations" Several headers are managed exclusively by the browser, e.g.`Referer`and`Host\`. The full list is [in the specification](<https://xhr.spec.whatwg.org/#the-setrequestheader()-method>).
 
 `XMLHttpRequest` is not allowed to change them, for the sake of user safety and correctness of the request. \`\`\`
 
@@ -3883,8 +3774,7 @@ Like this (assuming that if two headers have the same name, then the latter one 
 
     // headers['Content-Type'] = 'image/png'
 
-POST, FormData
---------------
+## POST, FormData
 
 To make a POST request, we can use the built-in [FormData](mdn:api/FormData) object.
 
@@ -3924,8 +3814,7 @@ Just don’t forget to set the header `Content-Type: application/json`, many ser
 
 The `.send(body)` method is pretty omnivore. It can send almost any `body`, including `Blob` and `BufferSource` objects.
 
-Upload progress
----------------
+## Upload progress
 
 The `progress` event triggers only on the downloading stage.
 
@@ -3937,13 +3826,13 @@ There’s another object, without methods, exclusively to track upload events: `
 
 It generates events, similar to `xhr`, but `xhr.upload` triggers them solely on uploading:
 
--   `loadstart` – upload started.
--   `progress` – triggers periodically during the upload.
--   `abort` – upload aborted.
--   `error` – non-HTTP error.
--   `load` – upload finished successfully.
--   `timeout` – upload timed out (if `timeout` property is set).
--   `loadend` – upload finished with either success or error.
+- `loadstart` – upload started.
+- `progress` – triggers periodically during the upload.
+- `abort` – upload aborted.
+- `error` – non-HTTP error.
+- `load` – upload finished successfully.
+- `timeout` – upload timed out (if `timeout` property is set).
+- `loadend` – upload finished with either success or error.
 
 Example of handlers:
 
@@ -3965,8 +3854,7 @@ Here’s a real-life example: file upload with progress indication:
 
 \`\`\`
 
-Cross-origin requests
----------------------
+## Cross-origin requests
 
 `XMLHttpRequest` can make cross-origin requests, using the same CORS policy as [fetch](info:fetch-crossorigin).
 
@@ -3980,8 +3868,7 @@ Cross-origin requests
 
 See the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a> for details about cross-origin headers.
 
-Summary
--------
+## Summary
 
 Typical code of the GET-request with `XMLHttpRequest`:
 
@@ -4012,13 +3899,13 @@ Typical code of the GET-request with `XMLHttpRequest`:
 
 There are actually more events, the [modern specification](https://xhr.spec.whatwg.org/#events) lists them (in the lifecycle order):
 
--   `loadstart` – the request has started.
--   `progress` – a data packet of the response has arrived, the whole response body at the moment is in `response`.
--   `abort` – the request was canceled by the call `xhr.abort()`.
--   `error` – connection error has occurred, e.g. wrong domain name. Doesn’t happen for HTTP-errors like 404.
--   `load` – the request has finished successfully.
--   `timeout` – the request was canceled due to timeout (only happens if it was set).
--   `loadend` – triggers after `load`, `error`, `timeout` or `abort`.
+- `loadstart` – the request has started.
+- `progress` – a data packet of the response has arrived, the whole response body at the moment is in `response`.
+- `abort` – the request was canceled by the call `xhr.abort()`.
+- `error` – connection error has occurred, e.g. wrong domain name. Doesn’t happen for HTTP-errors like 404.
+- `load` – the request has finished successfully.
+- `timeout` – the request was canceled due to timeout (only happens if it was set).
+- `loadend` – triggers after `load`, `error`, `timeout` or `abort`.
 
 The `error`, `abort`, `timeout`, and `load` events are mutually exclusive. Only one of them may happen.
 
@@ -4032,8 +3919,7 @@ Sometimes, we need to perform different actions based on different conditions.
 
 To do that, we can use the `if` statement and the conditional operator `?`, that’s also called a “question mark” operator.
 
-The “if” statement
-------------------
+## The “if” statement
 
 The `if(...)` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
 
@@ -4041,7 +3927,7 @@ For example:
 
 \`\`\`js run let year = prompt(‘In which year was ECMAScript-2015 specification published?’, ’’);
 
-*!* if (year == 2015) alert( ‘You are right!’ ); */!* \`\`\`
+_!_ if (year == 2015) alert( ‘You are right!’ ); _/!_ \`\`\`
 
 In the example above, the condition is a simple equality check (`year == 2015`), but it can be much more complex.
 
@@ -4054,15 +3940,14 @@ If we want to execute more than one statement, we have to wrap our code block in
 
 We recommend wrapping your code block with curly braces `{}` every time you use an `if` statement, even if there is only one statement to execute. Doing so improves readability.
 
-Boolean conversion
-------------------
+## Boolean conversion
 
 The `if (…)` statement evaluates the expression in its parentheses and converts the result to a boolean.
 
 Let’s recall the conversion rules from the chapter <a href="info:type-conversions" class="uri">info:type-conversions</a>:
 
--   A number `0`, an empty string `""`, `null`, `undefined`, and `NaN` all become `false`. Because of that they are called “falsy” values.
--   Other values become `true`, so they are called “truthy”.
+- A number `0`, an empty string `""`, `null`, `undefined`, and `NaN` all become `false`. Because of that they are called “falsy” values.
+- Other values become `true`, so they are called “truthy”.
 
 So, the code under this condition would never execute:
 
@@ -4084,8 +3969,7 @@ We can also pass a pre-evaluated boolean value to `if`, like this:
       ...
     }
 
-The “else” clause
------------------
+## The “else” clause
 
 The `if` statement may contain an optional “else” block. It executes when the condition is falsy.
 
@@ -4093,8 +3977,7 @@ For example: \`\`\`js run let year = prompt(‘In which year was the ECMAScript-
 
 if (year == 2015) { alert( ‘You guessed it right!’ ); } else { alert( ‘How can you be so wrong?’ ); // any value except 2015 } \`\`\`
 
-Several conditions: “else if”
------------------------------
+## Several conditions: “else if”
 
 Sometimes, we’d like to test several variants of a condition. The `else if` clause lets us do that.
 
@@ -4108,8 +3991,7 @@ In the code above, JavaScript first checks `year < 2015`. If that is falsy, it g
 
 There can be more `else if` blocks. The final `else` is optional.
 
-Conditional operator ‘?’
-------------------------
+## Conditional operator ‘?’
 
 Sometimes, we need to assign a variable depending on a condition.
 
@@ -4117,7 +3999,7 @@ For instance:
 
 \`\`\`js run no-beautify let accessAllowed; let age = prompt(‘How old are you?’, ’’);
 
-*!* if (age &gt; 18) { accessAllowed = true; } else { accessAllowed = false; } */!*
+_!_ if (age &gt; 18) { accessAllowed = true; } else { accessAllowed = false; } _/!_
 
 alert(accessAllowed); \`\`\`
 
@@ -4152,8 +4034,7 @@ But parentheses make the code more readable, so we recommend using them.
     let accessAllowed = age > 18;
     ```
 
-Multiple ‘?’
-------------
+## Multiple ‘?’
 
 A sequence of question mark operators `?` can return a value that depends on more than one condition.
 
@@ -4182,14 +4063,13 @@ Here’s how this looks using `if..else`:
       message = 'What an unusual age!';
     }
 
-Non-traditional use of ‘?’
---------------------------
+## Non-traditional use of ‘?’
 
 Sometimes the question mark `?` is used as a replacement for `if`:
 
 \`\`\`js run no-beautify let company = prompt(‘Which company created JavaScript?’, ’’);
 
-*!* (company == ‘Netscape’) ? alert(‘Right!’) : alert(‘Wrong.’); */!* \`\`\`
+_!_ (company == ‘Netscape’) ? alert(‘Right!’) : alert(‘Wrong.’); _/!_ \`\`\`
 
 Depending on the condition `company == 'Netscape'`, either the first or the second expression after the `?` gets executed and shows an alert.
 
@@ -4203,7 +4083,7 @@ Here is the same code using `if` for comparison:
 
 \`\`\`js run no-beautify let company = prompt(‘Which company created JavaScript?’, ’’);
 
-*!* if (company == ‘Netscape’) { alert(‘Right!’); } else { alert(‘Wrong.’); } */!* \`\`\`
+_!_ if (company == ‘Netscape’) { alert(‘Right!’); } else { alert(‘Wrong.’); } _/!_ \`\`\`
 
 Our eyes scan the code vertically. Code blocks which span several lines are easier to understand than a long, horizontal instruction set.
 
@@ -4215,25 +4095,23 @@ How to resume the upload after lost connection? There’s no built-in option for
 
 Resumable uploads should come with upload progress indication, as we expect big files (if we may need to resume). So, as `fetch` doesn’t allow to track upload progress, we’ll use [XMLHttpRequest](info:xmlhttprequest).
 
-Not-so-useful progress event
-----------------------------
+## Not-so-useful progress event
 
 To resume upload, we need to know how much was uploaded till the connection was lost.
 
 There’s `xhr.upload.onprogress` to track upload progress.
 
-Unfortunately, it won’t help us to resume the upload here, as it triggers when the data is *sent*, but was it received by the server? The browser doesn’t know.
+Unfortunately, it won’t help us to resume the upload here, as it triggers when the data is _sent_, but was it received by the server? The browser doesn’t know.
 
 Maybe it was buffered by a local network proxy, or maybe the remote server process just died and couldn’t process them, or it was just lost in the middle and didn’t reach the receiver.
 
 That’s why this event is only useful to show a nice progress bar.
 
-To resume upload, we need to know *exactly* the number of bytes received by the server. And only the server can tell that, so we’ll make an additional request.
+To resume upload, we need to know _exactly_ the number of bytes received by the server. And only the server can tell that, so we’ll make an additional request.
 
-Algorithm
----------
+## Algorithm
 
-1.  First, create a file id, to uniquely identify the file we’re going to upload: `js  let fileId = file.name + '-' + file.size + '-' + file.lastModified;` That’s needed for resume upload, to tell the server what we’re resuming.
+1.  First, create a file id, to uniquely identify the file we’re going to upload: `js let fileId = file.name + '-' + file.size + '-' + file.lastModified;` That’s needed for resume upload, to tell the server what we’re resuming.
 
     If the name or the size or the last modification date changes, then there’ll be another `fileId`.
 
@@ -4275,8 +4153,7 @@ Long polling is the simplest way of having persistent connection with server, th
 
 Being very easy to implement, it’s also good enough in a lot of cases.
 
-Regular Polling
----------------
+## Regular Polling
 
 The simplest way to get new information from the server is periodic polling. That is, regular requests to the server: “Hello, I’m here, do you have any information for me?”. For example, once every 10 seconds.
 
@@ -4286,8 +4163,7 @@ That works, but there are downsides: 1. Messages are passed with a delay up to 1
 
 So, if we’re talking about a very small service, the approach may be viable, but generally, it needs an improvement.
 
-Long polling
-------------
+## Long polling
 
 So-called “long polling” is a much better way to poll the server.
 
@@ -4346,8 +4222,7 @@ Servers written using Node.js usually don’t have such problems.
 
 That said, it isn’t a programming language issue. Most modern languages, including PHP and Ruby allow to implement a proper backend. Just please make sure that your server architecture works fine with many simultaneous connections. \`\`\`
 
-Demo: a chat
-------------
+## Demo: a chat
 
 Here’s a demo chat, you can also download it and run locally (if you’re familiar with Node.js and can install modules):
 
@@ -4355,8 +4230,7 @@ Here’s a demo chat, you can also download it and run locally (if you’re fami
 
 Browser code is in `browser.js`.
 
-Area of usage
--------------
+## Area of usage
 
 Long polling works great in situations when messages are rare.
 
@@ -4370,8 +4244,7 @@ The `WebSocket` protocol, described in the specification [RFC 6455](http://tools
 
 WebSocket is especially great for services that require continuous data exchange, e.g. online games, real-time trading systems and so on.
 
-A simple example
-----------------
+## A simple example
 
 To open a websocket connection, we need to create `new WebSocket` using the special protocol `ws` in the url:
 
@@ -4422,11 +4295,11 @@ socket.onerror = function(error) { alert(`[error] ${error.message}`); };
 
 GET /chat Host: javascript.info Origin: https://javascript.info Connection: Upgrade Upgrade: websocket Sec-WebSocket-Key: Iv8io/9s+lYFgZWcXczP8Q== Sec-WebSocket-Version: 13 \`\`\`
 
--   `Origin` – the origin of the client page, e.g. `https://javascript.info`. WebSocket objects are cross-origin by nature. There are no special headers or other limitations. Old servers are unable to handle WebSocket anyway, so there are no compatibility issues. But `Origin` header is important, as it allows the server to decide whether or not to talk WebSocket with this website.
--   `Connection: Upgrade` – signals that the client would like to change the protocol.
--   `Upgrade: websocket` – the requested protocol is “websocket”.
--   `Sec-WebSocket-Key` – a random browser-generated key for security.
--   `Sec-WebSocket-Version` – WebSocket protocol version, 13 is the current one.
+- `Origin` – the origin of the client page, e.g. `https://javascript.info`. WebSocket objects are cross-origin by nature. There are no special headers or other limitations. Old servers are unable to handle WebSocket anyway, so there are no compatibility issues. But `Origin` header is important, as it allows the server to decide whether or not to talk WebSocket with this website.
+- `Connection: Upgrade` – signals that the client would like to change the protocol.
+- `Upgrade: websocket` – the requested protocol is “websocket”.
+- `Sec-WebSocket-Key` – a random browser-generated key for security.
+- `Sec-WebSocket-Version` – WebSocket protocol version, 13 is the current one.
 
 `` smart header="WebSocket handshake can't be emulated" We can't use `XMLHttpRequest` or `fetch` to make this kind of HTTP-request, because JavaScript is not allowed to set these headers. ``
 
@@ -4447,13 +4320,13 @@ There may be additional headers `Sec-WebSocket-Extensions` and `Sec-WebSocket-Pr
 
 For instance:
 
--   `Sec-WebSocket-Extensions: deflate-frame` means that the browser supports data compression. An extension is something related to transferring the data, functionality that extends WebSocket protocol. The header `Sec-WebSocket-Extensions` is sent automatically by the browser, with the list of all extensions it supports.
+- `Sec-WebSocket-Extensions: deflate-frame` means that the browser supports data compression. An extension is something related to transferring the data, functionality that extends WebSocket protocol. The header `Sec-WebSocket-Extensions` is sent automatically by the browser, with the list of all extensions it supports.
 
--   `Sec-WebSocket-Protocol: soap, wamp` means that we’d like to transfer not just any data, but the data in [SOAP](http://en.wikipedia.org/wiki/SOAP) or WAMP (“The WebSocket Application Messaging Protocol”) protocols. WebSocket subprotocols are registered in the [IANA catalogue](http://www.iana.org/assignments/websocket/websocket.xml). So, this header describes data formats that we’re going to use.
+- `Sec-WebSocket-Protocol: soap, wamp` means that we’d like to transfer not just any data, but the data in [SOAP](http://en.wikipedia.org/wiki/SOAP) or WAMP (“The WebSocket Application Messaging Protocol”) protocols. WebSocket subprotocols are registered in the [IANA catalogue](http://www.iana.org/assignments/websocket/websocket.xml). So, this header describes data formats that we’re going to use.
 
-    This optional header is set using the second parameter of `new WebSocket`. That’s the array of subprotocols, e.g. if we’d like to use SOAP or WAMP:
+  This optional header is set using the second parameter of `new WebSocket`. That’s the array of subprotocols, e.g. if we’d like to use SOAP or WAMP:
 
-        let socket = new WebSocket("wss://javascript.info/chat", ["soap", "wamp"]);
+      let socket = new WebSocket("wss://javascript.info/chat", ["soap", "wamp"]);
 
 The server should respond with a list of protocols and extensions that it agrees to use.
 
@@ -4484,15 +4357,14 @@ Response:
 
 Here the server responds that it supports the extension “deflate-frame”, and only SOAP of the requested subprotocols.
 
-Data transfer
--------------
+## Data transfer
 
 WebSocket communication consists of “frames” – data fragments, that can be sent from either side, and can be of several kinds:
 
--   “text frames” – contain text data that parties send to each other.
--   “binary data frames” – contain binary data that parties send to each other.
--   “ping/pong frames” are used to check the connection, sent from the server, the browser responds to these automatically.
--   there’s also “connection close frame” and a few other service frames.
+- “text frames” – contain text data that parties send to each other.
+- “binary data frames” – contain binary data that parties send to each other.
+- “ping/pong frames” are used to check the connection, sent from the server, the browser responds to these automatically.
+- there’s also “connection close frame” and a few other service frames.
 
 In the browser, we directly work only with text or binary frames.
 
@@ -4511,8 +4383,7 @@ That’s set by `socket.binaryType` property, it’s `"blob"` by default, so bin
       // event.data is either a string (if text) or arraybuffer (if binary)
     };
 
-Rate limiting
--------------
+## Rate limiting
 
 Imagine, our app is generating a lot of data to send. But the user has a slow network connection, maybe on a mobile internet, outside of a city.
 
@@ -4522,7 +4393,7 @@ The `socket.bufferedAmount` property stores how many bytes remain buffered at th
 
 We can examine it to see whether the socket is actually available for transmission.
 
-    // every 100ms examine the socket and send more data  
+    // every 100ms examine the socket and send more data
     // only if all the existing data was sent out
     setInterval(() => {
       if (socket.bufferedAmount == 0) {
@@ -4530,8 +4401,7 @@ We can examine it to see whether the socket is actually available for transmissi
       }
     }, 100);
 
-Connection close
-----------------
+## Connection close
 
 Normally, when a party wants to close the connection (both browser and server have equal rights), they send a “connection close frame” with a numeric code and a textual reason.
 
@@ -4539,8 +4409,8 @@ The method for that is:
 
     socket.close([code], [reason]);
 
--   `code` is a special WebSocket closing code (optional)
--   `reason` is a string that describes the reason of closing (optional)
+- `code` is a special WebSocket closing code (optional)
+- `reason` is a string that describes the reason of closing (optional)
 
 Then the other party in `close` event handler gets the code and the reason, e.g.:
 
@@ -4556,15 +4426,15 @@ Then the other party in `close` event handler gets the code and the reason, e.g.
 
 Most common code values:
 
--   `1000` – the default, normal closure (used if no `code` supplied),
--   `1006` – no way to set such code manually, indicates that the connection was lost (no close frame).
+- `1000` – the default, normal closure (used if no `code` supplied),
+- `1006` – no way to set such code manually, indicates that the connection was lost (no close frame).
 
 There are other codes like:
 
--   `1001` – the party is going away, e.g. server is shutting down, or a browser leaves the page,
--   `1009` – the message is too big to process,
--   `1011` – unexpected error on server,
--   …and so on.
+- `1001` – the party is going away, e.g. server is shutting down, or a browser leaves the page,
+- `1009` – the message is too big to process,
+- `1011` – unexpected error on server,
+- …and so on.
 
 The full list can be found in [RFC6455, §7.4.1](https://tools.ietf.org/html/rfc6455#section-7.4.1).
 
@@ -4577,18 +4447,16 @@ WebSocket codes are somewhat like HTTP codes, but different. In particular, any 
       // event.wasClean === false (no closing frame)
     };
 
-Connection state
-----------------
+## Connection state
 
 To get connection state, additionally there’s `socket.readyState` property with values:
 
--   **`0`** – “CONNECTING”: the connection has not yet been established,
--   **`1`** – “OPEN”: communicating,
--   **`2`** – “CLOSING”: the connection is closing,
--   **`3`** – “CLOSED”: the connection is closed.
+- **`0`** – “CONNECTING”: the connection has not yet been established,
+- **`1`** – “OPEN”: communicating,
+- **`2`** – “CLOSING”: the connection is closing,
+- **`3`** – “CLOSED”: the connection is closed.
 
-Chat example
-------------
+## Chat example
 
 Let’s review a chat example using browser WebSocket API and Node.js WebSocket module <a href="https://github.com/websockets/ws" class="uri">https://github.com/websockets/ws</a>. We’ll pay the main attention to the client side, but the server is also simple.
 
@@ -4641,25 +4509,26 @@ The server-side algorithm will be:
     const clients = new Set();
 
     http.createServer((req, res) => {
-      // here we only handle websocket connections
-      // in real project we'd have some other code here to handle non-websocket requests
-      wss.handleUpgrade(req, req.socket, Buffer.alloc(0), onSocketConnect);
+    // here we only handle websocket connections
+    // in real project we'd have some other code here to handle non-websocket requests
+    wss.handleUpgrade(req, req.socket, Buffer.alloc(0), onSocketConnect);
     });
 
     function onSocketConnect(ws) {
-      clients.add(ws);
+    clients.add(ws);
 
-      ws.on('message', function(message) {
-        message = message.slice(0, 50); // max message length will be 50
+    ws.on('message', function(message) {
+    message = message.slice(0, 50); // max message length will be 50
 
         for(let client of clients) {
           client.send(message);
         }
-      });
 
-      ws.on('close', function() {
-        clients.delete(ws);
-      });
+    });
+
+    ws.on('close', function() {
+    clients.delete(ws);
+    });
     }
 
 Here’s the working example:
@@ -4668,14 +4537,13 @@ Here’s the working example:
 
 You can also download it (upper-right button in the iframe) and run locally. Just don’t forget to install [Node.js](https://nodejs.org/en/) and `npm install ws` before running.
 
-Summary
--------
+## Summary
 
 WebSocket is a modern way to have persistent browser-server connections.
 
--   WebSockets don’t have cross-origin limitations.
--   They are well-supported in browsers.
--   Can send/receive strings and binary data.
+- WebSockets don’t have cross-origin limitations.
+- They are well-supported in browsers.
+- Can send/receive strings and binary data.
 
 The API is simple.
 
@@ -4705,8 +4573,7 @@ The main reason: it’s simpler. In many applications, the power of `WebSocket` 
 
 We need to receive a stream of data from server: maybe chat messages or market prices, or whatever. That’s what `EventSource` is good at. Also it supports auto-reconnect, something we need to implement manually with `WebSocket`. Besides, it’s a plain old HTTP, not a new protocol.
 
-Getting messages
-----------------
+## Getting messages
 
 To start receiving messages, we just need to create `new EventSource(url)`.
 
@@ -4721,9 +4588,9 @@ The server should respond with status 200 and the header `Content-Type: text/eve
     data: Message 3
     data: of two lines
 
--   A message text goes after `data:`, the space after the colon is optional.
--   Messages are delimited with double line breaks `\n\n`.
--   To send a line break `\n`, we can immediately send one more `data:` (3rd message above).
+- A message text goes after `data:`, the space after the colon is optional.
+- Messages are delimited with double line breaks `\n\n`.
+- To send a line break `\n`, we can immediately send one more `data:` (3rd message above).
 
 In practice, complex messages are usually sent JSON-encoded. Line-breaks are encoded as `\n` within them, so multiline `data:` messages are not necessary.
 
@@ -4760,8 +4627,7 @@ To pass credentials, we should set the additional option `withCredentials`, like
 
 Please see the chapter <a href="info:fetch-crossorigin" class="uri">info:fetch-crossorigin</a> for more details about cross-origin headers.
 
-Reconnection
-------------
+## Reconnection
 
 Upon creation, `new EventSource` connects to the server, and if the connection is broken – reconnects.
 
@@ -4778,19 +4644,18 @@ The `retry:` may come both together with some data, or as a standalone message.
 
 The browser should wait that many milliseconds before reconnecting. Or longer, e.g. if the browser knows (from OS) that there’s no network connection at the moment, it may wait until the connection appears, and then retry.
 
--   If the server wants the browser to stop reconnecting, it should respond with HTTP status 204.
--   If the browser wants to close the connection, it should call `eventSource.close()`:
+- If the server wants the browser to stop reconnecting, it should respond with HTTP status 204.
+- If the browser wants to close the connection, it should call `eventSource.close()`:
 
-    let eventSource = new EventSource(...);
+  let eventSource = new EventSource(...);
 
-    eventSource.close();
+  eventSource.close();
 
 Also, there will be no reconnection if the response has an incorrect `Content-Type` or its HTTP status differs from 301, 307, 200 and 204. In such cases the `"error"` event will be emitted, and the browser won’t reconnect.
 
     When a connection is finally closed, there's no way to "reopen" it. If we'd like to connect again, just create a new `EventSource`.
 
-Message id
-----------
+## Message id
 
 When a connection breaks due to network problems, either side can’t be sure which messages were received, and which weren’t.
 
@@ -4808,30 +4673,28 @@ To correctly resume the connection, each message should have an `id` field, like
 
 When a message with `id:` is received, the browser:
 
--   Sets the property `eventSource.lastEventId` to its value.
--   Upon reconnection sends the header `Last-Event-ID` with that `id`, so that the server may re-send following messages.
+- Sets the property `eventSource.lastEventId` to its value.
+- Upon reconnection sends the header `Last-Event-ID` with that `id`, so that the server may re-send following messages.
 
 `` smart header="Put `id:` after `data:`" Please note: the `id` is appended below message `data` by the server, to ensure that `lastEventId` is updated after the message is received. ``
 
-Connection status: readyState
------------------------------
+## Connection status: readyState
 
 The `EventSource` object has `readyState` property, that has one of three values:
 
-`js no-beautify EventSource.CONNECTING = 0; // connecting or reconnecting EventSource.OPEN = 1;       // connected EventSource.CLOSED = 2;     // connection closed`
+`js no-beautify EventSource.CONNECTING = 0; // connecting or reconnecting EventSource.OPEN = 1; // connected EventSource.CLOSED = 2; // connection closed`
 
 When an object is created, or the connection is down, it’s always `EventSource.CONNECTING` (equals `0`).
 
 We can query this property to know the state of `EventSource`.
 
-Event types
------------
+## Event types
 
 By default `EventSource` object generates three events:
 
--   `message` – a message received, available as `event.data`.
--   `open` – the connection is open.
--   `error` – the connection could not be established, e.g. the server returned HTTP 500 status.
+- `message` – a message received, available as `event.data`.
+- `open` – the connection is open.
+- `error` – the connection could not be established, e.g. the server returned HTTP 500 status.
 
 The server may specify another type of event with `event: ...` at the event start.
 
@@ -4859,8 +4722,7 @@ To handle custom events, we must use `addEventListener`, not `onmessage`:
       alert(`Left ${event.data}`);
     });
 
-Full example
-------------
+## Full example
 
 Here’s the server that sends messages with `1`, `2`, `3`, then `bye` and breaks the connection.
 
@@ -4868,8 +4730,7 @@ Then the browser automatically reconnects.
 
 \[codetabs src=“eventsource”\]
 
-Summary
--------
+## Summary
 
 `EventSource` object automatically establishes a persistent connection and allows the server to send messages over it.
 
@@ -4921,10 +4782,10 @@ The server sends messages, delimited by `\n\n`.
 
 A message may have following fields:
 
--   `data:` – message body, a sequence of multiple `data` is interpreted as a single message, with `\n` between the parts.
--   `id:` – renews `lastEventId`, sent in `Last-Event-ID` on reconnect.
--   `retry:` – recommends a retry delay for reconnections in ms. There’s no way to set it from JavaScript.
--   `event:` – event name, must precede `data:`.
+- `data:` – message body, a sequence of multiple `data` is interpreted as a single message, with `\n` between the parts.
+- `id:` – renews `lastEventId`, sent in `Last-Event-ID` on reconnect.
+- `retry:` – recommends a retry delay for reconnections in ms. There’s no way to set it from JavaScript.
+- `event:` – event name, must precede `data:`.
 
 A message may include one or more fields in any order, but `id:` usually goes the last. \# Cookies, document.cookie
 
@@ -4942,8 +4803,7 @@ We can also access cookies from the browser, using `document.cookie` property.
 
 There are many tricky things about cookies and their options. In this chapter we’ll cover them in detail.
 
-Reading from document.cookie
-----------------------------
+## Reading from document.cookie
 
     Does your browser store any cookies from this site? Let's see:
 
@@ -4957,8 +4817,7 @@ To find a particular cookie, we can split `document.cookie` by `;`, and then fin
 
 We leave it as an exercise for the reader. Also, at the end of the chapter you’ll find helper functions to manipulate cookies.
 
-Writing to document.cookie
---------------------------
+## Writing to document.cookie
 
 We can write to `document.cookie`. But it’s not a data property, it’s an accessor (getter/setter). An assignment to it is treated specially.
 
@@ -4986,10 +4845,9 @@ The options are listed after `key=value`, delimited by `;`, like this:
 
 `js run document.cookie = "user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"`
 
-path
-----
+## path
 
--   **`path=/mypath`**
+- **`path=/mypath`**
 
 The url path prefix must be absolute. It makes the cookie accessible for pages under that path. By default, it’s the current path.
 
@@ -4997,10 +4855,9 @@ If a cookie is set with `path=/admin`, it’s visible at pages `/admin` and `/ad
 
 Usually, we should set `path` to the root: `path=/` to make the cookie accessible from all website pages.
 
-domain
-------
+## domain
 
--   **`domain=site.com`**
+- **`domain=site.com`**
 
 A domain defines where the cookie is accessible. In practice though, there are limitations. We can’t set any domain.
 
@@ -5033,14 +4890,13 @@ For historical reasons, `domain=.site.com` (a dot before `site.com`) also works 
 
 So, the `domain` option allows to make a cookie accessible at subdomains.
 
-expires, max-age
-----------------
+## expires, max-age
 
 By default, if a cookie doesn’t have one of these options, it disappears when the browser is closed. Such cookies are called “session cookies”
 
 To let cookies survive a browser close, we can set either the `expires` or `max-age` option.
 
--   **`expires=Tue, 19 Jan 2038 03:14:07 GMT`**
+- **`expires=Tue, 19 Jan 2038 03:14:07 GMT`**
 
 The cookie expiration date defines the time, when the browser will automatically delete it.
 
@@ -5053,7 +4909,7 @@ The date must be exactly in this format, in the GMT timezone. We can use `date.t
 
 If we set `expires` to a date in the past, the cookie is deleted.
 
--   **`max-age=3600`**
+- **`max-age=3600`**
 
 Is an alternative to `expires` and specifies the cookie’s expiration in seconds from the current moment.
 
@@ -5065,10 +4921,9 @@ If set to zero or a negative value, the cookie is deleted:
     // delete cookie (let it expire right now)
     document.cookie = "user=John; max-age=0";
 
-secure
-------
+## secure
 
--   **`secure`**
+- **`secure`**
 
 The cookie should be transferred only over HTTPS.
 
@@ -5082,8 +4937,7 @@ With this option, if a cookie is set by `https://site.com`, then it doesn’t ap
     // set the cookie to be secure (only accessible over HTTPS)
     document.cookie = "user=John; secure";
 
-samesite
---------
+## samesite
 
 That’s another security attribute `samesite`. It’s designed to protect from so-called XSRF (cross-site request forgery) attacks.
 
@@ -5111,7 +4965,7 @@ The cookie `samesite` option provides another way to protect from such attacks, 
 
 It has two possible values:
 
--   **`samesite=strict` (same as `samesite` without value)**
+- **`samesite=strict` (same as `samesite` without value)**
 
 A cookie with `samesite=strict` is never sent if the user comes from outside the same site.
 
@@ -5127,7 +4981,7 @@ When a user follows a legitimate link to `bank.com`, like from their own notes, 
 
 We could work around that by using two cookies: one for “general recognition”, only for the purposes of saying: “Hello, John”, and the other one for data-changing operations with `samesite=strict`. Then, a person coming from outside of the site will see a welcome, but payments must be initiated from the bank’s website, for the second cookie to be sent.
 
--   **`samesite=lax`**
+- **`samesite=lax`**
 
 A more relaxed approach that also protects from XSRF and doesn’t break the user experience.
 
@@ -5153,8 +5007,7 @@ Overall, `samesite` is a great option, but it has an important drawback: - `same
 
 But we surely can use `samesite` together with other protection measures, like xsrf tokens, to add an additional layer of defence and then, in the future, when old browsers die out, we’ll probably be able to drop xsrf tokens.
 
-httpOnly
---------
+## httpOnly
 
 This option has nothing to do with JavaScript, but we have to mention it for completeness.
 
@@ -5168,8 +5021,7 @@ Normally, if such a thing happens, and a user visits a web-page with hacker’s 
 
 But if a cookie is `httpOnly`, then `document.cookie` doesn’t see it, so it is protected.
 
-Appendix: Cookie functions
---------------------------
+## Appendix: Cookie functions
 
 Here’s a small set of functions to work with cookies, more convenient than a manual modification of `document.cookie`.
 
@@ -5226,8 +5078,7 @@ To delete a cookie, we can call it with a negative expiration date:
 
 Together: [cookie.js](cookie.js).
 
-Appendix: Third-party cookies
------------------------------
+## Appendix: Third-party cookies
 
 A cookie is called “third-party” if it’s placed by a domain other than the page the user is visiting.
 
@@ -5253,8 +5104,7 @@ Also, some modern browsers employ special policies for such cookies: - Safari do
 
     If a script sets a cookie, then no matter where the script came from -- the cookie belongs to the domain of the current webpage.
 
-Appendix: GDPR
---------------
+## Appendix: GDPR
 
 This topic is not related to JavaScript at all, just something to keep in mind when setting cookies.
 
@@ -5276,8 +5126,7 @@ Websites generally have two variants of following GDPR. You must have seen them 
 
 GDPR is not only about cookies, it’s about other privacy-related issues too, but that’s too much beyond our scope.
 
-Summary
--------
+## Summary
 
 `document.cookie` provides access to cookies - write operations modify only cookies mentioned in it. - name/value must be encoded. - one cookie must not exceed 4KB, 20+ cookies per site (depends on the browser).
 
@@ -5291,30 +5140,29 @@ What’s interesting about them is that the data survives a page refresh (for `s
 
 We already have cookies. Why additional objects?
 
--   Unlike cookies, web storage objects are not sent to server with each request. Because of that, we can store much more. Most browsers allow at least 2 megabytes of data (or more) and have settings to configure that.
--   Also unlike cookies, the server can’t manipulate storage objects via HTTP headers. Everything’s done in JavaScript.
--   The storage is bound to the origin (domain/protocol/port triplet). That is, different protocols or subdomains infer different storage objects, they can’t access data from each other.
+- Unlike cookies, web storage objects are not sent to server with each request. Because of that, we can store much more. Most browsers allow at least 2 megabytes of data (or more) and have settings to configure that.
+- Also unlike cookies, the server can’t manipulate storage objects via HTTP headers. Everything’s done in JavaScript.
+- The storage is bound to the origin (domain/protocol/port triplet). That is, different protocols or subdomains infer different storage objects, they can’t access data from each other.
 
 Both storage objects provide same methods and properties:
 
--   `setItem(key, value)` – store key/value pair.
--   `getItem(key)` – get the value by key.
--   `removeItem(key)` – remove the key with its value.
--   `clear()` – delete everything.
--   `key(index)` – get the key on a given position.
--   `length` – the number of stored items.
+- `setItem(key, value)` – store key/value pair.
+- `getItem(key)` – get the value by key.
+- `removeItem(key)` – remove the key with its value.
+- `clear()` – delete everything.
+- `key(index)` – get the key on a given position.
+- `length` – the number of stored items.
 
 As you can see, it’s like a `Map` collection (`setItem/getItem/removeItem`), but also allows access by index with `key(index)`.
 
 Let’s see how it works.
 
-localStorage demo
------------------
+## localStorage demo
 
 The main features of `localStorage` are:
 
--   Shared between all tabs and windows from the same origin.
--   The data does not expire. It remains after the browser restart and even OS reboot.
+- Shared between all tabs and windows from the same origin.
+- The data does not expire. It remains after the browser restart and even OS reboot.
 
 For instance, if you run this code…
 
@@ -5328,8 +5176,7 @@ We only have to be on the same origin (domain/port/protocol), the url path can b
 
 The `localStorage` is shared between all windows with the same origin, so if we set the data in one window, the change becomes visible in another one.
 
-Object-like access
-------------------
+## Object-like access
 
 We can also use a plain object way of getting/setting keys, like this:
 
@@ -5341,12 +5188,11 @@ We can also use a plain object way of getting/setting keys, like this:
 
 That’s allowed for historical reasons, and mostly works, but generally not recommended, because:
 
-1.  If the key is user-generated, it can be anything, like `length` or `toString`, or another built-in method of `localStorage`. In that case `getItem/setItem` work fine, while object-like access fails: `js run  let key = 'length';  localStorage[key] = 5; // Error, can't assign length`
+1.  If the key is user-generated, it can be anything, like `length` or `toString`, or another built-in method of `localStorage`. In that case `getItem/setItem` work fine, while object-like access fails: `js run let key = 'length'; localStorage[key] = 5; // Error, can't assign length`
 
 2.  There’s a `storage` event, it triggers when we modify the data. That event does not happen for object-like access. We’ll see that later in this chapter.
 
-Looping over keys
------------------
+## Looping over keys
 
 As we’ve seen, the methods provide “get/set/remove by key” functionality. But how to get all saved values or keys?
 
@@ -5354,26 +5200,25 @@ Unfortunately, storage objects are not iterable.
 
 One way is to loop over them as over an array:
 
-`` js run for(let i=0; i<localStorage.length; i++) {   let key = localStorage.key(i);   alert(`${key}: ${localStorage.getItem(key)}`); } ``
+`` js run for(let i=0; i<localStorage.length; i++) { let key = localStorage.key(i); alert(`${key}: ${localStorage.getItem(key)}`); } ``
 
 Another way is to use `for key in localStorage` loop, just as we do with regular objects.
 
 It iterates over keys, but also outputs few built-in fields that we don’t need:
 
-`js run // bad try for(let key in localStorage) {   alert(key); // shows getItem, setItem and other built-in stuff }`
+`js run // bad try for(let key in localStorage) { alert(key); // shows getItem, setItem and other built-in stuff }`
 
 …So we need either to filter fields from the prototype with `hasOwnProperty` check:
 
-`` js run for(let key in localStorage) {   if (!localStorage.hasOwnProperty(key)) {     continue; // skip keys like "setItem", "getItem" etc   }   alert(`${key}: ${localStorage.getItem(key)}`); } ``
+`` js run for(let key in localStorage) { if (!localStorage.hasOwnProperty(key)) { continue; // skip keys like "setItem", "getItem" etc } alert(`${key}: ${localStorage.getItem(key)}`); } ``
 
 …Or just get the “own” keys with `Object.keys` and then loop over them if needed:
 
-`` js run let keys = Object.keys(localStorage); for(let key of keys) {   alert(`${key}: ${localStorage.getItem(key)}`); } ``
+`` js run let keys = Object.keys(localStorage); for(let key of keys) { alert(`${key}: ${localStorage.getItem(key)}`); } ``
 
 The latter works, because `Object.keys` only returns the keys that belong to the object, ignoring the prototype.
 
-Strings only
-------------
+## Strings only
 
 Please note that both key and value must be strings.
 
@@ -5391,17 +5236,16 @@ Also it is possible to stringify the whole storage object, e.g. for debugging p
 
 `js run // added formatting options to JSON.stringify to make the object look nicer alert( JSON.stringify(localStorage, null, 2) );`
 
-sessionStorage
---------------
+## sessionStorage
 
 The `sessionStorage` object is used much less often than `localStorage`.
 
 Properties and methods are the same, but it’s much more limited:
 
--   The `sessionStorage` exists only within the current browser tab.
-    -   Another tab with the same page will have a different storage.
-    -   But it is shared between iframes in the same tab (assuming they come from the same origin).
--   The data survives page refresh, but not closing/opening the tab.
+- The `sessionStorage` exists only within the current browser tab.
+  - Another tab with the same page will have a different storage.
+  - But it is shared between iframes in the same tab (assuming they come from the same origin).
+- The data survives page refresh, but not closing/opening the tab.
 
 Let’s see that in action.
 
@@ -5417,16 +5261,15 @@ Run this code…
 
 That’s exactly because `sessionStorage` is bound not only to the origin, but also to the browser tab. For that reason, `sessionStorage` is used sparingly.
 
-Storage event
--------------
+## Storage event
 
 When the data gets updated in `localStorage` or `sessionStorage`, [storage](https://www.w3.org/TR/webstorage/#the-storage-event) event triggers, with properties:
 
--   `key` – the key that was changed (`null` if `.clear()` is called).
--   `oldValue` – the old value (`null` if the key is newly added).
--   `newValue` – the new value (`null` if the key is removed).
--   `url` – the url of the document where the update happened.
--   `storageArea` – either `localStorage` or `sessionStorage` object where the update happened.
+- `key` – the key that was changed (`null` if `.clear()` is called).
+- `oldValue` – the old value (`null` if the key is newly added).
+- `newValue` – the new value (`null` if the key is removed).
+- `url` – the url of the document where the update happened.
+- `storageArea` – either `localStorage` or `sessionStorage` object where the update happened.
 
 The important thing is: the event triggers on all `window` objects where the storage is accessible, except the one that caused it.
 
@@ -5450,8 +5293,7 @@ Also, `event.storageArea` contains the storage object – the event is the same 
 
 Modern browsers also support [Broadcast channel API](mdn:/api/Broadcast_Channel_API), the special API for same-origin inter-window communication, it’s more full featured, but less supported. There are libraries that polyfill that API, based on `localStorage`, that make it available everywhere.
 
-Summary
--------
+## Summary
 
 Web storage objects `localStorage` and `sessionStorage` allow to store key/value in the browser. - Both `key` and `value` must be strings. - The limit is 5mb+, depends on the browser. - They do not expire. - The data is bound to the origin (domain/port/protocol).
 
@@ -5459,33 +5301,32 @@ Web storage objects `localStorage` and `sessionStorage` allow to store key/value
 
 API:
 
--   `setItem(key, value)` – store key/value pair.
--   `getItem(key)` – get the value by key.
--   `removeItem(key)` – remove the key with its value.
--   `clear()` – delete everything.
--   `key(index)` – get the key number `index`.
--   `length` – the number of stored items.
--   Use `Object.keys` to get all keys.
--   We access keys as object properties, in that case `storage` event isn’t triggered.
+- `setItem(key, value)` – store key/value pair.
+- `getItem(key)` – get the value by key.
+- `removeItem(key)` – remove the key with its value.
+- `clear()` – delete everything.
+- `key(index)` – get the key number `index`.
+- `length` – the number of stored items.
+- Use `Object.keys` to get all keys.
+- We access keys as object properties, in that case `storage` event isn’t triggered.
 
 Storage event:
 
--   Triggers on `setItem`, `removeItem`, `clear` calls.
--   Contains all the data about the operation (`key/oldValue/newValue`), the document `url` and the storage object `storageArea`.
--   Triggers on all `window` objects that have access to the storage except the one that generated it (within a tab for `sessionStorage`, globally for `localStorage`). libs:
-    -   ‘https://cdn.jsdelivr.net/npm/idb@3.0.2/build/idb.min.js’
+- Triggers on `setItem`, `removeItem`, `clear` calls.
+- Contains all the data about the operation (`key/oldValue/newValue`), the document `url` and the storage object `storageArea`.
+- Triggers on all `window` objects that have access to the storage except the one that generated it (within a tab for `sessionStorage`, globally for `localStorage`). libs:
+  - ‘https://cdn.jsdelivr.net/npm/idb@3.0.2/build/idb.min.js’
 
-------------------------------------------------------------------------
+---
 
-IndexedDB
-=========
+# IndexedDB
 
 IndexedDB is a database that is built into browser, much more powerful than `localStorage`.
 
--   Stores almost any kind of values by keys, multiple key types.
--   Supports transactions for reliability.
--   Supports key range queries, indexes.
--   Can store much bigger volumes of data than `localStorage`.
+- Stores almost any kind of values by keys, multiple key types.
+- Supports transactions for reliability.
+- Supports key range queries, indexes.
+- Can store much bigger volumes of data than `localStorage`.
 
 That power is usually excessive for traditional client-server apps. IndexedDB is intended for offline apps, to be combined with ServiceWorkers and other technologies.
 
@@ -5497,8 +5338,7 @@ We can also use `async/await` with the help of a promise-based wrapper, like <a 
 
 Different browsers and OS-level users have each their own independant storage. \`\`\`
 
-Open database
--------------
+## Open database
 
 To start working with IndexedDB, we first need to `open` (connect to) a database.
 
@@ -5506,8 +5346,8 @@ The syntax:
 
     let openRequest = indexedDB.open(name, version);
 
--   `name` – a string, the database name.
--   `version` – a positive integer version, by default `1` (explained below).
+- `name` – a string, the database name.
+- `version` – a positive integer version, by default `1` (explained below).
 
 We can have many databases with different names, but all of them exist within the current origin (domain/protocol/port). Different websites can’t access each other’s databases.
 
@@ -5629,10 +5469,9 @@ Or, an alternative approach would be to not close the database in `db.onversionc
 
 These update collisions happen rarely, but we should at least have some handling for them, at least an `onblocked` handler, to prevent our script from dying silently.
 
-Object store
-------------
+## Object store
 
-To store something in IndexedDB, we need an *object store*.
+To store something in IndexedDB, we need an _object store_.
 
 An object store is a core concept of IndexedDB. Counterparts in other databases are called “tables” or “collections”. It’s where the data is stored. A database may have multiple stores: one for users, another one for goods, etc.
 
@@ -5660,10 +5499,10 @@ The syntax to create an object store:
 
 Please note, the operation is synchronous, no `await` needed.
 
--   `name` is the store name, e.g. `"books"` for books,
--   `keyOptions` is an optional object with one of two properties:
-    -   `keyPath` – a path to an object property that IndexedDB will use as the key, e.g. `id`.
-    -   `autoIncrement` – if `true`, then the key for a newly stored object is generated automatically, as an ever-incrementing number.
+- `name` is the store name, e.g. `"books"` for books,
+- `keyOptions` is an optional object with one of two properties:
+  - `keyPath` – a path to an object property that IndexedDB will use as the key, e.g. `id`.
+  - `autoIncrement` – if `true`, then the key for a newly stored object is generated automatically, as an ever-incrementing number.
 
 If we don’t supply `keyOptions`, then we’ll need to provide a key explicitly later, when storing an object.
 
@@ -5695,8 +5534,7 @@ To delete an object store:
 
     db.deleteObjectStore('books')
 
-Transactions
-------------
+## Transactions
 
 The term “transaction” is generic, used in many kinds of databases.
 
@@ -5714,10 +5552,10 @@ To start a transaction:
 
     db.transaction(store[, type]);
 
--   `store` is a store name that the transaction is going to access, e.g. `"books"`. Can be an array of store names if we’re going to access multiple stores.
--   `type` – a transaction type, one of:
-    -   `readonly` – can only read, the default.
-    -   `readwrite` – can only read and write the data, but not create/remove/alter object stores.
+- `store` is a store name that the transaction is going to access, e.g. `"books"`. Can be an array of store names if we’re going to access multiple stores.
+- `type` – a transaction type, one of:
+  - `readonly` – can only read, the default.
+  - `readwrite` – can only read and write the data, but not create/remove/alter object stores.
 
 There’s also `versionchange` transaction type: such transactions can do everything, but we can’t create them manually. IndexedDB automatically creates a `versionchange` transaction when opening the database, for `updateneeded` handler. That’s why it’s a single place where we can update the database structure, create/remove object stores.
 
@@ -5761,17 +5599,16 @@ There were basically four steps:
 
 Object stores support two methods to store a value:
 
--   **put(value, \[key\])** Add the `value` to the store. The `key` is supplied only if the object store did not have `keyPath` or `autoIncrement` option. If there’s already a value with the same key, it will be replaced.
+- **put(value, \[key\])** Add the `value` to the store. The `key` is supplied only if the object store did not have `keyPath` or `autoIncrement` option. If there’s already a value with the same key, it will be replaced.
 
--   **add(value, \[key\])** Same as `put`, but if there’s already a value with the same key, then the request fails, and an error with the name `"ConstraintError"` is generated.
+- **add(value, \[key\])** Same as `put`, but if there’s already a value with the same key, then the request fails, and an error with the name `"ConstraintError"` is generated.
 
 Similar to opening a database, we can send a request: `books.add(book)`, and then wait for `success/error` events.
 
--   The `request.result` for `add` is the key of the new object.
--   The error is in `request.error` (if any).
+- The `request.result` for `add` is the key of the new object.
+- The error is in `request.error` (if any).
 
-Transactions’ autocommit
-------------------------
+## Transactions’ autocommit
 
 In the example above we started the transaction and made `add` request. But as we stated previously, a transaction may have multiple associated requests, that must either all succeed or all fail. How do we mark the transaction as finished, with no more requests to come?
 
@@ -5834,8 +5671,7 @@ To manually abort the transaction, call:
 
 That cancels all modification made by the requests in it and triggers `transaction.onabort` event.
 
-Error handling
---------------
+## Error handling
 
 Write requests may fail.
 
@@ -5901,8 +5737,7 @@ We can stop the bubbling and hence `db.onerror` by using `event.stopPropagation(
       }
     };
 
-Searching
----------
+## Searching
 
 There are two main types of search in an object store:
 
@@ -5917,20 +5752,20 @@ Searching methods support both exact key values and so-called “ranges of value
 
 `IDBKeyRange` objects are created using following calls:
 
--   `IDBKeyRange.lowerBound(lower, [open])` means: `≥lower` (or `>lower` if `open` is true)
--   `IDBKeyRange.upperBound(upper, [open])` means: `≤upper` (or `<upper` if `open` is true)
--   `IDBKeyRange.bound(lower, upper, [lowerOpen], [upperOpen])` means: between `lower` and `upper`. If the open flags is true, the corresponding key is not included in the range.
--   `IDBKeyRange.only(key)` – a range that consists of only one `key`, rarely used.
+- `IDBKeyRange.lowerBound(lower, [open])` means: `≥lower` (or `>lower` if `open` is true)
+- `IDBKeyRange.upperBound(upper, [open])` means: `≤upper` (or `<upper` if `open` is true)
+- `IDBKeyRange.bound(lower, upper, [lowerOpen], [upperOpen])` means: between `lower` and `upper`. If the open flags is true, the corresponding key is not included in the range.
+- `IDBKeyRange.only(key)` – a range that consists of only one `key`, rarely used.
 
 We’ll see practical examples of using them very soon.
 
 To perform the actual search, there are following methods. They accept a `query` argument that can be either an exact key or a key range:
 
--   `store.get(query)` – search for the first value by a key or a range.
--   `store.getAll([query], [count])` – search for all values, limit by `count` if given.
--   `store.getKey(query)` – search for the first key that satisfies the query, usually a range.
--   `store.getAllKeys([query], [count])` – search for all keys that satisfy the query, usually a range, up to `count` if given.
--   `store.count([query])` – get the total count of keys that satisfy the query, usually a range.
+- `store.get(query)` – search for the first value by a key or a range.
+- `store.getAll([query], [count])` – search for all values, limit by `count` if given.
+- `store.getKey(query)` – search for the first key that satisfies the query, usually a range.
+- `store.getAllKeys([query], [count])` – search for all keys that satisfy the query, usually a range, up to `count` if given.
+- `store.count([query])` – get the total count of keys that satisfy the query, usually a range.
 
 For instance, we have a lot of books in our store. Remember, the `id` field is the key, so all these methods can search by `id`.
 
@@ -5965,11 +5800,11 @@ The syntax:
 
     objectStore.createIndex(name, keyPath, [options]);
 
--   **`name`** – index name,
--   **`keyPath`** – path to the object field that the index should track (we’re going to search by that field),
--   **`option`** – an optional object with properties:
-    -   **`unique`** – if true, then there may be only one object in the store with the given value at the `keyPath`. The index will enforce that by generating an error if we try to add a duplicate.
-    -   **`multiEntry`** – only used if the value on `keyPath` is an array. In that case, by default, the index will treat the whole array as the key. But if `multiEntry` is true, then the index will keep a list of store objects for each value in that array. So array members become index keys.
+- **`name`** – index name,
+- **`keyPath`** – path to the object field that the index should track (we’re going to search by that field),
+- **`option`** – an optional object with properties:
+  - **`unique`** – if true, then there may be only one object in the store with the given value at the `keyPath`. The index will enforce that by generating an error if we try to add a duplicate.
+  - **`multiEntry`** – only used if the value on `keyPath` is an array. In that case, by default, the index will treat the whole array as the key. But if `multiEntry` is true, then the index will keep a list of store objects for each value in that array. So array members become index keys.
 
 In our example, we store books keyed by `id`.
 
@@ -5985,9 +5820,9 @@ First, we need to create an index. It must be done in `upgradeneeded`, just like
     */!*
     };
 
--   The index will track `price` field.
--   The price is not unique, there may be multiple books with the same price, so we don’t set `unique` option.
--   The price is not an array, so `multiEntry` flag is not applicable.
+- The index will track `price` field.
+- The price is not unique, there may be multiple books with the same price, so we don’t set `unique` option.
+- The price is not an array, so `multiEntry` flag is not applicable.
 
 Imagine that our `inventory` has 4 books. Here’s the picture that shows exactly what the `index` is:
 
@@ -6022,12 +5857,11 @@ We can also use `IDBKeyRange` to create ranges and looks for cheap/expensive boo
 
 Indexes are internally sorted by the tracked object field, `price` in our case. So when we do the search, the results are also sorted by `price`.
 
-Deleting from store
--------------------
+## Deleting from store
 
 The `delete` method looks up values to delete by a query, the call format is similar to `getAll`:
 
--   **`delete(query)`** – delete matching values by query.
+- **`delete(query)`** – delete matching values by query.
 
 For instance:
 
@@ -6048,8 +5882,7 @@ To delete everything:
 
     books.clear(); // clear the storage.
 
-Cursors
--------
+## Cursors
 
 Methods like `getAll/getAllKeys` return an array of keys/values.
 
@@ -6059,7 +5892,7 @@ What to do?
 
 Cursors provide the means to work around that.
 
-**A *cursor* is a special object that traverses the object storage, given a query, and returns one key/value at a time, thus saving memory.**
+**A _cursor_ is a special object that traverses the object storage, given a query, and returns one key/value at a time, thus saving memory.**
 
 As an object store is sorted internally by key, a cursor walks the store in key order (ascending by default).
 
@@ -6070,11 +5903,11 @@ The syntax:
 
     // to get keys, not values (like getAllKeys): store.openKeyCursor
 
--   **`query`** is a key or a key range, same as for `getAll`.
--   **`direction`** is an optional argument, which order to use:
-    -   `"next"` – the default, the cursor walks up from the record with the lowest key.
-    -   `"prev"` – the reverse order: down from the record with the biggest key.
-    -   `"nextunique"`, `"prevunique"` – same as above, but skip records with the same key (only for cursors over indexes, e.g. for multiple books with price=5 only the first one will be returned).
+- **`query`** is a key or a key range, same as for `getAll`.
+- **`direction`** is an optional argument, which order to use:
+  - `"next"` – the default, the cursor walks up from the record with the lowest key.
+  - `"prev"` – the reverse order: down from the record with the biggest key.
+  - `"nextunique"`, `"prevunique"` – same as above, but skip records with the same key (only for cursors over indexes, e.g. for multiple books with price=5 only the first one will be returned).
 
 **The main difference of the cursor is that `request.onsuccess` triggers multiple times: once for each result.**
 
@@ -6100,8 +5933,8 @@ Here’s an example of how to use a cursor:
 
 The main cursor methods are:
 
--   `advance(count)` – advance the cursor `count` times, skipping values.
--   `continue([key])` – advance the cursor to the next value in range matching (or immediately after `key` if given).
+- `advance(count)` – advance the cursor `count` times, skipping values.
+- `continue([key])` – advance the cursor to the next value in range matching (or immediately after `key` if given).
 
 Whether there are more values matching the cursor or not – `onsuccess` gets called, and then in `result` we can get the cursor pointing to the next record, or `undefined`.
 
@@ -6127,8 +5960,7 @@ For cursors over indexes, `cursor.key` is the index key (e.g. price), and we sh
       }
     };
 
-Promise wrapper
----------------
+## Promise wrapper
 
 Adding `onsuccess/onerror` to every request is quite a cumbersome task. Sometimes we can make our life easier by using event delegation, e.g. set handlers on the whole transactions, but `async/await` is much more convenient.
 
@@ -6175,7 +6007,7 @@ We can handle such errors like this:
 
 ### “Inactive transaction” pitfall
 
-As we already know, a transaction auto-commits as soon as the browser is done with the current code and microtasks. So if we put a *macrotask* like `fetch` in the middle of a transaction, then the transaction won’t wait for it to finish. It just auto-commits. So the next request in it would fail.
+As we already know, a transaction auto-commits as soon as the browser is done with the current code and microtasks. So if we put a _macrotask_ like `fetch` in the middle of a transaction, then the transaction won’t wait for it to finish. It just auto-commits. So the next request in it would fail.
 
 For a promise wrapper and `async/await` the situation is the same.
 
@@ -6211,8 +6043,7 @@ In few rare cases, when we need the original `request` object, we can access it 
 
     let result = await promise; // if still needed
 
-Summary
--------
+## Summary
 
 IndexedDB can be thought of as a “localStorage on steroids”. It’s a simple key-value database, powerful enough for offline apps, yet simple to use.
 
@@ -6222,12 +6053,12 @@ The basic usage can be described with a few phrases:
 
 1.  Get a promise wrapper like [idb](https://github.com/jakearchibald/idb).
 2.  Open a database: `idb.openDb(name, version, onupgradeneeded)`
-    -   Create object storages and indexes in `onupgradeneeded` handler or perform version update if needed.
+    - Create object storages and indexes in `onupgradeneeded` handler or perform version update if needed.
 3.  For requests:
-    -   Create transaction `db.transaction('books')` (readwrite if needed).
-    -   Get the object store `transaction.objectStore('books')`.
+    - Create transaction `db.transaction('books')` (readwrite if needed).
+    - Get the object store `transaction.objectStore('books')`.
 4.  Then, to search by a key, call methods on the object store directly.
-    -   To search by an object field, create an index.
+    - To search by an object field, create an index.
 5.  If the data does not fit in memory, use a cursor.
 
 Here’s a small demo app:
@@ -6238,8 +6069,7 @@ Bezier curves are used in computer graphics to draw shapes, for CSS animation an
 
 They are a very simple thing, worth to study once and then feel comfortable in the world of vector graphics and advanced animations.
 
-Control points
---------------
+## Control points
 
 A [bezier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) is defined by control points.
 
@@ -6267,7 +6097,7 @@ If you look closely at these curves, you can immediately notice:
 
 Because of that last property, in computer graphics it’s possible to optimize intersection tests. If convex hulls do not intersect, then curves do not either. So checking for the convex hulls intersection first can give a very fast “no intersection” result. Checking the intersection of convex hulls is much easier, because they are rectangles, triangles and so on (see the picture above), much simpler figures than the curve.
 
-**The main value of Bezier curves for drawing – by moving the points the curve is changing *in intuitively obvious way*.**
+**The main value of Bezier curves for drawing – by moving the points the curve is changing _in intuitively obvious way_.**
 
 Try to move control points using a mouse in the example below:
 
@@ -6281,8 +6111,7 @@ Here are some examples:
 
 ![](bezier-car.svg) ![](bezier-letter.svg) ![](bezier-vase.svg)
 
-De Casteljau’s algorithm
-------------------------
+## De Casteljau’s algorithm
 
 There’s a mathematical formula for Bezier curves, but let’s cover it a bit later, because [De Casteljau’s algorithm](https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm) is identical to the mathematical definition and visually shows how it is constructed.
 
@@ -6302,11 +6131,11 @@ Control points (1,2 and 3) can be moved by the mouse. Press the “play” butto
 
     For each of these values of `t`:
 
-    -   On each <span style="color:#825E28">brown</span> segment we take a point located on the distance proportional to `t` from its beginning. As there are two segments, we have two points.
+    - On each <span style="color:#825E28">brown</span> segment we take a point located on the distance proportional to `t` from its beginning. As there are two segments, we have two points.
 
-        For instance, for `t=0` – both points will be at the beginning of segments, and for `t=0.25` – on the 25% of segment length from the beginning, for `t=0.5` – 50%(the middle), for `t=1` – in the end of segments.
+      For instance, for `t=0` – both points will be at the beginning of segments, and for `t=0.25` – on the 25% of segment length from the beginning, for `t=0.5` – 50%(the middle), for `t=1` – in the end of segments.
 
-    -   Connect the points. On the picture below the connecting segment is painted <span style="color:#167490">blue</span>.
+    - Connect the points. On the picture below the connecting segment is painted <span style="color:#167490">blue</span>.
 
 <table><thead><tr class="header"><th>For <code>t=0.25</code></th><th>For <code>t=0.5</code></th></tr></thead><tbody><tr class="odd"><td><img src="bezier3-draw1.svg" /></td><td><img src="bezier3-draw2.svg" /></td></tr></tbody></table>
 
@@ -6322,12 +6151,12 @@ The demo for 4 points (points can be moved by a mouse):
 
 The algorithm for 4 points:
 
--   Connect control points by segments: 1 -&gt; 2, 2 -&gt; 3, 3 -&gt; 4. There will be 3 <span style="color:#825E28">brown</span> segments.
--   For each `t` in the interval from `0` to `1`:
-    -   We take points on these segments on the distance proportional to `t` from the beginning. These points are connected, so that we have two <span style="color:#0A0">green segments</span>.
-    -   On these segments we take points proportional to `t`. We get one <span style="color:#167490">blue segment</span>.
-    -   On the blue segment we take a point proportional to `t`. On the example above it’s <span style="color:red">red</span>.
--   These points together form the curve.
+- Connect control points by segments: 1 -&gt; 2, 2 -&gt; 3, 3 -&gt; 4. There will be 3 <span style="color:#825E28">brown</span> segments.
+- For each `t` in the interval from `0` to `1`:
+  - We take points on these segments on the distance proportional to `t` from the beginning. These points are connected, so that we have two <span style="color:#0A0">green segments</span>.
+  - On these segments we take points proportional to `t`. We get one <span style="color:#167490">blue segment</span>.
+  - On the blue segment we take a point proportional to `t`. On the example above it’s <span style="color:red">red</span>.
+- These points together form the curve.
 
 The algorithm is recursive and can be generalized for any number of control points.
 
@@ -6362,14 +6191,13 @@ A non-smooth Bezier curve (yeah, that’s possible too):
 
 As the algorithm is recursive, we can build Bezier curves of any order, that is: using 5, 6 or more control points. But in practice many points are less useful. Usually we take 2-3 points, and for complex lines glue several curves together. That’s simpler to develop and calculate.
 
-\`\`\`smart header=“How to draw a curve *through* given points?” To specify a Bezier curve, control points are used. As we can see, they are not on the curve, except the first and the last ones.
+\`\`\`smart header=“How to draw a curve _through_ given points?” To specify a Bezier curve, control points are used. As we can see, they are not on the curve, except the first and the last ones.
 
-Sometimes we have another task: to draw a curve *through several points*, so that all of them are on a single smooth curve. That task is called [interpolation](https://en.wikipedia.org/wiki/Interpolation), and here we don’t cover it.
+Sometimes we have another task: to draw a curve _through several points_, so that all of them are on a single smooth curve. That task is called [interpolation](https://en.wikipedia.org/wiki/Interpolation), and here we don’t cover it.
 
 There are mathematical formulas for such curves, for instance [Lagrange polynomial](https://en.wikipedia.org/wiki/Lagrange_polynomial). In computer graphics [spline interpolation](https://en.wikipedia.org/wiki/Spline_interpolation) is often used to build smooth curves that connect many points. \`\`\`
 
-Maths
------
+## Maths
 
 A Bezier curve can be described using a mathematical formula.
 
@@ -6377,36 +6205,35 @@ As we saw – there’s actually no need to know it, most people just draw the c
 
 Given the coordinates of control points `Pi`: the first control point has coordinates `P1 = (x1, y1)`, the second: `P2 = (x2, y2)`, and so on, the curve coordinates are described by the equation that depends on the parameter `t` from the segment `[0,1]`.
 
--   The formula for a 2-points curve:
+- The formula for a 2-points curve:
 
-    `P = (1-t)P1 + tP2`
+  `P = (1-t)P1 + tP2`
 
--   For 3 control points:
+- For 3 control points:
 
-    `P = (1−t)2P1 + 2(1−t)tP2 + t2P3`
+  `P = (1−t)2P1 + 2(1−t)tP2 + t2P3`
 
--   For 4 control points:
+- For 4 control points:
 
-    `P = (1−t)3P1 + 3(1−t)2tP2 +3(1−t)t2P3 + t3P4`
+  `P = (1−t)3P1 + 3(1−t)2tP2 +3(1−t)t2P3 + t3P4`
 
 These are vector equations. In other words, we can put `x` and `y` instead of `P` to get corresponding coordinates.
 
 For instance, the 3-point curve is formed by points `(x,y)` calculated as:
 
--   `x = (1−t)2x1 + 2(1−t)tx2 + t2x3`
--   `y = (1−t)2y1 + 2(1−t)ty2 + t2y3`
+- `x = (1−t)2x1 + 2(1−t)tx2 + t2x3`
+- `y = (1−t)2y1 + 2(1−t)ty2 + t2y3`
 
 Instead of `x1, y1, x2, y2, x3, y3` we should put coordinates of 3 control points, and then as `t` moves from `0` to `1`, for each value of `t` we’ll have `(x,y)` of the curve.
 
 For instance, if control points are `(0,0)`, `(0.5, 1)` and `(1, 0)`, the equations become:
 
--   `x = (1−t)2 * 0 + 2(1−t)t * 0.5 + t2 * 1 = (1-t)t + t2 = t`
--   `y = (1−t)2 * 0 + 2(1−t)t * 1 + t2 * 0 = 2(1-t)t = –2t2 + 2t`
+- `x = (1−t)2 * 0 + 2(1−t)t * 0.5 + t2 * 1 = (1-t)t + t2 = t`
+- `y = (1−t)2 * 0 + 2(1−t)t * 1 + t2 * 0 = 2(1-t)t = –2t2 + 2t`
 
 Now as `t` runs from `0` to `1`, the set of values `(x,y)` for each `t` forms the curve for such control points.
 
-Summary
--------
+## Summary
 
 Bezier curves are defined by their control points.
 
@@ -6417,21 +6244,20 @@ We saw two definitions of Bezier curves:
 
 Good properties of Bezier curves:
 
--   We can draw smooth lines with a mouse by moving control points.
--   Complex shapes can be made of several Bezier curves.
+- We can draw smooth lines with a mouse by moving control points.
+- Complex shapes can be made of several Bezier curves.
 
 Usage:
 
--   In computer graphics, modeling, vector graphic editors. Fonts are described by Bezier curves.
--   In web development – for graphics on Canvas and in the SVG format. By the way, “live” examples above are written in SVG. They are actually a single SVG document that is given different points as parameters. You can open it in a separate window and see the source: [demo.svg](demo.svg?p=0,0,1,0.5,0,0.5,1,1&animate=1).
--   In CSS animation to describe the path and speed of animation. \# CSS-animations
+- In computer graphics, modeling, vector graphic editors. Fonts are described by Bezier curves.
+- In web development – for graphics on Canvas and in the SVG format. By the way, “live” examples above are written in SVG. They are actually a single SVG document that is given different points as parameters. You can open it in a separate window and see the source: [demo.svg](demo.svg?p=0,0,1,0.5,0,0.5,1,1&animate=1).
+- In CSS animation to describe the path and speed of animation. \# CSS-animations
 
 CSS animations make it possible to do simple animations without JavaScript at all.
 
 JavaScript can be used to control CSS animations and make them even better, with little code.
 
-CSS transitions \[\#css-transition\]
-------------------------------------
+## CSS transitions \[\#css-transition\]
 
 The idea of CSS transitions is simple. We describe a property and how its changes should be animated. When the property changes, the browser paints the animation.
 
@@ -6454,10 +6280,10 @@ Click the button below to animate the background:
 
 There are 4 properties to describe CSS transitions:
 
--   `transition-property`
--   `transition-duration`
--   `transition-timing-function`
--   `transition-delay`
+- `transition-property`
+- `transition-duration`
+- `transition-timing-function`
+- `transition-delay`
 
 We’ll cover them in a moment, for now let’s note that the common `transition` property allows declaring them together in the order: `property duration timing-function delay`, as well as animating multiple properties at once.
 
@@ -6469,22 +6295,19 @@ For instance, this button animates both `color` and `font-size`:
 
 Now, let’s cover animation properties one by one.
 
-transition-property
--------------------
+## transition-property
 
 In `transition-property`, we write a list of properties to animate, for instance: `left`, `margin-left`, `height`, `color`. Or we could write `all`, which means “animate all properties”.
 
 Do note that, there are properties which can not be animated. However, [most of the generally used properties are animatable](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties).
 
-transition-duration
--------------------
+## transition-duration
 
 In `transition-duration` we can specify how long the animation should take. The time should be in [CSS time format](http://www.w3.org/TR/css3-values/#time): in seconds `s` or milliseconds `ms`.
 
-transition-delay
-----------------
+## transition-delay
 
-In `transition-delay` we can specify the delay *before* the animation. For instance, if `transition-delay` is `1s` and `transition-duration` is `2s`, then the animation starts 1 second after the property change and the total duration will be 2 seconds.
+In `transition-delay` we can specify the delay _before_ the animation. For instance, if `transition-delay` is `1s` and `transition-duration` is `2s`, then the animation starts 1 second after the property change and the total duration will be 2 seconds.
 
 Negative values are also possible. Then the animation is shown immediately, but the starting point of the animation will be after given value (time). For example, if `transition-delay` is `-1s` and `transition-duration` is `2s`, then animation starts from the halfway point and total duration will be 1 second.
 
@@ -6521,8 +6344,7 @@ JavaScript does it with an extra line:
       stripe.classList.add('animate');
     };
 
-transition-timing-function
---------------------------
+## transition-timing-function
 
 The timing function describes how the animation process is distributed along its timeline. Will it start slowly and then go fast, or vice versa.
 
@@ -6542,8 +6364,8 @@ The syntax for a Bezier curve in CSS: `cubic-bezier(x2, y2, x3, y3)`. Here we ne
 
 The timing function describes how fast the animation process goes.
 
--   The `x` axis is the time: `0` – the start, `1` – the end of `transition-duration`.
--   The `y` axis specifies the completion of the process: `0` – the starting value of the property, `1` – the final value.
+- The `x` axis is the time: `0` – the start, `1` – the end of `transition-duration`.
+- The `y` axis specifies the completion of the process: `0` – the starting value of the property, `1` – the final value.
 
 The simplest variant is when the animation goes uniformly, with the same linear speed. That can be specified by the curve `cubic-bezier(0, 0, 1, 1)`.
 
@@ -6623,9 +6445,9 @@ The property `left` should animate from `100px` to `400px`.
 
 But if you click the train, you’ll see that:
 
--   First, the train goes *back*: `left` becomes less than `100px`.
--   Then it goes forward, a little bit farther than `400px`.
--   And then back again – to `400px`.
+- First, the train goes _back_: `left` becomes less than `100px`.
+- Then it goes forward, a little bit farther than `400px`.
+- And then back again – to `400px`.
 
 \[codetabs src=“train-over”\]
 
@@ -6674,21 +6496,21 @@ We can observe that during the animation: when we click on the digit it changes 
 
 The process is progressing like this:
 
--   `0s` – `-10%` (first change in the beginning of the 1st second, immediately)
--   `1s` – `-20%`
--   …
--   `8s` – `-80%`
--   (the last second shows the final value).
+- `0s` – `-10%` (first change in the beginning of the 1st second, immediately)
+- `1s` – `-20%`
+- …
+- `8s` – `-80%`
+- (the last second shows the final value).
 
 The alternative value `end` would mean that the change should be applied not in the beginning, but at the end of each second.
 
 So the process would go like this:
 
--   `0s` – `0`
--   `1s` – `-10%` (first change at the end of the 1st second)
--   `2s` – `-20%`
--   …
--   `9s` – `-90%`
+- `0s` – `0`
+- `1s` – `-10%` (first change at the end of the 1st second)
+- `2s` – `-20%`
+- …
+- `9s` – `-90%`
 
 Here’s `steps(9, end)` in action (note the pause between the first digit change):
 
@@ -6696,13 +6518,12 @@ Here’s `steps(9, end)` in action (note the pause between the first digit chang
 
 There are also shorthand values:
 
--   `step-start` – is the same as `steps(1, start)`. That is, the animation starts immediately and takes 1 step. So it starts and finishes immediately, as if there were no animation.
--   `step-end` – the same as `steps(1, end)`: make the animation in a single step at the end of `transition-duration`.
+- `step-start` – is the same as `steps(1, start)`. That is, the animation starts immediately and takes 1 step. So it starts and finishes immediately, as if there were no animation.
+- `step-end` – the same as `steps(1, end)`: make the animation in a single step at the end of `transition-duration`.
 
 These values are rarely used, because that’s not really animation, but rather a single-step change.
 
-Event transitionend
--------------------
+## Event transitionend
 
 When the CSS animation finishes the `transitionend` event triggers.
 
@@ -6747,8 +6568,7 @@ The property that has finished animating. Can be good if we animate multiple pro
 `event.elapsedTime`  
 The time (in seconds) that the animation took, without `transition-delay`.
 
-Keyframes
----------
+## Keyframes
 
 We can join multiple simple animations together using the `@keyframes` CSS rule.
 
@@ -6764,8 +6584,7 @@ There are many articles about `@keyframes` and a [detailed specification](https:
 
 You probably won’t need `@keyframes` often, unless everything is in constant motion on your sites.
 
-Summary
--------
+## Summary
 
 CSS animations allow smoothly (or not) animated changes of one or multiple CSS properties.
 
@@ -6783,8 +6602,7 @@ JavaScript animations can handle things that CSS can’t.
 
 For instance, moving along a complex path, with a timing function different from Bezier curves, or an animation on a canvas.
 
-Using setInterval
------------------
+## Using setInterval
 
 An animation can be implemented as a sequence of frames – usually small changes to HTML/CSS properties.
 
@@ -6825,8 +6643,7 @@ Click for the demo:
 
 \[codetabs height=200 src=“move”\]
 
-Using requestAnimationFrame
----------------------------
+## Using requestAnimationFrame
 
 Let’s imagine we have several animations running simultaneously.
 
@@ -6877,8 +6694,7 @@ The code below shows the time between first 10 runs for `requestAnimationFrame`.
 
 \`\`\`
 
-Structured animation
---------------------
+## Structured animation
 
 Now we can make a more universal animation function based on `requestAnimationFrame`:
 
@@ -6954,8 +6770,7 @@ The code for it:
 
 Unlike CSS animation, we can make any timing function and any drawing function here. The timing function is not limited by Bezier curves. And `draw` can go beyond properties, create new elements for like fireworks animation or something.
 
-Timing functions
-----------------
+## Timing functions
 
 We saw the simplest, linear timing function above.
 
@@ -7055,8 +6870,7 @@ In action for `x=1.5`:
 
 \[iframe height=40 src=“elastic” link\]
 
-Reversal: ease\*
-----------------
+## Reversal: ease\*
 
 So we have a collection of timing functions. Their direct application is called “easeIn”.
 
@@ -7093,8 +6907,8 @@ If there’s an animation effect in the beginning, like bouncing – it will be 
 
 In the graph above the <span style="color:#EE6B47">regular bounce</span> has the red color, and the <span style="color:#62C0DC">easeOut bounce</span> is blue.
 
--   Regular bounce – the object bounces at the bottom, then at the end sharply jumps to the top.
--   After `easeOut` – it first jumps to the top, then bounces there.
+- Regular bounce – the object bounces at the bottom, then at the end sharply jumps to the top.
+- After `easeOut` – it first jumps to the top, then bounces there.
 
 ### easeInOut
 
@@ -7131,14 +6945,13 @@ The effect is clearly seen if we compare the graphs of `easeIn`, `easeOut` and `
 
 ![](circ-ease.svg)
 
--   <span style="color:#EE6B47">Red</span> is the regular variant of `circ` (`easeIn`).
--   <span style="color:#8DB173">Green</span> – `easeOut`.
--   <span style="color:#62C0DC">Blue</span> – `easeInOut`.
+- <span style="color:#EE6B47">Red</span> is the regular variant of `circ` (`easeIn`).
+- <span style="color:#8DB173">Green</span> – `easeOut`.
+- <span style="color:#62C0DC">Blue</span> – `easeInOut`.
 
 As we can see, the graph of the first half of the animation is the scaled down `easeIn`, and the second half is the scaled down `easeOut`. As a result, the animation starts and finishes with the same effect.
 
-More interesting “draw”
------------------------
+## More interesting “draw”
 
 Instead of moving the element we can do something else. All we need is to write the proper `draw`.
 
@@ -7146,8 +6959,7 @@ Here’s the animated “bouncing” text typing:
 
 \[codetabs src=“text”\]
 
-Summary
--------
+## Summary
 
 For animations that CSS can’t handle well, or those that need tight control, JavaScript can help. JavaScript animations should be implemented via `requestAnimationFrame`. That built-in method allows to setup a callback function to run when the browser will be preparing a repaint. Usually that’s very soon, but the exact time depends on the browser.
 
@@ -7178,9 +6990,9 @@ Here’s the helper `animate` function to setup most animations:
 
 Options:
 
--   `duration` – the total animation time in ms.
--   `timing` – the function to calculate animation progress. Gets a time fraction from 0 to 1, returns the animation progress, usually from 0 to 1.
--   `draw` – the function to draw the animation.
+- `duration` – the total animation time in ms.
+- `timing` – the function to calculate animation progress. Gets a time fraction from 0 to 1, returns the animation progress, usually from 0 to 1.
+- `draw` – the function to draw the animation.
 
 Surely we could improve it, add more bells and whistles, but JavaScript animations are not applied on a daily basis. They are used to do something interesting and non-standard. So you’d want to add the features that you need when you need them.
 
@@ -7194,8 +7006,7 @@ Although they are called “logical”, they can be applied to values of any typ
 
 Let’s see the details.
 
-|| (OR)
--------
+## || (OR)
 
 The “OR” operator is represented with two vertical line symbols:
 
@@ -7207,7 +7018,7 @@ In JavaScript, the operator is a little bit trickier and more powerful. But firs
 
 There are four possible logical combinations:
 
-`js run alert( true || true );   // true alert( false || true );  // true alert( true || false );  // true alert( false || false ); // false`
+`js run alert( true || true ); // true alert( false || true ); // true alert( true || false ); // true alert( false || false ); // false`
 
 As we can see, the result is always `true` except for the case when both operands are `false`.
 
@@ -7215,15 +7026,15 @@ If an operand is not a boolean, it’s converted to a boolean for the evaluation
 
 For instance, the number `1` is treated as `true`, the number `0` as `false`:
 
-`js run if (1 || 0) { // works just like if( true || false )   alert( 'truthy!' ); }`
+`js run if (1 || 0) { // works just like if( true || false ) alert( 'truthy!' ); }`
 
-Most of the time, OR `||` is used in an `if` statement to test if *any* of the given conditions is `true`.
+Most of the time, OR `||` is used in an `if` statement to test if _any_ of the given conditions is `true`.
 
 For example:
 
 \`\`\`js run let hour = 9;
 
-*!* if (hour &lt; 10 || hour &gt; 18) { */!* alert( ‘The office is closed.’ ); } \`\`\`
+_!_ if (hour &lt; 10 || hour &gt; 18) { _/!_ alert( ‘The office is closed.’ ); } \`\`\`
 
 We can pass more conditions:
 
@@ -7231,8 +7042,7 @@ We can pass more conditions:
 
 if (hour &lt; 10 || hour &gt; 18 || isWeekend) { alert( ‘The office is closed.’ ); // it is the weekend } \`\`\`
 
-OR “||” finds the first truthy value \[\#or-finds-the-first-truthy-value\]
---------------------------------------------------------------------------
+## OR “||” finds the first truthy value \[\#or-finds-the-first-truthy-value\]
 
 The logic described above is somewhat classical. Now, let’s bring in the “extra” features of JavaScript.
 
@@ -7244,9 +7054,9 @@ Given multiple OR’ed values:
 
 The OR `||` operator does the following:
 
--   Evaluates operands from left to right.
--   For each operand, converts it to boolean. If the result is `true`, stops and returns the original value of that operand.
--   If all operands have been evaluated (i.e. all were `false`), returns the last operand.
+- Evaluates operands from left to right.
+- For each operand, converts it to boolean. If the result is `true`, stops and returns the original value of that operand.
+- If all operands have been evaluated (i.e. all were `false`), returns the last operand.
 
 A value is returned in its original form, without the conversion.
 
@@ -7270,7 +7080,7 @@ This leads to some interesting usage compared to a “pure, classical, boolean-o
 
     \`\`\`js run let firstName = "“; let lastName =”“; let nickName =”SuperCoder";
 
-    *!* alert( firstName || lastName || nickName || “Anonymous”); // SuperCoder */!* \`\`\`
+    _!_ alert( firstName || lastName || nickName || “Anonymous”); // SuperCoder _/!_ \`\`\`
 
     If all variables were falsy, `"Anonymous"` would show up.
 
@@ -7284,14 +7094,13 @@ This leads to some interesting usage compared to a “pure, classical, boolean-o
 
     In the example below, only the second message is printed:
 
-    `js run no-beautify  *!*true*/!* || alert("not printed");  *!*false*/!* || alert("printed");`
+    `js run no-beautify *!*true*/!* || alert("not printed"); *!*false*/!* || alert("printed");`
 
     In the first line, the OR `||` operator stops the evaluation immediately upon seeing `true`, so the `alert` isn’t run.
 
     Sometimes, people use this feature to execute commands only if the condition on the left part is falsy.
 
-&& (AND)
---------
+## && (AND)
 
 The AND operator is represented with two ampersands `&&`:
 
@@ -7299,7 +7108,7 @@ The AND operator is represented with two ampersands `&&`:
 
 In classical programming, AND returns `true` if both operands are truthy and `false` otherwise:
 
-`js run alert( true && true );   // true alert( false && true );  // false alert( true && false );  // false alert( false && false ); // false`
+`js run alert( true && true ); // true alert( false && true ); // false alert( true && false ); // false alert( false && false ); // false`
 
 An example with `if`:
 
@@ -7309,10 +7118,9 @@ if (hour == 12 && minute == 30) { alert( ‘The time is 12:30’ ); } \`\`\`
 
 Just as with OR, any value is allowed as an operand of AND:
 
-`js run if (1 && 0) { // evaluated as true && false   alert( "won't work, because the result is falsy" ); }`
+`js run if (1 && 0) { // evaluated as true && false alert( "won't work, because the result is falsy" ); }`
 
-AND “&&” finds the first falsy value
-------------------------------------
+## AND “&&” finds the first falsy value
 
 Given multiple AND’ed values:
 
@@ -7320,13 +7128,13 @@ Given multiple AND’ed values:
 
 The AND `&&` operator does the following:
 
--   Evaluates operands from left to right.
--   For each operand, converts it to a boolean. If the result is `false`, stops and returns the original value of that operand.
--   If all operands have been evaluated (i.e. all were truthy), returns the last operand.
+- Evaluates operands from left to right.
+- For each operand, converts it to a boolean. If the result is `false`, stops and returns the original value of that operand.
+- If all operands have been evaluated (i.e. all were truthy), returns the last operand.
 
 In other words, AND returns the first falsy value or the last value if none were found.
 
-The rules above are similar to OR. The difference is that AND returns the first *falsy* value while OR returns the first *truthy* one.
+The rules above are similar to OR. The difference is that AND returns the first _falsy_ value while OR returns the first _truthy_ one.
 
 Examples:
 
@@ -7364,8 +7172,7 @@ if (x &gt; 0) alert( ‘Greater than zero!’ );
 
     Although, the variant with `&&` appears shorter, `if` is more obvious and tends to be a little bit more readable. So we recommend using every construct for its purpose: use `if` if we want `if` and use `&&` if we want AND.
 
-! (NOT)
--------
+## ! (NOT)
 
 The boolean NOT operator is represented with an exclamation sign `!`.
 
@@ -7398,8 +7205,7 @@ This section describes a set of modern standards for “web components”.
 
 As of now, these standards are under development. Some features are well-supported and integrated into the modern HTML/DOM standard, while others are yet in draft stage. You can try examples in any browser, Google Chrome is probably the most up to date with these features. Guess, that’s because Google fellows are behind many of the related specifications.
 
-What’s common between…
-----------------------
+## What’s common between…
 
 The whole component idea is nothing new. It’s used in many frameworks and elsewhere.
 
@@ -7421,8 +7227,7 @@ How such complex devices are created?
 
 Which principles we could borrow to make our development same-level reliable and scalable? Or, at least, close to it.
 
-Component architecture
-----------------------
+## Component architecture
 
 The well known rule for developing complex software is: don’t make complex software.
 
@@ -7456,15 +7261,14 @@ There exist many frameworks and development methodologies to build them, each wi
 
 “Web components” provide built-in browser capabilities for that, so we don’t have to emulate them any more.
 
--   [Custom elements](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements) – to define custom HTML elements.
--   [Shadow DOM](https://dom.spec.whatwg.org/#shadow-trees) – to create an internal DOM for the component, hidden from the others.
--   [CSS Scoping](https://drafts.csswg.org/css-scoping/) – to declare styles that only apply inside the Shadow DOM of the component.
--   [Event retargeting](https://dom.spec.whatwg.org/#retarget) and other minor stuff to make custom components better fit the development.
+- [Custom elements](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements) – to define custom HTML elements.
+- [Shadow DOM](https://dom.spec.whatwg.org/#shadow-trees) – to create an internal DOM for the component, hidden from the others.
+- [CSS Scoping](https://drafts.csswg.org/css-scoping/) – to declare styles that only apply inside the Shadow DOM of the component.
+- [Event retargeting](https://dom.spec.whatwg.org/#retarget) and other minor stuff to make custom components better fit the development.
 
 In the next chapter we’ll go into details of “Custom Elements” – the fundamental and well-supported feature of web components, good on its own.
 
-Custom elements
-===============
+# Custom elements
 
 We can create custom HTML elements, described by our class, with its own methods and properties, events and so on.
 
@@ -7530,8 +7334,7 @@ Now for any HTML elements with tag `<my-element>`, an instance of `MyElement` is
 
 That’s to ensure that there are no name conflicts between built-in and custom HTML elements. \`\`\`
 
-Example: “time-formatted”
--------------------------
+## Example: “time-formatted”
 
 For example, there already exists `<time>` element in HTML, for date/time. But it doesn’t do any formatting by itself.
 
@@ -7539,13 +7342,13 @@ Let’s create `<time-formatted>` element that displays the time in a nice, lang
 
 \`\`\`html run height=50 autorun=“no-epub”
 
-*!* &lt;time-formatted datetime=“2019-12-01” */!* year=“numeric” month=“long” day=“numeric” hour=“numeric” minute=“numeric” second=“numeric” time-zone-name=“short” &gt; \`\`\`
+_!_ &lt;time-formatted datetime=“2019-12-01” _/!_ year=“numeric” month=“long” day=“numeric” hour=“numeric” minute=“numeric” second=“numeric” time-zone-name=“short” &gt; \`\`\`
 
 1.  The class has only one method `connectedCallback()` – the browser calls it when `<time-formatted>` element is added to page (or when HTML parser detects it), and it uses the built-in [Intl.DateTimeFormat](mdn:/JavaScript/Reference/Global_Objects/DateTimeFormat) data formatter, well-supported across the browsers, to show a nicely formatted time.
 2.  We need to register our new element by `customElements.define(tag, class)`.
 3.  And then we can use it everywhere.
 
-\`\``smart header="Custom elements upgrade" If the browser encounters any``elements before`customElements.define\`, that’s not an error. But the element is yet unknown, just like any non-standard tag.
+\`\`` smart header="Custom elements upgrade" If the browser encounters any``elements before `customElements.define\`, that’s not an error. But the element is yet unknown, just like any non-standard tag.
 
 Such “undefined” elements can be styled with CSS selector `:not(:defined)`.
 
@@ -7563,8 +7366,7 @@ Besides, if you think about it, that’s better performance-wise – to delay th
 
 The `connectedCallback` triggers when the element is added to the document. Not just appended to another element as a child, but actually becomes a part of the page. So we can build detached DOM, create elements and prepare them for later use. They will only be actually rendered when they make it into the page. \`\`\`
 
-Observing attributes
---------------------
+## Observing attributes
 
 In the current implementation of `<time-formatted>`, after the element is rendered, further attribute changes don’t have any effect. That’s strange for an HTML element. Usually, when we change an attribute, like `a.href`, we expect the change to be immediately visible. So let’s fix this.
 
@@ -7582,8 +7384,7 @@ Here’s a new `<time-formatted>`, that auto-updates when attributes change:
 4.  …and re-renders the element.
 5.  At the end, we can easily make a live timer.
 
-Rendering order
----------------
+## Rendering order
 
 When HTML parser builds the DOM, elements are processed one after another, parents before children. E.g. if we have `<outer><inner></inner></outer>`, then `<outer>` element is created and connected to DOM first, and then `<inner>`.
 
@@ -7593,7 +7394,7 @@ For example, if a custom element tries to access `innerHTML` in `connectedCallba
 
 \`\`\`html run height=40
 
-*!* John */!* \`\`\`
+_!_ John _/!_ \`\`\`
 
 If you run it, the `alert` is empty.
 
@@ -7607,7 +7408,7 @@ This works:
 
 \`\`\`html run height=40
 
-*!* John */!* \`\`\`
+_!_ John _/!_ \`\`\`
 
 Now the `alert` in line `(*)` shows “John”, as we run it asynchronously, after the HTML parsing is complete. We can process children if needed and finish the initialization.
 
@@ -7617,9 +7418,9 @@ So the outer element finishes the initialization before the inner one.
 
 Let’s demonstrate that on example:
 
-\`\``html run height=0 <script> customElements.define('user-info', class extends HTMLElement {   connectedCallback() {     alert(`<span class="math inline">${this.id} connected.\`); setTimeout(() =&gt; alert(\`$</span>{this.id} initialized.\`)); } });
+\`\``html run height=0 <script> customElements.define('user-info', class extends HTMLElement { connectedCallback() { alert(`<span class="math inline">${this.id} connected.\`); setTimeout(() =&gt; alert(\`$</span>{this.id} initialized.\`)); } });
 
-*!* */!* \`\`\`
+_!_ _/!_ \`\`\`
 
 Output order:
 
@@ -7632,8 +7433,7 @@ We can clearly see that the outer element finishes initialization `(3)` before t
 
 There’s no built-in callback that triggers after nested elements are ready. If needed, we can implement such thing on our own. For instance, inner elements can dispatch events like `initialized`, and outer ones can listen and react on them.
 
-Customized built-in elements
-----------------------------
+## Customized built-in elements
 
 New elements that we create, such as `<time-formatted>`, don’t have any associated semantics. They are unknown to search engines, and accessibility devices can’t handle them.
 
@@ -7647,30 +7447,28 @@ For example, buttons are instances of `HTMLButtonElement`, let’s build upon it
 
         class HelloButton extends HTMLButtonElement { /* custom element methods */ }
 
-2.  Provide the third argument to `customElements.define`, that specifies the tag: `js  customElements.define('hello-button', HelloButton, *!*{extends: 'button'}*/!*);`
+2.  Provide the third argument to `customElements.define`, that specifies the tag: `js customElements.define('hello-button', HelloButton, *!*{extends: 'button'}*/!*);`
 
     There may be different tags that share the same DOM-class, that’s why specifying `extends` is needed.
 
-3.  At the end, to use our custom element, insert a regular `<button>` tag, but add `is="hello-button"` to it: `html  <button is="hello-button">...</button>`
+3.  At the end, to use our custom element, insert a regular `<button>` tag, but add `is="hello-button"` to it: `html <button is="hello-button">...</button>`
 
 Here’s a full example:
 
 \`\`\`html run autorun=“no-epub”
 
-*!* Click me */!*
+_!_ Click me _/!_
 
-*!* Disabled */!* \`\`\`
+_!_ Disabled _/!_ \`\`\`
 
 Our new button extends the built-in one. So it keeps the same styles and standard features like `disabled` attribute.
 
-References
-----------
+## References
 
--   HTML Living Standard: <a href="https://html.spec.whatwg.org/#custom-elements" class="uri">https://html.spec.whatwg.org/#custom-elements</a>.
--   Compatiblity: <a href="https://caniuse.com/#feat=custom-elementsv1" class="uri">https://caniuse.com/#feat=custom-elementsv1</a>.
+- HTML Living Standard: <a href="https://html.spec.whatwg.org/#custom-elements" class="uri">https://html.spec.whatwg.org/#custom-elements</a>.
+- Compatiblity: <a href="https://caniuse.com/#feat=custom-elementsv1" class="uri">https://caniuse.com/#feat=custom-elementsv1</a>.
 
-Summary
--------
+## Summary
 
 Custom elements can be of two types:
 
@@ -7691,14 +7489,13 @@ Custom elements can be of two types:
 
 2.  “Customized built-in elements” – extensions of existing elements.
 
-    Requires one more `.define` argument, and `is="..."` in HTML: `js  class MyButton extends HTMLButtonElement { /*...*/ }  customElements.define('my-button', MyElement, {extends: 'button'});  /* <button is="my-button"> */`
+    Requires one more `.define` argument, and `is="..."` in HTML: `js class MyButton extends HTMLButtonElement { /*...*/ } customElements.define('my-button', MyElement, {extends: 'button'}); /* <button is="my-button"> */`
 
 Custom elements are well-supported among browsers. There’s a polyfill <a href="https://github.com/webcomponents/polyfills/tree/master/packages/webcomponentsjs" class="uri">https://github.com/webcomponents/polyfills/tree/master/packages/webcomponentsjs</a>. \# Shadow DOM
 
 Shadow DOM serves for encapsulation. It allows a component to have its very own “shadow” DOM tree, that can’t be accidentally accessed from the main document, may have local style rules, and more.
 
-Built-in shadow DOM
--------------------
+## Built-in shadow DOM
 
 Did you ever think how complex browser controls are created and styled?
 
@@ -7724,8 +7521,7 @@ Once again, `pseudo` is a non-standard attribute. Chronologically, browsers firs
 
 Further on, we’ll use the modern shadow DOM standard, covered by [DOM spec](https://dom.spec.whatwg.org/#shadow-trees) and other related specifications.
 
-Shadow tree
------------
+## Shadow tree
 
 A DOM element can have two types of DOM subtrees:
 
@@ -7738,7 +7534,7 @@ Shadow tree can be used in Custom Elements to hide component internals and apply
 
 For example, this `<show-hello>` element hides its internal DOM in shadow tree:
 
-\`\``html run autorun height=60 <script> customElements.define('show-hello', class extends HTMLElement {   connectedCallback() {     const shadow = this.attachShadow({mode: 'open'});     shadow.innerHTML =`
+\`\``html run autorun height=60 <script> customElements.define('show-hello', class extends HTMLElement { connectedCallback() { const shadow = this.attachShadow({mode: 'open'}); shadow.innerHTML =`
 
 Hello, ${this.getAttribute(‘name’)}
 
@@ -7757,11 +7553,11 @@ There are two limitations: 1. We can create only one shadow root per element. 2.
 
 The `mode` option sets the encapsulation level. It must have any of two values: - `"open"` – the shadow root is available as `elem.shadowRoot`.
 
-    Any code is able to access the shadow tree of `elem`.   
+    Any code is able to access the shadow tree of `elem`.
 
--   `"closed"` – `elem.shadowRoot` is always `null`.
+- `"closed"` – `elem.shadowRoot` is always `null`.
 
-    We can only access the shadow DOM by the reference returned by `attachShadow` (and probably hidden inside a class). Browser-native shadow trees, such as `<input type="range">`, are closed. There’s no way to access them.
+  We can only access the shadow DOM by the reference returned by `attachShadow` (and probably hidden inside a class). Browser-native shadow trees, such as `<input type="range">`, are closed. There’s no way to access them.
 
 The [shadow root](https://dom.spec.whatwg.org/#shadowroot), returned by `attachShadow`, is like an element: we can use `innerHTML` or DOM methods, such as `append`, to populate it.
 
@@ -7770,8 +7566,7 @@ The element with a shadow root is called a “shadow tree host”, and is availa
     // assuming {mode: "open"}, otherwise elem.shadowRoot is null
     alert(elem.shadowRoot.host === elem); // true
 
-Encapsulation
--------------
+## Encapsulation
 
 Shadow DOM is strongly delimited from the main document:
 
@@ -7788,15 +7583,13 @@ For example:
 2.  …But the style from the inside works.
 3.  To get elements in shadow tree, we must query from inside the tree.
 
-References
-----------
+## References
 
--   DOM: <a href="https://dom.spec.whatwg.org/#shadow-trees" class="uri">https://dom.spec.whatwg.org/#shadow-trees</a>
--   Compatibility: <a href="https://caniuse.com/#feat=shadowdomv1" class="uri">https://caniuse.com/#feat=shadowdomv1</a>
--   Shadow DOM is mentioned in many other specifications, e.g. [DOM Parsing](https://w3c.github.io/DOM-Parsing/#the-innerhtml-mixin) specifies that shadow root has `innerHTML`.
+- DOM: <a href="https://dom.spec.whatwg.org/#shadow-trees" class="uri">https://dom.spec.whatwg.org/#shadow-trees</a>
+- Compatibility: <a href="https://caniuse.com/#feat=shadowdomv1" class="uri">https://caniuse.com/#feat=shadowdomv1</a>
+- Shadow DOM is mentioned in many other specifications, e.g. [DOM Parsing](https://w3c.github.io/DOM-Parsing/#the-innerhtml-mixin) specifies that shadow root has `innerHTML`.
 
-Summary
--------
+## Summary
 
 Shadow DOM is a way to create a component-local DOM.
 
@@ -7807,8 +7600,7 @@ Shadow DOM elements: - Have their own ids space, - Invisible to JavaScript selec
 
 Shadow DOM, if exists, is rendered by the browser instead of so-called “light DOM” (regular children). In the chapter <a href="info:slots-composition" class="uri">info:slots-composition</a> we’ll see how to compose them.
 
-Template element
-================
+# Template element
 
 A built-in `<template>` element serves as a storage for HTML markup templates. The browser ignores it contents, only checks for syntax validity, but we can access and use it in JavaScript, to create other elements.
 
@@ -7841,8 +7633,7 @@ The browser considers `<template>` content “out of the document”: styles are
 
 The content becomes live (styles apply, scripts run etc) when we insert it into the document.
 
-Inserting template
-------------------
+## Inserting template
 
 The template content is available in its `content` property as a [DocumentFragment](info:modifying-document#document-fragment) – a special type of DOM node.
 
@@ -7874,20 +7665,19 @@ They form the shadow DOM:
         <p id="message"></p>
     </div>
 
-Summary
--------
+## Summary
 
 To summarize:
 
--   `<template>` content can be any syntactically correct HTML.
--   `<template>` content is considered “out of the document”, so it doesn’t affect anything.
--   We can access `template.content` from JavaScript, clone it to reuse in a new component.
+- `<template>` content can be any syntactically correct HTML.
+- `<template>` content is considered “out of the document”, so it doesn’t affect anything.
+- We can access `template.content` from JavaScript, clone it to reuse in a new component.
 
 The `<template>` tag is quite unique, because:
 
--   The browser checks HTML syntax inside it (as opposed to using a template string inside a script).
--   …But still allows use of any top-level HTML tags, even those that don’t make sense without proper wrappers (e.g. `<tr>`).
--   The content becomes interactive: scripts run, `<video autoplay>` plays etc, when inserted into the document.
+- The browser checks HTML syntax inside it (as opposed to using a template string inside a script).
+- …But still allows use of any top-level HTML tags, even those that don’t make sense without proper wrappers (e.g. `<tr>`).
+- The content becomes interactive: scripts run, `<video autoplay>` plays etc, when inserted into the document.
 
 The `<template>` element does not feature any iteration mechanisms, data binding or variable substitutions, but we can implement those on top of it. \# Shadow DOM slots, composition
 
@@ -7912,26 +7702,25 @@ We could try to analyze the element content and dynamically copy-rearrange DOM n
 
 Luckily, we don’t have to. Shadow DOM supports `<slot>` elements, that are automatically filled by the content from light DOM.
 
-Named slots
------------
+## Named slots
 
 Let’s see how slots work on a simple example.
 
 Here, `<user-card>` shadow DOM provides two slots, filled from light DOM:
 
-\`\``html run autorun="no-epub" untrusted height=80 <script> customElements.define('user-card', class extends HTMLElement {   connectedCallback() {     this.attachShadow({mode: 'open'});     this.shadowRoot.innerHTML =`
+\`\``html run autorun="no-epub" untrusted height=80 <script> customElements.define('user-card', class extends HTMLElement { connectedCallback() { this.attachShadow({mode: 'open'}); this.shadowRoot.innerHTML =`
 
-Name: *!* */!*
+Name: _!_ _/!_
 
       <div>Birthday:
 
-*!* */!*
+_!_ _/!_
 
     `;
 
 } });
 
-&lt;span *!*slot=“username”*/!*&gt;John Smith &lt;span *!*slot=“birthday”*/!*&gt;01.01.2001 \`\`\`
+&lt;span *!*slot=“username”_/!_&gt;John Smith &lt;span *!*slot=“birthday”_/!_&gt;01.01.2001 \`\`\`
 
 In the shadow DOM, `<slot name="X">` defines an “insertion point”, a place where elements with `slot="X"` are rendered.
 
@@ -8021,8 +7810,7 @@ Gives this flattened DOM with two elements in `<slot name="username">`:
         </div>
     </user-card>
 
-Slot fallback content
----------------------
+## Slot fallback content
 
 If we put something inside a `<slot>`, it becomes the fallback, “default” content. The browser shows it if there’s no corresponding filler in light DOM.
 
@@ -8032,14 +7820,13 @@ For example, in this piece of shadow DOM, `Anonymous` renders if there’s no `s
       <slot name="username">Anonymous</slot>
     </div>
 
-Default slot: first unnamed
----------------------------
+## Default slot: first unnamed
 
 The first `<slot>` in shadow DOM that doesn’t have a name is a “default” slot. It gets all nodes from the light DOM that aren’t slotted elsewhere.
 
 For example, let’s add the default slot to our `<user-card>` that shows all unslotted information about the user:
 
-\`\``html run autorun="no-epub" untrusted height=140 <script> customElements.define('user-card', class extends HTMLElement {   connectedCallback() {     this.attachShadow({mode: 'open'});     this.shadowRoot.innerHTML =`
+\`\``html run autorun="no-epub" untrusted height=140 <script> customElements.define('user-card', class extends HTMLElement { connectedCallback() { this.attachShadow({mode: 'open'}); this.shadowRoot.innerHTML =`
 
 Name:
 
@@ -8049,21 +7836,21 @@ Name:
     <fieldset>
       <legend>Other information</legend>
 
-*!* */!*
+_!_ _/!_
 
     `;
 
 } });
 
-*!*
+_!_
 
 I like to swim.
 
-*/!* <span slot="username">John Smith</span> <span slot="birthday">01.01.2001</span> *!*
+_/!_ <span slot="username">John Smith</span> <span slot="birthday">01.01.2001</span> _!_
 
 …And play volleyball too!
 
-*/!* \`\`\`
+_/!_ \`\`\`
 
 All the unslotted light DOM content gets into the “Other information” fieldset.
 
@@ -8094,8 +7881,7 @@ The flattened DOM looks like this:
         </fieldset>
     </user-card>
 
-Menu example
-------------
+## Menu example
 
 Now let’s back to `<custom-menu>`, mentioned at the beginning of the chapter.
 
@@ -8167,8 +7953,7 @@ Here’s the full demo:
 
 Of course, we can add more functionality to it: events, methods and so on.
 
-Updating slots
---------------
+## Updating slots
 
 What if the outer code wants to add/remove menu items dynamically?
 
@@ -8200,16 +7985,15 @@ Please note: there’s no `slotchange` event after 2 seconds, when the content o
 
 If we’d like to track internal modifications of light DOM from JavaScript, that’s also possible using a more generic mechanism: [MutationObserver](info:mutation-observer).
 
-Slot API
---------
+## Slot API
 
 Finally, let’s mention the slot-related JavaScript methods.
 
 As we’ve seen before, JavaScript looks at the “real” DOM, without flattening. But, if the shadow tree has `{mode: 'open'}`, then we can figure out which elements assigned to a slot and, vise-versa, the slot by the element inside it:
 
--   `node.assignedSlot` – returns the `<slot>` element that the `node` is assigned to.
--   `slot.assignedNodes({flatten: true/false})` – DOM nodes, assigned to the slot. The `flatten` option is `false` by default. If explicitly set to `true`, then it looks more deeply into the flattened DOM, returning nested slots in case of nested components and the fallback content if no node assigned.
--   `slot.assignedElements({flatten: true/false})` – DOM elements, assigned to the slot (same as above, but only element nodes).
+- `node.assignedSlot` – returns the `<slot>` element that the `node` is assigned to.
+- `slot.assignedNodes({flatten: true/false})` – DOM nodes, assigned to the slot. The `flatten` option is `false` by default. If explicitly set to `true`, then it looks more deeply into the flattened DOM, returning nested slots in case of nested components and the fallback content if no node assigned.
+- `slot.assignedElements({flatten: true/false})` – DOM elements, assigned to the slot (same as above, but only element nodes).
 
 These methods are useful when we need not just show the slotted content, but also track it in JavaScript.
 
@@ -8223,17 +8007,16 @@ Fruit Toast
 
 \`\`\`
 
-Summary
--------
+## Summary
 
 Usually, if an element has shadow DOM, then its light DOM is not displayed. Slots allow to show elements from light DOM in specified places of shadow DOM.
 
 There are two kinds of slots:
 
--   Named slots: `<slot name="X">...</slot>` – gets light children with `slot="X"`.
--   Default slot: the first `<slot>` without a name (subsequent unnamed slots are ignored) – gets unslotted light children.
--   If there are many elements for the same slot – they are appended one after another.
--   The content of `<slot>` element is used as a fallback. It’s shown if there are no light children for the slot.
+- Named slots: `<slot name="X">...</slot>` – gets light children with `slot="X"`.
+- Default slot: the first `<slot>` without a name (subsequent unnamed slots are ignored) – gets unslotted light children.
+- If there are many elements for the same slot – they are appended one after another.
+- The content of `<slot>` element is used as a fallback. It’s shown if there are no light children for the slot.
 
 The process of rendering slotted elements inside their slots is called “composition”. The result is called a “flattened DOM”.
 
@@ -8251,8 +8034,7 @@ Shadow DOM may include both `<style>` and `<link rel="stylesheet" href="…">` t
 
 As a general rule, local styles work only inside the shadow tree, and document styles work outside of it. But there are few exceptions.
 
-:host
------
+## :host
 
 The `:host` selector allows to select the shadow host (the element containing the shadow tree).
 
@@ -8264,8 +8046,7 @@ That’s exactly what `:host` does:
 
 Hello! \`\`\`
 
-Cascading
----------
+## Cascading
 
 The shadow host (`<custom-dialog>` itself) resides in the light DOM, so it’s affected by document CSS rules.
 
@@ -8285,8 +8066,7 @@ It’s very convenient, as we can setup “default” component styles in its `:
 
 The exception is when a local property is labelled `!important`, for such properties, local styles take precedence.
 
-:host(selector)
----------------
+## :host(selector)
 
 Same as `:host`, but applied only if the shadow host matches the `selector`.
 
@@ -8300,8 +8080,7 @@ Not centered. \`\`\`
 
 Now the additional centering styles are only applied to the first dialog: `<custom-dialog centered>`.
 
-:host-context(selector)
------------------------
+## :host-context(selector)
 
 Same as `:host`, but applied only if the shadow host or any of its ancestors in the outer document matches the `selector`.
 
@@ -8316,8 +8095,7 @@ E.g. `:host-context(.dark-theme)` matches only if there’s `dark-theme` class o
 
 To summarize, we can use `:host`-family of selectors to style the main element of the component, depending on the context. These styles (unless `!important`) can be overridden by the document.
 
-Styling slotted content
------------------------
+## Styling slotted content
 
 Now let’s consider the situation with slots.
 
@@ -8368,8 +8146,7 @@ Please note, `::slotted` selector can’t descend any further into the slot. The
 
 Also, `::slotted` can only be used in CSS. We can’t use it in `querySelector`.
 
-CSS hooks with custom properties
---------------------------------
+## CSS hooks with custom properties
 
 How do we style internal elements of a component from the main document?
 
@@ -8408,8 +8185,7 @@ Birthday:
 
 <span slot="username">John Smith</span> <span slot="birthday">01.01.2001</span> \`\`\`
 
-Summary
--------
+## Summary
 
 Shadow DOM can include styles, such as `<style>` or `<link rel="stylesheet">`.
 
@@ -8429,7 +8205,7 @@ The idea behind shadow tree is to encapsulate internal implementation details of
 
 Let’s say, a click event happens inside a shadow DOM of `<user-card>` component. But scripts in the main document have no idea about the shadow DOM internals, especially if the component comes from a 3rd-party library.
 
-So, to keep the details encapsulated, the browser *retargets* the event.
+So, to keep the details encapsulated, the browser _retargets_ the event.
 
 **Events that happen in shadow DOM have the host element as the target, when caught outside of the component.**
 
@@ -8450,7 +8226,7 @@ Event retargeting is a great thing to have, because the outer document doesn’t
 
 For example, if a user clicks on `<span slot="username">` in the example below, the event target is exactly this `span` element, for both shadow and light handlers:
 
-\`\`\`html run autorun=“no-epub” untrusted height=60 *!* <span slot="username">John Smith</span> */!*
+\`\`\`html run autorun=“no-epub” untrusted height=60 _!_ <span slot="username">John Smith</span> _/!_
 
 \`\`\`
 
@@ -8458,8 +8234,7 @@ If a click happens on `"John Smith"`, for both inner and outer handlers the targ
 
 On the other hand, if the click occurs on an element originating from shadow DOM, e.g. on `<b>Name</b>`, then, as it bubbles out of the shadow DOM, its `event.target` is reset to `<user-card>`.
 
-Bubbling, event.composedPath()
-------------------------------
+## Bubbling, event.composedPath()
 
 For purposes of event bubbling, flattened DOM is used.
 
@@ -8485,8 +8260,7 @@ So, for a click on `<span slot="username">`, a call to `event.composedPath()` re
 
 That’s the similar principle as for other methods that work with shadow DOM. Internals of closed trees are completely hidden. \`\`\`
 
-event.composed
---------------
+## event.composed
 
 Most events successfully bubble through a shadow DOM boundary. There are few events that do not.
 
@@ -8494,25 +8268,24 @@ This is governed by the `composed` event object property. If it’s `true`, then
 
 If you take a look at [UI Events specification](https://www.w3.org/TR/uievents), most events have `composed: true`:
 
--   `blur`, `focus`, `focusin`, `focusout`,
--   `click`, `dblclick`,
--   `mousedown`, `mouseup` `mousemove`, `mouseout`, `mouseover`,
--   `wheel`,
--   `beforeinput`, `input`, `keydown`, `keyup`.
+- `blur`, `focus`, `focusin`, `focusout`,
+- `click`, `dblclick`,
+- `mousedown`, `mouseup` `mousemove`, `mouseout`, `mouseover`,
+- `wheel`,
+- `beforeinput`, `input`, `keydown`, `keyup`.
 
 All touch events and pointer events also have `composed: true`.
 
 There are some events that have `composed: false` though:
 
--   `mouseenter`, `mouseleave` (they do not bubble at all),
--   `load`, `unload`, `abort`, `error`,
--   `select`,
--   `slotchange`.
+- `mouseenter`, `mouseleave` (they do not bubble at all),
+- `load`, `unload`, `abort`, `error`,
+- `select`,
+- `slotchange`.
 
 These events can be caught only on elements within the same DOM, where the event target resides.
 
-Custom events
--------------
+## Custom events
 
 When we dispatch custom events, we need to set both `bubbles` and `composed` properties to `true` for it to bubble up and out of the component.
 
@@ -8522,24 +8295,23 @@ For example, here we create `div#inner` in the shadow DOM of `div#outer` and tri
 
 \`\`\`
 
-Summary
--------
+## Summary
 
 Events only cross shadow DOM boundaries if their `composed` flag is set to `true`.
 
 Built-in events mostly have `composed: true`, as described in the relevant specifications:
 
--   UI Events <a href="https://www.w3.org/TR/uievents" class="uri">https://www.w3.org/TR/uievents</a>.
--   Touch Events <a href="https://w3c.github.io/touch-events" class="uri">https://w3c.github.io/touch-events</a>.
--   Pointer Events <a href="https://www.w3.org/TR/pointerevents" class="uri">https://www.w3.org/TR/pointerevents</a>.
--   …And so on.
+- UI Events <a href="https://www.w3.org/TR/uievents" class="uri">https://www.w3.org/TR/uievents</a>.
+- Touch Events <a href="https://w3c.github.io/touch-events" class="uri">https://w3c.github.io/touch-events</a>.
+- Pointer Events <a href="https://www.w3.org/TR/pointerevents" class="uri">https://www.w3.org/TR/pointerevents</a>.
+- …And so on.
 
 Some built-in events that have `composed: false`:
 
--   `mouseenter`, `mouseleave` (also do not bubble),
--   `load`, `unload`, `abort`, `error`,
--   `select`,
--   `slotchange`.
+- `mouseenter`, `mouseleave` (also do not bubble),
+- `load`, `unload`, `abort`, `error`,
+- `select`,
+- `slotchange`.
 
 These events can be caught only on elements within the same DOM.
 
@@ -8551,10 +8323,9 @@ Regular expressions are patterns that provide a powerful way to search and repla
 
 In JavaScript, they are available via the [RegExp](mdn:js/RegExp) object, as well as being integrated in methods of strings.
 
-Regular Expressions
--------------------
+## Regular Expressions
 
-A regular expression (also “regexp”, or just “reg”) consists of a *pattern* and optional *flags*.
+A regular expression (also “regexp”, or just “reg”) consists of a _pattern_ and optional _flags_.
 
 There are two syntaxes that can be used to create a regular expression object.
 
@@ -8579,8 +8350,7 @@ Slashes are used when we know the regular expression at the code writing time �
 
     let regexp = new RegExp(`<${tag}>`); // same as /<h2>/ if answered "h2" in the prompt above
 
-Flags
------
+## Flags
 
 Regular expressions may have flags that affect the search.
 
@@ -8606,12 +8376,11 @@ Enables full Unicode support. The flag enables correct processing of surrogate p
 
 \`\`\`smart header=“Colors” From here on the color scheme is:
 
--   regexp – `pattern:red`
--   string (where we search) – `subject:blue`
--   result – `match:green` \`\`\`
+- regexp – `pattern:red`
+- string (where we search) – `subject:blue`
+- result – `match:green` \`\`\`
 
-Searching: str.match
---------------------
+## Searching: str.match
 
 As mentioned previously, regular expressions are integrated with string methods.
 
@@ -8641,12 +8410,11 @@ It has 3 working modes:
 
     If we’d like the result to always be an array, we can write it this way:
 
-    \`\`\`js run let matches = “JavaScript”.match(/HTML/)*!* || \[\]*/!*;
+    \`\`\`js run let matches = “JavaScript”.match(/HTML/)_!_ || \[\]_/!_;
 
     if (!matches.length) { alert(“No matches”); // now it works } \`\`\`
 
-Replacing: str.replace
-----------------------
+## Replacing: str.replace
 
 The method `str.replace(regexp, replacement)` replaces matches found using `regexp` in string `str` with `replacement` (all matches if there’s flag `pattern:g`, otherwise, only the first one).
 
@@ -8664,8 +8432,7 @@ An example with `pattern:$&`:
 
 `js run alert( "I love HTML".replace(/HTML/, "$& and JavaScript") ); // I love HTML and JavaScript`
 
-Testing: regexp.test
---------------------
+## Testing: regexp.test
 
 The method `regexp.test(str)` looks for at least one match, if found, returns `true`, otherwise `false`.
 
@@ -8677,20 +8444,19 @@ Later in this chapter we’ll study more regular expressions, walk through more 
 
 Full information about the methods is given in the article <a href="info:regexp-methods" class="uri">info:regexp-methods</a>.
 
-Summary
--------
+## Summary
 
--   A regular expression consists of a pattern and optional flags: `pattern:g`, `pattern:i`, `pattern:m`, `pattern:u`, `pattern:s`, `pattern:y`.
--   Without flags and special symbols (that we’ll study later), the search by a regexp is the same as a substring search.
--   The method `str.match(regexp)` looks for matches: all of them if there’s `pattern:g` flag, otherwise, only the first one.
--   The method `str.replace(regexp, replacement)` replaces matches found using `regexp` with `replacement`: all of them if there’s `pattern:g` flag, otherwise only the first one.
--   The method `regexp.test(str)` returns `true` if there’s at least one match, otherwise, it returns `false`. \# Character classes
+- A regular expression consists of a pattern and optional flags: `pattern:g`, `pattern:i`, `pattern:m`, `pattern:u`, `pattern:s`, `pattern:y`.
+- Without flags and special symbols (that we’ll study later), the search by a regexp is the same as a substring search.
+- The method `str.match(regexp)` looks for matches: all of them if there’s `pattern:g` flag, otherwise, only the first one.
+- The method `str.replace(regexp, replacement)` replaces matches found using `regexp` with `replacement`: all of them if there’s `pattern:g` flag, otherwise only the first one.
+- The method `regexp.test(str)` returns `true` if there’s at least one match, otherwise, it returns `false`. \# Character classes
 
 Consider a practical task – we have a phone number like `"+7(903)-123-45-67"`, and we need to turn it into pure numbers: `79031234567`.
 
 To do so, we can find and remove anything that’s not a number. Character classes can help with that.
 
-A *character class* is a special notation that matches any symbol from a certain set.
+A _character class_ is a special notation that matches any symbol from a certain set.
 
 For the start, let’s explore the “digit” class. It’s written as `pattern:\d` and corresponds to “any single digit”.
 
@@ -8745,8 +8511,7 @@ The match (each regexp character class has the corresponding result character):
 
 ![](love-html5-classes.svg)
 
-Inverse classes
----------------
+## Inverse classes
 
 For every character class there exists an “inverse class”, denoted with the same letter, but uppercased.
 
@@ -8773,8 +8538,7 @@ An alternative, shorter way is to find non-digits `pattern:\D` and remove them f
 
 alert( str.replace(//g, "") ); // 79031234567 \`\`\`
 
-A dot is “any character”
-------------------------
+## A dot is “any character”
 
 A dot `pattern:.` is a special character class that matches “any character except a newline”.
 
@@ -8834,18 +8598,17 @@ We can’t add or remove spaces from a regular expression and expect it to work 
 
 In other words, in a regular expression all characters matter, spaces too. \`\`\`\`
 
-Summary
--------
+## Summary
 
 There exist following character classes:
 
--   `pattern:\d` – digits.
--   `pattern:\D` – non-digits.
--   `pattern:\s` – space symbols, tabs, newlines.
--   `pattern:\S` – all but `pattern:\s`.
--   `pattern:\w` – Latin letters, digits, underscore `'_'`.
--   `pattern:\W` – all but `pattern:\w`.
--   `pattern:.` – any character if with the regexp `'s'` flag, otherwise any except a newline `\n`.
+- `pattern:\d` – digits.
+- `pattern:\D` – non-digits.
+- `pattern:\s` – space symbols, tabs, newlines.
+- `pattern:\S` – all but `pattern:\s`.
+- `pattern:\w` – Latin letters, digits, underscore `'_'`.
+- `pattern:\W` – all but `pattern:\w`.
+- `pattern:.` – any character if with the regexp `'s'` flag, otherwise any except a newline `\n`.
 
 …But that’s not all!
 
@@ -8875,8 +8638,7 @@ By default, regular expressions also treat 4-byte “long characters” as a pai
 
 Unlike strings, regular expressions have flag `pattern:u` that fixes such problems. With such flag, a regexp handles 4-byte characters correctly. And also Unicode property search becomes available, we’ll get to it next.
 
-Unicode properties
-------------------
+## Unicode properties
 
 Every character in Unicode has a lot of properties. They describe what “category” the character belongs to, contain miscellaneous information about it.
 
@@ -8894,43 +8656,43 @@ alert( str.match(//gu) ); // A,ბ,ㄱ alert( str.match(//g) ); // null (no matc
 
 Here’s the main character categories and their subcategories:
 
--   Letter `L`:
-    -   lowercase `Ll`
-    -   modifier `Lm`,
-    -   titlecase `Lt`,
-    -   uppercase `Lu`,
-    -   other `Lo`.
--   Number `N`:
-    -   decimal digit `Nd`,
-    -   letter number `Nl`,
-    -   other `No`.
--   Punctuation `P`:
-    -   connector `Pc`,
-    -   dash `Pd`,
-    -   initial quote `Pi`,
-    -   final quote `Pf`,
-    -   open `Ps`,
-    -   close `Pe`,
-    -   other `Po`.
--   Mark `M` (accents etc):
-    -   spacing combining `Mc`,
-    -   enclosing `Me`,
-    -   non-spacing `Mn`.
--   Symbol `S`:
-    -   currency `Sc`,
-    -   modifier `Sk`,
-    -   math `Sm`,
-    -   other `So`.
--   Separator `Z`:
-    -   line `Zl`,
-    -   paragraph `Zp`,
-    -   space `Zs`.
--   Other `C`:
-    -   control `Cc`,
-    -   format `Cf`,
-    -   not assigned `Cn`,
-    -   private use `Co`,
-    -   surrogate `Cs`.
+- Letter `L`:
+  - lowercase `Ll`
+  - modifier `Lm`,
+  - titlecase `Lt`,
+  - uppercase `Lu`,
+  - other `Lo`.
+- Number `N`:
+  - decimal digit `Nd`,
+  - letter number `Nl`,
+  - other `No`.
+- Punctuation `P`:
+  - connector `Pc`,
+  - dash `Pd`,
+  - initial quote `Pi`,
+  - final quote `Pf`,
+  - open `Ps`,
+  - close `Pe`,
+  - other `Po`.
+- Mark `M` (accents etc):
+  - spacing combining `Mc`,
+  - enclosing `Me`,
+  - non-spacing `Mn`.
+- Symbol `S`:
+  - currency `Sc`,
+  - modifier `Sk`,
+  - math `Sm`,
+  - other `So`.
+- Separator `Z`:
+  - line `Zl`,
+  - paragraph `Zp`,
+  - space `Zs`.
+- Other `C`:
+  - control `Cc`,
+  - format `Cf`,
+  - not assigned `Cn`,
+  - private use `Co`,
+  - surrogate `Cs`.
 
 So, e.g. if we need letters in lower case, we can write `pattern:\p{Ll}`, punctuation signs: `pattern:\p{P}` and so on.
 
@@ -8938,10 +8700,10 @@ There are also other derived categories, like: - `Alphabetic` (`Alpha`), include
 
 Unicode supports many different properties, their full list would require a lot of space, so here are the references:
 
--   List all properties by a character: <a href="https://unicode.org/cldr/utility/character.jsp" class="uri">https://unicode.org/cldr/utility/character.jsp</a>.
--   List all characters by a property: <a href="https://unicode.org/cldr/utility/list-unicodeset.jsp" class="uri">https://unicode.org/cldr/utility/list-unicodeset.jsp</a>.
--   Short aliases for properties: <a href="https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt" class="uri">https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt</a>.
--   A full base of Unicode characters in text format, with all properties, is here: <a href="https://www.unicode.org/Public/UCD/latest/ucd/" class="uri">https://www.unicode.org/Public/UCD/latest/ucd/</a>.
+- List all properties by a character: <a href="https://unicode.org/cldr/utility/character.jsp" class="uri">https://unicode.org/cldr/utility/character.jsp</a>.
+- List all characters by a property: <a href="https://unicode.org/cldr/utility/list-unicodeset.jsp" class="uri">https://unicode.org/cldr/utility/list-unicodeset.jsp</a>.
+- Short aliases for properties: <a href="https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt" class="uri">https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt</a>.
+- A full base of Unicode characters in text format, with all properties, is here: <a href="https://www.unicode.org/Public/UCD/latest/ucd/" class="uri">https://www.unicode.org/Public/UCD/latest/ucd/</a>.
 
 ### Example: hexadecimal numbers
 
@@ -8957,7 +8719,7 @@ alert(“number: xAF”.match(regexp)); // xAF \`\`\`
 
 Let’s look for Chinese hieroglyphs.
 
-There’s a Unicode property `Script` (a writing system), that may have a value: `Cyrillic`, `Greek`, `Arabic`, `Han` (Chinese) and so on, [here’s the full list](https://en.wikipedia.org/wiki/Script_(Unicode)).
+There’s a Unicode property `Script` (a writing system), that may have a value: `Cyrillic`, `Greek`, `Arabic`, `Han` (Chinese) and so on, [here’s the full list](<https://en.wikipedia.org/wiki/Script_(Unicode)>).
 
 To look for characters in a given writing system we should use `pattern:Script=<value>`, e.g. for Cyrillic letters: `pattern:\p{sc=Cyrillic}`, for Chinese hieroglyphs: `pattern:\p{sc=Han}`, and so on:
 
@@ -8981,8 +8743,7 @@ alert( str.match(regexp) ); // $2,€1,¥9 \`\`\`
 
 Later, in the article <a href="info:regexp-quantifiers" class="uri">info:regexp-quantifiers</a> we’ll see how to look for numbers that contain many digits.
 
-Summary
--------
+## Summary
 
 Flag `pattern:u` enables the support of Unicode in regular expressions.
 
@@ -9035,10 +8796,9 @@ Let’s use the `??` operator for that:
 
 \`\`\`js run let firstName = null; let lastName = null; let nickName = “Supercoder”;
 
-// shows the first defined value: *!* alert(firstName ?? lastName ?? nickName ?? “Anonymous”); // Supercoder */!* \`\`\`
+// shows the first defined value: _!_ alert(firstName ?? lastName ?? nickName ?? “Anonymous”); // Supercoder _/!_ \`\`\`
 
-Comparison with ||
-------------------
+## Comparison with ||
 
 The OR `||` operator can be used in the same way as `??`, as it was described in the [previous chapter](info:logical-operators#or-finds-the-first-truthy-value).
 
@@ -9046,13 +8806,13 @@ For example, in the code above we could replace `??` with `||` and still get the
 
 \`\`\`js run let firstName = null; let lastName = null; let nickName = “Supercoder”;
 
-// shows the first truthy value: *!* alert(firstName || lastName || nickName || “Anonymous”); // Supercoder */!* \`\`\`
+// shows the first truthy value: _!_ alert(firstName || lastName || nickName || “Anonymous”); // Supercoder _/!_ \`\`\`
 
 Historically, the OR `||` operator was there first. It exists since the beginning of JavaScript, so developers were using it for such purposes for a long time.
 
 On the other hand, the nullish coalescing operator `??` was added to JavaScript only recently, and the reason for that was that people weren’t quite happy with `||`.
 
-The important difference between them is that: - `||` returns the first *truthy* value. - `??` returns the first *defined* value.
+The important difference between them is that: - `||` returns the first _truthy_ value. - `??` returns the first _defined_ value.
 
 In other words, `||` doesn’t distinguish between `false`, `0`, an empty string `""` and `null/undefined`. They are all the same – falsy values. If any of these is the first argument of `||`, then we’ll get the second argument as the result.
 
@@ -9064,15 +8824,14 @@ For example, consider this:
 
 alert(height || 100); // 100 alert(height ?? 100); // 0 \`\`\`
 
--   The `height || 100` checks `height` for being a falsy value, and it’s `0`, falsy indeed.
-    -   so the result of `||` is the second argument, `100`.
--   The `height ?? 100` checks `height` for being `null/undefined`, and it’s not,
-    -   so the result is `height` “as is”, that is `0`.
+- The `height || 100` checks `height` for being a falsy value, and it’s `0`, falsy indeed.
+  - so the result of `||` is the second argument, `100`.
+- The `height ?? 100` checks `height` for being `null/undefined`, and it’s not,
+  - so the result is `height` “as is”, that is `0`.
 
 In practice, the zero height is often a valid value, that shouldn’t be replaced with the default. So `??` does just the right thing.
 
-Precedence
-----------
+## Precedence
 
 The precedence of the `??` operator is about the same as `||`, just a bit lower. It equals `5` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table), while `||` is `6`.
 
@@ -9106,22 +8865,21 @@ The limitation is surely debatable, it was added to the language specification w
 
 Use explicit parentheses to work around it:
 
-\`\`\`js run *!* let x = (1 && 2) ?? 3; // Works */!*
+\`\`\`js run _!_ let x = (1 && 2) ?? 3; // Works _/!_
 
 alert(x); // 2 \`\`\`
 
-Summary
--------
+## Summary
 
--   The nullish coalescing operator `??` provides a short way to choose the first “defined” value from a list.
+- The nullish coalescing operator `??` provides a short way to choose the first “defined” value from a list.
 
-    It’s used to assign default values to variables:
+  It’s used to assign default values to variables:
 
-        // set height=100, if height is null or undefined
-        height = height ?? 100;
+      // set height=100, if height is null or undefined
+      height = height ?? 100;
 
--   The operator `??` has a very low precedence, only a bit higher than `?` and `=`, so consider adding parentheses when using it in an expression.
--   It’s forbidden to use it with `||` or `&&` without explicit parentheses. \# Anchors: string start ^ and end $
+- The operator `??` has a very low precedence, only a bit higher than `?` and `=`, so consider adding parentheses when using it in an expression.
+- It’s forbidden to use it with `||` or `&&` without explicit parentheses. \# Anchors: string start ^ and end $
 
 The caret `pattern:^` and dollar `pattern:$` characters have special meaning in a regexp. They are called “anchors”.
 
@@ -9139,8 +8897,7 @@ Similar to this, we can test if the string ends with `snow` using `pattern:snow$
 
 In these particular cases we could use string methods `startsWith/endsWith` instead. Regular expressions should be used for more complex tests.
 
-Testing for a full match
-------------------------
+## Testing for a full match
 
 Both anchors together `pattern:^...$` are often used to test whether or not a string fully matches the pattern. For instance, to check if the user input is in the right format.
 
@@ -9168,20 +8925,19 @@ It only affects the behavior of `pattern:^` and `pattern:$`.
 
 In the multiline mode they match not only at the beginning and the end of the string, but also at start/end of line.
 
-Searching at line start ^
--------------------------
+## Searching at line start ^
 
 In the example below the text has multiple lines. The pattern `pattern:/^\d/gm` takes a digit from the beginning of each line:
 
 \`\``js run let str =`1st place: Winnie 2nd place: Piglet 3rd place: Eeyore\`;
 
-*!* alert( str.match(/^gm) ); // 1, 2, 3 */!* \`\`\`
+_!_ alert( str.match(/^gm) ); // 1, 2, 3 _/!_ \`\`\`
 
 Without the flag `pattern:m` only the first digit is matched:
 
 \`\``js run let str =`1st place: Winnie 2nd place: Piglet 3rd place: Eeyore\`;
 
-*!* alert( str.match(/^g) ); // 1 */!* \`\`\`
+_!_ alert( str.match(/^g) ); // 1 _/!_ \`\`\`
 
 That’s because by default a caret `pattern:^` only matches at the beginning of the text, and in the multiline mode – at the start of any line.
 
@@ -9189,8 +8945,7 @@ That’s because by default a caret `pattern:^` only matches at the beginning of
 
     And at the text start.
 
-Searching at line end $
------------------------
+## Searching at line end $
 
 The dollar sign `pattern:$` behaves similarly.
 
@@ -9206,8 +8961,7 @@ Without the flag `pattern:m`, the dollar `pattern:$` would only match the end of
 
     And at the text end.
 
-Searching for instead of ^ $
-----------------------------
+## Searching for instead of ^ $
 
 To find a newline, we can use not only anchors `pattern:^` and `pattern:$`, but also the newline character `\n`.
 
@@ -9231,9 +8985,9 @@ When the regexp engine (program module that implements searching for regexps) co
 
 There are three different positions that qualify as word boundaries:
 
--   At string start, if the first string character is a word character `pattern:\w`.
--   Between two characters in the string, where one is a word character `pattern:\w` and the other is not.
--   At string end, if the last string character is a word character `pattern:\w`.
+- At string start, if the first string character is a word character `pattern:\w`.
+- Between two characters in the string, where one is a word character `pattern:\w` and the other is not.
+- At string end, if the last string character is a word character `pattern:\w`.
 
 For instance, regexp `pattern:\bJava\b` will be found in `subject:Hello, Java!`, where `subject:Java` is a standalone word, but not in `subject:Hello, JavaScript!`.
 
@@ -9251,7 +9005,7 @@ So, it matches the pattern `pattern:\bHello\b`, because:
 
 So the pattern `pattern:\bHello\b` would match, but not `pattern:\bHell\b` (because there’s no word boundary after `l`) and not `Java!\b` (because the exclamation sign is not a wordly character `pattern:\w`, so there’s no word boundary after it).
 
-`js run alert( "Hello, Java!".match(/\bHello\b/) ); // Hello alert( "Hello, Java!".match(/\bJava\b/) );  // Java alert( "Hello, Java!".match(/\bHell\b/) );  // null (no match) alert( "Hello, Java!".match(/\bJava!\b/) ); // null (no match)`
+`js run alert( "Hello, Java!".match(/\bHello\b/) ); // Hello alert( "Hello, Java!".match(/\bJava\b/) ); // Java alert( "Hello, Java!".match(/\bHell\b/) ); // null (no match) alert( "Hello, Java!".match(/\bJava!\b/) ); // null (no match)`
 
 We can use `pattern:\b` not only with words, but with digits as well.
 
@@ -9263,8 +9017,7 @@ For example, the pattern `pattern:\b\d\d\b` looks for standalone 2-digit numbers
 
 But `pattern:\w` means a latin letter `a-z` (or a digit or an underscore), so the test doesn’t work for other characters, e.g. cyrillic letters or hieroglyphs. \`\`\`
 
-Escaping, special characters
-============================
+# Escaping, special characters
 
 As we’ve seen, a backslash `pattern:\` is used to denote character classes, e.g. `pattern:\d`. So it’s a special character in regexps (just like in regular strings).
 
@@ -9272,8 +9025,7 @@ There are other special characters as well, that have special meaning in a regex
 
 Don’t try to remember the list – soon we’ll deal with each of them separately and you’ll know them by heart automatically.
 
-Escaping
---------
+## Escaping
 
 Let’s say we want to find literally a dot. Not “any character”, but just a dot.
 
@@ -9291,8 +9043,7 @@ If we’re looking for a backslash `\`, it’s a special character in both regul
 
 `js run alert( "1\\2".match(/\\/) ); // '\'`
 
-A slash
--------
+## A slash
 
 A slash symbol `'/'` is not a special character, but in JavaScript it is used to open and close the regexp: `pattern:/...pattern.../`, so we should escape it too.
 
@@ -9304,8 +9055,7 @@ On the other hand, if we’re not using `pattern:/.../`, but create a regexp usi
 
 `js run alert( "/".match(new RegExp("/")) ); // finds /`
 
-new RegExp
-----------
+## new RegExp
 
 If we are creating a regular expression with `new RegExp`, then we don’t have to escape `/`, but need to do some other escaping.
 
@@ -9325,35 +9075,33 @@ Here’s how " is preceived:
 
 String quotes “consume” backslashes and interpret them on their own, for instance:
 
--   `\n` – becomes a newline character,
--   `\u1234` – becomes the Unicode character with such code,
--   …And when there’s no special meaning: like `pattern:\d` or `\z`, then the backslash is simply removed.
+- `\n` – becomes a newline character,
+- `\u1234` – becomes the Unicode character with such code,
+- …And when there’s no special meaning: like `pattern:\d` or `\z`, then the backslash is simply removed.
 
 So `new RegExp` gets a string without backslashes. That’s why the search doesn’t work!
 
 To fix it, we need to double backslashes, because string quotes turn `\\` into `\`:
 
-\`\`\`js run *!* let regStr = “\\d\\.\\d”; */!* alert(regStr); // correct now)
+\`\`\`js run _!_ let regStr = “\\d\\.\\d”; _/!_ alert(regStr); // correct now)
 
 let regexp = new RegExp(regStr);
 
 alert( “Chapter 5.1”.match(regexp) ); // 5.1 \`\`\`
 
-Summary
--------
+## Summary
 
--   To search for special characters `pattern:[ \ ^ $ . | ? * + ( )` literally, we need to prepend them with a backslash `\` (“escape them”).
--   We also need to escape `/` if we’re inside `pattern:/.../` (but not inside `new RegExp`).
--   When passing a string to `new RegExp`, we need to double backslashes `\\`, cause string quotes consume one of them. \# Sets and ranges \[…\]
+- To search for special characters `pattern:[ \ ^ $ . | ? * + ( )` literally, we need to prepend them with a backslash `\` (“escape them”).
+- We also need to escape `/` if we’re inside `pattern:/.../` (but not inside `new RegExp`).
+- When passing a string to `new RegExp`, we need to double backslashes `\\`, cause string quotes consume one of them. \# Sets and ranges \[…\]
 
 Several characters or character classes inside square brackets `[…]` mean to “search for any character among given”.
 
-Sets
-----
+## Sets
 
 For instance, `pattern:[eao]` means any of the 3 characters: `'a'`, `'e'`, or `'o'`.
 
-That’s called a *set*. Sets can be used in a regexp along with regular characters:
+That’s called a _set_. Sets can be used in a regexp along with regular characters:
 
 `js run // find [t or m], and then "op" alert( "Mop top".match(/[tm]op/gi) ); // "Mop", "top"`
 
@@ -9365,16 +9113,15 @@ So the example below gives no matches:
 
 The pattern searches for:
 
--   `pattern:V`,
--   then *one* of the letters `pattern:[oi]`,
--   then `pattern:la`.
+- `pattern:V`,
+- then _one_ of the letters `pattern:[oi]`,
+- then `pattern:la`.
 
 So there would be a match for `match:Vola` or `match:Vila`.
 
-Ranges
-------
+## Ranges
 
-Square brackets may also contain *character ranges*.
+Square brackets may also contain _character ranges_.
 
 For instance, `pattern:[a-z]` is a character in range from `a` to `z`, and `pattern:[0-5]` is a digit from `0` to `5`.
 
@@ -9394,9 +9141,9 @@ Combining multiple classes is also possible, e.g. `pattern:[\s\d]` means “a s
 
 \`\`\`smart header=“Character classes are shorthands for certain character sets” For instance:
 
--   \*\* – is the same as `pattern:[0-9]`,
--   \*\*\* – is the same as `pattern:[a-zA-Z0-9_]`,
--   \*\*\* – is the same as `pattern:[\t\n\v\f\r ]`, plus few other rare Unicode space characters. \`\`\`
+- \*\* – is the same as `pattern:[0-9]`,
+- \*\*\* – is the same as `pattern:[a-zA-Z0-9_]`,
+- \*\*\* – is the same as `pattern:[\t\n\v\f\r ]`, plus few other rare Unicode space characters. \`\`\`
 
 ### Example: multi-language
 
@@ -9406,11 +9153,11 @@ We can write a more universal pattern, that looks for wordly characters in any l
 
 Let’s decipher it. Similar to `pattern:\w`, we’re making a set of our own that includes characters with following Unicode properties:
 
--   `Alphabetic` (`Alpha`) - for letters,
--   `Mark` (`M`) - for accents,
--   `Decimal_Number` (`Nd`) - for digits,
--   `Connector_Punctuation` (`Pc`) - for the underscore `'_'` and similar characters,
--   `Join_Control` (`Join_C`) - two special codes `200c` and `200d`, used in ligatures, e.g. in Arabic.
+- `Alphabetic` (`Alpha`) - for letters,
+- `Mark` (`M`) - for accents,
+- `Decimal_Number` (`Nd`) - for digits,
+- `Connector_Punctuation` (`Pc`) - for the underscore `'_'` and similar characters,
+- `Join_Control` (`Join_C`) - two special codes `200c` and `200d`, used in ligatures, e.g. in Arabic.
 
 An example of use:
 
@@ -9426,34 +9173,32 @@ Of course, we can edit this pattern: add Unicode properties or remove them. Unic
 
 Or just use ranges of characters in a language that interests us, e.g. `pattern:[а-я]` for Cyrillic letters. \`\`\`
 
-Excluding ranges
-----------------
+## Excluding ranges
 
 Besides normal ranges, there are “excluding” ranges that look like `pattern:[^…]`.
 
-They are denoted by a caret character `^` at the start and match any character *except the given ones*.
+They are denoted by a caret character `^` at the start and match any character _except the given ones_.
 
 For instance:
 
--   `pattern:[^aeyo]` – any character except `'a'`, `'e'`, `'y'` or `'o'`.
--   `pattern:[^0-9]` – any character except a digit, the same as `pattern:\D`.
--   `pattern:[^\s]` – any non-space character, same as `\S`.
+- `pattern:[^aeyo]` – any character except `'a'`, `'e'`, `'y'` or `'o'`.
+- `pattern:[^0-9]` – any character except a digit, the same as `pattern:\D`.
+- `pattern:[^\s]` – any non-space character, same as `\S`.
 
 The example below looks for any characters except letters, digits and spaces:
 
 `js run alert( "alice15@gmail.com".match(/[^\d\sA-Z]/gi) ); // @ and .`
 
-Escaping in \[…\]
------------------
+## Escaping in \[…\]
 
 Usually when we want to find exactly a special character, we need to escape it like `pattern:\.`. And if we need a backslash, then we use `pattern:\\`, and so on.
 
 In square brackets we can use the vast majority of special characters without escaping:
 
--   Symbols `pattern:. + ( )` never need escaping.
--   A hyphen `pattern:-` is not escaped in the beginning or the end (where it does not define a range).
--   A caret `pattern:^` is only escaped in the beginning (where it means exclusion).
--   The closing square bracket `pattern:]` is always escaped (if we need to look for that symbol).
+- Symbols `pattern:. + ( )` never need escaping.
+- A hyphen `pattern:-` is not escaped in the beginning or the end (where it does not define a range).
+- A caret `pattern:^` is only escaped in the beginning (where it means exclusion).
+- The closing square bracket `pattern:]` is always escaped (if we need to look for that symbol).
 
 In other words, all special characters are allowed without escaping, except when they mean something for square brackets.
 
@@ -9471,8 +9216,7 @@ alert( “1 + 2 - 3”.match(regexp) ); // Matches +, - \`\`\`
 
 alert( “1 + 2 - 3”.match(regexp) ); // also works: +, - \`\`\`
 
-Ranges and flag “u”
--------------------
+## Ranges and flag “u”
 
 If there are surrogate pairs in the set, flag `pattern:u` is required for them to work correctly.
 
@@ -9486,7 +9230,7 @@ The regular expression engine thinks that `[𝒳𝒴]` – are not two, but four
 
 We can see their codes like this:
 
-`js run for(let i=0; i<'𝒳𝒴'.length; i++) {   alert('𝒳𝒴'.charCodeAt(i)); // 55349, 56499, 55349, 56500 };`
+`js run for(let i=0; i<'𝒳𝒴'.length; i++) { alert('𝒳𝒴'.charCodeAt(i)); // 55349, 56499, 55349, 56500 };`
 
 So, the example above finds and shows the left half of `𝒳`.
 
@@ -9508,10 +9252,9 @@ With the flag `pattern:u` the pattern works correctly:
 
 Let’s say we have a string like `+7(903)-123-45-67` and want to find all numbers in it. But unlike before, we are interested not in single digits, but full numbers: `7, 903, 123, 45, 67`.
 
-A number is a sequence of 1 or more digits `pattern:\d`. To mark how many we need, we can append a *quantifier*.
+A number is a sequence of 1 or more digits `pattern:\d`. To mark how many we need, we can append a _quantifier_.
 
-Quantity {n}
-------------
+## Quantity {n}
 
 The simplest quantifier is a number in curly braces: `pattern:{n}`.
 
@@ -9524,7 +9267,7 @@ The exact count: `pattern:{5}`
 
 The example below looks for a 5-digit number:
 
-`js run alert( "I'm 12345 years old".match(/\d{5}/) ); //  "12345"`
+`js run alert( "I'm 12345 years old".match(/\d{5}/) ); // "12345"`
 
 We can add `\b` to exclude longer numbers: `pattern:\b\d{5}\b`.
 
@@ -9549,8 +9292,7 @@ let numbers = str.match(//g);
 
 alert(numbers); // 7,903,123,45,67 \`\`\`
 
-Shorthands
-----------
+## Shorthands
 
 There are shorthands for most used quantifiers:
 
@@ -9585,8 +9327,7 @@ Compare it with `pattern:+` (one or more):
 
 `js run alert( "100 10 1".match(/\d0+/g) ); // 100, 10 // 1 not matched, as 0+ requires at least one zero`
 
-More examples
--------------
+## More examples
 
 Quantifiers are used very often. They serve as the main “building block” of complex regular expressions, so let’s see more examples.
 
@@ -9598,7 +9339,7 @@ In action: `js run alert( "0 1 12.345 7890".match(/\d+\.\d+/g) ); // 12.345`
 
 1.  The simplest one: `pattern:/<[a-z]+>/i`
 
-    `js run  alert( "<body> ... </body>".match(/<[a-z]+>/gi) ); // <body>`
+    `js run alert( "<body> ... </body>".match(/<[a-z]+>/gi) ); // <body>`
 
     The regexp looks for character `pattern:'<'` followed by one or more Latin letters, and then `pattern:'>'`.
 
@@ -9606,7 +9347,7 @@ In action: `js run alert( "0 1 12.345 7890".match(/\d+\.\d+/g) ); // 12.345`
 
     According to the standard, HTML tag name may have a digit at any position except the first one, like `<h1>`.
 
-    `js run  alert( "<h1>Hi!</h1>".match(/<[a-z][a-z0-9]*>/gi) ); // <h1>`
+    `js run alert( "<h1>Hi!</h1>".match(/<[a-z][a-z0-9]*>/gi) ); // <h1>`
 
 **Regexp “opening or closing HTML-tag without attributes”: `pattern:/<\/?[a-z][a-z0-9]*>/i`**
 
@@ -9650,14 +9391,13 @@ Instead of finding two matches `match:"witch"` and `match:"broom"`, it finds one
 
 That can be described as “greediness is the cause of all evil”.
 
-Greedy search
--------------
+## Greedy search
 
 To find a match, the regular expression engine uses the following algorithm:
 
--   For every position in the string
-    -   Try to match the pattern at that position.
-    -   If there’s no match, go to the next position.
+- For every position in the string
+  - Try to match the pattern at that position.
+  - If there’s no match, go to the next position.
 
 These common words do not make it obvious why the regexp fails, so let’s elaborate how the search works for the pattern `pattern:".+"`.
 
@@ -9683,7 +9423,7 @@ These common words do not make it obvious why the regexp fails, so let’s elabo
 
 4.  Now the engine finished repeating `pattern:.+` and tries to find the next character of the pattern. It’s the quote `pattern:"`. But there’s a problem: the string has finished, there are no more characters!
 
-    The regular expression engine understands that it took too many `pattern:.+` and starts to *backtrack*.
+    The regular expression engine understands that it took too many `pattern:.+` and starts to _backtrack_.
 
     In other words, it shortens the match for the quantifier by one character:
 
@@ -9715,14 +9455,13 @@ The regexp engine adds to the match as many characters as it can for `pattern:.+
 
 For our task we want another thing. That’s where a lazy mode can help.
 
-Lazy mode
----------
+## Lazy mode
 
 The lazy mode of quantifiers is an opposite to the greedy mode. It means: “repeat minimal number of times”.
 
 We can enable it by putting a question mark `pattern:'?'` after the quantifier, so that it becomes `pattern:*?` or `pattern:+?` or even `pattern:??` for `pattern:'?'`.
 
-To make things clear: usually a question mark `pattern:?` is a quantifier by itself (zero or one), but if added *after another quantifier (or even itself)* it gets another meaning – it switches the matching mode from greedy to lazy.
+To make things clear: usually a question mark `pattern:?` is a quantifier by itself (zero or one), but if added _after another quantifier (or even itself)_ it gets another meaning – it switches the matching mode from greedy to lazy.
 
 The regexp `pattern:/".+?"/g` works as intended: it finds `match:"witch"` and `match:"broom"`:
 
@@ -9786,8 +9525,7 @@ But to understand how regular expressions work and to build regular expressions,
 
 Complex regular expressions are hard to optimize, so the search may work exactly as described as well. \`\`\`
 
-Alternative approach
---------------------
+## Alternative approach
 
 With regexps, there’s often more than one way to do the same thing.
 
@@ -9882,8 +9620,7 @@ A working example:
 
 // Works! alert( str1.match(regexp) ); // null, no matches, that’s correct alert( str2.match(regexp) ); // <a href="link1" class="doc">,</a> \`\`\`
 
-Summary
--------
+## Summary
 
 Quantifiers have two modes of work:
 
@@ -9902,8 +9639,7 @@ That has two effects:
 1.  It allows to get a part of the match as a separate item in the result array.
 2.  If we put a quantifier after the parentheses, it applies to the parentheses as a whole.
 
-Examples
---------
+## Examples
 
 Let’s see how parentheses work in examples.
 
@@ -9951,8 +9687,7 @@ alert(“my@mail.com @ his@site.com.uk”.match(regexp)); // my@mail.com, his@si
 
 That regexp is not perfect, but mostly works and helps to fix accidental mistypes. The only truly reliable check for an email can only be done by sending a letter.
 
-Parentheses contents in the match
----------------------------------
+## Parentheses contents in the match
 
 Parentheses are numbered from left to right. The search engine memorizes the content matched by each of them and allows to get it in the result.
 
@@ -9971,8 +9706,7 @@ Now we’ll get both the tag as a whole `match:<h1>` and its contents `match:h1`
 
 \`\`\`js run let str = ’
 
-Hello, world!
-=============
+# Hello, world!
 
 ’;
 
@@ -10038,8 +9772,7 @@ alert( match.length ); // 3 alert( match\[0\] ); // ac (whole match) alert( matc
 
 The array length is permanent: `3`. But there’s nothing for the group `pattern:(z)?`, so the result is `["ac", undefined, "c"]`.
 
-Searching for all matches with groups: matchAll
------------------------------------------------
+## Searching for all matches with groups: matchAll
 
 \`\``warn header="`matchAll`is a new method, polyfill may be needed" The method`matchAll\` is not supported in old browsers.
 
@@ -10057,8 +9790,7 @@ let tags = str.match(/&lt;(.\*?)&gt;/g);
 
 alert( tags ); //
 
-,
-=
+# ,
 
 \`\`\`
 
@@ -10088,8 +9820,7 @@ results = Array.from(results); // let’s turn it into array
 
 alert(results\[0\]); //
 
-,h1 (1st tag) alert(results\[1\]); //
-=====================================
+# ,h1 (1st tag) alert(results\[1\]); //
 
 ,h2 (2nd tag) \`\`\`
 
@@ -10103,8 +9834,7 @@ There’s no need in `Array.from` if we’re looping over results:
 
 for(let result of results) { alert(result); // first alert:
 
-,h1 // second:
-==============
+# ,h1 // second:
 
 ,h2 } \`\`\`
 
@@ -10122,8 +9852,7 @@ let \[tag1, tag2\] = results;
 
 alert( tag1\[0\] ); //
 
-alert( tag1\[1\] ); // h1 alert( tag1.index ); // 0 alert( tag1.input ); //
-===========================================================================
+# alert( tag1\[1\] ); // h1 alert( tag1.index ); // 0 alert( tag1.input ); //
 
 \`\`\`
 
@@ -10135,8 +9864,7 @@ So, there will be found as many results as needed, not more.
 
 E.g. there are potentially 100 matches in the text, but in a `for..of` loop we found 5 of them, then decided it’s enough and made a `break`. Then the engine won’t spend time finding other 95 matches. \`\`\`
 
-Named groups
-------------
+## Named groups
 
 Remembering groups by their numbers is hard. For simple patterns it’s doable, but for more complex ones counting parentheses is inconvenient. We have a much better option: give names to parentheses.
 
@@ -10144,7 +9872,7 @@ That’s done by putting `pattern:?<name>` immediately after the opening paren.
 
 For example, let’s look for a date in the format “year-month-day”:
 
-\`\`\`js run *!* let dateRegexp = /(?\[0-9\]{4})-(?\[0-9\]{2})-(?\[0-9\]{2})/; */!* let str = “2019-04-30”;
+\`\`\`js run _!_ let dateRegexp = /(?\[0-9\]{4})-(?\[0-9\]{2})-(?\[0-9\]{2})/; _/!_ let str = “2019-04-30”;
 
 let groups = str.match(dateRegexp).groups;
 
@@ -10166,8 +9894,7 @@ for(let result of results) { let {year, month, day} = result.groups;
 
 alert(`${day}.${month}.${year}`); // first alert: 30.10.2019 // second: 01.01.2020 } \`\`\`
 
-Capturing groups in replacement
--------------------------------
+## Capturing groups in replacement
 
 Method `str.replace(regexp, replacement)` that replaces all matches with `regexp` in `str` allows to use parentheses contents in the `replacement` string. That’s done using `pattern:$n`, where `pattern:n` is the group number.
 
@@ -10187,8 +9914,7 @@ let str = “2019-10-30, 2020-01-01”;
 
 alert( str.replace(regexp, ‘<span class="math inline"> &lt; *day* &gt; .</span>.$’) ); // 30.10.2019, 01.01.2020 \`\`\`
 
-Non-capturing groups with ?:
-----------------------------
+## Non-capturing groups with ?:
 
 Sometimes we need parentheses to correctly apply a quantifier, but we don’t want their contents in results.
 
@@ -10200,14 +9926,13 @@ In the example below we only get the name `match:John` as a separate member of t
 
 \`\`\`js run let str = “Gogogo John!”;
 
-*!* // ?: exludes ‘go’ from capturing let regexp = /(?:go)+ (+)/i; */!*
+_!_ // ?: exludes ‘go’ from capturing let regexp = /(?:go)+ (+)/i; _/!_
 
 let result = str.match(regexp);
 
 alert( result\[0\] ); // Gogogo John (full match) alert( result\[1\] ); // John alert( result.length ); // 2 (no more items in the array) \`\`\`
 
-Summary
--------
+## Summary
 
 Parentheses group together a part of the regular expression, so that the quantifier applies to it as a whole.
 
@@ -10215,8 +9940,8 @@ Parentheses groups are numbered left-to-right, and can optionally be named with 
 
 The content, matched by a group, can be obtained in the results:
 
--   The method `str.match` returns capturing groups only without flag `pattern:g`.
--   The method `str.matchAll` always returns capturing groups.
+- The method `str.match` returns capturing groups only without flag `pattern:g`.
+- The method `str.matchAll` always returns capturing groups.
 
 If the parentheses have no name, then their contents is available in the match array by its number. Named parentheses are also available in the property `groups`.
 
@@ -10226,8 +9951,7 @@ A group may be excluded from numbering by adding `pattern:?:` in its start. That
 
 We can use the contents of capturing groups `pattern:(...)` not only in the result or in the replacement string, but also in the pattern itself.
 
-Backreference by number:
-------------------------
+## Backreference by number:
 
 A group can be referenced in the pattern using `pattern:\N`, where `N` is the group number.
 
@@ -10253,7 +9977,7 @@ Here’s the correct code:
 
 \`\``js run let str =`He said: “She’s the one!”.\`;
 
-*!* let regexp = /(\[’"\])(.*?)\\1/g;* /!\*
+_!_ let regexp = /(\[’"\])(._?)\\1/g;_ /!\*
 
 alert( str.match(regexp) ); // “She’s the one!” \`\`\`
 
@@ -10267,8 +9991,7 @@ Similar to that, `pattern:\2` would mean the contents of the second group, `patt
 
 `` warn header="Don't mess up: in the pattern `pattern:\1`, in the replacement: `pattern:$1`" In the replacement string we use a dollar sign: `pattern:$1`, while in the pattern - a backslash `pattern:\1`. ``
 
-Backreference by name: `\k<name>`
----------------------------------
+## Backreference by name: `\k<name>`
 
 If a regexp has many parentheses, it’s convenient to give them names.
 
@@ -10278,7 +10001,7 @@ In the example below the group with quotes is named `pattern:?<quote>`, so the b
 
 \`\``js run let str =`He said: “She’s the one!”.\`;
 
-*!* let regexp = /(?\[’"\])(.*?)quote&gt;/g;* /!\*
+_!_ let regexp = /(?\[’"\])(._?)quote&gt;/g;_ /!\*
 
 alert( str.match(regexp) ); // “She’s the one!” \`\`\` \# Alternation (OR) |
 
@@ -10349,10 +10072,9 @@ We often need to repeat actions.
 
 For example, outputting goods from a list one after another or just running the same code for each number from 1 to 10.
 
-*Loops* are a way to repeat the same code multiple times.
+_Loops_ are a way to repeat the same code multiple times.
 
-The “while” loop
-----------------
+## The “while” loop
 
 The `while` loop has the following syntax:
 
@@ -10365,9 +10087,9 @@ While the `condition` is truthy, the `code` from the loop body is executed.
 
 For instance, the loop below outputs `i` while `i < 3`:
 
-`js run let i = 0; while (i < 3) { // shows 0, then 1, then 2   alert( i );   i++; }`
+`js run let i = 0; while (i < 3) { // shows 0, then 1, then 2 alert( i ); i++; }`
 
-A single execution of the loop body is called *an iteration*. The loop in the example above makes three iterations.
+A single execution of the loop body is called _an iteration_. The loop in the example above makes three iterations.
 
 If `i++` was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
 
@@ -10375,16 +10097,15 @@ Any expression or variable can be a loop condition, not just comparisons: the co
 
 For instance, a shorter way to write `while (i != 0)` is `while (i)`:
 
-`js run let i = 3; *!* while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops */!*   alert( i );   i--; }`
+`js run let i = 3; *!* while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops */!* alert( i ); i--; }`
 
 \`\`\``smart header="Curly braces are not required for a single-line body" If the loop body has a single statement, we can omit the curly braces`{…}\`:
 
 `js run let i = 3; *!* while (i) alert(i--); */!*` \`\`\`\`
 
-The “do..while” loop
---------------------
+## The “do..while” loop
 
-The condition check can be moved *below* the loop body using the `do..while` syntax:
+The condition check can be moved _below_ the loop body using the `do..while` syntax:
 
     do {
       // loop body
@@ -10394,12 +10115,11 @@ The loop will first execute the body, then check the condition, and, while it’
 
 For example:
 
-`js run let i = 0; do {   alert( i );   i++; } while (i < 3);`
+`js run let i = 0; do { alert( i ); i++; } while (i < 3);`
 
 This form of syntax should only be used when you want the body of the loop to execute **at least once** regardless of the condition being truthy. Usually, the other form is preferred: `while(…) {…}`.
 
-The “for” loop
---------------
+## The “for” loop
 
 The `for` loop is more complex, but it’s also the most commonly used loop.
 
@@ -10411,7 +10131,7 @@ It looks like this:
 
 Let’s learn the meaning of these parts by example. The loop below runs `alert(i)` for `i` from `0` up to (but not including) `3`:
 
-`js run for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2   alert(i); }`
+`js run for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2 alert(i); }`
 
 Let’s examine the `for` statement part-by-part:
 
@@ -10445,7 +10165,7 @@ Here’s exactly what happens in our case:
 
 \`\`\``smart header="Inline variable declaration" Here, the "counter" variable`i\` is declared right in the loop. This is called an “inline” variable declaration. Such variables are visible only inside the loop.
 
-`js run for (*!*let*/!* i = 0; i < 3; i++) {   alert(i); // 0, 1, 2 } alert(i); // error, no such variable`
+`js run for (*!*let*/!* i = 0; i < 3; i++) { alert(i); // 0, 1, 2 } alert(i); // error, no such variable`
 
 Instead of defining a variable, we could use an existing one:
 
@@ -10483,8 +10203,7 @@ We can actually remove everything, creating an infinite loop:
 
 Please note that the two `for` semicolons `;` must be present. Otherwise, there would be a syntax error.
 
-Breaking the loop
------------------
+## Breaking the loop
 
 Normally, a loop exits when its condition becomes falsy.
 
@@ -10498,7 +10217,7 @@ while (true) {
 
 let value = +prompt(“Enter a number”, ’’);
 
-*!* if (!value) break; // (*)* /!\*
+_!_ if (!value) break; // (_)_ /!\*
 
 sum += value;
 
@@ -10508,8 +10227,7 @@ The `break` directive is activated at the line `(*)` if the user enters an empty
 
 The combination “infinite loop + `break` as needed” is great for situations when a loop’s condition must be checked not in the beginning or end of the loop, but in the middle or even in several places of its body.
 
-Continue to the next iteration \[\#continue\]
----------------------------------------------
+## Continue to the next iteration \[\#continue\]
 
 The `continue` directive is a “lighter version” of `break`. It doesn’t stop the whole loop. Instead, it stops the current iteration and forces the loop to start a new one (if the condition allows).
 
@@ -10519,7 +10237,7 @@ The loop below uses `continue` to output only odd values:
 
 \`\`\`js run no-beautify for (let i = 0; i &lt; 10; i++) {
 
-// if true, skip the remaining part of the body *!*if (i % 2 == 0) continue;*/!*
+// if true, skip the remaining part of the body *!*if (i % 2 == 0) continue;_/!_
 
 alert(i); // 1, then 3, 5, 7, 9 } \`\`\`
 
@@ -10555,8 +10273,7 @@ For example, if we take this code:
 
 This is just another reason not to use the question mark operator `?` instead of `if`. \`\`\`\`
 
-Labels for break/continue
--------------------------
+## Labels for break/continue
 
 Sometimes we need to break out from multiple nested loops at once.
 
@@ -10578,7 +10295,7 @@ We need a way to stop the process if the user cancels the input.
 
 The ordinary `break` after `input` would only break the inner loop. That’s not sufficient – labels, come to the rescue!
 
-A *label* is an identifier with a colon before a loop:
+A _label_ is an identifier with a colon before a loop:
 
     labelName: for (...) {
       ...
@@ -10586,7 +10303,7 @@ A *label* is an identifier with a colon before a loop:
 
 The `break <labelName>` statement in the loop below breaks out to the label:
 
-\`\`\`js run no-beautify *!*outer:*/!* for (let i = 0; i &lt; 3; i++) {
+\`\`\`js run no-beautify *!*outer:_/!_ for (let i = 0; i &lt; 3; i++) {
 
 for (let j = 0; j &lt; 3; j++) {
 
@@ -10629,14 +10346,13 @@ A `break` directive must be inside a code block. Technically, any labelled code 
 
 A `continue` is only possible from inside a loop. \`\`\`\`
 
-Summary
--------
+## Summary
 
 We covered 3 types of loops:
 
--   `while` – The condition is checked before each iteration.
--   `do..while` – The condition is checked after each iteration.
--   `for (;;)` – The condition is checked before each iteration, additional settings available.
+- `while` – The condition is checked before each iteration.
+- `do..while` – The condition is checked after each iteration.
+- `for (;;)` – The condition is checked before each iteration, additional settings available.
 
 To make an “infinite” loop, usually the `while(true)` construct is used. Such a loop, just like any other, can be stopped with the `break` directive.
 
@@ -10650,8 +10366,7 @@ There’s a special syntax for that, called “lookahead” and “lookbehind”
 
 For the start, let’s find the price from the string like `subject:1 turkey costs 30€`. That is: a number, followed by `subject:€` sign.
 
-Lookahead
----------
+## Lookahead
 
 The syntax is: `pattern:X(?=Y)`, it means “look for `pattern:X`, but match only if followed by `pattern:Y`”. There may be any pattern instead of `pattern:X` and `pattern:Y`.
 
@@ -10684,8 +10399,7 @@ alert( str.match(/(?=)(?=.\*30)/) ); // 1 \`\`\`
 
 In our string that exactly matches the number `1`.
 
-Negative lookahead
-------------------
+## Negative lookahead
 
 Let’s say that we want a quantity instead, not a price from the same string. That’s a number `pattern:\d+`, NOT followed by `subject:€`.
 
@@ -10697,8 +10411,7 @@ The syntax is: `pattern:X(?!Y)`, it means “search `pattern:X`, but only if not
 
 alert( str.match(/?!€)/g) ); // 2 (the price is not matched) \`\`\`
 
-Lookbehind
-----------
+## Lookbehind
 
 Lookahead allows to add a condition for “what follows”.
 
@@ -10718,8 +10431,7 @@ And, if we need the quantity – a number, not preceded by `subject:$`, then we 
 
 alert( str.match(/(?&lt;!$)/g) ); // 2 (the price is not matched) \`\`\`
 
-Capturing groups
-----------------
+## Capturing groups
 
 Generally, the contents inside lookaround parentheses does not become a part of the result.
 
@@ -10739,8 +10451,7 @@ And here’s the same for lookbehind:
 
 alert( str.match(regexp) ); // 30, $ \`\`\`
 
-Summary
--------
+## Summary
 
 Lookahead and lookbehind (commonly referred to as “lookaround”) are useful when we’d like to match something depending on the context before/after it.
 
@@ -10754,8 +10465,7 @@ Lookaround types:
 
 <table><thead><tr class="header"><th>Pattern</th><th>type</th><th>matches</th></tr></thead><tbody><tr class="odd"><td><code>X(?=Y)</code></td><td>Positive lookahead</td><td><code>pattern:X</code> if followed by <code>pattern:Y</code></td></tr><tr class="even"><td><code>X(?!Y)</code></td><td>Negative lookahead</td><td><code>pattern:X</code> if not followed by <code>pattern:Y</code></td></tr><tr class="odd"><td><code>(?&lt;=Y)X</code></td><td>Positive lookbehind</td><td><code>pattern:X</code> if after <code>pattern:Y</code></td></tr><tr class="even"><td><code>(?&lt;!Y)X</code></td><td>Negative lookbehind</td><td><code>pattern:X</code> if not after <code>pattern:Y</code></td></tr></tbody></table>
 
-Catastrophic backtracking
-=========================
+# Catastrophic backtracking
 
 Some regular expressions are looking simple, but can execute a veeeeeery long time, and even “hang” the JavaScript engine.
 
@@ -10765,8 +10475,7 @@ In such case a web-browser suggests to kill the script and reload the page. Not 
 
 For server-side JavaScript such a regexp may hang the server process, that’s even worse. So we definitely should take a look at it.
 
-Example
--------
+## Example
 
 Let’s say we have a string, and we’d like to check if it consists of words `pattern:\w+` with an optional space `pattern:\s?` after each.
 
@@ -10790,8 +10499,7 @@ If you run the example below, you probably won’t see anything, as JavaScript w
 
 To be fair, let’s note that some regular expression engines can handle such a search effectively, for example V8 engine version starting from 8.8 can do that (so Google Chrome 88 doesn’t hang here), while Firefox browser does hang.
 
-Simplified example
-------------------
+## Simplified example
 
 What’s the matter? Why does the regular expression hang?
 
@@ -10927,8 +10635,7 @@ Unfortunately, that won’t help: if we replace `pattern:\w+` with `pattern:\w+?
 
 Some regular expression engines have tricky tests and finite automations that allow to avoid going through all combinations or make it much faster, but most engines don’t, and it doesn’t always help.
 
-How to fix?
------------
+## How to fix?
 
 There are two main approaches to fixing the problem.
 
@@ -10994,9 +10701,9 @@ That may seem odd, but it’s actually a very simple transform.
 
 Let’s decipher it:
 
--   Lookahead `pattern:?=` looks forward for the longest word `pattern:\w+` starting at the current position.
--   The contents of parentheses with `pattern:?=...` isn’t memorized by the engine, so wrap `pattern:\w+` into parentheses. Then the engine will memorize their contents
--   …And allow us to reference it in the pattern as `pattern:\1`.
+- Lookahead `pattern:?=` looks forward for the longest word `pattern:\w+` starting at the current position.
+- The contents of parentheses with `pattern:?=...` isn’t memorized by the engine, so wrap `pattern:\w+` into parentheses. Then the engine will memorize their contents
+- …And allow us to reference it in the pattern as `pattern:\1`.
 
 That is: we look ahead - and if there’s a word `pattern:\w+`, then match it as `pattern:\1`.
 
@@ -11039,8 +10746,7 @@ The problem described in this article is called “catastrophic backtracking”.
 
 We covered two ways how to solve it: - Rewrite the regexp to lower the possible combinations count. - Prevent backtracking.
 
-Sticky flag “y”, searching at position
-======================================
+# Sticky flag “y”, searching at position
 
 The flag `pattern:y` allows to perform the search at the given position in the source string.
 
@@ -11054,8 +10760,8 @@ E.g. we have a code string `subject:let varName = "value"`, and we need to read 
 
 We’ll look for variable name using regexp `pattern:\w+`. Actually, JavaScript variable names need a bit more complex regexp for accurate matching, but here it doesn’t matter.
 
--   A call to `str.match(/\w+/)` will find only the first word in the line (`let`). That’s not it.
--   We can add the flag `pattern:g`. But then the call `str.match(/\w+/g)` will look for all words in the text, while we need one word at position `4`. Again, not what we need.
+- A call to `str.match(/\w+/)` will find only the first word in the line (`let`). That’s not it.
+- We can add the flag `pattern:g`. But then the call `str.match(/\w+/g)` will look for all words in the text, while we need one word at position `4`. Again, not what we need.
 
 **So, how to search for a regexp exactly at the given position?**
 
@@ -11101,7 +10807,7 @@ Like this:
 
 let regexp = /+/g; // without flag “g”, property lastIndex is ignored
 
-*!* regexp.lastIndex = 4; */!*
+_!_ regexp.lastIndex = 4; _/!_
 
 let word = regexp.exec(str); alert(word); // varName \`\`\`
 
@@ -11119,7 +10825,7 @@ Please note: the `regexp.exec` call starts searching at position `lastIndex` and
 
 let regexp = /+/g;
 
-*!* // start the search from position 3 regexp.lastIndex = 3; */!*
+_!_ // start the search from position 3 regexp.lastIndex = 3; _/!_
 
 let word = regexp.exec(str); // found the match at position 4 alert(word\[0\]); // varName alert(word.index); // 4 \`\`\`
 
@@ -11147,8 +10853,7 @@ In tasks like lexical analysis, there are usually many searches at an exact posi
 
 In this article we’ll cover various methods that work with regexps in-depth.
 
-str.match(regexp)
------------------
+## str.match(regexp)
 
 The method `str.match(regexp)` finds matches for `regexp` in the string `str`.
 
@@ -11184,8 +10889,7 @@ It has 3 modes:
 
         let result = str.match(regexp) || [];
 
-str.matchAll(regexp)
---------------------
+## str.matchAll(regexp)
 
 \[recent browser=“new”\]
 
@@ -11203,8 +10907,7 @@ Usage example:
 
 \`\`\`js run let str = ’
 
-Hello, world!
-=============
+# Hello, world!
 
 ’; let regexp = /&lt;(.\*?)&gt;/g;
 
@@ -11216,18 +10919,15 @@ matchAll = Array.from(matchAll); // array now
 
 let firstMatch = matchAll\[0\]; alert( firstMatch\[0\] ); //
 
-alert( firstMatch\[1\] ); // h1 alert( firstMatch.index ); // 0 alert( firstMatch.input ); //
-=============================================================================================
+# alert( firstMatch\[1\] ); // h1 alert( firstMatch.index ); // 0 alert( firstMatch.input ); //
 
-Hello, world!
-=============
+# Hello, world!
 
 \`\`\`
 
 If we use `for..of` to loop over `matchAll` matches, then we don’t need `Array.from` any more.
 
-str.split(regexp|substr, limit)
--------------------------------
+## str.split(regexp|substr, limit)
 
 Splits the string using the regexp (or a substring) as a delimiter.
 
@@ -11239,8 +10939,7 @@ But we can split by a regular expression, the same way:
 
 `js run alert('12, 34, 56'.split(/,\s*/)) // array of ['12', '34', '56']`
 
-str.search(regexp)
-------------------
+## str.search(regexp)
 
 The method `str.search(regexp)` returns the position of the first match or `-1` if none found:
 
@@ -11252,8 +10951,7 @@ alert( str.search( /ink/i ) ); // 10 (first match position) \`\`\`
 
 If we need positions of further matches, we should use other means, such as finding them all with `str.matchAll(regexp)`.
 
-str.replace(str|regexp, str|func)
----------------------------------
+## str.replace(str|regexp, str|func)
 
 This is a generic method for searching and replacing, one of most useful ones. The swiss army knife for searching and replacing.
 
@@ -11269,7 +10967,7 @@ You can see that in the example above: only the first `"-"` is replaced by `":"`
 
 To find all hyphens, we need to use not the string `"-"`, but a regexp `pattern:/-/g`, with the obligatory `pattern:g` flag:
 
-`js run // replace all dashes by a colon alert( '12-34-56'.replace( *!*/-/g*/!*, ":" ) )  // 12:34:56`
+`js run // replace all dashes by a colon alert( '12-34-56'.replace( *!*/-/g*/!*, ":" ) ) // 12:34:56`
 
 The second argument is a replacement string. We can use special characters in it:
 
@@ -11335,12 +11033,11 @@ alert(result); // Smith, John \`\`\`
 
 Using a function gives us the ultimate replacement power, because it gets all the information about the match, has access to outer variables and can do everything.
 
-str.replaceAll(str|regexp, str|func)
-------------------------------------
+## str.replaceAll(str|regexp, str|func)
 
 This method is essentially the same as `str.replace`, with two major differences:
 
-1.  If the first argument is a string, it replaces *all occurences* of the string, while `replace` replaces only the *first occurence*.
+1.  If the first argument is a string, it replaces _all occurences_ of the string, while `replace` replaces only the _first occurence_.
 2.  If the first argument is a regular expression without the `g` flag, there’ll be an error. With `g` flag, it works the same as `replace`.
 
 The main use case for `replaceAll` is replacing all occurences of a string.
@@ -11349,8 +11046,7 @@ Like this:
 
 `js run // replace all dashes by a colon alert('12-34-56'.replaceAll("-", ":")) // 12:34:56`
 
-regexp.exec(str)
-----------------
+## regexp.exec(str)
 
 The method `regexp.exec(str)` method returns a match for `regexp` in the string `str`. Unlike previous methods, it’s called on a regexp, not on a string.
 
@@ -11394,8 +11090,7 @@ alert( regexp.exec(str) ); // null \`\`\`
 
 That’s convenient for situations when we need to “read” something from the string by a regexp at the exact position, not somewhere further.
 
-regexp.test(str)
-----------------
+## regexp.test(str)
 
 The method `regexp.test(str)` looks for a match and returns `true/false` whether it exists.
 
@@ -11403,13 +11098,13 @@ For instance:
 
 \`\`\`js run let str = “I love JavaScript”;
 
-// these two tests do the same alert( *!*/love/i*/!*.test(str) ); // true alert( str.search(*!*/love/i*/!*) != -1 ); // true \`\`\`
+// these two tests do the same alert( _!_/love/i*/!*.test(str) ); // true alert( str.search(_!_/love/i*/!*) != -1 ); // true \`\`\`
 
 An example with the negative answer:
 
 \`\`\`js run let str = “Bla-bla-bla”;
 
-alert( *!*/love/i*/!*.test(str) ); // false alert( str.search(*!*/love/i*/!*) != -1 ); // false \`\`\`
+alert( _!_/love/i*/!*.test(str) ); // false alert( str.search(_!_/love/i*/!*) != -1 ); // false \`\`\`
 
 If the regexp has flag `pattern:g`, then `regexp.test` looks from `regexp.lastIndex` property and updates this property, just like `regexp.exec`.
 
@@ -11433,15 +11128,13 @@ alert( regexp.test(“javascript”) ); // true (regexp.lastIndex=10 now) alert(
 
     To work around that, we can set `regexp.lastIndex = 0` before each search. Or instead of calling methods on regexp, use string methods `str.match/search/...`, they don't use `lastIndex`.
 
-The “switch” statement
-======================
+# The “switch” statement
 
 A `switch` statement can replace multiple `if` checks.
 
 It gives a more descriptive way to compare a value with multiple variants.
 
-The syntax
-----------
+## The syntax
 
 The `switch` has one or more `case` blocks and an optional default.
 
@@ -11453,18 +11146,17 @@ case ‘value2’: // if (x === ‘value2’) … \[break\]
 
 default: … \[break\] } \`\`\`
 
--   The value of `x` is checked for a strict equality to the value from the first `case` (that is, `value1`) then to the second (`value2`) and so on.
--   If the equality is found, `switch` starts to execute the code starting from the corresponding `case`, until the nearest `break` (or until the end of `switch`).
--   If no case is matched then the `default` code is executed (if it exists).
+- The value of `x` is checked for a strict equality to the value from the first `case` (that is, `value1`) then to the second (`value2`) and so on.
+- If the equality is found, `switch` starts to execute the code starting from the corresponding `case`, until the nearest `break` (or until the end of `switch`).
+- If no case is matched then the `default` code is executed (if it exists).
 
-An example
-----------
+## An example
 
 An example of `switch` (the executed code is highlighted):
 
 \`\`\`js run let a = 2 + 2;
 
-switch (a) { case 3: alert( ‘Too small’ ); break; *!* case 4: alert( ‘Exactly!’ ); break; */!* case 5: alert( ‘Too big’ ); break; default: alert( “I don’t know such values” ); } \`\`\`
+switch (a) { case 3: alert( ‘Too small’ ); break; _!_ case 4: alert( ‘Exactly!’ ); break; _/!_ case 5: alert( ‘Too big’ ); break; default: alert( “I don’t know such values” ); } \`\`\`
 
 Here the `switch` starts to compare `a` from the first `case` variant that is `3`. The match fails.
 
@@ -11476,7 +11168,7 @@ An example without `break`:
 
 \`\`\`js run let a = 2 + 2;
 
-switch (a) { case 3: alert( ‘Too small’ ); *!* case 4: alert( ‘Exactly!’ ); case 5: alert( ‘Too big’ ); default: alert( “I don’t know such values” ); */!* } \`\`\`
+switch (a) { case 3: alert( ‘Too small’ ); _!_ case 4: alert( ‘Exactly!’ ); case 5: alert( ‘Too big’ ); default: alert( “I don’t know such values” ); _/!_ } \`\`\`
 
 In the example above we’ll see sequential execution of three `alert`s:
 
@@ -11490,14 +11182,13 @@ For example:
 
 \`\`\`js run let a = “1”; let b = 0;
 
-switch (+a) { *!* case b + 1: alert(“this runs, because +a is 1, exactly equals b+1”); break; */!*
+switch (+a) { _!_ case b + 1: alert(“this runs, because +a is 1, exactly equals b+1”); break; _/!_
 
 default: alert(“this doesn’t run”); }
 
     Here `+a` gives `1`, that's compared with `b + 1` in `case`, and the corresponding code is executed.
 
-Grouping of “case”
-------------------
+## Grouping of “case”
 
 Several variants of `case` which share the same code can be grouped.
 
@@ -11507,7 +11198,7 @@ For example, if we want the same code to run for `case 3` and `case 5`:
 
 switch (a) { case 4: alert(‘Right!’); break;
 
-*!* case 3: // (*) grouped two cases case 5: alert(‘Wrong!’); alert(“Why don’t you take a math class?”); break;* /!\*
+_!_ case 3: // (_) grouped two cases case 5: alert(‘Wrong!’); alert(“Why don’t you take a math class?”); break;_ /!\*
 
 default: alert(‘The result is strange. Really.’); } \`\`\`
 
@@ -11515,8 +11206,7 @@ Now both `3` and `5` show the same message.
 
 The ability to “group” cases is a side-effect of how `switch/case` works without `break`. Here the execution of `case 3` starts from the line `(*)` and goes through `case 5`, because there’s no `break`.
 
-Type matters
-------------
+## Type matters
 
 Let’s emphasize that the equality check is always strict. The values must be of the same type to match.
 
@@ -11540,10 +11230,9 @@ Functions are the main “building blocks” of the program. They allow the code
 
 We’ve already seen examples of built-in functions, like `alert(message)`, `prompt(message, default)` and `confirm(question)`. But we can create functions of our own as well.
 
-Function Declaration
---------------------
+## Function Declaration
 
-To create a function we can use a *function declaration*.
+To create a function we can use a _function declaration_.
 
 It looks like this:
 
@@ -11551,7 +11240,7 @@ It looks like this:
       alert( 'Hello everyone!' );
     }
 
-The `function` keyword goes first, then goes the *name of the function*, then a list of *parameters* between the parentheses (comma-separated, empty in the example above) and finally the code of the function, also named “the function body”, between curly braces.
+The `function` keyword goes first, then goes the _name of the function_, then a list of _parameters_ between the parentheses (comma-separated, empty in the example above) and finally the code of the function, also named “the function body”, between curly braces.
 
     function name(parameters) {
       ...body...
@@ -11563,7 +11252,7 @@ For instance:
 
 \`\`\`js run function showMessage() { alert( ‘Hello everyone!’ ); }
 
-*!* showMessage(); showMessage(); */!* \`\`\`
+_!_ showMessage(); showMessage(); _/!_ \`\`\`
 
 The call `showMessage()` executes the code of the function. Here we will see the message two times.
 
@@ -11571,14 +11260,13 @@ This example clearly demonstrates one of the main purposes of functions: to avoi
 
 If we ever need to change the message or the way it is shown, it’s enough to modify the code in one place: the function which outputs it.
 
-Local variables
----------------
+## Local variables
 
 A variable declared inside a function is only visible inside that function.
 
 For example:
 
-\`\`\`js run function showMessage() { *!* let message = “Hello, I’m JavaScript!”; // local variable */!*
+\`\`\`js run function showMessage() { _!_ let message = “Hello, I’m JavaScript!”; // local variable _/!_
 
 alert( message ); }
 
@@ -11586,8 +11274,7 @@ showMessage(); // Hello, I’m JavaScript!
 
 alert( message ); // &lt;– Error! The variable is local to the function \`\`\`
 
-Outer variables
----------------
+## Outer variables
 
 A function can access an outer variable as well, for example:
 
@@ -11615,11 +11302,11 @@ alert( userName ); // *!*Bob*/!*, the value was modified by the function \`\`\`
 
 The outer variable is only used if there’s no local one.
 
-If a same-named variable is declared inside the function then it *shadows* the outer one. For instance, in the code below the function uses the local `userName`. The outer one is ignored:
+If a same-named variable is declared inside the function then it _shadows_ the outer one. For instance, in the code below the function uses the local `userName`. The outer one is ignored:
 
 \`\`\`js run let userName = ‘John’;
 
-function showMessage() { *!* let userName = “Bob”; // declare a local variable */!*
+function showMessage() { _!_ let userName = “Bob”; // declare a local variable _/!_
 
 let message = ‘Hello,’ + userName; // *!*Bob*/!* alert(message); }
 
@@ -11627,22 +11314,21 @@ let message = ‘Hello,’ + userName; // *!*Bob*/!* alert(message); }
 
 alert( userName ); // *!*John*/!*, unchanged, the function did not access the outer variable \`\`\`
 
-\`\``smart header="Global variables" Variables declared outside of any function, such as the outer`userName\` in the code above, are called *global*.
+\`\``smart header="Global variables" Variables declared outside of any function, such as the outer`userName\` in the code above, are called _global_.
 
 Global variables are visible from any function (unless shadowed by locals).
 
 It’s a good practice to minimize the use of global variables. Modern code has few or no globals. Most variables reside in their functions. Sometimes though, they can be useful to store project-level data. \`\`\`
 
-Parameters
-----------
+## Parameters
 
-We can pass arbitrary data to functions using parameters (also called *function arguments*) .
+We can pass arbitrary data to functions using parameters (also called _function arguments_) .
 
 In the example below, the function has two parameters: `from` and `text`.
 
 \`\`\`js run function showMessage(*!*from, text*/!*) { // arguments: from, text alert(from + ‘:’ + text); }
 
-*!* showMessage(‘Ann’, ‘Hello!’); // Ann: Hello! (\*) showMessage(‘Ann’, “What’s up?”); // Ann: What’s up? (\*\*) */!* \`\`\`
+_!_ showMessage(‘Ann’, ‘Hello!’); // Ann: Hello! (\*) showMessage(‘Ann’, “What’s up?”); // Ann: What’s up? (\*\*) _/!_ \`\`\`
 
 When the function is called in lines `(*)` and `(**)`, the given values are copied to local variables `from` and `text`. Then the function uses them.
 
@@ -11650,18 +11336,17 @@ Here’s one more example: we have a variable `from` and pass it to the function
 
 \`\`\`js run function showMessage(from, text) {
 
-*!* from = ‘*’ + from + ’*’; // make “from” look nicer */!*
+_!_ from = ‘_’ + from + ’_’; // make “from” look nicer _/!_
 
 alert( from + ‘:’ + text ); }
 
 let from = “Ann”;
 
-showMessage(from, “Hello”); // *Ann*: Hello
+showMessage(from, “Hello”); // _Ann_: Hello
 
 // the value of “from” is the same, the function modified a local copy alert( from ); // Ann \`\`\`
 
-Default values
---------------
+## Default values
 
 If a parameter is not provided, then its value becomes `undefined`.
 
@@ -11673,7 +11358,7 @@ That’s not an error. Such a call would output `"*Ann*: undefined"`. There’s 
 
 If we want to use a “default” `text` in this case, then we can specify it after `=`:
 
-\`\`\`js run function showMessage(from, *!*text = “no text given”*/!*) { alert( from + “:” + text ); }
+\`\`\`js run function showMessage(from, *!*text = “no text given”_/!_) { alert( from + “:” + text ); }
 
 showMessage(“Ann”); // Ann: no text given \`\`\`
 
@@ -11681,7 +11366,7 @@ Now if the `text` parameter is not passed, it will get the value `"no text given
 
 Here `"no text given"` is a string, but it can be a more complex expression, which is only evaluated and assigned if the parameter is missing. So, this is also possible:
 
-`js run function showMessage(from, text = anotherFunction()) {   // anotherFunction() only executed if no text given   // its result becomes the value of text }`
+`js run function showMessage(from, text = anotherFunction()) { // anotherFunction() only executed if no text given // its result becomes the value of text }`
 
 \`\`\`smart header=“Evaluation of default parameters” In JavaScript, a default parameter is evaluated every time the function is called without the respective parameter.
 
@@ -11693,7 +11378,7 @@ Sometimes it makes sense to set default values for parameters not in the functio
 
 To check for an omitted parameter, we can compare it with `undefined`:
 
-\`\`\`js run function showMessage(text) { *!* if (text === undefined) { text = ‘empty message’; } */!*
+\`\`\`js run function showMessage(text) { _!_ if (text === undefined) { text = ‘empty message’; } _/!_
 
 alert(text); }
 
@@ -11713,8 +11398,7 @@ Modern JavaScript engines support the [nullish coalescing operator](info:nullish
 
 showCount(0); // 0 showCount(null); // unknown showCount(); // unknown \`\`\`
 
-Returning a value
------------------
+## Returning a value
 
 A function can return a value back into the calling code as the result.
 
@@ -11728,7 +11412,7 @@ The directive `return` can be in any place of the function. When the execution r
 
 There may be many occurrences of `return` in a single function. For instance:
 
-\`\`\`js run function checkAge(age) { if (age &gt;= 18) { *!* return true; */!* } else { *!* return confirm(‘Do you have permission from your parents?’); */!* } }
+\`\`\`js run function checkAge(age) { if (age &gt;= 18) { _!_ return true; _/!_ } else { _!_ return confirm(‘Do you have permission from your parents?’); _/!_ } }
 
 let age = prompt(‘How old are you?’, 18);
 
@@ -11785,8 +11469,7 @@ If we want the returned expression to wrap across multiple lines, we should star
 
 And it will work just as we expect it to. \`\`\`\`
 
-Naming a function \[\#function-naming\]
----------------------------------------
+## Naming a function \[\#function-naming\]
 
 Functions are actions. So their name is usually a verb. It should be brief, as accurate as possible and describe what the function does, so that someone reading the code gets an indication of what the function does.
 
@@ -11796,14 +11479,14 @@ For instance, functions that start with `"show"` usually show something.
 
 Function starting with…
 
--   `"get…"` – return a value,
--   `"calc…"` – calculate something,
--   `"create…"` – create something,
--   `"check…"` – check something and return a boolean, etc.
+- `"get…"` – return a value,
+- `"calc…"` – calculate something,
+- `"create…"` – create something,
+- `"check…"` – check something and return a boolean, etc.
 
 Examples of such names:
 
-`js no-beautify showMessage(..)     // shows a message getAge(..)          // returns the age (gets it somehow) calcSum(..)         // calculates a sum and returns the result createForm(..)      // creates a form (and usually returns it) checkPermission(..) // checks a permission, returns true/false`
+`js no-beautify showMessage(..) // shows a message getAge(..) // returns the age (gets it somehow) calcSum(..) // calculates a sum and returns the result createForm(..) // creates a form (and usually returns it) checkPermission(..) // checks a permission, returns true/false`
 
 With prefixes in place, a glance at a function name gives an understanding what kind of work it does and what kind of value it returns.
 
@@ -11813,20 +11496,19 @@ Two independent actions usually deserve two functions, even if they are usually 
 
 A few examples of breaking this rule:
 
--   `getAge` – would be bad if it shows an `alert` with the age (should only get).
--   `createForm` – would be bad if it modifies the document, adding a form to it (should only create it and return).
--   `checkPermission` – would be bad if it displays the `access granted/denied` message (should only perform the check and return the result).
+- `getAge` – would be bad if it shows an `alert` with the age (should only get).
+- `createForm` – would be bad if it modifies the document, adding a form to it (should only create it and return).
+- `checkPermission` – would be bad if it displays the `access granted/denied` message (should only perform the check and return the result).
 
 These examples assume common meanings of prefixes. You and your team are free to agree on other meanings, but usually they’re not much different. In any case, you should have a firm understanding of what a prefix means, what a prefixed function can and cannot do. All same-prefixed functions should obey the rules. And the team should share the knowledge. \`\`\`
 
-\`\`\`smart header=“Ultrashort function names” Functions that are used *very often* sometimes have ultrashort names.
+\`\`\`smart header=“Ultrashort function names” Functions that are used _very often_ sometimes have ultrashort names.
 
 For example, the [jQuery](http://jquery.com) framework defines a function with `$`. The [Lodash](http://lodash.com/) library has its core function named `_`.
 
 These are exceptions. Generally function names should be concise and descriptive. \`\`\`
 
-Functions == Comments
----------------------
+## Functions == Comments
 
 Functions should be short and do exactly one thing. If that thing is big, maybe it’s worth it to split the function into a few smaller functions. Sometimes following this rule may not be that easy, but it’s definitely a good thing.
 
@@ -11865,12 +11547,11 @@ The second variant uses an additional function `isPrime(n)` to test for primalit
       return true;
     }
 
-The second variant is easier to understand, isn’t it? Instead of the code piece we see a name of the action (`isPrime`). Sometimes people refer to such code as *self-describing*.
+The second variant is easier to understand, isn’t it? Instead of the code piece we see a name of the action (`isPrime`). Sometimes people refer to such code as _self-describing_.
 
 So, functions can be created even if we don’t intend to reuse them. They structure the code and make it readable.
 
-Summary
--------
+## Summary
 
 A function declaration looks like this:
 
@@ -11878,9 +11559,9 @@ A function declaration looks like this:
       /* code */
     }
 
--   Values passed to a function as parameters are copied to its local variables.
--   A function may access outer variables. But it works only from inside out. The code outside of the function doesn’t see its local variables.
--   A function can return a value. If it doesn’t, then its result is `undefined`.
+- Values passed to a function as parameters are copied to its local variables.
+- A function may access outer variables. But it works only from inside out. The code outside of the function doesn’t see its local variables.
+- A function can return a value. If it doesn’t, then its result is `undefined`.
 
 To make the code clean and easy to understand, it’s recommended to use mainly local variables and parameters in the function, not outer variables.
 
@@ -11888,19 +11569,17 @@ It is always easier to understand a function which gets parameters, works with t
 
 Function naming:
 
--   A name should clearly describe what the function does. When we see a function call in the code, a good name instantly gives us an understanding what it does and returns.
--   A function is an action, so function names are usually verbal.
--   There exist many well-known function prefixes like `create…`, `show…`, `get…`, `check…` and so on. Use them to hint what a function does.
+- A name should clearly describe what the function does. When we see a function call in the code, a good name instantly gives us an understanding what it does and returns.
+- A function is an action, so function names are usually verbal.
+- There exist many well-known function prefixes like `create…`, `show…`, `get…`, `check…` and so on. Use them to hint what a function does.
 
 Functions are the main building blocks of scripts. Now we’ve covered the basics, so we actually can start creating and using them. But that’s only the beginning of the path. We are going to return to them many times, going more deeply into their advanced features.
 
-Manuals and specifications
-==========================
+# Manuals and specifications
 
-This book is a *tutorial*. It aims to help you gradually learn the language. But once you’re familiar with the basics, you’ll need other sources.
+This book is a _tutorial_. It aims to help you gradually learn the language. But once you’re familiar with the basics, you’ll need other sources.
 
-Specification
--------------
+## Specification
 
 [The ECMA-262 specification](https://www.ecma-international.org/publications/standards/Ecma-262.htm) contains the most in-depth, detailed and formalized information about JavaScript. It defines the language.
 
@@ -11912,24 +11591,22 @@ To read about new bleeding-edge features, including those that are “almost sta
 
 Also, if you’re developing for the browser, then there are other specifications covered in the [second part](info:browser-environment) of the tutorial.
 
-Manuals
--------
+## Manuals
 
--   **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It’s great to get in-depth information about individual language functions, methods etc.
+- **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It’s great to get in-depth information about individual language functions, methods etc.
 
-    One can find it at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a>.
+  One can find it at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a>.
 
 Although, it’s often best to use an internet search instead. Just use “MDN \[term\]” in the query, e.g. <a href="https://google.com/search?q=MDN+parseInt" class="uri">https://google.com/search?q=MDN+parseInt</a> to search for `parseInt` function.
 
-Compatibility tables
---------------------
+## Compatibility tables
 
 JavaScript is a developing language, new features get added regularly.
 
 To see their support among browser-based and other engines, see:
 
--   <a href="http://caniuse.com" class="uri">http://caniuse.com</a> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <a href="http://caniuse.com/#feat=cryptography" class="uri">http://caniuse.com/#feat=cryptography</a>.
--   <a href="https://kangax.github.io/compat-table" class="uri">https://kangax.github.io/compat-table</a> - a table with language features and engines that support those or don’t support.
+- <a href="http://caniuse.com" class="uri">http://caniuse.com</a> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <a href="http://caniuse.com/#feat=cryptography" class="uri">http://caniuse.com/#feat=cryptography</a>.
+- <a href="https://kangax.github.io/compat-table" class="uri">https://kangax.github.io/compat-table</a> - a table with language features and engines that support those or don’t support.
 
 All these resources are useful in real-life development, as they contain valuable information about language details, their support etc.
 
@@ -11937,13 +11614,13 @@ Please remember them (or this page) for the cases when you need in-depth informa
 
 In JavaScript, a function is not a “magical language structure”, but a special kind of value.
 
-The syntax that we used before is called a *Function Declaration*:
+The syntax that we used before is called a _Function Declaration_:
 
     function sayHi() {
       alert( "Hello" );
     }
 
-There is another syntax for creating a function that is called a *Function Expression*.
+There is another syntax for creating a function that is called a _Function Expression_.
 
 It looks like this:
 
@@ -11959,7 +11636,7 @@ We can even print out that value using `alert`:
 
 \`\`\`js run function sayHi() { alert( “Hello” ); }
 
-*!* alert( sayHi ); // shows the function code */!* \`\`\`
+_!_ alert( sayHi ); // shows the function code _/!_ \`\`\`
 
 Please note that the last line does not run the function, because there are no parentheses after `sayHi`. There are programming languages where any mention of a function name causes its execution, but JavaScript is not like that.
 
@@ -11980,7 +11657,7 @@ func(); // Hello // (3) run the copy (it works)! sayHi(); // Hello // this still
 Here’s what happens above in detail:
 
 1.  The Function Declaration `(1)` creates the function and puts it into the variable named `sayHi`.
-2.  Line `(2)` copies it into the variable `func`. Please note again: there are no parentheses after `sayHi`. If there were, then `func = sayHi()` would write *the result of the call* `sayHi()` into `func`, not *the function* `sayHi` itself.
+2.  Line `(2)` copies it into the variable `func`. Please note again: there are no parentheses after `sayHi`. If there were, then `func = sayHi()` would write _the result of the call_ `sayHi()` into `func`, not _the function_ `sayHi` itself.
 3.  Now the function can be called as both `sayHi()` and `func()`.
 
 Note that we could also have used a Function Expression to declare `sayHi`, in the first line:
@@ -12004,10 +11681,9 @@ Everything would work the same.
       // ...
     }*!*;*/!*
 
-The answer is simple: - There’s no need for `;` at the end of code blocks and syntax structures that use them like `if { ... }`, `for {  }`, `function f { }` etc. - A Function Expression is used inside the statement: `let sayHi = ...;`, as a value. It’s not a code block, but rather an assignment. The semicolon `;` is recommended at the end of statements, no matter what the value is. So the semicolon here is not related to the Function Expression itself, it just terminates the statement. \`\`\`\`
+The answer is simple: - There’s no need for `;` at the end of code blocks and syntax structures that use them like `if { ... }`, `for { }`, `function f { }` etc. - A Function Expression is used inside the statement: `let sayHi = ...;`, as a value. It’s not a code block, but rather an assignment. The semicolon `;` is recommended at the end of statements, no matter what the value is. So the semicolon here is not related to the Function Expression itself, it just terminates the statement. \`\`\`\`
 
-Callback functions
-------------------
+## Callback functions
 
 Let’s look at more examples of passing functions as values and using function expressions.
 
@@ -12024,7 +11700,7 @@ Function to run if the answer is “No”
 
 The function should ask the `question` and, depending on the user’s answer, call `yes()` or `no()`:
 
-\`\`\`js run *!* function ask(question, yes, no) { if (confirm(question)) yes() else no(); } */!*
+\`\`\`js run _!_ function ask(question, yes, no) { if (confirm(question)) yes() else no(); } _/!_
 
 function showOk() { alert( “You agreed.” ); }
 
@@ -12034,7 +11710,7 @@ function showCancel() { alert( “You canceled the execution.” ); }
 
 In practice, such functions are quite useful. The major difference between a real-life `ask` and the example above is that real-life functions use more complex ways to interact with the user than a simple `confirm`. In the browser, such function usually draws a nice-looking question window. But that’s another story.
 
-**The arguments `showOk` and `showCancel` of `ask` are called *callback functions* or just *callbacks*.**
+**The arguments `showOk` and `showCancel` of `ask` are called _callback functions_ or just _callbacks_.**
 
 The idea is that we pass a function and expect it to be “called back” later if necessary. In our case, `showOk` becomes the callback for “yes” answer, and `showCancel` for “no” answer.
 
@@ -12042,40 +11718,39 @@ We can use Function Expressions to write the same function much shorter:
 
 \`\`\`js run no-beautify function ask(question, yes, no) { if (confirm(question)) yes() else no(); }
 
-*!* ask( “Do you agree?”, function() { alert(“You agreed.”); }, function() { alert(“You canceled the execution.”); } ); */!* \`\`\`
+_!_ ask( “Do you agree?”, function() { alert(“You agreed.”); }, function() { alert(“You canceled the execution.”); } ); _/!_ \`\`\`
 
-Here, functions are declared right inside the `ask(...)` call. They have no name, and so are called *anonymous*. Such functions are not accessible outside of `ask` (because they are not assigned to variables), but that’s just what we want here.
+Here, functions are declared right inside the `ask(...)` call. They have no name, and so are called _anonymous_. Such functions are not accessible outside of `ask` (because they are not assigned to variables), but that’s just what we want here.
 
 Such code appears in our scripts very naturally, it’s in the spirit of JavaScript.
 
-\`\`\`smart header=“A function is a value representing an "action"” Regular values like strings or numbers represent the *data*.
+\`\`\`smart header=“A function is a value representing an "action"” Regular values like strings or numbers represent the _data_.
 
-A function can be perceived as an *action*.
+A function can be perceived as an _action_.
 
 We can pass it between variables and run when we want. \`\`\`
 
-Function Expression vs Function Declaration
--------------------------------------------
+## Function Expression vs Function Declaration
 
 Let’s formulate the key differences between Function Declarations and Expressions.
 
 First, the syntax: how to differentiate between them in the code.
 
--   *Function Declaration:* a function, declared as a separate statement, in the main code flow.
+- _Function Declaration:_ a function, declared as a separate statement, in the main code flow.
 
-        // Function Declaration
-        function sum(a, b) {
-          return a + b;
-        }
+      // Function Declaration
+      function sum(a, b) {
+        return a + b;
+      }
 
--   *Function Expression:* a function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the “assignment expression” `=`:
+- _Function Expression:_ a function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the “assignment expression” `=`:
 
-        // Function Expression
-        let sum = function(a, b) {
-          return a + b;
-        };
+      // Function Expression
+      let sum = function(a, b) {
+        return a + b;
+      };
 
-The more subtle difference is *when* a function is created by the JavaScript engine.
+The more subtle difference is _when_ a function is created by the JavaScript engine.
 
 **A Function Expression is created when the execution reaches it and is usable only from that moment.**
 
@@ -12093,7 +11768,7 @@ And after all Function Declarations are processed, the code is executed. So it h
 
 For example, this works:
 
-\`\`\`js run refresh untrusted *!* sayHi(“John”); // Hello, John */!*
+\`\`\`js run refresh untrusted _!_ sayHi(“John”); // Hello, John _/!_
 
 function sayHi(name) { alert( `Hello, ${name}` ); } \`\`\`
 
@@ -12101,7 +11776,7 @@ The Function Declaration `sayHi` is created when JavaScript is preparing to star
 
 …If it were a Function Expression, then it wouldn’t work:
 
-\`\`\`js run refresh untrusted *!* sayHi(“John”); // error! */!*
+\`\`\`js run refresh untrusted _!_ sayHi(“John”); // error! _/!_
 
 let sayHi = function(name) { // (\*) no magic any more alert( `Hello, ${name}` ); }; \`\`\`
 
@@ -12127,7 +11802,7 @@ function welcome() { alert(“Greetings!”); }
 
 }
 
-// …use it later *!* welcome(); // Error: welcome is not defined */!* \`\`\`
+// …use it later _!_ welcome(); // Error: welcome is not defined _/!_ \`\`\`
 
 That’s because a Function Declaration is only visible inside the code block in which it resides.
 
@@ -12135,8 +11810,8 @@ Here’s another example:
 
 \`\`\`js run let age = 16; // take 16 as an example
 
-if (age &lt; 18) { *!* welcome(); //   (runs) */!* // | function welcome() { // |  
-alert(“Hello!”); // | Function Declaration is available } // | everywhere in the block where it’s declared // | *!* welcome(); // / (runs) */!*
+if (age &lt; 18) { _!_ welcome(); //   (runs) _/!_ // | function welcome() { // |  
+alert(“Hello!”); // | Function Declaration is available } // | everywhere in the block where it’s declared // | _!_ welcome(); // / (runs) _/!_
 
 } else {
 
@@ -12145,7 +11820,7 @@ alert(“Greetings!”); } }
 
 // Here we’re out of curly braces, // so we can not see Function Declarations made inside of them.
 
-*!* welcome(); // Error: welcome is not defined */!* \`\`\`
+_!_ welcome(); // Error: welcome is not defined _/!_ \`\`\`
 
 What can we do to make `welcome` visible outside of `if`?
 
@@ -12167,7 +11842,7 @@ welcome = function() { alert(“Greetings!”); };
 
 }
 
-*!* welcome(); // ok now */!* \`\`\`
+_!_ welcome(); // ok now _/!_ \`\`\`
 
 Or we could simplify it even further using a question mark operator `?`:
 
@@ -12175,7 +11850,7 @@ Or we could simplify it even further using a question mark operator `?`:
 
 let welcome = (age &lt; 18) ? function() { alert(“Hello!”); } : function() { alert(“Greetings!”); };
 
-*!* welcome(); // ok now */!* \`\`\`
+_!_ welcome(); // ok now _/!_ \`\`\`
 
 \`\`\`smart header=“When to choose Function Declaration versus Function Expression?” As a rule of thumb, when we need to declare a function, the first to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
 
@@ -12183,14 +11858,13 @@ That’s also better for readability, as it’s easier to look up `function f(�
 
 …But if a Function Declaration does not suit us for some reason, or we need a conditional declaration (we’ve just seen an example), then Function Expression should be used. \`\`\`
 
-Summary
--------
+## Summary
 
--   Functions are values. They can be assigned, copied or declared in any place of the code.
--   If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
--   If the function is created as a part of an expression, it’s called a “Function Expression”.
--   Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
--   Function Expressions are created when the execution flow reaches them.
+- Functions are values. They can be assigned, copied or declared in any place of the code.
+- If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
+- If the function is created as a part of an expression, it’s called a “Function Expression”.
+- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
+- Function Expressions are created when the execution flow reaches them.
 
 In most cases when we need to declare a function, a Function Declaration is preferable, because it is visible prior to the declaration itself. That gives us more flexibility in code organization, and is usually more readable.
 
@@ -12222,19 +11896,19 @@ alert( sum(1, 2) ); // 3 \`\`\`
 
 As you can, see `(a, b) => a + b` means a function that accepts two arguments named `a` and `b`. Upon the execution, it evaluates the expression `a + b` and returns the result.
 
--   If we have only one argument, then parentheses around parameters can be omitted, making that even shorter.
+- If we have only one argument, then parentheses around parameters can be omitted, making that even shorter.
 
-    For example:
+  For example:
 
-    \`\`\`js run *!* let double = n =&gt; n \* 2; // roughly the same as: let double = function(n) { return n \* 2 } */!*
+  \`\`\`js run _!_ let double = n =&gt; n \* 2; // roughly the same as: let double = function(n) { return n \* 2 } _/!_
 
-    alert( double(3) ); // 6 \`\`\`
+  alert( double(3) ); // 6 \`\`\`
 
--   If there are no arguments, parentheses will be empty (but they should be present):
+- If there are no arguments, parentheses will be empty (but they should be present):
 
-    \`\`\`js run let sayHi = () =&gt; alert(“Hello!”);
+  \`\`\`js run let sayHi = () =&gt; alert(“Hello!”);
 
-    sayHi(); \`\`\`
+  sayHi(); \`\`\`
 
 Arrow functions can be used in the same way as Function Expressions.
 
@@ -12250,8 +11924,7 @@ Arrow functions may appear unfamiliar and not very readable at first, but that q
 
 They are very convenient for simple one-line actions, when we’re just too lazy to write many words.
 
-Multiline arrow functions
--------------------------
+## Multiline arrow functions
 
 The examples above took arguments from the left of `=>` and evaluated the right-side expression with them.
 
@@ -12259,7 +11932,7 @@ Sometimes we need something a little bit more complex, like multiple expressions
 
 Like this:
 
-\`\`\`js run let sum = (a, b) =&gt; { // the curly brace opens a multiline function let result = a + b; *!* return result; // if we use curly braces, then we need an explicit “return” */!* };
+\`\`\`js run let sum = (a, b) =&gt; { // the curly brace opens a multiline function let result = a + b; _!_ return result; // if we use curly braces, then we need an explicit “return” _/!_ };
 
 alert( sum(1, 2) ); // 3 \`\`\`
 
@@ -12271,8 +11944,7 @@ To study them in-depth, we first need to get to know some other aspects of JavaS
 
 For now, we can already use arrow functions for one-line actions and callbacks. \`\`\`
 
-Summary
--------
+## Summary
 
 Arrow functions are handy for one-liners. They come in two flavors:
 
@@ -12281,8 +11953,7 @@ Arrow functions are handy for one-liners. They come in two flavors:
 
 This chapter briefly recaps the features of JavaScript that we’ve learned by now, paying special attention to subtle moments.
 
-Code structure
---------------
+## Code structure
 
 Statements are delimited with a semicolon:
 
@@ -12314,8 +11985,7 @@ Semicolons are not required after code blocks `{...}` and syntax constructs with
 
 More in: <a href="info:structure" class="uri">info:structure</a>.
 
-Strict mode
------------
+## Strict mode
 
 To fully enable all features of modern JavaScript, we should start scripts with `"use strict"`.
 
@@ -12331,14 +12001,13 @@ Some modern features of the language (like classes that we’ll study in the fut
 
 More in: <a href="info:strict-mode" class="uri">info:strict-mode</a>.
 
-Variables
----------
+## Variables
 
 Can be declared using:
 
--   `let`
--   `const` (constant, can’t be changed)
--   `var` (old-style, will see later)
+- `let`
+- `const` (constant, can’t be changed)
+- `var` (old-style, will see later)
 
 A variable name can include: - Letters and digits, but the first character may not be a digit. - Characters `$` and `_` are normal, on par with letters. - Non-Latin alphabets and hieroglyphs are also allowed, but commonly not used.
 
@@ -12349,13 +12018,13 @@ Variables are dynamically typed. They can store any value:
 
 There are 8 data types:
 
--   `number` for both floating-point and integer numbers,
--   `bigint` for integer numbers of arbitrary length,
--   `string` for strings,
--   `boolean` for logical values: `true/false`,
--   `null` – a type with a single value `null`, meaning “empty” or “does not exist”,
--   `undefined` – a type with a single value `undefined`, meaning “not assigned”,
--   `object` and `symbol` – for complex data structures and unique identifiers, we haven’t learnt them yet.
+- `number` for both floating-point and integer numbers,
+- `bigint` for integer numbers of arbitrary length,
+- `string` for strings,
+- `boolean` for logical values: `true/false`,
+- `null` – a type with a single value `null`, meaning “empty” or “does not exist”,
+- `undefined` – a type with a single value `undefined`, meaning “not assigned”,
+- `object` and `symbol` – for complex data structures and unique identifiers, we haven’t learnt them yet.
 
 The `typeof` operator returns the type for a value, with two exceptions:
 
@@ -12364,8 +12033,7 @@ The `typeof` operator returns the type for a value, with two exceptions:
 
 More in: <a href="info:variables" class="uri">info:variables</a> and <a href="info:types" class="uri">info:types</a>.
 
-Interaction
------------
+## Interaction
 
 We’re using a browser as a working environment, so basic UI functions will be:
 
@@ -12378,7 +12046,7 @@ Ask a `question` and suggest to choose between Ok and Cancel. The choice is retu
 [`alert(message)`](mdn:api/Window/alert)  
 Output a `message`.
 
-All these functions are *modal*, they pause the code execution and prevent the visitor from interacting with the page until they answer.
+All these functions are _modal_, they pause the code execution and prevent the visitor from interacting with the page until they answer.
 
 For instance:
 
@@ -12388,8 +12056,7 @@ alert( “Visitor:” + userName ); // Alice alert( “Tea wanted:” + isTeaWan
 
 More in: <a href="info:alert-prompt-confirm" class="uri">info:alert-prompt-confirm</a>.
 
-Operators
----------
+## Operators
 
 JavaScript supports the following operators:
 
@@ -12433,35 +12100,33 @@ There are few others, like a comma operator.
 
 More in: <a href="info:operators" class="uri">info:operators</a>, <a href="info:comparison" class="uri">info:comparison</a>, <a href="info:logical-operators" class="uri">info:logical-operators</a>, <a href="info:nullish-coalescing-operator" class="uri">info:nullish-coalescing-operator</a>.
 
-Loops
------
+## Loops
 
--   We covered 3 types of loops:
+- We covered 3 types of loops:
 
-        // 1
-        while (condition) {
-          ...
-        }
+      // 1
+      while (condition) {
+        ...
+      }
 
-        // 2
-        do {
-          ...
-        } while (condition);
+      // 2
+      do {
+        ...
+      } while (condition);
 
-        // 3
-        for(let i = 0; i < 10; i++) {
-          ...
-        }
+      // 3
+      for(let i = 0; i < 10; i++) {
+        ...
+      }
 
--   The variable declared in `for(let...)` loop is visible only inside the loop. But we can also omit `let` and reuse an existing variable.
--   Directives `break/continue` allow to exit the whole loop/current iteration. Use labels to break nested loops.
+- The variable declared in `for(let...)` loop is visible only inside the loop. But we can also omit `let` and reuse an existing variable.
+- Directives `break/continue` allow to exit the whole loop/current iteration. Use labels to break nested loops.
 
 Details in: <a href="info:while-for" class="uri">info:while-for</a>.
 
 Later we’ll study more types of loops to deal with objects.
 
-The “switch” construct
-----------------------
+## The “switch” construct
 
 The “switch” construct can replace multiple `if` checks. It uses `===` (strict equality) for comparisons.
 
@@ -12477,8 +12142,7 @@ default: alert(“Any value not equal to one above”); } \`\`\`
 
 Details in: <a href="info:switch" class="uri">info:switch</a>.
 
-Functions
----------
+## Functions
 
 We covered three ways to create a function in JavaScript:
 
@@ -12515,14 +12179,13 @@ We covered three ways to create a function in JavaScript:
         // with a single argument
         let double = n => n * 2;
 
--   Functions may have local variables: those declared inside its body or its parameter list. Such variables are only visible inside the function.
--   Parameters can have default values: `function sum(a = 1, b = 2) {...}`.
--   Functions always return something. If there’s no `return` statement, then the result is `undefined`.
+- Functions may have local variables: those declared inside its body or its parameter list. Such variables are only visible inside the function.
+- Parameters can have default values: `function sum(a = 1, b = 2) {...}`.
+- Functions always return something. If there’s no `return` statement, then the result is `undefined`.
 
 Details: see <a href="info:function-basics" class="uri">info:function-basics</a>, <a href="info:arrow-functions-basics" class="uri">info:arrow-functions-basics</a>.
 
-More to come
-------------
+## More to come
 
 That was a brief list of JavaScript features. As of now we’ve studied only basics. Further in the tutorial you’ll find more specials and advanced features of JavaScript. \# Debugging in Chrome
 
@@ -12532,14 +12195,13 @@ Before writing more complex code, let’s talk about debugging.
 
 We’ll be using Chrome here, because it has enough features, most other browsers have a similar process.
 
-The “Sources” panel
--------------------
+## The “Sources” panel
 
 Your Chrome version may look a little bit different, but it still should be obvious what’s there.
 
--   Open the [example page](debugging/index.html) in Chrome.
--   Turn on developer tools with `key:F12` (Mac: `key:Cmd+Opt+I`).
--   Select the `Sources` panel.
+- Open the [example page](debugging/index.html) in Chrome.
+- Turn on developer tools with `key:F12` (Mac: `key:Cmd+Opt+I`).
+- Select the `Sources` panel.
 
 Here’s what you should see if you are doing it for the first time:
 
@@ -12559,8 +12221,7 @@ The Sources panel has 3 parts:
 
 Now you could click the same toggler <span class="devtools" style="background-position:-172px -122px"></span> again to hide the resources list and give the code some space.
 
-Console
--------
+## Console
 
 If we press `key:Esc`, then a console opens below. We can type commands there and press `key:Enter` to execute.
 
@@ -12570,8 +12231,7 @@ For example, here `1+2` results in `3`, and `hello("debugger")` returns nothing,
 
 ![](chrome-sources-console.svg)
 
-Breakpoints
------------
+## Breakpoints
 
 Let’s examine what’s going on within the code of the [example page](debugging/index.html). In `hello.js`, click at line number `4`. Yes, right on the `4` digit, not on the code.
 
@@ -12581,18 +12241,17 @@ It should look like this (blue is where you should click):
 
 ![](chrome-sources-breakpoint.svg)
 
-A *breakpoint* is a point of code where the debugger will automatically pause the JavaScript execution.
+A _breakpoint_ is a point of code where the debugger will automatically pause the JavaScript execution.
 
 While the code is paused, we can examine current variables, execute commands in the console etc. In other words, we can debug it.
 
 We can always find a list of breakpoints in the right panel. That’s useful when we have many breakpoints in various files. It allows us to: - Quickly jump to the breakpoint in the code (by clicking on it in the right panel). - Temporarily disable the breakpoint by unchecking it. - Remove the breakpoint by right-clicking and selecting Remove. - …And so on.
 
-\`\`\`smart header=“Conditional breakpoints” *Right click* on the line number allows to create a *conditional* breakpoint. It only triggers when the given expression is truthy.
+\`\`\`smart header=“Conditional breakpoints” _Right click_ on the line number allows to create a _conditional_ breakpoint. It only triggers when the given expression is truthy.
 
 That’s handy when we need to stop only for a certain variable value or for certain function parameters. \`\`\`
 
-Debugger command
-----------------
+## Debugger command
 
 We can also pause the code by using the `debugger` command in it, like this:
 
@@ -12608,8 +12267,7 @@ We can also pause the code by using the `debugger` command in it, like this:
 
 That’s very convenient when we are in a code editor and don’t want to switch to the browser and look up the script in developer tools to set the breakpoint.
 
-Pause and look around
----------------------
+## Pause and look around
 
 In our example, `hello()` is called during the page load, so the easiest way to activate the debugger (after we’ve set the breakpoints) is to reload the page. So let’s press `key:F5` (Windows, Linux) or `key:Cmd+R` (Mac).
 
@@ -12637,10 +12295,9 @@ Please open the informational dropdowns to the right (labeled with arrows). They
 
     There’s also `this` keyword there that we didn’t study yet, but we’ll do that soon.
 
-Tracing the execution
----------------------
+## Tracing the execution
 
-Now it’s time to *trace* the script.
+Now it’s time to _trace_ the script.
 
 There are buttons for it at the top of the right panel. Let’s engage them. <span class="devtools" style="background-position:-146px -168px"></span> – “Resume”: continue the execution, hotkey `key:F8`. : Resumes the execution. If there are no additional breakpoints, then the execution just continues and the debugger loses control.
 
@@ -12655,7 +12312,7 @@ Run the next statement. If we click it now, `alert` will be shown.
 
 Clicking this again and again will step through all script statements one by one.
 
-<span class="devtools" style="background-position:-62px -192px"></span> – “Step over”: run the next command, but *don’t go into a function*, hotkey `key:F10`.  
+<span class="devtools" style="background-position:-62px -192px"></span> – “Step over”: run the next command, but _don’t go into a function_, hotkey `key:F10`.  
 Similar to the previous “Step” command, but behaves differently if the next statement is a function call. That is: not a built-in, like `alert`, but a function of our own.
 
 The “Step” command goes into it and pauses the execution at its first line, while “Step over” executes the nested function call invisibly, skipping the function internals.
@@ -12682,21 +12339,19 @@ When enabled, and the developer tools is open, a script error automatically paus
 
 That’s handy when we want to move multiple steps forward to the line, but we’re too lazy to set a breakpoint. \`\`\`
 
-Logging
--------
+## Logging
 
 To output something to console from our code, there’s `console.log` function.
 
 For instance, this outputs values from `0` to `4` to console:
 
-`js run // open console to see for (let i = 0; i < 5; i++) {   console.log("value,", i); }`
+`js run // open console to see for (let i = 0; i < 5; i++) { console.log("value,", i); }`
 
 Regular users don’t see that output, it is in the console. To see it, either open the Console panel of developer tools or press `key:Esc` while in another panel: that opens the console at the bottom.
 
 If we have enough logging in our code, then we can see what’s going on from the records, without the debugger.
 
-Summary
--------
+## Summary
 
 As we can see, there are three main ways to pause a script: 1. A breakpoint. 2. The `debugger` statements. 3. An error (if dev tools are open and the button <span class="devtools" style="background-position:-90px -146px"></span> is “on”).
 
@@ -12712,8 +12367,7 @@ Our code must be as clean and easy to read as possible.
 
 That is actually the art of programming – to take a complex task and code it in a way that is both correct and human-readable. A good code style greatly assists in that.
 
-Syntax
-------
+## Syntax
 
 Here is a cheat sheet with some suggested rules (see below for more details):
 
@@ -12737,10 +12391,10 @@ A single-line construct, such as `if (condition) doSomething()`, is an important
 
 Here are the annotated variants so you can judge their readability for yourself:
 
-1.  😠 Beginners sometimes do that. Bad! Curly braces are not needed: `` js  if (n < 0) *!*{*/!*alert(`Power ${n} is not supported`);*!*}*/!* ``
-2.  😠 Split to a separate line without braces. Never do that, easy to make an error when adding new lines: `` js  if (n < 0)    alert(`Power ${n} is not supported`); ``
-3.  😏 One line without braces - acceptable, if it’s short: `` js  if (n < 0) alert(`Power ${n} is not supported`); ``
-4.  😃 The best variant: `` js  if (n < 0) {    alert(`Power ${n} is not supported`);  } ``
+1.  😠 Beginners sometimes do that. Bad! Curly braces are not needed: `` js if (n < 0) *!*{*/!*alert(`Power ${n} is not supported`);*!*}*/!* ``
+2.  😠 Split to a separate line without braces. Never do that, easy to make an error when adding new lines: `` js if (n < 0) alert(`Power ${n} is not supported`); ``
+3.  😏 One line without braces - acceptable, if it’s short: `` js if (n < 0) alert(`Power ${n} is not supported`); ``
+4.  😃 The best variant: `` js if (n < 0) { alert(`Power ${n} is not supported`); } ``
 
 For a very brief code, one line is allowed, e.g. `if (cond) return null`. But a code block (the last variant) is usually more readable.
 
@@ -12773,31 +12427,31 @@ The maximum line length should be agreed upon at the team-level. It’s usually 
 
 There are two types of indents:
 
--   **Horizontal indents: 2 or 4 spaces.**
+- **Horizontal indents: 2 or 4 spaces.**
 
-    A horizontal indentation is made using either 2 or 4 spaces or the horizontal tab symbol (key `key:Tab`). Which one to choose is an old holy war. Spaces are more common nowadays.
+  A horizontal indentation is made using either 2 or 4 spaces or the horizontal tab symbol (key `key:Tab`). Which one to choose is an old holy war. Spaces are more common nowadays.
 
-    One advantage of spaces over tabs is that spaces allow more flexible configurations of indents than the tab symbol.
+  One advantage of spaces over tabs is that spaces allow more flexible configurations of indents than the tab symbol.
 
-    For instance, we can align the parameters with the opening bracket, like this:
+  For instance, we can align the parameters with the opening bracket, like this:
 
-    `js no-beautify   show(parameters,        aligned, // 5 spaces padding at the left          one,        after,        another     ) {     // ...   }`
+  `js no-beautify show(parameters, aligned, // 5 spaces padding at the left one, after, another ) { // ... }`
 
--   **Vertical indents: empty lines for splitting code into logical blocks.**
+- **Vertical indents: empty lines for splitting code into logical blocks.**
 
-    Even a single function can often be divided into logical blocks. In the example below, the initialization of variables, the main loop and returning the result are split vertically:
+  Even a single function can often be divided into logical blocks. In the example below, the initialization of variables, the main loop and returning the result are split vertically:
 
-        function pow(x, n) {
-          let result = 1;
-          //              <--
-          for (let i = 0; i < n; i++) {
-            result *= x;
-          }
-          //              <--
-          return result;
+      function pow(x, n) {
+        let result = 1;
+        //              <--
+        for (let i = 0; i < n; i++) {
+          result *= x;
         }
+        //              <--
+        return result;
+      }
 
-    Insert an extra newline where it helps to make the code more readable. There should not be more than nine lines of code without a vertical indentation.
+  Insert an extra newline where it helps to make the code more readable. There should not be more than nine lines of code without a vertical indentation.
 
 ### Semicolons
 
@@ -12845,7 +12499,7 @@ Option 1:
         }
 
         return result;
-      }  
+      }
     }
 
 Option 2:
@@ -12867,12 +12521,11 @@ Option 2:
 
 The second one is more readable because the “special case” of `n < 0` is handled early on. Once the check is done we can move on to the “main” code flow without the need for additional nesting.
 
-Function Placement
-------------------
+## Function Placement
 
 If you are writing several “helper” functions and the code that uses them, there are three ways to organize the functions.
 
-1.  Declare the functions *above* the code that uses them:
+1.  Declare the functions _above_ the code that uses them:
 
         // *!*function declarations*/!*
         function createElement() {
@@ -12916,10 +12569,9 @@ If you are writing several “helper” functions and the code that uses them, t
 
 Most of time, the second variant is preferred.
 
-That’s because when reading code, we first want to know *what it does*. If the code goes first, then it becomes clear from the start. Then, maybe we won’t need to read the functions at all, especially if their names are descriptive of what they actually do.
+That’s because when reading code, we first want to know _what it does_. If the code goes first, then it becomes clear from the start. Then, maybe we won’t need to read the functions at all, especially if their names are descriptive of what they actually do.
 
-Style Guides
-------------
+## Style Guides
 
 A style guide contains general rules about “how to write” code, e.g. which quotes to use, how many spaces to indent, the maximal line length, etc. A lot of minor things.
 
@@ -12929,16 +12581,15 @@ Of course, a team can always write their own style guide, but usually there’s 
 
 Some popular choices:
 
--   [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
--   [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
--   [Idiomatic.JS](https://github.com/rwaldron/idiomatic.js)
--   [StandardJS](https://standardjs.com/)
--   (plus many more)
+- [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [Idiomatic.JS](https://github.com/rwaldron/idiomatic.js)
+- [StandardJS](https://standardjs.com/)
+- (plus many more)
 
 If you’re a novice developer, start with the cheat sheet at the beginning of this chapter. Then you can browse other style guides to pick up more ideas and decide which one you like best.
 
-Automated Linters
------------------
+## Automated Linters
 
 Linters are tools that can automatically check the style of your code and make improving suggestions.
 
@@ -12946,9 +12597,9 @@ The great thing about them is that style-checking can also find some bugs, like 
 
 Here are some well-known linting tools:
 
--   [JSLint](http://www.jslint.com/) – one of the first linters.
--   [JSHint](http://www.jshint.com/) – more settings than JSLint.
--   [ESLint](http://eslint.org/) – probably the newest one.
+- [JSLint](http://www.jslint.com/) – one of the first linters.
+- [JSHint](http://www.jshint.com/) – more settings than JSLint.
+- [ESLint](http://eslint.org/) – probably the newest one.
 
 Most linters are integrated with many popular editors: just enable the plugin in the editor and configure the style.
 
@@ -12980,8 +12631,7 @@ It is also possible to download style rule sets from the web and extend them ins
 
 Also certain IDEs have built-in linting, which is convenient but not as customizable as ESLint.
 
-Summary
--------
+## Summary
 
 All syntax rules described in this chapter (and in the style guides referenced) aim to increase the readability of your code. All of them are debatable.
 
@@ -12995,8 +12645,7 @@ We normally use them to describe how and why the code works.
 
 At first sight, commenting might be obvious, but novices in programming often use them wrongly.
 
-Bad comments
-------------
+## Bad comments
 
 Novices tend to use comments to explain “what is going on in the code”. Like this:
 
@@ -13036,7 +12685,7 @@ The better variant, with a factored out function `isPrime`:
       for (let i = 2; i < n; i++) {
         *!*if (!isPrime(i)) continue;*/!*
 
-        alert(i);  
+        alert(i);
       }
     }
 
@@ -13048,7 +12697,7 @@ The better variant, with a factored out function `isPrime`:
       return true;
     }
 
-Now we can understand the code easily. The function itself becomes the comment. Such code is called *self-descriptive*.
+Now we can understand the code easily. The function itself becomes the comment. Such code is called _self-descriptive_.
 
 ### Recipe: create functions
 
@@ -13094,8 +12743,7 @@ Once again, functions themselves tell what’s going on. There’s nothing to co
 
 In reality, we can’t totally avoid “explanatory” comments. There are complex algorithms. And there are smart “tweaks” for purposes of optimization. But generally we should try to keep the code simple and self-descriptive.
 
-Good comments
--------------
+## Good comments
 
 So, explanatory comments are usually bad. Which comments are good?
 
@@ -13125,7 +12773,7 @@ By the way, many editors like [WebStorm](https://www.jetbrains.com/webstorm/) ca
 Also, there are tools like [JSDoc 3](https://github.com/jsdoc3/jsdoc) that can generate HTML-documentation from the comments. You can read more information about JSDoc at <a href="http://usejsdoc.org/" class="uri">http://usejsdoc.org/</a>.
 
 Why is the task solved this way?  
-What’s written is important. But what’s *not* written may be even more important to understand what’s going on. Why is the task solved exactly this way? The code gives no answer.
+What’s written is important. But what’s _not_ written may be even more important to understand what’s going on. Why is the task solved exactly this way? The code gives no answer.
 
 If there are many ways to solve the task, why this one? Especially when it’s not the most obvious one.
 
@@ -13136,8 +12784,7 @@ Comments that explain the solution are very important. They help to continue dev
 Any subtle features of the code? Where they are used?  
 If the code has anything subtle and counter-intuitive, it’s definitely worth commenting.
 
-Summary
--------
+## Summary
 
 An important sign of a good developer is comments: their presence and even their absence.
 
@@ -13145,14 +12792,14 @@ Good comments allow us to maintain the code well, come back to it after a delay 
 
 **Comment this:**
 
--   Overall architecture, high-level view.
--   Function usage.
--   Important solutions, especially when not immediately obvious.
+- Overall architecture, high-level view.
+- Function usage.
+- Important solutions, especially when not immediately obvious.
 
 **Avoid comments:**
 
--   That tell “how code works” and “what it does”.
--   Put them in only if it’s impossible to make the code so simple and self-descriptive that it doesn’t require them.
+- That tell “how code works” and “what it does”.
+- Put them in only if it’s impossible to make the code so simple and self-descriptive that it doesn’t require them.
 
 Comments are also used for auto-documenting tools like JSDoc3: they read them and generate HTML-docs (or docs in another format). \# Ninja code
 
@@ -13166,8 +12813,7 @@ Read them carefully and find out who you are – a ninja, a novice, or maybe a c
 
 `warn header="Irony detected" Many try to follow ninja paths. Few succeed.`
 
-Brevity is the soul of wit
---------------------------
+## Brevity is the soul of wit
 
 Make the code as short as possible. Show how smart you are.
 
@@ -13182,8 +12828,7 @@ Cool, right? If you write like that, a developer who comes across this line and 
 
 Tell them that shorter is always better. Initiate them into the paths of ninja.
 
-One-letter variables
---------------------
+## One-letter variables
 
 Another way to code shorter is to use single-letter variable names everywhere. Like `a`, `b` or `c`.
 
@@ -13193,43 +12838,40 @@ A short variable disappears in the code like a real ninja in the forest. No one 
 
 An exotic variable as a loop counter is especially cool if the loop body takes 1-2 pages (make it longer if you can). Then if someone looks deep inside the loop, they won’t be able to quickly figure out that the variable named `x` is the loop counter.
 
-Use abbreviations
------------------
+## Use abbreviations
 
 If the team rules forbid the use of one-letter and vague names – shorten them, make abbreviations.
 
 Like this:
 
--   `list` -&gt; `lst`.
--   `userAgent` -&gt; `ua`.
--   `browser` -&gt; `brsr`.
--   …etc
+- `list` -&gt; `lst`.
+- `userAgent` -&gt; `ua`.
+- `browser` -&gt; `brsr`.
+- …etc
 
 Only the one with truly good intuition will be able to understand such names. Try to shorten everything. Only a worthy person should be able to uphold the development of your code.
 
-Soar high. Be abstract.
------------------------
+## Soar high. Be abstract.
 
 While choosing a name try to use the most abstract word. Like `obj`, `data`, `value`, `item`, `elem` and so on.
 
--   **The ideal name for a variable is `data`.** Use it everywhere you can. Indeed, every variable holds *data*, right?
+- **The ideal name for a variable is `data`.** Use it everywhere you can. Indeed, every variable holds _data_, right?
 
-    …But what to do if `data` is already taken? Try `value`, it’s also universal. After all, a variable eventually gets a *value*.
+  …But what to do if `data` is already taken? Try `value`, it’s also universal. After all, a variable eventually gets a _value_.
 
--   **Name a variable by its type: `str`, `num`…**
+- **Name a variable by its type: `str`, `num`…**
 
-    Give them a try. A young initiate may wonder – are such names really useful for a ninja? Indeed, they are!
+  Give them a try. A young initiate may wonder – are such names really useful for a ninja? Indeed, they are!
 
-    Sure, the variable name still means something. It says what’s inside the variable: a string, a number or something else. But when an outsider tries to understand the code, they’ll be surprised to see that there’s actually no information at all! And will ultimately fail to alter your well-thought code.
+  Sure, the variable name still means something. It says what’s inside the variable: a string, a number or something else. But when an outsider tries to understand the code, they’ll be surprised to see that there’s actually no information at all! And will ultimately fail to alter your well-thought code.
 
-    The value type is easy to find out by debugging. But what’s the meaning of the variable? Which string/number does it store?
+  The value type is easy to find out by debugging. But what’s the meaning of the variable? Which string/number does it store?
 
-    There’s just no way to figure out without a good meditation!
+  There’s just no way to figure out without a good meditation!
 
--   **…But what if there are no more such names?** Just add a number: `data1, item2, elem5`…
+- **…But what if there are no more such names?** Just add a number: `data1, item2, elem5`…
 
-Attention test
---------------
+## Attention test
 
 Only a truly attentive programmer should be able to understand your code. But how to check that?
 
@@ -13239,10 +12881,9 @@ Mix them where you can.
 
 A quick read of such code becomes impossible. And when there’s a typo… Ummm… We’re stuck for long, time to drink tea.
 
-Smart synonyms
---------------
+## Smart synonyms
 
-Using *similar* names for *same* things makes life more interesting and shows your creativity to the public.
+Using _similar_ names for _same_ things makes life more interesting and shows your creativity to the public.
 
 For instance, consider function prefixes. If a function shows a message on the screen – start it with `display…`, like `displayMessage`. And then if another function shows on the screen something else, like a user name, start it with `show…` (like `showName`).
 
@@ -13256,8 +12897,7 @@ For two functions with important differences – use the same prefix!
 
 For instance, the function `printPage(page)` will use a printer. And the function `printText(text)` will put the text on-screen. Let an unfamiliar reader think well over similarly named function `printMessage`: “Where does it put the message? To a printer or on the screen?”. To make it really shine, `printMessage(message)` should output it in the new window!
 
-Reuse names
------------
+## Reuse names
 
 Add a new variable only when absolutely necessary.
 
@@ -13265,7 +12905,7 @@ Instead, reuse existing names. Just write new values into them.
 
 In a function try to use only variables passed as parameters.
 
-That would make it really hard to identify what’s exactly in the variable *now*. And also where it comes from. The purpose is to develop the intuition and memory of a person reading the code. A person with weak intuition would have to analyze the code line-by-line and track the changes through every code branch.
+That would make it really hard to identify what’s exactly in the variable _now_. And also where it comes from. The purpose is to develop the intuition and memory of a person reading the code. A person with weak intuition would have to analyze the code line-by-line and track the changes through every code branch.
 
 **An advanced variant of the approach is to covertly (!) replace the value with something alike in the middle of a loop or a function.**
 
@@ -13283,8 +12923,7 @@ A fellow programmer who wants to work with `elem` in the second half of the func
 
 Seen in code regularly. Deadly effective even against an experienced ninja.
 
-Underscores for fun
--------------------
+## Underscores for fun
 
 Put underscores `_` and `__` before variable names. Like `_name` or `__value`. It would be great if only you knew their meaning. Or, better, add them just for fun, without particular meaning at all. Or different meanings in different places.
 
@@ -13292,15 +12931,13 @@ You kill two rabbits with one shot. First, the code becomes longer and less read
 
 A smart ninja puts underscores at one spot of code and evades them at other places. That makes the code even more fragile and increases the probability of future errors.
 
-Show your love
---------------
+## Show your love
 
 Let everyone see how magnificent your entities are! Names like `superElement`, `megaFrame` and `niceItem` will definitely enlighten a reader.
 
 Indeed, from one hand, something is written: `super..`, `mega..`, `nice..` But from the other hand – that brings no details. A reader may decide to look for a hidden meaning and meditate for an hour or two of their paid working time.
 
-Overlap outer variables
------------------------
+## Overlap outer variables
 
 Use same names for variables inside and outside a function. As simple. No efforts to invent new names.
 
@@ -13319,8 +12956,7 @@ A programmer who jumps inside the `render` will probably fail to notice that the
 
 Then they’ll try to work with `user` assuming that it’s the external variable, the result of `authenticateUser()`… The trap is sprung! Hello, debugger…
 
-Side-effects everywhere!
-------------------------
+## Side-effects everywhere!
 
 There are functions that look like they don’t change anything. Like `isReady()`, `checkPermission()`, `findTags()`… They are assumed to carry out calculations, find and return the data, without changing anything outside of them. In other words, without “side-effects”.
 
@@ -13334,8 +12970,7 @@ Show your original thinking! Let the call of `checkPermission` return not `true/
 
 Those developers who try to write `if (checkPermission(..))`, will wonder why it doesn’t work. Tell them: “Read the docs!”. And give this article.
 
-Powerful functions!
--------------------
+## Powerful functions!
 
 Don’t limit the function by what’s written in its name. Be broader.
 
@@ -13347,19 +12982,17 @@ Additional actions should not be obvious from the function name. A true ninja co
 
 Imagine, another developer wants only to check the email, and not output any message. Your function `validateEmail(email)` that does both will not suit them. So they won’t break your meditation by asking anything about it.
 
-Summary
--------
+## Summary
 
 All “pieces of advice” above are from the real code… Sometimes, written by experienced developers. Maybe even more experienced than you are ;)
 
--   Follow some of them, and your code will become full of surprises.
--   Follow many of them, and your code will become truly yours, no one would want to change it.
--   Follow all, and your code will become a valuable lesson for young developers looking for enlightenment. \# Automated testing with Mocha
+- Follow some of them, and your code will become full of surprises.
+- Follow many of them, and your code will become truly yours, no one would want to change it.
+- Follow all, and your code will become a valuable lesson for young developers looking for enlightenment. \# Automated testing with Mocha
 
 Automated testing will be used in further tasks, and it’s also widely used in real projects.
 
-Why do we need tests?
----------------------
+## Why do we need tests?
 
 When we write a function, we can usually imagine what it should do: which parameters give which results.
 
@@ -13377,8 +13010,7 @@ That’s very typical. When we develop something, we keep a lot of possible use 
 
 **Automated testing means that tests are written separately, in addition to the code. They run our functions in various ways and compare results with the expected.**
 
-Behavior Driven Development (BDD)
----------------------------------
+## Behavior Driven Development (BDD)
 
 Let’s start with a technique named [Behavior Driven Development](http://en.wikipedia.org/wiki/Behavior-driven_development) or, in short, BDD.
 
@@ -13386,8 +13018,7 @@ Let’s start with a technique named [Behavior Driven Development](http://en.wik
 
 To understand BDD, we’ll examine a practical case of development.
 
-Development of “pow”: the spec
-------------------------------
+## Development of “pow”: the spec
 
 Let’s say we want to make a function `pow(x, n)` that raises `x` to an integer power `n`. We assume that `n≥0`.
 
@@ -13395,7 +13026,7 @@ That task is just an example: there’s the `**` operator in JavaScript that can
 
 Before creating the code of `pow`, we can imagine what the function should do and describe it.
 
-Such description is called a *specification* or, in short, a spec, and contains descriptions of use cases together with tests for them, like this:
+Such description is called a _specification_ or, in short, a spec, and contains descriptions of use cases together with tests for them, like this:
 
     describe("pow", function() {
 
@@ -13411,7 +13042,7 @@ A spec has three main building blocks that you can see above:
 What functionality we’re describing. In our case we’re describing the function `pow`. Used to group “workers” – the `it` blocks.
 
 `it("use case description", function() { ... })`  
-In the title of `it` we *in a human-readable way* describe the particular use case, and the second argument is a function that tests it.
+In the title of `it` we _in a human-readable way_ describe the particular use case, and the second argument is a function that tests it.
 
 `assert.equal(value1, value2)`  
 The code inside `it` block, if the implementation is correct, should execute without errors.
@@ -13420,8 +13051,7 @@ Functions `assert.*` are used to check whether `pow` works as expected. Right he
 
 The specification can be executed, and it will run the test specified in `it` block. We’ll see that later.
 
-The development flow
---------------------
+## The development flow
 
 The flow of development usually looks like this:
 
@@ -13433,20 +13063,19 @@ The flow of development usually looks like this:
 6.  Go to 3, update the implementation till tests give no errors.
 7.  Repeat steps 3-6 till the functionality is ready.
 
-So, the development is *iterative*. We write the spec, implement it, make sure tests pass, then write more tests, make sure they work etc. At the end we have both a working implementation and tests for it.
+So, the development is _iterative_. We write the spec, implement it, make sure tests pass, then write more tests, make sure they work etc. At the end we have both a working implementation and tests for it.
 
 Let’s see this development flow in our practical case.
 
 The first step is already complete: we have an initial spec for `pow`. Now, before making the implementation, let’s use few JavaScript libraries to run the tests, just to see that they are working (they will all fail).
 
-The spec in action
-------------------
+## The spec in action
 
 Here in the tutorial we’ll be using the following JavaScript libraries for tests:
 
--   [Mocha](http://mochajs.org/) – the core framework: it provides common testing functions including `describe` and `it` and the main function that runs tests.
--   [Chai](http://chaijs.com) – the library with many assertions. It allows to use a lot of different assertions, for now we need only `assert.equal`.
--   [Sinon](http://sinonjs.org/) – a library to spy over functions, emulate built-in functions and more, we’ll need it much later.
+- [Mocha](http://mochajs.org/) – the core framework: it provides common testing functions including `describe` and `it` and the main function that runs tests.
+- [Chai](http://chaijs.com) – the library with many assertions. It allows to use a lot of different assertions, for now we need only `assert.equal`.
+- [Sinon](http://sinonjs.org/) – a library to spy over functions, emulate built-in functions and more, we’ll need it much later.
 
 These libraries are suitable for both in-browser and server-side testing. Here we’ll consider the browser variant.
 
@@ -13470,8 +13099,7 @@ As of now, the test fails, there’s an error. That’s logical: we have an empt
 
 For the future, let’s note that there are more high-level test-runners, like [karma](https://karma-runner.github.io/) and others, that make it easy to autorun many different tests.
 
-Initial implementation
-----------------------
+## Initial implementation
 
 Let’s make a simple implementation of `pow`, for tests to pass:
 
@@ -13483,8 +13111,7 @@ Wow, now it works!
 
 \[iframe height=250 src=“pow-min” border=1 edit\]
 
-Improving the spec
-------------------
+## Improving the spec
 
 What we’ve done is definitely a cheat. The function does not work: an attempt to calculate `pow(3,4)` would give an incorrect result, but tests pass.
 
@@ -13539,8 +13166,7 @@ The result:
 
 As we could expect, the second test failed. Sure, our function always returns `8`, while the `assert` expects `81`.
 
-Improving the implementation
-----------------------------
+## Improving the implementation
 
 Let’s write something more real for tests to pass:
 
@@ -13575,8 +13201,7 @@ The result:
 
 \[iframe height=250 src=“pow-3” edit border=“1”\]
 
-Nested describe
----------------
+## Nested describe
 
 We’re going to add even more tests. But before that let’s note that the helper function `makeTest` and `for` should be grouped together. We won’t need `makeTest` in other tests, it’s needed only in `for`: their common task is to check how `pow` raises into the given power.
 
@@ -13634,8 +13259,7 @@ Testing started – before all tests (before) Before a test – enter a test (be
 
     Usually, `beforeEach/afterEach` and `before/after` are used to perform initialization, zero out counters or do something else between the tests (or test groups).
 
-Extending the spec
-------------------
+## Extending the spec
 
 The basic functionality of `pow` is complete. The first iteration of the development is done. When we’re done celebrating and drinking champagne – let’s go on and improve it.
 
@@ -13657,7 +13281,7 @@ Let’s first add the behavior to the spec(!):
 
       it("for non-integer n the result is NaN", function() {
     *!*
-        assert.isNaN(pow(2, 1.5));    
+        assert.isNaN(pow(2, 1.5));
     */!*
       });
 
@@ -13673,12 +13297,12 @@ The newly added tests fail, because our implementation does not support them. Th
 
 There are other assertions in [Chai](http://chaijs.com) as well, for instance:
 
--   `assert.equal(value1, value2)` – checks the equality `value1 == value2`.
--   `assert.strictEqual(value1, value2)` – checks the strict equality `value1 === value2`.
--   `assert.notEqual`, `assert.notStrictEqual` – inverse checks to the ones above.
--   `assert.isTrue(value)` – checks that `value === true`
--   `assert.isFalse(value)` – checks that `value === false`
--   …the full list is in the [docs](http://chaijs.com/api/assert/) \`\`\`
+- `assert.equal(value1, value2)` – checks the equality `value1 == value2`.
+- `assert.strictEqual(value1, value2)` – checks the strict equality `value1 === value2`.
+- `assert.notEqual`, `assert.notStrictEqual` – inverse checks to the ones above.
+- `assert.isTrue(value)` – checks that `value === true`
+- `assert.isFalse(value)` – checks that `value === false`
+- …the full list is in the [docs](http://chaijs.com/api/assert/) \`\`\`
 
 So we should add a couple of lines to `pow`:
 
@@ -13703,8 +13327,7 @@ Now it works, all tests pass:
 
 \[edit src=“pow-full” title=“Open the full final example in the sandbox.”\]
 
-Summary
--------
+## Summary
 
 In BDD, the spec goes first, followed by implementation. At the end we have both the spec and the code.
 
@@ -13739,8 +13362,7 @@ Later in the tutorial you will meet many tasks with tests baked-in. So you’ll 
 
 Writing tests requires good JavaScript knowledge. But we’re just starting to learn it. So, to settle down everything, as of now you’re not required to write tests, but you should already be able to read them even if they are a little bit more complex than in this chapter.
 
-Polyfills and transpilers
-=========================
+# Polyfills and transpilers
 
 The JavaScript language steadily evolves. New proposals to the language appear regularly, they are analyzed and, if considered worthy, are appended to the list at <a href="https://tc39.github.io/ecma262/" class="uri">https://tc39.github.io/ecma262/</a> and then progress to the [specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm).
 
@@ -13761,8 +13383,7 @@ There are two tools for that:
 
 Here, in this chapter, our purpose is to get the gist of how they work, and their place in web development.
 
-Transpilers
------------
+## Transpilers
 
 A [transpiler](https://en.wikipedia.org/wiki/Source-to-source_compiler) is a special piece of software that can parse (“read and understand”) modern code, and rewrite it using older syntax constructs, so that the result would be the same.
 
@@ -13784,8 +13405,7 @@ Speaking of names, [Babel](https://babeljs.io) is one of the most prominent tran
 
 Modern project build systems, such as [webpack](http://webpack.github.io/), provide means to run transpiler automatically on every code change, so it’s very easy to integrate into development process.
 
-Polyfills
----------
+## Polyfills
 
 New language features may include not only syntax constructs and operators, but also built-in functions.
 
@@ -13812,8 +13432,7 @@ JavaScript is a highly dynamic language, scripts may add/modify any functions, e
 
 Two interesting libraries of polyfills are: - [core js](https://github.com/zloirock/core-js) that supports a lot, allows to include only needed features. - [polyfill.io](http://polyfill.io) service that provides a script with polyfills, depending on the features and user’s browser.
 
-Summary
--------
+## Summary
 
 In this chapter we’d like to motivate you to study modern and even “bleeding-edge” language features, even if they aren’t yet well-supported by JavaScript engines.
 
@@ -13825,14 +13444,13 @@ Good resources that show the current state of support for various features: - <a
 
 P.S. Google Chrome is usually the most up-to-date with language features, try it if a tutorial demo fails. Most tutorial demos work with any modern browser though.
 
-Objects
-=======
+# Objects
 
 As we know from the chapter <a href="info:types" class="uri">info:types</a>, there are eight data types in JavaScript. Seven of them are called “primitive”, because their values contain only a single thing (be it a string or a number or whatever).
 
 In contrast, objects are used to store keyed collections of various data and more complex entities. In JavaScript, objects penetrate almost every aspect of the language. So we must understand them first before going in-depth anywhere else.
 
-An object can be created with figure brackets `{…}` with an optional list of *properties*. A property is a “key: value” pair, where `key` is a string (also called a “property name”), and `value` can be anything.
+An object can be created with figure brackets `{…}` with an optional list of _properties_. A property is a “key: value” pair, where `key` is a string (also called a “property name”), and `value` can be anything.
 
 We can imagine an object as a cabinet with signed files. Every piece of data is stored in its file by the key. It’s easy to find a file by its name or add/remove a file.
 
@@ -13845,10 +13463,9 @@ An empty object (“empty cabinet”) can be created using one of two syntaxes:
 
 ![](object-user-empty.svg)
 
-Usually, the figure brackets `{...}` are used. That declaration is called an *object literal*.
+Usually, the figure brackets `{...}` are used. That declaration is called an _object literal_.
 
-Literals and properties
------------------------
+## Literals and properties
 
 We can immediately put some properties into `{...}` as “key: value” pairs:
 
@@ -13907,8 +13524,7 @@ The last property in the list may end with a comma:
 
 That is called a “trailing” or “hanging” comma. Makes it easier to add/remove/move around properties, because all lines become alike.
 
-Square brackets
----------------
+## Square brackets
 
 For multiword properties, the dot access doesn’t work:
 
@@ -13955,13 +13571,13 @@ let key = “name”; alert( user.key ) // undefined \`\`\`
 
 ### Computed properties
 
-We can use square brackets in an object literal, when creating an object. That’s called *computed properties*.
+We can use square brackets in an object literal, when creating an object. That’s called _computed properties_.
 
 For instance:
 
 \`\`\`js run let fruit = prompt(“Which fruit to buy?”, “apple”);
 
-let bag = { *!* \[fruit\]: 5, // the name of the property is taken from the variable fruit */!* };
+let bag = { _!_ \[fruit\]: 5, // the name of the property is taken from the variable fruit _/!_ };
 
 alert( bag.apple ); // 5 if fruit=“apple” \`\`\`
 
@@ -13986,8 +13602,7 @@ Square brackets are much more powerful than the dot notation. They allow any pro
 
 So most of the time, when property names are known and simple, the dot is used. And if we need something more complex, then we switch to square brackets.
 
-Property value shorthand
-------------------------
+## Property value shorthand
 
 In real code we often use existing variables as values for property names.
 
@@ -13997,7 +13612,7 @@ For instance:
 
 let user = makeUser(“John”, 30); alert(user.name); // John \`\`\`
 
-In the example above, properties have the same names as variables. The use-case of making a property from a variable is so common, that there’s a special *property value shorthand* to make it shorter.
+In the example above, properties have the same names as variables. The use-case of making a property from a variable is so common, that there’s a special _property value shorthand_ to make it shorter.
 
 Instead of `name:name` we can just write `name`, like this:
 
@@ -14018,8 +13633,7 @@ We can use both normal properties and shorthands in the same object:
       age: 30
     };
 
-Property names limitations
---------------------------
+## Property names limitations
 
 As we already know, a variable cannot have a name equal to one of language-reserved words like “for”, “let”, “return” etc.
 
@@ -14047,8 +13661,7 @@ As we see from the code, the assignment to a primitive `5` is ignored.
 
 We’ll cover the special nature of `__proto__` in [subsequent chapters](info:prototype-inheritance), and suggest the [ways to fix](info:prototype-methods) such behavior.
 
-Property existence test, “in” operator
---------------------------------------
+## Property existence test, “in” operator
 
 A notable feature of objects in JavaScript, compared to many other languages, is that it’s possible to access any property. There will be no error if the property doesn’t exist!
 
@@ -14070,7 +13683,7 @@ For instance:
 
 alert( “age” in user ); // true, user.age exists alert( “blabla” in user ); // false, user.blabla doesn’t exist \`\`\`
 
-Please note that on the left side of `in` there must be a *property name*. That’s usually a quoted string.
+Please note that on the left side of `in` there must be a _property name_. That’s usually a quoted string.
 
 If we omit quotes, that means a variable, it should contain the actual name to be tested. For instance:
 
@@ -14094,8 +13707,7 @@ In the code above, the property `obj.test` technically exists. So the `in` opera
 
 Situations like this happen very rarely, because `undefined` should not be explicitly assigned. We mostly use `null` for “unknown” or “empty” values. So the `in` operator is an exotic guest in the code.
 
-The “for..in” loop
-------------------
+## The “for..in” loop
 
 To walk over all keys of an object, there exists a special form of the loop: `for..in`. This is a completely different thing from the `for(;;)` construct that we studied before.
 
@@ -14125,14 +13737,14 @@ As an example, let’s consider an object with the phone codes:
 
 \`\`\`js run let codes = { “49”: “Germany”, “41”: “Switzerland”, “44”: “Great Britain”, // .., “1”: “USA” };
 
-*!* for (let code in codes) { alert(code); // 1, 41, 44, 49 } */!* \`\`\`
+_!_ for (let code in codes) { alert(code); // 1, 41, 44, 49 } _/!_ \`\`\`
 
 The object may be used to suggest a list of options to the user. If we’re making a site mainly for German audience then we probably want `49` to be the first.
 
 But if we run the code, we see a totally different picture:
 
--   USA (1) goes first
--   then Switzerland (41) and so on.
+- USA (1) goes first
+- then Switzerland (41) and so on.
 
 The phone codes go in the ascending sorted order, because they are integers. So we see `1, 41, 44, 49`.
 
@@ -14146,7 +13758,7 @@ So, “49” is an integer property name, because when it’s transformed to an 
 
 \`\`\`js run let user = { name: “John”, surname: “Smith” }; user.age = 25; // add one more
 
-*!* // non-integer properties are listed in the creation order */!* for (let prop in user) { alert( prop ); // name, surname, age } \`\`\`
+_!_ // non-integer properties are listed in the creation order _/!_ for (let prop in user) { alert( prop ); // name, surname, age } \`\`\`
 
 So, to fix the issue with the phone codes, we can “cheat” by making the codes non-integer. Adding a plus `"+"` sign before each code is enough.
 
@@ -14158,8 +13770,7 @@ for (let code in codes) { alert( +code ); // 49, 41, 44, 1 } \`\`\`
 
 Now it works as intended.
 
-Summary
--------
+## Summary
 
 Objects are associative arrays with several special features.
 
@@ -14173,10 +13784,10 @@ What we’ve studied in this chapter is called a “plain object”, or just `Ob
 
 There are many other kinds of objects in JavaScript:
 
--   `Array` to store ordered data collections,
--   `Date` to store the information about the date and time,
--   `Error` to store the information about an error.
--   …And so on.
+- `Array` to store ordered data collections,
+- `Date` to store the information about the date and time,
+- `Error` to store the information about an error.
+- …And so on.
 
 They have their special features that we’ll study later. Sometimes people say something like “Array type” or “Date type”, but formally they are not types of their own, but belong to a single “object” data type. And they extend it in various ways.
 
@@ -14186,8 +13797,7 @@ A code editor is the place where programmers spend most of their time.
 
 There are two main types of code editors: IDEs and lightweight editors. Many people use one tool of each type.
 
-IDE
----
+## IDE
 
 The term [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) (Integrated Development Environment) refers to a powerful editor with many features that usually operates on a “whole project.” As the name suggests, it’s not just an editor, but a full-scale “development environment.”
 
@@ -14195,15 +13805,14 @@ An IDE loads the project (which can be many files), allows navigation between fi
 
 If you haven’t selected an IDE yet, consider the following options:
 
--   [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
--   [WebStorm](http://www.jetbrains.com/webstorm/) (cross-platform, paid).
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [WebStorm](http://www.jetbrains.com/webstorm/) (cross-platform, paid).
 
 For Windows, there’s also “Visual Studio”, not to be confused with “Visual Studio Code”. “Visual Studio” is a paid and mighty Windows-only editor, well-suited for the .NET platform. It’s also good at JavaScript. There’s also a free version [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
 Many IDEs are paid, but have a trial period. Their cost is usually negligible compared to a qualified developer’s salary, so just choose the best one for you.
 
-Lightweight editors
--------------------
+## Lightweight editors
 
 “Lightweight editors” are not as powerful as IDEs, but they’re fast, elegant and simple.
 
@@ -14215,14 +13824,13 @@ In practice, lightweight editors may have a lot of plugins including directory-l
 
 The following options deserve your attention:
 
--   [Atom](https://atom.io/) (cross-platform, free).
--   [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
--   [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
--   [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
--   [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+- [Atom](https://atom.io/) (cross-platform, free).
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
+- [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
 
-Let’s not argue
----------------
+## Let’s not argue
 
 The editors in the lists above are those that either I or my friends whom I consider good developers have been using for a long time and are happy with.
 
@@ -14289,14 +13897,13 @@ We can use either variable to access the object and modify its contents:
 
 let admin = user;
 
-*!* admin.name = ‘Pete’; // changed by the “admin” reference */!*
+_!_ admin.name = ‘Pete’; // changed by the “admin” reference _/!_
 
 alert(*!*user.name*/!*); // ‘Pete’, changes are seen from the “user” reference \`\`\`
 
 It’s as if we had a cabinet with two keys and used one of them (`admin`) to get into it and make changes. Then, if we later use another key (`user`), we are still opening the same cabinet and can access the changed contents.
 
-Comparison by reference
------------------------
+## Comparison by reference
 
 Two objects are equal only if they are the same object.
 
@@ -14314,8 +13921,7 @@ alert( a == b ); // false \`\`\`
 
 For comparisons like `obj1 > obj2` or for a comparison against a primitive `obj == 5`, objects are converted to primitives. We’ll study how object conversions work very soon, but to tell the truth, such comparisons are needed very rarely – usually they appear as a result of a programming mistake.
 
-Cloning and merging, Object.assign \[\#cloning-and-merging-object-assign\]
---------------------------------------------------------------------------
+## Cloning and merging, Object.assign \[\#cloning-and-merging-object-assign\]
 
 So, copying an object variable creates one more reference to the same object.
 
@@ -14329,9 +13935,9 @@ Like this:
 
 \`\`\`js run let user = { name: “John”, age: 30 };
 
-*!* let clone = {}; // the new empty object
+_!_ let clone = {}; // the new empty object
 
-// let’s copy all user properties into it for (let key in user) { clone\[key\] = user\[key\]; } */!*
+// let’s copy all user properties into it for (let key in user) { clone\[key\] = user\[key\]; } _/!_
 
 // now clone is a fully independent object with the same content clone.name = “Pete”; // changed the data in it
 
@@ -14343,10 +13949,10 @@ The syntax is:
 
     Object.assign(dest, [src1, src2, src3...])
 
--   The first argument `dest` is a target object.
--   Further arguments `src1, ..., srcN` (can be as many as needed) are source objects.
--   It copies the properties of all source objects `src1, ..., srcN` into the target `dest`. In other words, properties of all arguments starting from the second are copied into the first object.
--   The call returns `dest`.
+- The first argument `dest` is a target object.
+- Further arguments `src1, ..., srcN` (can be as many as needed) are source objects.
+- It copies the properties of all source objects `src1, ..., srcN` into the target `dest`. In other words, properties of all arguments starting from the second are copied into the first object.
+- The call returns `dest`.
 
 For instance, we can use it to merge several objects into one:
 
@@ -14385,8 +13991,7 @@ It copies all properties of `user` into the empty object and returns it.
 
 There are also other methods of cloning an object, e.g. using the [spread syntax](info:rest-parameters-spread) `clone = {...user}`, covered later in the tutorial.
 
-Nested cloning
---------------
+## Nested cloning
 
 Until now we assumed that all properties of `user` are primitive. But properties can be references to other objects. What to do with them?
 
@@ -14410,13 +14015,13 @@ To fix that, we should use a cloning loop that examines each value of `user[key]
 
 We can use recursion to implement it. Or, to not reinvent the wheel, take an existing implementation, for instance [\_.cloneDeep(obj)](https://lodash.com/docs#cloneDeep) from the JavaScript library [lodash](https://lodash.com).
 
-\`\`\``smart header="Const objects can be modified" An important side effect of storing objects as references is that an object declared as`const\` *can* be modified.
+\`\`\``smart header="Const objects can be modified" An important side effect of storing objects as references is that an object declared as`const\` _can_ be modified.
 
 For instance:
 
 \`\`\`js run const user = { name: “John” };
 
-*!* user.name = “Pete”; // (*)* /!\*
+_!_ user.name = “Pete”; // (_)_ /!\*
 
 alert(user.name); // Pete
 
@@ -14426,8 +14031,7 @@ alert(user.name); // Pete
 
     That said, if we really need to make constant object properties, it's also possible, but using totally different methods. We'll mention that in the chapter <info:property-descriptors>.
 
-Summary
--------
+## Summary
 
 Objects are assigned and copied by reference. In other words, a variable stores not the “object value”, but a “reference” (address in memory) for the value. So copying such a variable or passing it as a function argument copies that reference, not the object itself.
 
@@ -14439,10 +14043,9 @@ Memory management in JavaScript is performed automatically and invisibly to us. 
 
 What happens when something is not needed any more? How does the JavaScript engine discover it and clean it up?
 
-Reachability
-------------
+## Reachability
 
-The main concept of memory management in JavaScript is *reachability*.
+The main concept of memory management in JavaScript is _reachability_.
 
 Simply put, “reachable” values are those that are accessible or usable somehow. They are guaranteed to be stored in memory.
 
@@ -14450,21 +14053,20 @@ Simply put, “reachable” values are those that are accessible or usable someh
 
     For instance:
 
-    -   The currently executing function, its local variables and parameters.
-    -   Other functions on the current chain of nested calls, their local variables and parameters.
-    -   Global variables.
-    -   (there are some other, internal ones as well)
+    - The currently executing function, its local variables and parameters.
+    - Other functions on the current chain of nested calls, their local variables and parameters.
+    - Global variables.
+    - (there are some other, internal ones as well)
 
-    These values are called *roots*.
+    These values are called _roots_.
 
 2.  Any other value is considered reachable if it’s reachable from a root by a reference or by a chain of references.
 
-    For instance, if there’s an object in a global variable, and that object has a property referencing another object, *that* object is considered reachable. And those that it references are also reachable. Detailed examples to follow.
+    For instance, if there’s an object in a global variable, and that object has a property referencing another object, _that_ object is considered reachable. And those that it references are also reachable. Detailed examples to follow.
 
-There’s a background process in the JavaScript engine that is called [garbage collector](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)). It monitors all objects and removes those that have become unreachable.
+There’s a background process in the JavaScript engine that is called [garbage collector](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>). It monitors all objects and removes those that have become unreachable.
 
-A simple example
-----------------
+## A simple example
 
 Here’s the simplest example:
 
@@ -14485,8 +14087,7 @@ If the value of `user` is overwritten, the reference is lost:
 
 Now John becomes unreachable. There’s no way to access it, no references to it. Garbage collector will junk the data and free the memory.
 
-Two references
---------------
+## Two references
 
 Now let’s imagine we copied the reference from `user` to `admin`:
 
@@ -14507,8 +14108,7 @@ Now if we do the same:
 
 …Then the object is still reachable via `admin` global variable, so it’s in memory. If we overwrite `admin` too, then it can be removed.
 
-Interlinked objects
--------------------
+## Interlinked objects
 
 Now a more complex example. The family:
 
@@ -14555,8 +14155,7 @@ After garbage collection:
 
 ![](family-no-father-2.svg)
 
-Unreachable island
-------------------
+## Unreachable island
 
 It is possible that the whole island of interlinked objects becomes unreachable and is removed from the memory.
 
@@ -14574,18 +14173,17 @@ It’s obvious that John and Ann are still linked, both have incoming references
 
 The former `"family"` object has been unlinked from the root, there’s no reference to it any more, so the whole island becomes unreachable and will be removed.
 
-Internal algorithms
--------------------
+## Internal algorithms
 
 The basic garbage collection algorithm is called “mark-and-sweep”.
 
 The following “garbage collection” steps are regularly performed:
 
--   The garbage collector takes roots and “marks” (remembers) them.
--   Then it visits and “marks” all references from them.
--   Then it visits marked objects and marks *their* references. All visited objects are remembered, so as not to visit the same object twice in the future.
--   …And so on until every reachable (from the roots) references are visited.
--   All objects except marked ones are removed.
+- The garbage collector takes roots and “marks” (remembers) them.
+- Then it visits and “marks” all references from them.
+- Then it visits marked objects and marks _their_ references. All visited objects are remembered, so as not to visit the same object twice in the future.
+- …And so on until every reachable (from the roots) references are visited.
+- All objects except marked ones are removed.
 
 For instance, let our object structure look like this:
 
@@ -14615,20 +14213,19 @@ That’s the concept of how garbage collection works. JavaScript engines apply m
 
 Some of the optimizations:
 
--   **Generational collection** – objects are split into two sets: “new ones” and “old ones”. Many objects appear, do their job and die fast, they can be cleaned up aggressively. Those that survive for long enough, become “old” and are examined less often.
--   **Incremental collection** – if there are many objects, and we try to walk and mark the whole object set at once, it may take some time and introduce visible delays in the execution. So the engine tries to split the garbage collection into pieces. Then the pieces are executed one by one, separately. That requires some extra bookkeeping between them to track changes, but we have many tiny delays instead of a big one.
--   **Idle-time collection** – the garbage collector tries to run only while the CPU is idle, to reduce the possible effect on the execution.
+- **Generational collection** – objects are split into two sets: “new ones” and “old ones”. Many objects appear, do their job and die fast, they can be cleaned up aggressively. Those that survive for long enough, become “old” and are examined less often.
+- **Incremental collection** – if there are many objects, and we try to walk and mark the whole object set at once, it may take some time and introduce visible delays in the execution. So the engine tries to split the garbage collection into pieces. Then the pieces are executed one by one, separately. That requires some extra bookkeeping between them to track changes, but we have many tiny delays instead of a big one.
+- **Idle-time collection** – the garbage collector tries to run only while the CPU is idle, to reduce the possible effect on the execution.
 
 There exist other optimizations and flavours of garbage collection algorithms. As much as I’d like to describe them here, I have to hold off, because different engines implement different tweaks and techniques. And, what’s even more important, things change as engines develop, so studying deeper “in advance”, without a real need is probably not worth that. Unless, of course, it is a matter of pure interest, then there will be some links for you below.
 
-Summary
--------
+## Summary
 
 The main things to know:
 
--   Garbage collection is performed automatically. We cannot force or prevent it.
--   Objects are retained in memory while they are reachable.
--   Being referenced is not the same as being reachable (from a root): a pack of interlinked objects can become unreachable as a whole.
+- Garbage collection is performed automatically. We cannot force or prevent it.
+- Objects are retained in memory while they are reachable.
+- Being referenced is not the same as being reachable (from a root): a pack of interlinked objects can become unreachable as a whole.
 
 Modern engines implement advanced algorithms of garbage collection.
 
@@ -14648,18 +14245,17 @@ Objects are usually created to represent entities of the real world, like users,
       age: 30
     };
 
-And, in the real world, a user can *act*: select something from the shopping cart, login, logout etc.
+And, in the real world, a user can _act_: select something from the shopping cart, login, logout etc.
 
 Actions are represented in JavaScript by functions in properties.
 
-Method examples
----------------
+## Method examples
 
 For a start, let’s teach the `user` to say hello:
 
 \`\`\`js run let user = { name: “John”, age: 30 };
 
-*!* user.sayHi = function() { alert(“Hello!”); }; */!*
+_!_ user.sayHi = function() { alert(“Hello!”); }; _/!_
 
 user.sayHi(); // Hello! \`\`\`
 
@@ -14667,7 +14263,7 @@ Here we’ve just used a Function Expression to create a function and assign it 
 
 Then we can call it as `user.sayHi()`. The user can now speak!
 
-A function that is a property of an object is called its *method*.
+A function that is a property of an object is called its _method_.
 
 So, here we’ve got a method `sayHi` of the object `user`.
 
@@ -14675,9 +14271,9 @@ Of course, we could use a pre-declared function as a method, like this:
 
 \`\`\`js run let user = { // … };
 
-*!* // first, declare function sayHi() { alert(“Hello!”); };
+_!_ // first, declare function sayHi() { alert(“Hello!”); };
 
-// then add as a method user.sayHi = sayHi; */!*
+// then add as a method user.sayHi = sayHi; _/!_
 
 user.sayHi(); // Hello! \`\`\`
 
@@ -14708,8 +14304,7 @@ As demonstrated, we can omit `"function"` and just write `sayHi()`.
 
 To tell the truth, the notations are not fully identical. There are subtle differences related to object inheritance (to be covered later), but for now they do not matter. In almost all cases the shorter syntax is preferred.
 
-“this” in methods
------------------
+## “this” in methods
 
 It’s common that an object method needs to access the information stored in the object to do its job.
 
@@ -14723,7 +14318,7 @@ For instance:
 
 \`\`\`js run let user = { name: “John”, age: 30,
 
-sayHi() { *!* // “this” is the “current object” alert(this.name); */!* }
+sayHi() { _!_ // “this” is the “current object” alert(this.name); _/!_ }
 
 };
 
@@ -14751,18 +14346,17 @@ That’s demonstrated below:
 
 \`\`\`js run let user = { name: “John”, age: 30,
 
-sayHi() { *!* alert( user.name ); // leads to an error */!* }
+sayHi() { _!_ alert( user.name ); // leads to an error _/!_ }
 
 };
 
 let admin = user; user = null; // overwrite to make things obvious
 
-*!* admin.sayHi(); // TypeError: Cannot read property ‘name’ of null */!* \`\`\`
+_!_ admin.sayHi(); // TypeError: Cannot read property ‘name’ of null _/!_ \`\`\`
 
 If we used `this.name` instead of `user.name` inside the `alert`, then the code would work.
 
-“this” is not bound
--------------------
+## “this” is not bound
 
 In JavaScript, keyword `this` behaves unlike most other programming languages. It can be used in any function, even if it’s not a method of an object.
 
@@ -14780,7 +14374,7 @@ For instance, here the same function is assigned to two different objects and ha
 
 function sayHi() { alert( this.name ); }
 
-*!* // use the same function in two objects user.f = sayHi; admin.f = sayHi; */!*
+_!_ // use the same function in two objects user.f = sayHi; admin.f = sayHi; _/!_
 
 // these calls have different this // “this” inside the function is the object “before the dot” user.f(); // John (this == user) admin.f(); // Admin (this == admin)
 
@@ -14808,8 +14402,7 @@ The concept of run-time evaluated `this` has both pluses and minuses. On the one
 
 Here our position is not to judge whether this language design decision is good or bad. We’ll understand how to work with it, how to get benefits and avoid problems. \`\`\`
 
-Arrow functions have no “this”
-------------------------------
+## Arrow functions have no “this”
 
 Arrow functions are special: they don’t have their “own” `this`. If we reference `this` from such a function, it’s taken from the outer “normal” function.
 
@@ -14821,12 +14414,11 @@ user.sayHi(); // Ilya \`\`\`
 
 That’s a special feature of arrow functions, it’s useful when we actually do not want to have a separate `this`, but rather to take it from the outer context. Later in the chapter <a href="info:arrow-functions" class="uri">info:arrow-functions</a> we’ll go more deeply into arrow functions.
 
-Summary
--------
+## Summary
 
--   Functions that are stored in object properties are called “methods”.
--   Methods allow objects to “act” like `object.doSomething()`.
--   Methods can reference the object as `this`.
+- Functions that are stored in object properties are called “methods”.
+- Methods allow objects to “act” like `object.doSomething()`.
+- Methods can reference the object as `this`.
 
 The value of `this` is defined at run-time. - When a function is declared, it may use `this`, but that `this` has no value until the function is called. - A function can be copied between objects. - When a function is called in the “method” syntax: `object.method()`, the value of `this` during the call is `object`.
 
@@ -14836,8 +14428,7 @@ The regular `{...}` syntax allows to create one object. But often we need to cre
 
 That can be done using constructor functions and the `"new"` operator.
 
-Constructor function
---------------------
+## Constructor function
 
 Constructor functions technically are regular functions. There are two conventions though:
 
@@ -14848,7 +14439,7 @@ For instance:
 
 \`\`\`js run function User(name) { this.name = name; this.isAdmin = false; }
 
-*!* let user = new User(“Jack”); */!*
+_!_ let user = new User(“Jack”); _/!_
 
 alert(user.name); // Jack alert(user.isAdmin); // false \`\`\`
 
@@ -14900,8 +14491,7 @@ Let’s note once again – technically, any function can be used as a construct
 
 The constructor can’t be called again, because it is not saved anywhere, just created and called. So this trick aims to encapsulate the code that constructs the single object, without future reuse. \`\`\`\`
 
-Constructor mode test: new.target
----------------------------------
+## Constructor mode test: new.target
 
 `smart header="Advanced stuff" The syntax from this section is rarely used, skip it unless you want to know everything.`
 
@@ -14911,9 +14501,9 @@ It is undefined for regular calls and equals the function if called with `new`:
 
 \`\`\`js run function User() { alert(new.target); }
 
-// without “new”: *!* User(); // undefined */!*
+// without “new”: _!_ User(); // undefined _/!_
 
-// with “new”: *!* new User(); // function User { … } */!* \`\`\`
+// with “new”: _!_ new User(); // function User { … } _/!_ \`\`\`
 
 That can be used inside the function to know whether it was called with `new`, “in constructor mode”, or without it, “in regular mode”.
 
@@ -14929,15 +14519,14 @@ This approach is sometimes used in libraries to make the syntax more flexible. S
 
 Probably not a good thing to use everywhere though, because omitting `new` makes it a bit less obvious what’s going on. With `new` we all know that the new object is being created.
 
-Return from constructors
-------------------------
+## Return from constructors
 
 Usually, constructors do not have a `return` statement. Their task is to write all necessary stuff into `this`, and it automatically becomes the result.
 
 But if there is a `return` statement, then the rule is simple:
 
--   If `return` is called with an object, then the object is returned instead of `this`.
--   If `return` is called with a primitive, it’s ignored.
+- If `return` is called with an object, then the object is returned instead of `this`.
+- If `return` is called with a primitive, it’s ignored.
 
 In other words, `return` with an object returns that object, in all other cases `this` is returned.
 
@@ -14971,8 +14560,7 @@ Usually constructors don’t have a `return` statement. Here we mention the spec
 
 Omitting parentheses here is not considered a “good style”, but the syntax is permitted by specification. \`\`\`\`
 
-Methods in constructor
-----------------------
+## Methods in constructor
 
 Using constructor functions to create objects gives a great deal of flexibility. The constructor function may have parameters that define how to construct the object, and what to put in it.
 
@@ -14984,19 +14572,18 @@ For instance, `new User(name)` below creates an object with the given `name` and
 
 this.sayHi = function() { alert( “My name is:” + this.name ); }; }
 
-*!* let john = new User(“John”);
+_!_ let john = new User(“John”);
 
-john.sayHi(); // My name is: John */!*
+john.sayHi(); // My name is: John _/!_
 
-/ *john = { name: “John”, sayHi: function() { … } }* / \`\`\`
+/ _john = { name: “John”, sayHi: function() { … } }_ / \`\`\`
 
 To create complex objects, there’s a more advanced syntax, [classes](info:classes), that we’ll cover later.
 
-Summary
--------
+## Summary
 
--   Constructor functions or, briefly, constructors, are regular functions, but there’s a common agreement to name them with capital letter first.
--   Constructor functions should only be called using `new`. Such a call implies a creation of empty `this` at the start and returning the populated one at the end.
+- Constructor functions or, briefly, constructors, are regular functions, but there’s a common agreement to name them with capital letter first.
+- Constructor functions should only be called using `new`. Such a call implies a creation of empty `this` at the start and returning the populated one at the end.
 
 We can use constructor functions to make multiple similar objects.
 
@@ -15006,15 +14593,13 @@ JavaScript provides constructor functions for many built-in language objects: li
 
 After we learn that, we return to objects and cover them in-depth in the chapters <a href="info:prototypes" class="uri">info:prototypes</a> and <a href="info:classes" class="uri">info:classes</a>. \`\`\`
 
-Optional chaining ‘?.’
-======================
+# Optional chaining ‘?.’
 
 \[recent browser=“new”\]
 
 The optional chaining `?.` is a safe way to access nested object properties, even if an intermediate property doesn’t exist.
 
-The “non-existing property” problem
------------------------------------
+## The “non-existing property” problem
 
 If you’ve just started to read the tutorial and learn JavaScript, maybe the problem hasn’t touched you yet, but it’s quite common.
 
@@ -15070,8 +14655,7 @@ As you can see, property names are still duplicated in the code. E.g. in the cod
 
 That’s why the optional chaining `?.` was added to the language. To solve this problem once and for all!
 
-Optional chaining
------------------
+## Optional chaining
 
 The optional chaining `?.` stops the evaluation if the value before `?.` is `undefined` or `null` and returns `undefined`.
 
@@ -15107,8 +14691,7 @@ So, if `user` happens to be undefined due to a mistake, we’ll see a programmin
 
 `js run // ReferenceError: user is not defined user?.address;` The variable must be declared (e.g. `let/const/var user` or as a function parameter). The optional chaining works only for declared variables. \`\`\`\`
 
-Short-circuiting
-----------------
+## Short-circuiting
 
 As it was said before, the `?.` immediately stops (“short-circuits”) the evaluation if the left part doesn’t exist.
 
@@ -15122,8 +14705,7 @@ user?.sayHi(x++); // no “sayHi”, so the execution doesn’t reach x++
 
 alert(x); // 0, value not incremented \`\`\`
 
-Other variants: ?.(), ?.\[\]
-----------------------------
+## Other variants: ?.(), ?.\[\]
 
 The optional chaining `?.` is not an operator, but a special syntax construct, that also works with functions and square brackets.
 
@@ -15135,9 +14717,9 @@ In the code below, some of our users have `admin` method, and some don’t:
 
 let userGuest = {};
 
-*!* userAdmin.admin?.(); // I am admin */!*
+_!_ userAdmin.admin?.(); // I am admin _/!_
 
-*!* userGuest.admin?.(); // nothing (no such method) */!* \`\`\`
+_!_ userGuest.admin?.(); // nothing (no such method) _/!_ \`\`\`
 
 Here, in both lines we first use the dot (`userAdmin.admin`) to get `admin` property, because we assume that the user object exists, so it’s safe read from it.
 
@@ -15165,8 +14747,7 @@ user?.name = “John”; // Error, doesn’t work // because it evaluates to und
 
     It's just not that smart.
 
-Summary
--------
+## Summary
 
 The optional chaining `?.` syntax has three forms:
 
@@ -15180,15 +14761,13 @@ A chain of `?.` allows to safely access nested properties.
 
 Still, we should apply `?.` carefully, only where it’s acceptable that the left part doesn’t exist. So that it won’t hide programming errors from us, if they occur.
 
-Symbol type
-===========
+# Symbol type
 
 By specification, object property keys may be either of string type, or of symbol type. Not numbers, not booleans, only strings or symbols, these two types.
 
 Till now we’ve been using only strings. Now let’s see the benefits that symbols can give us.
 
-Symbols
--------
+## Symbols
 
 A “symbol” represents a unique identifier.
 
@@ -15208,7 +14787,7 @@ For instance, here are two symbols with the same description – they are not eq
 
 \`\`\`js run let id1 = Symbol(“id”); let id2 = Symbol(“id”);
 
-*!* alert(id1 == id2); // false */!* \`\`\`
+_!_ alert(id1 == id2); // false _/!_ \`\`\`
 
 If you are familiar with Ruby or another language that also has some sort of “symbols” – please don’t be misguided. JavaScript symbols are different.
 
@@ -15226,8 +14805,7 @@ Or get `symbol.description` property to show the description only: `js run let i
 
 \`\`\`\`
 
-“Hidden” properties
--------------------
+## “Hidden” properties
 
 Symbols allow us to create “hidden” properties of an object, that no other part of code can accidentally access or overwrite.
 
@@ -15258,7 +14836,7 @@ Then that script can create its own `Symbol("id")`, like this:
 
 There will be no conflict between our and their identifiers, because symbols are always different, even if they have the same name.
 
-…But if we used a string `"id"` instead of a symbol for the same purpose, then there *would* be a conflict:
+…But if we used a string `"id"` instead of a symbol for the same purpose, then there _would_ be a conflict:
 
     let user = { name: "John" };
 
@@ -15295,7 +14873,7 @@ For instance:
 
 \`\`\`js run let id = Symbol(“id”); let user = { name: “John”, age: 30, \[id\]: 123 };
 
-*!* for (let key in user) alert(key); // name, age (no symbols) */!*
+_!_ for (let key in user) alert(key); // name, age (no symbols) _/!_
 
 // the direct access by the symbol works alert( “Direct:” + user\[id\] ); \`\`\`
 
@@ -15309,14 +14887,13 @@ let clone = Object.assign({}, user);
 
 alert( clone\[id\] ); // 123 \`\`\`
 
-There’s no paradox here. That’s by design. The idea is that when we clone an object or merge objects, we usually want *all* properties to be copied (including symbols like `id`).
+There’s no paradox here. That’s by design. The idea is that when we clone an object or merge objects, we usually want _all_ properties to be copied (including symbols like `id`).
 
-Global symbols
---------------
+## Global symbols
 
 As we’ve seen, usually all symbols are different, even if they have the same name. But sometimes we want same-named symbols to be same entities. For instance, different parts of our application want to access symbol `"id"` meaning exactly the same property.
 
-To achieve that, there exists a *global symbol registry*. We can create symbols in it and access them later, and it guarantees that repeated accesses by the same name return exactly the same symbol.
+To achieve that, there exists a _global symbol registry_. We can create symbols in it and access them later, and it guarantees that repeated accesses by the same name return exactly the same symbol.
 
 In order to read (create if absent) a symbol from the registry, use `Symbol.for(key)`.
 
@@ -15330,7 +14907,7 @@ For instance:
 
 // the same symbol alert( id === idAgain ); // true \`\`\`
 
-Symbols inside the registry are called *global symbols*. If we want an application-wide symbol, accessible everywhere in the code – that’s what they are for.
+Symbols inside the registry are called _global symbols_. If we want an application-wide symbol, accessible everywhere in the code – that’s what they are for.
 
 \`\`\`smart header=“That sounds like Ruby” In some programming languages, like Ruby, there’s a single symbol per name.
 
@@ -15358,25 +14935,23 @@ alert( Symbol.keyFor(globalSymbol) ); // name, global symbol alert( Symbol.keyFo
 
 alert( localSymbol.description ); // name \`\`\`
 
-System symbols
---------------
+## System symbols
 
 There exist many “system” symbols that JavaScript uses internally, and we can use them to fine-tune various aspects of our objects.
 
 They are listed in the specification in the [Well-known symbols](https://tc39.github.io/ecma262/#sec-well-known-symbols) table:
 
--   `Symbol.hasInstance`
--   `Symbol.isConcatSpreadable`
--   `Symbol.iterator`
--   `Symbol.toPrimitive`
--   …and so on.
+- `Symbol.hasInstance`
+- `Symbol.isConcatSpreadable`
+- `Symbol.iterator`
+- `Symbol.toPrimitive`
+- …and so on.
 
 For instance, `Symbol.toPrimitive` allows us to describe object to primitive conversion. We’ll see its use very soon.
 
 Other symbols will also become familiar when we study the corresponding language features.
 
-Summary
--------
+## Summary
 
 `Symbol` is a primitive type for unique identifiers.
 
@@ -15392,10 +14967,9 @@ Symbols have two main use cases:
 
 2.  There are many system symbols used by JavaScript which are accessible as `Symbol.*`. We can use them to alter some built-in behaviors. For instance, later in the tutorial we’ll use `Symbol.iterator` for [iterables](info:iterable), `Symbol.toPrimitive` to setup [object-to-primitive conversion](info:object-toprimitive) and so on.
 
-Technically, symbols are not 100% hidden. There is a built-in method [Object.getOwnPropertySymbols(obj)](mdn:js/Object/getOwnPropertySymbols) that allows us to get all symbols. Also there is a method named [Reflect.ownKeys(obj)](mdn:js/Reflect/ownKeys) that returns *all* keys of an object including symbolic ones. So they are not really hidden. But most libraries, built-in functions and syntax constructs don’t use these methods.
+Technically, symbols are not 100% hidden. There is a built-in method [Object.getOwnPropertySymbols(obj)](mdn:js/Object/getOwnPropertySymbols) that allows us to get all symbols. Also there is a method named [Reflect.ownKeys(obj)](mdn:js/Reflect/ownKeys) that returns _all_ keys of an object including symbolic ones. So they are not really hidden. But most libraries, built-in functions and syntax constructs don’t use these methods.
 
-Object to primitive conversion
-==============================
+# Object to primitive conversion
 
 What happens when objects are added `obj1 + obj2`, subtracted `obj1 - obj2` or printed using `alert(obj)`?
 
@@ -15407,8 +14981,7 @@ In the chapter <a href="info:type-conversions" class="uri">info:type-conversions
 2.  The numeric conversion happens when we subtract objects or apply mathematical functions. For instance, `Date` objects (to be covered in the chapter <a href="info:date" class="uri">info:date</a>) can be subtracted, and the result of `date1 - date2` is the time difference between two dates.
 3.  As for the string conversion – it usually happens when we output an object like `alert(obj)` and in similar contexts.
 
-ToPrimitive
------------
+## ToPrimitive
 
 We can fine-tune string and numeric conversion, using special object methods.
 
@@ -15461,12 +15034,11 @@ There is no “boolean” hint (all objects are `true` in boolean context) or an
 
 1.  Call `obj[Symbol.toPrimitive](hint)` - the method with the symbolic key `Symbol.toPrimitive` (system symbol), if such method exists,
 2.  Otherwise if hint is `"string"`
-    -   try `obj.toString()` and `obj.valueOf()`, whatever exists.
+    - try `obj.toString()` and `obj.valueOf()`, whatever exists.
 3.  Otherwise if hint is `"number"` or `"default"`
-    -   try `obj.valueOf()` and `obj.toString()`, whatever exists.
+    - try `obj.valueOf()` and `obj.toString()`, whatever exists.
 
-Symbol.toPrimitive
-------------------
+## Symbol.toPrimitive
 
 Let’s start from the first method. There’s a built-in symbol named `Symbol.toPrimitive` that should be used to name the conversion method, like this:
 
@@ -15485,22 +15057,21 @@ For instance, here `user` object implements it:
 
 As we can see from the code, `user` becomes a self-descriptive string or a money amount depending on the conversion. The single method `user[Symbol.toPrimitive]` handles all conversion cases.
 
-toString/valueOf
-----------------
+## toString/valueOf
 
 Methods `toString` and `valueOf` come from ancient times. They are not symbols (symbols did not exist that long ago), but rather “regular” string-named methods. They provide an alternative “old-style” way to implement the conversion.
 
 If there’s no `Symbol.toPrimitive` then JavaScript tries to find them and try in the order:
 
--   `toString -> valueOf` for “string” hint.
--   `valueOf -> toString` otherwise.
+- `toString -> valueOf` for “string” hint.
+- `valueOf -> toString` otherwise.
 
 These methods must return a primitive value. If `toString` or `valueOf` returns an object, then it’s ignored (same as if there were no method).
 
 By default, a plain object has following `toString` and `valueOf` methods:
 
--   The `toString` method returns a string `"[object Object]"`.
--   The `valueOf` method returns the object itself.
+- The `toString` method returns a string `"[object Object]"`.
+- The `valueOf` method returns the object itself.
 
 Here’s the demo:
 
@@ -15538,8 +15109,7 @@ alert(user); // toString -&gt; John alert(user + 500); // toString -&gt; John500
 
 In the absence of `Symbol.toPrimitive` and `valueOf`, `toString` will handle all primitive conversions.
 
-Return types
-------------
+## Return types
 
 The important thing to know about all primitive-conversion methods is that they do not necessarily return the “hinted” primitive.
 
@@ -15549,10 +15119,9 @@ The only mandatory thing: these methods must return a primitive, not an object.
 
 \`\``smart header="Historical notes" For historical reasons, if`toString`or`valueOf\` returns an object, there’s no error, but such value is ignored (like if the method didn’t exist). That’s because in ancient times there was no good “error” concept in JavaScript.
 
-In contrast, `Symbol.toPrimitive` *must* return a primitive, otherwise there will be an error. \`\`\`
+In contrast, `Symbol.toPrimitive` _must_ return a primitive, otherwise there will be an error. \`\`\`
 
-Further conversions
--------------------
+## Further conversions
 
 As we know already, many operators and functions perform type conversions, e.g. multiplication `*` converts operands to numbers.
 
@@ -15573,8 +15142,7 @@ Binary plus will concatenate strings in the same situation, as it gladly accepts
 
 alert(obj + 2); // 22 (“2” + 2), conversion to primitive returned a string =&gt; concatenation \`\`\`
 
-Summary
--------
+## Summary
 
 The object-to-primitive conversion is called automatically by many built-in functions and operators that expect a primitive as a value.
 
@@ -15586,9 +15154,9 @@ The conversion algorithm is:
 
 1.  Call `obj[Symbol.toPrimitive](hint)` if the method exists,
 2.  Otherwise if hint is `"string"`
-    -   try `obj.toString()` and `obj.valueOf()`, whatever exists.
+    - try `obj.toString()` and `obj.valueOf()`, whatever exists.
 3.  Otherwise if hint is `"number"` or `"default"`
-    -   try `obj.valueOf()` and `obj.toString()`, whatever exists.
+    - try `obj.valueOf()` and `obj.toString()`, whatever exists.
 
 In practice, it’s often enough to implement only `obj.toString()` as a “catch-all” method for all conversions that return a “human-readable” representation of an object, for logging or debugging purposes.  
 \# Methods of primitives
@@ -15599,13 +15167,13 @@ Let’s look at the key distinctions between primitives and objects.
 
 A primitive
 
--   Is a value of a primitive type.
--   There are 7 primitive types: `string`, `number`, `bigint`, `boolean`, `symbol`, `null` and `undefined`.
+- Is a value of a primitive type.
+- There are 7 primitive types: `string`, `number`, `bigint`, `boolean`, `symbol`, `null` and `undefined`.
 
 An object
 
--   Is capable of storing multiple values as properties.
--   Can be created with `{}`, for instance: `{name: "John", age: 30}`. There are other kinds of objects in JavaScript: functions, for example, are objects.
+- Is capable of storing multiple values as properties.
+- Can be created with `{}`, for instance: `{name: "John", age: 30}`. There are other kinds of objects in JavaScript: functions, for example, are objects.
 
 One of the best things about objects is that we can store a function as one of its properties.
 
@@ -15621,13 +15189,12 @@ But, these features come with a cost!
 
 Objects are “heavier” than primitives. They require additional resources to support the internal machinery.
 
-A primitive as an object
-------------------------
+## A primitive as an object
 
 Here’s the paradox faced by the creator of JavaScript:
 
--   There are many things one would want to do with a primitive like a string or a number. It would be great to access them as methods.
--   Primitives must be as fast and lightweight as possible.
+- There are many things one would want to do with a primitive like a string or a number. It would be great to access them as methods.
+- Primitives must be as fast and lightweight as possible.
 
 The solution looks a little bit awkward, but here it is:
 
@@ -15693,11 +15260,10 @@ An attempt to access a property of such value would give the error:
 
 \`\`\`js run alert(null.test); // error \`\`\`\`
 
-Summary
--------
+## Summary
 
--   Primitives except `null` and `undefined` provide many helpful methods. We will study those in the upcoming chapters.
--   Formally, these methods work via temporary objects, but JavaScript engines are well tuned to optimize that internally, so they are not expensive to call. \# Numbers
+- Primitives except `null` and `undefined` provide many helpful methods. We will study those in the upcoming chapters.
+- Formally, these methods work via temporary objects, but JavaScript engines are well tuned to optimize that internally, so they are not expensive to call. \# Numbers
 
 In modern JavaScript, there are two types of numbers:
 
@@ -15707,8 +15273,7 @@ In modern JavaScript, there are two types of numbers:
 
 So here we’ll talk about regular numbers. Let’s expand our knowledge of them.
 
-More ways to write a number
----------------------------
+## More ways to write a number
 
 Imagine we need to write 1 billion. The obvious way is:
 
@@ -15726,7 +15291,7 @@ In JavaScript, we can shorten a number by appending the letter `"e"` to it and s
 
 \`\`\`js run let billion = 1e9; // 1 billion, literally: 1 and 9 zeroes
 
-alert( 7.3e9 ); // 7.3 billions (same as 7300000000 or 7\_300\_000\_000) \`\`\`
+alert( 7.3e9 ); // 7.3 billions (same as 7300000000 or 7_300_000_000) \`\`\`
 
 In other words, `e` multiplies the number by `1` with the given zeroes count.
 
@@ -15767,8 +15332,7 @@ alert( a == b ); // true, the same number 255 at both sides \`\`\`
 
 There are only 3 numeral systems with such support. For other numeral systems, we should use the function `parseInt` (which we will see later in this chapter).
 
-toString(base)
---------------
+## toString(base)
 
 The method `num.toString(base)` returns a string representation of `num` in the numeral system with the given `base`.
 
@@ -15780,11 +15344,11 @@ The `base` can vary from `2` to `36`. By default it’s `10`.
 
 Common use cases for this are:
 
--   **base=16** is used for hex colors, character encodings etc, digits can be `0..9` or `A..F`.
--   **base=2** is mostly for debugging bitwise operations, digits can be `0` or `1`.
--   **base=36** is the maximum, digits can be `0..9` or `A..Z`. The whole latin alphabet is used to represent a number. A funny, but useful case for `36` is when we need to turn a long numeric identifier into something shorter, for example to make a short url. Can simply represent it in the numeral system with base `36`:
+- **base=16** is used for hex colors, character encodings etc, digits can be `0..9` or `A..F`.
+- **base=2** is mostly for debugging bitwise operations, digits can be `0` or `1`.
+- **base=36** is the maximum, digits can be `0..9` or `A..Z`. The whole latin alphabet is used to represent a number. A funny, but useful case for `36` is when we need to turn a long numeric identifier into something shorter, for example to make a short url. Can simply represent it in the numeral system with base `36`:
 
-    `js run   alert( 123456..toString(36) ); // 2n9c`
+  `js run alert( 123456..toString(36) ); // 2n9c`
 
 \`\``warn header="Two dots to call a method" Please note that two dots in`123456..toString(36)`is not a typo. If we want to call a method directly on a number, like`toString`in the example above, then we need to place two dots`..\` after it.
 
@@ -15792,8 +15356,7 @@ If we placed a single dot: `123456.toString(36)`, then there would be an error, 
 
 Also could write `(123456).toString(36)`. \`\`\`
 
-Rounding
---------
+## Rounding
 
 One of the most used operations when working with numbers is rounding.
 
@@ -15829,20 +15392,19 @@ There are two ways to do so:
 
 2.  The method [toFixed(n)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) rounds the number to `n` digits after the point and returns a string representation of the result.
 
-    `js run  let num = 12.34;  alert( num.toFixed(1) ); // "12.3"`
+    `js run let num = 12.34; alert( num.toFixed(1) ); // "12.3"`
 
     This rounds up or down to the nearest value, similar to `Math.round`:
 
-    `js run  let num = 12.36;  alert( num.toFixed(1) ); // "12.4"`
+    `js run let num = 12.36; alert( num.toFixed(1) ); // "12.4"`
 
     Please note that result of `toFixed` is a string. If the decimal part is shorter than required, zeroes are appended to the end:
 
-    `js run  let num = 12.34;  alert( num.toFixed(5) ); // "12.34000", added zeroes to make exactly 5 digits`
+    `js run let num = 12.34; alert( num.toFixed(5) ); // "12.34000", added zeroes to make exactly 5 digits`
 
     We can convert it to a number using the unary plus or a `Number()` call: `+num.toFixed(5)`.
 
-Imprecise calculations
-----------------------
+## Imprecise calculations
 
 Internally, a number is represented in 64-bit format [IEEE-754](https://en.wikipedia.org/wiki/IEEE_754-2008_revision), so there are exactly 64 bits to store a number: 52 of them are used to store the digits, 11 of them store the position of the decimal point (they are zero for integer numbers), and 1 bit is for the sign.
 
@@ -15872,7 +15434,7 @@ In other words, what is `0.1`? It is one divided by ten `1/10`, one-tenth. In de
 
 So, division by powers `10` is guaranteed to work well in the decimal system, but division by `3` is not. For the same reason, in the binary numeral system, the division by powers of `2` is guaranteed to work, but `1/10` becomes an endless binary fraction.
 
-There’s just no way to store *exactly 0.1* or *exactly 0.2* using the binary system, just like there is no way to store one-third as a decimal fraction.
+There’s just no way to store _exactly 0.1_ or _exactly 0.2_ using the binary system, just like there is no way to store one-third as a decimal fraction.
 
 The numeric format IEEE-754 solves this by rounding to the nearest possible number. These rounding rules normally don’t allow us to see that “tiny precision loss”, but it exists.
 
@@ -15916,27 +15478,26 @@ That’s because a sign is represented by a single bit, so it can be set or not 
 
 In most cases the distinction is unnoticeable, because operators are suited to treat them as the same. \`\`\`
 
-Tests: isFinite and isNaN
--------------------------
+## Tests: isFinite and isNaN
 
 Remember these two special numeric values?
 
--   `Infinity` (and `-Infinity`) is a special numeric value that is greater (less) than anything.
--   `NaN` represents an error.
+- `Infinity` (and `-Infinity`) is a special numeric value that is greater (less) than anything.
+- `NaN` represents an error.
 
 They belong to the type `number`, but are not “normal” numbers, so there are special functions to check for them:
 
--   `isNaN(value)` converts its argument to a number and then tests it for being `NaN`:
+- `isNaN(value)` converts its argument to a number and then tests it for being `NaN`:
 
-    `js run   alert( isNaN(NaN) ); // true   alert( isNaN("str") ); // true`
+  `js run alert( isNaN(NaN) ); // true alert( isNaN("str") ); // true`
 
-    But do we need this function? Can’t we just use the comparison `=== NaN`? Sorry, but the answer is no. The value `NaN` is unique in that it does not equal anything, including itself:
+  But do we need this function? Can’t we just use the comparison `=== NaN`? Sorry, but the answer is no. The value `NaN` is unique in that it does not equal anything, including itself:
 
-    `js run   alert( NaN === NaN ); // false`
+  `js run alert( NaN === NaN ); // false`
 
--   `isFinite(value)` converts its argument to a number and returns `true` if it’s a regular number, not `NaN/Infinity/-Infinity`:
+- `isFinite(value)` converts its argument to a number and returns `true` if it’s a regular number, not `NaN/Infinity/-Infinity`:
 
-    `js run   alert( isFinite("15") ); // true   alert( isFinite("str") ); // false, because a special value: NaN   alert( isFinite(Infinity) ); // false, because a special value: Infinity`
+  `js run alert( isFinite("15") ); // true alert( isFinite("str") ); // false, because a special value: NaN alert( isFinite(Infinity) ); // false, because a special value: Infinity`
 
 Sometimes `isFinite` is used to validate whether a string value is a regular number:
 
@@ -15957,8 +15518,7 @@ In all other cases, `Object.is(a, b)` is the same as `a === b`.
 
 This way of comparison is often used in JavaScript specification. When an internal algorithm needs to compare two values for being exactly the same, it uses `Object.is` (internally called [SameValue](https://tc39.github.io/ecma262/#sec-samevalue)). \`\`\`
 
-parseInt and parseFloat
------------------------
+## parseInt and parseFloat
 
 Numeric conversion using a plus `+` or `Number()` is strict. If a value is not exactly a number, it fails:
 
@@ -15986,8 +15546,7 @@ There are situations when `parseInt/parseFloat` will return `NaN`. It happens wh
 
 alert( parseInt(‘2n9c’, 36) ); // 123456
 
-Other math functions
---------------------
+## Other math functions
 
 JavaScript has a built-in [Math](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math) object which contains a small library of mathematical functions and constants.
 
@@ -16010,39 +15569,37 @@ Returns `n` raised to the given power.
 
 There are more functions and constants in `Math` object, including trigonometry, which you can find in the [docs for the Math object](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math).
 
-Summary
--------
+## Summary
 
 To write numbers with many zeroes:
 
--   Append `"e"` with the zeroes count to the number. Like: `123e6` is the same as `123` with 6 zeroes `123000000`.
--   A negative number after `"e"` causes the number to be divided by 1 with given zeroes. E.g. `123e-6` means `0.000123` (`123` millionths).
+- Append `"e"` with the zeroes count to the number. Like: `123e6` is the same as `123` with 6 zeroes `123000000`.
+- A negative number after `"e"` causes the number to be divided by 1 with given zeroes. E.g. `123e-6` means `0.000123` (`123` millionths).
 
 For different numeral systems:
 
--   Can write numbers directly in hex (`0x`), octal (`0o`) and binary (`0b`) systems.
--   `parseInt(str, base)` parses the string `str` into an integer in numeral system with given `base`, `2 ≤ base ≤ 36`.
--   `num.toString(base)` converts a number to a string in the numeral system with the given `base`.
+- Can write numbers directly in hex (`0x`), octal (`0o`) and binary (`0b`) systems.
+- `parseInt(str, base)` parses the string `str` into an integer in numeral system with given `base`, `2 ≤ base ≤ 36`.
+- `num.toString(base)` converts a number to a string in the numeral system with the given `base`.
 
 For converting values like `12pt` and `100px` to a number:
 
--   Use `parseInt/parseFloat` for the “soft” conversion, which reads a number from a string and then returns the value they could read before the error.
+- Use `parseInt/parseFloat` for the “soft” conversion, which reads a number from a string and then returns the value they could read before the error.
 
 For fractions:
 
--   Round using `Math.floor`, `Math.ceil`, `Math.trunc`, `Math.round` or `num.toFixed(precision)`.
--   Make sure to remember there’s a loss of precision when working with fractions.
+- Round using `Math.floor`, `Math.ceil`, `Math.trunc`, `Math.round` or `num.toFixed(precision)`.
+- Make sure to remember there’s a loss of precision when working with fractions.
 
 More mathematical functions:
 
--   See the [Math](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math) object when you need them. The library is very small, but can cover basic needs. \# Strings
+- See the [Math](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math) object when you need them. The library is very small, but can cover basic needs. \# Strings
 
 In JavaScript, the textual data is stored as strings. There is no separate type for a single character.
 
 The internal format for strings is always [UTF-16](https://en.wikipedia.org/wiki/UTF-16), it is not tied to the page encoding.
 
-Quotes
-------
+## Quotes
 
 Let’s recall the kinds of quotes.
 
@@ -16069,14 +15626,13 @@ Looks natural, right? But single or double quotes do not work this way.
 
 If we use them and try to use multiple lines, there’ll be an error:
 
-`js run let guestList = "Guests: // Error: Unexpected token ILLEGAL   * John";`
+`js run let guestList = "Guests: // Error: Unexpected token ILLEGAL * John";`
 
 Single and double quotes come from ancient times of language creation when the need for multiline strings was not taken into account. Backticks appeared much later and thus are more versatile.
 
 Backticks also allow us to specify a “template function” before the first backtick. The syntax is: `` func`string` ``. The function `func` is called automatically, receives the string and embedded expressions and can process them. This is called “tagged templates”. This feature makes it easier to implement custom templating, but is rarely used in practice. You can read more about it in the [manual](mdn:/JavaScript/Reference/Template_literals#Tagged_templates).
 
-Special characters
-------------------
+## Special characters
 
 It is still possible to create multiline strings with single and double quotes by using a so-called “newline character”, written as `\n`, which denotes a line break:
 
@@ -16124,8 +15680,7 @@ That’s possible, but we need to double it like `\\`:
 
 `` js run alert( `The backslash: \\` ); // The backslash: \ ``
 
-String length
--------------
+## String length
 
 The `length` property has the string length:
 
@@ -16137,8 +15692,7 @@ Note that `\n` is a single “special” character, so the length is indeed `3`.
 
 Please note that `str.length` is a numeric property, not a function. There is no need to add parenthesis after it. \`\`\`
 
-Accessing characters
---------------------
+## Accessing characters
 
 To get a character at position `pos`, use square brackets `[pos]` or call the method [str.charAt(pos)](mdn:js/String/charAt). The first character starts from the zero position:
 
@@ -16158,10 +15712,9 @@ alert( str\[1000\] ); // undefined alert( str.charAt(1000) ); // ’’ (an empt
 
 We can also iterate over characters using `for..of`:
 
-`js run for (let char of "Hello") {   alert(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc) }`
+`js run for (let char of "Hello") { alert(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc) }`
 
-Strings are immutable
----------------------
+## Strings are immutable
 
 Strings can’t be changed in JavaScript. It is impossible to change a character.
 
@@ -16183,8 +15736,7 @@ alert( str ); // hi \`\`\`
 
 In the following sections we’ll see more examples of this.
 
-Changing the case
------------------
+## Changing the case
 
 Methods [toLowerCase()](mdn:js/String/toLowerCase) and [toUpperCase()](mdn:js/String/toUpperCase) change the case:
 
@@ -16194,8 +15746,7 @@ Or, if we want a single character lowercased:
 
     alert( 'Interface'[0].toLowerCase() ); // 'i'
 
-Searching for a substring
--------------------------
+## Searching for a substring
 
 There are multiple ways to look for a substring within a string.
 
@@ -16235,7 +15786,7 @@ The same algorithm can be layed out shorter:
 
 \`\`\`js run let str = “As sly as a fox, as strong as an ox”; let target = “as”;
 
-*!* let pos = -1; while ((pos = str.indexOf(target, pos + 1)) != -1) { alert( pos ); } */!* \`\`\`
+_!_ let pos = -1; while ((pos = str.indexOf(target, pos + 1)) != -1) { alert( pos ); } _/!_ \`\`\`
 
 \`\``smart header="`str.lastIndexOf(substr, position)\`" There is also a similar method [str.lastIndexOf(substr, position)](mdn:js/String/lastIndexOf) that searches from the end of a string to its beginning.
 
@@ -16253,7 +15804,7 @@ So, we should actually check for `-1`, like this:
 
 \`\`\`js run let str = “Widget with id”;
 
-*!* if (str.indexOf(“Widget”) != -1) { */!* alert(“We found it”); // works now! } \`\`\`
+_!_ if (str.indexOf(“Widget”) != -1) { _/!_ alert(“We found it”); // works now! } \`\`\`
 
 #### The bitwise NOT trick
 
@@ -16301,8 +15852,7 @@ The methods [str.startsWith](mdn:js/String/startsWith) and [str.endsWith](mdn:js
 
 `js run alert( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid" alert( "Widget".endsWith("get") ); // true, "Widget" ends with "get"`
 
-Getting a substring
--------------------
+## Getting a substring
 
 There are 3 methods in JavaScript to get a substring: `substring`, `substr` and `slice`.
 
@@ -16324,7 +15874,7 @@ Negative values for `start/end` are also possible. They mean the position is cou
 // start at the 4th position from the right, end at the 1st from the right alert( str.slice(-4, -1) ); // ‘gif’ \`\`\`
 
 `str.substring(start [, end])`  
-Returns the part of the string *between* `start` and `end`.
+Returns the part of the string _between_ `start` and `end`.
 
 This is almost the same as `slice`, but it allows `start` to be greater than `end`.
 
@@ -16359,8 +15909,7 @@ Let’s recap these methods to avoid any confusion:
 
 Of the other two variants, `slice` is a little bit more flexible, it allows negative arguments and shorter to write. So, it’s enough to remember solely `slice` of these three methods. \`\`\`
 
-Comparing strings
------------------
+## Comparing strings
 
 As we know from the chapter <a href="info:comparison" class="uri">info:comparison</a>, strings are compared character-by-character in alphabetical order.
 
@@ -16368,11 +15917,11 @@ Although, there are some oddities.
 
 1.  A lowercase letter is always greater than the uppercase:
 
-    `js run  alert( 'a' > 'Z' ); // true`
+    `js run alert( 'a' > 'Z' ); // true`
 
 2.  Letters with diacritical marks are “out of order”:
 
-    `js run  alert( 'Österreich' > 'Zealand' ); // true`
+    `js run alert( 'Österreich' > 'Zealand' ); // true`
 
     This may lead to strange results if we sort these country names. Usually people would expect `Zealand` to come after `Österreich` in the list.
 
@@ -16406,8 +15955,8 @@ Now it becomes obvious why `a > Z`.
 
 The characters are compared by their numeric code. The greater code means that the character is greater. The code for `a` (97) is greater than the code for `Z` (90).
 
--   All lowercase letters go after uppercase letters because their codes are greater.
--   Some letters like `Ö` stand apart from the main alphabet. Here, it’s code is greater than anything from `a` to `z`.
+- All lowercase letters go after uppercase letters because their codes are greater.
+- Some letters like `Ö` stand apart from the main alphabet. Here, it’s code is greater than anything from `a` to `z`.
 
 ### Correct comparisons \[\#correct-comparisons\]
 
@@ -16421,9 +15970,9 @@ It provides a special method to compare strings in different languages, followin
 
 The call [str.localeCompare(str2)](mdn:js/String/localeCompare) returns an integer indicating whether `str` is less, equal or greater than `str2` according to the language rules:
 
--   Returns a negative number if `str` is less than `str2`.
--   Returns a positive number if `str` is greater than `str2`.
--   Returns `0` if they are equivalent.
+- Returns a negative number if `str` is less than `str2`.
+- Returns a positive number if `str` is greater than `str2`.
+- Returns `0` if they are equivalent.
 
 For instance:
 
@@ -16431,8 +15980,7 @@ For instance:
 
 This method actually has two additional arguments specified in [the documentation](mdn:js/String/localeCompare), which allows it to specify the language (by default taken from the environment, letter order depends on the language) and setup additional rules like case sensitivity or should `"a"` and `"á"` be treated as the same etc.
 
-Internals, Unicode
-------------------
+## Internals, Unicode
 
 \`\`\`warn header=“Advanced knowledge” The section goes deeper into string internals. This knowledge will be useful for you if you plan to deal with emoji, rare mathematical or hieroglyphic characters or other rare symbols.
 
