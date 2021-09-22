@@ -25,7 +25,7 @@ l = [3, 1, 2, 3, 4, 5]
 k = 3
 
 
-# 
+   #Alt Soln:
 def removeKFromList(l, k):
     if l is None:
         return []
@@ -45,3 +45,14 @@ def removeKFromList(l, k):
             prev = current
             current = current.next
     return l
+
+
+ 
+    # def removeKFromList(l, k):
+#     c = l
+#     while c:
+#         if c.next and c.next.value == k:
+#             c.next = c.next.next
+#         else:
+#             c = c.next
+#     return l.next if l and l.value == k else l
