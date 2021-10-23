@@ -1,1 +1,0 @@
-[R] Download All Tickers from both Google and Yahoo Finance in Quandl API 

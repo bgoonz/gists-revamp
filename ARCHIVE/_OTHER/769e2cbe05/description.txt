@@ -1,1 +1,0 @@
-[R] Adjusted Returns with Checked Lag: Yahoo Finance Downloader (w/VIX)

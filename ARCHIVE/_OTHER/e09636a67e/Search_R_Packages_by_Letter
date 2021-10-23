@@ -1,2 +1,0 @@
-#Search installed packages by first letter -- regardless of upper/lower case (by 's' here)
-grep("^[s]", attributes(installed.packages())$dimnames[[1]], value = TRUE, ignore.case = TRUE)

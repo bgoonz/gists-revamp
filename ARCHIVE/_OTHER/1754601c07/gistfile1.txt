@@ -1,3 +1,0 @@
-$service = new CurlService(CurlService::CONTENT_MULTI_PART, '224B-RPBP-N7QC-Y75P', 'x');
-$service->init('https://fishbowl.wufoo.com/api/v3/forms/myform/entries.xml');
-$r = $service->postAuthenticated(array('Field1' => 'Frank'));

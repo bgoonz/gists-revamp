@@ -1,1 +1,0 @@
-Script for getting many ar-drones to connect to a single wireless access point automatically 

@@ -1,1 +1,0 @@
-ES6 & async patterns: improving mongo sample code

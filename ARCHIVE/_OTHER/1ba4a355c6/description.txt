@@ -1,1 +1,0 @@
-Stop and remove all Docker containers and images

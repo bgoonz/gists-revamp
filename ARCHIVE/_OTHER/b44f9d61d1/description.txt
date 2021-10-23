@@ -1,1 +1,0 @@
-Escolas, em funcionamento, sem água, energia e esgoto, mostrando alguns detalhes (versão asyncio) (baseado em https://gist.github.com/fmasanori/4d6b7ea38a28681a513a)

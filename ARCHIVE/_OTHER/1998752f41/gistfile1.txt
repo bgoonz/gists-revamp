@@ -1,2 +1,0 @@
-curl -O http://python-distribute.org/distribute_setup.py
-/usr/bin/python2.6 distribute_setup.py

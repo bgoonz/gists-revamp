@@ -1,1 +1,0 @@
-implementing CSS3 specificity algorithm (with some extensions) in JS

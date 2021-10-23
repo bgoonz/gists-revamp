@@ -1,1 +1,0 @@
-Exploring why I wish ES6's `for-of` had a syntax for sending in values to each iteration's `next(..)` call

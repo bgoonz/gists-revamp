@@ -1,9 +1,0 @@
-/* CSS Pac-Man BUG IN CHROME 17 WINDOWS */
-
-#pacman {
-  width: 0;
-  height: 0;
-  border: 60px solid red;
-  border-right-color: transparent;
-  border-radius: 50%;
-}

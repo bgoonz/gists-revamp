@@ -1,1 +1,0 @@
-exploring point-free and (maybe?) AOP style

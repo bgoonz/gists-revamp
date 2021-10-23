@@ -1,1 +1,0 @@
-the following patterns are "worse" without a lexical name binding for the concise method sugar of ES6

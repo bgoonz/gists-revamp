@@ -1,1 +1,0 @@
-[R] Setting variables dynamically via strings within a loop 

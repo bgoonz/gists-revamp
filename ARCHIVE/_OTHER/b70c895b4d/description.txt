@@ -1,1 +1,0 @@
-MultiProcess em Python e o drible no GIL (http://www.diego-garcia.info/2016/02/27/multi-process-em-python-e-fuga-do-gil/)

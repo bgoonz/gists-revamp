@@ -1,1 +1,0 @@
-Classe feita em Python  que encapsula um cliente UDP enviando e recebendo mensagens de um servidor.

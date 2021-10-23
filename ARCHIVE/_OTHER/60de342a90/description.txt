@@ -1,1 +1,0 @@
-using a special-purpose queue for managed-cycle scheduling

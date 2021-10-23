@@ -1,1 +1,0 @@
-Tirar um módulo python de contexto (from: http://stackoverflow.com/questions/1668223/how-to-de-import-a-python-module)

@@ -1,1 +1,0 @@
-Rubygems with a changelog.* file in their source repository, ordered by highest SourceRank

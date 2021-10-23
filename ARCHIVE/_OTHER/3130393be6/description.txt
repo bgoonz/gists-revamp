@@ -1,1 +1,0 @@
-extending the `EventEmitter` API with `either/or` pattern

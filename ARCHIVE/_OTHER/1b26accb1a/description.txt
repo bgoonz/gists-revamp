@@ -1,1 +1,0 @@
-first draft sketch of a "Worker" polyfill

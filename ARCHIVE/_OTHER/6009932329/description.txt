@@ -1,1 +1,0 @@
-Improve the string serialization output of Error objects using `.stack`, if it's available (recent Chrome and Firefox do!)

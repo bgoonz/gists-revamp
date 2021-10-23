@@ -1,1 +1,0 @@
-pseudo-classical, ES6 class, OLOO

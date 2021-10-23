@@ -1,2 +1,0 @@
-/usr/bin/easy_install-2.6:7: UserWarning: Module pkg_resources was already imported from /System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/pkg_resources.pyc, but /Library/Python/2.6/site-packages is being added to sys.path
-    from pkg_resources import load_entry_point

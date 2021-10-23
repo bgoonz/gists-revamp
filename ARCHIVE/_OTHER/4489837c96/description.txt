@@ -1,2 +1,0 @@
-Script to download and add self-signed SSL cert exception to OS X keychain.
-Usage: ./add-self-signed-cert.sh www.example.com

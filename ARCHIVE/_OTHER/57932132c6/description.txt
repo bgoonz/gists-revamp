@@ -1,1 +1,0 @@
-question about an internal [[Constructor]] or other such property as observed in Chrome DevTools?

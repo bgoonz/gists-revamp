@@ -1,1 +1,0 @@
-how "grips" templating handles it, in response to https://gist.github.com/3696453

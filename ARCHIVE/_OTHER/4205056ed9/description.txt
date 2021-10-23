@@ -1,1 +1,0 @@
-Automatically create anchor links for headings

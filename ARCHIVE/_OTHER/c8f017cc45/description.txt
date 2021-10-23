@@ -1,1 +1,0 @@
-Proposal: curried function declarations in javascript -- aka, making FP development in JS much much nicer

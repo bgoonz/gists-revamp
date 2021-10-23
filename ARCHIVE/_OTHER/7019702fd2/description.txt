@@ -1,1 +1,0 @@
-how to use jQuery.noConflict() to manage multiple versions of jQuery on same page

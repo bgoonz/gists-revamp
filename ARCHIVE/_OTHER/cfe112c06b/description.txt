@@ -1,1 +1,0 @@
-horribly convoluted bug, badly illustrated.  **NOTE: this is not the real code, it's an ugly illustration of kinda what the bug was in my real code.

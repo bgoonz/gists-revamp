@@ -1,1 +1,0 @@
-Get a leaderboard of contributions in your GitHub organization

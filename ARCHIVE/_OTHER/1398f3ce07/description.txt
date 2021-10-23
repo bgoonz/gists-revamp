@@ -1,1 +1,0 @@
-thenify()... turn an err-first callback into two functions that can suitably be passed to a promise.then(..) and/or .catch(..)

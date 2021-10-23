@@ -1,1 +1,0 @@
-Scrape delicious links using Python

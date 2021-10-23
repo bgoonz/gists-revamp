@@ -1,1 +1,0 @@
-Removing container through remote API raise "Device is busy" error, but based on the underlying mount, the SHA directory is actually deleted.

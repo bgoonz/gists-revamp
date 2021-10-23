@@ -1,1 +1,0 @@
-Given requirements.txt file, we can check PyPI for new versions.

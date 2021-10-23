@@ -1,1 +1,0 @@
-Binomial Probabilities in R using Manipulate Package

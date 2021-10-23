@@ -1,1 +1,0 @@
-Py: Adjust Splits and Dividends from Real Prices using Quandl Finance Data

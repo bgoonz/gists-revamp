@@ -1,6 +1,0 @@
-tornado
-python-oauth2
-redis
-fakeredis
-mongomock
-pymongo

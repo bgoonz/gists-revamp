@@ -1,1 +1,0 @@
-pseudo element as background-size 

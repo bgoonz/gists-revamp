@@ -1,1 +1,0 @@
-Likelihood and coin-flips (Combinatorics and Likelihood Connection using #rstats)

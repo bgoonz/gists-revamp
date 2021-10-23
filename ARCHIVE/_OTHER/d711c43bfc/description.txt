@@ -1,1 +1,0 @@
-Sink and Print from a text file in R

@@ -1,1 +1,0 @@
-Proposing an event to be fired during initial page load when a browser is about to scroll to an #id element from a URL's #hash.

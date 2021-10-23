@@ -1,8 +1,0 @@
-Chrome 52-
-a:2, b:2, c:3, d:3, e:2
-
-Firefox51-
-a:2, b:1, c:3, d:2, e:1
-
-Babel(6/SiteRepl)-
-a:2, b:1, c:3, d:2, e:1

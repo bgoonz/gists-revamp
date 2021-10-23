@@ -1,1 +1,0 @@
-[R] Quandl RevolutionR Modified Example (Currencies)

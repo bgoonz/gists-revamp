@@ -1,1 +1,0 @@
-Classe feita em Delphi que encapsula um servidor UDP, trabalhando com método anônimo para regatar as mensagens recebidas e determinar a resposta que o servidor deve devolver para o cliente.

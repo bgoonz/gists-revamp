@@ -1,1 +1,0 @@
-patching `Array#toString()` to make it more sensible

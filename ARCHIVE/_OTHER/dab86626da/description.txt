@@ -1,1 +1,0 @@
-Habilitando método "Format" para JavaScript

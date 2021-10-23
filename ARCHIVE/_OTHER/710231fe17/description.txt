@@ -1,1 +1,0 @@
-how to detect IE from JavaScript using conditional comments

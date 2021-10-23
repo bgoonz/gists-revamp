@@ -1,1 +1,0 @@
-Ultra simple Golang Reflection example

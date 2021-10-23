@@ -1,1 +1,0 @@
-Modules with very similar names to popular npm modules (via levenshtein distance)

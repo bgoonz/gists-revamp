@@ -1,1 +1,0 @@
-exploring scope isolation (sandboxing) in JS

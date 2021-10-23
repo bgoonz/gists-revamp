@@ -1,1 +1,0 @@
-OLOO (objects linked to other objects) pattern explored (with comparison to the prototype style of the same code)

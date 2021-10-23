@@ -1,1 +1,0 @@
-Bounty on fixing up Emmet.js for CodeMirror for custom use

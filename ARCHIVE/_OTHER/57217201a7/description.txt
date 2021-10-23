@@ -1,1 +1,0 @@
-A CodePen by Chris Coyier. Track form progress with <progress> - Like a simple version of gamification.

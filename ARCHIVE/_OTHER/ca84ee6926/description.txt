@@ -1,1 +1,0 @@
-gRPC log filter (https://medium.com/@drgarcia1986/creating-a-filter-for-your-grpc-logs-1f6a34bd7e41)

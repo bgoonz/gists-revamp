@@ -1,1 +1,0 @@
-List of depended upon scoped packages in npm pulled from https://libraries.io

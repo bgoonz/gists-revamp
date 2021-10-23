@@ -1,1 +1,0 @@
-ES6 object destructuring + defaults: merging config objects

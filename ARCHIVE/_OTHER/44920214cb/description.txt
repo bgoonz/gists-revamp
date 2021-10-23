@@ -1,1 +1,0 @@
-Check your github account for out of date rails apps

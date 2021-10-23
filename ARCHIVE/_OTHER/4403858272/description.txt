@@ -1,1 +1,0 @@
-Xbox Controller in Node.js (wip)

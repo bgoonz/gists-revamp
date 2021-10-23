@@ -1,1 +1,0 @@
-asynquence: sequences & gates at a glance. https://github.com/getify/asynquence

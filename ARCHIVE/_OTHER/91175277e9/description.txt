@@ -1,1 +1,0 @@
-Trying to illustrate the sync/async inconsistency between promise initialization and promise chaining.

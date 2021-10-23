@@ -1,1 +1,0 @@
-collect "alike" elements together into sub-arrays (kinda like a partial reduce, sorta) --- and the second version shows how to not sub-array single elements "easily"

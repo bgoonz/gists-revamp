@@ -1,1 +1,0 @@
-attempting to use jParser to extract dimensions of JPG image file

@@ -1,1 +1,0 @@
-asynquence handles generators like `spawn()` does, but it wires the generator into the sequence flow and message stream!

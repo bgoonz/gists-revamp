@@ -1,1 +1,0 @@
-bizarre: this code gzips MUCH smaller if you DON'T minify it first

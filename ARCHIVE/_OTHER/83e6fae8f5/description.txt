@@ -1,1 +1,0 @@
-Converting English number sentences ("one hundred forty two point three") to numeric digits ("142.3")

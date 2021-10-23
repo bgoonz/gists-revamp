@@ -1,1 +1,0 @@
-httperf --hog --server 10.1.10.118 --port 8080 --num-conn 10000 --ra 100 --num-calls=100 --timeout .01

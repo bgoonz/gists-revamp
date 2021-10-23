@@ -1,1 +1,0 @@
-shutting down a `forever`-started server when CTRL+C quitting a grunt-watch task

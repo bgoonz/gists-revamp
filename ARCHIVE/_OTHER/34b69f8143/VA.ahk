@@ -1,1 +1,0 @@
-; get VA.ahk from here: https://autohotkey.com/board/topic/21984-vista-audio-control-functions/

@@ -1,4 +1,0 @@
-(function blah() { 
-    alert(blah); // works!
-    (function() { alert(blah); })();  // fails :(
-})();

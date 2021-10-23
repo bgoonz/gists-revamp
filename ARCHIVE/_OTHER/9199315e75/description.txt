@@ -1,1 +1,0 @@
-Classe escrita em Delphi que recupera e interpreta o rastreio de encomendas do site dos correios.

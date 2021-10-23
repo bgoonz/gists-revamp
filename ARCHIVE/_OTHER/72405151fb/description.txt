@@ -1,1 +1,0 @@
-soft proposal: sessionStorage session-ID auto transmission as HTTP request header

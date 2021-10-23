@@ -1,1 +1,0 @@
-asynquence: async perpetual batch-iteration of a list of numbers

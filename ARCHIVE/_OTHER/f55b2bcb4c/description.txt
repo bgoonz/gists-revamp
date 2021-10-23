@@ -1,1 +1,0 @@
-Scheduler (debouncing + throttling) | https://codepen.io/getify/pen/LYPbmYG?editors=0012

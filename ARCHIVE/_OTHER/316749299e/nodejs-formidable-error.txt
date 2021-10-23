@@ -1,7 +1,0 @@
-events.js:66
-        throw arguments[1]; // Unhandled 'error' event
-                       ^
-Error: bad content-type header, no multipart boundary
-    at IncomingForm._parseContentType (/path/to/node_modules/formidable/lib/incoming_form.js:233:19)
-    at IncomingForm.writeHeaders (/path/to/node_modules/formidable/lib/incoming_form.js:131:8)
-    at IncomingForm.parse (/path/to/node_modules/formidable/lib/incoming_form.js:84:8)

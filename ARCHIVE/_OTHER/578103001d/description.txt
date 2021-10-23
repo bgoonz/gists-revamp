@@ -1,1 +1,0 @@
-TokBox example html page for recording and saving a video and then playing it back

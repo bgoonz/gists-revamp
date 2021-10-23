@@ -1,1 +1,0 @@
-what could a `replaceAll(..)` for JS strings, which handles non-global regexes as if they're global, look like?

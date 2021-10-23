@@ -1,1 +1,0 @@
-Monte Hall Simulation -- Goat or Ferrari?

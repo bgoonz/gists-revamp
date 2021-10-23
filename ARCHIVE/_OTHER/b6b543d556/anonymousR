@@ -1,9 +1,0 @@
-> function(){x <-  1}
-function(){x <-  1}
-> x
-Error: object 'x' not found
-> y = 3
-> (function(x = 5 + y) x)()
-[1] 8
-> x
-Error: object 'x' not found

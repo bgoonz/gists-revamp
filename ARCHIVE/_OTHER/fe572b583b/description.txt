@@ -1,1 +1,0 @@
-VSCode configuration to use Cygwin LaTeX in LaTeX Workshop

@@ -1,1 +1,0 @@
-hijacking clicks using "capturing phase" event handler

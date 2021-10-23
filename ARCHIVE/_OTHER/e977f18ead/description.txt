@@ -1,1 +1,0 @@
-static `Promise.then(..)` helper

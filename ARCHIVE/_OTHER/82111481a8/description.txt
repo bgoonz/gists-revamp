@@ -1,1 +1,0 @@
-Illustrating asynquence "Iterable Sequences"

@@ -1,8 +1,0 @@
-for (var i = 0, j = foo.length; i < j; i++) {
-  // do stuff
-}
-
-for (var i = foo.length; i;) {
-  // first usage in loop: blah[--i]
-  // do stuff slightly faster in reverse order
-}

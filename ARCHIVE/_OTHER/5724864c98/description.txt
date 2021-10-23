@@ -1,1 +1,0 @@
-question about idomatic jQuery to simplify this?

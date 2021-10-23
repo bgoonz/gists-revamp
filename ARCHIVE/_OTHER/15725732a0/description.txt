@@ -1,1 +1,0 @@
-How some different companies load their third-party JS async style
