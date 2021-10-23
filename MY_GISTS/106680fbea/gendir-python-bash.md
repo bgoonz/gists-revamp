@@ -1,4 +1,4 @@
-Here's the python script: 
+Here's the python script:
 
 ```py
 #!/usr/bin/env python3
@@ -171,12 +171,12 @@ def process_dir(top_dir, opts):
     .icon {
         margin-right: 5px;
     }
-    tr.clickable { 
-        cursor: pointer; 
-    } 
-    tr.clickable a { 
-        display: block; 
-    } 
+    tr.clickable {
+        cursor: pointer;
+    }
+    tr.clickable a {
+        display: block;
+    }
     @media (max-width: 600px) {
         * {
             font-size: 1.06rem;
@@ -421,14 +421,9 @@ if __name__ == "__main__":
     process_dir(config.top_dir, config)
 ```
 
- I also write a primative bash script to the same effect when I first decided to undertake this project.... the original intention was to use the bash script and the node child process module to run the script from a js-based npm package:
+I also write a primative bash script to the same effect when I first decided to undertake this project.... the original intention was to use the bash script and the node child process module to run the script from a js-based npm package:
 
 # Full disclosure I am not the author of the original python script that my above python script borrowed heavily from... but I did create the private npm package I used to achive the effect seen on this website here:
-
-
-
-
-
 
 ```sh
 

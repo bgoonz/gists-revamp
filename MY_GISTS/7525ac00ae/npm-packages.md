@@ -1,5 +1,4 @@
-💻 Frontend frameworks
-----------------------
+## 💻 Frontend frameworks
 
 1.[React](https://www.npmjs.com/package/react)
 
@@ -13,10 +12,9 @@ Vue was built by combining the best approaches from React and others, focusing o
 
 Svelte is a new way to build web applications. It's a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.
 
-*Other notable frameworks include *[*Angular*](https://www.npmjs.com/package/angular)*, *[*Ember*](https://www.npmjs.com/package/ember)*, *[*Backbone*](https://www.npmjs.com/package/backbone)*, *[*Preact*](https://www.npmjs.com/package/preact)* and many others. You can do wonders with any of them, the golden rule is to learn *[*modern JS (ES6 and above)*](https://javascript.info/)* well before.*
+_Other notable frameworks include _[_Angular_](https://www.npmjs.com/package/angular)_, _[_Ember_](https://www.npmjs.com/package/ember)_, _[_Backbone_](https://www.npmjs.com/package/backbone)_, _[_Preact_](https://www.npmjs.com/package/preact)_ and many others. You can do wonders with any of them, the golden rule is to learn _[_modern JS (ES6 and above)_](https://javascript.info/)_ well before._
 
-🎨 Styling frameworks
----------------------
+## 🎨 Styling frameworks
 
 4.[Bootstrap](https://www.npmjs.com/package/bootstrap)
 
@@ -30,10 +28,9 @@ A low-level, utility-first CSS framework for rapid UI development. Built from th
 
 CSS-in-JS tool that bridges the gap between components and styling, offering numerous features to get you up and running in styling components in a functional and reusable way.
 
-*Other great solutions include *[*Foundation*](https://www.npmjs.com/package/foundation-sites)*, *[*Bulma*](https://www.npmjs.com/package/bulma)*, *[*Materialize*](https://www.npmjs.com/package/materialize-css)* and *[*Ant Design*](https://www.npmjs.com/package/antd)*. If you prefer to write Vanilla CSS, you can use some CSS extension language like *[*SASS*](https://www.npmjs.com/package/sass)*, to extend its features.*
+_Other great solutions include _[_Foundation_](https://www.npmjs.com/package/foundation-sites)_, _[_Bulma_](https://www.npmjs.com/package/bulma)_, _[_Materialize_](https://www.npmjs.com/package/materialize-css)_ and _[_Ant Design_](https://www.npmjs.com/package/antd)_. If you prefer to write Vanilla CSS, you can use some CSS extension language like _[_SASS_](https://www.npmjs.com/package/sass)_, to extend its features._
 
-🔲 Backend frameworks
----------------------
+## 🔲 Backend frameworks
 
 7.[Express](https://www.npmjs.com/package/express)
 
@@ -47,10 +44,9 @@ Hapi was originally used for the Express framework. With Hapi you can build powe
 
 Sails is the most popular MVC framework for Node.js with support for the requirements of modern apps: data-driven APIs with a scalable, service-oriented architecture.
 
-*Same as for frontend frameworks, there are lots of backend alternatives as well like *[*Adonis*](https://www.npmjs.com/package/@adonisjs/cli)* and *[*Koa*](https://www.npmjs.com/package/koa)*. Pick one that suits your needs and learn it well.*
+_Same as for frontend frameworks, there are lots of backend alternatives as well like _[_Adonis_](https://www.npmjs.com/package/@adonisjs/cli)_ and _[_Koa_](https://www.npmjs.com/package/koa)_. Pick one that suits your needs and learn it well._
 
-🔗 CORS and requests
---------------------
+## 🔗 CORS and requests
 
 10.[Cors](https://www.npmjs.com/package/cors)
 
@@ -64,8 +60,7 @@ A promise-based HTTP client for the browser and Node.js. It's easy to set-up, in
 
 Body parsing middleware, that extracts the entire body portion of an incoming request stream and exposes it on req.body as something easier to interface with.
 
-🧩 API services
----------------
+## 🧩 API services
 
 13.[Restify](https://www.npmjs.com/package/restify)
 
@@ -75,8 +70,7 @@ A Node.js web service framework optimized for building semantically correct REST
 
 A query language for APIs and a runtime for fulfilling those queries with your existing data. Provides a complete description of the data in your API, gives clients the power to ask for exactly what they need.
 
-🤝 Web sockets
---------------
+## 🤝 Web sockets
 
 15.[Socket.io](https://www.npmjs.com/package/socket.io)
 
@@ -86,8 +80,7 @@ Socket.IO enables real-time, bidirectional, and event-based communication. It wo
 
 Simple to use, fast, and thoroughly tested WebSocket client and server implementation. A great, less abstract, and bare alternative to Socket.io.
 
-✍ Loggers
----------
+## ✍ Loggers
 
 17.[Morgan](https://www.npmjs.com/package/morgan)
 
@@ -97,8 +90,7 @@ Specifically, an HTTP request logger, storing HTTP requests and giving you conci
 
 A logger for just about everything with support for multiple means of transport. Has been out there for longer than Morgan, it also has a bigger community of maintainers and more downloads.
 
-💾 Database tools
------------------
+## 💾 Database tools
 
 19.[Mongoose](https://www.npmjs.com/package/mongoose)
 
@@ -108,8 +100,7 @@ Mongoose is a MongoDB object modeling tool designed to work in an asynchronous e
 
 Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 
-🔓 Auth tools
--------------
+## 🔓 Auth tools
 
 21.[Passport](https://www.npmjs.com/package/passport)
 
@@ -123,8 +114,7 @@ A library to help you hash passwords. Bcrypt is a password-hashing function desi
 
 JSON Web Tokens (JWT) are an open, industry-standard RFC 7519 method for representing claims securely between two parties. This package allows you to decode, verify, and generate JWT.
 
-🔧 Config modules
------------------
+## 🔧 Config modules
 
 24.[Config](https://www.npmjs.com/package/config)
 
@@ -134,8 +124,7 @@ Settings are stored in configuration files within your application and can be ov
 
 Zero-dependency module that loads environment variables from a .env file into process.env.
 
-📃 Static site generators
--------------------------
+## 📃 Static site generators
 
 26.[Gatsby](https://www.npmjs.com/package/gatsby)
 
@@ -149,8 +138,7 @@ NextJS first and foremost supports server rendering as well as statically genera
 
 NuxtJS is basically a NextJS alternative in Vue's ecosystem. NuxtJS's goal is to make web development powerful and performant with great developer experience in mind.
 
-🌟Templating languages
-----------------------
+## 🌟Templating languages
 
 29.[Mustache](https://www.npmjs.com/package/mustache)
 
@@ -164,8 +152,7 @@ Uses a template and an input object to generate HTML or other text formats. Hand
 
 EJS is a simple templating language that lets you generate HTML markup with plain JavaScript with a simple syntax, speedy execution, and easy debugging. EJS has a large community of active users, and the library is under active development.
 
-📷 Image processing
--------------------
+## 📷 Image processing
 
 32.[Sharp](https://www.npmjs.com/package/sharp)
 
@@ -179,8 +166,7 @@ Thanks to the Node.js module GM you can use two popular tools for creating, edit
 
 Dedicated module to ease work with cloud service that offers a solution to a web application's entire image management pipeline.
 
-📅 Date formatting
-------------------
+## 📅 Date formatting
 
 35.[DayJS](https://www.npmjs.com/package/dayjs)
 
@@ -190,8 +176,7 @@ DayJS is a fast and lightweight alternative to [MomentJS](https://www.npmjs.com
 
 If you like another light-weight alternative, with a slightly different API, Luxon might be the right choice for you.
 
-🧙‍♂️ Data generators
----------------------
+## 🧙‍♂️ Data generators
 
 37.[Shortid](https://www.npmjs.com/package/shortid)
 
@@ -205,8 +190,7 @@ Handy tiny package to quickly and easily generate more complex universally uniqu
 
 Useful package for generating massive amounts of fake data in the browser and Node.js.
 
-✅ Validators
-------------
+## ✅ Validators
 
 40.[Validator](https://www.npmjs.com/package/validator)
 
@@ -216,8 +200,7 @@ Handy library of string validators and sanitizers. Lots of useful methods availa
 
 Powerful schema description language and data validator for JavaScript.
 
-📧 Forms and emails
--------------------
+## 📧 Forms and emails
 
 42.[Formik](https://www.npmjs.com/package/formik)
 
@@ -231,8 +214,7 @@ Multer is a Node.js middleware for handling multipart/form-data, which is primar
 
 Nodemailer is a module for Node.js applications to allow easy email sending. The project got started back in 2010, today it is the solution most Node.js users turn to by default.
 
-🧪 Testing
-----------
+## 🧪 Testing
 
 45.[Jest](https://www.npmjs.com/package/jest)
 
@@ -242,8 +224,7 @@ Jest is a delightful JavaScript Testing Framework with a focus on simplicity. It
 
 Mocha is a JavaScript test framework, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting while mapping uncaught exceptions to the correct test cases.
 
-💫 Web scraping and automation
-------------------------------
+## 💫 Web scraping and automation
 
 47.[Cheerio](https://www.npmjs.com/package/cheerio)
 
@@ -253,8 +234,7 @@ Cheerio is widely used for web scraping work and sometimes in automating the tas
 
 Puppeteer is widely used for automating browser tasks and can only work with google chrome headless browser i.e chromium. Puppeteer can also be used for web scraping tasks. It is much powerful and feature-rich compared to the Cheerio module.
 
-🌷 Linters and formaters
-------------------------
+## 🌷 Linters and formaters
 
 49.[ESLint](https://www.npmjs.com/package/eslint)
 
@@ -264,8 +244,7 @@ ESLint is a tool for identifying and reporting on patterns found in ECMAScript/J
 
 Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
 
-📦 Module bundlers and minimizers
----------------------------------
+## 📦 Module bundlers and minimizers
 
 51.[Webpack](https://www.npmjs.com/package/webpack)
 
@@ -283,8 +262,7 @@ Fast and efficient CSS optimizer for Node.js platform and any modern browser. Hi
 
 JavaScript parser, minifier, compressor and beautifier toolkit. It can take multiple input files and supports lots of configuration options.
 
-👨‍💻 Process managers and runners
-----------------------------------
+## 👨‍💻 Process managers and runners
 
 55.[Nodemon](https://www.npmjs.com/package/nodemon)
 
@@ -298,8 +276,7 @@ Production process manager for Node.JS applications with a built-in load balance
 
 Simple and straight to the point --- useful tool for running multiple commands concurrently.
 
-🚧 CLI and debuggers
---------------------
+## 🚧 CLI and debuggers
 
 58.[Commander](https://www.npmjs.com/package/commander)
 
@@ -317,8 +294,7 @@ Chalk is an extremely simple library, created for one, simple purpose --- stylin
 
 A tiny JavaScript debugging utility. Simply pass a function the name of your module, and it will return a decorated version of console.error for you to pass debug statements to.
 
-🧰 Utilities
-------------
+## 🧰 Utilities
 
 62.[Lodash](https://www.npmjs.com/package/lodash)
 
@@ -332,8 +308,7 @@ Underscore provides lots of commonly used functional helpers as well as more spe
 
 Async is a utility module that provides straight-forward, powerful functions for working with asynchronous JavaScript.
 
-🔩 System modules
------------------
+## 🔩 System modules
 
 65.[Fs-extra](https://www.npmjs.com/package/fs-extra)
 
@@ -347,8 +322,7 @@ A module for some common directory and file operations, including for getting an
 
 A simple caching module that has set, get and delete methods and works a little bit like [memcached](https://memcached.org/). Keys can have a timeout (ttl) after which they expire and are deleted from the cache.
 
-🧷 Others:
-----------
+## 🧷 Others:
 
 68.[Helmet](https://www.npmjs.com/package/helmet)
 

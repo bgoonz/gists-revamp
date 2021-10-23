@@ -10,8 +10,7 @@ Check the HTML and you’ll see that all it took was a single `<script>` tag to 
 
 Now that we’ve covered the gist of using Gists (sorry), let’s get into some ways to customize them.
 
-[link to this subheading](https://codersblock.com/blog/customizing-github-gists/#changing-the-look-and-feel)Changing the Look and Feel
---------------------------------------------------------------------------------------------------------------------------------------
+## [link to this subheading](https://codersblock.com/blog/customizing-github-gists/#changing-the-look-and-feel)Changing the Look and Feel
 
 The sample Gist above is what you get by default. Inoffensive, but it’s not the look I wanted for my site. Fortunately, you can use custom CSS to override the styles. Here’s that Gist again, but this time with custom styles very similar to what I’m using on my site.
 
@@ -21,15 +20,14 @@ The Gist is functionally the same, but looks considerably different. I’ve also
 
 A couple notes here.
 
-*   I’m prepending all selectors with `body .gist`. This increases specificity, which allows my styles take priority over the default ones.
-*   There are some spots where I’m forced to use `!important`. I’m not thrilled about it, but it’s necessary to override default styles that also have `!important`.
+- I’m prepending all selectors with `body .gist`. This increases specificity, which allows my styles take priority over the default ones.
+- There are some spots where I’m forced to use `!important`. I’m not thrilled about it, but it’s necessary to override default styles that also have `!important`.
 
-[link to this subheading](https://codersblock.com/blog/customizing-github-gists/#gist-syntax-themes)Gist Syntax Themes
-----------------------------------------------------------------------------------------------------------------------
+## [link to this subheading](https://codersblock.com/blog/customizing-github-gists/#gist-syntax-themes)Gist Syntax Themes
 
 So far, we haven’t messed with the syntax highlighting colors. If you use dev tools to inspect the contents of an embedded Gist, you’ll see a bunch of `<span>` tags with classes like `pl-c1`, `pl-en`, `pl-k`, etc. These apply the colors for various tokens. Here’s a small sample. You can see [the full list/stylesheet in this thread](https://github.com/StylishThemes/GitHub-Dark/issues/197#issuecomment-63717143).
 
-    .pl-c1 { color: #0086b3; } .pl-en { color: #795da3; } .pl-k  { color: #a71d5d; } 
+    .pl-c1 { color: #0086b3; } .pl-en { color: #795da3; } .pl-k  { color: #a71d5d; }
 
 Armed with this knowledge, you could override these styles and create your own color theme, but that could get tedious. There are premade stylesheets people have shared to do the work for you, but all the ones I found were broken (they used [Pygments’](http://pygments.org/) grammar, which GitHub dropped in late 2014).
 
@@ -39,8 +37,7 @@ So I adapted the CSS to create drop-in stylesheets that apply various color them
 
 All you have to do is add [this stylesheet](https://github.com/lonekorean/gist-syntax-themes/blob/master/stylesheets/monokai.css) to your page. For more themes, check out my [gist-syntax-themes](https://github.com/lonekorean/gist-syntax-themes) project on GitHub.
 
-[link to this subheading](https://codersblock.com/blog/customizing-github-gists/#tweaking-colors-with-css-filters)Tweaking Colors with CSS Filters
---------------------------------------------------------------------------------------------------------------------------------------------------
+## [link to this subheading](https://codersblock.com/blog/customizing-github-gists/#tweaking-colors-with-css-filters)Tweaking Colors with CSS Filters
 
 If you’d rather not mess with a bunch of style overrides, then there is an alternative. You can use [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) to adjust the colors. You get less control for sure, but it’s quicker and more lightweight.
 
@@ -56,8 +53,7 @@ That’s actually the one I use on my site. I’m generally fine with the defaul
 
 This demo lets you play around with various filters to see what your Gists would look like. Side note, there’s nothing stopping you from using the drop-in stylesheets from earlier AND these CSS filters at the same time.
 
-[link to this subheading](https://codersblock.com/blog/customizing-github-gists/#scripting)Scripting
-----------------------------------------------------------------------------------------------------
+## [link to this subheading](https://codersblock.com/blog/customizing-github-gists/#scripting)Scripting
 
 This might be obvious, but once a Gist’s markup has been injected into a page, you can use JavaScript to muck around with it.
 
@@ -65,8 +61,7 @@ The following is a snippet of vanilla JavaScript that clears out IDs. Why? Becau
 
     let gistIdElements = document.querySelectorAll('.gist [id]');Array.from(gistIdElements).forEach((el) => {  el.removeAttribute('id');});
 
-[link to this subheading](https://codersblock.com/blog/customizing-github-gists/#full-control-with-the-api)Full Control with the API
-------------------------------------------------------------------------------------------------------------------------------------
+## [link to this subheading](https://codersblock.com/blog/customizing-github-gists/#full-control-with-the-api)Full Control with the API
 
 Everything I’ve shown you so far is built on the embedded script approach — drop the magic `<script>` tag into your page and GitHub takes care of all the markup for you. It’s convenient and good enough for most… but what if you want absolute, uncompromising control?
 
@@ -90,10 +85,8 @@ Nothing fancy, but keep in mind this is a super simple demo — you can do whate
 
 There are many other Gist API endpoints to explore, such as one to [list a user’s Gists](https://developer.github.com/v3/gists/#list-a-users-gists). If full control is what you want and you’re not afraid to do the extra work, then the API is the way to go.
 
-[link to this subheading](https://codersblock.com/blog/customizing-github-gists/#make-gists-your-own)Make Gists Your Own
-------------------------------------------------------------------------------------------------------------------------
+## [link to this subheading](https://codersblock.com/blog/customizing-github-gists/#make-gists-your-own)Make Gists Your Own
 
 I’ve covered several ways to make Gists look the way you want them to, with varying degrees of effort. Hopefully one of these methods, or a combination of them, will help you find exactly what you’re looking for. If you have any other tips I’ve missed, please reach out!
-
 
 [Source](https://codersblock.com/blog/customizing-github-gists/)

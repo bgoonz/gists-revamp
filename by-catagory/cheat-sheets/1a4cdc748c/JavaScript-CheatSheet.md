@@ -753,7 +753,7 @@ switch (val) {
 ### Basics
 
 | Operator | Meaning               |
-| -------- | --------------------- |
+| -------- | --------------------- | --- | --- |
 | `==`     | Equality              |
 | `===`    | Strict Equality       |
 | `!=`     | Inequality            |
@@ -763,7 +763,7 @@ switch (val) {
 | `<`      | Less Than             |
 | `<=`     | Less or Equal Than    |
 | `&&`     | And                   |
-| `        |                       | ` | Or |
+| `        |                       | `   | Or  |
 
 ## While Loops
 
@@ -943,7 +943,7 @@ const person = {
 ### Resume Table
 
 | Character  | Description                                                                                        |
-| ---------- | -------------------------------------------------------------------------------------------------- |
+| ---------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----- |
 | `\`        | Escapes a special character.                                                                       |
 | `          | `                                                                                                  | Search for multiple patterns. To match "yes" or "no", the regex is `/yes | no/`. |
 | `i`        | This flag is used to ignore upper and lowercase. `/ignorecase/i`.                                  |
@@ -1575,6 +1575,7 @@ console.log(Math.PI);
 ```
 
 #### round() Method
+
 It rounds a number to the nearest integer.
 
 ```javascript
@@ -1584,6 +1585,7 @@ console.log(Math.floor(2.1));
 ```
 
 #### sqrt(a) Method
+
 It returns square root of a number.
 
 ```javascript
@@ -1594,6 +1596,7 @@ Math.sqrt(x);
 ```
 
 #### pow(a,b) Method
+
 It returns value of a to the power b.
 
 ```javascript
@@ -1603,6 +1606,7 @@ console.log(Math.floor(2.1));
 ```
 
 #### ceil(x) Method
+
 It rounds a number upwards to the nearest integer.
 
 ```javascript
@@ -1613,6 +1617,7 @@ Math.ceil(x);
 ```
 
 #### log(x) Method
+
 It returns the logarithmic value of x.
 
 ```javascript

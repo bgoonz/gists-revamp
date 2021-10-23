@@ -103,130 +103,122 @@ The defineClass function accepts an object literal which contains the constructo
 Let's examine the use of an instance of the object.
 
 ```js
-
 var customer = new Customer(123);
-console.log( customer.toString() ); // > "Customer #123"
-customer.placeOrder( { total: 10 } );
-console.log( customer.getReward() ); // > "Nothing Today"
-customer.placeOrder( { total: 101 } );
-console.log( customer.getReward() ); // > "Special Customer Coupon!"
-
+console.log(customer.toString()); // > "Customer #123"
+customer.placeOrder({ total: 10 });
+console.log(customer.getReward()); // > "Nothing Today"
+customer.placeOrder({ total: 101 });
+console.log(customer.getReward()); // > "Special Customer Coupon!"
 ```
 
 So what happens if we try to access the private members of the object?
 
 ```js
-
 var customer = new Customer(123);
 customer.totalSpend = 1000;
-console.log( customer.getReward() ); // > "Nothing Today"
-console.log( typeof customer.isSpecial ); // > "undefined"
-
+console.log(customer.getReward()); // > "Nothing Today"
+console.log(typeof customer.isSpecial); // > "undefined"
 ```
 
 Any attempt to use the private data or functions fails. The actual object we're using doesn't have those private members.
 
-Annotated source for defineClass
---------------------------------
+## Annotated source for defineClass
 
 The source code for defineClass is annotated with comments to explain the trickier details. It's less than 100 lines and is probably easier to read, than explain it again here.
 
 ```js
+var defineClass = (function () {
+  // Creates a proxying function that will call the real object.
+  function createProxyFunction(functionName) {
+    return function () {
+      // 'this' in here is the proxy object.
+      var realObject = this.__realObject__,
+        realFunction = realObject[functionName];
 
-var defineClass = (function() {
+      // Call the real function on the real object, passing any arguments we received.
+      return realFunction.apply(realObject, arguments);
+    };
+  }
 
-    // Creates a proxying function that will call the real object.
-    function createProxyFunction(functionName) {
-        return function() {
-            // 'this' in here is the proxy object.
-            var realObject = this.__realObject__,
-                realFunction = realObject[functionName];
+  // createProxyClass creates a function that will create Proxy objects.
+  //   publicFunctions: an object of public functions for the proxy.
+  function createProxyClass(publicFunctions) {
+    var ProxyClass, functionName, func;
 
-            // Call the real function on the real object, passing any arguments we received.
-            return realFunction.apply(realObject, arguments);
-        };
+    // This is this Proxy object constructor.
+    ProxyClass = function (realObject) {
+      // Choose a reasonably obscure name for the real object property.
+      // It should avoid any conflict with the public function names.
+      // Also any code being naughty by using this property is quickly spotted!
+      this.__realObject__ = realObject;
     };
 
-    // createProxyClass creates a function that will create Proxy objects.
-    //   publicFunctions: an object of public functions for the proxy.
-    function createProxyClass(publicFunctions) {
-        var ProxyClass, functionName, func;
-
-        // This is this Proxy object constructor.
-        ProxyClass = function (realObject) {
-            // Choose a reasonably obscure name for the real object property.
-            // It should avoid any conflict with the public function names.
-            // Also any code being naughty by using this property is quickly spotted!
-            this.__realObject__ = realObject;
-        };
-
-        // Create a proxy function for each of the public functions.
-        for (functionName in publicFunctions) {
-            func = publicFunctions[functionName];
-            // We only want functions that are defined directly on the publicFunctions object.
-            if (publicFunctions.hasOwnProperty(functionName) &&
-                typeof func === "function") {
-                ProxyClass.prototype[functionName] = createProxyFunction(functionName);
-            }
-        }
-
-        return ProxyClass;
+    // Create a proxy function for each of the public functions.
+    for (functionName in publicFunctions) {
+      func = publicFunctions[functionName];
+      // We only want functions that are defined directly on the publicFunctions object.
+      if (
+        publicFunctions.hasOwnProperty(functionName) &&
+        typeof func === "function"
+      ) {
+        ProxyClass.prototype[functionName] = createProxyFunction(functionName);
+      }
     }
 
-    function copyToPrototype(source, destination) {
-        var prototype = destination.prototype,
-            property;
-        for (property in source) {
-            if (source.hasOwnProperty(property)) {
-                prototype[property] = source[property];
-            }
-        }
-    };
+    return ProxyClass;
+  }
 
-    function createRealClass(constructor, publics, privates, proxyClass) {
-        var RealClass = function () {
-            var proxy;
-
-            if (typeof constructor === "function") {
-                // Call the constructor function to perform any initialization of the object.
-                constructor.apply(this, arguments);
-            }
-            proxy = new proxyClass(this);
-            // Maintain the illusion that the proxy object is a real object.
-            // Assign the constructor property in case anyone uses it to create another instance.
-            proxy.constructor = RealClass;
-            // Returning the proxy object means creating a new instance of Class
-            // results in a proxy object, instead of the real object.
-            // Callers can then only interact with the proxy.
-            return proxy;
-        };
-        // The RealClass has both public and private functions.
-        copyToPrototype(publics || {}, RealClass);
-        copyToPrototype(privates || {}, RealClass);
-
-        return RealClass;
+  function copyToPrototype(source, destination) {
+    var prototype = destination.prototype,
+      property;
+    for (property in source) {
+      if (source.hasOwnProperty(property)) {
+        prototype[property] = source[property];
+      }
     }
+  }
 
-    // Return the defineClass function.
-    return function (options) {
-        // 'public' and 'private' are reserved keywords, so the option properties must be
-        // accessed using strings instead of options.public, for example.
-        var proxyClass = createProxyClass(options["public"]),
-            realClass = createRealClass(
-                options["constructor"],
-                options["public"],
-                options["private"],
-                proxyClass
-            );
-        return realClass;
+  function createRealClass(constructor, publics, privates, proxyClass) {
+    var RealClass = function () {
+      var proxy;
+
+      if (typeof constructor === "function") {
+        // Call the constructor function to perform any initialization of the object.
+        constructor.apply(this, arguments);
+      }
+      proxy = new proxyClass(this);
+      // Maintain the illusion that the proxy object is a real object.
+      // Assign the constructor property in case anyone uses it to create another instance.
+      proxy.constructor = RealClass;
+      // Returning the proxy object means creating a new instance of Class
+      // results in a proxy object, instead of the real object.
+      // Callers can then only interact with the proxy.
+      return proxy;
     };
+    // The RealClass has both public and private functions.
+    copyToPrototype(publics || {}, RealClass);
+    copyToPrototype(privates || {}, RealClass);
 
-}());
+    return RealClass;
+  }
 
+  // Return the defineClass function.
+  return function (options) {
+    // 'public' and 'private' are reserved keywords, so the option properties must be
+    // accessed using strings instead of options.public, for example.
+    var proxyClass = createProxyClass(options["public"]),
+      realClass = createRealClass(
+        options["constructor"],
+        options["public"],
+        options["private"],
+        proxyClass
+      );
+    return realClass;
+  };
+})();
 ```
 
-Proxy Object
-------------
+## Proxy Object
 
 The key to how defineClass works lies with the "proxy" object pattern. A cute trick of JavaScript is that an object constructor function may return a different object, other than the one being constructed. So when creating a new Customer object, you actually get a CustomerProxy object. The real Customer object is hidden within the proxy.
 

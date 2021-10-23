@@ -1,5 +1,4 @@
-Learn
------
+## Learn
 
 #### Learn to explain class components, and use a class component to render some state data to the DOM
 
@@ -130,17 +129,17 @@ Hooray! You've now built your first class component, and you're ready to rock n'
 
 Let's take the functionality of this class component that we built earlier and extend it just a little bit. Declare a `Functional Component` called `RenderMessage` inside [this CodeSandbox](https://codesandbox.io/s/103jkor46q).
 
--   Make sure you declare your Props Object that will be passed into this component.
--   Return a `div` who's child is `props.message`
--   Now inside of the `App` class pass in that `RenderMessage` component and pass down a message prop to `RenderMessage`. This message prop should be set equal to the message property on the state object.
--   Once it's all wired up properly you've done it!
+- Make sure you declare your Props Object that will be passed into this component.
+- Return a `div` who's child is `props.message`
+- Now inside of the `App` class pass in that `RenderMessage` component and pass down a message prop to `RenderMessage`. This message prop should be set equal to the message property on the state object.
+- Once it's all wired up properly you've done it!
 
 ##### Dig Deeper
 
--   [Functional Components vs. Class Components](https://www.andreasreiterer.at/web-development/react-functional-components/)\
-    Learn when to use them, so when the time comes, you'll know!
+- [Functional Components vs. Class Components](https://www.andreasreiterer.at/web-development/react-functional-components/)\
+  Learn when to use them, so when the time comes, you'll know!
 
-* * * * *
+---
 
 #### Learn to share data between components using state and props
 
@@ -216,9 +215,9 @@ There we have it; now we are sharing data between a component's state and a comp
 
 Let's build out a few components and put some concepts together there.
 
--   We're going to be updating some state on a parent component.
--   That state will be wired up to a few other components as we pass the props around.
--   We will also be passing around a few handler functions that help us update/delete our state.
+- We're going to be updating some state on a parent component.
+- That state will be wired up to a few other components as we pass the props around.
+- We will also be passing around a few handler functions that help us update/delete our state.
 
 Lets set up a form component that we can use to update our message component from above.
 
@@ -287,10 +286,10 @@ render() {
 
 Using the following tools:
 
--   Class component
--   functional FormComponent, MessageComponent
--   click, and change handlers
--   `setState`
+- Class component
+- functional FormComponent, MessageComponent
+- click, and change handlers
+- `setState`
 
 Build out a form that will allow a user to handle data. You'll need a button, input field, and some data-bound to a DOM element that displays what the user is submitting.
 
@@ -298,7 +297,7 @@ When a user clicks submit, show the data that's on state in an `alert` stateme
 
 Stretch Loop over a list of items showing those items to the screen. (Can be a list of strings). When a user clicks submit, instead of logging the item, push an item into that list, and watch the magic happen.
 
-* * * * *
+---
 
 #### Learn to respond to events triggered by user interaction and handle user input via forms in React
 
@@ -312,8 +311,8 @@ Events in any programing language are unique to the language itself. When javasc
 
 > Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:
 >
-> -   React events are named using camelCase, rather than lowercase.
-> -   With JSX you pass a function as the event handler, rather than a string.
+> - React events are named using camelCase, rather than lowercase.
+> - With JSX you pass a function as the event handler, rather than a string.
 
 Now, let's dive in and see what it is like to handle events in ReactJS.
 
@@ -495,63 +494,62 @@ https://codesandbox.io/s/rmnj2r1o0p Here is a working copy of what we achieved!
 
 Using this Code sandbox that we've been working in together, build out an app that holds a string item on the state object.
 
--   Build out a function handler that can take in the edits from an `onChange event` and then use the `setState` function to set those items on state.
--   You should have seen me do this already, so you may have to refer back to previous walk-throughs.
+- Build out a function handler that can take in the edits from an `onChange event` and then use the `setState` function to set those items on state.
+- You should have seen me do this already, so you may have to refer back to previous walk-throughs.
 
-* * * * *
+---
 
-[](https://learn-legacy.lambdaschool.com/web3/module/recnDKrWb24lgaziC/#projects)Projects
------------------------------------------------------------------------------------------
+## [](https://learn-legacy.lambdaschool.com/web3/module/recnDKrWb24lgaziC/#projects)Projects
 
--   ##### [React Todo](https://github.com/LambdaSchool/React-Todo)
+- ##### [React Todo](https://github.com/LambdaSchool/React-Todo)
 
--   ##### [React-Sorting-Hat](https://github.com/LambdaSchool/React-Sorting-Hat)
+- ##### [React-Sorting-Hat](https://github.com/LambdaSchool/React-Sorting-Hat)
 
-    Stretch assignment for those that have finished the Todo Project beyond MVP
+  Stretch assignment for those that have finished the Todo Project beyond MVP
 
-[](https://learn-legacy.lambdaschool.com/web3/module/recnDKrWb24lgaziC/#review)Review
--------------------------------------------------------------------------------------
+## [](https://learn-legacy.lambdaschool.com/web3/module/recnDKrWb24lgaziC/#review)Review
 
 ### Class Recordings
 
 You can use class recordings to help you master the material.
 
--   [Class Components for Web35 w/ Warren Longmire](https://youtu.be/CDooIXMwS50)
+- [Class Components for Web35 w/ Warren Longmire](https://youtu.be/CDooIXMwS50)
 
-    Class Components
+  Class Components
 
--   [All previous recordings](https://learn-legacy.lambdaschool.com/archive/WEB3/module/recnDKrWb24lgaziC)
+- [All previous recordings](https://learn-legacy.lambdaschool.com/archive/WEB3/module/recnDKrWb24lgaziC)
 
 ### Demonstrate Mastery
 
 To demonstrate mastery of this module, you need to complete and pass a code review on each of the following:
 
--   Objective challenge:
+- Objective challenge:
 
-    Let's take the functionality of this class component that we built earlier and extend it just a little bit. Declare a `Functional Component` called `RenderMessage` inside [this CodeSandbox](https://codesandbox.io/s/103jkor46q).
+  Let's take the functionality of this class component that we built earlier and extend it just a little bit. Declare a `Functional Component` called `RenderMessage` inside [this CodeSandbox](https://codesandbox.io/s/103jkor46q).
 
-    -   Make sure you declare your Props Object that will be passed into this component.
-    -   Return a `div` who's child is `props.message`
-    -   Now inside of the `App` class pass in that `RenderMessage` component and pass down a message prop to `RenderMessage`. This message prop should be set equal to the message property on the state object.
-    -   Once it's all wired up properly you've done it!
--   Objective challenge:
+  - Make sure you declare your Props Object that will be passed into this component.
+  - Return a `div` who's child is `props.message`
+  - Now inside of the `App` class pass in that `RenderMessage` component and pass down a message prop to `RenderMessage`. This message prop should be set equal to the message property on the state object.
+  - Once it's all wired up properly you've done it!
 
-    Using the following tools:
+- Objective challenge:
 
-    -   Class component
-    -   functional FormComponent, MessageComponent
-    -   click, and change handlers
-    -   `setState`
+  Using the following tools:
 
-    Build out a form that will allow a user to handle data. You'll need a button, input field, and some data-bound to a DOM element that displays what the user is submitting.
+  - Class component
+  - functional FormComponent, MessageComponent
+  - click, and change handlers
+  - `setState`
 
-    When a user clicks submit, show the data that's on state in an `alert` statement.
+  Build out a form that will allow a user to handle data. You'll need a button, input field, and some data-bound to a DOM element that displays what the user is submitting.
 
-    Stretch Loop over a list of items showing those items to the screen. (Can be a list of strings). When a user clicks submit, instead of logging the item, push an item into that list, and watch the magic happen.
+  When a user clicks submit, show the data that's on state in an `alert` statement.
 
--   Objective challenge:
+  Stretch Loop over a list of items showing those items to the screen. (Can be a list of strings). When a user clicks submit, instead of logging the item, push an item into that list, and watch the magic happen.
 
-    Using this Code sandbox that we've been working in together, build out an app that holds a string item on the state object.
+- Objective challenge:
 
-    -   Build out a function handler that can take in the edits from an `onChange event` and then use the `setState` function to set those items on state.
-    -   You should have seen me do this already, so you may have to refer back to previous walk-throughs.
+  Using this Code sandbox that we've been working in together, build out an app that holds a string item on the state object.
+
+  - Build out a function handler that can take in the edits from an `onChange event` and then use the `setState` function to set those items on state.
+  - You should have seen me do this already, so you may have to refer back to previous walk-throughs.

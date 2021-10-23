@@ -1,6 +1,4 @@
-Drag and scroll carousel - slider
----------------------------------
-
+## Drag and scroll carousel - slider
 
 A [Pen](https://codepen.io/bgoonz/pen/KKaJwgo) by [Bryan C Guner](https://codepen.io/bgoonz) on [CodePen](https://codepen.io).
 

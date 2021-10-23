@@ -1,15 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700");
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 20px;
-  font: 18px 'Roboto', sans-serif;
+  font: 18px "Roboto", sans-serif;
 }
 
-.gist, h1, #app {
+.gist,
+h1,
+#app {
   max-width: 800px;
   margin: 0 auto;
 }
@@ -28,7 +32,7 @@ h1 {
   margin: 30px 0 0;
   padding: 10px 15px;
   border: 1px dashed #ccc;
-  font: 15px/1.5 'Roboto Mono', monospace;
+  font: 15px/1.5 "Roboto Mono", monospace;
   resize: none;
 }
 
@@ -62,7 +66,7 @@ h1 {
   width: 60px;
   margin-left: 10px;
   text-align: right;
-  font: 15px/1.5 'Roboto Mono', monospace;
+  font: 15px/1.5 "Roboto Mono", monospace;
 }
 
 .filter-unit {
@@ -74,7 +78,7 @@ h1 {
   .filter-css {
     height: 90px;
   }
-  
+
   .filter-control {
     width: calc(50% - 20px);
   }

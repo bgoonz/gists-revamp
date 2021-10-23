@@ -1,14 +1,15 @@
-$easeOutExpo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
 
-html, body{
+html,
+body {
   height: 100%;
 }
 
-body{
+body {
   position: relative;
   overflow: hidden;
   background-color: #111;
-  font-family: 'helvetica neue', sans-serif;
+  font-family: "helvetica neue", sans-serif;
 }
 
 * {
@@ -17,7 +18,7 @@ body{
   margin: 0;
 }
 
-.head{
+.head {
   position: fixed;
   top: 0;
   left: 0;
@@ -27,25 +28,25 @@ body{
   padding: 2vw 2.5vw;
   pointer-events: none;
   z-index: 1000;
-  
+
   > div {
     display: flex;
   }
-  
-  a{
+
+  a {
     position: relative;
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
     pointer-events: all;
     overflow: hidden;
-    
+
     div,
-    &:after{
-      transition: transform .85s $easeOutExpo;
+    &:after {
+      transition: transform 0.85s $easeOutExpo;
     }
-    
-    &:after{
+
+    &:after {
       content: attr(data-txt);
       position: absolute;
       top: 100%;
@@ -54,22 +55,21 @@ body{
       height: 100%;
       color: pink;
     }
-    
+
     &:nth-child(2) {
       margin-left: 2vw;
     }
-    
-    &:hover{
-      
+
+    &:hover {
       div,
-      &:after{
-       transform: translateY(-100%);
+      &:after {
+        transform: translateY(-100%);
       }
     }
   }
 }
 
-.dom-gl{
+.dom-gl {
   position: fixed;
   top: 0;
   left: 0;
@@ -79,8 +79,8 @@ body{
   z-index: 1;
 }
 
-.slider{
-  position: relative; 
+.slider {
+  position: relative;
   padding: 0 22.5vw;
   display: flex;
   align-items: center;
@@ -88,36 +88,36 @@ body{
   user-select: none;
   cursor: grab;
   z-index: 2;
-  
-  &__inner{
+
+  &__inner {
     display: flex;
     position: relative;
   }
 }
 
-.slide{
+.slide {
   overflow: hidden;
-  
-  &:first-child{
+
+  &:first-child {
     position: relative;
   }
-  
+
   &:not(:first-child) {
     position: absolute;
     top: 0;
     height: 100%;
   }
-  
-  &__inner{
+
+  &__inner {
     position: relative;
     overflow: hidden;
     width: 55vw;
     padding-top: 56.5%;
   }
-  
-  img{
+
+  img {
     display: none;
-    
+
     /*
     height: 100%;
     width: 140%;
@@ -130,8 +130,7 @@ body{
   }
 }
 
-
-.titles{
+.titles {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -139,14 +138,14 @@ body{
   overflow: hidden;
   pointer-events: none;
   z-index: 3;
-  
-  &__list{
+
+  &__list {
     position: absolute;
     top: 0;
     left: 0;
   }
-  
-  &__title{
+
+  &__title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,14 +153,14 @@ body{
     font-weight: bold;
     letter-spacing: -0.1vw;
     color: #fff;
-    
-    &--proxy{
+
+    &--proxy {
       visibility: hidden;
     }
   }
 }
 
-.progress{
+.progress {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -169,8 +168,8 @@ body{
   height: 0.25rem;
   overflow: hidden;
   pointer-events: none;
-  
-  &__line{
+
+  &__line {
     position: absolute;
     top: 0;
     left: 0;
@@ -179,7 +178,7 @@ body{
     transform: scaleX(0);
     transform-origin: left;
     background-color: #fff;
-    
+
     &:nth-child(2) {
       transform-origin: right;
     }

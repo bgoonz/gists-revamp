@@ -1,5 +1,4 @@
-# Solutions of [Projects](https://github.com/thekarangoel/Projects) written by other users in any language. 
-
+# Solutions of [Projects](https://github.com/thekarangoel/Projects) written by other users in any language.
 
 ## Numbers
 

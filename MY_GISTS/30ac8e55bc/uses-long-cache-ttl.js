@@ -3,25 +3,26 @@
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-'use strict';
+"use strict";
 
-const parseCacheControl = require('parse-cache-control');
-const Audit = require('../audit.js');
-const NetworkRequest = require('../../lib/network-request.js');
-const URL = require('../../lib/url-shim.js');
-const linearInterpolation = require('../../lib/statistics.js').linearInterpolation;
-const i18n = require('../../lib/i18n/i18n.js');
-const NetworkRecords = require('../../computed/network-records.js');
+const parseCacheControl = require("parse-cache-control");
+const Audit = require("../audit.js");
+const NetworkRequest = require("../../lib/network-request.js");
+const URL = require("../../lib/url-shim.js");
+const linearInterpolation =
+  require("../../lib/statistics.js").linearInterpolation;
+const i18n = require("../../lib/i18n/i18n.js");
+const NetworkRecords = require("../../computed/network-records.js");
 
 const UIStrings = {
   /** Title of a diagnostic audit that provides detail on the cache policy applies to the page's static assets. Cache refers to browser disk cache, which keeps old versions of network resources around for future use. This is displayed in a list of audit titles that Lighthouse generates. */
-  title: 'Uses efficient cache policy on static assets',
+  title: "Uses efficient cache policy on static assets",
   /** Title of a diagnostic audit that provides details on the any page resources that could have been served with more efficient cache policies. Cache refers to browser disk cache, which keeps old versions of network resources around for future use. This imperative title is shown to users when there is a significant amount of assets served with poor cache policies. */
-  failureTitle: 'Serve static assets with an efficient cache policy',
+  failureTitle: "Serve static assets with an efficient cache policy",
   /** Description of a Lighthouse audit that tells the user *why* they need to adopt a long cache lifetime policy. This is displayed after a user expands the section to see more. No character length limits. 'Learn More' becomes link text to additional documentation. */
   description:
-    'A long cache lifetime can speed up repeat visits to your page. ' +
-    '[Learn more](https://web.dev/uses-long-cache-ttl/).',
+    "A long cache lifetime can speed up repeat visits to your page. " +
+    "[Learn more](https://web.dev/uses-long-cache-ttl/).",
   /** [ICU Syntax] Label for the audit identifying network resources with inefficient cache values. Clicking this will expand the audit to show the resources. */
   displayValue: `{itemCount, plural,
     =1 {1 resource found}
@@ -40,12 +41,12 @@ class CacheHeaders extends Audit {
    */
   static get meta() {
     return {
-      id: 'uses-long-cache-ttl',
+      id: "uses-long-cache-ttl",
       title: str_(UIStrings.title),
       failureTitle: str_(UIStrings.failureTitle),
       description: str_(UIStrings.description),
       scoreDisplayMode: Audit.SCORING_MODES.NUMERIC,
-      requiredArtifacts: ['devtoolsLogs'],
+      requiredArtifacts: ["devtoolsLogs"],
     };
   }
 
@@ -74,14 +75,27 @@ class CacheHeaders extends Audit {
     // are clearly diminishing returns to cache duration i.e. 6 months is not 2x better than 3 months.
     // Based on UMA stats for HttpCache.StaleEntry.Validated.Age, see https://www.desmos.com/calculator/7v0qh1nzvh
     // Example: a max-age of 12 hours already covers ~50% of cases, doubling to 24 hours covers ~10% more.
-    const RESOURCE_AGE_IN_HOURS_DECILES = [0, 0.2, 1, 3, 8, 12, 24, 48, 72, 168, 8760, Infinity];
+    const RESOURCE_AGE_IN_HOURS_DECILES = [
+      0,
+      0.2,
+      1,
+      3,
+      8,
+      12,
+      24,
+      48,
+      72,
+      168,
+      8760,
+      Infinity,
+    ];
     if (RESOURCE_AGE_IN_HOURS_DECILES.length !== 12) {
-      throw new Error('deciles 0-10 and 1 for overflow');
+      throw new Error("deciles 0-10 and 1 for overflow");
     }
 
     const maxAgeInHours = maxAgeInSeconds / 3600;
     const upperDecileIndex = RESOURCE_AGE_IN_HOURS_DECILES.findIndex(
-      decile => decile >= maxAgeInHours
+      (decile) => decile >= maxAgeInHours
     );
 
     // Clip the likelihood between 0 and 1
@@ -90,7 +104,8 @@ class CacheHeaders extends Audit {
 
     // Use the two closest decile points as control points
     const upperDecileValue = RESOURCE_AGE_IN_HOURS_DECILES[upperDecileIndex];
-    const lowerDecileValue = RESOURCE_AGE_IN_HOURS_DECILES[upperDecileIndex - 1];
+    const lowerDecileValue =
+      RESOURCE_AGE_IN_HOURS_DECILES[upperDecileIndex - 1];
     const upperDecile = upperDecileIndex / 10;
     const lowerDecile = (upperDecileIndex - 1) / 10;
 
@@ -111,11 +126,11 @@ class CacheHeaders extends Audit {
    * @return {?number}
    */
   static computeCacheLifetimeInSeconds(headers, cacheControl) {
-    if (cacheControl && cacheControl['max-age'] !== undefined) {
-      return cacheControl['max-age'];
+    if (cacheControl && cacheControl["max-age"] !== undefined) {
+      return cacheControl["max-age"];
     }
 
-    const expiresHeaders = headers.get('expires');
+    const expiresHeaders = headers.get("expires");
     if (expiresHeaders) {
       const expires = new Date(expiresHeaders).getTime();
       // Invalid expires values MUST be treated as already expired
@@ -156,10 +171,9 @@ class CacheHeaders extends Audit {
     // It's not a request loaded over the network, caching makes no sense
     if (NetworkRequest.isNonNetworkRequest(record)) return false;
 
-
     return (
       CACHEABLE_STATUS_CODES.has(record.statusCode) &&
-      STATIC_RESOURCE_TYPES.has(record.resourceType || 'Other')
+      STATIC_RESOURCE_TYPES.has(record.resourceType || "Other")
     );
   }
 
@@ -171,17 +185,18 @@ class CacheHeaders extends Audit {
    */
   static shouldSkipRecord(headers, cacheControl) {
     // The HTTP/1.0 Pragma header can disable caching if cache-control is not set, see https://tools.ietf.org/html/rfc7234#section-5.4
-    if (!cacheControl && (headers.get('pragma') || '').includes('no-cache')) {
+    if (!cacheControl && (headers.get("pragma") || "").includes("no-cache")) {
       return true;
     }
 
     // Ignore assets where policy implies they should not be cached long periods
-    if (cacheControl &&
-      (
-        cacheControl['must-revalidate'] ||
-        cacheControl['no-cache'] ||
-        cacheControl['no-store'] ||
-        cacheControl['private'])) {
+    if (
+      cacheControl &&
+      (cacheControl["must-revalidate"] ||
+        cacheControl["no-cache"] ||
+        cacheControl["no-store"] ||
+        cacheControl["private"])
+    ) {
       return true;
     }
 
@@ -195,7 +210,7 @@ class CacheHeaders extends Audit {
    */
   static audit(artifacts, context) {
     const devtoolsLogs = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
-    return NetworkRecords.request(devtoolsLogs, context).then(records => {
+    return NetworkRecords.request(devtoolsLogs, context).then((records) => {
       const results = [];
       let totalWastedBytes = 0;
 
@@ -207,29 +222,38 @@ class CacheHeaders extends Audit {
         for (const header of record.responseHeaders || []) {
           if (headers.has(header.name.toLowerCase())) {
             const previousHeaderValue = headers.get(header.name.toLowerCase());
-            headers.set(header.name.toLowerCase(),
-              `${previousHeaderValue}, ${header.value}`);
+            headers.set(
+              header.name.toLowerCase(),
+              `${previousHeaderValue}, ${header.value}`
+            );
           } else {
             headers.set(header.name.toLowerCase(), header.value);
           }
         }
 
-        const cacheControl = parseCacheControl(headers.get('cache-control'));
+        const cacheControl = parseCacheControl(headers.get("cache-control"));
         if (this.shouldSkipRecord(headers, cacheControl)) {
           continue;
         }
 
         // Ignore if cacheLifetimeInSeconds is a nonpositive number.
         let cacheLifetimeInSeconds = CacheHeaders.computeCacheLifetimeInSeconds(
-          headers, cacheControl);
-        if (cacheLifetimeInSeconds !== null &&
-          (!Number.isFinite(cacheLifetimeInSeconds) || cacheLifetimeInSeconds <= 0)) {
+          headers,
+          cacheControl
+        );
+        if (
+          cacheLifetimeInSeconds !== null &&
+          (!Number.isFinite(cacheLifetimeInSeconds) ||
+            cacheLifetimeInSeconds <= 0)
+        ) {
           continue;
         }
         cacheLifetimeInSeconds = cacheLifetimeInSeconds || 0;
 
         // Ignore assets whose cache lifetime is already high enough
-        const cacheHitProbability = CacheHeaders.getCacheHitProbability(cacheLifetimeInSeconds);
+        const cacheHitProbability = CacheHeaders.getCacheHitProbability(
+          cacheLifetimeInSeconds
+        );
         if (cacheHitProbability > IGNORE_THRESHOLD_IN_PERCENT) continue;
 
         const url = URL.elideDataURI(record.url);
@@ -243,7 +267,7 @@ class CacheHeaders extends Audit {
         let debugData;
         if (cacheControl) {
           debugData = {
-            type: 'debugdata',
+            type: "debugdata",
             ...cacheControl,
           };
         }
@@ -259,34 +283,47 @@ class CacheHeaders extends Audit {
       }
 
       results.sort((a, b) => {
-        return a.cacheLifetimeMs - b.cacheLifetimeMs ||
+        return (
+          a.cacheLifetimeMs - b.cacheLifetimeMs ||
           b.totalBytes - a.totalBytes ||
-          a.url.localeCompare(b.url);
+          a.url.localeCompare(b.url)
+        );
       });
 
       const score = Audit.computeLogNormalScore(
-        {p10: context.options.p10, median: context.options.median},
+        { p10: context.options.p10, median: context.options.median },
         totalWastedBytes
       );
 
       /** @type {LH.Audit.Details.Table['headings']} */
       const headings = [
-        {key: 'url', itemType: 'url', text: str_(i18n.UIStrings.columnURL)},
+        { key: "url", itemType: "url", text: str_(i18n.UIStrings.columnURL) },
         // TODO(i18n): pre-compute localized duration
-        {key: 'cacheLifetimeMs', itemType: 'ms', text: str_(i18n.UIStrings.columnCacheTTL),
-          displayUnit: 'duration'},
-        {key: 'totalBytes', itemType: 'bytes', text: str_(i18n.UIStrings.columnTransferSize),
-          displayUnit: 'kb', granularity: 1},
+        {
+          key: "cacheLifetimeMs",
+          itemType: "ms",
+          text: str_(i18n.UIStrings.columnCacheTTL),
+          displayUnit: "duration",
+        },
+        {
+          key: "totalBytes",
+          itemType: "bytes",
+          text: str_(i18n.UIStrings.columnTransferSize),
+          displayUnit: "kb",
+          granularity: 1,
+        },
       ];
 
-      const summary = {wastedBytes: totalWastedBytes};
+      const summary = { wastedBytes: totalWastedBytes };
       const details = Audit.makeTableDetails(headings, results, summary);
 
       return {
         score,
         numericValue: totalWastedBytes,
-        numericUnit: 'byte',
-        displayValue: str_(UIStrings.displayValue, {itemCount: results.length}),
+        numericUnit: "byte",
+        displayValue: str_(UIStrings.displayValue, {
+          itemCount: results.length,
+        }),
         details,
       };
     });

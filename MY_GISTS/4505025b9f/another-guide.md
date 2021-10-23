@@ -1,5 +1,4 @@
-How To Write An Interview-Landing Web Developer Resume:
--------------------------------------------------------
+## How To Write An Interview-Landing Web Developer Resume:
 
 You have a special skill set for taking an advanced wireframe and converting it into a responsive website that's ready to face the world.
 
@@ -11,33 +10,32 @@ These are all points the hiring manager needs to know. Otherwise, they'll forget
 
 Here's how to write a web developer resume for the maximum impact:
 
--   Tailor, tailor, tailor your resume to the job. If you really want to get the job you're after, you have to apply some effort. In fact, even minor tweaks to your key resume sections will produce significant results with recruiters. Spend more time on researching the company and the people that work at it. Scout their blogs, GitHub and LinkedIn profiles. What tech stack are they working with? What are they struggling with right now? What are they best at?Bonus: Did they post a Star Wars-themed group photo on their socials or is their CTO a huge fan of the Matrix? Include some hidden references when describing projects. While 99% of people might not notice these easter eggs, one day you might score a jackpot.
--   Slow down on your tech skills. You know the first sign of an ill-fit candidate within the tech recruitment industry? An[inflated skills section](https://enhancv.com/blog/resume-spelling/). Thousands of amateurs put every skill they ever heard of on their resumes, thinking that recruiters will be amazed by their versatility.In fact, too many skills is a red flag for ANY recruiter. Either you're making up your expertise or know everything on a very basic level. Either will ruin your application.
--   Use the right resume format. If you're a seasoned pro, use the[reverse chronological layout](https://enhancv.com/blog/reverse-chronological-resume/) to highlight your business impact and experience.
+- Tailor, tailor, tailor your resume to the job. If you really want to get the job you're after, you have to apply some effort. In fact, even minor tweaks to your key resume sections will produce significant results with recruiters. Spend more time on researching the company and the people that work at it. Scout their blogs, GitHub and LinkedIn profiles. What tech stack are they working with? What are they struggling with right now? What are they best at?Bonus: Did they post a Star Wars-themed group photo on their socials or is their CTO a huge fan of the Matrix? Include some hidden references when describing projects. While 99% of people might not notice these easter eggs, one day you might score a jackpot.
+- Slow down on your tech skills. You know the first sign of an ill-fit candidate within the tech recruitment industry? An[inflated skills section](https://enhancv.com/blog/resume-spelling/). Thousands of amateurs put every skill they ever heard of on their resumes, thinking that recruiters will be amazed by their versatility.In fact, too many skills is a red flag for ANY recruiter. Either you're making up your expertise or know everything on a very basic level. Either will ruin your application.
+- Use the right resume format. If you're a seasoned pro, use the[reverse chronological layout](https://enhancv.com/blog/reverse-chronological-resume/) to highlight your business impact and experience.
 
 Just getting into the web development industry? A[functional resume layout](https://enhancv.com/blog/functional-skill-based-resume/) would suit you better, as it emphasizes your education, skills, and certifications, making up for a lack of experience yet.
 
-Lastly, make the best use of custom sections. Relevant personal projects, "Most Proud Of" and "Achievements" sections will put you far ahead of the competition. In this guide we'll be sharing templates and examples on how to fit them within a one-page web developer resume.  
+Lastly, make the best use of custom sections. Relevant personal projects, "Most Proud Of" and "Achievements" sections will put you far ahead of the competition. In this guide we'll be sharing templates and examples on how to fit them within a one-page web developer resume.
 
 Let's jump into writing a web developer resume that lands you an interview for your dream job.
 
 ### Recommended resume sections
 
--   Resume header with contact info
--   Professional summary
--   Work experience, focused on career highlights
--   Education and certifications
--   Technical and soft skills
+- Resume header with contact info
+- Professional summary
+- Work experience, focused on career highlights
+- Education and certifications
+- Technical and soft skills
 
 ### What hiring managers want to see
 
--   That you've done your research with a personalized resume for them
--   The right stack of technical skills to succeed
--   Quantifiable achievements (eg. Reduced the bounce rate of a website by 20%)
--   A genuine passion for the industry, as shown through personal projects
+- That you've done your research with a personalized resume for them
+- The right stack of technical skills to succeed
+- Quantifiable achievements (eg. Reduced the bounce rate of a website by 20%)
+- A genuine passion for the industry, as shown through personal projects
 
-Web Developer Resume Header: When First Impression Does Matter
---------------------------------------------------------------
+## Web Developer Resume Header: When First Impression Does Matter
 
 The resume header is the most basic part of the resume, but still so important to get right.
 
@@ -59,7 +57,7 @@ help@enhancv.com
 
 Boston, MA
 
- WRONG
+WRONG
 
 This header is too basic.
 
@@ -77,19 +75,18 @@ github.com/jack
 
 Boston, MA
 
- RIGHT
+RIGHT
 
 Now, this is much better!
 
 It's standard now to include links in your resume header, especially as a web developer. You can talk about your skills in your resume, but you can better show the hiring manager what you're capable of by including a link to your:
 
--   Portfolio website
--   Github profile
--   Stackoverflow profile
--   LinkedIn profile
+- Portfolio website
+- Github profile
+- Stackoverflow profile
+- LinkedIn profile
 
-Web Developer Resume Summary: Offering Value In Two Sentences
--------------------------------------------------------------
+## Web Developer Resume Summary: Offering Value In Two Sentences
 
 Your professional summary is the place to give an "elevator pitch" as to why the hiring manager should hire you over anyone else.
 
@@ -101,9 +98,9 @@ It will also make more of an impact on the person reading, boosting your chances
 
 Your professional summary should cover three things:
 
--   A brief overview of your experience level, with how many years you've been a web developer
--   Highlights of your biggest wins as a developer, with quantitative data to back up your claims
--   Mention of a few technical skills or languages you're proficient in (mention the ones[listed in the job description](https://enhancv.com/blog/resume-job-description/))
+- A brief overview of your experience level, with how many years you've been a web developer
+- Highlights of your biggest wins as a developer, with quantitative data to back up your claims
+- Mention of a few technical skills or languages you're proficient in (mention the ones[listed in the job description](https://enhancv.com/blog/resume-job-description/))
 
 Let's take a look at two examples of web developer resume summaries.
 
@@ -111,7 +108,7 @@ SUMMARY
 
 Web developer with 7+ years of experience. Knowledge of HTML, CSS, MySQL and Ruby. Seeking a new role at an exciting company.
 
- WRONG
+WRONG
 
 How can this summary be improved?
 
@@ -121,23 +118,22 @@ SUMMARY
 
 Senior front-end web developer with 7+ years of experience coding websites that convert in e-commerce. Proficient with HTML, CSS, Shopify and GTM tag setup. Most notably, improved the average time on page by 40% and improved user experience scores for all projects. Winner of the Best Homepage Award by Shopify Ecommerce Design Awards in 2014.
 
- RIGHT
+RIGHT
 
 Much better!
 
 Here's why:
 
--   The first line summarizes how many years of experience and the industry specialty
--   Lists the highest priority tech stack (the same ones listed on the hypothetical job description)
--   Real data highlights how improvements contributed to positive metrics
--   Highlights an award won in the past, boosting credibility
+- The first line summarizes how many years of experience and the industry specialty
+- Lists the highest priority tech stack (the same ones listed on the hypothetical job description)
+- Real data highlights how improvements contributed to positive metrics
+- Highlights an award won in the past, boosting credibility
 
 Check out our detailed guide on[Crafting Job-Winning Resume Summary with more than 30+ actionable examples.](https://enhancv.com/blog/resume-summary/)
 
 Now that the professional summary is written, it's time to write your work experience section.
 
-Web Developer Resume Experience: The Right Way To Approach Your Work History
-----------------------------------------------------------------------------
+## Web Developer Resume Experience: The Right Way To Approach Your Work History
 
 We've reached the most important section of your web developer resume: work experience.
 
@@ -151,10 +147,10 @@ Have you made a real business impact with your web development?
 
 Here are a few ideas for inspiration:
 
--   Increased company sales by x% after building an eCommerce web application
--   Improved user experience score by x% after optimizing buttons
--   Boosted time on page by 85% with improvements
--   Reduced the CPC of Facebook ads with advanced pixel integration on the website
+- Increased company sales by x% after building an eCommerce web application
+- Improved user experience score by x% after optimizing buttons
+- Boosted time on page by 85% with improvements
+- Reduced the CPC of Facebook ads with advanced pixel integration on the website
 
 There's no better way to boost your credibility on a resume than by backing up your claims with data and metrics.
 
@@ -196,7 +192,7 @@ Answered technical support tickets
 
 Collaborated with team members to help clients
 
- WRONG
+WRONG
 
 This resume example won't cut it.
 
@@ -220,18 +216,17 @@ Setup tracking with GTM and GA, integrated HTML/CSS into the CMS and conducted d
 
 Collaborated with marketing and project management teams to deliver projects on-time and with the highest standard, retaining over 98% of clients in a 5-year period
 
- RIGHT
+RIGHT
 
 Now this one will be put straight in the "call-back" pile!
 
--   First and foremost, it's tailored to the hypothetical job description, mirroring the same keywords they use
--   They use real data and figures to back up their claims of success
--   Soft skills are highlighted, in addition to technical skills, showing that they're a well-rounded applicant
+- First and foremost, it's tailored to the hypothetical job description, mirroring the same keywords they use
+- They use real data and figures to back up their claims of success
+- Soft skills are highlighted, in addition to technical skills, showing that they're a well-rounded applicant
 
 Ta-da! All done with the most important section of the resume. But we're not done yet...
 
-Web Developer Education Section: Do You Need It?
-------------------------------------------------
+## Web Developer Education Section: Do You Need It?
 
 The majority of web developer jobs require a college degree, so it's important that you have an education section in your resume.
 
@@ -243,8 +238,7 @@ For bonus points, you can list relevant projects you worked on while studying. I
 
 Have you completed any certifications, instead of, or on top of your degree? This is a good place to mention them.
 
-Web Developer Resume Skills Section: Armed And Ready
-----------------------------------------------------
+## Web Developer Resume Skills Section: Armed And Ready
 
 Web development is a technical job. Your skill-set should be tech-heavy to reflect that.
 
@@ -280,8 +274,8 @@ When applying for junior web developer, the lack of experience can make any cand
 
 Fear not, as the following tips will help you get the most out of your entry-level web developer resume:
 
--   Add a section with relevant personal projects. You might not have a couple of years at Google under your belt, but surely you are not aspiring to be a web developer by coincidence. Recruiters love when junior applicants mention personal projects in their resumes. It's the quickest way to see whether a candidate has a passion for development and skills to bring projects over the finish line. Anything can be a personal project: a website for a school library, a friend's startups idea, or a personal mobile game that you developed on summer holidays. Treat these projects as a serious job with business outcomes, even if you weren't paid much for doing them. Use[custom resume sections](https://enhancv.com/blog/resume-sections/) to list personal projects in the most efficient manner.
--   Don't overload your resume with skills. This is not a good idea for any candidates, but entry level candidates might be the most prone to do that in order to compensate for their lack of experience. Make sure to study the job requirements and list only technical skills that are you good with and relevant to the job. It's much better to list two development frameworks and a few languages that you worked with in a specific context than listing all the 60+ you briefly read about.  
+- Add a section with relevant personal projects. You might not have a couple of years at Google under your belt, but surely you are not aspiring to be a web developer by coincidence. Recruiters love when junior applicants mention personal projects in their resumes. It's the quickest way to see whether a candidate has a passion for development and skills to bring projects over the finish line. Anything can be a personal project: a website for a school library, a friend's startups idea, or a personal mobile game that you developed on summer holidays. Treat these projects as a serious job with business outcomes, even if you weren't paid much for doing them. Use[custom resume sections](https://enhancv.com/blog/resume-sections/) to list personal projects in the most efficient manner.
+- Don't overload your resume with skills. This is not a good idea for any candidates, but entry level candidates might be the most prone to do that in order to compensate for their lack of experience. Make sure to study the job requirements and list only technical skills that are you good with and relevant to the job. It's much better to list two development frameworks and a few languages that you worked with in a specific context than listing all the 60+ you briefly read about.
 
 ### Full Stack Web Developer Resume Tips And Template
 
@@ -293,10 +287,10 @@ Are you wondering about what to prioritize on your web developer resume? Most fu
 
 Here are a few tips to help you make the most impact while keeping your full stack resume compact:
 
--   Learn target company tech stack. Spend some time learning about your future company, but don't stop at the job description as it might be too generic to reveal the real state of things.Read company blogs, check out employee's GitHub, scout current and ex-employees profiles to understand what toolset they are currently using in their projects. Whenever you find something relevant, make sure to prioritise these skills in your resume.
--   List the most relevant skills first. Emphasize whenever you used a similar tech stack when describing your work experience and personal projects. Don't lie on your resume, but make sure to describe your skill set in the right order.[Targeted resumes](https://enhancv.com/blog/targeted-resume/) greatly increase your chance of success with technical and non-technical recruiters alike.
+- Learn target company tech stack. Spend some time learning about your future company, but don't stop at the job description as it might be too generic to reveal the real state of things.Read company blogs, check out employee's GitHub, scout current and ex-employees profiles to understand what toolset they are currently using in their projects. Whenever you find something relevant, make sure to prioritise these skills in your resume.
+- List the most relevant skills first. Emphasize whenever you used a similar tech stack when describing your work experience and personal projects. Don't lie on your resume, but make sure to describe your skill set in the right order.[Targeted resumes](https://enhancv.com/blog/targeted-resume/) greatly increase your chance of success with technical and non-technical recruiters alike.
 
--   Frame your experience as a full-stack engineer. People often transition into full stack development with a deep back-end or front-end background. While that's totally fine, you may benefit from showing recruiters that you can work and complete projects as an all-around engineer. In other words, when describing your projects make sure you're not presenting your input as 50%, make sure you're going as 100%.
+- Frame your experience as a full-stack engineer. People often transition into full stack development with a deep back-end or front-end background. While that's totally fine, you may benefit from showing recruiters that you can work and complete projects as an all-around engineer. In other words, when describing your projects make sure you're not presenting your input as 50%, make sure you're going as 100%.
 
 ### Senior Web Developer Resume Tips And Template
 
@@ -310,12 +304,11 @@ Your senior web developer resume should address both areas before recruiters sta
 
 Here are some tips to tune up your senior web developer resume:
 
--   Show your leadership skills in a real world context. Anyone can list "leadership", "strategic thinking" and "project management" skills on their resumes. If you really want to grab recruiter's attention,[demonstrate your leadership skills](https://enhancv.com/blog/is-your-manager-resume-worthy-of-the-job/) in a specific environment. Share what your team achieved under your management and your work as a leader to guide their success.
--   Showcasing finished projects are crucial. No one wants to hire a person who tried everything but finished nothing. That's especially true for companies who hire senior developers for making sure the project flies. Show recruiters a finished complex project, a well-structured workflow, and a tangible business outcome, and you'll score extra points every time.
+- Show your leadership skills in a real world context. Anyone can list "leadership", "strategic thinking" and "project management" skills on their resumes. If you really want to grab recruiter's attention,[demonstrate your leadership skills](https://enhancv.com/blog/is-your-manager-resume-worthy-of-the-job/) in a specific environment. Share what your team achieved under your management and your work as a leader to guide their success.
+- Showcasing finished projects are crucial. No one wants to hire a person who tried everything but finished nothing. That's especially true for companies who hire senior developers for making sure the project flies. Show recruiters a finished complex project, a well-structured workflow, and a tangible business outcome, and you'll score extra points every time.
 
-Key Takeaways
--------------
+## Key Takeaways
 
--   Tailor each resume for the job you want. Web developer jobs vary in their requirements and responsibilities, so it's essential that you personalize your resume for every separate company you apply to.
--   Real data and metrics will go a long way in boosting your credibility, helping you stand out from the sea of applicants.
--   Showcase a mix of technical and soft skills throughout your resume to prove that you're a well-rounded applicant who will be a breeze to collaborate with.
+- Tailor each resume for the job you want. Web developer jobs vary in their requirements and responsibilities, so it's essential that you personalize your resume for every separate company you apply to.
+- Real data and metrics will go a long way in boosting your credibility, helping you stand out from the sea of applicants.
+- Showcase a mix of technical and soft skills throughout your resume to prove that you're a well-rounded applicant who will be a breeze to collaborate with.

@@ -13,7 +13,7 @@ C) Explanation why the time interval is taking 1 second for consoling out the la
 */
 /* SOLUTION -
 To print the successive values of i with an interval of 1 second, we need to pass into setTimeout() the actual value of i at the moment of each loop execution in the for statement.  */
-funcToExecute = x => () => {
+funcToExecute = (x) => () => {
   console.log(x);
 };
 for (var i = 1; i <= 5; i++) {
@@ -36,9 +36,9 @@ tripler(5); // returns 15
 const multiplyByFive = dynamicMultiply(5);
 multiplyByFive(5); // returns 25
 ***********************************************************************/
-function dynamicMultiply( num ) {
+function dynamicMultiply(num) {
   let multiplier = num;
-  return factor => multiplier * factor;
+  return (factor) => multiplier * factor;
 }
 /***********************************************************************
 Let's practice writing closures by creating a function named `sandwichMaker()`.
@@ -56,7 +56,7 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 ***********************************************************************/
 function sandwichMaker() {
   let order = "One sandwich with tomato";
-  return food => {
+  return (food) => {
     order = order.slice(0, order.length) + " and " + food;
     return order;
   };

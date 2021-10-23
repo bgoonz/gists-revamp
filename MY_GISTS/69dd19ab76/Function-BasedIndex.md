@@ -1,7 +1,6 @@
 #### Function-Based Index
 
-Finding URLS by Domain
-======================
+# Finding URLS by Domain
 
 From time to time, it might be interesting to see which domains the users of your URL shortener system are linking to. Links can contain many pieces of information such as query params, paths, and hash fragments. You most likely don't care about all of that...you just care about the domain.
 

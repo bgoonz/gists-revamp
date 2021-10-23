@@ -3,22 +3,23 @@
 }
 
 html {
-  font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
   font-size: 13px;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   overflow: hidden;
 }
 
 body {
-  background: #8D939D;
+  background: #8d939d;
   margin: 0;
 }
 
 .all-slides {
-  background: #E3E7ED;
+  background: #e3e7ed;
   counter-reset: slides;
   position: absolute;
   top: 0;
@@ -31,15 +32,15 @@ body {
 
 .slides-title {
   position: fixed;
-  background: #E3E7ED;
+  background: #e3e7ed;
   z-index: 8;
   width: 150px;
   text-align: center;
   top: 0;
   left: 0;
   margin: 0;
-  border-bottom: 1px solid #CDD1D8;
-  color: #8585A2;
+  border-bottom: 1px solid #cdd1d8;
+  color: #8585a2;
   padding: 0.5rem 0.25rem;
   font-size: 1rem;
 }
@@ -79,14 +80,16 @@ body {
 .sortable-placeholder {
   height: 60px;
   width: 5px;
-  border-left: 2px solid #4999DA; 
+  border-left: 2px solid #4999da;
   margin: 0 0 0.75rem 0;
   position: relative;
   z-index: 6;
 }
 
 @keyframes pulse {
-  100% { transform: scale(1.1); } 
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 .cloned-slides {

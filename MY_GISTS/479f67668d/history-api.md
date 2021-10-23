@@ -1,10 +1,8 @@
-History API
-===========
+# History API
 
 The DOM [`Window`](https://developer.mozilla.org/en-US/docs/Web/API/Window) object provides access to the browser's session history (not to be confused for [WebExtensions history](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/history)) through the [`history`](https://developer.mozilla.org/en-US/docs/Web/API/Window/history "history") object. It exposes useful methods and properties that let you navigate back and forth through the user's history, and manipulate the contents of the history stack.
 
-[Concepts and usage](https://developer.mozilla.org/en-US/docs/Web/API/History_API#concepts_and_usage "Permalink to Concepts and usage")
----------------------------------------------------------------------------------------------------------------------------------------
+## [Concepts and usage](https://developer.mozilla.org/en-US/docs/Web/API/History_API#concepts_and_usage "Permalink to Concepts and usage")
 
 Moving backward and forward through the user's history is done using the [`back()`](https://developer.mozilla.org/en-US/docs/Web/API/History/back "back()"), [`forward()`](https://developer.mozilla.org/en-US/docs/Web/API/History/forward "forward()"), and [`go()`](https://developer.mozilla.org/en-US/docs/Web/API/History/go "go()") methods.
 
@@ -76,15 +74,13 @@ let numberOfEntries = window.history.length
 
 Copy to Clipboard
 
-[Interfaces](https://developer.mozilla.org/en-US/docs/Web/API/History_API#interfaces "Permalink to Interfaces")
----------------------------------------------------------------------------------------------------------------
+## [Interfaces](https://developer.mozilla.org/en-US/docs/Web/API/History_API#interfaces "Permalink to Interfaces")
 
 [`History`](https://developer.mozilla.org/en-US/docs/Web/API/History)
 
 Allows manipulation of the browser *session history* (that is, the pages visited in the tab or frame that the current page is loaded in).
 
-[Examples](https://developer.mozilla.org/en-US/docs/Web/API/History_API#examples "Permalink to Examples")
----------------------------------------------------------------------------------------------------------
+## [Examples](https://developer.mozilla.org/en-US/docs/Web/API/History_API#examples "Permalink to Examples")
 
 The following example assigns a listener to the `onpopstate` property. And then illustrates some of the methods of the history object to add, replace, and move within the browser history for the current tab.
 

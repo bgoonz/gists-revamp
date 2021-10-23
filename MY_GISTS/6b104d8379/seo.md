@@ -1,8 +1,6 @@
-Search Engine Optimization (SEO) Starter Guide
-==============================================
+# Search Engine Optimization (SEO) Starter Guide
 
-Who is this guide for?
-----------------------
+## Who is this guide for?
 
 If you own, manage, monetize, or promote online content via Google Search, this guide is meant for you. You might be the owner of a growing and thriving business, the website owner of a dozen sites, the SEO specialist in a web agency or a DIY SEO expert passionate about the mechanics of Search: this guide is meant for you. If you're interested in having a complete overview of the basics of SEO according to our best practices, you are indeed in the right place. This guide won't provide any secrets that'll automatically rank your site first in Google (sorry!), but following the best practices will hopefully make it easier for search engines to crawl, index, and understand your content.
 
@@ -10,18 +8,17 @@ Search engine optimization (SEO) is often about making small modifications to pa
 
 You should build a website to benefit your users, and gear any optimization toward making the user experience better. One of those users is a search engine, which helps other users discover your content. SEO is about helping search engines understand and present content. Your site may be smaller or larger than our example site and offer vastly different content, but the optimization topics in this guide applies to sites of all sizes and types. We hope our guide gives you some fresh ideas on how to improve your website, and we'd love to hear your questions, feedback, and success stories in the [Google Search Central Help Community](https://g.co/WebmasterHelpForum).
 
-Getting started
----------------
+## Getting started
 
 ### Glossary
 
 Here's a short glossary of important terms used in this guide:
 
--   Index - Google stores all web pages that it knows about in its *index*. The index entry for each page describes the content and location (URL) of that page. *To index* is when Google fetches a page, reads it, and adds it to the index: *Google indexed several pages on my site today*.
--   Crawl - The process of looking for new or updated web pages. Google discovers URLs by following links, by reading sitemaps, and by many other means. *Google crawls the web, looking for new pages, then indexes them (when appropriate).*
--   Crawler - Automated software that crawls (fetches) pages from the web and indexes them.
--   Googlebot - The generic name of Google's crawler. *Googlebot crawls the web constantly.*
--   SEO - Search engine optimization: the process of making your site better for search engines. Also the job title of a person who does this for a living: *We just hired a new SEO to improve our presence on the web.*
+- Index - Google stores all web pages that it knows about in its *index*. The index entry for each page describes the content and location (URL) of that page. *To index* is when Google fetches a page, reads it, and adds it to the index: *Google indexed several pages on my site today*.
+- Crawl - The process of looking for new or updated web pages. Google discovers URLs by following links, by reading sitemaps, and by many other means. *Google crawls the web, looking for new pages, then indexes them (when appropriate).*
+- Crawler - Automated software that crawls (fetches) pages from the web and indexes them.
+- Googlebot - The generic name of Google's crawler. *Googlebot crawls the web constantly.*
+- SEO - Search engine optimization: the process of making your site better for search engines. Also the job title of a person who does this for a living: *We just hired a new SEO to improve our presence on the web.*
 
 ### Are you on Google?
 
@@ -33,11 +30,11 @@ Do a `site:` search for your site's home URL. If you see results, you're in th
 
 Although Google crawls billions of pages, it's inevitable that some sites will be missed. When our crawlers miss a site, it's frequently for one of the following reasons:
 
--   The site isn't well connected from other sites on the web
--   You've just launched a new site and Google hasn't had time to crawl it yet
--   The design of the site makes it difficult for Google to crawl its content effectively
--   Google received an error when trying to crawl your site
--   Your policy blocks Google from crawling the site
+- The site isn't well connected from other sites on the web
+- You've just launched a new site and Google hasn't had time to crawl it yet
+- The design of the site makes it difficult for Google to crawl its content effectively
+- Google received an error when trying to crawl your site
+- Your policy blocks Google from crawling the site
 
 ### How do I get my site on Google?
 
@@ -49,11 +46,11 @@ Google Search Console provides tools to help you submit your content to Google a
 
 Here are a few basic questions to ask yourself about your website when you get started.
 
--   Is my website showing up on Google?
--   Do I serve high-quality content to users?
--   Is my local business showing up on Google?
--   Is my content fast and easy to access on all devices?
--   Is my website secure?
+- Is my website showing up on Google?
+- Do I serve high-quality content to users?
+- Is my local business showing up on Google?
+- Is my content fast and easy to access on all devices?
+- Is my website secure?
 
 You can find additional getting started information on <https://g.co/webmasters>
 
@@ -65,43 +62,44 @@ An SEO expert is someone trained to improve your visibility on search engines. B
 
 Deciding to hire an SEO is a big decision that can potentially improve your site and save time. Make sure to research the potential advantages of hiring an SEO, as well as the damage that an irresponsible SEO can do to your site. Many SEOs and other agencies and consultants provide useful services for website owners, including:
 
--   Review of your site content or structure
--   Technical advice on website development: for example, hosting, redirects, error pages, use of JavaScript
--   Content development
--   Management of online business development campaigns
--   Keyword research
--   SEO training
--   Expertise in specific markets and geographies
+- Review of your site content or structure
+- Technical advice on website development: for example, hosting, redirects, error pages, use of JavaScript
+- Content development
+- Management of online business development campaigns
+- Keyword research
+- SEO training
+- Expertise in specific markets and geographies
 
 Before beginning your search for an SEO, it's a great idea to become an educated consumer and get familiar with how search engines work. We recommend going through the entirety of this guide and specifically these resources:
 
--   [Google 101: How Google crawls, indexes and serves the web](https://developers.google.com/search/docs/beginner/how-search-works)
--   [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines)
--   [How to hire an SEO](https://www.youtube.com/watch?v=piSvFxV_M04)
+- [Google 101: How Google crawls, indexes and serves the web](https://developers.google.com/search/docs/beginner/how-search-works)
+- [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines)
+- [How to hire an SEO](https://www.youtube.com/watch?v=piSvFxV_M04)
 
 If you're thinking about hiring an SEO, the earlier the better. A great time to hire is when you're considering a site redesign, or planning to launch a new site. That way, you and your SEO can ensure that your site is designed to be search engine-friendly from the bottom up. However, a good SEO can also help improve an existing site.
 
 For a detailed rundown on the need for hiring an SEO and what things to look out for, you can read [Do you need an SEO](https://developers.google.com/search/docs/beginner/do-i-need-seo).
 
-Help Google find your content
------------------------------
+## Help Google find your content
 
 The first step to getting your site on Google is to be sure that Google can find it. The best way to do that is to submit a *sitemap*. A sitemap is a file on your site that tells search engines about new or changed pages on your site. [Learn more about how to build and submit a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview).
 
 Google also finds pages through links from other pages. Learn how to encourage people to discover your site by [Promoting your site](https://developers.google.com/search/docs/beginner/seo-starter-guide#promote).
 
-Tell Google which pages you *don't want* crawled
-------------------------------------------------
+## Tell Google which pages you *don't want* crawled
 
 ### For non-sensitive information, block unwanted crawling by using robots.txt
 
 A robots.txt file tells search engines whether they can access and therefore crawl parts of your site. This file, which must be named robots.txt, is placed in the root directory of your site. It is possible that pages blocked by robots.txt can still be crawled, so for sensitive pages, use a more secure method.
 
 # brandonsbaseballcards.com/robots.txt\
+
 # Tell Google not to crawl any URLs in the shopping cart or images in the icons folder,\
+
 # because they won't be useful in Google Search results.\
-User-agent: googlebot\Disallow:  /checkout/\
-Disallow:  /icons/
+
+User-agent: googlebot\Disallow: /checkout/\
+Disallow: /icons/
 
 You may not want certain pages of your site crawled because they might not be useful to users if found in a search engine's search results. If you do want to prevent search engines from crawling your pages, Google Search Console has a friendly robots.txt generator to help you create this file. Note that if your site uses subdomains and you wish to have certain pages not crawled on a particular subdomain, you'll have to create a separate robots.txt file for that subdomain. For more information on robots.txt, we suggest this guide on [using robots.txt files](https://developers.google.com/search/docs/advanced/robots/intro).
 
@@ -109,8 +107,8 @@ You may not want certain pages of your site crawled because they might not be us
 
 Avoid:
 
--   Letting your internal search result pages be crawled by Google. Users dislike clicking a search engine result only to land on another search result page on your site.
--   Allowing URLs created as a result of proxy services to be crawled.
+- Letting your internal search result pages be crawled by Google. Users dislike clicking a search engine result only to land on another search result page on your site.
+- Allowing URLs created as a result of proxy services to be crawled.
 
 ### For sensitive information, use more secure methods
 
@@ -118,8 +116,7 @@ A robots.txt file is not an appropriate or effective way of blocking sensitive o
 
 In these cases, use the `noindex` tag if you just want the page not to appear in Google, but don't mind if any user with a link can reach the page. For real security, use proper authorization methods, like requiring a user password, or taking the page off your site entirely.
 
-Help Google (and users) understand your content
------------------------------------------------
+## Help Google (and users) understand your content
 
 ### Let Google see your page the same way a user does
 
@@ -151,8 +148,8 @@ Choose a title that reads naturally and effectively communicates the topic of th
 
 Avoid:
 
--   Choosing a title that has no relation to the content on the page.
--   Using default or vague titles like "Untitled" or "New Page 1".
+- Choosing a title that has no relation to the content on the page.
+- Using default or vague titles like "Untitled" or "New Page 1".
 
 #### Create unique titles for each page
 
@@ -160,7 +157,7 @@ Make sure each page on your site has a unique title, which helps Google know how
 
 Avoid:
 
--   Using a single title across all of your site's pages or a large group of pages.
+- Using a single title across all of your site's pages or a large group of pages.
 
 #### Use brief, but descriptive titles
 
@@ -168,8 +165,8 @@ Titles can be both short and informative. If the title is too long or otherwise 
 
 Avoid:
 
--   Using extremely lengthy titles that are unhelpful to users.
--   Stuffing unneeded keywords in your `title` tags.
+- Using extremely lengthy titles that are unhelpful to users.
+- Stuffing unneeded keywords in your `title` tags.
 
 ### Use the `description` meta tag
 
@@ -193,10 +190,10 @@ Write a description that would both inform and interest users if they saw your 
 
 Avoid:
 
--   Writing a `description` meta tag that has no relation to the content on the page.
--   Using generic descriptions like "This is a web page" or "Page about baseball cards".
--   Filling the description with only keywords.
--   Copying and pasting the entire content of the document into the `description` meta tag.
+- Writing a `description` meta tag that has no relation to the content on the page.
+- Using generic descriptions like "This is a web page" or "Page about baseball cards".
+- Filling the description with only keywords.
+- Copying and pasting the entire content of the document into the `description` meta tag.
 
 #### Use unique descriptions for each page
 
@@ -204,7 +201,7 @@ Having a different `description` meta tag for each page helps both users and G
 
 Avoid:
 
--   Using a single `description` meta tag across all of your site's pages or a large group of pages.
+- Using a single `description` meta tag across all of your site's pages or a large group of pages.
 
 ### Use heading tags to emphasize important text
 
@@ -216,9 +213,9 @@ Similar to writing an outline for a large paper, put some thought into what the 
 
 Avoid:
 
--   Placing text in heading tags that wouldn't be helpful in defining the structure of the page.
--   Using heading tags where other tags like `<em>` and `<strong>` may be more appropriate.
--   Erratically moving from one heading tag size to another.
+- Placing text in heading tags that wouldn't be helpful in defining the structure of the page.
+- Using heading tags where other tags like `<em>` and `<strong>` may be more appropriate.
+- Erratically moving from one heading tag size to another.
 
 #### Use headings sparingly across the page
 
@@ -226,9 +223,9 @@ Use heading tags where it makes sense. Too many heading tags on a page can make 
 
 Avoid:
 
--   Excessive use of heading tags on a page.
--   Very long headings.
--   Using heading tags only for styling text and not presenting structure.
+- Excessive use of heading tags on a page.
+- Very long headings.
+- Using heading tags only for styling text and not presenting structure.
 
 ### Add structured data markup
 
@@ -244,13 +241,13 @@ In addition to using structured data markup for rich results, we may use it to s
 
 You can mark up many business-relevant entities:
 
--   Products you're selling
--   Business location
--   Videos about your products or business
--   Opening hours
--   Events listings
--   Recipes
--   Your company logo, and many more!
+- Products you're selling
+- Business location
+- Videos about your products or business
+- Opening hours
+- Events listings
+- Recipes
+- Your company logo, and many more!
 
 [See a full list of supported content types](https://developers.google.com/search/docs/advanced/structured-data/search-gallery).
 
@@ -262,7 +259,7 @@ Once you've marked up your content, you can use the [Google Rich Results test](
 
 Avoid:
 
--   Using invalid markup.
+- Using invalid markup.
 
 #### Use Data Highlighter and Markup Helper
 
@@ -272,7 +269,7 @@ If you'd like to get the markup code ready to copy and paste to your page, try t
 
 Avoid:
 
--   Changing the source code of your site when you are unsure about implementing markup.
+- Changing the source code of your site when you are unsure about implementing markup.
 
 #### Keep track of how your marked up pages are doing
 
@@ -280,16 +277,14 @@ The various [Rich result reports](https://support.google.com/webmasters/answer/
 
 Avoid:
 
--   Adding markup data which is not visible to users.
--   Creating fake reviews or adding irrelevant markups.
+- Adding markup data which is not visible to users.
+- Creating fake reviews or adding irrelevant markups.
 
-Manage your appearance in Google Search results
------------------------------------------------
+## Manage your appearance in Google Search results
 
 Correct structured data on your pages also makes your page eligible for many special features in Google Search results, including review stars, fancy decorated results, and more. [See the gallery of search result types that your page can be eligible for.](https://developers.google.com/search/docs/advanced/structured-data/search-gallery)
 
-Organize your site hierarchy
-----------------------------
+## Organize your site hierarchy
 
 ### Understand how search engines use URLs
 
@@ -337,8 +332,8 @@ Make it as easy as possible for users to go from general content to the more spe
 
 Avoid:
 
--   Creating complex webs of navigation links, for example, linking every page on your site to every other page.
--   Going overboard with slicing and dicing your content (so that it takes twenty clicks to reach from the homepage).
+- Creating complex webs of navigation links, for example, linking every page on your site to every other page.
+- Going overboard with slicing and dicing your content (so that it takes twenty clicks to reach from the homepage).
 
 #### Use text for navigation
 
@@ -346,8 +341,8 @@ Controlling most of the navigation from page to page on your site through text l
 
 Avoid:
 
--   Having a navigation based entirely on images, or animations.
--   [Requiring script or plugin-based event-handling for navigation](https://developers.google.com/search/docs/advanced/guidelines/rich-media-files).
+- Having a navigation based entirely on images, or animations.
+- [Requiring script or plugin-based event-handling for navigation](https://developers.google.com/search/docs/advanced/guidelines/rich-media-files).
 
 #### Create a navigational page for users, a sitemap for search engines
 
@@ -355,8 +350,8 @@ Include a simple navigational page for your entire site (or the most important p
 
 Avoid:
 
--   Letting your navigational page become out of date with broken links.
--   Creating a navigational page that simply lists pages without organizing them, for example by subject.
+- Letting your navigational page become out of date with broken links.
+- Creating a navigational page that simply lists pages without organizing them, for example by subject.
 
 #### Show useful 404 pages
 
@@ -364,10 +359,10 @@ Users will occasionally come to a page that doesn't exist on your site, either b
 
 Avoid:
 
--   Allowing your 404 pages to be indexed in search engines (make sure that your web server is configured to give a 404 HTTP status code or---in the case of JavaScript-based sites---include the `noindex` tag when non-existent pages are requested).
--   Blocking 404 pages from being crawled through the robots.txt file.
--   Providing only a vague message like "Not found", "404", or no 404 page at all.
--   Using a design for your 404 pages that isn't consistent with the rest of your site.
+- Allowing your 404 pages to be indexed in search engines (make sure that your web server is configured to give a 404 HTTP status code or---in the case of JavaScript-based sites---include the `noindex` tag when non-existent pages are requested).
+- Blocking 404 pages from being crawled through the robots.txt file.
+- Providing only a vague message like "Not found", "404", or no 404 page at all.
+- Using a design for your 404 pages that isn't consistent with the rest of your site.
 
 ### Simple URLs convey content information
 
@@ -393,9 +388,9 @@ URLs with words that are relevant to your site's content and structure are frien
 
 Avoid:
 
--   Using lengthy URLs with unnecessary parameters and session IDs.
--   Choosing generic page names like `page1.html`.
--   Using excessive keywords like `baseball-cards-baseball-cards-baseballcards.html`.
+- Using lengthy URLs with unnecessary parameters and session IDs.
+- Choosing generic page names like `page1.html`.
+- Using excessive keywords like `baseball-cards-baseball-cards-baseballcards.html`.
 
 #### Create a simple directory structure
 
@@ -403,8 +398,8 @@ Use a directory structure that organizes your content well and makes it easy for
 
 Avoid:
 
--   Having deep nesting of subdirectories like `.../dir1/dir2/dir3/dir4/dir5/dir6/page.html`.
--   Using directory names that have no relation to the content in them.
+- Having deep nesting of subdirectories like `.../dir1/dir2/dir3/dir4/dir5/dir6/page.html`.
+- Using directory names that have no relation to the content in them.
 
 #### Provide one version of a URL to reach a document
 
@@ -412,10 +407,9 @@ To prevent users from linking to one version of a URL and others linking to a di
 
 Avoid:
 
--   Having pages from subdomains and the root directory access the same content, for example, `domain.com/page.html` and `sub.domain.com/page.html`.
+- Having pages from subdomains and the root directory access the same content, for example, `domain.com/page.html` and `sub.domain.com/page.html`.
 
-Optimize your content
----------------------
+## Optimize your content
 
 ### Make your site interesting and useful
 
@@ -437,9 +431,9 @@ Users enjoy content that is well written and easy to follow.
 
 Avoid:
 
--   Writing sloppy text with many spelling and grammatical mistakes.
--   Awkward or poorly written content.
--   Embedding text in images and videos for textual content: users may want to copy and paste the text and search engines can't read it.
+- Writing sloppy text with many spelling and grammatical mistakes.
+- Awkward or poorly written content.
+- Embedding text in images and videos for textual content: users may want to copy and paste the text and search engines can't read it.
 
 #### Organize your topics clearly
 
@@ -447,7 +441,7 @@ It's always beneficial to organize your content so that visitors have a good sen
 
 Avoid:
 
--   Dumping large amounts of text on varying topics onto a page without paragraph, subheading, or layout separation.
+- Dumping large amounts of text on varying topics onto a page without paragraph, subheading, or layout separation.
 
 #### Create fresh, unique content
 
@@ -455,8 +449,8 @@ New content will not only keep your existing visitor base coming back, but also 
 
 Avoid:
 
--   Rehashing (or even copying) existing content that will bring little extra value to users.
--   Having duplicate or near-duplicate versions of your content across your site.
+- Rehashing (or even copying) existing content that will bring little extra value to users.
+- Having duplicate or near-duplicate versions of your content across your site.
 
 [Learn more about duplicate content](https://developers.google.com/search/docs/advanced/guidelines/duplicate-content).
 
@@ -466,9 +460,9 @@ Designing your site around your visitors' needs while making sure your site is e
 
 Avoid:
 
--   Inserting numerous unnecessary keywords aimed at search engines but are annoying or nonsensical to users.
--   Having blocks of text like "frequent misspellings used to reach this page" that add little value for users.
--   [Deceptively hiding text from users](https://developers.google.com/search/docs/advanced/guidelines/hidden-text-links), but displaying it to search engines.
+- Inserting numerous unnecessary keywords aimed at search engines but are annoying or nonsensical to users.
+- Having blocks of text like "frequent misspellings used to reach this page" that add little value for users.
+- [Deceptively hiding text from users](https://developers.google.com/search/docs/advanced/guidelines/hidden-text-links), but displaying it to search engines.
 
 ### Act in a way that cultivates user trust
 
@@ -489,7 +483,7 @@ Creating high quality content takes a significant amount of at least one of the 
 
 Avoid:
 
--   Providing insufficient content for the purpose of the page.
+- Providing insufficient content for the purpose of the page.
 
 ### Avoid distracting advertisements
 
@@ -497,7 +491,7 @@ We expect advertisements to be visible. However, don't let the advertisements di
 
 Avoid:
 
--   Putting distracting advertisements on your pages.
+- Putting distracting advertisements on your pages.
 
 ### Use links wisely
 
@@ -515,9 +509,9 @@ Write anchor text that provides at least a basic idea of what the page linked to
 
 ##### Avoid:
 
--   Writing generic anchor text like "page", "article", or "click here".
--   Using text that is off-topic or has no relation to the content of the page linked to.
--   Using the page's URL as the anchor text in most cases, although there are certainly legitimate uses of this, such as promoting or referencing a new website's address.
+- Writing generic anchor text like "page", "article", or "click here".
+- Using text that is off-topic or has no relation to the content of the page linked to.
+- Using the page's URL as the anchor text in most cases, although there are certainly legitimate uses of this, such as promoting or referencing a new website's address.
 
 ##### Write concise text
 
@@ -525,7 +519,7 @@ Aim for short but descriptive text-usually a few words or a short phrase.
 
 ##### Avoid:
 
--   Writing long anchor text, such as a lengthy sentence or short paragraph of text.
+- Writing long anchor text, such as a lengthy sentence or short paragraph of text.
 
 ##### Format links so they're easy to spot
 
@@ -533,7 +527,7 @@ Make it easy for users to distinguish between regular text and the anchor text o
 
 ##### Avoid:
 
--   Using CSS or text styling that make links look just like regular text.
+- Using CSS or text styling that make links look just like regular text.
 
 ##### Think about anchor text for internal links too
 
@@ -541,8 +535,8 @@ You may usually think about linking in terms of pointing to outside websites, bu
 
 ##### Avoid:
 
--   Using excessively keyword-filled or lengthy anchor text just for search engines.
--   Creating unnecessary links that don't help with the user's navigation of the site.
+- Using excessively keyword-filled or lengthy anchor text just for search engines.
+- Creating unnecessary links that don't help with the user's navigation of the site.
 
 #### Be careful who you link to
 
@@ -572,8 +566,7 @@ Many blogging software packages automatically `nofollow` user comments, but th
 
 ![Illustration of a CAPTCHA popup](https://lh3.googleusercontent.com/zaP4cQILTJ-tz2ejO5t2Y-GiR8Mq-zrBbmrHHR2U0_mOPPXaf9s0hUV3KubIkSunfRGj=w350)
 
-Optimize your images
---------------------
+## Optimize your images
 
 ### Use HTML images
 
@@ -585,7 +578,7 @@ Semantic HTML markup helps crawlers find and process images. By using the `<pic
 
 Avoid:
 
--   Using CSS to display images that you want us to index.
+- Using CSS to display images that you want us to index.
 
 #### Use the `alt` attribute
 
@@ -603,9 +596,9 @@ Like many of the other parts of the page targeted for optimization, filenames an
 
 ##### Avoid:
 
--   Using generic filenames like `image1.jpg`, `pic.gif`, `1.jpg` when possible---if your site has thousands of images you might want to consider automating the naming of the images.
--   Writing extremely lengthy filenames.
--   Stuffing keywords into alt text or copying and pasting entire sentences.
+- Using generic filenames like `image1.jpg`, `pic.gif`, `1.jpg` when possible---if your site has thousands of images you might want to consider automating the naming of the images.
+- Writing extremely lengthy filenames.
+- Stuffing keywords into alt text or copying and pasting entire sentences.
 
 ##### Supply alt text when using images as links
 
@@ -613,8 +606,8 @@ If you do decide to use an image as a link, filling out its alt text helps Googl
 
 ##### Avoid:
 
--   Writing excessively long alt text that would be considered spammy.
--   Using only image links for your site's navigation.
+- Writing excessively long alt text that would be considered spammy.
+- Using only image links for your site's navigation.
 
 ### Help search engines find your images
 
@@ -624,17 +617,16 @@ An [Image sitemap](https://developers.google.com/search/docs/advanced/sitemaps/
 
 Use commonly supported filetypes; most browsers support JPEG, GIF, PNG, BMP and WebP image formats. It's also a good idea to have the extension of your filename match with the file type.
 
-Make your site mobile-friendly
-------------------------------
+## Make your site mobile-friendly
 
 The world is mobile today. Most people are searching on Google using a mobile device. The desktop version of a site might be difficult to view and use on a mobile device. As a result, having a mobile ready site is critical to your online presence. In fact, starting in late 2016, [Google has begun experiments to primarily use the mobile version of a site's content](https://developers.google.com/search/blog/2016/11/mobile-first-indexing) for ranking, parsing structured data, and generating snippets.
 
 Understand the difference between devices
 
--   Smartphone - In this document, "mobile" or "mobile devices" refers to smartphones, such as devices running Android, iPhone, or Windows Phone. Mobile browsers are similar to desktop browsers in that they can render a broad set of the HTML5 specification, although their screen size is smaller and in almost all cases their default orientation is vertical.
--   Tablet - We consider tablets as devices in their own class, so when we speak of mobile devices, we generally do not include tablets in the definition. Tablets tend to have larger screens, which means that, unless you offer tablet-optimized content, you can assume that users expect to see your site as it would look on a desktop browser rather than on a smartphone browser.
--   Multimedia phone - These are phones with browsers that are able to render pages coded to meet XHTML standards, support HTML5 Markup, JavaScript/ECMAScript but might not support some of the extension APIs in the HTML5 standard. This generally describes the browser in most 3G-ready phones that are not smartphones.
--   Feature phones - On these phones, browsers lack the capability to render normal desktop web pages coded using standard HTML. This includes browsers that render only cHTML (iMode), WML, XHTML-MP, etc.
+- Smartphone - In this document, "mobile" or "mobile devices" refers to smartphones, such as devices running Android, iPhone, or Windows Phone. Mobile browsers are similar to desktop browsers in that they can render a broad set of the HTML5 specification, although their screen size is smaller and in almost all cases their default orientation is vertical.
+- Tablet - We consider tablets as devices in their own class, so when we speak of mobile devices, we generally do not include tablets in the definition. Tablets tend to have larger screens, which means that, unless you offer tablet-optimized content, you can assume that users expect to see your site as it would look on a desktop browser rather than on a smartphone browser.
+- Multimedia phone - These are phones with browsers that are able to render pages coded to meet XHTML standards, support HTML5 Markup, JavaScript/ECMAScript but might not support some of the extension APIs in the HTML5 standard. This generally describes the browser in most 3G-ready phones that are not smartphones.
+- Feature phones - On these phones, browsers lack the capability to render normal desktop web pages coded using standard HTML. This includes browsers that render only cHTML (iMode), WML, XHTML-MP, etc.
 
 Our recommendations are geared toward smartphones, but we encourage multimedia and feature phones site owners to follow the same advice where they feel appropriate.
 
@@ -642,9 +634,9 @@ Our recommendations are geared toward smartphones, but we encourage multimedia a
 
 There are multiple ways of making your website mobile ready and Google supports different implementation methods :
 
--   [Responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design) (*Recommended*)
--   [Dynamic serving](https://developers.google.com/search/mobile-sites/mobile-seo/dynamic-serving)
--   [Separate URLs](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls)
+- [Responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design) (_Recommended_)
+- [Dynamic serving](https://developers.google.com/search/mobile-sites/mobile-seo/dynamic-serving)
+- [Separate URLs](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls)
 
 After you have created a mobile-ready site, you can use [Google's Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) to check if pages on your site meet the criteria for being labeled mobile-friendly on Google Search result pages. You can also check out the [Search Console Mobile Usability report](https://www.google.com/webmasters/tools/mobile-usability) to fix mobile usability issues affecting your site.
 
@@ -664,13 +656,12 @@ Regardless of which configuration you choose to set up your mobile site, take no
 
 #### Best Practices
 
--   Test your mobile pages with the [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) to see if Google thinks your website works well on mobile devices.
--   If you use separate URLs for your mobile pages, make sure to test both the mobile and the desktop URLs, so you can confirm that the redirect is recognized and crawlable.
+- Test your mobile pages with the [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) to see if Google thinks your website works well on mobile devices.
+- If you use separate URLs for your mobile pages, make sure to test both the mobile and the desktop URLs, so you can confirm that the redirect is recognized and crawlable.
 
 [For more information, see Google's mobile-friendly guide](https://developers.google.com/search/mobile-sites).
 
-Promote your website
---------------------
+## Promote your website
 
 While most of the links to your site will be added gradually, as people discover your content through search or other ways and link to it, Google understands that you'd like to let others know about the hard work you've put into your content. Effectively promoting your new content will lead to faster discovery by those who are interested in the same subject. As with most points covered in this document, taking these recommendations to an extreme could actually harm the reputation of your site.
 
@@ -688,8 +679,8 @@ Sites built around user interaction and sharing have made it easier to match int
 
 Avoid:
 
--   Attempting to promote each new, small piece of content you create; go for big, interesting items.
--   [Involving your site in schemes](https://developers.google.com/search/docs/advanced/guidelines/link-schemes) where your content is artificially promoted to the top of these services.
+- Attempting to promote each new, small piece of content you create; go for big, interesting items.
+- [Involving your site in schemes](https://developers.google.com/search/docs/advanced/guidelines/link-schemes) where your content is artificially promoted to the top of these services.
 
 ### Reach out to those in your site's related community
 
@@ -697,11 +688,10 @@ Chances are, there are a number of sites that cover topic areas similar to yours
 
 Avoid:
 
--   Spamming link requests out to all sites related to your topic area.
--   Purchasing links from another site with the aim of getting PageRank.
+- Spamming link requests out to all sites related to your topic area.
+- Purchasing links from another site with the aim of getting PageRank.
 
-Analyze your search performance and user behavior
--------------------------------------------------
+## Analyze your search performance and user behavior
 
 ### Analyzing your search performance
 
@@ -713,65 +703,61 @@ Using Search Console won't help your site get preferential treatment; however, i
 
 With the service, website owners can:
 
--   See which parts of a site Googlebot had problems crawling
--   Test and submit sitemaps
--   Analyze or generate robots.txt files
--   Remove URLs already crawled by Googlebot
--   Specify your preferred domain
--   Identify issues with `title` and `description` meta tags
--   Understand the top searches used to reach a site
--   Get a glimpse at how Googlebot sees pages
--   Receive notifications of quality guidelines violations and request a site reconsideration
-  
-  
-  Webmaster guidelines
-====================
+- See which parts of a site Googlebot had problems crawling
+- Test and submit sitemaps
+- Analyze or generate robots.txt files
+- Remove URLs already crawled by Googlebot
+- Specify your preferred domain
+- Identify issues with `title` and `description` meta tags
+- Understand the top searches used to reach a site
+- Get a glimpse at how Googlebot sees pages
+- Receive notifications of quality guidelines violations and request a site reconsideration
+
+# Webmaster guidelines
 
 Following the [General guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines?visit_id=637688295615606112-2319924219&rd=1#general) will help Google find, index, and rank your site.
 
 We strongly encourage you to pay very close attention to the [Quality guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines?visit_id=637688295615606112-2319924219&rd=1#quality_guidelines), which outline some of the illicit practices that may lead to a site being removed entirely from the Google index or otherwise affected by an algorithmic or manual spam action. If a site has been affected by a spam action, it may no longer show up in results on Google.com or on any of Google's partner sites.
 
-General guidelines
-------------------
+## General guidelines
 
 ### Help Google find your pages
 
--   Ensure that all pages on the site can be reached by a link from another findable page. Make sure the referring link includes either text or, for images, an `alt` attribute, that is relevant to the target page. Crawlable links are [`<a>` tags with an `href` attribute](https://developers.google.com/search/docs/advanced/guidelines/links-crawlable).
--   Provide a [sitemap file](https://developers.google.com/search/docs/advanced/sitemaps/overview) with links that point to the important pages on your site. Also provide a page with a human-readable list of links to these pages (sometimes called a site index or site map page).
--   Limit the number of links on a page to a reasonable number (a few thousand at most).
--   Make sure that your web server correctly supports the `If-Modified-Since` HTTP header. This feature directs your web server to tell Google if your content has changed since we last crawled your site. Supporting this feature saves you bandwidth and overhead.
--   Use the robots.txt file on your web server to manage your crawling budget by preventing crawling of infinite spaces such as search result pages. Keep your robots.txt file up to date. [Learn how to manage crawling with the robots.txt file](https://developers.google.com/search/docs/advanced/robots/intro). Test the coverage and syntax of your robots.txt file using the [robots.txt Tester](https://www.google.com/webmasters/tools/robots-testing-tool).
+- Ensure that all pages on the site can be reached by a link from another findable page. Make sure the referring link includes either text or, for images, an `alt` attribute, that is relevant to the target page. Crawlable links are [`<a>` tags with an `href` attribute](https://developers.google.com/search/docs/advanced/guidelines/links-crawlable).
+- Provide a [sitemap file](https://developers.google.com/search/docs/advanced/sitemaps/overview) with links that point to the important pages on your site. Also provide a page with a human-readable list of links to these pages (sometimes called a site index or site map page).
+- Limit the number of links on a page to a reasonable number (a few thousand at most).
+- Make sure that your web server correctly supports the `If-Modified-Since` HTTP header. This feature directs your web server to tell Google if your content has changed since we last crawled your site. Supporting this feature saves you bandwidth and overhead.
+- Use the robots.txt file on your web server to manage your crawling budget by preventing crawling of infinite spaces such as search result pages. Keep your robots.txt file up to date. [Learn how to manage crawling with the robots.txt file](https://developers.google.com/search/docs/advanced/robots/intro). Test the coverage and syntax of your robots.txt file using the [robots.txt Tester](https://www.google.com/webmasters/tools/robots-testing-tool).
 
 Ways to help Google find your site:
 
--   [Ask Google to crawl your pages](https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl).
--   Make sure that any sites that should know about your pages are aware your site is online.
+- [Ask Google to crawl your pages](https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl).
+- Make sure that any sites that should know about your pages are aware your site is online.
 
 ### Help Google understand your pages
 
--   Create a useful, information-rich site, and write pages that clearly and accurately describe your content.
--   Think about the words users would type to find your pages, and make sure that your site actually includes those words within it.
--   Ensure that your `<title>` elements and `alt` attributes are descriptive, specific, and accurate.
--   Design your site to have a clear conceptual page hierarchy.
--   Follow our recommended best practices for [images](https://developers.google.com/search/docs/advanced/guidelines/google-images), [video](https://developers.google.com/search/docs/advanced/guidelines/video), and [structured data](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data).
--   When using a content management system (for example, Wix or WordPress), make sure that it creates pages and links that search engines can crawl.
--   To help Google fully understand your site's contents, allow all site assets that would significantly affect page rendering to be crawled: for example, CSS and JavaScript files that affect the understanding of the pages. The Google indexing system renders a web page as the user would see it, including images, CSS, and JavaScript files. To see which page assets that Googlebot cannot crawl, use the [URL Inspection tool](https://support.google.com/webmasters/answer/9012289). To debug directives in your robots.txt file, use the [robots.txt Tester](https://support.google.com/webmasters/answer/6062598) tool.
--   Allow search bots to crawl your site without session IDs or URL parameters that track their path through the site. These techniques are useful for tracking individual user behavior, but the access pattern of bots is entirely different. Using these techniques may result in incomplete indexing of your site, as bots may not be able to eliminate URLs that look different but actually point to the same page.
--   Make your site's important content visible by default. Google is able to crawl HTML content hidden inside navigational elements such as tabs or expanding sections. However, we consider this content less accessible to users, and recommend that you make your most important information visible in the default page view.
--   Make a reasonable effort to ensure that advertisement links on your pages do not affect search engine rankings. For example, use [robots.txt](https://developers.google.com/search/docs/advanced/robots/intro), `rel="nofollow"`, or `rel="sponsored"` to prevent advertisement links from being followed by a crawler.
+- Create a useful, information-rich site, and write pages that clearly and accurately describe your content.
+- Think about the words users would type to find your pages, and make sure that your site actually includes those words within it.
+- Ensure that your `<title>` elements and `alt` attributes are descriptive, specific, and accurate.
+- Design your site to have a clear conceptual page hierarchy.
+- Follow our recommended best practices for [images](https://developers.google.com/search/docs/advanced/guidelines/google-images), [video](https://developers.google.com/search/docs/advanced/guidelines/video), and [structured data](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data).
+- When using a content management system (for example, Wix or WordPress), make sure that it creates pages and links that search engines can crawl.
+- To help Google fully understand your site's contents, allow all site assets that would significantly affect page rendering to be crawled: for example, CSS and JavaScript files that affect the understanding of the pages. The Google indexing system renders a web page as the user would see it, including images, CSS, and JavaScript files. To see which page assets that Googlebot cannot crawl, use the [URL Inspection tool](https://support.google.com/webmasters/answer/9012289). To debug directives in your robots.txt file, use the [robots.txt Tester](https://support.google.com/webmasters/answer/6062598) tool.
+- Allow search bots to crawl your site without session IDs or URL parameters that track their path through the site. These techniques are useful for tracking individual user behavior, but the access pattern of bots is entirely different. Using these techniques may result in incomplete indexing of your site, as bots may not be able to eliminate URLs that look different but actually point to the same page.
+- Make your site's important content visible by default. Google is able to crawl HTML content hidden inside navigational elements such as tabs or expanding sections. However, we consider this content less accessible to users, and recommend that you make your most important information visible in the default page view.
+- Make a reasonable effort to ensure that advertisement links on your pages do not affect search engine rankings. For example, use [robots.txt](https://developers.google.com/search/docs/advanced/robots/intro), `rel="nofollow"`, or `rel="sponsored"` to prevent advertisement links from being followed by a crawler.
 
 ### Help visitors use your pages
 
--   Try to use text instead of images to display important names, content, or links. If you must use images for textual content, use the `alt` attribute to include a few words of descriptive text.
--   Ensure that all links go to live web pages. Use [valid HTML](https://validator.w3.org/).
--   Optimize your page loading times. Fast sites make users happy and improve the overall quality of the web (especially for those users with slow Internet connections). Google recommends that you use tools like [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) and [Webpagetest.org](https://www.webpagetest.org/) to test the performance of your page.
--   Design your site for all device types and sizes, including desktops, tablets, and smartphones. Use the [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) to test how well your pages work on mobile devices, and get feedback on what needs to be fixed.
--   Ensure that your site [appears correctly in different browsers](https://developers.google.com/search/docs/advanced/guidelines/browser-compatibility).
--   If possible, [secure your site's connections](https://developers.google.com/search/docs/advanced/security/https) with HTTPS. Encrypting interactions between the user and your website is a good practice for communication on the web.
--   Ensure that your pages are useful for readers with visual impairments, for example, by testing usability with a screen-reader.
+- Try to use text instead of images to display important names, content, or links. If you must use images for textual content, use the `alt` attribute to include a few words of descriptive text.
+- Ensure that all links go to live web pages. Use [valid HTML](https://validator.w3.org/).
+- Optimize your page loading times. Fast sites make users happy and improve the overall quality of the web (especially for those users with slow Internet connections). Google recommends that you use tools like [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) and [Webpagetest.org](https://www.webpagetest.org/) to test the performance of your page.
+- Design your site for all device types and sizes, including desktops, tablets, and smartphones. Use the [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) to test how well your pages work on mobile devices, and get feedback on what needs to be fixed.
+- Ensure that your site [appears correctly in different browsers](https://developers.google.com/search/docs/advanced/guidelines/browser-compatibility).
+- If possible, [secure your site's connections](https://developers.google.com/search/docs/advanced/security/https) with HTTPS. Encrypting interactions between the user and your website is a good practice for communication on the web.
+- Ensure that your pages are useful for readers with visual impairments, for example, by testing usability with a screen-reader.
 
-Quality guidelines
-------------------
+## Quality guidelines
 
 These quality guidelines cover the most common forms of deceptive or manipulative behavior, but Google may respond negatively to other misleading practices not listed here. It's not safe to assume that just because a specific deceptive technique isn't included on this page, Google approves of it. Website owners who spend their energies upholding the spirit of the basic principles will provide a much better user experience and subsequently enjoy better ranking than those who spend their time looking for loopholes they can exploit.
 
@@ -779,43 +765,37 @@ If you believe that another site is abusing Google's quality guidelines, please 
 
 ### Basic principles
 
--   Make pages primarily for users, not for search engines.
--   Don't deceive your users.
--   Avoid tricks intended to improve search engine rankings. A good rule of thumb is whether you'd feel comfortable explaining what you've done to a website that competes with you, or to a Google employee. Another useful test is to ask, "Does this help my users? Would I do this if search engines didn't exist?"
--   Think about what makes your website unique, valuable, or engaging. Make your website stand out from others in your field.
+- Make pages primarily for users, not for search engines.
+- Don't deceive your users.
+- Avoid tricks intended to improve search engine rankings. A good rule of thumb is whether you'd feel comfortable explaining what you've done to a website that competes with you, or to a Google employee. Another useful test is to ask, "Does this help my users? Would I do this if search engines didn't exist?"
+- Think about what makes your website unique, valuable, or engaging. Make your website stand out from others in your field.
 
 ### Specific guidelines
 
 Avoid the following techniques:
 
--   [Automatically generated content](https://developers.google.com/search/docs/advanced/guidelines/auto-gen-content)
--   Participating in [link schemes](https://developers.google.com/search/docs/advanced/guidelines/link-schemes)
--   Creating pages with [little or no original content](https://developers.google.com/search/docs/advanced/guidelines/thin-content)
--   [Cloaking](https://developers.google.com/search/docs/advanced/guidelines/cloaking)
--   [Sneaky redirects](https://developers.google.com/search/docs/advanced/guidelines/sneaky-redirects)
--   [Hidden text or links](https://developers.google.com/search/docs/advanced/guidelines/hidden-text-links)
--   [Doorway pages](https://developers.google.com/search/docs/advanced/guidelines/doorway-pages)
--   [Scraped content](https://developers.google.com/search/docs/advanced/guidelines/scraped-content)
--   Participating in [affiliate programs without adding sufficient value](https://developers.google.com/search/docs/advanced/guidelines/affiliate-programs)
--   Loading pages with [irrelevant keywords](https://developers.google.com/search/docs/advanced/guidelines/irrelevant-keywords)
--   Creating pages with [malicious behavior](https://developers.google.com/search/docs/advanced/guidelines/malicious-behavior), such as phishing or installing viruses, trojans, or other badware
--   Abusing [structured data](https://developers.google.com/search/docs/advanced/structured-data/sd-policies) markup
--   Sending [automated queries](https://developers.google.com/search/docs/advanced/guidelines/automated-queries) to Google
+- [Automatically generated content](https://developers.google.com/search/docs/advanced/guidelines/auto-gen-content)
+- Participating in [link schemes](https://developers.google.com/search/docs/advanced/guidelines/link-schemes)
+- Creating pages with [little or no original content](https://developers.google.com/search/docs/advanced/guidelines/thin-content)
+- [Cloaking](https://developers.google.com/search/docs/advanced/guidelines/cloaking)
+- [Sneaky redirects](https://developers.google.com/search/docs/advanced/guidelines/sneaky-redirects)
+- [Hidden text or links](https://developers.google.com/search/docs/advanced/guidelines/hidden-text-links)
+- [Doorway pages](https://developers.google.com/search/docs/advanced/guidelines/doorway-pages)
+- [Scraped content](https://developers.google.com/search/docs/advanced/guidelines/scraped-content)
+- Participating in [affiliate programs without adding sufficient value](https://developers.google.com/search/docs/advanced/guidelines/affiliate-programs)
+- Loading pages with [irrelevant keywords](https://developers.google.com/search/docs/advanced/guidelines/irrelevant-keywords)
+- Creating pages with [malicious behavior](https://developers.google.com/search/docs/advanced/guidelines/malicious-behavior), such as phishing or installing viruses, trojans, or other badware
+- Abusing [structured data](https://developers.google.com/search/docs/advanced/structured-data/sd-policies) markup
+- Sending [automated queries](https://developers.google.com/search/docs/advanced/guidelines/automated-queries) to Google
 
 Follow good practices:
 
--   Monitoring your site for [hacking](https://developers.google.com/search/docs/advanced/security/what-is-hacked) and removing hacked content as soon as it appears
--   Preventing and removing [user-generated spam](https://developers.google.com/search/docs/advanced/guidelines/user-gen-spam) on your site
+- Monitoring your site for [hacking](https://developers.google.com/search/docs/advanced/security/what-is-hacked) and removing hacked content as soon as it appears
+- Preventing and removing [user-generated spam](https://developers.google.com/search/docs/advanced/guidelines/user-gen-spam) on your site
 
 If your site violates one or more of these guidelines, then Google may take [manual action](https://support.google.com/webmasters/answer/9044175) against it. Once you have remedied the problem, you can [submit your site for reconsideration](https://support.google.com/webmasters/answer/35843).
-  
-  
-  
-  
-  
-  
-  1\. Google Search Console
--------------------------
+
+## 1\. Google Search Console
 
 ![Google Search Console. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-4.jpg)
 
@@ -829,19 +809,18 @@ As far as actually using the service goes, Google Search Console is very simple 
 
 Key Features:
 
--   Monitor how Google perceives your website.
--   Keep track of what keywords visitors are using to reach you.
--   Stay on top of any crawl, [meta tag](https://www.dreamhost.com/blog/how-to-write-meta-descriptions/), or sitemap errors.
--   Update your [robots.txt file](https://help.dreamhost.com/hc/en-us/articles/216105077-How-can-I-control-bots-spiders-and-crawlers-).
--   Monitor your site's backlinks.
--   Get alerts if your site is infected with malware.
+- Monitor how Google perceives your website.
+- Keep track of what keywords visitors are using to reach you.
+- Stay on top of any crawl, [meta tag](https://www.dreamhost.com/blog/how-to-write-meta-descriptions/), or sitemap errors.
+- Update your [robots.txt file](https://help.dreamhost.com/hc/en-us/articles/216105077-How-can-I-control-bots-spiders-and-crawlers-).
+- Monitor your site's backlinks.
+- Get alerts if your site is infected with malware.
 
 Price: Free!
 
 #### Related: [13 Simple Ways to Boost SEO on Your WordPress Website](https://www.dreamhost.com/blog/boost-seo-wordpress-website/)
 
-2\. Semrush
------------
+## 2\. Semrush
 
 [![](https://dhblog.dream.press/blog/wp-content/uploads/2021/07/Dreamhost1.png)](http://semrush.sjv.io/c/2904698/1107705/13053)
 
@@ -855,15 +834,14 @@ This service even enables you to peek into your competitors' text and media ads,
 
 Key Features:
 
--   Research the value of specific queries.
--   Check out what keywords your competitors are ranking for and how much traffic they're getting.
--   Find information about other websites' backlinks.
--   Look into your competitors' text and media ads.
+- Research the value of specific queries.
+- Check out what keywords your competitors are ranking for and how much traffic they're getting.
+- Find information about other websites' backlinks.
+- Look into your competitors' text and media ads.
 
-Price: You can get up to 10 results for free per day or sign up for a premium account. The good news? We've worked out a [special 14-day trial with Semrush](https://semrush.sjv.io/c/2904698/1107705/13053) so you can see if they're a good fit for your site! 
+Price: You can get up to 10 results for free per day or sign up for a premium account. The good news? We've worked out a [special 14-day trial with Semrush](https://semrush.sjv.io/c/2904698/1107705/13053) so you can see if they're a good fit for your site!
 
-3\. BuzzStream
---------------
+## 3\. BuzzStream
 
 ![BuzzStream website. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-8.jpg)
 
@@ -875,35 +853,33 @@ In practice, you can use these features to help you do a thorough SEO audit, res
 
 Key Features:
 
--   Research your competitors based on any keywords you want to target.
--   Collect data about domain age and authority for specific websites.
--   Find out what your competitors' rankings are in the SERPs.
--   Locate the social media accounts for your competition's sites.
--   Create lists of authors who write for competing websites and follow what they're doing.
+- Research your competitors based on any keywords you want to target.
+- Collect data about domain age and authority for specific websites.
+- Find out what your competitors' rankings are in the SERPs.
+- Locate the social media accounts for your competition's sites.
+- Create lists of authors who write for competing websites and follow what they're doing.
 
 Price: BuzzStream plans [start at $24 per month](http://www.buzzstream.com/plans-pricing).
 
-4\. DreamHost SEO Toolkit
--------------------------
+## 4\. DreamHost SEO Toolkit
 
-Want to grow traffic without blowing your budget on enterprise-level tools or a private contractor? If you're a DreamHost customer, you can take advantage of [SEO Toolkit](https://www.dreamhost.com/products/seo-toolkit/) and become your own SEO pro. 
+Want to grow traffic without blowing your budget on enterprise-level tools or a private contractor? If you're a DreamHost customer, you can take advantage of [SEO Toolkit](https://www.dreamhost.com/products/seo-toolkit/) and become your own SEO pro.
 
 With more than 100 automated checks and verifications, SEO Toolkit starts by auditing your site to find potential issues. Then, it creates a personalized SEO plan with a checklist of simple tasks you can tackle to start seeing ranking improvements. For example, SEO Toolkit analyzes your site's pages and provides targeted recommendations on where to position keywords to optimize your content.
 
-SEO Toolkit also makes it much easier to track competitors --- we've talked before about the benefits to [monitoring your online competition](https://www.dreamhost.com/blog/how-to-beat-your-competition/) --- so you can tweak your keyword strategy and land at the top of the SERPs. 
+SEO Toolkit also makes it much easier to track competitors --- we've talked before about the benefits to [monitoring your online competition](https://www.dreamhost.com/blog/how-to-beat-your-competition/) --- so you can tweak your keyword strategy and land at the top of the SERPs.
 
 Key Features:
 
--   Get a comprehensive website audit to identify potential SEO issues.
--   Generate a personalized SEO plan with tasks to improve your site's search engine performance.
--   Stay up to date with weekly progress reports.
--   Take advantage of SEO toolkits on-page optimization tools to improve keyword placement.
--   Track up to 20 keywords and four competitors.
+- Get a comprehensive website audit to identify potential SEO issues.
+- Generate a personalized SEO plan with tasks to improve your site's search engine performance.
+- Stay up to date with weekly progress reports.
+- Take advantage of SEO toolkits on-page optimization tools to improve keyword placement.
+- Track up to 20 keywords and four competitors.
 
 Price: [SEO Toolkit](https://www.dreamhost.com/products/seo-toolkit/) costs just $4.99 per month. New DreamHost customers can add SEO Toolkit when signing up for a hosting plan. Existing customers can enable SEO Toolkit directly in their panel.
 
-5\. Moz Pro
------------
+## 5\. Moz Pro
 
 ![Moz Pro homepage.](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-13.jpg)
 
@@ -917,18 +893,17 @@ As for what's so unique about Moz Pro, the platform offers a Chrome extension yo
 
 Key Features:
 
--   Research how competitive a keyword is, as well as its search volume.
--   Get suggestions on related keywords.
--   Investigate your competitors, including which keywords they're targeting.
--   Use a Chrome extension to look into other domains without going to the Moz website.
--   Compare multiple keywords using custom lists.
--   Get on-page optimization suggestions and error alerts.
+- Research how competitive a keyword is, as well as its search volume.
+- Get suggestions on related keywords.
+- Investigate your competitors, including which keywords they're targeting.
+- Use a Chrome extension to look into other domains without going to the Moz website.
+- Compare multiple keywords using custom lists.
+- Get on-page optimization suggestions and error alerts.
 
 Price: A 30-day free trial is available for the Pro plan, while regular pricing [starts at $99 per month](https://moz.com/products/pro/pricing).[\
 ](https://moz.com/products/pro)
 
-6\. Linkody
------------
+## 6\. Linkody
 
 ![Linkody website. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-3.jpg)
 
@@ -940,16 +915,15 @@ Overall, it's a pretty niche tool, but quite useful if you need some help with l
 
 Key Features:
 
--   Analyze your website's backlinks.
--   Disavow bad links that might affect your SEO.
--   Generate backlink reports for your clients.
--   Connect to Google Analytics to gain access to more data.
--   Monitor your site's social shares.
+- Analyze your website's backlinks.
+- Disavow bad links that might affect your SEO.
+- Generate backlink reports for your clients.
+- Connect to Google Analytics to gain access to more data.
+- Monitor your site's social shares.
 
 Price: Linkody plans [start at $14.90 per month](https://www.linkody.com/en/plans) for up to two domains, but you can also try it free for 30 days without a credit card.
 
-7\. Ontolo
-----------
+## 7\. Ontolo
 
 ![Ontolo home page. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-7.jpg)
 
@@ -961,15 +935,14 @@ Ontolo helps you locate those opportunities, so all you have to do is pitch them
 
 Key Features:
 
--   Look for guest posting and backlink opportunities.
--   Collect data from over 80 sources to find the best prospects.
--   Carry out research using simple-to-understand reports.
--   Export your prospects to share them with others.
+- Look for guest posting and backlink opportunities.
+- Collect data from over 80 sources to find the best prospects.
+- Carry out research using simple-to-understand reports.
+- Export your prospects to share them with others.
 
 Price: Ontolo plans [start at $97 per month](https://ontolo.com/#sign-up) and come with a 30-day money-back guarantee.
 
-8\. HubSpot's Website Grader
-----------------------------
+## 8\. HubSpot's Website Grader
 
 ![HubSpot's Website Grader tool.](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-9.jpg)
 
@@ -981,16 +954,15 @@ HubSpot's Website Grader is incredibly simple to use, and it can help you improv
 
 Key Features:
 
--   Analyze your website's performance, mobile-friendliness, security, and SEO.
--   Receive separate scores for each aspect of your site.
--   Get recommendations for how to improve each score.
+- Analyze your website's performance, mobile-friendliness, security, and SEO.
+- Receive separate scores for each aspect of your site.
+- Get recommendations for how to improve each score.
 
 Price: Free!
 
 #### Related: [The Top 11 SEO Best Practices for Domains](https://www.dreamhost.com/blog/seo-best-practices-for-domains/)
 
-9\. Google AdWords Keyword Planner
-----------------------------------
+## 9\. Google AdWords Keyword Planner
 
 ![Google AdWords Keyword Planner. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-5.jpg)
 
@@ -1002,14 +974,13 @@ Overall, the Keyword Planner offers much of the same functionality we've seen fr
 
 Key Features:
 
--   Find out the search volume for any keyword you want.
--   Determine a keyword's competitiveness from its CPC.
--   Get detailed reports for specific keywords.
+- Find out the search volume for any keyword you want.
+- Determine a keyword's competitiveness from its CPC.
+- Get detailed reports for specific keywords.
 
 Price: Free!
 
-10\. WooRank
-------------
+## 10\. WooRank
 
 ![WooRank website scoring tool. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-11.jpg)
 
@@ -1021,14 +992,13 @@ Overall, this is an excellent tool if you want a quick rundown of what you're do
 
 Key Features:
 
--   Analyze your website's overall status, including SEO, usability, performance, and backlinks.
--   Receive tips on how to improve your website and tackle SEO tasks.
--   Analyze your domain's authority.
+- Analyze your website's overall status, including SEO, usability, performance, and backlinks.
+- Receive tips on how to improve your website and tackle SEO tasks.
+- Analyze your domain's authority.
 
 Price: Free, with premium options [starting at $59.99 per month](https://www.woorank.com/en/p/pricing).
 
-11\. Varvy SEO Tool
--------------------
+## 11\. Varvy SEO Tool
 
 ![Varvy SEO tool. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-6.jpg)
 
@@ -1040,32 +1010,30 @@ If you're new to SEO (or [website optimization](https://www.dreamhost.com/blog/
 
 Key Features:
 
--   Check to see if your website follows Google's SEO guidelines.
--   Receive a quick report, including precise information on how to fix each issue.
+- Check to see if your website follows Google's SEO guidelines.
+- Receive a quick report, including precise information on how to fix each issue.
 
 Price: Free!
 
-12\. Screaming Frog
--------------------
+## 12\. Screaming Frog
 
 ![Screaming Frog SEO Spider Tool. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-12.jpg)
 
-[Screaming Frog](https://www.screamingfrog.co.uk/) offers an SEO Spider Tool, a sophisticated crawler that can accomplish a host of optimization tasks. This includes finding and fixing broken links and redirects. 
+[Screaming Frog](https://www.screamingfrog.co.uk/) offers an SEO Spider Tool, a sophisticated crawler that can accomplish a host of optimization tasks. This includes finding and fixing broken links and redirects.
 
-If you operate an online store, Screaming Frog has some especially helpful options. For example, you can use the crawler to extract data from HTML pages on your site using CSS Path. This means you can [use XPath](https://www.w3schools.com/xml/xpath_intro.asp) or regex to gather data about prices, SKUs, and more. 
+If you operate an online store, Screaming Frog has some especially helpful options. For example, you can use the crawler to extract data from HTML pages on your site using CSS Path. This means you can [use XPath](https://www.w3schools.com/xml/xpath_intro.asp) or regex to gather data about prices, SKUs, and more.
 
 You can even use this tool to generate XML sitemaps and connect them up to Google Analytics. What's more, Screaming Frog has a pretty robust free version, so you can try out the main functionality before you decide to leap in.
 
-Key Features: 
+Key Features:
 
--   Analyze titles and metadata. 
--   Crawl your site to find and fix broken links.
--   Discover and resolve duplicate content and pages. 
+- Analyze titles and metadata.
+- Crawl your site to find and fix broken links.
+- Discover and resolve duplicate content and pages.
 
 Price: You can access the free version with limited features and URLs, or get the full version for [£149 per year](https://www.screamingfrog.co.uk/seo-spider/pricing/) (about $191).
 
-Be Awesome on the Internet
---------------------------
+## Be Awesome on the Internet
 
 Join our monthly newsletter for tips and tricks to build your dream website!
 
@@ -1073,99 +1041,92 @@ Join our monthly newsletter for tips and tricks to build your dream website!
 
 ![](https://dhblog.dream.press/blog/wp-content/uploads/2020/07/CTA-guy-with-laptop-2.png)
 
-13\. Yoast SEO
---------------
+## 13\. Yoast SEO
 
 ![Yoast SEO tool. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/04/DreamHost-seo-tools-1.jpg)
 
-[Yoast SEO](https://yoast.com/wordpress/plugins/seo/) is often touted as the number-one WordPress SEO plugin. Its features cover the full spectrum when it comes to SEO. You can conduct readability checks, for example, and set canonical URLs to avoid confusing Google with duplicate content. 
+[Yoast SEO](https://yoast.com/wordpress/plugins/seo/) is often touted as the number-one WordPress SEO plugin. Its features cover the full spectrum when it comes to SEO. You can conduct readability checks, for example, and set canonical URLs to avoid confusing Google with duplicate content.
 
-Other functionality on offer includes keyword optimization and the ability to preview pages in Google, Facebook, and Twitter. With the upgraded version of the plugin, you will also get some content assistance, since Yoast will offer you internal linking suggestions as you write pages and posts. 
+Other functionality on offer includes keyword optimization and the ability to preview pages in Google, Facebook, and Twitter. With the upgraded version of the plugin, you will also get some content assistance, since Yoast will offer you internal linking suggestions as you write pages and posts.
 
-Yoast SEO has [a robust knowledge database](https://kb.yoast.com/) to help you get started. Plus, with the premium version, you'll have access to one year of 24/7 help from an expert support team. 
-
-Key Features: 
-
--   Optimize your content for specific keywords.
--   Provide search engines with the metadata they need to understand your content.
--   Avoid duplicate content.
--   Handle critical SEO tasks automatically, such as creating a sitemap and optimizing permalinks.
-
-Price: You can download a limited free version or get the premium version for [$89 per year](https://yoast.com/wordpress/plugins/seo/).
-
-14\. Link-able
---------------
-
-![ Link-able SEO linking tool. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/09/how-to-optimize-site-success-8.jpg)
-
-[Link-able](https://link-able.com/) offers a fairly unique approach to optimizing your website, boosting SEO, and expanding your traffic. You can think of this service as a highly-specialized job board. It's designed to provide marketers with a reliable way to create backlinks for their content. 
-
-The process starts with a marketer posting a specific request on the Link-able website. This request will include details about the kind of backlinks the marketer wants to build. They'll also provide any other information that might be helpful, much like a job posting. 
-
-Authors who have been thoroughly vetted by Link-able will be able to access the project database. They can submit proposals for specific projects and wait for the marketers to respond. If a marketer likes a proposal, Link-able connects the two parties, and the work is guaranteed. 
+Yoast SEO has [a robust knowledge database](https://kb.yoast.com/) to help you get started. Plus, with the premium version, you'll have access to one year of 24/7 help from an expert support team.
 
 Key Features:
 
--   Find highly-qualified authors who have passed a rigorous testing process.
--   Receive highly-relevant author matches and proposals for your projects.
--   Focus on your content while employing others to handle link building.
+- Optimize your content for specific keywords.
+- Provide search engines with the metadata they need to understand your content.
+- Avoid duplicate content.
+- Handle critical SEO tasks automatically, such as creating a sitemap and optimizing permalinks.
+
+Price: You can download a limited free version or get the premium version for [$89 per year](https://yoast.com/wordpress/plugins/seo/).
+
+## 14\. Link-able
+
+![ Link-able SEO linking tool. ](https://dhblog.dream.press/blog/wp-content/uploads/2019/09/how-to-optimize-site-success-8.jpg)
+
+[Link-able](https://link-able.com/) offers a fairly unique approach to optimizing your website, boosting SEO, and expanding your traffic. You can think of this service as a highly-specialized job board. It's designed to provide marketers with a reliable way to create backlinks for their content.
+
+The process starts with a marketer posting a specific request on the Link-able website. This request will include details about the kind of backlinks the marketer wants to build. They'll also provide any other information that might be helpful, much like a job posting.
+
+Authors who have been thoroughly vetted by Link-able will be able to access the project database. They can submit proposals for specific projects and wait for the marketers to respond. If a marketer likes a proposal, Link-able connects the two parties, and the work is guaranteed.
+
+Key Features:
+
+- Find highly-qualified authors who have passed a rigorous testing process.
+- Receive highly-relevant author matches and proposals for your projects.
+- Focus on your content while employing others to handle link building.
 
 Price: While this is a free service for both marketers and authors to join, Link-able does [charge a percentage](https://link-able.com/faqs/) of the paid transactions.
-  
-  
-  
-  What is an SEO?
----------------
+
+## What is an SEO?
 
 SEO is an acronym for "search engine optimization" or "search engine optimizer." Deciding to hire an SEO is a big decision that can potentially improve your site and save time, but you can also risk damage to your site and reputation. Make sure to research the potential advantages as well as the damage that an irresponsible SEO can do to your site. Many SEOs and other agencies and consultants provide useful services for website owners, including:
 
--   Review of your site content or structure
--   Technical advice on website development: for example, hosting, redirects, error pages, use of JavaScript
--   Content development
--   Management of online business development campaigns
--   Keyword research
--   SEO training
--   Expertise in specific markets and geographies.
+- Review of your site content or structure
+- Technical advice on website development: for example, hosting, redirects, error pages, use of JavaScript
+- Content development
+- Management of online business development campaigns
+- Keyword research
+- SEO training
+- Expertise in specific markets and geographies.
 
 Advertising with Google won't have any effect on your site's presence in our search results. Google never accepts money to include or rank sites in our search results, and it costs nothing to appear in our organic search results. Free resources such as [Search Console](https://search.google.com/search-console), the official [Google Search Central blog](https://developers.google.com/search/blog), and our [discussion forum](http://www.google.com/support/forum/p/webmasters) can provide you with a great deal of information about how to optimize your site for organic search.
 
-Getting started
----------------
+## Getting started
 
 If you run a small local business, you can probably do much of the work yourself. Here are some good resources:
 
--   Check out our [30-minute video series](https://goo.gl/I4giIX) on building an online presence for your business.
--   [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines)
--   [Google 101: How Google crawls, indexes and serves the web.](https://developers.google.com/search/docs/beginner/how-search-works)
--   The [SEO starter guide](https://developers.google.com/search/docs/beginner/seo-starter-guide) describes much of what your SEO will do for you. Although you don't need to know this guide well yourself if you're hiring a professional to do the work for you, it is useful to be familiar with these techniques, so that you can be aware if an SEO wants to use a technique that is not recommended or, worse, strongly discouraged.
+- Check out our [30-minute video series](https://goo.gl/I4giIX) on building an online presence for your business.
+- [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines)
+- [Google 101: How Google crawls, indexes and serves the web.](https://developers.google.com/search/docs/beginner/how-search-works)
+- The [SEO starter guide](https://developers.google.com/search/docs/beginner/seo-starter-guide) describes much of what your SEO will do for you. Although you don't need to know this guide well yourself if you're hiring a professional to do the work for you, it is useful to be familiar with these techniques, so that you can be aware if an SEO wants to use a technique that is not recommended or, worse, strongly discouraged.
 
 Remember that it will take time for you to see results: typically from four months to a year from the time you begin making changes until you start to see the benefits.
 
 If you think that you still need extra help from a professional, continue reading about how to choose an SEO.
 
-Choosing an SEO
----------------
+## Choosing an SEO
 
 If you're thinking about hiring an SEO, the earlier the better. A great time to hire is when you're considering a site redesign, or planning to launch a new site. That way, you and your SEO can ensure that your site is designed to be search engine-friendly from the bottom up. However, a good SEO can also help improve an existing site.
 
 1.  Be committed to implementing the recommended changes. Making the changes recommended by an SEO takes time and effort; if you aren't going to take the time to make these changes, it's not worthwhile hiring a professional.
 2.  Interview your potential SEO. Some useful questions to ask an SEO include:
-    -   Can you show me examples of your previous work and share some success stories?
-    -   Do you follow the Google Webmaster Guidelines?
-    -   Do you offer any online marketing services or advice to complement your organic search business?
-    -   What kind of results do you expect to see, and in what timeframe? How do you measure your success?
-    -   What's your experience in my industry?
-    -   What's your experience in my country/city?
-    -   What's your experience developing international sites?
-    -   What are your most important SEO techniques?
-    -   How long have you been in business?
-    -   How can I expect to communicate with you? Will you share with me all the changes you make to my site, and provide detailed information about your recommendations and the reasoning behind them?
-    -   See if the SEO is interested in you and your business. If they're not interested, find someone who is. Your SEO should ask questions such as:
-        -   What makes your business or service unique and valuable to customers?
-        -   Who are your customers?
-        -   How does your business make money, and how can search results help?
-        -   What other advertising channels are you using?
-        -   Who are your competitors?
+    - Can you show me examples of your previous work and share some success stories?
+    - Do you follow the Google Webmaster Guidelines?
+    - Do you offer any online marketing services or advice to complement your organic search business?
+    - What kind of results do you expect to see, and in what timeframe? How do you measure your success?
+    - What's your experience in my industry?
+    - What's your experience in my country/city?
+    - What's your experience developing international sites?
+    - What are your most important SEO techniques?
+    - How long have you been in business?
+    - How can I expect to communicate with you? Will you share with me all the changes you make to my site, and provide detailed information about your recommendations and the reasoning behind them?
+    - See if the SEO is interested in you and your business. If they're not interested, find someone who is. Your SEO should ask questions such as:
+      - What makes your business or service unique and valuable to customers?
+      - Who are your customers?
+      - How does your business make money, and how can search results help?
+      - What other advertising channels are you using?
+      - Who are your competitors?
 3.  Check your SEO's business references. Ask past clients if they felt that this SEO provided useful service, was easy to work with, and produced positive results.
 4.  Ask for a technical and search audit for your site to learn what they think needs to be done, why, and what the expected outcome should be. You'll probably have to pay for this. You will probably have to give them read-only access to your site on Search Console. (At this stage, don't grant them write access.) Your prospective SEO should be able to give you realistic estimates of improvement, and an estimate of the work involved. If they guarantee you that their changes will give you first place in search results, find someone else.
 5.  Decide if you want to hire.
@@ -1178,9 +1139,9 @@ When your SEO comes up with a set of recommendations for your site, ask her to c
 
 Here are some things to consider:
 
--   One common scam is the creation of "shadow" domains that funnel users to a site by using deceptive redirects. These shadow domains often will be owned by the SEO who claims to be working on a client's behalf. However, if the relationship sours, the SEO may point the domain to a different site, or even to a competitor's domain. If that happens, the client has paid to develop a competing site owned entirely by the SEO.
--   Another illicit practice is to place "doorway" pages loaded with keywords on the client's site somewhere. The SEO promises this will make the page more relevant for more queries. This is inherently false since individual pages are rarely relevant for a wide range of keywords. More insidious, however, is that these doorway pages often contain hidden links to the SEO's other clients as well. Such doorway pages drain away the link popularity of a site and route it to the SEO and its other clients, which may include sites with unsavory or illegal content.
--   Finally, avoid getting involved in [link schemes](https://developers.google.com/search/docs/advanced/guidelines/link-schemes), such as buying links from other sites to increase your ranking. This is against Google's quality guidelines and can result in a [manual action against some or all of your site](https://support.google.com/webmasters/answer/9044175?hl=en&ref_topic=7440006#unnatural-links-to-your-site), which will negatively affect your site ranking.
+- One common scam is the creation of "shadow" domains that funnel users to a site by using deceptive redirects. These shadow domains often will be owned by the SEO who claims to be working on a client's behalf. However, if the relationship sours, the SEO may point the domain to a different site, or even to a competitor's domain. If that happens, the client has paid to develop a competing site owned entirely by the SEO.
+- Another illicit practice is to place "doorway" pages loaded with keywords on the client's site somewhere. The SEO promises this will make the page more relevant for more queries. This is inherently false since individual pages are rarely relevant for a wide range of keywords. More insidious, however, is that these doorway pages often contain hidden links to the SEO's other clients as well. Such doorway pages drain away the link popularity of a site and route it to the SEO and its other clients, which may include sites with unsavory or illegal content.
+- Finally, avoid getting involved in [link schemes](https://developers.google.com/search/docs/advanced/guidelines/link-schemes), such as buying links from other sites to increase your ranking. This is against Google's quality guidelines and can result in a [manual action against some or all of your site](https://support.google.com/webmasters/answer/9044175?hl=en&ref_topic=7440006#unnatural-links-to-your-site), which will negatively affect your site ranking.
 
 If you feel that you were deceived by an SEO in some way, you may want to report it.
 
@@ -1192,54 +1153,51 @@ In the United States, the Federal Trade Commission (FTC) handles complaints abou
 
 If your complaint is against a company in a country other than the United States, please file it at <http://www.econsumer.gov/>.
 
-Helpful guidelines
-------------------
+## Helpful guidelines
 
--   Be wary of SEO firms and web consultants or agencies that email you out of the blue.
+- Be wary of SEO firms and web consultants or agencies that email you out of the blue.
 
-    Amazingly, we get these spam emails too:
+  Amazingly, we get these spam emails too:
 
-    > *"Dear google.com,\
-    > I visited your website and noticed that you are not listed in most of the major search engines and directories..."*
+  > _"Dear google.com,\
+  > I visited your website and noticed that you are not listed in most of the major search engines and directories..."_
 
-    Reserve the same skepticism for unsolicited email about search engines as you do for "burn fat at night" diet pills or requests to help transfer funds from deposed dictators.
+  Reserve the same skepticism for unsolicited email about search engines as you do for "burn fat at night" diet pills or requests to help transfer funds from deposed dictators.
 
--   No one can guarantee a #1 ranking on Google.
+- No one can guarantee a #1 ranking on Google.
 
-    Beware of SEOs that claim to guarantee rankings, allege a "special relationship" with Google, or advertise a "priority submit" to Google. There is no priority submit for Google. In fact, the only way to submit a site to Google directly is through our [Add URL](http://www.google.com/addurl/?continue=/addurl) page or by submitting a [Sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview) and you can do this yourself at no cost whatsoever.
+  Beware of SEOs that claim to guarantee rankings, allege a "special relationship" with Google, or advertise a "priority submit" to Google. There is no priority submit for Google. In fact, the only way to submit a site to Google directly is through our [Add URL](http://www.google.com/addurl/?continue=/addurl) page or by submitting a [Sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview) and you can do this yourself at no cost whatsoever.
 
--   Be careful if a company is secretive or won't clearly explain what they intend to do.
+- Be careful if a company is secretive or won't clearly explain what they intend to do.
 
-    Ask for explanations if something is unclear. If an SEO creates deceptive or misleading content on your behalf, such as doorway pages or "throwaway" domains, your site could be removed entirely from Google's index. Ultimately, you are responsible for the actions of any companies you hire, so it's best to be sure you know exactly how they intend to "help" you. If an SEO has FTP access to your server, they should be willing to explain all the changes they are making to your site.
+  Ask for explanations if something is unclear. If an SEO creates deceptive or misleading content on your behalf, such as doorway pages or "throwaway" domains, your site could be removed entirely from Google's index. Ultimately, you are responsible for the actions of any companies you hire, so it's best to be sure you know exactly how they intend to "help" you. If an SEO has FTP access to your server, they should be willing to explain all the changes they are making to your site.
 
--   You should never have to link to an SEO.
+- You should never have to link to an SEO.
 
-    Avoid SEOs that talk about the power of "free-for-all" links, link popularity schemes, or submitting your site to thousands of search engines. These are typically useless exercises that don't affect your ranking in the results of the major search engines -- at least, not in a way you would likely consider to be positive.
+  Avoid SEOs that talk about the power of "free-for-all" links, link popularity schemes, or submitting your site to thousands of search engines. These are typically useless exercises that don't affect your ranking in the results of the major search engines -- at least, not in a way you would likely consider to be positive.
 
--   Choose wisely.
+- Choose wisely.
 
-    While you consider whether to go with an SEO, you may want to do some research on the industry. Google is one way to do that, of course. While Google doesn't comment on specific companies, we've encountered firms calling themselves SEOs who follow practices that are clearly beyond the pale of accepted business behavior. Be careful.
+  While you consider whether to go with an SEO, you may want to do some research on the industry. Google is one way to do that, of course. While Google doesn't comment on specific companies, we've encountered firms calling themselves SEOs who follow practices that are clearly beyond the pale of accepted business behavior. Be careful.
 
--   Be sure to understand where the money goes.
+- Be sure to understand where the money goes.
 
-    While Google never sells better ranking in our search results, several other search engines combine pay-per-click or pay-for-inclusion results with their regular web search results. Some SEOs will promise to rank you highly in search engines, but place you in the advertising section rather than in the search results. A few SEOs will even change their bid prices in real time to create the illusion that they "control" other search engines and can place themselves in the slot of their choice. This scam doesn't work with Google because our advertising is clearly labeled and separated from our search results, but be sure to ask any SEO you're considering which fees go toward permanent inclusion and which apply toward temporary advertising.
+  While Google never sells better ranking in our search results, several other search engines combine pay-per-click or pay-for-inclusion results with their regular web search results. Some SEOs will promise to rank you highly in search engines, but place you in the advertising section rather than in the search results. A few SEOs will even change their bid prices in real time to create the illusion that they "control" other search engines and can place themselves in the slot of their choice. This scam doesn't work with Google because our advertising is clearly labeled and separated from our search results, but be sure to ask any SEO you're considering which fees go toward permanent inclusion and which apply toward temporary advertising.
 
--   What are some other things to look out for?
+- What are some other things to look out for?
 
-    There are a few warning signs that you may be dealing with a rogue SEO. It's far from a comprehensive list, so if you have any doubts, trust your instincts. By all means, feel free to walk away if the SEO:
+  There are a few warning signs that you may be dealing with a rogue SEO. It's far from a comprehensive list, so if you have any doubts, trust your instincts. By all means, feel free to walk away if the SEO:
 
-    -   Owns shadow domains
-    -   Puts links to their other clients on doorway pages
-    -   Offers to sell keywords in the address bar
-    -   Doesn't distinguish between actual search results and ads that appear on search results pages
-    -   Guarantees ranking, but only on obscure, long keyword phrases you would get anyway
-    -   Operates with multiple aliases or falsified WHOIS info
-    -   Gets traffic from "fake" search engines, spyware, or scumware
-    -   Has had domains removed from Google's index or is not itself listed in Google
+  - Owns shadow domains
+  - Puts links to their other clients on doorway pages
+  - Offers to sell keywords in the address bar
+  - Doesn't distinguish between actual search results and ads that appear on search results pages
+  - Guarantees ranking, but only on obscure, long keyword phrases you would get anyway
+  - Operates with multiple aliases or falsified WHOIS info
+  - Gets traffic from "fake" search engines, spyware, or scumware
+  - Has had domains removed from Google's index or is not itself listed in Google
 
-  
-  
-  How Google Search Works (for beginners)
+How Google Search Works (for beginners)
 Google gets information from many different sources, including:
 
 Web pages
@@ -1282,82 +1240,70 @@ Put useful content on your page and keep it up to date.
 Follow the Google Webmaster Guidelines, which help ensure a good user experience.
 Read more tips and best practices in our SEO starter guide.
 You can find more information here, including the guidelines that we provide to our quality raters to ensure that we're providing good results.
-An even longer version 
-  
-  
-  
-  
-  How Google Search Works (for beginners)
-=======================================
+An even longer version
+
+# How Google Search Works (for beginners)
 
 Google gets information from many different sources, including:
 
--   Web pages
--   User-submitted content such as Google My Business and Maps user submissions
--   Book scanning
--   Public databases on the internet
--   Many other sources
+- Web pages
+- User-submitted content such as Google My Business and Maps user submissions
+- Book scanning
+- Public databases on the internet
+- Many other sources
 
 However, this page focuses on web pages. Google follows three basic steps to generate results from web pages:
 
--   [Crawling](https://developers.google.com/search/docs/beginner/how-search-works#crawling)
--   [Indexing](https://developers.google.com/search/docs/beginner/how-search-works#indexing)
--   [Serving (and ranking)](https://developers.google.com/search/docs/beginner/how-search-works#serving)
+- [Crawling](https://developers.google.com/search/docs/beginner/how-search-works#crawling)
+- [Indexing](https://developers.google.com/search/docs/beginner/how-search-works#indexing)
+- [Serving (and ranking)](https://developers.google.com/search/docs/beginner/how-search-works#serving)
 
-Crawling
---------
+## Crawling
 
-The first step is finding out what pages exist on the web. There isn't a central registry of all web pages, so Google must constantly search for new pages and add them to its list of known pages. Some pages are known because Google has already visited them before. Other pages are discovered when Google follows a link from a known page to a new page. Still other pages are discovered when a website owner submits a list of pages (a [*sitemap*](https://developers.google.com/search/docs/advanced/sitemaps/overview)) for Google to crawl. If you're using a managed web host, such as Wix or Blogger, they might tell Google to crawl any updated or new pages that you make.
+The first step is finding out what pages exist on the web. There isn't a central registry of all web pages, so Google must constantly search for new pages and add them to its list of known pages. Some pages are known because Google has already visited them before. Other pages are discovered when Google follows a link from a known page to a new page. Still other pages are discovered when a website owner submits a list of pages (a [_sitemap_](https://developers.google.com/search/docs/advanced/sitemaps/overview)) for Google to crawl. If you're using a managed web host, such as Wix or Blogger, they might tell Google to crawl any updated or new pages that you make.
 
 Once Google discovers a page URL, it visits, or *crawls*, the page to find out what's on it. Google renders the page and analyzes both the text and non-text content and overall visual layout to decide where it can appear in Search results. The better that Google can understand your site, the better we can match it to people who are looking for your content.
 
 To improve your site crawling:
 
--   Verify that Google can reach the pages on your site, and that they look correct. Google accesses the web as an anonymous user (a user with no passwords or information). Google must be able to see all the images and other elements of the page to be able to understand it correctly. You can do a quick check by typing your page URL in the [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly).
--   If you've created or updated a single page, you can [submit an individual URL to Google.](https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl) To tell Google about many new or updated pages at once, use a [sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview).
--   If you ask Google to crawl only one page, make it your home page. Your home page is the most important page on your site, as far as Google is concerned. To encourage a complete site crawl, be sure that your home page (and all pages) contain a good site navigation system that links to all the important sections and pages on your site; this helps users (and Google) find their way around your site. For smaller sites (less than 1,000 pages), making Google aware of only your homepage is all you need, provided that Google can reach all your other pages by following a path of links that start from your homepage.
--   Get your page linked to by another page that Google already knows about. However, be warned that links in advertisements, links that you pay for in other sites, links in comments, or other links that don't follow the [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines) won't be followed by Google.
+- Verify that Google can reach the pages on your site, and that they look correct. Google accesses the web as an anonymous user (a user with no passwords or information). Google must be able to see all the images and other elements of the page to be able to understand it correctly. You can do a quick check by typing your page URL in the [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly).
+- If you've created or updated a single page, you can [submit an individual URL to Google.](https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl) To tell Google about many new or updated pages at once, use a [sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview).
+- If you ask Google to crawl only one page, make it your home page. Your home page is the most important page on your site, as far as Google is concerned. To encourage a complete site crawl, be sure that your home page (and all pages) contain a good site navigation system that links to all the important sections and pages on your site; this helps users (and Google) find their way around your site. For smaller sites (less than 1,000 pages), making Google aware of only your homepage is all you need, provided that Google can reach all your other pages by following a path of links that start from your homepage.
+- Get your page linked to by another page that Google already knows about. However, be warned that links in advertisements, links that you pay for in other sites, links in comments, or other links that don't follow the [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines) won't be followed by Google.
 
 Google doesn't accept payment to crawl a site more frequently, or rank it higher. If anyone tells you otherwise, they're wrong.
 
-Indexing
---------
+## Indexing
 
 After a page is discovered, Google tries to understand what the page is about. This process is called *indexing*. Google analyzes the content of the page, catalogs images and video files embedded on the page, and otherwise tries to understand the page. This information is stored in the *Google index*, a huge database stored in many, many (many!) computers.
 
 To improve your page indexing:
 
--   Create [short, meaningful page titles](https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets).
--   Use page headings that convey the subject of the page.
--   Use text rather than images to convey content. Google can understand some image and video, but not as well as it can understand text. At minimum, annotate your [video](https://developers.google.com/search/docs/advanced/guidelines/video) and [images](https://developers.google.com/search/docs/advanced/guidelines/google-images) with alt text and other attributes as appropriate.
+- Create [short, meaningful page titles](https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets).
+- Use page headings that convey the subject of the page.
+- Use text rather than images to convey content. Google can understand some image and video, but not as well as it can understand text. At minimum, annotate your [video](https://developers.google.com/search/docs/advanced/guidelines/video) and [images](https://developers.google.com/search/docs/advanced/guidelines/google-images) with alt text and other attributes as appropriate.
 
-Serving (and ranking)
----------------------
+## Serving (and ranking)
 
 When a user types a query, Google tries to find the most relevant answer from its index based on many factors. Google tries to determine the highest quality answers, and factor in other considerations that will provide the best user experience and most appropriate answer, by considering things such as the user's location, language, and device (desktop or phone). For example, searching for "bicycle repair shops" would show different answers to a user in Paris than it would to a user in Hong Kong. Google doesn't accept payment to rank pages higher, and ranking is done programmatically.
 
 To improve your serving and ranking:
 
--   Make your page fast to load, and mobile-friendly.
--   Put useful content on your page and keep it up to date.
--   Follow the [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines), which help ensure a good user experience.
--   Read more tips and best practices in our [SEO starter guide](https://developers.google.com/search/docs/beginner/seo-starter-guide).
--   You can find [more information here](https://www.google.com/search/howsearchworks/), including [the guidelines that we provide to our quality raters to ensure that we're providing good results](https://static.googleusercontent.com/media/www.google.com/en//insidesearch/howsearchworks/assets/searchqualityevaluatorguidelines.pdf).
+- Make your page fast to load, and mobile-friendly.
+- Put useful content on your page and keep it up to date.
+- Follow the [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines), which help ensure a good user experience.
+- Read more tips and best practices in our [SEO starter guide](https://developers.google.com/search/docs/beginner/seo-starter-guide).
+- You can find [more information here](https://www.google.com/search/howsearchworks/), including [the guidelines that we provide to our quality raters to ensure that we're providing good results](https://static.googleusercontent.com/media/www.google.com/en//insidesearch/howsearchworks/assets/searchqualityevaluatorguidelines.pdf).
 
-An even longer version 
------------------------
+## An even longer version 
 
 Want more in-depth information about how Search works? Read our [Advanced guide to how Google Search works](https://developers.google.com/search/docs/advanced/guidelines/how-search-works).
-  
-  
-  
-  Advanced: How Search Works
-==========================
+
+# Advanced: How Search Works
 
 Understanding how Google Search crawls, indexes, and serves content is important when you're debugging issues and anticipating Search behavior on your site.
 
-Crawling
---------
+## Crawling
 
 Crawling is the process by which [Googlebot](https://developers.google.com/search/docs/advanced/crawling/googlebot) visits new and updated pages to be added to the Google index.
 
@@ -1377,27 +1323,26 @@ In addition, Google recrawls a few pages on your site with the other crawler typ
 
 ### How does Google know which pages not to crawl?
 
--   Pages blocked in robots.txt won't be crawled, but still might be indexed if linked to by another page. Google can infer the content of the page by a link pointing to it, and index the page without parsing its contents.
--   Google can't crawl any pages not accessible by an anonymous user. Thus, any login or other authorization protection will prevent a page from being crawled.
--   Pages that have already been crawled and are considered [duplicates](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls) of another page, are crawled less frequently.
+- Pages blocked in robots.txt won't be crawled, but still might be indexed if linked to by another page. Google can infer the content of the page by a link pointing to it, and index the page without parsing its contents.
+- Google can't crawl any pages not accessible by an anonymous user. Thus, any login or other authorization protection will prevent a page from being crawled.
+- Pages that have already been crawled and are considered [duplicates](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls) of another page, are crawled less frequently.
 
 ### Improve your crawling
 
 Use these techniques to help Google discover the right pages on your site:
 
--   [Submit a sitemap.](https://developers.google.com/search/docs/advanced/sitemaps/overview)
--   [Submit crawl requests for individual pages](https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl).
--   Use a [simple, human-readable, and logical URL paths for your pages](https://developers.google.com/search/docs/advanced/guidelines/url-structure) and provide clear and direct internal links within the site.
--   If you use URL parameters on your site for navigation, for instance if you indicate the user's country in a global shopping site, [use the URL parameters tool to tell Google about important parameters](https://support.google.com/webmasters/answer/6080550).
--   Use robots.txt wisely: Use robots.txt to indicate to Google which pages you'd prefer Google to know about or crawl first, in order to protect your server load, not as a method to block material from appearing in the Google index.
--   Use [hreflang](https://developers.google.com/search/docs/advanced/crawling/localized-versions) to point to alternate versions of your page in other languages.
--   Clearly identify your [canonical page and alternate pages](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls).
--   View your crawl and index coverage using the [Index Coverage Report](https://support.google.com/webmasters/answer/7440203).
--   Be sure that Google can access the key pages, and also the important resources (images, CSS files, scripts) needed to render the page properly.
--   Confirm that Google can access and render your page properly by running the [URL Inspection tool](https://support.google.com/webmasters/answer/9012289) on the live page.
+- [Submit a sitemap.](https://developers.google.com/search/docs/advanced/sitemaps/overview)
+- [Submit crawl requests for individual pages](https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl).
+- Use a [simple, human-readable, and logical URL paths for your pages](https://developers.google.com/search/docs/advanced/guidelines/url-structure) and provide clear and direct internal links within the site.
+- If you use URL parameters on your site for navigation, for instance if you indicate the user's country in a global shopping site, [use the URL parameters tool to tell Google about important parameters](https://support.google.com/webmasters/answer/6080550).
+- Use robots.txt wisely: Use robots.txt to indicate to Google which pages you'd prefer Google to know about or crawl first, in order to protect your server load, not as a method to block material from appearing in the Google index.
+- Use [hreflang](https://developers.google.com/search/docs/advanced/crawling/localized-versions) to point to alternate versions of your page in other languages.
+- Clearly identify your [canonical page and alternate pages](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls).
+- View your crawl and index coverage using the [Index Coverage Report](https://support.google.com/webmasters/answer/7440203).
+- Be sure that Google can access the key pages, and also the important resources (images, CSS files, scripts) needed to render the page properly.
+- Confirm that Google can access and render your page properly by running the [URL Inspection tool](https://support.google.com/webmasters/answer/9012289) on the live page.
 
-Indexing
---------
+## Indexing
 
 Googlebot processes each page it crawls in order to understand the content of the page. This includes processing the textual content, key content tags and attributes, such as `<title>` tags and alt attributes, images, videos, and more. Googlebot can process many, but not all, content types. For example, we cannot process the content of some rich media files.
 
@@ -1409,10 +1354,10 @@ Note that Google doesn't index pages with a [`noindex` directive](https://deve
 
 There are many techniques to improve Google's ability to understand the content of your page:
 
--   Prevent Google from crawling or finding pages that you want to hide using the [`noindex`](https://developers.google.com/search/docs/advanced/crawling/block-indexing) tag. Don't "noindex" a page that is blocked by robots.txt; if you do so, the `noindex` tag won't be seen and the page might still be indexed.
--   [Use structured data](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data).
--   Follow the [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines).
--   Read our [SEO starter guide](https://developers.google.com/search/docs/beginner/seo-starter-guide) and [advanced user guide](https://developers.google.com/search/docs/advanced/guidelines/get-started) for more tips.
+- Prevent Google from crawling or finding pages that you want to hide using the [`noindex`](https://developers.google.com/search/docs/advanced/crawling/block-indexing) tag. Don't "noindex" a page that is blocked by robots.txt; if you do so, the `noindex` tag won't be seen and the page might still be indexed.
+- [Use structured data](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data).
+- Follow the [Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines).
+- Read our [SEO starter guide](https://developers.google.com/search/docs/beginner/seo-starter-guide) and [advanced user guide](https://developers.google.com/search/docs/advanced/guidelines/get-started) for more tips.
 
 ### What is a "document"?
 
@@ -1426,19 +1371,18 @@ You can [tell Google which URL you prefer to be canonical](https://developers.g
 
 Here is a summary of terms, and how they are used in Search Console:
 
--   Document: A collection of similar pages. Has a canonical URL, and possibly alternate URLs, if your site has duplicate pages. URLs in the document can be from the same or different *organization* (the root domain, for example "google" in www.google.com). Google chooses the best URL to show in Search results according to the platform (mobile/desktop), user language or location, and many other variables. Google discovers related pages on your site by organic crawling, or by site-implemented features such as redirects or `<link rel=alternate/canonical>` tags. Related pages on other organizations can only be marked as alternates if explicitly coded by your site (through redirects or link tags).
+- Document: A collection of similar pages. Has a canonical URL, and possibly alternate URLs, if your site has duplicate pages. URLs in the document can be from the same or different *organization* (the root domain, for example "google" in www.google.com). Google chooses the best URL to show in Search results according to the platform (mobile/desktop), user language or location, and many other variables. Google discovers related pages on your site by organic crawling, or by site-implemented features such as redirects or `<link rel=alternate/canonical>` tags. Related pages on other organizations can only be marked as alternates if explicitly coded by your site (through redirects or link tags).
 
-    Pages with the same content in different languages are stored in different documents that reference each other using [hreflang tags](https://developers.google.com/search/docs/advanced/crawling/localized-versions); this is why it's important to use hreflang tags for translated content.
+  Pages with the same content in different languages are stored in different documents that reference each other using [hreflang tags](https://developers.google.com/search/docs/advanced/crawling/localized-versions); this is why it's important to use hreflang tags for translated content.
 
--   URL: The URL used to reach a given piece of content on a site.
--   Page: A given web page, reached by one or more URLs. There can be different *versions* of a page, depending on the user's platform (mobile, desktop, tablet, and so on).
--   Version: One variation of the page, typically categorized as "mobile", "desktop", and "AMP" (although AMP can itself have mobile and desktop versions). Each version can have a different URL (example.com vs m.example.com) or the same URL (if your site uses [dynamic serving](https://developers.google.com/search/mobile-sites/mobile-seo/dynamic-serving) or [responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design), the same URL can show different versions of the same page) depending on your site configuration. Language variations are not considered different versions, but different documents.
--   Canonical page or URL: The URL that Google considers as most representative of the document. Google always crawls this URL; duplicate URLs in the document are occasionally crawled as well.
--   Alternate/duplicate page or URL: The document URL that Google might occasionally crawl. Google also serves these URLs if they are appropriate to the user and request (for example, an alternate URL for desktop users will be served for desktop requests rather than a canonical mobile URL).
--   Site: Usually used as a synonym for a website (a conceptually related set of web pages), but sometimes used as a synonym for a Search Console property, although a property can actually be defined as only part of a site. A site can span subdomains (and even domains, for properly linked AMP pages).
+- URL: The URL used to reach a given piece of content on a site.
+- Page: A given web page, reached by one or more URLs. There can be different *versions* of a page, depending on the user's platform (mobile, desktop, tablet, and so on).
+- Version: One variation of the page, typically categorized as "mobile", "desktop", and "AMP" (although AMP can itself have mobile and desktop versions). Each version can have a different URL (example.com vs m.example.com) or the same URL (if your site uses [dynamic serving](https://developers.google.com/search/mobile-sites/mobile-seo/dynamic-serving) or [responsive web design](https://developers.google.com/search/mobile-sites/mobile-seo/responsive-design), the same URL can show different versions of the same page) depending on your site configuration. Language variations are not considered different versions, but different documents.
+- Canonical page or URL: The URL that Google considers as most representative of the document. Google always crawls this URL; duplicate URLs in the document are occasionally crawled as well.
+- Alternate/duplicate page or URL: The document URL that Google might occasionally crawl. Google also serves these URLs if they are appropriate to the user and request (for example, an alternate URL for desktop users will be served for desktop requests rather than a canonical mobile URL).
+- Site: Usually used as a synonym for a website (a conceptually related set of web pages), but sometimes used as a synonym for a Search Console property, although a property can actually be defined as only part of a site. A site can span subdomains (and even domains, for properly linked AMP pages).
 
-Serving results
----------------
+## Serving results
 
 When a user enters a query, our machines search the index for matching pages and return the results we believe are the most relevant to the user. Relevancy is determined by hundreds of factors, and we always work on improving our algorithm. Google considers the user experience in choosing and ranking results, so be sure that your page [loads fast](https://developers.google.com/speed) and is [mobile-friendly](https://developers.google.com/search/mobile-sites).
 
@@ -1446,17 +1390,14 @@ When a user enters a query, our machines search the index for matching pages and
 
 There are many ways to improve how Google serves the content of your page:
 
--   If your results are aimed at users in specific locations or languages, you can [tell Google your preferences](https://developers.google.com/search/docs/advanced/crawling/managing-multi-regional-sites).
--   Be sure that your page [loads fast](https://developers.google.com/speed) and is [mobile-friendly](https://developers.google.com/search/mobile-sites).
--   Follow the [Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines) to avoid common pitfalls and improve your site's ranking.
--   Consider [implementing Search result features](https://developers.google.com/search/docs/advanced/structured-data/search-gallery) for your site, such as recipe cards or article cards.
--   [Implement AMP](https://developers.google.com/search/docs/advanced/experience/about-amp) for faster loading pages on mobile devices. Some AMP pages are also eligible for additional search features, such as the top stories carousel.
--   Google's algorithm is constantly being improved; rather than trying to guess the algorithm and design your page for that, work on creating good, fresh content that users want, and following our guidelines.
-  
-  
-  
-  Googlebot
-=========
+- If your results are aimed at users in specific locations or languages, you can [tell Google your preferences](https://developers.google.com/search/docs/advanced/crawling/managing-multi-regional-sites).
+- Be sure that your page [loads fast](https://developers.google.com/speed) and is [mobile-friendly](https://developers.google.com/search/mobile-sites).
+- Follow the [Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/webmaster-guidelines) to avoid common pitfalls and improve your site's ranking.
+- Consider [implementing Search result features](https://developers.google.com/search/docs/advanced/structured-data/search-gallery) for your site, such as recipe cards or article cards.
+- [Implement AMP](https://developers.google.com/search/docs/advanced/experience/about-amp) for faster loading pages on mobile devices. Some AMP pages are also eligible for additional search features, such as the top stories carousel.
+- Google's algorithm is constantly being improved; rather than trying to guess the algorithm and design your page for that, work on creating good, fresh content that users want, and following our guidelines.
+
+# Googlebot
 
 Googlebot is the generic name for Google's [web crawler](https://developers.google.com/search/docs/beginner/how-search-works). Googlebot is the general name for two different types of crawlers: a desktop crawler that simulates a user on desktop, and a mobile crawler that simulates a user on a mobile device.
 
@@ -1464,8 +1405,7 @@ Your website will probably be crawled by both Googlebot Desktop and Googlebot Sm
 
 If your site has been converted to [mobile first](https://developers.google.com/search/blog/2018/03/rolling-out-mobile-first-indexing) on Google, then the majority of Googlebot crawl requests will be made using the mobile crawler, and a minority using the desktop crawler. For sites that haven't yet been converted, the majority of crawls will be made using the desktop crawler. In both cases, the minority crawler crawls only URLs that have already been crawled by the majority crawler.
 
-How Googlebot accesses your site
---------------------------------
+## How Googlebot accesses your site
 
 For most sites, Googlebot shouldn't access your site more than once every few seconds on average. However, due to delays it's possible that the rate will appear to be slightly higher over short periods.
 
@@ -1475,15 +1415,13 @@ Generally, Googlebot crawls over HTTP/1.1. However, starting November 2020, Goog
 
 To opt out from crawling over HTTP/2, instruct the server that's hosting your site to respond with a 421 HTTP status code when Googlebot attempts to crawl your site over HTTP/2. If that's not feasible, you [can send a message to the Googlebot team](https://www.google.com/webmasters/tools/googlebot-report) (however this solution is temporary).
 
-Blocking Googlebot from visiting your site
-------------------------------------------
+## Blocking Googlebot from visiting your site
 
 It's almost impossible to keep a web server secret by not publishing links to it. For example, as soon as someone follows a link from your "secret" server to another web server, your "secret" URL may appear in the referrer tag and can be stored and published by the other web server in its referrer log. Similarly, the web has many outdated and broken links. Whenever someone publishes an incorrect link to your site or fails to update links to reflect changes in your server, Googlebot will try to crawl an incorrect link from your site.
 
 If you want to prevent Googlebot from crawling content on your site, you have a [number of options](https://support.google.com/webmasters/answer/93708). Be aware of the difference between preventing Googlebot from crawling a page, preventing Googlebot from indexing a page, and preventing a page from being accessible at all by both crawlers or users.
 
-Verifying Googlebot
--------------------
+## Verifying Googlebot
 
 Before you decide to block Googlebot, be aware that the user agent string used by Googlebot is often spoofed by other crawlers. It's important to verify that a problematic request actually comes from Google. The best way to verify that a request actually comes from Googlebot is to [use a reverse DNS lookup](https://developers.google.com/search/docs/advanced/crawling/verifying-googlebot) on the source IP of the request.
 

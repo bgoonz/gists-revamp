@@ -1,21 +1,18 @@
-Facebook for Web Developers
-===========================
+# Facebook for Web Developers
 
 Drive traffic and engagement for your desktop and mobile web apps.
 
 Integrating your website or web app with Facebook makes it more social. From simple features such as the [Like button](https://developers.facebook.com/docs/plugins/like-button) and other [social plugins](https://developers.facebook.com/docs/plugins), to real identity through [Facebook Login](https://developers.facebook.com/docs/facebook-login), the Facebook platform provides the tools you need to get people to your website and keep them coming back.
 
-
-Quickstart: Facebook SDK for JavaScript
-=======================================
+# Quickstart: Facebook SDK for JavaScript
 
 The Facebook SDK for JavaScript provides a rich set of client-side functionality that:
 
--   Enables you to use the [Like Button](https://developers.facebook.com/docs/reference/plugins/like) and other [Social Plugins](https://developers.facebook.com/docs/plugins) on your site.
--   Enables you to use [Facebook Login](https://developers.facebook.com/docs/concepts/login) to lower the barrier for people to sign up on your site.
--   Makes it easy to call into Facebook's [Graph API](https://developers.facebook.com/docs/reference/api).
--   Launch Dialogs that let people perform various actions like sharing stories.
--   Facilitates communication when you're building a [game](https://developers.facebook.com/docs/guides/canvas) or an [app tab](https://developers.facebook.com/docs/appsonfacebook/pagetabs) on Facebook.
+- Enables you to use the [Like Button](https://developers.facebook.com/docs/reference/plugins/like) and other [Social Plugins](https://developers.facebook.com/docs/plugins) on your site.
+- Enables you to use [Facebook Login](https://developers.facebook.com/docs/concepts/login) to lower the barrier for people to sign up on your site.
+- Makes it easy to call into Facebook's [Graph API](https://developers.facebook.com/docs/reference/api).
+- Launch Dialogs that let people perform various actions like sharing stories.
+- Facilitates communication when you're building a [game](https://developers.facebook.com/docs/guides/canvas) or an [app tab](https://developers.facebook.com/docs/appsonfacebook/pagetabs) on Facebook.
 
 This quickstart will show you how to setup the SDK and get it to make some basic Graph API calls. If you don't want to setup just yet, you can use our [JavaScript Test Console](https://developers.facebook.com/tools/console/) to use all of the SDK methods, and explore some examples (you can skip the setup steps, but the rest of this quickstart can be tested in the console).
 
@@ -23,8 +20,7 @@ Supported Browsers
 
 The Facebook SDK for JavaScript supports the latest two versions of the most popular browsers: Chrome, Firefox, Edge, Safari (including iOS), and Internet Explorer (version 11 only).
 
-Basic Setup
------------
+## Basic Setup
 
 The Facebook SDK for JavaScript doesn't have any standalone files that need to be downloaded or installed, instead you simply need to include a short piece of regular JavaScript in your HTML that will asynchronously load the SDK into your pages. The async load means that it does not block loading other elements of your page.
 
@@ -34,23 +30,18 @@ The following snippet of code will give the basic version of the SDK where the o
 
 This code will load and initialize the SDK. You must replace the value in `your-app-id` with the ID of your own Facebook App. You can find this ID using the [App Dashboard](https://developers.facebook.com/apps).
 
-
-
-
-JavaScript SDK - Examples
-=========================
+# JavaScript SDK - Examples
 
 Read our [quickstart](https://developers.facebook.com/docs/javascript/quickstart) guide to learn how to load and initialize the Facebook SDK for JavaScript and our [advanced setup](https://developers.facebook.com/docs/javascript/advanced-setup) guide to customize your implementation. Next try our examples for using the SDK:
 
--   [Trigger a Share dialog](https://developers.facebook.com/docs/javascript/examples#dialogs)
--   [Facebook Login](https://developers.facebook.com/docs/javascript/examples#login)
+- [Trigger a Share dialog](https://developers.facebook.com/docs/javascript/examples#dialogs)
+- [Facebook Login](https://developers.facebook.com/docs/javascript/examples#login)
 
 Supported Browsers
 
 The Facebook SDK for JavaScript supports the latest two versions of the most popular browsers: Chrome, Firefox, Edge, Safari (including iOS), and Internet Explorer (version 11 only).
 
-Trigger a Share dialog
-----------------------
+## Trigger a Share dialog
 
 The [Share Dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog) allows someone using a page to post a link to their timeline, or create an Open Graph story. Dialogs displayed using the JavaScript SDK are automatically formatted for the context in which they are loaded - mobile web, or desktop web.
 
@@ -73,8 +64,7 @@ Read the [`FB.ui` reference doc](https://developers.facebook.com/docs/referenc
 
 [Read `FB.ui` Reference Documentation](https://developers.facebook.com/docs/reference/javascript/FB.ui/)
 
-Facebook Login
---------------
+## Facebook Login
 
 [Facebook Login](https://developers.facebook.com/docs/facebook-login/) allows users to register or sign in to your app with their Facebook identity.
 
@@ -101,29 +91,25 @@ Read the [Login guide](https://developers.facebook.com/docs/facebook-login/logi
 
 [Learn more about Facebook Login](https://developers.facebook.com/docs/facebook-login)
 
-
-
-
 [Web SDKs](https://developers.facebook.com/docs/web)
 
--   [JavaScript SDK](https://developers.facebook.com/docs/javascript)
+- [JavaScript SDK](https://developers.facebook.com/docs/javascript)
 
-    -   [Quickstart](https://developers.facebook.com/docs/javascript/quickstart)
-    -   [Advanced Setup](https://developers.facebook.com/docs/javascript/advanced-setup)
-    -   [Examples](https://developers.facebook.com/docs/javascript/examples)
-    -   [Frameworks](https://developers.facebook.com/docs/javascript/frameworks)
-    -   [Reference](https://developers.facebook.com/docs/javascript/reference)
+  - [Quickstart](https://developers.facebook.com/docs/javascript/quickstart)
+  - [Advanced Setup](https://developers.facebook.com/docs/javascript/advanced-setup)
+  - [Examples](https://developers.facebook.com/docs/javascript/examples)
+  - [Frameworks](https://developers.facebook.com/docs/javascript/frameworks)
+  - [Reference](https://developers.facebook.com/docs/javascript/reference)
 
-Quickstart: Facebook SDK for JavaScript
-=======================================
+# Quickstart: Facebook SDK for JavaScript
 
 The Facebook SDK for JavaScript provides a rich set of client-side functionality that:
 
--   Enables you to use the [Like Button](https://developers.facebook.com/docs/reference/plugins/like) and other [Social Plugins](https://developers.facebook.com/docs/plugins) on your site.
--   Enables you to use [Facebook Login](https://developers.facebook.com/docs/concepts/login) to lower the barrier for people to sign up on your site.
--   Makes it easy to call into Facebook's [Graph API](https://developers.facebook.com/docs/reference/api).
--   Launch Dialogs that let people perform various actions like sharing stories.
--   Facilitates communication when you're building a [game](https://developers.facebook.com/docs/guides/canvas) or an [app tab](https://developers.facebook.com/docs/appsonfacebook/pagetabs) on Facebook.
+- Enables you to use the [Like Button](https://developers.facebook.com/docs/reference/plugins/like) and other [Social Plugins](https://developers.facebook.com/docs/plugins) on your site.
+- Enables you to use [Facebook Login](https://developers.facebook.com/docs/concepts/login) to lower the barrier for people to sign up on your site.
+- Makes it easy to call into Facebook's [Graph API](https://developers.facebook.com/docs/reference/api).
+- Launch Dialogs that let people perform various actions like sharing stories.
+- Facilitates communication when you're building a [game](https://developers.facebook.com/docs/guides/canvas) or an [app tab](https://developers.facebook.com/docs/appsonfacebook/pagetabs) on Facebook.
 
 This quickstart will show you how to setup the SDK and get it to make some basic Graph API calls. If you don't want to setup just yet, you can use our [JavaScript Test Console](https://developers.facebook.com/tools/console/) to use all of the SDK methods, and explore some examples (you can skip the setup steps, but the rest of this quickstart can be tested in the console).
 
@@ -131,8 +117,7 @@ Supported Browsers
 
 The Facebook SDK for JavaScript supports the latest two versions of the most popular browsers: Chrome, Firefox, Edge, Safari (including iOS), and Internet Explorer (version 11 only).
 
-Basic Setup
------------
+## Basic Setup
 
 The Facebook SDK for JavaScript doesn't have any standalone files that need to be downloaded or installed, instead you simply need to include a short piece of regular JavaScript in your HTML that will asynchronously load the SDK into your pages. The async load means that it does not block loading other elements of your page.
 
@@ -152,7 +137,6 @@ The following snippet of code will give the basic version of the SDK where the o
 
 This code will load and initialize the SDK. You must replace the value in `your-app-id` with the ID of your own Facebook App. You can find this ID using the [App Dashboard](https://developers.facebook.com/apps).
 
-Next Steps
-----------
+## Next Steps
 
 [Advanced Setup](https://developers.facebook.com/docs/javascript/advanced-setup)[Usage Examples](https://developers.facebook.com/docs/javascript/examples)

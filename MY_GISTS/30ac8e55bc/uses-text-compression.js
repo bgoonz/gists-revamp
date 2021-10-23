@@ -7,19 +7,20 @@
  * @fileoverview Audit a page to ensure that resources loaded with
  * gzip/br/deflate compression.
  */
-'use strict';
+"use strict";
 
-const ByteEfficiencyAudit = require('./byte-efficiency-audit.js');
-const URL = require('../../lib/url-shim.js');
-const i18n = require('../../lib/i18n/i18n.js');
+const ByteEfficiencyAudit = require("./byte-efficiency-audit.js");
+const URL = require("../../lib/url-shim.js");
+const i18n = require("../../lib/i18n/i18n.js");
 
 const UIStrings = {
   /** Imperative title of a Lighthouse audit that tells the user to enable text compression (like gzip) in order to enhance the performance of a page. This is displayed in a list of audit titles that Lighthouse generates. */
-  title: 'Enable text compression',
+  title: "Enable text compression",
   /** Description of a Lighthouse audit that tells the user *why* their text-based resources should be served with compression (like gzip). This is displayed after a user expands the section to see more. No character length limits. 'Learn More' becomes link text to additional documentation. */
-  description: 'Text-based resources should be served with compression (gzip, deflate or' +
-    ' brotli) to minimize total network bytes.' +
-    ' [Learn more](https://web.dev/uses-text-compression/).',
+  description:
+    "Text-based resources should be served with compression (gzip, deflate or" +
+    " brotli) to minimize total network bytes." +
+    " [Learn more](https://web.dev/uses-text-compression/).",
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
@@ -33,11 +34,16 @@ class ResponsesAreCompressed extends ByteEfficiencyAudit {
    */
   static get meta() {
     return {
-      id: 'uses-text-compression',
+      id: "uses-text-compression",
       title: str_(UIStrings.title),
       description: str_(UIStrings.description),
       scoreDisplayMode: ByteEfficiencyAudit.SCORING_MODES.NUMERIC,
-      requiredArtifacts: ['ResponseCompression', 'GatherContext', 'devtoolsLogs', 'traces'],
+      requiredArtifacts: [
+        "ResponseCompression",
+        "GatherContext",
+        "devtoolsLogs",
+        "traces",
+      ],
     };
   }
 
@@ -50,7 +56,7 @@ class ResponsesAreCompressed extends ByteEfficiencyAudit {
 
     /** @type {Array<LH.Audit.ByteEfficiencyItem>} */
     const items = [];
-    uncompressedResponses.forEach(record => {
+    uncompressedResponses.forEach((record) => {
       // Ignore invalid GZIP size values (undefined, NaN, 0, -n, etc)
       if (!record.gzipSize || record.gzipSize < 0) return;
 
@@ -60,17 +66,19 @@ class ResponsesAreCompressed extends ByteEfficiencyAudit {
 
       // we require at least 10% savings off the original size AND at least 1400 bytes
       // if the savings is smaller than either, we don't care
-      if (1 - gzipSize / originalSize < IGNORE_THRESHOLD_IN_PERCENT ||
-          gzipSavings < IGNORE_THRESHOLD_IN_BYTES ||
-          record.transferSize < gzipSize
+      if (
+        1 - gzipSize / originalSize < IGNORE_THRESHOLD_IN_PERCENT ||
+        gzipSavings < IGNORE_THRESHOLD_IN_BYTES ||
+        record.transferSize < gzipSize
       ) {
         return;
       }
 
       // remove duplicates
       const url = URL.elideDataURI(record.url);
-      const isDuplicate = items.find(item => item.url === url &&
-        item.totalBytes === record.resourceSize);
+      const isDuplicate = items.find(
+        (item) => item.url === url && item.totalBytes === record.resourceSize
+      );
       if (isDuplicate) {
         return;
       }
@@ -84,9 +92,17 @@ class ResponsesAreCompressed extends ByteEfficiencyAudit {
 
     /** @type {LH.Audit.Details.Opportunity['headings']} */
     const headings = [
-      {key: 'url', valueType: 'url', label: str_(i18n.UIStrings.columnURL)},
-      {key: 'totalBytes', valueType: 'bytes', label: str_(i18n.UIStrings.columnTransferSize)},
-      {key: 'wastedBytes', valueType: 'bytes', label: str_(i18n.UIStrings.columnWastedBytes)},
+      { key: "url", valueType: "url", label: str_(i18n.UIStrings.columnURL) },
+      {
+        key: "totalBytes",
+        valueType: "bytes",
+        label: str_(i18n.UIStrings.columnTransferSize),
+      },
+      {
+        key: "wastedBytes",
+        valueType: "bytes",
+        label: str_(i18n.UIStrings.columnWastedBytes),
+      },
     ];
 
     return {

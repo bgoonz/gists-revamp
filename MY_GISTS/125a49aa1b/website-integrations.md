@@ -618,7 +618,6 @@ Custom
 
 ](https://ghost.org/integrations/custom-integrations/)
 
-Frequently asked questions
---------------------------
+## Frequently asked questions
 
 Some more detailed answers to things that come up regularly

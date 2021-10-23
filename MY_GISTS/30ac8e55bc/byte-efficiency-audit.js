@@ -3,15 +3,16 @@
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-'use strict';
+"use strict";
 
-const Audit = require('../audit.js');
-const linearInterpolation = require('../../lib/statistics.js').linearInterpolation;
-const Interactive = require('../../computed/metrics/lantern-interactive.js');
-const i18n = require('../../lib/i18n/i18n.js');
-const NetworkRecords = require('../../computed/network-records.js');
-const LoadSimulator = require('../../computed/load-simulator.js');
-const PageDependencyGraph = require('../../computed/page-dependency-graph.js');
+const Audit = require("../audit.js");
+const linearInterpolation =
+  require("../../lib/statistics.js").linearInterpolation;
+const Interactive = require("../../computed/metrics/lantern-interactive.js");
+const i18n = require("../../lib/i18n/i18n.js");
+const NetworkRecords = require("../../computed/network-records.js");
+const LoadSimulator = require("../../computed/load-simulator.js");
+const PageDependencyGraph = require("../../computed/page-dependency-graph.js");
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, {});
 
@@ -49,11 +50,23 @@ class UnusedBytes extends Audit {
     } else if (wastedMs < WASTED_MS_FOR_AVERAGE) {
       return linearInterpolation(0, 1, WASTED_MS_FOR_AVERAGE, 0.75, wastedMs);
     } else if (wastedMs < WASTED_MS_FOR_POOR) {
-      return linearInterpolation(WASTED_MS_FOR_AVERAGE, 0.75, WASTED_MS_FOR_POOR, 0.5, wastedMs);
+      return linearInterpolation(
+        WASTED_MS_FOR_AVERAGE,
+        0.75,
+        WASTED_MS_FOR_POOR,
+        0.5,
+        wastedMs
+      );
     } else {
       return Math.max(
         0,
-        linearInterpolation(WASTED_MS_FOR_POOR, 0.5, WASTED_MS_FOR_SCORE_OF_ZERO, 0, wastedMs)
+        linearInterpolation(
+          WASTED_MS_FOR_POOR,
+          0.5,
+          WASTED_MS_FOR_SCORE_OF_ZERO,
+          0,
+          wastedMs
+        )
       );
     }
   }
@@ -74,11 +87,11 @@ class UnusedBytes extends Audit {
       // See https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer for specific CSS/Script examples
       // See https://discuss.httparchive.org/t/file-size-and-compression-savings/145 for fallback multipliers
       switch (resourceType) {
-        case 'Stylesheet':
+        case "Stylesheet":
           // Stylesheets tend to compress extremely well.
           return Math.round(totalBytes * 0.2);
-        case 'Script':
-        case 'Document':
+        case "Script":
+        case "Document":
           // Scripts and HTML compress fairly well too.
           return Math.round(totalBytes * 0.33);
         default:
@@ -94,8 +107,10 @@ class UnusedBytes extends Audit {
       const transferSize = networkRecord.transferSize || 0;
       const resourceSize = networkRecord.resourceSize || 0;
       // Get the compression ratio, if it's an invalid number, assume no compression.
-      const compressionRatio = Number.isFinite(resourceSize) && resourceSize > 0 ?
-        (transferSize / resourceSize) : 1;
+      const compressionRatio =
+        Number.isFinite(resourceSize) && resourceSize > 0
+          ? transferSize / resourceSize
+          : 1;
       return Math.round(totalBytes * compressionRatio);
     }
   }
@@ -109,18 +124,20 @@ class UnusedBytes extends Audit {
     const gatherContext = artifacts.GatherContext;
     const trace = artifacts.traces[Audit.DEFAULT_PASS];
     const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
-    const settings = context && context.settings || {};
+    const settings = (context && context.settings) || {};
     const simulatorOptions = {
       devtoolsLog,
       settings,
     };
     const networkRecords = await NetworkRecords.request(devtoolsLog, context);
-    const hasContentfulRecords = networkRecords.some(record => record.transferSize);
+    const hasContentfulRecords = networkRecords.some(
+      (record) => record.transferSize
+    );
 
     // Requesting load simulator requires non-empty network records.
     // Timespans are not guaranteed to have any network activity.
     // There are no bytes to be saved if no bytes were downloaded, so mark N/A if empty.
-    if (!hasContentfulRecords && gatherContext.gatherMode === 'timespan') {
+    if (!hasContentfulRecords && gatherContext.gatherMode === "timespan") {
       return {
         score: 1,
         notApplicable: true,
@@ -130,9 +147,9 @@ class UnusedBytes extends Audit {
     const [result, graph, simulator] = await Promise.all([
       this.audit_(artifacts, networkRecords, context),
       // Page dependency graph is only used in navigation mode.
-      gatherContext.gatherMode === 'navigation' ?
-        PageDependencyGraph.request({trace, devtoolsLog}, context) :
-        null,
+      gatherContext.gatherMode === "navigation"
+        ? PageDependencyGraph.request({ trace, devtoolsLog }, context)
+        : null,
       LoadSimulator.request(simulatorOptions, context),
     ]);
 
@@ -152,24 +169,32 @@ class UnusedBytes extends Audit {
    * @return {number}
    */
   static computeWasteWithTTIGraph(results, graph, simulator, options) {
-    options = Object.assign({includeLoad: true, label: this.meta.id}, options);
+    options = Object.assign(
+      { includeLoad: true, label: this.meta.id },
+      options
+    );
     const beforeLabel = `${options.label}-before`;
     const afterLabel = `${options.label}-after`;
 
-    const simulationBeforeChanges = simulator.simulate(graph, {label: beforeLabel});
+    const simulationBeforeChanges = simulator.simulate(graph, {
+      label: beforeLabel,
+    });
 
     const wastedBytesByUrl = options.providedWastedBytesByUrl || new Map();
     if (!options.providedWastedBytesByUrl) {
-      for (const {url, wastedBytes} of results) {
-        wastedBytesByUrl.set(url, (wastedBytesByUrl.get(url) || 0) + wastedBytes);
+      for (const { url, wastedBytes } of results) {
+        wastedBytesByUrl.set(
+          url,
+          (wastedBytesByUrl.get(url) || 0) + wastedBytes
+        );
       }
     }
 
     // Update all the transfer sizes to reflect implementing our recommendations
     /** @type {Map<string, number>} */
     const originalTransferSizes = new Map();
-    graph.traverse(node => {
-      if (node.type !== 'network') return;
+    graph.traverse((node) => {
+      if (node.type !== "network") return;
       const wastedBytes = wastedBytesByUrl.get(node.record.url);
       if (!wastedBytes) return;
 
@@ -179,18 +204,24 @@ class UnusedBytes extends Audit {
       node.record.transferSize = Math.max(original - wastedBytes, 0);
     });
 
-    const simulationAfterChanges = simulator.simulate(graph, {label: afterLabel});
+    const simulationAfterChanges = simulator.simulate(graph, {
+      label: afterLabel,
+    });
 
     // Restore the original transfer size after we've done our simulation
-    graph.traverse(node => {
-      if (node.type !== 'network') return;
-      const originalTransferSize = originalTransferSizes.get(node.record.requestId);
+    graph.traverse((node) => {
+      if (node.type !== "network") return;
+      const originalTransferSize = originalTransferSizes.get(
+        node.record.requestId
+      );
       if (originalTransferSize === undefined) return;
       node.record.transferSize = originalTransferSize;
     });
 
-    const savingsOnOverallLoad = simulationBeforeChanges.timeInMs - simulationAfterChanges.timeInMs;
-    const savingsOnTTI = Interactive.getLastLongTaskEndTime(simulationBeforeChanges.nodeTimings) -
+    const savingsOnOverallLoad =
+      simulationBeforeChanges.timeInMs - simulationAfterChanges.timeInMs;
+    const savingsOnTTI =
+      Interactive.getLastLongTaskEndTime(simulationBeforeChanges.nodeTimings) -
       Interactive.getLastLongTaskEndTime(simulationAfterChanges.nodeTimings);
 
     let savings = savingsOnTTI;
@@ -207,7 +238,7 @@ class UnusedBytes extends Audit {
   static computeWastedMsWithThroughput(wastedBytes, simulator) {
     const bitsPerSecond = simulator.getOptions().throughput;
     const wastedBits = wastedBytes * 8;
-    const wastedMs = wastedBits / bitsPerSecond * 1000;
+    const wastedMs = (wastedBits / bitsPerSecond) * 1000;
     return wastedMs;
   }
 
@@ -219,13 +250,21 @@ class UnusedBytes extends Audit {
    * @return {LH.Audit.Product}
    */
   static createAuditProduct(result, graph, simulator, gatherContext) {
-    const results = result.items.sort((itemA, itemB) => itemB.wastedBytes - itemA.wastedBytes);
+    const results = result.items.sort(
+      (itemA, itemB) => itemB.wastedBytes - itemA.wastedBytes
+    );
 
-    const wastedBytes = results.reduce((sum, item) => sum + item.wastedBytes, 0);
+    const wastedBytes = results.reduce(
+      (sum, item) => sum + item.wastedBytes,
+      0
+    );
 
     let wastedMs;
-    if (gatherContext.gatherMode === 'navigation') {
-      if (!graph) throw Error('Page dependency graph should always be computed in navigation mode');
+    if (gatherContext.gatherMode === "navigation") {
+      if (!graph)
+        throw Error(
+          "Page dependency graph should always be computed in navigation mode"
+        );
       wastedMs = this.computeWasteWithTTIGraph(results, graph, simulator, {
         providedWastedBytesByUrl: result.wastedBytesByUrl,
       });
@@ -233,19 +272,26 @@ class UnusedBytes extends Audit {
       wastedMs = this.computeWastedMsWithThroughput(wastedBytes, simulator);
     }
 
-    let displayValue = result.displayValue || '';
-    if (typeof result.displayValue === 'undefined' && wastedBytes) {
-      displayValue = str_(i18n.UIStrings.displayValueByteSavings, {wastedBytes});
+    let displayValue = result.displayValue || "";
+    if (typeof result.displayValue === "undefined" && wastedBytes) {
+      displayValue = str_(i18n.UIStrings.displayValueByteSavings, {
+        wastedBytes,
+      });
     }
 
-    const details = Audit.makeOpportunityDetails(result.headings, results, wastedMs, wastedBytes);
+    const details = Audit.makeOpportunityDetails(
+      result.headings,
+      results,
+      wastedMs,
+      wastedBytes
+    );
 
     return {
       explanation: result.explanation,
       warnings: result.warnings,
       displayValue,
       numericValue: wastedMs,
-      numericUnit: 'millisecond',
+      numericUnit: "millisecond",
       score: UnusedBytes.scoreForWastedMs(wastedMs),
       details,
     };
@@ -260,7 +306,7 @@ class UnusedBytes extends Audit {
    * @return {ByteEfficiencyProduct|Promise<ByteEfficiencyProduct>}
    */
   static audit_(artifacts, networkRecords, context) {
-    throw new Error('audit_ unimplemented');
+    throw new Error("audit_ unimplemented");
   }
 
   /* eslint-enable no-unused-vars */

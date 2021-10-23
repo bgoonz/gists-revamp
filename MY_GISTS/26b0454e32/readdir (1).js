@@ -1,6 +1,6 @@
-var fs = require('fs');
+var fs = require("fs");
 
-fs.readdir(__dirname, function(err, files) {
-    if (err) throw err;
-    console.log(files);
+fs.readdir(__dirname, function (err, files) {
+  if (err) throw err;
+  console.log(files);
 });

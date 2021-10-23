@@ -1,10 +1,10 @@
 var Bird = {
-  def: function(n, m, s) {
+  def: function (n, m, s) {
     if (m) this.e(n.prototype, m);
     if (s) this.e(n, s);
     return n;
   },
-  e: function(o, p) {
+  e: function (o, p) {
     for (prop in p) o[prop] = p[prop];
     return o;
   },
@@ -16,39 +16,46 @@ var Bird = {
     [0, 2, -6],
     [0, 2, 6],
     [2, 0, 0],
-    [-3, 0, 0]
+    [-3, 0, 0],
   ],
   beak: [
     [0, 1, 2],
     [4, 7, 6],
-    [5, 6, 7]
+    [5, 6, 7],
   ],
   L: null,
   V: {
     x: 0,
     y: 0,
-    z: 5000
-  }
-}
+    z: 5000,
+  },
+};
 Bird.obj = Bird.def(
-  function() {
-    this.vtr = new Bird.Vtr(),
-      this.accel, this.width = 600, this.height = 600, this.depth = 300, this.ept, this.area = 200,
-      this.msp = 4, this.mfrc = 0.1, this.coll = false;
+  function () {
+    (this.vtr = new Bird.Vtr()),
+      this.accel,
+      (this.width = 600),
+      (this.height = 600),
+      (this.depth = 300),
+      this.ept,
+      (this.area = 200),
+      (this.msp = 4),
+      (this.mfrc = 0.1),
+      (this.coll = false);
     this.pos = new Bird.Vtr();
     this.vel = new Bird.Vtr();
     this.accel = new Bird.Vtr();
-  }, {
-
-    _coll: function(value) {
+  },
+  {
+    _coll: function (value) {
       this.coll = value;
     },
-    param: function(w, h, dth) {
+    param: function (w, h, dth) {
       this.width = w;
       this.height = h;
       this.depth = dth;
     },
-    run: function(b) {
+    run: function (b) {
       if (this.coll) {
         this.vtr.set(-this.width, this.pos.y, this.pos.z);
         this.vtr = this.detect(this.vtr);
@@ -80,7 +87,7 @@ Bird.obj = Bird.def(
       }
       this.move();
     },
-    fly: function(b) {
+    fly: function (b) {
       if (this.ept) {
         this.accel.add(this.meet(this.ept, 0.005));
       }
@@ -88,7 +95,7 @@ Bird.obj = Bird.def(
       this.accel.add(this.togeth(b));
       this.accel.add(this.apart(b));
     },
-    move: function() {
+    move: function () {
       this.vel.add(this.accel);
       var l = this.vel.len();
       if (l > this.msp) {
@@ -97,29 +104,31 @@ Bird.obj = Bird.def(
       this.pos.add(this.vel);
       this.accel.set(0, 0, 0);
     },
-    detect: function(pt) {
+    detect: function (pt) {
       var dir = new Bird.Vtr();
       dir.copy(this.pos);
       dir.sub(pt);
       dir.scale(1 / this.pos.dsq(pt));
       return dir;
     },
-    rep: function(pt) {
-      var dist = this.pos.dst(pt);if (dist < 150) {
+    rep: function (pt) {
+      var dist = this.pos.dst(pt);
+      if (dist < 150) {
         var dir = new Bird.Vtr();
         dir.subv(this.pos, pt);
         dir.scale(0.5 / dist);
         this.accel.add(dir);
       }
     },
-    meet: function(pt, amt) {
+    meet: function (pt, amt) {
       var dir = new Bird.Vtr();
       dir.subv(pt, this.pos);
       dir.scale(amt);
       return dir;
     },
-    line: function(b) {
-      var _b, totvel = new Bird.Vtr(),
+    line: function (b) {
+      var _b,
+        totvel = new Bird.Vtr(),
         cnt = 0;
       for (var i = 0, il = b.length; i < il; i++) {
         if (Math.random() > 0.6) continue;
@@ -134,13 +143,14 @@ Bird.obj = Bird.def(
         totvel.lowscale(cnt);
         var v = totvel.len();
         if (v > this.mfrc) {
-          totvel.lowscale( v / this.mfrc);
+          totvel.lowscale(v / this.mfrc);
         }
       }
       return totvel;
     },
-    togeth: function(b) {
-      var _b, dist,
+    togeth: function (b) {
+      var _b,
+        dist,
         plus = new Bird.Vtr(),
         dir = new Bird.Vtr(),
         cnt = 0;
@@ -163,8 +173,9 @@ Bird.obj = Bird.def(
       }
       return dir;
     },
-    apart: function(b) {
-      var _b, dist,
+    apart: function (b) {
+      var _b,
+        dist,
         plus = new Bird.Vtr(),
         rep = new Bird.Vtr();
       for (var i = 0, il = b.length; i < il; i++) {
@@ -179,19 +190,20 @@ Bird.obj = Bird.def(
         }
       }
       return plus;
-    }
+    },
   }
 );
 Bird.Build = Bird.def(
-  function() {
-    this.base = 0, this.left = 1, this.right = 2;
+  function () {
+    (this.base = 0), (this.left = 1), (this.right = 2);
     this.pos = new Bird.Vtr();
     this.rot = new Bird.Vtr();
     this.bbase = this.tri(this.base);
     this.leftwing = this.tri(this.left);
     this.rightwing = this.tri(this.right);
-  }, {
-    matrix: function() {
+  },
+  {
+    matrix: function () {
       this.bbase.vtx();
       this.leftwing.vtx();
       this.rightwing.vtx();
@@ -207,12 +219,12 @@ Bird.Build = Bird.def(
       this.leftwing.trans(this.pos);
       this.rightwing.trans(this.pos);
     },
-    draw: function() {
+    draw: function () {
       this.bbase.draw();
       this.leftwing.draw();
       this.rightwing.draw();
     },
-    tri: function(i) {
+    tri: function (i) {
       var v1, v2, v3, v;
       v = Bird.v[Bird.beak[i][0]];
       v1 = new Bird.Vtr(v[0], v[1], v[2]);
@@ -222,28 +234,29 @@ Bird.Build = Bird.def(
       v3 = new Bird.Vtr(v[0], v[1], v[2]);
       return new Bird.Tri(v1, v2, v3);
     },
-    wang: function(y) {
+    wang: function (y) {
       var v1 = Bird.v[Bird.beak[1][1]];
       this.rot.x = Math.atan2(y, v1[0]);
     },
-    zpos: function() {
+    zpos: function () {
       var z1 = this.bbase._z();
       var z2 = this.leftwing._z();
       var z3 = this.rightwing._z();
       return Math.min(z1, z2, z3);
     },
-    wing: function(y) {
+    wing: function (y) {
       this.wY = y;
-    }
+    },
   }
 );
 Bird.Tri = Bird.def(
-  function(p1, p2, p3) {
+  function (p1, p2, p3) {
     this.mainv = [p1.copy(), p2.copy(), p3.copy()];
     this.Vtxs = [p1.copy(), p2.copy(), p3.copy()];
     this.bv = new Bird.Vtr(0.5, 0.5, 0.8);
-  }, {
-    draw: function() {
+  },
+  {
+    draw: function () {
       var v1 = [this.Vtxs[0].Pt().x, this.Vtxs[0].Pt().y];
       var v2 = [this.Vtxs[1].Pt().x, this.Vtxs[1].Pt().y];
       var v3 = [this.Vtxs[2].Pt().x, this.Vtxs[2].Pt().y];
@@ -260,39 +273,31 @@ Bird.Tri = Bird.def(
       Bird.$.fill();
       Bird.$.stroke();
     },
-    rotX: function(a) {
+    rotX: function (a) {
       var ang = a;
-      this.Vtxs.forEach(
-        function(e, i, a) {
-          Bird.Matrix.rotX(e, ang);
-        }
-      );
+      this.Vtxs.forEach(function (e, i, a) {
+        Bird.Matrix.rotX(e, ang);
+      });
     },
-    rotY: function(a) {
+    rotY: function (a) {
       var ang = a;
-      this.Vtxs.forEach(
-        function(e, i, a) {
-          Bird.Matrix.rotY(e, ang);
-        }
-      );
+      this.Vtxs.forEach(function (e, i, a) {
+        Bird.Matrix.rotY(e, ang);
+      });
     },
-    rotZ: function(a) {
+    rotZ: function (a) {
       var ang = a;
-      this.Vtxs.forEach(
-        function(e, i, a) {
-          Bird.Matrix.rotZ(e, ang);
-        }
-      );
+      this.Vtxs.forEach(function (e, i, a) {
+        Bird.Matrix.rotZ(e, ang);
+      });
     },
-    trans: function(s) {
+    trans: function (s) {
       var trans = s;
-      this.Vtxs.forEach(
-        function(e, i, a) {
-          Bird.Matrix.trans(e, [trans.x, trans.y, trans.z]);
-        }
-      );
+      this.Vtxs.forEach(function (e, i, a) {
+        Bird.Matrix.trans(e, [trans.x, trans.y, trans.z]);
+      });
     },
-    vtx: function(idx) {
+    vtx: function (idx) {
       for (var i = 0; i < 3; i++) {
         var x = this.mainv[i].x;
         var y = this.mainv[i].y;
@@ -302,16 +307,16 @@ Bird.Tri = Bird.def(
         this.Vtxs[i].z = z;
       }
     },
-    wingY: function(y) {
+    wingY: function (y) {
       this.Vtxs[0].y = y;
     },
-    _z: function() {
+    _z: function () {
       return Math.min(this.Vtxs[0].z, this.Vtxs[1].z, this.Vtxs[2].z);
     },
-    col: function() {
+    col: function () {
       var e = 0.3,
-          f = 0.3,
-          g = 0.7;
+        f = 0.3,
+        g = 0.7;
       var bw = new Bird.Vtr(1, 1, 1);
       var n = this.norm();
       var x = this.Vtxs[0].copy();
@@ -344,9 +349,9 @@ Bird.Tri = Bird.def(
       var _r = Math.floor(x1.x * 255);
       var _g = Math.floor(x1.y * 255);
       var _b = Math.floor(x1.z * 255);
-      return 'rgb(' + _r + ',' + _g + ',' + _b + ')';
+      return "rgb(" + _r + "," + _g + "," + _b + ")";
     },
-    norm: function() {
+    norm: function () {
       var v1 = this.Vtxs[0];
       var v2 = this.Vtxs[1];
       var v3 = this.Vtxs[2];
@@ -355,17 +360,18 @@ Bird.Tri = Bird.def(
       v3.cross(v1);
       v3.level();
       return v3;
-    }
+    },
   }
 );
 Bird.Vtr = Bird.def(
-  function(x, y, z) {
+  function (x, y, z) {
     this.x = x || 0;
     this.y = y || 0;
     this.z = z || 0;
     this.fl = 1000;
-  }, {
-    Pt: function() {
+  },
+  {
+    Pt: function () {
       var zsc = this.fl + this.z;
       var scale = this.fl / zsc;
       var x = this.x * scale;
@@ -373,45 +379,43 @@ Bird.Vtr = Bird.def(
       return {
         x: x,
         y: y,
-        scale: scale
+        scale: scale,
       };
     },
-    set: function(x, y, z) {
+    set: function (x, y, z) {
       this.x = x;
       this.y = y;
       this.z = z;
       return this;
     },
-    len: function() {
+    len: function () {
       return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
     },
-    add: function(v, w) {
-
+    add: function (v, w) {
       this.x += v.x;
       this.y += v.y;
       this.z += v.z;
       return this;
     },
-    sub: function(v, w) {
-
+    sub: function (v, w) {
       this.x -= v.x;
       this.y -= v.y;
       this.z -= v.z;
       return this;
     },
-    subv: function(a, b) {
+    subv: function (a, b) {
       this.x = a.x - b.x;
       this.y = a.y - b.y;
       this.z = a.z - b.z;
       return this;
     },
-    scale: function(upd) {
+    scale: function (upd) {
       this.x *= upd;
       this.y *= upd;
       this.z *= upd;
       return this;
     },
-    lowscale: function(upd) {
+    lowscale: function (upd) {
       if (upd !== 0) {
         var inv = 1 / upd;
         this.x *= inv;
@@ -424,22 +428,22 @@ Bird.Vtr = Bird.def(
       }
       return this;
     },
-    copy: function(v) {
+    copy: function (v) {
       this.x = v.x;
       this.y = v.y;
       this.z = v.z;
       return this;
     },
-    dst: function(v) {
+    dst: function (v) {
       return Math.sqrt(this.dsq(v));
     },
-    dsq: function(v) {
+    dsq: function (v) {
       var dx = this.x - v.x;
       var dy = this.y - v.y;
       var dz = this.z - v.z;
       return dx * dx + dy * dy + dz * dz;
     },
-    cross: function(v, w) {
+    cross: function (v, w) {
       var x = this.x,
         y = this.y,
         z = this.z;
@@ -448,19 +452,19 @@ Bird.Vtr = Bird.def(
       this.z = x * v.y - y * v.x;
       return this;
     },
-    p: function(v) {
+    p: function (v) {
       return this.x * v.x + this.y * v.y + this.z * v.z;
     },
-    level: function() {
+    level: function () {
       return this.lowscale(this.len());
     },
-    copy: function() {
+    copy: function () {
       return new Bird.Vtr(this.x, this.y, this.z);
-    }
+    },
   }
 );
 Bird.Matrix = {
-  rotX: function(pt, angX) {
+  rotX: function (pt, angX) {
     var pos = [pt.x, pt.y, pt.z];
     var asin = Math.sin(angX);
     var acos = Math.cos(angX);
@@ -473,7 +477,7 @@ Bird.Matrix = {
     pt.y = calc[1];
     pt.z = calc[2];
   },
-  rotY: function(pt, angY) {
+  rotY: function (pt, angY) {
     var pos = [pt.x, pt.y, pt.z];
     var asin = Math.sin(angY);
     var acos = Math.cos(angY);
@@ -486,7 +490,7 @@ Bird.Matrix = {
     pt.y = calc[1];
     pt.z = calc[2];
   },
-  rotZ: function(pt, angZ) {
+  rotZ: function (pt, angZ) {
     var pos = [pt.x, pt.y, pt.z];
     var asin = Math.sin(angZ);
     var acos = Math.cos(angZ);
@@ -499,31 +503,31 @@ Bird.Matrix = {
     pt.y = calc[1];
     pt.z = calc[2];
   },
-  trans: function(pt, s) {
+  trans: function (pt, s) {
     pt.x += s[0];
     pt.y += s[1];
     pt.z += s[2];
   },
-  scale: function(pt, s) {
+  scale: function (pt, s) {
     pt.x *= s[0];
     pt.y *= s[1];
     pt.z *= s[2];
   },
-  mm: function(m1, m2) {
+  mm: function (m1, m2) {
     var calc = [];
     calc[0] = m1[0] * m2[0][0] + m1[1] * m2[1][0] + m1[2] * m2[2][0];
     calc[1] = m1[0] * m2[0][1] + m1[1] * m2[1][1] + m1[2] * m2[2][1];
     calc[2] = m1[0] * m2[0][2] + m1[1] * m2[1][2] + m1[2] * m2[2][2];
     return calc;
-  }
-}
+  },
+};
 
 function draw() {
-  var c = document.getElementById('canv');
+  var c = document.getElementById("canv");
   Bird.$ = c.getContext("2d");
   Bird.canv = {
-    w: c.width = window.innerWidth,
-    h: c.height = window.innerHeight
+    w: (c.width = window.innerWidth),
+    h: (c.height = window.innerHeight),
   };
   Bird.L = new Bird.Vtr(0, 2000, 5000);
   Bird.V = new Bird.Vtr(0, 0, 5000);
@@ -554,10 +558,15 @@ function draw() {
   function draw() {
     Bird.$.setTransform(1, 0, 0, 1, 0, 0);
     Bird.$.translate(Bird.canv.w / 2, Bird.canv.h / 2);
-    Bird.$.clearRect(-Bird.canv.w / 2, -Bird.canv.h / 2, Bird.canv.w, Bird.canv.h);
+    Bird.$.clearRect(
+      -Bird.canv.w / 2,
+      -Bird.canv.h / 2,
+      Bird.canv.w,
+      Bird.canv.h
+    );
     Bird.$.scale(1, -1);
     var arr = [];
-    b.forEach(function(e, i, a) {
+    b.forEach(function (e, i, a) {
       var _b = b[i];
       _b.run(b);
       var bird = birds[i];
@@ -568,23 +577,23 @@ function draw() {
       bird.matrix();
       arr.push({
         z: bird.zpos(),
-        o: bird
+        o: bird,
       });
     });
-    arr.sort(function(a, b) {
+    arr.sort(function (a, b) {
       return a.z < b.z ? -1 : a.z > b.z ? 1 : 0;
     });
-    arr.forEach(function(e, i, a) {
+    arr.forEach(function (e, i, a) {
       e.o.draw();
     });
   }
-};
+}
 draw();
-window.addEventListener('resize',function(){
-   if(c.width!==window.innerWidth && c.height!==window.innerHeight){
-     Bird.canv = {
-      w: c.width = window.innerWidth,
-      h: c.height = window.innerHeight
+window.addEventListener("resize", function () {
+  if (c.width !== window.innerWidth && c.height !== window.innerHeight) {
+    Bird.canv = {
+      w: (c.width = window.innerWidth),
+      h: (c.height = window.innerHeight),
     };
-   }
+  }
 });

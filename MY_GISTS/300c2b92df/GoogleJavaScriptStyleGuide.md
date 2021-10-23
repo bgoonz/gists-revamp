@@ -1,5 +1,4 @@
-Google JavaScript Style Guide
-=============================
+# Google JavaScript Style Guide
 
 ### Table of Contents
 
@@ -135,10 +134,9 @@ Google JavaScript Style Guide
 
 [9.4 Exceptions for legacy platforms](https://google.github.io/styleguide/jsguide.html#appendices-legacy-exceptions)
 
- |
+|
 
-1 Introduction[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#introduction)
-----------------------------------------------------------------------------------------------------------------------------------------
+## 1 Introduction[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#introduction)
 
 This document serves as the **complete** definition of Google's coding standards for source code in the JavaScript programming language. A JavaScript source file is described as being *in Google Style* if and only if it adheres to the rules herein.
 
@@ -158,8 +156,7 @@ Other terminology notes will appear occasionally throughout the document.
 
 Example code in this document is **non-normative**. That is, while the examples are in Google Style, they may not illustrate the *only* stylish way to represent the code. Optional formatting choices made in examples must not be enforced as rules.
 
-2 Source file basics[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#source-file-basics)
-----------------------------------------------------------------------------------------------------------------------------------------------------
+## 2 Source file basics[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#source-file-basics)
 
 ### 2.1 File name[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#file-name)
 
@@ -189,14 +186,13 @@ For the remaining non-ASCII characters, either the actual Unicode character (e.g
 
 Tip: In the Unicode escape case, and occasionally even when actual Unicode characters are used, an explanatory comment can be very helpful.
 
-/* Best: perfectly clear even without a comment. */  const units =  'μs';  /* Allowed: but unncessary as μ is a printable character. */  const units =  '\u03bcs';  // 'μs'  /* Good: use escapes for non-printable characters with a comment for clarity. */  return  '\ufeff'  + content;  // Prepend a byte order mark.
+/_ Best: perfectly clear even without a comment. _/ const units = 'μs'; /_ Allowed: but unncessary as μ is a printable character. _/ const units = '\u03bcs'; // 'μs' /_ Good: use escapes for non-printable characters with a comment for clarity. _/ return '\ufeff' + content; // Prepend a byte order mark.
 
-/* Poor: the reader has no idea what character this is. */  const units =  '\u03bcs';
+/_ Poor: the reader has no idea what character this is. _/ const units = '\u03bcs';
 
 Tip: Never make your code less readable simply out of fear that some programs might not handle non-ASCII characters properly. If that happens, those programs are **broken** and they must be **fixed**.
 
-3 Source file structure[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#source-file-structure)
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+## 3 Source file structure[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#source-file-structure)
 
 All new source files should either be a `goog.module` file (a file containing a `goog.module` call) or an ECMAScript (ES) module (uses `import` and `export` statements). Files consist of the following, **in order**:
 
@@ -233,7 +229,7 @@ Module namespaces may never be named as a *direct* child of another module's n
 
 Disallowed:
 
-goog.module('foo.bar');  // 'foo.bar.qux' would be fine, though goog.module('foo.bar.baz');
+goog.module('foo.bar'); // 'foo.bar.qux' would be fine, though goog.module('foo.bar.baz');
 
 The directory hierarchy reflects the namespace hierarchy, so that deeper-nested children are subdirectories of higher-level parent directories. Note that this implies that owners of "parent" namespace groups are necessarily aware of all child namespaces, since they exist in the same directory.
 
@@ -253,13 +249,13 @@ Classes, enums, functions, constants, and other symbols are exported using the 
 
 Examples:
 
-const  /** !Array<number> */ exportedArray =  [1,  2,  3];  const  /** !Array<number> */ moduleLocalArray =  [4,  5,  6];  /** @return {number} */  function moduleLocalFunction()  {  return moduleLocalArray.length;  }  /** @return {number} */  function exportedFunction()  {  return moduleLocalFunction()  *  2;  } exports =  {exportedArray, exportedFunction};
+const /** !Array<number> \*/ exportedArray = [1, 2, 3]; const /** !Array<number> _/ moduleLocalArray = [4, 5, 6]; /\*\* @return {number} _/ function moduleLocalFunction() { return moduleLocalArray.length; } /\*_ @return {number} _/ function exportedFunction() { return moduleLocalFunction() \* 2; } exports = {exportedArray, exportedFunction};
 
-/** @const {number} */ exports.CONSTANT_ONE =  1;  /** @const {string} */ exports.CONSTANT_TWO =  'Another constant';
+/** @const {number} \*/ exports.CONSTANT_ONE = 1; /** @const {string} \*/ exports.CONSTANT_TWO = 'Another constant';
 
 Do not annotate the `exports` object as `@const` as it is already treated as a constant by the compiler.
 
-/** @const */ exports =  {exportedFunction};
+/\*_ @const _/ exports = {exportedFunction};
 
 ### 3.4 ES modules[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#file-es-modules)
 
@@ -271,21 +267,21 @@ Import statements must not be line wrapped and are therefore an exception to the
 
 ES module files must use the `import` statement to import other ES module files. Do not `goog.require` another ES module.
 
-import  './sideeffects.js';  import  * as goog from  '../closure/goog/goog.js';  import  * as parent from  '../parent.js';  import  {name}  from  './sibling.js';
+import './sideeffects.js'; import _ as goog from '../closure/goog/goog.js'; import _ as parent from '../parent.js'; import {name} from './sibling.js';
 
 ###### 3.4.1.1.1 File extensions in import paths
 
 The `.js` file extension is not optional in import paths and must always be included.
 
-import  '../directory/file';
+import '../directory/file';
 
-import  '../directory/file.js';
+import '../directory/file.js';
 
 ##### 3.4.1.2 Importing the same file multiple times
 
 Do not import the same file multiple times. This can make it hard to determine the aggregate imports of a file.
 
-// Imports have the same path, but since it doesn't align it can be hard to see.  import  {short}  from  './long/path/to/a/file.js';  import  {aLongNameThatBreaksAlignment}  from  './long/path/to/a/file.js';
+// Imports have the same path, but since it doesn't align it can be hard to see. import {short} from './long/path/to/a/file.js'; import {aLongNameThatBreaksAlignment} from './long/path/to/a/file.js';
 
 ##### 3.4.1.3 Naming imports
 
@@ -293,15 +289,15 @@ Do not import the same file multiple times. This can make it hard to determine t
 
 Module import names (`import * as name`) are `lowerCamelCase` names that are derived from the imported file name.
 
-import  * as fileOne from  '../file-one.js';  import  * as fileTwo from  '../file_two.js';  import  * as fileThree from  '../filethree.js';
+import _ as fileOne from '../file-one.js'; import _ as fileTwo from '../file_two.js'; import \* as fileThree from '../filethree.js';
 
-import  * as libString from  './lib/string.js';  import  * as math from  './math/math.js';  import  * as vectorMath from  './vector/math.js';
+import _ as libString from './lib/string.js'; import _ as math from './math/math.js'; import \* as vectorMath from './vector/math.js';
 
 ###### 3.4.1.3.2 Naming default imports
 
 Default import names are derived from the imported file name and follow the rules in [6.2 Rules by identifier type](https://google.github.io/styleguide/jsguide.html#naming-rules-by-identifier-type).
 
-import  MyClass  from  '../my-class.js';  import myFunction from  '../my_function.js';  import SOME_CONSTANT from  '../someconstant.js';
+import MyClass from '../my-class.js'; import myFunction from '../my_function.js'; import SOME_CONSTANT from '../someconstant.js';
 
 Note: In general this should not happen as default exports are banned by this style guide, see [3.4.2.1 Named vs default exports](https://google.github.io/styleguide/jsguide.html#named-vs-default-exports). Default imports are only used to import modules that do not conform to this style guide.
 
@@ -309,11 +305,11 @@ Note: In general this should not happen as default exports are banned by this st
 
 In general symbols imported via the named import (`import {name}`) should keep the same name. Avoid aliasing imports (`import {SomeThing as SomeOtherThing}`). Prefer fixing name collisions by using a module import (`import *`) or renaming the exports themselves.
 
-import  * as bigAnimals from  './biganimals.js';  import  * as domesticatedAnimals from  './domesticatedanimals.js';  new bigAnimals.Cat();  new domesticatedAnimals.Cat();
+import _ as bigAnimals from './biganimals.js'; import _ as domesticatedAnimals from './domesticatedanimals.js'; new bigAnimals.Cat(); new domesticatedAnimals.Cat();
 
 If renaming a named import is needed then use components of the imported module's file name or path in the resulting alias.
 
-import  {Cat as BigCat}  from  './biganimals.js';  import  {Cat as DomesticatedCat}  from  './domesticatedanimals.js';  new  BigCat();  new  DomesticatedCat();
+import {Cat as BigCat} from './biganimals.js'; import {Cat as DomesticatedCat} from './domesticatedanimals.js'; new BigCat(); new DomesticatedCat();
 
 #### 3.4.2 Exports[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#es-module-exports)
 
@@ -325,21 +321,21 @@ Use named exports in all code. You can apply the `export` keyword to a declara
 
 Do not use default exports. Importing modules must give a name to these values, which can lead to inconsistencies in naming across modules.
 
-// Do not use default exports:  export  default  class  Foo  {  ...  }  // BAD!
+// Do not use default exports: export default class Foo { ... } // BAD!
 
-// Use named exports:  export  class  Foo  {  ...  }
+// Use named exports: export class Foo { ... }
 
-// Alternate style named exports:  class  Foo  {  ...  }  export  {Foo};
+// Alternate style named exports: class Foo { ... } export {Foo};
 
 ##### 3.4.2.2 Exporting static container classes and objects
 
 Do not export container classes or objects with static methods or properties for the sake of namespacing.
 
-// container.js  // Bad: Container is an exported class that has only static methods and fields.  export  class  Container  {  /** @return {number} */  static bar()  {  return  1;  }  }  /** @const {number} */  Container.FOO =  1;
+// container.js // Bad: Container is an exported class that has only static methods and fields. export class Container { /** @return {number} \*/ static bar() { return 1; } } /** @const {number} \*/ Container.FOO = 1;
 
 Instead, export individual constants and functions:
 
-/** @return {number} */  export  function bar()  {  return  1;  }  export  const  /** number */ FOO =  1;
+/** @return {number} \*/ export function bar() { return 1; } export const /** number \*/ FOO = 1;
 
 ##### 3.4.2.3 Mutability of exports
 
@@ -347,30 +343,31 @@ Exported variables must not be mutated outside of module initialization.
 
 There are alternatives if mutation is needed, including exporting a constant reference to an object that has mutable fields or exporting accessor functions for mutable data.
 
-// Bad: both foo and mutateFoo are exported and mutated.  export  let  /** number */ foo =  0;  /**
- * Mutates foo.
- */  export  function mutateFoo()  {  ++foo;  }  /**
- * @param {function(number): number} newMutateFoo
- */  export  function setMutateFoo(newMutateFoo)  {  // Exported classes and functions can be mutated! mutateFoo =  ()  =>  { foo = newMutateFoo(foo);  };  }
+// Bad: both foo and mutateFoo are exported and mutated. export let /** number \*/ foo = 0; /**
 
-// Good: Rather than export the mutable variables foo and mutateFoo directly,  // instead make them module scoped and export a getter for foo and a wrapper for  // mutateFooFunc.  let  /** number */ foo =  0;  let  /** function(number): number */ mutateFooFunc = foo => foo +  1;  /** @return {number} */  export  function getFoo()  {  return foo;  }  export  function mutateFoo()  { foo = mutateFooFunc(foo);  }  /** @param {function(number): number} mutateFoo */  export  function setMutateFoo(mutateFoo)  { mutateFooFunc = mutateFoo;  }
+- Mutates foo.
+  \*/ export function mutateFoo() { ++foo; } /\*\*
+- @param {function(number): number} newMutateFoo
+  \*/ export function setMutateFoo(newMutateFoo) { // Exported classes and functions can be mutated! mutateFoo = () => { foo = newMutateFoo(foo); }; }
+
+// Good: Rather than export the mutable variables foo and mutateFoo directly, // instead make them module scoped and export a getter for foo and a wrapper for // mutateFooFunc. let /** number \*/ foo = 0; let /** function(number): number _/ mutateFooFunc = foo => foo + 1; /\*\* @return {number} _/ export function getFoo() { return foo; } export function mutateFoo() { foo = mutateFooFunc(foo); } /\*_ @param {function(number): number} mutateFoo _/ export function setMutateFoo(mutateFoo) { mutateFooFunc = mutateFoo; }
 
 ##### 3.4.2.4 export from
 
 `export from` statements must not be line wrapped and are therefore an exception to the 80-column limit. This applies to both `export from` flavors.
 
 export {specificName} from './other.js';
-export * from './another.js';
+export \* from './another.js';
 
 #### 3.4.3 Circular Dependencies in ES modules[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#es-module-circular-dependencies)
 
 Do not create cycles between ES modules, even though the ECMAScript specification allows this. Note that it is possible to create cycles with both the `import` and `export` statements.
 
-// a.js  import  './b.js';
+// a.js import './b.js';
 
-// b.js  import  './a.js';  // `export from` can cause circular dependencies too!  export  {x}  from  './c.js';
+// b.js import './a.js'; // `export from` can cause circular dependencies too! export {x} from './c.js';
 
-// c.js  import  './b.js';  export  let x;
+// c.js import './b.js'; export let x;
 
 #### 3.4.4 Interoperating with Closure[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#es-module-closure-interop)
 
@@ -378,7 +375,7 @@ Do not create cycles between ES modules, even though the ECMAScript specificatio
 
 To reference the Closure `goog` namespace, import Closure's `goog.js`.
 
-import  * as goog from  '../closure/goog/goog.js';  const name = goog.require('a.name');  export  const CONSTANT = name.compute();
+import \* as goog from '../closure/goog/goog.js'; const name = goog.require('a.name'); export const CONSTANT = name.compute();
 
 `goog.js` exports only a subset of properties from the global `goog` that can be used in ES modules.
 
@@ -386,7 +383,7 @@ import  * as goog from  '../closure/goog/goog.js';  const name = goog.require('a
 
 `goog.require` in ES modules works as it does in `goog.module` files. You can require any Closure namespace symbol (i.e., symbols created by `goog.provide` or `goog.module`) and `goog.require` will return the value.
 
-import  * as goog from  '../closure/goog/goog.js';  import  * as anEsModule from  './anEsModule.js';  const  GoogPromise  = goog.require('goog.Promise');  const myNamespace = goog.require('my.namespace');
+import _ as goog from '../closure/goog/goog.js'; import _ as anEsModule from './anEsModule.js'; const GoogPromise = goog.require('goog.Promise'); const myNamespace = goog.require('my.namespace');
 
 ##### 3.4.4.3 Declaring Closure Module IDs in ES modules
 
@@ -398,7 +395,7 @@ Note: It is an error to call `goog.module.declareLegacyNamespace` in an ES mod
 
 `goog.declareModuleId` should only be used to upgrade Closure files to ES modules in place, where named exports are used.
 
-import  * as goog from  '../closure/goog.js'; goog.declareModuleId('my.esm');  export  class  Class  {};
+import \* as goog from '../closure/goog.js'; goog.declareModuleId('my.esm'); export class Class {};
 
 ### 3.5 `goog.setTestOnly`[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#file-set-test-only)
 
@@ -432,18 +429,19 @@ If a long alias or module name would cause a line to exceed the 80-column limit,
 
 Example:
 
-// Standard alias style.  const  MyClass  = goog.require('some.package.MyClass');  const  MyType  = goog.requireType('some.package.MyType');  // Namespace-based alias used to disambiguate.  const  NsMyClass  = goog.require('other.ns.MyClass');  // Namespace-based alias used to prevent masking native type.  const  RendererElement  = goog.require('web.renderer.Element');  // Out of sequence namespace-based aliases used to improve readability.  // Also, require lines longer than 80 columns must not be wrapped.  const  SomeDataStructureModel  = goog.requireType('identical.package.identifiers.models.SomeDataStructure');  const  SomeDataStructureProto  = goog.require('proto.identical.package.identifiers.SomeDataStructure');  // Standard alias style.  const asserts = goog.require('goog.asserts');  // Namespace-based alias used to disambiguate.  const testingAsserts = goog.require('goog.testing.asserts');  // Standard destructuring into aliases.  const  {clear, clone}  = goog.require('goog.array');  const  {Rgb}  = goog.require('goog.color');  // Namespace-based destructuring into aliases in order to disambiguate.  const  {SomeType:  FooSomeType}  = goog.requireType('foo.types');  const  {clear: objectClear, clone: objectClone}  = goog.require('goog.object');  // goog.require without an alias in order to trigger side effects.  /** @suppress {extraRequire} Initializes MyFramework. */ goog.require('my.framework.initialization');
+// Standard alias style. const MyClass = goog.require('some.package.MyClass'); const MyType = goog.requireType('some.package.MyType'); // Namespace-based alias used to disambiguate. const NsMyClass = goog.require('other.ns.MyClass'); // Namespace-based alias used to prevent masking native type. const RendererElement = goog.require('web.renderer.Element'); // Out of sequence namespace-based aliases used to improve readability. // Also, require lines longer than 80 columns must not be wrapped. const SomeDataStructureModel = goog.requireType('identical.package.identifiers.models.SomeDataStructure'); const SomeDataStructureProto = goog.require('proto.identical.package.identifiers.SomeDataStructure'); // Standard alias style. const asserts = goog.require('goog.asserts'); // Namespace-based alias used to disambiguate. const testingAsserts = goog.require('goog.testing.asserts'); // Standard destructuring into aliases. const {clear, clone} = goog.require('goog.array'); const {Rgb} = goog.require('goog.color'); // Namespace-based destructuring into aliases in order to disambiguate. const {SomeType: FooSomeType} = goog.requireType('foo.types'); const {clear: objectClear, clone: objectClone} = goog.require('goog.object'); // goog.require without an alias in order to trigger side effects. /\*_ @suppress {extraRequire} Initializes MyFramework. _/ goog.require('my.framework.initialization');
 
 Discouraged:
 
-// If necessary to disambiguate, prefer PackageClass over SomeClass as it is  // closer to the format of the module name.  const  SomeClass  = goog.require('some.package.Class');
+// If necessary to disambiguate, prefer PackageClass over SomeClass as it is // closer to the format of the module name. const SomeClass = goog.require('some.package.Class');
 
 Disallowed:
 
-// Extra terms must come from the namespace.  const  MyClassForBizzing  = goog.require('some.package.MyClass');  // Alias must include the entire final namespace component.  const  MyClass  = goog.require('some.package.MyClassForBizzing');  // Alias must not mask native type (should be `const JspbMap` here).  const  Map  = goog.require('jspb.Map');  // Don't break goog.require lines over 80 columns.  const  SomeDataStructure  = goog.require('proto.identical.package.identifiers.SomeDataStructure');  // Alias must be based on the namespace.  const randomName = goog.require('something.else');  // Missing a space after the colon.  const  {Foo:FooProto}  = goog.require('some.package.proto.Foo');  // goog.requireType without an alias. goog.requireType('some.package.with.a.Type');  /**
- * @param {!some.unimported.Dependency} param All external types used in JSDoc
- *     annotations must be goog.require'd, unless declared in externs.
- */  function someFunction(param)  {  // goog.require lines must be at the top level before any other code.  const alias = goog.require('my.long.name.alias');  // ...  }
+// Extra terms must come from the namespace. const MyClassForBizzing = goog.require('some.package.MyClass'); // Alias must include the entire final namespace component. const MyClass = goog.require('some.package.MyClassForBizzing'); // Alias must not mask native type (should be `const JspbMap` here). const Map = goog.require('jspb.Map'); // Don't break goog.require lines over 80 columns. const SomeDataStructure = goog.require('proto.identical.package.identifiers.SomeDataStructure'); // Alias must be based on the namespace. const randomName = goog.require('something.else'); // Missing a space after the colon. const {Foo:FooProto} = goog.require('some.package.proto.Foo'); // goog.requireType without an alias. goog.requireType('some.package.with.a.Type'); /\*\*
+
+- @param {!some.unimported.Dependency} param All external types used in JSDoc
+-     annotations must be goog.require'd, unless declared in externs.
+  \*/ function someFunction(param) { // goog.require lines must be at the top level before any other code. const alias = goog.require('my.long.name.alias'); // ... }
 
 ### 3.7 The file's implementation[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#file-implementation)
 
@@ -451,8 +449,7 @@ The actual implementation follows after all dependency information is declared (
 
 This may consist of any module-local declarations (constants, variables, classes, functions, etc), as well as any exported symbols.
 
-4 Formatting[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting)
-------------------------------------------------------------------------------------------------------------------------------------
+## 4 Formatting[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting)
 
 **Terminology Note**: *block-like construct* refers to the body of a class, function, method, or brace-delimited block of code. Note that, by [5.2 Array literals](https://google.github.io/styleguide/jsguide.html#features-array-literals) and [5.3 Object literals](https://google.github.io/styleguide/jsguide.html#features-object-literals), any array or object literal may optionally be treated as if it were a block-like construct.
 
@@ -466,24 +463,24 @@ Braces are required for all control structures (i.e. `if`, `else`, `for`, `d
 
 Disallowed:
 
-if  (someVeryLongCondition()) doSomething();  for  (let i =  0; i < foo.length; i++) bar(foo[i]);
+if (someVeryLongCondition()) doSomething(); for (let i = 0; i < foo.length; i++) bar(foo[i]);
 
 **Exception**: A simple if statement that can fit entirely on a single line with no wrapping (and that doesn't have an else) may be kept on a single line with no braces when it improves readability. This is the only case in which a control structure may omit braces and newlines.
 
-if  (shortCondition()) foo();
+if (shortCondition()) foo();
 
 #### 4.1.2 Nonempty blocks: K&R style[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-nonempty-blocks)
 
 Braces follow the Kernighan and Ritchie style ([Egyptian brackets](http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html)) for *nonempty* blocks and block-like constructs:
 
--   No line break before the opening brace.
--   Line break after the opening brace.
--   Line break before the closing brace.
--   Line break after the closing brace *if* that brace terminates a statement or the body of a function or class statement, or a class method. Specifically, there is *no* line break after the brace if it is followed by `else`, `catch`, `while`, or a comma, semicolon, or right-parenthesis.
+- No line break before the opening brace.
+- Line break after the opening brace.
+- Line break before the closing brace.
+- Line break after the closing brace *if* that brace terminates a statement or the body of a function or class statement, or a class method. Specifically, there is *no* line break after the brace if it is followed by `else`, `catch`, `while`, or a comma, semicolon, or right-parenthesis.
 
 Example:
 
-class  InnerClass  {  constructor()  {}  /** @param {number} foo */ method(foo)  {  if  (condition(foo))  {  try  {  // Note: this might fail. something();  }  catch  (err)  { recover();  }  }  }  }
+class InnerClass { constructor() {} /\*_ @param {number} foo _/ method(foo) { if (condition(foo)) { try { // Note: this might fail. something(); } catch (err) { recover(); } } } }
 
 #### 4.1.3 Empty blocks: may be concise[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-empty-blocks)
 
@@ -491,11 +488,11 @@ An empty block or block-like construct *may* be closed immediately after it is
 
 Example:
 
-function doNothing()  {}
+function doNothing() {}
 
 Disallowed:
 
-if  (condition)  {  // ...  }  else  if  (otherCondition)  {}  else  {  // ...  }  try  {  // ...  }  catch  (e)  {}
+if (condition) { // ... } else if (otherCondition) {} else { // ... } try { // ... } catch (e) {}
 
 ### 4.2 Block indentation: +2 spaces[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-block-indentation)
 
@@ -505,9 +502,9 @@ Each time a new block or block-like construct is opened, the indent increases by
 
 Any array literal may optionally be formatted as if it were a "block-like construct." For example, the following are all valid (**not** an exhaustive list):
 
-const a =  [  0,  1,  2,  ];  const b =  [0,  1,  2];
+const a = [ 0, 1, 2, ]; const b = [0, 1, 2];
 
-const c =  [0,  1,  2]; someMethod(foo,  [  0,  1,  2,  ], bar);
+const c = [0, 1, 2]; someMethod(foo, [ 0, 1, 2, ], bar);
 
 Other combinations are allowed, particularly when emphasizing semantic groupings between elements, but should not be used only to reduce the vertical size of larger arrays.
 
@@ -515,9 +512,9 @@ Other combinations are allowed, particularly when emphasizing semantic groupings
 
 Any object literal may optionally be formatted as if it were a "block-like construct." The same examples apply as [4.2.1 Array literals: optionally block-like](https://google.github.io/styleguide/jsguide.html#formatting-array-literals). For example, the following are all valid (**not** an exhaustive list):
 
-const a =  { a:  0, b:  1,  };  const b =  {a:  0, b:  1};
+const a = { a: 0, b: 1, }; const b = {a: 0, b: 1};
 
-const c =  {a:  0, b:  1}; someMethod(foo,  { a:  0, b:  1,  }, bar);
+const c = {a: 0, b: 1}; someMethod(foo, { a: 0, b: 1, }, bar);
 
 #### 4.2.3 Class literals[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-class-literals)
 
@@ -525,9 +522,9 @@ Class literals (whether declarations or expressions) are indented as blocks. Do 
 
 Example:
 
-class  Foo  {  constructor()  {  /** @type {number} */  this.x =  42;  }  /** @return {number} */ method()  {  return  this.x;  }  }  Foo.Empty  =  class  {};
+class Foo { constructor() { /** @type {number} \*/ this.x = 42; } /** @return {number} \*/ method() { return this.x; } } Foo.Empty = class {};
 
-/** @extends {Foo<string>} */ foo.Bar  =  class extends Foo  {  /** @override */ method()  {  return super.method()  /  2;  }  };  /** @interface */  class  Frobnicator  {  /** @param {string} message */ frobnicate(message)  {}  }
+/** @extends {Foo<string>} \*/ foo.Bar = class extends Foo { /** @override _/ method() { return super.method() / 2; } }; /\*\* @interface _/ class Frobnicator { /\*_ @param {string} message _/ frobnicate(message) {} }
 
 #### 4.2.4 Function expressions[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-function-expressions)
 
@@ -535,7 +532,7 @@ When declaring an anonymous function in the list of arguments for a function cal
 
 Example:
 
-prefix.something.reallyLongFunctionName('whatever',  (a1, a2)  =>  {  // Indent the function body +2 relative to indentation depth  // of the 'prefix' statement one line above.  if  (a1.equals(a2))  { someOtherLongFunctionName(a1);  }  else  { andNowForSomethingCompletelyDifferent(a2.parrot);  }  }); some.reallyLongFunctionCall(arg1, arg2, arg3)  .thatsWrapped()  .then((result)  =>  {  // Indent the function body +2 relative to the indentation depth  // of the '.then()' call.  if  (result)  { result.use();  }  });
+prefix.something.reallyLongFunctionName('whatever', (a1, a2) => { // Indent the function body +2 relative to indentation depth // of the 'prefix' statement one line above. if (a1.equals(a2)) { someOtherLongFunctionName(a1); } else { andNowForSomethingCompletelyDifferent(a2.parrot); } }); some.reallyLongFunctionCall(arg1, arg2, arg3) .thatsWrapped() .then((result) => { // Indent the function body +2 relative to the indentation depth // of the '.then()' call. if (result) { result.use(); } });
 
 #### 4.2.5 Switch statements[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-switch-statements)
 
@@ -547,7 +544,7 @@ A blank line is optional between a `break` and the following case.
 
 Example:
 
-switch  (animal)  {  case  Animal.BANDERSNATCH: handleBandersnatch();  break;  case  Animal.JABBERWOCK: handleJabberwock();  break;  default:  throw  new  Error('Unknown animal');  }
+switch (animal) { case Animal.BANDERSNATCH: handleBandersnatch(); break; case Animal.JABBERWOCK: handleJabberwock(); break; default: throw new Error('Unknown animal'); }
 
 ### 4.3 Statements[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-statements)
 
@@ -568,9 +565,9 @@ JavaScript code has a column limit of 80 characters. Except as noted below, any 
 1.  `goog.module`, `goog.require` and `goog.requireType` statements (see [3.3 goog.module statement](https://google.github.io/styleguide/jsguide.html#file-goog-module) and [3.6 goog.require and goog.requireType statements](https://google.github.io/styleguide/jsguide.html#file-goog-require)).
 2.  ES module `import` and `export from` statements (see [3.4.1 Imports](https://google.github.io/styleguide/jsguide.html#es-module-imports) and [3.4.2.4 export from](https://google.github.io/styleguide/jsguide.html#es-module-export-from)).
 3.  Lines where obeying the column limit is not possible or would hinder discoverability. Examples include:
-    -   A long URL which should be clickable in source.
-    -   A shell command intended to be copied-and-pasted.
-    -   A long string literal which may need to be copied or searched for wholly (e.g., a long file path).
+    - A long URL which should be clickable in source.
+    - A shell command intended to be copied-and-pasted.
+    - A long string literal which may need to be copied or searched for wholly (e.g., a long file path).
 
 ### 4.5 Line-wrapping[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-line-wrapping)
 
@@ -588,11 +585,11 @@ The prime directive of line-wrapping is: prefer to break at a **higher syntacti
 
 Preferred:
 
-currentEstimate = calc(currentEstimate + x * currentEstimate)  /  2.0;
+currentEstimate = calc(currentEstimate + x \* currentEstimate) / 2.0;
 
 Discouraged:
 
-currentEstimate = calc(currentEstimate + x * currentEstimate)  /  2.0;
+currentEstimate = calc(currentEstimate + x \* currentEstimate) / 2.0;
 
 In the preceding example, the syntactic levels from highest to lowest are as follows: assignment, division, function call, parameters, number constant.
 
@@ -637,7 +634,7 @@ Beyond where required by the language or other style rules, and apart from liter
 2.  Separating any reserved word (such as `else` or `catch`) from a closing curly brace (`}`) that precedes it on that line.
 3.  Before any open curly brace (`{`), with two exceptions:
     1.  Before an object literal that is the first argument of a function or the first element in an array literal (e.g. `foo({a: [{c: d}]})`).
-    2.  In a template expansion, as it is forbidden by the language (e.g. valid: ``ab${1 + 2}cd``, invalid: ``xy$ {3}z``).
+    2.  In a template expansion, as it is forbidden by the language (e.g. valid: `ab${1 + 2}cd`, invalid: `xy$ {3}z`).
 4.  On both sides of any binary or ternary operator.
 5.  After a comma (`,`) or semicolon (`;`). Note that spaces are *never* allowed before these characters.
 6.  After the colon (`:`) in an object literal.
@@ -652,7 +649,7 @@ This practice is permitted, but it is **generally discouraged** by Google Styl
 
 Here is an example without alignment, followed by one with alignment. Both are allowed, but the latter is discouraged:
 
-{ tiny:  42,  // this is great longer:  435,  // this too  };  { tiny:  42,  // permitted, but future edits longer:  435,  // may leave it unaligned  };
+{ tiny: 42, // this is great longer: 435, // this too }; { tiny: 42, // permitted, but future edits longer: 435, // may leave it unaligned };
 
 Tip: Alignment can aid readability, but it creates problems for future maintenance. Consider a future change that needs to touch just one line. This change may leave the formerly-pleasing formatting mangled, and that is allowed. More often it prompts the coder (perhaps you) to adjust whitespace on nearby lines as well, possibly triggering a cascading series of reformattings. That one-line change now has a blast radius. This can at worst result in pointless busywork, but at best it still corrupts version history information, slows down reviewers and exacerbates merge conflicts.
 
@@ -660,7 +657,7 @@ Tip: Alignment can aid readability, but it creates problems for future maintenan
 
 Prefer to put all function arguments on the same line as the function name. If doing so would exceed the 80-column limit, the arguments must be line-wrapped in a readable way. To save space, you may wrap as close to 80 as possible, or put each argument on its own line to enhance readability. Indentation should be four spaces. Aligning to the parenthesis is allowed, but discouraged. Below are the most common patterns for argument wrapping:
 
-// Arguments start on a new line, indented four spaces. Preferred when the  // arguments don't fit on the same line with the function name (or the keyword  // "function") but fit entirely on the second line. Works with very long  // function names, survives renaming without reindenting, low on space. doSomething( descriptiveArgumentOne, descriptiveArgumentTwo, descriptiveArgumentThree)  {  // ...  }  // If the argument list is longer, wrap at 80. Uses less vertical space,  // but violates the rectangle rule and is thus not recommended. doSomething(veryDescriptiveArgumentNumberOne, veryDescriptiveArgumentTwo, tableModelEventHandlerProxy, artichokeDescriptorAdapterIterator)  {  // ...  }  // Four-space, one argument per line.  Works with long function names,  // survives renaming, and emphasizes each argument. doSomething( veryDescriptiveArgumentNumberOne, veryDescriptiveArgumentTwo, tableModelEventHandlerProxy, artichokeDescriptorAdapterIterator)  {  // ...  }
+// Arguments start on a new line, indented four spaces. Preferred when the // arguments don't fit on the same line with the function name (or the keyword // "function") but fit entirely on the second line. Works with very long // function names, survives renaming without reindenting, low on space. doSomething( descriptiveArgumentOne, descriptiveArgumentTwo, descriptiveArgumentThree) { // ... } // If the argument list is longer, wrap at 80. Uses less vertical space, // but violates the rectangle rule and is thus not recommended. doSomething(veryDescriptiveArgumentNumberOne, veryDescriptiveArgumentTwo, tableModelEventHandlerProxy, artichokeDescriptorAdapterIterator) { // ... } // Four-space, one argument per line. Works with long function names, // survives renaming, and emphasizes each argument. doSomething( veryDescriptiveArgumentNumberOne, veryDescriptiveArgumentTwo, tableModelEventHandlerProxy, artichokeDescriptorAdapterIterator) { // ... }
 
 ### 4.7 Grouping parentheses: recommended[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-grouping-parentheses)
 
@@ -676,12 +673,13 @@ This section addresses *implementation comments*. JSDoc is addressed separately
 
 #### 4.8.1 Block comment style[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#formatting-block-comment-style)
 
-Block comments are indented at the same level as the surrounding code. They may be in `/* ... */` or `//`-style. For multi-line `/* ... */` comments, subsequent lines must start with * aligned with the `*` on the previous line, to make comments obvious with no extra context.
+Block comments are indented at the same level as the surrounding code. They may be in `/* ... */` or `//`-style. For multi-line `/* ... */` comments, subsequent lines must start with _ aligned with the `_` on the previous line, to make comments obvious with no extra context.
 
-/*
- * This is
- * okay.
- */  // And so  // is this.  /* This is fine, too. */
+/\*
+
+- This is
+- okay.
+  _/ // And so // is this. /_ This is fine, too. \*/
 
 Comments are not enclosed in boxes drawn with asterisks or other characters.
 
@@ -691,14 +689,13 @@ Do not use JSDoc (`/** ... */`) for implementation comments.
 
 "Parameter name" comments should be used whenever the value and method name do not sufficiently convey the meaning, and refactoring the method to be clearer is infeasible . Their preferred format is before the value with =:
 
-someFunction(obviousParam,  /* shouldRender= */  true,  /* name= */  'hello');
+someFunction(obviousParam, /_ shouldRender= _/ true, /_ name= _/ 'hello');
 
 For consistency with surrounding code you may put them after the value without =:
 
-someFunction(obviousParam,  true  /* shouldRender */,  'hello'  /* name */);
+someFunction(obviousParam, true /_ shouldRender _/, 'hello' /_ name _/);
 
-5 Language features[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#language-features)
---------------------------------------------------------------------------------------------------------------------------------------------------
+## 5 Language features[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#language-features)
 
 JavaScript includes many dubious (and even dangerous) features. This section delineates which features may or may not be used, and any additional constraints on their use.
 
@@ -722,14 +719,15 @@ JSDoc type annotations may be added either on the line above the declaration, or
 
 Example:
 
-const  /** !Array<number> */ data =  [];  /**
- * Some description.
- * @type {!Array<number>}
- */  const data =  [];
+const /** !Array<number> \*/ data = []; /**
+
+- Some description.
+- @type {!Array<number>}
+  \*/ const data = [];
 
 Mixing inline and JSDoc styles is not allowed: the compiler will only process the first JsDoc and the inline annotations will be lost.
 
-/** Some description. */  const  /** !Array<number> */ data =  [];
+/** Some description. \*/ const /** !Array<number> \*/ data = [];
 
 Tip: There are many cases where the compiler can infer a templatized type but not its parameters. This is particularly the case when the initializing literal or constructor call does not include any values of the template parameter type (e.g., empty arrays, objects, `Map`s, or `Set`s), or if the variable is modified in a closure. Local variable type annotations are particularly helpful in these cases since otherwise the compiler will infer the template parameter as unknown.
 
@@ -741,7 +739,7 @@ Include a trailing comma whenever there is a line break between the final elemen
 
 Example:
 
-const values =  [  'first value',  'second value',  ];
+const values = [ 'first value', 'second value', ];
 
 #### 5.2.2 Do not use the variadic `Array` constructor[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-arrays-ctor)
 
@@ -749,13 +747,13 @@ The constructor is error-prone if arguments are added or removed. Use a literal 
 
 Disallowed:
 
-const a1 =  new  Array(x1, x2, x3);  const a2 =  new  Array(x1, x2);  const a3 =  new  Array(x1);  const a4 =  new  Array();
+const a1 = new Array(x1, x2, x3); const a2 = new Array(x1, x2); const a3 = new Array(x1); const a4 = new Array();
 
 This works as expected except for the third case: if `x1` is a whole number then `a3` is an array of size `x1` where all elements are `undefined`. If `x1` is any other number, then an exception will be thrown, and if it is anything else then it will be a single-element array.
 
 Instead, write
 
-const a1 =  [x1, x2, x3];  const a2 =  [x1, x2];  const a3 =  [x1];  const a4 =  [];
+const a1 = [x1, x2, x3]; const a2 = [x1, x2]; const a3 = [x1]; const a4 = [];
 
 Explicitly allocating an array of a given length using `new Array(length)` is allowed when appropriate.
 
@@ -767,15 +765,15 @@ Do not define or use non-numeric properties on an array (other than `length`). 
 
 Array literals may be used on the left-hand side of an assignment to perform destructuring (such as when unpacking multiple values from a single array or iterable). A final rest element may be included (with no space between the `...` and the variable name). Elements should be omitted if they are unused.
 
-const  [a, b, c,  ...rest]  = generateResults();  let  [, b,, d]  = someArray;
+const [a, b, c, ...rest] = generateResults(); let [, b,, d] = someArray;
 
 Destructuring may also be used for function parameters (note that a parameter name is required but ignored). Always specify `[]` as the default value if a destructured array parameter is optional, and provide default values on the left hand side:
 
-/** @param {!Array<number>=} param1 */  function optionalDestructuring([a =  4, b =  2]  =  [])  {  ...  };
+/\*_ @param {!Array<number>=} param1 _/ function optionalDestructuring([a = 4, b = 2] = []) { ... };
 
 Disallowed:
 
-function badDestructuring([a, b]  =  [4,  2])  {  ...  };
+function badDestructuring([a, b] = [4, 2]) { ... };
 
 Tip: For (un)packing multiple values into a function's parameter or return, prefer object destructuring to array destructuring when possible, as it allows naming the individual elements and specifying a different type for each.
 
@@ -785,7 +783,7 @@ Array literals may include the spread operator (`...`) to flatten elements out o
 
 Example:
 
-[...foo]  // preferred over Array.prototype.slice.call(foo)  [...foo,  ...bar]  // preferred over foo.concat(bar)
+[...foo] // preferred over Array.prototype.slice.call(foo) [...foo, ...bar] // preferred over foo.concat(bar)
 
 ### 5.3 Object literals[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-object-literals)
 
@@ -803,17 +801,17 @@ Object literals may represent either *structs* (with unquoted keys and/or symb
 
 Disallowed:
 
-{ width:  42,  // struct-style unquoted key  'maxWidth':  43,  // dict-style quoted key  }
+{ width: 42, // struct-style unquoted key 'maxWidth': 43, // dict-style quoted key }
 
 This also extends to passing the property name to functions, like `hasOwnProperty`. In particular, doing so will break in compiled code because the compiler cannot rename/obfuscate the string literal.
 
 Disallowed:
 
-/** @type {{width: number, maxWidth: (number|undefined)}} */  const o =  {width:  42};  if  (o.hasOwnProperty('maxWidth'))  {  ...  }
+/\*_ @type {{width: number, maxWidth: (number|undefined)}} _/ const o = {width: 42}; if (o.hasOwnProperty('maxWidth')) { ... }
 
 This is best implemented as:
 
-/** @type {{width: number, maxWidth: (number|undefined)}} */  const o =  {width:  42};  if  (o.maxWidth !=  null)  {  ...  }
+/\*_ @type {{width: number, maxWidth: (number|undefined)}} _/ const o = {width: 42}; if (o.maxWidth != null) { ... }
 
 #### 5.3.4 Computed property names[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-objects-computed-property-names)
 
@@ -825,13 +823,13 @@ Methods can be defined on object literals using the method shorthand (`{method()
 
 Example:
 
-return  { stuff:  'candy', method()  {  return  this.stuff;  // Returns 'candy'  },  };
+return { stuff: 'candy', method() { return this.stuff; // Returns 'candy' }, };
 
 Note that `this` in a method shorthand or `function` refers to the object literal itself whereas `this` in an arrow function refers to the scope outside the object literal.
 
 Example:
 
-class  { getObjectLiteral()  {  this.stuff =  'fruit';  return  { stuff:  'candy', method:  ()  =>  this.stuff,  // Returns 'fruit'  };  }  }
+class { getObjectLiteral() { this.stuff = 'fruit'; return { stuff: 'candy', method: () => this.stuff, // Returns 'fruit' }; } }
 
 #### 5.3.6 Shorthand properties[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-objects-shorthand-properties)
 
@@ -839,7 +837,7 @@ Shorthand properties are allowed on object literals.
 
 Example:
 
-const foo =  1;  const bar =  2;  const obj =  { foo, bar, method()  {  return  this.foo +  this.bar;  },  }; assertEquals(3, obj.method());
+const foo = 1; const bar = 2; const obj = { foo, bar, method() { return this.foo + this.bar; }, }; assertEquals(3, obj.method());
 
 #### 5.3.7 Destructuring[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-objects-destructuring)
 
@@ -849,16 +847,17 @@ Destructured objects may also be used as function parameters, but should be kept
 
 Example:
 
-/**
- * @param {string} ordinary
- * @param {{num: (number|undefined), str: (string|undefined)}=} param1
- *     num: The number of times to do something.
- *     str: A string to do stuff to.
- */  function destructured(ordinary,  {num, str =  'some default'}  =  {})
+/\*\*
+
+- @param {string} ordinary
+- @param {{num: (number|undefined), str: (string|undefined)}=} param1
+-     num: The number of times to do something.
+-     str: A string to do stuff to.
+  \*/ function destructured(ordinary, {num, str = 'some default'} = {})
 
 Disallowed:
 
-/** @param {{x: {num: (number|undefined), str: (string|undefined)}}} param1 */  function nestedTooDeeply({x:  {num, str}})  {};  /** @param {{num: (number|undefined), str: (string|undefined)}=} param1 */  function nonShorthandProperty({num: a, str: b}  =  {})  {};  /** @param {{a: number, b: number}} param1 */  function computedKey({a, b,  [a + b]: c})  {};  /** @param {{a: number, b: string}=} param1 */  function nontrivialDefault({a, b}  =  {a:  2, b:  4})  {};
+/** @param {{x: {num: (number|undefined), str: (string|undefined)}}} param1 \*/ function nestedTooDeeply({x: {num, str}}) {}; /** @param {{num: (number|undefined), str: (string|undefined)}=} param1 */  function nonShorthandProperty({num: a, str: b}  =  {})  {};  /** @param {{a: number, b: number}} param1 _/ function computedKey({a, b, [a + b]: c}) {}; /\*\* @param {{a: number, b: string}=} param1 _/ function nontrivialDefault({a, b} = {a: 2, b: 4}) {};
 
 Destructuring may also be used for `goog.require` statements, and in this case must not be wrapped: the entire statement occupies one line, regardless of how long it is (see [3.6 goog.require and goog.requireType statements](https://google.github.io/styleguide/jsguide.html#file-goog-require)).
 
@@ -866,13 +865,14 @@ Destructuring may also be used for `goog.require` statements, and in this case
 
 Enumerations are defined by adding the `@enum` annotation to an object literal. Additional properties may not be added to an enum after it is defined. Enums must be constant, and all enum values must be deeply immutable.
 
-/**
- * Supported temperature scales.
- * @enum {string}
- */  const  TemperatureScale  =  { CELSIUS:  'celsius', FAHRENHEIT:  'fahrenheit',  };  /**
- * An enum with two options.
- * @enum {number}
- */  const  Option  =  {  /** The option used shall have been the first. */ FIRST_OPTION:  1,  /** The second among two options. */ SECOND_OPTION:  2,  };
+/\*\*
+
+- Supported temperature scales.
+- @enum {string}
+  \*/ const TemperatureScale = { CELSIUS: 'celsius', FAHRENHEIT: 'fahrenheit', }; /\*\*
+- An enum with two options.
+- @enum {number}
+  _/ const Option = { /\*\* The option used shall have been the first. _/ FIRST_OPTION: 1, /\*_ The second among two options. _/ SECOND_OPTION: 2, };
 
 ### 5.4 Classes[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-classes)
 
@@ -886,7 +886,7 @@ Set all of a concrete object's fields (i.e. all properties other than methods) i
 
 Example:
 
-class  Foo  {  constructor()  {  /** @private @const {!Bar} */  this.bar_ = computeBar();  /** @protected @const {!Baz} */  this.baz = computeBaz();  }  }
+class Foo { constructor() { /** @private @const {!Bar} \*/ this.bar\_ = computeBar(); /** @protected @const {!Baz} \*/ this.baz = computeBaz(); } }
 
 Tip: Properties should never be added to or removed from an instance after the constructor is finished, since it significantly hinders VMs' ability to optimize. If necessary, fields that are initialized later should be explicitly set to `undefined` in the constructor to prevent later shape changes. Adding `@struct` to an object will check that undeclared properties are not added/accessed. Classes have this added by default.
 
@@ -904,7 +904,7 @@ Static methods should only be called on the base class itself. Static methods sh
 
 Disallowed:
 
-class  Base  {  /** @nocollapse */  static foo()  {}  }  class  Sub extends Base  {}  function callFoo(cls)  { cls.foo();  }  // discouraged: don't call static methods dynamically  Sub.foo();  // Disallowed: don't call static methods on subclasses that don't define it themselves
+class Base { /\*_ @nocollapse _/ static foo() {} } class Sub extends Base {} function callFoo(cls) { cls.foo(); } // discouraged: don't call static methods dynamically Sub.foo(); // Disallowed: don't call static methods on subclasses that don't define it themselves
 
 #### 5.4.5 Old-style class declarations[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-classes-old-style)
 
@@ -919,44 +919,48 @@ In all other ways the style guide still applies to this code: `let`, `const`, 
 `goog.defineClass` allows for a class-like definition similar to ES6 class syntax:
 
 let C = goog.defineClass(S, {
-  /**
-   * @param {string} value
-   */
+/\*\*
+
+- @param {string} value
+  _/
   constructor(value) {
-    S.call(this, 2);
-    /** @const */
-    this.prop = value;
+  S.call(this, 2);
+  /\*\* @const _/
+  this.prop = value;
   },
 
-  /**
-   * @param {string} param
-   * @return {number}
-   */
+/\*\*
+
+- @param {string} param
+- @return {number}
+  \*/
   method(param) {
-    return 0;
+  return 0;
   },
-});
+  });
 
 Alternatively, while `goog.defineClass` should be preferred for all new code, more traditional syntax is also allowed.
 
-/**
-  * @constructor @extends {S}
-  * @param {string} value
-  */
-function C(value) {
-  S.call(this, 2);
-  /** @const */
-  this.prop = value;
-}
-goog.inherits(C, S);
+/\*\*
 
-/**
- * @param {string} param
- * @return {number}
- */
-C.prototype.method = function(param) {
+- @constructor @extends {S}
+- @param {string} value
+  _/
+  function C(value) {
+  S.call(this, 2);
+  /\*\* @const _/
+  this.prop = value;
+  }
+  goog.inherits(C, S);
+
+/\*\*
+
+- @param {string} param
+- @return {number}
+  \*/
+  C.prototype.method = function(param) {
   return 0;
-};
+  };
 
 Per-instance properties should be defined in the constructor after the call to the super class constructor, if there is a super class. Methods should be defined on the prototype of the constructor.
 
@@ -976,7 +980,7 @@ Do not use [JavaScript getter and setter properties](https://developer.mozilla.
 
 Disallowed:
 
-class  Foo  {  get next()  {  return  this.nextId++;  }  }
+class Foo { get next() { return this.nextId++; } }
 
 #### 5.4.8 Overriding toString[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-classes-overriding-tostring)
 
@@ -992,13 +996,14 @@ All non-static method bodies on an interface must be empty blocks. Fields must b
 
 Example:
 
-/**
- * Something that can frobnicate.
- * @record
- */  class  Frobnicator  {  constructor()  {  /** @type {number} The number of attempts before giving up. */  this.attempts;  }  /**
-   * Performs the frobnication according to the given strategy.
-   * @param {!FrobnicationStrategy} strategy
-   */ frobnicate(strategy)  {}  }
+/\*\*
+
+- Something that can frobnicate.
+- @record
+  _/ class Frobnicator { constructor() { /\*\* @type {number} The number of attempts before giving up. _/ this.attempts; } /\*\*
+  - Performs the frobnication according to the given strategy.
+  - @param {!FrobnicationStrategy} strategy
+    \*/ frobnicate(strategy) {} }
 
 #### 5.4.10 Abstract Classes[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-classes-abstract-classes)
 
@@ -1012,9 +1017,9 @@ Top-level functions may be defined directly on the `exports` object, or else d
 
 Examples:
 
-/** @param {string} str */ exports.processString =  (str)  =>  {  // Process the string.  };
+/\*_ @param {string} str _/ exports.processString = (str) => { // Process the string. };
 
-/** @param {string} str */  const processString =  (str)  =>  {  // Process the string.  }; exports =  {processString};
+/\*_ @param {string} str _/ const processString = (str) => { // Process the string. }; exports = {processString};
 
 #### 5.5.2 Nested functions and closures[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-functions-nested-functions)
 
@@ -1034,20 +1039,22 @@ The right-hand side of the arrow contains the body of the function. By default t
 
 Examples:
 
-/**
- * Arrow functions can be documented just like normal functions.
- * @param {number} numParam A number to add.
- * @param {string} strParam Another number to add that happens to be a string.
- * @return {number} The sum of the two parameters.
- */  const moduleLocalFunc =  (numParam, strParam)  => numParam +  Number(strParam);  // Uses the single expression syntax with `void` because the program logic does  // not require returning a value. getValue((result)  =>  void alert(`Got ${result}`));  class  CallbackExample  {  constructor()  {  /** @private {number} */  this.cachedValue_ =  0;  // For inline callbacks, you can use inline typing for parameters.  // Uses a block statement because the value of the single expression should  // not be returned and the expression is not a single function call. getNullableValue((/** ?number */ result)  =>  {  this.cachedValue_ = result ==  null  ?  0  : result;  });  }  }
+/\*\*
+
+- Arrow functions can be documented just like normal functions.
+- @param {number} numParam A number to add.
+- @param {string} strParam Another number to add that happens to be a string.
+- @return {number} The sum of the two parameters.
+  _/ const moduleLocalFunc = (numParam, strParam) => numParam + Number(strParam); // Uses the single expression syntax with `void` because the program logic does // not require returning a value. getValue((result) => void alert(`Got ${result}`)); class CallbackExample { constructor() { /\*\* @private {number} _/ this.cachedValue* = 0; // For inline callbacks, you can use inline typing for parameters. // Uses a block statement because the value of the single expression should // not be returned and the expression is not a single function call. getNullableValue((/\** ?number */ result) => { this.cachedValue* = result == null ? 0 : result; }); } }
 
 Disallowed:
 
-/**
- * A function with no params and no returned value.
- * This single expression body usage is illegal because the program logic does
- * not require returning a value and we're missing the `void` operator.
- */  const moduleLocalFunc =  ()  => anotherFunction();
+/\*\*
+
+- A function with no params and no returned value.
+- This single expression body usage is illegal because the program logic does
+- not require returning a value and we're missing the `void` operator.
+  \*/ const moduleLocalFunc = () => anotherFunction();
 
 #### 5.5.4 Generators[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-functions-generators)
 
@@ -1057,7 +1064,7 @@ When defining generator functions, attach the `*` to the `function` keyword 
 
 Example:
 
-/** @return {!Iterator<number>} */  function* gen1()  {  yield  42;  }  /** @return {!Iterator<number>} */  const gen2 =  function*()  {  yield* gen1();  }  class  SomeClass  {  /** @return {!Iterator<number>} */  * gen()  {  yield  42;  }  }
+/** @return {!Iterator<number>} _/ function_ gen1() { yield 42; } /** @return {!Iterator<number>} _/ const gen2 = function_() { yield* gen1(); } class SomeClass { /\*\* @return {!Iterator<number>} */ \* gen() { yield 42; } }
 
 #### 5.5.5 Parameter and return types[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-functions-parameter-return-types)
 
@@ -1069,14 +1076,15 @@ Optional parameters are permitted using the equals operator in the parameter lis
 
 Example:
 
-/**
- * @param {string} required This parameter is always needed.
- * @param {string=} optional This parameter can be omitted.
- * @param {!Node=} node Another optional parameter.
- */  function maybeDoSomething(required, optional =  '', node =  undefined)  {}  /** @interface */  class  MyInterface  {  /**
-   * Interface and abstract methods must omit default parameter values.
-   * @param {string=} optional
-   */ someMethod(optional)  {}  }
+/\*\*
+
+- @param {string} required This parameter is always needed.
+- @param {string=} optional This parameter can be omitted.
+- @param {!Node=} node Another optional parameter.
+  _/ function maybeDoSomething(required, optional = '', node = undefined) {} /\*\* @interface _/ class MyInterface { /\*\*
+  - Interface and abstract methods must omit default parameter values.
+  - @param {string=} optional
+    \*/ someMethod(optional) {} }
 
 Use default parameters sparingly. Prefer destructuring (as in [5.3.7 Destructuring](https://google.github.io/styleguide/jsguide.html#features-objects-destructuring)) to create readable APIs when there are more than a small handful of optional parameters that do not have a natural order.
 
@@ -1090,10 +1098,11 @@ Use a *rest* parameter instead of accessing `arguments`. Rest parameters are 
 
 Example:
 
-/**
- * @param {!Array<string>} array This is an ordinary parameter.
- * @param {...number} numbers The remainder of arguments are all numbers.
- */  function variadic(array,  ...numbers)  {}
+/\*\*
+
+- @param {!Array<string>} array This is an ordinary parameter.
+- @param {...number} numbers The remainder of arguments are all numbers.
+  \*/ function variadic(array, ...numbers) {}
 
 #### 5.5.6 Generics[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-functions-generics)
 
@@ -1105,7 +1114,7 @@ Function calls may use the spread operator (`...`). Prefer the spread operator t
 
 Example:
 
-function myFunction(...elements)  {} myFunction(...array,  ...iterable,  ...generator());
+function myFunction(...elements) {} myFunction(...array, ...iterable, ...generator());
 
 ### 5.6 String literals[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-string-literals)
 
@@ -1125,7 +1134,7 @@ If a template literal spans multiple lines, it does not need to follow the inden
 
 Example:
 
-function arithmetic(a, b)  {  return  `Here is a table of arithmetic operations: ${a}  + ${b}  = ${a + b} ${a}  - ${b}  = ${a - b} ${a}  * ${b}  = ${a * b} ${a}  / ${b}  = ${a / b}`;  }
+function arithmetic(a, b) { return `Here is a table of arithmetic operations: ${a} + ${b} = ${a + b} ${a} - ${b} = ${a - b} ${a} * ${b} = ${a * b} ${a} / ${b} = ${a / b}`; }
 
 #### 5.6.3 No line continuations[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-strings-no-line-continuations)
 
@@ -1133,13 +1142,13 @@ Do not use *line continuations* (that is, ending a line inside a string litera
 
 Disallowed:
 
-const longString =  'This is a very long string that far exceeds the 80\
-    column limit.  It unfortunately contains long stretches of spaces due\
-    to how the continued lines are indented.';
+const longString = 'This is a very long string that far exceeds the 80\
+ column limit. It unfortunately contains long stretches of spaces due\
+ to how the continued lines are indented.';
 
 Instead, write
 
-const longString =  'This is a very long string that far exceeds the 80 '  +  'column limit. It does not contain long stretches of spaces since '  +  'the concatenated strings are cleaner.';
+const longString = 'This is a very long string that far exceeds the 80 ' + 'column limit. It does not contain long stretches of spaces since ' + 'the concatenated strings are cleaner.';
 
 ### 5.7 Number literals[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-number-literals)
 
@@ -1167,11 +1176,11 @@ Prefer throwing exceptions over ad-hoc error-handling approaches (such as passin
 
 It is very rarely correct to do nothing in response to a caught exception. When it truly is appropriate to take no action whatsoever in a catch block, the reason this is justified is explained in a comment.
 
-try  {  return handleNumericResponse(response);  }  catch  (ok)  {  // it's not numeric; that's fine, just continue  }  return handleTextResponse(response);
+try { return handleNumericResponse(response); } catch (ok) { // it's not numeric; that's fine, just continue } return handleTextResponse(response);
 
 Disallowed:
 
-  try  { shouldFail(); fail('expected an error');  }  catch  (expected)  {  }
+try { shouldFail(); fail('expected an error'); } catch (expected) { }
 
 Tip: Unlike in some other languages, patterns like the above simply don't work since this will catch the error thrown by `fail`. Use `assertThrows()` instead.
 
@@ -1185,7 +1194,7 @@ Within a switch block, each statement group either terminates abruptly (with a 
 
 Example:
 
-switch  (input)  {  case  1:  case  2: prepareOneOrTwo();  // fall through  case  3: handleOneTwoOrThree();  break;  default: handleLargeNumber(input);  }
+switch (input) { case 1: case 2: prepareOneOrTwo(); // fall through case 3: handleOneTwoOrThree(); break; default: handleLargeNumber(input); }
 
 ##### 5.8.3.2 The `default` case is present
 
@@ -1205,7 +1214,7 @@ Use identity operators (`===`/`!==`) except in the cases documented below.
 
 Catching both `null` and `undefined` values:
 
-if  (someObjectOrPrimitive ==  null)  {  // Checking for null catches both null and undefined for objects and  // primitives, but does not catch other falsy values like 0 or the empty  // string.  }
+if (someObjectOrPrimitive == null) { // Checking for null catches both null and undefined for objects and // primitives, but does not catch other falsy values like 0 or the empty // string. }
 
 ### 5.11 Disallowed features[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#disallowed-features)
 
@@ -1231,13 +1240,13 @@ Never use `new` on the primitive object wrappers (`Boolean`, `Number`, `Stri
 
 Disallowed:
 
-const  /** Boolean */ x =  new  Boolean(false);  if  (x) alert(typeof x);  // alerts 'object' - WAT?
+const /\*_ Boolean _/ x = new Boolean(false); if (x) alert(typeof x); // alerts 'object' - WAT?
 
 The wrappers may be called as functions for coercing (which is preferred over using `+` or concatenating the empty string) or creating symbols.
 
 Example:
 
-const  /** boolean */ x =  Boolean(0);  if  (!x) alert(typeof x);  // alerts 'boolean', as expected
+const /\*_ boolean _/ x = Boolean(0); if (!x) alert(typeof x); // alerts 'boolean', as expected
 
 #### 5.11.6 Modifying builtin objects[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#disallowed-features-modifying-builtin-objects)
 
@@ -1251,18 +1260,17 @@ Never invoke a constructor in a `new` statement without using parentheses `()
 
 Disallowed:
 
-new  Foo;
+new Foo;
 
 Use instead:
 
-new  Foo();
+new Foo();
 
 Omitting parentheses can lead to subtle mistakes. These two lines are not equivalent:
 
-new  Foo().Bar();  new  Foo.Bar();
+new Foo().Bar(); new Foo.Bar();
 
-6 Naming[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#naming)
-----------------------------------------------------------------------------------------------------------------------------
+## 6 Naming[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#naming)
 
 ### 6.1 Rules common to all identifiers[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#naming-rules-common-to-all-identifiers)
 
@@ -1310,7 +1318,7 @@ Every constant is a `@const` static property or a module-local `const` decla
 
 Examples:
 
-// Constants  const NUMBER =  5;  /** @const */ exports.NAMES =  ImmutableList.of('Ed',  'Ann');  /** @enum */ exports.SomeEnum  =  { ENUM_CONSTANT:  'value'  };  // Not constants  let letVariable =  'non-const';  class  MyClass  {  constructor()  {  /** @const {string} */  this.nonStatic =  'non-static';  }  };  /** @type {string} */  MyClass.staticButMutable =  'not @const, can be reassigned';  const  /** Set<string> */ mutableCollection =  new  Set();  const  /** ImmutableSet<SomeMutableType> */ mutableElements =  ImmutableSet.of(mutable);  const  Foo  = goog.require('my.Foo');  // mirrors imported name  const logger = log.getLogger('loggers.are.not.immutable');
+// Constants const NUMBER = 5; /** @const \*/ exports.NAMES = ImmutableList.of('Ed', 'Ann'); /** @enum _/ exports.SomeEnum = { ENUM_CONSTANT: 'value' }; // Not constants let letVariable = 'non-const'; class MyClass { constructor() { /\*\* @const {string} _/ this.nonStatic = 'non-static'; } }; /** @type {string} \*/ MyClass.staticButMutable = 'not @const, can be reassigned'; const /** Set<string> _/ mutableCollection = new Set(); const /\*\* ImmutableSet<SomeMutableType> _/ mutableElements = ImmutableSet.of(mutable); const Foo = goog.require('my.Foo'); // mirrors imported name const logger = log.getLogger('loggers.are.not.immutable');
 
 Constants' names are typically nouns or noun phrases.
 
@@ -1320,7 +1328,7 @@ Local aliases should be used whenever they improve readability over fully-qualif
 
 Examples:
 
-const staticHelper = importedNamespace.staticHelper;  const CONSTANT_NAME =  ImportedClass.CONSTANT_NAME;  const  {assert, assertInstanceof}  = asserts;
+const staticHelper = importedNamespace.staticHelper; const CONSTANT_NAME = ImportedClass.CONSTANT_NAME; const {assert, assertInstanceof} = asserts;
 
 #### 6.2.6 Non-constant field names[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#naming-non-constant-field-names)
 
@@ -1366,20 +1374,19 @@ Note that the casing of the original words is almost entirely disregarded.
 
 Examples:
 
-| Prose form | Correct | Incorrect |
-| --- | --- | --- |
-| XML HTTP request | XmlHttpRequest | XMLHTTPRequest |
-| new customer ID | newCustomerId | newCustomerID |
-| inner stopwatch | innerStopwatch | innerStopWatch |
+| Prose form            | Correct           | Incorrect         |
+| --------------------- | ----------------- | ----------------- |
+| XML HTTP request      | XmlHttpRequest    | XMLHTTPRequest    |
+| new customer ID       | newCustomerId     | newCustomerID     |
+| inner stopwatch       | innerStopwatch    | innerStopWatch    |
 | supports IPv6 on iOS? | supportsIpv6OnIos | supportsIPv6OnIOS |
-| YouTube importer | YouTubeImporter | YoutubeImporter* |
+| YouTube importer      | YouTubeImporter   | YoutubeImporter\* |
 
-*Acceptable, but not recommended.
+\*Acceptable, but not recommended.
 
 Note: Some words are ambiguously hyphenated in the English language: for example nonempty and non-empty are both correct, so the method names checkNonempty and checkNonEmpty are likewise both correct.
 
-7 JSDoc[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc)
---------------------------------------------------------------------------------------------------------------------------
+## 7 JSDoc[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc)
 
 [JSDoc](https://developers.google.com/closure/compiler/docs/js-for-compiler) is used on all classes, fields, and methods.
 
@@ -1387,15 +1394,16 @@ Note: Some words are ambiguously hyphenated in the English language: for example
 
 The basic formatting of JSDoc blocks is as seen in this example:
 
-/**
- * Multiple lines of JSDoc text are written here,
- * wrapped normally.
- * @param {number} arg A number to do something to.
- */  function doSomething(arg)  {  ...  }
+/\*\*
+
+- Multiple lines of JSDoc text are written here,
+- wrapped normally.
+- @param {number} arg A number to do something to.
+  \*/ function doSomething(arg) { ... }
 
 or in this single-line example:
 
-/** @const @private {!Foo} A short bit of JSDoc. */  this.foo_ = foo;
+/\*_ @const @private {!Foo} A short bit of JSDoc. _/ this.foo\_ = foo;
 
 If a single-line comment overflows into multiple lines, it must use the multi-line style with `/**` and `*/` on their own lines.
 
@@ -1407,12 +1415,13 @@ JSDoc is written in Markdown, though it may include HTML when necessary.
 
 Note that tools that automatically extract JSDoc (e.g. [JsDossier](https://github.com/jleyba/js-dossier)) will often ignore plain text formatting, so if you did this:
 
-/**
- * Computes weight based on three factors:
- *   items sent
- *   items received
- *   last timestamp
- */
+/\*\*
+
+- Computes weight based on three factors:
+- items sent
+- items received
+- last timestamp
+  \*/
 
 it would come out like this:
 
@@ -1420,13 +1429,14 @@ Computes weight based on three factors: items sent items received last timestamp
 
 Instead, write a Markdown list:
 
-/**
- * Computes weight based on three factors:
- *
- *  - items sent
- *  - items received
- *  - last timestamp
- */
+/\*\*
+
+- Computes weight based on three factors:
+-
+- - items sent
+- - items received
+- - last timestamp
+    \*/
 
 ### 7.3 JSDoc tags[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-tags)
 
@@ -1434,24 +1444,26 @@ Google style allows a subset of JSDoc tags. See [9.1 JSDoc tag reference](https
 
 Disallowed:
 
-/**
- * The "param" tag must occupy its own line and may not be combined.
- * @param {number} left @param {number} right
- */  function add(left, right)  {  ...  }
+/\*\*
+
+- The "param" tag must occupy its own line and may not be combined.
+- @param {number} left @param {number} right
+  \*/ function add(left, right) { ... }
 
 Simple tags that do not require any additional data (such as `@private`, `@const`, `@final`, `@export`) may be combined onto the same line, along with an optional type when appropriate.
 
-/**
- * Place more complex annotations (like "implements" and "template")
- * on their own lines.  Multiple simple tags (like "export" and "final")
- * may be combined in one line.
- * @export @final
- * @implements {Iterable<TYPE>}
- * @template TYPE
- */  class  MyClass  {  /**
-   * @param {!ObjType} obj Some object.
-   * @param {number=} num An optional number.
-   */  constructor(obj, num =  42)  {  /** @private @const {!Array<!ObjType|number>} */  this.data_ =  [obj, num];  }  }
+/\*\*
+
+- Place more complex annotations (like "implements" and "template")
+- on their own lines. Multiple simple tags (like "export" and "final")
+- may be combined in one line.
+- @export @final
+- @implements {Iterable<TYPE>}
+- @template TYPE
+  \*/ class MyClass { /\*\*
+  - @param {!ObjType} obj Some object.
+  - @param {number=} num An optional number.
+    _/ constructor(obj, num = 42) { /\*\* @private @const {!Array<!ObjType|number>} _/ this.data\_ = [obj, num]; } }
 
 There is no hard rule for when to combine tags, or in which order, but be consistent.
 
@@ -1461,13 +1473,14 @@ For general information about annotating types in JavaScript see [Annotating Ja
 
 Line-wrapped block tags are indented four spaces. Wrapped description text may be lined up with the description on previous lines, but this horizontal alignment is discouraged.
 
-/**
- * Illustrates line wrapping for long param/return descriptions.
- * @param {string} foo This is a param with a description too long to fit in
- *     one line.
- * @return {number} This returns something that has a description too long to
- *     fit in one line.
- */ exports.method =  function(foo)  {  return  5;  };
+/\*\*
+
+- Illustrates line wrapping for long param/return descriptions.
+- @param {string} foo This is a param with a description too long to fit in
+-     one line.
+- @return {number} This returns something that has a description too long to
+-     fit in one line.
+  \*/ exports.method = function(foo) { return 5; };
 
 Do not indent when wrapping a `@desc` or `@fileoverview` description.
 
@@ -1477,40 +1490,43 @@ A file may have a top-level file overview. A copyright notice , author informati
 
 Example:
 
-/**
- * @fileoverview Description of file, its uses and information
- * about its dependencies.
- * @package
- */
+/\*\*
+
+- @fileoverview Description of file, its uses and information
+- about its dependencies.
+- @package
+  \*/
 
 ### 7.6 Class comments[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-class-comments)
 
 Classes, interfaces and records must be documented with a description and any template parameters, implemented interfaces, visibility, or other appropriate tags. The class description should provide the reader with enough information to know how and when to use the class, as well as any additional considerations necessary to correctly use the class. Textual descriptions may be omitted on the constructor. `@constructor` and `@extends` annotations are not used with the `class` keyword unless the class is being used to declare an `@interface` or it extends a generic class.
 
-/**
- * A fancier event target that does cool things.
- * @implements {Iterable<string>}
- */  class  MyFancyTarget extends EventTarget  {  /**
-   * @param {string} arg1 An argument that makes this more interesting.
-   * @param {!Array<number>} arg2 List of numbers to be processed.
-   */  constructor(arg1, arg2)  {  // ...  }  };  /**
- * Records are also helpful.
- * @extends {Iterator<TYPE>}
- * @record
- * @template TYPE
- */  class  Listable  {  /** @return {TYPE} The next item in line to be returned. */ next()  {}  }
+/\*\*
+
+- A fancier event target that does cool things.
+- @implements {Iterable<string>}
+  \*/ class MyFancyTarget extends EventTarget { /\*\*
+  - @param {string} arg1 An argument that makes this more interesting.
+  - @param {!Array<number>} arg2 List of numbers to be processed.
+    \*/ constructor(arg1, arg2) { // ... } }; /\*\*
+- Records are also helpful.
+- @extends {Iterator<TYPE>}
+- @record
+- @template TYPE
+  _/ class Listable { /\*\* @return {TYPE} The next item in line to be returned. _/ next() {} }
 
 ### 7.7 Enum and typedef comments[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-enum-and-typedef-comments)
 
 All enums and typedefs must be documented with appropriate JSDoc tags (`@typedef` or `@enum`) on the preceding line. Public enums and typedefs must also have a description. Individual enum items may be documented with a JSDoc comment on the preceding line.
 
-/**
- * A useful type union, which is reused often.
- * @typedef {!Bandersnatch|!BandersnatchType}
- */  let  CoolUnionType;  /**
- * Types of bandersnatches.
- * @enum {string}
- */  const  BandersnatchType  =  {  /** This kind is really frumious. */ FRUMIOUS:  'frumious',  /** The less-frumious kind. */ MANXOME:  'manxome',  };
+/\*\*
+
+- A useful type union, which is reused often.
+- @typedef {!Bandersnatch|!BandersnatchType}
+  \*/ let CoolUnionType; /\*\*
+- Types of bandersnatches.
+- @enum {string}
+  _/ const BandersnatchType = { /\*\* This kind is really frumious. _/ FRUMIOUS: 'frumious', /\*_ The less-frumious kind. _/ MANXOME: 'manxome', };
 
 Typedefs are useful for defining short record types, or aliases for unions, complex functions, or generic types. Typedefs should be avoided for record types with many fields, since they do not allow documenting individual fields, nor using templates or recursive references. For large record types, prefer `@record`.
 
@@ -1524,36 +1540,38 @@ Method descriptions begin with a verb phrase that describes what the method does
 
 If a method overrides a superclass method, it must include an `@override` annotation. Overridden methods inherit all JSDoc annotations from the super class method (including visibility annotations) and they should be omitted in the overridden method. However, if any type is refined in type annotations, all `@param` and `@return` annotations must be specified explicitly.
 
-/** A class that does something. */  class  SomeClass extends SomeBaseClass  {  /**
-   * Operates on an instance of MyClass and returns something.
-   * @param {!MyClass} obj An object that for some reason needs detailed
-   *     explanation that spans multiple lines.
-   * @param {!OtherClass} obviousOtherClass
-   * @return {boolean} Whether something occurred.
-   */ someMethod(obj, obviousOtherClass)  {  ...  }  /** @override */ overriddenMethod(param)  {  ...  }  }  /**
- * Demonstrates how top-level functions follow the same rules.  This one
- * makes an array.
- * @param {TYPE} arg
- * @return {!Array<TYPE>}
- * @template TYPE
- */  function makeArray(arg)  {  ...  }
+/** A class that does something. \*/ class SomeClass extends SomeBaseClass { /**
+
+- Operates on an instance of MyClass and returns something.
+- @param {!MyClass} obj An object that for some reason needs detailed
+-     explanation that spans multiple lines.
+- @param {!OtherClass} obviousOtherClass
+- @return {boolean} Whether something occurred.
+  _/ someMethod(obj, obviousOtherClass) { ... } /\*\* @override _/ overriddenMethod(param) { ... } } /\*\*
+- Demonstrates how top-level functions follow the same rules. This one
+- makes an array.
+- @param {TYPE} arg
+- @return {!Array<TYPE>}
+- @template TYPE
+  \*/ function makeArray(arg) { ... }
 
 If you only need to document the param and return types of a function, you may optionally use inline JSDocs in the function's signature. These inline JSDocs specify the return and param types without tags.
 
-function  /** string */ foo(/** number */ arg)  {...}
+function /** string \*/ foo(/** number \*/ arg) {...}
 
 If you need descriptions or tags, use a single JSDoc comment above the method. For example, methods which return values need a `@return` tag.
 
-class  MyClass  {  /**
-   * @param {number} arg
-   * @return {string}
-   */ bar(arg)  {...}  }
+class MyClass { /\*\*
 
-// Illegal inline JSDocs.  class  MyClass  {  /** @return {string} */ foo()  {...}  }  /** Function description. */ bar()  {...}
+- @param {number} arg
+- @return {string}
+  \*/ bar(arg) {...} }
+
+// Illegal inline JSDocs. class MyClass { /** @return {string} \*/ foo() {...} } /** Function description. \*/ bar() {...}
 
 In anonymous functions annotations are generally optional. If the automatic type inference is insufficient or explicit annotation improves readability, then annotate param and return types like this:
 
-promise.then(  /** @return {string} */  (/** !Array<string> */ items)  =>  { doSomethingWith(items);  return items[0];  });
+promise.then( /** @return {string} \*/ (/** !Array<string> \*/ items) => { doSomethingWith(items); return items[0]; });
 
 For function type expressions, see [7.10.4 Function type expressions](https://google.github.io/styleguide/jsguide.html#jsdoc-function-types).
 
@@ -1563,13 +1581,14 @@ Property types must be documented. The description may be omitted for private pr
 
 Publicly exported constants are commented the same way as properties.
 
-/** My class. */  class  MyClass  {  /** @param {string=} someString */  constructor(someString =  'default string')  {  /** @private @const {string} */  this.someString_ = someString;  /** @private @const {!OtherType} */  this.someOtherThing_ = functionThatReturnsAThing();  /**
-     * Maximum number of things per pane.
-     * @type {number}
-     */  this.someProperty =  4;  }  }  /**
- * The number of times we'll try before giving up.
- * @const {number}
- */  MyClass.RETRY_COUNT =  33;
+/** My class. \*/ class MyClass { /** @param {string=} someString _/ constructor(someString = 'default string') { /\*\* @private @const {string} _/ this.someString* = someString; /\** @private @const {!OtherType} */ this.someOtherThing* = functionThatReturnsAThing(); /**
+_ Maximum number of things per pane.
+_ @type {number}
+\*/ this.someProperty = 4; } } /**
+
+- The number of times we'll try before giving up.
+- @const {number}
+  \*/ MyClass.RETRY_COUNT = 33;
 
 ### 7.10 Type annotations[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-type-annotations)
 
@@ -1586,17 +1605,17 @@ Nullability modifiers have different requirements for different types, which fal
 
 Bad:
 
-const  /** MyObject */ myObject =  null;  // Non-primitive types must be annotated.  const  /** !number */ someNum =  5;  // Primitives are non-nullable by default.  const  /** number? */ someNullableNum =  null;  // ? should precede the type.  const  /** !{foo: string, bar: number} */ record =  ...;  // Already non-nullable.  const  /** MyTypeDef */ def =  ...;  // Not sure if MyTypeDef is nullable.  // Not sure if object (nullable), enum (non-nullable, unless otherwise  // specified), or typedef (depends on definition).  const  /** SomeCamelCaseName */ n =  ...;
+const /** MyObject \*/ myObject = null; // Non-primitive types must be annotated. const /** !number _/ someNum = 5; // Primitives are non-nullable by default. const /\*\* number? _/ someNullableNum = null; // ? should precede the type. const /** !{foo: string, bar: number} \*/ record = ...; // Already non-nullable. const /** MyTypeDef _/ def = ...; // Not sure if MyTypeDef is nullable. // Not sure if object (nullable), enum (non-nullable, unless otherwise // specified), or typedef (depends on definition). const /\*\* SomeCamelCaseName _/ n = ...;
 
 Good:
 
-const  /** ?MyObject */ myObject =  null;  const  /** number */ someNum =  5;  const  /** ?number */ someNullableNum =  null;  const  /** {foo: string, bar: number} */ record =  ...;  const  /** !MyTypeDef */ def =  ...;  const  /** ?SomeCamelCaseName */ n =  ...;
+const /** ?MyObject \*/ myObject = null; const /** number _/ someNum = 5; const /\*\* ?number _/ someNullableNum = null; const /** {foo: string, bar: number} \*/ record = ...; const /** !MyTypeDef _/ def = ...; const /\*\* ?SomeCamelCaseName _/ n = ...;
 
 #### 7.10.2 Type Casts[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-type-casts)
 
 In cases where the compiler doesn't accurately infer the type of an expression, and the assertion functions in [goog.asserts](https://google.github.io/closure-library/api/goog.asserts.html) cannot remedy it , it is possible to tighten the type by adding a type annotation comment and enclosing the expression in parentheses. Note that the parentheses are required.
 
-/** @type {number} */  (x)
+/\*_ @type {number} _/ (x)
 
 #### 7.10.3 Template Parameter Types[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-template-parameter-types)
 
@@ -1604,15 +1623,15 @@ Always specify template parameters. This way compiler can do a better job and it
 
 Bad:
 
-const  /** !Object */ users =  {};  const  /** !Array */ books =  [];  const  /** !Promise */ response =  ...;
+const /** !Object \*/ users = {}; const /** !Array _/ books = []; const /\*\* !Promise _/ response = ...;
 
 Good:
 
-const  /** !Object<string, !User> */ users =  {};  const  /** !Array<string> */ books =  [];  const  /** !Promise<!Response> */ response =  ...;  const  /** !Promise<undefined> */ thisPromiseReturnsNothingButParameterIsStillUseful =  ...;  const  /** !Object<string, *> */ mapOfEverything =  {};
+const /** !Object<string, !User> \*/ users = {}; const /** !Array<string> _/ books = []; const /\*\* !Promise<!Response> _/ response = ...; const /** !Promise<undefined> \*/ thisPromiseReturnsNothingButParameterIsStillUseful = ...; const /** !Object<string, _> _/ mapOfEverything = {};
 
 Cases when template parameters should not be used:
 
--   `Object` is used for type hierarchy and not as map-like structure.
+- `Object` is used for type hierarchy and not as map-like structure.
 
 #### 7.10.4 Function type expressions[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-function-types)
 
@@ -1622,22 +1641,23 @@ Where the function definition is given, do not use a function type expression. S
 
 Function type expressions are needed, for example, inside `@typedef`, `@param` or `@return`. Use it also for variables or properties of function type, if they are not immediately initialized with the function definition.
 
-  /** @private {function(string): string} */  this.idGenerator_ = googFunctions.identity;
+/\*_ @private {function(string): string} _/ this.idGenerator\_ = googFunctions.identity;
 
 When using a function type expression, always specify the return type explicitly. Otherwise the default return type is unknown (`?`), which leads to strange and unexpected behavior, and is rarely what is actually desired.
 
 Bad - type error, but no warning given:
 
-/** @param {function()} generateNumber */  function foo(generateNumber)  {  const  /** number */ x = generateNumber();  // No compile-time type error here.  } foo(()  =>  'clearly not a number');
+/** @param {function()} generateNumber \*/ function foo(generateNumber) { const /** number \*/ x = generateNumber(); // No compile-time type error here. } foo(() => 'clearly not a number');
 
 Good:
 
-/**
- * @param {function(): *} inputFunction1 Can return any type.
- * @param {function(): undefined} inputFunction2 Definitely doesn't return
- *      anything.
- * NOTE: the return type of `foo` itself is safely implied to be {undefined}.
- */  function foo(inputFunction1, inputFunction2)  {...}
+/\*\*
+
+- @param {function(): \*} inputFunction1 Can return any type.
+- @param {function(): undefined} inputFunction2 Definitely doesn't return
+-      anything.
+- NOTE: the return type of `foo` itself is safely implied to be {undefined}.
+  \*/ function foo(inputFunction1, inputFunction2) {...}
 
 #### 7.10.5 Whitespace[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-whitespace)
 
@@ -1645,25 +1665,25 @@ Within a type annotation, a single space or line break is required after each co
 
 Good:
 
-/** @type {function(string): number} */  /** @type {{foo: number, bar: number}} */  /** @type {number|string} */  /** @type {!Object<string, string>} */  /** @type {function(this: Object<string, string>, number): string} */  /**
- * @type {function(
- *     !SuperDuperReallyReallyLongTypedefThatForcesTheLineBreak,
- *     !OtherVeryLongTypedef): string}
- */  /**
- * @type {!SuperDuperReallyReallyLongTypedefThatForcesTheLineBreak|
- *     !OtherVeryLongTypedef}
- */
+/** @type {function(string): number} \*/ /** @type {{foo: number, bar: number}} _/ /\*\* @type {number|string} _/ /** @type {!Object<string, string>} \*/ /** @type {function(this: Object<string, string>, number): string} \*/ /\*\*
+
+- @type {function(
+-     !SuperDuperReallyReallyLongTypedefThatForcesTheLineBreak,
+-     !OtherVeryLongTypedef): string}
+  \*/ /\*\*
+- @type {!SuperDuperReallyReallyLongTypedefThatForcesTheLineBreak|
+-     !OtherVeryLongTypedef}
+  \*/
 
 Bad:
 
-// Only put a space after the colon  /** @type {function(string) : number} */  // Put spaces after colons and commas  /** @type {{foo:number,bar:number}} */  // No space in union types  /** @type {number | string} */
+// Only put a space after the colon /** @type {function(string) : number} \*/ // Put spaces after colons and commas /** @type {{foo:number,bar:number}} _/ // No space in union types /\*\* @type {number | string} _/
 
 ### 7.11 Visibility annotations[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#jsdoc-visibility-annotations)
 
 Visibility annotations (`@private`, `@package`, `@protected`) may be specified in a `@fileoverview` block, or on any exported symbol or property. Do not specify visibility for local variables, whether within a function or at the top level of a module. All `@private` names must end with an underscore.
 
-8 Policies[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#policies)
---------------------------------------------------------------------------------------------------------------------------------
+## 8 Policies[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#policies)
 
 ### 8.1 Issues unspecified by Google Style: Be Consistent![![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#policies-be-consistent)
 
@@ -1691,7 +1711,7 @@ Warnings are suppressed at the narrowest reasonable scope, usually that of a sin
 
 Example
 
-/** @suppress {uselessCode} Unrecognized 'use asm' declaration */  function fn()  {  'use asm';  return  0;  }
+/\*_ @suppress {uselessCode} Unrecognized 'use asm' declaration _/ function fn() { 'use asm'; return 0; }
 
 Even a large number of suppressions in a class is still better than blinding the entire class to this type of warning.
 
@@ -1726,8 +1746,7 @@ Teams and projects may adopt additional style rules beyond those in this documen
 
 Source code generated by the build process is not required to be in Google Style. However, any generated identifiers that will be referenced from hand-written source code must follow the naming requirements. As a special exception, such identifiers are allowed to contain underscores, which may help to avoid conflicts with hand-written identifiers.
 
-9 Appendices[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#appendices)
-------------------------------------------------------------------------------------------------------------------------------------
+## 9 Appendices[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#appendices)
 
 ### 9.1 JSDoc tag reference[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#appendices-jsdoc-tag-reference)
 
@@ -1749,10 +1768,11 @@ You may also see other types of JSDoc annotations in third-party code. These ann
 
 Syntax: `@author username@google.com (First Last)`
 
-/**
- * @fileoverview Utilities for handling textareas.
- * @author kuth@google.com (Uthur Pendragon)
- */
+/\*\*
+
+- @fileoverview Utilities for handling textareas.
+- @author kuth@google.com (Uthur Pendragon)
+  \*/
 
 Documents the author of a file or the owner of a test, generally only used in the `@fileoverview` comment. The `@owner` tag is used by the unit test dashboard to determine who owns the test results.
 
@@ -1760,10 +1780,11 @@ Documents the author of a file or the owner of a test, generally only used in th
 
 Syntax: `@bug bugnumber`
 
-/** @bug 1234567 */  function testSomething()  {  // ...  }  /**
- * @bug 1234568
- * @bug 1234569
- */  function testTwoBugs()  {  // ...  }
+/** @bug 1234567 \*/ function testSomething() { // ... } /**
+
+- @bug 1234568
+- @bug 1234569
+  \*/ function testTwoBugs() { // ... }
 
 Indicates what bugs the given test function regression tests.
 
@@ -1775,9 +1796,9 @@ Multiple bugs should each have their own `@bug` line, to make searching for re
 
 Syntax: `{@code ...}`
 
-Historically, ``BatchItem`` was written as `{@code BatchItem}`.
+Historically, `BatchItem` was written as `{@code BatchItem}`.
 
-/** Processes pending `BatchItem` instances. */  function processBatchItems()  {}
+/\*_ Processes pending `BatchItem` instances. _/ function processBatchItems() {}
 
 Indicates that a term in a JSDoc description is code so it may be correctly formatted in generated documentation.
 
@@ -1785,7 +1806,7 @@ Indicates that a term in a JSDoc description is code so it may be correctly form
 
 Syntax: `@desc Message description`
 
-/** @desc Notifying a user that their account has been created. */ exports.MSG_ACCOUNT_CREATED = goog.getMsg(  'Your account has been successfully created.');
+/\*_ @desc Notifying a user that their account has been created. _/ exports.MSG_ACCOUNT_CREATED = goog.getMsg( 'Your account has been successfully created.');
 
 ##### 9.1.2.5 `@link`
 
@@ -1793,25 +1814,27 @@ Syntax: `{@link ...}`
 
 This tag is used to generate cross-reference links within generated documentation.
 
-/** Processes pending {@link BatchItem} instances. */  function processBatchItems()  {}
+/\*_ Processes pending {@link BatchItem} instances. _/ function processBatchItems() {}
 
 **Historical note:** @link tags have also been used to create external links in generated documentation. For external links, always use Markdown's link syntax instead:
 
-/**
- * This class implements a useful subset of the
- * [native Event interface](https://dom.spec.whatwg.org/#event).
- */  class  ApplicationEvent  {}
+/\*\*
+
+- This class implements a useful subset of the
+- [native Event interface](https://dom.spec.whatwg.org/#event).
+  \*/ class ApplicationEvent {}
 
 ##### 9.1.2.6 `@see`
 
 Syntax: `@see Link`
 
-/**
- * Adds a single item, recklessly.
- * @see #addSafely
- * @see goog.Collect
- * @see goog.RecklessAdder#add
- */
+/\*\*
+
+- Adds a single item, recklessly.
+- @see #addSafely
+- @see goog.Collect
+- @see goog.RecklessAdder#add
+  \*/
 
 Reference a lookup to another class function or method.
 
@@ -1819,11 +1842,12 @@ Reference a lookup to another class function or method.
 
 Syntax: `@supported Description`
 
-/**
- * @fileoverview Event Manager
- * Provides an abstracted interface to the browsers' event systems.
- * @supported IE10+, Chrome, Safari
- */
+/\*\*
+
+- @fileoverview Event Manager
+- Provides an abstracted interface to the browsers' event systems.
+- @supported IE10+, Chrome, Safari
+  \*/
 
 Used in a fileoverview to indicate what browsers are supported by the file.
 
@@ -1853,11 +1877,11 @@ The following tags used to be standard but are now deprecated.
 
 Here is a collection of lesser-known or commonly misunderstood facts about Google Style for JavaScript. (The following are true statements; this is not a list of myths.)
 
--   Neither a copyright statement nor `@author` credit is required in a source file. (Neither is explicitly recommended, either.)
--   There is no hard and fast rule governing how to order the members of a class ([5.4 Classes](https://google.github.io/styleguide/jsguide.html#features-classes)).
--   Empty blocks can usually be represented concisely as `{}`, as detailed in ([4.1.3 Empty blocks: may be concise](https://google.github.io/styleguide/jsguide.html#formatting-empty-blocks)).
--   The prime directive of line-wrapping is: prefer to break at a higher syntactic level ([4.5.1 Where to break](https://google.github.io/styleguide/jsguide.html#formatting-where-to-break)).
--   Non-ASCII characters are allowed in string literals, comments and JSDoc, and in fact are recommended when they make the code easier to read than the equivalent Unicode escape would ([2.3.3 Non-ASCII characters](https://google.github.io/styleguide/jsguide.html#non-ascii-characters)).
+- Neither a copyright statement nor `@author` credit is required in a source file. (Neither is explicitly recommended, either.)
+- There is no hard and fast rule governing how to order the members of a class ([5.4 Classes](https://google.github.io/styleguide/jsguide.html#features-classes)).
+- Empty blocks can usually be represented concisely as `{}`, as detailed in ([4.1.3 Empty blocks: may be concise](https://google.github.io/styleguide/jsguide.html#formatting-empty-blocks)).
+- The prime directive of line-wrapping is: prefer to break at a higher syntactic level ([4.5.1 Where to break](https://google.github.io/styleguide/jsguide.html#formatting-where-to-break)).
+- Non-ASCII characters are allowed in string literals, comments and JSDoc, and in fact are recommended when they make the code easier to read than the equivalent Unicode escape would ([2.3.3 Non-ASCII characters](https://google.github.io/styleguide/jsguide.html#non-ascii-characters)).
 
 ### 9.3 Style-related tools[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#appendices-style-related-tools)
 
@@ -1891,9 +1915,9 @@ For additional information see the official documentation for the [JS Conforman
 
 This section describes exceptions and additional rules to be followed when modern ECMAScript 6 syntax is not available to the code authors. Exceptions to the recommended style are required when ECMAScript 6 syntax is not possible and are outlined here:
 
--   Use of `var` declarations is allowed
--   Use of `arguments` is allowed
--   Optional parameters without default values are allowed
+- Use of `var` declarations is allowed
+- Use of `arguments` is allowed
+- Optional parameters without default values are allowed
 
 #### 9.4.2 Use `var`[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#appendices-legacy-exceptions-var)
 
@@ -1901,13 +1925,13 @@ This section describes exceptions and additional rules to be followed when moder
 
 `var` declarations are scoped to the beginning of the nearest enclosing function, script or module, which can cause unexpected behavior, especially with function closures that reference `var` declarations inside of loops. The following code gives an example:
 
-for  (var i =  0; i <  3;  ++i)  {  var iteration = i; setTimeout(function()  { console.log(iteration);  }, i*1000);  }  // logs 2, 2, 2 -- NOT 0, 1, 2  // because `iteration` is function-scoped, not local to the loop.
+for (var i = 0; i < 3; ++i) { var iteration = i; setTimeout(function() { console.log(iteration); }, i\*1000); } // logs 2, 2, 2 -- NOT 0, 1, 2 // because `iteration` is function-scoped, not local to the loop.
 
 ##### 9.4.2.2 Declare variables as close as possible to first use
 
 Even though `var` declarations are scoped to the beginning of the enclosing function, `var` declarations should be as close as possible to their first use, for readability purposes. However, do not put a `var` declaration inside a block if that variable is referenced outside the block. For example:
 
-function sillyFunction()  {  var count =  0;  for  (var x in y)  {  // "count" could be declared here, but don't do that. count++;  } console.log(count +  ' items in y');  }
+function sillyFunction() { var count = 0; for (var x in y) { // "count" could be declared here, but don't do that. count++; } console.log(count + ' items in y'); }
 
 ##### 9.4.2.3 Use @const for constants variables
 
@@ -1917,13 +1941,13 @@ For global declarations where the `const` keyword would be used, if it were av
 
 Do **not** do this:
 
-if  (x)  {  function foo()  {}  }
+if (x) { function foo() {} }
 
 While most JavaScript VMs implemented before ECMAScript 6 support function declarations within blocks it was not standardized. Implementations were inconsistent with each other and with the now-standard ECMAScript 6 behavior for block scoped function declaration. ECMAScript 5 and prior only allow for function declarations in the root statement list of a script or function and explicitly ban them in block scopes in strict mode.
 
 To get consistent behavior, instead use a `var` initialized with a function expression to define a function within a block:
 
-if  (x)  {  var foo =  function()  {};  }
+if (x) { var foo = function() {}; }
 
 #### 9.4.4 Dependency management with `goog.provide`/`goog.require`[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#appendices-legacy-exceptions-goog-provide)
 
@@ -1931,10 +1955,10 @@ if  (x)  {  var foo =  function()  {};  }
 
 **WARNING: `goog.provide` dependency management is deprecated.** All new files, even in projects using `goog.provide` for older files, should use [`goog.module`](https://google.github.io/styleguide/jsguide.html#source-file-structure). The following rules are for pre-existing `goog.provide` files only.
 
--   Place all `goog.provide`s first, `goog.require`s second. Separate provides from requires with an empty line.
--   Sort the entries alphabetically (uppercase first).
--   Don't wrap `goog.provide` and `goog.require` statements. Exceed 80 columns if necessary.
--   Only provide top-level symbols.
+- Place all `goog.provide`s first, `goog.require`s second. Separate provides from requires with an empty line.
+- Sort the entries alphabetically (uppercase first).
+- Don't wrap `goog.provide` and `goog.require` statements. Exceed 80 columns if necessary.
+- Only provide top-level symbols.
 
 `goog.provide` statements should be grouped together and placed first. All `goog.require` statements should follow. The two lists should be separated with an empty line.
 
@@ -1972,11 +1996,11 @@ Similar to C++ namespaces, do not indent under `goog.scope` declarations. Inst
 
 Only make aliases for names that will not be re-assigned to another object (e.g., most constructors, enums, and namespaces). Do not do this (see below for how to alias a constructor):
 
-goog.scope(function()  {  var  Button  = goog.ui.Button;  Button  =  function()  {  ...  };  ...
+goog.scope(function() { var Button = goog.ui.Button; Button = function() { ... }; ...
 
 Names must be the same as the last property of the global that they are aliasing.
 
-goog.provide('my.module.SomeType'); goog.require('goog.dom'); goog.require('goog.ui.Button'); goog.scope(function()  {  var  Button  = goog.ui.Button;  var dom = goog.dom;  // Alias new types after the constructor declaration. my.module.SomeType  =  function()  {  ...  };  var  SomeType  = my.module.SomeType;  // Declare methods on the prototype as usual:  SomeType.prototype.findButton =  function()  {  // Button as aliased above.  this.button =  new  Button(dom.getElement('my-button'));  };  ...  });  // goog.scope
+goog.provide('my.module.SomeType'); goog.require('goog.dom'); goog.require('goog.ui.Button'); goog.scope(function() { var Button = goog.ui.Button; var dom = goog.dom; // Alias new types after the constructor declaration. my.module.SomeType = function() { ... }; var SomeType = my.module.SomeType; // Declare methods on the prototype as usual: SomeType.prototype.findButton = function() { // Button as aliased above. this.button = new Button(dom.getElement('my-button')); }; ... }); // goog.scope
 
 ##### 9.4.4.3 `goog.forwardDeclare`
 

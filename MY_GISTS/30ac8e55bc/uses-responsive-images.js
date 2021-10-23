@@ -11,22 +11,22 @@
  *   However, the audit will only fail pages that use images that have waste
  *   beyond a particular byte threshold.
  */
-'use strict';
+"use strict";
 
-const ByteEfficiencyAudit = require('./byte-efficiency-audit.js');
-const NetworkRequest = require('../../lib/network-request.js');
-const ImageRecords = require('../../computed/image-records.js');
-const URL = require('../../lib/url-shim.js');
-const i18n = require('../../lib/i18n/i18n.js');
+const ByteEfficiencyAudit = require("./byte-efficiency-audit.js");
+const NetworkRequest = require("../../lib/network-request.js");
+const ImageRecords = require("../../computed/image-records.js");
+const URL = require("../../lib/url-shim.js");
+const i18n = require("../../lib/i18n/i18n.js");
 
 const UIStrings = {
   /** Imperative title of a Lighthouse audit that tells the user to resize images to match the display dimensions. This is displayed in a list of audit titles that Lighthouse generates. */
-  title: 'Properly size images',
+  title: "Properly size images",
   /** Description of a Lighthouse audit that tells the user *why* they need to serve appropriately sized images. This is displayed after a user expands the section to see more. No character length limits. 'Learn More' becomes link text to additional documentation. */
   description:
-  'Serve images that are appropriately-sized to save cellular data ' +
-  'and improve load time. ' +
-  '[Learn more](https://web.dev/uses-responsive-images/).',
+    "Serve images that are appropriately-sized to save cellular data " +
+    "and improve load time. " +
+    "[Learn more](https://web.dev/uses-responsive-images/).",
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
@@ -39,12 +39,17 @@ class UsesResponsiveImages extends ByteEfficiencyAudit {
    */
   static get meta() {
     return {
-      id: 'uses-responsive-images',
+      id: "uses-responsive-images",
       title: str_(UIStrings.title),
       description: str_(UIStrings.description),
       scoreDisplayMode: ByteEfficiencyAudit.SCORING_MODES.NUMERIC,
-      requiredArtifacts: ['ImageElements', 'ViewportDimensions', 'GatherContext',
-        'devtoolsLogs', 'traces'],
+      requiredArtifacts: [
+        "ImageElements",
+        "ViewportDimensions",
+        "GatherContext",
+        "devtoolsLogs",
+        "traces",
+      ],
     };
   }
 
@@ -88,7 +93,9 @@ class UsesResponsiveImages extends ByteEfficiencyAudit {
    * @return {null|LH.Audit.ByteEfficiencyItem};
    */
   static computeWaste(image, ViewportDimensions, networkRecords) {
-    const networkRecord = networkRecords.find(record => record.url === image.src);
+    const networkRecord = networkRecords.find(
+      (record) => record.url === image.src
+    );
     // Nothing can be done without network info, ignore images without resource size information.
     if (!networkRecord) {
       return null;
@@ -99,7 +106,7 @@ class UsesResponsiveImages extends ByteEfficiencyAudit {
 
     const url = URL.elideDataURI(image.src);
     const actualPixels = image.naturalWidth * image.naturalHeight;
-    const wastedRatio = 1 - (usedPixels / actualPixels);
+    const wastedRatio = 1 - usedPixels / actualPixels;
     const totalBytes = NetworkRequest.getResourceSizeOnNetwork(networkRecord);
     const wastedBytes = Math.round(totalBytes * wastedRatio);
 
@@ -118,10 +125,13 @@ class UsesResponsiveImages extends ByteEfficiencyAudit {
    * @return {Promise<ByteEfficiencyAudit.ByteEfficiencyProduct>}
    */
   static async audit_(artifacts, networkRecords, context) {
-    const images = await ImageRecords.request({
-      ImageElements: artifacts.ImageElements,
-      networkRecords,
-    }, context);
+    const images = await ImageRecords.request(
+      {
+        ImageElements: artifacts.ImageElements,
+        networkRecords,
+      },
+      context
+    );
     const ViewportDimensions = artifacts.ViewportDimensions;
     /** @type {Map<string, LH.Audit.ByteEfficiencyItem>} */
     const resultsMap = new Map();
@@ -129,7 +139,7 @@ class UsesResponsiveImages extends ByteEfficiencyAudit {
       // Give SVG a free pass because creating a "responsive" SVG is of questionable value.
       // Ignore CSS images because it's difficult to determine what is a spritesheet,
       // and the reward-to-effort ratio for responsive CSS images is quite low https://css-tricks.com/responsive-images-css/.
-      if (image.mimeType === 'image/svg+xml' || image.isCss) {
+      if (image.mimeType === "image/svg+xml" || image.isCss) {
         continue;
       }
 
@@ -139,11 +149,11 @@ class UsesResponsiveImages extends ByteEfficiencyAudit {
       const naturalWidth = image.naturalDimensions.width;
       // If naturalHeight or naturalWidth are falsy, information is not valid, skip.
       if (!naturalWidth || !naturalHeight) continue;
-      const processed =
-        UsesResponsiveImages.computeWaste(
-          {...image, naturalHeight, naturalWidth},
-          ViewportDimensions, networkRecords
-        );
+      const processed = UsesResponsiveImages.computeWaste(
+        { ...image, naturalHeight, naturalWidth },
+        ViewportDimensions,
+        networkRecords
+      );
       if (!processed) continue;
 
       // Don't warn about an image that was later used appropriately
@@ -153,15 +163,24 @@ class UsesResponsiveImages extends ByteEfficiencyAudit {
       }
     }
 
-    const items = Array.from(resultsMap.values())
-        .filter(item => item.wastedBytes > IGNORE_THRESHOLD_IN_BYTES);
+    const items = Array.from(resultsMap.values()).filter(
+      (item) => item.wastedBytes > IGNORE_THRESHOLD_IN_BYTES
+    );
 
     /** @type {LH.Audit.Details.Opportunity['headings']} */
     const headings = [
-      {key: 'url', valueType: 'thumbnail', label: ''},
-      {key: 'url', valueType: 'url', label: str_(i18n.UIStrings.columnURL)},
-      {key: 'totalBytes', valueType: 'bytes', label: str_(i18n.UIStrings.columnResourceSize)},
-      {key: 'wastedBytes', valueType: 'bytes', label: str_(i18n.UIStrings.columnWastedBytes)},
+      { key: "url", valueType: "thumbnail", label: "" },
+      { key: "url", valueType: "url", label: str_(i18n.UIStrings.columnURL) },
+      {
+        key: "totalBytes",
+        valueType: "bytes",
+        label: str_(i18n.UIStrings.columnResourceSize),
+      },
+      {
+        key: "wastedBytes",
+        valueType: "bytes",
+        label: str_(i18n.UIStrings.columnWastedBytes),
+      },
     ];
 
     return {

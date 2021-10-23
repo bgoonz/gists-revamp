@@ -1,8 +1,6 @@
-
 #### Partial Index
 
-Finding Unused Short URLs
-=========================
+# Finding Unused Short URLs
 
 The short URL table includes a field `hits` that keeps track of the number of times a short URL was used.
 
@@ -64,7 +62,7 @@ To check the sizes of both indexes you created, issue the following command:
 \di+ shorturl_*_ix
 ```
 
-The command displays details about indexes starting with "shorturl_" and ending with "_ix", and it should include both the full index and the partial index.
+The command displays details about indexes starting with "shorturl\_" and ending with "\_ix", and it should include both the full index and the partial index.
 
 In the output you can see that the partial index `shorturl_unused_part_ix` is much smaller than the full index `shorturl_hits_ix`. On big tables, indexes can become pretty big as well. Partial indexes are a great way to balance speed with space savings.
 
