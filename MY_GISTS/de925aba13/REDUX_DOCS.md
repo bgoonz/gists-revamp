@@ -66,6 +66,7 @@
 id: core-concepts
 title: Core Concepts
 description: "Introduction > Core Concepts: A quick overview of Redux's key idea, reducer functions"
+
 ---
 
 # Core Concepts
@@ -100,26 +101,26 @@ Finally, to tie state and actions together, we write a function called a reducer
 It would be hard to write such a function for a big app, so we write smaller functions managing parts of the state:
 
 ```js
-function visibilityFilter(state = 'SHOW_ALL', action) {
-  if (action.type === 'SET_VISIBILITY_FILTER') {
-    return action.filter
+function visibilityFilter(state = "SHOW_ALL", action) {
+  if (action.type === "SET_VISIBILITY_FILTER") {
+    return action.filter;
   } else {
-    return state
+    return state;
   }
 }
 
 function todos(state = [], action) {
   switch (action.type) {
-    case 'ADD_TODO':
-      return state.concat([{ text: action.text, completed: false }])
-    case 'TOGGLE_TODO':
+    case "ADD_TODO":
+      return state.concat([{ text: action.text, completed: false }]);
+    case "TOGGLE_TODO":
       return state.map((todo, index) =>
         action.index === index
           ? { text: todo.text, completed: !todo.completed }
           : todo
-      )
+      );
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -130,8 +131,8 @@ And we write another reducer that manages the complete state of our app by calli
 function todoApp(state = {}, action) {
   return {
     todos: todos(state.todos, action),
-    visibilityFilter: visibilityFilter(state.visibilityFilter, action)
-  }
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+  };
 }
 ```
 
@@ -142,6 +143,7 @@ This is basically the whole idea of Redux. Note that we haven’t used any Redux
 id: ecosystem
 title: Ecosystem
 description: 'Introduction > Ecosystem: Links to popular, recommended, and interesting Redux-related libraries'
+
 ---
 
 # Ecosystem
@@ -225,8 +227,8 @@ A `combineReducers` variation that allows defining cross-slice dependencies for 
 var masterReducer = topologicallyCombineReducers(
   { auth, users, todos },
   // define the dependency tree
-  { auth: ['users'], todos: ['auth'] }
-)
+  { auth: ["users"], todos: ["auth"] }
+);
 ```
 
 #### Reducer Composition
@@ -235,8 +237,11 @@ var masterReducer = topologicallyCombineReducers(
 Provides sequential composition of reducers at the same level
 
 ```js
-const combinedReducer = combineReducers({ users, posts, comments })
-const rootReducer = reduceReducers(combinedReducer, otherTopLevelFeatureReducer)
+const combinedReducer = combineReducers({ users, posts, comments });
+const rootReducer = reduceReducers(
+  combinedReducer,
+  otherTopLevelFeatureReducer
+);
 ```
 
 **[mhelmer/redux-xforms](https://github.com/mhelmer/redux-xforms)** <br />
@@ -249,7 +254,7 @@ const createByFilter = (predicate, mapActionToKey) =>
     withFilter(predicate), // let through if action has filterName
     updateSlice(mapActionToKey), // update a single key in the state
     isolateSlice(mapActionToKey) // run the reducer on a single state slice
-  )
+  );
 ```
 
 **[adrienjt/redux-data-structures](https://github.com/adrienjt/redux-data-structures)** <br />
@@ -257,9 +262,9 @@ Reducer factory functions for common data structures: counters, maps, lists (que
 
 ```js
 const myCounter = counter({
-  incrementActionTypes: ['INCREMENT'],
-  decrementActionTypes: ['DECREMENT']
-})
+  incrementActionTypes: ["INCREMENT"],
+  decrementActionTypes: ["DECREMENT"],
+});
 ```
 
 #### Higher-Order Reducers
@@ -282,10 +287,10 @@ A reducer enhancer to enable type-agnostic optimistic updates
 Flux Standard Action utilities for Redux
 
 ```js
-const increment = createAction('INCREMENT')
-const reducer = handleActions({ [increment]: (state, action) => state + 1 }, 0)
-const store = createStore(reducer)
-store.dispatch(increment())
+const increment = createAction("INCREMENT");
+const reducer = handleActions({ [increment]: (state, action) => state + 1 }, 0);
+const store = createStore(reducer);
+store.dispatch(increment());
 ```
 
 **[BerkeleyTrue/redux-create-types](https://github.com/BerkeleyTrue/redux-create-types)** <br />
@@ -293,9 +298,9 @@ Creates standard and async action types based on namespaces
 
 ```js
 export const types = createTypes(
-  ['openModal', createAsyncTypes('fetch')],
-  'app'
-)
+  ["openModal", createAsyncTypes("fetch")],
+  "app"
+);
 // { openModal : "app.openModal", fetch : { start : "app.fetch.start", complete: 'app.fetch.complete' } }
 ```
 
@@ -305,10 +310,10 @@ Generates action creators based on types and expected fields
 ```js
 const formatTitle = (id, title) => ({
   id,
-  title: toTitleCase(title)
-})
-const updateBazTitle = fromType('UPDATE_BAZ_TITLE', formatTitle)
-updateBazTitle(1, 'foo bar baz')
+  title: toTitleCase(title),
+});
+const updateBazTitle = fromType("UPDATE_BAZ_TITLE", formatTitle);
+updateBazTitle(1, "foo bar baz");
 // -> { type: 'UPDATE_BAZ_TITLE', id: 1, title: 'Foo Bar Baz', }
 ```
 
@@ -321,20 +326,20 @@ Creates composable memoized selector functions for efficiently deriving data fro
 const taxSelector = createSelector(
   [subtotalSelector, taxPercentSelector],
   (subtotal, taxPercent) => subtotal * (taxPercent / 100)
-)
+);
 ```
 
 **[paularmstrong/normalizr](https://github.com/paularmstrong/normalizr)** <br />
 Normalizes nested JSON according to a schema
 
 ```js
-const user = new schema.Entity('users')
-const comment = new schema.Entity('comments', { commenter: user })
-const article = new schema.Entity('articles', {
+const user = new schema.Entity("users");
+const comment = new schema.Entity("comments", { commenter: user });
+const article = new schema.Entity("articles", {
   author: user,
-  comments: [comment]
-})
-const normalizedData = normalize(originalData, article)
+  comments: [comment],
+});
+const normalizedData = normalize(originalData, article);
 ```
 
 **[planttheidea/selectorator](https://github.com/planttheidea/selectorator)** <br />
@@ -342,10 +347,10 @@ Abstractions over Reselect for common selector use cases
 
 ```js
 const getBarBaz = createSelector(
-  ['foo.bar', 'baz'],
+  ["foo.bar", "baz"],
   (bar, baz) => `${bar} ${baz}`
-)
-getBarBaz({ foo: { bar: 'a' }, baz: 'b' }) // "a b"
+);
+getBarBaz({ foo: { bar: "a" }, baz: "b" }); // "a b"
 ```
 
 ## Store
@@ -356,12 +361,12 @@ getBarBaz({ foo: { bar: 'a' }, baz: 'b' }) // "a b"
 Watch for state changes based on key paths or selectors
 
 ```js
-let w = watch(() => mySelector(store.getState()))
+let w = watch(() => mySelector(store.getState()));
 store.subscribe(
   w((newVal, oldVal) => {
-    console.log(newval, oldVal)
+    console.log(newval, oldVal);
   })
-)
+);
 ```
 
 **[ashaffer/redux-subscribe](https://github.com/ashaffer/redux-subscribe)** <br />
@@ -377,36 +382,36 @@ store.dispatch( subscribe("users.byId.abcd", "subscription1", () => {} );
 Store enhancer that can debounce subscription notifications
 
 ```js
-const debounceNotify = _.debounce(notify => notify())
+const debounceNotify = _.debounce((notify) => notify());
 const store = createStore(
   reducer,
   initialState,
   batchedSubscribe(debounceNotify)
-)
+);
 ```
 
 **[manaflair/redux-batch](https://github.com/manaflair/redux-batch)** <br />
 Store enhancer that allows dispatching arrays of actions
 
 ```js
-const store = createStore(reducer, reduxBatch)
-store.dispatch([{ type: 'INCREMENT' }, { type: 'INCREMENT' }])
+const store = createStore(reducer, reduxBatch);
+store.dispatch([{ type: "INCREMENT" }, { type: "INCREMENT" }]);
 ```
 
 **[laysent/redux-batch-actions-enhancer](https://github.com/laysent/redux-batch-actions-enhancer)** <br />
 Store enhancer that accepts batched actions
 
 ```js
-const store = createStore(reducer, initialState, batch().enhancer)
-store.dispatch(createAction({ type: 'INCREMENT' }, { type: 'INCREMENT' }))
+const store = createStore(reducer, initialState, batch().enhancer);
+store.dispatch(createAction({ type: "INCREMENT" }, { type: "INCREMENT" }));
 ```
 
 **[tshelburne/redux-batched-actions](https://github.com/tshelburne/redux-batched-actions)** <br />
 Higher-order reducer that handles batched actions
 
 ```js
-const store = createStore(enableBatching(reducer), initialState)
-store.dispatch(batchActions([{ type: 'INCREMENT' }, { type: 'INCREMENT' }]))
+const store = createStore(enableBatching(reducer), initialState);
+store.dispatch(batchActions([{ type: "INCREMENT" }, { type: "INCREMENT" }]));
 ```
 
 #### Persistence
@@ -415,29 +420,29 @@ store.dispatch(batchActions([{ type: 'INCREMENT' }, { type: 'INCREMENT' }]))
 Persist and rehydrate a Redux store, with many extensible options
 
 ```js
-const store = createStore(reducer, autoRehydrate())
-persistStore(store)
+const store = createStore(reducer, autoRehydrate());
+persistStore(store);
 ```
 
 **[react-stack/redux-storage](https://github.com/react-stack/redux-storage)** <br />
 Persistence layer for Redux with flexible backends
 
 ```js
-const reducer = storage.reducer(combineReducers(reducers))
-const engine = createEngineLocalStorage('my-save-key')
-const storageMiddleware = storage.createMiddleware(engine)
-const store = createStore(reducer, applyMiddleware(storageMiddleware))
+const reducer = storage.reducer(combineReducers(reducers));
+const engine = createEngineLocalStorage("my-save-key");
+const storageMiddleware = storage.createMiddleware(engine);
+const store = createStore(reducer, applyMiddleware(storageMiddleware));
 ```
 
 **[redux-offline/redux-offline](https://github.com/redux-offline/redux-offline)** <br />
 Persistent store for Offline-First apps, with support for optimistic UIs
 
 ```js
-const store = createStore(reducer, offline(offlineConfig))
+const store = createStore(reducer, offline(offlineConfig));
 store.dispatch({
-  type: 'FOLLOW_USER_REQUEST',
-  meta: { offline: { effect: {}, commit: {}, rollback: {} } }
-})
+  type: "FOLLOW_USER_REQUEST",
+  meta: { offline: { effect: {}, commit: {}, rollback: {} } },
+});
 ```
 
 ## Immutable Data
@@ -446,10 +451,10 @@ store.dispatch({
 Immutable updates with normal mutative code, using Proxies
 
 ```js
-const nextState = produce(baseState, draftState => {
-  draftState.push({ todo: 'Tweet about it' })
-  draftState[1].done = true
-})
+const nextState = produce(baseState, (draftState) => {
+  draftState.push({ todo: "Tweet about it" });
+  draftState[1].done = true;
+});
 ```
 
 ## Side Effects
@@ -490,23 +495,23 @@ Handle async logic using synchronous-looking generator functions. Sagas return d
 
 ```js
 function* fetchData(action) {
-  const { someValue } = action
+  const { someValue } = action;
   try {
-    const response = yield call(myAjaxLib.post, '/someEndpoint', {
-      data: someValue
-    })
-    yield put({ type: 'REQUEST_SUCCEEDED', payload: response })
+    const response = yield call(myAjaxLib.post, "/someEndpoint", {
+      data: someValue,
+    });
+    yield put({ type: "REQUEST_SUCCEEDED", payload: response });
   } catch (error) {
-    yield put({ type: 'REQUEST_FAILED', error: error })
+    yield put({ type: "REQUEST_FAILED", error: error });
   }
 }
 
 function* addTodosIfAllowed(action) {
-  const { todoText } = action
-  const todos = yield select(state => state.todos)
+  const { todoText } = action;
+  const todos = yield select((state) => state.todos);
 
   if (todos.length < MAX_TODOS) {
-    yield put({ type: 'ADD_TODO', text: todoText })
+    yield put({ type: "ADD_TODO", text: todoText });
   }
 }
 ```
@@ -519,22 +524,22 @@ Compose and cancel async actions to create side effects and more.
 **Best for**: complex async logic, decoupled workflows
 
 ```js
-const loginRequestEpic = action$ =>
+const loginRequestEpic = (action$) =>
   action$
     .ofType(LOGIN_REQUEST)
     .mergeMap(({ payload: { username, password } }) =>
       Observable.from(postLogin(username, password))
         .map(loginSuccess)
         .catch(loginFailure)
-    )
+    );
 
-const loginSuccessfulEpic = action$ =>
+const loginSuccessfulEpic = (action$) =>
   action$
     .ofType(LOGIN_SUCCESS)
     .delay(2000)
-    .mergeMap(({ payload: { msg } }) => showMessage(msg))
+    .mergeMap(({ payload: { msg } }) => showMessage(msg));
 
-const rootEpic = combineEpics(loginRequestEpic, loginSuccessfulEpic)
+const rootEpic = combineEpics(loginRequestEpic, loginSuccessfulEpic);
 ```
 
 **[redux-loop/redux-loop](https://github.com/redux-loop/redux-loop)**
@@ -547,23 +552,23 @@ A port of the Elm Architecture to Redux that allows you to sequence your effects
 export const reducer = (state = {}, action) => {
   switch (action.type) {
     case ActionType.LOGIN_REQUEST:
-      const { username, password } = action.payload
+      const { username, password } = action.payload;
       return loop(
         { pending: true },
         Effect.promise(loginPromise, username, password)
-      )
+      );
     case ActionType.LOGIN_SUCCESS:
-      const { user, msg } = action.payload
+      const { user, msg } = action.payload;
       return loop(
         { pending: false, user },
         Effect.promise(delayMessagePromise, msg, 2000)
-      )
+      );
     case ActionType.LOGIN_FAILURE:
-      return { pending: false, err: action.payload }
+      return { pending: false, err: action.payload };
     default:
-      return state
+      return state;
   }
-}
+};
 ```
 
 **[jeffbski/redux-logic](https://github.com/jeffbski/redux-logic)**
@@ -577,20 +582,20 @@ const loginLogic = createLogic({
   type: Actions.LOGIN_REQUEST,
 
   process({ getState, action }, dispatch, done) {
-    const { username, password } = action.payload
+    const { username, password } = action.payload;
 
     postLogin(username, password)
       .then(
         ({ user, msg }) => {
-          dispatch(loginSucceeded(user))
+          dispatch(loginSucceeded(user));
 
-          setTimeout(() => dispatch(showMessage(msg)), 2000)
+          setTimeout(() => dispatch(showMessage(msg)), 2000);
         },
-        err => dispatch(loginFailure(err))
+        (err) => dispatch(loginFailure(err))
       )
-      .then(done)
-  }
-})
+      .then(done);
+  },
+});
 ```
 
 #### Promises
@@ -599,7 +604,7 @@ const loginLogic = createLogic({
 Dispatch promises as action payloads, and have FSA-compliant actions dispatched as the promise resolves or rejects.
 
 ```js
-dispatch({ type: 'FETCH_DATA', payload: myAjaxLib.get('/data') })
+dispatch({ type: "FETCH_DATA", payload: myAjaxLib.get("/data") });
 // will dispatch either {type : "FETCH_DATA", payload : response} if resolved,
 // or dispatch {type : "FETCH_DATA", payload : error, error : true} if rejected
 ```
@@ -641,19 +646,19 @@ Reads API call actions, fetches, and dispatches FSAs
 ```js
 const fetchUsers = () => ({
   [CALL_API]: {
-    endpoint: 'http://www.example.com/api/users',
-    method: 'GET',
-    types: ['REQUEST', 'SUCCESS', 'FAILURE']
-  }
-})
+    endpoint: "http://www.example.com/api/users",
+    method: "GET",
+    types: ["REQUEST", "SUCCESS", "FAILURE"],
+  },
+});
 ```
 
 **[itaylor/redux-socket.io](https://github.com/itaylor/redux-socket.io)** <br />
 An opinionated connector between socket.io and redux.
 
 ```js
-const store = createStore(reducer, applyMiddleware(socketIoMiddleware))
-store.dispatch({ type: 'server/hello', data: 'Hello!' })
+const store = createStore(reducer, applyMiddleware(socketIoMiddleware));
+store.dispatch({ type: "server/hello", data: "Hello!" });
 ```
 
 **[tiberiuc/redux-react-firebase](https://github.com/tiberiuc/redux-react-firebase)** <br />
@@ -731,15 +736,15 @@ const DynamicCounters = connectLean(
 Aims to make reusable components easier to build with Redux by scoping actions and reducers to a particular instance of a component.
 
 ```js
-const scopeableActions = new ScopedActionFactory(actionCreators)
-const actionCreatorsScopedToA = scopeableActions.scope('a')
-actionCreatorsScopedToA.foo('bar') //{ type: SET_FOO, value: 'bar', scopeID: 'a' }
+const scopeableActions = new ScopedActionFactory(actionCreators);
+const actionCreatorsScopedToA = scopeableActions.scope("a");
+actionCreatorsScopedToA.foo("bar"); //{ type: SET_FOO, value: 'bar', scopeID: 'a' }
 
 const boundScopeableActions = bindScopedActionFactories(
   scopeableActions,
   store.dispatch
-)
-const scopedReducers = scopeReducers(reducers)
+);
+const scopedReducers = scopeReducers(reducers);
 ```
 
 ## Dev Tools
@@ -863,6 +868,7 @@ A proposal for bundling reducers, action types and actions
 id: examples
 title: Examples
 description: 'Introduction > Examples: Redux interactive example apps'
+
 ---
 
 # Examples
@@ -1062,6 +1068,7 @@ page of the [Redux Addons Catalog](https://github.com/markerikson/redux-ecosyste
 id: getting-started
 title: Getting Started with Redux
 description: 'Introduction > Getting Started: Resources to get started learning and using Redux'
+
 ---
 
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
@@ -1132,7 +1139,7 @@ The only way to change the state tree is to create an _action_, an object descri
 To specify how state gets updated in response to an action, you write pure _reducer_ functions that calculate a new state based on the old state and the action.
 
 ```js
-import { createStore } from 'redux'
+import { createStore } from "redux";
 
 /**
  * This is a reducer - a function that takes a current state value and an
@@ -1148,32 +1155,32 @@ import { createStore } from 'redux'
  */
 function counterReducer(state = { value: 0 }, action) {
   switch (action.type) {
-    case 'counter/incremented':
-      return { value: state.value + 1 }
-    case 'counter/decremented':
-      return { value: state.value - 1 }
+    case "counter/incremented":
+      return { value: state.value + 1 };
+    case "counter/decremented":
+      return { value: state.value - 1 };
     default:
-      return state
+      return state;
   }
 }
 
 // Create a Redux store holding the state of your app.
 // Its API is { subscribe, dispatch, getState }.
-let store = createStore(counterReducer)
+let store = createStore(counterReducer);
 
 // You can use subscribe() to update the UI in response to state changes.
 // Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
 // There may be additional use cases where it's helpful to subscribe as well.
 
-store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => console.log(store.getState()));
 
 // The only way to mutate the internal state is to dispatch an action.
 // The actions can be serialized, logged or stored and later replayed.
-store.dispatch({ type: 'counter/incremented' })
+store.dispatch({ type: "counter/incremented" });
 // {value: 1}
-store.dispatch({ type: 'counter/incremented' })
+store.dispatch({ type: "counter/incremented" });
 // {value: 2}
-store.dispatch({ type: 'counter/decremented' })
+store.dispatch({ type: "counter/decremented" });
 // {value: 1}
 ```
 
@@ -1188,42 +1195,42 @@ This architecture might seem like a lot for a counter app, but the beauty of thi
 Redux Toolkit simplifies the process of writing Redux logic and setting up the store. With Redux Toolkit, that same logic looks like:
 
 ```js
-import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState: {
-    value: 0
+    value: 0,
   },
   reducers: {
-    incremented: state => {
+    incremented: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.value += 1
+      state.value += 1;
     },
-    decremented: state => {
-      state.value -= 1
-    }
-  }
-})
+    decremented: (state) => {
+      state.value -= 1;
+    },
+  },
+});
 
-export const { incremented, decremented } = counterSlice.actions
+export const { incremented, decremented } = counterSlice.actions;
 
 const store = configureStore({
-  reducer: counterSlice.reducer
-})
+  reducer: counterSlice.reducer,
+});
 
 // Can still subscribe to the store
-store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => console.log(store.getState()));
 
 // Still pass action objects to `dispatch`, but they're created for us
-store.dispatch(incremented())
+store.dispatch(incremented());
 // {value: 1}
-store.dispatch(incremented())
+store.dispatch(incremented());
 // {value: 2}
-store.dispatch(decremented())
+store.dispatch(decremented());
 // {value: 1}
 ```
 
@@ -1299,6 +1306,7 @@ Here are some suggestions on when it makes sense to use Redux:
 id: installation
 title: Installation
 description: 'Introduction > Installation: Installation instructions for Redux and related packages'
+
 ---
 
 # Installation
@@ -1367,6 +1375,7 @@ npx create-react-app my-app --template redux-typescript
 id: learning-resources
 title: Learning Resources
 description: 'Introduction > Learning Resources: Additional articles and resources for learning Redux'
+
 ---
 
 # Learning Resources
@@ -1734,6 +1743,7 @@ _Patterns and practices for structuring larger Redux applications_
 
 id: code-splitting
 title: Code Splitting
+
 ---
 
 # Code Splitting
@@ -1751,10 +1761,10 @@ The Redux store exposes a `replaceReducer` function, which replaces the current 
 ```js
 const newRootReducer = combineReducers({
   existingSlice: existingSliceReducer,
-  newSlice: newSliceReducer
-})
+  newSlice: newSliceReducer,
+});
 
-store.replaceReducer(newRootReducer)
+store.replaceReducer(newRootReducer);
 ```
 
 ## Reducer Injection Approaches
@@ -1766,37 +1776,37 @@ to define a reusable `injectReducer()` function that keeps references to all of 
 that to the store instance.
 
 ```js
-import { createStore } from 'redux'
+import { createStore } from "redux";
 
 // Define the Reducers that will always be present in the application
 const staticReducers = {
   users: usersReducer,
-  posts: postsReducer
-}
+  posts: postsReducer,
+};
 
 // Configure the store
 export default function configureStore(initialState) {
-  const store = createStore(createReducer(), initialState)
+  const store = createStore(createReducer(), initialState);
 
   // Add a dictionary to keep track of the registered async reducers
-  store.asyncReducers = {}
+  store.asyncReducers = {};
 
   // Create an inject reducer function
   // This function adds the async reducer, and creates a new combined reducer
   store.injectReducer = (key, asyncReducer) => {
-    store.asyncReducers[key] = asyncReducer
-    store.replaceReducer(createReducer(store.asyncReducers))
-  }
+    store.asyncReducers[key] = asyncReducer;
+    store.replaceReducer(createReducer(store.asyncReducers));
+  };
 
   // Return the modified store
-  return store
+  return store;
 }
 
 function createReducer(asyncReducers) {
   return combineReducers({
     ...staticReducers,
-    ...asyncReducers
-  })
+    ...asyncReducers,
+  });
 }
 ```
 
@@ -1809,13 +1819,13 @@ Another approach is to create a 'Reducer Manager' object, which keeps track of a
 ```js
 export function createReducerManager(initialReducers) {
   // Create an object which maps keys to reducers
-  const reducers = { ...initialReducers }
+  const reducers = { ...initialReducers };
 
   // Create the initial combinedReducer
-  let combinedReducer = combineReducers(reducers)
+  let combinedReducer = combineReducers(reducers);
 
   // An array which is used to delete state keys when reducers are removed
-  let keysToRemove = []
+  let keysToRemove = [];
 
   return {
     getReducerMap: () => reducers,
@@ -1825,61 +1835,61 @@ export function createReducerManager(initialReducers) {
     reduce: (state, action) => {
       // If any reducers have been removed, clean up their state first
       if (keysToRemove.length > 0) {
-        state = { ...state }
+        state = { ...state };
         for (let key of keysToRemove) {
-          delete state[key]
+          delete state[key];
         }
-        keysToRemove = []
+        keysToRemove = [];
       }
 
       // Delegate to the combined reducer
-      return combinedReducer(state, action)
+      return combinedReducer(state, action);
     },
 
     // Adds a new reducer with the specified key
     add: (key, reducer) => {
       if (!key || reducers[key]) {
-        return
+        return;
       }
 
       // Add the reducer to the reducer mapping
-      reducers[key] = reducer
+      reducers[key] = reducer;
 
       // Generate a new combined reducer
-      combinedReducer = combineReducers(reducers)
+      combinedReducer = combineReducers(reducers);
     },
 
     // Removes a reducer with the specified key
-    remove: key => {
+    remove: (key) => {
       if (!key || !reducers[key]) {
-        return
+        return;
       }
 
       // Remove it from the reducer mapping
-      delete reducers[key]
+      delete reducers[key];
 
       // Add the key to the list of keys to clean up
-      keysToRemove.push(key)
+      keysToRemove.push(key);
 
       // Generate a new combined reducer
-      combinedReducer = combineReducers(reducers)
-    }
-  }
+      combinedReducer = combineReducers(reducers);
+    },
+  };
 }
 
 const staticReducers = {
   users: usersReducer,
-  posts: postsReducer
-}
+  posts: postsReducer,
+};
 
 export function configureStore(initialState) {
-  const reducerManager = createReducerManager(staticReducers)
+  const reducerManager = createReducerManager(staticReducers);
 
   // Create a store with the root reducer function being the one exposed by the manager.
-  const store = createStore(reducerManager.reduce, initialState)
+  const store = createStore(reducerManager.reduce, initialState);
 
   // Optional: Put the reducer manager on the store so it is easily accessible
-  store.reducerManager = reducerManager
+  store.reducerManager = reducerManager;
 }
 ```
 
@@ -1900,6 +1910,7 @@ There are a few good libraries out there that can help you add the above functio
 id: configuring-your-store
 title: Configuring Your Store
 sidebar_label: Configuring Your Store
+
 ---
 
 # Configuring Your Store
@@ -1913,21 +1924,21 @@ We will now explore how to customise the store to add extra functionality. We'll
 First, let's look at the original `index.js` file in which we created our store:
 
 ```js
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import rootReducer from './reducers'
-import App from './components/App'
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "./reducers";
+import App from "./components/App";
 
-const store = createStore(rootReducer)
+const store = createStore(rootReducer);
 
 render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 In this code, we pass our reducers to the Redux `createStore` function, which returns a `store` object. We then pass this object to the `react-redux` `Provider` component, which is rendered at the top of our component tree.
@@ -1953,40 +1964,40 @@ npm install redux-thunk
 #### middleware/logger.js
 
 ```js
-const logger = store => next => action => {
-  console.group(action.type)
-  console.info('dispatching', action)
-  let result = next(action)
-  console.log('next state', store.getState())
-  console.groupEnd()
-  return result
-}
+const logger = (store) => (next) => (action) => {
+  console.group(action.type);
+  console.info("dispatching", action);
+  let result = next(action);
+  console.log("next state", store.getState());
+  console.groupEnd();
+  return result;
+};
 
-export default logger
+export default logger;
 ```
 
 #### enhancers/monitorReducer.js
 
 ```js
-const round = number => Math.round(number * 100) / 100
+const round = (number) => Math.round(number * 100) / 100;
 
 const monitorReducerEnhancer =
-  createStore => (reducer, initialState, enhancer) => {
+  (createStore) => (reducer, initialState, enhancer) => {
     const monitoredReducer = (state, action) => {
-      const start = performance.now()
-      const newState = reducer(state, action)
-      const end = performance.now()
-      const diff = round(end - start)
+      const start = performance.now();
+      const newState = reducer(state, action);
+      const end = performance.now();
+      const diff = round(end - start);
 
-      console.log('reducer process time:', diff)
+      console.log("reducer process time:", diff);
 
-      return newState
-    }
+      return newState;
+    };
 
-    return createStore(monitoredReducer, initialState, enhancer)
-  }
+    return createStore(monitoredReducer, initialState, enhancer);
+  };
 
-export default monitorReducerEnhancer
+export default monitorReducerEnhancer;
 ```
 
 Let's add these to our existing `index.js`.
@@ -2000,27 +2011,27 @@ Let's add these to our existing `index.js`.
 - Finally, we pass this new `composedEnhancers` function into `createStore` as its third argument. _Note: the second argument, which we will ignore, lets you preloaded state into the store._
 
 ```js
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { applyMiddleware, createStore, compose } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import rootReducer from './reducers'
-import loggerMiddleware from './middleware/logger'
-import monitorReducerEnhancer from './enhancers/monitorReducer'
-import App from './components/App'
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import { applyMiddleware, createStore, compose } from "redux";
+import thunkMiddleware from "redux-thunk";
+import rootReducer from "./reducers";
+import loggerMiddleware from "./middleware/logger";
+import monitorReducerEnhancer from "./enhancers/monitorReducer";
+import App from "./components/App";
 
-const middlewareEnhancer = applyMiddleware(loggerMiddleware, thunkMiddleware)
-const composedEnhancers = compose(middlewareEnhancer, monitorReducerEnhancer)
+const middlewareEnhancer = applyMiddleware(loggerMiddleware, thunkMiddleware);
+const composedEnhancers = compose(middlewareEnhancer, monitorReducerEnhancer);
 
-const store = createStore(rootReducer, undefined, composedEnhancers)
+const store = createStore(rootReducer, undefined, composedEnhancers);
 
 render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 ## Problems with this approach
@@ -2036,20 +2047,20 @@ The solution to this problem is to create a new `configureStore` function which 
 The end goal is for our `index.js` to look like this:
 
 ```js
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import App from './components/App'
-import configureStore from './configureStore'
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import App from "./components/App";
+import configureStore from "./configureStore";
 
-const store = configureStore()
+const store = configureStore();
 
 render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 All the logic related to configuring the store - including importing reducers, middleware, and enhancers - is handled in a dedicated file.
@@ -2057,23 +2068,23 @@ All the logic related to configuring the store - including importing reducers, m
 To achieve this, `configureStore` function looks like this:
 
 ```js
-import { applyMiddleware, compose, createStore } from 'redux'
-import thunkMiddleware from 'redux-thunk'
+import { applyMiddleware, compose, createStore } from "redux";
+import thunkMiddleware from "redux-thunk";
 
-import monitorReducersEnhancer from './enhancers/monitorReducers'
-import loggerMiddleware from './middleware/logger'
-import rootReducer from './reducers'
+import monitorReducersEnhancer from "./enhancers/monitorReducers";
+import loggerMiddleware from "./middleware/logger";
+import rootReducer from "./reducers";
 
 export default function configureStore(preloadedState) {
-  const middlewares = [loggerMiddleware, thunkMiddleware]
-  const middlewareEnhancer = applyMiddleware(...middlewares)
+  const middlewares = [loggerMiddleware, thunkMiddleware];
+  const middlewareEnhancer = applyMiddleware(...middlewares);
 
-  const enhancers = [middlewareEnhancer, monitorReducersEnhancer]
-  const composedEnhancers = compose(...enhancers)
+  const enhancers = [middlewareEnhancer, monitorReducersEnhancer];
+  const composedEnhancers = compose(...enhancers);
 
-  const store = createStore(rootReducer, preloadedState, composedEnhancers)
+  const store = createStore(rootReducer, preloadedState, composedEnhancers);
 
-  return store
+  return store;
 }
 ```
 
@@ -2086,8 +2097,8 @@ This function follows the same steps outlined above, with some of the logic spli
   For example, it is common to add some middleware only when in development mode, which is easily achieved by pushing to the middlewares array inside an if statement:
 
   ```js
-  if (process.env.NODE_ENV === 'development') {
-    middlewares.push(secretMiddleware)
+  if (process.env.NODE_ENV === "development") {
+    middlewares.push(secretMiddleware);
   }
   ```
 
@@ -2114,24 +2125,24 @@ Next, we remove the `compose` function which we imported from `redux`, and repla
 The final code looks like this:
 
 ```js
-import { applyMiddleware, createStore } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import { applyMiddleware, createStore } from "redux";
+import thunkMiddleware from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-import monitorReducersEnhancer from './enhancers/monitorReducers'
-import loggerMiddleware from './middleware/logger'
-import rootReducer from './reducers'
+import monitorReducersEnhancer from "./enhancers/monitorReducers";
+import loggerMiddleware from "./middleware/logger";
+import rootReducer from "./reducers";
 
 export default function configureStore(preloadedState) {
-  const middlewares = [loggerMiddleware, thunkMiddleware]
-  const middlewareEnhancer = applyMiddleware(...middlewares)
+  const middlewares = [loggerMiddleware, thunkMiddleware];
+  const middlewareEnhancer = applyMiddleware(...middlewares);
 
-  const enhancers = [middlewareEnhancer, monitorReducersEnhancer]
-  const composedEnhancers = composeWithDevTools(...enhancers)
+  const enhancers = [middlewareEnhancer, monitorReducersEnhancer];
+  const composedEnhancers = composeWithDevTools(...enhancers);
 
-  const store = createStore(rootReducer, preloadedState, composedEnhancers)
+  const store = createStore(rootReducer, preloadedState, composedEnhancers);
 
-  return store
+  return store;
 }
 ```
 
@@ -2152,27 +2163,27 @@ We'll add hot reloading both to our Redux reducers and to our React components.
 First, let's add it to our `configureStore` function:
 
 ```js
-import { applyMiddleware, compose, createStore } from 'redux'
-import thunkMiddleware from 'redux-thunk'
+import { applyMiddleware, compose, createStore } from "redux";
+import thunkMiddleware from "redux-thunk";
 
-import monitorReducersEnhancer from './enhancers/monitorReducers'
-import loggerMiddleware from './middleware/logger'
-import rootReducer from './reducers'
+import monitorReducersEnhancer from "./enhancers/monitorReducers";
+import loggerMiddleware from "./middleware/logger";
+import rootReducer from "./reducers";
 
 export default function configureStore(preloadedState) {
-  const middlewares = [loggerMiddleware, thunkMiddleware]
-  const middlewareEnhancer = applyMiddleware(...middlewares)
+  const middlewares = [loggerMiddleware, thunkMiddleware];
+  const middlewareEnhancer = applyMiddleware(...middlewares);
 
-  const enhancers = [middlewareEnhancer, monitorReducersEnhancer]
-  const composedEnhancers = compose(...enhancers)
+  const enhancers = [middlewareEnhancer, monitorReducersEnhancer];
+  const composedEnhancers = compose(...enhancers);
 
-  const store = createStore(rootReducer, preloadedState, composedEnhancers)
+  const store = createStore(rootReducer, preloadedState, composedEnhancers);
 
-  if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('./reducers', () => store.replaceReducer(rootReducer))
+  if (process.env.NODE_ENV !== "production" && module.hot) {
+    module.hot.accept("./reducers", () => store.replaceReducer(rootReducer));
   }
 
-  return store
+  return store;
 }
 ```
 
@@ -2183,27 +2194,27 @@ Bundlers like Webpack and Parcel support a `module.hot.accept` method to specify
 We'll also use the same pattern in our `index.js` to hot reload any changes to our React components:
 
 ```js
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import App from './components/App'
-import configureStore from './configureStore'
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import App from "./components/App";
+import configureStore from "./configureStore";
 
-const store = configureStore()
+const store = configureStore();
 
 const renderApp = () =>
   render(
     <Provider store={store}>
       <App />
     </Provider>,
-    document.getElementById('root')
-  )
+    document.getElementById("root")
+  );
 
-if (process.env.NODE_ENV !== 'production' && module.hot) {
-  module.hot.accept('./components/App', renderApp)
+if (process.env.NODE_ENV !== "production" && module.hot) {
+  module.hot.accept("./components/App", renderApp);
 }
 
-renderApp()
+renderApp();
 ```
 
 The only extra change here is that we have encapsulated our app's rendering into a new `renderApp` function, which we now call to re-render the app.
@@ -2225,14 +2236,14 @@ the one shown in the earlier examples.
 The fastest way to use is it is to just pass the root reducer function:
 
 ```js
-import { configureStore } from '@reduxjs/toolkit'
-import rootReducer from './reducers'
+import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from "./reducers";
 
 const store = configureStore({
-  reducer: rootReducer
-})
+  reducer: rootReducer,
+});
 
-export default store
+export default store;
 ```
 
 Note that it accepts an object with named parameters, to make it clearer what you're passing in.
@@ -2245,25 +2256,25 @@ By default, `configureStore` from Redux Toolkit will:
 Here's what the hot reloading example might look like using Redux Toolkit:
 
 ```js
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 
-import monitorReducersEnhancer from './enhancers/monitorReducers'
-import loggerMiddleware from './middleware/logger'
-import rootReducer from './reducers'
+import monitorReducersEnhancer from "./enhancers/monitorReducers";
+import loggerMiddleware from "./middleware/logger";
+import rootReducer from "./reducers";
 
 export default function configureAppStore(preloadedState) {
   const store = configureStore({
     reducer: rootReducer,
     middleware: [loggerMiddleware, ...getDefaultMiddleware()],
     preloadedState,
-    enhancers: [monitorReducersEnhancer]
-  })
+    enhancers: [monitorReducersEnhancer],
+  });
 
-  if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('./reducers', () => store.replaceReducer(rootReducer))
+  if (process.env.NODE_ENV !== "production" && module.hot) {
+    module.hot.accept("./reducers", () => store.replaceReducer(rootReducer));
   }
 
-  return store
+  return store;
 }
 ```
 
@@ -2277,6 +2288,7 @@ Now that you know how to encapsulate your store configuration to make it easier 
 
 id: implementing-undo-history
 title: Implementing Undo History
+
 ---
 
 # Implementing Undo History
@@ -2314,7 +2326,7 @@ For example, the state shape of a counter app might look like this:
 
 ```js
 {
-  counter: 10
+  counter: 10;
 }
 ```
 
@@ -2499,32 +2511,32 @@ Let's talk through the algorithm to manipulate the state shape described above. 
 const initialState = {
   past: [],
   present: null, // (?) How do we initialize the present?
-  future: []
-}
+  future: [],
+};
 
 function undoable(state = initialState, action) {
-  const { past, present, future } = state
+  const { past, present, future } = state;
 
   switch (action.type) {
-    case 'UNDO':
-      const previous = past[past.length - 1]
-      const newPast = past.slice(0, past.length - 1)
+    case "UNDO":
+      const previous = past[past.length - 1];
+      const newPast = past.slice(0, past.length - 1);
       return {
         past: newPast,
         present: previous,
-        future: [present, ...future]
-      }
-    case 'REDO':
-      const next = future[0]
-      const newFuture = future.slice(1)
+        future: [present, ...future],
+      };
+    case "REDO":
+      const next = future[0];
+      const newFuture = future.slice(1);
       return {
         past: [...past, present],
         present: next,
-        future: newFuture
-      }
+        future: newFuture,
+      };
     default:
       // (?) How do we handle other actions?
-      return state
+      return state;
   }
 }
 ```
@@ -2549,8 +2561,8 @@ A reducer enhancer that doesn't do anything looks like this:
 function doNothingWith(reducer) {
   return function (state, action) {
     // Just call the passed reducer
-    return reducer(state, action)
-  }
+    return reducer(state, action);
+  };
 }
 ```
 
@@ -2561,10 +2573,10 @@ function combineReducers(reducers) {
   return function (state = {}, action) {
     return Object.keys(reducers).reduce((nextState, key) => {
       // Call every reducer with the part of the state it manages
-      nextState[key] = reducers[key](state[key], action)
-      return nextState
-    }, {})
-  }
+      nextState[key] = reducers[key](state[key], action);
+      return nextState;
+    }, {});
+  };
 }
 ```
 
@@ -2578,43 +2590,43 @@ function undoable(reducer) {
   const initialState = {
     past: [],
     present: reducer(undefined, {}),
-    future: []
-  }
+    future: [],
+  };
 
   // Return a reducer that handles undo and redo
   return function (state = initialState, action) {
-    const { past, present, future } = state
+    const { past, present, future } = state;
 
     switch (action.type) {
-      case 'UNDO':
-        const previous = past[past.length - 1]
-        const newPast = past.slice(0, past.length - 1)
+      case "UNDO":
+        const previous = past[past.length - 1];
+        const newPast = past.slice(0, past.length - 1);
         return {
           past: newPast,
           present: previous,
-          future: [present, ...future]
-        }
-      case 'REDO':
-        const next = future[0]
-        const newFuture = future.slice(1)
+          future: [present, ...future],
+        };
+      case "REDO":
+        const next = future[0];
+        const newFuture = future.slice(1);
         return {
           past: [...past, present],
           present: next,
-          future: newFuture
-        }
+          future: newFuture,
+        };
       default:
         // Delegate handling the action to the passed reducer
-        const newPresent = reducer(present, action)
+        const newPresent = reducer(present, action);
         if (present === newPresent) {
-          return state
+          return state;
         }
         return {
           past: [...past, present],
           present: newPresent,
-          future: []
-        }
+          future: [],
+        };
     }
-  }
+  };
 }
 ```
 
@@ -2627,24 +2639,24 @@ function todos(state = [], action) {
 }
 
 // This is also a reducer!
-const undoableTodos = undoable(todos)
+const undoableTodos = undoable(todos);
 
-import { createStore } from 'redux'
-const store = createStore(undoableTodos)
-
-store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Use Redux'
-})
+import { createStore } from "redux";
+const store = createStore(undoableTodos);
 
 store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Implement Undo'
-})
+  type: "ADD_TODO",
+  text: "Use Redux",
+});
 
 store.dispatch({
-  type: 'UNDO'
-})
+  type: "ADD_TODO",
+  text: "Implement Undo",
+});
+
+store.dispatch({
+  type: "UNDO",
+});
 ```
 
 There is an important gotcha: you need to remember to append `.present` to the current state when you retrieve it. You may also check `.past.length` and `.future.length` to determine whether to enable or to disable the Undo and Redo buttons, respectively.
@@ -2674,17 +2686,17 @@ You will need to wrap the reducer you wish to enhance with `undoable` function. 
 #### `reducers/todos.js`
 
 ```js
-import undoable from 'redux-undo'
+import undoable from "redux-undo";
 
 /* ... */
 
 const todos = (state = [], action) => {
   /* ... */
-}
+};
 
-const undoableTodos = undoable(todos)
+const undoableTodos = undoable(todos);
 
-export default undoableTodos
+export default undoableTodos;
 ```
 
 There are [many other options](https://github.com/omnidan/redux-undo#configuration) to configure your undoable reducer, like setting the action type for Undo and Redo actions.
@@ -2694,16 +2706,16 @@ Note that your `combineReducers()` call will stay exactly as it was, but the `to
 #### `reducers/index.js`
 
 ```js
-import { combineReducers } from 'redux'
-import todos from './todos'
-import visibilityFilter from './visibilityFilter'
+import { combineReducers } from "redux";
+import todos from "./todos";
+import visibilityFilter from "./visibilityFilter";
 
 const todoApp = combineReducers({
   todos,
-  visibilityFilter
-})
+  visibilityFilter,
+});
 
-export default todoApp
+export default todoApp;
 ```
 
 You may wrap one or more reducers in `undoable` at any level of the reducer composition hierarchy. We choose to wrap `todos` instead of the top-level combined reducer so that changes to `visibilityFilter` are not reflected in the undo history.
@@ -2741,11 +2753,11 @@ just `state.todos`:
 #### `containers/VisibleTodoList.js`
 
 ```js
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    todos: getVisibleTodos(state.todos.present, state.visibilityFilter)
-  }
-}
+    todos: getVisibleTodos(state.todos.present, state.visibilityFilter),
+  };
+};
 ```
 
 ### Adding the Buttons
@@ -2757,7 +2769,7 @@ First, create a new container component called `UndoRedo` for these buttons. We 
 #### `containers/UndoRedo.js`
 
 ```js
-import React from 'react'
+import React from "react";
 
 /* ... */
 
@@ -2770,7 +2782,7 @@ let UndoRedo = ({ canUndo, canRedo, onUndo, onRedo }) => (
       Redo
     </button>
   </p>
-)
+);
 ```
 
 You will use `connect()` from [React Redux](https://github.com/reduxjs/react-redux) to generate a container component. To determine whether to enable Undo and Redo buttons, you can check `state.todos.past.length` and `state.todos.future.length`. You won't need to write action creators for performing undo and redo because Redux Undo already provides them:
@@ -2780,28 +2792,28 @@ You will use `connect()` from [React Redux](https://github.com/reduxjs/react-red
 ```js
 /* ... */
 
-import { ActionCreators as UndoActionCreators } from 'redux-undo'
-import { connect } from 'react-redux'
+import { ActionCreators as UndoActionCreators } from "redux-undo";
+import { connect } from "react-redux";
 
 /* ... */
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     canUndo: state.todos.past.length > 0,
-    canRedo: state.todos.future.length > 0
-  }
-}
+    canRedo: state.todos.future.length > 0,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onUndo: () => dispatch(UndoActionCreators.undo()),
-    onRedo: () => dispatch(UndoActionCreators.redo())
-  }
-}
+    onRedo: () => dispatch(UndoActionCreators.redo()),
+  };
+};
 
-UndoRedo = connect(mapStateToProps, mapDispatchToProps)(UndoRedo)
+UndoRedo = connect(mapStateToProps, mapDispatchToProps)(UndoRedo);
 
-export default UndoRedo
+export default UndoRedo;
 ```
 
 Now you can add `UndoRedo` component to the `App` component:
@@ -2809,11 +2821,11 @@ Now you can add `UndoRedo` component to the `App` component:
 #### `components/App.js`
 
 ```js
-import React from 'react'
-import Footer from './Footer'
-import AddTodo from '../containers/AddTodo'
-import VisibleTodoList from '../containers/VisibleTodoList'
-import UndoRedo from '../containers/UndoRedo'
+import React from "react";
+import Footer from "./Footer";
+import AddTodo from "../containers/AddTodo";
+import VisibleTodoList from "../containers/VisibleTodoList";
+import UndoRedo from "../containers/UndoRedo";
 
 const App = () => (
   <div>
@@ -2822,9 +2834,9 @@ const App = () => (
     <Footer />
     <UndoRedo />
   </div>
-)
+);
 
-export default App
+export default App;
 ```
 
 This is it! Run `npm install` and `npm start` in the [example folder](https://github.com/reduxjs/redux/tree/master/examples/todos-with-undo) and try it out!
@@ -2833,6 +2845,7 @@ This is it! Run `npm install` and `npm start` in the [example folder](https://gi
 
 id: isolating-redux-sub-apps
 title: Isolating Redux Sub-Apps
+
 ---
 
 # Isolating Redux Sub-Apps
@@ -2841,8 +2854,8 @@ Consider the case of a “big” app (contained in a `<BigApp>` component)
 that embeds smaller “sub-apps” (contained in `<SubApp>` components):
 
 ```js
-import React, { Component } from 'react'
-import SubApp from './subapp'
+import React, { Component } from "react";
+import SubApp from "./subapp";
 
 class BigApp extends Component {
   render() {
@@ -2852,7 +2865,7 @@ class BigApp extends Component {
         <SubApp />
         <SubApp />
       </div>
-    )
+    );
   }
 }
 ```
@@ -2888,16 +2901,16 @@ To hide Redux behind a React API, we can wrap it in a special component that
 initializes the store in the constructor:
 
 ```js
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import reducer from './reducers'
-import App from './App'
+import React, { Component } from "react";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducer from "./reducers";
+import App from "./App";
 
 class SubApp extends Component {
   constructor(props) {
-    super(props)
-    this.store = createStore(reducer)
+    super(props);
+    this.store = createStore(reducer);
   }
 
   render() {
@@ -2905,7 +2918,7 @@ class SubApp extends Component {
       <Provider store={this.store}>
         <App />
       </Provider>
-    )
+    );
   }
 }
 ```
@@ -2921,6 +2934,7 @@ Each component instance will have its own store, so they won't “know” about 
 
 id: migrating-to-redux
 title: Migrating to Redux
+
 ---
 
 # Migrating to Redux
@@ -2958,6 +2972,7 @@ If your Backbone codebase is too big for a quick rewrite or you don't want to ma
 
 id: reducing-boilerplate
 title: Reducing Boilerplate
+
 ---
 
 # Reducing Boilerplate
@@ -2983,9 +2998,9 @@ It is a common convention that actions have a constant type that helps reducers 
 In Flux, it is traditionally thought that you would define every action type as a string constant:
 
 ```js
-const ADD_TODO = 'ADD_TODO'
-const REMOVE_TODO = 'REMOVE_TODO'
-const LOAD_ARTICLE = 'LOAD_ARTICLE'
+const ADD_TODO = "ADD_TODO";
+const REMOVE_TODO = "REMOVE_TODO";
+const LOAD_ARTICLE = "LOAD_ARTICLE";
 ```
 
 Why is this beneficial? **It is often claimed that constants are unnecessary, and for small projects, this might be correct.** For larger projects, there are some benefits to defining action types as constants:
@@ -3006,9 +3021,9 @@ For example, instead of calling `dispatch` with an object literal:
 ```js
 // somewhere in an event handler
 dispatch({
-  type: 'ADD_TODO',
-  text: 'Use Redux'
-})
+  type: "ADD_TODO",
+  text: "Use Redux",
+});
 ```
 
 You might write an action creator in a separate file, and import it into your component:
@@ -3018,19 +3033,19 @@ You might write an action creator in a separate file, and import it into your co
 ```js
 export function addTodo(text) {
   return {
-    type: 'ADD_TODO',
-    text
-  }
+    type: "ADD_TODO",
+    text,
+  };
 }
 ```
 
 #### `AddTodo.js`
 
 ```js
-import { addTodo } from './actionCreators'
+import { addTodo } from "./actionCreators";
 
 // somewhere in an event handler
-dispatch(addTodo('Use Redux'))
+dispatch(addTodo("Use Redux"));
 ```
 
 Action creators have often been criticized as boilerplate. Well, you don't have to write them! **You can use object literals if you feel this better suits your project.** There are, however, some benefits for writing action creators you should know about.
@@ -3040,9 +3055,9 @@ Let's say a designer comes back to us after reviewing our prototype, and tells u
 ```js
 function addTodoWithoutCheck(text) {
   return {
-    type: 'ADD_TODO',
-    text
-  }
+    type: "ADD_TODO",
+    text,
+  };
 }
 
 export function addTodo(text) {
@@ -3051,10 +3066,10 @@ export function addTodo(text) {
   return function (dispatch, getState) {
     if (getState().todos.length === 3) {
       // Exit early
-      return
+      return;
     }
-    dispatch(addTodoWithoutCheck(text))
-  }
+    dispatch(addTodoWithoutCheck(text));
+  };
 }
 ```
 
@@ -3069,24 +3084,24 @@ Writing simple action creators can be tiresome and often ends up generating redu
 ```js
 export function addTodo(text) {
   return {
-    type: 'ADD_TODO',
-    text
-  }
+    type: "ADD_TODO",
+    text,
+  };
 }
 
 export function editTodo(id, text) {
   return {
-    type: 'EDIT_TODO',
+    type: "EDIT_TODO",
     id,
-    text
-  }
+    text,
+  };
 }
 
 export function removeTodo(id) {
   return {
-    type: 'REMOVE_TODO',
-    id
-  }
+    type: "REMOVE_TODO",
+    id,
+  };
 }
 ```
 
@@ -3095,21 +3110,21 @@ You can always write a function that generates an action creator:
 ```js
 function makeActionCreator(type, ...argNames) {
   return function (...args) {
-    const action = { type }
+    const action = { type };
     argNames.forEach((arg, index) => {
-      action[argNames[index]] = args[index]
-    })
-    return action
-  }
+      action[argNames[index]] = args[index];
+    });
+    return action;
+  };
 }
 
-const ADD_TODO = 'ADD_TODO'
-const EDIT_TODO = 'EDIT_TODO'
-const REMOVE_TODO = 'REMOVE_TODO'
+const ADD_TODO = "ADD_TODO";
+const EDIT_TODO = "EDIT_TODO";
+const REMOVE_TODO = "REMOVE_TODO";
 
-export const addTodo = makeActionCreator(ADD_TODO, 'text')
-export const editTodo = makeActionCreator(EDIT_TODO, 'id', 'text')
-export const removeTodo = makeActionCreator(REMOVE_TODO, 'id')
+export const addTodo = makeActionCreator(ADD_TODO, "text");
+export const editTodo = makeActionCreator(EDIT_TODO, "id", "text");
+export const removeTodo = makeActionCreator(REMOVE_TODO, "id");
 ```
 
 There are also utility libraries to aid in generating action creators, such as [redux-act](https://github.com/pauldijou/redux-act) and [redux-actions](https://github.com/acdlite/redux-actions). These can help reduce boilerplate code and enforce adherence to standards such as [Flux Standard Action (FSA)](https://github.com/acdlite/flux-standard-action).
@@ -3125,87 +3140,87 @@ Without any middleware, [`dispatch`](../api/Store.md#dispatchaction) only accept
 ```js
 export function loadPostsSuccess(userId, response) {
   return {
-    type: 'LOAD_POSTS_SUCCESS',
+    type: "LOAD_POSTS_SUCCESS",
     userId,
-    response
-  }
+    response,
+  };
 }
 
 export function loadPostsFailure(userId, error) {
   return {
-    type: 'LOAD_POSTS_FAILURE',
+    type: "LOAD_POSTS_FAILURE",
     userId,
-    error
-  }
+    error,
+  };
 }
 
 export function loadPostsRequest(userId) {
   return {
-    type: 'LOAD_POSTS_REQUEST',
-    userId
-  }
+    type: "LOAD_POSTS_REQUEST",
+    userId,
+  };
 }
 ```
 
 #### `UserInfo.js`
 
 ```js
-import { Component } from 'react'
-import { connect } from 'react-redux'
+import { Component } from "react";
+import { connect } from "react-redux";
 import {
   loadPostsRequest,
   loadPostsSuccess,
-  loadPostsFailure
-} from './actionCreators'
+  loadPostsFailure,
+} from "./actionCreators";
 
 class Posts extends Component {
   loadData(userId) {
     // Injected into props by React Redux `connect()` call:
-    const { dispatch, posts } = this.props
+    const { dispatch, posts } = this.props;
 
     if (posts[userId]) {
       // There is cached data! Don't do anything.
-      return
+      return;
     }
 
     // Reducer can react to this action by setting
     // `isFetching` and thus letting us show a spinner.
-    dispatch(loadPostsRequest(userId))
+    dispatch(loadPostsRequest(userId));
 
     // Reducer can react to these actions by filling the `users`.
     fetch(`http://myapi.com/users/${userId}/posts`).then(
-      response => dispatch(loadPostsSuccess(userId, response)),
-      error => dispatch(loadPostsFailure(userId, error))
-    )
+      (response) => dispatch(loadPostsSuccess(userId, response)),
+      (error) => dispatch(loadPostsFailure(userId, error))
+    );
   }
 
   componentDidMount() {
-    this.loadData(this.props.userId)
+    this.loadData(this.props.userId);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.userId !== this.props.userId) {
-      this.loadData(this.props.userId)
+      this.loadData(this.props.userId);
     }
   }
 
   render() {
     if (this.props.isFetching) {
-      return <p>Loading...</p>
+      return <p>Loading...</p>;
     }
 
-    const posts = this.props.posts.map(post => (
+    const posts = this.props.posts.map((post) => (
       <Post post={post} key={post.id} />
-    ))
+    ));
 
-    return <div>{posts}</div>
+    return <div>{posts}</div>;
   }
 }
 
-export default connect(state => ({
+export default connect((state) => ({
   posts: state.posts,
-  isFetching: state.isFetching
-}))(Posts)
+  isFetching: state.isFetching,
+}))(Posts);
 ```
 
 However, this quickly gets repetitive because different components request data from the same API endpoints. Moreover, we want to reuse some of this logic (e.g., early exit when there is cached data available) from many components.
@@ -3226,71 +3241,71 @@ Consider the code above rewritten with [redux-thunk](https://github.com/gaearon/
 export function loadPosts(userId) {
   // Interpreted by the thunk middleware:
   return function (dispatch, getState) {
-    const { posts } = getState()
+    const { posts } = getState();
     if (posts[userId]) {
       // There is cached data! Don't do anything.
-      return
+      return;
     }
 
     dispatch({
-      type: 'LOAD_POSTS_REQUEST',
-      userId
-    })
+      type: "LOAD_POSTS_REQUEST",
+      userId,
+    });
 
     // Dispatch vanilla actions asynchronously
     fetch(`http://myapi.com/users/${userId}/posts`).then(
-      response =>
+      (response) =>
         dispatch({
-          type: 'LOAD_POSTS_SUCCESS',
+          type: "LOAD_POSTS_SUCCESS",
           userId,
-          response
+          response,
         }),
-      error =>
+      (error) =>
         dispatch({
-          type: 'LOAD_POSTS_FAILURE',
+          type: "LOAD_POSTS_FAILURE",
           userId,
-          error
+          error,
         })
-    )
-  }
+    );
+  };
 }
 ```
 
 #### `UserInfo.js`
 
 ```js
-import { Component } from 'react'
-import { connect } from 'react-redux'
-import { loadPosts } from './actionCreators'
+import { Component } from "react";
+import { connect } from "react-redux";
+import { loadPosts } from "./actionCreators";
 
 class Posts extends Component {
   componentDidMount() {
-    this.props.dispatch(loadPosts(this.props.userId))
+    this.props.dispatch(loadPosts(this.props.userId));
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.userId !== this.props.userId) {
-      this.props.dispatch(loadPosts(this.props.userId))
+      this.props.dispatch(loadPosts(this.props.userId));
     }
   }
 
   render() {
     if (this.props.isFetching) {
-      return <p>Loading...</p>
+      return <p>Loading...</p>;
     }
 
-    const posts = this.props.posts.map(post => (
+    const posts = this.props.posts.map((post) => (
       <Post post={post} key={post.id} />
-    ))
+    ));
 
-    return <div>{posts}</div>
+    return <div>{posts}</div>;
   }
 }
 
-export default connect(state => ({
+export default connect((state) => ({
   posts: state.posts,
-  isFetching: state.isFetching
-}))(Posts)
+  isFetching: state.isFetching,
+}))(Posts);
 ```
 
 This is much less typing! If you'd like, you can still have “vanilla” action creators like `loadPostsSuccess` which you'd use from a container `loadPosts` action creator.
@@ -3301,14 +3316,14 @@ This is much less typing! If you'd like, you can still have “vanilla” action
 export function loadPosts(userId) {
   return {
     // Types of actions to emit before and after
-    types: ['LOAD_POSTS_REQUEST', 'LOAD_POSTS_SUCCESS', 'LOAD_POSTS_FAILURE'],
+    types: ["LOAD_POSTS_REQUEST", "LOAD_POSTS_SUCCESS", "LOAD_POSTS_FAILURE"],
     // Check the cache (optional):
-    shouldCallAPI: state => !state.posts[userId],
+    shouldCallAPI: (state) => !state.posts[userId],
     // Perform the fetching:
     callAPI: () => fetch(`http://myapi.com/users/${userId}/posts`),
     // Arguments to inject in begin/end actions
-    payload: { userId }
-  }
+    payload: { userId },
+  };
 }
 ```
 
@@ -3316,55 +3331,55 @@ The middleware that interprets such actions could look like this:
 
 ```js
 function callAPIMiddleware({ dispatch, getState }) {
-  return next => action => {
-    const { types, callAPI, shouldCallAPI = () => true, payload = {} } = action
+  return (next) => (action) => {
+    const { types, callAPI, shouldCallAPI = () => true, payload = {} } = action;
 
     if (!types) {
       // Normal action: pass it on
-      return next(action)
+      return next(action);
     }
 
     if (
       !Array.isArray(types) ||
       types.length !== 3 ||
-      !types.every(type => typeof type === 'string')
+      !types.every((type) => typeof type === "string")
     ) {
-      throw new Error('Expected an array of three string types.')
+      throw new Error("Expected an array of three string types.");
     }
 
-    if (typeof callAPI !== 'function') {
-      throw new Error('Expected callAPI to be a function.')
+    if (typeof callAPI !== "function") {
+      throw new Error("Expected callAPI to be a function.");
     }
 
     if (!shouldCallAPI(getState())) {
-      return
+      return;
     }
 
-    const [requestType, successType, failureType] = types
+    const [requestType, successType, failureType] = types;
 
     dispatch(
       Object.assign({}, payload, {
-        type: requestType
+        type: requestType,
       })
-    )
+    );
 
     return callAPI().then(
-      response =>
+      (response) =>
         dispatch(
           Object.assign({}, payload, {
             response,
-            type: successType
+            type: successType,
           })
         ),
-      error =>
+      (error) =>
         dispatch(
           Object.assign({}, payload, {
             error,
-            type: failureType
+            type: failureType,
           })
         )
-    )
-  }
+    );
+  };
 }
 ```
 
@@ -3373,44 +3388,44 @@ After passing it once to [`applyMiddleware(...middlewares)`](../api/applyMiddlew
 ```js
 export function loadPosts(userId) {
   return {
-    types: ['LOAD_POSTS_REQUEST', 'LOAD_POSTS_SUCCESS', 'LOAD_POSTS_FAILURE'],
-    shouldCallAPI: state => !state.posts[userId],
+    types: ["LOAD_POSTS_REQUEST", "LOAD_POSTS_SUCCESS", "LOAD_POSTS_FAILURE"],
+    shouldCallAPI: (state) => !state.posts[userId],
     callAPI: () => fetch(`http://myapi.com/users/${userId}/posts`),
-    payload: { userId }
-  }
+    payload: { userId },
+  };
 }
 
 export function loadComments(postId) {
   return {
     types: [
-      'LOAD_COMMENTS_REQUEST',
-      'LOAD_COMMENTS_SUCCESS',
-      'LOAD_COMMENTS_FAILURE'
+      "LOAD_COMMENTS_REQUEST",
+      "LOAD_COMMENTS_SUCCESS",
+      "LOAD_COMMENTS_FAILURE",
     ],
-    shouldCallAPI: state => !state.comments[postId],
+    shouldCallAPI: (state) => !state.comments[postId],
     callAPI: () => fetch(`http://myapi.com/posts/${postId}/comments`),
-    payload: { postId }
-  }
+    payload: { postId },
+  };
 }
 
 export function addComment(postId, message) {
   return {
     types: [
-      'ADD_COMMENT_REQUEST',
-      'ADD_COMMENT_SUCCESS',
-      'ADD_COMMENT_FAILURE'
+      "ADD_COMMENT_REQUEST",
+      "ADD_COMMENT_SUCCESS",
+      "ADD_COMMENT_FAILURE",
     ],
     callAPI: () =>
       fetch(`http://myapi.com/posts/${postId}/comments`, {
-        method: 'post',
+        method: "post",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message })
+        body: JSON.stringify({ message }),
       }),
-    payload: { postId, message }
-  }
+    payload: { postId, message },
+  };
 }
 ```
 
@@ -3421,24 +3436,24 @@ Redux reduces the boilerplate of Flux stores considerably by describing the upda
 Consider this Flux store:
 
 ```js
-const _todos = []
+const _todos = [];
 
 const TodoStore = Object.assign({}, EventEmitter.prototype, {
   getAll() {
-    return _todos
-  }
-})
+    return _todos;
+  },
+});
 
 AppDispatcher.register(function (action) {
   switch (action.type) {
     case ActionTypes.ADD_TODO:
-      const text = action.text.trim()
-      _todos.push(text)
-      TodoStore.emitChange()
+      const text = action.text.trim();
+      _todos.push(text);
+      TodoStore.emitChange();
   }
-})
+});
 
-export default TodoStore
+export default TodoStore;
 ```
 
 With Redux, the same update logic can be described as a reducing function:
@@ -3447,10 +3462,10 @@ With Redux, the same update logic can be described as a reducing function:
 export function todos(state = [], action) {
   switch (action.type) {
     case ActionTypes.ADD_TODO:
-      const text = action.text.trim()
-      return [...state, text]
+      const text = action.text.trim();
+      return [...state, text];
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -3466,10 +3481,10 @@ Let's write a function that lets us express reducers as an object mapping from a
 ```js
 export const todos = createReducer([], {
   [ActionTypes.ADD_TODO]: (state, action) => {
-    const text = action.text.trim()
-    return [...state, text]
-  }
-})
+    const text = action.text.trim();
+    return [...state, text];
+  },
+});
 ```
 
 We can write the following helper to accomplish this:
@@ -3478,11 +3493,11 @@ We can write the following helper to accomplish this:
 function createReducer(initialState, handlers) {
   return function reducer(state = initialState, action) {
     if (handlers.hasOwnProperty(action.type)) {
-      return handlers[action.type](state, action)
+      return handlers[action.type](state, action);
     } else {
-      return state
+      return state;
     }
-  }
+  };
 }
 ```
 
@@ -3494,6 +3509,7 @@ The Redux reducer API is `(state, action) => newState`, but how you create those
 
 id: server-rendering
 title: Server Rendering
+
 ---
 
 # Server Rendering
@@ -3537,22 +3553,22 @@ Additionally, as we are using ES6 and JSX syntax, we will need to compile with [
 ##### `server.js`
 
 ```js
-import path from 'path'
-import Express from 'express'
-import React from 'react'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import counterApp from './reducers'
-import App from './containers/App'
+import path from "path";
+import Express from "express";
+import React from "react";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import counterApp from "./reducers";
+import App from "./containers/App";
 
-const app = Express()
-const port = 3000
+const app = Express();
+const port = 3000;
 
 //Serve static files
-app.use('/static', Express.static('static'))
+app.use("/static", Express.static("static"));
 
 // This is fired every time the server side receives a request
-app.use(handleRender)
+app.use(handleRender);
 
 // We are going to fill these out in the sections to follow
 function handleRender(req, res) {
@@ -3562,7 +3578,7 @@ function renderFullPage(html, preloadedState) {
   /* ... */
 }
 
-app.listen(port)
+app.listen(port);
 ```
 
 ### Handling the Request
@@ -3576,24 +3592,24 @@ The key step in server side rendering is to render the initial HTML of our compo
 We then get the initial state from our Redux store using [`store.getState()`](../api/Store.md#getState). We will see how this is passed along in our `renderFullPage` function.
 
 ```js
-import { renderToString } from 'react-dom/server'
+import { renderToString } from "react-dom/server";
 
 function handleRender(req, res) {
   // Create a new Redux store instance
-  const store = createStore(counterApp)
+  const store = createStore(counterApp);
 
   // Render the component to a string
   const html = renderToString(
     <Provider store={store}>
       <App />
     </Provider>
-  )
+  );
 
   // Grab the initial state from our Redux store
-  const preloadedState = store.getState()
+  const preloadedState = store.getState();
 
   // Send the rendered page back to the client
-  res.send(renderFullPage(html, preloadedState))
+  res.send(renderFullPage(html, preloadedState));
 }
 ```
 
@@ -3620,13 +3636,13 @@ function renderFullPage(html, preloadedState) {
           // https://redux.js.org/usage/server-rendering#security-considerations
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
             /</g,
-            '\\u003c'
+            "\\u003c"
           )}
         </script>
         <script src="/static/bundle.js"></script>
       </body>
     </html>
-    `
+    `;
 }
 ```
 
@@ -3639,28 +3655,28 @@ Let's take a look at our new client file:
 #### `client.js`
 
 ```js
-import React from 'react'
-import { hydrate } from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import App from './containers/App'
-import counterApp from './reducers'
+import React from "react";
+import { hydrate } from "react-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import App from "./containers/App";
+import counterApp from "./reducers";
 
 // Grab the state from a global variable injected into the server-generated HTML
-const preloadedState = window.__PRELOADED_STATE__
+const preloadedState = window.__PRELOADED_STATE__;
 
 // Allow the passed state to be garbage-collected
-delete window.__PRELOADED_STATE__
+delete window.__PRELOADED_STATE__;
 
 // Create Redux store with initial state
-const store = createStore(counterApp, preloadedState)
+const store = createStore(counterApp, preloadedState);
 
 hydrate(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 You can set up your build tool of choice (Webpack, Browserify, etc.) to compile a bundle file into `static/bundle.js`.
@@ -3684,32 +3700,32 @@ The request contains information about the URL requested, including any query pa
 #### `server.js`
 
 ```js
-import qs from 'qs' // Add this at the top of the file
-import { renderToString } from 'react-dom/server'
+import qs from "qs"; // Add this at the top of the file
+import { renderToString } from "react-dom/server";
 
 function handleRender(req, res) {
   // Read the counter from the request, if provided
-  const params = qs.parse(req.query)
-  const counter = parseInt(params.counter, 10) || 0
+  const params = qs.parse(req.query);
+  const counter = parseInt(params.counter, 10) || 0;
 
   // Compile an initial state
-  let preloadedState = { counter }
+  let preloadedState = { counter };
 
   // Create a new Redux store instance
-  const store = createStore(counterApp, preloadedState)
+  const store = createStore(counterApp, preloadedState);
 
   // Render the component to a string
   const html = renderToString(
     <Provider store={store}>
       <App />
     </Provider>
-  )
+  );
 
   // Grab the initial state from our Redux store
-  const finalState = store.getState()
+  const finalState = store.getState();
 
   // Send the rendered page back to the client
-  res.send(renderFullPage(html, finalState))
+  res.send(renderFullPage(html, finalState));
 }
 ```
 
@@ -3727,13 +3743,13 @@ For our example, we'll imagine there is an external datastore that contains the 
 
 ```js
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 export function fetchCounter(callback) {
   setTimeout(() => {
-    callback(getRandomInt(1, 100))
-  }, 500)
+    callback(getRandomInt(1, 100));
+  }, 500);
 }
 ```
 
@@ -3745,35 +3761,35 @@ On the server side, we simply wrap our existing code in the `fetchCounter` and r
 
 ```js
 // Add this to our imports
-import { fetchCounter } from './api/counter'
-import { renderToString } from 'react-dom/server'
+import { fetchCounter } from "./api/counter";
+import { renderToString } from "react-dom/server";
 
 function handleRender(req, res) {
   // Query our mock API asynchronously
-  fetchCounter(apiResult => {
+  fetchCounter((apiResult) => {
     // Read the counter from the request, if provided
-    const params = qs.parse(req.query)
-    const counter = parseInt(params.counter, 10) || apiResult || 0
+    const params = qs.parse(req.query);
+    const counter = parseInt(params.counter, 10) || apiResult || 0;
 
     // Compile an initial state
-    let preloadedState = { counter }
+    let preloadedState = { counter };
 
     // Create a new Redux store instance
-    const store = createStore(counterApp, preloadedState)
+    const store = createStore(counterApp, preloadedState);
 
     // Render the component to a string
     const html = renderToString(
       <Provider store={store}>
         <App />
       </Provider>
-    )
+    );
 
     // Grab the initial state from our Redux store
-    const finalState = store.getState()
+    const finalState = store.getState();
 
     // Send the rendered page back to the client
-    res.send(renderFullPage(html, finalState))
-  })
+    res.send(renderFullPage(html, finalState));
+  });
 }
 ```
 
@@ -3799,6 +3815,7 @@ If you use something like [React Router](https://github.com/ReactTraining/react-
 
 id: troubleshooting
 title: Troubleshooting
+
 ---
 
 # Troubleshooting
@@ -3823,19 +3840,19 @@ For example, a reducer like this is wrong because it mutates the state:
 ```js
 function todos(state = [], action) {
   switch (action.type) {
-    case 'ADD_TODO':
+    case "ADD_TODO":
       // Wrong! This mutates state
       state.push({
         text: action.text,
-        completed: false
-      })
-      return state
-    case 'COMPLETE_TODO':
+        completed: false,
+      });
+      return state;
+    case "COMPLETE_TODO":
       // Wrong! This mutates state[action.index].
-      state[action.index].completed = true
-      return state
+      state[action.index].completed = true;
+      return state;
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -3845,28 +3862,28 @@ It needs to be rewritten like this:
 ```js
 function todos(state = [], action) {
   switch (action.type) {
-    case 'ADD_TODO':
+    case "ADD_TODO":
       // Return a new array
       return [
         ...state,
         {
           text: action.text,
-          completed: false
-        }
-      ]
-    case 'COMPLETE_TODO':
+          completed: false,
+        },
+      ];
+    case "COMPLETE_TODO":
       // Return a new array
       return state.map((todo, index) => {
         if (index === action.index) {
           // Copy the object before mutating
           return Object.assign({}, todo, {
-            completed: true
-          })
+            completed: true,
+          });
         }
-        return todo
-      })
+        return todo;
+      });
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -3878,20 +3895,20 @@ It's more code, but it's exactly what makes Redux predictable and efficient. If 
 return state.map((todo, index) => {
   if (index === action.index) {
     return Object.assign({}, todo, {
-      completed: true
-    })
+      completed: true,
+    });
   }
-  return todo
-})
+  return todo;
+});
 
 // After
 return update(state, {
   [action.index]: {
     completed: {
-      $set: true
-    }
-  }
-})
+      $set: true,
+    },
+  },
+});
 ```
 
 Finally, to update objects, you'll need something like `_.extend` from Underscore, or better, an [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) polyfill.
@@ -3905,19 +3922,19 @@ You can also use the object spread operator proposal for a more succinct syntax:
 return state.map((todo, index) => {
   if (index === action.index) {
     return Object.assign({}, todo, {
-      completed: true
-    })
+      completed: true,
+    });
   }
-  return todo
-})
+  return todo;
+});
 
 // After:
 return state.map((todo, index) => {
   if (index === action.index) {
-    return { ...todo, completed: true }
+    return { ...todo, completed: true };
   }
-  return todo
-})
+  return todo;
+});
 ```
 
 Note that experimental language features are subject to change.
@@ -3932,24 +3949,24 @@ If you define an action creator, calling it will _not_ automatically dispatch th
 
 ```js
 export function addTodo(text) {
-  return { type: 'ADD_TODO', text }
+  return { type: "ADD_TODO", text };
 }
 ```
 
 #### `AddTodo.js`
 
 ```js
-import React, { Component } from 'react'
-import { addTodo } from './TodoActions'
+import React, { Component } from "react";
+import { addTodo } from "./TodoActions";
 
 class AddTodo extends Component {
   handleClick() {
     // Won't work!
-    addTodo('Fix the issue')
+    addTodo("Fix the issue");
   }
 
   render() {
-    return <button onClick={() => this.handleClick()}>Add</button>
+    return <button onClick={() => this.handleClick()}>Add</button>;
   }
 }
 ```
@@ -3972,23 +3989,23 @@ The fixed code looks like this:
 #### `AddTodo.js`
 
 ```js
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from './TodoActions'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addTodo } from "./TodoActions";
 
 class AddTodo extends Component {
   handleClick() {
     // Works!
-    this.props.dispatch(addTodo('Fix the issue'))
+    this.props.dispatch(addTodo("Fix the issue"));
   }
 
   render() {
-    return <button onClick={() => this.handleClick()}>Add</button>
+    return <button onClick={() => this.handleClick()}>Add</button>;
   }
 }
 
 // In addition to the state, `connect` puts `dispatch` in our props.
-export default connect()(AddTodo)
+export default connect()(AddTodo);
 ```
 
 You can then pass `dispatch` down to other components manually, if you want to.
@@ -4007,6 +4024,7 @@ If you figure it out, [edit this document](https://github.com/reduxjs/redux/edit
 
 id: usage-with-typescript
 title: Usage With TypeScript
+
 ---
 
 # Usage with TypeScript
@@ -4059,22 +4077,22 @@ Using [configureStore](https://redux-toolkit.js.org/api/configureStore) should n
 Since those are types, it's safe to export them directly from your store setup file such as `app/store.ts` and import them directly into other files.
 
 ```ts title="app/store.ts"
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 // ...
 
 export const store = configureStore({
   reducer: {
     posts: postsReducer,
     comments: commentsReducer,
-    users: usersReducer
-  }
-})
+    users: usersReducer,
+  },
+});
 
 // highlight-start
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
 // highlight-end
 ```
 
@@ -4088,13 +4106,13 @@ While it's possible to import the `RootState` and `AppDispatch` types into each 
 Since these are actual variables, not types, it's important to define them in a separate file such as `app/hooks.ts`, not the store setup file. This allows you to import them into any component file that needs to use the hooks, and avoids potential circular import dependency issues.
 
 ```ts title="app/hooks.ts"
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import type { RootState, AppDispatch } from './store'
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import type { RootState, AppDispatch } from "./store";
 
 // highlight-start
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
-export const useAppDispatch = () => useDispatch<AppDispatch>()
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 // highlight-end
 ```
 
@@ -4109,47 +4127,47 @@ All generated actions should be defined using the `PayloadAction<T>` type from R
 You can safely import the `RootState` type from the store file here. It's a circular import, but the TypeScript compiler can correctly handle that for types. This may be needed for use cases like writing selector functions.
 
 ```ts title="features/counter/counterSlice.ts"
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../../app/store'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "../../app/store";
 
 // highlight-start
 // Define a type for the slice state
 interface CounterState {
-  value: number
+  value: number;
 }
 
 // Define the initial state using that type
 const initialState: CounterState = {
-  value: 0
-}
+  value: 0,
+};
 // highlight-end
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    increment: state => {
-      state.value += 1
+    increment: (state) => {
+      state.value += 1;
     },
-    decrement: state => {
-      state.value -= 1
+    decrement: (state) => {
+      state.value -= 1;
     },
     // highlight-start
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action: PayloadAction<number>) => {
       // highlight-end
-      state.value += action.payload
-    }
-  }
-})
+      state.value += action.payload;
+    },
+  },
+});
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value
+export const selectCount = (state: RootState) => state.counter.value;
 
-export default counterSlice.reducer
+export default counterSlice.reducer;
 ```
 
 The generated action creators will be correctly typed to accept a `payload` argument based on the `PayloadAction<T>` type you provided for the reducer. For example, `incrementByAmount` requires a `number` as its argument.
@@ -4159,8 +4177,8 @@ In some cases, [TypeScript may unnecessarily tighten the type of the initial sta
 ```ts
 // Workaround: cast state instead of declaring variable type
 const initialState = {
-  value: 0
-} as CounterState
+  value: 0,
+} as CounterState;
 ```
 
 ### Use Typed Hooks in Components
@@ -4168,18 +4186,18 @@ const initialState = {
 In component files, import the pre-typed hooks instead of the standard hooks from React Redux.
 
 ```tsx title="features/counter/Counter.tsx"
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 // highlight-next-line
-import { useAppSelector, useAppDispatch } from 'app/hooks'
+import { useAppSelector, useAppDispatch } from "app/hooks";
 
-import { decrement, increment } from './counterSlice'
+import { decrement, increment } from "./counterSlice";
 
 export function Counter() {
   // highlight-start
   // The `state` arg is correctly typed as `RootState` already
-  const count = useAppSelector(state => state.counter.value)
-  const dispatch = useAppDispatch()
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
   // highlight-end
 
   // omit rendering logic
@@ -4195,15 +4213,15 @@ export function Counter() {
 If you are using Redux Toolkit's `createSlice`, you should rarely need to specifically type a reducer separately. If you do actually write a standalone reducer, it's typically sufficient to declare the type of the `initialState` value, and type the `action` as `AnyAction`:
 
 ```ts
-import { AnyAction } from 'redux'
+import { AnyAction } from "redux";
 
 interface CounterState {
-  value: number
+  value: number;
 }
 
 const initialState: CounterState = {
-  value: 0
-}
+  value: 0,
+};
 
 export default function counterReducer(
   state = initialState,
@@ -4232,16 +4250,16 @@ export interface Middleware<
 A custom middleware should use the `Middleware` type, and pass the generic args for `S` (state) and `D` (dispatch) if needed:
 
 ```ts
-import { Middleware } from 'redux'
+import { Middleware } from "redux";
 
-import { RootState } from '../store'
+import { RootState } from "../store";
 
 export const exampleMiddleware: Middleware<
   {}, // Most middleware do not modify the dispatch return value
   RootState
-> = storeApi => next => action => {
-  const state = storeApi.getState() // correctly typed as RootState
-}
+> = (storeApi) => (next) => (action) => {
+  const state = storeApi.getState(); // correctly typed as RootState
+};
 ```
 
 The dispatch generic should likely only be needed if you are dispatching additional thunks within the middleware.
@@ -4256,32 +4274,36 @@ export type ThunkAction<
   S, // state type used by getState
   E, // any "extra argument" injected into the thunk
   A extends Action // known types of actions that can be dispatched
-> = (dispatch: ThunkDispatch<S, E, A>, getState: () => S, extraArgument: E) => R
+> = (
+  dispatch: ThunkDispatch<S, E, A>,
+  getState: () => S,
+  extraArgument: E
+) => R;
 ```
 
 You will typically want to provide the `R` (return type) and `S` (state) generic arguments. Unfortunately, TS does not allow only providing _some_ generic arguments, so the usual values for the other arguments are `unknown` for `E` and `AnyAction` for `A`:
 
 ```ts
-import { AnyAction } from 'redux'
-import { sendMessage } from './store/chat/actions'
-import { RootState } from './store'
-import { ThunkAction } from 'redux-thunk'
+import { AnyAction } from "redux";
+import { sendMessage } from "./store/chat/actions";
+import { RootState } from "./store";
+import { ThunkAction } from "redux-thunk";
 
 export const thunkSendMessage =
   (message: string): ThunkAction<void, RootState, unknown, AnyAction> =>
-  async dispatch => {
-    const asyncResp = await exampleAPI()
+  async (dispatch) => {
+    const asyncResp = await exampleAPI();
     dispatch(
       sendMessage({
         message,
         user: asyncResp,
-        timestamp: new Date().getTime()
+        timestamp: new Date().getTime(),
       })
-    )
-  }
+    );
+  };
 
 function exampleAPI() {
-  return Promise.resolve('Async Chat Bot')
+  return Promise.resolve("Async Chat Bot");
 }
 ```
 
@@ -4293,7 +4315,7 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   RootState,
   unknown,
   AnyAction
->
+>;
 ```
 
 Note that this assumes that there is no meaningful return value from the thunk. If your thunk returns a promise and you want to [use the returned promise after dispatching the thunk](../tutorials/essentials/part-5-async-logic.md#checking-thunk-results-in-components), you'd want to use this as `AppThunk<Promise<SomeReturnType>>`.
@@ -4318,20 +4340,20 @@ Declare the type of the `state` parameter in the selector function, and the retu
 
 ```ts
 interface RootState {
-  isOn: boolean
+  isOn: boolean;
 }
 
 // TS infers type: (state: RootState) => boolean
-const selectIsOn = (state: RootState) => state.isOn
+const selectIsOn = (state: RootState) => state.isOn;
 
 // TS infers `isOn` is boolean
-const isOn = useSelector(selectIsOn)
+const isOn = useSelector(selectIsOn);
 ```
 
 This can also be done inline as well:
 
 ```ts
-const isOn = useSelector((state: RootState) => state.isOn)
+const isOn = useSelector((state: RootState) => state.isOn);
 ```
 
 However, prefer creating a pre-typed `useSelector` hook with the correct type of `state` built-in instead.
@@ -4341,7 +4363,7 @@ However, prefer creating a pre-typed `useSelector` hook with the correct type of
 By default, the return value of `useDispatch` is the standard `Dispatch` type defined by the Redux core types, so no declarations are needed:
 
 ```ts
-const dispatch = useDispatch()
+const dispatch = useDispatch();
 ```
 
 However, prefer creating a pre-typed `useAppDispatch` hook with the correct type of `Dispatch` built-in instead.
@@ -4351,39 +4373,39 @@ However, prefer creating a pre-typed `useAppDispatch` hook with the correct type
 If you are still using `connect`, you should use the `ConnectedProps<T>` type exported by `@types/react-redux^7.1.2` to infer the types of the props from `connect` automatically. This requires splitting the `connect(mapState, mapDispatch)(MyComponent)` call into two parts:
 
 ```tsx
-import { connect, ConnectedProps } from 'react-redux'
+import { connect, ConnectedProps } from "react-redux";
 
 interface RootState {
-  isOn: boolean
+  isOn: boolean;
 }
 
 const mapState = (state: RootState) => ({
-  isOn: state.isOn
-})
+  isOn: state.isOn,
+});
 
 const mapDispatch = {
-  toggleOn: () => ({ type: 'TOGGLE_IS_ON' })
-}
+  toggleOn: () => ({ type: "TOGGLE_IS_ON" }),
+};
 
-const connector = connect(mapState, mapDispatch)
+const connector = connect(mapState, mapDispatch);
 
 // The inferred type will look like:
 // {isOn: boolean, toggleOn: () => void}
-type PropsFromRedux = ConnectedProps<typeof connector>
+type PropsFromRedux = ConnectedProps<typeof connector>;
 
 type Props = PropsFromRedux & {
-  backgroundColor: string
-}
+  backgroundColor: string;
+};
 
 const MyComponent = (props: Props) => (
   <div style={{ backgroundColor: props.backgroundColor }}>
     <button onClick={props.toggleOn}>
-      Toggle is {props.isOn ? 'ON' : 'OFF'}
+      Toggle is {props.isOn ? "ON" : "OFF"}
     </button>
   </div>
-)
+);
 
-export default connector(MyComponent)
+export default connector(MyComponent);
 ```
 
 ## Usage with Redux Toolkit
@@ -4401,20 +4423,20 @@ If you want to add additional middleware to the store, be sure to use the specia
 ```ts
 const store = configureStore({
   reducer: rootReducer,
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
       .prepend(
         // correctly typed middlewares can just be used
         additionalMiddleware,
         // you can also type middlewares manually
         untypedMiddleware as Middleware<
-          (action: Action<'specialAction'>) => number,
+          (action: Action<"specialAction">) => number,
           RootState
         >
       )
       // prepend and concat calls can be chained
-      .concat(logger)
-})
+      .concat(logger),
+});
 ```
 
 ### Matching Actions
@@ -4422,11 +4444,11 @@ const store = configureStore({
 RTK-generated action creators have a `match` method that acts as a [type predicate](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates). Calling `someActionCreator.match(action)` will do a string comparison against the `action.type` string, and if used as a condition, narrow the type of `action` down to be the correct TS type:
 
 ```ts
-const increment = createAction<number>('increment')
+const increment = createAction<number>("increment");
 function test(action: Action) {
   if (increment.match(action)) {
     // action.payload inferred correctly here
-    const num = 5 + action.payload
+    const num = 5 + action.payload;
   }
 }
 ```
@@ -4440,17 +4462,17 @@ This is particularly useful when checking for action types in Redux middleware, 
 If you have too many case reducers and defining them inline would be messy, or you want to reuse case reducers across slices, you can also define them outside the `createSlice` call and type them as `CaseReducer`:
 
 ```ts
-type State = number
+type State = number;
 const increment: CaseReducer<State, PayloadAction<number>> = (state, action) =>
-  state + action.payload
+  state + action.payload;
 
 createSlice({
-  name: 'test',
+  name: "test",
   initialState: 0,
   reducers: {
-    increment
-  }
-})
+    increment,
+  },
+});
 ```
 
 #### Typing `extraReducers`
@@ -4459,20 +4481,20 @@ If you are adding an `extraReducers` field in `createSlice`, be sure to use the 
 
 ```ts
 const usersSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState,
   reducers: {
     // fill in primary logic here
   },
   // highlight-start
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder.addCase(fetchUserById.pending, (state, action) => {
       // both `state` and `action` are now correctly typed
       // based on the slice state and the `pending` action creator
-    })
-  }
+    });
+  },
   // highlight-end
-})
+});
 ```
 
 #### Typing `prepare` Callbacks
@@ -4481,7 +4503,7 @@ If you want to add a `meta` or `error` property to your action, or customize the
 
 ```ts
 const blogSlice = createSlice({
-  name: 'blogData',
+  name: "blogData",
   initialState,
   reducers: {
     // highlight-start
@@ -4490,16 +4512,16 @@ const blogSlice = createSlice({
         state,
         action: PayloadAction<Page[], string, { currentPage: number }>
       ) {
-        state.all = action.payload
-        state.meta = action.meta
+        state.all = action.payload;
+        state.meta = action.meta;
       },
       prepare(payload: Page[], currentPage: number) {
-        return { payload, meta: { currentPage } }
-      }
-    }
+        return { payload, meta: { currentPage } };
+      },
+    },
     // highlight-end
-  }
-})
+  },
+});
 ```
 
 #### Fixing Circular Types in Exported Slices
@@ -4507,7 +4529,7 @@ const blogSlice = createSlice({
 Finally, on rare occasions you might need to export the slice reducer with a specific type in order to break a circular type dependency problem. This might look like:
 
 ```ts
-export default counterSlice.reducer as Reducer<Counter>
+export default counterSlice.reducer as Reducer<Counter>;
 ```
 
 ### Typing `createAsyncThunk`
@@ -4516,21 +4538,21 @@ For basic usage, the only type you need to provide for `createAsyncThunk` is the
 
 ```ts
 const fetchUserById = createAsyncThunk(
-  'users/fetchById',
+  "users/fetchById",
   // Declare the type your function argument here:
   // highlight-next-line
   async (userId: number) => {
-    const response = await fetch(`https://reqres.in/api/users/${userId}`)
+    const response = await fetch(`https://reqres.in/api/users/${userId}`);
     // Inferred return type: Promise<MyData>
     // highlight-next-line
-    return (await response.json()) as MyData
+    return (await response.json()) as MyData;
   }
-)
+);
 
 // the parameter of `fetchUserById` is automatically inferred to `number` here
 // and dispatching the resulting thunkAction will return a Promise of a correctly
 // typed "fulfilled" or "rejected" action.
-const lastReturnedAction = await store.dispatch(fetchUserById(3))
+const lastReturnedAction = await store.dispatch(fetchUserById(3));
 ```
 
 If you need to modify the types of the `thunkApi` parameter, such as supplying the type of the `state` returned by `getState()`, you must supply the first two generic arguments for return type and payload argument, plus whicher "thunkApi argument fields" are relevant in an object:
@@ -4544,21 +4566,21 @@ const fetchUserById = createAsyncThunk<
   number,
   {
     // Optional fields for defining thunkApi field types
-    dispatch: AppDispatch
-    state: State
+    dispatch: AppDispatch;
+    state: State;
     extra: {
-      jwt: string
-    }
+      jwt: string;
+    };
   }
   // highlight-end
->('users/fetchById', async (userId, thunkApi) => {
+>("users/fetchById", async (userId, thunkApi) => {
   const response = await fetch(`https://reqres.in/api/users/${userId}`, {
     headers: {
-      Authorization: `Bearer ${thunkApi.extra.jwt}`
-    }
-  })
-  return (await response.json()) as MyData
-})
+      Authorization: `Bearer ${thunkApi.extra.jwt}`,
+    },
+  });
+  return (await response.json()) as MyData;
+});
 ```
 
 ### Typing `createEntityAdapter`
@@ -4567,19 +4589,19 @@ Typing `createEntityAdapter` only requires you to specify the entity type as the
 
 ```ts
 interface Book {
-  bookId: number
-  title: string
+  bookId: number;
+  title: string;
   // ...
 }
 
 // highlight-next-line
 const booksAdapter = createEntityAdapter<Book>({
-  selectId: book => book.bookId,
-  sortComparer: (a, b) => a.title.localeCompare(b.title)
-})
+  selectId: (book) => book.bookId,
+  sortComparer: (a, b) => a.title.localeCompare(b.title),
+});
 
 const booksSlice = createSlice({
-  name: 'books',
+  name: "books",
   // highlight-start
   // The type of the state is inferred here
   initialState: booksAdapter.getInitialState(),
@@ -4587,10 +4609,10 @@ const booksSlice = createSlice({
   reducers: {
     bookAdded: booksAdapter.addOne,
     booksReceived(state, action: PayloadAction<{ books: Book[] }>) {
-      booksAdapter.setAll(state, action.payload.books)
-    }
-  }
-})
+      booksAdapter.setAll(state, action.payload.books);
+    },
+  },
+});
 ```
 
 ## Additional Recommendations
@@ -4626,6 +4648,7 @@ For further information, see these additional resources:
 
 id: using-object-spread-operator
 title: Using Object Spread Operator
+
 ---
 
 # Using Object Spread Operator
@@ -4637,10 +4660,10 @@ function todoApp(state = initialState, action) {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
       return Object.assign({}, state, {
-        visibilityFilter: action.filter
-      })
+        visibilityFilter: action.filter,
+      });
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -4653,9 +4676,9 @@ An alternative approach is to use the [object spread syntax](https://github.com/
 function todoApp(state = initialState, action) {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
-      return { ...state, visibilityFilter: action.filter }
+      return { ...state, visibilityFilter: action.filter };
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -4663,20 +4686,20 @@ function todoApp(state = initialState, action) {
 The advantage of using the object spread syntax becomes more apparent when you're composing complex objects. Below `getAddedIds` maps an array of `id` values to an array of objects with values returned from `getProduct` and `getQuantity`.
 
 ```js
-return getAddedIds(state.cart).map(id =>
+return getAddedIds(state.cart).map((id) =>
   Object.assign({}, getProduct(state.products, id), {
-    quantity: getQuantity(state.cart, id)
+    quantity: getQuantity(state.cart, id),
   })
-)
+);
 ```
 
 Object spread lets us simplify the above `map` call to:
 
 ```js
-return getAddedIds(state.cart).map(id => ({
+return getAddedIds(state.cart).map((id) => ({
   ...getProduct(state.products, id),
-  quantity: getQuantity(state.cart, id)
-}))
+  quantity: getQuantity(state.cart, id),
+}));
 ```
 
 While the object spread syntax is a [Stage 4](https://github.com/tc39/proposal-object-rest-spread#status-of-this-proposal) proposal for ECMAScript and accepted for the 2018 specification release, you will still need to use a transpiler such as [Babel](https://babeljs.io/) to use it in production systems. You should use the [`env`](https://github.com/babel/babel/tree/master/packages/babel-preset-env) preset, install [`@babel/plugin-proposal-object-rest-spread`](https://babeljs.io/docs/en/babel-plugin-proposal-object-rest-spread) and add it individually to the `plugins` array in your `.babelrc`.
@@ -4697,6 +4720,7 @@ While the object spread syntax is a [Stage 4](https://github.com/tc39/proposal-o
 id: writing-tests
 title: Writing Tests
 description: 'Usage > Writing Tests: recommended practices and setup for testing Redux apps'
+
 ---
 
 # Writing Tests
@@ -4797,82 +4821,82 @@ Because reducers are pure functions, testing them should be straightforward. Cal
 #### Example
 
 ```js
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   {
-    text: 'Use Redux',
+    text: "Use Redux",
     completed: false,
-    id: 0
-  }
-]
+    id: 0,
+  },
+];
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     todoAdded(state, action: PayloadAction<string>) {
       state.push({
         id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
         completed: false,
-        text: action.payload
-      })
-    }
-  }
-})
+        text: action.payload,
+      });
+    },
+  },
+});
 
-export const { todoAdded } = todosSlice.actions
+export const { todoAdded } = todosSlice.actions;
 
-export default todosSlice.reducer
+export default todosSlice.reducer;
 ```
 
 can be tested like:
 
 ```js
-import reducer, { todoAdded } from './todosSlice'
+import reducer, { todoAdded } from "./todosSlice";
 
-test('should return the initial state', () => {
+test("should return the initial state", () => {
   expect(reducer(undefined, {})).toEqual([
     {
-      text: 'Use Redux',
+      text: "Use Redux",
       completed: false,
-      id: 0
-    }
-  ])
-})
+      id: 0,
+    },
+  ]);
+});
 
-test('should handle a todo being added to an empty list', () => {
-  const previousState = []
-  expect(reducer(previousState, todoAdded('Run the tests'))).toEqual([
+test("should handle a todo being added to an empty list", () => {
+  const previousState = [];
+  expect(reducer(previousState, todoAdded("Run the tests"))).toEqual([
     {
-      text: 'Run the tests',
+      text: "Run the tests",
       completed: false,
-      id: 0
-    }
-  ])
-})
+      id: 0,
+    },
+  ]);
+});
 
-test('should handle a todo being added to an existing list', () => {
+test("should handle a todo being added to an existing list", () => {
   const previousState = [
     {
-      text: 'Run the tests',
+      text: "Run the tests",
       completed: true,
-      id: 0
-    }
-  ]
-  expect(reducer(previousState, todoAdded('Use Redux'))).toEqual([
+      id: 0,
+    },
+  ];
+  expect(reducer(previousState, todoAdded("Use Redux"))).toEqual([
     {
-      text: 'Run the tests',
+      text: "Run the tests",
       completed: true,
-      id: 0
+      id: 0,
     },
     {
-      text: 'Use Redux',
+      text: "Use Redux",
       completed: false,
-      id: 1
-    }
-  ])
-})
+      id: 1,
+    },
+  ]);
+});
 ```
 
 ## Components
@@ -4896,47 +4920,47 @@ npm install --save-dev @testing-library/jest-dom
 Consider the following `userSlice` slice and `App` component:
 
 ```js
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { userAPI } from './userAPI'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { userAPI } from "./userAPI";
 
-export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
-  const response = await userAPI.fetchUser()
-  return response.data
-})
+export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
+  const response = await userAPI.fetchUser();
+  return response.data;
+});
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
-    name: 'No user',
-    status: 'idle'
+    name: "No user",
+    status: "idle",
   },
   reducers: {},
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder.addCase(fetchUser.pending, (state, action) => {
-      state.status = 'loading'
-    })
+      state.status = "loading";
+    });
     builder.addCase(fetchUser.fulfilled, (state, action) => {
-      state.status = 'complete'
-      state.name = action.payload
-    })
-  }
-})
+      state.status = "complete";
+      state.name = action.payload;
+    });
+  },
+});
 
-export const selectUser = state => state.user.name
-export const selectUserFetchStatus = state => state.user.status
+export const selectUser = (state) => state.user.name;
+export const selectUserFetchStatus = (state) => state.user.status;
 
-export default userSlice.reducer
+export default userSlice.reducer;
 ```
 
 ```jsx
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchUser, selectUser, selectUserFetchStatus } from './userSlice'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser, selectUser, selectUserFetchStatus } from "./userSlice";
 
 export default function App() {
-  const dispatch = useDispatch()
-  const user = useSelector(selectUser)
-  const userFetchStatus = useSelector(selectUserFetchStatus)
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const userFetchStatus = useSelector(selectUserFetchStatus);
 
   return (
     <div>
@@ -4945,9 +4969,9 @@ export default function App() {
       {/* On button click, dispatch a thunk action to fetch a user */}
       <button onClick={() => dispatch(fetchUser())}>Fetch user</button>
       {/* At any point if we're fetching a user, display that on the UI */}
-      {userFetchStatus === 'loading' && <div>Fetching user...</div>}
+      {userFetchStatus === "loading" && <div>Fetching user...</div>}
     </div>
-  )
+  );
 }
 ```
 
@@ -4965,12 +4989,12 @@ Our `render` function can look like this:
 
 ```jsx
 // test-utils.jsx
-import React from 'react'
-import { render as rtlRender } from '@testing-library/react'
-import { configureStore } from '@reduxjs/toolkit'
-import { Provider } from 'react-redux'
+import React from "react";
+import { render as rtlRender } from "@testing-library/react";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
 // Import your own reducer
-import userReducer from '../userSlice'
+import userReducer from "../userSlice";
 
 function render(
   ui,
@@ -4981,65 +5005,65 @@ function render(
   } = {}
 ) {
   function Wrapper({ children }) {
-    return <Provider store={store}>{children}</Provider>
+    return <Provider store={store}>{children}</Provider>;
   }
-  return rtlRender(ui, { wrapper: Wrapper, ...renderOptions })
+  return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
 
 // re-export everything
-export * from '@testing-library/react'
+export * from "@testing-library/react";
 // override render method
-export { render }
+export { render };
 ```
 
 And our test can use our exported `render` function to test the criteria of our integration test:
 
 ```jsx
-import React from 'react'
-import { rest } from 'msw'
-import { setupServer } from 'msw/node'
+import React from "react";
+import { rest } from "msw";
+import { setupServer } from "msw/node";
 // We're using our own custom render function and not RTL's render.
 // Our custom utils also re-export everything from RTL
 // so we can import fireEvent and screen here as well
-import { render, fireEvent, screen } from '../../test-utils'
-import App from '../../containers/App'
+import { render, fireEvent, screen } from "../../test-utils";
+import App from "../../containers/App";
 
 // We use msw to intercept the network request during the test,
 // and return the response 'John Smith' after 150ms
 // when receiving a get request to the `/api/user` endpoint
 export const handlers = [
-  rest.get('/api/user', (req, res, ctx) => {
-    return res(ctx.json('John Smith'), ctx.delay(150))
-  })
-]
+  rest.get("/api/user", (req, res, ctx) => {
+    return res(ctx.json("John Smith"), ctx.delay(150));
+  }),
+];
 
-const server = setupServer(...handlers)
+const server = setupServer(...handlers);
 
 // Enable API mocking before tests.
-beforeAll(() => server.listen())
+beforeAll(() => server.listen());
 
 // Reset any runtime request handlers we may add during the tests.
-afterEach(() => server.resetHandlers())
+afterEach(() => server.resetHandlers());
 
 // Disable API mocking after the tests are done.
-afterAll(() => server.close())
+afterAll(() => server.close());
 
-test('fetches & receives a user after clicking the fetch user button', async () => {
-  render(<App />)
+test("fetches & receives a user after clicking the fetch user button", async () => {
+  render(<App />);
 
   // should show no user initially, and not be fetching a user
-  expect(screen.getByText(/no user/i)).toBeInTheDocument()
-  expect(screen.queryByText(/Fetching user\.\.\./i)).not.toBeInTheDocument()
+  expect(screen.getByText(/no user/i)).toBeInTheDocument();
+  expect(screen.queryByText(/Fetching user\.\.\./i)).not.toBeInTheDocument();
 
   // after clicking the 'Fetch user' button, it should now show that it is fetching the user
-  fireEvent.click(screen.getByRole('button', { name: /Fetch user/i }))
-  expect(screen.getByText(/no user/i)).toBeInTheDocument()
+  fireEvent.click(screen.getByRole("button", { name: /Fetch user/i }));
+  expect(screen.getByText(/no user/i)).toBeInTheDocument();
 
   // after some time, the user should be received
-  expect(await screen.findByText(/John Smith/i)).toBeInTheDocument()
-  expect(screen.queryByText(/no user/i)).not.toBeInTheDocument()
-  expect(screen.queryByText(/Fetching user\.\.\./i)).not.toBeInTheDocument()
-})
+  expect(await screen.findByText(/John Smith/i)).toBeInTheDocument();
+  expect(screen.queryByText(/no user/i)).not.toBeInTheDocument();
+  expect(screen.queryByText(/Fetching user\.\.\./i)).not.toBeInTheDocument();
+});
 ```
 
 In this test, we have completely avoided testing any Redux code directly, treating it as an implementation detail. As a result, we are free to re-factor the _implementation_, while our tests will continue to pass and avoid false negatives (tests that fail despite the app still behaving how we want it to). We might change our state structure, convert our slice to use [RTK-Query](https://redux-toolkit.js.org/rtk-query/overview), or remove Redux entirely, and our tests will still pass. We have a strong degree of confidence that if we change some code and our tests report a failure, then our app really _is_ broken.
@@ -5055,14 +5079,14 @@ First, we'll need a middleware function. This is similar to the real [redux-thun
 ```js
 const thunk =
   ({ dispatch, getState }) =>
-  next =>
-  action => {
-    if (typeof action === 'function') {
-      return action(dispatch, getState)
+  (next) =>
+  (action) => {
+    if (typeof action === "function") {
+      return action(dispatch, getState);
     }
 
-    return next(action)
-  }
+    return next(action);
+  };
 ```
 
 We need to create a fake `getState`, `dispatch`, and `next` functions. We use `jest.fn()` to create stubs, but with other test frameworks you would likely use [Sinon](https://sinonjs.org/).
@@ -5073,42 +5097,42 @@ The invoke function runs our middleware in the same way Redux does.
 const create = () => {
   const store = {
     getState: jest.fn(() => ({})),
-    dispatch: jest.fn()
-  }
-  const next = jest.fn()
+    dispatch: jest.fn(),
+  };
+  const next = jest.fn();
 
-  const invoke = action => thunk(store)(next)(action)
+  const invoke = (action) => thunk(store)(next)(action);
 
-  return { store, next, invoke }
-}
+  return { store, next, invoke };
+};
 ```
 
 We test that our middleware is calling the `getState`, `dispatch`, and `next` functions at the right time.
 
 ```js
-test('passes through non-function action', () => {
-  const { next, invoke } = create()
-  const action = { type: 'TEST' }
-  invoke(action)
-  expect(next).toHaveBeenCalledWith(action)
-})
+test("passes through non-function action", () => {
+  const { next, invoke } = create();
+  const action = { type: "TEST" };
+  invoke(action);
+  expect(next).toHaveBeenCalledWith(action);
+});
 
-test('calls the function', () => {
-  const { invoke } = create()
-  const fn = jest.fn()
-  invoke(fn)
-  expect(fn).toHaveBeenCalled()
-})
+test("calls the function", () => {
+  const { invoke } = create();
+  const fn = jest.fn();
+  invoke(fn);
+  expect(fn).toHaveBeenCalled();
+});
 
-test('passes dispatch and getState', () => {
-  const { store, invoke } = create()
+test("passes dispatch and getState", () => {
+  const { store, invoke } = create();
   invoke((dispatch, getState) => {
-    dispatch('TEST DISPATCH')
-    getState()
-  })
-  expect(store.dispatch).toHaveBeenCalledWith('TEST DISPATCH')
-  expect(store.getState).toHaveBeenCalled()
-})
+    dispatch("TEST DISPATCH");
+    getState();
+  });
+  expect(store.dispatch).toHaveBeenCalledWith("TEST DISPATCH");
+  expect(store.getState).toHaveBeenCalled();
+});
 ```
 
 In some cases, you will need to modify the `create` function to use different mock implementations of `getState` and `next`.
@@ -5128,6 +5152,7 @@ In some cases, you will need to modify the `create` function to use different mo
 id: deriving-data-selectors
 title: Deriving Data with Selectors
 description: 'Usage > Redux Logic > Selectors: deriving data from the Redux state'
+
 ---
 
 :::tip What You'll Learn
@@ -5159,11 +5184,11 @@ This is _also_ a good principle for React state as well! Many times users tried 
 
 ```js
 function TodoList() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([]);
 
   // highlight-start
   // Derive the data while rendering
-  const allTodosCompleted = todos.every(todo => todo.completed)
+  const allTodosCompleted = todos.every((todo) => todo.completed);
   // highlight-end
 
   // render with this value
@@ -5188,21 +5213,21 @@ You are not _required_ to use selectors for all state lookups, but they are a st
 
 ```js
 // Arrow function, direct lookup
-const selectEntities = state => state.entities
+const selectEntities = (state) => state.entities;
 
 // Function declaration, mapping over an array to derive values
 function selectItemIds(state) {
-  return state.items.map(item => item.id)
+  return state.items.map((item) => item.id);
 }
 
 // Function declaration, encapsulating a deep lookup
 function selectSomeSpecificField(state) {
-  return state.some.deeply.nested.field
+  return state.some.deeply.nested.field;
 }
 
 // Arrow function, deriving values from an array
 const selectItemsWhoseNamesStartWith = (items, namePrefix) =>
-  items.filter(item => item.name.startsWith(namePrefix))
+  items.filter((item) => item.name.startsWith(namePrefix));
 ```
 
 A selector function can have any name you want. However, [**we recommend prefixing selector function names with the word `select` combined with a description of the value being selected**](../style-guide/style-guide.md#name-selector-functions-as-selectthing). Typical examples of this would look like **`selectTodoById`**, **`selectFilteredTodos`**, and **`selectVisibleTodos`**.
@@ -5213,7 +5238,7 @@ If you've used [the `useSelector` hook from React-Redux](../tutorials/fundamenta
 function TodoList() {
   // highlight-start
   // This anonymous arrow function is a selector!
-  const todos = useSelector(state => state.todos)
+  const todos = useSelector((state) => state.todos);
   // highlight-end
 }
 ```
@@ -5228,13 +5253,13 @@ A selector function can be used anywhere you have access to the entire Redux roo
 ```js
 function addTodosIfAllowed(todoText) {
   return (dispatch, getState) => {
-    const state = getState()
-    const canAddTodos = selectCanAddTodos(state)
+    const state = getState();
+    const canAddTodos = selectCanAddTodos(state);
 
     if (canAddTodos) {
-      dispatch(todoAdded(todoText))
+      dispatch(todoAdded(todoText));
     }
-  }
+  };
 }
 ```
 
@@ -5247,7 +5272,7 @@ The first reason to use selector functions is for encapsulation and reusability 
 Let's say that one of your `useSelector` hooks makes a very specific lookup into part of your Redux state:
 
 ```js
-const data = useSelector(state => state.some.deeply.nested.field)
+const data = useSelector((state) => state.some.deeply.nested.field);
 ```
 
 That is legal code, and will run fine. But, it might not be the best idea architecturally. Imagine that you've got several components that need to access that field. What happens if you need to make a change to where that piece of state lives? You would now have to go change _every_ `useSelector` hook that references that value. So, in the same way that [we recommend using action creators to encapsulate details of creating actions](../style-guide/style-guide.md#use-action-creators), we recommend defining reusable selectors to encapsulate the knowledge of where a given piece of state lives. Then, you can use a given selector function many times in the codebase, anywhere that your app needs to retrieve that particular data.
@@ -5271,9 +5296,9 @@ As an example, this component is written badly, because its `useSelector` call _
 function TodoList() {
   // highlight-start
   // ❌ WARNING: this _always_ returns a new reference, so it will _always_ re-render!
-  const completedTodos = useSelector(state =>
-    state.todos.map(todo => todo.completed)
-  )
+  const completedTodos = useSelector((state) =>
+    state.todos.map((todo) => todo.completed)
+  );
   // highlight-end
 }
 ```
@@ -5282,14 +5307,14 @@ Another example is a component that needs to do some "expensive" work to transfo
 
 ```js
 function ExampleComplexComponent() {
-  const data = useSelector(state => {
-    const initialData = state.data
-    const filteredData = expensiveFiltering(initialData)
-    const sortedData = expensiveSorting(filteredData)
-    const transformedData = expensiveTransformation(sortedData)
+  const data = useSelector((state) => {
+    const initialData = state.data;
+    const filteredData = expensiveFiltering(initialData);
+    const sortedData = expensiveSorting(filteredData);
+    const transformedData = expensiveTransformation(sortedData);
 
-    return transformedData
-  })
+    return transformedData;
+  });
 }
 ```
 
@@ -5314,23 +5339,23 @@ Reselect provides a function called [`createSelector`](https://github.com/reduxj
 `createSelector` can accept multiple input selectors, which can be provided as separate arguments or as an array. The results from all the input selectors are provided as separate arguments to the output selector:
 
 ```js
-const selectA = state => state.a
-const selectB = state => state.b
-const selectC = state => state.c
+const selectA = (state) => state.a;
+const selectB = (state) => state.b;
+const selectC = (state) => state.c;
 
 const selectABC = createSelector([selectA, selectB, selectC], (a, b, c) => {
   // do something with a, b, and c, and return a result
-  return a + b + c
-})
+  return a + b + c;
+});
 
 // Call the selector function and get a result
-const abc = selectABC(state)
+const abc = selectABC(state);
 
 // could also be written as separate arguments, and works exactly the same
 const selectABC2 = createSelector(selectA, selectB, selectC, (a, b, c) => {
   // do something with a, b, and c, and return a result
-  return a + b + c
-})
+  return a + b + c;
+});
 ```
 
 When you call the selector, Reselect will run your input selectors with all of the arguments you gave, and looks at the returned values. If any of the results are `===` different than before, it will re-run the output selector, and pass in those results as the arguments. If all of the results are the same as the last time, it will skip re-running the output selector, and just return the cached final result from before.
@@ -5344,9 +5369,9 @@ A somewhat common mistake is to write an "input selector" that extracts a value 
 ```js
 // ❌ BROKEN: this will not memoize correctly, and does nothing useful!
 const brokenSelector = createSelector(
-  state => state.todos,
-  todos => todos
-)
+  (state) => state.todos,
+  (todos) => todos
+);
 ```
 
 **Any "output selector" that just returns its inputs is incorrect!** The output selector should always have the transformation logic.
@@ -5359,29 +5384,29 @@ In typical Reselect usage, you write your top-level "input selectors" as plain f
 ```js
 const state = {
   a: {
-    first: 5
+    first: 5,
   },
-  b: 10
-}
+  b: 10,
+};
 
-const selectA = state => state.a
-const selectB = state => state.b
+const selectA = (state) => state.a;
+const selectB = (state) => state.b;
 
-const selectA1 = createSelector([selectA], a => a.first)
+const selectA1 = createSelector([selectA], (a) => a.first);
 
 const selectResult = createSelector([selectA1, selectB], (a1, b) => {
-  console.log('Output selector running')
-  return a1 + b
-})
+  console.log("Output selector running");
+  return a1 + b;
+});
 
-const result = selectResult(state)
+const result = selectResult(state);
 // Log: "Output selector running"
-console.log(result)
+console.log(result);
 // 15
 
-const secondResult = selectResult(state)
+const secondResult = selectResult(state);
 // No log output
-console.log(secondResult)
+console.log(secondResult);
 // 15
 ```
 
@@ -5392,24 +5417,24 @@ Note that the second time we called `selectResult`, the "output selector" didn't
 It's important to note that by default, **`createSelector` only memoizes the most recent set of parameters**. That means that if you call a selector repeatedly with different inputs, it will still return a result, but it will have to keep re-running the output selector to produce the result:
 
 ```js
-const a = someSelector(state, 1) // first call, not memoized
-const b = someSelector(state, 1) // same inputs, memoized
-const c = someSelector(state, 2) // different inputs, not memoized
-const d = someSelector(state, 1) // different inputs from last time, not memoized
+const a = someSelector(state, 1); // first call, not memoized
+const b = someSelector(state, 1); // same inputs, memoized
+const c = someSelector(state, 2); // different inputs, not memoized
+const d = someSelector(state, 1); // different inputs from last time, not memoized
 ```
 
 Also, you can pass multiple arguments into a selector. Reselect will call all of the input selectors with those exact inputs:
 
 ```js
-const selectItems = state => state.items
-const selectItemId = (state, itemId) => itemId
+const selectItems = (state) => state.items;
+const selectItemId = (state, itemId) => itemId;
 
 const selectItemById = createSelector(
   [selectItems, selectItemId],
   (items, itemId) => items[itemId]
-)
+);
 
-const item = selectItemById(state, 42)
+const item = selectItemById(state, 42);
 
 /*
 Internally, Reselect does something like this:
@@ -5448,16 +5473,16 @@ In this example, `selectItemId` expects that its second argument will be some si
 It's possible to take selectors generated with `createSelector`, and use them as inputs for other selectors as well. In this example, the `selectCompletedTodos` selector is used as an input to `selectCompletedTodoDescriptions`:
 
 ```js
-const selectTodos = state => state.todos
+const selectTodos = (state) => state.todos;
 
-const selectCompletedTodos = createSelector([selectTodos], todos =>
-  todos.filter(todo => todo.completed)
-)
+const selectCompletedTodos = createSelector([selectTodos], (todos) =>
+  todos.filter((todo) => todo.completed)
+);
 
 const selectCompletedTodoDescriptions = createSelector(
   [selectCompletedTodos],
-  completedTodos => completedTodos.map(todo => todo.text)
-)
+  (completedTodos) => completedTodos.map((todo) => todo.text)
+);
 ```
 
 #### Passing Input Parameters
@@ -5470,13 +5495,13 @@ This means that if you want to pass additional parameters through to the output 
 const selectItemsByCategory = createSelector(
   [
     // Usual first input - extract value from `state`
-    state => state.items,
+    (state) => state.items,
     // Take the second arg, `category`, and forward to the output selector
-    (state, category) => category
+    (state, category) => category,
   ],
   // Output selector gets (`items, category)` as args
-  (items, category) => items.filter(item => item.category === category)
-)
+  (items, category) => items.filter((item) => item.category === category)
+);
 ```
 
 For consistency, you may want to consider passing additional parameters to a selector as a single object, such as `selectThings(state, otherArgs)`, and then extracting values from the `otherArgs` object.
@@ -5490,11 +5515,11 @@ One option is to create a "selector factory" - a function that runs `createSelec
 ```js
 const makeSelectItemsByCategory = () => {
   const selectItemsByCategory = createSelector(
-    [state => state.items, (state, category) => category],
-    (items, category) => items.filter(item => item.category === category)
-  )
-  return selectItemsByCategory
-}
+    [(state) => state.items, (state, category) => category],
+    (items, category) => items.filter((item) => item.category === category)
+  );
+  return selectItemsByCategory;
+};
 ```
 
 This is particularly useful when multiple similar UI components need to derive different subsets of the data based on props.
@@ -5510,12 +5535,12 @@ While Reselect is the most widely used selector library with Redux, there are ma
 A good example of this is a selector that derives an array of todo descriptions:
 
 ```js
-import { createSelector } from 'reselect'
+import { createSelector } from "reselect";
 
 const selectTodoDescriptionsReselect = createSelector(
-  [state => state.todos],
-  todos => todos.map(todo => todo.text)
-)
+  [(state) => state.todos],
+  (todos) => todos.map((todo) => todo.text)
+);
 ```
 
 Unfortunately, this will recalculate the derived array if any other value inside of `state.todos` changes, such as toggling a `todo.completed` flag. The _contents_ of the derived array are identical, but because the input `todos` array changed, it has to calculate a new output array, and that has a new reference.
@@ -5523,11 +5548,11 @@ Unfortunately, this will recalculate the derived array if any other value inside
 The same selector with `proxy-memoize` might look like:
 
 ```js
-import memoize from 'proxy-memoize'
+import memoize from "proxy-memoize";
 
-const selectTodoDescriptionsProxy = memoize(state =>
-  state.todos.map(todo => todo.text)
-)
+const selectTodoDescriptionsProxy = memoize((state) =>
+  state.todos.map((todo) => todo.text)
+);
 ```
 
 Unlike Reselect, `proxy-memoize` can detect that only the `todo.text` fields are being accessed, and will only recalculate the rest if one of the `todo.text` fields changed.
@@ -5549,7 +5574,7 @@ All that said, **we officially encourage considering using `proxy-memoize` as a 
 <https://github.com/toomuchdesign/re-reselect> improves Reselect's caching behavior, by allowing you to define a "key selector". This is used to manage multiple instances of Reselect selectors internally, which can help simplify usage across multiple components.
 
 ```js
-import { createCachedSelector } from 're-reselect'
+import { createCachedSelector } from "re-reselect";
 
 const getUsersByLibrary = createCachedSelector(
   // inputSelectors
@@ -5562,7 +5587,7 @@ const getUsersByLibrary = createCachedSelector(
   // re-reselect keySelector (receives selectors' arguments)
   // Use "libraryName" as cacheKey
   (_state_, libraryName) => libraryName
-)
+);
 ```
 
 ### `reselect-tools`
@@ -5588,13 +5613,13 @@ It's common to want to pass additional arguments to a selector function. However
 The simplest solution is to pass an anonymous selector to `useSelector`, and then immediately call the real selector with both `state` and any additional arguments:
 
 ```js
-import { selectTodoById } from './todosSlice'
+import { selectTodoById } from "./todosSlice";
 
 function TodoListitem({ todoId }) {
   // highlight-start
   // Captures `todoId` from scope, gets `state` as an arg, and forwards both
   // to the actual selector function to extract the result
-  const todo = useSelector(state => selectTodoById(state, todoId))
+  const todo = useSelector((state) => selectTodoById(state, todoId));
   // highlight-end
 }
 ```
@@ -5608,40 +5633,40 @@ The standard approach here is to create a unique instance of a memoized selector
 For function components, this is normally done with `useMemo` or `useCallback`:
 
 ```js
-import { makeSelectItemsByCategory } from './categoriesSlice'
+import { makeSelectItemsByCategory } from "./categoriesSlice";
 
 function CategoryList({ category }) {
   // Create a new memoized selector, for each component instance, on mount
-  const selectItemsByCategory = useMemo(makeSelectItemsByCategory, [])
+  const selectItemsByCategory = useMemo(makeSelectItemsByCategory, []);
 
-  const itemsByCategory = useSelector(state =>
+  const itemsByCategory = useSelector((state) =>
     selectItemsByCategory(state, category)
-  )
+  );
 }
 ```
 
 For class components with `connect`, this can be done with an advanced "factory function" syntax for `mapState`. If the `mapState` function returns a new function on its first call, that will be used as the real `mapState` function. This provides a closure where you can create a new selector instance:
 
 ```js
-import { makeSelectItemsByCategory } from './categoriesSlice'
+import { makeSelectItemsByCategory } from "./categoriesSlice";
 
 const makeMapState = (state, ownProps) => {
   // Closure - create a new unique selector instance here,
   // and this will run once for every component instance
-  const selectItemsByCategory = makeSelectItemsByCategory()
+  const selectItemsByCategory = makeSelectItemsByCategory();
 
   const realMapState = (state, ownProps) => {
     return {
-      itemsByCategory: selectItemsByCategory(state, ownProps.category)
-    }
-  }
+      itemsByCategory: selectItemsByCategory(state, ownProps.category),
+    };
+  };
 
   // Returning a function here will tell `connect` to use it as
   // `mapState` instead of the original one given to `connect`
-  return realMapState
-}
+  return realMapState;
+};
 
-export default connect(makeMapState)(CategoryList)
+export default connect(makeMapState)(CategoryList);
 ```
 
 ## Using Selectors Effectively
@@ -5656,11 +5681,11 @@ Like any other function, you can extract an anonymous function outside the compo
 
 ```js
 // highlight-next-line
-const selectTodos = state => state.todos
+const selectTodos = (state) => state.todos;
 
 function TodoList() {
   // highlight-next-line
-  const todos = useSelector(selectTodos)
+  const todos = useSelector(selectTodos);
 }
 ```
 
@@ -5669,24 +5694,24 @@ However, multiple parts of the application may want to use the same lookups. Als
 Because of this, **it's a good idea to define reusable selectors alongside their corresponding reducers**. In this case, we could export `selectTodos` from the `todosSlice` file:
 
 ```js title="src/features/todos/todosSlice.js"
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: [],
   reducers: {
     todoAdded(state, action) {
-      state.push(action.payload)
-    }
-  }
-})
+      state.push(action.payload);
+    },
+  },
+});
 
-export const { todoAdded } = todosSlice.actions
-export default todosSlice.reducer
+export const { todoAdded } = todosSlice.actions;
+export default todosSlice.reducer;
 
 // highlight-start
 // Export a reusable selector here
-export const selectTodos = state => state.todos
+export const selectTodos = (state) => state.todos;
 // highlight-end
 ```
 
@@ -5702,20 +5727,21 @@ Some examples of when and when not to memoize:
 
 ```js
 // ❌ DO NOT memoize: will always return a consistent reference
-const selectTodos = state => state.todos
-const selectNestedValue = state => state.some.deeply.nested.field
-const selectTodoById = (state, todoId) => state.todos[todoId]
+const selectTodos = (state) => state.todos;
+const selectNestedValue = (state) => state.some.deeply.nested.field;
+const selectTodoById = (state, todoId) => state.todos[todoId];
 
 // ❌ DO NOT memoize: deriving data, but will return a consistent result
-const selectItemsTotal = state => {
+const selectItemsTotal = (state) => {
   return state.items.reduce((result, item) => {
-    return result + item.total
-  }, 0)
-}
-const selectAllCompleted = state => state.todos.every(todo => todo.completed)
+    return result + item.total;
+  }, 0);
+};
+const selectAllCompleted = (state) =>
+  state.todos.every((todo) => todo.completed);
 
 // ✅ SHOULD memoize: returns new references when called
-const selectTodoDescriptions = state => state.todos.map(todo => todo.text)
+const selectTodoDescriptions = (state) => state.todos.map((todo) => todo.text);
 ```
 
 ### Reshape State as Needed for Components
@@ -5736,12 +5762,12 @@ We refer to this pattern as "globalizing" selectors. A **"globalized" selector**
 
 ```js
 // "Globalized" - accepts root state, knows to find data at `state.todos`
-const selectAllTodosCompletedGlobalized = state =>
-  state.todos.every(todo => todo.completed)
+const selectAllTodosCompletedGlobalized = (state) =>
+  state.todos.every((todo) => todo.completed);
 
 // "Localized" - only accepts `todos` as argument, doesn't know where that came from
-const selectAllTodosCompletedLocalized = todos =>
-  todos.every(todo => todo.completed)
+const selectAllTodosCompletedLocalized = (todos) =>
+  todos.every((todo) => todo.completed);
 ```
 
 "Localized" selectors can be turned into "globalized" selectors by wrapping them in a function that knows how to retrieve the right slice of state and pass it onwards.
@@ -5772,6 +5798,7 @@ There may also be other benefits to having "localized" versions of selectors as 
 id: index
 title: Usage Guides Index
 sidebar_label: Usage Guides Index
+
 ---
 
 # Usage Guides
@@ -5816,6 +5843,7 @@ id: part-1-overview
 title: 'Redux Fundamentals, Part 1: Redux Overview'
 sidebar_label: 'Redux Overview'
 description: 'The official Fundamentals tutorial for Redux: learn the fundamentals of using Redux'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -5977,8 +6005,8 @@ We start by defining an initial **state** value to describe the application:
 ```js
 // Define an initial state value for the app
 const initialState = {
-  value: 0
-}
+  value: 0,
+};
 ```
 
 For this app, we're going to track a single number with the current value of our counter.
@@ -5996,14 +6024,14 @@ function counterReducer(state = initialState, action) {
   // Reducers usually look at the type of action that happened
   // to decide how to update the state
   switch (action.type) {
-    case 'counter/incremented':
-      return { ...state, value: state.value + 1 }
-    case 'counter/decremented':
-      return { ...state, value: state.value - 1 }
+    case "counter/incremented":
+      return { ...state, value: state.value + 1 };
+    case "counter/decremented":
+      return { ...state, value: state.value - 1 };
     default:
       // If the reducer doesn't care about this action type,
       // return the existing state unchanged
-      return state
+      return state;
   }
 }
 ```
@@ -6028,7 +6056,7 @@ calling the Redux library `createStore` API.
 ```js
 // Create a new Redux store with the `createStore` function,
 // and use the `counterReducer` for the update logic
-const store = Redux.createStore(counterReducer)
+const store = Redux.createStore(counterReducer);
 ```
 
 We pass the reducer function to `createStore`, which uses the reducer function
@@ -6041,19 +6069,19 @@ does something, the app will update its data and then redraw the UI with those v
 
 ```js
 // Our "user interface" is some text in a single HTML element
-const valueEl = document.getElementById('value')
+const valueEl = document.getElementById("value");
 
 // Whenever the store state changes, update the UI by
 // reading the latest store state and showing new data
 function render() {
-  const state = store.getState()
-  valueEl.innerHTML = state.value.toString()
+  const state = store.getState();
+  valueEl.innerHTML = state.value.toString();
 }
 
 // Update the UI with the initial data
-render()
+render();
 // And subscribe to redraw whenever the data changes in the future
-store.subscribe(render)
+store.subscribe(render);
 ```
 
 In this small example, we're only using some basic HTML elements as our UI,
@@ -6078,31 +6106,31 @@ to update the UI.
 ```js
 // Handle user inputs by "dispatching" action objects,
 // which should describe "what happened" in the app
-document.getElementById('increment').addEventListener('click', function () {
-  store.dispatch({ type: 'counter/incremented' })
-})
+document.getElementById("increment").addEventListener("click", function () {
+  store.dispatch({ type: "counter/incremented" });
+});
 
-document.getElementById('decrement').addEventListener('click', function () {
-  store.dispatch({ type: 'counter/decremented' })
-})
+document.getElementById("decrement").addEventListener("click", function () {
+  store.dispatch({ type: "counter/decremented" });
+});
 
 document
-  .getElementById('incrementIfOdd')
-  .addEventListener('click', function () {
+  .getElementById("incrementIfOdd")
+  .addEventListener("click", function () {
     // We can write logic to decide what to do based on the state
     if (store.getState().value % 2 !== 0) {
-      store.dispatch({ type: 'counter/incremented' })
+      store.dispatch({ type: "counter/incremented" });
     }
-  })
+  });
 
 document
-  .getElementById('incrementAsync')
-  .addEventListener('click', function () {
+  .getElementById("incrementAsync")
+  .addEventListener("click", function () {
     // We can also write async logic that interacts with the store
     setTimeout(function () {
-      store.dispatch({ type: 'counter/incremented' })
-    }, 1000)
-  })
+      store.dispatch({ type: "counter/incremented" });
+    }, 1000);
+  });
 ```
 
 Here, we'll dispatch the actions that will make the reducer add 1 or
@@ -6154,6 +6182,7 @@ id: part-2-concepts-data-flow
 title: 'Redux Fundamentals, Part 2: Concepts and Data Flow'
 sidebar_label: 'Redux Concepts and Data Flow'
 description: 'The official Redux Fundamentals tutorial: learn key Redux terms and how data flows in a Redux app'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -6185,19 +6214,19 @@ Let's start by looking at a small React counter component. It tracks a number in
 ```jsx
 function Counter() {
   // State: a counter value
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(0);
 
   // Action: code that causes an update to the state when something happens
   const increment = () => {
-    setCounter(prevCounter => prevCounter + 1)
-  }
+    setCounter((prevCounter) => prevCounter + 1);
+  };
 
   // View: the UI definition
   return (
     <div>
       Value: {counter} <button onClick={increment}>Increment</button>
     </div>
-  )
+  );
 }
 ```
 
@@ -6231,14 +6260,14 @@ This is the basic idea behind Redux: a single centralized place to contain the g
 JavaScript objects and arrays are all mutable by default. If I create an object, I can change the contents of its fields. If I create an array, I can change the contents as well:
 
 ```js
-const obj = { a: 1, b: 2 }
+const obj = { a: 1, b: 2 };
 // still the same object outside, but the contents have changed
-obj.b = 3
+obj.b = 3;
 
-const arr = ['a', 'b']
+const arr = ["a", "b"];
 // In the same way, we can change the contents of this array
-arr.push('c')
-arr[1] = 'd'
+arr.push("c");
+arr[1] = "d";
 ```
 
 This is called _mutating_ the object or array. It's the same object or array reference in memory, but now the contents inside the object have changed.
@@ -6251,10 +6280,10 @@ We can do this by hand using JavaScript's array / object spread operators, as we
 const obj = {
   a: {
     // To safely update obj.a.c, we have to copy each piece
-    c: 3
+    c: 3,
   },
-  b: 2
-}
+  b: 2,
+};
 
 const obj2 = {
   // copy obj
@@ -6264,18 +6293,18 @@ const obj2 = {
     // copy obj.a
     ...obj.a,
     // overwrite c
-    c: 42
-  }
-}
+    c: 42,
+  },
+};
 
-const arr = ['a', 'b']
+const arr = ["a", "b"];
 // Create a new copy of arr, with "c" appended to the end
-const arr2 = arr.concat('c')
+const arr2 = arr.concat("c");
 
 // or, we can make a copy of the original array:
-const arr3 = arr.slice()
+const arr3 = arr.slice();
 // and mutate the copy:
-arr3.push('c')
+arr3.push("c");
 ```
 
 **Redux expects that all state updates are done immutably**. We'll look at where and how this is important a bit later, as well as some easier ways to write immutable update logic.
@@ -6305,9 +6334,9 @@ A typical action object might look like this:
 
 ```js
 const addTodoAction = {
-  type: 'todos/todoAdded',
-  payload: 'Buy milk'
-}
+  type: "todos/todoAdded",
+  payload: "Buy milk",
+};
 ```
 
 ### Reducers
@@ -6337,20 +6366,20 @@ The logic inside reducer functions typically follows the same series of steps:
 Here's a small example of a reducer, showing the steps that each reducer should follow:
 
 ```js
-const initialState = { value: 0 }
+const initialState = { value: 0 };
 
 function counterReducer(state = initialState, action) {
   // Check to see if the reducer cares about this action
-  if (action.type === 'counter/incremented') {
+  if (action.type === "counter/incremented") {
     // If so, make a copy of `state`
     return {
       ...state,
       // and update the copy with the new value
-      value: state.value + 1
-    }
+      value: state.value + 1,
+    };
   }
   // otherwise return the existing state unchanged
-  return state
+  return state;
 }
 ```
 
@@ -6370,21 +6399,21 @@ The first time that the callback runs, there isn't a `previousResult` available,
 If we wanted to add together an array of numbers to find out what the total is, we could write a reduce callback that looks like this:
 
 ```js
-const numbers = [2, 5, 8]
+const numbers = [2, 5, 8];
 
 const addNumbers = (previousResult, currentItem) => {
-  console.log({ previousResult, currentItem })
-  return previousResult + currentItem
-}
+  console.log({ previousResult, currentItem });
+  return previousResult + currentItem;
+};
 
-const initialValue = 0
+const initialValue = 0;
 
-const total = numbers.reduce(addNumbers, initialValue)
+const total = numbers.reduce(addNumbers, initialValue);
 // {previousResult: 0, currentItem: 2}
 // {previousResult: 2, currentItem: 5}
 // {previousResult: 7, currentItem: 8}
 
-console.log(total)
+console.log(total);
 // 15
 ```
 
@@ -6396,15 +6425,15 @@ If we were to create an array of Redux actions, call `reduce()`, and pass in a r
 
 ```js
 const actions = [
-  { type: 'counter/incremented' },
-  { type: 'counter/incremented' },
-  { type: 'counter/incremented' }
-]
+  { type: "counter/incremented" },
+  { type: "counter/incremented" },
+  { type: "counter/incremented" },
+];
 
-const initialState = { value: 0 }
+const initialState = { value: 0 };
 
-const finalResult = actions.reduce(counterReducer, initialState)
-console.log(finalResult)
+const finalResult = actions.reduce(counterReducer, initialState);
+console.log(finalResult);
 // {value: 3}
 ```
 
@@ -6419,11 +6448,11 @@ The current Redux application state lives in an object called the **store** .
 The store is created by passing in a reducer, and has a method called `getState` that returns the current state value:
 
 ```js
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-const store = configureStore({ reducer: counterReducer })
+const store = configureStore({ reducer: counterReducer });
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 0}
 ```
 
@@ -6432,9 +6461,9 @@ console.log(store.getState())
 The Redux store has a method called `dispatch`. **The only way to update the state is to call `store.dispatch()` and pass in an action object**. The store will run its reducer function and save the new state value inside, and we can call `getState()` to retrieve the updated value:
 
 ```js
-store.dispatch({ type: 'counter/incremented' })
+store.dispatch({ type: "counter/incremented" });
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 1}
 ```
 
@@ -6445,10 +6474,10 @@ console.log(store.getState())
 **Selectors** are functions that know how to extract specific pieces of information from a store state value. As an application grows bigger, this can help avoid repeating logic as different parts of the app need to read the same data:
 
 ```js
-const selectCounterValue = state => state.value
+const selectCounterValue = (state) => state.value;
 
-const currentValue = selectCounterValue(store.getState())
-console.log(currentValue)
+const currentValue = selectCounterValue(store.getState());
+console.log(currentValue);
 // 2
 ```
 
@@ -6535,6 +6564,7 @@ id: part-3-state-actions-reducers
 title: 'Redux Fundamentals, Part 3: State, Actions, and Reducers'
 sidebar_label: 'State, Actions, and Reducers'
 description: 'The official Redux Fundamentals tutorial: learn how reducers update state in response to actions'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -6605,8 +6635,8 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 </DetailedExplanation>
@@ -6711,15 +6741,15 @@ So, here's what an example of our app's state might look like:
 ```js
 const todoAppState = {
   todos: [
-    { id: 0, text: 'Learn React', completed: true },
-    { id: 1, text: 'Learn Redux', completed: false, color: 'purple' },
-    { id: 2, text: 'Build something fun!', completed: false, color: 'blue' }
+    { id: 0, text: "Learn React", completed: true },
+    { id: 1, text: "Learn Redux", completed: false, color: "purple" },
+    { id: 2, text: "Build something fun!", completed: false, color: "blue" },
   ],
   filters: {
-    status: 'Active',
-    colors: ['red', 'blue']
-  }
-}
+    status: "Active",
+    colors: ["red", "blue"],
+  },
+};
 ```
 
 It's important to note that **it's okay to have other state values outside of Redux!**. This example is small enough so far that we actually do have all our state in the Redux store, but as we'll see later, some data really doesn't need to be kept in Redux (like "is this dropdown open?" or "current value of a form input").
@@ -6782,15 +6812,15 @@ Every reducer needs some initial state, so we'll add some fake todo entries to g
 ```js title="src/reducer.js"
 const initialState = {
   todos: [
-    { id: 0, text: 'Learn React', completed: true },
-    { id: 1, text: 'Learn Redux', completed: false, color: 'purple' },
-    { id: 2, text: 'Build something fun!', completed: false, color: 'blue' }
+    { id: 0, text: "Learn React", completed: true },
+    { id: 1, text: "Learn Redux", completed: false, color: "purple" },
+    { id: 2, text: "Build something fun!", completed: false, color: "blue" },
   ],
   filters: {
-    status: 'All',
-    colors: []
-  }
-}
+    status: "All",
+    colors: [],
+  },
+};
 
 // Use the initialState as a default value
 export default function appReducer(state = initialState, action) {
@@ -6800,7 +6830,7 @@ export default function appReducer(state = initialState, action) {
     default:
       // If this reducer doesn't recognize the action type, or doesn't
       // care about this specific action, return the existing state unchanged
-      return state
+      return state;
   }
 }
 ```
@@ -6815,8 +6845,8 @@ that didn't change.
 
 ```js title="src/reducer.js"
 function nextTodoId(todos) {
-  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1)
-  return maxId + 1
+  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
+  return maxId + 1;
 }
 
 // Use the initialState as a default value
@@ -6825,7 +6855,7 @@ export default function appReducer(state = initialState, action) {
   switch (action.type) {
     // Do something here based on the different types of actions
     // highlight-start
-    case 'todos/todoAdded': {
+    case "todos/todoAdded": {
       // We need to return a new state object
       return {
         // that has all the existing state data
@@ -6839,16 +6869,16 @@ export default function appReducer(state = initialState, action) {
             // Use an auto-incrementing numeric ID for this example
             id: nextTodoId(state.todos),
             text: action.payload,
-            completed: false
-          }
-        ]
-      }
+            completed: false,
+          },
+        ],
+      };
     }
     // highlight-end
     default:
       // If this reducer doesn't recognize the action type, or doesn't
       // care about this specific action, return the existing state unchanged
-      return state
+      return state;
   }
 }
 ```
@@ -6897,7 +6927,7 @@ In Redux, **our reducers are _never_ allowed to mutate the original / current st
 
 ```js
 // ❌ Illegal - by default, this will mutate the state!
-state.value = 123
+state.value = 123;
 ```
 
 :::
@@ -6920,8 +6950,8 @@ So if we can't change the originals, how do we return an updated state?
 // ✅ This is safe, because we made a copy
 return {
   ...state,
-  value: 123
-}
+  value: 123,
+};
 ```
 
 :::
@@ -6948,7 +6978,7 @@ With that in mind, let's add the reducer logic for a couple more cases. First, t
 ```js title="src/reducer.js"
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
-    case 'todos/todoAdded': {
+    case "todos/todoAdded": {
       return {
         ...state,
         todos: [
@@ -6956,35 +6986,35 @@ export default function appReducer(state = initialState, action) {
           {
             id: nextTodoId(state.todos),
             text: action.payload,
-            completed: false
-          }
-        ]
-      }
+            completed: false,
+          },
+        ],
+      };
     }
     // highlight-start
-    case 'todos/todoToggled': {
+    case "todos/todoToggled": {
       return {
         // Again copy the entire state object
         ...state,
         // This time, we need to make a copy of the old todos array
-        todos: state.todos.map(todo => {
+        todos: state.todos.map((todo) => {
           // If this isn't the todo item we're looking for, leave it alone
           if (todo.id !== action.payload) {
-            return todo
+            return todo;
           }
 
           // We've found the todo that has to change. Return a copy:
           return {
             ...todo,
             // Flip the completed flag
-            completed: !todo.completed
-          }
-        })
-      }
+            completed: !todo.completed,
+          };
+        }),
+      };
     }
     // highlight-end
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -6994,7 +7024,7 @@ And since we've been focusing on the todos state, let's add a case to handle the
 ```js title="src/reducer.js"
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
-    case 'todos/todoAdded': {
+    case "todos/todoAdded": {
       return {
         ...state,
         todos: [
@@ -7002,28 +7032,28 @@ export default function appReducer(state = initialState, action) {
           {
             id: nextTodoId(state.todos),
             text: action.payload,
-            completed: false
-          }
-        ]
-      }
+            completed: false,
+          },
+        ],
+      };
     }
-    case 'todos/todoToggled': {
+    case "todos/todoToggled": {
       return {
         ...state,
-        todos: state.todos.map(todo => {
+        todos: state.todos.map((todo) => {
           if (todo.id !== action.payload) {
-            return todo
+            return todo;
           }
 
           return {
             ...todo,
-            completed: !todo.completed
-          }
-        })
-      }
+            completed: !todo.completed,
+          };
+        }),
+      };
     }
     // highlight-start
-    case 'filters/statusFilterChanged': {
+    case "filters/statusFilterChanged": {
       return {
         // Copy the whole state
         ...state,
@@ -7032,13 +7062,13 @@ export default function appReducer(state = initialState, action) {
           // copy the other filter fields
           ...state.filters,
           // And replace the status field with the new value
-          status: action.payload
-        }
-      }
+          status: action.payload,
+        },
+      };
     }
     // highlight-end
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -7065,20 +7095,20 @@ In our project, create a new `features` folder, and then a `todos` folder inside
 
 ```js title="src/features/todos/todosSlice.js"
 const initialState = [
-  { id: 0, text: 'Learn React', completed: true },
-  { id: 1, text: 'Learn Redux', completed: false, color: 'purple' },
-  { id: 2, text: 'Build something fun!', completed: false, color: 'blue' }
-]
+  { id: 0, text: "Learn React", completed: true },
+  { id: 1, text: "Learn Redux", completed: false, color: "purple" },
+  { id: 2, text: "Build something fun!", completed: false, color: "blue" },
+];
 
 function nextTodoId(todos) {
-  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1)
-  return maxId + 1
+  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
+  return maxId + 1;
 }
 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -7093,32 +7123,32 @@ Here's what the updated reducer looks like after we handle those actions:
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
     // highlight-start
-    case 'todos/todoAdded': {
+    case "todos/todoAdded": {
       // Can return just the new todos array - no extra object around it
       return [
         ...state,
         {
           id: nextTodoId(state),
           text: action.payload,
-          completed: false
-        }
-      ]
+          completed: false,
+        },
+      ];
     }
-    case 'todos/todoToggled': {
-      return state.map(todo => {
+    case "todos/todoToggled": {
+      return state.map((todo) => {
         if (todo.id !== action.payload) {
-          return todo
+          return todo;
         }
 
         return {
           ...todo,
-          completed: !todo.completed
-        }
-      })
+          completed: !todo.completed,
+        };
+      });
     }
     //highlight-end
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -7129,23 +7159,23 @@ Now we can do the same thing for the visibility logic. Create `src/features/filt
 
 ```js title="src/features/filters/filtersSlice.js"
 const initialState = {
-  status: 'All',
-  colors: []
-}
+  status: "All",
+  colors: [],
+};
 
 export default function filtersReducer(state = initialState, action) {
   switch (action.type) {
     // highlight-start
-    case 'filters/statusFilterChanged': {
+    case "filters/statusFilterChanged": {
       return {
         // Again, one less level of nesting to copy
         ...state,
-        status: action.payload
-      }
+        status: action.payload,
+      };
     }
     // highlight-end
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -7169,8 +7199,8 @@ We now have two separate slice files, each with its own slice reducer function. 
 Since reducers are normal JS functions, we can import the slice reducers back into `reducer.js`, and write a new root reducer whose only job is to call the other two functions.
 
 ```js title="src/reducer.js"
-import todosReducer from './features/todos/todosSlice'
-import filtersReducer from './features/filters/filtersSlice'
+import todosReducer from "./features/todos/todosSlice";
+import filtersReducer from "./features/filters/filtersSlice";
 
 export default function rootReducer(state = {}, action) {
   // always return a new object for the root state
@@ -7178,8 +7208,8 @@ export default function rootReducer(state = {}, action) {
     // the value of `state.todos` is whatever the todos reducer returns
     todos: todosReducer(state.todos, action),
     // For both reducers, we only pass in their slice of the state
-    filters: filtersReducer(state.filters, action)
-  }
+    filters: filtersReducer(state.filters, action),
+  };
 }
 ```
 
@@ -7204,18 +7234,18 @@ Once that's done, we can import `combineReducers` and use it:
 
 ```js title="src/reducer.js"
 // highlight-next-line
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
 
-import todosReducer from './features/todos/todosSlice'
-import filtersReducer from './features/filters/filtersSlice'
+import todosReducer from "./features/todos/todosSlice";
+import filtersReducer from "./features/filters/filtersSlice";
 
 const rootReducer = combineReducers({
   // Define a top-level state field named `todos`, handled by `todosReducer`
   todos: todosReducer,
-  filters: filtersReducer
-})
+  filters: filtersReducer,
+});
 
-export default rootReducer
+export default rootReducer;
 ```
 
 `combineReducers` accepts an object where the key names will become the keys in your root state object, and the
@@ -7275,6 +7305,7 @@ id: part-4-store
 title: 'Redux Fundamentals, Part 4: Store'
 sidebar_label: 'Store'
 description: 'The official Redux Fundamentals tutorial: learn how to create and use a Redux store'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -7320,13 +7351,13 @@ The Redux core library has [**a `createStore` API**](../../api/createStore.md) t
 called `store.js`, and import `createStore` and the root reducer. Then, call `createStore` and pass in the root reducer:
 
 ```js title="src/store.js"
-import { createStore } from 'redux'
-import rootReducer from './reducer'
+import { createStore } from "redux";
+import rootReducer from "./reducer";
 
 // highlight-next-line
-const store = createStore(rootReducer)
+const store = createStore(rootReducer);
 
-export default store
+export default store;
 ```
 
 ### Loading Initial State
@@ -7336,20 +7367,20 @@ initial data when the store is created, such as values that were included in an 
 `localStorage` and read back when the user visits the page again, like this:
 
 ```js title="storeStatePersistenceExample.js"
-import { createStore } from 'redux'
-import rootReducer from './reducer'
+import { createStore } from "redux";
+import rootReducer from "./reducer";
 
 // highlight-start
-let preloadedState
-const persistedTodosString = localStorage.getItem('todos')
+let preloadedState;
+const persistedTodosString = localStorage.getItem("todos");
 
 if (persistedTodosString) {
   preloadedState = {
-    todos: JSON.parse(persistedTodosString)
-  }
+    todos: JSON.parse(persistedTodosString),
+  };
 }
 
-const store = createStore(rootReducer, preloadedState)
+const store = createStore(rootReducer, preloadedState);
 // highlight-end
 ```
 
@@ -7366,45 +7397,45 @@ Before you run this code, try going back to `src/features/todos/todosSlice.js`, 
 ```js title="src/index.js"
 // Omit existing React imports
 
-import store from './store'
+import store from "./store";
 
 // Log the initial state
 // highlight-next-line
-console.log('Initial state: ', store.getState())
+console.log("Initial state: ", store.getState());
 // {todos: [....], filters: {status, colors}}
 
 // Every time the state changes, log it
 // Note that subscribe() returns a function for unregistering the listener
 // highlight-start
 const unsubscribe = store.subscribe(() =>
-  console.log('State after dispatch: ', store.getState())
-)
+  console.log("State after dispatch: ", store.getState())
+);
 // highlight-end
 
 // Now, dispatch some actions
 
 // highlight-next-line
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about reducers' })
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about stores' })
+store.dispatch({ type: "todos/todoAdded", payload: "Learn about actions" });
+store.dispatch({ type: "todos/todoAdded", payload: "Learn about reducers" });
+store.dispatch({ type: "todos/todoAdded", payload: "Learn about stores" });
 
-store.dispatch({ type: 'todos/todoToggled', payload: 0 })
-store.dispatch({ type: 'todos/todoToggled', payload: 1 })
+store.dispatch({ type: "todos/todoToggled", payload: 0 });
+store.dispatch({ type: "todos/todoToggled", payload: 1 });
 
-store.dispatch({ type: 'filters/statusFilterChanged', payload: 'Active' })
+store.dispatch({ type: "filters/statusFilterChanged", payload: "Active" });
 
 store.dispatch({
-  type: 'filters/colorFilterChanged',
-  payload: { color: 'red', changeType: 'added' }
-})
+  type: "filters/colorFilterChanged",
+  payload: { color: "red", changeType: "added" },
+});
 
 // Stop listening to state updates
 // highlight-next-line
-unsubscribe()
+unsubscribe();
 
 // Dispatch one more action to see what happens
 
-store.dispatch({ type: 'todos/todoAdded', payload: 'Try creating a store' })
+store.dispatch({ type: "todos/todoAdded", payload: "Try creating a store" });
 
 // Omit existing React rendering logic
 ```
@@ -7433,15 +7464,15 @@ If you want, you can now try writing tests for your reducers. Because they're [p
 take the result, and check to see if it matches what you expect:
 
 ```js title="todosSlice.spec.js"
-import todosReducer from './todosSlice'
+import todosReducer from "./todosSlice";
 
-test('Toggles a todo based on id', () => {
-  const initialState = [{ id: 0, text: 'Test text', completed: false }]
+test("Toggles a todo based on id", () => {
+  const initialState = [{ id: 0, text: "Test text", completed: false }];
 
-  const action = { type: 'todos/todoToggled', payload: 0 }
-  const result = todosReducer(initialState, action)
-  expect(result[0].completed).toBe(true)
-})
+  const action = { type: "todos/todoToggled", payload: 0 };
+  const result = todosReducer(initialState, action);
+  expect(result[0].completed).toBe(true);
+});
 ```
 
 :::
@@ -7452,29 +7483,29 @@ It might be helpful to take a peek inside a Redux store to see how it works. Her
 
 ```js title="miniReduxStoreExample.js"
 function createStore(reducer, preloadedState) {
-  let state = preloadedState
-  const listeners = []
+  let state = preloadedState;
+  const listeners = [];
 
   function getState() {
-    return state
+    return state;
   }
 
   function subscribe(listener) {
-    listeners.push(listener)
+    listeners.push(listener);
     return function unsubscribe() {
-      const index = listeners.indexOf(listener)
-      listeners.splice(index, 1)
-    }
+      const index = listeners.indexOf(listener);
+      listeners.splice(index, 1);
+    };
   }
 
   function dispatch(action) {
-    state = reducer(state, action)
-    listeners.forEach(listener => listener())
+    state = reducer(state, action);
+    listeners.forEach((listener) => listener());
   }
 
-  dispatch({ type: '@@redux/INIT' })
+  dispatch({ type: "@@redux/INIT" });
 
-  return { dispatch, subscribe, getState }
+  return { dispatch, subscribe, getState };
 }
 ```
 
@@ -7492,9 +7523,9 @@ As you can see, the actual logic here is fairly short:
 To emphasize one of those in particular: notice that `getState` just returns whatever the current `state` value is. That means that **by default, nothing prevents you from accidentally mutating the current state value!** This code will run without any errors, but it's incorrect:
 
 ```js
-const state = store.getState()
+const state = store.getState();
 // ❌ Don't do this - it mutates the current state!
-state.filters.status = 'Active'
+state.filters.status = "Active";
 ```
 
 In other words:
@@ -7528,13 +7559,13 @@ Our project has two small example store enhancers available, in the `src/example
 Let's start by using `sayHiOnDispatch`. First, we'll import it, and pass it to `createStore`:
 
 ```js title="src/store.js"
-import { createStore } from 'redux'
-import rootReducer from './reducer'
-import { sayHiOnDispatch } from './exampleAddons/enhancers'
+import { createStore } from "redux";
+import rootReducer from "./reducer";
+import { sayHiOnDispatch } from "./exampleAddons/enhancers";
 
-const store = createStore(rootReducer, undefined, sayHiOnDispatch)
+const store = createStore(rootReducer, undefined, sayHiOnDispatch);
 
-export default store
+export default store;
 ```
 
 We don't have a `preloadedState` value here, so we'll pass `undefined` as the second argument instead.
@@ -7542,12 +7573,12 @@ We don't have a `preloadedState` value here, so we'll pass `undefined` as the se
 Next, let's try dispatching an action:
 
 ```js title="src/index.js"
-import store from './store'
+import store from "./store";
 
 // highlight-start
-console.log('Dispatching action')
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
-console.log('Dispatch complete')
+console.log("Dispatching action");
+store.dispatch({ type: "todos/todoAdded", payload: "Learn about actions" });
+console.log("Dispatch complete");
 // highlight-end
 ```
 
@@ -7565,31 +7596,31 @@ Fortunately, **the Redux core includes [a `compose` function](../../api/compose.
 
 ```js title="src/store.js"
 // highlight-next-line
-import { createStore, compose } from 'redux'
-import rootReducer from './reducer'
+import { createStore, compose } from "redux";
+import rootReducer from "./reducer";
 import {
   sayHiOnDispatch,
-  includeMeaningOfLife
-} from './exampleAddons/enhancers'
+  includeMeaningOfLife,
+} from "./exampleAddons/enhancers";
 
 // highlight-next-line
-const composedEnhancer = compose(sayHiOnDispatch, includeMeaningOfLife)
+const composedEnhancer = compose(sayHiOnDispatch, includeMeaningOfLife);
 
 // highlight-next-line
-const store = createStore(rootReducer, undefined, composedEnhancer)
+const store = createStore(rootReducer, undefined, composedEnhancer);
 
-export default store
+export default store;
 ```
 
 Now we can see what happens if we use the store:
 
 ```js title="src/index.js"
-import store from './store'
+import store from "./store";
 
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+store.dispatch({ type: "todos/todoAdded", payload: "Learn about actions" });
 // log: 'Hi!'
 
-console.log('State after dispatch: ', store.getState())
+console.log("State after dispatch: ", store.getState());
 // log: {todos: [...], filters: {status, colors}, meaningOfLife: 42}
 ```
 
@@ -7606,7 +7637,7 @@ Store enhancers are a very powerful way to modify the store, and almost all Redu
 If you don't have any `preloadedState` to pass in, you can pass the `enhancer` as the second argument instead:
 
 ```js
-const store = createStore(rootReducer, storeEnhancer)
+const store = createStore(rootReducer, storeEnhancer);
 ```
 
 :::
@@ -7632,16 +7663,16 @@ We already saw that you can customize a Redux store using store enhancers. Redux
 Since we already know how to add enhancers to our store, we should be able to do that now. We'll start with `applyMiddleware` by itself, and we'll add three example middleware that have been included in this project.
 
 ```js title="src/store.js"
-import { createStore, applyMiddleware } from 'redux'
-import rootReducer from './reducer'
-import { print1, print2, print3 } from './exampleAddons/middleware'
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from "./reducer";
+import { print1, print2, print3 } from "./exampleAddons/middleware";
 
-const middlewareEnhancer = applyMiddleware(print1, print2, print3)
+const middlewareEnhancer = applyMiddleware(print1, print2, print3);
 
 // Pass enhancer as the second arg, since there's no preloadedState
-const store = createStore(rootReducer, middlewareEnhancer)
+const store = createStore(rootReducer, middlewareEnhancer);
 
-export default store
+export default store;
 ```
 
 As their names say, each of these middleware will print a number when an action is dispatched.
@@ -7649,9 +7680,9 @@ As their names say, each of these middleware will print a number when an action 
 What happens if we dispatch now?
 
 ```js title="src/index.js"
-import store from './store'
+import store from "./store";
 
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+store.dispatch({ type: "todos/todoAdded", payload: "Learn about actions" });
 // log: '1'
 // log: '2'
 // log: '3'
@@ -7694,9 +7725,9 @@ function exampleMiddleware(storeAPI) {
       // or restart the pipeline with storeAPI.dispatch(action)
       // Can also use storeAPI.getState() here
 
-      return next(action)
-    }
-  }
+      return next(action);
+    };
+  };
 }
 ```
 
@@ -7721,11 +7752,11 @@ Because these are normal functions, we can also write them using ES6 arrow funct
 Here's the same example as above, using arrow functions:
 
 ```js
-const anotherExampleMiddleware = storeAPI => next => action => {
+const anotherExampleMiddleware = (storeAPI) => (next) => (action) => {
   // Do something in here, when each action is dispatched
 
-  return next(action)
-}
+  return next(action);
+};
 ```
 
 We're still nesting those three functions together, and returning each function, but the implicit returns make this shorter.
@@ -7743,12 +7774,12 @@ These example middleware aren't specifically part of the actual todo app, but yo
 We can write a small middleware that will log that information to the console for us:
 
 ```js
-const loggerMiddleware = storeAPI => next => action => {
-  console.log('dispatching', action)
-  let result = next(action)
-  console.log('next state', storeAPI.getState())
-  return result
-}
+const loggerMiddleware = (storeAPI) => (next) => (action) => {
+  console.log("dispatching", action);
+  let result = next(action);
+  console.log("next state", storeAPI.getState());
+  return result;
+};
 ```
 
 Whenever an action is dispatched:
@@ -7779,15 +7810,15 @@ console.log(dispatchResult)
 Let's try one more example. Middleware often look for a specific action, and then do something when that action is dispatched. Middleware also have the ability to run async logic inside. We can write a middleware that prints something on a delay when it sees a certain action:
 
 ```js
-const delayedMessageMiddleware = storeAPI => next => action => {
-  if (action.type === 'todos/todoAdded') {
+const delayedMessageMiddleware = (storeAPI) => (next) => (action) => {
+  if (action.type === "todos/todoAdded") {
     setTimeout(() => {
-      console.log('Added a new todo: ', action.payload)
-    }, 1000)
+      console.log("Added a new todo: ", action.payload);
+    }, 1000);
   }
 
-  return next(action)
-}
+  return next(action);
+};
 ```
 
 This middleware will look for "todo added" actions. Every time it sees one, it sets a 1-second timer, and then prints the action's payload to the console.
@@ -7827,19 +7858,19 @@ The [Redux DevTools Extension docs](https://github.com/zalmoxisus/redux-devtools
 Here's how that looks:
 
 ```js title="src/store.js"
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import rootReducer from './reducer'
-import { print1, print2, print3 } from './exampleAddons/middleware'
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import rootReducer from "./reducer";
+import { print1, print2, print3 } from "./exampleAddons/middleware";
 
 const composedEnhancer = composeWithDevTools(
   // EXAMPLE: Add whatever middleware you actually want to use here
   applyMiddleware(print1, print2, print3)
   // other store enhancers if any
-)
+);
 
-const store = createStore(rootReducer, composedEnhancer)
-export default store
+const store = createStore(rootReducer, composedEnhancer);
+export default store;
 ```
 
 Make sure that `index.js` is still dispatching an action after importing the store. Now, open up the Redux DevTools tab in the browser's DevTools window. You should see something that looks like this:
@@ -7914,6 +7945,7 @@ id: part-5-ui-react
 title: 'Redux Fundamentals, Part 5: UI and React'
 sidebar_label: 'UI and React'
 description: 'The official Redux Fundamentals tutorial: learn how to use Redux with React'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -7960,32 +7992,32 @@ Let's go back to the [the counter app example we saw in Part 1](./part-1-overvie
 
 ```js
 // 1) Create a new Redux store with the `createStore` function
-const store = Redux.createStore(counterReducer)
+const store = Redux.createStore(counterReducer);
 
 // 2) Subscribe to redraw whenever the data changes in the future
-store.subscribe(render)
+store.subscribe(render);
 
 // Our "user interface" is some text in a single HTML element
-const valueEl = document.getElementById('value')
+const valueEl = document.getElementById("value");
 
 // 3) When the subscription callback runs:
 function render() {
   // 3.1) Get the current store state
-  const state = store.getState()
+  const state = store.getState();
   // 3.2) Extract the data you want
-  const newValue = state.value.toString()
+  const newValue = state.value.toString();
 
   // 3.3) Update the UI with the new value
-  valueEl.innerHTML = newValue
+  valueEl.innerHTML = newValue;
 }
 
 // 4) Display the UI with the initial store state
-render()
+render();
 
 // 5) Dispatch actions based on UI inputs
-document.getElementById('increment').addEventListener('click', function () {
-  store.dispatch({ type: 'counter/incremented' })
-})
+document.getElementById("increment").addEventListener("click", function () {
+  store.dispatch({ type: "counter/incremented" });
+});
 ```
 
 No matter what UI layer you're using, **Redux works this same way with every UI**. The actual implementations are typically a bit more complicated to help optimize performance, but it's the same steps each time.
@@ -8051,16 +8083,16 @@ The first React-Redux hook that we'll look at is the [**`useSelector` hook**](ht
 For example, we know that our todo app's Redux state keeps the array of todo items as `state.todos`. We can write a small selector function that returns that todos array:
 
 ```js
-const selectTodos = state => state.todos
+const selectTodos = (state) => state.todos;
 ```
 
 Or, maybe we want to find out how many todos are currently marked as "completed":
 
 ```js
-const selectTotalCompletedTodos = state => {
-  const completedTodos = state.todos.filter(todo => todo.completed)
-  return completedTodos.length
-}
+const selectTotalCompletedTodos = (state) => {
+  const completedTodos = state.todos.filter((todo) => todo.completed);
+  return completedTodos.length;
+};
 ```
 
 So, **selectors can return values from the Redux store state, and also return _derived_ values based on that state as well**.
@@ -8068,27 +8100,27 @@ So, **selectors can return values from the Redux store state, and also return _d
 Let's read the array of todos into our `<TodoList>` component. First, we'll import the `useSelector` hook from the `react-redux` library, then call it with a selector function as its argument:
 
 ```jsx title="src/features/todos/TodoList.js"
-import React from 'react'
+import React from "react";
 // highlight-next-line
-import { useSelector } from 'react-redux'
-import TodoListItem from './TodoListItem'
+import { useSelector } from "react-redux";
+import TodoListItem from "./TodoListItem";
 
 // highlight-next-line
-const selectTodos = state => state.todos
+const selectTodos = (state) => state.todos;
 
 const TodoList = () => {
   // highlight-next-line
-  const todos = useSelector(selectTodos)
+  const todos = useSelector(selectTodos);
 
   // since `todos` is an array, we can loop over it
-  const renderedListItems = todos.map(todo => {
-    return <TodoListItem key={todo.id} todo={todo} />
-  })
+  const renderedListItems = todos.map((todo) => {
+    return <TodoListItem key={todo.id} todo={todo} />;
+  });
 
-  return <ul className="todo-list">{renderedListItems}</ul>
-}
+  return <ul className="todo-list">{renderedListItems}</ul>;
+};
 
-export default TodoList
+export default TodoList;
 ```
 
 The first time the `<TodoList>` component renders, the `useSelector` hook will call `selectTodos` and pass in the _entire_ Redux state object. Whatever the selector returns will be returned by the hook to your component. So, the `const todos` in our component will end up holding the same `state.todos` array inside our Redux store state.
@@ -8111,10 +8143,10 @@ For example, passing this selector to `useSelector` will cause the component to 
 
 ```js
 // Bad: always returning a new reference
-const selectTodoDescriptions = state => {
+const selectTodoDescriptions = (state) => {
   // This creates a new array reference!
-  return state.todos.map(todo => todo.text)
-}
+  return state.todos.map((todo) => todo.text);
+};
 ```
 
 :::tip
@@ -8126,7 +8158,7 @@ We'll talk about one way to fix this issue later in this section. We'll also tal
 It's also worth noting that we don't have to write a selector function as a separate variable. You can write a selector function directly inside the call to `useSelector`, like this:
 
 ```js
-const todos = useSelector(state => state.todos)
+const todos = useSelector((state) => state.todos);
 ```
 
 ### Dispatching Actions with `useDispatch`
@@ -8142,29 +8174,29 @@ Let's try that in our `<Header>` component. We know that we need to let the user
 We'll write a typical React form component that uses ["controlled inputs"](https://reactjs.org/docs/forms.html#controlled-components) to let the user type in the form text. Then, when the user presses the Enter key specifically, we'll dispatch that action.
 
 ```jsx title="src/features/header/Header.js"
-import React, { useState } from 'react'
+import React, { useState } from "react";
 // highlight-next-line
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux";
 
 const Header = () => {
-  const [text, setText] = useState('')
+  const [text, setText] = useState("");
   // highlight-next-line
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const handleChange = e => setText(e.target.value)
+  const handleChange = (e) => setText(e.target.value);
 
-  const handleKeyDown = e => {
-    const trimmedText = e.target.value.trim()
+  const handleKeyDown = (e) => {
+    const trimmedText = e.target.value.trim();
     // If the user pressed the Enter key:
-    if (e.key === 'Enter' && trimmedText) {
+    if (e.key === "Enter" && trimmedText) {
       // highlight-start
       // Dispatch the "todo added" action with this text
-      dispatch({ type: 'todos/todoAdded', payload: trimmedText })
+      dispatch({ type: "todos/todoAdded", payload: trimmedText });
       // highlight-end
       // And clear out the text input
-      setText('')
+      setText("");
     }
-  }
+  };
 
   return (
     <input
@@ -8175,10 +8207,10 @@ const Header = () => {
       onChange={handleChange}
       onKeyDown={handleKeyDown}
     />
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 ```
 
 ### Passing the Store with `Provider`
@@ -8190,13 +8222,13 @@ Instead, we have to specifically tell React-Redux what store we want to use in o
 Let's add that to our main `index.js` file:
 
 ```jsx title="src/index.js"
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 // highlight-next-line
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
 
-import App from './App'
-import store from './store'
+import App from "./App";
+import store from "./store";
 
 ReactDOM.render(
   // highlight-start
@@ -8208,8 +8240,8 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   // highlight-end
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 That covers the key parts of using React-Redux with React:
@@ -8282,23 +8314,23 @@ As we mentioned earlier, we could put all the input handling directly into `<Foo
 Given that assumption, the React-Redux parts of the component might look like this:
 
 ```jsx title="src/features/footer/Footer.js"
-import React from 'react'
+import React from "react";
 // highlight-next-line
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 
-import { availableColors, capitalize } from '../filters/colors'
-import { StatusFilters } from '../filters/filtersSlice'
+import { availableColors, capitalize } from "../filters/colors";
+import { StatusFilters } from "../filters/filtersSlice";
 
 // Omit other footer components
 
 const Footer = () => {
   // highlight-start
-  const todosRemaining = useSelector(state => {
-    const uncompletedTodos = state.todos.filter(todo => !todo.completed)
-    return uncompletedTodos.length
-  })
+  const todosRemaining = useSelector((state) => {
+    const uncompletedTodos = state.todos.filter((todo) => !todo.completed);
+    return uncompletedTodos.length;
+  });
 
-  const { status, colors } = useSelector(state => state.filters)
+  const { status, colors } = useSelector((state) => state.filters);
   // highlight-end
 
   // omit placeholder change handlers
@@ -8315,10 +8347,10 @@ const Footer = () => {
       <StatusFilter value={status} onChange={onStatusChange} />
       <ColorFilters value={colors} onChange={onColorChange} />
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
 ```
 
 ### Selecting Data in List Items by ID
@@ -8341,24 +8373,24 @@ Another option is to have the `<TodoList>` component only read an array of todo 
 Let's give that a shot.
 
 ```jsx title="src/features/todos/TodoList.js"
-import React from 'react'
-import { useSelector } from 'react-redux'
-import TodoListItem from './TodoListItem'
+import React from "react";
+import { useSelector } from "react-redux";
+import TodoListItem from "./TodoListItem";
 
 // highlight-next-line
-const selectTodoIds = state => state.todos.map(todo => todo.id)
+const selectTodoIds = (state) => state.todos.map((todo) => todo.id);
 
 const TodoList = () => {
   // highlight-next-line
-  const todoIds = useSelector(selectTodoIds)
+  const todoIds = useSelector(selectTodoIds);
 
-  const renderedListItems = todoIds.map(todoId => {
+  const renderedListItems = todoIds.map((todoId) => {
     // highlight-next-line
-    return <TodoListItem key={todoId} id={todoId} />
-  })
+    return <TodoListItem key={todoId} id={todoId} />;
+  });
 
-  return <ul className="todo-list">{renderedListItems}</ul>
-}
+  return <ul className="todo-list">{renderedListItems}</ul>;
+};
 ```
 
 This time, we only select an array of todo IDs from the store in `<TodoList>`, and we pass each `todoId` as an `id` prop to the child `<TodoListItem>`s.
@@ -8366,32 +8398,32 @@ This time, we only select an array of todo IDs from the store in `<TodoList>`, a
 Then, in `<TodoListItem>`, we can use that ID value to read our todo item. We can also update `<TodoListItem>` to dispatch the "toggled" action based on the todo's ID.
 
 ```jsx title="src/features/todos/TodoListItem.js"
-import React from 'react'
+import React from "react";
 // highlight-next-line
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 
-import { availableColors, capitalize } from '../filters/colors'
+import { availableColors, capitalize } from "../filters/colors";
 
 // highlight-start
 const selectTodoById = (state, todoId) => {
-  return state.todos.find(todo => todo.id === todoId)
-}
+  return state.todos.find((todo) => todo.id === todoId);
+};
 // highlight-end
 
 // Destructure `props.id`, since we only need the ID value
 const TodoListItem = ({ id }) => {
   // Call our `selectTodoById` with the state _and_ the ID value
   // highlight-next-line
-  const todo = useSelector(state => selectTodoById(state, id))
-  const { text, completed, color } = todo
+  const todo = useSelector((state) => selectTodoById(state, id));
+  const { text, completed, color } = todo;
 
   // highlight-next-line
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   // highlight-start
   const handleCompletedChanged = () => {
-    dispatch({ type: 'todos/todoToggled', payload: todo.id })
-  }
+    dispatch({ type: "todos/todoToggled", payload: todo.id });
+  };
   // highlight-end
 
   // omit other change handlers
@@ -8401,10 +8433,10 @@ const TodoListItem = ({ id }) => {
     <li>
       <div className="view">{/* omit other rendering output */}</div>
     </li>
-  )
-}
+  );
+};
 
-export default TodoListItem
+export default TodoListItem;
 ```
 
 There's a problem with this, though. We said earlier that **returning new array references in selectors causes components to re-render every time**, and right now we're returning a new IDs array in `<TodoList>`. In this case, the _contents_ of the IDs array should be the same if we're toggling a todo, because we're still showing the same todo items - we haven't added or deleted any. But, the array _containing_ those IDs is a new reference, so `<TodoList>` will re-render when it really doesn't need to.
@@ -8414,24 +8446,24 @@ One possible solution to this is to change how `useSelector` compares its values
 React-Redux has a `shallowEqual` comparison function we can use to check if the items _inside_ the array are still the same. Let's try that:
 
 ```jsx title="src/features/todos/TodoList.js"
-import React from 'react'
+import React from "react";
 // highlight-next-line
-import { useSelector, shallowEqual } from 'react-redux'
-import TodoListItem from './TodoListItem'
+import { useSelector, shallowEqual } from "react-redux";
+import TodoListItem from "./TodoListItem";
 
 // highlight-next-line
-const selectTodoIds = state => state.todos.map(todo => todo.id)
+const selectTodoIds = (state) => state.todos.map((todo) => todo.id);
 
 const TodoList = () => {
   // highlight-next-line
-  const todoIds = useSelector(selectTodoIds, shallowEqual)
+  const todoIds = useSelector(selectTodoIds, shallowEqual);
 
-  const renderedListItems = todoIds.map(todoId => {
-    return <TodoListItem key={todoId} id={todoId} />
-  })
+  const renderedListItems = todoIds.map((todoId) => {
+    return <TodoListItem key={todoId} id={todoId} />;
+  });
 
-  return <ul className="todo-list">{renderedListItems}</ul>
-}
+  return <ul className="todo-list">{renderedListItems}</ul>;
+};
 ```
 
 Now, if we toggle a todo item, the list of IDs will be considered the same, and `<TodoList>` won't have to re-render. The one `<TodoListItem>` will get an updated todo object and re-render, but all the rest of them will still have the existing todo object and not have to re-render at all.
@@ -8492,6 +8524,7 @@ id: part-6-async-logic
 title: 'Redux Fundamentals, Part 6: Async Logic and Data Fetching'
 sidebar_label: 'Async Logic and Data Fetching'
 description: 'The official Redux Fundamentals tutorial: learn how to use async logic with Redux'
+
 ---
 
 # Redux Fundamentals, Part 6: Async Logic and Data Fetching
@@ -8555,31 +8588,31 @@ Let's look at a couple examples of how middleware can enable us to write some ki
 One possibility is writing a middleware that looks for specific action types, and runs async logic when it sees those actions, like these examples:
 
 ```js
-import { client } from '../api/client'
+import { client } from "../api/client";
 
-const delayedActionMiddleware = storeAPI => next => action => {
-  if (action.type === 'todos/todoAdded') {
+const delayedActionMiddleware = (storeAPI) => (next) => (action) => {
+  if (action.type === "todos/todoAdded") {
     setTimeout(() => {
       // Delay this action by one second
-      next(action)
-    }, 1000)
-    return
+      next(action);
+    }, 1000);
+    return;
   }
 
-  return next(action)
-}
+  return next(action);
+};
 
-const fetchTodosMiddleware = storeAPI => next => action => {
-  if (action.type === 'todos/fetchTodos') {
+const fetchTodosMiddleware = (storeAPI) => (next) => (action) => {
+  if (action.type === "todos/fetchTodos") {
     // Make an API call to fetch todos from the server
-    client.get('todos').then(todos => {
+    client.get("todos").then((todos) => {
       // Dispatch an action with the todos we received
-      storeAPI.dispatch({ type: 'todos/todosLoaded', payload: todos })
-    })
+      storeAPI.dispatch({ type: "todos/todosLoaded", payload: todos });
+    });
   }
 
-  return next(action)
-}
+  return next(action);
+};
 ```
 
 :::info
@@ -8600,38 +8633,38 @@ Both of the middleware in that last section were very specific and only do one t
 Here's what that middleware might look like:
 
 ```js title="Example async function middleware"
-const asyncFunctionMiddleware = storeAPI => next => action => {
+const asyncFunctionMiddleware = (storeAPI) => (next) => (action) => {
   // If the "action" is actually a function instead...
-  if (typeof action === 'function') {
+  if (typeof action === "function") {
     // then call the function and pass `dispatch` and `getState` as arguments
-    return action(storeAPI.dispatch, storeAPI.getState)
+    return action(storeAPI.dispatch, storeAPI.getState);
   }
 
   // Otherwise, it's a normal action - send it onwards
-  return next(action)
-}
+  return next(action);
+};
 ```
 
 And then we could use that middleware like this:
 
 ```js
-const middlewareEnhancer = applyMiddleware(asyncFunctionMiddleware)
-const store = createStore(rootReducer, middlewareEnhancer)
+const middlewareEnhancer = applyMiddleware(asyncFunctionMiddleware);
+const store = createStore(rootReducer, middlewareEnhancer);
 
 // Write a function that has `dispatch` and `getState` as arguments
 const fetchSomeData = (dispatch, getState) => {
   // Make an async HTTP request
-  client.get('todos').then(todos => {
+  client.get("todos").then((todos) => {
     // Dispatch an action with the todos we received
-    dispatch({ type: 'todos/todosLoaded', payload: todos })
+    dispatch({ type: "todos/todosLoaded", payload: todos });
     // Check the updated store state after dispatching
-    const allTodos = getState().todos
-    console.log('Number of todos after loading: ', allTodos.length)
-  })
-}
+    const allTodos = getState().todos;
+    console.log("Number of todos after loading: ", allTodos.length);
+  });
+};
 
 // Pass the _function_ we wrote to `dispatch`
-store.dispatch(fetchSomeData)
+store.dispatch(fetchSomeData);
 // logs: 'Number of todos after loading: ###'
 ```
 
@@ -8679,18 +8712,18 @@ npm install redux-thunk
 Once it's installed, we can update the Redux store in our todo app to use that middleware:
 
 ```js title="src/store.js"
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from "redux";
 // highlight-next-line
-import thunkMiddleware from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import rootReducer from './reducer'
+import thunkMiddleware from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+import rootReducer from "./reducer";
 
 // highlight-next-line
-const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware))
+const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware));
 
 // The store now has the ability to accept thunk functions in `dispatch`
-const store = createStore(rootReducer, composedEnhancer)
-export default store
+const store = createStore(rootReducer, composedEnhancer);
+export default store;
 ```
 
 ### Fetching Todos from a Server
@@ -8700,9 +8733,9 @@ Right now our todo entries can only exist in the client's browser. We need a way
 We'll start by writing a thunk function that makes an AJAX call to our `/fakeApi/todos` endpoint to request an array of todo objects, and then dispatch an action containing that array as the payload. Since this is related to the todos feature in general, we'll write the thunk function in the `todosSlice.js` file:
 
 ```js title="src/features/todos/todosSlice.js"
-import { client } from '../../api/client'
+import { client } from "../../api/client";
 
-const initialState = []
+const initialState = [];
 
 export default function todosReducer(state = initialState, action) {
   // omit reducer logic
@@ -8711,8 +8744,8 @@ export default function todosReducer(state = initialState, action) {
 // Thunk function
 // highlight-start
 export async function fetchTodos(dispatch, getState) {
-  const response = await client.get('/fakeApi/todos')
-  dispatch({ type: 'todos/todosLoaded', payload: response.todos })
+  const response = await client.get("/fakeApi/todos");
+  dispatch({ type: "todos/todosLoaded", payload: response.todos });
 }
 // highlight-end
 ```
@@ -8726,19 +8759,19 @@ We only want to make this API call once, when the application loads for the firs
 For now, let's try putting this directly in `index.js`:
 
 ```js title="src/index.js"
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import './index.css'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import "./index.css";
+import App from "./App";
 
-import './api/server'
+import "./api/server";
 
 // highlight-start
-import store from './store'
-import { fetchTodos } from './features/todos/todosSlice'
+import store from "./store";
+import { fetchTodos } from "./features/todos/todosSlice";
 
-store.dispatch(fetchTodos)
+store.dispatch(fetchTodos);
 // highlight-end
 
 ReactDOM.render(
@@ -8747,8 +8780,8 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 If we reload the page, there's no visible change in the UI. However, if we open up the Redux DevTools extension, we should now see that a `'todos/todosLoaded'` action was dispatched, and it should contain some todo objects that were generated by our fake server API:
@@ -8760,27 +8793,27 @@ Notice that even though we've dispatched an action, nothing's happening to chang
 Let's add a case to the reducer to load this data into the store. Since we're fetching the data from the server, we want to completely replace any existing todos, so we can return the `action.payload` array to make it be the new todos `state` value:
 
 ```js title="src/features/todos/todosSlice.js"
-import { client } from '../../api/client'
+import { client } from "../../api/client";
 
-const initialState = []
+const initialState = [];
 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
     // omit other reducer cases
     // highlight-start
-    case 'todos/todosLoaded': {
+    case "todos/todosLoaded": {
       // Replace the existing state entirely by returning the new value
-      return action.payload
+      return action.payload;
     }
     // highlight-end
     default:
-      return state
+      return state;
   }
 }
 
 export async function fetchTodos(dispatch, getState) {
-  const response = await client.get('/fakeApi/todos')
-  dispatch({ type: 'todos/todosLoaded', payload: response.todos })
+  const response = await client.get("/fakeApi/todos");
+  dispatch({ type: "todos/todosLoaded", payload: response.todos });
 }
 ```
 
@@ -8788,17 +8821,17 @@ Since dispatching an action immediately updates the store, we can also call `get
 
 ```js
 export async function fetchTodos(dispatch, getState) {
-  const response = await client.get('/fakeApi/todos')
+  const response = await client.get("/fakeApi/todos");
 
   // highlight-next-line
-  const stateBefore = getState()
-  console.log('Todos before dispatch: ', stateBefore.todos.length)
+  const stateBefore = getState();
+  console.log("Todos before dispatch: ", stateBefore.todos.length);
 
-  dispatch({ type: 'todos/todosLoaded', payload: response.todos })
+  dispatch({ type: "todos/todosLoaded", payload: response.todos });
 
   // highlight-next-line
-  const stateAfter = getState()
-  console.log('Todos after dispatch: ', stateAfter.todos.length)
+  const stateAfter = getState();
+  console.log("Todos after dispatch: ", stateAfter.todos.length);
 }
 ```
 
@@ -8812,9 +8845,9 @@ However, if we start trying to write this logic as a thunk function, we're going
 async function saveNewTodo(dispatch, getState) {
   // ❌ We need to have the text of the new todo, but where is it coming from?
   // highlight-next-line
-  const initialTodo = { text }
-  const response = await client.post('/fakeApi/todos', { todo: initialTodo })
-  dispatch({ type: 'todos/todoAdded', payload: response.todo })
+  const initialTodo = { text };
+  const response = await client.post("/fakeApi/todos", { todo: initialTodo });
+  dispatch({ type: "todos/todoAdded", payload: response.todo });
 }
 ```
 
@@ -8826,61 +8859,61 @@ export function saveNewTodo(text) {
   // And then creates and returns the async thunk function:
   return async function saveNewTodoThunk(dispatch, getState) {
     // ✅ Now we can use the text value and send it to the server
-    const initialTodo = { text }
-    const response = await client.post('/fakeApi/todos', { todo: initialTodo })
-    dispatch({ type: 'todos/todoAdded', payload: response.todo })
-  }
+    const initialTodo = { text };
+    const response = await client.post("/fakeApi/todos", { todo: initialTodo });
+    dispatch({ type: "todos/todoAdded", payload: response.todo });
+  };
 }
 ```
 
 Now we can use this in our `<Header>` component:
 
 ```js title="src/features/header/Header.js"
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 // highlight-next-line
-import { saveNewTodo } from '../todos/todosSlice'
+import { saveNewTodo } from "../todos/todosSlice";
 
 const Header = () => {
-  const [text, setText] = useState('')
-  const dispatch = useDispatch()
+  const [text, setText] = useState("");
+  const dispatch = useDispatch();
 
-  const handleChange = e => setText(e.target.value)
+  const handleChange = (e) => setText(e.target.value);
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     // If the user pressed the Enter key:
-    const trimmedText = text.trim()
+    const trimmedText = text.trim();
     if (e.which === 13 && trimmedText) {
       // highlight-start
       // Create the thunk function with the text the user wrote
-      const saveNewTodoThunk = saveNewTodo(trimmedText)
+      const saveNewTodoThunk = saveNewTodo(trimmedText);
       // Then dispatch the thunk function itself
-      dispatch(saveNewTodoThunk)
+      dispatch(saveNewTodoThunk);
       // highlight-end
-      setText('')
+      setText("");
     }
-  }
+  };
 
   // omit rendering output
-}
+};
 ```
 
 Since we know we're going to immediately pass the thunk function to `dispatch` in the
 component, we can skip creating the temporary variable. Instead, we can call `saveNewTodo(text)`, and pass the resulting thunk function straight to `dispatch`:
 
 ```js title="src/features/header/Header.js"
-const handleKeyDown = e => {
+const handleKeyDown = (e) => {
   // If the user pressed the Enter key:
-  const trimmedText = text.trim()
+  const trimmedText = text.trim();
   if (e.which === 13 && trimmedText) {
     // highlight-start
     // Create the thunk function and immediately dispatch it
-    dispatch(saveNewTodo(trimmedText))
+    dispatch(saveNewTodo(trimmedText));
     // highlight-end
-    setText('')
+    setText("");
   }
-}
+};
 ```
 
 Now the component doesn't actually know that it's even dispatching a thunk function - the `saveNewTodo` function is encapsulating what's actually happening. The `<Header>` component only knows that it needs to dispatch _some value_ when the user presses enter.
@@ -8894,19 +8927,19 @@ We can now see the updated `'todos/todoAdded'` action being dispatched:
 The last thing we need to change here is updating our todos reducer. When we make a POST request to `/fakeApi/todos`, the server will return a completely new todo object (including a new ID value). That means our reducer doesn't have to calculate a new ID, or fill out the other fields - it only needs to create a new `state` array that includes the new todo item:
 
 ```js title="src/features/todos/todosSlice.js"
-const initialState = []
+const initialState = [];
 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
     // highlight-start
-    case 'todos/todoAdded': {
+    case "todos/todoAdded": {
       // Return a new todos state array with the new todo item at the end
-      return [...state, action.payload]
+      return [...state, action.payload];
     }
     // highlight-end
     // omit other cases
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -8966,6 +8999,7 @@ id: part-7-standard-patterns
 title: 'Redux Fundamentals, Part 7: Standard Redux Patterns'
 sidebar_label: 'Standard Redux Patterns'
 description: 'The official Fundamentals tutorial for Redux: learn the standard patterns used in real-world Redux apps'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -9002,7 +9036,7 @@ In this section, we'll rework our existing todo app code to use some of these pa
 In our app, we've been writing action objects directly in the code, where they're being dispatched:
 
 ```js
-dispatch({ type: 'todos/todoAdded', payload: trimmedText })
+dispatch({ type: "todos/todoAdded", payload: trimmedText });
 ```
 
 However, in practice, well-written Redux apps don't actually write those action objects inline when we dispatch them. Instead, we use "action creator" functions.
@@ -9010,20 +9044,20 @@ However, in practice, well-written Redux apps don't actually write those action 
 An **action creator** is a function that creates and returns an action object. We typically use these so we don't have to write the action object by hand every time:
 
 ```js
-const todoAdded = text => {
+const todoAdded = (text) => {
   return {
-    type: 'todos/todoAdded',
-    payload: text
-  }
-}
+    type: "todos/todoAdded",
+    payload: text,
+  };
+};
 ```
 
 We then use them by **calling the action creator**, and then **passing the resulting action object directly to `dispatch`**:
 
 ```js
-store.dispatch(todoAdded('Buy milk'))
+store.dispatch(todoAdded("Buy milk"));
 
-console.log(store.getState().todos)
+console.log(store.getState().todos);
 // [ {id: 0, text: 'Buy milk', completed: false}]
 ```
 
@@ -9051,25 +9085,25 @@ We'll start with the two main actions we've been using so far: loading the list 
 Right now, `todosSlice.js` is dispatching an action object directly, like this:
 
 ```js
-dispatch({ type: 'todos/todosLoaded', payload: response.todos })
+dispatch({ type: "todos/todosLoaded", payload: response.todos });
 ```
 
 We'll create a function that creates and returns that same kind of action object, but accepts the array of todos as its argument and puts it into the action as `action.payload`. Then, we can dispatch the action using that new action creator inside of our `fetchTodos` thunk:
 
 ```js title="src/features/todos/todosSlice.js"
 // highlight-start
-export const todosLoaded = todos => {
+export const todosLoaded = (todos) => {
   return {
-    type: 'todos/todosLoaded',
-    payload: todos
-  }
-}
+    type: "todos/todosLoaded",
+    payload: todos,
+  };
+};
 // highlight-end
 
 export async function fetchTodos(dispatch, getState) {
-  const response = await client.get('/fakeApi/todos')
+  const response = await client.get("/fakeApi/todos");
   // highlight-next-line
-  dispatch(todosLoaded(response.todos))
+  dispatch(todosLoaded(response.todos));
 }
 ```
 
@@ -9077,21 +9111,21 @@ We can also do the same thing for the "todo added" action:
 
 ```js title="src/features/todos/todosSlice.js"
 // highlight-start
-export const todoAdded = todo => {
+export const todoAdded = (todo) => {
   return {
-    type: 'todos/todoAdded',
-    payload: todo
-  }
-}
+    type: "todos/todoAdded",
+    payload: todo,
+  };
+};
 // highlight-end
 
 export function saveNewTodo(text) {
   return async function saveNewTodoThunk(dispatch, getState) {
-    const initialTodo = { text }
-    const response = await client.post('/fakeApi/todos', { todo: initialTodo })
+    const initialTodo = { text };
+    const response = await client.post("/fakeApi/todos", { todo: initialTodo });
     // highlight-next-line
-    dispatch(todoAdded(response.todo))
-  }
+    dispatch(todoAdded(response.todo));
+  };
 }
 ```
 
@@ -9101,51 +9135,51 @@ While we're at it, let's do the same thing for the "color filter changed" action
 // highlight-start
 export const colorFilterChanged = (color, changeType) => {
   return {
-    type: 'filters/colorFilterChanged',
-    payload: { color, changeType }
-  }
-}
+    type: "filters/colorFilterChanged",
+    payload: { color, changeType },
+  };
+};
 // highlight-end
 ```
 
 And since this action was being dispatched from the `<Footer>` component, we'll need to import the `colorFilterChanged` action creator over there and use it:
 
 ```js title="src/features/footer/Footer.js"
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import { availableColors, capitalize } from '../filters/colors'
+import { availableColors, capitalize } from "../filters/colors";
 // highlight-next-line
-import { StatusFilters, colorFilterChanged } from '../filters/filtersSlice'
+import { StatusFilters, colorFilterChanged } from "../filters/filtersSlice";
 
 // omit child components
 
 const Footer = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const todosRemaining = useSelector(state => {
-    const uncompletedTodos = state.todos.filter(todo => !todo.completed)
-    return uncompletedTodos.length
-  })
+  const todosRemaining = useSelector((state) => {
+    const uncompletedTodos = state.todos.filter((todo) => !todo.completed);
+    return uncompletedTodos.length;
+  });
 
-  const { status, colors } = useSelector(state => state.filters)
+  const { status, colors } = useSelector((state) => state.filters);
 
-  const onMarkCompletedClicked = () => dispatch({ type: 'todos/allCompleted' })
+  const onMarkCompletedClicked = () => dispatch({ type: "todos/allCompleted" });
   const onClearCompletedClicked = () =>
-    dispatch({ type: 'todos/completedCleared' })
+    dispatch({ type: "todos/completedCleared" });
 
   // highlight-start
   const onColorChange = (color, changeType) =>
-    dispatch(colorFilterChanged(color, changeType))
+    dispatch(colorFilterChanged(color, changeType));
   // highlight-end
 
-  const onStatusChange = status =>
-    dispatch({ type: 'filters/statusFilterChanged', payload: status })
+  const onStatusChange = (status) =>
+    dispatch({ type: "filters/statusFilterChanged", payload: status });
 
   // omit rendering output
-}
+};
 
-export default Footer
+export default Footer;
 ```
 
 Notice that the `colorFilterChanged` action creator actually accepts two different arguments, and then combines them together to form the right `action.payload` field.
@@ -9158,20 +9192,20 @@ We can also use action creators with thunk functions, and in fact [we wrapped a 
 // highlight-next-line
 export function fetchTodos() {
   return async function fetchTodosThunk(dispatch, getState) {
-    const response = await client.get('/fakeApi/todos')
-    dispatch(todosLoaded(response.todos))
-  }
+    const response = await client.get("/fakeApi/todos");
+    dispatch(todosLoaded(response.todos));
+  };
 }
 ```
 
 And that means we have to change the place it's dispatched in `index.js` to call the outer thunk action creator function, and pass the returned inner thunk function to `dispatch`:
 
 ```js title="src/index.js"
-import store from './store'
-import { fetchTodos } from './features/todos/todosSlice'
+import store from "./store";
+import { fetchTodos } from "./features/todos/todosSlice";
 
 // highlight-next-line
-store.dispatch(fetchTodos())
+store.dispatch(fetchTodos());
 ```
 
 We've written thunks using the `function` keyword so far to make it clear what they're doing. However, we can also write them using arrow function syntax instead. Using implicit returns can shorten the code, although it may make it a bit harder to read as well if you're not familiar with arrow functions:
@@ -9179,17 +9213,17 @@ We've written thunks using the `function` keyword so far to make it clear what t
 ```js title="src/features/todos/todosSlice.js"
 // Same thing as the above example!
 // highlight-next-line
-export const fetchTodos = () => async dispatch => {
-  const response = await client.get('/fakeApi/todos')
-  dispatch(todosLoaded(response.todos))
-}
+export const fetchTodos = () => async (dispatch) => {
+  const response = await client.get("/fakeApi/todos");
+  dispatch(todosLoaded(response.todos));
+};
 ```
 
 Similarly, we _could_ shorten the plain action creators if we wanted to:
 
 ```js title="src/features/todos/todosSlice.js"
 // highlight-next-line
-export const todoAdded = todo => ({ type: 'todos/todoAdded', payload: todo })
+export const todoAdded = (todo) => ({ type: "todos/todoAdded", payload: todo });
 ```
 
 It's up to you to decide whether using arrow functions this way is better or not.
@@ -9207,13 +9241,13 @@ For more details on why action creators are useful, see:
 We've already seen that we can write "selector" functions, which accept the Redux `state` object as an argument, and return a value:
 
 ```js
-const selectTodos = state => state.todos
+const selectTodos = (state) => state.todos;
 ```
 
 What if we need to _derive_ some data? For example, maybe we want to have an array of only the todo IDs:
 
 ```js
-const selectTodoIds = state => state.todos.map(todo => todo.id)
+const selectTodoIds = (state) => state.todos.map((todo) => todo.id);
 ```
 
 However, `array.map()` always returns a new array reference. We know that the React-Redux `useSelector` hook will re-run its selector function after _every_ dispatched action, and if the selector result changes, it will force the component to re-render.
@@ -9247,7 +9281,7 @@ Then, we can import and call `createSelector`. Our original `selectTodoIds` func
 
 ```js title="src/features/todos/todosSlice.js"
 // highlight-next-line
-import { createSelector } from 'reselect'
+import { createSelector } from "reselect";
 
 // omit reducer
 
@@ -9256,34 +9290,34 @@ import { createSelector } from 'reselect'
 // highlight-start
 export const selectTodoIds = createSelector(
   // First, pass one or more "input selector" functions:
-  state => state.todos,
+  (state) => state.todos,
   // Then, an "output selector" that receives all the input results as arguments
   // and returns a final result value
-  todos => todos.map(todo => todo.id)
-)
+  (todos) => todos.map((todo) => todo.id)
+);
 // highlight-end
 ```
 
 Then, let's use it in `<TodoList>`:
 
 ```js title="src/features/todos/TodoList.js"
-import React from 'react'
-import { useSelector, shallowEqual } from 'react-redux'
+import React from "react";
+import { useSelector, shallowEqual } from "react-redux";
 
 // highlight-next-line
-import { selectTodoIds } from './todosSlice'
-import TodoListItem from './TodoListItem'
+import { selectTodoIds } from "./todosSlice";
+import TodoListItem from "./TodoListItem";
 
 const TodoList = () => {
   // highlight-next-line
-  const todoIds = useSelector(selectTodoIds)
+  const todoIds = useSelector(selectTodoIds);
 
-  const renderedListItems = todoIds.map(todoId => {
-    return <TodoListItem key={todoId} id={todoId} />
-  })
+  const renderedListItems = todoIds.map((todoId) => {
+    return <TodoListItem key={todoId} id={todoId} />;
+  });
 
-  return <ul className="todo-list">{renderedListItems}</ul>
-}
+  return <ul className="todo-list">{renderedListItems}</ul>;
+};
 ```
 
 This actually behaves a bit differently than the `shallowEqual` comparison function does. Any time the `state.todos` array changes, we're going to create a new todo IDs array as a result. That includes any immutable updates to todo items like toggling their `completed` field, since we have to create a new array for the immutable update.
@@ -9301,28 +9335,28 @@ Our todo app is supposed to have the ability to filter the visible todos based o
 We know we need the entire `todos` array as one argument to our output selector. We also need to pass in the current completion status filter value as well. We'll add a separate "input selector" to extract each value, and pass the results to the "output selector".
 
 ```js title="src/features/todos/todosSlice.js"
-import { createSelector } from 'reselect'
-import { StatusFilters } from '../filters/filtersSlice'
+import { createSelector } from "reselect";
+import { StatusFilters } from "../filters/filtersSlice";
 
 // omit other code
 
 // highlight-start
 export const selectFilteredTodos = createSelector(
   // First input selector: all todos
-  state => state.todos,
+  (state) => state.todos,
   // Second input selector: current status filter
-  state => state.filters.status,
+  (state) => state.filters.status,
   // Output selector: receives both values
   (todos, status) => {
     if (status === StatusFilters.All) {
-      return todos
+      return todos;
     }
 
-    const completedStatus = status === StatusFilters.Completed
+    const completedStatus = status === StatusFilters.Completed;
     // Return either active or completed todos based on filter
-    return todos.filter(todo => todo.completed === completedStatus)
+    return todos.filter((todo) => todo.completed === completedStatus);
   }
-)
+);
 // highlight-end
 ```
 
@@ -9339,8 +9373,8 @@ export const selectFilteredTodoIds = createSelector(
   // Pass our other memoized selector as an input
   selectFilteredTodos,
   // And derive data in the output selector
-  filteredTodos => filteredTodos.map(todo => todo.id)
-)
+  (filteredTodos) => filteredTodos.map((todo) => todo.id)
+);
 ```
 
 If we switch `<TodoList>` to use `selectFilteredTodoIds`, we should then be able to mark a couple todo items as completed:
@@ -9359,30 +9393,30 @@ export const selectFilteredTodos = createSelector(
   selectTodos,
   // Second input selector: all filter values
   // highlight-next-line
-  state => state.filters,
+  (state) => state.filters,
   // Output selector: receives both values
   (todos, filters) => {
     // highlight-start
-    const { status, colors } = filters
-    const showAllCompletions = status === StatusFilters.All
+    const { status, colors } = filters;
+    const showAllCompletions = status === StatusFilters.All;
     if (showAllCompletions && colors.length === 0) {
       // highlight-end
-      return todos
+      return todos;
     }
 
     // highlight-next-line
-    const completedStatus = status === StatusFilters.Completed
+    const completedStatus = status === StatusFilters.Completed;
     // Return either active or completed todos based on filter
-    return todos.filter(todo => {
+    return todos.filter((todo) => {
       // highlight-start
       const statusMatches =
-        showAllCompletions || todo.completed === completedStatus
-      const colorMatches = colors.length === 0 || colors.includes(todo.color)
-      return statusMatches && colorMatches
+        showAllCompletions || todo.completed === completedStatus;
+      const colorMatches = colors.length === 0 || colors.includes(todo.color);
+      return statusMatches && colorMatches;
       // highlight-end
-    })
+    });
   }
-)
+);
 ```
 
 Notice that by encapsulating the logic in this selector, our component never needed to change, even as we changed the filtering behavior. Now we can filter by both status and color at once:
@@ -9392,11 +9426,11 @@ Notice that by encapsulating the logic in this selector, our component never nee
 Finally, we've got several places where our code is looking up `state.todos`. We're going to be making some changes to how that state is designed as we go through the rest of this section, so we'll extract a single `selectTodos` selector and use that everywhere. We can also move `selectTodoById` over into the `todosSlice`:
 
 ```js title="src/features/todos/todosSlice.js"
-export const selectTodos = state => state.todos
+export const selectTodos = (state) => state.todos;
 
 export const selectTodoById = (state, todoId) => {
-  return selectTodos(state).find(todo => todo.id === todoId)
-}
+  return selectTodos(state).find((todo) => todo.id === todoId);
+};
 ```
 
 :::info
@@ -9426,48 +9460,48 @@ Right now, the `state` of our todos reducer is only the array of todos itself. I
 ```js title="src/features/todos/todosSlice.js"
 // highlight-start
 const initialState = {
-  status: 'idle',
-  entities: []
-}
+  status: "idle",
+  entities: [],
+};
 // highlight-end
 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
-    case 'todos/todoAdded': {
+    case "todos/todoAdded": {
       // highlight-start
       return {
         ...state,
-        entities: [...state.entities, action.payload]
-      }
+        entities: [...state.entities, action.payload],
+      };
       // highlight-end
     }
-    case 'todos/todoToggled': {
+    case "todos/todoToggled": {
       // highlight-start
       return {
         ...state,
-        entities: state.entities.map(todo => {
+        entities: state.entities.map((todo) => {
           if (todo.id !== action.payload) {
-            return todo
+            return todo;
           }
 
           return {
             ...todo,
-            completed: !todo.completed
-          }
-        })
-      }
+            completed: !todo.completed,
+          };
+        }),
+      };
       // highlight-end
     }
     // omit other cases
     default:
-      return state
+      return state;
   }
 }
 
 // omit action creators
 
 // highlight-next-line
-export const selectTodos = state => state.todos.entities
+export const selectTodos = (state) => state.todos.entities;
 ```
 
 There's a few important things to note here:
@@ -9483,7 +9517,7 @@ You'll also notice that we've defined the loading state field as a string enum:
 
 ```js
 {
-  status: 'idle' // or: 'loading', 'succeeded', 'failed'
+  status: "idle"; // or: 'loading', 'succeeded', 'failed'
 }
 ```
 
@@ -9513,43 +9547,43 @@ Based on that, we'll add a new "loading" action that will set our status to `'lo
 
 ```js title="src/features/todos/todosSlice.js"
 const initialState = {
-  status: 'idle',
-  entities: []
-}
+  status: "idle",
+  entities: [],
+};
 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
     // omit other cases
     // highlight-start
-    case 'todos/todosLoading': {
+    case "todos/todosLoading": {
       return {
         ...state,
-        status: 'loading'
-      }
+        status: "loading",
+      };
     }
     // highlight-end
-    case 'todos/todosLoaded': {
+    case "todos/todosLoaded": {
       return {
         ...state,
         // highlight-next-line
-        status: 'idle',
-        entities: action.payload
-      }
+        status: "idle",
+        entities: action.payload,
+      };
     }
     default:
-      return state
+      return state;
   }
 }
 
 // omit action creators
 
 // Thunk function
-export const fetchTodos = () => async dispatch => {
+export const fetchTodos = () => async (dispatch) => {
   // highlight-next-line
-  dispatch(todosLoading())
-  const response = await client.get('/fakeApi/todos')
-  dispatch(todosLoaded(response.todos))
-}
+  dispatch(todosLoading());
+  const response = await client.get("/fakeApi/todos");
+  dispatch(todosLoaded(response.todos));
+};
 ```
 
 However, before we try to show this in the UI, we need to modify the fake server API to add an artificial delay to our API calls. Open up `src/api/server.js`, and look for this commented-out line around line 63:
@@ -9557,13 +9591,13 @@ However, before we try to show this in the UI, we need to modify the fake server
 ```js title="src/api/server.js"
 new Server({
   routes() {
-    this.namespace = 'fakeApi'
+    this.namespace = "fakeApi";
     // highlight-next-line
     // this.timing = 2000
 
     // omit other code
-  }
-})
+  },
+});
 ```
 
 If you uncomment that line, the fake server will add a 2-second delay to every API call our app makes, which gives us enough time to actually see a loading spinner being displayed.
@@ -9574,25 +9608,25 @@ Now, we can read the loading state value in our `<TodoList>` component, and show
 // omit imports
 
 const TodoList = () => {
-  const todoIds = useSelector(selectFilteredTodoIds)
+  const todoIds = useSelector(selectFilteredTodoIds);
   // highlight-start
-  const loadingStatus = useSelector(state => state.todos.status)
+  const loadingStatus = useSelector((state) => state.todos.status);
 
-  if (loadingStatus === 'loading') {
+  if (loadingStatus === "loading") {
     return (
       <div className="todo-list">
         <div className="loader" />
       </div>
-    )
+    );
   }
   // highlight-end
 
-  const renderedListItems = todoIds.map(todoId => {
-    return <TodoListItem key={todoId} id={todoId} />
-  })
+  const renderedListItems = todoIds.map((todoId) => {
+    return <TodoListItem key={todoId} id={todoId} />;
+  });
 
-  return <ul className="todo-list">{renderedListItems}</ul>
-}
+  return <ul className="todo-list">{renderedListItems}</ul>;
+};
 ```
 
 In a real app, we'd also want to handle API failure errors and other potential cases.
@@ -9665,147 +9699,147 @@ This means we typically organize our data as objects instead of arrays, where th
 ```js
 const rootState = {
   todos: {
-    status: 'idle',
+    status: "idle",
     // highlight-start
     entities: {
-      2: { id: 2, text: 'Buy milk', completed: false },
-      7: { id: 7, text: 'Clean room', completed: true }
-    }
+      2: { id: 2, text: "Buy milk", completed: false },
+      7: { id: 7, text: "Clean room", completed: true },
+    },
     // highlight-end
-  }
-}
+  },
+};
 ```
 
 Let's convert our todos slice to store the todos in a normalized form. This will require some significant changes to our reducer logic, as well as updating the selectors:
 
 ```js title="src/features/todos/todosSlice"
 const initialState = {
-  status: 'idle',
+  status: "idle",
   // highlight-next-line
-  entities: {}
-}
+  entities: {},
+};
 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
-    case 'todos/todoAdded': {
-      const todo = action.payload
+    case "todos/todoAdded": {
+      const todo = action.payload;
       // highlight-start
       return {
         ...state,
         entities: {
           ...state.entities,
-          [todo.id]: todo
-        }
-      }
+          [todo.id]: todo,
+        },
+      };
       // highlight-end
     }
-    case 'todos/todoToggled': {
+    case "todos/todoToggled": {
       // highlight-start
-      const todoId = action.payload
-      const todo = state.entities[todoId]
-      return {
-        ...state,
-        entities: {
-          ...state.entities,
-          [todoId]: {
-            ...todo,
-            completed: !todo.completed
-          }
-        }
-      }
-      // highlight-end
-    }
-    case 'todos/colorSelected': {
-      // highlight-start
-      const { color, todoId } = action.payload
-      const todo = state.entities[todoId]
+      const todoId = action.payload;
+      const todo = state.entities[todoId];
       return {
         ...state,
         entities: {
           ...state.entities,
           [todoId]: {
             ...todo,
-            color
-          }
-        }
-      }
+            completed: !todo.completed,
+          },
+        },
+      };
       // highlight-end
     }
-    case 'todos/todoDeleted': {
+    case "todos/colorSelected": {
       // highlight-start
-      const newEntities = { ...state.entities }
-      delete newEntities[action.payload]
+      const { color, todoId } = action.payload;
+      const todo = state.entities[todoId];
       return {
         ...state,
-        entities: newEntities
-      }
+        entities: {
+          ...state.entities,
+          [todoId]: {
+            ...todo,
+            color,
+          },
+        },
+      };
       // highlight-end
     }
-    case 'todos/allCompleted': {
+    case "todos/todoDeleted": {
       // highlight-start
-      const newEntities = { ...state.entities }
-      Object.values(newEntities).forEach(todo => {
+      const newEntities = { ...state.entities };
+      delete newEntities[action.payload];
+      return {
+        ...state,
+        entities: newEntities,
+      };
+      // highlight-end
+    }
+    case "todos/allCompleted": {
+      // highlight-start
+      const newEntities = { ...state.entities };
+      Object.values(newEntities).forEach((todo) => {
         newEntities[todo.id] = {
           ...todo,
-          completed: true
-        }
-      })
+          completed: true,
+        };
+      });
       return {
         ...state,
-        entities: newEntities
-      }
+        entities: newEntities,
+      };
       // highlight-end
     }
-    case 'todos/completedCleared': {
+    case "todos/completedCleared": {
       // highlight-start
-      const newEntities = { ...state.entities }
-      Object.values(newEntities).forEach(todo => {
+      const newEntities = { ...state.entities };
+      Object.values(newEntities).forEach((todo) => {
         if (todo.completed) {
-          delete newEntities[todo.id]
+          delete newEntities[todo.id];
         }
-      })
+      });
       return {
         ...state,
-        entities: newEntities
-      }
+        entities: newEntities,
+      };
       // highlight-end
     }
-    case 'todos/todosLoading': {
+    case "todos/todosLoading": {
       return {
         ...state,
-        status: 'loading'
-      }
+        status: "loading",
+      };
     }
-    case 'todos/todosLoaded': {
+    case "todos/todosLoaded": {
       // highlight-start
-      const newEntities = {}
-      action.payload.forEach(todo => {
-        newEntities[todo.id] = todo
-      })
+      const newEntities = {};
+      action.payload.forEach((todo) => {
+        newEntities[todo.id] = todo;
+      });
       return {
         ...state,
-        status: 'idle',
-        entities: newEntities
-      }
+        status: "idle",
+        entities: newEntities,
+      };
       // highlight-end
     }
     default:
-      return state
+      return state;
   }
 }
 
 // omit action creators
 
 // highlight-start
-const selectTodoEntities = state => state.todos.entities
+const selectTodoEntities = (state) => state.todos.entities;
 
-export const selectTodos = createSelector(selectTodoEntities, entities =>
+export const selectTodos = createSelector(selectTodoEntities, (entities) =>
   Object.values(entities)
-)
+);
 
 export const selectTodoById = (state, todoId) => {
-  return selectTodoEntities(state)[todoId]
-}
+  return selectTodoEntities(state)[todoId];
+};
 // highlight-end
 ```
 
@@ -9839,17 +9873,17 @@ Whenever you call `store.dispatch(action)`, `dispatch` will actually return the 
 We've already seen that the Redux Thunk middleware lets us pass a function to `dispatch`, calls the function, and then returns the result:
 
 ```js title="reduxThunkMiddleware.js"
-const reduxThunkMiddleware = storeAPI => next => action => {
+const reduxThunkMiddleware = (storeAPI) => (next) => (action) => {
   // If the "action" is actually a function instead...
-  if (typeof action === 'function') {
+  if (typeof action === "function") {
     // then call the function and pass `dispatch` and `getState` as arguments
     // Also, return whatever the thunk function returns
-    return action(storeAPI.dispatch, storeAPI.getState)
+    return action(storeAPI.dispatch, storeAPI.getState);
   }
 
   // Otherwise, it's a normal action - send it onwards
-  return next(action)
-}
+  return next(action);
+};
 ```
 
 This means that **we can write thunk functions that return a promise, and wait on that promise in our components**.
@@ -9858,31 +9892,31 @@ We already have our `<Header>` component dispatching a thunk to save new todo en
 
 ```js title="src/features/header/Header.js"
 const Header = () => {
-  const [text, setText] = useState('')
+  const [text, setText] = useState("");
   // highlight-next-line
-  const [status, setStatus] = useState('idle')
-  const dispatch = useDispatch()
+  const [status, setStatus] = useState("idle");
+  const dispatch = useDispatch();
 
-  const handleChange = e => setText(e.target.value)
+  const handleChange = (e) => setText(e.target.value);
 
   // highlight-start
-  const handleKeyDown = async e => {
+  const handleKeyDown = async (e) => {
     // If the user pressed the Enter key:
-    const trimmedText = text.trim()
+    const trimmedText = text.trim();
     if (e.which === 13 && trimmedText) {
       // Create and dispatch the thunk function itself
-      setStatus('loading')
+      setStatus("loading");
       // Wait for the promise returned by saveNewTodo
-      await dispatch(saveNewTodo(trimmedText))
+      await dispatch(saveNewTodo(trimmedText));
       // And clear out the text input
-      setText('')
-      setStatus('idle')
+      setText("");
+      setStatus("idle");
     }
-  }
+  };
 
-  let isLoading = status === 'loading'
-  let placeholder = isLoading ? '' : 'What needs to be done?'
-  let loader = isLoading ? <div className="loader" /> : null
+  let isLoading = status === "loading";
+  let placeholder = isLoading ? "" : "What needs to be done?";
+  let loader = isLoading ? <div className="loader" /> : null;
   // highlight-end
 
   return (
@@ -9900,10 +9934,10 @@ const Header = () => {
       // highlight-next-line
       {loader}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 ```
 
 Now, if we add a todo, we'll see a spinner in the header:
@@ -9965,6 +9999,7 @@ id: part-8-modern-redux
 title: 'Redux Fundamentals, Part 8: Modern Redux with Redux Toolkit'
 sidebar_label: 'Modern Redux with Redux Toolkit'
 description: 'The official Fundamentals tutorial for Redux: learn the modern way to write Redux logic'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -10048,30 +10083,30 @@ npm install @reduxjs/toolkit
 We've gone through a few iterations of setup logic for our Redux store. Currently, it looks like this:
 
 ```js title="src/rootReducer.js"
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
 
-import todosReducer from './features/todos/todosSlice'
-import filtersReducer from './features/filters/filtersSlice'
+import todosReducer from "./features/todos/todosSlice";
+import filtersReducer from "./features/filters/filtersSlice";
 
 const rootReducer = combineReducers({
   // Define a top-level state field named `todos`, handled by `todosReducer`
   todos: todosReducer,
-  filters: filtersReducer
-})
+  filters: filtersReducer,
+});
 
-export default rootReducer
+export default rootReducer;
 ```
 
 ```js title="src/store.js"
-import { createStore, applyMiddleware } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import rootReducer from './reducer'
+import { createStore, applyMiddleware } from "redux";
+import thunkMiddleware from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+import rootReducer from "./reducer";
 
-const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware))
+const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware));
 
-const store = createStore(rootReducer, composedEnhancer)
-export default store
+const store = createStore(rootReducer, composedEnhancer);
+export default store;
 ```
 
 Notice that the setup process takes several steps. We have to:
@@ -10090,22 +10125,22 @@ It would be nice if we could cut down the number of steps here.
 
 ```js title="src/store.js"
 // highlight-next-line
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-import todosReducer from './features/todos/todosSlice'
-import filtersReducer from './features/filters/filtersSlice'
+import todosReducer from "./features/todos/todosSlice";
+import filtersReducer from "./features/filters/filtersSlice";
 
 // highlight-start
 const store = configureStore({
   reducer: {
     // Define a top-level state field named `todos`, handled by `todosReducer`
     todos: todosReducer,
-    filters: filtersReducer
-  }
-})
+    filters: filtersReducer,
+  },
+});
 // highlight-end
 
-export default store
+export default store;
 ```
 
 That one call to `configureStore` did all the work for us:
@@ -10124,13 +10159,13 @@ Let's see what happens now if we accidentally mutate some of the state. What if 
 export default function todosReducer(state = initialState, action) {
   switch (action.type) {
     // omit other cases
-    case 'todos/todosLoading': {
+    case "todos/todosLoading": {
       // ❌ WARNING: example only - don't do this in a normal reducer!
-      state.status = 'loading'
-      return state
+      state.status = "loading";
+      return state;
     }
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -10174,34 +10209,34 @@ As we've added new features to our app, the slice files have gotten bigger and m
 Let's look at a small standalone example first.
 
 ```js title="createSlice  example"
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = []
+const initialState = [];
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     todoAdded(state, action) {
       // ✅ This "mutating" code is okay inside of createSlice!
-      state.push(action.payload)
+      state.push(action.payload);
     },
     todoToggled(state, action) {
-      const todo = state.find(todo => todo.id === action.payload)
-      todo.completed = !todo.completed
+      const todo = state.find((todo) => todo.id === action.payload);
+      todo.completed = !todo.completed;
     },
     todosLoading(state, action) {
       return {
         ...state,
-        status: 'loading'
-      }
-    }
-  }
-})
+        status: "loading",
+      };
+    },
+  },
+});
 
-export const { todoAdded, todoToggled, todosLoading } = todosSlice.actions
+export const { todoAdded, todoToggled, todosLoading } = todosSlice.actions;
 
-export default todosSlice.reducer
+export default todosSlice.reducer;
 ```
 
 There's several things to see in this example:
@@ -10217,7 +10252,7 @@ The generated action creators will be available as `slice.actions.todoAdded`, an
 So what do these auto-generated action objects look like? Let's try calling one of them and logging the action to see:
 
 ```js
-console.log(todoToggled(42))
+console.log(todoToggled(42));
 // {type: 'todos/todoToggled', payload: 42}
 ```
 
@@ -10237,7 +10272,7 @@ In Redux, **our reducers are _never_ allowed to mutate the original / current st
 
 ```js
 // ❌ Illegal - by default, this will mutate the state!
-state.value = 123
+state.value = 123;
 ```
 
 :::
@@ -10252,8 +10287,8 @@ So if we can't change the originals, how do we return an updated state?
 // This is safe, because we made a copy
 return {
   ...state,
-  value: 123
-}
+  value: 123,
+};
 ```
 
 :::
@@ -10276,11 +10311,11 @@ function handwrittenReducer(state, action) {
         ...state.first.second,
         [action.someId]: {
           ...state.first.second[action.someId],
-          fourth: action.someValue
-        }
-      }
-    }
-  }
+          fourth: action.someValue,
+        },
+      },
+    },
+  };
 }
 ```
 
@@ -10288,7 +10323,7 @@ You can write code that looks like this:
 
 ```js
 function reducerWithImmer(state, action) {
-  state.first.second[action.someId].fourth = action.someValue
+  state.first.second[action.someId].fourth = action.someValue;
 }
 ```
 
@@ -10306,7 +10341,7 @@ Immer still lets us write immutable updates by hand and return the new value our
 
 ```js
 // can mix "mutating" and "immutable" code inside of Immer:
-state.todos = state.todos.filter(todo => todo.id !== action.payload)
+state.todos = state.todos.filter((todo) => todo.id !== action.payload);
 ```
 
 ### Converting the Todos Reducer
@@ -10315,33 +10350,33 @@ Let's start converting our todos slice file to use `createSlice` instead. We'll 
 
 ```js title="src/features/todos/todosSlice.js"
 // highlight-next-line
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  status: 'idle',
-  entities: {}
-}
+  status: "idle",
+  entities: {},
+};
 
 // highlight-start
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     todoAdded(state, action) {
-      const todo = action.payload
-      state.entities[todo.id] = todo
+      const todo = action.payload;
+      state.entities[todo.id] = todo;
     },
     todoToggled(state, action) {
-      const todoId = action.payload
-      const todo = state.entities[todoId]
-      todo.completed = !todo.completed
-    }
-  }
-})
+      const todoId = action.payload;
+      const todo = state.entities[todoId];
+      todo.completed = !todo.completed;
+    },
+  },
+});
 
-export const { todoAdded, todoToggled } = todosSlice.actions
+export const { todoAdded, todoToggled } = todosSlice.actions;
 
-export default todosSlice.reducer
+export default todosSlice.reducer;
 // highlight-end
 ```
 
@@ -10351,41 +10386,41 @@ Let's add a couple more cases to this reducer.
 
 ```js title="src/features/todos/todosSlice.js"
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     todoAdded(state, action) {
-      const todo = action.payload
-      state.entities[todo.id] = todo
+      const todo = action.payload;
+      state.entities[todo.id] = todo;
     },
     todoToggled(state, action) {
-      const todoId = action.payload
-      const todo = state.entities[todoId]
-      todo.completed = !todo.completed
+      const todoId = action.payload;
+      const todo = state.entities[todoId];
+      todo.completed = !todo.completed;
     },
     // highlight-start
     todoColorSelected: {
       reducer(state, action) {
-        const { color, todoId } = action.payload
-        state.entities[todoId].color = color
+        const { color, todoId } = action.payload;
+        state.entities[todoId].color = color;
       },
       prepare(todoId, color) {
         return {
-          payload: { todoId, color }
-        }
-      }
+          payload: { todoId, color },
+        };
+      },
     },
     todoDeleted(state, action) {
-      delete state.entities[action.payload]
-    }
+      delete state.entities[action.payload];
+    },
     // highlight-end
-  }
-})
+  },
+});
 
 export const { todoAdded, todoToggled, todoColorSelected, todoDeleted } =
-  todosSlice.actions
+  todosSlice.actions;
 
-export default todosSlice.reducer
+export default todosSlice.reducer;
 ```
 
 The action creators for `todoAdded` and `todoToggled` only need to take a single parameter, like an entire todo object or a todo ID. But, what if we need to pass in multiple parameters, or do some of that "preparation" logic we talked about like generating a unique ID?
@@ -10433,38 +10468,38 @@ Let's replace our `fetchTodos` thunk by generating a thunk with `createAsyncThun
 
 ```js title="src/features/todos/todosSlice.js"
 // highlight-next-line
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // omit imports and state
 
 // highlight-start
-export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
-  const response = await client.get('/fakeApi/todos')
-  return response.todos
-})
+export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
+  const response = await client.get("/fakeApi/todos");
+  return response.todos;
+});
 // highlight-end
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     // omit reducer cases
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state, action) => {
-        state.status = 'loading'
+        state.status = "loading";
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
-        const newEntities = {}
-        action.payload.forEach(todo => {
-          newEntities[todo.id] = todo
-        })
-        state.entities = newEntities
-        state.status = 'idle'
-      })
-  }
-})
+        const newEntities = {};
+        action.payload.forEach((todo) => {
+          newEntities[todo.id] = todo;
+        });
+        state.entities = newEntities;
+        state.status = "idle";
+      });
+  },
+});
 
 // omit exports
 ```
@@ -10486,46 +10521,49 @@ As one more example, let's convert `saveNewTodo`. This thunk takes the `text` of
 ```js title="src/features/todos/todosSlice.js"
 // omit imports
 
-export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
-  const response = await client.get('/fakeApi/todos')
-  return response.todos
-})
+export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
+  const response = await client.get("/fakeApi/todos");
+  return response.todos;
+});
 
 // highlight-start
-export const saveNewTodo = createAsyncThunk('todos/saveNewTodo', async text => {
-  const initialTodo = { text }
-  const response = await client.post('/fakeApi/todos', { todo: initialTodo })
-  return response.todo
-})
+export const saveNewTodo = createAsyncThunk(
+  "todos/saveNewTodo",
+  async (text) => {
+    const initialTodo = { text };
+    const response = await client.post("/fakeApi/todos", { todo: initialTodo });
+    return response.todo;
+  }
+);
 // highlight-end
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     // omit case reducers
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state, action) => {
-        state.status = 'loading'
+        state.status = "loading";
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
-        const newEntities = {}
-        action.payload.forEach(todo => {
-          newEntities[todo.id] = todo
-        })
-        state.entities = newEntities
-        state.status = 'idle'
+        const newEntities = {};
+        action.payload.forEach((todo) => {
+          newEntities[todo.id] = todo;
+        });
+        state.entities = newEntities;
+        state.status = "idle";
       })
       // highlight-start
       .addCase(saveNewTodo.fulfilled, (state, action) => {
-        const todo = action.payload
-        state.entities[todo.id] = todo
-      })
+        const todo = action.payload;
+        state.entities[todo.id] = todo;
+      });
     // highlight-end
-  }
-})
+  },
+});
 
 // omit exports and selectors
 ```
@@ -10572,22 +10610,22 @@ Let's see how we can use these in our todos slice:
 import {
   createSlice,
   createAsyncThunk,
-  createEntityAdapter
-} from '@reduxjs/toolkit'
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
 // omit some imports
 
 // highlight-start
-const todosAdapter = createEntityAdapter()
+const todosAdapter = createEntityAdapter();
 
 const initialState = todosAdapter.getInitialState({
-  status: 'idle'
-})
+  status: "idle",
+});
 // highlight-end
 
 // omit thunks
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     // omit some reducers
@@ -10597,29 +10635,29 @@ const todosSlice = createSlice({
     // highlight-end
     completedTodosCleared(state, action) {
       const completedIds = Object.values(state.entities)
-        .filter(todo => todo.completed)
-        .map(todo => todo.id)
+        .filter((todo) => todo.completed)
+        .map((todo) => todo.id);
       // highlight-start
       // Use an adapter function as a "mutating" update helper
-      todosAdapter.removeMany(state, completedIds)
+      todosAdapter.removeMany(state, completedIds);
       // highlight-end
-    }
+    },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state, action) => {
-        state.status = 'loading'
+        state.status = "loading";
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
-        todosAdapter.setAll(state, action.payload)
-        state.status = 'idle'
+        todosAdapter.setAll(state, action.payload);
+        state.status = "idle";
       })
       // highlight-start
       // Use another adapter function as a reducer to add a todo
-      .addCase(saveNewTodo.fulfilled, todosAdapter.addOne)
+      .addCase(saveNewTodo.fulfilled, todosAdapter.addOne);
     // highlight-end
-  }
-})
+  },
+});
 
 // omit selectors
 ```
@@ -10635,74 +10673,77 @@ import {
   createSlice,
   createSelector,
   createAsyncThunk,
-  createEntityAdapter
-} from '@reduxjs/toolkit'
-import { client } from '../../api/client'
-import { StatusFilters } from '../filters/filtersSlice'
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
+import { client } from "../../api/client";
+import { StatusFilters } from "../filters/filtersSlice";
 
-const todosAdapter = createEntityAdapter()
+const todosAdapter = createEntityAdapter();
 
 const initialState = todosAdapter.getInitialState({
-  status: 'idle'
-})
+  status: "idle",
+});
 
 // Thunk functions
-export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
-  const response = await client.get('/fakeApi/todos')
-  return response.todos
-})
+export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
+  const response = await client.get("/fakeApi/todos");
+  return response.todos;
+});
 
-export const saveNewTodo = createAsyncThunk('todos/saveNewTodo', async text => {
-  const initialTodo = { text }
-  const response = await client.post('/fakeApi/todos', { todo: initialTodo })
-  return response.todo
-})
+export const saveNewTodo = createAsyncThunk(
+  "todos/saveNewTodo",
+  async (text) => {
+    const initialTodo = { text };
+    const response = await client.post("/fakeApi/todos", { todo: initialTodo });
+    return response.todo;
+  }
+);
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     todoToggled(state, action) {
-      const todoId = action.payload
-      const todo = state.entities[todoId]
-      todo.completed = !todo.completed
+      const todoId = action.payload;
+      const todo = state.entities[todoId];
+      todo.completed = !todo.completed;
     },
     todoColorSelected: {
       reducer(state, action) {
-        const { color, todoId } = action.payload
-        state.entities[todoId].color = color
+        const { color, todoId } = action.payload;
+        state.entities[todoId].color = color;
       },
       prepare(todoId, color) {
         return {
-          payload: { todoId, color }
-        }
-      }
+          payload: { todoId, color },
+        };
+      },
     },
     todoDeleted: todosAdapter.removeOne,
     allTodosCompleted(state, action) {
-      Object.values(state.entities).forEach(todo => {
-        todo.completed = true
-      })
+      Object.values(state.entities).forEach((todo) => {
+        todo.completed = true;
+      });
     },
     completedTodosCleared(state, action) {
       const completedIds = Object.values(state.entities)
-        .filter(todo => todo.completed)
-        .map(todo => todo.id)
-      todosAdapter.removeMany(state, completedIds)
-    }
+        .filter((todo) => todo.completed)
+        .map((todo) => todo.id);
+      todosAdapter.removeMany(state, completedIds);
+    },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state, action) => {
-        state.status = 'loading'
+        state.status = "loading";
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
-        todosAdapter.setAll(state, action.payload)
-        state.status = 'idle'
+        todosAdapter.setAll(state, action.payload);
+        state.status = "idle";
       })
-      .addCase(saveNewTodo.fulfilled, todosAdapter.addOne)
-  }
-})
+      .addCase(saveNewTodo.fulfilled, todosAdapter.addOne);
+  },
+});
 
 export const {
   allTodosCompleted,
@@ -10710,14 +10751,14 @@ export const {
   todoAdded,
   todoColorSelected,
   todoDeleted,
-  todoToggled
-} = todosSlice.actions
+  todoToggled,
+} = todosSlice.actions;
 
-export default todosSlice.reducer
+export default todosSlice.reducer;
 
 // highlight-start
 export const { selectAll: selectTodos, selectById: selectTodoById } =
-  todosAdapter.getSelectors(state => state.todos)
+  todosAdapter.getSelectors((state) => state.todos);
 // highlight-end
 
 export const selectTodoIds = createSelector(
@@ -10725,39 +10766,39 @@ export const selectTodoIds = createSelector(
   selectTodos,
   // Then, an "output selector" that receives all the input results as arguments
   // and returns a final result value
-  todos => todos.map(todo => todo.id)
-)
+  (todos) => todos.map((todo) => todo.id)
+);
 
 export const selectFilteredTodos = createSelector(
   // First input selector: all todos
   selectTodos,
   // Second input selector: all filter values
-  state => state.filters,
+  (state) => state.filters,
   // Output selector: receives both values
   (todos, filters) => {
-    const { status, colors } = filters
-    const showAllCompletions = status === StatusFilters.All
+    const { status, colors } = filters;
+    const showAllCompletions = status === StatusFilters.All;
     if (showAllCompletions && colors.length === 0) {
-      return todos
+      return todos;
     }
 
-    const completedStatus = status === StatusFilters.Completed
+    const completedStatus = status === StatusFilters.Completed;
     // Return either active or completed todos based on filter
-    return todos.filter(todo => {
+    return todos.filter((todo) => {
       const statusMatches =
-        showAllCompletions || todo.completed === completedStatus
-      const colorMatches = colors.length === 0 || colors.includes(todo.color)
-      return statusMatches && colorMatches
-    })
+        showAllCompletions || todo.completed === completedStatus;
+      const colorMatches = colors.length === 0 || colors.includes(todo.color);
+      return statusMatches && colorMatches;
+    });
   }
-)
+);
 
 export const selectFilteredTodoIds = createSelector(
   // Pass our other memoized selector as an input
   selectFilteredTodos,
   // And derive data in the output selector
-  filteredTodos => filteredTodos.map(todo => todo.id)
-)
+  (filteredTodos) => filteredTodos.map((todo) => todo.id)
+);
 ```
 
 We call `todosAdapter.getSelectors`, and pass in a `state => state.todos` selector that returns this slice of state. From there, the adapter generates a `selectAll` selector that takes the _entire_ Redux state tree, as usual, and loops over `state.todos.entities` and `state.todos.ids` to give us the complete array of todo objects. Since `selectAll` doesn't tell us _what_ we're selecting, we can use ES6 destructuring syntax to rename the function to `selectTodos`. Similarly, we can rename `selectById` to `selectTodoById`.
@@ -10844,6 +10885,7 @@ id: part-1-overview-concepts
 title: 'Redux Essentials, Part 1: Redux Overview and Concepts'
 sidebar_label: 'Redux Overview and Concepts'
 description: 'The official Essentials tutorial for Redux: learn how to use Redux, the right way'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -10953,19 +10995,19 @@ Let's start by looking at a small React counter component. It tracks a number in
 ```jsx
 function Counter() {
   // State: a counter value
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(0);
 
   // Action: code that causes an update to the state when something happens
   const increment = () => {
-    setCounter(prevCounter => prevCounter + 1)
-  }
+    setCounter((prevCounter) => prevCounter + 1);
+  };
 
   // View: the UI definition
   return (
     <div>
       Value: {counter} <button onClick={increment}>Increment</button>
     </div>
-  )
+  );
 }
 ```
 
@@ -10999,14 +11041,14 @@ This is the basic idea behind Redux: a single centralized place to contain the g
 JavaScript objects and arrays are all mutable by default. If I create an object, I can change the contents of its fields. If I create an array, I can change the contents as well:
 
 ```js
-const obj = { a: 1, b: 2 }
+const obj = { a: 1, b: 2 };
 // still the same object outside, but the contents have changed
-obj.b = 3
+obj.b = 3;
 
-const arr = ['a', 'b']
+const arr = ["a", "b"];
 // In the same way, we can change the contents of this array
-arr.push('c')
-arr[1] = 'd'
+arr.push("c");
+arr[1] = "d";
 ```
 
 This is called _mutating_ the object or array. It's the same object or array reference in memory, but now the contents inside the object have changed.
@@ -11019,10 +11061,10 @@ We can do this by hand using JavaScript's array / object spread operators, as we
 const obj = {
   a: {
     // To safely update obj.a.c, we have to copy each piece
-    c: 3
+    c: 3,
   },
-  b: 2
-}
+  b: 2,
+};
 
 const obj2 = {
   // copy obj
@@ -11032,18 +11074,18 @@ const obj2 = {
     // copy obj.a
     ...obj.a,
     // overwrite c
-    c: 42
-  }
-}
+    c: 42,
+  },
+};
 
-const arr = ['a', 'b']
+const arr = ["a", "b"];
 // Create a new copy of arr, with "c" appended to the end
-const arr2 = arr.concat('c')
+const arr2 = arr.concat("c");
 
 // or, we can make a copy of the original array:
-const arr3 = arr.slice()
+const arr3 = arr.slice();
 // and mutate the copy:
-arr3.push('c')
+arr3.push("c");
 ```
 
 **Redux expects that all state updates are done immutably**. We'll look at where and how this is important a bit later, as well as some easier ways to write immutable update logic.
@@ -11073,9 +11115,9 @@ A typical action object might look like this:
 
 ```js
 const addTodoAction = {
-  type: 'todos/todoAdded',
-  payload: 'Buy milk'
-}
+  type: "todos/todoAdded",
+  payload: "Buy milk",
+};
 ```
 
 #### Action Creators
@@ -11083,12 +11125,12 @@ const addTodoAction = {
 An **action creator** is a function that creates and returns an action object. We typically use these so we don't have to write the action object by hand every time:
 
 ```js
-const addTodo = text => {
+const addTodo = (text) => {
   return {
-    type: 'todos/todoAdded',
-    payload: text
-  }
-}
+    type: "todos/todoAdded",
+    payload: text,
+  };
+};
 ```
 
 #### Reducers
@@ -11118,20 +11160,20 @@ The logic inside reducer functions typically follows the same series of steps:
 Here's a small example of a reducer, showing the steps that each reducer should follow:
 
 ```js
-const initialState = { value: 0 }
+const initialState = { value: 0 };
 
 function counterReducer(state = initialState, action) {
   // Check to see if the reducer cares about this action
-  if (action.type === 'counter/increment') {
+  if (action.type === "counter/increment") {
     // If so, make a copy of `state`
     return {
       ...state,
       // and update the copy with the new value
-      value: state.value + 1
-    }
+      value: state.value + 1,
+    };
   }
   // otherwise return the existing state unchanged
-  return state
+  return state;
 }
 ```
 
@@ -11151,21 +11193,21 @@ The first time that the callback runs, there isn't a `previousResult` available,
 If we wanted to add together an array of numbers to find out what the total is, we could write a reduce callback that looks like this:
 
 ```js
-const numbers = [2, 5, 8]
+const numbers = [2, 5, 8];
 
 const addNumbers = (previousResult, currentItem) => {
-  console.log({ previousResult, currentItem })
-  return previousResult + currentItem
-}
+  console.log({ previousResult, currentItem });
+  return previousResult + currentItem;
+};
 
-const initialValue = 0
+const initialValue = 0;
 
-const total = numbers.reduce(addNumbers, initialValue)
+const total = numbers.reduce(addNumbers, initialValue);
 // {previousResult: 0, currentItem: 2}
 // {previousResult: 2, currentItem: 5}
 // {previousResult: 7, currentItem: 8}
 
-console.log(total)
+console.log(total);
 // 15
 ```
 
@@ -11177,15 +11219,15 @@ If we were to create an array of Redux actions, call `reduce()`, and pass in a r
 
 ```js
 const actions = [
-  { type: 'counter/increment' },
-  { type: 'counter/increment' },
-  { type: 'counter/increment' }
-]
+  { type: "counter/increment" },
+  { type: "counter/increment" },
+  { type: "counter/increment" },
+];
 
-const initialState = { value: 0 }
+const initialState = { value: 0 };
 
-const finalResult = actions.reduce(counterReducer, initialState)
-console.log(finalResult)
+const finalResult = actions.reduce(counterReducer, initialState);
+console.log(finalResult);
 // {value: 3}
 ```
 
@@ -11200,11 +11242,11 @@ The current Redux application state lives in an object called the **store** .
 The store is created by passing in a reducer, and has a method called `getState` that returns the current state value:
 
 ```js
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-const store = configureStore({ reducer: counterReducer })
+const store = configureStore({ reducer: counterReducer });
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 0}
 ```
 
@@ -11213,9 +11255,9 @@ console.log(store.getState())
 The Redux store has a method called `dispatch`. **The only way to update the state is to call `store.dispatch()` and pass in an action object**. The store will run its reducer function and save the new state value inside, and we can call `getState()` to retrieve the updated value:
 
 ```js
-store.dispatch({ type: 'counter/increment' })
+store.dispatch({ type: "counter/increment" });
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 1}
 ```
 
@@ -11226,13 +11268,13 @@ We typically call action creators to dispatch the right action:
 ```js
 const increment = () => {
   return {
-    type: 'counter/increment'
-  }
-}
+    type: "counter/increment",
+  };
+};
 
-store.dispatch(increment())
+store.dispatch(increment());
 
-console.log(store.getState())
+console.log(store.getState());
 // {value: 2}
 ```
 
@@ -11241,10 +11283,10 @@ console.log(store.getState())
 **Selectors** are functions that know how to extract specific pieces of information from a store state value. As an application grows bigger, this can help avoid repeating logic as different parts of the app need to read the same data:
 
 ```js
-const selectCounterValue = state => state.value
+const selectCounterValue = (state) => state.value;
 
-const currentValue = selectCounterValue(store.getState())
-console.log(currentValue)
+const currentValue = selectCounterValue(store.getState());
+console.log(currentValue);
 // 2
 ```
 
@@ -11308,6 +11350,7 @@ id: part-2-app-structure
 title: 'Redux Essentials, Part 2: Redux App Structure'
 sidebar_label: 'Redux App Structure'
 description: 'The official Redux Essentials tutorial: learn the structure of a typical React + Redux app'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -11360,7 +11403,7 @@ On the right, we can see that our Redux store is starting off with an app state 
 ```js
 {
   counter: {
-    value: 0
+    value: 0;
   }
 }
 ```
@@ -11430,14 +11473,14 @@ Let's start by looking at how the Redux store is created.
 Open up `app/store.js`, which should look like this:
 
 ```js title="app/store.js"
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "../features/counter/counterSlice";
 
 export default configureStore({
   reducer: {
-    counter: counterReducer
-  }
-})
+    counter: counterReducer,
+  },
+});
 ```
 
 The Redux store is created using the `configureStore` function from Redux Toolkit. `configureStore` requires that we pass in a `reducer` argument.
@@ -11457,18 +11500,18 @@ Redux allows store setup to be customized with different kinds of plugins ("midd
 For example, in a blogging app, our store setup might look like:
 
 ```js
-import { configureStore } from '@reduxjs/toolkit'
-import usersReducer from '../features/users/usersSlice'
-import postsReducer from '../features/posts/postsSlice'
-import commentsReducer from '../features/comments/commentsSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import usersReducer from "../features/users/usersSlice";
+import postsReducer from "../features/posts/postsSlice";
+import commentsReducer from "../features/comments/commentsSlice";
 
 export default configureStore({
   reducer: {
     users: usersReducer,
     posts: postsReducer,
-    comments: commentsReducer
-  }
-})
+    comments: commentsReducer,
+  },
+});
 ```
 
 In that example, `state.users`, `state.posts`, and `state.comments` are each a separate "slice" of the Redux state. Since `usersReducer` is responsible for updating the `state.users` slice, we refer to it as a "slice reducer" function.
@@ -11484,8 +11527,8 @@ function rootReducer(state = {}, action) {
   return {
     users: usersReducer(state.users, action),
     posts: postsReducer(state.posts, action),
-    comments: commentsReducer(state.comments, action)
-  }
+    comments: commentsReducer(state.comments, action),
+  };
 }
 ```
 
@@ -11497,8 +11540,8 @@ Redux has a function called [`combineReducers`](../../api/combineReducers.md) th
 const rootReducer = combineReducers({
   users: usersReducer,
   posts: postsReducer,
-  comments: commentsReducer
-})
+  comments: commentsReducer,
+});
 ```
 
 When we pass an object of slice reducers to `configureStore`, it passes those to `combineReducers` for us to generate the root reducer.
@@ -11507,8 +11550,8 @@ As we saw earlier, you can also pass a reducer function directly as the `reducer
 
 ```js
 const store = configureStore({
-  reducer: rootReducer
-})
+  reducer: rootReducer,
+});
 ```
 
 </DetailedExplanation>
@@ -11518,33 +11561,33 @@ const store = configureStore({
 Since we know that the `counterReducer` function is coming from `features/counter/counterSlice.js`, let's see what's in that file, piece by piece.
 
 ```js title="features/counter/counterSlice.js"
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState: {
-    value: 0
+    value: 0,
   },
   reducers: {
-    increment: state => {
+    increment: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.value += 1
+      state.value += 1;
     },
-    decrement: state => {
-      state.value -= 1
+    decrement: (state) => {
+      state.value -= 1;
     },
     incrementByAmount: (state, action) => {
-      state.value += action.payload
-    }
-  }
-})
+      state.value += action.payload;
+    },
+  },
+});
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
-export default counterSlice.reducer
+export default counterSlice.reducer;
 ```
 
 Earlier, we saw that clicking the different buttons in the UI dispatched three different Redux action types:
@@ -11566,7 +11609,7 @@ We can see here that there are three reducer functions, and that corresponds to 
 `createSlice` automatically generates action creators with the same names as the reducer functions we wrote. We can check that by calling one of them and seeing what it returns:
 
 ```js
-console.log(counterSlice.actions.increment())
+console.log(counterSlice.actions.increment());
 // {type: "counter/increment"}
 ```
 
@@ -11576,8 +11619,8 @@ It also generates the slice reducer function that knows how to respond to all th
 const newState = counterSlice.reducer(
   { value: 10 },
   counterSlice.actions.increment()
-)
-console.log(newState)
+);
+console.log(newState);
 // {value: 11}
 ```
 
@@ -11606,7 +11649,7 @@ In Redux, **our reducers are _never_ allowed to mutate the original / current st
 
 ```js
 // ❌ Illegal - by default, this will mutate the state!
-state.value = 123
+state.value = 123;
 ```
 
 :::
@@ -11629,8 +11672,8 @@ So if we can't change the originals, how do we return an updated state?
 // ✅ This is safe, because we made a copy
 return {
   ...state,
-  value: 123
-}
+  value: 123,
+};
 ```
 
 :::
@@ -11655,11 +11698,11 @@ function handwrittenReducer(state, action) {
         ...state.first.second,
         [action.someId]: {
           ...state.first.second[action.someId],
-          fourth: action.someValue
-        }
-      }
-    }
-  }
+          fourth: action.someValue,
+        },
+      },
+    },
+  };
 }
 ```
 
@@ -11667,7 +11710,7 @@ You can write code that looks like this:
 
 ```js
 function reducerWithImmer(state, action) {
-  state.first.second[action.someId].fourth = action.someValue
+  state.first.second[action.someId].fourth = action.someValue;
 }
 ```
 
@@ -11685,27 +11728,27 @@ With that in mind, let's go back and look at the actual reducers from the counte
 
 ```js title="features/counter/counterSlice.js"
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState: {
-    value: 0
+    value: 0,
   },
   reducers: {
-    increment: state => {
+    increment: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.value += 1
+      state.value += 1;
     },
-    decrement: state => {
-      state.value -= 1
+    decrement: (state) => {
+      state.value -= 1;
     },
     incrementByAmount: (state, action) => {
       // highlight-next-line
-      state.value += action.payload
-    }
-  }
-})
+      state.value += action.payload;
+    },
+  },
+});
 ```
 
 We can see that the `increment` reducer will always add 1 to `state.value`. Because Immer knows we've made changes to the draft `state` object, we don't have to actually return anything here. In the same way, the `decrement` reducer subtracts 1.
@@ -11736,17 +11779,17 @@ The next function that's exported from `counterSlice` is an example of a thunk a
 // It can be dispatched like a regular action: `dispatch(incrementAsync(10))`.
 // This will call the thunk with the `dispatch` function as the first argument.
 // Async code can then be executed and other actions can be dispatched
-export const incrementAsync = amount => dispatch => {
+export const incrementAsync = (amount) => (dispatch) => {
   setTimeout(() => {
-    dispatch(incrementByAmount(amount))
-  }, 1000)
-}
+    dispatch(incrementByAmount(amount));
+  }, 1000);
+};
 ```
 
 We can use them the same way we use a typical Redux action creator:
 
 ```js
-store.dispatch(incrementAsync(5))
+store.dispatch(incrementAsync(5));
 ```
 
 However, using thunks requires that the `redux-thunk` _middleware_ (a type of plugin for Redux) be added to the Redux store when it's created. Fortunately, Redux Toolkit's `configureStore` function already sets that up for us automatically, so we can go ahead and use thunks here.
@@ -11755,19 +11798,19 @@ When you need to make AJAX calls to fetch data from the server, you can put that
 
 ```js title="features/counter/counterSlice.js"
 // the outside "thunk creator" function
-const fetchUserById = userId => {
+const fetchUserById = (userId) => {
   // the inside "thunk function"
   return async (dispatch, getState) => {
     try {
       // make an async call in the thunk
-      const user = await userAPI.fetchById(userId)
+      const user = await userAPI.fetchById(userId);
       // dispatch an action when we get the response back
-      dispatch(userLoaded(user))
+      dispatch(userLoaded(user));
     } catch (err) {
       // If something went wrong, handle it here
     }
-  }
-}
+  };
+};
 ```
 
 We'll see thunks being used in [Part 5: Async Logic and Data Fetching](./part-5-async-logic.md)
@@ -11779,11 +11822,11 @@ We know that we're not allowed to put any kind of async logic in reducers. But, 
 If we have access to the Redux store, we could write some async code and call `store.dispatch()` when we're done:
 
 ```js
-const store = configureStore({ reducer: counterReducer })
+const store = configureStore({ reducer: counterReducer });
 
 setTimeout(() => {
-  store.dispatch(increment())
-}, 250)
+  store.dispatch(increment());
+}, 250);
 ```
 
 But, in a real Redux app, we're not allowed to import the store into other files, especially in our React components, because it makes that code harder to test and reuse.
@@ -11797,14 +11840,14 @@ The Redux Thunk middleware modifies the store to let you pass functions into `di
 ```js
 const thunkMiddleware =
   ({ dispatch, getState }) =>
-  next =>
-  action => {
-    if (typeof action === 'function') {
-      return action(dispatch, getState)
+  (next) =>
+  (action) => {
+    if (typeof action === "function") {
+      return action(dispatch, getState);
     }
 
-    return next(action)
-  }
+    return next(action);
+  };
 ```
 
 It looks to see if the "action" that was passed into `dispatch` is actually a function instead of a plain action object. If it's actually a function, it calls the function, and returns the result. Otherwise, since this must be an action object, it passes the action forward to the store.
@@ -11828,21 +11871,21 @@ Earlier, we saw what a standalone React `<Counter>` component looks like. Our Re
 We'll start by looking at the `Counter.js` component file:
 
 ```jsx title="features/counter/Counter.js"
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
   increment,
   incrementByAmount,
   incrementAsync,
-  selectCount
-} from './counterSlice'
-import styles from './Counter.module.css'
+  selectCount,
+} from "./counterSlice";
+import styles from "./Counter.module.css";
 
 export function Counter() {
-  const count = useSelector(selectCount)
-  const dispatch = useDispatch()
-  const [incrementAmount, setIncrementAmount] = useState('2')
+  const count = useSelector(selectCount);
+  const dispatch = useDispatch();
+  const [incrementAmount, setIncrementAmount] = useState("2");
 
   return (
     <div>
@@ -11867,7 +11910,7 @@ export function Counter() {
       </div>
       {/* omit additional rendering output here */}
     </div>
-  )
+  );
 }
 ```
 
@@ -11891,14 +11934,14 @@ Our `counterSlice.js` has this selector function at the bottom:
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state) => state.counter.value)`
-export const selectCount = state => state.counter.value
+export const selectCount = (state) => state.counter.value;
 ```
 
 If we had access to a Redux store, we could retrieve the current counter value as:
 
 ```js
-const count = selectCount(store.getState())
-console.log(count)
+const count = selectCount(store.getState());
+console.log(count);
 // 0
 ```
 
@@ -11907,13 +11950,13 @@ Our components can't talk to the Redux store directly, because we're not allowed
 So, we can get the current store counter value by doing:
 
 ```js
-const count = useSelector(selectCount)
+const count = useSelector(selectCount);
 ```
 
 We don't have to _only_ use selectors that have already been exported, either. For example, we could write a selector function as an inline argument to `useSelector`:
 
 ```js
-const countPlusTwo = useSelector(state => state.counter.value + 2)
+const countPlusTwo = useSelector((state) => state.counter.value + 2);
 ```
 
 Any time an action has been dispatched and the Redux store has been updated, `useSelector` will re-run our selector function. If the selector returns a different value than last time, `useSelector` will make sure our component re-renders with the new value.
@@ -11925,7 +11968,7 @@ Similarly, we know that if we had access to a Redux store, we could dispatch act
 The `useDispatch` hook does that for us, and gives us the actual `dispatch` method from the Redux store:
 
 ```js
-const dispatch = useDispatch()
+const dispatch = useDispatch();
 ```
 
 From there, we can dispatch actions when the user does something like clicking on a button:
@@ -11949,7 +11992,7 @@ The answer is **NO. Global state that is needed across the app should go in the 
 In this example, we have an input textbox where the user can type in the next number to be added to the counter:
 
 ```jsx title="features/counter/Counter.js"
-const [incrementAmount, setIncrementAmount] = useState('2')
+const [incrementAmount, setIncrementAmount] = useState("2");
 
 // later
 return (
@@ -11958,7 +12001,7 @@ return (
       className={styles.textbox}
       aria-label="Set increment amount"
       value={incrementAmount}
-      onChange={e => setIncrementAmount(e.target.value)}
+      onChange={(e) => setIncrementAmount(e.target.value)}
     />
     <button
       className={styles.button}
@@ -11973,7 +12016,7 @@ return (
       Add Async
     </button>
   </div>
-)
+);
 ```
 
 We _could_ keep the current number string in the Redux store, by dispatching an action in the input's `onChange` handler and keeping it in our reducer. But, that doesn't give us any benefit. The only place that text string is used is here, in the `<Counter>` component. (Sure, there's only one other component in this example: `<App>`. But even if we had a larger application with many components, only `<Counter>` cares about this input value.)
@@ -12004,14 +12047,14 @@ We've seen that our components can use the `useSelector` and `useDispatch` hooks
 Now that we've seen all the different pieces of this application, it's time to circle back to the starting point of this application and see how the last pieces of the puzzle fit together.
 
 ```jsx title="index.js"
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import store from './app/store'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import store from "./app/store";
 // highlight-next-line
-import { Provider } from 'react-redux'
-import * as serviceWorker from './serviceWorker'
+import { Provider } from "react-redux";
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   // highlight-start
@@ -12019,8 +12062,8 @@ ReactDOM.render(
     <App />
   </Provider>,
   // highlight-end
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 We always have to call `ReactDOM.render(<App />)` to tell React to start rendering our root `<App>` component. In order for our hooks like `useSelector` to work right, we need to use a component called `<Provider>` to pass down the Redux store behind the scenes so they can access it.
@@ -12067,6 +12110,7 @@ id: part-3-data-flow
 title: 'Redux Essentials, Part 3: Basic Redux Data Flow'
 sidebar_label: 'Basic Redux Data Flow'
 description: 'The official Redux Essentials tutorial: learn how data flows in a React + Redux app'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -12137,8 +12181,8 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 </DetailedExplanation>
@@ -12180,34 +12224,34 @@ For now, we'll create an array with some fake post objects inside so that we can
 We'll import `createSlice`, define our initial posts array, pass that to `createSlice`, and export the posts reducer function that `createSlice` generated for us:
 
 ```js title="features/posts/postsSlice.js"
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
-  { id: '1', title: 'First Post!', content: 'Hello!' },
-  { id: '2', title: 'Second Post', content: 'More text' }
-]
+  { id: "1", title: "First Post!", content: "Hello!" },
+  { id: "2", title: "Second Post", content: "More text" },
+];
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
-  reducers: {}
-})
+  reducers: {},
+});
 
-export default postsSlice.reducer
+export default postsSlice.reducer;
 ```
 
 Every time we create a new slice, we need to add its reducer function to our Redux store. We already have a Redux store being created, but right now it doesn't have any data inside. Open up `app/store.js`, import the `postsReducer` function, and update the call to `configureStore` so that the `postsReducer` is being passed as a reducer field named `posts`:
 
 ```js title="app/store.js"
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-import postsReducer from '../features/posts/postsSlice'
+import postsReducer from "../features/posts/postsSlice";
 
 export default configureStore({
   reducer: {
-    posts: postsReducer
-  }
-})
+    posts: postsReducer,
+  },
+});
 ```
 
 This tells Redux that we want our top-level state object to have a field named `posts` inside, and all the data for `state.posts` will be updated by the `postsReducer` function when actions are dispatched.
@@ -12225,43 +12269,43 @@ If we're going to render a list of posts, we need to get the data from somewhere
 Our initial `PostsList` component will read the `state.posts` value from the Redux store, then loop over the array of posts and show each of them on screen:
 
 ```jsx title="features/posts/PostsList.js"
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
 export const PostsList = () => {
-  const posts = useSelector(state => state.posts)
+  const posts = useSelector((state) => state.posts);
 
-  const renderedPosts = posts.map(post => (
+  const renderedPosts = posts.map((post) => (
     <article className="post-excerpt" key={post.id}>
       <h3>{post.title}</h3>
       <p className="post-content">{post.content.substring(0, 100)}</p>
     </article>
-  ))
+  ));
 
   return (
     <section className="posts-list">
       <h2>Posts</h2>
       {renderedPosts}
     </section>
-  )
-}
+  );
+};
 ```
 
 We then need to update the routing in `App.js` so that we show the `PostsList` component instead of the "welcome" message. Import the `PostsList` component into `App.js`, and replace the welcome text with `<PostsList />`. We'll also wrap it in a React Fragment, because we're going to add something else to the main page soon:
 
 ```jsx title="App.js"
-import React from 'react'
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
-} from 'react-router-dom'
+  Redirect,
+} from "react-router-dom";
 
-import { Navbar } from './app/Navbar'
+import { Navbar } from "./app/Navbar";
 
 // highlight-next-line
-import { PostsList } from './features/posts/PostsList'
+import { PostsList } from "./features/posts/PostsList";
 
 function App() {
   return (
@@ -12284,10 +12328,10 @@ function App() {
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
 ```
 
 Once that's added, the main page of our app should now look like this:
@@ -12307,14 +12351,14 @@ We'll create the empty form first and add it to the page. Then, we'll connect th
 Create `AddPostForm.js` in our `posts` folder. We'll add a text input for the post title, and a text area for the body of the post:
 
 ```jsx title="features/posts/AddPostForm.js"
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 export const AddPostForm = () => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
-  const onTitleChanged = e => setTitle(e.target.value)
-  const onContentChanged = e => setContent(e.target.value)
+  const onTitleChanged = (e) => setTitle(e.target.value);
+  const onContentChanged = (e) => setContent(e.target.value);
 
   return (
     <section>
@@ -12338,8 +12382,8 @@ export const AddPostForm = () => {
         <button type="button">Save Post</button>
       </form>
     </section>
-  )
-}
+  );
+};
 ```
 
 Import that component into `App.js`, and add it right above the `<PostsList />` component:
@@ -12374,21 +12418,21 @@ When we write the `postAdded` reducer function, `createSlice` will automatically
 
 ```js title="features/posts/postsSlice.js"
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     // highlight-start
     postAdded(state, action) {
-      state.push(action.payload)
-    }
+      state.push(action.payload);
+    },
     // highlight-end
-  }
-})
+  },
+});
 
 // highlight-next-line
-export const { postAdded } = postsSlice.actions
+export const { postAdded } = postsSlice.actions;
 
-export default postsSlice.reducer
+export default postsSlice.reducer;
 ```
 
 :::warning
@@ -12414,23 +12458,23 @@ In order to dispatch actions from a component, we need access to the store's `di
 Once we have the `dispatch` function available in our component, we can call `dispatch(postAdded())` in a click handler. We can take the title and content values from our React component `useState` hooks, generate a new ID, and put them together into a new post object that we pass to `postAdded()`.
 
 ```jsx title="features/posts/AddPostForm"
-import React, { useState } from 'react'
+import React, { useState } from "react";
 // highlight-start
-import { useDispatch } from 'react-redux'
-import { nanoid } from '@reduxjs/toolkit'
+import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 
-import { postAdded } from './postsSlice'
+import { postAdded } from "./postsSlice";
 // highlight-end
 
 export const AddPostForm = () => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   // highlight-next-line
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const onTitleChanged = e => setTitle(e.target.value)
-  const onContentChanged = e => setContent(e.target.value)
+  const onTitleChanged = (e) => setTitle(e.target.value);
+  const onContentChanged = (e) => setContent(e.target.value);
 
   // highlight-start
   const onSavePostClicked = () => {
@@ -12439,14 +12483,14 @@ export const AddPostForm = () => {
         postAdded({
           id: nanoid(),
           title,
-          content
+          content,
         })
-      )
+      );
 
-      setTitle('')
-      setContent('')
+      setTitle("");
+      setContent("");
     }
-  }
+  };
   // highlight-end
 
   return (
@@ -12460,8 +12504,8 @@ export const AddPostForm = () => {
         </button>
       </form>
     </section>
-  )
-}
+  );
+};
 ```
 
 Now, try typing in a title and some text, and click "Save Post". You should see a new item for that post show up in the posts list.
@@ -12527,6 +12571,7 @@ id: part-4-using-data
 title: 'Redux Essentials, Part 4: Using Redux Data'
 sidebar_label: 'Using Redux Data'
 description: 'The official Redux Essentials tutorial: learn how to work with complex Redux state in React components'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -12569,22 +12614,22 @@ Currently, our post entries are being shown in the main feed page, but if the te
 First, we need to add a new `SinglePostPage` component to our `posts` feature folder. We'll use React Router to show this component when the page URL looks like `/posts/123`, where the `123` part should be the ID of the post we want to show.
 
 ```jsx title="features/posts/SinglePostPage.js"
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
 export const SinglePostPage = ({ match }) => {
-  const { postId } = match.params
+  const { postId } = match.params;
 
-  const post = useSelector(state =>
-    state.posts.find(post => post.id === postId)
-  )
+  const post = useSelector((state) =>
+    state.posts.find((post) => post.id === postId)
+  );
 
   if (!post) {
     return (
       <section>
         <h2>Post not found!</h2>
       </section>
-    )
+    );
   }
 
   return (
@@ -12594,8 +12639,8 @@ export const SinglePostPage = ({ match }) => {
         <p className="post-content">{post.content}</p>
       </article>
     </section>
-  )
-}
+  );
+};
 ```
 
 React Router will pass in a `match` object as a prop that contains the URL information we're looking for. When we set up the route to render this component, we're going to tell it to parse the second part of the URL as a variable named `postId`, and we can read that value from `match.params`.
@@ -12617,10 +12662,10 @@ Now that we have a `<SinglePostPage>` component, we can define a route to show i
 We'll import `SinglePostPage` in `App.js`, and add the route:
 
 ```jsx title="App.js"
-import { PostsList } from './features/posts/PostsList'
-import { AddPostForm } from './features/posts/AddPostForm'
+import { PostsList } from "./features/posts/PostsList";
+import { AddPostForm } from "./features/posts/AddPostForm";
 // highlight-next-line
-import { SinglePostPage } from './features/posts/SinglePostPage'
+import { SinglePostPage } from "./features/posts/SinglePostPage";
 
 function App() {
   return (
@@ -12644,22 +12689,22 @@ function App() {
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 ```
 
 Then, in `<PostsList>`, we'll update the list rendering logic to include a `<Link>` that routes to that specific post:
 
 ```jsx title="features/posts/PostsList.js"
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 // highlight-next-line
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export const PostsList = () => {
-  const posts = useSelector(state => state.posts)
+  const posts = useSelector((state) => state.posts);
 
-  const renderedPosts = posts.map(post => (
+  const renderedPosts = posts.map((post) => (
     <article className="post-excerpt" key={post.id}>
       <h3>{post.title}</h3>
       <p className="post-content">{post.content.substring(0, 100)}</p>
@@ -12669,24 +12714,24 @@ export const PostsList = () => {
       </Link>
       // highlight-end
     </article>
-  ))
+  ));
 
   return (
     <section className="posts-list">
       <h2>Posts</h2>
       {renderedPosts}
     </section>
-  )
-}
+  );
+};
 ```
 
 And since we can now click through to a different page, it would also be helpful to have a link back to the main posts page in the `<Navbar>` component as well:
 
 ```jsx title="app/Navbar.js"
-import React from 'react'
+import React from "react";
 
 // highlight-next-line
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -12703,8 +12748,8 @@ export const Navbar = () => {
         </div>
       </section>
     </nav>
-  )
-}
+  );
+};
 ```
 
 ## Editing Posts
@@ -12736,29 +12781,29 @@ Given all those requirements, here's how our `postsSlice` definition should look
 
 ```js title="features/posts/postsSlice.js"
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     postAdded(state, action) {
-      state.push(action.payload)
+      state.push(action.payload);
     },
     // highlight-start
     postUpdated(state, action) {
-      const { id, title, content } = action.payload
-      const existingPost = state.find(post => post.id === id)
+      const { id, title, content } = action.payload;
+      const existingPost = state.find((post) => post.id === id);
       if (existingPost) {
-        existingPost.title = title
-        existingPost.content = content
+        existingPost.title = title;
+        existingPost.content = content;
       }
-    }
+    },
     // highlight-end
-  }
-})
+  },
+});
 
 // highlight-next-line
-export const { postAdded, postUpdated } = postsSlice.actions
+export const { postAdded, postUpdated } = postsSlice.actions;
 
-export default postsSlice.reducer
+export default postsSlice.reducer;
 ```
 
 ### Creating an Edit Post Form
@@ -12766,34 +12811,34 @@ export default postsSlice.reducer
 Our new `<EditPostForm>` component will look similar to the `<AddPostForm>`, but the logic needs to be a bit different. We need to retrieve the right `post` object from the store, then use that to initialize the state fields in the component so the user can make changes. We'll save the changed title and content values back to the store after the user is done. We'll also use React Router's history API to switch over to the single post page and show that post.
 
 ```jsx title="features/posts/EditPostForm.js"
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-import { postUpdated } from './postsSlice'
+import { postUpdated } from "./postsSlice";
 
 export const EditPostForm = ({ match }) => {
-  const { postId } = match.params
+  const { postId } = match.params;
 
-  const post = useSelector(state =>
-    state.posts.find(post => post.id === postId)
-  )
+  const post = useSelector((state) =>
+    state.posts.find((post) => post.id === postId)
+  );
 
-  const [title, setTitle] = useState(post.title)
-  const [content, setContent] = useState(post.content)
+  const [title, setTitle] = useState(post.title);
+  const [content, setContent] = useState(post.content);
 
-  const dispatch = useDispatch()
-  const history = useHistory()
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-  const onTitleChanged = e => setTitle(e.target.value)
-  const onContentChanged = e => setContent(e.target.value)
+  const onTitleChanged = (e) => setTitle(e.target.value);
+  const onContentChanged = (e) => setContent(e.target.value);
 
   const onSavePostClicked = () => {
     if (title && content) {
-      dispatch(postUpdated({ id: postId, title, content }))
-      history.push(`/posts/${postId}`)
+      dispatch(postUpdated({ id: postId, title, content }));
+      history.push(`/posts/${postId}`);
     }
-  }
+  };
 
   return (
     <section>
@@ -12820,18 +12865,18 @@ export const EditPostForm = ({ match }) => {
         Save Post
       </button>
     </section>
-  )
-}
+  );
+};
 ```
 
 Like with `SinglePostPage`, we'll need to import it into `App.js` and add a route that will render this component with the `postId` as a route parameter.
 
 ```jsx title="App.js"
-import { PostsList } from './features/posts/PostsList'
-import { AddPostForm } from './features/posts/AddPostForm'
-import { SinglePostPage } from './features/posts/SinglePostPage'
+import { PostsList } from "./features/posts/PostsList";
+import { AddPostForm } from "./features/posts/AddPostForm";
+import { SinglePostPage } from "./features/posts/SinglePostPage";
 // highlight-next-line
-import { EditPostForm } from './features/posts/EditPostForm'
+import { EditPostForm } from "./features/posts/EditPostForm";
 
 function App() {
   return (
@@ -12856,7 +12901,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 ```
 
@@ -12895,11 +12940,11 @@ If we were writing the `postAdded` action creator by hand, we could have put the
 ```js
 // hand-written action creator
 function postAdded(title, content) {
-  const id = nanoid()
+  const id = nanoid();
   return {
-    type: 'posts/postAdded',
-    payload: { id, title, content }
-  }
+    type: "posts/postAdded",
+    payload: { id, title, content },
+  };
 }
 ```
 
@@ -12911,28 +12956,28 @@ Inside of the `reducers` field in `createSlice`, we can define one of the fields
 
 ```js title="features/posts/postsSlice.js"
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     // highlight-start
     postAdded: {
       reducer(state, action) {
-        state.push(action.payload)
+        state.push(action.payload);
       },
       prepare(title, content) {
         return {
           payload: {
             id: nanoid(),
             title,
-            content
-          }
-        }
-      }
-    }
+            content,
+          },
+        };
+      },
+    },
     // highlight-end
     // other reducers here
-  }
-})
+  },
+});
 ```
 
 Now our component doesn't have to worry about what the payload object looks like - the action creator will take care of putting it together the right way. So, we can update the component so that it passes in `title` and `content` as arguments when it dispatches `postAdded`:
@@ -12941,11 +12986,11 @@ Now our component doesn't have to worry about what the payload object looks like
 const onSavePostClicked = () => {
   if (title && content) {
     // highlight-next-line
-    dispatch(postAdded(title, content))
-    setTitle('')
-    setContent('')
+    dispatch(postAdded(title, content));
+    setTitle("");
+    setContent("");
   }
-}
+};
 ```
 
 ## Users and Posts
@@ -12959,21 +13004,21 @@ You can't have a "social media" app if there aren't any other people involved. L
 Since the concept of "users" is different than the concept of "posts", we want to keep the code and data for the users separated from the code and data for posts. We'll add a new `features/users` folder, and put a `usersSlice` file in there. Like with the posts slice, for now we'll add some initial entries so that we have data to work with.
 
 ```js title="features/users/usersSlice.js"
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
-  { id: '0', name: 'Tianna Jenkins' },
-  { id: '1', name: 'Kevin Grant' },
-  { id: '2', name: 'Madison Price' }
-]
+  { id: "0", name: "Tianna Jenkins" },
+  { id: "1", name: "Kevin Grant" },
+  { id: "2", name: "Madison Price" },
+];
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState,
-  reducers: {}
-})
+  reducers: {},
+});
 
-export default usersSlice.reducer
+export default usersSlice.reducer;
 ```
 
 For now, we don't need to actually update the data, so we'll leave the `reducers` field as an empty object. (We'll come back to this in a later section.)
@@ -12981,19 +13026,19 @@ For now, we don't need to actually update the data, so we'll leave the `reducers
 As before, we'll import the `usersReducer` into our store file and add it to the store setup:
 
 ```js title="app/store.js"
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-import postsReducer from '../features/posts/postsSlice'
+import postsReducer from "../features/posts/postsSlice";
 // highlight-next-line
-import usersReducer from '../features/users/usersSlice'
+import usersReducer from "../features/users/usersSlice";
 
 export default configureStore({
   reducer: {
     posts: postsReducer,
     // highlight-next-line
-    users: usersReducer
-  }
-})
+    users: usersReducer,
+  },
+});
 ```
 
 ### Adding Authors for Posts
@@ -13006,12 +13051,12 @@ First, we need to update our `postAdded` action creator to accept a user ID as a
 
 ```js title="features/posts/postsSlice.js"
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     postAdded: {
       reducer(state, action) {
-        state.push(action.payload)
+        state.push(action.payload);
       },
       // highlight-next-line
       prepare(title, content, userId) {
@@ -13021,58 +13066,58 @@ const postsSlice = createSlice({
             title,
             content,
             // highlight-next-line
-            user: userId
-          }
-        }
-      }
-    }
+            user: userId,
+          },
+        };
+      },
+    },
     // other reducers
-  }
-})
+  },
+});
 ```
 
 Now, in our `<AddPostForm>`, we can read the list of users from the store with `useSelector` and show them as a dropdown. We'll then take the ID of the selected user and pass that to the `postAdded` action creator. While we're at it, we can add a bit of validation logic to our form so that the user can only click the "Save Post" button if the title and content inputs have some actual text in them:
 
 ```jsx title="features/posts/AddPostForm.js"
-import React, { useState } from 'react'
+import React, { useState } from "react";
 // highlight-next-line
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 
-import { postAdded } from './postsSlice'
+import { postAdded } from "./postsSlice";
 
 export const AddPostForm = () => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   // highlight-next-line
-  const [userId, setUserId] = useState('')
+  const [userId, setUserId] = useState("");
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   // highlight-next-line
-  const users = useSelector(state => state.users)
+  const users = useSelector((state) => state.users);
 
-  const onTitleChanged = e => setTitle(e.target.value)
-  const onContentChanged = e => setContent(e.target.value)
+  const onTitleChanged = (e) => setTitle(e.target.value);
+  const onContentChanged = (e) => setContent(e.target.value);
   // highlight-next-line
-  const onAuthorChanged = e => setUserId(e.target.value)
+  const onAuthorChanged = (e) => setUserId(e.target.value);
 
   const onSavePostClicked = () => {
     if (title && content) {
       // highlight-next-line
-      dispatch(postAdded(title, content, userId))
-      setTitle('')
-      setContent('')
+      dispatch(postAdded(title, content, userId));
+      setTitle("");
+      setContent("");
     }
-  }
+  };
 
   // highlight-start
-  const canSave = Boolean(title) && Boolean(content) && Boolean(userId)
+  const canSave = Boolean(title) && Boolean(content) && Boolean(userId);
 
-  const usersOptions = users.map(user => (
+  const usersOptions = users.map((user) => (
     <option key={user.id} value={user.id}>
       {user.name}
     </option>
-  ))
+  ));
   // highlight-end
 
   return (
@@ -13108,23 +13153,23 @@ export const AddPostForm = () => {
         </button>
       </form>
     </section>
-  )
-}
+  );
+};
 ```
 
 Now, we need a way to show the name of the post's author inside of our post list items and `<SinglePostPage>`. Since we want to show this same kind of info in more than one place, we can make a `PostAuthor` component that takes a user ID as a prop, looks up the right user object, and formats the user's name:
 
 ```jsx title="features/posts/PostAuthor.js"
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
 export const PostAuthor = ({ userId }) => {
-  const author = useSelector(state =>
-    state.users.find(user => user.id === userId)
-  )
+  const author = useSelector((state) =>
+    state.users.find((user) => user.id === userId)
+  );
 
-  return <span>by {author ? author.name : 'Unknown author'}</span>
-}
+  return <span>by {author ? author.name : "Unknown author"}</span>;
+};
 ```
 
 Notice that we're following the same pattern in each of our components as we go. Any component that needs to read data from the Redux store can use the `useSelector` hook, and extract the specific pieces of data that it needs. Also, many components can access the same data in the Redux store at the same time.
@@ -13172,23 +13217,23 @@ Since we can't just put a `Date` class instance into the Redux store, we'll trac
 Like with post authors, we need to show the relative timestamp description in both our `<PostsList>` and `<SinglePostPage>` components. We'll add a `<TimeAgo>` component to handle formatting a timestamp string as a relative description. Libraries like `date-fns` have some useful utility functions for parsing and formatting dates, which we can use here:
 
 ```jsx title="features/posts/TimeAgo.js"
-import React from 'react'
-import { parseISO, formatDistanceToNow } from 'date-fns'
+import React from "react";
+import { parseISO, formatDistanceToNow } from "date-fns";
 
 export const TimeAgo = ({ timestamp }) => {
-  let timeAgo = ''
+  let timeAgo = "";
   if (timestamp) {
-    const date = parseISO(timestamp)
-    const timePeriod = formatDistanceToNow(date)
-    timeAgo = `${timePeriod} ago`
+    const date = parseISO(timestamp);
+    const timePeriod = formatDistanceToNow(date);
+    timeAgo = `${timePeriod} ago`;
   }
 
   return (
     <span title={timestamp}>
       &nbsp; <i>{timeAgo}</i>
     </span>
-  )
-}
+  );
+};
 ```
 
 ### Sorting the Posts List
@@ -13202,9 +13247,9 @@ Since `array.sort()` mutates the existing array, we need to make a copy of `stat
 ```jsx title="features/posts/PostsList.js"
 // Sort posts in reverse chronological order by datetime string
 //highlight-start
-const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
+const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date));
 
-const renderedPosts = orderedPosts.map(post => {
+const renderedPosts = orderedPosts.map((post) => {
   //highlight-end
   return (
     <article className="post-excerpt" key={post.id}>
@@ -13218,31 +13263,31 @@ const renderedPosts = orderedPosts.map(post => {
         View Post
       </Link>
     </article>
-  )
-})
+  );
+});
 ```
 
 We also need to add the `date` field to `initialState` in `postsSlice.js`. We'll use `date-fns` here again to subtract minutes from the current date/time so they differ from each other.
 
 ```jsx title="features/posts/postsSlice.js"
-import { createSlice, nanoid } from '@reduxjs/toolkit'
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 // highlight-next-line
-import { sub } from 'date-fns'
+import { sub } from "date-fns";
 
 const initialState = [
   {
     // omitted fields
-    content: 'Hello!',
+    content: "Hello!",
     // highlight-next-line
-    date: sub(new Date(), { minutes: 10 }).toISOString()
+    date: sub(new Date(), { minutes: 10 }).toISOString(),
   },
   {
     // omitted fields
-    content: 'More text',
+    content: "More text",
     // highlight-next-line
-    date: sub(new Date(), { minutes: 5 }).toISOString()
-  }
-]
+    date: sub(new Date(), { minutes: 5 }).toISOString(),
+  },
+];
 ```
 
 ### Post Reaction Buttons
@@ -13254,15 +13299,15 @@ We'll add a row of emoji reaction buttons at the bottom of each post in `<PostsL
 Like with post authors and timestamps, we want to use this everywhere we show posts, so we'll create a `<ReactionButtons>` component that takes a `post` as a prop. We'll start by just showing the buttons inside, with the current reaction counts for each button:
 
 ```jsx title="features/posts/ReactionButtons.js"
-import React from 'react'
+import React from "react";
 
 const reactionEmoji = {
-  thumbsUp: '👍',
-  hooray: '🎉',
-  heart: '❤️',
-  rocket: '🚀',
-  eyes: '👀'
-}
+  thumbsUp: "👍",
+  hooray: "🎉",
+  heart: "❤️",
+  rocket: "🚀",
+  eyes: "👀",
+};
 
 export const ReactionButtons = ({ post }) => {
   const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
@@ -13270,11 +13315,11 @@ export const ReactionButtons = ({ post }) => {
       <button key={name} type="button" className="muted-button reaction-button">
         {emoji} {post.reactions[name]}
       </button>
-    )
-  })
+    );
+  });
 
-  return <div>{reactionButtons}</div>
-}
+  return <div>{reactionButtons}</div>;
+};
 ```
 
 We don't yet have a `post.reactions` field in our data, so we'll need to update the `initialState` post objects and our `postAdded` prepare callback function to make sure that every post has that data inside, like `reactions: {thumbsUp: 0, hooray: 0}`.
@@ -13285,24 +13330,24 @@ Like with editing posts, we need to know the ID of the post, and which reaction 
 
 ```js
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     // highlight-start
     reactionAdded(state, action) {
-      const { postId, reaction } = action.payload
-      const existingPost = state.find(post => post.id === postId)
+      const { postId, reaction } = action.payload;
+      const existingPost = state.find((post) => post.id === postId);
       if (existingPost) {
-        existingPost.reactions[reaction]++
+        existingPost.reactions[reaction]++;
       }
-    }
+    },
     // highlight-end
     // other reducers
-  }
-})
+  },
+});
 
 // highlight-next-line
-export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
+export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions;
 ```
 
 As we've seen already, `createSlice` lets us write "mutating" logic in our reducers. If we weren't using `createSlice` and the Immer library, the line `existingPost.reactions[reaction]++` would indeed mutate the existing `post.reactions` object, and this would probably cause bugs elsewhere in our app because we didn't follow the rules of reducers. But, since we _are_ using `createSlice`, we can write this more complex update logic in a simpler way, and let Immer do the work of turning this code into a safe immutable update.
@@ -13318,24 +13363,24 @@ When using Immer, you can either "mutate" an existing state object, or return a 
 Our last step is to update the `<ReactionButtons>` component to dispatch the `reactionAdded` action when the user clicks a button:
 
 ```jsx title="features/posts/ReactionButtons.jsx"
-import React from 'react'
+import React from "react";
 // highlight-start
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux";
 
-import { reactionAdded } from './postsSlice'
+import { reactionAdded } from "./postsSlice";
 // highlight-end
 
 const reactionEmoji = {
-  thumbsUp: '👍',
-  hooray: '🎉',
-  heart: '❤️',
-  rocket: '🚀',
-  eyes: '👀'
-}
+  thumbsUp: "👍",
+  hooray: "🎉",
+  heart: "❤️",
+  rocket: "🚀",
+  eyes: "👀",
+};
 
 export const ReactionButtons = ({ post }) => {
   // highlight-next-line
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
     return (
@@ -13351,11 +13396,11 @@ export const ReactionButtons = ({ post }) => {
       >
         {emoji} {post.reactions[name]}
       </button>
-    )
-  })
+    );
+  });
 
-  return <div>{reactionButtons}</div>
-}
+  return <div>{reactionButtons}</div>;
+};
 ```
 
 Now, every time we click a reaction button, the counter should increment. If we browse around to different parts of the app, we should see the correct counter values displayed any time we look at this post, even if we click a reaction button in the `<PostsList>` and then look at the post by itself on the `<SinglePostPage>`.
@@ -13403,6 +13448,7 @@ id: part-5-async-logic
 title: 'Redux Essentials, Part 5: Async Logic and Data Fetching'
 sidebar_label: 'Async Logic and Data Fetching'
 description: 'The official Redux Essentials tutorial: learn how async logic works in Redux apps'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -13473,33 +13519,33 @@ Once the thunk middleware has been added to the Redux store, it allows you to pa
 Thunks typically dispatch plain actions using action creators, like `dispatch(increment())`:
 
 ```js
-const store = configureStore({ reducer: counterReducer })
+const store = configureStore({ reducer: counterReducer });
 
 const exampleThunkFunction = (dispatch, getState) => {
-  const stateBefore = getState()
-  console.log(`Counter before: ${stateBefore.counter}`)
-  dispatch(increment())
-  const stateAfter = getState()
-  console.log(`Counter after: ${stateAfter.counter}`)
-}
+  const stateBefore = getState();
+  console.log(`Counter before: ${stateBefore.counter}`);
+  dispatch(increment());
+  const stateAfter = getState();
+  console.log(`Counter after: ${stateAfter.counter}`);
+};
 
-store.dispatch(exampleThunkFunction)
+store.dispatch(exampleThunkFunction);
 ```
 
 For consistency with dispatching normal action objects, we typically write these as _thunk action creators_, which return the thunk function. These action creators can take arguments that can be used inside the thunk.
 
 ```js
-const logAndAdd = amount => {
+const logAndAdd = (amount) => {
   return (dispatch, getState) => {
-    const stateBefore = getState()
-    console.log(`Counter before: ${stateBefore.counter}`)
-    dispatch(incrementByAmount(amount))
-    const stateAfter = getState()
-    console.log(`Counter after: ${stateAfter.counter}`)
-  }
-}
+    const stateBefore = getState();
+    console.log(`Counter before: ${stateBefore.counter}`);
+    dispatch(incrementByAmount(amount));
+    const stateAfter = getState();
+    console.log(`Counter after: ${stateAfter.counter}`);
+  };
+};
 
-store.dispatch(logAndAdd(5))
+store.dispatch(logAndAdd(5));
 ```
 
 Thunks are typically written in "slice" files. `createSlice` itself does not have any special support for defining thunks, so you should write them as separate functions in the same slice file. That way, they have access to the plain action creators for that slice, and it's easy to find where the thunk lives.
@@ -13537,25 +13583,25 @@ If we were to write out the code for a typical async thunk by hand, it might loo
 
 ```js
 const getRepoDetailsStarted = () => ({
-  type: 'repoDetails/fetchStarted'
-})
-const getRepoDetailsSuccess = repoDetails => ({
-  type: 'repoDetails/fetchSucceeded',
-  payload: repoDetails
-})
-const getRepoDetailsFailed = error => ({
-  type: 'repoDetails/fetchFailed',
-  error
-})
-const fetchIssuesCount = (org, repo) => async dispatch => {
-  dispatch(getRepoDetailsStarted())
+  type: "repoDetails/fetchStarted",
+});
+const getRepoDetailsSuccess = (repoDetails) => ({
+  type: "repoDetails/fetchSucceeded",
+  payload: repoDetails,
+});
+const getRepoDetailsFailed = (error) => ({
+  type: "repoDetails/fetchFailed",
+  error,
+});
+const fetchIssuesCount = (org, repo) => async (dispatch) => {
+  dispatch(getRepoDetailsStarted());
   try {
-    const repoDetails = await getRepoDetails(org, repo)
-    dispatch(getRepoDetailsSuccess(repoDetails))
+    const repoDetails = await getRepoDetails(org, repo);
+    dispatch(getRepoDetailsSuccess(repoDetails));
   } catch (err) {
-    dispatch(getRepoDetailsFailed(err.toString()))
+    dispatch(getRepoDetailsFailed(err.toString()));
   }
-}
+};
 ```
 
 However, writing code using this approach is tedious. Each separate type of request needs repeated similar implementation:
@@ -13595,17 +13641,17 @@ It would be nice if we didn't have to keep rewriting our components every time w
 The `<PostsList>` component needs to read a list of all the posts, and the `<SinglePostPage>` and `<EditPostForm>` components need to look up a single post by its ID. Let's export two small selector functions from `postsSlice.js` to cover those cases:
 
 ```js title="features/posts/postsSlice.js"
-const postsSlice = createSlice(/* omit slice code*/)
+const postsSlice = createSlice(/* omit slice code*/);
 
-export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
+export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions;
 
-export default postsSlice.reducer
+export default postsSlice.reducer;
 
 // highlight-start
-export const selectAllPosts = state => state.posts
+export const selectAllPosts = (state) => state.posts;
 
 export const selectPostById = (state, postId) =>
-  state.posts.find(post => post.id === postId)
+  state.posts.find((post) => post.id === postId);
 //highlight-end
 ```
 
@@ -13616,41 +13662,41 @@ We can then use them in the components:
 ```js title="features/posts/PostsList.js"
 // omit imports
 // highlight-next-line
-import { selectAllPosts } from './postsSlice'
+import { selectAllPosts } from "./postsSlice";
 
 export const PostsList = () => {
   // highlight-next-line
-  const posts = useSelector(selectAllPosts)
+  const posts = useSelector(selectAllPosts);
   // omit component contents
-}
+};
 ```
 
 ```js title="features/posts/SinglePostPage.js"
 // omit imports
 //highlight-next-line
-import { selectPostById } from './postsSlice'
+import { selectPostById } from "./postsSlice";
 
 export const SinglePostPage = ({ match }) => {
-  const { postId } = match.params
+  const { postId } = match.params;
 
   // highlight-next-line
-  const post = useSelector(state => selectPostById(state, postId))
+  const post = useSelector((state) => selectPostById(state, postId));
   // omit component logic
-}
+};
 ```
 
 ```js title="features/posts/EditPostForm.js"
 // omit imports
 //highlight-next-line
-import { postUpdated, selectPostById } from './postsSlice'
+import { postUpdated, selectPostById } from "./postsSlice";
 
 export const EditPostForm = ({ match }) => {
-  const { postId } = match.params
+  const { postId } = match.params;
 
   // highlight-next-line
-  const post = useSelector(state => selectPostById(state, postId))
+  const post = useSelector((state) => selectPostById(state, postId));
   // omit component logic
-}
+};
 ```
 
 It's often a good idea to encapsulate data lookups by writing reusable selectors. You can also create "memoized" selectors that can help improve performance, which we'll look at in a later part of this tutorial.
@@ -13683,58 +13729,58 @@ We can use this information to decide what to show in our UI as the request prog
 Let's update our `postsSlice` to use this pattern to track loading state for a "fetch posts" request. We'll switch our state from being an array of posts by itself, to look like `{posts, status, error}`. We'll also remove the old sample post entries from our initial state. As part of this change, we also need to change any uses of `state` as an array to be `state.posts` instead, because the array is now one level deeper:
 
 ```js title="features/posts/postsSlice.js"
-import { createSlice, nanoid } from '@reduxjs/toolkit'
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 // highlight-start
 const initialState = {
   posts: [],
-  status: 'idle',
-  error: null
-}
+  status: "idle",
+  error: null,
+};
 //highlight-end
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     postAdded: {
       reducer(state, action) {
         // highlight-next-line
-        state.posts.push(action.payload)
+        state.posts.push(action.payload);
       },
       prepare(title, content, userId) {
         // omit prepare logic
-      }
+      },
     },
     reactionAdded(state, action) {
-      const { postId, reaction } = action.payload
+      const { postId, reaction } = action.payload;
       // highlight-next-line
-      const existingPost = state.posts.find(post => post.id === postId)
+      const existingPost = state.posts.find((post) => post.id === postId);
       if (existingPost) {
-        existingPost.reactions[reaction]++
+        existingPost.reactions[reaction]++;
       }
     },
     postUpdated(state, action) {
-      const { id, title, content } = action.payload
+      const { id, title, content } = action.payload;
       // highlight-next-line
-      const existingPost = state.posts.find(post => post.id === id)
+      const existingPost = state.posts.find((post) => post.id === id);
       if (existingPost) {
-        existingPost.title = title
-        existingPost.content = content
+        existingPost.title = title;
+        existingPost.content = content;
       }
-    }
-  }
-})
+    },
+  },
+});
 
-export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
+export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions;
 
-export default postsSlice.reducer
+export default postsSlice.reducer;
 
 // highlight-start
-export const selectAllPosts = state => state.posts.posts
+export const selectAllPosts = (state) => state.posts.posts;
 
 export const selectPostById = (state, postId) =>
-  state.posts.posts.find(post => post.id === postId)
+  state.posts.posts.find((post) => post.id === postId);
 // highlight-end
 ```
 
@@ -13748,21 +13794,21 @@ Let's start by adding a thunk that will make an AJAX call to retrieve a list of 
 
 ```js title="features/posts/postsSlice"
 // highlight-next-line
-import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
 // highlight-next-line
-import { client } from '../../api/client'
+import { client } from "../../api/client";
 
 const initialState = {
   posts: [],
-  status: 'idle',
-  error: null
-}
+  status: "idle",
+  error: null,
+};
 
 // highlight-start
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  const response = await client.get('/fakeApi/posts')
-  return response.data
-})
+export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
+  const response = await client.get("/fakeApi/posts");
+  return response.data;
+});
 // highlight-end
 ```
 
@@ -13793,30 +13839,30 @@ We'll import the `fetchPosts` thunk into the component. Like all of our other ac
 
 ```js title="features/posts/PostsList.js"
 // highlight-start
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 // omit other imports
 // highlight-end
 //highlight-next-line
-import { selectAllPosts, fetchPosts } from './postsSlice'
+import { selectAllPosts, fetchPosts } from "./postsSlice";
 
 export const PostsList = () => {
   // highlight-next-line
-  const dispatch = useDispatch()
-  const posts = useSelector(selectAllPosts)
+  const dispatch = useDispatch();
+  const posts = useSelector(selectAllPosts);
 
   // highlight-start
-  const postStatus = useSelector(state => state.posts.status)
+  const postStatus = useSelector((state) => state.posts.status);
 
   useEffect(() => {
-    if (postStatus === 'idle') {
-      dispatch(fetchPosts())
+    if (postStatus === "idle") {
+      dispatch(fetchPosts());
     }
-  }, [postStatus, dispatch])
+  }, [postStatus, dispatch]);
   // highlight-end
 
   // omit rendering logic
-}
+};
 ```
 
 It's important that we only try to fetch the list of posts once. If we do it every time the `<PostsList>` component renders, or is re-created because we've switched between views, we might end up fetching the posts several times. We can use the `posts.status` enum to help decide if we need to actually start fetching, by selecting that into the component and only starting the fetch if the status is `'idle'`.
@@ -13829,8 +13875,8 @@ We've already seen that `createSlice` will generate an action creator for every 
 
 ```js
 console.log(
-  postUpdated({ id: '123', title: 'First Post', content: 'Some text here' })
-)
+  postUpdated({ id: "123", title: "First Post", content: "Some text here" })
+);
 /*
 {
   type: 'posts/postUpdated',
@@ -13858,22 +13904,22 @@ The `builder` object in `extraReducers` provides methods that let us define addi
 You can chain these together, like `builder.addCase().addCase().addMatcher().addDefault()`. If multiple matchers match the action, they will run in the order they were defined.
 
 ```js
-import { increment } from '../features/counter/counterSlice'
+import { increment } from "../features/counter/counterSlice";
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     // slice-specific reducers here
   },
   // highlight-start
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase('counter/decrement', (state, action) => {})
-      .addCase(increment, (state, action) => {})
-  }
+      .addCase("counter/decrement", (state, action) => {})
+      .addCase(increment, (state, action) => {});
+  },
   // highlight-end
-})
+});
 ```
 
 If you're using TypeScript, you should use the builder callback form of `extraReducers`.
@@ -13884,37 +13930,37 @@ The keys in the `extraReducers` object should be Redux action type strings, like
 
 ```js
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     // slice-specific reducers here
   },
   extraReducers: {
-    'counter/increment': (state, action) => {
+    "counter/increment": (state, action) => {
       // normal reducer logic to update the posts slice
-    }
-  }
-})
+    },
+  },
+});
 ```
 
 However, action creators generated by Redux Toolkit automatically return their action type string if you call `actionCreator.toString()`. This means we can pass them as ES6 object literal computed properties, and the action types will become the keys of the object:
 
 ```js
-import { increment } from '../features/counter/counterSlice'
+import { increment } from "../features/counter/counterSlice";
 const object = {
-  [increment]: () => {}
-}
-console.log(object)
+  [increment]: () => {},
+};
+console.log(object);
 // { "counter/increment": Function}
 ```
 
 This works for the `extraReducers` field when used as an object:
 
 ```js
-import { increment } from '../features/counter/counterSlice'
+import { increment } from "../features/counter/counterSlice";
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     // slice-specific reducers here
@@ -13923,9 +13969,9 @@ const postsSlice = createSlice({
     // highlight-next-line
     [increment]: (state, action) => {
       // normal reducer logic to update the posts slice
-    }
-  }
-})
+    },
+  },
+});
 ```
 
 Unfortunately, TypeScript fails to recognize this will work correctly, so you have to use `increment.type` here to pass the type string. It also will not correctly infer the type of `action` inside the reducer.
@@ -13935,13 +13981,13 @@ Unfortunately, TypeScript fails to recognize this will work correctly, so you ha
 In this case, we need to listen for the "pending" and "fulfilled" action types dispatched by our `fetchPosts` thunk. Those action creators are attached to our actual `fetchPost` function, and we can pass those to `extraReducers` to listen for those actions:
 
 ```js
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  const response = await client.get('/fakeApi/posts')
-  return response.data
-})
+export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
+  const response = await client.get("/fakeApi/posts");
+  return response.data;
+});
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     // omit existing reducers here
@@ -13950,20 +13996,20 @@ const postsSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchPosts.pending, (state, action) => {
-        state.status = 'loading'
+        state.status = "loading";
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
-        state.status = 'succeeded'
+        state.status = "succeeded";
         // Add any fetched posts to the array
-        state.posts = state.posts.concat(action.payload)
+        state.posts = state.posts.concat(action.payload);
       })
       .addCase(fetchPosts.rejected, (state, action) => {
-        state.status = 'failed'
-        state.error = action.error.message
-      })
-  }
+        state.status = "failed";
+        state.error = action.error.message;
+      });
+  },
   // highlight-end
-})
+});
 ```
 
 We'll handle all three action types that could be dispatched by the thunk, based on the `Promise` we returned:
@@ -13984,11 +14030,11 @@ The result might look like this:
 
 ```jsx title="features/posts/PostsList.js"
 // highlight-next-line
-import { Spinner } from '../../components/Spinner'
-import { PostAuthor } from './PostAuthor'
-import { TimeAgo } from './TimeAgo'
-import { ReactionButtons } from './ReactionButtons'
-import { selectAllPosts, fetchPosts } from './postsSlice'
+import { Spinner } from "../../components/Spinner";
+import { PostAuthor } from "./PostAuthor";
+import { TimeAgo } from "./TimeAgo";
+import { ReactionButtons } from "./ReactionButtons";
+import { selectAllPosts, fetchPosts } from "./postsSlice";
 
 // highlight-start
 const PostExcerpt = ({ post }) => {
@@ -14006,40 +14052,40 @@ const PostExcerpt = ({ post }) => {
         View Post
       </Link>
     </article>
-  )
-}
+  );
+};
 // highlight-end
 
 export const PostsList = () => {
-  const dispatch = useDispatch()
-  const posts = useSelector(selectAllPosts)
+  const dispatch = useDispatch();
+  const posts = useSelector(selectAllPosts);
 
-  const postStatus = useSelector(state => state.posts.status)
+  const postStatus = useSelector((state) => state.posts.status);
   // highlight-next-line
-  const error = useSelector(state => state.posts.error)
+  const error = useSelector((state) => state.posts.error);
 
   useEffect(() => {
-    if (postStatus === 'idle') {
-      dispatch(fetchPosts())
+    if (postStatus === "idle") {
+      dispatch(fetchPosts());
     }
-  }, [postStatus, dispatch])
+  }, [postStatus, dispatch]);
 
   // highlight-start
-  let content
+  let content;
 
-  if (postStatus === 'loading') {
-    content = <Spinner text="Loading..." />
-  } else if (postStatus === 'succeeded') {
+  if (postStatus === "loading") {
+    content = <Spinner text="Loading..." />;
+  } else if (postStatus === "succeeded") {
     // Sort posts in reverse chronological order by datetime string
     const orderedPosts = posts
       .slice()
-      .sort((a, b) => b.date.localeCompare(a.date))
+      .sort((a, b) => b.date.localeCompare(a.date));
 
-    content = orderedPosts.map(post => (
+    content = orderedPosts.map((post) => (
       <PostExcerpt key={post.id} post={post} />
-    ))
-  } else if (postStatus === 'failed') {
-    content = <div>{error}</div>
+    ));
+  } else if (postStatus === "failed") {
+    content = <div>{error}</div>;
   }
   // highlight-end
 
@@ -14048,15 +14094,15 @@ export const PostsList = () => {
       <h2>Posts</h2>
       {content}
     </section>
-  )
-}
+  );
+};
 ```
 
 You might notice that the API calls are taking a while to complete, and that the loading spinner is staying on screen for a couple seconds. Our mock API server is configured to add a 2-second delay to all responses, specifically to help visualize times when there's a loading spinner visible. If you want to change this behavior, you can open up `api/server.js`, and alter this line:
 
 ```js title="api/server.js"
 // Add an extra delay to all endpoints, so loading spinners show up.
-const ARTIFICIAL_DELAY_MS = 2000
+const ARTIFICIAL_DELAY_MS = 2000;
 ```
 
 Feel free to turn that on and off as we go if you want the API calls to complete faster.
@@ -14073,33 +14119,33 @@ Like last time, we'll create another async thunk to get the users from the API a
 
 ```js title="features/users/usersSlice.js"
 // highlight-start
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { client } from '../../api/client'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { client } from "../../api/client";
 // highlight-end
 
-const initialState = []
+const initialState = [];
 
 // highlight-start
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-  const response = await client.get('/fakeApi/users')
-  return response.data
-})
+export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
+  const response = await client.get("/fakeApi/users");
+  return response.data;
+});
 // highlight-end
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState,
   reducers: {},
   // highlight-start
   extraReducers(builder) {
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
-      return action.payload
-    })
-  }
+      return action.payload;
+    });
+  },
   // highlight-end
-})
+});
 
-export default usersSlice.reducer
+export default usersSlice.reducer;
 ```
 
 We only need to fetch the list of users once, and we want to do it right when the application starts. We can do that in our `index.js` file, and directly dispatch the `fetchUsers` thunk because we have the `store` right there:
@@ -14108,15 +14154,15 @@ We only need to fetch the list of users once, and we want to do it right when th
 // omit imports
 
 // highlight-next-line
-import { fetchUsers } from './features/users/usersSlice'
+import { fetchUsers } from "./features/users/usersSlice";
 
-import { worker } from './api/server'
+import { worker } from "./api/server";
 
 // Start our mock API server
-worker.start({ onUnhandledRequest: 'bypass' })
+worker.start({ onUnhandledRequest: "bypass" });
 
 // highlight-next-line
-store.dispatch(fetchUsers())
+store.dispatch(fetchUsers());
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14124,8 +14170,8 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 Now, each of the posts should be showing a username again, and we should also have that same list of users shown in the "Author" dropdown in our `<AddPostForm>`.
@@ -14143,35 +14189,35 @@ In the process, we're going to change how we work with the new post object in ou
 ```js title="features/posts/postsSlice.js"
 // highlight-start
 export const addNewPost = createAsyncThunk(
-  'posts/addNewPost',
+  "posts/addNewPost",
   // The payload creator receives the partial `{title, content, user}` object
-  async initialPost => {
+  async (initialPost) => {
     // We send the initial data to the fake API server
-    const response = await client.post('/fakeApi/posts', initialPost)
+    const response = await client.post("/fakeApi/posts", initialPost);
     // The response includes the complete post object, including unique ID
-    return response.data
+    return response.data;
   }
-)
+);
 // highlight-end
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     // The existing `postAdded` reducer and prepare callback were deleted
     reactionAdded(state, action) {}, // omit logic
-    postUpdated(state, action) {} // omit logic
+    postUpdated(state, action) {}, // omit logic
   },
   extraReducers(builder) {
     // omit posts loading reducers
     // highlight-start
     builder.addCase(addNewPost.fulfilled, (state, action) => {
       // We can directly add the new post object to our posts array
-      state.posts.push(action.payload)
-    })
+      state.posts.push(action.payload);
+    });
     // highlight-end
-  }
-})
+  },
+});
 ```
 
 ### Checking Thunk Results in Components
@@ -14183,44 +14229,44 @@ It would be good if we can at least disable the "Save Post" button while we're w
 We can have our component logic wait for the async thunk to finish, and check the result when it's done:
 
 ```js title="features/posts/AddPostForm.js"
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 // highlight-next-line
-import { addNewPost } from './postsSlice'
+import { addNewPost } from "./postsSlice";
 
 export const AddPostForm = () => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
-  const [userId, setUserId] = useState('')
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [userId, setUserId] = useState("");
   // highlight-next-line
-  const [addRequestStatus, setAddRequestStatus] = useState('idle')
+  const [addRequestStatus, setAddRequestStatus] = useState("idle");
 
   // omit useSelectors and change handlers
 
   // highlight-start
   const canSave =
-    [title, content, userId].every(Boolean) && addRequestStatus === 'idle'
+    [title, content, userId].every(Boolean) && addRequestStatus === "idle";
 
   const onSavePostClicked = async () => {
     if (canSave) {
       try {
-        setAddRequestStatus('pending')
-        await dispatch(addNewPost({ title, content, user: userId })).unwrap()
-        setTitle('')
-        setContent('')
-        setUserId('')
+        setAddRequestStatus("pending");
+        await dispatch(addNewPost({ title, content, user: userId })).unwrap();
+        setTitle("");
+        setContent("");
+        setUserId("");
       } catch (err) {
-        console.error('Failed to save the post: ', err)
+        console.error("Failed to save the post: ", err);
       } finally {
-        setAddRequestStatus('idle')
+        setAddRequestStatus("idle");
       }
     }
-  }
+  };
   // highlight-end
 
   // omit rendering logic
-}
+};
 ```
 
 We can add a loading status enum field as a React `useState` hook, similar to how we're tracking loading state in `postsSlice` for fetching posts. In this case, we just want to know if the request is in progress or not.
@@ -14278,6 +14324,7 @@ id: part-6-performance-normalization
 title: 'Redux Essentials, Part 6: Performance and Normalizing Data'
 sidebar_label: 'Performance and Normalizing Data'
 description: 'The official Redux Essentials tutorial: learn how to improve app performance and structure data correctly'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -14311,19 +14358,19 @@ We're fetching a list of users from our fake API, and we can choose a user as th
 We'll start by adding a new `<UsersList>` component. It follows the usual pattern of reading some data from the store with `useSelector`, and mapping over the array to show a list of users with links to their individual pages:
 
 ```jsx title="features/users/UsersList.js"
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { selectAllUsers } from './usersSlice'
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { selectAllUsers } from "./usersSlice";
 
 export const UsersList = () => {
-  const users = useSelector(selectAllUsers)
+  const users = useSelector(selectAllUsers);
 
-  const renderedUsers = users.map(user => (
+  const renderedUsers = users.map((user) => (
     <li key={user.id}>
       <Link to={`/users/${user.id}`}>{user.name}</Link>
     </li>
-  ))
+  ));
 
   return (
     <section>
@@ -14331,48 +14378,48 @@ export const UsersList = () => {
 
       <ul>{renderedUsers}</ul>
     </section>
-  )
-}
+  );
+};
 ```
 
 We don't yet have a `selectAllUsers` selector, so we'll need to add that to `usersSlice.js` along with a `selectUserById` selector:
 
 ```js title="features/users/usersSlice.js"
-export default usersSlice.reducer
+export default usersSlice.reducer;
 
 // highlight-start
-export const selectAllUsers = state => state.users
+export const selectAllUsers = (state) => state.users;
 
 export const selectUserById = (state, userId) =>
-  state.users.find(user => user.id === userId)
+  state.users.find((user) => user.id === userId);
 // highlight-end
 ```
 
 And we'll add a `<UserPage>`, which is similar to our `<SinglePostPage>` in taking a `userId` parameter from the router:
 
 ```jsx title="features/users/UserPage.js"
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { selectUserById } from '../users/usersSlice'
-import { selectAllPosts } from '../posts/postsSlice'
+import { selectUserById } from "../users/usersSlice";
+import { selectAllPosts } from "../posts/postsSlice";
 
 export const UserPage = ({ match }) => {
-  const { userId } = match.params
+  const { userId } = match.params;
 
-  const user = useSelector(state => selectUserById(state, userId))
+  const user = useSelector((state) => selectUserById(state, userId));
 
-  const postsForUser = useSelector(state => {
-    const allPosts = selectAllPosts(state)
-    return allPosts.filter(post => post.user === userId)
-  })
+  const postsForUser = useSelector((state) => {
+    const allPosts = selectAllPosts(state);
+    return allPosts.filter((post) => post.user === userId);
+  });
 
-  const postTitles = postsForUser.map(post => (
+  const postTitles = postsForUser.map((post) => (
     <li key={post.id}>
       <Link to={`/posts/${post.id}`}>{post.title}</Link>
     </li>
-  ))
+  ));
 
   return (
     <section>
@@ -14380,8 +14427,8 @@ export const UserPage = ({ match }) => {
 
       <ul>{postTitles}</ul>
     </section>
-  )
-}
+  );
+};
 ```
 
 As we've seen before, we can take data from one `useSelector` call, or from props, and use that to help decide what to read from the store in another `useSelector` call.
@@ -14416,8 +14463,8 @@ export const Navbar = () => {
         </div>
       </section>
     </nav>
-  )
-}
+  );
+};
 ```
 
 ## Adding Notifications
@@ -14431,39 +14478,39 @@ In a real application, our app client would be in constant communication with th
 Since this is a new part of our app, the first step is to create a new slice for our notifications, and an async thunk to fetch some notification entries from the API. In order to create some realistic notifications, we'll include the timestamp of the latest notification we have in state. That will let our mock server generate notifications newer than that timestamp.
 
 ```js title="features/notifications/notificationsSlice.js"
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { client } from '../../api/client'
+import { client } from "../../api/client";
 
 export const fetchNotifications = createAsyncThunk(
-  'notifications/fetchNotifications',
+  "notifications/fetchNotifications",
   async (_, { getState }) => {
-    const allNotifications = selectAllNotifications(getState())
-    const [latestNotification] = allNotifications
-    const latestTimestamp = latestNotification ? latestNotification.date : ''
+    const allNotifications = selectAllNotifications(getState());
+    const [latestNotification] = allNotifications;
+    const latestTimestamp = latestNotification ? latestNotification.date : "";
     const response = await client.get(
       `/fakeApi/notifications?since=${latestTimestamp}`
-    )
-    return response.data
+    );
+    return response.data;
   }
-)
+);
 
 const notificationsSlice = createSlice({
-  name: 'notifications',
+  name: "notifications",
   initialState: [],
   reducers: {},
   extraReducers: {
     [fetchNotifications.fulfilled]: (state, action) => {
-      state.push(...action.payload)
+      state.push(...action.payload);
       // Sort with newest first
-      state.sort((a, b) => b.date.localeCompare(a.date))
-    }
-  }
-})
+      state.sort((a, b) => b.date.localeCompare(a.date));
+    },
+  },
+});
 
-export default notificationsSlice.reducer
+export default notificationsSlice.reducer;
 
-export const selectAllNotifications = state => state.notifications
+export const selectAllNotifications = (state) => state.notifications;
 ```
 
 As with the other slices, import `notificationsReducer` into `store.js` and add it to the `configureStore()` call.
@@ -14501,24 +14548,24 @@ In this case, we know that the list of notifications is in our Redux store state
 With that slice created, we can add a `<NotificationsList>` component:
 
 ```jsx title="features/notifications/NotificationsList.js"
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { formatDistanceToNow, parseISO } from 'date-fns'
+import React from "react";
+import { useSelector } from "react-redux";
+import { formatDistanceToNow, parseISO } from "date-fns";
 
-import { selectAllUsers } from '../users/usersSlice'
+import { selectAllUsers } from "../users/usersSlice";
 
-import { selectAllNotifications } from './notificationsSlice'
+import { selectAllNotifications } from "./notificationsSlice";
 
 export const NotificationsList = () => {
-  const notifications = useSelector(selectAllNotifications)
-  const users = useSelector(selectAllUsers)
+  const notifications = useSelector(selectAllNotifications);
+  const users = useSelector(selectAllUsers);
 
-  const renderedNotifications = notifications.map(notification => {
-    const date = parseISO(notification.date)
-    const timeAgo = formatDistanceToNow(date)
-    const user = users.find(user => user.id === notification.user) || {
-      name: 'Unknown User'
-    }
+  const renderedNotifications = notifications.map((notification) => {
+    const date = parseISO(notification.date);
+    const timeAgo = formatDistanceToNow(date);
+    const user = users.find((user) => user.id === notification.user) || {
+      name: "Unknown User",
+    };
 
     return (
       <div key={notification.id} className="notification">
@@ -14529,16 +14576,16 @@ export const NotificationsList = () => {
           <i>{timeAgo} ago</i>
         </div>
       </div>
-    )
-  })
+    );
+  });
 
   return (
     <section className="notificationsList">
       <h2>Notifications</h2>
       {renderedNotifications}
     </section>
-  )
-}
+  );
+};
 ```
 
 Once again, we're reading a list of items from the Redux state, mapping over them, and rendering content for each item.
@@ -14546,21 +14593,21 @@ Once again, we're reading a list of items from the Redux state, mapping over the
 We also need to update the `<Navbar>` to add a "Notifications" tab, and a new button to fetch some notifications:
 
 ```jsx title="app/Navbar.js"
-import React from 'react'
+import React from "react";
 // highlight-next-line
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 // highlight-next-line
-import { fetchNotifications } from '../features/notifications/notificationsSlice'
+import { fetchNotifications } from "../features/notifications/notificationsSlice";
 
 export const Navbar = () => {
   // highlight-start
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const fetchNewNotifications = () => {
-    dispatch(fetchNotifications())
-  }
+    dispatch(fetchNotifications());
+  };
   // highlight-end
 
   return (
@@ -14583,8 +14630,8 @@ export const Navbar = () => {
         </div>
       </section>
     </nav>
-  )
-}
+  );
+};
 ```
 
 Lastly, we need to update `App.js` with the "Notifications" route so we can navigate to it:
@@ -14592,7 +14639,7 @@ Lastly, we need to update `App.js` with the "Notifications" route so we can navi
 ```js title="App.js"
 // omit imports
 // highlight-next-line
-import { NotificationsList } from './features/notifications/NotificationsList'
+import { NotificationsList } from "./features/notifications/NotificationsList";
 
 function App() {
   return (
@@ -14607,7 +14654,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 ```
 
@@ -14625,80 +14672,80 @@ First, we'll update `notificationsSlice` to have a reducer that marks all notifi
 
 ```js title="features/notifications/notificationsSlice.js"
 const notificationsSlice = createSlice({
-  name: 'notifications',
+  name: "notifications",
   initialState: [],
   reducers: {
     // highlight-start
     allNotificationsRead(state, action) {
-      state.forEach(notification => {
-        notification.read = true
-      })
-    }
+      state.forEach((notification) => {
+        notification.read = true;
+      });
+    },
     // highlight-end
   },
   extraReducers(builder) {
     builder.addCase(fetchNotifications.fulfilled, (state, action) => {
-      state.push(...action.payload)
+      state.push(...action.payload);
       // highlight-start
-      state.forEach(notification => {
+      state.forEach((notification) => {
         // Any notifications we've read are no longer new
-        notification.isNew = !notification.read
-      })
+        notification.isNew = !notification.read;
+      });
       // highlight-end
       // Sort with newest first
-      state.sort((a, b) => b.date.localeCompare(a.date))
-    })
-  }
-})
+      state.sort((a, b) => b.date.localeCompare(a.date));
+    });
+  },
+});
 
 // highlight-next-line
-export const { allNotificationsRead } = notificationsSlice.actions
+export const { allNotificationsRead } = notificationsSlice.actions;
 
-export default notificationsSlice.reducer
+export default notificationsSlice.reducer;
 ```
 
 We want to mark these notifications as read whenever our `<NotificationsList>` component renders, either because we clicked on the tab to view the notifications, or because we already have it open and we just received some additional notifications. We can do this by dispatching `allNotificationsRead` any time this component re-renders. In order to avoid flashing of old data as this updates, we'll dispatch the action in a `useLayoutEffect` hook. We also want to add an additional classname to any notification list entries in the page, to highlight them:
 
 ```jsx title="features/notifications/NotificationsList.js"
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect } from "react";
 // highlight-next-line
-import { useSelector, useDispatch } from 'react-redux'
-import { formatDistanceToNow, parseISO } from 'date-fns'
+import { useSelector, useDispatch } from "react-redux";
+import { formatDistanceToNow, parseISO } from "date-fns";
 // highlight-next-line
-import classnames from 'classnames'
+import classnames from "classnames";
 
-import { selectAllUsers } from '../users/usersSlice'
+import { selectAllUsers } from "../users/usersSlice";
 
 // highlight-start
 import {
   selectAllNotifications,
-  allNotificationsRead
-} from './notificationsSlice'
+  allNotificationsRead,
+} from "./notificationsSlice";
 // highlight-end
 
 export const NotificationsList = () => {
   // highlight-next-line
-  const dispatch = useDispatch()
-  const notifications = useSelector(selectAllNotifications)
-  const users = useSelector(selectAllUsers)
+  const dispatch = useDispatch();
+  const notifications = useSelector(selectAllNotifications);
+  const users = useSelector(selectAllUsers);
 
   // highlight-start
   useLayoutEffect(() => {
-    dispatch(allNotificationsRead())
-  })
+    dispatch(allNotificationsRead());
+  });
   // highlight-end
 
-  const renderedNotifications = notifications.map(notification => {
-    const date = parseISO(notification.date)
-    const timeAgo = formatDistanceToNow(date)
-    const user = users.find(user => user.id === notification.user) || {
-      name: 'Unknown User'
-    }
+  const renderedNotifications = notifications.map((notification) => {
+    const date = parseISO(notification.date);
+    const timeAgo = formatDistanceToNow(date);
+    const user = users.find((user) => user.id === notification.user) || {
+      name: "Unknown User",
+    };
 
     // highlight-start
-    const notificationClassname = classnames('notification', {
-      new: notification.isNew
-    })
+    const notificationClassname = classnames("notification", {
+      new: notification.isNew,
+    });
 
     return (
       <div key={notification.id} className={notificationClassname}>
@@ -14710,16 +14757,16 @@ export const NotificationsList = () => {
           <i>{timeAgo} ago</i>
         </div>
       </div>
-    )
-  })
+    );
+  });
 
   return (
     <section className="notificationsList">
       <h2>Notifications</h2>
       {renderedNotifications}
     </section>
-  )
-}
+  );
+};
 ```
 
 This works, but actually has a slightly surprising bit of behavior. Any time there are new notifications (either because we've just switched to this tab, or we've fetched some new notifications from the API), you'll actually see _two_ `"notifications/allNotificationsRead"` actions dispatched. Why is that?
@@ -14739,29 +14786,29 @@ The last thing we need to do before we move on is to add the badge on our "Notif
 ```jsx title="app/Navbar.js"
 // omit imports
 // highlight-next-line
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 
 // highlight-start
 import {
   fetchNotifications,
-  selectAllNotifications
-} from '../features/notifications/notificationsSlice'
+  selectAllNotifications,
+} from "../features/notifications/notificationsSlice";
 // highlight-end
 
 export const Navbar = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // highlight-start
-  const notifications = useSelector(selectAllNotifications)
-  const numUnreadNotifications = notifications.filter(n => !n.read).length
+  const notifications = useSelector(selectAllNotifications);
+  const numUnreadNotifications = notifications.filter((n) => !n.read).length;
   // highlight-end
   // omit component contents
   // highlight-start
-  let unreadNotificationsBadge
+  let unreadNotificationsBadge;
 
   if (numUnreadNotifications > 0) {
     unreadNotificationsBadge = (
       <span className="badge">{numUnreadNotifications}</span>
-    )
+    );
   }
   // highlight-end
   return (
@@ -14778,8 +14825,8 @@ export const Navbar = () => {
       </div>
       // omit component contents
     </nav>
-  )
-}
+  );
+};
 ```
 
 ## Improving Render Performance
@@ -14800,19 +14847,19 @@ If we look at `<UserPage>` carefully, there's a specific problem:
 
 ```jsx title="features/UserPage.js
 export const UserPage = ({ match }) => {
-  const { userId } = match.params
+  const { userId } = match.params;
 
-  const user = useSelector(state => selectUserById(state, userId))
+  const user = useSelector((state) => selectUserById(state, userId));
 
   // highlight-start
-  const postsForUser = useSelector(state => {
-    const allPosts = selectAllPosts(state)
-    return allPosts.filter(post => post.user === userId)
-  })
+  const postsForUser = useSelector((state) => {
+    const allPosts = selectAllPosts(state);
+    return allPosts.filter((post) => post.user === userId);
+  });
   // highlight-end
 
   // omit rendering logic
-}
+};
 ```
 
 We know that `useSelector` will re-run every time an action is dispatched, and that it forces the component to re-render if we return a new reference value.
@@ -14833,20 +14880,24 @@ Let's make a new `selectPostsByUser` selector function, using Reselect, and use 
 
 ```js title="features/posts/postsSlice.js"
 // highlight-next-line
-import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
+import {
+  createSlice,
+  createAsyncThunk,
+  createSelector,
+} from "@reduxjs/toolkit";
 
 // omit slice logic
 
-export const selectAllPosts = state => state.posts.posts
+export const selectAllPosts = (state) => state.posts.posts;
 
 export const selectPostById = (state, postId) =>
-  state.posts.posts.find(post => post.id === postId)
+  state.posts.posts.find((post) => post.id === postId);
 
 // highlight-start
 export const selectPostsByUser = createSelector(
   [selectAllPosts, (state, userId) => userId],
-  (posts, userId) => posts.filter(post => post.user === userId)
-)
+  (posts, userId) => posts.filter((post) => post.user === userId)
+);
 // highlight-end
 ```
 
@@ -14859,40 +14910,40 @@ Our output selector then takes `posts` and `userId`, and returns the filtered ar
 If we try calling `selectPostsByUser` multiple times, it will only re-run the output selector if either `posts` or `userId` has changed:
 
 ```js
-const state1 = getState()
+const state1 = getState();
 // Output selector runs, because it's the first call
-selectPostsByUser(state1, 'user1')
+selectPostsByUser(state1, "user1");
 // Output selector does _not_ run, because the arguments haven't changed
-selectPostsByUser(state1, 'user1')
+selectPostsByUser(state1, "user1");
 // Output selector runs, because `userId` changed
-selectPostsByUser(state1, 'user2')
+selectPostsByUser(state1, "user2");
 
-dispatch(reactionAdded())
-const state2 = getState()
+dispatch(reactionAdded());
+const state2 = getState();
 // Output selector does not run, because `posts` and `userId` are the same
-selectPostsByUser(state2, 'user2')
+selectPostsByUser(state2, "user2");
 
 // Add some more posts
-dispatch(addNewPost())
-const state3 = getState()
+dispatch(addNewPost());
+const state3 = getState();
 // Output selector runs, because `posts` has changed
-selectPostsByUser(state3, 'user2')
+selectPostsByUser(state3, "user2");
 ```
 
 If we call this selector in `<UserPage>` and re-run the React profiler while fetching notifications, we should see that `<UserPage>` doesn't re-render this time:
 
 ```jsx
 export const UserPage = ({ match }) => {
-  const { userId } = match.params
+  const { userId } = match.params;
 
-  const user = useSelector(state => selectUserById(state, userId))
+  const user = useSelector((state) => selectUserById(state, userId));
 
   // highlight-start
-  const postsForUser = useSelector(state => selectPostsByUser(state, userId))
+  const postsForUser = useSelector((state) => selectPostsByUser(state, userId));
   // highlight-end
 
   // omit rendering logic
-}
+};
 ```
 
 Memoized selectors are a valuable tool for improving performance in a React+Redux application, because they can help us avoid unnecessary re-renders, and also avoid doing potentially complex or expensive calculations if the input data hasn't changed.
@@ -14925,10 +14976,10 @@ First, we could wrap the `<PostExcerpt>` component in [`React.memo()`](https://r
 // highlight-next-line
 let PostExcerpt = ({ post }) => {
   // omit logic
-}
+};
 
 // highlight-next-line
-PostExcerpt = React.memo(PostExcerpt)
+PostExcerpt = React.memo(PostExcerpt);
 ```
 
 Another option is to rewrite `<PostsList>` so that it only selects a list of post IDs from the store instead of the entire `posts` array, and rewrite `<PostExcerpt>` so that it receives a `postId` prop and calls `useSelector` to read the post object it needs. If `<PostsList>` gets the same list of IDs as before, it won't need to re-render, and so only our one changed `<PostExcerpt>` component should have to render.
@@ -14971,8 +15022,8 @@ JavaScript objects can be used as lookup tables, similar to "maps" or "dictionar
 This makes it easy to find a particular `user` object by its ID, without having to loop through all the other user objects in an array:
 
 ```js
-const userId = 'user2'
-const userObject = state.users.entities[userId]
+const userId = "user2";
+const userObject = state.users.entities[userId];
 ```
 
 :::info
@@ -15006,82 +15057,82 @@ With that in mind, let's update our `postsSlice` to use `createEntityAdapter`:
 ```js title="features/posts/postsSlice.js"
 import {
   // highlight-next-line
-  createEntityAdapter
+  createEntityAdapter,
   // omit other imports
-} from '@reduxjs/toolkit'
+} from "@reduxjs/toolkit";
 
 // highlight-start
 const postsAdapter = createEntityAdapter({
-  sortComparer: (a, b) => b.date.localeCompare(a.date)
-})
+  sortComparer: (a, b) => b.date.localeCompare(a.date),
+});
 
 const initialState = postsAdapter.getInitialState({
-  status: 'idle',
-  error: null
-})
+  status: "idle",
+  error: null,
+});
 // highlight-end
 
 // omit thunks
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     reactionAdded(state, action) {
-      const { postId, reaction } = action.payload
+      const { postId, reaction } = action.payload;
       // highlight-next-line
-      const existingPost = state.entities[postId]
+      const existingPost = state.entities[postId];
       if (existingPost) {
-        existingPost.reactions[reaction]++
+        existingPost.reactions[reaction]++;
       }
     },
     postUpdated(state, action) {
-      const { id, title, content } = action.payload
+      const { id, title, content } = action.payload;
       // highlight-next-line
-      const existingPost = state.entities[id]
+      const existingPost = state.entities[id];
       if (existingPost) {
-        existingPost.title = title
-        existingPost.content = content
+        existingPost.title = title;
+        existingPost.content = content;
       }
-    }
+    },
   },
   extraReducers(builder) {
     // omit other reducers
 
     builder
       .addCase(fetchPosts.fulfilled, (state, action) => {
-        state.status = 'succeeded'
+        state.status = "succeeded";
         // Add any fetched posts to the array
         // highlight-start
         // Use the `upsertMany` reducer as a mutating update utility
-        postsAdapter.upsertMany(state, action.payload)
+        postsAdapter.upsertMany(state, action.payload);
         // highlight-end
       })
       // highlight-start
       // Use the `addOne` reducer for the fulfilled case
-      .addCase(addNewPost.fulfilled, postsAdapter.addOne)
+      .addCase(addNewPost.fulfilled, postsAdapter.addOne);
     // highlight-end
-  }
-})
+  },
+});
 
-export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
+export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions;
 
-export default postsSlice.reducer
+export default postsSlice.reducer;
 
 // highlight-start
 // Export the customized selectors for this adapter using `getSelectors`
 export const {
   selectAll: selectAllPosts,
   selectById: selectPostById,
-  selectIds: selectPostIds
+  selectIds: selectPostIds,
   // Pass in a selector that returns the posts slice of state
-} = postsAdapter.getSelectors(state => state.posts)
+} = postsAdapter.getSelectors((state) => state.posts);
 // highlight-end
 
 export const selectPostsByUser = createSelector(
   [selectAllPosts, (state, userId) => userId],
-  (posts, userId) => posts.filter(post => post.user === userId)
-)
+  (posts, userId) => posts.filter((post) => post.user === userId)
+);
 ```
 
 There's a lot going on there! Let's break it down.
@@ -15112,36 +15163,36 @@ import {
   selectAllPosts,
   fetchPosts,
   selectPostIds,
-  selectPostById
-} from './postsSlice'
+  selectPostById,
+} from "./postsSlice";
 
 let PostExcerpt = ({ postId }) => {
-  const post = useSelector(state => selectPostById(state, postId))
+  const post = useSelector((state) => selectPostById(state, postId));
   // highlight-end
   // omit rendering logic
-}
+};
 
 export const PostsList = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // highlight-next-line
-  const orderedPostIds = useSelector(selectPostIds)
+  const orderedPostIds = useSelector(selectPostIds);
 
   // omit other selections and effects
 
-  if (postStatus === 'loading') {
-    content = <Spinner text="Loading..." />
-  } else if (postStatus === 'succeeded') {
+  if (postStatus === "loading") {
+    content = <Spinner text="Loading..." />;
+  } else if (postStatus === "succeeded") {
     // highlight-start
-    content = orderedPostIds.map(postId => (
+    content = orderedPostIds.map((postId) => (
       <PostExcerpt key={postId} postId={postId} />
-    ))
+    ));
     // highlight-end
-  } else if (postStatus === 'error') {
-    content = <div>{error}</div>
+  } else if (postStatus === "error") {
+    content = <div>{error}</div>;
   }
 
   // omit other rendering
-}
+};
 ```
 
 Now, if we try clicking a reaction button on one of the posts while capturing a React component performance profile, we should see that _only_ that one component re-rendered:
@@ -15161,36 +15212,36 @@ import {
   createSlice,
   createAsyncThunk,
   // highlight-next-line
-  createEntityAdapter
-} from '@reduxjs/toolkit'
-import { client } from '../../api/client'
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
+import { client } from "../../api/client";
 
 // highlight-start
-const usersAdapter = createEntityAdapter()
+const usersAdapter = createEntityAdapter();
 
-const initialState = usersAdapter.getInitialState()
+const initialState = usersAdapter.getInitialState();
 // highlight-end
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-  const response = await client.get('/fakeApi/users')
-  return response.users
-})
+export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
+  const response = await client.get("/fakeApi/users");
+  return response.users;
+});
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState,
   reducers: {},
   extraReducers(builder) {
     // highlight-next-line
-    builder.addCase(fetchUsers.fulfilled, usersAdapter.setAll)
-  }
-})
+    builder.addCase(fetchUsers.fulfilled, usersAdapter.setAll);
+  },
+});
 
-export default usersSlice.reducer
+export default usersSlice.reducer;
 
 // highlight-start
 export const { selectAll: selectAllUsers, selectById: selectUserById } =
-  usersAdapter.getSelectors(state => state.users)
+  usersAdapter.getSelectors((state) => state.users);
 // highlight-end
 ```
 
@@ -15207,52 +15258,52 @@ import {
   createSlice,
   createAsyncThunk,
   // highlight-next-line
-  createEntityAdapter
-} from '@reduxjs/toolkit'
+  createEntityAdapter,
+} from "@reduxjs/toolkit";
 
-import { client } from '../../api/client'
+import { client } from "../../api/client";
 
 // highlight-start
 const notificationsAdapter = createEntityAdapter({
-  sortComparer: (a, b) => b.date.localeCompare(a.date)
-})
+  sortComparer: (a, b) => b.date.localeCompare(a.date),
+});
 // highlight-end
 
 // omit fetchNotifications thunk
 
 const notificationsSlice = createSlice({
-  name: 'notifications',
+  name: "notifications",
   // highlight-next-line
   initialState: notificationsAdapter.getInitialState(),
   reducers: {
     allNotificationsRead(state, action) {
       // highlight-start
-      Object.values(state.entities).forEach(notification => {
-        notification.read = true
-      })
+      Object.values(state.entities).forEach((notification) => {
+        notification.read = true;
+      });
       // highlight-end
-    }
+    },
   },
   extraReducers(builder) {
     builder.addCase(fetchNotifications.fulfilled, (state, action) => {
       // highlight-start
-      Object.values(state.entities).forEach(notification => {
+      Object.values(state.entities).forEach((notification) => {
         // Any notifications we've read are no longer new
-        notification.isNew = !notification.read
-      })
-      notificationsAdapter.upsertMany(state, action.payload)
+        notification.isNew = !notification.read;
+      });
+      notificationsAdapter.upsertMany(state, action.payload);
       // highlight-end
-    })
-  }
-})
+    });
+  },
+});
 
-export const { allNotificationsRead } = notificationsSlice.actions
+export const { allNotificationsRead } = notificationsSlice.actions;
 
-export default notificationsSlice.reducer
+export default notificationsSlice.reducer;
 
 // highlight-start
 export const { selectAll: selectAllNotifications } =
-  notificationsAdapter.getSelectors(state => state.notifications)
+  notificationsAdapter.getSelectors((state) => state.notifications);
 // highlight-end
 ```
 
@@ -15324,6 +15375,7 @@ id: part-7-rtk-query-basics
 title: 'Redux Essentials, Part 7: RTK Query Basics'
 sidebar_label: 'RTK Query Basics'
 description: 'The official Redux Essentials tutorial: learn how to use RTK Query for data fetching'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -15386,11 +15438,11 @@ RTK Query takes inspiration from other tools that have pioneered solutions for d
 RTK Query is included within the installation of the core Redux Toolkit package. It is available via either of the two entry points below:
 
 ```ts no-transpile
-import { createApi } from '@reduxjs/toolkit/query'
+import { createApi } from "@reduxjs/toolkit/query";
 
 /* React-specific entry point that automatically generates
    hooks corresponding to the defined endpoints */
-import { createApi } from '@reduxjs/toolkit/query/react'
+import { createApi } from "@reduxjs/toolkit/query/react";
 ```
 
 RTK Query primarily consists of two APIs:
@@ -15435,26 +15487,26 @@ We'll start by defining a new `apiSlice.js` file. Since this isn't specific to a
 
 ```js title="features/api/apiSlice.js"
 // Import the RTK Query methods from the React-specific entry point
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Define our single API slice object
 export const apiSlice = createApi({
   // The cache reducer expects to be added at `state.api` (already default - this is optional)
-  reducerPath: 'api',
+  reducerPath: "api",
   // All of our requests will have URLs starting with '/fakeApi'
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
   // The "endpoints" represent operations and requests for this server
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     // The `getPosts` endpoint is a "query" operation that returns data
     getPosts: builder.query({
       // The URL for the request is '/fakeApi/posts'
-      query: () => '/posts'
-    })
-  })
-})
+      query: () => "/posts",
+    }),
+  }),
+});
 
 // Export the auto-generated hook for the `getPost` query endpoint
-export const { useGetPostsQuery } = apiSlice
+export const { useGetPostsQuery } = apiSlice;
 ```
 
 RTK Query's functionality is based on a single method, called `createApi`. All of the Redux Toolkit APIs we've seen so far are UI-agnostic, and could be used with _any_ UI layer. The RTK Query core logic is the same way. However, RTK Query also includes a React-specific version of `createApi`, and since we're using RTK and React together, we need to use that to take advantage of RTK's React integration. So, we import from `'@reduxjs/toolkit/query/react'` specifically.
@@ -15499,11 +15551,11 @@ In this case, our endpoint is `getPosts` and it's a query endpoint, so the gener
 We now need to hook up the API slice to our Redux store. We can modify the existing `store.js` file to add the API slice's cache reducer to the state. Also, the API slice generates a custom middleware that needs to be added to the store. This middleware _must_ be added as well - it manages cache lifetimes and expiration.
 
 ```js title="app/store.js"
-import postsReducer from '../features/posts/postsSlice'
-import usersReducer from '../features/users/usersSlice'
-import notificationsReducer from '../features/notifications/notificationsSlice'
+import postsReducer from "../features/posts/postsSlice";
+import usersReducer from "../features/users/usersSlice";
+import notificationsReducer from "../features/notifications/notificationsSlice";
 // highlight-next-line
-import { apiSlice } from '../features/api/apiSlice'
+import { apiSlice } from "../features/api/apiSlice";
 
 export default configureStore({
   reducer: {
@@ -15511,13 +15563,13 @@ export default configureStore({
     users: usersReducer,
     notifications: notificationsReducer,
     // highlight-next-line
-    [apiSlice.reducerPath]: apiSlice.reducer
+    [apiSlice.reducerPath]: apiSlice.reducer,
   },
   // highlight-start
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(apiSlice.middleware)
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiSlice.middleware),
   // highlight-end
-})
+});
 ```
 
 We can reuse the `apiSlice.reducerPath` field as a computed key in the `reducer` parameter, to ensure that the caching reducer is added in the right place.
@@ -15535,16 +15587,16 @@ Currently, `<PostsList>` is specifically importing `useSelector`, `useDispatch`,
 Let's see how `<PostsList>` looks when we use this hook:
 
 ```jsx title="features/posts/PostsList.js"
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { Spinner } from '../../components/Spinner'
-import { PostAuthor } from './PostAuthor'
-import { TimeAgo } from './TimeAgo'
-import { ReactionButtons } from './ReactionButtons'
+import { Spinner } from "../../components/Spinner";
+import { PostAuthor } from "./PostAuthor";
+import { TimeAgo } from "./TimeAgo";
+import { ReactionButtons } from "./ReactionButtons";
 
 // highlight-next-line
-import { useGetPostsQuery } from '../api/apiSlice'
+import { useGetPostsQuery } from "../api/apiSlice";
 
 // highlight-next-line
 let PostExcerpt = ({ post }) => {
@@ -15562,8 +15614,8 @@ let PostExcerpt = ({ post }) => {
         View Post
       </Link>
     </article>
-  )
-}
+  );
+};
 
 export const PostsList = () => {
   // highlight-start
@@ -15572,21 +15624,21 @@ export const PostsList = () => {
     isLoading,
     isSuccess,
     isError,
-    error
-  } = useGetPostsQuery()
+    error,
+  } = useGetPostsQuery();
   // highlight-end
 
-  let content
+  let content;
 
   // highlight-next-line
   if (isLoading) {
-    content = <Spinner text="Loading..." />
+    content = <Spinner text="Loading..." />;
     // highlight-next-line
   } else if (isSuccess) {
-    content = posts.map(post => <PostExcerpt key={post.id} post={post} />)
+    content = posts.map((post) => <PostExcerpt key={post.id} post={post} />);
     // highlight-next-line
   } else if (isError) {
-    content = <div>{error.toString()}</div>
+    content = <div>{error.toString()}</div>;
   }
 
   return (
@@ -15594,8 +15646,8 @@ export const PostsList = () => {
       <h2>Posts</h2>
       {content}
     </section>
-  )
-}
+  );
+};
 ```
 
 Conceptually, `<PostsList>` is still doing all the same work it was before, but we were able to replace the multiple `useSelector` calls and the `useEffect` dispatch with a single call to `useGetPostsQuery()`.
@@ -15631,27 +15683,29 @@ export const PostsList = () => {
     isLoading,
     isSuccess,
     isError,
-    error
-  } = useGetPostsQuery()
+    error,
+  } = useGetPostsQuery();
 
   // highlight-start
   const sortedPosts = useMemo(() => {
-    const sortedPosts = posts.slice()
+    const sortedPosts = posts.slice();
     // Sort posts in descending chronological order
-    sortedPosts.sort((a, b) => b.date.localeCompare(a.date))
-    return sortedPosts
-  }, [posts])
+    sortedPosts.sort((a, b) => b.date.localeCompare(a.date));
+    return sortedPosts;
+  }, [posts]);
   // highlight-end
 
-  let content
+  let content;
 
   if (isLoading) {
-    content = <Spinner text="Loading..." />
+    content = <Spinner text="Loading..." />;
   } else if (isSuccess) {
     // highlight-next-line
-    content = sortedPosts.map(post => <PostExcerpt key={post.id} post={post} />)
+    content = sortedPosts.map((post) => (
+      <PostExcerpt key={post.id} post={post} />
+    ));
   } else if (isError) {
-    content = <div>{error.toString()}</div>
+    content = <div>{error.toString()}</div>;
   }
 
   return (
@@ -15659,8 +15713,8 @@ export const PostsList = () => {
       <h2>Posts</h2>
       {content}
     </section>
-  )
-}
+  );
+};
 ```
 
 ## Displaying Individual Posts
@@ -15677,22 +15731,22 @@ In `apiSlice.js`, we're going to add another query endpoint definition, called `
 
 ```js title="features/api/apiSlice.js"
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
-  endpoints: builder => ({
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
+  endpoints: (builder) => ({
     getPosts: builder.query({
-      query: () => '/posts'
+      query: () => "/posts",
     }),
     // highlight-start
     getPost: builder.query({
-      query: postId => `/posts/${postId}`
-    })
+      query: (postId) => `/posts/${postId}`,
+    }),
     // highlight-end
-  })
-})
+  }),
+});
 
 // highlight-next-line
-export const { useGetPostsQuery, useGetPostQuery } = apiSlice
+export const { useGetPostsQuery, useGetPostQuery } = apiSlice;
 ```
 
 The `getPost` endpoint looks much like the existing `getPosts` endpoint, but the `query` parameter is different. Here, `query` takes an argument called `postId`, and we're using that `postId` to construct the server URL. That way we can make a server request for just one specific `Post` object.
@@ -15704,28 +15758,28 @@ This also generates a new `useGetPostQuery` hook, so we export that as well.
 Our `<SinglePostPage>` is currently reading one `Post` entry from `state.posts` based on ID. We need to update it to call the new `useGetPostQuery` hook, and use similar loading state as the main list.
 
 ```jsx title="features/posts/SinglePostPage.js"
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 // highlight-start
-import { Spinner } from '../../components/Spinner'
-import { useGetPostQuery } from '../api/apiSlice'
+import { Spinner } from "../../components/Spinner";
+import { useGetPostQuery } from "../api/apiSlice";
 // highlight-end
 
-import { PostAuthor } from './PostAuthor'
-import { TimeAgo } from './TimeAgo'
-import { ReactionButtons } from './ReactionButtons'
+import { PostAuthor } from "./PostAuthor";
+import { TimeAgo } from "./TimeAgo";
+import { ReactionButtons } from "./ReactionButtons";
 
 export const SinglePostPage = ({ match }) => {
-  const { postId } = match.params
+  const { postId } = match.params;
 
   // highlight-next-line
-  const { data: post, isFetching, isSuccess } = useGetPostQuery(postId)
+  const { data: post, isFetching, isSuccess } = useGetPostQuery(postId);
 
-  let content
+  let content;
   // highlight-start
   if (isFetching) {
-    content = <Spinner text="Loading..." />
+    content = <Spinner text="Loading..." />;
   } else if (isSuccess) {
     // highlight-end
     content = (
@@ -15741,11 +15795,11 @@ export const SinglePostPage = ({ match }) => {
           Edit Post
         </Link>
       </article>
-    )
+    );
   }
 
-  return <section>{content}</section>
-}
+  return <section>{content}</section>;
+};
 ```
 
 Notice that we're taking the `postId` we've read from the router match, and passing it as an argument to `useGetPostQuery`. The query hook will then use that to construct the request URL, and fetch this specific `Post` object.
@@ -15783,34 +15837,34 @@ Adding a mutation endpoint is very similar to adding a query endpoint. The bigge
 
 ```js title="features/api/apiSlice.js"
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
-  endpoints: builder => ({
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
+  endpoints: (builder) => ({
     getPosts: builder.query({
-      query: () => '/posts'
+      query: () => "/posts",
     }),
     getPost: builder.query({
-      query: postId => `/posts/${postId}`
+      query: (postId) => `/posts/${postId}`,
     }),
     // highlight-start
     addNewPost: builder.mutation({
-      query: initialPost => ({
-        url: '/posts',
-        method: 'POST',
+      query: (initialPost) => ({
+        url: "/posts",
+        method: "POST",
         // Include the entire post object as the body of the request
-        body: initialPost
-      })
-    })
+        body: initialPost,
+      }),
+    }),
     // highlight-end
-  })
-})
+  }),
+});
 
 export const {
   useGetPostsQuery,
   useGetPostQuery,
   // highlight-next-line
-  useAddNewPostMutation
-} = apiSlice
+  useAddNewPostMutation,
+} = apiSlice;
 ```
 
 Here our `query` option returns an object containing `{url, method, body}`. Since we're using `fetchBaseQuery` to make the requests, the `body` field will automatically be JSON-serialized for us.
@@ -15822,45 +15876,45 @@ Like with query endpoints, the API slice automatically generates a React hook fo
 Our `<AddNewPostForm>` is already dispatching an async thunk to add a post whenever we click the "Save Post" button. To do that, it has to import `useDispatch` and the `addNewPost` thunk. The mutation hooks replace both of those, and the usage pattern is very similar.
 
 ```js title="features/posts/AddNewPostForm"
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-import { Spinner } from '../../components/Spinner'
-import { useAddNewPostMutation } from '../api/apiSlice'
-import { selectAllUsers } from '../users/usersSlice'
+import { Spinner } from "../../components/Spinner";
+import { useAddNewPostMutation } from "../api/apiSlice";
+import { selectAllUsers } from "../users/usersSlice";
 
 export const AddPostForm = () => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
-  const [userId, setUserId] = useState('')
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [userId, setUserId] = useState("");
 
   // highlight-next-line
-  const [addNewPost, { isLoading }] = useAddNewPostMutation()
-  const users = useSelector(selectAllUsers)
+  const [addNewPost, { isLoading }] = useAddNewPostMutation();
+  const users = useSelector(selectAllUsers);
 
-  const onTitleChanged = e => setTitle(e.target.value)
-  const onContentChanged = e => setContent(e.target.value)
-  const onAuthorChanged = e => setUserId(e.target.value)
+  const onTitleChanged = (e) => setTitle(e.target.value);
+  const onContentChanged = (e) => setContent(e.target.value);
+  const onAuthorChanged = (e) => setUserId(e.target.value);
 
   // highlight-next-line
-  const canSave = [title, content, userId].every(Boolean) && !isLoading
+  const canSave = [title, content, userId].every(Boolean) && !isLoading;
 
   const onSavePostClicked = async () => {
     if (canSave) {
       try {
         // highlight-next-line
-        await addNewPost({ title, content, user: userId }).unwrap()
-        setTitle('')
-        setContent('')
-        setUserId('')
+        await addNewPost({ title, content, user: userId }).unwrap();
+        setTitle("");
+        setContent("");
+        setUserId("");
       } catch (err) {
-        console.error('Failed to save the post: ', err)
+        console.error("Failed to save the post: ", err);
       }
     }
-  }
+  };
 
   // omit rendering logic
-}
+};
 ```
 
 Mutation hooks return an array with two values:
@@ -15887,10 +15941,10 @@ Also, earlier we saw that query hooks have both an `isLoading` flag, which is `t
 Instead, we could make the existing list of posts partially transparent to indicate the data is stale, but keep them visible while the refetch is happening. As soon as the request completes, we can return to showing the posts list as normal.
 
 ```jsx title="features/posts/PostsList.js"
-import React, { useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
 // highlight-next-line
-import classnames from 'classnames'
+import classnames from "classnames";
 
 // omit other imports and PostExcerpt
 
@@ -15903,33 +15957,33 @@ export const PostsList = () => {
     isError,
     error,
     // highlight-next-line
-    refetch
-  } = useGetPostsQuery()
+    refetch,
+  } = useGetPostsQuery();
 
   const sortedPosts = useMemo(() => {
-    const sortedPosts = posts.slice()
-    sortedPosts.sort((a, b) => b.date.localeCompare(a.date))
-    return sortedPosts
-  }, [posts])
+    const sortedPosts = posts.slice();
+    sortedPosts.sort((a, b) => b.date.localeCompare(a.date));
+    return sortedPosts;
+  }, [posts]);
 
-  let content
+  let content;
 
   if (isLoading) {
-    content = <Spinner text="Loading..." />
+    content = <Spinner text="Loading..." />;
   } else if (isSuccess) {
     // highlight-start
-    const renderedPosts = sortedPosts.map(post => (
+    const renderedPosts = sortedPosts.map((post) => (
       <PostExcerpt key={post.id} post={post} />
-    ))
+    ));
 
-    const containerClassname = classnames('posts-container', {
-      disabled: isFetching
-    })
+    const containerClassname = classnames("posts-container", {
+      disabled: isFetching,
+    });
 
-    content = <div className={containerClassname}>{renderedPosts}</div>
+    content = <div className={containerClassname}>{renderedPosts}</div>;
     // highlight-end
   } else if (isError) {
-    content = <div>{error.toString()}</div>
+    content = <div>{error.toString()}</div>;
   }
 
   return (
@@ -15939,8 +15993,8 @@ export const PostsList = () => {
       <button onClick={refetch}>Refetch Posts</button>
       {content}
     </section>
-  )
-}
+  );
+};
 ```
 
 If we add a new post and then click "Refetch Posts", we should now see the posts list go semi-transparent for a couple seconds, then re-render with the new post added at the top.
@@ -15963,30 +16017,30 @@ We can add a single tag called `'Post'` to our API slice that will let us automa
 
 ```js title="features/api/apiSlice.js"
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
   // highlight-next-line
-  tagTypes: ['Post'],
-  endpoints: builder => ({
+  tagTypes: ["Post"],
+  endpoints: (builder) => ({
     getPosts: builder.query({
-      query: () => '/posts',
+      query: () => "/posts",
       // highlight-next-line
-      providesTags: ['Post']
+      providesTags: ["Post"],
     }),
     getPost: builder.query({
-      query: postId => `/posts/${postId}`
+      query: (postId) => `/posts/${postId}`,
     }),
     addNewPost: builder.mutation({
-      query: initialPost => ({
-        url: '/posts',
-        method: 'POST',
-        body: initialPost
+      query: (initialPost) => ({
+        url: "/posts",
+        method: "POST",
+        body: initialPost,
       }),
       // highlight-next-line
-      invalidatesTags: ['Post']
-    })
-  })
-})
+      invalidatesTags: ["Post"],
+    }),
+  }),
+});
 ```
 
 That's all we need! Now, if we click "Save Post", you should see the `<PostsList>` component automatically gray out after a couple seconds, and then rerender with the newly added post at the top.
@@ -16033,6 +16087,7 @@ id: part-8-rtk-query-advanced
 title: 'Redux Essentials, Part 8: RTK Query Advanced Patterns'
 sidebar_label: 'RTK Query Advanced Patterns'
 description: 'The official Redux Essentials tutorial: learn advanced patterns for fetching data with RTK Query'
+
 ---
 
 import { DetailedExplanation } from '../../components/DetailedExplanation'
@@ -16074,44 +16129,44 @@ As with adding posts, the first step is to define a new mutation endpoint in our
 
 ```js title="features/api/apiSlice.js"
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
-  tagTypes: ['Post'],
-  endpoints: builder => ({
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
+  tagTypes: ["Post"],
+  endpoints: (builder) => ({
     getPosts: builder.query({
-      query: () => '/posts',
-      providesTags: ['Post']
+      query: () => "/posts",
+      providesTags: ["Post"],
     }),
     getPost: builder.query({
-      query: postId => `/posts/${postId}`
+      query: (postId) => `/posts/${postId}`,
     }),
     addNewPost: builder.mutation({
-      query: initialPost => ({
-        url: '/posts',
-        method: 'POST',
-        body: initialPost
+      query: (initialPost) => ({
+        url: "/posts",
+        method: "POST",
+        body: initialPost,
       }),
-      invalidatesTags: ['Post']
+      invalidatesTags: ["Post"],
     }),
     // highlight-start
     editPost: builder.mutation({
-      query: post => ({
+      query: (post) => ({
         url: `/posts/${post.id}`,
-        method: 'PATCH',
-        body: post
-      })
-    })
+        method: "PATCH",
+        body: post,
+      }),
+    }),
     // highlight-end
-  })
-})
+  }),
+});
 
 export const {
   useGetPostsQuery,
   useGetPostQuery,
   useAddNewPostMutation,
   // highlight-next-line
-  useEditPostMutation
-} = apiSlice
+  useEditPostMutation,
+} = apiSlice;
 ```
 
 Once that's added, we can update the `<EditPostForm>`. It needs to read the original `Post` entry from the store, use that to initialize the component state to edit the fields, and then send the updated changes to the server. Currently, we're reading the `Post` entry with `selectPostById`, and manually dispatching a `postUpdated` thunk for the request.
@@ -16119,39 +16174,39 @@ Once that's added, we can update the `<EditPostForm>`. It needs to read the orig
 We can use the same `useGetPostQuery` hook that we used in `<SinglePostPage>` to read the `Post` entry from the cache in the store, and we'll use the new `useEditPostMutation` hook to handle saving the changes.
 
 ```jsx title="features/posts/EditPostForm.js"
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-import { Spinner } from '../../components/Spinner'
+import { Spinner } from "../../components/Spinner";
 // highlight-next-line
-import { useGetPostQuery, useEditPostMutation } from '../api/apiSlice'
+import { useGetPostQuery, useEditPostMutation } from "../api/apiSlice";
 
 export const EditPostForm = ({ match }) => {
-  const { postId } = match.params
+  const { postId } = match.params;
 
   // highlight-next-line
-  const { data: post } = useGetPostQuery(postId)
+  const { data: post } = useGetPostQuery(postId);
   // highlight-next-line
-  const [updatePost, { isLoading }] = useEditPostMutation()
+  const [updatePost, { isLoading }] = useEditPostMutation();
 
-  const [title, setTitle] = useState(post.title)
-  const [content, setContent] = useState(post.content)
+  const [title, setTitle] = useState(post.title);
+  const [content, setContent] = useState(post.content);
 
-  const history = useHistory()
+  const history = useHistory();
 
-  const onTitleChanged = e => setTitle(e.target.value)
-  const onContentChanged = e => setContent(e.target.value)
+  const onTitleChanged = (e) => setTitle(e.target.value);
+  const onContentChanged = (e) => setContent(e.target.value);
 
   const onSavePostClicked = async () => {
     if (title && content) {
       // highlight-next-line
-      await updatePost({ id: postId, title, content })
-      history.push(`/posts/${postId}`)
+      await updatePost({ id: postId, title, content });
+      history.push(`/posts/${postId}`);
     }
-  }
+  };
 
   // omit rendering logic
-}
+};
 ```
 
 ### Cache Data Subscription Lifetimes
@@ -16189,45 +16244,45 @@ In order to get the right behavior, we need to set up each endpoint with the rig
 
 ```js title="features/api/apiSlice.js"
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
-  tagTypes: ['Post'],
-  endpoints: builder => ({
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
+  tagTypes: ["Post"],
+  endpoints: (builder) => ({
     getPosts: builder.query({
-      query: () => '/posts',
+      query: () => "/posts",
       // highlight-start
       providesTags: (result = [], error, arg) => [
-        'Post',
-        ...result.map(({ id }) => ({ type: 'Post', id }))
-      ]
+        "Post",
+        ...result.map(({ id }) => ({ type: "Post", id })),
+      ],
       // highlight-end
     }),
     getPost: builder.query({
-      query: postId => `/posts/${postId}`,
+      query: (postId) => `/posts/${postId}`,
       // highlight-start
-      providesTags: (result, error, arg) => [{ type: 'Post', id: arg }]
+      providesTags: (result, error, arg) => [{ type: "Post", id: arg }],
       // highlight-end
     }),
     addNewPost: builder.mutation({
-      query: initialPost => ({
-        url: '/posts',
-        method: 'POST',
-        body: initialPost
+      query: (initialPost) => ({
+        url: "/posts",
+        method: "POST",
+        body: initialPost,
       }),
       // highlight-next-line
-      invalidatesTags: ['Post']
+      invalidatesTags: ["Post"],
     }),
     editPost: builder.mutation({
-      query: post => ({
+      query: (post) => ({
         url: `posts/${post.id}`,
-        method: 'PATCH',
-        body: post
+        method: "PATCH",
+        body: post,
       }),
       // highlight-next-line
-      invalidatesTags: (result, error, arg) => [{ type: 'Post', id: arg.id }]
-    })
-  })
-})
+      invalidatesTags: (result, error, arg) => [{ type: "Post", id: arg.id }],
+    }),
+  }),
+});
 ```
 
 It's possible for the `result` argument in these callbacks to be undefined if the response has no data or there's an error, so we have to handle that safely. For `getPosts` we can do that by using a default argument array value to map over, and for `getPost` we're already returning a single-item array based on the argument ID. For `editPost`, we know the ID of the post from the partial post object that was passed into the trigger function, so we can read it from there.
@@ -16275,19 +16330,19 @@ We'll start by defining a `getUsers` query endpoint in `apiSlice.js`, similar to
 
 ```js title="features/api/apiSlice.js"
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
-  tagTypes: ['Post'],
-  endpoints: builder => ({
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
+  tagTypes: ["Post"],
+  endpoints: (builder) => ({
     // omit other endpoints
 
     // highlight-start
     getUsers: builder.query({
-      query: () => '/users'
-    })
+      query: () => "/users",
+    }),
     // highlight-end
-  })
-})
+  }),
+});
 
 export const {
   useGetPostsQuery,
@@ -16295,8 +16350,8 @@ export const {
   // highlight-next-line
   useGetUsersQuery,
   useAddNewPostMutation,
-  useEditPostMutation
-} = apiSlice
+  useEditPostMutation,
+} = apiSlice;
 ```
 
 If we inspect the API slice object, it includes an `endpoints` field, with one endpoint object inside for each endpoint we've defined.
@@ -16316,13 +16371,13 @@ If we want to fetch the list of users outside of React, we can dispatch the `get
 ```jsx title="index.js"
 // omit other imports
 // highlight-next-line
-import { apiSlice } from './features/api/apiSlice'
+import { apiSlice } from "./features/api/apiSlice";
 
 // Start our mock API server
-worker.start({ onUnhandledRequest: 'bypass' })
+worker.start({ onUnhandledRequest: "bypass" });
 
 // highlight-next-line
-store.dispatch(apiSlice.endpoints.getUsers.initiate())
+store.dispatch(apiSlice.endpoints.getUsers.initiate());
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16330,8 +16385,8 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 This dispatch happens automatically inside the query hooks, but we can start it manually if needed.
@@ -16354,11 +16409,11 @@ In this case, our `getUsers` endpoint doesn't need any parameters - we always fe
 import {
   createSlice,
   createEntityAdapter,
-  createSelector
-} from '@reduxjs/toolkit'
+  createSelector,
+} from "@reduxjs/toolkit";
 
 // highlight-next-line
-import { apiSlice } from '../api/apiSlice'
+import { apiSlice } from "../api/apiSlice";
 
 /* Temporarily ignore adapter - we'll use this again shortly
 const usersAdapter = createEntityAdapter()
@@ -16371,20 +16426,20 @@ const initialState = usersAdapter.getInitialState()
 // the query result object for a query with those parameters.
 // To generate a selector for a specific query argument, call `select(theQueryArg)`.
 // In this case, the users query has no params, so we don't pass anything to select()
-export const selectUsersResult = apiSlice.endpoints.getUsers.select()
+export const selectUsersResult = apiSlice.endpoints.getUsers.select();
 
-const emptyUsers = []
+const emptyUsers = [];
 
 export const selectAllUsers = createSelector(
   selectUsersResult,
-  usersResult => usersResult?.data ?? emptyUsers
-)
+  (usersResult) => usersResult?.data ?? emptyUsers
+);
 
 export const selectUserById = createSelector(
   selectAllUsers,
   (state, userId) => userId,
-  (users, userId) => users.find(user => user.id === userId)
-)
+  (users, userId) => users.find((user) => user.id === userId)
+);
 // highlight-end
 
 /* Temporarily ignore selectors - we'll come back to this later
@@ -16414,20 +16469,20 @@ To illustrate this process, let's switch the `getUsers` endpoint to be injected 
 We're already importing `apiSlice` into `usersSlice.js` so that we can access the `getUsers` endpoint, so we can switch to calling `apiSlice.injectEndpoints()` here instead.
 
 ```js title="features/users/usersSlice.js"
-import { apiSlice } from '../api/apiSlice'
+import { apiSlice } from "../api/apiSlice";
 
 // highlight-start
 export const extendedApiSlice = apiSlice.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getUsers: builder.query({
-      query: () => '/users'
-    })
-  })
-})
+      query: () => "/users",
+    }),
+  }),
+});
 
-export const { useGetUsersQuery } = extendedApiSlice
+export const { useGetUsersQuery } = extendedApiSlice;
 
-export const selectUsersResult = extendedApiSlice.endpoints.getUsers.select()
+export const selectUsersResult = extendedApiSlice.endpoints.getUsers.select();
 // highlight-end
 ```
 
@@ -16437,13 +16492,13 @@ At the moment, the only file that references the `getUsers` endpoint is our inde
 
 ```js title="index.js"
 // highlight-next-line
-import { extendedApiSlice } from './features/users/usersSlice'
+import { extendedApiSlice } from "./features/users/usersSlice";
 
 // Start our mock API server
-worker.start({ onUnhandledRequest: 'bypass' })
+worker.start({ onUnhandledRequest: "bypass" });
 
 // highlight-next-line
-store.dispatch(extendedApiSlice.endpoints.getUsers.initiate())
+store.dispatch(extendedApiSlice.endpoints.getUsers.initiate());
 ```
 
 Alternately, you could just export the specific endpoints themselves from the slice file.
@@ -16467,43 +16522,43 @@ Our `selectUserById` selector currently has to loop over the cached array of use
 We were previously using `createEntityAdapter` in `usersSlice` to manage normalized users data. We can integrate `createEntityAdapter` into our `extendedApiSlice`, and actually use `createEntityAdapter` to transform the data before it's cached. We'll uncomment the `usersAdapter` lines we originally had, and use its update functions and selectors again.
 
 ```js title="features/users/usersSlice.js"
-import { apiSlice } from '../api/apiSlice'
+import { apiSlice } from "../api/apiSlice";
 
 // highlight-start
-const usersAdapter = createEntityAdapter()
+const usersAdapter = createEntityAdapter();
 
-const initialState = usersAdapter.getInitialState()
+const initialState = usersAdapter.getInitialState();
 // highlight-end
 
 export const extendedApiSlice = apiSlice.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getUsers: builder.query({
-      query: () => '/users',
+      query: () => "/users",
       // highlight-start
-      transformResponse: responseData => {
-        return usersAdapter.setAll(initialState, responseData)
-      }
+      transformResponse: (responseData) => {
+        return usersAdapter.setAll(initialState, responseData);
+      },
       // highlight-end
-    })
-  })
-})
+    }),
+  }),
+});
 
-export const { useGetUsersQuery } = extendedApiSlice
+export const { useGetUsersQuery } = extendedApiSlice;
 
 // Calling `someEndpoint.select(someArg)` generates a new selector that will return
 // the query result object for a query with those parameters.
 // To generate a selector for a specific query argument, call `select(theQueryArg)`.
 // In this case, the users query has no params, so we don't pass anything to select()
-export const selectUsersResult = extendedApiSlice.endpoints.getUsers.select()
+export const selectUsersResult = extendedApiSlice.endpoints.getUsers.select();
 
 const selectUsersData = createSelector(
   selectUsersResult,
-  usersResult => usersResult.data
-)
+  (usersResult) => usersResult.data
+);
 
 // highlight-start
 export const { selectAll: selectAllUsers, selectById: selectUserById } =
-  usersAdapter.getSelectors(state => selectUsersData(state) ?? initialState)
+  usersAdapter.getSelectors((state) => selectUsersData(state) ?? initialState);
 // highlight-end
 ```
 
@@ -16544,44 +16599,44 @@ We can use `selectFromResult` to have `<UserPage>` read just a filtered list of 
 
 ```jsx title="features/users/UsersPage.js"
 // highlight-next-line
-import { createSelector } from '@reduxjs/toolkit'
+import { createSelector } from "@reduxjs/toolkit";
 
-import { selectUserById } from '../users/usersSlice'
+import { selectUserById } from "../users/usersSlice";
 // highlight-next-line
-import { useGetPostsQuery } from '../api/apiSlice'
+import { useGetPostsQuery } from "../api/apiSlice";
 
 export const UserPage = ({ match }) => {
-  const { userId } = match.params
+  const { userId } = match.params;
 
-  const user = useSelector(state => selectUserById(state, userId))
+  const user = useSelector((state) => selectUserById(state, userId));
 
   // highlight-start
   const selectPostsForUser = useMemo(() => {
     // Return a unique selector instance for this page so that
     // the filtered results are correctly memoized
     return createSelector(
-      res => res.data,
+      (res) => res.data,
       (res, userId) => userId,
-      (data, userId) => data.filter(post => post.user === userId)
-    )
-  }, [])
+      (data, userId) => data.filter((post) => post.user === userId)
+    );
+  }, []);
   // highlight-end
 
   // Use the same posts query, but extract only part of its data
   const { postsForUser } = useGetPostsQuery(undefined, {
     // highlight-start
-    selectFromResult: result => ({
+    selectFromResult: (result) => ({
       // We can optionally include the other metadata fields from the result here
       ...result,
       // Include a field called `postsForUser` in the hook result object,
       // which will be a filtered list of posts
-      postsForUser: selectPostsForUser(result, userId)
-    })
+      postsForUser: selectPostsForUser(result, userId),
+    }),
     // highlight-end
-  })
+  });
 
   // omit rendering logic
-}
+};
 ```
 
 There's a key difference with the memoized selector function we've created here. Normally, [selectors expect the entire Redux `state` as their first argument](../../usage/deriving-data-selectors.md), and extract or derive a value from `state`. However, in this case we're only dealing with the "result" value that is kept in the cache. The result object has a `data` field inside with the actual values we need, as well as some of the request metadata fields.
@@ -16616,27 +16671,27 @@ Originally, we only tracked reactions on the client side and did not persist the
 
 ```js title="features/api/apiSlice.js"
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
-  tagTypes: ['Post'],
-  endpoints: builder => ({
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
+  tagTypes: ["Post"],
+  endpoints: (builder) => ({
     // omit other endpoints
     // highlight-start
     addReaction: builder.mutation({
       query: ({ postId, reaction }) => ({
         url: `posts/${postId}/reactions`,
-        method: 'POST',
+        method: "POST",
         // In a real app, we'd probably need to base this on user ID somehow
         // so that a user can't do the same reaction more than once
-        body: { reaction }
+        body: { reaction },
       }),
       invalidatesTags: (result, error, arg) => [
-        { type: 'Post', id: arg.postId }
-      ]
-    })
+        { type: "Post", id: arg.postId },
+      ],
+    }),
     // highlight-end
-  })
-})
+  }),
+});
 
 export const {
   useGetPostsQuery,
@@ -16644,8 +16699,8 @@ export const {
   useAddNewPostMutation,
   useEditPostMutation,
   // highlight-next-line
-  useAddReactionMutation
-} = apiSlice
+  useAddReactionMutation,
+} = apiSlice;
 ```
 
 Similar to our other mutations, we take some parameters and make a request to the server, with some data in the body of the request. Since this example app is small, we'll just give the name of the reaction, and let the server increment the counter for that reaction type on this post.
@@ -16655,22 +16710,22 @@ We already know that we need to refetch this post in order to see any of the dat
 With that in place, let's update `<ReactionButtons>` to use this mutation.
 
 ```jsx title="features/posts/ReactionButtons.js"
-import React from 'react'
+import React from "react";
 
 // highlight-next-line
-import { useAddReactionMutation } from '../api/apiSlice'
+import { useAddReactionMutation } from "../api/apiSlice";
 
 const reactionEmoji = {
-  thumbsUp: '👍',
-  hooray: '🎉',
-  heart: '❤️',
-  rocket: '🚀',
-  eyes: '👀'
-}
+  thumbsUp: "👍",
+  hooray: "🎉",
+  heart: "❤️",
+  rocket: "🚀",
+  eyes: "👀",
+};
 
 export const ReactionButtons = ({ post }) => {
   // highlight-next-line
-  const [addReaction] = useAddReactionMutation()
+  const [addReaction] = useAddReactionMutation();
 
   const reactionButtons = Object.entries(reactionEmoji).map(
     ([reactionName, emoji]) => {
@@ -16681,17 +16736,17 @@ export const ReactionButtons = ({ post }) => {
           className="muted-button reaction-button"
           onClick={() => {
             // highlight-next-line
-            addReaction({ postId: post.id, reaction: reactionName })
+            addReaction({ postId: post.id, reaction: reactionName });
           }}
         >
           {emoji} {post.reactions[reactionName]}
         </button>
-      )
+      );
     }
-  )
+  );
 
-  return <div>{reactionButtons}</div>
-}
+  return <div>{reactionButtons}</div>;
+};
 ```
 
 Let's see this in action! Go to the main `<PostsList>`, and click one of the reactions to see what happens.
@@ -16708,43 +16763,43 @@ For a small update like adding a reaction, we probably don't need to re-fetch th
 
 ```js title="features/api/apiSlice.js"
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
-  tagTypes: ['Post'],
-  endpoints: builder => ({
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/fakeApi" }),
+  tagTypes: ["Post"],
+  endpoints: (builder) => ({
     // omit other endpoints
 
     addReaction: builder.mutation({
       query: ({ postId, reaction }) => ({
         url: `posts/${postId}/reactions`,
-        method: 'POST',
+        method: "POST",
         // In a real app, we'd probably need to base this on user ID somehow
         // so that a user can't do the same reaction more than once
-        body: { reaction }
+        body: { reaction },
       }),
       // highlight-start
       async onQueryStarted({ postId, reaction }, { dispatch, queryFulfilled }) {
         // `updateQueryData` requires the endpoint name and cache key arguments,
         // so it knows which piece of cache state to update
         const patchResult = dispatch(
-          apiSlice.util.updateQueryData('getPosts', undefined, draft => {
+          apiSlice.util.updateQueryData("getPosts", undefined, (draft) => {
             // The `draft` is Immer-wrapped and can be "mutated" like in createSlice
-            const post = draft.find(post => post.id === postId)
+            const post = draft.find((post) => post.id === postId);
             if (post) {
-              post.reactions[reaction]++
+              post.reactions[reaction]++;
             }
           })
-        )
+        );
         try {
-          await queryFulfilled
+          await queryFulfilled;
         } catch {
-          patchResult.undo()
+          patchResult.undo();
         }
-      }
+      },
       // highlight-end
-    })
-  })
-})
+    }),
+  }),
+});
 ```
 
 The `onQueryStarted` handler receives two parameters. The first is the cache key `arg` that was passed when the request started. The second is an object that contains some of the same fields as the `thunkApi` in `createAsyncThunk` ( `{dispatch, getState, extra, requestId}`), but also a `Promise` called `queryFulfilled`. This `Promise` will resolve when the request returns, and either fulfill or reject based on the request.
@@ -16772,76 +16827,76 @@ Our `src/api/server.js` file has a mock Websocket server already configured, sim
 We'll inject the `getNotifications` endpoint in `notificationsSlice` like we did with `getUsers`, just to show it's possible.
 
 ```js title="features/notifications/notificationsSlice.js"
-import { forceGenerateNotifications } from '../../api/server'
-import { apiSlice } from '../api/apiSlice'
+import { forceGenerateNotifications } from "../../api/server";
+import { apiSlice } from "../api/apiSlice";
 
 export const extendedApi = apiSlice.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getNotifications: builder.query({
-      query: () => '/notifications',
-      transformResponse: res => res.notifications,
+      query: () => "/notifications",
+      transformResponse: (res) => res.notifications,
       async onCacheEntryAdded(
         arg,
         { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
       ) {
         // create a websocket connection when the cache subscription starts
-        const ws = new WebSocket('ws://localhost')
+        const ws = new WebSocket("ws://localhost");
         try {
           // wait for the initial query to resolve before proceeding
-          await cacheDataLoaded
+          await cacheDataLoaded;
 
           // when data is received from the socket connection to the server,
           // update our query result with the received message
-          const listener = event => {
-            const message = JSON.parse(event.data)
+          const listener = (event) => {
+            const message = JSON.parse(event.data);
             switch (message.type) {
-              case 'notifications': {
-                updateCachedData(draft => {
+              case "notifications": {
+                updateCachedData((draft) => {
                   // Insert all received notifications from the websocket
                   // into the existing RTKQ cache array
-                  draft.push(...message.payload)
-                  draft.sort((a, b) => b.date.localeCompare(a.date))
-                })
-                break
+                  draft.push(...message.payload);
+                  draft.sort((a, b) => b.date.localeCompare(a.date));
+                });
+                break;
               }
               default:
-                break
+                break;
             }
-          }
+          };
 
-          ws.addEventListener('message', listener)
+          ws.addEventListener("message", listener);
         } catch {
           // no-op in case `cacheEntryRemoved` resolves before `cacheDataLoaded`,
           // in which case `cacheDataLoaded` will throw
         }
         // cacheEntryRemoved will resolve when the cache subscription is no longer active
-        await cacheEntryRemoved
+        await cacheEntryRemoved;
         // perform cleanup steps once the `cacheEntryRemoved` promise resolves
-        ws.close()
-      }
-    })
-  })
-})
+        ws.close();
+      },
+    }),
+  }),
+});
 
-export const { useGetNotificationsQuery } = extendedApi
+export const { useGetNotificationsQuery } = extendedApi;
 
-const emptyNotifications = []
+const emptyNotifications = [];
 
 export const selectNotificationsResult =
-  extendedApi.endpoints.getNotifications.select()
+  extendedApi.endpoints.getNotifications.select();
 
 const selectNotificationsData = createSelector(
   selectNotificationsResult,
-  notificationsResult => notificationsResult.data ?? emptyNotifications
-)
+  (notificationsResult) => notificationsResult.data ?? emptyNotifications
+);
 
 export const fetchNotificationsWebsocket = () => (dispatch, getState) => {
-  const allNotifications = selectNotificationsData(getState())
-  const [latestNotification] = allNotifications
-  const latestTimestamp = latestNotification?.date ?? ''
+  const allNotifications = selectNotificationsData(getState());
+  const [latestNotification] = allNotifications;
+  const latestTimestamp = latestNotification?.date ?? "";
   // Hardcode a call to the mock server to simulate a server push scenario over websockets
-  forceGenerateNotifications(latestTimestamp)
-}
+  forceGenerateNotifications(latestTimestamp);
+};
 
 // omit existing slice code
 ```
@@ -16878,113 +16933,113 @@ import {
   createEntityAdapter,
   createSelector,
   // highlight-next-line
-  isAnyOf
-} from '@reduxjs/toolkit'
+  isAnyOf,
+} from "@reduxjs/toolkit";
 
-import { forceGenerateNotifications } from '../../api/server'
-import { apiSlice } from '../api/apiSlice'
+import { forceGenerateNotifications } from "../../api/server";
+import { apiSlice } from "../api/apiSlice";
 
 // highlight-start
 const notificationsReceived = createAction(
-  'notifications/notificationsReceived'
-)
+  "notifications/notificationsReceived"
+);
 // highlight-end
 
 export const extendedApi = apiSlice.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getNotifications: builder.query({
-      query: () => '/notifications',
+      query: () => "/notifications",
       async onCacheEntryAdded(
         arg,
         // highlight-next-line
         { updateCachedData, cacheDataLoaded, cacheEntryRemoved, dispatch }
       ) {
         // create a websocket connection when the cache subscription starts
-        const ws = new WebSocket('ws://localhost')
+        const ws = new WebSocket("ws://localhost");
         try {
           // wait for the initial query to resolve before proceeding
-          await cacheDataLoaded
+          await cacheDataLoaded;
 
           // when data is received from the socket connection to the server,
           // update our query result with the received message
-          const listener = event => {
-            const message = JSON.parse(event.data)
+          const listener = (event) => {
+            const message = JSON.parse(event.data);
             switch (message.type) {
-              case 'notifications': {
-                updateCachedData(draft => {
+              case "notifications": {
+                updateCachedData((draft) => {
                   // Insert all received notifications from the websocket
                   // into the existing RTKQ cache array
-                  draft.push(...message.payload)
-                  draft.sort((a, b) => b.date.localeCompare(a.date))
-                })
+                  draft.push(...message.payload);
+                  draft.sort((a, b) => b.date.localeCompare(a.date));
+                });
                 // highlight-start
                 // Dispatch an additional action so we can track "read" state
-                dispatch(notificationsReceived(message.payload))
+                dispatch(notificationsReceived(message.payload));
                 // highlight-end
-                break
+                break;
               }
               default:
-                break
+                break;
             }
-          }
+          };
 
-          ws.addEventListener('message', listener)
+          ws.addEventListener("message", listener);
         } catch {
           // no-op in case `cacheEntryRemoved` resolves before `cacheDataLoaded`,
           // in which case `cacheDataLoaded` will throw
         }
         // cacheEntryRemoved will resolve when the cache subscription is no longer active
-        await cacheEntryRemoved
+        await cacheEntryRemoved;
         // perform cleanup steps once the `cacheEntryRemoved` promise resolves
-        ws.close()
-      }
-    })
-  })
-})
+        ws.close();
+      },
+    }),
+  }),
+});
 
-export const { useGetNotificationsQuery } = extendedApi
+export const { useGetNotificationsQuery } = extendedApi;
 
 // omit selectors and websocket thunk
 
 // highlight-start
-const notificationsAdapter = createEntityAdapter()
+const notificationsAdapter = createEntityAdapter();
 
 const matchNotificationsReceived = isAnyOf(
   notificationsReceived,
   extendedApi.endpoints.getNotifications.matchFulfilled
-)
+);
 // highlight-end
 
 const notificationsSlice = createSlice({
-  name: 'notifications',
+  name: "notifications",
   initialState: notificationsAdapter.getInitialState(),
   reducers: {
     allNotificationsRead(state, action) {
-      Object.values(state.entities).forEach(notification => {
-        notification.read = true
-      })
-    }
+      Object.values(state.entities).forEach((notification) => {
+        notification.read = true;
+      });
+    },
   },
   extraReducers(builder) {
     // highlight-start
     builder.addMatcher(matchNotificationsReceived, (state, action) => {
       // Add client-side metadata for tracking new notifications
-      const notificationsMetadata = action.payload.map(notification => ({
+      const notificationsMetadata = action.payload.map((notification) => ({
         id: notification.id,
         read: false,
-        isNew: true
-      }))
+        isNew: true,
+      }));
 
-      Object.values(state.entities).forEach(notification => {
+      Object.values(state.entities).forEach((notification) => {
         // Any notifications we've read are no longer new
-        notification.isNew = !notification.read
-      })
+        notification.isNew = !notification.read;
+      });
 
-      notificationsAdapter.upsertMany(state, notificationsMetadata)
-    })
+      notificationsAdapter.upsertMany(state, notificationsMetadata);
+    });
     // highlight-end
-  }
-})
+  },
+});
 
 // omit slice exports
 ```
@@ -17000,45 +17055,45 @@ Finally, we can use the `builder.addMatcher()` API inside of `extraReducers` to 
 With those changes in place, we can update our UI components to fetch and display notifications.
 
 ```jsx title="app/Navbar.js"
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import {
   // highlight-start
   fetchNotificationsWebsocket,
   selectNotificationsMetadata,
-  useGetNotificationsQuery
+  useGetNotificationsQuery,
   // highlight-end
-} from '../features/notifications/notificationsSlice'
+} from "../features/notifications/notificationsSlice";
 
 export const Navbar = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   // highlight-start
   // Trigger initial fetch of notifications and keep the websocket open to receive updates
-  useGetNotificationsQuery()
+  useGetNotificationsQuery();
 
-  const notificationsMetadata = useSelector(selectNotificationsMetadata)
+  const notificationsMetadata = useSelector(selectNotificationsMetadata);
   const numUnreadNotifications = notificationsMetadata.filter(
-    n => !n.read
-  ).length
+    (n) => !n.read
+  ).length;
 
   const fetchNewNotifications = () => {
-    dispatch(fetchNotificationsWebsocket())
-  }
+    dispatch(fetchNotificationsWebsocket());
+  };
   // highlight-end
 
-  let unreadNotificationsBadge
+  let unreadNotificationsBadge;
 
   if (numUnreadNotifications > 0) {
     unreadNotificationsBadge = (
       <span className="badge">{numUnreadNotifications}</span>
-    )
+    );
   }
 
   // omit rendering logic
-}
+};
 ```
 
 In `<NavBar>`, we trigger the initial notifications fetch with `useGetNotificationsQuery()`, and switch to reading the metadata objects from `state.notificationsSlice`. Clicking the "Refresh" button now triggers the mock Websocket server to push out another set of notifications.

@@ -6,5 +6,5 @@
   const c = await getMoreData(b);
   const d = await getMoreData(c);
   const e = await getMoreData(d);
-  console.log(e)
+  console.log(e);
 })();

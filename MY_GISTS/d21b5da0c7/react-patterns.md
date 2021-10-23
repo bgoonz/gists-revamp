@@ -1,7 +1,5 @@
 # React Patterns
 
-
-
 ## Element (**element**)
 
 [Elements](https://reactjs.org/docs/glossary.html#elements) are anything inside angle brackets.
@@ -29,7 +27,7 @@ Use curly braces to [embed expressions](https://reactjs.org/docs/introducing-js
 
 ```js
 function Greeting() {
-  let name = 'chantastic';
+  let name = "chantastic";
 
   return <div>Hi {name}!</div>;
 }
@@ -54,7 +52,7 @@ function Greeting(props) {
   return <div>Hi {props.name}!</div>;
 }
 Greeting.defaultProps = {
-  name: 'Guest',
+  name: "Guest",
 };
 ```
 
@@ -69,14 +67,14 @@ So it might not look familiar.
 Think of it like the opposite of literal assignment.
 
 ```js
-let person = { name: 'chantastic' };
+let person = { name: "chantastic" };
 let { name } = person;
 ```
 
 Works with Arrays too.
 
 ```js
-let things = ['one', 'two'];
+let things = ["one", "two"];
 let [first, second] = things;
 ```
 
@@ -178,7 +176,7 @@ We can do this simply by adding all values to an array and joining them with a s
 
 ```js
 function MyButton({ className, ...props }) {
-  let classNames = ['btn', className].join(' ');
+  let classNames = ["btn", className].join(" ");
 
   return <button className={classNames} {...props} />;
 }
@@ -188,7 +186,7 @@ To guard from `undefined` showing up as a className, you could update your log
 
 ```js
 function MyButton({ className, ...props }) {
-  let classNames = ['btn', className].filter(Boolean).join(' ').trim();
+  let classNames = ["btn", className].filter(Boolean).join(" ").trim();
 
   return <button className={classNames} {...props} />;
 }
@@ -245,7 +243,7 @@ In most cases it's either an `array` or a `string`.
 ### `Array` (**array**)
 
 ```js
-<div>{['Hello ', <span>World</span>, '!']}</div>
+<div>{["Hello ", <span>World</span>, "!"]}</div>
 ```
 
 ## Array as children (**array-as-children**)
@@ -257,7 +255,7 @@ We use `map()` to create an array of React Elements for every value in the arr
 
 ```js
 <ul>
-  {['first', 'second'].map((item) => (
+  {["first", "second"].map((item) => (
     <li>{item}</li>
   ))}
 </ul>
@@ -334,7 +332,7 @@ class WindowWidth extends React.Component {
 
   componentDidMount() {
     this.setState({ width: window.innerWidth }, () =>
-      window.addEventListener('resize', ({ target }) =>
+      window.addEventListener("resize", ({ target }) =>
         this.setState({ width: target.innerWidth })
       )
     );
@@ -355,7 +353,7 @@ You might create a component designed to apply `context` and render its `chil
 ```js
 class SomeContextProvider extends React.Component {
   getChildContext() {
-    return { some: 'context' };
+    return { some: "context" };
   }
 
   render() {
@@ -420,14 +418,14 @@ Say we have a button. It uses classes to be styled as a "primary" button.
 We can generate this output using a couple single-purpose components.
 
 ```js
-import classnames from 'classnames';
+import classnames from "classnames";
 
 const PrimaryBtn = (props) => <Btn {...props} primary />;
 
 const Btn = ({ className, primary, ...props }) => (
   <button
     type="button"
-    className={classnames('btn', primary && 'btn-primary', className)}
+    className={classnames("btn", primary && "btn-primary", className)}
     {...props}
   />
 );
@@ -596,12 +594,12 @@ const Connect = (ComposedComponent) =>
   class extends React.Component {
     constructor() {
       super();
-      this.state = { name: '' };
+      this.state = { name: "" };
     }
 
     componentDidMount() {
       // this would fetch or connect to a store
-      this.setState({ name: 'Michael' });
+      this.setState({ name: "Michael" });
     }
 
     render() {
@@ -651,7 +649,7 @@ Let's change the internal state of `NameContainer`.
 class NameContainer extends React.Component {
   constructor() {
     super();
-    this.state = { name: '' };
+    this.state = { name: "" };
   }
 
   render() {
@@ -697,7 +695,7 @@ So, we derive a `value` from state.
 class ControlledNameInput extends React.Component {
   constructor() {
     super();
-    this.state = { name: '' };
+    this.state = { name: "" };
   }
 
   render() {

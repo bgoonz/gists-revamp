@@ -1,22 +1,20 @@
 ```js
-
-'use strict';
+"use strict";
 
 /**
  * Doubly-linked list
  */
 class LinkedList {
   constructor() {
-
     this._length = 0;
     this.head = null;
     this.tail = null;
 
     // Read-only length property
-    Object.defineProperty(this, 'length', {
+    Object.defineProperty(this, "length", {
       get: () => {
         return this._length;
-      }
+      },
     });
   }
 
@@ -37,7 +35,7 @@ class LinkedList {
    */
   add(n, index) {
     if (index > this.length || index < 0) {
-      throw new Error('Index out of bounds');
+      throw new Error("Index out of bounds");
     }
 
     const node = new Node(n);
@@ -90,7 +88,7 @@ class LinkedList {
    */
   getNode(index) {
     if (index >= this.length || index < 0) {
-      throw new Error('Index out of bounds');
+      throw new Error("Index out of bounds");
     }
 
     let node = this.head;
@@ -108,7 +106,7 @@ class LinkedList {
    */
   del(index) {
     if (index >= this.length || index < 0) {
-      throw new Error('Index out of bounds');
+      throw new Error("Index out of bounds");
     }
 
     this.delNode(this.getNode(index));
@@ -157,16 +155,16 @@ class HashTable {
     this._table = new Array(initialCapacity || 64);
     this._items = 0;
 
-    Object.defineProperty(this, 'capacity', {
+    Object.defineProperty(this, "capacity", {
       get() {
         return this._table.length;
-      }
+      },
     });
 
-    Object.defineProperty(this, 'size', {
+    Object.defineProperty(this, "size", {
       get() {
         return this._items;
-      }
+      },
     });
   }
 
@@ -179,10 +177,10 @@ class HashTable {
    * (The hash value of the empty string is zero.)
    */
   hash(s) {
-    if (typeof s !== 'string') s = JSON.stringify(s);
+    if (typeof s !== "string") s = JSON.stringify(s);
     let hash = 0;
     for (let i = 0; i < s.length; i++) {
-      hash = ((hash << 5) - hash) + s.charCodeAt(i);
+      hash = (hash << 5) - hash + s.charCodeAt(i);
       hash &= hash; // Keep it a 32bit int
     }
     return hash;
@@ -202,7 +200,7 @@ class HashTable {
       // Hashing with chaining
       this._table[i] = new LinkedList();
     }
-    const item = {k: key, v: value};
+    const item = { k: key, v: value };
 
     const node = this._findInList(this._table[i], key);
     if (node) {
@@ -254,8 +252,8 @@ class HashTable {
   }
 
   forEach(fn) {
-    const applyFunction = linkedList => {
-      linkedList.forEach(({k, v}) => {
+    const applyFunction = (linkedList) => {
+      linkedList.forEach(({ k, v }) => {
         fn(k, v);
       });
     };
@@ -277,10 +275,10 @@ class HashSet {
     this._elements = new HashTable(args.length);
     this.add(...args);
 
-    Object.defineProperty(this, 'size', {
+    Object.defineProperty(this, "size", {
       get() {
         return this._elements.size;
-      }
+      },
     });
   }
 
@@ -307,11 +305,10 @@ class HashSet {
   }
 }
 
-
 /* Adjacency list representation of a graph * @param {bool} directed */
 class Graph {
   constructor(directed) {
-    this.directed = (directed === undefined ? true : !!directed);
+    this.directed = directed === undefined ? true : !!directed;
     this.adjList = Object.create(null);
     this.vertices = new HashSet();
   }
@@ -329,7 +326,7 @@ class Graph {
     a = _(a);
     b = _(b);
     // If no weight is assigned to the edge, 1 is the default
-    w = (w === undefined ? 1 : w);
+    w = w === undefined ? 1 : w;
 
     if (!this.adjList[a]) this.addVertex(a);
     if (!this.adjList[b]) this.addVertex(b);
@@ -354,11 +351,9 @@ class Graph {
 }
 
 // Normalize vertex labels as strings
-let _ = v => {
+let _ = (v) => {
   return `${v}`;
 };
 
 export default Graph;
-
-
 ```

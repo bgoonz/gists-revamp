@@ -20,6 +20,7 @@ The basics of markdown can be found [here](https://guides.github.com/features/ma
 <img align="left" width="100" height="100" src="http://www.fillmurray.com/100/100">
 
 This is the code you need to align images to the left:
+
 ```
 <img align="left" width="100" height="100" src="http://www.fillmurray.com/100/100">
 ```
@@ -31,6 +32,7 @@ This is the code you need to align images to the left:
 <img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
 
 This is the code you need to align images to the right:
+
 ```
 <img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
 ```
@@ -72,10 +74,10 @@ Collapsing large blocks of Markdown text
 <details>
 <summary>To make sure markdown is rendered correctly in the collapsed section...</summary>
 
- 1. Put an **empty line** after the `<summary>` block.
- 2. *Insert your markdown syntax*
- 3. Put an **empty line** before the `</details>` tag
- 
+1.  Put an **empty line** after the `<summary>` block.
+2.  _Insert your markdown syntax_
+3.  Put an **empty line** before the `</details>` tag
+
 </details>
 
 ```
@@ -85,7 +87,7 @@ Collapsing large blocks of Markdown text
  1. Put an **empty line** after the `<summary>` block.
  2. *Insert your markdown syntax*
  3. Put an **empty line** before the `</details>` tag
- 
+
 </details>
 ```
 
@@ -113,7 +115,7 @@ For whatever [reason](https://twitter.com/alexdotjs/status/1421015442286596100) 
 
 ```graphql
 # Code & components for pages
-./src/* 
+./src/*
   ├─ src/assets - # Minified images, fonts, icon files
   ├─ src/components - # Individual smaller components
   ├─ src/fragments - # Larger chunks of a page composed of multiple components
@@ -133,24 +135,24 @@ For whatever [reason](https://twitter.com/alexdotjs/status/1421015442286596100) 
 
 1. [gray-matter](https://www.npmjs.com/package/gray-matter)
 
-  YAML front-matter is your friend. You can keep metadata in markdown files
+YAML front-matter is your friend. You can keep metadata in markdown files
 
-  ```
-  title: Serverless Framework Documentation
-  description: "Great F'in docs!"
-  menuText: Docs
-  layout: Doc
-  ```
+```
+title: Serverless Framework Documentation
+description: "Great F'in docs!"
+menuText: Docs
+layout: Doc
+```
 
 2. [Remark](https://www.npmjs.com/package/remark)
 
-  Useful for rendering markdown in HTML/React
+Useful for rendering markdown in HTML/React
 
 3. [Markdown Magic](https://github.com/DavidWells/markdown-magic)
 
-  - [Repo](https://github.com/DavidWells/markdown-magic)
-  - [Plugins](https://github.com/DavidWells/markdown-magic#plugins)
-  - Show automatic doc generation. [Example 1](https://github.com/DavidWells/markdown-magic/blob/master/examples/generate-readme.js#L15-L23)   | [Example 2](https://github.com/serverless/examples/blob/master/generate-readme.js#L71-L87)
+- [Repo](https://github.com/DavidWells/markdown-magic)
+- [Plugins](https://github.com/DavidWells/markdown-magic#plugins)
+- Show automatic doc generation. [Example 1](https://github.com/DavidWells/markdown-magic/blob/master/examples/generate-readme.js#L15-L23) | [Example 2](https://github.com/serverless/examples/blob/master/generate-readme.js#L71-L87)
 
 ---
 
@@ -158,21 +160,21 @@ For whatever [reason](https://twitter.com/alexdotjs/status/1421015442286596100) 
 
 1. [Schedule Posts](https://github.com/serverless/post-scheduler) - Post scheduler for static sites
 
-  Show DEMO
+Show DEMO
 
 2. [Zero friction inline content editing](https://jekyll-anon.surge.sh/gods/2015/02/18/vesta.html)
 
-  Show DEMO
+Show DEMO
 
 3. [Byword](https://bywordapp.com/) & [Typora](https://typora.io/) - Good Editors
 
 4. [Monodraw](https://monodraw.helftone.com/) - Flow charts for days
 
-6. [Kap](https://getkap.co/) - Make gifs
+5. [Kap](https://getkap.co/) - Make gifs
 
-4. [IDE markdown preview](https://atom.io/packages/markdown-preview)
+6. [IDE markdown preview](https://atom.io/packages/markdown-preview)
 
-5. Stuck on WordPress? Try [easy-markdown plugin](https://github.com/DavidWells/easy-markdown)
+7. Stuck on WordPress? Try [easy-markdown plugin](https://github.com/DavidWells/easy-markdown)
 
 ---
 

@@ -8,7 +8,7 @@ The more appealing the page is to your users, the more appealing it is to search
 
 Structure Tells Google What Your Page Is About
 
-----------------------------------------------
+---
 
 If you want pages on your website to show up in search results for your target keywords, search engines need to understand what they're about. How do they do that? Search engines crawl your pages to get an idea of their content. Structuring your content in a way that makes it easier for search engines to read gives you a greater chance of grabbing that first spot on Google.
 
@@ -20,7 +20,7 @@ If you want Google to correctly understand what your page is about, the first st
 
 Readability Is a Ranking Factor
 
--------------------------------
+---
 
 Content readability is the level of ease at which a reader can understand written text. What does that have to do with SEO? Well, Google's ranking algorithm is based on human behavior and uses information from visitors to rank your site. Simply put, search engines reward pages that provide readable content. Search engines want people to find what they are looking for and readable content helps searchers easily find the specific information they are interested in.
 
@@ -28,7 +28,7 @@ Search engines are there to help us find answers to our questions.If they send u
 
 How to Structure Your Page for SEO
 
-----------------------------------
+---
 
 Page structure is important for usability by readers as well as findability by Google. Here's how to create a perfectly optimized page that will make both your users and search engines happy.
 
@@ -126,7 +126,7 @@ Links are an important aspect of page structure. Internal links are links on a p
 
 Beyond Content: Optimizing Search Results Appearance
 
-----------------------------------------------------
+---
 
 Just like your page content, you can optimize the way your page appears in search when it ranks. The two elements that you should pay attention to are title tags and meta descriptions.
 

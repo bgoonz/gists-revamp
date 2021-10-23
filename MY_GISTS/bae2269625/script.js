@@ -9,8 +9,9 @@ function filterTable() {
     .getElementsByTagName("tbody")[0]; // find Body Row Table
   const rowTable = bodyRow.getElementsByTagName("tr"); // get all of the rows
   const lengthRow = rowTable.length; // calculate number of rows
-  const lengthCol = document.getElementById("table").getElementsByTagName("th")
-    .length; //number of table's column
+  const lengthCol = document
+    .getElementById("table")
+    .getElementsByTagName("th").length; //number of table's column
   let arrStr = []; // create array for save all of value from input
   let saveNumRows = []; // create Array for save Row's number
   const backupArr = []; // get backup the array
@@ -54,9 +55,10 @@ function filterTable() {
           [j].innerHTML.toLowerCase(); //get table's cell
 
         if (colTable.includes(val)) {
-          saveNumRows[counter] = rowTable[
-            parseInt(backupArr[arrInput - 1][i]) - 1
-          ].getElementsByTagName("td")[0].innerHTML; // save number of row that is in result
+          saveNumRows[counter] =
+            rowTable[
+              parseInt(backupArr[arrInput - 1][i]) - 1
+            ].getElementsByTagName("td")[0].innerHTML; // save number of row that is in result
 
           rowTable[parseInt(saveNumRows[counter]) - 1].setAttribute(
             "class",

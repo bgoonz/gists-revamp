@@ -2,7 +2,6 @@ https://divtable.com/generator/
 
 https://html-css-js.com/html/links/
 
-
 https://the-javascripting-english-major.org/v1/12-markdown#showdown
 
 https://validator.w3.org/#validate_by_uri+with_options

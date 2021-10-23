@@ -1,20 +1,19 @@
-PdfLatex is a tool that converts Latex sources into PDF. This is specifically very important for researchers, as they use it to publish their findings. It could be installed very easily using Linux terminal, though this seems an annoying task on Windows. Installation commands are given below. 
+PdfLatex is a tool that converts Latex sources into PDF. This is specifically very important for researchers, as they use it to publish their findings. It could be installed very easily using Linux terminal, though this seems an annoying task on Windows. Installation commands are given below.
 
-* Install the TexLive base 
+- Install the TexLive base
 
 ```
 sudo apt-get install texlive-latex-base -y
 ```
 
-* Also install the recommended and extra fonts to avoid running into the error [1], when trying to use pdflatex on latex files with more fonts.
+- Also install the recommended and extra fonts to avoid running into the error [1], when trying to use pdflatex on latex files with more fonts.
 
 ```
 sudo apt-get install texlive-fonts-recommended -y
 sudo apt-get install texlive-fonts-extra -y
 ```
 
-
-* Install the extra packages,
+- Install the extra packages,
 
 ```
 sudo apt-get install texlive-latex-extra -y

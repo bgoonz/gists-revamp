@@ -1,5 +1,4 @@
-Audit Results for bgoonz-blog.netlify.app
------------------------------------------
+## Audit Results for bgoonz-blog.netlify.app
 
 ### Your page is good
 
@@ -17,12 +16,11 @@ Audit Results for bgoonz-blog.netlify.app
 
 [Social](https://sureoak.websiteauditserver.com/bgoonz-blog.netlify.app#social)
 
-Report Generated: 12 October 11:00AM 
+Report Generated: 12 October 11:00AM
 
 [Refresh Results Now](https://sureoak.websiteauditserver.com/bgoonz-blog.netlify.app#)
 
-Recommendations
----------------
+## Recommendations
 
 Toggle:
 
@@ -64,8 +62,7 @@ Usability
 
 Low Priority
 
-On-Page SEO Results
--------------------
+## On-Page SEO Results
 
 ### Your On-Page SEO could be better
 
@@ -97,13 +94,13 @@ The H1 Header Tag is an important way of signaling to search engines what your c
 
 Your page is making use multiple levels of Header Tags.
 
-| Header Tag | Frequency |  |
-| --- | --- | --- |
-| H2 | 10 |  |
-| H3 | 29 |  |
-| H4 | 0 |  |
-| H5 | 0 |  |
-| H6 | 1 |  |
+| Header Tag | Frequency |     |
+| ---------- | --------- | --- |
+| H2         | 10        |     |
+| H3         | 29        |     |
+| H4         | 0         |     |
+| H5         | 0         |     |
+| H6         | 1         |     |
 
 #### Image Alt Attributes
 
@@ -149,8 +146,7 @@ We have not detected any usage of Schema.org on your page.
 
 Schema.org is a structured data markup for webpages which helps Search Engines understand your site better and provide rich snippets directly in their search results.
 
-Links
------
+## Links
 
 #### Number of Backlinks
 
@@ -198,8 +194,7 @@ We found 131 total links. 56% of your links are external links and are sending a
 
 Your link URLs appear friendly (easily human or search engine readable).
 
-Usability
----------
+## Usability
 
 ### Your usability is good
 
@@ -231,8 +226,7 @@ We recommend reviewing all text on your page in different devices to ensure that
 
 The links and buttons on your page appear to be appropriately sized for a user to easily tap on a touchscreen.
 
-Performance Results
--------------------
+## Performance Results
 
 ### Your performance is very good!
 
@@ -250,8 +244,7 @@ All of the images on your page appear to be optimized.
 
 All your JavaScript and CSS files appear to be minified.
 
-Social Results
---------------
+## Social Results
 
 ### Your social is good
 
@@ -297,8 +290,7 @@ No associated YouTube channel found linked on your page.
 
 Your page has a link to a LinkedIn profile.
 
-Technology Results
-------------------
+## Technology Results
 
 #### Server IP Address
 

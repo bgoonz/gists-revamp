@@ -1,5 +1,4 @@
-Popups and window methods
-=========================
+# Popups and window methods
 
 A popup window is one of the oldest methods to show additional document to user.
 
@@ -19,8 +18,7 @@ Still, there are tasks where popups are still used, e.g. for OAuth authorization
 2.  It's very easy to open a popup.
 3.  A popup can navigate (change URL) and send messages to the opener window.
 
-[Popup blocking](https://javascript.info/popup-windows#popup-blocking)
-----------------------------------------------------------------------
+## [Popup blocking](https://javascript.info/popup-windows#popup-blocking)
 
 In the past, evil sites abused popups a lot. A bad page could open tons of popup windows with ads. So now most browsers try to block popups and protect the user.
 
@@ -33,7 +31,7 @@ window.open('https://javascript.info');
 
 // popup allowed
 button.onclick = () => {
-  window.open('https://javascript.info');
+window.open('https://javascript.info');
 };`
 
 This way users are somewhat protected from unwanted popups, but the functionality is not disabled totally.
@@ -46,8 +44,7 @@ Try this code:
 
 [](https://javascript.info/popup-windows# "open in sandbox")
 
-`// open after 3 seconds
-setTimeout(() => window.open('http://google.com'), 3000);`
+`// open after 3 seconds setTimeout(() => window.open('http://google.com'), 3000);`
 
 The popup opens in Chrome, but gets blocked in Firefox.
 
@@ -57,13 +54,11 @@ The popup opens in Chrome, but gets blocked in Firefox.
 
 [](https://javascript.info/popup-windows# "open in sandbox")
 
-`// open after 1 seconds
-setTimeout(() => window.open('http://google.com'), 1000);`
+`// open after 1 seconds setTimeout(() => window.open('http://google.com'), 1000);`
 
 The difference is that Firefox treats a timeout of 2000ms or less are acceptable, but after it -- removes the "trust", assuming that now it's "outside of the user action". So the first one is blocked, and the second one is not.
 
-[window.open](https://javascript.info/popup-windows#window-open)
-----------------------------------------------------------------
+## [window.open](https://javascript.info/popup-windows#window-open)
 
 The syntax to open a popup is: `window.open(url, name, params)`:
 
@@ -81,21 +76,20 @@ The configuration string for the new window. It contains settings, delimited by 
 
 Settings for `params`:
 
--   Position:
-    -   `left/top` (numeric) -- coordinates of the window top-left corner on the screen. There is a limitation: a new window cannot be positioned offscreen.
-    -   `width/height` (numeric) -- width and height of a new window. There is a limit on minimal width/height, so it's impossible to create an invisible window.
--   Window features:
-    -   `menubar` (yes/no) -- shows or hides the browser menu on the new window.
-    -   `toolbar` (yes/no) -- shows or hides the browser navigation bar (back, forward, reload etc) on the new window.
-    -   `location` (yes/no) -- shows or hides the URL field in the new window. FF and IE don't allow to hide it by default.
-    -   `status` (yes/no) -- shows or hides the status bar. Again, most browsers force it to show.
-    -   `resizable` (yes/no) -- allows to disable the resize for the new window. Not recommended.
-    -   `scrollbars` (yes/no) -- allows to disable the scrollbars for the new window. Not recommended.
+- Position:
+  - `left/top` (numeric) -- coordinates of the window top-left corner on the screen. There is a limitation: a new window cannot be positioned offscreen.
+  - `width/height` (numeric) -- width and height of a new window. There is a limit on minimal width/height, so it's impossible to create an invisible window.
+- Window features:
+  - `menubar` (yes/no) -- shows or hides the browser menu on the new window.
+  - `toolbar` (yes/no) -- shows or hides the browser navigation bar (back, forward, reload etc) on the new window.
+  - `location` (yes/no) -- shows or hides the URL field in the new window. FF and IE don't allow to hide it by default.
+  - `status` (yes/no) -- shows or hides the status bar. Again, most browsers force it to show.
+  - `resizable` (yes/no) -- allows to disable the resize for the new window. Not recommended.
+  - `scrollbars` (yes/no) -- allows to disable the scrollbars for the new window. Not recommended.
 
 There is also a number of less supported browser-specific features, which are usually not used. Check [window.open in MDN](https://developer.mozilla.org/en/DOM/window.open) for examples.
 
-[Example: a minimalistic window](https://javascript.info/popup-windows#example-a-minimalistic-window)
------------------------------------------------------------------------------------------------------
+## [Example: a minimalistic window](https://javascript.info/popup-windows#example-a-minimalistic-window)
 
 Let's open a window with minimal set of features, just to see which of them browser allows to disable:
 
@@ -125,13 +119,12 @@ Most browsers show the example above as required.
 
 Rules for omitted settings:
 
--   If there is no 3rd argument in the `open` call, or it is empty, then the default window parameters are used.
--   If there is a string of params, but some `yes/no` features are omitted, then the omitted features assumed to have `no` value. So if you specify params, make sure you explicitly set all required features to yes.
--   If there is no `left/top` in params, then the browser tries to open a new window near the last opened window.
--   If there is no `width/height`, then the new window will be the same size as the last opened.
+- If there is no 3rd argument in the `open` call, or it is empty, then the default window parameters are used.
+- If there is a string of params, but some `yes/no` features are omitted, then the omitted features assumed to have `no` value. So if you specify params, make sure you explicitly set all required features to yes.
+- If there is no `left/top` in params, then the browser tries to open a new window near the last opened window.
+- If there is no `width/height`, then the new window will be the same size as the last opened.
 
-[Accessing popup from window](https://javascript.info/popup-windows#accessing-popup-from-window)
-------------------------------------------------------------------------------------------------
+## [Accessing popup from window](https://javascript.info/popup-windows#accessing-popup-from-window)
 
 The `open` call returns a reference to the new window. It can be used to manipulate it's properties, change location and even more.
 
@@ -150,11 +143,11 @@ And here we modify the contents after loading:
 `let newWindow = open('/', 'example', 'width=300,height=300')
 newWindow.focus();
 
-alert(newWindow.location.href); // (*) about:blank, loading hasn't started yet
+alert(newWindow.location.href); // (\*) about:blank, loading hasn't started yet
 
 newWindow.onload = function() {
-  let html = `<div style="font-size:30px">Welcome!</div>`;
- newWindow.document.body.insertAdjacentHTML('afterbegin', html);
+let html = `<div style="font-size:30px">Welcome!</div>`;
+newWindow.document.body.insertAdjacentHTML('afterbegin', html);
 };`
 
 Please note: immediately after `window.open`, the new window isn't loaded yet. That's demonstrated by `alert` in line `(*)`. So we wait for `onload` to modify it. We could also use `DOMContentLoaded` handler for `newWin.document`.
@@ -165,8 +158,7 @@ Windows may freely access content of each other only if they come from the same 
 
 Otherwise, e.g. if the main window is from `site.com`, and the popup from `gmail.com`, that's impossible for user safety reasons. For the details, see chapter [Cross-window communication](https://javascript.info/cross-window-communication).
 
-[Accessing window from popup](https://javascript.info/popup-windows#accessing-window-from-popup)
-------------------------------------------------------------------------------------------------
+## [Accessing window from popup](https://javascript.info/popup-windows#accessing-window-from-popup)
 
 A popup may access the "opener" window as well using `window.opener` reference. It is `null` for all windows except popups.
 
@@ -179,13 +171,12 @@ If you run the code below, it replaces the opener (current) window content with 
 `let newWin = window.open("about:blank", "hello", "width=200,height=200");
 
 newWin.document.write(
-  "<script>window.opener.document.body.innerHTML = 'Test'<\/script>"
+"<script>window.opener.document.body.innerHTML = 'Test'<\/script>"
 );`
 
 So the connection between the windows is bidirectional: the main window and the popup have a reference to each other.
 
-[Closing a popup](https://javascript.info/popup-windows#closing-a-popup)
-------------------------------------------------------------------------
+## [Closing a popup](https://javascript.info/popup-windows#closing-a-popup)
 
 To close a window: `win.close()`.
 
@@ -204,12 +195,11 @@ This code loads and then closes the window:
 `let newWindow = open('/', 'example', 'width=300,height=300');
 
 newWindow.onload = function() {
-  newWindow.close();
-  alert(newWindow.closed); // true
+newWindow.close();
+alert(newWindow.closed); // true
 };`
 
-[Moving and resizing](https://javascript.info/popup-windows#moving-and-resizing)
---------------------------------------------------------------------------------
+## [Moving and resizing](https://javascript.info/popup-windows#moving-and-resizing)
 
 There are methods to move/resize a window:
 
@@ -241,8 +231,7 @@ JavaScript has no way to minify or maximize a window. These OS-level functions a
 
 Move/resize methods do not work for maximized/minimized windows.
 
-[Scrolling a window](https://javascript.info/popup-windows#scrolling-a-window)
-------------------------------------------------------------------------------
+## [Scrolling a window](https://javascript.info/popup-windows#scrolling-a-window)
 
 We already talked about scrolling a window in the chapter [Window sizes and scrolling](https://javascript.info/size-and-scroll-window).
 
@@ -260,8 +249,7 @@ Scroll the window to make `elem` show up at the top (the default) or at the bo
 
 There's also `window.onscroll` event.
 
-[Focus/blur on a window](https://javascript.info/popup-windows#focus-blur-on-a-window)
---------------------------------------------------------------------------------------
+## [Focus/blur on a window](https://javascript.info/popup-windows#focus-blur-on-a-window)
 
 Theoretically, there are `window.focus()` and `window.blur()` methods to focus/unfocus on a window. And there are also `focus/blur` events that allow to catch the moment when the visitor focuses on a window and switches elsewhere.
 
@@ -285,23 +273,22 @@ Still, there are some use cases when such calls do work and can be useful.
 
 For instance:
 
--   When we open a popup, it's might be a good idea to run a `newWindow.focus()` on it. Just in case, for some OS/browser combinations it ensures that the user is in the new window now.
--   If we want to track when a visitor actually uses our web-app, we can track `window.onfocus/onblur`. That allows us to suspend/resume in-page activities, animations etc. But please note that the `blur` event means that the visitor switched out from the window, but they still may observe it. The window is in the background, but still may be visible.
+- When we open a popup, it's might be a good idea to run a `newWindow.focus()` on it. Just in case, for some OS/browser combinations it ensures that the user is in the new window now.
+- If we want to track when a visitor actually uses our web-app, we can track `window.onfocus/onblur`. That allows us to suspend/resume in-page activities, animations etc. But please note that the `blur` event means that the visitor switched out from the window, but they still may observe it. The window is in the background, but still may be visible.
 
-[Summary](https://javascript.info/popup-windows#summary)
---------------------------------------------------------
+## [Summary](https://javascript.info/popup-windows#summary)
 
 Popup windows are used rarely, as there are alternatives: loading and displaying information in-page, or in iframe.
 
 If we're going to open a popup, a good practice is to inform the user about it. An "opening window" icon near a link or button would allow the visitor to survive the focus shift and keep both windows in mind.
 
--   A popup can be opened by the `open(url, name, params)` call. It returns the reference to the newly opened window.
--   Browsers block `open` calls from the code outside of user actions. Usually a notification appears, so that a user may allow them.
--   Browsers open a new tab by default, but if sizes are provided, then it'll be a popup window.
--   The popup may access the opener window using the `window.opener` property.
--   The main window and the popup can freely read and modify each other if they have the same origin. Otherwise, they can change location of each other and [exchange messages](https://javascript.info/cross-window-communication).
+- A popup can be opened by the `open(url, name, params)` call. It returns the reference to the newly opened window.
+- Browsers block `open` calls from the code outside of user actions. Usually a notification appears, so that a user may allow them.
+- Browsers open a new tab by default, but if sizes are provided, then it'll be a popup window.
+- The popup may access the opener window using the `window.opener` property.
+- The main window and the popup can freely read and modify each other if they have the same origin. Otherwise, they can change location of each other and [exchange messages](https://javascript.info/cross-window-communication).
 
 To close the popup: use `close()` call. Also the user may close them (just like any other windows). The `window.closed` is `true` after that.
 
--   Methods `focus()` and `blur()` allow to focus/unfocus a window. But they don't work all the time.
--   Events `focus` and `blur` allow to track switching in and out of the window. But please note that a window may still be visible even in the background state, after `blur`.
+- Methods `focus()` and `blur()` allow to focus/unfocus a window. But they don't work all the time.
+- Events `focus` and `blur` allow to track switching in and out of the window. But please note that a window may still be visible even in the background state, after `blur`.

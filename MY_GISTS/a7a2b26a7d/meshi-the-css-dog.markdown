@@ -1,5 +1,5 @@
-Meshi the CSS Dog
------------------
+## Meshi the CSS Dog
+
 A CSS-only animated dog based on a [Dribbble by Gal Shir](https://dribbble.com/shots/3011370-This-is-my-dog-Meshi).
 
 Works in all modern browsers.

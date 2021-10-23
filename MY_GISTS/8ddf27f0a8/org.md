@@ -7,8 +7,7 @@ Pandoc's handling of org files is similar to that of Emacs
 org-mode. This document aims to highlight the cases where this is
 not possible or just not the case yet.
 
-Export options
-==============
+# Export options
 
 The following export keywords are supported:
 
@@ -27,12 +26,12 @@ The following export keywords are supported:
 
 - SELECT_TAGS: tags which select a tree for export.
 
-- EXCLUDE\_TAGS: tags which prevent a subtree from being
+- EXCLUDE_TAGS: tags which prevent a subtree from being
   exported. Fully supported.
 
 - TITLE: document title; fully supported.
 
-- EXPORT\_FILE\_NAME: target filename; *unsupported*, the output
+- EXPORT_FILE_NAME: target filename; _unsupported_, the output
   defaults to stdout unless a target has to be given as a command
   line option.
 
@@ -42,8 +41,7 @@ you find some behavior confusing, please do refer to org-mode
 [Export-Settings](https://orgmode.org/manual/Export-Settings.html)
 documentation. For example, a common confusion
 ([#3214](https://github.com/jgm/pandoc/issues/3214 "Problem with headers lower
-then 3 in org-mode reader"), [#5169](https://github.com/jgm/pandoc/issues/5169
-"org mode headings past level three converted to numbered outline list"),
+then 3 in org-mode reader"), [#5169](https://github.com/jgm/pandoc/issues/5169 "org mode headings past level three converted to numbered outline list"),
 [#6145](https://github.com/jgm/pandoc/issues/6145 "Headers 4 levels deep render
 differently"), [#7236](https://github.com/jgm/pandoc/issues/7236 "In Org mode,
 Header with level > 3 are not recognized as headers")) is treatment of headers
@@ -51,10 +49,9 @@ with level > 3 differently because org-mode sets `org-export-headline-levels`
 (configurable with `#+OPTIONS: H:3`) to 3 by default.
 :::
 
-[BCP47 language tag]: https://tools.ietf.org/html/bcp47
+[bcp47 language tag]: https://tools.ietf.org/html/bcp47
 
-Format-specific options
------------------------
+## Format-specific options
 
 Emacs Org-mode supports additional export options which work for
 specific export formats. Some of these options' behavior differs
@@ -70,7 +67,7 @@ occur.
   the description. In contrast, the Org-mode HTML exporter treats
   the description as plain text.
 
-- LATEX\_HEADER and LATEX_HEADER_EXTRA: arbitrary lines to add to
+- LATEX_HEADER and LATEX_HEADER_EXTRA: arbitrary lines to add to
   the document's preamble. Contrary to Org-mode, these lines are
   not inserted before the hyperref settings, but close to the end
   of the preamble.
@@ -78,13 +75,13 @@ occur.
   The contents of this option are stored as a list of raw LaTeX
   lines in the `header-includes` metadata field.
 
-- LATEX\_CLASS: the LaTeX document class; like Org-mode, pandoc
+- LATEX_CLASS: the LaTeX document class; like Org-mode, pandoc
   uses `article` as the default class.
 
   The contents of this option are stored as plain text in the
   `documentclass` metadata field.
 
-- LATEX\_CLASS\_OPTIONS: Options for the LaTeX document class;
+- LATEX_CLASS_OPTIONS: Options for the LaTeX document class;
   fully supported.
 
   The contents of this option are stored as plain text in the
@@ -95,14 +92,13 @@ occur.
   The content of this option is stored as inlines in the
   `subtitle` metadata field.
 
-- HTML\_HEAD and HTML\_HEAD\_EXTRA: arbitrary lines to add to the
+- HTML_HEAD and HTML_HEAD_EXTRA: arbitrary lines to add to the
   HTML document's head; fully supported.
 
   The contents of these options are stored as a list of raw HTML
   lines in the `header-includes` metadata field.
 
-Pandoc-specific options
------------------------
+## Pandoc-specific options
 
 Pandoc recognizes some export options not used by Emacs Org.
 
@@ -119,12 +115,11 @@ Pandoc recognizes some export options not used by Emacs Org.
   field is included by default on the title slide of beamer
   presentations.
 
-Other options
--------------
+## Other options
 
 Any export option or directive not listed above has no effect when
 parsing with pandoc. However, the information is retained as a
-*raw block*. It can be accessed through a
+_raw block_. It can be accessed through a
 [filter](https://pandoc.org/filters.html) and will be included in
 org output.
 
@@ -142,7 +137,7 @@ inspected and processed by a filter. Below is a [Lua
 filter](https://pandoc.org/lua-filters.html) which converts these
 unhandled lines into metadata key-value pairs.
 
-``` lua
+```lua
 -- intermediate store for variables and their values
 local variables = {}
 
@@ -167,8 +162,7 @@ function Meta (meta)
 end
 ```
 
-Citations
-=========
+# Citations
 
 Emacs org-mode lacks an official citation syntax, leading to
 multiple syntaxes coexisting. Pandoc recognizes four different
@@ -178,8 +172,7 @@ Citation support for org-mode is enabled by default. Support can
 be toggled off by disabling the `citation` extension; e.g.
 `pandoc --from=org-citations`.
 
-Berkeley-style citations
-------------------------
+## Berkeley-style citations
 
 The semi-official Org-mode citation syntax was designed by Richard
 Lawrence with additions by contributors on the [emacs-orgmode
@@ -199,7 +192,7 @@ Example:
 ### In-text citation list
 
 Citations presented in the text unparenthesized are called
-*in-text citations*. The syntax for these citations is
+_in-text citations_. The syntax for these citations is
 
     [cite: PREFIX; INDIVIDUAL-REFERENCE; ... INDIVIDUAL-REFERENCE; SUFFIX]
 
@@ -231,8 +224,7 @@ the initial `cite` tag.
 
 [emacs-orgmode mailing list]: https://lists.gnu.org/archive/html/emacs-orgmode/2015-02/msg00932.html
 
-org-ref citations
------------------
+## org-ref citations
 
 The [org-ref] package by [John Kitchen] is in wide use to handle
 citations and has excellent tooling support in Emacs. Its
@@ -243,9 +235,7 @@ but still very flexible regardless.
     citep:doe_jane_1989
     [[citep:Dominik201408][See page 20 of::, for example]]
 
-
-Pandoc-Markdown-like syntax
----------------------------
+## Pandoc-Markdown-like syntax
 
 Historically, Markdown-style citations syntax was the first that
 was added to pandoc's org reader. It is close to Markdown's
@@ -264,31 +254,26 @@ alphanumerics, `_`, and internal punctuation characters
 The simplest method to insert a citation is to write the citation
 ID prefixed by '@'.
 
-
 Example:
 
     [prefix @citekey suffix]
     [see @doe2000 pp. 23-42]
     [@doe2000 p. 5; to a lesser extend @doe2005]
 
-
-LaTeX-Syntax
-------------
+## LaTeX-Syntax
 
 Use normal latex citation commands like `\cite{x}` or
 `\citet{y}`.
 
 [org-ref]: https://github.com/jkitchin/org-ref
-[John Kitchen]: https://kitchingroup.cheme.cmu.edu/
+[john kitchen]: https://kitchingroup.cheme.cmu.edu/
 
-Tables
-======
+# Tables
 
 Pandoc supports normal org tables (sometimes called "pipe tables")
 and grid tables (tables created by [table.el]).
 
-Column widths
--------------
+## Column widths
 
 Org mode tables don't allow line-breaks within cells, and lines
 which contain text can get very long. This often leads to tables
@@ -299,8 +284,7 @@ exporters ignore that setting. Pandoc deviates from Emacs's
 behavior and uses this information to resize the table columns
 when exporting.
 
-Limitations
------------
+## Limitations
 
 There is no support yet for cells spanning multiple columns or
 rows. The table.el grid tables allows rowspans and colspans and so
@@ -310,8 +294,7 @@ not been updated yet.
 [table.el]: http://table.sourceforge.net/
 [column width]: https://orgmode.org/manual/Column-Width-and-Alignment.html
 
-Emphasis rules
-==============
+# Emphasis rules
 
 Org-mode uses complex rules to decide whether a string
 represents emphasized text. In Emacs, this can be customized via
@@ -340,8 +323,7 @@ be parsed using default emphasis rules:
     #+pandoc-emphasis-pre:
     #+pandoc-emphasis-post:
 
-`smart` extension
-=================
+# `smart` extension
 
 Org-mode allows to insert certain characters via special character
 sequences. For example, instead of typing the Unicode /HORIZONTAL
@@ -354,12 +336,11 @@ quotation characters.
 
 Like in Markdown, these behaviors can be turned on all-at-once by
 enabling the `smart` extension. However, disabling `smart` (the
-default) will *not* necessarily disable smart quotes and special
+default) will _not_ necessarily disable smart quotes and special
 strings. Instead, it will just result in the default Org mode
 behavior.
 
-The special string feature can be turned off via the `#+OPTIONS:
--:nil` [export setting]. There are currently no command line flags
+The special string feature can be turned off via the `#+OPTIONS: -:nil` [export setting]. There are currently no command line flags
 which control these features. As a workaround, one can use process
 substitution, a feature supported by most shells. It allows to
 provide the options line on the command line:
@@ -368,11 +349,9 @@ provide the options line on the command line:
 
 [export setting]: https://orgmode.org/manual/Export-Settings.html
 
-Currently unsupported features
-==============================
+# Currently unsupported features
 
-Library of babel
-----------------
+## Library of babel
 
 The library of babel translates between various programming
 languages. This is out-of-scope for pandoc. Use Emacs to run

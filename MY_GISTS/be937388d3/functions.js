@@ -10,7 +10,7 @@ import { fillArray, isMap, isPlainObject, sprintf } from "../_internals";
  * @param {Graph} G Graph
  * @return {Array} List of nodes
  */
-export function nodes ( G ) {
+export function nodes(G) {
   return G.nodes();
 }
 
@@ -20,7 +20,7 @@ export function nodes ( G ) {
  * @param {Graph} G Graph
  * @return {Iterator} Iterator over graph nodes
  */
-export function nodesIter ( G ) {
+export function nodesIter(G) {
   return G.nodesIter();
 }
 
@@ -34,8 +34,8 @@ export function nodesIter ( G ) {
  * @param {NodeContainer=} opt_nbunch Nodes
  * @return {Array} List of edges
  */
-export function edges ( G, optNbunch ) {
-  return G.edges( optNbunch );
+export function edges(G, optNbunch) {
+  return G.edges(optNbunch);
 }
 
 /**
@@ -48,8 +48,8 @@ export function edges ( G, optNbunch ) {
  * @param {NodeContainer=} opt_nbunch Nodes
  * @return {Iterator} Iterator over edges
  */
-export function edgesIter ( G, optNbunch ) {
-  return G.edgesIter( optNbunch );
+export function edgesIter(G, optNbunch) {
+  return G.edgesIter(optNbunch);
 }
 
 /**
@@ -61,8 +61,8 @@ export function edgesIter ( G, optNbunch ) {
  * @param {string=} opt_weight Weight attribute name
  * @return {(number|Map)} Degree of node(s)
  */
-export function degree ( G, optNbunch, optWeight ) {
-  return G.degree( optNbunch, optWeight );
+export function degree(G, optNbunch, optWeight) {
+  return G.degree(optNbunch, optWeight);
 }
 
 /**
@@ -72,8 +72,8 @@ export function degree ( G, optNbunch, optWeight ) {
  * @param {Node} n Node
  * @return {Array} List of nodes
  */
-export function neighbors ( G, n ) {
-  return G.neighbors( n );
+export function neighbors(G, n) {
+  return G.neighbors(n);
 }
 
 /**
@@ -82,7 +82,7 @@ export function neighbors ( G, n ) {
  * @param {Graph} G Graph
  * @return {number} Number of nodes
  */
-export function numberOfNodes ( G ) {
+export function numberOfNodes(G) {
   return G.numberOfNodes();
 }
 
@@ -92,7 +92,7 @@ export function numberOfNodes ( G ) {
  * @param {Graph} G Graph
  * @return {number} Number of edges
  */
-export function numberOfEdges ( G ) {
+export function numberOfEdges(G) {
   return G.numberOfEdges();
 }
 
@@ -118,19 +118,19 @@ export function numberOfEdges ( G ) {
  * @param {Graph} G Graph
  * @return {number} Density
  */
-export function density ( G ) {
+export function density(G) {
   var n = G.numberOfNodes();
   var m = G.numberOfEdges();
   var d;
 
-  if ( m === 0 ) {
+  if (m === 0) {
     // includes cases n === 0 and n === 1
     d = 0.0;
   } else {
-    if ( G.isDirected() ) {
-      d = m / ( n * ( n - 1 ) );
+    if (G.isDirected()) {
+      d = m / (n * (n - 1));
     } else {
-      d = ( m * 2 ) / ( n * ( n - 1 ) );
+      d = (m * 2) / (n * (n - 1));
     }
   }
 
@@ -148,14 +148,14 @@ export function density ( G ) {
  * @return {Array} A list of frequencies of degrees.
  *      The degree values are the index in the list.
  */
-export function degreeHistogram ( G ) {
-  var degseq = Array.from( G.degree().values() );
-  var dmax = Math.max.apply( Math, degseq ) + 1;
-  var freq = fillArray( dmax, 0 );
+export function degreeHistogram(G) {
+  var degseq = Array.from(G.degree().values());
+  var dmax = Math.max.apply(Math, degseq) + 1;
+  var freq = fillArray(dmax, 0);
 
-  degseq.forEach( function ( d ) {
-    freq[ d ] += 1;
-  } );
+  degseq.forEach(function (d) {
+    freq[d] += 1;
+  });
 
   return freq;
 }
@@ -166,7 +166,7 @@ export function degreeHistogram ( G ) {
  * @param {Graph} G Graph
  * @return {boolean}  True if graph is directed
  */
-export function isDirected ( G ) {
+export function isDirected(G) {
   return G.isDirected();
 }
 
@@ -181,9 +181,9 @@ export function isDirected ( G ) {
  * @param {Graph} G Graph
  * @return {Graph} A reference to the input graph
  */
-export function freeze ( G ) {
-  function frozen () {
-    throw new JSNetworkXError( "Frozen graph can't be modified" );
+export function freeze(G) {
+  function frozen() {
+    throw new JSNetworkXError("Frozen graph can't be modified");
   }
 
   // This double assignment is necessary for the closure compiler
@@ -208,7 +208,7 @@ export function freeze ( G ) {
  * @param {Graph} G Graph
  * @return {boolean}  True if graph is frozen.
  */
-export function isFrozen ( G ) {
+export function isFrozen(G) {
   return !!G.frozen;
 }
 
@@ -227,8 +227,8 @@ export function isFrozen ( G ) {
  *      ignored.
  * @return {Graph} Subgraph
  */
-export function subgraph ( G, nbunch ) {
-  return G.subgraph( nbunch );
+export function subgraph(G, nbunch) {
+  return G.subgraph(nbunch);
 }
 
 /**
@@ -242,10 +242,10 @@ export function subgraph ( G, nbunch ) {
  *
  * @return {Graph} A copy of the graph
  */
-export function createEmptyCopy ( G, optWithNodes = true ) {
+export function createEmptyCopy(G, optWithNodes = true) {
   var H = new G.constructor();
-  if ( optWithNodes ) {
-    H.addNodesFrom( G );
+  if (optWithNodes) {
+    H.addNodesFrom(G);
   }
   return H;
 }
@@ -257,9 +257,9 @@ export function createEmptyCopy ( G, optWithNodes = true ) {
  * @param {Node=} opt_n A node in the graph G
  * @return {string} Info
  */
-export function info ( G, optN ) {
+export function info(G, optN) {
   var result = "";
-  if ( optN == null ) {
+  if (optN == null) {
     var template =
       "Name: %s\n" +
       "Type: %s\n" +
@@ -273,41 +273,41 @@ export function info ( G, optN ) {
       nnodes,
       G.numberOfEdges()
     );
-    if ( nnodes > 0 ) {
-      if ( G.isDirected() ) {
+    if (nnodes > 0) {
+      if (G.isDirected()) {
         var inDegree = 0;
         var outDegree = 0;
-        for ( let degree of G.inDegree().values() ) {
+        for (let degree of G.inDegree().values()) {
           inDegree += degree;
         }
-        for ( let degree of G.outDegree().values() ) {
+        for (let degree of G.outDegree().values()) {
           outDegree += degree;
         }
 
         result += sprintf(
           "Average in degree: %s\nAverage out degree: %s",
-          ( inDegree / nnodes ).toFixed( 4 ),
-          ( outDegree / nnodes ).toFixed( 4 )
+          (inDegree / nnodes).toFixed(4),
+          (outDegree / nnodes).toFixed(4)
         );
       } else {
         let sum = 0;
-        for ( let v of G.degree().values() ) {
+        for (let v of G.degree().values()) {
           sum += v;
         }
-        result += sprintf( "Average degree: %s", ( sum / nnodes ).toFixed( 4 ) );
+        result += sprintf("Average degree: %s", (sum / nnodes).toFixed(4));
       }
     }
   } else {
-    if ( !G.hasNode( optN ) ) {
-      throw new JSNetworkXError( sprintf( "Node %j not in graph.", optN ) );
+    if (!G.hasNode(optN)) {
+      throw new JSNetworkXError(sprintf("Node %j not in graph.", optN));
     }
     result = sprintf(
       "Node %j has the following properties:\nDegree: %s\nNeighbors: %s",
       optN,
-      G.degree( optN ),
-      G.neighbors( optN )
-        .map( ( n ) => JSON.stringify( n ) )
-        .join( " " )
+      G.degree(optN),
+      G.neighbors(optN)
+        .map((n) => JSON.stringify(n))
+        .join(" ")
     );
   }
   return result;
@@ -320,16 +320,16 @@ export function info ( G, optN ) {
  * @param {string} name Attribute name
  * @param {(Object|Map)} attributes Dictionary of attributes keyed by node
  */
-export function setNodeAttributes ( G, name, attributes ) {
-  if ( isMap( attributes ) ) {
-    attributes.forEach( ( value, node ) => ( G.node.get( node )[ name ] = value ) );
-  } else if ( isPlainObject( attributes ) ) {
-    for ( var node in attributes ) {
-      node = isNaN( node ) ? node : +node;
-      G.node.get( node )[ name ] = attributes[ node ];
+export function setNodeAttributes(G, name, attributes) {
+  if (isMap(attributes)) {
+    attributes.forEach((value, node) => (G.node.get(node)[name] = value));
+  } else if (isPlainObject(attributes)) {
+    for (var node in attributes) {
+      node = isNaN(node) ? node : +node;
+      G.node.get(node)[name] = attributes[node];
     }
   } else {
-    throw new TypeError( "Attributes must be a Map or a plain object" );
+    throw new TypeError("Attributes must be a Map or a plain object");
   }
 }
 
@@ -340,13 +340,13 @@ export function setNodeAttributes ( G, name, attributes ) {
  * @param {string} name Attribute name
  * @return {!Map} Dictionary of attributes keyed by node.
  */
-export function getNodeAttributes ( G, name ) {
+export function getNodeAttributes(G, name) {
   var dict = new Map();
-  G.node.forEach( function ( node, data ) {
-    if ( data.hasOwnProperty( name ) ) {
-      dict.set( node, data[ name ] );
+  G.node.forEach(function (node, data) {
+    if (data.hasOwnProperty(name)) {
+      dict.set(node, data[name]);
     }
-  } );
+  });
   return dict;
 }
 
@@ -358,10 +358,10 @@ export function getNodeAttributes ( G, name ) {
  * @param {Map} attributes
  *    Dictionary of attributes keyed by edge (tuple).
  */
-export function setEdgeAttributes ( G, name, attributes ) {
-  attributes.forEach( function ( edge, value ) {
-    G.get( edge[ 0 ] ).get( edge[ 1 ] )[ name ] = value;
-  } );
+export function setEdgeAttributes(G, name, attributes) {
+  attributes.forEach(function (edge, value) {
+    G.get(edge[0]).get(edge[1])[name] = value;
+  });
 }
 
 /**
@@ -375,14 +375,14 @@ export function setEdgeAttributes ( G, name, attributes ) {
  * @param {string} name Attribute name
  * @return {!Map} Dictionary of attributes keyed by edge.
  */
-export function getEdgeAttributes ( G, name ) {
+export function getEdgeAttributes(G, name) {
   var dict = new Map();
-  G.edges( null, true ).forEach( function ( edged ) {
-    if ( edged[ 2 ].hasOwnProperty( name ) ) {
-      var value = edged[ 2 ][ name ];
+  G.edges(null, true).forEach(function (edged) {
+    if (edged[2].hasOwnProperty(name)) {
+      var value = edged[2][name];
       edged.length = 2; // cut of data
-      dict.set( edged, value );
+      dict.set(edged, value);
     }
-  } );
+  });
   return dict;
 }

@@ -58,62 +58,64 @@ html="index.html"
 out="basename $out.html"
 cmd() {   echo '  <!DOCTYPE html>';   echo '<html>';   echo '<head>'   echo '  <meta http-equiv="Content-Type" content="text/html">'   echo '  <meta name="Author" content="Bryan Guner">';   echo '<link rel="stylesheet" href="./assets/prism.css">';   echo ' <link rel="stylesheet" href="./assets/style.css">';   echo ' <script async defer src="./assets/prism.js"></script>'   echo "  <title> directory </title>"   echo "";   echo '<style>'; echo 'body {'; echo '   display: block;'; echo '    margin: 8px;'; echo '    background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-zoom-backgrounds-free-star-wars-starfield-1587416939.jpg?crop=1xw:1xh;center,top&resize=768:*);'; echo '    background-position: center;'; echo '    background-repeat: no-repeat;'; echo '    background-size: cover;'; echo '    zoom: 0.7;'; echo '}'; echo '
 
-echo'     ul {'
-echo '    column-width: auto;'
-echo '    -webkit-column-count: 3;'
-echo '    -moz-column-count: 3;'
-echo '    column-count: 3;'
-echo '    display: block;'
-echo '    list-style-type: disc;'
-echo '    margin-block-start: 1em;'
-echo '    margin-block-end: 1em;'
-echo '    margin-inline-start: 0px;'
-echo '    margin-inline-end: 0px;'
-echo '    padding-inline-start: 40px;'
+echo' ul {'
+echo ' column-width: auto;'
+echo ' -webkit-column-count: 3;'
+echo ' -moz-column-count: 3;'
+echo ' column-count: 3;'
+echo ' display: block;'
+echo ' list-style-type: disc;'
+echo ' margin-block-start: 1em;'
+echo ' margin-block-end: 1em;'
+echo ' margin-inline-start: 0px;'
+echo ' margin-inline-end: 0px;'
+echo ' padding-inline-start: 40px;'
 echo '}'
-echo '    a {'
-echo '      color: black;'
-echo '    }'
+echo ' a {'
+echo ' color: black;'
+echo ' }'
 echo ''
 echo 'li {'
-echo '    font-size: 16px;'
-echo '    letter-spacing: 0px;'
-echo '    font-weight: 800;'
-echo '    line-height: 12x;'
-echo '    text-transform: uppercase;'
-echo '    border: none;'
-echo '    cursor: pointer;'
-echo '    justify-content: center;'
-echo '    padding: 30px 60px;'
-echo '    height: 48px;'
-echo '    text-align: left;'
-echo '    white-space: normal;'
-echo '    border-radius: 10px;'
-echo '    min-width: 45em;'
-echo '    padding: 1.2em 1em 0;'
-echo '    box-shadow: 0 0 5px;'
-echo '    margin: 1em;'
-echo '    display: grid;'
-echo '    white-space: nowrap;'
-echo '    overflow: hidden;'
-echo '    text-overflow: ellipsis;'
-echo '    max-width: 150px;'
-echo '    -webkit-border-radius: 10px;'
-echo '    -moz-border-radius: 10px;'
-echo '    -ms-border-radius: 10px;'
-echo '    -o-border-radius: 10px;'
-echo '  </style>'
-  echo '</head>'
-  echo '<body>'
-  echo ""
-  #################### continue with the HTML stuff:
-  echo "<ul>"
-  awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
-  # awk '{print "<li>"};   echo ""   echo "</ul>"   echo "</body>"   echo "</html>" }
+echo ' font-size: 16px;'
+echo ' letter-spacing: 0px;'
+echo ' font-weight: 800;'
+echo ' line-height: 12x;'
+echo ' text-transform: uppercase;'
+echo ' border: none;'
+echo ' cursor: pointer;'
+echo ' justify-content: center;'
+echo ' padding: 30px 60px;'
+echo ' height: 48px;'
+echo ' text-align: left;'
+echo ' white-space: normal;'
+echo ' border-radius: 10px;'
+echo ' min-width: 45em;'
+echo ' padding: 1.2em 1em 0;'
+echo ' box-shadow: 0 0 5px;'
+echo ' margin: 1em;'
+echo ' display: grid;'
+echo ' white-space: nowrap;'
+echo ' overflow: hidden;'
+echo ' text-overflow: ellipsis;'
+echo ' max-width: 150px;'
+echo ' -webkit-border-radius: 10px;'
+echo ' -moz-border-radius: 10px;'
+echo ' -ms-border-radius: 10px;'
+echo ' -o-border-radius: 10px;'
+echo ' </style>'
+echo '</head>'
+echo '<body>'
+echo ""
+#################### continue with the HTML stuff:
+echo "<ul>"
+awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
+
+# awk '{print "<li>"}; echo "" echo "</ul>" echo "</body>" echo "</html>" }
+
 sudo sed -i '/\.html/!d' ./files
 cmd $listing --sort=extension >>$html
-cmd() {   echo '  <!DOCTYPE html>';   echo '<html>';   echo '<head>';   echo '  <meta http-equiv="Content-Type" content="text/html">';   echo '  <meta name="Author" content="Bryan Guner">';   echo '<link rel="stylesheet" href="./assets/prism.css">';   echo ' <link rel="stylesheet" href="./assets/style.css">';   echo ' <script async defer src="./assets/prism.js"></script>';   echo "  <title> directory </title>";   echo "";   echo '<style>'; echo 'body {'; echo '   display: block;'; echo '    margin: 8px;'; echo '    background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-zoom-backgrounds-free-star-wars-starfield-1587416939.jpg?crop=1xw:1xh;center,top&resize=768:*);'; echo '    background-position: center;'; echo '    background-repeat: no-repeat;'; echo '    background-size: cover;'; echo '    zoom: 0.7;'; echo '}'; echo'     ul {'; echo '    column-width: auto;'; echo '    -webkit-column-count: 3;'; echo '    -moz-column-count: 3;'; echo '    column-count: 3;'; echo '    display: block;'; echo '    list-style-type: disc;'; echo '    margin-block-start: 1em;'; echo '    margin-block-end: 1em;'; echo '    margin-inline-start: 0px;'; echo '    margin-inline-end: 0px;'; echo '    padding-inline-start: 40px;'; echo '}'; echo '    a {'; echo '      color: black;'; echo '    }'; echo ''; echo 'li {'; echo '    width: 20px !important;'; echo '    border: 4px solid gold !important;'; echo '    font-size: 16px;'; echo '    letter-spacing: 0px;'; echo '    font-weight: 800;'; echo '    line-height: 12x;'; echo '    text-decoration: none !important;'; echo '    text-transform: uppercase;'; echo '    background: silver !important;'; echo '    color: black !important;'; echo '    border: none;'; echo '    cursor: pointer;'; echo '    justify-content: center;'; echo '    padding: 30px 60px;'; echo '    height: 48px;'; echo '    text-align: left;'; echo '    white-space: normal;'; echo '    border-radius: 10px;'; echo '    min-width: 45em;'; echo '    padding: 1.2em 1em 0;'; echo '    box-shadow: 0 0 5px;'; echo '    margin: 1em;'; echo '    display: grid;'; echo '    white-space: nowrap;'; echo '    overflow: hidden;'; echo '    text-overflow: ellipsis;'; echo '    max-width: 150px;'; echo '    -webkit-border-radius: 10px;'; echo '    -moz-border-radius: 10px;'; echo '    -ms-border-radius: 10px;'; echo '    -o-border-radius: 10px;'; echo '}'; echo '  </style>';   echo '</head>';   echo '<body>';   echo ""
-echo "<ul>";   awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing;   echo "</ul>";   echo "</body>";   echo "</html>" }
+cmd() { echo ' <!DOCTYPE html>'; echo '<html>'; echo '<head>'; echo ' <meta http-equiv="Content-Type" content="text/html">'; echo ' <meta name="Author" content="Bryan Guner">'; echo '<link rel="stylesheet" href="./assets/prism.css">'; echo ' <link rel="stylesheet" href="./assets/style.css">'; echo ' <script async defer src="./assets/prism.js"></script>'; echo " <title> directory </title>"; echo ""; echo '<style>'; echo 'body {'; echo ' display: block;'; echo ' margin: 8px;'; echo ' background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-zoom-backgrounds-free-star-wars-starfield-1587416939.jpg?crop=1xw:1xh;center,top&resize=768:*);'; echo ' background-position: center;'; echo ' background-repeat: no-repeat;'; echo ' background-size: cover;'; echo ' zoom: 0.7;'; echo '}'; echo' ul {'; echo ' column-width: auto;'; echo ' -webkit-column-count: 3;'; echo ' -moz-column-count: 3;'; echo ' column-count: 3;'; echo ' display: block;'; echo ' list-style-type: disc;'; echo ' margin-block-start: 1em;'; echo ' margin-block-end: 1em;'; echo ' margin-inline-start: 0px;'; echo ' margin-inline-end: 0px;'; echo ' padding-inline-start: 40px;'; echo '}'; echo ' a {'; echo ' color: black;'; echo ' }'; echo ''; echo 'li {'; echo ' width: 20px !important;'; echo ' border: 4px solid gold !important;'; echo ' font-size: 16px;'; echo ' letter-spacing: 0px;'; echo ' font-weight: 800;'; echo ' line-height: 12x;'; echo ' text-decoration: none !important;'; echo ' text-transform: uppercase;'; echo ' background: silver !important;'; echo ' color: black !important;'; echo ' border: none;'; echo ' cursor: pointer;'; echo ' justify-content: center;'; echo ' padding: 30px 60px;'; echo ' height: 48px;'; echo ' text-align: left;'; echo ' white-space: normal;'; echo ' border-radius: 10px;'; echo ' min-width: 45em;'; echo ' padding: 1.2em 1em 0;'; echo ' box-shadow: 0 0 5px;'; echo ' margin: 1em;'; echo ' display: grid;'; echo ' white-space: nowrap;'; echo ' overflow: hidden;'; echo ' text-overflow: ellipsis;'; echo ' max-width: 150px;'; echo ' -webkit-border-radius: 10px;'; echo ' -moz-border-radius: 10px;'; echo ' -ms-border-radius: 10px;'; echo ' -o-border-radius: 10px;'; echo '}'; echo ' </style>'; echo '</head>'; echo '<body>'; echo ""
+echo "<ul>"; awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing;   echo "</ul>";   echo "</body>";   echo "</html>" }
 explorer.exe .
 sudo sed -i '/\.html/!d' ./index.html
 sudo sed -i '/right\.html/d' ./index.html
@@ -291,11 +293,11 @@ git remote add origin https://github.com/bgoonz/All-Undergrad-Archive.git
 if [ ! -f "github-top" ]; then   curl -L -O https://github.com/lauripiispanen/most-active-github-users-counter/releases/download/v1.21/github-top.cgo_disabled;   mv github-top.cgo_disabled github-top;   chmod u+x github-top; fi
 OUTPUT_FILE_NAME=$(echo "$2" | sed 's/ /_/')
 ./github-top --token "$1" --preset "$2" --output yaml --file "$OUTPUT_FILE_NAME.yml"
-echo "page: $OUTPUT_FILE_NAME.html\ntitle: $3" | cat - "$OUTPUT_FILE_NAME.yml" > "_data/locations/$OUTPUT_FILE_NAME.yml"
+echo "page: $OUTPUT_FILE_NAME.html\ntitle: $3" | cat - "$OUTPUT_FILE_NAME.yml" > "\_data/locations/$OUTPUT_FILE_NAME.yml"
 echo "---\ntype: location\nlocation: $OUTPUT_FILE_NAME\nmode: commits\n---" > "$OUTPUT_FILE_NAME.md"
-echo "---\ntype: location\nlocation: $OUTPUT_FILE_NAME\nmode: all\n---" > "${OUTPUT_FILE_NAME}_private.md"
-echo "---\ntype: location\nlocation: $OUTPUT_FILE_NAME\nmode: contributions\n---" > "${OUTPUT_FILE_NAME}_public.md"
-if [ -z "$1" ]; then     exit 1; fi
+echo "---\ntype: location\nlocation: $OUTPUT_FILE_NAME\nmode: all\n---" > "${OUTPUT_FILE_NAME}\_private.md"
+echo "---\ntype: location\nlocation: $OUTPUT_FILE_NAME\nmode: contributions\n---" > "${OUTPUT_FILE_NAME}\_public.md"
+if [ -z "$1" ]; then exit 1; fi
 git clone git://github.com/hoxu/gitstats.git
 bash build.sh
 cd MY-WEB-DEV
@@ -315,24 +317,32 @@ cd /etc/apt/
 deb [trusted=yes] https://dl.bintray.com/stripe/stripe-cli-deb
 wget http://ppa.launchpad.net/webupd8team/java/ubuntu
 sudo wget http://ppa.launchpad.net/webupd8team/java/ubuntu
-sudo wget  https://dl.bintray.com/stripe/stripe-cli-deb stable
+sudo wget https://dl.bintray.com/stripe/stripe-cli-deb stable
 echo "deb http://your.repo.domain/repository/ $(lsb_release -c -s) universe" | sudo tee /etc/apt/sources.list.d/your-repo-name.list
 sudo apt -o Acquire::AllowInsecureRepositories=true -o Acquire::AllowDowngradeToInsecureRepositories=true update
+
 ## if the 'apt update' above fails it is likely due to previously
+
 ## having the GPG key and repository on the system, you can clean
+
 ## out the old lists with `sudo rm /var/lib/apt/lists/your.repo.domain*`
+
 apt-get -o APT::Get::AllowUnauthenticated=true install repo-keyring-pkgname
+
 ## If you ever run `sudo apt-key del your-repos-keyID`
+
 ## you may have to `sudo apt remove --purge repo-keyring-pkgname`
+
 ## Update should run without the GPG warnings now that the key is installed
+
 apt-get update
 apt-get install http://ppa.launchpad.net/webupd8team/java/ubuntu focal Release
 sudo apt-get install http://ppa.launchpad.net/webupd8team/java/ubuntu focal Release
-gpg --keyserver pgpkeys.mit.edu --recv-key KEY_IN_ERROR
+gpg --keyserver pgpkeys.mit.edu --recv-key KEY*IN_ERROR
 gpg -a --export KEY_IN_ERROR | sudo apt-key add -
 sudo add-apt-repository --remove ppa:PPA_Name/ppa
 sudo add-apt-repository --remove ppa:PPA_Name/launchpad.net/webupd8team/java/ubuntu
-sudo add-apt-repository ppa:xorg-edgers/ppa 
+sudo add-apt-repository ppa:xorg-edgers/ppa
 sudo apt-get install libgl1-mesa-glx
 sudo apt-get install libgl1-mesa-dri
 sudo apt-get install libgl1-mesa-dev
@@ -348,8 +358,8 @@ sudo dpkg --set-selections < list.txt
 sudo dpkg --clear-selections
 sudo apt-get autoremove
 sudo apt-get dselect-upgrade
-dpkg-query -W -f='${PackageSpec} ${Status}\n' | grep installed |  sort -u | cut -f1 -d \ > installed-pkgs
-dpkg -l | grep ^ii | sed 's_  _\t_g' | cut -f 2 > installed-pkgs
+dpkg-query -W -f='${PackageSpec} ${Status}\n' | grep installed | sort -u | cut -f1 -d \ > installed-pkgs
+dpkg -l | grep ^ii | sed 's* \_\t_g' | cut -f 2 > installed-pkgs
 sudo apt update --force
 sudo apt-clone clone path-to/apt-clone-state-ubuntu-$(lsb_release -sr)-$(date +%F).tar.gz
 sudo apt-clone clone ./apt-clone-state-ubuntu-$(lsb_release -sr)-$(date +%F).tar.gz
@@ -359,19 +369,21 @@ apt-mark showmanual
 .\vcpkg\bootstrap-vcpkg.bat
 npm install
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5C808C2B65558117
-python3      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
+python3 pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
 sudo apt purge python2.x-minimal
+
 # Remove python2
+
 sudo apt purge -y python2.7-minimal
 sudo ln -s /usr/bin/python3 /usr/bin/python
 sudo apt install -y python3-pip
 sudo ln -s /usr/bin/pip3 /usr/bin/pip
 python --version
 . /bin/activate
-node filerTests.js 
+node filerTests.js
 npm install locate-path
 ./bootstrap-vcpkg.sh
-cmake -B [build directory] -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake
+cmake -B [build directory] -S . -DCMAKE*TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake
 sudo apt install cmake
 sudo apt-get install build-essential tar curl zip unzip
 npm i --save lodash
@@ -379,12 +391,12 @@ babel --plugins transform-ternary-to-if-else replace.js
 sudo apt install babel
 npm install babel
 lebab --replace ./ --transform for-of
-lebab --replace ./ --transform commonjs 
+lebab --replace ./ --transform commonjs
 lebab --replace ./ --transform exponent
 lebab --replace ./ --transform multi-var
 lebab --replace ./ --transform template
 lebab --replace ./ --transform default-param
-lebab --replace ./ --transform  destruct-param 
+lebab --replace ./ --transform destruct-param
 lebab --replace ./ --transform includes
 npm init
 npm install loadash
@@ -393,21 +405,21 @@ npm install underscore
 npm i underscore
 cat README.md* | codedown javascript > code.js
 cat README.md | codedown javascript | node >code.js
-cat README.md | codedown javascript | node 
-cat README.md | codedown javascript 
+cat README.md | codedown javascript | node
+cat README.md | codedown javascript
 codedown javascript README.md > out.js
 npm i babel-plugin-transform-ternary-to-if-else
 git remote add origin https://github.com/bgoonz/loadash-es6-refactor.git
-npm init 
+npm init
 git commit -m "package.json"
 npm login
 npm publish
 node Runkit-ds-algo-dynamic.js
 git commit -m "coderpad"
 git pul
-sed -n '/^```/,/^```/ p' < README.md
-sed -n '/^```/,/^```/ p' < README.md >
-sed -n '/^```/,/^```/ p' < README.md > README-code.js
+sed -n '/^`/,/^`/ p' < README.md
+sed -n '/^`/,/^`/ p' < README.md >
+sed -n '/^`/,/^`/ p' < README.md > README-code.js
 git commit -m "update and cleanup"
 git pull -s recursive -X theirs https://github.com/bgoonz/Medium_Articles.git
 git commit -m "merge"
@@ -416,17 +428,17 @@ git commit -m "folder structure
 git commit -m "formatted html"
 tree -d >README.md
 tree -d -L 5 >README.md
-tree  -L 5 >README.md
+tree -L 5 >README.md
 git commit -m "readme"
 find ./ -mindepth 2 -type f -exec mv -t ./ --backup=t '{}' +
-for f in * ; do    mv "$f" "$f.md"; done
+for f in * ; do mv "$f" "$f.md"; done
 find . -type f -exec mv '{}' '{}'.md \;
 httrack https://apply.lambdaschool.com/courses/web/
 httrack https://en.wikipedia.org/wiki/List_of_lists_of_lists
-git clone "https://gerrit.wikimedia.org/r/labs/tools/VideoCutTool"   # clone front-end
-cd ./VideoCutTool                                                    # move to front-end directory
-npm install                                                          # install node dependencies
-google-chrome http://localhost:3000         
+git clone "https://gerrit.wikimedia.org/r/labs/tools/VideoCutTool" # clone front-end
+cd ./VideoCutTool # move to front-end directory
+npm install # install node dependencies
+google-chrome http://localhost:3000  
 git commmit -m "initial commit"
 git remote add origin https://github.com/bgoonz/BackgroundImages.git
 npm i docsify-cli -g
@@ -448,7 +460,7 @@ git commit -m "fixing submodule deployment bug"
 git commit -m "please deploy"
 git commit -m "please pease just work"
 httrack https://flounder-flower-xpaw.squarespace.com/
-git clone  https://github.com/bgoonz/ecommerce-interactive.git
+git clone https://github.com/bgoonz/ecommerce-interactive.git
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://flounder-flower-xpaw.squarespace.com/config/settings/domains/flounder-flower-xpaw.squarespace.com
 git remote remove origin
 cd ecommerce-interactive
@@ -488,21 +500,21 @@ sudo apt install eslint
 unzip
 find ./ -type f -name *.tar.gz -exec tar -xf {} \;
 git commit -m "right folder"
-find -name "* *" -type d | rename 's/ /_/g'    # do the directories first
-find -name "* *" -type f | rename 's/ /_/g'
-pandoc *.html>  ./OUTPUT.html
+find -name "* \*" -type d | rename 's/ /*/g' # do the directories first
+find -name "\* _" -type f | rename 's/ /\_/g'
+pandoc _.html> ./OUTPUT.html
 git checkoout
 checkout
 git checkout
 cd Medium_Articles/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://soybean-tulip-em56.squarespace.com/
-wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://bryans-spectacular-project-fae067.webflow.io/ 
+wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://bryans-spectacular-project-fae067.webflow.io/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off http://creado-template.webflow.io/v1/works
 httrack https://bryans-spectacular-project-fae067.webflow.io/
 httrack https://soybean-tulip-em56.squarespace.com/
 httrack http://creado-template.webflow.io/v1/works
-git push  -u origin master
-git push  -u origin master -f
+git push -u origin master
+git push -u origin master -f
 find . -type f -exec rename 's/MASTER//g' {} +
 find . -type f -exec rename 's/master//g' {} +
 awk '{gsub(" ","",$0); print $0;}' *
@@ -528,8 +540,8 @@ for file in $(curl -s https://soybean-tulip-em56.squarespace.com/ |
                   sed 's/.*href="//' |
                   sed 's/".*//' |
                   grep '^[a-zA-Z].*'); do     curl -s -O https://soybean-tulip-em56.squarespace.com//$file; done
-wget      --recursive      --no-clobber      --page-requisites      --html-extension      --convert-links      --restrict-file-names=windows      --domains website.org      --no-parent       https://soybean-tulip-em56.squarespace.com/config/pages
-wget      --recursive      https://soybean-tulip-em56.squarespace.com/config/pages
+wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains website.org --no-parent https://soybean-tulip-em56.squarespace.com/config/pages
+wget --recursive https://soybean-tulip-em56.squarespace.com/config/pages
 wget -r -A.html https://soybean-tulip-em56.squarespace.com/config/pages
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://soybean-tulip-em56.squarespace.com/home
 rm -r
@@ -537,7 +549,7 @@ rm -rd
 rm -rf
 npm install -g modernizr
 python3 get-gists.py Colt
-rm -rf *
+rm -rf _
 npm run serve
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://az-aurora.webflow.io/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://brian-miller.webflow.io/
@@ -558,11 +570,11 @@ python3 get-gists.py jhnns
 python3 get_gists.py anders
 python3 get-gists.py anders
 python3 get-gists.py E-Bo
-rm-rf *
+rm-rf _
 modernizr -c modernizr-config.json
 tree > README.md
 git remote add origin https://github.com/bgoonz/mini-project-showcase.git
-git push -u  origin master
+git push -u origin master
 ls -R './' | awk '
 /:$/&&f{s=$0;f=0}
 /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
@@ -583,17 +595,17 @@ find . -type f -exec sed -i '/Blog at WordPress/d' ./* {} \;
 find . -iname '*\.html' -type f -exec sed -i '/Blog at WordPress/d' ./* {} \;
 sudo sed -i '/Blog at WordPress/d' ./index.html
 sudo sed -i '/Blog at WordPress/d' ./*.html
-sudo sed -i '/Blog at WordPress/d' ./*.html              if [[ -d "${f}" ]]; then             cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
+sudo sed -i '/Blog at WordPress/d' ./*.html              if [[ -d "${f}" ]]; then cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
 npm install webpack webpack-cli --save-dev
 npx webpack
 npm install --save lodash
-git add  .
+git add .
 git remote add origin https://github.com/bgoonz/web-dev-notes-resource-site.git
 git commit -m "tidying up"
 git remote add origin https://github.com/bgoonz/web-dev-resource-hub.git
 find . -size +75M -a -print -a -exec rm -f {} \;
-find . -name '*.md' | cpio -pdm './../Markdown'
-find . -type f -name '*.md' | cpio -p -d -v './..'
+find . -name '_.md' | cpio -pdm './../Markdown'
+find . -type f -name '_.md' | cpio -p -d -v './..'
 git commit -m "added extra practice"
 npm install bit-bin -g
 git pull https://github.com/bgoonz/udemy-react-translator.git
@@ -638,17 +650,17 @@ mkdir Downloads
 sudo snap install node --classic --channel=14
 git commit -m "secondish commit"
 git commit -n "wub"
-git commit -n 
+git commit -n
 git commit -m "please" -f
-git commit -m "please" 
-git commit -m -n "please" 
-git commit -m -n "./" 
+git commit -m "please"
+git commit -m -n "please"
+git commit -m -n "./"
 node foundation.js
 git remote add origin https://github.com/bgoonz/the-one-DSPac-2-rule-them-all.git
 git remote add origin https://github.com/bgoonz/jsanimate.git
 git commit -m "outter folder"
 git commit -m "demo.gif"
-cd "c:\\MY-WEB-DEV\\02-cloned-repos\\_AA-Clones\\victor\\personal-site-master\\personal-site-master"
+cd "c:\\MY-WEB-DEV\\02-cloned-repos\\\_AA-Clones\\victor\\personal-site-master\\personal-site-master"
 npm install -f
 heroku login
 npm install -g heroku-cli
@@ -657,7 +669,7 @@ sudo apt install snap
 npm audit fix -f
 git remote add origin https://github.com/bgoonz/React-Admin-Dashboard.git
 npm install algoliasearch instantsearch.js
-heroku login 
+heroku login
 heroku join
 sudo snap install --classic heroku
 curl https://cli-assets.heroku.com/install.sh | sh
@@ -676,26 +688,26 @@ git commit -m "favicon.ico"
 git commit -m "stable"
 git commit -m "added blog posts"
 npm uninstall -g create-react-app,
-find . -type f -exec sed -i '/appacademy/d' ./*.md {} \; 
-find . -type f -exec sed -n -e '/```js/,/```/p' *.html >out.js ./* {} \;
+find . -type f -exec sed -i '/appacademy/d' ./_.md {} \;
+find . -type f -exec sed -n -e '/`js/,/`/p' _.html >out.js ./\* {} \;
 gh pr checkout 5
 sudo apt install gitsome
 tree
 cd mnt
 cd c
 cd MY-WEB-DEV/
-cd __Projects/
+cd \_\_Projects/
 cd NORWEX_CONTAINER/
 find . -name 'node_modules' -type d -print -prune -exec rm -rf '{}' +
 sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 379CE192D401AB61
 echo "deb https://dl.bintray.com/stripe/stripe-cli-deb stable main" | sudo tee -a /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install stripe
-curl https://api.stripe.com/v1/accounts   -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT:   -d "type"="express"
-curl https://api.stripe.com/v1/accounts   -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT:   -d "country"="US"   -d "type"="express"   -d "capabilities[card_payments][requested]"="true"   -d "capabilities[transfers][requested]"="true"
-curl https://api.stripe.com/v1/account_links   -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT:   -d "account"="acct_1032D82eZvKYlo2C"   -d "refresh_url"="https://example.com/reauth"   -d "return_url"="https://example.com/return"   -d "type"="account_onboarding"
-curl https://api.stripe.com/v1/accounts   -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT:   -d "type"="custom"   -d "capabilities[card_payments][requested]"="true"   -d "capabilities[transfers][requested]"="true"
-curl https://api.stripe.com/v1/accounts/{{CONNECTED_STRIPE_ACCOUNT_ID}}   -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT:
+curl https://api.stripe.com/v1/accounts -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT: -d "type"="express"
+curl https://api.stripe.com/v1/accounts -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT: -d "country"="US" -d "type"="express" -d "capabilities[card_payments][requested]"="true" -d "capabilities[transfers][requested]"="true"
+curl https://api.stripe.com/v1/account_links -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT: -d "account"="acct_1032D82eZvKYlo2C" -d "refresh_url"="https://example.com/reauth" -d "return_url"="https://example.com/return" -d "type"="account_onboarding"
+curl https://api.stripe.com/v1/accounts -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT: -d "type"="custom" -d "capabilities[card_payments][requested]"="true" -d "capabilities[transfers][requested]"="true"
+curl https://api.stripe.com/v1/accounts/{{CONNECTED_STRIPE_ACCOUNT_ID}} -u sk_test_51IPNAZIzTmCXpXdEoTXoXjblvqjwD3SYnpDRBnAkZzJgJXBDHwfeTNtnXtEM8vnmjGsCLUmekbdEGRuG4RcBCW3o00QvZqWxOT:
 curl -X POST https://connect.stripe.com/oauth/token -d client_secret=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 -d code=ac_J3UQOIKZt95Eq0L1yAQR9yvhAYjytXOd -d grant_type=authorization_code
 curl -X POST https://connect.stripe.com/oauth/token -d client_secret=pk_live_51IPNAZIzTmCXpXdESb5snTJpDZI4c6vlzYmN3Dt7KlZHTacqrDlRXdMnpuwq69SjjU9zUD5kDM2DAMe3Od2QFs3G00xVxgYvuY -d code=ac_J3UQOIKZt95Eq0L1yAQR9yvhAYjytXOd -d grant_type=authorization_code
 stripe login
@@ -703,26 +715,28 @@ sudo apt install stripe-cli
 pip install --upgrade stripe
 mkdir repos
 git clone https://github.com/stripe-samples/connect-onboarding-for-express
-curl https://api.stripe.com/v1/charges/ch_1IROI1AsSzkI1bY8o5o7NM4N   -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz:   -H "Stripe-Account: acct_1IRNOwAsSzkI1bY8"   -G
-curl https://api.stripe.com/v1/charges/ch_1IROI1AsSzkI1bY8o5o7NM4N   -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz:   -d "expand[]"=customer   -d "expand[]"="invoice.subscription"   -G
-curl https://api.stripe.com/v1/charges   -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz:   -H "Idempotency-Key: buim2Jwfn1lHhFOQ"   -d amount=2000   -d currency=usd   -d description="My First Test Charge (created for API docs)"   -d source=tok_amex
-curl https://api.stripe.com/v1/charges   -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz:   -d amount=2000   -d currency=usd   -d source=tok_mastercard   -d "metadata[order_id]"=6735
+curl https://api.stripe.com/v1/charges/ch_1IROI1AsSzkI1bY8o5o7NM4N -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz: -H "Stripe-Account: acct_1IRNOwAsSzkI1bY8" -G
+curl https://api.stripe.com/v1/charges/ch_1IROI1AsSzkI1bY8o5o7NM4N -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz: -d "expand[]"=customer -d "expand[]"="invoice.subscription" -G
+curl https://api.stripe.com/v1/charges -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz: -H "Idempotency-Key: buim2Jwfn1lHhFOQ" -d amount=2000 -d currency=usd -d description="My First Test Charge (created for API docs)" -d source=tok_amex
+curl https://api.stripe.com/v1/charges -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz: -d amount=2000 -d currency=usd -d source=tok_mastercard -d "metadata[order_id]"=6735
+
 # The auto-pagination feature is specific to Stripe's
-curl https://api.stripe.com/v1/customers   -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz:   -D "-"   -X POST
-curl https://api.stripe.com/v1/charges   -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz:   -H "Stripe-Version: 2020-08-27"
-curl https://api.stripe.com/v1/balance   -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz:
+
+curl https://api.stripe.com/v1/customers -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz: -D "-" -X POST
+curl https://api.stripe.com/v1/charges -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz: -H "Stripe-Version: 2020-08-27"
+curl https://api.stripe.com/v1/balance -u sk_test_51IRNOwAsSzkI1bY8DXwKwxZBF0Z7myF8xv8ceskuxfBfdnaj7K9TVFIzt3svY5cDVMlbj5lnrPQhpxssdHmvMNMR00acgr6KTz:
 npm install -g npm@7.6.0
 pip install ipyparallel
 ipcluster nbextension enable
 jupyter nbextension install --sys-prefix --py ipyparallel
 jupyter nbextension enable --sys-prefix --py ipyparallel
 jupyter serverextension enable --sys-prefix --py ipyparallel
-for i in {0..12}; do   if ! (($i % 4)); then     printf "\e[1K\rloading";   else     printf ".";   fi;   sleep 1
+for i in {0..12}; do if ! (($i % 4)); then     printf "\e[1K\rloading";   else     printf ".";   fi;   sleep 1
 python3 get-gists.py 
 python3 get-gists.py leoloobeek
 python3 get-gists.py dideler
 #!/usr/bin/env bash
-for i in {0..12}; do   if ! (($i % 4)); then     printf "\e[1K\rloading";   else     printf ".";   fi;   sleep 1; done && printf "\e[2K\r"
+for i in {0..12}; do   if ! (($i % 4)); then printf "\e[1K\rloading"; else printf "."; fi; sleep 1; done && printf "\e[2K\r"
 pdef memoize(func):
 mkdir other
 cd other
@@ -730,37 +744,55 @@ npm install -g configurable-http-proxy
 python3 -m pip install jupyterhub
 python3 -m pip install --upgrade notebook
 jupyterhub
-pandoc                                  --standalone                          --from=markdown+yaml_metadata_block   --template=cheat-sheet.html           -o my-topic-cheat-sheet.html          my-topic-cheat-sheet.yml              my-topic-cheat-sheet.md
+pandoc --standalone --from=markdown+yaml_metadata_block --template=cheat-sheet.html -o my-topic-cheat-sheet.html my-topic-cheat-sheet.yml my-topic-cheat-sheet.md
+
 # create a new project
+
 mkdir topic-cheat-sheet
 cd topic-cheat-sheet
+
 # create dummy content
+
 echo '# cheat sheet about topic' > topic-cheat-sheet.md
 git stage topic-cheat-sheet.md
+
 # add submodule
+
 git submodule add https://github.com/idiv-biodiversity/pandoc-cheat-sheet.git
+
 # link the cheat sheet files into your project
-ln -s -t . pandoc-cheat-sheet/cheat-sheet.* pandoc-cheat-sheet/Makefile
-git stage cheat-sheet.* Makefile
+
+ln -s -t . pandoc-cheat-sheet/cheat-sheet._ pandoc-cheat-sheet/Makefile
+git stage cheat-sheet._ Makefile
+
 # copy the metadata template to your project
+
 cp pandoc-cheat-sheet/example-variables.yml topic-cheat-sheet.yml
 git stage topic-cheat-sheet.yml
+
 # ignore the cheat sheet products
+
 echo topic-cheat-sheet.html >> .gitignore
-echo topic-cheat-sheet.pdf  >> .gitignore
-echo topic-cheat-sheet.tex  >> .gitignore
+echo topic-cheat-sheet.pdf >> .gitignore
+echo topic-cheat-sheet.tex >> .gitignore
 git stage .gitignore
+
 # create the cheat sheets
+
 # done, review the cheat sheets and make a git commit whet you're ready:
+
 # - xdg-open topic-cheat-sheet.html
+
 # - xdg-open topic-cheat-sheet.pdf
+
 # - git commit -m 'initial commit'
-pandoc                                  --standalone                          --from=markdown+yaml_metadata_block   --template=cheat-sheet.tex            --pdf-engine=xelatex                  -o my-topic-cheat-sheet.pdf           my-topic-cheat-sheet.yml              my-topic-cheat-sheet.md
+
+pandoc --standalone --from=markdown+yaml*metadata_block --template=cheat-sheet.tex --pdf-engine=xelatex -o my-topic-cheat-sheet.pdf my-topic-cheat-sheet.yml my-topic-cheat-sheet.md
 sudo apt install xelatex
 find . -empty -type d -print -delete\
-node APPEND-DIR.js 
-cd _JOB-SEARCH/
-find . -name 'node_modules' -type d  -prune -exec rm -rf '{}' +
+node APPEND-DIR.js
+cd \_JOB-SEARCH/
+find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 wget -r https://flounder-flower-xpaw.squarespace.com/
 wget -r https://flounder-flower-xpaw.squarespace.com/events-one
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://flounder-flower-xpaw.squarespace.com/
@@ -768,18 +800,18 @@ wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://mobirise.com/extensions/shopamp/#features15-8
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://mobirise.com/extensions/soundamp/recordingstudio.html
 git commit -m "overdue"
-for f in * ; do    mv "$f" "$f.mp3"; done
+for f in * ; do mv "$f" "$f.mp3"; done
 python3 adventure.py
-C:/Users/bryan/AppData/Local/Programs/Python/Python39/python.exe c:/MY-WEB-DEV/__My-Git/_GISTS/march-4/_JAMES/a79a59bcccc917503a27d488b32b62c1/adventure.py
+C:/Users/bryan/AppData/Local/Programs/Python/Python39/python.exe c:/MY-WEB-DEV/\_\_My-Git/\_GISTS/march-4/\_JAMES/a79a59bcccc917503a27d488b32b62c1/adventure.py
 git remote add origin https://github.com/bgoonz/my-gists.git
-cd _JAMES/
+cd \_JAMES/
 python3 get-gists.py jamesurobertson
 hi
-rename 's/\.js\.download$/.js/' *.js\.download 
-function RecurseDirs () {     oldIFS=$IFS;     IFS=$'\n';     for f in "$@";     do    rename  's/ *$//' *              if [[ -d "${f}" ]]; then             cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
+rename 's/\.js\.download$/.js/' *.js\.download
+function RecurseDirs () { oldIFS=$IFS;     IFS=$'\n'; for f in "$@";     do    rename  's/ *$//' * if [[-d "${f}"]]; then cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
 find . -name 'node_modules' -type d -print
 git submodule add https://github.com/bgoonz/bgoonz.github.io.git
-function RecurseDirs () {     oldIFS=$IFS;     IFS=$'\n';     for f in "$@";     do    rename 's/\.js\.download$/.js/' *.js\.download               if [[ -d "${f}" ]]; then             cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
+function RecurseDirs () { oldIFS=$IFS;     IFS=$'\n'; for f in "$@";     do    rename 's/\.js\.download$/.js/' *.js\.download if [[-d "${f}"]]; then cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
 git commit -m "updated content"
 git commit -m "initial nope... i lead.... commit > #1"
 git remote add origin https://github.com/bgoonz/ecommerce-interactive.git
@@ -808,14 +840,14 @@ sudo for f in *.html; do printf '%s\n' 0a '<!DOCTYPE html>
 sudo echo "</body></html>" | tee -a *.html
 git commit -m "commit"
 git remote add https://github.com/bgoonz/web-dev-notes-resource-site.git
-git remote add origin  https://github.com/bgoonz/web-dev-notes-resource-site.git
+git remote add origin https://github.com/bgoonz/web-dev-notes-resource-site.git
 git remote add origin https://github.com/bgoonz/react-blog.git
 wget -r https://skyline.github.com/bgoonz/2020
 sudo apt uninstall pandoc
 sudo apt remove pandoc
 sudo apt install pandoc
-pandoc *.md> -o _ Combined.html
-pandoc *.md> -o _Combined.html
+pandoc \*.md> -o * Combined.html
+pandoc _.md> -o \_Combined.html
 npm run devstart
 netlify deploy
 netlify deploy -y
@@ -823,19 +855,19 @@ npm config set msvs_version 2017
 npm audit fix --force
 sudo npm audit fix --force
 npm install -g npmnpm install -g npm
-cd "c:\0-a-A-October\00-weeks-container\00-weeks\_CONTAINER\02-mod1-a-2--\App-Academy-Notes-master\week-4\Test_Review"
+cd "c:\0-a-A-October\00-weeks-container\00-weeks_CONTAINER\02-mod1-a-2--\App-Academy-Notes-master\week-4\Test_Review"
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://skilled.dev/
-pandoc *.md> -o _OUTPUT.html
-pandoc *.md> -o _./OUTPUT.html
-pandoc ./ *.md> -o _./OUTPUT.html
-pandoc ./ *.md> -o _OUTPUT.html
-pandoc  *.md> -o _OUTPUT.html
+pandoc _.md> -o _OUTPUT.html
+pandoc \*.md> -o _./OUTPUT.html
+pandoc ./ _.md> -o \_./OUTPUT.html
+pandoc ./ _.md> -o _OUTPUT.html
+pandoc *.md> -o \_OUTPUT.html
 pandoc.exe: ~/. *.md>-o OUTPUT.html
 pandoc ~/. *.md>-o OUTPUT.html
-pandoc  *.md>-o OUTPUT.html
+pandoc *.md>-o OUTPUT.html
 find ./ -iname "*.md" -type f -exec sh -c 'pandoc *.md> -o ./OUTPUT.html'
 pandoc *.md> -o ./OUTPUT.html
-rm -rf .git 
+rm -rf .git
 rm -rf *.git
 git rm -rf *.git
 git remote add origin https://github.com/bgoonz/Realistate-Site-Template.git
@@ -855,13 +887,10 @@ git commit -m "not initial"
 git icommit -m "wubalubadubdub"
 node append.js
 find . -type f -exec sed -i '/define/d' ./* {} \;
-node collect.js 
+node collect.js
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 bower install Polymer/paper-fab#^0.5
-bower install Polymer/paper-input#^0.5 ``
-bower install
-bower install --save Polymer/polymer#^0.5
-bower install Polymer/core-scaffold#^0.5 ``
+bower install Polymer/paper-input#^0.5 `bower install bower install --save Polymer/polymer#^0.5 bower install Polymer/core-scaffold#^0.5`
 npm i bower
 git commit -m "no message"
 tree >README.md
@@ -885,111 +914,93 @@ cd typescript-ref-app-team-chat
 chmod -x deploy.sh
 bash deploy.sh
 git remote add origin https://github.com/bgoonz/embed-user-gists-in-website.git
-node combine.js 
+node combine.js
 git commit-m "core content"
 git commit -m "core content"
-git pull 
+git pull
 git push -f
 git clone https://github.com/layrjs/react-layr-realworld-example-app.git
 git remote add origin https://github.com/bgoonz/Medium-Clone-FullStack-React.git
 npm install -g codedown
-   for file in *; do mv "$file" `echo $file | tr '_' '.'` ; done              if [[ -d "${f}" ]]; then             cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
-find . -type f -exec sed -i '/Mirrored from/d' ./*.html {} \; 
-#!/bin/bash
-( IFS=$'\n'; for y in $(ls $1); do mv $1/`echo $y | sed 's/ /\\ /g'` $1/`echo "$y" | sed 's/ /_/g'`; done; )
-( IFS=$'\n'; for y in $(ls $1); do mv $1/`echo $y | sed 's/ /\\ /g'` $1/`echo "$y" | sed 's/ /_/g'`; done; );               if [[ -d "${f}" ]]; then             cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
-node code.js
-cat w07_data-structures-and-algorithms.md* | codedown javascript > code.js
-cat w08_getting-to-know-the-network.html* | codedown javascript > code8.js
-cat w08_getting-to-know-the-network.md* | codedown javascript > code8.js
-git commit -m "fix catostrophic failure"
-#! /bin/bash
-sanitize() {   shopt -s extglob;     filename=$(basename "$1");   directory=$(dirname "$1")    filename_clean="${filename//+([^[:alnum:]_-\.])/_}"    if (test "$filename" != "$filename_clean");   then     mv -v --backup=numbered "$1" "$directory/$filename_clean";   fi; }
-export -f sanitize
-find $1 -depth -exec bash -c 'sanitize "$0"' {} \;
-for file in *; do mv "$file" "$(echo "$file" | tr '.' '_')" ; done              if [[ -d "${f}" ]]; then             cd "${f}";             RecurseDirs $(ls -1 ".");             cd ..;         fi;     done;     IFS=$oldIFS; }
-git commit -m "fixed file struture"
-rm -rf C:\MY-WEB-DEV\08-my-website\resources\MY_SITE_CONTENT\core-content\blog-posts\ciriculumn\Extra\_Learn\learn-amazon-web-services-master\out.js
-detox -r -v .
-find . -exec rename 's/[^\x00-\x7F]//g' "{}" \;
-find . -print -exec rename 's/[^\x00-\x7F]//g' "{}" \;
-function sanitize_file_name {     echo -n $1 | perl -pe 's/[\?\[\]\/\\=<>:;,''"&\$#*()|~`!{}%+]//g;' -pe 's/[\r\n\t -]+/-/g;'; }
-filename="Wh00t? it's a -- re@lly-weird {file&name} (with + Plus and__1% #of# [\$qRots\$!]).mov"
+for file in *; do mv "$file" `echo $file | tr '_' '.'` ; done if [[ -d "${f}" ]]; then cd "${f}"; RecurseDirs $(ls -1 "."); cd ..; fi; done; IFS=$oldIFS; } find . -type f -exec sed -i '/Mirrored from/d' ./*.html {} \; #!/bin/bash ( IFS=$'\n'; for y in $(ls $1); do mv $1/`echo $y | sed 's/ /\\ /g'` $1/`echo "$y" | sed 's/ /_/g'`; done; ) ( IFS=$'\n'; for y in $(ls $1); do mv $1/`echo $y | sed 's/ /\\ /g'` $1/`echo "$y" | sed 's/ /_/g'`; done; ); if [[ -d "${f}" ]]; then cd "${f}"; RecurseDirs $(ls -1 "."); cd ..; fi; done; IFS=$oldIFS; } node code.js cat w07_data-structures-and-algorithms.md* | codedown javascript > code.js cat w08_getting-to-know-the-network.html* | codedown javascript > code8.js cat w08_getting-to-know-the-network.md* | codedown javascript > code8.js git commit -m "fix catostrophic failure" #! /bin/bash sanitize() { shopt -s extglob; filename=$(basename "$1"); directory=$(dirname "$1") filename_clean="${filename//+([^[:alnum:]_-\.])/_}" if (test "$filename" != "$filename_clean"); then mv -v --backup=numbered "$1" "$directory/$filename_clean"; fi; } export -f sanitize find $1 -depth -exec bash -c 'sanitize "$0"' {} \; for file in *; do mv "$file" "$(echo "$file" | tr '.' '_')" ; done if [[ -d "${f}" ]]; then cd "${f}"; RecurseDirs $(ls -1 "."); cd ..; fi; done; IFS=$oldIFS; } git commit -m "fixed file struture" rm -rf C:\MY-WEB-DEV\08-my-website\resources\MY_SITE_CONTENT\core-content\blog-posts\ciriculumn\Extra\_Learn\learn-amazon-web-services-master\out.js detox -r -v . find . -exec rename 's/[^\x00-\x7F]//g' "{}" \; find . -print -exec rename 's/[^\x00-\x7F]//g' "{}" \; function sanitize_file_name { echo -n $1 | perl -pe 's/[\?\[\]\/\\=<>:;,''"&\$#*()|~`!{}%+]//g;' -pe 's/[\r\n\t -]+/-/g;'; }
+filename="Wh00t? it's a -- re@lly-weird {file&name} (with + Plus and\_\_1% #of# [\$qRots\$!]).mov"
 cleaned=$(sanitize_file_name "$filename")
 echo original : "$filename"
 echo sanitised: "$cleaned"
 sudo apt install detox
-git add   .github/
+git add .github/
 git add --verbose
 git add . -N
 git remote add origin https://github.com/bgoonz/WEB_DEV_RESOURCES.git
 git commit -m "initial commit -kinda"
-find ./ -iname "*.html" -type f -exec sh -c 'sed "/<a/,/<\/a>/d" scrap.html' {} \;
+find ./ -iname "_.html" -type f -exec sh -c 'sed "/<a/,/<\/a>/d" scrap.html' {} \;
 wget -r https://www.aquest.it/en/website/barovier-toso/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://www.aquest.it/en/website/barovier-toso/
 find ./ -iname "scrap.html" -type f -exec sh -c 'sed "/<a/,/<\/a>/d"' {} \;>out.html
-pandoc *.md> -o ./OUTPUT.md
-cat *.md > merged.md
+pandoc _.md> -o ./OUTPUT.md
+cat _.md > merged.md
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://www.zillow.com/
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://demo.dueza.com/property-html/property/red-color/product-details.html#testimonial
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://demo.dueza.com/property-html/property/green-color/index.html
 curl -o- http://preview.themeforest.net/item/one-wordpress-responsive-personal-resume/full_screen_preview/8896700?_ga=2.166856638.1841418179.1615429144-664482817.1615426563
-wget      --recursive      --no-clobber      --page-requisites      --html-extension      --convert-links      --restrict-file-names=windows      --domains website.org      --no-parent http://preview.themeforest.net/item/one-wordpress-responsive-personal-resume/full_screen_preview/8896700?_ga=2.166856638.1841418179.1615429144-664482817.1615426563
-cat interview Questions.md* | codedown javascript > code.js
+wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains website.org --no-parent http://preview.themeforest.net/item/one-wordpress-responsive-personal-resume/full_screen_preview/8896700?_ga=2.166856638.1841418179.1615429144-664482817.1615426563
+cat interview Questions.md_ | codedown javascript > code.js
 cat interview Questions.md* | codedown js > code.js
 cat Interview Questions.md* | codedown js > code.js
 cat Interview\ Questions.md* | codedown js > code.js
 tree -L 5 >out.md
-sed 's/\(^[aA-zZ]*\).*\(\.[aA-zZ]*$\)/\1\2/g'
-sudo sed -i '/Canonical/d' *.html
-sudo sed -i '/Exported from/d' *.html
-find . -maxdepth 1 -regextype "posix-egrep" -regex '.*/[0-9]+.*\.html' -type f
+sed 's/\(^[aA-zZ]*\)._\(\.[aA-zZ]_$\)/\1\2/g'
+sudo sed -i '/Canonical/d' _.html
+sudo sed -i '/Exported from/d' _.html
+find . -maxdepth 1 -regextype "posix-egrep" -regex '._/[0-9]+._\.html' -type f
+
 # get all files that start with a number
-for file in [0-9]* ; do
-    if [[ $file =~ ^[0-9]+[[:blank:]]+(.+) ]] ; then
-        echo "< $file"
-        newname="${BASH_REMATCH[1]}";         echo "> $newname"
-    fi; done
-find $dir -type f | sed 's|\(.*/\)[^A-Z]*\([A-Z].*\)|mv \"&\" \"\1\2\"|' | sh
+
+for file in [0-9]_ ; do
+if [[$file =~ ^[0-9]+[[:blank:]]+(.+) ]] ; then
+echo "< $file"
+        newname="${BASH_REMATCH[1]}"; echo "> $newname"
+fi; done
+find $dir -type f | sed 's|\(._/\)[^a-z]_\([A-Z]._\)|mv \"&\" \"\1\2\"|' | sh
 sudo find $dir -type f | sed 's|\(.*/\)[^A-Z]*\([A-Z].*\)|mv \"&\" \"\1\2\"|' | sh
-sed 's/\(^[aA-zZ]*\).*\(\.[aA-zZ]*$\)/\1\2/g'sed 's/\(^[aA-zZ]*\).*\(\.[aA-zZ]*$\)/\1\2/g'
+sed 's/\(^[aA-zZ]*\).*\(\.[aA-zZ]*$\)/\1\2/g'sed 's/\(^[aA-zZ]_\)._\(\.[aA-zZ]_$\)/\1\2/g'
 sudo apt install pipenv
 flask db upgrade
 flask seed all
 flask run
 wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off
-wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off  https://www.w3docs.com/quiz
+wget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off https://www.w3docs.com/quiz
 Summer2015
 declare -A array
-for i in *.*; do     j="${i%-*}.${i##*.}"     for x in "${!array[@]}"; do         if [[ "$j" == "$x" ]]; then             k="${i%-*}-${array[$j]}.${i##*.}";         fi;     done     (( array["$j"]++ ))     mv "$i" "$k"; donedeclare -A array for i in *.*; do     j="${i%-*}.${i##*.}"     for x in "${!array[@]}"; do         if [[ "$j" == "$x" ]]; then             k="${i%-*}-${array[$j]}.${i##*.}";         fi;     done     (( array["$j"]++ ))     mv "$i" "$k"; done
-for i in *.*; do     j="${i%-*}.${i##*.}"     for x in "${!array[@]}"; do         if [[ "$j" == "$x" ]]; then             k="${i%-*}-${array[$j]}.${i##*.}";         fi;     done     (( array["$j"]++ ))     mv "$i" "$k"; done
-rename 's/-\d+//' *.jpg
+for i in _._; do j="${i%-_}.${i##*.}"     for x in "${!array[@]}"; do if [["$j" == "$x"]]; then k="${i%-*}-${array[$j]}.${i##*.}";         fi;     done     (( array["$j"]++ )) mv "$i" "$k"; donedeclare -A array for i in _._; do j="${i%-*}.${i##_.}" for x in "${!array[@]}"; do         if [[ "$j" == "$x" ]]; then             k="${i%-_}-${array[$j]}.${i##*.}";         fi;     done     (( array["$j"]++ )) mv "$i" "$k"; done
+for i in _._; do j="${i%-*}.${i##_.}" for x in "${!array[@]}"; do         if [[ "$j" == "$x" ]]; then             k="${i%-_}-${array[$j]}.${i##*.}";         fi;     done     (( array["$j"]++ )) mv "$i" "$k"; done
+rename 's/-\d+//' _.jpg
 html
-rename 's/-\d+//' *.html
-for i in *.html;  do if [[  -e "${i%-*}.html" ]]; then     num=1;     while [[ -e "${i%-*}-$num.html" ]]; do         (( num++ ));     done;  mv "$i" "${i%-*}-$num.html"; else  rename 's/-\d+//' *.html; fi;  done
-for file in * ; do mv $file  $(echo $file |sed 's/^.\{1\}//g'); done
-for file in * ; do mv $file  $(echo $file |sed 's/^.\{2\}//g'); done
+rename 's/-\d+//' _.html
+for i in _.html; do if [[ -e "${i%-_}.html" ]]; then num=1; while [[-e "${i%-*}-$num.html"]]; do (( num++ )); done; mv "$i" "${i%-_}-$num.html"; else rename 's/-\d+//' _.html; fi; done
+for file in _ ; do mv $file $(echo $file |sed 's/^.\{1\}//g'); done
+for file in _ ; do mv $file  $(echo $file |sed 's/^.\{2\}//g'); done
 for file in * ; do mv $file  $(echo $file |sed 's/^.\{3\}//g'); done
 for f in */; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; done
 for f in .; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; done
 for f in './'; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; done
 for f in *.; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; done
-sanitize() {   shopt -s extglob;   filename=$(basename "$1");   directory=$(dirname "$1")   filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')   if (test "$filename" != "$filename_clean");   then     mv -v "$1" "$directory/$filename_clean";   fi; }
-sanitize_dir() {   find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;; }
+sanitize() {   shopt -s extglob;   filename=$(basename "$1");   directory=$(dirname "$1")   filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\._$//' -e 's/^$/NONAME/') if (test "$filename" != "$filename_clean"); then mv -v "$1" "$directory/$filename_clean"; fi; }
+sanitize_dir() { find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;; }
 sanitize_dir './'
 cd Temp
 git clone https://github.com/bgoonz/Medium_Articles.git
-sudo 
+sudo
 sudo ll
-sudo sed -i '/Document generated by /d' ./*.html
-sudo sed -i '/<div id="footer-logo"\><a href="http://www\.atlassian\.com/"\>Atlassian</a\></div\> /d' ./*.html
-sudo sed -i '/    '<div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>' /d' ./*.html
-sudo sed -i '/ <div id="footer-logo"><a href="http:\/\/www\.atlassian\.com\/">Atlassian<\/a><\/div>/d' ./*.html
+sudo sed -i '/Document generated by /d' ./_.html
+sudo sed -i '/<div id="footer-logo"\><a href="http://www\.atlassian\.com/"\>Atlassian</a\></div\> /d' ./_.html
+sudo sed -i '/ '<div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>' /d' ./_.html
+sudo sed -i '/ <div id="footer-logo"><a href="http:\/\/www\.atlassian\.com\/">Atlassian<\/a><\/div>/d' ./_.html
 sudo sed -i '/\.html/!d' index.html
 git remote add origin https://github.com/bgoonz/atlassian-templates.git
-sudo sed -i '/ Document generated by Confluence on/d' ./*.html
-sudo sed -i '/ <a href="http:\/\/www\.atlassian\.com\/">Atlassian<\/a>/d' ./*.html
-find . -type f -exec sed -i '/:::/d' ./*.md {} \; 
+sudo sed -i '/ Document generated by Confluence on/d' ./_.html
+sudo sed -i '/ <a href="http:\/\/www\.atlassian\.com\/">Atlassian<\/a>/d' ./_.html
+find . -type f -exec sed -i '/:::/d' ./_.md {} \;
 git commit -m "fixed background"
 wget -r https://github.com/hijiangtao/LeetCode-with-JavaScript
 git remote add origin https://gitlab.com/bryan.guner.dev/DS-ALGO-OFFICIAL.git
@@ -1008,12 +1019,12 @@ git clone https://github.com/bmanley91/cheatsheet.git
 git clone https://github.com/cooervo/Algorithms-DataStructures-BigONotation.git
 httrack https://thimbleby.gitlab.io/algorithm-wiki-site/
 git clone https://github.com/bgoonz/web-dev-notes-resource-site.git -f
-npm install 
+npm install
 cd back-end
 solving deltas: 100% (97275/97275), done.
 BUG: refs/files-backend.c:2956: initial ref transaction called with existing refs
 Aborted
-|18:08:06|bryan@LAPTOP-9LGJ3JGS:[Original] Original_exitstatus:134__________________________________________________________o>
+|18:08:06|bryan@LAPTOP-9LGJ3JGS:[Original] Original_exitstatus:134****************************\_\_****************************o>
 git commit -m "newer articles"
 lebab --replace BinarySearchTree.js --transform let
 lebab --replace BinarySearchTree.js --transform class
@@ -1025,25 +1036,25 @@ git submodule update --remote --merge
 find . -empty -type d -print -deletefind . -empty -type f -print -delete
 git pull -s recursive -X theirs https://github.com/bgoonz/web-dev-notes-resource-site.git
 git pull -s recursive -X theirs https://github.com/bgoonz/web-dev-notes-resource-site.git -f
-git pull origin master --allow-unrelated-histories 
+git pull origin master --allow-unrelated-histories
 git remote rm https://github.com/bgoonz/web-dev-resource-hub.git
 npm i beautify -gnpm i beautify -gnpm i beautify -g
 npm i beautify -g
 git clone https://gitlab.com/bryan.guner.dev/web-dev-notes-resource-site.git
-find . -type f -exec sed -i '/Andreas Mehlsen/d' ./*.html {} \; 
-find . -type f -exec sed -i '/andreas/d' ./*.html {} \;
+find . -type f -exec sed -i '/Andreas Mehlsen/d' ./_.html {} \;
+find . -type f -exec sed -i '/andreas/d' ./_.html {} \;
 npm run deploy
 firebase login
 npm install --save site-mapper
 sudo sed -i '/appacademy/d' ./bookmarks.html
-find ./ | grep -i "\.js*$" >files
+find ./ | grep -i "\.js\*$" >files
 cmd() {   echo '  <!DOCTYPE html>';   echo '<html>';   echo '<head>'   echo '  <meta http-equiv="Content-Type" content="text/html">'   echo '  <meta name="Author" content="Bryan Guner">'   echo ' <link rel="stylesheet" href="./toc.css">';   echo ' <script async defer src="./toc.js"></script>'   echo "  <TITLE> directory </TITLE> </head>"   echo ""   echo '</head>'   echo '<body>'   echo ""   echo ""   echo ""   echo "<ul>"   awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;"}' $listing   echo ""   echo "</ul>"   echo "</body>"   echo "</html>" }
 cmd $listing >>$html
 sudo sed -i '/images/d' ./index.html
 sudo sed -i '/font/d' ./index.html
 sudo sed -i '/fonts/d' ./index.html
 ;;
-ls 
+ls
 cd 0-a-A-October/
 cd 00-weeks
 cd 00-weeks-container/
@@ -1077,15 +1088,17 @@ sudo systemctl start docker
 docker run -t -i ubuntu:20.04 /bin/bash
 /etc/init.d/dbus start
 sudo /etc/init.d/dbus start
-docker run -ti -d --privileged=true images_docker  "/sbin/init"
+docker run -ti -d --privileged=true images_docker "/sbin/init"
 docker run -ti -d --privileged=true images_docker
+
 # service --status-all
-root       192     1  0 Feb20 ?        00:00:10 /usr/lib/systemd/systemd-journald
-root       205     1  0 Feb20 ?        00:00:00 /usr/lib/systemd/systemd-udevd
-dbus       327     1  0 Feb20 ?        00:00:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
-root       329     1  0 Feb20 ?        00:00:00 /usr/lib/systemd/systemd-logind
-auser    13108     1  0 09:28 ?        00:00:00 /usr/lib/systemd/systemd --user
-auser    16359 14228  0 13:27 pts/0    00:00:00 grep systemd
+
+root 192 1 0 Feb20 ? 00:00:10 /usr/lib/systemd/systemd-journald
+root 205 1 0 Feb20 ? 00:00:00 /usr/lib/systemd/systemd-udevd
+dbus 327 1 0 Feb20 ? 00:00:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root 329 1 0 Feb20 ? 00:00:00 /usr/lib/systemd/systemd-logind
+auser 13108 1 0 09:28 ? 00:00:00 /usr/lib/systemd/systemd --user
+auser 16359 14228 0 13:27 pts/0 00:00:00 grep systemd
 apt remove --purge containerd.io docker-ce docker-ce-cli
 wget https://download.docker.com/linux/debian/dists/stretch/pool/stable/amd64/docker-ce_18.06.1~ce~3-0~debian_amd64.deb
 dpkg -i docker-ce_18.06.1~ce~3-0~debian_amd64.deb
@@ -1122,7 +1135,7 @@ sudo snap install doctl
 udo snap connect doctl:kube-config
 sudo snap connect doctl:kube-config
 mkdir misccccccccccccccccccccccccccccccccccccccccc
-cd  misccccccccccccccccccccccccccccccccccccccccc
+cd misccccccccccccccccccccccccccccccccccccccccc
 git clone https://github.com/realm/RChat.git
 cd RChat/RChat-Realm/RChat
 realm-cli login --api-key <your new public key> --private-api-key <your new private key>
@@ -1135,7 +1148,7 @@ sudo apt install hugo
 httrack https://p5js.org/reference/
 curl https://raw.githubusercontent.com/ajenti/ajenti/master/scripts/install.sh | sudo bash -s -
 sudo apt install jshint
-cd "c:\MY-WEB-DEV\08-my-website\_Outer-STABLE\Stable\public\2-content"
+cd "c:\MY-WEB-DEV\08-my-website_Outer-STABLE\Stable\public\2-content"
 git commit -m "please please please"
 rm -rf right.html
 git commit -m "added algo practice"
@@ -1147,6 +1160,6 @@ c
 tree -d >out.md
 git commit -m "updated readme"
 cd ll
-cd bryan 
+cd bryan
 ln -s ../../ment/c
 git remote add origin https://github.com/bgoonz/Live-htmlRendered-Mocha-Spec--Recursion-Practice.git

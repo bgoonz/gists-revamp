@@ -1,12 +1,10 @@
-Set up your development environment
------------------------------------
+## Set up your development environment
 
 For beginners who are new to Python, we recommend you [install Python from the Microsoft Store](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. This is especially helpful if you are in an educational environment or a part of an organization that restricts permissions or administrative access on your machine.
 
 If you are using Python on Windows for web development, we recommend a different set up for your development environment. Rather than installing directly on Windows, we recommend installing and using Python via the Windows Subsystem for Linux. For help, see: [Get started using Python for web development on Windows](https://docs.microsoft.com/en-us/windows/python/web-frameworks). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](https://docs.microsoft.com/en-us/windows/python/scripting). For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
-[](https://docs.microsoft.com/en-us/windows/python/beginners#install-python)Install Python
-------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/beginners#install-python)Install Python
 
 To install Python using the Microsoft Store:
 
@@ -18,8 +16,7 @@ To install Python using the Microsoft Store:
 
 4.  The Microsoft Store installation of Python includes pip, the standard package manager. Pip allows you to install and manage additional packages that are not part of the Python standard library. To confirm that you also have pip available to install and manage packages, enter `pip --version`.
 
-[](https://docs.microsoft.com/en-us/windows/python/beginners#install-visual-studio-code)Install Visual Studio Code
-------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/beginners#install-visual-studio-code)Install Visual Studio Code
 
 By using VS Code as your text editor / integrated development environment (IDE), you can take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) (a code completion aid), [Linting](https://code.visualstudio.com/docs/python/linting) (helps avoid making errors in your code), [Debug support](https://code.visualstudio.com/docs/python/debugging) (helps you find errors in your code after you run it), [Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) (templates for small reusable code blocks), and [Unit testing](https://code.visualstudio.com/docs/python/unit-testing) (testing your code's interface with different types of input).
 
@@ -41,8 +38,7 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/
 
     ![Python command line in VS Code](https://docs.microsoft.com/en-us/windows/images/python-in-vscode.png)
 
-[](https://docs.microsoft.com/en-us/windows/python/beginners#install-git-optional)Install Git (optional)
---------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/beginners#install-git-optional)Install Git (optional)
 
 If you plan to collaborate with others on your Python code, or host your project on an open-source site (like GitHub), VS Code supports [version control with Git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). The Source Control tab in VS Code tracks all of your changes and has common Git commands (add, commit, push, pull) built right into the UI. You first need to install Git to power the Source Control panel.
 
@@ -52,8 +48,7 @@ If you plan to collaborate with others on your Python code, or host your project
 
 3.  If you've never worked with Git before, [GitHub Guides](https://guides.github.com/) can help you get started.
 
-[](https://docs.microsoft.com/en-us/windows/python/beginners#hello-world-tutorial-for-some-python-basics)Hello World tutorial for some Python basics
-----------------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/beginners#hello-world-tutorial-for-some-python-basics)Hello World tutorial for some Python basics
 
 Python, according to its creator Guido van Rossum, is a "high-level programming language, and its core design philosophy is all about code readability and a syntax which allows programmers to express concepts in a few lines of code."
 
@@ -81,8 +76,7 @@ Python is an interpreted language. In contrast to compiled languages, in which t
 
 Hope you had fun using some of Python's built-in string modification methods. Now try creating a Python program file and running it with VS Code.
 
-[](https://docs.microsoft.com/en-us/windows/python/beginners#hello-world-tutorial-for-using-python-with-vs-code)Hello World tutorial for using Python with VS Code
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/beginners#hello-world-tutorial-for-using-python-with-vs-code)Hello World tutorial for using Python with VS Code
 
 The VS Code team has put together a great [Getting Started with Python](https://code.visualstudio.com/docs/python/python-tutorial#_start-vs-code-in-a-project-workspace-folder) tutorial walking through how to create a Hello World program with Python, run the program file, configure and run the debugger, and install packages like *matplotlib* and *numpy* to create a graphical plot inside a virtual environment.
 
@@ -101,8 +95,7 @@ The VS Code team has put together a great [Getting Started with Python](https:/
 
 3.  Continue the tutorial in the VS Code docs: [Create a Python Hello World source code file](https://code.visualstudio.com/docs/python/python-tutorial#_create-a-python-hello-world-source-code-file).
 
-[](https://docs.microsoft.com/en-us/windows/python/beginners#create-a-simple-game-with-pygame)Create a simple game with Pygame
-------------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/beginners#create-a-simple-game-with-pygame)Create a simple game with Pygame
 
 ![Pygame running a sample game](https://docs.microsoft.com/en-us/windows/images/pygame-shmup.jpg)
 
@@ -179,42 +172,29 @@ Try adjusting some of the numbers to see what effect they have on your bouncing 
 
 Read more about writing games with pygame at [pygame.org](http://www.pygame.org/).
 
-[](https://docs.microsoft.com/en-us/windows/python/beginners#resources-for-continued-learning)Resources for continued learning
-------------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/beginners#resources-for-continued-learning)Resources for continued learning
 
 We recommend the following resources to support you in continuing to learn about Python development on Windows.
 
 ### [](https://docs.microsoft.com/en-us/windows/python/beginners#online-courses-for-learning-python)Online courses for learning Python
 
--   [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
+- [Introduction to Python on Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Try the interactive Microsoft Learn platform and earn experience points for completing this module covering the basics on how to write basic Python code, declare variables, and work with console input and output. The interactive sandbox environment makes this a great place to start for folks who don't have their Python development environment set up yet.
 
--   [Python on Pluralsight: 8 Courses, 29 Hours](https://app.pluralsight.com/paths/skills/python): The Python learning path on Pluralsight offers online courses covering a variety of topics related to Python, including a tool to measure your skill and find your gaps.
+- [Python on Pluralsight: 8 Courses, 29 Hours](https://app.pluralsight.com/paths/skills/python): The Python learning path on Pluralsight offers online courses covering a variety of topics related to Python, including a tool to measure your skill and find your gaps.
 
--   [LearnPython.org Tutorials](https://www.learnpython.org/): Get started on learning Python without needing to install or set anything up with these free interactive Python tutorials from the folks at DataCamp.
+- [LearnPython.org Tutorials](https://www.learnpython.org/): Get started on learning Python without needing to install or set anything up with these free interactive Python tutorials from the folks at DataCamp.
 
--   [The Python.org Tutorials](https://docs.python.org/3/tutorial/index.html): Introduces the reader informally to the basic concepts and features of the Python language and system.
+- [The Python.org Tutorials](https://docs.python.org/3/tutorial/index.html): Introduces the reader informally to the basic concepts and features of the Python language and system.
 
--   [Learning Python on Lynda.com](https://www.lynda.com/Python-tutorials/Learning-Python/661773-2.html): A basic introduction to Python.
+- [Learning Python on Lynda.com](https://www.lynda.com/Python-tutorials/Learning-Python/661773-2.html): A basic introduction to Python.
 
-
-
-
-
-
-
-
-
-
-
-Set up your development environment
------------------------------------
+## Set up your development environment
 
 We recommend installing Python on WSL when building web applications. Many of the tutorials and instructions for Python web development are written for Linux users and use Linux-based packaging and installation tools. Most web apps are also deployed on Linux, so this will ensure you have consistency between your development and production environments.
 
 If you are using Python for something other than web development, we recommend you install Python directly on Windows 10 using the Microsoft Store. WSL does not support GUI desktops or applications (like PyGame, Gnome, KDE, etc). Install and use Python directly on Windows for these cases. If you're new to Python, see our guide: [Get started using Python on Windows for beginners](https://docs.microsoft.com/en-us/windows/python/beginners). If you're interested in automating common tasks on your operating system, see our guide: [Get started using Python on Windows for scripting and automation](https://docs.microsoft.com/en-us/windows/python/scripting). For some advanced scenarios, you may want to consider downloading a specific Python release directly from [python.org](https://www.python.org/downloads/windows/) or consider installing an [alternative](https://www.python.org/download/alternatives), such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#install-windows-subsystem-for-linux)Install Windows Subsystem for Linux
------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#install-windows-subsystem-for-linux)Install Windows Subsystem for Linux
 
 WSL lets you run a GNU/Linux command line environment integrated directly with Windows and your favorite tools, like Visual Studio Code, Outlook, etc.
 
@@ -224,12 +204,11 @@ Once you have installed WSL and a Linux distribution, open the Linux distributio
 
 We recommend updating your Linux distribution regularly, including immediately after you install, to ensure you have the most recent packages. Windows doesn't automatically handle this update. To update your distribution, use the command: `sudo apt update && sudo apt upgrade`.
 
- Tip
+Tip
 
 Consider [installing the new Windows Terminal from the Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701) to enable multiple tabs (quickly switch between multiple Linux command lines, Windows Command Prompt, PowerShell, Azure CLI, etc), create custom key bindings (shortcut keys for opening or closing tabs, copy+paste, etc.), use the search feature, and set up custom themes (color schemes, font styles and sizes, background image/blur/transparency). [Learn more](https://docs.microsoft.com/en-us/windows/terminal).
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#set-up-visual-studio-code)Set up Visual Studio Code
----------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#set-up-visual-studio-code)Set up Visual Studio Code
 
 Take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense), [Linting](https://code.visualstudio.com/docs/python/linting), [Debug support](https://code.visualstudio.com/docs/python/debugging), [Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets), and [Unit testing](https://code.visualstudio.com/docs/python/unit-testing) by using VS Code. VS Code integrates nicely with the Windows Subsystem for Linux, providing a [built-in terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) to establish a seamless workflow between your code editor and your command line, in addition to supporting [Git for version control](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support) with common Git commands (add, commit, push, pull) built right into the UI.
 
@@ -237,12 +216,11 @@ Take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/inte
 
 2.  Install the [Remote - WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) on VS Code. This allows you to use WSL as your integrated development environment and will handle compatibility and pathing for you. [Learn more](https://code.visualstudio.com/docs/remote/remote-overview).
 
- Important
+Important
 
 If you already have VS Code installed, you need to ensure that you have the [1.35 May release](https://code.visualstudio.com/updates/v1_35) or later in order to install the [Remote - WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). We do not recommend using WSL in VS Code without the Remote-WSL extension as you will lose support for auto-complete, debugging, linting, etc. Fun fact: This WSL extension is installed in $HOME/.vscode-server/extensions.
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#create-a-new-project)Create a new project
------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#create-a-new-project)Create a new project
 
 Let's create a new project directory on our Linux (Ubuntu) file system that we will then work on with Linux apps and tools using VS Code.
 
@@ -252,12 +230,11 @@ Let's create a new project directory on our Linux (Ubuntu) file system that we w
 
 ![Ubuntu terminal](https://docs.microsoft.com/en-us/windows/images/ubuntu-terminal.png)
 
- Tip
+Tip
 
 An important thing to remember when using Windows Subsystem for Linux (WSL) is that you are now working between two different file systems: 1) your Windows file system, and 2) your Linux file system (WSL), which is Ubuntu for our example. You will need to pay attention to where you install packages and store files. You can install one version of a tool or package in the Windows file system and a completely different version in the Linux file system. Updating the tool in the Windows file system will have no effect on the tool in the Linux file system, and vice-versa. WSL mounts the fixed drives on your computer under the `/mnt/<drive>` folder in your Linux distribution. For example, your Windows C: drive is mounted under `/mnt/c/`. You can access your Windows files from the Ubuntu terminal and use Linux apps and tools on those files and vice-versa. We recommend working in the Linux file system for Python web development given that much of the web tooling is originally written for Linux and deployed in a Linux production environment. It also avoids mixing file system semantics (like Windows being case-insensitive regarding file names). That said, WSL now supports jumping between the Linux and Windows files systems, so you can host your files on either one. [Learn more](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/).
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#install-python-pip-and-venv)Install Python, pip, and venv
----------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#install-python-pip-and-venv)Install Python, pip, and venv
 
 Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come with some of the modules that you may expect to get with other Python installations. We will still need to install pip, the standard package manager for Python, and venv, the standard module used to create and manage lightweight virtual environments.
 
@@ -267,8 +244,7 @@ Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come w
 
 3.  Install venv by entering: `sudo apt install python3-venv`.
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#create-a-virtual-environment)Create a virtual environment
----------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#create-a-virtual-environment)Create a virtual environment
 
 Using virtual environments is a recommended best practice for Python development projects. By creating a virtual environment, you can isolate your project tools and avoid versioning conflicts with tools for your other projects. For example, you may be maintaining an an older web project that requires the Django 1.2 web framework, but then an exciting new project comes along using Django 2.2. If you update Django globally, outside of a virtual environment, you could run into some versioning issues later on. In addition to preventing accidental versioning conflicts, virtual environments let you install and manage packages without administrative privileges.
 
@@ -278,12 +254,11 @@ Using virtual environments is a recommended best practice for Python development
 
     ![Create a virtual environment](https://docs.microsoft.com/en-us/windows/images/wsl-venv.png)
 
- Tip
+Tip
 
 We recommend creating the virtual environment inside the directory in which you plan to have your project. Since each project should have its own separate directory, each will have its own virtual environment, so there is not a need for unique naming. Our suggestion is to use the name .venv to follow the Python convention. Some tools (like pipenv) also default to this name if you install into your project directory. You don't want to use .env as that conflicts with environment variable definition files. We generally do not recommend non-dot-leading names, as you don't need `ls` constantly reminding you that the directory exists. We also recommend adding .venv to your .gitignore file. (Here is [GitHub's default gitignore template for Python](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106) for reference.) For more information about working with virtual environments in VS Code, see [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#open-a-wsl---remote-window)Open a WSL - Remote window
------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#open-a-wsl---remote-window)Open a WSL - Remote window
 
 VS Code uses the Remote - WSL Extension (installed previously) to treat your Linux subsystem as a remote server. This allows you to use WSL as your integrated development environment. [Learn more](https://code.visualstudio.com/docs/remote/wsl).
 
@@ -299,8 +274,7 @@ VS Code uses the Remote - WSL Extension (installed previously) to treat your Lin
 
     ![VS Code with WSL terminal](https://docs.microsoft.com/en-us/windows/images/vscode-bash-remote.png)
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#install-the-microsoft-python-extension)Install the Microsoft Python extension
------------------------------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#install-the-microsoft-python-extension)Install the Microsoft Python extension
 
 You will need to install any VS Code extensions for your Remote - WSL. Extensions already installed locally on VS Code will not automatically be available. [Learn more](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions).
 
@@ -312,8 +286,7 @@ You will need to install any VS Code extensions for your Remote - WSL. Extension
 
 4.  Once the extension is finished installing, you will need to select the blue Reload Required button. This will reload VS Code and display a WSL: UBUNTU-18.04 - Installed section in your VS Code Extensions window showing that you've installed the Python extension.
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#run-a-simple-python-program)Run a simple Python program
--------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#run-a-simple-python-program)Run a simple Python program
 
 Python is an interpreted language and supports different types of interpretors (Python2, Anaconda, PyPy, etc). VS Code should default to the interpreter associated with your project. If you have a reason to change it, select the interpreter currently displayed in blue bar on the bottom of your VS Code window or open the Command Palette (Ctrl+Shift+P) and enter the command Python: Select Interpreter. This will display a list of the Python interpreters that you currently have installed. [Learn more about configuring Python environments](https://code.visualstudio.com/docs/python/environments).
 
@@ -342,8 +315,7 @@ Let's create and run a simple Python program as a test and ensure that we have t
 
 Congratulations. You're all set up to create and run Python programs! Now let's try creating a Hello World app with two of the most popular Python web frameworks: Flask and Django.
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#hello-world-tutorial-for-flask)Hello World tutorial for Flask
--------------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#hello-world-tutorial-for-flask)Hello World tutorial for Flask
 
 [Flask](http://flask.pocoo.org/) is a web application framework for Python. In this brief tutorial, you'll create a small "Hello World" Flask app using VS Code and WSL.
 
@@ -388,7 +360,7 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 
     ```
 
-     Tip
+    Tip
 
     You can use multiple decorators on the same function, one per line, depending on how many different routes you want to map to the same function.
 
@@ -432,14 +404,13 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 
 16. Stop the app by using Ctrl+C in the terminal.
 
- Tip
+Tip
 
 If you want to use a different filename than app.py, such as program.py, define an environment variable named FLASK_APP and set its value to your chosen file. Flask's development server then uses the value of FLASK_APP instead of the default file app.py. For more information, see [Flask's Command Line Interface documentation](http://flask.pocoo.org/docs/1.0/cli/).
 
 Congratulations, you've created a Flask web application using Visual Studio Code and Windows Subsystem for Linux! For a more in-depth tutorial using VS Code and Flask, see [Flask Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-flask).
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#hello-world-tutorial-for-django)Hello World tutorial for Django
----------------------------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#hello-world-tutorial-for-django)Hello World tutorial for Django
 
 [Django](https://www.djangoproject.com/) is a web application framework for Python. In this brief tutorial, you'll create a small "Hello World" Django app using VS Code and WSL.
 
@@ -468,14 +439,15 @@ Congratulations, you've created a Flask web application using Visual Studio Code
 
     The `startproject` command assumes (by use of `.` at the end) that the current folder is your project folder, and creates the following within it:
 
-    -   `manage.py`: The Django command-line administrative utility for the project. You run administrative commands for the project using `python manage.py <command> [options]`.
+    - `manage.py`: The Django command-line administrative utility for the project. You run administrative commands for the project using `python manage.py <command> [options]`.
 
-    -   A subfolder named `web_project`, which contains the following files:
+    - A subfolder named `web_project`, which contains the following files:
 
-        -   `__init__.py`: an empty file that tells Python that this folder is a Python package.
-        -   `wsgi.py`: an entry point for WSGI-compatible web servers to serve your project. You typically leave this file as-is as it provides the hooks for production web servers.
-        -   `settings.py`: contains settings for Django project, which you modify in the course of developing a web app.
-        -   `urls.py`: contains a table of contents for the Django project, which you also modify in the course of development.
+      - `__init__.py`: an empty file that tells Python that this folder is a Python package.
+      - `wsgi.py`: an entry point for WSGI-compatible web servers to serve your project. You typically leave this file as-is as it provides the hooks for production web servers.
+      - `settings.py`: contains settings for Django project, which you modify in the course of developing a web app.
+      - `urls.py`: contains a table of contents for the Django project, which you also modify in the course of development.
+
 9.  To verify the Django project, start Django's development server using the command `python3 manage.py runserver`. The server runs on the default port 8000, and you should see output like the following output in the terminal window:
 
     OutputCopy
@@ -557,10 +529,9 @@ Congratulations, you've created a Flask web application using Visual Studio Code
 
 Congratulations, you've created a Django web application using VS Code and Windows Subsystem for Linux! For a more in-depth tutorial using VS Code and Django, see [Django Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-django).
 
-[](https://docs.microsoft.com/en-us/windows/python/web-frameworks#additional-resources)Additional resources
------------------------------------------------------------------------------------------------------------
+## [](https://docs.microsoft.com/en-us/windows/python/web-frameworks#additional-resources)Additional resources
 
--   [Python Tutorial with VS Code](https://code.visualstudio.com/docs/python/python-tutorial): An intro tutorial to VS Code as a Python environment, primarily how to edit, run, and debug code.
--   [Git support in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support): Learn how to use Git version control basics in VS Code.
--   [Learn about updates coming soon with WSL 2!](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index): This new version changes how Linux distributions interact with Windows, increasing file system performance and adding full system call compatibility.
--   [Working with multiple Linux distributions on Windows](https://docs.microsoft.com/en-us/windows/wsl/wsl-config): Learn how to manage multiple different Linux distributions on your Windows machine.
+- [Python Tutorial with VS Code](https://code.visualstudio.com/docs/python/python-tutorial): An intro tutorial to VS Code as a Python environment, primarily how to edit, run, and debug code.
+- [Git support in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support): Learn how to use Git version control basics in VS Code.
+- [Learn about updates coming soon with WSL 2!](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index): This new version changes how Linux distributions interact with Windows, increasing file system performance and adding full system call compatibility.
+- [Working with multiple Linux distributions on Windows](https://docs.microsoft.com/en-us/windows/wsl/wsl-config): Learn how to manage multiple different Linux distributions on your Windows machine.

@@ -3,42 +3,42 @@
 ## Table of contents
 
 - [Standard features](#standard-features)
-  * [Headings](#headings)
-  * [Paragraphs](#paragraphs)
-  * [Breaks](#breaks)
-  * [Horizontal Rule](#horizontal-rule)
-  * [Emphasis](#emphasis)
-    + [Bold](#bold)
-    + [Italics](#italics)
-  * [Blockquotes](#blockquotes)
-  * [Lists](#lists)
-    + [Unordered](#unordered)
-    + [Ordered](#ordered)
-    + [Time-saving Tip](#time-saving-tip)
-  * [Code](#code)
-    + [Inline code](#inline-code)
-    + ["Fenced" code block](#fenced-code-block)
-    + [Indented code](#indented-code)
-    + [Syntax highlighting](#syntax-highlighting)
-  * [Links](#links)
-    + [Autolinks](#autolinks)
-    + [Inline links](#inline-links)
-    + [Link titles](#link-titles)
-    + [Named Anchors](#named-anchors)
-  * [Images](#images)
-  * [Raw HTML](#raw-html)
-  * [Escaping with backslashes](#escaping-with-backslashes)
+  - [Headings](#headings)
+  - [Paragraphs](#paragraphs)
+  - [Breaks](#breaks)
+  - [Horizontal Rule](#horizontal-rule)
+  - [Emphasis](#emphasis)
+    - [Bold](#bold)
+    - [Italics](#italics)
+  - [Blockquotes](#blockquotes)
+  - [Lists](#lists)
+    - [Unordered](#unordered)
+    - [Ordered](#ordered)
+    - [Time-saving Tip](#time-saving-tip)
+  - [Code](#code)
+    - [Inline code](#inline-code)
+    - ["Fenced" code block](#fenced-code-block)
+    - [Indented code](#indented-code)
+    - [Syntax highlighting](#syntax-highlighting)
+  - [Links](#links)
+    - [Autolinks](#autolinks)
+    - [Inline links](#inline-links)
+    - [Link titles](#link-titles)
+    - [Named Anchors](#named-anchors)
+  - [Images](#images)
+  - [Raw HTML](#raw-html)
+  - [Escaping with backslashes](#escaping-with-backslashes)
 - [Non-standard features](#non-standard-features)
-  * [Strikethrough](#strikethrough)
-  * [Todo List](#todo-list)
-  * [Tables](#tables)
-    + [Aligning cells](#aligning-cells)
-  * [Footnotes](#footnotes)
-    + [Inline footnotes](#inline-footnotes)
-  * [Additional Information](#additional-information)
-    + [What is markdown?](#what-is-markdown)
-    + [Other Resources](#other-resources)
-    + [Contributing](#contributing)
+  - [Strikethrough](#strikethrough)
+  - [Todo List](#todo-list)
+  - [Tables](#tables)
+    - [Aligning cells](#aligning-cells)
+  - [Footnotes](#footnotes)
+    - [Inline footnotes](#inline-footnotes)
+  - [Additional Information](#additional-information)
+    - [What is markdown?](#what-is-markdown)
+    - [Other Resources](#other-resources)
+    - [Contributing](#contributing)
 
 <br>
 <br>
@@ -60,7 +60,6 @@ Headings from `h1` through `h6` are constructed with a `#` for each level:
 ###### h6 Heading
 ```
 
-
 Renders to this HTML:
 
 ```html
@@ -75,12 +74,16 @@ Renders to this HTML:
 Which looks like this in the browser:
 
 # h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
 
+## h2 Heading
+
+### h3 Heading
+
+#### h4 Heading
+
+##### h5 Heading
+
+###### h6 Heading
 
 **A note about "Setext" Headings**
 
@@ -102,7 +105,12 @@ Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et l
 Renders to this HTML:
 
 ```html
-<p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
+<p>
+  Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et
+  legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis
+  inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei
+  qui, vide sensibus vim ad.
+</p>
 ```
 
 <br>
@@ -112,22 +120,21 @@ Renders to this HTML:
 
 You can use multiple consecutive newline characters (`\n`) to create extra spacing between sections in a markdown document. However, if you need to ensure that extra newlines are not collapsed, you can use as many HTML `<br>` elements as you want.
 
-
 ## Horizontal Rule
 
 The HTML `<hr>` element is for creating a "thematic break" between paragraph-level elements. In markdown, you can use of the following for this purpose:
 
-* `___`: three consecutive underscores
-* `---`: three consecutive dashes
-* `***`: three consecutive asterisks
+- `___`: three consecutive underscores
+- `---`: three consecutive dashes
+- `***`: three consecutive asterisks
 
 Renders to:
 
-___
+---
 
 ---
 
-***
+---
 
 <br>
 <br>
@@ -143,6 +150,7 @@ The following snippet of text is **rendered as bold text**.
 ```
 **rendered as bold text**
 ```
+
 renders to:
 
 **rendered as bold text**
@@ -191,7 +199,10 @@ And the generated HTML from a markdown parser might look something like this:
 
 ```html
 <blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+    erat a ante.
+  </p>
 </blockquote>
 ```
 
@@ -209,11 +220,13 @@ Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
 Renders to:
 
 > Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
-Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
->> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
-odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
->>> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
-Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
+> Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
+>
+> > Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
+> > odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+> >
+> > > Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+> > > Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
 
 <br>
 <br>
@@ -251,18 +264,18 @@ For example
 
 Renders to:
 
-+ Lorem ipsum dolor sit amet
-+ Consectetur adipiscing elit
-+ Integer molestie lorem at massa
-+ Facilisis in pretium nisl aliquet
-+ Nulla volutpat aliquam velit
+- Lorem ipsum dolor sit amet
+- Consectetur adipiscing elit
+- Integer molestie lorem at massa
+- Facilisis in pretium nisl aliquet
+- Nulla volutpat aliquam velit
   - Phasellus iaculis neque
   - Purus sodales ultricies
   - Vestibulum laoreet porttitor sem
   - Ac tristique libero volutpat at
-+ Faucibus porta lacus fringilla vel
-+ Aenean sit amet erat nunc
-+ Eget porttitor lorem
+- Faucibus porta lacus fringilla vel
+- Aenean sit amet erat nunc
+- Eget porttitor lorem
 
 And this HTML
 
@@ -272,7 +285,8 @@ And this HTML
   <li>Consectetur adipiscing elit</li>
   <li>Integer molestie lorem at massa</li>
   <li>Facilisis in pretium nisl aliquet</li>
-  <li>Nulla volutpat aliquam velit
+  <li>
+    Nulla volutpat aliquam velit
     <ul>
       <li>Phasellus iaculis neque</li>
       <li>Purus sodales ultricies</li>
@@ -300,6 +314,7 @@ A list of items in which the order of items does explicitly matter.
 7. Aenean sit amet erat nunc
 8. Eget porttitor lorem
 ```
+
 Renders to:
 
 1. Lorem ipsum dolor sit amet
@@ -366,7 +381,9 @@ Wrap inline snippets of code with a single backtick: <code>`</code>.
 For example, to show `<div></div>` inline with other text, just wrap it in backticks.
 
 ```html
-For example, to show `<div></div>` inline with other text, just wrap it in backticks.
+For example, to show `
+<div></div>
+` inline with other text, just wrap it in backticks.
 ```
 
 ### "Fenced" code block
@@ -380,7 +397,6 @@ For example, this:
 Example text here...
 ```
 </pre>
-
 
 Renders to something like this in HTML:
 
@@ -413,7 +429,6 @@ Example:
     line 1 of code
     line 2 of code
     line 3 of code
-
 
 ### Syntax highlighting
 
@@ -448,20 +463,20 @@ Which renders to:
 grunt.initConfig({
   assemble: {
     options: {
-      assets: 'docs/assets',
-      data: 'src/data/*.{json,yml}',
-      helpers: 'src/custom-helpers.js',
-      partials: ['src/partials/**/*.{hbs,md}']
+      assets: "docs/assets",
+      data: "src/data/*.{json,yml}",
+      helpers: "src/custom-helpers.js",
+      partials: ["src/partials/**/*.{hbs,md}"],
     },
     pages: {
       options: {
-        layout: 'default.hbs'
+        layout: "default.hbs",
       },
       files: {
-        './': ['src/templates/pages/index.hbs']
-      }
-    }
-  }
+        "./": ["src/templates/pages/index.hbs"],
+      },
+    },
+  },
 });
 ```
 
@@ -492,7 +507,6 @@ And this complicated HTML is an example of what might be generated by the markdo
 <br>
 <br>
 
-
 ## Links
 
 ### Autolinks
@@ -508,7 +522,6 @@ Renders to:
 <http://foo.bar.baz>
 
 URIs or email addresses that are not wrapped in angle brackets are not recognized as valid autolinks by markdown parsers.
-
 
 ### Inline links
 
@@ -575,7 +588,6 @@ Note that placement of achors is arbitrary, you can put them anywhere you want, 
 <br>
 <br>
 
-
 ## Images
 
 Images have a similar syntax to links but include a preceding exclamation point.
@@ -591,6 +603,7 @@ or
 ```
 ![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 ```
+
 ![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 Like links, Images also have a footnote style syntax
@@ -598,11 +611,12 @@ Like links, Images also have a footnote style syntax
 ```
 ![Alt text][id]
 ```
+
 ![Alt text][id]
 
 With a reference later in the document defining the URL location:
 
-[id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+[id]: http://octodex.github.com/images/dojocat.jpg "The Dojocat"
 
 ```
 [id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
@@ -636,8 +650,7 @@ Example:
 
 Renders to:
 
-\*this is not italic*
-
+\*this is not italic\*
 
 # Non-standard features
 
@@ -710,11 +723,11 @@ Example:
 
 Renders to:
 
-| Option | Description |
-| --- | --- |
+| Option | Description                                                               |
+| ------ | ------------------------------------------------------------------------- |
 | data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+| engine | engine to be used for processing templates. Handlebars is the default.    |
+| ext    | extension to be used for dest files.                                      |
 
 And this HTML:
 
@@ -726,11 +739,15 @@ And this HTML:
   </tr>
   <tr>
     <td>data</td>
-    <td>path to data files to supply the data that will be passed into templates.</td>
+    <td>
+      path to data files to supply the data that will be passed into templates.
+    </td>
   </tr>
   <tr>
     <td>engine</td>
-    <td>engine to be used for processing templates. Handlebars is the default.</td>
+    <td>
+      engine to be used for processing templates. Handlebars is the default.
+    </td>
   </tr>
   <tr>
     <td>ext</td>
@@ -738,7 +755,6 @@ And this HTML:
   </tr>
 </table>
 ```
-
 
 ### Aligning cells
 
@@ -754,12 +770,11 @@ To center the text in a column, add a colon to the middle of the dashes in the r
 | ext    | extension to be used for dest files. |
 ```
 
-| Option | Description |
-| -:- | -:- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
+| Option |                                                               Description |
+| -----: | ------------------------------------------------------------------------: |
+|   data | path to data files to supply the data that will be passed into templates. |
+| engine |    engine to be used for processing templates. Handlebars is the default. |
+|    ext |                                      extension to be used for dest files. |
 
 **Right-align the text in a column**
 
@@ -775,11 +790,11 @@ To right-align the text in a column, add a colon to the middle of the dashes in 
 
 Renders to:
 
-| Option | Description |
-| --: | --:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+| Option |                                                               Description |
+| -----: | ------------------------------------------------------------------------: |
+|   data | path to data files to supply the data that will be passed into templates. |
+| engine |    engine to be used for processing templates. Handlebars is the default. |
+|    ext |                                      extension to be used for dest files. |
 
 <br>
 <br>

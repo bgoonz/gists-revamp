@@ -1,11 +1,11 @@
 body {
-  background-color:#2d2d2d;
+  background-color: #2d2d2d;
   overflow: hidden;
   /* font-family: 'Fjalla One', sans-serif; */
-  font-family: 'Passion One', sans-serif;
+  font-family: "Passion One", sans-serif;
   display: flex;
   align-items: center;
-  justify-content: center;   
+  justify-content: center;
 }
 
 body,
@@ -14,38 +14,38 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: rgba(0,0,0,0); 
-  text-align:center
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-align: center;
 }
 
-
-svg{
-  width:80%;
-  height:80%;
-  visibility:hidden;
-/*  overflow:visible; */
+svg {
+  width: 80%;
+  height: 80%;
+  visibility: hidden;
+  /*  overflow:visible; */
 }
-.shine, .iconContainer{
-  pointer-events:none;
+.shine,
+.iconContainer {
+  pointer-events: none;
 }
-.dot{
-  cursor:pointer;
-}
-
-.shine circle{
-  stroke:#FFF;
+.dot {
+  cursor: pointer;
 }
 
-.speechBubbleGroup text{
-  text-anchor:middle;
-  font-size:29px;
-  
+.shine circle {
+  stroke: #fff;
 }
 
-line{
-  vector-effect:"non-scaling-stroke";
+.speechBubbleGroup text {
+  text-anchor: middle;
+  font-size: 29px;
 }
 
-.hitArea, .dragContainer{
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+line {
+  vector-effect: "non-scaling-stroke";
+}
+
+.hitArea,
+.dragContainer {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

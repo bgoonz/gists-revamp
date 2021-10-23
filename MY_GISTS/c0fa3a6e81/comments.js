@@ -13,9 +13,9 @@ console.log("bagel".indexOf("z")); // => -1
 console.log(!true); // => false
 console.log(!!false); // => false
 let bootcamp = "webdev";
- console.log(bootcamp); // "webdev"
+console.log(bootcamp); // "webdev"
 let num = 0;
- num += 10; // same as num = num + 10
- num -= 2; // same as num = num - 2
- num /= 4; // same as num = num / 4
- num *= 7; // same as num = num * 7
+num += 10; // same as num = num + 10
+num -= 2; // same as num = num - 2
+num /= 4; // same as num = num / 4
+num *= 7; // same as num = num * 7

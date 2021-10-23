@@ -14,7 +14,7 @@
 
 [![](https://www.google.com/s2/favicons?domain=https://www.google.be/)](https://search.google.com/test/rich-results?url=https%3A%2F%2Fbgoonz-blog.netlify.app%2F&user_agent=1)[Check **Microdata, Microformats** and **RDFa**](https://search.google.com/test/rich-results?url=https%3A%2F%2Fbgoonz-blog.netlify.app%2F&user_agent=1)
 
-* * * * *
+---
 
 SEO
 
@@ -44,7 +44,7 @@ Security/Malware
 
 [![](https://www.google.com/s2/favicons?domain=http://www.google.com/)](http://www.google.com/safebrowsing/diagnostic?site=bgoonz-blog.netlify.app)[Safe Browsing (Google)](http://www.google.com/safebrowsing/diagnostic?site=bgoonz-blog.netlify.app)
 
-* * * * *
+---
 
 Other (whois,...)
 

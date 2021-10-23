@@ -1,5 +1,4 @@
-Getting Started with Headless Chrome
-====================================
+# Getting Started with Headless Chrome
 
 ![Eric Bidelman](https://developers.google.com/web/images/contributors/ericbidelman.jpg)
 
@@ -17,8 +16,7 @@ A headless browser is a great tool for automated testing and server environments
 
 Note: Headless mode has been available on Mac and Linux since Chrome 59. [Windows support](https://bugs.chromium.org/p/chromium/issues/detail?id=686608) came in Chrome 60.
 
-Starting Headless (CLI)
------------------------
+## Starting Headless (CLI)
 
 The easiest way to get started with headless mode is to open the Chrome binary from the command line. If you've got Chrome 59+ installed, start Chrome with the `--headless` flag:
 
@@ -38,8 +36,7 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"ali
 
 Download Chrome Canary [here](https://www.google.com/chrome/browser/canary.html).
 
-Command line features
----------------------
+## Command line features
 
 In some cases, you may not need to [programmatically script](https://developers.google.com/web/updates/2017/04/headless-chrome#node) Headless Chrome. There are some [useful command line flags](https://cs.chromium.org/chromium/src/headless/app/headless_shell_switches.cc) to perform common tasks.
 
@@ -79,8 +76,7 @@ $ chrome --headless --disable-gpu --repl --crash-dumps-dir=./tmp https://www.chr
 
 Note: the addition of the --crash-dumps-dir flag when using repl mode.
 
-Debugging Chrome without a browser UI?
---------------------------------------
+## Debugging Chrome without a browser UI?
 
 When you run Chrome with `--remote-debugging-port=9222`, it starts an instance with the [DevTools protocol](https://chromedevtools.github.io/devtools-protocol/) enabled. The protocol is used to communicate with Chrome and drive the headless browser instance. It's also what tools like Sublime, VS Code, and Node use for remote debugging an application. #synergy
 
@@ -92,8 +88,7 @@ DevTools remote debugging UI
 
 From here, you can use the familiar DevTools features to inspect, debug, and tweak the page as you normally would. If you're using Headless programmatically, this page is also a powerful debugging tool for seeing all the raw DevTools protocol commands going across the wire, communicating with the browser.
 
-Using programmatically (Node)
------------------------------
+## Using programmatically (Node)
 
 ### Puppeteer
 
@@ -191,8 +186,7 @@ Example - extract the `<title>` of the page using DOM APIs.
 const CDP = require('chrome-remote-interface');...(async function() {const chrome = await launchChrome();const protocol = await CDP({port: chrome.port});// Extract the DevTools protocol domains we need and enable them.// See API docs: https://chromedevtools.github.io/devtools-protocol/const {Page, Runtime} = protocol;await Promise.all([Page.enable(), Runtime.enable()]);Page.navigate({url: 'https://www.chromestatus.com/'});// Wait for window.onload before doing stuff.Page.loadEventFired(async () => {  const js = "document.querySelector('title').textContent";  // Evaluate the JS expression in the page.  const result = await Runtime.evaluate({expression: js});  console.log('Title of page: ' + result.result.value);  protocol.close();  chrome.kill(); // Kill Chrome.});})();
 ```
 
-Using Selenium, WebDriver, and ChromeDriver
--------------------------------------------
+## Using Selenium, WebDriver, and ChromeDriver
 
 Right now, Selenium opens a full instance of Chrome. In other words, it's an automated solution but not completely headless. However, Selenium can be configured to run headless Chrome with a little work. I recommend [Running Selenium with Headless Chrome](https://intoli.com/blog/running-selenium-with-headless-chrome/) if you want the full instructions on how to set things up yourself, but I've dropped in some examples below to get you started.
 
@@ -228,27 +222,25 @@ Example: filter CSS features on chromestatus.com
 const webdriverio = require('webdriverio');const chromedriver = require('chromedriver');const PORT = 9515;chromedriver.start([  '--url-base=wd/hub',  `--port=${PORT}`,  '--verbose']);(async () => {const opts = {  port: PORT,  desiredCapabilities: {    browserName: 'chrome',    chromeOptions: {args: ['--headless']}  }};const browser = webdriverio.remote(opts).init();await browser.url('https://www.chromestatus.com/features');const title = await browser.getTitle();console.log(`Title: ${title}`);await browser.waitForText('.num-features', 3000);let numFeatures = await browser.getText('.num-features');console.log(`Chrome has ${numFeatures} total features`);await browser.setValue('input[type="search"]', 'CSS');console.log('Filtering features...');await browser.pause(1000);numFeatures = await browser.getText('.num-features');console.log(`Chrome has ${numFeatures} CSS features`);const buffer = await browser.saveScreenshot('screenshot.png');console.log('Saved screenshot...');chromedriver.stop();browser.end();})();
 ```
 
-Further resources
------------------
+## Further resources
 
 Here are some useful resources to get you started:
 
 Docs
 
--   [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/) - API reference docs
+- [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/) - API reference docs
 
 Tools
 
--   [chrome-remote-interface](https://www.npmjs.com/package/chrome-remote-interface) - node module that wraps the DevTools protocol
--   [Lighthouse](https://github.com/GoogleChrome/lighthouse) - automated tool for testing web app quality; makes heavy use of the protocol
--   [chrome-launcher](https://github.com/GoogleChrome/lighthouse/tree/master/chrome-launcher) - node module for launching Chrome, ready for automation
+- [chrome-remote-interface](https://www.npmjs.com/package/chrome-remote-interface) - node module that wraps the DevTools protocol
+- [Lighthouse](https://github.com/GoogleChrome/lighthouse) - automated tool for testing web app quality; makes heavy use of the protocol
+- [chrome-launcher](https://github.com/GoogleChrome/lighthouse/tree/master/chrome-launcher) - node module for launching Chrome, ready for automation
 
 Demos
 
--   "[The Headless Web](https://paul.kinlan.me/the-headless-web/)" - Paul Kinlan's great blog post on using Headless with api.ai.
+- "[The Headless Web](https://paul.kinlan.me/the-headless-web/)" - Paul Kinlan's great blog post on using Headless with api.ai.
 
-FAQ
----
+## FAQ
 
 Do I need the `--disable-gpu` flag?
 

@@ -504,14 +504,11 @@ $("#newContent").load("/foo.html #myDiv h1:first", function (html) {
 });
 ```
 
-
 ---
 
 # Key Concepts:
 
 ---
-
-
 
 Proper use of Ajax-related jQuery methods requires understanding some key concepts first.
 
@@ -579,9 +576,9 @@ $.get( "foo.php", function( response ) {
 
 ### Same-Origin Policy and JSONP
 
-In general, Ajax requests are limited to the same protocol (http or https), the same port, and the same domain as the page making the request. This limitation does not apply to scripts that are loaded via jQuery's Ajax methods. 
+In general, Ajax requests are limited to the same protocol (http or https), the same port, and the same domain as the page making the request. This limitation does not apply to scripts that are loaded via jQuery's Ajax methods.
 
-Note: Versions of Internet Explorer less than 10 do not support cross-domain AJAX requests. 
+Note: Versions of Internet Explorer less than 10 do not support cross-domain AJAX requests.
 
 The other exception is requests targeted at a JSONP service on another domain. In the case of JSONP, the provider of the service has agreed to respond to your request with a script that can be loaded into the page using a `<script>` tag, thus avoiding the same-origin limitation; that script will include the data you requested, wrapped in a callback function you provide.
 
@@ -593,9 +590,7 @@ Firebug (or the Webkit Inspector in Chrome or Safari) is an invaluable tool for 
 
 # Working W JSON:
 
-
 ---
-
 
 The advent of JSONP — essentially a consensual cross-site scripting hack — has opened the door to powerful mashups of content. Many prominent sites provide JSONP services, allowing you access to their content via a predefined API. A particularly great source of JSONP-formatted data is the [Yahoo! Query Language](http://developer.yahoo.com/yql/console/), which we'll use in the following example to fetch news about cats.
 
@@ -624,4 +619,3 @@ $.ajax({
 ```
 
 jQuery handles all the complex aspects of JSONP behind-the-scenes — all we have to do is tell jQuery the name of the JSONP callback parameter specified by YQL ("callback" in this case), and otherwise the whole process looks and feels like a normal Ajax request.
-

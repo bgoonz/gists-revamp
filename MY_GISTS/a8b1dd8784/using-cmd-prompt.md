@@ -10,15 +10,15 @@ When people refer to the command prompt they may we refer to it in different way
 
 Operating System
 
- |
+|
 
 Command
 
- |
+|
 
 Notes
 
- |
+|
 | Windows 3.1,.3.11, 95, 98, ME | command.com | This program when run will open up a command prompt window providing a DOS shell. |
 | Windows NT, 2000, XP, 2003 | cmd.exe | This program will provide the native command prompt. What we call the command prompt. |
 | Windows NT, 2000, XP, 2003 | command.com | This program will open up a emulated DOS shell for backwards compatibility. Only use if you must. |
@@ -58,8 +58,7 @@ The DIR command - This command will list the files and directories contained i
 
 [SPONSORED BY BED BATH & BEYOND](https://eb2.3lift.com/pass?tl_clickthrough=true&redir=https%3A%2F%2Fgoogleads.g.doubleclick.net%2Fdbm%2Fclk%3Fsa%3DL%26ai%3DCjOugdm1MYcSIJI-HyQP1nbnIB5OVk5tlusXv4uEO-Kvvw84oEAEgvb75bigCYMmW_Iq0pNgPoAHbg6iMA8gBBqgDAaoE8QFP0DNEUUwKH3xJgwi8iixSy3SdchKSrW6hZFRLCFoe-Y8OpiJ8ge2GBPMZxyV6DVNcq5Nj-LZjTAfZXgi67zdqnPsETmH9YtlVr00jbSzEt8agQLPM8GJDnwlNlwaMylrplbFzlIweOhZ4115ip0Aqjb_HVKFARGE-1GvSOOcWSsMXM6-diPUwaItiWAjft2YB5nz-BrbAOhYQQVuAIJS6kKtfJ8e5epC3TGS6wMsA6r8iItxwZUt2Mr1pXL9IEcMfik7EseBuSM43V_Tr1NcpKY9mrQhwUCKLME7F3sWh8iO5ZhFTlmWMbYdzVe8uwJOPwATrncDR4APgBAOQBgGgBjeAB43813OoB_DZG6gH8tkbqAeOzhuoB5PYG6gHugaoB-6WsQKoB9XJG6gHpr4bqAfz0RuoB5bYG6gHqpuxAqgH35-xAtgHAdIIBwiAYRABGB3yCAxiaWRkZXItNjE1OTGxCao-miKK7LAGgAoEmAsByAsBsBPpgcsM0BMA2BMN2BQB0BUB-BYBgBcB%26num%3D1%26cid%3DCAASEuRonccKWGGFcfN200XP7xyO5Q%26sig%3DAOD64_2YiQfAi-ryoBvzO0J7YVXqx7mmFA%26client%3Dca-pub-3380684538404130%26dbm_c%3DAKAmf-B3n1eF6jjTJRIRrbO2lrkhZgLB54odmovMRbmDhksloEUuyCTq1NBTXnYTIYBj9sp7Gz6xxnfPTO4cD2mxHbjo2b7WmQ%26dbm_d%3DAKAmf-Bm2wTixlbiM6RC6it840sLgDDPyLDT6IJpatvLu1jfMKtsr4Gd_YXphE-ktxzMBzOkPBrrVIuLRFXvzd_xBSccu66KjH_-7eoiXBP2L9Xw7KDXYyMHx_fn2TdLAuFgXwgKq3zJVVgFoO3bCMlyHnjH8wS66dRavVSh5xJCvoX-TAGD7WDEdAeOSwHmbhYmp-LRradBAQhV4wFVRllCjO0Yb5AyD_3S7h_0Gv0Ui5omMsrdv6uBU6uhzOmW6aNY_v7yzr5SEN2E5NirIBv_IkLckqUw0-QJ6qXObO_wksvp3MmfIvQ%26adurl%3Dhttps%3A%2F%2Fwww.bedbathandbeyond.com%2Fstore%2Fcategory%2Fshop-by-room%2Fhome-office%2F16369%2F_simply-essential%2FQlJBTkQ6IlNpbXBseSBFc3NlbnRpYWwi%3Fmcid%3DDA_Kepler_PR_SeptOctRefresh2021_BBBY%26utm_source%3Ddv360%26utm_medium%3Dnative%26utm_campaign%3DBATH_COR_COREPRO_COUSA_DB_NA_WTRI_ADXNATIVEX_SSDSK_000000CPA_3P3L_XXXX_TRPLIFTSHOPNA_X1864_COUSA_XXXEN_WWWXPM_SOUN_H1_EN_JP_NATPOST&bc=4.16&pr=2.496&brid=4032&bmid=5989&biid=5989&aid=1733477386274621636111&did=31313&tid=8758636&bcud=4160&sid=30241&ts=1632398710&cb=74275)
 
-[Organize and Transform Your Home Office Space](https://eb2.3lift.com/pass?tl_clickthrough=true&redir=https%3A%2F%2Fgoogleads.g.doubleclick.net%2Fdbm%2Fclk%3Fsa%3DL%26ai%3DCjOugdm1MYcSIJI-HyQP1nbnIB5OVk5tlusXv4uEO-Kvvw84oEAEgvb75bigCYMmW_Iq0pNgPoAHbg6iMA8gBBqgDAaoE8QFP0DNEUUwKH3xJgwi8iixSy3SdchKSrW6hZFRLCFoe-Y8OpiJ8ge2GBPMZxyV6DVNcq5Nj-LZjTAfZXgi67zdqnPsETmH9YtlVr00jbSzEt8agQLPM8GJDnwlNlwaMylrplbFzlIweOhZ4115ip0Aqjb_HVKFARGE-1GvSOOcWSsMXM6-diPUwaItiWAjft2YB5nz-BrbAOhYQQVuAIJS6kKtfJ8e5epC3TGS6wMsA6r8iItxwZUt2Mr1pXL9IEcMfik7EseBuSM43V_Tr1NcpKY9mrQhwUCKLME7F3sWh8iO5ZhFTlmWMbYdzVe8uwJOPwATrncDR4APgBAOQBgGgBjeAB43813OoB_DZG6gH8tkbqAeOzhuoB5PYG6gHugaoB-6WsQKoB9XJG6gHpr4bqAfz0RuoB5bYG6gHqpuxAqgH35-xAtgHAdIIBwiAYRABGB3yCAxiaWRkZXItNjE1OTGxCao-miKK7LAGgAoEmAsByAsBsBPpgcsM0BMA2BMN2BQB0BUB-BYBgBcB%26num%3D1%26cid%3DCAASEuRonccKWGGFcfN200XP7xyO5Q%26sig%3DAOD64_2YiQfAi-ryoBvzO0J7YVXqx7mmFA%26client%3Dca-pub-3380684538404130%26dbm_c%3DAKAmf-B3n1eF6jjTJRIRrbO2lrkhZgLB54odmovMRbmDhksloEUuyCTq1NBTXnYTIYBj9sp7Gz6xxnfPTO4cD2mxHbjo2b7WmQ%26dbm_d%3DAKAmf-Bm2wTixlbiM6RC6it840sLgDDPyLDT6IJpatvLu1jfMKtsr4Gd_YXphE-ktxzMBzOkPBrrVIuLRFXvzd_xBSccu66KjH_-7eoiXBP2L9Xw7KDXYyMHx_fn2TdLAuFgXwgKq3zJVVgFoO3bCMlyHnjH8wS66dRavVSh5xJCvoX-TAGD7WDEdAeOSwHmbhYmp-LRradBAQhV4wFVRllCjO0Yb5AyD_3S7h_0Gv0Ui5omMsrdv6uBU6uhzOmW6aNY_v7yzr5SEN2E5NirIBv_IkLckqUw0-QJ6qXObO_wksvp3MmfIvQ%26adurl%3Dhttps%3A%2F%2Fwww.bedbathandbeyond.com%2Fstore%2Fcategory%2Fshop-by-room%2Fhome-office%2F16369%2F_simply-essential%2FQlJBTkQ6IlNpbXBseSBFc3NlbnRpYWwi%3Fmcid%3DDA_Kepler_PR_SeptOctRefresh2021_BBBY%26utm_source%3Ddv360%26utm_medium%3Dnative%26utm_campaign%3DBATH_COR_COREPRO_COUSA_DB_NA_WTRI_ADXNATIVEX_SSDSK_000000CPA_3P3L_XXXX_TRPLIFTSHOPNA_X1864_COUSA_XXXEN_WWWXPM_SOUN_H1_EN_JP_NATPOST&bc=4.16&pr=2.496&brid=4032&bmid=5989&biid=5989&aid=1733477386274621636111&did=31313&tid=8758636&bcud=4160&sid=30241&ts=1632398710&cb=74275)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## [Organize and Transform Your Home Office Space](https://eb2.3lift.com/pass?tl_clickthrough=true&redir=https%3A%2F%2Fgoogleads.g.doubleclick.net%2Fdbm%2Fclk%3Fsa%3DL%26ai%3DCjOugdm1MYcSIJI-HyQP1nbnIB5OVk5tlusXv4uEO-Kvvw84oEAEgvb75bigCYMmW_Iq0pNgPoAHbg6iMA8gBBqgDAaoE8QFP0DNEUUwKH3xJgwi8iixSy3SdchKSrW6hZFRLCFoe-Y8OpiJ8ge2GBPMZxyV6DVNcq5Nj-LZjTAfZXgi67zdqnPsETmH9YtlVr00jbSzEt8agQLPM8GJDnwlNlwaMylrplbFzlIweOhZ4115ip0Aqjb_HVKFARGE-1GvSOOcWSsMXM6-diPUwaItiWAjft2YB5nz-BrbAOhYQQVuAIJS6kKtfJ8e5epC3TGS6wMsA6r8iItxwZUt2Mr1pXL9IEcMfik7EseBuSM43V_Tr1NcpKY9mrQhwUCKLME7F3sWh8iO5ZhFTlmWMbYdzVe8uwJOPwATrncDR4APgBAOQBgGgBjeAB43813OoB_DZG6gH8tkbqAeOzhuoB5PYG6gHugaoB-6WsQKoB9XJG6gHpr4bqAfz0RuoB5bYG6gHqpuxAqgH35-xAtgHAdIIBwiAYRABGB3yCAxiaWRkZXItNjE1OTGxCao-miKK7LAGgAoEmAsByAsBsBPpgcsM0BMA2BMN2BQB0BUB-BYBgBcB%26num%3D1%26cid%3DCAASEuRonccKWGGFcfN200XP7xyO5Q%26sig%3DAOD64_2YiQfAi-ryoBvzO0J7YVXqx7mmFA%26client%3Dca-pub-3380684538404130%26dbm_c%3DAKAmf-B3n1eF6jjTJRIRrbO2lrkhZgLB54odmovMRbmDhksloEUuyCTq1NBTXnYTIYBj9sp7Gz6xxnfPTO4cD2mxHbjo2b7WmQ%26dbm_d%3DAKAmf-Bm2wTixlbiM6RC6it840sLgDDPyLDT6IJpatvLu1jfMKtsr4Gd_YXphE-ktxzMBzOkPBrrVIuLRFXvzd_xBSccu66KjH_-7eoiXBP2L9Xw7KDXYyMHx_fn2TdLAuFgXwgKq3zJVVgFoO3bCMlyHnjH8wS66dRavVSh5xJCvoX-TAGD7WDEdAeOSwHmbhYmp-LRradBAQhV4wFVRllCjO0Yb5AyD_3S7h_0Gv0Ui5omMsrdv6uBU6uhzOmW6aNY_v7yzr5SEN2E5NirIBv_IkLckqUw0-QJ6qXObO_wksvp3MmfIvQ%26adurl%3Dhttps%3A%2F%2Fwww.bedbathandbeyond.com%2Fstore%2Fcategory%2Fshop-by-room%2Fhome-office%2F16369%2F_simply-essential%2FQlJBTkQ6IlNpbXBseSBFc3NlbnRpYWwi%3Fmcid%3DDA_Kepler_PR_SeptOctRefresh2021_BBBY%26utm_source%3Ddv360%26utm_medium%3Dnative%26utm_campaign%3DBATH_COR_COREPRO_COUSA_DB_NA_WTRI_ADXNATIVEX_SSDSK_000000CPA_3P3L_XXXX_TRPLIFTSHOPNA_X1864_COUSA_XXXEN_WWWXPM_SOUN_H1_EN_JP_NATPOST&bc=4.16&pr=2.496&brid=4032&bmid=5989&biid=5989&aid=1733477386274621636111&did=31313&tid=8758636&bcud=4160&sid=30241&ts=1632398710&cb=74275)
 
 From modern desks to sanity-saving storage solutions, Simply Essential™ can help you upgrade your humdrum home office at a wow-worthy price.
 
@@ -72,7 +71,7 @@ Figure 2. DIR of c:\test
 
 If you examine the screen above you will see a listing of the directory. The first 2 columns are the date and time of the last write to that file. Followed by whether or not the particular entry is a directory or a file, then the size of the file, and finally the name of the file. You may have noticed that there are two directories named . and .., which have special meaning in operating systems. The . stands for the current directory and the .. stands for the previous directory in the path. In the example above, .. stands for c:\windows.
 
-Also note for many commands you can use the * symbol which stands for wildcard. With this in mind, typing dir *.txt will only list those files that end with .txt.
+Also note for many commands you can use the _ symbol which stands for wildcard. With this in mind, typing dir _.txt will only list those files that end with .txt.
 
 The Copy command - This command allows you to copy files from one location to another. To use this command you would type\
 copy filetocopy copiedfile. For example if you have the file c:\test\test.txt and would like to copy it to c:\windows\test.txt you would type\
@@ -80,13 +79,13 @@ copy c:\test\test.txt c:\windows\test.txt and press enter. If the copy is succe
 
 | copy test.txt test.bak | Copies the test.txt file to a new file called test.bak in the same directory |
 | copy test.txt \windows | Copies the test.txt file to the \windows directory. |
-| copy * \windows | Copies all the files in the current directory to the \windows directory. |
+| copy \* \windows | Copies all the files in the current directory to the \windows directory. |
 
 The Move command - This command allows you to move a file from one location to another. Examples are below:
 
 | move test.txt test.bak | Moves the test.txt file to a new file renaming it to test.bak in the same directory. |
 | move test.txt \windows | Moves the test.txt file to the \windows directory. |
-| move * \windows | Moves all the files in the current directory to the \windows directory. |
+| move \* \windows | Moves all the files in the current directory to the \windows directory. |
 
 At this point you should use the help command to learn about the other available commands.
 
