@@ -1,1 +1,0 @@
-<img src="back.jpg" class="bfh" /> ![](11_effect_circle.png) ![](11_effect_circle.png) ![](11_effect_circle.png) ![](7_effect_back.png) ![](9_effet_left.png) ![](6_1_effect_dome.png) ![](8_plant_center.png) ![](6_3_effect_dome.png) ![](4_2_rain_compo.png) ![](4_2_rain_compo.png) ![](1_3_light_geyser.png) <img src="sphere_moy_v3.png" id="particle" />
