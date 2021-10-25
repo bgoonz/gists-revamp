@@ -76,9 +76,11 @@
   border-left: none !important;
 }
 
-.syntaxhighlighter .bar {}
+.syntaxhighlighter .bar {
+}
 
-.syntaxhighlighter.collapsed .bar {}
+.syntaxhighlighter.collapsed .bar {
+}
 
 .syntaxhighlighter.nogutter .ruler {
   margin-left: 0 !important;

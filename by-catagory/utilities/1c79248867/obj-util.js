@@ -36,7 +36,7 @@
  * @module main
  * @static
  */
-(function (isNode) {
+(isNode => {
   /**
    * adds line coverage information to a file coverage object, reverse-engineering
    * it from statement coverage. The object passed in is updated in place.
@@ -49,16 +49,16 @@
    * @param {Object} fileCoverage the coverage object for a single file
    */
   function addDerivedInfoForFile(fileCoverage) {
-    var statementMap = fileCoverage.statementMap,
-      statements = fileCoverage.s,
-      lineMap;
+    const statementMap = fileCoverage.statementMap;
+    const statements = fileCoverage.s;
+    let lineMap;
 
     if (!fileCoverage.l) {
       fileCoverage.l = lineMap = {};
-      Object.keys(statements).forEach(function (st) {
-        var line = statementMap[st].start.line,
-          count = statements[st],
-          prevVal = lineMap[line];
+      Object.keys(statements).forEach(st => {
+        const line = statementMap[st].start.line;
+        let count = statements[st];
+        const prevVal = lineMap[line];
         if (count === 0 && statementMap[st].skip) {
           count = 1;
         }
@@ -76,7 +76,7 @@
    * @param {Object} coverage the coverage object
    */
   function addDerivedInfo(coverage) {
-    Object.keys(coverage).forEach(function (k) {
+    Object.keys(coverage).forEach(k => {
       addDerivedInfoForFile(coverage[k]);
     });
   }
@@ -87,13 +87,13 @@
    * @param {Object} coverage the coverage object
    */
   function removeDerivedInfo(coverage) {
-    Object.keys(coverage).forEach(function (k) {
+    Object.keys(coverage).forEach(k => {
       delete coverage[k].l;
     });
   }
 
   function percent(covered, total) {
-    var tmp;
+    let tmp;
     if (total > 0) {
       tmp = (1000 * 100 * covered) / total + 5;
       return Math.floor(tmp / 10) / 100;
@@ -103,13 +103,13 @@
   }
 
   function computeSimpleTotals(fileCoverage, property, mapProperty) {
-    var stats = fileCoverage[property],
-      map = mapProperty ? fileCoverage[mapProperty] : null,
-      ret = { total: 0, covered: 0, skipped: 0 };
+    const stats = fileCoverage[property];
+    const map = mapProperty ? fileCoverage[mapProperty] : null;
+    const ret = { total: 0, covered: 0, skipped: 0 };
 
-    Object.keys(stats).forEach(function (key) {
-      var covered = !!stats[key],
-        skipped = map && map[key].skip;
+    Object.keys(stats).forEach(key => {
+      const covered = !!stats[key];
+      const skipped = map && map[key].skip;
       ret.total += 1;
       if (covered || skipped) {
         ret.covered += 1;
@@ -123,16 +123,16 @@
   }
 
   function computeBranchTotals(fileCoverage) {
-    var stats = fileCoverage.b,
-      branchMap = fileCoverage.branchMap,
-      ret = { total: 0, covered: 0, skipped: 0 };
+    const stats = fileCoverage.b;
+    const branchMap = fileCoverage.branchMap;
+    const ret = { total: 0, covered: 0, skipped: 0 };
 
-    Object.keys(stats).forEach(function (key) {
-      var branches = stats[key],
-        map = branchMap[key],
-        covered,
-        skipped,
-        i;
+    Object.keys(stats).forEach(key => {
+      const branches = stats[key];
+      const map = branchMap[key];
+      let covered;
+      let skipped;
+      let i;
       for (i = 0; i < branches.length; i += 1) {
         covered = branches[i] > 0;
         skipped = map.locations && map.locations[i] && map.locations[i].skip;
@@ -211,7 +211,7 @@
    * @return {Object} the summary metrics for the file
    */
   function summarizeFileCoverage(fileCoverage) {
-    var ret = blankSummary();
+    const ret = blankSummary();
     addDerivedInfoForFile(fileCoverage);
     ret.lines = computeSimpleTotals(fileCoverage, "l");
     ret.functions = computeSimpleTotals(fileCoverage, "f", "fnMap");
@@ -231,21 +231,21 @@
    * @return {Object} an object that is a result of merging the two. Note that
    *      the input objects are not changed in any way.
    */
-  function mergeFileCoverage(first, second) {
-    var ret = JSON.parse(JSON.stringify(first)),
-      i;
+  function mergeFileCoverage(first, {s, f, b}) {
+    const ret = JSON.parse(JSON.stringify(first));
+    let i;
 
     delete ret.l; //remove derived info
 
-    Object.keys(second.s).forEach(function (k) {
-      ret.s[k] += second.s[k];
+    Object.keys(s).forEach(k => {
+      ret.s[k] += s[k];
     });
-    Object.keys(second.f).forEach(function (k) {
-      ret.f[k] += second.f[k];
+    Object.keys(f).forEach(k => {
+      ret.f[k] += f[k];
     });
-    Object.keys(second.b).forEach(function (k) {
-      var retArray = ret.b[k],
-        secondArray = second.b[k];
+    Object.keys(b).forEach(k => {
+      const retArray = ret.b[k];
+      const secondArray = b[k];
       for (i = 0; i < retArray.length; i += 1) {
         retArray[i] += secondArray[i];
       }
@@ -264,31 +264,33 @@
    * @return {Object} the merged summary metrics
    */
   function mergeSummaryObjects() {
-    var ret = blankSummary(),
-      args = Array.prototype.slice.call(arguments),
-      keys = ["lines", "statements", "branches", "functions"],
-      increment = function (obj) {
-        if (obj) {
-          keys.forEach(function (key) {
-            ret[key].total += obj[key].total;
-            ret[key].covered += obj[key].covered;
-            ret[key].skipped += obj[key].skipped;
-          });
+    const ret = blankSummary();
+    const args = Array.prototype.slice.call(arguments);
+    const keys = ["lines", "statements", "branches", "functions"];
 
-          // keep track of all lines we have coverage for.
-          Object.keys(obj.linesCovered).forEach(function (key) {
-            if (!ret.linesCovered[key]) {
-              ret.linesCovered[key] = obj.linesCovered[key];
-            } else {
-              ret.linesCovered[key] += obj.linesCovered[key];
-            }
-          });
-        }
-      };
-    args.forEach(function (arg) {
+    const increment = obj => {
+      if (obj) {
+        keys.forEach(key => {
+          ret[key].total += obj[key].total;
+          ret[key].covered += obj[key].covered;
+          ret[key].skipped += obj[key].skipped;
+        });
+
+        // keep track of all lines we have coverage for.
+        Object.keys(obj.linesCovered).forEach(key => {
+          if (!ret.linesCovered[key]) {
+            ret.linesCovered[key] = obj.linesCovered[key];
+          } else {
+            ret.linesCovered[key] += obj.linesCovered[key];
+          }
+        });
+      }
+    };
+
+    args.forEach(arg => {
       increment(arg);
     });
-    keys.forEach(function (key) {
+    keys.forEach(key => {
       ret[key].pct = percent(ret[key].covered, ret[key].total);
     });
 
@@ -304,11 +306,11 @@
    * @return {Object} summary coverage metrics across all files in the coverage object
    */
   function summarizeCoverage(coverage) {
-    var fileSummary = [];
-    Object.keys(coverage).forEach(function (key) {
+    const fileSummary = [];
+    Object.keys(coverage).forEach(key => {
       fileSummary.push(summarizeFileCoverage(coverage[key]));
     });
-    return mergeSummaryObjects.apply(null, fileSummary);
+    return mergeSummaryObjects(...fileSummary);
   }
 
   /**
@@ -322,16 +324,16 @@
    * @return {Object} a coverage object in `yuitest_coverage` format.
    */
   function toYUICoverage(coverage) {
-    var ret = {};
+    const ret = {};
 
     addDerivedInfo(coverage);
 
-    Object.keys(coverage).forEach(function (k) {
-      var fileCoverage = coverage[k],
-        lines = fileCoverage.l,
-        functions = fileCoverage.f,
-        fnMap = fileCoverage.fnMap,
-        o;
+    Object.keys(coverage).forEach(k => {
+      const fileCoverage = coverage[k];
+      const lines = fileCoverage.l;
+      const functions = fileCoverage.f;
+      const fnMap = fileCoverage.fnMap;
+      let o;
 
       o = ret[k] = {
         lines: {},
@@ -341,15 +343,15 @@
         calledFunctions: 0,
         coveredFunctions: 0,
       };
-      Object.keys(lines).forEach(function (k) {
+      Object.keys(lines).forEach(k => {
         o.lines[k] = lines[k];
         o.coveredLines += 1;
         if (lines[k] > 0) {
           o.calledLines += 1;
         }
       });
-      Object.keys(functions).forEach(function (k) {
-        var name = fnMap[k].name + ":" + fnMap[k].line;
+      Object.keys(functions).forEach(k => {
+        const name = `${fnMap[k].name}:${fnMap[k].line}`;
         o.functions[name] = functions[k];
         o.coveredFunctions += 1;
         if (functions[k] > 0) {
@@ -372,22 +374,22 @@
   function incrementIgnoredTotals(cov) {
     //TODO: This may be slow in the browser and may break in older browsers
     //      Look into using a library that works in Node and the browser
-    var fileCoverage = JSON.parse(JSON.stringify(cov));
+    const fileCoverage = JSON.parse(JSON.stringify(cov));
 
     [
       { mapKey: "statementMap", hitsKey: "s" },
       { mapKey: "branchMap", hitsKey: "b" },
       { mapKey: "fnMap", hitsKey: "f" },
-    ].forEach(function (keys) {
-      Object.keys(fileCoverage[keys.mapKey]).forEach(function (key) {
-        var map = fileCoverage[keys.mapKey][key];
-        var hits = fileCoverage[keys.hitsKey];
+    ].forEach(({mapKey, hitsKey}) => {
+      Object.keys(fileCoverage[mapKey]).forEach(key => {
+        const map = fileCoverage[mapKey][key];
+        const hits = fileCoverage[hitsKey];
 
-        if (keys.mapKey === "branchMap") {
-          var locations = map.locations;
+        if (mapKey === "branchMap") {
+          const locations = map.locations;
 
-          locations.forEach(function (location, index) {
-            if (hits[key][index] === 0 && location.skip) {
+          locations.forEach(({skip}, index) => {
+            if (hits[key][index] === 0 && skip) {
               hits[key][index] = 1;
             }
           });
@@ -404,17 +406,17 @@
     return fileCoverage;
   }
 
-  var exportables = {
-    addDerivedInfo: addDerivedInfo,
-    addDerivedInfoForFile: addDerivedInfoForFile,
-    removeDerivedInfo: removeDerivedInfo,
-    blankSummary: blankSummary,
-    summarizeFileCoverage: summarizeFileCoverage,
-    summarizeCoverage: summarizeCoverage,
-    mergeFileCoverage: mergeFileCoverage,
-    mergeSummaryObjects: mergeSummaryObjects,
-    toYUICoverage: toYUICoverage,
-    incrementIgnoredTotals: incrementIgnoredTotals,
+  const exportables = {
+    addDerivedInfo,
+    addDerivedInfoForFile,
+    removeDerivedInfo,
+    blankSummary,
+    summarizeFileCoverage,
+    summarizeCoverage,
+    mergeFileCoverage,
+    mergeSummaryObjects,
+    toYUICoverage,
+    incrementIgnoredTotals,
   };
 
   /* istanbul ignore else: windows */
@@ -423,8 +425,6 @@
   } else {
     window.coverageUtils = exportables;
   }
-})(
-  typeof module !== "undefined" &&
-    typeof module.exports !== "undefined" &&
-    typeof exports !== "undefined"
-);
+})(typeof module !== "undefined" &&
+  typeof module.exports !== "undefined" &&
+  typeof exports !== "undefined");

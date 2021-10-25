@@ -5,17 +5,17 @@ function delay(ms) {
 }
 
 async function processInvitations() {
-  var cards = [...document.querySelectorAll("li.invitation-card")];
+  const cards = [...document.querySelectorAll("li.invitation-card")];
 
-  var acceptCards = cards.filter((card) => {
-    var title =
+  const acceptCards = cards.filter((card) => {
+    const title =
       (card.querySelectorAll(".invitation-card__subtitle")[0] || {})
         .innerHTML || "";
     return accept(title);
   });
 
-  var rejectCards = cards.filter((card) => {
-    var title =
+  const rejectCards = cards.filter((card) => {
+    const title =
       (card.querySelectorAll(".invitation-card__subtitle")[0] || {})
         .innerHTML || "";
     return !accept(title);
@@ -41,7 +41,7 @@ async function processInvitations() {
     }
   }
 
-  var nextBtn = document.querySelectorAll(
+  const nextBtn = document.querySelectorAll(
     ".artdeco-pagination__button--next"
   )[0];
   if (nextBtn) {

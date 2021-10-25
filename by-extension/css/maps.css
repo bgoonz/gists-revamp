@@ -56,7 +56,7 @@ body {
   }
 }
 
-#locations-panel-list>header {
+#locations-panel-list > header {
   padding: 1.4em 1.4em 0 1.4em;
 }
 
@@ -66,7 +66,7 @@ body {
   margin: 0;
 }
 
-#locations-panel-list h1.search-title>img {
+#locations-panel-list h1.search-title > img {
   vertical-align: bottom;
   margin-top: -1em;
 }
@@ -203,10 +203,11 @@ body {
   vertical-align: bottom;
 
   /* Match link color #7e7efd */
-  filter: invert(65%) sepia(87%) saturate(4695%) hue-rotate(217deg) brightness(105%) contrast(98%);
+  filter: invert(65%) sepia(87%) saturate(4695%) hue-rotate(217deg)
+    brightness(105%) contrast(98%);
 }
 
-#locations-panel-details>header {
+#locations-panel-details > header {
   text-align: center;
 }
 
@@ -247,7 +248,8 @@ body {
   margin-right: -0.3em;
   margin-top: -0.08em;
   vertical-align: top;
-  filter: invert(88%) sepia(60%) saturate(2073%) hue-rotate(318deg) brightness(93%) contrast(104%);
+  filter: invert(88%) sepia(60%) saturate(2073%) hue-rotate(318deg)
+    brightness(93%) contrast(104%);
 }
 
 #locations-panel-details .star-icon:last-of-type {

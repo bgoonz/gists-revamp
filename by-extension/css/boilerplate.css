@@ -373,7 +373,8 @@ textarea {
 
 /* Colors for form validity */
 input:valid,
-textarea:valid {}
+textarea:valid {
+}
 
 input:invalid,
 textarea:invalid {
@@ -501,11 +502,11 @@ td {
   }
 
   a[href]:after {
-    content: " ("attr(href) ")";
+    content: " (" attr(href) ")";
   }
 
   abbr[title]:after {
-    content: " ("attr(title) ")";
+    content: " (" attr(title) ")";
   }
 
   .ir a:after,

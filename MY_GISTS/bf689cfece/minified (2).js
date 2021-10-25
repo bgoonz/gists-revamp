@@ -2,17 +2,17 @@ require = (function e(t, n, r) {
   function s(o, u) {
     if (!n[o]) {
       if (!t[o]) {
-        var a = typeof require == "function" && require;
+        const a = typeof require == "function" && require;
         if (!u && a) return a(o, !0);
         if (i) return i(o, !0);
-        var f = new Error("Cannot find module '" + o + "'");
+        const f = new Error(`Cannot find module '${o}'`);
         throw ((f.code = "MODULE_NOT_FOUND"), f);
       }
-      var l = (n[o] = { exports: {} });
+      const l = (n[o] = { exports: {} });
       t[o][0].call(
         l.exports,
-        function (e) {
-          var n = t[o][1][e];
+        e => {
+          const n = t[o][1][e];
           return s(n ? n : e);
         },
         l,
@@ -26,200 +26,219 @@ require = (function e(t, n, r) {
     return n[o].exports;
   }
   var i = typeof require == "function" && require;
-  for (var o = 0; o < r.length; o++) s(r[o]);
+  for (let o = 0; o < r.length; o++) s(r[o]);
   return s;
 })(
   {
     1: [
-      function (require, module, exports) {
-        function EventEmitter() {
-          this._events = this._events || {};
-          this._maxListeners = this._maxListeners || undefined;
+      (require, module, exports) => {
+        class EventEmitter {
+          constructor() {
+            this._events = this._events || {};
+            this._maxListeners = this._maxListeners || undefined;
+          }
+
+          setMaxListeners(n) {
+            if (!isNumber(n) || n < 0 || isNaN(n))
+              throw TypeError("n must be a positive number");
+            this._maxListeners = n;
+            return this;
+          }
+
+          emit(type) {
+            let er;
+            let handler;
+            let len;
+            let args;
+            let i;
+            let listeners;
+            if (!this._events) this._events = {};
+            if (type === "error") {
+              if (
+                !this._events.error ||
+                (isObject(this._events.error) && !this._events.error.length)
+              ) {
+                er = arguments[1];
+                if (er instanceof Error) {
+                  throw er;
+                }
+                throw TypeError('Uncaught, unspecified "error" event.');
+              }
+            }
+            handler = this._events[type];
+            if (isUndefined(handler)) return false;
+            if (isFunction(handler)) {
+              switch (arguments.length) {
+                case 1:
+                  handler.call(this);
+                  break;
+                case 2:
+                  handler.call(this, arguments[1]);
+                  break;
+                case 3:
+                  handler.call(this, arguments[1], arguments[2]);
+                  break;
+                default:
+                  len = arguments.length;
+                  args = new Array(len - 1);
+                  for (i = 1; i < len; i++) args[i - 1] = arguments[i];
+                  handler.apply(this, args);
+              }
+            } else if (isObject(handler)) {
+              len = arguments.length;
+              args = new Array(len - 1);
+              for (i = 1; i < len; i++) args[i - 1] = arguments[i];
+              listeners = handler.slice();
+              len = listeners.length;
+              for (i = 0; i < len; i++) listeners[i].apply(this, args);
+            }
+            return true;
+          }
+
+          addListener(type, listener) {
+            var m;
+            if (!isFunction(listener))
+              throw TypeError("listener must be a function");
+            if (!this._events) this._events = {};
+            if (this._events.newListener)
+              this.emit(
+                "newListener",
+                type,
+                isFunction(listener.listener) ? listener.listener : listener
+              );
+            if (!this._events[type]) this._events[type] = listener;
+            else if (isObject(this._events[type]))
+              this._events[type].push(listener);
+            else this._events[type] = [this._events[type], listener];
+            if (isObject(this._events[type]) && !this._events[type].warned) {
+              var m;
+              if (!isUndefined(this._maxListeners)) {
+                m = this._maxListeners;
+              } else {
+                m = EventEmitter.defaultMaxListeners;
+              }
+              if (m && m > 0 && this._events[type].length > m) {
+                this._events[type].warned = true;
+                console.error(
+                  "(node) warning: possible EventEmitter memory " +
+                    "leak detected. %d listeners added. " +
+                    "Use emitter.setMaxListeners() to increase limit.",
+                  this._events[type].length
+                );
+                if (typeof console.trace === "function") {
+                  console.trace();
+                }
+              }
+            }
+            return this;
+          }
+
+          once(type, listener) {
+            if (!isFunction(listener))
+              throw TypeError("listener must be a function");
+            let fired = false;
+            function g(...args) {
+              this.removeListener(type, g);
+              if (!fired) {
+                fired = true;
+                listener.apply(this, args);
+              }
+            }
+            g.listener = listener;
+            this.on(type, g);
+            return this;
+          }
+
+          removeListener(type, listener) {
+            let list;
+            let position;
+            let length;
+            let i;
+            if (!isFunction(listener))
+              throw TypeError("listener must be a function");
+            if (!this._events || !this._events[type]) return this;
+            list = this._events[type];
+            length = list.length;
+            position = -1;
+            if (
+              list === listener ||
+              (isFunction(list.listener) && list.listener === listener)
+            ) {
+              delete this._events[type];
+              if (this._events.removeListener)
+                this.emit("removeListener", type, listener);
+            } else if (isObject(list)) {
+              for (i = length; i-- > 0; ) {
+                if (
+                  list[i] === listener ||
+                  (list[i].listener && list[i].listener === listener)
+                ) {
+                  position = i;
+                  break;
+                }
+              }
+              if (position < 0) return this;
+              if (list.length === 1) {
+                list.length = 0;
+                delete this._events[type];
+              } else {
+                list.splice(position, 1);
+              }
+              if (this._events.removeListener)
+                this.emit("removeListener", type, listener);
+            }
+            return this;
+          }
+
+          removeAllListeners(type) {
+            let key;
+            let listeners;
+            if (!this._events) return this;
+            if (!this._events.removeListener) {
+              if (arguments.length === 0) this._events = {};
+              else if (this._events[type]) delete this._events[type];
+              return this;
+            }
+            if (arguments.length === 0) {
+              for (key in this._events) {
+                if (key === "removeListener") continue;
+                this.removeAllListeners(key);
+              }
+              this.removeAllListeners("removeListener");
+              this._events = {};
+              return this;
+            }
+            listeners = this._events[type];
+            if (isFunction(listeners)) {
+              this.removeListener(type, listeners);
+            } else {
+              while (listeners.length)
+                this.removeListener(type, listeners[listeners.length - 1]);
+            }
+            delete this._events[type];
+            return this;
+          }
+
+          listeners(type) {
+            let ret;
+            if (!this._events || !this._events[type]) ret = [];
+            else if (isFunction(this._events[type])) ret = [this._events[type]];
+            else ret = this._events[type].slice();
+            return ret;
+          }
         }
+
         module.exports = EventEmitter;
         EventEmitter.EventEmitter = EventEmitter;
         EventEmitter.prototype._events = undefined;
         EventEmitter.prototype._maxListeners = undefined;
         EventEmitter.defaultMaxListeners = 10;
-        EventEmitter.prototype.setMaxListeners = function (n) {
-          if (!isNumber(n) || n < 0 || isNaN(n))
-            throw TypeError("n must be a positive number");
-          this._maxListeners = n;
-          return this;
-        };
-        EventEmitter.prototype.emit = function (type) {
-          var er, handler, len, args, i, listeners;
-          if (!this._events) this._events = {};
-          if (type === "error") {
-            if (
-              !this._events.error ||
-              (isObject(this._events.error) && !this._events.error.length)
-            ) {
-              er = arguments[1];
-              if (er instanceof Error) {
-                throw er;
-              }
-              throw TypeError('Uncaught, unspecified "error" event.');
-            }
-          }
-          handler = this._events[type];
-          if (isUndefined(handler)) return false;
-          if (isFunction(handler)) {
-            switch (arguments.length) {
-              case 1:
-                handler.call(this);
-                break;
-              case 2:
-                handler.call(this, arguments[1]);
-                break;
-              case 3:
-                handler.call(this, arguments[1], arguments[2]);
-                break;
-              default:
-                len = arguments.length;
-                args = new Array(len - 1);
-                for (i = 1; i < len; i++) args[i - 1] = arguments[i];
-                handler.apply(this, args);
-            }
-          } else if (isObject(handler)) {
-            len = arguments.length;
-            args = new Array(len - 1);
-            for (i = 1; i < len; i++) args[i - 1] = arguments[i];
-            listeners = handler.slice();
-            len = listeners.length;
-            for (i = 0; i < len; i++) listeners[i].apply(this, args);
-          }
-          return true;
-        };
-        EventEmitter.prototype.addListener = function (type, listener) {
-          var m;
-          if (!isFunction(listener))
-            throw TypeError("listener must be a function");
-          if (!this._events) this._events = {};
-          if (this._events.newListener)
-            this.emit(
-              "newListener",
-              type,
-              isFunction(listener.listener) ? listener.listener : listener
-            );
-          if (!this._events[type]) this._events[type] = listener;
-          else if (isObject(this._events[type]))
-            this._events[type].push(listener);
-          else this._events[type] = [this._events[type], listener];
-          if (isObject(this._events[type]) && !this._events[type].warned) {
-            var m;
-            if (!isUndefined(this._maxListeners)) {
-              m = this._maxListeners;
-            } else {
-              m = EventEmitter.defaultMaxListeners;
-            }
-            if (m && m > 0 && this._events[type].length > m) {
-              this._events[type].warned = true;
-              console.error(
-                "(node) warning: possible EventEmitter memory " +
-                  "leak detected. %d listeners added. " +
-                  "Use emitter.setMaxListeners() to increase limit.",
-                this._events[type].length
-              );
-              if (typeof console.trace === "function") {
-                console.trace();
-              }
-            }
-          }
-          return this;
-        };
         EventEmitter.prototype.on = EventEmitter.prototype.addListener;
-        EventEmitter.prototype.once = function (type, listener) {
-          if (!isFunction(listener))
-            throw TypeError("listener must be a function");
-          var fired = false;
-          function g() {
-            this.removeListener(type, g);
-            if (!fired) {
-              fired = true;
-              listener.apply(this, arguments);
-            }
-          }
-          g.listener = listener;
-          this.on(type, g);
-          return this;
-        };
-        EventEmitter.prototype.removeListener = function (type, listener) {
-          var list, position, length, i;
-          if (!isFunction(listener))
-            throw TypeError("listener must be a function");
-          if (!this._events || !this._events[type]) return this;
-          list = this._events[type];
-          length = list.length;
-          position = -1;
-          if (
-            list === listener ||
-            (isFunction(list.listener) && list.listener === listener)
-          ) {
-            delete this._events[type];
-            if (this._events.removeListener)
-              this.emit("removeListener", type, listener);
-          } else if (isObject(list)) {
-            for (i = length; i-- > 0; ) {
-              if (
-                list[i] === listener ||
-                (list[i].listener && list[i].listener === listener)
-              ) {
-                position = i;
-                break;
-              }
-            }
-            if (position < 0) return this;
-            if (list.length === 1) {
-              list.length = 0;
-              delete this._events[type];
-            } else {
-              list.splice(position, 1);
-            }
-            if (this._events.removeListener)
-              this.emit("removeListener", type, listener);
-          }
-          return this;
-        };
-        EventEmitter.prototype.removeAllListeners = function (type) {
-          var key, listeners;
-          if (!this._events) return this;
-          if (!this._events.removeListener) {
-            if (arguments.length === 0) this._events = {};
-            else if (this._events[type]) delete this._events[type];
-            return this;
-          }
-          if (arguments.length === 0) {
-            for (key in this._events) {
-              if (key === "removeListener") continue;
-              this.removeAllListeners(key);
-            }
-            this.removeAllListeners("removeListener");
-            this._events = {};
-            return this;
-          }
-          listeners = this._events[type];
-          if (isFunction(listeners)) {
-            this.removeListener(type, listeners);
-          } else {
-            while (listeners.length)
-              this.removeListener(type, listeners[listeners.length - 1]);
-          }
-          delete this._events[type];
-          return this;
-        };
-        EventEmitter.prototype.listeners = function (type) {
-          var ret;
-          if (!this._events || !this._events[type]) ret = [];
-          else if (isFunction(this._events[type])) ret = [this._events[type]];
-          else ret = this._events[type].slice();
-          return ret;
-        };
-        EventEmitter.listenerCount = function (emitter, type) {
-          var ret;
-          if (!emitter._events || !emitter._events[type]) ret = 0;
-          else if (isFunction(emitter._events[type])) ret = 1;
-          else ret = emitter._events[type].length;
+        EventEmitter.listenerCount = ({_events}, type) => {
+          let ret;
+          if (!_events || !_events[type]) ret = 0;
+          else if (isFunction(_events[type])) ret = 1;
+          else ret = _events[type].length;
           return ret;
         };
         function isFunction(arg) {
@@ -238,22 +257,22 @@ require = (function e(t, n, r) {
       {},
     ],
     2: [
-      function (require, module, exports) {
-        var oz = require("oscillators");
-        module.exports = function (c, r, t, f) {
+      (require, module, exports) => {
+        const oz = require("oscillators");
+        module.exports = (c, r, t, f) => {
           return c + r * oz.sine(t, f);
         };
       },
       { oscillators: 15 },
     ],
     3: [
-      function (require, module, exports) {
-        module.exports = function (m, btz) {
-          return function (beat) {
-            var x = beat % m;
+      (require, module, exports) => {
+        module.exports = (m, btz) => {
+          return beat => {
+            let x = beat % m;
             if (x == 0) x = m;
-            var i = 0;
-            var r = false;
+            let i = 0;
+            let r = false;
             for (i; i < btz.length; i++) {
               if (btz[i] == x) {
                 r = true;
@@ -267,16 +286,16 @@ require = (function e(t, n, r) {
       {},
     ],
     4: [
-      function (require, module, exports) {
-        var funstance = require("funstance");
-        module.exports = function (delay, feedback, mix, bufferSize) {
+      (require, module, exports) => {
+        const funstance = require("funstance");
+        module.exports = (delay, feedback, mix, bufferSize) => {
           var delay = Math.floor(delay);
           var feedback = feedback;
           var mix = mix;
           var bufferSize = bufferSize || delay * 2;
           if (bufferSize < delay * 2) bufferSize = delay * 2;
-          var d = new Delay(delay, feedback, mix, bufferSize);
-          var fn = funstance(d, Sample);
+          const d = new Delay(delay, feedback, mix, bufferSize);
+          const fn = funstance(d, Sample);
           return fn;
           function Delay(delay, feedback, mix, bufferSize) {
             this.feedback = feedback;
@@ -289,13 +308,13 @@ require = (function e(t, n, r) {
             this.readZero = 0;
           }
           function Sample(sample, _delay, feedback, mix) {
-            var s = sample;
+            let s = sample;
             if (feedback) this.feedback = feedback;
             if (mix) this.mix = mix;
             if (_delay && _delay !== this.delay) {
               _delay = Math.max(0, Math.floor(_delay));
               if (_delay * 2 > this.buffer.length) {
-                var nb = new Float32Array(_delay * 2);
+                const nb = new Float32Array(_delay * 2);
                 nb.set(this.buffer, 0);
                 this.buffer = nb;
               }
@@ -304,7 +323,7 @@ require = (function e(t, n, r) {
             }
             if (this.readOffset >= this.endPoint) this.readOffset = 0;
             s = this.buffer[this.readOffset];
-            var write = sample + s * this.feedback;
+            const write = sample + s * this.feedback;
             this.buffer[this.writeOffset] = write;
             this.writeOffset++;
             this.readOffset++;
@@ -316,23 +335,21 @@ require = (function e(t, n, r) {
       { funstance: 5 },
     ],
     5: [
-      function (require, module, exports) {
-        module.exports = function (obj, fn) {
-          var f = function () {
+      (require, module, exports) => {
+        module.exports = (obj, fn) => {
+          const f = (...args) => {
             if (typeof fn !== "function") return;
-            return fn.apply(obj, arguments);
+            return fn.apply(obj, args);
           };
           function C() {}
           C.prototype = Object.getPrototypeOf(obj);
           f.__proto__ = new C();
-          Object.getOwnPropertyNames(Function.prototype).forEach(function (
-            key
-          ) {
+          Object.getOwnPropertyNames(Function.prototype).forEach(key => {
             if (f[key] === undefined) {
               f.__proto__[key] = Function.prototype[key];
             }
           });
-          Object.getOwnPropertyNames(obj).forEach(function (key) {
+          Object.getOwnPropertyNames(obj).forEach(key => {
             f[key] = obj[key];
           });
           return f;
@@ -341,31 +358,31 @@ require = (function e(t, n, r) {
       {},
     ],
     6: [
-      function (require, module, exports) {
-        var nvelope = require("nvelope");
+      (require, module, exports) => {
+        const nvelope = require("nvelope");
         module.exports = chrono;
         function chrono(_time) {
           if (!(this instanceof chrono)) return new chrono(_time);
-          var self = this;
+          const self = this;
           this.ret = {};
           this.gens = [];
           this.time = _time || 0;
           this.start = _time || 0;
-          this.set = function (time, synth, mods) {
-            var x;
+          this.set = (time, synth, mods) => {
+            let x;
             self.gens.push((x = new generate(time, synth, mods)));
             return x;
           };
-          this.tick = function (t, s, i) {
+          this.tick = (t, s, i) => {
             self.time = t;
             gc(t);
-            return self.gens.reduce(function (a, e) {
+            return self.gens.reduce((a, e) => {
               return a + e.signal(t, s, i);
             }, 0);
           };
           function gc(t) {
-            self.gens = self.gens.filter(function (e) {
-              if (e.start + e.dur < t) return false;
+            self.gens = self.gens.filter(({start, dur}) => {
+              if (start + dur < t) return false;
               else return true;
             });
           }
@@ -373,14 +390,14 @@ require = (function e(t, n, r) {
         function generate(_time, synth, mod) {
           if (!(this instanceof generate))
             return new generate(_time, synth, mod);
-          var self = this;
+          const self = this;
           this.start = _time;
-          this.dur = mod.durations.reduce(function (acc, e) {
+          this.dur = mod.durations.reduce((acc, e) => {
             return acc + e;
           }, 0);
           this.synth = synth;
           this.env = nvelope(mod.curves, mod.durations);
-          this.signal = function (t, s, i) {
+          this.signal = (t, s, i) => {
             return self.synth(t, s, i) * self.env(t - self.start);
           };
         }
@@ -388,36 +405,36 @@ require = (function e(t, n, r) {
       { nvelope: 13 },
     ],
     7: [
-      function (require, module, exports) {
-        var sync = require("jsynth-sync");
-        module.exports = function (bpm, sampleRate) {
-          var Timer = sync(bpm, sampleRate);
+      (require, module, exports) => {
+        const sync = require("jsynth-sync");
+        module.exports = (bpm, sampleRate) => {
+          const Timer = sync(bpm, sampleRate);
           Timer.beat = beat;
           return Timer;
           function beat(interval, rayray, fn) {
-            var swag = 0;
-            var swinger = function (x) {
+            let swag = 0;
+            const swinger = x => {
               swag = x;
             };
-            var master = undefined;
+            let master = undefined;
             return eys(interval, rayray, fn);
             function eys(interval, rayray, fn) {
-              var y = rayray.length;
-              if (!master) master = { rayray: rayray, beat: 0 };
-              var timer = Timer.on(interval, function (time, beat, xxx, swing) {
+              const y = rayray.length;
+              if (!master) master = { rayray, beat: 0 };
+              const timer = Timer.on(interval, (time, beat, xxx, swing) => {
                 if (rayray === master.rayray) {
                   master.beat = beat;
                 } else {
                 }
                 swing(swag);
-                var i = rayray[(beat - 1) % y];
+                const i = rayray[(beat - 1) % y];
                 if (i) {
                   if (Array.isArray(i)) {
-                    var yn = i.length;
-                    var intervaln = interval / yn;
-                    var bat = eys(intervaln, i, fn);
+                    const yn = i.length;
+                    const intervaln = interval / yn;
+                    const bat = eys(intervaln, i, fn);
                     bat._l = i.length;
-                    bat.on("beat", function (b) {
+                    bat.on("beat", b => {
                       if (b == bat._l) bat.emit("stop");
                     });
                   } else {
@@ -435,10 +452,10 @@ require = (function e(t, n, r) {
       { "jsynth-sync": 8 },
     ],
     8: [
-      function (require, module, exports) {
-        var emitter = require("events").EventEmitter;
+      (require, module, exports) => {
+        const emitter = require("events").EventEmitter;
         module.exports = sync;
-        var $ = module.exports;
+        const $ = module.exports;
         function sync(bpm, sampleRate) {
           if (!(this instanceof sync)) return new sync(bpm, sampleRate);
           this.bpm = bpm;
@@ -451,13 +468,13 @@ require = (function e(t, n, r) {
           this.beatIndex = new Array();
         }
         $.prototype.clearAll = function (bpm, samplerate) {
-          this.index = this.index.map(function () {
+          this.index = this.index.map(() => {
             return undefined;
           });
         };
         $.prototype.tick = function (t, i) {
           ++this.s;
-          for (var n = 0; n < this.index.length; n++) {
+          for (let n = 0; n < this.index.length; n++) {
             if (this.index[n]) this.index[n](t, i, this.s);
           }
         };
@@ -465,42 +482,40 @@ require = (function e(t, n, r) {
           this.index.splice(i, 1, undefined);
         };
         $.prototype.on = function (beats, fn) {
-          var i = Math.ceil(this.spb * beats);
-          var l = this.index.length;
-          var self = this;
-          var off = function () {
+          const i = Math.ceil(this.spb * beats);
+          const l = this.index.length;
+          const self = this;
+          const off = () => {
             self.off(l);
           };
-          var delta = 0;
-          var skipNext = false;
-          var skip = false;
+          let delta = 0;
+          let skipNext = false;
+          let skip = false;
           function swing(beat) {
             delta = Math.abs(Math.floor(self.spb * beat));
             skipNext = beat === 0 ? false : true;
           }
-          var emit = new emitter();
+          const emit = new emitter();
           emit.on("stop", off);
-          this.index.push(
-            (function (b, fn, beats, off) {
-              return function (t, a, f) {
-                if (f % (i + delta) == 0) {
-                  if (skip) {
-                    skip = false;
-                    return;
-                  }
-                  if (skipNext) {
-                    skipNext = false;
-                    skip = true;
-                    if (delta >= i) {
-                      skip = false;
-                    }
-                  }
-                  fn.apply(fn, [t, ++b, off, swing]);
-                  emit.emit("beat", b);
+          this.index.push(((b, fn, beats, off) => {
+            return (t, a, f) => {
+              if (f % (i + delta) == 0) {
+                if (skip) {
+                  skip = false;
+                  return;
                 }
-              };
-            })(0, fn, beats, off)
-          );
+                if (skipNext) {
+                  skipNext = false;
+                  skip = true;
+                  if (delta >= i) {
+                    skip = false;
+                  }
+                }
+                fn.apply(fn, [t, ++b, off, swing]);
+                emit.emit("beat", b);
+              }
+            };
+          })(0, fn, beats, off));
           return emit;
         };
         function amilli(t) {
@@ -510,76 +525,76 @@ require = (function e(t, n, r) {
       { events: 1 },
     ],
     9: [
-      function (require, module, exports) {
-        module.exports = function (context, fn, bufSize) {
+      (require, module, exports) => {
+        module.exports = (context, fn, bufSize) => {
           if (typeof context === "function") {
             fn = context;
             context = new webkitAudioContext();
           }
           if (!bufSize) bufSize = 4096;
-          var self = context.createScriptProcessor(bufSize, 1, 1);
+          const self = context.createScriptProcessor(bufSize, 1, 1);
           self.fn = fn;
-          var tt = 0;
-          var ii = 0;
+          let tt = 0;
+          let ii = 0;
           const rate = context.sampleRate;
           self.i = self.t = 0;
           window._SAMPLERATE = self.sampleRate = self.rate = context.sampleRate;
           self.duration = Infinity;
           self.recording = false;
-          self.onaudioprocess = function (e) {
-            var output = e.outputBuffer.getChannelData(0),
-              input = e.inputBuffer.getChannelData(0);
+          self.onaudioprocess = ({outputBuffer, inputBuffer}) => {
+            const output = outputBuffer.getChannelData(0);
+            const input = inputBuffer.getChannelData(0);
             self.tick(output, input);
           };
-          self.tick = function (output, input) {
-            for (var i = 0; i < output.length; i += 1) {
+          self.tick = (output, input) => {
+            for (let i = 0; i < output.length; i += 1) {
               tt = ii / rate;
               ii = ii + 1;
               output[i] = self.fn(tt, ii, input[i]);
             }
             return output;
           };
-          self.stop = function () {
+          self.stop = () => {
             self.disconnect();
             self.playing = false;
             if (self.recording) {
             }
           };
-          self.play = function (opts) {
+          self.play = opts => {
             if (self.playing) return;
             self.connect(self.context.destination);
             self.playing = true;
             return;
           };
-          self.record = function () {};
-          self.reset = function () {
+          self.record = () => {};
+          self.reset = () => {
             self.i = self.t = 0;
           };
-          self.createSample = function (duration) {
+          self.createSample = duration => {
             self.reset();
-            var buffer = self.context.createBuffer(
+            const buffer = self.context.createBuffer(
               1,
               duration,
               self.context.sampleRate
             );
-            var blob = buffer.getChannelData(0);
+            const blob = buffer.getChannelData(0);
             self.tick(blob);
             return buffer;
           };
           return self;
         };
         function mergeArgs(opts, args) {
-          Object.keys(opts || {}).forEach(function (key) {
+          Object.keys(opts || {}).forEach(key => {
             args[key] = opts[key];
           });
-          return Object.keys(args).reduce(function (acc, key) {
-            var dash = key.length === 1 ? "-" : "--";
+          return Object.keys(args).reduce((acc, key) => {
+            const dash = key.length === 1 ? "-" : "--";
             return acc.concat(dash + key, args[key]);
           }, []);
         }
         function signed(n) {
           if (isNaN(n)) return 0;
-          var b = Math.pow(2, 15);
+          const b = 2 ** 15;
           return n > 0
             ? Math.min(b - 1, Math.floor(b * n - 1))
             : Math.max(-b, Math.ceil(b * n - 1));
@@ -588,11 +603,11 @@ require = (function e(t, n, r) {
       {},
     ],
     10: [
-      function (require, module, exports) {
-        var gus = require("jgauss");
-        var oz = require("oscillators");
-        var sqrtau = Math.sqrt(Math.PI * 2);
-        var defs = {};
+      (require, module, exports) => {
+        const gus = require("jgauss");
+        const oz = require("oscillators");
+        const sqrtau = Math.sqrt(Math.PI * 2);
+        const defs = {};
         defs.m = 1 / 12;
         defs.f = 440;
         defs.wave = "sine";
@@ -602,20 +617,20 @@ require = (function e(t, n, r) {
           if (typeof opts == "number") {
             opts = { f: opts };
           }
-          for (var i in defs) {
+          for (const i in defs) {
             if (!opts[i]) opts[i] = defs[i];
           }
           return new chimera(opts);
           function chimera(opts) {
-            for (var i in opts) this[i] = opts[i];
+            for (const i in opts) this[i] = opts[i];
             this.ring = function (t, u, s) {
-              var x = 1,
-                y = 0;
+              let x = 1;
+              let y = 0;
               u = u || 0;
               s = s || 1;
               while (x <= s * 4.67 - 1) {
                 y += oz[this.wave](t, this.f * x) * gus.general(x - 1, u, s);
-                x *= Math.pow(2, this.m);
+                x *= 2 ** this.m;
               }
               return y;
             };
@@ -625,12 +640,12 @@ require = (function e(t, n, r) {
       { jgauss: 11, oscillators: 15 },
     ],
     11: [
-      function (require, module, exports) {
-        var sqrtau = Math.sqrt(Math.PI * 2);
+      (require, module, exports) => {
+        const sqrtau = Math.sqrt(Math.PI * 2);
         module.exports.standard = standard;
         module.exports.general = general;
         function standard(x) {
-          return Math.pow(Math.E, -(1 / 2) * Math.pow(x, 2)) / sqrtau;
+          return Math.E ** (-(1 / 2) * (x ** 2)) / sqrtau;
         }
         function general(x, u, s) {
           return (1 / s) * standard((x - u) / s);
@@ -639,9 +654,9 @@ require = (function e(t, n, r) {
       {},
     ],
     12: [
-      function (require, module, exports) {
-        module.exports = function (pts) {
-          return function (t) {
+      (require, module, exports) => {
+        module.exports = pts => {
+          return t => {
             for (var a = pts; a.length > 1; a = b) {
               for (var i = 0, b = [], j; i < a.length - 1; i++) {
                 for (b[i] = [], j = 1; j < a[i].length; j++) {
@@ -656,38 +671,38 @@ require = (function e(t, n, r) {
       {},
     ],
     13: [
-      function (require, module, exports) {
-        var amod = require("./amod.js");
-        var tnorm = require("normalize-time");
-        module.exports = function (pts, durs) {
+      (require, module, exports) => {
+        const amod = require("./amod.js");
+        const tnorm = require("normalize-time");
+        module.exports = (pts, durs) => {
           pts = pts.map(amod);
-          var t = 0;
-          var totalDuration = durs.reduce(function (e, i) {
+          const t = 0;
+          const totalDuration = durs.reduce((e, i) => {
             return e + i;
           }, 0);
-          var tdNormFN = tnorm(t, totalDuration);
-          var s = 0;
-          var end = t + totalDuration;
-          var durFNS = durs.map(function (e, i) {
-            var x = tnorm(t + s, e);
+          const tdNormFN = tnorm(t, totalDuration);
+          let s = 0;
+          const end = t + totalDuration;
+          const durFNS = durs.map((e, i) => {
+            const x = tnorm(t + s, e);
             s += e;
             return x;
           });
-          var dp = 0;
-          var durpercent = durs.map(function (e, i) {
-            var x = e / totalDuration + dp;
+          let dp = 0;
+          const durpercent = durs.map((e, i) => {
+            const x = e / totalDuration + dp;
             dp += e / totalDuration;
             return x;
           });
-          var tn,
-            n,
-            i,
-            v = 0,
-            fn = 0;
-          var envelope = function (t) {
+          let tn;
+          let n;
+          let i;
+          let v = 0;
+          let fn = 0;
+          const envelope = t => {
             tn = tdNormFN(t);
             if (0 > tn || tn > 1) return 0;
-            fn = durpercent.reduce(function (p, e, i, d) {
+            fn = durpercent.reduce((p, e, i, d) => {
               return (d[i - 1] || 0) <= tn && tn <= e ? i : p;
             }, 0);
             v = pts[fn](durFNS[fn](t));
@@ -706,18 +721,18 @@ require = (function e(t, n, r) {
       { "./amod.js": 12, "normalize-time": 14 },
     ],
     14: [
-      function (require, module, exports) {
-        module.exports = function (start, dur, min, max) {
+      (require, module, exports) => {
+        module.exports = (start, dur, min, max) => {
           if (!min) min = 0;
           if (!max) max = 1;
-          var end = start + dur;
-          var d = end - start;
-          var r = max - min;
-          return function (time) {
+          const end = start + dur;
+          const d = end - start;
+          const r = max - min;
+          return time => {
             x = min + ((time - start) * r) / d;
             if (x > 1) {
               if (time < end)
-                x = Number("." + x.toString().split(".").join(""));
+                x = Number(`.${x.toString().split(".").join("")}`);
             }
             return x;
           };
@@ -726,9 +741,9 @@ require = (function e(t, n, r) {
       {},
     ],
     15: [
-      function (require, module, exports) {
-        var OZ = module.exports;
-        var tau = Math.PI * 2;
+      (require, module, exports) => {
+        const OZ = module.exports;
+        const tau = Math.PI * 2;
         OZ.sine = sine;
         OZ.saw = saw;
         OZ.saw_i = saw_i;
@@ -739,20 +754,20 @@ require = (function e(t, n, r) {
           return Math.sin(t * tau * f);
         }
         function saw(t, f) {
-          var n = ((t % (1 / f)) * f) % 1;
+          const n = ((t % (1 / f)) * f) % 1;
           return -1 + 2 * n;
         }
         function saw_i(t, f) {
-          var n = ((t % (1 / f)) * f) % 1;
+          const n = ((t % (1 / f)) * f) % 1;
           return 1 - 2 * n;
         }
         function triangle(t, f) {
-          var n = ((t % (1 / f)) * f) % 1;
+          const n = ((t % (1 / f)) * f) % 1;
           return n < 0.5 ? -1 + 2 * (2 * n) : 1 - 2 * (2 * n);
         }
         function triangle_s(t, f) {
-          var n = ((t % (1 / f)) * f) % 1;
-          var s = Math.abs(Math.sin(t));
+          const n = ((t % (1 / f)) * f) % 1;
+          const s = Math.abs(Math.sin(t));
           return n < s ? -1 + 2 * (2 * (n / s)) : 1 - 2 * (2 * (n / s));
         }
         function square(t, f) {
@@ -762,10 +777,9 @@ require = (function e(t, n, r) {
       {},
     ],
     16: [
-      function (require, module, exports) {
+      (require, module, exports) => {
         (function teoriaScope() {
-          "use strict";
-          var teoria = {};
+          const teoria = {};
           function add(note, interval) {
             return [note[0] + interval[0], note[1] + interval[1]];
           }
@@ -780,7 +794,7 @@ require = (function e(t, n, r) {
           function sum(coord) {
             return coord[0] + coord[1];
           }
-          var notes = {
+          const notes = {
             c: [0, 0],
             d: [-1, 2],
             e: [-2, 4],
@@ -790,7 +804,7 @@ require = (function e(t, n, r) {
             b: [-2, 5],
             h: [-2, 5],
           };
-          var intervals = {
+          const intervals = {
             unison: [0, 0],
             second: [3, -5],
             third: [2, -3],
@@ -800,7 +814,7 @@ require = (function e(t, n, r) {
             seventh: [2, -2],
             octave: [1, 0],
           };
-          var intervalFromFifth = [
+          const intervalFromFifth = [
             "second",
             "sixth",
             "third",
@@ -809,7 +823,7 @@ require = (function e(t, n, r) {
             "unison",
             "fifth",
           ];
-          var intervalsIndex = [
+          const intervalsIndex = [
             "unison",
             "second",
             "third",
@@ -826,11 +840,11 @@ require = (function e(t, n, r) {
             "fourteenth",
             "fifteenth",
           ];
-          var fifths = ["f", "c", "g", "d", "a", "e", "b"];
-          var accidentals = ["bb", "b", "", "#", "x"];
-          var sharp = [-4, 7];
-          var A4 = add(notes.a, [4, 0]);
-          var kDurations = {
+          const fifths = ["f", "c", "g", "d", "a", "e", "b"];
+          const accidentals = ["bb", "b", "", "#", "x"];
+          const sharp = [-4, 7];
+          const A4 = add(notes.a, [4, 0]);
+          const kDurations = {
             0.25: "longa",
             0.5: "breve",
             1: "whole",
@@ -842,7 +856,7 @@ require = (function e(t, n, r) {
             64: "sixty-fourth",
             128: "hundred-twenty-eighth",
           };
-          var kQualityLong = {
+          const kQualityLong = {
             P: "perfect",
             M: "major",
             m: "minor",
@@ -851,11 +865,11 @@ require = (function e(t, n, r) {
             d: "diminished",
             dd: "doubly diminished",
           };
-          var kAlterations = {
+          const kAlterations = {
             perfect: ["dd", "d", "P", "A", "AA"],
             minor: ["dd", "d", "m", "M", "A", "AA"],
           };
-          var kSymbols = {
+          const kSymbols = {
             min: ["m3", "P5"],
             m: ["m3", "P5"],
             "-": ["m3", "P5"],
@@ -870,7 +884,7 @@ require = (function e(t, n, r) {
             ø: ["m3", "d5", "m7"],
             5: ["P5"],
           };
-          var kChordShort = {
+          const kChordShort = {
             major: "M",
             minor: "m",
             augmented: "aug",
@@ -879,7 +893,7 @@ require = (function e(t, n, r) {
             power: "5",
             dominant: "7",
           };
-          var kStepNumber = {
+          const kStepNumber = {
             unison: 1,
             first: 1,
             second: 2,
@@ -893,7 +907,7 @@ require = (function e(t, n, r) {
             eleventh: 11,
             thirteenth: 13,
           };
-          var kIntervalSolfege = {
+          const kIntervalSolfege = {
             dd1: "daw",
             d1: "de",
             P1: "do",
@@ -939,41 +953,43 @@ require = (function e(t, n, r) {
             }
             return str;
           }
-          teoria.note = function (name, duration) {
+          teoria.note = (name, duration) => {
             if (typeof name === "string")
               return teoria.note.fromString(name, duration);
             else return new TeoriaNote(name, duration);
           };
-          teoria.note.fromKey = function (key) {
-            var octave = Math.floor((key - 4) / 12);
-            var distance = key - octave * 12 - 4;
-            var name = fifths[(2 * Math.round(distance / 2) + 1) % 7];
-            var note = add(sub(notes[name], A4), [octave + 1, 0]);
-            var diff = key - 49 - sum(mul(note, [12, 7]));
+          teoria.note.fromKey = key => {
+            const octave = Math.floor((key - 4) / 12);
+            const distance = key - octave * 12 - 4;
+            const name = fifths[(2 * Math.round(distance / 2) + 1) % 7];
+            const note = add(sub(notes[name], A4), [octave + 1, 0]);
+            const diff = key - 49 - sum(mul(note, [12, 7]));
             return teoria.note(diff ? add(note, mul(sharp, diff)) : note);
           };
-          teoria.note.fromFrequency = function (fq, concertPitch) {
-            var key, cents, originalFq;
+          teoria.note.fromFrequency = (fq, concertPitch) => {
+            let key;
+            let cents;
+            let originalFq;
             concertPitch = concertPitch || 440;
             key =
               49 + 12 * ((Math.log(fq) - Math.log(concertPitch)) / Math.log(2));
             key = Math.round(key);
-            originalFq = concertPitch * Math.pow(2, (key - 49) / 12);
+            originalFq = concertPitch * (2 ** ((key - 49) / 12));
             cents = 1200 * (Math.log(fq / originalFq) / Math.log(2));
-            return { note: teoria.note.fromKey(key), cents: cents };
+            return { note: teoria.note.fromKey(key), cents };
           };
-          teoria.note.fromMIDI = function (note) {
+          teoria.note.fromMIDI = note => {
             return teoria.note.fromKey(note - 20);
           };
-          teoria.note.fromString = function (name, dur) {
-            var scientific = /^([a-h])(x|#|bb|b?)(-?\d*)/i,
-              helmholtz = /^([a-h])(x|#|bb|b?)([,\']*)$/i,
-              parser,
-              noteName,
-              octave,
-              accidental,
-              note,
-              lower;
+          teoria.note.fromString = (name, dur) => {
+            const scientific = /^([a-h])(x|#|bb|b?)(-?\d*)/i;
+            const helmholtz = /^([a-h])(x|#|bb|b?)([,\']*)$/i;
+            let parser;
+            let noteName;
+            let octave;
+            let accidental;
+            let note;
+            let lower;
             parser = name.match(scientific);
             if (parser && name === parser[0] && parser[3].length) {
               noteName = parser[1];
@@ -1000,9 +1016,10 @@ require = (function e(t, n, r) {
             note = add(note, mul(sharp, accidentals.indexOf(accidental) - 2));
             return new TeoriaNote(sub(note, A4), dur);
           };
-          teoria.chord = function (name, symbol) {
+          teoria.chord = (name, symbol) => {
             if (typeof name === "string") {
-              var root, octave;
+              let root;
+              let octave;
               root = name.match(/^([a-h])(x|#|bb|b?)/i);
               if (root && root[0]) {
                 octave = typeof symbol === "number" ? symbol.toString(10) : "4";
@@ -1015,7 +1032,7 @@ require = (function e(t, n, r) {
               return new TeoriaChord(name, symbol);
             throw new Error("Invalid Chord. Couldn't find note name");
           };
-          teoria.interval = function (from, to) {
+          teoria.interval = (from, to) => {
             if (typeof from === "string") return teoria.interval.toCoord(from);
             if (typeof to === "string" && from instanceof TeoriaNote)
               return teoria.interval.from(from, teoria.interval.toCoord(to));
@@ -1025,18 +1042,18 @@ require = (function e(t, n, r) {
               return teoria.interval.between(from, to);
             throw new Error("Invalid parameters");
           };
-          teoria.interval.toCoord = function (simple) {
-            var pattern = /^(AA|A|P|M|m|d|dd)(-?\d+)$/,
-              parser,
-              number,
-              coord,
-              quality,
-              lower,
-              octaves,
-              base,
-              type,
-              alt,
-              down;
+          teoria.interval.toCoord = simple => {
+            const pattern = /^(AA|A|P|M|m|d|dd)(-?\d+)$/;
+            let parser;
+            let number;
+            let coord;
+            let quality;
+            let lower;
+            let octaves;
+            let base;
+            let type;
+            let alt;
+            let down;
             parser = simple.match(pattern);
             if (!parser) throw new Error("Invalid simple format interval");
             quality = parser[1];
@@ -1059,116 +1076,129 @@ require = (function e(t, n, r) {
             coord = down ? mul(coord, -1) : coord;
             return new TeoriaInterval(coord);
           };
-          teoria.interval.from = function (from, to) {
-            return new TeoriaNote(add(from.coord, to.coord));
+          teoria.interval.from = ({coord}, {coord}) => {
+            return new TeoriaNote(add(coord, coord));
           };
-          teoria.interval.between = function (from, to) {
-            return new TeoriaInterval(sub(to.coord, from.coord));
+          teoria.interval.between = ({coord}, {coord}) => {
+            return new TeoriaInterval(sub(coord, coord));
           };
-          teoria.interval.invert = function (sInterval) {
+          teoria.interval.invert = sInterval => {
             return teoria.interval(sInterval).invert().toString();
           };
-          teoria.scale = function (tonic, scale) {
+          teoria.scale = (tonic, scale) => {
             if (!(tonic instanceof TeoriaNote)) tonic = teoria.note(tonic);
             return new TeoriaScale(tonic, scale);
           };
           teoria.scale.scales = {};
-          function TeoriaNote(coord, duration) {
-            duration = duration || {};
-            this.duration = {
-              value: duration.value || 4,
-              dots: duration.dots || 0,
-            };
-            this.coord = coord;
-          }
-          TeoriaNote.prototype = {
-            octave: function () {
+
+          class TeoriaNote {
+            constructor(coord, duration = {}) {
+              this.duration = {
+                value: duration.value || 4,
+                dots: duration.dots || 0,
+              };
+              this.coord = coord;
+            }
+
+            octave() {
               return (
                 this.coord[0] +
                 A4[0] -
                 notes[this.name()][0] +
                 this.accidentalValue() * 4
               );
-            },
-            name: function () {
+            }
+
+            name() {
               return fifths[
                 this.coord[1] + A4[1] - this.accidentalValue() * 7 + 1
               ];
-            },
-            accidentalValue: function () {
+            }
+
+            accidentalValue() {
               return Math.round((this.coord[1] + A4[1] - 2) / 7);
-            },
-            accidental: function () {
+            }
+
+            accidental() {
               return accidentals[this.accidentalValue() + 2];
-            },
-            key: function (white) {
+            }
+
+            key(white) {
               if (white) return this.coord[0] * 7 + this.coord[1] * 4 + 29;
               else return this.coord[0] * 12 + this.coord[1] * 7 + 49;
-            },
-            midi: function () {
+            }
+
+            midi() {
               return this.key() + 20;
-            },
-            fq: function (concertPitch) {
-              concertPitch = concertPitch || 440;
-              return (
-                concertPitch *
-                Math.pow(2, (this.coord[0] * 12 + this.coord[1] * 7) / 12)
-              );
-            },
-            chroma: function () {
-              var value = (sum(mul(this.coord, [12, 7])) - 3) % 12;
+            }
+
+            fq(concertPitch = 440) {
+              return concertPitch *
+              (2 ** ((this.coord[0] * 12 + this.coord[1] * 7) / 12));
+            }
+
+            chroma() {
+              const value = (sum(mul(this.coord, [12, 7])) - 3) % 12;
               return value < 0 ? value + 12 : value;
-            },
-            scale: function (scale) {
+            }
+
+            scale(scale) {
               return teoria.scale(this, scale);
-            },
-            interval: function (interval) {
+            }
+
+            interval(interval) {
               return teoria.interval(this, interval);
-            },
-            transpose: function (interval) {
-              var note = teoria.interval(this, interval);
+            }
+
+            transpose(interval) {
+              const note = teoria.interval(this, interval);
               this.coord = note.coord;
               return this;
-            },
-            chord: function (chord) {
+            }
+
+            chord(chord) {
               chord = chord in kChordShort ? kChordShort[chord] : chord;
               return new TeoriaChord(this, chord);
-            },
-            helmholtz: function () {
-              var octave = this.octave();
-              var name = this.name();
+            }
+
+            helmholtz() {
+              const octave = this.octave();
+              let name = this.name();
               name = octave < 3 ? name.toUpperCase() : name.toLowerCase();
-              var padchar = octave < 3 ? "," : "'";
-              var padcount = octave < 2 ? 2 - octave : octave - 3;
+              const padchar = octave < 3 ? "," : "'";
+              const padcount = octave < 2 ? 2 - octave : octave - 3;
               return pad(name + this.accidental(), padchar, padcount);
-            },
-            scientific: function () {
+            }
+
+            scientific() {
               return (
                 this.name().toUpperCase() + this.accidental() + this.octave()
               );
-            },
-            enharmonics: function (oneaccidental) {
-              var key = this.key(),
-                limit = oneaccidental ? 2 : 3;
+            }
+
+            enharmonics(oneaccidental) {
+              const key = this.key();
+              const limit = oneaccidental ? 2 : 3;
               return ["m3", "m2", "m-2", "m-3"]
                 .map(this.interval.bind(this))
-                .filter(function (note) {
-                  var acc = note.accidentalValue();
-                  var diff = key - (note.key() - acc);
+                .filter(note => {
+                  const acc = note.accidentalValue();
+                  const diff = key - (note.key() - acc);
                   if (diff < limit && diff > -limit) {
                     note.coord = add(note.coord, mul(sharp, diff - acc));
                     return true;
                   }
                 });
-            },
-            solfege: function (scale, showOctaves) {
+            }
+
+            solfege(scale, showOctaves) {
               if (!(scale instanceof TeoriaScale)) {
                 throw new Error("Invalid Scale");
               }
-              var interval = scale.tonic.interval(this),
-                solfege,
-                stroke,
-                count;
+              let interval = scale.tonic.interval(this);
+              let solfege;
+              let stroke;
+              let count;
               if (interval.direction() === "down") interval = interval.invert();
               if (showOctaves) {
                 count = (this.key(true) - scale.tonic.key(true)) / 7;
@@ -1179,16 +1209,19 @@ require = (function e(t, n, r) {
               return showOctaves
                 ? pad(solfege, stroke, Math.abs(count))
                 : solfege;
-            },
-            durationName: function () {
+            }
+
+            durationName() {
               return kDurations[this.duration.value];
-            },
-            durationInSeconds: function (bpm, beatUnit) {
-              var secs = 60 / bpm / (this.duration.value / 4) / (beatUnit / 4);
-              return secs * 2 - secs / Math.pow(2, this.duration.dots);
-            },
-            scaleDegree: function (scale) {
-              var inter = scale.tonic.interval(this);
+            }
+
+            durationInSeconds(bpm, beatUnit) {
+              const secs = 60 / bpm / (this.duration.value / 4) / (beatUnit / 4);
+              return secs * 2 - secs / (2 ** this.duration.dots);
+            }
+
+            scaleDegree(scale) {
+              let inter = scale.tonic.interval(this);
               if (
                 inter.direction() === "down" ||
                 (inter.coord[1] === 0 && inter.coord[0] !== 0)
@@ -1196,74 +1229,88 @@ require = (function e(t, n, r) {
                 inter = inter.invert();
               }
               inter = inter.simple(true).coord;
-              return scale.scale.reduce(function (index, current, i) {
-                var coord = teoria.interval(current).coord;
+              return scale.scale.reduce((index, current, i) => {
+                const coord = teoria.interval(current).coord;
                 return coord[0] === inter[0] && coord[1] === inter[1]
                   ? i + 1
                   : index;
               }, 0);
-            },
-            toString: function (dont) {
+            }
+
+            toString(dont) {
               return (
                 this.name() + this.accidental() + (dont ? "" : this.octave())
               );
-            },
-          };
-          function TeoriaInterval(coord) {
-            this.coord = coord;
+            }
           }
-          TeoriaInterval.prototype = {
-            name: function () {
+
+          class TeoriaInterval {
+            constructor(coord) {
+              this.coord = coord;
+            }
+
+            name() {
               return intervalsIndex[this.number() - 1];
-            },
-            semitones: function () {
+            }
+
+            semitones() {
               return sum(mul(this.coord, [12, 7]));
-            },
-            number: function () {
+            }
+
+            number() {
               return Math.abs(this.value());
-            },
-            value: function () {
-              var without = sub(
+            }
+
+            value() {
+              const without = sub(
                   this.coord,
                   mul(sharp, Math.floor((this.coord[1] - 2) / 7) + 1)
-                ),
-                i,
-                val;
+                );
+
+              let i;
+              let val;
               i = intervalFromFifth[without[1] + 5];
               val = kStepNumber[i] + (without[0] - intervals[i][0]) * 7;
               return val > 0 ? val : val - 2;
-            },
-            type: function () {
+            }
+
+            type() {
               return intervals[this.base()][0] <= 1 ? "perfect" : "minor";
-            },
-            base: function () {
-              var fifth = sub(this.coord, mul(sharp, this.qualityValue()))[1],
-                name;
+            }
+
+            base() {
+              let fifth = sub(this.coord, mul(sharp, this.qualityValue()))[1];
+              let name;
               fifth = this.value() > 0 ? fifth + 5 : -(fifth - 5) % 7;
               fifth = fifth < 0 ? intervalFromFifth.length + fifth : fifth;
               name = intervalFromFifth[fifth];
               if (name === "unison" && this.number() >= 8) name = "octave";
               return name;
-            },
-            direction: function (dir) {
+            }
+
+            direction(dir) {
               if (dir) {
-                var is = this.value() >= 1 ? "up" : "down";
+                const is = this.value() >= 1 ? "up" : "down";
                 if (is !== dir) this.coord = mul(this.coord, -1);
                 return this;
               } else return this.value() >= 1 ? "up" : "down";
-            },
-            simple: function (ignore) {
-              var simple = intervals[this.base()];
+            }
+
+            simple(ignore) {
+              let simple = intervals[this.base()];
               simple = add(simple, mul(sharp, this.qualityValue()));
               if (!ignore)
                 simple = this.direction() === "down" ? mul(simple, -1) : simple;
               return new TeoriaInterval(simple);
-            },
-            isCompound: function () {
+            }
+
+            isCompound() {
               return this.number() > 8;
-            },
-            octaves: function () {
-              var without, octaves;
+            }
+
+            octaves() {
+              let without;
+              let octaves;
               if (this.direction() === "up") {
                 without = sub(this.coord, mul(sharp, this.qualityValue()));
                 octaves = without[0] - intervals[this.base()][0];
@@ -1272,305 +1319,315 @@ require = (function e(t, n, r) {
                 octaves = -(without[0] + intervals[this.base()][0]);
               }
               return octaves;
-            },
-            invert: function () {
-              var i = this.base();
-              var qual = this.qualityValue();
-              var acc = this.type() === "minor" ? -(qual - 1) : -qual;
-              var coord = intervals[intervalsIndex[9 - kStepNumber[i] - 1]];
+            }
+
+            invert() {
+              const i = this.base();
+              const qual = this.qualityValue();
+              const acc = this.type() === "minor" ? -(qual - 1) : -qual;
+              let coord = intervals[intervalsIndex[9 - kStepNumber[i] - 1]];
               coord = add(coord, mul(sharp, acc));
               return new TeoriaInterval(coord);
-            },
-            quality: function (lng) {
-              var quality = kAlterations[this.type()][this.qualityValue() + 2];
+            }
+
+            quality(lng) {
+              const quality = kAlterations[this.type()][this.qualityValue() + 2];
               return lng ? kQualityLong[quality] : quality;
-            },
-            qualityValue: function () {
+            }
+
+            qualityValue() {
               if (this.direction() === "down")
                 return Math.floor((-this.coord[1] - 2) / 7) + 1;
               else return Math.floor((this.coord[1] - 2) / 7) + 1;
-            },
-            equal: function (interval) {
-              return (
-                this.coord[0] === interval.coord[0] &&
-                this.coord[1] === interval.coord[1]
-              );
-            },
-            greater: function (interval) {
-              var semi = this.semitones();
-              var isemi = interval.semitones();
+            }
+
+            equal({coord}) {
+              return this.coord[0] === coord[0] &&
+              this.coord[1] === coord[1];
+            }
+
+            greater(interval) {
+              const semi = this.semitones();
+              const isemi = interval.semitones();
               return semi === isemi
                 ? this.number() > interval.number()
                 : semi > isemi;
-            },
-            smaller: function (interval) {
+            }
+
+            smaller(interval) {
               return !this.equal(interval) && !this.greater(interval);
-            },
-            add: function (interval) {
-              return new TeoriaInterval(add(this.coord, interval.coord));
-            },
-            toString: function (ignore) {
-              var number = ignore ? this.number() : this.value();
+            }
+
+            add({coord}) {
+              return new TeoriaInterval(add(this.coord, coord));
+            }
+
+            toString(ignore) {
+              const number = ignore ? this.number() : this.value();
               return this.quality() + number;
-            },
-          };
-          function TeoriaChord(root, name) {
-            name = name || "";
-            this.name = root.name().toUpperCase() + root.accidental() + name;
-            this.symbol = name;
-            this.root = root;
-            this.intervals = [];
-            this._voicing = [];
-            var i,
-              length,
-              c,
-              shortQ,
-              parsing = "quality",
-              additionals = [],
-              notes = ["P1", "M3", "P5", "m7", "M9", "P11", "M13"],
-              chordLength = 2,
-              bass,
-              symbol;
-            function setChord(intervals) {
-              for (var n = 0, chordl = intervals.length; n < chordl; n++) {
-                notes[n + 1] = intervals[n];
-              }
-              chordLength = intervals.length;
-            }
-            name = name.replace(/[,\s\(\)]/g, "");
-            bass = name.split("/");
-            if (bass.length === 2) {
-              name = bass[0];
-              bass = bass[1];
-            } else {
-              bass = null;
-            }
-            for (i = 0, length = name.length; i < length; i++) {
-              if (!(c = name[i])) {
-                break;
-              }
-              switch (parsing) {
-                case "quality":
-                  shortQ =
-                    i + 3 <= length ? name.substr(i, 3).toLowerCase() : null;
-                  symbol = shortQ in kSymbols ? shortQ : c in kSymbols ? c : "";
-                  setChord(kSymbols[symbol]);
-                  i += symbol.length - 1;
-                  parsing = "extension";
-                  break;
-                case "extension":
-                  c =
-                    c === "1" && name[i + 1]
-                      ? parseFloat(name.substr(i, 2))
-                      : parseFloat(c);
-                  if (!isNaN(c) && c !== 6) {
-                    chordLength = (c - 1) / 2;
-                    if (chordLength !== Math.round(chordLength)) {
-                      throw new Error(
-                        "Invalid interval extension: " + c.toString(10)
-                      );
-                    }
-                    if (symbol === "o" || symbol === "dim") {
-                      notes[3] = "d7";
-                    }
-                    i += String(c).length - 1;
-                  } else if (c === 6) {
-                    notes[3] = "M6";
-                    chordLength = chordLength < 3 ? 3 : chordLength;
-                  } else {
-                    i -= 1;
-                  }
-                  parsing = "alterations";
-                  break;
-                case "alterations":
-                  var alterations = name
-                      .substr(i)
-                      .split(/(#|b|add|maj|sus|M)/i),
-                    next,
-                    flat = false,
-                    sharp = false;
-                  if (alterations.length === 1) {
-                    throw new Error("Invalid alterations");
-                  } else if (alterations[0].length !== 0) {
-                    throw new Error("Invalid token: '" + alterations[0] + "'");
-                  }
-                  for (
-                    var a = 1, aLength = alterations.length;
-                    a < aLength;
-                    a++
-                  ) {
-                    next = alterations[a + 1];
-                    switch (alterations[a]) {
-                      case "M":
-                      case "Maj":
-                      case "maj":
-                        chordLength = chordLength < 3 ? 3 : chordLength;
-                        if (next === "7") {
-                          a++;
-                        }
-                        notes[3] = "M7";
-                        break;
-                      case "Sus":
-                      case "sus":
-                        var type = "P4";
-                        if (next === "2" || next === "4") {
-                          a++;
-                          if (next === "2") {
-                            type = "M2";
-                          }
-                        }
-                        notes[1] = type;
-                        break;
-                      case "Add":
-                      case "add":
-                        if (next && !isNaN(+next)) {
-                          if (next === "9") {
-                            additionals.push("M9");
-                          } else if (next === "11") {
-                            additionals.push("P11");
-                          } else if (next === "13") {
-                            additionals.push("M13");
-                          }
-                          a += next.length;
-                        }
-                        break;
-                      case "b":
-                        flat = true;
-                        break;
-                      case "#":
-                        sharp = true;
-                        break;
-                      default:
-                        if (alterations[a].length === 0) {
-                          break;
-                        }
-                        var token = +alterations[a],
-                          quality,
-                          intPos;
-                        if (
-                          isNaN(token) ||
-                          String(token).length !== alterations[a].length
-                        ) {
-                          throw new Error(
-                            "Invalid token: '" + alterations[a] + "'"
-                          );
-                        }
-                        if (token === 6) {
-                          if (sharp) {
-                            notes[3] = "A6";
-                          } else if (flat) {
-                            notes[3] = "m6";
-                          } else {
-                            notes[3] = "M6";
-                          }
-                          chordLength = chordLength < 3 ? 3 : chordLength;
-                          continue;
-                        }
-                        intPos = (token - 1) / 2;
-                        if (chordLength < intPos) {
-                          chordLength = intPos;
-                        }
-                        if (
-                          token < 5 ||
-                          token === 7 ||
-                          intPos !== Math.round(intPos)
-                        ) {
-                          throw new Error(
-                            "Invalid interval alteration: " + token
-                          );
-                        }
-                        quality = notes[intPos][0];
-                        if (sharp) {
-                          if (quality === "d") {
-                            quality = "m";
-                          } else if (quality === "m") {
-                            quality = "M";
-                          } else if (quality === "M" || quality === "P") {
-                            quality = "A";
-                          }
-                        } else if (flat) {
-                          if (quality === "A") {
-                            quality = "M";
-                          } else if (quality === "M") {
-                            quality = "m";
-                          } else if (quality === "m" || quality === "P") {
-                            quality = "d";
-                          }
-                        }
-                        sharp = flat = false;
-                        notes[intPos] = quality + token;
-                        break;
-                    }
-                  }
-                  parsing = "ended";
-                  break;
-              }
-              if (parsing === "ended") {
-                break;
-              }
-            }
-            if (bass && bass === "9") {
-              additionals.push("M9");
-              bass = null;
-            }
-            this.intervals = notes
-              .slice(0, chordLength + 1)
-              .concat(additionals)
-              .map(function (i) {
-                return teoria.interval(i);
-              });
-            for (i = 0, length = this.intervals.length; i < length; i++) {
-              this._voicing[i] = this.intervals[i];
-            }
-            if (bass) {
-              var intervals = this.intervals,
-                bassInterval,
-                note;
-              note = teoria.note(bass + (root.octave() + 1));
-              bassInterval = teoria.interval.between(root, note);
-              bass = bassInterval.simple();
-              bassInterval = bassInterval.invert();
-              bassInterval.direction("down");
-              this._voicing = [bassInterval];
-              for (i = 0; i < length; i++) {
-                if (intervals[i].simple().equal(bass)) continue;
-                this._voicing.push(intervals[i]);
-              }
             }
           }
-          TeoriaChord.prototype = {
-            notes: function () {
-              var voicing = this.voicing(),
-                notes = [];
-              for (var i = 0, length = voicing.length; i < length; i++) {
+
+          class TeoriaChord {
+            constructor(root, name = "") {
+              this.name = root.name().toUpperCase() + root.accidental() + name;
+              this.symbol = name;
+              this.root = root;
+              this.intervals = [];
+              this._voicing = [];
+              let i;
+              let length;
+              let c;
+              let shortQ;
+              let parsing = "quality";
+              const additionals = [];
+              const notes = ["P1", "M3", "P5", "m7", "M9", "P11", "M13"];
+              let chordLength = 2;
+              let bass;
+              let symbol;
+              function setChord(intervals) {
+                for (let n = 0, chordl = intervals.length; n < chordl; n++) {
+                  notes[n + 1] = intervals[n];
+                }
+                chordLength = intervals.length;
+              }
+              name = name.replace(/[,\s\(\)]/g, "");
+              bass = name.split("/");
+              if (bass.length === 2) {
+                name = bass[0];
+                bass = bass[1];
+              } else {
+                bass = null;
+              }
+              for (i = 0, length = name.length; i < length; i++) {
+                if (!(c = name[i])) {
+                  break;
+                }
+                switch (parsing) {
+                  case "quality":
+                    shortQ =
+                      i + 3 <= length ? name.substr(i, 3).toLowerCase() : null;
+                    symbol = shortQ in kSymbols ? shortQ : c in kSymbols ? c : "";
+                    setChord(kSymbols[symbol]);
+                    i += symbol.length - 1;
+                    parsing = "extension";
+                    break;
+                  case "extension":
+                    c =
+                      c === "1" && name[i + 1]
+                        ? parseFloat(name.substr(i, 2))
+                        : parseFloat(c);
+                    if (!isNaN(c) && c !== 6) {
+                      chordLength = (c - 1) / 2;
+                      if (chordLength !== Math.round(chordLength)) {
+                        throw new Error(
+                          `Invalid interval extension: ${c.toString(10)}`
+                        );
+                      }
+                      if (symbol === "o" || symbol === "dim") {
+                        notes[3] = "d7";
+                      }
+                      i += String(c).length - 1;
+                    } else if (c === 6) {
+                      notes[3] = "M6";
+                      chordLength = chordLength < 3 ? 3 : chordLength;
+                    } else {
+                      i -= 1;
+                    }
+                    parsing = "alterations";
+                    break;
+                  case "alterations":
+                    const alterations = name
+                        .substr(i)
+                        .split(/(#|b|add|maj|sus|M)/i);
+
+                    let next;
+                    let flat = false;
+                    let sharp = false;
+                    if (alterations.length === 1) {
+                      throw new Error("Invalid alterations");
+                    } else if (alterations[0].length !== 0) {
+                      throw new Error(`Invalid token: '${alterations[0]}'`);
+                    }
+                    for (
+                      let a = 1, aLength = alterations.length;
+                      a < aLength;
+                      a++
+                    ) {
+                      next = alterations[a + 1];
+                      switch (alterations[a]) {
+                        case "M":
+                        case "Maj":
+                        case "maj":
+                          chordLength = chordLength < 3 ? 3 : chordLength;
+                          if (next === "7") {
+                            a++;
+                          }
+                          notes[3] = "M7";
+                          break;
+                        case "Sus":
+                        case "sus":
+                          let type = "P4";
+                          if (next === "2" || next === "4") {
+                            a++;
+                            if (next === "2") {
+                              type = "M2";
+                            }
+                          }
+                          notes[1] = type;
+                          break;
+                        case "Add":
+                        case "add":
+                          if (next && !isNaN(+next)) {
+                            if (next === "9") {
+                              additionals.push("M9");
+                            } else if (next === "11") {
+                              additionals.push("P11");
+                            } else if (next === "13") {
+                              additionals.push("M13");
+                            }
+                            a += next.length;
+                          }
+                          break;
+                        case "b":
+                          flat = true;
+                          break;
+                        case "#":
+                          sharp = true;
+                          break;
+                        default:
+                          if (alterations[a].length === 0) {
+                            break;
+                          }
+                          const token = +alterations[a];
+                          let quality;
+                          let intPos;
+                          if (
+                            isNaN(token) ||
+                            String(token).length !== alterations[a].length
+                          ) {
+                            throw new Error(
+                              `Invalid token: '${alterations[a]}'`
+                            );
+                          }
+                          if (token === 6) {
+                            if (sharp) {
+                              notes[3] = "A6";
+                            } else if (flat) {
+                              notes[3] = "m6";
+                            } else {
+                              notes[3] = "M6";
+                            }
+                            chordLength = chordLength < 3 ? 3 : chordLength;
+                            continue;
+                          }
+                          intPos = (token - 1) / 2;
+                          if (chordLength < intPos) {
+                            chordLength = intPos;
+                          }
+                          if (
+                            token < 5 ||
+                            token === 7 ||
+                            intPos !== Math.round(intPos)
+                          ) {
+                            throw new Error(
+                              `Invalid interval alteration: ${token}`
+                            );
+                          }
+                          quality = notes[intPos][0];
+                          if (sharp) {
+                            if (quality === "d") {
+                              quality = "m";
+                            } else if (quality === "m") {
+                              quality = "M";
+                            } else if (quality === "M" || quality === "P") {
+                              quality = "A";
+                            }
+                          } else if (flat) {
+                            if (quality === "A") {
+                              quality = "M";
+                            } else if (quality === "M") {
+                              quality = "m";
+                            } else if (quality === "m" || quality === "P") {
+                              quality = "d";
+                            }
+                          }
+                          sharp = flat = false;
+                          notes[intPos] = quality + token;
+                          break;
+                      }
+                    }
+                    parsing = "ended";
+                    break;
+                }
+                if (parsing === "ended") {
+                  break;
+                }
+              }
+              if (bass && bass === "9") {
+                additionals.push("M9");
+                bass = null;
+              }
+              this.intervals = notes
+                .slice(0, chordLength + 1)
+                .concat(additionals)
+                .map(i => {
+                  return teoria.interval(i);
+                });
+              for (i = 0, length = this.intervals.length; i < length; i++) {
+                this._voicing[i] = this.intervals[i];
+              }
+              if (bass) {
+                const intervals = this.intervals;
+                let bassInterval;
+                let note;
+                note = teoria.note(bass + (root.octave() + 1));
+                bassInterval = teoria.interval.between(root, note);
+                bass = bassInterval.simple();
+                bassInterval = bassInterval.invert();
+                bassInterval.direction("down");
+                this._voicing = [bassInterval];
+                for (i = 0; i < length; i++) {
+                  if (intervals[i].simple().equal(bass)) continue;
+                  this._voicing.push(intervals[i]);
+                }
+              }
+            }
+
+            notes() {
+              const voicing = this.voicing();
+              const notes = [];
+              for (let i = 0, length = voicing.length; i < length; i++) {
                 notes.push(teoria.interval.from(this.root, voicing[i]));
               }
               return notes;
-            },
-            voicing: function (voicing) {
+            }
+
+            voicing(voicing) {
               if (!voicing) {
                 return this._voicing;
               }
               this._voicing = [];
-              for (var i = 0, length = voicing.length; i < length; i++) {
+              for (let i = 0, length = voicing.length; i < length; i++) {
                 this._voicing[i] = teoria.interval(voicing[i]);
               }
               return this;
-            },
-            resetVoicing: function () {
+            }
+
+            resetVoicing() {
               this._voicing = this.intervals;
-            },
-            dominant: function (additional) {
-              additional = additional || "";
+            }
+
+            dominant(additional = "") {
               return new TeoriaChord(this.root.interval("P5"), additional);
-            },
-            subdominant: function (additional) {
-              additional = additional || "";
+            }
+
+            subdominant(additional = "") {
               return new TeoriaChord(this.root.interval("P4"), additional);
-            },
-            parallel: function (additional) {
-              additional = additional || "";
-              var quality = this.quality();
+            }
+
+            parallel(additional = "") {
+              const quality = this.quality();
               if (
                 this.chordType() !== "triad" ||
                 quality === "diminished" ||
@@ -1583,13 +1640,14 @@ require = (function e(t, n, r) {
               } else {
                 return new TeoriaChord(this.root.interval("m3", "up"));
               }
-            },
-            quality: function () {
-              var third,
-                fifth,
-                seventh,
-                intervals = this.intervals;
-              for (var i = 0, length = intervals.length; i < length; i++) {
+            }
+
+            quality() {
+              let third;
+              let fifth;
+              let seventh;
+              const intervals = this.intervals;
+              for (let i = 0, length = intervals.length; i < length; i++) {
                 if (intervals[i].number() === 3) {
                   third = intervals[i];
                 } else if (intervals[i].number() === 5) {
@@ -1627,14 +1685,15 @@ require = (function e(t, n, r) {
                 }
                 return "minor";
               }
-            },
-            chordType: function () {
-              var length = this.intervals.length,
-                interval,
-                has,
-                invert,
-                i,
-                name;
+            }
+
+            chordType() {
+              const length = this.intervals.length;
+              let interval;
+              let has;
+              let invert;
+              let i;
+              let name;
               if (length === 2) {
                 return "dyad";
               } else if (length === 3) {
@@ -1671,12 +1730,13 @@ require = (function e(t, n, r) {
                 }
               }
               return name || "unknown";
-            },
-            get: function (interval) {
+            }
+
+            get(interval) {
               if (typeof interval === "string" && interval in kStepNumber) {
-                var intervals = this.intervals,
-                  i,
-                  length;
+                const intervals = this.intervals;
+                let i;
+                let length;
                 interval = kStepNumber[interval];
                 for (i = 0, length = intervals.length; i < length; i++) {
                   if (intervals[i].number() === interval) {
@@ -1687,89 +1747,100 @@ require = (function e(t, n, r) {
               } else {
                 throw new Error("Invalid interval name");
               }
-            },
-            interval: function (interval) {
+            }
+
+            interval(interval) {
               return new TeoriaChord(this.root.interval(interval), this.symbol);
-            },
-            transpose: function (interval) {
+            }
+
+            transpose(interval) {
               this.root.transpose(interval);
               this.name =
                 this.root.name().toUpperCase() +
                 this.root.accidental() +
                 this.symbol;
               return this;
-            },
-            toString: function () {
-              return this.name;
-            },
-          };
-          function TeoriaScale(tonic, scale) {
-            var scaleName, i;
-            if (!(tonic instanceof TeoriaNote)) {
-              throw new Error("Invalid Tonic");
             }
-            if (typeof scale === "string") {
-              scaleName = scale;
-              scale = teoria.scale.scales[scale];
-              if (!scale) throw new Error("Invalid Scale");
-            } else {
-              for (i in teoria.scale.scales) {
-                if (teoria.scale.scales.hasOwnProperty(i)) {
-                  if (teoria.scale.scales[i].toString() === scale.toString()) {
-                    scaleName = i;
-                    break;
+
+            toString() {
+              return this.name;
+            }
+          }
+
+          class TeoriaScale {
+            constructor(tonic, scale) {
+              let scaleName;
+              let i;
+              if (!(tonic instanceof TeoriaNote)) {
+                throw new Error("Invalid Tonic");
+              }
+              if (typeof scale === "string") {
+                scaleName = scale;
+                scale = teoria.scale.scales[scale];
+                if (!scale) throw new Error("Invalid Scale");
+              } else {
+                for (i in teoria.scale.scales) {
+                  if (teoria.scale.scales.hasOwnProperty(i)) {
+                    if (teoria.scale.scales[i].toString() === scale.toString()) {
+                      scaleName = i;
+                      break;
+                    }
                   }
                 }
               }
+              this.name = scaleName;
+              this.tonic = tonic;
+              this.scale = scale;
             }
-            this.name = scaleName;
-            this.tonic = tonic;
-            this.scale = scale;
-          }
-          TeoriaScale.prototype = {
-            notes: function () {
-              var notes = [];
-              for (var i = 0, length = this.scale.length; i < length; i++) {
+
+            notes() {
+              const notes = [];
+              for (let i = 0, length = this.scale.length; i < length; i++) {
                 notes.push(teoria.interval(this.tonic, this.scale[i]));
               }
               return notes;
-            },
-            simple: function () {
-              return this.notes().map(function (n) {
+            }
+
+            simple() {
+              return this.notes().map(n => {
                 return n.toString(true);
               });
-            },
-            type: function () {
-              var length = this.scale.length - 2;
+            }
+
+            type() {
+              const length = this.scale.length - 2;
               if (length < 8) {
-                return (
-                  ["di", "tri", "tetra", "penta", "hexa", "hepta", "octa"][
-                    length
-                  ] + "tonic"
-                );
+                return `${["di", "tri", "tetra", "penta", "hexa", "hepta", "octa"][
+  length
+]}tonic`;
               }
-            },
-            get: function (i) {
+            }
+
+            get(i) {
               i =
                 typeof i === "string" && i in kStepNumber ? kStepNumber[i] : i;
               return this.tonic.interval(this.scale[i - 1]);
-            },
-            solfege: function (index, showOctaves) {
+            }
+
+            solfege(index, showOctaves) {
               if (index) return this.get(index).solfege(this, showOctaves);
               return this.notes().map(function (n) {
                 return n.solfege(this, showOctaves);
               });
-            },
-            interval: function (interval) {
+            }
+
+            interval(interval) {
               return new TeoriaScale(this.tonic.interval(interval), this.scale);
-            },
-            transpose: function (interval) {
-              var scale = this.interval(interval);
+            }
+
+            transpose(interval) {
+              const scale = this.interval(interval);
               this.scale = scale.scale;
               this.tonic = scale.tonic;
               return this;
-            },
-          };
+            }
+          }
+
           teoria.scale.scales.ionian = teoria.scale.scales.major = [
             "P1",
             "M2",
@@ -1865,7 +1936,7 @@ require = (function e(t, n, r) {
       {},
     ],
     cheatcode: [
-      function (require, module, exports) {
+      (require, module, exports) => {
         window.time = 0;
         context = AudioContext;
         master = new context();
@@ -1880,11 +1951,11 @@ require = (function e(t, n, r) {
         clang = require("meffisto");
         beatmath = require("beatmath");
         teoria = require("teoria");
-        specialX = function (t, s, i) {
+        specialX = (t, s, i) => {
           return 0;
         };
         generator = new chronotrigger();
-        music = function (time, sample, input) {
+        music = (time, sample, input) => {
           window.time = time;
           timer.tick.call(timer, time);
           return (
@@ -1892,7 +1963,7 @@ require = (function e(t, n, r) {
           );
         };
         timer = sync(60, master.sampleRate);
-        dsp = function (t, s, i) {
+        dsp = (t, s, i) => {
           time = t;
           return music(t, s, i);
         };
@@ -1919,12 +1990,12 @@ require = (function e(t, n, r) {
 require("cheatcode");
 var x = 2;
 ttt = false;
-specialX = function (t) {
+specialX = t => {
   if (t > 12 * x) x += 2;
   if (!ttt) ttt = t;
   t *= 72 / 60 / 2;
   t = ((t * 5) % 12) % t;
-  var a = amod(0.35, 0.15, t, 3);
+  const a = amod(0.35, 0.15, t, 3);
   return (
     0 +
     oz.sine(
