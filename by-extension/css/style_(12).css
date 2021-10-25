@@ -79,24 +79,30 @@ svg {
   .container {
     width: 100% !important;
   }
+
   .sm-foot {
     display: none;
   }
+
   svg {
     position: relative;
   }
+
   .size {
     display: none;
   }
+
   .first {
     width: 100%;
   }
+
   .second {
     width: 70%;
     top: -90px;
     margin-left: 70px;
     transform: scaleX(-1) !important;
   }
+
   .third {
     width: 60%;
     margin-left: 70px;
@@ -108,17 +114,21 @@ svg {
   .foot {
     display: none;
   }
+
   svg {
     position: absolute;
   }
+
   .first {
     width: 550px;
   }
+
   .second {
     width: 350px;
     margin-left: 365px;
     top: 370px !important;
   }
+
   .third {
     width: 330px;
     top: 514px !important;

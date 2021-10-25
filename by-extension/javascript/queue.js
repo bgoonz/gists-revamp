@@ -1,61 +1,49 @@
-import waitUntil from "./waitUntil";
-
-class Queue {
-  pendingEntries = [];
-
-  inFlight = 0;
-
-  err = null;
-
-  constructor(worker, options = {}) {
-    this.worker = worker;
-    this.concurrency = options.concurrency || 1;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
   }
-
-  push = (entries) => {
-    this.pendingEntries = this.pendingEntries.concat(entries);
-    this.process();
-  };
-
-  process = () => {
-    const scheduled = this.pendingEntries.splice(
-      0,
-      this.concurrency - this.inFlight
-    );
-    this.inFlight += scheduled.length;
-    scheduled.forEach(async (task) => {
-      try {
-        await this.worker(task);
-      } catch (err) {
-        this.err = err;
-      } finally {
-        this.inFlight -= 1;
-      }
-
-      if (this.pendingEntries.length > 0) {
-        this.process();
-      }
-    });
-  };
-
-  wait = (options = {}) =>
-    waitUntil(
-      () => {
-        if (this.err) {
-          this.pendingEntries = [];
-          throw this.err;
-        }
-
-        return {
-          predicate: options.empty
-            ? this.inFlight === 0 && this.pendingEntries.length === 0
-            : this.concurrency > this.pendingEntries.length,
-        };
-      },
-      {
-        delay: 50,
-      }
-    );
 }
 
-export default Queue;
+class Queue {
+  constructor(front = null, back = null, length = 0) {
+    this.front = front;
+    this.back = back;
+    this.length = length;
+  }
+
+  enqueue(input) {
+    if (this.length === 0) {
+      this.front = new Node(input);
+      this.back = this.front;
+      this.length++;
+    } else if (this.length >= 1) {
+      let prevBack = this.back;
+      this.back = new Node(input);
+      prevBack.next = this.back;
+      this.length++;
+    }
+    return this.length;
+  }
+
+  dequeue() {
+    if (this.length !== 0) {
+      let tempFront = this.front.value;
+      if (this.length === 1) {
+        this.front = null;
+        this.back = null;
+        this.length--;
+      } else {
+        this.front = this.front.next;
+        this.length--;
+      }
+      return tempFront;
+    } else {
+      return null;
+    }
+  }
+
+  size() {
+    return this.length;
+  }
+}

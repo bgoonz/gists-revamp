@@ -66,7 +66,8 @@ canvas {
 
 .level-select-button {
   position: relative;
-  z-index: 2; /* above canvas */
+  z-index: 2;
+  /* above canvas */
 }
 
 .next-level-button {
@@ -107,7 +108,8 @@ canvas {
   margin: 0;
   list-style: none;
   padding: 10px;
-  z-index: 3; /* above canvas, level select button */
+  z-index: 3;
+  /* above canvas, level select button */
   left: -100%;
   transition: left 0.2s;
 }
