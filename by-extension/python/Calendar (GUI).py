@@ -7,7 +7,6 @@ root.title("Calendar")
 
 # Function
 
-
 def text():
     month_int = int(month.get())
     year_int = int(year.get())

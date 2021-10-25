@@ -6555,6 +6555,4 @@ It's too big and too slow.
        commands between parentheses to force it into  a  subshell,  which
        may be stopped as a unit.
 
-
-
 </details>

@@ -1,6 +1,5 @@
 """solution for the first-non-repeated-character problem"""
 
-
 def first_non_repeated_character(str):
     """finds the first character in a string that's not repreated"""
 

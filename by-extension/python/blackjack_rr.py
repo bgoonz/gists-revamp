@@ -1,63 +1,30 @@
 import random
 
-
 class Colour:
-    BLACK = "\033[30m"
-    RED = "\033[91m"
-    GREEN = "\033[32m"
-    END = "\033[0m"
+    BLACK = '\033[30m'
+    RED = '\033[91m'
+    GREEN = '\033[32m'
+    END = '\033[0m'
 
-
-suits = (
-    Colour.RED + "Hearts" + Colour.END,
-    Colour.RED + "Diamonds" + Colour.END,
-    Colour.BLACK + "Spades" + Colour.END,
-    Colour.BLACK + "Clubs" + Colour.END,
-)
-ranks = (
-    "Two",
-    "Three",
-    "Four",
-    "Five",
-    "Six",
-    "Seven",
-    "Eight",
-    "Nine",
-    "Ten",
-    "Jack",
-    "Queen",
-    "King",
-    "Ace",
-)
-values = {
-    "Two": 2,
-    "Three": 3,
-    "Four": 4,
-    "Five": 5,
-    "Six": 6,
-    "Seven": 7,
-    "Eight": 8,
-    "Nine": 9,
-    "Ten": 10,
-    "Jack": 10,
-    "Queen": 10,
-    "King": 10,
-    "Ace": 11,
-}
+suits = (Colour.RED +  'Hearts' + Colour.END, Colour.RED + 'Diamonds' + Colour.END, Colour.BLACK + 'Spades' + Colour.END, Colour.BLACK + 'Clubs' + Colour.END)
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
+values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7, 'Eight': 8,
+          'Nine': 9, 'Ten': 10, 'Jack': 10, 'Queen': 10, 'King': 10, 'Ace': 11}
 
 playing = True
 
-
 class Card:
+
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
 
     def __str__(self):
-        return self.rank + " of " + self.suit
+        return self.rank + ' of ' + self.suit
 
 
 class Deck:
+
     def __init__(self):
         self.deck = []
         for suit in suits:
@@ -65,9 +32,9 @@ class Deck:
                 self.deck.append(Card(suit, rank))
 
     def __str__(self):
-        deck_comp = ""
+        deck_comp = ''
         for card in self.deck:
-            deck_comp += "\n " + card.__str__()
+            deck_comp += '\n ' + card.__str__()
 
     def shuffle(self):
         random.shuffle(self.deck)
@@ -78,6 +45,7 @@ class Deck:
 
 
 class Hand:
+
     def __init__(self):
         self.cards = []
         self.value = 0
@@ -86,7 +54,7 @@ class Hand:
     def add_card(self, card):
         self.cards.append(card)
         self.value += values[card.rank]
-        if card.rank == "Ace":
+        if card.rank == 'Ace':
             self.aces += 1
 
     def adjust_for_ace(self):
@@ -96,6 +64,7 @@ class Hand:
 
 
 class Chips:
+
     def __init__(self):
         self.total = 100
         self.bet = 0
@@ -110,15 +79,14 @@ class Chips:
 def take_bet(chips):
     while True:
         try:
-            chips.bet = int(input("How many chips would you like to bet? "))
+            chips.bet = int(input('How many chips would you like to bet? '))
         except ValueError:
-            print("Your bet must be an integer! Try again.")
+            print('Your bet must be an integer! Try again.')
         else:
             if chips.bet > chips.total or chips.bet <= 0:
                 print(
                     "Your bet cannot exceed your balance and you have to enter a positive bet! Your current balance is: ",
-                    chips.total,
-                )
+                    chips.total)
             else:
                 break
 
@@ -134,10 +102,10 @@ def hit_or_stand(deck, hand):
     while True:
         x = input("Would you like to Hit or Stand? Enter '1' or '0' ")
 
-        if x.lower() == "1":
+        if x.lower() == '1':
             hit(deck, hand)
 
-        elif x.lower() == "0":
+        elif x.lower() == '0':
             print("You chose to stand. Dealer will hit.")
             playing = False
 
@@ -150,14 +118,14 @@ def hit_or_stand(deck, hand):
 def show_some(player, dealer):
     print("\nDealer's Hand:")
     print(" { hidden card }")
-    print("", dealer.cards[1])
-    print("\nYour Hand:", *player.cards, sep="\n ")
+    print('', dealer.cards[1])
+    print("\nYour Hand:", *player.cards, sep='\n ')
 
 
 def show_all(player, dealer):
-    print("\nDealer's Hand:", *dealer.cards, sep="\n ")
+    print("\nDealer's Hand:", *dealer.cards, sep='\n ')
     print("Dealer's Hand =", dealer.value)
-    print("\nYour Hand:", *player.cards, sep="\n ")
+    print("\nYour Hand:", *player.cards, sep='\n ')
     print("Your Hand =", player.value)
 
 
@@ -192,8 +160,7 @@ while True:
 
     print("\t              **********************************************************")
     print(
-        "\t                       Welcome to the game Casino - BLACK JACK !                                                     "
-    )
+        "\t                       Welcome to the game Casino - BLACK JACK !                                                     ")
     print("\t              **********************************************************")
     print(Colour.BLACK + "\t                                   ***************")
     print("\t                                   * A           *")
@@ -207,9 +174,7 @@ while True:
     print("\t                                   *             *")
     print("\t                                   ***************" + Colour.END)
 
-    print(
-        "\nRULES: Get as close to 21 as you can but if you get more than 21 you will lose!\n  Aces count as 1 or 11."
-    )
+    print('\nRULES: Get as close to 21 as you can but if you get more than 21 you will lose!\n  Aces count as 1 or 11.')
 
     deck = Deck()
     deck.shuffle()
@@ -221,6 +186,7 @@ while True:
     dealer_hand = Hand()
     dealer_hand.add_card(deck.deal())
     dealer_hand.add_card(deck.deal())
+
 
     take_bet(player_chips)
 
@@ -258,21 +224,14 @@ while True:
 
     if player_chips.total > 0:
         new_game = input("Would you like to play another hand? Enter '1' or '0' ")
-        if new_game.lower() == "1":
+        if new_game.lower() == '1':
             playing = True
             continue
         else:
             print(
-                "Thanks for playing!\n"
-                + Colour.GREEN
-                + "\t$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n \t      Congratulations! You won "
-                + str(player_chips.total)
-                + " coins!\n\t$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n "
-                + Colour.END
-            )
+                "Thanks for playing!\n" + Colour.GREEN + "\t$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n \t      Congratulations! You won " + str(player_chips.total) + " coins!\n\t$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n " + Colour.END)
             break
     else:
         print(
-            "Oops! You have bet all your chips and we are sorry you can't play more.\nThanks for playing! Do come again to Casino BLACK JACK!"
-        )
+            "Oops! You have bet all your chips and we are sorry you can't play more.\nThanks for playing! Do come again to Casino BLACK JACK!")
         break

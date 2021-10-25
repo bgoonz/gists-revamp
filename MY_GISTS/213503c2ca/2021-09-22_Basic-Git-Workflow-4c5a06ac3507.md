@@ -74,13 +74,13 @@ Now you are able to push your changes to the selected remote server
 
 Branches are used to develop features isolated from each other. The _master_ branch is the “default” branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
 
-create a new branch named “feature_x” and switch to it using  
+create a new branch named “feature*x” and switch to it using  
 `git checkout -b feature_x`  
 switch back to master  
 `git checkout master`  
 and delete the branch again  
 `git branch -d feature_x`  
-a branch is _not available to others_ unless you push the branch to your remote repository  
+a branch is \_not available to others* unless you push the branch to your remote repository  
 `git push origin <branch>`
 
 ### branch

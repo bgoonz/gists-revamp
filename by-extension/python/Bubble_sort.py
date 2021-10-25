@@ -1,19 +1,41 @@
-def bubble_sort(Lists):
-    for i in range(len(Lists)):
-        for j in range(len(Lists) - 1):
-            # We check whether the adjecent number is greater or not
-            if Lists[j] > Lists[j + 1]:
-                Lists[j], Lists[j + 1] = Lists[j + 1], Lists[j]
+import timeit
+from random import randint
 
 
-# Lets the user enter values of an array and verify by himself/herself
-array = []
-array_length = int(
-    input(print("Enter the number of elements of array or enter the length of array"))
-)
-for i in range(array_length):
-    value = int(input(print("Enter the value in the array")))
-    array.append(value)
+def bubble_sort(collection):
+    counter = 0
+    length = len(collection)
+    for i in range(0, length - 1):
+        is_sorted = True
+        for j in range(0, length - 1):
+            if collection[j] > collection[j + 1]:
+                collection[j], collection[j + 1] = collection[j + 1], collection[j]
+                is_sorted = False
+        counter += 1
+        print("Step %i -->" % counter, collection)
+        if is_sorted:
+            break
 
-bubble_sort(array)
-print(array)
+    return collection, counter
+
+
+def visualization():
+    length = 10
+    collection = [randint(0, length) for _ in range(length)]
+
+    print("Initial list:", collection)
+    print("Visualization of algorithm work.")
+
+    collection, counter = bubble_sort(collection)
+
+    print("Final list:", collection)
+    print("Total numbers of passages:", counter)
+
+
+def main():
+    elapsed_time = timeit.timeit(visualization, number=1)
+    print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
+
+if __name__ == "__main__":
+    main()

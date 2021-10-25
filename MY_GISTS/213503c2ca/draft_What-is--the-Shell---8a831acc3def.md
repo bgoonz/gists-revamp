@@ -167,8 +167,7 @@ If we use the **-l** option with **ls**, you will get a file listing that contai
  -rw-rw-r — 1 me me 276480 Feb 11 20:41 web_site.tar  
  -rw — — — — 1 me me 5743 Dec 16 2018 xmas_file.txt
 
-  
- — — — — — — — — — — — — — — — — — — — — — — — — — — — — — -  
+— — — — — — — — — — — — — — — — — — — — — — — — — — — — — -  
  | | | | | |  
  | | | | | File Name  
  | | | | |  
@@ -411,7 +410,7 @@ Most command line programs that display their results do so by sending their res
 
 In this example, the **ls** command is executed and the results are written in a file named file_list.txt. Since the output of **ls** was redirected to the file, no results appear on the display.
 
-Each time the command above is repeated, file_list.txt is overwritten from the beginning with the output of the command **ls**. To have the new results _appended_ to the file instead, we use “&gt;&gt;” like this:
+Each time the command above is repeated, file*list.txt is overwritten from the beginning with the output of the command **ls**. To have the new results \_appended* to the file instead, we use “&gt;&gt;” like this:
 
 \[me@bgoonz me\]$**ls &gt;&gt; file_list.txt**
 

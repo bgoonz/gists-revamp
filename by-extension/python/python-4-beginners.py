@@ -296,7 +296,8 @@ print(list(filtered))
 for num in filtered:
     print(f"first way: {num}")
 print("--" * 20)
-[print(f"list comprehension: {i}") for i in [1, 2, 3, 4, 5, 6, 7, 8] if i % 2 == 1]
+[print(f"list comprehension: {i}")
+ for i in [1, 2, 3, 4, 5, 6, 7, 8] if i % 2 == 1]
 # Map
 
 
@@ -313,7 +314,8 @@ print(list(sorted_items))  # Notice uppercase comes before lowercase
 sorted_items = sorted(["john", "tom", "sonny", "Mike"], key=str.lower)
 print(sorted_items)
 # You can also reverse the sort
-sorted_items = sorted(["john", "tom", "sonny", "Mike"], key=str.lower, reverse=True)
+sorted_items = sorted(["john", "tom", "sonny", "Mike"],
+                      key=str.lower, reverse=True)
 print(sorted_items)
 # Enumerate creates a tuple with an index for what you're enumerating
 quarters = ["First", "Second", "Third", "Fourth"]

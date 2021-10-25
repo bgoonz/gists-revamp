@@ -529,6 +529,7 @@ After logging in, you'll be taken to the [home](https://cloud.mongodb.com/v2) sc
     ![Configure a connection when after setting up a cluster in MongoDB Atlas.](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose/mongodb_atlas_-_connectbutton.jpg)
 8.  This will open the Connect to Cluster screen.  
     ![Choose a connection type when connecting with MongoDB Atlas.](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose/connect_to_cluster_allowanywhere.png)
+
     - Click the **Allow Access from Anywhere** button.  
       This will open a form with `0.0.0.0/0` pre-seeded for the IP Address. Click the **Add IP Address** button.
 
@@ -544,17 +545,17 @@ After logging in, you'll be taken to the [home](https://cloud.mongodb.com/v2) sc
 
     - If you have completed the 2 previous steps, the button **Choose a connection method** will turn green.
     - Click the **Choose a connection method** button.
+
 9.  You should now be able to access the _Choose a connection_ method tab.  
     ![Choose a connection type when connecting with MongoDB Atlas.](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose/mongodb_atlas_-_chooseaconnectionmethod.jpg)
     - Click the **Connect Your Application** option.
 10. This will open the _Connect_ screen.  
     ![Choose the Short SRV connection when setting up a connection on MongoDB Atalas.](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose/mongodb_atlas_-_connectforshortsrv_2020-03.png)
 
-
-    -   Click the **Copy** button to copy the connection string.
-    -   Save this string somewhere safe.
-    -   Update the password with your user's password.
-    -   Replace test with `local_library`.
+    - Click the **Copy** button to copy the connection string.
+    - Save this string somewhere safe.
+    - Update the password with your user's password.
+    - Replace test with `local_library`.
 
 You have now created the database, and have a URL (with username and password) that can be used to access it. This will look something like: `mongodb+srv://your_user_name:your_password@cluster0.a9azn.mongodb.net/local_library?retryWrites=true`
 

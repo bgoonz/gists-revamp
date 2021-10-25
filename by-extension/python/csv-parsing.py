@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """solution to the csv parsing problem, handling quotes and numric values"""
 
-
 def convert_to_number(value):
     """converts the passed over string to a number, if possible"""
 
@@ -13,7 +12,6 @@ def convert_to_number(value):
 
     return value
 
-
 def csv_parsing(csv):
     """returns list of string/numeric csv values"""
 
@@ -21,12 +19,12 @@ def csv_parsing(csv):
     values = []
     pos = 0
     while pos < len(csv):
-        if csv[pos] == ",":  # skip comma from previous iteration
+        if csv[pos] == ',': # skip comma from previous iteration
             pos += 1
 
-        values.insert(count, "")
-        while pos < len(csv) and csv[pos] != ",":
-            if csv[pos] == '"' or csv[pos] == "'":  # handle quoted strings
+        values.insert(count, '')
+        while pos < len(csv) and csv[pos] != ',':
+            if csv[pos] == '"' or csv[pos] == "'": # handle quoted strings
                 first_quote = pos
                 pos += 1
 
@@ -39,7 +37,7 @@ def csv_parsing(csv):
 
             pos += 1
 
-        # if the value is numeric, this will convert it.
+        #if the value is numeric, this will convert it.
         values[count] = convert_to_number(values[count])
 
         count += 1

@@ -2,6 +2,7 @@
 
 
 class PagesDataStore(object):
+
     def __init__(self, db):
         self.db = db
         pass
@@ -32,6 +33,7 @@ class PagesDataStore(object):
 
 
 class Page(object):
+
     def __init__(self, url, contents, child_urls):
         self.url = url
         self.contents = contents
@@ -44,6 +46,7 @@ class Page(object):
 
 
 class Crawler(object):
+
     def __init__(self, pages, data_store, reverse_index_queue, doc_index_queue):
         self.pages = pages
         self.data_store = data_store

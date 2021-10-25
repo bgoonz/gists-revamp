@@ -40,7 +40,6 @@ or typing error in the address, making the address invalid; the person you are s
 
 # Design Terminology
 
-
 no longer has that email address; the person you are sending to has let their mailbox
 become too full to accept new emails; a piece of software on the receiving end thinks that
 your email is spam or that it includes a virus and sends it back to you.
@@ -83,7 +82,6 @@ etc.).
 added into a web page. There are many WordPress slider plugins available which allow
 you to create your own sliders and add them to your home page, landing pages, posts, or
 any where you want.
-
 
 **CMS** : "Content Management System". A dynamic website that is normally database driven
 and which enables the owner/user to manage the content of their own website (make
@@ -129,7 +127,6 @@ information applied in many different ways, using formulas and different variabl
 **DIRECTORY or SEARCH ENGINE DIRECTORY** : Much like the Yellow Pages, a directory
 is a place where information about hundreds, thousands and millions of websites is stored
 
-
 to allow people to easily and quickly find information and/or resources. Yahoo is an
 example of a search engine directory, Trades Check for example is a directory website for
 people wanting to find local licensed tradesmen.
@@ -172,7 +169,6 @@ page that rests at the bottom of someone’s browser (in other words, to see any
 the fold, they would have to scroll down). There are varying opinions on how important the
 fold is in web design but more websites including Yahoo and msn are increasing their page
 length to get more information displayed on each page.
-
 
 **FONT FAMILY** : Font family is a group designation for defining the typefaces used in CSS
 documents. The font family tag generally lists multiple fonts to be used, and usually ends
@@ -217,7 +213,6 @@ done over a secure, encrypted connection.
 another one. Generally, these are text or images, and are highlighted in some way (text is
 often underlined or put in a different color or font weight). The inclusion of hyperlinks are
 the “hyper” part of “hypertext.”
-
 
 **HYPERTEXT** : Hypertext is any computer-based text that includes hyperlinks. Hypertext
 can also include presentation devices like tables or images, in addition to plain text and
@@ -264,7 +259,6 @@ the web page that a visitor is currently on. The information contained in the me
 viewable on the web page (except in the source code). Meta data is contained within meta
 tags.
 
-
 **META TAG** : Included in the head section of an html web page and is visible to search
 engines but not human visitors. Meta tags provide information about a web page, like the
 topic (title), keywords, description and also instructions to search engine robots and visitor
@@ -307,7 +301,6 @@ something using a search engine, the will receive pages and pages of results. Wh
 specific site appears in those results is its ranking. There is a second meaning as well,
 more commonly used with regard to marketing and SEO and related specifically to Google.
 Each page of a website is given a ranking by Google, from 1-10. This ranking is the value
-
 
 that Google places on that particular page in relation to its subject matter and how relevant
 it is. The more relevant a page is believed to be the higher its ranking.
@@ -352,7 +345,6 @@ any website is to appear high in the search result.
 tweaking website coding and content to achieve the highest possible search engine
 ranking. SEO practitioners are people who specialize in this (or claim to).
 
-
 **SERVER** : A server is a computer that is used to house websites and provide a physical
 storage area for websites and emails. Without a server, your website would not be
 viewable to the world. Servers are normally provided by hosting companies who keep the
@@ -388,6 +380,7 @@ SANS SERIF TYPEFACE: A typeface without the small decorative serif strokes.
 Sans serifs tend to look more modern, stylish, and cleaner than their serif
 counterparts.
 ```
+
 **UPLOAD** : For a website to be visible to the world, it has to be put on the server that is
 hosting it. This process is called uploading because you are literally loading your
 information, pages, pictures, etc. up onto the server.
@@ -397,7 +390,6 @@ uniform manner). A URL is a website address that has all the pertinent informati
 finding the exact location attached to it. [http://www.thinkingit.com.au](http://www.thinkingit.com.au) is this website’s url
 and [http://www.thinkingit.com.au/glossary-website-terminology](http://www.thinkingit.com.au/glossary-website-terminology) is this exact page’s url
 (notice the extra part after the .com.au).
-
 
 **USABILITY** : Usability refers to how easy it is for a visitor to your site to use your site in its
 intended manner. In other words, are navigation, content, images, and any interactive
@@ -420,5 +412,3 @@ space could be red, green or any color. It refers to the space around elements. 
 space allows the elements to stand out to the user.
 
 **WWW** : World Wide Web. Another name for the Internet.
-
-

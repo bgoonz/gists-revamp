@@ -1,23 +1,49 @@
-def binarySearchAppr (arr, start, end, x):
-# check condition
-   if end >= start:
-      mid = start + (end- start)//2
-      # If element is present at the middle
-      if arr[mid] == x:
-      return mid
-      # If element is smaller than mid
-      elif arr[mid] > x:
-      return binarySearchAppr(arr, start, mid-1, x)
-      # Else the element greator than mid
-      else:
-      return binarySearchAppr(arr, mid+1, end, x)
-   else:
-      # Element is not found in the array
-      return -1
-arr = sorted(['t','u','t','o','r','i','a','l'])
-   x ='r'
-   result = binarySearchAppr(arr, 0, len(arr)-1, x)
-if result != -1:
-   print ("Element is present at index "+str(result))
-else:
-   print ("Element is not present in array")
+import timeit
+from random import randint
+
+
+def binary_search(collection, target):
+    left, right, counter = 0, len(collection), 0
+    while left != right:
+        c = (left + right) // 2
+        if target == collection[c]:
+            counter += 1
+            print("Step %i -->" % counter, [collection[c]])
+            return c, counter
+        elif target < collection[c]:
+            counter += 1
+            right = c
+            print("Step %i -->" % counter, collection[:right])
+        else:
+            counter += 1
+            left = c + 1
+            print("Step %i -->" % counter, collection[left:])
+
+    return -1, counter
+
+
+def visualization():
+    length = 10
+    collection = [item for item in range(0, length)]
+    target = randint(0, length - 1)
+
+    print("Initial list:", collection)
+    print("The number of which must be found:", target)
+    print("Visualization of algorithm work.")
+
+    result, counter = binary_search(collection, target)
+    if result != -1:
+        print("Result of searching:", result)
+    else:
+        print("This number does not exist in the list.")
+
+    print("Total numbers of passages:", counter)
+
+
+def main():
+    elapsed_time = timeit.timeit(visualization, number=1)
+    print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
+
+if __name__ == "__main__":
+    main()

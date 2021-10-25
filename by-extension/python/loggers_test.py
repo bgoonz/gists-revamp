@@ -1,10 +1,9 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 
 # Configure your logger.
 import logging, coloredlogs
-
-logger = logging.getLogger("your-module")
+logger = logging.getLogger('your-module')
 logger.addHandler(coloredlogs.ColoredStreamHandler())
 
 # Some examples.

@@ -872,7 +872,7 @@ Enumerations are defined by adding the `@enum` annotation to an object literal
   \*/ const TemperatureScale = { CELSIUS: 'celsius', FAHRENHEIT: 'fahrenheit', }; /\*\*
 - An enum with two options.
 - @enum {number}
-  _/ const Option = { /\*\* The option used shall have been the first. _/ FIRST_OPTION: 1, /\*_ The second among two options. _/ SECOND_OPTION: 2, };
+  _/ const Option = { /\*\* The option used shall have been the first. _/ FIRST*OPTION: 1, /\** The second among two options. \_/ SECOND_OPTION: 2, };
 
 ### 5.4 Classes[![](https://google.github.io/styleguide/include/link.png)](https://google.github.io/styleguide/jsguide.html#features-classes)
 
@@ -1045,7 +1045,7 @@ Examples:
 - @param {number} numParam A number to add.
 - @param {string} strParam Another number to add that happens to be a string.
 - @return {number} The sum of the two parameters.
-  _/ const moduleLocalFunc = (numParam, strParam) => numParam + Number(strParam); // Uses the single expression syntax with `void` because the program logic does // not require returning a value. getValue((result) => void alert(`Got ${result}`)); class CallbackExample { constructor() { /\*\* @private {number} _/ this.cachedValue* = 0; // For inline callbacks, you can use inline typing for parameters. // Uses a block statement because the value of the single expression should // not be returned and the expression is not a single function call. getNullableValue((/\** ?number */ result) => { this.cachedValue* = result == null ? 0 : result; }); } }
+  _/ const moduleLocalFunc = (numParam, strParam) => numParam + Number(strParam); // Uses the single expression syntax with `void` because the program logic does // not require returning a value. getValue((result) => void alert(`Got ${result}`)); class CallbackExample { constructor() { /\*\* @private {number} _/ this.cachedValue\* = 0; // For inline callbacks, you can use inline typing for parameters. // Uses a block statement because the value of the single expression should // not be returned and the expression is not a single function call. getNullableValue((/\*_ ?number _/ result) => { this.cachedValue\* = result == null ? 0 : result; }); } }
 
 Disallowed:
 
@@ -1581,7 +1581,7 @@ Property types must be documented. The description may be omitted for private pr
 
 Publicly exported constants are commented the same way as properties.
 
-/** My class. \*/ class MyClass { /** @param {string=} someString _/ constructor(someString = 'default string') { /\*\* @private @const {string} _/ this.someString* = someString; /\** @private @const {!OtherType} */ this.someOtherThing* = functionThatReturnsAThing(); /**
+/** My class. \*/ class MyClass { /** @param {string=} someString _/ constructor(someString = 'default string') { /\*\* @private @const {string} _/ this.someString\* = someString; /\*_ @private @const {!OtherType} _/ this.someOtherThing\* = functionThatReturnsAThing(); /**
 _ Maximum number of things per pane.
 _ @type {number}
 \*/ this.someProperty = 4; } } /**

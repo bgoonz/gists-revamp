@@ -1,3 +1,4 @@
+
 num = int(input("Enter a number: "))
 
 # if the elements in the range(2, num) evenly divides the num,

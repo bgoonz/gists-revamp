@@ -22,9 +22,7 @@ from matplotlib.dates import DayLocator, HourLocator, DateFormatter
 try:
     from darksky import forecast
 except ImportError as e:
-    print(
-        "Install 'darksky' module with 'pip install git+https://github.com/lukaskubis/darkskylib'..."
-    )
+    print("Install 'darksky' module with 'pip install git+https://github.com/lukaskubis/darkskylib'...")
     raise e
 
 
@@ -35,25 +33,16 @@ def get_data(location, key, delay=365):
     all_cloud_cover = {}
     for d in range(delay):
         t = thisday.isoformat()
-        if "T" not in t:
-            t += "T12:00:00"
+        if 'T' not in t:
+            t += 'T12:00:00'
         try:
             with forecast(key, *location, time=t) as weather:
                 alldata[thisday] = weather
                 all_cloud_cover[thisday] = weather["daily"]["data"][0]["cloudCover"]
-                print(
-                    "For the day",
-                    thisday,
-                    "the 'cloudCover' index was",
-                    all_cloud_cover[thisday],
-                )
+                print("For the day", thisday, "the 'cloudCover' index was", all_cloud_cover[thisday])
         except:
-            all_cloud_cover[thisday] = np.nan
-            print(
-                "Missing data for",
-                thisday,
-                "so using a nan... it won't be included in the plots!",
-            )
+                all_cloud_cover[thisday] = np.nan
+                print("Missing data for", thisday, "so using a nan... it won't be included in the plots!")
         thisday = thisday - oneday
     return alldata, all_cloud_cover
 
@@ -71,7 +60,7 @@ def load_data(filename):
         new_dict = load(fp)
         all_cloud_cover = dict()
         for d, k in new_dict.items():
-            dt = parse(d.replace("T12:00:00", ""))
+            dt = parse(d.replace('T12:00:00', ''))
             all_cloud_cover[dt] = k
     return all_cloud_cover
 
@@ -89,9 +78,9 @@ def plot_data(all_cloud_cover, name, filename):
     ax.set_title(f"Cloud cover index in {name}")
     ax.set_xlabel("Date")
     ax.set_ylabel("Cloud cover (0 is fully sunny, 1 is fully cloudy)")
-    ax.plot_date(Xs, Ys, ms=5, marker="o", color="black")
+    ax.plot_date(Xs, Ys, ms=5, marker='o', color='black')
 
-    ax.fmt_xdata = DateFormatter("%Y-%m-%d")
+    ax.fmt_xdata = DateFormatter('%Y-%m-%d')
     fig.autofmt_xdate()
 
     plt.show()
@@ -127,7 +116,7 @@ def plot_data_by_weekday(all_cloud_cover, name, filename):
     print("Figure was saved to", filename)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # CentraleSupélec, campus of Rennes, France
     name = "CentraleSupélec, Rennes"
     # 48° 6' 36"N, 1° 40' 48"W
@@ -139,6 +128,7 @@ if __name__ == "__main__":
     # # https://www.google.fr/maps/place/05100+Briançon/@44.8826142,6.6285124,16z/
 
     print("For localisation '{}' at location {}...".format(name, location))
+
 
     with open(join(expanduser("~"), ".darksky_api.key"), "r") as f:
         key = f.readline()

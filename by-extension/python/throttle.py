@@ -9,7 +9,6 @@ class throttle(object):
         def my_fun():
             pass
     """
-
     def __init__(self, seconds):
         self.throttle_period = seconds
         self.time_of_last_call = time.time()
