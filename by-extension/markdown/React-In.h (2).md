@@ -1029,7 +1029,7 @@ React Version
         React.createElement(
           "li",
           { className: "is-selected" },
-          React.createElement("a", { href: "http://appacademy.io" }, "App Academy")
+          React.createElement("a", { href: "http://appacademy.io" }, "WebDevHub")
         ),
         React.createElement(
           "li",
@@ -1168,11 +1168,11 @@ create Element equivalent
         className: "active",
         href: "https://appacademy.io",
       },
-      "App Academy"
+      "WebDevHub"
     );
     // JSX Version
     <a className="active" href="https://appacademy.io">
-      App Academy
+      WebDevHub
     </a>;
 
     React.createElement(
@@ -1207,7 +1207,7 @@ More Complex JSX Example
 Using a Custom Template `npx create-react-app my-app --template @appacademy/simple`
 
 - <span id="9607">Keep in mind that using `create-react-app` automatically initializes a git repository for you!</span>
-- <span id="f0fe">App Academy custom template for creating a react app.</span>
+- <span id="f0fe">WebDevHub custom template for creating a react app.</span>
 - <span id="1b4e">If using the default react create project you can delete the following files:</span>
 - <span id="ef1c">favicon.ico</span>
 - <span id="627b">robots.txt</span>

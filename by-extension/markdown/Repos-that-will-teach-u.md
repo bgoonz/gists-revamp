@@ -84,7 +84,7 @@ A list of awesome beginners-friendly projects.
 
 Star
 
-Overview of App Academy Open
+Overview of WebDevHub Open
 
 [2273](https://github.com/appacademy/welcome-to-open/stargazers)[75](https://github.com/appacademy/welcome-to-open/network/members)
 

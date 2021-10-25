@@ -1,6 +1,6 @@
 Being a developer isn't just hacking away into the wee hours of the morning or debugging a new feature. In order to become a well-rounded developer we should also understand what tools we need and a minimum understanding of how they work. This includes setting up our computers for development.
 
-Here at App Academy we work with a Ruby on Rails, JavaScript, React, Redux, and PostgresSQL stack. A [stack](https://en.wikipedia.org/wiki/Solution_stack) is simply a collection of software and hardware used in development of an application. For our specific purposes we are using Ruby on Rails on the backend/server, PostgresSQL to house our database, and JavaScript + React + Redux for frontend rendering and logic.
+Here at WebDevHub we work with a Ruby on Rails, JavaScript, React, Redux, and PostgresSQL stack. A [stack](https://en.wikipedia.org/wiki/Solution_stack) is simply a collection of software and hardware used in development of an application. For our specific purposes we are using Ruby on Rails on the backend/server, PostgresSQL to house our database, and JavaScript + React + Redux for frontend rendering and logic.
 
 As we progress through the course you will be prompted to complete a few installation and configuration steps to get your personal machine ready for the next phase.
 
@@ -10,15 +10,15 @@ Here we will install basic developer tools, such as [homebrew](https://brew.sh/)
 
 ### Chrome
 
-Here at App Academy, our browser of choice is Google Chrome. This isn't super important at the beginning of the course, but once we get into frontend development the Chrome Devtools (think frontend debugging) are going to play a very important role.
+Here at WebDevHub, our browser of choice is Google Chrome. This isn't super important at the beginning of the course, but once we get into frontend development the Chrome Devtools (think frontend debugging) are going to play a very important role.
 
 To install, download from the [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html) and install.
 
-#### Optional for In Person Students App Academy Chrome Tab
+#### Optional for In Person Students WebDevHub Chrome Tab
 
 We have a custom Chrome Extension for new tabs that provides a dashboard with links to the curriculum, relevant documentation, and, once your cohort starts, links to the day's projects, readings, and homework.
 
-This is not required, but feel free to give it a try. To install, follow the installation instructions on the [App Academy Chrome Tab Repo](https://github.com/appacademy/app-academy-chrome-tab).
+This is not required, but feel free to give it a try. To install, follow the installation instructions on the [WebDevHub Chrome Tab Repo](https://github.com/appacademy/app-academy-chrome-tab).
 
 ### Xcode
 

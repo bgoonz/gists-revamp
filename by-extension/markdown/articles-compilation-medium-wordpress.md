@@ -15766,8 +15766,8 @@ Loose Equality, will return true even if the values are of a different type, due
 Variables are used to store information to be referenced and manipulated in a program.
 
 - We initialize a variable by using the **let** keyword and a **\=** single equals sign (assignment operator).   
-   let bootcamp = “App Academy”;  
-   console.log(bootcamp); // “App Academy”
+   let bootcamp = “WebDevHub”;  
+   console.log(bootcamp); // “WebDevHub”
 - JS variable names can contain any alphanumeric characters, underscores, or dollar signs (cannot being with a number).
 - If you do not declare a value for a variable, undefined is automatically set.   
    let bootcamp;  

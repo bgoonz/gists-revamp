@@ -994,7 +994,7 @@ const Links = () =>
     React.createElement(
       "li",
       { className: "is-selected" },
-      React.createElement("a", { href: "http://appacademy.io" }, "App Academy")
+      React.createElement("a", { href: "http://appacademy.io" }, "WebDevHub")
     ),
     React.createElement(
       "li",
@@ -1136,11 +1136,11 @@ React.createElement(
     className: "active",
     href: "https://appacademy.io",
   },
-  "App Academy"
+  "WebDevHub"
 );
 // JSX Version
 <a className="active" href="https://appacademy.io">
-  App Academy
+  WebDevHub
 </a>;
 ```
 
@@ -1183,7 +1183,7 @@ const BookPanel = (props) => {
 `npx create-react-app my-app --template @appacademy/simple`
 
 - Keep in mind that using `create-react-app` automatically initializes a git repository for you!
-- App Academy custom template for creating a react app.
+- WebDevHub custom template for creating a react app.
 - If using the default react create project you can delete the following files:
   - favicon.ico
   - robots.txt

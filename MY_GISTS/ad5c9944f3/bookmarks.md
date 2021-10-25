@@ -1108,9 +1108,9 @@ AddToAny
 
 Drag to Bookmarks to add to Bookmarks!
 
-[App Academy Open](https://open.appacademy.io/learn/js-py---sep-2020-online/undefined)
+[WebDevHub Open](https://open.appacademy.io/learn/js-py---sep-2020-online/undefined)
 
-[App Academy Open](https://open.appacademy.io/learn/js-py---sep-2020-online/week-11-sep-2020-online/define-table)
+[WebDevHub Open](https://open.appacademy.io/learn/js-py---sep-2020-online/week-11-sep-2020-online/define-table)
 
 ### Lambda
 
@@ -1202,7 +1202,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [JavaScript Guide](http://javascriptguide.herokuapp.com/)
 
-[App Academy Open](https://open.appacademy.io/login)
+[WebDevHub Open](https://open.appacademy.io/login)
 
 [Opticos Studios](https://sites.google.com/bartimee.com/opticos-studios/home?authuser=0)
 
@@ -2934,7 +2934,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Install Windows Subsystem for Linux (WSL) on Windows 10 | Microsoft Docs](https://docs.microsoft.com/en-us/windows/wsl/install-win10#simplified-installation-for-windows-insiders)
 
-[app academy open - Google Search](https://www.google.com/search?q=app+academy+open&oq=app+acade&aqs=chrome.2.0i355i433j46i175i199i433j0j69i57j0l2j69i60j69i65.7633j0j7&sourceid=chrome&ie=UTF-8)
+[WebDevHub open - Google Search](https://www.google.com/search?q=app+academy+open&oq=app+acade&aqs=chrome.2.0i355i433j46i175i199i433j0j69i57j0l2j69i60j69i65.7633j0j7&sourceid=chrome&ie=UTF-8)
 
 [Bookmarks](chrome://bookmarks/?q=academy)
 
@@ -2952,7 +2952,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [New Tab](chrome://newtab/)
 
-[App Academy Open](https://open.appacademy.io/learn/js-py---sep-2020-online/week-1-sep-2020-online/setup---installations--windows-)
+[WebDevHub Open](https://open.appacademy.io/learn/js-py---sep-2020-online/week-1-sep-2020-online/setup---installations--windows-)
 
 [0x80080005 while installing Kali - Issue #5003 - microsoft/WSL - GitHub](https://github.com/microsoft/WSL/issues/5003)
 
@@ -3160,7 +3160,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Inbox (12,771) - gunerb1@tcnj.edu - The College of New Jersey Mail](https://mail.google.com/mail/u/0/#inbox)
 
-[Slack | \* general | App Academy Mentor](https://app.slack.com/client/TD2587M3Q/CD0Q6GWTU)
+[Slack | \* general | WebDevHub Mentor](https://app.slack.com/client/TD2587M3Q/CD0Q6GWTU)
 
 [Amazon password assistance - gunerb1@tcnj.edu - The College of New Jersey Mail](https://mail.google.com/mail/u/0/#inbox/FMfcgxwLsdCrLhlbPwQlPLjgWSKxjxNv)
 
@@ -5238,7 +5238,7 @@ AddToAny
 
 [aa - OneDrive](https://onedrive.live.com/?authkey=%21AOZ4VcHpVkP%5F0qM&id=87D8B8560BFDB191%21272283&cid=87D8B8560BFDB191)
 
-[ALW93/App-Academy: Notes taken from Homework Reading & Lectures + Objectives for App Academy's July 13th Cohort, feel free to use as needed. Will be updated as often as possible!](https://github.com/ALW93/App-Academy)
+[ALW93/App-Academy: Notes taken from Homework Reading & Lectures + Objectives for WebDevHub's July 13th Cohort, feel free to use as needed. Will be updated as often as possible!](https://github.com/ALW93/App-Academy)
 
 ### week5
 
@@ -5254,7 +5254,7 @@ AddToAny
 
 ### VERYUSEFUL
 
-[App Academy Staff](https://vimeo.com/aacurriculum)
+[WebDevHub Staff](https://vimeo.com/aacurriculum)
 
 [Hello Dojo! - Dojo Toolkit Tutorial](https://dojotoolkit.org/documentation/tutorials/1.10/hello_dojo/)
 

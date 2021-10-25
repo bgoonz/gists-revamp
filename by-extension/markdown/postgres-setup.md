@@ -121,7 +121,7 @@ After that installer downloads, run it. You will get a warning from Windows that
 
 You should get used to seeing this because many open-source applications aren't signed with the Microsoft Store for monetary and philosophical reasons.
 
-Otherwise, if you trust Paxa like App Academy and tens of thousands of other developers do, then click the link that reads "More info" and the "Run anyway" button.
+Otherwise, if you trust Paxa like WebDevHub and tens of thousands of other developers do, then click the link that reads "More info" and the "Run anyway" button.
 
 ![Postbird run anyway](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-SQL/assets/postbird-installation-run-anyway.png)
 

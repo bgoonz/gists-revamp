@@ -167,7 +167,7 @@ The commands you need to enter are listed below. Here we will install basic deve
 
 ### Chrome
 
-Here at App Academy, our browser of choice is Google Chrome. This isn't super important at the beginning of the course, but once we get into frontend development (writing code that runs in a web browser) the Chrome DevTools will be crucial for debugging every manner of issue.
+Here at WebDevHub, our browser of choice is Google Chrome. This isn't super important at the beginning of the course, but once we get into frontend development (writing code that runs in a web browser) the Chrome DevTools will be crucial for debugging every manner of issue.
 
 To install Google Chrome, download the necessary files and follow the instructions on the [Google Chrome website](https://www.google.com/chrome/browser/desktop/index.html).
 
