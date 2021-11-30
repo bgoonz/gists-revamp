@@ -8,25 +8,25 @@
  * @param {...Iterator} var_args
  * @return {Iterator}
  */
-export default
-const zipIterator = () => {
+export default function* zipIterator() {
+  // TODO: Use rest parameter once 6to5 is fixed (2.0)
   var varArgs = arguments;
   var length = varArgs.length;
 
-  while ( true ) {
+  while (true) {
     var done = false;
-    var nextZip = new Array( length );
-    for ( var i = 0; i < length; i++ ) {
-      var next = varArgs[ i ].next();
-      if ( next.done ) {
+    var nextZip = new Array(length);
+    for (var i = 0; i < length; i++) {
+      var next = varArgs[i].next();
+      if (next.done) {
         done = true;
         break;
       }
-      nextZip[ i ] = next.value;
+      nextZip[i] = next.value;
     }
-    if ( done ) {
+    if (done) {
       break;
     }
     yield nextZip;
   }
-};
+}

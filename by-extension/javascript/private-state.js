@@ -15,8 +15,8 @@ function createCounter() {
   };
 }
 let counter = createCounter();
-console.log(counter()); //=> 1
-console.log(counter()); //=> 2
+console.log( counter() ); //=> 1
+console.log( counter() ); //=> 2
 // so the closure here comes into play because
 // an inner function is accessing and changing
 // a variable from an outer function// the closure is the combination of the counter
@@ -33,8 +33,8 @@ console.log(counter()); //=> 2
 // will have their own internal state based on the
 // initial declaration in the now-closed outer function
 let counter2 = createCounter();
-console.log(counter2()); // => 1
+console.log( counter2() ); // => 1
 // if i set a new function equal to my existing counter
 // the internal state is shared with the new function
 let counter3 = counter2;
-console.log(counter3());
+console.log( counter3() );

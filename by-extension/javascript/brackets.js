@@ -1,6 +1,6 @@
 let obj = {
-  one: 1,
-  two: 2,
+    "one": 1,
+    "two": 2
 };
 // Choose the square brackets property accessor when the property name is determined at
 // runtime, or if the property name is not a valid identifier

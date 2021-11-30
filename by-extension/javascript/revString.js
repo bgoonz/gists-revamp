@@ -1,7 +1,10 @@
-const reverseString = (str) => [...str].reverse().join("");
+
+const reverseString = str => [ ...str ].reverse().join( '' );
 
 //--------------------------------
 
-reverseString("foobar"); // 'raboof'
+
+reverseString( 'foobar' ); // 'raboof'
 
 //--------------------------------
+

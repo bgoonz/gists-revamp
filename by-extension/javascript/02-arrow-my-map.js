@@ -25,4 +25,4 @@ const arrowMyMap = (array, cb) => {
   return mapped;
 };
 
-export default arrowMyMap;
+module.exports = arrowMyMap;

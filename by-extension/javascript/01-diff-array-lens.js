@@ -13,8 +13,8 @@ diffArrayLen(a1, a2); // => false
 diffArrayLen(a1, a3); // => true
 ***********************************************************************/
 
-function diffArrayLen({ length }, { length }) {
-  return length !== length;
+function diffArrayLen(arr1, arr2) {
+  return arr1.length !== arr2.length;
 }
 
-export default diffArrayLen;
+module.exports = diffArrayLen;

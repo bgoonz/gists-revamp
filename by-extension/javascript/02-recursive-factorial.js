@@ -25,4 +25,4 @@ function factorial(num) {
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-export default factorial;
+module.exports = factorial;

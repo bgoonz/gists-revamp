@@ -27,4 +27,4 @@ function fibonacci(n) {
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-export default fibonacci;
+module.exports = fibonacci;

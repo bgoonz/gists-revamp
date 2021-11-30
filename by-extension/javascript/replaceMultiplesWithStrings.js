@@ -19,42 +19,48 @@
 	For example an input of 10,13 should generate a response of ['FIVE', 11, 'THREE', 13].
 */
 
-function getNumber(number) {
+function getNumber(number){
   //your code here
   if (number % 5 == 0 && number % 3 == 0) {
-    return "BOTH";
-  } else if (number % 3 == 0) {
-    return "THREE";
-  } else if (number % 5 == 0) {
-    return "FIVE";
-  } else {
-    return number;
+      return "BOTH";
   }
-}
-
-function getNumberRange(first, last) {
-  let list = [];
-
-  if (first < last) {
-    for (var i = first; i <= last; i++) {
-      list.push(i);
-    }
+  
+  else if (number % 3 == 0) {
+      return "THREE";
   }
-
-  // Last is greater
+  
+  else if (number % 5 == 0) {
+      return "FIVE";
+  }
+  
   else {
-    for (var i = last; i <= first; i++) {
-      list.push(i);
-    }
-    if (last < 0) {
-      list = list.reverse();
-    }
+      return number;
   }
+};
 
-  const response = [];
-  for (var i = 0; i < list.length; i++) {
-    response.push(getNumber(list[i]));
-  }
+function getNumberRange(first, last){
+    let list = [];
 
-  return response;
-}
+    if (first < last) {
+      for(var i = first; i <= last; i++) {
+        list.push(i);
+      }
+    } 
+
+    // Last is greater 
+    else {
+        for(var i = last; i <= first; i++) {
+          list.push(i);
+        }
+        if (last < 0) {
+          list = list.reverse(); 
+        }
+    }
+    
+    const response = [];
+    for(var i = 0; i < list.length; i++) {
+        response.push(getNumber(list[i]));
+    }
+
+    return response; 
+};
