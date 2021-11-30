@@ -67,9 +67,9 @@ If you want to extract two bits, you can shift a number
 
 ### Architecture:
 
-Visual 6502 : Can see what parts of memory are being accessed during program execution.
+Visual 6502 : Can see what parts of memory are being accessed during program execution.
 
-### While program running:
+### While program running:
 
 Has to go out to RAM to see what the next instruction is. How is a number a computer instruction? Register — program counter: holds the index into memory of where the next instruction is, will store it in the instruction manager (IR).
 
@@ -79,7 +79,7 @@ Register file — R0 to R7 (all CPUs have different register names, this is 
 
 When a compiler builds code to run on the CPU, tries to use registers as much as possible to keep the speed high.
 
-### ALU — arithmetic logic unit:
+### ALU — arithmetic logic unit:
 
 Responsible for arithmetic and bitwise operations, and comparisons between numbers.
 
@@ -111,7 +111,7 @@ Direct memory access — disk is asked to read a block, it puts it into memo
 
 When we write the emulator, we’ll have registers, an ALU, a PC to keep track of what instruction we’re doing, an instruction register, simulated RAM that allows you to read and write bytes from RAM.
 
-### Important to remember: Individual instructions don’t do very much.
+### Important to remember: Individual instructions don’t do very much.
 
 #### ADD:
 
@@ -137,7 +137,7 @@ Talking about CPU and assembly language is down to the metal.
 
 Driver of voltage that goes up and down several times a second — every time it raises or lowers, work gets done. A lot of instructions just take one clock to execute. You can execute billions of instructions per second on a modern CPU.
 
-### Operations or Opcodes:
+### Operations or Opcodes:
 
 Opcode is shorthand for the instruction that you’re executing — not the data it’s working on. ADD Register 0 to Register 4 — Opcode is AND. Register 0 and Register 4 are operands.
 

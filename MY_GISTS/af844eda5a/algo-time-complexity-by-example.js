@@ -123,7 +123,7 @@ countUpAndDown(5):  undefined //- because there was no return statment... only c
 // }
 // printAllPairs(4);
 /*
-0 0	0 1	0 2	0 3	1 0	1 1	1 2	1 3	2 0	2 1	2 2	2 3	3 0	3 1	3 2	3 3
+0 0	0 1	0 2	0 3	1 0	1 1	1 2	1 3	2 0	2 1	2 2	2 3	3 0	3 1	3 2	3 3
 */
 //!Nested loops who's number of iterations depend on the size of the input are never a good thing when trying to write fast code.
 //!O(n^2) or Quadratic Time.

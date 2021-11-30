@@ -523,9 +523,9 @@ And there we go! We successfully passed our `state data` downstream through `pro
 
 Using the components we just created (App, FormComponent and MessageComponent), try building out a form that will allow a user to handle data. You'll need a button, input field, and some data-bound to a DOM element that displays what the user is submitting.
 
-When a user clicks submit, show the data that's on state in an `alert` statement.
+When a user clicks submit, show the data that's on state in an `alert` statement.
 
-### Stretch 
+### Stretch 
 
 Loop over a list of items showing those items to the screen. (Can be a list of strings). When a user clicks submit, instead of logging the item, push an item into that list, and watch the magic happen.
 
@@ -729,7 +729,7 @@ Now, let's build out a little Application that can handle some data that we pass
 - onMouseEnter
 - OnChange
 
-First, let's build out a singleClickHandler function.
+First, let's build out a singleClickHandler function.
 
 ```jsx
 singleClickHandler = () => alert("Single Click!");
@@ -764,7 +764,7 @@ changeHandler = () => alert("Item was changed");
 
 Try playing around with the events and see how are interacting one with another.
 
-Lets take a closer look at the input onChange event for a min. Let's pass in the synthetic event through the function body by adding it as a `parameter` to the `event handler` connected to it.
+Lets take a closer look at the input onChange event for a min. Let's pass in the synthetic event through the function body by adding it as a `parameter` to the `event handler` connected to it.
 
 ```jsx
 changeHandler = (e) => alert(event.target.value);
@@ -800,7 +800,7 @@ changeHandler = (event) => {
 };
 ```
 
-Excellent! Now, `setState` will update our display property on our state object by simply typing in the input field. Let's prove this by logging our state object inside the render function.
+Excellent! Now, `setState` will update our display property on our state object by simply typing in the input field. Let's prove this by logging our state object inside the render function.
 
 ```jsx
 ...

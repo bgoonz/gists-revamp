@@ -1024,11 +1024,11 @@ and `npx` will find the package location.
 
 ###### TABLE OF CONTENTS
 
-If you work with JavaScript, or you've ever interacted with a JavaScript project, Node.js or a frontend project, you surely met the `package.json` file.
+If you work with JavaScript, or you've ever interacted with a JavaScript project, Node.js or a frontend project, you surely met the `package.json` file.
 
 What's that for? What should you know about it, and what are some of the cool things you can do with it?
 
-The `package.json` file is kind of a manifest for your project. It can do a lot of things, completely unrelated. It's a central repository of configuration for tools, for example. It's also where `npm` and `yarn` store the names and versions for all the installed packages.
+The `package.json` file is kind of a manifest for your project. It can do a lot of things, completely unrelated. It's a central repository of configuration for tools, for example. It's also where `npm` and `yarn` store the names and versions for all the installed packages.
 
 ## [](https://nodejs.dev/learn/the-package-json-guide#the-file-structure)The file structure
 
@@ -1038,9 +1038,9 @@ Here's an example package.json file:
 {}
 ```
 
-It's empty! There are no fixed requirements of what should be in a `package.json` file, for an application. The only requirement is that it respects the JSON format, otherwise it cannot be read by programs that try to access its properties programmatically.
+It's empty! There are no fixed requirements of what should be in a `package.json` file, for an application. The only requirement is that it respects the JSON format, otherwise it cannot be read by programs that try to access its properties programmatically.
 
-If you're building a Node.js package that you want to distribute over `npm` things change radically, and you must have a set of properties that will help other people use it. We'll see more about this later on.
+If you're building a Node.js package that you want to distribute over `npm` things change radically, and you must have a set of properties that will help other people use it. We'll see more about this later on.
 
 This is another package.json:
 
@@ -1050,7 +1050,7 @@ This is another package.json:
 }
 ```
 
-It defines a `name` property, which tells the name of the app, or package, that's contained in the same folder where this file lives.
+It defines a `name` property, which tells the name of the app, or package, that's contained in the same folder where this file lives.
 
 Here's a much more complex example, which was extracted from a sample Vue.js application:
 
@@ -1194,26 +1194,26 @@ Here's a much more complex example, which was extracted from a sample Vue.js app
 }
 ```
 
-there are *lots* of things going on here:
+there are *lots* of things going on here:
 
-- `version` indicates the current version
-- `name` sets the application/package name
-- `description` is a brief description of the app/package
-- `main` sets the entry point for the application
-- `private` if set to `true` prevents the app/package to be accidentally published on `npm`
-- `scripts` defines a set of node scripts you can run
-- `dependencies` sets a list of `npm` packages installed as dependencies
-- `devDependencies` sets a list of `npm` packages installed as development dependencies
-- `engines` sets which versions of Node.js this package/app works on
-- `browserslist` is used to tell which browsers (and their versions) you want to support
+- `version` indicates the current version
+- `name` sets the application/package name
+- `description` is a brief description of the app/package
+- `main` sets the entry point for the application
+- `private` if set to `true` prevents the app/package to be accidentally published on `npm`
+- `scripts` defines a set of node scripts you can run
+- `dependencies` sets a list of `npm` packages installed as dependencies
+- `devDependencies` sets a list of `npm` packages installed as development dependencies
+- `engines` sets which versions of Node.js this package/app works on
+- `browserslist` is used to tell which browsers (and their versions) you want to support
 
-All those properties are used by either `npm` or other tools that we can use.
+All those properties are used by either `npm` or other tools that we can use.
 
 ## [](https://nodejs.dev/learn/the-package-json-guide#properties-breakdown)Properties breakdown
 
 This section describes the properties you can use in detail. We refer to "package" but the same thing applies to local applications which you do not use as packages.
 
-Most of those properties are only used on <https://www.npmjs.com/>, others by scripts that interact with your code, like `npm` or others.
+Most of those properties are only used on <https://www.npmjs.com/>, others by scripts that interact with your code, like `npm` or others.
 
 ### [](https://nodejs.dev/learn/the-package-json-guide#name)name
 
@@ -1228,7 +1228,7 @@ Example:
 
 The name must be less than 214 characters, must not have spaces, it can only contain lowercase letters, hyphens (`-`) or underscores (`_`).
 
-This is because when a package is published on `npm`, it gets its own URL based on this property.
+This is because when a package is published on `npm`, it gets its own URL based on this property.
 
 If you published this package publicly on GitHub, a good value for this property is the GitHub repository name.
 
@@ -1321,7 +1321,7 @@ Example:
 "version":  "1.0.0"
 ```
 
-This property follows the semantic versioning (semver) notation for versions, which means the version is always expressed with 3 numbers: `x.x.x`.
+This property follows the semantic versioning (semver) notation for versions, which means the version is always expressed with 3 numbers: `x.x.x`.
 
 The first number is the major version, the second the minor version and the third is the patch version.
 
@@ -1356,7 +1356,7 @@ Example:
 
 ]
 
-This helps people find your package when navigating similar packages, or when browsing the <https://www.npmjs.com/> website.
+This helps people find your package when navigating similar packages, or when browsing the <https://www.npmjs.com/> website.
 
 ### [](https://nodejs.dev/learn/the-package-json-guide#description)description
 
@@ -1369,7 +1369,7 @@ Example:
 "description":  "A package to work with strings"
 ````
 
-This is especially useful if you decide to publish your package to `npm` so that people can find out what the package is about.
+This is especially useful if you decide to publish your package to `npm` so that people can find out what the package is about.
 
 ### [](https://nodejs.dev/learn/the-package-json-guide#repository)repository
 
@@ -1382,7 +1382,7 @@ Example:
 "repository":  "github:whatever/testing",
 ```
 
-Notice the `github` prefix. There are other popular services baked in:
+Notice the `github` prefix. There are other popular services baked in:
 
 ```json
 
@@ -1433,7 +1433,7 @@ Example:
 
 ### [](https://nodejs.dev/learn/the-package-json-guide#private)private
 
-if set to `true` prevents the app/package to be accidentally published on `npm`
+if set to `true` prevents the app/package to be accidentally published on `npm`
 
 Example:
 
@@ -1467,13 +1467,13 @@ Example:
 }
 ```
 
-These scripts are command line applications. You can run them by calling `npm run XXXX` or `yarn XXXX`, where `XXXX` is the command name. Example: `npm run dev`.
+These scripts are command line applications. You can run them by calling `npm run XXXX` or `yarn XXXX`, where `XXXX` is the command name. Example: `npm run dev`.
 
 You can use any name you want for a command, and scripts can do literally anything you want.
 
 ### [](https://nodejs.dev/learn/the-package-json-guide#dependencies)dependencies
 
-Sets a list of `npm` packages installed as dependencies.
+Sets a list of `npm` packages installed as dependencies.
 
 When you install a package using npm or yarn:
 
@@ -1498,9 +1498,9 @@ Example:
 
 ### [](https://nodejs.dev/learn/the-package-json-guide#devdependencies)devDependencies
 
-Sets a list of `npm` packages installed as development dependencies.
+Sets a list of `npm` packages installed as development dependencies.
 
-They differ from `dependencies` because they are meant to be installed only on a development machine, not needed to run the code in production.
+They differ from `dependencies` because they are meant to be installed only on a development machine, not needed to run the code in production.
 
 When you install a package using npm or yarn:
 
@@ -1564,25 +1564,25 @@ Example:
 ]
 ```
 
-This configuration means you want to support the last 2 major versions of all browsers with at least 1% of usage (from the [CanIUse.com](https://caniuse.com/) stats), except IE8 and lower.
+This configuration means you want to support the last 2 major versions of all browsers with at least 1% of usage (from the [CanIUse.com](https://caniuse.com/) stats), except IE8 and lower.
 
 ([see more](https://www.npmjs.com/package/browserslist))
 
 ### [](https://nodejs.dev/learn/the-package-json-guide#command-specific-properties)Command-specific properties
 
-The `package.json` file can also host command-specific configuration, for example for Babel, ESLint, and more.
+The `package.json` file can also host command-specific configuration, for example for Babel, ESLint, and more.
 
-Each has a specific property, like `eslintConfig`, `babel` and others. Those are command-specific, and you can find how to use those in the respective command/project documentation.
+Each has a specific property, like `eslintConfig`, `babel` and others. Those are command-specific, and you can find how to use those in the respective command/project documentation.
 
 ## [](https://nodejs.dev/learn/the-package-json-guide#package-versions)Package versions
 
-You have seen in the description above version numbers like these: `~3.0.0` or `^0.13.0`. What do they mean, and which other version specifiers can you use?
+You have seen in the description above version numbers like these: `~3.0.0` or `^0.13.0`. What do they mean, and which other version specifiers can you use?
 
 That symbol specifies which updates your package accepts, from that dependency.
 
 Given that using semver (semantic versioning) all versions have 3 digits, the first being the major release, the second the minor release and the third is the patch release, you have these "[Rules](https://nodejs.dev/learn/semantic-versioning-using-npm/)".
 
-You can combine most of the versions in ranges, like this: `1.0.0 || >=1.1.0 <1.2.0`, to either use 1.0.0 or one release from 1.1.0 up, but lower than 1.2.0.
+You can combine most of the versions in ranges, like this: `1.0.0 || >=1.1.0 <1.2.0`, to either use 1.0.0 or one release from 1.1.0 up, but lower than 1.2.0.
 
 ---
 
@@ -1622,11 +1622,11 @@ BASHcopy
 
 └── strip-eof@1.0.0
 
-You can also just open the `package-lock.json` file, but this involves some visual scanning.
+You can also just open the `package-lock.json` file, but this involves some visual scanning.
 
-`npm list -g` is the same, but for globally installed packages.
+`npm list -g` is the same, but for globally installed packages.
 
-To get only your top-level packages (basically, the ones you told npm to install and you listed in the `package.json`), run `npm list --depth=0`:
+To get only your top-level packages (basically, the ones you told npm to install and you listed in the `package.json`), run `npm list --depth=0`:
 
 BASHcopy
 
@@ -1660,7 +1660,7 @@ BASHcopy
 
 └── minimist@0.0.10
 
-If you want to see what's the latest available version of the package on the npm repository, run `npm view [package_name] version`:
+If you want to see what's the latest available version of the package on the npm repository, run `npm view [package_name] version`:
 
 BASHcopy
 
@@ -1706,11 +1706,11 @@ BASHcopy
 
 └── strip-eof@1.0.0
 
-You can also just open the `package-lock.json` file, but this involves some visual scanning.
+You can also just open the `package-lock.json` file, but this involves some visual scanning.
 
-`npm list -g` is the same, but for globally installed packages.
+`npm list -g` is the same, but for globally installed packages.
 
-To get only your top-level packages (basically, the ones you told npm to install and you listed in the `package.json`), run `npm list --depth=0`:
+To get only your top-level packages (basically, the ones you told npm to install and you listed in the `package.json`), run `npm list --depth=0`:
 
 BASHcopy
 
@@ -1744,7 +1744,7 @@ BASHcopy
 
 └── minimist@0.0.10
 
-If you want to see what's the latest available version of the package on the npm repository, run `npm view [package_name] version`:
+If you want to see what's the latest available version of the package on the npm repository, run `npm view [package_name] version`:
 
 BASHcopy
 
@@ -1756,7 +1756,7 @@ BASHcopy
 
 # Install an older version of an npm package
 
-You can install an old version of an npm package using the `@` syntax:
+You can install an old version of an npm package using the `@` syntax:
 
 BASHcopy
 
@@ -1782,7 +1782,7 @@ BASHcopy
 
 npm install -g webpack@4.16.4
 
-You might also be interested in listing all the previous versions of a package. You can do it with `npm view <package> versions`:
+You might also be interested in listing all the previous versions of a package. You can do it with `npm view <package> versions`:
 
 BASHcopy
 
@@ -1828,13 +1828,13 @@ BASHcopy
 
 # Update all the Node.js dependencies to their latest version
 
-When you install a package using `npm install <packagename>`, the latest available version of the package is downloaded and put in the `node_modules` folder, and a corresponding entry is added to the `package.json` and `package-lock.json` files that are present in your current folder.
+When you install a package using `npm install <packagename>`, the latest available version of the package is downloaded and put in the `node_modules` folder, and a corresponding entry is added to the `package.json` and `package-lock.json` files that are present in your current folder.
 
 npm calculates the dependencies and installs the latest available version of those as well.
 
-Let's say you install [`cowsay`](https://www.npmjs.com/package/cowsay), a cool command line tool that lets you make a cow say *things*.
+Let's say you install [`cowsay`](https://www.npmjs.com/package/cowsay), a cool command line tool that lets you make a cow say *things*.
 
-When you `npm install cowsay`, this entry is added to the `package.json` file:
+When you `npm install cowsay`, this entry is added to the `package.json` file:
 
 JSONcopy
 
@@ -1848,7 +1848,7 @@ JSONcopy
 
 }
 
-and this is an extract of `package-lock.json`, where we removed the nested dependencies for clarity:
+and this is an extract of `package-lock.json`, where we removed the nested dependencies for clarity:
 
 JSONcopy
 
@@ -1886,21 +1886,21 @@ JSONcopy
 
 }
 
-Now those 2 files tell us that we installed version `1.3.1` of cowsay, and our rule for updates is `^1.3.1`, which for the npm versioning rules means that npm can update to patch and minor releases: `1.3.2`, `1.4.0` and so on.
+Now those 2 files tell us that we installed version `1.3.1` of cowsay, and our rule for updates is `^1.3.1`, which for the npm versioning rules means that npm can update to patch and minor releases: `1.3.2`, `1.4.0` and so on.
 
-If there is a new minor or patch release and we type `npm update`, the installed version is updated, and the `package-lock.json` file diligently filled with the new version.
+If there is a new minor or patch release and we type `npm update`, the installed version is updated, and the `package-lock.json` file diligently filled with the new version.
 
-Since npm version 5.0.0, `npm update` will update the `package.json` with the updated version. Use `npm update --no-save` to not update `package.json`.
+Since npm version 5.0.0, `npm update` will update the `package.json` with the updated version. Use `npm update --no-save` to not update `package.json`.
 
-To discover new releases of the packages, you run `npm outdated`.
+To discover new releases of the packages, you run `npm outdated`.
 
 Here's the list of a few outdated packages in one repository that wasn't updated for quite a while:
 
 [![outdated packages](https://nodejs.dev/static/e967736f8d105e64c22d80ce7a42f52a/fcda8/outdated-packages.png "outdated packages")](https://nodejs.dev/static/e967736f8d105e64c22d80ce7a42f52a/ee455/outdated-packages.png)
 
-Some of those updates are major releases. Running `npm update` won't update the version of those. Major releases are never updated in this way because they (by definition) introduce breaking changes, and `npm` wants to save you trouble.
+Some of those updates are major releases. Running `npm update` won't update the version of those. Major releases are never updated in this way because they (by definition) introduce breaking changes, and `npm` wants to save you trouble.
 
-To update all packages to a new major version, install the `npm-check-updates` package globally:
+To update all packages to a new major version, install the `npm-check-updates` package globally:
 
 BASHcopy
 
@@ -1912,7 +1912,7 @@ BASHcopy
 
 ncu -u
 
-this will upgrade all the version hints in the `package.json` file, to `dependencies` and `devDependencies`, so npm can install the new major version.
+this will upgrade all the version hints in the `package.json` file, to `dependencies` and `devDependencies`, so npm can install the new major version.
 
 You are now ready to run the update:
 
@@ -1920,7 +1920,7 @@ BASHcopy
 
 npm update
 
-If you just downloaded the project without the `node_modules` dependencies and you want to install the shiny new versions first, just run
+If you just downloaded the project without the `node_modules` dependencies and you want to install the shiny new versions first, just run
 
 BASHcopy
 
@@ -1932,7 +1932,7 @@ npm install
 
 If there's one great thing in Node.js packages, it's that they all agreed on using Semantic Versioning for their version numbering.
 
-The Semantic Versioning concept is simple: all versions have 3 digits: `x.y.z`.
+The Semantic Versioning concept is simple: all versions have 3 digits: `x.y.z`.
 
 - the first digit is the major version
 - the second digit is the minor version
@@ -1944,11 +1944,11 @@ When you make a new release, you don't just up a number as you please, but you h
 - you up the minor version when you add functionality in a backward-compatible manner
 - you up the patch version when you make backward-compatible bug fixes
 
-The convention is adopted all across programming languages, and it is very important that every `npm` package adheres to it, because the whole system depends on that.
+The convention is adopted all across programming languages, and it is very important that every `npm` package adheres to it, because the whole system depends on that.
 
 Why is that so important?
 
-Because `npm` set some rules we can use in the `package.json` file to choose which versions it can update our packages to, when we run `npm update`.
+Because `npm` set some rules we can use in the `package.json` file to choose which versions it can update our packages to, when we run `npm update`.
 
 The rules use those symbols:
 
@@ -1964,17 +1964,17 @@ The rules use those symbols:
 
 Let's see those rules in detail:
 
-- `^`: It will only do updates that do not change the leftmost non-zero number i.e there can be changes in minor version or patch version but not in major version. If you write `^13.1.0`, when running `npm update`, it can update to `13.2.0`, `13.3.0` even `13.3.1`, `13.3.2` and so on, but not to `14.0.0` or above.
-- `~`: if you write `~0.13.0` when running `npm update` it can update to patch releases: `0.13.1` is ok, but `0.14.0` is not.
+- `^`: It will only do updates that do not change the leftmost non-zero number i.e there can be changes in minor version or patch version but not in major version. If you write `^13.1.0`, when running `npm update`, it can update to `13.2.0`, `13.3.0` even `13.3.1`, `13.3.2` and so on, but not to `14.0.0` or above.
+- `~`: if you write `~0.13.0` when running `npm update` it can update to patch releases: `0.13.1` is ok, but `0.14.0` is not.
 - `>`: you accept any version higher than the one you specify
 - `>=`: you accept any version equal to or higher than the one you specify
 - `<=`: you accept any version equal or lower to the one you specify
 - `<`: you accept any version lower than the one you specify
 - `=`: you accept that exact version
-- `-`: you accept a range of versions. Example: `2.1.0 - 2.6.2`
-- `||`: you combine sets. Example: `< 2.1 || > 2.6`
+- `-`: you accept a range of versions. Example: `2.1.0 - 2.6.2`
+- `||`: you combine sets. Example: `< 2.1 || > 2.6`
 
-You can combine some of those notations, for example use `1.0.0 || >=1.1.0 <1.2.0` to either use 1.0.0 or one release from 1.1.0 up, but lower than 1.2.0.
+You can combine some of those notations, for example use `1.0.0 || >=1.1.0 <1.2.0` to either use 1.0.0 or one release from 1.1.0 up, but lower than 1.2.0.
 
 There are other rules, too:
 

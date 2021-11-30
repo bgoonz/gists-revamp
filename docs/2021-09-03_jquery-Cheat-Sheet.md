@@ -4,11 +4,11 @@ jquery methods
 
 ---
 
-### jquery Cheat Sheet
+### jquery Cheat Sheet
 
 ### jquery methods
 
-### Wrapping HTMLElements as jquery objects
+### Wrapping HTMLElements as jquery objects
 
 - <span id="0e92">wraps HTMLElement and returns jquery object</span>
 - <span id="bb81">const $liList = $(“li”)</span>
@@ -92,7 +92,7 @@ ex:
 
 - <span id="0a6a">jqueryObject.on(“eventType”, callback)</span>
 - <span id="11a3">jqueryObject.off(“eventType”, \[callback\])</span>
-- <span id="ad13">the second argument in .off is optionala BUT recommended. without, removes all listeners for the jquery object. With, will remove only listener w/ same callback</span>
+- <span id="ad13">the second argument in .off is optionala BUT recommended. without, removes all listeners for the jquery object. With, will remove only listener w/ same callback</span>
 
 ### e
 
@@ -102,7 +102,7 @@ ex:
 
     e.preventDefault();
 
-### currentTarget vs target
+### currentTarget vs target
 
 ### currentTarget
 

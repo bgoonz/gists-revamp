@@ -23108,7 +23108,7 @@ require = (function e(t, n, r) {
               ch === "	" ||
               ch === "" ||
               ch === "\f" ||
-              ch === " " ||
+              ch === " " ||
               (ch.charCodeAt(0) >= 5760 &&
                 " ᠎             　\ufeff".indexOf(ch) >= 0)
             );

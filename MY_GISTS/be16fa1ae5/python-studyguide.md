@@ -864,11 +864,11 @@ print( 4 in ( 1 , 2 , 3 )) #> False
 
 ###### A range is declared using one to three parameters
 
-###### start - optional (  0  if not supplied) - first number in the sequence
+###### start - optional (  0  if not supplied) - first number in the sequence
 
 ###### stop - required - next number past the last number in the sequence
 
-###### step - optional (  1  if not supplied) - the difference between each number in
+###### step - optional (  1  if not supplied) - the difference between each number in
 
 ###### the sequence
 
@@ -1577,7 +1577,7 @@ newPerson = { key.title(): value for key, value in person.items() }
 
 ##### Locks packages to specific versions with a Pipfile.lock.
 
-##### Uses an environment variable named PIPENV_VENV_IN_PROJECT. When set to  1 
+##### Uses an environment variable named PIPENV_VENV_IN_PROJECT. When set to  1 
 
 ##### it causes pipenv to create the virtualenv inside your project directory in
 

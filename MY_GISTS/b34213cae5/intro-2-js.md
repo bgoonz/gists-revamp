@@ -6,14 +6,14 @@ It is important to note that JavaScript has almost nothing to do with the progra
 
 # Variables
 
-The latest ECMAScript(ES6) standard defines seven data types: Out of which six data types are Primitive(predefined).
+The latest ECMAScript(ES6) standard defines seven data types: Out of which six data types are Primitive(predefined).
 
-- Numbers: 1, 6.5, 7 etc.
-- String: `Hello NoobMaster69` etc.
-- Boolean: Represent a logical entity and can have two values: true or false.
-- Null: This type has only one value : null.
-- Undefined: A variable that has not been assigned a value is undefined.
-- Object: It is the most important data-type and forms the building blocks for modern JavaScript. We will learn about these data types in details in further articles.
+- Numbers: 1, 6.5, 7 etc.
+- String: `Hello NoobMaster69` etc.
+- Boolean: Represent a logical entity and can have two values: true or false.
+- Null: This type has only one value : null.
+- Undefined: A variable that has not been assigned a value is undefined.
+- Object: It is the most important data-type and forms the building blocks for modern JavaScript. We will learn about these data types in details in further articles.
 
 # Variables in JavaScript are containers which hold reusable data. It is the basic unit of storage in a program
 
@@ -21,7 +21,7 @@ The latest ECMAScript(ES6) standard defines seven data types: Out of which six 
 - A variable is only a name given to a memory location, all the operations done on the variable effects that memory location.
 - In JavaScript, all the variables must be declared before they can be used.
 
-Before ES2015, JavaScript variables were solely declared using the var keyword followed by the name of the variable and semi-colon.
+Before ES2015, JavaScript variables were solely declared using the var keyword followed by the name of the variable and semi-colon.
 
 We can initialize the variables either at the time of declaration or also later when we want to use them. Below are some examples of declaring and initializing variables in JavaScript:
 
@@ -37,7 +37,7 @@ let name = `Lasha`;
 name = `Lasha`;
 ```
 
-After ES2015, we now have two new variable containers : let and const. Now we shall look at both of them one by one. The variable type Let shares lots of similarities with var but unlike var it has scope constraints. Let's make use of let variable:
+After ES2015, we now have two new variable containers : let and const. Now we shall look at both of them one by one. The variable type Let shares lots of similarities with var but unlike var it has scope constraints. Let's make use of let variable:
 
 ```js
 /* let variable */
@@ -58,7 +58,7 @@ a = `Lasha`; // works same as var
 
 **Constants are block-scoped, much like variables defined using the let statement. The value of a constant can't be changed through reassignment, and it can't be redeclared.**
 
-> Naming a const in JavaScript follow the same rule of naming a variable, except that the const keyword is always required, even for global constants.
+> Naming a const in JavaScript follow the same rule of naming a variable, except that the const keyword is always required, even for global constants.
 
 ```js
 /* const variable */
@@ -70,7 +70,7 @@ name = `Selly`; // will give us an error
 
 Scope determines the visibility or accessibility of a variable or other resource in the area of your code.
 
-There's only one Global scope in the JavaScript document. The area outside all the functions is consider the global scope and the variables defined inside the global scope can be accessed and altered in any other scopes.
+There's only one Global scope in the JavaScript document. The area outside all the functions is consider the global scope and the variables defined inside the global scope can be accessed and altered in any other scopes.
 
 ```js
 /* global scope */
@@ -85,7 +85,7 @@ function getFruit() {
 getFruit(); // apple
 ```
 
-Variables declared inside the functions become Local to the function and are considered in the corresponding local scope. Every Functions has its own scope. Same variable can be used in different functions because they are bound to the respective functions and are not mutual visible.
+Variables declared inside the functions become Local to the function and are considered in the corresponding local scope. Every Functions has its own scope. Same variable can be used in different functions because they are bound to the respective functions and are not mutual visible.
 
 ```js
 function foo1() {
@@ -101,7 +101,7 @@ function foo3() {
 /* global scope */
 ```
 
-Local scope can be divided into function scope and block scope. The concept of block scope is introduced in ES2015 together with the new ways to declare variables -- const and let.
+Local scope can be divided into function scope and block scope. The concept of block scope is introduced in ES2015 together with the new ways to declare variables -- const and let.
 
 # Objects
 
@@ -171,7 +171,7 @@ const name2 = animes[1]; // Steins;Gate
 const name3 = animes[2]; // Berserk
 ```
 
-The length property of an array returns the length of an array (the number of array elements).
+The length property of an array returns the length of an array (the number of array elements).
 
 ```js
 const fruits = [`Banana`, `Orange`, `Apple`, `Kiwi`];
@@ -220,7 +220,7 @@ var addTo = function () {
 console.log(addTo(3)); // 5
 ```
 
-Here is the same function using ES2015 syntax:
+Here is the same function using ES2015 syntax:
 
 ```js
 const passed = 3;

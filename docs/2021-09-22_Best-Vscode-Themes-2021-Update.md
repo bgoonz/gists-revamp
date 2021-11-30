@@ -4,23 +4,23 @@ Let’s start with the classics:
 
 ---
 
-### Best Vscode Themes 2021 Update
+### Best Vscode Themes 2021 Update
 
 #### Let’s start with the classics:
 
-### 1. One dark Pro
+### 1. One dark Pro
 
 Atom’s iconic One Dark <a href="https://morioh.com/redirect?l=https%3A%2F%2Fmarketplace.visualstudio.com%2Fsearch%3Ftarget%3DVSCode%26category%3DThemes%26sortBy%3DInstalls" class="markup--anchor markup--p-anchor">theme</a>, and one of the most installed themes for VS Code!
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*a07EPPD7uLHwOZuA.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2FBinaryify%2FOneDark-Pro" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 2.Vsc Material Theme
+### 2.Vsc Material Theme
 
-Material Theme, the most epic theme for Visual Studio Code .You can install this awesome theme through the Visual Studio Code Marketplace.<a href="https://morioh.com/redirect?l=https%3A%2F%2Fmaterial-theme.site%2F" class="markup--anchor markup--p-anchor">https://material-theme.site/</a>
+Material Theme, the most epic theme for Visual Studio Code .You can install this awesome theme through the Visual Studio Code Marketplace.<a href="https://morioh.com/redirect?l=https%3A%2F%2Fmaterial-theme.site%2F" class="markup--anchor markup--p-anchor">https://material-theme.site/</a>
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*0cS47fbR_8UaeWHh.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fmaterial-theme%2Fvsc-material-theme" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 3. Dracula Official
+### 3. Dracula Official
 
 Dracula for Visual Studio Code  
 Dark theme for Visual Studio Code <a href="https://morioh.com/redirect?l=https%3A%2F%2Fdraculatheme.com%2Fvisual-studio-code" class="markup--anchor markup--p-anchor">https://draculatheme.com/visual-studio-code</a>
@@ -33,7 +33,7 @@ Noctis is a collection of light & dark themes with a well balanced blend of warm
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*4Xx2Nuh578_pBDJj.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fliviuschera%2Fnoctis" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 5.Vscode Theme Onedark
+### 5.Vscode Theme Onedark
 
 VSCode Theme based on Atom’s One Dark theme. Best rated One Dark theme port in the marketplace, features full Workbench theming.
 
@@ -45,26 +45,26 @@ This extension for Visual Studio Code adds themes titled “Winter is Coming”.
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*qU2plrq8j1ALdlCh.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fjohnpapa%2Fvscode-winteriscoming" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 7.Shades Of Purple Vscode
+### 7.Shades Of Purple Vscode
 
 Shades of Purple — A professional theme with hand-picked & bold shades of purple to go along with your VSCode. Reviewed by several designers and 75+ theme versions released to keep it updated. One of the top rated best VSCode themes on VS Code Marketplace. Download → <a href="https://morioh.com/redirect?l=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dahmadawais.shades-of-purple" class="markup--anchor markup--p-anchor">https://marketplace.visualstudio.com/items?itemName=ahmadawais.shades-of-purple</a>
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*GFiKFdjrGefyHthY.gif" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fahmadawais%2Fshades-of-purple-vscode" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 8.Vsc Community Material Theme
+### 8.Vsc Community Material Theme
 
 The community maintained version of Material Theme with ”legacy” color schemes you love!  
 This project is community-maintained and the source is encrypted. If you want to maintain it and ship new fixes, ask to become a maintainer so you’ll have full access to the repository.
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*s70SyPc9J516sPO_.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fmaterial-theme%2Fvsc-community-material-theme" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 9.Vscode One Monokai
+### 9.Vscode One Monokai
 
 A cross between Monokai and One Dark theme
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*n_Vw4FJCpqXguSzD.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fazemoh%2Fvscode-one-monokai" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 10.Dark Plus Material
+### 10.Dark Plus Material
 
 I really love the default Dark+ Theme that comes with Visual Studio Code, but also love the Material Design Palette. The thing is I didn’t found a good material theme (the coloring is always ugly for my taste). So I made this theme that implements the Material Design Palette in the Dark+ theme that comes with Visual Studio Code.
 
@@ -77,7 +77,7 @@ A simple theme with bright colors and comes in three versions — dark, ligh
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*hFlCd1hG4y34HoRu.png" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fayu-theme%2Fvscode-ayu" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 12.Night Owl Vscode Theme
+### 12.Night Owl Vscode Theme
 
 A Visual Studio Code theme for the night owls out there. Fine-tuned for those of us who like to code late into the night. Color choices have taken into consideration what is accessible to people with colorblindness and in low-light circumstances. Decisions were also based on meaningful contrast for reading comprehension and for optimal razzle dazzle. ✨
 
@@ -89,13 +89,13 @@ Night Owl is a theme **created with accessibility in mind**. It offers a neat co
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*RIpdGG3nqaw0gJYe.jpg" class="graf-image" /></figure><a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fsdras%2Fnight-owl-vscode-theme" class="markup--anchor markup--p-anchor">View on GitHub</a>
 
-### 13. Atom One Dark Theme
+### 13. Atom One Dark Theme
 
 VSCode Theme based on Atom’s <a href="https://morioh.com/redirect?l=https%3A%2F%2Fgithub.com%2Fatom%2Fone-dark-syntax" class="markup--anchor markup--p-anchor">One Dark</a> theme. Best rated One Dark theme port in the marketplace, features full Workbench theming.
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*Cs4tIN4reCfsKjq0.png" class="graf-image" /></figure>Install: <a href="https://morioh.com/redirect?l=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dakamud.vscode-theme-onedark" class="markup--anchor markup--p-anchor">https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark</a>
 
-### 14.Dark Plus Syntax
+### 14.Dark Plus Syntax
 
 VS Code’s default dark theme, but just a little bit better <a href="https://morioh.com/redirect?l=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Ddunstontc.dark-plus-syntax" class="markup--anchor markup--p-anchor">https://marketplace.visualstudio.com/items?itemName=dunstontc.dark-plus-syntax</a>
 
@@ -135,7 +135,7 @@ Palenight Theme An elegant and juicy material-like theme for Visual Studio Code.
 
 <a href="https://marketplace.visualstudio.com/items?itemName=GulajavaMinistudio.mayukaithemevsc" class="markup--anchor markup--p-anchor"><em>Download</em></a> _Mayukai Mirage Theme_
 
-### One Dark Pro
+### One Dark Pro
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*OU4LuXUXGQuPfsBj.jpg" class="graf-image" /></figure>Before VS Code went mainstream, the Atom code editor was the preferred choice of many developers, and there’s no denying that Atom’s One Dark theme looks great. If you **miss Atom’s one dark theme, then One Dark Pro is what you need to install** on VS Code. The creators of this theme have also included snippets in the listing to help you customize the colors and add italics to the UI.
 
@@ -171,19 +171,19 @@ Palenight Theme An elegant and juicy material-like theme for Visual Studio Code.
 
 <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme" class="markup--anchor markup--p-anchor"><em>Download</em></a> _GitHub Theme_
 
-### Brackets Light Pro
+### Brackets Light Pro
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*loNs_JDe6DsvUf1B.jpg" class="graf-image" /></figure>Brackets Light Pro ports Adobe’s Brackets code editor’s light theme to VS Code. If you’re someone migrating to VS Code from Brackets since Adobe is all set to end support for Brackets from September 1, 2021, you’ll enjoy using the Brackets Light Pro theme. The **recommended fonts and icons for this theme are Fantasque Sans Mono and VSCode Great Icons**.
 
 <a href="https://marketplace.visualstudio.com/items?itemName=fehey.brackets-light-pro" class="markup--anchor markup--p-anchor"><em>Download</em></a> _Brackets Light Pro Theme_
 
-### 19. Aofuji Light
+### 19. Aofuji Light
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*qyhNkYrf-Dc8pMXZ.jpg" class="graf-image" /></figure>Aofuji Light is a minimal theme for VS Code. This theme is relatively new, and the syntax highlighting has been **tested with HTML, JavaScript, CSS, and Markdown files**. If you prefer light themes, you can give Aofuji Light a shot to see if it fits perfectly in your workflow.
 
 <a href="https://marketplace.visualstudio.com/items?itemName=amzrk2.vscode-theme-aofuji" class="markup--anchor markup--p-anchor"><em>Download</em></a> _Aofuji Light Theme_
 
-### 20. Bluloco Light
+### 20. Bluloco Light
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*Q3wwcGgnFnDRdZFg.jpg" class="graf-image" /></figure>Lastly, we have Bluloco Light theme. It is a fork of the One Light theme with a Bluloco color palette that’s visually pleasing. This theme **looks good even when you have Apple’s NightShift mode enabled**, as per the creator. It means the theme plays along well with a blue light filter.
 
@@ -199,7 +199,7 @@ Palenight Theme An elegant and juicy material-like theme for Visual Studio Code.
 
 <a href="https://marketplace.visualstudio.com/items?itemName=apvarun.celestial" class="markup--anchor markup--p-anchor"><em>Download</em></a> _Celestial Theme_
 
-### In Bed By 7pm
+### In Bed By 7pm
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*_hADxW3KDWGkfXe9.jpg" class="graf-image" /></figure>In Bed by 7pm is a theme from the creator of widely used VS Code theme Night Owl (added in the seventh position on this list). As the name suggests, this theme is **best suited for those who don’t often stay up late** for coding sessions. This theme has excellent contrast levels to help you effortlessly differentiate various elements in the code.
 

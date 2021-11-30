@@ -24,7 +24,7 @@ Readability Is a Ranking Factor
 
 Content readability is the level of ease at which a reader can understand written text. What does that have to do with SEO? Well, Google's ranking algorithm is based on human behavior and uses information from visitors to rank your site. Simply put, search engines reward pages that provide readable content. Search engines want people to find what they are looking for and readable content helps searchers easily find the specific information they are interested in.
 
-Search engines are there to help us find answers to our questions.If they send us to pages that are hard to read, it will be hard to find the answer. If the answer is there and we can't fit, we will leave the site unsatisfied. Search engines take these user signals into account to determine how users experience your site and whether or not your page should be rewarded (in this case, not).  By improving your page readability with good structure, you improve your users' on-page behavior and ultimately your position on the SERP.
+Search engines are there to help us find answers to our questions.If they send us to pages that are hard to read, it will be hard to find the answer. If the answer is there and we can't fit, we will leave the site unsatisfied. Search engines take these user signals into account to determine how users experience your site and whether or not your page should be rewarded (in this case, not).  By improving your page readability with good structure, you improve your users' on-page behavior and ultimately your position on the SERP.
 
 How to Structure Your Page for SEO
 
@@ -38,23 +38,23 @@ Before creating any page, think about how its content will be structured. A clea
 
 To structure your page for your users, think about how people enjoy reading a text and consuming content. More specifically, look out for:
 
--   Headline
+-   Headline
 
--   Paragraphs
+-   Paragraphs
 
--   Headings
+-   Headings
 
--   Font size & color
+-   Font size & color
 
--   Bullet points, lists & tables
+-   Bullet points, lists & tables
 
--   Text length
+-   Text length
 
--   Imagery
+-   Imagery
 
--   CTAs
+-   CTAs
 
--   Internal linking
+-   Internal linking
 
 #### Think About Your Headline
 
@@ -72,11 +72,11 @@ If you've decided to write content on a specific topic, chances are you have a l
 
 Your headings should:
 
--   Explain the topic of the section below it.
+-   Explain the topic of the section below it.
 
--   Be visually appealing (bold, underlined, etc.).
+-   Be visually appealing (bold, underlined, etc.).
 
--   Contain your keywords.
+-   Contain your keywords.
 
 #### Pay Attention to Font Size & Color
 
@@ -86,11 +86,11 @@ Let's talk typography for a minute. In the SEO world, good content means good ra
 
 To make the reading experience enjoyable for your visitors:
 
--   Pick a font that is easy to read.
+-   Pick a font that is easy to read.
 
--   Choose a font size that is neither too small nor too big - but make the title and headers bigger as they need to stand out.
+-   Choose a font size that is neither too small nor too big - but make the title and headers bigger as they need to stand out.
 
--   Use some color to enhance different important elements.
+-   Use some color to enhance different important elements.
 
 #### Use Bullet Points, Lists & Tables
 
@@ -102,11 +102,11 @@ There's an SEO saying that goes "length is strength". Research shows that longer
 
 A few tips to keep in mind:
 
--   Choose topics that allow for a variety of angles.
+-   Choose topics that allow for a variety of angles.
 
--   Write comprehensive, well-researched guides or educational content.
+-   Write comprehensive, well-researched guides or educational content.
 
--   Above all, create content that addresses your user's intent and answers their questions.
+-   Above all, create content that addresses your user's intent and answers their questions.
 
 #### Add Imagery To Your Text
 
@@ -122,7 +122,7 @@ Another way to structure your page is through the use of cleverly placed calls-t
 
 #### Include Internal Links
 
-Links are an important aspect of page structure. Internal links are links on a page that direct to another page of your website.  Google uses the context of a link to understand the content of the page it is linking to. As a rule of thumb, your website should be structured in a way that every page has at least one link to and from it. The number of internal links pointing to a page are used to determine how important a page is. The more important a page, the more links it should have pointing to it.
+Links are an important aspect of page structure. Internal links are links on a page that direct to another page of your website.  Google uses the context of a link to understand the content of the page it is linking to. As a rule of thumb, your website should be structured in a way that every page has at least one link to and from it. The number of internal links pointing to a page are used to determine how important a page is. The more important a page, the more links it should have pointing to it.
 
 Beyond Content: Optimizing Search Results Appearance
 
@@ -138,13 +138,13 @@ A title tag is metadata that's visible in browser's tab and is used by Google to
 
 #### How to get your title tag right
 
--   Use a unique title that accurately describes each page.
+-   Use a unique title that accurately describes each page.
 
--   Include your most important keyword once.
+-   Include your most important keyword once.
 
--   Keep your keyword close to the beginning of your title tag - it will have more weight in search engines.
+-   Keep your keyword close to the beginning of your title tag - it will have more weight in search engines.
 
--   While there is no maximum number of characters, common best practice is to keep it under 60 characters to avoid Google cutting off your full title.
+-   While there is no maximum number of characters, common best practice is to keep it under 60 characters to avoid Google cutting off your full title.
 
 ### Meta Descriptions
 
@@ -154,13 +154,13 @@ Whenever a web page is featured on the SERP, there's some text underneath the li
 
 #### How to Write A Great Meta Description:
 
--   Stick to 160 characters or less.
+-   Stick to 160 characters or less.
 
--   Make it compelling and unique - it is an invitation to your page.
+-   Make it compelling and unique - it is an invitation to your page.
 
--   Use some of your most important keywords, preferably at the beginning.
+-   Use some of your most important keywords, preferably at the beginning.
 
--   Add a call to action prompting users to click.
+-   Add a call to action prompting users to click.
 
 Whatever you do, always put yourself in the user's shoes and ask yourself if the description would make you want to click. If you forget to add a meta description and a title tag, they will still appear on the SERP because Google will fill in the blanks by summarizing the page. However, that's an optimization opportunity you would be missing out on.
 

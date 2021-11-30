@@ -84,7 +84,7 @@
 
 [bgoonz/web-dev-notes-backup](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=bgoonz%2Fweb-dev-notes-backup&pos=0&uri=https://github.com/bgoonz/web-dev-notes-backup)
 
-[Overview  |  Firebase](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Overview%20%C2%A0%7C%C2%A0%20Firebase&pos=0&uri=https://firebase.google.com/docs/extensions/overview-use-extensions?authuser=0#view-source-code)
+[Overview  |  Firebase](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Overview%20%C2%A0%7C%C2%A0%20Firebase&pos=0&uri=https://firebase.google.com/docs/extensions/overview-use-extensions?authuser=0#view-source-code)
 
 [Authenticate with Firebase Using Email Link in JavaScript](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Authenticate%20with%20Firebase%20Using%20Email%20Link%20in%20JavaScript&pos=666.6666259765625&uri=https://firebase.google.com/docs/auth/web/email-link-auth?authuser=0)
 
@@ -206,7 +206,7 @@
 
 [HULL](https://hull.dev/)
 
-[HULL -- Shopify Starter -- Overview | Sanity.io](https://www.sanity.io/manage/personal/project/y2r12zyg)
+[HULL -- Shopify Starter -- Overview | Sanity.io](https://www.sanity.io/manage/personal/project/y2r12zyg)
 
 [HULL -- Sanity](https://hull-shopify-starter-pearl.vercel.app/studio/desk/__edit__80c8de4a-0eff-4710-8073-3692c509c168%2Ctype%3Dcollection)
 
@@ -292,13 +292,13 @@
 
 [Parsing CSV in node.js](https://gist.github.com/andyj/8d40bc394fb44cec5f92)
 
-[Google Cloud overview  |  Overview](https://cloud.google.com/docs/overview/#google-cloud-console)
+[Google Cloud overview  |  Overview](https://cloud.google.com/docs/overview/#google-cloud-console)
 
 [React Express Postgresql Ecommerce Site For Norwex Products - norwex-ecommerce-react - Confluence](https://web-dev-hub.atlassian.net/wiki/spaces/NORWEXECOM/pages/edit-v2/1277987?draftShareId=39596997-9a78-4f65-96f7-4e80d64bafce)
 
 [Slack | Get Started | web-dev-hub-resource-collaborative](https://app.slack.com/client/T01P0JDBDEY/learning-slack)
 
-[Hosted Libraries  |  Google Developers](https://developers.google.com/speed/libraries)
+[Hosted Libraries  |  Google Developers](https://developers.google.com/speed/libraries)
 
 [Slack API | Slack](https://api.slack.com/)
 
@@ -1066,7 +1066,7 @@
 
 [Jamstack Project Templates](https://templates.netlify.com/)
 
-[Embedding a map  |  Maps Embed API  |  Google Developers](https://developers.google.com/maps/documentation/embed/embedding-map)
+[Embedding a map  |  Maps Embed API  |  Google Developers](https://developers.google.com/maps/documentation/embed/embedding-map)
 
 ### New folder
 
@@ -1626,15 +1626,15 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Welcome to Data Studio! (Start here) › Next steps](https://datastudio.google.com/u/0/reporting/0B5FF6JBKbNJxOWItcWo2SVVVeGc/page/LjD)
 
-[Get Started with Community Connectors  |  Google Developers](https://developers.google.com/datastudio/connector/get-started)
+[Get Started with Community Connectors  |  Google Developers](https://developers.google.com/datastudio/connector/get-started)
 
 [Connect and visualize all your data in Data Studio](https://codelabs.developers.google.com/codelabs/community-connectors#5)
 
 [[Opportunity]: Be a Community Visualizations Launch Partner](https://groups.google.com/g/data-studio-developers/c/p9xSxN_O8GM)
 
-[Community Visualizations Developer Preview  |  Google Developers](https://developers.google.com/datastudio/visualization/developer-preview/)
+[Community Visualizations Developer Preview  |  Google Developers](https://developers.google.com/datastudio/visualization/developer-preview/)
 
-[Defining the visualization config  |  Community Visualizations](https://developers.google.com/datastudio/visualization/define-config)
+[Defining the visualization config  |  Community Visualizations](https://developers.google.com/datastudio/visualization/define-config)
 
 [Getting Started - Apps Script](https://script.google.com/home/start)
 
@@ -2864,7 +2864,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Firebase console](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Firebase%20console&pos=0&uri=https://console.firebase.google.com/u/0/project/resource-298820/database/resource-298820-default-rtdb/data)
 
-[Cloud Firestore locations  |  Firebase](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Cloud%20Firestore%20locations%20%C2%A0%7C%C2%A0%20Firebase&pos=497.9423828125&uri=https://firebase.google.com/docs/firestore/locations?authuser=0#default-cloud-location)
+[Cloud Firestore locations  |  Firebase](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Cloud%20Firestore%20locations%20%C2%A0%7C%C2%A0%20Firebase&pos=497.9423828125&uri=https://firebase.google.com/docs/firestore/locations?authuser=0#default-cloud-location)
 
 [Data -- Firestore -- web-dev-resource-hub -- Google Cloud Platform](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Data%20%E2%80%93%20Firestore%20%E2%80%93%20web-dev-resource-hub%20%E2%80%93%20Google%20Cloud%20Platform&pos=0&uri=https://console.cloud.google.com/firestore/data?authuser=0&project=resource-298820)
 
@@ -3088,7 +3088,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Use Amazon S3 with Amazon EC2 - Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/AmazonS3.html)
 
-[Configuring a static website using a custom domain registered with Route 53 - Amazon Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-custom-domain-walkthrough.html)
+[Configuring a static website using a custom domain registered with Route 53 - Amazon Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-custom-domain-walkthrough.html)
 
 [Speeding up your website with Amazon CloudFront - Amazon Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-cloudfront-walkthrough.html)
 
@@ -3206,7 +3206,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [github lambda functions aws - Google Search](https://www.google.com/search?q=github+lambda+functions+aws&oq=github+lambda+functions+aws&aqs=chrome..69i57j69i64.22039j0j7&sourceid=chrome&ie=UTF-8)
 
-[serverless/examples: Serverless Examples -- A collection of boilerplates and examples of serverless architectures built with the Serverless Framework on AWS Lambda, Microsoft Azure, Google Cloud Functions, and more.](https://github.com/serverless/examples)
+[serverless/examples: Serverless Examples -- A collection of boilerplates and examples of serverless architectures built with the Serverless Framework on AWS Lambda, Microsoft Azure, Google Cloud Functions, and more.](https://github.com/serverless/examples)
 
 [How to set up an AWS Lambda and auto deployments with Github Actions | blog.jakoblind.no](https://blog.jakoblind.no/aws-lambda-github-actions/)
 
@@ -3694,7 +3694,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [Top 5 ways to use trial software forever | Our PC Solution](http://ourpcsolution.blogspot.com/2014/01/run-trial-software-forever.html)
 
-[Programmable Search Element Control API  |  Programmable Search Engine](https://developers.google.com/custom-search/docs/element)
+[Programmable Search Element Control API  |  Programmable Search Engine](https://developers.google.com/custom-search/docs/element)
 
 [bgoonz/Full-Text-Search](https://github.com/bgoonz/Full-Text-Search)
 
@@ -3710,7 +3710,7 @@ Drag to Bookmarks to add to Bookmarks!
 
 [lambdaschool-org-177932 - Sign In](https://lambdaschoolsso.okta.com/)
 
-[Online Coding School and Bootcamp | Lambda School](https://lambdaschool.com/)
+[Online Coding School and Bootcamp | Lambda School](https://lambdaschool.com/)
 
 [adding google search bar to netlify website - Google Search](https://www.google.com/search?q=adding+google+search+bar+to+netlify+website&oq=adding+google+search+bar+to+netlify+website&aqs=chrome..69i57.11145j1j7&sourceid=chrome&ie=UTF-8)
 
@@ -4454,7 +4454,7 @@ AddToAny
 
 [30 seconds](https://github.com/30-seconds)
 
-[Introduction  |  Programmable Search Engine  |  Google Developers](https://developers.google.com/custom-search/docs/tutorial/introduction)
+[Introduction  |  Programmable Search Engine  |  Google Developers](https://developers.google.com/custom-search/docs/tutorial/introduction)
 
 [Bryan C Guner | daily.dev](https://app.daily.dev/bgoonz)
 
@@ -4484,17 +4484,17 @@ AddToAny
 
 [Billing health checks -- Billing -- Google Cloud Platform](https://console.cloud.google.com/billing/01C41E-01F515-656A27/health?organizationId=0)
 
-[Enable, disable, or change billing for a project  |  Cloud Billing](https://cloud.google.com/billing/docs/how-to/modify-project?&_ga=2.99091550.-1164462789.1624423132#enable_billing_for_a_new_project)
+[Enable, disable, or change billing for a project  |  Cloud Billing](https://cloud.google.com/billing/docs/how-to/modify-project?&_ga=2.99091550.-1164462789.1624423132#enable_billing_for_a_new_project)
 
 [Metrics -- Google Maps Platform -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/google/maps-apis/metrics?project=studious-pulsar-298821)
 
 [JSFiddle - Code Playground](https://jsfiddle.net/bgoonz/b2p7yxws/1/)
 
-[Error Messages  |  Maps JavaScript API  |  Google Developers](https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=places_js&utm_medium=degraded&utm_campaign=keyless#api-key-and-billing-errors)
+[Error Messages  |  Maps JavaScript API  |  Google Developers](https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=places_js&utm_medium=degraded&utm_campaign=keyless#api-key-and-billing-errors)
 
 [JSFiddle - About](https://jsfiddle.net/api/post/library/pure/)
 
-[Error Messages  |  Maps JavaScript API  |  Google Developers](https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=places_js&utm_medium=degraded&utm_campaign=keyless#api-key-and-billing-errors)
+[Error Messages  |  Maps JavaScript API  |  Google Developers](https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=places_js&utm_medium=degraded&utm_campaign=keyless#api-key-and-billing-errors)
 
 <https://fiddle.jshell.net/bgoonz/4dk3fj58/show/light/>
 
@@ -4504,15 +4504,15 @@ AddToAny
 
 [terrific-dolphin-103fc -- Sanity](https://terrific-dolphin-103fc.sanity.studio/desk/post;a7fe77f8-1458-4179-9ce8-7942f4c9c4f8)
 
-[The Maps Embed API quickstart  |  Google Developers](https://developers.google.com/maps/documentation/embed/map-generator#enable-api-sdk)
+[The Maps Embed API quickstart  |  Google Developers](https://developers.google.com/maps/documentation/embed/map-generator#enable-api-sdk)
 
 [Maps Embed API -- APIs & Services -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/apis/library/maps-embed-backend.googleapis.com?_ga=2.96297756.1628426608.1624423132-1164462789.1624423132&project=studious-pulsar-298821&folder=&organizationId=)
 
 [Maps Embed API -- APIs & Services -- social-media42 -- Google Cloud Platform](https://console.cloud.google.com/apis/library/maps-embed-backend.googleapis.com?_ga=2.96297756.1628426608.1624423132-1164462789.1624423132&authuser=1&project=social-media42)
 
-[The Maps Embed API overview  |  Google Developers](https://developers.google.com/maps/documentation/embed/get-started?hl=en_US)
+[The Maps Embed API overview  |  Google Developers](https://developers.google.com/maps/documentation/embed/get-started?hl=en_US)
 
-[Overview  |  Maps JavaScript API  |  Google Developers](https://developers.google.com/maps/documentation/javascript/overview)
+[Overview  |  Maps JavaScript API  |  Google Developers](https://developers.google.com/maps/documentation/javascript/overview)
 
 [Edit app registration -- APIs & Services -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/apis/credentials/consent/edit;newAppInternalUser=false?project=studious-pulsar-298821)
 
@@ -4530,7 +4530,7 @@ AddToAny
 
 [Manage domains - Admin Console](https://admin.google.com/u/5/ac/domains/manage?hl=en)
 
-[Getting started with Google Maps Platform  |  Google Developers](https://developers.google.com/maps/gmp-get-started)
+[Getting started with Google Maps Platform  |  Google Developers](https://developers.google.com/maps/gmp-get-started)
 
 [APIs -- Google Maps Platform -- My Project 78672 -- Google Cloud Platform](https://console.cloud.google.com/google/maps-apis/api-list?project=studious-pulsar-298821)
 
@@ -4802,7 +4802,7 @@ AddToAny
 
 [HTML5: FileSystem API - Create Files and Store Them Locally Using JavaScript and Webkit | The JotForm Blog](https://www.jotform.com/blog/html5-filesystem-api-create-files-store-locally-using-javascript-webkit/)
 
-[Online Form Integrations | JotForm](https://www.jotform.com/integrations/)
+[Online Form Integrations | JotForm](https://www.jotform.com/integrations/)
 
 [gsuiOscilloscope](https://codepen.io/bgoonz/pen/eYvrgpe)
 
@@ -4958,7 +4958,7 @@ AddToAny
 
 [Form by Webshocker - Matjaz Valentar on Dribbble](https://dribbble.com/shots/15789926-Form)
 
-[Creating a Programmable Search Engine  |  Google Developers](https://developers.google.com/custom-search/docs/tutorial/creatingcse)
+[Creating a Programmable Search Engine  |  Google Developers](https://developers.google.com/custom-search/docs/tutorial/creatingcse)
 
 [Lunr: A bit like Solr, but much smaller and not as bright](https://lunrjs.com/)
 

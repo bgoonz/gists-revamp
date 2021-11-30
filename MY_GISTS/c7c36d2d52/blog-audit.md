@@ -2,7 +2,7 @@
 
 ### Your page is good
 
-[Recommendations: 6](https://sureoak.websiteauditserver.com/bgoonz-blog.netlify.app#recommendation)
+[Recommendations: 6](https://sureoak.websiteauditserver.com/bgoonz-blog.netlify.app#recommendation)
 
 [](https://sureoak.websiteauditserver.com/bgoonz-blog.netlify.app# "Screenshot-1")
 
@@ -16,7 +16,7 @@
 
 [Social](https://sureoak.websiteauditserver.com/bgoonz-blog.netlify.app#social)
 
-Report Generated: 12 October 11:00AM
+Report Generated: 12 October 11:00AM
 
 [Refresh Results Now](https://sureoak.websiteauditserver.com/bgoonz-blog.netlify.app#)
 
@@ -138,7 +138,7 @@ Your website appears to have an XML sitemap.
 
 Your page is using an analytics tool.
 
-| ![](https://sureoak.websiteauditserver.com/img/analytics/googleanalytics.png)   Google Analytics |
+| ![](https://sureoak.websiteauditserver.com/img/analytics/googleanalytics.png)   Google Analytics |
 
 #### Schema.org Structured Data
 
@@ -152,7 +152,7 @@ Schema.org is a structured data markup for webpages which helps Search Engines u
 
 You have a strong level of backlink activity to this page.
 
-Backlink data provided by [![](https://sureoak.websiteauditserver.com/img/services/moz-logo-blue-small.png)](https://moz.com/)
+Backlink data provided by [![](https://sureoak.websiteauditserver.com/img/services/moz-logo-blue-small.png)](https://moz.com/)
 
 77.4M
 

@@ -1,12 +1,12 @@
 # Basic Git Workflow
 
-A quick intermediate level summary (Exp …approx. 1 year)
+A quick intermediate level summary (Exp …approx. 1 year)
 
 ---
 
-### Basic Git Workflow
+### Basic Git Workflow
 
-#### A quick intermediate level summary (Exp …approx. 1 year)
+#### A quick intermediate level summary (Exp …approx. 1 year)
 
 ### help
 
@@ -35,7 +35,7 @@ To give you quick access to an extremely detailed guide of each command. Or to j
 
 Although a `git fetch` is very useful in order to get the remote information of a branch, we can also perform a `git pull`. A `git pull` is actually two commands in one: a `git fetch`, and a `git merge`. When we're pulling changes from the origin, we're first fetching all the data like we did with a `git fetch`, after which the latest changes are automatically merged into the local branch.
 
-<figure><img src="https://cdn-images-1.medium.com/max/800/0*mjd8AFjM_0UJM_TP.gif" class="graf-image" /></figure>### add & commit
+<figure><img src="https://cdn-images-1.medium.com/max/800/0*mjd8AFjM_0UJM_TP.gif" class="graf-image" /></figure>### add & commit
 
 You can propose changes (add it to the Index) using  
 `git add <filename>`  
@@ -103,7 +103,7 @@ Manage your branches. You can view, edit, create, delete branches using this com
     # edit a branch's description
     $ git branch myBranchName --edit-description
 
-### update & merge
+### update & merge
 
 <figure><img src="https://cdn-images-1.medium.com/max/800/0*WRiMoR4h8iz1NvC-.gif" class="graf-image" /></figure>to update your local repository to the newest commit, execute  
 `git pull`  
@@ -134,9 +134,9 @@ See only which files have changed:
 `git log --name-status`  
 These are just a few of the possible parameters you can use. For more, see `git log --help`
 
-### replace local changes
+### replace local changes
 
-In case you did something wrong, which for sure never happens ;), you can replace local changes using the command  
+In case you did something wrong, which for sure never happens ;), you can replace local changes using the command  
 `git checkout -- <filename>`  
 this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
 

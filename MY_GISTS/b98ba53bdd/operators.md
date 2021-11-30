@@ -12,19 +12,19 @@ Basic keywords and general expressions in JavaScript.
 
 [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
-The `this` keyword refers to a special property of an execution context.
+The `this` keyword refers to a special property of an execution context.
 
 [`function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function)
 
-The `function` keyword defines a function expression.
+The `function` keyword defines a function expression.
 
 [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class)
 
-The `class` keyword defines a class expression.
+The `class` keyword defines a class expression.
 
 [`function*`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function*)
 
-The `function*` keyword defines a generator function expression.
+The `function*` keyword defines a generator function expression.
 
 [`yield`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield)
 
@@ -36,7 +36,7 @@ Delegate to another generator function or iterable object.
 
 [`async function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function)
 
-The `async function` defines an async function expression.
+The `async function` defines an async function expression.
 
 [`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
@@ -64,15 +64,15 @@ Left values are the destination of an assignment.
 
 [Property accessors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors)
 
-Member operators provide access to a property or method of an object (`object.property` and `object["property"]`).
+Member operators provide access to a property or method of an object (`object.property` and `object["property"]`).
 
 [`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
 
-The `new` operator creates an instance of a constructor.
+The `new` operator creates an instance of a constructor.
 
 [`new.target`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target)
 
-In constructors, `new.target` refers to the constructor that was invoked by [`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new).
+In constructors, `new.target` refers to the constructor that was invoked by [`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new).
 
 [`import.meta`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import.meta)
 
@@ -80,7 +80,7 @@ An object exposing context-specific metadata to a JavaScript module.
 
 [`super`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
 
-The `super` keyword calls the parent constructor.
+The `super` keyword calls the parent constructor.
 
 [`...obj`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
@@ -112,15 +112,15 @@ A unary operation is an operation with only one operand.
 
 [`delete`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
 
-The `delete` operator deletes a property from an object.
+The `delete` operator deletes a property from an object.
 
 [`void`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
 
-The `void` operator discards an expression's return value.
+The `void` operator discards an expression's return value.
 
 [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
 
-The `typeof` operator determines the type of a given object.
+The `typeof` operator determines the type of a given object.
 
 [`+`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus)
 
@@ -168,15 +168,15 @@ Exponentiation operator.
 
 ### [Relational operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#relational_operators "Permalink to Relational operators")
 
-A comparison operator compares its operands and returns a `Boolean` value based on whether the comparison is true.
+A comparison operator compares its operands and returns a `Boolean` value based on whether the comparison is true.
 
 [`in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
 
-The `in` operator determines whether an object has a given property.
+The `in` operator determines whether an object has a given property.
 
 [`instanceof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof)
 
-The `instanceof` operator determines whether an object is an instance of another object.
+The `instanceof` operator determines whether an object is an instance of another object.
 
 [`<`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Less_than)
 
@@ -194,11 +194,11 @@ Less than or equal operator.
 
 Greater than or equal operator.
 
-**Note:** `=>` is not an operator, but the notation for [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+**Note:** `=>` is not an operator, but the notation for [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 ### [Equality operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#equality_operators "Permalink to Equality operators")
 
-The result of evaluating an equality operator is always of type `Boolean` based on whether the comparison is true.
+The result of evaluating an equality operator is always of type `Boolean` based on whether the comparison is true.
 
 [`==`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality)
 
@@ -274,7 +274,7 @@ The conditional operator returns one of two values based on the logical value of
 
 [`?.`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
-The optional chaining operator returns `undefined` instead of causing an error if a reference is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) ([`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null) or [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)).
+The optional chaining operator returns `undefined` instead of causing an error if a reference is [nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) ([`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null) or [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)).
 
 ### [Assignment operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#assignment_operators "Permalink to Assignment operators")
 
@@ -344,7 +344,7 @@ Logical OR assignment.
 
 Logical nullish assignment.
 
-[`[a, b] = [1, 2]`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) [`{a, b} = {a:1, b:2}`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+[`[a, b] = [1, 2]`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) [`{a, b} = {a:1, b:2}`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 Destructuring assignment allows you to assign the properties of an array or object to variables using syntax that looks similar to array or object literals.
 

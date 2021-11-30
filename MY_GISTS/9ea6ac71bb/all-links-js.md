@@ -4,7 +4,7 @@
 [**Call stack - MDN Web Docs Glossary: Definitions of Web-related terms | MDN**\
 *A call stack is a mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its...*developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack "https://developer.mozilla.org/en-US/docs/Glossary/Call_stack")[](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack)
 
-[**Understanding Javascript Function Executions --- Call Stack, Event Loop , Tasks & more**\
+[**Understanding Javascript Function Executions --- Call Stack, Event Loop , Tasks & more**\
 *Web developers or Front end engineers, as that's what we like to be called, nowadays do everything right from acting as...*medium.com](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec "https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec")[](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec)
 
 [**Understanding the JavaScript call stack**\
@@ -19,7 +19,7 @@
 *Understanding execution context and stack to become a better Javascript developer.*blog.bitsrc.io](https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0 "https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0")[](https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0)
 
 [**How JavaScript works: an overview of the engine, the runtime, and the call stack**\
-*As JavaScript is getting more and more popular, teams are leveraging its support on many levels in their stack ...*blog.sessionstack.com](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf "https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf")[](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
+*As JavaScript is getting more and more popular, teams are leveraging its support on many levels in their stack ...*blog.sessionstack.com](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf "https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf")[](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
 
 [**The Ultimate Guide to Hoisting, Scopes, and Closures in JavaScript - ui.dev**\
 *It may seem surprising, but in my opinion the most important and fundamental concept to understanding the JavaScript...*tylermcginnis.com](https://tylermcginnis.com/ultimate-guide-to-execution-contexts-hoisting-scopes-and-closures-in-javascript/ "https://tylermcginnis.com/ultimate-guide-to-execution-contexts-hoisting-scopes-and-closures-in-javascript/")[](https://tylermcginnis.com/ultimate-guide-to-execution-contexts-hoisting-scopes-and-closures-in-javascript/)
@@ -211,7 +211,7 @@
 *IIFE is a function that is declared and invoked at the same time. You create them by using anonymous functions and...*dev.to](https://dev.to/bhagatparwinder/iife-immediately-invoked-function-expressions-49c5 "https://dev.to/bhagatparwinder/iife-immediately-invoked-function-expressions-49c5")[](https://dev.to/bhagatparwinder/iife-immediately-invoked-function-expressions-49c5)
 
 [**JavaScript Event Loop Explained**\
-*"How is JavaScript asynchronous and single-threaded ?" The short answer is that JavaScript language is single-threaded...*medium.com](https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4 "https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4")[](https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4)
+*"How is JavaScript asynchronous and single-threaded ?" The short answer is that JavaScript language is single-threaded...*medium.com](https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4 "https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4")[](https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4)
 
 [**The JavaScript Event Loop: Explained**\
 *With JavaScript approaching near-ubiquity as the scripting language of the web browser, it benefits you to have a basic...*blog.carbonfive.com](https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/ "https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/")[](https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/)
@@ -300,7 +300,7 @@
 [**How can I understand Bitwise operation in JavaScript?**\
 *Answer: Okay, I was going to just write that bitwise operations in JavaScript are the same as in every other language...*www.quora.com](https://www.quora.com/How-can-I-understand-Bitwise-operation-in-JavaScript "https://www.quora.com/How-can-I-understand-Bitwise-operation-in-JavaScript")[](https://www.quora.com/How-can-I-understand-Bitwise-operation-in-JavaScript)
 
-[**The Document Object Model :: Eloquent JavaScript**\
+[**The Document Object Model :: Eloquent JavaScript**\
 *Too bad! Same old story! Once you've finished building your house you notice you've accidentally learned something that...*eloquentjavascript.net](https://eloquentjavascript.net/14_dom.html "https://eloquentjavascript.net/14_dom.html")[](https://eloquentjavascript.net/14_dom.html)
 
 [**How To Understand and Modify the DOM in JavaScript | DigitalOcean**\
@@ -367,7 +367,7 @@
 *1\. An Introduction To Classes In JavaScript In the previous article in this series we looked at function constructors...*dev.to](https://dev.to/lawrence_eagles/an-easy-guide-to-understanding-classes-in-javascript-3bcm "https://dev.to/lawrence_eagles/an-easy-guide-to-understanding-classes-in-javascript-3bcm")[](https://dev.to/lawrence_eagles/an-easy-guide-to-understanding-classes-in-javascript-3bcm)
 
 [**Function.prototype.call() - JavaScript | MDN**\
-*The value to use as this when calling . Note: In certain cases, may not be the actual value seen by the method. If the...*developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call")[](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+*The value to use as this when calling . Note: In certain cases, may not be the actual value seen by the method. If the...*developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call")[](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 
 [**Function.prototype.bind() - JavaScript | MDN**\
 *The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a...*developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind")[](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
@@ -378,7 +378,7 @@
 [**Grokking call(), apply() and bind() methods in JavaScript**\
 *These are very important for every aspiring JavaScript Developer, these are used in almost every JavaScript Library or...*levelup.gitconnected.com](https://levelup.gitconnected.com/grokking-call-apply-and-bind-methods-in-javascript-392351a4be8b "https://levelup.gitconnected.com/grokking-call-apply-and-bind-methods-in-javascript-392351a4be8b")[](https://levelup.gitconnected.com/grokking-call-apply-and-bind-methods-in-javascript-392351a4be8b)
 
-[**How-to: call() , apply() and bind() in JavaScript | Codementor**\
+[**How-to: call() , apply() and bind() in JavaScript | Codementor**\
 *In this post, we will be discussing the difference between call(), apply(), and bind() methods of JavaScript functions...*www.codementor.io](https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp "https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp")[](https://www.codementor.io/niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp)
 
 [**JavaScript's Apply, Call, and Bind Methods are Essential for JavaScript Professionals**\
@@ -403,7 +403,7 @@
 *If you have ever been in charge of operating the grill at a family event or party, then you can understand apply, call...*dev.to](https://dev.to/kbk0125/javascripts-apply-call-and-bind-explained-by-hosting-a-cookout-32jo "https://dev.to/kbk0125/javascripts-apply-call-and-bind-explained-by-hosting-a-cookout-32jo")[](https://dev.to/kbk0125/javascripts-apply-call-and-bind-explained-by-hosting-a-cookout-32jo)
 
 [**How AND When to use bind, call, and apply in Javascript - Eigen X**\
-*In order for you to fully understand bind, call, and apply you have to understand the Javascript concept of this ...*www.eigenx.com](https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb "https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb")[](https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb)
+*In order for you to fully understand bind, call, and apply you have to understand the Javascript concept of this ...*www.eigenx.com](https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb "https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb")[](https://www.eigenx.com/blog/https/mediumcom/eigen-x/how-and-when-to-use-bind-call-and-apply-in-javascript-77b6f42898fb)
 
 [**JavaScript: bind() vs apply() and call()**\
 *var fruit = { name: 'Apple' }; and this function: function showDetails(size, price) { console.log(this.name + ' ' +...*www.hacksparrow.com](https://www.hacksparrow.com/javascript-bind-vs-apply-and-call.html "https://www.hacksparrow.com/javascript-bind-vs-apply-and-call.html")[](https://www.hacksparrow.com/javascript-bind-vs-apply-and-call.html)
@@ -417,7 +417,7 @@
 [**How to understand the keyword this and context in JavaScript**\
 *As mentioned in one of my earlier articles, mastering JavaScript fully can be a lengthy journey. You may have come...*medium.freecodecamp.org](https://medium.freecodecamp.org/how-to-understand-the-keyword-this-and-context-in-javascript-cd624c6b74b8 "https://medium.freecodecamp.org/how-to-understand-the-keyword-this-and-context-in-javascript-cd624c6b74b8")[](https://medium.freecodecamp.org/how-to-understand-the-keyword-this-and-context-in-javascript-cd624c6b74b8)
 
-[**What is "this" in Javascript ?**\
+[**What is "this" in Javascript ?**\
 *While learning JavaScript there are many roadblocks like closures, asynchronous programming, this keywords, etc. These...*dev.to](https://dev.to/_hridaysharma/what-the-heck-is-this-in-javascript-37n1 "https://dev.to/_hridaysharma/what-the-heck-is-this-in-javascript-37n1")[](https://dev.to/_hridaysharma/what-the-heck-is-this-in-javascript-37n1)
 
 [**This and Bind In Javascript**\
@@ -471,7 +471,7 @@
 [**Inheritance and the prototype chain - JavaScript | MDN**\
 *JavaScript is a bit confusing for developers experienced in class-based languages (like Java or C++), as it is dynamic...*developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain")[](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 
-[**Javascript : Prototype vs Class**\
+[**Javascript : Prototype vs Class**\
 *Let's see how classes in JS are not what you think they are.*medium.com](https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b "https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b")[](https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b)\
 <https://codeburst.io/javascript-prototype-cb29d82b8809>
 
@@ -607,8 +607,8 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 [**Why you should replace forEach with map and filter in JavaScript - Gofore**\
 *TL;DR Prefer map and filter over forEach when you need to copy an array or part of it to a new one. One of the best...*gofore.com](https://gofore.com/en/why-you-should-replace-foreach/ "https://gofore.com/en/why-you-should-replace-foreach/")[](https://gofore.com/en/why-you-should-replace-foreach/)
 
-[**Simplify your JavaScript -- Use .map(), .reduce(), and .filter()**\
-*If you haven't heard of .map(), .reduce(), and .filter() in JavaScript, you might want to learn to use it!*medium.com](https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d "https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d")[](https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d)
+[**Simplify your JavaScript -- Use .map(), .reduce(), and .filter()**\
+*If you haven't heard of .map(), .reduce(), and .filter() in JavaScript, you might want to learn to use it!*medium.com](https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d "https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d")[](https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d)
 
 [**JavaScript's Reduce Method Explained By Going On a Diet**\
 *The reduce method in JavaScript gives you a simple way to take an array of values and combine them into one value, or...*blog.codeanalogies.com](https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by-going-on-a-diet/ "https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by-going-on-a-diet/")[](https://blog.codeanalogies.com/2018/07/24/javascripts-reduce-method-explained-by-going-on-a-diet/)
@@ -619,7 +619,7 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 [**Map⇄Filter⇄Reduce↻ | Hacker Noon**\
 *Share it on LinkedIn! Due to that reason we were introduced with these three higher order functions, namely 🗺️Map...*hackernoon.com](https://hackernoon.com/map-filter-reduce-ebbed4be4201 "https://hackernoon.com/map-filter-reduce-ebbed4be4201")[](https://hackernoon.com/map-filter-reduce-ebbed4be4201)
 
-[**Finding Your Way With .Map()**\
+[**Finding Your Way With .Map()**\
 *At the end of the article is a CodePen that demonstrates the concepts presented here.*medium.freecodecamp.org](https://medium.freecodecamp.org/finding-your-way-with-map-aecb8ca038f6 "https://medium.freecodecamp.org/finding-your-way-with-map-aecb8ca038f6")[](https://medium.freecodecamp.org/finding-your-way-with-map-aecb8ca038f6)
 
 [**How to write your own map, filter and reduce functions in JavaScript**\
@@ -628,22 +628,22 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 [**How to Manipulate Arrays in JavaScript**\
 *An important part of any programming language. Most times we need to do several operations on arrays, hence this...*www.freecodecamp.org](https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/ "https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/")[](https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/)
 
-[**.map(), .filter(), and .reduce()**\
+[**.map(), .filter(), and .reduce()**\
 *Originally posted on my blog For the last several weeks I've been applying for jobs. Sadly, the startup I was working...*dev.to](https://dev.to/pickleat/map-filter-and-reduce-2efb "https://dev.to/pickleat/map-filter-and-reduce-2efb")[](https://dev.to/pickleat/map-filter-and-reduce-2efb)
 
 [**Map, Filter and Reduce -- Animated**\
 *Map, filter and reduce have been around for a long time. They are often seen as part of Functional Programming style.*jstutorial.medium.com](https://jstutorial.medium.com/map-filter-and-reduce-animated-7fe391a35a47 "https://jstutorial.medium.com/map-filter-and-reduce-animated-7fe391a35a47")[](https://jstutorial.medium.com/map-filter-and-reduce-animated-7fe391a35a47)
 
 [**Map, Filter, Reduce and others Arrays Iterators You Must Know to Become an Algorithms Wizard**\
-*In this article we are going to take a close look at some arrays iterators like , , or others methods that use...*dev.to](https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209 "https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209")[](https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209)
+*In this article we are going to take a close look at some arrays iterators like , , or others methods that use...*dev.to](https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209 "https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209")[](https://dev.to/uptheirons78/map-filter-reduce-and-others-arrays-iterators-you-must-know-to-become-an-algorithms-wizard-4209)
 
-[**How to Use JavaScript's .map, .filter, and .reduce**\
+[**How to Use JavaScript's .map, .filter, and .reduce**\
 *How to use these three useful JavaScript functions*betterprogramming.pub](https://betterprogramming.pub/how-to-javascripts-map-vs-filter-vs-reduce-80d87a5a0a24 "https://betterprogramming.pub/how-to-javascripts-map-vs-filter-vs-reduce-80d87a5a0a24")[](https://betterprogramming.pub/how-to-javascripts-map-vs-filter-vs-reduce-80d87a5a0a24)
 
 [**Javascript performance test - for vs for each vs (map, reduce, filter, find).**\
 *We all know that for loop are faster than for each or javascript function since under the hood of javascript functions...*towardsdatascience.com](https://towardsdatascience.com/javascript-performance-test-for-vs-for-each-vs-map-reduce-filter-find-32c1113f19d7 "https://towardsdatascience.com/javascript-performance-test-for-vs-for-each-vs-map-reduce-filter-find-32c1113f19d7")[](https://towardsdatascience.com/javascript-performance-test-for-vs-for-each-vs-map-reduce-filter-find-32c1113f19d7)
 
-[**Using .map(), .filter() and .reduce() properly 👩🏽‍💻**\
+[**Using .map(), .filter() and .reduce() properly 👩🏽‍💻**\
 *Map, reduce, and filter are all array methods in JavaScript. Each one will iterate over an array and perform a...*javascript.plainenglish.io](https://javascript.plainenglish.io/using-map-filter-and-reduce-properly-50e07f80c8b2 "https://javascript.plainenglish.io/using-map-filter-and-reduce-properly-50e07f80c8b2")[](https://javascript.plainenglish.io/using-map-filter-and-reduce-properly-50e07f80c8b2)
 
 [**Javascript and Functional Programming --- Pt. 3: Pure Functions**\
@@ -698,7 +698,7 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 *Events are actions or occurrences that happen in the system you are programming, which the system tells you about so...*developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events")[](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 
 [**Bubbling and capturing**\
-*Let's start with an example. This handler is assigned to , but also runs if you click any nested tag like or : Isn't it...*javascript.info](https://javascript.info/bubbling-and-capturing "https://javascript.info/bubbling-and-capturing")[](https://javascript.info/bubbling-and-capturing)
+*Let's start with an example. This handler is assigned to , but also runs if you click any nested tag like or : Isn't it...*javascript.info](https://javascript.info/bubbling-and-capturing "https://javascript.info/bubbling-and-capturing")[](https://javascript.info/bubbling-and-capturing)
 
 <https://www.youtube.com/watch?v=Jh_Uzqzz_wM>
 
@@ -706,7 +706,7 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 <https://javascript.info/closure>
 
 [**I never understood JavaScript closures**\
-*Until someone explained it to me like this ...*medium.com](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8 "https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8")[](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8)
+*Until someone explained it to me like this ...*medium.com](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8 "https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8")[](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8)
 
 [**Understand JavaScript Closures With Ease**\
 *Closures allow JavaScript programmers to write better code. Creative, expressive, and concise. We frequently use...*javascriptissexy.com](http://javascriptissexy.com/understand-javascript-closures-with-ease/ "http://javascriptissexy.com/understand-javascript-closures-with-ease/")[](http://javascriptissexy.com/understand-javascript-closures-with-ease/)
@@ -775,7 +775,7 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 
 <https://www.youtube.com/watch?v=1JsJx1x35c0>
 
-[**Higher-Order Functions :: Eloquent JavaScript**\
+[**Higher-Order Functions :: Eloquent JavaScript**\
 *Tzu-li and Tzu-ssu were boasting about the size of their latest programs. 'Two-hundred thousand lines,' said Tzu-li...*eloquentjavascript.net](https://eloquentjavascript.net/05_higher_order.html "https://eloquentjavascript.net/05_higher_order.html")[](https://eloquentjavascript.net/05_higher_order.html)
 
 [**Higher-Order Functions in JavaScript - SitePoint**\
@@ -970,7 +970,7 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 [**Async/await**\
 *There's a special syntax to work with promises in a more comfortable fashion, called "async/await". It's surprisingly...*javascript.info](https://javascript.info/async-await "https://javascript.info/async-await")[](https://javascript.info/async-await)
 
-[**Asynchronous Programming :: Eloquent JavaScript**\
+[**Asynchronous Programming :: Eloquent JavaScript**\
 *Who can wait quietly while the mud settles?Who can remain still until the moment of action? Laozi, Tao Te Ching The...*eloquentjavascript.net](https://eloquentjavascript.net/11_async.html "https://eloquentjavascript.net/11_async.html")[](https://eloquentjavascript.net/11_async.html)
 
 [**24\. Asynchronous programming (background)**\
@@ -1055,7 +1055,7 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 *Detail & Discusion (讨论和细节) All algorithms writing with JavaScript in book ' Algorithms Fourth Edition'. Run...*github.com](https://github.com/barretlee/algorithms "https://github.com/barretlee/algorithms")[](https://github.com/barretlee/algorithms)
 
 [**humanwhocodes/computer-science-in-javascript**\
-*Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript. ...*github.com](https://github.com/nzakas/computer-science-in-javascript "https://github.com/nzakas/computer-science-in-javascript")[](https://github.com/nzakas/computer-science-in-javascript)
+*Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript. ...*github.com](https://github.com/nzakas/computer-science-in-javascript "https://github.com/nzakas/computer-science-in-javascript")[](https://github.com/nzakas/computer-science-in-javascript)
 
 [**jamiebuilds/itsy-bitsy-data-structures**\
 *Welcome to Itsy Bitsy Data Structures! In here are super simplified examples of many of the common data structures...*github.com](https://github.com/jamiebuilds/itsy-bitsy-data-structures "https://github.com/jamiebuilds/itsy-bitsy-data-structures")[](https://github.com/jamiebuilds/itsy-bitsy-data-structures)
@@ -1101,7 +1101,7 @@ Inheritancecodeburst.io](https://codeburst.io/master-javascript-prototypes-inher
 *This repository contains JavaScript based examples of many popular algorithms and data structures. Each algorithm and...*github.com](https://github.com/trekhleb/javascript-algorithms "https://github.com/trekhleb/javascript-algorithms")[](https://github.com/trekhleb/javascript-algorithms)
 
 [**JS: Algorithm**\
-*More Questions CSS Interview Questions , HTML Interview Questions if you are little more comfortable or claim to be...*www.thatjsdude.com](http://www.thatjsdude.com/interview/js1.html "http://www.thatjsdude.com/interview/js1.html")[](http://www.thatjsdude.com/interview/js1.html)
+*More Questions CSS Interview Questions , HTML Interview Questions if you are little more comfortable or claim to be...*www.thatjsdude.com](http://www.thatjsdude.com/interview/js1.html "http://www.thatjsdude.com/interview/js1.html")[](http://www.thatjsdude.com/interview/js1.html)
 
 [**Algorithms in JavaScript**\
 *40 Problems, Solutions, and Explanations*medium.com](https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038 "https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038")[](https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038)
@@ -1289,7 +1289,7 @@ Partial Application and Curry*medium.com](https://medium.com/javascript-scene/cu
 *Sometimes I'm asked why we don't have "dot-chaining" in RxJS anymore, or why RxJS made the switch to use pipe. There...*dev.to](https://dev.to/benlesh/a-simple-explanation-of-functional-pipe-in-javascript-2hbj "https://dev.to/benlesh/a-simple-explanation-of-functional-pipe-in-javascript-2hbj")[](https://dev.to/benlesh/a-simple-explanation-of-functional-pipe-in-javascript-2hbj)
 
 [**ryanmcdermott/clean-code-javascript**\
-*Software engineering principles, from Robert C. Martin's book , adapted for JavaScript. This is not a style guide. It's...*github.com](https://github.com/ryanmcdermott/clean-code-javascript "https://github.com/ryanmcdermott/clean-code-javascript")[](https://github.com/ryanmcdermott/clean-code-javascript)
+*Software engineering principles, from Robert C. Martin's book , adapted for JavaScript. This is not a style guide. It's...*github.com](https://github.com/ryanmcdermott/clean-code-javascript "https://github.com/ryanmcdermott/clean-code-javascript")[](https://github.com/ryanmcdermott/clean-code-javascript)
 
 [**JavaScript Clean Coding Best Practices | @RisingStack**\
 *Writing clean code is what you must know and do in order to call yourself a professional developer. There is no...*blog.risingstack.com](https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/ "https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/")[](https://blog.risingstack.com/javascript-clean-coding-best-practices-node-js-at-scale/)
